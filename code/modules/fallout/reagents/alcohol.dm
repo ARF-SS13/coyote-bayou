@@ -266,7 +266,6 @@
 	glass_icon_state = "nukavictoryglass"
 	glass_name = "Nuka Victory"
 	glass_desc = "Nuka Cola with an AMERICAN twist."
-	ghoulfriendly = TRUE //too american for ghouls not to taste it
 
 /datum/reagent/consumable/ethanol/nukavictory/on_mob_life(mob/living/carbon/M)
 	ADD_TRAIT(M, TRAIT_BIG_LEAGUES, "[type]")
@@ -417,7 +416,6 @@
 	glass_name = "Nuka Quantum"
 	glass_desc = "An extremely blue and glowing combination of Nuka-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
-	ghoulfriendly = TRUE
 	
 
 /datum/reagent/consumable/ethanol/nukaquantum/on_mob_life(mob/living/carbon/M)
@@ -465,7 +463,6 @@
 	glass_name = "Nuka X-Treme"
 	glass_desc = "Like Quantum, but <BIG>EXTREME<BIG>."
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>EXTREME</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
@@ -593,13 +590,13 @@
 
 /datum/reagent/consumable/ethanol/bbock
 	name = "Ballistic Bock"
-	description = "An explosive cocktail that probably shouldn't be ingested. Fills you with <BIG>BALLISTIC RAGE<BIG>."
+	description = "An explosive cocktail that probably shouldnt be ingested, fills you with <BIG>BALLISTIC RAGE<BIG>."
 	color = "#333333"
 	boozepwr = 50
 	taste_description = "rioting"
 	glass_icon_state = "bbockglass"
 	glass_name = "Ballistic Bock"
-	glass_desc = "An explosive cocktail that probably shouldn' be ingested. Fills you with <BIG>BALLISTIC RAGE<BIG>."
+	glass_desc = "An explosive cocktail that probably shouldnt be ingested, fills you with <BIG>BALLISTIC RAGE<BIG>."
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 
 /datum/reagent/consumable/ethanol/bbock/on_mob_life(mob/living/carbon/M)
@@ -844,18 +841,17 @@
 	M.Jitter(2)
 	..()
 
-/datum/reagent/consumable/ethanol/species_drink/sludge
-	name = "Resilient sludge"
-	description = "A vile mixture powerful enough to get even ghouls drunk. Unfit for human consumption."
+/datum/reagent/consumable/ethanol/sludge
+	name = "Resilient Sludge"
+	description = "A Ghoulies classical brew."
 	color = "#C8F085"
 	boozepwr = 100
 	taste_description = "toxic waste"
 	glass_icon_state = "sludgeglass"
-	glass_name = "Resilient sludge"
-	glass_desc = "A vile mixture powerful enough to get even ghouls drunk. Unfit for human consumption."
-	ghoulfriendly = TRUE
+	glass_name = "Resilient Sludge"
+	glass_desc = "A Ghoulies classical brew."
 
-/datum/reagent/consumable/ethanol/species_drink/sludge/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/sludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
 		M.adjustFireLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.25*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -867,19 +863,17 @@
 				M.adjustToxLoss(4*REAGENTS_EFFECT_MULTIPLIER, 0)
 			..()
 
-/datum/reagent/consumable/ethanol/species_drink/strongsludge
-	name = "Strong sludge"
-	description = "An incredibly vile mixture made by submerging fissile materials in sugar. Good for ghouls. Not so good for people."
+/datum/reagent/consumable/ethanol/strongsludge
+	name = "Strong Sludge"
+	description = "Not for Human Consumption."
 	color = "#027F02"
 	boozepwr = 200
 	taste_description = "toxic waste and death"
 	glass_icon_state = "strongsludgeglass"
-	glass_name = "Strong sludge"
-	glass_desc = "An incredibly vile mixture made by submerging fissile materials in sugar. Good for ghouls. Not so good for people."
-	ghoulfriendly = TRUE
-	species_required = "ghoul"
+	glass_name = "Strong Sludge"
+	glass_desc = "Not for Human Consumption."
 
-/datum/reagent/consumable/ethanol/species_drink/strongsludge/on_mob_life(mob/living/carbon/M)
+/datum/reagent/consumable/ethanol/strongsludge/on_mob_life(mob/living/carbon/M)
 	if(isghoul(M))
 		M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)

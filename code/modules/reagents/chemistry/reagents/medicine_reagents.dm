@@ -35,7 +35,6 @@
 	can_synth = FALSE
 	taste_description = "badmins"
 	value = REAGENT_VALUE_GLORIOUS
-	ghoulfriendly = TRUE
 
 // The best stuff there is. For testing/debugging.
 /datum/reagent/medicine/adminordrazine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -155,7 +154,6 @@
 	taste_description = "sludge"
 	pH = 11
 	value = REAGENT_VALUE_COMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/cryoxadone/on_mob_life(mob/living/carbon/M)
 	var/power = -0.00003 * (M.bodytemperature ** 2) + 3
@@ -181,7 +179,6 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	pH = 13
 	value = REAGENT_VALUE_COMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/clonexadone/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature < T0C)
@@ -198,7 +195,6 @@
 	taste_description = "spicy jelly"
 	pH = 12
 	value = REAGENT_VALUE_UNCOMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/pyroxadone/on_mob_life(mob/living/carbon/M)
 	if(M.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT)
@@ -234,7 +230,6 @@
 	taste_description = "fish"
 	pH = 12.2
 	value = REAGENT_VALUE_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/rezadone/on_mob_life(mob/living/carbon/M)
 	M.setCloneLoss(0) //Rezadone is almost never used in favor of cryoxadone. Hopefully this will change that.
@@ -265,7 +260,6 @@
 	color = "#f2f2f2"
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM
 	pH = 8.1
-	ghoulfriendly = TRUE
 
 //Goon Chems. Ported mainly from Goonstation. Easily mixable (or not so easily) and provide a variety of effects.
 /datum/reagent/medicine/silver_sulfadiazine
@@ -527,7 +521,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "ash"
 	pH = 5
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/charcoal/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-2*REM, 0)
@@ -548,7 +541,6 @@
 	pH = 2
 	value = REAGENT_VALUE_UNCOMMON
 	var/healing = 0.5
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/omnizine/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-healing*REM, 0)
@@ -580,7 +572,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	taste_description = "acid"
 	pH = 1.5
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/calomel/on_mob_life(mob/living/carbon/M)
 	for(var/A in M.reagents.reagent_list)
@@ -613,7 +604,6 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	pH = 8.9
 	value = REAGENT_VALUE_COMMON //uncraftable
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/prussian_blue/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -629,7 +619,6 @@
 	pH = 1 //One of the best buffers, NEVERMIND!
 	value = REAGENT_VALUE_UNCOMMON
 	var/healtoxinlover = FALSE
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/pen_acid/on_mob_life(mob/living/carbon/M)
 	//M.radiation -= max(M.radiation-RAD_MOB_SAFE, 0)/50
@@ -1009,19 +998,19 @@
 	description = "Efficiently restores brain damage."
 	color = "#DCDCFF"
 	pH = 10.4
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/C)
 	C.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2*REM)
+	/*
 	if(prob(10))
 		C.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
+	*/
 	..()
 
 /datum/reagent/medicine/neurine
 	name = "Neurine"
 	description = "Reacts with neural tissue, helping reform damaged connections. Can cure minor traumas."
 	color = "#EEFF8F"
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/neurine/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(!(method == INJECT))
@@ -1051,7 +1040,6 @@
 	color = "#5096C8"
 	taste_description = "acid"
 	pH = 2
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/mutadone/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = 0
@@ -1126,7 +1114,6 @@
 	color = "#FFFFF0"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	pH = 6.7
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/insulin/on_mob_life(mob/living/carbon/M)
 	if(M.AdjustSleeping(-20, FALSE))
@@ -1275,7 +1262,6 @@
 	color = "#555555"
 	pH = 11
 	value = REAGENT_VALUE_EXCEPTIONAL
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
@@ -1430,7 +1416,6 @@
 	color = "#918e53"
 	overdose_threshold = 30
 	value = REAGENT_VALUE_VERY_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_metabolize(mob/living/L)
 	..()
@@ -1459,7 +1444,6 @@
 	color = "#669153"
 	metabolization_rate = 1
 	value = REAGENT_VALUE_VERY_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/changelinghaste/on_mob_metabolize(mob/living/L)
 	..()
@@ -1582,7 +1566,6 @@
 	overdose_threshold = 30
 	pH = 9.12
 	value = REAGENT_VALUE_COMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/psicodine/on_mob_add(mob/living/L)
 	..()

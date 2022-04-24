@@ -96,7 +96,6 @@
 	glass_icon_state = "poisonberryjuice"
 	glass_name = "glass of berry juice"
 	glass_desc = "Berry juice. Or maybe it's poison. Who cares?"
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/poisonberryjuice/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(1, 0)
@@ -407,7 +406,6 @@
 	glass_name = "pitcher of lemonade"
 	glass_desc = "This drink leaves you feeling nostalgic for some reason."
 	value = REAGENT_VALUE_VERY_COMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/tea/arnold_palmer
 	name = "Arnold Palmer"
@@ -1088,7 +1086,6 @@
 	glass_name = "glass of bungo juice"
 	glass_desc = "Exotic! You feel like you are on vacation already."
 	value = REAGENT_VALUE_COMMON
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/aloejuice
 	name = "Aloe Juice"
@@ -1098,7 +1095,6 @@
 	glass_icon_state = "glass_yellow"
 	glass_name = "glass of aloe juice"
 	glass_desc = "A healthy and refreshing juice."
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/aloejuice/on_mob_life(mob/living/M)
 	if(M.getToxLoss() && prob(30))
@@ -1115,7 +1111,6 @@
 	taste_description = "stringy, bitter pulp"
 	glass_name = "glass of banana peel pulp"
 	glass_desc = "Okay, so you put a banana peel in a grinder... Why, exactly?"
-	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/baked_banana_peel
 	name = "Baked Banana Peel Powder"
@@ -1125,4 +1120,3 @@
 	taste_description = "bitter powder"
 	glass_name = "glass of banana peel powder"
 	description = "You took a banana peel... pulped it... baked it... Where are you going with this?"
-	ghoulfriendly = TRUE

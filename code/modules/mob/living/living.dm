@@ -1103,18 +1103,17 @@
 /mob/living/rad_act(amount)
 	. = ..()
 
-	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION))
+	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION) || HAS_TRAIT(src, TRAIT_RADIMMUNE))
 		return
 
 	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
 
 	var/blocked = getarmor(null, "rad")
-	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
-	if(HAS_TRAIT(src,TRAIT_RADIMMUNE)) //prevents you from being burned by rads if radimmune but you can still accumulate
-		return
+
 	if(amount > RAD_BURN_THRESHOLD)
 		apply_damage((amount-RAD_BURN_THRESHOLD)/RAD_BURN_THRESHOLD, BURN, null, blocked)
 
+	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
 
 /mob/living/anti_magic_check(magic = TRUE, holy = FALSE, chargecost = 1, self = FALSE)
 	. = ..()

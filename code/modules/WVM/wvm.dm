@@ -661,8 +661,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Speed strip (.357)",			/obj/item/ammo_box/a357,											70),
 		new /datum/data/wasteland_equipment("Smoke Bomb",					/obj/item/grenade/smokebomb,										70),
 		new /datum/data/wasteland_equipment("Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives,							600),
-		new /datum/data/wasteland_equipment("Firebomb",						/obj/item/grenade/homemade/firebomb,
-		new /datum/data/wasteland_equipment("Advanced Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives_advanced,							2000),								100),
+		new /datum/data/wasteland_equipment("Firebomb",						/obj/item/grenade/homemade/firebomb,								100),
 		)
 	highpop_list = list(
 		new /datum/data/wasteland_equipment("Handgun magazine (.45)",		/obj/item/ammo_box/magazine/m45,									50),
@@ -672,7 +671,6 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		new /datum/data/wasteland_equipment("Smoke Bomb",					/obj/item/grenade/smokebomb,										70),
 		new /datum/data/wasteland_equipment("Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives,							600),
 		new /datum/data/wasteland_equipment("Firebomb",						/obj/item/grenade/homemade/firebomb,								100),
-		new /datum/data/wasteland_equipment("Advanced Explosives Crafting Guide",	/obj/item/book/granter/trait/explosives_advanced,							2000),
 	)
 
 /obj/machinery/mineral/wasteland_vendor/clothing

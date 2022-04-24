@@ -218,7 +218,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	name = "The Court Martial"
 	suit_store = /obj/item/gun/ballistic/automatic/shotgun/pancor
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/deagle = 1,
 		/obj/item/ammo_box/magazine/d12g = 3,
 		/obj/item/twohanded/sledgehammer/rockethammer/courtmartial = 1,
 		/obj/item/storage/box/ration/menu_eight = 1,
@@ -329,7 +328,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/sergeantrifleman
 	name = "Lead Rifleman"
-	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/worn
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine
 	head = /obj/item/clothing/head/f13/ncr
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m5mm = 1,
@@ -555,7 +554,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
-	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
+	ADD_TRAIT(H, TRAIT_LIGHT_STEP, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /datum/outfit/job/ncr/f13vetranger
@@ -570,7 +569,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	glasses	= /obj/item/clothing/glasses/sunglasses
 	neck = /obj/item/storage/belt/holster
 	ears = /obj/item/radio/headset/headset_ranger
-	mask = /obj/item/clothing/mask/gas/ranger
 	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bowie = 1,

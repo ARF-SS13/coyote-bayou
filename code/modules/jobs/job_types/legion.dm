@@ -78,7 +78,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_FEARLESS, src) //no phobias for legion!
 
 /obj/item/storage/box/legate
 	name = "legate belongings"
@@ -140,7 +139,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	l_hand = /obj/item/tank/internals/oxygen
 	backpack = null
 	satchel = null
-	ears = /obj/item/radio/headset/headset_legion/cent
 	box = /obj/item/storage/box/legate
 
 
@@ -216,7 +214,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	loadout_options = list(
 		/datum/outfit/loadout/palacent,		// M1919, Spatha, Goliath
 		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR, Spatha
-		/datum/outfit/loadout/centurion,	// CQC, hunting revolver
+		/datum/outfit/loadout/centurion,	// CQC
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -236,7 +234,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13centurion
 	id = /obj/item/card/id/dogtag/legcenturion
 	mask = /obj/item/clothing/mask/bandana/legion/legcenturion
-	ears = /obj/item/radio/headset/headset_legion/cent
 	neck = /obj/item/clothing/neck/mantle/legion
 	gloves = /obj/item/clothing/gloves/legion/plated
 	glasses = /obj/item/clothing/glasses/night/polarizing
@@ -313,10 +310,10 @@ commented out pending rework*/
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/decvetbull,	// Supersledge, 10mm smg, smokebomb
-		/datum/outfit/loadout/decvetwolf,	// Thermic lance, cg45, bitter
-		/datum/outfit/loadout/decvetsnake, //Brush gun, ripper, bitters
-		/datum/outfit/loadout/decvetbrave, //fnfal, m29 snubnose
+		/datum/outfit/loadout/decvetbull,	// Carl Gustaf, Fireaxe, Smoke bomb, slightly better helmet
+		/datum/outfit/loadout/decvetwolf,	// SKS, Spatha
+		/datum/outfit/loadout/decvetsnake,
+		/datum/outfit/loadout/decvetbrave,
 		)
 
 
@@ -388,7 +385,7 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762 = 2,
 		/obj/item/gun/ballistic/revolver/m29 = 1,
-		/obj/item/ammo_box/m44 = 1,
+		/obj/item/ammo_box/magazine/internal/cylinder/rev44 = 1,
 		)
 
 
@@ -409,10 +406,10 @@ commented out pending rework*/
 	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
 	exp_requirements = 720
 
-	loadout_options = list(	//ALL: Gladius, smokebomb
-		/datum/outfit/loadout/decprimfront,	// 10mm SMG, .357 Revolver, lance, throwing kives
-		/datum/outfit/loadout/decprimrear,	// Trail carbine, Ballistic fist, 
-		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 revolver, frags, coffepot bomb
+	loadout_options = list(	//ALL: Gladius
+		/datum/outfit/loadout/decprimfront,	// 10mm SMG, .357 Revolver
+		/datum/outfit/loadout/decprimrear,	// Trail carbine, .357 Revolver
+		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 revolver
 		)
 
 	matchmaking_allowed = list(
@@ -470,7 +467,7 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/ballisticfist = 1,
-		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/ammo_box/tube/m44 = 2,
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 3,
 		)
@@ -503,8 +500,8 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(
-		/datum/outfit/loadout/recdeclegion,	// Uzi, Bumper sword, Smokebomb
-		/datum/outfit/loadout/recdectribal,	// Garand, Throwing spears, Reinforced machete, bottlecap mine
+		/datum/outfit/loadout/recdeclegion,	// .44 Revolver, Bumper sword, Smokebomb
+		/datum/outfit/loadout/recdectribal,	// Lever shotgun, Throwing spears, Reinforced machete
 		)
 
 	matchmaking_allowed = list(
@@ -657,8 +654,9 @@ commented out pending rework*/
 	exp_requirements = 300
 
 	loadout_options = list(	// ALL: .45 Revolver, Machete
-		/datum/outfit/loadout/expsniper,	// Rangemaster, Beartrap
-		/datum/outfit/loadout/expambusher,	// MP5, Bottlecap mine
+		/datum/outfit/loadout/expsniper,	// Lee-Enfield, Smokebomb
+		/datum/outfit/loadout/expambusher,	// Ballistic Fist, Bottlecap mine
+		/datum/outfit/loadout/expduelist, // .45 Revolver
 		)
 
 	matchmaking_allowed = list(
@@ -676,9 +674,6 @@ commented out pending rework*/
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
-	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
-
-
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13explorer
 	name = "Legion Explorer"
@@ -691,7 +686,7 @@ commented out pending rework*/
 	l_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
-		/obj/item/ammo_box/c45rev = 1,
+		/obj/item/ammo_box/c45/improvised = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/melee/onehanded/machete = 1,
@@ -721,6 +716,19 @@ commented out pending rework*/
 		)
 
 
+/datum/outfit/loadout/expduelist
+	name = "Duelist"
+	glasses = /obj/item/clothing/glasses/sunglasses/big
+	suit_store = /obj/item/gun/ballistic/revolver/revolver45/gunslinger
+	backpack_contents = list(
+		/obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger = 2,
+		/obj/item/ammo_box/a45lcbox = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 1,
+		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		)
+
+
+
 ///////////////////
 ////Legionnaires///
 ///////////////////
@@ -739,7 +747,7 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(	//ALL: Gladius
-		/datum/outfit/loadout/vetmchammer,	// SLEDGE AND FISTS AND NOTHING FUCKING ELSE
+		/datum/outfit/loadout/vetshielder,	// .44 DA Revolver, Shield, Armor plate
 		/datum/outfit/loadout/vetrifle,		// Trail gun, .357 Revolver
 		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Bola, Legion Lance
 		/datum/outfit/loadout/vetsmg, 		// Carl Gustaf, .357 Revolver
@@ -781,10 +789,11 @@ commented out pending rework*/
 
 /datum/outfit/loadout/vetshielder
 	name = "Enforcer"
-	suit_store = /obj/item/twohanded/sledgehammer/supersledge
+	suit_store = /obj/item/gun/energy/laser/pistol
 	backpack_contents = list(
-		/obj/item/melee/unarmed/maceglove = 1,
+		/obj/item/melee/unarmed/sappers = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 3,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/stack/crafting/armor_plate = 4,
 		)
@@ -816,7 +825,7 @@ commented out pending rework*/
 	name = "Sharpshooter"
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
-		/obj/item/ammo_box/tube/m44/ = 3,
+		/obj/item/ammo_box/magazine/internal/shot/tube44 = 3,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/melee/onehanded/knife/throwing = 2,
@@ -1042,8 +1051,7 @@ commented out pending rework*/
 		/obj/item/stack/sheet/cloth/thirty = 1,
 		/obj/item/stack/sheet/prewar/twenty = 1,
 		/obj/item/weldingtool = 1,
-		/obj/item/book/granter/trait/explosives = 1,
-		/obj/item/book/granter/trait/explosives_advanced = 1
+		/obj/item/book/granter/trait/explosives = 1
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13campfollower/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1285,8 +1293,8 @@ Venator  - Zero slots, role built on cloning vet ranger, linear just vastly bett
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_SILENT_STEP, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13venator
 	name = "Legion Venator"

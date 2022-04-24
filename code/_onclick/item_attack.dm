@@ -92,7 +92,6 @@
 	var/bigleagues = force*0.25
 	var/buffout = force*0.25
 	var/smutant = force*0.25
-	var/ghoulmelee = force*0.70 //negative trait, this will cut 70% of the damage done by melee
 
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
 
@@ -106,10 +105,7 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force += smutant
-	
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
-		force -= ghoulmelee
-	
+
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)

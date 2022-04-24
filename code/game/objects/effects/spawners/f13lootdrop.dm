@@ -2014,7 +2014,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/book/granter/trait/techno = 10,
 				/obj/item/book/granter/trait/pa_wear = 1,
 				/obj/item/book/granter/trait/explosives = 10,
-				/obj/item/book/granter/trait/explosives_advanced = 5,
+				/obj/item/book/granter/trait/explosives_advanced = 1,
 				/obj/item/book/granter/trait/rifleman = 5,
 				/obj/item/book/granter/crafting_recipe/gunsmith_two = 20,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three = 10,

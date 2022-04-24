@@ -296,7 +296,6 @@
 	jitter = FALSE
 	brain_damage = FALSE
 	value = REAGENT_VALUE_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/drug/bath_salts
 	name = "Bath Salts"
@@ -309,7 +308,6 @@
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	pH = 8.2
 	value = REAGENT_VALUE_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/drug/bath_salts/on_mob_metabolize(mob/living/L)
 	..()
@@ -580,7 +578,6 @@
 	color = "#E62111"
 	overdose_threshold = 6
 	value = REAGENT_VALUE_VERY_RARE
-	ghoulfriendly = TRUE
 
 /datum/reagent/syndicateadrenals/on_mob_life(mob/living/M)
 	M.adjustStaminaLoss(-5*REM)

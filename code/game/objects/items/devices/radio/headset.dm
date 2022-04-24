@@ -301,9 +301,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	linked_faction = FACTION_NCR
 	factionized = TRUE
 
+/obj/item/radio/headset/headset_ncr/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
+
 /obj/item/radio/headset/headset_ranger
 	name = "Ranger radio headset"
-	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r. Protects ears from flashbangs."
+	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ranger
 	linked_faction = FACTION_NCR
@@ -313,16 +317,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
-
 /obj/item/radio/headset/headset_ncr_com
 	name = "NCR Command radio headset"
-	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r. Protects ears from flashbangs."
+	desc = "This is used by the New California Republic.\nTo access the NCR channel, use :w. \nTo access the Ranger channel, use :r"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_ranger
 	linked_faction = FACTION_NCR
 	factionized = TRUE
-	command = TRUE
 
 /obj/item/radio/headset/headset_ncr_com/ComponentInitialize()
 	. = ..()
@@ -337,19 +339,13 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	linked_faction = FACTION_LEGION
 	factionized = TRUE
 
-/obj/item/radio/headset/headset_legion/cent
-	desc = "This is used by the Centurion of Caesar's Legion.\nTo access the Legion channel, use :l. Protects ears from flashbangs."
-	command = TRUE
-	icon_state = "sec_headset_alt"
-	item_state = "sec_headset_alt"
-
-/obj/item/radio/headset/headset_legion/cent/ComponentInitialize()
+/obj/item/radio/headset/headset_legion/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_bos
 	name = "brotherhood radio headset"
-	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q. Protects ears from flashbangs."
+	desc = "This is used by the brotherhood of steel.\nTo access the BOS channel, use :q."
 	icon_state = "cent_headset"
 	keyslot = new /obj/item/encryptionkey/headset_bos
 	linked_faction = FACTION_BROTHERHOOD
@@ -359,22 +355,15 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
-/obj/item/radio/headset/headset_bos/command
-	command = TRUE
-	icon_state = "cent_headset_alt"
-
 /obj/item/radio/headset/headset_enclave
 	name = "enclave radio headset"
-	desc = "This is used by the enclave.\nTo access the enclave channel, use :z. Protects ears from flashbangs."
-	icon_state = "syndie_headset"
+	desc = "This is used by the enclave.\nTo access the enclave channel, use :z."
+	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_enclave
 
 /obj/item/radio/headset/headset_enclave/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
-
-/obj/item/radio/headset/headset_enclave/command
-	command = TRUE
 
 /obj/item/radio/headset/headset_khans
 	name = "khan radio headset"
@@ -382,6 +371,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "syndie_headset" 
 	item_state = "headset_alt"
 	keyslot = new /obj/item/encryptionkey/headset_khans
+
+/obj/item/radio/headset/headset_khans/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/wearertargeting/earprotection, list(SLOT_EARS))
 
 /obj/item/radio/headset/headset_town
 	name = "town radio headset"
