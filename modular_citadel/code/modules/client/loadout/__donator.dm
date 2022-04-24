@@ -94,7 +94,7 @@
 	ckeywhitelist = list("vaktus4")
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
-	new /obj/item/melee/transforming/old_rusty(src)
+	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"

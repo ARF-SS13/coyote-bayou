@@ -145,6 +145,16 @@
 	desc = "Avast ye wasteys!"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
+	
+/obj/item/clothing/glasses/eyepatch/goji
+	name = "emblazoned eyepatch"
+	desc = "You have the eye of a mad dog!"
+	icon_state = "Gojipatch"
+	item_state = "Gojipatch"
+	darkness_view = 24
+	flash_protect = -2
+	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+	glass_colour_type = /datum/client_colour/glass_colour/green
 
 /obj/item/clothing/glasses/eyepatch/syndicate
 	name = "cybernetic eyepatch"

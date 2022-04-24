@@ -169,6 +169,14 @@
 	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 	var/boottoggled = FALSE
 
+/obj/item/clothing/shoes/f13/military/khan/Goji
+	name = "steel-tipped Snakeskin Loafers"
+	desc = "A pair of Snakeskin Loafers reinforced with metal toe caps."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	icon_state = "Gojishoes"
+	item_state = "Gojishoes"
+	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
+
 /obj/item/clothing/shoes/f13/military/khan/AltClick(mob/user)
 	. = ..()
 	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
