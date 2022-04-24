@@ -233,20 +233,20 @@ Class Procs:
 	update_icon()
 
 /obj/machinery/proc/auto_use_power()
-	if(!powered(power_channel))
+	/*if(!powered(power_channel))
 		return 0
 	if(use_power == 1)
 		use_power(idle_power_usage,power_channel)
 	else if(use_power >= 2)
-		use_power(active_power_usage,power_channel)
+		use_power(active_power_usage,power_channel)*/
 	return 1
 
 /obj/machinery/proc/is_operational()
-	return !(stat & (NOPOWER|BROKEN|MAINT))
+	return !(stat & (BROKEN|MAINT))
 
 /obj/machinery/can_interact(mob/user)
 	var/silicon = hasSiliconAccessInArea(user) || IsAdminGhost(user)
-	if((stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE))
+	if((stat & (BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE))
 		return FALSE
 	if(panel_open && !(interaction_flags_machine & INTERACT_MACHINE_OPEN))
 		if(!silicon || !(interaction_flags_machine & INTERACT_MACHINE_OPEN_SILICON))
