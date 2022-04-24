@@ -769,10 +769,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building)
-"apt" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "apw" = (
 /obj/structure/table,
 /obj/item/reagent_containers/glass/rag/towel,
@@ -1399,14 +1395,6 @@
 /obj/item/trash/f13/porknbeans,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"aDx" = (
-/obj/machinery/hydroponics/soil{
-	color = "#9c9c9c"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	color = "#9c9c9c"
-	},
-/area/f13/village)
 "aDA" = (
 /obj/structure/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt{
@@ -3563,15 +3551,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"bvA" = (
-/obj/machinery/conveyor/auto{
-	dir = 4
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
 "bvP" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/barber{
@@ -3592,7 +3571,6 @@
 /area/f13/building)
 "bwg" = (
 /obj/machinery/light/small/broken,
-/obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "bwn" = (
@@ -3794,7 +3772,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bBk" = (
-/obj/machinery/hydroponics/soil,
 /mob/living/simple_animal/chick,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -9328,10 +9305,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/ncr)
-"dTv" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "dUd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10301,7 +10274,6 @@
 /area/f13/wasteland)
 "emN" = (
 /obj/machinery/light/small,
-/obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/dirt{
 	barefootstep = "sand";
 	clawfootstep = "sand";
@@ -12574,7 +12546,6 @@
 	},
 /area/f13/wasteland)
 "fgb" = (
-/obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/dirt{
 	barefootstep = "sand";
 	clawfootstep = "sand";
@@ -12949,13 +12920,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/brotherhood/surface)
-"fpv" = (
-/obj/machinery/hydroponics/soil,
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "fpJ" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin,
@@ -21412,7 +21376,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "iyc" = (
-/obj/machinery/hydroponics/soil,
 /obj/structure/flora/wasteplant/wild_broc{
 	pixel_y = 4
 	},
@@ -23490,12 +23453,6 @@
 	dir = 8
 	},
 /turf/open/floor/f13,
-/area/f13/building)
-"jkA" = (
-/obj/machinery/mineral/processing_unit_console{
-	machinedir = 1
-	},
-/turf/closed/wall/r_wall/rust,
 /area/f13/building)
 "jkB" = (
 /obj/structure/chair/comfy{
@@ -29794,10 +29751,6 @@
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"lRX" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/farm)
 "lRZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -31276,13 +31229,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
-/area/f13/building)
-"mtC" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "mtK" = (
 /obj/machinery/door/unpowered/securedoor{
@@ -36675,15 +36621,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"oDv" = (
-/obj/machinery/conveyor/auto{
-	dir = 6
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
 "oDG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -37233,16 +37170,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/village)
-"oRu" = (
-/obj/machinery/mineral/processing_unit{
-	input_dir = 8;
-	output_dir = 4
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
 "oRE" = (
 /obj/structure/chair/wood,
 /obj/structure/nest/raider{
@@ -39541,13 +39468,6 @@
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
-	},
-/area/f13/building)
-"pPX" = (
-/obj/machinery/mineral/unloading_machine,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
 "pQb" = (
@@ -43417,12 +43337,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
-"rzz" = (
-/obj/machinery/mineral/stacking_unit_console{
-	machinedir = 5
-	},
-/turf/closed/wall/r_wall/rust,
-/area/f13/building)
 "rzE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden,
@@ -44084,10 +43998,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"rOj" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/inside/dirt,
-/area/f13/wasteland)
 "rOm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/old{
@@ -47215,7 +47125,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tcm" = (
-/obj/machinery/hydroponics/soil,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -47380,16 +47289,6 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/village)
-"thv" = (
-/obj/machinery/mineral/stacking_machine{
-	input_dir = 1;
-	output_dir = 2
-	},
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
 "thw" = (
 /obj/structure/fence/corner,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -51334,10 +51233,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"uJr" = (
-/obj/machinery/hydroponics/soil,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "uJB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
@@ -52343,11 +52238,6 @@
 /obj/structure/railing/corner,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/brotherhood/surface)
-"veF" = (
-/obj/machinery/hydroponics/soil,
-/mob/living/simple_animal/cow/brahmin,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "veG" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -55064,14 +54954,6 @@
 /obj/item/reagent_containers/pill/patch/turbo,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"woN" = (
-/obj/structure/plasticflaps,
-/obj/machinery/conveyor/auto,
-/turf/open/floor/plasteel/barber{
-	icon = 'icons/turf/f13floors2.dmi';
-	icon_state = "bluerustychess2"
-	},
-/area/f13/building)
 "woP" = (
 /obj/structure/car,
 /turf/open/indestructible/ground/outside/dirt,
@@ -61497,9 +61379,9 @@ gcK
 gcK
 gcK
 mwp
-apt
 mwp
-apt
+mwp
+mwp
 mwp
 gcK
 gcK
@@ -61754,9 +61636,9 @@ gcK
 gcK
 mwp
 mwp
-apt
 mwp
-apt
+mwp
+mwp
 mwp
 mwp
 mwp
@@ -61957,9 +61839,9 @@ aji
 fyf
 tBN
 mvv
-rjH
 mvv
-rjH
+mvv
+mvv
 mvv
 bpD
 fyf
@@ -62214,9 +62096,9 @@ aji
 fyf
 tBN
 mvv
-rjH
 mvv
-rjH
+mvv
+mvv
 mvv
 doX
 wDc
@@ -62268,9 +62150,9 @@ gcK
 gcK
 mwp
 mwp
-apt
 mwp
-apt
+mwp
+mwp
 mwp
 mwp
 mwp
@@ -62525,9 +62407,9 @@ gcK
 gcK
 mwp
 mwp
-apt
 mwp
-apt
+mwp
+mwp
 mwp
 gcK
 gcK
@@ -65914,8 +65796,8 @@ koD
 gcK
 gcK
 dCV
-pPX
-dCV
+mZD
+mZD
 lTw
 mZD
 dCV
@@ -66021,8 +65903,8 @@ fyf
 fyf
 thG
 tUk
-rOj
-rOj
+tUk
+tUk
 tUk
 thG
 fyf
@@ -66171,8 +66053,8 @@ koD
 gcK
 gcK
 dCV
-bvA
-mNT
+mZD
+mZD
 rXj
 rXj
 hkA
@@ -66428,8 +66310,8 @@ koD
 gcK
 gcK
 dCV
-oRu
-jkA
+mZD
+mZD
 mZD
 rXj
 hkA
@@ -66535,8 +66417,8 @@ fyf
 fyf
 thG
 tUk
-rOj
-rOj
+tUk
+tUk
 tUk
 thG
 fyf
@@ -66685,9 +66567,9 @@ koD
 gcK
 gcK
 dCV
-bvA
-mNT
-rzz
+mZD
+mZD
+mZD
 cEJ
 dCV
 rXj
@@ -66942,9 +66824,9 @@ koD
 gcK
 gcK
 dCV
-oDv
-thv
-woN
+mZD
+mZD
+mZD
 oIm
 dCV
 rXj
@@ -67049,8 +66931,8 @@ gcK
 fyf
 thG
 pbX
-rOj
-rOj
+tUk
+tUk
 pbX
 thG
 fyf
@@ -70585,8 +70467,8 @@ fyf
 fyf
 tBN
 skt
-rjH
-rjH
+mvv
+mvv
 gcK
 uqa
 uqa
@@ -71100,7 +70982,7 @@ fyf
 tBN
 mvv
 iyc
-rjH
+mvv
 gcK
 gcK
 gcK
@@ -71810,9 +71692,9 @@ rpu
 rpu
 rpu
 yjG
-dTv
 fyf
-dTv
+fyf
+fyf
 thG
 kxQ
 fyf
@@ -72326,7 +72208,7 @@ rpu
 rCQ
 fyf
 vSS
-dTv
+fyf
 thG
 fyf
 fyf
@@ -72582,7 +72464,7 @@ rpu
 xtL
 uqa
 xtx
-dTv
+fyf
 coD
 uqa
 fyf
@@ -73825,9 +73707,9 @@ ktB
 ktB
 ktB
 uqa
-wOp
+cbr
 xJz
-mtC
+usW
 sYX
 pCn
 wLC
@@ -75346,9 +75228,9 @@ gcK
 gcK
 gcK
 rvo
-rjH
 mvv
-rjH
+mvv
+mvv
 kbF
 aMo
 peu
@@ -80485,11 +80367,11 @@ fyf
 fyf
 tBN
 ueA
-aDx
 aXu
-aDx
 aXu
-aDx
+aXu
+aXu
+aXu
 ueA
 fbq
 boN
@@ -84683,9 +84565,9 @@ ymi
 bRq
 mvv
 lwi
-rjH
 mvv
-rjH
+mvv
+mvv
 bpD
 xLY
 fyf
@@ -84901,11 +84783,11 @@ cWG
 cWG
 evk
 mvv
-rjH
 mvv
-rjH
 mvv
-rjH
+mvv
+mvv
+mvv
 hNT
 srL
 mvv
@@ -85344,11 +85226,11 @@ ijg
 mvv
 mvv
 soY
-lRX
 fbq
-lRX
 fbq
-lRX
+fbq
+fbq
+fbq
 oCA
 azC
 fyf
@@ -85415,11 +85297,11 @@ mvv
 mvv
 srL
 mvv
-rjH
+mvv
 mPS
-rjH
+mvv
 ttW
-rjH
+mvv
 sbD
 uqa
 uqa
@@ -85453,7 +85335,7 @@ tBN
 mvv
 mvv
 mvv
-veF
+fTG
 mvv
 mYO
 mvv
@@ -85601,11 +85483,11 @@ uRJ
 mvv
 mvv
 soY
-lRX
 fbq
-lRX
 fbq
-lRX
+fbq
+fbq
+fbq
 jdg
 azC
 xTK
@@ -85858,11 +85740,11 @@ uRJ
 xaF
 xaF
 luK
-lRX
 fbq
-lRX
 fbq
-lRX
+fbq
+fbq
+fbq
 hlA
 azC
 fyf
@@ -85899,11 +85781,11 @@ qEc
 dlS
 dCV
 xFV
+cbr
 wOp
 wOp
-wOp
-wOp
-wOp
+cbr
+cbr
 gDs
 gXt
 mRK
@@ -86156,11 +86038,11 @@ cOg
 cOg
 dCV
 nbJ
+cbr
 wOp
 wOp
-wOp
-wOp
-wOp
+cbr
+cbr
 mZn
 gYP
 mRK
@@ -86413,11 +86295,11 @@ tOF
 tOF
 dCV
 kiH
+cbr
 wOp
 wOp
-wOp
-wOp
-wOp
+cbr
+cbr
 pXv
 gZG
 xOq
@@ -86494,13 +86376,13 @@ fyf
 fyf
 thG
 tBN
-rjH
 mvv
-rjH
 mvv
-rjH
 mvv
-rjH
+mvv
+mvv
+mvv
+mvv
 qPQ
 tKZ
 fTG
@@ -87008,13 +86890,13 @@ fyf
 fyf
 xHN
 mvv
-rjH
 mvv
-rjH
 mvv
-rjH
 mvv
-rjH
+mvv
+mvv
+mvv
+mvv
 mvv
 tKZ
 amc
@@ -87526,9 +87408,9 @@ mvv
 mvv
 mvv
 ofL
-rjH
 mvv
-rjH
+mvv
+mvv
 mvv
 ucA
 qPQ
@@ -93062,7 +92944,7 @@ uRJ
 jnX
 uvC
 fbq
-lRX
+fbq
 azC
 fyf
 pcG
@@ -93318,7 +93200,7 @@ cbk
 gjP
 gjP
 fbq
-lRX
+fbq
 fbq
 azC
 qOV
@@ -93574,9 +93456,9 @@ uRJ
 xLK
 gjP
 qJB
-lRX
+fbq
 boN
-lRX
+fbq
 bNg
 daU
 pcG
@@ -96148,7 +96030,7 @@ uRJ
 oiu
 mvv
 soY
-lRX
+fbq
 fbq
 xVu
 tTV
@@ -96405,7 +96287,7 @@ uRJ
 srw
 amc
 soY
-lRX
+fbq
 fbq
 xVu
 gjP
@@ -96662,7 +96544,7 @@ uIT
 gjP
 xGH
 soY
-lRX
+fbq
 boN
 fbq
 hCp
@@ -99910,14 +99792,14 @@ qOV
 cWG
 cWG
 bVT
-rjH
-rjH
-rjH
-rjH
-rjH
-rjH
-rjH
-rjH
+mvv
+mvv
+mvv
+mvv
+mvv
+mvv
+mvv
+mvv
 fPU
 cWG
 cWG
@@ -100686,9 +100568,9 @@ mvv
 dys
 dOA
 hlz
-rjH
-rjH
-fpv
+mvv
+mvv
+iwR
 fQu
 mfD
 mfD
@@ -103247,7 +103129,7 @@ gcK
 aIr
 fyf
 fyf
-nme
+fyf
 fyf
 uqa
 qkI
@@ -109301,8 +109183,8 @@ jll
 mnG
 qSk
 waA
-uJa
-uJa
+ggK
+ggK
 ggK
 gcK
 gcK
@@ -109815,8 +109697,8 @@ ufM
 lYA
 ool
 mTd
-uJa
-uJa
+ggK
+ggK
 ggK
 gcK
 gcK
@@ -110567,7 +110449,7 @@ gjP
 fyf
 fyf
 fyf
-osj
+fyf
 fyf
 ptP
 gcK
@@ -110825,7 +110707,7 @@ pEv
 kpM
 kTx
 sLq
-osj
+fyf
 fyf
 gcK
 gcK
@@ -111080,8 +110962,8 @@ thG
 fyf
 fyf
 fyf
-osj
-osj
+fyf
+fyf
 fyf
 gcK
 gcK
@@ -111238,9 +111120,9 @@ jEb
 jSw
 mvv
 stD
-qTe
-qTe
-qTe
+mvv
+mvv
+mvv
 lFm
 mzO
 uXj
@@ -111753,9 +111635,9 @@ stD
 stD
 mvv
 mvv
-qTe
-qTe
-qTe
+mvv
+mvv
+mvv
 mvv
 mqp
 mzO
@@ -112267,9 +112149,9 @@ fff
 mvv
 mvv
 stD
-qTe
-qTe
-qTe
+mvv
+mvv
+mvv
 mvv
 dCL
 hCg
@@ -113296,7 +113178,7 @@ uqa
 uqa
 uqa
 lcl
-qTe
+mvv
 lGH
 gcK
 gcK
@@ -113660,10 +113542,10 @@ csQ
 nqj
 gts
 giZ
-rjH
-rjH
-uJr
-uJr
+mvv
+mvv
+afs
+afs
 uYY
 fyf
 fyf
@@ -114174,10 +114056,10 @@ sYX
 sYX
 giZ
 giZ
-rjH
-rjH
-wOp
-rjH
+mvv
+mvv
+cbr
+mvv
 bpD
 fyf
 fyf
@@ -117587,8 +117469,8 @@ hom
 mwZ
 xfy
 mvv
-rjH
-rjH
+mvv
+mvv
 cdL
 xjZ
 qSg
@@ -118872,8 +118754,8 @@ uqW
 gtS
 lGv
 mvv
-rjH
-rjH
+mvv
+mvv
 cdL
 dXo
 jIz
