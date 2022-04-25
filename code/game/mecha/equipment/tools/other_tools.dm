@@ -142,11 +142,11 @@
 	name = "armor booster module (Close Combat Weaponry)"
 	desc = "Boosts exosuit armor against armed melee attacks. Requires energy to operate."
 	icon_state = "mecha_abooster_ccw"
-	equip_cooldown = 10
-	energy_drain = 50
+	equip_cooldown = 0
+	energy_drain = 100
 	range = 0
-	var/deflect_coeff = 1.15
-	var/damage_coeff = 0.8
+//	var/deflect_coeff = 1
+	var/damage_coeff = 0.75
 	selectable = 0
 
 /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster/proc/attack_react()
@@ -154,17 +154,15 @@
 		start_cooldown()
 		return 1
 
-
-
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster
 	name = "armor booster module (Ranged Weaponry)"
 	desc = "Boosts exosuit armor against ranged attacks. Completely blocks taser shots. Requires energy to operate."
 	icon_state = "mecha_abooster_proj"
-	equip_cooldown = 10
-	energy_drain = 50
+	equip_cooldown = 0
+	energy_drain = 100
 	range = 0
-	var/deflect_coeff = 1.15
-	var/damage_coeff = 0.8
+//	var/deflect_coeff = 1
+	var/damage_coeff = 0.75
 	selectable = 0
 
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/proc/projectile_react()
@@ -180,9 +178,9 @@
 	name = "exosuit repair droid"
 	desc = "An automated repair droid for exosuits. Scans for damage and repairs it. Can fix almost all types of external or internal damage."
 	icon_state = "repair_droid"
-	energy_drain = 50
+	energy_drain = 125
 	range = 0
-	var/health_boost = 1
+	var/health_boost = 2
 	var/icon/droid_overlay
 	var/list/repairable_damage = list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH)
 	selectable = 0
@@ -356,7 +354,7 @@
 	var/max_fuel = 150000
 	var/fuel_per_cycle_idle = 25
 	var/fuel_per_cycle_active = 200
-	var/power_per_cycle = 20
+	var/power_per_cycle = 50
 
 /obj/item/mecha_parts/mecha_equipment/generator/Initialize()
 	. = ..()
@@ -466,8 +464,8 @@
 	max_fuel = 50000
 	fuel_per_cycle_idle = 10
 	fuel_per_cycle_active = 30
-	power_per_cycle = 50
-	var/rad_per_cycle = 30
+	power_per_cycle = 150
+	var/rad_per_cycle = 100
 
 /obj/item/mecha_parts/mecha_equipment/generator/nuclear/generator_init()
 	fuel = new /obj/item/stack/sheet/mineral/uranium(src, 0)

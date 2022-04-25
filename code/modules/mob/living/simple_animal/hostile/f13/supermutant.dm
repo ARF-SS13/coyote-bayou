@@ -238,7 +238,7 @@
 	attack_sound = "punch"
 	retreat_distance = 5
 	minimum_distance = 7
-	projectiletype = /obj/item/projectile/f13plasma/repeater
+	projectiletype = /obj/item/projectile/plasmacarbine
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
 
