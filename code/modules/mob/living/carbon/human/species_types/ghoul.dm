@@ -13,7 +13,7 @@
 	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	punchstunthreshold = 9
 	use_skintones = 0
-	speedmod = 1.1 //slightly slower than humans
+	speedmod = 0.3 //slightly slower than humans
 	sexes = 1
 	disliked_food = NONE
 	liked_food = NONE
