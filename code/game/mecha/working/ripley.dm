@@ -3,10 +3,8 @@
 	name = "\improper APLU \"Ripley\""
 	icon_state = "ripley"
 	step_in = 3 //Move speed, lower is faster.
-	/// How fast the mech is in low pressure
-	var/fast_pressure_step_in = 1.5
-	/// How fast the mech is in normal pressure
-	var/slow_pressure_step_in = 2
+	var/fast_pressure_step_in = 2
+	var/slow_pressure_step_in = 3
 	max_temperature = 20000
 	max_integrity = 200
 	lights_power = 8
@@ -14,17 +12,30 @@
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
-
-	/// Amount of Goliath hides attached to the mech
-	var/hides = 0
-	/// List of all things in Ripley's Cargo Compartment
 	var/list/cargo = new
-	/// How much things Ripley can carry in their Cargo Compartment
 	var/cargo_capacity = 15
+	var/hides = 0
 
 /obj/mecha/working/ripley/Move()
 	. = ..()
+	if(.)
+		collect_ore()
 	update_pressure()
+
+/obj/mecha/working/ripley/proc/collect_ore()
+	if(locate(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp) in equipment)
+		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in cargo
+		if(ore_box)
+			for(var/obj/item/stack/ore/ore in range(1, src))
+				if(ore.Adjacent(src) && ((get_dir(src, ore) & dir) || ore.loc == loc)) //we can reach it and it's in front of us? grab it!
+					ore.forceMove(ore_box)
+
+/obj/mecha/working/ripley/Destroy()
+	for(var/atom/movable/A in cargo)
+		A.forceMove(drop_location())
+		step_rand(A)
+	cargo.Cut()
+	return ..()
 
 /obj/mecha/working/ripley/go_out()
 	..()
@@ -38,12 +49,6 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate,3,/obj/item/stack/sheet/animalhide/goliath_hide,list("melee" = 10, "bullet" = 5, "laser" = 5))
 
-/obj/mecha/working/ripley/Destroy()
-	for(var/atom/movable/A in cargo)
-		A.forceMove(drop_location())
-		step_rand(A)
-	cargo.Cut()
-	return ..()
 
 /obj/mecha/working/ripley/firefighter
 	desc = "Autonomous Power Loader Unit. This model is refitted with additional thermal protection."
@@ -158,6 +163,18 @@
 	output += "</div>"
 	return output
 
+/obj/mecha/working/ripley/proc/update_pressure()
+	var/turf/T = get_turf(loc)
+
+	if(lavaland_equipment_pressure_check(T))
+		step_in = fast_pressure_step_in
+		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
+			drill.equip_cooldown = initial(drill.equip_cooldown)/2
+	else
+		step_in = slow_pressure_step_in
+		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
+			drill.equip_cooldown = initial(drill.equip_cooldown)
+
 /obj/mecha/working/ripley/relay_container_resist(mob/living/user, obj/O)
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing so it falls out of [src].</span>")
 	if(do_after(user, 300, target = O))
@@ -169,21 +186,3 @@
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
 			to_chat(user, "<span class='warning'>You fail to push [O] out of [src]!</span>")
-
-/**
-  * Makes the mecha go faster and halves the mecha drill cooldown if in Lavaland pressure.
-  *
-  * Checks for Lavaland pressure, if that works out the mech's speed is equal to fast_pressure_step_in and the cooldown for the mecha drill is halved. If not it uses slow_pressure_step_in and drill cooldown is normal.
-  */
-/obj/mecha/working/ripley/proc/update_pressure()
-	var/turf/T = get_turf(loc)
-
-	if(lavaland_equipment_pressure_check(T))
-		step_in = fast_pressure_step_in
-		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
-			drill.equip_cooldown = initial(drill.equip_cooldown) * 0.5
-
-	else
-		step_in = slow_pressure_step_in
-		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
-			drill.equip_cooldown = initial(drill.equip_cooldown)

@@ -10,12 +10,12 @@
 	desc = "Equipment for engineering and combat exosuits. This is the drill that'll pierce the heavens!"
 	icon_state = "mecha_drill"
 	equip_cooldown = 15
-	energy_drain = 25
+	energy_drain = 10
 	force = 15
 	harmful = TRUE
 	tool_behaviour = TOOL_DRILL
-	toolspeed = 0.6
-	var/drill_delay = 6
+	toolspeed = 0.9
+	var/drill_delay = 7
 	var/drill_level = DRILL_BASIC
 	mech_flags = EXOSUIT_MODULE_WORKING | EXOSUIT_MODULE_COMBAT
 
@@ -61,13 +61,13 @@
 	return
 
 /turf/closed/wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
-	if(drill.do_after_mecha(src, 50 / drill.drill_level))
+	if(drill.do_after_mecha(src, 60 / drill.drill_level))
 		drill.mecha_log_message("Drilled through [src]")
 		dismantle_wall(TRUE, FALSE)
 
 /turf/closed/wall/r_wall/drill_act(obj/item/mecha_parts/mecha_equipment/drill/drill)
 	if(drill.drill_level >= DRILL_HARDENED)
-		if(drill.do_after_mecha(src, 110 / drill.drill_level))
+		if(drill.do_after_mecha(src, 120 / drill.drill_level))
 			drill.mecha_log_message("Drilled through [src]")
 			dismantle_wall(TRUE, FALSE)
 	else
@@ -141,10 +141,10 @@
 	desc = "Equipment for engineering and combat exosuits. This is an upgraded version of the drill that'll pierce the heavens!"
 	icon_state = "mecha_diamond_drill"
 	equip_cooldown = 10
-	drill_delay = 3
+	drill_delay = 4
 	drill_level = DRILL_HARDENED
 	force = 15
-	toolspeed = 0.4
+	toolspeed = 0.7
 
 
 /obj/item/mecha_parts/mecha_equipment/mining_scanner

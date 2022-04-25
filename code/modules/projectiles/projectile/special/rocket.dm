@@ -115,11 +115,10 @@
 	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/a84mm_br
-	name ="\improper APHE missile"
+	name ="\improper HE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 50
-	armour_penetration = 0.25
+	damage = 30
 	ricochets_max = 0 //it's a MISSILE
 	var/sturdy = list(
 	/turf/closed,

@@ -166,11 +166,7 @@
 // Mech Scattershots
 
 /obj/item/projectile/bullet/scattershot
-	damage = 25
-	icon_state = "mech_autocannon"
-	light_range = 1.5
-	light_power = 0.3
-	light_color = "#FF7F01"
+	damage = 20
 
 /obj/item/projectile/bullet/seed
 	damage = 4
