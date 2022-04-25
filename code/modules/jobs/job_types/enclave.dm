@@ -7,8 +7,8 @@
 
 	access = list(ACCESS_ENCLAVE)
 	minimal_access = list(ACCESS_ENCLAVE)
-	forbids = "Enclave taboos: Fraternizing with outsiders beyond what is absolutly necessary. Aiding Brotherhood members in any way no matter how small."
-	enforces = "Enclave rules: You must maintain the secrecy of the bunker location. Stay in uniform. Act mature and respectful. Obey orders and always remember you are fighting for the only true legitimate power in this land of savages. Wearing gasmasks outside the compound is encouraged but not required."
+	forbids = "Enclave taboos: Aiding Brotherhood members in any way no matter how small."
+	enforces = "Enclave rules: Stay in uniform. Act mature and respectful. Obey orders and always remember you are fighting for the only true legitimate power in this land of savages. Wearing gasmasks outside the compound is encouraged but not required."
 	objectivesList = list("Department of Defense advisory: Collect resources and produce more Patribots, attrition is depleting our reserves.","Department of Defense advisory: Establish checkpoints to show presence, they must not forget who is the legitimate goverment.", "Science Divison advisory: Capture human subjects for experiments, alive. We have some new neurotoxin grenades we wish to do final tests with before field deployment.")
 
 /datum/outfit/job/enclave
@@ -53,7 +53,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	access = list(ACCESS_ENCLAVE, ACCESS_CHANGE_IDS)
-	description = "You are in command of the post, holding the rank of First Lieutenant- albiet honourably. Conduct research and help rebuild America with your Scientists aswell as any research your Scientists wish to pursue, utilise any resources available to you to achieve this."
+	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
 	exp_requirements = 3000
@@ -180,7 +180,7 @@
 	flag = F13USSGT
 	total_positions = 2
 	spawn_positions = 2
-	description = "Entrused with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
+	description = "Entrusted with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists. Obey the Lieutenant-he sets the policies of the Enclave."
 	supervisors = "The Lieutenant and the Gunnery Sergeant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavesgt
 	exp_requirements = 2400
@@ -251,6 +251,8 @@
 		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/gun/medbeam = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
+		/obj/item/book/granter/trait/midsurgery = 1
 		)
 
 /datum/outfit/loadout/combatengie
@@ -271,7 +273,7 @@
 	flag = F13USPRIVATE
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are an operative for the remnants of the Enclave. You are to attempt to present the Enclave in a positive light to the population of the wasteland unless overt action is absolutely necessary."
+	description = "You are an operative for the remnants of the Enclave. Obey your Lieutenant. He sets the Enclave's policies."
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
