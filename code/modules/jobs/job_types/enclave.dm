@@ -148,20 +148,21 @@
 	name = "Your U.S Marine Corps Past"
 	head =			/obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	suit = 			/obj/item/clothing/suit/armor/f13/usmcriot
-	suit_store = 	/obj/item/gun/ballistic/automatic/lsw
+	suit_store = 	/obj/item/gun/ballistic/automatic/assault_rifle
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
 		/obj/item/ammo_box/magazine/m45exp = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
+		/obj/item/book/granter/trait/trekking,
 		)
 
 /datum/outfit/loadout/armoredinfantry
 	name = "Armored Infantry"
 	head =			/obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = 			/obj/item/clothing/suit/armor/f13/power_armor/x02
-	suit_store = 	/obj/item/gun/energy/laser/aer12
+	suit_store = 	/obj/item/minigunpack
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
+		/obj/item/stock_parts/cell/ammo/ecp = 2,
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13gysergeant/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

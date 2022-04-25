@@ -439,8 +439,8 @@ obj/item/shield/riot/bullet_proof
 /obj/item/shield/riot/tower/scrap
 	name = "scrap-tower shield"
 	desc = "A heavy metal tower shield, made from scrap metal. Very unwieldly."
-	icon_state = "shield_tower_scrap"
-	item_state = "shield_tower_scrap"
+	icon_state = "shield_scraptower"
+	item_state = "shield_scraptower"
 	slowdown = 0.35
 	shieldbash_brutedamage = 40
 	shieldbash_stamdmg = 60

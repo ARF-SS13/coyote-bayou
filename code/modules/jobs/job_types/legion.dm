@@ -214,9 +214,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// M1919, Spatha, Goliath
+		/datum/outfit/loadout/palacent,		// 10mm SMG, CQC, Goliath
 		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR, Spatha
 		/datum/outfit/loadout/centurion,	// CQC, hunting revolver
+		/datum/outfit/loadout/centurion,	// M1919
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -257,11 +258,11 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Paladin-Slayer Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/palacent
 	head = /obj/item/clothing/head/helmet/f13/legion/palacent
-	suit_store = /obj/item/gun/ballistic/automatic/m1919
+	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
-		/obj/item/melee/onehanded/machete/spatha = 1,
+		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
+		/obj/item/book/granter/martial/cqc = 1,
 		/obj/item/melee/powerfist/f13/goliath = 1,
-		/obj/item/ammo_box/magazine/mm762 = 1,
 		)
 
 /datum/outfit/loadout/rangerhunter
@@ -277,11 +278,12 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		)
 
 /datum/outfit/loadout/centurion
-	name = "Frontline Centurion"
+	name = "Warlord Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/centurion
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
+	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/book/granter/martial/cqc = 1,
+		/obj/item/ammo_box/magazine/mm762 = 1,
 		/obj/item/gun/ballistic/revolver/hunting = 1,
 		/obj/item/ammo_box/c4570 = 3)
 
@@ -411,7 +413,7 @@ commented out pending rework*/
 
 	loadout_options = list(	//ALL: Gladius, smokebomb
 		/datum/outfit/loadout/decprimfront,	// 10mm SMG, .357 Revolver, lance, throwing kives
-		/datum/outfit/loadout/decprimrear,	// Trail carbine, Ballistic fist, 
+		/datum/outfit/loadout/decprimrear,	// Trail carbine, Ballistic fist,
 		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 revolver, frags, coffepot bomb
 		)
 
@@ -637,9 +639,9 @@ commented out pending rework*/
 /datum/outfit/loadout/vexfox
 	name = "Desert Fox"
 	head = /obj/item/clothing/head/helmet/f13/legion/vet/vexil
-	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
+	suit_store = /obj/item/gun/ballistic/automatic/smg/smg14
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/ammo_box/magazine/smg14 = 2,
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
 
@@ -739,7 +741,7 @@ commented out pending rework*/
 	exp_requirements = 600
 
 	loadout_options = list(	//ALL: Gladius
-		/datum/outfit/loadout/vetmchammer,	// SLEDGE AND FISTS AND NOTHING FUCKING ELSE
+		/datum/outfit/loadout/vetaxe,	// AXE AND FISTS AND NOTHING FUCKING ELSE
 		/datum/outfit/loadout/vetrifle,		// Trail gun, .357 Revolver
 		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Bola, Legion Lance
 		/datum/outfit/loadout/vetsmg, 		// Carl Gustaf, .357 Revolver
@@ -779,9 +781,10 @@ commented out pending rework*/
 		/obj/item/melee/onehanded/machete/gladius = 1,
 		)
 
-/datum/outfit/loadout/vetmchammer
-	name = "Hammertime"
-	suit_store = /obj/item/twohanded/sledgehammer/supersledge
+
+/datum/outfit/loadout/vetaxe
+	name = "Enforcer"
+	suit_store = /obj/item/twohanded/legionaxe
 	backpack_contents = list(
 		/obj/item/melee/unarmed/maceglove = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
@@ -1332,7 +1335,7 @@ datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	shoes =			/obj/item/clothing/shoes/roman
 	suit_store = 	/obj/item/melee/onehanded/machete/forgedmachete
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2, 
+		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/electropack/shockcollar = 3,
 		/obj/item/assembly/signaler/advanced = 3,
