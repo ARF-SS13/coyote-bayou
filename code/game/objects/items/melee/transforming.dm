@@ -93,4 +93,3 @@
 	desc = "A chosen weapon of a hunter made in the image of a cleaving saw but heavily improvised"
 	force = 25
 	force_on = 45 //force when active
-	nemesis_factions = list("deathclaw", "raider")

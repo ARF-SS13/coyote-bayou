@@ -310,7 +310,7 @@
 	slowdown = 0.2
 
 //Battlecoat/Goji
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/goji
 	name = "Golden Geckoskin jacket"
 	desc = "Heavy Geckoskin jacket lined with a bulletproof lining on the inside. On the back the symbol of the Great Khans is displayed proudly."
 	icon_state = "GojiSuit"
@@ -318,7 +318,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|HANDS|FEET
 	armor = list("melee" = 25, "bullet" = 50, "laser" = 50, "energy" = 25, "bomb" = 35, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 0, "wound" = 40)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	
+
 /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
