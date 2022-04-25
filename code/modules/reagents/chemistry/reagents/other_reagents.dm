@@ -2810,3 +2810,194 @@ datum/reagent/eldritch
 /datum/reagent/nutracid/on_mob_life(mob/living/carbon/M)
 	M.adjust_nutrition(-5)
 	..()
+
+/datum/reagent/breast_enlarger
+	name = "Succubus milk"
+	description = "A volatile collodial mixture derived from milk that encourages mammary production via a potent estrogen mix."
+	color = "#E60584" // rgb: 96, 0, 255
+	taste_description = "a milky ice cream like flavour"
+	overdose_threshold = 17
+	metabolization_rate = 0.25
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/breast_enlarger/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M)) //The monkey clause
+		if(volume >= 15) //To prevent monkey breast farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/breasts/B = new /obj/item/organ/genital/breasts(T)
+			M.visible_message("<span class='warning'>A pair of breasts suddenly fly out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			B.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BREASTS) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/breast_enlarger/on_mob_life(mob/living/carbon/M) //Increases breast size
+	if(!ishuman(M))//Just in case
+		return..()
+
+	var/mob/living/carbon/human/H = M
+	//If they've opted out, ignore and return early.
+	if(!(H.client?.prefs.cit_toggles & BREAST_ENLARGEMENT))
+		return..()
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	//otherwise proceed as normal
+	if(!B) //If they don't have breasts, give them breasts.
+
+		B = new
+		if(H.dna.species.use_skintones && H.dna.features["genitals_use_skintone"])
+			B.color = SKINTONE2HEX(H.skin_tone)
+		else if(M.dna.features["breasts_color"])
+			B.color = "#[M.dna.features["breasts_color"]]"
+		else
+			B.color = SKINTONE2HEX(H.skin_tone)
+		B.size = "flat"
+		B.cached_size = 0
+		B.prev_size = 0
+		to_chat(H, "<span class='warning'>Your chest feels warm, tingling with newfound sensitivity.</b></span>")
+		H.reagents.remove_reagent(type, 5)
+		B.Insert(H)
+
+	B.modify_size(0.05)
+	return ..()
+
+/datum/reagent/breast_enlarger/overdose_process(mob/living/carbon/M) //Turns you into a female if male and ODing, doesn't touch nonbinary and object genders.
+	if(!(M.client?.prefs.cit_toggles & FORCED_FEM))
+		return ..()
+
+	var/obj/item/organ/genital/penis/P = M.getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/genital/vagina/V = M.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/genital/womb/W = M.getorganslot(ORGAN_SLOT_WOMB)
+
+	if(M.gender == MALE)
+		M.set_gender(FEMALE)
+
+	if(P)
+		P.modify_size(-0.05)
+	if(T)
+		qdel(T)
+	if(!V)
+		V = new
+		V.Insert(M)
+	if(!W)
+		W = new
+		W.Insert(M)
+	return ..()
+
+/datum/reagent/BEsmaller
+	name = "Modesty milk"
+	description = "A volatile collodial mixture derived from milk that encourages mammary reduction via a potent estrogen mix. Produced by reacting impure Succubus milk."
+	color = "#E60584" // rgb: 96, 0, 255
+	taste_description = "a milky ice cream like flavour"
+	metabolization_rate = 0.25
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/BEsmaller/on_mob_life(mob/living/carbon/M)
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	if(!(M.client?.prefs.cit_toggles & BREAST_ENLARGEMENT) || !B)
+		return ..()
+	B.modify_size(-0.05)
+	return ..()
+	
+/datum/reagent/penis_enlarger // Due to popular demand...!
+	name = "Incubus draft"
+	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I thought it would be funny to include it in the reagents, but I don't think many would find it funny? dumb
+	color = "#888888" // This is greyish..?
+	taste_description = "chinese dragon powder"
+	overdose_threshold = 17 //ODing makes you male and removes female genitals
+	metabolization_rate = 0.5
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/penis_enlarger/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M)) //Just monkeying around.
+		if(volume >= 15) //to prevent monkey penis farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/penis/P = new /obj/item/organ/genital/penis(T)
+			M.visible_message("<span class='warning'>A penis suddenly flies out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			P.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_PENIS) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/penis_enlarger/on_mob_life(mob/living/carbon/M) //Increases penis size, 5u = +1 inch.
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	if(!(H.client?.prefs.cit_toggles & PENIS_ENLARGEMENT))
+		return ..()
+	var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+	//otherwise proceed as normal
+	if(!P)//They do have a preponderance for escapism, or so I've heard.
+
+		P = new
+		P.length = 1
+		to_chat(H, "<span class='warning'>Your groin feels warm, as you feel a newly forming bulge down below.</b></span>")
+		P.prev_length = 1
+		H.reagents.remove_reagent(type, 5)
+		P.Insert(H)
+
+	P.modify_size(0.1)
+	return ..()
+
+/datum/reagent/penis_enlarger/overdose_process(mob/living/carbon/human/M) //Turns you into a male if female and ODing, doesn't touch nonbinary and object genders.
+	if(!istype(M))
+		return ..()
+	// let's not kill them if they didn't consent.
+	if(!(M.client?.prefs.cit_toggles & FORCED_MASC))
+		return..()
+
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/genital/vagina/V = M.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/genital/womb/W = M.getorganslot(ORGAN_SLOT_WOMB)
+
+	if(M.gender == FEMALE)
+		M.set_gender(MALE)
+
+	if(B)
+		B.modify_size(-0.05)
+	if(M.getorganslot(ORGAN_SLOT_VAGINA))
+		qdel(V)
+	if(W)
+		qdel(W)
+	if(!T)
+		T = new
+		T.Insert(M)
+	return ..()
+
+/datum/reagent/PEsmaller // Due to cozmo's request...!
+	name = "Chastity draft"
+	description = "A volatile collodial mixture derived from various masculine solutions that encourages a smaller gentleman's package via a potent testosterone mix. Produced by reacting impure Incubus draft."
+	color = "#888888" // This is greyish..?
+	taste_description = "chinese dragon powder"
+	metabolization_rate = 0.5
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/PEsmaller/on_mob_life(mob/living/carbon/M)
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+	if(!(H.client?.prefs.cit_toggles & PENIS_ENLARGEMENT) || !P)
+		return..()
+
+	P.modify_size(-0.1)
+	..()

@@ -106,7 +106,7 @@
 	name = "Synthetic-derived growth factor"
 	id = /datum/reagent/fermi/SDGF
 	results = list(/datum/reagent/fermi/SDGF = 3)
-	//required_reagents = list(/datum/reagent/stable_plasma = 1.5, /datum/reagent/medicine/clonexadone = 1.5, /datum/reagent/uranium = 1.5, /datum/reagent/medicine/synthflesh = 1.5)
+	required_reagents = list(/datum/reagent/stable_plasma = 1.5, /datum/reagent/medicine/clonexadone = 1.5, /datum/reagent/uranium = 1.5, /datum/reagent/medicine/synthflesh = 1.5)
 	mix_message = "the reaction gives off a blorble!"
 	required_temp = 1
 	//FermiChem vars:
@@ -243,7 +243,7 @@
 	name = "Naninte bain"
 	id = /datum/reagent/fermi/nanite_b_gone
 	results = list(/datum/reagent/fermi/nanite_b_gone = 4)
-	//required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/uranium = 1, /datum/reagent/iron = 1, /datum/reagent/medicine/salglu_solution = 1)
+	required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/uranium = 1, /datum/reagent/iron = 1, /datum/reagent/medicine/salglu_solution = 1)
 	mix_message = "the reaction gurgles, encapsulating the reagents in flesh before the emp can be set off."
 	required_temp = 450//To force fermireactions before EMP.
 	//FermiChem vars:
@@ -353,7 +353,7 @@ datum/chemical_reaction/fermi/eigenstate
 	name = "Eigenstasium"
 	id = /datum/reagent/fermi/eigenstate
 	results = list(/datum/reagent/fermi/eigenstate = 1)
-	//required_reagents = list(/datum/reagent/bluespace = 1, /datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1)
+	required_reagents = list(/datum/reagent/bluespace = 1, /datum/reagent/stable_plasma = 1, /datum/reagent/consumable/caramel = 1)
 	mix_message = "the reaction zaps suddenly!"
 	//FermiChem vars:
 	OptimalTempMin 		= 350 // Lower area of bell curve for determining heat based rate reactions
@@ -380,3 +380,62 @@ datum/chemical_reaction/fermi/eigenstate
 	if(location)
 		E.location_created = location
 		E.data["location_created"] = location
+
+/datum/chemical_reaction/fermi/plushmium // done
+	name = "Plushification serum"
+	id = /datum/reagent/fermi/plushmium
+	results = list(/datum/reagent/fermi/plushmium = 5)
+	required_reagents = list(/datum/reagent/medicine/strange_reagent = 5, /datum/reagent/drug/happiness = 3, /datum/reagent/blood = 10, /datum/reagent/consumable/laughter = 5, /datum/reagent/toxin/bad_food = 6)
+	//mix_message = ""
+	//FermiChem vars:
+	OptimalTempMin 	= 400
+	OptimalTempMax 	= 666
+	ExplodeTemp 	= 800
+	OptimalpHMin 	= 2
+	OptimalpHMax 	= 5
+	ReactpHLim 		= 6
+	//CatalystFact 	= 0 //To do 1
+	CurveSharpT 	= 8
+	CurveSharppH 	= 0.5
+	ThermicConstant = -2
+	HIonRelease 	= -0.1
+	RateUpLim 		= 2
+	FermiChem 		= TRUE
+	FermiExplode 	= TRUE
+	PurityMin		= 0.6
+
+/datum/chemical_reaction/fermi/plushmium/FermiExplode(datum/reagents, var/atom/my_atom, volume, temp, pH)
+	if(volume < 20) //It creates a normal plush at low volume.. at higher amounts, things get slightly more interesting.
+		new /obj/item/toy/plush/beeplushie(get_turf(my_atom))
+	else
+		new /obj/item/toy/plush/plushling(get_turf(my_atom))
+	my_atom.visible_message("<span class='warning'>The reaction suddenly zaps, creating a plushie!</b></span>")
+	my_atom.reagents.clear_reagents()
+
+/datum/chemical_reaction/fermi/basic_buffer/FermiFinish(datum/reagents/holder, atom/my_atom) //might need this
+	var/datum/reagent/fermi/basic_buffer/Fb = locate(/datum/reagent/fermi/basic_buffer) in my_atom.reagents.reagent_list
+	if(!Fb)
+		return
+	Fb.data = 14
+	
+/datum/chemical_reaction/fermi/furranium
+	name = "Furranium"
+	id = /datum/reagent/fermi/furranium
+	results = list(/datum/reagent/fermi/furranium = 5)
+	required_reagents = list(/datum/reagent/drug/aphrodisiac = 1, /datum/reagent/moonsugar = 1, /datum/reagent/silver = 2, /datum/reagent/medicine/salglu_solution = 1)
+	mix_message = "You think you can hear a howl come from the beaker."
+	//FermiChem vars:
+	OptimalTempMin 	= 350
+	OptimalTempMax 	= 600
+	ExplodeTemp 	= 700
+	OptimalpHMin 	= 8
+	OptimalpHMax 	= 10
+	ReactpHLim 		= 2
+	//CatalystFact 	= 0 //To do 1
+	CurveSharpT 	= 2
+	CurveSharppH 	= 0.5
+	ThermicConstant = -10
+	HIonRelease 	= -0.1
+	RateUpLim 		= 2
+	FermiChem 		= TRUE
+	PurityMin		= 0.3
