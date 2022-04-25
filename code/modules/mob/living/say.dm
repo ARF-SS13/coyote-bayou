@@ -285,19 +285,16 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 //		yellareas = get_areas_in_range(message_range*0.5, source)	//CIT CHANGE - ditto
 	for(var/_M in GLOB.player_list)
 		var/mob/M = _M
+		if(QDELETED(M)) //Some times nulls and deleteds stay in this list. This is a workaround to prevent ic chat breaking for everyone when they do.
+			continue
 		if(M.stat != DEAD) //not dead, not important
-/*			if(yellareas)	//CIT CHANGE - see above. makes yelling penetrate walls
-				var/area/A = get_area(M)	//CIT CHANGE - ditto
-				if(istype(A) && A.ambientsounds != SPACE && (A in yellareas))	//CIT CHANGE - ditto
-					listening |= M	//CIT CHANGE - ditto
-*/
 			continue
 		if(!M.client || !client) //client is so that ghosts don't have to listen to mice
 			continue
 		if(get_dist(M, source) > 7 || M.z != z) //they're out of range of normal hearing
-			if(eavesdropping_modes[message_mode] && !(M.client.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
+			if(eavesdropping_modes[message_mode] && !(M.client?.prefs.chat_toggles & CHAT_GHOSTWHISPER)) //they're whispering and we have hearing whispers at any range off
 				continue
-			if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
+			if(!(M.client?.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 				continue
 		listening |= M
 		the_dead[M] = TRUE
