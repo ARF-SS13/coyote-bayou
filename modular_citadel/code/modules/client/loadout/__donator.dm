@@ -13,6 +13,13 @@
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/storage/belt/holster/ranger45
 	geargroupID = list("DONORTEST") //This is a list mainly for the sake of testing, but geargroupID works just fine with ordinary strings
+
+/datum/gear/donator/monke1818
+	name = "CIA Badge"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/clothing/accessory/cia_badge
+	ckeywhitelist = list("monke1818")
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -74,7 +81,7 @@
 	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
 	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
 	new /obj/item/toy/figure/dsquad(src)
-	
+
 
 /datum/gear/donator/kits/canadian
 	name = "Canadian"
@@ -86,7 +93,7 @@
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
-	
+
 
 /datum/gear/donator/kits/vaktus
 	name = "Vaks goods"
