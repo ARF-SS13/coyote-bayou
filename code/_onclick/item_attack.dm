@@ -92,7 +92,7 @@
 	var/bigleagues = force*0.25
 	var/buffout = force*0.25
 	var/smutant = force*0.25
-	var/ghoulmelee = force*0.70 //negative trait, this will cut 70% of the damage done by melee
+	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
 
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
 

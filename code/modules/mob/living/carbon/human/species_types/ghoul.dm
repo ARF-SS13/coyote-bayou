@@ -1,7 +1,6 @@
 //ghouls-heal from radiation, do not breathe. do not go into crit. terrible at melee, easily dismembered. 
-//cannot use medical chemicals to heal brute or burn, must heal from rads, sutures. can use antitoxin chemicals. 
-//incredibly slow, appear dead. rotted organs unable to use for transplant.
-//todo-make them take more damage from melee specifically.
+//cannot use medical chemicals to heal brute or burn, must heal from rads, sutures. can use antitoxin chemicals.  //actually changed my mind i'll give stims reduced effect instead
+//Slower than humans at combat armor speed, appear dead. rotted organs unable to use for transplant.
 //like before, they cannot take piercing wounds or burn wounds or slash wounds, but they can have their bones broken by any source of wound now instead of being impervious
 
 /datum/species/ghoul
@@ -10,18 +9,18 @@
 	say_mod = "rasps"
 	limbs_id = "ghoul"
 	species_traits = list(HAIR,FACEHAIR,HAS_BONE,NOGENITALS, NOBLOOD)
-	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOHARDCRIT, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT, TRAIT_NOPULSE, TRAIT_FAKEDEATH)
+	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOHARDCRIT, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT, TRAIT_FAKEDEATH)
 	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	punchstunthreshold = 9
 	use_skintones = 0
-	speedmod = 1.5 //slow
+	speedmod = 1.1 //slightly slower than humans
 	sexes = 1
 	disliked_food = NONE
 	liked_food = NONE
 	var/info_text = "You are a <span class='danger'>Ghoul.</span>. As pre-war zombified relic, or an unluckily recently made post-necrotic, you cannot bleed, cannot breathe, and heal from radiation. On surface examination, you are indistinguishable from a corpse. \
 					Your <span class='warning'>fragile limbs</span> are a source of vulnerability for you-they are easily dismembered and easily detached, though you can stick them on just as easily. \
-					<span class='boldwarning'>Healing medicines and drugs</span> will have next to no effect on your bizzare biology, with some exceptions. To heal, you must use sutures and ointments, or irradiate yourself-though some medicines, like omnizine, are powerful enough to slowly mend your wounds. \
-					<span class='nicegreen'>Radiation heals you slowly.</span> The more radiation you have, the slower you will move, and too much radiation can hurt you all the same. \
+					<span class='boldwarning'>Stimpaks and powder</span> will have reduced effect on your bizzare biology. Sutures, radiation, and other, non-chemical sources of healing are more effective. All chemicals that do not heal brute or burn work as normal. \
+					<span class='nicegreen'>Radiation heals you slowly.</span> \
 					<span class='warning'>You are terrible at melee</span> and innately slower than humans. You also cannot go into critical condition-ever. You will keep shambling forward until you are <span class='danger'>dead.</span>"
 
 //Ghouls have weak limbs.
@@ -30,16 +29,16 @@
 	to_chat(C, "[info_text]")
 	for(var/obj/item/bodypart/r_arm/b in C.bodyparts)
 		b.max_damage -= 10
-		b.wound_resistance = -40
+		b.wound_resistance = -20
 	for(var/obj/item/bodypart/l_arm/b in C.bodyparts)
 		b.max_damage -= 10
-		b.wound_resistance = -40
+		b.wound_resistance = -20
 	for(var/obj/item/bodypart/r_leg/b in C.bodyparts)
 		b.max_damage -= 10
-		b.wound_resistance = -40
+		b.wound_resistance = -20
 	for(var/obj/item/bodypart/l_leg/b in C.bodyparts)
 		b.max_damage -= 10
-		b.wound_resistance = -40
+		b.wound_resistance = -20
 	C.faction |= "ghoul"
 /datum/species/ghoul/on_species_loss(mob/living/carbon/C)
 	..()
@@ -80,6 +79,10 @@
 		if(prob(5))
 			to_chat(H, "<span class='warning'>You feel sick...</span>")
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
+	if(chem.type == /datum/reagent/medicine/stimpak)
+		H.adjustBruteLoss(1.5) //this is a very shitty way of making it so that they heal at a reduced rate for the emergency fix, i'll make the code cleaner tomorrow
+	if(chem.type == /datum/reagent/medicine/super_stimpak)
+		H.adjustBruteLoss(2.5)
 	return ..()
 
 /datum/species/ghoul/spec_life(mob/living/carbon/human/H)
@@ -94,44 +97,13 @@
 			healpwr = 0
 			is_healing = FALSE
 			H.set_light(0)
-		if(1 to RAD_MOB_SAFE)
-			healpwr = 1
-			is_healing = TRUE
-			H.set_light(0)
-		if(RAD_MOB_SAFE to RAD_BURN_THRESHOLD)
-			healpwr = 2
-			is_healing = TRUE
-			H.set_light(0)
-		if(RAD_BURN_THRESHOLD to RAD_MOB_MUTATE)
+		else
 			healpwr = 3
 			is_healing = TRUE
-			H.set_light(0)
-		if(RAD_MOB_MUTATE to RAD_MOB_KNOCKDOWN)
-			healpwr = 4
 			H.set_light(2, 15, LIGHT_COLOR_GREEN)
-			is_healing = TRUE
-			H.add_movespeed_modifier(/datum/movespeed_modifier/ghoulhealone)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/ghoulhealtwo)
-		if(RAD_MOB_KNOCKDOWN to RAD_MOB_EXTREME)
-			healpwr = 5
-			H.set_light(2, 30, LIGHT_COLOR_GREEN)
-			is_healing = TRUE
-			H.add_movespeed_modifier(/datum/movespeed_modifier/ghoulhealtwo)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/ghoulhealone)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/ghoulhealthree)
-			H.remove_status_effect(/datum/status_effect/ghouldoomed)
-		else
-			healpwr = 6
-			H.add_movespeed_modifier(/datum/movespeed_modifier/ghoulhealthree)
-			H.remove_movespeed_modifier(/datum/movespeed_modifier/ghoulhealtwo)
-			H.set_light(2, 60, LIGHT_COLOR_GREEN)
-			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 1)
-			if(prob(5))
-				to_chat(H, "<span class='cultbold'>You've taken in too much radiation, and it is cooking your brain!'</span>")
-			is_healing = FALSE //removes ghoulheal
-			H.apply_status_effect(/datum/status_effect/ghouldoomed)
 	H.adjustCloneLoss(-healpwr)
 	H.adjustToxLoss(-0.3) //ghouls always heal toxin very slowly no matter what
+	H.adjustStaminaLoss(-20) //ghouls don't get tired ever
 	H.heal_overall_damage(healpwr, healpwr, healpwr)
 	if(is_healing)
 		H.apply_status_effect(/datum/status_effect/ghoulheal)

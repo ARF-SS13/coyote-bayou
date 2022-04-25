@@ -92,6 +92,7 @@
 	overdose_threshold = 14
 	addiction_threshold = 9
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
 
 /datum/reagent/drug/turbo/on_mob_add(mob/M)
 	..()
