@@ -986,7 +986,7 @@ prewar alloys
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
-	custom_materials = list()
+	custom_materials = list(/datum/material/iron = 10000)
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)

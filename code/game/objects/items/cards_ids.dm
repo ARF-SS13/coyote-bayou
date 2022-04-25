@@ -925,6 +925,14 @@
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
 
+/obj/item/card/id/dogtag/vaultiecard
+	name = "Vault Citizenship"
+	desc = "Proof of citizenship to a vault."
+	icon_state = "doctor"
+	item_state = "card-doctor"
+	assignment = "citizenship permit"
+	access = list(ACCESS_BAR)
+	
 /obj/item/card/id/dogtag/MDfakepermit
 	name = "faded medical license"
 	desc = "a revoked medical license. This is why we do not remove people's skeletons "
