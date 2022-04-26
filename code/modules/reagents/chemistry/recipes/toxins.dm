@@ -128,13 +128,6 @@
 	required_reagents = list(/datum/reagent/toxin/mutagen = 1, /datum/reagent/toxin/itching_powder = 3, /datum/reagent/consumable/milk = 1)
 	mix_message = "<span class='danger'>The mixture suddenly becomes clear and looks a lot like water. You feel a strong urge to drink it.</span>"
 
-/datum/chemical_reaction/mutationtoxin/felinid
-	name = "Felinid Mutation Toxin"
-	id = /datum/reagent/mutationtoxin/felinid
-	results = list(/datum/reagent/mutationtoxin/felinid = 5)
-	required_reagents = list (/datum/reagent/toxin/mutagen = 1, /datum/reagent/moonsugar = 2, /datum/reagent/consumable/milk = 1)
-	mix_message = "<span class='danger'>Cat Kitty Cat Cat Kitty Cat Cat.</span>"
-
 /datum/chemical_reaction/spewium
 	name = "Spewium"
 	id = /datum/reagent/toxin/spewium
