@@ -2666,6 +2666,9 @@
 /area/f13/bunker)
 "dNZ" = (
 /obj/structure/stone_tile/block,
+/mob/living/simple_animal/hostile/deathclaw/mother{
+	faction = list("cazador")
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "dOb" = (
@@ -3218,6 +3221,11 @@
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
+"ewf" = (
+/obj/structure/stone_tile/slab/cracked,
+/obj/structure/nest/cazador,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "ewg" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -11246,7 +11254,9 @@
 /area/f13/bunker)
 "qgr" = (
 /obj/structure/stone_tile/slab/cracked,
-/mob/living/simple_animal/hostile/deathclaw/mother,
+/mob/living/simple_animal/hostile/deathclaw/mother{
+	faction = list("cazador")
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "qgB" = (
@@ -72072,7 +72082,7 @@ uLK
 tHQ
 utX
 nMR
-oAl
+bYA
 bYA
 bYA
 bYA
@@ -72586,7 +72596,7 @@ daX
 reW
 daX
 fFh
-oAl
+bYA
 bYA
 bYA
 bYA
@@ -77478,7 +77488,7 @@ wxj
 wxj
 wxj
 qbS
-qbS
+ewf
 eGJ
 bYA
 wxj
