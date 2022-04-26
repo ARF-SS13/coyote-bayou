@@ -520,14 +520,14 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	name = "\improper Enclave identification console"
 	circuit = /obj/item/circuitboard/computer/card/enclave
 	job_list = list(
+		"Enclave Sergeant",
+		"Enclave Private",
+		"Enclave Bunker Duty",
 		"American Citizen",
-		"Recruit Legionnaire",
-		"Prime Legionnaire",
-		"Veteran Legionnaire",
 		)
 	job_req = list(
 		"Enclave Lieutenant",
-		"Enclave Gunnery Sergeant",
+		"Enclave Master Sergeant",
 		)
 
 /obj/machinery/computer/card/bos
