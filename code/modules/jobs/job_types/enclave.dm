@@ -112,7 +112,7 @@
 		H.mind.AddSpell(S)
 
 
-//Gunnery Sergeant
+// Master Sergeant
 
 /datum/job/enclave/f13msergeant
 	title = "Enclave Master Sergeant"
@@ -132,7 +132,7 @@
 		)
 
 /datum/outfit/job/enclave/peacekeeper/f13msergeant
-	name = "Enclave Gunnery Sergeant"
+	name = "Enclave Master Sergeant"
 	jobtype = /datum/job/enclave/f13msergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02

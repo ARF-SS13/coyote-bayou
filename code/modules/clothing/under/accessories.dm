@@ -658,7 +658,7 @@
 	desc = "A rank pin denominating its wearer as Sergeant within United States army."
 	icon_state = "sergeant"
 
-// Gunnery Sergeant
+// Master Sergeant
 /obj/item/clothing/accessory/enclave/master_sergeant
 	name = "(E-8) Master Sergeant rank pins"
 	desc = "A rank pin denominating its wearer as Master Sergeant within United States army."
@@ -677,4 +677,3 @@
 	icon_state = "cia_badge"
 	item_state = "cia_badge"
 	minimize_when_attached = FALSE
-
