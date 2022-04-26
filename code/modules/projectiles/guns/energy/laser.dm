@@ -309,6 +309,30 @@
 	selfcharge = 1 //selfcharging adds 100 a shot
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
+//autolaser, recycled from SS13
+
+/obj/item/gun/energy/laser/auto
+	name = "compact autolaser"
+	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
+	icon_state = "protolaser"
+	item_state = "laser"
+	weapon_weight = WEAPON_MEDIUM
+	w_class = WEIGHT_CLASS_NORMAL
+	charge_sections = 1
+	slowdown = 0.3
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //7dmg, 0 AP, but essentially fires a pinpoint beam
+	automatic = 1
+	autofire_shot_delay = 0.9 //pew pew pew
+	spread = 2
+	can_scope = FALSE
+
+
+/obj/item/gun/energy/laser/auto/oasis
+	name = "autoshock tesla pistol"
+	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
+	ammo_type =  list(/obj/item/projectile/energy/teslacannon/oasis) //8dmg, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
+	slowdown = 0.35
 
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
@@ -383,7 +407,7 @@
 	scope_x_offset = 12
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
-	
+
 /obj/item/gun/energy/laser/aer9/oasis
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
