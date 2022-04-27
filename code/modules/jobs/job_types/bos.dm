@@ -372,7 +372,7 @@ Star Paladin
 		/datum/outfit/loadout/spaladina, //5mm minigun
 		/datum/outfit/loadout/spaladinb, //WT-550
 		/datum/outfit/loadout/spaladinc,  //Aer9
-		/datum/outfit/loadout/spaladintd //Sledge and fist
+		/datum/outfit/loadout/spaladind //Sledge and fist
 		)
 
 	outfit = /datum/outfit/job/bos/f13seniorpaladin
@@ -788,7 +788,7 @@ Senior Knight
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		)
 
-/datum/outfit/loadout/knightd
+/datum/outfit/loadout/sknightd
 	name = "Senior Knight-Cavalry"
 	backpack_contents = list(
 		/obj/item/clothing/accessory/bos/juniorknight=1,
