@@ -36,7 +36,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 40
+	force = 30
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -46,7 +46,6 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	armour_penetration = 0.10
 
 
 
