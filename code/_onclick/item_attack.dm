@@ -135,6 +135,8 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force -= smutant
 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) 
+		force += ghoulmelee
 
 //the equivalent of the standard version of attack() but for object targets.
 /obj/item/proc/attack_obj(obj/O, mob/living/user)
