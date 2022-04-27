@@ -307,7 +307,7 @@
 	force = 15
 	throwforce = 25
 	throw_speed = 4
-	armour_penetration = 0.2
+	armour_penetration = 0.07
 	max_reach = 2
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
@@ -326,7 +326,7 @@
 	icon_state = "spear-claw"
 	icon_prefix = "spear-claw"
 	force = 20
-	armour_penetration = 0.3
+	armour_penetration = 0.15
 	sharpness = SHARP_EDGED
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
