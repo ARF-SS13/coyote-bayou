@@ -15,7 +15,7 @@
 		return FALSE
 	user.visible_message("<span class='notice'>[user] attaches [src] to [M].</span>", "<span class='notice'>You attach [src] to [M].</span>")
 	return TRUE
-	
+
 /obj/item/mecha_parts/chassis
 	name = "Mecha Chassis"
 	icon_state = "backbone"
@@ -220,6 +220,48 @@
 	desc = "A set of armor plates for the Durand. Built heavy to resist an incredible amount of brute force."
 	icon_state = "durand_armor"
 
+//////////// Marauder
+
+/obj/item/mecha_parts/chassis/marauder
+	name = "\improper Marauder chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/marauder
+
+/obj/item/mecha_parts/part/marauder_torso
+	name = "\improper Marauder torso"
+	desc = "A torso part of Marauder. Contains power unit, processing core and life support systems within a robust protective frame."
+	icon_state = "marauder_harness"
+
+/obj/item/mecha_parts/part/marauder_head
+	name = "\improper Marauder head"
+	desc = "A Marauder head. Houses advanced surveillance and targeting sensors."
+	icon_state = "marauder_head"
+
+/obj/item/mecha_parts/part/marauder_left_arm
+	name = "\improper Marauder left arm"
+	desc = "A Marauder left arm. Data and power sockets are compatible with most exosuit tools and weapons. Packs a really mean punch as well."
+	icon_state = "marauder_l_arm"
+
+/obj/item/mecha_parts/part/marauder_right_arm
+	name = "\improper Marauder right arm"
+	desc = "A Marauder right arm. Data and power sockets are compatible with most exosuit tools and weapons. Packs a really mean punch as well."
+	icon_state = "marauder_r_arm"
+
+/obj/item/mecha_parts/part/marauder_left_leg
+	name = "\improper Marauder left leg"
+	desc = "A Marauder left leg. It's heavily armoured to ensure functionality in the most hostile warzones."
+	icon_state = "marauder_l_leg"
+
+/obj/item/mecha_parts/part/marauder_right_leg
+	name = "\improper Marauder right leg"
+	desc = "A Marauder right leg. It's heavily armoured to ensure functionality in the most hostile warzones."
+	icon_state = "marauder_r_leg"
+
+/obj/item/mecha_parts/part/marauder_armor
+	gender = PLURAL
+	name = "\improper Marauder armor plates"
+	desc = "A set of armor plates for the Marauder. An encompassing plasteel-DU alloy designed to withstand extreme shock at the cost of mobility."
+	icon_state = "marauder_armour"
+
 ////////// Firefighter
 
 /obj/item/mecha_parts/chassis/firefighter
@@ -335,3 +377,59 @@
 
 /obj/item/circuitboard/mecha/phazon/main
 	name = "Phazon Central Control module (Exosuit Board)"
+
+/obj/item/circuitboard/mecha/clarke/peripherals
+	name = "Clarke Peripherals Control module (Exosuit Board)"
+	icon_state = "mcontroller"
+
+/obj/item/circuitboard/mecha/clarke/main
+	name = "Clarke Central Control module (Exosuit Board)"
+	icon_state = "mainboard"
+
+/obj/item/circuitboard/mecha/marauder/peripherals
+	name = "Marauder Peripherals Control module (Exosuit Board)"
+	icon_state = "mcontroller"
+
+/obj/item/circuitboard/mecha/marauder/targeting
+	name = "Marauder Weapon Control and Targeting module (Exosuit Board)"
+	icon_state = "mcontroller"
+
+/obj/item/circuitboard/mecha/marauder/main
+	name = "Marauder Central Control module (Exosuit Board)"
+	icon_state = "mainboard"
+
+/////// CLARKE
+
+/obj/item/mecha_parts/chassis/clarke
+	name = "\improper Clarke chassis"
+	construct_type = /datum/component/construction/unordered/mecha_chassis/clarke
+
+/obj/item/mecha_parts/part/clarke_torso
+	name = "\improper Clarke torso"
+	desc = "A torso part of Clarke. Contains power unit, processing core and life support systems."
+	icon_state = "clarke_harness"
+
+/obj/item/mecha_parts/part/clarke_head
+	name = "\improper Clarke head"
+	desc = "A Clarke head. Contains an integrated diagnostic HUD scanner."
+	icon_state = "clarke_head"
+
+/obj/item/mecha_parts/part/clarke_left_arm
+	name = "\improper Clarke left arm"
+	desc = "A Clarke left arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "clarke_l_arm"
+
+/obj/item/mecha_parts/part/clarke_right_arm
+	name = "\improper Clarke right arm"
+	desc = "A Clarke right arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "clarke_r_arm"
+
+/obj/item/mecha_parts/part/clarke_left_tread
+	name = "\improper Clarke right arm"
+	desc = "A Clarke right arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "clarke_l_tread"
+
+/obj/item/mecha_parts/part/clarke_right_tread
+	name = "\improper Clarke right arm"
+	desc = "A Clarke right arm. Data and power sockets are compatible with most exosuit tools."
+	icon_state = "clarke_r_tread"

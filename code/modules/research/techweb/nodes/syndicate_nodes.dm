@@ -3,7 +3,7 @@
 	id = "syndicate_basic"
 	display_name = "Illegal Technology"
 	description = "Dangerous research used to create dangerous objects."
-	prereq_ids = list("adv_engi", "adv_weaponry", "explosive_weapons")
+	prereq_ids = list("adv_engi", "adv_weaponry")//, "explosive_weapons")
 	design_ids = list("decloner", "borg_syndicate_module", "suppressor", "donksofttoyvendor", "donksoft_refill", "syndiesleeper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 

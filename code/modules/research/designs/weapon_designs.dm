@@ -230,10 +230,20 @@
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/firing_pin
+	name = "Firing Pin"
+	desc = "This firing pin allows firearms to be operated."
+	id = "pin"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/glass = 300)
+	build_path = /obj/item/firing_pin
+	category = list("Firing Pins")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+
 /datum/design/pin_mindshield
 	name = "Mindshield Firing Pin"
 	desc = "This is a security firing pin which only authorizes users who are mindshield-implanted."
-	id = "pin_loyalty"
+	id = "pin_mindshield"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 600, /datum/material/diamond = 600, /datum/material/uranium = 200)
 	build_path = /obj/item/firing_pin/implant/mindshield
