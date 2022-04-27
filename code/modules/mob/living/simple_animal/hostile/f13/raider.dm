@@ -106,7 +106,7 @@
 	health = 600
 	retreat_distance = 1
 	minimum_distance = 2
-	projectiletype = /obj/item/projectile/bullet/m44/simple
+	projectiletype = /obj/item/projectile/bullet/m44
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
 	aggro_vision_range = 15

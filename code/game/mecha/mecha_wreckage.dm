@@ -10,7 +10,6 @@
 	density = TRUE
 	anchored = FALSE
 	opacity = 0
-	armor = list("melee" = 50, "bullet" = 30, "laser" = 30, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	var/list/welder_salvage = list(/obj/item/stack/sheet/plasteel, /obj/item/stack/sheet/metal, /obj/item/stack/rods)
 	var/list/wirecutters_salvage = list(/obj/item/stack/cable_coil)
 	var/list/crowbar_salvage = list()
@@ -241,15 +240,3 @@
 			var/part = pick(parts)
 			welder_salvage += part
 			parts -= part
-
-// CLARKE
-
-/obj/structure/mecha_wreckage/clarke
-	name = "\improper Clarke wreckage"
-	icon_state = "clarke-broken"
-	var/list/parts = list(
-				/obj/item/mecha_parts/part/clarke_torso,
-				/obj/item/mecha_parts/part/clarke_head,
-				/obj/item/mecha_parts/part/clarke_left_arm,
-				/obj/item/mecha_parts/part/clarke_right_arm,
-				/obj/item/stack/conveyor)
