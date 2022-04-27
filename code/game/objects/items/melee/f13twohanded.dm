@@ -41,8 +41,8 @@
 	icon_prefix = "legionaxe"
 	force = 30
 	throwforce = 15
-	wound_bonus = 20
-	bare_wound_bonus = 20
+	wound_bonus = 10
+	bare_wound_bonus = 10
 	sharpness = SHARP_EDGED
 	resistance_flags = FIRE_PROOF
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")

@@ -214,9 +214,8 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// 10mm SMG, CQC, Goliath
+		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath
 		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR, Spatha
-		/datum/outfit/loadout/centurion,	// CQC, hunting revolver
 		/datum/outfit/loadout/centurion,	// M1919
 		)
 
@@ -261,7 +260,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
-		/obj/item/book/granter/martial/cqc = 1,
 		/obj/item/melee/powerfist/f13/goliath = 1,
 		)
 
