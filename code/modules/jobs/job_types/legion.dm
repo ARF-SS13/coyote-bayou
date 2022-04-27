@@ -261,6 +261,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
 		/obj/item/melee/powerfist/f13/goliath = 1,
+		/obj/item/book/granter/martial/cqc = 1,
 		)
 
 /datum/outfit/loadout/rangerhunter
@@ -705,19 +706,19 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/bottlecap_mine = 1,
+		/obj/item/grenade/smokebomb = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		)
 
 /datum/outfit/loadout/expsniper
 	name = "Sniper"
 	glasses = /obj/item/clothing/glasses/sunglasses/big
-	suit_store = /obj/item/gun/ballistic/automatic/rangemaster
+	suit_store = /obj/item/gun/ballistic/automatic/marksman/sniper
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762 = 2,
-		/obj/item/restraints/legcuffs/beartrap = 1,
+		/obj/item/grenade/smokebomb = 1,
 		/obj/item/book/granter/trait/rifleman = 1,
 		/obj/item/attachments/scope = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
 		)
 
 

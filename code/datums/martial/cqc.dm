@@ -1,7 +1,7 @@
-#define SLAM_COMBO "GH"
+#define SLAM_COMBO "DH"
 #define KICK_COMBO "HH"
 #define RESTRAIN_COMBO "GG"
-#define PRESSURE_COMBO "DG"
+#define PRESSURE_COMBO "DDD"
 #define CONSECUTIVE_COMBO "DDH"
 
 /datum/martial_art/cqc
@@ -73,6 +73,8 @@
 		playsound(get_turf(A), 'sound/weapons/cqchit1.ogg', 50, 1, -1)
 		D.Dizzy(damage)
 		D.apply_damage(damage + 15, BRUTE)
+		var/atom/throw_target = get_edge_target_turf(D, A.dir)
+		D.throw_at(throw_target, 1, 14, A)
 		log_combat(A, D, "kicked (CQC)")
 	return TRUE
 
@@ -125,12 +127,6 @@
 			return TRUE
 		old_grab_state = A.grab_state
 		D.grabbedby(A, 1)
-		if(old_grab_state == GRAB_PASSIVE)
-			D.drop_all_held_items()
-			A.setGrabState(GRAB_AGGRESSIVE) //Instant agressive grab if on grab intent
-			log_combat(A, D, "grabbed", addition="aggressively")
-			D.visible_message("<span class='warning'>[A] violently grabs [D]!</span>", \
-								"<span class='userdanger'>[A] violently grabs you!</span>")
 		return TRUE
 	return FALSE
 
@@ -196,7 +192,6 @@
 		log_combat(A, D, "knocked out (Chokehold)(CQC)")
 		D.visible_message("<span class='danger'>[A] puts [D] into a chokehold!</span>", \
 							"<span class='userdanger'>[A] puts you into a chokehold!</span>")
-		D.SetSleeping(400)
 		restraining = FALSE
 		if(A.grab_state < GRAB_NECK)
 			A.setGrabState(GRAB_NECK)
@@ -211,13 +206,14 @@
 	set category = "CQC"
 	to_chat(usr, "<b><i>You try to remember some of the basics of CQC.</i></b>")
 
-	to_chat(usr, "<span class='notice'>Slam</span>: Grab Harm. Slam opponent into the ground, knocking them down.")
+	to_chat(usr, "<span class='notice'>Slam</span>: Disarm Harm. Slam opponent into the ground, knocking them down.")
 	to_chat(usr, "<span class='notice'>CQC Kick</span>: Harm Harm. Knocks opponent away. Knocks out stunned or knocked down opponents.")
 	to_chat(usr, "<span class='notice'>Restrain</span>: Grab Grab. Locks opponents into a restraining position, disarm to knock them out with a chokehold.")
-	to_chat(usr, "<span class='notice'>Pressure</span>: Disarm Grab. Decent stamina damage.")
+	to_chat(usr, "<span class='notice'>Pressure</span>: Disarm Disarm Disarm. Decent stamina damage.")
 	to_chat(usr, "<span class='notice'>Consecutive CQC</span>: Disarm Disarm Harm. Mainly offensive move, huge damage and decent stamina damage.")
 
 	to_chat(usr, "<b><i>In addition, by having your throw mode on when being attacked, you enter an active defense mode where you have a chance to block and sometimes even counter attacks done to you.</i></b>")
+	to_chat(usr, "<b><i>YOU DON'T INSTANTLY AGGRO GRAB ANYMORE. DON'T TRY IT BOSS.</i></b>")
 
 ///Subtype of CQC. Only used for the chef.
 /datum/martial_art/cqc/under_siege

@@ -49,14 +49,23 @@
 /datum/crafting_recipe/explosive/coffeepotbomb
 	name = "Coffeepot Bomb"
 	result = /obj/item/grenade/homemade/coffeepotbomb
-	reqs = list(/datum/reagent/blackpowder = 50,
-				/obj/item/crafting/coffee_pot = 1,
+	reqs = list(/obj/item/crafting/coffee_pot = 1,
+				/obj/item/stack/ore/blackpowder = 5,
 				/obj/item/stack/cable_coil = 1,
-				/obj/item/assembly/timer = 1,)
+				/obj/item/assembly/timer = 1)
 	time = 30
 	category = CAT_EXPLOSIVE
 
-
+/datum/crafting_recipe/explosive/bottlecap_mine
+	name = "Bottlecap Mine"
+	result = /obj/item/bottlecap_mine
+	reqs = list(/obj/item/crafting/lunchbox = 1,
+			/obj/item/stack/ore/blackpowder = 1,
+			/obj/item/assembly/prox_sensor = 1,
+			/obj/item/stack/cable_coil = 5,
+			/obj/item/stack/f13Cash/caps = 200)
+	time = 15
+	category = CAT_EXPLOSIVE
 /datum/crafting_recipe/explosive/shrapnelmine
 	name = "Shrapnel Mine"
 	result = /obj/item/mine/shrapnel/random
