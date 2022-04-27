@@ -310,7 +310,7 @@
 
 /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	name = "overcharged laser beam"
-	damage = 34
+	damage = 30
 	armour_penetration = 0.6
 
 /obj/item/projectile/beam/laser/gatling/hitscan //Gatling Laser
