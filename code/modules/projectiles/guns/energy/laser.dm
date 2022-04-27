@@ -316,23 +316,23 @@
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
 	icon_state = "protolaser"
 	item_state = "laser"
-	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_NORMAL
-	charge_sections = 1
+	weapon_weight = WEAPON_LIGHT //dual wielding
 	slowdown = 0.3
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //7dmg, 0 AP, but essentially fires a pinpoint beam
 	automatic = 1
-	autofire_shot_delay = 0.9 //pew pew pew
+	autofire_shot_delay = 0.75 //pew pew pew
 	spread = 2
 	can_scope = FALSE
 
-
+// OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
 	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
-	ammo_type =  list(/obj/item/projectile/energy/teslacannon/oasis) //8dmg, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 5 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
 	slowdown = 0.35
+	weapon_weight = WEAPON_MEDIUM //DO NOT DUAL WIELD
 
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
