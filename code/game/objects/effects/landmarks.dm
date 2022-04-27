@@ -852,7 +852,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "usscientist"
 
 /obj/effect/landmark/start/f13/usgysgt
-	name = "Enclave Master Sergeant"
+	name = "Enclave Gunnery Sergeant"
 
 
 /obj/effect/landmark/start/f13/uslightduty
