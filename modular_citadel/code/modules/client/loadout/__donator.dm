@@ -98,6 +98,17 @@
 	path = /obj/item/storage/box/large/custom_kit/vaktus
 	ckeywhitelist = list("vaktus4")
 
+/obj/item/storage/box/large/custom_kit/burningcold/PopulateContents()
+	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
+	new /obj/item/clothing/mask/bandana/blue(src)
+	new /obj/item/clothing/suit/armored/light/kit/punk(src)
+
+
+/datum/gear/donator/kits/burningcold
+	name = "Burnings Goods"
+	path = /obj/item/storage/box/large/custom_kit/burningcold
+	ckeywhitelist = list("myguy49")
+	
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
