@@ -831,7 +831,7 @@ Raider
 	name = "Preacher"
 	jobtype = /datum/job/wasteland/f13preacher
 
-	id = null
+	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset
 	belt = null
 	uniform = /obj/item/clothing/under/f13/chaplain

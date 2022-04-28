@@ -1,4 +1,51 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aaa" = (
+/obj/structure/nest/gecko,
+/mob/living/simple_animal/hostile/gecko,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"aab" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/eyebot{
+	faction = list("raider");
+	name = "Private McUltra"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/bunker)
+"aac" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	desc = "Another murderer churned out by the wastes, this one seems well disciplined.";
+	name = "Private Malone"
+	},
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
+	},
+/area/f13/bunker)
+"aad" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/booth,
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/den)
+"aae" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/bunker)
+"aaf" = (
+/obj/structure/bed,
+/obj/structure/spider/stickyweb,
+/obj/item/bedsheet/blue,
+/mob/living/simple_animal/bot/cleanbot,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/bunker)
 "aao" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/water,
@@ -592,7 +639,7 @@
 /area/f13/tunnel)
 "atV" = (
 /obj/effect/decal/fakelattice{
-	layer = 2.0
+	layer = 2
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
@@ -3654,7 +3701,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/fakelattice{
-	layer = 2.0
+	layer = 2
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
@@ -10025,13 +10072,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/brotherhood/leisure)
-"fpl" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/bunker)
 "fpD" = (
 /obj/structure/chair/comfy/black,
 /obj/effect/decal/cleanable/cobweb,
@@ -10513,16 +10553,6 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
-/area/f13/bunker)
-"fAR" = (
-/mob/living/simple_animal/hostile/eyebot{
-	faction = list("raider");
-	name = "Private McUltra"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
 /area/f13/bunker)
 "fAY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -13363,16 +13393,6 @@
 /obj/effect/spawner/bundle/costume/holiday_priest,
 /turf/open/floor/wood/f13/oakbroken,
 /area/f13/tunnel)
-"hjf" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss{
-	desc = "Another murderer churned out by the wastes, this one seems well disciplined.";
-	name = "Private Malone"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/bunker)
 "hjD" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/f13{
@@ -21515,13 +21535,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
-"mtJ" = (
-/obj/structure/bed,
-/obj/structure/spider/stickyweb,
-/mob/living/simple_animal/bot/cleanbot,
-/obj/item/bedsheet/blue,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
-/area/f13/bunker)
 "mug" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/food/snacks/beans,
@@ -26884,7 +26897,7 @@
 "pSG" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/decal/fakelattice{
-	layer = 2.0
+	layer = 2
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
@@ -35421,18 +35434,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
-"vcp" = (
-/turf/closed/wall/r_wall,
-/turf/closed/wall/r_wall,
-/area/f13/brotherhood/offices2nd)
-"vct" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul,
-/obj/structure/table/booth,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/den)
 "vcC" = (
 /obj/structure/chair/f13chair1,
 /obj/effect/decal/cleanable/dirt,
@@ -36232,11 +36233,6 @@
 /obj/machinery/vending/nukacolavendfull,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
-"vFf" = (
-/mob/living/simple_animal/hostile/gecko,
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "vFi" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -37028,7 +37024,7 @@
 /area/f13/brotherhood/mining)
 "weo" = (
 /obj/effect/decal/fakelattice{
-	layer = 2.0
+	layer = 2
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
@@ -37821,7 +37817,7 @@
 /area/f13/building)
 "wEt" = (
 /obj/effect/decal/fakelattice{
-	layer = 2.0
+	layer = 2
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/tunnel,
@@ -39488,13 +39484,6 @@
 /obj/structure/noticeboard{
 	name = "display plate";
 	pixel_y = 34
-	},
-/obj/item/gun/energy/e_gun/old{
-	anchored = 1;
-	cell_type = null;
-	desc = "NT-P:01 Prototype Energy Gun. Early stage development of a unique laser rifle that has multifaceted energy lens allowing the gun to alter the form of projectile it fires on command. This one is for display, and does not fire.";
-	pin = null;
-	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "casino"
@@ -42046,7 +42035,7 @@ ips
 knr
 nTt
 fLU
-fAR
+aab
 vaH
 fLU
 mIp
@@ -42566,7 +42555,7 @@ cgk
 qju
 qju
 pQX
-hjf
+aac
 fAi
 fLU
 rDk
@@ -50696,7 +50685,7 @@ jPC
 fxR
 xVz
 xVz
-vFf
+aaa
 jPC
 bLF
 xVz
@@ -72657,7 +72646,7 @@ gQW
 gQW
 vVu
 vPv
-vct
+aad
 gRa
 wYo
 ffZ
@@ -102101,7 +102090,7 @@ ueZ
 wNL
 wNL
 vpr
-vcp
+wNL
 vnO
 vLJ
 vep
@@ -103785,7 +103774,7 @@ bci
 jBu
 jDl
 hzP
-mtJ
+aaf
 xwr
 enT
 nJG
@@ -104295,7 +104284,7 @@ nJT
 pdk
 pdk
 nJT
-fpl
+aae
 jJA
 pdk
 pdk
@@ -105185,7 +105174,7 @@ ueZ
 wNL
 wNL
 wNL
-vcp
+wNL
 wNL
 wNL
 wNL
