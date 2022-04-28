@@ -193,6 +193,7 @@
 				/obj/item/crafting/lunchbox)
 
 
+
 /obj/item/salvage/tool
 	name = "Pre-war tool salvage"
 	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
@@ -221,4 +222,3 @@
 	QDEL_NULL(Loot)
 	..()
 	return QDEL_HINT_HARDDEL
-

@@ -53,7 +53,7 @@
 			if(!D)
 				to_chat(usr, "<span class='warning'>Unable to locate item.</span>")
 				return
-			usr.client.holder.view_refs(target)
+			//usr.client.holder.view_refs(target)
 			return
 		#endif
 
