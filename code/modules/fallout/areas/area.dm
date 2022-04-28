@@ -181,8 +181,13 @@
 	icon_state = "bar"
 //	ambience_area =  list('sound/f13ambience/building.ogg')
 //	ambientmusic = list('sound/f13music/fo2_bar.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
+	ambientsounds = list('sound/f13ambience/ambigen_1.ogg','sound/f13ambience/ambigen_2.ogg')
 	environment = 2
 	grow_chance = 5
+
+/area/f13/bar/heaven
+	name = "Heaven's Night"
+	icon_state = "heaven"
 
 /area/f13/casino
 	name = "Casino"
@@ -248,6 +253,34 @@
 	ambientsounds = list('sound/f13ambience/ambigen_9.ogg','sound/f13ambience/ambigen_12.ogg','sound/f13ambience/ambigen_15.ogg','sound/f13ambience/ambigen_16.ogg','sound/f13effects/steam_short.ogg','sound/f13effects/steam_long.ogg')
 	environment = 21
 	grow_chance = 25
+
+/area/f13/tunnel/northeast
+	name = "North-Eastern Tunnel"
+	icon_state = "tunnelne"
+
+/area/f13/tunnel/northwest
+	name = "North-Western Tunnel"
+	icon_state = "tunnelnw"
+
+/area/f13/tunnel/southeast
+	name = "South-Eastern Tunnel"
+	icon_state = "tunnelse"
+
+/area/f13/tunnel/southwest
+	name = "South-Western Tunnel"
+	icon_state = "tunnelsw"
+
+/area/f13/tunnel/southeastoasis
+	name = "Oasis Eastern Sewers"
+	icon_state = "tunnelse"
+
+/area/f13/tunnel/southwestoasis
+	name = "Oasis Western Sewers"
+	icon_state = "tunnelsw"
+
+/area/f13/tunnel/sub
+	name = "Subway Tunnel"
+	icon_state = "tunnelsub"
 
 /area/f13/trainstation
 	name = "Tunnel"
@@ -427,7 +460,7 @@
 	icon_state = "restrooms"
 
 /area/f13/brotherhood
-	name = "Brotherhood of Steel"//Brother Hood
+	name = "Brotherhood of Steel Bunker"//Brother Hood
 	icon_state = "brotherhood"
 //	ambience_area =  list('sound/f13ambience/enclave_vault.ogg')
 //	ambientmusic = list('sound/f13music/fo2_brotherhood.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
@@ -494,7 +527,7 @@
 	icon_state = "brotherhoodmining"
 
 /area/f13/enclave
-	name = "Enclave"
+	name = "Enclave Bunker"
 	icon_state = "enclave"
 //	ambience_area =  list('sound/f13ambience/enclave_vault.ogg')
 //	ambientmusic = list('sound/f13music/fo2_vats.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
@@ -516,7 +549,7 @@
 	grow_chance = 5
 
 /area/f13/ncr
-	name = "NCR"
+	name = "NCR Outpost"
 	icon_state = "ncr"
 //	ambience_area =  list('sound/f13ambience/warehouse.ogg')
 //	ambientmusic = list('sound/f13music/fo2_city.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
@@ -528,7 +561,7 @@
 	requires_power = FALSE
 
 /area/f13/legion
-	name = "Legion"
+	name = "Legion Fortress"
 	icon_state = "legion"
 //	ambience_area =  list('sound/f13ambience/building.ogg')
 //	ambientmusic = list('sound/f13music/fo2_hub.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
@@ -539,7 +572,7 @@
 	grow_chance = 5
 
 /area/f13/followers
-	name = "Followers of the Apocalypse"
+	name = "Followers of the Apocalypse Clinic"
 	icon_state = "followers"
 //	ambience_area =  list('sound/f13ambience/warehouse.ogg')
 //	ambientmusic = list('sound/f13music/fo2_vats.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
@@ -548,3 +581,7 @@
 	blob_allowed = 0
 	environment = 5
 	grow_chance = 5
+
+/area/f13/wasteland/khans
+	name = "Great Khan Encampment"
+	icon_state = "tribe"
