@@ -90,3 +90,10 @@
 	density = 1
 	desc = "Where the west is still wild!"
 	light_color = LIGHT_COLOR_PINK
+
+/obj/machinery/light/sign/heaven
+	name = "Heaven's Night sign"
+	icon_state = "heaven"
+	base_state = "heaven"
+	desc = "A neon sign cast in relaxing vibes."
+	light_color = LIGHT_COLOR_PINK
