@@ -1,4 +1,4 @@
-/datum/job/tribals //do NOT use this for anything, it's just to store faction datums
+/*/datum/job/tribals //do NOT use this for anything, it's just to store faction datums
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
@@ -524,4 +524,4 @@ Guardian
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1)
-
+*/

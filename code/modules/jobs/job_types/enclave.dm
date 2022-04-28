@@ -1,5 +1,5 @@
 //It looks like var/faction controls what becomes visible on setup. Should likely be fixed or something, but I'm not doing it.
-/datum/job/enclave
+/*/datum/job/enclave
 	department_flag = ENCLAVE
 	selection_color = "#323232"
 	faction = FACTION_ENCLAVE
@@ -461,3 +461,4 @@
 	uniform = /obj/item/clothing/under/f13/vault13
 	shoes = /obj/item/clothing/shoes/jackboots
 	id = /obj/item/card/id/dogtag/town/enclave
+*/

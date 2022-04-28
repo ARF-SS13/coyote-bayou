@@ -8,7 +8,7 @@ Science: 47 ACCESS_RESEARCH
 here's a tip, go search DEFINES/access.dm
 */
 // I swear to god stop copy-pasting you damn snowflakes
-/datum/job/vault
+/*/datum/job/vault
 	department_flag = VAULT
 	exp_type = EXP_TYPE_VAULT
 	faction = FACTION_VAULT
@@ -367,3 +367,4 @@ Vault Engineer
 //	if(SSmapping.config.map_name == "Pahrump")
 //		total_positions = 0
 //		spawn_positions = 0
+*/
