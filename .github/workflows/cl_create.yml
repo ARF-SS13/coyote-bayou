@@ -10,7 +10,7 @@ on:
 jobs:
   CreateCL:
     runs-on: ubuntu-latest
-    if: github.repository == 'LoneStarF13/LoneStar' # to prevent this running on forks
+    if: github.repository == 'fortune13-ss13/thewasteland' # to prevent this running on forks
     steps:
       - name: Checkout
         uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
