@@ -179,8 +179,8 @@ GLOBAL_LIST_INIT(admin_verbs_debug, world.AVerbsDebug())
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
 #ifdef REFERENCE_TRACKING
-	/datum/admins/proc/view_refs,
-	/datum/admins/proc/view_del_failures,
+	///datum/admins/proc/view_refs,
+	///datum/admins/proc/view_del_failures,
 #endif
 	/client/proc/generate_wikichem_list, //DO NOT PRESS UNLESS YOU WANT SUPERLAG
 	)
