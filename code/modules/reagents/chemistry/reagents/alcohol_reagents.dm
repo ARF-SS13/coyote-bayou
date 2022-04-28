@@ -1818,11 +1818,11 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = "A sawed-off cola bottle filled with Fernet Cola. Nothing better after eating like a lardass."
 
 /datum/reagent/consumable/ethanol/fernet_cola/on_mob_life(mob/living/carbon/M)
-    if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-        M.adjustToxLoss(0.5*REM, 0)
-    M.adjust_nutrition(-3)
-    M.overeatduration = 0
-    return ..()
+	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
+		M.adjustToxLoss(0.5*REM, 0)
+	M.adjust_nutrition(-3)
+	M.overeatduration = 0
+	return ..()
 
 /datum/reagent/consumable/ethanol/fanciulli
 	name = "Fanciulli"
