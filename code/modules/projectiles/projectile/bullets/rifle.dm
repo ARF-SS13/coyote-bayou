@@ -77,8 +77,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
-	damage = -4
-	armour_penetration = 0.18
+	damage = -9
+	armour_penetration = 0
 	irradiate = 300
 
 
@@ -122,8 +122,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a762/uraniumtipped
 	name = "7.62 uranium-tipped bullet"
-	damage = -4
-	armour_penetration = 0.18
+	damage = -10
+	armour_penetration = 0
 	irradiate = 300
 
 /obj/item/projectile/bullet/a762/microshrapnel

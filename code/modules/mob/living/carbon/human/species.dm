@@ -197,7 +197,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/obj/item/organ/tail/tail = C.getorganslot(ORGAN_SLOT_TAIL)
 
 	var/should_have_brain = TRUE
-	var/should_have_heart = !(NOBLOOD in species_traits)
+	var/should_have_heart = TRUE
 	var/should_have_lungs = !(TRAIT_NOBREATH in inherent_traits)
 	var/should_have_appendix = !(TRAIT_NOHUNGER in inherent_traits)
 	var/should_have_eyes = TRUE
@@ -1287,7 +1287,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/radiation = H.radiation
 
 	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
-		radiation = 0
 		return TRUE
 
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))

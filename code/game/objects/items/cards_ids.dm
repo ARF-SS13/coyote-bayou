@@ -924,6 +924,14 @@
 	item_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
+
+/obj/item/card/id/dogtag/vaultiecard
+	name = "Vault Citizenship"
+	desc = "Proof of citizenship to a vault."
+	icon_state = "doctor"
+	item_state = "card-doctor"
+	assignment = "citizenship permit"
+	access = list(ACCESS_BAR)
 	
 /obj/item/card/id/dogtag/MDfakepermit
 	name = "faded medical license"
@@ -940,6 +948,12 @@
 	name = "Legion citizenship permit"
 	desc = "A permit identifying the holder as a citizen of Caesar's Legion."
 	assignment = "Legion Citizen"
+	access = list()
+
+/obj/item/card/id/dogtag/town/enclave
+	name = "American citizenship permit"
+	desc = "A permit identifying the holder as a citizen of United States of America."
+	assignment = "American Citizen"
 	access = list()
 
 /obj/item/card/id/dogtag/town/mafia

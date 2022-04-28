@@ -38,6 +38,10 @@
 	create_reagents(20)
 	reagents.add_reagent(/datum/reagent/plantnutriment/eznutriment, 10) //Half filled nutrient trays for dirt trays to have more to grow with in prison/lavaland.
 	. = ..()
+	LAZYREMOVE(GLOB.machines, src)
+	LAZYADD(GLOB.plant_bins, src)
+	if(myseed)
+		START_PROCESSING(SSplants, src)
 
 /obj/machinery/hydroponics/constructable
 	name = "hydroponics tray"
@@ -61,11 +65,12 @@
 	if(in_range(user, src) || isobserver(user))
 		. += "<span class='notice'>The status display reads: Tray efficiency at <b>[rating*100]%</b>.</span>"
 
-
 /obj/machinery/hydroponics/Destroy()
 	if(myseed)
 		qdel(myseed)
 		myseed = null
+		STOP_PROCESSING(SSplants, src)
+	GLOB.plant_bins -= src
 	return ..()
 
 /obj/machinery/hydroponics/constructable/attackby(obj/item/I, mob/user, params)
@@ -517,6 +522,7 @@
 	harvest = FALSE
 	pestlevel = 0 // Pests die
 	lastproduce = 0
+	STOP_PROCESSING(SSplants, src)
 	if(!dead)
 		update_icon()
 		dead = TRUE
@@ -617,6 +623,7 @@
 			age = 1
 			plant_health = myseed.endurance
 			lastcycle = world.time
+			START_PROCESSING(SSplants, src)
 			update_icon()
 			return
 		else
@@ -681,6 +688,7 @@
 				myseed = null
 				name = initial(name)
 				desc = initial(desc)
+				STOP_PROCESSING(SSplants, src)
 			weedlevel = 0 //Has a side effect of cleaning up those nasty weeds
 			update_icon()
 
@@ -709,6 +717,7 @@
 		qdel(myseed)
 		myseed = null
 		update_icon()
+		STOP_PROCESSING(SSplants, src)
 		TRAY_NAME_UPDATE
 	else
 		if(user)
@@ -747,6 +756,7 @@
 		to_chat(user, "<span class='notice'>You harvest [myseed.getYield()] items from the [myseed.plantname].</span>")
 	if(!myseed.get_gene(/datum/plant_gene/trait/repeated_harvest))
 		qdel(myseed)
+		STOP_PROCESSING(SSplants, src)
 		myseed = null
 		dead = FALSE
 		name = initial(name)
@@ -816,30 +826,8 @@
 /obj/machinery/hydroponics/soil/CtrlClick(mob/user)
 	return //Dirt doesn't have electricity, last I checked.
 
-///////////////////////////////////////////////////////////////////////////////
-/obj/machinery/hydroponics/soil //Not actually hydroponics at all! Honk!
-	name = "soil"
-	desc = "A patch of dirt."
-	icon = 'icons/fallout/farming/farming_structures.dmi'
-	icon_state = "soil"
-	circuit = null
-	density = FALSE
-	use_power = NO_POWER_USE
-	flags_1 = NODECONSTRUCT_1
-	unwrenchable = FALSE
-
-//obj/machinery/hydroponics/soil/update_icon_hoses()
-//	return // Has no hoses
-
 /obj/machinery/hydroponics/soil/update_icon_lights()
 	return // Has no lights
-
-/obj/machinery/hydroponics/soil/attackby(obj/item/O, mob/user, params)
-	if(istype(O, /obj/item/shovel) && !istype(O, /obj/item/shovel/spade)) //Doesn't include spades because of uprooting plants
-		to_chat(user, "<span class='notice'>You clear up [src]!</span>")
-		qdel(src)
-	else
-		return ..()
 
 /obj/machinery/hydroponics/soil/crafted
 	waterlevel = 0

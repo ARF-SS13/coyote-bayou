@@ -6,8 +6,8 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/medx,
 /obj/effect/spawner/lootdrop/f13/cash_random_high,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/plating/tunnel,
@@ -60,7 +60,7 @@
 /area/f13/radiation)
 "ak" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
 "al" = (
@@ -299,7 +299,7 @@
 "ba" = (
 /obj/effect/decal/remains/human,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -350,7 +350,7 @@
 /area/f13/bunker)
 "bi" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
 "bj" = (
@@ -600,8 +600,8 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -5744,7 +5744,7 @@
 /area/f13/bunker)
 "oS" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/barber{
 	icon_state = "plating"
 	},
@@ -5772,7 +5772,7 @@
 /obj/item/paper,
 /obj/item/trash/coal,
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
 	},
@@ -6670,7 +6670,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rR" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -6744,7 +6744,7 @@
 "sg" = (
 /obj/structure/table,
 /obj/item/clothing/head/chefhat,
-/obj/item/clothing/neck/apron/chef ,
+/obj/item/clothing/neck/apron/chef,
 /obj/machinery/light/broken,
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -7084,7 +7084,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "tj" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/burger/fish,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -7102,7 +7102,7 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tm" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/salad/desertsalad,
 /obj/item/reagent_containers/food/drinks/bottle/brown/green,
 /turf/open/floor/wood/f13/old,
@@ -7134,7 +7134,7 @@
 	},
 /area/f13/bunker)
 "tq" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/salad/herbsalad,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -7154,7 +7154,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "tt" = (
-/obj/structure/kitchenspike/cross,
+/obj/structure/cross,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "tu" = (
@@ -7179,22 +7179,22 @@
 	},
 /area/f13/wasteland)
 "tx" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/salad/ricepudding,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "ty" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/burger/superbite,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tz" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "tA" = (
-/obj/structure/booth,
+/obj/structure/chair/right,
 /obj/item/reagent_containers/food/snacks/salad/jungle,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
@@ -8728,7 +8728,7 @@
 /area/f13/vault)
 "yn" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/unique,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "yo" = (
@@ -10072,7 +10072,7 @@
 "Cp" = (
 /obj/structure/rack,
 /obj/item/clothing/gloves/f13/baseball,
-/obj/item/baseball,
+/obj/item/clothing/gloves/f13/baseball,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -10172,7 +10172,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "CD" = (
-/obj/structure/booth/middle{
+/obj/structure/chair/middle{
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
@@ -10451,10 +10451,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
-"Dq" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "Dr" = (
 /obj/machinery/light/sign,
 /turf/closed/wall/r_wall/f13/vault,
@@ -10602,7 +10598,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/booth/single,
+/obj/structure/chair/booth,
 /obj/item/reagent_containers/food/snacks/waffles{
 	pixel_y = 6
 	},
@@ -10883,7 +10879,7 @@
 /area/f13/vault)
 "Ew" = (
 /obj/structure/cable,
-/obj/structure/booth/single,
+/obj/structure/chair/booth,
 /obj/machinery/light{
 	light_color = "#e8eaff"
 	},
@@ -12853,8 +12849,8 @@
 "JO" = (
 /obj/effect/decal/cleanable/oil/streak,
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
-/obj/effect/spawner/lootdrop/f13/blueprintMidLimited,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -18330,10 +18326,10 @@
 	dir = 1;
 	icon_state = "warningline"
 	},
-/obj/item/ammo_box/c10mm/jhp,
-/obj/item/ammo_box/c10mm/jhp,
-/obj/item/ammo_box/c10mm/jhp,
-/obj/item/ammo_box/c10mm/jhp,
+/obj/item/ammo_box/c10mm,
+/obj/item/ammo_box/c10mm,
+/obj/item/ammo_box/c10mm,
+/obj/item/ammo_box/c10mm,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
@@ -40967,7 +40963,7 @@ pJ
 yg
 pJ
 pJ
-Dq
+JX
 AB
 pJ
 ei
@@ -59773,7 +59769,7 @@ WA
 WA
 ei
 pJ
-Dq
+JX
 AB
 pJ
 pJ

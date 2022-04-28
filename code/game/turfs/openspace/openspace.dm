@@ -45,7 +45,7 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 	if(istype(A,/turf/closed/wall))
 		opacity = 1
 
-	else
+	else if(!isnull(A))
 		for(var/obj/O in A.contents)
 			if(istype(O,/obj/structure/simple_door))
 				opacity = 1

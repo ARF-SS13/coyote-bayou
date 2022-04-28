@@ -1277,14 +1277,14 @@
 /datum/chemical_reaction/sludge
 	name = "Resilient Sludge"
 	id = "sludge"
-	results = list(/datum/reagent/consumable/ethanol/sludge = 3)
+	results = list(/datum/reagent/consumable/ethanol/species_drink/sludge = 3)
 	required_reagents = list(/datum/reagent/radium = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/water = 1)
 
 /datum/chemical_reaction/strongsludge
 	name = "Strong Sludge"
 	id = "strongsludge"
-	results = list(/datum/reagent/consumable/ethanol/strongsludge = 4)
-	required_reagents = list(/datum/reagent/consumable/ethanol/sludge = 3, /datum/reagent/uranium = 1)
+	results = list(/datum/reagent/consumable/ethanol/species_drink/strongsludge = 4)
+	required_reagents = list(/datum/reagent/consumable/ethanol/species_drink/sludge = 3, /datum/reagent/uranium = 1)
 
 /datum/chemical_reaction/sweetwater
 	name = "Sweet Water"
@@ -1304,7 +1304,7 @@
 	name = "Atom Bomb"
 	id = "atombomb"
 	results = list(/datum/reagent/consumable/ethanol/atombomb = 2)
-	required_reagents = list(/datum/reagent/consumable/ethanol/sludge = 1, /datum/reagent/consumable/ethanol/b52 = 1)
+	required_reagents = list(/datum/reagent/consumable/ethanol/species_drink/sludge = 1, /datum/reagent/consumable/ethanol/b52 = 1)
 
 /datum/chemical_reaction/henessey
 	name = "Henessey"

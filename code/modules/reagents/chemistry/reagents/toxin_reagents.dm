@@ -9,6 +9,7 @@
 	taste_mult = 1.2
 	value = REAGENT_VALUE_COMMON //Encouraging people to mix toxins for reasons beyond harming each other or mixing reagents such as pen acid.
 	var/toxpwr = 1.5
+	ghoulfriendly = TRUE
 
 // Are you a bad enough dude to poison your own plants?
 /datum/reagent/toxin/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)

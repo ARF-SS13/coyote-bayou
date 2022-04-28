@@ -138,16 +138,16 @@ Class Procs:
 	if(!armor)
 		armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
 	. = ..()
-	GLOB.machines += src
-
+	var/obj/machinery/hydroponics/T = src
+	if(!istype(T))
+		GLOB.machines += src
+		if(!speed_process && init_process)
+			START_PROCESSING(SSmachines, src)
+		else
+			START_PROCESSING(SSfastprocess, src)
 	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit
 		circuit.apply_default_parts(src)
-
-	if(!speed_process && init_process)
-		START_PROCESSING(SSmachines, src)
-	else
-		START_PROCESSING(SSfastprocess, src)
 	power_change()
 	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
 
@@ -155,11 +155,12 @@ Class Procs:
 		occupant_typecache = typecacheof(occupant_typecache)
 
 /obj/machinery/Destroy()
-	GLOB.machines.Remove(src)
-	if(!speed_process)
-		STOP_PROCESSING(SSmachines, src)
-	else
-		STOP_PROCESSING(SSfastprocess, src)
+	if(LAZYISIN(GLOB.machines, src))
+		GLOB.machines.Remove(src)
+		if(!speed_process)
+			STOP_PROCESSING(SSmachines, src)
+		else
+			STOP_PROCESSING(SSfastprocess, src)
 	dropContents()
 	if(length(component_parts))
 		for(var/atom/A in component_parts)

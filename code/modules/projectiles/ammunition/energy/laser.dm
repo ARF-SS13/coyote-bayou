@@ -166,11 +166,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/lasgun/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan
 	e_cost = 80 //25 shots, as per FNV
-	
+
 /obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
 	e_cost = 400 //5 shots
-	
+
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
 	e_cost = 30 //basically infinite shots
@@ -246,6 +246,18 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	e_cost = 250
 	fire_sound = 'sound/f13weapons/aer9fire.ogg'
+	fire_sound = 'sound/weapons/laser3.ogg'
+	
+//autolasers
+
+/obj/item/ammo_casing/energy/laser/autolaser
+	projectile_type = /obj/item/projectile/beam/laser/rcw/hitscan/autolaser
+	e_cost = 80 //30 shots
+
+/obj/item/ammo_casing/energy/laser/autolaser/shock
+	projectile_type = /obj/item/projectile/energy/teslacannon/oasis
+	fire_sound = 'sound/weapons/taser.ogg'
+	e_cost = 96 //25 shots
 
 // BETA // Obsolete
 /obj/item/ammo_casing/energy/laser/pistol/lasertest

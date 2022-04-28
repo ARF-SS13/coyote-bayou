@@ -387,6 +387,46 @@
 		if(ACCESS_LEGION)
 			return "Legion Access"
 
+/* Enclave */
+/proc/get_all_enclave_access()
+	return list(ACCESS_ENCLAVE)
+
+/proc/get_enclave_access_desc(A)
+	switch(A)
+		if(ACCESS_ENCLAVE)
+			return "Enclave Access"
+
+/* Brotherhood of Steel */
+/proc/get_all_bos_access()
+	return list(
+				ACCESS_BOS, ACCESS_BROTHERHOOD_COMMAND, ACCESS_ROBOTICS,
+				ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS,
+				ACCESS_MINERAL_STOREROOM, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS,
+				)
+
+/proc/get_bos_access_desc(A)
+	switch(A)
+		if(ACCESS_BOS)
+			return "Brotherhood of Steel Access"
+		if(ACCESS_BROTHERHOOD_COMMAND)
+			return "Brotherhood of Steel Command Access"
+		if(ACCESS_ROBOTICS)
+			return "Robotics"
+		if(ACCESS_ENGINE_EQUIP)
+			return "Engine Equipment"
+		if(ACCESS_ENGINE)
+			return "Engine"
+		if(ACCESS_HYDROPONICS)
+			return "Hydroponics"
+		if(ACCESS_MINERAL_STOREROOM)
+			return "Mineral Storage"
+		if(ACCESS_KITCHEN)
+			return "Kitchen"
+		if(ACCESS_BAR)
+			return "Bar"
+		if(ACCESS_SECURITY)
+			return "Security"
+
 /proc/get_all_jobs()
 	return list("Centurion", "NCR Captain", "Overseer", "Sheriff",
 				"Sentinel", "Senior Paladin", "Paladin", "Knight-Captain", "Senior Knight", "Knight", "Head Scribe", "Senior Scribe", "Scribe", "Initiate",

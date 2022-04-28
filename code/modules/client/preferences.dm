@@ -445,7 +445,7 @@ Records disabled until a use for them is found
 					dat += "[features["flavor_text"]]"
 			else
 				dat += "[TextPreview(features["flavor_text"])]...<BR>"
-/*			dat += "<h2>Silicon Flavor Text</h2>"
+			dat += "<h2>Silicon Flavor Text</h2>"
 			dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
 			if(length(features["silicon_flavor_text"]) <= 40)
 				if(!length(features["silicon_flavor_text"]))
@@ -453,7 +453,7 @@ Records disabled until a use for them is found
 				else
 					dat += "[features["silicon_flavor_text"]]"
 			else
-				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"*/
+				dat += "[TextPreview(features["silicon_flavor_text"])]...<BR>"
 			dat += "<h2>OOC notes</h2>"
 			dat += "<a href='?_src_=prefs;preference=ooc_notes;task=input'><b>Set OOC notes</b></a><br>"
 			var/ooc_notes_len = length(features["ooc_notes"])
@@ -489,7 +489,7 @@ Records disabled until a use for them is found
 
 				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=s_tone;task=input'>[use_custom_skin_tone ? "custom: <span style='border:1px solid #161616; background-color: [skin_tone];'>&nbsp;&nbsp;&nbsp;</span>" : skin_tone]</a><BR>"
 
-/*			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
 				if(!use_skintones)
 					dat += APPEARANCE_CATEGORY_COLUMN
 
@@ -507,34 +507,32 @@ Records disabled until a use for them is found
 
 			if (CONFIG_GET(number/body_size_min) != CONFIG_GET(number/body_size_max))
 				dat += "<b>Sprite Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"]*100]%</a><br>"
-*/
+
 			if((EYECOLOR in pref_species.species_traits) && !(NOEYES in pref_species.species_traits))
 //				if(!use_skintones && !mutant_colors)
 				dat += APPEARANCE_CATEGORY_COLUMN
-/*				if(left_eye_color != right_eye_color)
+				if(left_eye_color != right_eye_color)
 					split_eye_colors = TRUE
 				dat += "<h3>Heterochromia</h3>"
-				dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"*/
+				dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_split_eyes;task=input'>[split_eye_colors ? "Enabled" : "Disabled"]</a>"
 				if(!split_eye_colors)
 					dat += "<h3>Eye Color</h3>"
 					dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eyes;task=input'>Change</a>"
 					dat += "</td>"
-/*				else
+				else
 					dat += "<h3>Left Eye Color</h3>"
 					dat += "<span style='border: 1px solid #161616; background-color: #[left_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eye_left;task=input'>Change</a>"
 					dat += "<h3>Right Eye Color</h3>"
 					dat += "<span style='border: 1px solid #161616; background-color: #[right_eye_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=eye_right;task=input'>Change</a><BR>"
 					dat += "</td>"
-			else if(use_skintones || mutant_colors)
-				dat += "</td>"
-*/
+
 			dat += APPEARANCE_CATEGORY_COLUMN
 			dat += "<h2>Speech preferences</h2>"
 			dat += "<b>Custom Speech Verb:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=speech_verb;task=input'>[custom_speech_verb]</a><BR>"
-/*			dat += "<b>Custom Tongue:</b><BR>"
+			dat += "<b>Custom Tongue:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
-*/
+
 			if(HAIR in pref_species.species_traits)
 
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -552,7 +550,7 @@ Records disabled until a use for them is found
 				dat += "<span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 
 				dat += "</td>"
-/*
+
 			//Mutant stuff
 			var/mutant_category = 0
 
@@ -587,7 +585,7 @@ Records disabled until a use for them is found
 			if(mutant_category)
 				dat += "</td>"
 				mutant_category = 0
-*/
+
 			dat += "</tr></table>"
 
 			dat += "</td>"
@@ -618,7 +616,7 @@ Records disabled until a use for them is found
 				dat += "<h3>Penis</h3>"
 				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_cock'>[features["has_cock"] == TRUE ? "Yes" : "No"]</a>"
 				if(features["has_cock"])
-/*					if(!pref_species.use_skintones)
+					if(!pref_species.use_skintones)
 						dat += "<b>Penis Color:</b></a><BR>"
 						dat += "<span style='border: 1px solid #161616; background-color: #[features["cock_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=cock_color;task=input'>Change</a><br>"
 					var/tauric_shape = FALSE
@@ -628,37 +626,37 @@ Records disabled until a use for them is found
 							var/datum/sprite_accessory/taur/T = GLOB.taur_list[features["taur"]]
 							if(T.taur_mode & P.accepted_taurs)
 								tauric_shape = TRUE
-					dat += "<b>Penis Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>" */
+					dat += "<b>Penis Shape:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_shape;task=input'>[features["cock_shape"]][tauric_shape ? " (Taur)" : ""]</a>"
 					dat += "<b>Penis Length:</b> <a style='display:block;width:120px' href='?_src_=prefs;preference=cock_length;task=input'>[features["cock_length"]] inch(es)</a>"
-//					dat += "<b>Penis Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
+					dat += "<b>Penis Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cock_visibility;task=input'>[features["cock_visibility"]]</a>"
 					dat += "<b>Has Testicles:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Yes" : "No"]</a>"
-//					if(features["has_balls"])
-//						if(!pref_species.use_skintones)
-//							dat += "<b>Testicles Color:</b></a><BR>"
-//							dat += "<span style='border: 1px solid #161616; background-color: #[features["balls_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=balls_color;task=input'>Change</a><br>"
-//						dat += "<b>Testicles Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
+					if(features["has_balls"])
+						if(!pref_species.use_skintones)
+							dat += "<b>Testicles Color:</b></a><BR>"
+							dat += "<span style='border: 1px solid #161616; background-color: #[features["balls_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=balls_color;task=input'>Change</a><br>"
+						dat += "<b>Testicles Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
 				dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>Vagina</h3>"
 				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_vag'>[features["has_vag"] == TRUE ? "Yes": "No" ]</a>"
 				if(features["has_vag"])
-//					dat += "<b>Vagina Type:</b> <a style='display:block;width:100px' href='?_ssrc_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
-//					if(!pref_species.use_skintones)
-//						dat += "<b>Vagina Color:</b></a><BR>"
-//						dat += "<span style='border: 1px solid #161616; background-color: #[features["vag_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=vag_color;task=input'>Change</a><br>"
-//					dat += "<b>Vagina Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_visibility;task=input'>[features["vag_visibility"]]</a>"
+					dat += "<b>Vagina Type:</b> <a style='display:block;width:100px' href='?_ssrc_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
+					if(!pref_species.use_skintones)
+						dat += "<b>Vagina Color:</b></a><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["vag_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=vag_color;task=input'>Change</a><br>"
+					dat += "<b>Vagina Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=vag_visibility;task=input'>[features["vag_visibility"]]</a>"
 					dat += "<b>Has Womb:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_womb'>[features["has_womb"] == TRUE ? "Yes" : "No"]</a>"
 				dat += "</td>"
 				dat += APPEARANCE_CATEGORY_COLUMN
 				dat += "<h3>Breasts</h3>"
 				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_breasts'>[features["has_breasts"] == TRUE ? "Yes" : "No" ]</a>"
 				if(features["has_breasts"])
-//					if(!pref_species.use_skintones)
-//						dat += "<b>Color:</b></a><BR>"
-//						dat += "<span style='border: 1px solid #161616; background-color: #[features["breasts_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=breasts_color;task=input'>Change</a><br>"
+					if(!pref_species.use_skintones)
+						dat += "<b>Color:</b></a><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["breasts_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=breasts_color;task=input'>Change</a><br>"
 					dat += "<b>Cup Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_size;task=input'>[features["breasts_size"]]</a>"
-//					dat += "<b>Breasts Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
-//					dat += "<b>Breasts Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
-//					dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
+					dat += "<b>Breasts Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
+					dat += "<b>Breasts Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
+					dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
 				dat += "</td>"
 			dat += "</td>"
 			dat += "</tr></table>"
@@ -928,6 +926,7 @@ Records disabled until a use for them is found
 			dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
 //			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
+			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
 /*			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
@@ -935,8 +934,8 @@ Records disabled until a use for them is found
 			dat += "</td>"
 			dat +="<td width='300px' height='300px' valign='top'>"
 			dat += "<h2>Other content prefs</h2>"
-			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+//			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
@@ -1607,12 +1606,12 @@ Records disabled until a use for them is found
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["flavor_text"] = msg
-/*
+
 				if("silicon_flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the silicon flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Silicon Flavor Text", html_decode(features["silicon_flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["silicon_flavor_text"] = msg
-*/
+
 				if("ooc_notes")
 					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -1768,7 +1767,7 @@ Records disabled until a use for them is found
 						custom_species = new_species
 					else
 						custom_species = null
-/*
+
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
 					if(new_mutantcolor)
@@ -1826,7 +1825,7 @@ Records disabled until a use for them is found
 					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in snowflake_antenna_list
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
-*/
+
 				if("tail_lizard")
 					var/new_tail
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
@@ -2332,22 +2331,22 @@ Records disabled until a use for them is found
 								return
 						if(dorfy != "No")
 							features["body_size"] = new_body_size
-/*
+
 				if("tongue")
 					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
 					if(selected_custom_tongue)
 						custom_tongue = selected_custom_tongue
-*/
+
 				if("speech_verb")
 					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
 					if(selected_custom_speech_verb)
 						custom_speech_verb = selected_custom_speech_verb
-/*
+
 				if("bodysprite")
 					var/selected_body_sprite = input(user, "Choose your desired body sprite", "Character Preference") as null|anything in pref_species.allowed_limb_ids
 					if(selected_body_sprite)
 						chosen_limb_id = selected_body_sprite //this gets sanitized before loading
-*/
+
 		else
 			switch(href_list["preference"])
 				//CITADEL PREFERENCES EDIT - I can't figure out how to modularize these, so they have to go here. :c -Pooj

@@ -846,8 +846,6 @@ Mayor
 		/obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
-
-/*
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER
@@ -888,11 +886,11 @@ Mayor
 	glasses = /obj/item/clothing/glasses/monocle
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	suit = /obj/item/clothing/suit/f13/banker
-	gloves = /obj/item/clothing/gloves/color/white/redcoat
+	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
 	/obj/item/cane=1,
-	/obj/item/gun/ballistic/automatic/hobo/zipgun=1
+	/obj/item/gun/ballistic/automatic/hobo/zipgun=1,
 	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1
@@ -923,7 +921,6 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1
 		)
-*/
 
 /*--------------------------------------------------------------*/
 

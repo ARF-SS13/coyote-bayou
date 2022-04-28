@@ -2,7 +2,7 @@
 	name = "crafting part"
 	icon = 'icons/fallout/objects/items.dmi'
 	amount = 1
-	max_amount = 50
+	max_amount = 5000
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_TINY

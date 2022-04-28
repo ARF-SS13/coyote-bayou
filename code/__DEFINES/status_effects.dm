@@ -40,6 +40,8 @@
 
 #define STATUS_EFFECT_DETERMINED /datum/status_effect/determined //currently in a combat high from being seriously wounded
 
+#define STATUS_EFFECT_GHOULHEAL /datum/status_effect/ghoul_heal //currently healing from radiation
+
 /////////////
 // DEBUFFS //
 /////////////
