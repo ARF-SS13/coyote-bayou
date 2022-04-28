@@ -3079,7 +3079,7 @@
 	name = "Mayor's Quarters";
 	req_one_access_txt = "62"
 	},
-/turf/open/floor/wood/f13/maple,
+/turf/open/floor/wood/f13/oak,
 /area/f13/city)
 "ajw" = (
 /turf/open/indestructible/ground/outside/ruins,
@@ -31539,9 +31539,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "mQk" = (
-/obj/machinery/light/small/broken{
-	dir = 1
-	},
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
 	},
@@ -33101,6 +33098,13 @@
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"seN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/wood/f13/maple,
+/area/f13/city)
 "sfq" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -52608,7 +52612,7 @@ aat
 aat
 bjW
 bVt
-bVt
+bVv
 bVt
 bpb
 bji
@@ -53380,7 +53384,7 @@ agl
 xvI
 ccP
 cdr
-bny
+seN
 boB
 bjq
 swr
