@@ -24,13 +24,13 @@ $include policy.txt
 # SERVERNAME Unnamed F13 Server
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] A relaxed HRP Fallout style server.
+SERVERTAGLINE [18+] Fallout roleplay server.
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
-STATIONNAME The Wasteland - A HRP fallout themed roleplay server.
+STATIONNAME The Wasteland - A fallout themed roleplay server.
 
 ## Put on byond hub: Uncomment this to put your server on the byond hub.
 HUB
@@ -165,7 +165,7 @@ LOG_VIRUS
 # LOG_TIMERS_ON_BUCKET_RESET
 
 ##Log camera pictures - Must have picture logging enabled
-PICTURE_LOGGING_CAMERA
+# PICTURE_LOGGING_CAMERA
 
 ## period of time in seconds for players to be considered inactive
 # INACTIVITY_PERIOD 300
@@ -401,7 +401,7 @@ ANNOUNCE_ADMIN_LOGOUT
 
 ## Map rotation
 ## You should edit maps.txt to match your configuration when you enable this.
-MAPROTATION
+# MAPROTATION
 
 ## TG-style map rotation
 ## By default, Citadel uses a more traditional method of map voting, where at the end of a round, players are given a full upfront vote.
@@ -411,7 +411,7 @@ MAPROTATION
 ## Map voting
 ## Allows players to vote for their preffered map
 ## When it's set to zero, the map will be randomly picked each round
-ALLOW_MAP_VOTING 1
+# ALLOW_MAP_VOTING 1
 
 ## Map voting type
 ## Determines what kind of vote the map vote is
@@ -420,7 +420,7 @@ ALLOW_MAP_VOTING 1
 ##   APPROVAL (can vote for as many as you want), I
 ##   IRV (vote by ranked choice, winner determined by instant runoff algorithm)
 ##   SCORE (give individual rankings of each choice, winner determined by majority judgement algorithm)
-MAP_VOTE_TYPE SCORE
+# MAP_VOTE_TYPE SCORE
 
 ## Map rotate chance delta
 ## This is the chance of map rotation factored to the round length.
