@@ -6,13 +6,8 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "e" = (
-/obj/machinery/computer/shuttle/bos,
-/turf/open/floor/plasteel/dark,
-/area/shuttle/bos_foyer)
-"f" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
+/obj/machinery/computer/shuttle/bos{
+	name = "Brotherhood Base Lockdown Override"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
@@ -29,7 +24,27 @@
 	},
 /obj/docking_port/mobile/elevator/bos,
 /turf/open/floor/plasteel/dark,
-/area/space)
+/area/shuttle/bos_foyer)
+"r" = (
+/obj/machinery/door/airlock/hatch{
+	req_access_txt = "120"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"A" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
+"J" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/bos_foyer)
 
 (1,1,1) = {"
 a
@@ -58,9 +73,9 @@ a
 (4,1,1) = {"
 a
 c
+A
 c
 c
-f
 a
 "}
 (5,1,1) = {"
@@ -69,7 +84,7 @@ c
 c
 c
 c
-a
+r
 "}
 (6,1,1) = {"
 a
@@ -90,7 +105,7 @@ a
 (8,1,1) = {"
 a
 i
-c
+J
 c
 e
 a
