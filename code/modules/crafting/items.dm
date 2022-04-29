@@ -220,5 +220,4 @@
 
 /obj/item/salvage/Destroy()
 	QDEL_NULL(Loot)
-	..()
-	return QDEL_HINT_HARDDEL
+	return ..()
