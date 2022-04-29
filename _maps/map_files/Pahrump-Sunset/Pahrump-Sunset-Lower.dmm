@@ -1287,13 +1287,6 @@
 	},
 /turf/open/floor/plating,
 /area/f13/brotherhood)
-"bpH" = (
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#706891"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
 "bpI" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/grimy,
@@ -1334,18 +1327,6 @@
 "bqz" = (
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
-"bqD" = (
-/obj/structure/bed,
-/obj/item/bedsheet/grey,
-/turf/open/floor/carpet/black,
-/area/f13/brotherhood)
-"bqF" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "NW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
 "bqG" = (
 /obj/item/flag/bos,
 /turf/open/floor/plasteel/dark,
@@ -1354,11 +1335,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "brn" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "NE"
-	},
-/turf/open/floor/plasteel/dark,
+/turf/closed/mineral/random/low_chance,
 /area/f13/brotherhood)
 "brR" = (
 /obj/structure/table/reinforced,
@@ -1372,10 +1349,8 @@
 /turf/open/floor/wood,
 /area/f13/brotherhood)
 "brW" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
+/obj/docking_port/stationary/bos,
+/turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "bsv" = (
 /obj/machinery/light{
@@ -1440,24 +1415,6 @@
 /obj/structure/chair/comfy/brown,
 /obj/effect/landmark/start/f13/knightcap,
 /turf/open/floor/carpet/black,
-/area/f13/brotherhood)
-"buv" = (
-/obj/item/twohanded/required/kirbyplants/random,
-/turf/open/floor/carpet/black,
-/area/f13/brotherhood)
-"buS" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "SW"
-	},
-/turf/open/floor/plasteel/dark,
-/area/f13/brotherhood)
-"buT" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "SE"
-	},
-/turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "buU" = (
 /obj/structure/table/reinforced,
@@ -78003,9 +77960,9 @@ aaa
 aae
 bpZ
 bpZ
-bqz
-bqz
-bqz
+bpZ
+bpZ
+bpZ
 bvU
 bpZ
 bBB
@@ -78257,12 +78214,12 @@ aaa
 "}
 (245,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bqD
-bqb
-buv
+brn
+brW
+brn
+brn
+brn
+brn
 bpZ
 bqG
 bqJ
@@ -78514,12 +78471,12 @@ aaa
 "}
 (246,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bpZ
-bpZ
-bpZ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bqJ
 bqJ
@@ -78771,12 +78728,12 @@ aaa
 "}
 (247,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bqF
-brW
-buS
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bAN
 bAZ
@@ -79028,12 +78985,12 @@ aaa
 "}
 (248,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bqG
-bqJ
-bqJ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bAO
 bBa
@@ -79285,12 +79242,12 @@ aaa
 "}
 (249,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bpH
-bqJ
-bqJ
+brn
+brn
+brn
+brn
+brn
+brn
 bwm
 bqJ
 bqJ
@@ -79542,12 +79499,12 @@ aaa
 "}
 (250,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bqG
-bqJ
-bqJ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bAP
 bBb
@@ -79799,12 +79756,12 @@ aaa
 "}
 (251,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
 brn
-bsv
-buT
+brn
+brn
+brn
+brn
+brn
 bpZ
 bAQ
 bAQ
@@ -80056,12 +80013,12 @@ aaa
 "}
 (252,1,1) = {"
 aaa
-aae
-bpZ
-bpZ
-bpZ
-bpZ
-bpZ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bqJ
 bqJ
@@ -80313,12 +80270,12 @@ aaa
 "}
 (253,1,1) = {"
 aaa
-aae
-aae
-bpZ
-bpZ
-bpZ
-bpZ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bqG
 ciA
@@ -80570,12 +80527,12 @@ aaa
 "}
 (254,1,1) = {"
 aaa
-aae
-aae
-aae
-aae
-aae
-bpZ
+brn
+brn
+brn
+brn
+brn
+brn
 bpZ
 bpZ
 bpZ
