@@ -16030,11 +16030,20 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aWe" = (
-/obj/structure/noticeboard,
-/obj/item/export/bottle/kahlua{
-	anchored = 1
+/obj/structure/table/wood/poker,
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = -4;
+	pixel_y = 15
 	},
-/turf/closed/wall/f13/wood,
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
+	pixel_x = -1;
+	pixel_y = 3
+	},
+/turf/open/floor/holofloor/carpet,
 /area/f13/city)
 "aWf" = (
 /obj/machinery/hydroponics/soil,
@@ -21160,7 +21169,7 @@
 /obj/structure/chair/booth{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bjF" = (
 /obj/structure/chair{
@@ -22093,6 +22102,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/poster93{
+	pixel_y = 32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "blO" = (
@@ -22150,12 +22162,16 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "blY" = (
 /obj/effect/decal/cleanable/generic,
 /obj/structure/table/booth,
-/turf/open/floor/f13/wood,
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = -4;
+	pixel_y = -2
+	},
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "blZ" = (
 /obj/machinery/vending/cola/random,
@@ -22184,7 +22200,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bmf" = (
 /turf/closed/indestructible/rock,
@@ -22320,8 +22336,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "bmG" = (
-/obj/structure/chair/stool/retro,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/stool/retro/backed{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "bmH" = (
@@ -22335,7 +22353,14 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
-/turf/open/floor/f13/wood,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = 4;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bmJ" = (
 /obj/structure/flora/grass/wasteland{
@@ -22875,7 +22900,7 @@
 /obj/structure/chair/booth{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "boB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22915,7 +22940,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "boI" = (
 /obj/effect/landmark/start/f13/ncrtrooper,
@@ -22928,7 +22953,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "boK" = (
 /obj/structure/rack,
@@ -23541,10 +23566,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/legion)
 "bqK" = (
-/obj/structure/sign/poster/prewar/poster93{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/booth,
+/obj/item/trash/f13/fancylads,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bqL" = (
 /obj/structure/flora/grass/wasteland{
@@ -23640,7 +23665,11 @@
 /area/f13/wasteland)
 "bqV" = (
 /obj/structure/table/wood/poker,
-/turf/open/floor/carpet,
+/obj/item/storage/box/dice{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/turf/open/floor/holofloor/carpet,
 /area/f13/city)
 "bqX" = (
 /obj/structure/chair/office{
@@ -23774,7 +23803,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bsd" = (
 /obj/structure/ladder/unbreakable{
@@ -24130,7 +24159,11 @@
 "bul" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
-/turf/open/floor/f13/wood,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -2;
+	pixel_y = 15
+	},
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bum" = (
 /obj/structure/sink/well,
@@ -26116,7 +26149,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "bWQ" = (
 /obj/effect/decal/cleanable/generic,
@@ -28262,11 +28295,8 @@
 	},
 /area/f13/building)
 "ctw" = (
-/obj/structure/table/wood/poker,
-/obj/item/dice{
-	pixel_y = 1
-	},
-/turf/open/floor/carpet,
+/obj/structure/chair/stool/retro,
+/turf/open/floor/holofloor/carpet,
 /area/f13/city)
 "cty" = (
 /obj/machinery/vending/snack,
@@ -29393,6 +29423,16 @@
 /obj/item/soap/homemade,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"fuK" = (
+/obj/structure/sign/poster/prewar/poster82{
+	pixel_x = 32
+	},
+/obj/structure/sign/poster/contraband/space_cola{
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet,
+/area/f13/city)
 "fuL" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
@@ -29789,11 +29829,12 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
 "gOn" = (
-/obj/structure/girder,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerbordercorner"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/fluff/railing{
+	dir = 8
 	},
-/area/f13/city)
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "gQy" = (
 /obj/structure/closet{
 	pixel_x = -9;
@@ -29950,7 +29991,9 @@
 	},
 /area/f13/building)
 "hoS" = (
-/obj/structure/chair/stool/retro,
+/obj/structure/chair/stool/retro/backed{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "hpb" = (
@@ -30764,6 +30807,18 @@
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
+"jQs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/table/wood/poker,
+/obj/item/toy/cards/deck{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/holofloor/carpet,
+/area/f13/city)
 "jQx" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
@@ -30920,17 +30975,14 @@
 	},
 /area/f13/wasteland)
 "koV" = (
-/obj/item/reagent_containers/food/drinks/bottle/brown/greenwine{
-	anchored = 1;
-	pixel_x = -36
-	},
-/obj/item/reagent_containers/food/drinks/bottle/brown/greenwine{
-	anchored = 1;
-	pixel_x = -28
-	},
 /obj/structure/noticeboard{
 	layer = 2.5;
 	pixel_x = -32
+	},
+/obj/item/dice{
+	anchored = 1;
+	pixel_x = -32;
+	pixel_y = -1
 	},
 /turf/open/floor/carpet,
 /area/f13/city)
@@ -31480,10 +31532,7 @@
 /area/f13/legion)
 "mzU" = (
 /obj/structure/table/wood/poker,
-/obj/item/toy/cards/deck{
-	pixel_y = 9
-	},
-/turf/open/floor/carpet,
+/turf/open/floor/holofloor/carpet,
 /area/f13/city)
 "mAf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -31622,7 +31671,7 @@
 "niE" = (
 /obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "niY" = (
 /obj/structure/fermenting_barrel,
@@ -32153,7 +32202,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_west_south"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "oKb" = (
 /obj/structure/barricade/bars,
@@ -33050,12 +33099,21 @@
 	},
 /area/f13/village)
 "rTz" = (
-/obj/structure/girder,
-/obj/structure/girder,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
+/obj/item/reagent_containers/food/drinks/bottle/brown/greenwine{
+	anchored = 1;
+	pixel_x = 4;
+	pixel_y = 32
 	},
-/area/f13/city)
+/obj/item/reagent_containers/food/drinks/bottle/brown/greenwine{
+	anchored = 1;
+	pixel_x = -4;
+	pixel_y = 32
+	},
+/obj/structure/noticeboard{
+	pixel_y = 32
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "rVc" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/spearquiver,
@@ -33493,6 +33551,7 @@
 	pixel_y = 32;
 	req_one_access_txt = "28"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/f13/city)
 "tzi" = (
@@ -33837,6 +33896,15 @@
 /obj/structure/simple_door/wood,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"uDv" = (
+/obj/structure/junk/small/tv{
+	desc = "A wall mounted television, sadly it's broken.";
+	name = "Wall Mounted Television";
+	pixel_x = 1;
+	pixel_y = 34
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "uDW" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -33993,9 +34061,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/legion)
 "uZv" = (
-/obj/structure/sign/poster/prewar/poster82{
-	pixel_x = 32
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/f13/city)
 "vai" = (
@@ -34282,7 +34348,7 @@
 /area/f13/building)
 "vUR" = (
 /obj/structure/table/booth,
-/turf/open/floor/f13/wood,
+/turf/open/floor/carpet/red,
 /area/f13/city)
 "vWG" = (
 /obj/structure/closet/cabinet,
@@ -34479,10 +34545,11 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "wDA" = (
-/obj/structure/girder,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
+/obj/machinery/light{
+	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/carpet,
 /area/f13/city)
 "wEs" = (
 /obj/effect/decal/remains/human,
@@ -34796,7 +34863,8 @@
 /area/f13/caves)
 "xUT" = (
 /obj/structure/chair/stool/retro,
-/turf/open/floor/carpet,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/holofloor/carpet,
 /area/f13/city)
 "xXf" = (
 /mob/living/simple_animal/cow/brahmin,
@@ -44870,8 +44938,8 @@ swr
 bUB
 aTw
 tyj
-kIS
-bpo
+uZv
+wDA
 koV
 kIS
 aTw
@@ -45127,7 +45195,7 @@ swr
 fjQ
 mvS
 kIS
-xUT
+ctw
 xUT
 xUT
 kIS
@@ -45384,10 +45452,10 @@ qZX
 qZX
 nvn
 kIS
-ctw
+mzU
 bqV
 mzU
-kIS
+uZv
 aTw
 aoL
 aoQ
@@ -45633,7 +45701,7 @@ ygj
 aTw
 aTw
 swr
-bqK
+bVt
 qZX
 bVt
 bVt
@@ -45641,10 +45709,10 @@ bVt
 bVt
 bWQ
 kIS
-xUT
-xUT
-xUT
-kIS
+aWe
+mzU
+jQs
+uZv
 aTw
 bji
 bkV
@@ -45890,7 +45958,7 @@ ygj
 aTw
 swr
 swr
-bVt
+uDv
 bjE
 qZX
 bsc
@@ -45898,10 +45966,10 @@ qZX
 qZX
 nvn
 uZv
-kIS
-kIS
-kIS
-kIS
+ctw
+xUT
+ctw
+uZv
 aTw
 bji
 bji
@@ -46154,11 +46222,11 @@ bul
 bVt
 oQP
 aTw
-aTw
-aTw
-cxm
-cxm
-aTw
+fuK
+uZv
+kIS
+kIS
+kIS
 aTw
 opm
 aqZ
@@ -46411,11 +46479,11 @@ boA
 bVt
 gpx
 swr
-bji
-bji
-gOn
-wDA
-rTz
+aTw
+aTw
+cxm
+cxm
+aTw
 wbu
 aSJ
 aSJ
@@ -47182,8 +47250,8 @@ bVt
 qZX
 boJ
 boH
-aWe
-afF
+bji
+rTz
 adJ
 adY
 abS
@@ -47437,7 +47505,7 @@ niE
 qZX
 qZX
 qZX
-bul
+bqK
 vUR
 bmC
 afF
@@ -55941,7 +56009,7 @@ aft
 xvI
 xvI
 xvI
-xvI
+gOn
 xvI
 xvI
 xvI
