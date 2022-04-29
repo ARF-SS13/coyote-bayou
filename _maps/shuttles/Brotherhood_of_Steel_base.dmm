@@ -6,7 +6,9 @@
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "e" = (
-/obj/machinery/computer/shuttle/bos,
+/obj/machinery/computer/shuttle/bos{
+	name = "Brotherhood Base Lockdown Override"
+	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/bos_foyer)
 "h" = (
