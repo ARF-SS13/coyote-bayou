@@ -191,11 +191,14 @@
 	path = /obj/item/clothing/suit/armor/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police"
+	restricted_desc = "Oasis Police, Oasis Officials"
 	restricted_roles = list("Chief of Police",
-								"Officer",
-								"Detective",
-								)
+							"Officer",
+							"Mayor",
+							"Detective",
+							"Secretary",
+							"Shopkeeper",
+						)
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"
