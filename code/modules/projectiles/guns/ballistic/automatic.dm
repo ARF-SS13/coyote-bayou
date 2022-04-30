@@ -1313,13 +1313,13 @@ obj/item/gun/ballistic/automatic/bar
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "BAR"
 	item_state = "BAR"
-	icon_prefix = "BAR"
+	icon_prefix = "rifle"
 	automatic = 1
 	mag_type = /obj/item/ammo_box/magazine/m762/ext
 	force = 24 //club
-	slowdown = 1.25 //really goddamn big
-	autofire_shot_delay = 2.5
-	extra_damage = 28
+	slowdown = 1.5 //really goddamn big
+	autofire_shot_delay = 2.3
+	extra_damage = 27
 	spread = 10
 	recoil = 0.3
 	actions_types = list(/datum/action/item_action/toggle_firemode)

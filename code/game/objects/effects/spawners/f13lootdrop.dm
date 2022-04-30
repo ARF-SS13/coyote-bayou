@@ -805,7 +805,6 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow
 	name = "very low tier non-hobo ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/ninemil,
-				/obj/effect/spawner/bundle/f13/sig,
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
 				/obj/effect/spawner/bundle/f13/mosin,
 				/obj/effect/spawner/bundle/f13/remington,
@@ -997,7 +996,7 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 				)
 
 /obj/effect/spawner/bundle/f13/sig
-	name = "sig p220 pistol and ammo spawner"
+	name = " p220 pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/sig,
 				/obj/item/ammo_box/magazine/m9mm/
@@ -1479,6 +1478,13 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	items = list(
 				/obj/item/gun/ballistic/automatic/fnfal,
 				/obj/item/ammo_box/magazine/m762/ext
+	)
+
+/obj/effect/spawner/bundle/f13/bar
+	name = "automatic rifle and ammo spawner"
+	items = list(
+			/obj/item/gun/ballistic/automatic/bar,
+			/obj/item/ammo_box/magazine/m762/ext,
 	)
 
 /obj/effect/spawner/bundle/f13/rocketlauncher
@@ -2178,7 +2184,6 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(
-		/obj/effect/spawner/bundle/f13/sig,
 		/obj/effect/spawner/bundle/f13/beretta,
 		/obj/effect/spawner/bundle/f13/ninemil
 	)
