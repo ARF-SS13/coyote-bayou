@@ -115,6 +115,7 @@
 	new /obj/item/gun/ballistic/automatic/rangemaster(src)
 	new /obj/item/ammo_box/magazine/m762(src)
 	new /obj/item/book/granter/trait/trekking(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
 
 /datum/gear/donator/kits/evosolus
 	name = "Evos goods"
