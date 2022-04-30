@@ -818,14 +818,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"azU" = (
-/obj/structure/flora/rock/jungle,
-/obj/structure/spacevine{
-	name = "vines"
-	},
-/obj/structure/glowshroom/single,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "aAA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/stairs,
@@ -10729,7 +10721,7 @@
 	icon_state = "0-4"
 	},
 /obj/effect/decal/waste{
-	icon_state = "goo8";
+	icon_state = "goo8"
 	},
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/bunker)
@@ -15116,7 +15108,7 @@
 /area/f13/enclave)
 "ilx" = (
 /obj/effect/decal/waste{
-	icon_state = "goo8";
+	icon_state = "goo8"
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -16868,13 +16860,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/stage_br,
 /area/f13/building)
-"jtD" = (
-/obj/structure/flora/rock/pile/largejungle,
-/obj/structure/glowshroom/single,
-/turf/open/floor/plating/ashplanet/wateryrock{
-	baseturfs = /turf/open/floor/plating/f13/outside/desert
-	},
-/area/f13/caves)
 "juh" = (
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt,
@@ -27556,7 +27541,6 @@
 	},
 /area/f13/bunker)
 "qgX" = (
-/obj/structure/glowshroom/single,
 /obj/structure/campfire/barrel,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
@@ -27804,10 +27788,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/enclave)
-"qnB" = (
-/obj/structure/glowshroom/single,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "qnG" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/structure/window/reinforced/spawner/west,
@@ -100492,7 +100472,7 @@ vPg
 xVz
 xVz
 gCf
-qnB
+xVz
 aoj
 aoj
 eLE
@@ -104079,7 +104059,7 @@ wtE
 xVz
 vPg
 mcU
-jtD
+gOq
 dmM
 nBp
 xmk
@@ -105632,7 +105612,7 @@ uPp
 uPp
 xVz
 xVz
-qnB
+xVz
 vPg
 vPg
 vPg
@@ -105879,7 +105859,7 @@ tDm
 tJN
 hPI
 vPg
-azU
+xVz
 xVz
 lQT
 iGo

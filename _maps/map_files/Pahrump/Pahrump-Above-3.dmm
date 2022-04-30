@@ -1887,13 +1887,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
-"hI" = (
-/obj/structure/decoration/rag,
-/obj/structure/decoration/rag{
-	icon_state = "skin";
-	},
-/turf/closed/wall/f13/wood,
-/area/f13/building)
 "hJ" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small{
@@ -2722,7 +2715,7 @@
 /area/f13/caves)
 "lg" = (
 /obj/structure/decoration/rag{
-	icon_state = "skin";
+	icon_state = "skin"
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -3321,12 +3314,6 @@
 "mW" = (
 /obj/structure/table/booth,
 /turf/open/floor/wood/f13/oak,
-/area/f13/building)
-"mY" = (
-/obj/structure/decoration/rag{
-	icon_state = "skin"
-	},
-/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "nb" = (
 /obj/structure/chair/sofa,
@@ -4182,7 +4169,7 @@
 "qk" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
+	icon_state = "skin"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -6279,7 +6266,7 @@
 "yD" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
+	icon_state = "skin"
 	},
 /obj/structure/fence/wooden{
 	dir = 4
@@ -11658,7 +11645,7 @@
 "Vo" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
-	icon_state = "skin";
+	icon_state = "skin"
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
@@ -29303,7 +29290,7 @@ kC
 kC
 kC
 kC
-mY
+lg
 zB
 zB
 zB
@@ -65709,7 +65696,7 @@ ZO
 zB
 Xv
 HQ
-hI
+RM
 kC
 kC
 kC
