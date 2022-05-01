@@ -1144,7 +1144,7 @@ commented out pending rework*/
 	name = "Medicus (Surgeon)"
 	neck = /obj/item/clothing/neck/apron/medicus
 	gloves = /obj/item/clothing/gloves/f13/crudemedical
-	belt = /obj/item/storage/belt/medical/legion
+	belt = /obj/item/storage/belt/medical/primitive
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/storage/firstaid/ancient = 1,

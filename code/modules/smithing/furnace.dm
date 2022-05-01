@@ -1,7 +1,7 @@
 /obj/structure/furnace
 	name = "furnace"
 	desc = "A furnace."
-	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "furnace0"
 	density = TRUE
 	anchored = TRUE
