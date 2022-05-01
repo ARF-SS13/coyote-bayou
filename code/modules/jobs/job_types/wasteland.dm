@@ -114,11 +114,10 @@
 /datum/outfit/loadout/khandrug
 	name = "Drug Pusher"
 	belt = /obj/item/storage/belt/bandolier
-	backpack_contents = list(,
+	backpack_contents = list(
 		/obj/item/book/granter/trait/midsurgery = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
-		/obj/item/reagent_containers/pill/patch/turbo = 2,
-		)
+		/obj/item/reagent_containers/pill/patch/turbo=2)
 
 /*
 Raider

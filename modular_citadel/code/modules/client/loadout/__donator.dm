@@ -125,13 +125,21 @@
 	new /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced(src)
 	new /obj/item/gun/ballistic/automatic/rangemaster(src)
 	new /obj/item/ammo_box/magazine/m762(src)
-	new /obj/item/book/granter/trait/trekking(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
 
 /datum/gear/donator/kits/evosolus
 	name = "Evos goods"
 	path = /obj/item/storage/box/large/custom_kit/evosolus
 	ckeywhitelist = list("evosolus")
+
+/obj/item/storage/box/large/custom_kit/snugglytrap/PopulateContents()
+	new /obj/item/clothing/neck/mantle/snugglycape(src)
+	new /obj/item/mmi/posibrain(src)
+
+/datum/gear/donator/kits/snugglytrap
+	name = "Good boy kit"
+	path = /obj/item/storage/box/large/custom_kit/snugglytrap
+	ckeywhitelist = list("snugglytrap")	
 
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
