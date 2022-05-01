@@ -18,24 +18,8 @@
 
 /obj/mecha/working/ripley/Move()
 	. = ..()
-	if(.)
-		collect_ore()
+
 	update_pressure()
-
-/obj/mecha/working/ripley/proc/collect_ore()
-	if(locate(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp) in equipment)
-		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in cargo
-		if(ore_box)
-			for(var/obj/item/stack/ore/ore in range(1, src))
-				if(ore.Adjacent(src) && ((get_dir(src, ore) & dir) || ore.loc == loc)) //we can reach it and it's in front of us? grab it!
-					ore.forceMove(ore_box)
-
-/obj/mecha/working/ripley/Destroy()
-	for(var/atom/movable/A in cargo)
-		A.forceMove(drop_location())
-		step_rand(A)
-	cargo.Cut()
-	return ..()
 
 /obj/mecha/working/ripley/go_out()
 	..()
@@ -49,6 +33,12 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate,3,/obj/item/stack/sheet/animalhide/goliath_hide,list("melee" = 10, "bullet" = 5, "laser" = 5))
 
+/obj/mecha/working/ripley/Destroy()
+	for(var/atom/movable/A in cargo)
+		A.forceMove(drop_location())
+		step_rand(A)
+	cargo.Cut()
+	return ..()
 
 /obj/mecha/working/ripley/firefighter
 	desc = "Autonomous Power Loader Unit. This model is refitted with additional thermal protection."

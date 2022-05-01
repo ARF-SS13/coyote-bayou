@@ -109,6 +109,46 @@
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/clarke_main
+	name = "\"Clarke\" Central Control module"
+	desc = "Allows for the construction of a \"Clarke\" Central Control module."
+	id = "clarke_main"
+	build_path = /obj/item/circuitboard/mecha/clarke/main
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/clarke_peri
+	name = "\"Clarke\" Peripherals Control module"
+	desc = "Allows for the construction of a  \"Clarke\" Peripheral Control module."
+	id = "clarke_peri"
+	build_path = /obj/item/circuitboard/mecha/clarke/peripherals
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_main
+	name = "\"Marauder\" Central Control module"
+	desc = "Allows for the construction of a \"Marauder\" Central Control module."
+	id = "marauder_main"
+	build_path = /obj/item/circuitboard/mecha/marauder/main
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_peri
+	name = "\"Marauder\" Peripherals Control module"
+	desc = "Allows for the construction of a \"Marauder\" Peripheral Control module."
+	id = "marauder_peri"
+	build_path = /obj/item/circuitboard/mecha/marauder/peripherals
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_targ
+	name = "\"marauder\" Weapons & Targeting Control module"
+	desc = "Allows for the construction of a \"Marauder\" Weapons & Targeting Control module."
+	id = "marauder_targ"
+	build_path = /obj/item/circuitboard/mecha/marauder/targeting
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 ////////////////////////////////////////
 /////////// Mecha Equpment /////////////
 ////////////////////////////////////////
@@ -182,6 +222,16 @@
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/tesla
 	materials = list(/datum/material/iron=20000,/datum/material/silver=8000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/mech_pulse_rifle
+	name = "eZ-13 MK2 heavy pulse rifle"
+	desc = "Allows for the construction of the eZ-13 MK2 heavy pulse rifle"
+	id = "mech_pulse_rifle"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
+	materials = list(/datum/material/iron=15000,/datum/material/plasma=4000,/datum/material/uranium=4000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 

@@ -24,6 +24,36 @@
 	wound_bonus = -30
 	bare_wound_bonus = 40
 
+/obj/item/projectile/beam/laser/mech
+	hitscan = TRUE
+	wound_bonus = 0
+
+/obj/item/projectile/beam/laser/mech/light
+	name = "laser beam"
+	damage = 25
+	armour_penetration = 0.10
+
+/obj/item/projectile/beam/laser/mech/heavy
+	name = "heavy laser beam"
+	damage = 40
+	armour_penetration = 0.20
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+
+/obj/item/projectile/beam/laser/mech/pulse
+	name = "charged pulse beam"
+	damage = 35
+	armour_penetration = 0.40
+	tracer_type = /obj/effect/projectile/tracer/pulse
+	muzzle_type = /obj/effect/projectile/muzzle/pulse
+	impact_type = /obj/effect/projectile/impact/pulse
+
+/obj/item/projectile/beam/laser/mech/pulse/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+		target.ex_act(EXPLODE_LIGHT)
+
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
 	name = "hellfire laser"

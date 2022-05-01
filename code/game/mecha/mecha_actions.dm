@@ -5,9 +5,11 @@
 		eject_action.Grant(user, src)
 	internals_action.Grant(user, src)
 	cycle_action.Grant(user, src)
-	lights_action.Grant(user, src)
+	if(haslights)
+		lights_action.Grant(user, src)
 	stats_action.Grant(user, src)
-	strafing_action.Grant(user, src)
+	if(canstrafe)
+		strafing_action.Grant(user, src)
 
 
 /obj/mecha/proc/RemoveActions(mob/living/user, human_occupant = 0)
@@ -15,9 +17,11 @@
 		eject_action.Remove(user)
 	internals_action.Remove(user)
 	cycle_action.Remove(user)
-	lights_action.Remove(user)
+	if(haslights)
+		lights_action.Remove(user)
 	stats_action.Remove(user)
-	strafing_action.Remove(user)
+	if(canstrafe)
+		strafing_action.Remove(user)
 
 
 /datum/action/innate/mecha
@@ -43,7 +47,14 @@
 		return
 	if(!chassis || chassis.occupant != owner)
 		return
-	chassis.go_out()
+	chassis.is_currently_ejecting = TRUE
+	to_chat(owner, "<span class='notice'>You begin the ejection procedure. Equipment is disabled during this process. Hold still to finish ejecting.<span>")
+	if(do_after(chassis.occupant,chassis.exit_delay, target = chassis))
+		to_chat(owner, "<span class='notice'>You exit the mech.<span>")
+		chassis.go_out()
+	else
+		to_chat(owner, "<span class='notice'>You stop exiting the mech. Weapons are enabled again.<span>")
+	chassis.is_currently_ejecting = FALSE
 
 
 /datum/action/innate/mecha/mech_toggle_internals
@@ -74,12 +85,14 @@
 
 	if(available_equipment.len == 0)
 		chassis.occupant_message("No equipment available.")
+		playsound(chassis,'sound/machines/terminal_error.ogg', 40, FALSE)
 		return
 	if(!chassis.selected)
 		chassis.selected = available_equipment[1]
 		chassis.occupant_message("You select [chassis.selected]")
 		send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 		button_icon_state = "mech_cycle_equip_on"
+		playsound(chassis,'sound/machines/piston_raise.ogg', 40, TRUE)
 		UpdateButtonIcon()
 		return
 	var/number = 0
@@ -90,10 +103,12 @@
 				chassis.selected = null
 				chassis.occupant_message("You switch to no equipment")
 				button_icon_state = "mech_cycle_equip_off"
+				playsound(chassis,'sound/machines/piston_lower.ogg', 40, TRUE)
 			else
 				chassis.selected = available_equipment[number+1]
 				chassis.occupant_message("You switch to [chassis.selected]")
 				button_icon_state = "mech_cycle_equip_on"
+				playsound(chassis,'sound/machines/piston_raise.ogg', 40, TRUE)
 			send_byjax(chassis.occupant,"exosuit.browser","eq_list",chassis.get_equipment_list())
 			UpdateButtonIcon()
 			return
@@ -114,6 +129,7 @@
 		chassis.set_light(-chassis.lights_power)
 		button_icon_state = "mech_lights_off"
 	chassis.occupant_message("Toggled lights [chassis.lights?"on":"off"].")
+	playsound(chassis,'sound/machines/clockcult/brass_skewer.ogg', 40, TRUE)
 	chassis.mecha_log_message("Toggled lights [chassis.lights?"on":"off"].")
 	UpdateButtonIcon()
 
@@ -139,7 +155,7 @@
 
 /obj/mecha/AltClick(mob/living/user)
 	. = ..()
-	if((user == occupant) && user.canUseTopic(src))
+	if((user == occupant) && user.canUseTopic(src) && canstrafe == TRUE)
 		toggle_strafe()
 		return TRUE
 
@@ -167,26 +183,13 @@
 		chassis.occupant_message("<font color='[chassis.thrusters_active ?"blue":"red"]'>Thrusters [chassis.thrusters_active ?"en":"dis"]abled.")
 
 
-/datum/action/innate/mecha/mech_defence_mode
-	name = "Toggle Defence Mode"
+/datum/action/innate/mecha/mech_defense_mode
+	name = "Toggle Defense Mode"
 	button_icon_state = "mech_defense_mode_off"
+	var/image/def_overlay
 
-/datum/action/innate/mecha/mech_defence_mode/Activate(forced_state = null)
-	if(!owner || !chassis || chassis.occupant != owner)
-		return
-	if(!isnull(forced_state))
-		chassis.defence_mode = forced_state
-	else
-		chassis.defence_mode = !chassis.defence_mode
-	button_icon_state = "mech_defense_mode_[chassis.defence_mode ? "on" : "off"]"
-	if(chassis.defence_mode)
-		chassis.deflect_chance = chassis.defence_mode_deflect_chance
-		chassis.occupant_message("<span class='notice'>You enable [chassis] defence mode.</span>")
-	else
-		chassis.deflect_chance = initial(chassis.deflect_chance)
-		chassis.occupant_message("<span class='danger'>You disable [chassis] defence mode.</span>")
-	chassis.mecha_log_message("Toggled defence mode.")
-	UpdateButtonIcon()
+/datum/action/innate/mecha/mech_defense_mode/Activate(forced_state = FALSE)
+	SEND_SIGNAL(chassis, COMSIG_MECHA_ACTION_ACTIVATE, args) ///Signal sent to the mech, to be handed to the shield. See durand.dm for more details
 
 /datum/action/innate/mecha/mech_overload_mode
 	name = "Toggle leg actuators overload"
@@ -216,15 +219,14 @@
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_smoke
-	name = "Smoke"
+	name = "Regenerative Smoke-shot"
 	button_icon_state = "mech_smoke"
 
 /datum/action/innate/mecha/mech_smoke/Activate()
 	if(!owner || !chassis || chassis.occupant != owner)
 		return
-	if(chassis.smoke_ready && chassis.smoke>0)
+	if(chassis.smoke_ready && chassis.smoke)
 		chassis.smoke_system.start()
-		chassis.smoke--
 		chassis.smoke_ready = 0
 		spawn(chassis.smoke_cooldown)
 			chassis.smoke_ready = 1
