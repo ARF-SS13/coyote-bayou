@@ -1012,9 +1012,10 @@
 	icon_state = "sks"
 	item_state = "sks"
 	mag_type = /obj/item/ammo_box/magazine/sks
-	fire_delay = 6
-	extra_damage = 38
+	fire_delay = 5.5
+	extra_damage = 40
 	extra_penetration = 0.1
+	extra_speed = 100
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 23
@@ -1287,7 +1288,7 @@
 	burst_shot_delay = 2.2
 	spread = 14
 	extra_damage = 18
-	extra_penetration = 0
+	extra_penetration = 0.12
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"
