@@ -352,6 +352,11 @@
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
+/obj/item/gun/ballistic/revolver/hunting/klatue
+	name = "degraded hunting revolver"
+	desc = "A scoped double action revolver chambered in 45-70. This one is very worn."
+	extra_damage = 34
+	extra_penetration = 0
 
 /////////////////////
 // WEIRD REVOLVERS //
