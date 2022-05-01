@@ -17117,7 +17117,9 @@
 /turf/closed/wall/f13/store,
 /area/f13/village)
 "gIs" = (
-/obj/structure/anvil/obtainable/basic,
+/obj/structure/anvil/obtainable/table,
+/obj/item/twohanded/sledgehammer/simple,
+/obj/item/book/manual/advice_blacksmith,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gIw" = (
@@ -17935,7 +17937,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/legion)
 "hbW" = (
-/obj/structure/reagent_dispensers/barrel/explosive,
+/obj/structure/reagent_dispensers/barrel/explosive{
+	pixel_x = -9
+	},
+/obj/item/reagent_containers/glass/bucket{
+	pixel_x = 5
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -17995,9 +18002,9 @@
 	},
 /area/f13/building)
 "hdh" = (
-/obj/item/stick,
-/obj/item/stick,
-/obj/item/stick,
+/obj/item/blacksmith/woodrod,
+/obj/item/blacksmith/woodrod,
+/obj/item/blacksmith/woodrod,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
 	icon_state = "dirt"
@@ -34534,7 +34541,7 @@
 	},
 /area/f13/village)
 "npb" = (
-/obj/structure/anvil/obtainable/basic,
+/obj/structure/anvil/obtainable/legion,
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -39077,6 +39084,7 @@
 /area/f13/building)
 "phL" = (
 /obj/structure/rack,
+/obj/item/book/manual/advice_blacksmith,
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -106857,7 +106865,7 @@ uRJ
 uRJ
 wXv
 gjP
-lws
+iWc
 uRJ
 lws
 gjP

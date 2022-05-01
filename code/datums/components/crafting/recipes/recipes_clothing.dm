@@ -115,7 +115,7 @@
 
 /datum/crafting_recipe/twinsheath
 	name = "Twin Sheath"
-	result = /obj/item/storage/belt/sabre/twin
+	result = /obj/item/storage/belt/sword/twin
 	reqs = list(/obj/item/stack/sheet/hay = 1,
 				/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/crafting/metalparts = 2)
@@ -237,16 +237,6 @@
 	tools = list(TOOL_WIRECUTTER)
 	time = 20
 	always_available = FALSE
-
-/datum/crafting_recipe/twinsheath
-	name = "Twin Sword Sheath"
-	result = /obj/item/storage/belt/sabre/twin
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 3,
-				/obj/item/stack/sheet/leather = 8)
-	tools = list(TOOL_WIRECUTTER)
-	time = 70
-	category = CAT_CLOTHING
-	subcategory = CAT_GENCLOTHES
 
 /datum/crafting_recipe/mummy
 	name = "Mummification Bandages (Mask)"

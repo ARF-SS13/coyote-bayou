@@ -29,6 +29,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
 	new/datum/stack_recipe("iron ingot", /obj/item/ingot/iron, 6, time = 100), \
 	new/datum/stack_recipe("metal parts", /obj/item/stack/crafting/metalparts, 5), \
+	new/datum/stack_recipe("length of chain", /obj/item/blacksmith/chain, 1, time = 50), \
 	null, \
 	new/datum/stack_recipe("lock", /obj/item/lock_construct, 1), \
 	new/datum/stack_recipe("key", /obj/item/key, 1), \
@@ -342,7 +343,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		if(!do_after(user, 70, TRUE, src))
 			return
 		// Make stick
-		var/obj/item/stick/new_item = new(user.loc)
+		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
 		user.visible_message("[user] finishes carving a rod from the [src].", \
 				"<span class='notice'>You finish carving a rod from the [src].</span>")
 		// Prepare to Put in Hands (if holding wood)

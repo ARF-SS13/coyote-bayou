@@ -122,6 +122,7 @@
 		/obj/item/radio,
 		/obj/item/assembly/signaler,
 		/obj/item/twohanded/chainsaw,
+		/obj/item/melee/smith/hammer,
 		))
 	STR.can_hold = can_hold
 
@@ -144,6 +145,7 @@
 	new /obj/item/screwdriver/basic(src)
 	new /obj/item/weldingtool/basic(src)
 	new /obj/item/wirecutters/basic(src)
+	new /obj/item/melee/smith/hammer/premade(src)
 	new /obj/item/twohanded/chainsaw(src)
 
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
@@ -176,7 +178,7 @@
 	desc = "This might look a bit like a toolbelt for a carpenter, but the items inside are meant to be used in surgery. No really."
 	content_overlays = FALSE
 
-/obj/item/storage/belt/medical/legion/PopulateContents()
+/obj/item/storage/belt/medical/primitive/PopulateContents()
 	new /obj/item/surgical_drapes(src)
 	new /obj/item/scalpel (src)
 	new /obj/item/handsaw(src)
@@ -184,6 +186,30 @@
 	new /obj/item/hemostat(src)
 	new /obj/item/weldingtool/basic(src)
 	new /obj/item/bonesetter(src)
+
+// ---------------------------------------------
+// BANDOLIER - since TG style bandolier was useless, now takes 3 boxes of shotgun ammo, or flasks, or grenades, or improvised bombs/molotovs
+/obj/item/storage/belt/bandolier
+	name = "bandolier"
+	desc = "A bandolier for holding shotgun boxes, flasks, las musket cells or various grenades."
+	icon_state = "bandolier"
+	item_state = "bandolier"
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/storage/belt/bandolier/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 3
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.can_hold = typecacheof(list(
+		/obj/item/ammo_box/shotgun,
+		/obj/item/ammo_box/lasmusket,
+		/obj/item/reagent_containers/food/drinks/flask,
+		/obj/item/grenade/f13,
+		/obj/item/reagent_containers/food/drinks/bottle/molotov,
+		/obj/item/grenade/homemade
+		))
+
 
 // END OF FALLOUT BELTS
 // ------------------------------------------------------
@@ -638,28 +664,7 @@
 		/obj/item/stack/cable_coil
 		))
 
-// ---------------------------------------------
-// BANDOLIER - since TG style bandolier was useless, now takes 3 boxes of shotgun ammo, or flasks, or grenades, or improvised bombs/molotovs
-/obj/item/storage/belt/bandolier
-	name = "bandolier"
-	desc = "A bandolier for holding shotgun boxes, flasks, las musket cells or various grenades."
-	icon_state = "bandolier"
-	item_state = "bandolier"
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
-/obj/item/storage/belt/bandolier/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_box/shotgun,
-		/obj/item/ammo_box/lasmusket,
-		/obj/item/reagent_containers/food/drinks/flask,
-		/obj/item/grenade/f13,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
-		/obj/item/grenade/homemade
-		))
 
 /obj/item/storage/belt/utility
 	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
@@ -861,9 +866,10 @@
 	icon_state = "fannypack_pink"
 	item_state = "fannypack_pink"
 
+
 /obj/item/storage/belt/sabre
-	name = "sabre sheath"
-	desc = "An ornate sheath designed to hold an officer's blade."
+	name = "sword sheath"
+	desc = "A fine sheath for carrying a sword in style."
 	icon_state = "utilitybelt"
 	item_state = "utility"
 	w_class = WEIGHT_CLASS_BULKY
@@ -898,12 +904,13 @@
 	content_overlays = TRUE
 	onmob_overlays = TRUE
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
-	fitting_swords = list(/obj/item/melee/smith/shortsword,
+	fitting_swords = list(/obj/item/melee/smith/machete,
+	/obj/item/melee/smith/machete/reforged,
 	/obj/item/melee/smith/wakizashi,
-	/obj/item/melee/smith/twohand/broadsword,
-	/obj/item/melee/smith/twohand/zweihander,
+	/obj/item/melee/smith/sword,
+	/obj/item/melee/smith/twohand/axe,
 	/obj/item/melee/smith/twohand/katana,
-	/obj/item/melee/smith/sabre,
+	/obj/item/melee/smith/sword/sabre,
 	/obj/item/melee/onehanded/machete,
 	/obj/item/melee/onehanded/club,
 	/obj/item/melee/classic_baton,
@@ -927,20 +934,37 @@
 	fitting_swords = list(/obj/item/melee/rapier)
 	starting_sword = /obj/item/melee/rapier
 
-/obj/item/storage/belt/sabre/twin
-	name = "twin sheath"
-	desc = "Two sheaths. One is capable of holding a katana (or bokken) and the other a wakizashi. You could put two wakizashis in if you really wanted to. Now you can really roleplay as a samurai."
-	icon_state = "twinsheath"
-	item_state = "quiver" //this'll do.
+
+/obj/item/storage/belt/sword // new that works
+	name = "sword sheath"
+	desc = "A fine sheath for carrying a sword in style."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	icon_state = "sheath_sword"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	item_state = "sheath_sword"
 	w_class = WEIGHT_CLASS_BULKY
+	content_overlays = TRUE
+	onmob_overlays = TRUE
+	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
+	var/starting_sword = null
+
+// Instead of half-assed broken weaboo stuff lets have something that works.
+/obj/item/storage/belt/sword/twin
+	name = "daishō"
+	desc = "A set of sheathes and straps for carrying two curved japanese style swords."
+	icon_state = "sheath_twin"
+	item_state = "sheath_twin"
 	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
 	starting_sword = null
 
-/obj/item/storage/belt/sabre/twin/ComponentInitialize()
+/obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
+	STR.can_hold = typecacheof(fitting_swords)
+	STR.quickdraw = TRUE
+
 
 /obj/item/storage/belt/military/alt
 	icon_state = "explorer2"

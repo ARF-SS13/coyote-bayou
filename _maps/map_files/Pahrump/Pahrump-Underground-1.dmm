@@ -23902,6 +23902,12 @@
 /obj/structure/girder/reinforced,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/bunker)
+"nPx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/bottle/welding_fuel,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "nPR" = (
 /obj/structure/fence/cut/large{
 	dir = 4
@@ -31344,11 +31350,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/enclave)
 "snH" = (
-/obj/structure/sign/poster/contraband/pinup_funk{
-	pixel_y = -32
-	},
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/f13/wood,
+/obj/structure/anvil/obtainable/sandstone,
+/obj/item/twohanded/sledgehammer/simple,
+/obj/item/book/manual/advice_blacksmith,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "sok" = (
 /obj/effect/decal/cleanable/dirt,
@@ -33749,6 +33754,9 @@
 "tRt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/workbench/forge,
+/obj/structure/sign/poster/contraband/pinup_funk{
+	pixel_y = -32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tRI" = (
@@ -35574,6 +35582,10 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"vdZ" = (
+/obj/structure/furnace,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "vep" = (
 /obj/structure/table/abductor{
 	desc = "The Brotherhood has released the latest iteration of their advanced table. Designed by Head Knight Envy Sin";
@@ -76935,7 +76947,7 @@ xyk
 hkn
 hkn
 wHf
-smJ
+nPx
 sJm
 wHf
 tRt
@@ -77450,7 +77462,7 @@ qxf
 wHf
 hkn
 snH
-xyk
+vdZ
 xyk
 xyk
 xyk
