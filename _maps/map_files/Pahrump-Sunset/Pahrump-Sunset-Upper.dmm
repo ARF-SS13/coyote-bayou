@@ -378,33 +378,6 @@
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
-"abb" = (
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"abc" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 4
-	},
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"abd" = (
-/obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
-	name = "Residence";
-	req_one_access_txt = "0"
-	},
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/city)
 "air" = (
 /obj/structure/fluff/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -443,9 +416,24 @@
 "bnr" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/city)
+"bxd" = (
+/obj/machinery/door/unpowered/securedoor{
+	autoclose = 1;
+	name = "Residence";
+	req_one_access_txt = "0"
+	},
+/turf/open/floor/carpet/black,
+/area/f13/city)
 "cct" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/city)
+"cmx" = (
+/obj/structure/fluff/railing{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
 "coB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -593,6 +581,19 @@
 "mbu" = (
 /turf/closed/wall/f13/tentwall,
 /area/f13/wasteland)
+"nlR" = (
+/obj/structure/fluff/railing{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
+"nqW" = (
+/obj/structure/fluff/railing{
+	dir = 5
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
 "nzf" = (
 /obj/item/bedsheet/random,
 /obj/structure/bed,
@@ -655,6 +656,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
+"pGq" = (
+/obj/structure/fluff/railing{
+	dir = 9
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
 "pHv" = (
 /obj/machinery/door/unpowered/securedoor{
 	autoclose = 1;
@@ -663,6 +671,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"pTr" = (
+/obj/structure/fluff/railing{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/wasteland)
 "pZi" = (
 /obj/structure/chair/wood/modern{
 	dir = 4
@@ -758,6 +772,12 @@
 	name = "metal plating";
 	sunlight_state = 1
 	},
+/area/f13/wasteland)
+"uuN" = (
+/obj/structure/fluff/railing{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/woodalt,
 /area/f13/wasteland)
 "uIp" = (
 /obj/structure/dresser,
@@ -18525,8 +18545,8 @@ wqF
 hsd
 aKa
 vqz
-abc
-abc
+vqz
+vqz
 vqz
 vqz
 vqz
@@ -18781,9 +18801,9 @@ rZL
 wqF
 hsd
 aKa
-abb
-jcl
-ela
+vqz
+pGq
+cmx
 cct
 cct
 cct
@@ -19038,8 +19058,8 @@ rBB
 wqF
 hsd
 aKa
-abb
-jcl
+vqz
+nlR
 ela
 cct
 jvz
@@ -19295,8 +19315,8 @@ wqF
 wqF
 hsd
 aKa
-abb
-ela
+vqz
+pTr
 ela
 ePO
 lfq
@@ -19552,13 +19572,13 @@ hsd
 hsd
 hsd
 aKa
-abb
-jcl
+vqz
+pTr
 ela
 pHv
 nGj
 bnr
-abd
+bxd
 cct
 cct
 vqz
@@ -19809,8 +19829,8 @@ aKa
 aKa
 bbB
 bbB
-abb
-ela
+vqz
+nlR
 ela
 ssi
 uIp
@@ -20066,8 +20086,8 @@ vqz
 vqz
 vqz
 vqz
-abb
-ela
+vqz
+pTr
 jcl
 cct
 cct
@@ -20323,8 +20343,8 @@ vqz
 vqz
 vqz
 vqz
-abb
-jcl
+vqz
+pTr
 ela
 cct
 xQH
@@ -20580,8 +20600,8 @@ vqz
 vqz
 vqz
 vqz
-abb
-ela
+vqz
+pTr
 ela
 ePO
 lfq
@@ -20837,13 +20857,13 @@ vqz
 vqz
 vqz
 vqz
-abb
-ela
+vqz
+nlR
 ela
 pHv
 gkd
 bnr
-abd
+bxd
 cct
 cct
 vqz
@@ -21094,8 +21114,8 @@ vqz
 vqz
 vqz
 vqz
-abb
-jcl
+vqz
+pTr
 jcl
 ssi
 jcx
@@ -21351,8 +21371,8 @@ vqz
 vqz
 vqz
 vqz
-abb
-jcl
+vqz
+pTr
 ela
 cct
 cct
@@ -21608,9 +21628,9 @@ vqz
 vqz
 vqz
 vqz
-abb
-ela
-ela
+vqz
+nqW
+uuN
 vqz
 vqz
 vqz
@@ -21866,8 +21886,8 @@ vqz
 vqz
 vqz
 vqz
-qLy
-qLy
+vqz
+vqz
 vqz
 vqz
 vqz
