@@ -167,7 +167,7 @@
 /obj/item/clothing/suit/armor/f13/combat/laserproof
 	name = "ablative combat armor"
 	desc = "An old military grade pre war combat armor. This one switches out its ballistic fibers for an ablative coating that disrupts energy weapons."
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 80, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 60, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
 /obj/item/clothing/suit/armor/f13/combat/dark
 	name = "combat armor"
