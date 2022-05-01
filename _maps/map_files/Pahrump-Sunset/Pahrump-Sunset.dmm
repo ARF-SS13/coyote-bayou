@@ -16912,6 +16912,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bar/heaven)
+"aYw" = (
+/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/machinery/door/poddoor/shutters{
+	id = "barshutters"
+	},
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/f13/city)
 "aYx" = (
 /obj/structure/sink/kitchen{
 	pixel_y = 28
@@ -20087,6 +20095,13 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/wood/f13/stage_br,
 /area/f13/bar/heaven)
+"bgQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/north{
+	color = "#A47449"
+	},
+/turf/open/space/basic,
+/area/f13/wasteland)
 "bgR" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/indestructible/ground/outside/savannah/toprightcorner,
@@ -22276,6 +22291,14 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/wasteland)
+"bms" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/sidewalk,
+/area/f13/wasteland)
 "bmt" = (
 /obj/machinery/door/poddoor/gate/preopen{
 	id = "exteriorgate"
@@ -22284,6 +22307,11 @@
 /area/f13/wasteland)
 "bmu" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/wasteland)
+"bmv" = (
+/turf/open/floor/plasteel/stairs/old{
+	color = "#A47449"
+	},
 /area/f13/wasteland)
 "bmw" = (
 /obj/effect/decal/marking{
@@ -23274,14 +23302,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"bpx" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/stairs/north,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 1;
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland)
 "bpy" = (
 /obj/structure/decoration/clock{
 	pixel_y = -34
@@ -26808,9 +26828,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
-"ccP" = (
-/turf/open/floor/plasteel/stairs/old,
-/area/f13/wasteland)
 "cdm" = (
 /obj/structure/rack,
 /obj/item/kitchen/knife,
@@ -28679,14 +28696,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"cUD" = (
-/obj/structure/chair/middle,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/machinery/door/poddoor/shutters{
-	id = "barshutters"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/city)
 "cVk" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -29823,13 +29832,6 @@
 "gNQ" = (
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
-"gOn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/railing{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
 "gQy" = (
 /obj/structure/closet{
 	pixel_x = -9;
@@ -44925,10 +44927,10 @@ aae
 ygj
 aTw
 swr
-cUD
-cUD
-cUD
-cUD
+aYw
+aYw
+aYw
+aYw
 swr
 bUB
 aTw
@@ -53445,7 +53447,7 @@ aat
 uBx
 agl
 xvI
-ccP
+bmv
 cdr
 seN
 boB
@@ -55747,8 +55749,8 @@ bkj
 ccw
 xCa
 aNM
-bpx
-afF
+bgQ
+xvI
 xCa
 caq
 caA
@@ -56004,7 +56006,7 @@ aft
 xvI
 xvI
 xvI
-gOn
+bms
 xvI
 xvI
 xvI
