@@ -213,7 +213,7 @@ Mayor
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13sheriff
-	title = "Chief of Police"
+	title = "Sheriff"
 	flag = F13SHERIFF
 	department_flag = DEP_OASIS
 	head_announce = list("Security")
@@ -239,7 +239,6 @@ Mayor
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/oasis,
-			/datum/job/wasteland/f13raider,
 		),
 	)
 

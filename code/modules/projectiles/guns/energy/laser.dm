@@ -314,7 +314,6 @@
 /obj/item/gun/energy/laser/auto
 	name = "compact autolaser"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
-	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL

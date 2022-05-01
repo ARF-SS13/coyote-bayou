@@ -1396,6 +1396,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bunker)
+"boc" = (
+/obj/machinery/hydroponics/constructable,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/green,
+/area/f13/bunker)
 "box" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -2294,6 +2302,13 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
+"cgz" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
+/area/f13/bunker)
 "cgR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2482,6 +2497,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/bunker)
 "cor" = (
+/obj/machinery/hydroponics/constructable,
 /obj/structure/spacevine{
 	name = "vines"
 	},
@@ -3185,6 +3201,12 @@
 	},
 /turf/closed/indestructible/rock,
 /area/f13/underground/cave)
+"cZN" = (
+/obj/structure/grille/broken,
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
+/area/f13/bunker)
 "cZQ" = (
 /obj/structure/table/wood,
 /obj/structure/nest/raider/melee{
@@ -6110,6 +6132,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "fvo" = (
+/obj/structure/glowshroom/single,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
@@ -6754,12 +6777,25 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
+"fZh" = (
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
+/area/f13/bunker)
 "fZj" = (
 /obj/structure/flora/tree/joshua,
 /turf/open/indestructible/ground/outside/desert{
 	icon_state = "wasteland33"
 	},
 /area/f13/wasteland)
+"fZv" = (
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
+/area/f13/bunker)
 "fZG" = (
 /obj/structure/table/wood/settler,
 /obj/item/kitchen/knife,
@@ -7488,6 +7524,12 @@
 /obj/structure/mirelurkegg,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/bunker)
+"gIO" = (
+/obj/structure/flora/junglebush/large,
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
 /area/f13/bunker)
 "gIS" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -9115,6 +9157,12 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
+/area/f13/bunker)
+"ibZ" = (
+/obj/structure/flora/rock/jungle,
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
 /area/f13/bunker)
 "icx" = (
 /turf/open/floor/plasteel/f13{
@@ -13083,6 +13131,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
+/obj/structure/glowshroom/single,
 /mob/living/simple_animal/hostile/mirelurk,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
@@ -16562,6 +16611,15 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/ammo_box/a762box,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/bunker)
+"oKD" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/glowshroom/single,
+/obj/structure/spacevine{
+	name = "vines"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/water,
 /area/f13/bunker)
 "oKE" = (
 /obj/structure/closet,
@@ -20934,6 +20992,12 @@
 /mob/living/simple_animal/hostile/radscorpion/black,
 /turf/open/water,
 /area/f13/bunker)
+"sgO" = (
+/obj/structure/glowshroom/single,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/water,
+/area/f13/bunker)
 "shh" = (
 /obj/structure/spacevine{
 	name = "vines"
@@ -21288,6 +21352,7 @@
 /obj/structure/spacevine{
 	name = "vines"
 	},
+/obj/structure/glowshroom/single,
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
@@ -25168,6 +25233,7 @@
 	},
 /area/f13/radiation)
 "vXK" = (
+/obj/structure/glowshroom/single,
 /mob/living/simple_animal/hostile/jungle/mega_arachnid,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
@@ -97761,7 +97827,7 @@ sTt
 osy
 osy
 sQg
-xKL
+cgz
 sTt
 sTt
 sTt
@@ -98023,7 +98089,7 @@ fOM
 sTt
 sTt
 dxg
-sIx
+gIO
 osy
 oCe
 acN
@@ -98528,7 +98594,7 @@ xcX
 nyc
 ggw
 acN
-sTt
+fZv
 sTt
 sTt
 sTt
@@ -99566,7 +99632,7 @@ sTt
 dxg
 dxg
 pWZ
-sTt
+fZv
 acN
 acN
 uMQ
@@ -99813,11 +99879,11 @@ aBf
 peJ
 lyL
 sTt
-fSP
+cZN
 aBf
 sTt
 dxg
-sTt
+fZv
 dxg
 dxg
 dxg
@@ -100323,7 +100389,7 @@ acN
 acN
 sUz
 osy
-sTt
+fZv
 xub
 sTt
 tph
@@ -100838,7 +100904,7 @@ sTt
 vfx
 nLC
 sTt
-sTt
+fZv
 vUd
 rCv
 skI
@@ -101862,7 +101928,7 @@ acN
 acN
 sIx
 sTt
-sTt
+fZv
 sTt
 osy
 sTt
@@ -101870,7 +101936,7 @@ sTt
 sTt
 dxg
 qBR
-dxg
+fZh
 sTt
 dxg
 dxg
@@ -101883,7 +101949,7 @@ sTt
 osy
 sQg
 dxg
-sQg
+oKD
 qYN
 dxg
 sTt
@@ -102122,7 +102188,7 @@ sTt
 osy
 aBf
 sTt
-qOu
+ibZ
 sQg
 kKg
 osy
@@ -102641,7 +102707,7 @@ sTt
 sTt
 aBf
 sTt
-sTt
+fvo
 sTt
 ily
 aBf
@@ -102652,7 +102718,7 @@ sTt
 nzm
 sTt
 osy
-sTt
+fZv
 aBf
 nLC
 nLC
@@ -103415,13 +103481,13 @@ dxg
 dxg
 ngr
 dxg
-sTt
+fZv
 osy
 nzm
 sTt
 dxg
 dxg
-sTt
+fZv
 sTt
 sTt
 hEl
@@ -103660,7 +103726,7 @@ acN
 acN
 acN
 oif
-oif
+sgO
 nLC
 rCv
 hrK
@@ -104188,7 +104254,7 @@ rCv
 vnh
 pEy
 sTt
-dxg
+fZh
 dxg
 osy
 nun
@@ -104455,7 +104521,7 @@ nLC
 mOX
 deG
 osy
-sTt
+fZv
 uiT
 nLC
 kgl
@@ -104948,7 +105014,7 @@ nLC
 mOX
 hEl
 deG
-sTt
+fZv
 hEl
 nLC
 nLC
@@ -105960,7 +106026,7 @@ aiq
 acN
 acN
 acN
-ktT
+bii
 iep
 ktT
 sXK
@@ -106217,7 +106283,7 @@ aiq
 acN
 acN
 acN
-ktT
+bii
 iep
 ktT
 tjZ
@@ -107245,7 +107311,7 @@ aiq
 acN
 acN
 acN
-ktT
+bii
 iep
 kpf
 jeq
@@ -107502,7 +107568,7 @@ aiq
 acN
 acN
 acN
-kpf
+boc
 iep
 kpf
 vap
