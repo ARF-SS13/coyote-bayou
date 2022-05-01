@@ -268,6 +268,7 @@
 	gender = PLURAL
 	max_integrity = 20
 	CanAtmosPass = ATMOS_PASS_DENSITY
+	pass_flags_self = PASSGLASS
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
 
@@ -290,9 +291,6 @@
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 	to_chat(user, "<span class='warning'>You hit [src] but bounce off it!</span>")
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
-
-/obj/structure/foamedmetal/CanPass(atom/movable/mover, border_dir)
-	return !density
 
 /obj/structure/foamedmetal/iron
 	max_integrity = 50
@@ -332,15 +330,6 @@
 			L.ExtinguishMob()
 		for(var/obj/item/Item in O)
 			Item.extinguish()
-
-/obj/structure/foamedmetal/resin/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return TRUE
-	. = ..()
-
-
-/obj/structure/foamedmetal/resin/BlockThermalConductivity()
-	return TRUE
 
 #undef ALUMINUM_FOAM
 #undef IRON_FOAM

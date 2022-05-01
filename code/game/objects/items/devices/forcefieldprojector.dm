@@ -10,6 +10,7 @@
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	custom_materials = list(/datum/material/iron=250, /datum/material/glass=500)
+	pass_flags_self = PASSGLASS
 	var/max_shield_integrity = 100
 	var/shield_integrity = 250
 	var/max_fields = 3
@@ -100,11 +101,6 @@
 	generator.current_fields -= src
 	generator = null
 	return ..()
-
-/obj/structure/projected_forcefield/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & PASSGLASS))
-		return 1
-	return !density
 
 /obj/structure/projected_forcefield/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	playsound(loc, 'sound/weapons/egloves.ogg', 80, 1)

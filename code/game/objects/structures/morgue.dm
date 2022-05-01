@@ -300,7 +300,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	layer = TRAY_LAYER
 	var/obj/structure/bodycontainer/connected = null
 	anchored = TRUE
-	pass_flags = LETPASSTHROW
+	pass_flags_self = LETPASSTHROW
 	max_integrity = 350
 
 /obj/structure/tray/Destroy()
@@ -358,13 +358,14 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	icon_state = "morguet"
 	pass_flags_self = PASSTABLE
 
-/obj/structure/tray/m_tray/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover) && (mover.pass_flags & pass_flags_self))
-		return 1
+/obj/structure/tray/m_tray/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+	if(.)
+		return
 	if(locate(/obj/structure/table) in get_turf(mover))
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 /obj/structure/tray/m_tray/CanAStarPass(ID, dir, caller)
 	. = !density

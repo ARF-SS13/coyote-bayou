@@ -131,13 +131,13 @@
 		M.drop_all_held_items()
 		M.adjustOxyLoss(1)
 		M.emote("cough")
-		return 1
+		return TRUE
 
-/obj/effect/particle_effect/smoke/bad/CanPass(atom/movable/mover, border_dir)
-	if(istype(mover, /obj/item/projectile/beam))
-		var/obj/item/projectile/beam/B = mover
+/obj/effect/particle_effect/smoke/bad/Crossed(atom/movable/AM, oldloc)
+	. = ..()
+	if(istype(AM, /obj/item/projectile))
+		var/obj/item/projectile/B = AM
 		B.damage = (B.damage/2)
-	return 1
 
 
 

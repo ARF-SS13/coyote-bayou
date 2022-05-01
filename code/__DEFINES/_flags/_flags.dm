@@ -81,14 +81,17 @@ GLOBAL_LIST_INIT(bitflags, list(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 204
 #define PASSMOB			(1<<4)
 #define PASSCLOSEDTURF	(1<<5)
 #define LETPASSTHROW	(1<<6)
+#define	PASSMACHINE		(1<<7)
+#define PASSSTRUCTURE	(1<<8)
+
 
 //Movement Types
 #define GROUND				(1<<0)
 #define FLYING				(1<<1)
 #define VENTCRAWLING		(1<<2)
 #define FLOATING			(1<<3)
-///When moving, will Bump()/Cross()/Uncross() everything, but won't be stopped.
-#define UNSTOPPABLE			(1<<4)
+///When moving, will Bump()/Cross()/Uncross() everything, but won't stop or Bump() anything.
+#define PHASING			(1<<4)
 ///Applied if you're crawling around on the ground/resting.
 #define CRAWLING			(1<<5)
 

@@ -2,6 +2,7 @@
 	layer = ABOVE_MOB_LAYER
 	anchored = TRUE
 	default_driver_move = FALSE
+	pass_flags_self = PASSTABLE
 	var/car_traits = NONE //Bitflag for special behavior such as kidnapping
 	var/engine_sound = 'sound/vehicles/carrev.ogg'
 	var/last_enginesound_time
