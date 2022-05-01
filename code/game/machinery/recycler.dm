@@ -1,5 +1,4 @@
 #define SAFETY_COOLDOWN 100
-
 /obj/machinery/recycler
 	name = "recycler"
 	desc = "A large crushing machine used to recycle small items inefficiently. There are lights on the side."
@@ -7,6 +6,7 @@
 	icon_state = "grinder-o0"
 	layer = ABOVE_ALL_MOB_LAYER // Overhead
 	density = TRUE
+	obj_flags = CAN_BE_HIT | EMAGGED
 	circuit = /obj/item/circuitboard/machine/recycler
 	var/safety_mode = FALSE // Temporarily stops machine if it detects a mob, or upon deconstruction.
 	var/icon_name = "grinder-o"
@@ -42,29 +42,22 @@
 	var/datum/component/butchering/butchering = GetComponent(/datum/component/butchering/recycler)
 	butchering.effectiveness = amount_produced
 	butchering.bonus_modifier = amount_produced/5
-
 /obj/machinery/recycler/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Reclaiming <b>[amount_produced]%</b> of materials salvaged.</span>"
 	. += {"The power light is [(stat & NOPOWER) ? "off" : "on"].
 	The safety-mode light is [safety_mode ? "on" : "off"].
 	The safety-sensors status light is [obj_flags & EMAGGED ? "off" : "on"]."}
-
 /obj/machinery/recycler/power_change()
 	..()
 	update_icon()
-
-
 /obj/machinery/recycler/attackby(obj/item/I, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "grinder-oOpen", "grinder-o0", I))
 		return
-
 	if(default_pry_open(I))
 		return
-
 	if(default_unfasten_wrench(user, I))
 		return
-
 	if(default_deconstruction_crowbar(I))
 		return
 	return ..()
@@ -87,11 +80,10 @@
 		is_powered = FALSE
 	icon_state = icon_name + "[is_powered]" + "[(blood ? "bld" : "")]" // add the blood tag at the end
 
-/obj/machinery/recycler/CanPass(atom/movable/AM)
+/obj/machinery/recycler/CanAllowThrough(atom/movable/AM)
 	. = ..()
 	if(!anchored)
 		return
-
 	var/move_dir = get_dir(loc, AM.loc)
 	if(move_dir == eat_dir)
 		return TRUE
@@ -100,61 +92,59 @@
 	eat(AM)
 	. = ..()
 
-/obj/machinery/recycler/proc/eat(atom/AM0)
-	if(stat & (BROKEN|NOPOWER) || safety_mode)
+/obj/machinery/recycler/proc/eat(atom/movable/AM0, sound=TRUE)
+	if(stat & (BROKEN|NOPOWER))
 		return
-
-	var/list/to_eat
-
-	to_eat = list(AM0)
-
-	var/items_recycled = 0
-	var/buzz = FALSE
+	if(safety_mode)
+		return
+	if(!isturf(AM0.loc))
+		return //I don't know how you called Crossed() but stop it.
+	var/list/to_eat = AM0.GetAllContents()
+	var/mob/living/living_detected //technically includes silicons as well but eh
+	var/list/nom = list()
+	var/list/crunchy_nom = list() //Mobs have to be handled differently so they get a different list instead of checking them multiple times.
 	for(var/i in to_eat)
 		var/atom/movable/AM = i
-		if(QDELETED(AM))
-			continue
-		var/obj/item/bodypart/head/as_head = AM
-		var/obj/item/mmi/as_mmi = AM
-		var/brain_holder = istype(AM, /obj/item/organ/brain) || (istype(as_head) && as_head.brain) || (istype(as_mmi) && as_mmi.brain) || istype(AM, /obj/item/dullahan_relay)
-		if(brain_holder)
-			if(obj_flags & EMAGGED)
-				continue
-			else
-				emergency_stop(AM)
-				return
+		if(istype(AM, /obj/item))
+			var/obj/item/bodypart/head/as_head = AM
+			var/obj/item/mmi/as_mmi = AM
+			if(istype(AM, /obj/item/organ/brain) || (istype(as_head) && as_head.brain) || (istype(as_mmi) && as_mmi.brain) || istype(AM, /obj/item/dullahan_relay))
+				living_detected = living_detected ? living_detected : AM
+			nom += AM
 		else if(isliving(AM))
-			if((obj_flags & EMAGGED)||((!allowed(AM))&&(!ishuman(AM))))
-				to_eat += crush_living(AM)
-			else
-				emergency_stop(AM)
-				return
-		else if(isitem(AM))
-			var/obj/O = AM
-			if(O.resistance_flags & INDESTRUCTIBLE)
-				buzz = TRUE
-				O.forceMove(loc)
-			else
-				to_eat += recycle_item(AM)
-				items_recycled++
-		else
-			buzz = TRUE
-			AM.forceMove(loc)
-
-	if(items_recycled)
-		playsound(src, item_recycle_sound, 50, 1)
-	if(buzz)
-		playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 0)
+			living_detected = living_detected ? living_detected : AM
+			crunchy_nom += AM
+	var/not_eaten = to_eat.len - nom.len - crunchy_nom.len
+	if(living_detected) // First, check if we have any living beings detected.
+		if(obj_flags & EMAGGED)
+			for(var/CRUNCH in crunchy_nom) // Eat them and keep going because we don't care about safety.
+				if(isliving(CRUNCH)) // MMIs and brains will get eaten like normal items
+					crush_living(CRUNCH)
+		else // Stop processing right now without eating anything.
+			emergency_stop(living_detected)
+			return
+	for(var/nommed in nom)
+		recycle_item(nommed)
+	if(nom.len && sound)
+		playsound(src, item_recycle_sound, (50 + nom.len*5), TRUE, nom.len, ignore_walls = (nom.len - 10)) // As a substitute for playing 50 sounds at once.
+	if(not_eaten)
+		playsound(src, 'sound/machines/buzz-sigh.ogg', (50 + not_eaten*5), FALSE, not_eaten, ignore_walls = (not_eaten - 10)) // Ditto.
+	if(!ismob(AM0))
+		AM0.moveToNullspace()
+		qdel(AM0)
+	else // Lets not move a mob to nullspace and qdel it, yes?
+		for(var/i in AM0.contents)
+			var/atom/movable/content = i
+			content.moveToNullspace()
+			qdel(content)
 
 /obj/machinery/recycler/proc/recycle_item(obj/item/I)
-
 	. = list()
 	for(var/A in I)
 		var/atom/movable/AM = A
 		AM.forceMove(loc)
 		if(AM.loc == loc)
 			. += AM
-
 	I.forceMove(loc)
 	var/obj/item/grown/log/L = I
 	if(istype(L))
@@ -174,7 +164,6 @@
 		qdel(I)
 		materials.retrieve_all()
 
-
 /obj/machinery/recycler/proc/emergency_stop(mob/living/L)
 	playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 0)
 	safety_mode = TRUE
@@ -188,35 +177,28 @@
 	update_icon()
 
 /obj/machinery/recycler/proc/crush_living(mob/living/L)
-
 	. = list()
 	L.forceMove(loc)
-
 	if(issilicon(L))
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 	else
 		playsound(src, 'sound/effects/splat.ogg', 50, 1)
-
 	// By default, the emagged recycler will gib all non-carbons. (human simple animal mobs don't count)
 	if(iscarbon(L))
 		if(L.stat == CONSCIOUS)
 			L.say("ARRRRRRRRRRRGH!!!", forced="recycler grinding")
 		add_mob_blood(L)
-
 	if(!blood && !issilicon(L))
 		blood = TRUE
 		update_icon()
-
 	// Remove and recycle the equipped items
 	if(eat_victim_items)
 		for(var/obj/item/I in L.get_equipped_items(TRUE))
 			if(L.dropItemToGround(I))
 				. += I
-
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
 	L.adjustBruteLoss(crush_damage)
-
 /obj/machinery/recycler/deathtrap
 	name = "dangerous old crusher"
 	obj_flags = CAN_BE_HIT | EMAGGED

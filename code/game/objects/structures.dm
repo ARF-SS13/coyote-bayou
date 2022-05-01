@@ -12,10 +12,11 @@
 	var/barricade = TRUE //set to true to allow projectiles to always pass over it, default false (checks vs density)
 	var/proj_pass_rate = 65 //if barricade=1, sets how many projectiles will pass the cover. Lower means stronger cover
 	layer = BELOW_OBJ_LAYER
-	//ricochets on structures commented out for now because there's a lot of structures that /shouldnt/ be ricocheting and those need to be reviewed first
-	//flags_1 = DEFAULT_RICOCHET_1
-	//flags_ricochet = RICOCHET_HARD
-	//ricochet_chance_mod = 0.5
+	//With the addition of [pass_flags_self] the ricocheting of structures /shouldnt/ happen by default
+	flags_ricochet = RICOCHET_HARD
+	ricochet_chance_mod = 0.5
+	pass_flags_self = PASSSTRUCTURE
+
 
 /obj/structure/Initialize()
 	if (!armor)
@@ -26,6 +27,12 @@
 		queue_smooth_neighbors(src)
 		icon_state = ""
 	GLOB.cameranet.updateVisibility(src)
+
+/obj/structure/CanAllowThrough(atom/movable/mover, turf/target)
+	. = ..()
+
+	if(mover.pass_flags & PASSSTRUCTURE)
+		return TRUE
 
 /obj/structure/Destroy()
 	GLOB.cameranet.updateVisibility(src)
