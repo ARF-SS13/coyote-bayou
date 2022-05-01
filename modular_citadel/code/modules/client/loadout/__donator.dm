@@ -109,6 +109,17 @@
 	path = /obj/item/storage/box/large/custom_kit/burningcold
 	ckeywhitelist = list("myguy49")
 	
+/obj/item/storage/box/large/custom_kit/pineapple/PopulateContents()
+	new /obj/item/clothing/suit/armor/f13/power_armor/t60(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/t60(src)
+	new /obj/item/clothing/neck/mantle/bos(src)
+
+
+/datum/gear/donator/kits/pineapple
+	name = "Silvers goods"
+	path = /obj/item/storage/box/large/custom_kit/pineapple
+	ckeywhitelist = list("silveredsoul")
+
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 

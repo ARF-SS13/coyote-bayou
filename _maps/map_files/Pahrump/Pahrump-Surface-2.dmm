@@ -3050,14 +3050,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/ncr)
-"bkY" = (
-/obj/structure/nest/radroach{
-	max_mobs = 2
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "blf" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -7612,7 +7604,6 @@
 	},
 /area/f13/building)
 "dgB" = (
-/obj/structure/debris/v3,
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/plating/dirt/dark,
 /area/f13/caves)
@@ -12286,7 +12277,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eWQ" = (
-/obj/machinery/hydroponics/soil,
 /obj/effect/decal/riverbank,
 /obj/effect/decal/riverbank,
 /turf/open/indestructible/ground/inside/dirt,
@@ -31029,7 +31019,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lYX" = (
-/obj/machinery/power/smes,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -40793,7 +40782,6 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "pUj" = (
-/obj/machinery/power/smes,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -55597,9 +55585,9 @@
 	},
 /area/f13/building)
 "vXs" = (
-/obj/machinery/power/smes,
-/turf/open/floor/plating,
-/area/f13/tunnel)
+/obj/effect/decal/riverbank,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/ncr)
 "vXv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_7"
@@ -58246,9 +58234,8 @@
 	},
 /area/f13/building)
 "xdi" = (
-/obj/structure/debris/v3,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/ncr)
 "xdp" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/blood/radaway,
@@ -62140,7 +62127,7 @@ gcK
 gcK
 gcK
 uwR
-xdi
+mwp
 mwp
 mwp
 mwp
@@ -73945,7 +73932,7 @@ csk
 gcK
 gcK
 sGI
-qLC
+gcK
 sGI
 iRT
 fzl
@@ -86184,8 +86171,8 @@ wyi
 lde
 xGv
 nVM
-cYn
-oou
+vXs
+xdi
 wvV
 wvV
 ayH
@@ -86441,8 +86428,8 @@ wyi
 pdl
 xGv
 jQd
-cYn
-oou
+vXs
+xdi
 wvV
 wvV
 ayH
@@ -86666,7 +86653,7 @@ qTf
 acR
 acR
 mGC
-vXs
+qal
 rFk
 gYu
 qal
@@ -87470,7 +87457,7 @@ dTl
 xGv
 xGv
 eWQ
-oou
+xdi
 wvV
 wvV
 ayH
@@ -99386,11 +99373,11 @@ mvv
 ptI
 mvv
 uNW
-wju
+peu
 mqs
 nTP
 xDw
-wju
+peu
 xch
 wPl
 tVV
@@ -99643,11 +99630,11 @@ mfD
 mfD
 jWH
 xSc
-wju
+peu
 nTP
 nTP
 oti
-wju
+peu
 bLP
 wPl
 kGc
@@ -100671,11 +100658,11 @@ fyf
 fyf
 tBN
 xSc
-wju
+peu
 xDw
 xDw
 nTP
-wju
+peu
 oOy
 wPl
 doh
@@ -100928,11 +100915,11 @@ jyI
 hll
 tBN
 kDu
-wju
+peu
 mtr
 mOP
 nVi
-wju
+peu
 oGS
 wPl
 doh
@@ -124247,7 +124234,7 @@ vYv
 vYv
 vYv
 vYv
-bkY
+vYv
 vYv
 lsS
 dhC
@@ -125528,7 +125515,7 @@ gts
 olP
 kpA
 vYv
-bkY
+vYv
 wSX
 vYv
 gts
