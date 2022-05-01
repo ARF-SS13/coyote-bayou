@@ -173,8 +173,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 /obj/item/projectile/bullet/a50MG/penetrator
 	name = ".50 penetrator round"
 	damage = -10
-	projectile_piercing = PASSMOB
-	projectile_phasing = (ALL & (~PASSMOB))
+	movement_type = FLYING | UNSTOPPABLE
 
 /obj/item/projectile/bullet/a50MG/uraniumtipped
 	name = "12.7mm uranium-tipped bullet"
@@ -244,6 +243,8 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 /obj/item/projectile/bullet/a473/dumdum
 	name = "4.73 flat-nose bullet"
 	damage = 5
+	supereffective_damage = 10
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot")
 	armour_penetration = -0.2
 	wound_bonus = 20
 	bare_wound_bonus = 30
@@ -331,8 +332,7 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = "2mm blender projectile"
 	damage = -20
 	hitscan = TRUE
-	projectile_piercing = PASSMOB
-	projectile_phasing = (ALL & (~PASSMOB))
+	pass_flags = PASSTABLE
 	armour_penetration = 1
 	ricochets_max = 9 //ain't called the 'blender' for nothin'
 	ricochet_incidence_leeway = 130
@@ -340,3 +340,10 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	ricochet_decay_chance = 11
 	ricochet_chance = 100
 	var/collats = 3
+
+/obj/item/projectile/bullet/c2mm/blender/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
+	if(isliving(target) && collats)
+		collats--
+		temporary_unstoppable_movement = TRUE
+		ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
+	..()

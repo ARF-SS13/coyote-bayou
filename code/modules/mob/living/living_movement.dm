@@ -17,10 +17,12 @@
 			pixel_x = get_standard_pixel_x_offset(lying)
 			pixel_y = get_standard_pixel_y_offset(lying)
 
-/mob/living/CanAllowThrough(atom/movable/mover, turf/target)
-	. = ..()
-	if(.)
-		return
+/mob/living/CanPass(atom/movable/mover, border_dir)
+	if((mover.pass_flags & PASSMOB))
+		return TRUE
+	if(istype(mover, /obj/item/projectile))
+		var/obj/item/projectile/P = mover
+		return !P.can_hit_target(src, P.permutated, src == P.original, TRUE)
 	if(mover.throwing)
 		return (!density || lying)
 	if(buckled == mover)
@@ -32,7 +34,7 @@
 		if(mover in buckled_mobs)
 			return TRUE
 	var/mob/living/L = mover		//typecast first, check isliving and only check this if living using short circuit
-	return (isliving(mover)? L.can_move_under_living(src) : !mover.density)
+	return (!density || (isliving(mover)? L.can_move_under_living(src) : !mover.density))
 
 /mob/living/toggle_move_intent()
 	. = ..()

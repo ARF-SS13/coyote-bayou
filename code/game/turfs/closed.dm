@@ -6,7 +6,6 @@
 	blocks_air = 1
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 	rad_insulation = RAD_MEDIUM_INSULATION
-	pass_flags_self = PASSCLOSEDTURF
 
 
 /turf/closed/Initialize()
@@ -24,6 +23,10 @@
 /turf/closed/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
 
+/turf/closed/CanPass(atom/movable/mover, border_dir)
+	if(istype(mover) && (mover.pass_flags & PASSCLOSEDTURF))
+		return TRUE
+	return ..()
 //remember folks, numbers are always balance-able
 /turf/closed/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum) //don't get thrown into walls, you'll give yourself a concussion
 	. = ..()

@@ -90,7 +90,6 @@ Class Procs:
 	verb_say = "beeps"
 	verb_yell = "blares"
 	pressure_resistance = 15
-	pass_flags_self = PASSMACHINE
 	max_integrity = 200
 	layer = BELOW_OBJ_LAYER //keeps shit coming out of the machine from ending up underneath it.
 	flags_1 = DEFAULT_RICOCHET_1
@@ -191,12 +190,6 @@ Class Procs:
 		dropContents()
 	update_icon()
 	updateUsrDialog()
-
-/obj/machinery/CanAllowThrough(atom/movable/mover, turf/target)
-	. = ..()
-
-	if(mover.pass_flags & PASSMACHINE)
-		return TRUE
 
 /obj/machinery/proc/createmessage(source, title, message, priority)
 
@@ -306,14 +299,14 @@ Class Procs:
 	if(barricade == FALSE)
 		return !density
 	else if(density == FALSE)
-		return TRUE
+		return 1
 	else if(istype(mover, /obj/item/projectile))
 		var/obj/item/projectile/proj = mover
 		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
+			return 1
 		if(prob(proj_pass_rate))
-			return TRUE
-		return FALSE
+			return 1
+		return 0
 	else
 		return !density
 

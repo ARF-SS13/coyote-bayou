@@ -343,17 +343,18 @@
 	var/created = FALSE //prevents creation of more then one locker if it has multiple hits
 	var/locker_suck = TRUE
 
-/obj/item/projectile/magic/locker/prehit_pierce(atom/A)
-	. = ..()
+/obj/item/projectile/magic/locker/prehit(atom/A)
 	if(ismob(A) && locker_suck)
 		var/mob/M = A
-		if(M.anti_magic_check()) // no this doesn't check if ..() returned to phase through do I care no it's magic ain't gotta explain shit - Silly-Cons
+		if(M.anti_magic_check())
 			M.visible_message("<span class='warning'>[src] vanishes on contact with [A]!</span>")
-			return PROJECTILE_DELETE_WITHOUT_HITTING
-		if(M.anchored)
+			qdel(src)
 			return
+		if(M.anchored)
+			return ..()
 		M.forceMove(src)
-		return PROJECTILE_PIERCE_PHASE
+		return FALSE
+	return ..()
 
 /obj/item/projectile/magic/locker/on_hit(target)
 	if(created)

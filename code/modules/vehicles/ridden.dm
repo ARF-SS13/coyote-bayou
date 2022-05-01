@@ -4,7 +4,6 @@
 	max_buckled_mobs = 1
 	buckle_lying = FALSE
 	default_driver_move = FALSE
-	pass_flags_self = PASSTABLE
 	var/legs_required = 1
 	var/arms_required = 0	//why not?
 

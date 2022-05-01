@@ -9,9 +9,6 @@
 	var/interaction_flags_atom = NONE
 	var/datum/reagents/reagents = null
 
-	/// pass_flags that we are. If any of this matches a pass_flag on a moving thing, by default, we let them through.
-	var/pass_flags_self = NONE
-
 	var/flags_ricochet = NONE
 
 	///When a projectile tries to ricochet off this atom, the projectile ricochet chance is multiplied by this
@@ -201,22 +198,7 @@
  * Whether mover can enter enter or leave the turf src is in (or is, if it's a turf).
  * border_dir determines from which direction the attempted move is originating.
  */
-/atom/proc/CanPass(atom/movable/mover, turf/target)
-	//SHOULD_CALL_PARENT(TRUE)
-	if(mover.movement_type & PHASING)
-		return TRUE
-	. = CanAllowThrough(mover, target)
-	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
-	if(!mover.generic_canpass)
-		return mover.CanPassThrough(src, target, .)
-
-/// Returns true or false to allow the mover to move through src
-/atom/proc/CanAllowThrough(atom/movable/mover, turf/target)
-	//SHOULD_CALL_PARENT(TRUE)
-	if(mover.pass_flags & pass_flags_self)
-		return TRUE
-	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
-		return TRUE
+/atom/proc/CanPass(atom/movable/mover, border_dir)
 	return !density
 
 
@@ -359,19 +341,10 @@
 	if(!(protection & EMP_PROTECT_WIRES) && istype(wires))
 		wires.emp_pulse(severity)
 	return protection // Pass the protection value collected here upwards
-/**
- * React to a hit by a projectile object
- *
- * Default behaviour is to send the [COMSIG_ATOM_BULLET_ACT] and then call [on_hit][/obj/item/projectile/proc/on_hit] on the projectile
- *
- * @params
- * P - projectile
- * def_zone - zone hit
- * piercing_hit - is this hit piercing or normal?
- */
-/atom/proc/bullet_act(obj/item/projectile/P, def_zone, piercing_hit = FALSE)
+
+/atom/proc/bullet_act(obj/item/projectile/P, def_zone)
 	SEND_SIGNAL(src, COMSIG_ATOM_BULLET_ACT, P, def_zone)
-	. = P.on_hit(src, 0, def_zone, piercing_hit)
+	. = P.on_hit(src, 0, def_zone)
 
 //used on altdisarm() for special interactions between the shoved victim (target) and the src, with user being the one shoving the target on it.
 // IMPORTANT: if you wish to add a new own shove_act() to a certain object, remember to add SHOVABLE_ONTO to its obj_flags bitfied var first.

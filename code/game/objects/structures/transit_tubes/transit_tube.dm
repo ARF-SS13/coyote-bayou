@@ -4,16 +4,20 @@
 	icon = 'icons/obj/atmospherics/pipes/transit_tube.dmi'
 	icon_state = "straight"
 	desc = "A transit tube for moving things around."
-	density = FALSE
+	density = TRUE
 	layer = LOW_ITEM_LAYER
 	anchored = TRUE
 	climbable = 1
-	pass_flags_self = PASSGLASS
 	var/tube_construction = /obj/structure/c_transit_tube
 	var/list/tube_dirs //list of directions this tube section can connect to.
 	var/exit_delay = 1
 	var/enter_delay = 0
 	var/const/time_to_unwrench = 2 SECONDS
+
+/obj/structure/transit_tube/CanPass(atom/movable/mover, border_dir)
+	if(istype(mover) && (mover.pass_flags & PASSGLASS))
+		return 1
+	return !density
 
 /obj/structure/transit_tube/New(loc, newdirection)
 	..(loc)

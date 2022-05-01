@@ -219,8 +219,7 @@
 	icon_state = "ibeam"
 	anchored = TRUE
 	density = FALSE
-	pass_flags = PASSTABLE|PASSGLASS|PASSGRILLE
-	pass_flags_self = LETPASSTHROW
+	pass_flags = PASSTABLE|PASSGLASS|PASSGRILLE|LETPASSTHROW
 	var/obj/item/assembly/infra/master
 
 /obj/effect/beam/i_beam/Crossed(atom/movable/AM as mob|obj)
