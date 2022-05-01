@@ -238,15 +238,11 @@
 /obj/get_dumping_location(datum/component/storage/source,mob/user)
 	return get_turf(src)
 
-/obj/proc/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
-	if(ismovable(caller))
-		var/atom/movable/AM = caller
-		if(AM.pass_flags & pass_flags_self)
-			return TRUE
+/obj/proc/CanAStarPass()
 	. = !density
 
 /obj/proc/check_uplink_validity()
-	return TRUE
+	return 1
 
 /obj/vv_get_dropdown()
 	. = ..()

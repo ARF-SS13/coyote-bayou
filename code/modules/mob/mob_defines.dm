@@ -8,7 +8,6 @@
 	pressure_resistance = 8
 	mouse_drag_pointer = MOUSE_ACTIVE_POINTER
 	throwforce = 10
-	pass_flags_self = PASSMOB
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 	drag_delay = 0.05 SECONDS
 

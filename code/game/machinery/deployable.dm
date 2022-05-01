@@ -46,20 +46,6 @@
 	else
 		return ..()
 
-/obj/structure/barricade/CanAllowThrough(atom/movable/mover, turf/target)//So bullets will fly over and stuff.
-	. = ..()
-	if(locate(/obj/structure/barricade) in get_turf(mover))
-		return TRUE
-	else if(istype(mover, /obj/item/projectile))
-		if(!anchored)
-			return TRUE
-		var/obj/item/projectile/proj = mover
-		if(proj.firer && Adjacent(proj.firer))
-			return TRUE
-		if(prob(proj_pass_rate))
-			return TRUE
-		return FALSE
-
 /////BARRICADE TYPES AND TENTS///////
 //Yeah the new tents go here. Sue me. Use cloth for more posh places like NCR, brahmin skin for tribals/legion  -Pebbles//
 
@@ -122,7 +108,7 @@
 	icon_state = "sandbags"
 	max_integrity = 280
 	proj_pass_rate = 20
-	pass_flags_self = LETPASSTHROW
+	pass_flags = LETPASSTHROW
 	bar_material = SAND
 	climbable = TRUE
 	smooth = SMOOTH_TRUE

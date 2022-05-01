@@ -24,11 +24,9 @@
 	var/inertia_next_move = 0
 	var/inertia_move_delay = 5
 	/// These flags mark the ability of this movable to pass through certain blockers.
-	/// Things we can pass through while moving. If any of this matches the thing we're trying to pass's [pass_flags_self], then we can pass through.
 	var/pass_flags = NONE
-	/// If false makes CanPass call CanPassThrough on this type instead of using default behaviour
-	var/generic_canpass = TRUE
 	/// These flags mark the ability of this movable to let other movables past them if they share the flag values on the `pass_flags` var.
+	var/pass_flags_self = NONE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
@@ -409,14 +407,14 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanAllowThrough(atom/movable/mover, turf/target)
-	. = ..()
+/atom/movable/CanPass(atom/movable/mover, border_dir)
 	if(mover in buckled_mobs)
 		return TRUE
-
-/atom/movable/proc/CanPassThrough(atom/blocker, turf/target, blocker_opinion)
-	SHOULD_CALL_PARENT(TRUE)
-	return blocker_opinion
+	if(flags_1 & ON_BORDER_1)
+		if(ISDIAGONALDIR(dir) || border_dir == dir)
+			return !density
+		return TRUE
+	return ..()
 
 // called when this atom is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
 /atom/movable/proc/on_exit_storage(datum/component/storage/concrete/S)

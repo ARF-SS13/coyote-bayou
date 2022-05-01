@@ -28,7 +28,7 @@
 	obj_integrity = 500
 	max_integrity = 500
 	proj_pass_rate = 90
-	pass_flags_self = LETPASSTHROW
+	pass_flags = LETPASSTHROW
 	climbable = TRUE
 
 /obj/structure/obstacle/old_locked_door
@@ -58,7 +58,7 @@
 	var/slowdown = 40
 	var/buildstacktype = /obj/item/stack/rods
 	var/buildstackamount = 5
-	pass_flags_self = LETPASSTHROW
+	pass_flags = LETPASSTHROW
 
 /obj/structure/obstacle/barbedwire/end
 	icon_state = "barbed_end"
@@ -371,7 +371,7 @@
 	obj_integrity = 400
 	max_integrity = 400
 	proj_pass_rate = 90
-	pass_flags_self = LETPASSTHROW
+	pass_flags = LETPASSTHROW //Feed the prisoners, or not.
 /*
 /obj/structure/barricade/sandbags
 	name = "sandbags"

@@ -69,31 +69,31 @@
 		return CanAStarPass(ID, to_dir, M.pulling)
 	return 1 //diseases, stings, etc can pass
 
-/obj/structure/plasticflaps/CanAllowThrough(atom/movable/A, turf/T)
-	. = ..()
+/obj/structure/plasticflaps/CanPass(atom/movable/A, border_dir)
 	if(istype(A) && (A.pass_flags & PASSGLASS))
 		return prob(60)
 
 	var/obj/structure/bed/B = A
 	if(istype(A, /obj/structure/bed) && (B.has_buckled_mobs() || B.density))//if it's a bed/chair and is dense or someone is buckled, it will not pass
-		return TRUE
+		return 0
 
 	if(istype(A, /obj/structure/closet/cardboard))
 		var/obj/structure/closet/cardboard/C = A
 		if(C.move_delay)
-			return TRUE
+			return 0
 
 	if(ismecha(A))
-		return FALSE
+		return 0
 
 	else if(isliving(A)) // You Shall Not Pass!
 		var/mob/living/M = A
 		if(isbot(A)) //Bots understand the secrets
-			return TRUE
+			return 1
 		if(M.buckled && istype(M.buckled, /mob/living/simple_animal/bot/mulebot)) // mulebot passenger gets a free pass.
-			return TRUE
+			return 1
 		if(!M.lying && !M.ventcrawler && M.mob_size != MOB_SIZE_TINY)	//If your not laying down, or a ventcrawler or a small creature, no pass.
-			return FALSE
+			return 0
+	return ..()
 
 /obj/structure/plasticflaps/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

@@ -494,7 +494,7 @@ SYNDIE AMMO
 	icon_state = "gauss"
 	name = "penetrator round"
 	damage = 60
-	movement_type = FLYING | PHASING
+	movement_type = FLYING | UNSTOPPABLE
 	dismemberment = 0 //It goes through you cleanly.
 	knockdown = 0
 	breakthings = FALSE

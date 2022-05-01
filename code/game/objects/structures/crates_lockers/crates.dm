@@ -23,15 +23,27 @@
 		opened = TRUE
 	update_icon()
 
-/obj/structure/closet/crate/CanAllowThrough(atom/movable/mover, turf/target)
-	. = ..()
+/obj/structure/closet/crate/CanPass(atom/movable/mover, border_dir)
 	if(!istype(mover, /obj/structure/closet))
 		var/obj/structure/closet/crate/locatedcrate = locate(/obj/structure/closet/crate) in get_turf(mover)
 		if(locatedcrate) //you can walk on it like tables, if you're not in an open crate trying to move to a closed crate
 			if(opened) //if we're open, allow entering regardless of located crate openness
-				return TRUE
+				return 1
 			if(!locatedcrate.opened) //otherwise, if the located crate is closed, allow entering
-				return TRUE
+				return 1
+	if(barricade == FALSE)
+		return !density
+	else if(density == FALSE)
+		return 1
+	else if(istype(mover, /obj/item/projectile)) //bullets can fly over crates, guaranteed if the shooter is adjacent
+		var/obj/item/projectile/proj = mover
+		if(proj.firer && Adjacent(proj.firer))
+			return 1
+		if(prob(proj_pass_rate))
+			return 1
+		return 0
+	else
+		return !density
 
 /obj/structure/closet/crate/update_icon_state()
 	icon_state = "[initial(icon_state)][opened ? "open" : ""]"
