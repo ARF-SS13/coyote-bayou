@@ -120,6 +120,19 @@
 	path = /obj/item/storage/box/large/custom_kit/pineapple
 	ckeywhitelist = list("silveredsoul")
 
+/obj/item/storage/box/large/custom_kit/evosolus/PopulateContents()
+	new /obj/item/clothing/head/beret/ncr/ncr_recon(src)
+	new /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced(src)
+	new /obj/item/gun/ballistic/automatic/rangemaster(src)
+	new /obj/item/ammo_box/magazine/m762(src)
+	new /obj/item/book/granter/trait/trekking(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+
+/datum/gear/donator/kits/evosolus
+	name = "Evos goods"
+	path = /obj/item/storage/box/large/custom_kit/evosolus
+	ckeywhitelist = list("evosolus")
+
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
