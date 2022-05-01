@@ -110,8 +110,8 @@
 	ckeywhitelist = list("myguy49")
 	
 /obj/item/storage/box/large/custom_kit/pineapple/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/power_armor/t60(src)
-	new /obj/item/clothing/head/helmet/f13/power_armor/t60(src)
+	new /obj/item/clothing/suit/armor/f13/power_armor/t60/pineapple(src)
+	new /obj/item/clothing/head/helmet/f13/power_armor/t60/pineapple(src)
 	new /obj/item/clothing/neck/mantle/bos(src)
 
 
