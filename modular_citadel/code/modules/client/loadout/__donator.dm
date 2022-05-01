@@ -60,8 +60,8 @@
 
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
 	new /obj/item/storage/belt/holster(src)
-	new /obj/item/gun/ballistic/revolver/hunting(src)
-	new /obj/item/gun/ballistic/revolver/hunting(src)
+	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
+	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
