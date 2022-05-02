@@ -124,6 +124,11 @@
 	path = /obj/item/lighter
 	cost = 2
 
+/datum/gear/hands/beeplushie
+	name = "Bee Plushie"
+	path = /obj/item/toy/plush/beeplushie
+	cost = 2
+
 /datum/gear/hands/cobpipe
 	name = "corn cob pipe"
 	path = /obj/item/clothing/mask/cigarette/pipe/cobpipe
