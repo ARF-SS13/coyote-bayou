@@ -684,7 +684,7 @@
 
 	if(status == BODYPART_ROBOTIC)
 		dmg_overlay_type = "robotic"
-		if(is_robotic_limb(FALSE))
+		if(!render_like_organic)
 			marking_value = null
 
 	if(dropping_limb)

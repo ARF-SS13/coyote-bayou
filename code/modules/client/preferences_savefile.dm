@@ -129,16 +129,16 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 				right_eye_color = "#BAB99E"
 
 	if(current_version < 51) //humans can have digi legs now, make sure they dont default to them or human players will murder me in my sleep
-		if(S["species"] == SPECIES_HUMAN)
+		if(S["species"] == "human")
 			features["legs"] = "Plantigrade"
 
 	if(current_version < 52) // rp markings means markings are now stored as a list, lizard markings now mam like the rest
 		var/marking_type
 		var/species_id = S["species"]
-		var/datum/species/actual_species = GLOB.species_datums[species_id]
+		var/datum/species/actual_species = GLOB.species_list[species_id]
 
 		// convert lizard markings to lizard markings
-		if(species_id == SPECIES_LIZARD && S["feature_lizard_body_markings"])
+		if(species_id == "lizard" && S["feature_lizard_body_markings"])
 			features["mam_body_markings"] = features["body_markings"]
 
 		// convert mam body marking data to the new rp marking data

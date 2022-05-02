@@ -66,10 +66,10 @@
 
 /datum/species/pod/pseudo_weak
 	name = "Anthropomorphic Plant"
-	id = SPECIES_POD_WEAK
+	id = "podweak"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,MUTCOLORS,CAN_SCAR,HAS_FLESH,HAS_BONE)
 	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "mam_body_markings" = list(), "taur" = "None", "legs" = "Normal Legs")
-	limbs_id = SPECIES_POD
+	limbs_id = "pod"
 	light_nutrition_gain_factor = 3
 	light_bruteheal = -0.2
 	light_burnheal = -0.2
