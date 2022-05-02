@@ -272,6 +272,13 @@
 	item_state = "majzirilli"
 	item_color = "majzirilli"
 
+/obj/item/clothing/under/f13/ncr_female_officer
+	name = "NCR Officer Dress"
+	desc = "An immaculately maintained NCRA service uniform."
+	icon_state = "ncr_female_officer"
+	item_state = "ncr_female_officer"
+	item_color = "ncr_female_officer"
+
 /obj/item/clothing/under/f13/ranger/modif_ranger
 	name = "green ranger outfit"
 	desc = "A ranger outfit with a green cotton longshirt and dark grey jeans along with a black bandana around the neck."
@@ -643,7 +650,7 @@
 
 /obj/item/clothing/under/f13/khan
 	name = "great khan uniform"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but jorts is a acceptable alternative."
+	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_uniform"
@@ -651,6 +658,23 @@
 	item_color = "khan_uniform"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 	var/uniformtoggled = FALSE
+
+/obj/item/clothing/under/f13/khan/shorts
+	name = "great khan jorts"
+	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but jorts is a acceptable alternative."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	icon_state = "khan_short"
+	item_state = "khan_short"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
+
+/obj/item/clothing/under/f13/khan/booty
+	name = "khan booty shorts"
+	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, But this pair doesn't seem to leave much to the imagination."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	icon_state = "khan_booty"
+	item_state = "khan_booty"
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
+
 /obj/item/clothing/under/f13/khan/Goji
 	name = "Leather Pants"
 	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but this is a pair of tight leather pants."
@@ -658,8 +682,8 @@
 	icon_state = "Gojipants"
 	item_state = "Gojipants"
 	item_color = "Gojipants"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40) 
-	
+	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
+
 // Testing fixed toggle uniform so icon updates properly
 /obj/item/clothing/under/f13/khan/AltClick(mob/user)
 	. = ..()
@@ -1679,7 +1703,7 @@
 	item_state = "mutie_shorts"
 
 /obj/item/clothing/under/f13/mutiesanta
-	name = "red and white jumspuit"
+	name = "red and white jumpsuit"
 	desc = "A fairly damaged red and white shirt with matching shorts, large enough to fit a super mutant."
 	icon_state = "mutie_santa"
 	item_state = "mutie_santa"
@@ -1710,6 +1734,36 @@
 	desc = "A dark grey, and finely pressed suit, complete with kneepads and a suspiciously golden silk shirt, only the best."
 	icon_state = "den_suit"
 	item_state = "den_suit"
+
+/obj/item/clothing/under/f13/mutie_suit
+	name = "large black suit"
+	desc = "A fairly damaged black suit, large enough to fit a super mutant."
+	icon_state = "mutie_suit"
+	item_state = "mutie_suit"
+
+/obj/item/clothing/under/f13/mutie_burgundy_suit
+	name = "large burgundy suit"
+	desc = "A fairly damaged burgundy suit, large enough to fit a super mutant."
+	icon_state = "mutie_burgundy_suit"
+	item_state = "mutie_burgundy_suit"
+
+/obj/item/clothing/under/f13/mutie_purple_suit
+	name = "large purple suit"
+	desc = "A fairly damaged purple suit, large enough to fit a super mutant."
+	icon_state = "mutie_purple_suit"
+	item_state = "mutie_purple_suit"
+
+/obj/item/clothing/under/f13/mutie_purple_suit_pinstripe
+	name = "Large striped zootsuit"
+	desc = "A fairly damaged pinstripe suit, large enough to fit a super mutant."
+	icon_state = "mutie_purple_suit_pinstripe"
+	item_state = "mutie_purple_suit_pinstripe"
+
+/obj/item/clothing/under/f13/mutie_purple_suit_pinstripe_d
+	name = "large sleaveless striped zootsuit"
+	desc = "A fairly damaged pinstripe suit, large enough to fit a super mutant this one has his sleeves ripped off."
+	icon_state = "mutie_purple_suit_pinstripe_d"
+	item_state = "mutie_purple_suit_pinstripe_d"
 
 //TRIBALS
 

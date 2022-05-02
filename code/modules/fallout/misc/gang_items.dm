@@ -91,8 +91,20 @@
 /datum/gang_item/clothing/khan_uniform
 	name = "Great Khan uniform"
 	id = "khan_uniform"
-	cost = 40
+	cost = 10
 	item_path = /obj/item/clothing/under/f13/khan
+
+/datum/gang_item/clothing/khan_jorts
+	name = "Great Khan Jorts"
+	id = "khan_jorts"
+	cost = 10
+	item_path = /obj/item/clothing/under/f13/khan/shorts
+
+/datum/gang_item/clothing/khan_booty
+	name = "Great Khan Booty Shorts"
+	id = "khan_booty"
+	cost = 10
+	item_path = /obj/item/clothing/under/f13/khan/booty
 
 /datum/gang_item/clothing/khan_jacket_armored
 	name = "Great Khan armored jacket"
@@ -217,7 +229,7 @@
 	id = "greasegun"
 	cost = 300
 	item_path = /obj/item/gun/ballistic/automatic/smg/greasegun
-	
+
 /datum/gang_item/weapon/uzi
 	name = "Uzi"
 	id = "uzi"
@@ -279,7 +291,7 @@
 	id = "c4"
 	cost = 100
 	item_path = /obj/item/grenade/plastic/c4
-	
+
 /datum/gang_item/equipment/stinger
 	name = "Stinger"
 	cost = 75
@@ -305,7 +317,7 @@
 	id = "bundledenboss"
 	cost = 850
 	item_path = /obj/item/storage/box/bundledenboss
-	
+
 /obj/item/storage/box/bundledenboss
 	name = "Drug Lord Bundle"
 	desc = "Rule the underworld like the Den Mob of old."
@@ -318,13 +330,13 @@
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	new /obj/item/reagent_containers/hypospray/medipen/psycho(src)
 	new /obj/item/clothing/under/f13/densuit(src)
-	
+
 /datum/gang_item/equipment/bundleanarchist
 	name = "Mad Bomber Bundle"
 	id = "bundleanarchist"
 	cost = 550
 	item_path = /obj/item/storage/box/bundleanarchist
-	
+
 /obj/item/storage/box/bundleanarchist
 	name = "Mad Bomber Bundle"
 	desc = "Come on feel the noise. The noise of explosions, specifically."
@@ -337,13 +349,13 @@
 	new /obj/item/grenade/plastic/c4(src)
 	new /obj/item/grenade/syndieminibomb/concussion(src)
 	new /obj/item/clothing/suit/bomb_suit(src)
-	
+
 /datum/gang_item/equipment/bundlegunner
 	name = "Old Soldier Bundle"
 	id = "bundlegunner"
 	cost = 400
 	item_path = /obj/item/storage/box/bundlegunner
-	
+
 /obj/item/storage/box/bundlegunner
 	name = "Old Soldier Bundle"
 	desc = "This wasteland needs a classier kind of raider. Back in my day, we walked uphill both ways to find some victims. "
@@ -356,13 +368,13 @@
 	new /obj/item/clothing/under/f13/army(src)
 	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
 	new /obj/item/grenade/frag(src)
-	
+
 /datum/gang_item/equipment/bundleelguapo
 	name = "Bandito Bundle"
 	id = "bundleelguapo"
 	cost = 300
 	item_path = /obj/item/storage/box/bundleelguapo
-	
+
 /obj/item/storage/box/bundleelguapo
 	name = "Bandito Bundle"
 	desc = "You burned the Village, raped the horses, and rode off on their women. It was a long time ago, so the details got mixed up, but you get the point. "

@@ -10,9 +10,9 @@
 /datum/gear/uniform/caravaneer
 	name = "caravaneer outfit"
 	path = /obj/item/clothing/under/f13/caravaneer
-	
+
 /datum/gear/uniform/ncrcf
-	name = "NCRCF outfit" 
+	name = "NCRCF outfit"
 	path = /obj/item/clothing/under/f13/ncrcf
 
 /datum/gear/uniform/brahminskin
@@ -581,7 +581,7 @@
 						)
 
 /datum/gear/uniform/ncr_shorts
-	name = "NCR fatigue shorts"
+	name = "NCR Rhodesian shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"
@@ -600,6 +600,18 @@
 							"NCR Rear Echelon",
 							"NCR Off-Duty",
 							"NCR Ranger"
+						)
+
+/datum/gear/uniform/ncr_officer_dress
+	name = "NCR Officer Dress"
+	path = /obj/item/clothing/under/f13/ncr_female_officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
+	restricted_desc = "NCR"
+	restricted_roles = list("NCR Captain",
+							"NCR Lieutenant",
+							"NCR Medical Officer",
+							"NCR Senior Enlisted Advisor",
+							"NCR Representative"
 						)
 
 /datum/gear/uniform/sniper
@@ -650,7 +662,7 @@
 							"Detective",
 							"Barkeep",
 							)
-		
+
 /datum/gear/uniform/skirt/white
 	name = "white suitskirt"
 	path = /obj/item/clothing/under/suit/white_on_white/skirt
@@ -960,7 +972,7 @@
 /datum/gear/uniform/wasteland/rag
 	name = "Torn rags"
 	path = /obj/item/clothing/under/f13/rag
-	cost = 1 
+	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
 /datum/gear/uniform/wasteland/westender

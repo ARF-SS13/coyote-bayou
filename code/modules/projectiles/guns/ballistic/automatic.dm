@@ -508,9 +508,9 @@
 	fire_delay = 3.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.25
+	autofire_shot_delay = 2.15
 	burst_shot_delay = 2
-	extra_damage = 15
+	extra_damage = 17
 	suppressed = 1
 	recoil = 0.05
 	can_attachments = TRUE
@@ -1414,7 +1414,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_shot_delay = 1.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.8
+	autofire_shot_delay = 2.5
 	fire_delay = 4
 	extra_damage = 25
 	spread = 8
