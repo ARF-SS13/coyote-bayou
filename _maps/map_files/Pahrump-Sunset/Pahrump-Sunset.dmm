@@ -21786,7 +21786,10 @@
 	dir = 8;
 	light_color = "#d8b1b1"
 	},
-/turf/open/space/basic,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/city)
 "blf" = (
 /obj/structure/table/wood,
