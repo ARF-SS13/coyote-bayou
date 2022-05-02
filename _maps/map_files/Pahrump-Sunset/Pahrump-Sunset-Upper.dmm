@@ -371,12 +371,14 @@
 	},
 /area/f13/bar/heaven)
 "aba" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/medical,
-/obj/item/reagent_containers/hypospray,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/fluff/railing/corner{
+	dir = 1;
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/wasteland)
 "abb" = (
 /obj/structure/fluff/railing{
@@ -703,14 +705,14 @@
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/city)
 "hkS" = (
-/obj/structure/barricade/wooden,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/wasteland)
-"hmv" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/fluff/railing/corner{
+	dir = 4;
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/wasteland)
 "hsd" = (
 /turf/closed/wall/f13/supermart,
@@ -745,14 +747,6 @@
 /area/f13/city)
 "jKa" = (
 /turf/closed/wall/f13/wood/house,
-/area/f13/wasteland)
-"kzV" = (
-/obj/structure/simple_door/metal/store{
-	icon_state = "brokenstore"
-	},
-/obj/structure/barricade/wooden/planks,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "ldu" = (
 /obj/effect/decal/cleanable/dirt{
@@ -944,11 +938,14 @@
 	},
 /area/f13/wasteland)
 "rBB" = (
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor5"
+/obj/structure/fluff/railing{
+	dir = 6;
+	color = "#A47449"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/wasteland)
 "rPT" = (
 /obj/structure/fluff/railing/corner{
@@ -956,9 +953,6 @@
 	color = "#A47449"
 	},
 /turf/open/transparent/openspace,
-/area/f13/wasteland)
-"rZL" = (
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "smZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18268,12 +18262,12 @@ vqz
 vqz
 vqz
 vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
+ulW
+cmx
+cmx
+cmx
+cmx
+hkS
 vqz
 vqz
 ela
@@ -18522,15 +18516,15 @@ wqF
 hsd
 aKa
 vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
+ulW
+cmx
+cmx
+rBB
+ela
+ela
+ela
+ela
+nWK
 vqz
 vqz
 vqz
@@ -18772,22 +18766,22 @@ vqz
 bbB
 aBf
 wqF
-hmv
-hmv
-rZL
+wqF
+wqF
+wqF
 wqF
 hsd
 aKa
 ulW
-cmx
-cmx
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
-vqz
+rBB
+ela
+ela
+ela
+ela
+ela
+ela
+ela
+nWK
 vqz
 vqz
 vqz
@@ -19029,9 +19023,9 @@ vqz
 aKa
 hsd
 wqF
-aba
-rZL
-rZL
+wqF
+wqF
+wqF
 wqF
 hsd
 aKa
@@ -19044,7 +19038,7 @@ cct
 cct
 cct
 cct
-vqz
+aba
 vqz
 vqz
 vqz
@@ -19286,9 +19280,9 @@ vqz
 bbB
 hsd
 wqF
-rZL
-hmv
-rBB
+wqF
+wqF
+wqF
 wqF
 hsd
 aKa
@@ -19544,7 +19538,7 @@ aKa
 hsd
 wqF
 wqF
-hkS
+wqF
 wqF
 wqF
 hsd
@@ -19801,7 +19795,7 @@ aKa
 hsd
 hsd
 hsd
-kzV
+hsd
 hsd
 hsd
 hsd
