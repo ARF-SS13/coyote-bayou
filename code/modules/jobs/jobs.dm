@@ -140,12 +140,12 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Senior Scribe",
 	"Scribe",
 	"Initiate",
-	"BoS Off-Duty",
 ))
 
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Mayor",
 	"Secretary",
+	"Banker",
 	"Chief of Police",
 	"Doctor",
 	"Citizen",

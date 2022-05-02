@@ -62,6 +62,22 @@
 	..()
 	summon_backup(10)
 
+/mob/living/simple_animal/hostile/ghoul/reaver/ncr
+	name = "feral ghoul soldier"
+	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	maxHealth = 160
+
+/mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
+	name = "feral ghoul soldier"
+	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	maxHealth = 180
+
+/mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
+	name = "feral ghoul officer"
+	desc = "A former NCR officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	maxHealth = 250
+	speed = 3
+
 //Cold Feral Ghoul
 /mob/living/simple_animal/hostile/ghoul/coldferal
 	name = "cold ghoul feral"
