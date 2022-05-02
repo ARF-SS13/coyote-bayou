@@ -616,7 +616,7 @@
 /datum/design/ammolathe/m473rubber
 	name = "4.73mm caseless rubber ammo box"
 	id = "m473rubber"
-	materials = list(/datum/material/plastic = 12000, /datum/material/blackpowder = 1000)
+	materials = list(/datum/material/iron = 12000, /datum/material/blackpowder = 1000)
 	build_path = /obj/item/ammo_box/m473/rubber
 	category = list("initial", "Advanced Ammo")
 
@@ -630,7 +630,7 @@
 /datum/design/ammolathe/m473u235
 	name = "4.73mm uranium-tipped caseless ammo box"
 	id = "m473u235"
-	materials = list(/datum/material/titanium = 10000, /datum/material/uranium = 4000, /datum/material/blackpowder = 2000)
+	materials = list(/datum/material/titanium = 10000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473/uraniumtipped
 	category = list("initial", "Advanced Ammo")
 
@@ -644,7 +644,7 @@
 /datum/design/ammolathe/m473esd
 	name = "4.73mm ESD caseless ammo box"
 	id = "m473esd"
-	materials = list(/datum/material/iron = 12000, /datum/material/gold = 2000, /datum/material/silver = 2000, /datum/material/titanium = 2000, /datum/material/blackpowder = 2000)
+	materials = list(/datum/material/iron = 12000, /datum/material/titanium = 2000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473/shock
 	category = list("initial", "Advanced Ammo")
 

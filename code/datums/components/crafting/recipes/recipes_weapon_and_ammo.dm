@@ -186,7 +186,7 @@
 	reqs = list(/datum/reagent/napalm = 50,
 				/obj/item/reagent_containers/glass/beaker/large)
 	tools = list(TOOL_WORKBENCH)
-	time = 30
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -197,7 +197,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -210,7 +210,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -223,7 +223,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -237,7 +237,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -248,7 +248,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -262,7 +262,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -277,7 +277,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -288,7 +288,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -301,7 +301,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -312,7 +312,7 @@
 	/datum/reagent/blackpowder = 25
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -326,7 +326,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -337,7 +337,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -351,7 +351,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -362,7 +362,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -376,7 +376,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -387,7 +387,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -400,7 +400,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -413,7 +413,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -428,7 +428,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -441,7 +441,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -455,7 +455,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -466,7 +466,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
-	time = 75
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -480,7 +480,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -494,7 +494,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -508,7 +508,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -522,7 +522,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -537,7 +537,7 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -552,7 +552,7 @@
 	/obj/item/stack/sheet/mineral/titanium = 1,
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 100
+	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
@@ -1336,7 +1336,6 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/datum/reagent/blackpowder = 30,
 				/obj/item/stack/crafting/goodparts = 5
 				)
 	tools = list(TOOL_AWORKBENCH)
