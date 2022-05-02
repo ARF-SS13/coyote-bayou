@@ -43,7 +43,7 @@
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/igniter = 1,
 				/obj/item/reagent_containers/food/drinks/flask = 1)
-	time = 30
+	time = 5
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/coffeepotbomb
@@ -53,7 +53,7 @@
 				/obj/item/stack/ore/blackpowder = 5,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/assembly/timer = 1)
-	time = 30
+	time = 5
 	category = CAT_EXPLOSIVE
 
 /datum/crafting_recipe/explosive/bottlecap_mine
@@ -117,8 +117,6 @@
 			/obj/item/stack/crafting/goodparts = 1,
 			/obj/item/stack/crafting/electronicparts = 5,
 			/obj/item/assembly/prox_sensor = 1,
-			/datum/reagent/iron = 30,
-			/datum/reagent/radium = 30,
 			/obj/item/stack/cable_coil = 30
 	)
 	time = 15
@@ -154,11 +152,11 @@
 	result = /obj/item/grenade/syndieminibomb/concussion
 	category = CAT_EXPLOSIVE
 	reqs = list(
-			/obj/item/stack/sheet/metal = 20,
-			/obj/item/stack/crafting/metalparts = 10,
-			/obj/item/stack/crafting/goodparts = 3,
-			/obj/item/stack/crafting/electronicparts = 5,
-			/obj/item/stack/ore/blackpowder = 4,
+			/obj/item/stack/sheet/metal = 10,
+			/obj/item/stack/crafting/metalparts = 5,
+			/obj/item/stack/crafting/goodparts = 1,
+			/obj/item/stack/crafting/electronicparts = 1,
+			/obj/item/stack/ore/blackpowder = 2,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -171,11 +169,11 @@
 	result = /obj/item/grenade/f13/frag
 	category = CAT_EXPLOSIVE
 	reqs = list(
-			/obj/item/stack/sheet/metal = 20,
-			/obj/item/stack/crafting/metalparts = 10,
-			/obj/item/stack/crafting/goodparts = 3,
-			/obj/item/stack/crafting/electronicparts = 5,
-			/obj/item/stack/ore/blackpowder = 4,
+			/obj/item/stack/sheet/metal = 10,
+			/obj/item/stack/crafting/metalparts = 2,
+			/obj/item/stack/crafting/goodparts = 1,
+			/obj/item/stack/crafting/electronicparts = 1,
+			/obj/item/stack/ore/blackpowder = 2,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -189,12 +187,11 @@
 	category = CAT_EXPLOSIVE
 	reqs = list(
 			/obj/item/stack/sheet/metal = 20,
-			/obj/item/stack/crafting/metalparts = 25,
+			/obj/item/stack/crafting/metalparts = 15,
 			/obj/item/stack/crafting/goodparts = 3,
 			/obj/item/stack/crafting/electronicparts = 5,
 			/obj/item/stack/ore/blackpowder = 10,
 			/obj/item/assembly/prox_sensor = 1,
-			/datum/reagent/napalm = 100,
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -229,7 +226,6 @@
 			/obj/item/stack/ore/blackpowder = 4,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/advanced_crafting_components/flux = 2,
-			/obj/item/stack/sheet/mineral/uranium = 5,
 			/obj/item/stack/cable_coil = 5
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -245,7 +241,6 @@
 			/obj/item/stack/crafting/metalparts = 3,
 			/obj/item/stack/crafting/goodparts = 1,
 			/obj/item/stack/crafting/electronicparts = 5,
-			/datum/reagent/flash_powder = 100,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -262,7 +257,6 @@
 			/obj/item/stack/crafting/metalparts = 5,
 			/obj/item/stack/crafting/goodparts = 1,
 			/obj/item/stack/crafting/electronicparts = 5,
-			/datum/reagent/sonic_powder = 100,
 			/obj/item/assembly/prox_sensor = 1,
 			/obj/item/stack/cable_coil = 5
 	)
@@ -280,8 +274,6 @@
 			/obj/item/stack/crafting/goodparts = 3,
 			/obj/item/stack/crafting/electronicparts = 25,
 			/obj/item/assembly/prox_sensor = 1,
-			/datum/reagent/iron = 50,
-			/datum/reagent/radium = 50,
 			/obj/item/stack/cable_coil = 200
 	)
 	tools = list(TOOL_AWORKBENCH)
