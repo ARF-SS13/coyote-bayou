@@ -253,7 +253,11 @@
 	max_integrity = 250
 	buildstacktype = /obj/item/stack/sheet/prewar
 	buildstackamount = 2
-	
+
+/obj/structure/chair/comfy/modern/GetArmrest()
+	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "synthetic_chair_armrest")
+
+
 
 // Office chairs
 /obj/structure/chair/office
@@ -399,7 +403,7 @@
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "f13chair2"
 	item_chair = null
-	
+
 //Stool
 
 /obj/structure/chair/stool

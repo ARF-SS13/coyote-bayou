@@ -747,7 +747,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/mayor
 	name = "Mayor"
-	icon_state = "banker"
+	icon_state = "Banker"
 
 /obj/effect/landmark/start/f13/secretary
 	name = "Secretary"
@@ -853,6 +853,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/usgysgt
 	name = "Enclave Gunnery Sergeant"
+	icon_state = "usgunnery"
 
 
 /obj/effect/landmark/start/f13/uslightduty
