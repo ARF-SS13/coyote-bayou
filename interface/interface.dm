@@ -16,19 +16,6 @@
 		to_chat(src, "<span class='danger'>The wiki URL is not set in the server configuration.</span>")
 	return
 
-/client/verb/wiki()
-	set name = "wiki"
-	set desc = "Opens the Wiki in your browser."
-	set hidden = 1
-	var/wikiurl = CONFIG_GET(string/wikiurl)
-	if(wikiurl)
-		if(alert("This will open the Wiki in your browser. Are you sure?",,"Yes","No")!="Yes")
-			return
-		src << link(wikiurl)
-	else
-		to_chat(src, "<span class='danger'>The Wiki URL is not set in the server configuration.</span>")
-	return
-
 /client/verb/discord()
 	set name = "discord"
 	set desc = "Visit the Discord."
@@ -41,33 +28,6 @@
 	else
 		to_chat(src, "<span class='danger'>The discord URL is not set in the server configuration.</span>")
 	return
-
-/client/verb/forum()
-	set name = "forum"
-	set desc = "Visit the forum."
-	set hidden = 1
-	var/forumurl = CONFIG_GET(string/forumurl)
-	if(forumurl)
-		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")!="Yes")
-			return
-		src << link(forumurl)
-	else
-		to_chat(src, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
-	return
-
-/client/verb/rules()
-	set name = "rules"
-	set desc = "Show Server Rules."
-	set hidden = 1
-	var/rulesurl = CONFIG_GET(string/rulesurl)
-	switch(alert("Where would you like to see the rules?", null, "Discord (external link)", "View here", "Cancel"))
-		if("Discord (external link)")
-			if(!rulesurl)
-				to_chat(src, "<span class='danger'>The rules URL is not set in the server configuration.</span>")
-				return
-			src << link(rulesurl)
-		if("View here")
-			src << browse('html/rules.html', "window=changes")
 
 /client/verb/github()
 	set name = "github"
