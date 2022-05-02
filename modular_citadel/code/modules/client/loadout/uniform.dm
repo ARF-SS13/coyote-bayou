@@ -122,10 +122,6 @@
 	name = "tactical turtleneck"
 	path = /obj/item/clothing/under/syndicate
 
-/datum/gear/uniform/syndicate/skirt
-	name = "tactical skirt"
-	path = /obj/item/clothing/under/f13/legskirt/tac
-
 /datum/gear/uniform/roving
 	name = "roving trader outfit"
 	path = /obj/item/clothing/under/f13/roving
@@ -153,6 +149,8 @@
 /datum/gear/uniform/rag
 	name = "torn rags"
 	path = /obj/item/clothing/under/f13/rag
+
+//suits 
 
 /datum/gear/uniform/suit
 	name = "black suit"
@@ -203,6 +201,8 @@
 /datum/gear/uniform/mailmanuniform
 	name = "mailman's jumpsuit"
 	path = /obj/item/clothing/under/misc/mailman
+
+//dresses
 
 /datum/gear/uniform/dress
 	name = "striped dress"
@@ -259,6 +259,8 @@
 /datum/gear/uniform/dress/bandage
 	name = "bandage dress"
 	path = /obj/item/clothing/under/f13/erpdress
+
+//Skirts
 
 /datum/gear/uniform/skirt/swept
 	name = "swept skirt"
@@ -556,6 +558,7 @@
 	path = /obj/item/clothing/under/f13/chinese/officer
 	cost = 3
 
+//Factions
 //NCR
 
 /datum/gear/uniform/ncr_fatigue_pants
@@ -662,6 +665,24 @@
 							"Detective",
 							"Barkeep",
 							)
+
+//Khans 
+
+/datum/gear/uniform/khans
+	name = "great khans jorts"
+	path = /obj/item/clothing/under/f13/khan/shorts
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
+	restricted_desc = "KHAN"
+	restricted_roles = list("Great Khan")
+
+/datum/gear/uniform/khans/booty
+	name = "great khans booty shorts"
+	path = /obj/item/clothing/under/f13/khan/booty
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
+	restricted_desc = "KHAN"
+	restricted_roles = list("Great Khan")
+
+//Skirts
 
 /datum/gear/uniform/skirt/white
 	name = "white suitskirt"
@@ -812,6 +833,8 @@
 	path = /obj/item/clothing/under/rank/civilian/bartender/skirt
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SKIRTS
+
+// Wasteland catagory
 
 /datum/gear/uniform/wasteland/warboy
 	name = "War boy pants"
