@@ -465,8 +465,8 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "You arrive in Yuma Valley, hoping to escape your past, the war, or perhaps something worse. But you’ve seen the torchlight and heard the bark of the military officers. You haven’t escaped anything. Try to survive, establish your own settlement, make your own legend. Suffer well and die gladly."
-	supervisors = "God"
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Oasis to the southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	supervisors = "fate"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
@@ -702,8 +702,8 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "God"
-	description = "You are the last bastion of faith in this God-forsaken Wasteland. Spread your word and preach to the faithless."
+	supervisors = "your faith"
+	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/wasteland/f13preacher

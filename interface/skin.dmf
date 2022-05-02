@@ -56,7 +56,7 @@ window "mainwindow"
 		anchor2 = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "The Wasteland"
+		title = "Sunset Wasteland"
 		icon = 'icons\\deathclawlogo.png'
 		macro = "default"
 		menu = "menu"
@@ -128,24 +128,6 @@ window "infowindow"
 		left = "statwindow"
 		right = "outputwindow"
 		is-vert = false
-	elem "rules"
-		type = BUTTON
-		pos = 16,5
-		size = 104x20
-		anchor1 = 3,0
-		anchor2 = 19,0
-		saved-params = "is-checked"
-		text = "Rules"
-		command = "rules"
-	elem "wiki"
-		type = BUTTON
-		pos = 120,5
-		size = 100x20
-		anchor1 = 19,0
-		anchor2 = 34,0
-		saved-params = "is-checked"
-		text = "Wiki"
-		command = "wiki"
 	elem "tgwiki"
 		type = BUTTON
 		pos = 220,5
@@ -155,15 +137,6 @@ window "infowindow"
 		saved-params = "is-checked"
 		text = "TG Wiki"
 		command = "tgwiki"
-	elem "forum"
-		type = BUTTON
-		pos = 320,5
-		size = 100x20
-		anchor1 = 50,0
-		anchor2 = 66,0
-		saved-params = "is-checked"
-		text = "Forum"
-		command = "forum"
 	elem "github"
 		type = BUTTON
 		pos = 420,5
@@ -180,7 +153,7 @@ window "infowindow"
 		anchor1 = 81,0
 		anchor2 = 97,0
 		saved-params = "is-checked"
-		text = "Discord"
+		text = "Discord/Rules"
 		command = "discord"
 
 window "outputwindow"
