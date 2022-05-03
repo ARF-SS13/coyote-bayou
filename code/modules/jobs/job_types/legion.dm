@@ -125,7 +125,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		var/obj/effect/proc_holder/spell/terrifying_presence/S = new /obj/effect/proc_holder/spell/terrifying_presence
 		H.mind.AddSpell(S)
 
-/datum/outfit/job/CaesarsLegion/Legionnaire/f13legate	// 14mm Pistol, Powerfist
+/datum/outfit/job/CaesarsLegion/Legionnaire/f13legate	// 14mm Pistol, Goliath
 	name = "Legate"
 	jobtype = /datum/job/CaesarsLegion/Legionnaire/f13legate
 	shoes =	/obj/item/clothing/shoes/f13/military/legate
@@ -214,9 +214,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath
-		/datum/outfit/loadout/rangerhunter,	// Hunting revolver, AMR, Spatha
-		/datum/outfit/loadout/centurion,	// M1919
+		/datum/outfit/loadout/palacent,		// 10mm SMG, Goliath, CQC
+		/datum/outfit/loadout/rangerhunter,	// Hunting Revolver, AMR, Spatha
+		/datum/outfit/loadout/centurion,	// M1919, Hunting Revolver
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13centurion/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -247,10 +247,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/storage/bag/money/small/legion = 1,
-		/obj/item/warpaint_bowl,
+		/obj/item/warpaint_bowl = 1,
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
-		/obj/item/binoculars
+		/obj/item/binoculars = 1,
 		)
 
 /datum/outfit/loadout/palacent
@@ -284,16 +284,18 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/mm762 = 1,
 		/obj/item/gun/ballistic/revolver/hunting = 1,
-		/obj/item/ammo_box/c4570 = 3)
+		/obj/item/ammo_box/c4570 = 3,
+		)
 
 /* /datum/outfit/loadout/berserkercenturion
 	name = 			"Praetorian Candidate"
 	suit = 			/obj/item/clothing/suit/armor/f13/legion/centurion
 	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
 	backpack_contents = list(
-					/obj/item/melee/unarmed/sappers= 1,
-					/obj/item/book/granter/martial/berserker= 1,
-					/obj/item/reagent_containers/pill/patch/healingpowder/berserker=2)
+					/obj/item/melee/unarmed/sappers = 1,
+					/obj/item/book/granter/martial/berserker = 1,
+					/obj/item/reagent_containers/pill/patch/healingpowder/berserker = 2
+					)
 commented out pending rework*/
 
 
@@ -314,10 +316,10 @@ commented out pending rework*/
 	minimal_access = list(ACCESS_LEGION, ACCESS_CHANGE_IDS, ACCESS_LEGION_COMMAND)
 
 	loadout_options = list(
-		/datum/outfit/loadout/decvetbull,	// Supersledge, 10mm smg, smokebomb
-		/datum/outfit/loadout/decvetwolf,	// Thermic lance, cg45, bitter
-		/datum/outfit/loadout/decvetsnake, //Brush gun, ripper, bitters
-		/datum/outfit/loadout/decvetbrave, //fnfal, m29 snubnose
+		/datum/outfit/loadout/decvetbull,	// Supersledge, 10mm SMG, Smokebomb
+		/datum/outfit/loadout/decvetwolf,	// Thermic lance, Carl Gustaf, Extra Bitter
+		/datum/outfit/loadout/decvetsnake, // Brush gun, Ripper, Extra Bitters
+		/datum/outfit/loadout/decvetbrave, // FNFAL, .44 snubnose
 		)
 
 
@@ -347,7 +349,7 @@ commented out pending rework*/
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/storage/bag/money/small/legofficers = 1,
-		/obj/item/binoculars
+		/obj/item/binoculars = 1,
 		)
 
 /datum/outfit/loadout/decvetbull
@@ -388,7 +390,7 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/automatic/fnfal
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762 = 2,
-		/obj/item/gun/ballistic/revolver/m29 = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44 = 1,
 		)
 
@@ -410,10 +412,10 @@ commented out pending rework*/
 	minimal_access = list(ACCESS_LEGION,  ACCESS_LEGION_COMMAND)
 	exp_requirements = 360
 
-	loadout_options = list(	//ALL: Gladius, smokebomb
-		/datum/outfit/loadout/decprimfront,	// 10mm SMG, .357 Revolver, lance, throwing kives
-		/datum/outfit/loadout/decprimrear,	// Trail carbine, Ballistic fist,
-		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 revolver, frags, coffepot bomb
+	loadout_options = list(	//ALL: Gladius, Smokebomb
+		/datum/outfit/loadout/decprimfront,	// 10mm SMG, .357 Revolver, Legion lance, Throwing knives
+		/datum/outfit/loadout/decprimrear,	// Trail carbine, Ballistic fist
+		/datum/outfit/loadout/decprimboom, // Grenade rifle, .44 Revolver, Frag grenades, Coffepot bomb
 		)
 
 	matchmaking_allowed = list(
@@ -505,7 +507,7 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/recdeclegion,	// Uzi, Bumper sword, Smokebomb
-		/datum/outfit/loadout/recdectribal,	// Garand, Throwing spears, Reinforced machete, bottlecap mine
+		/datum/outfit/loadout/recdectribal,	// M1 Garand, Throwing spears, Reinforced machete, Bottlecap mine
 		)
 
 	matchmaking_allowed = list(
@@ -561,7 +563,7 @@ commented out pending rework*/
 		/obj/item/melee/onehanded/machete/forgedmachete = 1,
 		/obj/item/storage/backpack/spearquiver = 1,
 		/obj/item/bottlecap_mine = 1,
-		/obj/item/warpaint_bowl,
+		/obj/item/warpaint_bowl = 1,
 		)
 
 
@@ -587,7 +589,7 @@ commented out pending rework*/
 
 	loadout_options = list(
 		/datum/outfit/loadout/vexbear,	//	Classic FO13 Vex with his ripper: .223 pistol, Ripper
-		/datum/outfit/loadout/vexfox,	//	Classic New Vegas Vex with his 10mm SMG: 10mm SMG, Spartha
+		/datum/outfit/loadout/vexfox,	//	Classic New Vegas Vex with his 10mm SMG: 14mm SMG, Spartha
 		)
 
 	matchmaking_allowed = list(
@@ -623,7 +625,7 @@ commented out pending rework*/
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/megaphone/cornu = 1,
 		/obj/item/storage/bag/money/small/legenlisted = 1,
-		/obj/item/warpaint_bowl,
+		/obj/item/warpaint_bowl = 1,
 		)
 
 /datum/outfit/loadout/vexbear
@@ -658,8 +660,8 @@ commented out pending rework*/
 	exp_requirements = 150
 
 	loadout_options = list(	// ALL: .45 Revolver, Machete
-		/datum/outfit/loadout/expsniper,	// Rangemaster, Beartrap
 		/datum/outfit/loadout/expambusher,	// MP5, Bottlecap mine
+		/datum/outfit/loadout/expsniper,	// SKS, Smokebomb
 		)
 
 	matchmaking_allowed = list(
@@ -742,9 +744,9 @@ commented out pending rework*/
 
 	loadout_options = list(	//ALL: Gladius
 		/datum/outfit/loadout/vetaxe,	// AXE AND FISTS AND NOTHING FUCKING ELSE
-		/datum/outfit/loadout/vetrifle,		// Trail gun, .357 Revolver
-		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Bola, Legion Lance
 		/datum/outfit/loadout/vetsmg, 		// Carl Gustaf, .357 Revolver
+		/datum/outfit/loadout/vetberserker,	// Lever shotgun, Bola, Legion Lance
+		/datum/outfit/loadout/vetrifle,		// Trail gun, .357 Revolver
 		)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
@@ -842,8 +844,8 @@ commented out pending rework*/
 
 	loadout_options = list(	//ALL: Forged Machete
 		/datum/outfit/loadout/primelancer,	// .357 Revolver, Buckler, Bola. Trekking
-		/datum/outfit/loadout/primerifle,	// Cowboy repeater, Firebomb
-		/datum/outfit/loadout/primebrave,	// Trench shotgun, Throwing spears
+		/datum/outfit/loadout/primerifle,	// Cowboy Repeater, Firebomb
+		/datum/outfit/loadout/primebrave,	// Trench shotgun, Throwing spears, Trekking
 		)
 
 	matchmaking_allowed = list(
@@ -963,7 +965,7 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/book/granter/trait/trekking = 1,
-		/obj/item/warpaint_bowl
+		/obj/item/warpaint_bowl = 1,
 		)
 
 /datum/outfit/loadout/recruitlegion
