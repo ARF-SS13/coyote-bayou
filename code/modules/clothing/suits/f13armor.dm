@@ -386,6 +386,12 @@
 	icon_state = "t45dpowerarmor_bos"
 	item_state = "t45dpowerarmor_bos"
 
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	name = "Scorched Sierra power armor"
+	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
+	icon_state = "sierra"
+	item_state = "sierra"
+
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
