@@ -6678,13 +6678,6 @@
 /obj/item/clothing/mask/bandana/gold,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"auj" = (
-/obj/item/clothing/suit/armor/f13/metalarmor{
-	icon_state = "armorkit"
-	},
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "auk" = (
 /obj/structure/table/wood,
 /obj/item/instrument/guitar,
@@ -21490,16 +21483,15 @@
 /area/f13/building)
 "bks" = (
 /obj/structure/table/booth,
-/obj/item/export/bottle/whiskey{
-	pixel_x = 0;
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
 	pixel_y = 8
 	},
-/obj/item/export/bottle/patron{
-	pixel_x = 8;
-	pixel_y = 8
-	},
-/obj/item/export/bottle/wine{
+/obj/item/reagent_containers/food/drinks/bottle/wine{
 	pixel_x = -8;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/food/drinks/bottle/patron{
+	pixel_x = 8;
 	pixel_y = 8
 	},
 /turf/open/floor/wood/f13/stage_t,
@@ -21807,7 +21799,7 @@
 /area/f13/building)
 "bli" = (
 /obj/machinery/button/door{
-	id = "bankdesk";
+	id = "bankback";
 	name = "back door shutters";
 	pixel_y = -32;
 	req_one_access_txt = "52";
@@ -22922,7 +22914,7 @@
 	req_access_txt = "52"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "mayoroffice";
+	id = "bankback";
 	state_open = 1
 	},
 /turf/open/floor/f13/wood,
@@ -55529,12 +55521,12 @@ bar
 bmj
 qoU
 aHY
-bji
+bjq
 bnw
 bjq
 bjq
 bpi
-bji
+bjq
 swr
 swr
 swr
@@ -61259,7 +61251,7 @@ abP
 asE
 alc
 alc
-auj
+aoX
 alc
 alc
 alc
