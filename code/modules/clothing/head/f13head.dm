@@ -624,7 +624,7 @@
 	desc = "It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
 	icon_state = "riderw"
 	item_state = "riderw"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = list("melee" = 55, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 //Soft caps
 /obj/item/clothing/head/soft/f13
