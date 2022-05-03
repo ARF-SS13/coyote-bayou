@@ -186,6 +186,7 @@ Mayor
 		/obj/item/clothing/gloves/color/latex/nitrile = 1,
 		/obj/item/camera = 1,
 		/obj/item/storage/crayons = 1,
+		/obj/item/choice_beacon/box/carpet = 1,
 		)
 
 /datum/outfit/loadout/pw
@@ -193,9 +194,9 @@ Mayor
 	backpack_contents = list(
 		/obj/item/clothing/head/hardhat = 1,
 		/obj/item/clothing/suit/hazardvest = 1,
-		/obj/item/stack/sheet/metal/twenty = 1,
-		/obj/item/stack/sheet/glass/ten = 1,
-		/obj/item/stack/sheet/mineral/concrete/ten = 1
+		/obj/item/stack/sheet/metal/twenty = 2,
+		/obj/item/stack/sheet/glass/ten = 2,
+		/obj/item/stack/sheet/mineral/concrete/ten = 2
 		)
 /*--------------------------------------------------------------*/
 
@@ -250,6 +251,7 @@ Mayor
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/grenade/flashbang = 1,
 		)
 
 /datum/outfit/loadout/thelaw
@@ -272,13 +274,16 @@ Mayor
 	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_hand = /obj/item/gun/energy/laser/aer9/oasis
+
+/datum/outfit/loadout/pew
+	name = "Tactical"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ecp = 1,
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/trainshot = 1,
 		/obj/item/gun/energy/laser/auto/oasis = 1,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 1,
 		)
 
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -345,7 +350,9 @@ Mayor
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/security
+	belt = /obj/item/storage/belt/military/assault
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	neck = /obj/item/storage/belt/holster/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -353,6 +360,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/grenade/flashbang = 1,
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -506,7 +514,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/flashlight/lantern
 	r_hand = /obj/item/pickaxe
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/workboots
@@ -629,7 +637,9 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/ammo_box/shotgun/bean = 2,
-		/obj/item/book/manual/nuka_recipes = 1
+		/obj/item/book/manual/nuka_recipes = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1,
 		)
 
 /datum/outfit/loadout/rugged
@@ -639,7 +649,7 @@ Mayor
 	suit = /obj/item/clothing/suit/f13/cowboybvest
 	gloves = /obj/item/clothing/gloves/color/brown
 	shoes = /obj/item/clothing/shoes/f13/brownie
-
+	
 /datum/outfit/loadout/frontier
 	name = "Frontier"
 	head = /obj/item/clothing/head/bowler

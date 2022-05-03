@@ -784,6 +784,7 @@
 		/obj/item/ammo_box/a45lcrev,
 		/obj/item/gun/energy/laser/solar,
 		/obj/item/gun/energy/laser/pistol,
+		/obj/item/gun/energy/laser/auto,
 		/obj/item/gun/energy/laser/complianceregulator,
 		/obj/item/gun/energy/laser/plasma/pistol,
 		/obj/item/gun/energy/laser/plasma/glock,
@@ -836,6 +837,12 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
 	item_state = "holster_leg"
+
+/obj/item/storage/belt/holster/legholster/police/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/police(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 
 /obj/item/storage/belt/fannypack
 	name = "fannypack"
