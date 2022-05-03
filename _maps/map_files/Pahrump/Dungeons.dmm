@@ -122,7 +122,8 @@
 	},
 /area/f13/underground/cave)
 "akh" = (
-/obj/machinery/light,
+/obj/structure/grille/indestructable,
+/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "ako" = (
@@ -299,12 +300,9 @@
 /turf/open/floor/wood/f13/old,
 /area/f13/city)
 "auD" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/structure/table/wood,
+/obj/item/folder/white,
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "auP" = (
 /mob/living/simple_animal/hostile/raider/thief,
@@ -756,7 +754,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
 "aVw" = (
-/obj/structure/chair/f13chair1,
+/obj/structure/chair/comfy/black,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "aVG" = (
@@ -3604,12 +3602,6 @@
 /obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/bunker)
-"ekg" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
-/area/f13/followers)
 "eky" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -3687,8 +3679,9 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/legion)
 "epJ" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/condiment/saltshaker,
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "erd" = (
@@ -5167,16 +5160,13 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
 "geJ" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/machinery/chem_dispenser/drinks,
-/turf/open/floor/f13{
-	icon_state = "bar"
+/obj/structure/curtain{
+	pixel_y = -32
 	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "gfI" = (
 /obj/structure/nest/raider{
@@ -5246,8 +5236,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "gkl" = (
-/obj/machinery/light{
-	pixel_x = -16
+/obj/machinery/door/airlock/medical{
+	name = "Clinic";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
@@ -7709,13 +7700,8 @@
 	},
 /area/f13/ncr)
 "jtm" = (
-/obj/machinery/microwave/stove,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/structure/chair/office,
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "jtF" = (
 /obj/structure/table,
@@ -8156,10 +8142,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"jTs" = (
-/obj/structure/chair/left,
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "jTN" = (
 /obj/structure/debris/v3,
 /obj/structure/debris/v3{
@@ -9410,11 +9392,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/underground/cave)
-"ltN" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/condiment/peppermill,
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "ltU" = (
 /obj/structure/sign/poster/contraband/pinup_ride,
 /turf/closed/wall/f13/wood,
@@ -9475,9 +9452,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/bunker)
 "lvt" = (
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "lvE" = (
 /obj/machinery/light{
@@ -11018,15 +10996,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"nmi" = (
-/obj/structure/chair/right{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "nmk" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/f13/wood,
@@ -11433,12 +11402,6 @@
 /obj/item/ammo_casing/c9mm,
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
-"nNJ" = (
-/obj/structure/chair/left{
-	dir = 1
-	},
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "nOq" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
@@ -11943,12 +11906,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
-"otN" = (
-/obj/structure/chair/f13chair1{
-	dir = 4
-	},
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "otT" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -13159,13 +13116,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/followers)
-"pLx" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic";
-	req_one_access_txt = "124"
-	},
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "pLG" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13{
@@ -13883,14 +13833,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qxb" = (
-/obj/structure/table,
-/obj/item/crafting/coffee_pot{
-	pixel_x = 8;
-	pixel_y = 6
-	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "qxo" = (
 /obj/structure/table/wood/settler,
@@ -14762,6 +14705,10 @@
 	},
 /area/f13/bunker)
 "rtw" = (
+/obj/structure/chair/sofa/right{
+	dir = 8
+	},
+/obj/item/toy/plush/beeplushie,
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "rtN" = (
@@ -16088,10 +16035,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/light,
 /area/f13/underground/cave)
-"sTM" = (
-/obj/structure/table,
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "sTT" = (
 /obj/structure/chair/bench,
 /obj/item/soap,
@@ -16140,8 +16083,8 @@
 	},
 /area/f13/bunker)
 "sXf" = (
-/obj/structure/chair/stool/retro/backed{
-	dir = 1
+/obj/structure/curtain{
+	pixel_y = -32
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
@@ -16398,11 +16341,6 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/bunker)
-"tnV" = (
-/obj/structure/grille/indestructable,
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "toC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pill_bottle/chem_tin/mentats{
@@ -17460,22 +17398,11 @@
 	},
 /area/f13/followers)
 "uHC" = (
-/obj/structure/closet/fridge,
-/obj/item/storage/fancy/egg_box,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/enzyme,
-/obj/item/reagent_containers/glass/bowl,
-/obj/item/reagent_containers/glass/bowl,
-/obj/item/reagent_containers/food/condiment/flour,
-/obj/item/reagent_containers/food/condiment/rice,
-/obj/item/reagent_containers/food/condiment/sugar,
-/obj/item/reagent_containers/food/condiment/yeast,
-/obj/item/reagent_containers/food/condiment/ketchup,
-/obj/item/reagent_containers/food/condiment/mayonnaise,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/obj/item/clothing/under/f13/psychologist,
+/obj/structure/closet/cabinet/anchored,
+/obj/item/clothing/mask/muzzle,
+/obj/item/clothing/glasses/sunglasses/blindfold,
+/turf/open/floor/wood/wood_tiled,
 /area/f13/followers)
 "uIv" = (
 /obj/structure/table,
@@ -18194,10 +18121,6 @@
 	},
 /turf/open/floor/carpet/green,
 /area/f13/underground/cave)
-"vxq" = (
-/obj/structure/chair/right,
-/turf/open/floor/wood/wood_tiled,
-/area/f13/followers)
 "vya" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -28013,7 +27936,7 @@ knr
 dcB
 dcB
 dcB
-dcB
+rPD
 rPD
 dcB
 dcB
@@ -28268,9 +28191,9 @@ dcB
 dcB
 dcB
 dcB
-rtw
-rtw
-tnV
+dcB
+dcB
+rPD
 rPD
 cwn
 pLG
@@ -28524,10 +28447,10 @@ bYA
 dcB
 uHC
 lvt
-ekg
+qxb
 sXf
-rtw
-tnV
+akh
+rPD
 rPD
 cwn
 pOm
@@ -28780,11 +28703,11 @@ bYA
 bYA
 dcB
 jtm
-lvt
-ekg
-sXf
-gkl
-tnV
+auD
+epJ
+qxb
+dcB
+rPD
 rPD
 cwn
 wzJ
@@ -29037,11 +28960,11 @@ bYA
 bYA
 dcB
 qxb
-lvt
-ekg
-sXf
-rtw
-tnV
+qxb
+qxb
+qxb
+gkl
+rPD
 rPD
 cwn
 pOm
@@ -29293,12 +29216,12 @@ dcB
 bYA
 bYA
 dcB
-geJ
-lvt
-lvt
-rtw
-akh
 dcB
+aVw
+qxb
+sXf
+akh
+rPD
 rPD
 cwn
 pOm
@@ -29549,13 +29472,13 @@ dcB
 dcB
 bYA
 bYA
+bYA
 dcB
-auD
-lvt
+dcB
 rtw
-rtw
-rtw
-pLx
+geJ
+akh
+rPD
 rPD
 ryN
 pOm
@@ -29806,13 +29729,13 @@ bYA
 bYA
 bYA
 bYA
+bYA
+bYA
 dcB
-vxq
-ltN
-nNJ
-rtw
-otN
-tnV
+dcB
+dcB
+dcB
+rPD
 rPD
 dcB
 dcB
@@ -30063,13 +29986,13 @@ wxj
 wxj
 bYA
 bYA
+bYA
+bYA
 dcB
-jTs
-epJ
-nmi
-aVw
-sTM
-tnV
+dcB
+dcB
+dcB
+rPD
 rPD
 dcB
 bYA
