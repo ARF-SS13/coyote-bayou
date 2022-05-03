@@ -56,7 +56,7 @@
 	description = "You are probably the last operating cell of the Enclave in the US, as far as you know. Now that the lore is out of the way, just make the round fun. You set the policies and the attitude of the Enclave this week."
 	supervisors = "Enclave Department of the Army."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavelt
-	exp_requirements = 3000
+	exp_requirements = 1500
 
 	loadout_options = list(
 		/datum/outfit/loadout/lt_ballistics, // FN FAL and Deagle
@@ -123,7 +123,7 @@
 	description = "Second in command after Lieutenant, your role is to direct their orders directly to the sergeants and regular troops."
 	supervisors = "The Lieutenant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13gysergeant
-	exp_requirements = 2800
+	exp_requirements = 1400
 
 	loadout_options = list(
 		/datum/outfit/loadout/gysgt_ballistics, // LSW and MK23
@@ -187,7 +187,7 @@
 	description = "Entrusted with the command of the squads assigned to the bunker, your job is to assist the Lieutenant alongside the scientists."
 	supervisors = "The Lieutenant and the Gunnery Sergeant."
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavesgt
-	exp_requirements = 2400
+	exp_requirements = 1200
 
 	loadout_options = list(
 		/datum/outfit/loadout/sgt_ballistics,	// R91 Rifle
@@ -240,7 +240,7 @@
 	description = "You are an operative for the remnants of the Enclave. You, unlike the normal privates, have recieved specialist training in either engineering or medicine."
 	supervisors = "The Lieutenant and the Sergeants."
 	outfit = /datum/outfit/job/enclave/peacekeeper/f13specialist
-	exp_requirements = 1400
+	exp_requirements = 700
 
 	loadout_options = list(
 		/datum/outfit/loadout/combatmedic, // Medical Equipment
@@ -297,7 +297,7 @@
 	supervisors = "The Lieutenant and the Sergeants"
 	outfit = /datum/outfit/job/enclave/peacekeeper/enclavespy
 	exp_type = EXP_TYPE_FALLOUT
-	exp_requirements = 1200
+	exp_requirements = 600
 
 /datum/outfit/job/enclave/peacekeeper/enclavespy
 	name = "Enclave Private"
@@ -328,7 +328,7 @@
 	description = "You're responsible for the maintenance of the base, the knowledge you've accumulated over the years is the only thing keeping the remnants alive. You've dabbled in enough to be considered a Professor in your field of research, but they call you Doctor. Support your dwindling forces and listen to the Lieutenant."
 	supervisors = "Enclave Research and Development Division."
 	outfit = /datum/outfit/job/enclave/noncombat/enclavesci
-	exp_requirements = 2000
+	exp_requirements = 1000
 
 /datum/outfit/job/enclave/noncombat/enclavesci
 	name = "Enclave Scientist"
@@ -361,92 +361,6 @@
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_UNETHICAL_PRACTITIONER, src) // Brainwashing
-
-//Bunker Duty
-/datum/job/enclave/f13BDUTY
-	title = "Enclave Bunker Duty"
-	flag = F13USBDUTY
-	total_positions = 2
-	spawn_positions = 2
-	description = "You were assigned to bunker duty this week, clean up, cook up, preach up or chem up your fellow Americans and remember don't join any raids or battles from your fellow Americans, after all it's none of your concern this week is it."
-	enforces = "You are not permited to leave the base. You are a non-combatant. You cannot join any raids or battles on the surface."
-	supervisors = "Everyone else."
-	outfit = /datum/outfit/job/enclave/noncombat/f13BDUTY
-	exp_type = EXP_TYPE_FALLOUT
-	exp_requirements = 100
-
-	loadout_options = list(
-		/datum/outfit/loadout/bunkerduty_botany,
-		/datum/outfit/loadout/bunkerduty_engi,
-		/datum/outfit/loadout/bunkerduty_janny,
-		/datum/outfit/loadout/bunkerduty_chaplain,
-		/datum/outfit/loadout/bunkerduty_cook,
-		)
-
-/datum/outfit/job/enclave/noncombat/f13BDUTY
-	name = "Enclave Bunker Duty"
-	jobtype = /datum/job/enclave/f13BDUTY
-	id = /obj/item/card/id/dogtag/enclave/trooper
-	glasses = /obj/item/clothing/glasses/sunglasses/big
-	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
-
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/melee/onehanded/knife/survival = 1,
-		)
-
-/datum/outfit/loadout/bunkerduty_botany
-	name = "Botanical Technician"
-	mask = /obj/item/clothing/mask/bandana
-	suit = /obj/item/clothing/suit/overalls
-	gloves = /obj/item/clothing/gloves/botanic_leather
-	backpack_contents = list(
-		/obj/item/storage/bag/plants = 1,
-		/obj/item/plant_analyzer = 1,
-		)
-
-/datum/outfit/loadout/bunkerduty_engi
-	name = "Maintenance Technician"
-	head = /obj/item/clothing/head/hardhat
-	suit = /obj/item/clothing/suit/hazardvest
-	gloves = /obj/item/clothing/gloves/color/yellow
-	backpack_contents = list(
-		/obj/item/storage/belt/utility = 1,
-		/obj/item/stack/sheet/metal/twenty = 1,
-		/obj/item/stack/sheet/glass/ten = 2,
-		/obj/item/stack/cable_coil/thirty = 2,
-		)
-
-/datum/outfit/loadout/bunkerduty_janny
-	name = "Sanitation Technician"
-	gloves = /obj/item/clothing/gloves/color/black
-	head = /obj/item/clothing/head/soft/purple
-	shoes = /obj/item/clothing/shoes/galoshes
-	backpack_contents = list(
-		/obj/item/reagent_containers/spray/cleaner = 1,
-		/obj/item/mop/advanced = 1,
-		/obj/item/grenade/chem_grenade/cleaner = 3,
-		)
-
-/datum/outfit/loadout/bunkerduty_chaplain
-	name = "Spiritual Technician"
-	mask = /obj/item/clothing/mask/surgical
-	suit = /obj/item/clothing/suit/f13/autumn
-	backpack_contents = list(
-		/obj/item/storage/book/bible = 2,
-		/obj/item/pen = 1,
-		/obj/item/folder = 1,
-		)
-
-/datum/outfit/loadout/bunkerduty_cook
-	name = "Culinary Technician"
-	head = /obj/item/clothing/head/chefhat
-	suit = /obj/item/clothing/neck/apron/housewife
-	backpack_contents = list(
-		/obj/item/storage/box/ingredients/wildcard = 4,
-		/obj/item/kitchen/knife/butcher = 1,
-		)
 
 // Enclave Citizen
 // Really only used for ID console

@@ -41,7 +41,7 @@ Overseer
 	supervisors = "Vault-tec"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/vault/f13overseer
 
@@ -90,7 +90,7 @@ Head of Security
 	supervisors = "the Overseer"
 	selection_color = "#ccffcc"
 	req_admin_notify = 1
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/vault/f13hos
 
@@ -227,7 +227,7 @@ Security Officer
 	description = "You answer directly to the Chief of Security, and in their absence, the Overseer. You are the first line of defense against civil unrest and outside intrusion. It is your duty to enforce the laws created by the Overseer and proactively seek out potential threats to the safety of Vault residents."
 	supervisors = "the head of security"
 	selection_color = "#ddffdd"
-	exp_requirements = 600
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/vault/f13security
 

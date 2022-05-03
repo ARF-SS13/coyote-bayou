@@ -105,7 +105,7 @@ Head Paladin
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
-	exp_requirements = 4800
+	exp_requirements = 2400
 
 	loadout_options = list(
 	/datum/outfit/loadout/sentstand, //Tribeam laser + Hardened T-51
@@ -210,7 +210,7 @@ Head Scribe
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
-	exp_requirements = 3000
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/hsstand,
@@ -278,7 +278,7 @@ Head Knight
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
-	exp_requirements = 3000
+	exp_requirements = 1500
 
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //Wattz 2k
@@ -365,7 +365,7 @@ Star Paladin
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 3000 //Not used right now anyways. Slot disabled.
+	exp_requirements = 1500 //Not used right now anyways. Slot disabled.
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	loadout_options = list(
@@ -463,7 +463,7 @@ Paladin
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Paladin"
 	selection_color = "#95a5a6"
-	exp_requirements = 2400
+	exp_requirements = 1200
 
 	loadout_options = list(
 	/datum/outfit/loadout/paladina, //Minigun
@@ -565,7 +565,7 @@ Senior Scribe
 	supervisors = "the Head Scribe"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 1800
+	exp_requirements = 900
 
 	outfit = /datum/outfit/job/bos/f13seniorscribe
 
@@ -626,7 +626,7 @@ Scribe
 	supervisors = "the Senior Scribe and Head Scribe"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 600
+	exp_requirements = 300
 
 	loadout_options = list(
 	/datum/outfit/loadout/scribea,
@@ -703,7 +703,7 @@ Senior Knight
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Head Knight"
 	selection_color = "#95a5a6"
-	exp_requirements = 1800
+	exp_requirements = 900
 
 	loadout_options = list(
 	/datum/outfit/loadout/sknighta, //AER9
@@ -810,7 +810,7 @@ Knight
 	supervisors = "the Senior Knight, and Head Knight"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 600
+	exp_requirements = 300
 
 	loadout_options = list(
 	/datum/outfit/loadout/knighta, //AER9
@@ -1007,42 +1007,4 @@ Initiate
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
 		/obj/item/book/granter/trait/chemistry=1,
 		/obj/item/clothing/accessory/bos/initiateS=1,
-		)
-
-/*
-Off-Duty
-*/
-
-/datum/job/bos/f13offdutybos
-	title = "BoS Off-Duty"
-	flag = F13OFFDUTYBOS
-	total_positions = 5
-	spawn_positions = 5
-	description = "While off-duty, you are relieved of both your duties and your authority. You are not required to participate in any routine duties of the bunker, and you may spend your time doing whatever you please, within reason. However, you may not leave the bunker, and you may not get in the way of on-duty personnel. Do not pull rank or give orders. Should the bunker be attacked, you are expected NOT to participate in the fighting, and must instead head to the lower levels for safety (i.e. despawn yourself at the matrix point)."
-	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
-	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
-	supervisors = "your superior rank."
-	selection_color = "#95a5a6"
-
-	exp_requirements = 300
-
-	outfit = /datum/outfit/job/bos/f13offdutybos
-
-	access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
-	minimal_access = list(ACCESS_ROBOTICS, ACCESS_BOS, ACCESS_ENGINE_EQUIP, ACCESS_ENGINE, ACCESS_HYDROPONICS, ACCESS_KITCHEN, ACCESS_BAR, ACCESS_SEC_DOORS)
-
-/datum/outfit/job/bos/f13offdutybos
-	name = "BoS Off-Duty"
-	jobtype = /datum/job/bos/f13offdutybos
-	backpack = /obj/item/storage/backpack
-	ears = 			/obj/item/radio/headset
-	uniform =		/obj/item/clothing/under/syndicate
-	belt = 			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/combat
-	gloves = 		/obj/item/clothing/gloves/combat
-	id = 			/obj/item/card/id/dogtag
-	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=1,
-		/obj/item/encryptionkey/headset_bos=1,
-		/obj/item/melee/onehanded/knife/survival=1
 		)
