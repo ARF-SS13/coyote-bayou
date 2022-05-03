@@ -29,7 +29,7 @@ Mayor
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13mayor
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -135,7 +135,7 @@ Mayor
 	description = "The settlement of Oasis is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
 	enforces = "You are the stand-in leader of Oasis if a Mayor does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 800
+	exp_requirements = 400
 
 	outfit = /datum/outfit/job/den/f13secretary
 
@@ -210,7 +210,7 @@ Mayor
 	description = "You are the civil enforcer of Oasis, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
 	enforces = "You are the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13sheriff
 
@@ -314,9 +314,8 @@ Mayor
 	description = "You are a loyal protector of Oasis, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out."
 	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
-	exp_requirements = 12
 	exp_type = EXP_TYPE_OASIS
-	exp_requirements = 600
+	exp_requirements = 300
 
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
@@ -943,7 +942,7 @@ Mayor
 	description = "The big trading caravan companies have often neglected the humble settlement of Oasis. That leaves one thing for certain - opportunities for local businesses! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
 	enforces = "Your store is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
-	exp_requirements = 600
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
