@@ -331,7 +331,7 @@
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
 	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 5 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //9dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
 	slowdown = 0.35
 	weapon_weight = WEAPON_MEDIUM //DO NOT DUAL WIELD
 
@@ -409,7 +409,7 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
-/obj/item/gun/energy/laser/aer9/oasis
+/obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
