@@ -822,6 +822,9 @@
 	icon_state = "skulls";
 	name = "skulls"
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
 "dy" = (
@@ -3525,10 +3528,16 @@
 	dir = 4
 	},
 /obj/structure/decoration/rag,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
 "nR" = (
 /obj/structure/window/fulltile/wood/broken,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
 "nS" = (
@@ -3584,6 +3593,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/ncr)
+"nX" = (
+/obj/structure/window/fulltile/wood,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
+/turf/open/indestructible/ground/outside/woodalt,
+/area/f13/building)
 "nY" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -6235,11 +6251,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "yf" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/belt/tribe_quiver,
-/obj/item/gun/ballistic/bow/crossbow,
+/obj/structure/window/fulltile/wood,
+/obj/structure/decoration/rag,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/woodalt,
-/area/f13/caves)
+/area/f13/building)
 "yg" = (
 /obj/structure/table,
 /obj/machinery/button/door{
@@ -60641,7 +60659,7 @@ nE
 nE
 nE
 VB
-bs
+nX
 nR
 fv
 eA
@@ -63727,8 +63745,8 @@ Wx
 Ak
 VB
 Xv
-bs
-bs
+nX
+nX
 oY
 eA
 PL
@@ -64501,7 +64519,7 @@ EM
 eh
 TL
 lL
-oU
+yf
 PL
 PL
 PL
@@ -64518,8 +64536,8 @@ Gl
 Cb
 PL
 PL
+PL
 Jk
-kC
 kC
 kC
 kC
@@ -66282,7 +66300,7 @@ kC
 kC
 kC
 mm
-yf
+Ej
 Ej
 IF
 IF
@@ -66323,7 +66341,7 @@ PL
 Mj
 HO
 oB
-oU
+yf
 EM
 Il
 Zq
@@ -66837,7 +66855,7 @@ PL
 Mj
 nT
 uc
-oU
+yf
 EM
 qS
 Bn

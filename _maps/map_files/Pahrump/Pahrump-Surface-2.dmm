@@ -14,6 +14,9 @@
 	name = "strong metal bars";
 	obj_integrity = 800
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "aay" = (
@@ -967,7 +970,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "asj" = (
@@ -2203,13 +2205,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "aVn" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/furnace,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "aVq" = (
 /obj/structure/billboard/ritas,
@@ -7638,10 +7635,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/village)
 "dgK" = (
-/obj/structure/campfire/stove,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -7700,19 +7697,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "dhK" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress5"
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/effect/landmark/start/f13/pusher,
-/obj/structure/sign/poster/contraband/pinup_pink{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dhQ" = (
 /obj/structure/displaycase,
 /obj/item/clothing/gloves/ring/silver,
@@ -7750,6 +7740,9 @@
 "diK" = (
 /obj/structure/closet,
 /obj/item/clothing/under/f13/rag,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "diS" = (
@@ -9085,6 +9078,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"dHX" = (
+/obj/effect/landmark/start/f13/pusher,
+/turf/open/indestructible/ground/outside/savannah/topcenter,
+/area/f13/wasteland)
 "dIj" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13{
@@ -9950,10 +9947,21 @@
 	icon_state = "plating"
 	},
 /area/f13/ncr)
+"ebw" = (
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/obj/effect/landmark/start/f13/pusher,
+/turf/open/indestructible/ground/outside/savannah/topcenter,
+/area/f13/wasteland)
 "ebx" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/bed/mattress{
+	icon_state = "mattress5"
+	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
 	},
@@ -10075,7 +10083,6 @@
 /area/f13/tunnel)
 "edF" = (
 /obj/structure/table,
-/obj/item/clothing/neck/petcollar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -10455,6 +10462,11 @@
 /obj/structure/chair/bench,
 /obj/item/clothing/under/overalls,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"ekT" = (
+/obj/structure/decoration/rag,
+/obj/structure/campfire/stove,
+/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "ekW" = (
 /obj/structure/toilet{
@@ -11320,6 +11332,9 @@
 	max_integrity = 800;
 	name = "strong metal bars";
 	obj_integrity = 800
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood3-broken"
@@ -13622,6 +13637,9 @@
 	name = "strong metal bars";
 	obj_integrity = 800
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "fxx" = (
@@ -15131,6 +15149,9 @@
 	obj_integrity = 800
 	},
 /obj/structure/decoration/rag,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -15293,7 +15314,6 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/floor/f13{
 	icon_state = "floordirty"
 	},
@@ -16158,6 +16178,9 @@
 "gsa" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/metal/fifty,
+/obj/item/radio/headset/headset_khans,
+/obj/item/radio/headset/headset_khans,
+/obj/item/radio/headset/headset_khans,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gsd" = (
@@ -16568,6 +16591,9 @@
 	},
 /obj/structure/decoration/rag{
 	icon_state = "skin"
+	},
+/obj/structure/curtain{
+	color = "#845f58"
 	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
@@ -19060,6 +19086,9 @@
 	name = "strong metal bars";
 	obj_integrity = 800
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -21147,7 +21176,6 @@
 /area/f13/wasteland)
 "ifc" = (
 /obj/structure/chair/sofa/left,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/savannah/topleft,
 /area/f13/wasteland)
 "ifq" = (
@@ -22004,9 +22032,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "iyy" = (
-/obj/effect/landmark/start/f13/pusher,
-/turf/open/indestructible/ground/outside/wood,
-/area/f13/building)
+/obj/structure/anvil/obtainable/sandstone,
+/obj/item/twohanded/sledgehammer/simple,
+/obj/item/book/manual/advice_blacksmith,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "iyD" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowbottom"
@@ -23818,7 +23848,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "jfG" = (
@@ -24003,7 +24032,6 @@
 "jiN" = (
 /obj/structure/bed/mattress,
 /obj/item/clothing/glasses/f13/biker,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "jiR" = (
@@ -24281,7 +24309,6 @@
 /area/f13/wasteland)
 "jnN" = (
 /obj/structure/chair/sofa/right,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland)
 "jnW" = (
@@ -25067,6 +25094,9 @@
 	obj_integrity = 800
 	},
 /obj/structure/decoration/rag,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "jEd" = (
@@ -27585,7 +27615,6 @@
 /area/f13/building)
 "kEW" = (
 /obj/structure/bed/mattress,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "kEX" = (
@@ -28087,6 +28116,15 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"kQL" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "kRc" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood{
@@ -29341,6 +29379,7 @@
 /area/f13/city)
 "lov" = (
 /obj/structure/flora/grass/wasteland,
+/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "loX" = (
@@ -29508,6 +29547,9 @@
 	obj_integrity = 800
 	},
 /obj/structure/decoration/rag,
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "lsS" = (
@@ -30662,6 +30704,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"lTb" = (
+/obj/machinery/mineral/wasteland_vendor/khanchem,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lTk" = (
 /obj/structure/closet/crate/bin/trashbin,
 /obj/item/paper/crumpled,
@@ -32942,6 +32988,16 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"mJv" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "mJz" = (
 /obj/structure/railing{
 	dir = 4
@@ -39623,6 +39679,12 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"puf" = (
+/obj/structure/sign/poster/contraband/pinup_pink{
+	pixel_y = 32
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "puh" = (
 /obj/structure/simple_door/wood,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -49474,6 +49536,9 @@
 	name = "strong metal bars";
 	obj_integrity = 800
 	},
+/obj/structure/curtain{
+	color = "#845f58"
+	},
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
 "tzC" = (
@@ -57337,6 +57402,10 @@
 	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
+"wMF" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "wMU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -107984,7 +108053,7 @@ rxE
 kEW
 fzM
 log
-aXM
+ebw
 lTT
 xYS
 uXj
@@ -108991,7 +109060,7 @@ gcK
 uqa
 qdS
 dgK
-dEc
+kQL
 dEc
 ezo
 eNT
@@ -109004,7 +109073,7 @@ aav
 hQr
 uqa
 fff
-mvv
+lTb
 qdS
 uqa
 tzz
@@ -109252,7 +109321,7 @@ dEc
 rpu
 dEc
 eST
-mvv
+puf
 mvv
 odZ
 mvv
@@ -109263,9 +109332,9 @@ mvv
 mvv
 mvv
 mvv
-fzN
+dhK
 mvv
-mvv
+jSw
 egW
 vfU
 iqZ
@@ -109510,7 +109579,7 @@ gCh
 qdS
 lPT
 aLd
-mvv
+jSw
 stD
 stD
 mvv
@@ -109760,8 +109829,8 @@ gcK
 ktB
 gcK
 gcK
-cQs
-dhK
+ekT
+rpu
 rpu
 ebx
 eBu
@@ -110019,14 +110088,14 @@ gcK
 gcK
 taV
 diK
-rpu
+wMF
 edF
 qdS
 eUD
 fdV
-jIz
-mvv
-mvv
+dHX
+gVp
+ofL
 mvv
 mvv
 bir
@@ -110282,8 +110351,8 @@ gxW
 eXn
 rXN
 fCM
-gVp
-ofL
+iyy
+aVn
 odZ
 mvv
 mvv
@@ -112607,7 +112676,7 @@ jEb
 jSw
 mvv
 stD
-mvv
+jSw
 mvv
 mvv
 lFm
@@ -112857,7 +112926,7 @@ mvv
 mvv
 gCh
 igs
-iyy
+rxE
 ezZ
 ezZ
 eFA
@@ -112876,8 +112945,8 @@ uXj
 uXj
 tQt
 tQt
-oFp
-gcK
+tQt
+mJv
 gcK
 gcK
 gcK
@@ -113134,7 +113203,7 @@ mBh
 mBh
 mBh
 mBh
-aVn
+uXj
 bnz
 bnz
 daU
@@ -113375,7 +113444,7 @@ ezZ
 iKG
 iSi
 eFA
-mvv
+jSw
 stD
 kGe
 mvv
@@ -113895,7 +113964,7 @@ mvv
 mvv
 gVp
 odZ
-mvv
+jSw
 dCL
 mcf
 fyf
