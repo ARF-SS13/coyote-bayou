@@ -56,69 +56,9 @@
 	category = "Purchase Clothes:"
 
 // ---------------------------
-//Great Khans
+//Great Khans stuff was moved into PAPA in there khamp
 
-/datum/gang_item/clothing/khan_boots
-	name = "Great Khan boots"
-	id = "khan_boots"
-	cost = 15
-	item_path = /obj/item/clothing/shoes/f13/military/khan
-
-/datum/gang_item/clothing/khan_peltboots
-	name = "Great Khan pelt boots"
-	id = "khan_peltboots"
-	cost = 20
-	item_path = /obj/item/clothing/shoes/f13/military/khan_pelt
-
-/datum/gang_item/clothing/khan_helmet
-	name = "Great Khan fur-trimmed helmet"
-	id = "khan_helmet"
-	cost = 20
-	item_path = /obj/item/clothing/head/helmet/f13/khan/pelt
-
-/datum/gang_item/clothing/khan_bandana
-	name = "Great Khan bandana"
-	id = "khan_bandana"
-	cost = 25
-	item_path = /obj/item/clothing/head/helmet/f13/khan/bandana
-
-/datum/gang_item/clothing/khan_fullhelmet
-	name = "Great Khan full helmet"
-	id = "khan_fullhelmet"
-	cost = 100
-	item_path = /obj/item/clothing/head/helmet/f13/khan/fullhelm
-
-/datum/gang_item/clothing/khan_uniform
-	name = "Great Khan uniform"
-	id = "khan_uniform"
-	cost = 10
-	item_path = /obj/item/clothing/under/f13/khan
-
-/datum/gang_item/clothing/khan_jorts
-	name = "Great Khan Jorts"
-	id = "khan_jorts"
-	cost = 10
-	item_path = /obj/item/clothing/under/f13/khan/shorts
-
-/datum/gang_item/clothing/khan_booty
-	name = "Great Khan Booty Shorts"
-	id = "khan_booty"
-	cost = 10
-	item_path = /obj/item/clothing/under/f13/khan/booty
-
-/datum/gang_item/clothing/khan_jacket_armored
-	name = "Great Khan armored jacket"
-	id = "khan_jacket_armored"
-	cost = 100
-	item_path = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
-
-/datum/gang_item/clothing/khan_battlecoat
-	name = "Great Khan battlecoat"
-	id = "khan_battlecoat"
-	cost = 300
-	item_path = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
-
-// ---------------------------
+//Raider gangs
 
 /datum/gang_item/clothing/prostitute_dress
 	name = "Prostitute dress"
@@ -205,6 +145,12 @@
 	id = "switchblade"
 	cost = 20
 	item_path = /obj/item/melee/onehanded/knife/switchblade
+
+/datum/gang_item/weapon/brass
+	name = "Brass knuckles"
+	id = "brassknuckles"
+	cost = 20
+	item_path = /obj/item/melee/unarmed/brass
 
 /datum/gang_item/weapon/spikedbaseball
 	name = "Spiked baseball bat"
