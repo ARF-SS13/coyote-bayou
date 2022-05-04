@@ -400,6 +400,12 @@
 	item_state = "legion-decvet-alt"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0, "wound" = 50)
 
+/obj/item/clothing/head/helmet/f13/legion/vet/decan/daemon
+	name = "Customized Decanus helmet"
+	desc = "A fully enclosed mask of melted bronze with eyeslits allowing a menacing gaze to lay upon your enemies."
+	icon_state = "daemon_helmet"
+	item_state = "daemon_helmet"
+
 /obj/item/clothing/head/helmet/f13/legion/centurion
 	name = "legion centurion helmet"
 	desc = "A sturdy helmet from steel and brass with a red horizontal plume."

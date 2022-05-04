@@ -103,6 +103,15 @@
 	new /obj/item/clothing/mask/bandana/blue(src)
 	new /obj/item/clothing/suit/armored/light/kit/punk(src)
 
+// DaemonTinadel Custom Vet Decanus
+/datum/gear/donator/kits/daemon
+	name = "Daemon's small wiener"
+	path = /obj/item/storage/box/large/custom_kit/daemon
+	ckeywhitelist = list("DaemonTinadel")
+
+/obj/item/storage/box/large/custom_kit/daemon/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/legion/vet/decan/daemon(src)
+	new /obj/item/clothing/suit/armor/f13/legion/heavy/daemon(src)
 
 /datum/gear/donator/kits/burningcold
 	name = "Burnings Goods"

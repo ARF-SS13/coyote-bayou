@@ -249,6 +249,15 @@
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0, "wound" = 50)
 	slowdown = 0.1
 
+// Daemon's Custom Veteran Armor
+/obj/item/clothing/suit/armor/f13/legion/heavy/daemon
+	name = "customized legion veteran decan armor"
+	desc = "A customized Decanus chest plate with the front of the heavy plated armored separating into a facade of metal scales."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "daemon_armor"
+	item_state = "daemon_armor"
+
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
 	name = "legion explorer armor"
 	desc = "Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
