@@ -143,13 +143,11 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 0
 	pixels_per_second = 4000
 	zone_accuracy_factor = 100
-	anti_armour_damage = 30
 
 /obj/item/projectile/bullet/a50MG/incendiary
 	damage = -10
 	var/fire_stacks = 4
 	zone_accuracy_factor = 100
-	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -160,7 +158,6 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 
 /obj/item/projectile/bullet/a50MG/explosive
 	damage = -20
-	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/a50MG/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -172,13 +169,11 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	stamina = 80
 	armour_penetration = 0
 	sharpness = SHARP_NONE
-	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/a50MG/penetrator
 	name = ".50 penetrator round"
 	damage = -10
 	movement_type = FLYING | UNSTOPPABLE
-	anti_armour_damage = 50
 
 /obj/item/projectile/bullet/a50MG/uraniumtipped
 	name = "12.7mm uranium-tipped bullet"
@@ -190,7 +185,6 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	name = "12.7mm contaminated bullet"
 	damage = -10
 	var/smoke_radius = 1
-	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/a50MG/contam/Initialize()
 	. = ..()
@@ -332,8 +326,6 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 0
 	armour_penetration = 0.9 //if only one bullet has built in AP, its this one
 	pixels_per_second = TILES_TO_PIXELS(100)
-	anti_armour_damage = 30
-
 
 /obj/item/projectile/bullet/c2mm/blender //welcome to pain town
 	name = "2mm blender projectile"
@@ -347,7 +339,6 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	ricochet_decay_chance = 11
 	ricochet_chance = 100
 	var/collats = 3
-	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/c2mm/blender/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
 	if(isliving(target) && collats)
