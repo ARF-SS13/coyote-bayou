@@ -42,7 +42,7 @@
 		return FALSE
 	var/mob/living/carbon/human/H = locate(/mob/living/carbon/human) in range(radius, get_turf(src))
 	var/obj/mecha/M = locate(/obj/mecha) in range(radius, get_turf(src))
-	if(!H?.client && !M)
+	if(!H?.client && !M?.occupant)
 		return FALSE
 	toggle_fire(FALSE)
 	addtimer(CALLBACK(src, .proc/toggle_fire), spawn_time)

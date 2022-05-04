@@ -957,6 +957,8 @@
 	return TRUE
 
 /obj/mecha/container_resist(mob/living/user)
+	if(occupant)
+		occupant.SetSleeping(destruction_sleep_duration*2)
 	go_out()
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)

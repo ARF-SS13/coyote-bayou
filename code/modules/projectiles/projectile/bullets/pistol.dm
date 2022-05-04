@@ -338,11 +338,13 @@ Uranium, Contaminated
 	damage = 0
 	wound_bonus = 18
 	bare_wound_bonus = -24
+	anti_armour_damage = 20
 
 /obj/item/projectile/bullet/c4570/explosive
 	damage = -15
 	pixels_per_second = TILES_TO_PIXELS(500)
 	name = ".45-70 explosive bullet"
+	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/c4570/explosive/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -354,6 +356,7 @@ Uranium, Contaminated
 	wound_bonus = 0
 	sharpness = SHARP_NONE
 	var/acid_type = /datum/reagent/toxin/acid/fluacid
+	anti_armour_damage = 0
 
 /obj/item/projectile/bullet/c4570/acid/Initialize()
 	. = ..()
@@ -373,6 +376,7 @@ Uranium, Contaminated
 	wound_bonus = 0
 	sharpness = SHARP_NONE
 	pixels_per_second = TILES_TO_PIXELS(500)
+	anti_armour_damage = 15
 
 /obj/item/projectile/bullet/c4570/knockback/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -451,6 +455,7 @@ Uranium, Contaminated
 	damage = 0
 	armour_penetration = 0.8 //rare AP pistol ammo
 	var/piercing = FALSE
+	anti_armour_damage = 30
 
 
 ////////////////
