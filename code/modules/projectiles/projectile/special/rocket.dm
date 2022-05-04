@@ -14,12 +14,15 @@
 	icon_state= "84mm-hedp"
 	damage = 0
 	ricochets_max = 0
-	anti_armour_damage = 200
+	var/anti_armour_damage = 200
 
 /obj/item/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
 	explosion(target, -1, 1, 3, 1, 0, flame_range = 4)
 
+	if(ismecha(target))
+		var/obj/mecha/M = target
+		M.take_damage(anti_armour_damage)
 	if(issilicon(target))
 		var/mob/living/silicon/S = target
 		S.take_overall_damage(anti_armour_damage*0.75, anti_armour_damage*0.25)
