@@ -1044,6 +1044,24 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+
+//recharger pistol, followers of the apocalypse
+/datum/crafting_recipe/rechargerpistol
+	name = "recharger pistol"
+	result = /obj/item/gun/energy/laser/wattz/recharger
+	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/stack/crafting/metalparts = 1,
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/sheet/mineral/gold = 2,
+				/obj/item/stack/sheet/mineral/uranium = 5,
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //lever action shotgun
 /datum/crafting_recipe/lever_action
 	name = "Lever Action Shotgun"
