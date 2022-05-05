@@ -15,7 +15,7 @@
 // Mech FNX-99
 
 /obj/item/projectile/bullet/incendiary/fnx99
-	damage = 20
+	damage = 34
 
 // Turrets
 

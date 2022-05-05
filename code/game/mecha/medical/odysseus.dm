@@ -1,10 +1,10 @@
 /obj/mecha/medical/odysseus
-	desc = "These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
 	name = "\improper Odysseus"
+	desc = "A civilian medical exosuit model, produced to assist in medical bays of the Vaults."
 	icon_state = "odysseus"
 	step_in = 2
 	max_temperature = 15000
-	max_integrity = 120
+	max_integrity = 250
 	wreckage = /obj/structure/mecha_wreckage/odysseus
 	internal_damage_threshold = 35
 	deflect_chance = 15
