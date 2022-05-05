@@ -14,7 +14,6 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	infra_luminosity = 3
 	wreckage = /obj/structure/mecha_wreckage/marauder
-	add_req_access = 0
 	internal_damage_threshold = 10
 	step_energy_drain = 60
 	force = 40 // Just don't go near that thing, or do, it can't strafe.
