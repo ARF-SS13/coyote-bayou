@@ -119,9 +119,10 @@
 	ckeywhitelist = list("myguy49")
 	
 /obj/item/storage/box/large/custom_kit/pineapple/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/power_armor/t60/pineapple(src)
-	new /obj/item/clothing/head/helmet/f13/power_armor/t60/pineapple(src)
-	new /obj/item/clothing/neck/mantle/bos(src)
+	new /obj/item/clothing/suit/armor/f13/combat/environmental(src)
+	new /obj/item/clothing/head/helmet/f13/combat/environmental(src)
+	new /obj/item/gun/energy/laser/plasma/glock(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 
 /datum/gear/donator/kits/pineapple
@@ -130,11 +131,11 @@
 	ckeywhitelist = list("silveredsoul")
 
 /obj/item/storage/box/large/custom_kit/evosolus/PopulateContents()
-	new /obj/item/clothing/head/beret/ncr/ncr_recon(src)
-	new /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced(src)
-	new /obj/item/gun/ballistic/automatic/rangemaster(src)
-	new /obj/item/ammo_box/magazine/m762(src)
-	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/storage/belt/holster(src)
 
 /datum/gear/donator/kits/evosolus
 	name = "Evos goods"
@@ -160,7 +161,7 @@
 	new /obj/item/clothing/shoes/f13/mutie/boots(src)
 	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
 	new /obj/item/clothing/under/f13/vaultmutie(src)
-	new /obj/item/clothing/suit/armor/f13/mutant/metal(src)
+	new /obj/item/clothing/suit/armor/f13/mutant/poncho(src)
 
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"
@@ -173,6 +174,6 @@
 	ckeywhitelist = list("puglord777")
 	
 /datum/gear/donator/kits/mutie
-	name = "I die to mobsx2"
+	name = "Muties"
 	path = /obj/item/storage/box/large/custom_kit/mutie
 	ckeywhitelist = list("puglord777")
