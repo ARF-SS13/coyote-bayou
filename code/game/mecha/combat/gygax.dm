@@ -23,7 +23,7 @@
 	name = "\improper Dark Gygax"
 	desc = "A lightweight exosuit, painted in a dark scheme. This model appears to have some modifications."
 	icon_state = "darkgygax"
-	max_integrity = 550
+	max_integrity = 500
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 60, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
 	max_temperature = 35000
 	leg_overload_coeff = 100
