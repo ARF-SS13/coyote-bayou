@@ -1000,6 +1000,11 @@ h1.alert, h2.alert {
   animation-direction: alternate;
 }
 
+.singing {
+  font-family:'Trebuchet MS', cursive, sans-serif;
+  font-style: italic;
+}
+
 @keyframes hypnocolor {
   0% {
     color: #0d0d0d;
