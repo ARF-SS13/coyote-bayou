@@ -28,23 +28,26 @@
 	hitscan = TRUE
 	wound_bonus = 0
 
+// Low energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/light
 	name = "laser beam"
-	damage = 25
-	armour_penetration = 0.10
+	damage = 30
+	armour_penetration = 0.1
 
+// More energy drain and higher cooldown
 /obj/item/projectile/beam/laser/mech/heavy
 	name = "heavy laser beam"
-	damage = 40
-	armour_penetration = 0.20
+	damage = 45
+	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 
+// The highest energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/pulse
 	name = "charged pulse beam"
-	damage = 35
-	armour_penetration = 0.40
+	damage = 60
+	armour_penetration = 0.35
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse

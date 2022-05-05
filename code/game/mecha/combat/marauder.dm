@@ -1,30 +1,34 @@
+/*	Marauder
+	Meant for attacking heavy fortifications and generally prolonged combat
+	Has the most attack force, but is also slower than other mechs and can't strafe
+*/
+
 /obj/mecha/combat/marauder
-	desc = "A retrofit of the orginal 'Durand' exosuit designed for extended combat operations, the shield projector has been replaced with a smoke-screen dispenser and a sophisticated sensor suite."
 	name = "\improper Marauder"
+	desc = "A retrofit of the orginal 'Durand' exosuit designed for extended combat operations, the shield projector has been replaced with a smoke-screen dispenser and a sophisticated sensor suite."
 	icon_state = "marauder"
 	step_in = 5
-	max_integrity = 500
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 30, "energy" = 30, "bomb" = 40, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
+	max_integrity = 900
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 40, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
 	max_temperature = 60000
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	infra_luminosity = 3
 	wreckage = /obj/structure/mecha_wreckage/marauder
 	add_req_access = 0
-	internal_damage_threshold = 30
+	internal_damage_threshold = 10
 	step_energy_drain = 60
-	force = 45
+	force = 50 // Just don't go near that thing, or do, it can't strafe.
+	attack_knockdown = 20
 	canstrafe = FALSE
 
 /obj/mecha/combat/marauder/GrantActions(mob/living/user, human_occupant = 0)
 	..()
 	smoke_action.Grant(user, src)
-	//thrusters_action.Grant(user, src)
 	zoom_action.Grant(user, src)
 
 /obj/mecha/combat/marauder/RemoveActions(mob/living/user, human_occupant = 0)
 	..()
 	smoke_action.Remove(user)
-	//thrusters_action.Remove(user)
 	zoom_action.Remove(user)
 
 /obj/mecha/combat/marauder/loaded/Initialize()
@@ -40,15 +44,15 @@
 	max_ammo()
 
 /obj/mecha/combat/marauder/seraph // Very OP adminbus mech.
-	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	name = "\improper Seraph"
+	desc = "Heavy-duty, command-type exosuit. This is a custom model, utilized only by high-ranking military personnel."
 	icon_state = "seraph"
 	step_in = 3
-	max_integrity = 750
+	max_integrity = 1000
 	armor = list("melee" = 75, "bullet" = 70, "laser" = 50, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
 	wreckage = /obj/structure/mecha_wreckage/seraph
 	internal_damage_threshold = 20
-	force = 60
+	force = 65
 	max_equip = 5
 
 /obj/mecha/combat/marauder/seraph/Initialize()

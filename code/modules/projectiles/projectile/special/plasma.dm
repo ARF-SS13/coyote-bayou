@@ -37,7 +37,6 @@
 	mine_range = 5
 
 /obj/item/projectile/plasma/adv/mech
-	damage = 20
 	range = 9
 	mine_range = 3
 	hitscan = TRUE

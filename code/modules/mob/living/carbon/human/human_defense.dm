@@ -270,21 +270,20 @@
 			var/atom/throw_target = get_edge_target_turf(src, M.dir)
 			switch(M.damtype)
 				if("brute")
-					if(M.force > 35) // durand and other heavy mechas
-						DefaultCombatKnockdown(50)
+					if(M.force > 40) // durand and other heavy mechas
 						src.throw_at(throw_target, rand(1,5), 7)
-					else if(M.force >= 20 && CHECK_MOBILITY(src, MOBILITY_STAND)) // lightweight mechas like gygax
-						DefaultCombatKnockdown(30)
+					else if(M.force >= 25 && CHECK_MOBILITY(src, MOBILITY_STAND)) // lightweight mechas like gygax
 						src.throw_at(throw_target, rand(1,3), 7)
 					update |= temp.receive_damage(dmg, 0)
-					playsound(src, 'sound/weapons/punch4.ogg', 50, 1)
 				if("fire")
 					update |= temp.receive_damage(0, dmg)
-					playsound(src, 'sound/items/welder.ogg', 50, 1)
 				if("tox")
 					M.mech_toxin_damage(src)
 				else
 					return
+			playsound(src, M.attacksound, 50, 1)
+			if(M.attack_knockdown > 0)
+				DefaultCombatKnockdown(M.attack_knockdown)
 			if(update)
 				update_damage_overlays()
 			updatehealth()

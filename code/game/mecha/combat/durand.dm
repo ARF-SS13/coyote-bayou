@@ -1,17 +1,23 @@
+/*	Durand
+	Meant to be mostly a defensive choice with its shield and high integrity
+	Has less attack force than Marauder
+*/
+
 /obj/mecha/combat/durand
-	desc = "An aging combat exosuit utilized by the Vault-Tec corporation. A pre-War design, developed by Vault-Tec to combat post-War threats. It seems to have an experimental shield projector installed to minimize damage to the exosuit."
 	name = "\improper Durand"
+	desc = "An aging combat exosuit utilized by the Vault-Tec corporation. A pre-War design, developed by Vault-Tec to combat post-War threats. It seems to have an experimental shield projector installed to minimize damage to the exosuit."
 	icon_state = "durand"
 	step_in = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 400
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 20, "energy" = 20, "bomb" = 35, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
+	max_integrity = 800
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 35, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
 	infra_luminosity = 8
-	force = 40
+	force = 35
+	attack_knockdown = 15
 	canstrafe = TRUE
 	step_energy_drain = 40
-	internal_damage_threshold = 40
+	internal_damage_threshold = 20
 	wreckage = /obj/structure/mecha_wreckage/durand
 
 	var/obj/durand_shield/shield

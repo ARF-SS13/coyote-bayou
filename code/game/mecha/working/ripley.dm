@@ -1,12 +1,12 @@
 /obj/mecha/working/ripley
-	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	name = "\improper APLU \"Ripley\""
+	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	icon_state = "ripley"
 	step_in = 3 //Move speed, lower is faster.
 	var/fast_pressure_step_in = 2
 	var/slow_pressure_step_in = 3
 	max_temperature = 20000
-	max_integrity = 200
+	max_integrity = 300
 	lights_power = 8
 	deflect_chance = 15
 	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
