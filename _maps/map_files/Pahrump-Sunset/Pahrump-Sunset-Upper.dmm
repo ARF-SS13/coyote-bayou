@@ -371,6 +371,9 @@
 	},
 /area/f13/bar/heaven)
 "aba" = (
+/obj/structure/chair/wood/fancy{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
@@ -426,7 +429,7 @@
 /area/f13/wasteland)
 "abk" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/wide,
+/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "abl" = (
 /turf/open/floor/wood/f13/import/common/broken,
@@ -463,10 +466,9 @@
 	},
 /area/f13/wasteland)
 "abq" = (
-/obj/structure/bed/wooden,
-/obj/item/bedsheet/pirate,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/common,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/import/wide,
 /area/f13/wasteland)
 "abr" = (
 /obj/structure/chair/wood/wings,
@@ -624,27 +626,22 @@
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "abO" = (
-/obj/machinery/door/unpowered/securedoor/khandoor,
-/turf/open/floor/wood/f13/import/common,
-/area/f13/wasteland)
-"abP" = (
-/obj/structure/table/wood/bar,
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/pirate,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
-"abQ" = (
-/obj/structure/table/wood/bar,
-/obj/item/gavelblock{
-	pixel_y = 4
-	},
-/obj/item/gavelhammer{
-	pixel_y = 8
-	},
+"abP" = (
+/obj/machinery/door/unpowered/securedoor/khandoor,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
+"abQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/import/wide,
+/area/f13/wasteland)
 "abR" = (
-/obj/structure/chair/wood/fancy{
-	dir = 4
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
@@ -1100,9 +1097,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"cZc" = (
+"dnf" = (
+/obj/structure/punching_bag,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/common/broken,
+/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "dwM" = (
 /obj/structure/chair/wood/modern{
@@ -1178,11 +1176,14 @@
 /obj/machinery/light/sign/heaven,
 /turf/closed/wall/f13/wood,
 /area/f13/bar/heaven)
-"ibt" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
+"iaD" = (
+/obj/structure/table/wood/bar,
+/obj/item/paper_bin{
+	pixel_y = 6
 	},
-/obj/effect/decal/cleanable/dirt,
+/obj/item/pen/fountain{
+	pixel_y = 8
+	},
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "isT" = (
@@ -1190,6 +1191,10 @@
 	name = "metal plating";
 	sunlight_state = 1
 	},
+/area/f13/wasteland)
+"iUi" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/import/common/broken,
 /area/f13/wasteland)
 "jcl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1208,6 +1213,13 @@
 /area/f13/city)
 "jKa" = (
 /turf/closed/wall/f13/wood/house,
+/area/f13/wasteland)
+"kOc" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "ldu" = (
 /obj/effect/decal/cleanable/dirt{
@@ -1229,18 +1241,8 @@
 	},
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/city)
-"loP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/wide,
-/area/f13/wasteland)
 "lDT" = (
 /turf/closed/mineral/random/low_chance,
-/area/f13/wasteland)
-"lUH" = (
-/obj/structure/punching_bag,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "mbu" = (
 /turf/closed/wall/f13/tentwall,
@@ -1266,13 +1268,6 @@
 	name = "metal plating";
 	sunlight_state = 1
 	},
-/area/f13/wasteland)
-"nKy" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "nWK" = (
 /obj/structure/railing{
@@ -1346,14 +1341,9 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
-"qcM" = (
+"qmn" = (
 /obj/structure/table/wood/bar,
-/obj/item/paper_bin{
-	pixel_y = 6
-	},
-/obj/item/pen/fountain{
-	pixel_y = 8
-	},
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "qmO" = (
@@ -1474,6 +1464,16 @@
 /area/f13/city)
 "wqF" = (
 /turf/closed/wall/r_wall/rust,
+/area/f13/wasteland)
+"wxI" = (
+/obj/structure/table/wood/bar,
+/obj/item/gavelblock{
+	pixel_y = 4
+	},
+/obj/item/gavelhammer{
+	pixel_y = 8
+	},
+/turf/open/floor/wood/f13/import/common,
 /area/f13/wasteland)
 "xQH" = (
 /obj/structure/chair/booth{
@@ -2492,7 +2492,7 @@ oez
 oez
 abt
 abH
-nKy
+abR
 abb
 lDT
 lDT
@@ -3006,7 +3006,7 @@ abc
 abD
 abb
 abb
-abO
+abP
 abb
 abb
 abb
@@ -3260,10 +3260,10 @@ lDT
 abb
 abu
 abc
-abq
+abO
 abc
 abu
-aba
+abk
 abb
 abS
 abx
@@ -3523,7 +3523,7 @@ abv
 abc
 abb
 abT
-cZc
+iUi
 ace
 abb
 oez
@@ -3773,12 +3773,12 @@ lDT
 lDT
 abb
 abc
-aba
+abk
 abc
 abc
 abc
 abc
-abO
+abP
 abc
 abc
 acf
@@ -4030,7 +4030,7 @@ abb
 abb
 abb
 abv
-aba
+abk
 abv
 abc
 abv
@@ -4283,13 +4283,13 @@ lDT
 abb
 abc
 abc
-aba
+abk
 abc
 abb
 abw
 abc
 abE
-aba
+abk
 abw
 abc
 abb
@@ -4538,20 +4538,20 @@ lDT
 lDT
 lDT
 abb
-aba
+abk
 abc
 abb
-abO
+abP
 acS
 abb
 abb
 abb
 abb
 abb
-abO
+abP
 abb
 abW
-ibt
+kOc
 aci
 abb
 oez
@@ -4798,11 +4798,11 @@ abb
 abb
 abb
 abb
-cZc
-aba
+iUi
+abk
 abx
-aba
-aba
+abk
+abk
 abc
 abx
 abc
@@ -5056,17 +5056,17 @@ lDT
 lDT
 abb
 abc
-aba
+abk
 abc
-abR
-abB
-abR
-abR
 aba
+abB
+aba
+aba
+abk
 abc
 abb
 abZ
-abk
+abQ
 acm
 aco
 oez
@@ -5318,13 +5318,13 @@ aby
 aby
 aby
 aby
-abP
-aba
+qmn
+abk
 abc
 abc
 aca
 acj
-abk
+abQ
 acp
 oez
 oez
@@ -5569,9 +5569,9 @@ lDT
 lDT
 lDT
 abj
-aba
+abk
 abr
-qcM
+iaD
 abc
 abc
 abG
@@ -6085,9 +6085,9 @@ lDT
 abj
 abc
 abr
-abQ
-aba
-aba
+wxI
+abk
+abk
 abc
 abc
 abc
@@ -6597,7 +6597,7 @@ lDT
 lDT
 lDT
 abb
-aba
+abk
 abc
 abc
 abC
@@ -6605,10 +6605,10 @@ abC
 abC
 abC
 abc
-aba
+abk
 abb
 acb
-loP
+abq
 acn
 aco
 oez
@@ -6855,13 +6855,13 @@ abb
 abb
 abb
 abc
-aba
+abk
 abz
 abc
 abc
-cZc
+iUi
 abz
-aba
+abk
 abb
 abb
 abb
@@ -7111,14 +7111,14 @@ abb
 abf
 abb
 abb
-abO
+abP
 abb
 abb
 abb
 abb
 abb
 abb
-abO
+abP
 abb
 abX
 abx
@@ -7370,13 +7370,13 @@ abh
 abh
 abc
 abb
-lUH
+dnf
 abx
 abA
 abc
 abJ
 abc
-aba
+abk
 abK
 abl
 abK
@@ -8398,8 +8398,8 @@ oez
 oez
 oez
 abb
-ibt
-aba
+kOc
+abk
 abc
 abc
 abL
@@ -9174,7 +9174,7 @@ oez
 oez
 abt
 abN
-aba
+abk
 abb
 oez
 oez
