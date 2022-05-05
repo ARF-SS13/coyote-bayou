@@ -49,18 +49,13 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/c22/shock
 	name = ".22lr shock bullet"
-	damage = -8 //about -50% damage
+	damage = -4 //about -25% damage
 	wound_bonus = 0
 	sharpness = SHARP_NONE
-	var/energy_damage = 5
 
 /obj/item/projectile/bullet/c22/shock/on_hit(atom/target, blocked = FALSE)
 	..()
-	target.emp_act(5)//5 severity is very, very low
-	if(blocked != 100 && isliving(target))
-		var/mob/living/L = target
-		L.electrocute_act(energy_damage, "shock bullet", 1, SHOCK_NOGLOVES | SHOCK_NOSTUN) //this might be spammy todo: check
-		//if it is, use O.take_damage(energy_damage, BURN, "energy", FALSE)
+	target.emp_act(15)//5 severity is very, very low
 
 /////////////////
 // .38 SPECIAL //
