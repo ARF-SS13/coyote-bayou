@@ -226,6 +226,14 @@
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 4
 
+/obj/structure/chair/comfy/throne
+	name = "khan throne"
+	desc = "An ornate wooden chair padded with fine leather. A symbol of authority."
+	icon_state = "throne"
+	anchored = TRUE
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 4
+
 /obj/structure/chair/comfy/plywood/GetArmrest()
 	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "plywood_chair_armrest")
 
@@ -345,7 +353,7 @@
 	color = COLOR_TEAL
 
 /obj/structure/chair/comfy/black
-	color = COLOR_FLOORTILE_GRAY 
+	color = COLOR_FLOORTILE_GRAY
 
 /obj/structure/chair/comfy/green
 	color = COLOR_GREEN_GRAY
