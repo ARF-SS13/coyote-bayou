@@ -98,7 +98,6 @@
 	id = "prospector2open"
 	},
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Prospector Entrance";
 	req_one_access_txt = "48"
 	},
@@ -297,7 +296,6 @@
 /area/f13/caves)
 "aaZ" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -810,9 +808,7 @@
 	},
 /area/f13/followers)
 "anI" = (
-/obj/machinery/vending/medical{
-	req_access = null
-	},
+/obj/machinery/vending/medical,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1241,6 +1237,14 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"aXt" = (
+/obj/structure/reagent_dispensers/barrel/explosive,
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "bgX" = (
 /obj/structure/chair/wood/modern,
 /turf/open/floor/f13/wood,
@@ -1269,6 +1273,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/f13/wood,
+/area/f13/caves)
+"bnM" = (
+/obj/structure/stairs/west{
+	color = "#4b3a26"
+	},
+/turf/open/floor/wood/f13/import/common,
 /area/f13/caves)
 "boD" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1304,7 +1314,6 @@
 /area/f13/tunnel)
 "bpN" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	max_integrity = 500;
 	name = "Store Bedroom";
 	req_one_access_txt = "34"
@@ -1345,6 +1354,23 @@
 "bqJ" = (
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
+"bre" = (
+/obj/structure/closet/crate/large{
+	layer = 1
+	},
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "brn" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/brotherhood)
@@ -1634,7 +1660,6 @@
 "byv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis";
 	req_one_access_txt = "25"
 	},
@@ -1674,6 +1699,12 @@
 /mob/living/simple_animal/hostile/deathclaw/mother,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"bAC" = (
+/obj/structure/stairs/south{
+	color = "#4b3a26"
+	},
+/turf/closed/mineral/random/high_chance,
+/area/f13/caves)
 "bAD" = (
 /obj/structure/fireplace,
 /turf/open/floor/carpet,
@@ -4965,12 +4996,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "bLA" = (
-/obj/structure/chair/wood/modern{
-	dir = 8;
-	icon_state = "wooden_chair_settler"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "bLB" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -5357,11 +5385,9 @@
 	},
 /area/f13/building)
 "bMS" = (
-/obj/structure/chair/wood/modern{
-	icon_state = "wooden_chair_settler"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "bMT" = (
 /obj/structure/table/optable/abductor,
 /obj/item/restraints/handcuffs,
@@ -5678,8 +5704,7 @@
 /area/f13/caves)
 "bNV" = (
 /obj/structure/chair/wood/modern{
-	dir = 1;
-	icon_state = "wooden_chair_settler"
+	dir = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -6930,7 +6955,6 @@
 /area/f13/tunnel)
 "bZB" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/r_wall/rust,
@@ -7086,7 +7110,6 @@
 /area/f13/tunnel)
 "cfF" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis";
 	req_one_access_txt = "25"
 	},
@@ -7095,7 +7118,6 @@
 "cfG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis";
 	req_one_access_txt = "25"
 	},
@@ -7107,14 +7129,12 @@
 /area/f13/tunnel)
 "cfK" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
 "cfM" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis";
 	req_one_access_txt = "25"
 	},
@@ -7793,6 +7813,11 @@
 	},
 /turf/open/floor/wood,
 /area/f13/brotherhood)
+"ciV" = (
+/obj/machinery/reagentgrinder/constructed,
+/obj/structure/table/wood,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "ciX" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
@@ -8377,6 +8402,14 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/clinic)
+"cqZ" = (
+/obj/structure/rack/shelf_metal,
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "crb" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -8408,7 +8441,6 @@
 "cua" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -8660,6 +8692,27 @@
 /obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"das" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/obj/structure/closet/crate/large{
+	layer = 0
+	},
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "daZ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -8740,7 +8793,6 @@
 "dlm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Bar Backroom";
 	req_one_access_txt = "25"
 	},
@@ -9014,7 +9066,6 @@
 /area/f13/tunnel)
 "edG" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	max_integrity = 500;
 	name = "Store Backroom";
 	req_one_access_txt = "34"
@@ -9046,6 +9097,27 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"ehZ" = (
+/obj/structure/closet/crate/large{
+	layer = 1
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "elZ" = (
 /obj/structure/table,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
@@ -9255,6 +9327,17 @@
 /mob/living/simple_animal/hostile/poison/giant_spider,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"eRH" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/obj/machinery/workbench,
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "eSw" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -9393,6 +9476,13 @@
 /obj/structure/decoration/vent/rusty,
 /turf/closed/wall/rust,
 /area/f13/tunnel)
+"ftm" = (
+/obj/machinery/chem_master,
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "ftM" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice,
@@ -9596,6 +9686,10 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"gaI" = (
+/obj/machinery/smartfridge/bottlerack/drug_storage,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "gck" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10192,6 +10286,22 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
+"hMi" = (
+/obj/structure/closet/crate/large{
+	layer = 0
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "hMP" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -10327,7 +10437,6 @@
 /area/f13/brotherhood)
 "ise" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Holding Cell";
 	req_one_access_txt = "121"
 	},
@@ -10440,7 +10549,6 @@
 /area/f13/bunker)
 "iIb" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis Housing";
 	req_one_access_txt = "25"
 	},
@@ -10564,6 +10672,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"iXq" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "iZh" = (
 /obj/structure/wreck/trash/three_barrels,
 /obj/effect/decal/cleanable/dirt,
@@ -10698,7 +10813,6 @@
 "juY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -10736,6 +10850,17 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
+"jAs" = (
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "jBB" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks{
@@ -10925,7 +11050,6 @@
 /area/f13/tunnel)
 "kjY" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/mineral/random/low_chance,
@@ -10947,7 +11071,6 @@
 "knk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/floor/f13/wood,
@@ -11478,7 +11601,6 @@
 /area/f13/tunnel)
 "lDl" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Prospector Entrance";
 	req_one_access_txt = "48"
 	},
@@ -11549,7 +11671,6 @@
 /area/f13/tunnel)
 "lHw" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Private Bar"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -11635,7 +11756,6 @@
 /area/f13/tunnel)
 "lPr" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/closed/wall/r_wall,
@@ -11781,6 +11901,18 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"mmD" = (
+/obj/machinery/autolathe,
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "mna" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
@@ -12023,6 +12155,12 @@
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
+"nuA" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/wood,
+/area/f13/caves)
 "nxk" = (
 /obj/structure/chair/wood,
 /turf/open/indestructible/ground/inside/mountain,
@@ -12056,7 +12194,6 @@
 /area/f13/tunnel)
 "nDn" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Bar Backroom";
 	req_one_access_txt = "25"
 	},
@@ -12182,7 +12319,6 @@
 /area/f13/tunnel)
 "oiF" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -12450,6 +12586,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"oUz" = (
+/obj/structure/chair/wood/modern{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "oUM" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight,
@@ -12504,7 +12646,6 @@
 /area/f13/tunnel)
 "pfV" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis Housing";
 	req_one_access_txt = "25"
 	},
@@ -12602,6 +12743,10 @@
 	icon_state = "neutralrusty"
 	},
 /area/f13/tunnel)
+"puA" = (
+/obj/structure/reagent_dispensers/barrel/explosive,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "pvk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
@@ -12700,12 +12845,17 @@
 /area/f13/tunnel)
 "pLK" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Oasis Housing";
 	req_one_access_txt = "25"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"pMa" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/pillbottles,
+/obj/item/storage/box/syringes,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "pMz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -13050,6 +13200,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"qKh" = (
+/obj/machinery/smartfridge/bottlerack/drug_storage,
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "qMh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -13148,6 +13306,9 @@
 /obj/structure/ore_box,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"rci" = (
+/turf/closed/wall/f13/brick,
+/area/f13/caves)
 "rdE" = (
 /obj/structure/sign/poster/contraband/pinup_funk{
 	pixel_y = -32
@@ -13188,7 +13349,6 @@
 /area/f13/tunnel)
 "rjs" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -13201,6 +13361,12 @@
 	},
 /turf/open/water,
 /area/f13/tunnel)
+"rkQ" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/syringes,
+/obj/item/storage/box/pillbottles,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "rkZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland,
@@ -13279,6 +13445,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"rsP" = (
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "rtc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor{
@@ -13344,7 +13514,6 @@
 /area/f13/tunnel)
 "rID" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	desc = "There is something on the wind. It.. it smells like... crime.";
 	name = "Detective Office";
 	req_one_access_txt = "4"
@@ -13369,6 +13538,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"rNn" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "rPt" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -13567,7 +13742,6 @@
 /area/f13/tunnel)
 "snQ" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/floor/f13/wood,
@@ -13850,7 +14024,6 @@
 /area/f13/tunnel)
 "tdZ" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Office";
 	req_one_access_txt = "121"
 	},
@@ -13888,7 +14061,6 @@
 /area/f13/tunnel)
 "tiy" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	max_integrity = 500;
 	name = "Store Backroom";
 	req_one_access_txt = "34"
@@ -14032,6 +14204,19 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"tIE" = (
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "tIQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -14076,6 +14261,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"tRS" = (
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "tTZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -14233,7 +14421,6 @@
 /area/f13/tunnel)
 "uxf" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/dirt,
@@ -14312,7 +14499,6 @@
 /area/f13/ncr)
 "uDL" = (
 /obj/effect/decal/fakelattice{
-	density = 0;
 	pixel_x = 17
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -14435,7 +14621,6 @@
 /area/f13/ncr)
 "uZJ" = (
 /obj/machinery/door/unpowered/securedoor{
-	autoclose = 1;
 	name = "Armory";
 	req_one_access_txt = "62"
 	},
@@ -14879,6 +15064,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"wkC" = (
+/obj/machinery/workbench/bottler,
+/obj/structure/railing/wood{
+	pixel_y = 7;
+	layer = 0
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "wlv" = (
 /obj/item/flag/oasis,
 /turf/open/floor/f13/wood,
@@ -14987,6 +15180,12 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
+"wEX" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/stone/rugged,
+/area/f13/caves)
 "wFZ" = (
 /obj/structure/simple_door/room{
 	name = "Barracks I"
@@ -16912,7 +17111,7 @@ biD
 wOq
 abP
 alc
-bMS
+bgX
 btN
 abP
 aae
@@ -17021,20 +17220,20 @@ aae
 aae
 aae
 aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
 aae
 aae
 aae
@@ -17164,13 +17363,13 @@ aae
 aae
 abP
 arj
-bLA
+bhT
 alc
 alc
 ang
 alc
 alc
-bLA
+bhT
 abP
 aae
 aae
@@ -17278,20 +17477,20 @@ aae
 aae
 aae
 aae
-aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+rci
+nuA
+bAC
+rci
+rsP
+bMS
+iXq
+pMa
+ciV
+rkQ
+ftm
+bMS
+bLA
+rci
 aae
 aae
 aae
@@ -17535,20 +17734,20 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+rci
+bnM
+jAs
+tRS
+tRS
+oUz
+tRS
+tRS
+tRS
+tRS
+tRS
+oUz
+tRS
+rci
 aae
 aae
 aae
@@ -17792,20 +17991,20 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
+rci
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+tRS
+rci
 aae
 aae
 aae
@@ -18049,20 +18248,20 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
+rci
+tRS
+tRS
+aXt
+ehZ
+tRS
+hMi
+tIE
+tRS
+qKh
+mmD
+tRS
+cqZ
+rci
 aae
 aae
 aae
@@ -18306,20 +18505,20 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
+rci
+wEX
+tRS
+puA
+bre
+tRS
+das
+wkC
+tRS
+gaI
+eRH
+tRS
+rNn
+rci
 aae
 aae
 aae
@@ -18563,20 +18762,20 @@ aae
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
+rci
 aae
 aae
 aae
