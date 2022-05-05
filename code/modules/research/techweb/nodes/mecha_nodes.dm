@@ -1,26 +1,34 @@
 
 ////////////////////////mech technology////////////////////////
 
-
 /datum/techweb_node/mech
 	id = "mecha"
-	starting_node = TRUE
 	display_name = "Mechanical Exosuits"
 	description = "Mechanized exosuits that are several magnitudes stronger and more powerful than the average human."
+	prereq_ids = list("robotics", "adv_engi")
 	design_ids = list("mecha_tracking", "mechacontrol", "mechapower", "mech_recharger")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/mech_tools
 	id = "mech_tools"
 	starting_node = TRUE
 	display_name = "Basic Exosuit Equipment"
 	description = "Various tools fit for basic mech units"
-	design_ids = list("mech_drill", "mech_mscanner", "mech_extinguisher", "mech_cable_layer")
+	design_ids = list("mech_drill", "mech_mscanner", "mech_extinguisher", "mech_cable_layer", "mech_hydraulic_clamp")
+
+/datum/techweb_node/ripley
+	id = "mech_ripley"
+	display_name = "EXOSUIT: Ripley"
+	description = "Ripley exosuit designs."
+	prereq_ids = list("mecha")
+	design_ids = list("ripley_chassis", "ripley_torso", "ripley_left_arm", "ripley_right_arm", "ripley_left_leg", "ripley_right_leg", "ripley_main", "ripley_peri")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
 /datum/techweb_node/clarke
 	id = "mech_clarke"
 	display_name = "EXOSUIT: Clarke"
 	description = "Clarke exosuit designs"
-	prereq_ids = list("robotics")
+	prereq_ids = list("mecha")
 	design_ids = list("clarke_chassis", "clarke_torso", "clarke_head", "clarke_left_arm", "clarke_right_arm", "clarke_left_tread", "clarke_right_tread", "clarke_main", "clarke_peri")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -28,7 +36,7 @@
 	id = "adv_mecha"
 	display_name = "Advanced Exosuits"
 	description = "For when you just aren't Gundam enough."
-	prereq_ids = list("adv_robotics")
+	prereq_ids = list("mecha", "adv_robotics")
 	design_ids = list("mech_repair_droid")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -192,13 +200,22 @@
 	design_ids = list("mech_grenade_launcher", "mech_grenade_launcher_ammo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
+/datum/techweb_node/mech_breaching_missile_rack
+	id = "mech_breaching_missile_rack"
+	display_name = "Exosuit Weapon (BRM-6 Missile Rack)"
+	description = "Missile launcher developed for breaching"
+	prereq_ids = list("adv_weaponry")
+	design_ids = list("mech_breaching_missile_rack", "mech_breaching_missile_rack_ammo")
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
-	display_name = "Exosuit Weapon (BRM-6 Missile Rack)"
-	description = "An advanced piece of mech weaponry"
+	display_name = "Exosuit Weapon (SRM-8 Missile Rack)"
+	description = "Missile launcher intended for use in active combat"
 	prereq_ids = list("adv_weaponry")
 	design_ids = list("mech_missile_rack", "mech_missile_rack_ammo")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
 /*
 /datum/techweb_node/clusterbang_launcher
 	id = "clusterbang_launcher"

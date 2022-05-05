@@ -7,7 +7,7 @@
 	name = "\improper Gygax"
 	desc = "A pre-War security exosuit developed by Vault-Tec to minimize casulties among security staff during violent uprisings. It's painted in a bright orange scheme to ensure recognizability."
 	icon_state = "gygax"
-	step_in = 2.5
+	step_in = 3
 	dir_in = 1 //Facing North.
 	max_integrity = 450
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 30, "energy" = 25, "bomb" = 15, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
@@ -17,6 +17,7 @@
 	internal_damage_threshold = 25
 	step_energy_drain = 25
 	leg_overload_coeff = 300
+	smashcooldown = 8
 	canstrafe = TRUE
 
 /obj/mecha/combat/gygax/dark // Adminus mech.

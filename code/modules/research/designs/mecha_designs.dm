@@ -276,13 +276,34 @@
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/mech_missile_rack
+/datum/design/mech_breaching_missile_rack
 	name = "Exosuit Weapon (BRM-6 Missile Rack)"
 	desc = "Allows for the construction of an BRM-6 Breaching Missile Rack."
-	id = "mech_missile_rack"
+	id = "mech_breaching_missile_rack"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
 	materials = list(/datum/material/iron=22000,/datum/material/gold=6000,/datum/material/silver=8000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/mech_breaching_missile_rack_ammo
+	name = "BRM-6 Missile Rack Ammunition"
+	desc = "Ammunition for the BRM-6 Missile Rack."
+	id = "mech_breaching_missile_rack_ammo"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/mecha_ammo/missiles_br
+	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/silver=500)
+	construction_time = 20
+	category = list("Exosuit Ammunition", "Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/mech_missile_rack
+	name = "Exosuit Weapon (SRM-8 Missile Rack)"
+	desc = "Allows for the construction of an BRM-6 Breaching Missile Rack."
+	id = "mech_missile_rack"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
+	materials = list(/datum/material/iron=30000,/datum/material/gold=8000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
@@ -291,8 +312,8 @@
 	desc = "Ammunition for the SRM-8 Missile Rack."
 	id = "mech_missile_rack_ammo"
 	build_type = PROTOLATHE | MECHFAB
-	build_path = /obj/item/mecha_ammo/missiles_br
-	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/silver=500)
+	build_path = /obj/item/mecha_ammo/missiles_he
+	materials = list(/datum/material/iron=10000,/datum/material/gold=1000,/datum/material/silver=1000)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

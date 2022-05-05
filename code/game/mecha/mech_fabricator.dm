@@ -47,11 +47,11 @@
 	var/list/part_sets = list(
 								"Cyborg",
 								"Clarke",
-							//	"Ripley",
+								"Ripley",
 							//	"Firefighter",
-							//	"Odysseus",
+								"Odysseus",
 								"Gygax",
-							//	"Medical-Spec Gygax",
+								"Medical-Spec Gygax",
 								"Durand",
 								"Marauder",
 							//	"H.O.N.K",
@@ -158,8 +158,6 @@
 					category_override += "Firefighter"
 				if(mech_types & EXOSUIT_MODULE_ODYSSEUS)
 					category_override += "Odysseus"
-				// if(mech_types & EXOSUIT_MODULE_CLARKE)
-				// 	category_override += "Clarke"
 				if(mech_types & EXOSUIT_MODULE_GYGAX_MED)
 					category_override += "Medical-Spec Gygax"
 				if(mech_types & EXOSUIT_MODULE_GYGAX)
