@@ -264,6 +264,7 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/requires_training = TRUE
 	var/powered = TRUE
+	var/emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
 	var/mob/living/carbon/human/H = user
@@ -295,23 +296,29 @@
 		return
 	if(!powered)
 		return
-	if(isliving(loc) && prob(severity*1.5))
-		var/time_slowed = severity / 10 SECONDS
-		var/mob/living/L = loc
-		to_chat(L, "<span class='warning'>Warning: electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
-		slowdown += 1.2
-		if(istype(L))
+	if(!emped)
+		if(isliving(loc))
+			var/mob/living/L = loc
+			var/induced_slowdown = 0
+			if(severity >= 41) //heavy emp
+				induced_slowdown = 4
+				to_chat(L, "<span class='boldwarning'>Warning: severe electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			else
+				induced_slowdown = 2
+				to_chat(L, "<span class='warning'>Warning: light electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			emped = TRUE
+			slowdown += induced_slowdown
 			L.update_equipment_speed_mods()
-		addtimer(CALLBACK(src, .proc/end_emp_effect), time_slowed)
+			addtimer(CALLBACK(src, .proc/end_emp_effect, induced_slowdown), 50)
+	return
 
-/obj/item/clothing/suit/armor/f13/power_armor/proc/end_emp_effect()
+/obj/item/clothing/suit/armor/f13/power_armor/proc/end_emp_effect(slowdown_induced)
+	emped = FALSE
+	slowdown -= slowdown_induced // Even if armor is dropped it'll fix slowdown
 	if(isliving(loc))
 		var/mob/living/L = loc
-		slowdown -= 1.2
 		to_chat(L, "<span class='warning'>Armor power reroute successful. All systems operational.</span>")
-		if(istype(L))
-			L.update_equipment_speed_mods()
-	return TRUE
+		L.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"
