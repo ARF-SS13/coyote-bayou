@@ -1393,7 +1393,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/deputy_badges
 	name = "box of spare badges"
-	desc = "A box containing the spare badges for deputies. Use your sheriff badge on a deputy badge to assign its owner."
+	desc = "A box containing the spare badges for officers. Use your chief of police badge on a officer's badge to assign its owner."
 	illustration = "id"
 
 /obj/item/storage/box/deputy_badges/PopulateContents()
