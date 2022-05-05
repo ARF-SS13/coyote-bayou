@@ -37,7 +37,7 @@
 // More energy drain and higher cooldown
 /obj/item/projectile/beam/laser/mech/heavy
 	name = "heavy laser beam"
-	damage = 45
+	damage = 40
 	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
@@ -46,16 +46,11 @@
 // The highest energy drain and cooldown
 /obj/item/projectile/beam/laser/mech/pulse
 	name = "charged pulse beam"
-	damage = 60
-	armour_penetration = 0.35
+	damage = 49
+	armour_penetration = 0.3
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
-
-/obj/item/projectile/beam/laser/mech/pulse/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
-		target.ex_act(EXPLODE_LIGHT)
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
