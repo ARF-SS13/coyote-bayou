@@ -428,9 +428,9 @@
 	icon = 'icons/fallout/objects/structures/junk_table.dmi'
 	icon_state = "bar"
 	canSmoothWith = list(/obj/structure/table/wood/junk)
-	buildstack = null 
+	buildstack = null
 	max_integrity = 100
-	
+
 /obj/structure/table/wood/poker //No specialties, Just a mapping object.
 	name = "gambling table"
 	desc = "A seedy table for seedy dealings in seedy places."
@@ -798,3 +798,32 @@
 		R.add_fingerprint(user)
 		qdel(src)
 	building = FALSE
+
+
+
+/obj/structure/rack/large
+	name = "metal shelf"
+	bound_width = 64
+	icon = 'icons/obj/structures64.dmi'
+
+/obj/structure/rack/Initialize()
+	switch(dir)
+		if(SOUTH, NORTH)
+			bound_width = 64
+			bound_height = 32
+			bound_x = 0
+		if(EAST, WEST)
+			bound_width = 32
+			bound_height = 64
+			bound_x = 0
+	. = ..()
+
+/obj/structure/rack/large/shelf
+	name = "metal shelf"
+	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
+	icon_state = "metal_shelf"
+	opacity = FALSE
+
+/obj/structure/rack/large/shelf_rust
+	desc = "An extra-large heavy-duty shelf. This could store a lot of things."
+	icon_state = "metal_shelf_rust"
