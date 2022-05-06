@@ -24,7 +24,7 @@
 
 	var/traits = list(
 					list(
-						ZTRAIT_GRAVITY = 1,
+						ZTRAIT_GRAVITY = 1, 
 						ZTRAIT_STATION = 1
 						),
 					list(
@@ -175,8 +175,8 @@
 	if ("minetype" in json)
 		minetype = json["minetype"]
 
-	if("maptype" in json)
-		SSmaptype.maptype = json["maptype"]
+	if ("maptype" in json)
+		maptype = json["maptype"]
 
 	if ("announcertype" in json)
 		announcertype = json["announcertype"]

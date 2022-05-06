@@ -39,15 +39,14 @@ Tribal Chief
 */
 /datum/job/tribal
 	exp_type = EXP_TYPE_TRIBAL
-	maptype = "tribal"
 
 /datum/job/tribal/f13chief
 	title = "Chief"
 	flag = F13CHIEF
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Elders of the tribe."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -91,8 +90,8 @@ Tribal Shaman
 	flag = F13SHAMAN
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -166,8 +165,8 @@ Tribal Head Hunter
 	flag = F13HHUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -220,8 +219,8 @@ Druid
 	flag = F13DRUID
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The Chief and the Shaman."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -279,8 +278,8 @@ Villager
 	flag = F13VILLAGER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "Tribal Chief, Shaman and Headhunter"
 	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
@@ -372,8 +371,8 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -387,7 +386,7 @@ Hunter
 	minimal_access = list(ACCESS_TRIBE)
 
 	loadout_options = list(
-//		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder. Code hates this one.
+		/datum/outfit/loadout/ranged, //Quick Cloak, Bow and quiver, Bone knife, Healing powder
 		/datum/outfit/loadout/melee, //Deathclaw Bone Spear, Bone knife, Healing powder
 	)
 	matchmaking_allowed = list(
@@ -427,7 +426,6 @@ Hunter
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1)
 
-/* IDFK The code hates this one
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
@@ -438,7 +436,6 @@ Hunter
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
 		)
-*/
 
 /datum/outfit/loadout/melee
 	name = "Frontline"
@@ -458,8 +455,8 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
