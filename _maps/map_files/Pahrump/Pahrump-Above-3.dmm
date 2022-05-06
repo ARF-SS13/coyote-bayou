@@ -304,17 +304,11 @@
 /turf/open/floor/wood/wood_large,
 /area/f13/ncr)
 "bs" = (
-/obj/structure/window/fulltile/wood,
-/turf/open/indestructible/ground/outside/woodalt,
-/area/f13/building)
-"bt" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/barricade/wooden,
+/obj/structure/fence/wooden{
+	dir = 4
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
-	},
+/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "bu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -489,8 +483,14 @@
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/caves)
 "ce" = (
-/obj/item/trash/sosjerky,
-/turf/open/indestructible/ground/outside/ruins,
+/obj/structure/table/booth,
+/obj/machinery/microwave{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "cg" = (
 /obj/effect/decal/cleanable/dirt{
@@ -1784,7 +1784,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "ho" = (
 /obj/effect/decal/cleanable/dirt{
@@ -4094,11 +4097,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/wasteland)
 "pN" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	name = "metal plating";
-	sunlight_state = 1
-	},
+/obj/structure/window/fulltile/wood,
+/turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
 "pO" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4789,9 +4789,10 @@
 /turf/open/floor/wood/wood_tiled,
 /area/f13/building)
 "sF" = (
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	name = "metal plating";
+	sunlight_state = 1
 	},
 /area/f13/building)
 "sG" = (
@@ -5409,6 +5410,7 @@
 	color = "#363636"
 	},
 /obj/structure/table,
+/obj/item/book/granter/trait/chemistry,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "uT" = (
@@ -5531,7 +5533,10 @@
 /area/f13/ncr)
 "vr" = (
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "vs" = (
 /obj/structure/bookcase/random/fiction,
@@ -8436,6 +8441,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
+"Hw" = (
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "HA" = (
 /obj/structure/chair/stool,
 /turf/open/indestructible/ground/outside/woodalt,
@@ -10764,7 +10773,10 @@
 /obj/item/trash/candy,
 /obj/item/trash/sosjerky,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "Rm" = (
 /turf/open/floor/carpet/red,
@@ -10902,11 +10914,10 @@
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "RK" = (
-/obj/structure/barricade/wooden,
-/obj/structure/fence/wooden{
-	dir = 4
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
 	},
-/turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "RM" = (
 /obj/structure/decoration/rag,
@@ -11024,7 +11035,10 @@
 	color = "#363636"
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "So" = (
 /obj/structure/table,
@@ -11053,7 +11067,10 @@
 "Su" = (
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "Sv" = (
 /obj/structure/chair,
@@ -11741,10 +11758,16 @@
 	},
 /area/f13/building)
 "Vn" = (
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate"
+/obj/structure/railing{
+	climbable = 0;
+	color = "#A47449";
+	max_integrity = 900
 	},
-/area/f13/building)
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
 "Vo" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -11786,7 +11809,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building)
 "Vu" = (
 /obj/structure/barricade/wooden,
@@ -12023,6 +12049,7 @@
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
+/obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "Wx" = (
@@ -12326,6 +12353,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/chair/office/dark,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "XS" = (
@@ -12389,7 +12417,10 @@
 /turf/open/floor/wood/wood_tiled,
 /area/f13/building)
 "Yg" = (
-/obj/structure/bed/old,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "Yl" = (
@@ -57384,7 +57415,7 @@ Gk
 al
 Rl
 Sl
-bt
+Sl
 vr
 al
 al
@@ -57640,8 +57671,8 @@ zx
 GG
 al
 Sl
-Vn
-ce
+Py
+Py
 Sl
 al
 Py
@@ -58342,13 +58373,13 @@ PL
 PL
 PL
 PL
-PL
-PL
-PL
-PL
-PL
-PL
-PL
+bs
+zB
+oU
+Xv
+pN
+RK
+aL
 PL
 PL
 PL
@@ -58410,7 +58441,7 @@ fK
 yW
 Gk
 al
-SV
+Ub
 Ww
 vg
 Id
@@ -58599,13 +58630,13 @@ PL
 PL
 PL
 PL
-RK
 zB
-oU
-Xv
-bs
+ce
+yM
+yM
+yM
 sF
-aL
+zB
 PL
 PL
 PL
@@ -58667,7 +58698,7 @@ fK
 yW
 Hk
 al
-Ts
+Ub
 XQ
 uS
 al
@@ -58861,7 +58892,7 @@ XS
 Nr
 yM
 yM
-pN
+yM
 Xv
 eA
 PL
@@ -58925,8 +58956,8 @@ yW
 Gk
 JA
 Ty
+Ub
 Yg
-Ty
 al
 zx
 Gk
@@ -59183,7 +59214,7 @@ HG
 al
 Ub
 YO
-Ub
+Hw
 al
 Dp
 sT
@@ -65311,10 +65342,10 @@ PL
 PL
 PL
 PL
-kC
-kC
-kC
-kC
+Al
+Al
+Al
+Al
 kC
 kC
 kC
@@ -65567,15 +65598,15 @@ PL
 PL
 PL
 PL
-PL
+Vn
 fv
 Xv
 zc
-kC
-kC
-kC
-kC
-kC
+Al
+Al
+Al
+Al
+Al
 kC
 kC
 kC
@@ -65824,7 +65855,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 nt
 Vm
 ZO
@@ -65832,7 +65863,7 @@ zB
 Xv
 HQ
 RM
-kC
+Al
 kC
 kC
 kC
@@ -66081,7 +66112,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 qV
 oB
 nQ
@@ -66089,7 +66120,7 @@ EM
 fe
 Bn
 fv
-kC
+Al
 kC
 kC
 kC
@@ -66338,7 +66369,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 HO
 oB
 yf
@@ -66346,7 +66377,7 @@ EM
 Il
 Zq
 Xv
-kC
+Al
 kC
 kC
 kC
@@ -66595,7 +66626,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 Nr
 oB
 dw
@@ -66603,7 +66634,7 @@ EM
 yx
 kF
 Xv
-kC
+Al
 kC
 kC
 kC
@@ -66852,7 +66883,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 nT
 uc
 yf
@@ -66860,7 +66891,7 @@ EM
 qS
 Bn
 Xv
-kC
+Al
 kC
 kC
 kC
@@ -67109,7 +67140,7 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 qV
 BM
 fv
@@ -67117,7 +67148,7 @@ ek
 XP
 Xv
 Xv
-kC
+Al
 kC
 kC
 kC
@@ -67366,15 +67397,15 @@ PL
 PL
 PL
 PL
-Mj
+Vn
 mH
 yM
 sc
 FO
 Py
 fv
-kC
-kC
+Al
+Al
 kC
 kC
 kC
@@ -67623,15 +67654,15 @@ kC
 PL
 PL
 PL
-PL
+Vn
 VB
 zc
 mY
 Xv
 Xv
 fv
-kC
-kC
+Al
+Al
 kC
 kC
 kC
@@ -67881,13 +67912,13 @@ kC
 BC
 PL
 PL
-kC
-kC
-kC
-kC
-kC
-kC
-kC
+Al
+Al
+Al
+Al
+Al
+Al
+Al
 kC
 kC
 kC
