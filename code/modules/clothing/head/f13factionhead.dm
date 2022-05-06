@@ -298,6 +298,8 @@
 	desc = "It's a leather skullcap issued to recruits."
 	icon_state = "legion-recruit"
 	item_state = "legion-recruit"
+	armor = list("melee" = 33, "bullet" = 25, "laser" = 5, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+	flags_inv = HIDEEARS|HIDEHAIR
 
 
 /obj/item/clothing/head/helmet/f13/legion/prime
@@ -322,7 +324,7 @@
 	desc = "It's a metal legion veteran helmet, clearly inspired by old world sports uniforms."
 	icon_state = "legion-veteran"
 	item_state = "legion-veteran"
-	armor = list("melee" = 67, "bullet" = 30, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	name = "legion explorer hood"
@@ -343,6 +345,7 @@
 	desc = "This helmet is decorated with the pelt of a desert fox."
 	icon_state = "legion-vex-alt"
 	item_state = "legion-vex-alt"
+	armor = list("melee" = 70, "bullet" = 37, "laser" = 42, "energy" = 20, "bomb" = 25, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/nightvexil
 	name = "legion nightstalker vexillarius helmet"
@@ -355,7 +358,7 @@
 	desc = "A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
 	icon_state = "legion-venator"
 	item_state = "legion-venator"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/orator
 	name = "laurel wreath"
@@ -363,7 +366,7 @@
 	icon_state = "legion-orator"
 	item_state = "legion-orator"
 	flags_inv = null
-	armor = list("melee" = 45, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/decan
@@ -371,14 +374,14 @@
 	desc = "This reinforced leather helmet has a plume of black and dark red feathers."
 	icon_state = "legion-decrec"
 	item_state = "legion-decrec"
-	armor = list("melee" = 45, "bullet" = 37, "laser" = 20, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
 	desc = "This reinforced leather helmet with a red peak has a plume of black feathers."
 	item_state = "legion-decprime"
 	icon_state = "legion-decprime"
-	armor = list("melee" = 50, "bullet" = 37, "laser" = 20, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/heavy
 	name = "reinforced legion veteran decanus helmet"
@@ -419,7 +422,7 @@
 	desc = "The helmet of an NCR ranger, refit to serve as a Centurions helmet."
 	icon_state = "legion-rangercent"
 	item_state = "legion-rangercent"
-	armor = list("melee" = 35, "bullet" = 60, "laser" = 35, "energy" = 25, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
+	armor = list("melee" = 40, "bullet" = 55, "laser" = 35, "energy" = 25, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/palacent
@@ -427,7 +430,7 @@
 	desc = "The once-marvelous helmet of the T-45d power armor set, repurposed by the Legion into a symbol of its might. It has a large plume of red horse hair across the top of it going horizontally, donoting the rank of Centurion."
 	icon_state = "legion-palacent"
 	item_state = "legion-palacent"
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 70, "energy" = 35, "bomb" = 35, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 75)
+	armor = list("melee" = 70, "bullet" = 50, "laser" = 70, "energy" = 35, "bomb" = 35, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 75)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legion/legate
@@ -693,7 +696,7 @@
 	desc = "An old combat helmet, out of use around the time of the war."
 	icon_state = "ranger"
 	item_state = "ranger"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20, "wound" = 55)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
@@ -704,12 +707,13 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	darkness_view = 24
 
+
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"
 	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers."
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
-	armor = list("melee" = 55, "bullet" = 55, "laser" = 45, "energy" = 24, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
