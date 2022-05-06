@@ -754,7 +754,7 @@
 	spread = 1
 	extra_damage = 32
 	extra_penetration = 0.2
-	slowdown = 0.1
+	slowdown = 0.5
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
