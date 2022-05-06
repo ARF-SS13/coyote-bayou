@@ -97,6 +97,15 @@
 	var/list/matchmaking_allowed
 
 
+	//MAPTYPES
+	/// Job's station type. Will affect what kinds of map the job spawns on.
+	var/maptype = "standard"
+	///Used to exclude jobs
+	var/list/mapexclude = list("none")
+	//If this job is needed to load, then this the flag that keeps it to load.
+	var/loadalways = FALSE
+
+
 /datum/job/proc/after_spawn(mob/living/spawner, mob/client_holder, latejoin = FALSE)
 	SHOULD_CALL_PARENT(TRUE)
 

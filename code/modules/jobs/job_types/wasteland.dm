@@ -1199,6 +1199,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You are a member of a tribe, far away from your homeland. Well, relatively far away. Whatever your reasons for coming here, you've found yourself pinned between the ongoing war of the NCR and Caesar's Legion. Try not to get shot."
 	supervisors = "the stars above"
 	selection_color = "#dddddd"
+	mapexclude = list("tribal")
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
 

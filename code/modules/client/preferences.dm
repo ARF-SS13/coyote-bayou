@@ -1089,6 +1089,19 @@ Records disabled until a use for them is found
 			if(job.faction == "None") //All jobs are now loaded into occupations so maps can just hide individual ones
 				continue
 
+
+			//Maptypes things. This makes things not show up in the maps.
+
+			//running mapexclude
+			if(SSmaptype.maptype in job.mapexclude)
+				continue
+
+			if(SSmaptype.maptype in SSmaptype.clearmaps)
+				if(job.maptype == "standard")
+					continue
+
+
+
 			index += 1
 			if((index >= limit) || (job.title in splitJobs))
 				width += widthPerColumn

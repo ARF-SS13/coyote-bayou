@@ -554,13 +554,35 @@
 	dat += "<table><tr><td valign='top'>"
 	var/column_counter = 0
 	// render each category's available jobs
-	for(var/category in GLOB.position_categories)
+
+
+/*	This makes it look better by removing unused categories.
+	Yes. We are hardcoding this here.
+	Yes. it is shitcode.
+	Yes, if we ever add a new department it will fuck shit up HARD
+	However, I don't see this as a negative, as it allows us to add new departments into other maptypes without it looking like total shit.
+
+*/
+
+	var/list/department_categories = list()
+
+	//All the standard ones.
+	department_categories = list("Ncr", "Oasis", "Foa", "Legion", "Bos", "Enclave", "Wasteland")
+
+	if(SSmaptype.maptype == "tribal")
+		department_categories += "Tribal"
+
+	if(SSmaptype.maptype == "vault")
+		department_categories += "Vault"
+
+
+	for(var/category in department_categories)
 		// position_categories contains category names mapped to available jobs and an appropriate color
 		var/cat_color = GLOB.position_categories[category]["color"]
 		dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 		dat += "<legend align='center' style='color: [cat_color]'>[category]</legend>"
 		var/list/dept_dat = list()
-		for(var/job in GLOB.position_categories[category]["jobs"])
+		for(var/job in department_categories[category]["jobs"])
 			var/datum/job/job_datum = SSjob.name_occupations[job]
 			if(job_datum && IsJobUnavailable(job_datum.title, TRUE) == JOB_AVAILABLE)
 				var/command_bold = ""
