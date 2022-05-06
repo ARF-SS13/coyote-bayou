@@ -15,17 +15,16 @@
 	requires_trait = "MEDICALEXPERT"
 
 /datum/surgery/advanced/revival/can_start(mob/user, mob/living/carbon/target, obj/item/tool)
-	return FALSE
-	/*if(!..())
+	if(!..())
 		return FALSE
 	if(target.stat != DEAD)
 		return FALSE
-	if(target.suiciding || HAS_TRAIT(target, TRAIT_NOCLONE) || target.hellbound)
+	if(target.suiciding || target.hellbound)
 		return FALSE
 	var/obj/item/organ/brain/B = target.getorganslot(ORGAN_SLOT_BRAIN)
 	if(!B)
 		return FALSE
-	return TRUE*/
+	return TRUE
 
 /datum/surgery_step/revive
 	name = "electrically stimulate brain"
