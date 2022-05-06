@@ -98,7 +98,7 @@
 		if(1)
 			new /obj/item/shared_storage/red(src)
 		if(2)
-			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(3)
 			new /obj/item/ship_in_a_bottle(src)
 		if(4)
@@ -137,7 +137,7 @@
 		if(1)
 			new /obj/item/shared_storage/red(src)
 		if(2)
-			new /obj/item/reagent_containers/glass/bottle/potion/flight(src)
+			new /obj/item/ship_in_a_bottle(src)
 		if(3)
 			new /obj/item/ship_in_a_bottle(src)
 		if(4)
@@ -713,6 +713,7 @@
 	description = "Strange mutagenic compound of unknown origins."
 	reagent_state = LIQUID
 	color = "#FFEBEB"
+	can_synth = FALSE
 
 /datum/reagent/flightpotion/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)

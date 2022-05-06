@@ -218,7 +218,3 @@
 				/obj/item/advanced_crafting_components/flux,
 				/obj/item/blueprint/research)
 
-/obj/item/salvage/Destroy()
-	QDEL_NULL(Loot)
-	..()
-	return QDEL_HINT_HARDDEL
