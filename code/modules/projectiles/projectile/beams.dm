@@ -377,7 +377,7 @@
 
 /obj/item/projectile/beam/laser/recharger/hitscan //hitscan recharger pistol
 	name = "recharger beam"
-	damage = 22
+	damage = 20
 	hitscan = TRUE
 	armour_penetration = 0.02
 	tracer_type = /obj/effect/projectile/tracer/pulse
