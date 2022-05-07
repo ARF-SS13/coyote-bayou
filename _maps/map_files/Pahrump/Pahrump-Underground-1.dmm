@@ -2468,6 +2468,13 @@
 	icon_state = "neutralrustyfull"
 	},
 /area/f13/brotherhood/leisure)
+"btx" = (
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/enclave)
 "btC" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -12076,6 +12083,13 @@
 "gtS" = (
 /turf/closed/indestructible/f13/matrix,
 /area/f13/caves)
+"gtV" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/enclave)
 "gtY" = (
 /obj/item/seeds/cannabis,
 /turf/open/indestructible/ground/inside/mountain,
@@ -17902,6 +17916,13 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
+"kaP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/enclave)
 "kaQ" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /obj/machinery/light/small{
@@ -19206,13 +19227,6 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
-"kQv" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "kQy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash/large,
@@ -19237,15 +19251,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"kRn" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "enclavebase";
-	name = "maintenance ladder"
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "kRt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
@@ -19755,13 +19760,6 @@
 	icon_state = "greendirtyfull"
 	},
 /area/f13/caves)
-"lfd" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "lfj" = (
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/inside/subway,
@@ -20496,10 +20494,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/closed/mineral/random/high_chance,
 /area/f13/caves)
-"lAZ" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "lBm" = (
 /obj/structure/chair/comfy/brown,
 /turf/open/floor/wood/f13/oak,
@@ -21065,14 +21059,6 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/dorms)
-"lUM" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing{
-	dir = 10;
-	layer = 4.1
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "lVd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -21618,10 +21604,14 @@
 	},
 /area/f13/bunker)
 "mmY" = (
-/obj/structure/lattice/catwalk,
-/obj/machinery/door/window/brigdoor{
-	dir = 0;
-	req_one_access_txt = "134"
+/obj/docking_port/stationary{
+	area_type = /area/f13;
+	dwidth = 1;
+	height = 3;
+	id = "Enclave_Bunker";
+	name = "Enclave Bunker";
+	roundstart_template = /datum/map_template/shuttle/enclave_elevator;
+	width = 3
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/enclave)
@@ -21834,11 +21824,6 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
 "mvg" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/railing{
-	dir = 6;
-	layer = 4.1
-	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/enclave)
 "mvA" = (
@@ -25060,6 +25045,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/bunker)
+"ouH" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/enclave)
 "ouN" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
@@ -28331,6 +28322,14 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
+"qzX" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/enclave)
 "qAe" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -33843,6 +33842,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/bunker)
+"tJU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/computer/shuttle/enclaveelevator,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/enclave)
 "tKj" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
@@ -48742,7 +48749,7 @@ kzG
 xiW
 xiW
 eeL
-xiW
+btx
 bkZ
 xiW
 bkZ
@@ -49250,9 +49257,9 @@ fYg
 dwM
 dyh
 iNw
-bkZ
-bkZ
-lQf
+gtV
+gtV
+qzX
 lQf
 bkZ
 efS
@@ -49507,10 +49514,10 @@ dwM
 dyh
 ixU
 wcj
-kQv
-kQv
-lUM
-bkZ
+mvg
+mvg
+mvg
+kaP
 xiW
 ehe
 tPU
@@ -49764,8 +49771,8 @@ wcj
 wcj
 wcj
 wcj
-kRn
-lAZ
+mvg
+mvg
 mmY
 bkZ
 bkZ
@@ -50021,10 +50028,10 @@ gaw
 hzD
 gaw
 wcj
-lfd
-lfd
 mvg
-bkZ
+ouH
+mvg
+tJU
 xiW
 bkZ
 tQP

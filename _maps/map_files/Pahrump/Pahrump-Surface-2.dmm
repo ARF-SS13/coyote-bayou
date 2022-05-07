@@ -8988,11 +8988,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"dFc" = (
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "dFg" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
@@ -11618,14 +11613,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/f13/ncr)
-"eIH" = (
-/obj/structure/wreck/trash/machinepile{
-	layer = 3
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/enclave)
 "eIN" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13911,6 +13898,9 @@
 "fBZ" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
+	},
+/obj/structure/railing{
+	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
@@ -17636,10 +17626,6 @@
 	pixel_x = -7;
 	pixel_y = -3
 	},
-/obj/effect/decal/cleanable/oil{
-	icon_state = "floor6";
-	pixel_x = -28
-	},
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -18816,12 +18802,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hnX" = (
-/obj/structure/wreck/trash/brokenvendor,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "hoe" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_3"
@@ -22366,6 +22346,17 @@
 	},
 /turf/open/floor/wood/f13/oak,
 /area/f13/building)
+"iFJ" = (
+/obj/docking_port/stationary{
+	area_type = /area/f13;
+	dwidth = 1;
+	height = 3;
+	id = "Enclave_Surface";
+	name = "Enclave Surface";
+	width = 3
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/enclave)
 "iFR" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindowbrokenvertical"
@@ -25672,7 +25663,6 @@
 	},
 /area/f13/city)
 "jRV" = (
-/obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -27640,12 +27630,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/village)
-"kFc" = (
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "kFf" = (
 /obj/structure/barricade/wooden/strong,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -28693,6 +28677,7 @@
 /area/f13/building)
 "lcd" = (
 /obj/structure/simple_door/metal/ventilation,
+/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -37921,12 +37906,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
-"oIo" = (
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/enclave)
 "oIv" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -38015,17 +37994,6 @@
 /obj/structure/barricade/wooden/strong,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
-"oKF" = (
-/obj/effect/decal/remains/human,
-/obj/item/screwdriver/nuke{
-	anchored = 1;
-	pixel_x = 12;
-	pixel_y = 10
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/enclave)
 "oKW" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -40816,6 +40784,12 @@
 /turf/open/floor/wood/f13/oak,
 /area/f13/ncr)
 "pUj" = (
+/obj/machinery/computer/shuttle/enclaveelevator{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -42000,6 +41974,9 @@
 "qss" = (
 /obj/effect/decal/remains/human,
 /obj/item/stack/f13Cash/random/med,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "qst" = (
@@ -50704,12 +50681,9 @@
 	},
 /area/f13/building)
 "tZM" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "enclavebase";
-	name = "maintenance ladder"
-	},
 /obj/structure/lattice/catwalk,
+/obj/structure/closet/crate/trashcart,
+/obj/item/clothing/head/kitty,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/enclave)
 "tZN" = (
@@ -52597,12 +52571,7 @@
 	},
 /area/f13/wasteland)
 "uKj" = (
-/obj/machinery/light/broken{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
-	icon_state = "darkdirtysolid"
-	},
+/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/enclave)
 "uKq" = (
 /obj/structure/lattice/catwalk,
@@ -56525,6 +56494,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/machinery/light/broken,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -64488,8 +64458,8 @@ gcK
 gcK
 gcK
 ahu
-kFc
-dFc
+uKj
+uKj
 uKj
 fBZ
 qgw
@@ -64745,9 +64715,9 @@ gcK
 gcK
 gcK
 ahu
-hnX
-oIo
-dFc
+uKj
+uKj
+iFJ
 jRV
 ahu
 rcl
@@ -65002,9 +64972,9 @@ gcK
 gbL
 gcK
 ahu
-eIH
-oKF
-oIo
+uKj
+uKj
+uKj
 pUj
 ahu
 mVs

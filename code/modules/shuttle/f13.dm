@@ -93,3 +93,15 @@
 	possible_destinations = "Vault113_Ground;Vault113_Level_1"
 	flags_1 = NODECONSTRUCT_1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/machinery/computer/shuttle/enclaveelevator
+	name = "US Army elevator controls"
+	desc = "Controls the elevator. Has lots of stars and stripes." 
+	icon_screen = "shuttle"
+	icon_keyboard = "tech_key"
+	light_color = LIGHT_COLOR_CYAN
+	circuit = /obj/item/circuitboard/computer/enclave_control
+	shuttleId = "enclave_elevator"
+	possible_destinations = "Enclave_Bunker;Enclave_Surface"
+	flags_1 = NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF

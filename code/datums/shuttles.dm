@@ -665,3 +665,8 @@
 /datum/map_template/shuttle/bosbase/base
 	suffix = "base"
 	name = "brotherhood of steel (base)"
+
+/datum/map_template/shuttle/enclave_elevator
+	suffix = "elevator"
+	name = "Enclave elevator"
+	port_id = "enclave"

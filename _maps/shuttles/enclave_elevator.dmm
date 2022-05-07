@@ -1,0 +1,100 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/railing{
+	dir = 10;
+	layer = 4.1
+	},
+/obj/structure/chair/f13foldupchair{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"b" = (
+/obj/structure/railing{
+	dir = 9;
+	layer = 4.1
+	},
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "red"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"e" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/machinery/computer/shuttle/enclaveelevator,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"h" = (
+/obj/machinery/door/window/brigdoor{
+	dir = 0;
+	req_one_access_txt = "134"
+	},
+/obj/docking_port/mobile/elevator{
+	dwidth = 1;
+	height = 3;
+	id = "Enclave_Elevator";
+	name = "Enclave Elevator";
+	width = 3
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"p" = (
+/obj/structure/railing{
+	dir = 5;
+	layer = 4.1
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"t" = (
+/obj/structure/railing{
+	dir = 6;
+	layer = 4.1
+	},
+/obj/structure/chair/f13foldupchair{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"z" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/chair/f13foldupchair{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"C" = (
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+"Y" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/chair/f13foldupchair{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/enclave_elevator)
+
+(1,1,1) = {"
+b
+Y
+a
+"}
+(2,1,1) = {"
+e
+C
+h
+"}
+(3,1,1) = {"
+p
+z
+t
+"}
