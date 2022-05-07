@@ -38,15 +38,14 @@
 
 /obj/item/paper/pamphlet/centcom/visitor_info
 	name = "Visitor Info Pamphlet"
-	info = "<b> XCC-P5831 Visitor Information </b><br>\
-	Greetings, visitor, to  XCC-P5831! As you may know, this outpost was once \
-	used as Nanotrasen's CENTRAL COMMAND STATION, organizing and coordinating company \
-	projects across the vastness of space. <br>\
-	Since the completion of the much more efficient CC-A5831 on March 8, 2553, XCC-P5831 no longer \
-	acts as NT's base of operations but still plays a very important role its corporate affairs; \
-	serving as a supply and repair depot, as well as being host to its most important legal proceedings\
-	and the thrilling pay-per-view broadcasts of <i>PLASTEEL CHEF</i> and <i>THUNDERDOME LIVE</i>.<br> \
-	We hope you enjoy your stay!"
+	info = "<b> NanoTrasen Research Center 8 - Visitor Information </b><br>\
+	Greetings, esteemed guest, to NanoTrasen's regional flagship research center. As you may know, \
+	this facility is devoted to our theoric microfusion research, enhancing the technology employed \
+	in microfusion cells to create an incredible array of new applications and opportunities. <br>\
+	This outpost was founded on November 6th 2063 thanks to a generous collaboration with Nuka Cola! \
+	NanoTrasen wants to put all the power a house needs for a day, in the palm of your hand. This is an \
+	ambitious goal, but we are sworn to accomplish it and go even further, beyond your wildest dreams...\
+	The future is now!<br>"
 
 /obj/item/paper/fluff/awaymissions/centcom/gateway_memo
 	name = "Memo to XCC-P5831 QM"

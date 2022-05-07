@@ -46,8 +46,9 @@
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
-	REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
-	REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
+	if(!QDELETED(H))
+		REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 
 /datum/quirk/tribespeak
@@ -64,7 +65,8 @@
 
 /datum/quirk/tribespeak/remove()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.remove_language(/datum/language/tribal)
+	if(!QDELETED(H))
+		H.remove_language(/datum/language/tribal)
 
 
 /datum/quirk/apathetic

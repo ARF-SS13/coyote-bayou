@@ -12,6 +12,7 @@
 	glass_desc = "Are you sure this is tomato juice?"
 	shot_glass_icon_state = "shotglassred"
 	pH = 7.4
+	ghoulfriendly = TRUE
 
 // FEED ME,SEYMOUR!
 /datum/reagent/blood/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -190,6 +191,7 @@
 	shot_glass_icon_state = "shotglassred"
 	data = list("donor"=null,"viruses"=null,"blood_DNA"=null, "bloodcolor" = BLOOD_COLOR_HUMAN, "blood_type"= "O+","resistances"=null,"trace_chem"=null,"mind"=null,"ckey"=null,"gender"=null,"real_name"=null,"cloneable"=null,"factions"=null)
 	pH = 7.45
+	ghoulfriendly = TRUE
 
 /datum/reagent/liquidgibs/xeno
 	name = "Liquid xeno gibs"
@@ -225,6 +227,7 @@
 	name = "Vaccine"
 	color = "#C81040" // rgb: 200, 16, 64
 	taste_description = "slime"
+	ghoulfriendly = TRUE
 
 /datum/reagent/vaccine/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(islist(data) && (method == INGEST || method == INJECT))
@@ -249,6 +252,7 @@
 	glass_name = "glass of water"
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
+	ghoulfriendly = TRUE
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -436,6 +440,7 @@
 	taste_description = "suffering"
 	pH = 6.5
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/fuel/unholywater/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -473,6 +478,7 @@
 	description = "YOUR FLESH! IT BURNS!"
 	taste_description = "burning"
 	value = REAGENT_VALUE_VERY_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/hellwater/on_mob_life(mob/living/carbon/M)
 	M.fire_stacks = min(5,M.fire_stacks + 3)
@@ -488,6 +494,7 @@
 	description = "Oil blessed by a greater being."
 	taste_description = "metallic oil"
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/fuel/holyoil/on_mob_life(mob/living/carbon/M)
 	if(is_servant_of_ratvar(M))
@@ -527,6 +534,7 @@
 	description = "Slowly heals all damage types. Has a rather high overdose threshold. Glows with mysterious power."
 	overdose_threshold = 150
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/lube
 	name = "Space Lube"
@@ -534,6 +542,7 @@
 	color = "#009CA8" // rgb: 0, 156, 168
 	taste_description = "cherry" // by popular demand
 	var/lube_kind = TURF_WET_LUBE ///What kind of slipperiness gets added to turfs.
+	ghoulfriendly = TRUE
 
 /datum/reagent/lube/reaction_turf(turf/open/T, reac_volume)
 	if (!istype(T))
@@ -555,6 +564,7 @@
 	overdose_threshold = 11 //Slightly more than one un-nozzled spraybottle.
 	taste_description = "sour oranges"
 	pH = 5
+	ghoulfriendly = TRUE
 
 /datum/reagent/spraytan/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(ishuman(M))
@@ -656,6 +666,7 @@
 									"You feel as though you're about to change at any moment!" = MUT_MSG_ABOUT2TURN)
 	var/mutationtext
 	var/cycles_to_turn = 20 //the current_cycle threshold / iterations needed before one can transform
+	ghoulfriendly = TRUE
 
 /datum/reagent/mutationtoxin/on_mob_life(mob/living/carbon/human/H)
 	. = TRUE
@@ -890,6 +901,7 @@
 	metabolization_rate = INFINITY
 	taste_description = "slime"
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/mulligan/on_mob_life(mob/living/carbon/human/H)
 	..()
@@ -906,6 +918,7 @@
 	color = "#13BC5E" // rgb: 19, 188, 94
 	taste_description = "slime"
 	value = REAGENT_VALUE_VERY_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/aslimetoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	if(method != TOUCH)
@@ -918,6 +931,7 @@
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	taste_description = "decay"
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/gluttonytoxin/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
 	L.ForceContractDisease(new /datum/disease/transformation/morph(), FALSE, TRUE)
@@ -929,6 +943,7 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	taste_description = "bitterness"
 	pH = 10
+	ghoulfriendly = TRUE
 
 /datum/reagent/serotrotium/on_mob_life(mob/living/carbon/M)
 	if(ishuman(M))
@@ -943,6 +958,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0 // oderless and tasteless
 	pH = 9.2//It's acutally a huge range and very dependant on the chemistry but pH is basically a made up var in it's implementation anyways
+	ghoulfriendly = TRUE
 
 /datum/reagent/oxygen/reaction_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
@@ -963,6 +979,7 @@
 	color = "#6E3B08" // rgb: 110, 59, 8
 	taste_description = "metal"
 	pH = 5.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/copper/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/item/stack/sheet/metal))
@@ -977,6 +994,7 @@
 	reagent_state = GAS
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0
+	ghoulfriendly = TRUE
 
 
 /datum/reagent/nitrogen/reaction_obj(obj/O, reac_volume)
@@ -998,6 +1016,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_mult = 0
 	pH = 0.1//Now I'm stuck in a trap of my own design. Maybe I should make -ve pHes? (not 0 so I don't get div/0 errors)
+	ghoulfriendly = TRUE
 
 /datum/reagent/potassium
 	name = "Potassium"
@@ -1005,12 +1024,14 @@
 	reagent_state = SOLID
 	color = "#A0A0A0" // rgb: 160, 160, 160
 	taste_description = "sweetness"
+	ghoulfriendly = TRUE
 
 /datum/reagent/mercury
 	name = "Mercury"
 	description = "A curious metal that's a liquid at room temperature. Neurodegenerative and very bad for the mind."
 	color = "#484848" // rgb: 72, 72, 72A
 	taste_mult = 0 // apparently tasteless.
+	ghoulfriendly = TRUE
 
 /datum/reagent/mercury/on_mob_life(mob/living/carbon/M)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc))
@@ -1027,6 +1048,7 @@
 	color = "#BF8C00" // rgb: 191, 140, 0
 	taste_description = "rotten eggs"
 	pH = 4.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/carbon
 	name = "Carbon"
@@ -1036,6 +1058,7 @@
 	taste_description = "sour chalk"
 	pH = 5
 	material = /datum/material/diamond
+	ghoulfriendly = TRUE
 
 /datum/reagent/carbon/reaction_turf(turf/T, reac_volume)
 	if(!isspaceturf(T))
@@ -1050,6 +1073,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "chlorine"
 	pH = 7.4
+	ghoulfriendly = TRUE
 
 // You're an idiot for thinking that one of the most corrosive and deadly gasses would be beneficial
 /datum/reagent/chlorine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1072,6 +1096,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "acid"
 	pH = 2
+	ghoulfriendly = TRUE
 
 // You're an idiot for thinking that one of the most corrosive and deadly gasses would be beneficial
 /datum/reagent/fluorine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1094,6 +1119,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "salty metal"
 	pH = 11.6
+	ghoulfriendly = TRUE
 
 /datum/reagent/phosphorus
 	name = "Phosphorus"
@@ -1102,6 +1128,7 @@
 	color = "#832828" // rgb: 131, 40, 40
 	taste_description = "vinegar"
 	pH = 6.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/lithium
 	name = "Lithium"
@@ -1110,6 +1137,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "metal"
 	pH = 11.3
+	ghoulfriendly = TRUE
 
 /datum/reagent/lithium/on_mob_life(mob/living/carbon/M)
 	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc))
@@ -1124,6 +1152,7 @@
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "sweetness"
 	pH = 9
+	ghoulfriendly = TRUE
 
 /datum/reagent/radium
 	name = "Radium"
@@ -1132,6 +1161,7 @@
 	color = "#C7C7C7" // rgb: 199,199,199
 	taste_description = "the colour blue and regret"
 	pH = 10
+	ghoulfriendly = TRUE
 
 /datum/reagent/radium/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1157,6 +1187,7 @@
 	color = "#e6f1f5" // rgb: 200, 165, 220
 	taste_description = "bitterness"
 	pH = 10.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/abraxo_cleaner/sterilizine/reaction_mob(mob/living/carbon/C, method=TOUCH, reac_volume)
 	if(method in list(TOUCH, VAPOR, PATCH))
@@ -1182,6 +1213,7 @@
 	overdose_threshold = 30
 	color = "#c2391d"
 	material = /datum/material/lead
+	ghoulfriendly = TRUE
 
 /datum/reagent/iron
 	name = "Iron"
@@ -1192,6 +1224,7 @@
 	overdose_threshold = 30
 	color = "#c2391d"
 	material = /datum/material/iron
+	ghoulfriendly = TRUE
 
 /datum/reagent/iron/on_mob_life(mob/living/carbon/C)
 	if((HAS_TRAIT(C, TRAIT_NOMARROW)))
@@ -1224,6 +1257,7 @@
 	color = "#F7C430" // rgb: 247, 196, 48
 	taste_description = "expensive metal"
 	material = /datum/material/gold
+	ghoulfriendly = TRUE
 
 /datum/reagent/silver
 	name = "Silver"
@@ -1232,6 +1266,7 @@
 	color = "#D0D0D0" // rgb: 208, 208, 208
 	taste_description = "expensive yet reasonable metal"
 	material = /datum/material/silver
+	ghoulfriendly = TRUE
 
 /datum/reagent/silver/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(M.has_bane(BANE_SILVER))
@@ -1246,6 +1281,7 @@
 	taste_description = "the inside of a reactor"
 	pH = 4
 	material = /datum/material/uranium
+	ghoulfriendly = TRUE
 
 /datum/reagent/uranium/on_mob_life(mob/living/carbon/M)
 	M.apply_effect(1/M.metabolism_efficiency,EFFECT_IRRADIATE,0)
@@ -1276,6 +1312,7 @@
 	pH = 12
 	value = REAGENT_VALUE_RARE
 	material = /datum/material/bluespace
+	ghoulfriendly = TRUE
 
 /datum/reagent/bluespace/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1299,6 +1336,7 @@
 	reagent_state = SOLID
 	color = "#660000" // rgb: 102, 0, 0.
 	taste_description = "contraband"
+	ghoulfriendly = TRUE
 
 /datum/reagent/aluminium
 	name = "Aluminium"
@@ -1306,6 +1344,7 @@
 	reagent_state = SOLID
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
+	ghoulfriendly = TRUE
 
 /datum/reagent/silicon
 	name = "Silicon"
@@ -1315,6 +1354,7 @@
 	taste_mult = 0
 	pH = 10
 	material = /datum/material/glass
+	ghoulfriendly = TRUE
 
 /datum/reagent/fuel
 	name = "Welding fuel"
@@ -1325,6 +1365,7 @@
 	glass_name = "glass of welder fuel"
 	glass_desc = "Unless you're an industrial tool, this is probably not safe for consumption."
 	pH = 4
+	ghoulfriendly = TRUE
 
 
 /datum/reagent/fuel/reaction_mob(mob/living/M, method=TOUCH, reac_volume)//Splashing people with welding fuel to make them easy to ignite!
@@ -1344,6 +1385,7 @@
 	color = "#A5F0EE" // rgb: 165, 240, 238
 	taste_description = "sourness"
 	pH = 5.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/abraxo_cleaner/reaction_obj(obj/O, reac_volume)
 	if(istype(O, /obj/effect/decal/cleanable)  || istype(O, /obj/item/projectile/bullet/reusable/foam_dart) || istype(O, /obj/item/ammo_casing/caseless/foam_dart))
@@ -1411,6 +1453,7 @@
 	taste_description = "acid"
 	pH = 2
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/abraxo_cleaner/ez_clean/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(3.33)
@@ -1431,6 +1474,7 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "sourness"
 	pH = 11.9
+	ghoulfriendly = TRUE
 
 /datum/reagent/cryptobiolin/on_mob_life(mob/living/carbon/M)
 	M.Dizzy(1)
@@ -1445,6 +1489,7 @@
 	color = "#587a31" // rgb: 200, 165, 220A
 	taste_description = "numbness"
 	pH = 9.1
+	ghoulfriendly = TRUE
 
 /datum/reagent/impedrezene/on_mob_life(mob/living/carbon/M)
 	M.jitteriness = max(M.jitteriness-5,0)
@@ -1463,6 +1508,7 @@
 	can_synth = FALSE
 	taste_description = "sludge"
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/nanomachines/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1475,6 +1521,7 @@
 	can_synth = FALSE
 	taste_description = "sludge"
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/xenomicrobes/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1488,6 +1535,7 @@
 	taste_description = "slime"
 	pH = 11
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/fungalspores/reaction_mob(mob/living/L, method=TOUCH, reac_volume, show_message = 1, touch_protection = 0)
 	if(method==PATCH || method==INGEST || method==INJECT || (method == VAPOR && prob(min(reac_volume,100)*(1 - touch_protection))))
@@ -1499,6 +1547,7 @@
 	color = "#9E6B38" // rgb: 158, 107, 56
 	taste_description = "metal"
 	pH = 11
+	ghoulfriendly = TRUE
 
 /datum/reagent/foaming_agent// Metal foaming agent. This is lithium hydride. Add other recipes (e.g. LiH + H2O -> LiOH + H2) eventually.
 	name = "Foaming agent"
@@ -1507,6 +1556,7 @@
 	color = "#664B63" // rgb: 102, 75, 99
 	taste_description = "metal"
 	pH = 11.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/smart_foaming_agent //Smart foaming agent. Functions similarly to metal foam, but conforms to walls.
 	name = "Smart foaming agent"
@@ -1516,6 +1566,7 @@
 	taste_description = "metal"
 	pH = 11.8
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/ammonia
 	name = "Ammonia"
@@ -1524,6 +1575,7 @@
 	color = "#404030" // rgb: 64, 64, 48
 	taste_description = "mordant"
 	pH = 11.6
+	ghoulfriendly = TRUE
 
 /datum/reagent/ammonia/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
@@ -1540,6 +1592,7 @@
 	color = "#604030" // rgb: 96, 64, 48
 	taste_description = "iron"
 	pH = 12
+	ghoulfriendly = TRUE
 
 // This is more bad ass, and pests get hurt by the corrosive nature of it, not the plant. The new trade off is it culls stability.
 /datum/reagent/diethylamine/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1558,6 +1611,7 @@
 	color = "#B0B0B0" // rgb : 192, 192, 192
 	taste_description = "something unknowable"
 	pH = 6
+	ghoulfriendly = TRUE
 
 /datum/reagent/carbondioxide/reaction_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
@@ -1579,6 +1633,7 @@
 	color = "#808080"
 	taste_description = "sweetness"
 	pH = 5.8
+	ghoulfriendly = TRUE
 
 /datum/reagent/nitrous_oxide/reaction_obj(obj/O, reac_volume)
 	if((!O) || (!reac_volume))
@@ -1613,6 +1668,7 @@
 	color = "E1A116"
 	taste_description = "sourness"
 	value = REAGENT_VALUE_EXCEPTIONAL
+	ghoulfriendly = TRUE
 
 /datum/reagent/stimulum/on_mob_metabolize(mob/living/L)
 	..()
@@ -1639,6 +1695,7 @@
 	taste_description = "burning"
 	pH = 2
 	value = REAGENT_VALUE_VERY_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/nitryl/on_mob_metabolize(mob/living/L)
 	..()
@@ -1661,6 +1718,7 @@
 	taste_description = "the back of class"
 	no_mob_color = TRUE
 	value = REAGENT_VALUE_NONE
+	ghoulfriendly = TRUE
 
 /datum/reagent/colorful_reagent/crayonpowder/New()
 	description = "\an [colorname] powder made by grinding down crayons, good for colouring chemical reagents."
@@ -1735,6 +1793,7 @@
 	var/tox_prob = 0
 	taste_description = "plant food"
 	pH = 3
+	ghoulfriendly = TRUE
 
 /datum/reagent/plantnutriment/on_mob_life(mob/living/carbon/M)
 	if(prob(tox_prob))
@@ -1760,6 +1819,7 @@
 	description = "Unstable nutriment that makes plants mutate more often than usual."
 	color = "#1A1E4D" // RBG: 26, 30, 77
 	tox_prob = 25
+	ghoulfriendly = TRUE
 
 /datum/reagent/plantnutriment/left4zednutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
@@ -1772,6 +1832,7 @@
 	description = "Very potent nutriment that slows plants from mutating."
 	color = "#9D9D00" // RBG: 157, 157, 0
 	tox_prob = 15
+	ghoulfriendly = TRUE
 
 /datum/reagent/plantnutriment/robustharvestnutriment/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
@@ -1785,6 +1846,7 @@
 	description = "A specialized nutriment, which decreases product quantity and potency, but strengthens the plants endurance."
 	color = "#a06fa7" // RBG: 160, 111, 167
 	tox_prob = 15
+	ghoulfriendly = TRUE
 
 /datum/reagent/plantnutriment/endurogrow/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
@@ -1798,6 +1860,7 @@
 	description = "A specialized nutriment, which increases the plant's production speed, as well as it's susceptibility to weeds."
 	color = "#912e00" // RBG: 145, 46, 0
 	tox_prob = 25
+	ghoulfriendly = TRUE
 
 /datum/reagent/plantnutriment/liquidearthquake/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
 	. = ..()
@@ -1815,6 +1878,7 @@
 	reagent_state = LIQUID
 	color = "#292929"
 	taste_description = "oil"
+	ghoulfriendly = TRUE
 
 /datum/reagent/stable_plasma
 	name = "Stable Plasma"
@@ -1824,6 +1888,7 @@
 	taste_description = "bitterness"
 	taste_mult = 1.5
 	pH = 1.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/stable_plasma/on_mob_life(mob/living/carbon/C)
 	C.adjustPlasma(10)
@@ -1836,6 +1901,7 @@
 	color = "#694600"
 	taste_description = "metal"
 	pH = 4.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/bromine
 	name = "Bromine"
@@ -1844,6 +1910,7 @@
 	color = "#b37740"
 	taste_description = "chemicals"
 	pH = 7.8
+	ghoulfriendly = TRUE
 
 /datum/reagent/phenol
 	name = "Phenol"
@@ -1852,6 +1919,7 @@
 	taste_description = "sweet and tarry" //Again, not a strong acid.
 	pH = 5.5
 	color = "#e6e8ff"
+	ghoulfriendly = TRUE
 
 /datum/reagent/ash
 	name = "Ash"
@@ -1860,6 +1928,7 @@
 	color = "#665c56"
 	taste_description = "ash"
 	pH = 6.5
+	ghoulfriendly = TRUE
 
 // Ash is also used IRL in gardening, as a fertilizer enhancer and weed killer
 /datum/reagent/ash/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1874,6 +1943,7 @@
 	reagent_state = LIQUID
 	taste_description = "solvent"//It's neutral though..?
 	color = "#e6e6e6"
+	ghoulfriendly = TRUE
 
 /datum/reagent/colorful_reagent
 	name = "Colorful Reagent"
@@ -1884,6 +1954,7 @@
 	taste_description = "rainbows"
 	value = REAGENT_VALUE_RARE
 	var/no_mob_color = FALSE
+	ghoulfriendly = TRUE
 
 /datum/reagent/colorful_reagent/on_mob_life(mob/living/carbon/M)
 	if(!no_mob_color)
@@ -1913,6 +1984,7 @@
 	var/list/potential_colors = list("0ad","a0f","f73","d14","d14","0b5","0ad","f73","fc2","084","05e","d22","fa0") // fucking hair code
 	taste_description = "sourness"
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/hair_dye/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1929,6 +2001,7 @@
 	color = "#fac34b"
 	taste_description = "sourness"
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1947,6 +2020,7 @@
 	color = "#ffaf00"
 	taste_description = "sourness"
 	value = REAGENT_VALUE_RARE
+	ghoulfriendly = TRUE
 
 /datum/reagent/concentrated_barbers_aid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1962,6 +2036,7 @@
 	reagent_state = LIQUID
 	color = "#ecb2cf"
 	taste_description = "bitterness"
+	ghoulfriendly = TRUE
 
 /datum/reagent/baldium/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	if(method == TOUCH || method == VAPOR)
@@ -1979,6 +2054,7 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	taste_description = "cool salt"
 	pH = 11.2
+	ghoulfriendly = TRUE
 
 /datum/reagent/lye
 	name = "Lye"
@@ -1987,6 +2063,7 @@
 	color = "#FFFFD6" // very very light yellow
 	taste_description = "alkali" //who put ACID for NaOH ????
 	pH = 11.9
+	ghoulfriendly = TRUE
 
 // Saltpetre is used for gardening IRL, to simplify highly, it speeds up growth and strengthens plants
 /datum/reagent/saltpetre/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -2006,6 +2083,7 @@
 	taste_description = "dryness"
 	pH = 10.7
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/drying_agent/reaction_turf(turf/open/T, reac_volume)
 	if(istype(T))
@@ -2025,6 +2103,7 @@
 	color = "#b51d05"
 	taste_description = "carpet" // Your tounge feels furry.
 	var/carpet_type = /turf/open/floor/carpet
+	ghoulfriendly = TRUE
 
 /datum/reagent/carpet/reaction_turf(turf/T, reac_volume)
 	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
@@ -2149,6 +2228,7 @@
 	taste_description = "strange honey"
 	pH = 3
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/royal_bee_jelly/on_mob_life(mob/living/carbon/M)
 	if(prob(2))
@@ -2171,6 +2251,7 @@
 	taste_description = "brains"
 	pH = 0.5
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
@@ -2185,6 +2266,7 @@
 	reagent_state = LIQUID
 	color = "#00f041"
 	value = REAGENT_VALUE_EXCEPTIONAL
+	ghoulfriendly = TRUE
 
 /datum/reagent/magillitis/on_mob_life(mob/living/carbon/M)
 	..()
@@ -2232,6 +2314,7 @@
 	color = "#f7eded"
 	taste_description = "plastic"
 	pH = 6
+	ghoulfriendly = TRUE
 
 /datum/reagent/glitter
 	name = "generic glitter"
@@ -2240,6 +2323,7 @@
 	taste_description = "plastic"
 	reagent_state = SOLID
 	var/glitter_type = /obj/effect/decal/cleanable/glitter
+	ghoulfriendly = TRUE
 
 /datum/reagent/glitter/reaction_turf(turf/T, reac_volume)
 	if(!istype(T))
@@ -2272,6 +2356,7 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_RARE
 	pH = 15
+	ghoulfriendly = TRUE
 
 /datum/reagent/pax/on_mob_metabolize(mob/living/L)
 	..()
@@ -2288,6 +2373,7 @@
 	taste_description = "acrid cinnamon"
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/bz_metabolites/on_mob_metabolize(mob/living/L)
 	..()
@@ -2309,6 +2395,7 @@
 	description = "A colorless liquid that suppresses violence on the subjects. Cheaper to synthetize, but wears out faster than normal Pax."
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/peaceborg_confuse
 	name = "Dizzying Solution"
@@ -2316,6 +2403,7 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "dizziness"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/peaceborg_confuse/on_mob_life(mob/living/carbon/M)
 	if(M.confused < 6)
@@ -2332,6 +2420,7 @@
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	taste_description = "tiredness"
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/peaceborg_tire/on_mob_life(mob/living/carbon/M)
 	var/healthcomp = (100 - M.health)	//DOES NOT ACCOUNT FOR ADMINBUS THINGS THAT MAKE YOU HAVE MORE THAN 200/210 HEALTH, OR SOMETHING OTHER THAN A HUMAN PROCESSING THIS.
@@ -2347,6 +2436,7 @@
 	color = "#FAEAFF"
 	taste_description = "sugar and moonshine"
 	value = REAGENT_VALUE_UNCOMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/changeling_string
 	name = "UNKNOWN"
@@ -2358,6 +2448,7 @@
 	var/reagent_ticks = 0
 	chemical_flags = REAGENT_INVISIBLE
 	value = REAGENT_VALUE_GLORIOUS
+	ghoulfriendly = TRUE
 
 /datum/reagent/changeling_string/on_mob_metabolize(mob/living/carbon/C)
 	if(ishuman(C) && C.dna && LAZYACCESS(data, "desired_dna"))
@@ -2387,6 +2478,7 @@
 	description = "A powerd that is mixed with water and enzymes to make mustard."
 	color = "#BCC740" //RGB: 188, 199, 64
 	taste_description = "plant dust"
+	ghoulfriendly = TRUE
 
 /datum/reagent/pax/catnip
 	name = "catnip"
@@ -2401,6 +2493,7 @@
 	reagent_state = LIQUID
 	color = "#f7685e"
 	metabolization_rate = REAGENTS_METABOLISM * 0.25
+	ghoulfriendly = TRUE
 
 
 /datum/reagent/wittel
@@ -2408,6 +2501,7 @@
 	description = "An extremely rare metallic-white substance only found on demon-class planets."
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 0 // oderless and tasteless
+	ghoulfriendly = TRUE
 
 /datum/reagent/metalgen
 	name = "Metalgen"
@@ -2417,6 +2511,7 @@
 	taste_mult = 0 // oderless and tasteless
 	var/applied_material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR
 	var/minumum_material_amount = 100
+	ghoulfriendly = TRUE
 
 /datum/reagent/metalgen/reaction_obj(obj/O, volume)
 	metal_morph(O)
@@ -2452,6 +2547,7 @@
 	taste_mult = 0 // oderless and tasteless
 	metabolization_rate = 0.1 * REAGENTS_METABOLISM //20 times as long, so it's actually viable to use
 	var/time_multiplier = 1 MINUTES //1 minute per unit of gravitum on objects. Seems overpowered, but the whole thing is very niche
+	ghoulfriendly = TRUE
 
 /datum/reagent/gravitum/reaction_obj(obj/O, volume)
 	O.AddElement(/datum/element/forced_gravity, 0)
@@ -2534,6 +2630,7 @@
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 	self_consuming = TRUE
+	ghoulfriendly = TRUE
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
 	if(significant)
@@ -2565,6 +2662,7 @@ datum/reagent/eldritch
 	description = "Strange liquid that defies the laws of physics"
 	taste_description = "Ag'hsj'saje'sh"
 	color = "#1f8016"
+	ghoulfriendly = TRUE
 
 /datum/reagent/eldritch/on_mob_life(mob/living/carbon/M)
 	if(IS_HERETIC(M))
@@ -2653,6 +2751,7 @@ datum/reagent/eldritch
 	description = "A unknown red liquid, linked to healing of most moral wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/red_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-50)
@@ -2670,6 +2769,7 @@ datum/reagent/eldritch
 	description = "A unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/green_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -100)
@@ -2687,6 +2787,7 @@ datum/reagent/eldritch
 	description = "A unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/blue_ichor/on_mob_life(mob/living/carbon/M)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -100)
@@ -2704,7 +2805,199 @@ datum/reagent/eldritch
 	name = "Nutracid"
 	description = "A slightly yellow liquid that seems to bubble frequently. It is not recommended to consume Nutracid."
 	color = "#fff566"
+	ghoulfriendly = TRUE
 
 /datum/reagent/nutracid/on_mob_life(mob/living/carbon/M)
 	M.adjust_nutrition(-5)
+	..()
+
+/datum/reagent/breast_enlarger
+	name = "Succubus milk"
+	description = "A volatile collodial mixture derived from milk that encourages mammary production via a potent estrogen mix."
+	color = "#E60584" // rgb: 96, 0, 255
+	taste_description = "a milky ice cream like flavour"
+	overdose_threshold = 17
+	metabolization_rate = 0.25
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/breast_enlarger/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M)) //The monkey clause
+		if(volume >= 15) //To prevent monkey breast farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/breasts/B = new /obj/item/organ/genital/breasts(T)
+			M.visible_message("<span class='warning'>A pair of breasts suddenly fly out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			B.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BREASTS) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/breast_enlarger/on_mob_life(mob/living/carbon/M) //Increases breast size
+	if(!ishuman(M))//Just in case
+		return..()
+
+	var/mob/living/carbon/human/H = M
+	//If they've opted out, ignore and return early.
+	if(!(H.client?.prefs.cit_toggles & BREAST_ENLARGEMENT))
+		return..()
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	//otherwise proceed as normal
+	if(!B) //If they don't have breasts, give them breasts.
+
+		B = new
+		if(H.dna.species.use_skintones && H.dna.features["genitals_use_skintone"])
+			B.color = SKINTONE2HEX(H.skin_tone)
+		else if(M.dna.features["breasts_color"])
+			B.color = "#[M.dna.features["breasts_color"]]"
+		else
+			B.color = SKINTONE2HEX(H.skin_tone)
+		B.size = "flat"
+		B.cached_size = 0
+		B.prev_size = 0
+		to_chat(H, "<span class='warning'>Your chest feels warm, tingling with newfound sensitivity.</b></span>")
+		H.reagents.remove_reagent(type, 5)
+		B.Insert(H)
+
+	B.modify_size(0.05)
+	return ..()
+
+/datum/reagent/breast_enlarger/overdose_process(mob/living/carbon/M) //Turns you into a female if male and ODing, doesn't touch nonbinary and object genders.
+	if(!(M.client?.prefs.cit_toggles & FORCED_FEM))
+		return ..()
+
+	var/obj/item/organ/genital/penis/P = M.getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/genital/vagina/V = M.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/genital/womb/W = M.getorganslot(ORGAN_SLOT_WOMB)
+
+	if(M.gender == MALE)
+		M.set_gender(FEMALE)
+
+	if(P)
+		P.modify_size(-0.05)
+	if(T)
+		qdel(T)
+	if(!V)
+		V = new
+		V.Insert(M)
+	if(!W)
+		W = new
+		W.Insert(M)
+	return ..()
+
+/datum/reagent/BEsmaller
+	name = "Modesty milk"
+	description = "A volatile collodial mixture derived from milk that encourages mammary reduction via a potent estrogen mix. Produced by reacting impure Succubus milk."
+	color = "#E60584" // rgb: 96, 0, 255
+	taste_description = "a milky ice cream like flavour"
+	metabolization_rate = 0.25
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/BEsmaller/on_mob_life(mob/living/carbon/M)
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	if(!(M.client?.prefs.cit_toggles & BREAST_ENLARGEMENT) || !B)
+		return ..()
+	B.modify_size(-0.05)
+	return ..()
+	
+/datum/reagent/penis_enlarger // Due to popular demand...!
+	name = "Incubus draft"
+	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I thought it would be funny to include it in the reagents, but I don't think many would find it funny? dumb
+	color = "#888888" // This is greyish..?
+	taste_description = "chinese dragon powder"
+	overdose_threshold = 17 //ODing makes you male and removes female genitals
+	metabolization_rate = 0.5
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/penis_enlarger/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M)) //Just monkeying around.
+		if(volume >= 15) //to prevent monkey penis farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/penis/P = new /obj/item/organ/genital/penis(T)
+			M.visible_message("<span class='warning'>A penis suddenly flies out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			P.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_PENIS) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/penis_enlarger/on_mob_life(mob/living/carbon/M) //Increases penis size, 5u = +1 inch.
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	if(!(H.client?.prefs.cit_toggles & PENIS_ENLARGEMENT))
+		return ..()
+	var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+	//otherwise proceed as normal
+	if(!P)//They do have a preponderance for escapism, or so I've heard.
+
+		P = new
+		P.length = 1
+		to_chat(H, "<span class='warning'>Your groin feels warm, as you feel a newly forming bulge down below.</b></span>")
+		P.prev_length = 1
+		H.reagents.remove_reagent(type, 5)
+		P.Insert(H)
+
+	P.modify_size(0.1)
+	return ..()
+
+/datum/reagent/penis_enlarger/overdose_process(mob/living/carbon/human/M) //Turns you into a male if female and ODing, doesn't touch nonbinary and object genders.
+	if(!istype(M))
+		return ..()
+	// let's not kill them if they didn't consent.
+	if(!(M.client?.prefs.cit_toggles & FORCED_MASC))
+		return..()
+
+	var/obj/item/organ/genital/breasts/B = M.getorganslot(ORGAN_SLOT_BREASTS)
+	var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+	var/obj/item/organ/genital/vagina/V = M.getorganslot(ORGAN_SLOT_VAGINA)
+	var/obj/item/organ/genital/womb/W = M.getorganslot(ORGAN_SLOT_WOMB)
+
+	if(M.gender == FEMALE)
+		M.set_gender(MALE)
+
+	if(B)
+		B.modify_size(-0.05)
+	if(M.getorganslot(ORGAN_SLOT_VAGINA))
+		qdel(V)
+	if(W)
+		qdel(W)
+	if(!T)
+		T = new
+		T.Insert(M)
+	return ..()
+
+/datum/reagent/PEsmaller // Due to cozmo's request...!
+	name = "Chastity draft"
+	description = "A volatile collodial mixture derived from various masculine solutions that encourages a smaller gentleman's package via a potent testosterone mix. Produced by reacting impure Incubus draft."
+	color = "#888888" // This is greyish..?
+	taste_description = "chinese dragon powder"
+	metabolization_rate = 0.5
+	can_synth = FALSE
+	value = REAGENT_VALUE_RARE
+
+/datum/reagent/PEsmaller/on_mob_life(mob/living/carbon/M)
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+	if(!(H.client?.prefs.cit_toggles & PENIS_ENLARGEMENT) || !P)
+		return..()
+
+	P.modify_size(-0.1)
 	..()

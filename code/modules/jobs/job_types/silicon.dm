@@ -17,7 +17,7 @@ AI
 	exp_type_department = EXP_TYPE_SILICON
 	display_order = JOB_DISPLAY_ORDER_AI
 	var/do_special_check = TRUE
-	
+
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/basic)
 
 /datum/job/ai/equip(mob/living/carbon/human/H, visualsOnly, announce, latejoin, datum/outfit/outfit_override, client/preference_source = null)
@@ -88,7 +88,7 @@ Cyborg
 	supervisors = "Overseer/Vault"	//Nodrak
 	selection_color = "#ddffdd"
 	minimal_player_age = 21
-	exp_requirements = 600
+	exp_requirements = 300
 	exp_type = EXP_TYPE_FALLOUT
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)
@@ -113,7 +113,7 @@ Mr. Handy
 	supervisors = "Your Creators"	//Nodrak
 	selection_color = "#ddffdd"
 	minimal_player_age = 21
-	exp_requirements = 12000
+	exp_requirements = 6000
 	exp_type = EXP_TYPE_CREW
 
 /datum/job/cyborg/equip(mob/living/carbon/human/H, visualsOnly = FALSE, announce = TRUE, latejoin = FALSE, datum/outfit/outfit_override = null, client/preference_source)

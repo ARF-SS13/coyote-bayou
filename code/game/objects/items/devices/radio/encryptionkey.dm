@@ -167,13 +167,13 @@
 
 /obj/item/encryptionkey/headset_bos
 	name = "Brotherhood radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the Enclave channel, use :q."
+	desc = "An encryption key for a radio headset.  To access the Brotherhood channel, use :q."
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_BOS = 1)
 
 /obj/item/encryptionkey/headset_enclave
 	name = "Enclave radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the Brotherhood channel, use :z."
+	desc = "An encryption key for a radio headset.  To access the Enclave channel, use :z."
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_ENCLAVE = 1)
 

@@ -120,6 +120,7 @@
 	M.dropItemToGround(token)
 	M.put_in_hands(duffelkit)
 	M.disable_loadout_select()
+	token = null
 
 /datum/component/loadout_selector/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

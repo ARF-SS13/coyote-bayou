@@ -671,11 +671,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/headscribe
 	name = "Head Scribe"
-	icon_state = "Head Scribe"
+	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/seniorscribe
 	name = "Senior Scribe"
-	icon_state = "Head Scribe"
+	icon_state = "Scribe"
 
 /obj/effect/landmark/start/f13/sentinel
 	name = "Head Paladin"
@@ -683,11 +683,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/knightcap
 	name = "Head Knight"
-	icon_state = "Initiate Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorknight
 	name = "Senior Knight"
-	icon_state = "Initiate Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/seniorpaladin
 	name = "Senior Paladin"
@@ -703,11 +703,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/Knight
 	name = "Knight"
-	icon_state = "Initiate Knight"
+	icon_state = "Knight"
 
 /obj/effect/landmark/start/f13/initiate
 	name = "Initiate"
-	icon_state = "Initiate_Scribe"
+	icon_state = "Initiate"
 
 /obj/effect/landmark/start/f13/offduty
 	name = "BoS Off-Duty"
@@ -747,17 +747,19 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/mayor
 	name = "Mayor"
+	icon_state = "banker"
 
 /obj/effect/landmark/start/f13/secretary
 	name = "Secretary"
 	icon_state = "Lawyer"
 
 /obj/effect/landmark/start/f13/sheriff
-	name = "Sheriff"
-	icon_state = "Sheriff"
+	name = "Chief of Police"
+	icon_state = "Chief of Police"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Deputy"
+	name = "Officer"
+	icon_state = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
 	name = "Farmer"
@@ -831,25 +833,31 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 // Enclave
 /obj/effect/landmark/start/f13/usspy
 	name = "Enclave Private"
+	icon_state = "uspvt"
 
 /obj/effect/landmark/start/f13/uslt
 	name = "Enclave Lieutenant"
+	icon_state = "uslt"
 
 /obj/effect/landmark/start/f13/ussgt
 	name = "Enclave Sergeant"
+	icon_state = "ussgt"
 
 /obj/effect/landmark/start/f13/usspecialist
 	name = "Enclave Specialist"
+	icon_state = "usoffduty"
 
 /obj/effect/landmark/start/f13/usscientist
 	name = "Enclave Scientist"
+	icon_state = "usscientist"
 
 /obj/effect/landmark/start/f13/usgysgt
 	name = "Enclave Gunnery Sergeant"
 
+
 /obj/effect/landmark/start/f13/uslightduty
     name = "Enclave Bunker Duty"
-
+    icon_state = "usoffduty"
 //Tribal
 
 /obj/effect/landmark/start/f13/tribal

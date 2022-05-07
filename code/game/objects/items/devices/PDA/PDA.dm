@@ -807,6 +807,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/ghost_message = "<span class='name'>[owner] </span><span class='game say'>Pip-Boy 3000 Message</span> --> <span class='name'>[target_text]</span>: <span class='message'>[signal.format_message()]</span>"
 	for(var/i in GLOB.dead_mob_list)
 		var/mob/M = i
+		if(QDELETED(M))
+			continue
 		if(user != M && istype(user) && isliving(M) && M.client && M.z == user.z && get_dist(user,M) < 6)
 			var/mob/living/ML = M
 			if(ML.enabled_combat_indicator)

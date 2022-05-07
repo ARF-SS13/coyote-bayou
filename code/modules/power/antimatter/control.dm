@@ -37,12 +37,12 @@
 	linked_cores = list()
 	soundloop = new(list(src), TRUE) //fortuna edit
 
-
 /obj/machinery/power/am_control_unit/Destroy()//Perhaps damage and run stability checks rather than just del on the others
 	for(var/obj/machinery/am_shielding/AMS in linked_shielding)
 		AMS.control_unit = null
 		qdel(AMS)
 	QDEL_NULL(fueljar)
+	QDEL_NULL(soundloop)
 	return ..()
 
 /obj/machinery/power/am_control_unit/process()

@@ -438,7 +438,7 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.25 //+0.1 from helmet = total 0.25
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 87, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 75)
 
 /obj/item/clothing/suit/armor/f13/enclave/armorvest
 	name = "armored vest"
@@ -672,9 +672,10 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 
 /obj/item/clothing/suit/armor/f13/harpercoat
 	name = "outlaw coat"
-	desc = "(IV) A combat duster"
+	desc = "An ugly looking combat duster"
 	icon_state = "harperduster"
-	armor = list("tier" = 4, "energy" = 40, "bomb" = 25, "bio" = 40, "rad" = 35, "fire" = 80, "acid" = 0)
+	armor = list("melee" = 25, "bullet" = 50, "laser" = 25, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
+	slowdown = 0.07
 
 /obj/item/clothing/suit/armor/f13/raider/reptiliatenebris
 	name = "Reptilia Tenebris"

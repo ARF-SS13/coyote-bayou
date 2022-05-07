@@ -4,6 +4,7 @@
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 20
 	addiction_threshold = 12.5
+	ghoulfriendly = TRUE
 
 /datum/reagent/drug/jet/on_mob_add(mob/living/carbon/human/M)
 	..()
@@ -23,7 +24,17 @@
 		step(M, pick(GLOB.cardinals))
 	if(prob(12))
 		M.emote(pick("twitch","drool","moan","giggle"))
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
+	. = TRUE
 
 /datum/reagent/drug/jet/overdose_start(mob/living/M)
 	to_chat(M, "<span class='userdanger'>You start tripping hard!</span>")
@@ -81,13 +92,14 @@
 	overdose_threshold = 14
 	addiction_threshold = 9
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
 
 /datum/reagent/drug/turbo/on_mob_add(mob/M)
 	..()
-	ADD_TRAIT(M, TRAIT_IGNORESLOWDOWN, "[type]")
+	ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 
 /datum/reagent/drug/turbo/on_mob_delete(mob/M)
-	REMOVE_TRAIT(M, TRAIT_IGNORESLOWDOWN, "[type]")
+	REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
 	..()
 
 /datum/reagent/drug/turbo/on_mob_life(mob/living/carbon/M)
@@ -97,6 +109,15 @@
 	M.Jitter(2)
 	if(prob(5))
 		M.emote(pick("twitch", "shiver"))
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	. = TRUE
 
@@ -157,6 +178,7 @@
 	addiction_threshold = 12.5
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+	ghoulfriendly = TRUE
 
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/carbon/M)
@@ -168,6 +190,15 @@
 	M.AdjustUnconscious(-25, 0)
 	M.adjustStaminaLoss(-5, 0)
 	M.Jitter(2)
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	. = TRUE
 
@@ -251,6 +282,7 @@
 	addiction_threshold = 11
 	metabolization_rate = 1.25 * REAGENTS_METABOLISM
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
+	ghoulfriendly = TRUE
 
 /datum/reagent/drug/buffout/on_mob_add(mob/living/carbon/human/M)
 	..()
@@ -273,6 +305,15 @@
 /datum/reagent/drug/buffout/on_mob_life(mob/living/carbon/M)
 	M.AdjustStun(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_NCR, FACTION_ENCLAVE, FACTION_BROTHERHOOD)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "used drugs", /datum/mood_event/used_drugs, name)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "jet euphoria", /datum/mood_event/jet_euphoria, name)
 	..()
 	. = TRUE
 

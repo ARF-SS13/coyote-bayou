@@ -403,7 +403,7 @@
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.1
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 87, "energy" = 65, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
+	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 0, "wound" = 75)
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 
 

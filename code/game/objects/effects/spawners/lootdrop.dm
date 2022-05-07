@@ -9,7 +9,7 @@
 	var/fan_out_items = FALSE //Whether the items should be distributed to offsets 0,1,-1,2,-2,3,-3.. This overrides pixel_x/y on the spawner itself
 
 /obj/effect/spawner/lootdrop/Initialize(mapload)
-	..()
+	. = ..()
 	if(loot && loot.len)
 		var/atom/A = spawn_on_turf ? get_turf(src) : loc
 		var/loot_spawned = 0

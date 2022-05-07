@@ -16,7 +16,7 @@
 	description = "You are no common raider or tribal settler, for you are a Great Khan. Your ancestry is that of fierce warriors and noble chieftans, whose rites and sagas tell of blood soaked battlefields and great sacrifice for your tribe. At least, this was once the case: after the massacre at Bitter Springs by the NCR, your people have lost much of their strength - now you and many other Khans travel west of Vegas through Red Rock Canyon in the hopes of settling in the region of Yuma."
 	supervisors = "your gang leadership"
 	selection_color = "#ff915e"
-	exp_requirements = 1000
+	exp_requirements = 500
 	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13pusher
@@ -136,7 +136,7 @@ Raider
 	description = "You are an undesirable figure of some kind- perhaps a corrupt official, or a cannibalistic bartender, or a devious conman, to name a few examples. You have more freedom than anyone else in the wastes, and are not bound by the same moral code as others, but though you may only be interested in self-gain, you still have a responsibility to make your time here interesting, fun, and engaging for others- this means that whatever path you pursue should be more nuanced and flavorful than simple highway robbery or slavery. (Adminhelp if you require help setting up your character for the round.)"
 	supervisors = "Your desire to make things interesting and fun"
 	selection_color = "#ff4747"
-	exp_requirements = 600
+	exp_requirements = 300
 	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13raider
@@ -465,8 +465,8 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "You arrive in Yuma Valley, hoping to escape your past, the war, or perhaps something worse. But you’ve seen the torchlight and heard the bark of the military officers. You haven’t escaped anything. Try to survive, establish your own settlement, make your own legend. Suffer well and die gladly."
-	supervisors = "God"
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Oasis to the southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	supervisors = "fate"
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13wastelander
@@ -615,6 +615,9 @@ Raider
 	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
+	id = /obj/item/card/id/dogtag/vaultiecard
+	suit = /obj/item/clothing/suit/suspenders
+	ears = /obj/item/radio/headset
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
@@ -679,7 +682,7 @@ Raider
 	description = "The mob rules in Yuma. A hitman for the Den's Boss, you are a highly loyal enforcer charged with keeping order among the outlaw groups inhabiting the Den."
 	supervisors = "The Boss."
 	selection_color = "#ff4747"
-	exp_requirements = 600
+	exp_requirements = 300
 	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13enforcer
@@ -699,8 +702,8 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "God"
-	description = "You are the last bastion of faith in this God-forsaken Wasteland. Spread your word and preach to the faithless."
+	supervisors = "your faith"
+	description = "You are the last bastion of your faith in this forsaken Wasteland - whatever that faith may be. Spread your word and preach to the faithless in whatever manner you see fit, but remember that the divine cannot always protect you from harsh realities."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/wasteland/f13preacher
@@ -828,7 +831,7 @@ Raider
 	name = "Preacher"
 	jobtype = /datum/job/wasteland/f13preacher
 
-	id = null
+	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset
 	belt = null
 	uniform = /obj/item/clothing/under/f13/chaplain
@@ -919,7 +922,7 @@ Raider
 	description = "The mob rules in Yuma, and you're on top. Keeping the loose association of Khans, outlaws, and other no-goods together you maintain order in The Den by force. Ensure that all inhabitants of the Den obey their rules, and spread your influence over the wasteland. Be careful though - even your own men can't be trusted."
 	supervisors = "Whatever god you pray to. Sky's the limit!"
 	selection_color = "#ff4747"
-	exp_requirements = 1000
+	exp_requirements = 500
 	exp_type = EXP_TYPE_OUTLAW
 
 	outfit = /datum/outfit/job/wasteland/f13mobboss
@@ -990,7 +993,7 @@ datum/job/wasteland/f13dendoctor
 	description = "While you prioritize providing medical treatment in emergency situations, you are still trained in combat and have the additional role as a loyal combanteer to the Den."
 	supervisors = "The Boss."
 	selection_color = "#ff4747"
-	exp_requirements = 1000
+	exp_requirements = 500
 	exp_type = EXP_TYPE_OUTLAW
 
 	outfit = /datum/outfit/job/wasteland/f13dendoctor
@@ -1083,7 +1086,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You have come a long way to reach this god forsaken place... it is now your job to protect its inhabitants from all sorts of injustice. Your moral codex requires you to help anyone in need and to never harm an innocent. Always try to capture and reeducate criminals instead of killing. Do not get involved in the conflicts between the major factions, that is not your fight."
 	supervisors = "your moral code"
 	selection_color = "#76885f"
-	exp_requirements = 3000
+	exp_requirements = 1500
 	exp_type = EXP_TYPE_FALLOUT
 
 	outfit = /datum/outfit/job/wasteland/f13vigilante

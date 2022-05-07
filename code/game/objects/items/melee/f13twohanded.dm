@@ -33,6 +33,46 @@
 // AXES //
 //////////			-bonus damage to all doors, windows
 
+// Legion Axe		Keywords: Damage 30/60
+/obj/item/twohanded/legionaxe
+	name = "War Honed Axe"
+	desc = "Heavy fireman axe from the old world, Restored to working order by legion craftsmen. Excellent for smashing doors or heads."
+	icon_state = "legionaxe"
+	icon_prefix = "legionaxe"
+	force = 30
+	throwforce = 15
+	wound_bonus = 10
+	bare_wound_bonus = 10
+	sharpness = SHARP_EDGED
+	resistance_flags = FIRE_PROOF
+	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+/obj/item/twohanded/legionaxe/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
+	AddComponent(/datum/component/two_handed, force_unwielded=30, force_wielded=60, icon_wielded="[icon_prefix]2")
+
+/obj/item/twohanded/legionaxe/suicide_act(mob/user)
+	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	return (BRUTELOSS)
+
+/obj/item/twohanded/legionaxe/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/structure/window)) //destroys windows and grilles in one hit (or more if it has a ton of health like plasmaglass)
+		var/obj/structure/window/W = A
+		W.take_damage(250, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/grille))
+		var/obj/structure/grille/G = A
+		G.take_damage(60, BRUTE, "melee", 0)
+	else if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(40, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(40, BRUTE, "melee", 0)
 
 // Fire Axe			Keywords: Damage 25/46
 /obj/item/twohanded/fireaxe
@@ -267,7 +307,7 @@
 	force = 15
 	throwforce = 25
 	throw_speed = 4
-	armour_penetration = 0.2
+	armour_penetration = 0.07
 	max_reach = 2
 	embedding = list("embedded_impact_pain_multiplier" = 3)
 	custom_materials = null
@@ -286,7 +326,7 @@
 	icon_state = "spear-claw"
 	icon_prefix = "spear-claw"
 	force = 20
-	armour_penetration = 0.3
+	armour_penetration = 0.15
 	sharpness = SHARP_EDGED
 
 /obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
@@ -335,7 +375,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
+	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // Louisville Slugger		Keywords: Damage 25/32, Damage bonus Stamina
 /obj/item/twohanded/baseball/louisville
@@ -371,7 +411,7 @@
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
+	M.apply_damage(20, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 
 
@@ -617,7 +657,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
+	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 // Staff of Mars			Keywords: Damage 10/10, Damage bonus Burn + Stamina
 /obj/item/twohanded/sledgehammer/marsstaff
@@ -637,7 +677,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	if(!istype(M))
 		return
 	M.apply_damage(2, BURN, 0)
-	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee")) 
+	M.apply_damage(25, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 /obj/item/twohanded/sledgehammer/marsstaff/pickup(mob/living/user, slot)
 	..()

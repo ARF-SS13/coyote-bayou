@@ -14,7 +14,7 @@
 
 /obj/item/clothing/mask/gas/enclave
 	name = "gas mask mk 2"
-	desc = "Gas mask with efficient cleanable filters and flash protected lenses"
+	desc = "An advanced gas mask with efficient cleanable filters and flash protected lenses."
 	icon_state = "gasmask_enclave"
 	item_state = "gasmask_enclave"
 	flash_protect = 2
@@ -110,6 +110,7 @@
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 1.25)
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
+	clothing_flags = null
 	actions_types = list(/datum/action/item_action/adjust)
 	dog_fashion = null
 	var/list/tikimask_designs = list()

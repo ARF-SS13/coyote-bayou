@@ -15,7 +15,7 @@
 	var/list/datum/stack_recipe/recipes
 	var/singular_name
 	var/amount = 1
-	var/max_amount = 50 //also see stack recipes initialisation, param "max_res_amount" must be equal to this max_amount
+	var/max_amount = 5000 //also see stack recipes initialisation, param "max_res_amount" must be equal to this max_amount
 	var/is_cyborg = 0 // It's 1 if module is used by a cyborg, and uses its storage
 	var/datum/robot_energy_storage/source
 	var/cost = 1 // How much energy from storage it costs

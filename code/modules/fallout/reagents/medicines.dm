@@ -11,6 +11,7 @@
 	overdose_threshold = 35
 	addiction_threshold = 25
 	value = REAGENT_VALUE_COMMON
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
 	if(iscarbon(M) && M.stat != DEAD)
@@ -46,6 +47,12 @@
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
 		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.overeatduration = 0
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
@@ -64,6 +71,7 @@
 	description = "Rapidly heals damage when injected. A poor man's stimpak."
 	reagent_state = LIQUID
 	color = "#FFA500"
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-2.5*REAGENTS_EFFECT_MULTIPLIER)
@@ -81,6 +89,7 @@
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 25
 	addiction_threshold = 16
+	ghoulfriendly = TRUE
 
 datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjust_nutrition(-3)
@@ -109,6 +118,12 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
 		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.overeatduration = 0
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
@@ -130,6 +145,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 50 //If you eat too much you get poisoned from all the human flesh you're eating
 	var/longpork_hurting = 0
 	var/longpork_lover_healing = -2
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/longpork_stew/on_mob_life(mob/living/carbon/M)
 	var/is_longporklover = FALSE
@@ -229,7 +245,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
 	var/heal_factor = -3 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk. //it's weaker than it used to be, because it's insanely easy to mass produce (availability based on plant potency, which scales upward)
+	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
 	var/is_tribal = FALSE
@@ -265,6 +282,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	overdose_threshold = 30
 	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
 	var/heal_factor_perk = -2.9 //Multiplier if you have the right perk.
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
 	var/is_tribal = FALSE
@@ -313,6 +331,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = LIQUID
 	color = "#ff6100"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
 	if(M.radiation > 0)
@@ -332,6 +351,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = LIQUID
 	color = "#ff7200"
 	metabolization_rate = 2 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/radaway/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
@@ -407,6 +427,12 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.AdjustUnconscious(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustStaminaLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	..()
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	. = TRUE
 
 /datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
@@ -536,6 +562,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	reagent_state = SOLID
 	overdose_threshold = 25
 	addiction_threshold = 15
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/mentat/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
@@ -613,6 +640,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	description = "Treats addictions while also purging other chemicals from the body. Side effects include nausea."
 	reagent_state = SOLID
 	color = "#C8A5DC"
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/fixer/on_mob_life(mob/living/carbon/M)
 //	for(var/datum/reagent/R in M.reagents.reagent_list)
@@ -640,6 +668,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	taste_description = "deliciousness"
 	overdose_threshold = 30
 	color = "##DBCE18"
+	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/gaia/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.75*REAGENTS_EFFECT_MULTIPLIER, 0)

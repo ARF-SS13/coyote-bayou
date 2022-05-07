@@ -305,7 +305,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if (HAS_TRAIT(H, TRAIT_TAGGER))
-			cost *= 0.5
+			cost *= 0.25
 	var/charges_used = use_charges(user, cost)
 	if(!charges_used)
 		return

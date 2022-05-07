@@ -512,5 +512,5 @@ obj/item/storage/bag/chemistry/tribal
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
-	STR.max_items = 30
-	STR.can_hold = typecacheof(list(/obj/item/salvage))
+	STR.max_items = 50000
+	STR.can_hold = typecacheof(list(/obj/item/salvage, /obj/item/advanced_crafting_components, /obj/item/stack/crafting, /obj/item/crafting,))

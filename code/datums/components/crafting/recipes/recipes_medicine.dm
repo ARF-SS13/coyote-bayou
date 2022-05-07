@@ -15,14 +15,6 @@
 				/datum/reagent/medicine/styptic_powder = 10)
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/suture
-	name = "Improvised Suture"
-	result = /obj/item/stack/medical/suture/emergency/five
-	time = 30
-	reqs = list(/obj/item/stack/medical/gauze/improvised = 1,
-				/datum/reagent/consumable/ethanol = 10)
-	category = CAT_MEDICAL
-
 /datum/crafting_recipe/ointment
 	name = "Improvised Ointment"
 	result = /obj/item/stack/medical/ointment/five

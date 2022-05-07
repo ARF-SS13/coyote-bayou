@@ -1,4 +1,4 @@
-/datum/job/tribals //do NOT use this for anything, it's just to store faction datums
+/*/datum/job/tribals //do NOT use this for anything, it's just to store faction datums
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
@@ -53,7 +53,7 @@ Tribal Chief
 	description = "The leader and central political figure in the Wayfarer Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
 	outfit = /datum/outfit/job/tribal/f13chief
-	exp_requirements = 2400
+	exp_requirements = 1200
 
 	access = list(ACCESS_TRIBE)
 	minimal_access = list(ACCESS_TRIBE)
@@ -97,7 +97,7 @@ Tribal Shaman
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The spiritual leader and cultural core of the Wayfarer Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
 	selection_color = "#006666"
-	exp_requirements = 1800
+	exp_requirements = 900
 
 	outfit = /datum/outfit/job/tribal/f13shaman
 
@@ -172,7 +172,7 @@ Tribal Head Hunter
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Wayfarers. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
-	exp_requirements = 1800
+	exp_requirements = 900
 
 	outfit = /datum/outfit/job/tribal/f13Hhunter
 	access = list(ACCESS_TRIBE)
@@ -226,7 +226,7 @@ Druid
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Druid in the tribe; you perform rituals, and bless pre-collapse relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
-	exp_requirements = 600
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/tribal/f13druid
 	access = list(ACCESS_TRIBE)
@@ -283,7 +283,7 @@ Villager
 	supervisors = "Tribal Chief, Shaman and Headhunter"
 	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
-	exp_requirements = 300
+	exp_requirements = 150
 
 	outfit = /datum/outfit/job/tribal/f13villager
 
@@ -378,7 +378,7 @@ Hunter
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a machine spirit that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 450
 
 	outfit = /datum/outfit/job/tribal/f13hunter
 
@@ -496,7 +496,7 @@ Guardian
 	supervisors = "All leadership, but the Chief is priority"
 	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. Do not leave the village unless circumstances allow it."
 	selection_color = "#006666"
-	exp_requirements = 900
+	exp_requirements = 450
 
 	outfit = /datum/outfit/job/tribal/f13guardian
 
@@ -524,4 +524,4 @@ Guardian
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1)
-
+*/

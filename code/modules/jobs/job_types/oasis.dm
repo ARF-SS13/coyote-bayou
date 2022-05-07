@@ -25,10 +25,11 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Oasis"
-	description = "You are the benevolent tyrant of Oasis, chosen by the people to represent and lead them. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the Region to better the people, and yourself, of course."
+	description = "You are the civil leader of Oasis, chosen by the people to represent and lead them from your manor. Recent power struggles place the town within a treacherous position, and a good Mayor will have to work hard to stay out of the crossfire. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the region to better the people - and yourself, of course."
+	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13mayor
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -131,9 +132,10 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "You are the mayor's assistant, you help them with anything and everything they require and make sure trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings. An efficient and smooth running town means a happy mayor."
+	description = "The settlement of Oasis is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
+	enforces = "You are the stand-in leader of Oasis if a Mayor does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 800
+	exp_requirements = 400
 
 	outfit = /datum/outfit/job/den/f13secretary
 
@@ -204,10 +206,11 @@ Mayor
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Oasis Government"
-	description = "You are the Mayor's best friend, you helped them get where they are. While they handle civil matters, you've been rewarded with more hands-on work, as preferred. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out. You have nowhere left to go, if this town falls, so will you."
+	supervisors = "The Mayor"
+	description = "You are the civil enforcer of Oasis, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
+	enforces = "You are the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
-	exp_requirements = 1500
+	exp_requirements = 750
 
 	outfit = /datum/outfit/job/den/f13sheriff
 
@@ -307,12 +310,12 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Oasis Police Department"
-	description = "You've passed the training and tests to join the OPD, and your loyalty to the Chief is absolute - this is your new home, your family. This oasis of civilization will not fall as long as you breathe. Protect its citizens and property, for that is your new purpose."
+	supervisors = "The Sheriff"
+	description = "You are a loyal protector of Oasis, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out."
+	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
-	exp_requirements = 12
 	exp_type = EXP_TYPE_OASIS
-	exp_requirements = 600
+	exp_requirements = 300
 
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
@@ -418,8 +421,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Oasis Government & Police Department"
-	description = "Growing up in the Oasis, you have an endless love for the sacred Oak, for nowhere in the valley is the soil as fertile, the bounty as rich. Behind the safety of the walls, you grow crops, medicines, and raise livestock. The community depends on you, you are a manifestation of the Oak’s will."
+	supervisors = "The Mayor"
+	description = "A true labourer of the land knows that nowhere in the valley is the soil as fertile or the bounty as rich as within the settlement of Oasis, all thanks to the sacred oak. Behind the safety of these walls, you grow crops, medicines, and raise livestock. The community depends on you, as a town cannot prosper without a fresh food source - especially in times of siege."
+	enforces = "Farming is a public service, and you are under control of local governance - but by default you are expected to work with the private business of The Blue Oyster in feeding the town. Ask them for a cut of the profits."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -471,8 +475,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Oasis Government & Police Department"
-	description = "Prospecting is a complicated business, some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the skills you possess in mining and delving through the ruins of the fallen empire. Not many survive this line of business, and the pay has always been uncertain, but perhaps today you'll strike gold."
+	supervisors = "The Mayor"
+	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Oasis understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
+	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13prospector
@@ -533,8 +538,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 0
 	spawn_positions = 0
-	supervisors = "law and order"
-	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the Town. Just remember - medicine doesn't come free, and you aren't here out of the kindness of your heart. Be sure to turn a profit, or the Mayor might reconsider your position!"
+	supervisors = "The Mayor"
+	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Oasis. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
+	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13dendoc
@@ -582,8 +588,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "Oasis Government & Police Department"
-	description = "As the innkeeper, you are responsible for comfort and full bellies in town. Hidden safely away behind the town walls, you are free to refine your skills without always watching your back. As a citizen of the town you must follow its laws. However the inn is your private business, and you decide who is allowed to dine or reside in your hospitality."
+	supervisors = "The Mayor"
+	description = "As staff of the Blue Oyster, you are responsible for comfort and full bellies in the settlement of Oasis. Hidden safely away behind the walls, you are free to refine your skills without always watching your back. Work closely with the Farmers to ensure fresh food is always on the table, and remember that you are allowed to decide who is allowed to dine or reside in your hospitality."
+	enforces = "The Blue Oyster is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -664,8 +671,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 8
 	spawn_positions = 8
-	supervisors = "Oasis Government & Police Department"
-	description = "You are a citizen living in the Town of Oasis - as the name suggests, it is a somewhat safe place amidst the chaos of the continent. Treat it as such, be sure to follow the laws of the land and do not associate with those who have a tendency not to, or you are likely to face exile. Remember that Oasis is your home, DO NOT act in a manner that would threaten it's safety or other citizens."
+	supervisors = "The Mayor"
+	description = "You are a citizen living in the settlement of Oasis - one of the safest places amidst the widespread power struggles of the region. Treat your town with respect and make sure to follow the laws, as your status may be revoked if you are considered a danger to the populace. One of the local businesses may have work for you if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -800,7 +807,8 @@ Mayor
 	flag = F13DETECTIVE
 	total_positions = 0
 	spawn_positions = 0
-	description = "As a Detective you are a private eye who assists clients to gather evidence, conduct surveillance, find missing people, and verify information. As a private investigator you are not responsible for peacekeeping the valley, but for finding answers. Your life is already over, make the ending mean something."
+	description = "You are a private eye working from within the settlement of Oasis. It is your role to assist clients in gathering evidence, conducting surveillance, finding missing people, and verifying information. Remember that you are in no way responsible for peacekeeping, though you may be approached by local governance should they seek your particular set of skills. There's always a job for you in a region as dangerous as this."
+	enforces = "Your detective agency is a private business and you are not under direct control of local governance, but are subject to their laws."
 	supervisors = "paying clients"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
@@ -846,18 +854,16 @@ Mayor
 		/obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
-
-/*
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER
 	department_flag = DEP_OASIS
-	total_positions = 2
+	total_positions = 1
 	spawn_positions = 2
-	supervisors = "law and order"
-	description = "No matter where society lurks, profit and fortune are there to be made! It is up to you to distribute caps and earn interest while safekeeping items of value for the wastelands denizens! Ensure you make a profit and make your money back no matter the cost. You are to work alongside the Town, and should not be attempting to harm the residents of Oasis."
+	supervisors = "The Mayor"
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Oasis. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
+	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
-	enforces = "You are in a Job meant for encouraging roleplay with others, do not abandon your post or hoard money unless absolutely necessary. Do not use the caps provided for yourself."
 	outfit = /datum/outfit/job/den/f13banker
 
 	loadout_options = list(
@@ -888,11 +894,11 @@ Mayor
 	glasses = /obj/item/clothing/glasses/monocle
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
 	suit = /obj/item/clothing/suit/f13/banker
-	gloves = /obj/item/clothing/gloves/color/white/redcoat
+	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
 	/obj/item/cane=1,
-	/obj/item/gun/ballistic/automatic/hobo/zipgun=1
+	/obj/item/gun/ballistic/automatic/hobo/zipgun=1,
 	/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 	/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 	/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1
@@ -923,7 +929,6 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1
 		)
-*/
 
 /*--------------------------------------------------------------*/
 
@@ -934,9 +939,10 @@ Mayor
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "free hand of the market"
-	description = "The greed of the United States survived better than its people. You are an organ of this greed. Ensure its continuation."
+	description = "The big trading caravan companies have often neglected the humble settlement of Oasis. That leaves one thing for certain - opportunities for local businesses! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
+	enforces = "Your store is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
-	exp_requirements = 600
+	exp_requirements = 300
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)

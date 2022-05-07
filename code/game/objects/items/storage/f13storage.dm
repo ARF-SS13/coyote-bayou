@@ -149,8 +149,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 600
-	STR.max_items = 600
+	STR.max_combined_w_class = 6000
+	STR.max_items = 6000
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
 
 /obj/item/storage/bag/casings/equipped(mob/user)

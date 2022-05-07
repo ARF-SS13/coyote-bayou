@@ -37,8 +37,9 @@
 
 /obj/effect/mob_spawn/human/corpse/vault
 	name = "Vault Dweller"
+	gloves = /obj/item/pda
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	shoes = /obj/item/clothing/shoes/sneakers/brown
+	shoes = /obj/item/clothing/shoes/jackboots
 
 /mob/living/simple_animal/hostile/vault/dweller
 	minimum_distance = 10
@@ -100,10 +101,12 @@
 
 /obj/effect/mob_spawn/human/corpse/vault/security
 	name = "Vault Security"
+	gloves = /obj/item/pda
+	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	suit = /obj/item/clothing/suit/armor/bulletproof
-	shoes = /obj/item/clothing/shoes/sneakers/brown
-	head = /obj/item/clothing/head/helmet/riot
+	suit = /obj/item/clothing/suit/armor/vest
+	shoes = /obj/item/clothing/shoes/jackboots
+	head = /obj/item/clothing/head/helmet/riot/vaultsec
 
 /////////////////
 // ENCLAVE NPC //
@@ -206,18 +209,18 @@
 
 /obj/effect/mob_spawn/human/corpse/enclave
 	name = "enclave specialist"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/f13/military
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = /obj/item/clothing/gloves/f13/military
-	mask = /obj/item/clothing/mask/gas
-	head = /obj/item/clothing/head/helmet/f13/combat/enclave
+	mask = /obj/item/clothing/mask/gas/enclave
+	head = /obj/item/clothing/head/f13/enclave/peacekeeper
 
 /obj/effect/mob_spawn/human/corpse/enclave/soldier
 	name = "enclave armored infantry"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/f13/military
+	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
+	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = /obj/item/clothing/gloves/f13/military
-	mask = /obj/item/clothing/mask/gas
+	mask = /obj/item/clothing/mask/gas/enclave
 
 
 /////////////////////
@@ -261,14 +264,13 @@
 
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Brotherhood Knight"
-	uniform = /obj/item/clothing/under/f13/bdu
+	uniform = /obj/item/clothing/under/syndicate/brotherhood
 	suit = /obj/item/clothing/suit/armor/f13/combat/brotherhood
-	shoes = /obj/item/clothing/shoes/f13/military
-	gloves = /obj/item/clothing/gloves/f13/military
-	//radio = /obj/item/device/radio/headset
-	//mask = /obj/item/clothing/mask/gas
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/combat
+	belt = 	/obj/item/storage/belt/military/assault
+	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
-	//back = /obj/item/weapon/storage/backpack
 
 /mob/living/simple_animal/hostile/bs/knight
 	name = "Brotherhood Knight"
@@ -281,12 +283,12 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/bs)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam
-	projectilesound = 'sound/weapons/resonator_fire.ogg'
+	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
+	projectilesound = 'sound/f13weapons/aep7fire.ogg'
 
 /mob/living/simple_animal/hostile/bs/paladin
 	name = "Brotherhood Paladin"
-	desc = "A Paladin equipped with an AER9 and T-45d power armor. The Brotherhood has arrived."
+	desc = "A Paladin equipped with an AER9 and T-51b power armor. The Brotherhood has arrived."
 	icon_state = "bs_paladin"
 	icon_living = "bs_paladin"
 	icon_dead = "bs_paladin"
@@ -297,16 +299,18 @@
 	health = 600
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam
-	projectilesound = 'sound/weapons/resonator_fire.ogg'
+	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
+	projectilesound = 'sound/f13weapons/aer9fire.ogg'
 
 /obj/effect/mob_spawn/human/corpse/bs/paladin
 	name = "Brotherhood Paladin"
-	uniform = /obj/item/clothing/under/f13/bdu
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t45d
-	shoes = /obj/item/clothing/shoes/f13/military
-	gloves = /obj/item/clothing/gloves/f13/military
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t45d
+	uniform = /obj/item/clothing/under/f13/recon
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/combat
+	belt = 	/obj/item/storage/belt/military/assault
+	mask = /obj/item/clothing/mask/gas/sechailer
+	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 
 
 ///////////////
@@ -351,9 +355,9 @@
 /obj/effect/mob_spawn/human/corpse/ncr
 	name = "NCR Trooper"
 	uniform = /obj/item/clothing/under/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
+	belt = /obj/item/storage/belt/military/assault/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/f13/ncr
 
 /mob/living/simple_animal/hostile/ncr/trooper
@@ -367,34 +371,34 @@
 	loot = list(/obj/effect/mob_spawn/human/corpse/ncr)
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a762
-	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/a762
+	projectiletype = /obj/item/projectile/bullet/a556/simple
+	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
+	casingtype = /obj/item/ammo_casing/a556
 
-/mob/living/simple_animal/hostile/ncr/sergeant
-	name = "NCR Sergeant"
-	desc = "A Sergeant of the NCRA, wielding a heavy service rifle and equipped with a reinforced patrol vest."
+/mob/living/simple_animal/hostile/ncr/ranger
+	name = "NCR Ranger"
+	desc = "A Ranger of the NCRA, wielding a big iron on his hip and equipped with a ranger patrol vest."
 	icon_state = "ncr_sergeant"
 	icon_living = "ncr_sergeant"
 	icon_dead = "ncr_sergeant"
 	retreat_distance = 5
 	minimum_distance = 5
-	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/sergeant)
+	loot = list(/obj/effect/mob_spawn/human/corpse/ncr/ranger)
 	maxHealth = 200
 	health = 200
 	healable = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/bullet/a556/simple
-	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	casingtype = /obj/item/ammo_casing/a556
+	projectiletype = /obj/item/projectile/bullet/m44/simple
+	projectilesound = 'sound/f13weapons/44mag.ogg'
+	casingtype = /obj/item/ammo_casing/m44
 
-/obj/effect/mob_spawn/human/corpse/ncr/sergeant
-	name = "NCR Sergeant"
-	uniform = /obj/item/clothing/under/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/reinforced
-	shoes = /obj/item/clothing/shoes/f13/military/ncr
-	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
-	head = /obj/item/clothing/head/f13/ncr
+/obj/effect/mob_spawn/human/corpse/ncr/ranger
+	name = "NCR Ranger"
+	uniform = /obj/item/clothing/under/f13/ranger/patrol
+	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	shoes = /obj/item/clothing/shoes/f13/military/leather
+	gloves = /obj/item/clothing/gloves/patrol
+	head = /obj/item/clothing/head/f13/ranger
 
 ////////////////
 // LEGION NPC //
@@ -437,9 +441,9 @@
 
 /obj/effect/mob_spawn/human/corpse/legion
 	name = "Legion Prime"
-	uniform = /obj/item/clothing/under/f13/rag
-	suit = /obj/item/clothing/suit/armor/f13/legion/recruit
-	shoes = /obj/item/clothing/shoes/f13/military/leather
+	uniform = /obj/item/clothing/under/f13/legskirt
+	suit = /obj/item/clothing/suit/armor/f13/legion/prime
+	shoes = /obj/item/clothing/shoes/f13/military/legion
 	head = /obj/item/clothing/head/helmet/f13/legion/prime
 
 /mob/living/simple_animal/hostile/legion/prime
@@ -455,8 +459,8 @@
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
-	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/a762
+	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
+	casingtype = /obj/item/ammo_casing/a762/sport
 
 /mob/living/simple_animal/hostile/legion/decan
 	name = "Legion Decanus"
@@ -473,15 +477,15 @@
 	healable = 1
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
-	projectilesound = 'sound/weapons/garandshot.ogg'
-	casingtype = /obj/item/ammo_casing/a762
+	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
+	casingtype = /obj/item/ammo_casing/a762/sport
 
 /obj/effect/mob_spawn/human/corpse/legion/decan
 	name = "Legion Decanus"
-	uniform = /obj/item/clothing/under/f13/rag
+	uniform = /obj/item/clothing/under/f13/legskirt
 	suit = /obj/item/clothing/suit/armor/f13/legion/vet
-	shoes = /obj/item/clothing/shoes/f13/military/leather
-	gloves = /obj/item/clothing/gloves/f13/doom
+	shoes = /obj/item/clothing/shoes/f13/military/legion
+	gloves = /obj/item/clothing/gloves/legion
 	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan
 
 ////////////////

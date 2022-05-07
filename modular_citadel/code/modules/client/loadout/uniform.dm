@@ -635,15 +635,15 @@
 /datum/gear/uniform/suit/blueshift
 	name = "security suit and tie"
 	path = /obj/item/clothing/under/rank/security/officer/blueshirt
-	cost = 2
+	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Sheriff",
+							"Chief of Police",
 							"Doctor",
 							"Citizen",
-							"Deputy",
+							"Officer",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",

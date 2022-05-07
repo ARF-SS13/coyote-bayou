@@ -88,73 +88,8 @@
 	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
 		user.take_bodypart_damage(5,5)
-
-/obj/item/melee/transforming/old_rusty
+/obj/item/melee/transforming/cleaving_saw/old_rusty
 	name = "Old Rusty"
 	desc = "A chosen weapon of a hunter made in the image of a cleaving saw but heavily improvised"
-	force = 15
+	force = 10
 	force_on = 30 //force when active
-	throwforce = 20
-	throwforce_on = 20
-	max_reach = 1
-	reach_on = 2
-	icon = 'icons/obj/lavaland/artefacts.dmi'
-	lefthand_file = 'icons/mob/inhands/64x64_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/64x64_righthand.dmi'
-	inhand_x_dimension = 64
-	inhand_y_dimension = 64
-	icon_state = "cleaving_saw"
-	icon_state_on = "cleaving_saw_open"
-	slot_flags = ITEM_SLOT_BELT
-	attack_verb_off = list("attacked", "sawed", "sliced", "torn", "ripped", "diced", "cut")
-	attack_verb_on = list("cleaved", "swiped", "slashed", "chopped")
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	hitsound_on = 'sound/weapons/bladeslice.ogg'
-	w_class = WEIGHT_CLASS_BULKY
-	sharpness = SHARP_EDGED
-	faction_bonus_force = 30
-	nemesis_factions = list("deathclaw", "raider")
-	var/transform_cooldown
-	var/swiping = FALSE
-	var/bleed_stacks_per_hit = 3
-	total_mass = 2.75
-	total_mass_on = 5
-	attack_speed = 0
-	attack_unwieldlyness = CLICK_CD_MELEE * 0.5
-
-/obj/item/melee/transforming/old_rusty/examine(mob/user)
-	. = ..()
-	. += "<span class='notice'>It is [active ? "open, and will cleave enemies in a wide arc":"closed, and can be used for rapid consecutive attacks that cause beastly enemies to bleed"].<br>\
-	Both modes will build up existing bleed effects, doing a burst of high damage if the bleed is built up high enough.<br>\
-	Transforming it immediately after an attack causes the next attack to come out faster.</span>"
-
-/obj/item/melee/transforming/old_rusty/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is [active ? "closing [src] on [user.p_their()] neck" : "opening [src] into [user.p_their()] chest"]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
-	transform_cooldown = 0
-	transform_weapon(user, TRUE)
-	return BRUTELOSS
-
-/obj/item/melee/transforming/old_rusty/transform_weapon(mob/living/user, supress_message_text)
-	if(transform_cooldown > world.time)
-		return FALSE
-	. = ..()
-	if(.)
-		if(active)
-			attack_unwieldlyness = CLICK_CD_MELEE
-		else
-			attack_unwieldlyness = CLICK_CD_MELEE * 0.5
-		transform_cooldown = world.time + (CLICK_CD_MELEE * 0.5)
-		user.SetNextAction(CLICK_CD_MELEE * 0.25, considered_action = FALSE, flush = TRUE)
-
-/obj/item/melee/transforming/old_rusty/transform_messages(mob/living/user, supress_message_text)
-	if(!supress_message_text)
-		if(active)
-			to_chat(user, "<span class='notice'>You open [src]. It will now cleave enemies in a wide arc.</span>")
-		else
-			to_chat(user, "<span class='notice'>You close [src]. It will now attack rapidly and cause beastly enemies to bleed.</span>")
-	playsound(user, 'sound/magic/clockwork/fellowship_armory.ogg', 35, TRUE, frequency = 90000 - (active * 30000))
-
-/obj/item/melee/transforming/old_rusty/clumsy_transform_effect(mob/living/user)
-	if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
-		to_chat(user, "<span class='warning'>You accidentally cut yourself with [src], like a doofus!</span>")
-		user.take_bodypart_damage(10)

@@ -640,6 +640,16 @@ datum/crafting_recipe/steelbib/heavy
 //CLOTHING//
 
 
+/datum/crafting_recipe/tailor/breathmask
+	name = "Breath mask"
+	result = /obj/item/clothing/mask/breath
+	reqs = list(/obj/item/stack/sheet/cloth = 5,
+				/obj/item/stack/sheet/plastic = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"
 	result = /obj/item/clothing/under/f13/ncr
@@ -649,7 +659,6 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 	always_available = FALSE
-
 /datum/crafting_recipe/tailor/legionuniform
 	name = "Legion Uniform"
 	result = /obj/item/clothing/under/f13/legskirt

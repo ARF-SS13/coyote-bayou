@@ -15,6 +15,7 @@
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
+	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))

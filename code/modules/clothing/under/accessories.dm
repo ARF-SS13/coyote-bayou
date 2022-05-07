@@ -631,3 +631,49 @@
 	desc = "A Chief Ranger should wear this."
 	icon_state = "colonelrank" //TO-DO: Add a new sprite
 	item_color = "colonelrank"
+
+/* Enclave ranks */
+// Bunker duty
+/obj/item/clothing/accessory/enclave
+	name = "(E-2) Private rank pins"
+	desc = "A rank pin denominating its wearer as Private within United States army."
+	icon_state = "private"
+	minimize_when_attached = TRUE
+
+// Private
+/obj/item/clothing/accessory/enclave/private_firstclass
+	name = "(E-3) Private first class rank pins"
+	desc = "A rank pin denominating its wearer as Private first class within United States army."
+	icon_state = "private-firstclass"
+
+// Specialist
+/obj/item/clothing/accessory/enclave/specialist
+	name = "(E-4) Specialist rank pins"
+	desc = "A rank pin denominating its wearer as Specialist within United States army."
+	icon_state = "specialist"
+
+// Sergeant
+/obj/item/clothing/accessory/enclave/sergeant
+	name = "(E-5) Sergeant rank pins"
+	desc = "A rank pin denominating its wearer as Sergeant within United States army."
+	icon_state = "sergeant"
+
+// Master Sergeant
+/obj/item/clothing/accessory/enclave/master_sergeant
+	name = "(E-8) Master Sergeant rank pins"
+	desc = "A rank pin denominating its wearer as Master Sergeant within United States army."
+	icon_state = "master-sergeant"
+
+// Lieutenant
+/obj/item/clothing/accessory/enclave/lieutenant
+	name = "(O-2) First Lieutenant rank pins"
+	desc = "A rank pin denominating its wearer as First Lieutenant within United States army."
+	icon_state = "firstlieutenantrank"
+
+//donator
+/obj/item/clothing/accessory/cia_badge
+	name = "CIA Badge"
+	desc = "A strange pre-war badge, the letters 'CIA' are written at the top, a seal reading 'Central Intelligence Agency, United States of America' sits in the middle of it with the letters 'U S' flanking it, and the words 'Special Agent' are written at the bottom."
+	icon_state = "cia_badge"
+	item_state = "cia_badge"
+	minimize_when_attached = FALSE

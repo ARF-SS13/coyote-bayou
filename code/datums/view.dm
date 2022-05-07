@@ -85,8 +85,9 @@
 		return
 	chief.change_view(getView())
 	safeApplyFormat()
-	if(chief.prefs.auto_fit_viewport)
-		chief.fit_viewport()
+	if(!QDELETED(chief))
+		if(chief.prefs.auto_fit_viewport)
+			chief.fit_viewport()
 
 /datum/viewData/proc/supress()
 	is_suppressed = TRUE

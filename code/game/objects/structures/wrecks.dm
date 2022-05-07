@@ -224,7 +224,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/five_tires
-	name = "Tire Pile"
+	name = "tire pile"
 	desc = "A pile of tires."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "five_t"
@@ -232,7 +232,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/two_tire
-	name = "Tires"
+	name = "tires"
 	desc = "A set of two tires, now where are the other two?"
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "two_t"
@@ -240,7 +240,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/one_tire
-	name = "Tire"
+	name = "tire"
 	desc = "A single tire."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "one_t"
@@ -248,7 +248,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/halftire
-	name = "Buried Tire"
+	name = "buried tire"
 	desc = "Its not treasure, but it is partially buried."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "half_t"
@@ -258,7 +258,7 @@
 	layer = TURF_LAYER
 
 /obj/structure/wreck/trash/four_barrels
-	name = "Barrels"
+	name = "barrels"
 	desc = "Some metal barrels."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "four_b"
@@ -266,7 +266,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/three_barrels
-	name = "Barrels"
+	name = "barrels"
 	desc = "Some metal barrels."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "three_b"
@@ -274,7 +274,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/two_barrels
-	name = "Barrels"
+	name = "barrels"
 	desc = "Some metal barrels."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "two_b"
@@ -282,7 +282,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/one_barrel
-	name = "Barrels"
+	name = "barrel"
 	desc = "Some metal barrels."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "one_b"
@@ -290,7 +290,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/engine
-	name = "Engine"
+	name = "engine"
 	desc = "If only you picked the automechanics perk."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "engine"
@@ -298,7 +298,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/autoshaft
-	name = "Automobile Shaft"
+	name = "automobile shaft"
 	desc = "It probably was in a vehicle at one time."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "auto_shaft"
@@ -308,7 +308,7 @@
 	layer = TURF_LAYER
 
 /obj/structure/wreck/trash/bus_door
-	name = "Lonely Bus Door"
+	name = "bus door"
 	desc = "A bus door, missing the rest of the bus."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "bus_door"
@@ -318,7 +318,7 @@
 	layer = TURF_LAYER
 
 /obj/structure/wreck/trash/secway
-	name = "Broken Secway"
+	name = "broken secway"
 	desc = "Looks like the axle was split in half."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "secwaybroke"
@@ -326,7 +326,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/brokenvendor
-	name = "Broken Vendor"
+	name = "broken vendor"
 	desc = "Looks like it it fell down by force."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "technical_pile3"
@@ -334,7 +334,7 @@
 	bound_height = 32
 
 /obj/structure/wreck/trash/machinepile
-	name = "Broken Machinery"
+	name = "broken machinery"
 	desc = "Looks like broken machinery."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "technical_pile1"
@@ -381,7 +381,7 @@
 
 
 /obj/structure/wreck/trash/machinepiletwo
-	name = "Broken Machinery"
+	name = "broken machinery"
 	desc = "Looks like broken machinery."
 	icon = 'icons/fallout/trash.dmi'
 	icon_state = "technical_pile2"

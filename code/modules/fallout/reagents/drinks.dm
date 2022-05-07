@@ -7,6 +7,7 @@
 	glass_name = "Nuka Cola"
 	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
 	overdose_threshold = 100
+	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -30,6 +31,7 @@
 	glass_icon_state = "sunsetglass"
 	glass_name = "glass of Sunset Sarsaparilla"
 	glass_desc = "Beverage of the West Coast."
+	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/sunset/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -46,6 +48,7 @@
 	glass_icon_state = "vimglass"
 	glass_name = "glass of Vim"
 	glass_desc = "Unrelated to Nuka-Cola, Vim trademark Circa 2077."
+	ghoulfriendly = TRUE
 
 /datum/reagent/consumable/vim/on_mob_life(mob/living/carbon/M)
 	M.adjustToxLoss(-0.5, 0)

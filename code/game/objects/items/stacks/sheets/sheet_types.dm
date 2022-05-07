@@ -425,6 +425,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
 	new/datum/stack_recipe("improvised gauze", /obj/item/stack/medical/gauze/improvised, 1, 2, 6), \
+	new/datum/stack_recipe("improvised suture", /obj/item/stack/medical/suture/emergency, 3), \
 	new/datum/stack_recipe("rag", /obj/item/reagent_containers/rag, 1), \
 	new/datum/stack_recipe("towel", /obj/item/reagent_containers/rag/towel, 3), \
 	new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
@@ -853,7 +854,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 /obj/item/stack/sheet/cotton
 	name = "raw cotton bundle"
 	desc = "A bundle of raw cotton ready to be spun on the loom."
-	max_amount = 80
+	max_amount = 5000
 	singular_name = "raw cotton ball"
 	icon_state = "sheet-cotton"
 	resistance_flags = FLAMMABLE
@@ -948,7 +949,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throwforce = 1
 	throw_speed = 1
 	throw_range = 2
-	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
+	max_amount = 5000 //reduced from 500, made stacks sprites irrelevant due to scaling.
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")
@@ -985,7 +986,7 @@ prewar alloys
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
-	custom_materials = list()
+	custom_materials = list(/datum/material/iron = 10000)
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)

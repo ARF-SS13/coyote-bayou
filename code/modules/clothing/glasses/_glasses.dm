@@ -145,6 +145,12 @@
 	desc = "Avast ye wasteys!"
 	icon_state = "eyepatch"
 	item_state = "eyepatch"
+	
+/obj/item/clothing/glasses/eyepatch/goji
+	name = "emblazoned eyepatch"
+	desc = "You have the eye of a mad dog!"
+	icon_state = "Gojipatch"
+	item_state = "Gojipatch"
 
 /obj/item/clothing/glasses/eyepatch/syndicate
 	name = "cybernetic eyepatch"

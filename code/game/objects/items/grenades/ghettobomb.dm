@@ -53,6 +53,10 @@
 	. = ..()
 	soundloop = new(list(src), FALSE)
 
+/obj/item/grenade/homemade/coffeepotbomb/Destroy()
+	QDEL_NULL(soundloop)
+	return ..()
+
 /obj/item/grenade/homemade/coffeepotbomb/attack_self(mob/user) //
 	if(!active)
 		if(!botch_check(user))
