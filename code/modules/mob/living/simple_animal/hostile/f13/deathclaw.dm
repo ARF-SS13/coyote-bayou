@@ -95,6 +95,20 @@
 		new /obj/item/melee/unarmed/deathclawgauntlet(T)
 	. = ..()
 
+//Power Armor Deathclaw the tankest and the scariest deathclaw in the West. One mistake will end you. May the choice be with you.
+/mob/living/simple_animal/hostile/deathclaw/power_armor
+	name = "power armored deathclaw"
+	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. Someone had managed to put power armor on him."
+	icon_state = "combatclaw"
+	icon_living = "combatclaw"
+	icon_dead = "combatclaw_dead"
+	maxHealth = 2500
+	health = 2500
+	stat_attack = UNCONSCIOUS
+	melee_damage_lower = 70
+	melee_damage_upper = 80
+	armour_penetration = 0.7
+
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)
 		return
