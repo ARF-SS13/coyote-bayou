@@ -44,8 +44,8 @@
 	var/datum/disease/fev_disease = /datum/disease/transformation/mutant
 
 /datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
-	if(istype(fev_disease))
-		C.ForceContractDisease(new fev_disease(), FALSE, TRUE)
+	if(ispath(fev_disease))
+		C.ForceContractDisease(new fev_disease, FALSE, TRUE)
 
 //FEV - I: Unstable
 /datum/reagent/toxin/FEV_solution/one
@@ -75,10 +75,6 @@
 	description = "A version of FEV that has been modified by radiation. It is suggested that only radiation-free humans use it."
 	fev_disease = /datum/disease/transformation/mutant/super
 
-/datum/reagent/toxin/FEV_solution/two/on_mob_life(mob/living/carbon/C)
-	C.adjustCloneLoss(3,0)
-	return ..()
-
 /datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
 	if(C.radiation < RAD_MOB_SAFE)
 		C.reagents.remove_reagent(src.type,10) // Clean up
@@ -88,10 +84,10 @@
 			to_chat(C, "<span class='danger'>IT BURNS!</span>")
 			C.emote("scream")
 			C.adjustFireLoss(10,0)
-		C.adjustFireLoss(4,0)
+		C.adjustFireLoss(5,0)
 		C.apply_effect(10,EFFECT_IRRADIATE,0) // Now the only thing you are turning into is a ghoul
 		C.Jitter(2)
-		return
+	return
 
 //FEV - Curling 13: The murderous type
 /datum/reagent/toxin/FEV_solution/curling
