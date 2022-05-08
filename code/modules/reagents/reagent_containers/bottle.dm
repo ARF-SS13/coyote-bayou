@@ -440,11 +440,28 @@
 	volume = 60
 	list_reagents = list(/datum/reagent/blackpowder = 60)
 
+// FEV
 /obj/item/reagent_containers/glass/bottle/FEV_solution
-	name = " FEV bottle"
+	name = "FEV bottle"
 	desc = "A small vial of the Forced Evolutionary Virus. You think that consuming this would be a bad idea."
-	list_reagents = list(/datum/reagent/toxin/FEV_solution = 30)
-	
+	list_reagents = list(/datum/reagent/toxin/FEV_solution/one = 30)
+
+// The bottles are named similarly. They'll never know what hit 'em
+/obj/item/reagent_containers/glass/bottle/FEV_solution/two
+	list_reagents = list(/datum/reagent/toxin/FEV_solution/two = 30)
+
+/obj/item/reagent_containers/glass/bottle/FEV_solution/curling
+	list_reagents = list(/datum/reagent/toxin/FEV_solution/curling = 30)
+
+//Curling 13 vaccine
+/obj/item/reagent_containers/glass/bottle/curling_vaccine
+	name = "Curling 13 vaccine bottle"
+	desc = "A vial with a vaccine intended for use by the Enclave personnel to prevent Curling 13 infection."
+
+/obj/item/reagent_containers/glass/bottle/curling_vaccine/Initialize()
+	. = ..()
+	src.reagents.add_reagent(/datum/reagent/vaccine, 30, list(/datum/disease/curling_thirteen))
+
 /obj/item/reagent_containers/glass/bottle/gaia
 	name = "gaia bottle"
 	desc = "A large bottle containing gaia."
