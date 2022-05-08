@@ -115,7 +115,7 @@
 	name = "bag with reloaded 9mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 	ammo_type = /obj/item/ammo_casing/c9mm/improv
 
@@ -145,7 +145,7 @@
 	name = "bag with reloaded .38 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 	ammo_type = /obj/item/ammo_casing/c38/improv
 
 
@@ -175,7 +175,7 @@
 	name = "bag with reloaded 10mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 
 //.357 Magnum
 /obj/item/ammo_box/a357box
@@ -205,7 +205,7 @@
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	ammo_type = /obj/item/ammo_casing/a357/improv
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 
 //.44 Magnum
 /obj/item/ammo_box/m44box
@@ -363,7 +363,7 @@
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
-	multiple_sprites = 1
+	multiple_sprites = 3
 	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)
 	icon_state = "improvshotbag"
 
