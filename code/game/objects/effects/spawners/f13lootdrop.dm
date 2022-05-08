@@ -563,7 +563,7 @@
 				)
 
 
-obj/effect/spawner/lootdrop/f13/medical/rnd/mid
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid
 	name = "mid dungeon science loot"	//to replace guns as treasure in slightly protected areas
 	lootcount = 1
 
@@ -578,7 +578,7 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/mid
 		)
 
 
-obj/effect/spawner/lootdrop/f13/medical/rnd/good
+/obj/effect/spawner/lootdrop/f13/medical/rnd/good
 	name = "good dungeon science loot"	//to replace guns as treasure in heavily guarded areas
 	lootcount = 1
 
@@ -596,7 +596,18 @@ obj/effect/spawner/lootdrop/f13/medical/rnd/good
 		/obj/item/reagent_containers/glass/bottle/fentanyl = 5,
 		/obj/item/reagent_containers/glass/bottle/frostoil = 5,
 		/obj/item/book/granter/trait/midsurgery = 5,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution = 2,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 2,
+		)
+
+/obj/effect/spawner/lootdrop/f13/medical/random_fev
+	name = "random FEV bottle"	//for when you can't decide what is worse
+	lootcount = 1
+
+	loot = list(
 		/obj/item/reagent_containers/glass/bottle/FEV_solution = 1,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/two = 1,
+		/obj/item/reagent_containers/glass/bottle/FEV_solution/curling = 1,
 		)
 
 /*	------------------------------------------------

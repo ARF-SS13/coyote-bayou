@@ -32,16 +32,28 @@
 	value = REAGENT_VALUE_UNCOMMON
 	pH = 13
 
+/* FEV reagents */
 /datum/reagent/toxin/FEV_solution
-	name = "Unstable FEV solution"
-	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
+	name = "master FEV solution"
+	description = "You aren't meant to see this..?"
 	color = "#00FF00"
 	toxpwr = 0
 	overdose_threshold = 18 // So, someone drinking 20 units will FOR SURE get overdosed
 	taste_description = "horrific agony"
 	taste_mult = 0.9
+	var/datum/disease/fev_disease = /datum/disease/transformation/mutant
 
-/datum/reagent/toxin/FEV_solution/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
+/datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
+	if(istype(fev_disease))
+		C.ForceContractDisease(new fev_disease(), FALSE, TRUE)
+
+//FEV - I: Unstable
+/datum/reagent/toxin/FEV_solution/one
+	name = "Unstable FEV solution"
+	description = "An incredibly lethal strain of the Forced Evolutionary Virus. Consume at your own risk."
+	fev_disease = /datum/disease/transformation/mutant/unstable
+
+/datum/reagent/toxin/FEV_solution/one/reaction_mob(mob/living/carbon/M, method=TOUCH, reac_volume)
 	if(!..())
 		return
 	if(!M.has_dna())
@@ -52,13 +64,47 @@
 		M.domutcheck()
 	..()
 
-/datum/reagent/toxin/FEV_solution/on_mob_life(mob/living/carbon/C)
+/datum/reagent/toxin/FEV_solution/one/on_mob_life(mob/living/carbon/C)
 	C.apply_effect(40,EFFECT_IRRADIATE,0)
 	C.adjustCloneLoss(3,0) // ~15 units will get you near crit condition.
 	return ..()
 
-/datum/reagent/toxin/FEV_solution/overdose_process(mob/living/carbon/C)
-	C.ForceContractDisease(new /datum/disease/transformation/mutant(), FALSE, TRUE)
+//FEV - II: The super mutie kind
+/datum/reagent/toxin/FEV_solution/two
+	name = "FEV-II solution"
+	description = "A version of FEV that has been modified by radiation. It is suggested that only radiation-free humans use it."
+	fev_disease = /datum/disease/transformation/mutant/super
+
+/datum/reagent/toxin/FEV_solution/two/on_mob_life(mob/living/carbon/C)
+	C.adjustCloneLoss(3,0)
+	return ..()
+
+/datum/reagent/toxin/FEV_solution/two/overdose_process(mob/living/carbon/C)
+	if(C.radiation < RAD_MOB_SAFE)
+		C.reagents.remove_reagent(src.type,10) // Clean up
+		return ..() // Infect with disease
+	else // You fucked up
+		if(prob(5))
+			to_chat(C, "<span class='danger'>IT BURNS!</span>")
+			C.emote("scream")
+			C.adjustFireLoss(10,0)
+		C.adjustFireLoss(4,0)
+		C.apply_effect(10,EFFECT_IRRADIATE,0) // Now the only thing you are turning into is a ghoul
+		C.Jitter(2)
+		return
+
+//FEV - Curling 13: The murderous type
+/datum/reagent/toxin/FEV_solution/curling
+	name = "Curling-13 solution"
+	description = "A heavily modified version of FEV, produced with intent to kill all 'mutated' lifeforms."
+	fev_disease = /datum/disease/curling_thirteen
+
+/datum/reagent/toxin/FEV_solution/curling/on_mob_add(mob/living/L)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		overdose_process(H) // Disease
+		H.reagents.remove_reagent(src.type,100) // Our job here is done
+		return
 
 /datum/reagent/toxin/mutagen
 	name = "Unstable mutagen"
