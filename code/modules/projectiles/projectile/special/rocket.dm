@@ -91,7 +91,7 @@
 
 /obj/item/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
 	..()
-	explosion(target, 0, 1, 2, 4)
+	explosion(target, 0, 0, 2, 4)
 	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
 
@@ -99,7 +99,7 @@
 	name ="\improper high yield HE missile"
 	desc = "Boom plus."
 	icon_state = "missile"
-	damage = 35
+	damage = 15
 	ricochets_max = 0 //it's a MISSILE
 
 /obj/item/projectile/bullet/a84mm_he_big/on_hit(atom/target, blocked=0)
