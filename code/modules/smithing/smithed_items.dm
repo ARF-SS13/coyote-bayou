@@ -14,7 +14,11 @@
 	icon_state = "ingot"
 	material_flags = MATERIAL_COLOR | MATERIAL_ADD_PREFIX
 	var/workability = 0
-
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 
 /obj/item/ingot/on_attack_hand(mob/user)
 	var/mob/living/carbon/human/H
@@ -365,7 +369,7 @@
 	icon_state = "ballandchain"
 	mob_overlay_icon = 'icons/fallout/onmob/items/miscellaneous.dmi'
 	item_state = "ballandchain"
-	strip_delay = 500
+	strip_delay = 300
 	equip_delay_other = 50
 	can_be_tied = FALSE
 	w_class = WEIGHT_CLASS_BULKY

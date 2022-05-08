@@ -47,6 +47,11 @@
 	icon_state = "anvil"
 	density = TRUE
 	anchored = TRUE
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 	var/busy = FALSE //If someone is already interacting with this anvil
 	var/workpiece_state = FALSE
 	var/datum/material/workpiece_material
@@ -99,6 +104,7 @@
 			var/skillmod = 4
 			if(workpiece_state == WORKPIECE_PRESENT)
 				add_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+				set_light_on(TRUE)
 			if(user.mind.skill_holder)
 				skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2
 			currentquality += skillmod
@@ -219,6 +225,7 @@
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
 		to_chat(user, "<span class='warning'>You overwork the metal, causing it to turn into useless slag!</span>")
 		cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+		set_light_on(FALSE)
 		var/turf/T = get_turf(src)
 		workpiece_state = FALSE
 		new /obj/item/stack/ore/slag(T)
@@ -231,11 +238,12 @@
 			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 25, 400, silent = FALSE)
 	for(var/i in smithrecipes)
 		if(i == stepsdone)
-			var/turf/T = get_turf(user)
+			var/turf/T = get_turf(src)
 			var/obj/item/smithing/create = smithrecipes[stepsdone]
 			var/obj/item/smithing/finisheditem = new create(T)
 			to_chat(user, "You finish your [finisheditem]!")
 			cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+			set_light_on(FALSE)
 			if(artifact)
 				to_chat(user, "It is an artifact, a creation whose legacy shall live on forevermore.") //todo: SSblackbox
 				currentquality = max(currentquality, 2)
