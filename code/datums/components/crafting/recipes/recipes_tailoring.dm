@@ -765,6 +765,24 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
+/datum/crafting_recipe/survivalpouch
+	name = "empty survival pouch"
+	result = /obj/item/storage/survivalkit_empty
+	reqs = list(/obj/item/stack/sheet/leather = 3)
+	tools = list(TOOL_WORKBENCH)
+	time = 25
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
+/datum/crafting_recipe/triplesurvivalpouch
+	name = "empty large survival pouch"
+	result = /obj/item/storage/survivalkit_triple_empty
+	reqs = list(/obj/item/stack/sheet/leather = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 25
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
 //General clothing
 
 /datum/crafting_recipe/jeans
