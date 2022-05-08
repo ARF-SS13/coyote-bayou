@@ -99,7 +99,7 @@
 	var/attack_knockdown = 0 // For how much time it will knockdown a target in melee
 
 	var/exit_delay = 40 //Time to exit mech
-	var/destruction_sleep_duration = 20 //Time that mech pilot is put to sleep for if mech is destroyed
+	var/destruction_sleep_duration = 50 //Time that mech pilot is put to sleep for if mech is destroyed
 	var/enter_delay = 40 //Time taken to enter the mech
 
 	var/is_currently_ejecting = FALSE //Mech cannot use equiptment when true, set to true if pilot is trying to exit mech

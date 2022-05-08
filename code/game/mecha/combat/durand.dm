@@ -9,7 +9,7 @@
 	icon_state = "durand"
 	step_in = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 600
+	max_integrity = 400
 	armor = list("melee" = 60, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 35, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
 	max_temperature = 30000
 	infra_luminosity = 8
