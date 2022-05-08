@@ -2133,8 +2133,8 @@
 				user.visible_message("[user] unfastens the external armor layer.", "<span class='notice'>You unfasten the external armor layer.</span>")
 	return TRUE
 
-/datum/component/construction/unordered/mecha_chassis/clarke
-	result = /datum/component/construction/mecha/clarke
+/datum/component/construction/unordered/mecha_chassis/ripley/clarke
+	result = /datum/component/construction/mecha/ripley/clarke
 	steps = list(
 		/obj/item/mecha_parts/part/clarke_head,
 		/obj/item/mecha_parts/part/clarke_torso,
@@ -2144,8 +2144,8 @@
 		/obj/item/mecha_parts/part/clarke_right_tread
 	)
 
-/datum/component/construction/mecha/clarke
-	result = /obj/mecha/working/clarke
+/datum/component/construction/mecha/ripley/clarke
+	result = /obj/mecha/working/ripley/clarke
 	base_icon = "clarke"
 	steps = list(
 		//1

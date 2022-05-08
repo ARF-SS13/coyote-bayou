@@ -63,6 +63,7 @@
 	var/completely_disabled = FALSE //stops the mech from doing anything
 	var/breach_time = 0
 	var/recharge_rate = 0
+	var/can_be_locked = FALSE //Whether the mech can be DNA-locked or not.
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos

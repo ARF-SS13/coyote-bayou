@@ -1,3 +1,11 @@
+/obj/mecha/medical
+	exit_delay = 25
+	enter_delay = 25
+	deflect_chance = 0
+	light_power = 9
+	light_range = 10
+	max_equip = 4
+
 /obj/mecha/medical/mechturn(direction)
 	setDir(direction)
 	playsound(src,'sound/mecha/mechmove01.ogg',40,1)

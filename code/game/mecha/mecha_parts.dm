@@ -400,7 +400,7 @@
 
 /obj/item/mecha_parts/chassis/clarke
 	name = "\improper Clarke chassis"
-	construct_type = /datum/component/construction/unordered/mecha_chassis/clarke
+	construct_type = /datum/component/construction/unordered/mecha_chassis/ripley/clarke
 
 /obj/item/mecha_parts/part/clarke_torso
 	name = "\improper Clarke torso"
