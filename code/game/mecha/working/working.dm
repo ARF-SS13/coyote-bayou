@@ -2,6 +2,8 @@
 	internal_damage_threshold = 40
 	exit_delay = 10
 	enter_delay = 20
+	light_power = 9
+	light_range = 10
 
 /obj/mecha/working/Move()
 	. = ..()
@@ -9,7 +11,7 @@
 		collect_ore()
 
 /obj/mecha/working/proc/collect_ore()
-	if((locate(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp) in equipment) || (locate(/obj/item/mecha_parts/mecha_equipment/orebox_manager) in equipment))
+	if((locate(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp) in equipment))
 		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in contents
 		if(ore_box)
 			for(var/obj/item/stack/ore/ore in range(1, src))
