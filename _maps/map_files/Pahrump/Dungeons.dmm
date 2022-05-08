@@ -655,7 +655,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "aQB" = (
-/obj/structure/closet/crate/freezer/blood,
+/obj/structure/rack,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/gloves,
+/obj/item/reagent_containers/spray/cleaner,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1391,11 +1394,7 @@
 /turf/open/floor/pod/dark,
 /area/f13/underground/cave)
 "bMK" = (
-/obj/item/storage/firstaid/brute,
-/obj/item/storage/firstaid/brute,
-/obj/structure/table/reinforced,
-/obj/item/storage/firstaid/ancient,
-/obj/item/storage/firstaid/ancient,
+/obj/machinery/iv_drip,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6041,7 +6040,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "hmv" = (
-/obj/machinery/iv_drip,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/structure/table/reinforced,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -6189,6 +6193,20 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"hwp" = (
+/obj/structure/rack,
+/obj/item/circuitboard/machine/sleeper,
+/obj/item/circuitboard/machine/biogenerator,
+/obj/item/circuitboard/machine/seed_extractor,
+/obj/item/circuitboard/machine/chem_dispenser,
+/obj/item/circuitboard/machine/chem_master,
+/obj/item/circuitboard/machine/chem_heater,
+/obj/item/circuitboard/machine/ore_redemption,
+/obj/item/circuitboard/machine/mining_equipment_vendor,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/followers)
 "hwv" = (
 /obj/structure/fence{
 	dir = 8
@@ -6821,7 +6839,6 @@
 /area/f13/bunker)
 "imw" = (
 /obj/structure/closet/secure_closet/medical2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/f13{
 	icon_state = "freezerfloor"
@@ -10836,12 +10853,11 @@
 	},
 /area/f13/wasteland)
 "mYj" = (
-/obj/item/storage/firstaid/fire,
-/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
 /obj/structure/table/reinforced,
-/obj/machinery/light/small{
-	dir = 1
-	},
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -11053,7 +11069,6 @@
 	},
 /area/f13/city)
 "nqo" = (
-/obj/machinery/light/small,
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -11819,11 +11834,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "omv" = (
-/obj/item/storage/firstaid/o2,
-/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
 /obj/structure/table/reinforced,
-/obj/item/storage/firstaid/toxin,
-/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/ancient,
+/obj/item/storage/firstaid/ancient,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -12480,7 +12495,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "pay" = (
-/obj/machinery/autolathe,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/rack,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -12773,8 +12791,7 @@
 	},
 /area/f13/wasteland)
 "ppI" = (
-/obj/machinery/workbench/advanced,
-/obj/item/storage/part_replacer,
+/obj/machinery/autolathe,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -13019,6 +13036,23 @@
 	icon_state = "yellowdirtysolid"
 	},
 /area/f13/bunker)
+"pIk" = (
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
+	},
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/eyes/robotic,
+/obj/item/organ/heart/cybernetic/upgraded,
+/obj/item/organ/liver/cybernetic/upgraded,
+/obj/item/organ/lungs/cybernetic/tier2,
+/obj/item/organ/tongue/robot,
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/city)
 "pIp" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13{
@@ -13158,14 +13192,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "pPi" = (
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
-/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
-/obj/structure/closet/crate/medical/anchored,
+/obj/machinery/light/small,
+/obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -13489,31 +13517,58 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/ncr)
 "qhj" = (
-/obj/structure/rack,
-/obj/item/storage/box/masks,
-/obj/item/storage/box/gloves,
-/obj/item/reagent_containers/spray/cleaner,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/followers)
-"qhz" = (
-/obj/structure/rack,
-/obj/item/circuitboard/machine/sleeper,
-/obj/item/circuitboard/machine/biogenerator,
-/obj/item/circuitboard/machine/seed_extractor,
-/obj/item/circuitboard/machine/chem_dispenser,
-/obj/item/circuitboard/machine/chem_master,
-/obj/item/circuitboard/machine/chem_heater,
-/obj/item/circuitboard/machine/ore_redemption,
-/obj/item/circuitboard/machine/mining_equipment_vendor,
+/obj/machinery/workbench/advanced,
+/obj/item/storage/part_replacer,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/followers)
+"qhz" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super,
+/obj/structure/closet/crate/medical/anchored,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/followers)
 "qhO" = (
-/obj/machinery/light,
-/obj/structure/rack,
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
+	},
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -14455,7 +14510,39 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "rjG" = (
-/obj/structure/rack,
+/obj/structure/closet/crate/freezer{
+	storage_capacity = 30
+	},
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/heart,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/lungs,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/stomach,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/liver,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/eyes,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/ears,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/item/organ/tongue,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -16003,6 +16090,13 @@
 /obj/item/soap,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bunker)
+"sUh" = (
+/obj/structure/table,
+/obj/item/storage/belt/organbox,
+/turf/open/floor/f13{
+	icon_state = "freezerfloor"
+	},
+/area/f13/city)
 "sUy" = (
 /obj/structure/chair/office/dark,
 /turf/open/floor/plasteel/grimy,
@@ -24521,11 +24615,11 @@ xrD
 oqP
 xrD
 dcB
-heT
-heT
-heT
-heT
-heT
+sub
+sub
+sub
+sub
+sub
 heT
 bYA
 bYA
@@ -24778,10 +24872,10 @@ fzi
 fzi
 xrD
 dcB
-dcB
-dcB
-dcB
-dcB
+bMK
+bMK
+rPD
+qhz
 dcB
 heT
 bYA
@@ -25035,8 +25129,8 @@ fzi
 fzi
 nBS
 dcB
-hmv
-hmv
+rPD
+rPD
 rPD
 pPi
 dcB
@@ -25292,7 +25386,7 @@ fzi
 fzi
 fzi
 jXF
-rPD
+hmv
 rPD
 rPD
 nqo
@@ -25809,7 +25903,7 @@ dcB
 omv
 rPD
 rPD
-qhj
+rPD
 dcB
 heT
 bYA
@@ -26063,10 +26157,10 @@ rPD
 rPD
 rPD
 dcB
-bMK
-rPD
-rPD
-rPD
+dcB
+dcB
+dcB
+dcB
 dcB
 heT
 heT
@@ -26320,10 +26414,10 @@ rPD
 rPD
 lgb
 dcB
-dcB
-dcB
-dcB
-dcB
+oMK
+ppI
+qhj
+hwp
 dcB
 dcB
 dcB
@@ -26577,10 +26671,10 @@ rPD
 rPD
 rPD
 dcB
-oMK
-pay
-ppI
-qhz
+azF
+azF
+azF
+azF
 dcB
 rHC
 ucx
@@ -27091,7 +27185,7 @@ dcB
 rPD
 rPD
 dcB
-azF
+pay
 azF
 azF
 azF
@@ -37014,7 +37108,7 @@ ymg
 xbP
 fMG
 wRZ
-kPn
+sUh
 wRZ
 xdM
 fMG
@@ -37532,7 +37626,7 @@ xdM
 xdM
 qhW
 fMG
-cuS
+pIk
 nWv
 fMG
 vgD
