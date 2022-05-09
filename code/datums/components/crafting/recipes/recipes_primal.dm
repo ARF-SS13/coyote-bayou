@@ -266,6 +266,14 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/campfire //Adding a campfire; it takes less expertise, and less ingredients than the bonfire available to primals, but it's also less grand and takes more time.
+	name = "Campfire"
+	time = 75
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20)
+	result = /obj/structure/campfire
+	category = CAT_TRIBAL
+	always_available = TRUE
+
 /datum/crafting_recipe/tribalwar/arrowpoison
 	name = "Poison Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/poison
