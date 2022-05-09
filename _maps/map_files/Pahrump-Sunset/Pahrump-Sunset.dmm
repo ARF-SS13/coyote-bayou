@@ -2820,13 +2820,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/followers)
-"ajv" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Mayor's Quarters";
-	req_one_access_txt = "62"
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "ajw" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/ruins)
@@ -4998,27 +4991,6 @@
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland)
-"aqf" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/machinery/button/door{
-	id = "clinicfrontdoor";
-	name = "clinic shutters";
-	pixel_x = 32;
-	pixel_y = 6;
-	req_one_access_txt = "62"
-	},
-/obj/machinery/button/door{
-	id = "clinicstorage";
-	name = "clinic storage";
-	pixel_x = 32;
-	pixel_y = -6;
-	req_one_access_txt = "62"
-	},
-/obj/item/kirbyplants/random,
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "aqh" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
@@ -5567,11 +5539,6 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
-"arU" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "arV" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -12795,14 +12762,6 @@
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland)
-"aMI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/briefcase,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "aMJ" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/f13/brahmin,
@@ -22436,56 +22395,15 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"bnw" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Mayor's Office";
-	req_one_access_txt = "62"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "mayoroffice";
-	state_open = 1
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bnx" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bny" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "bnz" = (
 /obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
-"bnA" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bnB" = (
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bnC" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Meeting Chamber";
-	req_one_access_txt = "62"
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "bnD" = (
 /obj/structure/obstacle/barbedwire,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"bnE" = (
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "bnF" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table/wood,
@@ -22531,20 +22449,12 @@
 /obj/item/taperecorder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
-"bnM" = (
-/obj/structure/fireplace,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "bnN" = (
 /obj/machinery/light/sign/oasis_sign,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom2left"
 	},
 /area/f13/wasteland)
-"bnO" = (
-/obj/structure/table/wood/fancy/black,
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "bnP" = (
 /obj/structure/rack/large/shelf_rust,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -22562,10 +22472,6 @@
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/caves)
-"bnT" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "bnU" = (
 /obj/machinery/computer/terminal{
 	density = 0;
@@ -22608,12 +22514,6 @@
 /obj/structure/fermenting_barrel,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"boa" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "bob" = (
 /turf/open/floor/wood,
 /area/f13/building)
@@ -22634,19 +22534,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"boe" = (
-/obj/structure/table/wood/settler,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bof" = (
-/obj/structure/decoration/clock{
-	pixel_x = 32;
-	pixel_y = -2
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "bog" = (
 /obj/structure/table/wood,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -22723,37 +22610,11 @@
 /obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/city)
-"boq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = -8;
-	pixel_y = 23
-	},
-/obj/structure/filingcabinet{
-	density = 0;
-	pixel_x = 10;
-	pixel_y = 23
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "bor" = (
 /obj/structure/table/wood,
 /obj/item/chair/wood,
 /obj/item/chair/wood,
 /turf/open/floor/f13/wood,
-/area/f13/city)
-"bos" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bot" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/oak,
 /area/f13/city)
 "bou" = (
 /obj/structure/chair,
@@ -22761,16 +22622,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"bov" = (
-/obj/structure/closet/crate/bin,
-/obj/machinery/button/door{
-	id = "mayoroffice";
-	name = "office shutters";
-	pixel_x = 32;
-	req_one_access_txt = "62"
-	},
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "bow" = (
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood,
@@ -22786,32 +22637,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"boy" = (
-/obj/structure/table/wood/settler,
-/obj/item/paper_bin,
-/obj/item/pen,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"boz" = (
-/obj/structure/chair{
-	dir = 8
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/secretary,
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "boA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/booth{
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
-/area/f13/city)
-"boB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood/f13/maple,
 /area/f13/city)
 "boC" = (
 /obj/structure/flora/grass/jungle/b,
@@ -22837,11 +22668,6 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/building)
-"boG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/photocopier,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
 "boH" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
@@ -22948,12 +22774,6 @@
 	icon_state = "verticalleftborderleft3"
 	},
 /area/f13/wasteland)
-"boR" = (
-/obj/structure/table/wood/fancy/black,
-/obj/item/paper_bin,
-/obj/item/pen/fountain,
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "boS" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Gatehouse";
@@ -23056,72 +22876,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"bpg" = (
-/obj/structure/decoration/sign{
-	desc = "It's a portrait of a person you don't know anything about.";
-	icon_state = "painting_president";
-	name = "portrait";
-	pixel_y = -32
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bph" = (
-/obj/structure/table/wood/settler,
-/obj/machinery/computer/terminal{
-	dir = 4;
-	termtag = "Business"
-	},
-/obj/structure/decoration/sign{
-	desc = "It's a portrait of a person you don't know anything about.";
-	icon_state = "painting_president";
-	name = "portrait";
-	pixel_y = -32
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
-"bpi" = (
-/obj/structure/table/wood/settler,
-/obj/structure/barricade/bars,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/machinery/door/poddoor/shutters{
-	id = "mayoroffice";
-	state_open = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/city)
 "bpj" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"bpk" = (
-/obj/structure/table/wood,
-/obj/item/folder/red{
-	pixel_x = -8
-	},
-/obj/item/folder/yellow{
-	pixel_x = -3
-	},
-/obj/item/folder/blue{
-	pixel_x = 1
-	},
-/obj/item/folder/white{
-	pixel_x = 8
-	},
-/turf/open/floor/wood/f13/stage_br,
-/area/f13/city)
-"bpl" = (
-/obj/structure/chair/comfy/black{
-	dir = 8
-	},
-/obj/effect/landmark/start/f13/mayor,
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "bpm" = (
 /obj/item/flag/oasis,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23148,29 +22908,6 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/building)
-"bpq" = (
-/obj/structure/chair/sofa/corp/left{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpr" = (
-/obj/structure/table/wood,
-/obj/item/clipboard,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bps" = (
-/obj/structure/table/wood,
-/obj/item/lighter,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpt" = (
-/obj/item/storage/secure/safe{
-	pixel_x = 5;
-	pixel_y = -30
-	},
-/turf/open/floor/carpet/black,
-/area/f13/city)
 "bpu" = (
 /obj/structure/simple_door/metal/dirtystore,
 /turf/open/floor/f13{
@@ -23205,124 +22942,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
-"bpy" = (
-/obj/structure/decoration/clock{
-	pixel_y = -34
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpz" = (
-/obj/structure/table/wood/fancy/black,
-/obj/machinery/computer/terminal{
-	dir = 4;
-	termtag = "Business"
-	},
-/turf/open/floor/carpet/black,
-/area/f13/city)
-"bpA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/dresser,
-/obj/structure/mirror{
-	pixel_y = 30
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpB" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/sofa/corp/right{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/cabinet,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/under/suit/checkered,
-/obj/item/clothing/accessory/waistcoat,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpD" = (
-/obj/structure/table/booth,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 9;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/city)
-"bpE" = (
-/obj/structure/table/booth,
-/obj/item/storage/fancy/candle_box{
-	pixel_y = 5
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpF" = (
-/obj/structure/table/booth,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = 9;
-	pixel_y = 9
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_x = -9;
-	pixel_y = 9
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/city)
-"bpH" = (
-/turf/open/floor/carpet/red,
-/area/f13/city)
-"bpI" = (
-/obj/structure/chair/wood/fancy,
-/turf/open/floor/carpet/red,
-/area/f13/city)
-"bpJ" = (
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpK" = (
-/obj/structure/chair/wood/fancy{
-	dir = 4
-	},
-/turf/open/floor/carpet/red,
-/area/f13/city)
-"bpL" = (
-/obj/structure/table/wood,
-/turf/open/floor/carpet/red,
-/area/f13/city)
-"bpM" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin{
-	pixel_y = 9
-	},
-/obj/item/pen/fountain,
-/turf/open/floor/carpet/red,
-/area/f13/city)
-"bpN" = (
-/obj/structure/chair/wood/fancy{
-	dir = 8
-	},
-/turf/open/floor/carpet/red,
-/area/f13/city)
 "bpO" = (
 /mob/living/simple_animal/hostile/radscorpion,
 /turf/open/indestructible/ground/inside/mountain,
@@ -23377,27 +22996,6 @@
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"bpX" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpY" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/turf/open/floor/wood/f13/oak,
-/area/f13/city)
-"bpZ" = (
-/obj/structure/table/wood,
-/obj/structure/junk/small/tv{
-	desc = "Advertisements would've played on this tv before the bombs dropped.";
-	icon = 'icons/fallout/objects/decorations.dmi';
-	icon_state = "television";
-	name = "pre-war advertising television"
-	},
-/turf/open/floor/carpet/red,
-/area/f13/city)
 "bqa" = (
 /obj/effect/decal/cleanable/blood/old,
 /turf/closed/wall/f13/wood,
@@ -27003,9 +26601,6 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"ccP" = (
-/turf/open/floor/plasteel/stairs/old,
-/area/f13/city)
 "cdj" = (
 /obj/structure/closet/boxinggloves,
 /obj/effect/decal/cleanable/dirt{
@@ -27030,14 +26625,8 @@
 	},
 /area/f13/wasteland)
 "cdr" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Mayor's Office";
-	req_one_access_txt = "0"
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/city)
+/turf/closed/wall/f13/store,
+/area/space)
 "cdu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -33180,13 +32769,6 @@
 	dir = 1
 	},
 /area/f13/building)
-"gLu" = (
-/obj/structure/noticeboard,
-/obj/item/storage/briefcase{
-	anchored = 1
-	},
-/turf/closed/wall/f13/wood/house,
-/area/f13/city)
 "gMA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/house,
@@ -36668,7 +36250,6 @@
 "khf" = (
 /obj/structure/bed/mattress,
 /obj/item/clothing/glasses/f13/biker,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/caves)
 "khm" = (
@@ -41563,7 +41144,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/caves)
 "oOU" = (
@@ -41850,7 +41430,6 @@
 /area/f13/building)
 "paS" = (
 /obj/structure/bed/mattress,
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/caves)
 "pbr" = (
@@ -44910,13 +44489,6 @@
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"seN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/wood/f13/maple,
-/area/f13/city)
 "sfq" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -45776,7 +45348,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/pusher,
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/caves)
 "sVy" = (
@@ -69216,7 +68787,7 @@ bjq
 acP
 afj
 aat
-aKU
+aat
 bji
 bji
 bji
@@ -69224,10 +68795,10 @@ bji
 bji
 bji
 ygj
-ygj
-ygj
-ygj
-ygj
+aae
+aae
+aae
+aae
 aaa
 "}
 (71,1,1) = {"
@@ -69473,18 +69044,18 @@ bjq
 aoV
 aat
 aat
-agl
-xvI
-bjq
-bjq
-bjq
-bjq
-cdQ
+aat
+aat
 aTw
-aTw
-aTw
-aTw
-aTw
+ygj
+ygj
+ygj
+ygj
+ygj
+aae
+aae
+aae
+aae
 aaa
 "}
 (72,1,1) = {"
@@ -69729,19 +69300,19 @@ blj
 box
 ayW
 aat
+aat
 uBx
-agl
-xvI
-ccP
+aat
+aTw
 cdr
-seN
-boB
-bjq
-swr
-swr
-swr
-swr
-swr
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (73,1,1) = {"
@@ -69987,18 +69558,18 @@ bjq
 aWT
 aat
 aat
-agl
-afF
-gLu
-bjq
-bnB
-bpg
-bjq
-bpD
-bnE
-bpJ
-bnE
-swr
+aat
+aat
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (74,1,1) = {"
@@ -70244,18 +69815,18 @@ bjq
 bar
 aat
 awv
-agm
-bjq
-bjq
-bjq
-bnB
-bnB
-bjq
-bks
-bpH
-bpK
-bpK
-swr
+aat
+aTw
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (75,1,1) = {"
@@ -70502,17 +70073,17 @@ aYc
 aat
 aat
 bar
-vXs
-bnx
-boa
-bnB
-bny
-bjq
-bnE
-bpH
-bpL
-bpL
-swr
+aTw
+ygj
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (76,1,1) = {"
@@ -70759,17 +70330,17 @@ ady
 ady
 ady
 bnk
-bjq
-bny
-bnB
-bny
-bny
-bnC
-bnE
-bpI
-bpL
-bpZ
-swr
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (77,1,1) = {"
@@ -71016,17 +70587,17 @@ afL
 bmF
 bmX
 bnl
-bjq
-bnA
-bnB
-bny
-bny
-bjq
-bnE
-bpH
-bpM
-bpL
-swr
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (78,1,1) = {"
@@ -71273,17 +70844,17 @@ blU
 aat
 bmZ
 qoU
-vXs
-bnB
-boe
-boy
-bph
-bjq
-bpE
-bpH
-bpN
-bpN
-swr
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (79,1,1) = {"
@@ -71530,17 +71101,17 @@ blV
 aii
 bna
 bnp
-bjq
-bnB
-bof
-boz
-bny
-bjq
-bpF
-bnE
-bpX
-bnE
-swr
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (80,1,1) = {"
@@ -71787,17 +71358,17 @@ bar
 bmj
 qoU
 bmQ
-bjq
-bnw
-bjq
-bjq
-bpi
-bjq
-swr
-swr
-swr
-swr
-swr
+aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (81,1,1) = {"
@@ -72044,17 +71615,17 @@ aii
 bmJ
 bnb
 bns
-bji
-bnE
-bos
-boG
-bpk
-bji
 aTw
-aTw
-aTw
-aTw
-aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (82,1,1) = {"
@@ -72301,17 +71872,17 @@ bmj
 qoU
 qoU
 gNQ
-bji
-bnT
-bnE
-bnE
-bpr
-bji
-bji
-bji
-bji
-bji
 aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (83,1,1) = {"
@@ -72558,17 +72129,17 @@ bmj
 bmQ
 bne
 bmQ
-bji
-bnT
-bnE
-bnE
-bps
-bji
-bpq
-bpB
-bpC
-bji
 aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (84,1,1) = {"
@@ -72815,17 +72386,17 @@ bmm
 gNQ
 bmQ
 bnt
-bji
-bnM
-bnE
-bnE
-bnE
-ajv
-bnE
-bnE
-bnE
-bji
 aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (85,1,1) = {"
@@ -73072,17 +72643,17 @@ bCt
 bCt
 bCt
 aTw
-bji
-bnE
-bot
-bot
-bpy
-bji
-arU
-bnE
-bnE
-bji
 aTw
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (86,1,1) = {"
@@ -73328,18 +72899,18 @@ niB
 niB
 niB
 niB
-aTw
-bji
-bnE
-boR
-bnO
-bpz
-bji
-bpA
-aMI
-bpY
-bji
-aTw
+ygj
+ygj
+ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (87,1,1) = {"
@@ -73585,18 +73156,18 @@ bCt
 bCt
 bCt
 niB
-aTw
-bji
-boq
-sYG
-bpl
-bpt
-bji
-bji
-bji
-bji
-bji
-aTw
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (88,1,1) = {"
@@ -73842,18 +73413,18 @@ cbv
 caC
 bCt
 niB
-aTw
-bji
-bTN
-aqf
-sYG
-bov
-bji
-aTw
-aTw
-aTw
-aTw
-aTw
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (89,1,1) = {"
@@ -74099,18 +73670,18 @@ caB
 aZK
 bCt
 niB
-aTw
-aTw
-bTN
-bTN
-bTN
-bTN
-bTN
-aTw
-ygj
-ygj
-ygj
-ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aaa
 "}
 (90,1,1) = {"
@@ -74356,15 +73927,15 @@ bCt
 bCt
 bCt
 niB
-ygj
-aTw
-aTw
-aTw
-aTw
-aTw
-aTw
-aTw
-ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -74613,15 +74184,15 @@ aae
 aae
 aae
 aae
-ygj
-ygj
-ygj
-ygj
-ygj
-ygj
-ygj
-ygj
-ygj
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
