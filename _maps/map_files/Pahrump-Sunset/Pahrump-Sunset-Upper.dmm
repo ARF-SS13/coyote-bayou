@@ -1484,6 +1484,7 @@
 /obj/structure/chair/office{
 	dir = 1
 	},
+/mob/living/simple_animal/hostile/raider/junker/boss,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "ela" = (
@@ -1539,15 +1540,11 @@
 	},
 /area/f13/wasteland)
 "eDv" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/fence/handrail{
-	pixel_y = -9;
-	dir = 8;
-	pixel_x = -14
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner{
+	dir = 4
 	},
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/space/basic,
-/area/f13/radiation)
+/area/f13/building)
 "eNt" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/reagent_containers/glass/bucket/plastic,
@@ -1560,6 +1557,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 1
 	},
+/area/f13/building)
+"eOq" = (
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "ePO" = (
 /obj/structure/noticeboard,
@@ -1797,8 +1798,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building)
 "gXV" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/plasteel/f13/concrete/industrial/walkway,
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner,
 /area/f13/building)
 "gYb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2464,6 +2465,12 @@
 	dir = 8
 	},
 /area/f13/building)
+"mke" = (
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/concrete/cable{
+	dir = 1
+	},
+/area/f13/building)
 "moH" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail{
@@ -2496,7 +2503,6 @@
 	},
 /area/f13/building)
 "mzE" = (
-/mob/living/simple_animal/hostile/ghoul,
 /obj/structure/chair/f13chair2{
 	dir = 4
 	},
@@ -2515,6 +2521,11 @@
 /obj/structure/chair/wood/modern,
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/city)
+"mHe" = (
+/obj/structure/chair/f13chair2,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "mLz" = (
 /obj/structure/table/booth,
 /turf/open/indestructible/ground/outside/woodalt,
@@ -2590,10 +2601,9 @@
 	},
 /area/f13/building)
 "nfc" = (
-/obj/structure/lattice/catwalk,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/space/basic,
-/area/f13/radiation)
+/mob/living/simple_animal/hostile/raider/junker/creator,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "nnp" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/blood/old{
@@ -2775,7 +2785,7 @@
 /turf/closed/wall/f13/store,
 /area/f13/wasteland)
 "okr" = (
-/obj/structure/closet/crate/bin,
+/obj/machinery/workbench/advanced,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "olL" = (
@@ -2862,7 +2872,7 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "oNe" = (
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "oRM" = (
@@ -3349,6 +3359,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "sPE" = (
@@ -3379,7 +3390,6 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "taC" = (
@@ -51359,7 +51369,7 @@ pds
 sjx
 oDo
 rYU
-rYU
+oNe
 rYU
 kfx
 oez
@@ -51855,7 +51865,7 @@ aKa
 oDo
 wMt
 iOe
-qPo
+eDv
 oDo
 oDo
 oDo
@@ -51863,7 +51873,7 @@ oDo
 oDo
 oDo
 rYU
-oNe
+rYU
 cwk
 rYU
 rYU
@@ -52114,13 +52124,13 @@ xAT
 kKS
 aZv
 rYU
-oNe
+rYU
 rYU
 rYU
 mYA
 oDo
 rYU
-wMt
+gXV
 iOe
 qPo
 rYU
@@ -52893,7 +52903,7 @@ uoi
 qZI
 qZI
 fHv
-oNe
+rYU
 rYU
 oDo
 rYU
@@ -53153,7 +53163,7 @@ abm
 oDo
 oDo
 oDo
-rYU
+eOq
 rYU
 oDo
 rYU
@@ -53399,7 +53409,7 @@ tik
 moH
 dbF
 dbF
-nfc
+dbF
 dbF
 dbF
 dbF
@@ -53667,7 +53677,7 @@ xQx
 qoB
 cJg
 rYU
-oNe
+rYU
 rYU
 oDo
 xMZ
@@ -54690,7 +54700,7 @@ tik
 tik
 tik
 iel
-nfc
+dbF
 ksl
 luZ
 luZ
@@ -55715,7 +55725,7 @@ bRj
 bRj
 bRj
 bRj
-eDv
+bRj
 taC
 dbF
 dbF
@@ -55967,7 +55977,7 @@ abm
 tik
 tik
 ona
-nfc
+dbF
 dbF
 dbF
 dbF
@@ -55980,7 +55990,7 @@ xQx
 lhP
 rYU
 hAf
-oNe
+rYU
 rYU
 oDo
 rYU
@@ -56237,7 +56247,7 @@ oDo
 oDo
 oDo
 oDo
-rYU
+oNe
 rYU
 uiJ
 rYU
@@ -56489,7 +56499,7 @@ qZI
 qZI
 uoi
 qZI
-qZI
+mke
 nub
 rYU
 rYU
@@ -56498,7 +56508,7 @@ rYU
 rYU
 oDo
 oTC
-rYU
+nfc
 rYU
 oDo
 oez
@@ -56747,7 +56757,7 @@ oDo
 oDo
 rYU
 wMt
-gXV
+iOe
 qPo
 rYU
 oDo
@@ -56996,9 +57006,9 @@ oDo
 wMt
 iOe
 qPo
+nfc
 rYU
 rYU
-oNe
 rYU
 rYU
 uiJ
@@ -57508,7 +57518,7 @@ aKa
 aKa
 oDo
 rJj
-gXV
+iOe
 tJy
 oDo
 oDo
@@ -57782,7 +57792,7 @@ oDo
 uhv
 rYU
 rYU
-rYU
+oNe
 qoB
 rYU
 bqP
@@ -58039,7 +58049,7 @@ oDo
 oDo
 oTC
 rYU
-jNN
+mHe
 tCQ
 eiN
 rYU

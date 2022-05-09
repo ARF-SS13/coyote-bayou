@@ -819,11 +819,11 @@
 	},
 /area/f13/building)
 "acZ" = (
-/obj/machinery/door/poddoor/shutters{
-	name = "road barrier";
-	id = null
-	},
 /obj/structure/debris/v4,
+/obj/machinery/door/poddoor/shutters/old{
+	id = null;
+	name = "shutters"
+	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -887,7 +887,12 @@
 /obj/structure/fence/handrail_end{
 	dir = 1;
 	pixel_y = 18;
-	pixel_x = -14
+	pixel_x = 14
+	},
+/obj/structure/fence/handrail{
+	dir = 8;
+	pixel_x = 14;
+	pixel_y = -14
 	},
 /turf/open/floor/plasteel/f13/concrete/industrial/walkway,
 /area/f13/radiation)
@@ -10136,6 +10141,7 @@
 "aER" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/book/manual/advice_blacksmith,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aES" = (
@@ -15977,7 +15983,7 @@
 /turf/open/floor/wood,
 /area/f13/bar/heaven)
 "aWu" = (
-/obj/structure/rack/large/shelf,
+/obj/machinery/workbench/forge,
 /turf/open/floor/plasteel/f13/concrete/cable/curved{
 	dir = 1
 	},
@@ -16418,8 +16424,10 @@
 /turf/open/floor/plasteel/f13/metal/grate/border/warning,
 /area/f13/building)
 "aXL" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/plasteel/f13/metal/plate,
+/mob/living/simple_animal/hostile/molerat,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
 /area/f13/building)
 "aXM" = (
 /obj/machinery/smoke_machine{
@@ -21965,14 +21973,10 @@
 	},
 /area/f13/wasteland)
 "bms" = (
-/obj/machinery/power/terminal{
-	dir = 8;
-	name = "generator terminal"
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel/f13/metal/grate/border{
 	dir = 8
 	},
@@ -23487,8 +23491,8 @@
 /area/f13/building)
 "bqx" = (
 /obj/structure/table/wood,
-/obj/item/storage/toolbox/mechanical/old,
-/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/book/manual/advice_blacksmith,
+/obj/item/twohanded/sledgehammer/simple,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/caves)
 "bqy" = (
@@ -23504,7 +23508,7 @@
 /area/f13/caves)
 "bqz" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/anvil,
+/obj/structure/anvil/obtainable,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/caves)
 "bqA" = (
@@ -23534,6 +23538,8 @@
 /obj/item/stack/sheet/metal/five,
 /obj/item/stack/sheet/glass/five,
 /obj/machinery/workbench/bottler,
+/obj/effect/spawner/lootdrop/f13/crafting,
+/obj/item/storage/toolbox/mechanical,
 /turf/open/floor/wood/f13/import/common,
 /area/f13/caves)
 "bqF" = (
@@ -25600,9 +25606,9 @@
 /area/f13/wasteland)
 "bLP" = (
 /obj/structure/debris/v3,
-/obj/machinery/door/poddoor/shutters{
-	name = "road barrier";
-	id = null
+/obj/machinery/door/poddoor/shutters/old{
+	id = null;
+	name = "shutters"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -29938,7 +29944,6 @@
 	pixel_y = -14;
 	pixel_x = 14
 	},
-/mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/f13/concrete/industrial/walkway/end{
 	dir = 1
 	},
@@ -30161,7 +30166,7 @@
 	},
 /area/f13/wasteland)
 "feX" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/old{
 	name = "road barrier";
 	id = "factorygate"
 	},
@@ -31156,11 +31161,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "gDS" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway{
+	dir = 1
 	},
-/area/f13/wasteland)
+/area/f13/building)
 "gFs" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/concrete/industrial,
@@ -31861,13 +31866,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "hRX" = (
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_y = 18;
-	pixel_x = 14
-	},
-/turf/open/floor/plasteel/f13/concrete/industrial/walkway,
-/area/f13/radiation)
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building)
 "hSo" = (
 /obj/effect/decal/marking,
 /obj/item/stack/sheet/mineral/wood,
@@ -33497,7 +33498,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/village)
 "jVJ" = (
-/obj/structure/anvil,
+/obj/structure/anvil/obtainable/legion,
+/obj/item/twohanded/sledgehammer/simple,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "jWa" = (
@@ -33781,12 +33783,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kyH" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0";
-	tag = "icon-horizontaltopbordertop0"
-	},
-/area/f13/wasteland)
+/mob/living/simple_animal/hostile/raider/junker/creator,
+/turf/open/floor/plasteel/f13/metal/plate,
+/area/f13/building)
 "kyJ" = (
 /turf/open/floor/wood/f13/old{
 	icon_state = "housebase"
@@ -34551,9 +34550,9 @@
 /turf/open/floor/carpet,
 /area/f13/building)
 "lFy" = (
-/obj/machinery/door/poddoor/shutters{
-	name = "road barrier";
-	id = null
+/obj/machinery/door/poddoor/shutters/old{
+	id = null;
+	name = "shutters"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -35691,9 +35690,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nnH" = (
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel/f13/concrete/industrial,
-/area/f13/radiation)
+/area/f13/building)
 "noj" = (
 /obj/structure/tires/five{
 	pixel_x = -30;
@@ -37579,11 +37578,11 @@
 	},
 /area/f13/wasteland)
 "pRv" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/turf/open/floor/plasteel/f13/metal/grate/border{
-	dir = 8
+/mob/living/simple_animal/hostile/molerat,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "pTl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/junk/jukebox,
@@ -38032,7 +38031,7 @@
 /area/f13/building)
 "qBw" = (
 /obj/machinery/light,
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "qBD" = (
@@ -38527,12 +38526,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
-"ruO" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/building)
 "ruV" = (
 /obj/structure/cargocrate,
 /turf/open/indestructible/ground/outside/road{
@@ -38604,10 +38597,8 @@
 	},
 /area/f13/followers)
 "rwK" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
+/obj/machinery/autolathe,
+/turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "rwT" = (
 /obj/structure/fence,
@@ -39403,11 +39394,18 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "sIa" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/plasteel/f13/concrete/industrial/walkway{
-	dir = 1
+/obj/structure/fence/handrail_end{
+	dir = 1;
+	pixel_y = 18;
+	pixel_x = -14
 	},
-/area/f13/building)
+/obj/structure/fence/handrail{
+	dir = 8;
+	pixel_x = -14;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway,
+/area/f13/radiation)
 "sIf" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress3"
@@ -40399,6 +40397,7 @@
 	},
 /area/f13/wasteland)
 "ucB" = (
+/mob/living/simple_animal/hostile/molerat,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain3"
 	},
@@ -40872,7 +40871,7 @@
 	},
 /area/f13/building)
 "uLZ" = (
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "uMa" = (
@@ -40963,7 +40962,7 @@
 	},
 /area/f13/village)
 "uRZ" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/old{
 	name = "road barrier";
 	id = "factorygate"
 	},
@@ -41727,7 +41726,7 @@
 	},
 /area/f13/wasteland)
 "vXY" = (
-/obj/machinery/door/poddoor/shutters{
+/obj/machinery/door/poddoor/shutters/old{
 	name = "road barrier";
 	id = "factorygate"
 	},
@@ -88120,7 +88119,7 @@ aae
 xJf
 tCg
 tCg
-ruO
+tCg
 tCg
 tCg
 tCg
@@ -88134,7 +88133,7 @@ kNZ
 kzT
 kzT
 ahg
-rwK
+ahg
 kzT
 jAn
 afN
@@ -88636,11 +88635,11 @@ tCg
 tCg
 tCg
 tCg
+aXL
 tCg
 tCg
 tCg
 tCg
-ruO
 aWY
 aWY
 aWY
@@ -89676,7 +89675,7 @@ vVo
 rJz
 acY
 wae
-ahg
+hRX
 ojo
 vVo
 nSC
@@ -89923,7 +89922,7 @@ afN
 afN
 gBg
 afN
-afN
+uLZ
 afN
 blL
 xcF
@@ -90181,7 +90180,7 @@ afN
 gBg
 afN
 afN
-uLZ
+afN
 afN
 afN
 afN
@@ -90941,9 +90940,9 @@ bls
 vVo
 aaV
 aeH
-pRv
 aeH
-ecR
+aeH
+kyH
 ecR
 aeH
 aeH
@@ -91191,7 +91190,7 @@ aae
 aae
 vVo
 awq
-hDW
+bms
 bjc
 ajL
 abc
@@ -91449,7 +91448,7 @@ aae
 vVo
 aof
 ecR
-aXL
+ecR
 ajL
 abc
 vVo
@@ -91707,7 +91706,7 @@ vVo
 aXJ
 hCL
 aWG
-ajL
+gDS
 abc
 vVo
 jjp
@@ -92234,7 +92233,7 @@ aby
 aby
 aPC
 afN
-afN
+nnH
 afN
 vVo
 afN
@@ -92484,7 +92483,7 @@ afR
 aUq
 aUq
 aUq
-nnH
+aUq
 laF
 afR
 fHL
@@ -92741,8 +92740,8 @@ kjS
 agg
 agg
 agg
+adl
 ese
-hRX
 jpY
 aUq
 aby
@@ -93014,7 +93013,7 @@ bkH
 vVo
 vVo
 anM
-kyH
+aXt
 adY
 abS
 abS
@@ -93274,6 +93273,7 @@ aHW
 aXt
 adY
 abS
+pRv
 abS
 abS
 abS
@@ -93281,7 +93281,6 @@ abS
 abS
 abS
 abS
-gDS
 abS
 abS
 abS
@@ -93541,7 +93540,7 @@ abS
 abS
 abS
 abS
-abS
+pRv
 abS
 abS
 abS
@@ -94276,7 +94275,7 @@ aby
 aUq
 abx
 aik
-nnH
+aUq
 nvc
 aeP
 aeP
@@ -94797,10 +94796,10 @@ tpH
 agg
 agg
 agg
+sIa
 ese
-adl
 agF
-nnH
+aUq
 aby
 afN
 bjD
@@ -95053,7 +95052,7 @@ bKK
 afe
 aUq
 aUq
-nnH
+aUq
 aUq
 aUq
 afe
@@ -95066,7 +95065,7 @@ afN
 afN
 afN
 afN
-uLZ
+afN
 geU
 vVo
 agl
@@ -95321,7 +95320,7 @@ afN
 vVo
 afh
 afN
-afN
+nnH
 afN
 afN
 abM
@@ -95816,7 +95815,7 @@ bzQ
 bzQ
 aae
 vVo
-bms
+awq
 hDW
 bjc
 ajL
@@ -95848,7 +95847,7 @@ abS
 abS
 abS
 abS
-abS
+pRv
 abS
 abS
 aeV
@@ -96074,7 +96073,7 @@ bzQ
 aae
 vVo
 aof
-ecR
+kyH
 ecR
 ajL
 abc
@@ -96101,7 +96100,7 @@ agl
 adH
 adY
 abS
-gDS
+abS
 abS
 abS
 abS
@@ -96333,7 +96332,7 @@ vVo
 aXJ
 hCL
 aWG
-sIa
+ajL
 abc
 vVo
 biY
@@ -98670,7 +98669,7 @@ aae
 aae
 vVo
 aXM
-afN
+rwK
 afW
 afN
 afN
