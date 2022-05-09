@@ -3,13 +3,12 @@
 #define WORKPIECE_FINISHED 3
 #define WORKPIECE_SLAG 5
 
-#define RECIPE_LARGEPICK "bff" //bend fold fold
+#define RECIPE_PICKAXE "bff" //bend fold fold
 #define RECIPE_SHOVEL "buu" //bend upset upset
 #define RECIPE_HAMMER "bpp" //bend punch punch
-#define RECIPE_SMALLPICK "bfs" //bend fold shrink
+#define RECIPE_PROSPECTPICK "bfs" //bend fold shrink
 #define RECIPE_KITCHENKNIFE "bsd" //bend shrink draw
-#define RECIPE_CROWBAR "bbb" //bend bend bend ISSUE
-#define RECIPE_CROWAXE "bbd"  //bend bend draw ISSUE
+#define RECIPE_CROWBAR "bbb" //bend bend bend
 
 #define RECIPE_RING "sss" //shrink shrink shrink
 #define RECIPE_BALLANDCHAIN "pbu" //punch bend upset
@@ -31,6 +30,7 @@
 //Tablevil specific
 #define RECIPE_MACHREFORG "fdf" //fold punch punch
 #define RECIPE_SCRAP "udsp" //upset draw shrink punch
+#define RECIPE_UNITOOL "bbb"  //bend bend bend
 
 //Legion specific
 #define RECIPE_LANCE "ddbf" //draw draw fold fold
@@ -66,11 +66,10 @@
 	var/itemqualitymax = 8
 	var/list/smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
-	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
+	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
 	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
 	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
-	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
 	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
 	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
 	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
@@ -302,11 +301,10 @@
 	anchored = TRUE
 	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
-	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
+	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
 	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
 	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
-	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
 	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
 	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
 	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
@@ -323,7 +321,7 @@
 )
 
 
-// Decent makeshift anvil, can break, mobile. Gets the exclusive scrap version of the machete and 2h chopper.
+// Decent makeshift anvil, can break, mobile. Gets the exclusive scrap version of the machete and 2h chopper, as well as the universal tool instead of a crowbar
 /obj/structure/anvil/obtainable/table
 	name = "table anvil"
 	desc = "A reinforced table. Usable as an anvil, favored by mad wastelanders and the dregs of the wasteland. Can be loosened from its bolts and moved."
@@ -332,11 +330,10 @@
 	itemqualitymax = 7
 	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
-	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
+	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
 	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
-	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
-	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
+	RECIPE_UNITOOL = /obj/item/smithing/unitool,
 	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
 	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
 	RECIPE_DAGGER = /obj/item/smithing/daggerblade,

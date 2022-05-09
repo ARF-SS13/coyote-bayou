@@ -9,7 +9,7 @@
 	desc = "It's a bucket."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "bucket"
-	item_state = "bucket"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	lefthand_file = 'icons/fallout/onmob/tools/farming_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/farming_righthand.dmi'
 	custom_materials = list(/datum/material/iron=200)
@@ -74,20 +74,47 @@
 		return
 	return ..()
 
+/obj/item/reagent_containers/glass/bucket/Initialize()
+	. = ..()
+	update_icon()
+
+/obj/item/reagent_containers/glass/bucket/get_part_rating()
+	return reagents.maximum_volume
+
+/obj/item/reagent_containers/glass/bucket/on_reagent_change(changetype)
+	update_icon()
+
+/obj/item/reagent_containers/glass/bucket/update_overlays()
+	. = ..()
+	if(!cached_icon)
+		cached_icon = icon_state
+
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[cached_icon]10", color = mix_color_from_reagents(reagents.reagent_list))
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		switch(percent)
+			if(0 to 19)
+				filling.icon_state = "[cached_icon]"
+			if(20 to 50)
+				filling.icon_state = "[cached_icon]20"
+			if(51 to 99)
+				filling.icon_state = "[cached_icon]50"
+			if(100 to INFINITY)
+				filling.icon_state = "[cached_icon]100"
+		. += filling
+
 /obj/item/reagent_containers/glass/bucket/wood
 	name = "wooden bucket"
 	desc = "It's a bucket made of wood."
 	icon_state = "bucket_wooden"
-	item_state = "bucket_wooden"
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 2)
-	slot_flags = NONE
 	item_flags = NO_MAT_REDEMPTION
 
 /obj/item/reagent_containers/glass/bucket/plastic
 	name = "plastic bucket"
 	desc = "It's a bucket made of blue plastic."
 	icon_state = "bucket_plastic"
-	item_state = "bucket_plastic"
 	custom_materials = list(/datum/material/plastic = MINERAL_MATERIAL_AMOUNT * 1)
 	item_flags = NO_MAT_REDEMPTION
 	possible_transfer_amounts = list(10,25,50,100,150)
@@ -164,13 +191,14 @@
 	desc = "Simple small metal axehead on a handle made from wood or some other hard material."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "hatchet"
-	item_state = "hatchet"
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	lefthand_file = 'icons/fallout/onmob/tools/farming_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/tools/farming_righthand.dmi'
 	attack_speed = CLICK_CD_MELEE
 	flags_1 = CONDUCT_1
 	force = 24
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
 	throwforce = 15
 	throw_speed = 3
 	throw_range = 4
