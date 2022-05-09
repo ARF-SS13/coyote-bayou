@@ -49,6 +49,13 @@
 	..()
 	name = "ED-[rand(1,99)]"
 
+/mob/living/simple_animal/hostile/eyebot/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
+	adjustBruteLoss(emp_damage)
+
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
 	health = 200
@@ -108,11 +115,18 @@
 	attack_sound = 'sound/voice/liveagain.ogg'
 	butcher_results = list(/obj/effect/gibspawner/robot = 1)
 	blood_volume = 0
-	
+
 /mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)
 	AddElement(/datum/element/mob_holder, held_icon)
+
+/mob/living/simple_animal/pet/dog/eyebot/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
+	adjustBruteLoss(emp_damage)
 
 /mob/living/simple_animal/pet/dog/eyebot/playable
 	health = 200
