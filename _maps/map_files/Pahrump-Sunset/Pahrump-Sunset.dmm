@@ -884,18 +884,11 @@
 	},
 /area/f13/building)
 "adl" = (
-/obj/structure/fence/handrail_end{
-	dir = 1;
-	pixel_y = 18;
-	pixel_x = 14
+/mob/living/simple_animal/hostile/molerat,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
 	},
-/obj/structure/fence/handrail{
-	dir = 8;
-	pixel_x = 14;
-	pixel_y = -14
-	},
-/turf/open/floor/plasteel/f13/concrete/industrial/walkway,
-/area/f13/radiation)
+/area/f13/wasteland)
 "adm" = (
 /obj/item/storage/toolbox/electrical{
 	pixel_y = 6
@@ -16424,10 +16417,8 @@
 /turf/open/floor/plasteel/f13/metal/grate/border/warning,
 /area/f13/building)
 "aXL" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
+/obj/structure/nest/molerat,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "aXM" = (
 /obj/machinery/smoke_machine{
@@ -21973,12 +21964,9 @@
 	},
 /area/f13/wasteland)
 "bms" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
-	},
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/floor/plasteel/f13/metal/grate/border{
-	dir = 8
+/mob/living/simple_animal/hostile/molerat,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
 	},
 /area/f13/building)
 "bmt" = (
@@ -31161,11 +31149,18 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "gDS" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
-/turf/open/floor/plasteel/f13/concrete/industrial/walkway{
-	dir = 1
+/obj/structure/fence/handrail_end{
+	dir = 1;
+	pixel_y = 18;
+	pixel_x = -14
 	},
-/area/f13/building)
+/obj/structure/fence/handrail{
+	dir = 8;
+	pixel_x = -14;
+	pixel_y = -14
+	},
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway,
+/area/f13/radiation)
 "gFs" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/plasteel/f13/concrete/industrial,
@@ -31866,8 +31861,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "hRX" = (
-/obj/structure/nest/molerat,
-/turf/open/indestructible/ground/inside/mountain,
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "hSo" = (
 /obj/effect/decal/marking,
@@ -33783,8 +33778,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kyH" = (
-/mob/living/simple_animal/hostile/raider/junker/creator,
-/turf/open/floor/plasteel/f13/metal/plate,
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/plasteel/f13/metal/grate/border{
+	dir = 8
+	},
 /area/f13/building)
 "kyJ" = (
 /turf/open/floor/wood/f13/old{
@@ -35690,8 +35690,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nnH" = (
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/floor/plasteel/f13/concrete/industrial,
+/mob/living/simple_animal/hostile/raider/junker/creator,
+/turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "noj" = (
 /obj/structure/tires/five{
@@ -37578,11 +37578,10 @@
 	},
 /area/f13/wasteland)
 "pRv" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/wasteland_vendor/khanchem,
+/turf/open/floor/wood/f13/import/common/broken,
+/area/f13/caves)
 "pTl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/junk/jukebox,
@@ -38526,6 +38525,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"ruO" = (
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway{
+	dir = 1
+	},
+/area/f13/building)
 "ruV" = (
 /obj/structure/cargocrate,
 /turf/open/indestructible/ground/outside/road{
@@ -39397,11 +39402,11 @@
 /obj/structure/fence/handrail_end{
 	dir = 1;
 	pixel_y = 18;
-	pixel_x = -14
+	pixel_x = 14
 	},
 /obj/structure/fence/handrail{
 	dir = 8;
-	pixel_x = -14;
+	pixel_x = 14;
 	pixel_y = -14
 	},
 /turf/open/floor/plasteel/f13/concrete/industrial/walkway,
@@ -46428,7 +46433,7 @@ jlL
 uvP
 apF
 bbg
-xyU
+pRv
 auj
 lSY
 apF
@@ -88635,7 +88640,7 @@ tCg
 tCg
 tCg
 tCg
-aXL
+bms
 tCg
 tCg
 tCg
@@ -89675,7 +89680,7 @@ vVo
 rJz
 acY
 wae
-hRX
+aXL
 ojo
 vVo
 nSC
@@ -90942,7 +90947,7 @@ aaV
 aeH
 aeH
 aeH
-kyH
+nnH
 ecR
 aeH
 aeH
@@ -91190,7 +91195,7 @@ aae
 aae
 vVo
 awq
-bms
+kyH
 bjc
 ajL
 abc
@@ -91706,7 +91711,7 @@ vVo
 aXJ
 hCL
 aWG
-gDS
+ruO
 abc
 vVo
 jjp
@@ -92233,7 +92238,7 @@ aby
 aby
 aPC
 afN
-nnH
+hRX
 afN
 vVo
 afN
@@ -92740,7 +92745,7 @@ kjS
 agg
 agg
 agg
-adl
+sIa
 ese
 jpY
 aUq
@@ -93273,7 +93278,7 @@ aHW
 aXt
 adY
 abS
-pRv
+adl
 abS
 abS
 abS
@@ -93540,7 +93545,7 @@ abS
 abS
 abS
 abS
-pRv
+adl
 abS
 abS
 abS
@@ -94796,7 +94801,7 @@ tpH
 agg
 agg
 agg
-sIa
+gDS
 ese
 agF
 aUq
@@ -95320,7 +95325,7 @@ afN
 vVo
 afh
 afN
-nnH
+hRX
 afN
 afN
 abM
@@ -95847,7 +95852,7 @@ abS
 abS
 abS
 abS
-pRv
+adl
 abS
 abS
 aeV
@@ -96073,7 +96078,7 @@ bzQ
 aae
 vVo
 aof
-kyH
+nnH
 ecR
 ajL
 abc
