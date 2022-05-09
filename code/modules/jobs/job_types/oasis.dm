@@ -287,7 +287,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/chief
 	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_hand = /obj/item/gun/energy/laser/aer9/oasis
+	r_hand = /obj/item/gun/energy/laser/aer9
 
 /datum/outfit/loadout/pew
 	name = "Tactical"
