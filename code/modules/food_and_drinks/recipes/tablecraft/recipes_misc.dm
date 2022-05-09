@@ -155,6 +155,15 @@
 	result = /obj/item/reagent_containers/food/snacks/salad/ricepudding
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/floursack
+	name = "Flour sack"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/wheat = 5,
+		/obj/item/stack/sheet/leather = 3
+	)
+	result = /obj/item/reagent_containers/food/condiment/flour
+	subcategory = CAT_MISCFOOD
+
 
 /*
 /datum/crafting_recipe/food/melonkeg

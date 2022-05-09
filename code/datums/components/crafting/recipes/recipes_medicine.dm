@@ -210,3 +210,13 @@
 	time = 20
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/prim_defib
+	name = "Primitive Defibrillator"
+	result = /obj/item/defibrillator/primitive
+	reqs = list (/obj/item/stock_parts/capacitor/adv = 1,
+				 /obj/item/stack/cable_coil = 2,
+				 /obj/item/salvage/crafting = 1)
+	time = 50
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL

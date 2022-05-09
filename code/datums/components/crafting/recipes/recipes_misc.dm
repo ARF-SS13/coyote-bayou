@@ -461,3 +461,14 @@
 				/obj/item/stack/cable_coil = 3)
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_CLOTHING
+
+/datum/crafting_recipe/shock_collar
+	name = "Shock Collar"
+	result = /obj/item/electropack/shockcollar
+	reqs = list(/obj/item/stock_parts/capacitor = 1,
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
+	time = 30
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
