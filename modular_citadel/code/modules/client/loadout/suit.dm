@@ -175,10 +175,10 @@
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Chief of Police",
+							"Sheriff",
 							"Doctor",
 							"Citizen",
-							"Officer",
+							"Deputy",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",
@@ -192,8 +192,8 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "Oasis Police, Oasis Officials"
-	restricted_roles = list("Chief of Police",
-							"Officer",
+	restricted_roles = list("Sheriff",
+							"Deputy",
 							"Mayor",
 							"Detective",
 							"Secretary",
