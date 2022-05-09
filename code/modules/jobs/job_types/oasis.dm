@@ -17,7 +17,7 @@ Mayor
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
 	faction = FACTION_OASIS
-
+/*
 /datum/job/oasis/f13mayor
 	title = "Mayor"
 	flag = F13MAYOR
@@ -556,7 +556,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
-
+*/
 /datum/job/oasis/f13dendoc
 	title = "Doctor"
 	flag = F13DENDOC
@@ -799,22 +799,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/f13/leather
 	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
 	)
-/*
-/datum/outfit/loadout/secretary
-	name = "Secretary"
-	uniform = /obj/item/clothing/under/suit/black
-	glasses = /obj/item/clothing/glasses/regular/hipster
-	shoes = /obj/item/clothing/shoes/laceup
-	r_hand = /obj/item/storage/briefcase
-	backpack_contents = list(/obj/item/pen = 1,
-	/obj/item/clipboard = 1,
-	/obj/item/paper_bin/bundlenatural = 1,
-	/obj/item/clothing/under/suit/black/skirt = 1,
-	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-	/obj/item/ammo_box/magazine/m22 = 2,
-	)
-	///we should find something to do with this
-*/
+
 /datum/outfit/loadout/singer
 	name = "Singer"
 	shoes = /obj/item/clothing/shoes/laceup
@@ -881,6 +866,7 @@ Mayor
 		/obj/item/ammo_box/a357=2)
 
 /*--------------------------------------------------------------*/
+/*
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER
@@ -956,7 +942,7 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1
 		)
-
+*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13shopkeeper

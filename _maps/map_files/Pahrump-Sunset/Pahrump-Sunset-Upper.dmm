@@ -376,7 +376,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abb" = (
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
@@ -401,21 +401,21 @@
 	color = "#624b30"
 	},
 /turf/open/indestructible/ground/outside/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abg" = (
 /turf/open/indestructible/ground/outside/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abh" = (
 /turf/open/floor/plasteel/stairs{
 	color = "#4b3a26"
 	},
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abi" = (
 /obj/item/flag/khan{
 	pixel_y = -30
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abj" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -426,11 +426,11 @@
 	name = "skulls"
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abk" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abl" = (
 /turf/open/floor/wood/f13/import/common/broken,
 /area/f13/wasteland)
@@ -444,7 +444,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abo" = (
 /obj/structure/fluff/railing/corner{
 	dir = 1;
@@ -472,15 +472,17 @@
 /area/f13/wasteland)
 "abr" = (
 /obj/structure/chair/wood/wings,
+/obj/effect/landmark/start/f13/steward,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abs" = (
 /obj/structure/chair/comfy/throne,
+/obj/effect/landmark/start/f13/noyan,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abt" = (
 /turf/closed/wall/f13/brick,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abu" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/pirate,
@@ -488,11 +490,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abv" = (
 /obj/structure/closet/crate/footlocker,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abw" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/pirate,
@@ -500,39 +502,41 @@
 	dir = 4
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abx" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "aby" = (
 /obj/structure/table/wood/bar,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abz" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abA" = (
 /obj/structure/punching_bag,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abB" = (
 /obj/structure/chair/wood/fancy{
 	dir = 4
 	},
+/obj/effect/landmark/start/f13/khorchin,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abC" = (
 /obj/structure/chair/wood/fancy{
 	dir = 8
 	},
+/obj/effect/landmark/start/f13/khorchin,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abD" = (
 /obj/structure/railing/wood{
 	dir = 4;
@@ -542,12 +546,12 @@
 /obj/structure/bedsheetbin/empty,
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abE" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/pirate,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abF" = (
 /obj/structure/railing/wood{
 	dir = 8;
@@ -555,23 +559,23 @@
 	pixel_y = 1
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abG" = (
 /obj/effect/turf_decal/huge/khan,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abH" = (
 /obj/structure/toilet{
 	pixel_y = 15
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abI" = (
 /obj/structure/sink{
 	pixel_y = 30
 	},
 /turf/open/floor/wood/f13/import/common/broken,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abJ" = (
 /obj/structure/chair/bench{
 	dir = 1
@@ -580,13 +584,13 @@
 	dir = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abK" = (
 /obj/structure/chair/bench{
 	dir = 1
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abL" = (
 /obj/structure/chair/bench{
 	dir = 1
@@ -596,7 +600,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abM" = (
 /obj/item/reagent_containers/rag/towel,
 /obj/item/reagent_containers/rag/towel,
@@ -608,7 +612,7 @@
 	dir = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abN" = (
 /obj/item/reagent_containers/glass/beaker/waterbottle,
 /obj/item/reagent_containers/glass/beaker/waterbottle,
@@ -624,17 +628,17 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle,
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abO" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/pirate,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abP" = (
 /obj/machinery/door/unpowered/securedoor/khandoor,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/wide,
@@ -645,42 +649,42 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abS" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abT" = (
 /obj/machinery/microwave,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abU" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abV" = (
 /obj/machinery/processor/chopping_block,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abW" = (
 /obj/structure/table/wood,
 /obj/machinery/reagentgrinder/constructed,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abX" = (
 /obj/structure/weightmachine/stacklifter,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abY" = (
 /turf/open/floor/carpet/vault{
 	name = "yoga mat"
 	},
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "abZ" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
@@ -705,17 +709,17 @@
 /turf/open/floor/carpet/vault{
 	name = "yoga mat"
 	},
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acd" = (
 /obj/machinery/chem_dispenser/drinks,
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "ace" = (
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table/wood,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acf" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/neck/apron/housewife,
@@ -725,11 +729,11 @@
 /obj/item/clothing/under/rank/civilian/chef/skirt,
 /obj/item/book/manual/chef_recipes,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acg" = (
 /obj/machinery/vending/boozeomat,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "ach" = (
 /obj/structure/closet/locker/fridge,
 /obj/item/storage/box/ingredients,
@@ -740,7 +744,7 @@
 /obj/item/storage/box/ingredients/exotic,
 /obj/item/storage/box/ingredients/vegetarian,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "aci" = (
 /obj/structure/closet/locker/fridge,
 /obj/item/storage/box/ingredients/fiesta,
@@ -752,7 +756,7 @@
 /obj/item/storage/box/ingredients/wildcard,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acj" = (
 /obj/structure/chair/bench{
 	dir = 1
@@ -763,11 +767,11 @@
 /obj/structure/weightmachine/weightlifter,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acl" = (
 /obj/structure/weightmachine/weightlifter,
 /turf/open/floor/wood/f13/import/common/broken,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "acm" = (
 /obj/item/flag/khan{
 	pixel_y = 20;
@@ -1362,7 +1366,13 @@
 "cUT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
+"dan" = (
+/obj/structure/chair/wood/fancy{
+	dir = 8
+	},
+/turf/open/floor/wood/f13/import/common,
+/area/f13/wasteland/khans)
 "dbF" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
@@ -1402,7 +1412,7 @@
 /obj/structure/punching_bag,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "dos" = (
 /obj/structure/toilet/greyscale{
 	dir = 1
@@ -1464,6 +1474,13 @@
 	icon_state = "bluerusty"
 	},
 /area/f13/building)
+"edT" = (
+/obj/structure/chair/wood/fancy{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/kheshig,
+/turf/open/floor/wood/f13/import/common,
+/area/f13/wasteland/khans)
 "egq" = (
 /turf/open/indestructible/ground/outside/ruins{
 	icon_state = "rubbleplate"
@@ -1679,6 +1696,14 @@
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/city)
+"fEr" = (
+/obj/structure/chair/wood/fancy{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/khorchin,
+/turf/open/floor/wood/f13/import/common,
+/area/f13/wasteland/khans)
 "fHv" = (
 /turf/open/floor/plasteel/f13/concrete/cable/curved{
 	dir = 8
@@ -1928,7 +1953,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "iel" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail{
@@ -2043,7 +2068,7 @@
 "iUi" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common/broken,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "jcl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/woodalt,
@@ -2223,7 +2248,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "kQF" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2939,7 +2964,7 @@
 /area/f13/building)
 "pxI" = (
 /turf/open/floor/wood/f13/import/common/broken,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "pAH" = (
 /obj/structure/dresser,
 /turf/open/indestructible/ground/outside/woodalt,
@@ -3044,7 +3069,7 @@
 /obj/structure/table/wood/bar,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "qmO" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3684,6 +3709,14 @@
 /obj/structure/bed,
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/city)
+"uKN" = (
+/obj/structure/chair/wood/fancy{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/kheshig,
+/turf/open/floor/wood/f13/import/common,
+/area/f13/wasteland/khans)
 "uQU" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
@@ -3749,7 +3782,11 @@
 /area/f13/city)
 "viX" = (
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
+"vlI" = (
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood/f13/import/common,
+/area/f13/wasteland/khans)
 "vqz" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -3845,7 +3882,7 @@
 	pixel_y = 8
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "wzC" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -3934,7 +3971,7 @@
 /area/f13/building)
 "xuM" = (
 /turf/closed/wall/f13/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "xvZ" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
@@ -4007,7 +4044,7 @@
 /area/f13/city)
 "xXM" = (
 /turf/open/transparent/openspace,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "xXQ" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -7610,9 +7647,9 @@ xuM
 viX
 abk
 viX
-aba
+uKN
 abB
-aba
+fEr
 aba
 abk
 viX
@@ -8122,7 +8159,7 @@ lDT
 lDT
 abj
 abk
-abr
+vlI
 iaD
 viX
 viX
@@ -9152,10 +9189,10 @@ xuM
 abk
 viX
 viX
+edT
 abC
 abC
-abC
-abC
+dan
 viX
 abk
 xuM

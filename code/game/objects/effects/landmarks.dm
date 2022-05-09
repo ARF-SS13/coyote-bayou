@@ -803,10 +803,6 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Outlaw"
 	icon_state = "Raider"
 
-/obj/effect/landmark/start/f13/pusher
-	name = "Great Khan"
-	icon_state = "Pusher"
-
 /obj/effect/landmark/start/f13/enforcer
 	name = "Den Mob Enforcer"
 	icon_state = "Enforcer"
@@ -913,3 +909,47 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/followersscientist
 	name = "Followers Scientist"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/obj/effect/landmark/start/f13/noyan
+	name = "Noyan"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/steward
+	name = "Steward"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/kheshig
+	name = "Kheshig"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/khorchin
+	name = "Khorchin"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/kipchak
+	name = "Kipchak"
+	icon_state = "Pusher"
+
+/obj/effect/landmark/start/f13/mangudai
+	name = "Mangudai"
+	icon_state = "Pusher"

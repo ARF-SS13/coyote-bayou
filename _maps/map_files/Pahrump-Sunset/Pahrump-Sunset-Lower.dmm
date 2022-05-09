@@ -157,15 +157,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"aaF" = (
-/obj/effect/landmark/start/f13/prospector,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
-"aaG" = (
-/obj/effect/landmark/start/f13/prospector,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "aaH" = (
 /obj/structure/sign/poster/contraband/pinup_pink{
 	pixel_y = 32
@@ -199,14 +190,6 @@
 "aaN" = (
 /turf/closed/wall/rust,
 /area/f13/tunnel/southwestoasis)
-"aaO" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/prospector,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/tunnel)
 "aaP" = (
 /obj/structure/rack,
 /obj/item/pickaxe,
@@ -1068,7 +1051,7 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "bgX" = (
 /obj/structure/chair/wood/modern,
 /turf/open/floor/f13/wood,
@@ -1107,7 +1090,7 @@
 	color = "#4b3a26"
 	},
 /turf/open/floor/wood/f13/import/common,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "boD" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1181,7 +1164,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "bsC" = (
 /turf/closed/wall/rust,
 /area/f13/tunnel)
@@ -1322,7 +1305,7 @@
 	color = "#4b3a26"
 	},
 /turf/closed/mineral/random/high_chance,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "bAY" = (
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
@@ -2755,7 +2738,7 @@
 "bLA" = (
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "bLB" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -3144,7 +3127,7 @@
 "bMS" = (
 /obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "bMT" = (
 /obj/structure/table/optable/abductor,
 /obj/item/restraints/handcuffs,
@@ -4966,7 +4949,7 @@
 /obj/machinery/reagentgrinder/constructed,
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "ciX" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
@@ -5508,7 +5491,7 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "crb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/pinup_couch{
@@ -5816,7 +5799,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "daZ" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -6246,7 +6229,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "elZ" = (
 /obj/structure/table,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
@@ -6493,7 +6476,7 @@
 	layer = 0
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "eSw" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -6634,7 +6617,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "ftM" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice,
@@ -6857,7 +6840,7 @@
 "gaI" = (
 /obj/machinery/smartfridge/bottlerack/drug_storage,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "gck" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -7460,7 +7443,7 @@
 /obj/item/reagent_containers/blood/OMinus,
 /obj/item/reagent_containers/blood/OMinus,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "hMP" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -7833,7 +7816,7 @@
 	},
 /obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "iYH" = (
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt,
@@ -8037,7 +8020,7 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "jBs" = (
 /turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner,
 /area/f13/radiation)
@@ -9132,7 +9115,7 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "mna" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
@@ -9373,7 +9356,7 @@
 	dir = 8
 	},
 /turf/open/indestructible/ground/outside/wood,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "nws" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/building)
@@ -9829,7 +9812,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "oUM" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight,
@@ -10013,7 +9996,7 @@
 "puA" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "pvk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
@@ -10133,7 +10116,7 @@
 /obj/item/storage/box/pillbottles,
 /obj/item/storage/box/syringes,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "pMz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -10501,7 +10484,7 @@
 	pixel_x = -3
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "qMh" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -10602,7 +10585,7 @@
 /area/f13/caves)
 "rci" = (
 /turf/closed/wall/f13/brick,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "rdE" = (
 /obj/structure/sign/poster/contraband/pinup_funk{
 	pixel_y = -32
@@ -10662,7 +10645,7 @@
 /obj/item/storage/box/syringes,
 /obj/item/storage/box/pillbottles,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "rkZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland,
@@ -10744,7 +10727,7 @@
 "rsP" = (
 /obj/machinery/chem_master,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "rtc" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor{
@@ -10861,7 +10844,7 @@
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "rPt" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -11549,7 +11532,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "tIQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -11602,7 +11585,7 @@
 /area/f13/tunnel)
 "tRS" = (
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "tTZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
@@ -12478,7 +12461,7 @@
 	layer = 0
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "wlv" = (
 /obj/item/flag/oasis,
 /turf/open/floor/f13/wood,
@@ -12591,7 +12574,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
-/area/f13/caves)
+/area/f13/wasteland/khans)
 "wFZ" = (
 /obj/structure/simple_door/room{
 	name = "Barracks I"
@@ -20605,7 +20588,7 @@ abm
 bFx
 aax
 aaz
-aaF
+wid
 dFQ
 ciE
 aaP
@@ -21376,7 +21359,7 @@ aae
 bFx
 aay
 aay
-aaG
+dFQ
 dFQ
 dFQ
 aaR
@@ -22406,7 +22389,7 @@ bsC
 aaE
 wid
 wid
-aaO
+qMz
 bsC
 bsC
 aae
