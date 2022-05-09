@@ -21262,10 +21262,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/f13/stage_t,
 /area/f13/city)
-"bkv" = (
-/obj/effect/landmark/start/f13/banker,
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/city)
 "bkw" = (
 /obj/structure/filingcabinet{
 	density = 0;
@@ -21373,7 +21369,6 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/banker,
 /turf/open/floor/carpet/green,
 /area/f13/city)
 "bkM" = (
@@ -21583,7 +21578,6 @@
 /area/f13/city)
 "blj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/banker,
 /turf/open/floor/wood/f13/stage_b,
 /area/f13/city)
 "blk" = (
@@ -23722,7 +23716,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "btv" = (
-/obj/effect/landmark/start/f13/deputy,
 /obj/structure/chair/bench,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -46790,11 +46783,6 @@
 	icon_state = "rubbleslab"
 	},
 /area/f13/wasteland)
-"unY" = (
-/obj/effect/landmark/start/f13/sheriff,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/city)
 "uol" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -48381,10 +48369,6 @@
 /obj/item/cultivator,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"vRe" = (
-/obj/effect/landmark/start/f13/farmer,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "vRh" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -58257,7 +58241,7 @@ pAJ
 xyt
 nVn
 acv
-vRe
+acv
 aTC
 acv
 acv
@@ -67215,7 +67199,7 @@ ygj
 ygj
 aTw
 bpn
-unY
+qZX
 grk
 bVt
 bVt
@@ -70320,7 +70304,7 @@ bkb
 xvI
 bjq
 bkq
-bkv
+cad
 bkA
 bkA
 bkI
