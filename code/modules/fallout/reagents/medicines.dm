@@ -21,6 +21,15 @@
 				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
 	..()
 
+/datum/reagent/medicine/stimpak/on_mob_add(mob/living/M)
+	. = ..()
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -47,12 +56,6 @@
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
 		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.overeatduration = 0
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
@@ -91,7 +94,16 @@
 	addiction_threshold = 16
 	ghoulfriendly = TRUE
 
-datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+/datum/reagent/medicine/super_stimpak/on_mob_add(mob/living/M)
+	. = ..()
+	if(M.mind)
+		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
+		if(istype(job))
+			switch(job.faction)
+				if(FACTION_LEGION)
+					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+
+/datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjust_nutrition(-3)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -118,12 +130,6 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
 		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.overeatduration = 0
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
