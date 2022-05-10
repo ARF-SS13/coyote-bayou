@@ -54,23 +54,6 @@
 	desc = "Heavy armor with ballistic inserts, sewn into a padded riot police coat."
 	armor = list("melee" = 70, "bullet" = 45, "laser" = 20, "energy" = 20, "bomb" = 45, "bio" = 35, "rad" = 10, "fire" = 50, "acid" = 10)
 
-/obj/item/clothing/suit/armored/heavy/salvaged_raider
-	name = "raider salvaged power armor"
-	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
-	icon_state = "raider_salvaged"
-	item_state = "raider_salvaged"
-	armor = list("melee" = 60, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)
-	slowdown = 0.8
-
-/obj/item/clothing/suit/armored/heavy/salvaged_t45
-	name = "salvaged T-45b power armor"
-	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
-	icon_state = "t45b_salvaged"
-	item_state = "t45b_salvaged"
-	armor = list("melee" = 65, "bullet" = 70, "laser" = 55, "energy" = 45, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
-	slowdown = 1
-
-
 //Recipe bone armor + metal and leather
 /obj/item/clothing/suit/armored/heavy/tribal
 	name = "tribal heavy carapace"
@@ -80,20 +63,47 @@
 	armor = list("melee" = 55, "bullet" = 20, "laser" = 25, "energy" = 20, "bomb" = 45, "bio" = 5, "rad" = 10, "fire" = 30, "acid" = 10)
 	allowed = list(/obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
 
+//////////////////////////
+// Salvaged Power Armor //
+//////////////////////////
 
-/////////
-// NCR //
-/////////
+/obj/item/clothing/suit/armored/heavy/salvaged_t45b
+	name = "salvaged T-45b power armor"
+	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
+	icon_state = "t45b_salvaged"
+	item_state = "t45b_salvaged"
+	armor = list("melee" = 65, "bullet" = 70, "laser" = 55, "energy" = 45, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
+	slowdown = 1
 
-/obj/item/clothing/suit/armored/heavy/salvaged_NCR
+/obj/item/clothing/suit/armored/heavy/salvaged_t45b/raider
+	name = "salvaged raider power armor"
+	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
+	icon_state = "raider_salvaged"
+	item_state = "raider_salvaged"
+	armor = list("melee" = 60, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)
+
+/obj/item/clothing/suit/armored/heavy/salvaged_t45b/ncr
 	name = "salvaged NCR power armor"
 	desc = "It's a set of T-45b power armor with a air conditioning module installed, sadly it lacks servomotors to enhance the users strength. The paintjob and the two headed bear painted onto the chestplate shows it belongs to the NCR."
 	icon_state = "ncr_salvaged"
 	item_state = "ncr_salvaged"
-	armor = list("melee" = 65, "bullet" = 70, "laser" = 55, "energy" = 45, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
-	slowdown = 1
+
+/obj/item/clothing/suit/armored/heavy/salvaged_t45b/hotrod
+	name = "salvaged hotrod T-45b power armor"
+	desc = " It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
+	icon_state = "t45hotrod"
+	item_state = "t45hotrod"
+	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 30, "bomb" = 40, "bio" = 50, "rad" = 30, "fire" = 80, "acid" = 10, "wound" = 30)
 
 
+/obj/item/clothing/suit/armored/heavy/salvaged_t45b/tribal
+	name = "salvaged tribal T45-b power armor"
+	desc = "A set of salvaged power armor, with certain bits of plating stripped out to retain more freedom of movement. No cooling module, though."
+	icon_state = "tribal_power_armor"
+	item_state = "tribal_power_armor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 30, "bio" = 40, "rad" = 20, "fire" = 40, "acid" = 0, "wound" = 25)
+	slowdown = 1.1
 
 ////////////
 // LEGION //

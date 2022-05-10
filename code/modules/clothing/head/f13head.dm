@@ -209,7 +209,9 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
-//Power Armour
+/////////////////
+// Power Armor //
+/////////////////
 
 /obj/item/clothing/head/helmet/f13/power_armor
 	cold_protection = HEAD
@@ -236,7 +238,11 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_range = 5
 	light_on = FALSE
+	/// Projectiles below this damage will get deflected
+	var/deflect_damage = 18
+	/// If TRUE - it requires PA training trait to be worn
 	var/requires_training = TRUE
+	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
 
 /obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
@@ -262,41 +268,19 @@
 		return ..()
 	return
 
+/obj/item/clothing/head/helmet/f13/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
+		if(prob(70) && (damage < deflect_damage))
+			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
-	name = "salvaged T-45b helmet"
-	desc = "It's a salvaged T-45b power armor helmet."
+	name = "T-45b helmet"
+	desc = "It's a T-45b power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
-	requires_training = FALSE
-	powered = FALSE
-
-/obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
-	name = "ncr salvaged T-45b helmet"
-	desc = "It's an NCR salvaged T-45b power armor helmet, better repaired than regular salvaged PA, and decorated with the NCR flag and other markings for an NCR Heavy Trooper."
-	icon_state = "t45bhelmet_ncr"
-	item_state = "t45bhelmet_ncr"
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 24, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
-	requires_training = FALSE
-	powered = FALSE
-
-/obj/item/clothing/head/helmet/f13/power_armor/t45b/restored
-	name = "restored T-45b helmet"
-	desc = "It's a restored T-45b power armor helmet."
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 22, "bomb" = 55, "bio" = 65, "rad" = 55, "fire" = 85, "acid" = 0, "wound" = 40)
-	requires_training = TRUE
-	powered = TRUE
-
-/obj/item/clothing/head/helmet/f13/power_armor/raiderpa_helm
-	name = "raider T-45b power helmet"
-	desc = "a raider's attempt to duplicate a power armor helmet. The result is a fuzed mass of metal and ceramic that nonetheless provides protection"
-	icon_state = "raiderpa_helm"
-	item_state = "raiderpa_helm"
-	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
-	requires_training = FALSE
-	powered = FALSE
-	slowdown = 0.05
-
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
@@ -305,8 +289,6 @@
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
-//	armor_block_chance = 60
-//	deflection_chance = 10 //20% chance to block damage from blockable bullets and redirect the bullet at a random angle
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
@@ -319,15 +301,6 @@
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/bos/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"
 	item_state = "t45dhelmet[light_on]"
-
-/obj/item/clothing/head/helmet/f13/power_armor/hotrod
-	name = "hotrod T-45b power helmet"
-	desc = "This power armor helmet is so decrepit and battle-worn that it have lost most of its capability to protect the wearer from harm."
-	icon_state = "t45hotrod_helm"
-	item_state = "t45hotrod_helm"
-	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 40)
-	requires_training = FALSE
-	powered = FALSE
 
 /obj/item/clothing/head/helmet/f13/power_armor/t51b
 	name = "T-51b power helmet"

@@ -116,7 +116,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	//the ids you can use for your species, if empty, it means default only and not changeable
 	var/list/allowed_limb_ids
-	
+
 	// simple laugh sound overrides
 	/// This is used for every gender other than female
 	var/laugh_male = list('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')

@@ -106,10 +106,10 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force += smutant
-	
+
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
 		force -= ghoulmelee
-	
+
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
@@ -135,7 +135,7 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force -= smutant
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE))
 		force += ghoulmelee
 
 //the equivalent of the standard version of attack() but for object targets.

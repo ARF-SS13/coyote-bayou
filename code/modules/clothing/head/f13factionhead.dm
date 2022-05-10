@@ -1018,15 +1018,6 @@
 	icon_state = "tribe_helmet"
 	item_state = "tribe_helmet"
 
-/obj/item/clothing/head/helmet/f13/power_armor/t45b/tribal
-	name = "tribal t-45b headdress"
-	desc = "A salvaged T-45b powered armor, with the servos removed and a feathered headdress. Certain bits of plating have been stripped out to retain more freedom of movement."
-	icon_state = "tribal_PA_helmet"
-	item_state = "tribal_PA_helmet"
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 50, "fire" = 80, "acid" = 0, "wound" = 65, "wound" = 65)
-	slowdown = 0
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
 /obj/item/clothing/head/helmet/f13/wayfarer/chief/attack_self(mob/user)
 	weldingvisortoggle(user)
 

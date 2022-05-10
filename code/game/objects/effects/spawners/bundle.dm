@@ -188,7 +188,7 @@
 /obj/effect/spawner/bundle/testa
 	name = "A"
 	items = list(
-		/obj/item/clothing/suit/armored/heavy/sulphite,		
+		/obj/item/clothing/suit/armored/heavy/sulphite,
 		/obj/item/melee/onehanded/machete/clubtesting,
 		/obj/item/gun/ballistic/rifle/rifletesting,
 		)
@@ -196,7 +196,7 @@
 /obj/effect/spawner/bundle/testb
 	name = "B"
 	items = list(
-		/obj/item/clothing/suit/armored/light/duster,		
+		/obj/item/clothing/suit/armored/light/duster,
 		/obj/item/melee/onehanded/machete/clubtesting,
 		/obj/item/gun/energy/laser/lasertesting,
 		)
@@ -204,14 +204,14 @@
 /obj/effect/spawner/bundle/testc
 	name = "C"
 	items = list(
-		/obj/item/clothing/suit/armored/light/vest/kevlar,		
+		/obj/item/clothing/suit/armored/light/vest/kevlar,
 		/obj/item/melee/onehanded/machete/swordtesting
 		)
 
 /obj/effect/spawner/bundle/testd
 	name = "D"
 	items = list(
-		/obj/item/clothing/suit/armored/light/kit/shoulder,		
+		/obj/item/clothing/suit/armored/light/kit/shoulder,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
 		/obj/item/reagent_containers/glass/bottle/napalm = 2,
@@ -221,21 +221,21 @@
 /obj/effect/spawner/bundle/teste
 	name = "E"
 	items = list(
-		/obj/item/clothing/suit/armored/light/leathersuit,		
+		/obj/item/clothing/suit/armored/light/leathersuit,
 		/obj/item/melee/onehanded/machete/swordtesting
 		)
 
 /obj/effect/spawner/bundle/testf
 	name = "F"
 	items = list(
-		/obj/item/clothing/suit/toggle/armored/ranger_duster,		
+		/obj/item/clothing/suit/toggle/armored/ranger_duster,
 		/obj/item/melee/onehanded/machete/knifetesting
 		)
 
 /obj/effect/spawner/bundle/testg
 	name = "G"
 	items = list(
-		/obj/item/clothing/suit/armored/medium/scrapchest,		
+		/obj/item/clothing/suit/armored/medium/scrapchest,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/reagent_containers/food/drinks/bottle/molotov = 2,
 		/obj/item/reagent_containers/glass/bottle/napalm = 2,
@@ -245,7 +245,7 @@
 /obj/effect/spawner/bundle/testh
 	name = "H"
 	items = list(
-		/obj/item/clothing/suit/armored/medium/combat,		
+		/obj/item/clothing/suit/armored/medium/combat,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/gun/ballistic/shotgun/shotttesting,
 		)
@@ -253,7 +253,7 @@
 /obj/effect/spawner/bundle/testi
 	name = "I"
 	items = list(
-		/obj/item/clothing/suit/armored/medium/motorball,		
+		/obj/item/clothing/suit/armored/medium/motorball,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/gun/ballistic/shotgun/shotttesting,
 		)
@@ -261,7 +261,7 @@
 /obj/effect/spawner/bundle/testj
 	name = "J"
 	items = list(
-		/obj/item/clothing/suit/armored/heavy/salvaged_raider,		
+		/obj/item/clothing/suit/armored/heavy/salvaged_t45b/raider,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/gun/energy/laser/lasertesting,
 		)

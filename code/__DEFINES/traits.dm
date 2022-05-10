@@ -205,6 +205,7 @@
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
 #define TRAIT_IRONFIST			"iron_fist"
+#define TRAIT_POWER_ARMOR		"power_armor"
 #define TRAIT_SNOB				"snob"
 #define TRAIT_CULT_EYES 		"cult_eyes"
 #define TRAIT_AUTO_CATCH_ITEM	"auto_catch_item"
