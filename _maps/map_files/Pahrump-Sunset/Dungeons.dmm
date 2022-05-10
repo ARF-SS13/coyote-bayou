@@ -12685,10 +12685,6 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/vault)
-"nHM" = (
-/obj/effect/decal/cleanable/cum,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "nHP" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
@@ -13319,7 +13315,8 @@
 /area/f13/brotherhood)
 "orm" = (
 /mob/living/simple_animal/hostile/deathclaw{
-	name = "Buck"
+	name = "Jimmy";
+	desc = "One of the claw brothers."
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -19986,7 +19983,8 @@
 /area/f13/bunker)
 "vGr" = (
 /mob/living/simple_animal/hostile/deathclaw{
-	name = "Chuck"
+	name = "Chuck";
+	desc = "One of the claw brothers."
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -52976,7 +52974,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-nHM
+nlT
 nlT
 uaa
 sQQ
@@ -53218,7 +53216,7 @@ shC
 shC
 hrZ
 hrZ
-nHM
+nlT
 eCt
 nlT
 nlT
@@ -53478,7 +53476,7 @@ qPS
 nlT
 nlT
 nlT
-nHM
+nlT
 nlT
 nlT
 hrZ
@@ -53493,7 +53491,7 @@ qPS
 pLA
 nlT
 ouF
-nHM
+nlT
 hrZ
 hrZ
 shC
@@ -54006,7 +54004,7 @@ hrZ
 hrZ
 nlT
 nlT
-nHM
+nlT
 hrZ
 hrZ
 hrZ
