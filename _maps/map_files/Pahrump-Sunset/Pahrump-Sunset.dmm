@@ -151,6 +151,13 @@
 	},
 /turf/open/floor/plasteel/f13/concrete/industrial/split,
 /area/f13/building)
+"aaI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/turf_decal/huge/heaven,
+/turf/open/floor/wood/f13/import/carpet_violet,
+/area/f13/bar/heaven)
 "aaJ" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -177,6 +184,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"aaM" = (
+/obj/item/pen/fountain/captain,
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "aaN" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -196,6 +210,15 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/radiation)
+"aaP" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "aaQ" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/village)
@@ -252,6 +275,13 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/bunker)
+"abb" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain1"
+	},
+/area/f13/wasteland)
 "abc" = (
 /turf/open/floor/plasteel/f13/metal/grate,
 /area/f13/building)
@@ -4357,7 +4387,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aoi" = (
 /obj/structure/table,
@@ -12186,7 +12216,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aLi" = (
 /obj/structure/window/fulltile/house{
@@ -12216,7 +12246,7 @@
 	color = "#363636"
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aLm" = (
 /obj/item/storage/belt/tribe_quiver/bone,
@@ -12432,7 +12462,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 6
+	},
 /area/f13/bar/heaven)
 "aLR" = (
 /obj/effect/turf_decal/vg_decals/numbers/two,
@@ -12884,8 +12916,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider/sulphite,
-/turf/open/floor/wood,
+/mob/living/simple_animal/hostile/raider/sulphite{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aMZ" = (
 /turf/open/indestructible/ground/outside/dirt,
@@ -13801,7 +13835,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aPB" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
@@ -13996,7 +14030,7 @@
 /obj/structure/mirror{
 	pixel_y = 32
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aQf" = (
 /obj/structure/simple_door/bunker,
@@ -14117,7 +14151,7 @@
 /obj/structure/mirror{
 	pixel_y = 32
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aQz" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
@@ -14133,7 +14167,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aQB" = (
 /obj/structure/urinal{
@@ -14292,8 +14326,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/kirbyplants,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aRa" = (
 /obj/effect/decal/cleanable/dirt,
@@ -15985,7 +16018,7 @@
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aWu" = (
 /obj/machinery/workbench/forge,
@@ -16113,7 +16146,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aWP" = (
 /obj/structure/railing{
@@ -16230,7 +16263,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXi" = (
 /obj/docking_port/stationary{
@@ -16273,7 +16306,7 @@
 	color = "#363636"
 	},
 /obj/item/stack/f13Cash/random/high,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXn" = (
 /obj/structure/car/rubbish3,
@@ -16286,14 +16319,14 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXp" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "aXq" = (
 /obj/structure/fence/corner{
@@ -16363,7 +16396,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/old,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXB" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16375,7 +16408,7 @@
 /obj/structure/simple_door/repaired{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXC" = (
 /obj/structure/barricade/sandbags,
@@ -16401,8 +16434,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/floor/wood,
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXH" = (
 /obj/machinery/light/small,
@@ -16498,14 +16533,14 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXV" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aXW" = (
 /turf/closed/wall/f13/wood/house,
@@ -16600,14 +16635,17 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYn" = (
 /obj/structure/simple_door/room{
 	name = "Heaven's Night"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/wood/f13/carpet,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aYo" = (
 /obj/structure/sign/poster/contraband/pinup_funk,
@@ -16619,13 +16657,13 @@
 	color = "#363636"
 	},
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy/broken,
 /area/f13/bar/heaven)
 "aYr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16652,7 +16690,7 @@
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYu" = (
 /obj/structure/barricade/security,
@@ -16663,7 +16701,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYx" = (
 /obj/structure/sink/kitchen{
@@ -16677,7 +16715,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYz" = (
 /obj/structure/chair/stool{
@@ -16881,7 +16919,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYW" = (
 /obj/item/vending_refill/boozeomat,
@@ -16894,21 +16932,21 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aYX" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/machinery/jukebox,
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge,
 /area/f13/bar/heaven)
 "aYY" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet1"
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 8
 	},
 /area/f13/bar/heaven)
 "aYZ" = (
@@ -16921,11 +16959,11 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/open/floor/wood/f13/stage_tl,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZa" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_t,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZb" = (
 /obj/item/storage/trash_stack,
@@ -16997,15 +17035,15 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/floor/wood/f13/stage_tr,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZm" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet12"
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 9
 	},
 /area/f13/bar/heaven)
 "aZn" = (
@@ -17020,11 +17058,13 @@
 	},
 /area/f13/building)
 "aZo" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/obj/machinery/computer/slot_machine,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 8
+	},
 /area/f13/bar/heaven)
 "aZp" = (
 /obj/item/storage/bag/money{
@@ -17061,14 +17101,16 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aZu" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider/firefighter,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aZv" = (
 /obj/machinery/shower{
@@ -17130,7 +17172,7 @@
 /obj/structure/simple_door/repaired{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aZE" = (
 /obj/structure/lamp_post/quadra,
@@ -17173,14 +17215,16 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "aZJ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/structure/chair/stool/bar,
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 6
+	},
 /area/f13/bar/heaven)
 "aZK" = (
 /obj/structure/bed/mattress{
@@ -17253,14 +17297,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
-"aZS" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet4"
-	},
-/area/f13/bar/heaven)
 "aZT" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8";
@@ -17290,11 +17326,14 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/open/floor/wood/f13/stage_l,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZW" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/oakbroken,
+/obj/structure/fence/pole_b{
+	pixel_x = -17
+	},
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZX" = (
 /obj/structure/table/wood/settler,
@@ -17302,7 +17341,7 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/floor/wood/f13/stage_r,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "aZY" = (
 /obj/structure/sink{
@@ -17356,21 +17395,17 @@
 /turf/open/indestructible/ground/outside/savannah/bottomcenter,
 /area/f13/building)
 "bah" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet4"
-	},
+/turf/open/floor/wood/f13/import/wide/broken,
 /area/f13/bar/heaven)
 "bai" = (
-/obj/structure/table/wood/poker,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet9"
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
 	},
 /area/f13/bar/heaven)
 "baj" = (
@@ -17381,12 +17416,13 @@
 	},
 /area/f13/building)
 "bak" = (
-/obj/structure/table/wood/poker,
-/obj/effect/holodeck_effect/cards,
+/obj/machinery/shower{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/f13/tile/navy/broken,
 /area/f13/bar/heaven)
 "bal" = (
 /obj/structure/table/wood/settler,
@@ -17395,7 +17431,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bam" = (
 /obj/structure/window/fulltile/house{
@@ -17483,7 +17519,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "baz" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -17497,13 +17533,15 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "baA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 10
+	},
 /area/f13/bar/heaven)
 "baB" = (
 /obj/structure/flora/tree/wasteland,
@@ -17518,7 +17556,7 @@
 	color = "#A47449";
 	dir = 8
 	},
-/turf/open/floor/wood/f13/stage_bl,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "baD" = (
 /obj/item/candle/tribal_torch,
@@ -17532,7 +17570,7 @@
 /obj/structure/railing{
 	color = "#A47449"
 	},
-/turf/open/floor/wood/f13/stage_b,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "baF" = (
 /obj/structure/flora/ausbushes/leafybush,
@@ -17610,22 +17648,14 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/floor/wood/f13/stage_br,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "baO" = (
-/obj/structure/table/wood/poker,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/table/wood/settler,
+/obj/structure/fence/pole_t{
+	pixel_x = -17
 	},
-/turf/open/floor/wood/f13/carpet,
-/area/f13/bar/heaven)
-"baP" = (
-/obj/structure/table/wood/poker,
-/obj/item/dice,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "baQ" = (
 /obj/structure/window/fulltile/ruins{
@@ -17635,7 +17665,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "baR" = (
 /obj/structure/rack,
@@ -17674,11 +17704,11 @@
 /obj/structure/simple_door/dirtyglass{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "baX" = (
 /obj/machinery/vending/boozeomat,
-/turf/closed/wall/f13/wood/house,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "baY" = (
 /obj/item/candle/tribal_torch,
@@ -17716,7 +17746,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bbc" = (
 /obj/item/reagent_containers/food/drinks/drinkingglass,
@@ -17724,7 +17754,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bbd" = (
 /turf/open/floor/f13{
@@ -17739,7 +17769,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bbf" = (
 /obj/structure/simple_door/metal/fence,
@@ -17776,29 +17806,27 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white/whiteredchess/whiteredchess2,
 /area/f13/ncr)
 "bbl" = (
+/obj/structure/toilet{
+	dir = 1
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/chair/stool/bar,
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet12"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bbm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet2"
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 9
 	},
 /area/f13/bar/heaven)
 "bbn" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "torncarpet10"
-	},
+/turf/open/floor/wood/f13/import/mosaic/broken,
 /area/f13/bar/heaven)
 "bbo" = (
 /obj/structure/chair/stool{
@@ -17855,7 +17883,7 @@
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbrokenvertical"
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/mosaic/broken,
 /area/f13/bar/heaven)
 "bbu" = (
 /obj/structure/rack,
@@ -17871,9 +17899,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bbw" = (
 /obj/machinery/light/small/broken{
@@ -17897,9 +17923,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bbz" = (
 /obj/structure/sink{
@@ -17912,27 +17936,23 @@
 /obj/structure/mirror{
 	pixel_x = -32
 	},
-/mob/living/simple_animal/hostile/raider,
-/turf/open/floor/f13{
-	icon_state = "bar"
+/mob/living/simple_animal/hostile/raider{
+	name = "Heaven's Angels Raider"
 	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bbA" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy/broken,
 /area/f13/bar/heaven)
 "bbB" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bbC" = (
 /obj/effect/decal/remains/human,
@@ -17950,7 +17970,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 9
+	},
 /area/f13/bar/heaven)
 "bbF" = (
 /obj/structure/sink{
@@ -17997,7 +18019,9 @@
 	color = "#363636"
 	},
 /obj/structure/chair/stool/bar,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 9
+	},
 /area/f13/bar/heaven)
 "bbL" = (
 /obj/machinery/vending/cigarette,
@@ -18015,23 +18039,23 @@
 	},
 /area/f13/building)
 "bbN" = (
-/turf/open/floor/wood,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/item/kirbyplants,
+/turf/open/floor/wood/f13/import/fancy/broken,
 /area/f13/bar/heaven)
 "bbO" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Slaughter Shack Raider"
 	},
-/obj/structure/chair/wood/worn,
-/turf/open/floor/wood,
-/area/f13/bar/heaven)
+/turf/open/floor/wood/f13/old,
+/area/f13/caves)
 "bbP" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet{
-	icon_state = "damaged"
-	},
+/turf/open/floor/wood/f13/import/wide,
 /area/f13/bar/heaven)
 "bbQ" = (
 /obj/structure/fence{
@@ -18106,12 +18130,12 @@
 	},
 /area/f13/wasteland)
 "bcb" = (
-/obj/machinery/light/small/broken,
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 4
+	},
 /area/f13/bar/heaven)
 "bcc" = (
 /obj/effect/decal/cleanable/dirt{
@@ -18120,9 +18144,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bcd" = (
 /obj/machinery/light{
@@ -18132,9 +18154,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bce" = (
 /obj/structure/closet/crate/solarpanel_small,
@@ -18195,41 +18215,39 @@
 /obj/structure/simple_door/room{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bcl" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Slaughter Shack Raider"
 	},
-/mob/living/simple_animal/hostile/raider/baseball,
-/turf/open/floor/wood/f13/carpet,
-/area/f13/bar/heaven)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bcm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/chair/wood/worn{
-	dir = 4
-	},
-/turf/open/floor/wood/f13/carpet,
+/obj/item/kirbyplants,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bcn" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/obj/structure/chair/wood/worn,
+/mob/living/simple_animal/hostile/raider/baseball{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bco" = (
-/obj/structure/chair/wood/worn{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/light/broken,
-/turf/open/floor/wood,
+/obj/machinery/light,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bcp" = (
 /obj/structure/curtain{
@@ -18238,10 +18256,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bcq" = (
 /obj/effect/decal/remains{
@@ -18389,9 +18404,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy,
 /area/f13/bar/heaven)
 "bcP" = (
 /obj/structure/chair{
@@ -18431,15 +18444,6 @@
 "bcT" = (
 /turf/closed/wall/f13/store,
 /area/f13/wasteland)
-"bcU" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_tl,
-/area/f13/bar/heaven)
-"bcV" = (
-/obj/structure/table/wood/settler,
-/obj/structure/fence/pole_t,
-/turf/open/floor/wood/f13/stage_t,
-/area/f13/bar/heaven)
 "bcW" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -18501,9 +18505,11 @@
 	},
 /area/f13/wasteland)
 "bde" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_tr,
-/area/f13/bar/heaven)
+/mob/living/simple_animal/hostile/raider/baseball{
+	name = "Slaughter Shack Raider"
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/caves)
 "bdf" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -18597,7 +18603,9 @@
 	icon_state = "plant-18";
 	pixel_y = 14
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 10
+	},
 /area/f13/bar/heaven)
 "bds" = (
 /obj/structure/closet/fridge,
@@ -18683,7 +18691,12 @@
 	},
 /area/f13/wasteland)
 "bdF" = (
-/turf/open/floor/wood/f13/carpet,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 1
+	},
 /area/f13/bar/heaven)
 "bdG" = (
 /turf/open/floor/plating/f13/outside/road{
@@ -18697,18 +18710,15 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/f13{
-	icon_state = "bar"
-	},
+/turf/open/floor/plasteel/f13/tile/navy/broken,
 /area/f13/bar/heaven)
 "bdI" = (
+/obj/structure/table/wood/settler,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bdJ" = (
 /obj/structure/rack,
@@ -18716,11 +18726,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "bdK" = (
+/obj/structure/chair/wood/worn{
+	dir = 8
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/chair/wood/worn,
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bdL" = (
 /obj/structure/destructible/tribal_torch/lit,
@@ -19186,9 +19198,11 @@
 	},
 /area/f13/village)
 "beX" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_l,
-/area/f13/bar/heaven)
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Slaughter Shack Raider"
+	},
+/turf/open/floor/wood/f13/old,
+/area/f13/caves)
 "beY" = (
 /obj/machinery/processor,
 /turf/open/floor/f13{
@@ -19501,13 +19515,15 @@
 	},
 /area/f13/ncr)
 "bfM" = (
-/obj/structure/table/wood/settler,
-/obj/structure/fence/pole_b,
-/turf/open/floor/wood/f13/oakbroken,
-/area/f13/bar/heaven)
-"bfN" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_r,
+/obj/structure/chair/wood/worn{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bfO" = (
 /obj/effect/decal/cleanable/dirt{
@@ -19517,7 +19533,9 @@
 	color = "#A47449";
 	dir = 4
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 10
+	},
 /area/f13/bar/heaven)
 "bfP" = (
 /obj/effect/decal/remains{
@@ -19808,17 +19826,9 @@
 	color = "#363636"
 	},
 /obj/structure/chair/wood/worn{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/wood,
-/area/f13/bar/heaven)
-"bgG" = (
-/obj/structure/table/wood/settler,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bgH" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -19831,13 +19841,12 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "bgJ" = (
-/obj/structure/chair/wood/worn{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 7
+	},
 /area/f13/bar/heaven)
 "bgK" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -19849,8 +19858,10 @@
 	},
 /area/f13/wasteland)
 "bgL" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_bl,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet/edge,
 /area/f13/bar/heaven)
 "bgM" = (
 /obj/machinery/workbench/forge,
@@ -19864,11 +19875,10 @@
 /area/f13/building)
 "bgO" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_b,
-/area/f13/bar/heaven)
-"bgP" = (
-/obj/structure/table/wood/settler,
-/turf/open/floor/wood/f13/stage_br,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bgQ" = (
 /obj/structure/stone_tile/block{
@@ -19926,7 +19936,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhb" = (
 /obj/structure/dresser{
@@ -19935,7 +19945,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhc" = (
 /obj/structure/closet/cabinet/anchored{
@@ -19944,16 +19954,13 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhd" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/chair/wood/worn{
-	dir = 1
-	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bhe" = (
 /obj/structure/fence/wooden,
@@ -19968,7 +19975,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood/f13/carpet,
+/turf/open/floor/wood/f13/import/carpet_violet,
 /area/f13/bar/heaven)
 "bhg" = (
 /obj/structure/chair/wood/worn{
@@ -19980,14 +19987,13 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhh" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhi" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -20062,7 +20068,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhs" = (
 /obj/machinery/light/small{
@@ -20071,18 +20077,15 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bht" = (
+/obj/structure/chair/wood/worn{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/mob/living/simple_animal/hostile/raider/baseball{
-	desc = "A burly looking Junker armed with a crude fist-weapon.";
-	icon_dead = "junker_scrapper";
-	icon_gib = "junker_scrapper";
-	icon_living = "junker_scrapper";
-	icon_state = "junker_scrapper";
-	name = "Junker Scrapper"
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
 	},
-/turf/open/floor/wood,
 /area/f13/bar/heaven)
 "bhu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -20127,12 +20130,14 @@
 	},
 /area/f13/building)
 "bhz" = (
+/obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/closet/crate/bin/trashbin,
 /obj/machinery/light,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bhA" = (
 /obj/structure/chair/wood/worn{
@@ -20141,7 +20146,12 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/mob/living/simple_animal/hostile/raider{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bhB" = (
 /obj/structure/table/wood/settler,
@@ -20149,7 +20159,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bhC" = (
 /obj/structure/decoration/clock/old/active,
@@ -20162,7 +20174,12 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Heaven's Angels Raider"
+	},
+/turf/open/floor/wood/f13/import/carpet_violet/edge{
+	dir = 5
+	},
 /area/f13/bar/heaven)
 "bhF" = (
 /obj/structure/table/reinforced,
@@ -20204,7 +20221,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhJ" = (
 /obj/structure/chair/office/dark,
@@ -20218,7 +20235,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhL" = (
 /obj/structure/chair{
@@ -20278,7 +20295,7 @@
 /obj/structure/simple_door/repaired{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhT" = (
 /obj/item/clothing/accessory/medal/gold/heroism,
@@ -20305,7 +20322,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhX" = (
 /obj/structure/wreck/trash/machinepiletwo,
@@ -20324,7 +20341,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bhZ" = (
 /obj/structure/rack,
@@ -20355,7 +20372,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bid" = (
 /obj/structure/chair/wood/worn,
@@ -20365,7 +20382,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bie" = (
 /obj/structure/window/fulltile/store,
@@ -20378,22 +20395,21 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/decal/cleanable/cum,
 /obj/structure/curtain{
 	color = "#845f58";
 	pixel_y = -32
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "big" = (
+/obj/structure/simple_door/room{
+	name = "Heaven's Night"
+	},
+/obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/curtain{
-	color = "#845f58";
-	pixel_y = -32
-	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/fancy,
 /area/f13/bar/heaven)
 "bih" = (
 /obj/effect/decal/cleanable/dirt,
@@ -20428,7 +20444,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic/broken,
 /area/f13/bar/heaven)
 "bim" = (
 /obj/structure/barricade/wooden,
@@ -20440,7 +20456,7 @@
 /obj/structure/window/fulltile/ruins,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/railing,
-/turf/open/floor/wood,
+/turf/open/floor/wood/f13/import/mosaic,
 /area/f13/bar/heaven)
 "bio" = (
 /obj/machinery/vending/nukacolavendfull,
@@ -23783,7 +23799,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "btQ" = (
-/mob/living/simple_animal/hostile/raider/ranged,
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibup1"
 	},
@@ -26493,13 +26508,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 9;
 	icon_state = "outerpavement"
-	},
-/area/f13/wasteland)
-"ccb" = (
-/mob/living/simple_animal/hostile/ghoul,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland)
 "ccc" = (
@@ -39172,13 +39180,6 @@
 /obj/machinery/computer/card/legion,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
-"mVA" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/obj/item/pen/fountain/captain,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "mVT" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -46405,6 +46406,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
+	name = "Slaughter Shack Boss"
+	},
 /turf/open/floor/wood/f13/carpet,
 /area/f13/caves)
 "tWt" = (
@@ -48678,15 +48682,6 @@
 /obj/item/stack/crafting/armor_plate/five,
 /turf/open/floor/f13/wood,
 /area/f13/legion)
-"wdA" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "weB" = (
 /obj/structure/table,
 /obj/machinery/reagentgrinder,
@@ -63289,7 +63284,7 @@ aXW
 aXW
 aXW
 aXW
-bbv
+bak
 bcc
 bbv
 aXW
@@ -63799,7 +63794,7 @@ aaB
 aaB
 aae
 aXX
-aYq
+aQZ
 aZu
 bal
 aXW
@@ -64057,7 +64052,7 @@ aXx
 ans
 aXW
 aYp
-aYq
+aQZ
 bal
 aXW
 bbz
@@ -64067,7 +64062,7 @@ bdH
 aXW
 bha
 bhg
-aLQ
+bhh
 aXW
 aae
 ady
@@ -64314,7 +64309,7 @@ aXz
 aXH
 aXW
 aYp
-aYq
+aQZ
 bal
 baU
 bbA
@@ -64324,7 +64319,7 @@ aXW
 aXW
 bhb
 bhh
-aLQ
+bhh
 aXW
 aat
 aat
@@ -64567,7 +64562,7 @@ aae
 aae
 ans
 aTW
-aLQ
+bah
 aXR
 aXW
 aXW
@@ -64577,10 +64572,10 @@ baU
 bbB
 bbB
 bbB
-bdH
+bbl
 aXW
 bhc
-aLQ
+bhh
 bhI
 aXW
 aat
@@ -64824,11 +64819,11 @@ aae
 aae
 ans
 aUp
-aLQ
-aLQ
+bbP
+bbP
 aXW
 aYq
-aYq
+aQZ
 bay
 baV
 bbD
@@ -65081,20 +65076,20 @@ aae
 aae
 ans
 aWf
-aLQ
+bbP
 aXS
 aXW
 aYt
-aYq
-aYq
+aQZ
+aQZ
 baW
+bgL
 aLQ
-aLQ
-aLQ
+bcn
 bdI
 bgF
 aLQ
-aLQ
+bdF
 aXW
 bhb
 bid
@@ -65338,23 +65333,23 @@ aae
 aae
 ans
 aWm
-aLQ
+bbP
 aXT
 aXW
 aYv
-aYq
-aYq
+aQZ
+aQZ
 baX
-aLQ
-baA
-baA
-bdK
-bgG
+bbm
 bhd
-aLQ
+bhd
+bdK
+bhd
+bhd
+bai
 bhK
-aLQ
-aLQ
+bhh
+bhh
 bif
 bin
 aat
@@ -65595,23 +65590,23 @@ ans
 anx
 ans
 ans
-bhK
+big
 ans
 aXW
 aYy
-aYq
-aYq
+aQZ
+aXG
 bbb
 bbE
-bcl
-baA
-baA
-bgJ
-baA
+bhd
+bhd
+bhd
+bhd
+bhd
 bht
 bhQ
 bhV
-aLQ
+bbn
 bhI
 aXW
 aat
@@ -65850,21 +65845,21 @@ aae
 aae
 ans
 aoh
-aLQ
+aYq
 aWt
-aLQ
+aQZ
 aXU
 aYl
 aYV
-aYq
+aQZ
 aYq
 bbc
 bbE
-baA
-baA
-baA
-baA
-baA
+bhd
+bhd
+bhd
+aaI
+bhf
 bhz
 aXW
 ans
@@ -66107,22 +66102,22 @@ aae
 aae
 ans
 aoh
-aLQ
+aQZ
 aWO
-aLQ
-aLQ
+aQZ
+aQZ
 aXW
 aYW
 aZI
 baz
 bbe
 bbK
-baA
-bcU
-beX
-bgL
-baA
-aLQ
+bhd
+bhd
+bhd
+bhd
+bhd
+bfM
 aXW
 bhb
 bid
@@ -66366,24 +66361,24 @@ ans
 aLh
 aMY
 aXh
-aLQ
-aLQ
+aQZ
+aQZ
 aXW
 aYX
 aZJ
 aZJ
-bbl
-aLQ
-baA
-bcV
-bfM
-bgO
-baA
-aLQ
+aZJ
+bhd
+bhd
+bhd
+bhd
+bhd
+bhd
+bai
 bhS
-aLQ
-aLQ
-big
+bhh
+bhh
+bif
 bin
 agn
 acG
@@ -66621,25 +66616,25 @@ aae
 aae
 ans
 aLl
-aLQ
+aQZ
 aXm
-aLQ
+aQZ
 aQZ
 aYm
 aYY
-aZS
 baA
 baA
-aLQ
-baA
-bde
-bfN
-bgP
-baA
+bhd
+bhd
+bhd
+bhd
+bhd
+bhd
+bhd
 bhA
 aXW
 bhY
-aLQ
+bhh
 bhI
 aXW
 adH
@@ -66886,12 +66881,12 @@ aXW
 aYZ
 aZV
 baC
-baA
-bbN
-bcm
-baA
-baA
-baA
+bbm
+bhd
+bhd
+bhd
+bhd
+bhd
 bhf
 bhB
 aXW
@@ -67136,20 +67131,20 @@ aae
 aae
 ans
 aLh
-aLQ
-aLQ
 aQZ
+aQZ
+bbN
 aXW
 aZa
-aZW
+aZa
 baE
 bbm
-bbO
-bcn
+bhd
+bhd
 bdr
 bfO
-baA
-baA
+bhd
+bhd
 bhE
 aYo
 bhb
@@ -67393,25 +67388,25 @@ aae
 aae
 ans
 aPA
-aLQ
+aQZ
 aXG
-aLQ
+aQZ
 aXA
-aZa
+baO
 aZW
 baE
-bbn
-bbN
+bbm
+bhd
 bco
 aXX
 bfQ
-aLQ
-aLQ
-aLQ
+aYY
+baA
+bcb
 bhK
-aLQ
-aLQ
-big
+bhh
+bhh
+bif
 bin
 adH
 aQu
@@ -67651,15 +67646,15 @@ aae
 ans
 aQe
 aXo
-aLQ
-aXp
+aQZ
+bgO
 aXW
 aZl
 aZX
 baN
-baA
-aLQ
-aLQ
+bbm
+bhd
+bhd
 bdF
 aXW
 aXW
@@ -67667,7 +67662,7 @@ aXW
 aXW
 aXW
 bic
-aLQ
+bhh
 bhI
 aXW
 adH
@@ -67908,16 +67903,16 @@ aae
 ans
 aQy
 aXo
-aLQ
-aXp
+aQZ
+bgO
 aYo
-aYY
-bah
-aZo
-aZo
-baA
-baA
-bdF
+bgJ
+aLQ
+aLQ
+bhd
+bhd
+bhd
+bai
 aYn
 bbd
 afF
@@ -68164,17 +68159,17 @@ aae
 aae
 ans
 aQA
-aLQ
-aLQ
+aYq
+aQZ
 aXV
 aXW
 aZm
-bai
-baO
-baO
-bbP
+bhd
+bhd
+bhd
+bhd
 baA
-bdF
+bcb
 aYn
 bbd
 afF
@@ -68420,15 +68415,15 @@ aae
 aae
 aae
 ans
-aQZ
-aXp
-aXp
-aQZ
+bcm
+bgO
+bgO
+bcm
 aXW
 aZo
-bak
-baP
-baO
+baA
+baA
+baA
 bcb
 aXW
 aXW
@@ -88803,7 +88798,7 @@ ugJ
 fuB
 flV
 xvI
-ccb
+abb
 pDU
 wWe
 cNQ
@@ -100024,7 +100019,7 @@ agy
 aat
 aae
 aae
-aae
+ahz
 ahz
 ahz
 ahz
@@ -100281,7 +100276,7 @@ agy
 aat
 aae
 aae
-aae
+ahz
 aVZ
 aVN
 ahz
@@ -100356,7 +100351,7 @@ brX
 fuB
 afS
 afS
-wdA
+aaP
 afS
 afS
 fuB
@@ -100538,9 +100533,9 @@ aae
 aae
 aae
 aae
-aae
+ahz
 aVZ
-qPh
+bbO
 aVV
 aWl
 aVw
@@ -100549,7 +100544,7 @@ asu
 atT
 agx
 aaB
-aaB
+bcl
 aaB
 aae
 aae
@@ -100795,7 +100790,7 @@ aae
 aae
 aae
 aae
-aae
+ahz
 ahz
 ahz
 agx
@@ -101052,7 +101047,7 @@ aae
 aae
 aae
 aae
-aae
+ahz
 xuH
 fQa
 bfj
@@ -101116,7 +101111,7 @@ bdf
 afF
 aTv
 ajS
-mVA
+aaM
 afS
 afC
 afS
@@ -101309,14 +101304,14 @@ aae
 aae
 aae
 aae
-aak
+ahz
 bii
 aPL
 ecZ
 aVZ
 aWl
 btQ
-qPh
+bde
 aVZ
 aVV
 csn
@@ -101566,7 +101561,7 @@ aae
 aae
 aae
 aae
-aak
+ahz
 fVj
 uoP
 tVG
@@ -101823,7 +101818,7 @@ aae
 aae
 aae
 aae
-aak
+ahz
 kOe
 uoP
 bYV
@@ -102080,12 +102075,12 @@ aae
 aae
 aae
 aae
-aak
+ahz
 ahz
 ahz
 agx
 uUr
-qPh
+beX
 qPh
 aWl
 rcI

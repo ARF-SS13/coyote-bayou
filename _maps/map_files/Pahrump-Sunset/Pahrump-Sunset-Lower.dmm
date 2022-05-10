@@ -1036,6 +1036,14 @@
 /obj/item/candle/tribal_torch,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"aJB" = (
+/mob/living/simple_animal/hostile/raider/baseball{
+	name = "Tunnel Torturers Raider"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/tunnel)
 "aUl" = (
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1402,7 +1410,9 @@
 "bEf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged,
+/mob/living/simple_animal/hostile/raider/ranged{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -1472,6 +1482,14 @@
 "bFS" = (
 /obj/structure/simple_door/bunker,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
+"bGd" = (
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Tunnel Torturers Raider"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkrustysolid"
+	},
 /area/f13/tunnel)
 "bGf" = (
 /obj/structure/sign/warning,
@@ -6987,6 +7005,9 @@
 	pixel_y = -32
 	},
 /obj/machinery/light/small/broken,
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -7219,7 +7240,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "hqq" = (
-/mob/living/simple_animal/hostile/raider/ranged,
+/mob/living/simple_animal/hostile/raider/sulphite{
+	name = "Tunnel Torturers Boss"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -50032,7 +50055,7 @@ bsC
 bsC
 qjm
 ifE
-iyM
+bGd
 ggk
 bsC
 aae
@@ -52857,7 +52880,7 @@ slP
 yhM
 iUK
 vdg
-rqX
+aJB
 rqX
 vdg
 dVV

@@ -154,3 +154,7 @@
 /obj/effect/turf_decal/huge/khan
 	icon = 'icons/turf/decalshuge.dmi'
 	icon_state = "khanfloor"
+
+/obj/effect/turf_decal/huge/heaven
+	icon = 'icons/turf/decalshuge.dmi'
+	icon_state = "heaven"
