@@ -102,9 +102,7 @@
 /datum/crafting_recipe/metalarmor/polish
 	name = "Polished Metal Armor"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1,
-				/obj/item/crafting/abraxo,
-				)
+	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING

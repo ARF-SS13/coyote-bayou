@@ -182,18 +182,6 @@
 				)
 
 
-
-/obj/item/salvage/crafting
-	name = "salvaged components"
-	desc = "Some salvaged components, it could contain some useful materials if dissasembled using a workbench..."
-	icon_state = "salvagecomponents"
-	Loot = list(/obj/item/crafting/coffee_pot,
-				/obj/item/crafting/wonderglue,
-				/obj/item/crafting/abraxo,
-				/obj/item/crafting/lunchbox)
-
-
-
 /obj/item/salvage/tool
 	name = "Pre-war tool salvage"
 	desc = "Some tools meshed together. It could contain working tools or other useful items if dissasembled using a workbench..."
@@ -203,8 +191,7 @@
 				/obj/item/screwdriver/hightech,
 				/obj/item/wrench/hightech,
 				/obj/item/wirecutters/hightech,
-				/obj/item/multitool/advanced,
-				/obj/item/melee/onehanded/knife/cosmic)
+				/obj/item/multitool/advanced)
 
 /obj/item/salvage/high
 	name = "Advanced pre-war salvage"

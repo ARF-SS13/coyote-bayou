@@ -1,8 +1,7 @@
 /datum/crafting_recipe/food/moleratwondermeat
 	name = "Molerat Wondermeat"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/molerat = 1,
-		/obj/item/crafting/wonderglue = 1
+		/obj/item/reagent_containers/food/snacks/meat/steak/molerat = 1
 	)
 	tools = list(TOOL_LUNCHBOX)
 	result = /obj/item/reagent_containers/food/snacks/f13/molejerky

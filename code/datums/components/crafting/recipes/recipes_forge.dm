@@ -239,7 +239,7 @@
 
 
 // LEGION SPECIFIC
-/*
+
 /datum/crafting_recipe/spatha
 	name = "Spatha"
 	result = /obj/item/melee/onehanded/machete/spatha
@@ -282,7 +282,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 	always_available = FALSE
-*/
+
 
 /datum/crafting_recipe/legionshield
 	name = "Legion Shield"
@@ -361,8 +361,7 @@
 	name = "Cosmic Knife"
 	result = /obj/item/melee/onehanded/knife/cosmic
 	reqs = list(
-		/obj/item/melee/onehanded/knife/cosmicdirty = 1,
-		/obj/item/crafting/abraxo = 1,
+		/obj/item/melee/onehanded/knife/cosmicdirty = 1
 		)
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_WEAPONRY
