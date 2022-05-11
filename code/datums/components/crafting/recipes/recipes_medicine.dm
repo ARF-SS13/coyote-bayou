@@ -36,7 +36,7 @@
 	result = /obj/item/reagent_containers/pill/patch/healingpowder
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 3,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 3)
-	time = 35
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/healpowder5
@@ -44,22 +44,32 @@
 	result = /obj/item/storage/box/medicine/powder5
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 15,
 				/obj/item/reagent_containers/food/snacks/grown/xander = 15)
-	time = 60
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/bitterdrink
 	name = "Bottle bitterdrink"
 	result = /obj/item/reagent_containers/pill/patch/bitterdrink
 	reqs = list(/datum/reagent/medicine/bitter_drink = 30)
-	time = 20
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/bitterdrink5
 	name = "Batch of bitterdrink (x5)"
 	result = /obj/item/storage/box/medicine/bitterdrink5
 	reqs = list(/datum/reagent/medicine/bitter_drink = 150)
-	time = 60
+	time = 5
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/berserker_powder
+	name = "Berserker powder"
+	result = /obj/item/reagent_containers/pill/patch/healingpowder/berserker
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mushroom/angel = 2,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 2,
+				/datum/reagent/blood = 30)
+	time = 40
+	category = CAT_MEDICAL
+	always_available = FALSE
 
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
@@ -69,7 +79,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
 				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2)
-	time = 45
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/healpoultice5
@@ -80,7 +90,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/feracactus = 10,
 				/obj/item/reagent_containers/food/snacks/grown/fungus = 10,
 				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 10)
-	time = 60
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/smell_salts
@@ -100,8 +110,8 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 10
-	category = CAT_MEDICAL
+	time = 5
+	category = CAT_MEDICAL	
 
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak x5"
@@ -110,7 +120,7 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 10,
 				/obj/item/reagent_containers/syringe = 5)
 	tools = list(TOOL_WORKBENCH)
-	time = 40
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/superstimpak
@@ -120,7 +130,7 @@
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
 	tools = list(TOOL_WORKBENCH)
-	time = 30
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/superstimpak5
@@ -130,7 +140,7 @@
 				/obj/item/stack/sheet/leather = 10,
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
 	tools = list(TOOL_WORKBENCH)
-	time = 50
+	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/salvage_stimpak

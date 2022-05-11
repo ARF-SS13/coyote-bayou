@@ -128,8 +128,9 @@
 	self_delay = 0
 
 // -----------------
-// BERSERKER POWDER - Was pulled for rebalance summer of 2020 and never looked at. Remove I guess.
+// BERSERKER POWDER - Was pulled for rebalance summer of 2020 and never looked at. Remove I guess. (Admin died to it and removed it)
 // ------------------
+*/
 
 /obj/item/reagent_containers/pill/patch/healingpowder/berserker
 	name = "Berserker powder"
@@ -138,4 +139,4 @@
 	list_reagents = list(/datum/reagent/medicine/berserker_powder = 10)
 	icon_state = "patch_berserkerpowder"
 	self_delay = 0
-*/
+
