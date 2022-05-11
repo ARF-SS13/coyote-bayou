@@ -863,9 +863,6 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
-"acy" = (
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "acz" = (
 /obj/structure/ladder/unbreakable,
 /obj/effect/decal/cleanable/dirt,
@@ -955,7 +952,7 @@
 /area/f13/wasteland)
 "acM" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood/wood_chestnut,
 /area/f13/wasteland)
 "acN" = (
 /obj/structure/railing/wood{
@@ -1720,12 +1717,6 @@
 	dir = 8
 	},
 /area/f13/building)
-"fIH" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_3"
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "fPe" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
@@ -2091,10 +2082,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_worn,
 /area/f13/wasteland/khans)
-"jcl" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
-/area/f13/wasteland)
 "jcx" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
@@ -3012,7 +2999,7 @@
 	name = "Residence";
 	req_one_access_txt = "0"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood/wood_chestnut,
 /area/f13/city)
 "pWV" = (
 /obj/effect/decal/cleanable/dirt{
@@ -3333,7 +3320,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood/wood_chestnut,
 /area/f13/city)
 "svH" = (
 /obj/item/screwdriver{
@@ -14344,11 +14331,11 @@ lDT
 acq
 abe
 acE
-acy
-acy
+ela
+ela
 acM
 acM
-acy
+ela
 acx
 abe
 lDT
@@ -15115,10 +15102,10 @@ lDT
 acq
 abe
 acF
-acy
+ela
 acM
-acy
-acy
+ela
+ela
 acM
 acR
 abe
@@ -19196,12 +19183,12 @@ hsd
 hsd
 hsd
 bbB
-jcl
-jcl
+acM
+acM
 ela
 ela
-jcl
-jcl
+acM
+acM
 vqz
 vqz
 vqz
@@ -19715,7 +19702,7 @@ jKa
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 vqz
@@ -20486,7 +20473,7 @@ jKa
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 vqz
@@ -20738,7 +20725,7 @@ hsd
 aKa
 ojS
 wqF
-jcl
+acM
 jKa
 jKa
 jKa
@@ -20995,11 +20982,11 @@ hsd
 aKa
 ojS
 wqF
-jcl
-jcl
+acM
+acM
 ela
 oub
-jcl
+acM
 ela
 ela
 vqz
@@ -21510,8 +21497,8 @@ aKa
 ojS
 wqF
 ela
-jcl
-jcl
+acM
+acM
 ela
 ela
 vqz
@@ -22029,8 +22016,8 @@ jKa
 aXF
 oub
 ela
-jcl
-jcl
+acM
+acM
 vqz
 vqz
 aKa
@@ -22287,7 +22274,7 @@ jKa
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 bbB
@@ -22537,7 +22524,7 @@ oez
 oez
 ojS
 wqF
-jcl
+acM
 jKa
 jKa
 jKa
@@ -22794,7 +22781,7 @@ oez
 oez
 ojS
 wqF
-jcl
+acM
 jKa
 jKa
 jKa
@@ -23051,7 +23038,7 @@ oez
 oez
 ojS
 wqF
-jcl
+acM
 jKa
 jKa
 jKa
@@ -23308,14 +23295,14 @@ oez
 oez
 ojS
 wqF
-jcl
+acM
 jKa
 jKa
 jKa
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 vqz
@@ -23569,10 +23556,10 @@ ela
 jKa
 jKa
 ela
-jcl
-jcl
+acM
+acM
 oub
-jcl
+acM
 vqz
 vqz
 vqz
@@ -23823,7 +23810,7 @@ oez
 ojS
 wqF
 ela
-jcl
+acM
 oub
 ela
 vqz
@@ -23832,7 +23819,7 @@ vqz
 vqz
 vqz
 vqz
-jcl
+acM
 ela
 ela
 ela
@@ -24085,15 +24072,15 @@ vqz
 vqz
 vqz
 ela
-jcl
-jcl
+acM
+acM
 vqz
 vqz
 ela
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 vqz
@@ -24341,9 +24328,9 @@ wqF
 wqF
 vqz
 ela
-jcl
+acM
 jKa
-jcl
+acM
 vqz
 vqz
 ela
@@ -24597,17 +24584,17 @@ ojS
 ojS
 wqF
 vqz
-jcl
+acM
 jKa
 jKa
 ela
 vqz
 vqz
-jcl
+acM
 jKa
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 vqz
@@ -24854,17 +24841,17 @@ aKa
 ojS
 wqF
 vqz
-jcl
+acM
 jKa
 jKa
-jcl
+acM
 vqz
 vqz
 oub
-jcl
+acM
 ela
 ela
-jcl
+acM
 vqz
 vqz
 vqz
@@ -25370,8 +25357,8 @@ wqF
 vqz
 ela
 ela
-jcl
-jcl
+acM
+acM
 vqz
 vqz
 vqz
@@ -57857,7 +57844,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -58114,7 +58101,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -58371,7 +58358,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -58628,7 +58615,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -58885,7 +58872,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -59142,7 +59129,7 @@ lDT
 lDT
 lDT
 lDT
-cmg
+oez
 oez
 oez
 oez
@@ -59398,8 +59385,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -59655,8 +59642,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -59912,8 +59899,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -60169,8 +60156,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -60426,8 +60413,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -60683,8 +60670,8 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
+oez
+oez
 oez
 oez
 oez
@@ -60939,9 +60926,9 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
-cmg
+oez
+oez
+oez
 oez
 oez
 oez
@@ -61196,9 +61183,9 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
-cmg
+oez
+oez
+oez
 oez
 oez
 oez
@@ -61452,10 +61439,10 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
-cmg
-cmg
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -61705,14 +61692,14 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-fIH
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -61953,23 +61940,23 @@ lDT
 lDT
 lDT
 lDT
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
@@ -62203,30 +62190,30 @@ oez
 oez
 oez
 cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-fIH
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
-fIH
-cmg
-cmg
-cmg
-cmg
-cmg
-cmg
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
+oez
 oez
 oez
 oez
