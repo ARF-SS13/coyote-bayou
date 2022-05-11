@@ -67,51 +67,86 @@
 // Salvaged Power Armor //
 //////////////////////////
 
+/obj/item/clothing/suit/armored/heavy/salvaged_pa
+	name = "salvaged power armor"
+	desc = "It's a set of early-model SS-13 power armor, except it isn't real. Stop looking at it, go ping coders or something. \
+	It's literally not meant to be here, you are just wasting your time reading some text that someone wrote for you \
+	because he thought it'd be funny, or expected someone to check GitHub for once, hello by the way. \
+	If you still don't understand - it's a 'master' item, basically main type/parent object or something. \
+	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45b and so on. \
+	Now begone, report this to coders. NOW!"
+	slowdown = 1
+
 // T-45B
-/obj/item/clothing/suit/armored/heavy/salvaged_t45b
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b
 	name = "salvaged T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
 	icon_state = "t45b_salvaged"
 	item_state = "t45b_salvaged"
 	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 15, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
-	slowdown = 1
 
-/obj/item/clothing/suit/armored/heavy/salvaged_t45b/raider
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider
 	name = "salvaged raider power armor"
 	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
 	icon_state = "raider_salvaged"
 	item_state = "raider_salvaged"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 15, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)
 
-/obj/item/clothing/suit/armored/heavy/salvaged_t45b/ncr
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/ncr
 	name = "salvaged NCR power armor"
 	desc = "It's a set of T-45b power armor with a air conditioning module installed, sadly it lacks servomotors to enhance the users strength. The paintjob and the two headed bear painted onto the chestplate shows it belongs to the NCR."
 	icon_state = "ncr_salvaged"
 	item_state = "ncr_salvaged"
 
-/obj/item/clothing/suit/armored/heavy/salvaged_t45b/hotrod
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/hotrod
 	name = "salvaged hotrod T-45b power armor"
 	desc = " It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
 	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 10, "bomb" = 40, "bio" = 50, "rad" = 30, "fire" = 80, "acid" = 10, "wound" = 30)
 
-/obj/item/clothing/suit/armored/heavy/salvaged_t45b/tribal
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/tribal
 	name = "salvaged tribal T45-b power armor"
 	desc = "A set of salvaged power armor, with certain bits of plating stripped out to retain more freedom of movement. No cooling module, though."
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 10, "bomb" = 30, "bio" = 40, "rad" = 20, "fire" = 40, "acid" = 0, "wound" = 25)
-	slowdown = 1.1
 
 // T-45D
-/obj/item/clothing/suit/armored/heavy/salvaged_t45d
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45d
 	name = "salvaged T-45d power armor"
 	desc = "T-45d power armor with servomotors and all valuable components stripped out of it."
-	icon_state = "t45d_salvaged"
-	item_state = "t45d_salvaged"
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 15, "bomb" = 45, "bio" = 65, "rad" = 40, "fire" = 70, "acid" = 35, "wound" = 40)
+	icon_state = "t45dpowerarmor"
+	item_state = "t45dpowerarmor"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 15, "bomb" = 45, "bio" = 65, "rad" = 40, "fire" = 70, "acid" = 25, "wound" = 40)
+	slowdown = 0.85
+
+// T-51B
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t51b
+	name = "salvaged T-51b power armor"
+	desc = "T-51b power armor with servomotors and all valuable components stripped out of it."
+	icon_state = "t51bpowerarmor"
+	item_state = "t51bpowerarmor"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 40)
+	slowdown = 0.85
+
+// T-60A
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t60
+	name = "salvaged T-60a power armor"
+	desc = "T-60a power armor with servomotors and all valuable components stripped out of it."
+	icon_state = "t60powerarmor"
+	item_state = "t60powerarmor"
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 65, "energy" = 30, "bomb" = 55, "bio" = 70, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 45)
+	slowdown = 0.8
+
+// X-02
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/x02
+	name = "salvaged Enclave power armor"
+	desc = "X-02 power armor with servomotors and all valuable components stripped out of it."
+	icon_state = "advanced"
+	item_state = "advanced"
+	armor = list("melee" = 80, "bullet" = 80, "laser" = 70, "energy" = 35, "bomb" = 60, "bio" = 70, "rad" = 65, "fire" = 85, "acid" = 45, "wound" = 50)
 	slowdown = 0.85
 
 ////////////

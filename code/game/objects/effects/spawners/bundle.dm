@@ -261,7 +261,7 @@
 /obj/effect/spawner/bundle/testj
 	name = "J"
 	items = list(
-		/obj/item/clothing/suit/armored/heavy/salvaged_t45b/raider,
+		/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/raider,
 		/obj/item/melee/onehanded/machete/knifetesting,
 		/obj/item/gun/energy/laser/lasertesting,
 		)
