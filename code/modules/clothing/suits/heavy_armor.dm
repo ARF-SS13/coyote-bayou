@@ -67,12 +67,13 @@
 // Salvaged Power Armor //
 //////////////////////////
 
+// T-45B
 /obj/item/clothing/suit/armored/heavy/salvaged_t45b
 	name = "salvaged T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and stripped out servomotors. Bulky and slow, but almost as good as the real thing."
 	icon_state = "t45b_salvaged"
 	item_state = "t45b_salvaged"
-	armor = list("melee" = 65, "bullet" = 70, "laser" = 55, "energy" = 45, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
+	armor = list("melee" = 65, "bullet" = 65, "laser" = 55, "energy" = 15, "bomb" = 45, "bio" = 60, "rad" = 30, "fire" = 60, "acid" = 20, "wound" = 30)
 	slowdown = 1
 
 /obj/item/clothing/suit/armored/heavy/salvaged_t45b/raider
@@ -80,7 +81,7 @@
 	desc = "A destroyed T-45b power armor has been brought back to life with the help of a welder and lots of scrap metal."
 	icon_state = "raider_salvaged"
 	item_state = "raider_salvaged"
-	armor = list("melee" = 60, "bullet" = 65, "laser" = 50, "energy" = 40, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 50, "energy" = 15, "bomb" = 40, "bio" = 55, "rad" = 25, "fire" = 55, "acid" = 15, "wound" = 25)
 
 /obj/item/clothing/suit/armored/heavy/salvaged_t45b/ncr
 	name = "salvaged NCR power armor"
@@ -93,8 +94,7 @@
 	desc = " It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
-	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 30, "bomb" = 40, "bio" = 50, "rad" = 30, "fire" = 80, "acid" = 10, "wound" = 30)
-
+	armor = list("melee" = 55, "bullet" = 55, "laser" = 55, "energy" = 10, "bomb" = 40, "bio" = 50, "rad" = 30, "fire" = 80, "acid" = 10, "wound" = 30)
 
 /obj/item/clothing/suit/armored/heavy/salvaged_t45b/tribal
 	name = "salvaged tribal T45-b power armor"
@@ -102,8 +102,17 @@
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 20, "bomb" = 30, "bio" = 40, "rad" = 20, "fire" = 40, "acid" = 0, "wound" = 25)
+	armor = list("melee" = 65, "bullet" = 55, "laser" = 55, "energy" = 10, "bomb" = 30, "bio" = 40, "rad" = 20, "fire" = 40, "acid" = 0, "wound" = 25)
 	slowdown = 1.1
+
+// T-45D
+/obj/item/clothing/suit/armored/heavy/salvaged_t45d
+	name = "salvaged T-45d power armor"
+	desc = "T-45d power armor with servomotors and all valuable components stripped out of it."
+	icon_state = "t45d_salvaged"
+	item_state = "t45d_salvaged"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 15, "bomb" = 45, "bio" = 65, "rad" = 40, "fire" = 70, "acid" = 35, "wound" = 40)
+	slowdown = 0.85
 
 ////////////
 // LEGION //

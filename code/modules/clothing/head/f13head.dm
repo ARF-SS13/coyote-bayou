@@ -244,6 +244,10 @@
 	var/requires_training = TRUE
 	/// If TRUE - the suit will give its user specific traits when worn
 	var/powered = TRUE
+	/// Path of item that this helmet gets salvaged into
+	var/obj/item/salvaged_type = null
+	/// Used to track next tool required to salvage the suit
+	var/salvage_step = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/ComponentInitialize()
 	. = ..()
@@ -275,12 +279,87 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
+/obj/item/clothing/head/helmet/f13/power_armor/attackby(obj/item/I, mob/living/carbon/human/user, params)
+	if(ispath(salvaged_type))
+		switch(salvage_step)
+			if(0)
+				// Salvage
+				if(istype(I, /obj/item/screwdriver))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin unsecuring the cover...</span>")
+					if(I.use_tool(src, user, 60, volume=50))
+						salvage_step = 1
+						to_chat(user, "<span class='notice'>You unsecure the cover.</span>")
+					return
+			if(1)
+				// Salvage
+				if(istype(I, /obj/item/wrench))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin disconnecting the connection ports...</span>")
+					if(I.use_tool(src, user, 80, volume=50))
+						salvage_step = 2
+						to_chat(user, "<span class='notice'>You disconnect the connection ports.</span>")
+					return
+				// Fix
+				if(istype(I, /obj/item/screwdriver))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the helmet before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin securing the cover...</span>")
+					if(I.use_tool(src, user, 60, volume=50))
+						salvage_step = 0
+						to_chat(user, "<span class='notice'>You secure the cover.</span>")
+					return
+			if(2)
+				// Salvage
+				if(istype(I, /obj/item/wirecutters))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin disconnecting wires...</span>")
+					if(I.use_tool(src, user, 60, volume=70))
+						to_chat(user, "<span class='notice'>You finish salvaging the helmet.</span>")
+						var/obj/item/ST = new salvaged_type(src)
+						user.put_in_hands(ST)
+						qdel(src)
+					return
+				// Fix
+				if(istype(I, /obj/item/wrench))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the helmet before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You try to anchor connection ports to the frame...</span>")
+					if(I.use_tool(src, user, 80, volume=60))
+						salvage_step = 1
+						to_chat(user, "<span class='notice'>You re-connect connection ports.</span>")
+					return
+	return ..()
+
+/obj/item/clothing/head/helmet/f13/power_armor/examine(mob/user)
+	. = ..()
+	if(ispath(salvaged_type))
+		. += salvage_hint()
+
+/obj/item/clothing/head/helmet/f13/power_armor/proc/salvage_hint()
+	switch(salvage_step)
+		if(0)
+			return "<span class='notice'>The metal cover can be <i>screwed</i> open.</span>"
+		if(1)
+			return "<span class='notice'>The cover is <i>screwed</i> open with connection ports <i>bolted down</i>.</span>"
+		if(2)
+			return "<span class='warning'>The connections ports have been <i>unanchored</i> and only <i>wires</i> remain.</span>"
+
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
 	name = "T-45b helmet"
 	desc = "It's a T-45b power armor helmet."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 22, "bomb" = 55, "bio" = 65, "rad" = 55, "fire" = 85, "acid" = 0, "wound" = 40)
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_t45b
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d
 	name = "T-45d power helmet"
@@ -289,6 +368,7 @@
 	item_state = "t45dhelmet0"
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 40)
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_t45d
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45d/update_icon_state()
 	icon_state = "t45dhelmet[light_on]"

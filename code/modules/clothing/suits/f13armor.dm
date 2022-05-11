@@ -271,8 +271,8 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	/// Cell that is currently installed in the suit
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
-	/// How much power the cell consumes each tick
-	var/usage_cost = 10 // With high-capacity cell it'd run out of charge in ~33 minutes
+	/// How much power the cell consumes each process tick
+	var/usage_cost = 5 // With high-capacity cell it'd run out of charge in ~33 minutes
 	/// If TRUE - suit has ran out of charge and is currently affected by slowdown from it
 	var/no_power = FALSE
 	/// How much slowdown is added when suit is unpowered
@@ -285,6 +285,10 @@
 	var/powered = TRUE
 	/// If TRUE - the suit has been recently affected by EMP blast
 	var/emped = FALSE
+	/// Path of item that this set of armor gets salvaged into
+	var/obj/item/salvaged_type = null
+	/// Used to track next tool required to salvage the suit
+	var/salvage_step = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/Initialize()
 	. = ..()
@@ -336,7 +340,7 @@
 	var/mob/living/carbon/human/user = src.loc
 	if(!user || !ishuman(user) || (user.wear_suit != src))
 		return
-	if((!cell || !cell?.use(usage_cost)) && !no_power) // No cell or cell ran out of charge
+	if((!cell || !cell?.use(usage_cost) || (salvage_step > 1)) && !no_power) // No cell, ran out of charge or we're in the process of being salvaged
 		remove_power(user)
 		return
 	if(no_power) // Above didn't proc and suit is currently unpowered, meaning cell is installed and has charge - restore power
@@ -344,38 +348,154 @@
 		return
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/remove_power(mob/user)
-	to_chat(user, "<span class='warning'>[src]'s power cell has ran out of charge!</span>")
+	if(salvage_step > 1) // Being salvaged
+		to_chat(user, "<span class='warning'>\The components in [src] require repairs!</span>")
+	else
+		to_chat(user, "<span class='warning'>\The [src] has ran out of charge!</span>")
 	remove_traits(user)
 	slowdown += unpowered_slowdown
 	no_power = TRUE
+	user.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/restore_power(mob/user)
-	to_chat(user, "<span class='notice'>[src]'s power restored.</span>")
+	to_chat(user, "<span class='notice'>\The [src]'s power restored.</span>")
 	assign_traits(user)
 	slowdown -= unpowered_slowdown
 	no_power = FALSE
+	user.update_equipment_speed_mods()
 
-/obj/item/clothing/suit/armor/f13/power_armor/attackby(obj/item/I, mob/user, params)
+/obj/item/clothing/suit/armor/f13/power_armor/attackby(obj/item/I, mob/living/carbon/human/user, params)
 	if(powered && istype(I, /obj/item/stock_parts/cell))
 		if(cell)
-			to_chat(user, "<span class='warning'>[src] already has a cell installed.</span>")
+			to_chat(user, "<span class='warning'>\The [src] already has a cell installed.</span>")
 			return
 		if(user.transferItemToLoc(I, src))
 			cell = I
 			to_chat(user, "<span class='notice'>You successfully install \the [cell] into [src].</span>")
-			return
+		return
+
+	if(ispath(salvaged_type))
+		switch(salvage_step)
+			if(0)
+				// Salvage
+				if(istype(I, /obj/item/screwdriver))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin unsecuring the wiring cover...</span>")
+					if(I.use_tool(src, user, 60, volume=50))
+						salvage_step = 1
+						to_chat(user, "<span class='notice'>You unsecure the wiring cover.</span>")
+					return
+			if(1)
+				// Salvage
+				if(istype(I, /obj/item/wirecutters))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You start to cut down the wiring...</span>")
+					if(I.use_tool(src, user, 80, volume=50))
+						salvage_step = 2
+						to_chat(user, "<span class='notice'>You disconnect the wires.</span>")
+					return
+				// Fix
+				if(istype(I, /obj/item/screwdriver))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin securing the wiring cover...</span>")
+					if(I.use_tool(src, user, 60, volume=50))
+						salvage_step = 0
+						to_chat(user, "<span class='notice'>You secure the wiring cover.</span>")
+					return
+			if(2)
+				// Salvage
+				if(istype(I, /obj/item/wrench))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You start loosening the bolts that secure components to the frame...</span>")
+					if(I.use_tool(src, user, 100, volume=50))
+						salvage_step = 3
+						to_chat(user, "<span class='notice'>You disconnect the inner components.</span>")
+					return
+				// Fix
+				if(istype(I, /obj/item/wirecutters))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin placing wires back into their place...</span>")
+					if(I.use_tool(src, user, 80, volume=50))
+						salvage_step = 1
+						to_chat(user, "<span class='notice'>You re-connect the wires.</span>")
+					return
+			if(3)
+				// Salvage
+				if(istype(I, /obj/item/weldingtool) || istype(I, /obj/item/gun/energy/plasmacutter))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin slicing the servomotors apart from the frame...</span>")
+					if(I.use_tool(src, user, 150, volume=60))
+						salvage_step = 4
+						to_chat(user, "<span class='notice'>You disconnect servomotors from the main frame.</span>")
+					return
+				// Fix
+				if(istype(I, /obj/item/wrench))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You start securing components to the frame...</span>")
+					if(I.use_tool(src, user, 100, volume=50))
+						salvage_step = 2
+						to_chat(user, "<span class='notice'>You re-connect the inner components.</span>")
+					return
+			if(4)
+				// Salvage
+				if(istype(I, /obj/item/crowbar))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You start to remove remaining components...</span>")
+					if(I.use_tool(src, user, 50, volume=70))
+						to_chat(user, "<span class='notice'>You finish salvaging the suit.</span>")
+						var/obj/item/ST = new salvaged_type(src)
+						user.put_in_hands(ST)
+						qdel(src)
+					return
+				// Fix
+				if(istype(I, /obj/item/weldingtool) || istype(I, /obj/item/gun/energy/plasmacutter))
+					if(ishuman(user) && user.wear_suit == src)
+						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						return
+					to_chat(user, "<span class='notice'>You begin welding the servomotors to the frame...</span>")
+					if(I.use_tool(src, user, 150, volume=60))
+						salvage_step = 3
+						to_chat(user, "<span class='notice'>You re-connect servomotors to the main frame.</span>")
+					return
 	return ..()
 
-/obj/item/clothing/suit/armor/f13/power_armor/attack_self(mob/user)
+/obj/item/clothing/suit/armor/f13/power_armor/attack_self(mob/living/user)
 	if(powered)
-		if(cell)
-			user.visible_message("<span class='notice'>[user] removes \the [cell] from [src]!</span>", \
-				"<span class='notice'>You remove [cell].</span>")
-			cell.add_fingerprint(user)
-			user.put_in_hands(cell)
-			cell = null
-		else
-			to_chat(user, "<span class='warning'>[src] has no cell installed.</span>")
+		toggle_cell(user)
+	return ..()
+
+/obj/item/clothing/suit/armor/f13/power_armor/AltClick(mob/living/user)
+	if(!user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return ..()
+	if(powered)
+		toggle_cell(user)
+	return
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/toggle_cell(mob/living/user)
+	if(cell)
+		user.visible_message("<span class='notice'>[user] removes \the [cell] from [src]!</span>", \
+			"<span class='notice'>You remove [cell].</span>")
+		cell.add_fingerprint(user)
+		user.put_in_hands(cell)
+		cell = null
+	else
+		to_chat(user, "<span class='warning'>[src] has no cell installed.</span>")
 
 /obj/item/clothing/suit/armor/f13/power_armor/examine(mob/user)
 	. = ..()
@@ -384,6 +504,21 @@
 			. += "The power meter shows [round(cell.percent(), 0.1)]% charge remaining."
 		else
 			. += "The power cell slot is currently empty."
+	if(ispath(salvaged_type))
+		. += salvage_hint()
+
+/obj/item/clothing/suit/armor/f13/power_armor/proc/salvage_hint()
+	switch(salvage_step)
+		if(0)
+			return "<span class='notice'>The wiring cover is <i>screwed</i> in place.</span>"
+		if(1)
+			return "<span class='notice'>The cover is <i>screwed</i> open and <i>wires</i> are visible.</span>"
+		if(2)
+			return "<span class='warning'>The wiring has been <i>cut</i> and components connected with <i>bolts</i> are visible.</span>"
+		if(3)
+			return "<span class='warning'>The components have been <i>unanchored</i> servomotors inside the suit can be <i>sliced through</i>.</span>"
+		if(4)
+			return "<span class='warning'>The servomotors have been <i>sliced apart</i> from the frame and remaining components can be <i>pried away</i>.</span>"
 
 /obj/item/clothing/suit/armor/f13/power_armor/emp_act(mob/living/carbon/human/owner, severity)
 	. = ..()
@@ -427,10 +562,9 @@
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
-	requires_training = TRUE
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 22, "bomb" = 55, "bio" = 65, "rad" = 55, "fire" = 85, "acid" = 0, "wound" = 65)
-	powered = TRUE
 	slowdown = 0.4
+	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_t45b
 
 /obj/item/clothing/suit/armor/f13/power_armor/excavator
 	name = "excavator power armor"
@@ -442,11 +576,12 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
-	desc = "originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
+	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	slowdown = 0.25
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 25, "bomb" = 65, "bio" = 75, "rad" = 80, "fire" = 85, "acid" = 30, "wound" = 70)
+	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_t45d
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/knightcaptain
 	name = "Head-Knight's T-45d Power Armour"
