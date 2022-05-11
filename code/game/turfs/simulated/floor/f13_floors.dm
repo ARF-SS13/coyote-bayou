@@ -138,249 +138,56 @@
 
 //New standard wood floor for most areas, oak for Legion and pure log cabins only, maple for NCR and mayor only, maybe a diner.
 
-/turf/open/floor/wood/f13
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "housewood1"
 
-	New()
-		..()
-		if(icon_state == "housewood1")
-			icon_state = "housewood[rand(1,4)]"
+/turf/open/floor/carpet_new
+	name = "carpet"
+	desc = "Soft velvet carpeting. Feels good between your toes."
+	icon = 'icons/fallout/turfs/carpetnew.dmi'
+	//floor_tile = /obj/item/stack/tile/carpet
+	flags_1 = NONE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
 
-/turf/open/floor/wood/f13/oak
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "oakfloor1"
-
-	New()
-		..()
-		if(icon_state == "oakfloor1")
-			icon_state = "oakfloor[rand(1,4)]"
-
-/turf/open/floor/wood/f13/housewoodbroken
-	icon_state = "housewood1-broken"
-
-/turf/open/floor/wood/f13/housewoodbroken2
-	icon_state = "housewood2-broken"
-
-/turf/open/floor/wood/f13/housewoodbroken3
-	icon_state = "housewood3-broken"
-
-/turf/open/floor/wood/f13/housewoodbroken4
-	icon_state = "housewood4-broken"
-
-/turf/open/floor/wood/f13/oakbroken
-	icon_state = "oakfloor1-broken"
-
-/turf/open/floor/wood/f13/oakbroken2
-	icon_state = "oakfloor2-broken"
-
-/turf/open/floor/wood/f13/oakbroken3
-	icon_state = "oakfloor3-broken"
-
-/turf/open/floor/wood/f13/oakbroken4
-	icon_state = "oakfloor4-broken"
-
-/turf/open/floor/wood/f13/maple
-	icon_state = "maplefloor1"
-
-
-
-
-/turf/open/floor/wood/f13/import
-	icon = 'icons/fallout/turfs/wood_floor.dmi'
-
-
-/turf/open/floor/wood/f13/import/common
-	icon_state = "common1"
-
-	New()
-		..()
-		if(icon_state == "common1")
-			icon_state = "common[rand(1,3)]"
-
-/turf/open/floor/wood/f13/import/common/broken
-	icon_state = "common-broken1"
-
-	New()
-		..()
-		if(icon_state == "common-broken1")
-			icon_state = "common-broken[rand(1,6)]"
-
-
-/turf/open/floor/wood/f13/import/fancy
-	icon_state = "fancy"
-
-/turf/open/floor/wood/f13/import/fancy/broken
-	icon_state = "fancy-broken1"
-
-	New()
-		..()
-		if(icon_state == "fancy-broken1")
-			icon_state = "fancy-broken[rand(1,6)]"
-
-/turf/open/floor/wood/f13/import/wide
-	icon_state = "wide1"
-
-	New()
-		..()
-		if(icon_state == "wide1")
-			icon_state = "wide[rand(1,3)]"
-
-/turf/open/floor/wood/f13/import/wide/broken
-	icon_state = "wide-broken1"
-
-	New()
-		..()
-		if(icon_state == "wide-broken1")
-			icon_state = "wide=broken[rand(1,6)]"
-
-/turf/open/floor/wood/f13/import/mosaic
-	icon_state = "mosaic1"
-
-	New()
-		..()
-		if(icon_state == "mosaic1")
-			icon_state = "mosaic[rand(1,3)]"
-
-/turf/open/floor/wood/f13/import/mosaic/broken
-	icon_state = "mosaic-broken1"
-
-	New()
-		..()
-		if(icon_state == "mosaic-broken1")
-			icon_state = "mosaic-broken[rand(1,6)]"
-
-/turf/open/floor/wood/f13/import/carpet_red
+/turf/open/floor/carpet_new/carpet_red
 	icon_state = "carpet_red"
 
-/turf/open/floor/wood/f13/import/carpet_red/edge
+/turf/open/floor/carpet_new/carpet_red/edge
 	icon_state = "carpet_red_edge"
 
-/turf/open/floor/wood/f13/import/carpet_blue
+/turf/open/floor/carpet_new/carpet_blue
 	icon_state = "carpet_blue"
 
-/turf/open/floor/wood/f13/import/carpet_blue/edge
+/turf/open/floor/carpet_new/carpet_blue/edge
 	icon_state = "carpet_blue_edge"
 
-/turf/open/floor/wood/f13/import/carpet_green
+/turf/open/floor/carpet_new/carpet_green
 	icon_state = "carpet_green"
 
-/turf/open/floor/wood/f13/import/carpet_green/edge
+/turf/open/floor/carpet_new/carpet_green/edge
 	icon_state = "carpet_green_edge"
 
-/turf/open/floor/wood/f13/import/carpet_violet
+/turf/open/floor/carpet_new/carpet_violet
 	icon_state = "carpet_violet"
 
-/turf/open/floor/wood/f13/import/carpet_violet/edge
+/turf/open/floor/carpet_new/carpet_violet/edge
 	icon_state = "carpet_violet_edge"
 
-/turf/open/floor/wood/f13/import/carpet_shaggyred
+/turf/open/floor/carpet_new/carpet_shaggyred
 	icon_state = "shaggyred"
 
-/turf/open/floor/wood/f13/import/carpet_shaggygreen
+/turf/open/floor/carpet_new/carpet_shaggygreen
 	icon_state = "shaggygreen"
 
-/turf/open/floor/wood/f13/import/carpet_shaggyblue
+/turf/open/floor/carpet_new/carpet_shaggyblue
 	icon_state = "shaggyblue"
 
-/turf/open/floor/wood/f13/import/carpet_shaggyviolet
+/turf/open/floor/carpet_new/carpet_shaggyviolet
 	icon_state = "shaggyviolet"
 
-/turf/open/floor/wood/f13/carpet
-	icon_state = "carpet"
-
-/turf/open/floor/wood/f13/old
-	name = "wood planks"
-	desc = "Rotting wooden flooring."
-
-/turf/open/floor/wood/f13/old/ruinedcornerendbr	//WHAT THE FUCK IS THIS
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornerbr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendbl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornerbl"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendtr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornertr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendtl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornertl"
-
-/turf/open/floor/wood/f13/old/ruinedcornerbr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornerbr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerbl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornerbl"
-
-/turf/open/floor/wood/f13/old/ruinedcornertr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornertr"
-
-/turf/open/floor/wood/f13/old/ruinedcornertl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornertl"
-
-/turf/open/floor/wood/f13/old/ruinedstraightsouth
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandsouth"
-
-/turf/open/floor/wood/f13/old/ruinedstraightnorth
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandnorth"
-
-/turf/open/floor/wood/f13/old/ruinedstraighteast
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandeast"
-
-/turf/open/floor/wood/f13/old/ruinedstraightwest
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandwest"
-
-/turf/open/floor/wood/f13/stage_tl
-	icon_state = "housewood_stage_top_left"
-/turf/open/floor/wood/f13/stage_t
-	icon_state = "housewood_stage_top"
-/turf/open/floor/wood/f13/stage_l
-	icon_state = "housewood_stage_left"
-/turf/open/floor/wood/f13/stage_bl
-	icon_state = "housewood_stage_bottom_left"
-/turf/open/floor/wood/f13/stage_b
-	icon_state = "housewood_stage_bottom"
-/turf/open/floor/wood/f13/stage_tr
-	icon_state = "housewood_stage_top_right"
-/turf/open/floor/wood/f13/stage_r
-	icon_state = "housewood_stage_right"
-/turf/open/floor/wood/f13/stage_br
-	icon_state = "housewood_stage_bottom_right"
-
-
-
-
-
-
-
-
-
-//WOOD FLOOR FOR BRIDGES ETC, OUTDOORS
-/turf/open/floor/wood/f13/stage_b/outdoors
-	sunlight_state = SUNLIGHT_SOURCE
 
 #define SHROOM_SPAWN	1
 
