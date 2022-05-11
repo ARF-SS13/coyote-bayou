@@ -16,7 +16,7 @@
 	/datum/surgery_step/close
 	)
 	requires_trait = 2
-	requires_trait = "MEDICALGRADUATE"
+	requires_trait = TRAIT_SURGERY_MID
 
 //repair organs
 /datum/surgery_step/graft_synthtissue
@@ -51,7 +51,7 @@
 				to_chat(user, "<span class='notice'>There's not enough synthtissue to perform the operation! There needs to be at least 10u.</span>")
 				return -1
 
-			if((chosen_organ.organ_flags & ORGAN_FAILING) && !(Sf.data["grown_volume"] >= 80))
+			if((chosen_organ.organ_flags & ORGAN_FAILING) && !(Sf.volume>= 80))
 				to_chat(user, "<span class='notice'>[chosen_organ] is too damaged to graft onto!</span>")
 				return -1
 

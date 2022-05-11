@@ -5,7 +5,7 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	requires_trait = 2
-	requires_trait = "MEDICALGRADUATE"
+	requires_trait = TRAIT_SURGERY_MID
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "ventricular electrotherapy"
@@ -89,8 +89,6 @@
 		failed = "<span class='warning'>The heart is zapped by the [tool], but nothing happens. You feel like the spark of life has fully left [H].</span>"
 	else if (H.hellbound)
 		failed = "<span class='warning'>The heart is zapped by the [tool], but nothing happens. You notice a small tatoo with the words \"Property of Satan\" branded just above the right ventricle.</span>"
-	else if(tdelta > (DEFIB_TIME_LIMIT * 10))
-		failed = "<span class='warning'>The heart is zapped by the [tool], but nothing happens. It appears their body decomposed beyond repair.</span>"
 	else if(total_burn >= 180 || total_brute >= 180)
 		failed = "<span class='warning'>The [tool] zaps the heart, inducing a sudden contraction, but it appears [H]'s body is too damaged to revive presently.</span>"
 	else if(H.get_ghost())
