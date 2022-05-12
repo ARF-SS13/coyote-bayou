@@ -356,8 +356,9 @@
 	var/mob/living/carbon/human/user = src.loc
 	if(!user || !ishuman(user) || (user.wear_suit != src))
 		return
-	if((!cell || !cell?.use(usage_cost) || (salvage_step > 1)) && !no_power) // No cell, ran out of charge or we're in the process of being salvaged
-		remove_power(user)
+	if((!cell || !cell?.use(usage_cost) || (salvage_step > 1))) // No cell, ran out of charge or we're in the process of being salvaged
+		if(!no_power)
+			remove_power(user)
 		return
 	if(no_power) // Above didn't proc and suit is currently unpowered, meaning cell is installed and has charge - restore power
 		restore_power(user)
@@ -365,7 +366,7 @@
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/remove_power(mob/user)
 	if(salvage_step > 1) // Being salvaged
-		to_chat(user, "<span class='warning'>\The components in [src] require repairs!</span>")
+		to_chat(user, "<span class='warning'>Components in [src] require repairs!</span>")
 	else
 		to_chat(user, "<span class='warning'>\The [src] has ran out of charge!</span>")
 	remove_traits(user)
