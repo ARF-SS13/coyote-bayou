@@ -123,13 +123,6 @@
 //Scavenging and Tinkering//
 ///////////////////////////
 
-/datum/crafting_recipe/rags
-	name = "Cut clothing into rags"
-	result = /obj/item/stack/sheet/cloth/three
-	reqs = list(/obj/item/clothing/under = 1)
-	time = 20
-	category = CAT_CRAFTING
-	subcategory = CAT_SCAVENGING
 
 /datum/crafting_recipe/pin_removal
 	name = "Render gun unusable"

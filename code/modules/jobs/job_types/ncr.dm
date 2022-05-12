@@ -44,15 +44,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombatarmormk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrcombathelmetmk2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvaged)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvagedhelmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrsalvaged_salvaged)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrriot_broken)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrriothelmet_broken)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/ncrgate)
 
 

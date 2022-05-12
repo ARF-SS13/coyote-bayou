@@ -392,8 +392,8 @@
 /obj/effect/spawner/bundle/f13/armor/riot
 	name = "riot armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice,
-				/obj/item/clothing/head/helmet/f13/rangerbroken
+				/obj/item/clothing/suit/armor/f13/combat/riotpolice,
+				/obj/item/clothing/head/helmet/f13/combat/rangerbroken
 				)
 
 /obj/effect/spawner/bundle/f13/armor/vault
@@ -2225,23 +2225,4 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/storage/box/ration/ranger_breakfast,
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
-			)
-
-// Beta // Obsolete
-/obj/effect/spawner/lootdrop/f13/betatesting
-	name = "betatesting"
-	icon = 'icons/obj/janitor.dmi'
-	icon_state = "cheesie_honkers"
-	lootcount = 1
-	loot = list(
-			/obj/effect/spawner/bundle/testa = 10,
-			/obj/effect/spawner/bundle/testb = 10,
-			/obj/effect/spawner/bundle/testc = 10,
-			/obj/effect/spawner/bundle/testd = 10,
-			/obj/effect/spawner/bundle/teste = 10,
-			/obj/effect/spawner/bundle/testf = 10,
-			/obj/effect/spawner/bundle/testg = 10,
-			/obj/effect/spawner/bundle/testh = 10,
-			/obj/effect/spawner/bundle/testi = 10,
-			/obj/effect/spawner/bundle/testj = 10,
 			)

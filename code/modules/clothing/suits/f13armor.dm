@@ -47,13 +47,6 @@
 	desc = "A combat leather jacket, outfitted with a special armored leather coat."
 	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 35)
 
-/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice
-	name = "combat body armor"
-	icon_state = "combat_coat"
-	item_state = "combat_coat"
-	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 35, "wound" = 45)
-	slowdown = 0.15
 
 /obj/item/clothing/suit/armor/f13/kit
 	name = "armor kit"
@@ -203,6 +196,13 @@
 	else
 		return ..()
 
+/obj/item/clothing/suit/armor/f13/combat/riotpolice
+	name = "combat body armor"
+	icon_state = "combat_coat"
+	item_state = "combat_coat"
+	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 35, "wound" = 45)
+	slowdown = 0.15
 
 /obj/item/clothing/suit/armor/f13/combat/mk2
 	name = "reinforced combat armor"

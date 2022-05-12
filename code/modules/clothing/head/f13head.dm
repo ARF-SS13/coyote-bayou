@@ -107,7 +107,7 @@
 	icon_state = "combat_helmet_raider"
 	item_state = "combat_helmet_raider"
 
-/obj/item/clothing/head/helmet/f13/rangerbroken
+/obj/item/clothing/head/helmet/f13/combat/rangerbroken
 	name = "broken riot helmet"
 	icon_state = "ranger_broken"
 	desc = "An old riot police helmet, out of use around the time of the war."
