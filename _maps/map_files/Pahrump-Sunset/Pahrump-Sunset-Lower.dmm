@@ -989,7 +989,7 @@
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/building)
 "auM" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood/wood_chestnut,
@@ -1039,7 +1039,7 @@
 /area/f13/tunnel)
 "aHf" = (
 /obj/machinery/button/door{
-	id = militarystorage2;
+	id = "militarystorage2";
 	name = "Military Storage Shutters";
 	pixel_x = 32
 	},
@@ -1086,7 +1086,7 @@
 /turf/open/floor/plasteel/f13/metal,
 /area/f13/tunnel)
 "bgX" = (
-/obj/structure/chair/wood/modern,
+/obj/structure/chair/wood,
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/building)
 "bgY" = (
@@ -1100,7 +1100,7 @@
 	},
 /area/f13/building)
 "bhT" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/wood_chestnut,
@@ -3509,7 +3509,7 @@
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/caves)
 "bNV" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood/wood_chestnut,
@@ -4464,7 +4464,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
 "bRX" = (
-/obj/structure/chair/wood/worn{
+/obj/structure/chair/wood{
 	dir = 4
 	},
 /turf/open/floor/wood/wood_worn,
@@ -4474,7 +4474,7 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/sewer)
 "bRZ" = (
-/obj/structure/chair/wood/worn{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/wood/wood_worn,
@@ -9111,7 +9111,7 @@
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/tunnel)
 "lFD" = (
-/obj/structure/chair/wood/worn{
+/obj/structure/chair/wood{
 	dir = 1
 	},
 /turf/open/floor/wood/wood_chestnut,
@@ -10086,7 +10086,7 @@
 /area/f13/tunnel)
 "owp" = (
 /obj/machinery/door/poddoor/shutters{
-	id = militarystorage2
+	id = "militarystorage2"
 	},
 /turf/open/floor/plasteel/f13/metal,
 /area/f13/tunnel)
@@ -10230,7 +10230,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "oUz" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
