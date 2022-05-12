@@ -36,6 +36,7 @@
 #define RECIPE_LANCE "ddbf" //draw draw fold fold
 #define RECIPE_GLADIUS "fdf" //fold draw fold
 #define RECIPE_SPATHA "ffdf" // fold fold draw fold
+#define RECIPE_WARHONED "udsp" //upset draw shrink punch
 
 // Logic of smithing recipes: Tools start with bend and have 3 steps. 1h weapons have 3-4 steps. 2h weapons have 4-5 steps. Bigger bladed stuff start with a fold. Pointy stuff generally start with a draw. Unusual stuff migth start with upset.
 // Point of having a structure is obviously to help remember, not just keeping every recipe as pure rote memory with no internal logic. If you add more stuff and fuck this up and don't read comments I hope you get a prolapse. - Pebbles
@@ -316,7 +317,7 @@
 	RECIPE_WAKI = /obj/item/smithing/wakiblade,
 	RECIPE_KATANA = /obj/item/smithing/katanablade,
 	RECIPE_MACE = /obj/item/smithing/macehead,
-	RECIPE_AXE = /obj/item/smithing/axehead,
+	RECIPE_WARHONED = /obj/item/smithing/warhonedhead,
 	RECIPE_LANCE = /obj/item/smithing/lancehead,
 	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
 	RECIPE_THROWING = /obj/item/smithing/throwingknife,

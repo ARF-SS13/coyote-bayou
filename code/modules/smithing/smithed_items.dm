@@ -479,7 +479,7 @@
 	finalitem = finalforreal
 	..()
 
-// Axe
+// Axes & Choppers //
 /obj/item/smithing/axehead
 	name = "smithed axehead"
 	icon_state = "axe_smith"
@@ -487,6 +487,19 @@
 
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
+	finalforreal.force += quality*1.5
+	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalitem = finalforreal
+	..()
+
+/obj/item/smithing/warhonedhead
+	name = "smithed axehead"
+	icon_state = "warhoned_smith"
+	finalitem = /obj/item/melee/smith/twohand/axe/warhoned
+
+/obj/item/smithing/warhonedhead/startfinish()
+	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
 	finalforreal.force += quality*1.5
 	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")

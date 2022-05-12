@@ -81,8 +81,9 @@
 	var/qualitymod = 0
 
 /obj/item/melee/smith/hammer/premade
-	custom_materials = list(/datum/material/iron=1000)
-	quality = 5
+	quality = 3
+	qualitymod = 1
+	custom_materials = list(/datum/material/iron = 1000)
 
 // The true manual mining scanner, knock it on rock to scan. Could use a cooldown, can't be bothered to sort it. Lowest quality got too short range to test out.
 /obj/item/mining_scanner/prospector
@@ -219,14 +220,15 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
-	wound_bonus = 30
+	wound_bonus = 20
+	block_chance = 50
 
 /obj/item/melee/smith/sword/spatha
 	name = "spatha"
 	icon_state = "spatha_smith"
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
-	block_chance = 18
+	block_chance = 60
 
 /obj/item/melee/smith/sword/sabre
 	name = "sabre"
@@ -235,8 +237,9 @@
 	overlay_state = "hilt_sabre"
 	armour_penetration = 0.15
 	force = 24
+	block_chance = 55
 
-
+// go for the eyes Boo
 /obj/item/melee/smith/dagger
 	name = "dagger"
 	icon_state = "dagger_smith"
@@ -246,19 +249,28 @@
 	force = 24
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
+/obj/item/melee/smith/dagger/attack(mob/living/carbon/M, mob/living/carbon/user)
+	if(!istype(M))
+		return ..()
+	if(user.zone_selected == BODY_ZONE_PRECISE_EYES)
+		M.apply_damage(7, BRUTE, BODY_ZONE_HEAD)
+		return eyestab(M,user)
+	else
+		return ..()
+
 /obj/item/melee/smith/machete
 	name = "machete"
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
-	force = 26
+	force = 24
 	sharpness = SHARP_EDGED
 	wound_bonus = 30
+	block_chance = 20
 
 /obj/item/melee/smith/machete/gladius
 	name = "gladius"
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
-	block_chance = 10
 
 /obj/item/melee/smith/machete/reforged
 	name = "reforged machete"
@@ -274,6 +286,7 @@
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
+	block_chance = 60
 
 /datum/block_parry_data/waki //like longbokken but worse reflect
 	parry_stamina_cost = 6
@@ -290,11 +303,17 @@
 	parry_data = list(PARRY_COUNTERATTACK_MELEE_ATTACK_CHAIN = 1.9)
 
 // Mace - low damage, high AP (25, 0,4)
-/obj/item/melee/smith/mace 
+/obj/item/melee/smith/mace
 	name = "mace"
 	icon_state = "mace_smith"
 	overlay_state = "handle_mace"
 	force = 15
+
+/obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(15, STAMINA, "chest", M.run_armor_check("chest", "melee"))
 
 
 //////////////////////////
@@ -316,6 +335,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
+	block_chance = 50
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
 	parry_stamina_cost = 12 //dont miss
@@ -339,11 +359,43 @@
 	icon_prefix = "axe_smith"
 	overlay_state = "shaft_axe"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
-	force = 16
+	force = 18
 	wielded_mult = 2
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
+	wound_bonus = 10
+	bare_wound_bonus = 10
+
+/obj/item/melee/smith/twohand/axe/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(20, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(20, BRUTE, "melee", 0)
+
+
+// Legion axe
+/obj/item/melee/smith/twohand/axe/warhoned
+	name = "war honed axe"
+	icon_state = "warhoned_smith"
+	icon_prefix = "warhoned_smith"
+	overlay_state = "shaft_warhoned"
+
+/obj/item/melee/smith/twohand/axe/warhoned/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(20, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(20, BRUTE, "melee", 0)
 
 // Scrap blade. 1/2 H chopper, variant on the axe basically 32/48. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe/scrapblade
@@ -353,6 +405,17 @@
 	overlay_state = "hilt_scrap"
 	force = 21
 	wielded_mult = 1.5
+
+/obj/item/melee/smith/twohand/axe/scrapblade/afterattack(atom/A, mob/living/user, proximity)
+	. = ..()
+	if(!proximity || !wielded || IS_STAMCRIT(user))
+		return
+	if(istype(A, /obj/machinery/door))
+		var/obj/machinery/door/D = A
+		D.take_damage(20, BRUTE, "melee", 0)
+	else if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/M = A
+		M.take_damage(20, BRUTE, "melee", 0)
 
 /obj/item/melee/smith/twohand/spear
 	name = "spear"
