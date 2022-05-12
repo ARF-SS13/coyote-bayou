@@ -1635,12 +1635,6 @@
 	icon_state = "raven_harness"
 	item_state = "raven_harness"
 
-/obj/item/clothing/under/f13/ravenharness
-	name = "raven harness"
-	desc = "A harness made out of a number of black belts sewn together end on end to form a coiling piece of clothing. A symbol in red has been painted on the front, and a pair of hide pants go with it."
-	icon_state = "raven_harness"
-	item_state = "raven_harness"
-
 /obj/item/clothing/under/f13/jamrock
 	name = "Disco-Ass Shirt and Pants"
 	desc = "This white satin shirt used to be fancy. It used to really catch the light. Now it smells like someone took a piss in the armpits while the golden brown trousers are flare-cut. Normal bell-bottom trousers would be boot-cut, but these are far from normal. They are someone's piss-soaked, cum-stained party pants."

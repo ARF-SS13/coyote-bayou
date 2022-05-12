@@ -48,7 +48,7 @@
  */
 
 /obj/structure/bed/wooden
-	name = "simple wooden bed"
+	name = "wooden bed"
 	desc = "Wooden frame with a mattress"
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	icon_state = "bed_wood"
@@ -59,6 +59,12 @@
 	desc = "Filthy beyond belief."
 	icon_state = "bed_dirty"
 	max_integrity = 50
+
+/obj/structure/bed/club
+	name = "bed"
+	desc = "A vibrant pink and purple mattress cast in a thick metal frame."
+	icon_state = "bed_club"
+	max_integrity = 150
 
 // Obsolete
 /obj/structure/bed/oldalt

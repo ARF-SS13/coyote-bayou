@@ -28,6 +28,14 @@
 	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
 	return (OXYLOSS)
 
+/obj/item/melee/chainofcommand/fake
+	name = "kinky whip"
+	desc = "An imitation whip made for erotic roleplay. Still stings, but not much of a real weapon."
+	force = 2
+	throwforce = 2
+	wound_bonus = 2
+	bare_wound_bonus = 2
+
 /obj/item/melee/synthetic_arm_blade
 	name = "synthetic arm blade"
 	desc = "A grotesque blade that on closer inspection seems made of synthetic flesh, it still feels like it would hurt very badly as a weapon."
