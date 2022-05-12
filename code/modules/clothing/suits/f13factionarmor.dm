@@ -557,6 +557,20 @@
 	slowdown = 0.08
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20, "wound" = 55)
 
+// Shredding combat armor directly with a saw. Some sort of pathing overhaul needed maybe to keep stuff consistent, this is just an adaptation of the current arbitrary selection of salvageable armors.
+/obj/item/clothing/suit/armor/f13/rangercombat/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_SAW)
+		user.visible_message("[user] begins recycling the [src] into armor plates.", \
+				"<span class='notice'>You begin recycling the [src] into armor plates.</span>", \
+				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
+		if(!do_after(user, 50, TRUE, src))
+			return
+		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 8)
+		qdel(src)
+		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
+	else
+		return ..()
 
 /obj/item/clothing/suit/armor/f13/ncrcfjacket
 	name = "NCRCF jacket"

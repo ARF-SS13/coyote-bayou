@@ -188,6 +188,22 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
+// Shredding combat armor a direct action. Use a saw.
+/obj/item/clothing/suit/armor/f13/combat/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_SAW)
+		user.visible_message("[user] begins recycling the [src] into armor plates.", \
+				"<span class='notice'>You begin recycling the [src] into armor plates.</span>", \
+				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
+		if(!do_after(user, 50, TRUE, src))
+			return
+		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 4)
+		qdel(src)
+		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
+	else
+		return ..()
+
+
 /obj/item/clothing/suit/armor/f13/combat/mk2
 	name = "reinforced combat armor"
 	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates."
@@ -558,6 +574,18 @@
 			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
+
+// Recycle power armor with blowtorch (welder ok fine)
+/obj/item/clothing/suit/armor/f13/power_armor/welder_act(mob/living/user, obj/item/I)
+	user.visible_message("[user] begins recycling the [src].", \
+			"<span class='notice'>You begin cutting the [src] apart.</span>", \
+			"<span class='italics'>You hear the noise of a blowtorch working.</span>")
+	if(I.use_tool(src, user, 100, volume=50, amount=15))
+		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 10)
+		qdel(src)
+		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
+	else
+		return ..()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "T-45b power armor"

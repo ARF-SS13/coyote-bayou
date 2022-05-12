@@ -212,7 +212,7 @@
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	armour_penetration = 0.1
-	force = 23
+	force = 25
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
@@ -234,7 +234,7 @@
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
 	armour_penetration = 0.15
-	force = 22
+	force = 24
 
 
 /obj/item/melee/smith/dagger
@@ -243,14 +243,14 @@
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
 	sharpness = SHARP_EDGED
-	force = 22
+	force = 24
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/smith/machete
 	name = "machete"
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
-	force = 24
+	force = 26
 	sharpness = SHARP_EDGED
 	wound_bonus = 30
 
@@ -270,7 +270,7 @@
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
 	sharpness = SHARP_EDGED
-	force = 22
+	force = 24
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -294,7 +294,7 @@
 	name = "mace"
 	icon_state = "mace_smith"
 	overlay_state = "handle_mace"
-	force = 13
+	force = 15
 
 
 //////////////////////////
@@ -308,7 +308,7 @@
 	icon_state = "katana_smith"
 	icon_prefix = "katana_smith"
 	overlay_state = "hilt_katana"
-	force = 20
+	force = 22
 	wielded_mult = 1.5
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
@@ -339,7 +339,7 @@
 	icon_prefix = "axe_smith"
 	overlay_state = "shaft_axe"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
-	force = 15
+	force = 16
 	wielded_mult = 2
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
@@ -351,7 +351,7 @@
 	icon_state = "scrap_smith"
 	icon_prefix = "scrap_smith"
 	overlay_state = "hilt_scrap"
-	force = 20
+	force = 21
 	wielded_mult = 1.5
 
 /obj/item/melee/smith/twohand/spear

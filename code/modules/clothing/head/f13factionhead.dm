@@ -701,6 +701,21 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	darkness_view = 24
 
+// recycling the above
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/attackby(obj/item/I, mob/user, params)
+	if(I.tool_behaviour == TOOL_SAW)
+		user.visible_message("[user] begins recycling the [src].", \
+				"<span class='notice'>You begin recycling the [src].</span>", \
+				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
+		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
+		if(!do_after(user, 50, TRUE, src))
+			return
+		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 2)
+		new /obj/item/clothing/glasses/night/polarizing (drop_location(), 1)
+		qdel(src)
+		to_chat(user, "<span class='notice'>You salvage armor plates and a set of polarizing goggles from the [src].</span>")
+	else
+		return ..()
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"

@@ -274,23 +274,53 @@ obj/item/melee/onehanded/knife/switchblade
 		hitsound = 'sound/weapons/genhit.ogg'
 		sharpness = SHARP_NONE
 
+//////////////////
+// Cosmic Knife //
+////////////////// now you do the cleaning & heating manually.
+
 /obj/item/melee/onehanded/knife/cosmicdirty
 	name = "dirty cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy."
+	desc = "A high-quality kitchen knife made from Saturnite alloy, this one is covered in oxidation. Perhaps Abraxo might clean it up?"
 	icon_state = "knife_cosmic_dirty"
 	item_state = "knife"
 	force = 15
 	throwforce = 10
 	armour_penetration = 0.2
 
+// Abraxo my beloved. Can now be used directly to clean the blade.
+/obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
+	if(istype(C, /obj/item/crafting/abraxo))
+		user.visible_message("[user] begins cleaning the blade of the [src].", \
+				"<span class='notice'>You begin scrubbing the [src] with Abraxo. Smells nice.</span>", \
+				"<span class='italics'>You hear faint sounds of scrubbing.</span>")
+		playsound(get_turf(src), 'sound/FermiChem/heatdam.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/melee/onehanded/knife/cosmic(drop_location())
+		qdel(src)
+		qdel(C)
+		return
+	return TRUE
+
 /obj/item/melee/onehanded/knife/cosmic
 	name = "cosmic knife"
-	desc = "A high-quality kitchen knife made from Saturnite alloy, this one seems to be in better condition."
+	desc = "A high-quality kitchen knife made from Saturnite alloy, can be heated with a welder for easier cutting of frozen butter."
 	icon_state = "knife_cosmic"
 	item_state = "knife"
 	force = 25
 	throwforce = 15
 	armour_penetration = 0.2
+
+// Heat it with a welder
+/obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
+	if(I.use_tool(src, user, 20, volume=50, amount=15))
+		user.visible_message("[user] heats up the blade of the [src].", \
+				"<span class='notice'>You heat up the [src] until the blade glows!</span>", \
+				"<span class='italics'>You hear faint sounds of a welder working.</span>")
+		new /obj/item/melee/onehanded/knife/cosmicheated(drop_location())
+		qdel(src)
+		return
+	return TRUE
 
 /obj/item/melee/onehanded/knife/cosmicheated
 	name = "superheated cosmic knife"
@@ -301,6 +331,7 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 35
 	throwforce = 20
 	armour_penetration = 0.4
+	w_class = WEIGHT_CLASS_NORMAL // Its super hot, not comfy to put back in your pocket.
 
 /obj/item/melee/onehanded/knife/throwing
 	name = "throwing knife"
@@ -313,7 +344,6 @@ obj/item/melee/onehanded/knife/switchblade
 	throw_speed = 5
 	throw_range = 7
 	embedding = list("pain_mult" = 4, "embed_chance" = 70, "fall_chance" = 5)
-
 
 ///////////
 // CLUBS //
@@ -704,14 +734,20 @@ obj/item/melee/onehanded/knife/switchblade
 	sharpness = SHARP_POINTY
 	force = 25
 
-// Sappers			Keywords: Damage 26
+// Sappers			Keywords: Damage 25
 /obj/item/melee/unarmed/sappers
 	name = "sappers"
 	desc = "Lead filled gloves which are ideal for beating the crap out of opponents."
 	icon_state = "sapper"
 	item_state = "sapper"
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 26
+	force = 25
+
+/obj/item/melee/unarmed/sappers/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(15, STAMINA, "head", M.run_armor_check("head", "melee"))
 
 // Tiger claws		Keywords: Damage 28, Pointy
 /obj/item/melee/unarmed/tigerclaw

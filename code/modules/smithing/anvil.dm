@@ -298,6 +298,8 @@
 	name = "anvil"
 	desc = "A solid steel anvil with a stamped bull on it."
 	icon_state = "legvil"
+	anvilquality = 1
+	itemqualitymax = 8
 	anchored = TRUE
 	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
