@@ -158,3 +158,7 @@
 /obj/effect/turf_decal/huge/heaven
 	icon = 'icons/turf/decalshuge.dmi'
 	icon_state = "heaven"
+
+/obj/effect/turf_decal/huge/massfusion
+	icon = 'icons/turf/decalshuge.dmi'
+	icon_state = "massfusion"

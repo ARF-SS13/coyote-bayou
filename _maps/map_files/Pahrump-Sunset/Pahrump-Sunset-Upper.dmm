@@ -1845,6 +1845,14 @@
 /obj/structure/grille,
 /turf/open/floor/plasteel/f13/concrete/industrial/alt,
 /area/f13/building)
+"khw" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "powerplantright"
+	},
+/turf/open/space/basic,
+/area/f13/radiation)
 "ksl" = (
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/f13/concrete/industrial,
@@ -2188,9 +2196,13 @@
 	},
 /area/f13/building)
 "mGE" = (
-/obj/structure/chair/wood,
-/turf/open/floor/wood/wood_worn,
-/area/f13/city)
+/obj/structure/lattice/catwalk,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "powerplantleft"
+	},
+/turf/open/space/basic,
+/area/f13/radiation)
 "mLz" = (
 /obj/structure/table/booth,
 /turf/open/floor/wood/wood_worn,
@@ -12380,7 +12392,7 @@ gkd
 gkd
 csj
 nGj
-mGE
+jSU
 jej
 csj
 oez
@@ -14179,7 +14191,7 @@ gkd
 gkd
 csj
 viv
-mGE
+jSU
 jej
 csj
 oez
@@ -53052,7 +53064,7 @@ dbF
 dbF
 pFx
 dbF
-dbF
+mGE
 xQx
 aaZ
 rYU
@@ -55622,7 +55634,7 @@ dbF
 dbF
 hjt
 dbF
-dbF
+khw
 xQx
 lhP
 rYU
