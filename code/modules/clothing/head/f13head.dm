@@ -679,7 +679,6 @@
 	desc = "A headband with a pair of cute kitty ears."
 	icon_state = "kittyb"
 	color = "#999999"
-	armor = list("tier" = 0)
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/f13/riderw
@@ -763,7 +762,6 @@
 	alt_toggle_message = "You take the sniper's veil off"
 	can_toggle = 1
 	toggle_cooldown = 0
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/mosshelmet
 	name = "veteran patrol stetson"
@@ -825,10 +823,9 @@
 
 /obj/item/clothing/head/helmet/f13/marlowhat
 	name = "boss of the plains hat"
-	desc = "(IV) A thick undyed felt cowboy hat, bleached from excessive sun exposure and creased from heavy usage."
+	desc = "A thick undyed felt cowboy hat, bleached from excessive sun exposure and creased from heavy usage."
 	icon_state = "marlowhat"
 	item_state = "marlowhat"
-	armor = list("tier" = 4, "energy" = 25, "bomb" = 30, "bio" = 20, "rad" = 0, "fire" = 50, "acid" = 0)
 	flags_inv = HIDEEARS|HIDEHAIR
 
 /obj/item/clothing/head/helmet/f13/marlowhat/Initialize()

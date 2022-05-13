@@ -282,7 +282,7 @@
 	armor = list("melee" = 25, "bullet" = 45, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 5)
 
 /obj/item/clothing/suit/armored/medium/ncrarmorofficer/captain
-	name = "NCR captain´s armor"
+	name = "NCR captain's armor"
 	desc = "The captain gets to wear a non-regulation coat over his armor because he is in charge, and don't you forget it."
 	icon_state = "ncr_officer_coat"
 	item_state = "ncr_officer_coat"
@@ -336,21 +336,21 @@
 
 /obj/item/clothing/suit/armored/medium/combatmk2/knight
 	name = "brotherhood armor"
-	desc = "(V) A combat armor set made by the Brotherhood of Steel, standard issue for all Knights. It bears a red stripe."
+	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Knights. It bears a red stripe."
 	icon_state = "brotherhood_armor_knight"
 	item_state = "brotherhood_armor_knight"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 10, "rad" = 20, "fire" = 25, "acid" = 10)
 
 /obj/item/clothing/suit/armored/medium/combatmk2/senknight
 	name = "brotherhood senior knight armor"
-	desc = "(VI) A combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knight. It bears a silver stripe."
+	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Senior Knight. It bears a silver stripe."
 	icon_state = "brotherhood_armor_senior"
 	item_state = "brotherhood_armor_senior"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 10, "rad" = 25, "fire" = 25, "acid" = 10)
 
 /obj/item/clothing/suit/armored/medium/combatmk2/headknight
 	name = "brotherhood knight-captain armor"
-	desc = "(VI) A combat armor set made by the Brotherhood of Steel, standard issue for all Knight-Captains. It bears golden embroidery."
+	desc = "A combat armor set made by the Brotherhood of Steel, standard issue for all Knight-Captains. It bears golden embroidery."
 	icon_state = "brotherhood_armor_captain"
 	item_state = "brotherhood_armor_captain"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 15, "rad" = 25, "fire" = 30, "acid" = 15)
@@ -382,7 +382,7 @@
 
 /obj/item/clothing/suit/armored/medium/steelbib/town
 	name = "steel breastplate"
-	desc = "a steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
+	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
 	armor = list("melee" = 30, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -10)
 	slowdown = 0.11
 

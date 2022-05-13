@@ -207,23 +207,26 @@
 	icon_state = "hat_enclave_peacekeeper"
 	item_state = "hat_enclave_peacekeeper"
 
+/obj/item/clothing/head/beret/enclave
+	name = "enclave beret"
+	desc = "A standard issue black beret of the Enclave."
+	icon_state = "remnant"
+	item_state = "remnant"
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = null
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
+
 /obj/item/clothing/head/beret/enclave/science
 	name = "science beret"
 	desc = "Blue beret signifying the wearer is a Science Officer of the Enclave."
 	icon_state = "hat_enclave_science"
 	item_state = "hat_enclave_science"
-	flags_inv = HIDEEARS|HIDEFACE
-	flags_cover = null
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
 /obj/item/clothing/head/beret/enclave/intel
 	name = "intel beret"
 	desc = "Dark beret issued to Intelligence Officers of the Enclave."
 	icon_state = "hat_enclave_intel"
 	item_state = "hat_enclave_intel"
-	flags_inv = HIDEEARS|HIDEFACE
-	flags_cover = null
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 
 /obj/item/clothing/head/helmet/f13/envirosuit
 	name = "enclave envirosuit hood"
@@ -252,10 +255,9 @@
 	desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops."
 	icon_state = "remnant_helmet"
 	item_state = "remnant_helmet"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
 // Lieutenant's hat
-/obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+/obj/item/clothing/head/helmet/f13/enclave/officer
 	name = "enclave officer hat"
 	desc = "Wheeled hat with a cap made of light-weight armored alloys beneath."
 	icon_state = "hat_enclave_officer"
@@ -707,6 +709,10 @@
 	darkness_view = 24
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3, /obj/item/clothing/glasses/night/polarizing = 1)
 
+/obj/item/clothing/head/helmet/f13/ncr/rangercombat/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"
 	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers."
@@ -714,13 +720,11 @@
 	item_state = "elite_riot"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 
-
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
 	name = "desert ranger combat helmet"
 	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert/whiskey
 	name = "weathered ranger helmet"
@@ -1132,7 +1136,7 @@ obj/item/clothing/head/f13/army/beret
 
 /obj/item/clothing/head/f13/chinese/officer
 	name = "PLA officer's cap"
-	desc = "(II) A People's Liberation Army peaked cap, worn by officers."
+	desc = "A People's Liberation Army peaked cap, worn by officers."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
 	icon_state = "chinese_officer"
@@ -1299,13 +1303,6 @@ obj/item/clothing/head/f13/army/beret
 
 
 //Enclave / Remnant
-
-/obj/item/clothing/head/helmet/f13/combat/mk2/remnant
-	name = "remnant combat helmet"
-	desc = "A dark helmet with yellow lenses, used commonly in espionage or shadow ops."
-	icon_state = "remnant_helmet"
-	item_state = "remnant_helmet"
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
 /obj/item/clothing/head/helmet/f13/helmet/enclave/forgecap
 	name = "enclave forge cap"

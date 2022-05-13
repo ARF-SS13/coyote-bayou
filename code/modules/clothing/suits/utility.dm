@@ -31,7 +31,6 @@
 	icon_state = "hood_surgical_scrubs"
 	item_state = "hood_surgical_scrubs"
 	flags_inv = HIDEHAIR
-	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 40, "rad" = 10, "fire" = 0, "acid" = 10)
 
 
 /*

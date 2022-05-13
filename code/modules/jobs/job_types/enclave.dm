@@ -68,7 +68,7 @@
 	name = "Enclave Lieutenant"
 	jobtype = /datum/job/enclave/enclavelt
 
-	head = /obj/item/clothing/head/helmet/f13/helmet/enclave/officer
+	head = /obj/item/clothing/head/helmet/f13/enclave/officer
 	uniform = /obj/item/clothing/under/f13/enclave/officer
 	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
 	accessory = /obj/item/clothing/accessory/ncr/LT1

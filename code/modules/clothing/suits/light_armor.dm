@@ -55,7 +55,7 @@
 	desc = "A dyed brahmin hide duster, with a thick waxy surface, making it less vulnerable to lasers and energy based weapons."
 	icon_state = "duster_lawman"
 	item_state = "duster_lawman"
-	armor = list("tier" = 4, "linelaser" = 24, "energy" = 20, "bomb" = 15, "bio" = 5, "rad" = 0, "fire" = 25, "acid" = 5)
+	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 
 
 

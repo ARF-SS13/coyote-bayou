@@ -20,7 +20,7 @@
 
 /obj/item/clothing/suit/redtag
 	name = "red laser tag armor"
-	desc = "(I) A piece of plastic armor. It has sensors that react to blue light."
+	desc = "A piece of plastic armor. It has sensors that react to blue light."
 	icon_state = "redtag"
 	item_state = "redtag"
 	blood_overlay_type = "armor"
@@ -319,7 +319,6 @@
 	item_state = "officertanjacket"
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	armor = list("tier" = 2)
 
 /obj/item/clothing/suit/ran
 	name = "shikigami costume"
@@ -392,7 +391,7 @@
 
 /obj/item/clothing/suit/jacket/flannel/red
 	name = "red flannel jacket"
-	desc = "(I) Comfy and supposedly flammable."
+	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_red"
 	item_state = "flannel_red"
 
@@ -404,7 +403,7 @@
 
 /obj/item/clothing/suit/jacket/flannel/brown
 	name = "brown flannel jacket"
-	desc = "(I) Comfy and supposedly flammable."
+	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
 
@@ -473,7 +472,7 @@
 
 /obj/item/clothing/suit/dracula
 	name = "dracula coat"
-	desc = "(I) Looks like this belongs in a very old movie set."
+	desc = "Looks like this belongs in a very old movie set."
 	icon_state = "draculacoat"
 	item_state = "draculacoat"
 	body_parts_covered = CHEST|ARMS
@@ -515,7 +514,7 @@
 
 /obj/item/clothing/head/hooded/winterhood
 	name = "winter hood"
-	desc = "(II) A hood attached to a heavy winter jacket."
+	desc = "A hood attached to a heavy winter jacket."
 	icon_state = "winterhood"
 	body_parts_covered = HEAD
 	cold_protection = HEAD
@@ -526,7 +525,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/centcom
 	name = "centcom winter coat"
-	desc = "(IV) A coat layered with both insulation and armor."
+	desc = "A coat layered with both insulation and armor."
 	icon_state = "coatcentcom"
 	item_state = "coatcentcom"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/centcom
@@ -552,7 +551,7 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/captain
-	desc = "(III) A blue and yellow hood attached to a heavy winter jacket."
+	desc = "A blue and yellow hood attached to a heavy winter jacket."
 	icon_state = "winterhood_captain"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5)
 
@@ -564,7 +563,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/hop
 
 /obj/item/clothing/head/hooded/winterhood/hop
-	desc = "(I) A cozy winter hood attached to a heavy winter jacket."
+	desc = "A cozy winter hood attached to a heavy winter jacket."
 	icon_state = "winterhood_hop"
 
 /obj/item/clothing/suit/hooded/wintercoat/security
@@ -604,7 +603,7 @@
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
 	name = "medical winter coat"
-	desc = "(I) An arctic white winter coat with a small blue caduceus instead of a plastic zipper tab. Snazzy."
+	desc = "An arctic white winter coat with a small blue caduceus instead of a plastic zipper tab. Snazzy."
 	icon_state = "coatmedical"
 	item_state = "coatmedical"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/medical
@@ -665,7 +664,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/science
 
 /obj/item/clothing/head/hooded/winterhood/science
-	desc = "(I) A white winter coat hood. This one will keep your brain warm. About as much as the others, really."
+	desc = "A white winter coat hood. This one will keep your brain warm. About as much as the others, really."
 	icon_state = "winterhood_science"
 
 /obj/item/clothing/suit/hooded/wintercoat/robotics
@@ -893,9 +892,9 @@
 	allowed = GLOB.security_wintercoat_allowed
 
 /obj/item/clothing/head/hooded/winterhood/durathread
+	desc = "The one coat to rule them all. Extremely durable while providing the utmost comfort."
 	icon_state = "winterhood_durathread"
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5)
-	desc = "(II) The one coat to rule them all. Extremely durable while providing the utmost comfort."
 
 /obj/item/clothing/suit/spookyghost
 	name = "spooky ghost"
@@ -911,7 +910,6 @@
 	desc = "A big and clanky suit made of bronze that offers no protection and looks very unfashionable. Nice."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_cuirass_old"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
 
 /obj/item/clothing/suit/ghost_sheet
 	name = "ghost sheet"
