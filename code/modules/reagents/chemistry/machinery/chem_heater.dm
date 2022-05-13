@@ -147,3 +147,45 @@
 			on = FALSE
 			replace_beaker(usr)
 			. = TRUE
+
+/obj/machinery/chem_heater/primitive
+	name = "modified microwave oven"
+	desc = "A microwave oven made to fit containers."
+	density = TRUE
+	icon = 'icons/obj/kitchen.dmi'
+	icon_state = "mw"
+	circuit = /obj/item/circuitboard/machine/chem_heater/primitive
+
+/obj/machinery/chem_heater/primitive/update_icon_state()
+	if(beaker)
+		icon_state = "mw1"
+	else
+		icon_state = "mw"
+
+/obj/machinery/chem_heater/primitive/attackby(obj/item/I, mob/user, params)
+	if(default_deconstruction_screwdriver(user, "mw", "mw", I))
+		return
+
+	if(default_deconstruction_crowbar(I))
+		return
+
+	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
+		. = TRUE //no afterattack
+		var/obj/item/reagent_containers/B = I
+		if(!user.transferItemToLoc(B, src))
+			return
+		replace_beaker(user, B)
+		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		updateUsrDialog()
+		update_icon()
+		return
+	if(beaker)
+		if(istype(I, /obj/item/reagent_containers/dropper))
+			var/obj/item/reagent_containers/dropper/D = I
+			D.afterattack(beaker, user, 1)
+			return
+		if(istype(I, /obj/item/reagent_containers/syringe))
+			var/obj/item/reagent_containers/syringe/S = I
+			S.afterattack(beaker, user, 1)
+			return
+	return ..()

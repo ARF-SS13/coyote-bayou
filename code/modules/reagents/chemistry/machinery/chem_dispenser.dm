@@ -806,3 +806,14 @@
 		/datum/reagent/toxin/carpotoxin,
 		/datum/reagent/medicine/morphine
 	)
+
+/obj/machinery/chem_dispenser/primitive
+	name = "makeshift alchemy stand"
+	desc = "A stand that uses machinery to extract compounds from plants and salvaged materials."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "primitive_dispenser"
+	has_panel_overlay = FALSE
+	circuit = /obj/item/circuitboard/machine/chem_dispenser/primitive
+	working_state = null
+	nopower_state = null
+	pass_flags = PASSTABLE

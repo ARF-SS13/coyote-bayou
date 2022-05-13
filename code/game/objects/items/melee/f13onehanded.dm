@@ -749,7 +749,7 @@ obj/item/melee/onehanded/knife/switchblade
 		return
 	M.apply_damage(15, STAMINA, "head", M.run_armor_check("head", "melee"))
 
-// Tiger claws		Keywords: Damage 28, Pointy
+// Tiger claws		Keywords: Damage 31, Pointy
 /obj/item/melee/unarmed/tigerclaw
 	name = "tiger claws"
 	desc = "Gloves with short claws built into the palms."
@@ -758,7 +758,7 @@ obj/item/melee/onehanded/knife/switchblade
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
-	force = 28
+	force = 31
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 // Lacerator		Keywords: Damage 27, Edged, Wound bonus
@@ -774,14 +774,14 @@ obj/item/melee/onehanded/knife/switchblade
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-// Mace Glove		Keywords: Damage 31
+// Mace Glove		Keywords: Damage 30
 /obj/item/melee/unarmed/maceglove
 	name = "mace glove"
 	desc = "Weighted metal gloves that are covered in spikes.  Don't expect to grab things with this."
 	icon_state = "mace_glove"
 	item_state = "mace_glove"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 31
+	force = 30
 	sharpness = SHARP_NONE
 
 // Punch Dagger		Keywords: Damage 29, Pointy

@@ -178,7 +178,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
-	ADD_TRAIT(H, TRAIT_IRONFIST, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 
 /////////////////
@@ -755,6 +755,7 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
+	ADD_TRAIT(H, TRAIT_IRONFIST, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/vetlegionnaire
 	name = "Veteran Legionnaire"
@@ -779,7 +780,7 @@ commented out pending rework*/
 	name = "Enforcer"
 	suit_store = /obj/item/twohanded/legionaxe
 	backpack_contents = list(
-		/obj/item/melee/unarmed/maceglove = 1,
+		/obj/item/melee/unarmed/tigerclaw = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/stack/crafting/armor_plate = 4,
@@ -834,9 +835,9 @@ commented out pending rework*/
 	outfit = /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 
 	loadout_options = list(	//ALL: Forged Machete
-		/datum/outfit/loadout/primelancer,	// .357 Revolver, Buckler, Bola. Trekking
+		/datum/outfit/loadout/primelancer,	// .357 Revolver, Buckler, Bola.
 		/datum/outfit/loadout/primerifle,	// Cowboy Repeater, Firebomb
-		/datum/outfit/loadout/primebrave,	// Trench shotgun, Throwing spears, Trekking
+		/datum/outfit/loadout/primebrave,	// Trench shotgun, Throwing spears
 		)
 
 	matchmaking_allowed = list(
@@ -853,6 +854,7 @@ commented out pending rework*/
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_BIG_LEAGUES, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13legionary
 	name = "Prime Legionnaire"
@@ -878,7 +880,6 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/restraints/legcuffs/bola = 2,
-		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		)
 
@@ -898,7 +899,6 @@ commented out pending rework*/
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/storage/backpack/spearquiver = 1,
-		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		)
 
@@ -979,7 +979,7 @@ commented out pending rework*/
 /datum/job/CaesarsLegion/Legionnaire/f13immune
 	title = "Legion Immune"
 	flag = F13IMMUNE
-	total_positions = 5
+	total_positions = 4
 	spawn_positions = 1
 	description = "An Immune is a legionnaire temporarily assigned to keeping the camp in order, according to their tasking on any given week."
 	supervisors = "the Centurion."
@@ -1071,8 +1071,8 @@ commented out pending rework*/
 /datum/job/CaesarsLegion/auxilia
 	title = "Legion Auxilia"
 	flag = F13AUXILIA
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 3
+	spawn_positions = 3
 	description = "A non-combat position in the Legion for free citizens who perform tasks that need special training, such as surgery. They are loyal to the Legion even if they are not treated as equals to warriors."
 	supervisors = "the Centurion"
 	display_order = JOB_DISPLAY_ORDER_AUXILIA
@@ -1118,6 +1118,7 @@ commented out pending rework*/
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
 	ADD_TRAIT(H, TRAIT_MARS_TEACH, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tailor/legionuniform)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/warpaint)
 

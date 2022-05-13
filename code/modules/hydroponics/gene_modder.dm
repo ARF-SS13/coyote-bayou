@@ -415,6 +415,46 @@
 /obj/machinery/plantgenes/seedvault
 	circuit = /obj/item/circuitboard/machine/plantgenes/vault
 
+/obj/machinery/plantgenes/primitive
+	name = "seed manipulation stand"
+	desc = "An organized desk used to modify seeds."
+	icon = 'icons/obj/hand_of_god_structures.dmi'
+	icon_state = "sacrificealtar-red"
+	circuit = /obj/item/circuitboard/machine/plantgenes/primitive
+
+/obj/machinery/plantgenes/attackby(obj/item/I, mob/user, params)
+	if(default_deconstruction_screwdriver(user, "sacrificealtar-red", "sacrificealtar-red", I))
+		return
+	else if(default_unfasten_wrench(user, I))
+		return
+	if(default_deconstruction_crowbar(I))
+		return
+	if(iscyborg(user))
+		return
+
+	if(istype(I, /obj/item/seeds))
+		if(seed)
+			to_chat(user, "<span class='warning'>A sample is already loaded into the machine!</span>")
+		else
+			if(!user.temporarilyRemoveItemFromInventory(I))
+				return
+			insert_seed(I)
+			to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
+			interact(user)
+		return
+	else if(istype(I, /obj/item/disk/plantgene))
+		if (operation)
+			to_chat(user, "<span class='notice'>Please complete current operation.</span>")
+			return
+		eject_disk()
+		if(!user.transferItemToLoc(I, src))
+			return
+		disk = I
+		to_chat(user, "<span class='notice'>You add [I] to the machine.</span>")
+		interact(user)
+	else
+		..()
+
 /*
  *  Plant DNA disk
  */
@@ -449,3 +489,9 @@
 	if(gene && (istype(gene, /datum/plant_gene/core/potency)))
 		. += "<span class='notice'>Percent is relative to potency, not maximum volume of the plant.</span>"
 	. += "The write-protect tab is set to [src.read_only ? "protected" : "unprotected"]."
+
+/obj/item/disk/plantgene/primitive
+	name = "plant vial"
+	desc = "A vial containing plant extracts to be used in seed manipulation."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "vial"
