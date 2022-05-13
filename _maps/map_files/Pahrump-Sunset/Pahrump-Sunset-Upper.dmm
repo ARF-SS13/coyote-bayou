@@ -1,10 +1,14 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aaa" = (
-/turf/closed/mineral/random/low_chance,
-/area/f13/bar/heaven)
+/obj/structure/simple_door/metal/ventilation,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "aab" = (
-/turf/open/transparent/openspace,
-/area/f13/bar/heaven)
+/obj/effect/overlay/junk/oldpipes,
+/turf/open/floor/plasteel/f13/concrete/cable{
+	dir = 1
+	},
+/area/f13/building)
 "aaZ" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -765,6 +769,12 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/wasteland)
+"aIJ" = (
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/glasses/meson/engine,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "aKa" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
@@ -827,6 +837,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"beC" = (
+/obj/effect/overlay/junk/oldpipes,
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/f13/concrete/cable{
+	dir = 1
+	},
+/area/f13/building)
 "bfJ" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -892,6 +909,7 @@
 /area/f13/city)
 "bFw" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/overlay/junk/oldpipes,
 /turf/open/floor/plasteel/f13/concrete/cable{
 	dir = 1
 	},
@@ -980,8 +998,12 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "cmg" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/wreck/trash/machinepile,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "cmx" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1046,7 +1068,15 @@
 "cAl" = (
 /obj/structure/window/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
+"cDH" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "cJg" = (
 /obj/structure/chair{
@@ -1359,6 +1389,7 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "fHv" = (
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/concrete/cable/curved{
 	dir = 8
 	},
@@ -1554,6 +1585,10 @@
 "hsd" = (
 /turf/closed/wall/f13/supermart,
 /area/f13/wasteland)
+"hvZ" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "hAf" = (
 /obj/structure/window/reinforced,
 /turf/open/floor/plasteel/f13/concrete/industrial,
@@ -1721,6 +1756,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
+"iUG" = (
+/obj/item/storage/bag/trash,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "jcx" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
@@ -1869,6 +1908,15 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
+"kCU" = (
+/obj/effect/overlay/junk/oldpipes,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/item/storage/trash_stack,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/cable{
+	dir = 1
+	},
+/area/f13/building)
 "kGi" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2115,6 +2163,7 @@
 /obj/structure/rack/large/shelf{
 	dir = 4
 	},
+/obj/item/soap,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "mbu" = (
@@ -2321,6 +2370,11 @@
 	dir = 4
 	},
 /area/f13/building)
+"nuj" = (
+/obj/item/storage/trash_stack,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "nzf" = (
 /obj/item/bedsheet/random,
 /obj/structure/bed,
@@ -2347,6 +2401,8 @@
 "nKk" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/overlay/junk/oldpipes,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13/concrete/cable{
 	dir = 1
 	},
@@ -2527,6 +2583,13 @@
 /area/f13/building)
 "oDo" = (
 /turf/closed/wall/mineral/concrete,
+/area/f13/building)
+"oGZ" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/wreck/trash/secway,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "oIu" = (
 /obj/structure/table/reinforced,
@@ -2742,6 +2805,11 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
+"qEi" = (
+/obj/structure/wreck/trash/engine,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "qER" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
@@ -2827,6 +2895,9 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/overlay/junk/oldpipes,
+/obj/item/storage/trash_stack,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/concrete/cable/node,
 /area/f13/building)
 "roa" = (
@@ -2849,6 +2920,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
+"rsx" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "rza" = (
 /obj/effect/decal/cleanable/robot_debris,
 /obj/effect/decal/cleanable/dirt,
@@ -2863,6 +2938,11 @@
 /area/f13/building)
 "rDK" = (
 /mob/living/simple_animal/bot/cleanbot,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
+"rHE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "rJj" = (
@@ -2937,6 +3017,14 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
+	},
+/area/f13/building)
+"smS" = (
+/obj/effect/overlay/junk/oldpipes,
+/obj/item/storage/trash_stack,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/cable{
+	dir = 1
 	},
 /area/f13/building)
 "smZ" = (
@@ -3163,6 +3251,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
+"tXx" = (
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner{
+	dir = 1
+	},
+/area/f13/building)
 "tYl" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 8
@@ -3229,7 +3323,9 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/building)
 "uoi" = (
-/obj/machinery/door/airlock/hatch,
+/obj/effect/decal/cleanable/generic,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/overlay/junk/oldpipes,
 /turf/open/floor/plasteel/f13/concrete/cable{
 	dir = 1
 	},
@@ -3325,6 +3421,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/kheshig,
 /turf/open/floor/wood/wood_worn,
+/area/f13/building)
+"uPm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner{
+	dir = 8
+	},
 /area/f13/building)
 "uQU" = (
 /obj/structure/closet/cabinet,
@@ -17729,17 +17832,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 oez
 oez
 oez
@@ -17986,17 +18089,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -18243,17 +18346,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -18500,17 +18603,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -18757,17 +18860,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -19014,17 +19117,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -19271,17 +19374,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -19528,17 +19631,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -19785,17 +19888,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -20042,17 +20145,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -20299,17 +20402,17 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -20552,21 +20655,21 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -20809,21 +20912,21 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 aca
 aca
 oez
@@ -21066,21 +21169,21 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
+lDT
 oez
 oez
 oez
@@ -21323,11 +21426,11 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aab
+lDT
+lDT
+lDT
+lDT
+oez
 vqz
 vqz
 vqz
@@ -21580,11 +21683,11 @@ lDT
 lDT
 lDT
 lDT
-aaa
-aaa
-aaa
-aaa
-aab
+lDT
+lDT
+lDT
+lDT
+oez
 oez
 vqz
 vqz
@@ -50760,7 +50863,7 @@ ikt
 pds
 dRi
 oDo
-rYU
+hvZ
 sXs
 rYU
 oDo
@@ -51276,7 +51379,7 @@ oDo
 oDo
 rYU
 rYU
-isT
+rHE
 kfx
 oez
 oez
@@ -51521,8 +51624,8 @@ oDo
 oDo
 oDo
 oDo
-rYU
-rYU
+nuj
+isT
 aUS
 isT
 rYU
@@ -51774,18 +51877,18 @@ oLL
 aZv
 isT
 isT
-isT
+rHE
 wuZ
 mYA
 oDo
-rYU
+isT
 gXV
 iOe
 qPo
-rYU
+hvZ
 oDo
 rYU
-isT
+rHE
 nTU
 nTU
 nTU
@@ -52026,7 +52129,7 @@ lDT
 aKa
 aKa
 oDo
-rJj
+tXx
 iOe
 tJy
 rYU
@@ -52284,18 +52387,18 @@ oDo
 oDo
 oDo
 oDo
+aaa
 oDo
 oDo
 oDo
 oDo
+aaa
 oDo
 oDo
-oDo
-oDo
-rYU
+hvZ
 rJj
 wgP
-aBf
+uPm
 rYU
 oDo
 oTC
@@ -52539,21 +52642,21 @@ lDT
 lDT
 oDo
 rlb
-qZI
+beC
 bFw
 bFw
-qZI
-qZI
+aab
+beC
 bFw
-qZI
-qZI
-qZI
-uoi
+aab
+aab
+kCU
+oDo
 qZI
 qZI
 fHv
-rYU
-rYU
+qEi
+isT
 oDo
 rYU
 rYU
@@ -52815,7 +52918,7 @@ oDo
 eOq
 rYU
 oDo
-rYU
+iUG
 mbc
 eNt
 kfx
@@ -53581,7 +53684,7 @@ jVE
 dbF
 xQx
 ixJ
-rYU
+hvZ
 hac
 rYU
 gRX
@@ -54098,7 +54201,7 @@ gos
 gBp
 oDo
 rYU
-rYU
+hvZ
 rYU
 rYU
 fcZ
@@ -54609,7 +54712,7 @@ iel
 dbF
 hBl
 vZT
-vZT
+cDH
 oDo
 isT
 isT
@@ -55638,8 +55741,8 @@ khw
 xQx
 lhP
 rYU
-hAf
-rYU
+rsx
+rsx
 rYU
 oDo
 qqR
@@ -56141,17 +56244,17 @@ nKk
 bFw
 bFw
 bFw
-nKk
-qZI
-qZI
-bFw
-qZI
 uoi
+aab
+beC
+bFw
+smS
+oDo
 qZI
 mke
 nub
-rYU
-wuZ
+isT
+oGZ
 oDo
 rYU
 rYU
@@ -56396,19 +56499,19 @@ oDo
 oDo
 oDo
 oDo
+aaa
 oDo
 oDo
 oDo
 oDo
+aaa
 oDo
 oDo
-oDo
-oDo
-rYU
+hvZ
 ygG
 iOe
 qPo
-rYU
+isT
 oDo
 oTC
 rYU
@@ -56667,7 +56770,7 @@ kKS
 gUc
 rYU
 uiJ
-rYU
+hvZ
 ldu
 oDo
 okr
@@ -56918,7 +57021,7 @@ isT
 isT
 tWj
 oDo
-rYU
+isT
 rJj
 iOe
 aBf
@@ -57166,7 +57269,7 @@ lDT
 aKa
 aKa
 oDo
-rJj
+tXx
 wgP
 aBf
 oDo
@@ -57175,15 +57278,15 @@ oDo
 oDo
 oDo
 oDo
-wuZ
-rYU
+cmg
+isT
 sHx
 isT
-rYU
+hvZ
 oDo
 chc
 isT
-rYU
+hvZ
 rYU
 cwk
 wuZ
@@ -57699,7 +57802,7 @@ oDo
 oTC
 rYU
 abk
-aaZ
+aIJ
 acy
 rYU
 kfx
@@ -58210,7 +58313,7 @@ aKa
 aKa
 kfx
 hHz
-isT
+rHE
 wuZ
 oDo
 oDo
@@ -61819,7 +61922,7 @@ oez
 oez
 oez
 oez
-cmg
+oez
 oez
 oez
 oez
