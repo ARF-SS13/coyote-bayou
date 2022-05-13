@@ -557,6 +557,7 @@ Mayor
 
 /*--------------------------------------------------------------*/
 */
+/*
 /datum/job/oasis/f13dendoc
 	title = "Doctor"
 	flag = F13DENDOC
@@ -605,6 +606,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13barkeep
@@ -613,9 +615,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "The Mayor"
-	description = "As staff of the Blue Oyster, you are responsible for comfort and full bellies in the settlement of Oasis. Hidden safely away behind the walls, you are free to refine your skills without always watching your back. Work closely with the Farmers to ensure fresh food is always on the table, and remember that you are allowed to decide who is allowed to dine or reside in your hospitality."
-	enforces = "The Blue Oyster is a private business and you are not under direct control of local governance, but are subject to their laws."
+	supervisors = "the free market and Bighorn laws"
+	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
+	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -698,8 +700,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 8
 	spawn_positions = 8
-	supervisors = "The Mayor"
-	description = "You are a citizen living in the settlement of Oasis - one of the safest places amidst the widespread power struggles of the region. Treat your town with respect and make sure to follow the laws, as your status may be revoked if you are considered a danger to the populace. One of the local businesses may have work for you if you require funds."
+	supervisors = "Bighorn laws"
+	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -814,14 +816,13 @@ Mayor
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
+/*
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are a private eye working from within the settlement of Oasis. It is your role to assist clients in gathering evidence, conducting surveillance, finding missing people, and verifying information. Remember that you are in no way responsible for peacekeeping, though you may be approached by local governance should they seek your particular set of skills. There's always a job for you in a region as dangerous as this."
-	enforces = "Your detective agency is a private business and you are not under direct control of local governance, but are subject to their laws."
-	supervisors = "paying clients"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "paying clients and Bighorn laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 
@@ -864,6 +865,7 @@ Mayor
 		/obj/item/storage/box/gloves=1,
 		/obj/item/storage/box/evidence=1,
 		/obj/item/ammo_box/a357=2)
+*/
 
 /*--------------------------------------------------------------*/
 /*
@@ -951,9 +953,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "free hand of the market"
-	description = "The big trading caravan companies have often neglected the humble settlement of Oasis. That leaves one thing for certain - opportunities for local businesses! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
-	enforces = "Your store is a private business and you are not under direct control of local governance, but are subject to their laws."
+	supervisors = "the free market and Bighorn laws"
+	description = "The big trading caravan companies have often neglected humble Bighorn. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. This town is usually under control of the Great Khans, so just be careful not to get in the way of their chem business."
+	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
