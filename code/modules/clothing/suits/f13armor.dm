@@ -161,6 +161,7 @@
 	item_state = "combat_armor"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 	slowdown = 0.12
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/suit/armor/f13/combat/laserproof
 	name = "ablative combat armor"
@@ -181,21 +182,6 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-// Shredding combat armor a direct action. Use a saw.
-/obj/item/clothing/suit/armor/f13/combat/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SAW)
-		user.visible_message("[user] begins recycling the [src] into armor plates.", \
-				"<span class='notice'>You begin recycling the [src] into armor plates.</span>", \
-				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
-		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
-		if(!do_after(user, 50, TRUE, src))
-			return
-		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 4)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
-	else
-		return ..()
-
 /obj/item/clothing/suit/armor/f13/combat/riotpolice
 	name = "combat body armor"
 	icon_state = "combat_coat"
@@ -212,6 +198,7 @@
 	item_state = "combat_armor_mk2"
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 	slowdown = 0.15
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
 
 /obj/item/clothing/suit/armor/f13/combat/mk2/dark
 	name = "reinforced combat armor"
@@ -285,6 +272,8 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 20)
+	salvage_tool_behavior = TOOL_WELDER
 	/// Cell that is currently installed in the suit
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
 	/// How much power the cell consumes each process tick
@@ -576,18 +565,6 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
-// Recycle power armor with blowtorch (welder ok fine)
-/obj/item/clothing/suit/armor/f13/power_armor/welder_act(mob/living/user, obj/item/I)
-	user.visible_message("[user] begins recycling the [src].", \
-			"<span class='notice'>You begin cutting the [src] apart.</span>", \
-			"<span class='italics'>You hear the noise of a blowtorch working.</span>")
-	if(I.use_tool(src, user, 100, volume=50, amount=15))
-		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 10)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
-	else
-		return ..()
-
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "T-45b power armor"
 	desc = "It's a set of early-model T-45 power armor with a custom air conditioning module and restored servomotors. Bulky, but almost as good as the real thing."
@@ -630,6 +607,7 @@
 	item_state = "t51bpowerarmor"
 	slowdown = 0.25 //+0.05 from helmet = total 0.255
 	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 30, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 72)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 25)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t51b
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51green
@@ -661,6 +639,7 @@
 	item_state = "t60powerarmor"
 	slowdown = 0.2
 	armor = list("melee" = 80, "bullet" = 70, "laser" = 80, "energy" = 30, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 50, "wound" = 80)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 30)
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t60
 
 /obj/item/clothing/suit/armor/f13/power_armor/t60/pineapple

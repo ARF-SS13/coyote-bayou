@@ -36,7 +36,18 @@
 		I.use_tool(src, user, 0, 1)
 		has_sensor = HAS_SENSORS
 		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
-		return 1
+		return TRUE
+	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
+		user.visible_message("[user] begins cutting the [src] apart.", \
+				"<span class='notice'>You begin cutting the [src] into strips.</span>", \
+				"<span class='italics'>You hear faint sounds of ripping cloth.</span>")
+		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
+		if(!do_after(user, 60, TRUE, src))
+			return
+		new /obj/item/stack/sheet/cloth (drop_location(), 2)
+		to_chat(user, "<span class='notice'>You cut [src] into useful pieces of cloth.</span>")
+		qdel(src)
+		return TRUE
 	if(!attach_accessory(I, user))
 		return ..()
 
@@ -276,18 +287,3 @@
 
 /obj/item/clothing/under/rank
 	dying_key = DYE_REGISTRY_UNDER
-
-// Cutting clothing into cloth, works like bedsheets and leather strips, just apply sharp object.
-/obj/item/clothing/under/attackby(obj/item/I, mob/user, params)
-	if(!(flags_1 & HOLOGRAM_1) && (istype(I, /obj/item/wirecutters) || I.get_sharpness()))
-		user.visible_message("[user] begins cutting the [src] apart.", \
-				"<span class='notice'>You begin cutting the [src] into strips.</span>", \
-				"<span class='italics'>You hear faint sounds of ripping cloth.</span>")
-		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
-		if(!do_after(user, 60, TRUE, src))
-			return
-		new /obj/item/stack/sheet/cloth (drop_location(), 2)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You cut [src] into useful pieces of cloth.</span>")
-	else
-		return ..()

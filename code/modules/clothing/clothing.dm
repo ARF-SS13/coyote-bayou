@@ -66,6 +66,11 @@
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/durability_list = list()
 
+	/// Required tool behavior to salvage the item
+	var/salvage_tool_behavior = TOOL_SAW
+	/// Items that are dropped on salvage; If it's empty - item can't salvaged
+	var/list/salvage_loot = list()
+
 /obj/item/clothing/Initialize()
 	. = ..()
 	if(CHECK_BITFIELD(clothing_flags, VOICEBOX_TOGGLABLE))
@@ -116,7 +121,20 @@
 				if(do_after(user, 6 SECONDS, TRUE, src))
 					if(S.use(3))
 						repair(user, params)
-		return 1
+		return TRUE
+
+	if(LAZYLEN(salvage_loot) && (W.tool_behaviour == salvage_tool_behavior))
+		user.visible_message("[user] begins recycling the [src].", \
+				"<span class='notice'>You begin recycling the [src].</span>", \
+				"<span class='italics'>You hear the noise of a [salvage_tool_behavior] working on metal and ceramic.</span>")
+		W.play_tool_sound(get_turf(src))
+		if(!do_after(user, 60, TRUE, src))
+			return
+		drop_salvage()
+		to_chat(user, "<span class='notice'>You finish recycling \the [src].</span>")
+		qdel(src)
+		return TRUE
+
 	return ..()
 
 // Set the clothing's integrity back to 100%, remove all damage to bodyparts, and generally fix it up
@@ -288,6 +306,8 @@
 
 	if(LAZYLEN(armor_list) || LAZYLEN(durability_list))
 		. += "<span class='notice'>It has a <a href='?src=[REF(src)];list_armor=1'>tag</a> listing its protection classes.</span>"
+	if(salvage_tool_behavior && LAZYLEN(salvage_loot))
+		. += "<span class='notice'>It can be recycled for materials using [salvage_tool_behavior].</span>"
 
 /obj/item/clothing/Topic(href, href_list)
 	. = ..()
@@ -455,3 +475,8 @@ BLIND     // can't see anything
 		return
 	if(prob(0.2))
 		to_chat(L, "<span class='warning'>The damaged threads on your [src.name] chafe!</span>")
+
+/// The results of salvaging the clothing
+/obj/item/clothing/proc/drop_salvage()
+	for(var/drop in salvage_loot)
+		new drop(drop_location())

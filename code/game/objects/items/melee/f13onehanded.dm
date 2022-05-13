@@ -300,7 +300,7 @@ obj/item/melee/onehanded/knife/switchblade
 		qdel(src)
 		qdel(C)
 		return
-	return TRUE
+	return ..()
 
 /obj/item/melee/onehanded/knife/cosmic
 	name = "cosmic knife"
@@ -320,7 +320,7 @@ obj/item/melee/onehanded/knife/switchblade
 		new /obj/item/melee/onehanded/knife/cosmicheated(drop_location())
 		qdel(src)
 		return
-	return TRUE
+	return ..()
 
 /obj/item/melee/onehanded/knife/cosmicheated
 	name = "superheated cosmic knife"

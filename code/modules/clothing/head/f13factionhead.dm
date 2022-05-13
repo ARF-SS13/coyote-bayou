@@ -281,6 +281,7 @@
 	strip_delay = 50
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 1)
 
 /obj/item/clothing/head/helmet/f13/legion/Initialize()
 	. = ..()
@@ -292,6 +293,7 @@
 	icon_state = "legion-priestess"
 	item_state = "legion-priestess"
 	dynamic_hair_suffix = "+generic"
+	salvage_loot = list()
 
 /obj/item/clothing/head/helmet/f13/legion/recruit
 	name = "legion recruit helmet"
@@ -300,7 +302,6 @@
 	item_state = "legion-recruit"
 	armor = list("melee" = 33, "bullet" = 25, "laser" = 5, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 	flags_inv = HIDEEARS|HIDEHAIR
-
 
 /obj/item/clothing/head/helmet/f13/legion/prime
 	name = "legion prime helmet"
@@ -325,6 +326,7 @@
 	icon_state = "legion-veteran"
 	item_state = "legion-veteran"
 	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
 	name = "legion explorer hood"
@@ -359,6 +361,7 @@
 	icon_state = "legion-venator"
 	item_state = "legion-venator"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/orator
 	name = "laurel wreath"
@@ -367,7 +370,6 @@
 	item_state = "legion-orator"
 	flags_inv = null
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
-
 
 /obj/item/clothing/head/helmet/f13/legion/recruit/decan
 	name = "legion recruit decanus helmet"
@@ -390,6 +392,7 @@
 	item_state = "legion-decvet"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 15, "energy" = 15, "bomb" = 25, "bio" = 50, "rad" = 20, "fire" = 70, "acid" = 0, "wound" = 50)
 	actions_types = list(/datum/action/item_action/toggle)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/heavy/attack_self(mob/user)
 	weldingvisortoggle(user)
@@ -410,6 +413,7 @@
 	item_state = "legion-centurion"
 	armor = list("melee" = 70, "bullet" = 45, "laser" = 45, "energy" = 25, "bomb" = 45, "bio" = 20, "rad" = 20, "fire" = 45, "acid" = 0, "wound" = 55)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
 
 /obj/item/clothing/head/helmet/f13/legion/rangercent
 	name = "ranger-hunter centurion helmet"
@@ -418,6 +422,7 @@
 	item_state = "legion-rangercent"
 	armor = list("melee" = 40, "bullet" = 55, "laser" = 35, "energy" = 25, "bomb" = 35, "bio" = 60, "rad" = 20, "fire" = 80, "acid" = 0, "wound" = 55)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
 
 /obj/item/clothing/head/helmet/f13/legion/palacent
 	name = "paladin-slayer centurion helmet"
@@ -426,6 +431,7 @@
 	item_state = "legion-palacent"
 	armor = list("melee" = 70, "bullet" = 50, "laser" = 70, "energy" = 35, "bomb" = 35, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 75)
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
 
 /obj/item/clothing/head/helmet/f13/legion/legate
 	name = "legion legate helmet"
@@ -436,7 +442,7 @@
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
-
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/head/f13/servant
 	name = "servant headwear"
@@ -469,8 +475,8 @@
 	armor = list("melee" = 25, "bullet" = 42, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 	strip_delay = 50
 	obj_flags = UNIQUE_RENAME
-	unique_reskin = list("M1" = "ncr_old",
-					)
+	unique_reskin = list("M1" = "ncr_old")
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 1)
 
 /obj/item/clothing/head/f13/ncr/Initialize()
 	. = ..()
@@ -517,32 +523,28 @@
 	desc = "A standard issue NCR steel helmet with the addition of decalling signifying a medic."
 	icon_state = "steelpot_med"
 	item_state = "steelpot_med"
-	unique_reskin = list("M1" = "ncr_old_med",
-					)
+	unique_reskin = list("M1" = "ncr_old_med")
 
 /obj/item/clothing/head/f13/ncr/steelpot_mp
 	name = "NCR military police helmet"
 	desc = "A standard issue NCR steel helmet emblazoned with the initials of the military police."
 	icon_state = "steelpot_mp"
 	item_state = "steelpot_mp"
-	unique_reskin = list("M1" = "ncr_old_mp",
-					)
+	unique_reskin = list("M1" = "ncr_old_mp")
 
 /obj/item/clothing/head/f13/ncr/steelpot_gambler
 	name = "NCR gambler helmet"
 	desc = "A standard issue NCR steel helmet. Stashed in the strap are decks of cards, dominoes and cigarettes for personal use."
 	icon_state = "steelpot_gambler"
 	item_state = "steelpot_gambler"
-	unique_reskin = list("M1" = "ncr_old_gambler",
-					)
+	unique_reskin = list("M1" = "ncr_old_gambler")
 
 /obj/item/clothing/head/f13/ncr/steelpot_bandolier
 	name = "NCR bandolier helmet"
 	desc = "A standard issue NCR steel helmet. This one has clearly seen heavy use, as well as having additional bullets tucked into the strap."
 	icon_state = "steelpot_bandolier"
 	item_state = "steelpot_bandolier"
-	unique_reskin = list("M1" = "ncr_old_bandolier",
-					)
+	unique_reskin = list("M1" = "ncr_old_bandolier")
 
 /obj/item/clothing/head/hardhat/ncr
 	name = "NCR engineer helmet"
@@ -564,8 +566,7 @@
 	flags_cover = HEADCOVERSEYES
 	visor_flags_cover = HEADCOVERSEYES
 	dog_fashion = null
-	unique_reskin = list("M1" = "ncr_old",
-					)
+	unique_reskin = list("M1" = "ncr_old")
 
 /obj/item/clothing/head/f13/ncr/ncr_flapcap
 	name = "NCR field cap"
@@ -644,6 +645,7 @@
 	icon_state = "scoutberet"
 	item_state = "scoutberet"
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/beret/ncr_recon_ranger/Initialize()
 	. = ..()
@@ -655,6 +657,7 @@
 	icon_state = "cowboyrang"
 	item_state = "cowboyrang"
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/f13/trailranger/Initialize()
 	. = ..()
@@ -666,6 +669,7 @@
 	icon_state = "rangerhat"
 	item_state = "rangerhat"
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/f13/ranger/Initialize()
 	. = ..()
@@ -679,6 +683,7 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	armor = list("melee" = 35, "bullet" = 45, "laser" = 25, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/combat/ncr_patrol/Initialize()
 	. = ..()
@@ -700,22 +705,7 @@
 	glass_colour_type = /datum/client_colour/glass_colour/red
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	darkness_view = 24
-
-// recycling the above
-/obj/item/clothing/head/helmet/f13/ncr/rangercombat/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SAW)
-		user.visible_message("[user] begins recycling the [src].", \
-				"<span class='notice'>You begin recycling the [src].</span>", \
-				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
-		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
-		if(!do_after(user, 50, TRUE, src))
-			return
-		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 2)
-		new /obj/item/clothing/glasses/night/polarizing (drop_location(), 1)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You salvage armor plates and a set of polarizing goggles from the [src].</span>")
-	else
-		return ..()
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3, /obj/item/clothing/glasses/night/polarizing = 1)
 
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/eliteriot
 	name = "elite riot gear helmet"

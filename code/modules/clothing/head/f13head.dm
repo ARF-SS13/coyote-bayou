@@ -60,6 +60,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
 
 /obj/item/clothing/head/helmet/f13/combat/dark
 	color = "#302E2E" // Dark Grey
@@ -73,21 +74,6 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-// Instead of filling the crafting menus and recipes with tons of duplicates lets make shredding combat helmets a direct action. Use a saw.
-/obj/item/clothing/head/helmet/f13/combat/attackby(obj/item/I, mob/user, params)
-	if(I.tool_behaviour == TOOL_SAW)
-		user.visible_message("[user] begins recycling the [src].", \
-				"<span class='notice'>You begin recycling the [src].</span>", \
-				"<span class='italics'>You hear the noise of a saw cutting through metal and ceramic.</span>")
-		playsound(get_turf(src), 'sound/weapons/circsawhit.ogg', 50, TRUE)
-		if(!do_after(user, 50, TRUE, src))
-			return
-		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 3)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
-	else
-		return ..()
-
 /obj/item/clothing/head/helmet/f13/combat/mk2
 	name = "reinforced combat helmet"
 	desc = "An advanced pre-war titanium plated, ceramic coated, kevlar, padded helmet designed to withstand extreme punishment of all forms."
@@ -96,6 +82,7 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR
 	flags_cover = HEADCOVERSEYES
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/head/helmet/f13/combat/mk2/dark
 	name = "reinforced combat helmet"
@@ -253,6 +240,8 @@
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
 	light_range = 5
 	light_on = FALSE
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 10)
+	salvage_tool_behavior = TOOL_WELDER
 	/// Projectiles below this damage will get deflected
 	var/deflect_damage = 18
 	/// If TRUE - it requires PA training trait to be worn
@@ -367,18 +356,6 @@
 			return "<span class='notice'>The cover is <i>screwed</i> open with connection ports <i>bolted down</i>.</span>"
 		if(2)
 			return "<span class='warning'>The connections ports have been <i>unanchored</i> and only <i>wires</i> remain.</span>"
-
-// Recycle power armor helmet with blowtorch (welder ok fine)
-/obj/item/clothing/head/helmet/f13/power_armor/welder_act(mob/living/user, obj/item/I)
-	user.visible_message("[user] begins recycling the [src].", \
-			"<span class='notice'>You begin cutting the [src] apart.</span>", \
-			"<span class='italics'>You hear the noise of a blowtorch working.</span>")
-	if(I.use_tool(src, user, 80, volume=50, amount=15))
-		new /obj/item/stack/crafting/armor_plate/ (drop_location(), 5)
-		qdel(src)
-		to_chat(user, "<span class='notice'>You salvage armor plates from the [src].</span>")
-	else
-		return ..()
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45b
 	name = "T-45b helmet"
