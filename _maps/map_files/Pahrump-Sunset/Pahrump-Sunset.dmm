@@ -28523,6 +28523,11 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
+"cyj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/ncrcombatmedic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "cym" = (
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -29758,6 +29763,10 @@
 /obj/item/stack/f13Cash/random/low,
 /turf/open/floor/wood/wood_worn,
 /area/f13/clinic)
+"dGH" = (
+/obj/effect/landmark/start/f13/ncrcombatengineer,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/wasteland)
 "dHk" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -33144,6 +33153,12 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/village)
+"gXd" = (
+/obj/effect/landmark/start/f13/ncrlogisticsofficer,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/ncr)
 "gXC" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/wood/wood_worn,
@@ -37685,6 +37700,10 @@
 	},
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
+"llo" = (
+/obj/effect/landmark/start/f13/ncrmedofficer,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "llA" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowvertical"
@@ -38467,6 +38486,12 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
+"lUV" = (
+/obj/effect/landmark/start/f13/ncroffduty,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/wasteland)
 "lUX" = (
 /turf/open/floor/wood,
@@ -41725,6 +41750,11 @@
 	dir = 1
 	},
 /area/f13/building)
+"oVm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/vexillarius,
+/turf/open/floor/wood/wood_chestnut,
+/area/f13/legion)
 "oVn" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
@@ -42430,6 +42460,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/village)
+"pCh" = (
+/obj/effect/landmark/start/f13/campfollower,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "pCS" = (
 /obj/structure/displaycase,
 /obj/item/clothing/gloves/ring/silver,
@@ -42739,6 +42773,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"pWq" = (
+/obj/effect/landmark/start/f13/ncrcombatmedic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
+/area/f13/ncr)
 "pWD" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 28
@@ -43181,6 +43219,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qqf" = (
+/obj/effect/landmark/start/f13/ncrcombatmedic,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "qqo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/window/fulltile/house{
@@ -45163,6 +45205,12 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"slx" = (
+/obj/effect/landmark/start/f13/ncrrearechelon,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticaloutermain0"
+	},
+/area/f13/wasteland)
 "slG" = (
 /obj/structure/stairs/east,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -45173,6 +45221,12 @@
 	},
 /turf/open/indestructible/ground/outside/wood,
 /area/f13/building)
+"smn" = (
+/obj/effect/landmark/start/f13/ncrdrillsergeant,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalrightborderright0"
+	},
+/area/f13/wasteland)
 "smT" = (
 /obj/structure/bed/dogbed{
 	pixel_x = -1;
@@ -46222,6 +46276,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building)
+"tju" = (
+/obj/effect/landmark/start/f13/ncrcombatengineer,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain1"
+	},
+/area/f13/wasteland)
 "tjx" = (
 /obj/structure/decoration/vent,
 /obj/machinery/shower{
@@ -46286,6 +46346,11 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"tnS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/decan,
+/turf/open/floor/wood/wood_chestnut,
+/area/f13/legion)
 "tnY" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/road{
@@ -48548,6 +48613,12 @@
 /obj/structure/rack,
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/legion)
+"vkN" = (
+/obj/effect/landmark/start/f13/ncrfirstsergeant,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "vlr" = (
 /obj/structure/punching_bag,
 /obj/effect/decal/cleanable/dirt{
@@ -55319,7 +55390,7 @@ lST
 aNa
 lZB
 lZB
-lZB
+gXd
 lZB
 blq
 xLa
@@ -55851,9 +55922,9 @@ kGV
 acm
 adH
 adY
+tju
 afx
-afx
-aQu
+dGH
 aiv
 aeV
 aft
@@ -56365,9 +56436,9 @@ pxI
 acB
 adJ
 bOo
+dGH
 aQu
-aQu
-afx
+tju
 aiv
 aeT
 aft
@@ -57133,7 +57204,7 @@ bxh
 axa
 ngD
 byM
-aft
+vkN
 adK
 bkd
 aQu
@@ -58132,10 +58203,10 @@ aae
 aae
 aon
 acn
-aop
+pWq
 aop
 ann
-akD
+qqf
 akt
 akB
 aGg
@@ -58703,7 +58774,7 @@ aeo
 oRY
 afl
 ahb
-abS
+lUV
 abT
 ayn
 aeT
@@ -58960,7 +59031,7 @@ aje
 sov
 ajp
 ahb
-abS
+lUV
 aer
 aer
 aeU
@@ -59217,7 +59288,7 @@ agC
 ajq
 afO
 ahb
-abS
+lUV
 abS
 aeq
 aeV
@@ -59694,20 +59765,20 @@ aQu
 aje
 aPn
 aeV
+slx
+arl
+arl
+slx
 arl
 arl
 arl
-arl
-arl
-arl
-arl
-arl
+slx
 arl
 arl
 aZC
 arl
 arl
-arl
+slx
 aft
 aft
 kGV
@@ -59931,10 +60002,10 @@ aat
 aat
 aon
 alW
-akD
+llo
 anb
 akt
-akt
+cyj
 akD
 aon
 aon
@@ -61226,7 +61297,7 @@ afF
 afF
 agp
 orQ
-orQ
+smn
 orQ
 orQ
 ebI
@@ -67866,7 +67937,7 @@ abN
 abN
 xvI
 abN
-acB
+aiq
 ocX
 adf
 adf
@@ -106675,7 +106746,7 @@ acv
 adr
 djQ
 aup
-dAd
+oVm
 dAd
 dAd
 djQ
@@ -108219,7 +108290,7 @@ djQ
 txS
 cwf
 sMP
-dAd
+tnS
 djQ
 ejE
 rcg
@@ -108712,13 +108783,13 @@ aYi
 sVc
 jyQ
 acv
-acv
+pCh
 acv
 acv
 qJm
 qJm
 acv
-acv
+pCh
 adr
 acP
 acP
@@ -111796,13 +111867,13 @@ vHQ
 elJ
 acv
 acv
-acv
+pCh
 acv
 acv
 qJm
 qJm
 acv
-acv
+pCh
 ads
 djQ
 aUg
