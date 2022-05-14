@@ -4718,10 +4718,10 @@
 	},
 /area/f13/wasteland)
 "aoA" = (
-/obj/structure/fence/door,
 /obj/structure/decoration/rag{
 	layer = 8
 	},
+/obj/structure/simple_door/metal/fence,
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerpavement"
@@ -16097,12 +16097,9 @@
 	},
 /area/f13/building)
 "aVo" = (
-/obj/machinery/light/sign/oasis,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 1;
-	icon_state = "outerborder"
-	},
-/area/f13/wasteland)
+/obj/machinery/light/sign/oasis_sign,
+/turf/closed/indestructible/rock,
+/area/f13/caves)
 "aVp" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/sneakers/black,
@@ -17661,7 +17658,10 @@
 /area/f13/wasteland)
 "aZy" = (
 /obj/machinery/light,
-/obj/item/flag/oasis,
+/obj/item/flag/oasis{
+	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Bighorn.";
+	name = "Bighorn flag"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft2top"
 	},
@@ -21282,16 +21282,16 @@
 /area/f13/city)
 "bkt" = (
 /obj/structure/simple_door/house{
-	name = "First Bank of Oasis"
+	name = "Bank of Bighorn"
 	},
 /turf/open/floor/wood,
 /area/f13/city)
 "bku" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
 	name = "First Bank of Oasis";
 	req_one_access_txt = "52"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood,
 /area/f13/city)
 "bkw" = (
@@ -21846,20 +21846,13 @@
 	},
 /area/f13/building)
 "blU" = (
-/obj/item/storage/trash_stack,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_6"
+/mob/living/simple_animal/pet/dog/eyebot{
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
+	name = "Bighorn eyebot";
+	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Bighorn!")
 	},
-/obj/item/candle/tribal_torch{
-	anchored = 1;
-	layer = 3.1;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 1;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "blV" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/decal/cleanable/dirt,
@@ -22079,7 +22072,10 @@
 /area/f13/city)
 "bmF" = (
 /obj/structure/wreck/trash/one_tire,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirtcorner"
+	},
 /area/f13/wasteland)
 "bmG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22119,11 +22115,6 @@
 "bmK" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/flag/oasis{
-	density = 0;
-	pixel_x = 1;
-	pixel_y = 28
-	},
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/city)
 "bmL" = (
@@ -22464,11 +22455,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city)
 "bnN" = (
-/obj/machinery/light/sign/oasis_sign,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2left"
-	},
-/area/f13/wasteland)
+/obj/machinery/light/sign/oasis,
+/turf/closed/indestructible/rock,
+/area/f13/caves)
 "bnP" = (
 /obj/structure/rack/large/shelf_rust,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -22644,7 +22633,7 @@
 /area/f13/village)
 "box" = (
 /obj/structure/simple_door/house{
-	name = "First Bank of Oasis";
+	name = "Bank of Bighorn";
 	req_access_txt = "52"
 	},
 /obj/machinery/door/poddoor/shutters{
@@ -22743,9 +22732,6 @@
 	},
 /area/f13/building)
 "boN" = (
-/obj/machinery/light/sign/oasis_sign{
-	layer = 5
-	},
 /obj/structure/wreck/trash/five_tires{
 	pixel_x = 3;
 	pixel_y = -13
@@ -22896,7 +22882,10 @@
 	},
 /area/f13/building)
 "bpm" = (
-/obj/item/flag/oasis,
+/obj/item/flag/oasis{
+	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Bighorn.";
+	name = "Bighorn flag"
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1"
 	},
@@ -24636,12 +24625,13 @@
 /area/f13/ncr)
 "byj" = (
 /obj/effect/decal/cleanable/oil,
-/obj/item/flag/oasis{
-	density = 0;
-	pixel_y = 24
-	},
 /obj/effect/decal/fakelattice{
 	pixel_y = 20
+	},
+/obj/item/flag/oasis{
+	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Bighorn.";
+	name = "Bighorn flag";
+	pixel_y = 18
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
@@ -24994,9 +24984,9 @@
 /area/f13/wasteland)
 "bzV" = (
 /mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Oasis.";
-	name = "oasis eyebot";
-	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Oasis!")
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
+	name = "Bighorn eyebot";
+	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Bighorn!")
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermainbottom"
@@ -26457,9 +26447,9 @@
 /area/f13/wasteland)
 "cbF" = (
 /mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Oasis.";
-	name = "oasis eyebot";
-	speak = list("Welcome to Oasis! Please enjoy your stay!","Remember to follow the Law! We wouldn't want any unfortunate incidents!","The free Town of Oasis shall never fall!","Remember to stop in at the shop!","Howdy Partner! Welcome to the Town of Oasis! Grab a drink at our Bar, or have your wounds tended to at the Clinic!","Come on in and trade! Welcome to the last refuge for the free market!","Remember: have patience at the gate!");
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
+	name = "Bighorn eyebot";
+	speak = list("Welcome to Bighorn! Please enjoy your stay!","Remember to follow the Law! We wouldn't want any unfortunate incidents!","The free Town of Oasis shall never fall!","Remember to stop in at the shop!","Howdy Partner! Welcome to the Town of Oasis! Grab a drink at our Bar, or have your wounds tended to at the Clinic!","Come on in and trade! Welcome to the last refuge for the free market!","Remember: have patience at the gate!");
 	speak_chance = 4
 	},
 /turf/open/indestructible/ground/outside/road{
@@ -28858,13 +28848,6 @@
 "cPN" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb{
-	pixel_x = -4
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb{
-	pixel_x = 5;
-	pixel_y = 10
-	},
 /turf/open/floor/wood/wood_worn{
 	dir = 10
 	},
@@ -29123,6 +29106,11 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/clinic)
+"ddu" = (
+/obj/structure/chair/wood,
+/obj/effect/landmark/start/f13/mangudai,
+/turf/open/floor/wood/wood_worn,
+/area/f13/building)
 "ddz" = (
 /obj/structure/closet,
 /obj/item/clothing/under/rank/prisoner,
@@ -29975,6 +29963,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city)
+"dSJ" = (
+/obj/item/flag/oasis{
+	desc = "A flag depicting a stylised pink flower on a green background. It's the symbol of the town of Bighorn.";
+	name = "Bighorn flag"
+	},
+/turf/closed/wall/f13/wood/interior,
+/area/f13/city)
 "dSO" = (
 /obj/structure/fence{
 	dir = 4
@@ -30047,6 +30042,7 @@
 /area/f13/ncr)
 "dYN" = (
 /obj/structure/chair/stool/retro/tan,
+/obj/effect/landmark/start/f13/kipchak,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dZW" = (
@@ -30660,6 +30656,10 @@
 	dir = 9
 	},
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"eGa" = (
+/obj/effect/landmark/start/f13/kipchak,
+/turf/open/floor/plating/f13/inside/gravel,
 /area/f13/wasteland)
 "eGL" = (
 /obj/structure/chair/stool{
@@ -31623,14 +31623,15 @@
 /area/f13/city)
 "fya" = (
 /obj/structure/railing/wood{
-	pixel_y = 7
-	},
-/obj/structure/railing/wood{
 	dir = 8;
 	pixel_x = 30;
 	pixel_y = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "fzc" = (
@@ -32821,14 +32822,6 @@
 "gFE" = (
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb{
-	pixel_x = -4;
-	pixel_y = 6
-	},
-/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb{
-	pixel_x = 5;
-	pixel_y = 5
-	},
 /turf/open/floor/wood/wood_worn{
 	dir = 6
 	},
@@ -33413,7 +33406,6 @@
 	},
 /area/f13/wasteland)
 "hjN" = (
-/obj/effect/landmark/start/f13/barkeep,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 8;
@@ -34426,6 +34418,11 @@
 "ims" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/village)
+"imu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/barkeep,
+/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
+/area/f13/city)
 "imF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice{
@@ -36859,6 +36856,13 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
+"kwZ" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "prospectorladder2"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "kxj" = (
 /obj/structure/simple_door/metal,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -37389,6 +37393,7 @@
 /area/f13/building)
 "kWp" = (
 /obj/structure/chair/wood,
+/obj/effect/landmark/start/f13/mangudai,
 /turf/open/floor/wood/wood_worn{
 	dir = 8
 	},
@@ -37738,6 +37743,10 @@
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
+"lnc" = (
+/obj/effect/landmark/start/f13/vexillarius,
+/turf/open/floor/wood/wood_chestnut,
+/area/f13/legion)
 "lor" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -37864,7 +37873,9 @@
 	},
 /area/f13/building)
 "lsO" = (
-/obj/structure/ladder/unbreakable,
+/obj/structure/ladder/unbreakable{
+	id = "prospectorladder"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -38832,6 +38843,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_worn,
 /area/f13/legion)
+"mlW" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/landmark/start/f13/mangudai,
+/turf/open/floor/wood/wood_worn,
+/area/f13/building)
 "mmn" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -42688,6 +42706,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/mangudai,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "pQx" = (
@@ -44337,6 +44356,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/village)
+"rsI" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/mangudai,
+/turf/open/floor/wood/wood_worn,
+/area/f13/building)
 "rtA" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt{
@@ -44688,6 +44714,12 @@
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/wood,
+/area/f13/city)
+"rNg" = (
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/city)
 "rNs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -46118,6 +46150,10 @@
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/legion)
+"tcs" = (
+/obj/effect/landmark/start/f13/kipchak,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
 "tcP" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -47583,6 +47619,15 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"urI" = (
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/candle/tribal_torch{
+	anchored = 1;
+	layer = 3.1;
+	pixel_y = 20
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "urJ" = (
 /obj/machinery/light/small/broken{
 	dir = 1
@@ -48403,8 +48448,9 @@
 	dir = 8;
 	pixel_x = -3
 	},
-/obj/structure/railing/wood{
-	pixel_y = 7
+/obj/structure/fence/wooden{
+	dir = 4;
+	pixel_y = 8
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
@@ -48866,6 +48912,10 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/building)
+"vxG" = (
+/obj/effect/landmark/start/f13/venator,
+/turf/open/floor/wood/wood_chestnut,
+/area/f13/legion)
 "vxM" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -49007,6 +49057,7 @@
 /area/f13/wasteland)
 "vDr" = (
 /obj/structure/chair/stool/retro/black,
+/obj/effect/landmark/start/f13/kipchak,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vDF" = (
@@ -51082,6 +51133,16 @@
 "xEU" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
+"xEV" = (
+/obj/item/storage/trash_stack,
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_6"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirtcorner"
+	},
+/area/f13/wasteland)
 "xFk" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/vending/cola/red,
@@ -52507,7 +52568,7 @@ bqp
 bqp
 bqp
 bqp
-aae
+aaa
 aae
 aae
 aae
@@ -52764,8 +52825,8 @@ tuu
 sTl
 sTW
 bqp
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -53021,9 +53082,9 @@ enQ
 sTl
 sTl
 bqp
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aau
 aau
@@ -53309,7 +53370,7 @@ aaa
 (7,1,1) = {"
 aaa
 aaa
-aaa
+aVo
 aaa
 aaa
 aaa
@@ -53565,9 +53626,9 @@ aaa
 "}
 (8,1,1) = {"
 aaa
-aae
-aae
-aae
+aaa
+bnN
+aaa
 aae
 aae
 aae
@@ -53822,9 +53883,9 @@ aaa
 "}
 (9,1,1) = {"
 aaa
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -54079,8 +54140,8 @@ aaa
 "}
 (10,1,1) = {"
 aaa
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -54336,7 +54397,7 @@ aaa
 "}
 (11,1,1) = {"
 aaa
-aae
+aaa
 aae
 aae
 aae
@@ -55070,9 +55131,9 @@ aaa
 aae
 ufh
 sTl
-uQs
+mlW
 jlL
-uQs
+mlW
 kVQ
 sTl
 cKl
@@ -55326,7 +55387,7 @@ aaa
 aaa
 aaa
 kJX
-rOp
+ddu
 vWs
 eAK
 gFE
@@ -55861,10 +55922,10 @@ lKr
 lKr
 lKr
 qof
+tcs
 lKr
 lKr
-lKr
-qof
+eGa
 lKr
 acv
 nVn
@@ -57128,7 +57189,7 @@ ufh
 apP
 pPV
 dsz
-meQ
+rsI
 kVQ
 sTl
 sTl
@@ -59189,11 +59250,11 @@ nAH
 sTl
 sTl
 bqp
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 nAb
@@ -59446,9 +59507,9 @@ tuu
 sTl
 dsz
 bqp
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -59703,7 +59764,7 @@ bqp
 bqp
 bqp
 bqp
-aae
+aaa
 aae
 aae
 aae
@@ -61226,7 +61287,7 @@ dSo
 bPp
 dSo
 dSo
-dSo
+imu
 dSo
 dEZ
 iAa
@@ -61258,7 +61319,7 @@ aae
 aae
 bSP
 lsO
-aae
+kwZ
 apg
 cdJ
 cfz
@@ -61515,7 +61576,7 @@ aae
 aae
 kuB
 aaB
-aae
+aaB
 bgz
 ccn
 osA
@@ -64820,7 +64881,7 @@ aae
 ygj
 aTw
 swr
-swr
+dSJ
 bmK
 qZX
 swr
@@ -66609,7 +66670,7 @@ ayr
 aUo
 abS
 aiv
-aVo
+aeS
 orQ
 afP
 bap
@@ -70528,7 +70589,7 @@ aaa
 (74,1,1) = {"
 aaa
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -70991,7 +71052,7 @@ ahb
 akG
 aes
 abS
-bnN
+aeW
 ygj
 aTw
 bql
@@ -71043,8 +71104,8 @@ aaa
 aaa
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -71279,7 +71340,7 @@ bkA
 bkI
 blr
 bjq
-ady
+bjq
 ady
 ady
 bnk
@@ -71302,8 +71363,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -71535,8 +71596,8 @@ bkB
 bkK
 bkS
 lUX
-cdQ
-afL
+rNg
+bjq
 bmF
 bmX
 bnl
@@ -71560,12 +71621,12 @@ aae
 aae
 aae
 aae
+aaa
+aaa
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
 aae
 aae
 aae
@@ -71595,9 +71656,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -71793,8 +71854,8 @@ bkL
 bkI
 blx
 bjq
-blU
-aat
+bjq
+xEV
 bmZ
 qoU
 qoU
@@ -71821,9 +71882,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -71851,11 +71912,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 afz
@@ -72079,7 +72140,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -72091,7 +72152,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -72104,14 +72165,14 @@ aab
 aae
 aae
 aae
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -72307,7 +72368,7 @@ aTw
 aTw
 aTw
 aTw
-bar
+urI
 bmj
 qoU
 bmQ
@@ -72347,9 +72408,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aab
@@ -72360,9 +72421,9 @@ aaB
 aab
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -72605,7 +72666,7 @@ aak
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -72618,7 +72679,7 @@ aab
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -73325,11 +73386,11 @@ aTw
 aTw
 aYr
 aYr
-aiO
-aiO
-aiO
-aiO
-aiO
+aTw
+aTw
+aTw
+aTw
+aTw
 bCt
 biZ
 bCt
@@ -73582,11 +73643,11 @@ ygj
 ygj
 ygj
 ygj
-bcT
-bcT
-bcT
-bcT
-bcT
+ygj
+ygj
+ygj
+ygj
+ygj
 bCt
 biZ
 bCt
@@ -73839,10 +73900,10 @@ aae
 aae
 aae
 aae
-ahJ
-ahJ
-ahJ
-ahJ
+aae
+aae
+aae
+aae
 ahJ
 bCt
 xKc
@@ -74096,11 +74157,11 @@ aaa
 aaa
 aaa
 aaa
-xEU
-xEU
-xEU
-xEU
-ahJ
+aaa
+aaa
+aaa
+aaa
+aae
 bCt
 bvx
 bCt
@@ -74350,14 +74411,14 @@ aaa
 aae
 aae
 aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
-ahJ
-ahJ
-ahJ
-ahJ
-ahJ
 bCt
 bvx
 cei
@@ -74610,11 +74671,11 @@ aae
 aae
 aae
 aae
-ahJ
-ahJ
-ahJ
-ahJ
-ahJ
+aae
+aae
+aae
+aae
+aae
 bCt
 bvx
 cei
@@ -78417,7 +78478,7 @@ ayW
 aat
 aae
 aae
-aae
+aaa
 cpp
 bnd
 brL
@@ -78673,7 +78734,7 @@ aeV
 ayW
 aat
 aae
-aae
+aaa
 cpp
 cpp
 cpp
@@ -78930,7 +78991,7 @@ aeV
 ayW
 aae
 aae
-aae
+aaa
 cpp
 biF
 bnz
@@ -79187,7 +79248,7 @@ aeV
 ayW
 aae
 aae
-aae
+aaa
 cpp
 blu
 tEu
@@ -79461,7 +79522,7 @@ cpp
 cpp
 cpp
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79717,9 +79778,9 @@ bzw
 cpp
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -79975,7 +80036,7 @@ cpp
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -96756,7 +96817,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -97012,9 +97073,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -97270,7 +97331,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -98588,7 +98649,7 @@ qLh
 qLh
 rdV
 vVo
-aae
+aaa
 aae
 aae
 aae
@@ -98846,7 +98907,7 @@ eQa
 qLh
 vVo
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -99104,7 +99165,7 @@ nSC
 vVo
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -99363,8 +99424,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -99622,7 +99683,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -100050,11 +100111,11 @@ aae
 aae
 aae
 aae
+aaa
+aaa
 aae
 aae
-aae
-aae
-aae
+aaa
 aae
 nwJ
 aaB
@@ -100306,11 +100367,11 @@ aae
 aae
 aae
 aae
+aaa
+aaa
 aae
 aae
-aae
-aae
-aae
+aaa
 aae
 aaB
 aaB
@@ -100562,7 +100623,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -100816,15 +100877,15 @@ afS
 vdF
 fuB
 aae
-aae
-aae
+aaa
+aaa
 aak
 aak
 aak
 aae
 aae
 aae
-aae
+aaa
 aae
 rRe
 aaB
@@ -101073,15 +101134,15 @@ gQp
 iJF
 fuB
 aae
-aae
+aaa
 aae
 aak
 aak
 aak
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aaB
@@ -101330,13 +101391,13 @@ afS
 afS
 fuB
 aae
+aaa
 aae
 aae
 aae
+aaa
 aae
-aae
-aae
-aae
+aaa
 aae
 aae
 aak
@@ -101846,8 +101907,8 @@ fuB
 aae
 aae
 aak
-aae
-aae
+aaa
+aaa
 aak
 aae
 djQ
@@ -102104,7 +102165,7 @@ aae
 aae
 aae
 aak
-aae
+aaa
 aak
 aae
 djQ
@@ -102360,7 +102421,7 @@ fuB
 aae
 aae
 aak
-aae
+aaa
 aae
 aak
 aae
@@ -106054,7 +106115,7 @@ oOh
 rcw
 vVo
 aae
-aae
+aaa
 aae
 aae
 aat
@@ -106311,7 +106372,7 @@ rcv
 wSN
 vVo
 aae
-aae
+aaa
 aae
 aae
 aat
@@ -106337,7 +106398,7 @@ rtG
 mnd
 cMI
 ePS
-aGN
+blU
 aAj
 sdz
 lbT
@@ -106568,7 +106629,7 @@ suj
 qiX
 vVo
 aae
-aae
+aaa
 aae
 aae
 aat
@@ -106745,7 +106806,7 @@ ach
 acv
 adr
 djQ
-aup
+lnc
 oVm
 dAd
 dAd
@@ -107596,7 +107657,7 @@ vVo
 vVo
 vVo
 aae
-aae
+aaa
 aae
 aat
 aat
@@ -108547,7 +108608,7 @@ pHH
 whb
 kcs
 lBF
-aup
+vxG
 djQ
 ofG
 ofG
@@ -109061,7 +109122,7 @@ djQ
 llR
 aup
 rhD
-aup
+vxG
 djQ
 djQ
 tpC
@@ -111592,9 +111653,9 @@ cpx
 aae
 aak
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 djQ
 bzM
@@ -111850,8 +111911,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 djQ
 aCc
@@ -112107,8 +112168,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 djQ
 gqS
@@ -112365,7 +112426,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 djQ
 qnk
@@ -112879,7 +112940,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 yif
 djQ
 lzF
@@ -113391,7 +113452,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 djQ
@@ -113648,7 +113709,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 djQ
@@ -113904,8 +113965,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 djQ
@@ -114160,9 +114221,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 djQ
@@ -114417,8 +114478,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -114674,7 +114735,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -114933,7 +114994,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 djQ
 tde
@@ -115189,8 +115250,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 djQ
 xvO
@@ -115445,9 +115506,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 djQ
 djQ
@@ -115704,7 +115765,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -116218,7 +116279,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -116474,9 +116535,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -116732,7 +116793,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae

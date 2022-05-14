@@ -508,8 +508,10 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "acz" = (
-/obj/structure/ladder/unbreakable,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "prospectorladder2"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
 "acA" = (
@@ -13291,8 +13293,8 @@ lDT
 lDT
 lDT
 abb
+acB
 acz
-abe
 acG
 oez
 oez
@@ -23313,7 +23315,7 @@ qDN
 uQU
 cct
 air
-vqz
+aKa
 vqz
 vqz
 vqz
@@ -23570,7 +23572,7 @@ gkd
 gkd
 qqp
 gJu
-vqz
+bbB
 vqz
 vqz
 vqz
@@ -23827,7 +23829,7 @@ bnr
 bxd
 cct
 cct
-vqz
+aKa
 vqz
 vqz
 vqz
