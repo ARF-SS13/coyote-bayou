@@ -1454,7 +1454,9 @@
 /area/f13/tunnel)
 "bDP" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider,
+/mob/living/simple_animal/hostile/raider{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -4955,7 +4957,9 @@
 	},
 /area/f13/tcoms)
 "chq" = (
-/mob/living/simple_animal/hostile/raider/sulphite,
+/mob/living/simple_animal/hostile/raider/sulphite{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -7315,7 +7319,9 @@
 	},
 /area/f13/tunnel)
 "han" = (
-/mob/living/simple_animal/hostile/raider/firefighter,
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Junker Deserter"
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/tunnel)
 "hao" = (
@@ -7410,7 +7416,7 @@
 /area/f13/tunnel)
 "hqq" = (
 /mob/living/simple_animal/hostile/raider/sulphite{
-	name = "Tunnel Torturers Boss"
+	name = "Tunnel Torturers Lieutenant"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -7519,7 +7525,9 @@
 	},
 /area/f13/tunnel)
 "hzG" = (
-/mob/living/simple_animal/hostile/raider/firefighter,
+/mob/living/simple_animal/hostile/raider/firefighter{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -7813,7 +7821,9 @@
 /area/f13/tunnel)
 "isI" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider,
+/mob/living/simple_animal/hostile/raider{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/tunnel)
 "ivJ" = (
@@ -8721,7 +8731,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kUz" = (
-/mob/living/simple_animal/hostile/raider/baseball,
+/mob/living/simple_animal/hostile/raider/baseball{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -9862,7 +9874,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "nYS" = (
-/mob/living/simple_animal/hostile/raider/thief,
+/mob/living/simple_animal/hostile/raider/thief{
+	name = "Junker Deserter"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -10976,7 +10990,9 @@
 /turf/closed/wall/f13/tunnel,
 /area/f13/radiation)
 "qVR" = (
-/mob/living/simple_animal/hostile/raider/ranged/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Junker Deserter"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -11387,7 +11403,9 @@
 /area/f13/tunnel)
 "sax" = (
 /obj/structure/chair/stool/retro/black,
-/mob/living/simple_animal/hostile/raider/baseball,
+/mob/living/simple_animal/hostile/raider/baseball{
+	name = "Junker Deserter"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -12469,7 +12487,9 @@
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/tunnel)
 "uRc" = (
-/mob/living/simple_animal/hostile/raider/ranged,
+/mob/living/simple_animal/hostile/raider/ranged{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -12789,7 +12809,9 @@
 /area/f13/tunnel)
 "vIE" = (
 /obj/structure/chair/stool/retro/black,
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker{
+	name = "Junker Deserter Boss"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
@@ -12967,7 +12989,9 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/tunnel)
 "waO" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	name = "Tunnel Torturers Boss"
+	},
 /turf/open/indestructible/ground/inside/subway{
 	name = "stone floor"
 	},
@@ -13076,7 +13100,9 @@
 	},
 /area/f13/bunker)
 "woc" = (
-/mob/living/simple_animal/hostile/raider/ranged/biker,
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Tunnel Torturers Raider"
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
