@@ -184,13 +184,12 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abD" = (
-/obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = -30;
-	pixel_y = 1
-	},
 /obj/structure/bedsheetbin/empty,
 /obj/structure/table/wood,
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abE" = (
@@ -200,9 +199,8 @@
 /area/f13/building)
 "abF" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = 30;
-	pixel_y = 1
+	dir = 4;
+	pixel_x = 3
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
@@ -331,9 +329,7 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abY" = (
-/turf/open/floor/carpet/vault{
-	name = "yoga mat"
-	},
+/turf/open/floor/carpet_new/carpet_shaggyblue,
 /area/f13/building)
 "abZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -359,9 +355,7 @@
 	dir = 4;
 	light_color = "#f4e3b0"
 	},
-/turf/open/floor/carpet/vault{
-	name = "yoga mat"
-	},
+/turf/open/floor/carpet_new/carpet_shaggyblue,
 /area/f13/building)
 "acd" = (
 /obj/machinery/chem_dispenser/drinks,
@@ -430,6 +424,7 @@
 	density = 0;
 	pixel_y = 20
 	},
+/obj/structure/railing/wood,
 /turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
 "acn" = (
@@ -438,23 +433,23 @@
 	pixel_x = 1;
 	pixel_y = 20
 	},
+/obj/structure/railing/wood,
 /turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
 "aco" = (
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood";
-	pixel_y = 25
-	},
-/turf/open/transparent/openspace,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing/wood,
+/turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
 "acp" = (
-/obj/structure/fence/wooden{
+/obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
-	pixel_y = 25
+	light_color = "#f4e3b0"
 	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
+/turf/open/floor/plasteel/stairs{
+	color = "#4b3a26"
+	},
+/area/f13/building)
 "acq" = (
 /obj/structure/fence/wooden{
 	dir = 4
@@ -770,6 +765,10 @@
 "aGW" = (
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
+/area/f13/wasteland)
+"aIJ" = (
+/obj/structure/railing/wood,
+/turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
 "aKa" = (
 /turf/open/indestructible/ground/outside/roof,
@@ -6578,7 +6577,7 @@ lDT
 lDT
 xuM
 pxI
-pxI
+abx
 iUi
 pxI
 xuM
@@ -7364,7 +7363,7 @@ xuM
 abZ
 abQ
 acm
-aco
+oez
 oez
 oez
 oez
@@ -7620,8 +7619,8 @@ pxI
 pxI
 aca
 acj
-abQ
-acp
+aco
+oez
 oez
 oez
 oez
@@ -7877,8 +7876,8 @@ pxI
 pxI
 aca
 acj
-aca
-acp
+aIJ
+oez
 oez
 oez
 oez
@@ -8134,8 +8133,8 @@ pxI
 pxI
 aca
 aca
-aca
-acp
+aIJ
+oez
 oez
 oez
 oez
@@ -8391,8 +8390,8 @@ pxI
 pxI
 aca
 acj
-aca
-acp
+aIJ
+oez
 oez
 oez
 oez
@@ -8648,8 +8647,8 @@ pxI
 pxI
 aca
 acj
-aca
-acp
+aIJ
+oez
 oez
 oez
 oez
@@ -8906,7 +8905,7 @@ xuM
 acb
 abq
 acn
-aco
+oez
 oez
 oez
 oez
@@ -9662,7 +9661,7 @@ tAz
 lDT
 xuM
 abg
-abh
+acp
 abh
 pxI
 xuM
