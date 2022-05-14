@@ -357,16 +357,16 @@
 		to_chat(user, "<span class='warning'>Components in [src] require repairs!</span>")
 	else
 		to_chat(user, "<span class='warning'>\The [src] has ran out of charge!</span>")
-	remove_traits(user)
 	slowdown += unpowered_slowdown
 	no_power = TRUE
+	remove_traits(user)
 	user.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/f13/power_armor/proc/restore_power(mob/user)
 	to_chat(user, "<span class='notice'>\The [src]'s power restored.</span>")
-	assign_traits(user)
 	slowdown -= unpowered_slowdown
 	no_power = FALSE
+	assign_traits(user)
 	user.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/f13/power_armor/attackby(obj/item/I, mob/living/carbon/human/user, params)
