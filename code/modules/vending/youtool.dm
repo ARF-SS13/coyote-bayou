@@ -1,6 +1,6 @@
 /obj/machinery/vending/tool
-	name = "\improper YouTool"
-	desc = "Tools for tools."
+	name = "\improper H&H Tools Company Autovender"
+	desc = "H&H Tools Company, also known as H&H Tools Inc. and H&H Tool Company, was a pre-War tools manufacturer."
 	icon_state = "tool"
 	icon_deny = "tool-deny"
 	products = list(/obj/item/stack/cable_coil/random = 10,

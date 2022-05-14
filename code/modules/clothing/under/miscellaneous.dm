@@ -21,7 +21,7 @@
 
 /obj/item/clothing/under/rank/prisoner
 	name = "prison jumpsuit"
-	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "Standardised prisoner-wear."
 	icon_state = "prisoner"
 	item_state = "o_suit"
 	has_sensor = LOCKED_SENSORS
@@ -38,7 +38,7 @@
 
 /obj/item/clothing/under/scarecrow
 	name = "scarecrow clothes"
-	desc = "Perfect camouflage for hiding in botany."
+	desc = "Perfect camouflage for hiding in the fields."
 	icon_state = "scarecrow"
 	item_state = "scarecrow"
 	item_color = "scarecrow"
@@ -49,7 +49,7 @@
 
 /obj/item/clothing/under/jester
 	name = "jester suit"
-	desc = "A jolly dress, well suited to entertain your master, nuncle."
+	desc = "A jolly dress, well suited to entertain your master."
 	icon_state = "jester"
 	item_state = "jester"
 	item_color = "jester"
@@ -93,7 +93,7 @@
 
 /obj/item/clothing/under/burial
 	name = "burial garments"
-	desc = "Traditional burial garments from the early 22nd century."
+	desc = "Traditional burial garments."
 	icon_state = "burial"
 	item_state = "burial"
 	item_color = "burial"
@@ -128,7 +128,7 @@
 
 /obj/item/clothing/under/rank/prisoner/skirt
 	name = "prison jumpskirt"
-	desc = "It's standardised Nanotrasen prisoner-wear. Its suit sensors are stuck in the \"Fully On\" position."
+	desc = "Standardised prisoner-wear."
 	icon_state = "prisoner_skirt"
 	item_state = "o_suit"
 	body_parts_covered = CHEST|GROIN|ARMS
@@ -150,7 +150,7 @@
 
 /obj/item/clothing/under/misc/vice_officer
 	name = "vice officer's jumpsuit"
-	desc = "It's the standard issue pretty-boy outfit, as seen on Holo-Vision."
+	desc = "It's the standard issue pretty-boy outfit."
 	icon_state = "vice"
 	item_state = "gy_suit"
 	can_adjust = FALSE
@@ -171,13 +171,6 @@
 	max_heat_protection_temperature = SPACE_SUIT_MAX_TEMP_PROTECT
 	can_adjust = FALSE
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-
-/obj/item/clothing/under/misc/burial
-	name = "burial garments"
-	desc = "Traditional burial garments from the early 22nd century."
-	icon_state = "burial"
-	item_state = "burial"
-	has_sensor = NO_SENSORS
 
 /obj/item/clothing/under/misc/overalls
 	name = "laborer's overalls"
@@ -219,8 +212,8 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/plasmaman
-	name = "plasma envirosuit"
-	desc = "A special containment suit that allows plasma-based lifeforms to exist safely in an oxygenated environment, and automatically extinguishes them in a crisis. Despite being airtight, it's not spaceworthy."
+	name = "enviromental suit"
+	desc = "A special containment suit that allows lifeforms to exist safely in an oxygenated environment, and automatically extinguishes them in a crisis. Despite being airtight, it's not spaceworthy."
 	icon_state = "plasmaman"
 	item_state = "plasmaman"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)

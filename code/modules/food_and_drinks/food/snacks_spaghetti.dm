@@ -1,7 +1,7 @@
 
 /obj/item/reagent_containers/food/snacks/spaghetti
-	name = "spaghetti"
-	desc = "Now that's a nic'e pasta!"
+	name = "noodles"
+	desc = "Long noodles served on a ceramic plate."
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "spaghetti"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -11,8 +11,8 @@
 	foodtype = GRAIN
 
 /obj/item/reagent_containers/food/snacks/boiledspaghetti
-	name = "boiled spaghetti"
-	desc = "A plain dish of noodles, this needs more ingredients."
+	name = "boiled noodles"
+	desc = "A plain dish of noodles."
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "spaghettiboiled"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2)
@@ -24,7 +24,7 @@
 
 /obj/item/reagent_containers/food/snacks/pastatomato
 	name = "spaghetti"
-	desc = "Spaghetti and crushed tomatoes. Just like your abusive father used to make!"
+	desc = "Spaghetti and crushed tomatoes."
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "pastatomato"
 	bitesize = 4
@@ -35,8 +35,8 @@
 	foodtype = GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/copypasta
-	name = "copypasta"
-	desc = "You probably shouldn't try this, you always hear people talking about how bad it is..."
+	name = "Double helping noodles"
+	desc = "Way to many noodles for one person."
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "copypasta"
 	bitesize = 4
@@ -48,7 +48,7 @@
 
 /obj/item/reagent_containers/food/snacks/meatballspaghetti
 	name = "spaghetti and meatballs"
-	desc = "Now that's a nic'e meatball!"
+	desc = "Now that's a nice meatball!"
 	icon = 'icons/obj/food/pizzaspaghetti.dmi'
 	icon_state = "meatballspaghetti"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)

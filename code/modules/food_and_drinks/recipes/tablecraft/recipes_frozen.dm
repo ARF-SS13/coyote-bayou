@@ -46,14 +46,14 @@
 
 	subcategory = CAT_ICE
 
-/datum/crafting_recipe/food/spacefreezy
+/datum/crafting_recipe/food/freezy
 	name ="Nuka Freezy"
 	reqs = list(
 		/datum/reagent/consumable/bluecherryjelly = 5,
 		/datum/reagent/consumable/nuka_cola = 15,
 		/obj/item/reagent_containers/food/snacks/icecream = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/spacefreezy
+	result = /obj/item/reagent_containers/food/snacks/freezy
 	subcategory = CAT_ICE
 
 /datum/crafting_recipe/food/root_float

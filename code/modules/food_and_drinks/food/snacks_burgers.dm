@@ -20,10 +20,9 @@
 		playsound(src, 'sound/effects/smoke.ogg', 50, TRUE)
 		visible_message("<span class='warning'>Oh, ye gods! [src] is ruined! But what if...?</span>")
 		name = "steamed ham"
-		desc = pick("Ahh, Head of Personnel, welcome. I hope you're prepared for an unforgettable luncheon!",
+		desc = pick("Ahh, welcome. I hope you're prepared for an unforgettable luncheon!",
 		"And you call these steamed hams despite the fact that they are obviously microwaved?",
-		"Aurora Station 13? At this time of shift, in this time of year, in this sector of space, localized entirely within your freezer?",
-		"You know, these hamburgers taste quite similar to the ones they have at the Maltese Falcon.")
+		"You know, these hamburgers taste quite similar to the ones they have at the ballpark.")
 		tastes = list("fast food hamburger" = 1)
 
 /obj/item/reagent_containers/food/snacks/burger/human
@@ -97,8 +96,8 @@
 	foodtype = GRAIN | TOXIC
 
 /obj/item/reagent_containers/food/snacks/burger/xeno
-	name = "xenoburger"
-	desc = "Smells caustic. Tastes like heresy."
+	name = "mutant burger"
+	desc = "Smells caustic. Tastes like cancer."
 	icon_state = "xburger"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("bun" = 4, "acid" = 4)
@@ -335,7 +334,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/rib
 	name = "mcrib"
-	desc = "An elusive rib shaped burger with limited availablity across the galaxy. Not as good as you remember it."
+	desc = "An elusive rib shaped burger with limited availablity across America. Not as good as you remember it."
 	icon_state = "mcrib"
 	bonus_reagents = list(/datum/reagent/consumable/bbqsauce = 5, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("bun" = 2, "pork patty" = 4)
@@ -351,7 +350,7 @@
 
 /obj/item/reagent_containers/food/snacks/burger/chicken
 	name = "chicken sandwich" //Apparently the proud people of Americlapstan object to this thing being called a burger. Apparently McDonald's just calls it a burger in Europe as to not scare and confuse us.
-	desc = "A delicious chicken sandwich, it is said the proceeds from this treat helps criminalize disarming people on the space frontier."
+	desc = "A delicious chicken sandwich."
 	icon_state = "chickenburger"
 	tastes = list("bun" = 2, "chicken" = 4, "God's covenant" = 1)
 	bonus_reagents = list(/datum/reagent/consumable/mayonnaise = 3, /datum/reagent/consumable/cooking_oil = 2, /datum/reagent/consumable/nutriment = 2)

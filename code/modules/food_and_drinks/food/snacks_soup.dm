@@ -57,7 +57,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/wingfangchu
 	name = "wing fang chu"
-	desc = "A savory dish of alien wing wang in soy."
+	desc = "A savory dish of wing wang in soy."
 	icon_state = "wingfangchu"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/soysauce = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -74,7 +74,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/nettle
 	name = "nettle soup"
-	desc = "To think, the botanist would've beat you to death with one of these."
+	desc = "To think, a farmer would've beat you to death with one of these."
 	icon_state = "nettlesoup"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/medicine/omnizine = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("nettles" = 1)
@@ -237,7 +237,7 @@
 
 /obj/item/reagent_containers/food/snacks/soup/bisque
 	name = "bisque"
-	desc = "A classic entree from Space-France."
+	desc = "A classic entree from France."
 	icon_state = "bisque"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("creamy texture" = 1, "crab" = 4)

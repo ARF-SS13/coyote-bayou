@@ -1,9 +1,9 @@
 /obj/machinery/vending/medical
-	name = "\improper NanoMed Plus"
-	desc = "Medical drug dispenser."
+	name = "\improper Med-Tek Plus"
+	desc = "One of the pre-eminent biomedical research companies in the United States, Med-Tek focused on enabling better living through chemistry."
 	icon_state = "med"
 	icon_deny = "med-deny"
-	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
+	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;The absolute BEST life-saving drugs available on the market today!;This stuff saves lives.;Don't you want some?;Ping!"
 	products = list(/obj/item/reagent_containers/syringe = 12,
 					/obj/item/reagent_containers/dropper = 3,
 					/obj/item/healthanalyzer = 4,

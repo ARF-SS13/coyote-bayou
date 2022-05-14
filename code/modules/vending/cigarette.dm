@@ -1,8 +1,8 @@
 /obj/machinery/vending/cigarette
-	name = "\improper ShadyCigs Deluxe"
-	desc = "If you want to get cancer, might as well do it in style."
-	product_slogans = "Space cigs taste good like a cigarette should.;I'd rather toolbox than switch.;Smoke!;Don't believe the reports - smoke today!"
-	product_ads = "Probably not bad for you!;Don't believe the scientists!;It's good for you!;Don't quit, buy more!;Smoke!;Nicotine heaven.;Best cigarettes since 2150.;Award-winning cigs."
+	name = "\improper Big Boss Vending Machine"
+	desc = "Big Boss cigarettes were a popular brand before the Great War, being found in and around major cities including Las Vegas, Pittsburgh, and Washington, D.C."
+	product_slogans = "Grey Tortoise taste good like a cigarette should.;For the smoker who knows what he wants taste.;Longer than King Size so much more to enjoy!;After all, if smoking isn't a pleasure, why bother?!"
+	product_ads = "Big Boss cigarettes. Great american taste;Unexpected flavor. Wild & free.;Perfectly aged tobacco.;No additives - True taste - No bull.;American matches for American Homes;Fine American blend also in menthol.;A rewarding experience.;Tastes as good as it looks."
 	icon_state = "cigs"
 	products = list(/obj/item/storage/fancy/cigarettes/cigpack_bigboss = 5,
 					/obj/item/storage/fancy/cigarettes/cigpack_pyramid = 5,
@@ -36,10 +36,10 @@
 	cost_multiplier_per_dept = list("[ACCESS_SYNDICATE]" = 0)
 
 /obj/machinery/vending/cigarette/beach //Used in the lavaland_biodome_beach.dmm ruin
-	name = "\improper ShadyCigs Ultra"
-	desc = "Now with extra premium products!"
-	product_ads = "Probably not bad for you!;Dope will get you through times of no money better than money will get you through times of no dope!;It's good for you!"
-	product_slogans = "Turn on, tune in, drop out!;Better living through chemistry!;Toke!;Don't forget to keep a smile on your lips and a song in your heart!"
+	name = "\improper Big Boss Vending Machine"
+	desc = "Even after the War, their products are still a favorite and used, if they can be found at least, by American wastelanders."
+	product_slogans = "Grey Tortoise taste good like a cigarette should.;For the smoker who knows what he wants taste.;Longer than King Size so much more to enjoy!;After all, if smoking isn't a pleasure, why bother?!"
+	product_ads = "Big Boss cigarettes. Great american taste;Unexpected flavor. Wild & free.;Perfectly aged tobacco.;No additives - True taste - No bull.;American matches for American Homes;Fine American blend also in menthol.;A rewarding experience.;Tastes as good as it looks."
 	products = list(/obj/item/storage/fancy/cigarettes = 5,
 					/obj/item/storage/fancy/cigarettes/cigpack_uplift = 3,
 					/obj/item/storage/fancy/cigarettes/cigpack_robust = 3,
@@ -54,7 +54,7 @@
 					/obj/item/lighter = 3)
 
 /obj/item/vending_refill/cigarette
-	machine_name = "ShadyCigs Deluxe"
+	machine_name = "Big Boss Vending Machine"
 	icon_state = "refill_smoke"
 
 /obj/machinery/vending/cigarette/pre_throw(obj/item/I)

@@ -177,18 +177,6 @@
 	result = /obj/item/reagent_containers/food/snacks/melonkeg
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/stuffedlegion
-	name = "Stuffed legion"
-	time = 40
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/meat/steak/goliath = 1,
-		/obj/item/organ/regenerative_core/legion = 1,
-		/datum/reagent/consumable/ketchup = 2,
-		/datum/reagent/consumable/capsaicin = 2
-	)
-	result = /obj/item/reagent_containers/food/snacks/stuffedlegion
-	subcategory = CAT_MISCFOOD
-
 /datum/crafting_recipe/lizardwine //not a subtype of /datum/crafting_recipe/food due to a bug where the resulting bottle would contain 100u of lizardwine and 100u of ethanol.
 	name = "Lizard wine"
 	time = 40
@@ -200,8 +188,8 @@
 	category = CAT_FOOD
 	subcategory = CAT_MISCFOOD
 
-/datum/crafting_recipe/food/powercrepe
-	name = "Powercrepe"
+/datum/crafting_recipe/food/crepe
+	name = "crepe"
 	time = 40
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/flatdough = 1,
@@ -210,7 +198,7 @@
 		/obj/item/stock_parts/cell/super =1,
 		/obj/item/melee/sabre = 1
 	)
-	result = /obj/item/reagent_containers/food/snacks/powercrepe
+	result = /obj/item/reagent_containers/food/snacks/crepe
 	subcategory = CAT_MISCFOOD
 /datum/crafting_recipe/food/butterbear //ITS ALIVEEEEEE!
 	name = "Living bear/butter hybrid"

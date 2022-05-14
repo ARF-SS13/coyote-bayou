@@ -154,7 +154,7 @@
 
 /obj/item/clothing/accessory/medal/conduct
 	name = "distinguished conduct medal"
-	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given by Nanotrasen. It is often awarded by a captain to a member of his crew."
+	desc = "A bronze medal awarded for distinguished conduct. Whilst a great honor, this is the most basic award given. It is often awarded by an officer to a member of their staff."
 
 /obj/item/clothing/accessory/medal/bronze_heart
 	name = "bronze heart medal"
@@ -162,12 +162,12 @@
 	icon_state = "bronze_heart"
 
 /obj/item/clothing/accessory/medal/engineer
-	name = "\"Shift's Best Electrician\" award"
-	desc = "An award bestowed upon engineers who have excelled at keeping the station running in the best possible condition against all odds."
+	name = "\"Week's Best Electrician\" award"
+	desc = "An award bestowed upon engineers who have excelled at keeping the lights on against all odds."
 	icon_state = "engineer"
 
 /obj/item/clothing/accessory/medal/greytide
-	name = "\"Greytider of the shift\" award"
+	name = "\"Greytider of the week\" award"
 	desc = "An award for only the most annoying of assistants.  Locked doors mean nothing to you and behaving is not in your vocabulary"
 	icon_state = "greytide"
 
@@ -177,11 +177,11 @@
 	icon_state = "cargo"
 
 /obj/item/clothing/accessory/medal/ribbon/cargo
-	name = "\"cargo tech of the shift\" award"
-	desc = "An award bestowed only upon those cargotechs who have exhibited devotion to their duty in keeping with the highest traditions of Cargonia."
+	name = "\"miner of the week\" award"
+	desc = "An award bestowed only upon those miners who have exhibited devotion to their duty in keeping with the highest traditions of their trade."
 
 /obj/item/clothing/accessory/medal/ribbon/medical_doctor
-	name = "\"doctor of the shift\" award"
+	name = "\"doctor of the week\" award"
 	desc = "An award bestowed only upon the most capable doctors who have upheld the Hippocratic Oath to the best of their ability"
 	icon_state = "medical_doctor"
 
@@ -198,7 +198,7 @@
 
 /obj/item/clothing/accessory/medal/silver/security
 	name = "robust security award"
-	desc = "An award for distinguished combat and sacrifice in defence of Nanotrasen's commercial interests. Often awarded to security staff."
+	desc = "An award for distinguished combat. Often awarded to security staff."
 
 /obj/item/clothing/accessory/medal/gold
 	name = "gold medal"
@@ -208,23 +208,23 @@
 	custom_materials = list(/datum/material/gold=1000)
 
 /obj/item/clothing/accessory/medal/gold/captain
-	name = "medal of captaincy"
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of a captain to Nanotrasen, and their undisputable authority over their crew."
+	name = "medal of competency"
+	desc = "A golden medal awarded exclusively to those promoted to a command role. It signifies the codified responsibilities of the commander to organization, and their undisputable authority over their staff."
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/accessory/medal/gold/captain/family
-	name = "old medal of captaincy"
-	desc = "A rustic badge pure gold, has been through hell and back by the looks, the syndcate have been after these by the looks of it for generations..."
+	name = "old medal"
+	desc = "A rustic badge pure gold, has been through hell and back by the looks."
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 10) //Pure gold
 	custom_materials = list(/datum/material/gold=2000)
 
 /obj/item/clothing/accessory/medal/gold/heroism
 	name = "medal of exceptional heroism"
-	desc = "An extremely rare golden medal awarded only by CentCom. To receive such a medal is the highest honor and as such, very few exist. This medal is almost never awarded to anybody but commanders."
+	desc = "An extremely rare golden medal awarded only by as the highest honor and as such, very few exist. This medal is almost never awarded to anybody."
 
 /obj/item/clothing/accessory/medal/plasma
 	name = "plasma medal"
-	desc = "An eccentric medal made of plasma."
+	desc = "An eccentric medal made of unstable elements."
 	icon_state = "plasma"
 	medaltype = "medal-plasma"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = 0) //It's made of plasma. Of course it's flammable.
@@ -238,7 +238,7 @@
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
 	name = "nobel sciences award"
-	desc = "A plasma medal which represents significant contributions to the field of science or engineering."
+	desc = "A medal which represents significant contributions to the field of science or engineering."
 
 ////////////
 //Armbands//
@@ -251,36 +251,36 @@
 
 /obj/item/clothing/accessory/armband/deputy
 	name = "security deputy armband"
-	desc = "An armband, worn by personnel authorized to act as a deputy of station security."
+	desc = "An armband, worn by personnel authorized to act as a deputy to the chief of security."
 
 /obj/item/clothing/accessory/armband/cargo
 	name = "cargo bay guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is brown."
 	icon_state = "cargoband"
 
 /obj/item/clothing/accessory/armband/engine
 	name = "engineering guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is orange with a reflective strip!"
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is orange with a reflective strip!"
 	icon_state = "engieband"
 
 /obj/item/clothing/accessory/armband/science
 	name = "science guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is purple."
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is purple."
 	icon_state = "rndband"
 
 /obj/item/clothing/accessory/armband/hydro
 	name = "hydroponics guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is green and blue."
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is green and blue."
 	icon_state = "hydroband"
 
 /obj/item/clothing/accessory/armband/med
 	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white."
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is white."
 	icon_state = "medband"
 
 /obj/item/clothing/accessory/armband/medblue
 	name = "medical guard armband"
-	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white and blue."
+	desc = "An armband, worn by the security forces to display which department they're assigned to. This one is white and blue."
 	icon_state = "medblueband"
 
 //////////////

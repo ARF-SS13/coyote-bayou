@@ -62,9 +62,9 @@
 	tastes = list("ice cream" = 1, "blue cherries" = 1)
 	foodtype = FRUIT | DAIRY | SUGAR
 
-/obj/item/reagent_containers/food/snacks/spacefreezy
-	name = "space freezy"
-	desc = "The best icecream in space."
+/obj/item/reagent_containers/food/snacks/freezy
+	name = "freezy"
+	desc = "Often found in old gas stations."
 	icon_state = "spacefreezy"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/bluecherryjelly = 5, /datum/reagent/consumable/nutriment/vitamin = 4)

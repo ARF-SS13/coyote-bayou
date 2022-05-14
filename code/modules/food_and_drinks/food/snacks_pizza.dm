@@ -30,7 +30,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/margherita
 	name = "pizza margherita"
-	desc = "The most cheezy pizza in galaxy."
+	desc = "The most cheezy pizza in America."
 	icon_state = "pizzamargherita"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/margherita
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -43,7 +43,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/margherita
 	name = "margherita slice"
-	desc = "A slice of the most cheezy pizza in galaxy."
+	desc = "A slice of the most cheezy pizza in America."
 	icon_state = "pizzamargheritaslice"
 	filling_color = "#FFA500"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1)
@@ -61,7 +61,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/meat
 	name = "meatpizza slice"
-	desc = "A nutritious slice of meatpizza."
+	desc = "A nutritious slice of meat pizza."
 	icon_state = "meatpizzaslice"
 	filling_color = "#A52A2A"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "meat" = 1)
@@ -87,7 +87,7 @@
 
 /obj/item/reagent_containers/food/snacks/pizza/vegetable
 	name = "vegetable pizza"
-	desc = "No one of Tomatos Sapiens were harmed during making this pizza."
+	desc = "No vegetables were harmed during making this pizza."
 	icon_state = "vegetablepizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/vegetable
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
@@ -104,7 +104,7 @@
 	foodtype = GRAIN | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/pizza/donkpocket
-	name = "donkpocket pizza"
+	name = "hot-pocket pizza"
 	desc = "Who thought this would be a good idea?"
 	icon_state = "donkpocketpizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket
@@ -114,8 +114,8 @@
 	foodtype = GRAIN | VEGETABLES | DAIRY | MEAT | JUNKFOOD | ANTITOXIC
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket
-	name = "donkpocket pizza slice"
-	desc = "Smells like donkpocket."
+	name = "hot-pocket pizza slice"
+	desc = "Smells like a hot-pocket."
 	icon_state = "donkpocketpizzaslice"
 	filling_color = "#FFA500"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "meat" = 1, "laziness" = 1)
@@ -140,8 +140,8 @@
 	foodtype = GRAIN | VEGETABLES | FRUIT | DAIRY | ANTITOXIC
 
 /obj/item/reagent_containers/food/snacks/pizza/sassysage
-	name = "sassysage pizza"
-	desc = "You can really smell the sassiness."
+	name = "sausage pizza"
+	desc = "You can really smell the sausage."
 	icon_state = "sassysagepizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/pizzaslice/sassysage
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 6)
@@ -149,8 +149,8 @@
 	foodtype = GRAIN | VEGETABLES | DAIRY
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/sassysage
-	name = "sassysage pizza slice"
-	desc = "Deliciously sassy."
+	name = "sausage pizza slice"
+	desc = "Delicious sausage."
 	icon_state = "sassysagepizzaslice"
 	filling_color = "#FF4500"
 	tastes = list("crust" = 1, "tomato" = 1, "cheese" = 1, "meat" = 1)

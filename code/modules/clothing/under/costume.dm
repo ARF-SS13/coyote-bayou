@@ -10,7 +10,7 @@
 
 /obj/item/clothing/under/costume/jabroni
 	name = "Jabroni Outfit"
-	desc = "The leather club is two sectors down."
+	desc = "The leather club is two blocks down."
 	icon_state = "darkholme"
 	item_state = "darkholme"
 	can_adjust = FALSE
@@ -154,7 +154,7 @@
 
 /obj/item/clothing/under/costume/geisha
 	name = "geisha suit"
-	desc = "Cute space ninja senpai not included."
+	desc = "Cute ninja senpai not included."
 	icon_state = "geisha"
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
@@ -192,7 +192,7 @@
 
 /obj/item/clothing/under/costume/scarecrow
 	name = "scarecrow clothes"
-	desc = "Perfect camouflage for hiding in botany."
+	desc = "Perfect camouflage for hiding in the fields."
 	icon_state = "scarecrow"
 	item_state = "scarecrow"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
@@ -276,7 +276,7 @@
 // Lunar Clothes
 /obj/item/clothing/under/costume/qipao
 	name = "Black Qipao"
-	desc = "A Qipao, traditionally worn in ancient Earth China by women during social events and lunar new years. This one is black."
+	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is black."
 	icon_state = "qipao"
 	item_state = "qipao"
 	body_parts_covered = CHEST|GROIN
@@ -286,19 +286,19 @@
 
 /obj/item/clothing/under/costume/qipao/white
 	name = "White Qipao"
-	desc = "A Qipao, traditionally worn in ancient Earth China by women during social events and lunar new years. This one is white."
+	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is white."
 	icon_state = "qipao_white"
 	item_state = "qipao_white"
 
 /obj/item/clothing/under/costume/qipao/red
 	name = "Red Qipao"
-	desc = "A Qipao, traditionally worn in ancient Earth China by women during social events and lunar new years. This one is red."
+	desc = "A Qipao, traditionally worn in ancient China by women during social events and lunar new years. This one is red."
 	icon_state = "qipao_red"
 	item_state = "qipao_red"
 
 /obj/item/clothing/under/costume/cheongsam
 	name = "Black Cheongsam"
-	desc = "A Cheongsam, traditionally worn in ancient Earth China by men during social events and lunar new years. This one is black."
+	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is black."
 	icon_state = "cheong"
 	item_state = "cheong"
 	body_parts_covered = CHEST|GROIN
@@ -307,7 +307,7 @@
 
 /obj/item/clothing/under/costume/cheongsam/white
 	name = "White Cheongsam"
-	desc = "A Cheongsam, traditionally worn in ancient Earth China by men during social events and lunar new years. This one is white."
+	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is white."
 	icon_state = "cheongw"
 	item_state = "cheongw"
 	body_parts_covered = CHEST|GROIN
@@ -316,7 +316,7 @@
 
 /obj/item/clothing/under/costume/cheongsam/red
 	name = "Red Cheongsam"
-	desc = "A Cheongsam, traditionally worn in ancient Earth China by men during social events and lunar new years. This one is red.."
+	desc = "A Cheongsam, traditionally worn in ancient China by men during social events and lunar new years. This one is red.."
 	icon_state = "cheongr"
 	item_state = "cheongr"
 	body_parts_covered = CHEST|GROIN
