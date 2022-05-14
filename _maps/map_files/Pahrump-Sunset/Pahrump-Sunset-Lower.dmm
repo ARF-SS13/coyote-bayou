@@ -217,12 +217,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "aaS" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "prospectorladder"
-	},
-/turf/open/water,
+/obj/structure/chair/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "aaT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1319,7 +1315,7 @@
 "byv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis";
+	name = "Bighorn";
 	req_one_access_txt = "25"
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -4911,7 +4907,7 @@
 /area/f13/tunnel)
 "cfF" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis";
+	name = "Bighorn";
 	req_one_access_txt = "25"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4919,7 +4915,7 @@
 "cfG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis";
+	name = "Bighorn";
 	req_one_access_txt = "25"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4936,7 +4932,7 @@
 /area/f13/caves)
 "cfM" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis";
+	name = "Bighorn";
 	req_one_access_txt = "25"
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -5766,13 +5762,9 @@
 	},
 /area/f13/tunnel)
 "cGQ" = (
-/obj/structure/sink{
-	pixel_y = 19
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/random,
+/turf/open/floor/wood/wood_chestnut,
 /area/f13/tunnel)
 "cLC" = (
 /obj/effect/landmark/start/f13/raider,
@@ -7294,16 +7286,19 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "gYM" = (
-/obj/machinery/shower{
-	dir = 8
+/obj/machinery/light/fo13colored/Aqua{
+	bulb_colour = "#800080";
+	dir = 8;
+	light_color = "#800080";
+	name = "light fixture"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "floordirtysolid"
-	},
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "gZT" = (
 /obj/structure/ladder/unbreakable{
@@ -7596,10 +7591,10 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "hIa" = (
-/obj/structure/closet/cabinet,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/structure/sign/poster/contraband/pinup_bed{
+	pixel_x = 32
+	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "hJK" = (
@@ -7913,7 +7908,7 @@
 /area/f13/bunker)
 "iIb" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis Housing";
+	name = "Residence";
 	req_one_access_txt = "25"
 	},
 /turf/open/floor/wood/wood_chestnut,
@@ -9161,11 +9156,9 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "lLV" = (
-/obj/structure/bed,
-/obj/item/bedsheet/random,
-/obj/structure/sign/poster/contraband/pinup_bed{
-	pixel_x = 32
-	},
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "lMM" = (
@@ -10217,10 +10210,8 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/tunnel)
 "oUp" = (
-/obj/structure/chair/office{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/north,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "oUz" = (
@@ -10288,8 +10279,9 @@
 /turf/open/floor/plasteel/f13/metal,
 /area/f13/building)
 "pcA" = (
-/obj/structure/chair/wood,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/wood{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "pcF" = (
@@ -10306,9 +10298,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "pfV" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Oasis Housing";
-	req_one_access_txt = "25"
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "prospectorladder"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -10532,7 +10524,7 @@
 /area/f13/tunnel)
 "pLK" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "Oasis Housing";
+	name = "Residence";
 	req_one_access_txt = "25"
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -10572,9 +10564,18 @@
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/tunnel)
 "pPw" = (
-/obj/structure/dresser,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/sink{
+	pixel_y = 19
+	},
+/obj/structure/mirror{
+	pixel_y = 32
+	},
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
 /area/f13/tunnel)
 "pPX" = (
 /obj/structure/flora/grass/wasteland{
@@ -11653,6 +11654,13 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"sLA" = (
+/obj/machinery/door/unpowered/securedoor{
+	name = "Steward's Quarters";
+	req_one_access_txt = "52"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
 "sLZ" = (
 /turf/open/floor/plasteel/f13/vault_floor/neutral/side{
 	dir = 4;
@@ -12006,9 +12014,11 @@
 	},
 /area/f13/tunnel)
 "tIC" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/handrail/g_central{
+	dir = 8;
+	pixel_x = -20
+	},
+/turf/open/water,
 /area/f13/tunnel)
 "tIE" = (
 /obj/structure/railing/wood{
@@ -13043,7 +13053,9 @@
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/tunnel)
 "wlv" = (
-/obj/item/flag/oasis,
+/obj/item/flag/oasis{
+	name = "Bighorn flag"
+	},
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/tunnel)
 "wlS" = (
@@ -13310,13 +13322,13 @@
 	},
 /area/f13/caves)
 "wZt" = (
-/obj/structure/barricade/bars,
-/obj/structure/table/wood,
-/obj/structure/curtain{
-	color = "#845f58"
+/obj/structure/toilet{
+	dir = 4;
+	pixel_x = -3
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
 /area/f13/tunnel)
 "wZK" = (
 /obj/structure/simple_door/room,
@@ -13563,18 +13575,12 @@
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/building)
 "xRB" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
-/obj/item/stack/f13Cash/random/med,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/obj/machinery/light/fo13colored/Aqua{
-	bulb_colour = "#800080";
-	dir = 4;
-	light_color = "#800080";
-	name = "light fixture"
+/obj/machinery/shower{
+	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
 /area/f13/tunnel)
 "xRF" = (
 /obj/structure/dresser,
@@ -22768,7 +22774,7 @@ dHk
 dHk
 dHk
 dHk
-aaS
+dHk
 bsC
 aae
 aae
@@ -23018,8 +23024,8 @@ bsC
 bsC
 bsC
 bsC
-bsC
-bsC
+dFQ
+dFQ
 bsC
 aaE
 wid
@@ -23276,7 +23282,7 @@ bsC
 bsC
 bsC
 bsC
-bsC
+pfV
 bsC
 bsC
 lDl
@@ -23533,7 +23539,7 @@ bJq
 bJq
 bJq
 bJq
-bJq
+tIC
 bJq
 bJq
 dHk
@@ -32526,9 +32532,9 @@ aae
 abj
 dzm
 dzm
-bsC
-bsC
-bsC
+dzm
+dzm
+dzm
 bsC
 oNM
 bJq
@@ -32780,12 +32786,12 @@ lsM
 aaB
 aaB
 aaB
-pfV
-dFQ
 dzm
-dzm
-dzm
-dzm
+omG
+rVt
+mdL
+xHj
+wZt
 bsC
 iTT
 bJq
@@ -33038,12 +33044,12 @@ wgZ
 bCt
 rZN
 dzm
-dFQ
-wid
-hIa
-pPw
+rVt
+rVt
 dzm
-wHv
+pPw
+xRB
+bsC
 iTT
 bJq
 bJq
@@ -33295,12 +33301,12 @@ dFQ
 vdJ
 bCt
 dzm
-wid
-wid
-wid
-wid
-pcA
-wZt
+rVt
+cGQ
+dzm
+dzm
+dzm
+bsC
 bKb
 bJq
 bJq
@@ -33552,12 +33558,12 @@ dFQ
 dFQ
 bCt
 dzm
-wid
-oUp
-oUp
-wid
+rVt
 dzm
-wHv
+oUp
+dFQ
+dFQ
+bsC
 bKb
 bJq
 bJq
@@ -33809,11 +33815,11 @@ dFQ
 fGV
 bCt
 dzm
-wid
-xRB
-tIC
-lLV
+rVt
 dzm
+dzm
+dzm
+sLA
 bsC
 bKb
 bJq
@@ -34066,11 +34072,11 @@ dFQ
 dFQ
 bCt
 dzm
-wid
+dFQ
+gYM
+lLV
 dzm
-dzm
-dzm
-dzm
+dFQ
 bsC
 bPR
 bJq
@@ -34323,11 +34329,11 @@ gEN
 vbh
 bCt
 dzm
-wid
-dzm
-cGQ
-fwm
-dzm
+dFQ
+dFQ
+dFQ
+dFQ
+dFQ
 bsC
 bPR
 bJq
@@ -34580,11 +34586,11 @@ bCt
 bCt
 bCt
 dzm
-wid
-mdL
-xHj
-gYM
-dzm
+aaS
+hIa
+pcA
+dFQ
+dFQ
 bsC
 bPR
 bJq
