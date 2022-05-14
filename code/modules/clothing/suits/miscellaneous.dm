@@ -336,6 +336,11 @@
 	item_state = "ran_hat"
 	flags_inv = HIDEEARS
 
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/costume
+	name = "T-45d power armor"
+	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This one is made of syrofoam."
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 2, "bomb" = 10, "bio" = 10, "rad" = 2, "fire" = -50, "acid" = -50, "wound" = 10)
+	slowdown = 0.025
 /*
  * Misc
  */
