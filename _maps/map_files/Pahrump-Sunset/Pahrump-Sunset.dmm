@@ -1474,6 +1474,8 @@
 	desc = "A secure metal pod for storing protectrons.";
 	name = "protectron pod"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "aeP" = (
@@ -20877,6 +20879,8 @@
 	desc = "A secure metal pod for storing protectrons.";
 	name = "protectron pod"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "bjw" = (
@@ -36299,6 +36303,11 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jRV" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "jSv" = (
 /obj/effect/landmark/start/f13/ncrtrooper,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -36778,6 +36787,15 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/city)
+"ksW" = (
+/obj/structure/closet/abductor{
+	desc = "A secure metal pod for storing protectrons.";
+	name = "protectron pod"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
+/turf/open/floor/plasteel/f13/metal/plate,
+/area/f13/building)
 "ktc" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
@@ -99400,7 +99418,7 @@ aWo
 vVo
 bjv
 adx
-aCI
+jRV
 afN
 amr
 bmd
@@ -105309,7 +105327,7 @@ bht
 twO
 fbg
 vVo
-aeO
+ksW
 abK
 afN
 vVo
