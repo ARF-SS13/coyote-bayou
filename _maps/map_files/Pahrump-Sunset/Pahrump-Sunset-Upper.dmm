@@ -137,7 +137,10 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abv" = (
-/obj/structure/closet/crate/footlocker,
+/obj/structure/closet/crate/footlocker{
+	anchored = 1;
+	pixel_x = 5
+	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abw" = (
@@ -2502,6 +2505,13 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
+/area/f13/building)
+"ocJ" = (
+/obj/structure/closet/crate/footlocker{
+	anchored = 1;
+	pixel_x = -7
+	},
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "odC" = (
 /obj/structure/fluff/railing,
@@ -5832,11 +5842,11 @@ lDT
 lDT
 lDT
 xuM
-abv
+ocJ
 pxI
-abv
+ocJ
 pxI
-abv
+ocJ
 pxI
 xuM
 abT
