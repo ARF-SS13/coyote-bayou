@@ -33,13 +33,13 @@
 // AXES //
 //////////			-bonus damage to all doors, windows
 
-// Legion Axe		Keywords: Damage 47/60
+// Legion Axe		Keywords: Damage 30/60 do not change these numbers
 /obj/item/twohanded/legionaxe
 	name = "War Honed Axe"
 	desc = "Heavy fireman axe from the old world, Restored to working order by legion craftsmen. Excellent for smashing doors or heads."
 	icon_state = "legionaxe"
 	icon_prefix = "legionaxe"
-	force = 47
+	force = 30
 	throwforce = 15
 	wound_bonus = 10
 	bare_wound_bonus = 10
@@ -51,7 +51,7 @@
 /obj/item/twohanded/legionaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=47, force_wielded=60, icon_wielded="[icon_prefix]2")
+	AddComponent(/datum/component/two_handed, force_unwielded=30, force_wielded=60, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/legionaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
