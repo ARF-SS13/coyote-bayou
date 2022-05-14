@@ -3,36 +3,55 @@
 #define WORKPIECE_FINISHED 3
 #define WORKPIECE_SLAG 5
 
-#define RECIPE_LARGEPICK "ddbp" //draw draw bend punch
-#define RECIPE_SHOVEL "dfup" //draw fold upset punch
-#define RECIPE_HAMMER "sfp" //shrink fold punch
-#define RECIPE_SMALLPICK "ddbbp" //draw draw bend bend punch
+#define RECIPE_LARGEPICK "bff" //bend fold fold
+#define RECIPE_SHOVEL "buu" //bend upset upset
+#define RECIPE_HAMMER "bpp" //bend punch punch
+#define RECIPE_SMALLPICK "bfs" //bend fold shrink
+#define RECIPE_KITCHENKNIFE "bsd" //bend shrink draw
+#define RECIPE_CROWBAR "bbb" //bend bend bend ISSUE
+#define RECIPE_CROWAXE "bbd"  //bend bend draw ISSUE
 
 #define RECIPE_RING "sss" //shrink shrink shrink
+#define RECIPE_BALLANDCHAIN "pbu" //punch bend upset
 
-#define RECIPE_SMALLKNIFE "sdd" //shrink draw draw
-#define RECIPE_SHORTSWORD "dff" //draw fold fold
-#define RECIPE_WAKI "dfsf" //draw  fold shrink fold
-#define RECIPE_SCIMITAR "dfb" //draw fold bend
-#define RECIPE_SABRE "ddsf" //draw draw shrink fold
-#define RECIPE_RAPIER "sdfd" //shrink draw  fold draw
-#define RECIPE_BROADSWORD "dfuf" //draw fold upset fold
-#define RECIPE_ZWEIHANDER "udfsf" //upset draw fold shrink fold
+#define RECIPE_MACHETE "fdf" //fold draw fold
+#define RECIPE_SABRE "ffdd" //fold fold draw draw
+#define RECIPE_SWORD "ffdf" // fold fold draw fold
+#define RECIPE_WAKI "fffd" //fold fold fold draw
 #define RECIPE_KATANA "fffff" //fold fold fold fold fold
 
-#define RECIPE_JAVELIN "dbf" //draw bend fold
-#define RECIPE_HALBERD "duffp" //draw upset fold fold punch
-#define RECIPE_GLAIVE "usfp" //upset shrink fold punch
-#define RECIPE_PIKE "ddbf" //draw draw bend fold
+#define RECIPE_MACE "upu"  //upset punch upset
+#define RECIPE_AXE "udsp" //upset draw shrink punch
 
+#define RECIPE_DAGGER "dfs" //draw fold shrink
+#define RECIPE_SPEAR "ddbf" //draw draw bend fold
+#define RECIPE_JAVELIN "dbf" //draw bend fold
+#define RECIPE_THROWING "dbd" //draw bend draw
+
+//Tablevil specific
+#define RECIPE_MACHREFORG "fdf" //fold punch punch
+#define RECIPE_SCRAP "udsp" //upset draw shrink punch
+
+//Legion specific
+#define RECIPE_LANCE "ddbf" //draw draw fold fold
+#define RECIPE_GLADIUS "fdf" //fold draw fold
+#define RECIPE_SPATHA "ffdf" // fold fold draw fold
+
+// Logic of smithing recipes: Tools start with bend and have 3 steps. 1h weapons have 3-4 steps. 2h weapons have 4-5 steps. Bigger bladed stuff start with a fold. Pointy stuff generally start with a draw. Unusual stuff migth start with upset.
+// Point of having a structure is obviously to help remember, not just keeping every recipe as pure rote memory with no internal logic. If you add more stuff and fuck this up and don't read comments I hope you get a prolapse. - Pebbles
 
 /obj/structure/anvil
 	name = "anvil"
 	desc = "Base class of anvil. This shouldn't exist, but is useable."
-	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "anvil"
 	density = TRUE
 	anchored = TRUE
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 	var/busy = FALSE //If someone is already interacting with this anvil
 	var/workpiece_state = FALSE
 	var/datum/material/workpiece_material
@@ -49,20 +68,23 @@
 	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
 	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
 	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
-	RECIPE_RING = /obj/item/smithing/jewelry/ring,
-	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
-	RECIPE_SHORTSWORD = /obj/item/smithing/shortswordblade,
-	RECIPE_SCIMITAR = /obj/item/smithing/scimitarblade,
-	RECIPE_RAPIER = /obj/item/smithing/rapierblade,
+	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
+	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
+	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
+	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
+	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
+	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
+	RECIPE_MACHETE = /obj/item/smithing/macheteblade,
+	RECIPE_SWORD = /obj/item/smithing/swordblade,
 	RECIPE_SABRE = /obj/item/smithing/sabreblade,
-	RECIPE_SMALLKNIFE = /obj/item/smithing/knifeblade,
-	RECIPE_BROADSWORD = /obj/item/smithing/broadblade,
-	RECIPE_ZWEIHANDER = /obj/item/smithing/zweiblade,
-	RECIPE_HALBERD = /obj/item/smithing/halberdhead,
-	RECIPE_GLAIVE = /obj/item/smithing/glaivehead,
-	RECIPE_PIKE = /obj/item/smithing/pikehead,
 	RECIPE_WAKI = /obj/item/smithing/wakiblade,
-	RECIPE_KATANA = /obj/item/smithing/katanablade,)
+	RECIPE_KATANA = /obj/item/smithing/katanablade,
+	RECIPE_MACE = /obj/item/smithing/macehead,
+	RECIPE_AXE = /obj/item/smithing/axehead,
+	RECIPE_SPEAR = /obj/item/smithing/spearhead,
+	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
+	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+)
 
 /obj/structure/anvil/Initialize()
 	. = ..()
@@ -81,7 +103,8 @@
 			currentquality = anvilquality
 			var/skillmod = 4
 			if(workpiece_state == WORKPIECE_PRESENT)
-				add_overlay(image(icon= 'icons/fallout/objects/blacksmith.dmi',icon_state="workpiece"))
+				add_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+				set_light_on(TRUE)
 			if(user.mind.skill_holder)
 				skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2
 			currentquality += skillmod
@@ -120,10 +143,6 @@
 		return
 	return ..()
 
-/obj/structure/anvil/wrench_act(mob/living/user, obj/item/I)
-	..()
-	default_unfasten_wrench(user, I, 5)
-	return TRUE
 
 /obj/structure/anvil/proc/do_shaping(mob/user, qualitychange)
 	var/mob/living/carbon/human/F = user
@@ -205,7 +224,8 @@
 		finalfailchance = max(0, finalfailchance / skillmod) //lv 2 gives 20% less to fail, 3 30%, etc
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
 		to_chat(user, "<span class='warning'>You overwork the metal, causing it to turn into useless slag!</span>")
-		cut_overlay(image(icon= 'icons/fallout/objects/blacksmith.dmi',icon_state="workpiece"))
+		cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+		set_light_on(FALSE)
 		var/turf/T = get_turf(src)
 		workpiece_state = FALSE
 		new /obj/item/stack/ore/slag(T)
@@ -218,11 +238,12 @@
 			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 25, 400, silent = FALSE)
 	for(var/i in smithrecipes)
 		if(i == stepsdone)
-			var/turf/T = get_turf(user)
+			var/turf/T = get_turf(src)
 			var/obj/item/smithing/create = smithrecipes[stepsdone]
 			var/obj/item/smithing/finisheditem = new create(T)
 			to_chat(user, "You finish your [finisheditem]!")
-			cut_overlay(image(icon= 'icons/fallout/objects/blacksmith.dmi',icon_state="workpiece"))
+			cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
+			set_light_on(FALSE)
 			if(artifact)
 				to_chat(user, "It is an artifact, a creation whose legacy shall live on forevermore.") //todo: SSblackbox
 				currentquality = max(currentquality, 2)
@@ -269,17 +290,73 @@
 // Best anvil, should be hard to find or make more
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
-	desc = "An anvil. It's got wheels bolted to the bottom."
+	desc = "Made from solid steel, you wont be moving this around any time soon."
 	anvilquality = 1
 	itemqualitymax = 8
 
-// Decent makeshift anvil, can break
+// Don't make this craftable.
+/obj/structure/anvil/obtainable/legion
+	name = "anvil"
+	desc = "A solid steel anvil with a stamped bull on it."
+	icon_state = "legvil"
+	anchored = TRUE
+	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
+	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
+	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
+	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
+	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
+	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
+	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
+	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
+	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
+	RECIPE_GLADIUS =  /obj/item/smithing/gladiusblade,
+	RECIPE_SPATHA = /obj/item/smithing/spathablade,
+	RECIPE_SABRE = /obj/item/smithing/sabreblade,
+	RECIPE_WAKI = /obj/item/smithing/wakiblade,
+	RECIPE_KATANA = /obj/item/smithing/katanablade,
+	RECIPE_MACE = /obj/item/smithing/macehead,
+	RECIPE_AXE = /obj/item/smithing/axehead,
+	RECIPE_LANCE = /obj/item/smithing/lancehead,
+	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
+	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+)
+
+
+// Decent makeshift anvil, can break, mobile. Gets the exclusive scrap version of the machete and 2h chopper.
 /obj/structure/anvil/obtainable/table
 	name = "table anvil"
-	desc = "A reinforced table. Usable as an anvil, but unequal weight distribution will impact the quality of your weapons."
+	desc = "A reinforced table. Usable as an anvil, favored by mad wastelanders and the dregs of the wasteland. Can be loosened from its bolts and moved."
 	icon_state = "tablevil"
 	anvilquality = 0
-	itemqualitymax = 6
+	itemqualitymax = 7
+	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
+	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
+	RECIPE_LARGEPICK = /obj/item/smithing/pickaxehead,
+	RECIPE_SMALLPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
+	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
+	RECIPE_CROWAXE = /obj/item/smithing/crowaxe,
+	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
+	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
+	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
+	RECIPE_MACHREFORG = /obj/item/smithing/macheterblade,
+	RECIPE_SWORD = /obj/item/smithing/swordblade,
+	RECIPE_SABRE = /obj/item/smithing/sabreblade,
+	RECIPE_WAKI = /obj/item/smithing/wakiblade,
+	RECIPE_KATANA = /obj/item/smithing/katanablade,
+	RECIPE_MACE = /obj/item/smithing/macehead,
+	RECIPE_SPEAR = /obj/item/smithing/spearhead,
+	RECIPE_SCRAP = /obj/item/smithing/scrapblade,
+	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
+	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+)
+
+/obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)
+	..()
+	default_unfasten_wrench(user, I, 5)
+	return TRUE
+
 
 /obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
 	if(prob(2))
@@ -296,19 +373,9 @@
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
 	anvilquality = -1
-	itemqualitymax = 5
+	itemqualitymax = 7
 
-
-// Remnant trash
-
-/obj/structure/anvil/obtainable/bronze
-	name = "slab of bronze"
-	desc = "A big block of bronze. Useable as an anvil."
-	custom_materials = list(/datum/material/bronze=8000)
-	icon_state = "ratvaranvil"
-	anvilquality = 0
-	itemqualitymax = 6
-
+// Debug anvil for some reason
 /obj/structure/anvil/debugsuper
 	name = "super ultra epic anvil of debugging."
 	desc = "WOW. A DEBUG <del>ITEM</DEL> STRUCTURE. EPIC."
@@ -317,9 +384,20 @@
 	itemqualitymax = 9001
 	outrightfailchance = 0
 
+// Remnant trash
+/obj/structure/anvil/obtainable/bronze
+	name = "slab of bronze"
+	desc = "A big block of bronze. Useable as an anvil."
+	icon = 'icons/obj/smith.dmi'
+	custom_materials = list(/datum/material/bronze=8000)
+	icon_state = "ratvaranvil"
+	anvilquality = 0
+	itemqualitymax = 6
+
 /obj/structure/anvil/obtainable/ratvar
 	name = "brass anvil"
 	desc = "A big block of what appears to be brass. Useable as an anvil, if whatever's holding the brass together lets you."
+	icon = 'icons/obj/smith.dmi'
 	custom_materials = list(/datum/material/bronze=8000)
 	icon_state = "ratvaranvil"
 	anvilquality = 1

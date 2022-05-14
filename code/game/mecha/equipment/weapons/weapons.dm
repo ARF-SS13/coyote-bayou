@@ -72,26 +72,26 @@
 	addtimer(CALLBACK(src, .proc/set_ready_state, 1), equip_cooldown)
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser
-	equip_cooldown = 8
+	equip_cooldown = 7
 	name = "\improper CH-PS \"Immolator\" laser"
 	desc = "A weapon for combat exosuits. Shoots basic lasers."
 	icon_state = "mecha_laser"
-	energy_drain = 30
-	projectile = /obj/item/projectile/beam/laser
+	energy_drain = 50
+	projectile = /obj/item/projectile/beam/laser/mech/light
 	fire_sound = 'sound/weapons/laser.ogg'
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser/heavy
-	equip_cooldown = 15
+	equip_cooldown = 14
 	name = "\improper CH-LC \"Solaris\" laser cannon"
 	desc = "A weapon for combat exosuits. Shoots heavy lasers."
 	icon_state = "mecha_laser"
-	energy_drain = 60
-	projectile = /obj/item/projectile/beam/laser/heavylaser
+	energy_drain = 100
+	projectile = /obj/item/projectile/beam/laser/mech/heavy
 	fire_sound = 'sound/weapons/lasercannonfire.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/ion
-	equip_cooldown = 20
+	equip_cooldown = 16
 	name = "\improper MKIV ion heavy cannon"
 	desc = "A weapon for combat exosuits. Shoots technology-disabling ion beams. Don't catch yourself in the blast!"
 	icon_state = "mecha_ion"
@@ -100,7 +100,7 @@
 	fire_sound = 'sound/weapons/laser.ogg'
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/tesla
-	equip_cooldown = 35
+	equip_cooldown = 25
 	name = "\improper MKI Tesla Cannon"
 	desc = "A weapon for combat exosuits. Fires bolts of electricity similar to the experimental tesla engine."
 	icon_state = "mecha_ion"
@@ -110,24 +110,24 @@
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
-	equip_cooldown = 30
-	name = "eZ-13 MK2 heavy pulse rifle"
-	desc = "A weapon for combat exosuits. Shoots powerful destructive blasts capable of demolishing obstacles."
+	equip_cooldown = 40
+	name = "\improper MKII heavy pulse cannon"
+	desc = "A weapon for combat exosuits. Shoots powerful destructive blasts."
 	icon_state = "mecha_pulse"
-	energy_drain = 120
-	projectile = /obj/item/projectile/beam/pulse/heavy
+	energy_drain = 500
+	projectile = /obj/item/projectile/beam/laser/mech/pulse
 	fire_sound = 'sound/weapons/marauder.ogg'
 	harmful = TRUE
 
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/plasma
-	equip_cooldown = 10
+	equip_cooldown = 6
 	name = "217-D Heavy Plasma Cutter"
 	desc = "A device that shoots resonant plasma bursts at extreme velocity. The blasts are capable of crushing rock and demolishing solid obstacles."
 	icon_state = "mecha_plasmacutter"
 	item_state = "plasmacutter"
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
-	energy_drain = 30
+	energy_drain = 50
 	projectile = /obj/item/projectile/plasma/adv/mech
 	fire_sound = 'sound/weapons/plasma_cutter.ogg'
 	harmful = TRUE
@@ -143,8 +143,8 @@
 	name = "\improper PBT \"Pacifier\" mounted taser"
 	desc = "A weapon for combat exosuits. Shoots non-lethal stunning electrodes."
 	icon_state = "mecha_taser"
-	energy_drain = 20
-	equip_cooldown = 8
+	energy_drain = 50
+	equip_cooldown = 10
 	projectile = /obj/item/projectile/energy/electrode
 	fire_sound = 'sound/weapons/taser.ogg'
 
@@ -231,6 +231,7 @@
 	name = "\improper LBX AC 10 \"Scattershot\""
 	desc = "A weapon for combat exosuits. Shoots a spread of pellets."
 	icon_state = "mecha_scatter"
+	fire_sound = 'sound/weapons/sound_weapons_mech_shotgun.ogg'
 	equip_cooldown = 20
 	projectile = /obj/item/projectile/bullet/scattershot
 	projectiles = 40
@@ -259,6 +260,7 @@
 	name = "\improper Ultra AC 2"
 	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
 	icon_state = "mecha_uac2"
+	fire_sound = 'sound/weapons/sound_weapons_mech_autocannon.ogg'
 	equip_cooldown = 10
 	projectile = /obj/item/projectile/bullet/lmg
 	projectiles = 300
@@ -276,7 +278,7 @@
 	desc = "A weapon for combat exosuits. Launches light explosive missiles."
 	icon_state = "mecha_missilerack"
 	projectile = /obj/item/projectile/bullet/a84mm_he
-	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	fire_sound = 'sound/weapons/sound_weapons_mech_mortar.ogg'
 	projectiles = 8
 	projectiles_cache = 0
 	projectiles_cache_max = 0
@@ -290,7 +292,6 @@
 	desc = "A weapon for combat exosuits. Launches low-explosive breaching missiles designed to explode only when striking a sturdy target."
 	icon_state = "mecha_missilerack_six"
 	projectile = /obj/item/projectile/bullet/a84mm_br
-	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	projectiles = 6
 	projectiles_cache = 0
 	projectiles_cache_max = 0

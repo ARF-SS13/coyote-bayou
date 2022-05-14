@@ -80,3 +80,11 @@
 	if(!n_color || !H.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return default_color
 	return sanitize_hexcolor(n_color, 3, FALSE, default_color)
+
+/obj/structure/dresser/modern
+	desc = "A dresser in a modern circular style."
+	icon_state = "dresser_retro"
+
+/obj/structure/dresser/modern2
+	desc = "A dresser in a modern circular style."
+	icon_state = "dresser_retro2"

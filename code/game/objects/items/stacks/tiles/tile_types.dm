@@ -163,34 +163,55 @@
 
 //Wood
 /obj/item/stack/tile/wood
-	name = "wooden plank floor tile"
-	singular_name = "wood floor tile"
+	name = "wooden floor tile"
+	singular_name = "wooden floor tile"
 	desc = "An easy to fit wood floor tile."
 	icon_state = "tile-wood"
 	turf_type = /turf/open/floor/wood
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/tile/wood
 
-/obj/item/stack/tile/wood/wood_large
-	name = "large wooden plank floor tile"
-	singular_name = "large wooden plank floor tile"
+/obj/item/stack/tile/wood/wood_wide
+	name = "wide wooden floor tile"
+	singular_name = "wide wooden floor tile"
 	icon_state = "tile-wood_large"
-	turf_type = /turf/open/floor/wood/wood_large
-	merge_type = /obj/item/stack/tile/wood/wood_large
+	turf_type = /turf/open/floor/wood/wood_wide
+	merge_type = /obj/item/stack/tile/wood/wood_wide
 
-/obj/item/stack/tile/wood/wood_tiled
-	name = "tiled wooden plank floor tile"
-	singular_name = "tiled wooden plank floor tile"
+/obj/item/stack/tile/wood/wood_mosaic
+	name = "tiled wooden floor tile"
+	singular_name = "tiled wooden floor tile"
 	icon_state = "tile-wood_tile"
-	turf_type = /turf/open/floor/wood/wood_tiled
-	merge_type = /obj/item/stack/tile/wood/wood_tiled
+	turf_type = /turf/open/floor/wood/wood_mosaic
+	merge_type = /obj/item/stack/tile/wood/wood_mosaic
 
 /obj/item/stack/tile/wood/wood_diagonal
-	name = "diagonal wooden plank floor tile"
-	singular_name = "diagonal wooden plank floor tile"
+	name = "diagonal wooden floor tile"
+	singular_name = "diagonal wooden floor tile"
 	icon_state = "tile-wood_diagonal"
 	turf_type = /turf/open/floor/wood/wood_diagonal
 	merge_type = /obj/item/stack/tile/wood/wood_diagonal
+
+/obj/item/stack/tile/wood/wood_maple
+	name = "maple wooden floor tile"
+	singular_name = "maple wooden floor tile"
+	icon_state = "tile-wood_diagonal"
+	turf_type = /turf/open/floor/wood/wood_maple
+	merge_type = /obj/item/stack/tile/wood/wood_maple
+
+/obj/item/stack/tile/wood/wood_chestnut
+	name = "chestnut wooden floor tile"
+	singular_name = "chestnut wooden floor tile"
+	icon_state = "tile-wood_chestnut"
+	turf_type = /turf/open/floor/wood/wood_chestnut
+	merge_type = /obj/item/stack/tile/wood/wood_chestnut
+
+/obj/item/stack/tile/wood/wood_worn
+	name = "worn wooden floor tile"
+	singular_name = "worn wooden floor tile"
+	icon_state = "tile-wood_worn"
+	turf_type = /turf/open/floor/wood/wood_worn
+	merge_type = /obj/item/stack/tile/wood/wood_worn
 
 //Cloth Floors
 

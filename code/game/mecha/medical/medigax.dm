@@ -1,17 +1,14 @@
 /obj/mecha/medical/medigax
-	desc = "A Gygax with its actuator overload stripped and a slick white paint scheme, for medical use, These exosuits are developed and produced by Vey-Med. (&copy; All rights reserved)."
 	name = "\improper Medical Gygax"
+	desc = "A pre-War medical exosuit based on the Gygax platform. It features a robust suspension to safetly transport patients over rough terrain. The exterior plating is advertised as able to withstand minor impacts and is anti-microbial to boot."
 	icon_state = "medigax"
 	step_in = 1.75 // a little faster than an odysseus
 	max_temperature = 25000
-	max_integrity = 250
-	wreckage = /obj/structure/mecha_wreckage/odysseus
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 30, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	internal_damage_threshold = 35
-	deflect_chance = 15
-	step_energy_drain = 6
-	infra_luminosity = 6
-
+	max_integrity = 350
+	wreckage = /obj/structure/mecha_wreckage/medigax
+	armor = list("melee" = 25, "bullet" = 20, "laser" = 25, "energy" = 15, "bomb" = 20, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	internal_damage_threshold = 30
+	step_energy_drain = 30
 
 /obj/mecha/medical/medigax/moved_inside(mob/living/carbon/human/H)
 	. = ..()

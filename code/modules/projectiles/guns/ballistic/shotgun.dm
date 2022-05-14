@@ -309,10 +309,10 @@
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
 
-//Lever action shotgun					Keywords: LEGION, Shotgun, Lever-action, 5 round magazine, Pistol grip
+//Lever action shotgun					Keywords: Shotgun, Lever-action, 5 round magazine, Pistol grip
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
-	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber. Signature weapon of the Legion."
+	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"

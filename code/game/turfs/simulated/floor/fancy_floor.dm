@@ -8,16 +8,22 @@
  */
 
 /turf/open/floor/wood
-	desc = "Stylish dark wood."
-	icon_state = "wood"
+	desc = "Wood cast in a sturdy standard pattern."
+	icon = 'icons/fallout/turfs/wood_floor.dmi'
+	icon_state = "common1"
 	floor_tile = /obj/item/stack/tile/wood
 	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 0.25)
-	broken_states = list("wood-broken", "wood-broken2", "wood-broken3", "wood-broken4", "wood-broken5", "wood-broken6", "wood-broken7")
+	broken_states = list("common-broken1","common-broken2","common-broken3","common-broken4","common-broken5","common-broken6",)
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_WOOD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
+
+	New()
+		..()
+		if(icon_state == "common1")
+			icon_state = "common[rand(1,3)]"
 
 /turf/open/floor/wood/examine(mob/user)
 	. = ..()
@@ -74,23 +80,81 @@
 /turf/open/floor/wood/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
-/turf/open/floor/wood/wood_large
-	desc = "Stylish dark wood."
-	icon_state = "large_wood"
-	floor_tile = /obj/item/stack/tile/wood/wood_large
-	broken_states = list("large_wood-broken", "large_wood-broken2", "large_wood-broken3")
 
-/turf/open/floor/wood/wood_tiled
-	desc = "Stylish dark wood."
-	icon_state = "wood_tile"
-	floor_tile = /obj/item/stack/tile/wood/wood_tiled
-	broken_states = list("wood_tile-broken", "wood_tile-broken2", "wood_tile-broken3")
+/turf/open/floor/wood/wood_wide
+	desc = "Wood cast in a functional wide pattern."
+	icon_state = "wide1"
+	floor_tile = /obj/item/stack/tile/wood/wood_wide
+	broken_states = list("wide-broken1","wide-broken2","wide-broken3","wide-broken4","wide-broken5","wide-broken6")
+
+	New()
+		..()
+		if(icon_state == "wide1")
+			icon_state = "wide[rand(1,3)]"
+
+
+/turf/open/floor/wood/wood_mosaic
+	desc = "Wood cast in a mosaic tiled pattern."
+	icon_state = "mosaic1"
+	floor_tile = /obj/item/stack/tile/wood/wood_mosaic
+	broken_states = list("mosaic-broken1","mosaic-broken2","mosaic-broken3","mosaic-broken4","mosaic-broken5","mosaic-broken6")
+
+	New()
+		..()
+		if(icon_state == "mosaic1")
+			icon_state = "mosaic[rand(1,3)]"
+
 
 /turf/open/floor/wood/wood_diagonal
-	desc = "Stylish dark wood."
-	icon_state = "diagonal_wood"
+	desc = "Wood cast in a fancy diagonal pattern."
+	icon_state = "fancy"
 	floor_tile = /obj/item/stack/tile/wood/wood_diagonal
-	broken_states = list("diagonal_wood-broken", "diagonal_wood-broken2", "diagonal_wood-broken3")
+	broken_states = list("fancy-broken1","fancy-broken2","fancy-broken3","fancy-broken4","fancy-broken5","fancy-broken6")
+
+
+
+/turf/open/floor/wood/wood_maple
+	desc = "Wood cast in a light maple."
+	icon_state = "maplefloor1"
+	floor_tile = /obj/item/stack/tile/wood/wood_maple
+
+	New()
+		..()
+		if(icon_state == "maplefloor1")
+			icon_state = "maplefloor[rand(1,4)]"
+
+
+/turf/open/floor/wood/wood_chestnut
+	desc = "Wood cast in a homely chestnut."
+	icon_state = "chestnut1"
+	floor_tile = /obj/item/stack/tile/wood/wood_chestnut
+	broken_states = list("chestnut-broken1","chestnut-broken2","chestnut-broken3","chestnut-broken4","chestnut-broken5","chestnut-broken6")
+
+	New()
+		..()
+		if(icon_state == "chestnut1")
+			icon_state = "chestnut[rand(1,4)]"
+
+
+/turf/open/floor/wood/wood_worn
+	desc = "Wood with a rather rugged appearance."
+	icon_state = "worn1"
+	floor_tile = /obj/item/stack/tile/wood/wood_worn
+	broken_states = list("worn-broken1","worn-broken2","worn-broken3","worn-broken4","worn-broken5","worn-broken6")
+
+	New()
+		..()
+		if(icon_state == "worn1")
+			icon_state = "worn[rand(1,4)]"
+
+
+
+
+
+
+
+
+
 
 /turf/open/floor/grass
 	name = "grass patch"
@@ -333,7 +397,7 @@
 	icon = 'icons/turf/floors/carpet_royalblue.dmi'
 	floor_tile = /obj/item/stack/tile/carpet/royalblue
 	canSmoothWith = list(/turf/open/floor/carpet/royalblue, /turf/open/floor/carpet/royalblue/airless)
-	
+
 /turf/open/floor/carpet/vault
 	icon = 'icons/turf/floors/carpet_vault.dmi'
 	canSmoothWith = list(/turf/open/floor/carpet/vault)

@@ -51,7 +51,7 @@
 	subcategory = CAT_FORGING
 
 /datum/crafting_recipe/furnace
-	name = "Sandstone Furnace"
+	name = "Furnace"
 	result = /obj/structure/furnace
 	time = 300
 	reqs = list(
@@ -70,6 +70,18 @@
 		/obj/item/stack/sheet/metal = 10,
 		)
 	time = 80
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
+/datum/crafting_recipe/tools/forged/sledge
+	name = "Sledgehammer"
+	result = /obj/item/twohanded/sledgehammer/simple
+	time = 700
+	reqs = list(
+		/obj/item/stack/sheet/metal = 15,
+		/obj/item/stack/sheet/mineral/wood = 5,
+		)
+	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
@@ -93,7 +105,7 @@
 	time = 150
 	reqs = list(
 		/obj/item/stack/sheet/metal = 3,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		/obj/item/stack/sheet/cloth = 1,
 		)
 	tools = list(TOOL_FORGE)
@@ -119,7 +131,7 @@
 	time = 300
 	reqs = list(
 		/obj/item/stack/sheet/metal = 6,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -142,7 +154,7 @@
 	time = 100
 	reqs = list(
 		/obj/item/stack/sheet/metal = 5,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
@@ -165,7 +177,7 @@
 	result = /obj/item/melee/onehanded/knife/bowie
 	reqs = list(
 		/obj/item/stack/sheet/metal = 8,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	time = 200
 	tools = list(TOOL_FORGE)
@@ -178,7 +190,7 @@
 	reqs = list(
 		/obj/item/stack/sheet/metal = 5,
 		/obj/item/stack/crafting/goodparts = 2,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	time = 280
 	tools = list(TOOL_FORGE)
@@ -204,7 +216,7 @@
 	reqs = list(
 		/obj/item/stack/sheet/metal = 10,
 		/obj/item/stack/sheet/cloth = 1,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	time = 180
 	tools = list(TOOL_FORGE)
@@ -227,7 +239,7 @@
 
 
 // LEGION SPECIFIC
-
+/*
 /datum/crafting_recipe/spatha
 	name = "Spatha"
 	result = /obj/item/melee/onehanded/machete/spatha
@@ -249,23 +261,9 @@
 	reqs = list(
 		/obj/item/stack/sheet/metal = 15,
 		/obj/item/stack/sheet/cloth = 1,
-		/obj/item/swordhandle = 1,
+		/obj/item/blacksmith/swordhandle = 1,
 		)
 	time = 280
-	tools = list(TOOL_FORGE)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
-	always_available = FALSE
-
-/datum/crafting_recipe/legionshield
-	name = "Legion Shield"
-	result = /obj/item/shield/riot/legion
-	reqs = list(
-		/obj/item/stack/sheet/metal = 8,
-		/obj/item/stack/sheet/mineral/wood = 8,
-		/obj/item/stack/sheet/leather = 2,
-		)
-	time = 250
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -280,6 +278,21 @@
 		/obj/item/stack/sheet/mineral/wood = 6,
 		)
 	time = 180
+	tools = list(TOOL_FORGE)
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+	always_available = FALSE
+*/
+
+/datum/crafting_recipe/legionshield
+	name = "Legion Shield"
+	result = /obj/item/shield/riot/legion
+	reqs = list(
+		/obj/item/stack/sheet/metal = 8,
+		/obj/item/stack/sheet/mineral/wood = 8,
+		/obj/item/stack/sheet/leather = 2,
+		)
+	time = 250
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
@@ -373,18 +386,6 @@
 ///////////
 // TOOLS //
 ///////////
-
-/datum/crafting_recipe/tools/forged/sledge
-	name = "Sledgehammer"
-	result = /obj/item/twohanded/sledgehammer/simple
-	time = 700
-	reqs = list(
-		/obj/item/stack/sheet/metal = 15,
-		/obj/item/stack/sheet/mineral/wood = 5,
-		)
-	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
-	category = CAT_WEAPONRY
-	subcategory = CAT_MELEE
 
 /datum/crafting_recipe/crusher
 	name = "Kinetic Crusher"

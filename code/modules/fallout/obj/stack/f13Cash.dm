@@ -74,6 +74,10 @@
 /obj/item/stack/f13Cash/caps
 	merge_type = /obj/item/stack/f13Cash/caps
 
+/obj/item/stack/f13Cash/caps/onezerozero
+	amount = 100
+	merge_type = /obj/item/stack/f13Cash/caps
+
 /obj/item/stack/f13Cash/caps/fivezerozero
 	amount = 500
 	merge_type = /obj/item/stack/f13Cash/caps

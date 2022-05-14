@@ -5,7 +5,8 @@
 		"Dungeons.dmm",
 		"Pahrump-Sunset-Lower.dmm",
 		"Pahrump-Sunset.dmm",
-		"Pahrump-Sunset-Upper.dmm"
+		"Pahrump-Sunset-Upper.dmm",
+		"Pahrump-Sunset-Upper-2.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -37,6 +38,14 @@
 			"Up": 1,
 			"Down": -1,
 			"Linkage" : "Cross"
+		},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/transparent/openspace",
+			"Up": 1,
+			"Down": -1,
+			"Linkage" : "Cross",
+			"Above": true
 		},
 		{
 			"Gravity": true,

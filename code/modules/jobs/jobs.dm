@@ -143,17 +143,8 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 ))
 
 GLOBAL_LIST_INIT(oasis_positions, list(
-	"Mayor",
-	"Secretary",
-	"Sheriff",
-	"Deputy",
-	"Banker",
-	"Doctor",
 	"Shopkeeper",
 	"Barkeep",
-	"Farmer",
-	"Prospector",
-	"Detective",
 	"Citizen",
 ))
 
@@ -222,12 +213,20 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Mob Enforcer",
 	"Den Doctor",
 	"Outlaw",
-	"Great Khan",
 	"Faithful",
 	"Vigilante",
 	"Preacher",
 	"Tribal",
 	"Wastelander",
+))
+
+GLOBAL_LIST_INIT(khan_positions, list(
+	"Noyan",
+	"Steward",
+	"Kheshig",
+	"Khorchin",
+	"Kipchak",
+	"Mangudai",
 ))
 
 GLOBAL_LIST_INIT(enclave_positions, list(
@@ -276,6 +275,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
+	EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
 ))
 
@@ -300,6 +300,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_VAULT = list("titles" = vault_positions),
 	EXP_TYPE_WASTELAND = list("titles" = wasteland_positions),
 	EXP_TYPE_TRIBAL = list("titles" = tribal_positions),
+	EXP_TYPE_KHAN = list("titles" = khan_positions),
 	EXP_TYPE_FOLLOWERS = list("titles" = followers_positions),
 	EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
 	EXP_TYPE_RANGER = list("titles" = list("NCR Veteran Ranger","NCR Ranger")),

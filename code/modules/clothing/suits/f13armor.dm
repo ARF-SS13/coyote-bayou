@@ -167,7 +167,7 @@
 /obj/item/clothing/suit/armor/f13/combat/laserproof
 	name = "ablative combat armor"
 	desc = "An old military grade pre war combat armor. This one switches out its ballistic fibers for an ablative coating that disrupts energy weapons."
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 80, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 60, "energy" = 50, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
 /obj/item/clothing/suit/armor/f13/combat/dark
 	name = "combat armor"
@@ -264,23 +264,24 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	var/requires_training = TRUE
 	var/powered = TRUE
+	var/emped = 0
 
 /obj/item/clothing/suit/armor/f13/power_armor/mob_can_equip(mob/user, mob/equipper, slot, disable_warning = 1)
-    var/mob/living/carbon/human/H = user
-    if(src == H.wear_suit) //Suit is already equipped
-        return ..()
-    if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-        to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
-        return 0
-    if(slot == SLOT_WEAR_SUIT && powered)
-        ADD_TRAIT(user, TRAIT_STUNIMMUNE,    "PA_stun_immunity")
-        ADD_TRAIT(user, TRAIT_PUSHIMMUNE,    "PA_push_immunity")
-        ADD_TRAIT(user, SPREAD_CONTROL,    "PA_spreadcontrol")
+	var/mob/living/carbon/human/H = user
+	if(src == H.wear_suit) //Suit is already equipped
+		return ..()
+	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
+		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		return 0
+	if(slot == SLOT_WEAR_SUIT && powered)
+		ADD_TRAIT(user, TRAIT_STUNIMMUNE,    "PA_stun_immunity")
+		ADD_TRAIT(user, TRAIT_PUSHIMMUNE,    "PA_push_immunity")
+		ADD_TRAIT(user, SPREAD_CONTROL,    "PA_spreadcontrol")
 
-        return ..()
-    if(slot == SLOT_WEAR_SUIT && !powered)
-        return ..()
-    return
+		return ..()
+	if(slot == SLOT_WEAR_SUIT && !powered)
+		return ..()
+	return
 
 /obj/item/clothing/suit/armor/f13/power_armor/dropped(mob/user)
 	if(powered)
@@ -295,23 +296,29 @@
 		return
 	if(!powered)
 		return
-	if(isliving(loc) && prob(severity*1.5))
-		var/time_slowed = severity / 10 SECONDS
-		var/mob/living/L = loc
-		to_chat(L, "<span class='warning'>Warning: electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
-		slowdown += 1.2
-		if(istype(L))
+	if(!emped)
+		if(isliving(loc))
+			var/mob/living/L = loc
+			var/induced_slowdown = 0
+			if(severity >= 41) //heavy emp
+				induced_slowdown = 4
+				to_chat(L, "<span class='boldwarning'>Warning: severe electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			else
+				induced_slowdown = 2
+				to_chat(L, "<span class='warning'>Warning: light electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+			emped = TRUE
+			slowdown += induced_slowdown
 			L.update_equipment_speed_mods()
-		addtimer(CALLBACK(src, .proc/end_emp_effect), time_slowed)
+			addtimer(CALLBACK(src, .proc/end_emp_effect, induced_slowdown), 50)
+	return
 
-/obj/item/clothing/suit/armor/f13/power_armor/proc/end_emp_effect()
+/obj/item/clothing/suit/armor/f13/power_armor/proc/end_emp_effect(slowdown_induced)
+	emped = FALSE
+	slowdown -= slowdown_induced // Even if armor is dropped it'll fix slowdown
 	if(isliving(loc))
 		var/mob/living/L = loc
-		slowdown -= 1.2
 		to_chat(L, "<span class='warning'>Armor power reroute successful. All systems operational.</span>")
-		if(istype(L))
-			L.update_equipment_speed_mods()
-	return TRUE
+		L.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b
 	name = "salvaged T-45b power armor"
@@ -385,6 +392,12 @@
 	desc = "A suit of T-45d Power Armour adorned with the markings of the Brotherhood of Steel. Commonly used by the Paladins of the Brotherhood."
 	icon_state = "t45dpowerarmor_bos"
 	item_state = "t45dpowerarmor_bos"
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/sierra
+	name = "Scorched Sierra power armor"
+	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
+	icon_state = "sierra"
+	item_state = "sierra"
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
@@ -1027,4 +1040,28 @@ obj/item/clothing/suit/armor/f13/exile/cust0m
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 45)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 0.05
+
+/obj/item/clothing/suit/f13/tribal/light/westernwayfarer
+	name = "Western Wayfarer salvaged armor"
+	desc = "A set of scrap and banded metal armor forged by the Wayfarer tribe, due to it's lightweight and unrestrictive nature,  it's used by scouts and agile hunters. A torn cloak hangs around its neck, protecting the user from the harsh desert sands."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "western_wayfarer_armor"
+	item_state = "western_wayfarer_armor"
+	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 0.025
+
+/obj/item/clothing/suit/f13/tribal/heavy/westernwayfarer
+	name = "Western Wayfarer heavy armor"
+	desc = "A Suit of armor crafted by Tribals using pieces of scrap metals and the armor of fallen foes, a bighorner's skull sits on the right pauldron along with bighorner fur lining the collar of the leather bound chest. Along the leather straps adoring it are multiple bone charms with odd markings on them."
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	icon_state = "western_wayfarer_armor_heavy"
+	item_state = "western_wayfarer_armor_heavy"
+	armor = list("melee" = 37, "bullet" = 40, "laser" = 25, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 	slowdown = 0.05

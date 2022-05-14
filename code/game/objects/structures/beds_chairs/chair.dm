@@ -158,7 +158,7 @@
 // Settler chair
 /obj/structure/chair/wood
 	name = "wooden chair"
-	desc = "Simple chair made from weathered old wood."
+	desc = "A basic yet sturdy chair made from weathered old wood."
 	icon_state = "wooden_chair_settler"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -168,6 +168,7 @@
 
 /obj/item/chair/wood
 	name = "wooden chair"
+	desc = "A basic yet sturdy chair made from weathered old wood."
 	icon_state = "wooden_chair_settler_toppled"
 	item_state = "woodenchair"
 	resistance_flags = FLAMMABLE
@@ -177,32 +178,36 @@
 	custom_materials = null
 	break_chance = 50
 
-// Simple wooden chair
-/obj/structure/chair/wood/normal
+// Simple dining chair
+/obj/structure/chair/wood/dining
+	desc = "A commonplace dining chair with a faded green cushion."
 	icon_state = "wooden_chair"
 
-/obj/item/chair/wood/normal
+/obj/item/chair/wood/dining
+	desc = "A commonplace dining chair with a faded green cushion."
 	icon_state = "wooden_chair_toppled"
 	item_state = "wooden_chair"
-	origin_type = /obj/structure/chair/wood/normal
+	origin_type = /obj/structure/chair/wood/dining
 
 // Winged wooden chair
 /obj/structure/chair/wood/wings
+	desc = "An antique wooden chair of distinctive design. Creaky."
 	icon_state = "wooden_chair_fine"
 	item_chair = /obj/item/chair/wood/wings
 
 /obj/item/chair/wood/wings
+	desc = "An antique wooden chair of distinctive design. Creaky."
 	icon_state = "wooden_chair_fine_toppled"
 	origin_type = /obj/structure/chair/wood/wings
 
 // Fancy wooden chair
 /obj/structure/chair/wood/fancy
 	icon_state = "wooden_chair_fancy"
-	name = "fancy wooden chair"
-	desc = "An elegant chair made of luxurious wood."
+	desc = "A well-designed study chair with a faded red cushion."
 	item_chair = /obj/item/chair/wood/fancy
 
 /obj/item/chair/wood/fancy
+	desc = "A well-designed study chair with a faded red cushion."
 	icon_state = "wooden_chair_fancy_toppled"
 	item_state = "wooden_chair_fancy"
 	origin_type = /obj/structure/chair/wood/fancy
@@ -219,10 +224,18 @@
 
 // Plywood chair
 /obj/structure/chair/comfy/plywood
-	name = "plywood chair"
-	desc = "A relaxing plywood chair."
+	name = "deckchair"
+	desc = "A relaxing plywood deckchair."
 	icon_state = "plywood_chair"
 	anchored = FALSE
+	buildstacktype = /obj/item/stack/sheet/mineral/wood
+	buildstackamount = 4
+
+/obj/structure/chair/comfy/throne
+	name = "khan throne"
+	desc = "An ornate wooden chair padded with fine leather. A symbol of authority."
+	icon_state = "throne"
+	anchored = TRUE
 	buildstacktype = /obj/item/stack/sheet/mineral/wood
 	buildstackamount = 4
 
@@ -237,6 +250,19 @@
 
 /obj/structure/chair/comfy/shuttle/GetArmrest()
 	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "shuttle_chair_armrest")
+
+/obj/structure/chair/comfy/modern
+	name = "modern chair"
+	desc = "the latest in pre-war chair technology."
+	icon_state = "synthetic_chair"
+	max_integrity = 250
+	buildstacktype = /obj/item/stack/sheet/prewar
+	buildstackamount = 2
+
+/obj/structure/chair/comfy/modern/GetArmrest()
+	return mutable_appearance('icons/fallout/objects/furniture/chairs_and_beds.dmi', "synthetic_chair_armrest")
+
+
 
 // Office chairs
 /obj/structure/chair/office
@@ -345,7 +371,7 @@
 	color = COLOR_TEAL
 
 /obj/structure/chair/comfy/black
-	color = COLOR_FLOORTILE_GRAY 
+	color = COLOR_FLOORTILE_GRAY
 
 /obj/structure/chair/comfy/green
 	color = COLOR_GREEN_GRAY
@@ -382,7 +408,6 @@
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "f13chair2"
 	item_chair = null
-
 
 //Stool
 
@@ -667,8 +692,6 @@
 	return
 
 //Temporary compilation stuff, obsolete
-/obj/structure/chair/wood/modern
-/obj/structure/chair/wood/worn
 
 /obj/structure/chair/old
 	name = "strange chair"

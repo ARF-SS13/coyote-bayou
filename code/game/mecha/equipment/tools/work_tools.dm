@@ -250,6 +250,7 @@
 	energy_drain = 250
 	range = MELEE|RANGED
 	item_flags = NO_MAT_REDEMPTION
+	mech_flags = EXOSUIT_MODULE_RIPLEY
 	var/mode = 0 //0 - deconstruct, 1 - wall or floor, 2 - airlock.
 
 /obj/item/mecha_parts/mecha_equipment/rcd/Initialize()

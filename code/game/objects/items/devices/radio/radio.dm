@@ -393,7 +393,7 @@
 			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
 	else
 		return ..()
-
+/*
 /obj/item/radio/emp_act(severity)
 	. = ..()
 	if (. & EMP_PROTECT_SELF)
@@ -406,7 +406,7 @@
 		for (var/ch_name in channels)
 			channels[ch_name] = 0
 		on = FALSE
-
+*/
 ///////////////////////////////
 //////////Borg Radios//////////
 ///////////////////////////////

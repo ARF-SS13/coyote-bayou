@@ -195,7 +195,7 @@
 	name = "rusted reinforced wall"
 	desc = "A huge chunk of rusted reinforced metal."
 	icon = 'icons/turf/walls/rusty_reinforced_wall.dmi'
-	hardness = 15
+	hardness = 50
 
 /turf/closed/wall/r_wall/rust/rust_heretic_act()
 	if(prob(50))

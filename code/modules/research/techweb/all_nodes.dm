@@ -97,7 +97,7 @@
 	design_ids = list("solarcontrol", "recharger", "powermonitor", "rped", "pacman", "adv_capacitor", "adv_scanning", "emitter", "high_cell", "adv_matter_bin",
 	"atmosalerts", "atmos_control", "recycler", "autolathe", "autolathe_secure", "high_micro_laser", "nano_mani", "mesons", "thermomachine", "rad_collector", "tesla_coil", "grounding_rod",
 	"apc_control", "power control", "airlock_board", "firelock_board", "airalarm_electronics", "firealarm_electronics", "cell_charger", "stack_console", "stack_machine", "rcd_ammo","oxygen_tank",
-	"plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "colormate", "transitdispenser", "disposaldispenser", "pipedispenser")
+	"plasma_tank", "emergency_oxygen", "emergency_oxygen_engi", "plasmaman_tank_belt", "colormate")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
 	export_price = 5000
 
@@ -278,7 +278,7 @@
 	display_name = "Computer Consoles"
 	description = "Computers and how they work."
 	prereq_ids = list("datatheory")
-	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "miningshuttle", "crewconsole", "rdcamera", "comconsole", "seccamera")
+	design_ids = list("cargo", "cargorequest", "libraryconsole", "mining", "miningshuttle", "crewconsole", "rdcamera", "seccamera")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
 	export_price = 5000
 
@@ -497,7 +497,7 @@
 	display_name = "Weapon Development Technology"
 	description = "Our researchers have found new to weaponize just about everything now."
 	prereq_ids = list("engineering")
-	design_ids = list("pin_testing", "pin", "tele_shield", "pin_auth", "mfc", "ec")
+	design_ids = list("pin_testing", "tele_shield", "mfc", "ec")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000
 
@@ -823,7 +823,7 @@
 	id = "syndicate_basic"
 	display_name = "Very Dangerous Technology"
 	description = "Dangerous research used to create dangerous objects."
-	prereq_ids = list("adv_engi", "adv_weaponry", "explosive_weapons")
+	prereq_ids = list("adv_engi", "adv_weaponry")
 	design_ids = list("decloner", "borg_syndicate_module", "suppressor", "donksofttoyvendor", "donksoft_refill", "syndiesleeper")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	export_price = 5000

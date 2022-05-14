@@ -109,6 +109,46 @@
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
+/datum/design/board/clarke_main
+	name = "\"Clarke\" Central Control module"
+	desc = "Allows for the construction of a \"Clarke\" Central Control module."
+	id = "clarke_main"
+	build_path = /obj/item/circuitboard/mecha/clarke/main
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/clarke_peri
+	name = "\"Clarke\" Peripherals Control module"
+	desc = "Allows for the construction of a  \"Clarke\" Peripheral Control module."
+	id = "clarke_peri"
+	build_path = /obj/item/circuitboard/mecha/clarke/peripherals
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_main
+	name = "\"Marauder\" Central Control module"
+	desc = "Allows for the construction of a \"Marauder\" Central Control module."
+	id = "marauder_main"
+	build_path = /obj/item/circuitboard/mecha/marauder/main
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_peri
+	name = "\"Marauder\" Peripherals Control module"
+	desc = "Allows for the construction of a \"Marauder\" Peripheral Control module."
+	id = "marauder_peri"
+	build_path = /obj/item/circuitboard/mecha/marauder/peripherals
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/board/marauder_targ
+	name = "\"marauder\" Weapons & Targeting Control module"
+	desc = "Allows for the construction of a \"Marauder\" Weapons & Targeting Control module."
+	id = "marauder_targ"
+	build_path = /obj/item/circuitboard/mecha/marauder/targeting
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
 ////////////////////////////////////////
 /////////// Mecha Equpment /////////////
 ////////////////////////////////////////
@@ -185,6 +225,16 @@
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
+/datum/design/mech_pulse_rifle
+	name = "eZ-13 MK2 heavy pulse rifle"
+	desc = "Allows for the construction of the eZ-13 MK2 heavy pulse rifle"
+	id = "mech_pulse_rifle"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/energy/pulse
+	materials = list(/datum/material/iron=15000,/datum/material/plasma=4000,/datum/material/uranium=4000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
 /datum/design/mech_laser
 	name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
 	desc = "Allows for the construction of CH-PS Laser."
@@ -226,13 +276,34 @@
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/mech_missile_rack
+/datum/design/mech_breaching_missile_rack
 	name = "Exosuit Weapon (BRM-6 Missile Rack)"
 	desc = "Allows for the construction of an BRM-6 Breaching Missile Rack."
-	id = "mech_missile_rack"
+	id = "mech_breaching_missile_rack"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
 	materials = list(/datum/material/iron=22000,/datum/material/gold=6000,/datum/material/silver=8000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/mech_breaching_missile_rack_ammo
+	name = "BRM-6 Missile Rack Ammunition"
+	desc = "Ammunition for the BRM-6 Missile Rack."
+	id = "mech_breaching_missile_rack_ammo"
+	build_type = PROTOLATHE | MECHFAB
+	build_path = /obj/item/mecha_ammo/missiles_br
+	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/silver=500)
+	construction_time = 20
+	category = list("Exosuit Ammunition", "Ammo")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/mech_missile_rack
+	name = "Exosuit Weapon (SRM-8 Missile Rack)"
+	desc = "Allows for the construction of an BRM-6 Breaching Missile Rack."
+	id = "mech_missile_rack"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
+	materials = list(/datum/material/iron=30000,/datum/material/gold=8000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
 
@@ -241,8 +312,8 @@
 	desc = "Ammunition for the SRM-8 Missile Rack."
 	id = "mech_missile_rack_ammo"
 	build_type = PROTOLATHE | MECHFAB
-	build_path = /obj/item/mecha_ammo/missiles_br
-	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/silver=500)
+	build_path = /obj/item/mecha_ammo/missiles_he
+	materials = list(/datum/material/iron=10000,/datum/material/gold=1000,/datum/material/silver=1000)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

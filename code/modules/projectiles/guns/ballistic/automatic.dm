@@ -508,9 +508,9 @@
 	fire_delay = 3.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.25
+	autofire_shot_delay = 2.15
 	burst_shot_delay = 2
-	extra_damage = 15
+	extra_damage = 17
 	suppressed = 1
 	recoil = 0.05
 	can_attachments = TRUE
@@ -754,7 +754,7 @@
 	spread = 1
 	extra_damage = 32
 	extra_penetration = 0.2
-	slowdown = 0.1
+	slowdown = 0.5
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1012,9 +1012,10 @@
 	icon_state = "sks"
 	item_state = "sks"
 	mag_type = /obj/item/ammo_box/magazine/sks
-	fire_delay = 6
-	extra_damage = 38
+	fire_delay = 5.5
+	extra_damage = 40
 	extra_penetration = 0.1
+	extra_speed = 100
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 23
@@ -1287,7 +1288,7 @@
 	burst_shot_delay = 2.2
 	spread = 14
 	extra_damage = 18
-	extra_penetration = 0
+	extra_penetration = 0.12
 //FN-FAL				Keywords: 7.62mm, Automatic, 10/20 round magazine
 /obj/item/gun/ballistic/automatic/fnfal
 	name = "FN FAL"
@@ -1313,13 +1314,13 @@ obj/item/gun/ballistic/automatic/bar
 	slot_flags = ITEM_SLOT_BACK
 	icon_state = "BAR"
 	item_state = "BAR"
-	icon_prefix = "BAR"
+	icon_prefix = "rifle"
 	automatic = 1
 	mag_type = /obj/item/ammo_box/magazine/m762/ext
 	force = 24 //club
-	slowdown = 1.25 //really goddamn big
-	autofire_shot_delay = 2.5
-	extra_damage = 28
+	slowdown = 1.5 //really goddamn big
+	autofire_shot_delay = 2.3
+	extra_damage = 27
 	spread = 10
 	recoil = 0.3
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -1413,7 +1414,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_shot_delay = 1.5
 	is_automatic = TRUE
 	automatic = 1
-	autofire_shot_delay = 2.8
+	autofire_shot_delay = 2.5
 	fire_delay = 4
 	extra_damage = 25
 	spread = 8

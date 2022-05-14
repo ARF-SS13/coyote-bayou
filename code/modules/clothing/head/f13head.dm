@@ -349,16 +349,6 @@
 	icon_state = "t51bhelmet[light_on]"
 	item_state = "t51bhelmet[light_on]"
 
-/obj/item/clothing/head/helmet/f13/power_armor/midwest
-	name = "Midwestern Power Helmet"
-	desc = "It's a Midwest power helmet, typically used by the Brotherhood. It looks somewhat charming."
-	icon_state = "midwestgrey_helm"
-	item_state = "midwestgrey_helm"
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 70, "energy" = 27, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 0, "wound" = 70)
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-
-
-
 /obj/item/clothing/head/helmet/f13/power_armor/t60
 	name = "T-60a power helmet"
 	desc = "The T-60 powered helmet, equipped with targetting software suite, Friend-or-Foe identifiers, dynamic HuD, and an internal music player."
@@ -446,13 +436,13 @@
 
 /obj/item/clothing/head/f13/beaver
 	name = "beaverkin"
-	desc = "(I) A hat made from felted beaver fur which makes the wearer feel both comfortable and elegant."
+	desc = "A hat made from felted beaver fur which makes the wearer feel both comfortable and elegant."
 	icon_state = "beaver"
 	item_state = "that"
 
 /obj/item/clothing/head/f13/purple
 	name = "purple top hat"
-	desc = "(I) You may not own the best jail in the observed Universe, or the best chocolate factory in the entire world, but at least you can try to have that purple top hat."
+	desc = "You may not own the best jail in the observed Universe, or the best chocolate factory in the entire world, but at least you can try to have that purple top hat."
 	icon_state = "ptophat"
 	item_state = "that"
 
@@ -634,7 +624,7 @@
 	desc = "It's a fancy two-tone metal helmet. It's been lined with additional plating and given a fresh coat of paint."
 	icon_state = "riderw"
 	item_state = "riderw"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 30, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = list("melee" = 55, "bullet" = 35, "laser" = 35, "energy" = 15, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 //Soft caps
 /obj/item/clothing/head/soft/f13

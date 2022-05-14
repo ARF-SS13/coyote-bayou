@@ -50,6 +50,10 @@
 					/obj/item/clothing/under/pants/black = 4,
 					/obj/item/clothing/under/pants/tan = 4,
 					/obj/item/clothing/under/pants/track = 3,
+					/obj/item/clothing/under/jeanbshorts = 3,
+					/obj/item/clothing/under/darkbshorts = 3,
+					/obj/item/clothing/under/blackbshorts = 3,
+					/obj/item/clothing/under/brownbshorts = 3,
 					/obj/item/clothing/suit/jacket/miljacket = 5,
 					/obj/item/clothing/under/suit/white_on_white/skirt = 2,
 					/obj/item/clothing/under/rank/captain/suit/skirt = 2,
@@ -219,3 +223,23 @@
 					/obj/item/clothing/under/rank/mailman = 1,
 					/obj/item/clothing/suit/jacket/leather = 1,
 					/obj/item/clothing/suit/jacket/leather/overcoat = 1)
+
+/obj/machinery/vending/clothing/heaven
+	name = "Heaven's Night ClothesMate"
+	desc = "A vending machine supplying club equipment. To put it lightly."
+	product_slogans = "Do I look like your girlfriend?;I don't look like a ghost, do I?;Feel how warm I am?;It doesn't matter who I am.;Come and get me.;"
+	vend_reply = "Hurry back!"
+	products = list(/obj/item/clothing/under/f13/mprostitute = 5,
+					/obj/item/clothing/under/f13/fprostitute = 5,
+					/obj/item/clothing/under/f13/raiderharness = 3,
+					/obj/item/clothing/under/f13/ravenharness = 3,
+					/obj/item/clothing/suit/f13/sexymaid = 5,
+					/obj/item/clothing/suit/armor/f13/brahmin_leather_duster = 3,
+					/obj/item/clothing/head/helmet/f13/brahmincowboyhat = 3,
+					/obj/item/restraints/handcuffs/fake/kinky = 5,
+					/obj/item/clothing/mask/muzzle = 5,
+					/obj/item/clothing/suit/straight_jacket = 5,
+					/obj/item/melee/chainofcommand/fake = 5)
+	contraband = null
+
+	premium = null

@@ -102,14 +102,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/comconsole
-	name = "Computer Design (Communications)"
-	desc = "Allows for the construction of circuit boards used to build a communications console."
-	id = "comconsole"
-	build_path = /obj/item/circuitboard/computer/communications
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY				//Honestly should have a bridge techfab for this sometime.
-
 /datum/design/board/crewconsole
 	name = "Computer Design (Crew monitoring computer)"
 	desc = "Allows for the construction of circuit boards used to build a Crew monitoring computer."
@@ -285,3 +277,11 @@
 	build_path = /obj/item/circuitboard/computer/apc_control
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/*/datum/design/board/comconsole
+	name = "Computer Design (Communications)"
+	desc = "Allows for the construction of circuit boards used to build a communications console."
+	id = "comconsole"
+	build_path = /obj/item/circuitboard/computer/communications
+	category = list("Computer Boards")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_SECURITY	*/

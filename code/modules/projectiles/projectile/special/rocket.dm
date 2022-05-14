@@ -13,8 +13,8 @@
 	desc = "USE A WEEL GUN"
 	icon_state= "84mm-hedp"
 	damage = 0
-	var/anti_armour_damage = 200
 	ricochets_max = 0
+	var/anti_armour_damage = 200
 
 /obj/item/projectile/bullet/a84mm/on_hit(atom/target, blocked = FALSE)
 	..()
@@ -86,15 +86,12 @@
 	name ="\improper low yield HE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 25 //this only does more damage because the blast is much smaller than the hhe
+	damage = 25
 	ricochets_max = 0 //it's a MISSILE
 
 /obj/item/projectile/bullet/a84mm_he/on_hit(atom/target, blocked=0)
 	..()
-	if(!isliving(target)) //if the target isn't alive, so is a wall or something
-		explosion(target, 0, 0, 2, 4)
-	else
-		explosion(target, 0, 0, 2, 4)
+	explosion(target, 0, 0, 2, 4)
 	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
 
@@ -107,23 +104,21 @@
 
 /obj/item/projectile/bullet/a84mm_he_big/on_hit(atom/target, blocked=0)
 	..()
-	if(!isliving(target)) //if the target isn't alive, so is a wall or something
-		explosion(target, 0, 3, 5, 5)
-	else
-		explosion(target, 0, 3, 5, 5)
+	explosion(target, 0, 3, 5, 5)
 	new /obj/effect/temp_visual/explosion(get_turf(target))
 	return BULLET_ACT_HIT
 
 /obj/item/projectile/bullet/a84mm_br
-	name ="\improper HE missile"
+	name ="\improper APHE missile"
 	desc = "Boom."
 	icon_state = "missile"
-	damage = 30
-	ricochets_max = 0 //it's a MISSILE
+	damage = 20
+	armour_penetration = 0.25
+	ricochets_max = 0 //Guess what? Still a MISSILE
 	var/sturdy = list(
 	/turf/closed,
 	/obj/mecha,
-	/obj/machinery/door/,
+	/obj/machinery/door,
 	/obj/machinery/door/poddoor/shutters
 	)
 
@@ -141,5 +136,4 @@
 		if(istype(target, i))
 			explosion(target, 0, 1, 1, 2)
 			return BULLET_ACT_HIT
-	//if(istype(target, /turf/closed) || ismecha(target))
 	new /obj/item/broken_missile(get_turf(src), 1)

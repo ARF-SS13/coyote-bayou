@@ -6,12 +6,16 @@
 // Mech LMG
 
 /obj/item/projectile/bullet/lmg
-	damage = 20
+	damage = 25
+	icon_state = "mech_autocannon"
+	light_range = 2
+	light_power = 0.5
+	light_color = "#FF7F01"
 
 // Mech FNX-99
 
 /obj/item/projectile/bullet/incendiary/fnx99
-	damage = 20
+	damage = 34
 
 // Turrets
 

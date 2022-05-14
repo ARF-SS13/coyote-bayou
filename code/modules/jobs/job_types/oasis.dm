@@ -17,7 +17,7 @@ Mayor
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
 	faction = FACTION_OASIS
-
+/*
 /datum/job/oasis/f13mayor
 	title = "Mayor"
 	flag = F13MAYOR
@@ -186,6 +186,7 @@ Mayor
 		/obj/item/clothing/gloves/color/latex/nitrile = 1,
 		/obj/item/camera = 1,
 		/obj/item/storage/crayons = 1,
+		/obj/item/choice_beacon/box/carpet = 1,
 		)
 
 /datum/outfit/loadout/pw
@@ -193,10 +194,24 @@ Mayor
 	backpack_contents = list(
 		/obj/item/clothing/head/hardhat = 1,
 		/obj/item/clothing/suit/hazardvest = 1,
-		/obj/item/stack/sheet/metal/twenty = 1,
-		/obj/item/stack/sheet/glass/ten = 1,
-		/obj/item/stack/sheet/mineral/concrete/ten = 1
+		/obj/item/stack/sheet/metal/twenty = 2,
+		/obj/item/stack/sheet/glass/ten = 2,
+		/obj/item/stack/sheet/mineral/concrete/ten = 2
 		)
+
+/datum/outfit/job/den/f13secretary/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_SELF_AWARE, src)
+
+
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13sheriff
@@ -250,6 +265,7 @@ Mayor
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/grenade/flashbang = 1,
 		)
 
 /datum/outfit/loadout/thelaw
@@ -271,11 +287,17 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/chief
 	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_hand = /obj/item/gun/energy/laser/aer9/oasis
+	r_hand = /obj/item/gun/energy/laser/aer9
+
+/datum/outfit/loadout/pew
+	name = "Tactical"
+	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/gun/ballistic/automatic/pistol/sig = 1,
-		/obj/item/ammo_box/magazine/m9mm = 3,
+		/obj/item/stock_parts/cell/ammo/ecp = 1,
+		/obj/item/ammo_box/shotgun/bean = 1,
+		/obj/item/ammo_box/shotgun/buck = 1,
+		/obj/item/ammo_box/shotgun/trainshot = 1,
+		/obj/item/gun/energy/laser/auto/oasis = 1,
 		)
 
 /datum/outfit/job/den/f13sheriff/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -342,7 +364,9 @@ Mayor
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/security
+	belt = /obj/item/storage/belt/military/assault
+	suit = /obj/item/clothing/suit/armor/bulletproof
+	neck = /obj/item/storage/belt/holster/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -350,6 +374,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/grenade/flashbang = 1,
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -385,9 +410,9 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/swat
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	head = /obj/item/clothing/head/helmet/alt
-	neck = /obj/item/storage/belt/holster/legholster
-	l_hand = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
-	shoes = /obj/item/clothing/shoes/jackboots
+	mask = /obj/item/clothing/mask/balaclava
+	gloves = /obj/item/clothing/gloves/f13/military
+	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m45exp=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
@@ -503,7 +528,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/flashlight/lantern
 	r_hand = /obj/item/pickaxe
 	belt = /obj/item/storage/bag/ore
 	shoes = /obj/item/clothing/shoes/workboots
@@ -531,7 +556,8 @@ Mayor
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
-
+*/
+/*
 /datum/job/oasis/f13dendoc
 	title = "Doctor"
 	flag = F13DENDOC
@@ -580,6 +606,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
+*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13barkeep
@@ -588,9 +615,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "The Mayor"
-	description = "As staff of the Blue Oyster, you are responsible for comfort and full bellies in the settlement of Oasis. Hidden safely away behind the walls, you are free to refine your skills without always watching your back. Work closely with the Farmers to ensure fresh food is always on the table, and remember that you are allowed to decide who is allowed to dine or reside in your hospitality."
-	enforces = "The Blue Oyster is a private business and you are not under direct control of local governance, but are subject to their laws."
+	supervisors = "the free market and Bighorn laws"
+	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
+	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -626,7 +653,9 @@ Mayor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/ammo_box/shotgun/bean = 2,
-		/obj/item/book/manual/nuka_recipes = 1
+		/obj/item/book/manual/nuka_recipes = 1,
+		/obj/item/stack/f13Cash/caps/onezerozero = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1,
 		)
 
 /datum/outfit/loadout/rugged
@@ -671,8 +700,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 8
 	spawn_positions = 8
-	supervisors = "The Mayor"
-	description = "You are a citizen living in the settlement of Oasis - one of the safest places amidst the widespread power struggles of the region. Treat your town with respect and make sure to follow the laws, as your status may be revoked if you are considered a danger to the populace. One of the local businesses may have work for you if you require funds."
+	supervisors = "Bighorn laws"
+	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -772,22 +801,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/f13/leather
 	backpack_contents = list(/obj/item/ammo_box/a308 = 2,
 	)
-/*
-/datum/outfit/loadout/secretary
-	name = "Secretary"
-	uniform = /obj/item/clothing/under/suit/black
-	glasses = /obj/item/clothing/glasses/regular/hipster
-	shoes = /obj/item/clothing/shoes/laceup
-	r_hand = /obj/item/storage/briefcase
-	backpack_contents = list(/obj/item/pen = 1,
-	/obj/item/clipboard = 1,
-	/obj/item/paper_bin/bundlenatural = 1,
-	/obj/item/clothing/under/suit/black/skirt = 1,
-	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
-	/obj/item/ammo_box/magazine/m22 = 2,
-	)
-	///we should find something to do with this
-*/
+
 /datum/outfit/loadout/singer
 	name = "Singer"
 	shoes = /obj/item/clothing/shoes/laceup
@@ -802,14 +816,13 @@ Mayor
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
+/*
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
-	total_positions = 0
-	spawn_positions = 0
-	description = "You are a private eye working from within the settlement of Oasis. It is your role to assist clients in gathering evidence, conducting surveillance, finding missing people, and verifying information. Remember that you are in no way responsible for peacekeeping, though you may be approached by local governance should they seek your particular set of skills. There's always a job for you in a region as dangerous as this."
-	enforces = "Your detective agency is a private business and you are not under direct control of local governance, but are subject to their laws."
-	supervisors = "paying clients"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "paying clients and Bighorn laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 
@@ -852,8 +865,10 @@ Mayor
 		/obj/item/storage/box/gloves=1,
 		/obj/item/storage/box/evidence=1,
 		/obj/item/ammo_box/a357=2)
+*/
 
 /*--------------------------------------------------------------*/
+/*
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER
@@ -929,7 +944,7 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1
 		)
-
+*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13shopkeeper
@@ -938,9 +953,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "free hand of the market"
-	description = "The big trading caravan companies have often neglected the humble settlement of Oasis. That leaves one thing for certain - opportunities for local businesses! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
-	enforces = "Your store is a private business and you are not under direct control of local governance, but are subject to their laws."
+	supervisors = "the free market and Bighorn laws"
+	description = "The big trading caravan companies have often neglected humble Bighorn. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. This town is usually under control of the Great Khans, so just be careful not to get in the way of their chem business."
+	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
@@ -991,6 +1006,9 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/thatgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/frag_shrapnel)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/concussion)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/explosive/shrapnelmine)
 
 /datum/outfit/job/den/f13shopkeeper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

@@ -11,6 +11,7 @@
 #define FACTION_TRIBE "Tribe"
 #define FACTION_VAULT "Vault"
 #define FACTION_FOLLOWERS "Followers"
+#define FACTION_KHAN "Great Khans"
 
 #define ENGSEC			(1<<0)
 
@@ -150,14 +151,13 @@
 #define F13DENDOCTOR    (1<<2)
 #define F13WASTELANDER	(1<<2)
 #define F13RAIDER		(1<<3)
-#define F13PUSHER		(1<<4)
-#define F13PUNRAIDER	(1<<5)
-#define F13DETECTIVE	(1<<6)
-#define EVENTCOVEN		(1<<7)
-#define F13VIGILANTE	(1<<8)
-#define F13ADMINBOOS	(1<<9)
-#define F13CULTLEADER	(1<<9)
-#define F13TRIBAL		(1<<10)
+#define F13PUNRAIDER	(1<<4)
+#define F13DETECTIVE	(1<<5)
+#define EVENTCOVEN		(1<<6)
+#define F13VIGILANTE	(1<<7)
+#define F13ADMINBOOS	(1<<8)
+#define F13CULTLEADER	(1<<8)
+#define F13TRIBAL		(1<<9)
 
 #define ENCLAVE			(1<<10)
 
@@ -187,6 +187,15 @@
 #define F13FOLLOWERGUARD	(1<<2)
 #define F13FOLLOWERVOLUNTEER	(1<<3)
 #define F13PROFESSOR	(1<<4)
+
+#define KHAN		(1<<12)
+
+#define F13NOYAN (1<<0)
+#define F13STEWARD (1<<1)
+#define F13KHESHIG (1<<2)
+#define F13KHORCHIN (1<<3)
+#define F13KIPCHAK (1<<4)
+#define F13MANGUDAI (1<<5)
 
 
 #define JOB_AVAILABLE 0
@@ -343,3 +352,10 @@
 #define JOB_DISPLAY_ORDER_SECRETARY 125
 
 #define JOB_DISPLAY_ORDER_TRIBAL 126
+
+#define JOB_DISPLAY_ORDER_NOYAN 127
+#define JOB_DISPLAY_ORDER_STEWARD 128
+#define JOB_DISPLAY_ORDER_KHESHIG 129
+#define JOB_DISPLAY_ORDER_KHORCHIN 128
+#define JOB_DISPLAY_ORDER_KIPCHAK 129
+#define JOB_DISPLAY_ORDER_MANGUDAI 130

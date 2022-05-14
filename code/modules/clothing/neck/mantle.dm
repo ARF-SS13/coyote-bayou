@@ -124,3 +124,8 @@
 	name = "Roman mantle"
 	desc = "A decorated mantle created in the ancient roman era, this one appears to be hand made by an auxilia likely with a large bust."
 	icon_state = "umbo"
+
+/obj/item/clothing/neck/mantle/snugglycape
+	name = "Fancy Cape"
+	desc = "A fancy looking cape that has been manufactured for an androgynous person."
+	icon_state = "snugglycape"

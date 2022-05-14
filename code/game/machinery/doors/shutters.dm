@@ -9,7 +9,7 @@
 	damage_deflection = 26 //fragile, but will block weak melee weapons
 	max_integrity = 200
 	proj_resist = 16 //fragile, blocks .22s
-	recipe_type = /datum/crafting_recipe/shutters
+	recipe_type = /datum/crafting_recipe/shutters/old
 
 /obj/machinery/door/poddoor/shutters/preopen
 	icon_state = "open"

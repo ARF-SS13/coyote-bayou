@@ -339,7 +339,7 @@ Head Knight
 /datum/outfit/loadout/capsap
 	name = "Close Support"
 	backpack_contents = list(
-		/obj/effect/spawner/bundle/f13/rcw = 1,
+		/obj/item/gun/energy/laser/rcw = 1,
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
 	)
 

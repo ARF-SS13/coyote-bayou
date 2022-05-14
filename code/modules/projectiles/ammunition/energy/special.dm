@@ -1,5 +1,5 @@
 /obj/item/ammo_casing/energy/ion
-	projectile_type = /obj/item/projectile/ion/weak
+	projectile_type = /obj/item/projectile/ion
 	select_name = "ion"
 	fire_sound = 'sound/f13weapons/pulsegunfire.ogg'
 

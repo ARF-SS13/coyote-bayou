@@ -427,8 +427,8 @@ datum/gear/head/steelpot_bandolier
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 3
 	restricted_desc = "Oasis PD, Oasis officials"
-	restricted_roles = list("Sheriff",
-							"Deputy",
+	restricted_roles = list("Chief of Police",
+							"Officer",
 							"Mayor",
 							"Detective",
 							"Secretary",

@@ -1,13 +1,18 @@
 /obj/structure/furnace
 	name = "furnace"
 	desc = "A furnace."
-	icon = 'icons/fallout/objects/blacksmith.dmi'
+	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "furnace0"
 	density = TRUE
 	anchored = TRUE
 	var/debug = FALSE //debugging only
 	var/working = TRUE
 	var/fueluse = 1
+	light_system = MOVABLE_LIGHT
+	light_range = 2
+	light_power = 0.75
+	light_color = LIGHT_COLOR_FIRE
+	light_on = FALSE
 
 
 /obj/structure/furnace/Initialize()
@@ -25,10 +30,13 @@
 		return TRUE
 	if(reagents.remove_reagent(/datum/reagent/fuel, fueluse))
 		working = TRUE
+		set_light_on(TRUE)
 		if(icon_state == "furnace0")
 			icon_state = "furnace1"
+
 	else
 		working = FALSE
+		set_light_on(FALSE)
 		icon_state = "furnace0"
 
 /obj/structure/furnace/attackby(obj/item/I, mob/user)
@@ -38,6 +46,7 @@
 			to_chat(user, "You heat the [notsword] in the [src].")
 			notsword.workability = "shapeable"
 			notsword.icon_state = "hot_ingot"
+			notsword.set_light_on(TRUE)
 			I.on_attack_hand(user)
 		else
 			to_chat(user, "The furnace isn't working!.")

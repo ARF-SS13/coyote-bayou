@@ -138,138 +138,56 @@
 
 //New standard wood floor for most areas, oak for Legion and pure log cabins only, maple for NCR and mayor only, maybe a diner.
 
-/turf/open/floor/wood/f13
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "housewood1"
 
-	New()
-		..()
-		if(icon_state == "housewood1")
-			icon_state = "housewood[rand(1,4)]"
+/turf/open/floor/carpet_new
+	name = "carpet"
+	desc = "Soft velvet carpeting. Feels good between your toes."
+	icon = 'icons/fallout/turfs/carpetnew.dmi'
+	//floor_tile = /obj/item/stack/tile/carpet
+	flags_1 = NONE
+	bullet_bounce_sound = null
+	footstep = FOOTSTEP_CARPET
+	barefootstep = FOOTSTEP_CARPET_BAREFOOT
+	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
 
-/turf/open/floor/wood/f13/oak
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "oakfloor1"
+/turf/open/floor/carpet_new/carpet_red
+	icon_state = "carpet_red"
 
-	New()
-		..()
-		if(icon_state == "oakfloor1")
-			icon_state = "oakfloor[rand(1,4)]"
+/turf/open/floor/carpet_new/carpet_red/edge
+	icon_state = "carpet_red_edge"
 
-/turf/open/floor/wood/f13/housewoodbroken
-	icon_state = "housewood1-broken"
+/turf/open/floor/carpet_new/carpet_blue
+	icon_state = "carpet_blue"
 
-/turf/open/floor/wood/f13/housewoodbroken2
-	icon_state = "housewood2-broken"
+/turf/open/floor/carpet_new/carpet_blue/edge
+	icon_state = "carpet_blue_edge"
 
-/turf/open/floor/wood/f13/housewoodbroken3
-	icon_state = "housewood3-broken"
+/turf/open/floor/carpet_new/carpet_green
+	icon_state = "carpet_green"
 
-/turf/open/floor/wood/f13/housewoodbroken4
-	icon_state = "housewood4-broken"
+/turf/open/floor/carpet_new/carpet_green/edge
+	icon_state = "carpet_green_edge"
 
-/turf/open/floor/wood/f13/oakbroken
-	icon_state = "oakfloor1-broken"
+/turf/open/floor/carpet_new/carpet_violet
+	icon_state = "carpet_violet"
 
-/turf/open/floor/wood/f13/oakbroken2
-	icon_state = "oakfloor2-broken"
+/turf/open/floor/carpet_new/carpet_violet/edge
+	icon_state = "carpet_violet_edge"
 
-/turf/open/floor/wood/f13/oakbroken3
-	icon_state = "oakfloor3-broken"
+/turf/open/floor/carpet_new/carpet_shaggyred
+	icon_state = "shaggyred"
 
-/turf/open/floor/wood/f13/oakbroken4
-	icon_state = "oakfloor4-broken"
+/turf/open/floor/carpet_new/carpet_shaggygreen
+	icon_state = "shaggygreen"
 
-/turf/open/floor/wood/f13/maple
-	icon_state = "maplefloor1"
+/turf/open/floor/carpet_new/carpet_shaggyblue
+	icon_state = "shaggyblue"
 
-/turf/open/floor/wood/f13/carpet
-	icon_state = "carpet"
+/turf/open/floor/carpet_new/carpet_shaggyviolet
+	icon_state = "shaggyviolet"
 
-/turf/open/floor/wood/f13/old
-	name = "wood planks"
-	desc = "Rotting wooden flooring."
-
-/turf/open/floor/wood/f13/old/ruinedcornerendbr	//WHAT THE FUCK IS THIS
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornerbr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendbl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornerbl"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendtr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornertr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerendtl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandcornertl"
-
-/turf/open/floor/wood/f13/old/ruinedcornerbr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornerbr"
-
-/turf/open/floor/wood/f13/old/ruinedcornerbl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornerbl"
-
-/turf/open/floor/wood/f13/old/ruinedcornertr
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornertr"
-
-/turf/open/floor/wood/f13/old/ruinedcornertl
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandmorecornertl"
-
-/turf/open/floor/wood/f13/old/ruinedstraightsouth
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandsouth"
-
-/turf/open/floor/wood/f13/old/ruinedstraightnorth
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandnorth"
-
-/turf/open/floor/wood/f13/old/ruinedstraighteast
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandeast"
-
-/turf/open/floor/wood/f13/old/ruinedstraightwest
-	name = "wood planks"
-	desc = "Rotting wooden flooring, with a mix of dirt."
-	icon_state = "housewastelandwest"
-
-/turf/open/floor/wood/f13/stage_tl
-	icon_state = "housewood_stage_top_left"
-/turf/open/floor/wood/f13/stage_t
-	icon_state = "housewood_stage_top"
-/turf/open/floor/wood/f13/stage_l
-	icon_state = "housewood_stage_left"
-/turf/open/floor/wood/f13/stage_bl
-	icon_state = "housewood_stage_bottom_left"
-/turf/open/floor/wood/f13/stage_b
-	icon_state = "housewood_stage_bottom"
-/turf/open/floor/wood/f13/stage_tr
-	icon_state = "housewood_stage_top_right"
-/turf/open/floor/wood/f13/stage_r
-	icon_state = "housewood_stage_right"
-/turf/open/floor/wood/f13/stage_br
-	icon_state = "housewood_stage_bottom_right"
-
-//WOOD FLOOR FOR BRIDGES ETC, OUTDOORS
-/turf/open/floor/wood/f13/stage_b/outdoors
-	sunlight_state = SUNLIGHT_SOURCE
 
 #define SHROOM_SPAWN	1
 
@@ -554,6 +472,256 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1
 	icon_state = "vault1"
 
+////Metal Floors////
+
+/turf/open/floor/plasteel/f13/metal
+	footstep = FOOTSTEP_PLATING //clonk
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	icon_state = "steel_industrial"
+	desc = "Metal flooring."
+
+/turf/open/floor/plasteel/f13/metal/plate
+	icon_state = "steel_solid"
+
+/turf/open/floor/plasteel/f13/metal/border
+	icon_state = "steel_industrial_b"
+
+/turf/open/floor/plasteel/f13/metal/border/corner
+	icon_state = "steel_industrial_b_corner"
+
+/turf/open/floor/plasteel/f13/metal/border/sides
+	icon_state = "steel_industrial_b_sides"
+
+/turf/open/floor/plasteel/f13/metal/border/end
+	icon_state = "steel_industrial_b_end"
+
+/turf/open/floor/plasteel/f13/metal/grate
+	icon_state = "steel_grate"
+
+/turf/open/floor/plasteel/f13/metal/grate/alt
+	icon_state = "steel_grate_alt"
+
+/turf/open/floor/plasteel/f13/metal/grate/border
+	icon_state = "steel_grate_border"
+
+/turf/open/floor/plasteel/f13/metal/grate/border/warning
+	icon_state = "steel_grate_warning"
+
+/turf/open/floor/plasteel/f13/metal/warning
+	icon_state = "steel_warning"
+
+/turf/open/floor/plasteel/f13/metal/stayclear
+	icon_state = "steel_stayclear"
+
+////Concrete Floors////
+
+/turf/open/floor/plasteel/f13/concrete
+	icon_state = "concrete_big"
+	desc = "Concrete slabs."
+
+/turf/open/floor/plasteel/f13/concrete/small
+	icon_state = "concrete_small"
+
+/turf/open/floor/plasteel/f13/concrete/industrial
+	icon_state = "concrete_industrial"
+	desc = "Heavy duty concrete slabs." //DAS CONCRETE BABY
+
+/turf/open/floor/plasteel/f13/concrete/industrial/alt
+	icon_state = "concrete_industrial_alt"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/split
+	icon_state = "concrete_industrial_split"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway
+	icon_state = "concrete_walkway"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner
+	icon_state = "concrete_walkway_corner"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/end
+	icon_state = "concrete_walkway_end"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway
+	icon_state = "concrete_walkway"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/corner
+	icon_state = "concrete_walkway_corner"
+
+/turf/open/floor/plasteel/f13/concrete/industrial/walkway/end
+	icon_state = "concrete_walkway_end"
+
+////Hybrid Floors////
+
+/turf/open/floor/plasteel/f13/concrete/cable
+	icon_state = "concrete_cable_straight"
+	desc = "Heavy duty cabling embedded in industrial grade concrete."
+
+/turf/open/floor/plasteel/f13/concrete/cable/curved
+	icon_state = "concrete_cable_curve"
+
+/turf/open/floor/plasteel/f13/concrete/cable/merge
+	icon_state = "concrete_cable_merge"
+
+/turf/open/floor/plasteel/f13/concrete/cable/intersection
+	icon_state = "concrete_cable_intersection"
+
+/turf/open/floor/plasteel/f13/concrete/cable/box
+	icon_state = "concrete_cable_box"
+
+/turf/open/floor/plasteel/f13/concrete/cable/node
+	icon_state = "concrete_cable_node"
+
+/turf/open/floor/plasteel/f13/metal/pipe
+	icon_state = "pipe_straight"
+
+/turf/open/floor/plasteel/f13/metal/pipe/Entered(mob/living/M)
+	. = ..()
+	if(!istype(M))
+		return
+
+	if(prob(30))
+		M.slip(5, M.loc, GALOSHES_DONT_HELP, 0, FALSE)
+		playsound(M, 'sound/effects/bang.ogg', 10, 1)
+		to_chat(usr, "<span class='warning'>You trip on the pipes!</span>")
+		return
+
+/turf/open/floor/plasteel/f13/metal/pipe/corner
+	icon_state = "pipe_corner"
+
+/turf/open/floor/plasteel/f13/metal/pipe/intersection
+	icon_state = "pipe_intersection"
+
+turf/open/floor/plasteel/f13/tile
+	icon_state = "grey"
+
+turf/open/floor/plasteel/f13/tile/broken
+	icon_state = "grey_1"
+
+	New()
+		..()
+		if(icon_state == "grey_1")
+			icon_state = "grey_[rand(1,8)]"
+
+/turf/open/floor/plasteel/f13/tile/long
+	icon_state = "grey_long"
+
+/turf/open/floor/plasteel/f13/tile/long/broken
+	icon_state = "grey_long_1"
+
+	New()
+		..()
+		if(icon_state == "grey_long1")
+			icon_state = "grey_long_[rand(1,6)]"
+
+/turf/open/floor/plasteel/f13/tile/blue
+	icon_state = "bluetile"
+
+/turf/open/floor/plasteel/f13/tile/blue/broken
+	icon_state = "blue_1"
+
+	New()
+		..()
+		if(icon_state == "blue_1")
+			icon_state = "blue_[rand(1,8)]"
+
+/turf/open/floor/plasteel/f13/tile/blue_long
+	icon_state = "blue_long"
+
+/turf/open/floor/plasteel/f13/tile/blue_long/broken
+	icon_state = "blue_long_1"
+
+	New()
+		..()
+		if(icon_state == "blue_long1")
+			icon_state = "blue_long_[rand(1,6)]"
+
+/turf/open/floor/plasteel/f13/tile/navy
+	icon_state = "navy"
+
+/turf/open/floor/plasteel/f13/tile/navy/broken
+	icon_state = "navy_1"
+
+	New()
+		..()
+		if(icon_state == "navy_1")
+			icon_state = "navy_[rand(1,7)]"
+
+/turf/open/floor/plasteel/f13/tile/brown
+	icon_state = "browntile"
+
+/turf/open/floor/plasteel/f13/tile/brown/broken
+	icon_state = "brown_1"
+
+	New()
+		..()
+		if(icon_state == "brown_1")
+			icon_state = "brown_[rand(1,8)]"
+
+/turf/open/floor/plasteel/f13/tile/fancy
+	icon_state = "fancy"
+
+/turf/open/floor/plasteel/f13/tile/fancy/broken
+	icon_state = "fancy_1"
+
+	New()
+		..()
+		if(icon_state == "fancy_1")
+			icon_state = "fancy_[rand(1,7)]"
+
+
+
+/turf/open/floor/plasteel/f13/stone
+	name = "stone floor"
+	icon = 'icons/turf/f13floors2.dmi'
+
+/turf/open/floor/plasteel/f13/stone/ornate
+	icon_state = "ornate"
+
+/turf/open/floor/plasteel/f13/stone/ornate/broken
+	icon_state = "ornate_1"
+
+	New()
+		..()
+		if(icon_state == "ornate_1")
+			icon_state = "ornate_[rand(1,3)]"
+
+/turf/open/floor/plasteel/f13/stone/sierra
+	icon_state = "sierra"
+
+/turf/open/floor/plasteel/f13/stone/sierra/broken
+	icon_state = "sierra_1"
+
+	New()
+		..()
+		if(icon_state == "sierra_1")
+			icon_state = "ornate_[rand(1,3)]"
+
+/turf/open/floor/plasteel/f13/stone/ceramic
+	icon_state = "ceramic"
+
+/turf/open/floor/plasteel/f13/stone/ceramic/broken
+	icon_state = "ceramic_1"
+
+	New()
+		..()
+		if(icon_state == "ceramic_1")
+			icon_state = "ceramic_[rand(1,2)]"
+
+/turf/open/floor/plasteel/f13/stone/brick
+	icon_state = "brick"
+
+/turf/open/floor/plasteel/f13/stone/brick/broken
+	icon_state = "brick_1"
+
+	New()
+		..()
+		if(icon_state == "brick_1")
+			icon_state = "brick_[rand(1,8)]"
+
+/turf/open/floor/plasteel/f13/stone/rugged
+	icon_state = "khanstone"
 
 /turf/open/floor/circuit/f13_blue
 	icon = 'icons/turf/f13floors2.dmi'

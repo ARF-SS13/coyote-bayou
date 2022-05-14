@@ -145,6 +145,7 @@
 						)
 
 
+
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
@@ -175,10 +176,10 @@
 	restricted_desc = "Oasis"
 	restricted_roles = list("Mayor",
 							"Secretary",
-							"Chief of Police",
+							"Sheriff",
 							"Doctor",
 							"Citizen",
-							"Officer",
+							"Deputy",
 							"Shopkeeper",
 							"Farmer",
 							"Prospector",
@@ -191,11 +192,14 @@
 	path = /obj/item/clothing/suit/armor/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police"
+	restricted_desc = "Oasis Police, Oasis Officials"
 	restricted_roles = list("Chief of Police",
-								"Officer",
-								"Detective",
-								)
+							"Officer",
+							"Mayor",
+							"Detective",
+							"Secretary",
+							"Shopkeeper",
+						)
 
 /datum/gear/suit/hazardvest
 	name = "Hazard Vest"

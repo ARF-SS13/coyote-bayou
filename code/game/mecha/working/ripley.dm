@@ -1,41 +1,16 @@
 /obj/mecha/working/ripley
-	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	name = "\improper APLU \"Ripley\""
+	desc = "Autonomous Power Loader Unit. This newer model is refitted with powerful armour against the dangers of planetary mining."
 	icon_state = "ripley"
 	step_in = 3 //Move speed, lower is faster.
-	var/fast_pressure_step_in = 2
-	var/slow_pressure_step_in = 3
 	max_temperature = 20000
-	max_integrity = 200
-	lights_power = 8
-	deflect_chance = 15
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	max_integrity = 300
+	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
 	var/list/cargo = new
 	var/cargo_capacity = 15
 	var/hides = 0
-
-/obj/mecha/working/ripley/Move()
-	. = ..()
-	if(.)
-		collect_ore()
-	update_pressure()
-
-/obj/mecha/working/ripley/proc/collect_ore()
-	if(locate(/obj/item/mecha_parts/mecha_equipment/hydraulic_clamp) in equipment)
-		var/obj/structure/ore_box/ore_box = locate(/obj/structure/ore_box) in cargo
-		if(ore_box)
-			for(var/obj/item/stack/ore/ore in range(1, src))
-				if(ore.Adjacent(src) && ((get_dir(src, ore) & dir) || ore.loc == loc)) //we can reach it and it's in front of us? grab it!
-					ore.forceMove(ore_box)
-
-/obj/mecha/working/ripley/Destroy()
-	for(var/atom/movable/A in cargo)
-		A.forceMove(drop_location())
-		step_rand(A)
-	cargo.Cut()
-	return ..()
 
 /obj/mecha/working/ripley/go_out()
 	..()
@@ -44,35 +19,40 @@
 /obj/mecha/working/ripley/moved_inside(mob/living/carbon/human/H)
 	..()
 	update_icon()
-
+/*
 /obj/mecha/working/ripley/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate,3,/obj/item/stack/sheet/animalhide/goliath_hide,list("melee" = 10, "bullet" = 5, "laser" = 5))
-
+*/
+/obj/mecha/working/ripley/Destroy()
+	for(var/atom/movable/A in cargo)
+		A.forceMove(drop_location())
+		step_rand(A)
+	cargo.Cut()
+	return ..()
 
 /obj/mecha/working/ripley/firefighter
 	desc = "Autonomous Power Loader Unit. This model is refitted with additional thermal protection."
 	name = "\improper APLU \"Firefighter\""
 	icon_state = "firefighter"
 	step_in = 4
-	fast_pressure_step_in = 2
-	slow_pressure_step_in = 4
 	max_temperature = 65000
-	max_integrity = 250
+	max_integrity = 400
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	lights_power = 7
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
 	max_equip = 5 // More armor, less tools
 	wreckage = /obj/structure/mecha_wreckage/ripley/firefighter
 
 
-/obj/mecha/working/ripley/deathripley
+/obj/mecha/working/ripley/deathripley // Admin-only mecha.
 	desc = "OH SHIT IT'S THE DEATHSQUAD WE'RE ALL GONNA DIE"
 	name = "\improper DEATH-RIPLEY"
 	icon_state = "deathripley"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
-	slow_pressure_step_in = 3
-	opacity=0
+	step_in = 2
+	max_temperature = 100000
+	max_integrity = 500
+	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 80, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
 	lights_power = 7
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
 	step_energy_drain = 0
@@ -93,6 +73,42 @@
 	equipment.Cut()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/hydraulic_clamp/kill/real
 	ME.attach(src)
+
+/obj/mecha/working/ripley/clarke
+	desc = "A pre-War design by Vault-Tec to protect workers in hazardous post-War conditions. This model has had its internal ore box replaced with a generic storage module."
+	name = "\improper Clarke"
+	icon_state = "clarke"
+	max_temperature = 65000
+	max_integrity = 300
+	step_in = 1.6
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	lights_power = 7
+	step_energy_drain = 30 //slightly higher energy drain since you movin those wheels FAST
+	armor = list("melee" = 35, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 60, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	max_equip = 5
+	wreckage = /obj/structure/mecha_wreckage/clarke
+	cargo_capacity = 10
+	canstrafe = FALSE
+
+/obj/mecha/working/clarke/moved_inside(mob/living/carbon/human/H)
+	. = ..()
+	if(.)
+		var/datum/atom_hud/hud = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		hud.add_hud_to(H)
+
+/obj/mecha/working/clarke/go_out()
+	if(isliving(occupant))
+		var/mob/living/L = occupant
+		var/datum/atom_hud/hud = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		hud.remove_hud_from(L)
+	return ..()
+
+/obj/mecha/working/clarke/mmi_moved_inside(obj/item/mmi/M, mob/user)
+	. = ..()
+	if(.)
+		var/datum/atom_hud/hud = GLOB.huds[DATA_HUD_DIAGNOSTIC_ADVANCED]
+		var/mob/living/brain/B = M.brainmob
+		hud.add_hud_to(B)
 
 /obj/mecha/working/ripley/mining
 	desc = "An old, dusty mining Ripley."
@@ -143,7 +159,6 @@
 			mecha_log_message("Unloaded [O]. Cargo compartment capacity: [cargo_capacity - src.cargo.len]")
 	return
 
-
 /obj/mecha/working/ripley/contents_explosion(severity, target)
 	for(var/X in cargo)
 		var/obj/O = X
@@ -162,18 +177,6 @@
 		output += "Nothing"
 	output += "</div>"
 	return output
-
-/obj/mecha/working/ripley/proc/update_pressure()
-	var/turf/T = get_turf(loc)
-
-	if(lavaland_equipment_pressure_check(T))
-		step_in = fast_pressure_step_in
-		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
-			drill.equip_cooldown = initial(drill.equip_cooldown)/2
-	else
-		step_in = slow_pressure_step_in
-		for(var/obj/item/mecha_parts/mecha_equipment/drill/drill in equipment)
-			drill.equip_cooldown = initial(drill.equip_cooldown)
 
 /obj/mecha/working/ripley/relay_container_resist(mob/living/user, obj/O)
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing so it falls out of [src].</span>")

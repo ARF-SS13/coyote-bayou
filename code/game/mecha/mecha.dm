@@ -11,6 +11,12 @@
 #define SIDE_ARMOUR 2
 #define BACK_ARMOUR 3
 
+// Defines for the durand's shield
+
+// /obj/mecha signals
+#define COMSIG_MECHA_ACTION_ACTIVATE "mecha_action_activate"	//sent from mecha action buttons to the mecha they're linked to
+
+// End shield
 
 /obj/mecha
 	name = "mecha"
@@ -18,7 +24,7 @@
 	icon = 'icons/mecha/mecha.dmi'
 	density = TRUE //Dense. To raise the heat.
 	opacity = 1 ///opaque. Menacing.
-	anchored = TRUE //no pulling around.
+//	anchored = TRUE //no pulling around.
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	layer = BELOW_MOB_LAYER//icon draw layer
 	infra_luminosity = 15 //byond implementation is bugged.
@@ -35,6 +41,9 @@
 	var/melee_energy_drain = 15
 	var/overload_step_energy_drain_min = 100
 	max_integrity = 300 //max_integrity is base health
+	move_force = MOVE_FORCE_VERY_STRONG
+	move_resist = MOVE_FORCE_EXTREMELY_STRONG
+	light_range = 9
 	var/deflect_chance = 10 //chance to deflect the incoming projectiles, hits, or lesser the effect of ex_act.
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	var/list/facing_modifiers = list(FRONT_ARMOUR = 1.5, SIDE_ARMOUR = 1, BACK_ARMOUR = 0.5)
@@ -49,11 +58,12 @@
 	var/list/proc_res = list() //stores proc owners, like proc_res["functionname"] = owner reference
 	var/datum/effect_system/spark_spread/spark_system = new
 	var/lights = FALSE
-	var/lights_power = 6
+	var/lights_power = 8
 	var/last_user_hud = 1 // used to show/hide the mecha hud while preserving previous preference
 	var/completely_disabled = FALSE //stops the mech from doing anything
 	var/breach_time = 0
 	var/recharge_rate = 0
+	var/can_be_locked = FALSE //Whether the mech can be DNA-locked or not.
 
 	var/bumpsmash = 0 //Whether or not the mech destroys walls by running into it.
 	//inner atmos
@@ -71,7 +81,7 @@
 	var/internal_damage = 0 //contains bitflags
 
 	var/list/operation_req_access = list()//required access level for mecha operation
-	var/list/internals_req_access = list(ACCESS_ROBOTICS)//REQUIRED ACCESS LEVEL TO OPEN CELL COMPARTMENT
+	var/list/internals_req_access = list()//REQUIRED ACCESS LEVEL TO OPEN CELL COMPARTMENT
 
 	var/wreckage
 
@@ -82,9 +92,17 @@
 
 	var/stepsound = 'sound/mecha/mechstep.ogg'
 	var/turnsound = 'sound/mecha/mechturn.ogg'
+	var/attacksound = 'sound/weapons/punch4.ogg'
 
 	var/melee_cooldown = 10
 	var/melee_can_hit = 1
+	var/attack_knockdown = 0 // For how much time it will knockdown a target in melee
+
+	var/exit_delay = 40 //Time to exit mech
+	var/destruction_sleep_duration = 50 //Time that mech pilot is put to sleep for if mech is destroyed
+	var/enter_delay = 40 //Time taken to enter the mech
+
+	var/is_currently_ejecting = FALSE //Mech cannot use equiptment when true, set to true if pilot is trying to exit mech
 
 	//Action datums
 	var/datum/action/innate/mecha/mech_eject/eject_action = new
@@ -93,7 +111,7 @@
 	var/datum/action/innate/mecha/mech_toggle_lights/lights_action = new
 	var/datum/action/innate/mecha/mech_view_stats/stats_action = new
 	var/datum/action/innate/mecha/mech_toggle_thrusters/thrusters_action = new
-	var/datum/action/innate/mecha/mech_defence_mode/defense_action = new
+	var/datum/action/innate/mecha/mech_defense_mode/defense_action = new
 	var/datum/action/innate/mecha/mech_overload_mode/overload_action = new
 	var/datum/effect_system/smoke_spread/smoke_system = new //not an action, but trigged by one
 	var/datum/action/innate/mecha/mech_smoke/smoke_action = new
@@ -104,18 +122,20 @@
 
 	//Action vars
 	var/thrusters_active = FALSE
-	var/defence_mode = FALSE
-	var/defence_mode_deflect_chance = 35
 	var/leg_overload_mode = FALSE
 	var/leg_overload_coeff = 100
 	var/zoom_mode = FALSE
-	var/smoke = 5
+	var/smoke = 1
 	var/smoke_ready = 1
 	var/smoke_cooldown = 100
 	var/phasing = FALSE
 	var/phasing_energy_drain = 200
 	var/phase_state = "" //icon_state when phasing
 	var/strafe = FALSE //If we are strafing
+	var/defense_mode = FALSE
+
+	var/canstrafe = FALSE //if we can turn on strafing
+	var/haslights = TRUE //if we can turn on lights
 
 	var/nextsmash = 0
 	var/smashcooldown = 3	//deciseconds
@@ -154,9 +174,11 @@
 	return cell
 
 /obj/mecha/rust_heretic_act()
-	take_damage(500,  BRUTE)
+	take_damage(50,  BRUTE)
 
 /obj/mecha/Destroy()
+	if(occupant)
+		occupant.SetSleeping(destruction_sleep_duration)
 	go_out()
 	var/mob/living/silicon/ai/AI
 	for(var/mob/M in src) //Let's just be ultra sure
@@ -166,8 +188,8 @@
 		else
 			M.forceMove(loc)
 	if(wreckage)
-		if(prob(30))
-			explosion(get_turf(src), 0, 0, 1, 3)
+		if(prob(85))
+			explosion(get_turf(src), 0, 1, 2, 3)
 		var/obj/structure/mecha_wreckage/WR = new wreckage(loc, AI)
 		for(var/obj/item/mecha_parts/mecha_equipment/E in equipment)
 			if(E.salvageable && prob(30))
@@ -425,6 +447,8 @@
 		return
 	if(completely_disabled)
 		return
+	if(is_currently_ejecting)
+		return
 	if(phasing)
 		occupant_message("Unable to interact with objects while phasing")
 		return
@@ -530,11 +554,6 @@
 	if(!Process_Spacemove(direction))
 		return 0
 	if(!has_charge(step_energy_drain))
-		return 0
-	if(defence_mode)
-		if(world.time - last_message > 20)
-			occupant_message("<span class='danger'>Unable to move while in defence mode</span>")
-			last_message = world.time
 		return 0
 	if(zoom_mode)
 		if(world.time - last_message > 20)
@@ -853,7 +872,7 @@
 
 	visible_message("[user] starts to climb into [name].")
 
-	if(do_after(user, 40, target = src))
+	if(do_after(user, enter_delay, target = src))
 		if(obj_integrity <= 0)
 			to_chat(user, "<span class='warning'>You cannot get in the [name], it has been destroyed!</span>")
 		else if(occupant)
@@ -902,7 +921,7 @@
 
 	visible_message("<span class='notice'>[user] starts to insert an MMI into [name].</span>")
 
-	if(do_after(user, 40, target = src))
+	if(do_after(user, exit_delay, target = src))
 		if(!occupant)
 			return mmi_moved_inside(mmi_as_oc, user)
 		else
@@ -941,6 +960,8 @@
 	return TRUE
 
 /obj/mecha/container_resist(mob/living/user)
+	if(occupant)
+		occupant.SetSleeping(destruction_sleep_duration*2)
 	go_out()
 
 /obj/mecha/Exited(atom/movable/M, atom/newloc)
@@ -1056,8 +1077,7 @@
 		return max(0, cell.charge)
 
 /obj/mecha/proc/use_power(amount)
-	if(get_charge())
-		cell.use(amount)
+	if(get_charge() && cell.use(amount))
 		return 1
 	return 0
 
