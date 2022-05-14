@@ -1077,7 +1077,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "adD" = (
-/obj/structure/ladder/unbreakable,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "factorybasement"
+	},
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
 /area/f13/building)

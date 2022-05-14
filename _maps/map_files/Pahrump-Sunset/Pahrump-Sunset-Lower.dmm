@@ -8343,7 +8343,10 @@
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/caves)
 "jRd" = (
-/obj/structure/ladder/unbreakable,
+/obj/structure/ladder/unbreakable{
+	id = "factorybasement";
+	height = 1
+	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
 "jRq" = (
