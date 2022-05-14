@@ -55,10 +55,10 @@
 	},
 /area/f13/building)
 "abi" = (
-/obj/item/flag/khan{
-	pixel_y = -30
+/obj/structure/chair/wood/fancy{
+	dir = 4
 	},
-/turf/closed/wall/f13/wood,
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abj" = (
 /obj/structure/decoration/rag{
@@ -91,8 +91,9 @@
 	light_color = "#f4e3b0";
 	pixel_y = 12
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_worn,
+/obj/structure/cross,
+/obj/effect/mob_spawn/human/corpse/raiderboss,
+/turf/open/floor/plasteel/f13/stone/ornate,
 /area/f13/building)
 "abo" = (
 /turf/closed/wall/f13/ruins,
@@ -113,14 +114,15 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
 "abr" = (
-/obj/structure/chair/wood/wings,
-/obj/effect/landmark/start/f13/steward,
-/turf/open/floor/wood/wood_worn,
+/obj/item/flag/khan{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/f13/stone/sierra,
 /area/f13/building)
 "abs" = (
 /obj/structure/chair/comfy/throne,
 /obj/effect/landmark/start/f13/noyan,
-/turf/open/floor/wood/wood_worn,
+/turf/open/floor/plasteel/f13/stone/sierra,
 /area/f13/building)
 "abt" = (
 /turf/closed/wall/f13/brick,
@@ -1379,6 +1381,13 @@
 /obj/effect/landmark/start/f13/khorchin,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
+"fEX" = (
+/obj/structure/chair/wood/fancy{
+	dir = 8
+	},
+/obj/effect/landmark/start/f13/steward,
+/turf/open/floor/wood/wood_worn,
+/area/f13/building)
 "fHv" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/concrete/cable/curved{
@@ -2128,6 +2137,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
+"lTH" = (
+/obj/structure/curtain{
+	color = "#5c131b";
+	alpha = 255
+	},
+/turf/open/floor/plasteel/f13/stone/sierra,
+/area/f13/building)
 "lUm" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin/towel,
@@ -2169,6 +2185,13 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"meA" = (
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/item/flag/khan,
+/turf/closed/wall/f13/wood,
+/area/f13/building)
 "mhV" = (
 /obj/structure/rack/large/shelf{
 	dir = 4
@@ -3484,8 +3507,7 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
 "vlI" = (
-/obj/structure/chair/wood/wings,
-/turf/open/floor/wood/wood_worn,
+/turf/open/floor/plasteel/f13/stone/ornate,
 /area/f13/building)
 "vqz" = (
 /turf/open/transparent/openspace{
@@ -7352,7 +7374,7 @@ lDT
 xuM
 pxI
 iUi
-pxI
+abi
 uKN
 abB
 fEr
@@ -7606,9 +7628,9 @@ lDT
 lDT
 lDT
 lDT
-abi
-pxI
-pxI
+xuM
+meA
+lTH
 aby
 aby
 aby
@@ -7864,7 +7886,7 @@ lDT
 lDT
 lDT
 abj
-iUi
+abr
 vlI
 iaD
 pxI
@@ -8378,8 +8400,8 @@ tAz
 lDT
 lDT
 abj
-pxI
 abr
+vlI
 wxI
 iUi
 iUi
@@ -8634,9 +8656,9 @@ tAz
 tAz
 lDT
 lDT
-abi
-pxI
-pxI
+xuM
+meA
+lTH
 aby
 aby
 aby
@@ -8894,7 +8916,7 @@ lDT
 xuM
 iUi
 pxI
-pxI
+fEX
 edT
 abC
 abC
