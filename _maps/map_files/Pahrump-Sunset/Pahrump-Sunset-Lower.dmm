@@ -7530,7 +7530,6 @@
 /obj/structure/decoration/rag{
 	icon_state = "skin"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "fEQ" = (
@@ -9671,8 +9670,8 @@
 /area/f13/brotherhood)
 "jRd" = (
 /obj/structure/ladder/unbreakable{
-	id = "factorybasement";
-	height = 1
+	height = 1;
+	id = "factorybasement"
 	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
@@ -13749,14 +13748,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
-/area/f13/tunnel)
-"scm" = (
-/obj/machinery/door/unpowered/securedoor{
-	desc = "There is something on the wind. It.. it smells like... crime.";
-	name = "Abandoned Office";
-	req_one_access_txt = "0"
-	},
-/turf/open/floor/wood/wood_chestnut,
 /area/f13/tunnel)
 "scJ" = (
 /obj/effect/decal/remains/human,
@@ -28450,7 +28441,7 @@ rID
 uQc
 dbd
 ubM
-scm
+iIb
 ubM
 rkZ
 aae
@@ -37979,7 +37970,7 @@ dzm
 dzm
 dzm
 dzm
-fDv
+okQ
 dzm
 dzm
 dzm
@@ -38749,7 +38740,7 @@ vbg
 dzm
 rVt
 uQc
-dzm
+fDv
 nHe
 bJq
 nHe
