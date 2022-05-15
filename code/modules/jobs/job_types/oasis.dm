@@ -877,7 +877,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/banker)
+		/obj/item/storage/bag/money/small/ = 1)
 
 /datum/outfit/loadout/classy
 	name = "Classy"
@@ -959,9 +959,9 @@ Mayor
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	gloves = /obj/item/clothing/gloves/fingerless
 	l_pocket = /obj/item/storage/bag/money/small/den
-	r_pocket = /obj/item/flashlight/flare
+	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list()
+	backpack_contents = list(/obj/item/storage/box/shopkeeper = 1)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
