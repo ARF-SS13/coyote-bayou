@@ -1077,7 +1077,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "adD" = (
-/obj/structure/ladder/unbreakable,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "factorybasement"
+	},
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
 /area/f13/building)
@@ -1471,6 +1474,8 @@
 	desc = "A secure metal pod for storing protectrons.";
 	name = "protectron pod"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "aeP" = (
@@ -4559,8 +4564,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood/club,
 /obj/item/lighter,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet_new/carpet_violet/edge{
 	dir = 10
 	},
@@ -12608,12 +12613,12 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood/club,
 /obj/item/melee/chainofcommand/fake{
 	pixel_y = 5
 	},
 /obj/item/restraints/handcuffs/fake/kinky,
 /obj/item/clothing/mask/muzzle,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet_new/carpet_shaggyviolet,
 /area/f13/bar/heaven)
 "aLi" = (
@@ -17445,8 +17450,8 @@
 	pixel_x = -32;
 	pixel_y = -5
 	},
-/obj/structure/table/wood/club,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet_new/carpet_violet/edge{
 	dir = 6
 	},
@@ -18353,8 +18358,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/wood/club,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/structure/table/wood/settler,
 /turf/open/floor/carpet_new/carpet_violet/edge{
 	dir = 10
 	},
@@ -20874,6 +20879,8 @@
 	desc = "A secure metal pod for storing protectrons.";
 	name = "protectron pod"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13/metal/plate,
 /area/f13/building)
 "bjw" = (
@@ -25852,7 +25859,7 @@
 /area/f13/wasteland)
 "bVr" = (
 /obj/structure/wreck/car/bike{
-	pixel_x = -30
+	pixel_x = -15
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain2left"
@@ -29842,6 +29849,9 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"dKo" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "dKw" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -30034,7 +30044,6 @@
 /area/f13/ncr)
 "dYN" = (
 /obj/structure/chair/stool/retro/tan,
-/obj/effect/landmark/start/f13/kipchak,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "dZW" = (
@@ -30328,10 +30337,6 @@
 	},
 /area/f13/building)
 "enQ" = (
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -3
-	},
 /obj/machinery/smartfridge/bottlerack,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
@@ -30651,8 +30656,10 @@
 /area/f13/wasteland)
 "eGa" = (
 /obj/effect/landmark/start/f13/kipchak,
-/turf/open/floor/plating/f13/inside/gravel,
-/area/f13/wasteland)
+/turf/open/floor/wood/wood_worn{
+	dir = 5
+	},
+/area/f13/building)
 "eGL" = (
 /obj/structure/chair/stool{
 	dir = 1;
@@ -31614,15 +31621,10 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
 "fya" = (
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = 30;
-	pixel_y = 1
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 8
+/obj/structure/railing/wood{
+	layer = 0;
+	pixel_y = 7
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
@@ -36304,6 +36306,11 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jRV" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/turf/open/floor/plasteel/f13/concrete/industrial,
+/area/f13/building)
 "jSv" = (
 /obj/effect/landmark/start/f13/ncrtrooper,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -36783,6 +36790,15 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/city)
+"ksW" = (
+/obj/structure/closet/abductor{
+	desc = "A secure metal pod for storing protectrons.";
+	name = "protectron pod"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
+/turf/open/floor/plasteel/f13/metal/plate,
+/area/f13/building)
 "ktc" = (
 /turf/open/indestructible/ground/outside/road{
 	dir = 8;
@@ -37931,6 +37947,12 @@
 /obj/structure/reagent_dispensers/barrel/dangerous,
 /turf/open/floor/plasteel/f13/concrete/industrial,
 /area/f13/radiation)
+"lwG" = (
+/obj/effect/landmark/start/f13/mangudai,
+/turf/open/floor/wood/wood_worn{
+	dir = 9
+	},
+/area/f13/building)
 "lwX" = (
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt{
@@ -40361,11 +40383,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
 "nAH" = (
-/obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = 30;
-	pixel_y = 1
-	},
+/obj/effect/landmark/start/f13/kipchak,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "nBm" = (
@@ -46143,9 +46161,10 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/legion)
 "tcs" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/kipchak,
-/turf/open/indestructible/ground/outside/graveldirt,
-/area/f13/wasteland)
+/turf/open/floor/wood/wood_worn,
+/area/f13/building)
 "tcP" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -46537,6 +46556,10 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "tuu" = (
+/obj/structure/railing/wood{
+	dir = 8;
+	pixel_x = -3
+	},
 /turf/open/floor/plasteel/stairs{
 	color = "#4b3a26"
 	},
@@ -46607,6 +46630,15 @@
 	},
 /turf/open/floor/wood/wood_chestnut,
 /area/f13/legion)
+"txZ" = (
+/obj/structure/railing/wood{
+	dir = 4;
+	pixel_x = 3
+	},
+/turf/open/floor/plasteel/stairs{
+	color = "#4b3a26"
+	},
+/area/f13/building)
 "tyj" = (
 /obj/structure/cargocrate,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -48437,12 +48469,8 @@
 /area/f13/wasteland)
 "vam" = (
 /obj/structure/railing/wood{
-	dir = 8;
-	pixel_x = -3
-	},
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 8
+	layer = 0;
+	pixel_y = 7
 	},
 /turf/open/floor/wood/wood_worn,
 /area/f13/building)
@@ -49049,7 +49077,6 @@
 /area/f13/wasteland)
 "vDr" = (
 /obj/structure/chair/stool/retro/black,
-/obj/effect/landmark/start/f13/kipchak,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vDF" = (
@@ -52812,8 +52839,8 @@ aaa
 aae
 bqp
 xyU
-tuu
-tuu
+txZ
+txZ
 sTl
 sTW
 bqp
@@ -55127,7 +55154,7 @@ mlW
 jlL
 mlW
 kVQ
-sTl
+nAH
 cKl
 bqp
 lSY
@@ -55638,11 +55665,11 @@ aaa
 ufh
 aWI
 sTl
+nAH
 sTl
+eGa
 sTl
-afm
-sTl
-sTl
+nAH
 kJX
 bgh
 bmT
@@ -55893,7 +55920,7 @@ aaa
 aae
 aaa
 ufh
-aWI
+lwG
 jmJ
 aMl
 nOI
@@ -55914,10 +55941,10 @@ lKr
 lKr
 lKr
 qof
-tcs
 lKr
 lKr
-eGa
+lKr
+qof
 lKr
 acv
 nVn
@@ -56407,7 +56434,7 @@ aaa
 aae
 aae
 ufh
-aWI
+lwG
 aTP
 aMl
 nOI
@@ -56666,11 +56693,11 @@ aaa
 kJX
 aWI
 sTl
+nAH
 sTl
-sTl
-afm
+eGa
 kVQ
-kVQ
+tcs
 kJX
 blA
 bni
@@ -57183,7 +57210,7 @@ pPV
 dsz
 rsI
 kVQ
-sTl
+nAH
 sTl
 bqp
 bqu
@@ -59238,7 +59265,7 @@ ara
 bqp
 lkW
 fya
-nAH
+sTl
 sTl
 sTl
 bqp
@@ -99195,7 +99222,7 @@ aFP
 aEs
 aGq
 aJo
-aIF
+dKo
 aFD
 aFD
 azh
@@ -99394,7 +99421,7 @@ aWo
 vVo
 bjv
 adx
-aCI
+jRV
 afN
 amr
 bmd
@@ -105303,7 +105330,7 @@ bht
 twO
 fbg
 vVo
-aeO
+ksW
 abK
 afN
 vVo

@@ -815,7 +815,7 @@
 	bound_width = 64
 	icon = 'icons/obj/structures64.dmi'
 
-/obj/structure/rack/Initialize()
+/obj/structure/rack/large/Initialize()
 	switch(dir)
 		if(SOUTH, NORTH)
 			bound_width = 64
