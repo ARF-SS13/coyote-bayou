@@ -5,8 +5,8 @@
 	icon = 'icons/fallout/structures/doors.dmi'
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
 	autoclose = TRUE // Difficulty: Monkey to reduce amount of secure doors left open.
-	max_integrity = 300
-	obj_integrity = 300
+	max_integrity = 500
+	obj_integrity = 500
 	req_one_access_txt = null // Add the channel for the ID you want to lock this door to, check defines.
 
 /obj/machinery/door/unpowered/Bumped(atom/movable/AM)
@@ -69,8 +69,8 @@
 	desc = "Solid oak and metal reinforcements make this style of door a favoured method to secure Republic buildings. Has a built in lock."
 	icon_state = "secure_NCR"
 	assemblytype = /obj/item/stack/sheet/metal/ten
-	max_integrity = 700
-	obj_integrity = 700
+	max_integrity = 800
+	obj_integrity = 800
 	explosion_block = TRUE
 	req_access_txt = "121"
 
@@ -98,8 +98,8 @@
 	desc = "Steel-plated door with a built-in lock. Can't be padlocked."
 	icon_state = "secure_steel"
 	assemblytype = /obj/item/stack/sheet/metal/ten
-	max_integrity = 700
-	obj_integrity = 700
+	max_integrity = 1000
+	obj_integrity = 1000
 	explosion_block = TRUE
 
 /obj/machinery/door/unpowered/secure_steeldoor/update_icon()
@@ -124,9 +124,9 @@
 /obj/machinery/door/unpowered/celldoor
 	name = "cell door"
 	desc = "Celldoor with a built-in lock. Can't be padlocked."
-	icon_state = "cell" 
-	max_integrity = 600
-	obj_integrity = 600
+	icon_state = "cell"
+	max_integrity = 1000
+	obj_integrity = 1000
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
@@ -162,9 +162,9 @@
 /obj/machinery/door/unpowered/secure_legion
 	name = "iron gate"
 	desc = "Thick iron rods with sharp tips make for a fitting gate for the Legion castrum."
-	icon_state = "secure_legion" 
-	max_integrity = 700
-	obj_integrity = 700
+	icon_state = "secure_legion"
+	max_integrity = 800
+	obj_integrity = 800
 	assemblytype = /obj/item/stack/rods
 	visible = FALSE
 	explosion_block = FALSE
@@ -193,9 +193,9 @@
 /obj/machinery/door/unpowered/secure_bos
 	name = "steel security door"
 	desc = "Hard steel makes a statement. The statement in this case is stay out."
-	icon_state = "secure_bos" 
-	max_integrity = 800
-	obj_integrity = 800
+	icon_state = "secure_bos"
+	max_integrity = 1000
+	obj_integrity = 1000
 	assemblytype = /obj/item/stack/sheet/metal/ten
 	req_access_txt = "120"
 
