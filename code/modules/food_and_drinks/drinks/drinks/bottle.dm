@@ -687,6 +687,11 @@
 	icon_state = "selling_bottle"
 	desc = "Ironic name as the fruit used is from ashy plants."
 
+/obj/item/export/bottle/nukashine
+	name = "Nukashine"
+	icon_state = "nukashine"
+	desc = "Theres nothing like homebrew nukashine in times like these!"
+
 /obj/item/reagent_containers/food/drinks/bottle/nukashine
 	name = "Nukashine"
 	desc = "You've really hit rock bottom now... yet theres nothing like homebrew nukashine in times like these!"

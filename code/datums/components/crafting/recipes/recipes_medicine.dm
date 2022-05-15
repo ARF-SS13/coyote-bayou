@@ -101,7 +101,7 @@
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
-	category = CAT_MEDICAL	
+	category = CAT_MEDICAL
 
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak x5"
@@ -211,6 +211,7 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 
+<<<<<<< Updated upstream
 /datum/crafting_recipe/prim_defib
 	name = "Primitive Defibrillator"
 	result = /obj/item/defibrillator/primitive
@@ -218,5 +219,17 @@
 				 /obj/item/stack/cable_coil = 2,
 				 /obj/item/salvage/crafting = 1)
 	time = 50
+=======
+/datum/crafting_recipe/primitive_defib
+	name = "Improvised Defibrillator"
+	result = /obj/item/defibrillator/primitive
+	reqs = list(
+	/obj/item/wirecutters = 2,
+	/obj/item/stock_parts/cell = 6,
+	/obj/item/crafting/lunchbox = 1,
+	/obj/item/stack/cable_coil = 30
+	)
+	time = 100
+>>>>>>> Stashed changes
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
