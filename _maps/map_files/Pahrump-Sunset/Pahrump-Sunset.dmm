@@ -29849,6 +29849,9 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"dKo" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building)
 "dKw" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -30581,9 +30584,6 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/wood/wood_worn,
 /area/f13/clinic)
-"eAz" = (
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
 "eAK" = (
 /turf/open/floor/wood/wood_worn{
 	dir = 6
@@ -99222,7 +99222,7 @@ aFP
 aEs
 aGq
 aJo
-eAz
+dKo
 aFD
 aFD
 azh
