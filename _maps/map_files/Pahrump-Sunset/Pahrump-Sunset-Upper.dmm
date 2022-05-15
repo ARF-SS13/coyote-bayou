@@ -91,9 +91,7 @@
 	light_color = "#f4e3b0";
 	pixel_y = 12
 	},
-/obj/structure/cross,
-/obj/effect/mob_spawn/human/corpse/raiderboss,
-/turf/open/floor/plasteel/f13/stone/ornate,
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abo" = (
 /turf/closed/wall/f13/ruins,
@@ -113,16 +111,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_worn,
 /area/f13/wasteland)
-"abr" = (
-/obj/item/flag/khan{
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/f13/stone/sierra,
-/area/f13/building)
 "abs" = (
 /obj/structure/chair/comfy/throne,
 /obj/effect/landmark/start/f13/noyan,
-/turf/open/floor/plasteel/f13/stone/sierra,
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "abt" = (
 /turf/closed/wall/f13/brick,
@@ -2140,13 +2132,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
-"lTH" = (
-/obj/structure/curtain{
-	color = "#5c131b";
-	alpha = 255
-	},
-/turf/open/floor/plasteel/f13/stone/sierra,
-/area/f13/building)
 "lUm" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin/towel,
@@ -2189,11 +2174,10 @@
 	},
 /area/f13/wasteland)
 "meA" = (
-/obj/structure/decoration/rag{
-	icon_state = "skin"
+/obj/item/flag/khan{
+	pixel_y = 5
 	},
-/obj/item/flag/khan,
-/turf/closed/wall/f13/wood,
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "mhV" = (
 /obj/structure/rack/large/shelf{
@@ -3517,7 +3501,8 @@
 /turf/open/floor/wood/wood_worn,
 /area/f13/city)
 "vlI" = (
-/turf/open/floor/plasteel/f13/stone/ornate,
+/obj/structure/chair/wood/wings,
+/turf/open/floor/wood/wood_worn,
 /area/f13/building)
 "vqz" = (
 /turf/open/transparent/openspace{
@@ -7636,7 +7621,7 @@ lDT
 lDT
 xuM
 meA
-lTH
+pxI
 aby
 aby
 aby
@@ -7892,7 +7877,7 @@ lDT
 lDT
 lDT
 abj
-abr
+pxI
 vlI
 iaD
 pxI
@@ -8406,7 +8391,7 @@ tAz
 lDT
 lDT
 abj
-abr
+pxI
 vlI
 wxI
 iUi
@@ -8664,7 +8649,7 @@ lDT
 lDT
 xuM
 meA
-lTH
+pxI
 aby
 aby
 aby
