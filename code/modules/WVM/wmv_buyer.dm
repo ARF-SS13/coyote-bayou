@@ -32,7 +32,7 @@
 								/obj/item/reagent_containers/pill/patch/healingpowder = 30,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 20,
 								/obj/item/reagent_containers/hypospray/medipen/medx = 75,
-								/obj/item/reagent_containers/pill/patch/healpoultice 50,
+								/obj/item/reagent_containers/pill/patch/healpoultice = 50,
 								/obj/item/export/bottle/gin = 25,
 								/obj/item/export/bottle/wine = 25,
 								/obj/item/export/bottle/whiskey = 25,
@@ -53,16 +53,10 @@
 								/obj/item/export/bottle/champagne = 25,
 								/obj/item/export/bottle/blazaam = 25,
 								/obj/item/export/bottle/trappist = 25,
-								/obj/item/export/bottle/grenadine = 25,
 								/obj/item/export/bottle/minikeg = 25,
-								/obj/item/export/bottle/blooddrop = 25,
-								/obj/item/export/bottle/slim_gold = 100,
-								/obj/item/export/bottle/white_bloodmoon = 100,
-								/obj/item/export/bottle/greenroad = 25,
 								/obj/item/export/bottle/nukashine = 100,
 								/obj/item/reagent_containers/hypospray/medipen/stimpak = 50,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100
-
+								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100,
 								)
 
 /obj/machinery/mineral/wasteland_trader/general

@@ -211,15 +211,6 @@
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 
-<<<<<<< Updated upstream
-/datum/crafting_recipe/prim_defib
-	name = "Primitive Defibrillator"
-	result = /obj/item/defibrillator/primitive
-	reqs = list (/obj/item/stock_parts/capacitor/adv = 1,
-				 /obj/item/stack/cable_coil = 2,
-				 /obj/item/salvage/crafting = 1)
-	time = 50
-=======
 /datum/crafting_recipe/primitive_defib
 	name = "Improvised Defibrillator"
 	result = /obj/item/defibrillator/primitive
@@ -230,6 +221,5 @@
 	/obj/item/stack/cable_coil = 30
 	)
 	time = 100
->>>>>>> Stashed changes
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL

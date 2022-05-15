@@ -52,116 +52,161 @@
 				/obj/item/stack/f13Cash = 1)
 
 /datum/crafting_recipe/bottle/export
-	var/sealed_type = /datum/reagent/consumable/ethanol
 	reqs = list(/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/f13Cash = 1,
-				[sealed_type] = 50
+				/datum/reagent/consumable/ethanol = 50
 				)
 
 /datum/crafting_recipe/bottle/export/gin
-	sealed_type = /datum/reagent/consumable/ethanol/gin
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/gin = 50
+				)
 	result = /obj/item/export/bottle/gin
 
 /datum/crafting_recipe/bottle/export/wine
-	sealed_type = /datum/reagent/consumable/ethanol/wine
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/wine = 50
+				)
 	result = /obj/item/export/bottle/wine
 
 /datum/crafting_recipe/bottle/export/whiskey
-	sealed_type = /datum/reagent/consumable/ethanol/whiskey
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/whiskey = 50
+				)
 	result = /obj/item/export/bottle/whiskey
 
 /datum/crafting_recipe/bottle/export/vodka
-	sealed_type = /datum/reagent/consumable/ethanol/vodka
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/vodka = 50
+				)
 	result = /obj/item/export/bottle/vodka
 
 /datum/crafting_recipe/bottle/export/tequila
-	sealed_type = /datum/reagent/consumable/ethanol/tequila
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/tequila = 50
+				)
 	result = /obj/item/export/bottle/tequila
 
 /datum/crafting_recipe/bottle/export/patron
-	sealed_type = /datum/reagent/consumable/ethanol/patron
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/patron = 50
+				)
 	result = /obj/item/export/bottle/patron
 
 /datum/crafting_recipe/bottle/export/rum
-	sealed_type = /datum/reagent/consumable/ethanol/rum
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/rum = 50
+				)
 	result = /obj/item/export/bottle/rum
 
 /datum/crafting_recipe/bottle/export/vermouth
-	sealed_type = /datum/reagent/consumable/ethanol/vermouth
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/vermouth = 50
+				)
 	result = /obj/item/export/bottle/vermouth
 
 /datum/crafting_recipe/bottle/export/kahlua
-	sealed_type = /datum/reagent/consumable/ethanol/kahlua
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/kahlua = 50
+				)
 	result = /obj/item/export/bottle/kahlua
 
 /datum/crafting_recipe/bottle/export/goldschlager
-	sealed_type = /datum/reagent/consumable/ethanol/goldschlager
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/goldschlager = 50
+				)
 	result = /obj/item/export/bottle/goldschlager
 
 /datum/crafting_recipe/bottle/export/hcider
-	sealed_type = /datum/reagent/consumable/ethanol/hcider
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/hcider = 50
+				)
 	result = /obj/item/export/bottle/hcider
 
 /datum/crafting_recipe/bottle/export/cognac
-	sealed_type = /datum/reagent/consumable/ethanol/cognac
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/cognac = 50
+				)
 	result = /obj/item/export/bottle/cognac
 
 /datum/crafting_recipe/bottle/export/absinthe
-	sealed_type = /datum/reagent/consumable/ethanol/absinthe
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/absinthe = 50
+				)
 	result = /obj/item/export/bottle/absinthe
 
 /datum/crafting_recipe/bottle/export/grappa
-	sealed_type = /datum/reagent/consumable/ethanol/grappa
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/grappa = 50
+				)
 	result = /obj/item/export/bottle/grappa
 
 /datum/crafting_recipe/bottle/export/sake
-	sealed_type = /datum/reagent/consumable/ethanol/sake
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/sake = 50
+				)
 	result = /obj/item/export/bottle/sake
 
 /datum/crafting_recipe/bottle/export/fernet
-	sealed_type = /datum/reagent/consumable/ethanol/fernet
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/fernet = 50
+				)
 	result = /obj/item/export/bottle/fernet
 
 /datum/crafting_recipe/bottle/export/applejack
-	sealed_type = /datum/reagent/consumable/ethanol/applejack
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/applejack = 50
+				)
 	result = /obj/item/export/bottle/applejack
 
 /datum/crafting_recipe/bottle/export/champagne
-	sealed_type = /datum/reagent/consumable/ethanol/champagne
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/champagne = 50
+				)
 	result = /obj/item/export/bottle/champagne
 
 /datum/crafting_recipe/bottle/export/blazaam
-	sealed_type = /datum/reagent/consumable/ethanol/blazaam
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/blazaam = 50
+				)
 	result = /obj/item/export/bottle/blazaam
 
 /datum/crafting_recipe/bottle/export/trappist
-	sealed_type = /datum/reagent/consumable/ethanol/trappist
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/trappist = 50
+				)
 	result = /obj/item/export/bottle/trappist
 
-/datum/crafting_recipe/bottle/export/grenadine
-	sealed_type = /datum/reagent/consumable/ethanol/grenadine
-	result = /obj/item/export/bottle/grenadine
-
 /datum/crafting_recipe/bottle/export/minikeg
-	sealed_type = /datum/reagent/consumable/ethanol/beer
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/beer = 50
+				)
 	result = /obj/item/export/bottle/minikeg
 
-/datum/crafting_recipe/bottle/export/blooddrop
-	sealed_type = /datum/reagent/consumable/ethanol/blooddrop
-	result = /obj/item/export/bottle/blooddrop
-
-/datum/crafting_recipe/bottle/export/slim_gold
-	sealed_type = /datum/reagent/consumable/ethanol/slim_gold
-	result = /obj/item/export/bottle/slim_gold
-
-/datum/crafting_recipe/bottle/export/white_bloodmoon
-	sealed_type = /datum/reagent/consumable/ethanol/white_bloodmoon
-	result = /obj/item/export/bottle/white_bloodmoon
-
-/datum/crafting_recipe/bottle/export/greenroad
-	sealed_type = /datum/reagent/consumable/ethanol/greenroad
-	result = /obj/item/export/bottle/greenroad
-
 /datum/crafting_recipe/bottle/export/nukashine
-	sealed_type = /datum/reagent/consumable/ethanol/nukashine
+	reqs = list(/obj/item/stack/sheet/metal = 2,
+				/obj/item/stack/f13Cash = 1,
+				/datum/reagent/consumable/ethanol/nukashine = 50
+				)
 	result = /obj/item/export/bottle/nukashine
