@@ -34,6 +34,74 @@
 /area/f13/wasteland/event
 	name = "Wasteland (Event)"
 
+/area/f13/wasteland/east
+	name = "Eastern Yuma"
+	icon_state = "yumaeast"
+
+/area/f13/wasteland/west
+	name = "Western Yuma"
+	icon_state = "yumawest"
+
+/area/f13/wasteland/quarry
+	name = "Quarry"
+	icon_state = "quarry"
+
+/area/f13/wasteland/massfusion
+	name = "Mass Fusion Exterior"
+	icon_state = "massfusionout"
+
+/area/f13/wasteland/mall
+	name = "Yuma Mall Exterior"
+	icon_state = "mallex"
+
+/area/f13/wasteland/hospital
+	name = "Yuma General Exterior"
+	icon_state = "hospitalex"
+
+/area/f13/wasteland/museum
+	name = "Museum of Technology Exterior"
+	icon_state = "museumex"
+
+/area/f13/wasteland/firestation
+	name = "Fire Station Exterior"
+	icon_state = "fireex"
+
+/area/f13/wasteland/heaven
+	name = "Heaven's Night Exterior"
+	icon_state = "heavenex"
+
+/area/f13/wasteland/train
+	name = "Train Station Exterior"
+	icon_state = "trainex"
+
+/area/f13/wasteland/nanotrasen
+	name = "NanoTrasen HQ Exterior"
+	icon_state = "nanoex"
+
+/area/f13/wasteland/bighorn
+	name = "Bighorn Exterior"
+	icon_state = "bighornex"
+
+/area/f13/wasteland/khanfort
+	name = "Khan Fortress Exterior"
+	icon_state = "khanfortex"
+
+/area/f13/wasteland/followers
+	name = "Followers Exterior"
+	icon_state = "followersex" //lol
+
+/area/f13/wasteland/bighornbunker
+	name = "Bighorn Bunker Exterior"
+	icon_state = "bighornbunkerex"
+
+/area/f13/wasteland/ncr
+	name = "NCR Outpost Exterior"
+	icon_state = "ncrex"
+
+/area/f13/wasteland/legion
+	name = "Legion Fortress Exterior"
+	icon_state = "legionex"
+
 /area/f13/forest
 	name = "Forest"
 	icon_state = "forest"
@@ -79,6 +147,42 @@
 	'sound/f13ambience/ambigen_6.ogg','sound/f13ambience/ambigen_7.ogg','sound/f13ambience/ambigen_8.ogg','sound/f13ambience/ambigen_9.ogg')
 	environment = 2
 	grow_chance = 5
+
+/area/f13/building/massfusion
+	name = "Mass Fusion Plant"
+	icon_state = "massfusionin"
+
+/area/f13/building/hospital
+	name = "Yuma General"
+	icon_state = "hospital"
+
+/area/f13/building/mall
+	name = "Yuma Mall"
+	icon_state = "mall"
+
+/area/f13/building/museum
+	name = "Museum of Technology"
+	icon_state = "museum"
+
+/area/f13/building/firestation
+	name = "Fire Station"
+	icon_state = "fire"
+
+/area/f13/building/trainstation
+	name = "Train Station"
+	icon_state = "train"
+
+/area/f13/building/nanotrasen
+	name = "NanoTrasen HQ"
+	icon_state = "nano"
+
+/area/f13/building/khanfort
+	name = "Khan Fortress"
+	icon_state = "khanfort"
+
+/area/f13/building/bighornbunker
+	name = "Bighorn Bunker"
+	icon_state = "bighornbunker"
 
 /area/f13/farm
 	name = "Farm"
@@ -157,6 +261,10 @@
 /area/f13/city/museum
 	name = "Museum"
 	outdoors = FALSE
+
+/area/f13/city/bighorn
+	name = "Bighorn"
+	icon_state = "bighorn"
 
 /area/f13/citycaves
 	name = "City Caves"
@@ -245,6 +353,10 @@
 /area/f13/bunker/museum
 	name = "Bunker Museum"
 
+/area/f13/bunker/bighornbunker
+	name = "Bighorn Bunker"
+	icon_state = "bighornbunker2"
+
 /area/f13/tunnel
 	name = "Tunnel"
 	icon_state = "tunnel"
@@ -281,6 +393,10 @@
 /area/f13/tunnel/sub
 	name = "Subway Tunnel"
 	icon_state = "tunnelsub"
+
+/area/f13/tunnel/khanfort
+	name = "Khan Fortress Tunnel"
+	icon_state = "tunnelkhan"
 
 /area/f13/trainstation
 	name = "Tunnel"
