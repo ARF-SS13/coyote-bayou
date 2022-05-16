@@ -53,6 +53,21 @@
 	desc = "A shooting target that looks like a useless clown."
 	hp = 2000
 
+/obj/item/target/communist
+	name = "communist mannequin"
+	desc = "A mannequin of some sort of communist soldier - imposingly socialist."
+	icon_state = "target_chinese"
+
+/obj/item/target/vaultie
+	name = "vault boy mannequin"
+	desc = "A mannequin of the famous Vault Boy himself - saviour of the free world!"
+	icon_state = "target_vault"
+
+/obj/item/target/vaultie2
+	name = "vault boy mannequin"
+	desc = "A mannequin of the famous Vault Boy himself - saviour of the free world!"
+	icon_state = "target_vault2"
+
 #define DECALTYPE_SCORCH 1
 #define DECALTYPE_BULLET 2
 

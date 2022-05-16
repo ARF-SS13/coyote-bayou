@@ -1138,6 +1138,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood/wood_worn,
 /area/f13/building/khanfort)
+"dnp" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "dos" = (
 /obj/effect/overlay/junk/toilet{
 	dir = 4;
@@ -47883,7 +47892,7 @@ xam
 xam
 xam
 tRs
-hJV
+dnp
 hJV
 ivA
 lqO

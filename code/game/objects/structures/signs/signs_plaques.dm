@@ -47,3 +47,17 @@
 	desc = "Under the painting a plaque reads: 'While the meat grinder may not have spared you, fear not. Not one part of you has gone to waste... You were delicious.'"
 	icon_state = "monkey_painting"
 	custom_materials = list(/datum/material/wood = 2000) //The same as /obj/structure/sign/picture_frame
+
+/obj/structure/sign/plaques/long
+	name = "banner"
+	desc = "A banner with a printed image on it."
+	icon = 'icons/obj/decalslong.dmi'
+
+/obj/structure/sign/plaques/long/vault
+	icon_state = "vaultbanner"
+
+/obj/structure/sign/plaques/long/bomb
+	icon_state = "bombbanner"
+
+/obj/structure/sign/plaques/long/paradise
+	icon_state = "treebanner"
