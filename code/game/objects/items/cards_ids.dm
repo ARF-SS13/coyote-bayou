@@ -932,7 +932,7 @@
 	item_state = "card-doctor"
 	assignment = "citizenship permit"
 	access = list(ACCESS_BAR)
-	
+
 /obj/item/card/id/dogtag/MDfakepermit
 	name = "faded medical license"
 	desc = "a revoked medical license. This is why we do not remove people's skeletons "
@@ -1185,11 +1185,26 @@
 	item_state = null
 	assignment = "gang tattoo"
 	uses_overlays = FALSE
-	access = list(ACCESS_KHAN)
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_GATEWAY, ACCESS_MINING)
 
 /obj/item/card/id/khantattoo/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+
+/obj/item/card/id/khanleadertattoo
+	name = "Great Khan leader tattoo"
+	desc = "A tattoo of the symbol of the Great Khans."
+	icon = 'icons/fallout/clothing/khans.dmi'
+	icon_state = "khan_id"
+	item_state = null
+	assignment = "gang tattoo"
+	uses_overlays = FALSE
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+
+/obj/item/card/id/khanleadertattoo/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
+
 
 /obj/item/card/id/outcasttattoo
 	name = "faded tribal tattoos"
