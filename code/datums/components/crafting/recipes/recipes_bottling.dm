@@ -58,6 +58,7 @@
 				)
 
 /datum/crafting_recipe/bottle/export/gin
+	name = "Sealed bottle of gin"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/gin = 50
@@ -65,6 +66,7 @@
 	result = /obj/item/export/bottle/gin
 
 /datum/crafting_recipe/bottle/export/wine
+	name = "Sealed bottle of wine"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/wine = 50
@@ -72,6 +74,7 @@
 	result = /obj/item/export/bottle/wine
 
 /datum/crafting_recipe/bottle/export/whiskey
+	name = "Sealed bottle of whiskey"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/whiskey = 50
@@ -79,6 +82,7 @@
 	result = /obj/item/export/bottle/whiskey
 
 /datum/crafting_recipe/bottle/export/vodka
+	name = "Sealed bottle of vodka"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/vodka = 50
@@ -86,6 +90,7 @@
 	result = /obj/item/export/bottle/vodka
 
 /datum/crafting_recipe/bottle/export/tequila
+	name = "Sealed bottle of tequila"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/tequila = 50
@@ -93,6 +98,7 @@
 	result = /obj/item/export/bottle/tequila
 
 /datum/crafting_recipe/bottle/export/patron
+	name = "Sealed bottle of patron"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/patron = 50
@@ -100,6 +106,7 @@
 	result = /obj/item/export/bottle/patron
 
 /datum/crafting_recipe/bottle/export/rum
+	name = "Sealed bottle of rum"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/rum = 50
@@ -107,6 +114,7 @@
 	result = /obj/item/export/bottle/rum
 
 /datum/crafting_recipe/bottle/export/vermouth
+	name = "Sealed bottle of vermouth"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/vermouth = 50
@@ -114,6 +122,7 @@
 	result = /obj/item/export/bottle/vermouth
 
 /datum/crafting_recipe/bottle/export/kahlua
+	name = "Sealed bottle of kahlua"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/kahlua = 50
@@ -121,6 +130,7 @@
 	result = /obj/item/export/bottle/kahlua
 
 /datum/crafting_recipe/bottle/export/goldschlager
+	name = "Sealed bottle of goldschlager"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/goldschlager = 50
@@ -128,6 +138,7 @@
 	result = /obj/item/export/bottle/goldschlager
 
 /datum/crafting_recipe/bottle/export/hcider
+	name = "Sealed bottle of hcider"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/hcider = 50
@@ -135,6 +146,7 @@
 	result = /obj/item/export/bottle/hcider
 
 /datum/crafting_recipe/bottle/export/cognac
+	name = "Sealed bottle of cognac"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/cognac = 50
@@ -142,6 +154,7 @@
 	result = /obj/item/export/bottle/cognac
 
 /datum/crafting_recipe/bottle/export/absinthe
+	name = "Sealed bottle of absinthe"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/absinthe = 50
@@ -149,6 +162,7 @@
 	result = /obj/item/export/bottle/absinthe
 
 /datum/crafting_recipe/bottle/export/grappa
+	name = "Sealed bottle of grappa"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/grappa = 50
@@ -156,6 +170,7 @@
 	result = /obj/item/export/bottle/grappa
 
 /datum/crafting_recipe/bottle/export/sake
+	name = "Sealed bottle of sake"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/sake = 50
@@ -163,6 +178,7 @@
 	result = /obj/item/export/bottle/sake
 
 /datum/crafting_recipe/bottle/export/fernet
+	name = "Sealed bottle of fernet"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/fernet = 50
@@ -170,6 +186,7 @@
 	result = /obj/item/export/bottle/fernet
 
 /datum/crafting_recipe/bottle/export/applejack
+	name = "Sealed bottle of applejack"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/applejack = 50
@@ -177,6 +194,7 @@
 	result = /obj/item/export/bottle/applejack
 
 /datum/crafting_recipe/bottle/export/champagne
+	name = "Sealed bottle of champagne"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/champagne = 50
@@ -184,6 +202,7 @@
 	result = /obj/item/export/bottle/champagne
 
 /datum/crafting_recipe/bottle/export/blazaam
+	name = "Sealed bottle of blazaam"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/blazaam = 50
@@ -191,6 +210,7 @@
 	result = /obj/item/export/bottle/blazaam
 
 /datum/crafting_recipe/bottle/export/trappist
+	name = "Sealed bottle of trappist"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/trappist = 50
@@ -198,6 +218,7 @@
 	result = /obj/item/export/bottle/trappist
 
 /datum/crafting_recipe/bottle/export/minikeg
+	name = "Sealed minikeg of beer"
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 2,
 				/obj/item/stack/sheet/metal = 1,
 				/datum/reagent/consumable/ethanol/beer = 50
@@ -205,6 +226,7 @@
 	result = /obj/item/export/bottle/minikeg
 
 /datum/crafting_recipe/bottle/export/nukashine
+	name = "Sealed bottle of nukashine"
 	reqs = list(/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/f13Cash = 1,
 				/datum/reagent/consumable/ethanol/nukashine = 50
