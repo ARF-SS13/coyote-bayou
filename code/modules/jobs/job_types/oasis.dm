@@ -437,7 +437,7 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-
+*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13farmer
@@ -446,9 +446,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "The Mayor"
-	description = "A true labourer of the land knows that nowhere in the valley is the soil as fertile or the bounty as rich as within the settlement of Oasis, all thanks to the sacred oak. Behind the safety of these walls, you grow crops, medicines, and raise livestock. The community depends on you, as a town cannot prosper without a fresh food source - especially in times of siege."
-	enforces = "Farming is a public service, and you are under control of local governance - but by default you are expected to work with the private business of The Blue Oyster in feeding the town. Ask them for a cut of the profits."
+	supervisors = "Bighorn laws"
+	description = "You are a farmer living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may purchase your produce."
+	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food over drugs."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -493,7 +493,7 @@ Mayor
 		/obj/item/clothing/under/f13/roving)
 
 /*--------------------------------------------------------------*/
-
+/*
 /datum/job/oasis/f13prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
