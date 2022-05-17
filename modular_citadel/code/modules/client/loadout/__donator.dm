@@ -135,3 +135,13 @@
 	name = "I die to mobsx2"
 	path = /obj/item/storage/box/large/custom_kit/mutie
 	ckeywhitelist = list("puglord777")
+
+/datum/gear/donator/kits/kemble
+	name = "Trinity Kemble's belongings"
+	path = /obj/item/storage/box/large/custom_kit/kemble
+	ckeywhitelist = list("yeehawguvnah")
+
+/obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
+	new /obj/item/modkit/kemblevest(src)
+	new /obj/item/modkit/kemblehat(src)
+	new /obj/item/storage/belt/holster/kemble(src)

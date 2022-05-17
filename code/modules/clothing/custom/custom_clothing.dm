@@ -25,3 +25,40 @@
 	item_state = "desert_ranger"
 	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
 */
+
+// YEEHAWGYVNAH/"Trinity Kemble" //
+/obj/item/clothing/suit/armor/f13/trailranger/kemble
+	name = "riot vest"
+	desc = "An armored chestplate ripped out of old riot gear."
+	icon_state = "kemble"
+	item_state = "kemble"
+
+/obj/item/clothing/head/f13/trailranger/kemble
+	name = "ranger's slouch hat"
+	desc = "A comfortable slouch hat, reinforced with ballistic fibres. Although it has the remnants of a pair of night vision goggles still strapped to it, they're non-functional..."
+	icon_state = "kemble"
+	item_state = "kemble"
+	actions_types = list(/datum/action/item_action/toggle)
+
+/obj/item/clothing/head/f13/trailranger/kemble/attack_self(mob/user)
+	weldingvisortoggle(user)
+	icon_state = "kembleup"
+	item_state = "kembleup"
+
+/obj/item/storage/belt/holster/kemble
+	name = "ranger overcoat"
+	desc = "An insulated coat taken from a set of riot gear. This one is apparently reversible (alt-click to toggle colours)."
+	icon_state = "kemblecoat_green"
+	item_state = "kemblecoat_green"
+	alternate_worn_layer = HAIR_LAYER-1
+
+/obj/item/storage/belt/holster/kemble/AltClick(mob/user)
+	..()
+	if(icon_state == "kemblecoat_green")
+		icon_state = "kemblecoat_tan"
+		item_state = "kemblecoat_tan"
+		to_chat(user, "You reverse the coat to show the tan side.")
+	else
+		icon_state = "kemblecoat_green"
+		item_state = "kemblecoat_green"
+		to_chat(user, "You reverse the coat to show the green side.")
