@@ -3,12 +3,23 @@
 	selection_color = "#ff915e"
 	faction = FACTION_KHAN
 	exp_type = EXP_TYPE_KHAN
-	access = list(ACCESS_KHAN)
-	minimal_access = list(ACCESS_KHAN)
-	forbids = "The Khanate forbids: Disobedience. Harming or endangering the interests of the Khanate and all its citizens."
-	enforces = "The Khanate expects: Obedience. Protecting the interests and territory of the Khanate and all its citizens. Working to distinguish the proud Khanate from foul Raider gangs. Wearing the uniform and armor as appropriate."
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_MINING, ACCESS_GATEWAY)
+	forbids = "THE KHANATE DISCOURAGES: Dishonorable actions, Weakness, Abuse of power or status, sabotaging other Khans."
+	enforces = "THE KHANATE ENCOURAGES: Bravery, Honor, Displays of strenght, Brotherhood."
+
+/datum/job/khanleader //do NOT use this for anything, it's just to store faction datums
+	department_flag = KHAN
+	selection_color = "#ff915e"
+	faction = FACTION_KHAN
+	exp_type = EXP_TYPE_KHAN
+	access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	minimal_access = list(ACCESS_KHAN, ACCESS_BAR, ACCESS_CLINIC, ACCESS_GATEWAY, ACCESS_MINT_VAULT, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS, ACCESS_CLONING)
+	forbids = "THE KHANATE DISCOURAGES: Dishonorable actions, Weakness, Abuse of power or status, sabotaging other Khans."
+	enforces = "THE KHANATE ENCOURAGES: Bravery, Honor, Displays of strenght, Brotherhood."
 
 /datum/outfit/job/khan
+	name = "Khan"
 	jobtype = /datum/job/khan
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
 	id = /obj/item/card/id/khantattoo
@@ -28,6 +39,50 @@
 		)
 
 /datum/outfit/job/khan/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	if(visualsOnly)
+		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/den)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmor)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombatarmormk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legioncombathelmetmk2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvaged_salvaged)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionsalvagedhelmet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_broken)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriot_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legionriothelmet_ncr)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/varmintrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/combatrifle)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/uzi)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
+
+/datum/outfit/job/khanleader
+	name = "Khan"
+	jobtype = /datum/job/khanleader
+	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
+	id = /obj/item/card/id/khanleadertattoo
+	ears = /obj/item/radio/headset/headset_khans
+	head = /obj/item/clothing/head/helmet/f13/khan/bandana
+	shoes = /obj/item/clothing/shoes/f13/military/khan
+	backpack =	/obj/item/storage/backpack/satchel/explorer
+	satchel = 	/obj/item/storage/backpack/satchel/old
+	uniform = /obj/item/clothing/under/f13/khan
+	r_hand = /obj/item/book/granter/trait/selection
+	r_pocket = /obj/item/flashlight/flare
+	l_pocket = /obj/item/storage/survivalkit_khan
+	gloves = /obj/item/melee/unarmed/brass/spiked
+	box = null
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/khan = 1
+		)
+
+/datum/outfit/job/khanleader/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
@@ -288,7 +343,7 @@
 	faction = FACTION_KHAN
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a Kipchak, a warrior of the Great Khans who has demonstrated prowess beyond the domain of a Mangudai. While you remain a humble soldier, greater duties may be entrusted upon you - such as leadership of small scouting parties or the collection of tribute. You are respected but do not stray too far without oversight."
+	description = "You are a Kipchak, a warrior of the Great Khans who has demonstrated prowess beyond the domain of a Mangudai. While you remain a humble soldier, greater duties may be entrusted upon you - such as leadership of small scouting parties or the collection of tribute. Your additional duties may involve hunting, prospecting and mining."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 60
@@ -308,7 +363,7 @@
 	faction = FACTION_KHAN
 	total_positions = 4
 	spawn_positions = 4
-	description = "You are a Khorchin, an experienced warrior of the Great Khans who has proven their worth to the Khanate several times over. Your lamellar armor was forged for your person, and you shall find ample instruments of warfare at your disposal. Duties of greater prestige shall be given to you, from hunting lawbreakers to serving on diplomatic missions."
+	description = "You are a Khorchin, an experienced warrior of the Great Khans who has proven their worth to the Khanate several times over. Your lamellar armor was forged for your person, and you shall find ample instruments of warfare at your disposal. Duties of greater prestige shall be given to you, from protecting Bighorn from lawbreakers to serving on diplomatic missions and expeditions."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 150
@@ -328,7 +383,7 @@
 	faction = FACTION_KHAN
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are a Kheshig, a veteran Khorchin of the Great Khans who has displayed a degree of combat mastery in service to the Khanate. You receive access to a far greater arsenal, but with this comes greater expectations - expect to be given duties befitting of a true loyalist of the Khan. You may even be expected to lead in the absence of a Noyan or Steward."
+	description = "You are a Kheshig, a veteran Khorchin of the Great Khans who has displayed a degree of combat mastery in service to the Khanate. You receive access to a far greater arsenal, but with this comes greater expectations - expect to be given duties befitting of a true loyalist of the Khan such as leading dangerous expeditions alongside Knorchin, Bighorn prospectors and Followers."
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_requirements = 500
@@ -353,9 +408,9 @@
 	enforces = "You have control over the First Bank of Bighorn, a valuable asset in generating profit. Some ideas - distributing loans, handling the collection of tribute, establishing a chem distribution ring, and working with another faction - perhaps against another. But don't unnecessarily endanger the Khanate, and listen to the Noyan!"
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
-	exp_requirements = 500
+	exp_requirements = 750
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khanleader
 
 	loadout_options = list(
 		/datum/outfit/loadout/taxcollector,
@@ -377,7 +432,7 @@
 	req_admin_notify = 1
 	exp_requirements = 1000
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khanleader
 
 	loadout_options = list(
 		/datum/outfit/loadout/ironfist,
