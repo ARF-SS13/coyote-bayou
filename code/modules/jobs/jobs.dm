@@ -60,6 +60,9 @@ GLOBAL_LIST_INIT(command_positions, list(
 	"Chief of Police",
 
 	"Enclave Lieutenant",
+
+	"Noyan",
+	"Steward",
 	))
 
 GLOBAL_LIST_INIT(silicon_whitelist_positions, list(
@@ -115,6 +118,12 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Head Hunter",
 "Druid",
 "Hunter",
+
+"Noyan",
+"Steward",
+"Kheshig",
+"Khorchin",
+"Kipchak",
 
 "Followers Administrator",
 "Followers Doctor",
