@@ -45691,6 +45691,12 @@
 /obj/item/storage/money_stack/legion,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
+"ovV" = (
+/obj/machinery/radioterminal/ncr{
+	dir = 8
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "oww" = (
 /obj/structure/rack,
 /obj/item/clothing/under/rank/curator/treasure_hunter,
@@ -52251,6 +52257,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
+"thb" = (
+/obj/machinery/computer/card/ncr{
+	dir = 8
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "ths" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -63494,8 +63506,8 @@ aae
 aae
 aae
 xLa
-rbV
-rbV
+thb
+ovV
 apn
 rbV
 rbV
