@@ -393,7 +393,7 @@
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 6
+	fire_delay = 5
 	burst_size = 1
 	recoil = 0.5
 	automatic_burst_overlay = FALSE
