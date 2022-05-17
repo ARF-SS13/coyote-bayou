@@ -20349,6 +20349,13 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/item/storage/box/ration/ranger_breakfast,
+/obj/item/storage/box/ration/ranger_breakfast,
+/obj/item/storage/box/ration/ranger_dinner,
+/obj/item/storage/box/ration/ranger_dinner,
+/obj/item/storage/box/ration/ranger_lunch,
+/obj/item/storage/box/ration/ranger_lunch,
+/obj/item/storage/box/ration/ranger_lunch,
 /turf/open/floor/wood/wood_wide,
 /area/f13/ncr)
 "bhH" = (
@@ -31490,8 +31497,8 @@
 "exK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/exhibit/future3{
-	pixel_y = 32;
-	anchored = 1
+	anchored = 1;
+	pixel_y = 32
 	},
 /obj/effect/turf_decal/arrows{
 	dir = 4
@@ -34672,8 +34679,8 @@
 "gLV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/exhibit/future1{
-	pixel_y = 32;
-	anchored = 1
+	anchored = 1;
+	pixel_y = 32
 	},
 /obj/structure/railing/handrail/blue{
 	pixel_y = -4
@@ -35614,8 +35621,8 @@
 "hyZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/paper/exhibit/future2{
-	pixel_y = 32;
-	anchored = 1
+	anchored = 1;
+	pixel_y = 32
 	},
 /obj/structure/railing/handrail/blue{
 	pixel_y = -4
@@ -42541,8 +42548,8 @@
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/nuke{
-	name = "real communist nuclear warhead";
-	desc = "Well, this isn't fooling anyone."
+	desc = "Well, this isn't fooling anyone.";
+	name = "real communist nuclear warhead"
 	},
 /turf/open/floor/plating/f13/inside/gravel/edge{
 	dir = 1
