@@ -111,3 +111,13 @@
 	target_items = list(/obj/item/clothing/suit/armor/f13/combat/ncr_patrol)
 	result_item = /obj/item/clothing/suit/armor/f13/modif_r_vest
 
+//YEEHAWGUVNAH/Trinity Kemble
+/obj/item/modkit/kemblevest
+	name = "light riot armour modkit"
+	target_items = list(/obj/item/clothing/suit/armor/f13/trailranger)
+	result_item = /obj/item/clothing/suit/armor/f13/trailranger/kemble
+
+/obj/item/modkit/kemblehat
+	name = "ranger slouch hat modkit"
+	target_items = list(/obj/item/clothing/head/f13/trailranger)
+	result_item = /obj/item/clothing/head/f13/trailranger/kemble
