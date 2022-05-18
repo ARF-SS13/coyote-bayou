@@ -412,6 +412,11 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if(memo)
 			to_chat(src, memo)
 		adminGreet()
+	else if(!BC_IsKeyAllowedToConnect(ckey))
+		to_chat(src, "Sorry, but the server is currently only accepting whitelisted players.  Please see the discord to be whitelisted.")
+		log_and_message_admins("[ckey] was denied a connection due to not being whitelisted.")
+		qdel(src)
+		return 0
 
 	add_verbs_from_config()
 	var/cached_player_age = set_client_age_from_db(tdata) //we have to cache this because other shit may change it and we need it's current value now down below.

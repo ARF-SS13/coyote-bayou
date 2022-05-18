@@ -1,5 +1,11 @@
 
 ////////////////////////////////
+/proc/log_and_message_admins(var/message as text, var/mob/user = usr)
+	var/finalMessage = user ? "[key_name(user)] [message]" : "EVENT [message]"
+	log_admin(finalMessage)
+	message_admins(finalMessage)
+	log_world(finalMessage)
+
 /proc/message_admins(msg)
 	msg = "<span class=\"admin filter_adminlog\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">[msg]</span></span>"
 	to_chat(GLOB.admins, msg, confidential = TRUE)
