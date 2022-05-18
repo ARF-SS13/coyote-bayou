@@ -76,6 +76,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/adminChangeMoney,
 	/client/proc/adminCheckMoney,
 	/client/proc/panicbunker,
+	/datum/admins/proc/BC_WhitelistKeyVerb,
+    /datum/admins/proc/BC_RemoveKeyVerb,
+    /datum/admins/proc/BC_ToggleState,
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
 	/client/proc/hide_verbs,			/*hides all our adminverbs*/
