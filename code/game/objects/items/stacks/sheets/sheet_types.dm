@@ -277,12 +277,6 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	null, \
 	new/datum/stack_recipe_list("floor tiles", list( \
 	new/datum/stack_recipe("wooden floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
-	new/datum/stack_recipe("wide wooden floor tile", /obj/item/stack/tile/wood/wood_wide, 1, 4, 20), \
-	new/datum/stack_recipe("mosaic wooden floor tile", /obj/item/stack/tile/wood/wood_mosaic, 1, 4, 20), \
-	new/datum/stack_recipe("diagonal wooden floor tile", /obj/item/stack/tile/wood/wood_diagonal, 1, 4, 20), \
-	new/datum/stack_recipe("maple wooden floor tile", /obj/item/stack/tile/wood/wood_maple, 1, 4, 20), \
-	new/datum/stack_recipe("chestnut wooden floor tile", /obj/item/stack/tile/wood/wood_chestnut, 1, 4, 20), \
-	new/datum/stack_recipe("worn wooden floor tile", /obj/item/stack/tile/wood/wood_worn, 1, 4, 20), \
 		)), \
 	null, \
 	new/datum/stack_recipe_list("pews", list( \
