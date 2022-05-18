@@ -187,16 +187,6 @@
 	icon = 'icons/obj/fluff.dmi'
 	icon_state = "fokof"
 
-/obj/structure/fluff/bighorn_sign
-	name = "Bighorn sign"
-	desc = "A charming wooden sign advertising entrance to Bighorn."
-	icon = 'icons/obj/structures64.dmi'
-	icon_state = "bighorn"
-	bound_width = 64
-	anchored = TRUE
-	density = TRUE
-	deconstructible = FALSE
-
 /obj/structure/fluff/snowlegion
 	name = "snowlegion"
 	desc = "Looks like that weird kid with the tiger plushie has been round here again."
