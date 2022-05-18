@@ -10461,6 +10461,13 @@
 /obj/item/clothing/shoes/f13/raidertreads,
 /turf/open/floor/wood/wood_worn,
 /area/f13/tunnel)
+"kRc" = (
+/obj/structure/table/reinforced,
+/obj/item/folder/syndicate/red{
+	desc = "A folder stamped \"Top Secret - Property of The Brotherhood.\""
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "kRo" = (
 /obj/item/stack/sheet/mineral/sandbags,
 /turf/open/indestructible/ground/inside/subway{
@@ -12853,6 +12860,12 @@
 	},
 /turf/open/floor/plasteel/f13/metal,
 /area/f13/building/massfusion)
+"pbB" = (
+/obj/machinery/computer/card/bos{
+	dir = 8
+	},
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "pcA" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -13003,6 +13016,12 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"ppn" = (
+/obj/structure/table/reinforced,
+/obj/item/card/id/dogtag,
+/obj/item/card/id/dogtag,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "pqy" = (
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/building/museum)
@@ -14201,6 +14220,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/followers)
+"rvy" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/item/flashlight/lamp,
+/obj/item/card/id/dogtag,
+/obj/item/card/id/dogtag,
+/turf/open/floor/carpet/black,
+/area/f13/brotherhood)
 "rvZ" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/r_wall/f13/vault,
@@ -14389,10 +14417,7 @@
 /turf/open/water,
 /area/f13/tunnel)
 "rRw" = (
-/obj/structure/table/reinforced,
-/obj/item/folder/syndicate/red{
-	desc = "A folder stamped \"Top Secret - Property of The Brotherhood.\""
-	},
+/obj/machinery/computer/card/bos,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
 "rSF" = (
@@ -15267,13 +15292,12 @@
 /turf/closed/wall/rust,
 /area/f13/tunnel)
 "tsi" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp,
-/obj/item/paper_bin,
-/obj/item/pen,
 /obj/structure/curtain{
 	color = "#845f58";
 	pixel_x = 31
+	},
+/obj/machinery/computer/card/bos{
+	dir = 8
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood)
@@ -17023,7 +17047,7 @@
 	},
 /area/f13/tunnel)
 "wBd" = (
-/obj/structure/table/reinforced,
+/obj/machinery/radioterminal/bos,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
@@ -75874,8 +75898,8 @@ oVq
 vuj
 oVq
 rRw
-gMI
-gMI
+kRc
+ppn
 uUY
 uUY
 oVq
@@ -77406,7 +77430,7 @@ onW
 onW
 onW
 xxf
-gMI
+rvy
 sMy
 gGy
 oVq
@@ -78933,7 +78957,7 @@ oVq
 oVq
 ggn
 udp
-gMI
+ppn
 oJw
 cOG
 uUY
@@ -79448,7 +79472,7 @@ oVq
 lgN
 fAE
 fAE
-gMI
+pbB
 cOG
 uUY
 uUY
