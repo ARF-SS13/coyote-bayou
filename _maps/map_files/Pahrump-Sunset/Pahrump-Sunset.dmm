@@ -39164,6 +39164,18 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland/museum)
+"jVn" = (
+/obj/structure/ladder/unbreakable{
+	desc = "A short drive down south to gather supplies.";
+	id = ncrmini;
+	name = "drive north";
+	pixel_x = 15;
+	pixel_y = -20
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain2"
+	},
+/area/f13/wasteland/ncr)
 "jVs" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/desert,
@@ -65601,7 +65613,7 @@ bGP
 adI
 adY
 afx
-ajp
+jVn
 cls
 aiv
 aeV
