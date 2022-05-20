@@ -256,22 +256,6 @@
 	category = list("Research Machinery")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/rdservercontrol
-	name = "Computer Design (R&D Server Control Console Board)"
-	desc = "The circuit board for an R&D Server Control Console."
-	id = "rdservercontrol"
-	build_path = /obj/item/circuitboard/computer/rdservercontrol
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
-/datum/design/board/rdserver
-	name = "Machine Design (R&D Server Board)"
-	desc = "The circuit board for an R&D Server."
-	id = "rdserver"
-	build_path = /obj/item/circuitboard/machine/rdserver
-	category = list("Research Machinery")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/cyborgrecharger
 	name = "Machine Design (Cyborg Recharger Board)"
 	desc = "The circuit board for a Cyborg Recharger."
