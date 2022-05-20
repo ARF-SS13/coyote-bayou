@@ -128,7 +128,7 @@
 		ui = new(user, src, "LoadoutSelect", "Loadout Select")
 		ui.set_autoupdate(FALSE)
 		ui.open()
-		ui.send_asset(get_asset_datum(/datum/asset/spritesheet/loadout))
+//		ui.send_asset(get_asset_datum(/datum/asset/spritesheet/loadout))
 
 /datum/component/loadout_selector/ui_data(mob/user)
 	var/list/data = list()
