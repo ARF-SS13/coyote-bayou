@@ -53,9 +53,6 @@
 		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
-	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.overeatduration = 0
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
@@ -104,7 +101,6 @@
 					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
 
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	M.adjust_nutrition(-3)
 	if(M.health < 0)					//Functions as epinephrine.
 		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -127,9 +123,6 @@
 		M.AdjustKnockdown(-10*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustStaminaLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
-	if(M.nutrition <= NUTRITION_LEVEL_STARVING - 50)
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.overeatduration = 0
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)

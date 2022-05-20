@@ -331,7 +331,7 @@
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 2)
 
 /obj/item/clothing/head/helmet/f13/legion/vet/explorer
-	name = "legion explorer hood"
+	name = "legion scout hood"
 	desc = "It's a leather hood with metal reinforcments and built in headphones to plug the radio into."
 	icon_state = "legion-explorer"
 	item_state = "legion-explorer"
@@ -358,7 +358,7 @@
 	item_state = "legion-vex-night"
 
 /obj/item/clothing/head/helmet/f13/legion/venator
-	name = "legion venator hood"
+	name = "legion explorer hood"
 	desc = "A leather hood with a sturdy metal skullcap and a gold bull insignia in the front."
 	icon_state = "legion-venator"
 	item_state = "legion-venator"
@@ -378,14 +378,14 @@
 	desc = "This reinforced leather helmet has a plume of black and dark red feathers."
 	icon_state = "legion-decrec"
 	item_state = "legion-decrec"
-	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 45, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/prime/decan
 	name = "legion prime decanus helmet"
 	desc = "This reinforced leather helmet with a red peak has a plume of black feathers."
 	item_state = "legion-decprime"
 	icon_state = "legion-decprime"
-	armor = list("melee" = 67, "bullet" = 37, "laser" = 25, "energy" = 15, "bomb" = 30, "bio" = 5, "rad" = 5, "fire" = 35, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/head/helmet/f13/legion/heavy
 	name = "reinforced legion veteran decanus helmet"
@@ -474,7 +474,7 @@
 	desc = "A standard issue NCR steel helmet. Looks like you can write on it and strap a few items on the helmet band."
 	icon_state = "ncr_steelpot"
 	item_state = "ncr_steelpot"
-	armor = list("melee" = 25, "bullet" = 42, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+	armor = list("melee" = 25, "bullet" = 44, "laser" = 44, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 	strip_delay = 50
 	obj_flags = UNIQUE_RENAME
 	unique_reskin = list("M1" = "ncr_old")
@@ -520,6 +520,11 @@
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
 					sleep(15)
 
+/obj/item/clothing/head/f13/ncr/steelpot_goggles/trenchraider
+	name = "NCR trench storm helmet"
+	desc = "A standard issue NCR steel helmet, issued with extra steel for close quarters fighting."
+	armor = list("melee" = 40, "bullet" = 42, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+
 /obj/item/clothing/head/f13/ncr/steelpot_med
 	name = "NCR medic helmet"
 	desc = "A standard issue NCR steel helmet with the addition of decalling signifying a medic."
@@ -557,7 +562,7 @@
 	hat_type = "ncr"
 	flags_inv = HIDEEARS
 	dog_fashion = null
-
+	armor = list("melee" = 25, "bullet" = 44, "laser" = 44, "energy" = 20, "bomb" = 85, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 /obj/item/clothing/head/f13/ncr/standard/conscript
 	name = "NCR conscript helmet"
 	desc = "A standard issue NCR steel helmet. Looks like you can write on it and strap a few items on the helmet band."
@@ -618,6 +623,7 @@
 	desc = "A grey beret, issued to troopers that have passed Sapper School."
 	icon_state = "ncr_sapper_beret"
 	item_state = "ncr_sapper_beret"
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 40, "energy" = 20, "bomb" = 80, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 55)
 
 /obj/item/clothing/head/beret/ncr/ncr_sof
 	name = "NCR SOF beret"

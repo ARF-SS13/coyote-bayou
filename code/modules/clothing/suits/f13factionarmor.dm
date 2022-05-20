@@ -204,11 +204,16 @@
 
 /obj/item/clothing/suit/armor/f13/legion/recruit
 	name = "legion recruit armor"
-	desc = "Legion Recruits carry very basic protection, repurposed old sports gear with bits of leather and other tribal style armor that the wearer has managed to scrounge up."
+	desc = "Well, it's better than nothing."
 	icon_state = "legion_recruit"
 	item_state = "legion_recruit"
 	armor = list("melee" = 33, "bullet" = 25, "laser" = 5, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 	slowdown = 0.04
+
+/obj/item/clothing/suit/armor/f13/legion/recruit/decan
+	name = "legion recruit armor"
+	desc = "Recruit decanii receive slightly better protection than regular recruits. Slightly."
+	armor = list("melee" = 45, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/suit/armor/f13/legion/prime
 	name = "legion prime armor"
@@ -216,6 +221,11 @@
 	icon_state = "legion_prime"
 	item_state = "legion_prime"
 	armor = list("melee" = 45, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
+
+/obj/item/clothing/suit/armor/f13/legion/prime/decan
+	name = "legion prime decanus armor"
+	desc = "Legion prime decanus armor-an extra reinforced baseball uniform."
+	armor = list("melee" = 45, "bullet" = 35, "laser" = 10, "energy" = 10, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/suit/armor/f13/legion/orator
 	name = "Legion Orator armor"
@@ -253,7 +263,7 @@
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
 /obj/item/clothing/suit/armor/f13/legion/vet/explorer
-	name = "legion explorer armor"
+	name = "legion scout armor"
 	desc = "Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -272,7 +282,7 @@
 	slowdown = 0.12
 
 /obj/item/clothing/suit/armor/f13/legion/venator
-	name = "legion venator armor"
+	name = "legion explorer armor"
 	desc = "Explorer armor reinforced with metal plates and chainmail."
 	icon_state = "legion-venator"
 	item_state = "legion-venator"
@@ -390,6 +400,11 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
+/obj/item/clothing/suit/armor/f13/utilityvest/logisticsofficer //same as his beret
+	name = "logistics officer utility vest"
+	desc = "A practical and armored vest with pockets for tools and such."
+	armor = list("melee" = 15, "bullet" = 60, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 55)
+
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR patrol vest"
 	desc = "A standard issue NCR Infantry vest."
@@ -438,12 +453,23 @@
 	slowdown = 0.12
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 3)
 
+/obj/item/clothing/suit/armor/f13/ncrarmor/reinforced/engineer
+	name = "NCR blast-padded reinforced patrol vest"
+	desc = "A standard issue NCR Engineer vest reinforced with a groinpad."
+	armor = list("melee" = 25, "bullet" = 44, "laser" = 40, "energy" = 20, "bomb" = 85, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
+
+
 /obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced
 	name = "NCR reinforced mantle vest"
 	desc = "A standard issue NCR Infantry vest reinforced with a groinpad and a mantle."
 	icon_state = "ncr_reinforced_mantle"
 	armor = list("melee" = 25, "bullet" = 44, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 	slowdown = 0.12
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/mantle/reinforced/trenchraider
+	name = "NCR reinforced trench mantle vest"
+	desc = "A standard issue NCR Infantry vest with a really long name and extra melee plating."
+	armor = list("melee" = 40, "bullet" = 42, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/labcoat
 	name = "NCR medical labcoat"
@@ -459,7 +485,7 @@
 	desc = "A reinforced set of NCR mantle armour, with added padding on the groin, neck and shoulders. Intended for use by the officer class."
 	icon_state = "ncr_lt_armour"
 	item_state = "ncr_lt_armour"
-	armor = list("melee" = 38, "bullet" = 40, "laser" = 33, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 50)
+	armor = list("melee" = 40, "bullet" = 50, "laser" = 50, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 50)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/treasurer
 
 /obj/item/clothing/suit/armor/f13/ncrarmor/captain/ncr_officer_coat
@@ -568,7 +594,7 @@
 	icon_state = "ranger"
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 0.08
+	slowdown = 0.01
 	armor = list("melee" = 50, "bullet" = 60, "laser" = 50, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 60, "fire" = 90, "acid" = 20, "wound" = 55)
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
 

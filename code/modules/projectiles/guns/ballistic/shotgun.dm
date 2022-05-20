@@ -9,7 +9,7 @@
 
 
 /obj/item/gun/ballistic/shotgun
-	slowdown = 0.4 //Bulky gun slowdown with rebate since generally smaller than assault rifles
+	slowdown = 0.3 //Bulky gun slowdown with rebate since generally smaller than assault rifles
 	name = "shotgun template"
 	desc = "Should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -178,6 +178,7 @@
 	item_state = "shotgunpump"
 	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
+	fire_delay = 1
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
 	if(sawn_off)
@@ -199,6 +200,7 @@
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
 	recoil = 0.5
+	fire_delay = 1
 	var/stock = FALSE
 	can_flashlight = TRUE
 	gunlight_state = "flightangle"
@@ -233,7 +235,7 @@
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
 
 
-//Trench shotgun					Keywords: Shotgun, Pump-action, 5 rounds, Bayonet, Extra firemode, Extra damage +1
+//Trench shotgun					Keywords: Shotgun, Pump-action, 5 rounds, Bayonet
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
@@ -243,6 +245,7 @@
 	var/select = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_bayonet = TRUE
+	fire_delay = 2
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 22
@@ -252,28 +255,6 @@
 		icon_state = "[initial(icon_state)]-e"
 	else
 		icon_state = "[initial(icon_state)]"
-
-/obj/item/gun/ballistic/shotgun/trench/ui_action_click()
-	burst_select()
-
-//has a mode to let it pump much faster, at the cost of terrible accuracy and less damage
-/obj/item/gun/ballistic/shotgun/trench/proc/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			spread = 12
-			burst_size = 1
-			fire_delay = 5
-			burst_shot_delay = 4
-			extra_damage = 0
-			to_chat(user, "<span class='notice'>You prepare to slamfire the shotgun for a rapid burst of shots.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 2
-			to_chat(user, "<span class='notice'>You go back to firing the shotgun one round at a time.</span>")
-
 
 
 ///////////////////////////
@@ -317,7 +298,7 @@
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	fire_delay = 6
+	fire_delay = 4
 	recoil = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
@@ -334,6 +315,7 @@
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "neostead"
 	item_state = "shotguncity"
+	fire_delay = 5
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
 	force = 10
 	var/toggled = FALSE
@@ -408,7 +390,7 @@
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	is_automatic = TRUE
-	autofire_shot_delay = 5
+	autofire_shot_delay = 4
 	recoil = 1
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY

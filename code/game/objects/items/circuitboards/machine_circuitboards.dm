@@ -517,15 +517,6 @@
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/stock_parts/scanning_module = 1)
 
-/obj/item/circuitboard/machine/plantgenes/primitive
-	name = "Primitive Plant DNA Manipulator (Machine Board)"
-	build_path = /obj/machinery/plantgenes/primitive
-	req_components = list(
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/scanning_module = 1)
-
 /obj/item/circuitboard/machine/plantgenes/vault
 	name = "alien board (Plant DNA Manipulator)"
 	icon_state = "abductor_mod"
@@ -736,19 +727,6 @@
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
-
-/obj/item/circuitboard/machine/chem_dispenser/primitive
-	name = "Primitive Chem Dispenser (Machine Board)"
-	build_path = /obj/machinery/chem_dispenser/primitive
-	req_components = list(
-		/obj/item/stock_parts/matter_bin = 2,
-		/obj/item/stock_parts/capacitor = 1,
-		/obj/item/stock_parts/manipulator = 1,
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell = 1)
-	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
-	needs_anchored = FALSE
-
 /obj/item/circuitboard/machine/chem_dispenser/apothecary
 	name = "Apotechary Chem Dispenser (Machine Board)"
 	build_path = /obj/machinery/chem_dispenser/apothecary
@@ -796,14 +774,6 @@
 	req_components = list(
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stack/sheet/glass = 1)
-
-/obj/item/circuitboard/machine/chem_heater/primitive
-	name = "Primitive Chem Heater (Machine Board)"
-	build_path = /obj/machinery/chem_heater/primitive
-	req_components = list(
-		/obj/item/stock_parts/micro_laser = 1,
-		/obj/item/stack/sheet/glass = 1)
-
 /obj/item/circuitboard/machine/chem_master
 	name = "ChemMaster 3000 (Machine Board)"
 	build_path = /obj/machinery/chem_master

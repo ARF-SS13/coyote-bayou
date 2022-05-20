@@ -12,7 +12,7 @@
 	var/obj/item/gun/ballistic/m2flamethrower/gun
 	var/armed = 0 //whether the gun is attached, 0 is attached, 1 is the gun is wielded.
 	var/overheat = 0
-	var/overheat_max = 4
+	var/overheat_max = 12
 	var/heat_diffusion = 1
 
 /obj/item/m2flamethrowertank/Initialize()
@@ -97,14 +97,14 @@
 	icon_state = "m2_flamethrower_on"
 	item_state = "m2flamethrower"
 	flags_1 = CONDUCT_1
-	slowdown = 1
+	slowdown = 0.3
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
 	burst_size = 2
 	burst_shot_delay = 1
 	//automatic = 0
-	fire_delay = 10
+	fire_delay = 2
 	weapon_weight = WEAPON_HEAVY
 	fire_sound = 'sound/weapons/flamethrower.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/m2flamethrower

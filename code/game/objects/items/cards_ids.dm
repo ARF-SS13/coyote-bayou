@@ -1093,7 +1093,7 @@
 	assignment = "centurion medallion"
 
 /obj/item/card/id/dogtag/legvenator
-	name = "venator medallion"
+	name = "explorer medallion"
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
 	item_state = "card-id_leg2"

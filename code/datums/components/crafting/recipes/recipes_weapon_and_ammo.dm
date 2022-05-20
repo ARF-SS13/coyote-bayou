@@ -438,8 +438,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/a556shrap
-	name = "5.56mm micro-shrapnel ammo box"
+/datum/crafting_recipe/a556uranium
+	name = "5.56mm uranium-tipped ammo box"
 	result = /obj/item/ammo_box/a556/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,

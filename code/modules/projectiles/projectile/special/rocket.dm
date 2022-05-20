@@ -13,6 +13,7 @@
 	desc = "USE A WEEL GUN"
 	icon_state= "84mm-hedp"
 	damage = 0
+	armour_penetration = 0.01
 	ricochets_max = 0
 	var/anti_armour_damage = 200
 

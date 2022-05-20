@@ -69,6 +69,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/damage_overlay_type = "human" //what kind of damage overlays (if any) appear on our species when wounded?
 	var/fixed_mut_color = "" //to use MUTCOLOR with a fixed color that's independent of dna.feature["mcolor"]
 	var/inert_mutation = DWARFISM
+
+	var/sharp_blunt_mod = 1 //the damage modifier something does when blunt, which is everything not a projectile or a knife
+	var/sharp_edged_mod = 1 //the damage modifier something does when edged, typically used by knives and the like
+	var/sharp_pointy_mod = 1 //the damage modifier something does when pointy, typically used by bullets
 	var/list/special_step_sounds //Sounds to override barefeet walkng
 	var/grab_sound //Special sound for grabbing
 	var/datum/outfit/outfit_important_for_life // A path to an outfit that is important for species life e.g. plasmaman outfit
@@ -1910,6 +1914,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(!forced && hit_percent <= 0)
 		return 0
 
+	var/sharp_mod = 1 //this line of code here is meant for species to have various damage modifiers to their brute intake based on the flag of the weapon.
+	switch(sharpness)
+		if(SHARP_NONE)
+			sharp_mod = sharp_blunt_mod
+		if(SHARP_EDGED)
+			sharp_mod = sharp_edged_mod
+		if(SHARP_POINTY)
+			sharp_mod = sharp_pointy_mod 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))
@@ -1929,7 +1941,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod * sharp_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()

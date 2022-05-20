@@ -245,7 +245,7 @@ ATTACHMENTS
 	var/zoom_out_amt = 0
 	var/datum/action/item_action/toggle_scope_zoom/azoom
 
-	var/dualwield_spread_mult = 1		//dualwield spread multiplier
+	var/dualwield_spread_mult = 2		//dualwield spread multiplier
 
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
 	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.

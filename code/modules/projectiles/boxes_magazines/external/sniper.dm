@@ -12,9 +12,21 @@
 
 /obj/item/ammo_box/magazine/amr/incindiary
 	name = "Anti-materiel magazine (Incindiary)"
+	desc = "A .50 anti-materiel rifle magazine loaded with incindiary ammo."
 	special_ammo = TRUE
 	ammo_type = /obj/item/ammo_casing/a50MG/incendiary
 
+/obj/item/ammo_box/magazine/amr/penetrator
+	name = "Anti-materiel magazine (penetrator)"
+	desc = "A .50 anti-materiel rifle magazine loaded with wall-penetrating ammo."
+	special_ammo = TRUE
+	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
+
+/obj/item/ammo_box/magazine/amr/uranium
+	name = "Anti-materiel magazine (uranium)"
+	desc = "A .50 anti-materiel rifle magazine loaded with crimes against god."
+	special_ammo = TRUE
+	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
 
 /*
 /obj/item/ammo_box/magazine/sniper_rounds/soporific

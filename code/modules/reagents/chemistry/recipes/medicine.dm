@@ -457,3 +457,9 @@ datum/chemical_reaction/rezadone
 	id = /datum/reagent/medicine/bitter_drink
 	results = list(/datum/reagent/medicine/bitter_drink = 30)
 	required_reagents = list(/datum/reagent/consumable/ethanol/salgam = 10 , /datum/reagent/consumable/ethanol/brocbrew = 10 , /datum/reagent/consumable/sunset = 10 , /datum/reagent/consumable/ethanol/yellowpulque = 10)
+
+/datum/chemical_reaction/drinkneutralization
+	name = "Neutralization reaction"
+	id = "drink_neutralization"
+	results = list(/datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/medicine/bitter_drink = 1, /datum/reagent/medicine/healing_powder/poultice = 1)

@@ -2630,7 +2630,6 @@
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 	self_consuming = TRUE
-	ghoulfriendly = TRUE
 
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
 	if(significant)
