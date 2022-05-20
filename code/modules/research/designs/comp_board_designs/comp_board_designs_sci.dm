@@ -60,14 +60,6 @@
 	category = list("Computer Boards")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/board/rdconsole
-	name = "Computer Design (R&D Console)"
-	desc = "Allows for the construction of circuit boards used to build a new R&D console."
-	id = "rdconsole"
-	build_path = /obj/item/circuitboard/computer/rdconsole
-	category = list("Computer Boards")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/board/nanite_chamber_control
 	name = "Computer Design (Nanite Chamber Control)"
 	desc = "Allows for the construction of circuit boards used to build a new nanite chamber control console."
