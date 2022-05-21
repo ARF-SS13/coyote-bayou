@@ -97,10 +97,6 @@
 	set name = "Expose/Hide genitals"
 	set desc = "Allows you to toggle which genitals should show through clothes or not."
 
-	if(stat != CONSCIOUS)
-		to_chat(usr, "<span class='warning'>You can toggle genitals visibility right now...</span>")
-		return
-
 	var/list/genital_list = list()
 	for(var/obj/item/organ/genital/G in internal_organs)
 		if(!CHECK_BITFIELD(G.genital_flags, GENITAL_INTERNAL))
