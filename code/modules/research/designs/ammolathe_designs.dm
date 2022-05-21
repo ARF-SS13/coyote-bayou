@@ -206,7 +206,7 @@
 	category = list("initial", "Basic Magazines")
 
 /datum/design/ammolathe/m10mm_adv_ext
-	name = "empty 10mm pistol extended magazine (10mm)"
+	name = "empty 10mm SMG magazine (10mm)"
 	id = "m10mm_adv_ext"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/m10mm_adv/ext/empty
@@ -346,13 +346,6 @@
 	build_path = /obj/item/ammo_box/c45/rubber
 	category = list("initial", "Basic Ammo")
 
-/datum/design/ammolathe/a9mmrubber
-	name = "9mm rubber ammo box"
-	id = "a9mmrubber"
-	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_casing/c9mm/rubber
-	category = list("initial", "Basic Ammo")
-
 /datum/design/ammolathe/a10mmrubber
 	name = "10mm rubber ammo box"
 	id = "a10mmrubber"
@@ -364,7 +357,7 @@
 	name = ".22 rubber ammo box"
 	id = "m22rubber"
 	materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1500)
-	build_path = /obj/item/ammo_box/m22
+	build_path = /obj/item/ammo_box/m22/rubber
 	category = list("initial", "Basic Ammo")
 
 /datum/design/ammolathe/a762rubber
