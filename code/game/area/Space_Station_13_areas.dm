@@ -1746,6 +1746,10 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "North Bunker Elevator"
 
 
+/area/shuttle/southbunker_elevator
+	name = "South Bunker Elevator"
+
+
 /area/shuttle/vault113_elevator
 	name = "Vault 113 Elevator"
 
