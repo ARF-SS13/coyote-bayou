@@ -2423,6 +2423,7 @@
 "bJu" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor,
+/obj/item/mine/stun,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -3482,8 +3483,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bMX" = (
-/obj/docking_port/stationary/bosaway/nine,
-/turf/closed/wall/rust,
+/obj/effect/turf_decal/bot,
+/obj/structure/nest/protectron,
+/turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "bMY" = (
 /obj/structure/punching_bag,
@@ -3721,8 +3723,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "bNL" = (
-/obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -5861,9 +5869,15 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "cpl" = (
-/obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "cpp" = (
@@ -6101,6 +6115,10 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/brotherhood)
+"cAX" = (
+/obj/docking_port/stationary/bosaway/nine,
+/turf/closed/wall/rust,
+/area/f13/tunnel)
 "cBX" = (
 /turf/closed/mineral/random/high_chance,
 /area/f13/brotherhood)
@@ -7830,12 +7848,18 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "fQn" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /obj/machinery/light/small{
 	dir = 1;
 	light_color = "red"
 	},
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "fQB" = (
@@ -7874,8 +7898,14 @@
 	},
 /area/f13/tunnel)
 "fTZ" = (
-/obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -8221,7 +8251,7 @@
 /area/f13/brotherhood)
 "gHC" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/bomb/tier1,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "gJE" = (
@@ -9718,6 +9748,19 @@
 /obj/effect/decal/cleanable/blood/gibs/human/core,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"jsj" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "jtI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/handrail/g_central{
@@ -12482,6 +12525,7 @@
 /area/f13/building/massfusion)
 "oEi" = (
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/blueprintLow,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "oEl" = (
@@ -14697,6 +14741,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"sKa" = (
+/obj/item/mine/explosive,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "sKz" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -14763,6 +14811,11 @@
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"sOr" = (
+/obj/item/storage/trash_stack,
+/obj/item/mine/explosive,
+/turf/open/water,
+/area/f13/tunnel)
 "sPd" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_8";
@@ -15884,8 +15937,14 @@
 	},
 /area/f13/caves)
 "uUw" = (
-/obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
@@ -16415,6 +16474,10 @@
 "vOc" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/tunnel)
+"vOh" = (
+/obj/item/mine/explosive,
+/turf/open/water,
 /area/f13/tunnel)
 "vOB" = (
 /obj/structure/filingcabinet,
@@ -23793,7 +23856,7 @@ bHS
 bOb
 bLa
 bLa
-bOw
+jsj
 bxo
 aaa
 aae
@@ -25078,7 +25141,7 @@ bHS
 bLa
 bOk
 bLa
-bOw
+jsj
 bxo
 aaa
 aae
@@ -25821,7 +25884,7 @@ bJM
 bKa
 bIW
 bJJ
-bJH
+bJJ
 bHS
 bKa
 bJM
@@ -25834,7 +25897,7 @@ bLF
 bLW
 bLa
 bHS
-bOw
+jsj
 bLW
 bNg
 bHS
@@ -25843,7 +25906,7 @@ bNg
 bLa
 bHS
 bLa
-bOw
+jsj
 bLa
 bxo
 bxo
@@ -31758,7 +31821,7 @@ aae
 aae
 boU
 boU
-boU
+sKa
 aae
 aae
 aae
@@ -33551,7 +33614,7 @@ aae
 aae
 aae
 bpQ
-boU
+sKa
 boU
 aae
 aae
@@ -35866,9 +35929,9 @@ aae
 aae
 aae
 boU
-boU
+sKa
 aae
-bKO
+boU
 aae
 aae
 aae
@@ -39977,7 +40040,7 @@ aae
 aae
 aae
 aae
-boU
+sKa
 boU
 bGl
 aae
@@ -40238,7 +40301,7 @@ boU
 boU
 boU
 boU
-boU
+sKa
 aae
 aae
 aae
@@ -40542,7 +40605,7 @@ aak
 aae
 bsC
 bJq
-rRt
+sOr
 bsC
 aae
 aae
@@ -43369,7 +43432,7 @@ aae
 aae
 bsC
 bJq
-bJq
+vOh
 bsC
 aae
 aae
@@ -43882,7 +43945,7 @@ aae
 aae
 aae
 bsC
-rRt
+sOr
 bJq
 bsC
 aae
@@ -45167,7 +45230,7 @@ aae
 aae
 aae
 bsC
-bJq
+vOh
 oxK
 bsC
 aae
@@ -48965,7 +49028,7 @@ bFF
 bFF
 bsC
 bsC
-bMX
+bsC
 bsC
 bsC
 bsC
@@ -52770,9 +52833,9 @@ aae
 aae
 aaa
 bCt
-soz
+bMX
 bqY
-soz
+bMX
 bCt
 aaa
 aae
@@ -54097,7 +54160,7 @@ bsC
 bsC
 bsC
 bsC
-bsC
+cAX
 bsC
 bsC
 bsC
