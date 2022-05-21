@@ -153,7 +153,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	exp_requirements = 1900
 
 	loadout_options = list(
-		/datum/outfit/loadout/captainbackline,	// Bozar, El Capitan
+		/datum/outfit/loadout/captainbackline,	// Infiltrator, El Capitan
 		/datum/outfit/loadout/captainfrontline, // Pancor Jackhammer, The Court Martial, Desert Eagle
 		)
 
@@ -196,7 +196,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/captainbackline
 	name = "El Capitan"
-	suit_store = /obj/item/gun/ballistic/automatic/bozar
+	suit_store = /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	backpack_contents = list(
 		/obj/item/clothing/suit/armor/f13/ncrarmor/captain/ncr_officer_coat = 1,
 		/obj/item/ammo_box/magazine/m556/rifle/extended = 1,
@@ -545,7 +545,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 	loadout_options = list( // ALL: Binoculars, Bowie knife
 		/datum/outfit/loadout/vrclassic, // AMR, Sequoia
-		/datum/outfit/loadout/vrlite, // FN FAL, Sequoia
+		/datum/outfit/loadout/vrlite, // Brush, Sequoia
 		/datum/outfit/loadout/vrshotgunner, // Winchester City-Killer, Sequoia
 		/datum/outfit/loadout/vrcqc // 2 x .45 Long colt revolvers
 		)
@@ -597,11 +597,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/vrlite
 	name = "Rifler Veteran Ranger"
-	suit_store = /obj/item/gun/ballistic/automatic/fnfal
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/brush
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m762 = 3,
+		/obj/item/ammo_box/c4570 = 3,
 		/obj/item/gun/ballistic/revolver/sequoia = 1,
-		/obj/item/ammo_box/c4570 = 1,
 		)
 
 /datum/outfit/loadout/vrshotgunner
