@@ -4,6 +4,7 @@
 	caliber = "84mm"
 	icon_state = "srm-8"
 	projectile_type = /obj/item/projectile/bullet/a84mm_he
+	is_pickable = FALSE
 
 /obj/item/ammo_casing/caseless/rocket/hedp
 	name = "\improper PM-9HEDP"

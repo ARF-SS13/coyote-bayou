@@ -9,6 +9,7 @@
 	throwforce = 8 //good luck hitting someone with the pointy end of the arrow
 	throw_speed = 3
 	w_class = WEIGHT_CLASS_NORMAL
+	is_pickable = FALSE
 
 /obj/item/ammo_casing/caseless/arrow/cheap
 	name = "cheap arrow"
