@@ -168,11 +168,10 @@
 	var/turf/tile = user.loc
 	if (!isturf(tile))
 		return
-
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		for(var/A in tile)
-			if (!is_type_in_typecache(A, STR.can_hold))
+			if (!is_type_in_typecache(A, STR.can_hold) || istype(A,/obj/item/ammo_casing/caseless/rocket) || istype(A, /obj/item/ammo_casing/caseless/arrow))
 				continue
 			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
 				show_message = TRUE
