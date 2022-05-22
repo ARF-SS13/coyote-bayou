@@ -721,6 +721,12 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"avO" = (
+/obj/structure/table,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "awp" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/tunnel/khanfort)
@@ -822,6 +828,12 @@
 "bnr" = (
 /turf/closed/wall/f13/wood/interior,
 /area/f13/city/bighorn)
+"bov" = (
+/obj/structure/chair/wood,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "bpX" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
@@ -1031,6 +1043,12 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"cAO" = (
+/obj/structure/railing{
+	layer = 4.1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "cDH" = (
 /obj/machinery/shower{
 	dir = 8
@@ -1059,6 +1077,16 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"cTy" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	pixel_y = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "cUT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
@@ -1143,6 +1171,9 @@
 /obj/structure/bed/roller,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"dTc" = (
+/turf/closed/wall/r_wall,
+/area/f13/ncr)
 "dUC" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -1366,6 +1397,14 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"fXR" = (
+/obj/structure/fluff/railing{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "gah" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 1
@@ -1519,6 +1558,14 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"hkV" = (
+/obj/structure/fluff/railing{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "hoq" = (
 /mob/living/simple_animal/cockroach,
 /obj/structure/junk/small/table,
@@ -1594,6 +1641,14 @@
 	dir = 4
 	},
 /area/f13/building/hospital)
+"ifi" = (
+/obj/structure/fluff/railing{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "ikt" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/pill_bottle/chem_tin/radx{
@@ -1601,6 +1656,15 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"imL" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/wasteland)
 "inG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1614,6 +1678,12 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"iqu" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "ivA" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 6;
@@ -1692,6 +1762,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
+"jdQ" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/bars,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "jdU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1913,6 +1990,11 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"lbC" = (
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "ldu" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13,
@@ -2278,6 +2360,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
+"ntT" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "nuj" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -2699,6 +2787,12 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"qtF" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "qvL" = (
 /turf/open/transparent/openspace,
 /area/f13/building/massfusion)
@@ -2768,6 +2862,12 @@
 "qQy" = (
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
+"qQT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "rei" = (
 /obj/structure/railing{
 	dir = 6
@@ -2974,6 +3074,9 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"sGc" = (
+/turf/open/transparent/openspace,
+/area/f13/ncr)
 "sHx" = (
 /obj/machinery/light{
 	dir = 4;
@@ -3351,6 +3454,11 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
+"vbL" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/barricade/bars,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/ncr)
 "vfp" = (
 /obj/structure/simple_door/house,
 /turf/open/floor/f13{
@@ -3527,6 +3635,15 @@
 "wMt" = (
 /turf/open/floor/plasteel/f13,
 /area/f13/building/massfusion)
+"wUC" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Gatehouse";
+	req_access_txt = "121"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "wXb" = (
 /obj/structure/table,
 /obj/item/organ/heart,
@@ -11181,15 +11298,15 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+qtF
+qtF
+qtF
+qtF
+qtF
+qtF
+qtF
+qtF
+qtF
 oez
 oez
 oez
@@ -11437,17 +11554,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+cAO
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+iqu
 oez
 oez
 oez
@@ -11694,17 +11811,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+dTc
+jdQ
+jdQ
+wUC
+jdQ
+jdQ
+dTc
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 oez
 oez
@@ -11951,17 +12068,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+vbL
+lbC
+ifi
+qQT
+qQT
+avO
+jdQ
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 oez
 oez
@@ -12208,17 +12325,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+vbL
+lbC
+sGc
+hkV
+bov
+cTy
+jdQ
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 oez
 oez
@@ -12465,17 +12582,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+vbL
+lbC
+fXR
+lbC
+qQT
+avO
+jdQ
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 oez
 oez
@@ -12722,17 +12839,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+vbL
+lbC
+qQT
+qQT
+lbC
+avO
+jdQ
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 oez
 oez
@@ -12979,17 +13096,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
+cAO
 aKa
+dTc
+jdQ
+jdQ
+wUC
+jdQ
+jdQ
+dTc
 aKa
-aKa
-aKa
-aKa
-aKa
-oez
-oez
+iqu
 oez
 aKa
 aKa
@@ -13236,17 +13353,17 @@ oez
 oez
 oez
 oez
-oez
-oez
-oez
-sSu
-oez
-oez
-oez
-oez
-oez
-oez
-oez
+cAO
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+aKa
+iqu
 oez
 aKa
 hsd
@@ -13494,15 +13611,15 @@ oez
 oez
 oez
 oez
-oez
-oez
-sSu
-oez
-oez
-oez
-oez
-oez
-oez
+ntT
+ntT
+imL
+ntT
+ntT
+ntT
+ntT
+ntT
+ntT
 oez
 oez
 aKa

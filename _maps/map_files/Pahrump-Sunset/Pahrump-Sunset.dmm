@@ -21824,6 +21824,7 @@
 "bnS" = (
 /obj/effect/spawner/lootdrop/f13/crafting,
 /obj/effect/spawner/lootdrop/f13/crafting,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bnU" = (
@@ -21862,6 +21863,7 @@
 "bnY" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bnZ" = (
@@ -22354,13 +22356,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bqc" = (
-/obj/structure/rack/shelf_metal{
-	pixel_y = -12
-	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bqd" = (
@@ -22369,19 +22369,19 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bqe" = (
-/obj/structure/rack/shelf_metal{
-	pixel_y = -12
-	},
 /obj/effect/spawner/lootdrop/raiderloot,
 /obj/effect/spawner/lootdrop/raiderloot,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bqf" = (
 /obj/effect/spawner/lootdrop/raiderloot,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "bqi" = (
@@ -22390,6 +22390,7 @@
 /area/f13/wasteland/ncr)
 "bqk" = (
 /obj/machinery/door/poddoor/gate/preopen{
+	id = "khanfortressinterior";
 	name = "fortress gate"
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -28050,6 +28051,16 @@
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
+"cwU" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/obj/structure/closet,
+/obj/item/card/id/dogtag/legprime,
+/obj/item/card/id/dogtag/legprime,
+/obj/item/card/id/dogtag/legrecruit,
+/obj/item/card/id/dogtag/legrecruit,
+/obj/item/card/id/dogtag/legrecruit,
+/turf/open/floor/f13/wood,
+/area/f13/legion)
 "cwW" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -28900,6 +28911,13 @@
 /obj/machinery/vending/medical,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"deE" = (
+/obj/machinery/door/poddoor/gate/preopen{
+	id = "khanfortressexterior";
+	name = "fortress gate"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/khanfort)
 "dfd" = (
 /obj/structure/table/wood,
 /obj/item/wirecutters/crude,
@@ -32126,9 +32144,9 @@
 	},
 /area/f13/building)
 "fuD" = (
-/obj/structure/closet,
-/obj/item/card/id/dogtag/legprime,
-/obj/item/card/id/dogtag/legprime,
+/obj/machinery/computer/card/legion{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "fuK" = (
@@ -42681,11 +42699,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland/quarry)
-"mUO" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/card/legion,
-/turf/open/floor/carpet/black,
-/area/f13/legion)
 "mVd" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
@@ -43985,6 +43998,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
+"nPM" = (
+/obj/structure/stone_tile/slab,
+/obj/structure/barricade/bars{
+	max_integrity = 800;
+	name = "strong metal bars";
+	obj_integrity = 800
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel/khanfort)
 "nQc" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottomright"
@@ -45680,10 +45702,9 @@
 /turf/open/floor/carpet/black,
 /area/f13/ncr)
 "oZc" = (
-/obj/structure/closet,
-/obj/item/card/id/dogtag/legrecruit,
-/obj/item/card/id/dogtag/legrecruit,
-/obj/item/card/id/dogtag/legrecruit,
+/obj/machinery/radioterminal/legion{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "oZf" = (
@@ -46568,7 +46589,7 @@
 /area/f13/tunnel/khanfort)
 "pDr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/radioterminal/legion,
+/obj/structure/table/wood,
 /turf/open/floor/carpet/black,
 /area/f13/legion)
 "pDM" = (
@@ -47361,6 +47382,18 @@
 	icon_state = "freezerfloor"
 	},
 /area/f13/building/museum)
+"qkH" = (
+/obj/structure/stone_tile/block{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/metal/barred{
+	name = "khan barred door";
+	req_access_txt = "125";
+	req_one_access_txt = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel/khanfort)
 "qlb" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt{
@@ -56918,6 +56951,18 @@
 	icon_state = "verticalleftborderleft2"
 	},
 /area/f13/wasteland/east)
+"wUP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "khanfortressexterior";
+	pixel_y = -35
+	},
+/obj/machinery/button/door{
+	id = "khanfortressinterior";
+	pixel_y = -26
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building/khanfort)
 "wUQ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2left"
@@ -57456,6 +57501,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/mall)
+"xqH" = (
+/obj/structure/stone_tile/block,
+/obj/structure/simple_door/metal/barred{
+	name = "khan barred door";
+	req_access_txt = "125";
+	req_one_access_txt = null
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel/khanfort)
 "xrK" = (
 /obj/structure/window{
 	dir = 8
@@ -61325,7 +61379,7 @@ aae
 bqp
 aaW
 sLA
-iro
+wUP
 bqp
 mHZ
 mHZ
@@ -62875,7 +62929,7 @@ bqk
 bgQ
 aKQ
 bnq
-bqk
+deE
 lrZ
 lrZ
 lrZ
@@ -72396,9 +72450,9 @@ abV
 abV
 abV
 kFK
-cdJ
-osA
-eeU
+xqH
+nPM
+qkH
 kFK
 aae
 aae
@@ -117359,7 +117413,7 @@ acv
 xyZ
 djQ
 vQJ
-mUO
+pDr
 avM
 djQ
 kdm
@@ -118391,7 +118445,7 @@ bLT
 qin
 djQ
 qnk
-qRY
+cwU
 djQ
 bue
 pvu
