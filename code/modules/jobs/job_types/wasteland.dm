@@ -1134,8 +1134,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribalwar/bonecodpiece,
 		/datum/crafting_recipe/tribalwar/bracers,
 		/datum/crafting_recipe/tribal/bonetalisman,
-		/datum/crafting_recipe/tribal/bonebag,
-		/datum/crafting_recipe/tribalwar/spearquiver
+		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)
