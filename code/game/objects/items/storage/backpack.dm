@@ -66,6 +66,8 @@
 	item_state = "spearquiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 
+/obj/item/storage/backpack/spearquiver/empty
+
 /obj/item/storage/backpack/spearquiver/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
@@ -78,6 +80,9 @@
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
+
+/obj/item/storage/backpack/spearquiver/empty/PopulateContents()
+	return
 
 /obj/item/storage/backpack/spearquiver/AltClick(mob/living/carbon/user)
 	. = ..()

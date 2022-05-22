@@ -362,12 +362,11 @@
 
 /datum/crafting_recipe/tribalwar/spearquiver
 	name = "Spear Quiver"
-	result = /obj/item/storage/backpack/spearquiver
+	result = /obj/item/storage/backpack/spearquiver/empty
 	time = 60
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/metal = 1)
 	category = CAT_TRIBAL
-	always_available = FALSE
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
