@@ -17,6 +17,11 @@
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed
 */
+
+// Temporal fix until digitigrade-adapted sprites are done
+/obj/item/clothing/suit/armor/f13
+	mutantrace_variation = NONE
+
 //Leather and metal
 /obj/item/clothing/suit/armor/f13/leather_jacket
 	name = "leather jacket"

@@ -4,6 +4,7 @@
 	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
 	resistance_flags = NONE
+	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done
 	has_sensor = NO_SENSORS //kek
 
 /obj/item/clothing/under/f13/female
