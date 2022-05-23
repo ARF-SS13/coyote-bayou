@@ -101,6 +101,14 @@
 		qdel(turfPlant)
 	. =  ..()
 
+/turf/open/floor/plating/f13/outside/desert/harsh
+	icon_state = "wasteland1"
+	icon = 'icons/fallout/turfs/ground_harsh.dmi'
+
+/turf/open/floor/plating/f13/outside/desert/harsh/Initialize()
+	. = ..()
+	icon_state = "wasteland[rand(1,31)]"
+
 /turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
 	desc = "A stretch of road."
