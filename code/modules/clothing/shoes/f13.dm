@@ -5,6 +5,7 @@
 */
 /obj/item/clothing/shoes/f13
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/shoes
+	mutantrace_variation = NONE // Temporal fix until digitigrade-adapted sprites are done
 
 /obj/item/clothing/shoes/f13/enclave/serviceboots
 	name = "enclave service boots"
