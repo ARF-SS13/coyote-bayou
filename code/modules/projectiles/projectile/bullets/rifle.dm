@@ -75,12 +75,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	embed_falloff_tile = 0.5
 	embedding = list(embed_chance=5, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.5, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a556/microshrapnel)
 
+/*
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
 	damage = -9
 	armour_penetration = 0
 	irradiate = 300
-
+*/
 
 /obj/item/projectile/bullet/a556/simple //for simple mobs, separate to allow balancing
 	name = "5.56 bullet"
@@ -120,11 +121,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = 35
 	armour_penetration = 0.2
 
+/*
 /obj/item/projectile/bullet/a762/uraniumtipped
 	name = "7.62 uranium-tipped bullet"
 	damage = -10
 	armour_penetration = 0
 	irradiate = 300
+*/
 
 /obj/item/projectile/bullet/a762/microshrapnel
 	name = "7.62 microshrapnel bullet"
@@ -175,11 +178,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	damage = -10
 	movement_type = FLYING | UNSTOPPABLE
 
+/*
 /obj/item/projectile/bullet/a50MG/uraniumtipped
 	name = "12.7mm uranium-tipped bullet"
 	damage = -15
 	armour_penetration = 0.2
 	irradiate = 500
+*/
 
 /obj/item/projectile/bullet/a50MG/contam
 	name = "12.7mm contaminated bullet"
@@ -234,11 +239,13 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
+/*
 /obj/item/projectile/bullet/a473/uraniumtipped
 	name = "4.73 U-235 bullet"
 	damage = -2
 	armour_penetration = 0.3
 	irradiate = 300
+*/
 
 /obj/item/projectile/bullet/a473/dumdum
 	name = "4.73 flat-nose bullet"

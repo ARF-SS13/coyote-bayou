@@ -620,12 +620,14 @@
 	build_path = /obj/item/ammo_box/m473/incendiary
 	category = list("initial", "Advanced Ammo")
 
+/*
 /datum/design/ammolathe/m473u235
 	name = "4.73mm uranium-tipped caseless ammo box"
 	id = "m473u235"
 	materials = list(/datum/material/titanium = 10000, /datum/material/blackpowder = 2000)
 	build_path = /obj/item/ammo_box/m473/uraniumtipped
 	category = list("initial", "Advanced Ammo")
+*/
 
 /datum/design/ammolathe/m473wound
 	name = "4.73mm flat-nose caseless ammo box"

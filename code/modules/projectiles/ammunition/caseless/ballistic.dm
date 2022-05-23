@@ -13,9 +13,11 @@
 	name = "4.73mm tracer cartridge"
 	projectile_type  = /obj/item/projectile/bullet/a473/incendiary
 
+/*
 /obj/item/ammo_casing/caseless/g11/uraniumtipped
 	name = "4.73mm U-235 cartridge"
 	projectile_type  = /obj/item/projectile/bullet/a473/uraniumtipped
+*/
 
 /obj/item/ammo_casing/caseless/g11/dumdum
 	name = "4.73mm flat-nose cartridge"

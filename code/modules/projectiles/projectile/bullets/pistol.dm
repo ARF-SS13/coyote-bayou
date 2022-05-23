@@ -410,13 +410,13 @@ Uranium, Contaminated
 		S.set_up(src.reagents, smoke_radius, location, 0)
 		S.start()
 
-
+/*
 /obj/item/projectile/bullet/mm14/uraniumtipped
 	name = "14mm uranium-tipped bullet"
 	damage = -5
 	armour_penetration = 0.1
 	irradiate = 300
-
+*/
 
 
 
