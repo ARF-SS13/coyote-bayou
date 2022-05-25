@@ -162,3 +162,12 @@
 /obj/effect/turf_decal/huge/massfusion
 	icon = 'icons/turf/decalshuge.dmi'
 	icon_state = "massfusion"
+
+/obj/effect/turf_decal/huge/razor
+	icon = 'icons/turf/decalshuge.dmi'
+	icon_state = "razor"
+
+/obj/effect/turf_decal/big/energy
+	icon = 'icons/turf/decalsbig.dmi'
+	icon_state = "energy"
+
