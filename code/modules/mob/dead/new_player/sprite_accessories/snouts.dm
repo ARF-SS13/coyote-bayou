@@ -308,6 +308,11 @@
 	icon_state = "wahalt"
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/snouts/mam_snouts/horse
+	name = "Horse"
+	icon_state = "hhorse"
+	matrixed_sections = MATRIX_RED_GREEN
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/
