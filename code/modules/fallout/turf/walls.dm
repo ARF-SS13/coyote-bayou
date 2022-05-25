@@ -131,18 +131,6 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	sheet_type = null
 	canSmoothWith = list(/turf/closed/wall/f13/tentwall, /turf/closed/wall)
 
-/turf/closed/wall/f13/brick
-	name = "brick wall"
-	desc = "A wall made out of solid brick."
-	icon = 'icons/fallout/turfs/walls/brick.dmi'
-	icon_state = "brick0"
-	icon_type_smooth = "brick"
-	hardness = 80
-	smooth = SMOOTH_OLD
-	girder_type = 0
-	sheet_type = null
-	canSmoothWith = list(/turf/closed/wall)
-
 /turf/closed/wall/f13/scrap
 	name = "scrap wall"
 	desc = "A wall held together by corrugated metal and prayers."
@@ -232,6 +220,44 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	explosion_block = 5
 	smooth = SMOOTH_OLD
 	canSmoothWith = list(/turf/closed/wall/f13/vault, /turf/closed/wall/r_wall/f13/vault, /turf/closed/wall)
+
+//Sunset custom walls
+
+/turf/closed/wall/f13/sunset/brick_small
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
+
+/turf/closed/wall/f13/sunset/brick_small_dark
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small_dark.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
+
+/turf/closed/wall/f13/sunset/brick_small_light
+	name = "brick wall"
+	desc = "A wall made out of solid brick."
+	icon = 'modular_sunset/icons/turfs/walls/brick_small_light.dmi'
+	icon_state = "brick0"
+	icon_type_smooth = "brick"
+	hardness = 80
+	smooth = SMOOTH_OLD
+	girder_type = 0
+	sheet_type = null
+	canSmoothWith = list(/turf/closed/wall)
 
 //Fallout 13 indestructible walls
 
