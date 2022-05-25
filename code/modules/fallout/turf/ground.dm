@@ -183,10 +183,6 @@
 	icon_state = "desertrough"
 	slowdown = 0.4
 
-/turf/open/indestructible/ground/outside/desert/harsh
-	icon_state = "wasteland"
-	icon = 'icons/fallout/turfs/ground_harsh.dmi'
-
 /turf/open/indestructible/ground/outside/desert/Initialize()
 	. = ..()
 	if(prob(2))
@@ -210,16 +206,6 @@
 				if(WEST)
 					DS.pixel_x = -32
 			DS.dir = dir = turn(direction, 180)
-
-/turf/open/indestructible/ground/outside/desert/harsh/Initialize()
-	. = ..()
-	if(prob(2))
-		var/obj/derp = pickweight(loots)
-		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
-	if(icon_state != "wasteland")
-		icon_state = "wasteland[rand(1,31)]"
 
 /obj/effect/overlay/desert_side
 	name = "desert"
@@ -296,15 +282,6 @@
 // DARK DIRT - the legacy one
 /turf/open/indestructible/ground/outside/dirt/dark
 
-/turf/open/indestructible/ground/outside/dirt/harsh
-	icon = 'icons/fallout/turfs/ground_harsh.dmi'
-	icon_state = "dirtfull"
-
-/turf/open/indestructible/ground/outside/dirt/harsh/side
-	icon_state = "dirt"
-
-/turf/open/indestructible/ground/outside/dirt/harsh/corner
-	icon_state = "dirtcorner"
 
 /turf/open/indestructible/ground/outside/dirt_s
 	name = "dirt"
