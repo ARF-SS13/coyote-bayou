@@ -85,6 +85,7 @@
 
 /datum/sprite_accessory/facial_hair/vlongbeard
 	name = "Very long beard"
+	icon = 'icons/mob/human_face.dmi'
 	icon_state = "facial_verylong"
 
 /datum/sprite_accessory/facial_hair/volaju
