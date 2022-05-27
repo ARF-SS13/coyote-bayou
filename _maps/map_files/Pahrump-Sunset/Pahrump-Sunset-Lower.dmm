@@ -762,6 +762,7 @@
 /obj/item/circuitboard/machine/techfab/department/medical,
 /obj/item/circuitboard/machine/ore_redemption,
 /obj/item/circuitboard/machine/mining_equipment_vendor,
+/obj/item/circuitboard/machine/destructive_analyzer,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -13460,7 +13461,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/machinery/workbench/advanced,
+/obj/machinery/autolathe/ammo/unlocked,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 1
 	},
