@@ -201,8 +201,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 1)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 
 /////////////
@@ -240,8 +241,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 1)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 /////////////////
 // .357 MAGNUM //
@@ -291,8 +293,9 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
+		if(M.fire_stacks < 1)
+			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
+			M.IgniteMob()
 
 /obj/item/projectile/bullet/a357/improv
 	name = "poor .357 bullet"
