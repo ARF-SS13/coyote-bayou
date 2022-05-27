@@ -355,6 +355,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "legion_slaveleather"
 	item_state = "legion_slaveleather"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 	armor = list("melee" = 20, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 0)
 
