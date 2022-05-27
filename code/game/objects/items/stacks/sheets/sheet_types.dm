@@ -451,6 +451,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe_list("bedsheet", list( \
 			new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
 			new/datum/stack_recipe("enclave bedsheet", /obj/item/bedsheet/enclave, 3), \
+			new/datum/stack_recipe("enclave luxury bedsheet", /obj/item/bedsheet/sneedclave, 3), \
 			new/datum/stack_recipe("medical bedsheet", /obj/item/bedsheet/medical, 3), \
 			new/datum/stack_recipe("blue bedsheet", /obj/item/bedsheet/blue, 3), \
 			new/datum/stack_recipe("green bedsheet", /obj/item/bedsheet/green, 3), \
