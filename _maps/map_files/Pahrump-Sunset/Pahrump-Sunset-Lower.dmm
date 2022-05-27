@@ -9002,13 +9002,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"hwC" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "cornerladder"
-	},
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "hxQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -11891,9 +11884,11 @@
 	},
 /area/f13/building/massfusion)
 "miK" = (
-/obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/structure/stairs/north{
+	dir = 2
+	},
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "miM" = (
 /obj/effect/landmark/start/f13/raider,
@@ -14179,10 +14174,6 @@
 /obj/structure/noticeboard,
 /turf/closed/wall/rust,
 /area/f13/tunnel)
-"qxd" = (
-/obj/machinery/smartfridge/bottlerack,
-/turf/open/floor/f13/wood,
-/area/f13/tunnel)
 "qxi" = (
 /obj/effect/spawner/lootdrop/f13/crafting,
 /turf/open/indestructible/ground/inside/mountain,
@@ -14627,10 +14618,6 @@
 	},
 /area/f13/tunnel)
 "rpT" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "clinicoutsideladder"
-	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4";
 	layer = 5
@@ -18425,12 +18412,11 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
 "xXK" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "house1ladder"
+/obj/structure/stairs/north{
+	dir = 2
 	},
-/turf/open/floor/f13/wood,
-/area/f13/tunnel)
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "xYi" = (
 /obj/structure/simple_door/bunker,
 /obj/structure/timeddoor,
@@ -33303,7 +33289,7 @@ bxk
 aaB
 aae
 kfr
-mby
+isl
 mby
 dzm
 wid
@@ -33817,7 +33803,7 @@ aae
 boD
 dzm
 dzm
-mVE
+dzm
 mby
 mVE
 dFQ
@@ -34072,9 +34058,9 @@ aaB
 sGx
 aae
 boD
-iIb
-mVE
-mVE
+boD
+miK
+dzm
 mby
 dzm
 oDe
@@ -34329,9 +34315,9 @@ aaB
 aae
 aae
 iKX
-bpQ
+boD
+miK
 dzm
-vea
 mby
 dzm
 oGU
@@ -34586,11 +34572,11 @@ ljy
 aaB
 aaB
 aaB
-aae
 dzm
-omG
+dzm
+dzm
 mby
-isl
+vea
 abj
 dzm
 dzm
@@ -39195,8 +39181,8 @@ wid
 bCt
 dzm
 lDw
-qxd
 dzm
+aaB
 cfV
 fNb
 fNb
@@ -39207,7 +39193,7 @@ dzm
 dzm
 dzm
 dzm
-hwC
+aaB
 bCt
 uag
 gEN
@@ -39452,8 +39438,8 @@ wid
 bCt
 dzm
 mVE
-mVE
 dzm
+aaB
 cfV
 aae
 aaB
@@ -39708,11 +39694,11 @@ bCt
 wid
 bCt
 dzm
-xXK
 uKE
 dzm
-miK
-aae
+aaB
+aaB
+xXK
 vQk
 dzm
 dzm
@@ -39967,11 +39953,11 @@ bCt
 dzm
 dzm
 dzm
+aaB
+aaB
+xXK
 dzm
-cfV
-uNL
-dFQ
-lHw
+wid
 iaP
 ukS
 dFQ
@@ -40227,8 +40213,8 @@ abV
 gPr
 aaB
 juE
-qpg
-dzm
+lHw
+wid
 dVe
 dVe
 dFQ
