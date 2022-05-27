@@ -782,7 +782,7 @@
 	pixel_x = -7;
 	pixel_y = 6
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "azU" = (
 /obj/structure/flora/rock/jungle,
@@ -1131,7 +1131,7 @@
 "aJx" = (
 /obj/structure/table,
 /obj/item/kitchen/knife,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -1298,7 +1298,7 @@
 "aOF" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "aOY" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
@@ -1433,7 +1433,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "aTR" = (
 /obj/machinery/light/small{
@@ -1519,7 +1519,7 @@
 "aWa" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "aWi" = (
 /obj/machinery/light/small{
@@ -1800,7 +1800,7 @@
 "bcO" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "bcQ" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -2087,7 +2087,7 @@
 /area/f13/caves)
 "bke" = (
 /obj/machinery/light/small,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "bkh" = (
 /obj/structure/wreck/trash/machinepile,
@@ -2134,7 +2134,7 @@
 	},
 /obj/structure/decoration/rag,
 /obj/structure/barricade/wooden/planks,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -2345,7 +2345,7 @@
 	},
 /obj/structure/decoration/rag,
 /obj/structure/barricade/wooden/planks,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -2497,7 +2497,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "buc" = (
 /turf/open/floor/clockwork/reebe{
@@ -2728,7 +2728,7 @@
 	},
 /area/f13/tunnel)
 "bzQ" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -2766,7 +2766,7 @@
 	},
 /area/f13/tunnel)
 "bBs" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -2940,7 +2940,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "bFe" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2965,7 +2965,7 @@
 	icon_state = "mattress4"
 	},
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -3119,7 +3119,7 @@
 /area/f13/brotherhood/offices1st)
 "bJG" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
@@ -3133,9 +3133,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/tunnel)
-"bKc" = (
-/turf/open/floor/wood/wood_chestnut,
-/area/f13/bunker)
 "bKq" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3212,7 +3209,7 @@
 /area/f13/tunnel)
 "bMV" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "bMX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3298,7 +3295,7 @@
 /area/f13/bunker)
 "bPh" = (
 /obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "bPo" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3369,7 +3366,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gibtorso"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "bRf" = (
 /obj/structure/wreck/trash/machinepiletwo,
@@ -3428,7 +3425,7 @@
 "bSL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
@@ -3508,7 +3505,7 @@
 /area/f13/bunker)
 "bUh" = (
 /obj/structure/simple_door/metal/dirtystore,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "bUi" = (
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
@@ -3605,7 +3602,7 @@
 /area/f13/tunnel)
 "bXn" = (
 /obj/effect/decal/cleanable/oil/streak,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "bXJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3699,7 +3696,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/chemistry)
 "caw" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
@@ -3846,15 +3843,15 @@
 /turf/open/water,
 /area/f13/brotherhood/operations)
 "ccM" = (
-/obj/structure/chair/wood/modern,
-/turf/open/floor/wood/wood_chestnut,
+/obj/structure/chair,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "cdb" = (
 /obj/item/stack/f13Cash/random/med{
 	layer = 2.8
 	},
 /obj/structure/campfire/barrel,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -3986,7 +3983,7 @@
 	icon_state = "remains"
 	},
 /obj/structure/simple_door/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "chR" = (
 /turf/closed/wall/f13/wood/house,
@@ -4048,7 +4045,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -4151,7 +4148,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/bunker)
 "cmH" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -4181,7 +4178,7 @@
 /area/f13/brotherhood/armory)
 "cnE" = (
 /obj/item/reagent_containers/glass/bucket,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/caves)
@@ -4265,7 +4262,7 @@
 /area/f13/tunnel)
 "cqs" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -4292,7 +4289,7 @@
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib1-old"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "crb" = (
 /obj/item/trash,
@@ -4310,7 +4307,7 @@
 /area/f13/tunnel)
 "crL" = (
 /obj/effect/decal/cleanable/robot_debris,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -4358,7 +4355,7 @@
 /obj/machinery/processor/chopping_block{
 	pixel_y = 7
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -4385,7 +4382,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "ctV" = (
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "ctZ" = (
 /obj/structure/rack,
@@ -4442,7 +4439,7 @@
 /area/f13/brotherhood/archives)
 "cvv" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "cvx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4539,7 +4536,7 @@
 	icon_state = "mattress4";
 	pixel_y = -2
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "cyj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4563,7 +4560,7 @@
 /area/f13/tunnel)
 "cyG" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
@@ -4586,7 +4583,7 @@
 	dir = 4;
 	layer = 2.9
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
@@ -4797,22 +4794,22 @@
 /area/f13/brotherhood/offices1st)
 "cCB" = (
 /obj/machinery/workbench,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "cCD" = (
 /obj/structure/bed/mattress,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "cCF" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress4";
 	pixel_y = -2
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "cCG" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -4832,7 +4829,7 @@
 /area/f13/caves)
 "cDT" = (
 /obj/structure/simple_door/house,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -4847,7 +4844,7 @@
 /area/f13/enclave)
 "cEm" = (
 /obj/structure/simple_door/wood,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -4983,7 +4980,7 @@
 /area/f13/brotherhood/rnd)
 "cHz" = (
 /obj/item/broom,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "cHL" = (
 /obj/structure/sign/poster/prewar/poster60,
@@ -5044,7 +5041,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -5144,7 +5141,7 @@
 /area/f13/tunnel)
 "cMJ" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "cNA" = (
 /obj/structure/closet/crate/freezer/blood,
@@ -5185,7 +5182,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
@@ -5481,7 +5478,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "cXx" = (
 /obj/structure/simple_door/wood,
@@ -5491,7 +5488,7 @@
 	name = "skulls"
 	},
 /obj/structure/decoration/rag,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "cXP" = (
 /obj/structure/fence{
@@ -5500,7 +5497,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "cYb" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -5517,7 +5514,7 @@
 /obj/effect/decal/remains{
 	icon_state = "remains"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "cYq" = (
 /obj/structure/noticeboard{
@@ -5558,10 +5555,10 @@
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
 "cZJ" = (
-/obj/structure/chair/wood/worn{
+/obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "cZR" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -5605,7 +5602,7 @@
 /area/f13/caves)
 "dbs" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dbv" = (
 /obj/effect/decal/remains{
@@ -5637,7 +5634,7 @@
 /area/f13/bunker)
 "dcv" = (
 /obj/structure/simple_door/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dcE" = (
 /obj/structure/fence/handrail_end/non_dense{
@@ -5689,7 +5686,7 @@
 "deM" = (
 /obj/structure/table/wood/settler,
 /obj/item/flashlight/lamp,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dfM" = (
 /obj/effect/decal/waste{
@@ -5703,10 +5700,10 @@
 	},
 /area/f13/brotherhood/rnd)
 "dfU" = (
-/obj/structure/chair/wood/worn{
+/obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dgg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5763,7 +5760,7 @@
 /area/f13/tunnel)
 "dgR" = (
 /obj/structure/bookshelf,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dhj" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -5805,7 +5802,7 @@
 "dif" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dii" = (
 /obj/structure/lattice/catwalk,
@@ -5813,7 +5810,7 @@
 /area/f13/caves)
 "dim" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -5842,7 +5839,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "diM" = (
 /obj/structure/flora/rock/jungle{
@@ -5994,7 +5991,7 @@
 /obj/structure/table,
 /obj/item/kitchen/knife/butcher,
 /obj/item/screwdriver,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -6052,7 +6049,7 @@
 "dnr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dnQ" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -6124,7 +6121,7 @@
 /area/f13/bunker)
 "dpl" = (
 /mob/living/simple_animal/hostile/raider/thief,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "dpu" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss,
@@ -6143,7 +6140,7 @@
 	icon_state = "floor2"
 	},
 /obj/effect/spawner/lootdrop/f13/crafting,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "dqh" = (
 /obj/structure/table/wood/poker,
@@ -6156,7 +6153,7 @@
 "dqm" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/book/manual/wiki/cit/chem_recipies,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -6379,7 +6376,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dwK" = (
 /obj/structure/window/reinforced/spawner/west,
@@ -6425,7 +6422,7 @@
 /area/f13/brotherhood/operations)
 "dxR" = (
 /obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dyg" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -6466,7 +6463,7 @@
 /obj/structure/nest/deathclaw{
 	radius = 5
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "dyB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6512,7 +6509,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "dzH" = (
 /obj/effect/decal/cleanable/dirt{
@@ -6591,7 +6588,7 @@
 	dir = 4
 	},
 /obj/item/flashlight/flare/torch,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dBX" = (
 /obj/structure/closet/secure_closet/freezer/meat,
@@ -6638,7 +6635,7 @@
 /obj/structure/chair/stool/bar,
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -6652,7 +6649,7 @@
 /area/f13/tcoms)
 "dEg" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -6873,7 +6870,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dLl" = (
 /obj/machinery/telecomms/processor/preset_three,
@@ -6891,10 +6888,10 @@
 	pixel_y = -16
 	},
 /obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "dLs" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
@@ -6946,7 +6943,7 @@
 /area/f13/brotherhood/rnd)
 "dNb" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dNu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7043,7 +7040,7 @@
 /area/f13/tunnel)
 "dPo" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dPt" = (
 /obj/structure/bed/mattress{
@@ -7153,7 +7150,7 @@
 "dSv" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/tier4,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "dSA" = (
 /obj/item/stack/sheet/plasteel/five,
@@ -7178,7 +7175,7 @@
 /obj/effect/decal/remains{
 	icon_state = "remains"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dTe" = (
 /obj/effect/decal/cleanable/dirt,
@@ -7317,7 +7314,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "dVz" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -7606,7 +7603,7 @@
 "ecs" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/traitbooks,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ecQ" = (
 /obj/structure/chair/stool/retro/backed{
@@ -7625,7 +7622,7 @@
 /area/f13/bunker)
 "ede" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "edl" = (
 /obj/machinery/door/airlock/hatch{
@@ -7651,7 +7648,7 @@
 "edB" = (
 /obj/item/bedsheet,
 /obj/structure/bed/old,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "edM" = (
 /obj/machinery/light/broken{
@@ -7731,7 +7728,7 @@
 /area/f13/tunnel)
 "eeU" = (
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -7832,7 +7829,7 @@
 "ehk" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/wreck/trash/machinepile,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ehl" = (
 /obj/machinery/light,
@@ -7975,7 +7972,7 @@
 /obj/effect/decal/remains{
 	icon_state = "remains"
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -8059,7 +8056,7 @@
 "emB" = (
 /obj/structure/chair/stool/bar,
 /mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "emG" = (
 /obj/structure/closet/crate/medical,
@@ -8369,7 +8366,7 @@
 /area/f13/enclave)
 "euZ" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eve" = (
 /obj/structure/cable{
@@ -8426,7 +8423,7 @@
 /area/f13/caves)
 "ewX" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "exg" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -8570,7 +8567,7 @@
 	pixel_x = 10
 	},
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eAG" = (
 /turf/closed/indestructible/opshuttle{
@@ -8586,7 +8583,7 @@
 "eAV" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "eBg" = (
 /turf/open/floor/f13{
@@ -8624,7 +8621,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -8667,7 +8664,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eDI" = (
 /obj/structure/table/wood,
@@ -8678,7 +8675,7 @@
 "eDO" = (
 /obj/structure/simple_door/tent,
 /obj/structure/decoration/rag,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -8703,7 +8700,7 @@
 "eEq" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eEt" = (
 /obj/structure/kitchenspike,
@@ -8768,7 +8765,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eFv" = (
 /obj/structure/closet/crate/trashcart,
@@ -8802,7 +8799,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -8813,7 +8810,7 @@
 "eGX" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eHe" = (
 /obj/structure/chair/f13foldupchair{
@@ -8966,7 +8963,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eKa" = (
 /obj/effect/decal/waste{
@@ -9105,14 +9102,14 @@
 /area/f13/bunker)
 "eNf" = (
 /mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eNq" = (
 /obj/structure/table/wood/settler,
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -9249,7 +9246,7 @@
 "eRu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/rotten,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -9369,7 +9366,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress6"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eUH" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -9386,7 +9383,7 @@
 	},
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "eVd" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -9412,7 +9409,7 @@
 "eVC" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "eVI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9423,7 +9420,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -9459,14 +9456,14 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/kitchen/knife/butcher,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eXq" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress2";
 	pixel_y = 10
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "eXC" = (
 /obj/effect/decal/remains{
@@ -9501,7 +9498,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -9580,7 +9577,7 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "fce" = (
 /obj/machinery/conveyor/auto{
@@ -9640,7 +9637,7 @@
 /area/f13/caves)
 "fdI" = (
 /obj/item/reagent_containers/glass/bucket,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "fea" = (
 /obj/structure/decoration/smokeold,
@@ -9692,7 +9689,7 @@
 /area/f13/brotherhood/leisure)
 "ffX" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ffZ" = (
 /obj/structure/simple_door/metal/dirtystore,
@@ -9788,7 +9785,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
 "fiI" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/caves)
@@ -9931,14 +9928,14 @@
 /area/f13/bunker)
 "fmg" = (
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
 "fmw" = (
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "fmy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10416,7 +10413,7 @@
 "fyt" = (
 /obj/structure/table/wood/settler,
 /obj/item/twohanded/fireaxe/boneaxe,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "fyA" = (
 /obj/machinery/light{
@@ -10639,7 +10636,7 @@
 	max_mobs = 1;
 	spawn_time = 100
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -10699,10 +10696,10 @@
 	},
 /area/f13/den)
 "fGW" = (
-/obj/structure/chair/wood/normal{
+/obj/structure/chair{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -11086,7 +11083,7 @@
 "fSl" = (
 /obj/structure/window/fulltile/ruins/broken,
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "fSS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11138,7 +11135,7 @@
 "fTB" = (
 /obj/structure/simple_door/brokenglass,
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -11479,7 +11476,7 @@
 /obj/structure/wreck/trash/five_tires{
 	layer = 3
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "gcr" = (
 /obj/machinery/atmospherics/pipe/simple{
@@ -11609,7 +11606,7 @@
 	name = "light tube"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ggm" = (
 /obj/structure/reagent_dispensers/barrel/three,
@@ -11793,13 +11790,13 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
 "gnS" = (
 /obj/machinery/light/small,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "gnV" = (
 /obj/structure/decoration/rag{
@@ -11893,7 +11890,7 @@
 "gqt" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "gqx" = (
 /obj/structure/chair/f13foldupchair{
@@ -11976,7 +11973,7 @@
 "gsA" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "gtv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12007,7 +12004,7 @@
 	dir = 8
 	},
 /obj/structure/simple_door/room/dirty,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "gtS" = (
 /turf/closed/indestructible/f13/matrix,
@@ -12031,10 +12028,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
 "guo" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "gux" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -12136,10 +12133,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building)
 "gyl" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "gyt" = (
 /obj/structure/girder,
@@ -12207,7 +12204,7 @@
 /area/f13/bunker)
 "gzK" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "gzL" = (
 /obj/machinery/vending/wallmed{
@@ -12275,7 +12272,7 @@
 /area/f13/tunnel)
 "gCd" = (
 /obj/structure/ore_box,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "gCf" = (
 /obj/structure/spacevine{
@@ -12911,7 +12908,7 @@
 /area/f13/bunker)
 "gTB" = (
 /obj/structure/wreck/trash/engine,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "gTZ" = (
 /obj/structure/table/wood/settler,
@@ -13252,7 +13249,7 @@
 /area/f13/brotherhood/operations)
 "hdT" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -13428,7 +13425,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
 "hkn" = (
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "hkD" = (
 /turf/closed/mineral/random/low_chance/underground,
@@ -13467,7 +13464,7 @@
 /obj/structure/rack,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "hlg" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -13576,7 +13573,7 @@
 	icon_state = "mattress4"
 	},
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "hoq" = (
 /obj/structure/cable{
@@ -13880,7 +13877,7 @@
 "hyH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "hzg" = (
 /obj/structure/rack,
@@ -14070,7 +14067,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "hIN" = (
 /obj/structure/cable{
@@ -14810,7 +14807,7 @@
 /obj/structure/barricade/bars{
 	layer = 5
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "iem" = (
 /obj/structure/window/reinforced,
@@ -15101,7 +15098,7 @@
 	dir = 4
 	},
 /obj/effect/mob_spawn/human/corpse/ncr,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "iob" = (
 /obj/effect/decal/cleanable/blood/gibs{
@@ -15113,7 +15110,7 @@
 /obj/item/clothing/glasses/hud/health/night,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ion" = (
 /obj/effect/decal/cleanable/dirt,
@@ -15287,7 +15284,7 @@
 /area/f13/bunker)
 "iuw" = (
 /obj/item/restraints/handcuffs/sinew,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -15687,7 +15684,7 @@
 /obj/item/storage/bag/trash,
 /obj/item/reagent_containers/glass/bucket/plastic,
 /obj/structure/mopbucket,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "iHc" = (
 /obj/effect/spawner/bundle/f13/armor/combat,
@@ -15810,7 +15807,7 @@
 "iMS" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -15876,7 +15873,7 @@
 /area/f13/tunnel)
 "iOK" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "iOT" = (
 /obj/machinery/light/small{
@@ -15955,7 +15952,7 @@
 "iRU" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "iRZ" = (
 /obj/machinery/light/broken{
@@ -16007,7 +16004,7 @@
 "iSU" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -16307,13 +16304,13 @@
 "jbt" = (
 /obj/structure/wreck/trash/bus_door,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
 "jbA" = (
 /obj/structure/closet/cabinet,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "jbG" = (
 /mob/living/simple_animal/hostile/giantantqueen,
@@ -16515,7 +16512,7 @@
 /area/f13/brotherhood/leisure)
 "jjd" = (
 /obj/structure/kitchenspike,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "jjA" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16642,11 +16639,11 @@
 	dir = 8
 	},
 /obj/item/stack/f13Cash/random/med,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "jni" = (
 /obj/item/flashlight/flare/torch,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "jnj" = (
 /obj/structure/cable{
@@ -16697,7 +16694,7 @@
 	dir = 4
 	},
 /obj/structure/rack,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "jpi" = (
 /mob/living/simple_animal/hostile/deathclaw/legendary,
@@ -16727,7 +16724,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -17000,7 +16997,7 @@
 /area/f13/bunker)
 "jzO" = (
 /obj/structure/bookshelf,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -17012,8 +17009,8 @@
 	},
 /area/f13/bunker)
 "jAZ" = (
-/obj/structure/chair/wood/modern,
-/turf/open/floor/wood/wood_chestnut,
+/obj/structure/chair,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "jBg" = (
 /obj/structure/decoration/rag{
@@ -17546,7 +17543,7 @@
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -17570,7 +17567,7 @@
 "jUT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "jVi" = (
 /obj/structure/chair/sofa/corp{
@@ -17998,7 +17995,7 @@
 /obj/effect/decal/remains/human,
 /obj/item/stake/hardened,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "keY" = (
 /obj/structure/rack/shelf_metal,
@@ -18214,7 +18211,7 @@
 /area/f13/bunker)
 "klj" = (
 /mob/living/simple_animal/hostile/radroach,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "klB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18264,7 +18261,7 @@
 /area/f13/brotherhood/leisure)
 "kos" = (
 /obj/machinery/autolathe/ammo,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "koC" = (
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
@@ -18347,7 +18344,7 @@
 "kqg" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -18393,7 +18390,7 @@
 /turf/closed/wall/rust,
 /area/f13/tunnel)
 "krL" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -18570,7 +18567,7 @@
 "kxg" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "kxn" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -18825,7 +18822,7 @@
 /obj/structure/barricade/bars{
 	layer = 5
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "kFP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18989,7 +18986,7 @@
 /obj/structure/simple_door/house{
 	icon_state = "interior"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "kKB" = (
 /obj/item/circuitboard/machine/ore_redemption,
@@ -18998,7 +18995,7 @@
 /area/f13/building)
 "kLh" = (
 /obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -19029,7 +19026,7 @@
 /area/f13/brotherhood/rnd)
 "kMF" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "kMI" = (
 /obj/structure/spider/stickyweb,
@@ -19078,13 +19075,13 @@
 "kOC" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/spider/spiderling,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "kOP" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/tunnel)
 "kPB" = (
 /obj/machinery/light/small{
@@ -19124,7 +19121,7 @@
 	name = "light fixture"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "kRt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -19163,7 +19160,7 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "kSC" = (
 /obj/structure/cable{
@@ -19214,7 +19211,7 @@
 	},
 /area/f13/bunker)
 "kTQ" = (
-/obj/structure/chair/wood/normal{
+/obj/structure/chair{
 	dir = 1
 	},
 /obj/machinery/light/small,
@@ -19222,7 +19219,7 @@
 "kUv" = (
 /obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -19523,7 +19520,7 @@
 "lal" = (
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/reagent_containers/spray/cleaner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "laS" = (
 /obj/structure/window/reinforced/spawner/east,
@@ -19586,7 +19583,7 @@
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/detective,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ldF" = (
 /obj/structure/curtain{
@@ -19655,7 +19652,7 @@
 /obj/item/tape,
 /obj/item/storage/briefcase,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "lgv" = (
 /obj/structure/closet/crate/freezer/blood/anchored,
@@ -19811,7 +19808,7 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
 /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ljZ" = (
 /obj/effect/decal/fakelattice,
@@ -20280,7 +20277,7 @@
 /area/f13/brotherhood/reactor)
 "lzb" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -20523,7 +20520,7 @@
 	icon_state = "gibup1"
 	},
 /obj/effect/mob_spawn/human/corpse/legion,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "lGM" = (
 /obj/structure/rack,
@@ -20720,7 +20717,7 @@
 "lNS" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "lNW" = (
 /obj/structure/lattice{
@@ -20748,7 +20745,7 @@
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "lOw" = (
 /obj/structure/table/reinforced,
@@ -20840,7 +20837,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "lQY" = (
 /obj/effect/decal/cleanable/dirt{
@@ -20921,7 +20918,7 @@
 /area/f13/brotherhood/dorms)
 "lVd" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
@@ -21287,7 +21284,7 @@
 /obj/structure/chair/wood{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "miR" = (
 /obj/effect/decal/remains{
@@ -21511,7 +21508,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "moi" = (
 /obj/structure/fence/handrail_end/non_dense{
@@ -21692,7 +21689,7 @@
 "mvH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mvK" = (
 /obj/structure/rack/shelf_metal,
@@ -21700,7 +21697,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "mvR" = (
 /obj/structure/disposalpipe/segment{
@@ -21931,11 +21928,11 @@
 /obj/effect/decal/fakelattice{
 	pixel_x = 17
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mGo" = (
 /obj/structure/reagent_dispensers/beerkeg,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "mGt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22040,7 +22037,7 @@
 "mLW" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mLX" = (
 /obj/structure/table{
@@ -22146,7 +22143,7 @@
 /obj/machinery/light/fo13colored/Aqua{
 	name = "light fixture"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mPe" = (
 /obj/machinery/mineral/equipment_vendor,
@@ -22164,12 +22161,12 @@
 /obj/machinery/light/fo13colored/Aqua{
 	name = "light fixture"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mPx" = (
 /obj/structure/bookcase,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mQi" = (
 /obj/structure/lattice/catwalk,
@@ -22328,7 +22325,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mUt" = (
 /obj/machinery/light/broken,
@@ -22415,7 +22412,7 @@
 /area/f13/enclave)
 "mXH" = (
 /obj/effect/decal/cleanable/glass,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mXP" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22489,7 +22486,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/metal/barred,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "mZL" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -22591,7 +22588,7 @@
 "nce" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ncf" = (
 /obj/structure/wreck/trash/three_barrels,
@@ -22639,7 +22636,7 @@
 	pixel_x = -4;
 	pixel_y = 11
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ndp" = (
 /obj/structure/closet/fridge,
@@ -22687,7 +22684,7 @@
 "nfe" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/book/manual/ncr/jobguide,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "nfk" = (
 /obj/machinery/flasher/portable,
@@ -23097,7 +23094,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nsN" = (
 /obj/machinery/door/airlock/grunge,
@@ -23169,7 +23166,7 @@
 	dir = 1;
 	name = "light tube"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ntY" = (
 /obj/structure/table{
@@ -23332,7 +23329,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/bunker)
 "nyX" = (
-/obj/structure/chair/wood/normal{
+/obj/structure/chair{
 	dir = 1
 	},
 /area/f13/brotherhood/archives)
@@ -23395,7 +23392,7 @@
 /area/f13/tunnel)
 "nAj" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "nAC" = (
 /obj/structure/bed/oldalt,
@@ -23416,7 +23413,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nBe" = (
 /obj/structure/bed,
@@ -23465,7 +23462,7 @@
 /area/f13/tunnel)
 "nDj" = (
 /obj/structure/barricade/wooden,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nDS" = (
 /turf/open/floor/f13{
@@ -23558,7 +23555,7 @@
 	name = "light fixture"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nFL" = (
 /obj/structure/bed,
@@ -23806,7 +23803,7 @@
 /area/f13/caves)
 "nNY" = (
 /obj/machinery/door/morgue,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nOu" = (
 /obj/structure/cable{
@@ -23820,7 +23817,7 @@
 	icon_state = "skin";
 	pixel_x = 31
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "nOW" = (
 /turf/open/floor/plasteel/freezer,
@@ -23851,7 +23848,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/reagent_containers/glass/bottle/welding_fuel,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nPR" = (
 /obj/structure/fence/cut/large{
@@ -23892,7 +23889,7 @@
 	icon_state = "remains"
 	},
 /mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -23924,7 +23921,7 @@
 /area/f13/bunker)
 "nSV" = (
 /obj/structure/chair/stool/bar,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "nTe" = (
 /obj/machinery/workbench,
@@ -24035,7 +24032,7 @@
 /area/f13/caves)
 "nUT" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -24100,7 +24097,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -24145,7 +24142,7 @@
 /obj/structure/sign/poster/contraband/revolver{
 	pixel_y = 32
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -24834,10 +24831,10 @@
 	},
 /area/f13/brotherhood/operations)
 "osH" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "osY" = (
 /turf/open/floor/plating/tunnel,
@@ -25017,7 +25014,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/wood,
 /obj/structure/decoration/rag,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "oyu" = (
 /obj/effect/decal/cleanable/blood{
@@ -25053,11 +25050,11 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/bunker)
 "ozs" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 8;
 	icon_state = "wooden_chair_old"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ozH" = (
 /obj/structure/wreck/trash/three_barrels,
@@ -25501,7 +25498,7 @@
 /area/f13/brotherhood/rnd)
 "oPj" = (
 /obj/item/flag/oasis,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "oPG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25513,7 +25510,7 @@
 	anchored = 1;
 	pixel_y = 32
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "oPR" = (
 /turf/open/floor/plasteel/barber{
@@ -25565,7 +25562,7 @@
 	},
 /obj/item/storage/trash_stack,
 /obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "oRO" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -25611,7 +25608,7 @@
 "oTY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "oVa" = (
 /turf/closed/indestructible/opshuttle{
@@ -25922,7 +25919,7 @@
 	dir = 1;
 	name = "light tube"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "pfV" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26084,10 +26081,10 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "pmg" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "pmO" = (
 /obj/structure/lattice/catwalk,
@@ -26148,7 +26145,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "poN" = (
 /obj/structure/lattice{
@@ -26159,7 +26156,7 @@
 	},
 /area/f13/brotherhood/rnd)
 "poZ" = (
-/obj/structure/chair/wood/normal,
+/obj/structure/chair,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "ppv" = (
@@ -26289,7 +26286,7 @@
 	height = 1;
 	id = "busladder"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "psU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -26331,7 +26328,7 @@
 /area/f13/clinic)
 "pve" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -26662,7 +26659,7 @@
 "pHo" = (
 /obj/item/flashlight/lamp,
 /obj/structure/table/wood/settler,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "pHq" = (
 /obj/structure/decoration/rag,
@@ -26880,12 +26877,12 @@
 /area/f13/enclave)
 "pOo" = (
 /obj/structure/chair/bench,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "pOz" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "pOB" = (
 /obj/machinery/light{
@@ -26974,7 +26971,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "pRp" = (
 /obj/structure/table/snooker{
@@ -27200,13 +27197,13 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
 "pWX" = (
-/obj/structure/chair/wood/modern,
-/turf/open/floor/wood/wood_chestnut,
+/obj/structure/chair,
+/turf/open/floor/wood,
 /area/f13/building)
 "pXc" = (
 /obj/structure/wreck/trash/three_barrels,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "pXj" = (
 /obj/effect/decal/cleanable/dirt{
@@ -27257,7 +27254,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/cobweb,
 /obj/structure/punching_bag,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "pYB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27277,7 +27274,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "pYZ" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -27405,7 +27402,7 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "qcN" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -27477,7 +27474,7 @@
 /area/f13/brotherhood/leisure)
 "qfx" = (
 /obj/effect/landmark/start/f13/settler,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qfy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27514,7 +27511,7 @@
 /area/f13/brotherhood/operations)
 "qgz" = (
 /obj/structure/closet/crate/large,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qgO" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -27542,7 +27539,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qhw" = (
 /obj/structure/nest/raider{
@@ -27832,11 +27829,11 @@
 /area/f13/brotherhood/leisure)
 "qpM" = (
 /obj/structure/bed/old,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qpP" = (
 /obj/effect/decal/cleanable/blood/gibs/human/limb,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -27895,7 +27892,7 @@
 "qrn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/dog,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qrG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27997,7 +27994,7 @@
 /area/f13/brotherhood/offices1st)
 "quD" = (
 /obj/structure/simple_door/brokenglass,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qvn" = (
 /turf/closed/indestructible/rock,
@@ -28032,7 +28029,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "qwi" = (
 /obj/effect/decal/fakelattice,
@@ -28060,7 +28057,7 @@
 /obj/item/storage/toolbox/drone{
 	pixel_y = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qxN" = (
 /obj/item/radio/intercom{
@@ -28301,7 +28298,7 @@
 	icon_state = "skulls";
 	name = "skulls"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qFt" = (
 /obj/structure/decoration/vent{
@@ -28357,7 +28354,7 @@
 "qGf" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/metal/fifty,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qGl" = (
 /obj/item/clothing/head/helmet/roman/fake,
@@ -28398,7 +28395,7 @@
 /area/f13/brotherhood/mining)
 "qHX" = (
 /obj/structure/chair/office,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "qIj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -28940,7 +28937,7 @@
 /obj/structure/wreck/trash/five_tires,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/caves)
@@ -29105,7 +29102,7 @@
 /area/f13/brotherhood/armory)
 "rcZ" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rds" = (
 /obj/machinery/door/airlock/hatch{
@@ -29252,7 +29249,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
 "rjz" = (
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "rjD" = (
 /obj/structure/simple_door/wood,
@@ -29305,7 +29302,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rkM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -29559,7 +29556,7 @@
 "rsB" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rsG" = (
 /obj/structure/lattice{
@@ -29771,7 +29768,7 @@
 	termtag = "Business"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rxw" = (
 /obj/structure/table,
@@ -29963,7 +29960,7 @@
 /area/f13/bunker)
 "rAp" = (
 /obj/structure/dresser,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rAt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30216,7 +30213,7 @@
 /area/f13/bunker)
 "rFB" = (
 /obj/structure/wreck/trash/two_barrels,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "rFC" = (
 /obj/effect/decal/cleanable/dirt{
@@ -30432,7 +30429,7 @@
 "rKO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -30520,7 +30517,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rNf" = (
 /obj/structure/flora/junglebush/c,
@@ -30564,7 +30561,7 @@
 "rNO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rOk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30598,11 +30595,11 @@
 /area/f13/brotherhood/offices1st)
 "rPe" = (
 /obj/structure/curtain,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rPi" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "rPB" = (
 /obj/structure/destructible/clockwork/wall_gear,
@@ -30703,7 +30700,7 @@
 /area/f13/caves)
 "rRX" = (
 /obj/structure/simple_door/dirtyglass,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "rSv" = (
 /obj/structure/lattice{
@@ -30889,7 +30886,7 @@
 /obj/structure/table/wood/settler,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "rYm" = (
 /obj/structure/grille,
@@ -30974,7 +30971,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/leisure)
 "saC" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
@@ -31182,7 +31179,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "shM" = (
 /obj/structure/table,
@@ -31329,7 +31326,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/stack/sheet/glass/fifty,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "slK" = (
 /obj/item/reagent_containers/food/snacks/deadmouse,
@@ -31358,7 +31355,7 @@
 "smJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "smN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -31514,7 +31511,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ssf" = (
 /obj/structure/chair{
@@ -31524,7 +31521,7 @@
 /area/f13/bunker)
 "sso" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -31751,7 +31748,7 @@
 "sAd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -31931,7 +31928,7 @@
 /area/f13/enclave)
 "sGL" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -31940,7 +31937,7 @@
 /area/f13/bunker)
 "sHh" = (
 /obj/machinery/autolathe,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sHo" = (
 /obj/item/mine/explosive,
@@ -31972,13 +31969,13 @@
 	height = 1;
 	id = "gatehouseladder"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sJm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
 /obj/item/stack/sheet/metal/fifty,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sJp" = (
 /turf/open/floor/f13{
@@ -32001,7 +31998,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/tunnel)
@@ -32072,7 +32069,7 @@
 /area/f13/enclave)
 "sLV" = (
 /obj/item/soap/syndie,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sLW" = (
 /obj/item/trash/f13/mre,
@@ -32136,7 +32133,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
@@ -32306,7 +32303,7 @@
 "sTo" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "sTs" = (
 /obj/structure/destructible/tribal_torch/wall/lit,
@@ -32319,7 +32316,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sUC" = (
 /obj/machinery/light/small{
@@ -32341,7 +32338,7 @@
 "sUK" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sUW" = (
 /obj/structure/lattice{
@@ -32354,7 +32351,7 @@
 	icon_state = "mattress6";
 	pixel_y = 10
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "sVA" = (
 /obj/machinery/vending/coffee{
@@ -32434,7 +32431,7 @@
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sYW" = (
 /obj/structure/falsewall/reinforced{
@@ -32457,7 +32454,7 @@
 /area/f13/enclave)
 "sZu" = (
 /obj/machinery/mineral/ore_redemption,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "sZz" = (
 /obj/machinery/light/small,
@@ -32480,7 +32477,7 @@
 "taA" = (
 /obj/structure/bed,
 /obj/item/bedsheet/random,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "taD" = (
 /obj/structure/chair/comfy/beige{
@@ -32582,7 +32579,7 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tdU" = (
 /obj/structure/cable{
@@ -32757,7 +32754,7 @@
 /area/f13/tunnel)
 "tkt" = (
 /obj/item/trash/f13/dog,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tkK" = (
 /obj/structure/sign/departments/security,
@@ -32786,7 +32783,7 @@
 /area/f13/brotherhood/operations)
 "tls" = (
 /obj/structure/closet/cabinet,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/bunker)
 "tlw" = (
 /obj/machinery/light{
@@ -32799,7 +32796,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "tlZ" = (
 /obj/structure/wreck/trash/machinepile,
@@ -32812,7 +32809,7 @@
 "tmc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/autolathe/ammo,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tmf" = (
 /obj/structure/flora/junglebush/c,
@@ -32859,7 +32856,7 @@
 /obj/item/trash/f13/mre,
 /obj/item/trash/f13/mre,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/caves)
@@ -32886,7 +32883,7 @@
 	layer = 2.7;
 	pixel_y = -16
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "toD" = (
 /obj/structure/curtain{
@@ -32914,7 +32911,7 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib2-old"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "tpo" = (
 /obj/machinery/door/poddoor/shutters{
@@ -33419,7 +33416,7 @@
 /obj/structure/table/wood,
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tEj" = (
 /turf/closed/indestructible/opshuttle{
@@ -33445,7 +33442,7 @@
 /area/f13/tunnel)
 "tEW" = (
 /obj/machinery/vending/boozeomat,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tFc" = (
 /obj/structure/barricade/bars,
@@ -33676,7 +33673,7 @@
 /area/f13/brotherhood/rnd)
 "tKZ" = (
 /obj/machinery/workbench,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tLd" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -33775,7 +33772,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tOz" = (
 /obj/effect/spawner/lootdrop/f13/cash_legion_low,
@@ -33879,7 +33876,7 @@
 /obj/structure/sign/poster/contraband/pinup_funk{
 	pixel_y = -32
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tRI" = (
 /turf/open/floor/carpet/royalblack,
@@ -33933,7 +33930,7 @@
 /area/f13/enclave)
 "tUy" = (
 /obj/structure/simple_door/repaired,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tVu" = (
 /obj/effect/decal/waste,
@@ -34012,7 +34009,7 @@
 /area/f13/den)
 "tXr" = (
 /obj/structure/rack,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "tXC" = (
 /obj/effect/decal/cleanable/dirt{
@@ -34185,7 +34182,7 @@
 /obj/structure/simple_door/house{
 	icon_state = "interior"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "udj" = (
 /obj/machinery/porta_turret/syndicate{
@@ -34231,7 +34228,7 @@
 /area/f13/bunker)
 "ugq" = (
 /obj/effect/decal/cleanable/generic,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "ugL" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -34265,7 +34262,7 @@
 	icon_state = "skin"
 	},
 /obj/structure/decoration/rag,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/building)
@@ -34307,7 +34304,7 @@
 "uiZ" = (
 /obj/effect/landmark/start/f13/settler,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uji" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -34349,7 +34346,7 @@
 /area/f13/bunker)
 "ukL" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -34546,7 +34543,7 @@
 "uqk" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -34558,7 +34555,7 @@
 /area/f13/tunnel)
 "uqE" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -34585,7 +34582,7 @@
 /area/f13/caves)
 "urg" = (
 /obj/effect/decal/cleanable/blood/gibs/human/body,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/tunnel)
@@ -34710,7 +34707,7 @@
 /obj/structure/table/wood/poker,
 /area/f13/den)
 "uur" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -34847,7 +34844,7 @@
 /obj/item/reagent_containers/food/snacks/garlicbread,
 /obj/structure/table/wood,
 /obj/item/gavelhammer,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uBO" = (
 /obj/machinery/light,
@@ -34873,7 +34870,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/caves)
@@ -34886,7 +34883,7 @@
 /area/f13/brotherhood/leisure)
 "uCy" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
@@ -34977,7 +34974,7 @@
 /turf/open/floor/plating/dirt,
 /area/f13/caves)
 "uFm" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/tunnel)
@@ -35006,7 +35003,7 @@
 	icon_state = "skulls"
 	},
 /obj/structure/barricade/wooden/strong,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "uGQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -35021,7 +35018,7 @@
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uHu" = (
 /obj/structure/grille,
@@ -35043,7 +35040,7 @@
 "uIm" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/glasses/regular,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "uJq" = (
 /obj/structure/reagent_dispensers/barrel/two,
@@ -35096,7 +35093,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uKV" = (
 /obj/structure/closet/crate/bin{
@@ -35127,7 +35124,7 @@
 /area/f13/brotherhood/chemistry)
 "uLR" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
@@ -35142,7 +35139,7 @@
 "uMA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/rotten,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -35158,7 +35155,7 @@
 	dir = 4
 	},
 /obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uNU" = (
 /obj/structure/statue/uranium/nuke,
@@ -35234,7 +35231,7 @@
 	height = 1;
 	id = "church"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uPI" = (
 /obj/item/clothing/shoes/combat/swat,
@@ -35291,12 +35288,12 @@
 "uRZ" = (
 /obj/structure/bed/oldalt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uSk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/dresser,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uSO" = (
 /obj/machinery/door/airlock/security{
@@ -35513,7 +35510,7 @@
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "uYP" = (
 /obj/effect/decal/cleanable/dirt{
@@ -35782,7 +35779,7 @@
 	light_color = "#800080";
 	name = "light fixture"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vfC" = (
 /obj/structure/toilet{
@@ -35835,7 +35832,7 @@
 /area/f13/den)
 "vgX" = (
 /obj/machinery/light,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -36200,14 +36197,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/bunker)
 "vuz" = (
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
 "vuO" = (
 /obj/structure/table/wood/settler,
 /obj/item/candle,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "vvg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36246,10 +36243,10 @@
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operations)
 "vwa" = (
-/obj/structure/chair/wood/modern{
+/obj/structure/chair{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vwh" = (
 /obj/machinery/light_switch{
@@ -36431,7 +36428,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vCi" = (
 /obj/effect/spawner/lootdrop/f13/cash_ncr_med,
@@ -36629,7 +36626,7 @@
 /obj/structure/rack/shelf_metal,
 /obj/item/book/manual/nuka_recipes,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "vIQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36694,7 +36691,7 @@
 "vJx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vJy" = (
 /obj/structure/table{
@@ -36810,7 +36807,7 @@
 /area/f13/brotherhood/offices2nd)
 "vLK" = (
 /obj/structure/destructible/tribal_torch/lit,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vLN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -36872,7 +36869,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vOq" = (
 /obj/structure/sign/poster/official/safety_report{
@@ -36902,20 +36899,20 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vPf" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vPg" = (
 /turf/closed/mineral/random/low_chance/underground,
 /area/f13/caves)
 "vPn" = (
 /obj/structure/table/booth,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vPs" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
@@ -37092,7 +37089,7 @@
 "vTU" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "vUg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37253,7 +37250,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_north"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "waB" = (
 /obj/effect/turf_decal/stripes/line,
@@ -37364,7 +37361,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_west_north"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wft" = (
 /obj/structure/rack,
@@ -37515,7 +37512,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wjM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37530,7 +37527,7 @@
 /area/f13/enclave)
 "wkw" = (
 /obj/structure/rack,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -37540,7 +37537,7 @@
 	pixel_y = 5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wkY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37745,7 +37742,7 @@
 /obj/machinery/microwave{
 	pixel_y = 8
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -37764,7 +37761,7 @@
 "wtV" = (
 /obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wuc" = (
 /obj/structure/table/wood/fancy/black,
@@ -37811,7 +37808,7 @@
 	dir = 1;
 	pixel_y = 12
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -37904,7 +37901,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_west_south"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wwW" = (
 /obj/effect/overlay/junk/sink{
@@ -37915,7 +37912,7 @@
 	pixel_x = 26;
 	pixel_y = -4
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housebase"
 	},
 /area/f13/tunnel)
@@ -38082,7 +38079,7 @@
 "wDa" = (
 /obj/item/trash,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "wDe" = (
 /obj/structure/closet/crate/large,
@@ -38131,7 +38128,7 @@
 	light_color = "#800080";
 	name = "light fixture"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wEk" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -38152,7 +38149,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_middle"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wFi" = (
 /obj/machinery/door/airlock/grunge{
@@ -38234,7 +38231,7 @@
 /area/f13/brotherhood/reactor)
 "wHf" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wHg" = (
 /obj/structure/rack,
@@ -38295,7 +38292,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/booth,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wKf" = (
 /obj/structure/girder,
@@ -38363,7 +38360,7 @@
 /area/f13/den)
 "wKX" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "wLv" = (
 /turf/closed/indestructible/opshuttle{
@@ -38447,7 +38444,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_east_south"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wNf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -38529,11 +38526,11 @@
 "wQb" = (
 /obj/structure/rack,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wQe" = (
 /obj/structure/table/booth,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood3-broken"
 	},
 /area/f13/building)
@@ -38619,7 +38616,7 @@
 /obj/structure/chair/booth{
 	icon_state = "booth_west_south"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wSB" = (
 /obj/machinery/power/terminal{
@@ -38714,7 +38711,7 @@
 /area/f13/brotherhood/rnd)
 "wVy" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
@@ -38731,7 +38728,7 @@
 /area/f13/building)
 "wWd" = (
 /obj/structure/bed/oldalt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "wWB" = (
 /obj/structure/handrail/g_central{
@@ -38895,7 +38892,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "xaJ" = (
 /obj/structure/spider/stickyweb,
@@ -38953,7 +38950,7 @@
 "xcm" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/rag,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "xcW" = (
 /obj/structure/curtain{
@@ -39122,7 +39119,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "xhV" = (
 /obj/structure/table,
@@ -39153,7 +39150,7 @@
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibup1"
 	},
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -39243,7 +39240,7 @@
 "xkH" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "xkI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39460,7 +39457,7 @@
 /area/f13/tunnel)
 "xqa" = (
 /obj/structure/nest/supermutant,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/building)
 "xqd" = (
 /obj/structure/window/fulltile/house{
@@ -39468,7 +39465,7 @@
 	icon_state = "housewindowbroken"
 	},
 /obj/structure/decoration/rag,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/tunnel)
@@ -39561,7 +39558,7 @@
 "xsL" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/rag,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood4-broken"
 	},
 /area/f13/building)
@@ -39732,7 +39729,7 @@
 "xvE" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "xwm" = (
 /turf/closed/wall/f13/ruins,
@@ -40031,7 +40028,7 @@
 	pixel_y = -13
 	},
 /obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "xHq" = (
 /obj/effect/decal/cleanable/blood/gibs/down{
@@ -40200,7 +40197,7 @@
 /obj/machinery/workbench,
 /obj/item/storage/toolbox/mechanical/old,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/wood/wood_chestnut{
+/turf/open/floor/wood{
 	icon_state = "housewood2"
 	},
 /area/f13/caves)
@@ -40644,7 +40641,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/structure/bed/old,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "yai" = (
 /obj/effect/decal/cleanable/dirt,
@@ -40679,7 +40676,7 @@
 "ybf" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ybk" = (
 /obj/item/radio/intercom{
@@ -40984,7 +40981,7 @@
 /obj/structure/decoration/rag{
 	icon_state = "skin"
 	},
-/turf/open/floor/wood/wood_chestnut,
+/turf/open/floor/wood,
 /area/f13/caves)
 "ylv" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -68118,7 +68115,7 @@ rex
 bOJ
 fxu
 bMV
-bKc
+lxX
 bPh
 bke
 aty
@@ -68376,7 +68373,7 @@ rex
 rex
 aty
 cqS
-bKc
+lxX
 guo
 aty
 rex
@@ -68885,12 +68882,12 @@ vPg
 rex
 aty
 aTB
-bKc
-bKc
+lxX
+lxX
 bMV
-bKc
+lxX
 ede
-bKc
+lxX
 cvv
 aty
 rex
@@ -69143,7 +69140,7 @@ rex
 aty
 aty
 aty
-bKc
+lxX
 aty
 aty
 eAV
@@ -69404,7 +69401,7 @@ bRe
 cvv
 aty
 cvv
-bKc
+lxX
 bke
 aty
 rex
@@ -69661,7 +69658,7 @@ ccM
 cvv
 aty
 aWa
-bKc
+lxX
 gCd
 aty
 rex
