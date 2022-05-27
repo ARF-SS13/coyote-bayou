@@ -293,7 +293,7 @@ Uranium, Contaminated
 	. = ..()
 	if(iscarbon(target))
 		var/mob/living/carbon/M = target
-		if(M.fire_stacks < 1)
+		if(M.fire_stacks < 2)
 			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
 			M.IgniteMob()
 
