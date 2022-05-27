@@ -4,9 +4,9 @@
 	probability = 6
 
 	telegraph_duration = 400
-	telegraph_message = "<span class='danger'>The skies slowly turn into a glowing green.</span>"
+	telegraph_message = "<span class='notice'>The skies slowly turn into a glowing green.</span>"
 
-	weather_message = "<span class='danger'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
+	weather_message = "<span class='notice'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
 	weather_overlay = "ash_storm"
 	weather_duration_lower = 600
 	weather_duration_upper = 1500
