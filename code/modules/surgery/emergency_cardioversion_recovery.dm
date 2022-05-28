@@ -83,7 +83,6 @@
 	var/total_brute	= H.getBruteLoss()
 	var/total_burn	= H.getFireLoss()
 	var/failed
-	var/tdelta = round(world.time - H.timeofdeath)
 
 	if (H.suiciding || (HAS_TRAIT(H, TRAIT_NOCLONE)))
 		failed = "<span class='warning'>The heart is zapped by the [tool], but nothing happens. You feel like the spark of life has fully left [H].</span>"
