@@ -29,7 +29,7 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
-	loot = list(/obj/item/stack/f13Cash/random/low)
+	loot = list(/obj/item/stack/f13Cash/random/med)
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
@@ -82,7 +82,7 @@
 	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
-	loot = list(/obj/item/stack/f13Cash/random/low)
+	loot = list(/obj/item/stack/f13Cash/random/med, /obj/effect/spawner/lootdrop/f13/bomb/tier1, /obj/effect/spawner/lootdrop/f13/crafting)
 	robust_searching = TRUE
 	speak = list("Come get some!", "Going to blow some shit to kingdom come!", "I got the goods!", "Nades for days!", "Renegades represent!")
 	speak_emote = list("yells")
@@ -108,7 +108,7 @@
 	ranged_cooldown_time = 6
 	projectiletype = /obj/item/projectile/bullet/c10mm/simple
 	projectilesound = 'sound/f13weapons/combatrifle.ogg'
-	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/med, /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2)
 	robust_searching = TRUE
 	speak = list("Come get some!", "I like my odds, c'mere!", "Gonna get a promotion after this!", "Bullets for days!", "Renegades represent!")
 	speak_emote = list("yells")
@@ -132,7 +132,7 @@
 	attack_verb_simple = "bashes"
 	attack_sound = 'sound/weapons/slam.ogg'
 	a_intent = INTENT_HARM
-	loot = list(/obj/effect/spawner/lootdrop/f13/weapon/melee/tier2)
+	loot = list(/obj/effect/spawner/lootdrop/f13/weapon/melee/random, /obj/effect/spawner/lootdrop/f13/alcoholspawner, /obj/effect/spawner/lootdrop/f13/ncr_c_ration)
 	emote_taunt = list("bashes their shield with the mace")
 	robust_searching = TRUE
 	speak = list("COME AND TRY ME, BITCH!", "I AM THE WALL!", "LAYERS ON LAYERS OF PLATES!", "I AM TITANIUM!", "RENEGADES REPRESENT!")
@@ -160,7 +160,7 @@
 	ranged_cooldown_time = 10
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/bozar_fire.ogg'
-	loot = list(/obj/item/stack/f13Cash/random/med)
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/effect/spawner/bundle/f13/remington, /obj/effect/spawner/lootdrop/f13/armor/random)
 	robust_searching = TRUE
 	speak = list("Come get some!", "I am the shadow!", "One shot, one kill.", "Adjusting my scope.", "Renegades represent!")
 	speak_emote = list("yells")
@@ -185,7 +185,7 @@
 	projectiletype = /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	projectilesound = 'sound/f13weapons/auto5.ogg'
 	casingtype = /obj/item/ammo_casing/shotgun
-	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider)
+	loot = list(/obj/effect/spawner/bundle/f13/trenchshotgun, /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1, /obj/item/stack/f13Cash/random/low, /obj/item/clothing/suit/armor/f13/plates)
 	robust_searching = TRUE
 	speak = list("Come get some!", "ON THE GROUND!", "GOING TO SHOVE THIS WHERE THE SUN DON'T SHINE!", "C'MERE, I GOT LEAD!", "RENEGADES REPRESENT!")
 	speak_emote = list("yells")
@@ -214,7 +214,7 @@
 	extra_projectiles = 9
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	loot = list(/obj/effect/spawner/bundle/f13/sig)
+	loot = list(/obj/effect/spawner/bundle/f13/sig, /obj/item/stack/f13Cash/random/high, /obj/item/advanced_crafting_components/alloys, /obj/item/stack/sheet/plasteel/five)
 	speak = list("POWER TO THE ARMOR!", "I AM GOING TO BREAK YOU IN HALF!", "YEAH I COMPENSATE WITH BIG FUCKIN' GUNS", "DODGE THIS!", "PEAK RENEGADE PERFORMANCE!")
 	speak_emote = list("yells")
 	speak_chance = 1
@@ -242,7 +242,7 @@
 	speak = list("Running low on meds.", "Could do with extra combat chems.", "Where'd I put the Syringer?", "I GOT THE MED-BAG!", "Renegades represent and all that jazz.")
 	speak_emote = list("yells")
 	speak_chance = 1
-	loot = list(/obj/effect/spawner/lootdrop/f13/medical/vault/meds)
+	loot = list(/obj/effect/spawner/lootdrop/f13/medical/vault/meds, /obj/effect/spawner/lootdrop/f13/weapon/revolver44variants, /obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 
 /mob/living/simple_animal/hostile/renegade/doc/Initialize(mapload)
 	. = ..()
