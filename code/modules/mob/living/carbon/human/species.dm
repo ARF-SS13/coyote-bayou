@@ -2003,7 +2003,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(istype(H.loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
-	/* var/loc_temp = H.get_temperature(environment) // SUNSET CHANGE - This is less consistently useful information than the temperature indicators we already have, and actively provides unintuitive information that confuses players
+	var/loc_temp = H.get_temperature(environment)
 
 	//Body temperature is adjusted in two parts: first there your body tries to naturally preserve homeostasis (shivering/sweating), then it reacts to the surrounding environment
 	//Thermal protection (insulation) has mixed benefits in two situations (hot in hot places, cold in hot places)
@@ -2038,7 +2038,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(15 to 30)
 				H.throw_alert("tempfeel", /obj/screen/alert/sweat, 2)
 			if(30 to INFINITY)
-				H.throw_alert("tempfeel", /obj/screen/alert/sweat, 3) */ 
+				H.throw_alert("tempfeel", /obj/screen/alert/sweat, 3)
 
 	// +/- 50 degrees from 310K is the 'safe' zone, where no damage is dealt.
 	if(H.bodytemperature > BODYTEMP_HEAT_DAMAGE_LIMIT && !HAS_TRAIT(H, TRAIT_RESISTHEAT))
