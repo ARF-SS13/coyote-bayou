@@ -89,3 +89,12 @@
 
 			filling_overlay.color = list(mix_color_from_reagents(output.reagents.reagent_list))
 			. += filling_overlay
+
+/obj/machinery/water_purifier/examine(mob/user)
+	. += ..()
+	var/percent = round((output.reagents.total_volume / output.volume) * 100)
+	if(output)
+		. += "<span class='notice'>[output] is [percent]% full.</span>"
+	else
+		. += "<span class='notice'>[src] has no reagent container installed.</span>"
+
