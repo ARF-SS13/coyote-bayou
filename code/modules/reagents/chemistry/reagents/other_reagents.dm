@@ -330,6 +330,33 @@
 		//You don't belong in this world, monster!
 		chems.remove_reagent(/datum/reagent/water, chems.get_reagent_amount(src.type))
 
+/datum/reagent/water_purifier
+	name = "Water Purifier"
+	description = "An industrical reagent used to purify irradiated or otherwise contaminated water. Just use it in proportions 1:1 with any container of water."
+	color = "#5E6566AA" // Charcoal is in it, so kinda looking weird?
+	taste_description = "purity" // Why did you eat it anyway?
+	value = REAGENT_VALUE_RARE // Difficult to make
+
+/datum/reagent/water/purified
+	name = "Purified Water"
+	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen. This one has been purified from radiation."
+	color = "#C3DBDA66" // It's cleaner, kek
+	taste_description = "clean water"
+	value = REAGENT_VALUE_AMAZING
+	radiation_amount = 0
+	can_synth = FALSE
+
+/datum/reagent/water/purified/on_mob_life(mob/living/carbon/M) // Pure water is very, very healthy
+	M.reagents.remove_all_type(/datum/reagent/toxin, 1)
+	M.adjustBruteLoss(-0.5, 0)
+	M.adjustFireLoss(-0.5, 0)
+	M.adjustOxyLoss(-0.5, 0)
+	M.adjustToxLoss(-1, 0, TRUE)
+	M.adjustStaminaLoss(-0.5, FALSE)
+	if(M.radiation > 0)
+		M.radiation -= min(M.radiation, 2)
+	..()
+
 /datum/reagent/water/hollowwater
 	name = "Hollow Water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen, but it looks kinda hollow."
