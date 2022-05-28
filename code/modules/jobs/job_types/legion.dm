@@ -247,10 +247,9 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Paladin-Slayer Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/palacent
 	head = /obj/item/clothing/head/helmet/f13/legion/palacent
-	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
+	suit_store = /obj/item/gun/ballistic/automatic/m1919
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
-		/obj/item/melee/powerfist/f13/goliath = 1,
+		/obj/item/ammo_box/magazine/mm762 = 1,
 		/obj/item/book/granter/martial/cqc = 1,
 		)
 
@@ -270,11 +269,10 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	name = "Warlord Centurion"
 	suit = /obj/item/clothing/suit/armor/f13/legion/centurion
 	head = /obj/item/clothing/head/helmet/f13/legion/centurion
-	suit_store = /obj/item/gun/ballistic/automatic/m1919
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/pistol14
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/mm762 = 1,
-		/obj/item/gun/ballistic/revolver/hunting = 1,
-		/obj/item/ammo_box/c4570 = 3,
+		/obj/item/melee/powerfist/f13/goliath = 1,
+		/obj/item/ammo_box/magazine/m14mm = 3,
 		)
 
 /* /datum/outfit/loadout/berserkercenturion
@@ -637,6 +635,16 @@ commented out pending rework*/
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		)
 
+/datum/outfit/loadout/vexnight
+	name = "Night Stalker"
+	head = /obj/item/clothing/head/helmet/f13/legion/vet/nightvexil
+	suit_store = /obj/item/gun/ballistic/rifle/repeater/trail
+	backpack_contents = list(
+		/obj/item/ammo_box/tube/m44 = 2,
+		/obj/item/melee/onehanded/machete/gladius = 1,
+		/obj/item/book/granter/trait/rifleman = 1,
+		)
+
 //EXPLORER
 
 /datum/job/CaesarsLegion/Legionnaire/f13explorer
@@ -651,7 +659,7 @@ commented out pending rework*/
 	exp_requirements = 150
 
 	loadout_options = list(	// ALL: .45 Revolver, Machete
-		/datum/outfit/loadout/expambusher,	// MP5, Bottlecap mine
+		/datum/outfit/loadout/expambusher,	// lever-action shotgun, Bottlecap mine, MP5
 		/datum/outfit/loadout/expsniper,	// SKS, Smokebomb
 		)
 
@@ -698,6 +706,7 @@ commented out pending rework*/
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm = 2,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/bottlecap_mine = 1,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,

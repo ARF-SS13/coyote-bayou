@@ -839,6 +839,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Enclave Sergeant"
 	icon_state = "ussgt"
 
+/obj/effect/landmark/start/f13/usai
+	name = "Enclave Armored Infantry"
+	icon_state = "ussgt"
+
 /obj/effect/landmark/start/f13/usspecialist
 	name = "Enclave Specialist"
 	icon_state = "usoffduty"
