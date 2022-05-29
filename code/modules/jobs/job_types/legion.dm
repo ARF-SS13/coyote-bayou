@@ -577,6 +577,7 @@ commented out pending rework*/
 	loadout_options = list(
 		/datum/outfit/loadout/vexbear,	//	Classic FO13 Vex with his ripper: .223 pistol, Ripper
 		/datum/outfit/loadout/vexfox,	//	Classic New Vegas Vex with his 10mm SMG: 14mm SMG, Spartha
+		/datum/outfit/loadout/vexnight, //  Classic and Iconic long range vex with a trail carbine
 		)
 
 	matchmaking_allowed = list(
