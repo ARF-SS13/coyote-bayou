@@ -210,6 +210,11 @@
 							"Prospector",
 							)
 
+/datum/gear/suit/samurai
+	name = "Rusted Samurai Armor"
+	path = /obj/item/clothing/suit/samurai
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 4
 
 //These should be left commented out until the holidays or special events.
 /*
