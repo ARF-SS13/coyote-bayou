@@ -121,6 +121,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
+/datum/gear/suit/samurai  //added by TK420634 ~ 5/29/2022 "Samurai Wasteland WeebShit Edition (tm)
+	name = "Rusted Samurai Armor"
+	path = /obj/item/clothing/suit/samurai
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 4
+
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/f13/utilityvest
@@ -209,12 +215,6 @@
 	restricted_roles = list("Citizen",
 							"Prospector",
 							)
-
-/datum/gear/suit/samurai
-	name = "Rusted Samurai Armor"
-	path = /obj/item/clothing/suit/samurai
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
 
 //These should be left commented out until the holidays or special events.
 /*
