@@ -1058,8 +1058,8 @@
 /area/f13/city/bighorn)
 "bBI" = (
 /obj/structure/table/reinforced,
-/obj/item/phone{
-	pixel_y = 6
+/obj/machinery/recharger{
+	pixel_y = 7
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
@@ -1510,6 +1510,19 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"dsj" = (
+/obj/item/stock_parts/cell/ammo/ultracite,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
+"dsy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/ammo/mfc,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "dtb" = (
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -2105,6 +2118,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"gSj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/ammo/breeder,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "gVd" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "storewindowtop"
@@ -2443,6 +2463,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -3612,6 +3633,13 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"nvo" = (
+/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "nwl" = (
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = -32
@@ -3676,6 +3704,12 @@
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/city/bighorn)
+"nMH" = (
+/obj/item/stock_parts/cell/ammo/ecp,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "nNq" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/f13/store,
@@ -4339,6 +4373,13 @@
 /obj/structure/barricade/wooden,
 /turf/closed/wall/f13/sunset/brick_small_dark,
 /area/f13/legion)
+"qMs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/ammo/ec,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/massfusion)
 "qMT" = (
 /turf/open/floor/wood_common{
 	icon_state = "common-broken1"
@@ -53782,7 +53823,7 @@ lDT
 oVn
 oVn
 oDo
-qPu
+dsj
 qPu
 huF
 oDo
@@ -54819,11 +54860,11 @@ aab
 aab
 kCU
 oDo
-qPu
+nMH
 qPu
 ygG
 qEi
-ygG
+qMs
 oDo
 wMt
 wMt
@@ -57121,7 +57162,7 @@ lDT
 lDT
 oDo
 pGF
-cUD
+nvo
 atz
 onr
 xQx
@@ -59438,7 +59479,7 @@ oVn
 oDo
 tXx
 ygG
-ygG
+gSj
 oDo
 oDo
 oDo
@@ -59448,7 +59489,7 @@ oDo
 cmg
 ygG
 sHx
-ygG
+dsy
 tXx
 oDo
 chc
