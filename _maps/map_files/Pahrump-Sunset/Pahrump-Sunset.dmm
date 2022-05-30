@@ -33445,6 +33445,19 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/east)
+"fOS" = (
+/obj/docking_port/stationary{
+	area_type = /area/f13;
+	dir = 8;
+	dwidth = 1;
+	height = 3;
+	id = "plant_ground";
+	name = "Ground";
+	roundstart_template = /datum/map_template/shuttle/southbunker/elevator;
+	width = 3
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "fOX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -52785,15 +52798,6 @@
 /obj/item/lockpick_set,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"snD" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 1
-	},
-/obj/machinery/computer/shuttle/plant_elevator,
-/turf/open/floor/plasteel/f13{
-	icon_state = "yellowrustysolid"
-	},
-/area/f13/building/massfusion)
 "snO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -57034,19 +57038,6 @@
 /obj/item/target/communist,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/museum)
-"uTb" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dir = 8;
-	dwidth = 1;
-	height = 3;
-	id = "plant_ground";
-	name = "Ground";
-	roundstart_template = /datum/map_template/shuttle/southbunker/elevator;
-	width = 3
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/building/massfusion)
 "uTh" = (
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/wasteland/east)
@@ -109232,9 +109223,9 @@ mFy
 aWw
 vVo
 aVj
-uTb
+fOS
 aVj
-snD
+aaH
 fPS
 trb
 cOR
