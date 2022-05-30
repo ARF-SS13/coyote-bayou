@@ -5347,13 +5347,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "cfN" = (
-/obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/chem_pile,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
+	},
+/obj/machinery/computer/shuttle/plant_elevator{
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
