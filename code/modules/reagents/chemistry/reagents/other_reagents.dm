@@ -343,7 +343,6 @@
 	color = "#C3DBDA66" // It's cleaner, kek
 	taste_description = "clean water"
 	value = REAGENT_VALUE_AMAZING
-	radiation_amount = 0
 	can_synth = FALSE
 
 /datum/reagent/water/purified/on_mob_life(mob/living/carbon/M) // Pure water is very, very healthy
