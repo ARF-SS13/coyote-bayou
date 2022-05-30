@@ -35600,6 +35600,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/building)
+"hmU" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "hnO" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/desert,
@@ -42776,6 +42780,15 @@
 	icon_state = "verticalleftborderright2top"
 	},
 /area/f13/wasteland/followers)
+"lRR" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "plantelevator"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "lRY" = (
 /obj/structure/table/wood/poker{
 	name = "felt table"
@@ -108959,8 +108972,8 @@ afg
 afa
 vVo
 adt
-aVj
-aVj
+lRR
+hmU
 aHV
 pXk
 iCI

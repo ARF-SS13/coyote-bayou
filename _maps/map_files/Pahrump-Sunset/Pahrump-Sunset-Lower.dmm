@@ -6075,6 +6075,11 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "plantelevator"
+	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "cwj" = (
@@ -7368,6 +7373,7 @@
 /area/f13/tunnel)
 "exy" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "eya" = (
@@ -9619,6 +9625,10 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
+"iBR" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "iCV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -17491,7 +17501,6 @@
 	},
 /area/f13/tunnel)
 "wqv" = (
-/obj/item/salvage/crafting,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
@@ -65140,7 +65149,7 @@ aae
 aae
 aae
 nws
-vly
+iBR
 exy
 vly
 nws
@@ -65654,7 +65663,7 @@ aae
 aae
 aae
 nws
-vly
+iBR
 oDA
 vly
 nws
