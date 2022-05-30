@@ -33,7 +33,7 @@
 	desc = "Heat-sensitive goggles commonly worn by Enclave Personnel."
 	icon_state = "enclavegoggles"
 	item_state = "enclavegoggles"
-
+	vision_correction = 1 
 
 /obj/item/clothing/glasses/night/ncr
 	name = "lit shades"

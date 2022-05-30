@@ -10,12 +10,12 @@
 /datum/mood_event/used_drugs //for NCR, BOS, Enclave
 	description = "<span class='boldwarning'>I'm nothing but a filthy junkie...</span>\n"
 	mood_change = -12
-	timeout = 15 MINUTES
+	timeout = 2 MINUTES
 
 /datum/mood_event/betrayed_caesar //for Legion, obviously
 	description = "<span class='boldwarning'>I have betrayed the will of Caesar and defiled my body!</span>\n"
 	mood_change = -25
-	timeout = 30 MINUTES
+	timeout = 5 MINUTES
 
 /datum/mood_event/jet_euphoria
 	description = "<span class='nicegreen'>I feel like i'm flying...</span>\n"

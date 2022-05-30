@@ -11,8 +11,6 @@
 	tastes = list("cheese" = 1)
 	foodtype = DAIRY
 
-
-
 /obj/item/reagent_containers/food/snacks/royalcheese
 	name = "royal cheese"
 	desc = "Ascend the throne. Consume the wheel. Feel the POWER."
@@ -42,7 +40,7 @@
 
 /obj/item/reagent_containers/food/snacks/candy_corn
 	name = "candy corn"
-	desc = "It's a handful of candy corn. Can be stored in a detective's hat."
+	desc = "It's a handful of candy corn."
 	icon_state = "candy_corn"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/sugar = 2)
 	filling_color = "#FF8C00"
@@ -103,7 +101,7 @@
 
 /obj/item/reagent_containers/food/snacks/tatortot
 	name = "tator tot"
-	desc = "A large fried potato nugget that may or may not try to valid you."
+	desc = "A large fried potato nugget."
 	icon_state = "tatortot"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	filling_color = "FFD700"
@@ -143,7 +141,7 @@
 
 /obj/item/reagent_containers/food/snacks/badrecipe
 	name = "burned mess"
-	desc = "Someone should be demoted from cook for this."
+	desc = "Someone should be fired from cooking for this."
 	icon_state = "badrecipe"
 	list_reagents = list(/datum/reagent/toxin/bad_food = 30)
 	filling_color = "#8B4513"
@@ -228,7 +226,7 @@
 
 /obj/item/reagent_containers/food/snacks/tobiko
 	name = "tobiko"
-	desc = "Spider eggs wrapped in a thin salted Kudzu pod"
+	desc = "Spider eggs wrapped in a thin salted seaweed wrap"
 	icon_state = "sushie_egg"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FF3333" // R225 G051 B051
@@ -237,7 +235,7 @@
 
 /obj/item/reagent_containers/food/snacks/chococoin
 	name = "chocolate coin"
-	desc = "A completely edible but nonflippable festive coin."
+	desc = "A completely edible festive coin."
 	icon_state = "chococoin"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 1)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/coco = 1)
@@ -406,18 +404,9 @@
 	tastes = list("oats" = 3, "nuts" = 2, "honey" = 1)
 	foodtype = FRUIT | SUGAR
 
-/obj/item/reagent_containers/food/snacks/stuffedlegion
-	name = "stuffed legion"
-	desc = "The former skull of a damned human, filled with goliath meat. It has a decorative lava pool made of ketchup and hotsauce."
-	icon_state = "stuffed_legion"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/medicine/tricordrazine = 5)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 2, /datum/reagent/medicine/tricordrazine = 10)
-	tastes = list("death" = 2, "rock" = 1, "meat" = 1, "hot peppers" = 1)
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/powercrepe
-	name = "Powercrepe"
-	desc = "With great power, comes great crepes.  It looks like a pancake filled with jelly but packs quite a punch."
+/obj/item/reagent_containers/food/snacks/crepe
+	name = "crepe"
+	desc = "It looks like a pancake filled with jelly but packs quite a punch."
 	icon_state = "powercrepe"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/iron = 10)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/cherryjelly = 5)
@@ -595,7 +584,7 @@
 
 /obj/item/reagent_containers/food/snacks/riceball
 	name = "onigiri"
-	desc = "A ball of rice with some light salt and a wrap of Kudzu skin."
+	desc = "A ball of rice with some light salt and a wrap of seaweed wrap."
 	icon_state = "riceball"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/sodiumchloride = 2)
 	tastes = list("rice" = 3, "salt" = 1)
@@ -612,7 +601,7 @@
 	foodtype = FRUIT | SUGAR
 
 /obj/item/reagent_containers/food/snacks/cannedpeaches/maint
-	name = "Maintenance Peaches"
+	name = "Dented Canned of Peaches"
 	desc = "I have a mouth and I must eat."
 	icon_state = "peachcanmaint"
 	tastes = list("peaches" = 1, "tin" = 7)
@@ -742,5 +731,5 @@
 /obj/item/reagent_containers/food/snacks/hotcrossbun
 	bitesize = 2
 	name = "hot-cross bun"
-	desc = "The Cross represents the Assistants that died for your sins."
+	desc = "The Cross represents God that died for your sins."
 	icon_state = "hotcrossbun"

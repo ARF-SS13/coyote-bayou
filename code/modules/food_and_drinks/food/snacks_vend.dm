@@ -3,8 +3,8 @@
 //don't even bother looking for recipes for these
 
 /obj/item/reagent_containers/food/snacks/candy
-	name = "candy"
-	desc = "Nougat love it or hate it."
+	name = "expired candy bar"
+	desc = "The package may be illegible but the sugar rich chocolate confection inside that despite a touch of mold remains as edible as ever."
 	icon_state = "candy"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/coco = 3)
 	junkiness = 25
@@ -13,9 +13,9 @@
 	foodtype = JUNKFOOD | SUGAR
 
 /obj/item/reagent_containers/food/snacks/sosjerky
-	name = "\improper Scaredy's Private Reserve Beef Jerky"
+	name = "\improper Beef Jerky"
 	icon_state = "sosjerky"
-	desc = "Beef jerky made from the finest space cows."
+	desc = "Through the power of preservatives and desert heat this package of beef strips remains edible."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/sodiumchloride = 2)
 	junkiness = 25
 	filling_color = "#8B0000"
@@ -24,7 +24,7 @@
 
 /obj/item/reagent_containers/food/snacks/sosjerky/healthy
 	name = "homemade beef jerky"
-	desc = "Homemade beef jerky made from the finest brahmin."
+	desc = "These smoked and dried chunks of beast-flesh remain chewy and even somewhat nutritious for years, and years."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
 	junkiness = 0
 
@@ -36,8 +36,8 @@
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/chips
-	name = "chips"
-	desc = "Commander Riker's What-The-Crisps."
+	name = "potato chips"
+	desc = "A bag of salted or flavored potato chips, sealed in an inert environment for freshness. A common snack pre-War, you can still find the odd pack of these in most places where people lived or worked."
 	icon_state = "chips"
 	bitesize = 1
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3, /datum/reagent/consumable/sodiumchloride = 1)
@@ -47,9 +47,9 @@
 	foodtype = JUNKFOOD | FRIED
 
 /obj/item/reagent_containers/food/snacks/no_raisin
-	name = "4no raisins"
+	name = "Spring Vally"
 	icon_state = "4no_raisins"
-	desc = "Best raisins in the universe. Not sure why."
+	desc = "Still fresh after all these years. Nobody is really sure why."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/sugar = 4)
 	junkiness = 25
 	filling_color = "#8B0000"
@@ -58,13 +58,13 @@
 
 /obj/item/reagent_containers/food/snacks/no_raisin/healthy
 	name = "homemade raisins"
-	desc = "Homemade raisins, the best in all of spess."
+	desc = "Homemade raisins, the best in the entire wasteland."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	junkiness = 0
 	foodtype = FRUIT
 
 /obj/item/reagent_containers/food/snacks/spacetwinkie
-	name = "space twinkie"
+	name = "twinkie"
 	icon_state = "space_twinkie"
 	desc = "Guaranteed to survive longer than you will."
 	list_reagents = list(/datum/reagent/consumable/sugar = 4)
@@ -74,7 +74,7 @@
 	custom_price = PRICE_CHEAP_AS_FREE
 
 /obj/item/reagent_containers/food/snacks/cheesiehonkers
-	name = "cheesie honkers"
+	name = "cheesie curls"
 	desc = "Bite sized cheesie snacks that will honk all over your mouth."
 	icon_state = "cheesie_honkers"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/sugar = 3)
@@ -84,7 +84,7 @@
 	foodtype = JUNKFOOD | DAIRY | SUGAR
 
 /obj/item/reagent_containers/food/snacks/syndicake
-	name = "syndi-cakes"
+	name = "preservative laden snack cakes"
 	icon_state = "syndi_cakes"
 	desc = "An extremely moist snack cake that tastes just as good after being nuked."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/doctor_delight = 5)
@@ -96,7 +96,7 @@
 /obj/item/reagent_containers/food/snacks/energybar
 	name = "High-power energy bars"
 	icon_state = "energybar"
-	desc = "An energy bar with a lot of punch, you probably shouldn't eat this if you're not an Ethereal."
+	desc = "An energy bar with a lot of punch."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/liquidelectricity = 3)
 	filling_color = "#97ee63"
 	tastes = list("pure electricity" = 3, "fitness" = 2)

@@ -644,11 +644,11 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	name = "Legion Slavemaster"
 
 /obj/effect/landmark/start/f13/explorer
-	name = "Legion Explorer"
+	name = "Legion Scout"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/venator
-	name = "Legion Venator"
+	name = "Legion Explorer"
 	icon_state = "Legionary"
 
 /obj/effect/landmark/start/f13/auxilia
@@ -837,6 +837,10 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 
 /obj/effect/landmark/start/f13/ussgt
 	name = "Enclave Sergeant"
+	icon_state = "ussgt"
+
+/obj/effect/landmark/start/f13/usai
+	name = "Enclave Armored Infantry"
 	icon_state = "ussgt"
 
 /obj/effect/landmark/start/f13/usspecialist

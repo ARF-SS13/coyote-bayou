@@ -115,11 +115,11 @@
 	name = "Tribal Salvaged Power Armor"
 	time = 120
 	reqs = list(
-			/obj/item/clothing/suit/armor/f13/power_armor/t45b = 1,
+			/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b = 1,
 			/obj/item/stack/sheet/sinew = 2,
 			/obj/item/stack/sheet/bone = 4
 			)
-	result = /obj/item/clothing/suit/armor/f13/power_armor/t45b/tribal
+	result = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/tribal
 	category = CAT_TRIBAL
 	always_available = FALSE
 
@@ -127,11 +127,11 @@
 	name = "Tribal Salvaged Power Armor Helmet"
 	time = 120
 	reqs = list(
-			/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+			/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b = 1,
 			/obj/item/stack/sheet/sinew = 1,
 			/obj/item/stack/sheet/bone = 2
 			)
-	result = /obj/item/clothing/head/helmet/f13/power_armor/t45b/tribal
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
 	category = CAT_TRIBAL
 	always_available = FALSE
 
@@ -265,6 +265,14 @@
 				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/campfire //Adding a campfire; it takes less expertise, and less ingredients than the bonfire available to primals, but it's also less grand and takes more time.
+	name = "Campfire"
+	time = 75
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20)
+	result = /obj/structure/campfire
+	category = CAT_TRIBAL
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/arrowpoison
 	name = "Poison Arrow"

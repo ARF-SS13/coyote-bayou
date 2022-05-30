@@ -727,7 +727,6 @@
 		/obj/item/stock_parts/cell = 1)
 	def_components = list(/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high)
 	needs_anchored = FALSE
-
 /obj/item/circuitboard/machine/chem_dispenser/apothecary
 	name = "Apotechary Chem Dispenser (Machine Board)"
 	build_path = /obj/machinery/chem_dispenser/apothecary
@@ -775,7 +774,6 @@
 	req_components = list(
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stack/sheet/glass = 1)
-
 /obj/item/circuitboard/machine/chem_master
 	name = "ChemMaster 3000 (Machine Board)"
 	build_path = /obj/machinery/chem_master

@@ -31,8 +31,8 @@
 	foodtype = VEGETABLES | FRUIT
 
 /obj/item/reagent_containers/food/snacks/salad/validsalad
-	name = "valid salad"
-	desc = "It's just an herb salad with meatballs and fried potato slices. Nothing suspicious about it."
+	name = "potato salad"
+	desc = "A herb salad with meatballs and fried potato slices."
 	icon_state = "validsalad"
 	bonus_reagents = list(/datum/reagent/consumable/doctor_delight = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/doctor_delight = 5, /datum/reagent/consumable/nutriment/vitamin = 2)

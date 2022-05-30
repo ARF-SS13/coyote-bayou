@@ -1,7 +1,7 @@
 /obj/machinery/vending/security
-	name = "\improper SecTech"
-	desc = "A security equipment vendor."
-	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
+	name = "\improper Stent Security Vendor"
+	desc = "Stent Security was one of the major defense contractors, supplying the R91 rifle of their design to National Guard of the United States.."
+	product_ads = "Crack some skulls!;You are the law!;Hands up buttercup!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Cuff'em!;Tase them!;Why not have a donut?"
 	icon_state = "sec"
 	icon_deny = "sec-deny"
 	products = list(/obj/item/restraints/handcuffs = 8,

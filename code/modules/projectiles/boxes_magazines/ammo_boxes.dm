@@ -344,6 +344,7 @@
 	ammo_type = /obj/item/ammo_casing/a556/microshrapnel
 	custom_materials = list(/datum/material/iron = 20000, /datum/material/blackpowder = 1000)
 
+/*
 /obj/item/ammo_box/a556/uraniumtipped
 	name = "ammo box (5.56 uranium-tipped)"
 	desc = "Not depleted uranium. Regular uranium."
@@ -358,7 +359,7 @@
 /obj/item/ammo_box/a762box/uraniumtipped/Destroy()
 	STOP_PROCESSING(SSradiation,src)
 	..()
-
+*/
 
 /obj/item/ammo_box/a556/sport/improvised
 	name = "bag with reloaded .223 bullets"
@@ -391,6 +392,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 16000, /datum/material/blackpowder = 1000)
 
+/*
 /obj/item/ammo_box/a762box/uraniumtipped
 	name = "ammo box (7.62x51 uranium tipped)"
 	ammo_type = /obj/item/ammo_casing/a762/uraniumtipped
@@ -404,6 +406,7 @@
 /obj/item/ammo_box/a762box/uraniumtipped/Destroy()
 	STOP_PROCESSING(SSradiation,src)
 	..()
+*/
 
 /obj/item/ammo_box/a762box/microshrapnel
 	name = "ammo box (7.62x51 microshrapnel)"
@@ -445,11 +448,13 @@
 	desc = "12.7mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
 	ammo_type = /obj/item/ammo_casing/a50MG/contam
 
+/*
 /obj/item/ammo_box/a50MGbox/uraniumtipped
 	name = "ammo box (12.7mm uranium-tipped)"
 	max_ammo = 15
 	desc = "12.7mm bullets loaded with enriched-uranium penetrators."
 	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
+*/
 
 /obj/item/ammo_box/m14mm
 	name = "ammo box (14mm)"
@@ -484,9 +489,11 @@
 	name = "ammo box (4.73mm incendiary)"
 	ammo_type = /obj/item/ammo_casing/caseless/g11/incendiary
 
+/*
 /obj/item/ammo_box/m473/uraniumtipped
 	name = "ammo box (4.73mm uranium-tipped)"
 	ammo_type = /obj/item/ammo_casing/caseless/g11/uraniumtipped
+*/
 
 /obj/item/ammo_box/m473/dumdum
 	name = "ammo box (4.73mm flat-nose)"
@@ -831,11 +838,13 @@
 	ammo_type = /obj/item/ammo_casing/a50MG/penetrator
 	icon_state = "50ap"
 
+/*
 /obj/item/ammo_box/a50MG/uraniumtipped
 	name = "anti-materiel uranium-tipped ammo rack (.50MG)"
 	desc = "5 rounds of uranium-tipped .50 MG, when you really want something to remember what it was like back in '77.'"
 	ammo_type = /obj/item/ammo_casing/a50MG/uraniumtipped
 	icon_state = "50ap"
+*/
 
 ////////////////////////////////
 // FLAMER FUEL AND OTHER MISC //

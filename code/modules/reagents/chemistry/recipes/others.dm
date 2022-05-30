@@ -17,6 +17,12 @@
 	required_reagents = list(/datum/reagent/water/hollowwater = 1)
 	required_catalysts = list(/datum/reagent/water/holywater = 1)
 
+/datum/chemical_reaction/purewater
+	name = "Purified Water"
+	id = /datum/reagent/water/purified
+	results = list(/datum/reagent/water/purified = 1)
+	required_reagents = list(/datum/reagent/water = 1, /datum/reagent/water_purifier = 1)
+
 /datum/chemical_reaction/metalgen_imprint/on_reaction(datum/reagents/holder, created_volume)
 	var/datum/reagent/metalgen/MM = holder.get_reagent(/datum/reagent/metalgen)
 	for(var/datum/reagent/R in holder.reagent_list)

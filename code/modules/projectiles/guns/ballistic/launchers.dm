@@ -84,6 +84,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	can_suppress = FALSE
 	burst_size = 1
+	slowdown = 1
 	fire_delay = 0
 	inaccuracy_modifier = 0.25
 	casing_ejector = FALSE

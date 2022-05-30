@@ -1222,6 +1222,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -1464,7 +1465,6 @@
 /area/f13/building/khanfort)
 "bsl" = (
 /obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -4680,6 +4680,7 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /obj/effect/turf_decal/weather/dirt,
+/obj/item/stock_parts/cell/ammo/ec,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -4689,6 +4690,8 @@
 /obj/effect/spawner/lootdrop/f13/medical/rnd/good,
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/rack/shelf_metal,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -4754,9 +4757,6 @@
 "bRC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
 /obj/machinery/button/door{
 	id = "factorybasement";
 	name = "shutters button";
@@ -4964,6 +4964,8 @@
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -6073,6 +6075,11 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "plantelevator"
+	},
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "cwj" = (
@@ -7175,6 +7182,13 @@
 /obj/effect/spawner/lootdrop/f13/medical/surgical/blood,
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/building/khanfort)
+"eiq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/asteroid/line,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "eix" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
@@ -7359,6 +7373,7 @@
 /area/f13/tunnel)
 "exy" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "eya" = (
@@ -7403,6 +7418,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "eEn" = (
@@ -7462,6 +7478,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "eHS" = (
@@ -7552,10 +7569,25 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/darkblue/side,
 /area/f13/brotherhood)
+"eOb" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "eOg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -7602,7 +7634,6 @@
 	},
 /area/f13/bunker)
 "eUw" = (
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -7740,7 +7771,6 @@
 /area/f13/building/museum)
 "fjf" = (
 /obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -7979,7 +8009,7 @@
 /area/f13/brotherhood)
 "fKJ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/generic,
+/obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -8428,6 +8458,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/breeder,
+/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9109,6 +9142,7 @@
 	dir = 1
 	},
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9498,11 +9532,11 @@
 /area/f13/tunnel)
 "isq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/vg_decals/numbers/one{
+	pixel_x = -17
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -9591,6 +9625,10 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
+"iBR" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "iCV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -9669,12 +9707,10 @@
 	},
 /area/f13/tunnel)
 "iKx" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9996,6 +10032,16 @@
 	icon_state = "neutralrusty"
 	},
 /area/f13/tunnel)
+"jqw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "jre" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
@@ -10280,11 +10326,14 @@
 	},
 /area/f13/brotherhood)
 "jRd" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "factorybasement"
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/vg_decals/numbers/four{
+	dir = 1;
+	pixel_x = 16
 	},
-/turf/open/floor/plasteel/elevatorshaft,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
 /area/f13/building/massfusion)
 "jRq" = (
 /obj/structure/barricade/wooden,
@@ -10463,6 +10512,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -10828,9 +10878,6 @@
 	},
 /area/f13/building/massfusion)
 "kVU" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/greenglow,
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -11170,9 +11217,6 @@
 /area/f13/brotherhood)
 "ltl" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
@@ -11671,9 +11715,6 @@
 /area/f13/tunnel)
 "lVM" = (
 /obj/effect/decal/cleanable/blood/drip,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
@@ -11768,6 +11809,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood)
+"mcX" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/ammo,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "mdL" = (
 /obj/structure/curtain,
 /turf/open/floor/f13{
@@ -12230,6 +12280,14 @@
 /obj/structure/chair/right,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
+"nej" = (
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "nez" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/mask/surgical{
@@ -12845,9 +12903,6 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
 	},
@@ -13147,6 +13202,8 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -13261,10 +13318,20 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/f13/building/museum)
+"piM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "pjG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/spawner/lootdrop/f13/armor/tier2,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -14190,6 +14257,8 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/stock_parts/cell/ammo/ultracite,
+/obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -14268,6 +14337,8 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/armor/tier2,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -15148,9 +15219,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
 "svL" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
 	},
@@ -15360,9 +15428,6 @@
 /area/f13/tunnel)
 "sMv" = (
 /obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
 	},
@@ -15700,6 +15765,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -16140,6 +16206,9 @@
 	dir = 1
 	},
 /obj/structure/rack/shelf_metal,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -16959,9 +17028,6 @@
 	},
 /area/f13/tunnel)
 "vBk" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
@@ -17073,11 +17139,11 @@
 /area/f13/caves)
 "vKY" = (
 /obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
+	},
+/obj/effect/turf_decal/vg_decals/numbers/three{
+	pixel_x = 15
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -17435,7 +17501,6 @@
 	},
 /area/f13/tunnel)
 "wqv" = (
-/obj/item/salvage/crafting,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
@@ -17454,9 +17519,6 @@
 "wsL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
@@ -17876,6 +17938,16 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"xgk" = (
+/obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/turf_decal/vg_decals/numbers/two{
+	dir = 1;
+	pixel_x = 16
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "xhh" = (
 /obj/structure/table/booth,
 /obj/item/storage/fancy/cigarettes/cigpack_robust,
@@ -18257,9 +18329,6 @@
 	},
 /area/f13/tunnel)
 "xUW" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
@@ -18275,8 +18344,8 @@
 /area/f13/brotherhood)
 "xVN" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/stripes/asteroid/line,
+/obj/effect/spawner/lootdrop/ammo/fiftypercent,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -18382,9 +18451,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "ydH" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 8
@@ -65083,7 +65149,7 @@ aae
 aae
 aae
 nws
-jRd
+iBR
 exy
 vly
 nws
@@ -65597,7 +65663,7 @@ aae
 aae
 aae
 nws
-vly
+iBR
 oDA
 vly
 nws
@@ -66373,7 +66439,7 @@ iae
 qmt
 nws
 qTW
-uwX
+mcX
 wIn
 wqv
 nws
@@ -66627,7 +66693,7 @@ fjf
 xZu
 lVM
 pDI
-eUw
+xgk
 xZu
 wsL
 pjG
@@ -66878,8 +66944,8 @@ aae
 aak
 nws
 ugV
-nOj
-eOg
+fKJ
+piM
 eUw
 xZu
 isq
@@ -67136,7 +67202,7 @@ aak
 nws
 ghO
 rEX
-lIX
+jqw
 xIP
 nws
 wGI
@@ -67145,7 +67211,7 @@ niW
 nws
 lpx
 lIX
-rEX
+eOb
 eti
 nws
 aae
@@ -69191,7 +69257,7 @@ aae
 aae
 nws
 rLW
-xVN
+eiq
 kGg
 xUW
 uOV
@@ -69201,7 +69267,7 @@ bRs
 taP
 bsl
 kGg
-iKx
+nej
 hxQ
 nws
 aae
@@ -71510,7 +71576,7 @@ eUw
 xZu
 vKY
 nPj
-eUw
+jRd
 dOG
 ltl
 vdm
@@ -71765,7 +71831,7 @@ pDI
 bUs
 xVN
 xZu
-iKx
+nej
 pDI
 eUw
 eJI
@@ -72023,7 +72089,7 @@ lIX
 aYa
 nws
 wGI
-fKJ
+nOj
 iTv
 pua
 biU

@@ -79,11 +79,10 @@
 	desc = "A comfortable jacket in engineering yellow."
 	icon_state = "engi_dep_jacket"
 	item_state = "engi_dep_jacket"
-	armor = list("tier" = 1, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 30, "acid" = 45)
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	name = "fieldscribe suit"
-	desc = "(A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
+	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
 	icon_state = "fieldscribe"
 	armor = list("melee" = 25, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
 

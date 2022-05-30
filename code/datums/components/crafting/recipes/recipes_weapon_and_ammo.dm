@@ -12,8 +12,7 @@
 /datum/crafting_recipe/melee/scrapspear
 	name = "Scrap Spear"
 	result = /obj/item/twohanded/spear/scrapspear
-	reqs = list(/obj/item/crafting/duct_tape = 1,
-				/obj/item/stack/rods = 2,
+	reqs = list(/obj/item/stack/rods = 2,
 				/obj/item/shard = 1)
 	time = 40
 	category = CAT_WEAPONRY
@@ -23,8 +22,7 @@
 	name = "Scrap Shield"
 	result = /obj/item/shield/riot/scrapshield
 	reqs = list(/obj/item/stack/cable_coil = 30,
-				/obj/item/stack/sheet/metal = 10,
-				/obj/item/crafting/wonderglue = 1)
+				/obj/item/stack/sheet/metal = 10)
 	tools = list(TOOL_WELDER)
 	time = 100
 	category = CAT_WEAPONRY
@@ -34,9 +32,7 @@
 	name = "Scrap Towershield"
 	result = /obj/item/shield/riot/tower/scrap
 	reqs = list(/obj/item/stack/cable_coil = 30,
-				/obj/item/stack/sheet/metal = 35,
-				/obj/item/crafting/duct_tape = 1,
-				/obj/item/crafting/wonderglue = 1)
+				/obj/item/stack/sheet/metal = 35)
 	tools = list(TOOL_WELDER)
 	time = 100
 	category = CAT_WEAPONRY
@@ -68,8 +64,7 @@
 	name = "Improvised bayonet"
 	result = /obj/item/melee/onehanded/knife/bayonet
 	time = 300
-	reqs = list(/obj/item/melee/onehanded/knife/hunting = 1,
-				/obj/item/crafting/duct_tape = 1)
+	reqs = list(/obj/item/melee/onehanded/knife/hunting = 1)
 	category = CAT_WEAPONRY
 	subcategory = CAT_MELEE
 
@@ -345,7 +340,6 @@
 	name = ".44 incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/m44box/incendiary
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 10,
 	/obj/item/stack/ore/blackpowder = 1
@@ -370,7 +364,6 @@
 	name = ".45 ACP incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/c45/incendiary
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/crafting/abraxo = 1,
 	/obj/item/stack/sheet/metal = 5,
 	/datum/reagent/fuel = 10,
 	/obj/item/stack/ore/blackpowder = 1
@@ -444,9 +437,9 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a556shrap
-	name = "5.56mm micro-shrapnel ammo box"
+/*
+/datum/crafting_recipe/a556uranium
+	name = "5.56mm uranium-tipped ammo box"
 	result = /obj/item/ammo_box/a556/uraniumtipped
 	reqs = list(/obj/item/stack/crafting/metalparts = 1,
 	/obj/item/stack/sheet/mineral/titanium = 2,
@@ -458,6 +451,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+*/
 
 /datum/crafting_recipe/a556
 	name = ".223  handloaded ammo bag"
@@ -470,6 +464,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+/*
 /datum/crafting_recipe/a762boxirr
 	name = "7.62 U-235 ammo box"
 	result = /obj/item/ammo_box/a762box/uraniumtipped
@@ -483,7 +478,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
+*/
 
 /datum/crafting_recipe/a762boxshrap
 	name = "7.62mm micro-shrapnel ammo box"
@@ -498,6 +493,8 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
+
+/*
 /datum/crafting_recipe/a50MGboxuranium
 	name = "12.7mm U-235 ammo box"
 	result = /obj/item/ammo_box/a50MGbox/uraniumtipped
@@ -511,6 +508,7 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
+*/
 
 /datum/crafting_recipe/a50MGboxcontaminated
 	name = "12.7mm contaminated ammo box"
@@ -581,7 +579,6 @@
 	name = "Zip gun (9mm)"
 	result = /obj/item/gun/ballistic/automatic/hobo/zipgun
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 1,
-				/obj/item/crafting/wonderglue = 1,
 				/obj/item/stack/rods = 1,
 				/obj/item/ammo_casing/c9mm = 5,
 				/obj/item/stack/crafting/metalparts = 1)
@@ -618,7 +615,6 @@
 	result = /obj/item/gun/ballistic/automatic/autopipe
 	reqs = list(/obj/item/ammo_casing/a357 = 30,
 	/obj/item/stack/crafting/metalparts = 2,
-	/obj/item/crafting/duct_tape = 1,
 	/obj/item/stack/sheet/cloth = 1,
 	/obj/item/stack/sheet/mineral/wood = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -786,8 +782,7 @@
 	result = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	reqs = list(/obj/item/stack/sheet/metal = 5,
 				/obj/item/advanced_crafting_components/receiver = 1,
-				/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/crafting/duct_tape =1)
+				/obj/item/stack/crafting/metalparts = 2)
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
@@ -1577,7 +1572,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-/*
+
 /datum/crafting_recipe/flux
 	name = "Flux capacitor"
 	result = /obj/item/advanced_crafting_components/flux
@@ -1663,7 +1658,7 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
-
+/*
 Not implemented due to balance at the moment
 /datum/crafting_recipe/caws
 	name = "h&k caws"

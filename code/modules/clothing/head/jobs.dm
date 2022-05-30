@@ -374,9 +374,9 @@
 
 /obj/item/clothing/head/beret/durathread
 	name = "durathread beret"
-	desc =  "(III) A beret made from durathread, its resilient fibres provide some protection to the wearer."
+	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "beretdurathread"
-	armor = list("tier" = 3,"energy" = 10, "bomb" = 30, "bio" = 15, "rad" = 20, "fire" = 100, "acid" = 50)
+	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 
 #undef DRILL_DEFAULT
 #undef DRILL_SHOUTING

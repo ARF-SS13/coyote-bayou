@@ -5,7 +5,7 @@
 
 /obj/item/reagent_containers/food/snacks/cubancarp
 	name = "\improper Cuban carp"
-	desc = "A grifftastic sandwich that burns your tongue and then leaves it numb!"
+	desc = "A sandwich that burns your tongue and then leaves it numb!"
 	icon_state = "cubancarp"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 4)
 	bitesize = 3
@@ -127,7 +127,7 @@
 
 /obj/item/reagent_containers/food/snacks/sushi_basic
 	name = "funa hosomaki"
-	desc = "A small cylindrical kudzu skin, filled with rice and fish."
+	desc = "A small cylindrical seaweed wrap, filled with rice and fish."
 	icon_state = "sushie_basic"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -377,7 +377,7 @@
 
 /obj/item/reagent_containers/food/snacks/sashimi
 	name = "carp sashimi"
-	desc = "Celebrate surviving attack from hostile alien lifeforms by hospitalising yourself."
+	desc = "Celebrate surviving attacks from super mutants by hospitalising yourself."
 	icon_state = "sashimi"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)

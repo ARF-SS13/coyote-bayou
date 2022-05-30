@@ -178,6 +178,13 @@
 		user.visible_message("<span class='suicide'>[user] decided life was worth living.</span>")
 		return
 
+/obj/item/reagent_containers/spray/cleaner/attackby(obj/item/C, mob/user, params)
+	if(istype(C, /obj/item/crafting/abraxo))
+		user.visible_message("[user] begins filling container of the [src].")
+		volume = 100
+		return
+	return ..()
+
 //Drying Agent
 /obj/item/reagent_containers/spray/drying_agent
 	name = "drying agent spray"

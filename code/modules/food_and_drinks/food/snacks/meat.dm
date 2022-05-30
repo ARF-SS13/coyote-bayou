@@ -244,7 +244,7 @@
 	foodtype = RAW | MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/slab/xeno
-	name = "xeno meat"
+	name = "mutant meat"
 	desc = "A slab of meat."
 	icon_state = "xenomeat"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -339,7 +339,7 @@
 	tastes = list("meat" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/chicken
-	name = "chicken steak" //Can you have chicken steaks? Maybe this should be renamed once it gets new sprites.
+	name = "chicken breast"
 	icon_state = "chickenbreast_cooked"
 	tastes = list("chicken" = 1)
 

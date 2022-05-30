@@ -755,7 +755,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit
 	name = "flight suit"
-	desc = "(II) An advanced suit that allows the wearer flight via two high powered miniature jet engines on a deployable back-mounted unit."
+	desc = "An advanced suit that allows the wearer flight via two high powered miniature jet engines on a deployable back-mounted unit."
 	icon_state = "flightsuit"
 	item_state = "flightsuit"
 	strip_delay = 30
@@ -764,7 +764,7 @@
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/flightsuit
 	jetpack = null
 	actions_types = list(/datum/action/item_action/flightsuit/toggle_helmet, /datum/action/item_action/flightsuit/toggle_boots, /datum/action/item_action/flightsuit/toggle_flightpack, /datum/action/item_action/flightsuit/lock_suit)
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 30, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	var/locked_strip_delay = 80
 	var/obj/item/flightpack/pack = null
@@ -1077,14 +1077,14 @@
 //FLIGHT HELMET----------------------------------------------------------------------------------------------------------------------------------------------------
 /obj/item/clothing/head/helmet/space/hardsuit/flightsuit
 	name = "flight helmet"
-	desc = "(II) A sealed helmet attached to a flight suit for EVA usage scenarios. Its visor contains an information uplink HUD."
+	desc = "A sealed helmet attached to a flight suit for EVA usage scenarios. Its visor contains an information uplink HUD."
 	icon_state = "flighthelmet"
 	item_state = "flighthelmet"
 	item_color = "flight"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	brightness_on = 7
 	light_color = "#30ffff"
-	armor = list("tier" = 2, "energy" = 10, "bomb" = 30, "bio" = 100, "rad" = 75, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	var/list/datahuds = list(DATA_HUD_SECURITY_ADVANCED, DATA_HUD_MEDICAL_ADVANCED, DATA_HUD_DIAGNOSTIC_BASIC)
 	var/zoom_range = 12

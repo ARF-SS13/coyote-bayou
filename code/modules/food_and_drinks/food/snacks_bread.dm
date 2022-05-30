@@ -20,7 +20,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/plain
 	name = "bread"
-	desc = "Some plain old earthen bread."
+	desc = "Some plain old bread."
 	icon_state = "bread"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 7)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
@@ -38,7 +38,7 @@
 
 /obj/item/reagent_containers/food/snacks/store/bread/meat
 	name = "meatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman."
+	desc = "The culinary base of every self-respecting eloquent gentleman."
 	icon_state = "meatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/meat
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -53,8 +53,8 @@
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/store/bread/xenomeat
-	name = "xenomeatbread loaf"
-	desc = "The culinary base of every self-respecting eloquen/tg/entleman. Extra Heretical."
+	name = "mutant meatbread loaf"
+	desc = "The culinary base of every self-respecting mutant meat enjoyer. Extra spicy."
 	icon_state = "xenomeatbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/xenomeat
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10)
@@ -63,8 +63,8 @@
 	foodtype = GRAIN | MEAT
 
 /obj/item/reagent_containers/food/snacks/breadslice/xenomeat
-	name = "xenomeatbread slice"
-	desc = "A slice of delicious meatbread. Extra Heretical."
+	name = "mutant meatbread slice"
+	desc = "A slice of delicious meatbread. Extra spicy."
 	icon_state = "xenobreadslice"
 	filling_color = "#32CD32"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
@@ -198,7 +198,7 @@
 
 /obj/item/reagent_containers/food/snacks/butterdog
 	name = "butterdog"
-	desc = "Made from exotic butters."
+	desc = "Made from grade A butter."
 	icon = 'icons/obj/food/food.dmi'
 	icon_state = "butterdog"
 	bitesize = 1

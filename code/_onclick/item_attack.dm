@@ -89,7 +89,7 @@
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
-	var/bigleagues = force*0.25
+	var/bigleagues = 10 //flat additive
 	var/buffout = force*0.25
 	var/smutant = force*0.25
 	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
@@ -106,10 +106,10 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force += smutant
-	
+
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) //negative trait
 		force -= ghoulmelee
-	
+
 	if(!force)
 		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
 	else if(hitsound)
@@ -135,7 +135,7 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force -= smutant
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE)) 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_GHOULMELEE))
 		force += ghoulmelee
 
 //the equivalent of the standard version of attack() but for object targets.

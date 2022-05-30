@@ -94,6 +94,7 @@
 	name = "Curling-13 solution"
 	description = "A heavily modified version of FEV, produced with intent to kill all 'mutated' lifeforms."
 	fev_disease = /datum/disease/curling_thirteen
+	can_synth = FALSE
 
 /datum/reagent/toxin/FEV_solution/curling/on_mob_add(mob/living/L)
 	if(ishuman(L))

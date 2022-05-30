@@ -1,9 +1,9 @@
 /obj/machinery/vending/donksofttoyvendor
-	name = "\improper Donksoft Toy Vendor"
+	name = "\improper Wilson Atomatoys"
 	desc = "Ages 8 and up approved vendor that dispenses toys."
 	icon_state = "syndi"
-	product_slogans = "Get your cool toys today!;Trigger a valid hunter today!;Quality toy weapons for cheap prices!;Give them to HoPs for all access!;Give them to HoS to get permabrigged!"
-	product_ads = "Feel robust with your toys!;Express your inner child today!;Toy weapons don't kill people, but valid hunters do!;Who needs responsibilities when you have toy weapons?;Make your next murder FUN!"
+	product_slogans = "Get your cool toys today!;Every girl's fantasy now made a reality!;Quality toys for cheap prices!;Give those commies the o' rock sock em kid!"
+	product_ads = "Feel like a real soldier with your Red Ryder BB Gun!;Express your inner child today!;Don't shoot your eye out!;Slash and slay like Grognak!;Who needs responsibilities when you have toy weapons?;Make your next game of cops and commies FUN!"
 	vend_reply = "Come back for more!"
 	circuit = /obj/item/circuitboard/machine/vending/donksofttoyvendor
 	products = list(
@@ -30,5 +30,5 @@
 	payment_department = ACCOUNT_SRV
 
 /obj/item/vending_refill/donksoft
-	machine_name = "Donksoft Toy Vendor"
+	machine_name = "Wilson Atomatoys"
 	icon_state = "refill_donksoft"

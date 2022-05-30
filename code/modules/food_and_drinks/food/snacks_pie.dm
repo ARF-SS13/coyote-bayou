@@ -19,7 +19,7 @@
 
 /obj/item/reagent_containers/food/snacks/pie/cream
 	name = "banana cream pie"
-	desc = "Just like back home, on clown planet! HONK!"
+	desc = "A delicious banana cream pie just like in the old funny pictures."
 	icon_state = "pie"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/banana = 5, /datum/reagent/consumable/nutriment/vitamin = 2)
@@ -176,9 +176,9 @@
 
 
 /obj/item/reagent_containers/food/snacks/pie/xemeatpie
-	name = "xeno-pie"
+	name = "mutant-pie"
 	icon_state = "xenomeatpie"
-	desc = "A delicious meatpie. Probably heretical."
+	desc = "Probably not very healthy."
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("pie" = 1, "meat" = 1, "acid" = 1)
 	foodtype = GRAIN | MEAT

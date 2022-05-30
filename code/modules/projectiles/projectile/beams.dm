@@ -446,7 +446,7 @@
 
 /obj/item/projectile/beam/laser/tribeam/hitscan
 	name = "tribeam laser"
-	damage = 15 //if all bullets connect, this will do 45.
+	damage = 25 //if all bullets connect, this will do 75.
 	hitscan = TRUE
 	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -460,6 +460,7 @@
 	damage = 25 //fucc you normies
 	armour_penetration = 0 //no AP, armor shouldnt have more than 20 resist against plasma unless its specialized
 	flag = "energy" //checks vs. energy protection
+	wound_bonus = 45 //being hit with plasma is horrific
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
@@ -470,6 +471,7 @@
 	damage_type = BURN
 	damage = 35
 	flag = "energy" //checks vs. energy protection
+	wound_bonus = 0 //let's not make the carbine horrifying
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second = TILES_TO_PIXELS(10)
@@ -500,12 +502,14 @@
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
 	damage = 18
+	wound_bonus = 20 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 16
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
 	damage = 20
+	wound_bonus = 35 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
 	damage = 25
@@ -616,7 +620,7 @@
 	damage = 25
 	wound_bonus = 10
 	bare_wound_bonus = 20
-	armour_penetration = 0
+	armour_penetration = 0.2
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser

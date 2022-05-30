@@ -102,9 +102,7 @@
 /datum/crafting_recipe/metalarmor/polish
 	name = "Polished Metal Armor"
 	result = /obj/item/clothing/suit/armor/f13/metalarmor/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1,
-				/obj/item/crafting/abraxo,
-				)
+	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -168,8 +166,8 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/ncrsalvagedarmorconversion
 	name = "Salvaged NCR Power Armor"
-	result = /obj/item/clothing/suit/armor/f13/power_armor/t45b/ncr
-	reqs = list(/obj/item/clothing/suit/armor/f13/power_armor/t45b = 1,
+	result = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/ncr
+	reqs = list(/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 30
 	category = CAT_CLOTHING
@@ -178,208 +176,10 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/ncrsalvagedhelmetconversion
 	name = "NCR salvaged T-45b helmet"
-	result = /obj/item/clothing/head/helmet/f13/power_armor/ncr_t45b
-	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor/t45b = 1,
+	result = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/ncr
+	reqs = list(/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 20
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-
-/datum/crafting_recipe/ncrcombatarmor
-	name = "Shred combat armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/five
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrcombathelmet
-	name = "Shred combat helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/five
-	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
-	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrcombatarmormk2
-	name = "Shred combat armor mk2 for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/eight
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrcombathelmetmk2
-	name = "Shred combat helmet mk2 for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/eight
-	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
-	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legioncombatarmor
-	name = "Shred combat armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/five
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legioncombathelmet
-	name = "Shred combat helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/five
-	blacklist = list(/obj/item/clothing/head/helmet/f13/combat/mk2)
-	reqs = list(/obj/item/clothing/head/helmet/f13/combat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legioncombatarmormk2
-	name = "Shred combat armor mk2 for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/eight
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legioncombathelmetmk2
-	name = "Shred combat helmet mk2 for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/eight
-	blacklist = list(/obj/item/clothing/head/helmet/f13/combat)
-	reqs = list(/obj/item/clothing/head/helmet/f13/combat/mk2 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionsalvaged
-	name = "Shred power armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/suit/armor/f13/power_armor = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionsalvagedhelmet
-	name = "Shred power armor helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionsalvaged_ncr
-	name = "Shred salvaged power armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/suit/armored/heavy/salvaged_NCR = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionsalvaged_salvaged
-	name = "Shred salvaged power armor helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/suit/armored/heavy/salvaged_t45 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionriot_broken
-	name = "Shred riot armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
-	reqs = list(/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionriothelmet_broken
-	name = "Shred riot helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
-	reqs = list(/obj/item/clothing/head/helmet/f13/rangerbroken = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionriot_ncr
-	name = "Shred veteran ranger armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
-	reqs = list(/obj/item/clothing/suit/armor/f13/rangercombat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/legionriothelmet_ncr
-	name = "Shred veteran ranger helmet for armor plates"
-	result = list(/obj/item/stack/crafting/armor_plate/fifteen, /obj/item/clothing/glasses/night/polarizing)
-	reqs = list(/obj/item/clothing/head/helmet/f13/ncr/rangercombat = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrsalvaged
-	name = "Shred power armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/suit/armor/f13/power_armor = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrsalvagedhelmet
-	name = "Shred power armor helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/head/helmet/f13/power_armor = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrsalvaged_salvaged
-	name = "Shred salvaged power armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/twenty
-	reqs = list(/obj/item/clothing/suit/armored/heavy/salvaged_t45 = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrriot_broken
-	name = "Shred riot armor for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
-	reqs = list(/obj/item/clothing/suit/armor/f13/leather_jacket/combat/riotpolice = 1,)
-	time = 30
-	category = CAT_CLOTHING
-	subcategory = CAT_ARMOR
-	always_available = FALSE
-
-/datum/crafting_recipe/ncrriothelmet_broken
-	name = "Shred riot helmet for armor plates"
-	result = /obj/item/stack/crafting/armor_plate/fifteen
-	reqs = list(/obj/item/clothing/head/helmet/f13/rangerbroken = 1,)
-	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 	always_available = FALSE
@@ -627,7 +427,7 @@ datum/crafting_recipe/steelbib/heavy
 */
 
 /datum/crafting_recipe/combat_armor
-	name = "replace ballistic plates in combat armor with laser-proof plates"
+	name = "Reflective C.Armor Plates"
 	result = /obj/item/clothing/suit/armor/f13/combat/laserproof
 	reqs = list(/obj/item/stack/sheet/mineral/titanium = 5,
 				/obj/item/clothing/suit/armor/f13/combat = 1,

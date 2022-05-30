@@ -101,20 +101,21 @@
 	L.adjustFireLoss(4)
 
 
-//Emberfalls are the result of an ash storm passing by close to the playable area of lavaland. They have a 10% chance to trigger in place of an ash storm.
-/datum/weather/ash_storm/emberfall
-	name = "emberfall"
-	desc = "A passing ash storm blankets the area in harmless embers."
-
-	weather_message = "<span class='notice'>Gentle embers waft down around you like grotesque snow. The storm seems to have passed you by...</span>"
-	weather_overlay = "light_ash"
-
-	end_message = "<span class='notice'>The emberfall slows, stops. Another layer of hardened soot to the basalt beneath your feet.</span>"
+/datum/weather/ash_storm/sandstorm
+	name = "sandstorm"
+	desc = "A passing sand storm blankets the area in harmless sands."
+	probability = 15
+	
+	telegraph_message = "<span class='userdanger'>Sandstorm is coming to the area, decreasing overall visibility outside.</span>"
+	
+	weather_message = "<span class='boldannounce'>Sand waft down around you like grotesque snow. The sandstorm is here...</span>"
+	
+	end_message = "<span class='boldannounce'>The sandstorm slows, stops. Another layer of sand to the ground beneath your feet.</span>"
 	end_sound = null
-
+	
 	aesthetic = TRUE
-
-	probability = 10
+	
+	target_trait = ZTRAIT_STATION
 
 /datum/weather/ash_storm/dust_event
 	name = "toxic cloud"

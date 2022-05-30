@@ -454,18 +454,18 @@ Raider
 	suit = /obj/item/clothing/suit/toggle/labcoat/f13/followers
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/color/latex
-	neck = /obj/item/bedsheet/medical
+	neck = /obj/item/clothing/neck/stethoscope
+	belt = /obj/item/storage/belt/medical
 	backpack_contents =  list(/obj/item/reagent_containers/medspray/synthflesh=2,
-							/obj/item/stack/medical/suture/emergency/fifteen=1,
-							/obj/item/stack/medical/ointment/twelve=1,
 							/obj/item/smelling_salts=1,
 							/obj/item/healthanalyzer=1,
-							/obj/item/stack/sheet/mineral/silver=1,
 							/obj/item/gun/ballistic/automatic/pistol/m1911=1,
-							/obj/item/lighter=1,
-							/obj/item/screwdriver=1,
-							/obj/item/wirecutters=1,
-							/obj/item/hatchet=1
+							/obj/item/reagent_containers/glass/bottle/epinephrine=2,
+							/obj/item/storage/backpack/duffelbag/med/surgery=1,
+							/obj/item/paper_bin=1,
+							/obj/item/folder=1,
+							/obj/item/pen/fountain=1,
+							/obj/item/storage/firstaid/ancient=1,
 		)
 
 /datum/outfit/loadout/merchant
@@ -580,6 +580,12 @@ Raider
 
 	outfit = /datum/outfit/job/wasteland/f13preacher
 
+	loadout_options = list(
+	/datum/outfit/loadout/crusader, 	//This is kinda a given. You bet.
+	/datum/outfit/loadout/samaritan, 	//Water and food to share with the wastes.
+	/datum/outfit/loadout/cleanser		//Just some bombs.
+	)
+
 	access = list()		//we can expand on this and make alterations as people suggest different loadouts
 	minimal_access = list()
 	matchmaking_allowed = list(
@@ -602,6 +608,34 @@ Raider
 			/datum/job/wasteland/f13wastelander,
 		),
 	)
+
+
+
+/datum/outfit/loadout/crusader
+	name = "Crusader"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/knight = 1,
+		/obj/item/clothing/head/helmet/knight/red = 1,
+		/obj/item/melee/onehanded/machete = 1,
+	)
+
+/datum/outfit/loadout/samaritan
+	name = "Samaritan"
+	backpack_contents = list(
+		/obj/item/reagent_containers/food/snacks/store/bread/plain = 5,
+		/obj/item/reagent_containers/food/snacks/fishmeat/salmon = 2,
+		/obj/item/reagent_containers/glass/beaker/waterbottle = 2,
+		/obj/item/nullrod = 1,
+	)	//Matthew 14:17 RSVCE and KJV - Kitsunemitsu
+
+/datum/outfit/loadout/cleanser
+	name = "Cleanser"
+	backpack_contents = list(
+		/obj/item/grenade/homemade/coffeepotbomb = 2,	//This is funny. I swear guys.
+		/obj/item/gun/ballistic/revolver/m29 = 1,		//Moved here for more *variety*
+		/obj/item/ammo_box/m44 = 2
+	)
+
 
 /datum/job/wasteland/f13preacher/after_spawn(mob/living/H, mob/M)
 	. = ..()
@@ -657,7 +691,7 @@ Raider
 		if("lampism")
 			B.name = "Fluorescent Incandescence"
 		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
-			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition","F.A.T.A.L. Rulebook")
+			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition", "F.A.T.A.L. Rulebook")
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100) // starts off dumb as fuck
 		if("monkeyism","apism","gorillism","primatism")
 			B.name = pick("Going Bananas", "Bananas Out For Harambe")
@@ -702,20 +736,17 @@ Raider
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset
+	ears = 			/obj/item/radio/headset
 	belt = null
-	uniform = /obj/item/clothing/under/f13/chaplain
-	backpack_contents = list(/obj/item/camera/spooky = 1)
-	backpack =		/obj/item/storage/backpack/cultpack
-	satchel = 		/obj/item/storage/backpack/cultpack
-	l_hand = 		/obj/item/nullrod
+	uniform = 		/obj/item/clothing/under/f13/chaplain
 	gloves =		/obj/item/clothing/gloves/fingerless
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	backpack = 		/obj/item/storage/backpack/cultpack
+	r_pocket = 		/obj/item/flashlight/flare
+
+	backpack =		/obj/item/storage/backpack/cultpack
 	satchel = 		/obj/item/storage/backpack/cultpack
-	r_hand = 		/obj/item/gun/ballistic/revolver/m29
-	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
-		/obj/item/ammo_box/m44=2, \
+		/obj/item/camera/spooky = 1, \
 		/obj/item/reagent_containers/food/drinks/flask=1, \
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
 		/obj/item/storage/fancy/candle_box, \

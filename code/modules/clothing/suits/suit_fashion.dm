@@ -33,7 +33,7 @@
 
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"
-	desc = "(I) Suit for a cyborg costume."
+	desc = "Suit for a cyborg costume."
 	icon_state = "death"
 	item_state = "death"
 	flags_1 = CONDUCT_1
@@ -43,7 +43,7 @@
 
 /obj/item/clothing/suit/justice
 	name = "justice suit"
-	desc = "(I) this pretty much looks ridiculous" //Needs no fixing
+	desc = "this pretty much looks ridiculous" //Needs no fixing
 	icon_state = "justice"
 	item_state = "justice"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|FEET
@@ -51,7 +51,7 @@
 
 /obj/item/clothing/suit/judgerobe
 	name = "judge's robe"
-	desc = "(I) This robe commands authority."
+	desc = "This robe commands authority."
 	icon_state = "judge"
 	item_state = "judge"
 	flags_inv = HIDEJUMPSUIT
@@ -59,31 +59,31 @@
 
 /obj/item/clothing/suit/tailcoat
 	name = "tailcoat"
-	desc = "(I) A rather impractical, long coat."
+	desc = "A rather impractical, long coat."
 	icon_state = "tailcoat"
 	item_state = "tailcoat"
 
 /obj/item/clothing/suit/vickyblack
 	name = "black victorian coat"
-	desc = "(I) An overbearing black coat, it looks far older than you are."
+	desc = "An overbearing black coat, it looks far older than you are."
 	icon_state = "vickyblack"
 	item_state = "vickyblack"
 
 /obj/item/clothing/suit/vickyred
 	name = "red victorian coat"
-	desc = "(I) An overbearing red coat, it looks far older than you are."
+	desc = "An overbearing red coat, it looks far older than you are."
 	icon_state = "vickyred"
 	item_state = "vickyred"
 
 /obj/item/clothing/suit/apron/overalls
 	name = "coveralls"
-	desc = "(I) A set of denim overalls."
+	desc = "A set of denim overalls."
 	icon_state = "overalls"
 	item_state = "overalls"
 
 /obj/item/clothing/suit/apron/purple_bartender
 	name = "purple bartender apron"
-	desc = "(I) A fancy purple apron for a stylish person."
+	desc = "A fancy purple apron for a stylish person."
 	icon_state = "purplebartenderapron"
 	item_state = "purplebartenderapron"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -95,7 +95,7 @@
 
 /obj/item/clothing/suit/jacket
 	name = "bomber jacket"
-	desc = "(II) Aviators not included."
+	desc = "Aviators not included."
 	icon_state = "bomberjacket"
 	item_state = "brownjsuit"
 	cold_protection = CHEST|GROIN|ARMS
@@ -104,25 +104,25 @@
 
 /obj/item/clothing/suit/jacket/flannel/red
 	name = "red flannel jacket"
-	desc = "(I) Comfy and supposedly flammable."
+	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_red"
 	item_state = "flannel_red"
 
 /obj/item/clothing/suit/jacket/flannel/aqua
 	name = "aqua flannel jacket"
-	desc = "(I) Comfy and supposedly flammable."
+	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_aqua"
 	item_state = "flannel_aqua"
 
 /obj/item/clothing/suit/jacket/flannel/brown
 	name = "brown flannel jacket"
-	desc = "(I) Comfy and supposedly flammable."
+	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
-	desc = "(II) Pompadour not included."
+	desc = "Pompadour not included."
 	icon_state = "leatherjacket"
 	item_state = "hostrench"
 	resistance_flags = NONE
@@ -130,7 +130,7 @@
 
 /obj/item/clothing/suit/jacket/leather/overcoat
 	name = "leather overcoat"
-	desc = "(II) That's a damn fine coat."
+	desc = "That's a damn fine coat."
 	icon_state = "leathercoat"
 	cold_protection = CHEST|GROIN|ARMS|LEGS
 
@@ -151,34 +151,34 @@
 
 /obj/item/clothing/suit/jacket/letterman
 	name = "letterman jacket"
-	desc = "(I) A classic brown letterman jacket. Looks pretty hot and heavy."
+	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
 	item_state = "letterman"
 
 /obj/item/clothing/suit/jacket/letterman_red
 	name = "red letterman jacket"
-	desc = "(I) A letterman jacket in a sick red color. Radical."
+	desc = "A letterman jacket in a sick red color. Radical."
 	icon_state = "letterman_red"
 	item_state = "letterman_red"
 
 
 /obj/item/clothing/suit/dracula
 	name = "dracula coat"
-	desc = "(I) Looks like this belongs in a very old movie set."
+	desc = "Looks like this belongs in a very old movie set."
 	icon_state = "draculacoat"
 	item_state = "draculacoat"
 	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/suit/drfreeze_coat
 	name = "doctor freeze's labcoat"
-	desc = "(I) A labcoat imbued with the power of features and freezes."
+	desc = "A labcoat imbued with the power of features and freezes."
 	icon_state = "drfreeze_coat"
 	item_state = "drfreeze_coat"
 	body_parts_covered = CHEST|GROIN|ARMS
 
 /obj/item/clothing/suit/gothcoat
 	name = "gothic coat"
-	desc = "(I) Perfect for those who want stalk in a corner of a bar."
+	desc = "Perfect for those who want stalk in a corner of a bar."
 	icon_state = "gothcoat"
 	item_state = "gothcoat"
 	body_parts_covered = CHEST|ARMS|HAND_LEFT //peculiar
@@ -187,13 +187,13 @@
 
 /obj/item/clothing/suit/bronze
 	name = "bronze suit"
-	desc = "(I) A big and clanky suit made of bronze that offers no protection and looks very unfashionable. Nice."
+	desc = "A big and clanky suit made of bronze that offers no protection and looks very unfashionable. Nice."
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_cuirass_old"
 
 /obj/item/clothing/suit/hooded/wintercoat/christmascoatr
 	name = "red christmas coat"
-	desc = "(I) A festive red Christmas coat! Smells like Candy Cane!"
+	desc = "A festive red Christmas coat! Smells like Candy Cane!"
 	icon_state = "christmascoatr"
 	item_state = "christmascoatr"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/christmashoodr
@@ -211,7 +211,7 @@
 
 /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	name = "fieldscribe coat"
-	desc = "(II) A heavy-duty coat and chestrig fitted with tons of pockets for every scribe's storage needs."
+	desc = "A heavy-duty coat and chestrig fitted with tons of pockets for every scribe's storage needs."
 	icon_state = "scribecoat"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
@@ -225,7 +225,7 @@
 
 /obj/item/clothing/suit/bomber
 	name = "old bomber jacket"
-	desc = "(II) It looks like someone dragged this out of a muddy lake."
+	desc = "It looks like someone dragged this out of a muddy lake."
 	icon_state = "bomberalt"
 	item_state = "bomberalt"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0)
@@ -360,7 +360,7 @@
 
 /obj/item/clothing/suit/spookyghost
 	name = "spooky ghost"
-	desc = "(I) This is obviously just a bedsheet, but maybe try it on?"
+	desc = "This is obviously just a bedsheet, but maybe try it on?"
 	icon_state = "bedsheet"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
 	user_vars_to_edit = list("name" = "Spooky Ghost", "real_name" = "Spooky Ghost" , "incorporeal_move" = INCORPOREAL_MOVE_BASIC, "appearance_flags" = KEEP_TOGETHER|TILE_BOUND, "alpha" = 150)
@@ -369,7 +369,7 @@
 
 /obj/item/clothing/suit/ghost_sheet
 	name = "ghost sheet"
-	desc = "(I) The hands float by themselves, so it's extra spooky."
+	desc = "The hands float by themselves, so it's extra spooky."
 	icon_state = "ghost_sheet"
 	item_state = "ghost_sheet"
 	throwforce = 0
@@ -384,7 +384,7 @@
 
 /obj/item/clothing/suit/ran
 	name = "shikigami costume"
-	desc = "(I) A costume that looks like a certain shikigami, is super fluffy."
+	desc = "A costume that looks like a certain shikigami, is super fluffy."
 	icon_state = "ran_suit"
 	item_state = "ran_suit"
 	flags_inv = HIDEJUMPSUIT|HIDETAUR
@@ -393,14 +393,14 @@
 
 /obj/item/clothing/head/ran
 	name = "shikigami hat"
-	desc = "(I) A hat that looks like it keeps any fluffy ears contained super warm, has little charms over it."
+	desc = "A hat that looks like it keeps any fluffy ears contained super warm, has little charms over it."
 	icon_state = "ran_hat"
 	item_state = "ran_hat"
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/suit/chickensuit
 	name = "chicken suit"
-	desc = "(I) A suit made long ago by the ancient empire KFC."
+	desc = "A suit made long ago by the ancient empire KFC."
 	icon_state = "chickensuit"
 	item_state = "chickensuit"
 	body_parts_covered = CHEST|ARMS|GROIN|LEGS|FEET
@@ -408,7 +408,7 @@
 
 /obj/item/clothing/suit/toggle/owlwings
 	name = "owl cloak"
-	desc = "(I) A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
+	desc = "A soft brown cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive the ladies mad."
 	icon_state = "owl_wings"
 	item_state = "owl_wings"
 	togglename = "wings"
@@ -416,13 +416,13 @@
 
 /obj/item/clothing/suit/toggle/owlwings/griffinwings
 	name = "griffon cloak"
-	desc = "(I) A plush white cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive your captives mad."
+	desc = "A plush white cloak made of synthetic feathers. Soft to the touch, stylish, and a 2 meter wing span that will drive your captives mad."
 	icon_state = "griffin_wings"
 	item_state = "griffin_wings"
 
 /obj/item/clothing/suit/cardborg
 	name = "cardborg suit"
-	desc = "(I) An ordinary cardboard box with holes cut in the sides."
+	desc = "An ordinary cardboard box with holes cut in the sides."
 	icon_state = "cardborg"
 	item_state = "cardborg"
 	flags_inv = HIDEJUMPSUIT

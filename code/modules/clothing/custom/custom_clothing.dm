@@ -6,12 +6,12 @@
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey
 	name = "weathered ranger combat armor"
-	desc = "(II) An original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
+	desc = "An original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
 	icon = 'icons/fallout/clothing/custom/custom.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 /obj/item/clothing/suit/armor/f13/rangercombat/desert/whiskey/Initialize()
 	. = ..()
@@ -23,7 +23,7 @@
 	desc = "A original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
-	armor = list("tier" = 2, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 20, "acid" = 20)
+	armor = list("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 */
 
 // YEEHAWGYVNAH/"Trinity Kemble" //

@@ -32,7 +32,7 @@
 	block_damage_multiplier = 0.25
 	block_stamina_efficiency = 2.5
 	block_stamina_cost_per_second = 2.5
-	block_slowdown = 0
+	block_slowdown = 0.4
 	block_lock_attacking = FALSE
 	block_lock_sprinting = TRUE
 	block_start_delay = 1.5
@@ -266,6 +266,7 @@ obj/item/shield/riot/bullet_proof
 	block_parry_data = /datum/block_parry_data/shield/bulletproof
 	armor = list("melee" = 50, "bullet" = 90, "laser" = 50, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 70)
 	max_integrity = 1750
+	slowdown = 0.2
 	custom_materials = list(/datum/material/plastic=8000, /datum/material/titanium=1000)
 	repair_material = /obj/item/stack/sheet/mineral/titanium
 
@@ -284,7 +285,7 @@ obj/item/shield/riot/bullet_proof
 	item_state = "shield_buckler"
 	block_parry_data = /datum/block_parry_data/shield/scrap
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 40)
-	max_integrity = 750
+	max_integrity = 150
 	custom_materials = list(/datum/material/wood = 18000)
 	resistance_flags = FLAMMABLE
 	repair_material = /obj/item/stack/sheet/mineral/wood
@@ -304,7 +305,8 @@ obj/item/shield/riot/bullet_proof
 	icon_state = "shield_stop"
 	item_state = "shield_stop"
 	armor = list("melee" = 65, "bullet" = 60, "laser" = 65, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
-	max_integrity = 1000
+	max_integrity = 300
+	slowdown = 0
 	resistance_flags = null
 	repair_material = /obj/item/stack/sheet/metal
 
@@ -312,15 +314,16 @@ obj/item/shield/riot/bullet_proof
 //Legion shield
 /obj/item/shield/riot/legion
 	name = "legion shield"
-	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow bull insignia in the centre."
+	desc = "Heavy shield with metal pieces bolted to a wood backing, with a painted yellow bull insignia in the centre. Repair with metal."
 	icon_state = "shield_legion"
 	item_state = "shield_legion"
 	block_parry_data = /datum/block_parry_data/shield/legion
 	armor = list("melee" = 70, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
 	force = 13
-	max_integrity = 1500
+	slowdown = 0
+	max_integrity = 500
 	custom_materials = list(/datum/material/wood = 16000, /datum/material/iron= 16000)
-	repair_material = /obj/item/stack/sheet/mineral/wood
+	repair_material = /obj/item/stack/sheet/metal
 	shield_flags = SHIELD_FLAGS_HEAVY
 
 /obj/item/shield/riot/legion/shatter(mob/living/carbon/human/owner)
@@ -330,7 +333,7 @@ obj/item/shield/riot/bullet_proof
 /datum/block_parry_data/shield/legion
 	block_damage_multiplier = 0.3
 	block_damage_absorption = 7.5
-	block_damage_limit = 60
+	block_damage_limit = 30
 
 //Scrap shield. Somewhat cheaper, simpler and worse than Legion shield but basically similar.
 /obj/item/shield/riot/scrapshield
@@ -340,7 +343,8 @@ obj/item/shield/riot/bullet_proof
 	item_state = "shield_scrap"
 	block_parry_data = /datum/block_parry_data/shield/scrap
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 40)
-	max_integrity = 1250
+	max_integrity = 500
+	slowdown = 0.1
 	force = 13
 	custom_materials = list(/datum/material/iron = 16000)
 	repair_material = /obj/item/stack/sheet/metal
@@ -348,7 +352,7 @@ obj/item/shield/riot/bullet_proof
 
 /datum/block_parry_data/shield/scrap
 	block_damage_multiplier = 0.3
-	block_damage_limit = 30
+	block_damage_limit = 22
 
 //Energy shield. Placeholder for the experimental BoS shield concept that never got implemented I suppose.
 /obj/item/shield/energy
@@ -411,7 +415,6 @@ obj/item/shield/riot/bullet_proof
 	desc = "A heavy metal tower shield. Very unwieldly."
 	icon_state = "shield_tower"
 	item_state = "shield_tower"
-	slowdown = 0.25
 	slot_flags = ITEM_SLOT_BACK
 	shieldbash_cooldown = 8 SECONDS
 	shieldbash_brutedamage = 50//if you close in with this, and land a shieldbash you should deal a good bit of damage
@@ -441,7 +444,6 @@ obj/item/shield/riot/bullet_proof
 	desc = "A heavy metal tower shield, made from scrap metal. Very unwieldly."
 	icon_state = "shield_scraptower"
 	item_state = "shield_scraptower"
-	slowdown = 0.35
 	shieldbash_brutedamage = 40
 	shieldbash_stamdmg = 60
 	shield_flags = SHIELD_FLAGS_DEFAULT //no guaranteed kd on bash, sorry

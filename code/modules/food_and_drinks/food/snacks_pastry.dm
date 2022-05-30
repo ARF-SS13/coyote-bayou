@@ -4,7 +4,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut
 	name = "donut"
-	desc = "Goes great with robust coffee."
+	desc = "Goes great with a cuppa joe."
 	icon = 'icons/obj/food/donut.dmi'
 	icon_state = "donut"
 	bitesize = 5
@@ -83,7 +83,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/trumpet
 	name = "spaceman's donut"
-	desc = "Goes great with a cold beaker of malk."
+	desc = "Goes great with a cold glass of milk."
 	icon_state = "donut_purple"
 	bonus_reagents = list(/datum/reagent/medicine/polypyr = 3, /datum/reagent/consumable/sprinkles = 1)
 	tastes = list("donut" = 3, "violets" = 1)
@@ -182,7 +182,7 @@
 
 /obj/item/reagent_containers/food/snacks/donut/jelly/trumpet
 	name = "spaceman's jelly donut"
-	desc = "Goes great with a cold beaker of malk."
+	desc = "Goes great with a cold glass of milk."
 	icon_state = "jelly_purple"
 	bonus_reagents = list(/datum/reagent/medicine/polypyr = 3, /datum/reagent/consumable/sprinkles = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("jelly" = 1, "donut" = 3, "violets" = 1)
@@ -455,8 +455,8 @@
 	dunkable = TRUE
 
 /obj/item/reagent_containers/food/snacks/donkpocket
-	name = "\improper Donk-pocket"
-	desc = "The food of choice for the seasoned traitor."
+	name = "\improper hot-pocket"
+	desc = "The food of choice for the seasoned wastelander."
 	icon_state = "donkpocket"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	cooked_type = /obj/item/reagent_containers/food/snacks/donkpocket/warm

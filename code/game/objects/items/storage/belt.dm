@@ -138,6 +138,7 @@
 /obj/item/storage/belt/utility/waster/forgemaster
 	name = "forgemasters toolbelt"
 	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
+	var/max_combined_w_class = WEIGHT_CLASS_SMALL * 8
 
 /obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
 	new /obj/item/crowbar(src)

@@ -115,6 +115,13 @@
 		M.adjustToxLoss(5, 0)
 	..()
 
+/mob/living/simple_animal/hostile/stalker/playable/legion				
+	name = "legionstalker"
+	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
+	icon_state = "nightstalker-legion"
+	icon_living = "nightstalker-legion"
+	icon_dead = "nightstalker-legion-dead"
+
 // NIGHTSTALKER CUB
 /mob/living/simple_animal/hostile/stalkeryoung
 	name = "young nightstalker"

@@ -292,9 +292,9 @@
 	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
 	return (BRUTELOSS|FIRELOSS)
 
-/*/obj/item/nullrod/attack_self(mob/user)
+/obj/item/nullrod/attack_self(mob/user)
 	if(user.mind && (user.mind.isholy) && !reskinned)
-		reskin_holy_weapon(user)*/
+		reskin_holy_weapon(user)
 
 /**
  * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
@@ -749,9 +749,6 @@
 /obj/item/nullrod/tribal_knife/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
-
-/obj/item/nullrod/tribal_knife/process()
-	slowdown = rand(-2, 2)
 
 
 /obj/item/nullrod/egyptian

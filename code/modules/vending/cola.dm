@@ -1,18 +1,18 @@
 
 /obj/machinery/vending/cola
-	name = "\improper Robust Softdrinks"
+	name = "\improper Nuka-Cola vending machine"
 	icon = 'icons/obj/f13vending.dmi'
-	desc = "A softdrink vendor."
+	desc = "The Nuka-Cola Corporation was a corporation, best known for its flagship product, Nuka-Cola. The soda is considered to be the most popular drink in the United States both before and after the war."
 	icon_state = "nuka_vending"
 	product_slogans = "Take the leap... enjoy a Quantum!"
-	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Why not cola?;Please, have a drink!;Drink up!;The best drinks in America."
+	product_ads = "Refreshing!;Hope you're thirsty!;Over 1 million drinks sold!;Thirsty? Nothing beats the taste, the taste that'll knock you out!;Please, have a drink!;Drink up!;The best drinks in America."
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive = 20)
 	contraband = list(/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4)
 	premium = list(/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola = 1) //REAl nuka cola
 	refill_canister = /obj/item/vending_refill/cola
 
 /obj/item/vending_refill/cola
-	machine_name = "Robust Softdrinks"
+	machine_name = "Nuka-Cola vending machine"
 	icon_state = "refill_cola"
 
 /obj/machinery/vending/cola/random

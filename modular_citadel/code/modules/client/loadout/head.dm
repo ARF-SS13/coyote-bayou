@@ -202,12 +202,12 @@
 	cost = 2
 
 /datum/gear/head/flakhelm
-	name = "(I) flak helmet"
+	name = "flak helmet"
 	path = /obj/item/clothing/head/flakhelm
 	cost = 2
 
 /datum/gear/head/pot
-	name = "(III) pot helmet"
+	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
 	cost = 4
 

@@ -169,6 +169,37 @@ GLOBAL_LIST_INIT(concrete_recipes, list ( \
 	sheet_type = /obj/item/stack/sheet/mineral/concrete
 	canSmoothWith = list(/turf/closed/wall/f13/supermart, /turf/closed/wall/mineral/concrete, /turf/closed/wall,)
 
+/turf/closed/wall/mineral/concrete/blastproof
+	name = "fortified supermart wall"
+	desc = "A pre-War supermart that has been coated with plastic to reduce cracking from overpressure."
+	hardness = 80
+	explosion_block = 5
+	slicing_duration = 150 //50% longer than usual
+
+/turf/closed/wall/mineral/concrete/attackby(obj/item/I, mob/user)
+	if(istype(I,/obj/item/stack/sheet/plastic))
+		var/obj/item/stack/sheet/plastic/C = I
+		if(C.amount < 3)
+			to_chat(user, "<span class='warning'>You need at least three plastic sheets to sheathe the wall!</span>")
+			return
+		to_chat(user, "<span class='notice'>You start adding [I] to [src]...</span>")
+		if(do_after(user, 50, target=src))
+			C.use(3)
+			var/turf/T = get_turf(src)
+			T.PlaceOnTop(/turf/closed/wall/mineral/concrete/blastproof)
+			qdel(src)
+		return
+	else if(istype(I, /obj/item/weldingtool))
+		if(!I.tool_start_check(user, amount=0))
+			return
+
+		if(I.use_tool(src, user, 60, volume=50))
+			user.visible_message("[user] welds the [src] apart.", "You start to weld the [src] apart...")
+			to_chat(user, "<span class='notice'>You weld the [src] apart.</span>")
+			qdel(src)
+			return
+	return ..()
+	
 /obj/structure/barricade/concrete
 	name = "concrete barricade"
 	desc = "A small concrete barricade. Could be turned into a concrete wall with some more concrete."

@@ -47,7 +47,7 @@
 	name = "worn boots"
 	desc = "A pair of slightly worn, steel-toed work boots.<br>Good at keeping toes safe from falling junk you find amid the ruins."
 	icon_state = "explorer"
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 
 /obj/item/clothing/shoes/f13/raidertreads
 	name = "raider treads"
@@ -60,7 +60,7 @@
 	desc = "Fancy mens' steel-toed boots."
 	icon_state = "diesel_m"
 	item_state = "diesel_m"
-	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0, fire = 0, acid = 0)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -76,7 +76,7 @@
 	icon_state = "military"
 	item_state = "military"
 	permeability_coefficient = 0.05
-	armor = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 10, bio = 0, rad = 0, fire = 10, acid = 0)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
 	strip_delay = 40
 	resistance_flags = NONE
 	can_be_tied = FALSE
@@ -146,7 +146,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_war"
 	item_state = "legion_war"
-	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
+	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
 
 /obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
@@ -155,7 +155,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_legate"
 	item_state = "legion_legate"
-	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 30, bio = 0, rad = 10, fire = 30, acid = 10)
+	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 10)
 
 // ---------------------------------------------------------
 // Great Khan boots
@@ -232,7 +232,7 @@
 	desc = "These boots are constructed with a thin rubber exterior and cellular rubber midsole covered by colorful nylon fabrics and using polyurethane foams.<br>To the Moon!"
 	icon_state = "moon"
 	item_state = "moon"
-	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 10, rad = 50, fire = 0, acid = 0)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 10, "rad" = 50, "fire" = 0, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET
@@ -244,7 +244,7 @@
 	desc = "These boots are constructed with a titanium alloy. There are some runes engraved on the side.<br>To Mars!"
 	icon_state = "mars"
 	item_state = "mars"
-	armor = list(melee = 40, bullet = 20, laser = 20, energy = 20, bomb = 20, bio = 80, rad = 80, fire = 80, acid = 50)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET
@@ -256,7 +256,7 @@
 	desc = "Heavy-duty work boots with steel-reinforced toes and some fluffy wool for extra warmth."
 	icon_state = "miner"
 	item_state = "miner"
-	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
+	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -265,7 +265,7 @@
 	desc = "They may have lost some of their lustre over the years, but these green crocodile leather shoes fit you perfectly."
 	icon_state = "jamrock_skins"
 	item_state = "jamrock_skins"
-	armor = list(melee = 20, bullet = 0, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0, fire = 0, acid = 0)
+	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -277,10 +277,10 @@
 
 /obj/item/clothing/shoes/f13/mutie/boots
 	name = "super mutant boots"
-	desc = "(III) A pair of oversized boots."
+	desc = "A pair of oversized boots."
 	icon_state = "mutie_boots"
 	icon_state = "mutie_boots"
-	armor = list("tier" = 3, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 40, "fire" = 30, "acid" = 20)
+	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 	cold_protection = FEET
 
 /obj/item/clothing/shoes/f13/mutie/boots/dark

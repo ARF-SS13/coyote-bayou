@@ -164,7 +164,6 @@
 	item_state = "hardhat0_reindeer"
 	hat_type = "reindeer"
 	flags_inv = 0
-	armor = list("tier" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	light_system = MOVABLE_LIGHT
 	light_range = 1
 	dynamic_hair_suffix = ""

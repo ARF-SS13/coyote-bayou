@@ -25,7 +25,7 @@
 		/obj/item/toy/minimeteor = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/nuke = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/redbutton = ARCADE_WEIGHT_TRICK,
-//		/obj/item/toy/spinningtoy = ARCADE_WEIGHT_TRICK,
+		/obj/item/toy/spinningtoy = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/sword = ARCADE_WEIGHT_TRICK,
 		/obj/item/toy/talking/AI = ARCADE_WEIGHT_USELESS,
 		/obj/item/toy/talking/codex_gigas = ARCADE_WEIGHT_USELESS,
@@ -46,7 +46,7 @@
 		/obj/item/clothing/under/syndicate/tacticool = ARCADE_WEIGHT_TRICK,
 		/obj/item/storage/crayons = ARCADE_WEIGHT_USELESS,
 		/obj/item/coin/antagtoken = ARCADE_WEIGHT_USELESS,
-//		/obj/item/stack/tile/fakespace/loaded = ARCADE_WEIGHT_TRICK,
+		/obj/item/stack/tile/fakespace/loaded = ARCADE_WEIGHT_TRICK,
 		/obj/item/stack/tile/fakepit/loaded = ARCADE_WEIGHT_TRICK,
 		/obj/item/restraints/handcuffs/fake = ARCADE_WEIGHT_TRICK,
 		/obj/item/clothing/shoes/kindleKicks = ARCADE_WEIGHT_RARE,
@@ -69,7 +69,8 @@
 	// circuit board for it and make the new machine
 	if(!circuit)
 		var/list/gameodds = list(/obj/item/circuitboard/computer/arcade/battle = 33,
-								/obj/item/circuitboard/computer/arcade/orion_trail = 33)
+								/obj/item/circuitboard/computer/arcade/orion_trail = 33,
+								/obj/machinery/computer/arcade/amputation = 33)
 		var/thegame = pickweight(gameodds)
 		var/obj/item/circuitboard/CB = new thegame()
 		var/obj/machinery/computer/arcade/A = new CB.build_path(loc, CB)

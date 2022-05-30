@@ -10,7 +10,7 @@
 
 /obj/item/reagent_containers/food/snacks/sea_weed
 	name = "Sea Weed Sheet"
-	desc = "A thin, light salt sheet of plant mater. This is commenly used in sushi recipes,"
+	desc = "A thin, light salt sheet of plant mater. Used in sushi recipes,"
 	icon_state = "sea_weed"
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 2)
 	tastes = list("plants" = 2, "salt" = 1)
@@ -18,7 +18,7 @@
 
 /obj/item/reagent_containers/food/snacks/tuna
 	name = "Canned Tuna"
-	desc = "A small can of tuna fish beloved by felines."
+	desc = "A small can of tuna fish."
 	icon_state = "tuna_can"
 //trash = /obj/item/trash/tuna_used //I dont know if I like this idea - A Masked Cat
 	list_reagents = list(/datum/reagent/consumable/sodiumchloride = 5, /datum/reagent/mercury = 2)
@@ -61,7 +61,7 @@
 
 /obj/item/reagent_containers/food/snacks/tobiko
 	name = "Tobiko"
-	desc = "Spider eggs wrapped in a thin salted Kudzu pod"
+	desc = "Spider eggs wrapped in a thin salted seaweed sheet."
 	icon_state = "sushie_egg"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	filling_color = "#FF3333" // R225 G051 B051
@@ -70,7 +70,7 @@
 
 /obj/item/reagent_containers/food/snacks/riceball
 	name = "Onigiri"
-	desc = "A ball of rice with some light salt and a wrap of Kudzu skin."
+	desc = "A ball of rice with some light salt and a wrap of seaweed."
 	icon_state = "riceball"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sodiumchloride = 2)
 	tastes = list("rice" = 4, "salt" = 1)
@@ -78,7 +78,7 @@
 
 /obj/item/reagent_containers/food/snacks/sashimi
 	name = "carp sashimi"
-	desc = "Celebrate surviving attack from hostile alien lifeforms by hospitalising yourself."
+	desc = "Celebrate surviving attacks from super mutants by hospitalising yourself."
 	icon_state = "sashimi"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/capsaicin = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/capsaicin = 5)

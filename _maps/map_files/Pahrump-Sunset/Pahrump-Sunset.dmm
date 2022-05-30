@@ -985,7 +985,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/transparent/openspace,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "adu" = (
 /obj/structure/stairs{
@@ -1035,12 +1035,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
 "adD" = (
-/obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "factorybasement"
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1;
+	name = "generator unit"
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/transparent/openspace,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
 /area/f13/building/massfusion)
 "adE" = (
 /obj/structure/closet/cabinet,
@@ -1900,13 +1902,10 @@
 	},
 /area/f13/wasteland/ncr)
 "agq" = (
-/obj/item/clipboard{
-	pixel_y = 6
-	},
-/obj/item/paper{
-	pixel_y = 6
-	},
 /obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -7981,6 +7980,7 @@
 "ayt" = (
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -9280,9 +9280,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aCt" = (
-/obj/machinery/light{
-	dir = 8
-	},
+/obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -15263,6 +15261,7 @@
 "aTU" = (
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/low_tools,
+/obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -15661,9 +15660,7 @@
 	},
 /area/f13/building/massfusion)
 "aVj" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/decal/cleanable/blood/drip,
-/turf/open/transparent/openspace,
+/turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "aVk" = (
 /obj/structure/junk/locker{
@@ -21304,6 +21301,7 @@
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
 	},
+/obj/item/stock_parts/cell/ammo/ecp,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustysolid"
 	},
@@ -32566,6 +32564,8 @@
 "fpj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/decal/cleanable/oil/slippery,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -33069,7 +33069,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "fEv" = (
-/turf/open/transparent/openspace,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/ammo,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
 /area/f13/building/massfusion)
 "fEW" = (
 /obj/machinery/vending/cola,
@@ -35596,6 +35600,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/building)
+"hmU" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "hnO" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/desert,
@@ -36598,7 +36606,9 @@
 /area/f13/ncr)
 "hYK" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/low_tools,
+/obj/machinery/recharger{
+	pixel_y = 7
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -39153,6 +39163,11 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/wasteland/ncr)
+"jAS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/ammo/ultracite,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/building/massfusion)
 "jBe" = (
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
@@ -39540,6 +39555,9 @@
 /area/f13/wasteland/mall)
 "jPC" = (
 /obj/structure/closet,
+/obj/item/storage/briefcase,
+/obj/item/pen/fountain,
+/obj/effect/spawner/lootdrop/ammo,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -42762,6 +42780,15 @@
 	icon_state = "verticalleftborderright2top"
 	},
 /area/f13/wasteland/followers)
+"lRR" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "plantelevator"
+	},
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "lRY" = (
 /obj/structure/table/wood/poker{
 	name = "felt table"
@@ -54939,7 +54966,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -60284,8 +60311,11 @@
 	},
 /area/f13/building)
 "xco" = (
-/obj/structure/lattice/catwalk,
-/turf/open/transparent/openspace,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stock_parts/cell/ammo/ecp,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
 /area/f13/building/massfusion)
 "xcF" = (
 /obj/structure/extinguisher_cabinet{
@@ -108684,9 +108714,9 @@ vVo
 vVo
 vVo
 vVo
-adD
-xco
-xco
+aVj
+aVj
+aVj
 aaH
 drI
 jgG
@@ -108942,8 +108972,8 @@ afg
 afa
 vVo
 adt
-fEv
-aVj
+lRR
+hmU
 aHV
 pXk
 iCI
@@ -109198,9 +109228,9 @@ aaN
 mFy
 aWw
 vVo
-fEv
-fEv
-fEv
+aVj
+aVj
+aVj
 aaH
 fPS
 trb
@@ -109714,7 +109744,7 @@ vVo
 vVo
 lKe
 mFy
-bpp
+xco
 lKe
 lKe
 jFL
@@ -116676,7 +116706,7 @@ vVo
 peq
 wSN
 xNI
-aCt
+xJU
 aIh
 vVo
 aae
@@ -116912,7 +116942,7 @@ vVo
 urJ
 adv
 oJI
-kbV
+jAS
 vVo
 mFy
 bpp
@@ -117189,7 +117219,7 @@ aae
 vVo
 uAs
 wSN
-rcw
+sEY
 wSN
 hYK
 vVo
@@ -117445,8 +117475,8 @@ vVo
 vVo
 vVo
 wSN
-wSN
-xNI
+rcw
+aCt
 wSN
 wSN
 vVo
@@ -117701,9 +117731,9 @@ aae
 vVo
 aXM
 jkj
-wSN
 rcw
-wSN
+dYI
+rcw
 rcw
 twO
 vVo
@@ -117958,10 +117988,10 @@ aae
 vVo
 aWu
 fpj
+rcw
 wSN
-wSN
-kUV
-kUV
+adD
+adD
 wSN
 vVo
 aae
@@ -118214,11 +118244,11 @@ aae
 aae
 vVo
 rcw
-wSN
+rcw
 wSN
 xNI
 wSN
-wSN
+rcw
 uAs
 vVo
 aae
@@ -118471,8 +118501,8 @@ aae
 aae
 vVo
 edw
-xNI
-wSN
+fEv
+twO
 wSN
 wSN
 wSN

@@ -1,7 +1,7 @@
 //This one's from bay12
 /obj/machinery/vending/engineering
 	name = "\improper Robco Tool Maker"
-	desc = "Everything you need for do-it-yourself station repair."
+	desc = "Everything you need for do-it-yourself home repair."
 	icon_state = "engi"
 	icon_deny = "engi-deny"
 	products = list(/obj/item/clothing/under/rank/engineering/chief_engineer = 4,

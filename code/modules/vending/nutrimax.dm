@@ -1,6 +1,6 @@
 /obj/machinery/vending/hydronutrients
-	name = "\improper NutriMax"
-	desc = "A plant nutrients vendor."
+	name = "\improper Greenway Hydroponics NutriMax"
+	desc = "Greenway Hydroponics was a company founded by Derek Greenway following his departure from Poseidon Energy, focusing on pacifist applications on technology, making a killing through their state-of-the-art inventions in farming."
 	product_slogans = "Aren't you glad you don't have to fertilize the natural way?;Now with 50% less stink!;Plants are people too!"
 	product_ads = "We like plants!;Don't you want some?;The greenest thumbs ever.;We like big plants.;Soft soil..."
 	icon_state = "nutri"

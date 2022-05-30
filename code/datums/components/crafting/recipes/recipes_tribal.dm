@@ -288,8 +288,7 @@
 	time = 60
 	reqs = list(/obj/item/clothing/suit/f13/tribal/light/rustwalkers =1,
 				/obj/item/clothing/suit/f13/tribal/rustwalkers = 1,
-				/obj/item/stack/sheet/leather = 2,
-				/obj/item/salvage/crafting = 1)
+				/obj/item/stack/sheet/leather = 2)
 
 /datum/crafting_recipe/tribalwar/rustwalkers/garb
 	name = "Rustwalkers Garb"
@@ -329,8 +328,7 @@
 	time = 60
 	reqs = list(/obj/item/clothing/suit/f13/tribal/light/eighties =1,
 				/obj/item/clothing/suit/f13/tribal/eighties = 1,
-				/obj/item/stack/sheet/leather = 2,
-				/obj/item/salvage/crafting = 1)
+				/obj/item/stack/sheet/leather = 2)
 
 /datum/crafting_recipe/tribalwar/eighties/garb
 	name = "Eighties Garb"

@@ -547,7 +547,7 @@
 
 /obj/item/clothing/under/f13/chinasuitcosmetic
 	name = "dysfunctional chinese stealth suit"
-	desc = "(II) A matte grey set of ultralight composite above a carefully padded noise-absorbant suit. This unit, used by Chinese special forces during the great war, looks to have had it's fusion matrix removed, and is all but a fashion statement now."
+	desc = "A matte grey set of ultralight composite above a carefully padded noise-absorbant suit. This unit, used by Chinese special forces during the great war, looks to have had it's fusion matrix removed, and is all but a fashion statement now."
 	icon_state = "stealthsuit"
 	item_state = "stealthsuit"
 

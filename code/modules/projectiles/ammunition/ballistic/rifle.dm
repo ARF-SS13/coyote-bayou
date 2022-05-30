@@ -16,10 +16,12 @@
 	desc = "Like shrapnel, but smaller, and thus more annoying."
 	projectile_type = /obj/item/projectile/bullet/a762/microshrapnel
 
+/*
 /obj/item/ammo_casing/a762/uraniumtipped
 	name = "7.62 uranium tipped bullet casing"
 	desc = "Not depleted uranium. Regular uranium."
 	projectile_type = /obj/item/projectile/bullet/a762/uraniumtipped
+*/
 
 /obj/item/ammo_casing/a762/rubber
 	name = "7.62 rubber bullet casing"
@@ -43,10 +45,12 @@
 	desc = "Like shrapnel, but smaller, and thus more annoying."
 	projectile_type = /obj/item/projectile/bullet/a556/microshrapnel
 
+/*
 /obj/item/ammo_casing/a556/uranium_tipped
 	name = "5.56 uranium-tipped bullet casing"
 	desc = "Tax money well spent."
 	projectile_type = /obj/item/projectile/bullet/a556/uraniumtipped
+*/
 
 /obj/item/ammo_casing/a556/sport //.223
 	name = ".223 bullet casing"

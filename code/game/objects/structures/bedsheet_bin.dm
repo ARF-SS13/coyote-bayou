@@ -213,6 +213,20 @@ LINEN BINS
 	icon_state = "sheetpirate"
 	dream_messages = list("doing whatever oneself wants", "cause a pirate is free", "being a pirate", "stealing", "landlubbers", "gold", "a buried treasure", "yarr", "avast", "a swashbuckler", "sailing the Seven Seas", "a parrot", "a monkey", "an island", "a talking skull")
 
+
+/obj/item/bedsheet/enclave
+	name = "enclave bedsheet"
+	desc = "It's a well-used but well kept black bedsheet with the enclave logo sewn into it."
+	icon_state = "sheetenclave"
+	dream_messages = list("america", "the damn muties", "the star spangled banner", "navarro", "our troops", "that old hero frank horrigan")
+
+/obj/item/bedsheet/sneedclave
+	name = "american bedsheet"
+	desc = "It's a well-used but well kept black bedsheet with the enclave logo sewn into it. Stars line the inside of it"
+	icon_state = "sheetsneedclave"
+	dream_messages = list("AMERICA", "FREEDOM", "BALD EAGLES")
+
+
 /obj/item/bedsheet/gondola
 	name = "gondola bedsheet"
 	desc = "A precious bedsheet made from the hide of a rare and peculiar critter."

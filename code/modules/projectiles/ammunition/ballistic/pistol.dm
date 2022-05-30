@@ -29,7 +29,7 @@
 	name = "9mm rubber bullet casing"
 	desc = "A 9mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c9mm/rubber
-	
+
 /obj/item/ammo_casing/c9mm/incendiary
 	name = "9mm incendiary bullet casing"
 	desc = "A 9mm incendiary bullet casing."
@@ -47,11 +47,13 @@
 	caliber = "14"
 	projectile_type = /obj/item/projectile/bullet/mm14/contam
 
+/*
 /obj/item/ammo_casing/p14mm/uraniumtipped
 	name = "14mm uranium-tipped bullet casing"
 	desc = "A 14mm uranium-tipped bullet casing."
 	caliber = "14"
 	projectile_type = /obj/item/projectile/bullet/mm14/uraniumtipped
+*/
 
 // 22lr
 /obj/item/ammo_casing/a22

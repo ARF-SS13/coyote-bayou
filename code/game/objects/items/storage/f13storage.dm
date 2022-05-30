@@ -166,21 +166,26 @@
 /obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
 	var/show_message = FALSE
 	var/turf/tile = user.loc
+	var/obj/item/ammo_casing/B
 	if (!isturf(tile))
 		return
-
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
 		for(var/A in tile)
-			if (!is_type_in_typecache(A, STR.can_hold))
-				continue
-			else if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
-				show_message = TRUE
-			else
-				if(!spam_protection)
-					to_chat(user, "<span class='warning'>Your [name] is full and can't hold any more!</span>")
-					spam_protection = TRUE
+			if (is_type_in_typecache(A, STR.can_hold))
+				B = A
+				if(B.is_pickable)
+					if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
+						show_message = TRUE
+					else
+						if(!spam_protection)
+							to_chat(user, "<span class='warning'>Your [name] is full and can't hold any more!</span>")
+							spam_protection = TRUE
+							continue
+				else
 					continue
+			else
+				continue
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		user.visible_message("<span class='notice'>[user] scoops up the casings beneath [user.p_them()].</span>", \

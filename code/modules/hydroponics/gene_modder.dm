@@ -414,7 +414,6 @@
 // Gene modder for seed vault ship, built with high tech alien parts.
 /obj/machinery/plantgenes/seedvault
 	circuit = /obj/item/circuitboard/machine/plantgenes/vault
-
 /*
  *  Plant DNA disk
  */

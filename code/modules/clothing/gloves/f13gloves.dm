@@ -1,5 +1,5 @@
 /obj/item/clothing/gloves/f13
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 10, rad = 10, fire = 10, acid = 10)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
 
 /obj/item/clothing/gloves/f13/baseball
 	name = "baseball glove"
@@ -60,7 +60,7 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
-	armor = list(melee = 10, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 80, rad = 80, fire = 80, acid = 50)
+	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
 /obj/item/clothing/gloves/f13/handwraps
 	name = "handwraps"
@@ -111,20 +111,20 @@
 
 /obj/item/clothing/gloves/f13/mutant
 	name = "mutant bracers"
-	desc = "(IV) A pair of metal tubes with rope on the inside."
+	desc = "A pair of metal tubes with rope on the inside."
 	icon_state = "mutie_bracer"
 	item_state = "mutie_bracer"
-	armor = list("tier" = 4, "energy" = 40, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
+	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/gloves/f13/mutant/mk2
 	name = "mutant bracers"
-	desc = "(IV) A pair of giant metal tubes with rope on the inside."
+	desc = "A pair of giant metal tubes with rope on the inside."
 	icon_state = "mutie_bracer_mk2"
 	item_state = "mutie_bracer_mk2"
 
 /obj/item/clothing/gloves/f13/mutant/sign
 	name = "mutant sign bracers"
-	desc = "(IV) See this sign? It's a sign to move on."
+	desc = "See this sign? It's a sign to move on."
 	icon_state = "mutie_bracer_sign"
 	item_state = "mutie_bracer_sign"
 

@@ -246,7 +246,22 @@
 					/obj/item/clothing/suit/toggle/labcoat/depjacket/sci = 4,
 					/obj/item/clothing/shoes/sneakers/white = 4,
 					/obj/item/radio/headset/headset_sci = 4,
+					/obj/item/clothing/glasses/hud/diagnostic = 3,
+					/obj/item/clothing/head/beret/robo = 3,
+					/obj/item/clothing/under/rank/rnd/roboticist = 3,
+					/obj/item/clothing/under/rank/rnd/roboticist/sleek = 3,
+					/obj/item/clothing/under/rank/rnd/roboticist/skirt = 3,
+					/obj/item/clothing/suit/hooded/wintercoat/robotics = 3,
+					/obj/item/clothing/suit/toggle/labcoat = 3,
+					/obj/item/clothing/shoes/sneakers/black = 3,
+					/obj/item/clothing/gloves/fingerless = 3,
+					/obj/item/clothing/head/soft/black = 3,
+					/obj/item/clothing/mask/bandana/skull = 2,
 					/obj/item/clothing/mask/gas = 5)
+	contraband = list(/obj/item/clothing/suit/hooded/techpriest = 2,
+					/obj/item/clothing/under/misc/mechsuitred = 1,
+					/obj/item/clothing/under/misc/mechsuitwhite = 1,
+					/obj/item/clothing/under/misc/mechsuitblue = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/science_wardrobe
 	payment_department = ACCOUNT_SCI
 	cost_multiplier_per_dept = list(ACCOUNT_SCI = 0)
