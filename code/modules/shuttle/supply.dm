@@ -24,8 +24,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/effect/portal,
 		/obj/item/shared_storage,
 		/obj/structure/extraction_point,
-		/obj/machinery/syndicatebomb,
-		/obj/item/hilbertshotel
+		/obj/machinery/syndicatebomb
 	)))
 
 GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
