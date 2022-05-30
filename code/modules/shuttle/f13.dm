@@ -105,3 +105,16 @@
 	possible_destinations = "Vault113_Ground;Vault113_Level_1"
 	flags_1 = NODECONSTRUCT_1
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+
+/obj/machinery/computer/shuttle/plant_elevator
+	name = "mass fusion elevator controls"
+	desc = "Controls the elevator."
+	icon_screen = "shuttle"
+	icon_keyboard = "tech_key"
+	light_color = LIGHT_COLOR_CYAN
+	circuit = /obj/item/circuitboard/computer/plantelevator
+	shuttleId = "plant_elevator"
+	possible_destinations = "plant_ground;plant_basement"
+	flags_1 = NODECONSTRUCT_1
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+

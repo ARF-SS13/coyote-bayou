@@ -207,6 +207,10 @@
 	port_id = "southbunker"
 	can_be_bought = FALSE
 
+/datum/map_template/shuttle/plant_elevator
+	port_id = "plant_elevator"
+	can_be_bought = FALSE
+
 /datum/map_template/shuttle/vault113
 	port_id = "vault113"
 	can_be_bought = FALSE
@@ -655,6 +659,10 @@
 /datum/map_template/shuttle/southbunker/elevator
 	suffix = "elevator"
 	name = "South Bunker Elevator"
+
+/datum/map_template/shuttle/plant/elevator
+	suffix = "elevator"
+	name = "Mass Fusion Elevator"
 
 /datum/map_template/shuttle/vault113/elevator
 	suffix = "elevator"

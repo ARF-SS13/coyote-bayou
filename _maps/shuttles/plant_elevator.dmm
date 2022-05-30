@@ -1,0 +1,43 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/open/floor/engine,
+/area/shuttle/plant_elevator)
+"G" = (
+/obj/docking_port/mobile/elevator{
+	dheight = 0;
+	dir = 8;
+	dwidth = 1;
+	height = 3;
+	id = "plant_elevator";
+	name = "mass fusion elevator";
+	width = 3
+	},
+/turf/open/floor/engine,
+/area/shuttle/plant_elevator)
+"L" = (
+/obj/machinery/computer/shuttle/plant_elevator,
+/turf/open/floor/engine,
+/area/shuttle/plant_elevator)
+"N" = (
+/obj/machinery/light/small{
+	icon_state = "bulb";
+	dir = 8
+	},
+/turf/open/floor/engine,
+/area/shuttle/plant_elevator)
+
+(1,1,1) = {"
+a
+N
+a
+"}
+(2,1,1) = {"
+L
+a
+a
+"}
+(3,1,1) = {"
+a
+G
+a
+"}
