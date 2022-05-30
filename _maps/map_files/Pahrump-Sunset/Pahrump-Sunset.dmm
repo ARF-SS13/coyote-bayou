@@ -981,6 +981,12 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/ncr)
+"adt" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plasteel/elevatorshaft,
+/area/f13/building/massfusion)
 "adu" = (
 /obj/structure/stairs{
 	dir = 4
@@ -33445,19 +33451,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/east)
-"fOS" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dir = 8;
-	dwidth = 1;
-	height = 3;
-	id = "plant_ground";
-	name = "Ground";
-	roundstart_template = /datum/map_template/shuttle/southbunker/elevator;
-	width = 3
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/building/massfusion)
 "fOX" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
@@ -108965,7 +108958,7 @@ oNI
 afg
 afa
 vVo
-aVj
+adt
 aVj
 aVj
 aHV
@@ -109223,7 +109216,7 @@ mFy
 aWw
 vVo
 aVj
-fOS
+aVj
 aVj
 aaH
 fPS

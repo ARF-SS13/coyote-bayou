@@ -449,7 +449,3 @@
 /obj/item/circuitboard/computer/bos
 	name = "Brotherhood Monitor (Computer Board)"
 	build_path = /obj/machinery/computer/security/bos
-
-/obj/item/circuitboard/computer/plantelevator
-	name = "Mass Fusion Elevator Control (Computer board)"
-	build_path = /obj/machinery/computer/shuttle/plant_elevator

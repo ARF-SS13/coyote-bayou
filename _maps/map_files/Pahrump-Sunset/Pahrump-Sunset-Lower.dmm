@@ -13011,16 +13011,6 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dir = 8;
-	dwidth = 1;
-	height = 3;
-	id = "plant_basement";
-	name = "Ground";
-	roundstart_template = /datum/map_template/shuttle/southbunker/elevator;
-	width = 3
-	},
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
 "oEi" = (
@@ -17501,6 +17491,7 @@
 	},
 /area/f13/tunnel)
 "wqv" = (
+/obj/item/salvage/crafting,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
