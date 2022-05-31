@@ -129,9 +129,9 @@
 	last_alarm = world.time
 	var/area/A = get_base_area(src)
 	A.firealert(src)
-	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	playsound(loc, 'sound/machines/siren.ogg', 75)
 	if(user)
-		log_game("[user] triggered a fire alarm at [COORD(src)]")
+		log_game("[user] triggered a security alarm at [COORD(src)]")
 
 /obj/machinery/firealarm/proc/reset(mob/user)
 	if(!is_operational())
@@ -307,6 +307,22 @@
 		set_light(l_power = 0.8)
 	else
 		set_light(l_power = 0)
+
+
+
+/obj/machinery/firealarm/siren //an alarm that's a siren instead. Intruder alert!
+	name = "security alarm"
+
+/obj/machinery/firealarm/siren/proc/alarm(mob/user)
+	if(!is_operational() || (last_alarm+FIREALARM_COOLDOWN > world.time))
+		return
+	last_alarm = world.time
+	var/area/A = get_base_area(src)
+	A.firealert(src)
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	if(user)
+		log_game("[user] triggered a fire alarm at [COORD(src)]")
+
 
 /*
  * Return of Party button

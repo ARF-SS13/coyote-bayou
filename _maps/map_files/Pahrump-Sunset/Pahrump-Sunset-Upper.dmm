@@ -1706,6 +1706,12 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"eAC" = (
+/obj/machinery/firealarm/siren{
+	pixel_x = 28
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland/ncr)
 "eCw" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -13765,7 +13771,7 @@ rLB
 rLB
 cAO
 hHO
-hHO
+eAC
 hHO
 hHO
 hHO
