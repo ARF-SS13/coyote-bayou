@@ -313,7 +313,7 @@
 /obj/machinery/firealarm/siren //an alarm that's a siren instead. Intruder alert!
 	name = "security alarm"
 
-/obj/machinery/firealarm/siren/proc/alarm(mob/user)
+/obj/machinery/firealarm/siren/alarm(mob/user)
 	if(!is_operational() || (last_alarm+FIREALARM_COOLDOWN > world.time))
 		return
 	last_alarm = world.time
