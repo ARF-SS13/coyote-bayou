@@ -1706,12 +1706,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
-"eAC" = (
-/obj/machinery/firealarm/siren{
-	pixel_x = 28
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland/ncr)
 "eCw" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -3913,6 +3907,12 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/wood_fancy,
 /area/f13/ncr)
+"owj" = (
+/obj/machinery/firealarm/siren{
+	pixel_x = 28
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland/ncr)
 "owR" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old{
@@ -13771,7 +13771,7 @@ rLB
 rLB
 cAO
 hHO
-eAC
+owj
 hHO
 hHO
 hHO
@@ -26016,7 +26016,7 @@ wqF
 wqF
 wqF
 wqF
-vqz
+wqF
 dtb
 dtb
 dtb
