@@ -284,8 +284,8 @@
 /obj/item/clothing/suit/armor/f13/legion/venator
 	name = "legion explorer armor"
 	desc = "Explorer armor reinforced with metal plates and chainmail."
-	icon_state = "legion_venator"
-	item_state = "legion_venator"
+	icon_state = "legion-venator"
+	item_state = "legion-venator"
 	armor = list("melee" = 50, "bullet" = 35, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
 
