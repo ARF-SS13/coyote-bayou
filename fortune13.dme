@@ -3748,4 +3748,13 @@
 #include "modular_citadel\code\modules\reagents\objects\items.dm"
 #include "modular_sunset\code\game\objects\sunsetmisc.dm"
 #include "modular_sunset\code\mob\renegade.dm"
+#include "modular_sunset\code\modules\client\loadout\head.dm"
+#include "modular_sunset\code\modules\client\loadout\mask.dm"
+#include "modular_sunset\code\modules\client\loadout\suit.dm"
+#include "modular_sunset\code\modules\client\loadout\uniform.dm"
+#include "modular_sunset\code\modules\clothing\head\f13head.dm"
+#include "modular_sunset\code\modules\clothing\masks\gasmask.dm"
+#include "modular_sunset\code\modules\clothing\suits\f13suits.dm"
+#include "modular_sunset\code\modules\clothing\under\f13.dm"
+#include "modular_sunset\code\modules\fallout\obj\trash_stack.dm"
 // END_INCLUDE
