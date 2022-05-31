@@ -129,9 +129,9 @@
 	last_alarm = world.time
 	var/area/A = get_base_area(src)
 	A.firealert(src)
-	playsound(loc, 'sound/machines/siren.ogg', 75)
+	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
 	if(user)
-		log_game("[user] triggered a security alarm at [COORD(src)]")
+		log_game("[user] triggered a fire alarm at [COORD(src)]")
 
 /obj/machinery/firealarm/proc/reset(mob/user)
 	if(!is_operational())
@@ -319,9 +319,9 @@
 	last_alarm = world.time
 	var/area/A = get_base_area(src)
 	A.firealert(src)
-	playsound(loc, 'goon/sound/machinery/FireAlarm.ogg', 75)
+	playsound(loc, 'sound/machines/siren.ogg', 75)
 	if(user)
-		log_game("[user] triggered a fire alarm at [COORD(src)]")
+		log_game("[user] triggered a security alarm at [COORD(src)]")
 
 
 /*

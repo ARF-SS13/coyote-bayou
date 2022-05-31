@@ -7934,6 +7934,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
+"fEc" = (
+/turf/closed/wall/f13/store{
+	desc = "A pre-War wall made of solid concrete.";
+	name = "concrete wall"
+	},
+/area/f13/caves)
 "fEQ" = (
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -8819,6 +8825,12 @@
 	icon_state = "neutralrusty"
 	},
 /area/f13/tunnel)
+"hjI" = (
+/obj/structure/stairs,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/caves)
 "hkB" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/darkblue/side{
@@ -9281,6 +9293,10 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
+"hVu" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "hWq" = (
 /obj/machinery/light{
 	dir = 1
@@ -9549,6 +9565,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"iud" = (
+/obj/structure/table,
+/obj/item/toner,
+/obj/item/toner,
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "ivJ" = (
 /obj/structure/barricade/bars{
 	layer = 5
@@ -12531,6 +12553,13 @@
 /obj/machinery/hydroponics/soil,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"nIj" = (
+/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	pixel_x = -16
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "nJc" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -13849,6 +13878,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
+"qbt" = (
+/obj/structure/filingcabinet,
+/obj/structure/filingcabinet{
+	pixel_x = 16
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "qbT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
@@ -13920,6 +13956,10 @@
 	},
 /turf/open/floor/plating,
 /area/f13/brotherhood)
+"qhg" = (
+/obj/machinery/photocopier,
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "qhp" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 6
@@ -15803,6 +15843,10 @@
 /obj/effect/spawner/lootdrop/clothing_high,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"tpO" = (
+/obj/structure/filingcabinet,
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "tqE" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/radroach,
@@ -16039,6 +16083,11 @@
 /obj/machinery/door/firedoor/heavy,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
+"tNv" = (
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
+/area/f13/caves)
 "tNM" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -16507,6 +16556,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"uHc" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "uHk" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -18134,6 +18189,9 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"xBD" = (
+/turf/open/floor/plasteel/vault,
+/area/f13/caves)
 "xBM" = (
 /obj/structure/chair/stool/retro,
 /obj/effect/decal/cleanable/dirt,
@@ -24528,12 +24586,12 @@ aaa
 aaa
 aae
 aae
-aae
-aak
-aak
-aak
-aak
-aae
+fEc
+fEc
+fEc
+fEc
+fEc
+fEc
 aae
 aae
 aae
@@ -24785,13 +24843,13 @@ aaa
 aaa
 aae
 aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
+fEc
+qbt
+xBD
+uHc
+hVu
+fEc
+fEc
 aae
 aae
 aae
@@ -25042,13 +25100,13 @@ aaa
 aaa
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+fEc
+tpO
+tNv
+tNv
+xBD
+hjI
+fEc
 aae
 aae
 aae
@@ -25299,13 +25357,13 @@ aaa
 aaa
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+fEc
+nIj
+xBD
+iud
+qhg
+fEc
+fEc
 aae
 aae
 aae
@@ -25556,12 +25614,12 @@ aaa
 aaa
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+fEc
+fEc
+fEc
+fEc
+fEc
+fEc
 aae
 aae
 aae
