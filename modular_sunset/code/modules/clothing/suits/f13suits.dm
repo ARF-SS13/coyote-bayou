@@ -22,21 +22,21 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/f13/goner/red
-	name = "red-patched dull trenchcoat"
-	desc = "A rather dull trenchcoat with red arm patches.<br>Guess war can be boring too."
+	name = "red-patched olive trenchcoat"
+	desc = "An rather dull, olive trenchcoat with red arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_r"
 
 /obj/item/clothing/suit/f13/goner/green
-	name = "green-patched dull trenchcoat"
-	desc = "A rather dull trenchcoat with green arm patches.<br>Guess war can be boring too."
+	name = "green-patched olive trenchcoat"
+	desc = "An rather dull, olive trenchcoat with green arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_g"
 
 /obj/item/clothing/suit/f13/goner/blue
-	name = "blue-patched dull trenchcoat"
-	desc = "A rather dull trenchcoat with blue arm patches.<br>Guess war can be boring too."
+	name = "blue-patched olive trenchcoat"
+	desc = "An rather dull, olive trenchcoat with blue arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_b"
 
 /obj/item/clothing/suit/f13/goner/yellow
-	name = "yellow-patched dull trenchcoat"
-	desc = "A rather dull trenchcoat with yellow arm patches.<br>Guess war can be boring too."
+	name = "yellow-patched olive trenchcoat"
+	desc = "An rather dull, olive trenchcoat with yellow arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
