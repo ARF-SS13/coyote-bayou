@@ -350,11 +350,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "abl" = (
-/obj/structure/railing{
-	dir = 10
+/obj/machinery/light/small{
+	dir = 4;
+	light_color = "red"
 	},
 /turf/open/transparent/openspace,
-/area/f13/radiation)
+/area/f13/wasteland/bighorn)
 "abm" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/grass/wasteland{
@@ -1613,6 +1614,10 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland/ncr)
+"afk" = (
+/obj/structure/railing,
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "afl" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright2"
@@ -1731,6 +1736,14 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"afH" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/radiation)
 "afI" = (
 /obj/structure/table,
 /obj/machinery/microwave,
@@ -3540,9 +3553,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"akZ" = (
-/turf/open/transparent/openspace,
-/area/f13/ncr)
 "ala" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood,
@@ -3586,14 +3596,11 @@
 	},
 /area/f13/wasteland/west)
 "alh" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
+/obj/structure/railing{
+	dir = 9
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 1;
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/bighorn)
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "ali" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
@@ -16183,6 +16190,14 @@
 /obj/item/fishy/lobster,
 /turf/open/floor/wood_wide,
 /area/f13/building/khanfort)
+"aWP" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrusty"
+	},
+/area/f13/radiation)
 "aWQ" = (
 /obj/effect/overlay/junk/toilet{
 	dir = 8
@@ -22226,13 +22241,6 @@
 	icon_state = "outermaincornerouter"
 	},
 /area/f13/wasteland/bighorn)
-"boX" = (
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "red"
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland/bighorn)
 "boY" = (
 /obj/machinery/trading_machine/armor,
 /turf/open/floor/wood_mosaic,
@@ -22735,13 +22743,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
 /area/f13/city/bighorn)
-"bqR" = (
-/obj/machinery/light/small{
-	dir = 4;
-	light_color = "red"
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland/bighorn)
 "bqT" = (
 /obj/structure/lamp_post{
 	dir = 4
@@ -24215,6 +24216,12 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland/bighorn)
+"byX" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "byY" = (
 /obj/structure/flora/tree/wasteland{
 	pixel_x = -9;
@@ -25806,6 +25813,12 @@
 	icon_state = "horizontaloutermain2right"
 	},
 /area/f13/wasteland/bighorn)
+"bYI" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "bYK" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -28882,7 +28895,7 @@
 /area/f13/wasteland/legion)
 "cVK" = (
 /obj/structure/railing{
-	dir = 4
+	dir = 5
 	},
 /turf/open/transparent/openspace,
 /area/f13/radiation)
@@ -31599,13 +31612,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "eMj" = (
-/obj/effect/turf_decal/stripes/asteroid/line{
-	dir = 4
+/obj/structure/railing{
+	dir = 6
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/bighorn)
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "eMl" = (
 /obj/structure/table/wood/settler,
 /obj/effect/decal/cleanable/dirt,
@@ -31720,11 +31731,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/bighorn)
 "ePK" = (
-/obj/structure/railing{
-	dir = 9
-	},
-/turf/open/transparent/openspace,
-/area/f13/radiation)
+/obj/structure/fence/corner/wooden,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/khanfort)
 "ePL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/car,
@@ -32307,6 +32316,9 @@
 /obj/item/flag/ncr,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/ncr)
+"fiy" = (
+/turf/open/transparent/openspace,
+/area/f13/ncr)
 "fiO" = (
 /obj/structure/decoration/clock/old,
 /turf/closed/wall/f13/supermart,
@@ -32595,6 +32607,12 @@
 	icon_state = "verticalleftborderright2bottom"
 	},
 /area/f13/wasteland/followers)
+"fto" = (
+/obj/structure/railing{
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/khanfort)
 "fts" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
@@ -34795,7 +34813,13 @@
 	},
 /area/f13/wasteland/bighorn)
 "gOn" = (
-/obj/structure/fence/corner/wooden,
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = -8;
+	pixel_y = 12
+	},
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/khanfort)
 "gOH" = (
@@ -35632,11 +35656,12 @@
 	},
 /area/f13/building/mall)
 "hua" = (
-/obj/structure/railing{
-	dir = 8
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "red"
 	},
 /turf/open/transparent/openspace,
-/area/f13/radiation)
+/area/f13/wasteland/bighorn)
 "hul" = (
 /obj/structure/car/rubbish2,
 /turf/open/indestructible/ground/outside/road{
@@ -38119,6 +38144,12 @@
 	name = "stone floor"
 	},
 /area/f13/legion)
+"iVj" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/radiation)
 "iVI" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -38575,12 +38606,6 @@
 	name = "pool water"
 	},
 /area/f13/legion)
-"jiX" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/transparent/openspace,
-/area/f13/radiation)
 "jjk" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottomleft"
@@ -39498,11 +39523,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/bighorn)
 "jQx" = (
-/obj/structure/fence/corner/wooden{
+/obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/khanfort)
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland/bighorn)
 "jQQ" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "topshadowright"
@@ -39968,11 +39995,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/building)
-"kjS" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
-/turf/open/floor/wood_worn,
-/area/f13/building/khanfort)
 "kjU" = (
 /obj/structure/sign/poster/official/cohiba_robusto_ad{
 	pixel_y = 32
@@ -40363,12 +40385,6 @@
 "kyf" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building/khanfort)
-"kyq" = (
-/obj/structure/railing{
-	dir = 6
-	},
-/turf/open/transparent/openspace,
-/area/f13/radiation)
 "kyv" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2"
@@ -43686,9 +43702,14 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/ncr)
 "mwL" = (
-/obj/structure/railing,
-/turf/open/transparent/openspace,
-/area/f13/radiation)
+/obj/effect/turf_decal/stripes/asteroid/line{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	dir = 1;
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland/bighorn)
 "mwU" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland/bighornbunker)
@@ -47043,16 +47064,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/closed/wall/f13/store,
 /area/f13/building/museum)
-"oFJ" = (
-/obj/structure/destructible/tribal_torch/lit{
-	pixel_x = -8;
-	pixel_y = 12
-	},
-/obj/structure/fence/corner/wooden{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/khanfort)
 "oGh" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -48684,6 +48695,11 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland/museum)
+"pEm" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/turf/open/floor/wood_worn,
+/area/f13/building/khanfort)
 "pEs" = (
 /obj/machinery/light{
 	dir = 8
@@ -52600,11 +52616,11 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/khanfort)
 "sjO" = (
-/obj/structure/railing{
-	dir = 5
+/obj/structure/fence/corner/wooden{
+	dir = 4
 	},
-/turf/open/transparent/openspace,
-/area/f13/radiation)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/khanfort)
 "skt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2bottom"
@@ -61983,10 +61999,10 @@
 /area/f13/building/museum)
 "yja" = (
 /obj/structure/railing{
-	color = "#A47449"
+	dir = 1
 	},
 /turf/open/transparent/openspace,
-/area/f13/building/khanfort)
+/area/f13/radiation)
 "yjl" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	light_color = "#f4e3b0"
@@ -64105,7 +64121,7 @@ aaa
 aae
 bqp
 uOl
-yja
+fto
 iro
 bqp
 mHZ
@@ -64362,7 +64378,7 @@ aaa
 aae
 bqp
 aaW
-yja
+fto
 iro
 hrM
 mHZ
@@ -64619,7 +64635,7 @@ aaa
 aae
 bqp
 aaW
-yja
+fto
 iro
 bqp
 mHZ
@@ -65675,8 +65691,8 @@ diz
 cNM
 ssK
 diz
-jQx
-oFJ
+sjO
+gOn
 fej
 nUK
 aaa
@@ -66675,7 +66691,7 @@ aae
 ufh
 lwG
 lte
-kjS
+pEm
 nOI
 vtM
 vtM
@@ -67218,7 +67234,7 @@ nVn
 cRx
 cRx
 cRx
-gOn
+ePK
 fej
 nUK
 aaa
@@ -68516,8 +68532,8 @@ aae
 aae
 xLa
 opm
-akZ
-akZ
+fiy
+fiy
 lZB
 hmu
 aon
@@ -78007,8 +78023,8 @@ glX
 ydE
 glX
 ydE
-eMj
-alh
+jQx
+mwL
 aTw
 ygj
 aae
@@ -78521,7 +78537,7 @@ bji
 bYt
 bYZ
 bji
-bqR
+abl
 xoV
 aTw
 ygj
@@ -83377,7 +83393,7 @@ bjq
 bql
 bjq
 bjq
-boX
+hua
 xoV
 bUc
 aRa
@@ -111699,7 +111715,7 @@ aae
 aae
 aby
 adu
-ese
+aWP
 dBY
 dBY
 lts
@@ -111958,13 +111974,13 @@ aby
 adG
 lwr
 pZn
-ePK
-hua
+alh
+bYI
 aeP
 aeP
 aeP
-hua
-abl
+bYI
+byX
 dBY
 ese
 adG
@@ -112215,13 +112231,13 @@ fNr
 aik
 aXT
 dBY
-jiX
+yja
 aeP
 aeP
 aeP
 aeP
 aeP
-mwL
+afk
 lts
 ese
 agR
@@ -113243,13 +113259,13 @@ abx
 aik
 ese
 dBY
-jiX
+yja
 aeP
 aeP
 aeP
 aeP
 aeP
-mwL
+afk
 dBY
 aXT
 agR
@@ -113500,13 +113516,13 @@ aby
 adG
 ese
 dBY
-sjO
 cVK
+iVj
 aeP
 aeP
 aeP
-cVK
-kyq
+iVj
+eMj
 dBY
 ese
 adG
@@ -113755,7 +113771,7 @@ aae
 aae
 aby
 bmz
-ese
+afH
 dBY
 dBY
 dBY
