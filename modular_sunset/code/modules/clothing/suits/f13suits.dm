@@ -23,20 +23,20 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /obj/item/clothing/suit/f13/goner/red
 	name = "red-patched olive trenchcoat"
-	desc = "An rather dull, olive trenchcoat with red arm patches.<br>Guess war can be boring too."
+	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_r"
 
 /obj/item/clothing/suit/f13/goner/green
 	name = "green-patched olive trenchcoat"
-	desc = "An rather dull, olive trenchcoat with green arm patches.<br>Guess war can be boring too."
+	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_g"
 
 /obj/item/clothing/suit/f13/goner/blue
 	name = "blue-patched olive trenchcoat"
-	desc = "An rather dull, olive trenchcoat with blue arm patches.<br>Guess war can be boring too."
+	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_b"
 
 /obj/item/clothing/suit/f13/goner/yellow
 	name = "yellow-patched olive trenchcoat"
-	desc = "An rather dull, olive trenchcoat with yellow arm patches.<br>Guess war can be boring too."
+	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
