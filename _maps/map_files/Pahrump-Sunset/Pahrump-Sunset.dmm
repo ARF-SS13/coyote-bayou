@@ -22522,6 +22522,14 @@
 /obj/effect/spawner/lootdrop/raiderloot,
 /obj/effect/spawner/lootdrop/raiderloot,
 /obj/structure/rack/shelf_metal,
+/obj/machinery/button/door{
+	id = "khanfortressexterior";
+	pixel_y = -35
+	},
+/obj/machinery/button/door{
+	id = "khanfortressinterior";
+	pixel_y = -26
+	},
 /turf/open/floor/wood_worn,
 /area/f13/building/khanfort)
 "bqf" = (
@@ -35725,7 +35733,9 @@
 /turf/open/indestructible/ground/outside/savannah/bottomcenter,
 /area/f13/wasteland/legion)
 "hrM" = (
-/obj/machinery/door/unpowered/securedoor/khandoor,
+/obj/machinery/door/unpowered/securedoor/khandoor{
+	name = "Chem Lab"
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
 "hrZ" = (
@@ -51560,6 +51570,12 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland/heaven)
+"ruL" = (
+/obj/machinery/door/unpowered/securedoor/khandoor{
+	name = "Armory"
+	},
+/turf/open/floor/wood_worn,
+/area/f13/building/khanfort)
 "ruO" = (
 /obj/structure/table/wood,
 /obj/item/paper/bitterdrink,
@@ -60240,16 +60256,10 @@
 	},
 /area/f13/wasteland/east)
 "wUP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/button/door{
-	id = "khanfortressexterior";
-	pixel_y = -35
+/obj/machinery/door/unpowered/securedoor/khandoor{
+	name = "Workshop"
 	},
-/obj/machinery/button/door{
-	id = "khanfortressinterior";
-	pixel_y = -26
-	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/wood_worn,
 /area/f13/building/khanfort)
 "wUQ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -61180,7 +61190,9 @@
 	},
 /area/f13/wasteland/ncr)
 "xCb" = (
-/obj/machinery/door/unpowered/securedoor/khandoor,
+/obj/machinery/door/unpowered/securedoor/khandoor{
+	name = "Infirmary"
+	},
 /turf/open/floor/wood_worn,
 /area/f13/building/khanfort)
 "xCy" = (
@@ -64845,7 +64857,7 @@ aae
 bqp
 aaW
 sLA
-wUP
+iro
 bqp
 mHZ
 mHZ
@@ -68447,7 +68459,7 @@ bqd
 bqp
 iro
 mHZ
-xCb
+wUP
 vtM
 vtM
 vtM
@@ -68701,7 +68713,7 @@ bqp
 bnU
 vtM
 vtM
-xCb
+ruL
 iro
 iro
 bqp
