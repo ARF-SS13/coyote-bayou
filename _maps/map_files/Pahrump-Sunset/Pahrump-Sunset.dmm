@@ -22417,6 +22417,10 @@
 "bpx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/stairs/north,
+/obj/structure/railing/wood{
+	dir = 4;
+	pixel_x = 3
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "horizontaloutermain1"
@@ -24278,13 +24282,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
 	},
-/area/f13/wasteland/bighorn)
-"byX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/railing/corner{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland/bighorn)
 "byY" = (
 /obj/structure/flora/tree/wasteland{
@@ -28729,11 +28726,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "cNM" = (
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
-/obj/structure/fence/corner/wooden{
-	dir = 4
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
 	},
 /turf/open/indestructible/ground/outside/savannah/bottomrightcorner,
 /area/f13/wasteland/khanfort)
@@ -32723,12 +32718,8 @@
 	},
 /area/f13/wasteland/followers)
 "fto" = (
-/obj/structure/railing/wood{
-	pixel_y = -2
-	},
-/obj/structure/railing/wood/post{
-	pixel_x = -15;
-	pixel_y = -2
+/obj/structure/railing{
+	color = "#A47449"
 	},
 /turf/open/transparent/openspace,
 /area/f13/building/khanfort)
@@ -32894,9 +32885,10 @@
 /area/f13/wasteland/east)
 "fya" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/railing/wood{
-	layer = 0;
-	pixel_y = 7
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood";
+	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
@@ -34930,13 +34922,6 @@
 	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/wasteland/bighorn)
-"gOn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/fluff/railing{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland/bighorn)
 "gOH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -35035,6 +35020,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "gSC" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
 /turf/open/indestructible/ground/outside/savannah/topright,
 /area/f13/wasteland/khanfort)
 "gSD" = (
@@ -35767,17 +35756,8 @@
 	},
 /area/f13/building/mall)
 "hua" = (
-/obj/effect/decal/riverbank,
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood";
-	pixel_y = 25
-	},
-/obj/structure/railing/wood/post{
-	pixel_x = -16;
-	pixel_y = 30
-	},
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/fence/corner/wooden,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/khanfort)
 "hul" = (
 /obj/structure/car/rubbish2,
@@ -37053,9 +37033,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ilV" = (
-/obj/structure/fence{
-	dir = 4
-	},
 /obj/structure/decoration/rag,
 /obj/structure/simple_door/metal/fence,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -38726,15 +38703,6 @@
 	name = "pool water"
 	},
 /area/f13/legion)
-"jiX" = (
-/obj/effect/decal/riverbank,
-/obj/structure/fence/wooden{
-	dir = 4;
-	icon_state = "post_wood";
-	pixel_y = 25
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/khanfort)
 "jjk" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottomleft"
@@ -39769,6 +39737,10 @@
 	},
 /area/f13/wasteland/bighorn)
 "jTK" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland/khanfort)
 "jTM" = (
@@ -40540,15 +40512,6 @@
 "kyf" = (
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building/khanfort)
-"kyq" = (
-/obj/structure/fence/corner/wooden{
-	dir = 8
-	},
-/obj/structure/fence/corner/wooden{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland/khanfort)
 "kyv" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2"
@@ -47636,6 +47599,13 @@
 	pixel_x = 25;
 	pixel_y = 18
 	},
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
+/obj/structure/fence/end/wooden{
+	pixel_x = -18
+	},
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland/khanfort)
 "oPA" = (
@@ -48163,10 +48133,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city/bighorn)
 "piC" = (
-/obj/structure/railing/wood{
-	dir = 4;
-	pixel_x = -30;
-	pixel_y = 1
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/building/khanfort)
@@ -48874,12 +48843,14 @@
 	},
 /area/f13/wasteland/museum)
 "pEm" = (
-/obj/effect/decal/riverbank,
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 25
+/obj/structure/destructible/tribal_torch/lit{
+	pixel_x = -8;
+	pixel_y = 12
 	},
-/turf/open/indestructible/ground/outside/water,
+/obj/structure/fence/corner/wooden{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/khanfort)
 "pEs" = (
 /obj/machinery/light{
@@ -49105,6 +49076,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
 "pOc" = (
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood"
+	},
 /turf/open/indestructible/ground/outside/savannah/topleft,
 /area/f13/wasteland/khanfort)
 "pOl" = (
@@ -49676,6 +49651,10 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
 	light_color = "#f4e3b0"
+	},
+/obj/structure/fluff/railing/corner{
+	color = "#A47449";
+	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/building/khanfort)
@@ -52797,18 +52776,6 @@
 "sjH" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel/khanfort)
-"sjO" = (
-/obj/effect/decal/riverbank,
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 25
-	},
-/obj/structure/railing/wood/post{
-	pixel_x = 15;
-	pixel_y = 30
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/khanfort)
 "skt" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2bottom"
@@ -53215,21 +53182,6 @@
 	icon_state = "horizontaloutermain2left"
 	},
 /area/f13/wasteland/massfusion)
-"swL" = (
-/obj/effect/decal/riverbank,
-/obj/structure/fence/wooden{
-	dir = 4;
-	pixel_y = 25
-	},
-/obj/structure/fence/wooden{
-	pixel_x = 18;
-	pixel_y = 21
-	},
-/obj/structure/fence/wooden{
-	pixel_x = 18
-	},
-/turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland/khanfort)
 "swX" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -53549,15 +53501,11 @@
 	},
 /area/f13/wasteland/east)
 "sLA" = (
-/obj/structure/railing/wood{
-	pixel_y = -2
+/obj/structure/fence/corner/wooden{
+	dir = 4
 	},
-/obj/structure/railing/wood/post{
-	pixel_x = 15;
-	pixel_y = -2
-	},
-/turf/open/transparent/openspace,
-/area/f13/building/khanfort)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/khanfort)
 "sMg" = (
 /obj/structure/table/wood/settler,
 /obj/item/storage/backpack/satchel/leather/withwallet,
@@ -57494,9 +57442,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/ncr)
 "vam" = (
-/obj/structure/railing/wood{
-	layer = 0;
-	pixel_y = 7
+/obj/structure/fence/wooden{
+	dir = 4;
+	icon_state = "post_wood";
+	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/khanfort)
@@ -62219,10 +62168,9 @@
 	},
 /area/f13/building/museum)
 "yja" = (
-/obj/structure/railing/wood{
-	pixel_y = -2
-	},
-/turf/open/transparent/openspace,
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/turf/open/floor/wood_worn,
 /area/f13/building/khanfort)
 "yjl" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -64599,7 +64547,7 @@ aaa
 aae
 bqp
 aaW
-yja
+fto
 iro
 hrM
 mHZ
@@ -64856,7 +64804,7 @@ aaa
 aae
 bqp
 aaW
-sLA
+fto
 iro
 bqp
 mHZ
@@ -65142,7 +65090,7 @@ ftF
 paB
 bzo
 oPm
-hua
+fej
 nUK
 nUK
 aaa
@@ -65399,7 +65347,7 @@ nVn
 iOU
 ggK
 pOc
-pEm
+fej
 nUK
 nUK
 aaa
@@ -65655,8 +65603,8 @@ tSx
 nVn
 jnX
 diz
-diz
-swL
+nVn
+fej
 nUK
 nUK
 aaa
@@ -65912,9 +65860,9 @@ diz
 cNM
 ssK
 diz
-diz
-mnK
+sLA
 pEm
+fej
 nUK
 aaa
 "}
@@ -66171,7 +66119,7 @@ qRL
 iAb
 dCT
 gSC
-pEm
+fej
 nUK
 aaa
 "}
@@ -66428,7 +66376,7 @@ xOp
 eao
 gwT
 jTK
-jiX
+fej
 nUK
 aaa
 "}
@@ -66685,7 +66633,7 @@ diz
 nCD
 bSl
 jTK
-pEm
+fej
 nUK
 aaa
 "}
@@ -66912,7 +66860,7 @@ aae
 ufh
 lwG
 lte
-xDI
+yja
 nOI
 vtM
 vtM
@@ -66942,7 +66890,7 @@ diz
 eao
 pQn
 jTK
-jiX
+fej
 nUK
 aaa
 "}
@@ -67199,7 +67147,7 @@ iZd
 cek
 rpN
 pOc
-pEm
+fej
 nUK
 aaa
 "}
@@ -67451,12 +67399,12 @@ lKr
 lKr
 qof
 mgP
-kyq
+nVn
 cRx
 cRx
 cRx
-cRx
-sjO
+hua
+fej
 nUK
 aaa
 "}
@@ -79256,7 +79204,7 @@ qrS
 blj
 blj
 blj
-bjS
+bUX
 bVI
 puU
 ydE
@@ -83370,8 +83318,8 @@ bze
 ceZ
 ydE
 sub
-byX
-gOn
+sub
+sub
 sub
 sub
 sub
