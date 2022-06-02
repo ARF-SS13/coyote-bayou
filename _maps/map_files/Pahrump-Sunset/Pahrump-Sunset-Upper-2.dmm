@@ -56,7 +56,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building/khanfort)
 "ia" = (
-/obj/structure/chair/wood{
+/obj/structure/chair/wood/fancy{
 	dir = 8
 	},
 /turf/open/floor/wood_mosaic,
@@ -91,9 +91,7 @@
 /turf/open/floor/wood_common,
 /area/f13/building/khanfort)
 "lh" = (
-/obj/machinery/door/unpowered/securedoor/khandoor{
-	name = "Initiation Chamber"
-	},
+/obj/machinery/door/unpowered/securedoor/khandoor,
 /turf/open/floor/wood_common,
 /area/f13/building/khanfort)
 "mM" = (
@@ -106,7 +104,7 @@
 /area/f13/wasteland/khanfort)
 "oV" = (
 /obj/structure/simple_door/interior{
-	name = "Noyan Quarters"
+	name = "Washroom"
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/building/khanfort)
@@ -281,7 +279,7 @@
 /area/f13/building/khanfort)
 "Os" = (
 /obj/structure/simple_door/metal{
-	name = "Noyan Quarters"
+	name = "Master Quarters"
 	},
 /turf/open/floor/wood_common,
 /area/f13/building/khanfort)
@@ -367,12 +365,6 @@
 "Ud" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_worn,
-/area/f13/building/khanfort)
-"Un" = (
-/obj/machinery/door/unpowered/securedoor/khandoor{
-	name = "Roof Access"
-	},
-/turf/open/floor/wood_common,
 /area/f13/building/khanfort)
 "Wt" = (
 /obj/structure/table/wood,
@@ -6805,7 +6797,7 @@ Gi
 Fs
 Fs
 Fs
-Un
+rN
 Fs
 Fs
 Tf
