@@ -102,7 +102,7 @@
 	. =  ..()
 
 /turf/open/floor/plating/f13/outside/desert/harsh
-	icon_state = "wasteland1"
+	icon_state = "wasteland"
 	icon = 'icons/fallout/turfs/ground_harsh.dmi'
 
 /turf/open/floor/plating/f13/outside/desert/harsh/Initialize()
@@ -114,6 +114,10 @@
 	desc = "A stretch of road."
 	icon = 'icons/turf/f13road.dmi'
 	icon_state = "outermiddle"
+
+/turf/open/floor/plating/f13/outside/road/harsh
+	icon = 'icons/fallout/turfs/f13roadharsh.dmi'
+	icon_state = "outerpavement"
 
 //GRAVEL INDOORS
 /turf/open/floor/plating/f13/inside/gravel
@@ -145,57 +149,6 @@
 
 
 //New standard wood floor for most areas, oak for Legion and pure log cabins only, maple for NCR and mayor only, maybe a diner.
-
-
-/turf/open/floor/carpet_new
-	name = "carpet"
-	desc = "Soft velvet carpeting. Feels good between your toes."
-	icon = 'icons/fallout/turfs/carpetnew.dmi'
-	//floor_tile = /obj/item/stack/tile/carpet
-	flags_1 = NONE
-	bullet_bounce_sound = null
-	footstep = FOOTSTEP_CARPET
-	barefootstep = FOOTSTEP_CARPET_BAREFOOT
-	clawfootstep = FOOTSTEP_CARPET_BAREFOOT
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	tiled_dirt = FALSE
-
-/turf/open/floor/carpet_new/carpet_red
-	icon_state = "carpet_red"
-
-/turf/open/floor/carpet_new/carpet_red/edge
-	icon_state = "carpet_red_edge"
-
-/turf/open/floor/carpet_new/carpet_blue
-	icon_state = "carpet_blue"
-
-/turf/open/floor/carpet_new/carpet_blue/edge
-	icon_state = "carpet_blue_edge"
-
-/turf/open/floor/carpet_new/carpet_green
-	icon_state = "carpet_green"
-
-/turf/open/floor/carpet_new/carpet_green/edge
-	icon_state = "carpet_green_edge"
-
-/turf/open/floor/carpet_new/carpet_violet
-	icon_state = "carpet_violet"
-
-/turf/open/floor/carpet_new/carpet_violet/edge
-	icon_state = "carpet_violet_edge"
-
-/turf/open/floor/carpet_new/carpet_shaggyred
-	icon_state = "shaggyred"
-
-/turf/open/floor/carpet_new/carpet_shaggygreen
-	icon_state = "shaggygreen"
-
-/turf/open/floor/carpet_new/carpet_shaggyblue
-	icon_state = "shaggyblue"
-
-/turf/open/floor/carpet_new/carpet_shaggyviolet
-	icon_state = "shaggyviolet"
-
 
 #define SHROOM_SPAWN	1
 
