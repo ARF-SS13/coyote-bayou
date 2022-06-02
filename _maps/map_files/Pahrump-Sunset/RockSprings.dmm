@@ -1,10 +1,41 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
+/area/space)
 "ab" = (
 /obj/structure/janitorialcart,
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
+	},
+/area/space)
+"ac" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	name = "Jack Razor"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
+/area/space)
+"ad" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/spawner/lootdrop/wastelootgood,
+/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerbordercorner"
 	},
 /area/space)
 "ae" = (
@@ -26,6 +57,44 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
+	},
+/area/space)
+"ah" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrusty"
+	},
+/area/space)
+"ai" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/biker{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
+/area/space)
+"aj" = (
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/blood/drip,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
+/area/space)
+"ak" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/tribal{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
 	},
 /area/space)
 "al" = (
@@ -50,6 +119,24 @@
 	icon_state = "bushc1"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
+/area/space)
+"ao" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider{
+	name = "Razor Twins Raider"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
+/area/space)
+"ap" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	name = "John Razor"
+	},
+/turf/open/floor/plasteel/f13{
+	icon_state = "floorgrime"
+	},
 /area/space)
 "as" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1564,15 +1651,6 @@
 	icon_state = "outerborder"
 	},
 /area/space)
-"oi" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss{
-	name = "Jack Razor"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/space)
 "oj" = (
 /obj/structure/rack,
 /obj/item/clothing/suit/armor/f13/tribe_armor,
@@ -1727,15 +1805,6 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/space)
-"pX" = (
-/mob/living/simple_animal/hostile/raider/tribal{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrusty"
-	},
-/area/space)
 "qg" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -1839,15 +1908,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "outerturn";
 	dir = 8
-	},
-/area/space)
-"rj" = (
-/mob/living/simple_animal/hostile/raider{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
 	},
 /area/space)
 "rk" = (
@@ -2038,17 +2098,6 @@
 "tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/space)
-"tA" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/blood/drip,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -2261,15 +2310,6 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/road,
-/area/space)
-"vI" = (
-/mob/living/simple_animal/hostile/raider/tribal{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
 /area/space)
 "vN" = (
 /obj/structure/rack,
@@ -2619,15 +2659,6 @@
 "yY" = (
 /mob/living/simple_animal/hostile/radscorpion,
 /turf/open/indestructible/ground/outside/desert/harsh,
-/area/space)
-"zb" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
 /area/space)
 "zl" = (
 /obj/structure/table/reinforced,
@@ -3728,15 +3759,6 @@
 	icon_state = "floorrusty"
 	},
 /area/space)
-"Kf" = (
-/mob/living/simple_animal/hostile/raider/ranged/biker{
-	name = "Razor Twins Raider"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
-	},
-/area/space)
 "Kh" = (
 /obj/structure/flora/tree/jungle/small,
 /turf/open/indestructible/ground/outside/dirt/harsh,
@@ -3856,19 +3878,6 @@
 /obj/item/clothing/head/welding,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
-	},
-/area/space)
-"LD" = (
-/obj/structure/closet/crate/trashcart,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/effect/spawner/lootdrop/wastelootgood,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
-/mob/living/simple_animal/hostile/radroach,
-/mob/living/simple_animal/hostile/radroach,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerbordercorner"
 	},
 /area/space)
 "LN" = (
@@ -4060,15 +4069,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerborder"
-	},
-/area/space)
-"NE" = (
-/mob/living/simple_animal/hostile/raider/ranged/boss{
-	name = "John Razor"
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13{
-	icon_state = "floorgrime"
 	},
 /area/space)
 "NL" = (
@@ -26690,7 +26690,7 @@ bX
 UY
 Iv
 sQ
-LD
+ad
 md
 mL
 Jg
@@ -39292,7 +39292,7 @@ hp
 mI
 Dq
 Zi
-tA
+aj
 fk
 OM
 hC
@@ -40562,7 +40562,7 @@ bS
 bS
 hC
 lb
-zb
+aa
 lb
 QM
 lb
@@ -41853,7 +41853,7 @@ xx
 Or
 dV
 xx
-pX
+ah
 Ed
 QM
 CB
@@ -43671,7 +43671,7 @@ Bl
 Bl
 Bl
 MT
-NE
+ap
 eH
 hC
 bS
@@ -44437,7 +44437,7 @@ dV
 xx
 cO
 mX
-rj
+ao
 lb
 lb
 eH
@@ -45464,7 +45464,7 @@ qg
 hp
 mX
 MS
-vI
+ak
 cO
 hC
 bS
@@ -46227,7 +46227,7 @@ lb
 mX
 GJ
 mX
-Kf
+ai
 mX
 mX
 Yk
@@ -47245,7 +47245,7 @@ hC
 jQ
 eu
 he
-oi
+ac
 bw
 TI
 Ro

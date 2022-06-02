@@ -1223,7 +1223,6 @@
 /area/f13/building/massfusion)
 "aej" = (
 /obj/structure/closet/cabinet,
-/obj/effect/spawner/bundle/costume/chicken,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /obj/item/clothing/suit/f13/sexymaid,
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
@@ -17252,15 +17251,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
-"aZJ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/open/floor/carpet/purple,
-/area/f13/bar/heaven)
 "aZK" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress2"
@@ -33775,11 +33765,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "gdD" = (
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/area/f13/building/massfusion)
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/f13/bar/heaven)
 "gdO" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/tunnel/khanfort)
@@ -40616,14 +40609,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white/side,
 /area/f13/building/mall)
-"kBP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/molerat,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/f13/building/massfusion)
 "kCB" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag,
@@ -76976,7 +76961,7 @@ bhd
 bco
 aXW
 aMV
-aZJ
+gdD
 bhI
 aXW
 nvE
@@ -78004,7 +77989,7 @@ bhd
 aZu
 aXW
 aDR
-aZJ
+gdD
 bhI
 aXW
 hqc
@@ -79032,7 +79017,7 @@ aXW
 aXW
 aXW
 aOk
-aZJ
+gdD
 bhI
 aXW
 hqc
@@ -118751,7 +118736,7 @@ vVo
 aae
 vVo
 ybo
-gdD
+wSN
 wSN
 wSN
 iIo
@@ -119268,7 +119253,7 @@ lVN
 qaP
 nRf
 sEY
-kBP
+dYI
 hRI
 vVo
 aae
