@@ -1096,7 +1096,8 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/house{
-	icon_state = "room"
+	icon_state = "room";
+	name = "Motel Room"
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/city/bighorn)
@@ -1673,7 +1674,8 @@
 /area/f13/city/bighorn)
 "erB" = (
 /obj/structure/simple_door/house{
-	icon_state = "room"
+	icon_state = "room";
+	name = "Cleaning Closet"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
@@ -2780,7 +2782,7 @@
 /area/f13/building/massfusion)
 "jOE" = (
 /obj/structure/simple_door/house{
-	name = "Male restroom"
+	name = "Male Restroom"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/city/bighorn)
@@ -3700,7 +3702,8 @@
 /area/f13/building/massfusion)
 "nLM" = (
 /obj/structure/simple_door/house{
-	icon_state = "room"
+	icon_state = "room";
+	name = "Motel Room"
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/city/bighorn)
@@ -4813,7 +4816,7 @@
 /area/f13/building/hospital)
 "sCk" = (
 /obj/structure/simple_door/house{
-	name = "Female restroom"
+	name = "Female Restroom"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13,
@@ -4962,7 +4965,8 @@
 "tkH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/house{
-	icon_state = "room"
+	icon_state = "room";
+	name = "Motel Room"
 	},
 /turf/open/floor/wood_mosaic,
 /area/f13/city/bighorn)
@@ -5678,6 +5682,12 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"wNc" = (
+/obj/structure/simple_door/house{
+	name = "Female Restroom"
+	},
+/turf/open/floor/plasteel/f13,
+/area/f13/city/bighorn)
 "wSa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/ncr/irradiated_food{
@@ -13410,7 +13420,7 @@ lDT
 lDT
 lDT
 csj
-jOE
+wNc
 csj
 csj
 gkd
@@ -26010,7 +26020,7 @@ wqF
 wqF
 wqF
 wqF
-vqz
+wqF
 dtb
 dtb
 dtb

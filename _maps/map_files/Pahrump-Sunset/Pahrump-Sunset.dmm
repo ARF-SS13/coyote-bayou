@@ -5066,7 +5066,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/carpet/purple,
+/turf/open/floor/f13/wood,
 /area/f13/bar/heaven)
 "apV" = (
 /obj/structure/window/fulltile/house{
@@ -5460,7 +5460,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
-/turf/open/floor/carpet/purple,
+/turf/open/floor/f13/wood,
 /area/f13/bar/heaven)
 "ard" = (
 /obj/effect/landmark/start/f13/ncrconscript,
@@ -8723,9 +8723,6 @@
 "aAH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/machinery/light/small{
-	dir = 8
 	},
 /obj/structure/chair/stool/retro/backed,
 /turf/open/floor/carpet/purple,
@@ -12039,7 +12036,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/carpet/purple,
+/turf/open/floor/f13/wood,
 /area/f13/bar/heaven)
 "aKD" = (
 /obj/structure/fence{
@@ -12517,14 +12514,6 @@
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
-"aLQ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/carpet{
-	dir = 6
-	},
-/area/f13/bar/heaven)
 "aLR" = (
 /obj/effect/turf_decal/vg_decals/numbers/two,
 /obj/effect/decal/cleanable/dirt{
@@ -12867,7 +12856,7 @@
 /obj/structure/simple_door/repaired{
 	name = "Heaven's Night"
 	},
-/turf/open/floor/carpet/purple,
+/turf/open/floor/f13/wood,
 /area/f13/bar/heaven)
 "aMJ" = (
 /obj/structure/closet/cabinet,
@@ -16981,9 +16970,7 @@
 	pixel_y = 5
 	},
 /obj/structure/chair/stool/retro/backed,
-/turf/open/floor/carpet{
-	dir = 6
-	},
+/turf/open/floor/carpet/purple,
 /area/f13/bar/heaven)
 "aYW" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16995,9 +16982,7 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /obj/structure/table/wood/settler,
-/turf/open/floor/carpet{
-	dir = 6
-	},
+/turf/open/floor/carpet/purple,
 /area/f13/bar/heaven)
 "aYX" = (
 /obj/effect/decal/cleanable/dirt{
@@ -17271,10 +17256,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/chair/stool/retro,
-/turf/open/floor/carpet{
-	dir = 6
+/obj/machinery/light/small{
+	dir = 4
 	},
+/turf/open/floor/carpet/purple,
 /area/f13/bar/heaven)
 "aZK" = (
 /obj/structure/bed/mattress{
@@ -19846,7 +19831,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/bed/club,
+/obj/structure/bed/club{
+	dir = 4
+	},
 /turf/open/floor/carpet/purple,
 /area/f13/bar/heaven)
 "bhJ" = (
@@ -37009,9 +36996,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "ilV" = (
-/obj/structure/fence{
-	dir = 4
-	},
 /obj/structure/decoration/rag,
 /obj/structure/simple_door/metal/fence,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -39759,7 +39743,7 @@
 "jVn" = (
 /obj/structure/ladder/unbreakable{
 	desc = "A short drive down south to gather supplies.";
-	id = ncrmini;
+	id = "ncrmini";
 	name = "drive north";
 	pixel_x = 15;
 	pixel_y = -20
@@ -76471,8 +76455,8 @@ bhd
 bhd
 aEk
 bhd
-aLQ
-aLQ
+bhd
+bhd
 aYV
 aYW
 bdF
@@ -76992,7 +76976,7 @@ bhd
 bco
 aXW
 aMV
-bhd
+aZJ
 bhI
 aXW
 nvE
@@ -77752,9 +77736,9 @@ aPA
 bhd
 aXW
 aYX
-aZJ
-aZJ
-aZJ
+bbK
+bbK
+bbK
 aLX
 aLl
 aYo
@@ -78020,7 +78004,7 @@ bhd
 aZu
 aXW
 aDR
-bhd
+aZJ
 bhI
 aXW
 hqc
@@ -78258,7 +78242,7 @@ aae
 aae
 aae
 aae
-aae
+ans
 ans
 ans
 ans
@@ -79048,7 +79032,7 @@ aXW
 aXW
 aXW
 aOk
-bhd
+aZJ
 bhI
 aXW
 hqc
@@ -79113,7 +79097,7 @@ qrS
 blj
 blj
 blj
-bjS
+bUX
 bVI
 puU
 ydE
@@ -79294,8 +79278,8 @@ bhd
 alr
 aXW
 bgJ
-aLQ
-aLQ
+bhd
+bhd
 bhd
 bhd
 bhd
