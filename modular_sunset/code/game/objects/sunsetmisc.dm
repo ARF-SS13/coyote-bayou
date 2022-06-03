@@ -19,3 +19,14 @@ obj/item/bighorn_sign
 	anchored = 1
 	w_class = 4
 	layer = 5
+
+obj/item/trade_sign
+	name = "Trade sign"
+	desc = "A wooden sign with seemingly hand forged lettering bolted to it."
+	icon = 'modular_sunset/icons/structures/sunset_signs.dmi'
+	icon_state = "sign_trade_south"
+	item_state = "sign_trade_south"
+	density = 1
+	anchored = 1
+	w_class = 4
+	layer = 5
