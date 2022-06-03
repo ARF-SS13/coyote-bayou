@@ -7309,6 +7309,10 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
+"exT" = (
+/obj/machinery/telecomms/server/presets/town,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "eya" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/f13{
@@ -9930,6 +9934,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"jeL" = (
+/obj/machinery/telecomms/server/presets/ranger,
+/turf/open/floor/circuit/telecomms/mainframe,
+/area/f13/tcoms)
 "jeY" = (
 /obj/structure/window/fulltile/store,
 /obj/structure/barricade/wooden/planks,
@@ -10350,6 +10358,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/pod/light,
 /area/f13/brotherhood)
+"jSN" = (
+/obj/machinery/telecomms/server/presets/khans,
+/turf/open/floor/plasteel/dark/telecomms/mainframe,
+/area/f13/tcoms)
 "jSR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
@@ -81334,7 +81346,7 @@ chJ
 cif
 ciC
 ciZ
-cig
+exT
 cig
 cjm
 cjw
@@ -81846,7 +81858,7 @@ aaa
 cho
 chJ
 cih
-cie
+jeL
 cie
 cie
 cie
@@ -82362,7 +82374,7 @@ chJ
 cii
 ciD
 cja
-cig
+jSN
 cig
 cjp
 cjz
