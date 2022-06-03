@@ -10,7 +10,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /obj/item/clothing/mask/gas/goner
 	name = "full gas mask"
-	desc = "A gas mask covering entire head.<br>Such equipment, perhaps, is beloved by many trenchers, mooks and romantically apocalyptic people."
+	desc = "A close-fitting mask.<br>Such equipment, perhaps, is beloved by many trenchers, mooks and romantically apocalyptic people."
 	icon = 'modular_sunset/icons/obj/clothing/masks.dmi'
 	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/mask.dmi'
 	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/mask_muzzled.dmi'
@@ -19,6 +19,6 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /obj/item/clothing/mask/gas/goner/aesthetic
 	name = "broken full gas mask"
-	desc = "A gas mask covering entire head. Alas, this one have broken filter along with hose, and could be used only for the looks or to conceal your identity."
+	desc = "A close-fitting mask. Alas, this one have broken filter along with hose, and could be used only for the looks or to conceal your identity."
 	gas_transfer_coefficient = 0.8
 	clothing_flags = NONE // Disables internals.
