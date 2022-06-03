@@ -24,7 +24,7 @@
 
 /obj/item/reagent_containers/food/snacks/rawbrahminliver
 	name = "Raw Brahmin Liver"
-	desc = "The raw tongue of a brahmin, a wastelander favorite"
+	desc = "The raw liver of a brahmin, a wastelander favorite"
 	icon_state = "Brahmin Liver"
 	bitesize = 3
 	filling_color = "#CD853F"
