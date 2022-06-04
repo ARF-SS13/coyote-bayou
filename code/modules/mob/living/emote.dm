@@ -568,3 +568,101 @@
 	if(. && isliving(user))
 		var/mob/living/L = user
 		L.Knockdown(200)
+
+
+
+
+		///////////////////////////////////////
+		//Sunset Emotes                      //
+		//Started by TK420634, June 4th, 2022//
+		///////////////////////////////////////
+		//I've included some notes on the first two for those who want to go about adding more emotes in the future, there's also some useful stuff in the code up above that we may should consider bringing down to them
+		//but for now these are servicable.  The only conern I'd have with what is here is that some of these sounds are semi-spammable, but if someone starts bleating at you like a braindead idiot and won't stop
+		//then maybe just CI them down with your uzi?
+
+	//This is a good starting point for adding a simple emote with a sound, consider using this in the future for other sounds.
+/datum/emote/cackle
+	key = "cackle" // What the *emote will be
+	key_third_person = "cackles worryingly" // What someone else will see.
+	message = "cackles worryingly." // What you'll see.
+	sound = 'sound/f13effects/sunsetsounds/YeenCackle.ogg' //Sound played.
+
+	//I don't like how this looks, if someone knows a better way please do so or tell me.
+/datum/emote/coyawoo
+	key = "coyawoo"
+	key_third_person = "howls like a coyote"
+	message = "howls like a coyote!"
+
+/datum/emote/coyawoo/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // Hell if I know
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo2.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo3.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo4.ogg', 20, 1),playsound(C, 'sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 20, 1))
+
+/datum/emote/baa //Little Bo Peep Can Eat my...
+	key = "baa"
+	key_third_person = "baas"
+	message = "baas."
+
+/datum/emote/baa/run_emote(mob/user, params)
+	. = ..() //
+	if(. && iscarbon(user))
+		var/mob/living/carbon/C = user
+		if(. && isliving(user))
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/baa.ogg', 50, 1),playsound(C, 'sound/f13effects/sunsetsounds/baa2.ogg', 50, 1))
+
+/datum/emote/purr
+	key = "purr"
+	key_third_person = "purrs contentedly"
+	message = "purrs contentedly."
+	sound = 'sound/f13effects/sunsetsounds/cat_purr.ogg'
+
+
+/datum/emote/purrlong
+	key = "purrlong"
+	key_third_person = "purrs contentedly"
+	message = "purrs contentedly."
+	sound = 'sound/f13effects/sunsetsounds/cat_purr_long.ogg'
+
+
+/datum/emote/geckers
+	key = "geck"
+	key_third_person = "geckers loudly"
+	message = "geckers loudly."
+	sound = 'sound/f13effects/sunsetsounds/geck.ogg'
+
+
+/datum/emote/growl
+	key = "growl"
+	key_third_person = "growls viciously"
+	message = "growls viciously."
+	sound = 'sound/f13effects/sunsetsounds/growl.ogg'
+
+
+/datum/emote/moo
+	key = "moo"
+	key_third_person = "moos"
+	message = "moos."
+	sound = 'sound/f13effects/sunsetsounds/moo.ogg'
+
+
+/datum/emote/mrowl
+	key = "mrowl"
+	key_third_person = "mrowls"
+	message = "mrowls."
+	sound = 'sound/f13effects/sunsetsounds/mrowl.ogg'
+
+
+/datum/emote/nya //Kitten Must Die.ogg
+	key = "nya"
+	key_third_person = "nyas"
+	message = "nyas."
+	sound = 'sound/f13effects/sunsetsounds/nya.ogg'
+
+
+/datum/emote/wolfwhistle //Yeah baby that's what I like!
+	key = "wolfwhistle"
+	key_third_person = "wolf whistles"
+	message = "wolf whistles!"
+	sound = 'sound/f13effects/sunsetsounds/wolfwhistle.ogg'
