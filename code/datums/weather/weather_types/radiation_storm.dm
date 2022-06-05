@@ -1,20 +1,22 @@
 /datum/weather/rad_storm
 	name = "radiation storm"
-	desc = "A cloud of intense radiation passes through the area dealing rad damage to those who are unprotected."
+	desc = "A thunderstorm of intense radiation passes through the area dealing radiation damage to those who are unprotected."
 	probability = 6
 
-	telegraph_duration = 400
-	telegraph_message = "<span class='notice'>The skies slowly turn into a glowing green.</span>"
+	telegraph_duration = 700
+	telegraph_message = "<span class='userdanger'>The skies slowly turn into a glowing green, distant distorted thunder can be heard as dark clouds approach.</span>"
+	telegraph_sound = 'modular_sunset/sound/weather/radstorm2.ogg'
 
-	weather_message = "<span class='notice'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
+
+	weather_message = "<span class='userdanger'><i>You feel waves of heat wash over you! Find shelter!</i></span>"
 	weather_overlay = "ash_storm"
-	weather_duration_lower = 600
-	weather_duration_upper = 1500
+	weather_duration_lower = 1500
+	weather_duration_upper = 3000
 	weather_color = "green"
-	weather_sound = 'sound/weather/thunder.ogg'
+	weather_sound = 'modular_sunset/sound/weather/radstorm.ogg'
 
 	end_duration = 100
-	end_message = "<span class='notice'>The air seems to be cooling off again, the sky returning to it's normal color.</span>"
+	end_message = "<span class='userdanger'>The air seems to be cooling off again as the radiation storm passes, the sky returning to it's normal color.</span>"
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/maintenance, /area/ai_monitored/turret_protected/ai_upload, /area/ai_monitored/turret_protected/ai_upload_foyer,
@@ -22,7 +24,7 @@
 	target_trait = ZTRAIT_STATION
 
 	immunity_type = "rad"
-	
+
 	var/radiation_intensity = 100
 
 /datum/weather/rad_storm/telegraph()
