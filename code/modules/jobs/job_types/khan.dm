@@ -50,6 +50,24 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/smg10mm)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_khanate)
 
+/datum/outfit/job/khan/mangudai
+	jobtype = /datum/job/khan/mangudai
+
+/datum/outfit/job/khan/kipchak
+	jobtype = /datum/job/khan/kipchak
+
+/datum/outfit/job/khan/khorchin
+	jobtype = /datum/job/khan/khorchin
+
+/datum/outfit/job/khan/kheshig
+	jobtype = /datum/job/khan/kheshig
+
+/datum/outfit/job/khanleader/steward
+	jobtype = /datum/job/khan/steward
+
+/datum/outfit/job/khanleader/noyan
+	jobtype = /datum/job/khan/noyan
+
 /datum/outfit/job/khanleader
 	name = "Khan"
 	jobtype = /datum/job/khanleader
@@ -92,7 +110,7 @@
 	supervisors = "the Noyan and Khanate"
 	selection_color = "#ff915e"
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/mangudai
 
 	loadout_options = list(
 		/datum/outfit/loadout/enforcer,
@@ -324,7 +342,7 @@
 	selection_color = "#ff915e"
 	exp_requirements = 60
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/kipchak
 
 	loadout_options = list(
 		/datum/outfit/loadout/miner,
@@ -344,7 +362,7 @@
 	selection_color = "#ff915e"
 	exp_requirements = 150
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/khorchin
 
 	loadout_options = list(
 		/datum/outfit/loadout/fighter,
@@ -364,7 +382,7 @@
 	selection_color = "#ff915e"
 	exp_requirements = 500
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khan
+	outfit = /datum/outfit/job/khan/kheshig
 
 	loadout_options = list(
 		/datum/outfit/loadout/veteran,
@@ -386,7 +404,7 @@
 	selection_color = "#ff915e"
 	exp_requirements = 750
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khanleader
+	outfit = /datum/outfit/job/khanleader/steward
 
 	loadout_options = list(
 		/datum/outfit/loadout/taxcollector,
@@ -408,7 +426,7 @@
 	req_admin_notify = 1
 	exp_requirements = 1000
 	exp_type = EXP_TYPE_KHAN
-	outfit = /datum/outfit/job/khanleader
+	outfit = /datum/outfit/job/khanleader/noyan
 
 	loadout_options = list(
 		/datum/outfit/loadout/ironfist,
