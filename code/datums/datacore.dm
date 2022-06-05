@@ -93,7 +93,7 @@
 
 /datum/datacore/proc/get_manifest_dr(monochrome, OOC)
 	var/list/command = list()
-	var/list/bos = list()	
+	var/list/bos = list()
 	var/list/enclave = list()
 	var/list/oasis = list()
 	var/list/leg = list()
@@ -129,7 +129,7 @@
 			department = 1
 		if(rank in GLOB.brotherhood_positions)
 			bos[name] = rank
-			department = 1		
+			department = 1
 		if(rank in GLOB.enclave_positions)
 			enclave[name] = rank
 			department = 1
@@ -367,10 +367,10 @@
 	var/static/list/show_directions = list(SOUTH, WEST)
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role))
 		var/assignment
-		if(H.mind.assigned_role)
-			assignment = H.mind.assigned_role
-		else if(H.job)
+		if(H.job)
 			assignment = H.job
+		else if(H.mind.assigned_role)
+			assignment = H.mind.assigned_role
 		else
 			assignment = "Unassigned"
 
