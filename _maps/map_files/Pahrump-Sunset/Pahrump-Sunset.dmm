@@ -5273,9 +5273,15 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/bighorn)
 "aqX" = (
-/obj/structure/debris/v3,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft2"
+/obj/structure/decoration/hatch{
+	dir = 4
+	},
+/obj/item/flag/ncr{
+	pixel_x = -19;
+	pixel_y = 21
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland/ncr)
 "aqY" = (
@@ -18141,16 +18147,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland/legion)
-"bdh" = (
-/obj/structure/flora/tree/tall{
-	icon_state = "tree_3";
-	pixel_x = -14;
-	pixel_y = 5
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "hole"
-	},
-/area/f13/wasteland/ncr)
 "bdi" = (
 /obj/structure/car/rubbish4,
 /turf/open/indestructible/ground/outside/road{
@@ -20243,12 +20239,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/nanotrasen)
-"bjI" = (
-/obj/structure/debris/v3,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain1"
-	},
-/area/f13/wasteland/ncr)
 "bjJ" = (
 /obj/item/flag/khan,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -20333,12 +20323,6 @@
 /obj/structure/chair/wood,
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/city/bighorn)
-"bkc" = (
-/obj/structure/debris/v3,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/wasteland/ncr)
 "bkd" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2right"
@@ -20715,7 +20699,6 @@
 /area/f13/wasteland/bighorn)
 "blc" = (
 /obj/effect/decal/cleanable/oil,
-/obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain1"
 	},
@@ -68407,7 +68390,7 @@ qIz
 qIz
 adK
 adY
-bdh
+aha
 aml
 aQJ
 aiv
@@ -68674,7 +68657,7 @@ mim
 amf
 amf
 lNa
-asU
+aqX
 bxC
 adW
 aUH
@@ -69159,7 +69142,7 @@ atY
 ard
 aje
 ajq
-aqX
+afO
 afO
 ajp
 aje
@@ -69932,7 +69915,7 @@ aje
 aeX
 acG
 axj
-bkc
+adY
 aQu
 aje
 aPn
@@ -70702,7 +70685,7 @@ aje
 osB
 aQu
 aje
-bjI
+aje
 ajp
 hul
 aQu
