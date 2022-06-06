@@ -47,11 +47,11 @@
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+		M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
 	..()
 
@@ -74,9 +74,9 @@
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.AdjustKnockdown(-1.7*REAGENTS_EFFECT_MULTIPLIER, 0)
+	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 
@@ -120,17 +120,17 @@
 		M.AdjustAllImmobility(-20, 0)
 		M.AdjustUnconscious(-20, 0)
 	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustBruteLoss(-7*REAGENTS_EFFECT_MULTIPLIER)
+		M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
 		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
 		. = TRUE
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
 	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(6*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(7*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
 
@@ -246,8 +246,8 @@
 	taste_description = "bitterness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
 	overdose_threshold = 31
-	var/heal_factor = -4.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.2 //Multiplier if you have the right perk.
+	var/heal_factor = -5 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -5.5 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
@@ -282,8 +282,8 @@
 	taste_description = "bitterness"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 30
-	var/heal_factor = -1.3 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -1.8 //Multiplier if you have the right perk.
+	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
+	var/heal_factor_perk = -2.2 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
@@ -320,8 +320,8 @@
 	description = "Restores limb condition and heals rapidly."
 	color = "#C8A5DC"
 	overdose_threshold = 20
-	heal_factor = -2.6
-	heal_factor_perk = -3.0
+	heal_factor = -3.0
+	heal_factor_perk = -3.5
 
 // ---------------------------
 // RAD-X REAGENT
@@ -381,14 +381,14 @@
 	..()
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.maxHealth += 70
-		M.health += 70
+		M.maxHealth += 50
+		M.health += 50
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
 		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.maxHealth -= 70
-		M.health -= 70
+		M.maxHealth -= 50
+		M.health -= 50
 	switch(current_cycle)
 		if(1 to 40)
 			M.confused += 10
