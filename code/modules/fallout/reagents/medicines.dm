@@ -56,8 +56,8 @@
 	..()
 
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(3*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(7*REAGENTS_EFFECT_MULTIPLIER)
 	M.drowsyness += 2*REAGENTS_EFFECT_MULTIPLIER
 	M.jitteriness += 3
 	..()
@@ -129,8 +129,8 @@
 	..()
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(7*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER)
 	..()
 	. = TRUE
 
