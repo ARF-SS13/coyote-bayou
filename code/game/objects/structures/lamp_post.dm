@@ -12,7 +12,6 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	layer = GASFIRE_LAYER
 	anchored = TRUE
-	integrity = 750
 	max_integrity = 750
 	opacity = 0
 	density = TRUE
