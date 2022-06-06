@@ -1,6 +1,6 @@
 # Sunset Modular Folder
 
-## All custom srpites, code and sounds should go here!
+## All custom sprites, code and sounds should go here!
 Keeping things clean and organized, and having our custom assets modular will allow for easier merging of any upstream changes.
 
 ## Mark your changes!
