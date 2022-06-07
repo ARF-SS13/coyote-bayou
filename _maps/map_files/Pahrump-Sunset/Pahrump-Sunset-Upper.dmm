@@ -797,11 +797,6 @@
 /obj/item/reagent_containers/glass/bucket/plastic,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
-"air" = (
-/obj/structure/fluff/railing,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/city/bighorn)
 "aiG" = (
 /obj/structure/simple_door/metal/barred,
 /turf/open/floor/f13{
@@ -2205,7 +2200,7 @@
 	},
 /area/f13/building/massfusion)
 "gJu" = (
-/obj/structure/fluff/railing,
+/obj/structure/railing,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
 "gLr" = (
@@ -3417,6 +3412,11 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"lIc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing,
+/turf/open/floor/f13/wood,
+/area/f13/city/bighorn)
 "lIQ" = (
 /obj/structure/railing{
 	dir = 8
@@ -4069,8 +4069,8 @@
 /turf/open/floor/wood_common,
 /area/f13/building/khanfort)
 "odC" = (
-/obj/structure/fluff/railing,
 /obj/item/chair/stool/retro,
+/obj/structure/railing,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
 "oeb" = (
@@ -24952,7 +24952,7 @@ gkd
 gkd
 nGj
 qqp
-air
+gJu
 vqz
 vqz
 vqz
@@ -25980,7 +25980,7 @@ xQH
 qDN
 uQU
 cct
-air
+lIc
 vqz
 vqz
 vqz

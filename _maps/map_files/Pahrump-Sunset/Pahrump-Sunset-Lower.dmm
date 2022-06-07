@@ -12146,7 +12146,7 @@
 "mBy" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Bighorn Workshop";
-	req_one_access_txt = "62"
+	req_one_access_txt = "25"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
@@ -18883,7 +18883,7 @@
 	id = "bighornunderstorage";
 	name = "Bighorn Storage Button";
 	pixel_x = 32;
-	req_one_access_txt = "62"
+	req_one_access_txt = "25"
 	},
 /obj/item/storage/trash_stack{
 	layer = 2
