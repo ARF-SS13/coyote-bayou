@@ -33,7 +33,7 @@
 
 /mob/living/simple_animal/hostile/renegade/Aggro()
 	..()
-	summon_backup(15)
+	summon_backup(10)
 	say("Target spotted!")
 
 
@@ -59,7 +59,7 @@
 	loot = list(/obj/effect/spawner/bundle/f13/m1911)
 	robust_searching = TRUE
 	speak = list("Come get some!", "Fuck off!", "Landon's going to promote me after this!", "Bullets for days!", "Renegades represent!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 // LIGHT SHOTGUN VARIANT
@@ -85,7 +85,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/med, /obj/effect/spawner/lootdrop/f13/bomb/tier1, /obj/effect/spawner/lootdrop/f13/crafting)
 	robust_searching = TRUE
 	speak = list("Come get some!", "Going to blow some shit to kingdom come!", "I got the goods!", "Nades for days!", "Renegades represent!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 // MEDIUM RANGED VARIANT
@@ -111,7 +111,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/med, /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2)
 	robust_searching = TRUE
 	speak = list("Come get some!", "I like my odds, c'mere!", "Gonna get a promotion after this!", "Bullets for days!", "Renegades represent!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 //MEDIUM MELEE VARIANT
@@ -136,7 +136,7 @@
 	emote_taunt = list("bashes their shield with the mace")
 	robust_searching = TRUE
 	speak = list("COME AND TRY ME, BITCH!", "I AM THE WALL!", "LAYERS ON LAYERS OF PLATES!", "I AM TITANIUM!", "RENEGADES REPRESENT!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 //HEAVY RANGED VARIANT
@@ -163,7 +163,7 @@
 	loot = list(/obj/item/stack/f13Cash/random/high, /obj/effect/spawner/bundle/f13/remington, /obj/effect/spawner/lootdrop/f13/armor/random)
 	robust_searching = TRUE
 	speak = list("Come get some!", "I am the shadow!", "One shot, one kill.", "Adjusting my scope.", "Renegades represent!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 // HEAVY SHOTGUN VARIANT
@@ -188,7 +188,7 @@
 	loot = list(/obj/effect/spawner/bundle/f13/trenchshotgun, /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1, /obj/item/stack/f13Cash/random/low, /obj/item/clothing/suit/armor/f13/plates)
 	robust_searching = TRUE
 	speak = list("Come get some!", "ON THE GROUND!", "GOING TO SHOVE THIS WHERE THE SUN DON'T SHINE!", "C'MERE, I GOT LEAD!", "RENEGADES REPRESENT!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 
 // POWER ARMOR VARIANT
@@ -205,19 +205,21 @@
 	melee_damage_upper = 50
 	retreat_distance = 3
 	minimum_distance = 1
-	speed = 0.1
 	ranged = 1
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
-	ranged_cooldown_time = 20
+	ranged_cooldown_time = 30
 	attack_verb_simple = "power-fists"
-	extra_projectiles = 9
+	extra_projectiles = 5
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
-	loot = list(/obj/effect/spawner/bundle/f13/sig, /obj/item/stack/f13Cash/random/high, /obj/item/advanced_crafting_components/alloys, /obj/item/stack/sheet/plasteel/five)
+	loot = list(/obj/item/book/granter/trait/pa_wear, /obj/item/stack/f13Cash/random/high, /obj/item/advanced_crafting_components/alloys, /obj/item/stack/sheet/plasteel/five)
 	speak = list("POWER TO THE ARMOR!", "I AM GOING TO BREAK YOU IN HALF!", "YEAH I COMPENSATE WITH BIG FUCKIN' GUNS", "DODGE THIS!", "PEAK RENEGADE PERFORMANCE!")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
+
+/mob/living/simple_animal/hostile/renegade/meister/movement_delay()
+	return 6
 
 // HEALER VARIANT
 /mob/living/simple_animal/hostile/renegade/doc
@@ -240,7 +242,7 @@
 	casingtype = /obj/item/ammo_casing/m44
 	robust_searching = TRUE
 	speak = list("Running low on meds.", "Could do with extra combat chems.", "Where'd I put the Syringer?", "I GOT THE MED-BAG!", "Renegades represent and all that jazz.")
-	speak_emote = list("yells")
+	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/medical/vault/meds, /obj/effect/spawner/lootdrop/f13/weapon/revolver44variants, /obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
 
