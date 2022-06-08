@@ -82,26 +82,26 @@
 
 /// Minimum time before a game-ending vote can be started by players.
 /datum/config_entry/number/min_end_vote_time
-	config_entry_value = 150 MINUTES
+	config_entry_value = 300 MINUTES
 	min_val = 0
 
 /datum/config_entry/number/vote_delay	// minimum time between voting sessions (deciseconds, 10 minute default)
-	config_entry_value = 6000
+	config_entry_value = 36000
 	min_val = 0
 
 /datum/config_entry/number/vote_period  // length of voting period (deciseconds, default 1 minute)
-	config_entry_value = 600
+	config_entry_value = 900
 	min_val = 0
 
 /// Length of time before the first autotransfer vote is called (deciseconds, default 2 hours)
 /// Set to 0 to disable the subsystem altogether.
 /datum/config_entry/number/vote_autotransfer_initial
-	config_entry_value = 72000
+	config_entry_value = 180000
 	min_val = 0
 
 ///length of time to wait before subsequent autotransfer votes (deciseconds, default 30 minutes)
 /datum/config_entry/number/vote_autotransfer_interval
-	config_entry_value = 18000
+	config_entry_value = 36000
 	min_val = 0
 
 /// maximum extensions until the round autoends.
