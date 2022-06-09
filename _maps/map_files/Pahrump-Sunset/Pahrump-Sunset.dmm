@@ -22462,6 +22462,10 @@
 /obj/structure/chair,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"brn" = (
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/train)
 "brt" = (
 /obj/structure/tires/half,
 /turf/open/indestructible/ground/outside/dirt,
@@ -22604,7 +22608,8 @@
 "bsi" = (
 /obj/structure/billboard/ritas{
 	pixel_x = 12;
-	pixel_y = 30
+	pixel_y = 30;
+	density = 0
 	},
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/outside/desert,
@@ -24444,6 +24449,10 @@
 	icon_state = "verticalinnermain2"
 	},
 /area/f13/wasteland/heaven)
+"bIS" = (
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/legion)
 "bIW" = (
 /obj/structure/fence{
 	dir = 4
@@ -30856,6 +30865,7 @@
 /obj/effect/decal/riverbank{
 	dir = 9
 	},
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/legion)
 "eGh" = (
@@ -33990,6 +34000,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/east)
 "gGC" = (
@@ -34072,6 +34083,10 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/legion)
+"gJi" = (
+/obj/structure/sink/deep_water,
+/turf/open/water,
+/area/f13/caves)
 "gJU" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom2"
@@ -38396,6 +38411,13 @@
 /mob/living/simple_animal/hostile/cazador/young,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/mall)
+"jsw" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/east)
 "jsB" = (
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland/legion)
@@ -43704,6 +43726,11 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/legion)
+"mJD" = (
+/obj/effect/decal/riverbank,
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/khanfort)
 "mJF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -48009,6 +48036,13 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland/ncr)
+"pxq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/east)
 "pxv" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermainleft"
@@ -48367,6 +48401,13 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/ncr)
+"pGE" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/sink/deep_water,
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland/east)
 "pGI" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland/quarry)
@@ -53514,6 +53555,9 @@
 	dir = 4;
 	pixel_x = 10
 	},
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -56020,7 +56064,8 @@
 /area/f13/legion)
 "uxB" = (
 /obj/machinery/smartfridge{
-	pixel_x = -32
+	pixel_x = -32;
+	density = 0
 	},
 /turf/open/floor/plasteel/f13/stone/rugged,
 /area/f13/legion)
@@ -56327,9 +56372,6 @@
 /area/f13/building/museum)
 "uGm" = (
 /obj/structure/decoration/vent,
-/obj/machinery/light/small{
-	dir = 4
-	},
 /mob/living/simple_animal/cow/brahmin,
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
@@ -67312,7 +67354,7 @@ dag
 fVL
 vQC
 ucE
-fej
+mJD
 nUK
 aaa
 "}
@@ -67570,7 +67612,7 @@ diz
 diz
 diz
 mnK
-fej
+mJD
 aaa
 "}
 (23,1,1) = {"
@@ -101412,7 +101454,7 @@ ctb
 qzO
 sPk
 blf
-rDk
+jsw
 aWq
 xbQ
 xbQ
@@ -105242,7 +105284,7 @@ pdm
 cyZ
 kpu
 dMH
-aWq
+pGE
 uQt
 rHX
 csO
@@ -105269,7 +105311,7 @@ vnv
 rHX
 rHX
 xXf
-cvT
+pxq
 cvP
 xbQ
 xbQ
@@ -119503,7 +119545,7 @@ aae
 afn
 bzQ
 bzQ
-bzQ
+gJi
 aaB
 afn
 aae
@@ -121512,7 +121554,7 @@ xyZ
 biN
 jSU
 bAd
-aau
+bIS
 nyl
 acv
 adr
@@ -123101,7 +123143,7 @@ aaf
 qKg
 gNG
 gNG
-gNG
+brn
 qKg
 qKg
 qKg
