@@ -20,6 +20,16 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
+// SUNSET FLUFF ITEMS
+
+/datum/gear/donator/mrsanderp
+	name = "Happy Sharky Company Cuisine Book"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/book/granter/crafting_recipe/happysharky
+	category = LOADOUT_CATEGORY_BACKPACK
+	ckeywhitelist = list("mr.sanderp")
+	cost = 0
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -108,7 +118,7 @@
 	name = "Burnings Goods"
 	path = /obj/item/storage/box/large/custom_kit/burningcold
 	ckeywhitelist = list("myguy49")
-	
+
 /obj/item/storage/box/large/custom_kit/pug/PopulateContents()
 	new /obj/item/melee/transforming/cleaving_saw/old_rusty(src)
 
@@ -130,7 +140,7 @@
 	name = "I die to mobsx2"
 	path = /obj/item/storage/box/large/custom_kit/pug2
 	ckeywhitelist = list("puglord777")
-	
+
 /datum/gear/donator/kits/mutie
 	name = "I die to mobsx2"
 	path = /obj/item/storage/box/large/custom_kit/mutie
@@ -145,3 +155,11 @@
 	new /obj/item/modkit/kemblevest(src)
 	new /obj/item/modkit/kemblehat(src)
 	new /obj/item/storage/belt/holster/kemble(src)
+
+/datum/gear/donator/kits/mrsanderp
+	name = "Happy Sharky Co. Business Bundle"
+	path = /obj/item/storage/box/large/custom_kit/exoticjazz
+	ckeywhitelist = list("mr.sanderp")
+
+/obj/item/storage/box/large/custom_kit/exoticjazz/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/happysharky(src)
