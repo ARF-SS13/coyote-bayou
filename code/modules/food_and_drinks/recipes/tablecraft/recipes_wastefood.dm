@@ -47,7 +47,7 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/longpork_stew
 	subcategory = CAT_WASTEFOOD
-	
+
 /datum/crafting_recipe/food/moleratstew
 	name = "Molerat Stew"
 	reqs = list(
@@ -99,6 +99,53 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/soup/buffalogourd
 	subcategory = CAT_WASTEFOOD
+
+// SUNSET EDIT
+//// HAPPY SHARKY LOCKED FLUFF RECIPES
+
+/datum/crafting_recipe/food/sunset/happyshark/jerky
+	name = "Happy Sharky Jerky"
+	time = 40
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
+		/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mesquite =1,
+		/datum/reagent/consumable/sodiumchloride = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/sunset/happyshark/jerky
+	subcategory = CAT_MISCFOOD
+	always_available = FALSE
+
+
+/datum/crafting_recipe/food/sunset/happyshark/candybar
+	name = "Happy Sharky Sweet Bar"
+	time = 40
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/grown/pinyon = 1,
+		/obj/item/reagent_containers/food/snacks/grown/yucca = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/sunset/happyshark/candybar
+	subcategory = CAT_MISCFOOD
+	always_available = FALSE
+
+
+/datum/crafting_recipe/food/sunset/happyshark/bittercola
+	name = "Happy Sharky Bittercola"
+	time = 40
+	reqs = list(
+		/datum/reagent/consumable/nuka_cola = 10,
+		/datum/reagent/medicine/bitter_drink = 10,
+		/datum/reagent/consumable/sodawater = 5,
+		/datum/reagent/consumable/sugar = 5
+	)
+	result = /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola
+	subcategory = CAT_MISCFOOD
+	always_available = FALSE
+
+// ^For balancing reasons 10 units of bitter_drink turn into 1 unit with the crafted item.
+
+
 
 /* awaiting assets + code for completion
 
