@@ -410,6 +410,7 @@ Star Paladin
 
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
+		/obj/item/melee/onehanded/knife/hunting = 1,
 	)
 
 /datum/outfit/loadout/spaladina
@@ -508,7 +509,7 @@ Paladin
 	neck =	/obj/item/clothing/neck/mantle/bos/paladin
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak= 1,
-
+		/obj/item/melee/onehanded/knife/hunting = 1,
 	)
 
 /datum/outfit/loadout/paladina
