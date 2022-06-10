@@ -1,9 +1,9 @@
-## The Wasteland
-Based and maintained from Citadel Station by way of Desert Rose and Fortuna.
+## Sunset Wasteland
+Based and maintained from Citadel Station by way of Desert Rose, Fortuna and The Wasteland.
 
-[![CI Suite](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/LoneStarF13/LoneStar/actions/workflows/ci_suite.yml)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/FortunaSS13/Fortuna.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/FortunaSS13/Fortuna.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Average time to resolve an issue")
+[![CI Suite](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml/badge.svg?branch=master&event=push)](https://isitmaintained.com/project/sunset-wasteland/sunset-wasteland/actions/workflows/ci_suite.yml)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Percentage of issues still open")
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/sunset-wasteland/sunset-wasteland.svg)](https://isitmaintained.com/project/LoneStarF13/LoneStar "Average time to resolve an issue")
 
 [![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
@@ -54,9 +54,10 @@ First-time installation should be fairly straightforward. First, you'll need
 BYOND installed. You can get it from https://www.byond.com/download. Once you've done
 that, extract the game files to wherever you want to keep them. This is a
 sourcecode-only release, so the next step is to compile the server files.
-Open fortune13.dme by double-clicking it, open the Build menu, and click
-compile. This'll take a little while, and if everything's done right you'll get
-a message like this:
+~~Open fortune13.dme by double-clicking it, open the Build menu, and click
+compile.~~ Use the **BUILD.bat** file instead as the reglar DM compiler can't 
+handle the codebase properly. This'll take a little while, and if everything's
+done right you'll get a message like this:
 
 ```
 saving fortune13.dmb (DEBUG mode)
