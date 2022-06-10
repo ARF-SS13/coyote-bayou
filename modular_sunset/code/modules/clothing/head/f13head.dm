@@ -18,6 +18,10 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	dynamic_hair_suffix = ""
 	flags_inv = HIDEHAIR|HIDEEARS
 
+/obj/item/clothing/head/helmet/f13/goner/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate)
+
 /obj/item/clothing/head/helmet/f13/goner/red
 	name = "red-marked generic helmet"
 	desc = "A cheap-looking helmet with red paint applied from front to back."
