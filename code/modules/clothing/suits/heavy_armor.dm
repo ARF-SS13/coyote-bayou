@@ -131,6 +131,24 @@
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 40)
 	slowdown = 0.85
 
+// Midwest
+/obj/item/clothing/suit/armor/f13/power_armor/midwest
+	name = "Midwestern power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. Its servomotors and valauble components have been stripped out of it."
+	icon_state = "midwestgrey_pa"
+	item_state = "midwestgrey_pa"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 40)
+	slowdown = 0.85
+
+// Hardened Midwest
+	/obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	name = "Hardened Midwestern power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities. Its servomotors and valuable components have been stripped out of it."
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 65, "energy" = 20, "bomb" = 50, "bio" = 80, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 50)
+	slowdown = 0.85
+
 // T-60A
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/t60
 	name = "salvaged T-60a power armor"
