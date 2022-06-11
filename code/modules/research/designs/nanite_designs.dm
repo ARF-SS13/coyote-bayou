@@ -426,13 +426,6 @@
 	program_type = /datum/nanite_program/fake_death
 	category = list("Suppression Nanites")
 
-/datum/design/nanites/pacifying
-	name = "Pacification"
-	desc = "The nanites suppress the aggression center of the brain, preventing the host from causing direct harm to others."
-	id = "pacifying_nanites"
-	program_type = /datum/nanite_program/pacifying
-	category = list("Suppression Nanites")
-
 /datum/design/nanites/blinding
 	name = "Blindness"
 	desc = "The nanites suppress the host's ocular nerves, blinding them while they're active."

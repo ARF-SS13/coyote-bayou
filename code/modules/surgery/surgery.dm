@@ -235,7 +235,6 @@
 /obj/item/disk/surgery/oasis
 	name = "oasis surgery disk"
 	surgeries = list(	/datum/surgery/advanced/lobotomy,
-						/datum/surgery/advanced/pacify,
 						/datum/surgery/advanced/reconstruction)
 
 
