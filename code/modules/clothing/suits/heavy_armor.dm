@@ -132,7 +132,7 @@
 	slowdown = 0.85
 
 // Midwest
-/obj/item/clothing/suit/armor/f13/power_armor/midwest
+/obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest
 	name = "Midwestern power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. Its servomotors and valauble components have been stripped out of it."
 	icon_state = "midwestgrey_pa"
@@ -141,7 +141,7 @@
 	slowdown = 0.85
 
 // Hardened Midwest
-	/obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	/obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest/hardened
 	name = "Hardened Midwestern power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities. Its servomotors and valuable components have been stripped out of it."
 	icon_state = "midwestpa"
