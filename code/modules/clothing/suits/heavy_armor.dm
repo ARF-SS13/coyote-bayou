@@ -133,7 +133,7 @@
 
 // Midwest
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest
-	name = "Midwestern power armor"
+	name = "Salvaged midwestern T-51b power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. Its servomotors and valauble components have been stripped out of it."
 	icon_state = "midwestgrey_pa_salvaged"
 	item_state = "midwestgrey_pa_salvaged"
@@ -142,7 +142,7 @@
 
 // Hardened Midwest
 /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest/hardened
-	name = "Hardened Midwestern power armor"
+	name = "Salvaged hardened midwestern T-51b power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities. Its servomotors and valuable components have been stripped out of it."
 	icon_state = "midwestpa_salvaged"
 	item_state = "midwestpa_salvaged"
