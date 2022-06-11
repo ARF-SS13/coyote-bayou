@@ -108,26 +108,11 @@
 /obj/item/disk/nanite_program/fake_death
 	program_type = /datum/nanite_program/fake_death
 
-/obj/item/disk/nanite_program/pacifying
-	program_type = /datum/nanite_program/pacifying
-
 /obj/item/disk/nanite_program/glitch
 	program_type = /datum/nanite_program/glitch
 
-/obj/item/disk/nanite_program/brain_misfire
-	program_type = /datum/nanite_program/pacifying
-
-/obj/item/disk/nanite_program/skin_decay
-	program_type = /datum/nanite_program/pacifying
-
-/obj/item/disk/nanite_program/nerve_decay
-	program_type = /datum/nanite_program/pacifying
-
 /obj/item/disk/nanite_program/refractive
 	program_type = /datum/nanite_program/refractive
-
-/obj/item/disk/nanite_program/conductive
-	program_type = /datum/nanite_program/pacifying
 
 /obj/item/disk/nanite_program/stun
 	program_type = /datum/nanite_program/stun

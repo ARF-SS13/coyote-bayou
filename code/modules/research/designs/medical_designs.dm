@@ -741,13 +741,6 @@
 	surgery = /datum/surgery/advanced/lobotomy
 	research_icon_state = "surgery_head"
 
-/datum/design/surgery/pacify
-	name = "Pacification"
-	desc = "A surgical procedure which permanently inhibits the aggression center of the brain, making the patient unwilling to cause direct harm."
-	id = "surgery_pacify"
-	surgery = /datum/surgery/advanced/pacify
-	research_icon_state = "surgery_head"
-
 /datum/design/surgery/viral_bonding
 	name = "Viral Bonding"
 	desc = "A surgical procedure that forces a symbiotic relationship between a virus and its host. The patient must be dosed with spaceacillin, virus food, and formaldehyde."
