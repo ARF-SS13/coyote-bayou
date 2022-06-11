@@ -427,7 +427,7 @@
 	salvaged_type = null
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest
-	name = "midwestern power helmet"
+	name = "Midwestern T-51b power helmet"
 	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel."
 	icon_state = "midwestgrey_helm"
 	item_state = "midwestgrey_helm"
@@ -436,7 +436,7 @@
 	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest
 
 /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
-	name = "hardened midwestern power helmet"
+	name = "Hardened midwestern T-51b power helmet"
 	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"

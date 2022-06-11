@@ -618,7 +618,7 @@
 	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 75)
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest
-	name = "Midwestern power armor"
+	name = "Midwestern T-51b power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel."
 	icon_state = "midwestgrey_pa"
 	item_state = "midwestgrey_pa"
@@ -627,7 +627,7 @@
 	salvaged_type = /obj/item/clothing/suit/armored/heavy/salvaged_pa/midwest
 
 /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
-	name = "Hardened Midwestern power armor"
+	name = "Hardened midwestern  T-51b power armor"
 	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
 	icon_state = "midwestpa"
 	item_state = "midwestpa"

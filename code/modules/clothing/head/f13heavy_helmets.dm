@@ -55,8 +55,8 @@
 	slowdown = 0.05
 
 // Midwest
-	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest
-	name = "salvaged midwestern power helmet"
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest
+	name = "salvaged midwestern T-51b power helmet"
 	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. Its electronics appear to have been stripped out."
 	icon_state = "midwestgrey_helm"
 	item_state = "midwestgrey_helm"
@@ -64,8 +64,8 @@
 	slowdown = 0.05
 
 // Hardened Midwest
-	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest/hardened
-	name = "salvaged hardened midwestern power helmet"
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest/hardened
+	name = "salvaged hardened midwestern T-51b power helmet"
 	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. Its electronics appears to have been stripped out."
 	icon_state = "midwestpa_helm"
 	item_state = "midwestpa_helm"
