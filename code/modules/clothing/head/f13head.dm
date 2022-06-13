@@ -426,6 +426,24 @@
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 60, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 	salvaged_type = null
 
+/obj/item/clothing/head/helmet/f13/power_armor/midwest
+	name = "Midwestern T-51b power helmet"
+	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel."
+	icon_state = "midwestgrey_helm"
+	item_state = "midwestgrey_helm"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 30, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 72)
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest
+
+/obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
+	name = "Hardened midwestern T-51b power helmet"
+	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
+	icon_state = "midwestpa_helm"
+	item_state = "midwestpa_helm"
+	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 75)
+	salvaged_type = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest/hardened
+
 /obj/item/clothing/head/helmet/f13/power_armor/excavator
 	name = "excavator power helmet"
 	desc = "The helmet of the excavator power armor suit."
@@ -770,12 +788,6 @@
 	item_state = "mosshelmet"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACE
 	flags_cover = HEADCOVERSEYES
-
-/obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
-	name = "hardened midwestern power helmet"
-	desc = "This helmet once belonged to the Midwestern branch of the Brotherhood of Steel, and now resides here. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
-	icon_state = "midwestpa_helm"
-	item_state = "midwestpa_helm"
 
 /obj/item/clothing/head/helmet/f13/jasonmask
 	name = "jasons mask"

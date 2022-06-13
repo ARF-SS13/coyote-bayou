@@ -54,6 +54,24 @@
 	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 15, "bomb" = 45, "bio" = 65, "rad" = 40, "fire" = 70, "acid" = 35, "wound" = 40)
 	slowdown = 0.05
 
+// Midwest
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest
+	name = "salvaged midwestern T-51b power helmet"
+	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. Its electronics appear to have been stripped out."
+	icon_state = "midwestgrey_helm"
+	item_state = "midwestgrey_helm"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 40)
+	slowdown = 0.05
+
+// Hardened Midwest
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/midwest/hardened
+	name = "salvaged hardened midwestern T-51b power helmet"
+	desc = "This helmet belongs to the Midwestern branch of the Brotherhood of Steel. Its electronics appears to have been stripped out."
+	icon_state = "midwestpa_helm"
+	item_state = "midwestpa_helm"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 65, "energy" = 20, "bomb" = 50, "bio" = 80, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 50)
+	slowdown = 0.05
+
 // T-51B
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t51b
 	name = "salvaged T-51b power armor"
@@ -65,7 +83,7 @@
 
 // T-60A
 /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t60
-	name = "salvaged T-51b helmey"
+	name = "salvaged T-60a helmet"
 	desc = "It's a salvaged T-60a power armor helmet."
 	icon_state = "t60helmet0"
 	item_state = "t60helmet0"
