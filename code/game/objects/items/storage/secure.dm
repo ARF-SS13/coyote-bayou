@@ -210,3 +210,11 @@
 
 /obj/item/storage/secure/safe/HoS
 	name = "head of security's safe"
+
+/obj/item/storage/secure/safe/ncr_rep
+
+/obj/item/storage/secure/safe/ncr_rep/New()
+	..()
+	new /obj/item/documents/ncr_rep(src)
+	new /obj/item/stack/f13Cash/onezerozerozero(src)
+	new /obj/item/melee/baton/loaded(src)

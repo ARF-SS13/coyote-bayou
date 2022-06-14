@@ -32,6 +32,10 @@
 /obj/item/documents/syndicate/mining
 	desc = "\"Top Secret\" documents detailing Syndicate plasma mining operations."
 
+/obj/item/documents/ncr_rep
+	name = "representative dossier"
+	desc = "\"Top Secret\" NCR documents trusted to the Representative. A mixture of financial records and political papers."
+
 /obj/item/documents/photocopy
 	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
 	var/forgedseal = 0

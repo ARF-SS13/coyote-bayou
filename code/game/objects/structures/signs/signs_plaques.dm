@@ -61,3 +61,28 @@
 
 /obj/structure/sign/plaques/long/paradise
 	icon_state = "treebanner"
+
+/obj/structure/sign/plaques/ncr_lt
+	name = "lieutenant"
+	desc = "An NCR office plaque."
+	icon_state = "ncr_lt"
+
+/obj/structure/sign/plaques/ncr_cpt
+	name = "captain"
+	desc = "An NCR office plaque."
+	icon_state = "ncr_cpt"
+
+/obj/structure/sign/plaques/ncr_sea
+	name = "senior enlisted adviser"
+	desc = "An NCR office plaque."
+	icon_state = "ncr_sea"
+
+/obj/structure/sign/plaques/ncr_rep
+	name = "representative"
+	desc = "An NCR office plaque."
+	icon_state = "ncr_rep"
+
+/obj/structure/sign/plaques/ncr_lo
+	name = "logistics officer"
+	desc = "An NCR office plaque."
+	icon_state = "ncr_lo"

@@ -79,7 +79,7 @@
 	return ..()
 
 /obj/structure/obstacle/barbedwire/proc/shock(mob/user, prb) 	// war crime mode, if you can find an electrical generator
-	
+
 	if(!in_range(src, user))//To prevent TK and mech users from getting shocked
 		return FALSE
 	var/turf/T = get_turf(src)
@@ -266,6 +266,31 @@
 /obj/effect/overlay/turfs/decoration/oldpipes/valve
 	icon_state = "rustpipe-valve"
 
+
+/obj/effect/overlay/turfs
+	name = "asphalt overlay"
+	icon = 'icons/fallout/turfs/smoothing.dmi'
+	icon_state = "asphalt_side"
+	density = FALSE
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = FLOOR_PLANE
+	layer = ABOVE_OPEN_TURF_LAYER
+	anchored = TRUE
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/effect/overlay/turfs/sidewalk
+	name = "sidewalk overlay"
+	icon_state = "sidewalk_side"
+
+/obj/effect/overlay/turfs/cliff
+	name = "cliff overlay"
+	icon_state = "cliff"
+
+/obj/effect/overlay/turfs/cliff/alt
+	icon_state = "cliffalt"
+
+/obj/effect/overlay/turfs/cliff/corner
+	icon_state = "cliff_corner"
 
 ///////////////////////
 /// BARRICADE TYPES ///
