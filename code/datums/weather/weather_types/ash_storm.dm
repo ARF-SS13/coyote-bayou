@@ -42,6 +42,7 @@
 		var/area/place = eligible_areas[i]
 		if(!place)
 			WARNING("Null area in eligible areas: [eligible_areas]")
+			continue
 		if(place.outdoors)
 			outside_areas += place
 		else
