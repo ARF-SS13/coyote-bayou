@@ -28,8 +28,8 @@
 
 /datum/element/mob_holder/Detach(datum/source, force)
 	. = ..()
-	UnregisterSignal(source, COMSIG_CLICK_ALT)
-	UnregisterSignal(source, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(source, COMSIG_CLICK_ALT, override = TRUE)
+	UnregisterSignal(source, COMSIG_PARENT_EXAMINE, override = TRUE)
 
 /datum/element/mob_holder/proc/on_examine(mob/living/source, mob/user, list/examine_list)
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder))
