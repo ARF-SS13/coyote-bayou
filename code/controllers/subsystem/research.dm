@@ -448,11 +448,11 @@ SUBSYSTEM_DEF(research)
 		TN.Initialize()
 	techweb_nodes = returned
 	if (!verify_techweb_nodes())	//Verify all nodes have ids and such.
-		stack_trace("Invalid techweb nodes detected")
+		stack_trace("Invalid techweb nodes detected: Nodes lack IDs")
 	calculate_techweb_nodes()
 	calculate_techweb_boost_list()
 	if (!verify_techweb_nodes())		//Verify nodes and designs have been crosslinked properly.
-		CRASH("Invalid techweb nodes detected")
+		CRASH("Invalid techweb nodes detected: Nodes and Designs have not been crosslinked.")
 
 /datum/controller/subsystem/research/proc/initialize_all_techweb_designs(clearall = FALSE)
 	if(islist(techweb_designs) && clearall)
