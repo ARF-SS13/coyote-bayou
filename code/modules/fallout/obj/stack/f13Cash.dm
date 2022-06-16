@@ -10,24 +10,26 @@
 /* LOW_MIN / AUR = amount in AUR */
 
 // A low value cash spawn is on average worth 25
-#define LOW_MIN 8
-#define LOW_MAX 50
+#define LOW_MIN 1
+#define LOW_MAX 5
 
 // A medium value cash spawn is on average worth 60ish
-#define MED_MIN 40
-#define MED_MAX 80
+#define MED_MIN 5
+#define MED_MAX 15
 
-// Bad Pebbles fix to NCR money fudgery
-#define TEMP3_MIN 10
-#define TEMP3_MAX 65
-#define TEMP_MIN 65
-#define TEMP_MAX 120
-#define TEMP2_MIN 150
-#define TEMP2_MAX 600
 
 // A high value cash spawn is on average worth 280
-#define HIGH_MIN 120
-#define HIGH_MAX 440
+#define HIGH_MIN 16
+#define HIGH_MAX 30
+
+
+// Bad Pebbles fix to NCR money fudgery
+#define TEMP3_MIN 0
+#define TEMP3_MAX 0
+#define TEMP_MIN 0
+#define TEMP_MAX 0
+#define TEMP2_MIN 0
+#define TEMP2_MAX 0
 
 // The Bankers Vault-Stash, done like this make it so it only spawns on his person to stop metarushing. Average 8500.
 #define BANKER_MIN 2000
@@ -216,16 +218,16 @@
 	money_type = /obj/item/stack/f13Cash/aureus
 
 /obj/item/stack/f13Cash/random/aureus/low
-	min_qty = 1
-	max_qty = 1
+	min_qty = 0
+	max_qty = 0
 
 /obj/item/stack/f13Cash/random/aureus/med
-	min_qty = 2
-	max_qty = 2
+	min_qty = 0
+	max_qty = 0
 
 /obj/item/stack/f13Cash/random/aureus/high
-	min_qty = 2
-	max_qty = 5 //uses flat values because aurei are worth so much
+	min_qty = 0
+	max_qty = 0 //uses flat values because aurei are worth so much
 
 /obj/item/stack/f13Cash/ncr
 	name = "NCR Dollar"
@@ -280,6 +282,7 @@
 /obj/item/stack/f13Cash/random/ncr/ncrpay_officer
 	min_qty = HIGH_MIN / CASH_NCR
 	max_qty = HIGH_MAX / CASH_NCR
+
 
 #undef maxCoinIcon
 #undef CASH_CAP
