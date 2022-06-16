@@ -23,8 +23,8 @@
 	src.proctype = proctype
 	src.escape_on_find = escape_on_find
 
-	RegisterSignal(target, COMSIG_CLICK_ALT, .proc/mob_try_pickup)
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/on_examine)
+	RegisterSignal(target, COMSIG_CLICK_ALT, .proc/mob_try_pickup, override = TRUE)
+	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/on_examine, override = TRUE)
 
 /datum/element/mob_holder/Detach(datum/source, force)
 	. = ..()
