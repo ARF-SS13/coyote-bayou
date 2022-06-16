@@ -40,6 +40,8 @@
 		eligible_areas += SSmapping.areas_in_z["[z]"]
 	for(var/i in 1 to eligible_areas.len)
 		var/area/place = eligible_areas[i]
+		if(!place)
+			WARNING("Null area in eligible areas: [eligible_areas]")
 		if(place.outdoors)
 			outside_areas += place
 		else
