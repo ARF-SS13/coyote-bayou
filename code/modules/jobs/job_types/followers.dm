@@ -90,7 +90,6 @@ Administrator
 		/obj/item/book/granter/trait/techno = 1,
 	)
 
-/*
 Professor
 
 /datum/job/followers/f13Professor
@@ -133,7 +132,6 @@ Professor
 	chemwhiz = TRUE
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient=1)
-*/
 
 /*
 Practitioner

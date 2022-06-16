@@ -17,7 +17,7 @@ Mayor
 /datum/job/oasis
 	exp_type = EXP_TYPE_OASIS
 	faction = FACTION_OASIS
-/*
+
 /datum/job/oasis/f13mayor
 	title = "Mayor"
 	flag = F13MAYOR
@@ -413,7 +413,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
-*/
+
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13farmer
@@ -469,7 +469,7 @@ Mayor
 		/obj/item/clothing/under/f13/roving)
 
 /*--------------------------------------------------------------*/
-/*
+
 /datum/job/oasis/f13prospector
 	title = "Prospector"
 	flag = F13PROSPECTOR
@@ -532,8 +532,7 @@ Mayor
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
 /*--------------------------------------------------------------*/
-*/
-/*
+
 /datum/job/oasis/f13dendoc
 	title = "Doctor"
 	flag = F13DENDOC
@@ -582,7 +581,7 @@ Mayor
 	if(visualsOnly)
 		return
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
-*/
+
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13barkeep
@@ -792,7 +791,7 @@ Mayor
 /*----------------------------------------------------------------
 --							Detective							--
 ----------------------------------------------------------------*/
-/*
+
 /datum/job/oasis/f13detective
 	title = "Detective"
 	flag = F13DETECTIVE
@@ -841,10 +840,9 @@ Mayor
 		/obj/item/storage/box/gloves=1,
 		/obj/item/storage/box/evidence=1,
 		/obj/item/ammo_box/a357=2)
-*/
 
 /*--------------------------------------------------------------*/
-/*
+
 /datum/job/oasis/f13banker
 	title = "Banker"
 	flag = F13BANKER
@@ -920,7 +918,6 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1
 		)
-*/
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13shopkeeper
