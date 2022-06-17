@@ -167,7 +167,7 @@
 	singular_name = "wooden floor tile"
 	desc = "An easy to fit wood floor tile."
 	icon_state = "tile-wood"
-	turf_type = /turf/open/floor/wood
+	turf_type = /turf/open/floor/wood_common
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/tile/wood
 
