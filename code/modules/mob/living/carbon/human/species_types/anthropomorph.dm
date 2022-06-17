@@ -17,7 +17,7 @@
 	wagging_type = "mam_waggingtail"
 	species_category = SPECIES_CATEGORY_FURRY
 
-	allowed_limb_ids = list("mammal","aquatic","avian")
+	allowed_limb_ids = list("mammal","aquatic","avian", "shadekin")
 
 /datum/species/mammal/synthetic
 	name = "Synthetic Anthropomorph"
@@ -47,4 +47,4 @@
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
 
-	allowed_limb_ids = list("mammal","aquatic","avian", "human")
+	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")
