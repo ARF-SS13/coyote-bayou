@@ -489,6 +489,11 @@ ROUNDSTART_RACES slimeperson
 ROUNDSTART_RACES ipc
 ROUNDSTART_RACES arachnid
 
+
+## CUSTOM Races
+ROUNDSTART_RACES shadekin
+
+
 ##-------------------------------------------------------------------------------------------
 
 ## Uncomment to give players the choice of joining as a human with mutant bodyparts before they join the game
@@ -661,8 +666,8 @@ PENIS_MIN_INCHES_PREFS 1
 PENIS_MAX_INCHES_PREFS 10
 
 ## Body size configs, the feature will be disabled if both min and max have the same value.
-BODY_SIZE_MIN 1
-BODY_SIZE_MAX 1
+BODY_SIZE_MIN 0.8
+BODY_SIZE_MAX 1.2
 
 ## Pun-Pun movement slowdown given to characters with a body size smaller than this value,
 ## to compensate for their smaller hitbox.
