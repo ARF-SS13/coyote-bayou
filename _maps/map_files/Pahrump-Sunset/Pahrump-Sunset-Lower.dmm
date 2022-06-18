@@ -11074,6 +11074,10 @@
 	icon_state = "engine"
 	},
 /area/f13/brotherhood/mining)
+"fYY" = (
+/obj/structure/closet/crate/large,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "fZC" = (
 /obj/structure/table{
 	layer = 2.9
@@ -14502,6 +14506,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/bunker)
+"ieQ" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "ToRRAD"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "ieU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -15129,6 +15140,11 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/bunker)
+"ize" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "izh" = (
 /obj/machinery/light,
 /obj/structure/rack,
@@ -18760,6 +18776,10 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"kSp" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "kSq" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards{
@@ -19956,6 +19976,15 @@
 	icon_state = "casino"
 	},
 /area/f13/brotherhood/rnd)
+"lCl" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
 "lCp" = (
 /obj/structure/closet/crate/bin,
 /obj/structure/curtain{
@@ -26986,6 +27015,11 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
+"qgV" = (
+/obj/structure/flora/grass/jungle/b,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "qgX" = (
 /obj/structure/glowshroom/single,
 /obj/structure/campfire/barrel,
@@ -27847,6 +27881,13 @@
 	dir = 6
 	},
 /area/f13/brotherhood/mining)
+"qHT" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "VaultEscape"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "qHX" = (
 /obj/structure/chair/office,
 /area/f13/building)
@@ -36705,6 +36746,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/bunker)
+"wgy" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "wgA" = (
 /obj/machinery/door/window/northleft,
 /obj/machinery/shower{
@@ -36834,6 +36881,10 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
+"wlq" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "wls" = (
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
@@ -43855,8 +43906,8 @@ vPg
 vPg
 vPg
 aoj
-vPg
-vPg
+fYY
+fYY
 aoj
 aoj
 vPg
@@ -44110,11 +44161,11 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+wlq
+xVz
+xVz
 vPg
 vPg
 vPg
@@ -44365,14 +44416,14 @@ aoj
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-vPg
+ieQ
+xVz
+aVU
+xVz
+iou
+xVz
+xVz
+aVU
 vPg
 vPg
 aoj
@@ -44622,14 +44673,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
 vPg
 vPg
 vPg
@@ -44879,14 +44930,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-aoj
+xVz
+iou
+xVz
+qHT
+wlq
+ntF
+iou
+xVz
 vPg
 vPg
 aoj
@@ -45136,14 +45187,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-aoj
-aoj
-aoj
-vPg
-vPg
+qgV
+xVz
+xVz
+xVz
+xVz
+iou
+wgy
+wgy
 vPg
 vPg
 vPg
@@ -45393,14 +45444,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-aoj
+xVz
+xVz
+ntF
+iou
+xVz
+kSp
+lCl
+nuK
 vPg
 vPg
 vPg
@@ -45650,14 +45701,14 @@ aoj
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+aVU
+xVz
+xVz
+wlq
+xVz
+ize
+kfY
+xmk
 vPg
 aoj
 aoj
@@ -45907,14 +45958,14 @@ vPg
 aoj
 vPg
 vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+xVz
+xVz
+xVz
+kSp
+kfY
+xmk
 aoj
 vPg
 vPg
@@ -46166,9 +46217,9 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-aoj
+xVz
+xVz
+aVU
 vPg
 vPg
 aoj
@@ -46424,8 +46475,8 @@ vPg
 vPg
 vPg
 vPg
-vPg
-aoj
+xVz
+xVz
 vPg
 vPg
 aoj
