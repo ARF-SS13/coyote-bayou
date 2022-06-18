@@ -318,7 +318,6 @@
 /area/f13/vault)
 "arb" = (
 /obj/structure/cable,
-/obj/structure/chair/booth,
 /obj/machinery/light{
 	light_color = "#e8eaff"
 	},
@@ -327,6 +326,7 @@
 	name = "Vault Intercom";
 	pixel_y = -30
 	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "arg" = (
@@ -20609,9 +20609,7 @@
 	},
 /area/f13/bunker)
 "uLe" = (
-/obj/structure/chair/middle{
-	dir = 4
-	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "uLl" = (
@@ -23250,10 +23248,10 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/obj/structure/chair/booth,
 /obj/item/reagent_containers/food/snacks/waffles{
 	pixel_y = 6
 	},
+/obj/structure/table/booth,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "xuz" = (
@@ -39146,7 +39144,7 @@ uQS
 nHv
 rSC
 bUX
-tgh
+uQS
 uQS
 gvw
 jfd
@@ -39403,7 +39401,7 @@ uQS
 jHI
 rSC
 rSC
-rSC
+tgh
 uQS
 rdF
 jfd
