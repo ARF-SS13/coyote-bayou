@@ -361,7 +361,7 @@
 	icon = 'icons/turf/floors.dmi'
 	//	step_sounds = list("human" = "woodfootsteps")
 
-/turf/open/indestructible/ground/outside/woodalt
+/turf/open/floor/f13/wood
 	name = "\proper wood planks"
 	icon_state = "wood"
 	icon = 'icons/turf/floors.dmi'
