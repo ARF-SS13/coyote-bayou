@@ -2689,7 +2689,7 @@
 	},
 /area/f13/ncr)
 "bcq" = (
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandsouth"
 	},
 /area/f13/village)
@@ -3037,7 +3037,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "bjg" = (
 /obj/structure/rack,
@@ -4041,7 +4041,7 @@
 /obj/structure/stairs/north{
 	color = "#A47449"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "bDO" = (
 /obj/structure/filingcabinet,
@@ -7901,7 +7901,7 @@
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/caves)
 "dpx" = (
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandsouth"
 	},
 /area/f13/wasteland)
@@ -9657,7 +9657,7 @@
 	layer = 2.8;
 	max_integrity = 140
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "edt" = (
 /obj/effect/decal/marking{
@@ -11038,7 +11038,7 @@
 /area/f13/building)
 "eFC" = (
 /obj/structure/simple_door/wood,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "eFW" = (
 /obj/effect/landmark/start/f13/ncrtrooper,
@@ -12051,7 +12051,7 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandeast"
 	},
 /area/f13/village)
@@ -17991,7 +17991,7 @@
 	color = "#363636"
 	},
 /obj/structure/simple_door/repaired,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "hxd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23169,7 +23169,7 @@
 /obj/structure/window/fulltile/wood{
 	max_integrity = 140
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "jFc" = (
 /obj/structure/table/wood,
@@ -25678,7 +25678,7 @@
 /area/f13/building)
 "kHg" = (
 /obj/machinery/vending/clothing,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "kHj" = (
 /obj/structure/simple_door/room,
@@ -26194,7 +26194,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "kUd" = (
 /obj/structure/barricade/wooden,
@@ -31829,7 +31829,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "nnc" = (
 /obj/structure/table/wood,
@@ -33105,7 +33105,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "nTK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -35088,7 +35088,7 @@
 /area/f13/building)
 "oPy" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandsouth"
 	},
 /area/f13/village)
@@ -36344,7 +36344,7 @@
 /area/f13/wasteland)
 "ptb" = (
 /obj/effect/decal/cleanable/shreds,
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandsouth"
 	},
 /area/f13/village)
@@ -38044,7 +38044,7 @@
 /obj/structure/window/fulltile/wood{
 	max_integrity = 140
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "qgP" = (
 /obj/structure/closet,
@@ -38852,7 +38852,7 @@
 /obj/structure/window/fulltile/ruins,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/railing,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "qzr" = (
 /obj/item/bedsheet/hos,
@@ -40133,7 +40133,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/turf/open/floor/wood{
+/turf/open/floor/wood_common{
 	icon_state = "housewastelandeast"
 	},
 /area/f13/village)
@@ -42453,7 +42453,7 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindow"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "sgd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -49111,7 +49111,7 @@
 /area/f13/wasteland)
 "vbj" = (
 /obj/structure/simple_door/room,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "vbm" = (
 /mob/living/simple_animal/hostile/ghoul,
@@ -53408,7 +53408,7 @@
 "xei" = (
 /obj/structure/barricade/bars,
 /obj/structure/barricade/wooden,
-/turf/open/floor/wood,
+/turf/open/floor/wood_common,
 /area/f13/village)
 "xeo" = (
 /obj/machinery/light{

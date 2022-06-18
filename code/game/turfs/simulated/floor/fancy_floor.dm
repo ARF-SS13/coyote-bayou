@@ -292,17 +292,17 @@
 
 
 
-/turf/open/floor/wood/examine(mob/user)
+/turf/open/floor/wood_common/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>There's a few <b>screws</b> and a <b>small crack</b> visible.</span>"
 
-/turf/open/floor/wood/screwdriver_act(mob/living/user, obj/item/I)
+/turf/open/floor/wood_common/screwdriver_act(mob/living/user, obj/item/I)
 	if(..())
 		return TRUE
 	. = STOP_ATTACK_PROC_CHAIN
 	pry_tile(I, user)
 
-/turf/open/floor/wood/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
+/turf/open/floor/wood_common/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
 	if(T.turf_type == type)
 		return
 	var/obj/item/tool = user.is_holding_item_of_type(/obj/item/screwdriver)
@@ -315,11 +315,11 @@
 		return
 	P.attackby(T, user, params)
 
-/turf/open/floor/wood/pry_tile(obj/item/C, mob/user, silent = FALSE)
+/turf/open/floor/wood_common/pry_tile(obj/item/C, mob/user, silent = FALSE)
 	C.play_tool_sound(src, 80)
 	return remove_tile(user, silent, (C.tool_behaviour == TOOL_SCREWDRIVER))
 
-/turf/open/floor/wood/remove_tile(mob/user, silent = FALSE, make_tile = TRUE, forced = FALSE)
+/turf/open/floor/wood_common/remove_tile(mob/user, silent = FALSE, make_tile = TRUE, forced = FALSE)
 	if(broken || burnt)
 		broken = 0
 		burnt = 0
@@ -336,7 +336,7 @@
 				to_chat(user, "<span class='notice'>You forcefully pry off the planks, destroying them in the process.</span>")
 	return make_plating()
 
-/turf/open/floor/wood/rust_heretic_act()
+/turf/open/floor/wood_common/rust_heretic_act()
 	if(prob(70))
 		new /obj/effect/temp_visual/glowing_rune(src)
 	ChangeTurf(/turf/open/floor/plating/rust)
