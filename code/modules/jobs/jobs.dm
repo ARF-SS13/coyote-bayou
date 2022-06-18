@@ -85,7 +85,6 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "BoS Off-Duty",
 
 "Legion Centurion",
-"Legion Venator",
 "Legion Explorer",
 "Legion Slavemaster",
 "Legion Veteran Decanus",
@@ -168,7 +167,6 @@ GLOBAL_LIST_INIT(legion_command_positions, list(
 GLOBAL_LIST_INIT(legion_positions, list(
 	"Legion Orator",
 	"Legion Centurion",
-	"Legion Venator",
 	"Legion Veteran Decanus",
 	"Legion Prime Decanus",
 	"Legion Recruit Decanus",
@@ -211,6 +209,8 @@ GLOBAL_LIST_INIT(ncr_positions, list(
 ))
 
 GLOBAL_LIST_INIT(vault_positions, list(
+	"Overseer",
+	"Chief of Security",
 	"Vault-tec Doctor",
 	"Vault-tec Scientist",
 	"Vault-tec Security",
@@ -280,13 +280,14 @@ GLOBAL_LIST_INIT(followers_positions, list(
 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
-	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
+  	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
+	EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
 	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
-	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
-	EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
+	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
+	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
-	EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
-	EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
+	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
+	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
 ))
 
