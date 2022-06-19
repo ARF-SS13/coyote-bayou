@@ -305,8 +305,8 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
 	frequency = FREQ_VAULT
-	freerange = TRUE
-	freqlock = TRUE
+	freerange = TRUE;
+	freqlock = TRUE;
 
 /obj/item/radio/headset/headset_ncr
 	name = "NCR radio headset"
