@@ -19,7 +19,6 @@
 	icon_state = "human"
 	name = "Human"
 
-/*
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
@@ -53,7 +52,6 @@
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"
 	name = "Knotted Hemi"
-*/
 
 //Testicles
 /datum/sprite_accessory/testicles
@@ -77,7 +75,6 @@
 	icon_state = "human"
 	name = "Human"
 
-/*
 /datum/sprite_accessory/vagina/tentacles
 	icon_state = "tentacle"
 	name = "Tentacle"
@@ -100,7 +97,6 @@
 	icon_state = "furred"
 	name = "Furred"
 	alt_aroused = FALSE
-*/
 
 /datum/sprite_accessory/vagina/gaping
 	icon_state = "gaping"
@@ -115,7 +111,7 @@
 /datum/sprite_accessory/breasts/pair
 	icon_state = "pair"
 	name = "Pair"
-/*
+
 /datum/sprite_accessory/breasts/quad
 	icon_state = "quad"
 	name = "Quad"
@@ -123,4 +119,3 @@
 /datum/sprite_accessory/breasts/sextuple
 	icon_state = "sextuple"
 	name = "Sextuple"
-*/
