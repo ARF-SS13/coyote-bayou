@@ -6,8 +6,8 @@
 
 #Ignore byond config folder.
 /cfg/**/*
-config/admins.txt
-config/dbconfig.txt
+/config/admins.txt
+/config/dbconfig.txt
 
 # Ignore compiled linux libs in the root folder, e.g. librust_g.so
 /*.so
@@ -19,6 +19,7 @@ config/dbconfig.txt
 *.lk
 *.int
 *.backup
+
 ### https://raw.github.com/github/gitignore/cc542de017c606138a87ee4880e5f06b3a306def/Global/Linux.gitignore
 
 *~
@@ -194,3 +195,6 @@ Temporary Items
 /tools/LinuxOneShot/TGS_Config
 /tools/LinuxOneShot/TGS_Instances
 /tools/LinuxOneShot/TGS_Logs
+
+#Linux custom
+start_server.sh
