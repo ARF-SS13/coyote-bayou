@@ -3653,8 +3653,8 @@
 /area/f13/brotherhood/chemistry)
 "caw" = (
 /obj/item/pickaxe{
-	desc = "That pickaxe is stuck in the wall.  Maybe you should strike the earth?";
-	pixel_x = 6
+	pixel_x = 6;
+	desc = "That pickaxe is stuck in the wall.  Maybe you should strike the earth?"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -8406,8 +8406,8 @@
 /area/f13/tunnel)
 "eBZ" = (
 /obj/structure/ladder/unbreakable{
-	height = 2;
-	id = "Vault1"
+	id = "Vault1";
+	height = 2
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -8416,6 +8416,10 @@
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/rust,
 /area/f13/bunker)
+"eCq" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "eCr" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -10689,6 +10693,10 @@
 /obj/structure/table/booth,
 /obj/effect/decal/cleanable/dirt,
 /area/f13/den)
+"fOy" = (
+/obj/structure/window/fulltile/store,
+/turf/open/space/basic,
+/area/f13/brotherhood/armory)
 "fOZ" = (
 /obj/structure/simple_door/metal/iron,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -11547,6 +11555,13 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"gph" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "ToRRAD"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "gpz" = (
 /obj/effect/decal/waste{
 	pixel_x = 20;
@@ -16054,6 +16069,10 @@
 /obj/structure/window/fulltile/store,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"jfJ" = (
+/obj/structure/closet/crate/large,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "jfO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -17551,6 +17570,10 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
+"kdi" = (
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "kdo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -18787,6 +18810,11 @@
 "kTt" = (
 /obj/structure/debris/v4,
 /turf/closed/wall/f13/wood,
+/area/f13/caves)
+"kTu" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "kTJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25108,6 +25136,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/destructible/tribal_torch/lit,
 /area/f13/building)
+"oUX" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "oVa" = (
 /turf/closed/indestructible/opshuttle{
 	icon = 'icons/turf/walls/reinforced_wall.dmi';
@@ -26070,6 +26104,15 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/bunker)
+"pEn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
 "pEu" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -27234,6 +27277,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"qno" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "VaultEscape"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "qnB" = (
 /obj/structure/glowshroom/single,
 /turf/open/indestructible/ground/inside/mountain,
@@ -32714,6 +32764,11 @@
 	slowdown = 0
 	},
 /area/f13/tunnel)
+"tCB" = (
+/obj/structure/flora/grass/jungle/b,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "tCQ" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress4"
@@ -43851,8 +43906,8 @@ vPg
 vPg
 vPg
 aoj
-vPg
-vPg
+jfJ
+jfJ
 aoj
 aoj
 vPg
@@ -44106,11 +44161,11 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+eCq
+xVz
+xVz
 vPg
 vPg
 vPg
@@ -44361,14 +44416,14 @@ aoj
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-vPg
+gph
+xVz
+aVU
+xVz
+iou
+xVz
+xVz
+aVU
 vPg
 vPg
 aoj
@@ -44618,14 +44673,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
+xVz
 vPg
 vPg
 vPg
@@ -44875,14 +44930,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-aoj
+xVz
+iou
+xVz
+qno
+eCq
+ntF
+iou
+xVz
 vPg
 vPg
 aoj
@@ -45132,14 +45187,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-aoj
-aoj
-aoj
-vPg
-vPg
+tCB
+xVz
+xVz
+xVz
+xVz
+iou
+oUX
+oUX
 vPg
 vPg
 vPg
@@ -45389,14 +45444,14 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-aoj
-aoj
+xVz
+xVz
+ntF
+iou
+xVz
+kdi
+pEn
+nuK
 vPg
 vPg
 vPg
@@ -45646,14 +45701,14 @@ aoj
 vPg
 vPg
 vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
-vPg
+aVU
+xVz
+xVz
+eCq
+xVz
+kTu
+kfY
+xmk
 vPg
 aoj
 aoj
@@ -45903,14 +45958,14 @@ vPg
 aoj
 vPg
 vPg
-vPg
-vPg
-aoj
-vPg
-vPg
-vPg
-vPg
-vPg
+xVz
+xVz
+xVz
+xVz
+xVz
+kdi
+kfY
+xmk
 aoj
 vPg
 vPg
@@ -46162,9 +46217,9 @@ vPg
 vPg
 vPg
 vPg
-vPg
-vPg
-aoj
+xVz
+xVz
+aVU
 vPg
 vPg
 aoj
@@ -46420,8 +46475,8 @@ vPg
 vPg
 vPg
 vPg
-vPg
-aoj
+xVz
+xVz
 vPg
 vPg
 aoj
@@ -104242,7 +104297,7 @@ kDV
 gak
 tNL
 nDS
-dMF
+fOy
 pNR
 nDS
 nDS
