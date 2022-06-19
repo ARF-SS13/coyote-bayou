@@ -276,12 +276,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "\proper vault radio headset"
 	desc = "A vault-tec radio.\nChannels are as follows: :v - vault."
 	keyslot = new /obj/item/encryptionkey/headset_vault
+	frequency = FREQ_VAULT
 
 /obj/item/radio/headset/headset_vaultsec
 	name = "security radio headset"
 	desc = "This is used by your elite security force.\nTo access the security channel, use :s. To access the vault channel, use :v."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_security
+	frequency = FREQ_VAULT
 
 /obj/item/radio/headset/headset_vaultsec/ComponentInitialize()
 	. = ..()
@@ -292,6 +294,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs.\nTo access the security channel, use :s. For command, use :c. For vault, use :v"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
+	frequency = FREQ_VAULT
 
 /obj/item/radio/headset/headset_ncr
 	name = "NCR radio headset"
@@ -300,6 +303,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_ncr
 	linked_faction = FACTION_NCR
 	factionized = TRUE
+	frequ
 
 /obj/item/radio/headset/headset_ranger
 	name = "Ranger radio headset"
