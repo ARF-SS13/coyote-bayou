@@ -464,8 +464,8 @@
 "du" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2";
-	tag = "icon-floor2";
-	pixel_x = -12
+	pixel_x = -12;
+	tag = "icon-floor2"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -487,8 +487,8 @@
 	icon_state = "straight"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 1
+	dir = 1;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "dK" = (
@@ -536,6 +536,9 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/space)
+"el" = (
+/turf/closed/wall/f13/wood/house,
+/area/space)
 "em" = (
 /obj/structure/table/wood/junk,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug{
@@ -558,8 +561,8 @@
 "ez" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "eA" = (
@@ -626,6 +629,9 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/space)
+"eP" = (
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "eQ" = (
 /obj/item/storage/backpack/security,
 /obj/structure/rack/large/shelf_rust,
@@ -648,8 +654,8 @@
 /area/space)
 "fc" = (
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "fk" = (
@@ -766,6 +772,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"gS" = (
+/obj/structure/sign/poster/ripped,
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "he" = (
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
 /obj/item/clothing/suit/armor/f13/brahmin_leather_duster,
@@ -823,15 +833,15 @@
 /area/space)
 "hl" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 1
+	dir = 1;
+	icon_state = "outerturn"
 	},
 /area/space)
 "hm" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "hp" = (
@@ -900,12 +910,25 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/space)
+"hN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "hQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
+/area/space)
+"hW" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "ic" = (
 /obj/effect/decal/marking{
@@ -923,8 +946,8 @@
 /area/space)
 "ik" = (
 /obj/structure/wreck/bus/rusted{
-	name = "razor transport";
-	desc = "A pre-war bus now serving as some kind of raider transport. Looks like it's out of fuel, though."
+	desc = "A pre-war bus now serving as some kind of raider transport. Looks like it's out of fuel, though.";
+	name = "razor transport"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/space)
@@ -1013,9 +1036,9 @@
 /area/space)
 "iT" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert3";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -1327,6 +1350,16 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"mA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "mB" = (
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
@@ -1449,8 +1482,8 @@
 /area/space)
 "nT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 8
+	dir = 8;
+	icon_state = "outerturn"
 	},
 /area/space)
 "nV" = (
@@ -1480,6 +1513,21 @@
 	dir = 1;
 	icon_state = "greenrusty"
 	},
+/area/space)
+"ot" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
+"ou" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/table,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/ammo_box/a762,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "ow" = (
 /obj/structure/flora/tree/tall{
@@ -1566,8 +1614,8 @@
 /area/space)
 "pz" = (
 /obj/effect/turf_decal/big/energy{
-	pixel_x = 16;
-	alpha = 200
+	alpha = 200;
+	pixel_x = 16
 	},
 /turf/open/floor/f13{
 	icon_state = "whiteyellowrustychess"
@@ -1651,6 +1699,12 @@
 	icon_state = "floorgrime"
 	},
 /area/space)
+"qB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "qG" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/plasteel/f13{
@@ -1663,6 +1717,15 @@
 	icon_state = "dirtcorner";
 	tag = "icon-dirtcorner (EAST)"
 	},
+/area/space)
+"qS" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/toilet{
+	dir = 8
+	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "qT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1708,8 +1771,8 @@
 	pixel_x = 15
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 8
+	dir = 8;
+	icon_state = "outerturn"
 	},
 /area/space)
 "rk" = (
@@ -1721,8 +1784,8 @@
 /area/space)
 "rs" = (
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "rx" = (
@@ -1772,11 +1835,20 @@
 	icon_state = "greendirtysolid"
 	},
 /area/space)
+"sa" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/bed2,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "sc" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert2";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -1946,6 +2018,16 @@
 "vc" = (
 /mob/living/simple_animal/hostile/molerat,
 /turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
+"ve" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/shower{
+	dir = 4
+	},
+/obj/machinery/pool/drain,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "vg" = (
 /obj/machinery/light/floor,
@@ -2249,9 +2331,9 @@
 /area/space)
 "yw" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert1";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -2260,6 +2342,13 @@
 /turf/open/indestructible/ground/outside/desert/harsh{
 	icon_state = "outerpavement"
 	},
+/area/space)
+"yA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/simple_door/interior,
+/turf/closed/wall/f13/wood/house/broken,
 /area/space)
 "yJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2502,8 +2591,8 @@
 "BC" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "BK" = (
@@ -2925,8 +3014,8 @@
 "Gs" = (
 /obj/effect/spawner/lootdrop/toolsbasic,
 /obj/structure/sign/warning/fire{
-	pixel_y = -30;
-	name = "\improper DANGER: FUEL STORAGE"
+	name = "\improper DANGER: FUEL STORAGE";
+	pixel_y = -30
 	},
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
@@ -3039,6 +3128,13 @@
 /obj/structure/table/wood/junk,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"HA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/wood,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "HB" = (
 /obj/structure/flora/grass/jungle/b,
@@ -3323,6 +3419,15 @@
 	icon_state = "greenrustychess"
 	},
 /area/space)
+"Lb" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "Ld" = (
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/decal/cleanable/dirt,
@@ -3343,6 +3448,13 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/space)
+"LI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/table,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "LN" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
@@ -3431,6 +3543,13 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain2"
 	},
+/area/space)
+"Nc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/tv,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "Ne" = (
 /obj/structure/fence/door,
@@ -3547,8 +3666,8 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "Or" = (
@@ -3602,8 +3721,8 @@
 "OQ" = (
 /obj/item/ammo_casing/c10mm,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "OX" = (
@@ -3673,6 +3792,13 @@
 	icon_state = "yellowrustychess"
 	},
 /area/space)
+"Qq" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "Qs" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt,
@@ -3694,8 +3820,8 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 1
+	dir = 1;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "QI" = (
@@ -3754,8 +3880,8 @@
 	icon_state = "corner"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 10
+	dir = 10;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "RG" = (
@@ -3798,6 +3924,13 @@
 "RR" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"RT" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house/broken,
 /area/space)
 "RW" = (
 /obj/machinery/light,
@@ -3881,8 +4014,8 @@
 	icon_state = "corner"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 9
+	dir = 9;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "SL" = (
@@ -3934,6 +4067,15 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
+/area/space)
+"Tv" = (
+/obj/structure/simple_door/house{
+	icon_state = "glassclosing"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "TB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4018,14 +4160,21 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 6
+	dir = 6;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "Uv" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	icon_state = "dirtcorner"
 	},
+/area/space)
+"Uw" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house,
 /area/space)
 "UA" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -4095,6 +4244,9 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
+/area/space)
+"UT" = (
+/turf/open/indestructible/ground/outside/gravel,
 /area/space)
 "UU" = (
 /obj/structure/wreck/car/bike{
@@ -4299,6 +4451,10 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh/corner,
+/area/space)
+"XU" = (
+/obj/structure/car/rubbish1,
+/turf/open/indestructible/ground/outside/gravel,
 /area/space)
 "XV" = (
 /obj/structure/decoration/warning,
@@ -48364,15 +48520,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+eP
+ot
+ot
+el
+eP
+eP
+el
+el
 Iv
 Iv
 Iv
@@ -48621,18 +48777,18 @@ Iv
 Iv
 AI
 Iv
+eP
+hN
+hN
+hN
+yA
+hN
+hN
+hN
+el
 Iv
 Iv
 Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
 Iv
 Iv
 Iv
@@ -48878,15 +49034,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+gS
+hN
+hN
+hN
+qB
+HA
+hN
+Nc
+RT
 Iv
 Iv
 Iv
@@ -49135,15 +49291,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+ou
+sa
+qB
+hN
+hN
+hN
+RT
 Iv
 Iv
 Iv
@@ -49392,15 +49548,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+hW
+qB
+qB
+qB
+hN
+hN
+hN
+Tv
 Iv
 Iv
 Iv
@@ -49649,19 +49805,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+hN
+ve
+qB
+hN
+hN
+Qq
+Uw
+UT
+UT
+XU
+UT
 Iv
 Iv
 Iv
@@ -49906,19 +50062,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+hN
+hN
+yA
+hN
+Lb
+hN
+RT
+UT
+UT
+UT
+UT
 Iv
 Iv
 Iv
@@ -50066,7 +50222,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -50163,19 +50319,19 @@ Iv
 Iv
 hj
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+mA
+qS
+hN
+qB
+hN
+LI
+hN
+eP
+UT
+UT
+UT
+UT
 Iv
 Iv
 Iv
@@ -50420,15 +50576,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
+eP
+eP
+eP
+el
+el
+el
+eP
+eP
+eP
 Iv
 Iv
 Iv
