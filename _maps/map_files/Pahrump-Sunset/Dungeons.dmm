@@ -16205,8 +16205,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash{
-	desc = "That looks like some dust from something that happened to the wall.";
-	pixel_y = 17
+	pixel_y = 17;
+	desc = "That looks like some dust from something that happened to the wall."
 	},
 /turf/open/floor/f13/wood,
 /area/f13/vault)
@@ -16920,9 +16920,9 @@
 /area/f13/tunnel)
 "qRJ" = (
 /turf/closed/wall/r_wall/rust{
-	desc = "This wall looks damaged, maybe you could take it apart?";
 	icon = 'icons/turf/walls/f13vault_reinforced_wall.dmi';
-	icon_state = "2-i"
+	icon_state = "2-i";
+	desc = "This wall looks damaged, maybe you could take it apart?"
 	},
 /area/f13/vault)
 "qRZ" = (
@@ -18094,9 +18094,9 @@
 /area/f13/wasteland)
 "sih" = (
 /turf/closed/wall/r_wall/rust{
-	desc = null;
 	icon = 'icons/turf/walls/f13vault_reinforced_wall.dmi';
-	icon_state = "2-i"
+	icon_state = "2-i";
+	desc = null
 	},
 /area/f13/vault)
 "siT" = (
