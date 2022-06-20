@@ -261,12 +261,18 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "This is used by the vault overseer.\nChannels are as follows: :v - vault, :c - command, :s - security, :e - engineering, :m - medical, :n - science."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/headset_overseer
+	frequency = FREQ_VAULT
+	freerange = TRUE
+	freqlock = TRUE
 
 /obj/item/radio/headset/headset_vault_hos
 	name = "\proper the chief of security's radio headset"
 	desc = "The headset of the man in charge of keeping order and protecting the vault.\nChannels are as follows: :v - vault, :c - command, :s - security."
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_hos
+	frequency = FREQ_VAULT
+	freerange = TRUE
+	freqlock = TRUE
 
 /obj/item/radio/headset/headset_vault_hos/ComponentInitialize()
 	. = ..()
@@ -276,12 +282,18 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	name = "\proper vault radio headset"
 	desc = "A vault-tec radio.\nChannels are as follows: :v - vault."
 	keyslot = new /obj/item/encryptionkey/headset_vault
+	frequency = FREQ_VAULT
+	freerange = TRUE
+	freqlock = TRUE
 
 /obj/item/radio/headset/headset_vaultsec
 	name = "security radio headset"
 	desc = "This is used by your elite security force.\nTo access the security channel, use :s. To access the vault channel, use :v."
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_vault_security
+	frequency = FREQ_VAULT
+	freerange = TRUE
+	freqlock = TRUE
 
 /obj/item/radio/headset/headset_vaultsec/ComponentInitialize()
 	. = ..()
@@ -292,6 +304,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	desc = "The headset of the man in charge of keeping order and protecting the station. Protects ears from flashbangs.\nTo access the security channel, use :s. For command, use :c. For vault, use :v"
 	icon_state = "com_headset_alt"
 	item_state = "com_headset_alt"
+	frequency = FREQ_VAULT
+	freerange = TRUE
+	freqlock = TRUE
 
 /obj/item/radio/headset/headset_ncr
 	name = "NCR radio headset"
