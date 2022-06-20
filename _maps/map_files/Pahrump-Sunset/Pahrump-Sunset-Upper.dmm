@@ -867,6 +867,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
+"aAe" = (
+/obj/structure/grille,
+/obj/structure/barricade/bars,
+/obj/item/shard,
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "aAf" = (
 /obj/machinery/vending/cola/random,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -993,6 +1002,12 @@
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"bdk" = (
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/closed/wall/rust,
+/area/f13/ncr)
 "beC" = (
 /obj/effect/overlay/junk/oldpipes,
 /obj/effect/spawner/lootdrop/trash,
@@ -1027,6 +1042,9 @@
 /area/f13/city/bighorn)
 "bov" = (
 /obj/structure/chair/wood,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -1397,6 +1415,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"cFp" = (
+/obj/item/mine/shrapnel,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "cHi" = (
 /obj/structure/railing/corner,
 /obj/structure/railing/corner{
@@ -1510,6 +1532,14 @@
 "dcR" = (
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/legion)
+"ddz" = (
+/obj/structure/table,
+/obj/machinery/light,
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "deg" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -1623,6 +1653,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1658,6 +1691,15 @@
 "dTc" = (
 /turf/closed/wall/r_wall,
 /area/f13/ncr)
+"dTO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "dUa" = (
 /obj/machinery/door/window{
 	dir = 8
@@ -1682,12 +1724,11 @@
 	},
 /area/f13/building/hospital)
 "dZy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/ncr/loaded{
-	pixel_x = -32
-	},
+/obj/structure/barricade/bars,
+/obj/item/shard,
+/obj/item/shard,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
 "eav" = (
@@ -1931,6 +1972,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"fjM" = (
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/ncr)
 "fkN" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail_end{
@@ -2199,6 +2246,18 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"gDE" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "gJu" = (
 /obj/structure/railing,
 /turf/open/floor/f13/wood,
@@ -2272,6 +2331,17 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"hbn" = (
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ncrarmory";
+	layer = 11;
+	name = "NCR Armory shutters"
+	},
+/obj/item/shard,
+/obj/item/shard,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "hcj" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2333,6 +2403,9 @@
 "hkV" = (
 /obj/structure/fluff/railing{
 	dir = 1
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo12"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -2527,6 +2600,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"ign" = (
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/closed/wall,
+/area/f13/ncr)
 "iir" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-24"
@@ -2603,15 +2682,11 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
 "ira" = (
-/obj/structure/closet/crate/medical,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#e8eaff"
+	},
+/mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "itg" = (
@@ -3086,9 +3161,12 @@
 	},
 /area/f13/radiation)
 "kst" = (
-/obj/structure/barricade/bars,
-/obj/structure/window/reinforced/fulltile,
-/turf/open/indestructible/ground/outside/roof,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "ktl" = (
 /obj/structure/rack/shelf_metal,
@@ -3141,6 +3219,13 @@
 "kEe" = (
 /turf/open/floor/carpet/orange,
 /area/f13/ncr)
+"kFN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "kGi" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3151,6 +3236,9 @@
 "kGW" = (
 /obj/structure/toilet/secret/high_loot{
 	dir = 8
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo12"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
@@ -3348,6 +3436,11 @@
 "lqO" = (
 /turf/closed/wall/f13/store,
 /area/f13/building/hospital)
+"lrL" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "lto" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -3412,6 +3505,12 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"lGa" = (
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "lIc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/railing,
@@ -3445,6 +3544,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/building/hospital)
+"lPf" = (
+/obj/structure/barricade/bars,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "ncrarmory";
+	layer = 11;
+	name = "NCR Armory shutters"
+	},
+/obj/item/shard,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "lPw" = (
 /obj/structure/railing{
 	dir = 4
@@ -4073,6 +4182,14 @@
 /obj/structure/railing,
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
+"odS" = (
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "oeb" = (
 /obj/structure/chair/booth{
 	icon_state = "booth_west_south"
@@ -4257,6 +4374,9 @@
 "oOa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/reagent_dispensers/barrel/explosive,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "oOs" = (
@@ -4446,6 +4566,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -4455,6 +4578,16 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
+"pPv" = (
+/obj/machinery/door/airlock/security/glass{
+	name = "Gatehouse";
+	req_access_txt = "121"
+	},
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/ncr)
 "pQw" = (
 /obj/structure/window/reinforced/tinted{
@@ -4479,6 +4612,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
+"pYi" = (
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "pZk" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 8
@@ -4592,8 +4731,13 @@
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
 "quJ" = (
-/obj/effect/landmark/start/f13/ncrcombatmedic,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "qvL" = (
 /turf/open/transparent/openspace,
@@ -4741,6 +4885,10 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"qVi" = (
+/obj/item/shard,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "qWS" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -4864,9 +5012,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/pill_bottle/chem_tin/fixer,
-/obj/item/storage/pill_bottle/chem_tin/fixer,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "rvN" = (
@@ -4962,6 +5107,11 @@
 "rLB" = (
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
+"rLJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "rOR" = (
 /obj/structure/shelf_wood,
 /turf/open/floor/wood_fancy,
@@ -5224,8 +5374,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
 "sRG" = (
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
+/obj/item/shard,
+/obj/item/shard,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5374,9 +5525,19 @@
 /area/f13/building/hospital)
 "tot" = (
 /obj/structure/grille,
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/barricade/bars,
+/obj/item/shard,
+/obj/item/shard,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
+"tpY" = (
+/obj/machinery/light,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "tqp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5452,6 +5613,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"tEW" = (
+/obj/structure/barricade/bars,
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "tGy" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-04"
@@ -5738,6 +5906,15 @@
 	dir = 5
 	},
 /area/f13/building/hospital)
+"uFd" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/shard,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "uIp" = (
 /obj/structure/dresser,
 /turf/open/floor/f13/wood,
@@ -5813,8 +5990,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
 "vbL" = (
-/obj/structure/window/reinforced/fulltile,
 /obj/structure/barricade/bars,
+/obj/item/shard,
+/obj/item/shard,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/ncr)
 "vfp" = (
@@ -5872,6 +6050,9 @@
 "vmF" = (
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/effect/decal/waste{
+	icon_state = "goo12"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
@@ -6019,6 +6200,10 @@
 "wqF" = (
 /turf/closed/wall/r_wall/rust,
 /area/f13/wasteland)
+"wqP" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/ncr)
 "wse" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "storewindowhorizontal";
@@ -6187,12 +6372,14 @@
 	},
 /area/f13/ncr)
 "xdk" = (
-/obj/structure/closet/crate/medical,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/obj/item/reagent_containers/hypospray/medipen/medx,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "xfe" = (
 /obj/structure/flora/ausbushes/grassybush{
@@ -6777,9 +6964,9 @@ kur
 kur
 gkT
 gkT
-gkT
-kur
-kur
+bdk
+ign
+ign
 gkT
 kur
 kur
@@ -7027,19 +7214,19 @@ xiI
 ejB
 ejB
 lTP
-dZy
+ejB
 ejB
 lTP
 jxp
 bvK
 ejB
-jxp
+kst
 lTP
 ejB
 geI
 jxp
-ejB
-lTP
+quJ
+gDE
 jxp
 guT
 kur
@@ -7296,7 +7483,7 @@ jxp
 wSa
 jxp
 jxp
-nHV
+xdk
 jxp
 tBZ
 gkT
@@ -7539,11 +7726,11 @@ gkT
 caq
 jxp
 ejB
-jxp
+kst
 rSp
 cHt
 uZG
-nHV
+xdk
 xhc
 kur
 kur
@@ -7796,11 +7983,11 @@ gkT
 cHt
 uZG
 ejB
-jxp
+kst
 vVF
 sGc
 lwT
-ejB
+quJ
 efm
 kur
 psZ
@@ -8053,18 +8240,18 @@ gkT
 sGc
 lwT
 ejB
-jxp
+kst
 vVF
 sGc
 lwT
-nHV
+xdk
 pZk
-gkT
+bdk
 jxp
 jxp
 nHV
 nHV
-jxp
+kst
 jxp
 bvK
 jxp
@@ -8309,7 +8496,7 @@ hHO
 gkT
 sGc
 lwT
-nHV
+xdk
 ejB
 vVF
 sGc
@@ -8317,10 +8504,10 @@ lwT
 pLl
 ejB
 gkT
-ejB
-jxp
-jxp
-ejB
+quJ
+kst
+kst
+quJ
 ejB
 ejB
 kur
@@ -8566,7 +8753,7 @@ hHO
 gkT
 sGc
 lwT
-ejB
+quJ
 ejB
 vVF
 sGc
@@ -8584,7 +8771,7 @@ kur
 cHt
 lIQ
 jxp
-lbC
+odS
 jxp
 aiG
 gPM
@@ -9099,7 +9286,7 @@ sGc
 lwT
 rma
 qQT
-ePI
+tpY
 kur
 kur
 gkT
@@ -9356,7 +9543,7 @@ sGc
 lwT
 rma
 qQT
-ejB
+quJ
 aiG
 cqK
 sRu
@@ -9612,8 +9799,8 @@ gkT
 sGc
 lwT
 qOr
-qQT
-jxp
+dTO
+kst
 dPm
 ujK
 ujC
@@ -10362,7 +10549,7 @@ ujK
 cqK
 dTc
 sGc
-cqK
+cFp
 dTc
 rLB
 rLB
@@ -10616,12 +10803,12 @@ dTc
 bGT
 ujK
 ujK
-ujK
+kFN
 dTc
 fDV
 ujK
-dTc
-eNH
+sGc
+rLB
 rLB
 rLB
 rLB
@@ -10875,8 +11062,8 @@ cqK
 vmF
 cqK
 pGc
-ujK
-cqK
+rLJ
+wqP
 rBR
 iqu
 rLB
@@ -11132,8 +11319,8 @@ pGc
 dTc
 dTc
 dTc
-xsR
-ujK
+ira
+lrL
 rBR
 iqu
 rLB
@@ -11150,10 +11337,10 @@ rLB
 rLB
 rLB
 rRp
-nHK
-ejB
-qQT
-qQT
+aAe
+quJ
+dTO
+dTO
 rCg
 dre
 gkT
@@ -11389,8 +11576,8 @@ cqK
 idL
 boy
 lKV
-cqK
-cqK
+wqP
+wqP
 dTc
 xcA
 rLB
@@ -11644,9 +11831,9 @@ dTc
 djs
 cqK
 ujK
+lGa
 cqK
-cqK
-cqK
+sGc
 cqK
 rBR
 iqu
@@ -11900,10 +12087,10 @@ rLB
 dTc
 cqK
 cqK
-ujK
-cqK
-ujK
-cqK
+sGc
+sGc
+kFN
+sGc
 jol
 rBR
 iqu
@@ -12156,8 +12343,8 @@ rLB
 rLB
 dTc
 tfg
-cqK
-cqK
+qVi
+qVi
 joZ
 wZp
 oOa
@@ -12181,8 +12368,8 @@ rRp
 tot
 pOP
 cqK
-ujK
-cqK
+kFN
+lGa
 ujK
 gkT
 rLB
@@ -12413,11 +12600,11 @@ rLB
 rLB
 dTc
 dTc
-rBR
-rBR
+lPf
+hbn
 dTc
-rBR
-rBR
+hbn
+hbn
 dTc
 dTc
 rLB
@@ -12441,7 +12628,7 @@ ujK
 anF
 ujC
 kGW
-noP
+fjM
 rLB
 rLB
 rLB
@@ -14446,9 +14633,9 @@ qcT
 ojh
 hHO
 gkT
-xdk
 cqK
-quJ
+cqK
+cqK
 nwl
 cqK
 cqK
@@ -14703,7 +14890,7 @@ ojh
 ojh
 hHO
 gkT
-ira
+cqK
 cqK
 cqK
 cqK
@@ -14739,11 +14926,11 @@ rLB
 rLB
 cAO
 hHO
-kst
+vbL
 mdq
 ifi
 qQT
-qQT
+dTO
 ipi
 jdQ
 hHO
@@ -14961,7 +15148,7 @@ hHO
 hHO
 kur
 ixi
-quJ
+cqK
 cqK
 knt
 hZY
@@ -15256,7 +15443,7 @@ hHO
 vbL
 lbC
 fXR
-lbC
+odS
 qQT
 avO
 jdQ
@@ -15510,12 +15697,12 @@ rLB
 rLB
 cAO
 hHO
-kst
-mdq
+vbL
+uFd
 qQT
 qQT
-lbC
-ipi
+pYi
+ddz
 jdQ
 hHO
 iqu
@@ -15768,11 +15955,11 @@ rLB
 cAO
 hHO
 dTc
-jdQ
-jdQ
-wUC
-jdQ
-jdQ
+dZy
+dZy
+pPv
+tEW
+tEW
 dTc
 hHO
 iqu
