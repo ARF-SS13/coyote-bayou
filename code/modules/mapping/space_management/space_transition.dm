@@ -55,15 +55,15 @@
 		neigbours |= grid[x][y+1]
 	if(y-1 >= 1)
 		neigbours |= grid[x][y-1]
-/*
+
 /datum/controller/subsystem/mapping/proc/setup_map_transitions() //listamania
-	var/list/SLS = list()
+	var/list/SLS = list() // No idea what SLS is.
 	var/list/cached_z_list = z_list
 	var/conf_set_len = 0
-	for(var/A in cached_z_list)
-		var/datum/space_level/D = A
-		if (D.linkage == CROSSLINKED)
-			SLS.Add(D)
+	for(var/A in cached_z_list) // so for every z
+		var/datum/space_level/D = A // create a new space_level
+		if (D.linkage == CROSSLINKED) // If space leven linkage is crosslinked
+			SLS.Add(D) // add the datum to "SLS"
 		conf_set_len++
 	var/list/point_grid[conf_set_len*2+1][conf_set_len*2+1]
 	var/list/grid = list()
@@ -109,7 +109,7 @@
 		for(var/side in 1 to 4)
 			var/turf/beginning = locate(x_pos_beginning[side], y_pos_beginning[side], zlevelnumber)
 			var/turf/ending = locate(x_pos_ending[side], y_pos_ending[side], zlevelnumber)
-			//var/list/turfblock = block(beginning, ending)
+			var/list/turfblock = block(beginning, ending)
 			var/dirside = 2**(side-1)
 			var/zdestination = zlevelnumber
 			if(D.neigbours["[dirside]"] && D.neigbours["[dirside]"] != D)
@@ -121,7 +121,7 @@
 					D = D.neigbours["[dirside]"]
 				zdestination = D.z_value
 			D = I
-			for(var/turf/open/space/S in turfblock)
+			for(var/turf/closed/indestructible/f13/matrix/S in turfblock)
 				S.destination_x = x_pos_transition[side] == 1 ? S.x : x_pos_transition[side]
 				S.destination_y = y_pos_transition[side] == 1 ? S.y : y_pos_transition[side]
 				S.destination_z = zdestination
@@ -141,4 +141,3 @@
 
 				var/turf/place = locate(S.destination_x, S.destination_y, S.destination_z)
 				S.AddComponent(/datum/component/mirage_border, place, mirage_dir)
-				*/
