@@ -61,8 +61,6 @@ window "mainwindow"
 		icon = 'icons\\deathclawlogo.png'
 		macro = "default"
 		menu = "menu"
-		outer-size = 656x518
-		inner-size = 640x459
 	elem "split"
 		type = CHILD
 		pos = 3,0
