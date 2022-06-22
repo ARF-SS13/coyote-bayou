@@ -59,5 +59,3 @@
 	if(destination_z)
 		var/turf/T = locate(destination_x, destination_y, destination_z)
 		user.forceMove(T)
-
-// This is just a dummy commit to fix the workflow, pls ignore.
