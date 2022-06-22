@@ -22,6 +22,7 @@
 			"Gravity": true,
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
 			"Up": 1,
+			"No Parallax": true,
 			"Linkage" : null
 		},
 		{
@@ -30,6 +31,7 @@
 			"Dungeons": true,
 			"Up": 1,
 			"Down": -1,
+			"No Parallax": true,
 			"Linkage" : null
 		},
 		{
@@ -38,6 +40,7 @@
 			"Station": 1,
 			"Up": 1,
 			"Down": -1,
+			"No Parallax": true,
 			"Linkage" : "Cross"
 		},
 		{
@@ -45,6 +48,7 @@
 			"Baseturf": "/turf/open/transparent/openspace",
 			"Up": 1,
 			"Down": -1,
+			"No Parallax": true,
 			"Linkage" : null,
 			"Above": true
 		},
@@ -53,6 +57,7 @@
 			"Baseturf": "/turf/open/transparent/openspace",
 			"Down": -1,
 			"Linkage" : null,
+			"No Parallax": true,
 			"Above": true
 		},
 		{
@@ -61,6 +66,7 @@
 			"Station": 1,
 			"Up": 1,
 			"Down": -1,
+			"No Parallax": true,
 			"Linkage" : "Cross"
 		}
 	],
