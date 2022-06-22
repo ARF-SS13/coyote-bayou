@@ -333,7 +333,10 @@
 /area/f13/tunnel)
 "abp" = (
 /obj/structure/stairs/north,
-/turf/open/space/basic,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13{
+	icon_state = "floordirtysolid"
+	},
 /area/f13/tunnel)
 "abq" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -8125,7 +8128,6 @@
 "fUV" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/f13Cash/random/banker,
-/obj/item/stack/f13Cash/random/banker,
 /turf/open/floor/f13{
 	icon_state = "darkredfull";
 	tag = "icon-darkredfull"
@@ -9731,7 +9733,6 @@
 "iId" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/stack/f13Cash/random/banker,
-/obj/item/stack/f13Cash/random/banker,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "darkredfull";
@@ -11285,6 +11286,9 @@
 "ltk" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/followers)
@@ -14052,16 +14056,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
-/area/f13/tunnel)
-"pPw" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/stack/f13Cash/random/ncr/high,
-/obj/item/stack/f13Cash/random/ncr/high,
-/obj/item/stack/f13Cash/random/ncr/high,
-/turf/open/floor/f13{
-	icon_state = "darkredfull";
-	tag = "icon-darkredfull"
-	},
 /area/f13/tunnel)
 "pPC" = (
 /obj/machinery/door/airlock/hatch{
@@ -18144,10 +18138,8 @@
 /area/f13/tunnel)
 "wuQ" = (
 /obj/structure/rack/shelf_metal,
-/obj/item/stack/f13Cash/random/denarius/high,
-/obj/item/stack/f13Cash/random/denarius/high,
-/obj/item/stack/f13Cash/random/denarius/high,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stack/f13Cash/random/banker,
 /turf/open/floor/f13{
 	icon_state = "darkredfull";
 	tag = "icon-darkredfull"
@@ -38548,7 +38540,7 @@ abb
 bCt
 wuQ
 aKr
-pPw
+fUV
 bCt
 abb
 iTT

@@ -1895,15 +1895,20 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/stack/crafting/goodparts/three = 2
 				)
 
+// Updated money spawners to era match to Coyote Bayou's date, 2222. ~TK420634
+// Also, fuck this multi-tiered way of trying to spawn money into the game.  Cludged together crap, my dude.
+
+
+
 /obj/effect/spawner/lootdrop/f13/cash_random_low
 	name = "low value cash spawner"
 	lootcount = 1
 
 	loot = list(
-				/obj/item/stack/f13Cash/random/low = 50,
+				/obj/item/stack/f13Cash/random/low = 50 /*,
 				/obj/item/stack/f13Cash/random/ncr/low = 30,
 				/obj/item/stack/f13Cash/random/denarius/low = 30,
-				/obj/item/stack/f13Cash/random/aureus/low = 10
+				/obj/item/stack/f13Cash/random/aureus/low = 10 */
 				)
 
 /obj/effect/spawner/lootdrop/f13/cash_random_med
@@ -1912,17 +1917,17 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 	loot = list(
 				/obj/item/stack/f13Cash/random/med = 43,
-				/obj/item/stack/f13Cash/random/ncr/med = 35,
+				 /* /obj/item/stack/f13Cash/random/ncr/med = 35,
 				/obj/item/stack/f13Cash/random/denarius/med = 30,
-				/obj/item/stack/f13Cash/random/aureus/med = 5,
+				/obj/item/stack/f13Cash/random/aureus/med = 5, */
 				/obj/item/stack/f13Cash/random/low = 40,
-				/obj/item/stack/f13Cash/random/ncr/low = 19,
+				/* /obj/item/stack/f13Cash/random/ncr/low = 19,
 				/obj/item/stack/f13Cash/random/denarius/low = 19,
-				/obj/item/stack/f13Cash/random/aureus/low = 5,
-				/obj/item/stack/f13Cash/random/high = 2,
-				/obj/item/stack/f13Cash/random/ncr/high = 1,
+				/obj/item/stack/f13Cash/random/aureus/low = 5, */
+				/obj/item/stack/f13Cash/random/high = 2
+				/* /obj/item/stack/f13Cash/random/ncr/high = 1,
 				/obj/item/stack/f13Cash/random/denarius/high = 1,
-				/obj/item/stack/f13Cash/random/aureus/high = 1,
+				/obj/item/stack/f13Cash/random/aureus/high = 1, */
 				)
 
 /obj/effect/spawner/lootdrop/f13/cash_random_high
@@ -1931,7 +1936,9 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 	loot = list(
 				/obj/item/stack/f13Cash/random/high = 25,
-				/obj/item/stack/f13Cash/random/ncr/high = 30,
+				/obj/item/stack/f13Cash/random/med = 50,
+				/obj/item/stack/f13Cash/random/low = 10
+				/* /obj/item/stack/f13Cash/random/ncr/high = 30,
 				/obj/item/stack/f13Cash/random/denarius/high = 30,
 				/obj/item/stack/f13Cash/random/aureus/high = 10,
 				/obj/item/stack/f13Cash/random/med = 50,
@@ -1941,9 +1948,10 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/stack/f13Cash/random/low = 10,
 				/obj/item/stack/f13Cash/random/ncr/low = 5,
 				/obj/item/stack/f13Cash/random/denarius/low = 5,
-				/obj/item/stack/f13Cash/random/aureus/low = 1,
+				/obj/item/stack/f13Cash/random/aureus/low = 1, */
 				)
 
+/*
 /obj/effect/spawner/lootdrop/f13/cash_legion_low
 	name = "low value legion cash spawner"
 	lootcount = 1
@@ -2013,6 +2021,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/stack/f13Cash/random/ncr/med = 25,
 			/obj/item/stack/f13Cash/random/med = 5,
 			)
+*/
 
 /obj/effect/spawner/lootdrop/f13/deadrodent_or_brainwashdisk
 	name = "100% chance of deceased rodent"
