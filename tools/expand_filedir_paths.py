@@ -19,7 +19,7 @@ source_pattern = re.compile(r"^.*?\.(dm|dmm)$")
 # Open the .dme file and return a list of all FILE_DIR paths in it
 def read_filedirs(filename):
     result = []
-    dme_file = file(filename, "rt")
+    dme_file = open(filename, "rt")
     
     # Read each line from the file and check for regex pattern match
     for row in dme_file:
@@ -69,8 +69,8 @@ def rewrite_sources(resources):
         for name in files:
             if source_pattern.match(name):
                 path = dirpath + '/' + name
-                source_file = file(path, "rt")
-                output_file = file(path + ".tmp", "wt")
+                source_file = open(path, "rt")
+                output_file = open(path + ".tmp", "wt")
 
                 # Read file one line at a time and perform replacement of all
                 # single quoted resource names with the fullpath to that resource
