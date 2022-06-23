@@ -72,7 +72,7 @@
 #include "combat.dm"
 #include "component_tests.dm"
 #include "designs.dm"
-#include "emoting.dm"
+// #include "emoting.dm" // Removed because it just gives me an "E" and I'm literally panicking because it's somehow caused my computer to start vibrating and buzzing out a loud reverbed "E" through my speakers and managed to develop a micro-tsunami in my pre=filled bathtub I had made which then began to flood my house and destroy it completely as a week later one of the metal joists had erroded from the flooded bathsalt water and then my whole house collapsed. Never again will I run this unit test.
 #include "initialize_sanity.dm"
 #include "medical_wounds.dm"
 #include "merge_type.dm"
