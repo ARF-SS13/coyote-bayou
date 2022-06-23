@@ -247,6 +247,10 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/space)
+"ba" = (
+/obj/structure/simple_door/tentflap_cloth,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "bc" = (
 /obj/effect/turf_decal/delivery/white{
 	pixel_x = 5;
@@ -308,6 +312,13 @@
 	icon_state = "greenrusty"
 	},
 /area/space)
+"bD" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house,
+/area/space)
 "bE" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -343,6 +354,12 @@
 /area/space)
 "bX" = (
 /turf/closed/wall/r_wall/rust,
+/area/space)
+"bY" = (
+/obj/structure/window/fulltile/house{
+	dir = 2
+	},
+/turf/closed/wall/f13/wood/house/clean,
 /area/space)
 "cf" = (
 /obj/structure/rack/large/shelf_rust{
@@ -413,6 +430,13 @@
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
+"cV" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 1;
+	pixel_y = -3
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "cX" = (
 /obj/machinery/light{
 	dir = 8
@@ -478,14 +502,20 @@
 	icon_state = "greenrustychess"
 	},
 /area/space)
+"dG" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbroken"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/space)
 "dI" = (
 /obj/structure/fence{
 	dir = 8;
 	icon_state = "straight"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 1
+	dir = 1;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "dK" = (
@@ -533,6 +563,9 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/space)
+"el" = (
+/turf/closed/wall/f13/wood/house,
+/area/space)
 "em" = (
 /obj/structure/table/wood/junk,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug{
@@ -552,11 +585,17 @@
 	icon_state = "greendirtysolid"
 	},
 /area/space)
+"ey" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "ez" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "eA" = (
@@ -623,6 +662,9 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/space)
+"eP" = (
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "eQ" = (
 /obj/item/storage/backpack/security,
 /obj/structure/rack/large/shelf_rust,
@@ -645,8 +687,8 @@
 /area/space)
 "fc" = (
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "fk" = (
@@ -663,6 +705,12 @@
 	dir = 8;
 	icon_state = "greenrusty"
 	},
+/area/space)
+"fr" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor3"
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
 "fs" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -682,6 +730,9 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1";
 	},
+/area/space)
+"fD" = (
+/turf/closed/wall/f13/wood/house/clean,
 /area/space)
 "fG" = (
 /obj/structure/simple_door/room,
@@ -761,6 +812,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"gS" = (
+/obj/structure/sign/poster/ripped,
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "he" = (
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
 /obj/item/clothing/suit/armor/f13/brahmin_leather_duster,
@@ -817,15 +872,15 @@
 /area/space)
 "hl" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 1
+	dir = 1;
+	icon_state = "outerturn"
 	},
 /area/space)
 "hm" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "hp" = (
@@ -894,12 +949,25 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/space)
+"hN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "hQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
 	},
+/area/space)
+"hW" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "ic" = (
 /obj/effect/decal/marking{
@@ -917,8 +985,8 @@
 /area/space)
 "ik" = (
 /obj/structure/wreck/bus/rusted{
-	name = "razor transport";
-	desc = "A pre-war bus now serving as some kind of raider transport. Looks like it's out of fuel, though."
+	desc = "A pre-war bus now serving as some kind of raider transport. Looks like it's out of fuel, though.";
+	name = "razor transport"
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/space)
@@ -1007,9 +1075,9 @@
 /area/space)
 "iT" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert3";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -1159,6 +1227,10 @@
 	icon_state = "sparsegrass_1"
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
+/area/space)
+"kW" = (
+/obj/structure/car/rubbish1,
+/turf/open/indestructible/ground/outside/gravel,
 /area/space)
 "lb" = (
 /turf/open/floor/plasteel/f13{
@@ -1319,6 +1391,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"mA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "mB" = (
 /obj/effect/decal/marking{
 	icon_state = "doublevertical"
@@ -1326,6 +1405,9 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
 	},
+/area/space)
+"mF" = (
+/turf/open/floor/carpet/red,
 /area/space)
 "mI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1366,6 +1448,12 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
+/area/space)
+"mY" = (
+/obj/structure/window/fulltile/house{
+	dir = 2
+	},
+/turf/open/indestructible/ground/outside/desert,
 /area/space)
 "nd" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -1439,8 +1527,8 @@
 /area/space)
 "nT" = (
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 8
+	dir = 8;
+	icon_state = "outerturn"
 	},
 /area/space)
 "nV" = (
@@ -1452,6 +1540,9 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
+/area/space)
+"od" = (
+/turf/open/floor/wood_common,
 /area/space)
 "of" = (
 /obj/machinery/workbench,
@@ -1470,6 +1561,22 @@
 	dir = 1;
 	icon_state = "greenrusty"
 	},
+/area/space)
+"ot" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/sink{
+	dir = 4;
+	pixel_x = 12
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
+"ou" = (
+/obj/structure/window/fulltile/house{
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house/broken,
 /area/space)
 "ow" = (
 /obj/structure/flora/tree/tall{
@@ -1555,8 +1662,8 @@
 /area/space)
 "pz" = (
 /obj/effect/turf_decal/big/energy{
-	pixel_x = 16;
-	alpha = 200
+	alpha = 200;
+	pixel_x = 16
 	},
 /turf/open/floor/f13{
 	icon_state = "whiteyellowrustychess"
@@ -1585,6 +1692,12 @@
 	icon_state = "greendirtysolid"
 	},
 /area/space)
+"pQ" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbear1"
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "pU" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /obj/structure/rack/large/shelf_rust{
@@ -1599,6 +1712,10 @@
 	name = "Razor Twins Raider"
 	},
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"qb" = (
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
 "qg" = (
 /turf/open/floor/plasteel/f13{
@@ -1640,6 +1757,21 @@
 	icon_state = "floorgrime"
 	},
 /area/space)
+"qv" = (
+/obj/structure/fireplace{
+	layer = 2.1;
+	level = 1;
+	pixel_y = -10
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/space)
+"qB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "qG" = (
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/plasteel/f13{
@@ -1651,6 +1783,19 @@
 	dir = 4;
 	icon_state = "dirtcorner";
 	},
+/area/space)
+"qM" = (
+/obj/structure/chair/stool,
+/turf/open/floor/wood_common,
+/area/space)
+"qS" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/table,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/ammo_box/a762,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "qT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1695,8 +1840,8 @@
 	pixel_x = 15
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "outerturn";
-	dir = 8
+	dir = 8;
+	icon_state = "outerturn"
 	},
 /area/space)
 "rk" = (
@@ -1708,8 +1853,8 @@
 /area/space)
 "rs" = (
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "rx" = (
@@ -1759,11 +1904,17 @@
 	icon_state = "greendirtysolid"
 	},
 /area/space)
+"sa" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "sc" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert2";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -1832,6 +1983,10 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/space)
+"tm" = (
+/obj/structure/barricade/tentclothcorner,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "tq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
@@ -1844,6 +1999,13 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole";
 	},
+/area/space)
+"tM" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/sofa/left,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "tQ" = (
 /obj/structure/flora/tree/cactus,
@@ -1903,6 +2065,12 @@
 	icon_state = "dirt";
 	},
 /area/space)
+"uA" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "uB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/blood/old{
@@ -1931,6 +2099,20 @@
 "vc" = (
 /mob/living/simple_animal/hostile/molerat,
 /turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
+"ve" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/ghoul{
+	layer = 2.07;
+	max_mobs = 2
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
+"vf" = (
+/obj/structure/debris/v2,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/space)
 "vg" = (
 /obj/machinery/light/floor,
@@ -2027,6 +2209,9 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
+/area/space)
+"ww" = (
+/turf/closed/wall/f13/wood/interior,
 /area/space)
 "wz" = (
 /obj/effect/decal/marking{
@@ -2154,6 +2339,10 @@
 	},
 /turf/open/water,
 /area/space)
+"xt" = (
+/obj/structure/barricade/tentclothedge,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "xw" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -2220,6 +2409,18 @@
 	icon_state = "floorrustysolid"
 	},
 /area/space)
+"yk" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 8
+	},
+/obj/structure/barricade/tentclothedge{
+	dir = 8
+	},
+/obj/structure/barricade/tentclothcorner{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "yq" = (
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/structure/rack/large/shelf_rust,
@@ -2229,9 +2430,9 @@
 /area/space)
 "yw" = (
 /obj/structure/billboard/ritas{
+	desc = "An old billboard advertising some kind of pre-war product.";
 	icon_state = "advert1";
 	name = "billboard";
-	desc = "An old billboard advertising some kind of pre-war product.";
 	pixel_y = -4
 	},
 /obj/structure/fence{
@@ -2240,6 +2441,15 @@
 /turf/open/indestructible/ground/outside/desert/harsh{
 	icon_state = "outerpavement"
 	},
+/area/space)
+"yA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/toilet{
+	dir = 8
+	},
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "yJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -2328,6 +2538,9 @@
 "Aa" = (
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/water,
+/area/space)
+"Ai" = (
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/space)
 "Al" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2434,6 +2647,10 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/space)
+"Bk" = (
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/space)
 "Bl" = (
 /turf/open/floor/plasteel/f13{
 	dir = 4;
@@ -2481,14 +2698,22 @@
 "BC" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "BK" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
 	},
+/area/space)
+"BL" = (
+/obj/structure/table/wood,
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
+"BN" = (
+/turf/open/indestructible/ground/outside/gravel,
 /area/space)
 "BU" = (
 /obj/machinery/light{
@@ -2571,6 +2796,10 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrusty"
 	},
+/area/space)
+"CC" = (
+/obj/structure/table/wood/bar,
+/turf/open/floor/wood_common,
 /area/space)
 "CM" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier2,
@@ -2709,6 +2938,12 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/space)
+"DW" = (
+/obj/effect/decal/cleanable/blood/old{
+	pixel_x = 12
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "Ed" = (
 /obj/structure/rack/large/shelf_rust,
 /obj/effect/decal/cleanable/dirt,
@@ -2739,6 +2974,12 @@
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
+/area/space)
+"EE" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
 "EM" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
@@ -2898,8 +3139,8 @@
 "Gs" = (
 /obj/effect/spawner/lootdrop/toolsbasic,
 /obj/structure/sign/warning/fire{
-	pixel_y = -30;
-	name = "\improper DANGER: FUEL STORAGE"
+	name = "\improper DANGER: FUEL STORAGE";
+	pixel_y = -30
 	},
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
@@ -3011,6 +3252,14 @@
 /obj/structure/table/wood/junk,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"HA" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "HB" = (
 /obj/structure/flora/grass/jungle/b,
@@ -3162,6 +3411,10 @@
 "Jp" = (
 /turf/open/indestructible/ground/outside/dirt/harsh/side,
 /area/space)
+"Js" = (
+/obj/structure/flora/grass/wasteland,
+/turf/closed/wall/f13/wood/house,
+/area/space)
 "Jx" = (
 /obj/effect/spawner/lootdrop/tool_box,
 /turf/open/floor/f13{
@@ -3181,6 +3434,12 @@
 "JB" = (
 /obj/structure/junk/arcade,
 /turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
+"JJ" = (
+/obj/structure/simple_door/house{
+	icon_state = "interior"
+	},
+/turf/open/floor/wood_common,
 /area/space)
 "JM" = (
 /obj/effect/decal/cleanable/dirt{
@@ -3289,11 +3548,26 @@
 	icon_state = "outerbordercorner"
 	},
 /area/space)
+"KS" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "KT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
+/area/space)
+"Lb" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/bed2,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "Ld" = (
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
@@ -3315,6 +3589,20 @@
 	icon_state = "floorrusty"
 	},
 /area/space)
+"LE" = (
+/obj/structure/window/fulltile/house,
+/turf/closed/wall/f13/wood/house/clean,
+/area/space)
+"LI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/overlay/junk/shower{
+	dir = 4
+	},
+/obj/machinery/pool/drain,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "LN" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
 /obj/structure/rack/large/shelf_rust{
@@ -3323,6 +3611,13 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greendirtysolid"
 	},
+/area/space)
+"LW" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/closed/wall/f13/wood/house/broken,
 /area/space)
 "Mn" = (
 /obj/effect/decal/cleanable/oil/slippery,
@@ -3403,6 +3698,13 @@
 	icon_state = "verticalinnermain2"
 	},
 /area/space)
+"Nc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/simple_door/interior,
+/turf/closed/wall/f13/wood/house/broken,
+/area/space)
 "Ne" = (
 /obj/structure/fence/door,
 /turf/open/indestructible/ground/outside/desert/harsh{
@@ -3470,6 +3772,27 @@
 	icon_state = "outerborder"
 	},
 /area/space)
+"NC" = (
+/obj/structure/simple_door/house{
+	icon_state = "glassclosing"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
+"NF" = (
+/obj/structure/simple_door/house/clean,
+/turf/open/indestructible/ground/outside/desert,
+/area/space)
+"NJ" = (
+/obj/structure/window/fulltile/house/broken,
+/turf/open/indestructible/ground/outside/desert,
+/area/space)
+"NK" = (
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common,
+/area/space)
 "NL" = (
 /obj/item/reagent_containers/blood/radaway,
 /obj/structure/rack/large/shelf_rust,
@@ -3517,8 +3840,8 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 4
+	dir = 4;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "Or" = (
@@ -3572,8 +3895,8 @@
 "OQ" = (
 /obj/item/ammo_casing/c10mm,
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 8
+	dir = 8;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "OX" = (
@@ -3642,6 +3965,13 @@
 	icon_state = "yellowrustychess"
 	},
 /area/space)
+"Qq" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/sofa/right,
+/turf/open/floor/wood_common/wood_common_dark,
+/area/space)
 "Qs" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/belt,
@@ -3663,8 +3993,8 @@
 	pixel_y = -10
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 1
+	dir = 1;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "QI" = (
@@ -3723,8 +4053,8 @@
 	icon_state = "corner"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 10
+	dir = 10;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "RG" = (
@@ -3742,6 +4072,10 @@
 /turf/open/floor/f13{
 	icon_state = "yellowrustychess"
 	},
+/area/space)
+"RJ" = (
+/obj/structure/simple_door/interior,
+/turf/closed/wall/f13/wood/house,
 /area/space)
 "RN" = (
 /obj/structure/table,
@@ -3764,9 +4098,23 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/space)
+"RQ" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/indestructible/ground/outside/desert/harsh,
+/area/space)
 "RR" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/road,
+/area/space)
+"RT" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "RW" = (
 /obj/machinery/light,
@@ -3795,6 +4143,12 @@
 	dir = 8;
 	icon_state = "horizontalinnermain2left"
 	},
+/area/space)
+"Si" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
 "Sj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3837,6 +4191,10 @@
 	icon_state = "floorrusty"
 	},
 /area/space)
+"SD" = (
+/obj/structure/table/wood/poker,
+/turf/open/floor/wood_common,
+/area/space)
 "SE" = (
 /obj/machinery/light,
 /obj/effect/decal/cleanable/dirt,
@@ -3850,8 +4208,8 @@
 	icon_state = "corner"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 9
+	dir = 9;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "SL" = (
@@ -3903,6 +4261,14 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
+/area/space)
+"Tv" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/table,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "TB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3987,14 +4353,21 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/desert/harsh{
-	icon_state = "outerpavement";
-	dir = 6
+	dir = 6;
+	icon_state = "outerpavement"
 	},
 /area/space)
 "Uv" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	icon_state = "dirtcorner"
 	},
+/area/space)
+"Uw" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/junk/small/tv,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "UA" = (
 /obj/effect/turf_decal/stripes/white/line{
@@ -4064,6 +4437,13 @@
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
+/area/space)
+"UT" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/wood_common/wood_common_dark,
 /area/space)
 "UU" = (
 /obj/structure/wreck/car/bike{
@@ -4196,6 +4576,10 @@
 /obj/effect/spawner/lootdrop/f13/bomb/tier1,
 /turf/open/indestructible/ground/outside/road,
 /area/space)
+"WJ" = (
+/obj/structure/table/wood/junk,
+/turf/open/floor/wood_common,
+/area/space)
 "WQ" = (
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /obj/structure/table,
@@ -4269,6 +4653,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh/corner,
 /area/space)
+"XU" = (
+/obj/structure/window/fulltile/house{
+	dir = 2;
+	icon_state = "housewindowbroken"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/space)
 "XV" = (
 /obj/structure/decoration/warning,
 /turf/closed/wall/f13/tunnel,
@@ -4278,6 +4669,12 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
+/area/space)
+"XX" = (
+/obj/structure/simple_door/house{
+	icon_state = "interior"
+	},
+/turf/closed/wall/f13/wood/house,
 /area/space)
 "XZ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -40102,15 +40499,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+eP
+ou
+ou
+el
+eP
+eP
+el
+el
 Iv
 Iv
 Iv
@@ -40359,15 +40756,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+qB
+hN
+Nc
+hN
+hN
+hN
+el
 Iv
 Iv
 Iv
@@ -40616,15 +41013,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+gS
+hN
+hN
+HA
+sa
+Qq
+hN
+Uw
+XU
 Iv
 Iv
 Iv
@@ -40873,15 +41270,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+qS
+Lb
+sa
+tM
+hN
+hN
+XU
 Iv
 Iv
 Iv
@@ -41130,15 +41527,15 @@ Iv
 Iv
 hj
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+hW
+sa
+sa
+sa
+hN
+qB
+hN
+NC
 Iv
 Iv
 Iv
@@ -41387,19 +41784,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+mA
+hN
+LI
+sa
+qB
+hN
+UT
+XU
+BN
+BN
+kW
+BN
 Iv
 Iv
 Iv
@@ -41644,19 +42041,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+hN
+ve
+hN
+Nc
+hN
+RT
+hN
+XU
+BN
+BN
+BN
+BN
 Iv
 Iv
 Iv
@@ -41901,19 +42298,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+ot
+yA
+hN
+sa
+hN
+Tv
+hN
+eP
+BN
+BN
+BN
+BN
 Iv
 Iv
 Iv
@@ -42158,15 +42555,15 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+eP
+eP
+el
+el
+el
+eP
+eP
+eP
 Iv
 Iv
 Iv
@@ -48590,7 +48987,6 @@ Iv
 Iv
 Iv
 Iv
-AI
 Iv
 Iv
 Iv
@@ -48598,7 +48994,8 @@ Iv
 Iv
 Iv
 Iv
-AI
+Iv
+Iv
 Iv
 Iv
 Iv
@@ -48877,7 +49274,7 @@ Iv
 Iv
 Iv
 Iv
-lL
+Iv
 Iv
 Iv
 Iv
@@ -50032,7 +50429,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -50163,7 +50560,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -50392,34 +50789,34 @@ Iv
 Iv
 Iv
 Iv
-AI
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -50651,32 +51048,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+WJ
+WJ
+WJ
+od
+od
+NK
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -50908,32 +51305,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+od
+od
+od
+od
+ww
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -51165,37 +51562,37 @@ AI
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+ww
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
 Iv
 Iv
 Iv
@@ -51422,32 +51819,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+CC
+CC
+CC
+CC
+CC
+ww
+ww
+ww
+ww
+ww
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -51679,32 +52076,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-AI
-Iv
-lL
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+qM
+qM
+qM
+qM
+qM
+od
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -51936,6 +52333,32 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+od
+od
+qM
+SD
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -51953,32 +52376,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -52193,32 +52590,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+od
+od
+od
+od
+od
+od
+qM
+SD
+qM
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -52448,34 +52845,34 @@ Iv
 Iv
 Iv
 Iv
-hj
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+od
+od
+od
+od
+od
+od
+qM
+SD
+od
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -52707,6 +53104,32 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+RJ
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -52715,32 +53138,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -52964,6 +53361,32 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+RJ
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -52980,32 +53403,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
 Iv
 Iv
 Iv
@@ -53221,32 +53618,32 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+el
+mY
+XU
+XU
+el
+JJ
+el
+mY
+mY
+XU
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -53495,7 +53892,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -53995,7 +54392,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -54501,19 +54898,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -54758,6 +55155,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -54774,19 +55184,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -54804,7 +55201,7 @@ AI
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -55015,19 +55412,19 @@ Iv
 Iv
 Iv
 Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -55272,19 +55669,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+XX
+od
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+XX
 Iv
 Iv
 Iv
@@ -55529,19 +55926,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -55786,19 +56183,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -56043,6 +56440,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -56060,7 +56470,6 @@ Iv
 Iv
 Iv
 Iv
-lL
 Iv
 Iv
 Iv
@@ -56072,18 +56481,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -56300,19 +56697,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -56557,6 +56954,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -56571,38 +56981,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+fD
+eP
+eP
+eP
+fD
+fD
+fD
+fD
+dG
+XU
+fD
+fD
+fD
+fD
+fD
+fD
+fD
+fD
 Iv
 Iv
 Iv
@@ -56814,23 +57211,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -56843,23 +57236,27 @@ Iv
 Iv
 Iv
 Iv
-AI
-AI
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+Bk
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Bk
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -57071,6 +57468,19 @@ Iv
 Iv
 Iv
 Iv
+XX
+od
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+XX
 Iv
 Iv
 Iv
@@ -57085,39 +57495,26 @@ Iv
 Iv
 Iv
 Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+ww
+Ai
+Ai
+fD
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 AI
 Iv
 Iv
@@ -57328,6 +57725,19 @@ Iv
 lL
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -57342,38 +57752,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+NJ
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+ww
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -57585,6 +57982,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -57599,38 +58009,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+NJ
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+ww
+ww
+ww
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -57842,6 +58239,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -57856,38 +58266,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
-Iv
-Iv
+mY
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Bk
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -58099,6 +58496,19 @@ Iv
 Iv
 Iv
 Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -58113,38 +58523,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+ww
+Ai
+Ai
+fD
 Iv
 Iv
 bS
@@ -58356,30 +58753,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -58394,14 +58780,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+ww
+Ai
+Ai
+fD
 Iv
 Iv
 bS
@@ -58613,27 +59010,19 @@ Iv
 Iv
 Iv
 AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -58648,17 +59037,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+ww
+ww
+ww
+ww
+Bk
+fD
 Iv
 bS
 bS
@@ -58870,6 +59267,19 @@ Iv
 Iv
 Iv
 Iv
+XX
+od
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+XX
 Iv
 Iv
 Iv
@@ -58884,38 +59294,25 @@ Iv
 Iv
 Iv
 Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+ww
+ww
+Bk
+Bk
+ww
+ww
+ww
+Bk
+ww
+ww
+ww
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 bS
 bS
@@ -59127,7 +59524,19 @@ Iv
 Iv
 Iv
 Iv
-hj
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -59142,37 +59551,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+NF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+Ai
+Ai
+vf
+fD
 Iv
 bS
 bS
@@ -59384,19 +59781,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -59411,25 +59808,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-tQ
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+NF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 bS
@@ -59641,28 +60038,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-tQ
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -59677,16 +60065,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+ww
+ww
+Bk
+Bk
+ww
+ww
+ww
+Bk
+ww
+ww
+ww
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+eP
 Iv
 Iv
 bS
@@ -59898,6 +60295,19 @@ Iv
 Iv
 Iv
 Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -59912,38 +60322,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+ww
+ww
+ww
+Bk
+Bk
+fD
 Iv
 Iv
 bS
@@ -60155,6 +60552,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -60169,38 +60579,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+mY
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -60412,7 +60809,19 @@ Iv
 Iv
 Iv
 Iv
-AI
+Js
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -60427,37 +60836,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+mY
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -60669,6 +61066,19 @@ Iv
 Iv
 Iv
 Iv
+XX
+od
+od
+od
+od
+od
+el
+od
+od
+od
+od
+od
+XX
 Iv
 Iv
 Iv
@@ -60683,38 +61093,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
+mY
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Bk
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -60926,26 +61323,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -60960,18 +61350,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+fD
+qv
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Bk
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -61183,6 +61580,19 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -61197,38 +61607,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -61440,7 +61837,19 @@ Iv
 Iv
 Iv
 Iv
-AI
+Js
+od
+od
+ww
+od
+od
+el
+od
+od
+ww
+od
+od
+el
 Iv
 Iv
 Iv
@@ -61455,37 +61864,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -61697,33 +62094,19 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
+el
 Iv
 Iv
 Iv
@@ -61738,11 +62121,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+Ai
+Ai
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+ww
+Ai
+Ai
+Ai
+Ai
+Ai
+fD
 Iv
 Iv
 Iv
@@ -61968,20 +62365,6 @@ Iv
 Iv
 Iv
 Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
 Iv
 Iv
 Iv
@@ -61995,11 +62378,25 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+eP
+mY
+mY
+XU
+fD
+fD
+fD
+fD
+bY
+XU
+fD
+fD
+eP
+eP
+LE
+fD
+fD
+fD
 Iv
 Iv
 Iv
@@ -62212,27 +62609,6 @@ Iv
 Iv
 Iv
 Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
 Iv
 Iv
 Iv
@@ -62241,6 +62617,27 @@ Iv
 Iv
 Iv
 AI
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
 Iv
 Iv
 Iv
@@ -62490,7 +62887,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -62775,7 +63172,7 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
 Iv
 Iv
 Iv
@@ -63493,6 +63890,28 @@ Iv
 Iv
 Iv
 Iv
+ey
+uA
+uA
+uA
+KS
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+el
+eP
+el
+bD
+bD
+el
+el
+eP
 Iv
 Iv
 Iv
@@ -63505,28 +63924,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -63750,10 +64147,11 @@ Iv
 Iv
 Iv
 Iv
-Iv
+cV
 Iv
 Iv
 AI
+xt
 Iv
 Iv
 Iv
@@ -63763,15 +64161,14 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+eP
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -64007,6 +64404,28 @@ Iv
 tQ
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+ba
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+eP
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -64034,28 +64453,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-lL
 Iv
 Iv
 Iv
@@ -64264,6 +64661,28 @@ Iv
 Iv
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+xt
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+el
+od
+od
+od
+od
+od
+od
+eP
 Iv
 Iv
 Iv
@@ -64282,28 +64701,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -64521,6 +64918,11 @@ Iv
 Iv
 Iv
 Iv
+Si
+EE
+EE
+EE
+tm
 Iv
 Iv
 Iv
@@ -64530,33 +64932,28 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+eP
 Iv
 Iv
 Iv
 Iv
+yk
+uA
+uA
+uA
 Iv
 Iv
-hj
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+uA
+uA
+uA
+KS
 Iv
 Iv
 Iv
@@ -64792,48 +65189,48 @@ Iv
 Iv
 Iv
 Iv
+XU
+od
+od
+od
+od
+od
+od
+el
+Iv
+Iv
+AI
+Iv
+cV
+qb
+qb
+qb
+Iv
+Iv
+qb
+qb
+qb
+xt
 Iv
 Iv
 Iv
 Iv
 Iv
 Iv
-lL
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
 Iv
 Iv
 Iv
 AI
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Tk
 Iv
 Iv
 Iv
@@ -65034,6 +65431,11 @@ Iv
 Iv
 Iv
 Iv
+ey
+uA
+uA
+uA
+KS
 Iv
 Iv
 Iv
@@ -65044,33 +65446,28 @@ Iv
 Iv
 Iv
 Iv
+XU
+od
+od
+od
+od
+od
+od
+XX
 Iv
 Iv
 Iv
 Iv
+cV
+qb
 Iv
 Iv
+RQ
+fr
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
+qb
+xt
 Iv
 Iv
 Iv
@@ -65291,6 +65688,11 @@ Iv
 Iv
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+xt
 Iv
 Iv
 Iv
@@ -65301,6 +65703,14 @@ Iv
 Iv
 Iv
 Iv
+XU
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -65308,22 +65718,9 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+pQ
+qb
+qb
 Iv
 Iv
 Iv
@@ -65548,6 +65945,11 @@ Iv
 Iv
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+ba
 Iv
 Iv
 Iv
@@ -65558,16 +65960,14 @@ Iv
 Iv
 Iv
 Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
@@ -65575,13 +65975,10 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+DW
+qb
+qb
+fr
 Iv
 Iv
 Iv
@@ -65805,6 +66202,43 @@ Iv
 Iv
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+xt
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+el
+od
+od
+od
+od
+od
+od
+eP
+Iv
+Iv
+Iv
+Iv
+cV
+qb
+Iv
+Iv
+RQ
+RQ
+Iv
+Iv
+qb
+xt
 Iv
 Iv
 Iv
@@ -65819,43 +66253,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Tk
 Iv
 Iv
 Iv
@@ -66062,18 +66459,11 @@ Iv
 Iv
 Iv
 hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
+Si
+EE
+EE
+EE
+tm
 Iv
 Iv
 Iv
@@ -66084,21 +66474,28 @@ Iv
 Iv
 Iv
 Iv
+el
+od
+od
+od
+od
+od
+od
+el
 Iv
 Iv
 Iv
 Iv
+cV
+qb
+qb
+qb
 Iv
 Iv
-hj
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+qb
+qb
+BL
+xt
 Iv
 Iv
 Iv
@@ -66326,7 +66723,36 @@ Iv
 Iv
 Iv
 Iv
-hj
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+el
+od
+od
+od
+od
+od
+od
+el
+Iv
+Iv
+Iv
+Iv
+Si
+EE
+EE
+EE
+Iv
+Iv
+EE
+EE
+EE
+tm
 Iv
 Iv
 Iv
@@ -66351,35 +66777,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
-Iv
-Iv
-Iv
-Tk
 Iv
 Iv
 Iv
@@ -66578,6 +66975,11 @@ Iv
 Iv
 Iv
 Iv
+ey
+uA
+uA
+uA
+KS
 Iv
 Iv
 Iv
@@ -66586,19 +66988,14 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+el
+eP
+eP
+LW
+LW
+el
+el
+el
 Iv
 Iv
 Iv
@@ -66835,11 +67232,11 @@ Iv
 Iv
 Iv
 Iv
+cV
 Iv
 Iv
 Iv
-Iv
-Iv
+xt
 Iv
 Iv
 Iv
@@ -67092,7 +67489,11 @@ Iv
 Iv
 Iv
 Iv
+cV
 Iv
+Iv
+Iv
+ba
 Iv
 Iv
 Iv
@@ -67113,20 +67514,6 @@ AI
 Iv
 Iv
 Iv
-AI
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -67143,7 +67530,17 @@ Iv
 Iv
 Iv
 Iv
-tQ
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
+Iv
 Iv
 Iv
 Iv
@@ -67349,6 +67746,11 @@ Iv
 Iv
 Iv
 Iv
+cV
+Iv
+Iv
+Iv
+xt
 Iv
 Iv
 Iv
@@ -67391,11 +67793,6 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-hj
 Iv
 Iv
 Iv
@@ -67606,11 +68003,11 @@ Iv
 Iv
 Iv
 Iv
-Iv
-Iv
-Iv
-Iv
-Iv
+Si
+EE
+EE
+EE
+tm
 Iv
 Iv
 Iv
@@ -67632,7 +68029,7 @@ Iv
 Iv
 Iv
 Iv
-lL
+Iv
 Iv
 Iv
 Iv
@@ -67913,7 +68310,7 @@ Iv
 Iv
 Iv
 Iv
-lL
+Iv
 Iv
 Iv
 Iv
