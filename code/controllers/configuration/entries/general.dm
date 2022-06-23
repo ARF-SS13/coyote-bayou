@@ -230,7 +230,7 @@
 	config_entry_value = null
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/sunset-wasteland/sunset-wasteland"
+	config_entry_value = "https://github.com/arfs-ss13/sunset-wasteland"
 
 /datum/config_entry/string/roundstatsurl
 
