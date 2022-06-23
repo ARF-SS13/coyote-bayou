@@ -1,6 +1,6 @@
 
 ////////////////////////////////
-/proc/log_and_message_admins(var/message as text, var/mob/user = usr)
+/proc/log_and_message_admins(message as text, mob/user = usr)
 	var/finalMessage = user ? "[key_name(user)] [message]" : "EVENT [message]"
 	log_admin(finalMessage)
 	message_admins(finalMessage)
@@ -786,6 +786,7 @@
 			A.flags_1 |= ADMIN_SPAWNED_1
 
 	log_admin("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
+	message_admins("[key_name(usr)] spawned [amount] x [chosen] at [AREACOORD(usr)]")
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Spawn Atom") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /datum/admins/proc/podspawn_atom(object as text)

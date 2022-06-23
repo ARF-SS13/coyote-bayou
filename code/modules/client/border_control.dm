@@ -2,9 +2,10 @@
 #define BORDER_CONTROL_LEARNING 1
 #define BORDER_CONTROL_ENFORCED 2
 
-var/list/whitelistedCkeys
-var/savefile/borderControlFile = new /savefile("data/bordercontrol.db")
-var/whitelistLoaded = 0
+
+GLOBAL_LIST_EMPTY(whitelistedCkeys)
+GLOBAL_VAR_INIT(borderControlFile, new /savefile("data/bordercontrol.db"))
+GLOBAL_VAR_INIT(whitelistLoaded, 0)
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_ModeToText(var/mode)
@@ -36,10 +37,10 @@ proc/BC_IsKeyAllowedToConnect(var/key)
 proc/BC_IsKeyWhitelisted(var/key)
 	key = ckey(key)
 
-	if(!whitelistLoaded)
+	if(!GLOB.whitelistLoaded)
 		BC_LoadWhitelist()
 
-	if(LAZYISIN(whitelistedCkeys, key))
+	if(LAZYISIN(GLOB.whitelistedCkeys, key))
 		return 1
 	else
 		return 0
@@ -65,19 +66,19 @@ proc/BC_IsKeyWhitelisted(var/key)
 proc/BC_WhitelistKey(var/key)
 	var/keyAsCkey = ckey(key)
 
-	if(!whitelistLoaded)
+	if(!GLOB.whitelistLoaded)
 		BC_LoadWhitelist()
 
 	if(!keyAsCkey)
 		return 0
 	else
-		if(LAZYISIN(whitelistedCkeys,keyAsCkey))
+		if(LAZYISIN(GLOB.whitelistedCkeys,keyAsCkey))
 			// Already in
 			return 0
 		else
-			LAZYINITLIST(whitelistedCkeys)
+			LAZYINITLIST(GLOB.whitelistedCkeys)
 
-			ADD_SORTED(whitelistedCkeys, keyAsCkey, /proc/cmp_text_asc)
+			ADD_SORTED(GLOB.whitelistedCkeys, keyAsCkey, /proc/cmp_text_asc)
 
 			BC_SaveWhitelist()
 			return 1
@@ -92,7 +93,7 @@ proc/BC_WhitelistKey(var/key)
 	set name = "Border Control - Remove Key"
 	set category = "Admin.Border Control"
 
-	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in whitelistedCkeys
+	var/keyToRemove = input("CKey to Remove", "Remove Key") as null|anything in GLOB.whitelistedCkeys
 
 	if(keyToRemove)
 		var/confirm = alert("Remove [keyToRemove] from the border control whitelist?", , "Yes", "No")
@@ -107,11 +108,11 @@ proc/BC_WhitelistKey(var/key)
 proc/BC_RemoveKey(var/key)
 	key = ckey(key)
 
-	if(!LAZYISIN(whitelistedCkeys, key))
+	if(!LAZYISIN(GLOB.whitelistedCkeys, key))
 		return 1
 	else
-		if(whitelistedCkeys)
-			whitelistedCkeys.Remove(key)
+		if(GLOB.whitelistedCkeys)
+			GLOB.whitelistedCkeys.Remove(key)
 		BC_SaveWhitelist()
 		return 1
 
@@ -165,24 +166,24 @@ proc/BC_RemoveKey(var/key)
 //////////////////////////////////////////////////////////////////////////////////
 /proc/BC_LoadWhitelist()
 
-	LAZYCLEARLIST(whitelistedCkeys)
+	LAZYCLEARLIST(GLOB.whitelistedCkeys)
 
-	LAZYINITLIST(whitelistedCkeys)
+	LAZYINITLIST(GLOB.whitelistedCkeys)
 
-	if(!borderControlFile)
+	if(!GLOB.borderControlFile)
 		return 0
 
-	borderControlFile["WhitelistedCkeys"] >> whitelistedCkeys
+	GLOB.borderControlFile["whitelistedCkeys"] >> GLOB.whitelistedCkeys
 
-	whitelistLoaded = 1
+	GLOB.whitelistLoaded = 1
 
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_SaveWhitelist()
-	if(!whitelistedCkeys)
+	if(!GLOB.whitelistedCkeys)
 		return 0
 
-	if(!borderControlFile)
+	if(!GLOB.borderControlFile)
 		return 0
 
-	borderControlFile["WhitelistedCkeys"] << whitelistedCkeys
+	GLOB.borderControlFile["whitelistedCkeys"] << GLOB.whitelistedCkeys

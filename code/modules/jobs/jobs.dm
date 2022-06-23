@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(followers_positions, list(
 
 // job categories for rendering the late join menu
 GLOBAL_LIST_INIT(position_categories, list(
-  	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
+	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
 	EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
 	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
 	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),

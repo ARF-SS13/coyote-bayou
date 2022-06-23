@@ -3,8 +3,8 @@
 
 /world
 	mob = /mob/dead/new_player
-	turf = /turf/open/space/basic
-	area = /area/space
+	turf = /turf/open/indestructible/ground/outside/desert
+	area = /area/f13/wasteland
 	view = "15x15"
 	hub = "Exadv1.spacestation13"
 	name = "/tg/ Station 13"
