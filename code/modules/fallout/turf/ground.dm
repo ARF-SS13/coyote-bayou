@@ -241,7 +241,7 @@
 /obj/effect/overlay/desert/sonora/edge/corner
 	icon_state = "desertcorner"
 
-/turf/open/indestructible/ground/outside/desert/proc/plantGrass(Plantforce = FALSE)
+/turf/open/indestructible/ground/outside/desert/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/randPlant = null
 

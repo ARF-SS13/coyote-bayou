@@ -427,7 +427,6 @@
 	icon_state = "tree_3";
 	pixel_x = -29;
 	pixel_y = 17;
-	tag = "icon-tree_3"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
@@ -488,13 +487,16 @@
 "du" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2";
+<<<<<<< HEAD
 	pixel_x = -12;
 	tag = "icon-floor2"
+=======
+	pixel_x = -12
+>>>>>>> 7b6449342cd14606d73508199694900700503642
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
 	},
 /area/space)
 "dD" = (
@@ -732,7 +734,6 @@
 "fv" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1";
-	tag = "icon-verticalleftborderleft1"
 	},
 /area/space)
 "fD" = (
@@ -757,7 +758,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
 	},
 /area/space)
 "fS" = (
@@ -840,7 +840,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (EAST)"
 	},
 /area/space)
 "hh" = (
@@ -1220,7 +1219,6 @@
 "kH" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	icon_state = "dirt";
-	tag = "icon-dirt"
 	},
 /area/space)
 "kM" = (
@@ -1257,7 +1255,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirt";
-	tag = "icon-dirt (WEST)"
 	},
 /area/space)
 "lq" = (
@@ -1467,7 +1464,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 10;
 	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHWEST)"
 	},
 /area/space)
 "nf" = (
@@ -1516,7 +1512,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (EAST)"
 	},
 /area/space)
 "nL" = (
@@ -1591,7 +1586,6 @@
 "ow" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_3";
-	tag = "icon-tree_3"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
@@ -1793,7 +1787,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 4;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (EAST)"
 	},
 /area/space)
 "qM" = (
@@ -1834,7 +1827,6 @@
 "ra" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
 	},
 /area/space)
 "rb" = (
@@ -2011,7 +2003,6 @@
 /obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole";
-	tag = "icon-hole"
 	},
 /area/space)
 "tM" = (
@@ -2077,7 +2068,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 6;
 	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHEAST)"
 	},
 /area/space)
 "uA" = (
@@ -2156,7 +2146,6 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
 	},
 /obj/machinery/door/poddoor/shutters/old/preopen{
 	id = "poseidon";
@@ -2208,7 +2197,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (WEST)"
 	},
 /area/space)
 "wt" = (
@@ -2264,13 +2252,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "wN" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_2";
-	tag = "icon-tree_2"
 	},
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/space)
@@ -2419,7 +2405,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
 	},
 /area/space)
 "yf" = (
@@ -2474,7 +2459,6 @@
 "yJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
 	},
 /area/space)
 "yO" = (
@@ -2743,7 +2727,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
 	},
 /area/space)
 "BV" = (
@@ -2766,7 +2749,6 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "Cm" = (
@@ -2836,7 +2818,6 @@
 "CP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "CR" = (
@@ -2991,7 +2972,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 9;
 	icon_state = "dirt";
-	tag = "icon-dirt (NORTHWEST)"
 	},
 /area/space)
 "EC" = (
@@ -3010,7 +2990,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (WEST)"
 	},
 /area/space)
 "ET" = (
@@ -3122,7 +3101,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
 	},
 /area/space)
 "Gk" = (
@@ -3177,7 +3155,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (NORTH)"
 	},
 /area/space)
 "GF" = (
@@ -3607,7 +3584,6 @@
 "Lz" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
 	},
 /area/space)
 "LC" = (
@@ -3852,7 +3828,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (WEST)"
 	},
 /area/space)
 "Oh" = (
@@ -3975,7 +3950,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 5;
 	icon_state = "dirt";
-	tag = "icon-dirt (NORTHEAST)"
 	},
 /area/space)
 "PO" = (
@@ -4719,7 +4693,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 1;
 	icon_state = "dirt";
-	tag = "icon-dirt (NORTH)"
 	},
 /area/space)
 "Yk" = (
@@ -4836,7 +4809,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 4;
 	icon_state = "dirt";
-	tag = "icon-dirt (EAST)"
 	},
 /area/space)
 "ZG" = (
@@ -4876,7 +4848,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 1;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (NORTH)"
 	},
 /area/space)
 "ZX" = (

@@ -45,6 +45,10 @@
 /datum/hud/proc/apply_parallax_pref(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
 	var/client/C = screenmob.client
+
+	if(SSmapping.level_trait(viewmob.z, ZTRAIT_NOPARALLAX))
+		return FALSE
+
 	if(C.prefs)
 		var/pref = C.prefs.parallax
 		if (isnull(pref))
