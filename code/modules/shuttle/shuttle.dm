@@ -137,6 +137,8 @@
 		T.maptext = null
 	if(_color)
 		var/turf/T = locate(L[1], L[2], z)
+		if(!T)
+			return
 		T.color = "#0f0"
 		T = locate(L[3], L[4], z)
 		T.color = "#00f"
