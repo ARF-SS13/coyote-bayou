@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(eord_arsenal, list(
 		if(!player_mob.client.prefs?.end_of_round_deathmatch)
 			continue
 		if(isliving(player_mob) && is_centcom_level(player_mob.z))
-			continue // Already at CentComm, lets not force them out of their bodies.
+			continue // Already at CentCom, lets not force them out of their bodies.
 		if(!player_mob.mind) // This proc is too important to prevent one admin shenanigan from runtiming it entirely
 			to_chat(player_mob, "<br><br><h1><span class='danger'>You don't have a mind, if you believe this is not intended, please report it.</span></h1><br><br>")
 			continue
