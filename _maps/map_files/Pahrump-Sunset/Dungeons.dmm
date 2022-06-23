@@ -9028,7 +9028,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "juw" = (
-/obj/machinery/conveyor/inverted{
+/obj/machinery/conveyor{
 	dir = 8;
 	id = "garbage"
 	},
@@ -11370,7 +11370,7 @@
 	},
 /area/f13/underground/cave)
 "lUa" = (
-/obj/machinery/conveyor/inverted{
+/obj/machinery/conveyor{
 	dir = 8;
 	id = "garbage"
 	},
@@ -11853,7 +11853,7 @@
 "mum" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
-/turf/closed/wall/r_wall/rust,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "muI" = (
 /obj/structure/rack,
