@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # hooks/install.py
 #
 # This script is configured by adding `*.hook` and `*.merge` files in the same

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import sys
 import dmi
 from hooks.merge_frontend import MergeDriver

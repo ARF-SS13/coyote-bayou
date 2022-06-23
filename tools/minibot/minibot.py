@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # This bot was made by tkdrg.
 # Ask #coderbus@irc.rizon.net if this breaks.
 # See LICENSE-bot_folder.txt for the license of the files in this folder.
