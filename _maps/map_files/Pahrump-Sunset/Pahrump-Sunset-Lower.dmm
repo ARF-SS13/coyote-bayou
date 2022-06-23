@@ -926,12 +926,8 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "aGd" = (
@@ -5302,9 +5298,7 @@
 /area/f13/tcoms)
 "cjq" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "cjr" = (
@@ -5350,9 +5344,7 @@
 /area/f13/tcoms)
 "cjA" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
@@ -5411,19 +5403,13 @@
 /area/f13/tunnel)
 "cjR" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "cjS" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
@@ -5461,9 +5447,7 @@
 	name = "Server Room";
 	req_access_txt = "61"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/vault{
 	dir = 5
 	},
@@ -5501,20 +5485,14 @@
 /area/f13/tunnel)
 "ckm" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "ckn" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "cko" = (
@@ -7620,12 +7598,8 @@
 /area/f13/ncr)
 "fpU" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "fqQ" = (
@@ -9720,9 +9694,7 @@
 /area/f13/tunnel)
 "jfa" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "jfH" = (
@@ -13774,9 +13746,7 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "qhp" = (
@@ -15015,9 +14985,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "skf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "slP" = (
@@ -15472,9 +15440,7 @@
 	},
 /area/f13/tunnel)
 "tau" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "taP" = (
@@ -15755,9 +15721,7 @@
 	pixel_y = 23;
 	start_charge = 500
 	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/brotherhood)
 "ttq" = (

@@ -147,9 +147,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "agG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/window/northleft,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -176,9 +174,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/f13/vaultsecurityofficer,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "aiW" = (
@@ -186,9 +182,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/f13/vaultsecurityofficer,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "ajp" = (
@@ -200,9 +194,7 @@
 	},
 /area/f13/bunker)
 "ajz" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "akg" = (
@@ -302,9 +294,7 @@
 /area/f13/bunker)
 "aqj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
@@ -330,9 +320,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "arg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/structure/chair/comfy/lime{
 	dir = 1
 	},
@@ -411,9 +399,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "auN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -508,9 +494,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "azA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/vault)
 "azC" = (
@@ -586,9 +570,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "aCK" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/command.dmi';
 	name = "Vault 223 Overseer Office"
@@ -603,9 +585,7 @@
 	},
 /area/f13/bunker)
 "aCT" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "aCV" = (
@@ -628,9 +608,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "aFq" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "aGj" = (
@@ -904,9 +882,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "aVW" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "aWf" = (
@@ -970,9 +946,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "bcC" = (
@@ -1077,9 +1051,7 @@
 	},
 /area/f13/bunker)
 "bhh" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /obj/structure/chair/f13chair1,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
@@ -1129,9 +1101,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "bks" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "bkt" = (
@@ -1162,9 +1132,7 @@
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "bmp" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "bnt" = (
@@ -1233,9 +1201,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "brn" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /obj/machinery/light/broken{
 	dir = 4
 	},
@@ -1259,21 +1225,15 @@
 /area/f13/underground/cave)
 "brV" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "brX" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "bsj" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /obj/structure/chair/office{
 	dir = 4;
 	icon_state = "chair"
@@ -1317,9 +1277,7 @@
 /turf/closed/wall/f13/tentwall,
 /area/f13/underground/cave)
 "bwj" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
 	},
@@ -1363,9 +1321,7 @@
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "bzg" = (
@@ -1376,9 +1332,7 @@
 "bzR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "bAO" = (
@@ -1409,9 +1363,7 @@
 /area/f13/vault)
 "bBi" = (
 /obj/machinery/door/airlock/maintenance/abandoned,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "bBm" = (
@@ -1485,9 +1437,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "bIB" = (
@@ -1569,15 +1519,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "bNo" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "bNV" = (
@@ -1593,9 +1537,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "bOd" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/freezer,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
@@ -1649,15 +1591,11 @@
 /area/f13/bunker)
 "bRN" = (
 /obj/machinery/light,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "bSk" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 1
 	},
@@ -1685,9 +1623,7 @@
 	},
 /area/f13/bunker)
 "bSQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/security.dmi';
 	name = "Vault 223 Security"
@@ -1705,9 +1641,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "bTx" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/vault)
 "bUo" = (
@@ -1718,9 +1652,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker/bighornbunker)
 "bUv" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "bUQ" = (
@@ -1834,9 +1766,7 @@
 /obj/structure/window/spawner/west,
 /obj/structure/window/spawner,
 /obj/machinery/light/floor,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/f13{
 	icon_state = "grass2"
@@ -1943,9 +1873,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/vault)
 "cgE" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "cgT" = (
@@ -1968,9 +1896,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cif" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -2264,9 +2190,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/bunker)
 "cAL" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/item/radio/intercom{
 	frequency = 1361;
 	name = "Vault Intercom";
@@ -2378,9 +2302,7 @@
 	},
 /area/f13/bunker)
 "cHc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "cHw" = (
@@ -2446,9 +2368,7 @@
 	},
 /area/f13/bunker)
 "cJL" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -2501,9 +2421,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "cMu" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /obj/structure/bed/dogbed,
 /mob/living/simple_animal/pet/dog/pug{
 	desc = "A young pug with a squished face and tiny nostrils. Its breathing sounds heavy and labored.";
@@ -2709,9 +2627,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "cXu" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cXB" = (
@@ -2762,9 +2678,7 @@
 /area/f13/legion)
 "cZI" = (
 /obj/effect/landmark/start/cyborg,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "cZR" = (
@@ -2869,9 +2783,7 @@
 	},
 /area/f13/bunker)
 "deM" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "deS" = (
@@ -2920,12 +2832,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "dgo" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "dgG" = (
@@ -2961,15 +2869,9 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "dhS" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "dhY" = (
@@ -3034,9 +2936,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "djN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "djY" = (
@@ -3048,9 +2948,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "dkh" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -3223,9 +3121,7 @@
 /turf/open/floor/f13,
 /area/f13/city)
 "drk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -3303,9 +3199,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "dtR" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -3328,9 +3222,7 @@
 	},
 /area/f13/bunker)
 "dvt" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/security/glass{
 	name = "Armory";
 	req_access_txt = "19"
@@ -3389,15 +3281,11 @@
 	id = "vaultc1";
 	name = "Cell 1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "dzg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
 "dzk" = (
@@ -3464,9 +3352,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "dEH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/highsecurity{
 	name = "Gatehouse";
 	req_access_txt = "1"
@@ -3538,15 +3424,9 @@
 	},
 /area/f13/city)
 "dFG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "dFY" = (
@@ -3594,9 +3474,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "dIP" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/item/radio/intercom{
 	frequency = 1361;
 	name = "Vault Intercom";
@@ -3721,9 +3599,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -3782,9 +3658,7 @@
 	},
 /area/f13/vault)
 "dSf" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "dSq" = (
@@ -3819,9 +3693,7 @@
 	id = 103;
 	name = "Vault Blastdoor 1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "dUK" = (
@@ -3880,9 +3752,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/whitegreenfull,
 /area/f13/bunker)
 "dXT" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "dYz" = (
@@ -3916,9 +3786,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "eae" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "eao" = (
@@ -3985,9 +3853,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "edS" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
@@ -4153,9 +4019,7 @@
 /area/f13/city)
 "ejy" = (
 /obj/machinery/power/am_control_unit,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -4178,9 +4042,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "elf" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "ely" = (
@@ -4311,9 +4173,7 @@
 	},
 /area/f13/bunker)
 "ers" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "erv" = (
@@ -4346,9 +4206,7 @@
 	},
 /area/f13/bunker)
 "etO" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "eus" = (
@@ -4491,12 +4349,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "eCl" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "eCt" = (
@@ -4512,24 +4366,18 @@
 	pixel_x = -32;
 	pixel_y = -32
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "eCH" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
 	},
 /area/f13/bunker)
 "eDd" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "eDz" = (
@@ -4654,9 +4502,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/greenchess/greenchess2,
 /area/f13/radiation)
 "eNI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/public/glass{
 	name = "Diner"
 	},
@@ -4702,15 +4548,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/bunker)
 "eQu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "eQG" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "eQJ" = (
@@ -5228,9 +5070,7 @@
 	name = "Gatehouse";
 	req_access_txt = "1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -5408,9 +5248,7 @@
 /area/f13/underground/cave)
 "fCa" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/tunnel,
 /area/f13/vault)
 "fCK" = (
@@ -5532,9 +5370,7 @@
 	},
 /area/f13/bunker)
 "fGo" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -5618,12 +5454,8 @@
 	},
 /area/f13/bunker)
 "fKZ" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "fLd" = (
@@ -5638,32 +5470,18 @@
 /obj/structure/window/spawner,
 /obj/structure/flora/ausbushes/palebush,
 /obj/machinery/light/floor,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/f13{
 	icon_state = "grass2"
 	},
 /area/f13/vault)
 "fMA" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "fMJ" = (
@@ -5733,9 +5551,7 @@
 	},
 /area/f13/bunker)
 "fQB" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -5806,9 +5622,7 @@
 	anchored = 1
 	},
 /obj/effect/turf_decal/bot,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "fTT" = (
@@ -5831,9 +5645,7 @@
 	},
 /area/f13/radiation)
 "fVh" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -5954,12 +5766,8 @@
 	},
 /area/f13/bunker/bighornbunker)
 "fYi" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "fYj" = (
@@ -5999,9 +5807,7 @@
 	},
 /area/f13/bunker)
 "fZH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
 "gae" = (
@@ -6009,9 +5815,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "gaK" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -6188,9 +5992,7 @@
 /area/f13/bunker)
 "gjT" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "gkb" = (
@@ -6200,21 +6002,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/vault)
 "gkh" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "gkk" = (
@@ -6397,18 +6189,10 @@
 	},
 /area/f13/bunker)
 "gAp" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "gAG" = (
@@ -6470,12 +6254,8 @@
 	},
 /area/f13/bunker)
 "gDe" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "gDk" = (
@@ -6566,12 +6346,8 @@
 	},
 /area/f13/city)
 "gHv" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -6587,9 +6363,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "gHU" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /obj/structure/table,
 /obj/item/book/granter/trait/pa_wear,
 /turf/open/floor/plasteel/dark,
@@ -6613,9 +6387,7 @@
 /area/f13/bunker)
 "gJB" = (
 /obj/effect/landmark/start/f13/vaultscientist,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "gKm" = (
@@ -6788,9 +6560,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "gTj" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -7029,12 +6799,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "hdH" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "hdQ" = (
@@ -7080,9 +6846,7 @@
 	},
 /area/f13/bunker)
 "heB" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "heK" = (
@@ -7203,9 +6967,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "hkR" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -7291,9 +7053,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/city)
 "hqy" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -7329,9 +7089,7 @@
 	},
 /area/f13/bunker)
 "hsZ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
 	},
@@ -7393,9 +7151,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "hvz" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -7446,9 +7202,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/side,
 /area/f13/bunker)
 "hxN" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/goonplaque{
 	desc = "This is a plaque detailing and honoring the corporate dollars lost creating the vault. All craftsmanship is of the highest quality. The Business men are laughing. The Workers are crying. It menaces with spikes of gold."
 	},
@@ -7671,9 +7425,7 @@
 	},
 /area/f13/city)
 "hLc" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13{
@@ -7716,9 +7468,7 @@
 	id = "vaultc2";
 	name = "Cell 2"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "hOj" = (
@@ -7738,15 +7488,9 @@
 /area/f13/bunker)
 "hOR" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/structure/chair/comfy/brown{
 	dir = 4
 	},
@@ -7859,9 +7603,7 @@
 "hWe" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "hWo" = (
@@ -8163,9 +7905,7 @@
 /obj/machinery/door/airlock/science/glass{
 	name = "Science"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "ijy" = (
@@ -8209,9 +7949,7 @@
 /area/f13/bunker)
 "ilv" = (
 /obj/machinery/vending/engineering,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "ilw" = (
@@ -8356,9 +8094,7 @@
 /area/f13/city)
 "itn" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/status_display/supply{
 	name = "cargo display"
 	},
@@ -8548,9 +8284,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iEG" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	name = "Hydroponics"
 	},
@@ -8875,12 +8609,8 @@
 	},
 /area/f13/bunker)
 "iUa" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -8915,21 +8645,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "iXd" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
 /area/f13/bunker)
 "iXT" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "iYv" = (
@@ -8981,9 +8705,7 @@
 /area/f13/bunker/bighornbunker)
 "jaX" = (
 /obj/machinery/door/airlock,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "jbp" = (
@@ -9016,9 +8738,7 @@
 	},
 /area/f13/bunker)
 "jco" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "jcs" = (
@@ -9041,9 +8761,7 @@
 	},
 /area/f13/bunker)
 "jda" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = 102;
 	name = "Vault Door Security Checkpoint"
@@ -9056,19 +8774,13 @@
 /turf/closed/wall/f13/vault,
 /area/f13/city)
 "jdg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "jdj" = (
 /obj/effect/turf_decal/box,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/vault)
 "jdp" = (
@@ -9274,9 +8986,7 @@
 /turf/open/floor/carpet,
 /area/f13/bunker)
 "jpO" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "jqa" = (
@@ -9346,9 +9056,7 @@
 	name = "Brig";
 	req_access_txt = "1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "juw" = (
@@ -9385,15 +9093,9 @@
 /area/f13/bunker)
 "jwJ" = (
 /obj/effect/decal/hammerandsickle,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -9411,9 +9113,7 @@
 /area/f13/city)
 "jyn" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13,
 /area/f13/vault)
 "jyJ" = (
@@ -9444,15 +9144,9 @@
 	},
 /area/f13/vault)
 "jzb" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 25
 	},
@@ -9524,9 +9218,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "jDn" = (
@@ -9593,9 +9285,7 @@
 	dir = 4
 	},
 /obj/effect/landmark/start/f13/vaultdweller,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "jIA" = (
@@ -9640,12 +9330,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "jKx" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/machinery/light/broken{
 	dir = 8
 	},
@@ -9676,9 +9362,7 @@
 	name = "Bot Control";
 	req_access_txt = "19"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "jMQ" = (
@@ -9866,18 +9550,14 @@
 /area/f13/bunker)
 "jZd" = (
 /obj/structure/closet/toolcloset,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "jZk" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "jZu" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
@@ -9910,15 +9590,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "kbG" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "kcz" = (
@@ -10020,12 +9694,8 @@
 	},
 /area/f13/vault)
 "khj" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -10089,9 +9759,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/underground/cave)
 "kmf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "kml" = (
@@ -10413,9 +10081,7 @@
 /area/f13/city)
 "kAe" = (
 /obj/effect/landmark/start/f13/overseer,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
 	name = "prewar lounge chair"
@@ -10430,9 +10096,7 @@
 /area/f13/bunker)
 "kCe" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "kCE" = (
@@ -10440,9 +10104,7 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "kCI" = (
@@ -10668,15 +10330,9 @@
 "kLS" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/security_space_law,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "kMb" = (
@@ -10774,9 +10430,7 @@
 	name = "Chief of Security";
 	req_access_txt = "19"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "kUn" = (
@@ -10804,9 +10458,7 @@
 	},
 /area/f13/bunker)
 "kVx" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -10826,12 +10478,8 @@
 	},
 /area/f13/bunker)
 "kWu" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "kWx" = (
@@ -10867,9 +10515,7 @@
 /area/f13/bunker)
 "kXB" = (
 /obj/structure/table/reinforced,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "kXC" = (
@@ -10896,9 +10542,7 @@
 	},
 /area/f13/bunker)
 "kYy" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13{
@@ -11107,9 +10751,7 @@
 /turf/closed/wall/f13/store,
 /area/f13/mountain_bunker)
 "ljr" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "lkS" = (
@@ -11229,9 +10871,7 @@
 	name = "Research Office";
 	req_access_txt = "47"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "lpj" = (
@@ -11274,9 +10914,7 @@
 	},
 /area/f13/underground/cave)
 "lrB" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
@@ -11332,9 +10970,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "lvh" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -11357,18 +10993,10 @@
 /area/f13/bunker)
 "lxO" = (
 /obj/machinery/holopad,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
 "lyn" = (
@@ -11494,17 +11122,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "lEF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/bunker)
 "lET" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -11572,9 +11196,7 @@
 "lIO" = (
 /obj/machinery/power/smes/engineering,
 /obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "lJs" = (
@@ -11687,9 +11309,7 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/city)
 "lPa" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "lPb" = (
@@ -11743,9 +11363,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ncr)
 "lQZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 4
 	},
@@ -11772,9 +11390,7 @@
 	},
 /area/f13/vault)
 "lRZ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "lSi" = (
@@ -11868,9 +11484,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/underground/cave)
 "lXp" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "lXt" = (
@@ -12079,9 +11693,7 @@
 	},
 /area/f13/bunker)
 "miu" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "miW" = (
@@ -12091,9 +11703,7 @@
 	},
 /area/f13/bunker)
 "mjj" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -12214,9 +11824,7 @@
 	},
 /area/f13/bunker)
 "mqf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
@@ -12267,9 +11875,7 @@
 "mtj" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "mtK" = (
@@ -12410,9 +12016,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "mAc" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "mAe" = (
@@ -12508,9 +12112,7 @@
 /area/f13/vault)
 "mGP" = (
 /obj/machinery/door/airlock/maintenance/abandoned,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "mHk" = (
@@ -12697,9 +12299,7 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker/bighornbunker)
 "mRs" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "mRP" = (
@@ -12744,9 +12344,7 @@
 	name = "Science";
 	req_access_txt = "31"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "mTW" = (
@@ -12912,9 +12510,7 @@
 	},
 /area/f13/bunker)
 "nbm" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "nbL" = (
@@ -12948,9 +12544,7 @@
 	icon_state = "rightsecure";
 	req_access_txt = "31"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/caution,
 /area/f13/vault)
 "ncL" = (
@@ -13055,9 +12649,7 @@
 /area/f13/wasteland)
 "nik" = (
 /obj/item/clothing/suit/toggle/lawyer,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "niv" = (
@@ -13215,9 +12807,7 @@
 /area/f13/wasteland)
 "npV" = (
 /obj/effect/landmark/start/f13/vaultdoctor,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "npZ" = (
@@ -13274,9 +12864,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "nto" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
 	},
@@ -13464,9 +13052,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "nBW" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "nCr" = (
@@ -13529,9 +13115,7 @@
 	},
 /area/f13/bunker)
 "nDY" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /obj/effect/landmark/start/f13/vaultsecurityofficer,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
@@ -13579,12 +13163,8 @@
 	},
 /area/f13/bunker)
 "nFY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "nGx" = (
@@ -13654,9 +13234,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "nKN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
 	},
@@ -13801,9 +13379,7 @@
 	},
 /area/f13/bunker)
 "nSq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "nSx" = (
@@ -13813,9 +13389,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "nTf" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "nTF" = (
@@ -13900,12 +13474,8 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "nWG" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -13918,9 +13488,7 @@
 	},
 /area/f13/bunker)
 "nXb" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "nXk" = (
@@ -13972,9 +13540,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/vault)
 "oaQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13{
@@ -14085,9 +13651,7 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/bunker/bighornbunker)
 "ofZ" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/item/seeds/apple/gold,
 /obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
@@ -14167,9 +13731,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "okF" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -14195,9 +13757,7 @@
 	},
 /area/f13/bunker)
 "okS" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -14293,9 +13853,7 @@
 	},
 /area/f13/bunker)
 "opV" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "oqm" = (
@@ -14320,9 +13878,7 @@
 /area/f13/caves)
 "orO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "orW" = (
@@ -14468,9 +14024,7 @@
 	name = "Generator Room";
 	req_access_txt = "31"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "ozQ" = (
@@ -14479,9 +14033,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green/white/whitegreenchess,
 /area/f13/bunker)
 "ozX" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "oAi" = (
@@ -14701,9 +14253,7 @@
 	},
 /area/f13/underground/cave)
 "oIS" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "oJI" = (
@@ -14734,9 +14284,7 @@
 /area/f13/bunker)
 "oLr" = (
 /obj/structure/table,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
 "oMc" = (
@@ -14873,9 +14421,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/legion)
 "oSt" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
 	},
@@ -14900,15 +14446,9 @@
 	},
 /area/f13/vault)
 "oTT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "oUE" = (
@@ -14935,9 +14475,7 @@
 /obj/machinery/door/airlock/maintenance/abandoned,
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/structure/barricade/wooden,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "oVN" = (
@@ -14956,9 +14494,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/bunker)
 "oWQ" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -14994,9 +14530,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oZg" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/closed/wall/r_wall/f13vault{
 	icon_state = "2-i"
 	},
@@ -15044,18 +14578,10 @@
 	},
 /area/f13/bunker)
 "paQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "pco" = (
@@ -15064,9 +14590,7 @@
 	},
 /area/f13/vault)
 "pcp" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "pcw" = (
@@ -15077,12 +14601,8 @@
 	},
 /area/f13/bunker)
 "pcA" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "pcE" = (
@@ -15173,9 +14693,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker/bighornbunker)
 "pfq" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "pfs" = (
@@ -15248,9 +14766,7 @@
 	},
 /area/f13/bunker)
 "pie" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
@@ -15297,15 +14813,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "pkv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/yellow/side,
 /area/f13/vault)
 "pkA" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -15469,9 +14981,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "prC" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/security.dmi';
 	name = "Vault 223 Security"
@@ -15517,11 +15027,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/bunker)
 "puE" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
+/obj/structure/cable,/obj/structure/cablecon_state = "4-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
@@ -15536,9 +15042,7 @@
 	},
 /area/f13/bunker)
 "pvF" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
@@ -15668,9 +15172,7 @@
 	},
 /area/f13/vault)
 "pFv" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/medical.dmi';
 	name = "Vault 223 Medical"
@@ -15887,9 +15389,7 @@
 	},
 /area/f13/bunker)
 "pPr" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi';
 	name = "Vault 223 Enginieering"
@@ -15981,9 +15481,7 @@
 /turf/closed/wall/mineral/iron,
 /area/f13/ncr)
 "pUE" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "rampdowntop"
 	},
@@ -16011,9 +15509,7 @@
 	},
 /area/f13/city)
 "pVQ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -16083,15 +15579,9 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/tunnel)
 "pZo" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "pZC" = (
@@ -16132,16 +15622,12 @@
 /area/f13/bunker/bighornbunker)
 "qbd" = (
 /obj/machinery/modular_computer/console/preset/engineering,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "qcf" = (
 /obj/machinery/power/terminal,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "qcw" = (
@@ -16240,9 +15726,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "qgI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/window/southleft,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
@@ -16268,9 +15752,7 @@
 /area/f13/bunker)
 "qhb" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "qhA" = (
@@ -16353,9 +15835,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qkV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "showroomfloor"
 	},
@@ -16595,9 +16075,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "qAP" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -16714,9 +16192,7 @@
 /obj/machinery/door/airlock/mining{
 	name = "CASP Bay"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "qHs" = (
@@ -16793,9 +16269,7 @@
 	},
 /area/f13/wasteland)
 "qJQ" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "qKi" = (
@@ -16826,9 +16300,7 @@
 /obj/machinery/door/airlock{
 	name = "Hydroponics"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "qLK" = (
@@ -16925,9 +16397,7 @@
 	},
 /area/f13/vault)
 "qRZ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/neutral,
 /area/f13/vault)
 "qSc" = (
@@ -16998,9 +16468,7 @@
 	name = "Brig";
 	req_access_txt = "1"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "qTG" = (
@@ -17180,9 +16648,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralchess,
 /area/f13/vault)
 "rgn" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "rgp" = (
@@ -17275,9 +16741,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "rmi" = (
@@ -17311,18 +16775,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "rqB" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "rqZ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/f13{
 	icon_state = "stagestairs"
 	},
@@ -17400,9 +16860,7 @@
 /turf/open/floor/f13,
 /area/f13/city)
 "ruY" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "plating"
 	},
@@ -17476,9 +16934,7 @@
 	},
 /area/f13/underground/cave)
 "ryH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -17581,9 +17037,7 @@
 	},
 /obj/item/stamp,
 /obj/item/stamp/denied,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "rEy" = (
@@ -17702,9 +17156,7 @@
 	name = "Reactor APC";
 	pixel_x = -28
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "rMY" = (
@@ -17787,12 +17239,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/bunker)
 "rPK" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -17882,9 +17330,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "rXh" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -17929,9 +17375,7 @@
 /area/f13/vault)
 "saL" = (
 /obj/machinery/power/smes/engineering,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "saR" = (
@@ -17939,9 +17383,7 @@
 	name = "Overseer's Quarters";
 	req_access_txt = "19"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "sbn" = (
@@ -18102,9 +17544,7 @@
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building)
 "siW" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -18125,9 +17565,7 @@
 	name = "Chief of Security's Quarters";
 	req_access_txt = "19"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "sjS" = (
@@ -18296,15 +17734,11 @@
 	dir = 1;
 	light_color = "#706891"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "stm" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	name = "Vault 223 Janitorial storage"
 	},
@@ -18656,12 +18090,8 @@
 	},
 /area/f13/bunker)
 "sNQ" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -18858,9 +18288,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "sZm" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	icon = 'icons/obj/doors/airlocks/station/engineering.dmi';
 	name = "Vault 223 Enginieering"
@@ -18933,9 +18361,7 @@
 /area/f13/vault)
 "tdv" = (
 /obj/structure/chair,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "tdC" = (
@@ -18948,9 +18374,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/vault)
 "tef" = (
@@ -18972,9 +18396,7 @@
 /area/f13/ncr)
 "tfz" = (
 /obj/structure/bed,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "tfC" = (
@@ -19057,9 +18479,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "tit" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "tiE" = (
@@ -19337,9 +18757,7 @@
 	name = "Overseer Office";
 	req_access_txt = "19"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "tyg" = (
@@ -19357,9 +18775,7 @@
 	},
 /area/f13/radiation)
 "tyH" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
 	},
@@ -19499,9 +18915,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/vault)
 "tGX" = (
@@ -19782,15 +19196,11 @@
 /obj/machinery/computer/cargo/request{
 	dir = 8
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/vault)
 "tXm" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock{
 	name = "Vault 223 Garden"
 	},
@@ -19842,9 +19252,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "uba" = (
@@ -19869,9 +19277,7 @@
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/vault)
 "ucl" = (
@@ -19907,9 +19313,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "udv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrusty"
 	},
@@ -20032,15 +19436,9 @@
 /turf/closed/wall/f13/supermart,
 /area/f13/underground/cave)
 "ujJ" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "ujK" = (
@@ -20073,9 +19471,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "uke" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/chair/stool/retro,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
@@ -20210,9 +19606,7 @@
 	},
 /area/f13/underground/cave)
 "urs" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/vault)
 "urC" = (
@@ -20336,9 +19730,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "uyZ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "uza" = (
@@ -20473,9 +19865,7 @@
 	id_tag = "MedbayFoyer";
 	name = "Medbay"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "uEu" = (
@@ -20562,9 +19952,7 @@
 /turf/open/floor/plasteel/freezer,
 /area/f13/bunker)
 "uJu" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/machinery/recharge_station,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
@@ -20889,9 +20277,7 @@
 	},
 /area/f13/radiation)
 "uYg" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/structure/barricade/wooden,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -21114,9 +20500,7 @@
 	},
 /area/f13/bunker)
 "viN" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/structure/table/glass,
 /obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
@@ -21256,9 +20640,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "vpT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/medical/glass{
 	id_tag = "MedbayFoyer";
 	name = "Medbay";
@@ -21397,9 +20779,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
 "vxc" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "vxh" = (
@@ -21444,9 +20824,7 @@
 	},
 /area/f13/bunker)
 "vyL" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
 	},
@@ -21478,9 +20856,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "vAT" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /obj/machinery/light/broken{
 	dir = 4
 	},
@@ -21499,9 +20875,7 @@
 	},
 /area/f13/bunker/bighornbunker)
 "vBa" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder{
 	pixel_y = 8
@@ -21529,15 +20903,9 @@
 	},
 /area/f13/bunker)
 "vBG" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "vBM" = (
@@ -21789,9 +21157,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "vUH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
@@ -21831,9 +21197,7 @@
 	},
 /area/f13/vault)
 "vXq" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -22192,9 +21556,7 @@
 	},
 /area/f13/city)
 "wqJ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/timeddoor,
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorgrime"
@@ -22292,15 +21654,9 @@
 	},
 /area/f13/underground/cave)
 "wxN" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "wxT" = (
@@ -22462,9 +21818,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "wEI" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "wEY" = (
@@ -22477,12 +21831,8 @@
 	},
 /area/f13/underground/cave)
 "wFn" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/plasteel/f13{
@@ -22557,9 +21907,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "wMz" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/vault)
 "wMM" = (
@@ -22665,12 +22013,8 @@
 /turf/open/floor/carpet/black,
 /area/f13/vault)
 "wSr" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /obj/structure/sign/poster/official/safety_eye_protection{
 	pixel_y = 32
 	},
@@ -22685,9 +22029,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/bunker)
 "wTk" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/chair/booth{
 	dir = 4
 	},
@@ -22708,9 +22050,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "wTH" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/machinery/hydroponics/constructable,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/f13{
@@ -22760,12 +22100,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "wVS" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "wWg" = (
@@ -22916,9 +22252,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "xbU" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /obj/machinery/door/airlock/command{
 	name = "Overseer Office";
 	req_access_txt = "19"
@@ -22927,9 +22261,7 @@
 /area/f13/vault)
 "xcc" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "xcN" = (
@@ -22982,9 +22314,7 @@
 	},
 /area/f13/underground/cave)
 "xha" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /obj/machinery/light/broken{
 	dir = 8
 	},
@@ -23104,9 +22434,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/vault)
 "xnX" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "xoy" = (
@@ -23156,17 +22484,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ruins)
 "xqx" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /obj/structure/bed/roller,
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
 "xqG" = (
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustyfull"
 	},
@@ -23175,9 +22499,7 @@
 /turf/closed/wall/f13/wood,
 /area/f13/city)
 "xrE" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /obj/structure/closet/cabinet{
 	name = "Vault 223 cabinet"
 	},
@@ -23209,9 +22531,7 @@
 	name = "Research Storage";
 	req_access_txt = "47"
 	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "xsC" = (
@@ -23244,9 +22564,7 @@
 	},
 /area/f13/bunker)
 "xtP" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /obj/item/reagent_containers/food/snacks/waffles{
 	pixel_y = 6
 	},
@@ -23332,9 +22650,7 @@
 	},
 /area/f13/underground/cave)
 "xzM" = (
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/vault)
 "xzT" = (
@@ -23490,9 +22806,7 @@
 	},
 /area/f13/bunker)
 "xJQ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "xKD" = (
@@ -23541,9 +22855,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "xNO" = (
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "xOb" = (
@@ -23737,9 +23049,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/bunker)
 "ybU" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 8
 	},

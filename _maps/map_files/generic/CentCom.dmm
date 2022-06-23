@@ -3744,12 +3744,8 @@
 /obj/item/stack/cable_coil/white,
 /obj/item/screwdriver/power,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/white{
-	icon_state = "0-2"
-	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/white,
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "nN" = (
@@ -4339,9 +4335,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/white,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
@@ -4424,15 +4418,11 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/white,
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -5306,9 +5296,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "sG" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "sH" = (
@@ -7716,9 +7704,7 @@
 /turf/closed/mineral/ash_rock,
 /area/f13/underground/mountain)
 "Ga" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "Gb" = (
@@ -7747,9 +7733,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Gt" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "Gu" = (
@@ -7816,9 +7800,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/centcom/evac)
 "Hk" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "Hl" = (
@@ -7829,9 +7811,7 @@
 	name = "Server Room";
 	req_access_txt = "61"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "Hq" = (
@@ -8960,9 +8940,7 @@
 /area/centcom/evac)
 "RT" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "RU" = (
@@ -8988,9 +8966,7 @@
 /area/f13/tcoms)
 "Sb" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
@@ -9037,19 +9013,13 @@
 /area/f13/tcoms)
 "Sp" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "Sq" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
@@ -9119,20 +9089,14 @@
 /area/f13/tcoms)
 "SI" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
+/obj/structure/cable,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "SJ" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
+/obj/structure/cable,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/f13/tcoms)
 "SK" = (
