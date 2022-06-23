@@ -66260,10 +66260,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "xhx" = (
-/obj/machinery/hydroponics/soil{
-	myseed = /obj/item/seeds/orange;
-	vis_contents = /obj/item/seeds/orange
-	},
+/obj/machinery/hydroponics/soil/orange,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/building)
