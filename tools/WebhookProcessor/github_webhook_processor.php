@@ -28,7 +28,7 @@ define('F_SECRET_PR', 1<<1);
 
 $hookSecret = '08ajh0qj93209qj90jfq932j32r';
 $apiKey = '209ab8d879c0f987d06a09b9d879c0f987d06a09b9d8787d0a089c';
-$repoOwnerAndName = "tgstation/tgstation";
+$repoOwnerAndName = "ARF-SS13/coyote-bayou";
 $servers = array();
 $enable_live_tracking = true;
 $path_to_script = 'tools/WebhookProcessor/github_webhook_processor.php';
@@ -43,8 +43,7 @@ $discordWebHooks = array();
 // Only these repositories will announce in game.
 // Any repository that players actually care about.
 $game_announce_whitelist = array(
-	"tgstation",
-	"TerraGov-Marine-Corps",
+	"coyote-bayou",
 );
 
 // Any repository that matches in this blacklist will not appear on Discord.

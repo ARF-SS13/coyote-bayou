@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #If you hit github's rate limit, add a 3rd parameter here that is a github personal access token
-./CreditsTool tgstation tgstation
+./CreditsTool arfs-ss13 arfs-ss13
 
 rm ../../icons/credits.dmi
 
