@@ -16,7 +16,7 @@ set REPO_BRANCH=master
 
 
 REM what map file to use. This should be the name of the dm, not dmm (and without the .dm part) (defaults to what ever is ticked in the dme)
-set MAPFILE=tgstation2
+set MAPFILE=pahrump
 REM set MAPFILE=metastation
 REM set MAPFILE=ministation
 
