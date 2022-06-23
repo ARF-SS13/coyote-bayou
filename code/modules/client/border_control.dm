@@ -2,9 +2,10 @@
 #define BORDER_CONTROL_LEARNING 1
 #define BORDER_CONTROL_ENFORCED 2
 
-var/list/whitelistedCkeys
-var/savefile/borderControlFile = new /savefile("data/bordercontrol.db")
-var/whitelistLoaded = 0
+
+GLOBAL_LIST_EMPTY(whitelistedCkeys)
+GLOBAL_VAR_INIT(borderControlFile, savefile("data/bordercontrol.db"))
+GLOBAL_VAR_INIT(whitelistLoaded, 0)
 
 //////////////////////////////////////////////////////////////////////////////////
 proc/BC_ModeToText(var/mode)
