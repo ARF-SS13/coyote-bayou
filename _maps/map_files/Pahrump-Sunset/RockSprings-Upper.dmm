@@ -12,9 +12,7 @@
 "aW" = (
 /obj/structure/closet/cabinet,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "bk" = (
 /turf/open/transparent/openspace{
 	name = "air";
@@ -33,34 +31,26 @@
 "cd" = (
 /obj/machinery/autolathe,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "cv" = (
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "cE" = (
 /obj/structure/table/wood/settler,
 /obj/item/stack/sheet/animalhide/human,
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "ds" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "dA" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -93,9 +83,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "ei" = (
 /obj/structure/debris/v1{
 	pixel_x = -16
@@ -134,9 +122,7 @@
 	pixel_y = -1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "fY" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -145,15 +131,11 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "gf" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "gI" = (
 /obj/structure/punji_sticks,
 /turf/open/floor/plating/f13/outside/road{
@@ -167,18 +149,14 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "hM" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul{
 	desc = ss
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "ia" = (
 /mob/living/simple_animal/hostile/raider/tribal,
 /obj/effect/decal/cleanable/dirt{
@@ -187,14 +165,10 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "je" = (
 /turf/closed/wall/f13/wood/house,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "jv" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -210,36 +184,26 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "jK" = (
 /obj/structure/table/wood,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "kQ" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "lZ" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "mp" = (
 /obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "mR" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -263,9 +227,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "og" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -294,9 +256,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "oN" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/structure/railing{
@@ -307,15 +267,11 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "ps" = (
 /obj/machinery/workbench,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "pE" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -348,9 +304,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "pP" = (
 /obj/structure/campfire,
 /obj/effect/decal/cleanable/dirt{
@@ -370,9 +324,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "rc" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -391,25 +343,19 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "rH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "sL" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "tg" = (
 /obj/effect/decal/marking{
 	icon_state = "doubleverticalcorroded"
@@ -418,29 +364,21 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "tQ" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "ud" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "un" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbrokenvertical"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "uu" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -450,15 +388,11 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "uI" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "uR" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -467,9 +401,7 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "vb" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -480,16 +412,12 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "wD" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "xA" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -498,9 +426,7 @@
 	icon_state = "skulls"
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "xK" = (
 /obj/effect/turf_decal/weather/sand,
 /obj/effect/decal/cleanable/dirt{
@@ -513,31 +439,23 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "yf" = (
 /obj/structure/chair/wood,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "yy" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "yH" = (
 /obj/structure/debris/v1{
 	pixel_x = -16
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "yI" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -573,9 +491,7 @@
 	light_power = .3
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "zD" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -589,9 +505,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Aq" = (
 /obj/machinery/light/small{
 	dir = 1;
@@ -602,17 +516,13 @@
 /obj/item/stack/sheet/metal,
 /obj/item/crowbar,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Ar" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Av" = (
 /mob/living/simple_animal/hostile/raider/tribal{
 	health = 160;
@@ -625,9 +535,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Br" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -637,9 +545,7 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "BM" = (
 /obj/structure/debris/v1{
 	pixel_x = -16
@@ -648,17 +554,13 @@
 	pixel_x = -16
 	},
 /turf/open/indestructible/ground/outside/dirt/harsh,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "BU" = (
 /obj/structure/railing{
 	layer = 4.1
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Eq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -681,9 +583,7 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "FF" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -697,18 +597,14 @@
 	name = "air";
 	sunlight_state = 1
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "FM" = (
 /obj/item/bedsheet{
 	icon_state = "sheetbrown"
 	},
 /obj/structure/bed/old,
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Gw" = (
 /obj/structure/railing{
 	dir = 1
@@ -726,9 +622,7 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "HZ" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
@@ -740,9 +634,7 @@
 	pixel_x = -10
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Iq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -753,18 +645,14 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Ix" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "JK" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -783,9 +671,7 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Ki" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
@@ -799,9 +685,7 @@
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Mt" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -813,9 +697,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "NO" = (
 /obj/structure/railing{
 	dir = 1
@@ -824,9 +706,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Oe" = (
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/wasteland)
@@ -841,18 +721,14 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Pf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "PB" = (
 /obj/structure/railing{
 	dir = 1
@@ -861,9 +737,7 @@
 	icon_state = "skulls"
 	},
 /turf/closed/wall/f13/wood,
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "PJ" = (
 /obj/effect/turf_decal/weather/sand,
 /obj/item/pickaxe,
@@ -873,18 +747,14 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontalbottomborderbottom0"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Qj" = (
 /obj/structure/sign/plaques/golden{
 	desc = "This sand blown bronze plaque goes on about how this fire tower was built in the 1960s and operated well into the 2050s.  It even goes on to list how the table inside used to work to communicate with other towers to traingulate fires.";
 	name = "Historical Marker"
 	},
 /turf/closed/wall/f13/wood/house,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "QD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/binoculars{
@@ -916,15 +786,11 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Rj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "Rr" = (
 /obj/effect/decal/cleanable/blood{
 	pixel_y = -13
@@ -932,9 +798,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "St" = (
 /obj/structure/fence/wooden{
 	dir = 1;
@@ -954,18 +818,14 @@
 	color = "000000"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "SD" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "SV" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -987,9 +847,7 @@
 /area/f13/wasteland)
 "Ti" = (
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "Ty" = (
 /obj/effect/decal/marking,
 /turf/closed/mineral/random/low_chance,
@@ -997,15 +855,11 @@
 "TF" = (
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "TI" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Vf" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -1029,9 +883,7 @@
 "Wb" = (
 /obj/structure/junk/small/bed,
 /turf/open/floor/f13/wood,
-/area/f13/building{
-	name = "Building - Firetower Upper"
-	})
+/area/f13/building/firetower)
 "Ws" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -1040,9 +892,7 @@
 /area/f13/wasteland)
 "Ww" = (
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "WB" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1059,17 +909,13 @@
 /obj/structure/table,
 /obj/item/flashlight/lamp/green,
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "WW" = (
 /turf/closed/wall/f13/store{
 	desc = "A pre-War wall made of solid concrete.";
 	name = "concrete wall"
 	},
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Xz" = (
 /obj/item/gun/ballistic/rifle/hunting{
 	name = "roasted hunting rifle"
@@ -1093,14 +939,10 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Yp" = (
 /turf/closed/wall/f13/wood,
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "Yz" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/pill/patch/jet{
@@ -1110,9 +952,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 "YG" = (
 /obj/structure/railing{
 	dir = 4;
@@ -1130,14 +970,10 @@
 	light_color = "red"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "Zh" = (
 /turf/open/floor/carpet,
-/area/f13/village{
-	name = "Rockspring - Tunnel Motel"
-	})
+/area/f13/village/tunnel_motel)
 "ZI" = (
 /obj/structure/railing{
 	dir = 1
@@ -1150,9 +986,7 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/village{
-	name = "Overpass Village - Upper"
-	})
+/area/f13/village/overpass_village)
 
 (1,1,1) = {"
 bk
