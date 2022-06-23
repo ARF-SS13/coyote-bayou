@@ -14972,7 +14972,8 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/bunker)
 "puE" = (
-/obj/structure/cable,/obj/structure/cablecon_state = "4-8"
+/obj/structure/cable,
+/obj/structure/cablecon_state = "4-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
@@ -21421,7 +21422,6 @@
 	},
 /area/f13/bunker)
 "wnl" = (
-/obj/structure/table/reinforced,
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters{
