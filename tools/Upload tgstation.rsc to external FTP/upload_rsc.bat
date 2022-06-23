@@ -14,7 +14,7 @@ echo user USERNAME> ftpcmd.dat
 echo PASSWORD>> ftpcmd.dat
 echo bin>> ftpcmd.dat
 echo cd FOLDER/FOLDER>> ftpcmd.dat
-echo put ..\..\tgstation.rsc>> ftpcmd.dat
+echo put ..\..\fortune13.rsc>> ftpcmd.dat
 echo quit>> ftpcmd.dat
 ftp -n -s:ftpcmd.dat FTP.DOMAIN.COM
 del ftpcmd.dat
