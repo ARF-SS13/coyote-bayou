@@ -3829,18 +3829,14 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "nZ" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 1
 	},
-/obj/structure/cable/white{
-	icon_state = "2-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "oa" = (
@@ -4082,9 +4078,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
 "oz" = (
@@ -4174,9 +4168,7 @@
 /area/centcom/evac)
 "oM" = (
 /obj/effect/turf_decal/delivery,
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "oN" = (
@@ -4305,9 +4297,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
+/obj/structure/cable/white,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/centcom/evac)
@@ -4332,9 +4322,7 @@
 /obj/item/stack/cable_coil/white,
 /obj/item/screwdriver/power,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/white{
-	icon_state = "0-2"
-	},
+/obj/structure/cable/white,
 /obj/structure/cable/white,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
@@ -4364,9 +4352,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "pk" = (
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "pl" = (
@@ -4398,18 +4384,12 @@
 	name = "Equipment Room";
 	req_access_txt = "150"
 	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "pv" = (
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -4419,18 +4399,14 @@
 	dir = 1
 	},
 /obj/structure/cable/white,
-/obj/structure/cable/white{
-	icon_state = "0-4"
-	},
+/obj/structure/cable/white,
 /obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
 /area/centcom/evac)
 "px" = (
-/obj/structure/cable/white{
-	icon_state = "1-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -4572,9 +4548,7 @@
 /area/centcom/evac)
 "qf" = (
 /obj/machinery/status_display/ai,
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/closed/wall/f13/vault,
 /area/centcom/evac)
 "qg" = (
@@ -4657,9 +4631,7 @@
 	},
 /area/centcom/evac)
 "qq" = (
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -4890,9 +4862,7 @@
 "rl" = (
 /obj/structure/chair/office/dark,
 /obj/effect/landmark/ert_spawn,
-/obj/structure/cable/white{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rm" = (
@@ -4990,9 +4960,7 @@
 "rC" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/regular,
-/obj/structure/cable/white{
-	icon_state = "1-4"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -5002,9 +4970,7 @@
 /obj/item/clipboard,
 /obj/item/folder/white,
 /obj/item/pen/blue,
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -5013,9 +4979,7 @@
 /obj/structure/table/reinforced,
 /obj/item/paper_bin,
 /obj/item/pen,
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 8
 	},
@@ -5025,15 +4989,11 @@
 	dir = 8
 	},
 /obj/effect/landmark/ert_spawn,
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rG" = (
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/vault{
 	dir = 5
 	},
@@ -5041,15 +5001,11 @@
 "rH" = (
 /obj/machinery/door/poddoor/ert,
 /obj/effect/turf_decal/delivery,
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rI" = (
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rJ" = (
@@ -5059,9 +5015,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rK" = (
@@ -5070,15 +5024,11 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rL" = (
-/obj/structure/cable/white{
-	icon_state = "2-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "rM" = (
@@ -5290,9 +5240,7 @@
 /turf/open/floor/plating/f13/inside/mountain,
 /area/f13/tcoms)
 "sF" = (
-/obj/structure/cable/white{
-	icon_state = "1-4"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "sG" = (
@@ -5305,9 +5253,7 @@
 	name = "Briefing Area APC";
 	pixel_x = 26
 	},
-/obj/structure/cable/white{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/white,
 /turf/open/floor/plasteel/dark,
 /area/centcom/evac)
 "sI" = (

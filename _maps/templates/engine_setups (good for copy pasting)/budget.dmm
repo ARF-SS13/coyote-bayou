@@ -83,9 +83,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "iB" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
@@ -185,9 +183,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "oa" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -220,9 +216,7 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "qc" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "qo" = (
@@ -233,15 +227,9 @@
 /turf/open/floor/plating,
 /area/engine/engineering)
 "qH" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow/,
+/obj/structure/cable/yellow/,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "rU" = (
@@ -325,15 +313,9 @@
 /turf/open/floor/engine,
 /area/engine/engineering)
 "Bq" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
+/obj/structure/cable/yellow,
+/obj/structure/cable/yellow/,
+/obj/structure/cable/yellow/,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -448,9 +430,7 @@
 	capacity = 9e+006;
 	charge = 10000
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -557,9 +537,7 @@
 	capacity = 9e+006;
 	charge = 10000
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
+/obj/structure/cable/yellow,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "OU" = (
@@ -617,12 +595,8 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "Us" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
+/obj/structure/cable/yellow/,
+/obj/structure/cable/yellow/,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "UD" = (
