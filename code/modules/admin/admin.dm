@@ -1,6 +1,6 @@
 
 ////////////////////////////////
-/proc/log_and_message_admins(message as text, var/mob/user = usr)
+/proc/log_and_message_admins(message as text, mob/user = usr)
 	var/finalMessage = user ? "[key_name(user)] [message]" : "EVENT [message]"
 	log_admin(finalMessage)
 	message_admins(finalMessage)
