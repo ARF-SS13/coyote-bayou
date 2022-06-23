@@ -89,7 +89,7 @@
 "aau" = (
 /obj/machinery/button/door{
 	id = "prospector2open";
-	name = "gate shutters";
+	name = "Gate Shutters";
 	pixel_x = -32
 	},
 /obj/structure/lattice/catwalk,
@@ -149,7 +149,7 @@
 	},
 /obj/machinery/button/door{
 	id = "prospector1open";
-	name = "gate shutters";
+	name = "Gate Shutters";
 	pixel_x = 32
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -530,13 +530,13 @@
 "akn" = (
 /obj/machinery/button/door{
 	id = "topcellghoul";
-	name = "Top cell shutters";
+	name = "Top cell Shutters";
 	pixel_x = 6;
 	pixel_y = -32
 	},
 /obj/machinery/button/door{
 	id = "bottomcellghoul";
-	name = "Bottom cell shutters";
+	name = "Bottom cell Shutters";
 	pixel_x = -6;
 	pixel_y = -32
 	},
@@ -725,7 +725,7 @@
 "ape" = (
 /obj/machinery/button/door{
 	id = "shoplower";
-	name = "lower shutters";
+	name = "lower Shutters";
 	pixel_x = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4587,7 +4587,7 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/machinery/button/door{
 	id = "factorybasement";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_x = 28
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -6721,7 +6721,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -7305,7 +7305,7 @@
 "eJI" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -8409,7 +8409,7 @@
 /area/f13/brotherhood)
 "gUu" = (
 /obj/machinery/door/airlock/hatch{
-	name = "armory";
+	name = "Armory";
 	req_access_txt = "120"
 	},
 /turf/open/floor/plasteel/dark,
@@ -11975,7 +11975,7 @@
 "nhF" = (
 /obj/machinery/button/door{
 	id = "bankvault";
-	name = "bank vault button";
+	name = "bank vault Button";
 	pixel_x = 32;
 	req_one_access_txt = "52"
 	},
@@ -12031,8 +12031,8 @@
 /area/f13/tunnel)
 "noI" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "rustedshutters";
-	name = "rusted shutters"
+	id = "rustedShutters";
+	name = "rusted Shutters"
 	},
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
@@ -12652,8 +12652,8 @@
 /area/f13/brotherhood)
 "ovs" = (
 /obj/machinery/button/door{
-	id = "rustedshutters";
-	name = "store shutters";
+	id = "rustedShutters";
+	name = "Store Shutters";
 	pixel_x = 28
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -17358,7 +17358,7 @@
 /area/f13/brotherhood)
 "wjq" = (
 /obj/machinery/door/airlock/hatch{
-	name = "armory";
+	name = "Armory";
 	req_access_txt = "120"
 	},
 /obj/machinery/door/firedoor/heavy,
@@ -18307,7 +18307,7 @@
 "xZu" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"

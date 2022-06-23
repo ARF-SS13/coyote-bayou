@@ -857,7 +857,7 @@
 /obj/structure/debris/v4,
 /obj/machinery/door/poddoor/shutters/old{
 	id = null;
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -3259,14 +3259,14 @@
 /area/f13/village)
 "akn" = (
 /obj/machinery/button/door{
-	id = "storeshutters";
-	name = "store shutters";
+	id = "storeShutters";
+	name = "Store Shutters";
 	pixel_x = 27;
 	pixel_y = -3
 	},
 /obj/machinery/button/door{
-	id = "countershutters";
-	name = "counter shutters";
+	id = "counterShutters";
+	name = "Counter Shutters";
 	pixel_x = 37;
 	pixel_y = -3
 	},
@@ -3675,8 +3675,8 @@
 /area/f13/building/museum)
 "alz" = (
 /obj/machinery/button/door{
-	id = "ncrcaptainshutters";
-	name = "window shutters";
+	id = "ncrcaptainShutters";
+	name = "window Shutters";
 	pixel_x = -29
 	},
 /turf/open/floor/plasteel/vault,
@@ -4190,8 +4190,8 @@
 	pixel_y = 32
 	},
 /obj/machinery/button/door{
-	id = "ncradvisorshutters";
-	name = "window shutters";
+	id = "ncradvisorShutters";
+	name = "window Shutters";
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/vault,
@@ -4229,8 +4229,8 @@
 	name = "Crimson Caravan"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "storeshutters";
-	name = "store shutters"
+	id = "storeShutters";
+	name = "Store Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city/bighorn)
@@ -4576,8 +4576,8 @@
 	icon_state = "storewindowtop"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ncrcaptainshutters";
-	name = "privacy shutters"
+	id = "ncrcaptainShutters";
+	name = "Privacy Shutters"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/vault,
@@ -8963,7 +8963,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Yuma Mall"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -9257,7 +9257,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
 	id = "mallfrontshutter";
-	name = "front shutters"
+	name = "front Shutters"
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -9500,7 +9500,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ricksoutdoorshutters";
+	id = "ricksoutdoorShutters";
 	layer = 11;
 	name = "Ricks Outdoor Goods"
 	},
@@ -9620,7 +9620,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ricksoutdoorshutters";
+	id = "ricksoutdoorShutters";
 	layer = 11;
 	name = "Ricks Outdoor Goods"
 	},
@@ -9774,7 +9774,7 @@
 	},
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ricksoutdoorshutters";
+	id = "ricksoutdoorShutters";
 	layer = 11;
 	name = "Ricks Outdoor Goods"
 	},
@@ -10310,8 +10310,8 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/wooden,
 /obj/machinery/door/poddoor/shutters{
-	id = "followershutters";
-	name = "followers shutters"
+	id = "followerShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/hospital)
@@ -10459,7 +10459,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Yuma Mall"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -10470,7 +10470,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "barbariancomicshutters";
+	id = "barbariancomicShutters";
 	layer = 11;
 	name = "Barbarians Dungeon Comics"
 	},
@@ -10501,8 +10501,8 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/wooden,
 /obj/machinery/door/poddoor/shutters{
-	id = "followershutters";
-	name = "followers shutters"
+	id = "followerShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/hospital)
@@ -11100,7 +11100,7 @@
 "aIq" = (
 /obj/machinery/button/door{
 	id = "hospitalgarage2";
-	name = "Garage button";
+	name = "Garage Button";
 	pixel_x = 32
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -11921,8 +11921,8 @@
 	icon_state = "storewindowbottom"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ncrcaptainshutters";
-	name = "privacy shutters"
+	id = "ncrcaptainShutters";
+	name = "Privacy Shutters"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/vault,
@@ -12848,7 +12848,7 @@
 	icon_state = "housewindowvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sullivanssuitsshutters";
+	id = "sullivanssuitsShutters";
 	layer = 11;
 	name = "Sullivans Suits"
 	},
@@ -13132,7 +13132,7 @@
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sullivanssuitsshutters";
+	id = "sullivanssuitsShutters";
 	layer = 11;
 	name = "Sullivans Suits"
 	},
@@ -13373,8 +13373,8 @@
 /obj/item/pen,
 /obj/structure/barricade/sandbags,
 /obj/machinery/door/poddoor/shutters{
-	id = "followersdeskshutters";
-	name = "followers shutters"
+	id = "followersdeskShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -17378,7 +17378,7 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kpp";
-	name = "Kpp shutters"
+	name = "Kpp Shutters"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -19885,7 +19885,7 @@
 "bjg" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factory2";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
@@ -20186,7 +20186,7 @@
 "bkk" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "frontgateshut";
-	name = "gate shutters"
+	name = "Gate Shutters"
 	},
 /obj/structure/table/reinforced,
 /obj/structure/barricade/bars,
@@ -20498,7 +20498,7 @@
 "bkY" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "frontgateshut";
-	name = "gate shutters"
+	name = "Gate Shutters"
 	},
 /obj/structure/barricade/bars,
 /obj/structure/table/reinforced,
@@ -20570,7 +20570,7 @@
 "bli" = (
 /obj/machinery/button/door{
 	id = "bankback";
-	name = "back door shutters";
+	name = "back door Shutters";
 	pixel_x = 6;
 	pixel_y = -32;
 	req_one_access_txt = "52"
@@ -20591,7 +20591,7 @@
 	},
 /obj/machinery/button/door{
 	id = "bankdesk";
-	name = "counter shutters";
+	name = "Counter Shutters";
 	pixel_x = -6;
 	pixel_y = -32;
 	req_one_access_txt = "52"
@@ -21430,7 +21430,7 @@
 	},
 /obj/machinery/button/door{
 	id = "shopouter";
-	name = "outer shutters";
+	name = "outer Shutters";
 	pixel_y = 30
 	},
 /turf/open/floor/wood_mosaic,
@@ -21714,13 +21714,13 @@
 "bpm" = (
 /obj/machinery/button/door{
 	id = "interiorgate";
-	name = "Interior door button";
+	name = "Interior door Button";
 	pixel_x = 6;
 	pixel_y = 32
 	},
 /obj/machinery/button/door{
 	id = "exteriorgate";
-	name = "Exterior door button";
+	name = "Exterior door Button";
 	pixel_x = -6;
 	pixel_y = 32
 	},
@@ -21731,7 +21731,7 @@
 "bpn" = (
 /obj/machinery/button/door{
 	id = "frontgateshut";
-	name = "gate shutters";
+	name = "Gate Shutters";
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -21864,13 +21864,13 @@
 "bqo" = (
 /obj/machinery/button/door{
 	id = "ncrgate";
-	name = "gate button";
+	name = "Gate Button";
 	pixel_x = -24;
 	pixel_y = -6
 	},
 /obj/machinery/button/door{
 	id = "ncrwatchtower";
-	name = "tower shutters button";
+	name = "tower shutters Button";
 	pixel_x = -24;
 	pixel_y = 6
 	},
@@ -22689,7 +22689,7 @@
 /obj/structure/decoration/rag,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrwatchtower";
-	name = "watchtower shutters"
+	name = "Watchtower Shutters"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -22959,7 +22959,7 @@
 "bwM" = (
 /obj/machinery/button/door{
 	id = "ncrarmory";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_y = -24
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -24167,7 +24167,7 @@
 /obj/structure/debris/v3,
 /obj/machinery/door/poddoor/shutters/old{
 	id = null;
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -24715,8 +24715,8 @@
 "bVW" = (
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
-	id = "countershutters";
-	name = "counter shutters"
+	id = "counterShutters";
+	name = "Counter Shutters"
 	},
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -25010,7 +25010,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/poddoor/shutters{
 	id = "bankdesk";
-	name = "counter shutters"
+	name = "Counter Shutters"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city/bighorn)
@@ -25292,7 +25292,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/glass,
 /obj/machinery/door/poddoor/shutters{
-	id = "barshutters"
+	id = "barShutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city/bighorn)
@@ -25420,7 +25420,7 @@
 "chc" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmacyshutters";
+	id = "pharmacyShutters";
 	layer = 11;
 	name = "Friendly Pharm"
 	},
@@ -27184,7 +27184,7 @@
 	color = "#845f58"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "barwindowshutters";
+	id = "barwindowShutters";
 	layer = 4
 	},
 /turf/open/floor/carpet,
@@ -27373,8 +27373,8 @@
 /area/f13/wasteland/quarry)
 "cDe" = (
 /obj/machinery/button/door{
-	id = "followershutters";
-	name = "door shutters";
+	id = "followerShutters";
+	name = "door Shutters";
 	pixel_x = -26
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
@@ -27727,7 +27727,7 @@
 	layer = 3
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "barwindowshutters";
+	id = "barwindowShutters";
 	layer = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -27742,7 +27742,7 @@
 "cOR" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factory3";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
@@ -27944,7 +27944,7 @@
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass,
 /obj/machinery/door/poddoor/shutters{
-	id = "barshutters"
+	id = "barShutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city/bighorn)
@@ -28330,7 +28330,7 @@
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "barbariancomicshutters";
+	id = "barbariancomicShutters";
 	layer = 11;
 	name = "Barbarians Dungeon Comics"
 	},
@@ -28504,7 +28504,7 @@
 "dll" = (
 /obj/machinery/button/door{
 	id = "factorywarehouse";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/f13{
@@ -28862,7 +28862,7 @@
 "dvy" = (
 /obj/machinery/button/door{
 	id = "bargambling";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_x = 32;
 	req_one_access_txt = "28"
 	},
@@ -28890,7 +28890,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Yuma Mall"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -28932,8 +28932,8 @@
 	color = "#363636"
 	},
 /obj/machinery/button/door{
-	id = "jewellershutters";
-	name = "Prestige Jewellers shutters";
+	id = "jewellerShutters";
+	name = "Prestige Jewellers Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -29663,7 +29663,7 @@
 "dRL" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factory3";
-	name = "shutters"
+	name = "Shutters"
 	},
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13{
@@ -31938,8 +31938,8 @@
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ncradvisorshutters";
-	name = "privacy shutters"
+	id = "ncradvisorShutters";
+	name = "Privacy Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
@@ -32056,7 +32056,7 @@
 "feX" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorygate";
-	name = "road barrier"
+	name = "Road Barrier"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -32218,7 +32218,7 @@
 "fjQ" = (
 /obj/structure/table/wood,
 /obj/machinery/door/poddoor/shutters{
-	id = "barshutters"
+	id = "barShutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/city/bighorn)
@@ -33072,7 +33072,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "barbariancomicshutters";
+	id = "barbariancomicShutters";
 	layer = 11;
 	name = "Barbarians Dungeon Comics"
 	},
@@ -33107,8 +33107,8 @@
 	color = "#363636"
 	},
 /obj/machinery/button/door{
-	id = "sullivanssuitsshutters";
-	name = "Sullivans Suits shutters";
+	id = "sullivanssuitsShutters";
+	name = "Sullivans Suits Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/f13/wood,
@@ -33819,7 +33819,7 @@
 	},
 /obj/machinery/button/door{
 	id = "office3";
-	name = "privacy shutters";
+	name = "Privacy Shutters";
 	pixel_x = 27
 	},
 /turf/open/floor/wood_mosaic,
@@ -34148,8 +34148,8 @@
 /area/f13/building/firestation)
 "gmT" = (
 /obj/machinery/button/door{
-	id = "followersdeskshutters";
-	name = "desk shutters";
+	id = "followersdeskShutters";
+	name = "desk Shutters";
 	pixel_x = 6
 	},
 /turf/closed/wall/f13/store,
@@ -34721,7 +34721,7 @@
 "gBg" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factory1";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
@@ -35266,8 +35266,8 @@
 	color = "#363636"
 	},
 /obj/machinery/button/door{
-	id = "barbariancomicshutters";
-	name = "Barbarians Dungeon Comics shutters";
+	id = "barbariancomicShutters";
+	name = "Barbarians Dungeon Comics Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/carpet,
@@ -35559,7 +35559,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sullivanssuitsshutters";
+	id = "sullivanssuitsShutters";
 	layer = 11;
 	name = "Sullivans Suits"
 	},
@@ -35865,8 +35865,8 @@
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
 /obj/structure/barricade/sandbags,
 /obj/machinery/door/poddoor/shutters{
-	id = "followersdeskshutters";
-	name = "followers shutters"
+	id = "followersdeskShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -36311,7 +36311,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Yuma Mall"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
@@ -37014,7 +37014,7 @@
 	},
 /obj/structure/barricade/bars,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "jewellershutters";
+	id = "jewellerShutters";
 	layer = 11;
 	name = "Prestige Jewellers"
 	},
@@ -37246,7 +37246,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmacyshutters";
+	id = "pharmacyShutters";
 	layer = 11;
 	name = "Friendly Pharm"
 	},
@@ -37566,7 +37566,7 @@
 	icon_state = "housewindowvertical"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "genatomicsshutters";
+	id = "genatomicsShutters";
 	layer = 11;
 	max_integrity = 1500;
 	name = "General Atomics"
@@ -37634,7 +37634,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrarmory";
 	layer = 11;
-	name = "NCR Armory shutters"
+	name = "NCR Armory Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/ncr)
@@ -40231,8 +40231,8 @@
 	color = "#363636"
 	},
 /obj/machinery/button/door{
-	id = "pharmacyshutters";
-	name = "Friendly Pharm shutters";
+	id = "pharmacyShutters";
+	name = "Friendly Pharm Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
@@ -40422,7 +40422,7 @@
 "jAn" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorywarehouse";
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "floorrustysolid"
@@ -40841,7 +40841,7 @@
 	color = "#363636"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "jewellershutters";
+	id = "jewellerShutters";
 	layer = 11;
 	name = "Prestige Jewellers"
 	},
@@ -43152,8 +43152,8 @@
 	},
 /obj/structure/simple_door/metal/store,
 /obj/machinery/door/poddoor/shutters{
-	id = "followershutters";
-	name = "followers shutters"
+	id = "followerShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/hospital)
@@ -43640,7 +43640,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrarmory";
 	layer = 11;
-	name = "NCR Armory shutters"
+	name = "NCR Armory Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/ncr)
@@ -44232,7 +44232,7 @@
 "lFy" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = null;
-	name = "shutters"
+	name = "Shutters"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontaltopborderbottom0"
@@ -45267,7 +45267,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "pharmacyshutters";
+	id = "pharmacyShutters";
 	layer = 11;
 	name = "Friendly Pharm"
 	},
@@ -45648,7 +45648,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "sullivanssuitsshutters";
+	id = "sullivanssuitsShutters";
 	layer = 11;
 	name = "Sullivans Suits"
 	},
@@ -48495,7 +48495,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrarmory";
 	layer = 11;
-	name = "NCR Armory shutters"
+	name = "NCR Armory Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/ncr)
@@ -48801,7 +48801,7 @@
 "nUI" = (
 /obj/machinery/button/door{
 	id = "hospitalgarage1";
-	name = "Garage button";
+	name = "Garage Button";
 	pixel_x = 32
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -49192,7 +49192,7 @@
 /obj/structure/closet/crate/large,
 /obj/machinery/button/door{
 	id = "factory1";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_y = 30
 	},
 /obj/item/stack/crafting/electronicparts/five,
@@ -49983,8 +49983,8 @@
 	layer = 2
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "storeshutters";
-	name = "store shutters"
+	id = "storeShutters";
+	name = "Store Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city/bighorn)
@@ -51190,15 +51190,15 @@
 "pil" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
-	id = "barwindowshutters";
-	name = "bar window shutters button";
+	id = "barwindowShutters";
+	name = "bar window shutters Button";
 	pixel_x = -6;
 	pixel_y = -32;
 	req_one_access_txt = "28"
 	},
 /obj/machinery/button/door{
-	id = "barshutters";
-	name = "bar shutters button";
+	id = "barShutters";
+	name = "bar shutters Button";
 	pixel_x = 6;
 	pixel_y = -32;
 	req_one_access_txt = "28"
@@ -51901,7 +51901,7 @@
 /obj/structure/decoration/rag,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrwatchtower";
-	name = "watchtower shutters"
+	name = "Watchtower Shutters"
 	},
 /obj/structure/spacevine,
 /turf/open/floor/f13{
@@ -52234,7 +52234,7 @@
 /obj/structure/barricade/bars,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrwatchtower";
-	name = "watchtower shutters"
+	name = "Watchtower Shutters"
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -52753,7 +52753,7 @@
 	},
 /obj/machinery/button/door{
 	id = "office1";
-	name = "privacy shutters";
+	name = "Privacy Shutters";
 	pixel_x = -27
 	},
 /turf/open/floor/wood_mosaic,
@@ -53241,7 +53241,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "genatomicsshutters";
+	id = "genatomicsShutters";
 	layer = 11;
 	max_integrity = 1500;
 	name = "General Atomics"
@@ -53652,7 +53652,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "ncrarmory";
 	layer = 11;
-	name = "NCR Armory shutters"
+	name = "NCR Armory Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/ncr)
@@ -55825,7 +55825,7 @@
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "ricksoutdoorshutters";
+	id = "ricksoutdoorShutters";
 	layer = 11;
 	name = "Ricks Outdoor Goods"
 	},
@@ -58589,7 +58589,7 @@
 /obj/machinery/door/poddoor/shutters{
 	id = "mallfrontshutter";
 	layer = 11;
-	name = "Yuma mall"
+	name = "Yuma Mall"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -58963,7 +58963,7 @@
 "trb" = (
 /obj/machinery/button/door{
 	id = "factory3";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_x = 28
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -59474,8 +59474,8 @@
 	color = "#363636"
 	},
 /obj/machinery/button/door{
-	id = "ricksoutdoorshutters";
-	name = "Ricks Outdoor goods shutters";
+	id = "ricksoutdoorShutters";
+	name = "Ricks Outdoor goods Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
@@ -60110,8 +60110,8 @@
 	layer = 2
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "storeshutters";
-	name = "store shutters"
+	id = "storeShutters";
+	name = "Store Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/city/bighorn)
@@ -60827,7 +60827,7 @@
 	color = "#845f58"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "barwindowshutters";
+	id = "barwindowShutters";
 	layer = 4
 	},
 /turf/open/floor/f13/wood,
@@ -61008,7 +61008,7 @@
 	},
 /obj/machinery/button/door{
 	id = "office2";
-	name = "privacy shutters";
+	name = "Privacy Shutters";
 	pixel_x = -27
 	},
 /turf/open/floor/wood_mosaic,
@@ -61587,7 +61587,7 @@
 "uGH" = (
 /obj/machinery/button/door{
 	id = "factorygate";
-	name = "security button";
+	name = "security Button";
 	pixel_x = -27
 	},
 /obj/machinery/light/small{
@@ -61994,7 +61994,7 @@
 "uRZ" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorygate";
-	name = "road barrier"
+	name = "Road Barrier"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft0"
@@ -62295,8 +62295,8 @@
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/barricade/wooden,
 /obj/machinery/door/poddoor/shutters{
-	id = "followershutters";
-	name = "followers shutters"
+	id = "followerShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/building/hospital)
@@ -64139,7 +64139,7 @@
 "vXY" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorygate";
-	name = "road barrier"
+	name = "Road Barrier"
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
@@ -65642,7 +65642,7 @@
 	},
 /obj/structure/barricade/bars,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "jewellershutters";
+	id = "jewellerShutters";
 	layer = 11;
 	name = "Prestige Jewellers"
 	},
@@ -65774,8 +65774,8 @@
 /obj/structure/table/reinforced,
 /obj/structure/barricade/sandbags,
 /obj/machinery/door/poddoor/shutters{
-	id = "followersdeskshutters";
-	name = "followers shutters"
+	id = "followersdeskShutters";
+	name = "Followers Shutters"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -66550,8 +66550,8 @@
 /obj/item/trash/f13/electronic/toaster,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/button/door{
-	id = "genatomicsshutters";
-	name = "General Atomics shutters";
+	id = "genatomicsShutters";
+	name = "General Atomics Shutters";
 	pixel_y = -32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -67043,7 +67043,7 @@
 	icon_state = "housewindowbrokenvertical"
 	},
 /obj/machinery/door/poddoor/shutters{
-	id = "genatomicsshutters";
+	id = "genatomicsShutters";
 	layer = 11;
 	max_integrity = 1500;
 	name = "General Atomics"
@@ -67915,7 +67915,7 @@
 /obj/structure/simple_door/metal/dirtystore,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/poddoor/shutters{
-	id = "genatomicsshutters";
+	id = "genatomicsShutters";
 	layer = 11;
 	max_integrity = 1500;
 	name = "General Atomics"
@@ -68112,7 +68112,7 @@
 "yhr" = (
 /obj/machinery/button/door{
 	id = "factory2";
-	name = "shutters button";
+	name = "shutters Button";
 	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/dirt,
