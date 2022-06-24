@@ -1661,7 +1661,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	item_state = "enclave_new"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
-/obj/item/clothing/suit/armor/enclave/armorvest
+/obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
 	desc = "Efficient prewar design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
@@ -1841,3 +1841,92 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	desc = "A captured set of T-45d power armor put into use by the NCR, it's been heavily modified and decorated with the head of a bear and intricate gold trimming. A two headed bear is scorched into the breastplate."
 	icon_state = "sierra"
 	item_state = "sierra"
+
+// Recipe Firesuit + metal chestplate + 50 welding fuel + 1 HQ + 1 plasteel
+/obj/item/clothing/suit/armor/heavy/metal/sulphite/old
+	name = "sulphite raider suit"
+	desc = "There are still some old asbestos fireman suits laying around from before the war. How about adding a ton of metal, plasteel and a combustion engine to one? The resulting armor is surprisingly effective at dissipating energy."
+	icon_state = "sulphite"
+	item_state = "sulphite"
+	armor = list("melee" = 55, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 30, "bio" = 25, "rad" = 30, "fire" = 95, "acid" = 15)
+	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/armor/heavy/metal/raider/old
+	name = "iron raider suit"
+	desc = "More rust than metal, with gaping holes in it, this armor looks like a pile of junk. Under the rust some quality steel still remains however."
+	icon_state = "raider_metal"
+	item_state = "raider_metal"
+	armor = list("melee" = 55, "bullet" = 40, "laser" = 15, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 15, "fire" = 20, "acid" = 0)
+
+// Midwest
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/midwest
+	name = "Salvaged midwestern T-51b power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. Its servomotors and valauble components have been stripped out of it."
+	icon_state = "midwestgrey_pa_salvaged"
+	item_state = "midwestgrey_pa_salvaged"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 60, "energy" = 20, "bomb" = 45, "bio" = 70, "rad" = 50, "fire" = 75, "acid" = 35, "wound" = 40)
+	slowdown = 0.85
+
+// Hardened Midwest
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/midwest/hardened
+	name = "Salvaged hardened midwestern T-51b power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities. Its servomotors and valuable components have been stripped out of it."
+	icon_state = "midwestpa_salvaged"
+	item_state = "midwestpa_salvaged"
+	armor = list("melee" = 70, "bullet" = 70, "laser" = 65, "energy" = 20, "bomb" = 50, "bio" = 80, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 50)
+	slowdown = 0.85
+
+// T-60A
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t60
+	name = "salvaged T-60a power armor"
+	desc = "T-60a power armor with servomotors and all valuable components stripped out of it."
+	icon_state = "t60_salvaged"
+	item_state = "t60_salvaged"
+	armor = list("melee" = 75, "bullet" = 70, "laser" = 65, "energy" = 30, "bomb" = 55, "bio" = 70, "rad" = 60, "fire" = 80, "acid" = 35, "wound" = 45)
+	slowdown = 0.8
+
+/obj/item/clothing/suit/armor/power_armor/midwest
+	name = "Midwestern T-51b power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel."
+	icon_state = "midwestgrey_pa"
+	item_state = "midwestgrey_pa"
+	slowdown = 0.25 //+0.05 from helmet = total 0.255
+	armor = list("melee" = 72.5, "bullet" = 72.5, "laser" = 72.5, "energy" = 30, "bomb" = 62, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 72)
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/midwest
+
+/obj/item/clothing/suit/armor/power_armor/midwest/hardened
+	name = "Hardened midwestern  T-51b power armor"
+	desc = "This set of power armor belongs to the Midwestern branch of the Brotherhood of Steel. This particular one has gone through a chemical hardening process, increasing its armor capabilities."
+	icon_state = "midwestpa"
+	item_state = "midwestpa"
+	slowdown = 0.25 //+0.05 from helmet = total 0.255
+	armor = list("melee" = 75, "bullet" = 75, "laser" = 75, "energy" = 27, "bomb" = 64, "bio" = 100, "rad" = 99, "fire" = 90, "acid" = 40, "wound" = 75)
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/midwest/hardened
+
+
+/obj/item/clothing/suit/armor/power_armor/t60
+	name = "T-60a power armor"
+	desc = "Developed in early 2077 after the Anchorage Reclamation, the T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal."
+	icon_state = "t60powerarmor"
+	item_state = "t60powerarmor"
+	slowdown = 0.2
+	armor = list("melee" = 80, "bullet" = 70, "laser" = 80, "energy" = 30, "bomb" = 82, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 50, "wound" = 80)
+	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 30)
+	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t60
+
+/obj/item/clothing/suit/armor/power_armor/t60/pineapple
+	name = "degraded T-60a power armor"
+	desc = "Developed in early 2077 after the Anchorage Reclamation, the T-60 series of power armor was designed to eventually replace the T-51b as the pinnacle of powered armor technology in the U.S. military arsenal. This suit is heavily degraded." //reskin of head knight armor
+	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 60, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
+	salvaged_type = null
+
+/obj/item/clothing/suit/armor/light/tribal/chitinarmor/old
+	name = "insect chitin armor"
+	desc = " set of light armor made of insect chitin. Tough and light, it provides some moderate protection from trauma while allowing the user to remain mobile and protected from the elements."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "insect"
+	item_state = "insect"
+	armor = list("melee" = 40, "bullet" = 35,"laser" = 20, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
+	flags_inv = HIDEJUMPSUIT
+	strip_delay = 40

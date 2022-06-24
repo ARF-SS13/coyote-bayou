@@ -90,7 +90,7 @@
 
 /datum/crafting_recipe/metalarmor
 	name = "Metal Armor"
-	result = /obj/item/clothing/suit/armor/metalarmor
+	result = /obj/item/clothing/suit/armor/heavy/metal
 	reqs = list(/obj/item/stack/sheet/leather = 1,
 				/obj/item/weaponcrafting/string = 5,
 				/obj/item/stack/crafting/metalparts = 5)
@@ -101,8 +101,8 @@
 
 /datum/crafting_recipe/metalarmor/polish
 	name = "Polished Metal Armor"
-	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/metalarmor = 1)
+	result = /obj/item/clothing/suit/armor/heavy/metal/polished
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -110,8 +110,8 @@
 
 /datum/crafting_recipe/metalarmormk2
 	name = "Metal Armor, reinforced"
-	result = /obj/item/clothing/suit/armor/metalarmor/reinforced
-	reqs = list(/obj/item/clothing/suit/armor/metalarmor = 1,
+	result = /obj/item/clothing/suit/armor/heavy/metal/reinforced
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/crafting/metalparts = 3)
 	tools = list(TOOL_WORKBENCH)
@@ -381,8 +381,8 @@ datum/crafting_recipe/steelbib/heavy
 /*CRAFT rework: removed for balance
 /datum/crafting_recipe/tesla_armor
 	name = "tesla armor"
-	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/metalarmor/reinforced = 1,
+	result = /obj/item/clothing/suit/armor/heavy/metal/polished
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal/reinforced = 1,
 				/obj/item/stack/sheet/mineral/titanium = 1,
 				/obj/item/stack/crafting/electronicparts = 4)
 	tools = list(TOOL_AWORKBENCH, /obj/item/blueprint/armor/tesla)

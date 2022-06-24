@@ -215,7 +215,7 @@
 	icon_state = "armory"
 /obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/medium/vest/breastplate/laserproof(src)
+	new /obj/item/clothing/suit/armor/heavy/metal/polished(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/medium/riot(src)
 	for(var/i in 1 to 3)
@@ -247,7 +247,7 @@
 	new /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator(src)
 	new /obj/item/clothing/head/helmet/alt(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
-	new /obj/item/clothing/suit/armor/bulletproof(src)
+	new /obj/item/clothing/suit/armor/heavy/vest/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
 	name = "lethal ammunition and riot staves"

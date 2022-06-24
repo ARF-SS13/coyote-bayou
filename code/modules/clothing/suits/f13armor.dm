@@ -103,7 +103,7 @@
 	slowdown = 0.08
 
 
-/obj/item/clothing/suit/armor/metalarmor
+/obj/item/clothing/suit/armor/heavy/metal
 	name = "metal armor"
 	desc = "A set of plates formed together to form a crude chestplate."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -114,7 +114,7 @@
 	slowdown = 0.22
 	strip_delay = 10
 
-/obj/item/clothing/suit/armor/medium/vest/breastplate/laserproof
+/obj/item/clothing/suit/armor/heavy/metal/polished
 	name = "polished metal armor"
 	desc = "A set of plates formed together to form a crude chestplate. These have been waxed and buffed to a mirror finish, but it looks a bit thinner."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -134,7 +134,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/armor/metalarmor/reinforced
+/obj/item/clothing/suit/armor/heavy/metal/reinforced
 	name = "reinforced metal armor"
 	desc = "A set of well-fitted plates formed together to provide effective protection."
 	icon_state = "metal_chestplate2"
@@ -609,7 +609,7 @@
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 25)
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
 
-/obj/item/clothing/suit/armor/power_armor/t51green
+/obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
@@ -682,7 +682,7 @@
 	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02 // Oh the misery
 
-/obj/item/clothing/suit/armor/enclave/armorvest
+/obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
 	desc = "Efficient prewar design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
@@ -725,7 +725,7 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
-/obj/item/clothing/suit/armor/chitinarmor
+/obj/item/clothing/suit/armor/light/tribal/chitinarmor
 	name = "insect chitin armor"
 	desc = " set of light armor made of insect chitin. Tough and light, it provides some moderate protection from trauma while allowing the user to remain mobile and protected from the elements."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
@@ -738,7 +738,7 @@
 
 //Various
 
-/obj/item/clothing/suit/armor/tesla //changed from armor/laserproof
+/obj/item/clothing/suit/armor/heavy/metal/tesla //changed from armor/laserproof
 	name = "tesla armor"
 	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
 	icon_state = "tesla_armor"
@@ -749,14 +749,14 @@
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 
-/obj/item/clothing/suit/armor/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+/obj/item/clothing/suit/armor/heavy/metal/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
 		if(prob(hit_reflect_chance))
 			block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
-/obj/item/clothing/suit/armor/sulphitearmor
+/obj/item/clothing/suit/armor/heavy/metal/sulphite
 	name = "sulphite armor"
 	desc = "A combination of what seems to be raider metal armor with a jerry-rigged flame-exhaust system and ceramic plating."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
@@ -855,7 +855,7 @@
 	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 35, "bomb" = 35, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 //Inherited from SS13
-/obj/item/clothing/suit/armor/bulletproof
+/obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	name = "bulletproof armor"
 	desc = "A heavy bulletproof vest that excels in protecting the wearer against traditional projectile weaponry and explosives to a minor extent."
 	icon_state = "bulletproof"
@@ -1082,21 +1082,21 @@ obj/item/clothing/suit/armor/exile/cust0m
 
 //Mutants
 
-/obj/item/clothing/suit/armor/mutant/poncho
+/obj/item/clothing/suit/armor/medium/duster/mutant
 	name = "mutant poncho"
 	desc = "An oversized poncho, made to fit the frame of a super mutant. Maybe he's the big ranger with an iron on his hip?"
 	icon_state = "mutie_poncho"
 	item_state = "mutie_poncho"
 	armor = list("melee" = 35, "bullet" = 25, "laser" = 35, "energy" = 15, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 40)
 
-/obj/item/clothing/suit/armor/mutant/metal
+/obj/item/clothing/suit/armor/heavy/metal/mutant
 	name = "mutant armour"
 	desc = "An oversized set of metal armour, made to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
 	icon_state = "mutie_metal_armour"
 	item_state = "mutie_metal_armour"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
-/obj/item/clothing/suit/armor/mutant/metal/reinforced
+/obj/item/clothing/suit/armor/heavy/metal/mutant/reinforced
 	name = "mutant armour"
 	desc = "An oversized boiler plate, hammered to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
 	icon_state = "mutie_metal_armour_mk2"

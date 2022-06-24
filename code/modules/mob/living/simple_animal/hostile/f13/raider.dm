@@ -139,7 +139,7 @@
 	health = 180
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
-	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/metalarmor/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2)
+	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2)
 
 
 // FIREFIGHTER RAIDER

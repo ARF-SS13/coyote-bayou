@@ -302,21 +302,21 @@
 /obj/effect/spawner/bundle/f13/armor/knight
 	name = "knight armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/metalarmor,
+				/obj/item/clothing/suit/armor/heavy/metal,
 				/obj/item/clothing/head/helmet/knight/f13/metal
 				)
 
 /obj/effect/spawner/bundle/f13/armor/metal
 	name = "metal armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/metalarmor,
+				/obj/item/clothing/suit/armor/heavy/metal,
 				/obj/item/clothing/head/helmet/f13/metalmask
 				)
 
 /obj/effect/spawner/bundle/f13/armor/laserproofmetal
 	name = "polsihed metal armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/vest/breastplate/laserproof,
+				/obj/item/clothing/suit/armor/heavy/metal/polished,
 				/obj/item/clothing/head/helmet/f13/metalmask
 				)
 
@@ -334,7 +334,7 @@
 
 /obj/effect/spawner/bundle/f13/armor/metal/reinforced
 	items = list(
-				/obj/item/clothing/suit/armor/metalarmor/reinforced,
+				/obj/item/clothing/suit/armor/heavy/metal/reinforced,
 				/obj/item/clothing/head/helmet/f13/metalmask/mk2
 				)
 
@@ -354,7 +354,7 @@
 /obj/effect/spawner/bundle/f13/armor/bulletproof
 	name = "bulletproof armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/bulletproof,
+				/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 				/obj/item/clothing/head/helmet/alt
 				)
 
@@ -369,7 +369,7 @@
 /obj/effect/spawner/bundle/f13/armor/sulphite
 	name = "sulphite raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/sulphitearmor,
+				/obj/item/clothing/suit/armor/heavy/metal/sulphite,
 				/obj/item/clothing/head/helmet/f13/sulphitehelm
 				)
 

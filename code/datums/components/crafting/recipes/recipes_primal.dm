@@ -409,7 +409,7 @@
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
-	result = /obj/item/clothing/suit/armor/chitinarmor
+	result = /obj/item/clothing/suit/armor/light/tribal/chitinarmor
 	time = 30
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,

@@ -129,7 +129,7 @@
 	new /obj/item/clothing/shoes/f13/mutie/boots(src)
 	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
 	new /obj/item/clothing/under/f13/vaultmutie(src)
-	new /obj/item/clothing/suit/armor/mutant/metal(src)
+	new /obj/item/clothing/suit/armor/heavy/metal/mutant(src)
 
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"

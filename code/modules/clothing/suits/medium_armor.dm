@@ -402,7 +402,7 @@
 // CUSTOM //
 ////////////
 
-/obj/item/clothing/suit/armor/medium/combat/cloak_armored
+/obj/item/clothing/suit/armor/medium/duster/cloak_armored
 	name = "armored cloak"
 	desc = "A dark cloak worn over protective plating."
 	icon_state = "cloak_armored"
@@ -444,7 +444,7 @@
 	item_state = "enclave_new"
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
-/obj/item/clothing/suit/armor/enclave/armorvest
+/obj/item/clothing/suit/armor/medium/vest/enclave
 	name = "armored vest"
 	desc = "Efficient prewar design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"

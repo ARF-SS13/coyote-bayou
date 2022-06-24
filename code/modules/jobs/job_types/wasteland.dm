@@ -275,7 +275,7 @@ Raider
 
 /datum/outfit/loadout/raider_smith
 	name = "Raider Smith"
-	suit = /obj/item/clothing/suit/armor/heavy/raidermetal
+	suit = /obj/item/clothing/suit/armor/heavy/metal/raider
 	uniform = /obj/item/clothing/under/f13/raider_leather
 	head = /obj/item/clothing/head/helmet/f13/raider/arclight
 	gloves = /obj/item/clothing/gloves/f13/blacksmith

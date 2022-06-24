@@ -6,7 +6,7 @@
 ///////////////
 
 // Recipe Firesuit + metal chestplate + 50 welding fuel + 1 HQ + 1 plasteel
-/obj/item/clothing/suit/armor/heavy/sulphite
+/obj/item/clothing/suit/armor/heavy/metal/sulphite
 	name = "sulphite raider suit"
 	desc = "There are still some old asbestos fireman suits laying around from before the war. How about adding a ton of metal, plasteel and a combustion engine to one? The resulting armor is surprisingly effective at dissipating energy."
 	icon_state = "sulphite"
@@ -21,13 +21,13 @@
 	item_state = "raider_metal"
 	armor = list("melee" = 60, "bullet" = 45, "laser" = 30, "energy" = 20, "bomb" = 30, "bio" = 10, "rad" = 25, "fire" = 20, "acid" = 20)
 
-/obj/item/clothing/suit/armor/heavy/recycled_power
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/recycled
 	name = "recycled power armor"
 	desc = "Taking pieces off from a wrecked power armor will at least give you thick plating, but don't expect too much of this shot up, piecemeal armor.."
 	icon_state = "recycled_power"
 	armor = list("melee" = 50, "bullet" = 45, "laser" = 30, "energy" = 25, "bomb" = 35, "bio" = 5, "rad" = 15, "fire" = 15, "acid" = 5)
 
-/obj/item/clothing/suit/armor/heavy/raidermetal
+/obj/item/clothing/suit/armor/heavy/metal/raider
 	name = "iron raider suit"
 	desc = "More rust than metal, with gaping holes in it, this armor looks like a pile of junk. Under the rust some quality steel still remains however."
 	icon_state = "raider_metal"
@@ -47,7 +47,7 @@
 	item_state = "exile_bos"
 	armor = list("melee" = 30, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
-/obj/item/clothing/suit/armor/heavy/riotpolice
+/obj/item/clothing/suit/armor/heavy/riot
 	name = "riot police armor"
 	icon_state = "bulletproof_heavy"
 	item_state = "bulletproof_heavy"

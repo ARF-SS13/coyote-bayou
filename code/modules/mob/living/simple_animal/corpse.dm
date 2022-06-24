@@ -120,7 +120,7 @@
 /datum/outfit/russiancorpse/ranged/trooper
 	name = "Ranged Russian Trooper Corpse"
 	uniform = /obj/item/clothing/under/syndicate/camo
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	ears = /obj/item/radio/headset
@@ -211,7 +211,7 @@
 
 obj/effect/mob_spawn/human/corpse/raider
 	uniform = /obj/item/clothing/under/jabroni
-	suit = /obj/item/clothing/suit/armor/metalarmor
+	suit = /obj/item/clothing/suit/armor/heavy/metal
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/f13/metalmask
 	hair_style = "Bald"
@@ -238,7 +238,7 @@ obj/effect/mob_spawn/human/corpse/raidermelee
 /obj/effect/mob_spawn/human/corpse/raiderrangedsulphite
 	name = "Sulphite Raider Ranged Corpse"
 	uniform = /obj/item/clothing/under/f13/raiderharness
-	suit = /obj/item/clothing/suit/armor/metalarmor/reinforced
+	suit = /obj/item/clothing/suit/armor/heavy/metal/reinforced
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	head = /obj/item/clothing/head/helmet/f13/metalmask/mk2
 	hair_style = "Bald"
@@ -256,7 +256,7 @@ obj/effect/mob_spawn/human/corpse/raidermelee
 obj/effect/mob_spawn/human/corpse/raiderbossalt
 	name = "Raider Boss Corpse"
 	uniform = /obj/item/clothing/under/f13/mercc
-	suit = /obj/item/clothing/suit/armor/metalarmor/reinforced
+	suit = /obj/item/clothing/suit/armor/heavy/metal/reinforced
 	shoes = /obj/item/clothing/shoes/combat
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/helmet/knight/f13/metal/reinforced

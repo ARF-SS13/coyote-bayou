@@ -250,7 +250,7 @@
 /datum/outfit/job/enclave/peacekeeper/f13specialist
 	name = "Enclave Specialist"
 	jobtype = /datum/job/enclave/f13specialist
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
 	accessory = /obj/item/clothing/accessory/enclave/specialist
 

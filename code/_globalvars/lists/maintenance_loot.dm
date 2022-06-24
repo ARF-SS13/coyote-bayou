@@ -353,9 +353,9 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
-	/obj/item/clothing/suit/armor/metalarmor,
+	/obj/item/clothing/suit/armor/heavy/metal,
 	/obj/item/clothing/head/helmet/knight/f13/metal,
-	/obj/item/clothing/suit/armor/metalarmor,
+	/obj/item/clothing/suit/armor/heavy/metal,
 	/obj/item/clothing/head/helmet/f13/metalmask,
 	/obj/item/clothing/suit/armor/light/leather,
 	/obj/item/clothing/suit/armor/light/leather/leather_jacketmk2,
@@ -363,20 +363,20 @@ GLOBAL_LIST_INIT(loot_t2_armor, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t3_armor, list(
-	/obj/item/clothing/suit/armor/metalarmor/reinforced,
+	/obj/item/clothing/suit/armor/heavy/metal/reinforced,
 	/obj/item/clothing/head/helmet/f13/metalmask/mk2,
 	/obj/item/clothing/suit/armor/light/leather/leathercoat,
 	/obj/item/clothing/head/helmet/f13/combat/swat,
 	/obj/item/clothing/suit/armor/medium/combat/swat,
 	/obj/item/clothing/suit/armor/medium/combat,
 	/obj/item/clothing/head/helmet/f13/combat,
-	/obj/item/clothing/suit/armor/bulletproof,
+	/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 	/obj/item/clothing/head/helmet/alt,
 	/obj/item/clothing/suit/armor/medium/combat/dark,
 	/obj/item/clothing/head/helmet/f13/combat/dark,
 	/obj/item/clothing/suit/armor/medium/combat/mk2/dark,
 	/obj/item/clothing/head/helmet/f13/combat/mk2/dark,
-	/obj/item/clothing/suit/armor/sulphitearmor,
+	/obj/item/clothing/suit/armor/heavy/metal/sulphite,
 	/obj/item/clothing/head/helmet/f13/sulphitehelm
 ))
 
