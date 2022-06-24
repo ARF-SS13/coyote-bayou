@@ -21,7 +21,7 @@
 /obj/vehicle/ridden/fuel/motorcycle/relaymove(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/f13/power_armor))
+		if(istype(H.wear_suit, /obj/item/clothing/suit/armor/power_armor))
 			to_chat(user, "The [name] will not move, because you are too heavy.")
 			return
 	..()

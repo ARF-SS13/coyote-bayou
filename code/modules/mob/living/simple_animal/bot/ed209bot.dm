@@ -42,7 +42,7 @@
 	var/projectile = /obj/item/projectile/energy/electrode //Holder for projectile type
 	var/shoot_sound = 'sound/weapons/taser.ogg'
 	var/cell_type = /obj/item/stock_parts/cell
-	var/vest_type = /obj/item/clothing/suit/armor/vest
+	var/vest_type = /obj/item/clothing/suit/armor/medium/vest
 
 
 /mob/living/simple_animal/bot/ed209/Initialize(mapload,created_name,created_lasercolor)

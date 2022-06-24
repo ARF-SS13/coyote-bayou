@@ -24,9 +24,9 @@
 	name = "Armor Crate"
 	desc = "Three vests of well-rounded, decently-protective armor. Requires Security access to open."
 	cost = 1200
-	contains = list(/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest,
-					/obj/item/clothing/suit/armor/vest)
+	contains = list(/obj/item/clothing/suit/armor/medium/vest,
+					/obj/item/clothing/suit/armor/medium/vest,
+					/obj/item/clothing/suit/armor/medium/vest)
 	crate_name = "armor crate"
 
 /datum/supply_pack/security/disabler
@@ -122,10 +122,10 @@
 					/obj/item/clothing/head/beret/sec/navyofficer,
 					/obj/item/clothing/head/beret/sec/navyofficer,
 					/obj/item/clothing/under/rank/security/warden/formal,
-					/obj/item/clothing/suit/armor/vest/warden/navyblue,
+					/obj/item/clothing/suit/armor/medium/vest/warden/navyblue,
 					/obj/item/clothing/head/beret/sec/navywarden,
 					/obj/item/clothing/under/rank/security/head_of_security/formal,
-					/obj/item/clothing/suit/armor/hos/navyblue,
+					/obj/item/clothing/suit/armor/medium/duster/navyblue,
 					/obj/item/clothing/head/beret/sec/navyhos)
 	crate_name = "security clothing crate"
 	can_private_buy = TRUE

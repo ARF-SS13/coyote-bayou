@@ -44,7 +44,7 @@
 */
 
 /obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
-	new /obj/item/clothing/suit/armored/medium/steelbib(src)
+	new /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced(src)
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
 	new /obj/item/pda(src)
@@ -55,7 +55,7 @@
 	ckeywhitelist = list("cayce")
 
 /obj/item/storage/box/large/custom_kit/sugga/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/combat(src)
+	new /obj/item/clothing/suit/armor/medium/combat(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
 	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
 	new /obj/item/ammo_box/magazine/m9mmds(src)
@@ -74,7 +74,7 @@
 	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
-	new /obj/item/clothing/suit/armor/hos/trenchcoat(src)
+	new /obj/item/clothing/suit/armor/medium/duster/trenchcoat(src)
 	new /obj/item/clothing/head/helmet/riot(src)
 
 /datum/gear/donator/kits/klatue
@@ -83,7 +83,7 @@
 	ckeywhitelist = list("klatue9")
 
 /obj/item/storage/box/large/custom_kit/canadian/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/legion/vet/explorercanada(src)
+	new /obj/item/clothing/suit/armor/legion/vet/explorercanada(src)
 	new /obj/item/clothing/neck/mantle/umbo(src)
 	new /obj/item/gun/ballistic/automatic/service/carbine(src)
 	new /obj/item/ammo_box/magazine/m556/rifle/assault(src)
@@ -97,7 +97,7 @@
 	ckeywhitelist = list("comradesocks")
 
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
-	new /obj/item/clothing/suit/armor/f13/combat/riotpolice(src)
+	new /obj/item/clothing/suit/armor/medium/riot/combat(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/melee/onehanded/knife/survival(src)
@@ -111,7 +111,7 @@
 /obj/item/storage/box/large/custom_kit/burningcold/PopulateContents()
 	new /obj/item/clothing/gloves/f13/leather/fingerless(src)
 	new /obj/item/clothing/mask/bandana/blue(src)
-	new /obj/item/clothing/suit/armored/light/kit/punk(src)
+	new /obj/item/clothing/suit/armor/light/kit/punk(src)
 
 
 /datum/gear/donator/kits/burningcold
@@ -129,7 +129,7 @@
 	new /obj/item/clothing/shoes/f13/mutie/boots(src)
 	new /obj/item/clothing/gloves/f13/mutant/mk2(src)
 	new /obj/item/clothing/under/f13/vaultmutie(src)
-	new /obj/item/clothing/suit/armor/f13/mutant/metal(src)
+	new /obj/item/clothing/suit/armor/mutant/metal(src)
 
 /datum/gear/donator/kits/pug
 	name = "I die to mobs"

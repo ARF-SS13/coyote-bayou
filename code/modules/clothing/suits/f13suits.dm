@@ -1,4 +1,4 @@
-//ARMOR, AND ALL PATREON/CUSTOM/DONOR STUFF (EVEN IF SUIT AND NOT ARMOR) TO GO INTO f13armor.dm
+/* //ARMOR, AND ALL PATREON/CUSTOM/DONOR STUFF (EVEN IF SUIT AND NOT ARMOR) TO GO INTO f13armor.dm
 /*FOR REFERENCE
 /obj/item/clothing/suit
 	icon = 'icons/obj/clothing/suits.dmi'
@@ -53,7 +53,7 @@
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 
-/obj/item/clothing/suit/f13/vest
+/obj/item/clothing/suit/vest
 	name = "tan vest"
 	desc = "It's a vest made of tanned leather."
 	icon_state = "tanleather"
@@ -61,14 +61,14 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/battlecruiser //Do we have Star Craft here as well?!
+/obj/item/clothing/suit/battlecruiser //Do we have Star Craft here as well?!
 	name = "captain's coat"
 	desc = "Battlecruiser operational!"
 	icon_state = "battlecruiser"
 	item_state = "hostrench"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/cowboybvest //Originally cowboy stuff by Nienhaus
+/obj/item/clothing/suit/cowboybvest //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
 	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboybvest"
@@ -76,7 +76,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/f13/westender
+/obj/item/clothing/suit/westender
 	name = "bartenders vest"
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
@@ -84,7 +84,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
 
-/obj/item/clothing/suit/f13/cowboygvest
+/obj/item/clothing/suit/cowboygvest
 	name = "grey vest"
 	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboygvest"
@@ -104,32 +104,32 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 //Fallout 13 various suits directory
-/obj/item/clothing/suit/f13/robe_liz
+/obj/item/clothing/suit/robe_liz
 	name = "tan robe"
 	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
 
-/obj/item/clothing/suit/f13/mantle_liz
+/obj/item/clothing/suit/mantle_liz
 	name = "hide mantle"
 	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
 
-/obj/item/clothing/suit/f13/mfp //Mad Max 1 1979 babe!
+/obj/item/clothing/suit/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
 	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
 	icon_state = "mfp"
 	item_state = "hostrench"
 	armor = list("melee" = 25, "bullet" = 20, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/mfp/raider
+/obj/item/clothing/suit/mfp/raider
 	name = "offbeat jacket"
 	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
 	icon_state = "mfp_raider"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/lonesome
+/obj/item/clothing/suit/lonesome
 	name = "lonesome duster"
 	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
 	icon_state = "courier"
@@ -137,14 +137,14 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/f13/veteran
+/obj/item/clothing/suit/veteran
 	name = "merc veteran coat"
 	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
 	icon_state = "veteran"
 	item_state = "suit-command"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/duster
+/obj/item/clothing/suit/duster
 	name = "duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
 	icon_state = "duster"
@@ -152,7 +152,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/f13/sheriff
+/obj/item/clothing/suit/sheriff
 	name = "sheriff duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
 	icon_state = "sheriff"
@@ -161,7 +161,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/f13/banker
+/obj/item/clothing/suit/banker
 	name = "bankers tailcoat"
 	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
 	icon_state = "banker"
@@ -169,7 +169,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/f13/autumn //Based of Colonel Autumn's uniform.
+/obj/item/clothing/suit/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
 	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
 	icon_state = "autumn"
@@ -179,7 +179,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 
-/obj/item/clothing/suit/f13/hubologist
+/obj/item/clothing/suit/hubologist
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
@@ -187,14 +187,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/sexymaid
+/obj/item/clothing/suit/sexymaid
 	name = "sexy maid outfit"
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
 	body_parts_covered = CHEST
 
-/obj/item/clothing/suit/f13/blacksmith_apron
+/obj/item/clothing/suit/blacksmith_apron
 	name = "blacksmith apron"
 	desc = "A heavy leather apron designed for protecting the user when metalforging."
 	icon_state = "opifex_apron"
@@ -221,7 +221,7 @@
 
 //Special Biosuit
 
-/obj/item/clothing/suit/bio_suit/f13/hazmat
+/obj/item/clothing/suit/bio_suit/hazmat
 	name = "hazmat suit"
 	desc = "(Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
@@ -230,7 +230,7 @@
 	item_state = "hazmat"
 	armor = list("melee" = 20, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/head/bio_hood/f13/hazmat
+/obj/item/clothing/head/bio_hood/hazmat
 	name = "hazmat hood"
 	desc = "My star, my perfect silence."
 	icon = 'icons/fallout/clothing/hats.dmi'
@@ -240,20 +240,20 @@
 	armor = list("melee" = 29, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
 //Fallout 13 toggle apparel directory
-/obj/item/clothing/suit/toggle/labcoat/f13/emergency
+/obj/item/clothing/suit/toggle/labcoat/emergency
 	name = "first responder jacket"
 	desc = "A high-visibility jacket worn by medical first responders."
 	icon_state = "fr_jacket"
 	item_state = "fr_jacket"
 
-/obj/item/clothing/suit/toggle/labcoat/f13/warriors
+/obj/item/clothing/suit/toggle/labcoat/warriors
 	name = "warriors jacket"
 	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
 	icon_state = "warriors"
 	item_state = "owl"
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 0, "rad" = 10, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/toggle/labcoat/f13/wanderer
+/obj/item/clothing/suit/toggle/labcoat/wanderer
 	name = "wanderer jacket"
 	desc = "A zipped-up hoodie made of tanned leather."
 	icon_state = "wanderer"
@@ -266,7 +266,7 @@
 ///////////////////////
 
 //Basic Jacket
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	name = "Great Khan jacket"
 	desc = "A black leather jacket. <br>There is an illustration on the back - an aggressive, red-eyed skull wearing a fur hat with horns.<br>The skull has a mongoloid moustache - it's obviously a Great Khans emblem."
 	icon = 'icons/fallout/clothing/khans.dmi'
@@ -278,12 +278,12 @@
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/Initialize()
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
 //Armored jacket
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/armored
 	name = "Great Khan armored jacket"
 	desc = "A black leather jacket with ballistic plates and a big Great Khan logo on the back. Some prefer to wear a leather vest (alt-click)."
 	icon_state = "khan_jacket_armored"
@@ -293,12 +293,12 @@
 	slowdown = 0.08
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/armored/Initialize()
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/armored/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
 //Battlecoat
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	name = "Great Khan battle coat"
 	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
 	icon_state = "khan_heavy"
@@ -309,7 +309,7 @@
 	slowdown = 0.3
 
 //Battlecoat/Goji
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/goji
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat/goji
 	name = "Golden Geckoskin jacket"
 	desc = "Heavy Geckoskin jacket lined with a bulletproof lining on the inside. On the back the symbol of the Great Khans is displayed proudly."
 	icon_state = "GojiSuit"
@@ -319,13 +319,13 @@
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/Initialize()
+/obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
 // --------------------------------------------------------------------------
 
-/obj/item/clothing/suit/toggle/labcoat/f13/followers
+/obj/item/clothing/suit/toggle/labcoat/followers
 	name = "followers lab coat"
 	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
 	icon_state = "followers"
@@ -333,7 +333,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 20, "energy" = 25, "bomb" = 20, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
 
-/obj/item/clothing/suit/armor/f13/generaluniform
+/obj/item/clothing/suit/armor/generaluniform
 	name = "Yuma 1st Irregular General Uniform"
 	desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
 	icon_state = "gen_uniform"
@@ -468,7 +468,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 25, "bomb" = 16, "bio" = 10, "rad" = 10, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/f13/jamrock
+/obj/item/clothing/suit/jamrock
 	name = "disco-ass blazer"
 	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
 	icon_state = "jamrock_blazer"
@@ -493,3 +493,4 @@
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
+ */

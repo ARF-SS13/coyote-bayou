@@ -104,7 +104,7 @@
 	gloves = /obj/item/pda
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	suit = /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/armor/medium/vest
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/helmet/riot/vaultsec
 
@@ -202,7 +202,7 @@
 /obj/effect/mob_spawn/human/corpse/enclavescientist
 	name = "enclave scientist"
 	uniform = /obj/item/clothing/under/f13/enclave/science
-	suit = /obj/item/clothing/suit/armor/f13/environmentalsuit
+	suit = /obj/item/clothing/suit/armor/environmentalsuit
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	head = /obj/item/clothing/head/helmet/f13/envirosuit
@@ -265,7 +265,7 @@
 /obj/effect/mob_spawn/human/corpse/bs
 	name = "Brotherhood Knight"
 	uniform = /obj/item/clothing/under/syndicate/brotherhood
-	suit = /obj/item/clothing/suit/armor/f13/combat/brotherhood
+	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	belt = 	/obj/item/storage/belt/military/assault
@@ -305,7 +305,7 @@
 /obj/effect/mob_spawn/human/corpse/bs/paladin
 	name = "Brotherhood Paladin"
 	uniform = /obj/item/clothing/under/f13/recon
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b/bos
+	suit = /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	belt = 	/obj/item/storage/belt/military/assault
@@ -355,7 +355,7 @@
 /obj/effect/mob_spawn/human/corpse/ncr
 	name = "NCR Trooper"
 	uniform = /obj/item/clothing/under/f13/ncr
-	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
+	suit = /obj/item/clothing/suit/armor/ncrarmor
 	belt = /obj/item/storage/belt/military/assault/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	head = /obj/item/clothing/head/f13/ncr
@@ -395,7 +395,7 @@
 /obj/effect/mob_spawn/human/corpse/ncr/ranger
 	name = "NCR Ranger"
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
-	suit = /obj/item/clothing/suit/armor/f13/combat/ncr_patrol
+	suit = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol
 	shoes = /obj/item/clothing/shoes/f13/military/leather
 	gloves = /obj/item/clothing/gloves/patrol
 	head = /obj/item/clothing/head/f13/ranger
@@ -442,7 +442,7 @@
 /obj/effect/mob_spawn/human/corpse/legion
 	name = "Legion Prime"
 	uniform = /obj/item/clothing/under/f13/legskirt
-	suit = /obj/item/clothing/suit/armor/f13/legion/prime
+	suit = /obj/item/clothing/suit/armor/legion/prime
 	shoes = /obj/item/clothing/shoes/f13/military/legion
 	head = /obj/item/clothing/head/helmet/f13/legion/prime
 
@@ -483,7 +483,7 @@
 /obj/effect/mob_spawn/human/corpse/legion/decan
 	name = "Legion Decanus"
 	uniform = /obj/item/clothing/under/f13/legskirt
-	suit = /obj/item/clothing/suit/armor/f13/legion/vet
+	suit = /obj/item/clothing/suit/armor/legion/vet
 	shoes = /obj/item/clothing/shoes/f13/military/legion
 	gloves = /obj/item/clothing/gloves/legion
 	head = /obj/item/clothing/head/helmet/f13/legion/prime/decan

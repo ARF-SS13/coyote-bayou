@@ -1421,7 +1421,7 @@
 /obj/item/clothing/under/f13/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/suit/armor/f13/combat/mk2,
+/obj/item/clothing/suit/armor/medium/combat/mk2,
 /obj/item/clothing/head/helmet/f13/combat/mk2,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
@@ -7971,7 +7971,7 @@
 /area/f13/tunnel)
 "fZM" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/f13/combat/environmental,
+/obj/item/clothing/suit/armor/medium/combat/environmental,
 /obj/item/clothing/head/helmet/f13/combat/environmental,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
@@ -8067,10 +8067,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "ghI" = (
-/obj/item/clothing/suit/armor/f13/combat/brotherhood,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood,
+/obj/item/clothing/suit/armor/medium/combat/brotherhood,
+/obj/item/clothing/suit/armor/medium/combat/brotherhood,
+/obj/item/clothing/suit/armor/medium/combat/brotherhood,
+/obj/item/clothing/suit/armor/medium/combat/brotherhood,
 /obj/item/clothing/mask/gas/sechailer/swat,
 /obj/item/clothing/mask/gas/sechailer/swat,
 /obj/item/clothing/head/helmet/f13/combat/brotherhood,
@@ -9185,7 +9185,7 @@
 	},
 /area/f13/tunnel)
 "ifE" = (
-/obj/item/clothing/suit/armor/f13/combatrusted,
+/obj/item/clothing/suit/armor/medium/combat/rusted,
 /obj/item/clothing/head/helmet/f13/hoodedmask,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -9221,7 +9221,7 @@
 	req_access_txt = "120"
 	},
 /obj/item/pda/warden,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d/knightcaptain,
+/obj/item/clothing/suit/armor/power_armor/t45d/knightcaptain,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/plasteel/dark,
 /area/f13/brotherhood)
@@ -10762,7 +10762,7 @@
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/pda/heads/hos,
 /obj/item/storage/briefcase,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate{
+/obj/item/clothing/suit/armor/medium/vest/capcarapace/syndicate{
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking officer of some lost prewar army.";
 	name = "old officer's vest"
 	},
@@ -11411,7 +11411,7 @@
 /obj/item/folder/documents{
 	desc = "A folder stamped \"Top Secret - Property of The Brotherhood.\""
 	},
-/obj/item/clothing/suit/f13/elder,
+/obj/item/clothing/suit/elder,
 /obj/item/clothing/accessory/bos/elder,
 /obj/item/storage/firstaid/regular,
 /obj/structure/closet/cabinet,
@@ -15034,7 +15034,7 @@
 /area/f13/brotherhood)
 "smC" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/f13/battlecoat,
+/obj/item/clothing/suit/armor/light/duster/battlecoat,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
 "smT" = (
@@ -15506,7 +15506,7 @@
 /area/f13/building/massfusion)
 "tbQ" = (
 /obj/structure/closet/crate,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+/obj/item/clothing/suit/armor/power_armor/t45d,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/head/helmet/f13/power_armor/t45d,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
