@@ -61,6 +61,12 @@
 	var/list/affected_dynamic_lights
 	///Highest-intensity light affecting us, which determines our visibility.
 	var/affecting_dynamic_lumi = 0
+	
+	/// Whether this atom should have its dir automatically changed when it moves. Setting this to FALSE allows for things such as directional windows to retain dir on moving without snowflake code all of the place.
+	var/set_dir_on_move = TRUE
+	///how many times a this movable had movement procs called on it since Moved() was last called
+	var/move_stacks = 0
+
 
 
 /atom/movable/Initialize(mapload)
@@ -265,35 +271,45 @@
 	QDEL_NULL(language_holder)
 	QDEL_NULL(em_block)
 
-	unbuckle_all_mobs(force=1)
-
-	. = ..()
+	unbuckle_all_mobs(force = TRUE)
 
 	if(loc)
 		//Restore air flow if we were blocking it (movables with ATMOS_PASS_PROC will need to do this manually if necessary)
 		if(((CanAtmosPass == ATMOS_PASS_DENSITY && density) || CanAtmosPass == ATMOS_PASS_NO) && isturf(loc))
 			CanAtmosPass = ATMOS_PASS_YES
-			air_update_turf(TRUE)
+			air_update_turf(TRUE, FALSE)
 		loc.handle_atom_del(src)
 
 	if(opacity)
 		RemoveElement(/datum/element/light_blocking)
 
-	for(var/atom/movable/AM in contents)
-		qdel(AM)
-	moveToNullspace()
 	invisibility = INVISIBILITY_ABSTRACT
+
 	if(pulledby)
 		pulledby.stop_pulling()
+	if(pulling)
+		stop_pulling()
 
 	if(orbiting)
 		orbiting.end_orbit(src)
 		orbiting = null
-	
+
 	if(move_packet)
 		if(!QDELETED(move_packet))
 			qdel(move_packet)
 		move_packet = null
+
+	LAZYCLEARLIST(client_mobs_in_contents)
+
+	. = ..()
+
+	for(var/movable_content in contents)
+		qdel(movable_content)
+
+	moveToNullspace()
+
+	vis_locs = null //clears this atom out of all viscontents
+	vis_contents.Cut()
 
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	set waitfor = 0
