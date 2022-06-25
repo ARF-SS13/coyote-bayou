@@ -30,6 +30,7 @@
 
 /turf/open/
 	var/spawnPlants = FALSE
+	var/obj/structure/flora/turfPlant = null
 
 /turf/open/Initialize()
 	. = ..()
@@ -38,7 +39,10 @@
 		if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 			plantGrass()
 
-
+/turf/open/ChangeTurf(path, new_baseturf, flags)
+	if(turfPlant)
+		qdel(turfPlant)
+	. =  ..()
 
 /turf/open/indestructible/ground/outside/dirt
 	spawnPlants = TRUE

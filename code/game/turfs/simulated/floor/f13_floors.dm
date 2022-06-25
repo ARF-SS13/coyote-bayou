@@ -49,7 +49,6 @@
 	icon_state = "wasteland1"
 
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
-	var/obj/structure/flora/turfPlant = null
 	slowdown = 0
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 2
@@ -63,12 +62,6 @@
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
 	icon_state = "wasteland[rand(1,31)]"
-
-//Make sure we delete the plant if we ever change turfs
-/turf/open/floor/plating/f13/outside/desert/ChangeTurf(path, new_baseturf, flags)
-	if(turfPlant)
-		qdel(turfPlant)
-	. =  ..()
 
 /turf/open/floor/plating/f13/outside/desert/harsh
 	icon_state = "wasteland"
@@ -126,7 +119,6 @@
 	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
-	var/obj/structure/flora/turfPlant = null
 
 /turf/open/floor/plating/f13/inside/mountain/Initialize()
 	. = ..()
