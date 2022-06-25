@@ -81,40 +81,41 @@
 	var/list/used_points = list()
 	grid.Cut()
 	
-	var/datum/space_level/DO = SLS[1]
-	DO.xi = P.x
-	DO.yi = P.y
-	P.spl = DO
-	possible_points |= P.neigbours
-	used_points |= P
-	possible_points.Remove(used_points)
-	SLS.Remove(DO)
-
-	var/datum/space_transition_point/OldP = P
-
-	for(var/datum/space_level/DN in SLS)
-		if(level_trait(DN.z_value, Z_FORCE_NORTH))
-			P = point_grid[OldP.x][OldP.y + 1]
-		if(level_trait(DN.z_value, Z_FORCE_SOUTH))
-			P = point_grid[OldP.x][OldP.y - 1]
-		if(level_trait(DN.z_value, Z_FORCE_EAST))
-			P = point_grid[OldP.x + 1][OldP.y]
-		if(level_trait(DN.z_value, Z_FORCE_WEST))
-			P = point_grid[OldP.x - 1][OldP.y]
-		
-		if(P.spl)
-			message_admins("ERROR: P already contains spl")
-			continue
-
-		DN.xi = P.x
-		DN.yi = P.y
-		P.spl = DN
+	if(SLS.len)
+		var/datum/space_level/DO = SLS[1]
+		DO.xi = P.x
+		DO.yi = P.y
+		P.spl = DO
+		possible_points |= P.neigbours
 		used_points |= P
 		possible_points.Remove(used_points)
-		DN.set_neigbours(used_points)
-		SLS.Remove(DN)
-		P = pick(possible_points)
-		CHECK_TICK	
+		SLS.Remove(DO)
+
+		var/datum/space_transition_point/OldP = P
+
+		for(var/datum/space_level/DN in SLS)
+			if(level_trait(DN.z_value, Z_FORCE_NORTH))
+				P = point_grid[OldP.x][OldP.y + 1]
+			if(level_trait(DN.z_value, Z_FORCE_SOUTH))
+				P = point_grid[OldP.x][OldP.y - 1]
+			if(level_trait(DN.z_value, Z_FORCE_EAST))
+				P = point_grid[OldP.x + 1][OldP.y]
+			if(level_trait(DN.z_value, Z_FORCE_WEST))
+				P = point_grid[OldP.x - 1][OldP.y]
+			
+			if(P.spl)
+				message_admins("ERROR: P already contains spl")
+				continue
+
+			DN.xi = P.x
+			DN.yi = P.y
+			P.spl = DN
+			used_points |= P
+			possible_points.Remove(used_points)
+			DN.set_neigbours(used_points)
+			SLS.Remove(DN)
+			P = pick(possible_points)
+			CHECK_TICK	
 
 	
 
