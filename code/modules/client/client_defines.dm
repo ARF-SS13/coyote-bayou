@@ -31,6 +31,9 @@
 	var/datum/preferences/prefs = null
 	var/last_turn = 0
 	var/move_delay = 0
+	///The visual delay to use for the current client.Move(), mostly used for making a client based move look like it came from some other slower source
+	var/visual_delay = 0
+
 	var/last_move = 0
 	var/area			= null
 

@@ -53,8 +53,11 @@ would spawn and follow the beaker, even if it is carried or thrown.
 	for(var/i in 1 to number)
 		if(total_effects > 20)
 			return
-		INVOKE_ASYNC(src, .proc/generate_effect)
+		// INVOKE_ASYNC(src, .proc/generate_effect) // STOP FUCKING ASYNCING
+		generate_effect()
 
+
+/* // Replacing with modern bay's interpretation to see if this solves the intense amount of times it's called and the lag it makes due to the callback it uses.
 /datum/effect_system/proc/generate_effect()
 	if(holder)
 		location = get_turf(holder)
@@ -75,6 +78,22 @@ would spawn and follow the beaker, even if it is carried or thrown.
 		step(E,direction)
 	if(!QDELETED(src))
 		addtimer(CALLBACK(src, .proc/decrement_total_effect), 20)
+*/
+/datum/effect_system/proc/generate_effect()
+	if(holder)
+		location = get_turf(holder)
+	var/obj/effect/effect = new effect_type(location)
+	total_effects++
+	var/direction
+	if(cardinals)
+		direction = pick(GLOB.cardinals)
+	else
+		direction = pick(GLOB.alldirs)
+	var/step_amt = pick(1,2,3)
+	var/step_delay = 5
+
+	var/datum/move_loop/loop = SSmove_manager.move(effect, direction, step_delay, timeout = step_delay * step_amt, priority = MOVEMENT_ABOVE_SPACE_PRIORITY)
+	RegisterSignal(loop, COMSIG_PARENT_QDELETING, .proc/decrement_total_effect)
 
 /datum/effect_system/proc/decrement_total_effect()
 	total_effects--

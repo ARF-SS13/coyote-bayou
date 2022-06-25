@@ -81,7 +81,7 @@
 		M.forceMove(location)
 	update_icon()
 
-/obj/structure/transit_tube_pod/Process_Spacemove()
+/obj/structure/transit_tube_pod/Process_Spacemove(direction, continuous_move)
 	if(moving) //No drifting while moving in the tubes
 		return 1
 	else

@@ -514,7 +514,7 @@
 	. = ..()
 	occupant?.setDir(newdir)
 
-/obj/mecha/Process_Spacemove(movement_dir = 0)
+/obj/mecha/Process_Spacemove(movement_dir = 0, continuous_move)
 	. = ..()
 	if(.)
 		return 1

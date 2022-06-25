@@ -408,11 +408,11 @@
 /obj/item/clothing/shoes/wallwalkers/equipped(mob/user,slot)
 	. = ..()
 	if(slot == SLOT_SHOES)
-		RegisterSignal(user, COMSIG_MOB_CLIENT_MOVE,.proc/intercept_user_move)
+		RegisterSignal(user, COMSIG_MOB_CLIENT_PRE_MOVE,.proc/intercept_user_move)
 
 /obj/item/clothing/shoes/wallwalkers/dropped(mob/user)
 	. = ..()
-	UnregisterSignal(user, COMSIG_MOB_CLIENT_MOVE)
+	UnregisterSignal(user, COMSIG_MOB_CLIENT_PRE_MOVE)
 
 /obj/item/clothing/shoes/wallwalkers/attackby(obj/item/W, mob/user, params)
 	. = ..()
