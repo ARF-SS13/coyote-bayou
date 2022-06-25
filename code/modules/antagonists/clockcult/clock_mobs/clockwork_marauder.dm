@@ -87,7 +87,7 @@
 	"<span class='userdanger'>Dented and scratched, your armor falls away, and your fragile form breaks apart without its protection.</span>")
 	. = ..()
 
-/mob/living/simple_animal/hostile/clockwork/marauder/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/hostile/clockwork/marauder/Process_Spacemove(movement_dir = 0, continuous_move)
 	return TRUE
 
 /mob/living/simple_animal/hostile/clockwork/marauder/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
@@ -247,7 +247,7 @@
 					stat(null, "You are [recovering ? "unable to deploy" : "able to deploy to protect your host"]!")
 		stat(null, "You do [melee_damage_upper] damage on melee attacks.")
 
-/mob/living/simple_animal/hostile/clockwork/marauder/guardian/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/hostile/clockwork/marauder/guardian/Process_Spacemove(movement_dir = 0, continuous_move)
 	return 1
 
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/proc/bind_to_host(mob/living/new_host)

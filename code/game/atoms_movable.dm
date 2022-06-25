@@ -24,6 +24,8 @@
 	var/inertia_moving = 0
 	var/inertia_next_move = 0
 	var/inertia_move_delay = 5
+	///This is a hack to get around dumb him him me scenarios
+	var/last_pushoff
 	/// These flags mark the ability of this movable to pass through certain blockers.
 	var/pass_flags = NONE
 	/// These flags mark the ability of this movable to let other movables past them if they share the flag values on the `pass_flags` var.
@@ -34,6 +36,8 @@
 	var/list/acted_explosions	//for explosion dodging
 	glide_size = 8
 	appearance_flags = TILE_BOUND|PIXEL_SCALE
+	///Holds information about any movement loops currently running/waiting to run on the movable. Lazy, will be null if nothing's going on
+	var/datum/movement_packet/move_packet
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
 	var/movement_type = GROUND		//Incase you have multiple types, you automatically use the most useful one. IE: Skating on ice, flippers on water, flying over chasm/space, etc.
 	var/atom/movable/pulling
@@ -285,6 +289,11 @@
 	if(orbiting)
 		orbiting.end_orbit(src)
 		orbiting = null
+	
+	if(move_packet)
+		if(!QDELETED(move_packet))
+			qdel(move_packet)
+		move_packet = null
 
 /atom/movable/proc/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	set waitfor = 0
