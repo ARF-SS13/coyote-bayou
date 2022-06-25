@@ -4,7 +4,6 @@
 	block_priority = BLOCK_PRIORITY_WEAR_SUIT
 	var/fire_resist = T0C+100
 	allowed = null
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 5, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	slot_flags = ITEM_SLOT_OCLOTHING
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS //I don't care if some armors only visibly covers the chest, they're going to offer protection to limbs too because game design.
 	var/blood_overlay_type = "suit"

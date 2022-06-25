@@ -2,6 +2,28 @@
  * Old armors we dont need or use or anything go here
  */
 
+// Metal- Melee, Laser Good, Ballistics Moderate, Energy, Explosion bad
+// Leather/soft armor: Melee Good, Laser , Energy, Explosion Moderate, Ballistic Bad
+// Coat style armor is good for allround protection but excels at none. (note plated with unarmored duster over is still plated.)
+// Kevlar: Ballistic Good, all others Bad.
+// Mix can vary wildly but usually has some glaring strongpoints and weakspots.
+// Combat armor is allround but not top defense against any single category.
+// Thick warm armor gives cold protection, piecemeal gives overheating protection.
+// Armor covering much of the body gives more defense vs acid, fire, bio in general and vice versa.
+
+/*
+Suits. 0-10 in its primary value, slowdown 0, various utility
+/obj/item/clothing/suit
+	name = "suit template"
+	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
+	slowdown = 0
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	allowed = null
+	strip_delay = 10
+*/
+
+
 ////////////
 // LEGION //
 ////////////
@@ -1930,3 +1952,9 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	armor = list("melee" = 40, "bullet" = 35,"laser" = 20, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100)
 	flags_inv = HIDEJUMPSUIT
 	strip_delay = 40
+
+/obj/item/clothing/suit/armor/generaluniform
+	name = "Yuma 1st Irregular General Uniform"
+	desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
+	icon_state = "gen_uniform"
+	item_state = "gen_uniform"

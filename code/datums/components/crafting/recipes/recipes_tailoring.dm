@@ -521,7 +521,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/mantle
 	name = "Hide mantle"
-	result = /obj/item/clothing/suit/mantle_liz
+	result = /obj/item/clothing/suit/armor/outfit/jacket/mantle
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/hay = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -650,7 +650,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/westendervest
 	name = "Bartender vest"
-	result = /obj/item/clothing/suit/westender
+	result = /obj/item/clothing/suit/armor/outfit/vest/bartender
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10

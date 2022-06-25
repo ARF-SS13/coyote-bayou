@@ -334,7 +334,7 @@
 	new /obj/item/storage/backpack/satchel/hyd(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/hydro(src)
 	new /obj/item/clothing/neck/apron/labor(src)
-	new /obj/item/clothing/suit/overalls(src)
+	new /obj/item/clothing/suit/armor/outfit/overalls/farmer(src)
 
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/under/rank/civilian/hydroponics(src)

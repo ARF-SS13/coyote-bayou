@@ -1,385 +1,3 @@
-//////////////////////
-//// JUST CLOTHES ////
-//////////////////////
-
-/obj/item/clothing/suit/overalls
-	name = "overalls"
-	desc = "A set of denim overalls suitable for farming."
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	icon_state = "overalls_farmer"
-	item_state = "overalls_farmer"
-	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
-
-/obj/item/clothing/suit/vest
-	name = "tan vest"
-	desc = "It's a vest made of tanned leather."
-	icon_state = "tanleather"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/battlecruiser //Do we have Star Craft here as well?!
-	name = "captain's coat"
-	desc = "Battlecruiser operational!"
-	icon_state = "battlecruiser"
-	item_state = "hostrench"
-
-/obj/item/clothing/suit/cowboybvest //Originally cowboy stuff by Nienhaus
-	name = "brown vest"
-	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboybvest"
-	item_state = "lb_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/westender
-	name = "bartenders vest"
-	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
-	icon_state = "westender"
-	item_state = "lb_suit"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
-
-/obj/item/clothing/suit/cowboygvest
-	name = "grey vest"
-	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboygvest"
-	item_state = "gy_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/ghost_sheet
-	name = "ghost sheet"
-	desc = "The hands float by themselves, so it's extra spooky."
-	icon_state = "ghost_sheet"
-	item_state = "ghost_sheet"
-	throwforce = 0
-	throw_speed = 1
-	throw_range = 2
-	w_class = WEIGHT_CLASS_TINY
-	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-
-//Fallout 13 various suits directory
-/obj/item/clothing/suit/robe_liz
-	name = "tan robe"
-	desc = "Only a monk would find this robe nice and comfortable."
-	icon_state = "robe_liz"
-	item_state = "brownjsuit"
-
-/obj/item/clothing/suit/mantle_liz
-	name = "hide mantle"
-	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
-	icon_state = "mantle_liz"
-	item_state = "det_suit"
-
-/obj/item/clothing/suit/mfp //Mad Max 1 1979 babe!
-	name = "MFP jacket"
-	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
-	icon_state = "mfp"
-	item_state = "hostrench"
-
-/obj/item/clothing/suit/mfp/raider
-	name = "offbeat jacket"
-	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
-	icon_state = "mfp_raider"
-
-/obj/item/clothing/suit/lonesome
-	name = "lonesome duster"
-	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
-	icon_state = "courier"
-	item_state = "suit-command"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-
-/obj/item/clothing/suit/veteran
-	name = "merc veteran coat"
-	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
-	icon_state = "veteran"
-	item_state = "suit-command"
-
-/obj/item/clothing/suit/duster
-	name = "duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
-	icon_state = "duster"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/suit/sheriff
-	name = "sheriff duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
-	icon_state = "sheriff"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-
-/obj/item/clothing/suit/banker
-	name = "bankers tailcoat"
-	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
-	icon_state = "banker"
-	item_state = "banker"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/suit/autumn //Based of Colonel Autumn's uniform.
-	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
-	icon_state = "autumn"
-	item_state = "autumn"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-
-/obj/item/clothing/suit/hubologist
-	name = "hubologist robe"
-	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
-	icon_state = "hubologist"
-	item_state = "wcoat"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/sexymaid // best suit
-	name = "sexy maid outfit"
-	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
-	icon_state = "sexymaid_s"
-	item_state = "sexymaid_s"
-	body_parts_covered = CHEST
-
-/obj/item/clothing/suit/blacksmith_apron
-	name = "blacksmith apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging."
-	icon_state = "opifex_apron"
-	item_state = "opifex_apron"
-	blood_overlay_type = "armor"
-	allowed = list(/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/multitool,
-		/obj/item/flashlight,
-		/obj/item/stack/cable_coil,
-		/obj/item/t_scanner,
-		/obj/item/analyzer,
-		/obj/item/geiger_counter,
-		/obj/item/extinguisher/mini,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/holosign_creator,
-		/obj/item/assembly/signaler
-	) //robust storage options!! -superballs
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-
-//Fallout 13 toggle apparel directory
-/obj/item/clothing/suit/toggle/labcoat/emergency
-	name = "first responder jacket"
-	desc = "A high-visibility jacket worn by medical first responders."
-	icon_state = "fr_jacket"
-	item_state = "fr_jacket"
-
-/obj/item/clothing/suit/toggle/labcoat/warriors
-	name = "warriors jacket"
-	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
-	icon_state = "warriors"
-	item_state = "owl"
-
-/obj/item/clothing/suit/toggle/labcoat/wanderer
-	name = "wanderer jacket"
-	desc = "A zipped-up hoodie made of tanned leather."
-	icon_state = "wanderer"
-	item_state = "owl"
-
-/obj/item/clothing/suit/toggle/labcoat/followers
-	name = "followers lab coat"
-	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
-	icon_state = "followers"
-	item_state = "labcoat"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
-
-/obj/item/clothing/suit/armor/generaluniform
-	name = "Yuma 1st Irregular General Uniform"
-	desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
-	icon_state = "gen_uniform"
-	item_state = "gen_uniform"
-
-/obj/item/clothing/suit/hooded/cloak/desert
-	name = "desert cloak"
-	icon_state = "desertcloak"
-	desc = "A practical cloak made out of animal hide."
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-
-/obj/item/clothing/head/hooded/cloakhood/desert
-	name = "desert cloak hood"
-	icon_state = "desertcloak"
-	desc = "A protective and concealing hood."
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
-	name = "Raven cloak"
-	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
-	icon_state = "raven_cloak"
-	item_state = "raven_cloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-
-/obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-	name = "Raven cloak hood"
-	desc = "A hood fashioned out of patchwork and feathers"
-	icon_state = "raven_hood"
-	item_state = "raven_hood"
-
-/obj/item/clothing/suit/hooded/parka/medical
-	name = "armored medical parka"
-	icon_state = "armormedical"
-	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
-	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
-
-/obj/item/clothing/head/hooded/parkahood/medical
-	name = "armored medical parka hood"
-	icon_state = "armorhoodmedical"
-	desc = " A protective & concealing parka hood."
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/hooded/parka/grey
-	name = "grey armored parka"
-	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
-	icon_state = "armorgrey"
-	hoodtype = /obj/item/clothing/head/hooded/parkahood/grey
-
-/obj/item/clothing/head/hooded/parkahood/grey
-	name = "armored grey parka hood"
-	desc = "A protective & concealing parka hood."
-	icon_state = "armorhoodgrey"
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/goner
-	name = "dev-patched dull trenchcoat"
-	desc = "A non-existent dull trenchcoat."
-	icon = 'modular_sunset/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/suit.dmi'
-	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/suit_digi.dmi'
-	icon_state = "goner_suit"
-	item_state = "ro_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	mutantrace_variation = STYLE_DIGITIGRADE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-
-/* /obj/item/clothing/suit/goner/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate) */
-
-/obj/item/clothing/suit/goner/red
-	name = "red-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_r"
-
-/obj/item/clothing/suit/goner/green
-	name = "green-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_g"
-
-/obj/item/clothing/suit/goner/blue
-	name = "blue-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_b"
-
-/obj/item/clothing/suit/goner/yellow
-	name = "yellow-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_y"
-
-//Recipe bulletproof vest + duster, ranger recipe 
-/obj/item/clothing/suit/toggle/armored/ranger_duster
-	name = "ranger recon duster"
-	desc = "A light bulletproof vest under a high-quality duster. Popular with Rangers."
-	icon_state = "duster_recon"
-	item_state = "duster_recon"
-	permeability_coefficient = 0.9
-	heat_protection = CHEST | GROIN | LEGS
-	cold_protection = CHEST | GROIN | LEGS
-
-//Biosuit complete with shoes (in the item sprite)
-/obj/item/clothing/head/bio_hood
-	name = "bio hood"
-	icon_state = "bio"
-	desc = "A hood that protects the head and face from biological contaminants."
-	permeability_coefficient = 0.01
-	clothing_flags = THICKMATERIAL | BLOCK_GAS_SMOKE_EFFECT
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 30, "acid" = 100)
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE|HIDESNOUT
-	resistance_flags = ACID_PROOF
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	mutantrace_variation = STYLE_MUZZLE
-
-/obj/item/clothing/suit/bio_suit
-	name = "bio suit"
-	desc = "A suit that protects against biological contamination."
-	icon_state = "bio"
-	item_state = "bio_suit"
-	w_class = WEIGHT_CLASS_BULKY
-	gas_transfer_coefficient = 0.01
-	permeability_coefficient = 0.01
-	clothing_flags = THICKMATERIAL
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	slowdown = 1
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 30, "acid" = 100)
-	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
-	strip_delay = 70
-	equip_delay_other = 70
-	resistance_flags = ACID_PROOF
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
-
-//Standard biosuit, orange stripe
-/obj/item/clothing/head/bio_hood/general
-	icon_state = "bio_general"
-
-/obj/item/clothing/suit/bio_suit/general
-	icon_state = "bio_general"
-
-
-//Virology biosuit, green stripe
-/obj/item/clothing/head/bio_hood/virology
-	icon_state = "bio_virology"
-
-/obj/item/clothing/suit/bio_suit/virology
-	icon_state = "bio_virology"
-
-
-//Security biosuit, grey with red stripe across the chest
-/obj/item/clothing/head/bio_hood/security
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 80, "fire" = 30, "acid" = 100)
-	icon_state = "bio_security"
-
-/obj/item/clothing/suit/bio_suit/security
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 80, "fire" = 30, "acid" = 100)
-	icon_state = "bio_security"
-
-
-//Janitor's biosuit, grey with purple arms
-/obj/item/clothing/head/bio_hood/janitor
-	icon_state = "bio_janitor"
-
-/obj/item/clothing/suit/bio_suit/janitor
-	icon_state = "bio_janitor"
-
-
-//Scientist's biosuit, white with a pink-ish hue
-/obj/item/clothing/head/bio_hood/scientist
-	icon_state = "bio_scientist"
-
-/obj/item/clothing/suit/bio_suit/scientist
-	icon_state = "bio_scientist"
-
-
-//CMO's biosuit, blue stripe
-/obj/item/clothing/suit/bio_suit/cmo
-	icon_state = "bio_cmo"
-
-/obj/item/clothing/head/bio_hood/cmo
-	icon_state = "bio_cmo"
-
-
-//Plague Dr mask can be found in clothing/masks/gasmask.dm
-/obj/item/clothing/suit/bio_suit/plaguedoctorsuit
-	name = "plague doctor suit"
-	desc = "It protected doctors from the Black Death, back then. You bet your arse it's gonna help you against viruses."
-	icon_state = "plaguedoctor"
-	item_state = "bio_suit"
-	strip_delay = 40
-	equip_delay_other = 20
-
 ///////////////
 //// ARMOR ////
 ///////////////
@@ -410,27 +28,6 @@
 	var/melee_block_threshold = null
 	var/dmg_block_threshold = null
 
-// Metal- Melee, Laser Good, Ballistics Moderate, Energy, Explosion bad
-// Leather/soft armor: Melee Good, Laser , Energy, Explosion Moderate, Ballistic Bad
-// Coat style armor is good for allround protection but excels at none. (note plated with unarmored duster over is still plated.)
-// Kevlar: Ballistic Good, all others Bad.
-// Mix can vary wildly but usually has some glaring strongpoints and weakspots.
-// Combat armor is allround but not top defense against any single category.
-// Thick warm armor gives cold protection, piecemeal gives overheating protection.
-// Armor covering much of the body gives more defense vs acid, fire, bio in general and vice versa.
-
-/*
-Suits. 0-10 in its primary value, slowdown 0, various utility
-/obj/item/clothing/suit
-	name = "suit template"
-	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	slowdown = 0
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	allowed = null
-	strip_delay = 10
-*/
-
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
 	if(!allowed)
@@ -442,6 +39,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 * 
 * Clothes (not armor)
 * - lightly armored at best, might be craftable into armor accessories later
+* - Pockets?
 * 
 * Light
 * - High mobility (can run from most mobs easily)
@@ -452,7 +50,12 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 * - something
 * - Med protection
 * Heavy
+* - Low mobility (Tank hits or have friends)
+* - High protection
+* - More specialized armor too
 * Power Armor
+* - Mobile
+* - Just about godmode
 
  */
 
@@ -460,13 +63,444 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 // CLOTHES //
 /////////////
 
-/obj/item/clothing/suit/armor/navyblue
+/* 
+ * Types:
+ * Overalls (chest legs)
+ * - utility suits for holding tools and stuff
+ * Jacket (chest arms)
+ * - Might have pockets?
+ * Duster (chest arms legs)
+ * - Full body decorative and cool
+ * vest (chest)
+ * - Decorative and cool
+ * costume? (everything?)
+ */
+
+//// Clothes ARMOR PARENT ////
+
+/obj/item/clothing/suit/armor/outfit
+	name = "basic outerwear template"
+	desc = "probably shouldnt see this"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "overalls_farmer"
+	item_state = "overalls_farmer"
+
+//////////////////
+//// OVERALLS ////
+//////////////////
+
+/obj/item/clothing/suit/armor/outfit/overalls
+	name = "overalls"
+	desc = "A set of denim overalls suitable for farming."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "overalls_farmer"
+	item_state = "overalls_farmer"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
+/obj/item/clothing/suit/armor/outfit/overalls/farmer
+	name = "overalls"
+	desc = "A set of denim overalls suitable for farming."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "overalls_farmer"
+	item_state = "overalls_farmer"
+	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
+
+/obj/item/clothing/suit/armor/outfit/overalls/sexymaid // best suit
+	name = "sexy maid outfit"
+	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
+	icon_state = "sexymaid_s"
+	item_state = "sexymaid_s"
+	body_parts_covered = CHEST
+
+/obj/item/clothing/suit/armor/outfit/overalls/blacksmith
+	name = "blacksmith apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging."
+	icon_state = "opifex_apron"
+	item_state = "opifex_apron"
+	blood_overlay_type = "armor"
+	allowed = list(/obj/item/crowbar,
+		/obj/item/screwdriver,
+		/obj/item/weldingtool,
+		/obj/item/wirecutters,
+		/obj/item/wrench,
+		/obj/item/multitool,
+		/obj/item/flashlight,
+		/obj/item/stack/cable_coil,
+		/obj/item/t_scanner,
+		/obj/item/analyzer,
+		/obj/item/geiger_counter,
+		/obj/item/extinguisher/mini,
+		/obj/item/radio,
+		/obj/item/clothing/gloves,
+		/obj/item/holosign_creator,
+		/obj/item/assembly/signaler
+	) //robust storage options!! -superballs
+
+//////////////
+//// VEST ////
+//////////////
+
+/obj/item/clothing/suit/armor/outfit/vest
+	name = "tan vest"
+	desc = "It's a vest made of tanned leather."
+	icon_state = "tanleather"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS
+
+/obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
+	name = "brown vest"
+	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboybvest"
+	item_state = "lb_suit"
+
+/obj/item/clothing/suit/armor/outfit/vest/bartender
+	name = "bartenders vest"
+	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
+	icon_state = "westender"
+	item_state = "lb_suit"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
+
+/obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
+	name = "grey vest"
+	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
+	icon_state = "cowboygvest"
+	item_state = "gy_suit"
+
+
+////////////////
+//// JACKET ////
+////////////////
+
+/obj/item/clothing/suit/armor/outfit/jacket
+	name = "jacket template"
+	desc = "its a jacket!!"
+	icon_state = "veteran"
+	item_state = "suit-command"
+
+/obj/item/clothing/suit/armor/outfit/jacket/merc
+	name = "merc veteran coat"
+	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
+	icon_state = "veteran"
+	item_state = "suit-command"
+
+/obj/item/clothing/suit/armor/outfit/jacket/battlecruiser //Do we have Star Craft here as well?!
+	name = "captain's coat"
+	desc = "Battlecruiser operational!"
+	icon_state = "battlecruiser"
+	item_state = "hostrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/mantle
+	name = "hide mantle"
+	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
+	icon_state = "mantle_liz"
+	item_state = "det_suit"
+
+/obj/item/clothing/suit/armor/outfit/jacket/mfp //Mad Max 1 1979 babe!
+	name = "MFP jacket"
+	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
+	icon_state = "mfp"
+	item_state = "hostrench"
+
+/obj/item/clothing/suit/armor/outfit/jacket/mfp/raider
+	name = "offbeat jacket"
+	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
+	icon_state = "mfp_raider"
+
+/obj/item/clothing/suit/armor/outfit/jacket/navyblue
 	name = "security officer's jacket"
 	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
 	icon_state = "officerbluejacket"
 	item_state = "officerbluejacket"
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+// until togglesuits are made into normal suits, treat these as jackets
+
+/obj/item/clothing/suit/toggle/labcoat
+	name = "labcoat"
+	desc = "A suit that protects against minor chemical spills."
+	icon_state = "labcoat"
+	item_state = "labcoat"
+	blood_overlay_type = "coat"
+	body_parts_covered = CHEST|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
+	togglename = "buttons"
+	species_exception = list(/datum/species/golem)
+
+/obj/item/clothing/suit/toggle/labcoat/cmo
+	name = "chief medical officer's labcoat"
+	desc = "Bluer than the standard model."
+	icon_state = "labcoat_cmo"
+	item_state = "labcoat_cmo"
+
+/obj/item/clothing/suit/toggle/labcoat/mad
+	name = "\proper The Mad's labcoat"
+	desc = "It makes you look capable of konking someone on the noggin and shooting them into space."
+	icon_state = "labgreen"
+	item_state = "labgreen"
+
+/obj/item/clothing/suit/toggle/labcoat/genetics
+	name = "geneticist labcoat"
+	desc = "A suit that protects against minor chemical spills. Has a blue stripe on the shoulder."
+	icon_state = "labcoat_gen"
+
+/obj/item/clothing/suit/toggle/labcoat/chemist
+	name = "chemist labcoat"
+	desc = " A suit that protects against minor chemical spills. Has an orange stripe on the shoulder."
+	icon_state = "labcoat_chem"
+
+/obj/item/clothing/suit/toggle/labcoat/virologist
+	name = "virologist labcoat"
+	desc = "A suit that protects against minor chemical spills. Offers slightly more protection against biohazards than the standard model. Has a green stripe on the shoulder."
+	icon_state = "labcoat_vir"
+
+/obj/item/clothing/suit/toggle/labcoat/science
+	name = "scientist labcoat"
+	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
+	icon_state = "labcoat_tox"
+
+// Departmental Jackets
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sci
+	name = "science jacket"
+	desc = "A comfortable jacket in science purple."
+	icon_state = "sci_dep_jacket"
+	item_state = "sci_dep_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/med
+	name = "medical jacket"
+	desc = "A comfortable jacket in medical blue."
+	icon_state = "med_dep_jacket"
+	item_state = "med_dep_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec
+	name = "security jacket"
+	desc = "A comfortable jacket in security red."
+	icon_state = "sec_dep_jacket"
+	item_state = "sec_dep_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sup
+	name = "supply jacket"
+	desc = "A comfortable jacket in supply brown."
+	icon_state = "supply_dep_jacket"
+	item_state = "supply_dep_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sup/qm
+	name = "quartermaster's jacket"
+	desc = "A loose covering often warn by station quartermasters."
+	icon_state = "qmjacket"
+	item_state = "qmjacket"
+
+/obj/item/clothing/suit/toggle/labcoat/depjacket/eng
+	name = "engineering jacket"
+	desc = "A comfortable jacket in engineering yellow."
+	icon_state = "engi_dep_jacket"
+	item_state = "engi_dep_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/fieldscribe
+	name = "fieldscribe suit"
+	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
+	icon_state = "fieldscribe"
+
+/obj/item/clothing/suit/toggle/labcoat/scribecoat
+	name = "fieldscribe coat"
+	desc = "A heavy-duty coat and chestrig fitted with tons of pockets. Ballistic weave and ceramic inserts are included to substantially increase Field Scribe survival rates."
+	icon_state = "scribecoat"
+
+/obj/item/clothing/suit/toggle/labcoat/emergency
+	name = "first responder jacket"
+	desc = "A high-visibility jacket worn by medical first responders."
+	icon_state = "fr_jacket"
+	item_state = "fr_jacket"
+
+/obj/item/clothing/suit/toggle/labcoat/warriors
+	name = "warriors jacket"
+	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
+	icon_state = "warriors"
+	item_state = "owl"
+
+/obj/item/clothing/suit/toggle/labcoat/wanderer
+	name = "wanderer jacket"
+	desc = "A zipped-up hoodie made of tanned leather."
+	icon_state = "wanderer"
+	item_state = "owl"
+/obj/item/clothing/suit/toggle/labcoat/followers
+	name = "followers lab coat"
+	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
+	icon_state = "followers"
+	item_state = "labcoat"
+
+//these are jackets too
+/obj/item/clothing/suit/hooded/parka/medical
+	name = "armored medical parka"
+	icon_state = "armormedical"
+	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
+	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
+
+/obj/item/clothing/head/hooded/parkahood/medical
+	name = "armored medical parka hood"
+	icon_state = "armorhoodmedical"
+	desc = " A protective & concealing parka hood."
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/hooded/parka/grey
+	name = "grey armored parka"
+	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
+	icon_state = "armorgrey"
+	hoodtype = /obj/item/clothing/head/hooded/parkahood/grey
+
+/obj/item/clothing/head/hooded/parkahood/grey
+	name = "armored grey parka hood"
+	desc = "A protective & concealing parka hood."
+	icon_state = "armorhoodgrey"
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+
+////////////////
+//// DUSTER ////
+////////////////
+
+/obj/item/clothing/suit/armor/outfit/duster
+	name = "duster"
+	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
+	icon_state = "duster"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
+/obj/item/clothing/suit/armor/outfit/duster/tan_robe
+	name = "tan robe"
+	desc = "Only a monk would find this robe nice and comfortable."
+	icon_state = "robe_liz"
+	item_state = "brownjsuit"
+
+/obj/item/clothing/suit/armor/outfit/duster/lonesome
+	name = "lonesome duster"
+	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
+	icon_state = "courier"
+	item_state = "suit-command"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+
+/obj/item/clothing/suit/armor/outfit/duster/sheriff
+	name = "sheriff duster"
+	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
+	icon_state = "sheriff"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+
+/obj/item/clothing/suit/armor/outfit/jacket/banker
+	name = "bankers tailcoat"
+	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
+	icon_state = "banker"
+	item_state = "banker"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
+/obj/item/clothing/suit/armor/outfit/duster/autumn //Based of Colonel Autumn's uniform.
+	name = "tan trenchcoat"
+	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	icon_state = "autumn"
+	item_state = "autumn"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
+/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
+	name = "hubologist robe"
+	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	icon_state = "hubologist"
+	item_state = "wcoat"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/armor/outfit/duster/goner
+	name = "dev-patched dull trenchcoat"
+	desc = "A non-existent dull trenchcoat."
+	icon = 'modular_sunset/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/suit.dmi'
+	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/suit_digi.dmi'
+	icon_state = "goner_suit"
+	item_state = "ro_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
+/* /obj/item/clothing/suit/armor/outfit/duster/goner/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate) */
+
+/obj/item/clothing/suit/armor/outfit/duster/goner/red
+	name = "red-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_r"
+
+/obj/item/clothing/suit/armor/outfit/duster/goner/green
+	name = "green-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_g"
+
+/obj/item/clothing/suit/armor/outfit/duster/goner/blue
+	name = "blue-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_b"
+
+/obj/item/clothing/suit/armor/outfit/duster/goner/yellow
+	name = "yellow-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_y"
+
+
+//these are dusters
+//Recipe bulletproof vest + duster, ranger recipe 
+/obj/item/clothing/suit/toggle/armored/ranger_duster
+	name = "ranger recon duster"
+	desc = "A light bulletproof vest under a high-quality duster. Popular with Rangers."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	permeability_coefficient = 0.9
+	heat_protection = CHEST | GROIN | LEGS
+	cold_protection = CHEST | GROIN | LEGS
+
+/obj/item/clothing/suit/hooded/cloak/desert
+	name = "desert cloak"
+	icon_state = "desertcloak"
+	desc = "A practical cloak made out of animal hide."
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+
+/obj/item/clothing/head/hooded/cloakhood/desert
+	name = "desert cloak hood"
+	icon_state = "desertcloak"
+	desc = "A protective and concealing hood."
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
+	name = "Raven cloak"
+	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
+	icon_state = "raven_cloak"
+	item_state = "raven_cloak"
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
+
+/obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
+	name = "Raven cloak hood"
+	desc = "A hood fashioned out of patchwork and feathers"
+	icon_state = "raven_hood"
+	item_state = "raven_hood"
+
+/////////////////
+//// COSTUME ////
+/////////////////
+
+/obj/item/clothing/suit/armor/outfit/costume/ghost
+	name = "ghost sheet"
+	desc = "The hands float by themselves, so it's extra spooky."
+	icon_state = "ghost_sheet"
+	item_state = "ghost_sheet"
+	throwforce = 0
+	throw_speed = 1
+	throw_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 ///////////
 // LIGHT //
@@ -2383,3 +2417,93 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	max_integrity = 250
 	resistance_flags = NONE
 	togglename = "collar"
+
+//Biosuit complete with shoes (in the item sprite)
+/obj/item/clothing/head/bio_hood
+	name = "bio hood"
+	icon_state = "bio"
+	desc = "A hood that protects the head and face from biological contaminants."
+	permeability_coefficient = 0.01
+	clothing_flags = THICKMATERIAL | BLOCK_GAS_SMOKE_EFFECT
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 30, "acid" = 100)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE|HIDESNOUT
+	resistance_flags = ACID_PROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	mutantrace_variation = STYLE_MUZZLE
+
+/obj/item/clothing/suit/bio_suit
+	name = "bio suit"
+	desc = "A suit that protects against biological contamination."
+	icon_state = "bio"
+	item_state = "bio_suit"
+	w_class = WEIGHT_CLASS_BULKY
+	gas_transfer_coefficient = 0.01
+	permeability_coefficient = 0.01
+	clothing_flags = THICKMATERIAL
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	slowdown = 1
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 60, "fire" = 30, "acid" = 100)
+	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAUR
+	strip_delay = 70
+	equip_delay_other = 70
+	resistance_flags = ACID_PROOF
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
+
+//Standard biosuit, orange stripe
+/obj/item/clothing/head/bio_hood/general
+	icon_state = "bio_general"
+
+/obj/item/clothing/suit/bio_suit/general
+	icon_state = "bio_general"
+
+
+//Virology biosuit, green stripe
+/obj/item/clothing/head/bio_hood/virology
+	icon_state = "bio_virology"
+
+/obj/item/clothing/suit/bio_suit/virology
+	icon_state = "bio_virology"
+
+
+//Security biosuit, grey with red stripe across the chest
+/obj/item/clothing/head/bio_hood/security
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 80, "fire" = 30, "acid" = 100)
+	icon_state = "bio_security"
+
+/obj/item/clothing/suit/bio_suit/security
+	armor = list("melee" = 15, "bullet" = 5, "laser" = 20, "energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 80, "fire" = 30, "acid" = 100)
+	icon_state = "bio_security"
+
+
+//Janitor's biosuit, grey with purple arms
+/obj/item/clothing/head/bio_hood/janitor
+	icon_state = "bio_janitor"
+
+/obj/item/clothing/suit/bio_suit/janitor
+	icon_state = "bio_janitor"
+
+
+//Scientist's biosuit, white with a pink-ish hue
+/obj/item/clothing/head/bio_hood/scientist
+	icon_state = "bio_scientist"
+
+/obj/item/clothing/suit/bio_suit/scientist
+	icon_state = "bio_scientist"
+
+
+//CMO's biosuit, blue stripe
+/obj/item/clothing/suit/bio_suit/cmo
+	icon_state = "bio_cmo"
+
+/obj/item/clothing/head/bio_hood/cmo
+	icon_state = "bio_cmo"
+
+
+//Plague Dr mask can be found in clothing/masks/gasmask.dm
+/obj/item/clothing/suit/bio_suit/plaguedoctorsuit
+	name = "plague doctor suit"
+	desc = "It protected doctors from the Black Death, back then. You bet your arse it's gonna help you against viruses."
+	icon_state = "plaguedoctor"
+	item_state = "bio_suit"
+	strip_delay = 40
+	equip_delay_other = 20

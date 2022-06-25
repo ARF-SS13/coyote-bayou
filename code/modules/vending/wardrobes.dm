@@ -279,7 +279,7 @@
 					/obj/item/storage/backpack/satchel/hyd = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,
 					/obj/item/clothing/neck/apron/labor = 3,
-					/obj/item/clothing/suit/overalls = 5,
+					/obj/item/clothing/suit/armor/outfit/overalls/farmer = 5,
 					/obj/item/clothing/under/rank/civilian/hydroponics = 5,
 					/obj/item/clothing/under/rank/civilian/hydroponics/skirt = 5,
 					/obj/item/clothing/mask/bandana = 4)

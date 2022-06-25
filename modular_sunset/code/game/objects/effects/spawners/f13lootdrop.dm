@@ -16,7 +16,7 @@
 /obj/effect/spawner/bundle/f13/armor/goner/green
 	name = "green trencher outfit spawner"
 	items = list(
-		/obj/item/clothing/suit/goner/green,
+		/obj/item/clothing/suit/armor/outfit/duster/goner/green,
 		/obj/effect/spawner/lootdrop/f13/gasmask_goner,
 		/obj/item/clothing/head/helmet/f13/goner/green
 	)

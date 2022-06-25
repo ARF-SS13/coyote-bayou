@@ -43,7 +43,7 @@
 */
 
 //Fallout 50s
-/obj/item/clothing/suit/overalls
+/obj/item/clothing/suit/armor/outfit/overalls/farmer
 	name = "overalls"
 	desc = "A set of denim overalls suitable for farming."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
@@ -53,7 +53,7 @@
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	allowed = list(/obj/item/hatchet, /obj/item/scythe, /obj/item/cultivator, /obj/item/shovel)
 
-/obj/item/clothing/suit/vest
+/obj/item/clothing/suit/armor/outfit/vest
 	name = "tan vest"
 	desc = "It's a vest made of tanned leather."
 	icon_state = "tanleather"
@@ -61,14 +61,14 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/battlecruiser //Do we have Star Craft here as well?!
+/obj/item/clothing/suit/armor/outfit/jacket/battlecruiser //Do we have Star Craft here as well?!
 	name = "captain's coat"
 	desc = "Battlecruiser operational!"
 	icon_state = "battlecruiser"
 	item_state = "hostrench"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/cowboybvest //Originally cowboy stuff by Nienhaus
+/obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
 	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboybvest"
@@ -76,7 +76,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/westender
+/obj/item/clothing/suit/armor/outfit/vest/bartender
 	name = "bartenders vest"
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
@@ -84,7 +84,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
 
-/obj/item/clothing/suit/cowboygvest
+/obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
 	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboygvest"
@@ -92,7 +92,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/ghost_sheet
+/obj/item/clothing/suit/armor/outfit/costume/ghost
 	name = "ghost sheet"
 	desc = "The hands float by themselves, so it's extra spooky."
 	icon_state = "ghost_sheet"
@@ -104,32 +104,32 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 //Fallout 13 various suits directory
-/obj/item/clothing/suit/robe_liz
+/obj/item/clothing/suit/armor/outfit/duster/tan_robe
 	name = "tan robe"
 	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
 
-/obj/item/clothing/suit/mantle_liz
+/obj/item/clothing/suit/armor/outfit/jacket/mantle
 	name = "hide mantle"
 	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
 
-/obj/item/clothing/suit/mfp //Mad Max 1 1979 babe!
+/obj/item/clothing/suit/armor/outfit/jacket/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
 	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
 	icon_state = "mfp"
 	item_state = "hostrench"
 	armor = list("melee" = 25, "bullet" = 20, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/mfp/raider
+/obj/item/clothing/suit/armor/outfit/jacket/mfp/raider
 	name = "offbeat jacket"
 	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
 	icon_state = "mfp_raider"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/lonesome
+/obj/item/clothing/suit/armor/outfit/duster/lonesome
 	name = "lonesome duster"
 	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
 	icon_state = "courier"
@@ -137,14 +137,14 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/veteran
+/obj/item/clothing/suit/armor/outfit/jacket/merc
 	name = "merc veteran coat"
 	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
 	icon_state = "veteran"
 	item_state = "suit-command"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/duster
+/obj/item/clothing/suit/armor/outfit/duster
 	name = "duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
 	icon_state = "duster"
@@ -152,7 +152,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/sheriff
+/obj/item/clothing/suit/armor/outfit/duster/sheriff
 	name = "sheriff duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
 	icon_state = "sheriff"
@@ -161,7 +161,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
-/obj/item/clothing/suit/banker
+/obj/item/clothing/suit/armor/outfit/jacket/banker
 	name = "bankers tailcoat"
 	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
 	icon_state = "banker"
@@ -169,7 +169,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/autumn //Based of Colonel Autumn's uniform.
+/obj/item/clothing/suit/armor/outfit/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
 	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
 	icon_state = "autumn"
@@ -179,7 +179,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 
-/obj/item/clothing/suit/hubologist
+/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
@@ -187,14 +187,14 @@
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/sexymaid
+/obj/item/clothing/suit/armor/outfit/overalls/sexymaid
 	name = "sexy maid outfit"
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
 	body_parts_covered = CHEST
 
-/obj/item/clothing/suit/blacksmith_apron
+/obj/item/clothing/suit/armor/outfit/overalls/blacksmith
 	name = "blacksmith apron"
 	desc = "A heavy leather apron designed for protecting the user when metalforging."
 	icon_state = "opifex_apron"

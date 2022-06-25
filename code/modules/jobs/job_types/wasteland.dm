@@ -408,7 +408,7 @@ Raider
 		/obj/item/clothing/under/f13/roving)
 	suit = pick(
 		/obj/item/clothing/suit/armor/kit, \
-		/obj/item/clothing/suit/veteran, \
+		/obj/item/clothing/suit/armor/outfit/jacket/merc, \
 		/obj/item/clothing/suit/toggle/labcoat/wanderer)
 
 /datum/outfit/loadout/salvager

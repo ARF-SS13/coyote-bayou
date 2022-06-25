@@ -179,7 +179,7 @@
 	/obj/item/clothing/shoes/f13/rag = 1,
 	/obj/item/clothing/under/f13/brahmin = 1,
 	/obj/item/clothing/under/f13/settler = 1,
-	/obj/item/clothing/suit/vest = 1)
+	/obj/item/clothing/suit/armor/outfit/vest = 1)
 */
 /obj/effect/spawner/lootdrop/clothing_middle
 /*	color = "#FF0000"
@@ -195,7 +195,7 @@
 	/obj/item/clothing/suit/armor/medium/combat_mk1 = 1,
 	/obj/item/clothing/suit/armor/kit = 1,
 	/obj/item/clothing/suit/armor/yankee = 1,
-	/obj/item/clothing/suit/veteran = 1,
+	/obj/item/clothing/suit/armor/outfit/jacket/merc = 1,
 	/obj/item/clothing/under/f13/cyberpunk = 1,
 	/obj/item/clothing/under/f13/combat = 1,
 	/obj/item/clothing/under/f13/petrochico = 1)

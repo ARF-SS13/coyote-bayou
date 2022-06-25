@@ -74,8 +74,8 @@
 	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproff armor, a few union suits and some warm hats!"
 	contraband = TRUE
 	cost = 5750 // Its basicly sec suits, good boots/gloves
-	contains = list(/obj/item/clothing/suit/armor/navyblue/russian,
-					/obj/item/clothing/suit/armor/navyblue/russian,
+	contains = list(/obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian,
+					/obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/shoes/combat,
 					/obj/item/clothing/head/ushanka,
@@ -117,8 +117,8 @@
 	cost = 3250
 	contains = list(/obj/item/clothing/under/rank/security/officer/formal,
 					/obj/item/clothing/under/rank/security/officer/formal,
-					/obj/item/clothing/suit/armor/navyblue,
-					/obj/item/clothing/suit/armor/navyblue,
+					/obj/item/clothing/suit/armor/outfit/jacket/navyblue,
+					/obj/item/clothing/suit/armor/outfit/jacket/navyblue,
 					/obj/item/clothing/head/beret/sec/navyofficer,
 					/obj/item/clothing/head/beret/sec/navyofficer,
 					/obj/item/clothing/under/rank/security/warden/formal,

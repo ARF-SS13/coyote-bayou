@@ -233,7 +233,7 @@
 					/obj/item/clothing/under/f13/fprostitute = 5,
 					/obj/item/clothing/under/f13/raiderharness = 3,
 					/obj/item/clothing/under/f13/ravenharness = 3,
-					/obj/item/clothing/suit/sexymaid = 5,
+					/obj/item/clothing/suit/armor/outfit/overalls/sexymaid = 5,
 					/obj/item/clothing/suit/armor/light/duster/brahmin = 3,
 					/obj/item/clothing/head/helmet/f13/brahmincowboyhat = 3,
 					/obj/item/restraints/handcuffs/fake/kinky = 5,

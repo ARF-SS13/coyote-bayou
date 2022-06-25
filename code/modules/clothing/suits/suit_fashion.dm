@@ -231,21 +231,21 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0)
 
 
-/obj/item/clothing/suit/hubologist
+/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
 	item_state = "wcoat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	
-/obj/item/clothing/suit/sexymaid
+/obj/item/clothing/suit/armor/outfit/overalls/sexymaid
 	name = "sexy maid outfit"
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
 	body_parts_covered = CHEST
 
-/obj/item/clothing/suit/banker
+/obj/item/clothing/suit/armor/outfit/jacket/banker
 	name = "bankers tailcoat"
 	desc = "A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
 	icon_state = "banker"
@@ -253,34 +253,34 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 //Fallout 50s
-/obj/item/clothing/suit/robe_liz
+/obj/item/clothing/suit/armor/outfit/duster/tan_robe
 	name = "tan robe"
 	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
 
-/obj/item/clothing/suit/vest
+/obj/item/clothing/suit/armor/outfit/vest
 	name = "tan vest"
 	desc = "It's a vest made of tanned leather."
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/cowboybvest //Originally cowboy stuff by Nienhaus
+/obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
 	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboybvest"
 	item_state = "lb_suit"
 	body_parts_covered = CHEST|GROIN|LEGS
 
-/obj/item/clothing/suit/westender
+/obj/item/clothing/suit/armor/outfit/vest/bartender
 	name = "bartenders vest"
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
 	item_state = "lb_suit"
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/cowboygvest
+/obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
 	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
 	icon_state = "cowboygvest"
@@ -367,7 +367,7 @@
 	alternate_worn_layer = ABOVE_BODY_FRONT_LAYER //so the bedsheet goes over everything but fire
 	mutantrace_variation = NONE
 
-/obj/item/clothing/suit/ghost_sheet
+/obj/item/clothing/suit/armor/outfit/costume/ghost
 	name = "ghost sheet"
 	desc = "The hands float by themselves, so it's extra spooky."
 	icon_state = "ghost_sheet"

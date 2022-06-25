@@ -114,7 +114,7 @@ Mayor
 	name = "High Roller"
 	backpack_contents = list(
 		/obj/item/clothing/glasses/orange = 1,
-		/obj/item/clothing/suit/vest = 1,
+		/obj/item/clothing/suit/armor/outfit/vest = 1,
 		/obj/item/clothing/under/f13/sleazeball = 1,
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/toy/cards/deck/unum = 1,
@@ -637,7 +637,7 @@ Mayor
 	name = "Rugged"
 	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	uniform = /obj/item/clothing/under/f13/cowboyb
-	suit = /obj/item/clothing/suit/cowboybvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	gloves = /obj/item/clothing/gloves/color/brown
 	shoes = /obj/item/clothing/shoes/f13/brownie
 
@@ -646,7 +646,7 @@ Mayor
 	head = /obj/item/clothing/head/bowler
 	mask = /obj/item/clothing/mask/fakemoustache
 	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/westender
+	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/f13/fancy
 
@@ -757,7 +757,7 @@ Mayor
 /datum/outfit/loadout/outdoorsman
 	name = "Outdoorsman"
 	head = /obj/item/clothing/head/f13/beaver
-	suit = /obj/item/clothing/suit/cowboybvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	belt = /obj/item/storage/belt/bandolier
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
@@ -882,7 +882,7 @@ Mayor
 	head = /obj/item/clothing/head/collectable/tophat
 	glasses = /obj/item/clothing/glasses/monocle
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/banker
+	suit = /obj/item/clothing/suit/armor/outfit/jacket/banker
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
@@ -897,7 +897,7 @@ Mayor
 	name = "Loanshark"
 	glasses = /obj/item/clothing/glasses/orange
 	mask = /obj/item/clothing/mask/cigarette/cigar
-	suit = /obj/item/clothing/suit/vest
+	suit = /obj/item/clothing/suit/armor/outfit/vest
 	uniform = /obj/item/clothing/under/f13/sleazeball
 	shoes = /obj/item/clothing/shoes/sandal
 	backpack_contents = list(

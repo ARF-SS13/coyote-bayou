@@ -135,7 +135,7 @@
 /datum/outfit/russiancorpse/officer
 	name = "Russian Officer Corpse"
 	uniform = /obj/item/clothing/under/costume/russian_officer
-	suit = /obj/item/clothing/suit/armor/navyblue/russian
+	suit = /obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset
 	head = /obj/item/clothing/head/ushanka

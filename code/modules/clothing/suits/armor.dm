@@ -17,7 +17,7 @@
 	if(!allowed)
 		allowed = GLOB.security_vest_allowed
 
-/obj/item/clothing/suit/armor/navyblue
+/obj/item/clothing/suit/armor/outfit/jacket/navyblue
 	name = "security officer's jacket"
 	desc = "This jacket is for those special occasions when a security officer isn't required to wear their armor."
 	icon_state = "officerbluejacket"

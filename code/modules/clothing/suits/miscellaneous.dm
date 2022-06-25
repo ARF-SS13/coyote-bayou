@@ -312,7 +312,7 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/suit/armor/navyblue/russian
+/obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian
 	name = "\improper Russian officer's jacket"
 	desc = "This jacket is for those special occasions when a russian officer isn't required to wear their armor."
 	icon_state = "officertanjacket"
@@ -916,7 +916,7 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_cuirass_old"
 
-/obj/item/clothing/suit/ghost_sheet
+/obj/item/clothing/suit/armor/outfit/costume/ghost
 	name = "ghost sheet"
 	desc = "The hands float by themselves, so it's extra spooky."
 	icon_state = "ghost_sheet"
