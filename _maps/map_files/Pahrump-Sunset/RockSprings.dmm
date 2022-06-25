@@ -639,13 +639,11 @@
 "du" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor2";
-	tag = "icon-floor2";
 	pixel_x = -12
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
 	},
 /area/space)
 "dB" = (
@@ -945,7 +943,6 @@
 "fv" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalleftborderleft1";
-	tag = "icon-verticalleftborderleft1"
 	},
 /area/space)
 "fz" = (
@@ -995,7 +992,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
 	},
 /area/space)
 "fS" = (
@@ -1154,7 +1150,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (EAST)"
 	},
 /area/space)
 "hh" = (
@@ -1293,7 +1288,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirt";
-	tag = "icon-dirt (WEST)"
 	},
 /area/space)
 "hL" = (
@@ -1311,7 +1305,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 6;
 	icon_state = "dirt";
-	tag = "icon-dirt (SOUTHEAST)"
 	},
 /area/space)
 "hP" = (
@@ -1729,7 +1722,6 @@
 "kH" = (
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	icon_state = "dirt";
-	tag = "icon-dirt"
 	},
 /area/space)
 "kM" = (
@@ -1770,7 +1762,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirt";
-	tag = "icon-dirt (WEST)"
 	},
 /area/space)
 "lh" = (
@@ -2134,7 +2125,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (EAST)"
 	},
 /area/space)
 "nL" = (
@@ -2513,7 +2503,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 4;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (EAST)"
 	},
 /area/space)
 "qM" = (
@@ -2555,7 +2544,6 @@
 "ra" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
 	},
 /area/space)
 "rb" = (
@@ -2859,7 +2847,6 @@
 /obj/structure/nest/molerat,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole";
-	tag = "icon-hole"
 	},
 /area/space)
 "tF" = (
@@ -3098,7 +3085,6 @@
 /obj/structure/window/fulltile/house{
 	dir = 2;
 	icon_state = "housewindowvertical";
-	tag = "icon-housewindowvertical"
 	},
 /obj/machinery/door/poddoor/shutters/old/preopen{
 	id = "poseidon";
@@ -3175,7 +3161,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (WEST)"
 	},
 /area/space)
 "wi" = (
@@ -3278,7 +3263,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "wN" = (
@@ -3431,7 +3415,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
 	},
 /area/space)
 "yf" = (
@@ -3517,7 +3500,6 @@
 "yJ" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright1";
-	tag = "icon-verticalrightborderright1"
 	},
 /area/space)
 "yO" = (
@@ -3577,7 +3559,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 1;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (NORTH)"
 	},
 /area/space)
 "zl" = (
@@ -3905,7 +3886,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirt";
-	tag = "icon-dirt (WEST)"
 	},
 /area/space)
 "BI" = (
@@ -3955,7 +3935,6 @@
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0";
-	tag = "icon-verticalrightborderright0"
 	},
 /area/space)
 "BV" = (
@@ -3992,7 +3971,6 @@
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "Cm" = (
@@ -4084,7 +4062,6 @@
 "CP" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2right";
-	tag = "icon-horizontaltopbordertop2right"
 	},
 /area/space)
 "CR" = (
@@ -4296,7 +4273,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 9;
 	icon_state = "dirt";
-	tag = "icon-dirt (NORTHWEST)"
 	},
 /area/space)
 "Eu" = (
@@ -4497,7 +4473,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (EAST)"
 	},
 /area/space)
 "Gk" = (
@@ -4552,7 +4527,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 1;
 	icon_state = "outerborder";
-	tag = "icon-outerborder (NORTH)"
 	},
 /area/space)
 "Gz" = (
@@ -5189,7 +5163,6 @@
 "Lz" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0";
-	tag = "icon-horizontalbottomborderbottom0"
 	},
 /area/space)
 "LC" = (
@@ -5270,7 +5243,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 8;
 	icon_state = "dirtcorner";
-	tag = "icon-dirtcorner (WEST)"
 	},
 /area/space)
 "Mg" = (
@@ -5634,7 +5606,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerbordercorner";
-	tag = "icon-outerbordercorner (WEST)"
 	},
 /area/space)
 "Oh" = (
@@ -5827,7 +5798,6 @@
 /turf/open/indestructible/ground/outside/dirt/harsh{
 	dir = 5;
 	icon_state = "dirt";
-	tag = "icon-dirt (NORTHEAST)"
 	},
 /area/space)
 "PO" = (
@@ -6773,7 +6743,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
 	icon_state = "outerturn";
-	tag = "icon-outerturn (EAST)"
 	},
 /area/f13/building{
 	name = "Rocksprings - Tunnel"
