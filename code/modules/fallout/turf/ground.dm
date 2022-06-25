@@ -192,8 +192,6 @@
 	if(prob(2))
 		var/obj/derp = pickweight(loots)
 		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
 	for(var/direction in GLOB.cardinals)
@@ -216,8 +214,6 @@
 	if(prob(2))
 		var/obj/derp = pickweight(loots)
 		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
 
@@ -240,33 +236,6 @@
 
 /obj/effect/overlay/desert/sonora/edge/corner
 	icon_state = "desertcorner"
-
-/turf/open/indestructible/ground/outside/desert/plantGrass(Plantforce = FALSE)
-	var/Weight = 0
-	var/randPlant = null
-
-	//spontaneously spawn grass
-	if(Plantforce || prob(GRASS_SPONTANEOUS_GROUND))
-		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST_GROUND) //Create a new grass object at this location, and assign var
-		turfPlant = new randPlant(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return .
-
-	//loop through neighbouring desert turfs, if they have grass, then increase weight
-	for(var/turf/open/indestructible/ground/outside/desert/T in RANGE_TURFS(3, src))
-		if(T.turfPlant)
-			Weight += GRASS_WEIGHT
-
-	//use weight to try to spawn grass
-	if(prob(Weight))
-
-		//If surrounded on 5+ sides, pick from lush
-		if(Weight == (5 * GRASS_WEIGHT))
-			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST_GROUND)
-		else
-			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST_GROUND)
-		turfPlant = new randPlant(src)
-		. = TRUE
 
 /turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //I mean, it makes sense that deserts don't get slippery, I guess... :(
