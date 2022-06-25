@@ -1958,3 +1958,11 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	desc = "A uniform created by Kaleb alongside the laser muskets. On the breast is a patch of the Yuma 1st Irregulars, a sun over a wasteland desert, a cactus standing lonely in the middle. It denotes him as the Leader of the militia company."
 	icon_state = "gen_uniform"
 	item_state = "gen_uniform"
+
+/* /obj/item/clothing/suit/armor/light/duster
+	name = "duster"
+	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
+	icon_state = "duster"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS */
+

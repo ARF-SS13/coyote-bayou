@@ -111,7 +111,7 @@
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
-	path = /obj/item/clothing/suit/armor/outfit/duster/autumn
+	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
 

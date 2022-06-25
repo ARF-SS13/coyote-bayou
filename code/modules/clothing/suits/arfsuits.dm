@@ -217,6 +217,13 @@
 	body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/suit/armor/outfit/jacket/banker
+	name = "bankers tailcoat"
+	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
+	icon_state = "banker"
+	item_state = "banker"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -357,135 +364,6 @@
 	desc = "A protective & concealing parka hood."
 	icon_state = "armorhoodgrey"
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-
-////////////////
-//// DUSTER ////
-////////////////
-
-/obj/item/clothing/suit/armor/outfit/duster
-	name = "duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
-	icon_state = "duster"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/suit/armor/outfit/duster/tan_robe
-	name = "tan robe"
-	desc = "Only a monk would find this robe nice and comfortable."
-	icon_state = "robe_liz"
-	item_state = "brownjsuit"
-
-/obj/item/clothing/suit/armor/outfit/duster/lonesome
-	name = "lonesome duster"
-	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
-	icon_state = "courier"
-	item_state = "suit-command"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-
-/obj/item/clothing/suit/armor/outfit/duster/sheriff
-	name = "sheriff duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
-	icon_state = "sheriff"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-
-/obj/item/clothing/suit/armor/outfit/jacket/banker
-	name = "bankers tailcoat"
-	desc = " A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
-	icon_state = "banker"
-	item_state = "banker"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-
-/obj/item/clothing/suit/armor/outfit/duster/autumn //Based of Colonel Autumn's uniform.
-	name = "tan trenchcoat"
-	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
-	icon_state = "autumn"
-	item_state = "autumn"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-
-/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
-	name = "hubologist robe"
-	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
-	icon_state = "hubologist"
-	item_state = "wcoat"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/armor/outfit/duster/goner
-	name = "dev-patched dull trenchcoat"
-	desc = "A non-existent dull trenchcoat."
-	icon = 'modular_sunset/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/suit.dmi'
-	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/suit_digi.dmi'
-	icon_state = "goner_suit"
-	item_state = "ro_suit"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	mutantrace_variation = STYLE_DIGITIGRADE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-
-/* /obj/item/clothing/suit/armor/outfit/duster/goner/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate) */
-
-/obj/item/clothing/suit/armor/outfit/duster/goner/red
-	name = "red-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_r"
-
-/obj/item/clothing/suit/armor/outfit/duster/goner/green
-	name = "green-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_g"
-
-/obj/item/clothing/suit/armor/outfit/duster/goner/blue
-	name = "blue-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_b"
-
-/obj/item/clothing/suit/armor/outfit/duster/goner/yellow
-	name = "yellow-patched olive trenchcoat"
-	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
-	icon_state = "goner_suit_y"
-
-
-//these are dusters
-//Recipe bulletproof vest + duster, ranger recipe 
-/obj/item/clothing/suit/toggle/armored/ranger_duster
-	name = "ranger recon duster"
-	desc = "A light bulletproof vest under a high-quality duster. Popular with Rangers."
-	icon_state = "duster_recon"
-	item_state = "duster_recon"
-	permeability_coefficient = 0.9
-	heat_protection = CHEST | GROIN | LEGS
-	cold_protection = CHEST | GROIN | LEGS
-
-/obj/item/clothing/suit/hooded/cloak/desert
-	name = "desert cloak"
-	icon_state = "desertcloak"
-	desc = "A practical cloak made out of animal hide."
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-
-/obj/item/clothing/head/hooded/cloakhood/desert
-	name = "desert cloak hood"
-	icon_state = "desertcloak"
-	desc = "A protective and concealing hood."
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-
-/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
-	name = "Raven cloak"
-	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
-	icon_state = "raven_cloak"
-	item_state = "raven_cloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-
-/obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-	name = "Raven cloak hood"
-	desc = "A hood fashioned out of patchwork and feathers"
-	icon_state = "raven_hood"
-	item_state = "raven_hood"
 
 /////////////////
 //// COSTUME ////
@@ -929,6 +807,102 @@
 	desc = " A weather treated leather cowboy outfit.  Yeehaw Pard'!"
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
+
+/obj/item/clothing/suit/armor/light/duster/tan_robe
+	name = "tan robe"
+	desc = "Only a monk would find this robe nice and comfortable."
+	icon_state = "robe_liz"
+	item_state = "brownjsuit"
+
+/obj/item/clothing/suit/armor/light/duster/sheriff
+	name = "sheriff duster"
+	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
+	icon_state = "sheriff"
+	item_state = "det_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+
+/obj/item/clothing/suit/armor/light/duster/robe_hubologist
+	name = "hubologist robe"
+	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
+	icon_state = "hubologist"
+	item_state = "wcoat"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/armor/light/duster/goner
+	name = "dev-patched dull trenchcoat"
+	desc = "A non-existent dull trenchcoat."
+	icon = 'modular_sunset/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_sunset/icons/mob/clothing/suit.dmi'
+	anthro_mob_worn_overlay = 'modular_sunset/icons/mob/clothing/suit_digi.dmi'
+	icon_state = "goner_suit"
+	item_state = "ro_suit"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	mutantrace_variation = STYLE_DIGITIGRADE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
+/* /obj/item/clothing/suit/armor/light/duster/goner/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate) */
+
+/obj/item/clothing/suit/armor/light/duster/goner/red
+	name = "red-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_r"
+
+/obj/item/clothing/suit/armor/light/duster/goner/green
+	name = "green-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_g"
+
+/obj/item/clothing/suit/armor/light/duster/goner/blue
+	name = "blue-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_b"
+
+/obj/item/clothing/suit/armor/light/duster/goner/yellow
+	name = "yellow-patched olive trenchcoat"
+	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
+	icon_state = "goner_suit_y"
+
+
+//these are dusters
+//Recipe bulletproof vest + duster, ranger recipe 
+/obj/item/clothing/suit/toggle/armored/ranger_duster
+	name = "ranger recon duster"
+	desc = "A light bulletproof vest under a high-quality duster. Popular with Rangers."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	permeability_coefficient = 0.9
+	heat_protection = CHEST | GROIN | LEGS
+	cold_protection = CHEST | GROIN | LEGS
+
+/obj/item/clothing/suit/hooded/cloak/desert
+	name = "desert cloak"
+	icon_state = "desertcloak"
+	desc = "A practical cloak made out of animal hide."
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+
+/obj/item/clothing/head/hooded/cloakhood/desert
+	name = "desert cloak hood"
+	icon_state = "desertcloak"
+	desc = "A protective and concealing hood."
+	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
+	name = "Raven cloak"
+	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
+	icon_state = "raven_cloak"
+	item_state = "raven_cloak"
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
+
+/obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
+	name = "Raven cloak hood"
+	desc = "A hood fashioned out of patchwork and feathers"
+	icon_state = "raven_hood"
+	item_state = "raven_hood"
+
 
 ///////////
 // VESTS //

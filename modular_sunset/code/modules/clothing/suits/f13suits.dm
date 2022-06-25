@@ -8,7 +8,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	(unless suit doesn't cover legs in `body_parts_covered` var)
 */
 
-/obj/item/clothing/suit/armor/outfit/duster/goner
+/obj/item/clothing/suit/armor/light/duster/goner
 	name = "dev-patched dull trenchcoat"
 	desc = "A non-existent dull trenchcoat."
 	icon = 'modular_sunset/icons/obj/clothing/suits.dmi'
@@ -21,26 +21,26 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	mutantrace_variation = STYLE_DIGITIGRADE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
-/obj/item/clothing/suit/armor/outfit/duster/goner/Initialize()
+/obj/item/clothing/suit/armor/light/duster/goner/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/outfit/duster/goner/red
+/obj/item/clothing/suit/armor/light/duster/goner/red
 	name = "red-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with red linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_r"
 
-/obj/item/clothing/suit/armor/outfit/duster/goner/green
+/obj/item/clothing/suit/armor/light/duster/goner/green
 	name = "green-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with green linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_g"
 
-/obj/item/clothing/suit/armor/outfit/duster/goner/blue
+/obj/item/clothing/suit/armor/light/duster/goner/blue
 	name = "blue-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with blue linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_b"
 
-/obj/item/clothing/suit/armor/outfit/duster/goner/yellow
+/obj/item/clothing/suit/armor/light/duster/goner/yellow
 	name = "yellow-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"

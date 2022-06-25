@@ -231,7 +231,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0)
 
 
-/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
+/obj/item/clothing/suit/armor/light/duster/robe_hubologist
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"
@@ -253,7 +253,7 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 //Fallout 50s
-/obj/item/clothing/suit/armor/outfit/duster/tan_robe
+/obj/item/clothing/suit/armor/light/duster/tan_robe
 	name = "tan robe"
 	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"

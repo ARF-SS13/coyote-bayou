@@ -104,7 +104,7 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
 //Fallout 13 various suits directory
-/obj/item/clothing/suit/armor/outfit/duster/tan_robe
+/obj/item/clothing/suit/armor/light/duster/tan_robe
 	name = "tan robe"
 	desc = "Only a monk would find this robe nice and comfortable."
 	icon_state = "robe_liz"
@@ -129,7 +129,7 @@
 	icon_state = "mfp_raider"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/armor/outfit/duster/lonesome
+/obj/item/clothing/suit/armor/light/duster/lonesome
 	name = "lonesome duster"
 	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
 	icon_state = "courier"
@@ -144,7 +144,7 @@
 	item_state = "suit-command"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/armor/outfit/duster
+/obj/item/clothing/suit/armor/light/duster
 	name = "duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of fearsome bounty hunter."
 	icon_state = "duster"
@@ -152,7 +152,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/armor/outfit/duster/sheriff
+/obj/item/clothing/suit/armor/light/duster/sheriff
 	name = "sheriff duster"
 	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
 	icon_state = "sheriff"
@@ -169,7 +169,7 @@
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
-/obj/item/clothing/suit/armor/outfit/duster/autumn //Based of Colonel Autumn's uniform.
+/obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
 	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
 	icon_state = "autumn"
@@ -179,7 +179,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 
-/obj/item/clothing/suit/armor/outfit/duster/robe_hubologist
+/obj/item/clothing/suit/armor/light/duster/robe_hubologist
 	name = "hubologist robe"
 	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
 	icon_state = "hubologist"

@@ -348,7 +348,7 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/head/helmet/f13/raider/psychotic,
 	/obj/item/clothing/suit/armor/medium/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
-	/obj/item/clothing/suit/armor/outfit/duster,
+	/obj/item/clothing/suit/armor/light/duster,
 	/obj/item/clothing/suit/armor/medium/raider/iconoclast
 ))
 
