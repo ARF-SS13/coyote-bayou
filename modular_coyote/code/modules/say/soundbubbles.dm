@@ -1,21 +1,24 @@
 // Author Gremling
 // by request of the overlord FennyKong, I have granted his wish by designing a method to allow users to have a sound play when typing, or finished typing.
 #define NO_SOUND		1
-#define PLAY_TYPING		2
-#define PLAY_FINISHED	3
+#define PLAY_STARTING	2
+#define PLAY_TYPING		3
+#define PLAY_FINISHED	4
 
 GLOBAL_LIST_INIT(play_methods, list("No Sound",
-									"Play sound when you type",
+									"Play sound when you begin typing",
+									"Loop sound while you type",
 									"Play sound after you type"))
 
 GLOBAL_LIST_INIT(typing_indicator_sounds, list(
-		"Default"	= 'modular_coyote/sound/typing/default.ogg'
+		"Default"	= 'modular_coyote/sound/typing/default.ogg',
+		"FB Messenger"	= 'modular_coyote/sound/typing/facebookMessenger.ogg'
 		))
 
 
 /datum/looping_sound/typing_indicator
 	mid_length = 30
-	volume = 30
+	volume = 15
 
 /datum/looping_sound/typing_indicator/start(atom/add_thing)
 	output_atoms = get_hearers_in_view(7,usr)
@@ -26,7 +29,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 
 /datum/preferences
 	var/typing_indicator_sound = 'modular_coyote/sound/typing/default.ogg'
-	var/typing_indicator_sound_play = PLAY_TYPING
+	var/typing_indicator_sound_play = PLAY_STARTING
 
 /mob
 	var/datum/looping_sound/typing_indicator/typing_sound
@@ -56,6 +59,9 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	if(((!typing_indicator_enabled || (stat != CONSCIOUS)) && !force) || typing_indicator_current)
 		return
 
+	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_STARTING])
+		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound], 15, FALSE)
+
 	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_TYPING])
 		if(typing_sound)
 			typing_sound.mid_sounds = list(GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound])
@@ -67,6 +73,9 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 /mob/clear_typing_indicator()
 	if(typing_sound)
 		typing_sound.stop()
+
+	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_FINISHED])
+		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound], 15, FALSE)
 
 	return ..()
 
