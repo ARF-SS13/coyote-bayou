@@ -53,9 +53,6 @@
 	///is the mob currently ascending or descending through z levels?
 	var/currently_z_moving
 
-	/// Whether this atom should have its dir automatically changed when it moves. Setting this to FALSE allows for things such as directional windows to retain dir on moving without snowflake code all of the place.
-	var/set_dir_on_move = TRUE
-
 	///how many times a this movable had movement procs called on it since Moved() was last called
 	var/move_stacks = 0
 
@@ -73,10 +70,6 @@
 	
 	/// Whether this atom should have its dir automatically changed when it moves. Setting this to FALSE allows for things such as directional windows to retain dir on moving without snowflake code all of the place.
 	var/set_dir_on_move = TRUE
-	///how many times a this movable had movement procs called on it since Moved() was last called
-	var/move_stacks = 0
-
-
 
 /atom/movable/Initialize(mapload)
 	. = ..()
