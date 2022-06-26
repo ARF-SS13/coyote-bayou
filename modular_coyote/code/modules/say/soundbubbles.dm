@@ -62,6 +62,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 //lmfao at lizard ~TK420634
 
 /datum/looping_sound/typing_indicator
+	mid_sounds = list('modular_coyote/sound/typing/default.ogg')
 	mid_length = 30
 	volume = 15
 
