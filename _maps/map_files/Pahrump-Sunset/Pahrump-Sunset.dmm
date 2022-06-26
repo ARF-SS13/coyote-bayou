@@ -8055,11 +8055,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "azL" = (
-/obj/structure/simple_door/metal/store,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 10
 	},
@@ -12410,8 +12413,11 @@
 	},
 /area/f13/building/mall)
 "aMy" = (
-/obj/structure/simple_door/house,
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
 	},
@@ -12649,9 +12655,7 @@
 	},
 /area/f13/wasteland/west)
 "aNf" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
+/obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aNg" = (
@@ -28076,6 +28080,16 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/museum)
+"dIv" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 30;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "dIT" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -33295,11 +33309,12 @@
 	},
 /area/f13/building)
 "gza" = (
-/obj/structure/simple_door/house{
-	req_one_access_txt = "124"
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
@@ -38073,6 +38088,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "jaE" = (
@@ -44094,11 +44112,14 @@
 	},
 /area/f13/wasteland/east)
 "mox" = (
-/obj/structure/simple_door/house,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
+	req_one_access_txt = "124"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
 	},
@@ -44370,10 +44391,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
 "mvY" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/book/granter/trait/lowsurgery,
+/obj/structure/closet/crate/freezer/surplus_limbs,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "mwd" = (
@@ -48711,13 +48729,13 @@
 /turf/open/floor/carpet,
 /area/f13/building/mall)
 "oMX" = (
-/obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/machinery/vending/wardrobe/medi_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "oMY" = (
@@ -51762,7 +51780,14 @@
 	},
 /area/f13/building)
 "quc" = (
-/obj/structure/simple_door/metal/store,
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
+	req_one_access_txt = "124"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "followersdeskshutters";
+	name = "followers shutters"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "qum" = (
@@ -56668,7 +56693,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/east)
 "tht" = (
-/obj/structure/simple_door/metal/store{
+/obj/machinery/door/airlock/medical{
+	name = "Clinic Morgue";
 	req_one_access_txt = "124"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -61019,6 +61045,10 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/massfusion)
+"vtu" = (
+/obj/machinery/vending/wardrobe/chem_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "vtR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
@@ -63894,10 +63924,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xbq" = (
-/obj/machinery/autolathe/constructionlathe,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 4;
-	icon_state = "outerbordercorner"
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = -3;
+	pixel_y = -31
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
 "xby" = (
@@ -113070,9 +113102,9 @@ aFP
 aEt
 aGq
 ijr
-kXK
+vtu
 oMX
-gSw
+aNf
 ijr
 aEs
 aKA
@@ -113080,7 +113112,7 @@ ijr
 aOj
 fWG
 fWG
-aHT
+xbq
 ijr
 jkY
 tFm
@@ -113329,7 +113361,7 @@ aKA
 ijr
 aFD
 aFD
-aNf
+tFm
 ijr
 aEs
 aKA
@@ -114864,7 +114896,7 @@ ijr
 lkm
 aBE
 nBO
-xbq
+tJV
 aFP
 aEt
 aGq
@@ -115135,7 +115167,7 @@ aGq
 ijr
 mWv
 deq
-aDb
+dIv
 qGH
 ijr
 fut
