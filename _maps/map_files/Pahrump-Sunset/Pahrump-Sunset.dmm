@@ -12655,7 +12655,7 @@
 	},
 /area/f13/wasteland/west)
 "aNf" = (
-/obj/machinery/vending/wardrobe/science_wardrobe,
+/obj/machinery/vending/wardrobe/chem_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aNg" = (
@@ -17637,9 +17637,8 @@
 /area/f13/building)
 "bea" = (
 /obj/structure/wreck/trash/one_barrel,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 7;
-	icon_state = "outerpavement"
+/turf/open/indestructible/ground/outside/roaddirt{
+	icon_state = "innerpavement"
 	},
 /area/f13/wasteland/west)
 "beb" = (
@@ -19999,9 +19998,8 @@
 /area/f13/city/bighorn)
 "bly" = (
 /obj/machinery/vending/cola/random,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 7;
-	icon_state = "outerpavement"
+/turf/open/indestructible/ground/outside/roaddirt{
+	icon_state = "innerpavement"
 	},
 /area/f13/wasteland/west)
 "blz" = (
@@ -25462,6 +25460,10 @@
 /obj/structure/wreck/car,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/east)
+"crI" = (
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "crK" = (
 /obj/structure/fermenting_barrel{
 	name = "XANDER"
@@ -26977,7 +26979,10 @@
 /turf/open/water,
 /area/f13/caves)
 "deq" = (
-/obj/machinery/vending/medical,
+/obj/machinery/vending/medical{
+	density = 0;
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "det" = (
@@ -28080,16 +28085,6 @@
 	icon_state = "yellowrustyfull"
 	},
 /area/f13/building/museum)
-"dIv" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = 30;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "dIT" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -38088,9 +38083,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
-/obj/item/reagent_containers/blood/radaway,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "jaE" = (
@@ -44391,7 +44383,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
 "mvY" = (
-/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/structure/rack,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/reagent_containers/blood/radaway,
+/obj/item/book/granter/trait/lowsurgery,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "mwd" = (
@@ -48735,7 +48730,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "oMY" = (
@@ -51784,10 +51779,6 @@
 	name = "Clinic Morgue";
 	req_one_access_txt = "124"
 	},
-/obj/machinery/door/poddoor/shutters{
-	id = "followersdeskshutters";
-	name = "followers shutters"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "qum" = (
@@ -54165,6 +54156,14 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/museum)
+"rKk" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/building/hospital)
 "rKl" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/decal/cleanable/dirt{
@@ -61045,10 +61044,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/massfusion)
-"vtu" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "vtR" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
@@ -63924,13 +63919,15 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xbq" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/crate/freezer/surplus_limbs,
 /obj/machinery/defibrillator_mount/loaded{
-	pixel_x = -3;
-	pixel_y = -31
+	pixel_y = -1;
+	pixel_x = 27
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "xby" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -90311,7 +90308,7 @@ vOV
 vOV
 vOV
 vOV
-uki
+rld
 rma
 kyv
 kYj
@@ -92624,7 +92621,7 @@ xyU
 kVQ
 xyU
 bcW
-uki
+rld
 rma
 dcT
 lVn
@@ -92881,7 +92878,7 @@ kVQ
 kVQ
 asF
 bcE
-uki
+rld
 rma
 dcT
 aeq
@@ -93138,7 +93135,7 @@ bda
 asm
 bdC
 abP
-uki
+rld
 rma
 dcT
 kYj
@@ -93652,7 +93649,7 @@ vOV
 vOV
 kdH
 vOV
-uki
+rld
 rma
 dcT
 lVn
@@ -96192,37 +96189,37 @@ aCN
 aCN
 aaQ
 ixn
-wEd
-wEd
-nqR
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-rnk
-gfu
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+lgz
+dVt
 rma
 dcT
 lKq
@@ -113102,7 +113099,7 @@ aFP
 aEt
 aGq
 ijr
-vtu
+crI
 oMX
 aNf
 ijr
@@ -113112,7 +113109,7 @@ ijr
 aOj
 fWG
 fWG
-xbq
+rKk
 ijr
 jkY
 tFm
@@ -115167,7 +115164,7 @@ aGq
 ijr
 mWv
 deq
-dIv
+xbq
 qGH
 ijr
 fut
