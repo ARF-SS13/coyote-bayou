@@ -305,16 +305,6 @@
 		var/info = statspage ? "<a href='?action=openLink&link=[url_encode(statspage)][GLOB.round_id]'>[GLOB.round_id]</a>" : GLOB.round_id
 		parts += "[FOURSPACES]Round ID: <b>[info]</b>"
 
-	var/list/voting_results = SSvote.stored_gamemode_votes
-
-	if(length(voting_results))
-		parts += "[FOURSPACES]Voting: "
-		var/total_score = 0
-		for(var/choice in voting_results)
-			var/score = voting_results[choice]
-			total_score += score
-			parts += "[FOURSPACES][FOURSPACES][choice]: [score]"
-
 	parts += "[FOURSPACES]Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
 	//parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len

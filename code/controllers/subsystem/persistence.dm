@@ -16,6 +16,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/saved_storytellers = list("foo","bar","baz")
 	var/list/average_dynamic_threat = 50
 	var/list/saved_maps
+	var/list/blocked_maps = list()
 	var/list/saved_trophies = list()
 	var/list/spawned_objects = list()
 	var/list/antag_rep = list()
