@@ -205,14 +205,14 @@
 	icon_state = "dtiger"
 
 /datum/sprite_accessory/tails/human/datashark
-	name = "datashark"
+	name = "Datashark"
 	icon_state = "datashark"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/tails_animated/human/datashark
-	name = "datashark"
+	name = "Datashark"
 	icon_state = "datashark"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
@@ -449,14 +449,14 @@
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/human/skunk
-	name = "skunk"
+	name = "Skunk"
 	icon_state = "skunk"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/tails_animated/human/skunk
-	name = "skunk"
+	name = "Skunk"
 	icon_state = "skunk"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
@@ -514,6 +514,34 @@
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails/human/triple_kitsune
+	name = "Triple Kitsune Tails"
+	icon_state = "3sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/triple_kitsune
+	name = "Triple Kitsune Tails"
+	icon_state = "3sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/human/takahiro_kitsune
+	name = "Takahiro Kitsune Tails" //takahiro had five tails i just wanted to follow the 'T' naming convention vs. tamamo and triple
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/takahiro_kitsune
+	name = "Takahiro Kitsune Tails"
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/tentacle
 	name = "Tentacle"
 	icon_state = "tentacle"
@@ -563,7 +591,7 @@
 /datum/sprite_accessory/tails/mam_tails
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	recommended_species = list("mammal", "slimeperson", "podweak", "felinid", "insect", "shadekin")
+	recommended_species = list("mammal", "slimeperson", "podweak", "felinid", "insect")
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 
 /datum/sprite_accessory/tails/mam_tails/none
@@ -768,12 +796,12 @@ datum/sprite_accessory/tails/mam_tails/insect
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails/mam_tails/kangaroo
-	name = "kangaroo"
+	name = "Kangaroo"
 	icon_state = "kangaroo"
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/kangaroo
-	name = "kangaroo"
+	name = "Kangaroo"
 	icon_state = "kangaroo"
 	matrixed_sections = MATRIX_RED
 
@@ -963,6 +991,26 @@ datum/sprite_accessory/tails/mam_tails/insect
 /datum/sprite_accessory/tails_animated/mam_tails_animated/tamamo_kitsune
 	name = "Tamamo Kitsune Tails"
 	icon_state = "9sune"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/triple_kitsune
+	name = "Triple Kitsune Tails"
+	icon_state = "3sune"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/triple_kitsune
+	name = "Triple Kitsune Tails"
+	icon_state = "3sune"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/takahiro_kitsune
+	name = "Takahiro Kitsune Tails" //takahiro had five tails i just wanted to follow the 'T' naming convention vs. tamamo and triple
+	icon_state = "7sune"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/takahiro_kitsune
+	name = "Takahiro Kitsune Tails"
+	icon_state = "7sune"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/tentacle
