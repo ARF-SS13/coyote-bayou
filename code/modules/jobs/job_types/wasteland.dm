@@ -303,7 +303,7 @@ Raider
 /datum/outfit/loadout/raider_tribal
 	name = "Tribal Outcast"
 	uniform = /obj/item/clothing/under/f13/exile/tribal
-	suit = /obj/item/clothing/suit/hooded/light/outcast/tribal
+	suit = /obj/item/clothing/suit/hooded/outcast/tribal
 	suit_store = /obj/item/twohanded/spear/bonespear
 	shoes = /obj/item/clothing/shoes/sandal
 	belt = /obj/item/storage/backpack/spearquiver

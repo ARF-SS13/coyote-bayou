@@ -318,7 +318,7 @@
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
 
-/obj/item/clothing/suit/armor/light/vest/russian_coat
+/obj/item/clothing/suit/armor/light/duster/russian_coat
 	name = "russian battle coat"
 	desc = "Used in extremly cold fronts, made out of real bears."
 	icon_state = "rus_coat"

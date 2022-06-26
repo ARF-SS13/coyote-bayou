@@ -75,7 +75,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/light/vest/metal
+/obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"
 	desc = "Well-made metal plates covering your vital organs."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
@@ -692,7 +692,7 @@
 
 //Generic Tribal - For Wayfarer specific, see f13factionhead.dm
 //Trying generic tribal armor stats for this one for now.
-/obj/item/clothing/suit/hooded/light/outcast/tribal
+/obj/item/clothing/suit/hooded/outcast/tribal
 	name = "patched heavy leather cloak"
 	desc = "A robust cloak made from layered gecko skin patched with various bits of leather from dogs and other animals, able to absorb more force than one would expect from leather."
 	icon = 'icons/fallout/clothing/armored_light.dmi'

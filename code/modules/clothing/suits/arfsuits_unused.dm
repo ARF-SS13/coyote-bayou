@@ -1966,3 +1966,10 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	item_state = "det_suit"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS */
 
+//these are dusters
+/obj/item/clothing/suit/toggle/armored/ranger_duster
+	name = "ranger recon duster"
+	desc = "A light bulletproof vest under a high-quality duster. Popular with Rangers."
+	icon_state = "duster_recon"
+	item_state = "duster_recon"
+	permeability_coefficient = 0.9

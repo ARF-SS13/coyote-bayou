@@ -349,7 +349,7 @@
 
 
 
-/obj/item/clothing/suit/jamrock
+/obj/item/clothing/suit/armor/outfit/jacket/jamrock
 	name = "disco-ass blazer"
 	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
 	icon_state = "jamrock_blazer"

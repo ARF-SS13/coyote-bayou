@@ -261,6 +261,106 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/tank/internals/plasmaman,
 	/obj/item/toy)))
 
+///things every armor can hold in their slot
+GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing,
+	/obj/item/storage/bag,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/flashlight,
+	/obj/item/gun/ballistic/revolver,
+	/obj/item/gun/ballistic/automatic/pistol,
+	/obj/item/gun/ballistic/automatic/hobo,
+	/obj/item/gun/ballistic/rifle,
+	/obj/item/gun/energy/dueling,
+	/obj/item/gun/energy/laser/wattz,
+	/obj/item/gun/energy/laser/complianceregulator,
+	/obj/item/gun/energy/laser/wattz2k,
+	/obj/item/gun/energy/laser/pistol,
+	/obj/item/gun/energy/e_gun,
+	/obj/item/gun/energy/kinetic_accelerator,
+	/obj/item/melee/onehanded,
+	/obj/item/melee/baton,
+	/obj/item/melee/classic_baton/telescopic,
+	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/restraints/handcuffs,
+	/obj/item/tank/internals,
+	/obj/item/restraints/legcuffs/bola
+	/obj/item/kitchen)))
+
+///extra things light armor can hold in their slot by default
+GLOBAL_LIST_INIT(default_light_armor_slot_allowed, typecacheof(list(
+	/obj/item/storage/box,
+	/obj/item/storage/wallet,
+	/obj/item/melee/smith)))
+
+///things light armor can *not* hold in their slot by default
+GLOBAL_LIST_INIT(default_light_armor_slot_disallowed, typecacheof(list(
+	/obj/item/gun/ballistic/revolver/grenadelauncher,
+	/obj/item/gun/ballistic/rifle/mag,
+	/obj/item/melee/smith/twohand)))
+
+///extra things tribal armor can hold in their slot by default
+GLOBAL_LIST_INIT(default_light_tribal_armor_slot_allowed, typecacheof(list(
+	/obj/item/gun/ballistic/bow,
+	/obj/item/storage/backpack/spearquiver,
+	/obj/item/storage/belt/tribe_quiver,
+	/obj/item/melee)))
+
+///extra things raider armor can hold in their slot by default
+GLOBAL_LIST_INIT(default_light_raider_armor_slot_allowed, typecacheof(list(
+	/obj/item/gun/ballistic/,
+	/obj/item/melee)))
+
+///extra things smith aprons can hold in their slot by default
+GLOBAL_LIST_INIT(default_outfit_apron_smith_slot_allowed, typecacheof(list(
+	/obj/item/storage/belt/utility,
+	/obj/item/crowbar,
+	/obj/item/screwdriver,
+	/obj/item/weldingtool,
+	/obj/item/wirecutters,
+	/obj/item/wrench,
+	/obj/item/multitool,
+	/obj/item/flashlight,
+	/obj/item/stack/cable_coil,
+	/obj/item/t_scanner,
+	/obj/item/analyzer,
+	/obj/item/geiger_counter,
+	/obj/item/extinguisher/mini,
+	/obj/item/radio,
+	/obj/item/clothing/gloves,
+	/obj/item/holosign_creator,
+	/obj/item/assembly/signaler)))
+
+///extra things sexy maid aprons can hold in their slot by default
+GLOBAL_LIST_INIT(default_outfit_apron_sexymaid_slot_allowed, typecacheof(list(
+	/obj/item/grenade/chem_grenade,
+	/obj/item/lightreplacer,
+	/obj/item/flashlight,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
+	/obj/item/soap,
+	/obj/item/holosign_creator,
+	/obj/item/forcefield_projector,
+	/obj/item/key/janitor,
+	/obj/item/clothing/gloves,
+	/obj/item/melee/flyswatter,
+	/obj/item/broom,
+	/obj/item/paint/paint_remover,
+	/obj/item/assembly/mousetrap,
+	/obj/item/screwdriver,
+	/obj/item/stack/cable_coil,
+	/obj/item/storage/belt/janitor)))
+
+///extra things farmer aprons can hold in their slot by default
+GLOBAL_LIST_INIT(default_outfit_apron_farmer_slot_allowed, typecacheof(list(
+	/obj/item/hatchet, 
+	/obj/item/scythe, 
+	/obj/item/cultivator, 
+	/obj/item/shovel)))
+
+
 //Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)
 

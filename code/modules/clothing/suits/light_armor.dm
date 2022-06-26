@@ -172,7 +172,7 @@
 	allowed = list(/obj/item/gun, /obj/item/kitchen, /obj/item/twohanded, /obj/item/melee/onehanded, /obj/item/twohanded/spear, /obj/item/melee/smith, /obj/item/melee/smith/twohand
 	)
 
-/obj/item/clothing/suit/hooded/light/outcast
+/obj/item/clothing/suit/hooded/outcast
 	name = "patched heavy leather cloak"
 	desc = "A robust cloak made from layered gecko skin patched with various bits of leather from dogs and other animals, able to absorb more force than one would expect from leather."
 	icon = 'icons/fallout/clothing/armored_light.dmi'

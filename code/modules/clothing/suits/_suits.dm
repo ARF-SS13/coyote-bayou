@@ -17,8 +17,7 @@
 
 /obj/item/clothing/suit/Initialize()
 	. = ..()
-	if(!allowed)
-		allowed = GLOB.f13_coat_allowed
+	allowed |= GLOB.default_all_armor_slot_allowed
 
 /obj/item/clothing/suit/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()

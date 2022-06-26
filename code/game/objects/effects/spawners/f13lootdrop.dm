@@ -235,7 +235,7 @@
 				/obj/item/clothing/suit/armor/light/duster,
 				/obj/effect/spawner/bundle/f13/armor/combatduster,
 				/obj/item/clothing/suit/armor/medium/raider/iconoclast,
-				/obj/item/clothing/suit/armor/light/vest/metal,
+				/obj/item/clothing/suit/armor/medium/vest/breastplate/light,
 	)
 
 /obj/effect/spawner/bundle/f13/armor/supafly
