@@ -12655,7 +12655,10 @@
 	},
 /area/f13/wasteland/west)
 "aNf" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/recharge_station,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aNg" = (
@@ -22698,6 +22701,14 @@
 	},
 /turf/open/indestructible/ground/outside/savannah/bottomright,
 /area/f13/building)
+"bCz" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -29
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/building/hospital)
 "bCG" = (
 /turf/closed/wall/r_wall,
 /area/f13/tunnel)
@@ -23875,6 +23886,17 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland/bighorn)
+"cac" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/crate/freezer/surplus_limbs,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -1;
+	pixel_x = 27
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "caj" = (
 /obj/structure/chair{
 	dir = 1
@@ -25422,6 +25444,11 @@
 	icon_state = "horizontaltopborderbottom2"
 	},
 /area/f13/wasteland/east)
+"cru" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "crx" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/pill/patch/healingpowder,
@@ -25460,10 +25487,6 @@
 /obj/structure/wreck/car,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland/east)
-"crI" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "crK" = (
 /obj/structure/fermenting_barrel{
 	name = "XANDER"
@@ -32880,6 +32903,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland/east)
+"goX" = (
+/obj/machinery/vending/wardrobe/medi_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "goZ" = (
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/road{
@@ -35063,6 +35090,13 @@
 /obj/structure/nest/gecko,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hxP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "hyc" = (
 /obj/machinery/computer/shuttle/southbunkerelevator{
 	dir = 4
@@ -37858,6 +37892,12 @@
 	icon_state = "verticalinnermain1"
 	},
 /area/f13/wasteland/east)
+"iWi" = (
+/obj/structure/flora/tree/jungle/small{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "iWj" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -40697,7 +40737,7 @@
 /area/f13/building/hospital)
 "kEE" = (
 /turf/closed/indestructible/f13/matrix/transition,
-/area/f13/wasteland/west)
+/area/f13/caves)
 "kEK" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -41474,6 +41514,10 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/quarry)
+"kZr" = (
+/obj/machinery/vending/wardrobe/chem_wardrobe,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "kZu" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -54156,14 +54200,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/museum)
-"rKk" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = -29
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
-	},
-/area/f13/building/hospital)
 "rKl" = (
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
 /obj/effect/decal/cleanable/dirt{
@@ -57473,6 +57509,10 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
+"tCT" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "tCV" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/dirt,
@@ -63919,16 +63959,8 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "xbq" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/closet/crate/freezer/surplus_limbs,
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = -1;
-	pixel_x = 27
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "xby" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 4;
@@ -91161,7 +91193,7 @@ geF
 aae
 aae
 aae
-vOV
+aJN
 kEE
 "}
 (98,1,1) = {"
@@ -91417,8 +91449,8 @@ geF
 aae
 aae
 aae
-bjL
-vOV
+iWi
+aJN
 kEE
 "}
 (99,1,1) = {"
@@ -91674,8 +91706,8 @@ dtF
 geF
 aae
 aae
-vOV
-vOV
+aJN
+aJN
 kEE
 "}
 (100,1,1) = {"
@@ -91931,8 +91963,8 @@ vOV
 vOV
 vOV
 vOV
-vOV
-vOV
+aJN
+aJN
 kEE
 "}
 (101,1,1) = {"
@@ -92188,8 +92220,8 @@ sKY
 tDT
 sKY
 sKY
-sKY
-vOV
+tCT
+aJN
 kEE
 "}
 (102,1,1) = {"
@@ -92445,8 +92477,8 @@ sKY
 iYj
 wqe
 xZb
-sKY
-vOV
+tCT
+aJN
 kEE
 "}
 (103,1,1) = {"
@@ -92702,8 +92734,8 @@ vOV
 fnA
 sKY
 sKY
-xZb
-vOV
+cru
+aJN
 kEE
 "}
 (104,1,1) = {"
@@ -92959,8 +92991,8 @@ aae
 aae
 aae
 aae
-vOV
-vOV
+aJN
+aJN
 kEE
 "}
 (105,1,1) = {"
@@ -93216,8 +93248,8 @@ aae
 aae
 aae
 aae
-vOV
-bjL
+aJN
+iWi
 kEE
 "}
 (106,1,1) = {"
@@ -93473,8 +93505,8 @@ aae
 aae
 aae
 aae
-vOV
-vOV
+aJN
+aJN
 kEE
 "}
 (107,1,1) = {"
@@ -93731,7 +93763,7 @@ aae
 aae
 aae
 aae
-vOV
+aJN
 kEE
 "}
 (108,1,1) = {"
@@ -98614,8 +98646,8 @@ nnD
 kVc
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (127,1,1) = {"
 aaa
@@ -98871,8 +98903,8 @@ nnD
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (128,1,1) = {"
 aaa
@@ -99128,8 +99160,8 @@ nnD
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (129,1,1) = {"
 aaa
@@ -99385,8 +99417,8 @@ smx
 nnD
 oIj
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (130,1,1) = {"
 aaa
@@ -99642,8 +99674,8 @@ smx
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (131,1,1) = {"
 aaa
@@ -99899,8 +99931,8 @@ nnD
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (132,1,1) = {"
 aaa
@@ -100156,8 +100188,8 @@ nnD
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (133,1,1) = {"
 aaa
@@ -100413,8 +100445,8 @@ smx
 nnD
 lNr
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (134,1,1) = {"
 aaa
@@ -100670,8 +100702,8 @@ smx
 nnD
 nnD
 nnD
-aae
-aaa
+aJN
+kEE
 "}
 (135,1,1) = {"
 aaa
@@ -100926,9 +100958,9 @@ uxJ
 nnD
 xFC
 nnD
-aae
-aae
-aaa
+nnD
+aJN
+kEE
 "}
 (136,1,1) = {"
 aaa
@@ -101183,9 +101215,9 @@ rIX
 nnD
 xFC
 nnD
-aae
-aae
-aaa
+nnD
+aJN
+kEE
 "}
 (137,1,1) = {"
 aaa
@@ -110029,7 +110061,7 @@ aHS
 aMz
 uZi
 aMz
-aKA
+hxP
 ijr
 eWM
 mXB
@@ -112856,7 +112888,7 @@ vXd
 ijr
 aIE
 aJb
-aFD
+aNf
 ijr
 rwo
 aGq
@@ -113099,9 +113131,9 @@ aFP
 aEt
 aGq
 ijr
-crI
+goX
 oMX
-aNf
+kZr
 ijr
 aEs
 aKA
@@ -113109,7 +113141,7 @@ ijr
 aOj
 fWG
 fWG
-rKk
+bCz
 ijr
 jkY
 tFm
@@ -115164,7 +115196,7 @@ aGq
 ijr
 mWv
 deq
-xbq
+cac
 qGH
 ijr
 fut
@@ -123286,8 +123318,8 @@ cpx
 aae
 aae
 aae
-aae
-aaa
+xbq
+kEE
 "}
 (223,1,1) = {"
 aaa
@@ -123540,11 +123572,11 @@ slp
 cnY
 eBH
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (224,1,1) = {"
 aaa
@@ -123797,11 +123829,11 @@ ofG
 cnY
 eBH
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (225,1,1) = {"
 aaa
@@ -124054,11 +124086,11 @@ mlu
 cnY
 eBH
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (226,1,1) = {"
 aaa
@@ -124311,11 +124343,11 @@ csk
 csQ
 eBH
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (227,1,1) = {"
 aaa
@@ -124568,11 +124600,11 @@ iEh
 iEh
 iXx
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (228,1,1) = {"
 aaa
@@ -124825,11 +124857,11 @@ cpx
 cpx
 cpx
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (229,1,1) = {"
 acA
@@ -125082,11 +125114,11 @@ cpx
 vbH
 amZ
 cpx
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (230,1,1) = {"
 acA
@@ -125339,11 +125371,11 @@ qzO
 qzO
 rsi
 vtf
-aae
-aae
-aae
-aae
-aaa
+xbq
+xbq
+xbq
+xbq
+kEE
 "}
 (231,1,1) = {"
 acA
@@ -125599,8 +125631,8 @@ eBH
 aae
 aak
 aae
-aae
-aaa
+xbq
+kEE
 "}
 (232,1,1) = {"
 acA
@@ -125856,8 +125888,8 @@ eBH
 aae
 aae
 aae
-aae
-aaa
+xbq
+kEE
 "}
 (233,1,1) = {"
 acA
@@ -131469,10 +131501,10 @@ aae
 aae
 aae
 aae
-aaa
 cng
 cng
-aaa
+cng
+cng
 aaa
 aae
 aae
@@ -131726,10 +131758,10 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
+hkC
+hkC
+hkC
+hkC
 aaa
 aaa
 aaa
