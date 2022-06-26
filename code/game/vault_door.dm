@@ -30,13 +30,14 @@ GLOBAL_LIST_EMPTY(vault_doors)
 	return
 
 /obj/structure/vaultdoor/ex_act(severity, target)
-	if(severity == 2)
-		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
-		s.set_up(2, 1, src)
-		s.start()
-		if(prob(25)) //Get memed
-			destroy()
-		return
+	// if(severity == 2) // Removing the 1/4th chance for vaults to explode open, this is not a funny meeme.
+	// 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+	// 	s.set_up(2, 1, src)
+	// 	s.start()
+	// 	if(prob(25)) //Get memed
+	// 		destroy()
+	// 	return
+	return
 
 /obj/structure/vaultdoor/proc/repair()
 	icon_state = "open"
