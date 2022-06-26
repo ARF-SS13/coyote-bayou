@@ -49,7 +49,6 @@
 	icon_state = "wasteland1"
 
 	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
-	var/obj/structure/flora/turfPlant = null
 	slowdown = 0
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 2
@@ -63,43 +62,6 @@
 /turf/open/floor/plating/f13/outside/desert/Initialize()
 	. = ..()
 	icon_state = "wasteland[rand(1,31)]"
-	//If no fences, machines (soil patches are machines), etc. try to plant grass
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
-
-//Pass PlantForce for admin stuff I guess?
-/turf/open/floor/plating/f13/outside/desert/proc/plantGrass(Plantforce = FALSE)
-	var/Weight = 0
-	var/randPlant = null
-
-	//spontaneously spawn grass
-	if(Plantforce || prob(GRASS_SPONTANEOUS))
-		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST) //Create a new grass object at this location, and assign var
-		turfPlant = new randPlant(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return .
-
-	//loop through neighbouring desert turfs, if they have grass, then increase weight
-	for(var/turf/open/floor/plating/f13/outside/desert/T in RANGE_TURFS(3, src))
-		if(T.turfPlant)
-			Weight += GRASS_WEIGHT
-
-	//use weight to try to spawn grass
-	if(prob(Weight))
-
-		//If surrounded on 5+ sides, pick from lush
-		if(Weight == (5 * GRASS_WEIGHT))
-			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST)
-		else
-			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST)
-		turfPlant = new randPlant(src)
-		. = TRUE
-
-//Make sure we delete the plant if we ever change turfs
-/turf/open/floor/plating/f13/outside/desert/ChangeTurf(path, new_baseturf, flags)
-	if(turfPlant)
-		qdel(turfPlant)
-	. =  ..()
 
 /turf/open/floor/plating/f13/outside/desert/harsh
 	icon_state = "wasteland"
@@ -157,7 +119,6 @@
 	desc = "Damp cave flooring."
 	icon = 'icons/turf/f13floors2.dmi'
 	icon_state = "mountain0"
-	var/obj/structure/flora/turfPlant = null
 
 /turf/open/floor/plating/f13/inside/mountain/Initialize()
 	. = ..()

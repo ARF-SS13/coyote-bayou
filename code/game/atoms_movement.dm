@@ -87,11 +87,9 @@
 
 	Moved(oldloc, direction, FALSE, old_locs)
 
-//
 ////////////////////////////////////////
 
 /atom/movable/Move(atom/newloc, direct, glide_size_override = 0)
-	set waitfor = FALSE			//n o
 	var/atom/movable/pullee = pulling
 	var/turf/current_turf = loc
 	if(!moving_from_pull)
@@ -155,8 +153,9 @@
 				if(!. && set_dir_on_move)
 					setDir(first_step_dir)
 				else if (!inertia_moving)
-					inertia_next_move = world.time + inertia_move_delay
 					newtonian_move(direct)
+			if(client_mobs_in_contents) // We're done moving, update our parallax now
+				update_parallax_contents()
 			moving_diagonally = 0
 			return
 
@@ -201,6 +200,20 @@
 			pitfall.zFall(src, falling_from_move = TRUE)
 		else
 			set_currently_z_moving(FALSE, TRUE)
+
+	last_move = direct
+
+	if(set_dir_on_move)
+		setDir(direct)
+	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
+		. = FALSE
+
+/*	if(currently_z_moving)
+		if(. && loc == newloc)
+			var/turf/pitfall = get_turf(src)
+			pitfall.zFall(src, falling_from_move = TRUE)
+		else
+			set_currently_z_moving(FALSE, TRUE)*/
 
 /atom/movable/proc/handle_buckled_mob_movement(newloc, direct, glide_size_override)
 	for(var/m in buckled_mobs)

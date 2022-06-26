@@ -23,7 +23,8 @@
 			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
 			"Up": 1,
 			"No Parallax": true,
-			"Linkage" : null
+			"Linkage" : null,
+			"Name": "Dungeons"
 		},
 		{
 			"Gravity": true,
@@ -32,7 +33,8 @@
 			"Up": 1,
 			"Down": -1,
 			"No Parallax": true,
-			"Linkage" : null
+			"Linkage" : null,
+			"Name": "Lower Yuma"
 		},
 		{
 			"Gravity": true,
@@ -41,7 +43,8 @@
 			"Up": 1,
 			"Down": -1,
 			"No Parallax": true,
-			"Linkage" : "Cross"
+			"Linkage" : "Cross",
+			"Name": "Yuma"
 		},
 		{
 			"Gravity": true,
@@ -50,7 +53,8 @@
 			"Down": -1,
 			"No Parallax": true,
 			"Linkage" : null,
-			"Above": true
+			"Above": true,
+			"Name": "Yuma - Upper"
 		},
 		{
 			"Gravity": true,
@@ -58,7 +62,8 @@
 			"Down": -1,
 			"Linkage" : null,
 			"No Parallax": true,
-			"Above": true
+			"Above": true,
+			"Name": "Yuma - Second Upper boogaloo 2"
 		},
 		{
 			"Gravity": true,
@@ -67,7 +72,9 @@
 			"Up": 1,
 			"Down": -1,
 			"No Parallax": true,
-			"Linkage" : "Cross"
+			"Linkage" : "Cross",
+			"Force South": 1,
+			"Name": "Rock Springs"
 		}
 	],
 	"minetype": "none"

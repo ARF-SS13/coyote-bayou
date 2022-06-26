@@ -13,7 +13,6 @@
 	tiled_dirt = FALSE
 
 	var/flags = NONE
-	var/obj/structure/flora/turfPlant = null
 
 /turf/open/indestructible/ground/New()
 	..()
@@ -59,7 +58,7 @@
 
 #define GRASS_SPONTANEOUS_GROUND 		2
 #define GRASS_WEIGHT_GROUND			4
-#define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
+#define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2, /obj/structure/loot_pile = 3)
 #define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
 
 /turf/open/indestructible/ground/outside/dirthole
@@ -192,8 +191,6 @@
 	if(prob(2))
 		var/obj/derp = pickweight(loots)
 		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
 	for(var/direction in GLOB.cardinals)
@@ -216,8 +213,6 @@
 	if(prob(2))
 		var/obj/derp = pickweight(loots)
 		salvage = new derp()
-	if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
-		plantGrass()
 	if(icon_state != "wasteland")
 		icon_state = "wasteland[rand(1,31)]"
 
@@ -241,41 +236,8 @@
 /obj/effect/overlay/desert/sonora/edge/corner
 	icon_state = "desertcorner"
 
-/turf/open/indestructible/ground/outside/desert/plantGrass(Plantforce = FALSE)
-	var/Weight = 0
-	var/randPlant = null
-
-	//spontaneously spawn grass
-	if(Plantforce || prob(GRASS_SPONTANEOUS_GROUND))
-		randPlant = pickweight(LUSH_PLANT_SPAWN_LIST_GROUND) //Create a new grass object at this location, and assign var
-		turfPlant = new randPlant(src)
-		. = TRUE //in case we ever need this to return if we spawned
-		return .
-
-	//loop through neighbouring desert turfs, if they have grass, then increase weight
-	for(var/turf/open/indestructible/ground/outside/desert/T in RANGE_TURFS(3, src))
-		if(T.turfPlant)
-			Weight += GRASS_WEIGHT
-
-	//use weight to try to spawn grass
-	if(prob(Weight))
-
-		//If surrounded on 5+ sides, pick from lush
-		if(Weight == (5 * GRASS_WEIGHT))
-			randPlant = pickweight(LUSH_PLANT_SPAWN_LIST_GROUND)
-		else
-			randPlant = pickweight(DESOLATE_PLANT_SPAWN_LIST_GROUND)
-		turfPlant = new randPlant(src)
-		. = TRUE
-
 /turf/open/indestructible/ground/outside/desert/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent)
 	return //I mean, it makes sense that deserts don't get slippery, I guess... :(
-
-//Make sure we delete the plant if we ever change turfs
-/turf/open/indestructible/ground/outside/desert/ChangeTurf(path, list/new_baseturfs, flags)
-	if(turfPlant)
-		qdel(turfPlant)
-	return ..()
 
 /turf/open/indestructible/ground/outside/dirt
 	name = "dirt"
