@@ -184,6 +184,9 @@
 	if(!wielded || !user)
 		return
 
+	if(!iscarbon(user)) // some fucking reason floors want to call this function. :I
+		return
+
 	// wield update status
 	wielded = FALSE
 	UnregisterSignal(user, COMSIG_MOB_SWAP_HANDS)
