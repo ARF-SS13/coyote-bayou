@@ -12,7 +12,7 @@
 	color_src = MATRIXED
 	gender_specific = 0
 	icon = 'modular_citadel/icons/mob/mam_markings.dmi'
-	recommended_species = list("mammal", "xeno", "slimeperson", "podweak","shadekin")
+	recommended_species = list("mammal", "xeno", "slimeperson", "podweak", "shadekin")
 	matrixed_sections = MATRIX_ALL // this value is used if there is no value in covered_limbs, don't rely on it, it's a backup value
 	var/list/covered_limbs = list("Head", "Chest", "Left Leg", "Right Leg", "Left Arm", "Right Arm")
 
@@ -268,6 +268,10 @@
 	icon_state = "none"
 	relevant_layers = null
 
+/datum/sprite_accessory/insect_fluff/brown
+	name = "Brown"
+	icon_state = "brown"
+
 /datum/sprite_accessory/insect_fluff/punished
 	name = "Burnt Off"
 	icon_state = "punished"
@@ -296,6 +300,10 @@
 	name = "Deathshead"
 	icon_state = "deathhead"
 
+/datum/sprite_accessory/insect_fluff/featherymoth
+	name = "Feathery Moth"
+	icon_state = "featherymoth"
+
 /datum/sprite_accessory/insect_fluff/firewatch
 	name = "Firewatch"
 	icon_state = "firewatch"
@@ -316,17 +324,21 @@
 	name = "Moon Fly"
 	icon_state = "moonfly"
 
-/datum/sprite_accessory/insect_fluff/oakworm
-	name = "Oak Worm"
-	icon_state = "oakworm"
-
 /datum/sprite_accessory/insect_fluff/plain
 	name = "Plain"
 	icon_state = "plain"
 
+/datum/sprite_accessory/insect_fluff/plasmafire
+	name = "Plasmafire"
+	icon_state = "plasmafire"
+
 /datum/sprite_accessory/insect_fluff/poison
 	name = "Poison"
 	icon_state = "poison"
+
+/datum/sprite_accessory/insect_fluff/oakworm
+	name = "Oak Worm"
+	icon_state = "oakworm"
 
 /datum/sprite_accessory/insect_fluff/ragged
 	name = "Ragged"
@@ -335,6 +347,10 @@
 /datum/sprite_accessory/insect_fluff/reddish
 	name = "Reddish"
 	icon_state = "redish"
+
+/datum/sprite_accessory/insect_fluff/rosy
+	name = "Rosy"
+	icon_state = "rosy"
 
 /datum/sprite_accessory/insect_fluff/royal
 	name = "Royal"
@@ -351,3 +367,208 @@
 /datum/sprite_accessory/insect_fluff/witchwing
 	name = "Witch Wing"
 	icon_state = "witchwing"
+
+
+/*No Antenna*/
+
+/datum/sprite_accessory/insect_fluff/brown_noear
+	name = "Brown No Antenna"
+	icon_state = "brown2"
+
+/datum/sprite_accessory/insect_fluff/punished_noear
+	name = "Burnt Off No Antenna"
+	icon_state = "punished2"
+
+/datum/sprite_accessory/insect_fluff/colored1_noear
+	name = "Colored (Primary) No Antenna"
+	icon_state = "snow2"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/insect_fluff/colored2_noear
+	name = "Colored (Secondary) No Antenna"
+	icon_state = "snow2"
+	color_src = MUTCOLORS2
+
+/datum/sprite_accessory/insect_fluff/colored3_noear
+	name = "Colored (Tertiary) No Antenna"
+	icon_state = "snow2"
+	color_src = MUTCOLORS3
+
+/datum/sprite_accessory/insect_fluff/colored_noear
+	name = "Colored (Hair) No Antenna"
+	icon_state = "snow2"
+	color_src = HAIR
+
+/datum/sprite_accessory/insect_fluff/deathhead_noear
+	name = "Deathshead No Antenna"
+	icon_state = "deathhead2"
+
+/datum/sprite_accessory/insect_fluff/featherymoth_noear
+	name = "Feathery Moth No Antenna"
+	icon_state = "featherymoth2"
+
+/datum/sprite_accessory/insect_fluff/firewatch_noear
+	name = "Firewatch No Antenna"
+	icon_state = "firewatch2"
+
+/datum/sprite_accessory/insect_fluff/gothic_noear
+	name = "Gothic No Antenna"
+	icon_state = "gothic2"
+
+/datum/sprite_accessory/insect_fluff/jungle_noear
+	name = "Jungle No Antenna"
+	icon_state = "jungle2"
+
+/datum/sprite_accessory/insect_fluff/lovers_noear
+	name = "Lovers No Antenna"
+	icon_state = "lovers2"
+
+/datum/sprite_accessory/insect_fluff/moonfly_noear
+	name = "Moon Fly No Antenna"
+	icon_state = "moonfly2"
+
+/datum/sprite_accessory/insect_fluff/plain_noear
+	name = "Plain No Antenna"
+	icon_state = "plain2"
+
+/datum/sprite_accessory/insect_fluff/plasmafire_noear
+	name = "Plasmafire No Antenna"
+	icon_state = "plasmafire2"
+
+/datum/sprite_accessory/insect_fluff/poison_noear
+	name = "Poison No Antenna"
+	icon_state = "poison2"
+
+/datum/sprite_accessory/insect_fluff/oakworm_noear
+	name = "Oak Worm No Antenna"
+	icon_state = "oakworm2"
+
+/datum/sprite_accessory/insect_fluff/ragged_noear
+	name = "Ragged No Antenna"
+	icon_state = "ragged2"
+
+/datum/sprite_accessory/insect_fluff/reddish_noear
+	name = "Reddish No Antenna"
+	icon_state = "redish2"
+
+/datum/sprite_accessory/insect_fluff/rosy_noear
+	name = "Rosy No Antenna"
+	icon_state = "rosy2"
+
+/datum/sprite_accessory/insect_fluff/royal_noear
+	name = "Royal No Antenna"
+	icon_state = "royal2"
+
+/datum/sprite_accessory/insect_fluff/snow_noear
+	name = "Snow No Antenna"
+	icon_state = "snow2"
+
+/datum/sprite_accessory/insect_fluff/whitefly_noear
+	name = "White Fly No Antenna"
+	icon_state = "whitefly2"
+
+/datum/sprite_accessory/insect_fluff/witchwing_noear
+	name = "Witch Wing No Antenna"
+	icon_state = "witchwing2"
+
+/*No Antenna*/
+
+/datum/sprite_accessory/insect_fluff/brown_nofur
+	name = "Brown No Fur"
+	icon_state = "brown3"
+
+/datum/sprite_accessory/insect_fluff/punished_nofur
+	name = "Burnt Off No Fur"
+	icon_state = "punished3"
+
+/datum/sprite_accessory/insect_fluff/colored1_nofur
+	name = "Colored (Primary) No Fur"
+	icon_state = "snow3"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/insect_fluff/colored2_nofur
+	name = "Colored (Secondary) No Fur"
+	icon_state = "snow3"
+	color_src = MUTCOLORS2
+
+/datum/sprite_accessory/insect_fluff/colored3_nofur
+	name = "Colored (Tertiary) No Fur"
+	icon_state = "snow3"
+	color_src = MUTCOLORS3
+
+/datum/sprite_accessory/insect_fluff/colored_nofur
+	name = "Colored (Hair) No Fur"
+	icon_state = "snow3"
+	color_src = HAIR
+
+/datum/sprite_accessory/insect_fluff/deathhead_nofur
+	name = "Deathshead No Fur"
+	icon_state = "deathhead3"
+
+/datum/sprite_accessory/insect_fluff/featherymoth_nofur
+	name = "Feathery Moth No Fur"
+	icon_state = "featherymoth3"
+
+/datum/sprite_accessory/insect_fluff/firewatch_nofur
+	name = "Firewatch No Fur"
+	icon_state = "firewatch3"
+
+/datum/sprite_accessory/insect_fluff/gothic_nofur
+	name = "Gothic No Fur"
+	icon_state = "gothic3"
+
+/datum/sprite_accessory/insect_fluff/jungle_nofur
+	name = "Jungle No Fur"
+	icon_state = "jungle3"
+
+/datum/sprite_accessory/insect_fluff/lovers_nofur
+	name = "Lovers No Fur"
+	icon_state = "lovers3"
+
+/datum/sprite_accessory/insect_fluff/moonfly_nofur
+	name = "Moon Fly No Fur"
+	icon_state = "moonfly3"
+
+/datum/sprite_accessory/insect_fluff/plain_nofur
+	name = "Plain No Fur"
+	icon_state = "plain3"
+
+/datum/sprite_accessory/insect_fluff/plasmafire_nofur
+	name = "Plasmafire No Fur"
+	icon_state = "plasmafire3"
+
+/datum/sprite_accessory/insect_fluff/poison_nofur
+	name = "Poison No Fur"
+	icon_state = "poison3"
+
+/datum/sprite_accessory/insect_fluff/oakworm_nofur
+	name = "Oak Worm No Fur"
+	icon_state = "oakworm3"
+
+/datum/sprite_accessory/insect_fluff/ragged_nofur
+	name = "Ragged No Fur"
+	icon_state = "ragged3"
+
+/datum/sprite_accessory/insect_fluff/reddish_nofur
+	name = "Reddish No Fur"
+	icon_state = "redish3"
+
+/datum/sprite_accessory/insect_fluff/rosy_nofur
+	name = "Rosy No Fur"
+	icon_state = "rosy3"
+
+/datum/sprite_accessory/insect_fluff/royal_nofur
+	name = "Royal No Fur"
+	icon_state = "royal3"
+
+/datum/sprite_accessory/insect_fluff/snow_nofur
+	name = "Snow No Fur"
+	icon_state = "snow3"
+
+/datum/sprite_accessory/insect_fluff/whitefly_nofur
+	name = "White Fly No Fur"
+	icon_state = "whitefly3"
+
+/datum/sprite_accessory/insect_fluff/witchwing_nofur
+	name = "Witch Wing No Fur"
+	icon_state = "witchwing3"
