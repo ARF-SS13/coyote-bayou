@@ -95,6 +95,13 @@
 	var/boing = 0
 	aSignal = /obj/item/assembly/signaler/anomaly/grav
 
+/obj/effect/anomaly/grav/Initialize(mapload, new_lifespan, core_drop_chance)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/effect/anomaly/grav/anomalyEffect()
 	..()
 	boing = 1
@@ -116,8 +123,8 @@
 			if(target && !target.stat)
 				O.throw_at(target, 5, 10)
 
-/obj/effect/anomaly/grav/Crossed(atom/movable/AM)
-	. = ..()
+/obj/effect/anomaly/grav/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	gravShock(AM)
 
 /obj/effect/anomaly/grav/Bump(atom/A)
@@ -158,15 +165,24 @@
 	var/shockdamage = 20
 	var/explosive = TRUE
 
+/obj/effect/anomaly/flux/Initialize(mapload, new_lifespan, core_drop_chance)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+
 /obj/effect/anomaly/flux/anomalyEffect()
 	..()
 	canshock = TRUE
 	for(var/mob/living/M in range(0, src))
 		mobShock(M)
 
-/obj/effect/anomaly/flux/Crossed(atom/movable/AM)
-	. = ..()
-	mobShock(AM)
+/obj/effect/anomaly/flux/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/mobShock, AM)
 
 /obj/effect/anomaly/flux/Bump(atom/A)
 	mobShock(A)
