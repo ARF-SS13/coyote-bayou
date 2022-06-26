@@ -37967,6 +37967,12 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland/east)
+"iYj" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/west)
 "iYy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -62687,6 +62693,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"wqe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/jungle/small{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/west)
 "wrn" = (
 /obj/structure/table/booth,
 /turf/open/floor/f13/wood,
@@ -91375,7 +91388,7 @@ geF
 aae
 aae
 aae
-vOV
+bjL
 vOV
 kEE
 "}
@@ -92140,13 +92153,13 @@ sKY
 vOV
 vOV
 dXd
-vOV
-vOV
-vOV
-vOV
-vOV
-vOV
-vOV
+sKY
+iYj
+sKY
+tDT
+sKY
+sKY
+sKY
 vOV
 kEE
 "}
@@ -92398,12 +92411,12 @@ sKY
 vOV
 vOV
 vOV
-vOV
-vOV
-vOV
-vOV
-vOV
-vOV
+sKY
+sKY
+iYj
+wqe
+xZb
+sKY
 vOV
 kEE
 "}
@@ -92655,12 +92668,12 @@ sKY
 vOV
 vOV
 vOV
+fnA
 vOV
-vOV
-vOV
-vOV
-vOV
-vOV
+fnA
+sKY
+sKY
+xZb
 vOV
 kEE
 "}
@@ -93175,7 +93188,7 @@ aae
 aae
 aae
 vOV
-vOV
+bjL
 kEE
 "}
 (106,1,1) = {"
