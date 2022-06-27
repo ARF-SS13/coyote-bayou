@@ -30344,6 +30344,16 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/city/bighorn)
+"eSm" = (
+/obj/structure/fence/wooden{
+	dir = 4
+	},
+/obj/structure/fence/wooden{
+	dir = 1;
+	icon_state = "post_wood"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "eTb" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -41079,6 +41089,12 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland/massfusion)
+"kMm" = (
+/obj/structure/fence/wooden{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "kMy" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -63665,6 +63681,13 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
+"wPW" = (
+/obj/structure/simple_door/metal/fence{
+	door_type = "fence_wood";
+	icon_state = "fence_wood"
+	},
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "wQa" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /turf/open/floor/f13/wood,
@@ -123574,7 +123597,7 @@ cnY
 eBH
 cpx
 xbq
-xbq
+kMm
 xbq
 xbq
 kEE
@@ -123831,7 +123854,7 @@ cnY
 eBH
 cpx
 xbq
-xbq
+eSm
 xbq
 xbq
 kEE
@@ -124088,7 +124111,7 @@ cnY
 eBH
 cpx
 xbq
-xbq
+wPW
 xbq
 xbq
 kEE
@@ -124345,7 +124368,7 @@ csQ
 eBH
 cpx
 xbq
-xbq
+kMm
 xbq
 xbq
 kEE
@@ -124602,7 +124625,7 @@ iEh
 iXx
 cpx
 xbq
-xbq
+kMm
 xbq
 xbq
 kEE
@@ -124859,7 +124882,7 @@ cpx
 cpx
 cpx
 xbq
-xbq
+eSm
 xbq
 xbq
 kEE
@@ -125116,7 +125139,7 @@ vbH
 amZ
 cpx
 xbq
-xbq
+wPW
 xbq
 xbq
 kEE
@@ -125373,7 +125396,7 @@ qzO
 rsi
 vtf
 xbq
-xbq
+kMm
 xbq
 xbq
 kEE
