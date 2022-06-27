@@ -129,7 +129,7 @@
 	add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	..()
 
-/obj/item/rupee/Crossed(mob/M)
+/obj/item/rupee/proc/on_entered(mob/M)
 	if(!istype(M))
 		return
 	if(M.put_in_hands(src))

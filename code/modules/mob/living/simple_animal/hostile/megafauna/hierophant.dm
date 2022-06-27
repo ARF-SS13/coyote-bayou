@@ -624,7 +624,7 @@ Difficulty: Normal
 	sleep(1.3) //slightly forgiving; the burst animation is 1.5 deciseconds
 	bursting = FALSE //we no longer damage crossers
 
-/obj/effect/temp_visual/hierophant/blast/Crossed(atom/movable/AM)
+/obj/effect/temp_visual/hierophant/blast/proc/on_entered(atom/movable/AM)
 	..()
 	if(bursting)
 		do_damage(get_turf(src))

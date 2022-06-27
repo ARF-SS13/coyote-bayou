@@ -145,7 +145,6 @@
 
 /obj/effect/anomaly/grav/high/Initialize(mapload, new_lifespan)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/setup_grav_field)
 
 /obj/effect/anomaly/grav/high/proc/setup_grav_field()
 	grav_field = make_field(/datum/proximity_monitor/advanced/gravity, list("current_range" = 7, "host" = src, "gravity_value" = rand(0,3)))

@@ -309,6 +309,15 @@
 		add_hiddenprint(user)
 	return TRUE
 
+/obj/machinery/shower/Initialize()
+	. = ..()
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/machinery/shower/update_overlays()
 	. = ..()
 	if(on)
@@ -334,8 +343,7 @@
 	if(mist && (!on || watertemp == "freezing"))
 		qdel(mist)
 
-/obj/machinery/shower/Crossed(atom/movable/AM)
-	..()
+/obj/machinery/shower/proc/handle_enter(atom/movable/AM)
 	if(on)
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -344,6 +352,10 @@
 				C.slip(80,null,NO_SLIP_WHEN_WALKING)
 		else if(isobj(AM))
 			wash_obj(AM)
+
+/obj/machinery/shower/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/handle_enter, AM)
 
 /obj/machinery/shower/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)

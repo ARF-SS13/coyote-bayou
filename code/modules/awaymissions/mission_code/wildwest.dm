@@ -131,7 +131,7 @@
 	icon_state = "blobpod"
 	var/triggered = 0
 
-/obj/effect/meatgrinder/Crossed(atom/movable/AM)
+/obj/effect/meatgrinder/proc/on_entered(atom/movable/AM)
 	Bumped(AM)
 
 /obj/effect/meatgrinder/Bumped(atom/movable/AM)

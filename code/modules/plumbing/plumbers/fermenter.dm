@@ -40,7 +40,7 @@
 	if(move_dir == eat_dir)
 		return TRUE
 
-/obj/machinery/plumbing/fermenter/Crossed(atom/movable/AM)
+/obj/machinery/plumbing/fermenter/proc/on_entered(atom/movable/AM)
 	. = ..()
 	ferment(AM)
 

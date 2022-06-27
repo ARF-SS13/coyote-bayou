@@ -243,7 +243,7 @@
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
 
-/obj/structure/bonfire/Crossed(atom/movable/AM)
+/obj/structure/bonfire/proc/on_entered(atom/movable/AM)
 	if(burning & !grill)
 		Burn()
 

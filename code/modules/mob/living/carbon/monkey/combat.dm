@@ -404,7 +404,7 @@
 			retaliate(H)
 	..()
 
-/mob/living/carbon/monkey/Crossed(atom/movable/AM)
+/mob/living/carbon/monkey/proc/on_entered(atom/movable/AM)
 	if(!IsDeadOrIncap() && ismob(AM) && target)
 		var/mob/living/carbon/monkey/M = AM
 		if(!istype(M) || !M)

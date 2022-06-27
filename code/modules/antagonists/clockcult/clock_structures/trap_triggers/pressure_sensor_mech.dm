@@ -7,8 +7,16 @@
 	icon_state = "pressure_sensor"
 	alpha = 75
 
-/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/mech/Crossed(atom/movable/AM)
+/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/mech/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
+
+/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/mech/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!istype(AM,/obj/mecha/))
 		return
 

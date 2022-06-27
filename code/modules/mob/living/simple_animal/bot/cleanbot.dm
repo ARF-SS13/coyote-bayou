@@ -134,7 +134,7 @@
 	text_dehack = "[name]'s software has been reset!"
 	text_dehack_fail = "[name] does not seem to respond to your repair code!"
 
-/mob/living/simple_animal/bot/cleanbot/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/cleanbot/proc/on_entered(atom/movable/AM)
 	. = ..()
 
 	zone_selected = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)

@@ -25,6 +25,11 @@
 		ignore_typecache = typecacheof(list(
 			/obj/effect,
 			/mob/dead))
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
 /obj/structure/trap/Destroy()
 	qdel(spark_system)
@@ -55,7 +60,11 @@
 	else
 		animate(src, alpha = initial(alpha), time = time_between_triggers)
 
-/obj/structure/trap/Crossed(atom/movable/AM)
+/obj/structure/trap/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/process_entered, AM)
+
+/obj/structure/trap/proc/process_entered(atom/movable/AM)
 	if(last_trigger + time_between_triggers > world.time)
 		return
 	// Don't want the traps triggered by sparks, ghosts or projectiles.
@@ -166,14 +175,19 @@
 /obj/structure/trap/stun/hunter/Initialize(mapload)
 	. = ..()
 	time_between_triggers = 10
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/structure/trap/stun/hunter/Crossed(atom/movable/AM)
+
+/obj/structure/trap/stun/hunter/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!L.mind?.has_antag_datum(/datum/antagonist/fugitive))
 			return
 	caught = TRUE
-	. = ..()
 
 /obj/structure/trap/stun/hunter/flare()
 	..()

@@ -28,7 +28,7 @@
 		return parent.field_turf_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/Crossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/proc/on_entered(atom/movable/AM)
 	if(parent)
 		return parent.field_turf_crossed(AM, src)
 	return TRUE
@@ -52,7 +52,7 @@
 		return parent.field_edge_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/Crossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/proc/on_entered(atom/movable/AM)
 	if(parent)
 		return parent.field_edge_crossed(AM, src)
 	return TRUE

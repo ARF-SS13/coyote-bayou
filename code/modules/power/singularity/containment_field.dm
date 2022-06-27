@@ -56,7 +56,7 @@
 	else
 		..()
 
-/obj/machinery/field/containment/Crossed(mob/mover)
+/obj/machinery/field/containment/proc/on_entered(mob/mover)
 	if(isliving(mover))
 		shock(mover)
 

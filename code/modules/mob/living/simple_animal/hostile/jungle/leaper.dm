@@ -88,7 +88,7 @@
 	playsound(src,'sound/effects/snap.ogg',50, 1, -1)
 	return ..()
 
-/obj/structure/leaper_bubble/Crossed(atom/movable/AM)
+/obj/structure/leaper_bubble/proc/on_entered(atom/movable/AM)
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/jungle/leaper))

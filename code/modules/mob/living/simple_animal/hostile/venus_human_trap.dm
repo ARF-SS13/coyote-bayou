@@ -38,7 +38,7 @@
 	mouse_opacity = MOUSE_OPACITY_ICON
 	desc = "A thick vine, painful to the touch."
 
-/obj/effect/ebeam/vine/Crossed(atom/movable/AM)
+/obj/effect/ebeam/vine/proc/on_entered(atom/movable/AM)
 	. = ..()
 	if(isliving(AM))
 		var/mob/living/L = AM

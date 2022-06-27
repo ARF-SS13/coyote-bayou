@@ -90,7 +90,7 @@
 	. = ..()
 	Attach(M)
 
-/obj/item/clothing/mask/facehugger/Crossed(atom/target)
+/obj/item/clothing/mask/facehugger/proc/on_entered(atom/target)
 	HasProximity(target)
 	return
 

@@ -23,7 +23,7 @@
 	playsound(src, 'sound/weapons/blade1.ogg', 50, TRUE)
 	return BULLET_ACT_BLOCK
 
-/mob/living/simple_animal/bot/secbot/grievous/Crossed(atom/movable/AM)
+/mob/living/simple_animal/bot/secbot/grievous/proc/on_entered(atom/movable/AM)
 	..()
 	if(ismob(AM) && AM == target)
 		visible_message("[src] flails his swords and cuts [AM]!")

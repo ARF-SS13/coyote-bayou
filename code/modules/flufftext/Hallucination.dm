@@ -1076,7 +1076,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/lava/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/lava/proc/on_entered(atom/movable/AM)
 	if(AM == target)
 		target.adjustStaminaLoss(20)
 		new /datum/hallucination/fire(target)
@@ -1089,7 +1089,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/chasm/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/chasm/proc/on_entered(atom/movable/AM)
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
@@ -1118,7 +1118,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/anomaly/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/anomaly/proc/on_entered(atom/movable/AM)
 	if(AM == target)
 		new /datum/hallucination/shock(target)
 

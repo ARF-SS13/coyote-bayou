@@ -39,7 +39,7 @@
 	if(move_dir == eat_dir)
 		return TRUE
 
-/obj/machinery/plumbing/grinder_chemical/Crossed(atom/movable/AM)
+/obj/machinery/plumbing/grinder_chemical/proc/on_entered(atom/movable/AM)
 	. = ..()
 	grind(AM)
 

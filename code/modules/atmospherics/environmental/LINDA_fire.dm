@@ -211,7 +211,7 @@
 				T.to_be_destroyed = FALSE
 				T.max_fire_temperature_sustained = 0
 
-/obj/effect/hotspot/Crossed(atom/movable/AM, oldLoc)
+/obj/effect/hotspot/proc/on_entered(atom/movable/AM, oldLoc)
 	..()
 	if(isliving(AM))
 		var/mob/living/L = AM

@@ -639,7 +639,7 @@
 /mob/living/proc/update_damage_overlays()
 	return
 
-/mob/living/Crossed(atom/movable/AM)
+/mob/living/proc/on_entered(atom/movable/AM)
 	. = ..()
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i

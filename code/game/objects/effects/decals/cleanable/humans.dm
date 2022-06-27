@@ -87,7 +87,16 @@
 	blood_state = BLOOD_STATE_BLOOD //the icon state to load images from
 	var/list/shoe_types = list()
 
-/obj/effect/decal/cleanable/blood/footprints/Crossed(atom/movable/O)
+/obj/effect/decal/cleanable/blood/footprints/Initialize(mapload, list/datum/disease/diseases)
+	. = ..()
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/effect/decal/cleanable/blood/footprints/proc/on_entered(atom/movable/O)
+	SIGNAL_HANDLER
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O
 		var/obj/item/clothing/shoes/S = H.shoes
