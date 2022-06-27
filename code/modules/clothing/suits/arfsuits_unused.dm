@@ -768,7 +768,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 //Vault
 
-/obj/item/clothing/suit/armor/medium/riot/vault
+/obj/item/clothing/suit/armor/heavy/riot/vault
 	name = "VTCC riot armour"
 	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
 	icon_state = "vtcc_riot_gear"
@@ -1012,21 +1012,21 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	item_state = "tdgreen"
 
 
-/obj/item/clothing/suit/armor/medium/riot/knight
+/obj/item/clothing/suit/armor/heavy/riot/knight
 	name = "plate armour"
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/yellow
+/obj/item/clothing/suit/armor/heavy/riot/knight/yellow
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/blue
+/obj/item/clothing/suit/armor/heavy/riot/knight/blue
 	icon_state = "knight_blue"
 	item_state = "knight_blue"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/red
+/obj/item/clothing/suit/armor/heavy/riot/knight/red
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
@@ -1036,13 +1036,13 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/tabard
+/obj/item/clothing/suit/armor/heavy/riot/knight/tabard
 	name = "tabard plate armor"
 	desc = "A set of plate armor with tabard for the user's high-visibility during combat."
 	icon_state = "knight_tabard"
 	item_state = "knight_tabard"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/greyscale
+/obj/item/clothing/suit/armor/heavy/riot/knight/greyscale
 	name = "knight armour"
 	desc = "A classic suit of armour, able to be made from many different materials."
 	icon_state = "knight_greyscale"

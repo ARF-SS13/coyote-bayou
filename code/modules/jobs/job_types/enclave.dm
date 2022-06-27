@@ -135,7 +135,7 @@
 	name = "Enclave Gunnery Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	suit = /obj/item/clothing/suit/armor/power_armor/x02
+	suit = /obj/item/clothing/suit/armor/power_armor/advanced/x02
 	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
 
 	backpack_contents = list(

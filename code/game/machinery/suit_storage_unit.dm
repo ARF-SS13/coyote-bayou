@@ -118,7 +118,7 @@
 
 /obj/machinery/suit_storage_unit/enclave
 	name = "power armor storage unit"
-	suit_type = /obj/item/clothing/suit/armor/power_armor/x02
+	suit_type = /obj/item/clothing/suit/armor/power_armor/advanced/x02
 	helmet_type = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
 
 /obj/machinery/suit_storage_unit/open

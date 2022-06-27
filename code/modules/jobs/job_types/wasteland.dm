@@ -291,7 +291,7 @@ Raider
 
 /datum/outfit/loadout/raider_vault
 	name = "Vault Renegade"
-	suit = /obj/item/clothing/suit/armor/medium/vest/big
+	suit = /obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	uniform = /obj/item/clothing/under/f13/exile/vault
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(

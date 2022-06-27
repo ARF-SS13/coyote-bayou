@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
-	/obj/item/restraints/legcuffs/bola
+	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen)))
 
 ///extra things light armor can hold in their slot by default
@@ -359,6 +359,15 @@ GLOBAL_LIST_INIT(default_outfit_apron_farmer_slot_allowed, typecacheof(list(
 	/obj/item/scythe, 
 	/obj/item/cultivator, 
 	/obj/item/shovel)))
+
+///extra things medium armor can hold in their slot by default
+GLOBAL_LIST_INIT(default_medium_armor_slot_allowed, typecacheof(list(
+	/obj/item/storage/box,
+	/obj/item/storage/belt,
+	/obj/item/storage/wallet,
+	/obj/item/melee,
+	/obj/item/gun)))
+
 
 
 //Internals checker

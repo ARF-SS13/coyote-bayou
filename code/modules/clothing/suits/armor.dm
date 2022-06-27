@@ -36,7 +36,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 30)
 	slowdown = 0.05
 
-/obj/item/clothing/suit/armor/medium/vest/big
+/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	name = "security vest"
 	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
@@ -165,7 +165,7 @@
 	icon_state = "capformal"
 	item_state = "capspacesuit"
 
-/obj/item/clothing/suit/armor/medium/riot
+/obj/item/clothing/suit/armor/heavy/riot
 	name = "riot suit"
 	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
 	icon_state = "riot"
@@ -265,21 +265,21 @@
 	item_state = "tdgreen"
 
 
-/obj/item/clothing/suit/armor/medium/riot/knight
+/obj/item/clothing/suit/armor/heavy/riot/knight
 	name = "plate armour"
 	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "knight_green"
 	item_state = "knight_green"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/yellow
+/obj/item/clothing/suit/armor/heavy/riot/knight/yellow
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/blue
+/obj/item/clothing/suit/armor/heavy/riot/knight/blue
 	icon_state = "knight_blue"
 	item_state = "knight_blue"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/red
+/obj/item/clothing/suit/armor/heavy/riot/knight/red
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
@@ -289,20 +289,20 @@
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/tabard
+/obj/item/clothing/suit/armor/heavy/riot/knight/tabard
 	name = "tabard plate armor"
 	desc = "A set of plate armor with tabard for the user's high-visibility during combat."
 	icon_state = "knight_tabard"
 	item_state = "knight_tabard"
 
-/obj/item/clothing/suit/armor/medium/riot/knight/greyscale
+/obj/item/clothing/suit/armor/heavy/riot/knight/greyscale
 	name = "knight armour"
 	desc = "A classic suit of armour, able to be made from many different materials."
 	icon_state = "knight_greyscale"
 	item_state = "knight_greyscale"
 	material_flags = MATERIAL_ADD_PREFIX | MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS //Can change color and add prefix
 
-/obj/item/clothing/suit/armor/light/vest/durathread
+/obj/item/clothing/suit/armor/light/leather/durathread
 	name = "makeshift vest"
 	desc = "A makeshift vest made of heat-resistant fiber."
 	icon_state = "durathread"

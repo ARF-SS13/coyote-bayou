@@ -217,7 +217,7 @@
 	..()
 	new /obj/item/clothing/suit/armor/heavy/metal/polished(src)
 	for(var/i in 1 to 3)
-		new /obj/item/clothing/suit/armor/medium/riot(src)
+		new /obj/item/clothing/suit/armor/heavy/riot(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/head/helmet/riot(src)
 	for(var/i in 1 to 3)

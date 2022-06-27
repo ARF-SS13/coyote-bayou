@@ -97,7 +97,7 @@
 	ckeywhitelist = list("comradesocks")
 
 /obj/item/storage/box/large/custom_kit/vaktus/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/riot/combat(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/combat(src)
 	new /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/melee/onehanded/knife/survival(src)

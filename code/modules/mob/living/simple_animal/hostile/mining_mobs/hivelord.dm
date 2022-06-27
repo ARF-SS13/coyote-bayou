@@ -345,7 +345,7 @@
 			gloves = /obj/item/clothing/gloves/color/white
 			shoes = /obj/item/clothing/shoes/laceup
 			head = /obj/item/clothing/head/helmet/knight
-			suit = /obj/item/clothing/suit/armor/medium/riot/knight
+			suit = /obj/item/clothing/suit/armor/heavy/riot/knight
 			back = /obj/item/shield/riot/buckler
 			belt = /obj/item/nullrod/claymore
 			r_pocket = /obj/item/tank/internals/emergency_oxygen

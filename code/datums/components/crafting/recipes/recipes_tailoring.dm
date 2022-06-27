@@ -230,7 +230,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Durathread Armour"
-	result = /obj/item/clothing/suit/armor/light/vest/durathread
+	result = /obj/item/clothing/suit/armor/light/leather/durathread
 	reqs = list(/obj/item/stack/sheet/durathread = 6,
 				/obj/item/stack/sheet/leather = 3)
 	time = 50
@@ -898,7 +898,7 @@ datum/crafting_recipe/steelbib/heavy
 /*
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Vest"
-	result = /obj/item/clothing/suit/armor/light/vest/durathread
+	result = /obj/item/clothing/suit/armor/light/leather/durathread
 	reqs = list( /obj/item/stack/sheet/durathread = 5,
 				/obj/item/stack/sheet/leather = 4)
 	time = 50

@@ -84,7 +84,7 @@
 	item_state = "knight_winged"
 // CITADEL CHANGES ENDS HERE
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain
+/obj/item/clothing/suit/armor/heavy/riot/chaplain
 	name = "crusader armour"
 	desc = "God wills it!"
 	icon_state = "knight_templar"
@@ -92,16 +92,16 @@
 	allowed = list(/obj/item/storage/book/bible, HOLY_WEAPONS, /obj/item/reagent_containers/food/drinks/bottle/holywater, /obj/item/storage/fancy/candle_box, /obj/item/candle, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman)
 
 // CITADEL CHANGES: More variants
-/obj/item/clothing/suit/armor/medium/riot/chaplain/teutonic
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/teutonic
 	desc = "Help, Defend, Heal!"
 	icon_state = "knight_teutonic"
 	item_state = "knight_teutonic"
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain/teutonic/alt
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/teutonic/alt
 	icon_state = "knight_teutonic_alt"
 	item_state = "knight_teutonic_alt"
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain/hospitaller
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/hospitaller
 	icon_state = "knight_hospitaller"
 	item_state = "knight_hospitaller"
 // CITADEL CHANGES ENDS HERE
@@ -142,7 +142,7 @@
 
 /obj/item/storage/box/holy/PopulateContents()
 	new /obj/item/clothing/head/helmet/chaplain(src)
-	new /obj/item/clothing/suit/armor/medium/riot/chaplain(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/chaplain(src)
 
 // CITADEL CHANGES: More Variants
 /obj/item/storage/box/holy/teutonic
@@ -150,24 +150,24 @@
 
 /obj/item/storage/box/holy/teutonic/PopulateContents() // It just works
 	pick(new /obj/item/clothing/head/helmet/chaplain/bland/horned(src), new /obj/item/clothing/head/helmet/chaplain/bland/winged(src))
-	pick(new /obj/item/clothing/suit/armor/medium/riot/chaplain/teutonic(src), new /obj/item/clothing/suit/armor/medium/riot/chaplain/teutonic/alt(src))
+	pick(new /obj/item/clothing/suit/armor/heavy/riot/chaplain/teutonic(src), new /obj/item/clothing/suit/armor/heavy/riot/chaplain/teutonic/alt(src))
 
 /obj/item/storage/box/holy/hospitaller
 	name = "Hospitaller Kit"
 
 /obj/item/storage/box/holy/hospitaller/PopulateContents()
 	new /obj/item/clothing/head/helmet/chaplain/bland(src)
-	new /obj/item/clothing/suit/armor/medium/riot/chaplain/hospitaller(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/chaplain/hospitaller(src)
 // CITADEL CHANGES ENDS HERE
 
 /obj/item/storage/box/holy/student
 	name = "Profane Scholar Kit"
 
 /obj/item/storage/box/holy/student/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/riot/chaplain/studentuni(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/chaplain/studentuni(src)
 	new /obj/item/clothing/head/helmet/chaplain/cage(src)
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain/studentuni
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/studentuni
 	name = "student robe"
 	desc = "The uniform of a bygone institute of learning."
 	icon_state = "studentuni"
@@ -188,7 +188,7 @@
 	name = "Stone Sentinel Kit"
 
 /obj/item/storage/box/holy/sentinel/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/riot/chaplain/ancient(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/chaplain/ancient(src)
 	new /obj/item/clothing/head/helmet/chaplain/ancient(src)
 
 /obj/item/clothing/head/helmet/chaplain/ancient
@@ -197,7 +197,7 @@
 	icon_state = "knight_ancient"
 	item_state = "knight_ancient"
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain/ancient
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/ancient
 	name = "ancient armour"
 	desc = "Defend the treasure..."
 	icon_state = "knight_ancient"
@@ -207,10 +207,10 @@
 	name = "Witchhunter Kit"
 
 /obj/item/storage/box/holy/witchhunter/PopulateContents()
-	new /obj/item/clothing/suit/armor/medium/riot/chaplain/witchhunter(src)
+	new /obj/item/clothing/suit/armor/heavy/riot/chaplain/witchhunter(src)
 	new /obj/item/clothing/head/helmet/chaplain/witchunter_hat(src)
 
-/obj/item/clothing/suit/armor/medium/riot/chaplain/witchhunter
+/obj/item/clothing/suit/armor/heavy/riot/chaplain/witchhunter
 	name = "witchunter garb"
 	desc = "This worn outfit saw much use back in the day."
 	icon_state = "witchhunter"

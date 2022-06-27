@@ -1104,6 +1104,22 @@
 	item_state = "cowboybvest"
 	desc = "Stylish and has discrete lead plates inserted, just in case someone brings a laser to a fistfight."
 
+/obj/item/clothing/suit/armor/light/leather/durathread
+	name = "makeshift vest"
+	desc = "A makeshift vest made of heat-resistant fiber."
+	icon_state = "durathread"
+	item_state = "durathread"
+	armor = list(
+		"melee" = 20, 
+		"bullet" = 7.5, 
+		"laser" = 5, 
+		"energy" = 0, 
+		"bomb" = 0, 
+		"bio" = 0, 
+		"rad" = 0, 
+		"fire" = -30, 
+		"acid" = -10)
+
 	
 ///////////////
 //// MISC? ????
@@ -1124,30 +1140,51 @@
 /* 
  * Stats
  * Some slowdown, decent protection
- * 10% DR for general armor
- * 15-20% for specialist armor (most everything else is butt)
+ * 25% DR for general armor - 134% effective HP
+ * 30-35% for specialist armor (most everything else is butt)
  * Assuming 25 damage from the average attack:
- * - goes from 4 hit crit to 5 at 25
- * - 5 hit crit to 6 at 20 dmg
- * - 4 hit crit to 5 at 30 for specialists maybe???
+ * - goes from 4 hit crit to 6 at 25
+ * - 5 hit crit to 7 at 20 dmg
+ * - 4 hit crit to 6 at 30 dmg
  *
- * Tribal (decent, its got ~pockets~)
- * Raider (general, okayish against everything)
- * combat armor (good at eveyrthing really)
- * vest (++bullet , --melee, --laser, chest only)
- * breastplate (--bullet , ++melee, +laser, chest only)
+ * Tribal (general, got extra pockets)
+ * Raider (general, ammo pouches?)
+ * combat armor (Just good, also holds lots of stuff in the armor slot)
+ * ballistic vest (++bullet , --melee, --laser)
+ * breastplate (--bullet , ++melee, +laser)
  * riot (+++melee , -bullet, --laser, full body)
  */
 
-//// MEDIUM ARMOR PARENT ////
-// Medium armor. 35-45 in its primary value, slowdown 0.1
 /obj/item/clothing/suit/armor/medium
 	name = "medium armor template"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	slowdown = 0.1
-	allowed = list(/obj/item/gun, /obj/item/melee/onehanded, /obj/item/twohanded, /obj/item/melee/smith, /obj/item/melee/smith/twohand)
-	strip_delay = 40
+	slowdown = 1
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor = list(
+		"melee" = 25, 
+		"bullet" = 25, 
+		"laser" = 20, 
+		"energy" = 5, // all are equal in the eyes of plasma
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 10, 
+		"acid" = 10)
+
+
+/obj/item/clothing/suit/armor/medium/Initialize()
+	/// make sure the parents work first for this, child lists take priority
+	. = ..()
+	/// adds the list to the allowed list
+	allowed |= GLOB.default_medium_armor_slot_allowed
 
 ////////////////////////////
 /// MEDIUM TRIBAL ARMOR ////
@@ -1156,6 +1193,25 @@
 /obj/item/clothing/suit/armor/medium/tribal
 	name = "heavy tribal armor"
 	desc = "A heavy suit of armour made of brahmin and gecko hides. It seems rather heavy."
+	slowdown = 0.9 // slightly lighter, cus melee
+	cold_protection = CHEST|GROIN
+	heat_protection = CHEST|GROIN
+	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	strip_delay = 30
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor = list(
+		"melee" = 27.5, 
+		"bullet" = 25, 
+		"laser" = 17.5, 
+		"energy" = 5, 
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 20, 
+		"acid" = 20)
 
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
@@ -1226,51 +1282,72 @@
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = 0.9 // slightly lighter, cus its a vest
+	armor = list(
+		"melee" = 5, 
+		"bullet" = 32.5, 
+		"laser" = 10, 
+		"energy" = 5, 
+		"bomb" = 5, 
+		"bio" = 5, 
+		"rad" = 5, 
+		"fire" = 5, 
+		"acid" = 5)
 
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
 	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles. The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
-	armor = list("melee" = 0, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = -50)
 
 /obj/item/clothing/suit/armor/medium/vest/kevlar
 	name = "kevlar vest"
 	desc = "Worn but serviceable, the vest is is effective against ballistic impacts."
 	icon_state = "vest_kevlar"
 	item_state = "vest_kevlar"
-	armor = list("melee" = 5, "bullet" = 35, "laser" = 5, "energy" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/armor/medium/vest/bulletproof
 	name = "bulletproof vest"
 	desc = "This vest is in good shape, the layered kevlar lightweight yet very good at stopping bullets."
 	icon_state = "vest_bullet"
 	item_state = "vest_bullet"
-	armor = list("melee" = 10, "bullet" = 40, "laser" = 5, "energy" = 5, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	slowdown = 1.1 // bulky!
+	armor = list(
+		"melee" = 5, 
+		"bullet" = 40, 
+		"laser" = -5, 
+		"energy" = 5, 
+		"bomb" = 5, 
+		"bio" = 5, 
+		"rad" = 5, 
+		"fire" = 5, 
+		"acid" = 5)
+
+/obj/item/clothing/suit/armor/medium/vest/bulletproof/armor
+	name = "armored vest"
+	desc = "Large bulletproof vest with ballistic plates."
+	icon_state = "vest_armor"
+	item_state = "vest_armor"
+
+/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
+	name = "security vest"
+	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "vest_armor"
+	item_state = "vest_armor"
 
 /obj/item/clothing/suit/armor/medium/vest/followers
 	name = "followers armor vest"
 	desc = "A coat in light colors with the markings of the Followers, concealing a bullet-proof vest."
 	icon_state = "vest_follower"
 	item_state = "vest_follower"
-	armor = list("melee" = 10, "bullet" = 35, "laser" = 5, "energy" = 0, "bomb" = 5, "bio" = 10, "rad" = 0, "fire" = 5, "acid" = 0)
 
 /obj/item/clothing/suit/armor/medium/vest/town
 	name = "Oasis flak vest"
 	desc = "A refurbished flak vest, repaired by the Oasis Police Department. The ballistic nylon has a much tougher weave, but it still will not take acid or most high-powered rounds."
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
-	armor = list("melee" = 10, "bullet" = 30, "laser" = 10, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = -50)
-
-/obj/item/clothing/suit/armor/light/vest/durathread
-	name = "makeshift vest"
-	desc = "A makeshift vest made of heat-resistant fiber."
-	icon_state = "durathread"
-	item_state = "durathread"
-	strip_delay = 60
-	equip_delay_other = 40
-	max_integrity = 200
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 45, "energy" = 45, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 50, "wound" = 40)
 
 /obj/item/clothing/suit/armor/light/vest/russian
 	name = "russian vest"
@@ -1278,25 +1355,11 @@
 	icon_state = "rus_armor"
 	item_state = "rus_armor"
 
-/obj/item/clothing/suit/armor/medium/vest/armor
-	name = "armored vest"
-	desc = "Large bulletproof vest with ballistic plates."
-	icon_state = "vest_armor"
-	item_state = "vest_armor"
-
 /obj/item/clothing/suit/armor/medium/vest/chinese
 	name = "chinese flak vest"
 	desc = "An uncommon suit of pre-war Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "vest_chicom"
 	item_state = "vest_chicom"
-
-/obj/item/clothing/suit/armor/medium/vest/big
-	name = "security vest"
-	desc = "A thick bullet-resistant vest composed of ballistic plates and padding. Common with pre-war security forces."
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon_state = "vest_armor"
-	item_state = "vest_armor"
 
 /obj/item/clothing/suit/armor/medium/vest/trench
 	name = "followers trenchcoat"
@@ -1327,10 +1390,6 @@
 	desc = "A navy-blue armored jacket with blue shoulder designations and '/Warden/' stitched into one of the chest pockets."
 	icon_state = "warden_alt"
 	item_state = "armor"
-	// body_parts_covered = CHEST|GROIN|ARMS
-	cold_protection = CHEST|GROIN|ARMS|HANDS
-	heat_protection = CHEST|GROIN|ARMS|HANDS
-	strip_delay = 70
 	resistance_flags = FLAMMABLE
 	dog_fashion = null
 	mutantrace_variation = STYLE_DIGITIGRADE
@@ -1353,9 +1412,6 @@
 	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers."
 	icon_state = "leathercoat-sec"
 	item_state = "hostrench"
-	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
-	cold_protection = CHEST|GROIN|LEGS|ARMS
-	heat_protection = CHEST|GROIN|LEGS|ARMS
 	dog_fashion = null
 
 /obj/item/clothing/suit/armor/medium/vest/capcarapace
@@ -1363,7 +1419,6 @@
 	desc = "A fireproof armored chestpiece reinforced with ceramic plates and plasteel pauldrons to provide additional protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest, although it does chafe your nipples."
 	icon_state = "capcarapace"
 	item_state = "armor"
-	// body_parts_covered = CHEST|GROIN
 	dog_fashion = null
 	resistance_flags = FIRE_PROOF
 
@@ -1388,7 +1443,7 @@
 
 /obj/item/clothing/suit/armor/medium/vest/det_suit/Initialize()
 	. = ..()
-	allowed = GLOB.detective_vest_allowed
+	allowed |= GLOB.detective_vest_allowed
 
 /obj/item/clothing/suit/armor/medium/vest/infiltrator
 	name = "insidious combat vest"
@@ -1403,7 +1458,16 @@
 	desc = "Efficient prewar design issued to Enclave personell."
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 30, "energy" = 30, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = list(
+		"melee" = 15, 
+		"bullet" = 40, 
+		"laser" = 10, 
+		"energy" = 5, 
+		"bomb" = 5, 
+		"bio" = 5, 
+		"rad" = 5, 
+		"fire" = 5, 
+		"acid" = 5)
 
 /////////////////////////////
 //// MEDIUM BREASTPLATES ////
@@ -1415,6 +1479,16 @@
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	strip_delay = 5
+	armor = list(
+		"melee" = 30, 
+		"bullet" = 5, 
+		"laser" = 25, 
+		"energy" = -20, //boy does it conduct heat
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 10, 
+		"acid" = 50)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"
@@ -1423,7 +1497,17 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "light_plates"
 	item_state = "armorkit"
-	slowdown = 0.08
+	slowdown = 0.9
+	armor = list(
+		"melee" = 25, 
+		"bullet" = 5, 
+		"laser" = 20, 
+		"energy" = -20, 
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 10, 
+		"acid" = 50)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "heavy steel breastplate"
@@ -1445,6 +1529,17 @@
 	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
+	slowdown = 1.1
+	armor = list(
+		"melee" = 35, 
+		"bullet" = 10, 
+		"laser" = 25, 
+		"energy" = -20, //boy does it conduct heat
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 10, 
+		"acid" = 50)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap
 	name = "scrap metal chestplate"
@@ -1471,25 +1566,6 @@
 	icon_state = "mutie_heavy_metal"
 	item_state = "mutie_heavy_metal"
 
-/obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof
-	name = "reflector vest"
-	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."
-	icon_state = "armor_reflec"
-	item_state = "armor_reflec"
-	blood_overlay_type = "armor"
-	armor = list("melee" = 25, "bullet" = 25,"laser" = 99, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	var/hit_reflect_chance = 40
-	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
-
-/obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	if(def_zone in protected_zones)
-		if(prob(hit_reflect_chance))
-			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
-	return ..()
-
-
 ///////////////////////
 //// MEDIUM DUSTER ////
 ///////////////////////
@@ -1504,15 +1580,27 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	strip_delay = 80
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	slowdown = 0.9 // slightly lighter, cus bigcoat
+	equip_delay_other = 50
+	max_integrity = 200
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	armor = list(
+		"melee" = 22.5, 
+		"bullet" = 22.5, 
+		"laser" = 20, 
+		"energy" = 5, 
+		"bomb" = 10, 
+		"bio" = 35, 
+		"rad" = 25, 
+		"fire" = 35, 
+		"acid" = 35)
+
 
 /obj/item/clothing/suit/armor/medium/duster/navyblue
 	name = "head of security's jacket"
 	desc = "This piece of clothing was specifically designed for asserting superior authority."
 	icon_state = "hosbluejacket"
 	item_state = "hosbluejacket"
-	// body_parts_covered = CHEST|ARMS
-	cold_protection = CHEST|ARMS
-	heat_protection = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/medium/duster/trenchcoat
 	name = "armored trenchcoat"
@@ -1520,7 +1608,6 @@
 	icon_state = "hostrench"
 	item_state = "hostrench"
 	flags_inv = 0
-	strip_delay = 80
 	unique_reskin = list("Coat" = "hostrench",
 						"Cloak" = "trenchcloak")
 
@@ -1552,7 +1639,6 @@
 	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
 	icon_state = "warden_alt"
 	item_state = "armor"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/holdout
 
 /obj/item/clothing/suit/armor/medium/duster/motorball
 	name = "motorball suit"
@@ -1572,28 +1658,6 @@
 	icon_state = "cloak_armored"
 	item_state = "cloak_armored"
 
-///////////////////////////
-//// MEDIUM RIOT ARMOR ////
-///////////////////////////
-
-/obj/item/clothing/suit/armor/medium/riot
-	name = "riot suit"
-	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
-	icon_state = "riot"
-	item_state = "swat_suit"
-	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	blocks_shove_knockdown = TRUE
-	strip_delay = 80
-	equip_delay_other = 60
-
-/obj/item/clothing/suit/armor/medium/riot/combat
-	name = "combat riot armor"
-	icon_state = "combat_coat"
-	item_state = "combat_coat"
-	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
-
 //////////////////////
 //// COMBAT ARMOR ////
 //////////////////////
@@ -1604,10 +1668,33 @@
 	icon_state = "combat_armor"
 	item_state = "combat_armor"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
+	slowdown = 0.9
+	equip_delay_other = 50
+	max_integrity = 200
+	armor = list(
+		"melee" = 27.5, 
+		"bullet" = 27.5, 
+		"laser" = 25, 
+		"energy" = 10, 
+		"bomb" = 35, 
+		"bio" = 35, 
+		"rad" = 35, 
+		"fire" = 40, 
+		"acid" = 40)
 
 /obj/item/clothing/suit/armor/medium/combat/laserproof
 	name = "ablative combat armor"
 	desc = "An old military grade pre war combat armor. This one switches out its ballistic fibers for an ablative coating that disrupts energy weapons."
+	armor = list(
+		"melee" = 27.5, 
+		"bullet" = 15, 
+		"laser" = 35, 
+		"energy" = 20, 
+		"bomb" = 35, 
+		"bio" = 35, 
+		"rad" = 35, 
+		"fire" = 40, 
+		"acid" = 40)
 
 /obj/item/clothing/suit/armor/medium/combat/dark
 	name = "combat armor"
@@ -1629,8 +1716,18 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
-	slowdown = 0.15
+	slowdown = 1.15
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
+	armor = list(
+		"melee" = 30, 
+		"bullet" = 30, 
+		"laser" = 30, 
+		"energy" = 10, 
+		"bomb" = 40, 
+		"bio" = 45, 
+		"rad" = 45, 
+		"fire" = 45, 
+		"acid" = 45)
 
 /obj/item/clothing/suit/armor/medium/combat/mk2/dark
 	name = "reinforced combat armor"
@@ -1654,7 +1751,7 @@
 	desc = "An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates look sound and intact still."
 	icon_state = "rusted_combat_armor"
 	item_state = "rusted_combat_armor"
-	slowdown = 0.12
+	slowdown = 1.1
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
 	name = "environmental armor"
@@ -1663,11 +1760,21 @@
 	item_state = "environmental_armor"
 	w_class = WEIGHT_CLASS_BULKY
 	gas_transfer_coefficient = 0.9
-	permeability_coefficient = 0.5
-	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	permeability_coefficient = 0.1
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
+	slowdown = 1.2
+	armor = list(
+		"melee" = 25, 
+		"bullet" = 25, 
+		"laser" = 25, 
+		"energy" = 10, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 75, 
+		"fire" = 75, 
+		"acid" = 80)
 
 /obj/item/clothing/suit/armor/medium/combat/environmental/ComponentInitialize()
 	. = ..()
@@ -1686,8 +1793,7 @@
 	icon_state = "combatduster"
 	item_state = "combatduster"
 	permeability_coefficient = 0.9
-	heat_protection = CHEST | GROIN | LEGS
-	cold_protection = CHEST | GROIN | LEGS
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
 
 ///brotherhood of steel
 /obj/item/clothing/suit/armor/medium/combat/brotherhood
@@ -1729,6 +1835,10 @@
 ///////////////////
 // MEDIUM RAIDER //
 ///////////////////
+
+/obj/item/clothing/suit/armor/medium/raider
+	name = "base raider armor"
+	desc = "for testing"
 
 /obj/item/clothing/suit/armor/medium/raider/supafly
 	name = "supa-fly raider armor"
@@ -1789,67 +1899,18 @@
 	icon_state = "raider_combat"
 	item_state = "raider_combat"
 
-/obj/item/clothing/suit/armor/medium/raider
-	name = "base raider armor"
-	desc = "for testing"
-	// body_parts_covered = CHEST|GROIN|LEGS|ARMS
-
-/obj/item/clothing/suit/armor/medium/raider/supafly
-	name = "supa-fly raider armor"
-	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
-	icon_state = "supafly"
-	item_state = "supafly"
-
-/obj/item/clothing/suit/armor/medium/raider/rebel
-	name = "rebel raider armor"
-	desc = "Rebel, rebel. Your face is a mess."
-	icon_state = "raider_rebel_icon"
-	item_state = "raider_rebel_armor"
-
-/obj/item/clothing/suit/armor/medium/raider/sadist
-	name = "sadist raider armor"
-	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
-	icon_state = "sadist"
-	item_state = "sadist"
-
-/obj/item/clothing/suit/armor/medium/raider/blastmaster
-	name = "blastmaster raider armor"
-	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
-	icon_state = "blastmaster"
-	item_state = "blastmaster"
-	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
-	flash_protect = 2
-
-/obj/item/clothing/suit/armor/medium/raider/yankee
-	name = "yankee raider armor"
-	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
-	icon_state = "yankee"
-	item_state = "yankee"
-
 /obj/item/clothing/suit/armor/medium/raider/badlands
 	name = "badlands raider armor"
 	desc = "A leather top with a bandolier over it and a straps that cover the arms."
 	icon_state = "badlands"
 	item_state = "badlands"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
-
-/obj/item/clothing/suit/armor/medium/raider/painspike
-	name = "painspike raider armor"
-	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
-	icon_state = "painspike"
-	item_state = "painspike"
-
-/obj/item/clothing/suit/armor/medium/raider/iconoclast
-	name = "iconoclast raider armor"
-	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
-	icon_state = "iconoclast"
-	item_state = "iconoclast"
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster
 	name = "combat duster"
 	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster/patrolduster
 	name = "Patrol Duster"
@@ -1875,25 +1936,43 @@
 ///////////
 
 /* 
- * Extremely heavy, high protection, but sloooow.
+ * Stats
+ * Big slowdown, high protection
+ * 40% DR for general armor - ???% effective HP
+ * 50-60% for specialist armor (most everything else is butt)
+ * 
  * Types:
- * Tribal (++ melee, everything else ok)
- * Raider (general, okayish against everything)
- * metal (-bullet , ++melee, ++laser, full body)
- * Polished (--bullet , +melee, +++laser, full body)
- * riot (special, +++melee , -bullet, --laser, full body)
- * Vest - bulletproof (special, +++bullet, --everything else, bull body)
- * Salvaged PA (Super protective, super sloooow and bulky)
+ * Tribal Raider (basically the same at this point)
+ * metal (-bullet , ++melee, ++laser)
+ * Polished (--bullet , +melee, +++laser)
+ * riot (special, +++melee , -bullet, --laser)
+ * Vest - bulletproof (special, +++bullet, --everything else)
+ * Salvaged PA (partway to PA, but super sloooow and bulky)
  */
 
-//// HEAVY ARMOR PARENT ////
-// HEAVY armor. 35-45 in its primary value, slowdown 0.1
 /obj/item/clothing/suit/armor/heavy
 	name = "heavy armor template"
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
-	slowdown = 0.15
+	slowdown = 1
 	strip_delay = 50
+	equip_delay_other = 50
+	max_integrity = 300
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor = list(
+		"melee" = 40, 
+		"bullet" = 40, 
+		"laser" = 40, 
+		"energy" = 0, 
+		"bomb" = 30, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 30, 
+		"acid" = 40)
+
+/////////////////////
+//// BULLET VEST //// ...?
+/////////////////////
 
 /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	name = "bulletproof armor"
@@ -1901,11 +1980,27 @@
 	icon_state = "bulletproof"
 	item_state = "armor"
 	blood_overlay_type = "armor"
-	armor = list("melee" = 27, "bullet" = 60, "laser" = 27, "energy" = 35, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10, "wound" = 50)
-	strip_delay = 70
-	equip_delay_other = 50
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	slowdown = 0.05
+	armor = list(
+		"melee" = 15, 
+		"bullet" = 60, 
+		"laser" = 10, 
+		"energy" = -20, 
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 0, 
+		"acid" = 40)
+
+//////////////////////
+//// TRIBAL ARMOR ////
+//////////////////////
+
+/obj/item/clothing/suit/armor/heavy/tribal
+	name = "tribal heavy carapace"
+	desc = "Thick layers of leather and bone, with metal reinforcements, surely this will make the wearer tough and uncaring for claws and blades."
+	icon_state = "tribal_heavy"
+	item_state = "tribal_heavy"
 
 /obj/item/clothing/suit/armor/heavy/tribal/bone
 	name = "Heavy Bone armor"
@@ -1913,7 +2008,20 @@
 	icon_state = "bone_dancer_armor_heavy"
 	item_state = "bone_dancer_armor_heavy"
 	blood_overlay_type = "armor"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	armor = list(
+		"melee" = 45, 
+		"bullet" = 35, 
+		"laser" = 40, 
+		"energy" = 0, 
+		"bomb" = 30, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 50, 
+		"acid" = 40)
+
+/////////////////////
+//// METAL ARMOR ////
+/////////////////////
 
 /obj/item/clothing/suit/armor/heavy/metal
 	name = "metal armor"
@@ -1922,6 +2030,16 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
+	armor = list(
+		"melee" = 50, 
+		"bullet" = 20, 
+		"laser" = 50, 
+		"energy" = -30, 
+		"bomb" = 45, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 0, 
+		"acid" = 50)
 
 /obj/item/clothing/suit/armor/heavy/metal/raider //HEAVY METAL RAIDER
 	name = "metal armor suit"
@@ -1936,6 +2054,44 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
+	armor = list(
+		"melee" = 25, 
+		"bullet" = 20, 
+		"laser" = 60, 
+		"energy" = -10, 
+		"bomb" = 0, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 0, 
+		"acid" = 20)
+
+/obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof // also actually_unobtainable
+	name = "reflector vest"
+	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."
+	icon_state = "armor_reflec"
+	item_state = "armor_reflec"
+	blood_overlay_type = "armor"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	var/hit_reflect_chance = 40
+	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
+	armor = list(
+		"melee" = 0, 
+		"bullet" = 0, 
+		"laser" = 90, 
+		"energy" = 30, 
+		"bomb" = 10, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 10, 
+		"acid" = 50)
+
+/obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(def_zone in protected_zones)
+		if(prob(hit_reflect_chance))
+			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
+	return ..()
+
 
 /obj/item/clothing/suit/armor/heavy/metal/tesla //changed from armor/laserproof
 	name = "tesla armor"
@@ -1946,6 +2102,16 @@
 	resistance_flags = FIRE_PROOF
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	armor = list(
+		"melee" = 5, 
+		"bullet" = 5, 
+		"laser" = 65, 
+		"energy" = 50, 
+		"bomb" = 0, 
+		"bio" = 0, 
+		"rad" = 0, 
+		"fire" = 0, 
+		"acid" = 0)
 
 /obj/item/clothing/suit/armor/heavy/metal/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && (attack_type == ATTACK_TYPE_PROJECTILE) && (def_zone in protected_zones))
@@ -1959,20 +2125,38 @@
 	desc = "A set of well-fitted plates formed together to provide effective protection."
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
+	armor = list(
+		"melee" = 55, 
+		"bullet" = 15, 
+		"laser" = 55, 
+		"energy" = 10, 
+		"bomb" = 50, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 40, 
+		"acid" = 60)
 
 /obj/item/clothing/suit/armor/heavy/metal/mutant
 	name = "mutant armour"
 	desc = "An oversized set of metal armour, made to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
 	icon_state = "mutie_metal_armour"
 	item_state = "mutie_metal_armour"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 15, "energy" = 10, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
 
 /obj/item/clothing/suit/armor/heavy/metal/mutant/reinforced
 	name = "mutant armour"
 	desc = "An oversized boiler plate, hammered to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
 	icon_state = "mutie_metal_armour_mk2"
 	item_state = "mutie_metal_armour_mk2"
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 45, "energy" = 20, "bomb" = 50, "bio" = 40, "rad" = 10, "fire" = 60, "acid" = 10)
+	armor = list(
+		"melee" = 55, 
+		"bullet" = 15, 
+		"laser" = 55, 
+		"energy" = 10, 
+		"bomb" = 50, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 40, 
+		"acid" = 60)
 
 /obj/item/clothing/suit/armor/heavy/metal/sulphite
 	name = "sulphite armor"
@@ -1982,20 +2166,49 @@
 	resistance_flags = FIRE_PROOF
 	icon_state = "sulphite"
 	item_state = "sulphite"
-	armor = list("melee" = 25, "bullet" = 55,"laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 45)
-	slowdown = 0.20
+	armor = list(
+		"melee" = 50, 
+		"bullet" = 25, 
+		"laser" = 50, 
+		"energy" = 35, 
+		"bomb" = 50, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 100, 
+		"acid" = 60)
+
+////////////////////
+//// RIOT ARMOR ////
+////////////////////
 
 /obj/item/clothing/suit/armor/heavy/riot
+	name = "riot suit"
+	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
+	icon_state = "riot"
+	item_state = "swat_suit"
+	blocks_shove_knockdown = TRUE
+	armor = list(
+		"melee" = 60, 
+		"bullet" = 5, 
+		"laser" = -20, 
+		"energy" = -20, 
+		"bomb" = 50, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = -50, //ha get fucked
+		"acid" = 40)
+
+/obj/item/clothing/suit/armor/heavy/riot/combat
+	name = "combat riot armor"
+	icon_state = "combat_coat"
+	item_state = "combat_coat"
+	desc = "A heavy armor with ballistic inserts, sewn into a padded riot police coat."
+
+/obj/item/clothing/suit/armor/heavy/riot/police
 	name = "riot police armor"
 	icon_state = "bulletproof_heavy"
 	item_state = "bulletproof_heavy"
 	desc = "Heavy armor with ballistic inserts, sewn into a padded riot police coat."
-
-/obj/item/clothing/suit/armor/heavy/tribal
-	name = "tribal heavy carapace"
-	desc = "Thick layers of leather and bone, with metal reinforcements, surely this will make the wearer tough and uncaring for claws and blades."
-	icon_state = "tribal_heavy"
-	item_state = "tribal_heavy"
 
 //////////////////////////
 // Salvaged Power Armor //
@@ -2009,7 +2222,18 @@
 	If you still don't understand - it's a 'master' item, basically main type/parent object or something. \
 	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45b and so on. \
 	Now begone, report this to coders. NOW!"
-	slowdown = 1
+	slowdown = 2 // STOMP STOMP
+	armor = list(
+		"melee" = 65, 
+		"bullet" = 65, 
+		"laser" = 75, 
+		"energy" = 30, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 50, 
+		"fire" = 80, 
+		"acid" = 80)
+
 
 // T-45B
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
@@ -2029,6 +2253,16 @@
 	desc = " It's a set of T-45b power armor with a with some of its plating removed. This set has exhaust pipes piped to the pauldrons, flames erupting from them."
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
+	armor = list(
+		"melee" = 60, 
+		"bullet" = 60, 
+		"laser" = 75, 
+		"energy" = 45, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 50, 
+		"fire" = 100, 
+		"acid" = 80)
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
 	name = "salvaged tribal T45-b power armor"
@@ -2036,6 +2270,17 @@
 	icon_state = "tribal_power_armor"
 	item_state = "tribal_power_armor"
 	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	slowdown = 1.5 // zoooom
+	armor = list(
+		"melee" = 55, 
+		"bullet" = 55, 
+		"laser" = 65, 
+		"energy" = 30, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 50, 
+		"fire" = 70, 
+		"acid" = 80)
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d
 	name = "salvaged T-45d power armor"
@@ -2049,6 +2294,16 @@
 	desc = "T-51b power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "t51b_salvaged"
 	item_state = "t51b_salvaged"
+	armor = list(
+		"melee" = 65, 
+		"bullet" = 70, 
+		"laser" = 80, 
+		"energy" = 40, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 50, 
+		"fire" = 80, 
+		"acid" = 80)
 
 // X-02
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02
@@ -2056,15 +2311,22 @@
 	desc = "X-02 power armor with servomotors and all valuable components stripped out of it."
 	icon_state = "advanced_salvaged"
 	item_state = "advanced_salvaged"
+	armor = list(
+		"melee" = 75, 
+		"bullet" = 65, 
+		"laser" = 75, 
+		"energy" = 45, 
+		"bomb" = 60, 
+		"bio" = 80, 
+		"rad" = 50, 
+		"fire" = 80, 
+		"acid" = 80)
 
 // Just generic PA I guess??
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/recycled
 	name = "recycled power armor"
 	desc = "Taking pieces off from a wrecked power armor will at least give you thick plating, but don't expect too much of this shot up, piecemeal armor.."
 	icon_state = "recycled_power"
-
-
-
 
 /////////////////
 // Power armor //
@@ -2109,6 +2371,17 @@
 	var/obj/item/salvaged_type = null
 	/// Used to track next tool required to salvage the suit
 	var/salvage_step = 0
+	armor = list(
+		"melee" = 77.5, 
+		"bullet" = 77.5, 
+		"laser" = 80, 
+		"energy" = 40, 
+		"bomb" = 90, 
+		"bio" = 100, 
+		"rad" = 50, 
+		"fire" = 95, 
+		"acid" = 95,
+		"wound" = 100)
 
 /obj/item/clothing/suit/armor/power_armor/Initialize()
 	. = ..()
@@ -2412,13 +2685,34 @@
 	item_state = "t51bpowerarmor"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 25)
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t51b
+	armor = list(
+		"melee" = 77.5, 
+		"bullet" = 77.5, 
+		"laser" = 85, 
+		"energy" = 55, 
+		"bomb" = 100, //canonically sealed
+		"bio" = 100, 
+		"rad" = 75, 
+		"fire" = 95, 
+		"acid" = 95,
+		"wound" = 100)
 
 /obj/item/clothing/suit/armor/power_armor/t51b/hardened
 	name = "Hardened T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer. It's plates have been chemially treated to be stronger."
 	icon_state = "t51green"
 	item_state = "t51green"
-
+	armor = list(
+		"melee" = 80, 
+		"bullet" = 80, 
+		"laser" = 85, 
+		"energy" = 55, 
+		"bomb" = 100, //canonically sealed
+		"bio" = 100, 
+		"rad" = 75, 
+		"fire" = 100, 
+		"acid" = 100,
+		"wound" = 100)
 
 /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	name = "Brotherhood T-51b Power Armour"
@@ -2432,23 +2726,41 @@
 	icon_state = "excavator"
 	item_state = "excavator"
 	slowdown = 0.4
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 50, "energy" = 15, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 95, "acid" = 80, "wound" = 80)
-
+	armor = list(
+		"melee" = 70, 
+		"bullet" = 50, 
+		"laser" = 50, 
+		"energy" = 20, 
+		"bomb" = 100, 
+		"bio" = 100, 
+		"rad" = 95, 
+		"fire" = 100, 
+		"acid" = 100,
+		"wound" = 100)
 /obj/item/clothing/suit/armor/power_armor/advanced
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
 	icon_state = "advpowerarmor1"
 	item_state = "advpowerarmor1"
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
+	armor = list(
+		"melee" = 85, 
+		"bullet" = 85, 
+		"laser" = 87.5, 
+		"energy" = 75, 
+		"bomb" = 100, 
+		"bio" = 100, 
+		"rad" = 90, 
+		"fire" = 100, 
+		"acid" = 100,
+		"wound" = 100)
 
 //Peacekeeper armor adjust as needed
-/obj/item/clothing/suit/armor/power_armor/x02
+/obj/item/clothing/suit/armor/power_armor/advanced/x02
 	name = "Enclave power armor"
 	desc = "Upgraded pre-war power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
 	icon_state = "advanced"
 	item_state = "advanced"
 	slowdown = 0.25 //+0.1 from helmet = total 0.35
-	armor = list("melee" = 85, "bullet" = 85, "laser" = 85, "energy" = 65, "bomb" = 70, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 75)
 	salvaged_type = /obj/item/clothing/suit/armor/heavy/salvaged_pa/x02 // Oh the misery
 
 /obj/item/clothing/suit/toggle/armor

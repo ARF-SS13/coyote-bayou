@@ -392,14 +392,14 @@
 /obj/effect/spawner/bundle/f13/armor/riot
 	name = "riot armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/riot/combat,
+				/obj/item/clothing/suit/armor/heavy/riot/combat,
 				/obj/item/clothing/head/helmet/f13/combat/rangerbroken
 				)
 
 /obj/effect/spawner/bundle/f13/armor/vault
 	name = "vault armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/vest/big,
+				/obj/item/clothing/suit/armor/medium/vest/bulletproof/big,
 				/obj/item/clothing/head/helmet/riot/vaultsec,
 				)
 

@@ -836,7 +836,7 @@
 
 //Vault
 
-/obj/item/clothing/suit/armor/medium/riot/vault
+/obj/item/clothing/suit/armor/heavy/riot/vault
 	name = "VTCC riot armour"
 	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
 	icon_state = "vtcc_riot_gear"

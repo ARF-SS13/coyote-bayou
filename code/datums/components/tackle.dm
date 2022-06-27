@@ -285,7 +285,7 @@
 		var/mob/living/carbon/human/S = sacker
 
 		var/suit_slot = S.get_item_by_slot(ITEM_SLOT_OCLOTHING)
-		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/medium/riot))) // tackling in riot armor is more effective, but tiring
+		if(suit_slot && (istype(suit_slot,/obj/item/clothing/suit/armor/heavy/riot))) // tackling in riot armor is more effective, but tiring
 			attack_mod += 2
 			sacker.adjustStaminaLoss(20)
 

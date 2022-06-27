@@ -181,7 +181,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/item/clothing/suit/armor/medium/riot/combat
+/obj/item/clothing/suit/armor/heavy/riot/combat
 	name = "combat body armor"
 	icon_state = "combat_coat"
 	item_state = "combat_coat"
@@ -673,7 +673,7 @@
 	armor = list("melee" = 80, "bullet" = 80, "laser" = 85, "energy" = 35, "bomb" = 72, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50, "wound" = 90)
 
 //Peacekeeper armor adjust as needed
-/obj/item/clothing/suit/armor/power_armor/x02
+/obj/item/clothing/suit/armor/power_armor/advanced/x02
 	name = "Enclave power armor"
 	desc = "Upgraded pre-war power armor design used by the Enclave. It is mildly worn due to it's age and lack of maintenance after the fall of the Enclave."
 	icon_state = "advanced"
