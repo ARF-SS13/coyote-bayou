@@ -27,6 +27,16 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = LAVA_PROOF | FIRE_PROOF
 
+/obj/vehicle/ridden/lavaboat/riverboat
+	name = "river boat"
+	desc = "A boat used for going on the river! Looks rather shittly made. Is that a hole in the bottom of it..?"
+
+/obj/vehicle/ridden/lavaboat/riverboat/Initialize()
+	. = ..()
+	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+	D.keytype = /obj/item/oar
+	D.allowed_turf_typecache = typecacheof(/turf/open/indestructible/ground/outside/water)
+
 /*
 /datum/crafting_recipe/oar
 	name = "Goliath Bone Oar"
