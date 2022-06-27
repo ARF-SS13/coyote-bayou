@@ -13,6 +13,7 @@
 	build_path = /obj/item/assembly/signaler
 	category = list("initial", "T-Comm")
 
+/*
 /datum/design/radio_headset
 	name = "Radio Headset"
 	id = "radio_headset"
@@ -20,6 +21,7 @@
 	materials = list(/datum/material/iron = 75)
 	build_path = /obj/item/radio/headset
 	category = list("initial", "T-Comm")
+*/
 
 /datum/design/bounced_radio
 	name = "Station Bounced Radio"
