@@ -553,6 +553,13 @@
 /obj/item/stack/rods/fifty,
 /turf/open/floor/wood_common,
 /area/f13/village)
+"bH" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "bI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
@@ -1075,15 +1082,10 @@
 	},
 /area/f13/building)
 "dO" = (
-/obj/effect/decal/remains{
-	icon_state = "remains"
-	},
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
 	},
 /area/f13/building)
 "dP" = (
@@ -2989,12 +2991,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ku" = (
-/obj/structure/closet{
-	anchored = 1
-	},
-/obj/item/clothing/under/rank/security/detective/grey,
-/obj/item/clothing/shoes/laceup,
-/obj/item/clothing/suit/det_suit/grey,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -3413,6 +3410,11 @@
 /area/f13/building)
 "lL" = (
 /obj/effect/turf_decal/weather/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"lM" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "lO" = (
@@ -5566,6 +5568,7 @@
 /area/f13/wasteland)
 "te" = (
 /obj/effect/decal/cleanable/blood/old,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "tf" = (
@@ -5737,10 +5740,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/wasteland)
-"tJ" = (
-/obj/item/reagent_containers/glass/bucket/wood,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tK" = (
 /obj/structure/flora/grass/wasteland{
@@ -6114,6 +6113,12 @@
 /obj/structure/campfire/barrel,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"va" = (
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/village)
 "vc" = (
 /mob/living/simple_animal/hostile/molerat,
 /turf/open/indestructible/ground/outside/dirt,
@@ -6670,11 +6675,6 @@
 	max_mobs = 2;
 	spawn_time = 20
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"xg" = (
-/obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xh" = (
@@ -7401,6 +7401,12 @@
 	dir = 8;
 	icon_state = "dirt"
 	},
+/area/f13/wasteland)
+"zQ" = (
+/obj/machinery/hydroponics/soil,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "zS" = (
 /obj/structure/flora/grass/wasteland{
@@ -9127,16 +9133,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Gl" = (
-/obj/item/paper/fluff{
-	pixel_x = -17;
-	pixel_y = -7;
-	info = "The Manor is free to any that would like to build in it, by decree of the Treaty of Gangs."
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 4;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/wood_common,
+/area/f13/village)
 "Go" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -10359,14 +10362,6 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
-"KP" = (
-/obj/structure/flora/stump,
-/obj/item/hatchet{
-	pixel_x = 8;
-	pixel_y = -4
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "KR" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -10663,6 +10658,7 @@
 /obj/machinery/light,
 /obj/item/stack/f13Cash/random/med,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Mb" = (
@@ -10869,6 +10865,14 @@
 "MG" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/rock/pile/largejungle,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"MH" = (
+/obj/structure/flora/stump,
+/obj/item/hatchet{
+	pixel_x = 8;
+	pixel_y = -4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "MJ" = (
@@ -11453,6 +11457,7 @@
 	dir = 8;
 	light_color = "red"
 	},
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "OE" = (
@@ -11708,7 +11713,6 @@
 /turf/open/floor/wood_common,
 /area/f13/village)
 "Pz" = (
-/obj/structure/closet/crate/bin/trashbin,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
 	dir = 8
@@ -11741,6 +11745,16 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"PI" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/village)
 "PJ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -12029,12 +12043,6 @@
 	icon_state = "bush3"
 	},
 /turf/open/indestructible/ground/outside/water,
-/area/f13/wasteland)
-"QM" = (
-/obj/machinery/hydroponics/soil,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/glass/bucket/wood,
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "QN" = (
 /obj/structure/simple_door/dirtyglass,
@@ -13157,6 +13165,10 @@
 "UV" = (
 /turf/closed/wall/f13/store,
 /area/f13/building)
+"UW" = (
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "UX" = (
 /obj/machinery/microwave/stove,
 /turf/open/floor/f13/wood,
@@ -14114,6 +14126,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Ys" = (
@@ -60811,7 +60824,7 @@ wj
 uN
 ie
 mF
-ie
+bH
 PZ
 PZ
 vB
@@ -61610,7 +61623,7 @@ jJ
 XF
 bo
 PZ
-bI
+dO
 bT
 ro
 lJ
@@ -63635,7 +63648,7 @@ zv
 el
 Bk
 AI
-KP
+MH
 AI
 Df
 Xi
@@ -64928,7 +64941,7 @@ qc
 JH
 AL
 ep
-Ln
+PI
 DD
 eN
 xu
@@ -65444,7 +65457,7 @@ RU
 oi
 zs
 zs
-oi
+va
 MF
 RU
 RU
@@ -66235,7 +66248,7 @@ mn
 kY
 Vb
 Vb
-Mh
+Gl
 io
 Mh
 XE
@@ -72133,7 +72146,7 @@ VS
 qc
 gU
 gU
-Gl
+qc
 xT
 nh
 nh
@@ -74937,7 +74950,7 @@ Vc
 Bk
 Vc
 Df
-QM
+zQ
 Bk
 Vc
 Bk
@@ -75705,12 +75718,12 @@ Bk
 Bk
 ig
 Vc
-tJ
+UW
 Vc
 Bk
 Vc
 Bk
-xg
+lM
 Bk
 Bk
 lE
@@ -77533,7 +77546,7 @@ CC
 wg
 UV
 Fn
-dO
+Fn
 Pt
 UV
 Qb
