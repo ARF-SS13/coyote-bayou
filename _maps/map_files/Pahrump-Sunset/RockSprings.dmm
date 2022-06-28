@@ -2026,10 +2026,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"gW" = (
-/obj/structure/nest/raider/boss,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "gX" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
@@ -6332,16 +6328,6 @@
 	dir = 2
 	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
-"vV" = (
-/obj/structure/chair/wood,
-/obj/structure/nest/raider{
-	max_mobs = 1;
-	pixel_x = -1;
-	pixel_y = 29;
-	radius = 5
-	},
-/turf/open/floor/f13/wood,
 /area/f13/building)
 "vW" = (
 /obj/structure/flora/grass/jungle,
@@ -10656,12 +10642,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"LX" = (
-/obj/structure/nest/raider/boss,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood4-broken"
-	},
-/area/f13/building)
 "Ma" = (
 /obj/machinery/light,
 /obj/item/stack/f13Cash/random/med,
@@ -60048,7 +60028,7 @@ bT
 bT
 bT
 bT
-vV
+yQ
 Ym
 Qn
 bT
@@ -61594,7 +61574,7 @@ bo
 PZ
 bI
 bT
-LX
+ro
 lJ
 jX
 hm
@@ -62879,7 +62859,7 @@ QR
 bT
 hy
 mr
-gW
+PZ
 Ap
 Bk
 hm
