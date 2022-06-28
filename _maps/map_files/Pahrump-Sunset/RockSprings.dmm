@@ -1397,6 +1397,10 @@
 /obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -2023,6 +2027,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
+"gW" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress4"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "gX" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
@@ -10483,12 +10493,6 @@
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"Ln" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress4"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "Lo" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
@@ -10639,6 +10643,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"LX" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/village)
 "Ma" = (
 /obj/machinery/light,
 /obj/item/stack/f13Cash/random/med,
@@ -12307,9 +12320,20 @@
 	},
 /area/f13/building)
 "RZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
+/obj/effect/overlay/junk/sink{
+	pixel_y = 15
+	},
+/obj/effect/overlay/junk/mirror{
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/village)
 "Sa" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalleft"
@@ -13386,6 +13410,10 @@
 	smooth = 1
 	},
 /area/f13/building)
+"VN" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "VO" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -64639,7 +64667,7 @@ DD
 Gj
 ki
 DD
-yT
+RZ
 JC
 RU
 Df
@@ -64891,7 +64919,7 @@ qc
 JH
 AL
 ep
-oi
+LX
 DD
 eN
 xu
@@ -65922,7 +65950,7 @@ RC
 ss
 ol
 Ug
-oi
+LX
 Qg
 UQ
 pl
@@ -75715,7 +75743,7 @@ JR
 Bk
 Bk
 Bk
-RZ
+VN
 OC
 "}
 (239,1,1) = {"
@@ -77000,7 +77028,7 @@ Yf
 WZ
 Ae
 HR
-RZ
+VN
 OC
 "}
 (244,1,1) = {"
@@ -77257,7 +77285,7 @@ KU
 WZ
 eG
 HR
-RZ
+VN
 OC
 "}
 (245,1,1) = {"
@@ -78026,7 +78054,7 @@ EY
 oI
 HR
 Df
-Ln
+gW
 Bk
 dr
 OC
