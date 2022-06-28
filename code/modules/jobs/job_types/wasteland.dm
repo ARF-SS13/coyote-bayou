@@ -154,7 +154,8 @@ Raider
 		/obj/item/gun/ballistic/revolver/revolver44=2,
 		/obj/item/storage/belt/holster=1,
 		/obj/item/ammo_box/m44=4,
-		/obj/item/book/granter/trait/gunslinger = 1)
+		/obj/item/book/granter/trait/gunslinger = 1,
+		/obj/item/card/id/dogtag/sheriff = 1)
 
 /datum/outfit/loadout/raider_mobster
 	name = "Redwater Strongarm"
@@ -1467,3 +1468,102 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2
 
 	)
+
+
+
+/////////////////
+////Redwater///// 
+/////////////////
+
+//Redwater Slave
+/datum/job/wasteland/f13redwaterslave
+	title = "Redwater Slave"
+	flag = F13LEGIONSLAVE
+	faction = FACTION_WASTELAND
+	total_positions = 10
+	spawn_positions = 10
+	supervisors = "the slavers in Redwater, or your personal owner."
+	description = "Either you were captured by the Redwater slavers, or born into servitude.  Either way your life has been one of being treated as property to another human since the explosive collar was fitted to your neck.  Freedom feels like a dream long gone, hidden behind the fear of the signaler that would cause your head to sail off in an arc.  Despite that you've found a place in their society, and are a protected commodity.  Be you a field worker, sex slave, or pack mule.  The good news is, as long as you serve a purpose then you'll probably get to live, and being alive means a chance to escape."
+	selection_color = "#dcba97"
+
+	outfit = /datum/outfit/loadout/redwatersalve
+
+	loadout_options = list(
+	/datum/outfit/loadout/worker,	//Fields or the bar, this is just a generic workman/woman.
+	/datum/outfit/loadout/pack,		//pack mule slave
+	/datum/outfit/loadout/entertainer, //Dancer or musicion slave
+	/datum/outfit/loadout/sex			//p obvs fam
+	)
+
+	access = list()		//we can expand on this and make alterations as people suggest different loadouts
+	minimal_access = list()
+	matchmaking_allowed = list(
+		/datum/matchmaking_pref/friend = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/rival = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/mentor = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/disciple = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/patron = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+		/datum/matchmaking_pref/protegee = list(
+			/datum/job/wasteland/f13wastelander,
+		),
+	)
+
+/datum/outfit/loadout/redwatersalve
+	name = "Redwater Slave"
+	uniform = /obj/item/clothing/under/f13/rag
+	neck = /obj/item/electropack/shockcollar/explosive
+
+	backpack_contents =  list(
+		/obj/item/reagent_containers/pill/patch/healingpowder =1)
+							
+
+//Worker
+/datum/outfit/loadout/worker
+	name = "Worker"
+	backpack_contents = list(
+		/obj/item/clothing/shoes/f13/diesel =1,
+		/obj/item/clothing/gloves/color/brown =1,
+		/obj/item/clothing/head/sombrero = 1)
+
+
+//Pack Mule
+/datum/outfit/loadout/pack
+	name = "Pack"
+	backpack_contents = list(
+		/obj/item/clothing/shoes/f13/diesel =1,
+		/obj/item/storage/backpack/duffelbag =1,
+		/obj/item/storage/box = 4, 
+		/obj/item/book/granter/trait/trekking = 1)
+
+//Entertainer
+/datum/outfit/loadout/entertainer
+	name = "Entertainer"
+	backpack_contents = list(
+		/obj/item/clothing/shoes/f13/diesel =1,
+		/obj/item/choice_beacon/music = 1,
+		/obj/item/musicaltuner = 1)
+
+//Sex
+/datum/outfit/loadout/sex
+	name = "Sex Slave"
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small = 1,
+		/obj/item/clothing/under/dress/skirt/swept =1, 
+		/obj/item/clothing/under/jeanbshorts =1)
+
+//Redwater Slave Spawn Point code
+/obj/effect/landmark/start/redwaterSlave
+    name = "Redwater Slave"
+    icon_state = "Wastelander"
+    jobspawn_override = TRUE
+    delete_after_roundstart = FALSE

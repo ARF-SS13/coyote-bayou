@@ -223,12 +223,17 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Mob Boss",
 	"Den Mob Enforcer",
 	"Den Doctor",
-	"Outlaw",
+//	"Outlaw",
 	"Faithful",
 	"Vigilante",
 	"Preacher",
 	"Tribal",
 	"Wastelander",
+))
+
+GLOBAL_LIST_INIT(redwater_positions, list(
+	"Redwater Slave",
+	"Redwater Outlaw"
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
@@ -269,7 +274,6 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Spirit-Pledged",
 	"Guardian",
 ))
-
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator",
 	"Followers Doctor",
@@ -289,6 +293,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
 	EXP_TYPE_OASIS = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	Redwater = list("jobs" = redwater_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

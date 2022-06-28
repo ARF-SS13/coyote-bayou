@@ -2978,9 +2978,8 @@
 	},
 /area/f13/village)
 "kq" = (
-/obj/structure/chair/stool/bar,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/raider,
+/obj/structure/chair/stool/bar,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kt" = (
@@ -4311,6 +4310,7 @@
 	icon_state = "sheetgrey"
 	},
 /obj/structure/bed/old,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pc" = (
@@ -4995,12 +4995,10 @@
 	},
 /area/f13/building/tunnel)
 "rh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/chair/wood{
-	dir = 4
+/obj/effect/landmark/start/redwateroutlaw,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13/wood,
 /area/f13/building)
 "ri" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -5549,9 +5547,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
 "sY" = (
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/village)
 "tc" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5828,7 +5827,7 @@
 /area/f13/wasteland)
 "tV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -5931,6 +5930,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village/tunnel_diner)
+"up" = (
+/obj/structure/dresser,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uq" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -8910,7 +8913,6 @@
 /obj/structure/chair/comfy{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -9569,7 +9571,6 @@
 /obj/structure/chair/wood{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/raider,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -9713,6 +9714,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
+"It" = (
+/obj/effect/landmark/start/redwaterSlave,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "Iv" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -10119,7 +10126,7 @@
 /area/f13/building)
 "JU" = (
 /obj/structure/chair/stool/bar,
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -10579,9 +10586,11 @@
 	},
 /area/f13/building/tunnel)
 "LJ" = (
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13/wood,
-/area/f13/village)
+/obj/effect/landmark/start/redwateroutlaw,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/building)
 "LL" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
@@ -10857,7 +10866,7 @@
 /obj/item/stack/f13Cash/random/low{
 	pixel_y = -5
 	},
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -11862,7 +11871,7 @@
 /area/f13/village)
 "Qe" = (
 /obj/structure/bed/mattress/pregame,
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Qf" = (
@@ -11969,14 +11978,6 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
-"Qz" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "QA" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
@@ -12127,8 +12128,7 @@
 	},
 /area/f13/village/tunnel_diner)
 "Rf" = (
-/obj/structure/chair/stool/bar,
-/obj/effect/landmark/start/f13/raider,
+/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Rg" = (
@@ -13745,13 +13745,6 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"Xc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2-broken"
-	},
-/area/f13/building)
 "Xd" = (
 /obj/structure/flora/grass/wasteland,
 /obj/effect/turf_decal/weather/dirt,
@@ -13862,6 +13855,10 @@
 	name = "vines"
 	},
 /turf/closed/wall/f13/wood,
+/area/f13/building)
+"Xw" = (
+/obj/effect/landmark/start/redwaterSlave,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "Xy" = (
 /obj/structure/chair/sofa/left{
@@ -14462,11 +14459,9 @@
 	},
 /area/f13/building)
 "ZE" = (
-/obj/effect/landmark/start/f13/raider,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
+/obj/effect/landmark/start/redwateroutlaw,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "ZG" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -60853,7 +60848,7 @@ Eq
 PZ
 JU
 US
-PZ
+Rf
 Nl
 pK
 Mv
@@ -61081,7 +61076,7 @@ gM
 uN
 PZ
 qW
-sY
+PZ
 PZ
 PZ
 Ek
@@ -61105,13 +61100,13 @@ IK
 el
 jX
 MP
-rh
+sy
 uN
 uN
 kq
 Xe
 uN
-Xc
+bI
 Hf
 bT
 Bk
@@ -61581,7 +61576,7 @@ mo
 PZ
 lj
 gf
-Rf
+lj
 iD
 lj
 PZ
@@ -65180,7 +65175,7 @@ Aw
 GS
 bT
 iv
-Qw
+LJ
 Qw
 pj
 Qu
@@ -71363,7 +71358,7 @@ bq
 tx
 wZ
 ia
-nD
+ZE
 Un
 Mi
 WV
@@ -71621,7 +71616,7 @@ RF
 kA
 Hj
 te
-Qz
+kA
 kA
 Un
 RU
@@ -74169,7 +74164,7 @@ Bk
 hm
 DW
 qE
-RQ
+Xw
 Tg
 NF
 Bk
@@ -74426,7 +74421,7 @@ Bk
 hm
 DW
 qE
-RQ
+Xw
 RQ
 Es
 Bk
@@ -74683,7 +74678,7 @@ Bk
 YQ
 DW
 qE
-RQ
+Xw
 ey
 Mk
 Bk
@@ -75710,7 +75705,7 @@ Bk
 Bk
 DW
 qE
-RQ
+Xw
 rv
 NF
 Bk
@@ -75967,7 +75962,7 @@ Bk
 Df
 DW
 qE
-RQ
+Xw
 RQ
 Es
 Bk
@@ -76224,7 +76219,7 @@ Bk
 YQ
 DW
 qE
-RQ
+Xw
 ey
 NF
 Df
@@ -76266,8 +76261,8 @@ ga
 UV
 mp
 WZ
-ZE
 WZ
+rh
 tN
 HR
 kd
@@ -76503,7 +76498,7 @@ BW
 nD
 nD
 oB
-LJ
+nD
 zp
 jW
 Fw
@@ -76528,9 +76523,9 @@ WZ
 rV
 HR
 NE
-WZ
+It
 HR
-WZ
+It
 Ys
 VL
 HR
@@ -76781,7 +76776,7 @@ UV
 zx
 tV
 WZ
-tV
+Pt
 lo
 HR
 KU
@@ -77047,7 +77042,7 @@ qY
 OR
 OR
 Yf
-WZ
+It
 Ae
 HR
 vV
@@ -77254,7 +77249,7 @@ Bk
 Bk
 DW
 qE
-RQ
+Xw
 ey
 NF
 Bk
@@ -77273,7 +77268,7 @@ ur
 mw
 jv
 DD
-oB
+sY
 nD
 xo
 nD
@@ -77511,7 +77506,7 @@ Bk
 Bk
 DW
 qE
-RQ
+Xw
 RQ
 Es
 Bk
@@ -77768,7 +77763,7 @@ Bk
 YQ
 DW
 qE
-RQ
+Xw
 ey
 NF
 Bk
@@ -77785,7 +77780,7 @@ AI
 yk
 pl
 SX
-LJ
+nD
 DD
 nD
 nD
@@ -78289,7 +78284,7 @@ Bk
 Bk
 Bk
 wj
-PZ
+up
 PZ
 uN
 wj
