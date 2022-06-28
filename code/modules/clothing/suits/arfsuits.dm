@@ -1159,7 +1159,7 @@
 	name = "medium armor template"
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	slowdown = 1
+	slowdown = 0.5
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -1193,7 +1193,7 @@
 /obj/item/clothing/suit/armor/medium/tribal
 	name = "heavy tribal armor"
 	desc = "A heavy suit of armour made of brahmin and gecko hides. It seems rather heavy."
-	slowdown = 0.9 // slightly lighter, cus melee
+	slowdown = 0.3 // slightly lighter, cus melee
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -1282,7 +1282,7 @@
 	blood_overlay_type = "armor"
 	dog_fashion = /datum/dog_fashion/back
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	slowdown = 0.9 // slightly lighter, cus its a vest
+	slowdown = 0.4 // slightly lighter, cus its a vest
 	armor = list(
 		"melee" = 5, 
 		"bullet" = 32.5, 
@@ -1311,7 +1311,7 @@
 	desc = "This vest is in good shape, the layered kevlar lightweight yet very good at stopping bullets."
 	icon_state = "vest_bullet"
 	item_state = "vest_bullet"
-	slowdown = 1.1 // bulky!
+	slowdown = 0.6 // bulky!
 	armor = list(
 		"melee" = 5, 
 		"bullet" = 40, 
@@ -1497,7 +1497,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "light_plates"
 	item_state = "armorkit"
-	slowdown = 0.9
+	slowdown = 0.4
 	armor = list(
 		"melee" = 25, 
 		"bullet" = 5, 
@@ -1529,7 +1529,7 @@
 	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
-	slowdown = 1.1
+	slowdown = 0.6
 	armor = list(
 		"melee" = 35, 
 		"bullet" = 10, 
@@ -1580,7 +1580,7 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	strip_delay = 80
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	slowdown = 0.9 // slightly lighter, cus bigcoat
+	slowdown = 0.25 // slightly lighter, cus bigcoat
 	equip_delay_other = 50
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
@@ -1668,7 +1668,7 @@
 	icon_state = "combat_armor"
 	item_state = "combat_armor"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 5)
-	slowdown = 0.9
+	slowdown = 0.45
 	equip_delay_other = 50
 	max_integrity = 200
 	armor = list(
@@ -1716,7 +1716,7 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "combat_armor_mk2"
 	item_state = "combat_armor_mk2"
-	slowdown = 1.15
+	slowdown = 0.55
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
 	armor = list(
 		"melee" = 30, 
@@ -1751,7 +1751,7 @@
 	desc = "An old military grade pre war combat armor. This set has seen better days, weathered by time. The composite plates look sound and intact still."
 	icon_state = "rusted_combat_armor"
 	item_state = "rusted_combat_armor"
-	slowdown = 1.1
+	slowdown = 0.6
 
 /obj/item/clothing/suit/armor/medium/combat/environmental
 	name = "environmental armor"
@@ -1764,7 +1764,7 @@
 	strip_delay = 60
 	equip_delay_other = 60
 	flags_inv = HIDEJUMPSUIT
-	slowdown = 1.2
+	slowdown = 0.55
 	armor = list(
 		"melee" = 25, 
 		"bullet" = 25, 
@@ -1783,7 +1783,6 @@
 /obj/item/clothing/suit/armor/medium/combat/mk2/raider
 	name = "raider combat armor"
 	desc = "An old set of reinforced combat armor with some parts supplanted with painspike armor. It seems less protective than a mint-condition set of combat armor."
-	slowdown = 0.05
 	item_state = "combat_armor_raider"
 
 //recipe any combat armor + duster
