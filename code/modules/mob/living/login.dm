@@ -1,7 +1,5 @@
 /mob/living/Login()
-	. = ..()
-	if(!. || !client)
-		return FALSE
+	..()
 	disconnect_time = null //we are connected
 	//Mind updates
 	sync_mind()
