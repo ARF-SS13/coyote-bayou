@@ -893,7 +893,7 @@
 	dir = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
+/area/f13/wasteland)
 "de" = (
 /obj/structure/chair{
 	dir = 8
@@ -918,11 +918,8 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 6;
-	icon_state = "dirt"
-	},
-/area/f13/village)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dl" = (
 /obj/structure/flora/tree/tall,
 /obj/structure/flora/rock/pile/largejungle,
@@ -2329,7 +2326,7 @@
 /obj/structure/table_frame/wood,
 /obj/item/stack/sheet/mineral/wood,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
+/area/f13/wasteland)
 "ic" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -3171,7 +3168,7 @@
 	},
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
+/area/f13/wasteland)
 "la" = (
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt{
@@ -6428,7 +6425,7 @@
 	pixel_x = -32
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
+/area/f13/wasteland)
 "wo" = (
 /obj/structure/chair/right,
 /obj/effect/decal/cleanable/dirt,
@@ -10147,12 +10144,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"Kb" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
 "Kd" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/flora/ausbushes/grassybush,
@@ -10492,6 +10483,12 @@
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"Ln" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress4"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Lo" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
@@ -10639,12 +10636,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"LX" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress4"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -12315,6 +12306,10 @@
 	icon_state = "whiteyellowrustychess"
 	},
 /area/f13/building)
+"RZ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "Sa" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalleft"
@@ -12836,7 +12831,7 @@
 	color = "#363636"
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/village)
+/area/f13/wasteland)
 "TR" = (
 /obj/structure/filingcabinet,
 /obj/effect/decal/cleanable/dirt,
@@ -13819,10 +13814,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
-"Xw" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "Xy" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -70036,7 +70027,7 @@ RU
 ne
 RU
 dk
-QB
+Df
 kZ
 zT
 zT
@@ -70551,9 +70542,9 @@ RU
 Un
 BT
 nD
-Kb
+wE
 FU
-Rs
+Bk
 nD
 RU
 Bk
@@ -70809,7 +70800,7 @@ nD
 dd
 nD
 bi
-Kb
+wE
 nD
 nD
 xD
@@ -75724,7 +75715,7 @@ JR
 Bk
 Bk
 Bk
-Xw
+RZ
 OC
 "}
 (239,1,1) = {"
@@ -77009,7 +77000,7 @@ Yf
 WZ
 Ae
 HR
-Xw
+RZ
 OC
 "}
 (244,1,1) = {"
@@ -77266,7 +77257,7 @@ KU
 WZ
 eG
 HR
-Xw
+RZ
 OC
 "}
 (245,1,1) = {"
@@ -78035,7 +78026,7 @@ EY
 oI
 HR
 Df
-LX
+Ln
 Bk
 dr
 OC
