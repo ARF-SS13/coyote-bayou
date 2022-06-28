@@ -1,4 +1,7 @@
 /mob/dead/new_player/Login()
+	if(!client)
+		return
+
 	if(CONFIG_GET(flag/use_exp_tracking))
 		client.set_exp_from_db()
 		client.set_db_player_flags()
@@ -42,4 +45,4 @@
 	if(SSticker.current_state < GAME_STATE_SETTING_UP)
 		var/tl = SSticker.GetTimeLeft()
 		to_chat(src, "Please set up your character and select \"Ready\". The game will start [tl > 0 ? "in about [DisplayTimeText(tl)]" : "soon"].")
-	client.nuke_chat()
+	//client.nuke_chat() // Look, I know it's fallout, but is this necessary?
