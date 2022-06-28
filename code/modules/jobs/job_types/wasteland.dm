@@ -1567,4 +1567,3 @@ datum/job/wasteland/f13dendoctor
     icon_state = "Wastelander"
     jobspawn_override = TRUE
     delete_after_roundstart = FALSE
-	
