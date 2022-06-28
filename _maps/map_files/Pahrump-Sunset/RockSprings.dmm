@@ -5738,6 +5738,10 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"tJ" = (
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "tK" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -6666,6 +6670,11 @@
 	max_mobs = 2;
 	spawn_time = 20
 	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"xg" = (
+/obj/machinery/hydroponics/soil,
+/obj/item/reagent_containers/glass/bucket/wood,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xh" = (
@@ -10350,6 +10359,14 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
+"KP" = (
+/obj/structure/flora/stump,
+/obj/item/hatchet{
+	pixel_x = 8;
+	pixel_y = -4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "KR" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain2"
@@ -10709,6 +10726,7 @@
 "Mk" = (
 /obj/structure/barricade/tentclothedge,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "Mm" = (
@@ -11136,6 +11154,7 @@
 /area/f13/building)
 "NF" = (
 /obj/structure/barricade/tentclothedge,
+/obj/structure/decoration/rag,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "NG" = (
@@ -12010,6 +12029,12 @@
 	icon_state = "bush3"
 	},
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"QM" = (
+/obj/machinery/hydroponics/soil,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/glass/bucket/wood,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "QN" = (
 /obj/structure/simple_door/dirtyglass,
@@ -63610,7 +63635,7 @@ zv
 el
 Bk
 AI
-Bk
+KP
 AI
 Df
 Xi
@@ -73920,7 +73945,7 @@ FH
 FH
 FH
 FH
-FH
+mF
 FH
 FH
 FH
@@ -74912,7 +74937,7 @@ Vc
 Bk
 Vc
 Df
-bW
+QM
 Bk
 Vc
 Bk
@@ -75680,12 +75705,12 @@ Bk
 Bk
 ig
 Vc
-Bk
+tJ
 Vc
 Bk
 Vc
 Bk
-Vc
+xg
 Bk
 Bk
 lE
