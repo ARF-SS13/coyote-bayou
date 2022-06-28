@@ -2358,11 +2358,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
 "ie" = (
-/obj/machinery/light/small{
-	dir = 8
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
 	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/village)
 "if" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -3071,6 +3074,21 @@
 	icon_state = "crossborderroundmid"
 	},
 /area/f13/wasteland)
+"kG" = (
+/obj/effect/overlay/junk/sink{
+	pixel_y = 15
+	},
+/obj/effect/overlay/junk/mirror{
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/village)
 "kH" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5928,10 +5946,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village/tunnel_diner)
-"up" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "uq" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -10156,14 +10170,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "Kb" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
+/obj/machinery/light/small{
+	dir = 8
 	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/village)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "Kd" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/flora/ausbushes/grassybush,
@@ -10504,20 +10515,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "Ln" = (
-/obj/effect/overlay/junk/sink{
-	pixel_y = 15
-	},
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32
-	},
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/village)
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "Lo" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
@@ -12601,14 +12601,6 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"SW" = (
-/obj/structure/nest/raider{
-	pixel_x = -1;
-	pixel_y = 29
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "SX" = (
 /obj/item/bedsheet/black,
 /obj/machinery/light/small{
@@ -60800,9 +60792,9 @@ Bk
 Bk
 wj
 uN
-ie
+Kb
 mF
-ie
+Kb
 PZ
 PZ
 vB
@@ -62070,7 +62062,7 @@ Lh
 uN
 fe
 gt
-SW
+uN
 uN
 ql
 PZ
@@ -64667,7 +64659,7 @@ DD
 Gj
 ki
 DD
-Ln
+kG
 JC
 RU
 Df
@@ -64919,7 +64911,7 @@ qc
 JH
 AL
 ep
-Kb
+ie
 DD
 eN
 xu
@@ -65950,7 +65942,7 @@ RC
 ss
 ol
 Ug
-Kb
+ie
 Qg
 UQ
 pl
@@ -75743,7 +75735,7 @@ JR
 Bk
 Bk
 Bk
-up
+Ln
 OC
 "}
 (239,1,1) = {"
@@ -77028,7 +77020,7 @@ Yf
 WZ
 Ae
 HR
-up
+Ln
 OC
 "}
 (244,1,1) = {"
@@ -77285,7 +77277,7 @@ KU
 WZ
 eG
 HR
-up
+Ln
 OC
 "}
 (245,1,1) = {"
