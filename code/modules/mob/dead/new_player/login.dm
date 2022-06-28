@@ -14,6 +14,7 @@
 		mind.current = src
 
 	. = ..()
+
 	if(!. || !client)
 		return FALSE
 
