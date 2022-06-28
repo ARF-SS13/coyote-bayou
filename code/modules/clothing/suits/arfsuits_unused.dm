@@ -1873,7 +1873,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	armor = list("melee" = 55, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 30, "bio" = 25, "rad" = 30, "fire" = 95, "acid" = 15)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/armor/heavy/metal/raider/old
+/obj/item/clothing/suit/armor/heavy/raider/metal/old
 	name = "iron raider suit"
 	desc = "More rust than metal, with gaping holes in it, this armor looks like a pile of junk. Under the rust some quality steel still remains however."
 	icon_state = "raider_metal"

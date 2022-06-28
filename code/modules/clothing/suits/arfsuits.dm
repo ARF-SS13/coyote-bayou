@@ -4,10 +4,10 @@
 
 /obj/item/clothing/suit/armor
 	name = "armor template"
+	icon = 'icons/obj/clothing/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
 	/// Use Initialize for this
-	allowed = null
 	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN
@@ -91,8 +91,8 @@
 /obj/item/clothing/suit/armor/outfit
 	name = "basic outerwear template"
 	desc = "probably shouldnt see this"
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon = 'icons/obj/clothing/suits.dmi'
+	//mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny //fuck it everyone gets pockets
@@ -119,12 +119,8 @@
 //////////////////
 
 /obj/item/clothing/suit/armor/outfit/overalls
-	name = "overalls"
-	desc = "A set of denim overalls suitable for farming."
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	icon_state = "overalls_farmer"
-	item_state = "overalls_farmer"
+	name = "overall template"
+	desc = "A set of overall templates that shouldnt exist."
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets // big pockets!
 
 /obj/item/clothing/suit/armor/outfit/overalls/farmer
@@ -171,7 +167,6 @@
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
-	// body_parts_covered = CHEST|GROIN|LEGS
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
@@ -435,7 +430,7 @@
 //// LIGHT ARMOR PARENT ////
 /obj/item/clothing/suit/armor/light
 	name = "light armor template"
-	icon = 'icons/fallout/clothing/armored_light.dmi'
+	//icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
@@ -474,7 +469,7 @@
 	icon_state = "tribal"
 	item_state = "tribal"
 	flags_inv = HIDEJUMPSUIT
-	icon = 'icons/fallout/clothing/armored_light.dmi'
+	//icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	cold_protection = CHEST|GROIN|ARMS|LEGS // worm
 	heat_protection = CHEST|GROIN|ARMS|LEGS // chyll
@@ -1157,8 +1152,8 @@
 
 /obj/item/clothing/suit/armor/medium
 	name = "medium armor template"
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	//icon = 'icons/fallout/clothing/armored_medium.dmi'
+	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	slowdown = 0.5
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
@@ -1951,7 +1946,7 @@
 
 /obj/item/clothing/suit/armor/heavy
 	name = "heavy armor template"
-	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	//icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	slowdown = 1
 	strip_delay = 50
@@ -2018,6 +2013,12 @@
 		"fire" = 50, 
 		"acid" = 40)
 
+/obj/item/clothing/suit/armor/heavy/raider/metal
+	name = "metal armor suit"
+	desc = "A suit of welded, fused metal plates. Bulky, but with great protection."
+	icon_state = "raider_metal"
+	item_state = "raider_metal"
+
 /////////////////////
 //// METAL ARMOR ////
 /////////////////////
@@ -2040,12 +2041,6 @@
 		"fire" = 0, 
 		"acid" = 50)
 
-/obj/item/clothing/suit/armor/heavy/metal/raider //HEAVY METAL RAIDER
-	name = "metal armor suit"
-	desc = "A suit of welded, fused metal plates. Bulky, but with great protection."
-	icon_state = "raider_metal"
-	item_state = "raider_metal"
-
 /obj/item/clothing/suit/armor/heavy/metal/polished
 	name = "polished metal armor"
 	desc = "A set of plates formed together to form a crude chestplate. These have been waxed and buffed to a mirror finish, but it looks a bit thinner."
@@ -2067,6 +2062,7 @@
 /obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof // also actually_unobtainable
 	name = "reflector vest"
 	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."
+	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "armor_reflec"
 	item_state = "armor_reflec"
 	blood_overlay_type = "armor"
@@ -2091,10 +2087,10 @@
 			return BLOCK_SHOULD_REDIRECT | BLOCK_REDIRECTED | BLOCK_SUCCESS | BLOCK_PHYSICAL_INTERNAL
 	return ..()
 
-
 /obj/item/clothing/suit/armor/heavy/metal/tesla //changed from armor/laserproof
 	name = "tesla armor"
 	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Has a chance to deflect energy projectiles."
+	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "tesla_armor"
 	item_state = "tesla_armor"
 	blood_overlay_type = "armor"
@@ -2138,6 +2134,7 @@
 /obj/item/clothing/suit/armor/heavy/metal/mutant
 	name = "mutant armour"
 	desc = "An oversized set of metal armour, made to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
+	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "mutie_metal_armour"
 	item_state = "mutie_metal_armour"
 
