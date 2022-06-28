@@ -154,7 +154,8 @@ Raider
 		/obj/item/gun/ballistic/revolver/revolver44=2,
 		/obj/item/storage/belt/holster=1,
 		/obj/item/ammo_box/m44=4,
-		/obj/item/book/granter/trait/gunslinger = 1)
+		/obj/item/book/granter/trait/gunslinger = 1,
+		/obj/item/card/id/dogtag/sheriff = 1)
 
 /datum/outfit/loadout/raider_mobster
 	name = "Redwater Strongarm"
@@ -1566,3 +1567,4 @@ datum/job/wasteland/f13dendoctor
     icon_state = "Wastelander"
     jobspawn_override = TRUE
     delete_after_roundstart = FALSE
+	
