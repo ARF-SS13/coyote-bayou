@@ -279,6 +279,11 @@
 /obj/structure/spacevine/Initialize()
 	. = ..()
 	add_atom_colour("#ffffff", FIXED_COLOUR_PRIORITY)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 
 /obj/structure/spacevine/examine(mob/user)
 	. = ..()
@@ -330,10 +335,12 @@
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
 /obj/structure/spacevine/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_cross(src, AM)
+
 
 /obj/structure/spacevine/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	for(var/datum/spacevine_mutation/SM in mutations)

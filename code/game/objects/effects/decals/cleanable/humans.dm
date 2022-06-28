@@ -95,7 +95,7 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-/obj/effect/decal/cleanable/blood/footprints/proc/on_entered(atom/movable/O)
+/obj/effect/decal/cleanable/blood/footprints/on_entered(atom/movable/O)
 	SIGNAL_HANDLER
 	if(ishuman(O))
 		var/mob/living/carbon/human/H = O

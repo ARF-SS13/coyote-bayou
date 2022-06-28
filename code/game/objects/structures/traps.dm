@@ -180,9 +180,8 @@
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
-
-/obj/structure/trap/stun/hunter/proc/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+/obj/structure/trap/stun/hunter/process_entered(atom/movable/AM)
+	..()
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!L.mind?.has_antag_datum(/datum/antagonist/fugitive))

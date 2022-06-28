@@ -124,19 +124,27 @@
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/glass = 500)
 
+/obj/item/rupee/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/item/rupee/New()
 	var/newcolor = color2hex(pick(10;"green", 5;"blue", 3;"red", 1;"purple"))
 	add_atom_colour(newcolor, FIXED_COLOUR_PRIORITY)
 	..()
 
 /obj/item/rupee/proc/on_entered(mob/M)
+	SIGNAL_HANDLER
 	if(!istype(M))
 		return
 	if(M.put_in_hands(src))
 		if(src != M.get_active_held_item())
 			M.swap_hand()
 		equip_to_best_slot(M)
-	..()
 
 /obj/item/rupee/equipped(mob/user, slot)
 	playsound(get_turf(loc), 'sound/misc/server-ready.ogg', 50, 1, -1)

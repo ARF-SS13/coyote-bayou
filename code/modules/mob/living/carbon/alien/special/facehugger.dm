@@ -31,6 +31,14 @@
 
 	var/attached = 0
 
+/obj/item/clothing/mask/facehugger/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/item/clothing/mask/facehugger/lamarr
 	name = "Lamarr"
 	sterile = TRUE
@@ -91,7 +99,8 @@
 	Attach(M)
 
 /obj/item/clothing/mask/facehugger/proc/on_entered(atom/target)
-	HasProximity(target)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, /atom/.proc/HasProximity, target)
 	return
 
 /obj/item/clothing/mask/facehugger/on_found(mob/finder)

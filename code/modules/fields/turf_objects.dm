@@ -11,9 +11,15 @@
 	var/datum/proximity_monitor/advanced/parent = null
 
 /obj/effect/abstract/proximity_checker/advanced/Initialize(mapload, _monitor)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	if(_monitor)
 		parent = _monitor
 	return ..()
+
 
 /obj/effect/abstract/proximity_checker/advanced/center
 	name = "field anchor"
@@ -28,7 +34,8 @@
 		return parent.field_turf_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/proc/on_entered(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(parent)
 		return parent.field_turf_crossed(AM, src)
 	return TRUE
@@ -52,7 +59,8 @@
 		return parent.field_edge_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/proc/on_entered(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(parent)
 		return parent.field_edge_crossed(AM, src)
 	return TRUE

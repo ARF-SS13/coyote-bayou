@@ -163,6 +163,11 @@
 
 /obj/structure/bonfire/prelit/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	StartBurning()
 
 /obj/structure/bonfire/CanPass(atom/movable/mover, border_dir)
@@ -244,8 +249,9 @@
 	StartBurning()
 
 /obj/structure/bonfire/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(burning & !grill)
-		Burn()
+		INVOKE_ASYNC(src, .proc/Burn)
 
 /obj/structure/bonfire/proc/Burn()
 	var/turf/current_location = get_turf(src)
