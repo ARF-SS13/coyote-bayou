@@ -162,3 +162,6 @@
 	//---End
 
 	var/disconnect_time //how long have we been dc'd for
+
+	/// Is this mob allowed to be buckled/unbuckled to/from things?
+	var/can_buckle_to = TRUE

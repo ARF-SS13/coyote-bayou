@@ -1,6 +1,6 @@
 // Refactors plant grass to work on multiple turfs.
 
-/turf/open/indestructible/ground/outside/proc/plantGrass(Plantforce = FALSE)
+/turf/open/proc/plantGrass(Plantforce = FALSE)
 	var/Weight = 0
 	var/randPlant = null
 
@@ -28,17 +28,21 @@
 		turfPlant = new randPlant(src)
 		. = TRUE
 
-/turf/open/indestructible/ground/outside/
+/turf/open/
 	var/spawnPlants = FALSE
+	var/obj/structure/flora/turfPlant = null
 
-/turf/open/indestructible/ground/outside/Initialize()
+/turf/open/Initialize()
 	. = ..()
 	
 	if(spawnPlants)
 		if(!((locate(/obj/structure) in src) || (locate(/obj/machinery) in src)))
 			plantGrass()
 
-
+/turf/open/ChangeTurf(path, new_baseturf, flags)
+	if(turfPlant)
+		qdel(turfPlant)
+	. =  ..()
 
 /turf/open/indestructible/ground/outside/dirt
 	spawnPlants = TRUE
@@ -50,4 +54,10 @@
 	spawnPlants = TRUE
 
 /turf/open/indestructible/ground/outside/grass_s
+	spawnPlants = TRUE
+
+/turf/open/indestructible/ground/outside/desert
+	spawnPlants = TRUE
+
+/turf/open/floor/plating/f13/outside/desert
 	spawnPlants = TRUE

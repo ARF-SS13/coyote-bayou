@@ -18,6 +18,7 @@
 	anchored = FALSE
 	density = FALSE
 	dir = NORTH
+	set_dir_on_move = FALSE
 
 	var/ini_dir
 	var/obj/item/electronics/airlock/electronics = null

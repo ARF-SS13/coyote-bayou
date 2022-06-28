@@ -42,6 +42,7 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	ricochet_chance_mod = 0.4
 	attack_hand_speed = CLICK_CD_MELEE
 	attack_hand_is_action = TRUE
+	set_dir_on_move = FALSE
 
 	/// Electrochromatic status
 	var/electrochromatic_status = NOT_ELECTROCHROMATIC

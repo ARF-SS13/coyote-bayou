@@ -71,6 +71,8 @@ SUBSYSTEM_DEF(vis_overlays)
 	var/list/overlays_to_remove = list()
 	for(var/i in thing.managed_vis_overlays)
 		var/obj/effect/overlay/vis/overlay = i
+		if(!i) // prevents null icon overlays from shitting bricks because :c
+			continue
 		add_vis_overlay(thing, overlay.icon, overlay.icon_state, overlay.layer, overlay.plane, turn(overlay.dir, rotation), overlay.alpha, overlay.appearance_flags)
 		overlays_to_remove += overlay
 	remove_vis_overlay(thing, overlays_to_remove)

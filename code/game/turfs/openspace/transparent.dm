@@ -16,6 +16,8 @@
 	vis_contents.len = 0
 	return ..()
 
+
+
 /turf/open/transparent/update_multiz(prune_on_fail = FALSE, init = FALSE)
 	. = ..()
 	var/turf/T = below()

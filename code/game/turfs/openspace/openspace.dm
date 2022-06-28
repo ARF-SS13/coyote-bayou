@@ -37,6 +37,23 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 	is_wall_below()
 	vis_contents += GLOB.openspace_backdrop_one_for_all //Special grey square for projecting backdrop darkness filter on it.
 
+/**
+ * Prepares a moving movable to be precipitated if Move() is successful.
+ * This is done in Enter() and not Entered() because there's no easy way to tell
+ * if the latter was called by Move() or forceMove() while the former is only called by Move().
+ */
+/turf/open/transparent/openspace/Enter(atom/movable/movable, atom/oldloc)
+	. = ..()
+	if(.)
+		//higher priority than CURRENTLY_Z_FALLING so the movable doesn't fall on Entered()
+		movable.set_currently_z_moving(CURRENTLY_Z_FALLING_FROM_MOVE)
+
+///Makes movables fall when forceMove()'d to this turf.
+/turf/open/transparent/openspace/Entered(atom/movable/movable)
+	. = ..()
+	if(movable.set_currently_z_moving(CURRENTLY_Z_FALLING))
+		zFall(movable, falling_from_move = TRUE)
+
 /*
 Prevents players on higher Zs from seeing into buildings they arent meant to.
 */

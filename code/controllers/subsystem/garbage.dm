@@ -1,16 +1,22 @@
 /*!
 ## Debugging GC issues
+
 In order to debug `qdel()` failures, there are several tools available.
 To enable these tools, define `TESTING` in [_compile_options.dm](https://github.com/tgstation/-tg-station/blob/master/code/_compile_options.dm).
+
 First is a verb called "Find References", which lists **every** refererence to an object in the world. This allows you to track down any indirect or obfuscated references that you might have missed.
+
 Complementing this is another verb, "qdel() then Find References".
 This does exactly what you'd expect; it calls `qdel()` on the object and then it finds all references remaining.
 This is great, because it means that `Destroy()` will have been called before it starts to find references,
 so the only references you'll find will be the ones preventing the object from `qdel()`ing gracefully.
+
 If you have a datum or something you are not destroying directly (say via the singulo),
 the next tool is `QDEL_HINT_FINDREFERENCE`. You can return this in `Destroy()` (where you would normally `return ..()`),
 to print a list of references once it enters the GC queue.
+
 Finally is a verb, "Show qdel() Log", which shows the deletion log that the garbage subsystem keeps. This is helpful if you are having race conditions or need to review the order of deletions.
+
 Note that for any of these tools to work `TESTING` must be defined.
 By using these methods of finding references, you can make your life far, far easier when dealing with `qdel()` failures.
 */
@@ -22,6 +28,7 @@ SUBSYSTEM_DEF(garbage)
 	flags = SS_POST_FIRE_TIMING|SS_BACKGROUND|SS_NO_INIT
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 	init_order = INIT_ORDER_GARBAGE
+	init_stage = INITSTAGE_EARLY
 
 	var/list/collection_timeout = list(GC_FILTER_QUEUE, GC_CHECK_QUEUE, GC_DEL_QUEUE) // deciseconds to wait before moving something up in the queue to the next level
 
@@ -273,16 +280,14 @@ SUBSYSTEM_DEF(garbage)
 
 	if (time > 0.1 SECONDS)
 		postpone(time)
-
-	var/threshold = 0.5 // increase if we need to
-
+	var/threshold = CONFIG_GET(number/hard_deletes_overrun_threshold)
 	if (threshold && (time > threshold SECONDS))
 		if (!(I.qdel_flags & QDEL_ITEM_ADMINS_WARNED))
 			log_game("Error: [type]([refID]) took longer than [threshold] seconds to delete (took [round(time/10, 0.1)] seconds to delete)")
 			message_admins("Error: [type]([refID]) took longer than [threshold] seconds to delete (took [round(time/10, 0.1)] seconds to delete).")
 			I.qdel_flags |= QDEL_ITEM_ADMINS_WARNED
 		I.hard_deletes_over_threshold++
-		var/overrun_limit = 0 // increase if we need to
+		var/overrun_limit = CONFIG_GET(number/hard_deletes_overrun_limit)
 		if (overrun_limit && I.hard_deletes_over_threshold >= overrun_limit)
 			I.qdel_flags |= QDEL_ITEM_SUSPENDED_FOR_LAG
 

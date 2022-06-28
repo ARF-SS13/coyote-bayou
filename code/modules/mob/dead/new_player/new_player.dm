@@ -1,27 +1,26 @@
 #define LINKIFY_READY(string, value) "<a href='byond://?src=[REF(src)];ready=[value]'>[string]</a>"
-
 /mob/dead/new_player
-	var/ready = 0
-	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
-
 	flags_1 = NONE
-
 	invisibility = INVISIBILITY_ABSTRACT
-
 	density = FALSE
 	stat = DEAD
-
-	var/mob/living/new_character	//for instant transfer once the round is set up
-
-	//Used to make sure someone doesn't get spammed with messages if they're ineligible for roles
-	var/ineligible_for_roles = FALSE
-
+	
 	//is there a result we want to read from the age gate
 	var/age_gate_result
 
-/mob/dead/new_player/Initialize()
+	var/ready = FALSE
+	/// Referenced when you want to delete the new_player later on in the code.
+	var/spawning = FALSE
+	/// For instant transfer once the round is set up
+	var/mob/living/new_character
+	///Used to make sure someone doesn't get spammed with messages if they're ineligible for roles.
+	var/ineligible_for_roles = FALSE
+
+
+
+/mob/dead/new_player/Initialize(mapload)
 	if(client && SSticker.state == GAME_STATE_STARTUP)
-		var/obj/screen/splash/S = new(client, TRUE, TRUE)
+		var/obj/screen/splash/S = new(null, client, TRUE, TRUE)
 		S.Fade(TRUE)
 
 	if(length(GLOB.newplayer_start))
@@ -32,6 +31,13 @@
 	ComponentInitialize()
 
 	. = ..()
+
+	GLOB.new_player_list += src
+
+/mob/dead/new_player/Destroy()
+	GLOB.new_player_list -= src
+
+	return ..()
 
 /mob/dead/new_player/prepare_huds()
 	return
@@ -693,20 +699,18 @@
 	// First we detain them by removing all the verbs they have on client
 	for (var/v in client.verbs)
 		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(client, verb_path)
+		remove_verb(client, verb_path)
 
 	// Then remove those on their mob as well
 	for (var/v in verbs)
 		var/procpath/verb_path = v
-		if (!(verb_path in GLOB.stat_panel_verbs))
-			remove_verb(src, verb_path)
+		remove_verb(src, verb_path)
 
 	// Then we create the interview form and show it to the client
 	var/datum/interview/I = GLOB.interviews.interview_for_client(client)
 	if (I)
 		I.ui_interact(src)
 
-	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
+	// Add verb for re-opening the interview panel, fixing chat and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)
-
+	add_verb(client, /client/verb/fix_tgui_panel)

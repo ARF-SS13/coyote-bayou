@@ -84,6 +84,7 @@
 #define INIT_ORDER_EVENTS			70
 #define INIT_ORDER_JOBS				65
 #define INIT_ORDER_QUIRKS			60
+#define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
 #define INIT_ORDER_TICKER			55
 #define INIT_ORDER_INSTRUMENTS		53
 #define INIT_ORDER_MAPPING			50
@@ -112,7 +113,7 @@
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
 #define INIT_ORDER_PERSISTENCE		-95
-#define INIT_ORDER_DEMO				-99  // o avoid a bunch of changes related to initialization being written, do this last
+#define INIT_ORDER_INIT_PROFILER 	-99 //Near the end, logs the costs of initialize
 #define INIT_ORDER_CHAT				-100 //Should be last to ensure chat remains smooth during init.
 
 
@@ -124,6 +125,7 @@
 #define FIRE_PRIORITY_RESEARCH		10
 #define FIRE_PRIORITY_VIS			10
 #define FIRE_PRIORITY_GARBAGE		15
+#define FIRE_PRIORITY_DATABASE 		16
 #define FIRE_PRIORITY_WET_FLOORS	20
 #define FIRE_PRIORITY_AIR			20
 #define FIRE_PRIORITY_PROCESS		25
@@ -141,6 +143,7 @@
 #define FIRE_PRIORITY_DEFAULT		50
 #define FIRE_PRIORITY_PARALLAX		65
 #define FIRE_PRIORITY_NPC			80
+#define FIRE_PRIORITY_NPC_MOVEMENT	81
 #define FIRE_PRIORITY_MOBS			100
 #define FIRE_PRIORITY_TGUI			110
 #define FIRE_PRIORITY_PROJECTILES	200
