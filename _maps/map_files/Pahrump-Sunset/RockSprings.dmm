@@ -5924,10 +5924,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village/tunnel_diner)
-"up" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "uq" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -10646,6 +10642,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"LX" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress4"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Ma" = (
 /obj/machinery/light,
 /obj/item/stack/f13Cash/random/med,
@@ -13817,6 +13819,10 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
+"Xw" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "Xy" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -75718,7 +75724,7 @@ JR
 Bk
 Bk
 Bk
-up
+Xw
 OC
 "}
 (239,1,1) = {"
@@ -77003,7 +77009,7 @@ Yf
 WZ
 Ae
 HR
-up
+Xw
 OC
 "}
 (244,1,1) = {"
@@ -77260,7 +77266,7 @@ KU
 WZ
 eG
 HR
-up
+Xw
 OC
 "}
 (245,1,1) = {"
@@ -78028,8 +78034,8 @@ Ij
 EY
 oI
 HR
-Bk
-Bk
+Df
+LX
 Bk
 dr
 OC
@@ -78285,8 +78291,8 @@ HR
 Cj
 dC
 HR
-Bk
-Bk
+Df
+Df
 Bk
 dr
 OC
@@ -78543,8 +78549,8 @@ Gf
 Gf
 Tx
 Bk
-fv
-Bk
+vf
+Df
 dr
 OC
 "}
@@ -78799,9 +78805,9 @@ Df
 Bk
 Bk
 Bk
-Bk
-fv
-Bk
+Df
+vf
+Df
 dr
 OC
 "}
@@ -79050,15 +79056,15 @@ Df
 vZ
 Bk
 SK
-SK
+sh
+ke
 Df
-Bk
 Bk
 Bk
 fv
 vf
 Bk
-Bk
+Df
 dr
 OC
 "}
@@ -79310,12 +79316,12 @@ Df
 Df
 Df
 Bk
-Bk
-Bk
-fv
+Df
+Df
+vf
 Df
 Bk
-Bk
+Df
 dr
 OC
 "}
