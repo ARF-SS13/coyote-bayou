@@ -860,6 +860,12 @@
 /obj/item/stack/sheet/bone,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"cS" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress4"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "cU" = (
 /turf/closed/wall/f13/wood,
 /area/f13/village)
@@ -2027,12 +2033,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
-"gW" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress4"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "gX" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood{
@@ -2358,8 +2358,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
 "ie" = (
-/obj/machinery/light/small/broken{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 8
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -3123,9 +3123,6 @@
 "kS" = (
 /obj/structure/decoration/clock/old{
 	pixel_y = 32
-	},
-/obj/machinery/light/small/broken{
-	dir = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4300,7 +4297,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oW" = (
-/obj/machinery/light/small/broken{
+/obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/f13{
@@ -5931,6 +5928,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village/tunnel_diner)
+"up" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/wood,
+/area/f13/caves)
 "uq" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -10154,6 +10155,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"Kb" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
+/area/f13/village)
 "Kd" = (
 /obj/structure/flora/grass/wasteland,
 /obj/structure/flora/ausbushes/grassybush,
@@ -10493,6 +10503,21 @@
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"Ln" = (
+/obj/effect/overlay/junk/sink{
+	pixel_y = 15
+	},
+/obj/effect/overlay/junk/mirror{
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/village)
 "Lo" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
@@ -10643,15 +10668,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"LX" = (
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/village)
 "Ma" = (
 /obj/machinery/light,
 /obj/item/stack/f13Cash/random/med,
@@ -11701,6 +11717,9 @@
 "Pz" = (
 /obj/structure/closet/crate/bin/trashbin,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "PD" = (
@@ -12319,21 +12338,6 @@
 	icon_state = "whiteyellowrustychess"
 	},
 /area/f13/building)
-"RZ" = (
-/obj/effect/overlay/junk/sink{
-	pixel_y = 15
-	},
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32
-	},
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/village)
 "Sa" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalleft"
@@ -13410,10 +13414,6 @@
 	smooth = 1
 	},
 /area/f13/building)
-"VN" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/caves)
 "VO" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -60031,7 +60031,7 @@ DA
 OV
 Oc
 aU
-ie
+PZ
 uN
 Em
 fX
@@ -60800,9 +60800,9 @@ Bk
 Bk
 wj
 uN
-PZ
+ie
 mF
-PZ
+ie
 PZ
 PZ
 vB
@@ -64667,7 +64667,7 @@ DD
 Gj
 ki
 DD
-RZ
+Ln
 JC
 RU
 Df
@@ -64919,7 +64919,7 @@ qc
 JH
 AL
 ep
-LX
+Kb
 DD
 eN
 xu
@@ -65950,7 +65950,7 @@ RC
 ss
 ol
 Ug
-LX
+Kb
 Qg
 UQ
 pl
@@ -75743,7 +75743,7 @@ JR
 Bk
 Bk
 Bk
-VN
+up
 OC
 "}
 (239,1,1) = {"
@@ -77028,7 +77028,7 @@ Yf
 WZ
 Ae
 HR
-VN
+up
 OC
 "}
 (244,1,1) = {"
@@ -77285,7 +77285,7 @@ KU
 WZ
 eG
 HR
-VN
+up
 OC
 "}
 (245,1,1) = {"
@@ -78054,7 +78054,7 @@ EY
 oI
 HR
 Df
-gW
+cS
 Bk
 dr
 OC
