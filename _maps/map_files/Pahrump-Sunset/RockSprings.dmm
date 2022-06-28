@@ -860,16 +860,6 @@
 /obj/item/stack/sheet/bone,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"cS" = (
-/obj/machinery/door/poddoor/gate{
-	id = "RedwaterEast";
-	name = "gate"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "cU" = (
 /turf/closed/wall/f13/wood,
 /area/f13/village)
@@ -3077,14 +3067,6 @@
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "crossborderroundmid"
 	},
-/area/f13/wasteland)
-"kG" = (
-/obj/machinery/button{
-	pixel_x = 4;
-	pixel_y = 25;
-	id = "RedwaterEast"
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kH" = (
 /mob/living/simple_animal/hostile/radscorpion/black,
@@ -5946,14 +5928,6 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village/tunnel_diner)
-"up" = (
-/obj/machinery/button{
-	pixel_x = -25;
-	pixel_y = -5;
-	id = "RedwaterWest"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "uq" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
@@ -10532,16 +10506,6 @@
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"Ln" = (
-/obj/machinery/door/poddoor/gate{
-	id = "RedwaterWest";
-	name = "gate"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "Lo" = (
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
@@ -12365,16 +12329,6 @@
 	icon_state = "whiteyellowrustychess"
 	},
 /area/f13/building)
-"RZ" = (
-/obj/machinery/door/poddoor/gate{
-	id = "RedwaterWest";
-	name = "gate"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "Sa" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalleft"
@@ -13451,16 +13405,6 @@
 	smooth = 1
 	},
 /area/f13/building)
-"VN" = (
-/obj/machinery/door/poddoor/gate{
-	id = "RedwaterWest";
-	name = "gate"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 9;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "VO" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
@@ -13889,16 +13833,6 @@
 	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
-"Xw" = (
-/obj/machinery/door/poddoor/gate{
-	id = "RedwaterEast";
-	name = "gate"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 9;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "Xy" = (
 /obj/structure/chair/sofa/left{
 	dir = 1
@@ -58280,9 +58214,9 @@ hj
 hj
 hj
 hj
-VN
-Ln
-RZ
+SM
+CC
+wg
 hj
 hj
 hj
@@ -59054,7 +58988,7 @@ Bk
 NA
 Vf
 el
-up
+Bk
 Bk
 Bk
 Bk
@@ -67260,7 +67194,7 @@ TA
 hj
 hj
 hj
-kG
+Bk
 Df
 Df
 Df
@@ -67514,9 +67448,9 @@ Bk
 Bk
 Bk
 Bk
-Xw
-cS
-cS
+SM
+CC
+CC
 CC
 CC
 CC
