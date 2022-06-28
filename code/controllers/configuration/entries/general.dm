@@ -519,12 +519,3 @@
 // via send2chat("Hello world.", CONFIG_GET(string/discord_channel_serverstatus))
 /datum/config_entry/string/discord_channel_serverstatus
 	config_entry_value = "server_status"
-
-/datum/config_entry/number/hard_deletes_overrun_threshold
-	integer = FALSE
-	min_val = 0
-	default = 0.5
-
-/datum/config_entry/number/hard_deletes_overrun_limit
-	default = 0
-	min_val = 0
