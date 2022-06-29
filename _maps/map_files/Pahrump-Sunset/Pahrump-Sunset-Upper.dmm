@@ -692,8 +692,8 @@
 "acZ" = (
 /obj/structure/railing{
 	color = "#A47449";
-	icon_state = "railing_corner";
-	dir = 8
+	dir = 8;
+	icon_state = "railing_corner"
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
@@ -740,7 +740,7 @@
 	color = "#363636"
 	},
 /obj/structure/window/fulltile/store{
-	icon_state = "storewindowtop"
+	icon_state = "ruinswindowbrokenvertical"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/hospital)
@@ -861,6 +861,15 @@
 /obj/structure/railing/corner,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/ncr)
+"aCj" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 8
+	},
+/area/f13/building/hospital)
 "aDv" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/rag/towel,
@@ -1289,6 +1298,7 @@
 	layer = 2.9
 	},
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
+/mob/living/simple_animal/hostile/raider/tribal,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -1498,7 +1508,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/spawner/lootdrop/trash,
+/obj/machinery/hydroponics/soil,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -1621,6 +1631,11 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/wood_fancy,
 /area/f13/ncr)
+"dWS" = (
+/obj/structure/simple_door/metal/store,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "dXb" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -1637,7 +1652,7 @@
 	},
 /area/f13/ncr)
 "eav" = (
-/obj/structure/bed/roller,
+/obj/machinery/smartfridge/bottlerack/seedbin/primitive,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9;
 	icon_state = "bluerusty"
@@ -1679,6 +1694,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"enE" = (
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "eoE" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_7"
@@ -1731,6 +1752,12 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"eHs" = (
+/obj/structure/window/fulltile/store{
+	icon_state = "ruinswindowbrokenvertical"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
+/area/f13/building/hospital)
 "eIR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -1850,6 +1877,15 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"fhI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
 /area/f13/building/hospital)
 "fjM" = (
 /obj/effect/decal/waste{
@@ -2019,6 +2055,16 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"gfV" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/simple_door/metal/store,
+/obj/structure/barricade/wooden/planks/pregame,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "ggY" = (
 /obj/structure/railing/corner{
 	dir = 8
@@ -2147,13 +2193,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
-"gVd" = (
-/obj/structure/window/fulltile/store{
-	icon_state = "storewindowtop"
-	},
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
-/area/f13/building/hospital)
 "gYb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood{
@@ -2558,6 +2597,12 @@
 "iDO" = (
 /obj/structure/bed/old,
 /turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"iDT" = (
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 8
+	},
 /area/f13/building/hospital)
 "iFg" = (
 /obj/structure/simple_door/house,
@@ -3127,9 +3172,7 @@
 	},
 /area/f13/building/massfusion)
 "loK" = (
-/obj/vehicle/ridden/wheelchair{
-	dir = 4
-	},
+/obj/structure/reagent_dispensers/compostbin,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 10;
 	icon_state = "bluedirty"
@@ -3748,6 +3791,13 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"nSB" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building/hospital)
 "nSY" = (
 /mob/living/simple_animal/hostile/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -4003,9 +4053,22 @@
 "oPT" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/wasteland/ncr)
+"oRm" = (
+/obj/structure/barricade/wooden,
+/obj/structure/window/fulltile/store{
+	icon_state = "ruinswindowvertical"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
+/area/f13/building/hospital)
 "oRM" = (
 /turf/open/indestructible,
 /area/f13/wasteland/ncr)
+"oSq" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "oTC" = (
 /obj/machinery/light{
 	dir = 1;
@@ -4521,6 +4584,17 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/wood_mosaic,
 /area/f13/city/bighorn)
+"rqa" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#c1caff"
+	},
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "rqy" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -4724,13 +4798,12 @@
 /turf/open/transparent/openspace,
 /area/f13/ncr)
 "sfh" = (
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
+/obj/structure/legion_extractor,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 5
+	dir = 8
 	},
 /area/f13/building/hospital)
 "sgu" = (
@@ -5120,6 +5193,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
+/obj/machinery/hydroponics/soil,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -5329,7 +5403,7 @@
 	},
 /area/f13/building/massfusion)
 "uxf" = (
-/obj/effect/spawner/lootdrop/trash,
+/obj/machinery/hydroponics/constructable,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 8
 	},
@@ -5337,7 +5411,7 @@
 "uxm" = (
 /obj/structure/barricade/wooden,
 /obj/structure/window/fulltile/store{
-	icon_state = "storewindowtop"
+	icon_state = "ruinswindowbrokenvertical"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/whitebluefull,
 /area/f13/building/hospital)
@@ -5542,6 +5616,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"vIH" = (
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building/hospital)
 "vLp" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -49273,14 +49350,14 @@ vqz
 vqz
 bhm
 bhm
-gVd
-tnt
+uxm
+eHs
 lqO
 adv
-tnt
+eHs
 lqO
 uxm
-uxm
+oRm
 bhm
 lqO
 bhm
@@ -49530,14 +49607,14 @@ tnt
 bhm
 bhm
 eav
-mjv
-mjv
-mjv
+sfh
+aCj
+aCj
 uxf
-tYl
-tYl
-tYl
-tYl
+uxf
+uxf
+uxf
+iDT
 loK
 lqO
 mZk
@@ -49788,9 +49865,9 @@ mjv
 tvg
 gah
 inG
+nSB
 inG
-inG
-tVL
+vIH
 inG
 inG
 azJ
@@ -50044,14 +50121,14 @@ xam
 xam
 qOL
 sVJ
-xam
+enE
 tRs
-xam
-xam
-xam
-tRs
+oSq
+oSq
+oSq
+rqa
 dnp
-hJV
+fhI
 ivA
 lqO
 uxS
@@ -50308,7 +50385,7 @@ lqO
 lqO
 lqO
 lqO
-sfh
+wZD
 tYl
 tYl
 tYl
@@ -50565,7 +50642,7 @@ npr
 wCN
 npr
 lqO
-lLE
+gah
 jic
 xXQ
 tVL
@@ -51082,8 +51159,8 @@ lqO
 lqO
 lqO
 lqO
-xNc
-kJl
+gfV
+dWS
 bhm
 lDT
 aKa
@@ -51596,7 +51673,7 @@ lqO
 dhm
 vDZ
 lqO
-gah
+eNW
 bfJ
 bhm
 lDT
