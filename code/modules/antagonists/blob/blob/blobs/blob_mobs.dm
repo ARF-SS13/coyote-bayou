@@ -51,7 +51,7 @@
 		return 1
 	return ..()
 
-/mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0)
+/mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0, continuous_move)
 	for(var/obj/structure/blob/B in range(1, src))
 		return 1
 	return ..()

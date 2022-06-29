@@ -96,6 +96,8 @@
 	var/max_multicams = 6
 	var/display_icon_override
 	var/emote_display = "Neutral" //text string of the current emote we set for the status displays, to prevent logins resetting it.
+	/// Is this mob allowed to be buckled/unbuckled to/from things?
+	can_buckle_to = FALSE
 
 /mob/living/silicon/ai/Initialize(mapload, datum/ai_laws/L, mob/target_ai)
 	. = ..()

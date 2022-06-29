@@ -7,20 +7,20 @@
 
 // This meme has spread like a debilitating illness AND I CANT GET AWAY FROM IT. THE FALL OF WESTERN SOCIETY IS HERE AND THIS COMPLETE UNFUNNY DRIBBLE OF A MEME IS PART OF THE PROBLEM. WHAT THE FUCK DOES “gETtiNg MoRBed” EVEN MEAN. it makes ZERO SENSE. ITS JUST GIBBERISH. FUCKING GIBB ER ISH. ITS NOT FUNNY. Saying “morb” LIKE ITS ITS OWN PUNCHLINE IS NOT COMEDY. IT IS COMEDIC AND CULTURAL DEGRADATION. Are we really so stunted as a generation that even the mention of any word that starts with m-o-r-b is FUNNY??? IN WHAT FUCKING UNIVERSE. Is it funny because it isn’t funny because praising something bad is now good??????? HOW MANY LAYERS OF IRONY DO WE NEED. HOW FAR DOES THE RABBIT HOLE GO. This website has stripped me of EVERY LAST BRAINCELL. GOING ON REDDIT FEELS LIKE IM GETTING A SUPER HERO INDUCED LOBOTOMY. I hate MORBIUS. I HATE IT. I know I’m just going to get FLOODED WITH “get morbed, this guy got morbed, what morb does to a man” HAHAHAHHAHAHHAHAHAHAHAHAHHQHQHAHAHAHAHAHWHHSHWBSQIISHWINSIQKSBDD SSSSOOOOOOOOOOOO FUNNNNNNNNYYYYYYY AGAGAGGAGHHHHHHHHH
 
-/turf/closed/indestructible/f13/matrix
+/turf/closed/indestructible/f13/matrix/transition
+	color = COLOR_BLUE
 	var/destination_z
 	var/destination_x
 	var/destination_y
 
-/turf/closed/indestructible/f13/matrix/Initialize()
+/turf/closed/indestructible/f13/matrix/transition/Initialize()
 	. = ..()
 
-
-/turf/closed/indestructible/f13/matrix/is_transition_turf()
+/turf/closed/indestructible/f13/matrix/transition/is_transition_turf()
 	if(destination_x || destination_y || destination_z)
 		return 1
 
-/turf/closed/indestructible/f13/matrix/Bumped(atom/movable/A)
+/turf/closed/indestructible/f13/matrix/transition/Bumped(atom/movable/A)
 	. = ..()
 
 	if(destination_z && destination_x && destination_y && !(A.pulledby || !A.can_be_z_moved))
@@ -55,7 +55,7 @@
 		stoplag()//Let a diagonal move finish, if necessary
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
-/turf/closed/indestructible/f13/matrix/attack_ghost(mob/dead/observer/user)
+/turf/closed/indestructible/f13/matrix/transition/attack_ghost(mob/dead/observer/user)
 	if(destination_z)
 		var/turf/T = locate(destination_x, destination_y, destination_z)
 		user.forceMove(T)

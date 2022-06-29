@@ -161,8 +161,8 @@
 	var/user_loc = user.loc
 
 	var/drifting = 0
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = 1
+	if(SSmove_manager.processing_on(user, SSspacedrift))
+		drifting = TRUE
 
 	var/target_loc = target.loc
 
@@ -194,8 +194,8 @@
 			. = FALSE
 			break
 
-		if(drifting && !user.inertia_dir)
-			drifting = 0
+		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+			drifting = FALSE
 			user_loc = user.loc
 
 		if((!drifting && user.loc != user_loc) || target.loc != target_loc || (!ignorehelditem && user.get_active_held_item() != holding) || user.incapacitated() || user.lying || (extra_checks && !extra_checks.Invoke()))
@@ -236,8 +236,8 @@
 	var/atom/Uloc = user.loc
 
 	var/drifting = 0
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = 1
+	if(SSmove_manager.processing_on(user, SSspacedrift))
+		drifting = TRUE
 
 	var/holding = user.get_active_held_item()
 
@@ -260,8 +260,8 @@
 		if (progress)
 			progbar.update(world.time - starttime + resume_time)
 
-		if(drifting && !user.inertia_dir)
-			drifting = 0
+		if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+			drifting = FALSE
 			Uloc = user.loc
 
 		if(L && !CHECK_ALL_MOBILITY(L, required_mobility_flags))
@@ -312,8 +312,8 @@
 	var/user_loc = user.loc
 
 	var/drifting = 0
-	if(!user.Process_Spacemove(0) && user.inertia_dir)
-		drifting = 1
+	if(SSmove_manager.processing_on(user, SSspacedrift))
+		drifting = TRUE
 
 	var/list/originalloc = list()
 	for(var/atom/target in targets)
@@ -340,8 +340,8 @@
 			if(uninterruptible)
 				continue
 
-			if(drifting && !user.inertia_dir)
-				drifting = 0
+			if(drifting && !SSmove_manager.processing_on(user, SSspacedrift))
+				drifting = FALSE
 				user_loc = user.loc
 
 			for(var/atom/target in targets)

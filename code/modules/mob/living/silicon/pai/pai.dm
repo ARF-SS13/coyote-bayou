@@ -81,6 +81,7 @@
 	var/silent = FALSE
 
 	var/icon/custom_holoform_icon
+	can_buckle_to = FALSE
 
 /mob/living/silicon/pai/Destroy()
 	QDEL_NULL(internal_instrument)
@@ -265,7 +266,7 @@
 	..()
 	P.toggle_integrated_light()
 
-/mob/living/silicon/pai/Process_Spacemove(movement_dir = 0)
+/mob/living/silicon/pai/Process_Spacemove(movement_dir = 0, continuous_move)
 	. = ..()
 	if(!.)
 		add_movespeed_modifier(/datum/movespeed_modifier/pai_spacewalk)

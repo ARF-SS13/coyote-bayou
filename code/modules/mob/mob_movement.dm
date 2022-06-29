@@ -1,4 +1,12 @@
 //DO NOT USE THIS UNLESS YOU ABSOLUTELY HAVE TO. THIS IS BEING PHASED OUT FOR THE MOVESPEED MODIFICATION SYSTEM.
+
+/// The threshold in which all of our movements are fully randomized, in seconds.
+#define CONFUSION_FULL_THRESHOLD 40
+/// A multiplier applied on how much time is left (in seconds) that determines the chance of moving sideways randomly
+#define CONFUSION_SIDEWAYS_MOVE_PROB_PER_SECOND 1.5
+/// A multiplier applied on how much time is left (in seconds) that determines the chance of moving diagonally randomly
+#define CONFUSION_DIAGONAL_MOVE_PROB_PER_SECOND 3
+
 //See mob_movespeed.dm
 /mob/proc/movement_delay()	//update /living/movement_delay() if you change this
 	return cached_multiplicative_slowdown
@@ -71,6 +79,10 @@
 
 	if(!mob.Process_Spacemove(direction))
 		return FALSE
+
+	if(SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_PRE_MOVE, args) & COMSIG_MOB_CLIENT_BLOCK_PRE_MOVE)
+		return FALSE
+
 	//We are now going to move
 	var/add_delay = mob.movement_delay()
 	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay * ( (NSCOMPONENT(direction) && EWCOMPONENT(direction)) ? 2 : 1 ) ), FALSE) // set it now in case of pulled objects
@@ -78,7 +90,6 @@
 		move_delay = old_move_delay
 	else
 		move_delay = world.time
-	var/oldloc = mob.loc
 
 	if(L.confused)
 		var/newdir = NONE
@@ -96,11 +107,17 @@
 
 	if((direction & (direction - 1)) && mob.loc == n) //moved diagonally successfully
 		add_delay *= SQRT_2
-	mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay), FALSE)
+	
+	if(visual_delay)
+		mob.set_glide_size(visual_delay)
+	else
+		mob.set_glide_size(DELAY_TO_GLIDE_SIZE(add_delay))
 	move_delay += add_delay
 	if(.) // If mob is null here, we deserve the runtime
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
+		
+		SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOVED)
 
 	var/atom/movable/AM = L.pulling
 	if(AM && AM.density && !SEND_SIGNAL(L, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE) && !ismob(AM))
@@ -108,7 +125,6 @@
 
 	last_move = world.time
 
-	SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOVE, src, direction, n, oldloc, add_delay)
 
 /// Process_Grab(): checks for grab, attempts to break if so. Return TRUE to prevent movement.
 /client/proc/Process_Grab()
@@ -202,47 +218,83 @@
 			L.setDir(direction)
 	return TRUE
 
-
-///Process_Spacemove
-///Called by /client/Move()
-///For moving in space
-///return TRUE for movement 0 for none
-/mob/Process_Spacemove(movement_dir = 0)
-	if(HAS_TRAIT(src, TRAIT_SPACEWALK) || spacewalk || ..())
+/**
+ * Handles mob/living movement in space (or no gravity)
+ *
+ * Called by /client/Move()
+ *
+ * return TRUE for movement or FALSE for none
+ *
+ * You can move in space if you have a spacewalk ability
+ */
+/mob/Process_Spacemove(movement_dir = 0, continuous_move = FALSE)
+	. = ..()
+	if(. || HAS_TRAIT(src, TRAIT_SPACEWALK))
 		return TRUE
-	var/atom/movable/backup = get_spacemove_backup()
-	if(backup)
-		if(istype(backup) && movement_dir && !backup.anchored)
-			if(backup.newtonian_move(turn(movement_dir, 180))) //You're pushing off something movable, so it moves
-				to_chat(src, "<span class='info'>You push off of [backup] to propel yourself.</span>")
-		return TRUE
-	return FALSE
 
-/mob/get_spacemove_backup()
-	for(var/A in orange(1, get_turf(src)))
-		if(isarea(A))
+	// FUCK OFF
+	if(buckled)
+		return TRUE
+
+	var/atom/movable/backup = get_spacemove_backup(movement_dir, continuous_move)
+	if(!backup)
+		return FALSE
+	if(continuous_move || !istype(backup) || !movement_dir || backup.anchored)
+		return TRUE
+	// last pushoff exists for one reason
+	// to ensure pushing a mob doesn't just lead to it considering us as backup, and failing
+	last_pushoff = world.time
+	if(backup.newtonian_move(turn(movement_dir, 180), instant = TRUE)) //You're pushing off something movable, so it moves
+		// We set it down here so future calls to Process_Spacemove by the same pair in the same tick don't lead to fucky
+		backup.last_pushoff = world.time
+		to_chat(src, span_info("You push off of [backup] to propel yourself."))
+	return TRUE
+
+/**
+ * Finds a target near a mob that is viable for pushing off when moving.
+ * Takes the intended movement direction as input, alongside if the context is checking if we're allowed to continue drifting
+ */
+/mob/get_spacemove_backup(moving_direction, continuous_move)
+	for(var/atom/pushover as anything in range(1, get_turf(src)))
+		if(pushover == src)
 			continue
-		else if(isturf(A))
-			var/turf/turf = A
+		if(isarea(pushover))
+			continue
+		if(isturf(pushover))
+			var/turf/turf = pushover
 			if(isspaceturf(turf))
 				continue
 			if(!turf.density && !mob_negates_gravity())
 				continue
-			return A
-		else
-			var/atom/movable/AM = A
-			if(AM == buckled)
+			return pushover
+
+		var/atom/movable/rebound = pushover
+		if(rebound == buckled)
+			continue
+		if(ismob(rebound))
+			var/mob/lover = rebound
+			if(lover.buckled)
 				continue
-			if(ismob(AM))
-				var/mob/M = AM
-				if(M.buckled)
-					continue
-			if(!AM.CanPass(src) || AM.density)
-				if(AM.anchored)
-					return AM
-				if(pulling == AM)
-					continue
-				. = AM
+
+		var/pass_allowed = rebound.CanPass(src, get_dir(rebound, src))
+		if(!rebound.density && pass_allowed)
+			continue
+		//Sometime this tick, this pushed off something. Doesn't count as a valid pushoff target
+		if(rebound.last_pushoff == world.time)
+			continue
+		if(continuous_move && !pass_allowed)
+			var/datum/move_loop/move/rebound_engine = SSmove_manager.processing_on(rebound, SSspacedrift)
+			// If you're moving toward it and you're both going the same direction, stop
+			if(moving_direction == get_dir(src, pushover) && rebound_engine && moving_direction == rebound_engine.direction)
+				continue
+		else if(!pass_allowed)
+			if(moving_direction == get_dir(src, pushover)) // Can't push "off" of something that you're walking into
+				continue
+		if(rebound.anchored)
+			return rebound
+		if(pulling == rebound)
+			continue
+		return rebound
 
 /mob/proc/mob_has_gravity()
 	return has_gravity()
@@ -434,20 +486,45 @@
 	if(zMove(DOWN, TRUE))
 		to_chat(src, "<span class='notice'>You move down.</span>")
 
-/mob/proc/zMove(dir, feedback = FALSE)
-	if(dir != UP && dir != DOWN)
-		return FALSE
-	var/turf/target = get_step_multiz(src, dir)
-	if(!target)
-		if(feedback)
-			to_chat(src, "<span class='warning'>There's nothing in that direction!</span>")
-		return FALSE
-	if(!canZMove(dir, target))
-		if(feedback)
-			to_chat(src, "<span class='warning'>You couldn't move there!</span>")
-		return FALSE
-	forceMove(target)
-	return TRUE
+/**
+ * We want to relay the zmovement to the buckled atom when possible
+ * and only run what we can't have on buckled.zMove() or buckled.can_z_move() here.
+ * This way we can avoid esoteric bugs, copypasta and inconsistencies.
+ */
+/mob/living/zMove(dir, turf/target, z_move_flags = ZMOVE_FLIGHT_FLAGS)
+	if(buckled)
+		if(buckled.currently_z_moving)
+			return FALSE
+		if(!(z_move_flags & ZMOVE_ALLOW_BUCKLED))
+			buckled.unbuckle_mob(src, force = TRUE)
+		else
+			if(!target)
+				target = can_z_move(dir, get_turf(src), null, z_move_flags, src)
+				if(!target)
+					return FALSE
+			return buckled.zMove(dir, target, z_move_flags) // Return value is a loc.
+	return ..()
 
-/mob/proc/canZMove(direction, turf/target)
-	return FALSE
+/mob/living/can_z_move(direction, turf/start, turf/destination, z_move_flags = ZMOVE_FLIGHT_FLAGS, mob/living/rider)
+	if(z_move_flags & ZMOVE_INCAPACITATED_CHECKS && incapacitated())
+		if(z_move_flags & ZMOVE_FEEDBACK)
+			to_chat(rider || src, span_warning("[rider ? src : "You"] can't do that right now!"))
+		return FALSE
+	if(!buckled || !(z_move_flags & ZMOVE_ALLOW_BUCKLED))
+		if(!(z_move_flags & ZMOVE_FALL_CHECKS) && incorporeal_move && (!rider || rider.incorporeal_move))
+			//An incorporeal mob will ignore obstacles unless it's a potential fall (it'd suck hard) or is carrying corporeal mobs.
+			//Coupled with flying/floating, this allows the mob to move up and down freely.
+			//By itself, it only allows the mob to move down.
+			z_move_flags |= ZMOVE_IGNORE_OBSTACLES
+		return ..()
+	switch(SEND_SIGNAL(buckled, COMSIG_BUCKLED_CAN_Z_MOVE, direction, start, destination, z_move_flags, src))
+		if(COMPONENT_RIDDEN_ALLOW_Z_MOVE) // Can be ridden.
+			return buckled.can_z_move(direction, start, destination, z_move_flags, src)
+		if(COMPONENT_RIDDEN_STOP_Z_MOVE) // Is a ridable but can't be ridden right now. Feedback messages already done.
+			return FALSE
+		else
+			if(!(z_move_flags & ZMOVE_CAN_FLY_CHECKS) && !buckled.anchored)
+				return buckled.can_z_move(direction, start, destination, z_move_flags, src)
+			if(z_move_flags & ZMOVE_FEEDBACK)
+				to_chat(src, span_warning("Unbuckle from [buckled] first."))
+			return FALSE

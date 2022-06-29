@@ -123,3 +123,8 @@ require only minor tweaks.
 //Random z-levels name defines.
 #define AWAY_MISSION_NAME "Away Mission"
 #define VIRT_REALITY_NAME "Virtual Reality"
+
+#define Z_FORCE_NORTH	"Force North"
+#define Z_FORCE_SOUTH	"Force South"
+#define Z_FORCE_EAST	"Force East"
+#define Z_FORCE_WEST	"Force West"

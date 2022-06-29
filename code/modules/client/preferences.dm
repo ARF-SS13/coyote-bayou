@@ -482,6 +482,12 @@ Records disabled until a use for them is found
 			dat += "<b>Custom Tongue:</b><BR>"
 			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=tongue;task=input'>[custom_tongue]</a><BR>"
 
+			// Coyote ADD: Blurbleblurhs
+			dat += "<b>Sound Indicator:</b><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[typing_indicator_sound_play]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[typing_indicator_sound]</a><BR>"
+			// Coyote ADD: End
+
 			if(HAIR in pref_species.species_traits)
 
 				dat += APPEARANCE_CATEGORY_COLUMN
@@ -1670,6 +1676,7 @@ Records disabled until a use for them is found
 					if(!isnull(rec))
 						medical_records = rec
 */
+
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb. This can also be used for OOC notes and preferences!", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))

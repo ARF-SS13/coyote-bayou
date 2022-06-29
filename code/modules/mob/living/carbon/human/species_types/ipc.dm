@@ -1,12 +1,14 @@
 /datum/species/ipc
 	name = "I.P.C."
 	id = "ipc"
+	limbs_id = "ipc"
+	icon_limbs = "ipc"
 	say_mod = "beeps"
 	default_color = "00FF00"
 	blacklisted = 0
 	sexes = 0
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD)
-	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
+	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR)
 	hair_alpha = 210
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
 	mutant_bodyparts = list("ipc_screen" = "Blank", "ipc_antenna" = "None")

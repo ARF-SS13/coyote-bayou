@@ -1,27 +1,26 @@
 #define LINKIFY_READY(string, value) "<a href='byond://?src=[REF(src)];ready=[value]'>[string]</a>"
-
 /mob/dead/new_player
-	var/ready = 0
-	var/spawning = 0//Referenced when you want to delete the new_player later on in the code.
-
 	flags_1 = NONE
-
 	invisibility = INVISIBILITY_ABSTRACT
-
 	density = FALSE
 	stat = DEAD
-
-	var/mob/living/new_character	//for instant transfer once the round is set up
-
-	//Used to make sure someone doesn't get spammed with messages if they're ineligible for roles
-	var/ineligible_for_roles = FALSE
-
+	
 	//is there a result we want to read from the age gate
 	var/age_gate_result
 
-/mob/dead/new_player/Initialize()
+	var/ready = FALSE
+	/// Referenced when you want to delete the new_player later on in the code.
+	var/spawning = FALSE
+	/// For instant transfer once the round is set up
+	var/mob/living/new_character
+	///Used to make sure someone doesn't get spammed with messages if they're ineligible for roles.
+	var/ineligible_for_roles = FALSE
+
+
+
+/mob/dead/new_player/Initialize(mapload)
 	if(client && SSticker.state == GAME_STATE_STARTUP)
-		var/obj/screen/splash/S = new(client, TRUE, TRUE)
+		var/obj/screen/splash/S = new(null, client, TRUE, TRUE)
 		S.Fade(TRUE)
 
 	if(length(GLOB.newplayer_start))
@@ -32,6 +31,9 @@
 	ComponentInitialize()
 
 	. = ..()
+
+/mob/dead/new_player/Destroy()
+	return ..()
 
 /mob/dead/new_player/prepare_huds()
 	return
