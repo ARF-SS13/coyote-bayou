@@ -613,6 +613,13 @@ Difficulty: Normal
 		M.gets_drilled(caster)
 	INVOKE_ASYNC(src, .proc/blast)
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+
 /obj/effect/temp_visual/hierophant/blast/proc/blast()
 	var/turf/T = get_turf(src)
 	if(!T)
@@ -625,9 +632,9 @@ Difficulty: Normal
 	bursting = FALSE //we no longer damage crossers
 
 /obj/effect/temp_visual/hierophant/blast/proc/on_entered(atom/movable/AM)
-	..()
+	SIGNAL_HANDLER
 	if(bursting)
-		do_damage(get_turf(src))
+		INVOKE_ASYNC(src, .proc/do_damage, get_turf(src))
 
 /obj/effect/temp_visual/hierophant/blast/proc/do_damage(turf/T)
 	if(!damage)

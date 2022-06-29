@@ -211,7 +211,7 @@
 // called when something steps onto a human
 // this could be made more general, but for now just handle mulebot
 /mob/living/carbon/human/on_entered(atom/movable/AM)
-	SIGNAL_HANLDER
+	..()
 	var/mob/living/simple_animal/bot/mulebot/MB = AM
 	if(istype(MB))
 		INVOKE_ASYNC(MB, /mob/living/simple_animal/bot/mulebot/.proc/RunOver, src)

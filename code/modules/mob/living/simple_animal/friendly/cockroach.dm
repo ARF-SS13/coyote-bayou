@@ -37,7 +37,8 @@
 		return
 	..()
 
-/mob/living/simple_animal/cockroach/proc/on_entered(atom/movable/AM)
+/mob/living/simple_animal/cockroach/on_entered(atom/movable/AM)
+	..()
 	if(ismob(AM))
 		if(isliving(AM))
 			var/mob/living/A = AM

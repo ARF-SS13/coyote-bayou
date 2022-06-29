@@ -80,6 +80,12 @@
 
 /obj/structure/leaper_bubble/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 	INVOKE_ASYNC(src, /atom/movable.proc/float, TRUE)
 	QDEL_IN(src, 100)
 
@@ -89,6 +95,7 @@
 	return ..()
 
 /obj/structure/leaper_bubble/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(!istype(L, /mob/living/simple_animal/hostile/jungle/leaper))
@@ -101,7 +108,6 @@
 				var/mob/living/simple_animal/A = L
 				A.adjustHealth(25)
 			qdel(src)
-	return ..()
 
 /datum/reagent/toxin/leaper_venom
 	name = "Leaper venom"

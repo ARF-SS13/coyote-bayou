@@ -590,14 +590,14 @@ Auto Patrol: []"},
 		target = user
 		mode = BOT_HUNT
 
-/mob/living/simple_animal/bot/secbot/proc/on_entered(atom/movable/AM)
+/mob/living/simple_animal/bot/secbot/on_entered(atom/movable/AM)
+	..()
 	if(has_gravity() && ismob(AM) && target)
 		var/mob/living/carbon/C = AM
 		if(!istype(C) || !C || in_range(src, target))
 			return
 		knockOver(C)
 		return
-	..()
 
 /obj/machinery/bot_core/secbot
 	req_access = list(ACCESS_SECURITY)

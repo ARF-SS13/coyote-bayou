@@ -405,7 +405,7 @@
 	..()
 
 /mob/living/carbon/monkey/on_entered(atom/movable/AM)
-	SIGNAL_HANDLER
+	..()
 	if(!IsDeadOrIncap() && ismob(AM) && target)
 		var/mob/living/carbon/monkey/M = AM
 		if(!istype(M) || !M)

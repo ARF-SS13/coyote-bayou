@@ -44,8 +44,9 @@
 			movement_range = 0
 
 /obj/effect/accelerated_particle/proc/on_entered(atom/A)
+	SIGNAL_HANDLER
 	if(isliving(A))
-		toxmob(A)
+		INVOKE_ASYNC(src, .proc/toxmob, A)
 
 
 /obj/effect/accelerated_particle/ex_act(severity, target)

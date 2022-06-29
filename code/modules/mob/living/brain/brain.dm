@@ -78,10 +78,10 @@
 /mob/living/brain/forceMove(atom/destination)
 	if(container)
 		return container.forceMove(destination)
-	else if (istype(loc, /obj/item/organ/brain))
-		var/obj/item/organ/brain/B = loc
+	else if (istype(loc, /obj/item/organ/internal/brain))
+		var/obj/item/organ/internal/brain/B = loc
 		B.forceMove(destination)
-	else if (istype(destination, /obj/item/organ/brain))
+	else if (istype(destination, /obj/item/organ/internal/brain))
 		doMove(destination)
 	else if (istype(destination, /obj/item/mmi))
 		doMove(destination)

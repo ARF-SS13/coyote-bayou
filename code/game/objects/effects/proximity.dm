@@ -105,6 +105,7 @@
 	
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_EXITED = .proc/on_exit,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -116,3 +117,6 @@
 	SIGNAL_HANDLER
 	set waitfor = FALSE
 	monitor?.hasprox_receiver.HasProximity(AM)
+
+/obj/effect/abstract/proximity_checker/proc/on_exit(atom/movable/AM)
+	SIGNAL_HANDLER

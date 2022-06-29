@@ -64,7 +64,7 @@
 	. = ..()
 	AddComponent(/datum/component/slippery, 40)
 
-/mob/living/simple_animal/banana_spider/proc/on_entered(atom/movable/AM)		//no /var in proc headers
+/mob/living/simple_animal/banana_spider/on_entered(atom/movable/AM)		//no /var in proc headers
 	. = ..()
 	if(istype(AM, /obj/item/projectile) && projectile_density)		//forced projectile density
 		var/obj/item/projectile/P = AM

@@ -41,7 +41,8 @@
 		icon_dead = "rare_frog_dead"
 		butcher_results = list(/obj/item/reagent_containers/food/snacks/nugget = 5)
 
-/mob/living/simple_animal/hostile/retaliate/frog/proc/on_entered(AM as mob|obj)
+/mob/living/simple_animal/hostile/retaliate/frog/on_entered(AM as mob|obj)
+	..()
 	if(!stat && isliving(AM))
 		var/mob/living/L = AM
 		if(L.mob_size > MOB_SIZE_TINY)
