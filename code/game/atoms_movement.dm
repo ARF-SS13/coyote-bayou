@@ -151,6 +151,7 @@
 
 	if(!loc || (loc == oldloc && oldloc != newloc))
 		last_move = 0
+		set_currently_z_moving(FALSE, TRUE)
 		return
 
 	if(. && pulling && pulling == pullee && pulling != moving_from_pull) //we were pulling a thing and didn't lose it during our move.
@@ -185,12 +186,12 @@
 	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
 		. = FALSE
 
-/*	if(currently_z_moving)
+	if(currently_z_moving)
 		if(. && loc == newloc)
 			var/turf/pitfall = get_turf(src)
-			pitfall.zFall(src, falling_from_move = TRUE)
+			pitfall.zFall(src)
 		else
-			set_currently_z_moving(FALSE, TRUE)*/
+			set_currently_z_moving(FALSE, TRUE)
 
 /atom/movable/proc/handle_buckled_mob_movement(newloc, direct, glide_size_override)
 	for(var/m in buckled_mobs)
@@ -336,55 +337,44 @@
 
 /atom/movable/proc/doMove(atom/destination)
 	. = FALSE
+	move_stacks++
+	var/atom/oldloc = loc
 	if(destination)
-		if(pulledby)
+		///zMove already handles whether a pull from another movable should be broken.
+		if(pulledby && !currently_z_moving)
 			pulledby.stop_pulling()
-		var/atom/oldloc = loc
-		var/list/old_locs
-		if(bound_height > 32 || bound_width > 32)
-			old_locs = locs.Copy()
 		var/same_loc = oldloc == destination
 		var/area/old_area = get_area(oldloc)
 		var/area/destarea = get_area(destination)
+		var/movement_dir = get_dir(src, destination)
+
+		moving_diagonally = 0
 
 		loc = destination
-		moving_diagonally = 0
 
 		if(!same_loc)
 			if(oldloc)
-				oldloc.Exited(src, destination)
+				oldloc.Exited(src, movement_dir)
 				if(old_area && old_area != destarea)
-					old_area.Exited(src, destination)
-			for(var/atom/movable/AM in oldloc)
-				AM.Uncrossed(src)
-			var/turf/oldturf = get_turf(oldloc)
-			var/turf/destturf = get_turf(destination)
-			var/old_z = (oldturf ? oldturf.z : null)
-			var/dest_z = (destturf ? destturf.z : null)
-			if (old_z != dest_z)
-				on_changed_z_level(old_z, dest_z)
+					old_area.Exited(src, movement_dir)
 			destination.Entered(src, oldloc)
 			if(destarea && old_area != destarea)
-				destarea.Entered(src, oldloc)
+				destarea.Entered(src, old_area)
 
-			for(var/atom/movable/AM in destination)
-				if(AM == src)
-					continue
-				AM.Crossed(src, oldloc)
-
-		Moved(oldloc, NONE, TRUE, old_locs)
 		. = TRUE
 
 	//If no destination, move the atom into nullspace (don't do this unless you know what you're doing)
 	else
 		. = TRUE
-		if (loc)
-			var/atom/oldloc = loc
-			var/area/old_area = get_area(oldloc)
-			oldloc.Exited(src, null)
-			if(old_area)
-				old_area.Exited(src, null)
 		loc = null
+		if (oldloc)
+			var/area/old_area = get_area(oldloc)
+			oldloc.Exited(src, NONE)
+			if(old_area)
+				old_area.Exited(src, NONE)
+
+	Moved(oldloc, NONE, TRUE)
+
 
 
 /**

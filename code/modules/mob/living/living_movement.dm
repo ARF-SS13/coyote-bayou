@@ -76,9 +76,6 @@
 			return
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
 
-/mob/living/canZMove(dir, turf/target)
-	return can_zTravel(target, dir) && (movement_type & FLYING)
-
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
@@ -116,16 +113,15 @@
 	set_pull_offsets(L, grab_state)
 
 /mob/living/forceMove(atom/destination)
-	stop_pulling()
-	if(buckled)
-		buckled.unbuckle_mob(src, force = TRUE)
-	if(has_buckled_mobs())
-		unbuckle_all_mobs(force = TRUE)
+	if(!currently_z_moving)
+		stop_pulling()
+		if(buckled && !HAS_TRAIT(src, TRAIT_CANNOT_BE_UNBUCKLED))
+			buckled.unbuckle_mob(src, force = TRUE)
+		if(has_buckled_mobs())
+			unbuckle_all_mobs(force = TRUE)
 	. = ..()
-	if(.)
-		if(client)
-			reset_perspective()
-		update_mobility() //if the mob was asleep inside a container and then got forceMoved out we need to make them fall.
+	if(. && client)
+		reset_perspective()
 
 /mob/living/proc/update_z(new_z) // 1+ to register, null to unregister
 	if(isnull(new_z) && audiovisual_redirect)
