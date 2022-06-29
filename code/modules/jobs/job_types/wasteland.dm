@@ -1563,7 +1563,7 @@ datum/job/wasteland/f13dendoctor
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave
-    name = "Redwater Slave"
-    icon_state = "Wastelander"
-    jobspawn_override = TRUE
-    delete_after_roundstart = FALSE
+	name = "Redwater Slave"
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
