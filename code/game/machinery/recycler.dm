@@ -110,7 +110,7 @@
 	if(stat & (BROKEN|NOPOWER) || safety_mode)
 		return
 
-	if(isturf(AM))
+	if(isturf(AM0))
 		return
 
 	var/list/to_eat

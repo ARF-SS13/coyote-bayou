@@ -283,17 +283,6 @@
 		return CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE)
 	return TRUE
 
-/turf/Exit(atom/movable/mover, atom/newloc)
-	. = ..()
-	if(!.)
-		return FALSE
-	for(var/i in contents)
-		if(QDELETED(mover))
-			break
-		if(i == mover)
-			continue
-		var/atom/movable/thing = i
-
 /turf/Entered(atom/movable/AM)
 	..()
 	if(explosion_level && AM.ex_check(explosion_id))
