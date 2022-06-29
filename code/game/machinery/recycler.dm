@@ -110,6 +110,9 @@
 	if(stat & (BROKEN|NOPOWER) || safety_mode)
 		return
 
+	if(isturf(AM))
+		return
+
 	var/list/to_eat
 
 	to_eat = list(AM0)
