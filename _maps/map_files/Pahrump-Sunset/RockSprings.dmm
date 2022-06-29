@@ -1028,10 +1028,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"dE" = (
-/obj/effect/spawner/lootdrop/f13/seedspawner,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "dG" = (
 /obj/structure/fence/wooden{
 	dir = 4
@@ -4310,7 +4306,6 @@
 	icon_state = "sheetgrey"
 	},
 /obj/structure/bed/old,
-/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pc" = (
@@ -4994,12 +4989,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/building/tunnel)
-"rh" = (
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "ri" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/rock/pile/largejungle,
@@ -5546,11 +5535,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
-"sY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "tc" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/outside/dirt,
@@ -5825,13 +5809,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"tV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "tW" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -10126,7 +10103,6 @@
 /area/f13/building)
 "JU" = (
 /obj/structure/chair/stool/bar,
-/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -10585,12 +10561,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/building/tunnel)
-"LJ" = (
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "LL" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
@@ -10866,7 +10836,6 @@
 /obj/item/stack/f13Cash/random/low{
 	pixel_y = -5
 	},
-/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2"
 	},
@@ -11871,7 +11840,6 @@
 /area/f13/village)
 "Qe" = (
 /obj/structure/bed/mattress/pregame,
-/obj/effect/landmark/start/redwateroutlaw,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "Qf" = (
@@ -12127,10 +12095,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/village/tunnel_diner)
-"Rf" = (
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "Rg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt,
@@ -14458,10 +14422,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"ZE" = (
-/obj/effect/landmark/start/redwateroutlaw,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "ZG" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -60848,7 +60808,7 @@ Eq
 PZ
 JU
 US
-Rf
+PZ
 Nl
 pK
 Mv
@@ -63412,7 +63372,7 @@ AI
 Df
 Bk
 Bk
-dE
+Bk
 Bk
 Bk
 qM
@@ -65175,7 +65135,7 @@ Aw
 GS
 bT
 iv
-LJ
+Qw
 Qw
 pj
 Qu
@@ -67184,7 +67144,7 @@ Bk
 Bk
 Bk
 Bk
-lL
+Bk
 Bk
 BE
 Bk
@@ -67442,7 +67402,7 @@ Bk
 Oh
 Bk
 Bk
-fx
+SK
 Bk
 SK
 SK
@@ -71358,7 +71318,7 @@ bq
 tx
 wZ
 ia
-ZE
+nD
 Un
 Mi
 WV
@@ -76262,7 +76222,7 @@ UV
 mp
 WZ
 WZ
-rh
+WZ
 tN
 HR
 kd
@@ -76774,7 +76734,7 @@ lp
 WZ
 UV
 zx
-tV
+Pt
 WZ
 Pt
 lo
@@ -77268,7 +77228,7 @@ ur
 mw
 jv
 DD
-sY
+oB
 nD
 xo
 nD
