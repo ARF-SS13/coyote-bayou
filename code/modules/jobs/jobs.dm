@@ -233,7 +233,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 
 GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Slave",
-	"Redwater Outlaw"
+	"Outlaw"
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
