@@ -1109,6 +1109,19 @@ datum/job/wasteland/f13dendoctor
 	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war, is forbidden to your people."
 	description = "You are a member of the Sulphur Bottom Tribe.  Your people have finally built a new village in this area and you are one of the earliest few to migrate to it, it is in the south east section of the northern area.  Your village is in a defensive position with the two nearby towns, try not to provoke them while remaining true to the Tribes creed of not using pre-war tools."
 	supervisors = "the knoweldge that the ancestors watch over you, and that to follow in the ways of simplicity will bring you strength.  Also remember that one day a chief will be chosen for this village, by the village.  Your peers are watching."
+	objectivesList = list(
+		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.", 
+		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.", 
+		"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
+		"The druids far off have asked us to find a cursed pre-war weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
+		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
+		"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
+		"The swamp calls the hunters forth, seek out the thing that shines and return it to the shamans to appease the spirits.  If no shaman can be found then hide the item from the out-peoples.",
+		"The Chief calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
+		"The Chief calls for blood, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
+		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
+		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
+
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
