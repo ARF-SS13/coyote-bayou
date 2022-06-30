@@ -1106,8 +1106,9 @@ datum/job/wasteland/f13dendoctor
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "You are a member of a tribe, far away from your homeland. Well, relatively far away. Whatever your reasons for coming here, you've found yourself pinned between the ongoing war of the NCR and Caesar's Legion. Try not to get shot."
-	supervisors = "the stars above"
+	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war, is forbidden to your people."
+	description = "You are a member of the Sulphur Bottom Tribe.  Your people have finally built a new village in this area and you are one of the earliest few to migrate to it, it is in the south east section of the northern area.  Your village is in a defensive position with the two nearby towns, try not to provoke them while remaining true to the Tribes creed of not using pre-war tools."
+	supervisors = "the knoweldge that the ancestors watch over you, and that to follow in the ways of simplicity will bring you strength.  Also remember that one day a chief will be chosen for this village, by the village.  Your peers are watching."
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -1118,25 +1119,25 @@ datum/job/wasteland/f13dendoctor
 	loadout_options = list(
 	/datum/outfit/loadout/brawler,
 	/datum/outfit/loadout/spearman,
-	/datum/outfit/loadout/shaman,
-	/datum/outfit/loadout/wayfarermelee,
+	// /datum/outfit/loadout/wayfarermelee,
 	/datum/outfit/loadout/wayfarerranged,
-	/datum/outfit/loadout/wayfarershaman,
-	/datum/outfit/loadout/whitelegsmelee,
-	/datum/outfit/loadout/whitelegsranged,
-	/datum/outfit/loadout/whitelegsshaman,
-	/datum/outfit/loadout/deadhorsesmelee,
-	/datum/outfit/loadout/deadhorsesranged,
-	/datum/outfit/loadout/deadhorsesshaman,
-	/datum/outfit/loadout/sorrowshunter,
-	/datum/outfit/loadout/sorrowsshaman,
-	/datum/outfit/loadout/eightiesmelee,
-	/datum/outfit/loadout/eightiesranged,
-	/datum/outfit/loadout/eightiesshaman,
-	/datum/outfit/loadout/rustwalkersscipher,
-	/datum/outfit/loadout/rustwalkersscrapper,
-	/datum/outfit/loadout/rustwalkersshaman,
-	/datum/outfit/loadout/bonedancerexile
+	// /datum/outfit/loadout/wayfarershaman,
+	/datum/outfit/loadout/shaman,
+	/datum/outfit/loadout/whitelegsmelee
+	// /datum/outfit/loadout/whitelegsranged,
+	// /datum/outfit/loadout/whitelegsshaman,
+	// /datum/outfit/loadout/deadhorsesmelee,
+	// /datum/outfit/loadout/deadhorsesranged,
+	// /datum/outfit/loadout/deadhorsesshaman,
+	// /datum/outfit/loadout/sorrowshunter,
+	// /datum/outfit/loadout/sorrowsshaman,
+	// /datum/outfit/loadout/eightiesmelee,
+	// /datum/outfit/loadout/eightiesranged,
+	// /datum/outfit/loadout/eightiesshaman,
+	// /datum/outfit/loadout/rustwalkersscipher,
+	// /datum/outfit/loadout/rustwalkersscrapper,
+	// /datum/outfit/loadout/rustwalkersshaman,
+	// /datum/outfit/loadout/bonedancerexile
 	)
 
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1204,7 +1205,7 @@ datum/job/wasteland/f13dendoctor
 
 //Generic Tribals
 /datum/outfit/loadout/brawler
-	name = "Tribal Brawler"
+	name = "Sulphur Warrior"
 	suit = /obj/item/clothing/suit/armor/f13/tribal
 	head = /obj/item/clothing/head/helmet/f13/deathskull
 	backpack_contents = list(
@@ -1215,7 +1216,7 @@ datum/job/wasteland/f13dendoctor
 		)
 
 /datum/outfit/loadout/spearman
-	name = "Tribal Spearman"
+	name = "Sulphur Picketman"
 	suit = /obj/item/clothing/suit/armored/light/tribalraider
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	mask = /obj/item/clothing/mask/facewrap
@@ -1226,7 +1227,7 @@ datum/job/wasteland/f13dendoctor
 		)
 
 /datum/outfit/loadout/shaman
-	name = "Tribal Shaman"
+	name = "Sulphur Shaman"
 	suit = /obj/item/clothing/suit/hooded/cloak/desert
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
@@ -1239,18 +1240,28 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/book/granter/crafting_recipe/tribal = 1,
 	)
 
-//White Legs
 /datum/outfit/loadout/whitelegsmelee
-	name = "White Legs Bone-Breaker"
+	name = "Sulphur Villager"
 	suit = /obj/item/clothing/suit/f13/tribal/light/whitelegs
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/whitelegs = 1,
-		/obj/item/clothing/under/f13/female/whitelegs = 1,
-		/obj/item/melee/unarmed/maceglove = 1,
-		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/reagent_containers/pill/patch/healpoultice = 1,
+		/obj/item/clothing/under/f13/female/whitelegs = 1
 	)
 
+
+/datum/outfit/loadout/wayfarerranged
+	name = "Sulphur Archer"
+	suit = /obj/item/clothing/suit/armor/f13/kit
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
+	neck = /obj/item/clothing/neck/mantle/brown
+	backpack_contents = list(
+		/obj/item/gun/ballistic/bow/sturdy = 1,
+		/obj/item/storage/belt/tribe_quiver/bone = 1,
+		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/binoculars = 1,
+		/obj/item/melee/onehanded/club/warclub = 1,
+		)
+/*
 /datum/outfit/loadout/whitelegsranged
 	name = "White Legs Storm-Drummer"
 	suit = /obj/item/clothing/suit/f13/tribal/whitelegs
@@ -1390,18 +1401,6 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
 	)
 
-/datum/outfit/loadout/wayfarerranged
-	name = "Wayfarer Archer"
-	suit = /obj/item/clothing/suit/armor/f13/kit
-	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
-	neck = /obj/item/clothing/neck/mantle/brown
-	backpack_contents = list(
-		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
-		/obj/item/binoculars = 1,
-		/obj/item/melee/onehanded/club/warclub = 1,
-		)
 
 /datum/outfit/loadout/wayfarershaman
 	name = "Wayfarer Shaman"
@@ -1469,7 +1468,7 @@ datum/job/wasteland/f13dendoctor
 
 	)
 
-
+*/
 
 /////////////////
 ////Redwater///// 
