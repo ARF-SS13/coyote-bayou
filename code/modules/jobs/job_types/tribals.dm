@@ -1,4 +1,4 @@
-/datum/job/tribals //do NOT use this for anything, it's just to store faction datums
+/datum/job/tribals 
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
@@ -7,7 +7,7 @@
 	objectivesList = list("Leadership recommends the following goal for this week: Recruit worthy outlanders into the tribe","Leadership recommends the following goal for this week: Hunt dangerous creatures to improve the clan's standing", "Leadership recommends the following goal for this week: Preserve dangerous technology to prevent it from falling into the wrong hands.")
 
 /datum/outfit/job/tribal/
-	name = "TRIBALdatums"
+	name = "Tribal"
 	jobtype = /datum/job/tribal/
 	shoes = 		/obj/item/clothing/shoes/sandal
 	gloves =        /obj/item/clothing/gloves/f13/handwraps
@@ -32,7 +32,7 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor_helmet)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa_helmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+
 
 /*
 Tribal Chief
