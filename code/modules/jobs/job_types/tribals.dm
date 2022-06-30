@@ -45,12 +45,12 @@ Tribal Chief
 	flag = F13CHIEF
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Elders of the tribe."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "The leader and central political figure in the Wayfarer Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
+	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
 	outfit = /datum/outfit/job/tribal/f13chief
 	exp_requirements = 1200
@@ -90,12 +90,12 @@ Tribal Shaman
 	flag = F13SHAMAN
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "The spiritual leader and cultural core of the Wayfarer Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
+	description = "The spiritual leader and cultural core of the Sulphur Bottom Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
 	selection_color = "#006666"
 	exp_requirements = 900
 
@@ -165,12 +165,12 @@ Tribal Head Hunter
 	flag = F13HHUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Wayfarers. You lead the Great Hunts and War-Bands in time of conflict."
+	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
 	exp_requirements = 900
 
@@ -219,8 +219,8 @@ Druid
 	flag = F13DRUID
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "The Chief and the Shaman."
 	enforces = "The ways of the Machine spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -278,12 +278,12 @@ Villager
 	flag = F13VILLAGER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 10
+	spawn_positions = 10
 	supervisors = "Tribal Chief, Shaman and Headhunter"
-	description = "A proud member of the Wayfarer tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
+	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
-	exp_requirements = 150
+	exp_requirements = 0
 
 	outfit = /datum/outfit/job/tribal/f13villager
 
@@ -429,7 +429,7 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/tribalbow = 1,
+		/obj/item/gun/ballistic/bow/sturdy = 1,
 		/obj/item/storage/belt/tribe_quiver/bone = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
@@ -455,8 +455,8 @@ Spirit-Pledged
 	flag = F13SPIRITPLEDGED
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
@@ -482,17 +482,17 @@ Spirit-Pledged
 	uniform =	/obj/item/clothing/under/f13/wayfarer
 	id = 		/obj/item/card/id/tribetattoo
 
-/*
+
 Guardian
-*/
+
 
 /datum/job/tribal/f13guardian
 	title = "Guardian"
 	flag = F13GUARDIAN
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "All leadership, but the Chief is priority"
 	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. Do not leave the village unless circumstances allow it."
 	selection_color = "#006666"
@@ -524,4 +524,3 @@ Guardian
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1)
-*/
