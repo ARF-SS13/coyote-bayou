@@ -61,7 +61,6 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-	ears = 			/obj/item/radio/headset/headset_town
 	id =            /obj/item/card/id/silver/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -159,7 +158,7 @@ Mayor
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
 
-	ears = 			/obj/item/radio/headset/headset_town
+
 	id =            /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
@@ -254,7 +253,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	ears = 			/obj/item/radio/headset/headset_town
+	
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	belt =			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
@@ -348,7 +347,7 @@ Mayor
 	name = "Deputy"
 	jobtype = /datum/job/oasis/f13deputy
 
-	ears = /obj/item/radio/headset/headset_town
+
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -445,7 +444,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13farmer
 
 	id = /obj/item/card/id/dogtag/town
-	ears = 			/obj/item/radio/headset/headset_town
+
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
@@ -499,7 +498,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13prospector
 
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
+
 	suit = /obj/item/clothing/suit/armor/f13/raider/iconoclast/
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -562,7 +561,7 @@ Mayor
 	chemwhiz = TRUE
 	uniform = /obj/item/clothing/under/f13/medic
 	glasses = /obj/item/clothing/glasses/hud/health
-	ears = /obj/item/radio/headset/headset_town
+
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	backpack = /obj/item/storage/backpack/medic
@@ -621,7 +620,7 @@ Mayor
 
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
+
 	belt = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -704,10 +703,8 @@ Mayor
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
-	ears = /obj/item/radio/headset/headset_town
 	belt = null
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -822,7 +819,6 @@ Mayor
 	name = "Detective"
 	jobtype = /datum/job/oasis/f13detective
 	suit = /obj/item/clothing/suit/det_suit/grey
-	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
 	shoes =  /obj/item/clothing/shoes/laceup
@@ -870,7 +866,6 @@ Mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/headset_town
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
@@ -950,7 +945,6 @@ Mayor
 
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/roving
-	ears = /obj/item/radio/headset/headset_town
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag
