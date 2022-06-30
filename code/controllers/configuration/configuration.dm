@@ -422,6 +422,9 @@ Example config:
 		if(probabilities[M.config_tag]<=0)
 			qdel(M)
 			continue
+		if(CONFIG_GET(flag/modetier_voting) && !(M.config_tag in SSvote.stored_modetier_results))
+			qdel(M)
+			continue
 		if(min_pop[M.config_tag])
 			M.required_players = min_pop[M.config_tag]
 		if(max_pop[M.config_tag])

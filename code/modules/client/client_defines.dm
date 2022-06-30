@@ -184,18 +184,3 @@
 	/// If the client is currently under the restrictions of the interview system
 	var/interviewee = FALSE
 	var/is_fullscreen = 0
-
-	/// A buffer for combinations such of modifiers + keys (ex: CtrlD, AltE, ShiftT). Format: `"key"` -> `"combo"` (ex: `"D"` -> `"CtrlD"`)
-	var/list/key_combos_held = list()
-
-	/// Whether or not this client has standard hotkeys enabled
-	var/hotkeys = TRUE
-
-	/// Whether or not this client has the combo HUD enabled
-	var/combo_hud_enabled = FALSE
-
-	/// If this client has been fully initialized or not
-	var/fully_created = FALSE
-
-	/// Does this client have typing indicators enabled?
-	var/typing_indicators = FALSE

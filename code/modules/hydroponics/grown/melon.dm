@@ -39,21 +39,21 @@
 
 // Holymelon
 /obj/item/seeds/watermelon/holy
-	name = "pack of holymelon seeds"
-	desc = "These seeds grow into holymelon plants."
+	name = "pack of goldenmelon seeds"
+	desc = "These seeds grow into goldenmelon plants."
 	icon_state = "seed-holymelon"
 	species = "holymelon"
-	plantname = "Holy Melon Vines"
+	plantname = "Golden Melon Vines"
 	product = /obj/item/reagent_containers/food/snacks/grown/holymelon
 	genes = list(/datum/plant_gene/trait/glow/yellow)
 	mutatelist = list()
-	reagents_add = list(/datum/reagent/water/holywater = 0.2, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
+	reagents_add = list( /datum/reagent/gold = 0.2,/datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.1)
 	rarity = 20
 
 /obj/item/reagent_containers/food/snacks/grown/holymelon
 	seed = /obj/item/seeds/watermelon/holy
-	name = "holymelon"
-	desc = "The water within this melon has been blessed by some deity that's particularly fond of watermelon."
+	name = "goldenmelon"
+	desc = "This melon shimmers with golden goodness."
 	icon_state = "holymelon"
 	filling_color = "#FFD700"
 	dried_type = null
