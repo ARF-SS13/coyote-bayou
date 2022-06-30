@@ -978,7 +978,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/supafly_reinforced
 	name = "reinforced supafly armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/supafly
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/supafly = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/supafly = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -998,7 +998,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/yankee_reinforced
 	name = "reinforced yankee armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/yankee
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/yankee = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/yankee = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1018,7 +1018,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/blaster_reinforced
 	name = "reinforced blaster armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/blastmaster
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/blastmaster = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/blastmaster = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1038,7 +1038,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/sadist_reinforced
 	name = "reinforced sadist armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/sadist
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/sadist = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/sadist = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1078,7 +1078,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/painspike_reinforced
 	name = "reinforced painspike armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/painspike
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/painspike = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/painspike = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1088,7 +1088,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/iconoclast_reinforced
 	name = "reinforced iconoclast armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/iconoclast
-	reqs = list(/obj/item/clothing/suit/armor/medium/raider/iconoclast = 1,
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/iconoclast = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)

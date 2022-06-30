@@ -10,7 +10,7 @@
 	strip_delay = 40
 	slowdown = 0.05
 
-/obj/item/clothing/suit/armor/medium/raider/supafly //melee spec
+/obj/item/clothing/suit/armor/light/raider/supafly //melee spec
 	name = "supa-fly raider armor"
 	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	armor = list("melee" = 45, "bullet" = 20, "laser" = 20, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
@@ -18,31 +18,31 @@
 	icon_state = "supafly"
 	item_state = "supafly"
 
-/obj/item/clothing/suit/armor/medium/raider/supafly/Initialize() //HQ parts reinforcement
+/obj/item/clothing/suit/armor/light/raider/supafly/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/rebel
+/obj/item/clothing/suit/armor/light/raider/rebel
 	name = "rebel raider armor"
 	desc = "Rebel, rebel. Your face is a mess."
 	icon_state = "raider_rebel_icon"
 	item_state = "raider_rebel_armor"
 
-/obj/item/clothing/suit/armor/medium/raider/rebel/Initialize() //HQ parts reinforcement
+/obj/item/clothing/suit/armor/light/raider/rebel/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/sadist
+/obj/item/clothing/suit/armor/light/raider/sadist
 	name = "sadist raider armor"
 	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
 	icon_state = "sadist"
 	item_state = "sadist"
 
-/obj/item/clothing/suit/armor/medium/raider/sadist/Initialize()
+/obj/item/clothing/suit/armor/light/raider/sadist/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/blastmaster
+/obj/item/clothing/suit/armor/light/raider/blastmaster
 	name = "blastmaster raider armor"
 	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
 	icon_state = "blastmaster"
@@ -51,17 +51,17 @@
 	armor = list("melee" = 40, "bullet" = 15, "laser" = 40, "bio" = 0, "bomb" = 90, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	flash_protect = 2
 
-/obj/item/clothing/suit/armor/medium/raider/blastmaster/Initialize()
+/obj/item/clothing/suit/armor/light/raider/blastmaster/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/yankee
+/obj/item/clothing/suit/armor/light/raider/yankee
 	name = "yankee raider armor"
 	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
 	icon_state = "yankee"
 	item_state = "yankee"
 
-/obj/item/clothing/suit/armor/medium/raider/yankee/Initialize()
+/obj/item/clothing/suit/armor/light/raider/yankee/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -78,25 +78,25 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/painspike
+/obj/item/clothing/suit/armor/light/raider/painspike
 	name = "painspike raider armor"
 	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
 	icon_state = "painspike"
 	item_state = "painspike"
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 
-/obj/item/clothing/suit/armor/medium/raider/painspike/Initialize()
+/obj/item/clothing/suit/armor/light/raider/painspike/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/raider/iconoclast
+/obj/item/clothing/suit/armor/light/raider/iconoclast
 	name = "iconoclast raider armor"
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "bio" = 0, "rad" = 60, "fire" = 25, "acid" = 25, "wound" = 35)
 
-/obj/item/clothing/suit/armor/medium/raider/iconoclast/Initialize()
+/obj/item/clothing/suit/armor/light/raider/iconoclast/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

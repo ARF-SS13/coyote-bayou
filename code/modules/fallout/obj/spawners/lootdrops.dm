@@ -166,7 +166,7 @@
 /*	color = "#FF0000"
 	loot = list(
 	/obj/item/clothing/suit/armor/light/leather = 1,
-	/obj/item/clothing/suit/armor/light/raider/slam = 1,
+	/obj/item/clothing/suit/armor/medium/raider/slam = 1,
 	/obj/item/clothing/glasses/f13/biker = 1,
 	/obj/item/clothing/gloves/f13/leather = 1,
 	/obj/item/clothing/head/f13/police = 1,

@@ -760,6 +760,7 @@
 //////////////////
 // LIGHT RAIDER //
 //////////////////
+// more style and pockets, less protection
 
 /obj/item/clothing/suit/armor/light/raider
 	cold_protection = CHEST|GROIN
@@ -776,6 +777,7 @@
 	. = ..()
 	/// adds in melee, guns, raidery shit
 	allowed |= GLOB.default_light_raider_armor_slot_allowed
+	
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
 	desc = "A leather top with a bandolier over it and a straps that cover the arms. Suited for warm climates, comes with storage space."
@@ -788,22 +790,49 @@
 	icon_state = "tribal_outcast"
 	item_state = "tribal_outcast"
 
-/obj/item/clothing/suit/armor/light/raider/slam
-	name = "slammer raider armor"
-	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
-	icon_state = "slam"
-	item_state = "slam"
-	flags_inv = HIDEJUMPSUIT
-	strip_delay = 40
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+/obj/item/clothing/suit/armor/light/raider/supafly
+	name = "supa-fly raider armor"
+	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
+	icon_state = "supafly"
+	item_state = "supafly"
 
-/obj/item/clothing/suit/armor/light/raider/wastewar
-	name = "wasteland warrior armor"
-	desc = "a mad attempt to recreate armor based of images of japanese samurai, using a sawn up old car tire as shoulder pads, bits of chain to cover the hips and pieces of furniture for a breastplate. Might stop a blade but nothing else, burns easily too."
-	icon_state = "wastewar"
-	item_state = "wastewar"
-	resistance_flags = FLAMMABLE
+/obj/item/clothing/suit/armor/light/raider/rebel
+	name = "rebel raider armor"
+	desc = "Rebel, rebel. Your face is a mess."
+	icon_state = "raider_rebel_icon"
+	item_state = "raider_rebel_armor"
+
+/obj/item/clothing/suit/armor/light/raider/sadist
+	name = "sadist raider armor"
+	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
+	icon_state = "sadist"
+	item_state = "sadist"
+
+/obj/item/clothing/suit/armor/light/raider/blastmaster
+	name = "blastmaster raider armor"
+	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
+	icon_state = "blastmaster"
+	item_state = "blastmaster"
+	flash_protect = 2
+
+/obj/item/clothing/suit/armor/light/raider/yankee
+	name = "yankee raider armor"
+	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
+	icon_state = "yankee"
+	item_state = "yankee"
+
+/obj/item/clothing/suit/armor/light/raider/painspike
+	name = "painspike raider armor"
+	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
+	icon_state = "painspike"
+	item_state = "painspike"
+
+/obj/item/clothing/suit/armor/light/raider/iconoclast
+	name = "iconoclast raider armor"
+	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
+	icon_state = "iconoclast"
+	item_state = "iconoclast"
+	permeability_coefficient = 0.8
 
 /////////////////////
 // DUSTERS & COATS //
@@ -1829,63 +1858,21 @@
 ///////////////////
 // MEDIUM RAIDER //
 ///////////////////
+// Has the heavier raider armors in it, less style, more protection
 
 /obj/item/clothing/suit/armor/medium/raider
 	name = "base raider armor"
 	desc = "for testing"
 
-/obj/item/clothing/suit/armor/medium/raider/supafly
-	name = "supa-fly raider armor"
-	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
-	icon_state = "supafly"
-	item_state = "supafly"
-
-/obj/item/clothing/suit/armor/medium/raider/rebel
-	name = "rebel raider armor"
-	desc = "Rebel, rebel. Your face is a mess."
-	icon_state = "raider_rebel_icon"
-	item_state = "raider_rebel_armor"
-
-/obj/item/clothing/suit/armor/medium/raider/sadist
-	name = "sadist raider armor"
-	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
-	icon_state = "sadist"
-	item_state = "sadist"
-
-/obj/item/clothing/suit/armor/medium/raider/blastmaster
-	name = "blastmaster raider armor"
-	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
-	icon_state = "blastmaster"
-	item_state = "blastmaster"
-	flash_protect = 2
-
-/obj/item/clothing/suit/armor/medium/raider/yankee
-	name = "yankee raider armor"
-	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
-	icon_state = "yankee"
-	item_state = "yankee"
-
-/obj/item/clothing/suit/armor/medium/raider/painspike
-	name = "painspike raider armor"
-	desc = "A particularly unhuggable armor, even by raider standards. Extremely spiky."
-	icon_state = "painspike"
-	item_state = "painspike"
-
-/obj/item/clothing/suit/armor/medium/raider/iconoclast
-	name = "iconoclast raider armor"
-	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
-	icon_state = "iconoclast"
-	item_state = "iconoclast"
-	permeability_coefficient = 0.8
-
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
-	desc = "Crude armor using a premium selection of sawn up tires and thick layers of filthy cloth to give that murderous hobo look.<br>Come on and slam and turn your foes to jam! Pretty warm, but it is made of very flammable stuff. It's probably fine."
+	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
 	icon_state = "slam"
 	item_state = "slam"
 	flags_inv = HIDEJUMPSUIT
-	cold_protection = CHEST | GROIN | LEGS| ARMS | HEAD
-	siemens_coefficient = 0.9
+	strip_delay = 40
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/raider/scrapcombat
 	name = "scrap combat armor"
@@ -1924,6 +1911,13 @@
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
 	resistance_flags = FIRE_PROOF
+
+/obj/item/clothing/suit/armor/medium/raider/wastewar
+	name = "wasteland warrior armor"
+	desc = "a mad attempt to recreate armor based of images of japanese samurai, using a sawn up old car tire as shoulder pads, bits of chain to cover the hips and pieces of furniture for a breastplate. Might stop a blade but nothing else, burns easily too."
+	icon_state = "wastewar"
+	item_state = "wastewar"
+	resistance_flags = FLAMMABLE
 
 ///////////
 // HEAVY //

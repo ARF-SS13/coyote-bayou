@@ -234,35 +234,35 @@
 				/obj/effect/spawner/bundle/f13/armor/psycho,
 				/obj/item/clothing/suit/armor/light/duster,
 				/obj/effect/spawner/bundle/f13/armor/combatduster,
-				/obj/item/clothing/suit/armor/medium/raider/iconoclast,
+				/obj/item/clothing/suit/armor/light/raider/iconoclast,
 				/obj/item/clothing/suit/armor/medium/vest/breastplate/light,
 	)
 
 /obj/effect/spawner/bundle/f13/armor/supafly
 	name = "supafly raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/raider/supafly,
+				/obj/item/clothing/suit/armor/light/raider/supafly,
 				/obj/item/clothing/head/helmet/f13/raider/supafly
 				)
 
 /obj/effect/spawner/bundle/f13/armor/sadist
 	name = "blastmaster raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/raider/sadist,
+				/obj/item/clothing/suit/armor/light/raider/sadist,
 				/obj/item/clothing/head/helmet/f13/raider/arclight
 				)
 
 /obj/effect/spawner/bundle/f13/armor/blastmaster
 	name = "blastmaster raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/raider/blastmaster,
+				/obj/item/clothing/suit/armor/light/raider/blastmaster,
 				/obj/item/clothing/head/helmet/f13/raider/blastmaster
 				)
 
 /obj/effect/spawner/bundle/f13/armor/yankee
 	name = "yankee raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/raider/yankee,
+				/obj/item/clothing/suit/armor/light/raider/yankee,
 				/obj/item/clothing/head/helmet/f13/raider/yankee
 				)
 
@@ -283,7 +283,7 @@
 /obj/effect/spawner/bundle/f13/armor/psycho
 	name = "knight armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/medium/raider/painspike,
+				/obj/item/clothing/suit/armor/light/raider/painspike,
 				/obj/item/clothing/head/helmet/f13/raider/psychotic
 				)
 

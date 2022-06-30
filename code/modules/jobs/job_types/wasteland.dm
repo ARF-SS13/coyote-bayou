@@ -88,12 +88,12 @@ Raider
 		/obj/item/clothing/under/pants/f13/ghoul, \
 		/obj/item/clothing/under/jabroni)
 	suit = pick(
-		/obj/item/clothing/suit/armor/medium/raider/supafly,\
-		/obj/item/clothing/suit/armor/medium/raider/yankee, \
-		/obj/item/clothing/suit/armor/medium/raider/sadist, \
-		/obj/item/clothing/suit/armor/medium/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/light/raider/supafly,\
+		/obj/item/clothing/suit/armor/light/raider/yankee, \
+		/obj/item/clothing/suit/armor/light/raider/sadist, \
+		/obj/item/clothing/suit/armor/light/raider/blastmaster, \
 		/obj/item/clothing/suit/armor/medium/raider/badlands, \
-		/obj/item/clothing/suit/armor/medium/raider/painspike)
+		/obj/item/clothing/suit/armor/light/raider/painspike)
 	if(prob(10))
 		mask = pick(
 			/obj/item/clothing/mask/bandana/red,\
@@ -134,7 +134,7 @@ Raider
 
 /datum/outfit/loadout/raider_sadist
 	name = "Redwater Slaver"
-	suit = /obj/item/clothing/suit/armor/f13/raider/sadist
+	suit = /obj/item/clothing/suit/armor/light/raider/sadist
 	head = /obj/item/clothing/head/helmet/f13/raider/arclight
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=5,
@@ -147,7 +147,7 @@ Raider
 
 /datum/outfit/loadout/raider_sheriff
 	name = "Redwater Peacekeeper"
-	suit = /obj/item/clothing/suit/armored/light/duster/desperado
+	suit = /obj/item/clothing/suit/armor/light/duster/desperado
 	uniform = /obj/item/clothing/under/syndicate/tacticool
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
@@ -162,7 +162,7 @@ Raider
 	belt = /obj/item/storage/belt/military/assault
 	shoes = /obj/item/clothing/shoes/laceup
 	uniform = /obj/item/clothing/under/f13/densuit
-	suit = /obj/item/clothing/suit/armor/vest
+	suit = /obj/item/clothing/suit/armor/medium/vest
 	gloves =  /obj/item/clothing/gloves/color/white
 	head = /obj/item/clothing/head/fedora
 	mask =  /obj/item/clothing/mask/bandana/durathread
@@ -176,7 +176,7 @@ Raider
 
 /datum/outfit/loadout/raider_supafly
 	name = "Supa-fly"
-	suit = /obj/item/clothing/suit/armor/medium/raider/supafly
+	suit = /obj/item/clothing/suit/armor/light/raider/supafly
 	head = /obj/item/clothing/head/helmet/f13/raider/supafly
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/varmint = 1,
@@ -191,7 +191,7 @@ Raider
 
 /datum/outfit/loadout/raider_yankee
 	name = "Yankee"
-	suit = /obj/item/clothing/suit/armor/medium/raider/yankee
+	suit = /obj/item/clothing/suit/armor/light/raider/yankee
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	backpack_contents = list(
 		/obj/item/shishkebabpack = 1,
@@ -201,7 +201,7 @@ Raider
 
 /datum/outfit/loadout/raider_blast
 	name = "Blastmaster"
-	suit = /obj/item/clothing/suit/armor/medium/raider/blastmaster
+	suit = /obj/item/clothing/suit/armor/light/raider/blastmaster
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/kitchen/knife/butcher = 1,
@@ -229,7 +229,7 @@ Raider
 
 /datum/outfit/loadout/raider_painspike
 	name = "Painspike"
-	suit = /obj/item/clothing/suit/armor/medium/raider/painspike
+	suit = /obj/item/clothing/suit/armor/light/raider/painspike
 	head = /obj/item/clothing/head/helmet/f13/raider/psychotic
 	backpack_contents = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
@@ -505,7 +505,7 @@ Raider
 	name = "Wasteland Warrior"
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/f13/raidertreads
-	suit = /obj/item/clothing/suit/armor/light/raider/wastewar
+	suit = /obj/item/clothing/suit/armor/medium/raider/wastewar
 	head = /obj/item/clothing/head/helmet/f13/wastewarhat
 	glasses = /obj/item/clothing/glasses/welding
 	l_hand = /obj/item/shield/riot/buckler/stop
@@ -1250,7 +1250,7 @@ datum/job/wasteland/f13dendoctor
 
 /datum/outfit/loadout/wayfarerranged
 	name = "Far-Lands Archer"
-	suit = /obj/item/clothing/suit/armor/f13/kit
+	suit = /obj/item/clothing/suit/armor/light/kit
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(

@@ -500,7 +500,7 @@ Mayor
 
 	id = /obj/item/card/id/dogtag/town
 	ears = /obj/item/radio/headset/headset_town
-	suit = /obj/item/clothing/suit/armor/medium/raider/iconoclast/
+	suit = /obj/item/clothing/suit/armor/light/raider/iconoclast/
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
