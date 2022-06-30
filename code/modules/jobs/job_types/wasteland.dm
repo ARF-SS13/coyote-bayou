@@ -326,7 +326,7 @@ Raider
 		)
 
 /datum/outfit/loadout/raider_tribal
-	name = "Bowie Tribe Outcast"
+	name = "Sulphur Tribe Outcast"
 	uniform = /obj/item/clothing/under/f13/exile/tribal
 	suit = /obj/item/clothing/suit/hooded/tribaloutcast
 	suit_store = /obj/item/twohanded/spear/bonespear
@@ -347,7 +347,7 @@ Raider
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Bighorn to the southwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
+	description = "The most broad and open role, you have arrived in the region for purposes known only to you. If you're new, the settlement of Nash to the Midwest may prove a valuable first stop. Try to make a living for yourself - or simply survive - and craft your own unique story."
 	supervisors = "fate"
 	selection_color = "#dddddd"
 
