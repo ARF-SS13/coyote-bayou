@@ -383,6 +383,7 @@ Raider
 	/datum/outfit/loadout/scavenger,
 	/datum/outfit/loadout/settler,
 	/datum/outfit/loadout/warrior,
+	/datum/outfit/loadout/raider_bos,
 //	/datum/outfit/loadout/ncrcitizen,
 //	/datum/outfit/loadout/legioncivilian,
 	/datum/outfit/loadout/wastelander_desert_ranger)
