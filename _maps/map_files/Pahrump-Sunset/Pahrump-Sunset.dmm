@@ -26897,6 +26897,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
+"cMO" = (
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/east)
 "cMS" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/dirt,
@@ -27998,6 +28002,14 @@
 	dir = 8
 	},
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"dqB" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "dqJ" = (
 /obj/machinery/vending/cola/space_up,
@@ -33830,6 +33842,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/west)
+"gmx" = (
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "gmB" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -44258,6 +44274,10 @@
 /mob/living/simple_animal/hostile/retaliate/goat/bighorn,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/museum)
+"lze" = (
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "lzp" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -56121,6 +56141,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
+"rhD" = (
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building)
 "rhP" = (
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "innermaincornerinner"
@@ -69257,6 +69281,11 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"xNP" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/f13/tribal,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland/east)
 "xNW" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/ausbushes/sparsegrass,
@@ -120995,7 +121024,7 @@ btE
 dOC
 hkR
 dOC
-eIg
+xNP
 eIg
 paB
 loG
@@ -125357,7 +125386,7 @@ dLt
 cnY
 dEH
 aRR
-aaT
+rhD
 dEH
 cnY
 eBH
@@ -126127,7 +126156,7 @@ tvU
 kpu
 iAL
 aaT
-uNm
+dqB
 uNm
 aaT
 cnY
@@ -127690,7 +127719,7 @@ eBH
 cpx
 xbq
 eSm
-xbq
+lze
 xbq
 kEE
 "}
@@ -128204,7 +128233,7 @@ eBH
 cpx
 xbq
 kMm
-xbq
+lze
 xbq
 kEE
 "}
@@ -128718,7 +128747,7 @@ cpx
 cpx
 xbq
 eSm
-xbq
+lze
 xbq
 kEE
 "}
@@ -129962,7 +129991,7 @@ tMw
 hkR
 wew
 rHX
-rHX
+cMO
 cvQ
 qRY
 ejQ
@@ -130254,7 +130283,7 @@ fhy
 vnv
 cnY
 aaT
-aaT
+rhD
 aaT
 cnY
 eBH
@@ -132306,7 +132335,7 @@ aaB
 aaB
 aaB
 aaB
-aaB
+gmx
 aaB
 aaB
 aae
@@ -133841,11 +133870,11 @@ aaB
 aaB
 aaB
 jVJ
+gmx
 aaB
 aaB
 aaB
-aaB
-aaB
+gmx
 aaB
 aaB
 aaB
