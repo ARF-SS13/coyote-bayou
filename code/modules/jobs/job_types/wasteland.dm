@@ -1101,27 +1101,14 @@ datum/job/wasteland/f13dendoctor
 
 //New tribal role. Replaces old tribe stuff.
 /datum/job/wasteland/f13tribal
-	title = "Tribal"
+	title = "Far-Lands Tribals"
 	flag = F13TRIBAL
 	faction = FACTION_WASTELAND
 	total_positions = -1
 	spawn_positions = -1
-	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war, is forbidden to your people."
-	description = "You are a member of the Sulphur Bottom Tribe.  Your people have finally built a new village in this area and you are one of the earliest few to migrate to it, it is in the south east section of the northern area.  Your village is in a defensive position with the two nearby towns, try not to provoke them while remaining true to the Tribes creed of not using pre-war tools."
-	supervisors = "the knoweldge that the ancestors watch over you, and that to follow in the ways of simplicity will bring you strength.  Also remember that one day a chief will be chosen for this village, by the village.  Your peers are watching."
-	objectivesList = list(
-		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.", 
-		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.", 
-		"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
-		"The druids far off have asked us to find a cursed pre-war weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
-		"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
-		"The swamp calls the hunters forth, seek out the thing that shines and return it to the shamans to appease the spirits.  If no shaman can be found then hide the item from the out-peoples.",
-		"The Chief calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
-		"The Chief calls for blood, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
-		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
-		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
-
+	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
+	supervisors = "the Ways of your own tribe."
+	
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -1132,25 +1119,25 @@ datum/job/wasteland/f13dendoctor
 	loadout_options = list(
 	/datum/outfit/loadout/brawler,
 	/datum/outfit/loadout/spearman,
-	// /datum/outfit/loadout/wayfarermelee,
+	/datum/outfit/loadout/wayfarermelee,
 	/datum/outfit/loadout/wayfarerranged,
-	// /datum/outfit/loadout/wayfarershaman,
+	/datum/outfit/loadout/wayfarershaman,
 	/datum/outfit/loadout/shaman,
-	/datum/outfit/loadout/whitelegsmelee
-	// /datum/outfit/loadout/whitelegsranged,
-	// /datum/outfit/loadout/whitelegsshaman,
-	// /datum/outfit/loadout/deadhorsesmelee,
-	// /datum/outfit/loadout/deadhorsesranged,
-	// /datum/outfit/loadout/deadhorsesshaman,
-	// /datum/outfit/loadout/sorrowshunter,
-	// /datum/outfit/loadout/sorrowsshaman,
-	// /datum/outfit/loadout/eightiesmelee,
-	// /datum/outfit/loadout/eightiesranged,
-	// /datum/outfit/loadout/eightiesshaman,
-	// /datum/outfit/loadout/rustwalkersscipher,
-	// /datum/outfit/loadout/rustwalkersscrapper,
-	// /datum/outfit/loadout/rustwalkersshaman,
-	// /datum/outfit/loadout/bonedancerexile
+	/datum/outfit/loadout/whitelegsmelee,
+	/datum/outfit/loadout/whitelegsranged,
+	/datum/outfit/loadout/whitelegsshaman,
+	/datum/outfit/loadout/deadhorsesmelee,
+	/datum/outfit/loadout/deadhorsesranged,
+	/datum/outfit/loadout/deadhorsesshaman,
+	/datum/outfit/loadout/sorrowshunter,
+	/datum/outfit/loadout/sorrowsshaman,
+	/datum/outfit/loadout/eightiesmelee,
+	/datum/outfit/loadout/eightiesranged,
+	/datum/outfit/loadout/eightiesshaman,
+	/datum/outfit/loadout/rustwalkersscipher,
+	/datum/outfit/loadout/rustwalkersscrapper,
+	/datum/outfit/loadout/rustwalkersshaman,
+	/datum/outfit/loadout/bonedancerexile
 	)
 
 /datum/outfit/job/wasteland/f13tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1198,7 +1185,7 @@ datum/job/wasteland/f13dendoctor
 
 
 /datum/outfit/job/wasteland/f13tribal
-	name = "Tribal"
+	name = "Far-Lands Tribal"
 	jobtype = /datum/job/wasteland/f13tribal
 
 	id = null
@@ -1218,7 +1205,7 @@ datum/job/wasteland/f13dendoctor
 
 //Generic Tribals
 /datum/outfit/loadout/brawler
-	name = "Sulphur Warrior"
+	name = "Far-Lands Warrior"
 	suit = /obj/item/clothing/suit/armor/f13/tribal
 	head = /obj/item/clothing/head/helmet/f13/deathskull
 	backpack_contents = list(
@@ -1229,18 +1216,18 @@ datum/job/wasteland/f13dendoctor
 		)
 
 /datum/outfit/loadout/spearman
-	name = "Sulphur Picketman"
+	name = "Far-Lands Spear Warrior"
 	suit = /obj/item/clothing/suit/armored/light/tribalraider
 	head = /obj/item/clothing/head/helmet/f13/fiend
 	mask = /obj/item/clothing/mask/facewrap
 	neck = /obj/item/clothing/neck/mantle/gray
 	backpack_contents = list(
 		/obj/item/twohanded/spear = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2
+		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		)
 
 /datum/outfit/loadout/shaman
-	name = "Sulphur Shaman"
+	name = "Far-Land Shaman"
 	suit = /obj/item/clothing/suit/hooded/cloak/desert
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
@@ -1254,7 +1241,7 @@ datum/job/wasteland/f13dendoctor
 	)
 
 /datum/outfit/loadout/whitelegsmelee
-	name = "Sulphur Villager"
+	name = "Lost Villager"
 	suit = /obj/item/clothing/suit/f13/tribal/light/whitelegs
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/whitelegs = 1,
@@ -1263,7 +1250,7 @@ datum/job/wasteland/f13dendoctor
 
 
 /datum/outfit/loadout/wayfarerranged
-	name = "Sulphur Archer"
+	name = "Far-Lands Archer"
 	suit = /obj/item/clothing/suit/armor/f13/kit
 	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
 	neck = /obj/item/clothing/neck/mantle/brown
@@ -1274,7 +1261,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/binoculars = 1,
 		/obj/item/melee/onehanded/club/warclub = 1,
 		)
-/*
+
 /datum/outfit/loadout/whitelegsranged
 	name = "White Legs Storm-Drummer"
 	suit = /obj/item/clothing/suit/f13/tribal/whitelegs
@@ -1481,7 +1468,7 @@ datum/job/wasteland/f13dendoctor
 
 	)
 
-*/
+
 
 /////////////////
 ////Redwater///// 
