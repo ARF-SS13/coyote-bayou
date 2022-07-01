@@ -1,4 +1,4 @@
-// Author Gremling
+	// Author Gremling
 // by request of the overlord FennyKong, I have granted his wish by designing a method to allow users to have a sound play when typing, or finished typing.
 #define NO_SOUND		1
 #define PLAY_STARTING	2
@@ -64,7 +64,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 /datum/looping_sound/typing_indicator
 	mid_sounds = list('modular_coyote/sound/typing/default.ogg')
 	mid_length = 30
-	volume = 15
+	volume = 10
 
 /datum/looping_sound/typing_indicator/start(atom/add_thing)
 	output_atoms = get_hearers_in_view(7,usr)
