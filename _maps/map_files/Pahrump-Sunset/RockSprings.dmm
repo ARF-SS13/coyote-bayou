@@ -1804,10 +1804,12 @@
 	},
 /area/f13/wasteland)
 "fL" = (
-/obj/structure/flora/grass/wasteland,
-/obj/machinery/vending/cola/random,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/structure/simple_door/dirtyglass{
+	desc = "Wood and wire, grime has accumulated in the tiny black nets, making seeing through impossible.";
+	name = "screen door"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "fN" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -2164,7 +2166,7 @@
 /obj/structure/simple_door/metal/store,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "gU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2841,6 +2843,13 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"jd" = (
+/obj/structure/flora/grass/wasteland,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "je" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/dirt,
@@ -2859,6 +2868,9 @@
 /obj/structure/table/wood,
 /obj/item/kitchen/knife,
 /obj/item/kitchen/knife/butcher,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "jk" = (
@@ -3430,7 +3442,7 @@
 "kX" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/simple_door/room/dirty,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "kY" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3711,6 +3723,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/old,
 /turf/open/floor/f13/wood,
+/area/f13/building)
+"lK" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "lL" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -4429,10 +4447,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "oc" = (
-/obj/structure/sign/sing/ratnest{
-	pixel_x = 8;
-	pixel_y = 13
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "od" = (
@@ -4972,7 +4989,7 @@
 "pM" = (
 /obj/structure/simple_door/house,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "pN" = (
 /obj/structure/flora/grass/jungle,
@@ -5817,6 +5834,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
+"so" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "sp" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -7326,6 +7349,12 @@
 	},
 /turf/open/water,
 /area/f13/wasteland)
+"xq" = (
+/obj/structure/flora/rock/pile/largejungle,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "xr" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/dirt,
@@ -8270,6 +8299,13 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"Ax" = (
+/obj/machinery/vending/cola/random,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 10;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "Ay" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -9400,6 +9436,15 @@
 /obj/machinery/reagentgrinder,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"En" = (
+/obj/structure/flora/tree/wasteland,
+/obj/structure/flora/grass/jungle,
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Eo" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -10665,6 +10710,12 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"Ix" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/carpet/red,
+/area/f13/building)
 "Iz" = (
 /obj/structure/nest/nightstalker,
 /turf/open/indestructible/ground/outside/dirt,
@@ -11595,6 +11646,13 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/building/tunnel)
+"LK" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "LL" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
@@ -11983,6 +12041,14 @@
 	icon_state = "verticaloutermain0"
 	},
 /area/f13/village/tunnel_diner)
+"MV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "MW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spacevine{
@@ -12650,6 +12716,15 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"Pd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "Pe" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -12951,12 +13026,9 @@
 	},
 /area/f13/village)
 "Qh" = (
-/obj/structure/simple_door/metal,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/departments/medbay{
-	name = "\improper PHARMACY"
-	},
-/turf/open/indestructible/ground/outside/desert,
+/obj/structure/simple_door/metal,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "Qj" = (
 /obj/effect/turf_decal/weather/dirt,
@@ -13900,6 +13972,13 @@
 /obj/structure/punji_sticks,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"Tq" = (
+/obj/structure/table/wood,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "Tr" = (
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/structure/window/fulltile/wood/broken,
@@ -14097,6 +14176,13 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"TX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt{
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "TY" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -14233,6 +14319,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/building)
+"Ut" = (
+/obj/structure/flora/grass/wasteland,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Uu" = (
 /obj/structure/fence/corner{
 	dir = 4
@@ -14986,6 +15078,13 @@
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"Xc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Xd" = (
 /obj/structure/flora/grass/wasteland,
 /obj/effect/turf_decal/weather/dirt,
@@ -15694,7 +15793,7 @@
 	icon_state = "brokenstore"
 	},
 /obj/structure/barricade/wooden/planks/pregame,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "Zw" = (
 /obj/effect/decal/cleanable/dirt{
@@ -15859,7 +15958,7 @@
 "ZS" = (
 /obj/structure/simple_door/interior,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "ZT" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -60342,22 +60441,22 @@ Bk
 Bk
 SK
 Bk
+ke
+ke
 Bk
 Bk
 Bk
 Bk
 Bk
 Bk
-Bk
-Bk
-Bk
-Bk
+ke
+ke
 Bk
 Bk
 Bk
 AI
 Bk
-Bk
+Df
 AI
 Bk
 Bk
@@ -60597,23 +60696,23 @@ SK
 YQ
 SK
 SK
-Bk
-Bk
-Bk
-Bk
-Bk
-SK
+Df
+ke
+Xc
+Df
 Bk
 SK
 Bk
 SK
 Bk
 SK
+Bk
+fs
+xr
+xr
 hm
-hm
-hm
-Me
-Bk
+En
+sh
 Bk
 Bk
 SK
@@ -60624,7 +60723,7 @@ Bk
 Bk
 Bk
 hm
-hm
+sf
 hm
 dr
 OC
@@ -60853,10 +60952,10 @@ GR
 wj
 DA
 Bk
-hm
-Bk
-Bk
-SK
+XU
+ke
+oc
+sh
 wj
 DH
 DA
@@ -60867,9 +60966,9 @@ wj
 Bk
 Bk
 yk
-Bk
-Bk
-Bk
+oc
+oc
+SK
 Bk
 SK
 QI
@@ -60881,7 +60980,7 @@ Bk
 Bk
 Bk
 yk
-Bk
+SK
 Bk
 dr
 OC
@@ -61110,8 +61209,8 @@ PZ
 kL
 DA
 Bk
-Bk
-Bk
+oc
+oc
 Bk
 Bk
 DA
@@ -61123,9 +61222,9 @@ Ma
 wj
 Bk
 Bk
+Df
 Bk
-Bk
-Uz
+xq
 Bk
 Bk
 Bk
@@ -61139,7 +61238,7 @@ bT
 bT
 Mv
 Bk
-Bk
+SK
 dr
 OC
 "}
@@ -61366,8 +61465,8 @@ PZ
 uN
 Em
 fX
-Bk
-Bk
+ke
+oc
 hm
 Xr
 Bk
@@ -61396,7 +61495,7 @@ su
 jI
 jX
 Bk
-Bk
+SK
 dr
 OC
 "}
@@ -61640,7 +61739,7 @@ DA
 vB
 Bk
 Bk
-oc
+Bk
 xc
 Yr
 ro
@@ -63179,7 +63278,7 @@ Bk
 Bk
 Bk
 Bk
-Bk
+oL
 zv
 Vf
 fH
@@ -63709,7 +63808,7 @@ PZ
 dS
 Bk
 vZ
-Bk
+SK
 dr
 OC
 "}
@@ -63950,7 +64049,7 @@ SK
 Bk
 yk
 Df
-fL
+AI
 xW
 Vf
 el
@@ -63966,7 +64065,7 @@ dS
 bT
 vZ
 vZ
-Bk
+SK
 dr
 OC
 "}
@@ -64222,7 +64321,7 @@ mr
 PZ
 Ap
 Bk
-hm
+sf
 Bk
 dr
 OC
@@ -64479,7 +64578,7 @@ df
 CK
 Mv
 vZ
-Bk
+SK
 Bk
 dr
 OC
@@ -64693,13 +64792,13 @@ fv
 fv
 fv
 vf
-fv
+vf
 Bk
 Bk
 zv
 EQ
-AN
-Bk
+Ut
+oc
 AN
 AN
 Bk
@@ -64736,7 +64835,7 @@ Eh
 bT
 Mv
 Bk
-Bk
+SK
 Bk
 dr
 OC
@@ -64950,13 +65049,13 @@ vZ
 vZ
 Bk
 vZ
-Bk
-Bk
+Df
+Df
 Bk
 zv
 el
 Bk
-AI
+jd
 MH
 AI
 Df
@@ -64982,7 +65081,7 @@ Bk
 AI
 hm
 hm
-Bk
+SK
 Bk
 Bk
 Bk
@@ -65208,13 +65307,13 @@ Bk
 Df
 Bk
 Bk
-Bk
-oL
+ke
+ke
 zv
 el
 fv
-Df
-fv
+Xc
+LK
 AI
 Df
 Xi
@@ -65238,7 +65337,7 @@ Bk
 AN
 hm
 Bk
-Bk
+SK
 Bk
 Bk
 Bk
@@ -65466,13 +65565,13 @@ Tr
 bT
 bT
 Bk
-Bk
+ke
 zv
 fH
 Bk
 ke
-Bk
-fv
+ke
+vf
 Bk
 zv
 Vf
@@ -65494,7 +65593,7 @@ Bk
 AI
 hm
 Bk
-Bk
+SK
 Bk
 ma
 PF
@@ -65723,7 +65822,7 @@ Pe
 Kl
 UJ
 Bk
-Bk
+Df
 zv
 el
 Bk
@@ -66493,7 +66592,7 @@ Qw
 Qw
 pj
 Qu
-Bk
+oL
 Df
 Xi
 HC
@@ -66749,7 +66848,7 @@ Pc
 EZ
 Qw
 OP
-QN
+fL
 SM
 CC
 XI
@@ -67006,7 +67105,7 @@ Jr
 Jr
 Qw
 Jr
-QN
+fL
 tU
 gU
 NW
@@ -69071,7 +69170,7 @@ Bk
 Bk
 Bk
 AI
-Bk
+Df
 dG
 vj
 vj
@@ -69327,8 +69426,8 @@ el
 Df
 Bk
 AI
-Df
-Df
+oc
+Xc
 dG
 vj
 vj
@@ -69573,7 +69672,7 @@ AI
 Uz
 Df
 Bk
-ke
+oc
 Df
 Df
 AI
@@ -69583,20 +69682,20 @@ Xi
 el
 Bk
 AI
-Bk
-Bk
+ke
+oc
 Bk
 Xr
 Bk
 Bk
 Bk
-Bk
-hm
+Df
+XU
 AI
 IG
 Bk
 Bk
-AI
+ae
 AN
 vZ
 Bk
@@ -69830,31 +69929,31 @@ Bk
 AI
 Bk
 Bk
-Bk
-Bk
+oc
+Df
 Bk
 AN
 AI
 Bk
 zv
 el
+Df
+jd
+oc
+Bk
+Bk
+Bk
+Bk
+Bk
+Bk
+XU
+ke
+Bk
 Bk
 AI
 Bk
-Bk
-Bk
-Bk
-Bk
-Bk
-Bk
-hm
-Bk
-Bk
-Bk
-fL
-Bk
-Bk
-Df
+SK
+lE
 Bk
 vZ
 Bk
@@ -70087,22 +70186,16 @@ Bk
 AI
 vZ
 vZ
-Bk
-Bk
-Bk
+Df
+ke
+Df
 Bk
 Bk
 AN
 Wy
 wy
-CC
-CC
-CC
-CC
-CC
-CC
-CC
-CC
+zP
+zP
 CC
 CC
 CC
@@ -70110,9 +70203,15 @@ CC
 CC
 CC
 zP
+SD
+zP
+CC
+CC
+CC
+zP
 wg
-Df
-Bk
+lE
+SK
 pv
 Bk
 Bk
@@ -70344,10 +70443,10 @@ lE
 AI
 rm
 SK
-SK
-SK
-Bk
-Df
+sh
+sh
+ke
+ke
 yk
 Bk
 zv
@@ -70358,10 +70457,10 @@ qc
 qc
 gU
 qc
-qc
 gU
-qc
-qc
+Pd
+Pd
+gU
 qc
 qc
 qc
@@ -70369,7 +70468,7 @@ NW
 Vf
 el
 Bk
-Bk
+SK
 Bk
 Bk
 Bk
@@ -70603,8 +70702,8 @@ yh
 Bk
 lE
 SK
-Bk
-Df
+ke
+oc
 Bk
 Bk
 zv
@@ -70615,9 +70714,9 @@ Bk
 Bk
 Bk
 hm
-hm
+xr
+xr
 XU
-hm
 Df
 qO
 Bk
@@ -70627,7 +70726,7 @@ Vf
 el
 Bk
 Bk
-Bk
+SK
 Bk
 fr
 fr
@@ -70861,8 +70960,8 @@ AI
 SK
 Df
 vf
-fv
-Bk
+Ah
+ke
 Bk
 zv
 el
@@ -70878,7 +70977,7 @@ Bk
 Bk
 Df
 Bk
-Bk
+ke
 Xi
 Vf
 rL
@@ -70891,7 +70990,7 @@ gA
 FH
 FH
 Lx
-FH
+so
 Lx
 iX
 FH
@@ -71118,9 +71217,9 @@ AI
 AI
 Df
 vf
-Bk
-Bk
-Bk
+Df
+Df
+Df
 zv
 el
 Df
@@ -71135,9 +71234,9 @@ Bk
 Bk
 Bk
 Df
-Bk
-zv
-Vf
+ke
+MV
+IK
 el
 Bk
 SK
@@ -71376,9 +71475,9 @@ vf
 Ah
 Bk
 Bk
-Bk
-Bk
-Xi
+Df
+Df
+MV
 el
 IN
 ne
@@ -71394,8 +71493,8 @@ zT
 zT
 Bk
 zv
-Vf
-el
+GZ
+fH
 Bk
 mN
 Bk
@@ -71413,7 +71512,7 @@ FH
 FH
 um
 mF
-um
+Tq
 rS
 aU
 FH
@@ -71652,8 +71751,8 @@ zT
 Bk
 zv
 Vf
-el
-Bk
+TX
+ke
 SK
 Bk
 Bk
@@ -71673,7 +71772,7 @@ mF
 mF
 aU
 mF
-FH
+lK
 jy
 fr
 Bk
@@ -71911,7 +72010,7 @@ zv
 IK
 el
 Bk
-Bk
+ke
 SK
 SK
 gt
@@ -72168,11 +72267,11 @@ zv
 Vf
 el
 Bk
-Bk
-Bk
+ke
+Df
 Bk
 fr
-FH
+lK
 Uk
 QM
 Gw
@@ -72441,7 +72540,7 @@ FH
 Lx
 FH
 mF
-um
+Tq
 rS
 mF
 FH
@@ -72957,7 +73056,7 @@ mF
 mF
 FH
 FH
-FH
+so
 Lx
 FH
 fr
@@ -73201,11 +73300,11 @@ CC
 CC
 xT
 nh
+Ix
 nh
 nh
 nh
-nh
-nh
+Ix
 nh
 nh
 nh
@@ -73726,7 +73825,7 @@ aU
 mF
 mF
 mF
-FH
+lK
 FH
 FH
 FH
@@ -74749,7 +74848,7 @@ wl
 iT
 FH
 mF
-FH
+lK
 dj
 dj
 FH
@@ -75227,13 +75326,13 @@ uD
 Df
 Bk
 Bk
+Vc
 Bk
+Vc
 Bk
+Vc
 Bk
-Bk
-Bk
-Bk
-Bk
+Vc
 SK
 Xr
 Bk
@@ -78569,7 +78668,7 @@ NF
 Bk
 Bk
 bW
-YQ
+Bk
 Vc
 Df
 Vc
@@ -78852,7 +78951,7 @@ IK
 Vf
 OE
 CC
-wg
+Ax
 UV
 Fn
 Fn
