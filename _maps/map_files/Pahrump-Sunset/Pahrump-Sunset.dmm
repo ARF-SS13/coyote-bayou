@@ -21486,14 +21486,11 @@
 	},
 /area/f13/building)
 "ceS" = (
-/obj/machinery/light/sign/nash{
-	pixel_y = -4;
-	pixel_x = 11
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft1"
-	},
-/area/f13/wasteland)
+/obj/effect/landmark/start/f13/farmer,
+/obj/effect/landmark/start/f13/prospector,
+/obj/effect/landmark/start/f13/dendoctor,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/caves)
 "cfd" = (
 /obj/effect/decal/cleanable/vomit/old{
 	pixel_y = 15
@@ -54591,13 +54588,6 @@
 /obj/structure/dresser,
 /turf/open/floor/wood_common,
 /area/f13/village)
-"vaJ" = (
-/obj/machinery/light/sign/nash{
-	pixel_y = -4;
-	pixel_x = -20
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "vbq" = (
 /obj/effect/decal/cleanable/oil,
 /obj/machinery/light/small{
@@ -56101,15 +56091,6 @@
 	dir = 9
 	},
 /turf/open/water,
-/area/f13/wasteland)
-"vWL" = (
-/obj/machinery/light/sign/nash{
-	pixel_y = -4;
-	pixel_x = -20
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
 /area/f13/wasteland)
 "vWT" = (
 /obj/item/toy/beach_ball/holoball,
@@ -60408,7 +60389,7 @@ aOk
 aOk
 aJN
 pMY
-pMY
+ceS
 pMY
 pMY
 iWi
@@ -68364,7 +68345,7 @@ aOk
 aOk
 aOk
 aOk
-vaJ
+aOk
 aOk
 aOk
 aOk
@@ -69481,7 +69462,7 @@ cNs
 tQO
 gSH
 bgn
-ceS
+tQO
 nvn
 gns
 ayn
@@ -78713,7 +78694,7 @@ eEW
 aXy
 paJ
 skm
-vWL
+skm
 ojt
 uNJ
 uNJ
