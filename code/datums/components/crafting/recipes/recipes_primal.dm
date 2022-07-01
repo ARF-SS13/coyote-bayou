@@ -464,7 +464,7 @@
 				/obj/item/stack/cable_coil = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = TRUE
+	always_available = FALSE
 
 /* tdo
 /datum/crafting_recipe/beartrap
