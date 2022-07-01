@@ -382,8 +382,8 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 5
+	spawn_positions = 2
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
