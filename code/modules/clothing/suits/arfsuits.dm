@@ -431,7 +431,7 @@
 /obj/item/clothing/suit/armor/light
 	name = "light armor template"
 	//icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -470,7 +470,7 @@
 	item_state = "tribal"
 	flags_inv = HIDEJUMPSUIT
 	//icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	cold_protection = CHEST|GROIN|ARMS|LEGS // worm
 	heat_protection = CHEST|GROIN|ARMS|LEGS // chyll
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -787,6 +787,8 @@
 /obj/item/clothing/suit/armor/light/raider/tribalraider
 	name = "tribal raider wear"
 	desc = "Very worn bits of clothing and armor in a style favored by many tribes."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "tribal_outcast"
 	item_state = "tribal_outcast"
 
@@ -867,14 +869,19 @@
 /obj/item/clothing/suit/armor/light/duster/lonesome
 	name = "lonesome duster"
 	desc = "A blue leather coat with the number 21 on the back.<br><i>If war doesn't change, men must change, and so must their symbols.</i><br><i>Even if there is nothing at all, know what you follow.</i>"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_courier"
 	item_state = "duster_courier"
 
 /obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
 	desc = "A heavy-duty tan trenchcoat typically worn by pre-War generals."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_autumn"
 	item_state = "duster_autumn"
+
 
 /obj/item/clothing/suit/armor/light/duster/vet
 	name = "merc veteran coat"
@@ -891,6 +898,8 @@
 /obj/item/clothing/suit/armor/light/duster/desperado
 	name = "desperado's duster"
 	desc = "A dyed brahmin hide duster, with a thick waxy surface, making it less vulnerable to lasers and energy based weapons."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_lawman"
 	item_state = "duster_lawman"
 
@@ -1941,7 +1950,7 @@
 /obj/item/clothing/suit/armor/heavy
 	name = "heavy armor template"
 	//icon = 'icons/fallout/clothing/armored_heavy.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	slowdown = 1
 	strip_delay = 50
 	equip_delay_other = 50
@@ -2060,6 +2069,7 @@
 	icon_state = "armor_reflec"
 	item_state = "armor_reflec"
 	blood_overlay_type = "armor"
+	mob_overlay_icon = null
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	var/hit_reflect_chance = 40
@@ -2088,6 +2098,7 @@
 	icon_state = "tesla_armor"
 	item_state = "tesla_armor"
 	blood_overlay_type = "armor"
+	mob_overlay_icon = null
 	resistance_flags = FIRE_PROOF
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -2212,6 +2223,8 @@
 	If you still don't understand - it's a 'master' item, basically main type/parent object or something. \
 	It isn't meant to be used, it just dictates procs and all that stuff to the subtypes, such as t45b and so on. \
 	Now begone, report this to coders. NOW!"
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	slowdown = 2 // STOMP STOMP
 	armor = list(
 		"melee" = 65, 
