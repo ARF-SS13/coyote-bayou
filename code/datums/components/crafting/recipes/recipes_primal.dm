@@ -95,7 +95,7 @@
 
 /datum/crafting_recipe/boneshovel
 	name = "Serrated Bone Shovel"
-	always_available = FALSE
+	always_available = TRUE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 4,
 			/datum/reagent/oil = 5,
@@ -191,7 +191,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
@@ -213,7 +213,7 @@
 				/obj/item/stack/sheet/sinew = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/tribe_bow
 	name = "Short Bow"
@@ -222,7 +222,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
@@ -293,7 +293,7 @@
 				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 
 /datum/crafting_recipe/tribalwar/cheaparrow
@@ -337,7 +337,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/boneaxe
 	name = "Bone Axe"
@@ -346,7 +346,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/warclub
 	name = "Wooden Warclub"
@@ -356,7 +356,7 @@
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"

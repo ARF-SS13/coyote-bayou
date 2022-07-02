@@ -12,8 +12,8 @@
 		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
 		"The Village rests, defend it and prosper this week.  Peace is rare, but at least we can build defenses and take solitude in our isolation.",
 		"The swamp calls the hunters forth, seek out the thing that shines and return it to the shamans to appease the spirits.  If no shaman can be found then hide the item from the out-peoples.",
-		"The Chief calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
-		"The Chief calls for blood, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
+		"Something awful happened a bit back and it calls for blood, harass the outlaws of Redwater for their predations of wandering tribesman.  Remember to fortify the southern tunnel to their lands.  We should try to take at least one of them prisoner, and see how they like the collar on their own necks.",
+		"The people of tribe of Nash insulted us in recent weeks, harass the people of Nash for their highbrow attitude.  Remember to Fortify the northern entrance to the village, and try to take them down a peg for their witty insolence.",
 		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
 		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
 
@@ -59,7 +59,7 @@ Tribal Chief
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe."
-	enforces = "The ways of the Machine spirits."
+	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The leader and central political figure in this village of the Suplphur Bottom Tribe. You engage in diplomatic meetings with the powers present within the Region to ensure the village's safety and independence."
 	selection_color = "#006666"
@@ -104,7 +104,7 @@ Tribal Shaman
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "The Elders of the tribe and the chief."
-	enforces = "The ways of the Machine spirits."
+	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "The spiritual leader and cultural core of the Sulphur Bottom Tribe. You aid villagers in their day to day lives by offering guidance and advice, while also acting as the direct aid to the chief. You are the guardian of the tribe's customs, their health, and knowledge."
 	selection_color = "#006666"
@@ -179,7 +179,7 @@ Tribal Head Hunter
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Elders of the tribe and the chief."
-	enforces = "The ways of the Machine spirits."
+	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are the village Head Hunter; you organize the hunters of the tribe and are the authority in matters of protecting the tribe and the land of the Sulphur Bottom. You lead the Great Hunts and War-Bands in time of conflict."
 	selection_color = "#006666"
@@ -233,7 +233,7 @@ Druid
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Chief and the Shaman."
-	enforces = "The ways of the Machine spirits."
+	enforces = "The ways of the Sulphur River  spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
 	description = "You are a Druid in the tribe; you perform rituals, and bless pre-collapse relics and other artifacts for the tribe to use. You also are the spiritual guides of the tribe, and work with the Shaman during rituals or other spiritual matters."
 	selection_color = "#006666"
@@ -382,12 +382,12 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 5
+	spawn_positions = 2
 	supervisors = "The chief and Head Hunter."
-	enforces = "The ways of the Machine spirits."
+	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
-	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a machine spirit that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
+	description = "You are a Hunter for the tribe; you bring back food and relics, anything that may house a spirit infused from the Time of Crying that can be purified by the shaman. You also are the protectors of the tribe, and work with the Head Hunter during Great Hunts or times of War."
 	selection_color = "#006666"
 	exp_requirements = 450
 
