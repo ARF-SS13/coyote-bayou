@@ -156,9 +156,12 @@
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith
 	name = "blacksmith apron"
 	desc = "A heavy leather apron designed for protecting the user when metalforging."
-	icon = 'icons/obj/clothing/suits.dmi'
+	icon = 'icons/fallout/clothing/aprons.dmi'
+	icon_state = "forge"
+	item_state = "forge"
+/* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
-	item_state = "opifex_apron"
+	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it
 	blood_overlay_type = "armor"
 
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith/Initialize()
@@ -974,12 +977,6 @@
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
 
-/obj/item/clothing/suit/armor/light/duster/brahmin
-	name = "brahmin leather duster"
-	desc = "A duster fashioned with tanned brahmin hide. It's got pockets!"
-	icon_state = "brahmin_leather_duster"
-	item_state = "brahmin_leather_duster"
-
 /obj/item/clothing/suit/armor/light/duster/rustedcowboy
 	name = "rusted cowboy outfit"
 	desc = " A weather treated leather cowboy outfit.  Yeehaw Pard'!"
@@ -1630,13 +1627,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
-
-/obj/item/clothing/suit/armor/medium/vest/breastplate/warden
-	name = "warden plates"
-	desc = "Thick metal breastplate with a decorative skull on the shoulder."
-	icon = 'icons/fallout/clothing/armored_medium.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
-	icon_state = "wardenplate"
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/town
 	name = "steel breastplate"

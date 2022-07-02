@@ -1913,3 +1913,12 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	icon_state = "duster_recon"
 	item_state = "duster_recon"
 	permeability_coefficient = 0.9
+
+
+/* /obj/item/clothing/suit/armor/medium/vest/breastplate/warden
+	name = "warden plates"
+	desc = "Thick metal breastplate with a decorative skull on the shoulder."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "steel_bib"
+	item_state = "steel_bib" */
