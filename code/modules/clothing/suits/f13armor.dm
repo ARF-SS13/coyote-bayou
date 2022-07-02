@@ -47,7 +47,7 @@
 	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 35)
 
 
-/obj/item/clothing/suit/armor/kit
+/obj/item/clothing/suit/armor/light/kit
 	name = "armor kit"
 	desc = "Separate armor parts you can wear over the clothing to get the most basic protection from the dangers of wasteland.<br>It sure is better than going into the battle without any armor at all."
 	icon_state = "armorkit"
@@ -56,11 +56,11 @@
 	strip_delay = 30
 	slowdown = 0.025
 
-/obj/item/clothing/suit/armor/kit/Initialize()
+/obj/item/clothing/suit/armor/light/kit/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/punk
+/obj/item/clothing/suit/armor/light/kit/punk
 	name = "armor kit"
 	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
 	icon_state = "armorkit_punk"
@@ -71,7 +71,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	slowdown = 0.025
 
-/obj/item/clothing/suit/armor/punk/Initialize()
+/obj/item/clothing/suit/armor/light/kit/punk/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

@@ -193,7 +193,7 @@
 	/obj/item/clothing/shoes/f13/military = 1,
 	/obj/item/clothing/shoes/f13/military/diesel = 1,
 	/obj/item/clothing/suit/armor/medium/combat_mk1 = 1,
-	/obj/item/clothing/suit/armor/kit = 1,
+	/obj/item/clothing/suit/armor/light/kit = 1,
 	/obj/item/clothing/suit/armor/yankee = 1,
 	/obj/item/clothing/suit/armor/outfit/jacket/merc = 1,
 	/obj/item/clothing/under/f13/cyberpunk = 1,

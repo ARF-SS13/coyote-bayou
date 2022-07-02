@@ -29,8 +29,9 @@
 		"acid" = 0)
 	blood_overlay_type = "armor"
 	/// which mutantrace variations are supported. leave at NONE to keep it snapped at plantigrade
-	mutantrace_variation = NONE 
-
+	//mutantrace_variation = NONE 
+	
+	/// These dont seem to do anything
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/armor_block_chance = null //Chance for the armor to block a low penetration projectile
 	var/deflection_chance = null //Chance for the armor to redirect a blocked projectile
@@ -484,6 +485,8 @@
 /obj/item/clothing/suit/armor/light/tribal/wastetribe
 	name = "wasteland tribe armor"
 	desc = "Soft armor made from layered dog hide strips glued together, with some metal bits here and there."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "tribal"
 	item_state = "tribal"
 	flags_inv = HIDEJUMPSUIT
@@ -886,12 +889,16 @@
 /obj/item/clothing/suit/armor/light/duster/vet
 	name = "merc veteran coat"
 	desc = "A blue leather coat with its sleeves cut off, adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_vet"
 	item_state = "duster_vet"
 
 /obj/item/clothing/suit/armor/light/duster/brahmin
 	name = "brahmin leather duster"
 	desc = "A duster made from tanned brahmin hide. It has a thick waxy surface from the processing, making it surprisingly laser resistant."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_brahmin"
 	item_state = "duster_brahmin"
 
@@ -973,6 +980,8 @@
 /obj/item/clothing/suit/armor/light/duster/rustedcowboy
 	name = "rusted cowboy outfit"
 	desc = " A weather treated leather cowboy outfit.  Yeehaw Pard'!"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "rusted_cowboy"
 	item_state = "rusted_cowboy"
 
@@ -1047,6 +1056,8 @@
 /obj/item/clothing/suit/armor/light/leather
 	name = "leather armor"
 	desc = "Before the war motorcycle-football was one of the largest specator sports in America. This armor copies the style of armor used by the players,	using leather boiled in corn oil to make hard sheets to emulate the light weight and toughness of the original polymer armor."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "leather_armor"
 	item_state = "leather_armor"
 	permeability_coefficient = 0.9
@@ -1140,6 +1151,8 @@
 /obj/item/clothing/suit/armor/light/leather/durathread
 	name = "makeshift vest"
 	desc = "A makeshift vest made of heat-resistant fiber."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = null
 	icon_state = "durathread"
 	item_state = "durathread"
 	armor = list(
@@ -1154,13 +1167,60 @@
 		"acid" = -10)
 
 	
-///////////////
-//// MISC? ????
-///////////////
+////////////////
+// ARMOR KITS // 
+////////////////
+
+/obj/item/clothing/suit/armor/light/kit
+	name = "armor kit"
+	desc = "Separate armor parts you can wear over your clothing, giving basic protection against bullets entering some of your organs. Very well ventilated."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "armorkit"
+	item_state = "armorkit"
+	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
+	siemens_coefficient = 1.1
+	armor = list(
+		"melee" = 10, 
+		"bullet" = 15, 
+		"laser" = 5, 
+		"energy" = 0, 
+		"bomb" = 0, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 50, 
+		"acid" = 20)
+/obj/item/clothing/suit/armor/light/kit/punk
+	name = "punk armor kit"
+	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
+	icon_state = "armorkit_punk"
+	item_state = "armorkit_punk"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+/obj/item/clothing/suit/armor/light/kit/shoulder
+	name = "armor kit"
+	desc = "A single big metal shoulderplate for the right side, keeping it turned towards the enemy is advisable."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	icon_state = "armorkit_shoulder"
+	item_state = "armorkit_shoulder"
+
+/obj/item/clothing/suit/armor/light/kit/plates
+	name = "light armor plates"
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
+	desc = "Well-made metal plates covering your vital organs."
+	icon_state = "light_plates"
+
+/* /obj/item/clothing/suit/armor/light/kit/Initialize()
+	. = ..()
+	AddComponent(/datum/component/armor_plate) */
 
 /obj/item/clothing/suit/armor/light/mutantkit
 	name = "oversized armor kit"
 	desc = "Bits of armor fitted to a giant harness. Clearly not made for use by humans."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "mutie_armorkit"
 	item_state = "mutie_armorkit"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
@@ -1249,6 +1309,8 @@
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
 	desc = "A suit made from gleaming insect chitin. The glittering black scales are remarkably resistant to hostile environments, except cold."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "insect"
 	item_state = "insect"
 	flags_inv = HIDEJUMPSUIT
@@ -1359,6 +1421,8 @@
 /obj/item/clothing/suit/armor/medium/vest/bulletproof/armor
 	name = "armored vest"
 	desc = "Large bulletproof vest with ballistic plates."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_armor"
 	item_state = "vest_armor"
 
@@ -1391,6 +1455,8 @@
 /obj/item/clothing/suit/armor/medium/vest/chinese
 	name = "chinese flak vest"
 	desc = "An uncommon suit of pre-war Chinese armor. It's a very basic and straightforward piece of armor that covers the front of the user."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "vest_chicom"
 	item_state = "vest_chicom"
 
@@ -1509,6 +1575,8 @@
 /obj/item/clothing/suit/armor/medium/vest/breastplate
 	name = "steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	strip_delay = 5
@@ -1545,21 +1613,29 @@
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "heavy steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like oasis citizens added an additional layer of metal on the front face."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/warden
 	name = "warden plates"
 	desc = "Thick metal breastplate with a decorative skull on the shoulder."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "wardenplate"
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/town
 	name = "steel breastplate"
 	desc = "A steel breastplate inspired by a pre-war design, this one was made locally in Oasis. It uses a stronger steel alloy in it's construction, still heavy though"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	name = "steel breastplate"
 	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	slowdown = 0.6
@@ -1577,6 +1653,8 @@
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap
 	name = "scrap metal chestplate"
 	desc = "Various metal bits welded together to form a crude chestplate."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
 	siemens_coefficient = 1.3
@@ -1584,18 +1662,24 @@
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/reinforced
 	name = "reinforced metal chestplate"
 	desc = "Various metal bits welded together to form a crude chestplate, with extra bits of metal top of the first layer. Heavy."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/brokencombat
 	name = "broken combat armor chestpiece"
 	desc = "It's barely holding together, but the plates might still work, you hope."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "combat_chestpiece"
 	item_state = "combat_chestpiece"
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/mutant
 	name = "mutant armour"
 	desc = "Metal plates rigged to fit the frame of a super mutant. Maybe he's the big iron with a ranger on his hip?"
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "mutie_heavy_metal"
 	item_state = "mutie_heavy_metal"
 
@@ -1653,6 +1737,8 @@
 /obj/item/clothing/suit/armor/medium/duster/duster_renegade
 	name = "renegade duster"
 	desc = "Metal armor worn under a stylish duster. For the bad boy who wants to look good while commiting murder."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "duster-renegade"
 	item_state = "duster-renegade"
 
@@ -1676,6 +1762,8 @@
 /obj/item/clothing/suit/armor/medium/duster/motorball
 	name = "motorball suit"
 	desc = "Reproduction motorcycle-football suit, made in vault 75 that was dedicated to a pure sports oriented culture."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "motorball"
 	item_state = "motorball"
 
@@ -1688,6 +1776,8 @@
 /obj/item/clothing/suit/armor/medium/duster/cloak_armored
 	name = "armored cloak"
 	desc = "A dark cloak worn over protective plating."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "cloak_armored"
 	item_state = "cloak_armored"
 

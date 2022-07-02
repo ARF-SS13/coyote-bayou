@@ -4,7 +4,7 @@
 
 /datum/crafting_recipe/armorkit
 	name = "Armor Kit"
-	result = /obj/item/clothing/suit/armor/kit
+	result = /obj/item/clothing/suit/armor/light/kit
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/crafting/metalparts = 1)

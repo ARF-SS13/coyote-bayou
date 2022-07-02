@@ -181,8 +181,8 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 	/obj/item/clothing/gloves/f13/military = 5,
 	/obj/item/clothing/gloves/f13/leather/fingerless = 5,
 	/obj/item/clothing/shoes/f13/tan = 5,
-	/obj/item/clothing/suit/armor/punk = 5,
-	/obj/item/clothing/suit/armor/kit = 5,
+	/obj/item/clothing/suit/armor/light/kit/punk = 5,
+	/obj/item/clothing/suit/armor/light/kit = 5,
 	/obj/item/clothing/head/welding = 5
 ))
 
@@ -334,7 +334,7 @@ GLOBAL_LIST_INIT(loot_prewar_costume, list(
 
 GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/suit/armor/light/leather/leather_jacket,
-	/obj/item/clothing/suit/armor/kit,
+	/obj/item/clothing/suit/armor/light/kit,
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/suit/armor/light/raider/sadist,

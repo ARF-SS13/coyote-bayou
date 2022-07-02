@@ -1759,67 +1759,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	armor = list("melee" = 35, "bullet" = 22, "laser" = 22, "energy" = 15, "bomb" = 45, "bio" = 30, "rad" = 5, "fire" = 50, "acid" = 35, "wound" = 35)
 // END DUPES //
 
-////////////////
-// ARMOR KITS // probably gonna just not be used
-////////////////
 
-/obj/item/clothing/suit/armor/light/kit
-	name = "armor kit"
-	desc = "Separate armor parts you can wear over your clothing, giving basic protection against bullets entering some of your organs. Very well ventilated."
-	icon_state = "armorkit"
-	item_state = "armorkit"
-	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
-	siemens_coefficient = 1.1
-	armor = list("melee" = 15, "bullet" = 25, "laser" = 10, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/armor/light/kit/punk
-	name = "armor kit"
-	desc = "A few pieces of metal strapped to protect choice parts against sudden lead poisoning. Excellent ventilation included."
-	icon_state = "armorkit_punk"
-	item_state = "armorkit_punk"
-	armor = list("melee" = 18, "bullet" = 22, "laser" = 10, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/armor/light/kit/shoulder
-	name = "armor kit"
-	desc = "A single big metal shoulderplate for the right side, keeping it turned towards the enemy is advisable."
-	icon_state = "armorkit_shoulder"
-	item_state = "armorkit_shoulder"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 7, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/armor/light/kit/plates
-	name = "light armor plates"
-	desc = "Well-made metal plates covering your vital organs."
-	icon_state = "light_plates"
-	armor = list("melee" = 22, "bullet" = 27, "laser" = 10, "energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-
-/obj/item/clothing/suit/armor/kit
-	name = "armor kit"
-	desc = "Separate armor parts you can wear over the clothing to get the most basic protection from the dangers of wasteland.<br>It sure is better than going into the battle without any armor at all."
-	icon_state = "armorkit"
-	item_state = "armorkit"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 30, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
-	strip_delay = 30
-	slowdown = 0.025
-
-/obj/item/clothing/suit/armor/kit/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
-
-/obj/item/clothing/suit/armor/punk
-	name = "armor kit"
-	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
-	icon_state = "armorkit_punk"
-	item_state = "armorkit_punk"
-	armor = list("melee" = 20, "bullet" = 40, "laser" = 15, "energy" = 15, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
-	strip_delay = 30
-	icon = 'icons/fallout/clothing/armored_light.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
-	slowdown = 0.025
-
-/obj/item/clothing/suit/armor/punk/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
 
 // Outlaw
 /obj/item/clothing/suit/toggle/armored/khanlight
