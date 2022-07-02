@@ -22,13 +22,13 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/light/raider/rebel
+/obj/item/clothing/suit/armor/medium/raider/rebel
 	name = "rebel raider armor"
 	desc = "Rebel, rebel. Your face is a mess."
 	icon_state = "raider_rebel_icon"
 	item_state = "raider_rebel_armor"
 
-/obj/item/clothing/suit/armor/light/raider/rebel/Initialize() //HQ parts reinforcement
+/obj/item/clothing/suit/armor/medium/raider/rebel/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

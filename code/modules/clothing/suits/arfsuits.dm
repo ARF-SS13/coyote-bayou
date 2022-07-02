@@ -7,7 +7,6 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	lefthand_file = 'icons/mob/inhands/clothing_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/clothing_righthand.dmi'
-	/// Use Initialize for this
 	cold_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	heat_protection = CHEST|GROIN
@@ -40,8 +39,11 @@
 
 /obj/item/clothing/suit/armor/Initialize()
 	. = ..()
-	if(!allowed)
-		allowed |= GLOB.default_all_armor_slot_allowed
+	if(!islist(allowed))
+		allowed = list()
+	// Here we set up what's allowed in their suit storage.
+	// this lets us merge multiple lists, and also disallow certain things from it too
+	allowed |= GLOB.default_all_armor_slot_allowed
 
 /* 
 
@@ -120,12 +122,16 @@
 //////////////////
 
 /obj/item/clothing/suit/armor/outfit/overalls
-	name = "overall template"
+	name = "overalls"
 	desc = "A set of overall templates that shouldnt exist."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "overalls_farmer"
+	item_state = "overalls_farmer"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets // big pockets!
 
 /obj/item/clothing/suit/armor/outfit/overalls/farmer
-	name = "overalls"
+	name = "farmer overalls"
 	desc = "A set of denim overalls suitable for farming."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
@@ -150,6 +156,7 @@
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith
 	name = "blacksmith apron"
 	desc = "A heavy leather apron designed for protecting the user when metalforging."
+	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron"
 	blood_overlay_type = "armor"
@@ -801,12 +808,6 @@
 	icon_state = "supafly"
 	item_state = "supafly"
 
-/obj/item/clothing/suit/armor/light/raider/rebel
-	name = "rebel raider armor"
-	desc = "Rebel, rebel. Your face is a mess."
-	icon_state = "raider_rebel_icon"
-	item_state = "raider_rebel_armor"
-
 /obj/item/clothing/suit/armor/light/raider/sadist
 	name = "sadist raider armor"
 	desc = "A bunch of metal chaps adorned with severed hands at the waist with a leather plate worn on the left shoulder. Very intimidating."
@@ -897,10 +898,12 @@
 /obj/item/clothing/suit/armor/light/duster/brahmin
 	name = "brahmin leather duster"
 	desc = "A duster made from tanned brahmin hide. It has a thick waxy surface from the processing, making it surprisingly laser resistant."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
+	icon_state = "duster"
+	item_state = "duster"
+/* 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_brahmin"
-	item_state = "duster_brahmin"
+	item_state = "duster_brahmin" */
 
 /obj/item/clothing/suit/armor/light/duster/desperado
 	name = "desperado's duster"
@@ -1392,18 +1395,24 @@
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
 	desc = "Poorly maintained, this patched vest will still still stop some bullets, but don't expect any miracles. The ballistic nylon used in its construction is inferior to kevlar, and very weak to acid, but still quite tough."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
 
 /obj/item/clothing/suit/armor/medium/vest/kevlar
 	name = "kevlar vest"
 	desc = "Worn but serviceable, the vest is is effective against ballistic impacts."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_kevlar"
 	item_state = "vest_kevlar"
 
 /obj/item/clothing/suit/armor/medium/vest/bulletproof
 	name = "bulletproof vest"
 	desc = "This vest is in good shape, the layered kevlar lightweight yet very good at stopping bullets."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_bullet"
 	item_state = "vest_bullet"
 	slowdown = 0.6 // bulky!
@@ -1437,12 +1446,16 @@
 /obj/item/clothing/suit/armor/medium/vest/followers
 	name = "followers armor vest"
 	desc = "A coat in light colors with the markings of the Followers, concealing a bullet-proof vest."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_follower"
 	item_state = "vest_follower"
 
 /obj/item/clothing/suit/armor/medium/vest/town
 	name = "Oasis flak vest"
 	desc = "A refurbished flak vest, repaired by the Oasis Police Department. The ballistic nylon has a much tougher weave, but it still will not take acid or most high-powered rounds."
+	icon = 'icons/fallout/clothing/armored_light.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
 
@@ -1973,6 +1986,14 @@
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
+/obj/item/clothing/suit/armor/medium/raider/rebel
+	name = "rebel raider armor"
+	desc = "Rebel, rebel. Your face is a mess."
+	icon = 'icons/fallout/clothing/armored_medium.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	icon_state = "raider_rebel_icon"
+	item_state = "raider_rebel_armor"
+
 /obj/item/clothing/suit/armor/medium/raider/scrapcombat
 	name = "scrap combat armor"
 	desc = "Scavenged military combat armor, repaired by unskilled hands many times, most of the original plating having cracked or crumbled to dust."
@@ -2086,12 +2107,16 @@
 /obj/item/clothing/suit/armor/heavy/tribal
 	name = "tribal heavy carapace"
 	desc = "Thick layers of leather and bone, with metal reinforcements, surely this will make the wearer tough and uncaring for claws and blades."
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
 
 /obj/item/clothing/suit/armor/heavy/tribal/bone
 	name = "Heavy Bone armor"
 	desc = "A tribal full armor plate, crafted from animal bone, metal and leather. Usually worn by the Bone Dancers"
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = null
 	icon_state = "bone_dancer_armor_heavy"
 	item_state = "bone_dancer_armor_heavy"
 	blood_overlay_type = "armor"
@@ -2109,6 +2134,8 @@
 /obj/item/clothing/suit/armor/heavy/raider/metal
 	name = "metal armor suit"
 	desc = "A suit of welded, fused metal plates. Bulky, but with great protection."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = null
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
 
