@@ -2637,12 +2637,8 @@
 	},
 /area/f13/wasteland)
 "ajr" = (
-/obj/structure/billboard/ritas,
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 8;
-	icon_state = "outerpavement"
-	},
-/area/f13/wasteland)
+/turf/closed/indestructible/f13vaultrusted,
+/area/f13/caves)
 "ajs" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/ranged/boss/junker,
@@ -3521,8 +3517,13 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "amq" = (
-/obj/item/clothing/suit/armor/kit,
-/turf/open/indestructible/ground/inside/mountain,
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "BoSLadder"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
 /area/f13/caves)
 "amr" = (
 /obj/structure/window/reinforced/tinted{
@@ -9019,7 +9020,6 @@
 /area/f13/village)
 "aEB" = (
 /obj/structure/table/wood,
-/obj/item/clothing/suit/armor/kit,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -28380,6 +28380,11 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village)
+"fjo" = (
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
+/area/f13/caves)
 "fjq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -88336,7 +88341,7 @@ igF
 hEG
 aiQ
 sKy
-ajr
+sKy
 mfT
 sKy
 sKy
@@ -88577,10 +88582,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+ajr
+ajr
+ajr
+ajr
 aQZ
 mHp
 nvn
@@ -88834,10 +88839,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+ajr
+amq
+fjo
+ajr
 aQZ
 mHp
 mGE
@@ -89091,10 +89096,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+ajr
+fjo
+fjo
+ajr
 aQZ
 mHp
 rCE
@@ -89348,10 +89353,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+ajr
+ajr
+ajr
+ajr
 tPB
 mHp
 mGE
@@ -98365,7 +98370,7 @@ aae
 aae
 aaB
 alP
-amq
+aaB
 aaB
 aaB
 aaB
