@@ -286,34 +286,36 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/kitchen)))
+	/obj/item/kitchen,
+	/obj/item/toy)))
 
 ///extra things light armor can hold in their slot by default
-GLOBAL_LIST_INIT(default_light_armor_slot_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(light_armor_allowed, typecacheof(list(
 	/obj/item/storage/box,
+	/obj/item/storage/backpack,
 	/obj/item/storage/wallet,
 	/obj/item/melee/smith)))
 
 ///things light armor can *not* hold in their slot by default
-GLOBAL_LIST_INIT(default_light_armor_slot_disallowed, typecacheof(list(
+GLOBAL_LIST_INIT(light_armor_disallowed, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/grenadelauncher,
 	/obj/item/gun/ballistic/rifle/mag,
 	/obj/item/melee/smith/twohand)))
 
 ///extra things tribal armor can hold in their slot by default
-GLOBAL_LIST_INIT(default_light_tribal_armor_slot_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(tribal_armor_allowed, typecacheof(list(
 	/obj/item/gun/ballistic/bow,
 	/obj/item/storage/backpack/spearquiver,
 	/obj/item/storage/belt/tribe_quiver,
 	/obj/item/melee)))
 
 ///extra things raider armor can hold in their slot by default
-GLOBAL_LIST_INIT(default_light_raider_armor_slot_allowed, typecacheof(list(
-	/obj/item/gun/ballistic/,
+GLOBAL_LIST_INIT(raider_armor_allowed, typecacheof(list(
+	/obj/item/gun/ballistic,
 	/obj/item/melee)))
 
 ///extra things smith aprons can hold in their slot by default
-GLOBAL_LIST_INIT(default_outfit_apron_smith_slot_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(smith_apron_allowed, typecacheof(list(
 	/obj/item/storage/belt/utility,
 	/obj/item/crowbar,
 	/obj/item/screwdriver,
@@ -333,7 +335,7 @@ GLOBAL_LIST_INIT(default_outfit_apron_smith_slot_allowed, typecacheof(list(
 	/obj/item/assembly/signaler)))
 
 ///extra things sexy maid aprons can hold in their slot by default
-GLOBAL_LIST_INIT(default_outfit_apron_sexymaid_slot_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(sexymaid_apron_allowed, typecacheof(list(
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
 	/obj/item/flashlight,
@@ -354,21 +356,35 @@ GLOBAL_LIST_INIT(default_outfit_apron_sexymaid_slot_allowed, typecacheof(list(
 	/obj/item/storage/belt/janitor)))
 
 ///extra things farmer aprons can hold in their slot by default
-GLOBAL_LIST_INIT(default_outfit_apron_farmer_slot_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(farmer_apron_allowed, typecacheof(list(
 	/obj/item/hatchet, 
 	/obj/item/scythe, 
 	/obj/item/cultivator, 
 	/obj/item/shovel)))
 
+///just a list that allows guns and melee in an armor slot
+GLOBAL_LIST_INIT(armor_allow_guns_and_melee, typecacheof(list(
+	/obj/item/melee,
+	/obj/item/gun)))
+
 ///extra things medium armor can hold in their slot by default
-GLOBAL_LIST_INIT(default_medium_armor_slot_allowed, typecacheof(list(
+///Basically most items, plus a box/belt
+GLOBAL_LIST_INIT(medium_armor_allowed, typecacheof(list(
 	/obj/item/storage/box,
 	/obj/item/storage/belt,
 	/obj/item/storage/wallet,
 	/obj/item/melee,
-	/obj/item/gun)))
-
-
+	/obj/item/gun,
+	/obj/item/kitchen,
+	/obj/item/twohanded,
+	/obj/item/twohanded/spear,
+	/obj/item/reagent_containers/food,
+	/obj/item/melee,
+	/obj/item/flashlight,
+	/obj/item/tank/internals,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/throwing_star/spear,
+	/obj/item/restraints/legcuffs/bola)))
 
 //Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

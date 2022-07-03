@@ -140,7 +140,7 @@
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
 	. = ..()
-	allowed |= GLOB.default_outfit_apron_sexymaid_slot_allowed
+	allowed |= GLOB.sexymaid_apron_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid // best suit
 	name = "sexy maid outfit"
@@ -151,7 +151,7 @@
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
 	. = ..()
-	allowed |= GLOB.default_outfit_apron_sexymaid_slot_allowed
+	allowed |= GLOB.sexymaid_apron_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith
 	name = "blacksmith apron"
@@ -159,14 +159,14 @@
 	icon = 'icons/fallout/clothing/aprons.dmi'
 	icon_state = "forge"
 	item_state = "forge"
+	blood_overlay_type = "armor"
 /* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it
-	blood_overlay_type = "armor"
 
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith/Initialize()
 	. = ..()
-	allowed |= GLOB.default_outfit_apron_smith_slot_allowed
+	allowed |= GLOB.smith_apron_allowed
 
 //////////////
 //// VEST ////
@@ -208,7 +208,7 @@
 	desc = "its a jacket!!"
 	icon_state = "veteran"
 	item_state = "suit-command"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/armor/outfit/jacket/merc
 	name = "merc veteran coat"
@@ -467,9 +467,9 @@
 	/// make sure the parents work first for this, child lists take priority
 	. = ..()
 	/// adds the list to the allowed list
-	allowed |= GLOB.default_light_armor_slot_allowed
+	allowed |= GLOB.light_armor_allowed
 	/// trims the stuff from the list that shouldnt be there
-	allowed -= GLOB.default_light_armor_slot_disallowed
+	allowed -= GLOB.light_armor_disallowed
 
 ////////////////////////
 // LIGHT TRIBAL ARMOR //
@@ -487,10 +487,10 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 
-/obj/item/clothing/suit/armor/light/Initialize()
+/obj/item/clothing/suit/armor/light/tribal/Initialize()
 	. = ..()
 	/// allows more melee stuff, another slot for a quiver too
-	allowed |= GLOB.default_light_tribal_armor_slot_allowed
+	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/armor/light/tribal/wastetribe
 	name = "wasteland tribe armor"
@@ -579,9 +579,9 @@
 	. = ..()
 	/// i hate my extended family
 	allowed = GLOB.default_all_armor_slot_allowed
-	allowed |= GLOB.default_light_armor_slot_allowed
-	allowed -= GLOB.default_light_armor_slot_disallowed
-	allowed |= GLOB.default_light_tribal_armor_slot_allowed
+	allowed |= GLOB.light_armor_allowed
+	allowed -= GLOB.light_armor_disallowed
+	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "deathclaw cloak"
@@ -783,13 +783,13 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 150
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 
 /obj/item/clothing/suit/armor/light/raider/Initialize()
 	/// make sure the parents work first for this, child lists take priority
 	. = ..()
 	/// adds in melee, guns, raidery shit
-	allowed |= GLOB.default_light_raider_armor_slot_allowed
+	allowed |= GLOB.raider_armor_allowed
 	
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
@@ -888,7 +888,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_autumn"
 	item_state = "duster_autumn"
-
 
 /obj/item/clothing/suit/armor/light/duster/vet
 	name = "merc veteran coat"
@@ -1068,7 +1067,7 @@
 	strip_delay = 20
 	equip_delay_other = 20
 	max_integrity = 150
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list(
 		"melee" = 15, 
 		"bullet" = 5, 
@@ -1079,7 +1078,14 @@
 		"rad" = 0, 
 		"fire" = -10, 
 		"acid" = 0)
-	// Nothing extra fancy for their storage, but they can carry an extra 2 normal-sized guns in their pockets
+
+/obj/item/clothing/suit/armor/light/leather/Initialize()
+	/// make sure the parents work first for this, child lists take priority
+	. = ..()
+	/// Leather armor kinda sucks, so heck it, they can carry all guns and melee too
+	allowed |= GLOB.armor_allow_guns_and_melee
+	/// tribal shit too
+	allowed |= GLOB.tribal_armor_allowed
 
 // Recipe the above + 2 gecko hides
 /obj/item/clothing/suit/armor/light/leather/leathermk2
@@ -1158,12 +1164,12 @@
 	armor = list(
 		"melee" = 20, 
 		"bullet" = 7.5, 
-		"laser" = 5, 
+		"laser" = 15, 
 		"energy" = 0, 
 		"bomb" = 0, 
 		"bio" = 0, 
 		"rad" = 0, 
-		"fire" = -30, 
+		"fire" = 50, 
 		"acid" = -10)
 
 	
@@ -1190,6 +1196,12 @@
 		"rad" = 10, 
 		"fire" = 50, 
 		"acid" = 20)
+
+/obj/item/clothing/suit/armor/light/kit/Initialize()
+	/// make sure the parents work first for this, child lists take priority
+	. = ..()
+	allowed |= GLOB.raider_armor_allowed
+
 /obj/item/clothing/suit/armor/light/kit/punk
 	name = "punk armor kit"
 	desc = "A couple of armor parts that can be worn over the clothing for moderate protection against the dangers of wasteland.<br>Do you feel lucky now? Well, do ya, punk?"
@@ -1277,7 +1289,7 @@
 	/// make sure the parents work first for this, child lists take priority
 	. = ..()
 	/// adds the list to the allowed list
-	allowed |= GLOB.default_medium_armor_slot_allowed
+	allowed |= GLOB.medium_armor_allowed
 
 ////////////////////////////
 /// MEDIUM TRIBAL ARMOR ////
@@ -1294,7 +1306,7 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list(
 		"melee" = 27.5, 
 		"bullet" = 25, 
@@ -1305,6 +1317,11 @@
 		"rad" = 10, 
 		"fire" = 20, 
 		"acid" = 20)
+
+/obj/item/clothing/suit/armor/medium/tribal/Initialize()
+	. = ..()
+	/// allows more melee stuff, another slot for a quiver too
+	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
@@ -1797,6 +1814,7 @@
 	slowdown = 0.45
 	equip_delay_other = 50
 	max_integrity = 200
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/magpouch // 4 slots for ammo!
 	armor = list(
 		"melee" = 27.5, 
 		"bullet" = 27.5, 
@@ -1965,7 +1983,11 @@
 /obj/item/clothing/suit/armor/medium/raider
 	name = "base raider armor"
 	desc = "for testing"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
+/obj/item/clothing/suit/armor/medium/raider/Initialize()
+	. = ..()
+	allowed |= GLOB.raider_armor_allowed
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
 	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
@@ -2056,7 +2078,7 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor = list(
 		"melee" = 40, 
 		"bullet" = 40, 
@@ -2067,6 +2089,12 @@
 		"rad" = 10, 
 		"fire" = 30, 
 		"acid" = 40)
+
+/obj/item/clothing/suit/armor/heavy/Initialize()
+	. = ..()
+	allowed |= GLOB.light_armor_allowed
+	allowed |= GLOB.medium_armor_allowed
+	allowed |= GLOB.armor_allow_guns_and_melee
 
 /////////////////////
 //// BULLET VEST //// ...?
@@ -2079,6 +2107,7 @@
 	item_state = "armor"
 	blood_overlay_type = "armor"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/magpouch // 4 slots for ammo!
 	armor = list(
 		"melee" = 15, 
 		"bullet" = 60, 
@@ -2294,6 +2323,7 @@
 	desc = "A suit of semi-flexible polycarbonate body armor with heavy padding to protect against melee attacks. Helps the wearer resist shoving in close quarters."
 	icon_state = "riot"
 	item_state = "swat_suit"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/magpouch // 4 slots for ammo!
 	blocks_shove_knockdown = TRUE
 	armor = list(
 		"melee" = 60, 
@@ -2332,6 +2362,7 @@
 	Now begone, report this to coders. NOW!"
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
 	slowdown = 2 // STOMP STOMP
 	armor = list(
 		"melee" = 65, 
@@ -2343,7 +2374,6 @@
 		"rad" = 50, 
 		"fire" = 80, 
 		"acid" = 80)
-
 
 // T-45B
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b
@@ -2461,6 +2491,7 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 20)
 	salvage_tool_behavior = TOOL_WELDER
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/massive
 	/// Cell that is currently installed in the suit
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
 	/// How much power the cell consumes each process tick
@@ -2495,6 +2526,9 @@
 
 /obj/item/clothing/suit/armor/power_armor/Initialize()
 	. = ..()
+	allowed |= GLOB.light_armor_allowed
+	allowed |= GLOB.medium_armor_allowed
+	allowed |= GLOB.armor_allow_guns_and_melee
 	if(ispath(cell))
 		cell = new cell(src)
 
@@ -2847,6 +2881,7 @@
 		"fire" = 100, 
 		"acid" = 100,
 		"wound" = 100)
+
 /obj/item/clothing/suit/armor/power_armor/advanced
 	name = "advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for its user's comfort."
