@@ -148,7 +148,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/exile/bosexile
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/exile
 	name = "modified Brotherhood armor"
 	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
@@ -156,7 +156,7 @@
 	icon_state = "exile_bos"
 	item_state = "exile_bos"
 
-/obj/item/clothing/suit/armor/exile/bosexile/Initialize()
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/exile/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

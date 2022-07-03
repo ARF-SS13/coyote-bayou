@@ -153,17 +153,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/exile/bosexile
-	name = "modified Brotherhood armor"
-	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
-	icon = 'icons/fallout/clothing/armored_heavy.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
-	icon_state = "exile_bos"
-	item_state = "exile_bos"
 
-/obj/item/clothing/suit/armor/exile/bosexile/Initialize()
-	. = ..()
-	AddComponent(/datum/component/armor_plate)
 
 
 
@@ -1528,12 +1518,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	armor = list("melee" = 29, "bullet" = 10, "laser" = 30, "energy" = 25, "bomb" = 16, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/suit/armor/heavy/bosexile
-	name = "modified Brotherhood armor"
-	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and lots of scrap metal."
-	icon_state = "exile_bos"
-	item_state = "exile_bos"
-	armor = list("melee" = 30, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 25, "bio" = 10, "rad" = 10, "fire" = 20, "acid" = 10)
 
 
 //TRIBALS

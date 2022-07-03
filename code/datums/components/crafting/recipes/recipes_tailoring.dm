@@ -1118,7 +1118,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/bos_reinforced
 	name = "reinforced BoS exile armor"
 	result = /obj/item/clothing/suit/armor/exile/r/bos
-	reqs = list(/obj/item/clothing/suit/armor/exile/bosexile = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/combat/brotherhood/exile = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)

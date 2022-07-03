@@ -1975,6 +1975,24 @@
 	icon_state = "brotherhood_armor_outcast"
 	item_state = "brotherhood_armor_outcast"
 
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/exile
+	name = "modified Brotherhood armor"
+	desc = "A modified detoriated armor kit consisting of brotherhood combat armor and scrap metal."
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	icon_state = "exile_bos"
+	item_state = "exile_bos"
+	armor = list(
+		"melee" = 45, 
+		"bullet" = 45, 
+		"laser" = 55, 
+		"energy" = 30, 
+		"bomb" = 30, 
+		"bio" = 10, 
+		"rad" = 10, 
+		"fire" = 30, 
+		"acid" = 40)
+
 ///////////////////
 // MEDIUM RAIDER //
 ///////////////////
@@ -1988,6 +2006,7 @@
 /obj/item/clothing/suit/armor/medium/raider/Initialize()
 	. = ..()
 	allowed |= GLOB.raider_armor_allowed
+
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
 	desc = "Crude armor that appears to employ a tire of some kind as the shoulder pad. What appears to be a quilt is tied around the waist.<br>Come on and slam and turn your foes to jam!"
