@@ -77,7 +77,7 @@ Elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
 	pa_wear = TRUE
-	suit =	/obj/item/clothing/suit/f13/elder
+	suit =	/obj/item/clothing/suit/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
 	suit_store =	/obj/item/gun/energy/laser/laer
@@ -157,7 +157,7 @@ Head Paladin
 
 /datum/outfit/loadout/sentstand
 	name = "Shock Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	suit = /obj/item/clothing/suit/armor/power_armor/midwest/hardened
 	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	l_hand = /obj/item/gun/energy/laser/scatter
 	backpack_contents = list(
@@ -166,7 +166,7 @@ Head Paladin
 
 /datum/outfit/loadout/sentheavy
 	name = "Heavy Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	suit = /obj/item/clothing/suit/armor/power_armor/midwest/hardened
 	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/m72 = 1,
@@ -177,7 +177,7 @@ Head Paladin
 
 /datum/outfit/loadout/sentgat
 	name = "Gatling Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	suit = /obj/item/clothing/suit/armor/power_armor/midwest/hardened
 	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpack=1,
@@ -185,7 +185,7 @@ Head Paladin
 
 /datum/outfit/loadout/sentmini
 	name = "Minigun Head Paladin"
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/midwest/hardened
+	suit = /obj/item/clothing/suit/armor/power_armor/midwest/hardened
 	head = /obj/item/clothing/head/helmet/f13/power_armor/midwest/hardened
 	backpack_contents = list(
 		/obj/item/minigunpackbal5mm=1,
@@ -240,7 +240,7 @@ Head Scribe
 	uniform = 		/obj/item/clothing/under/syndicate/brotherhood
 	accessory = 	/obj/item/clothing/accessory/bos/headscribe
 	glasses =       /obj/item/clothing/glasses/sunglasses
-	suit = 			/obj/item/clothing/suit/armor/f13/headscribe
+	suit = 			/obj/item/clothing/suit/armor/headscribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
@@ -311,7 +311,7 @@ Head Knight
 	gunsmith_two = TRUE
 	gunsmith_three = TRUE
 	gunsmith_four = TRUE
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/captain
+	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood/captain
 	glasses =		/obj/item/clothing/glasses/night
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	accessory =		/obj/item/clothing/accessory/bos/knightcaptain
@@ -400,7 +400,7 @@ Star Paladin
 /datum/outfit/job/bos/f13seniorpaladin
 	name =	"Senior Paladin"
 	jobtype =	/datum/job/bos/f13seniorpaladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/midwest
+	suit =	/obj/item/clothing/suit/armor/power_armor/midwest
 	head =	/obj/item/clothing/head/helmet/f13/power_armor/midwest
 	accessory =	/obj/item/clothing/accessory/bos/seniorpaladin
 	uniform =	/obj/item/clothing/under/f13/recon
@@ -501,7 +501,7 @@ Paladin
 /datum/outfit/job/bos/f13paladin
 	name =	"Paladin"
 	jobtype =	/datum/job/bos/f13paladin
-	suit =	/obj/item/clothing/suit/armor/f13/power_armor/midwest
+	suit =	/obj/item/clothing/suit/armor/power_armor/midwest
 	head =	/obj/item/clothing/head/helmet/f13/power_armor/midwest
 	uniform =	/obj/item/clothing/under/f13/recon
 	mask =	/obj/item/clothing/mask/gas/sechailer
@@ -601,7 +601,7 @@ Senior Scribe
 	shoes =	/obj/item/clothing/shoes/combat
 	belt =	/obj/item/storage/belt/utility/full/engi
 	accessory =	/obj/item/clothing/accessory/bos/seniorscribe
-	suit =	/obj/item/clothing/suit/f13/seniorscribe
+	suit =	/obj/item/clothing/suit/seniorscribe
 	id =	/obj/item/card/id/dogtag
 	glasses =	/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
@@ -660,7 +660,7 @@ Scribe
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	shoes = 		/obj/item/clothing/shoes/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit = 			/obj/item/clothing/suit/f13/scribe
+	suit = 			/obj/item/clothing/suit/scribe
 	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
@@ -741,7 +741,7 @@ Senior Knight
 /datum/outfit/job/bos/f13seniorknight
 	name = "Senior Knight"
 	jobtype = /datum/job/bos/f13seniorknight
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior
+	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood/senior
 	accessory = 	/obj/item/clothing/accessory/bos/seniorknight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	glasses =       /obj/item/clothing/glasses/night
@@ -852,7 +852,7 @@ Knight
 /datum/outfit/job/bos/f13knight
 	name = "Knight"
 	jobtype = /datum/job/bos/f13knight
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	belt = 			/obj/item/storage/belt/military/assault
@@ -988,7 +988,7 @@ Initiate
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit = 			/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate
+	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/pistol=1,

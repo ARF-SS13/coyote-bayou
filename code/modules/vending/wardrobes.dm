@@ -279,7 +279,7 @@
 					/obj/item/storage/backpack/satchel/hyd = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/hydro = 2,
 					/obj/item/clothing/neck/apron/labor = 3,
-					/obj/item/clothing/suit/overalls = 5,
+					/obj/item/clothing/suit/armor/outfit/overalls/farmer = 5,
 					/obj/item/clothing/under/rank/civilian/hydroponics = 5,
 					/obj/item/clothing/under/rank/civilian/hydroponics/skirt = 5,
 					/obj/item/clothing/mask/bandana = 4)
@@ -334,7 +334,7 @@
 					/obj/item/clothing/head/soft/black = 4,
 					/obj/item/clothing/shoes/sneakers/black = 4,
 					/obj/item/reagent_containers/rag = 4,
-					/obj/item/clothing/suit/armor/vest/alt = 1,
+					/obj/item/clothing/suit/armor/medium/vest/alt = 1,
 					/obj/item/circuitboard/machine/dish_drive = 1,
 					/obj/item/clothing/glasses/sunglasses/reagent = 1,
 					/obj/item/clothing/neck/petcollar = 3,

@@ -15,9 +15,12 @@
 /datum/component/storage/concrete/pockets/huge
 	max_w_class = WEIGHT_CLASS_NORMAL
 
+/datum/component/storage/concrete/pockets/massive
+	max_w_class = WEIGHT_CLASS_HUGE
+
 /datum/component/storage/concrete/pockets/small
 	max_items = 1
-	attack_hand_interact = FALSE
+	//attack_hand_interact = FALSE
 
 /datum/component/storage/concrete/pockets/small/collar
 	max_items = 1
@@ -34,6 +37,9 @@
 	/obj/item/reagent_containers/food/snacks/cookie,
 	/obj/item/reagent_containers/food/snacks/sugarcookie,
 	/obj/item/key/collar))
+
+/datum/component/storage/concrete/pockets/small/four
+	max_items = 4 // just like the name~
 
 /datum/component/storage/concrete/pockets/binocular
 	max_items = 1
@@ -86,7 +92,15 @@
 /datum/component/storage/concrete/pockets/tiny
 	max_items = 1
 	max_w_class = WEIGHT_CLASS_TINY
-	attack_hand_interact = FALSE
+	//attack_hand_interact = FALSE
+
+/datum/component/storage/concrete/pockets/tiny/magpouch
+	max_items = 4
+
+/datum/component/storage/concrete/pockets/tiny/magpouch/Initialize()
+	. = ..()
+	can_hold = GLOB.storage_holster_can_hold
+	cant_hold = GLOB.storage_magpouch_cant_hold
 
 /datum/component/storage/concrete/pockets/small/detective
 	attack_hand_interact = TRUE // so the detectives would discover pockets in their hats
@@ -242,6 +256,10 @@ GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/wattz/magneto,
 	/obj/item/gun/energy/laser/plasma/pistol/alien,
 	/obj/item/stock_parts/cell/ammo/ec,
+	)))
+
+GLOBAL_LIST_INIT(storage_magpouch_cant_hold, typecacheof(list(
+	/obj/item/gun
 	)))
 
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(

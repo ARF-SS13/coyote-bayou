@@ -51,7 +51,7 @@
 
 /datum/gear/suit/jacketleather
 	name = "Leather jacket"
-	path = /obj/item/clothing/suit/armor/f13/leather_jacket
+	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
 
@@ -99,25 +99,25 @@
 
 /datum/gear/suit/armorkit
 	name = "Armor Kit"
-	path = /obj/item/clothing/suit/armor/f13/kit
+	path = /obj/item/clothing/suit/armor/light/kit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 5
 
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
-	path = /obj/item/clothing/suit/armor/f13/punk
+	path = /obj/item/clothing/suit/armor/light/kit/punk
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 5
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
-	path = /obj/item/clothing/suit/f13/autumn
+	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 3
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
-	path = /obj/item/clothing/suit/armor/f13/ncrcfjacket
+	path = /obj/item/clothing/suit/armor/ncrcfjacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
@@ -129,7 +129,7 @@
 
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
-	path = /obj/item/clothing/suit/armor/f13/utilityvest
+	path = /obj/item/clothing/suit/armor/utilityvest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "NCR"
@@ -176,7 +176,7 @@
 
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
-	path = /obj/item/clothing/suit/armor/f13/town
+	path = /obj/item/clothing/suit/armor/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "Oasis"
@@ -195,7 +195,7 @@
 
 /datum/gear/suit/deputyvest
 	name = "OPD armor vest"
-	path = /obj/item/clothing/suit/armor/vest/oasis
+	path = /obj/item/clothing/suit/armor/medium/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "Oasis Police, Oasis Officials"
