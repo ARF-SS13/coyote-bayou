@@ -39,7 +39,7 @@
 	/obj/item/key/collar))
 
 /datum/component/storage/concrete/pockets/small/four
- max_items = 4 // just like the name~
+	max_items = 4 // just like the name~
 
 /datum/component/storage/concrete/pockets/binocular
 	max_items = 1
