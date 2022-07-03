@@ -35,7 +35,17 @@
 							/obj/item/stack/sheet/bone = 1)
 
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
-	emote_taunt = list("gurgles", "stares")
+	emote_taunt = list(
+		"gurgles", 
+		"stares",
+		"foams at the mouth",
+		"groans",
+		"growls",
+		"jibbers",
+		"howls madly",
+		"screeches",
+		"charges")
+
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
@@ -64,17 +74,17 @@
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr
 	name = "feral ghoul soldier"
-	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 160
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
 	name = "feral ghoul soldier"
-	desc = "A former NCR combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 180
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
-	desc = "A former NCR officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
+	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 250
 	speed = 3
 
@@ -235,6 +245,7 @@
 	attack_verb_simple = "shoots"
 	attack_sound = "punch"
 
+//Sunset mob of some sort?
 /mob/living/simple_animal/hostile/ghoul/wyomingghost
 	name = "ghost soldier"
 	desc = "A figure clad in armor that stands silent except for the slight wheezing coming from them, a dark orange and black liquid pumps through a clear tube into the gas mask. The armor they wear seems to be sealed to their skin."

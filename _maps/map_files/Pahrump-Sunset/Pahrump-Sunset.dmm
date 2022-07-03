@@ -33651,9 +33651,12 @@
 	},
 /area/f13/wasteland)
 "icR" = (
-/obj/item/clothing/head/crown/fancy,
 /obj/effect/decal/remains/human,
 /obj/item/twohanded/baseball/golfclub,
+/obj/structure/ladder/unbreakable{
+	id = "antnest";
+	height = 2
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "idk" = (
@@ -41520,6 +41523,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
+"mkE" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "junglehome";
+	name = "Damp Ladder"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "mkH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -65003,7 +65014,7 @@ aOk
 hkV
 nHY
 jMH
-aOk
+mkE
 cFK
 mAk
 aOk
