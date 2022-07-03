@@ -4,7 +4,7 @@
 
 /datum/crafting_recipe/armorkit
 	name = "Armor Kit"
-	result = /obj/item/clothing/suit/armor/f13/kit
+	result = /obj/item/clothing/suit/armor/light/kit
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/crafting/metalparts = 1)
@@ -15,8 +15,8 @@
 
 /datum/crafting_recipe/combat_jacket
 	name = "Combat Jacket"
-	result = /obj/item/clothing/suit/armor/f13/leather_jacket/combat
-	reqs = list(/obj/item/clothing/suit/armor/f13/leather_jacket = 1,
+	result = /obj/item/clothing/suit/armor/light/leather/leather_jacketmk2
+	reqs = list(/obj/item/clothing/suit/armor/light/leather/leather_jacket = 1,
 				/obj/item/stack/sheet/animalhide/brahmin = 1,
 				/obj/item/stack/sheet/animalhide/gecko = 1,
 				/obj/item/stack/sheet/leather = 1)
@@ -27,8 +27,8 @@
 
 /datum/crafting_recipe/combat_coat
 	name = "Combat Coat"
-	result = /obj/item/clothing/suit/armor/f13/leather_jacket/combat/coat
-	reqs = list(/obj/item/clothing/suit/armor/f13/leather_jacket/combat = 1,
+	result = /obj/item/clothing/suit/armor/light/leather/leathercoat
+	reqs = list(/obj/item/clothing/suit/armor/light/leather/leather_jacketmk2 = 1,
 				/obj/item/stack/sheet/animalhide/deathclaw  = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
@@ -59,7 +59,7 @@
 
 /datum/crafting_recipe/leatherarmor
 	name = "Leather Armor"
-	result = /obj/item/clothing/suit/armor/f13/leatherarmor
+	result = /obj/item/clothing/suit/armor/light/leather
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/weaponcrafting/string = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -69,8 +69,8 @@
 
 /datum/crafting_recipe/leatherarmor2
 	name = "Gecko Hide Armor"
-	result = /obj/item/clothing/suit/armor/f13/leatherarmor/reinforced
-	reqs = list(/obj/item/clothing/suit/armor/f13/leatherarmor = 1,
+	result = /obj/item/clothing/suit/armor/light/leather/leathermk2
+	reqs = list(/obj/item/clothing/suit/armor/light/leather = 1,
 				/obj/item/stack/sheet/animalhide/gecko = 3
 	)
 	tools = list(TOOL_WORKBENCH)
@@ -80,7 +80,7 @@
 
 /datum/crafting_recipe/leather_jacket
 	name = "Leather Jacket"
-	result = /obj/item/clothing/suit/armor/f13/leather_jacket
+	result = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	reqs = list(/obj/item/stack/sheet/animalhide/brahmin = 2,
 				/obj/item/weaponcrafting/string = 1)
 	tools = list(TOOL_WORKBENCH)
@@ -90,7 +90,7 @@
 
 /datum/crafting_recipe/metalarmor
 	name = "Metal Armor"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor
+	result = /obj/item/clothing/suit/armor/heavy/metal
 	reqs = list(/obj/item/stack/sheet/leather = 1,
 				/obj/item/weaponcrafting/string = 5,
 				/obj/item/stack/crafting/metalparts = 5)
@@ -101,8 +101,8 @@
 
 /datum/crafting_recipe/metalarmor/polish
 	name = "Polished Metal Armor"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1)
+	result = /obj/item/clothing/suit/armor/heavy/metal/polished
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 60
 	category = CAT_CLOTHING
@@ -110,8 +110,8 @@
 
 /datum/crafting_recipe/metalarmormk2
 	name = "Metal Armor, reinforced"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor/reinforced
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor = 1,
+	result = /obj/item/clothing/suit/armor/heavy/metal/reinforced
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/crafting/metalparts = 3)
 	tools = list(TOOL_WORKBENCH)
@@ -121,7 +121,7 @@
 
 datum/crafting_recipe/steelbib
 	name = "Steel Breastplate"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	result = /obj/item/clothing/suit/armor/medium/vest/breastplate
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/weaponcrafting/string = 1,
 				/obj/item/stack/crafting/goodparts = 1,
@@ -133,8 +133,8 @@ datum/crafting_recipe/steelbib
 
 datum/crafting_recipe/steelbib/heavy
 	name = "Heavy Steel Breastplate"
-	result = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib/oasis
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor/steelbib = 1,
+	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
+	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/prewar = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -166,8 +166,8 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/ncrsalvagedarmorconversion
 	name = "Salvaged NCR Power Armor"
-	result = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/ncr
-	reqs = list(/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b = 1,
+	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/ncr
+	reqs = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 30
 	category = CAT_CLOTHING
@@ -186,9 +186,9 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/boscombatarmor
 	name = "knight armor"
-	result = /obj/item/clothing/suit/armor/f13/combat/brotherhood
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat/mk2)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat = 1,
+	result = /obj/item/clothing/suit/armor/medium/combat/brotherhood
+	blacklist = list(/obj/item/clothing/suit/armor/medium/combat/mk2)
+	reqs = list(/obj/item/clothing/suit/armor/medium/combat = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 30
 	category = CAT_CLOTHING
@@ -208,9 +208,9 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/boscombatarmormk2
 	name = "reinforced knight armor"
-	result = /obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate/mk2
-	blacklist = list(/obj/item/clothing/suit/armor/f13/combat)
-	reqs = list(/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+	result = /obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate/mk2
+	blacklist = list(/obj/item/clothing/suit/armor/medium/combat)
+	reqs = list(/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
 				/obj/item/toy/crayon/spraycan)
 	time = 30
 	category = CAT_CLOTHING
@@ -230,7 +230,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Durathread Armour"
-	result = /obj/item/clothing/suit/armor/vest/durathread
+	result = /obj/item/clothing/suit/armor/light/leather/durathread
 	reqs = list(/obj/item/stack/sheet/durathread = 6,
 				/obj/item/stack/sheet/leather = 3)
 	time = 50
@@ -381,8 +381,8 @@ datum/crafting_recipe/steelbib/heavy
 /*CRAFT rework: removed for balance
 /datum/crafting_recipe/tesla_armor
 	name = "tesla armor"
-	result = /obj/item/clothing/suit/armor/laserproof
-	reqs = list(/obj/item/clothing/suit/armor/f13/metalarmor/reinforced = 1,
+	result = /obj/item/clothing/suit/armor/heavy/metal/polished
+	reqs = list(/obj/item/clothing/suit/armor/heavy/metal/reinforced = 1,
 				/obj/item/stack/sheet/mineral/titanium = 1,
 				/obj/item/stack/crafting/electronicparts = 4)
 	tools = list(TOOL_AWORKBENCH, /obj/item/blueprint/armor/tesla)
@@ -403,7 +403,7 @@ datum/crafting_recipe/steelbib/heavy
 *//*
 /datum/crafting_recipe/combat_armor
 	name = "combat armor"
-	result = /obj/item/clothing/suit/armor/f13/combat
+	result = /obj/item/clothing/suit/armor/medium/combat
 	reqs = list(/obj/item/stack/sheet/mineral/titanium = 5,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/durathread = 1,
@@ -428,9 +428,9 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/combat_armor
 	name = "Reflective C.Armor Plates"
-	result = /obj/item/clothing/suit/armor/f13/combat/laserproof
+	result = /obj/item/clothing/suit/armor/medium/combat/laserproof
 	reqs = list(/obj/item/stack/sheet/mineral/titanium = 5,
-				/obj/item/clothing/suit/armor/f13/combat = 1,
+				/obj/item/clothing/suit/armor/medium/combat = 1,
 				/obj/item/stack/crafting/goodparts = 2)
 	tools = list(TOOL_AWORKBENCH)
 	time = 60
@@ -521,7 +521,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/mantle
 	name = "Hide mantle"
-	result = /obj/item/clothing/suit/f13/mantle_liz
+	result = /obj/item/clothing/suit/armor/outfit/jacket/mantle
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/sheet/hay = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -650,7 +650,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/westendervest
 	name = "Bartender vest"
-	result = /obj/item/clothing/suit/f13/westender
+	result = /obj/item/clothing/suit/armor/outfit/vest/bartender
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
@@ -898,7 +898,7 @@ datum/crafting_recipe/steelbib/heavy
 /*
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Vest"
-	result = /obj/item/clothing/suit/armor/vest/durathread
+	result = /obj/item/clothing/suit/armor/light/leather/durathread
 	reqs = list( /obj/item/stack/sheet/durathread = 5,
 				/obj/item/stack/sheet/leather = 4)
 	time = 50
@@ -923,7 +923,7 @@ datum/crafting_recipe/steelbib/heavy
 //f13 additions
 /datum/crafting_recipe/metalarmor
 	name = "metal armor"
-	result = /obj/item/clothing/suit/armor/f13/bmetalarmor
+	result = /obj/item/clothing/suit/armor/bmetalarmor
 	reqs = list(/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/sheet/metal = 5)
@@ -933,7 +933,7 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/Imetalarmor
 	name = "improved metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
+	result = /obj/item/clothing/suit/armor/ibmetalarmor
 	reqs = list(/obj/item/stack/sheet/leather = 1,
 				/obj/item/stack/cable_coil = 5,
 				/obj/item/stack/sheet/metal = 4,
@@ -944,8 +944,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/IImetalarmor
 	name = "upgrading metal armor"
-	result = /obj/item/clothing/suit/armor/f13/ibmetalarmor
-	reqs = list(/obj/item/clothing/suit/armor/f13/bmetalarmor = 1,
+	result = /obj/item/clothing/suit/armor/ibmetalarmor
+	reqs = list(/obj/item/clothing/suit/armor/bmetalarmor = 1,
 				/obj/item/stack/cable_coil = 1,
 				/obj/item/stack/sheet/plasteel = 2)
 	tools = list(TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
@@ -955,7 +955,7 @@ datum/crafting_recipe/steelbib/heavy
 //Tribal armors
 /datum/crafting_recipe/tribalgeckoarmor
 	name = "Gecko Armor"
-	result = /obj/item/clothing/suit/armor/f13/tribal
+	result = /obj/item/clothing/suit/armor/light/tribal
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 2,
 				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/hay = 3)
@@ -977,8 +977,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/supafly_reinforced
 	name = "reinforced supafly armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/supafly
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/supafly = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/supafly
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/supafly = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -997,8 +997,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/yankee_reinforced
 	name = "reinforced yankee armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/yankee
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/yankee = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/yankee
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/yankee = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1017,8 +1017,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/blaster_reinforced
 	name = "reinforced blaster armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/blastmaster
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/blastmaster = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/blastmaster
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/blastmaster = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1037,8 +1037,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/sadist_reinforced
 	name = "reinforced sadist armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/sadist
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/sadist = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/sadist
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/sadist = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1057,8 +1057,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/badlands_reinforced
 	name = "reinforced badlands armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/badlands
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/badlands = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/badlands
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/badlands = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1077,8 +1077,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/painspike_reinforced
 	name = "reinforced painspike armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/painspike
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/painspike = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/painspike
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/painspike = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1087,8 +1087,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/iconoclast_reinforced
 	name = "reinforced iconoclast armor"
-	result = /obj/item/clothing/suit/armor/f13/raider/r/iconoclast
-	reqs = list(/obj/item/clothing/suit/armor/f13/raider/iconoclast = 1,
+	result = /obj/item/clothing/suit/armor/medium/raider/r/iconoclast
+	reqs = list(/obj/item/clothing/suit/armor/light/raider/iconoclast = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1097,8 +1097,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/ncrexile_reinforced
 	name = "reinforced NCR deserter armor"
-	result = /obj/item/clothing/suit/armor/f13/exile/r/ncr
-	reqs = list(/obj/item/clothing/suit/armor/f13/exile/ncrexile = 1,
+	result = /obj/item/clothing/suit/armor/exile/r/ncr
+	reqs = list(/obj/item/clothing/suit/armor/exile/ncrexile = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1107,8 +1107,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/legion_reinforced
 	name = "reinforced punished Legion armor"
-	result = /obj/item/clothing/suit/armor/f13/exile/r/legion
-	reqs = list(/obj/item/clothing/suit/armor/f13/exile/legexile = 1,
+	result = /obj/item/clothing/suit/armor/exile/r/legion
+	reqs = list(/obj/item/clothing/suit/armor/exile/legexile = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1117,8 +1117,8 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_GENCLOTHES
 /datum/crafting_recipe/bos_reinforced
 	name = "reinforced BoS exile armor"
-	result = /obj/item/clothing/suit/armor/f13/exile/r/bos
-	reqs = list(/obj/item/clothing/suit/armor/f13/exile/bosexile = 1,
+	result = /obj/item/clothing/suit/armor/exile/r/bos
+	reqs = list(/obj/item/clothing/suit/armor/medium/combat/brotherhood/exile = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)

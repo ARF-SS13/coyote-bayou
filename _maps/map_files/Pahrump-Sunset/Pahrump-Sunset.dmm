@@ -293,12 +293,12 @@
 /area/f13/wasteland)
 "abh" = (
 /obj/effect/decal/remains/human,
-/obj/item/clothing/suit/armor/f13/leatherarmor,
+/obj/item/clothing/suit/armor/light/leather,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "abj" = (
 /obj/effect/decal/remains/human,
-/obj/item/clothing/suit/armor/f13/raider/yankee,
+/obj/item/clothing/suit/armor/light/raider/yankee,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "abk" = (
@@ -490,7 +490,7 @@
 "abU" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/effect/decal/remains/human,
-/obj/item/clothing/suit/armor/f13/tribal,
+/obj/item/clothing/suit/armor/light/tribal,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "abV" = (
@@ -1149,9 +1149,9 @@
 "aej" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/obj/item/clothing/suit/f13/sexymaid,
+/obj/item/clothing/suit/armor/outfit/overalls/sexymaid,
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
-/obj/item/clothing/suit/armor/f13/brahmin_leather_duster,
+/obj/item/clothing/suit/armor/light/duster/brahmin,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -3238,7 +3238,7 @@
 /area/f13/wasteland)
 "all" = (
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
-/obj/item/clothing/suit/armor/f13/brahmin_leather_duster,
+/obj/item/clothing/suit/armor/light/duster/brahmin,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "alm" = (
@@ -3370,7 +3370,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "alN" = (
-/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "alO" = (
@@ -3521,7 +3521,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "amq" = (
-/obj/item/clothing/suit/armor/f13/kit,
+/obj/item/clothing/suit/armor/kit,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "amr" = (
@@ -3875,7 +3875,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "anG" = (
-/obj/item/clothing/suit/armor/f13/leatherarmor,
+/obj/item/clothing/suit/armor/light/leather,
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -9019,7 +9019,7 @@
 /area/f13/village)
 "aEB" = (
 /obj/structure/table/wood,
-/obj/item/clothing/suit/armor/f13/kit,
+/obj/item/clothing/suit/armor/kit,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -14049,7 +14049,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aUN" = (
-/obj/item/clothing/suit/armor/f13/combatrusted,
+/obj/item/clothing/suit/armor/medium/combat/rusted,
 /obj/item/clothing/head/helmet/f13/hoodedmask,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -14522,7 +14522,7 @@
 	},
 /area/f13/wasteland)
 "aWD" = (
-/obj/item/clothing/suit/armor/f13/brahmin_leather_duster,
+/obj/item/clothing/suit/armor/light/duster/brahmin,
 /obj/item/clothing/head/helmet/f13/brahmincowboyhat,
 /obj/structure/reagent_dispensers/barrel/explosive,
 /turf/open/indestructible/ground/outside/dirt,
@@ -19385,7 +19385,7 @@
 /obj/item/clothing/under/f13/ncrcf{
 	name = "NCR Correctional Facility Uniform"
 	},
-/obj/item/clothing/suit/armor/f13/ncrcfjacket,
+/obj/item/clothing/suit/armor/ncrcfjacket,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /turf/open/floor/f13{
@@ -21964,7 +21964,7 @@
 /area/f13/village)
 "cjY" = (
 /obj/effect/decal/remains/human,
-/obj/item/clothing/suit/armor/f13/slavelabor,
+/obj/item/clothing/suit/armor/slavelabor,
 /obj/item/clothing/shoes/f13/rag,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -22767,7 +22767,7 @@
 /obj/item/clothing/suit/jacket/miljacket,
 /obj/item/clothing/suit/jacket/puffer,
 /obj/item/clothing/suit/jacket/puffer/vest,
-/obj/item/clothing/suit/overalls,
+/obj/item/clothing/suit/armor/outfit/overalls/farmer,
 /obj/item/clothing/suit/toggle/lawyer/black,
 /obj/item/clothing/suit/vickyblack,
 /obj/item/clothing/suit/vickyred,
@@ -23351,7 +23351,7 @@
 /area/f13/building)
 "cwd" = (
 /obj/item/clothing/head/helmet/f13/raidermetal,
-/obj/item/clothing/suit/armor/f13/raider/raidermetal,
+/obj/item/clothing/suit/armor/medium/raider/raidermetal,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superlow,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -26364,7 +26364,7 @@
 /obj/item/clothing/under/f13/ncrcf{
 	name = "NCR Correctional Facility Uniform"
 	},
-/obj/item/clothing/suit/armor/f13/ncrcfjacket,
+/obj/item/clothing/suit/armor/ncrcfjacket,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
@@ -29878,7 +29878,7 @@
 /area/f13/village)
 "fWA" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/f13/autumn,
+/obj/item/clothing/suit/armor/light/duster/autumn,
 /obj/item/clothing/suit/toggle/lawyer/black,
 /obj/machinery/light{
 	pixel_x = -16
@@ -35336,7 +35336,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/clothing/suit/f13/vest,
+/obj/item/clothing/suit/armor/outfit/vest,
 /obj/machinery/light{
 	dir = 1;
 	pixel_x = 16
@@ -37322,7 +37322,7 @@
 	},
 /area/f13/wasteland)
 "kdw" = (
-/obj/item/clothing/suit/armor/f13/rustedcowboy,
+/obj/item/clothing/suit/armor/light/duster/rustedcowboy,
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -41414,7 +41414,7 @@
 /area/f13/building)
 "mhU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/armor/f13/power_armor/t51b,
+/obj/item/clothing/suit/armor/power_armor/t51b,
 /obj/effect/decal/remains/human,
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/waste{
@@ -42417,7 +42417,7 @@
 	},
 /area/f13/building/museum)
 "mGQ" = (
-/obj/item/clothing/suit/armor/f13/slavelabor,
+/obj/item/clothing/suit/armor/slavelabor,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "mGS" = (
@@ -48433,7 +48433,7 @@
 /area/f13/wasteland)
 "pTo" = (
 /obj/item/clothing/head/helmet/f13/rustedcowboyhat,
-/obj/item/clothing/suit/armor/f13/rustedcowboy,
+/obj/item/clothing/suit/armor/light/duster/rustedcowboy,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "pTH" = (
@@ -50623,7 +50623,7 @@
 	icon_state = "mattress2";
 	pixel_y = 7
 	},
-/obj/item/clothing/suit/armor/f13/slavelabor,
+/obj/item/clothing/suit/armor/slavelabor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -51501,7 +51501,7 @@
 "rKZ" = (
 /obj/structure/displaycase,
 /obj/item/clothing/head/helmet/knight/f13/metal,
-/obj/item/clothing/suit/armor/f13/raider/raidermetal,
+/obj/item/clothing/suit/armor/medium/raider/raidermetal,
 /obj/item/twohanded/fireaxe/boneaxe,
 /turf/open/floor/carpet,
 /area/f13/building/mall)
@@ -56634,7 +56634,7 @@
 	},
 /area/f13/building/massfusion)
 "uAJ" = (
-/obj/item/clothing/suit/armor/f13/slavelabor,
+/obj/item/clothing/suit/armor/slavelabor,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 8;
 	icon_state = "dirt"

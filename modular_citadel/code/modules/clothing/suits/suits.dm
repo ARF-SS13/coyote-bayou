@@ -5,7 +5,7 @@
 *//////////////////////////////////////////////////////////////////////////////////
 
 
-/obj/item/clothing/suit/armor/hos/trenchcoat/cloak
+/obj/item/clothing/suit/armor/medium/duster/trenchcoat/cloak
 	name = "armored trenchcloak"
 	desc = "A trenchcoat enchanced with a special lightweight kevlar. This one appears to be designed to be draped over one's shoulders rather than worn normally.."
 	mob_overlay_icon = 'modular_citadel/icons/mob/citadel/suit.dmi'
