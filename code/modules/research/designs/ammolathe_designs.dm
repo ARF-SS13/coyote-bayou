@@ -213,7 +213,7 @@
 	category = list("initial", "Basic Magazines")
 
 /datum/design/ammolathe/greasegunmag
-	name = "empty grease submachine gun magazine (.45)"
+	name = "empty grease submachine gun magazine (9mm)"
 	id = "greasegunmag"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/greasegun/empty
