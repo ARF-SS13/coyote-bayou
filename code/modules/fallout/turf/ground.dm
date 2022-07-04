@@ -350,6 +350,21 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
+/turf/open/indestructible/ground/outside/water/running
+	gender = PLURAL
+	name = "moving river water"
+	desc = "Shallow river water."
+	icon = 'icons/fallout/turfs/ground.dmi'
+	icon_state = "riverwateruhh"
+	slowdown = 2
+	depth = 1
+	bullet_sizzle = TRUE
+	bullet_bounce_sound = null //needs a splashing sound one day.
+	footstep = FOOTSTEP_WATER
+	barefootstep = FOOTSTEP_WATER
+	clawfootstep = FOOTSTEP_WATER
+	heavyfootstep = FOOTSTEP_WATER
+
 /turf/open/indestructible/ground/outside/water/Initialize()
 	. = ..()
 	update_icon()
