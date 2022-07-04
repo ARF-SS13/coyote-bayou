@@ -307,7 +307,7 @@
 	mob_trait = TRAIT_TRAPPER
 	gain_text = "<span class='notice'>You learn the secrets of butchering!</span>"
 	lose_text = "<span class='danger'>You forget how to slaughter animals.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/bigleagues
 	name = "Big Leagues"
@@ -316,7 +316,7 @@
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = "<span class='notice'>You feel like swinging for the fences!</span>"
 	lose_text = "<span class='danger'>You feel like bunting.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
@@ -325,7 +325,7 @@
 	mob_trait = TRAIT_CHEMWHIZ
 	gain_text = "<span class='notice'>The mysteries of chemistry are revealed to you.</span>"
 	lose_text = "<span class='danger'>You forget how the periodic table works.</span>"
-	locked = TRUE
+	locked =  FALSE
 
 /datum/quirk/pa_wear
 	name = "PA Wear"
@@ -334,7 +334,7 @@
 	mob_trait = TRAIT_PA_WEAR
 	gain_text = "<span class='notice'>You realize how to use Power Armor.</span>"
 	lose_text = "<span class='danger'>You forget how Power Armor works.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/hard_yards
 	name = "Hard Yards"
@@ -343,7 +343,7 @@
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = "<span class='notice'>Rain or shine, nothing slows you down.</span>"
 	lose_text = "<span class='danger'>You walk with a less sure gait, the ground seeming less firm somehow.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/lifegiver
 	name = "Lifegiver"
@@ -352,7 +352,7 @@
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = "<span class='notice'>You feel more healthy than usual.</span>"
 	lose_text = "<span class='danger'>You feel less healthy than usual.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
@@ -366,7 +366,7 @@
 	mob_trait = TRAIT_IRONFIST
 	gain_text = "<span class='notice'>Your fists feel furious!</span>"
 	lose_text = "<span class='danger'>Your fists feel calm again.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/iron_fist/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
@@ -388,7 +388,7 @@
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = "<span class='notice'>You feel yourself discovering the basics of the human body.</span>"
 	lose_text = "<span class='danger'>You forget how to perform even the simplest surgery.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/surgerymid
 	name = "Intermediate Surgery"
@@ -397,7 +397,7 @@
 	mob_trait = TRAIT_SURGERY_MID
 	gain_text = "<span class='notice'>You feel yourself discovering most of the details of the human body.</span>"
 	lose_text = "<span class='danger'>You forget how to perform surgery.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/surgeryhigh
 	name = "Complex Surgery"
@@ -406,7 +406,7 @@
 	mob_trait = TRAIT_SURGERY_HIGH
 	gain_text = "<span class='notice'>You feel yourself discovering the most intricate secrets of the human body.</span>"
 	lose_text = "<span class='danger'>You forget your advanced surgical knowledge.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/explosive_crafting
 	name = "Explosives Crafting"
@@ -415,7 +415,7 @@
 	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
 	gain_text = "<span class='notice'>You feel like you can make a bomb out of anything.</span>"
 	lose_text = "<span class='danger'You feel okay with the advancement of technology.</span>"
-	locked = TRUE
+	locked = FALSE
 
 /datum/quirk/advanced_explosive_crafting
 	name = "Advanced Explosive Crafting"
