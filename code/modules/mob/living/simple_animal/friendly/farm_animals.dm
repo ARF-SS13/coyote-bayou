@@ -144,8 +144,8 @@
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 50
-	maxHealth = 50
+	health = 200
+	maxHealth = 200
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
