@@ -1,3 +1,5 @@
+#define BROOM_SWEEP_MAX 40
+
 /obj/item/broom
 	name = "broom"
 	desc = "This is my BROOMSTICK! It can be used manually or braced with two hands to sweep items as you move. It has a telescopic handle for compact storage."
@@ -12,6 +14,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
 	resistance_flags = FLAMMABLE
+	var/max_things_to_sweep = BROOM_SWEEP_MAX
 
 /obj/item/broom/Initialize()
 	. = ..()
@@ -44,21 +47,21 @@
 	if(!ismob(source) || !isturf(newLoc) || (get_dist(source, newLoc) > 1))
 		return
 	var/turf/target = newLoc
-	var/atom/movable/AM
+	//var/atom/movable/AM
 	var/sweep_dir = get_dir(source, target)
 	if(!sweep_dir)
 		return
-	for(var/i in target.contents)
+/* 	for(var/i in target.contents)
 		AM = i
 		if(AM.density)		// eh good enough heuristic check
-			return
-	var/i = 0
+			return */
+	var/things_swept = 0
 	for(var/obj/item/garbage in target.contents)
 		if(!garbage.anchored)
 			step(garbage, sweep_dir)
-		if(++i > 20)
+		if(++things_swept > max_things_to_sweep)
 			break
-	if(i)
+	if(things_swept)
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 30, TRUE, -1)
 
 /obj/item/broom/proc/janicart_insert(mob/user, obj/structure/janitorialcart/J) //bless you whoever fixes this copypasta
