@@ -74,13 +74,16 @@
 	if(istype(TR))
 		switch(get_pin_data(IC_INPUT, 2))
 			if(0)
-				var/list/harvest_output = TR.attack_hand()
-				for(var/i in 1 to length(harvest_output))
-					harvest_output[i] = WEAKREF(harvest_output[i])
+				if(TR.harvest)
+					var/list/harvest_output = TR.myseed.harvest()
+					for(var/i in 1 to length(harvest_output))
+						harvest_output[i] = WEAKREF(harvest_output[i])
 
-				if(length(harvest_output))
-					set_pin_data(IC_OUTPUT, 1, harvest_output)
-					push_data()
+					if(length(harvest_output))
+						set_pin_data(IC_OUTPUT, 1, harvest_output)
+						push_data()
+				else
+					set_pin_data(IC_OUTPUT, 1, list())
 			if(1)
 				TR.weedlevel = 0
 				TR.update_icon()
