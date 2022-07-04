@@ -11,8 +11,8 @@
 #define BEE_POLLINATE_POTENCY_CHANCE	50
 
 /mob/living/simple_animal/hostile/poison/bees
-	name = "bee"
-	desc = "Buzzy buzzy bee, stingy sti- Ouch!"
+	name = "radbee"
+	desc = "Buzzy buzzy radbee, stingy sti- oh god I'm vomiting blood!"
 	icon_state = ""
 	icon_living = ""
 	icon = 'icons/mob/bees.dmi'
@@ -212,8 +212,8 @@
 	assign_reagent(GLOB.chemical_reagents_list[R])
 
 /mob/living/simple_animal/hostile/poison/bees/queen
-	name = "queen bee"
-	desc = "She's the queen of bees, BZZ BZZ!"
+	name = "queen radbee"
+	desc = "She's the queen of radbees, BZZ BZZ!"
 	icon_base = "queen"
 	isqueen = TRUE
 
@@ -246,8 +246,8 @@
 
 
 /obj/item/queen_bee
-	name = "queen bee"
-	desc = "She's the queen of bees, BZZ BZZ!"
+	name = "queen radbee"
+	desc = "She's the queen of radbees, BZZ BZZ!"
 	icon_state = "queen_item"
 	item_state = ""
 	icon = 'icons/mob/bees.dmi'
