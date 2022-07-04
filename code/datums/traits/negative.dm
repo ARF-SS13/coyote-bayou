@@ -302,7 +302,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
-	var/nearby_people = 0
+	var/nearby_people = 2
 	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
 		if(H.client)
 			nearby_people++
