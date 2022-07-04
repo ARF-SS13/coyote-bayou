@@ -25,6 +25,7 @@ export const MESSAGE_TYPE_SYSTEM = 'system';
 export const MESSAGE_TYPE_LOCALCHAT = 'localchat';
 export const MESSAGE_TYPE_RADIO = 'radio';
 export const MESSAGE_TYPE_INFO = 'info';
+export const MESSAGE_TYPE_SUBTLE = 'subtle';
 export const MESSAGE_TYPE_WARNING = 'warning';
 export const MESSAGE_TYPE_DEADCHAT = 'deadchat';
 export const MESSAGE_TYPE_OOC = 'ooc';
@@ -65,6 +66,12 @@ export const MESSAGE_TYPES = [
     name: 'Info',
     description: 'Non-urgent messages from the game and items',
     selector: '.notice:not(.pm), .adminnotice, .info, .sinister, .cult, .infoplain, .announce, .hear, .smallnotice, .holoparasite',
+  },
+  {
+    type: MESSAGE_TYPE_SUBTLE,
+    name: 'Subtle',
+    description: 'Discrete things people want to keep on the down-low',
+    selector: '.subtle',
   },
   {
     type: MESSAGE_TYPE_WARNING,

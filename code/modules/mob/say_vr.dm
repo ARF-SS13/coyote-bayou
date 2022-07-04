@@ -31,6 +31,12 @@ proc/get_top_level_mob(mob/S)
 	key_third_person = "subtle"
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
+	var/subtler = FALSE
+
+/datum/emote/living/subtle/subtler
+	key = "subtler"
+	key_third_person = "subtler"
+	subtler = TRUE
 
 /datum/emote/living/subtle/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
@@ -46,7 +52,7 @@ proc/get_top_level_mob(mob/S)
 		to_chat(user, "You cannot send IC messages (muted).")
 		return FALSE
 	else if(!params)
-		var/subtle_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "Subtle", null, MAX_MESSAGE_LEN)
+		var/subtle_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "[subtler ? "Subtler" : "Subtle"]", null, MAX_MESSAGE_LEN)
 		if(subtle_emote && !check_invalid(user, subtle_emote))
 			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
 			switch(type)
@@ -69,19 +75,53 @@ proc/get_top_level_mob(mob/S)
 		return FALSE
 
 	user.log_message(message, LOG_EMOTE)
-	message = "<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>"
-
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
-			continue
-		var/T = get_turf(src)
-		if(M.stat == DEAD && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
-			M.show_message(message)
+	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
 	if(emote_type == EMOTE_AUDIBLE)
 		user.audible_message(message=message,hearing_distance=1)
 	else
 		user.visible_message(message=message,self_message=message,vision_distance=1)
+
+	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight,
+	for(var/mob/M in GLOB.dead_mob_list)
+		if(!M.client || isnewplayer(M))
+			continue
+		if(M.stat != DEAD)
+			continue
+		if(!(M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
+			continue
+		if(subtler)
+			if(M.client && !check_rights_for(M.client, R_ADMIN))
+				continue
+		if(M in viewers(1, get_turf(src)))
+			continue
+		M.show_message(message)
+
+
+///////////////// VERB CODE
+/mob/living/proc/subtle_keybind()
+	var/message = input(src, "", "subtle") as text|null
+	if(!length(message))
+		return
+	return subtle(message)
+
+/mob/living/verb/subtle()
+	set name = "Subtle"
+	set category = "IC"
+	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		return
+	usr.emote("subtle")
+
+///////////////// VERB CODE 2
+/mob/living/verb/subtler()
+	set name = "Subtler Anti-Ghost"
+	set category = "IC"
+	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		return
+	usr.emote("subtler")
+
 
 /mob/proc/print_special()
 	var/msg = "S:[special_s],P:[special_p],E:[special_e],C:[special_c],I:[special_i],A:[special_a],L:[special_l]<br>"
@@ -120,7 +160,7 @@ proc/get_top_level_mob(mob/S)
 
 ///////////////// SUBTLE 2: NO GHOST BOOGALOO
 
-/datum/emote/living/subtler
+/* /datum/emote/living/subtler
 	key = "subtler"
 	key_third_person = "subtler"
 	message = null
@@ -170,27 +210,4 @@ proc/get_top_level_mob(mob/S)
 		user.audible_message(message=message,hearing_distance=1, ignored_mobs = GLOB.dead_mob_list)
 	else
 		user.visible_message(message=message,self_message=message,vision_distance=1, ignored_mobs = GLOB.dead_mob_list)
-
-///////////////// VERB CODE
-/mob/living/proc/subtle_keybind()
-	var/message = input(src, "", "subtle") as text|null
-	if(!length(message))
-		return
-	return subtle(message)
-
-/mob/living/verb/subtle()
-	set name = "Subtle"
-	set category = "IC"
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
-		return
-	usr.emote("subtle")
-
-///////////////// VERB CODE 2
-/mob/living/verb/subtler()
-	set name = "Subtler Anti-Ghost"
-	set category = "IC"
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
-		return
-	usr.emote("subtler")
+ */
