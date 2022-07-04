@@ -2,7 +2,7 @@
 	name = "crafting part"
 	icon = 'icons/fallout/objects/items.dmi'
 	amount = 1
-	max_amount = 5000
+	max_amount = 50
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_TINY
@@ -79,7 +79,7 @@
 	desc = "A pouch containing some scoops of blackpowder and empty shell casings."
 	icon_state = "sheet-powder"
 	singular_name = "bullet remnant"
-	max_amount = 240
+	max_amount = 2400
 	full_w_class = WEIGHT_CLASS_SMALL
 	merge_type = /obj/item/stack/crafting/powder
 
