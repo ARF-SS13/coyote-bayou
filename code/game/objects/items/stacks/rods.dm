@@ -29,7 +29,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	throw_speed = 3
 	throw_range = 7
 	custom_materials = list(/datum/material/iron=1000)
-	max_amount = 5000
+	max_amount = 50
 	attack_verb = list("hit", "bludgeoned", "whacked")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	embedding = list()
@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=1000, /datum/material/plasma=500, /datum/material/titanium=2000)
-	max_amount = 5000
+	max_amount = 50
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	merge_type = /obj/item/stack/rods/lava
 
