@@ -83,46 +83,27 @@
 		return ..()
 	if(istype(W,/obj/item/salvage))
 		var/obj/item/salvage/S = W
-		if(do_after(user,1,target = src))
-			if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
-				var/obj/I = pick(S.Loot)
-				new I (src.loc)
-			var/obj/I = pick(S.Loot)
-			new I (src.loc)
-			if(prob(50))
-				var/obj/J = pick(S.Loot)
-				new J (src.loc)
-				if(prob(30))
-					var/obj/K = pick(S.Loot)
-					new K (src.loc)
-			stoplag(1)
-			qdel(W)
+		S.make_loot(user, get_turf(src))
 
 	if(istype(W,/obj/item/storage))
 		var/obj/item/storage/baggy = W
-		var/obj/item/salvage/checkitem
-		for(var/thingy in baggy.contents)
-			if(!istype(thingy, /obj/item/salvage))//how did we get here
-				break
-			checkitem = thingy
-			if(!user.transferItemToLoc(checkitem, drop_location()))
-				break
-			if(do_after(user,5,target = src))
-				if(HAS_TRAIT(user, TRAIT_TECHNOPHREAK))
-					var/obj/I = pick(checkitem.Loot)
-					new I (src.loc)
-				var/obj/I = pick(checkitem.Loot)
-				new I (src.loc)
-				if(prob(50))
-					var/obj/J = pick(checkitem.Loot)
-					new J (src.loc)
-				if(prob(25))
-					var/obj/K = pick(checkitem.Loot)
-					new K (src.loc)
-				stoplag(1)
-				qdel(checkitem)
-	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		if(!baggy.in_use)
+			baggy.in_use = TRUE
+			for(var/obj/item/salvage/salvage_thingy in baggy.contents)
+				if(!in_range(src, user))
+					baggy.in_use = FALSE
+					break
+				if(!istype(salvage_thingy, /obj/item/salvage))//how did we get here
+					continue
+				if(!user.transferItemToLoc(salvage_thingy, drop_location()))
+					baggy.in_use = FALSE
+					break
+				if(do_after(user,5,target = src))
+					salvage_thingy.make_loot(user, get_turf(src))
+				else
+					break
+					baggy.in_use = FALSE
+			baggy.in_use = FALSE
 
 /obj/machinery/workbench/advanced
 	name = "advanced workbench"
