@@ -16,3 +16,4 @@
 
 /obj/landmark/vertibird_enter/New()
 	vertibirdEnterZone = locate(src.x, src.y, src.z)
+	
