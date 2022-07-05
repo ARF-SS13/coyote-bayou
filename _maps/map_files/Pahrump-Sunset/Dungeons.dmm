@@ -677,6 +677,14 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
+"aDR" = (
+/obj/landmark/vertibird_enter{
+	id = "verti1star"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "aEK" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/head/f13/bandit,
@@ -1070,6 +1078,19 @@
 /area/f13/vault)
 "aWS" = (
 /obj/effect/turf_decal/box/white,
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = -8
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "aWX" = (
@@ -7487,10 +7508,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/offices1st)
-"gtR" = (
-/obj/structure/window/reinforced/fulltile,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/cave)
 "gum" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -16836,6 +16853,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"oKm" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/cave)
 "oKY" = (
 /obj/structure/table/wood,
 /obj/item/trash/plate,
@@ -26883,14 +26904,6 @@
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
-"xqy" = (
-/obj/landmark/vertibird_enter{
-	id = "verti1star"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/building)
 "xqG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -56885,9 +56898,9 @@ shC
 shC
 shC
 shC
-gtR
-gtR
-gtR
+oKm
+oKm
+oKm
 shC
 shC
 shC
@@ -58172,7 +58185,7 @@ shC
 cLG
 vOm
 dZG
-xqy
+aDR
 qWA
 shC
 shC
