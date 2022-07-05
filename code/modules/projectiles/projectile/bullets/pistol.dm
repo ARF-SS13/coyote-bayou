@@ -1,192 +1,129 @@
-//In this document: Pistol calibre cartridges values for damage and penetration.
-
-//////////////////////
-// AMMUNITION TYPES //
-//////////////////////
-/*
-FMJ (full metal jacket)		=	Baseline
-+P/+P+ = used by simplemobs
-SHOCK = low-severity emp, -damage base, bonus burn damage (5-10)
-Incin = -damage, sets target on fire
-Acid = Heavy -damage, coats target in small amount of acid (1-5u)
-Uranium = Irradiates, high AP, lower damage - unused
-Micro-Shrapnel = Wound bonus, embed bonus, high falloff for both
-Contaminated = -damage, spawns a gas cloud that heavily reduces healing efficiency
-Improvised = -1 to -4 damage
-Civilian round				=	-10% damage. AP reduced by 50%
-*/
-
-/*
-Ammo groupings for specialty:
-5mm/22lr: Shock
-Small Pistol calibers (38 357 9mm): Acid/Incin
-Large Pistol Calibers (44 45 10mm): Incin
-Very Large pistol (45-70): Knockback, Acid
-autorifle calibers (5.56 7.62):
-Micro-Shrapnel (wound/embed)
-heavy rifle calibers (12.7, 14mm, 7.62):
-Uranium, Contaminated
-*/
-
-// Explanation: Two major ammo stats, AP and Damage. Bullets placed in classes. Light rounds for example balanced with each other, one more AP, one more Damage.
-// Balance between classes mostly done on the gun end, bigger rounds typically fire slower and have more recoil. They are not supposed to be totally equal either.
-
 ////////////////////
 // .22 LONG RIFLE //
 ////////////////////
-// No match, no improvised, just bullet
+
+/* * * * * * * *
+ * Light Light Pistol Bullet
+ * Surplus only
+ * Shock
+ * * * * * * * */
+
+#define BULLET_22LR_DAMAGE_MULT 0.75
+#define BULLET_22LR_STAMINA_MULT 0.75
+#define BULLET_22LR_WOUND_MULT 0.25 // Any kind of armor's gonna block it
+#define BULLET_22LR_NAKED_WOUND_MULT 1.5 // Skin though? different story
+#define BULLET_22LR_SPEED_MULT 2 // Speedy round
 
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
-	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
-	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_22LR_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_22LR_STAMINA_MULT
 	spread = BULLET_SPREAD_SURPLUS
 
-	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_22LR_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_22LR_NAKED_WOUND_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_22LR_SPEED_MULT
 
 /obj/item/projectile/bullet/c22/rubber
 	name = ".22lr rubber bullet"
-	stamina = RUBBER_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
-	damage = RUBBER_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT * BULLET_22LR_DAMAGE_MULT
+	stamina = RUBBERY_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_22LR_STAMINA_MULT
 	spread = BULLET_SPREAD_SURPLUS
 
-	wound_bonus = RUBBER_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = RUBBER_WOUND_PISTOL_LIGHT * BULLET_NAKED_RUBBER_WOUND_MULT
+	wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_22LR_WOUND_MULT
+	bare_wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_NAKED_RUBBERY_WOUND_MULT * BULLET_22LR_NAKED_WOUND_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_22LR_SPEED_MULT
 	sharpness = SHARP_NONE
 
 // EMP, also weaker rubber
 /obj/item/projectile/bullet/c22/shock
 	name = ".22lr shock bullet"
-	stamina = RUBBER_STAMINA_PISTOL_LIGHT * 0.5
-	damage = RUBBER_DAMAGE_PISTOL_LIGHT * 0.5
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT * BULLET_DAMAGE_SHOCK * BULLET_22LR_DAMAGE_MULT
+	stamina = RUBBERY_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_SHOCK * BULLET_22LR_STAMINA_MULT
 	spread = BULLET_SPREAD_SURPLUS
 	damage_type = BURN // still checks bullet resist
 
-	wound_bonus = 0
-	bare_wound_bonus = 0
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_SHOCK * BULLET_22LR_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_NAKED_WOUND_SHOCK * BULLET_22LR_NAKED_WOUND_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_22LR_SPEED_MULT
 	sharpness = SHARP_NONE
 
 /obj/item/projectile/bullet/c22/shock/on_hit(atom/target, blocked = FALSE)
 	..()
 	target.emp_act(15)//5 severity is very, very low
 
-/////////////////
-// .38 SPECIAL //
-/////////////////
-
-/obj/item/projectile/bullet/c38
-	name = ".38 bullet"
-	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
-	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
-	spread = BULLET_SPREAD_SURPLUS
-
-	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
-
-/obj/item/projectile/bullet/c38/rubber
-	name = ".38 rubber bullet"
-	stamina = RUBBER_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
-	damage = RUBBER_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
-	spread = BULLET_SPREAD_SURPLUS
-
-	wound_bonus = RUBBER_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = RUBBER_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
-	sharpness = SHARP_NONE
-
-/obj/item/projectile/bullet/c38/improv
-	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
-	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
-	spread = BULLET_SPREAD_SURPLUS
-
-	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
-	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
-
-/obj/item/projectile/bullet/c38/acid
-	name = ".38 acid-tipped bullet"
-	stamina = RUBBER_STAMINA_PISTOL_LIGHT * 0.5
-	damage = RUBBER_DAMAGE_PISTOL_LIGHT * 0.5
-	spread = BULLET_SPREAD_SURPLUS
-	damage_type = BURN // still checks bullet resist
-
-	wound_bonus = 0
-	bare_wound_bonus = 0
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
-	
-	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
-	sharpness = SHARP_NONE
-	var/acid_type = /datum/reagent/toxin/acid/fluacid
-
-/obj/item/projectile/bullet/c38/acid/Initialize()
-	. = ..()
-	create_reagents(5, NO_REACT, NO_REAGENTS_VALUE)
-	reagents.add_reagent(acid_type, 5)
-
-/obj/item/projectile/bullet/c38/acid/on_hit(atom/target, blocked = FALSE)
-	..()
-	if(isliving(target))
-		var/mob/living/M = target
-		reagents.reaction(M, TOUCH)
-		reagents.trans_to(M, reagents.total_volume)
-
-
-/obj/item/projectile/bullet/c38/incendiary
-	name = ".38 incendiary bullet"
-	damage = -5
-	var/fire_stacks = 1
-
-/obj/item/projectile/bullet/c38/incendiary/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(iscarbon(target))
-		var/mob/living/carbon/M = target
-		M.adjust_fire_stacks(fire_stacks)
-		M.IgniteMob()
-
-
+#undef BULLET_22LR_DAMAGE_MULT
+#undef BULLET_22LR_STAMINA_MULT
+#undef BULLET_22LR_WOUND_MULT
+#undef BULLET_22LR_NAKED_WOUND_MULT
+#undef BULLET_22LR_SPEED_MULT
 
 //////////
 // 9 MM //
-//////////				-Light round, all around, these guns should higher capacity
+//////////
+
+/* * * * * * * *
+ * Baseline Light Pistol Bullet
+ * Surplus, improvised, no match (yet)
+ * Acid rounds
+ * Fire rounds
+ * * * * * * * */
 
 /obj/item/projectile/bullet/c9mm
 	name = "9mm FMJ bullet"
-	damage = 0
-	wound_bonus = 10
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
 
-/obj/item/projectile/bullet/c9mm/op
-	name = "9mm +P bullet"
-	damage = 27
-	var/extra_speed = 500
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+
+/obj/item/projectile/bullet/c9mm/improv
+	name = "9mm FMJ bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
+	spread = BULLET_SPREAD_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_SPREAD_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c9mm/rubber
 	name = "9mm rubber bullet"
-	damage = -15
-	stamina = 25
-	wound_bonus = 0
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT
+	stamina = RUBBERY_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_NAKED_RUBBERY_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 
 /obj/item/projectile/bullet/c9mm/acid
 	name = "9mm acid-tipped bullet"
-	damage = -5
-	wound_bonus = 0
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_ACID
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_ACID
+	spread = BULLET_SPREAD_MATCH
+	damage_type = BURN // still checks bullet resist
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_ACID // acid~
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_ACID
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 	var/acid_type = /datum/reagent/toxin/acid/fluacid
 
@@ -204,7 +141,17 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/c9mm/incendiary
 	name = "9mm incendiary bullet"
-	damage = -5
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE
+	spread = BULLET_SPREAD_MATCH
+	damage_type = BURN // still checks bullet resist
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+	sharpness = SHARP_NONE
 	var/fire_stacks = 1
 
 /obj/item/projectile/bullet/c9mm/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -214,39 +161,250 @@ Uranium, Contaminated
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
-/obj/item/projectile/bullet/c9mm/improv
-	damage = -3
+/obj/item/projectile/bullet/c9mm/op //for simple mobs, separate to allow balancing
+	name = "9mm +P bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_MATCH
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_MATCH
+	spread = BULLET_SPREAD_SURPLUS
 
-/obj/item/projectile/bullet/c9mm/simple //for simple mobs, separate to allow balancing
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+
+/obj/item/projectile/bullet/c9mm/simple //also for simple mobs, separate to allow balancing
 	name = "9mm bullet"
-	damage = 20
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
 
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+
+
+/////////////////
+// .38 SPECIAL //
+/////////////////
+
+/* * * * * * * *
+ * Wound-focused Light Pistol Bullet
+ * Surplus
+ * Improvised, no match (yet)
+ * Rubber
+ * Fire rounds
+ * * * * * * * */
+
+#define BULLET_38SPECIAL_DAMAGE_MULT 1
+#define BULLET_38SPECIAL_STAMINA_MULT 1
+#define BULLET_38SPECIAL_WOUND_MULT 1.2 // Better at not overpenetrating than 9mm
+#define BULLET_38SPECIAL_NAKED_WOUND_MULT 1.2
+#define BULLET_38SPECIAL_SPEED_MULT 1.1
+
+/obj/item/projectile/bullet/c38
+	name = ".38 bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_38SPECIAL_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_38SPECIAL_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_38SPECIAL_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_38SPECIAL_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+
+/obj/item/projectile/bullet/c38/rubber
+	name = ".38 rubber bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT * BULLET_38SPECIAL_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_38SPECIAL_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_38SPECIAL_WOUND_MULT
+	bare_wound_bonus = RUBBERY_WOUND_PISTOL_LIGHT * BULLET_NAKED_RUBBERY_WOUND_MULT * BULLET_38SPECIAL_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+	sharpness = SHARP_NONE
+
+/obj/item/projectile/bullet/c38/improv
+	name = ".38 improvised bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD * BULLET_38SPECIAL_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD * BULLET_38SPECIAL_STAMINA_MULT
+	spread = BULLET_SPREAD_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD * BULLET_38SPECIAL_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_38SPECIAL_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+
+/obj/item/projectile/bullet/c38/acid
+	name = ".38 acid-tipped bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_ACID * BULLET_38SPECIAL_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_ACID * BULLET_38SPECIAL_STAMINA_MULT
+	spread = BULLET_SPREAD_MATCH
+	damage_type = BURN // still checks bullet resist
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_ACID * BULLET_38SPECIAL_WOUND_MULT // acid~
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_ACID * BULLET_38SPECIAL_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/c38/acid/Initialize()
+	. = ..()
+	create_reagents(5, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 5)
+
+/obj/item/projectile/bullet/c38/acid/on_hit(atom/target, blocked = FALSE)
+	..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+/obj/item/projectile/bullet/c38/incendiary
+	name = ".38 incendiary bullet"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE * BULLET_38SPECIAL_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE * BULLET_38SPECIAL_STAMINA_MULT
+	spread = BULLET_SPREAD_MATCH
+	damage_type = BURN // still checks bullet resist
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE * BULLET_38SPECIAL_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE * BULLET_38SPECIAL_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+	sharpness = SHARP_NONE
+	var/fire_stacks = 1
+
+/obj/item/projectile/bullet/c38/incendiary/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/M = target
+		M.adjust_fire_stacks(fire_stacks)
+		M.IgniteMob()
+
+#undef BULLET_38SPECIAL_DAMAGE_MULT
+#undef BULLET_38SPECIAL_STAMINA_MULT
+#undef BULLET_38SPECIAL_WOUND_MULT
+#undef BULLET_38SPECIAL_NAKED_WOUND_MULT
+#undef BULLET_38SPECIAL_SPEED_MULT
+
+/////////////
+// NEEDLER //
+/////////////
+
+/* * * * * * * *
+ * TBD Light Pistol Bullet
+ * Needle that... I guess does a fuckload of wounding?
+ * TBD for sure
+ * * * * * * * */
+
+#define BULLET_NEEDLE_DAMAGE_MULT 0.2 // 2 damage~
+#define BULLET_NEEDLE_STAMINA_MULT 0.2 // Its a needle
+#define BULLET_NEEDLE_WOUND_MULT 10 // That RIPS AND TEARS
+#define BULLET_NEEDLE_NAKED_WOUND_MULT 15 // Okay maybe a flechette then
+#define BULLET_NEEDLE_SPEED_MULT 0.8
+
+/obj/item/projectile/bullet/needle
+	name = "needle"
+	icon_state = "cbbolt"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_NEEDLE_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_NEEDLE_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * BULLET_NEEDLE_WOUND_MULT // terrible idea I know
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_NEEDLE_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_NEEDLE_SPEED_MULT
+	var/piercing = FALSE // not sure what this does
+
+#undef BULLET_NEEDLE_DAMAGE_MULT
+#undef BULLET_NEEDLE_STAMINA_MULT
+#undef BULLET_NEEDLE_WOUND_MULT
+#undef BULLET_NEEDLE_NAKED_WOUND_MULT
+#undef BULLET_NEEDLE_SPEED_MULT
 
 ///////////
 // 10 MM //
-///////////				-Medium round, wounding focus, guns in 10mm should have lower capacity
+///////////
+
+/* * * * * * * *
+ * Baseline Medium Pistol Bullet
+ * Surplus
+ * Improvised, no match (yet)
+ * Acid rounds
+ * Fire rounds
+ * * * * * * * */
 
 /obj/item/projectile/bullet/c10mm
 	name = "10mm FMJ bullet"
-	damage = 0
-	wound_bonus = 11
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
+
+/obj/item/projectile/bullet/c10mm/improv
+	name = "10mm handloaded bullet"
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	spread = BULLET_SPREAD_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 
 /obj/item/projectile/bullet/c10mm/simple
 	name = "10mm FMJ bullet"
-	damage = 20
-	armour_penetration = 0.1
-	wound_bonus = 11
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	spread = BULLET_SPREAD_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 
 /obj/item/projectile/bullet/c10mm/rubber
 	name = "10mm rubber bullet"
-	damage = -15
-	stamina = 26
-	wound_bonus = 0
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT
+	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBERY_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = RUBBERY_WOUND_PISTOL_MEDIUM * BULLET_NAKED_RUBBERY_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 	sharpness = SHARP_NONE
 
 /obj/item/projectile/bullet/c10mm/incendiary
 	name = "10mm incendiary bullet"
-	damage = -5
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE
+	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
+	sharpness = SHARP_NONE
 	var/fire_stacks = 1
 
 /obj/item/projectile/bullet/c10mm/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -260,33 +418,82 @@ Uranium, Contaminated
 
 /////////////
 // .45 ACP //
-/////////////			-Medium round, damage focus, very low capacity guns
+/////////////
+
+/* * * * * * * *
+ * Punchy Medium Pistol Bullet
+ * Surplus, no match (yet)
+ * Acid rounds
+ * Fire rounds
+ * * * * * * * */
+
+#define BULLET_45ACP_DAMAGE_MULT 1
+#define BULLET_45ACP_STAMINA_MULT 1.3
+#define BULLET_45ACP_WOUND_MULT 1.3
+#define BULLET_45ACP_NAKED_WOUND_MULT 1.3
+#define BULLET_45ACP_SPEED_MULT 1.2
 
 /obj/item/projectile/bullet/c45
 	name = ".45 FMJ bullet"
-	damage = 0
-	wound_bonus = 15
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_45ACP_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_45ACP_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_45ACP_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT * BULLET_45ACP_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM * BULLET_45ACP_SPEED_MULT
 
 /obj/item/projectile/bullet/c45/simple
 	name = ".45 FMJ bullet"
-	damage = 30
-	wound_bonus = 15
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * 1.2
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT * 1.2
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 
 /obj/item/projectile/bullet/c45/op
 	name = ".45 +P bullet"
-	damage = 32
-	var/extra_speed = 500
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * 1.2
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT * 1.2
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM * 1.2
 
 /obj/item/projectile/bullet/c45/rubber
 	name = ".45 rubber bullet"
-	damage = -28
-	stamina = 45
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * RUBBERY_DAMAGE_MULT
+	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBERY_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = RUBBERY_WOUND_PISTOL_MEDIUM * BULLET_NAKED_RUBBERY_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 	sharpness = SHARP_NONE
-	wound_bonus = 0
 
 /obj/item/projectile/bullet/c45/incendiary
 	name = ".45 incendiary bullet"
-	damage = -5
+	damage = BULLET_DAMAGE_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE
+	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE
+	bare_wound_bonus = BULLET_WOUND_PISTOL_MEDIUM * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
+	sharpness = SHARP_NONE
 	var/fire_stacks = 1
 
 /obj/item/projectile/bullet/c45/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -297,20 +504,61 @@ Uranium, Contaminated
 			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
 			M.IgniteMob()
 
+#undef BULLET_45ACP_DAMAGE_MULT
+#undef BULLET_45ACP_STAMINA_MULT
+#undef BULLET_45ACP_WOUND_MULT
+#undef BULLET_45ACP_NAKED_WOUND_MULT
+#undef BULLET_45ACP_SPEED_MULT
+
 /////////////////
 // .357 MAGNUM //
-/////////////////		-High power round
+/////////////////
+
+/* * * * * * * *
+ * Baseline Heavy Pistol Bullet
+ * Improvised, no match (yet)
+ * Ricochet
+ * Acid rounds
+ * Fire rounds
+ * * * * * * * */
 
 /obj/item/projectile/bullet/a357
 	name = ".357 FMJ bullet"
-	damage = 0
-	wound_bonus = 12
-	bare_wound_bonus = -14
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
 
 // 3 ricochets, more than enough to kill anything that moves
+
+/obj/item/projectile/bullet/a357/improv
+	name = "handloaded .357 bullet"
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_HANDLOAD
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_HANDLOAD
+	spread = BULLET_SPREAD_HANDLOAD
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_HANDLOAD
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
+
 /obj/item/projectile/bullet/a357/ricochet
 	name = ".357 ricochet bullet"
-	damage = 0
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
 	ricochets_max = 3
 	ricochet_chance = 140
 	ricochet_auto_aim_angle = 50
@@ -319,8 +567,15 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/a357/acid
 	name = ".357 acid-tipped bullet"
-	damage = -5
-	wound_bonus = 0
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_ACID
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_ACID
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_ACID
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_ACID
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
 	sharpness = SHARP_NONE
 	var/acid_type = /datum/reagent/toxin/acid/fluacid
 
@@ -338,7 +593,16 @@ Uranium, Contaminated
 
 /obj/item/projectile/bullet/a357/incendiary
 	name = ".357 incendiary bullet"
-	damage = -5
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
+	sharpness = SHARP_NONE
 	var/fire_stacks = 2
 
 /obj/item/projectile/bullet/a357/incendiary/on_hit(atom/target, blocked = FALSE)
@@ -349,28 +613,59 @@ Uranium, Contaminated
 			M.adjust_fire_stacks(fire_stacks - M.fire_stacks)
 			M.IgniteMob()
 
-/obj/item/projectile/bullet/a357/improv
-	name = "poor .357 bullet"
-	damage = -5
 ////////////////
 // .44 MAGNUM //
-////////////////		- Higher power round
+////////////////
+
+/* * * * * * * *
+ * Heavy Heavy Pistol Bullet
+ * Improvised, no match (yet)
+ * Fire rounds
+ * * * * * * * */
+
+#define BULLET_44MAG_DAMAGE_MULT 1.3 // 26
+#define BULLET_44MAG_STAMINA_MULT 1.3
+#define BULLET_44MAG_WOUND_MULT 2
+#define BULLET_44MAG_NAKED_WOUND_MULT 2
+#define BULLET_44MAG_SPEED_MULT 2
 
 /obj/item/projectile/bullet/m44
 	name = ".44 FMJ bullet"
-	damage = 0
-	wound_bonus = 15
-	bare_wound_bonus = -20
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
 
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_44MAG_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_44MAG_SPEED_MULT
 
 /obj/item/projectile/bullet/m44/simple //for simple mobs, separate to allow balancing
 	name = ".44 bullet"
-	damage = 40
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_44MAG_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_44MAG_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_44MAG_SPEED_MULT
 
 /obj/item/projectile/bullet/m44/incendiary
 	name = ".44 incendiary bullet"
-	damage = -5
-	var/fire_stacks = 2
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_FIRE * BULLET_44MAG_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_FIRE * BULLET_44MAG_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_FIRE * BULLET_44MAG_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_FIRE * BULLET_44MAG_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_44MAG_SPEED_MULT
+	sharpness = SHARP_NONE
+	var/fire_stacks = 3
 
 /obj/item/projectile/bullet/m44/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -379,19 +674,51 @@ Uranium, Contaminated
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
 
+#undef BULLET_44MAG_DAMAGE_MULT
+#undef BULLET_44MAG_STAMINA_MULT
+#undef BULLET_44MAG_WOUND_MULT
+#undef BULLET_44MAG_NAKED_WOUND_MULT
+#undef BULLET_44MAG_SPEED_MULT
+
 ///////////
 // 14 MM //
-///////////				-very heavy round, AP (reference to FO1/2)
+///////////
+
+/* * * * * * * *
+ * Ultra Heavy Pistol Bullet
+ * Improvised, no match (yet)
+ * Poison spray?
+ * * * * * * * */
+
+#define BULLET_14MM_DAMAGE_MULT 2 // 40 damage
+#define BULLET_14MM_STAMINA_MULT 2
+#define BULLET_14MM_WOUND_MULT 2
+#define BULLET_14MM_NAKED_WOUND_MULT 2
+#define BULLET_14MM_SPEED_MULT 2
 
 /obj/item/projectile/bullet/mm14
 	name = "14mm FMJ bullet"
-	damage = 0
-	wound_bonus = 25
-	bare_wound_bonus = -28
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_14MM_DAMAGE_MULT // BIG FUCKIN BULLET
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_14MM_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_14MM_WOUND_MULT // haha get fuckt
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_14MM_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_14MM_SPEED_MULT
 
 /obj/item/projectile/bullet/mm14/contam
 	name = "14mm contaiminated bullet"
-	damage = -10
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_DAMAGE_POISON * BULLET_14MM_DAMAGE_MULT 
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_STAMINA_POISON * BULLET_14MM_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS * BULLET_WOUND_POISON * BULLET_14MM_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_NAKED_WOUND_POISON * BULLET_14MM_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * 2
 	var/smoke_radius = 1
 
 /obj/item/projectile/bullet/mm14/contam/Initialize()
@@ -417,38 +744,39 @@ Uranium, Contaminated
 	irradiate = 300
 */
 
-
+#undef BULLET_14MM_DAMAGE_MULT
+#undef BULLET_14MM_STAMINA_MULT
+#undef BULLET_14MM_WOUND_MULT
+#undef BULLET_14MM_NAKED_WOUND_MULT
+#undef BULLET_14MM_SPEED_MULT
 
 //////////////////////
 //SPECIAL AMMO TYPES//
 //////////////////////
 
-//45 Long Colt. Bouncy ammo but less damage then the Sequoia. It's in one of the Vet Ranger kits
+/* * * * * * * *
+ * Bouncy Heavy Pistol Bullet
+ * Surplus only
+ * Just bouncy 357
+ * * * * * * * */
+
 /obj/item/projectile/bullet/a45lc
 	name = ".45 LC bullet"
-	damage = 0
-	armour_penetration = 0
-	wound_bonus = 20
-	bare_wound_bonus = -20
+	damage = BULLET_DAMAGE_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	stamina = BULLET_STAMINA_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_DAMAGE_SURPLUS
+	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
 	ricochets_max = 3
 	ricochet_incidence_leeway = 130
 	ricochet_decay_damage = 1.1 //48 damage on first bounce, 53 on second, 58 on third. Unless you bounce, the DPS dual wielding is lower then a single M29
 	ricochet_decay_chance = 11
 	ricochet_chance = 80 //100% if you have the vet's trait
 	ricochet_auto_aim_range = 4
-
-
-/////////////
-// NEEDLER //
-/////////////			- AP focus
-
-/obj/item/projectile/bullet/needle
-	name = "needle"
-	icon_state = "cbbolt"
-	damage = 0
-	armour_penetration = 0.8 //rare AP pistol ammo
-	var/piercing = FALSE
-
 
 ////////////////
 //CODE ARCHIVE//

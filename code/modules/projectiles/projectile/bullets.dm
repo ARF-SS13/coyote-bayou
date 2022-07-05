@@ -10,7 +10,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 
 	pixels_per_second = BULLET_SPEED_BASE
-	range = INFINITY // ha ha this cant go badly
+	range = 100
 	damage_type = BRUTE
 	nodamage = FALSE
 	candink = TRUE
@@ -21,7 +21,6 @@
 
 /obj/item/projectile/bullet/smite
 	name = "divine retribution"
-	damage = 10
 
 ////////////////////////
 // AMMUNITION CLASSES //
@@ -31,10 +30,10 @@
  * - .22, 9mm, .38, needler
  * 
  * MEDIUM PISTOL
- * - 10mm, .45.
+ * - 10mm, .45 ACP
  * 
  * HEAVY PISTOL (basically revolvers)
- * - .357 mag, .44 mag, 14mm
+ * - .357 mag, .45 LC .44 mag, 14mm
  * 
  * LIGHT RIFLE
  * - 5.56mm, 4.73mm caseless, 5mm
@@ -74,15 +73,29 @@
  * Rubber / Beanbag / Less Than lethal
  * + Breaks bones with ease, lots of stamina damage, good at disabling people
  * - Difficult to actually kill people, useless against mobs, medbay will hate you (or love you)
+ * 
+ * +P/+P+ 
+ * - Used by simplemobs
+ * - Generally equivalent to surplus
+ * 
+ * Shock
+ * + Low-severity EMP, burn damage
+ * - Half damage, no wound bonus
+ * 
+ * Incindiary
+ * + Burns target, sets target on fire
+ * - Half damage, no naked wound bonus
+ * 
+ * Acid
+ * + Sprays the target with fluoro-acid, does burn damage, has twice as much wound chance
+ * - Half damage
+ * 
+ * Uranium = Irradiates, high AP, lower damage - unused
+ * 
+ * Micro-Shrapnel
+ * + Extra wounding, embeds
+ * - Less damage
+ * 
+ * Contaminated = -damage, spawns a gas cloud that heavily reduces healing efficiency
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-*** Most of these are unused for now~ ***
-	+P/+P+ = used by simplemobs
-	SHOCK = low-severity emp, -damage base, bonus burn damage (5-10)
-	Incin = -damage, sets target on fire
-	Acid = Heavy -damage, coats target in small amount of acid (1-5u)
-	Uranium = Irradiates, high AP, lower damage - unused
-	Micro-Shrapnel = Wound bonus, embed bonus, high falloff for both
-	Contaminated = -damage, spawns a gas cloud that heavily reduces healing efficiency
-
 */
