@@ -795,6 +795,15 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/offices2nd)
+"aLE" = (
+/obj/structure/closet/crate/silvercrate,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "aLG" = (
 /obj/structure/table/survival_pod,
 /obj/item/storage/toolbox/mechanical{
@@ -1059,6 +1068,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
+"aWS" = (
+/obj/effect/turf_decal/box/white,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "aWX" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -1200,9 +1213,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "bfc" = (
-/obj/effect/turf_decal/box/white,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/closet/crate/silvercrate,
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "bga" = (
 /obj/structure/lattice{
 	density = 1
@@ -2072,6 +2090,16 @@
 	},
 /turf/open/floor/plating/f13,
 /area/f13/vault)
+"bXQ" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "bYb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2938,13 +2966,7 @@
 	},
 /area/f13/brotherhood/rnd)
 "cLG" = (
-/obj/machinery/door/airlock/security{
-	name = "Brig";
-	req_access_txt = "134"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
+/turf/closed/wall,
 /area/f13/building)
 "cLO" = (
 /obj/item/twohanded/required/kirbyplants/dead,
@@ -3089,15 +3111,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/brotherhood/armory)
-"cTb" = (
-/obj/structure/closet/crate/silvercrate,
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 29
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/building)
 "cTL" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -4582,13 +4595,9 @@
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
 "dZG" = (
-/obj/vertibird_exit_door{
-	id = "verti1"
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
 	},
-/obj/landmark/vertibird_enter{
-	id = "verti1star"
-	},
-/turf/closed/wall,
 /area/f13/building)
 "dZX" = (
 /obj/structure/dresser,
@@ -5301,6 +5310,10 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "eCi" = (
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_access_txt = "134"
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -6394,12 +6407,6 @@
 	icon_state = "whiterustysolid"
 	},
 /area/f13/brotherhood/dorms)
-"fDZ" = (
-/obj/structure/closet/crate/silvercrate,
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/building)
 "fEp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/red/line{
@@ -8004,13 +8011,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "gSj" = (
-/obj/structure/chair/comfy/shuttle{
-	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
-	dir = 8;
-	name = "prewar lounge chair"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+/turf/closed/indestructible/oldshuttle/corner{
+	dir = 1;
+	color = "#808080"
 	},
 /area/f13/building)
 "gSn" = (
@@ -8965,6 +8968,12 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
+"hHs" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	dir = 4;
+	color = "#808080"
+	},
+/area/f13/building)
 "hHG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4;
@@ -9903,12 +9912,6 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
-"iHE" = (
-/turf/closed/indestructible/oldshuttle/corner{
-	dir = 4;
-	color = "#808080"
-	},
-/area/f13/building)
 "iHM" = (
 /obj/machinery/light/broken,
 /turf/open/floor/f13{
@@ -10225,16 +10228,6 @@
 /obj/item/toy/plush/lizardplushie,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
-"iWU" = (
-/obj/structure/chair/comfy/shuttle{
-	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
-	layer = 2.7;
-	name = "prewar lounge chair"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/building)
 "iXu" = (
 /obj/structure/table/reinforced,
 /obj/item/card/id/dogtag/enclave/noncombatant,
@@ -12043,6 +12036,19 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
+"kDV" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "kEv" = (
 /obj/structure/table/wood,
 /obj/item/grenade/empgrenade,
@@ -19674,6 +19680,15 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/enclave)
+"qWA" = (
+/obj/vertibird_exit_door{
+	id = "verti1"
+	},
+/obj/landmark/vertibird_enter{
+	id = "verti1star"
+	},
+/turf/closed/wall,
+/area/f13/building)
 "qWD" = (
 /obj/structure/chair/wood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -21080,9 +21095,13 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "snE" = (
-/turf/closed/indestructible/oldshuttle/corner{
-	dir = 1;
-	color = "#808080"
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
 	},
 /area/f13/building)
 "sor" = (
@@ -21280,7 +21299,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "svz" = (
-/turf/closed/wall,
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/building)
 "svZ" = (
 /obj/item/stack/crafting/electronicparts/three,
@@ -25234,8 +25263,8 @@
 /area/f13/enclave)
 "vOm" = (
 /obj/structure/closet/crate/silvercrate,
-/obj/machinery/vending/wallmed{
-	pixel_y = 30
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 29
 	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
@@ -51452,7 +51481,7 @@ vjR
 uOf
 vjR
 ccu
-bfc
+aWS
 vjR
 rQo
 kHy
@@ -57104,10 +57133,10 @@ shC
 shC
 shC
 fTm
-svz
+cLG
 ojT
-svz
-iHE
+cLG
+hHs
 shC
 shC
 shC
@@ -57360,11 +57389,11 @@ shC
 shC
 shC
 shC
-svz
-svz
-gSj
-svz
-svz
+cLG
+cLG
+bXQ
+cLG
+cLG
 shC
 shC
 shC
@@ -57614,17 +57643,17 @@ shC
 shC
 shC
 shC
-svz
-svz
-svz
+cLG
+cLG
+cLG
 esE
-fDZ
-eCi
+aLE
+dZG
 oiU
-svz
-svz
-svz
-svz
+cLG
+cLG
+cLG
+cLG
 shC
 shC
 shC
@@ -57871,17 +57900,17 @@ shC
 shC
 shC
 shC
-svz
-svz
-svz
-svz
-vOm
-eCi
+cLG
+cLG
+cLG
+cLG
+bfc
+dZG
 oiU
-svz
-svz
-svz
-svz
+cLG
+cLG
+cLG
+cLG
 shC
 shC
 shC
@@ -58131,11 +58160,11 @@ shC
 shC
 shC
 shC
-svz
-cTb
-eCi
-eCi
+cLG
+vOm
 dZG
+dZG
+qWA
 shC
 shC
 shC
@@ -58388,11 +58417,11 @@ shC
 shC
 shC
 shC
-svz
-iWU
-eCi
+cLG
+snE
+dZG
 oiU
-svz
+cLG
 shC
 shC
 shC
@@ -58645,11 +58674,11 @@ shC
 shC
 shC
 shC
-svz
-iWU
-eCi
+cLG
+kDV
+dZG
 oiU
-svz
+cLG
 shC
 shC
 shC
@@ -58903,10 +58932,10 @@ shC
 shC
 shC
 wXM
-svz
 cLG
-svz
-snE
+eCi
+cLG
+gSj
 shC
 shC
 shC
@@ -59160,9 +59189,9 @@ shC
 shC
 shC
 shC
+cLG
 svz
-gSj
-svz
+cLG
 shC
 shC
 shC
@@ -59418,7 +59447,7 @@ shC
 shC
 shC
 shC
-svz
+cLG
 shC
 shC
 shC
