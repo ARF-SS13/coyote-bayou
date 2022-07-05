@@ -1,5 +1,5 @@
 /obj/vertibird_exit_door
-	name = "Exit Hatch"
+	name = "exit hatch"
 	icon = 'icons/obj/doors/airlocks/survival/horizontal/survival.dmi'
 	icon_state = "closed"
 	anchored = 1
