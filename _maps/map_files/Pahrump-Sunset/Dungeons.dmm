@@ -7487,6 +7487,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/offices1st)
+"gtR" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/cave)
 "gum" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -19684,9 +19688,6 @@
 /obj/vertibird_exit_door{
 	id = "verti1"
 	},
-/obj/landmark/vertibird_enter{
-	id = "verti1star"
-	},
 /turf/closed/wall,
 /area/f13/building)
 "qWD" = (
@@ -26882,6 +26883,14 @@
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/vault)
+"xqy" = (
+/obj/landmark/vertibird_enter{
+	id = "verti1star"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "xqG" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -56876,9 +56885,9 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
+gtR
+gtR
+gtR
 shC
 shC
 shC
@@ -58163,7 +58172,7 @@ shC
 cLG
 vOm
 dZG
-dZG
+xqy
 qWA
 shC
 shC
