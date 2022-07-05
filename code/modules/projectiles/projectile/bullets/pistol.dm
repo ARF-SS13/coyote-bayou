@@ -9,7 +9,7 @@ FMJ (full metal jacket)		=	Baseline
 SHOCK = low-severity emp, -damage base, bonus burn damage (5-10)
 Incin = -damage, sets target on fire
 Acid = Heavy -damage, coats target in small amount of acid (1-5u)
-Uranium = Irradiates, high AP, lower damage
+Uranium = Irradiates, high AP, lower damage - unused
 Micro-Shrapnel = Wound bonus, embed bonus, high falloff for both
 Contaminated = -damage, spawns a gas cloud that heavily reduces healing efficiency
 Improvised = -1 to -4 damage
@@ -33,24 +33,47 @@ Uranium, Contaminated
 
 ////////////////////
 // .22 LONG RIFLE //
-////////////////////		-very light round
+////////////////////
+// No match, no improvised, just bullet
 
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
-	damage = 0
-	wound_bonus = 6
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c22/rubber
 	name = ".22lr rubber bullet"
-	damage = 0
-	stamina = 22
-	wound_bonus = 0
+	stamina = RUBBER_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	damage = RUBBER_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS * 0.8
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBER_WOUND_PISTOL_LIGHT
+	bare_wound_bonus = RUBBER_WOUND_PISTOL_LIGHT * BULLET_NAKED_RUBBER_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 
+// EMP, also weaker rubber
 /obj/item/projectile/bullet/c22/shock
 	name = ".22lr shock bullet"
-	damage = -4 //about -25% damage
+	stamina = RUBBER_STAMINA_PISTOL_LIGHT * 0.5
+	damage = RUBBER_DAMAGE_PISTOL_LIGHT * 0.5
+	spread = BULLET_SPREAD_SURPLUS
+	damage_type = BURN // still checks bullet resist
+
 	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 
 /obj/item/projectile/bullet/c22/shock/on_hit(atom/target, blocked = FALSE)
@@ -59,27 +82,56 @@ Uranium, Contaminated
 
 /////////////////
 // .38 SPECIAL //
-/////////////////		-Light round, damage focus
+/////////////////
 
 /obj/item/projectile/bullet/c38
 	name = ".38 bullet"
-	damage = 0
-	wound_bonus = 10
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c38/rubber
 	name = ".38 rubber bullet"
-	damage = -28
-	stamina = 32
-	wound_bonus = 0
+	stamina = RUBBER_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	damage = RUBBER_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_SURPLUS
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = RUBBER_WOUND_PISTOL_LIGHT
+	bare_wound_bonus = RUBBER_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 
 /obj/item/projectile/bullet/c38/improv
-	damage = -3
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_DAMAGE_HANDLOAD
+	spread = BULLET_SPREAD_SURPLUS
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c38/acid
 	name = ".38 acid-tipped bullet"
-	damage = -5
+	stamina = RUBBER_STAMINA_PISTOL_LIGHT * 0.5
+	damage = RUBBER_DAMAGE_PISTOL_LIGHT * 0.5
+	spread = BULLET_SPREAD_SURPLUS
+	damage_type = BURN // still checks bullet resist
+
 	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
 	var/acid_type = /datum/reagent/toxin/acid/fluacid
 
@@ -326,59 +378,6 @@ Uranium, Contaminated
 		var/mob/living/carbon/M = target
 		M.adjust_fire_stacks(fire_stacks)
 		M.IgniteMob()
-
-////////////
-// .45-70 //
-////////////			-very heavy round
-
-/obj/item/projectile/bullet/c4570
-	name = ".45-70 FMJ bullet"
-	damage = 0
-	wound_bonus = 18
-	bare_wound_bonus = -24
-
-/obj/item/projectile/bullet/c4570/explosive
-	damage = -15
-	pixels_per_second = TILES_TO_PIXELS(500)
-	name = ".45-70 explosive bullet"
-
-/obj/item/projectile/bullet/c4570/explosive/on_hit(atom/target, blocked = FALSE)
-	..()
-	explosion(target, 0, 0, 1, 1, flame_range = 1)
-
-/obj/item/projectile/bullet/c4570/acid
-	name = ".45-70 acid-tipped bullet"
-	damage = -10
-	wound_bonus = 0
-	sharpness = SHARP_NONE
-	var/acid_type = /datum/reagent/toxin/acid/fluacid
-
-/obj/item/projectile/bullet/c4570/acid/Initialize()
-	. = ..()
-	create_reagents(10, NO_REACT, NO_REAGENTS_VALUE)
-	reagents.add_reagent(acid_type, 10)
-
-/obj/item/projectile/bullet/c4570/acid/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(isliving(target))
-		var/mob/living/M = target
-		reagents.reaction(M, TOUCH)
-		reagents.trans_to(M, reagents.total_volume)
-
-/obj/item/projectile/bullet/c4570/knockback
-	name = ".45-70 ultradense bullet"
-	damage = -15
-	wound_bonus = 0
-	sharpness = SHARP_NONE
-	pixels_per_second = TILES_TO_PIXELS(500)
-
-/obj/item/projectile/bullet/c4570/knockback/on_hit(atom/target, blocked = FALSE)
-	. = ..()
-	if(ismovable(target) && prob(50))
-		var/atom/movable/M = target
-		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
-		M.safe_throw_at(throw_target, 2, 3)
-
 
 ///////////
 // 14 MM //

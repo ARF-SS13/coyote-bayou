@@ -138,6 +138,60 @@ heavy rifle calibers (12.7, 14mm, 7.62): Uranium, Contaminated, Incin
 	embed_falloff_tile = 0.5
 	embedding = list(embed_chance=12, fall_chance=1, jostle_chance=1, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.3, pain_mult=5, jostle_pain_mult=6, rip_time=10, embed_chance_turf_mod=100, projectile_payload = /obj/item/shrapnel/bullet/a762/microshrapnel)
 
+////////////
+// .45-70 //
+////////////			-very heavy round
+
+/obj/item/projectile/bullet/c4570
+	name = ".45-70 FMJ bullet"
+	damage = 0
+	wound_bonus = 18
+	bare_wound_bonus = -24
+
+/obj/item/projectile/bullet/c4570/explosive
+	damage = -15
+	pixels_per_second = TILES_TO_PIXELS(500)
+	name = ".45-70 explosive bullet"
+
+/obj/item/projectile/bullet/c4570/explosive/on_hit(atom/target, blocked = FALSE)
+	..()
+	explosion(target, 0, 0, 1, 1, flame_range = 1)
+
+/obj/item/projectile/bullet/c4570/acid
+	name = ".45-70 acid-tipped bullet"
+	damage = -10
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	var/acid_type = /datum/reagent/toxin/acid/fluacid
+
+/obj/item/projectile/bullet/c4570/acid/Initialize()
+	. = ..()
+	create_reagents(10, NO_REACT, NO_REAGENTS_VALUE)
+	reagents.add_reagent(acid_type, 10)
+
+/obj/item/projectile/bullet/c4570/acid/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isliving(target))
+		var/mob/living/M = target
+		reagents.reaction(M, TOUCH)
+		reagents.trans_to(M, reagents.total_volume)
+
+/obj/item/projectile/bullet/c4570/knockback
+	name = ".45-70 ultradense bullet"
+	damage = -15
+	wound_bonus = 0
+	sharpness = SHARP_NONE
+	pixels_per_second = TILES_TO_PIXELS(500)
+
+/obj/item/projectile/bullet/c4570/knockback/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(ismovable(target) && prob(50))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 3)
+
+
+
 /////////
 // .50 //
 /////////			-Very heavy rifle round.
