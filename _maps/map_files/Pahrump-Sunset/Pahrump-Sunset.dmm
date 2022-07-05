@@ -33723,10 +33723,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building/museum)
-"hHf" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "hHj" = (
 /obj/structure/flora/tree/tall{
 	icon_state = "tree_3"
@@ -36305,6 +36301,12 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
+"iUz" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
+/area/f13/building/massfusion)
 "iUE" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
@@ -37508,12 +37510,6 @@
 	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
-"jCo" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/plasteel/f13{
-	icon_state = "greenrustychess"
-	},
-/area/f13/building/massfusion)
 "jCz" = (
 /obj/effect/decal/waste{
 	icon_state = "goo8"
@@ -49145,6 +49141,20 @@
 /obj/structure/simple_door/house,
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
+"pqe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building)
 "pqk" = (
 /obj/structure/table/wood,
 /obj/item/stamp/denied,
@@ -58413,6 +58423,10 @@
 	icon_state = "verticalrightborderleft0"
 	},
 /area/f13/wasteland)
+"uiA" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "uiD" = (
 /obj/structure/sign/poster/contraband/tools{
 	pixel_x = -32
@@ -65688,6 +65702,10 @@
 /obj/structure/flora/brushwoodalt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/bighorn)
+"xXk" = (
+/obj/structure/chair/stool/retro/black,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/area/f13/building)
 "xXC" = (
 /obj/effect/decal/cleanable/oil/slippery,
 /turf/open/indestructible/ground/outside/dirt,
@@ -78252,7 +78270,7 @@ sSv
 sSv
 sSv
 abP
-hHf
+uiA
 cex
 cex
 fMX
@@ -83157,7 +83175,7 @@ baZ
 avw
 cex
 bkR
-cBX
+xXk
 jkL
 nHm
 abP
@@ -83928,7 +83946,7 @@ evt
 bgb
 abP
 rrW
-npK
+pqe
 bnh
 ufR
 biV
@@ -121565,7 +121583,7 @@ aae
 vVo
 vVo
 vVo
-jCo
+iUz
 rcw
 aCt
 wSN
@@ -131349,9 +131367,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -131607,7 +131625,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+kEE
 aaa
 aaa
 aaa

@@ -7,7 +7,8 @@
 		"Pahrump-Sunset.dmm",
 		"Pahrump-Sunset-Upper.dmm",
 		"Pahrump-Sunset-Upper-2.dmm",
-		"RockSprings.dmm"
+		"RockSprings.dmm",
+		"texmall.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -75,6 +76,17 @@
 			"Linkage" : "Cross",
 			"Force South": 1,
 			"Name": "Rock Springs"
+		},
+		{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force East": 1,
+			"Name": "Texarkana Mall"
 		}
 	],
 	"minetype": "none"
