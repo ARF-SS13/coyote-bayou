@@ -669,7 +669,7 @@
 /obj/machinery/iv_drip,
 /obj/item/reagent_containers/blood/radaway,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "aKH" = (
 /obj/machinery/power/apc{
@@ -705,7 +705,7 @@
 /obj/structure/bed/old,
 /obj/item/bedsheet/patriot,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "aLC" = (
 /mob/living/simple_animal/hostile/deathclaw,
@@ -13191,9 +13191,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
-"kEj" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/caves)
 "kFp" = (
 /obj/structure/handrail/g_central{
 	pixel_y = -16
@@ -14446,7 +14443,7 @@
 	icon_state = "skin"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "lUi" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -21260,7 +21257,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "tlR" = (
 /obj/structure/rack,
@@ -22810,11 +22807,6 @@
 /area/f13/building/massfusion)
 "vct" = (
 /obj/structure/chair/wood/fancy,
-/obj/structure/decoration/rag{
-	icon_state = "flag_ncr";
-	name = "NCR banner";
-	pixel_y = 32
-	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "vcM" = (
@@ -22983,10 +22975,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
-"viV" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/caves)
 "vje" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
@@ -25136,7 +25124,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_mid,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/caves)
 "xLq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27215,7 +27203,7 @@ aae
 aaa
 aaA
 xLd
-viV
+oFz
 aaA
 vnu
 vBY
@@ -27472,7 +27460,7 @@ aae
 aaa
 aaA
 tlt
-viV
+oFz
 lUh
 ajF
 ajF
@@ -30296,9 +30284,9 @@ aae
 aae
 aae
 aae
-kEj
-kEj
-kEj
+aae
+aae
+aae
 aaB
 aaa
 aaA
@@ -30553,9 +30541,9 @@ aae
 aae
 aae
 aae
-kEj
-kEj
-kEj
+aae
+aae
+aae
 aaB
 aaB
 aaa
@@ -30810,9 +30798,9 @@ aae
 aae
 aae
 aae
-kEj
-kEj
-kEj
+aae
+aae
+aae
 xwF
 aaB
 aaa
@@ -31067,9 +31055,9 @@ aae
 aak
 aak
 aae
-kEj
-kEj
-kEj
+aae
+aae
+aae
 xwF
 aaB
 aaB
@@ -31324,9 +31312,9 @@ aak
 aae
 aae
 aae
-kEj
-kEj
-kEj
+aae
+aae
+aae
 xwF
 xwF
 aaB
@@ -73652,7 +73640,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 fvH
 qUM
 lSc
@@ -73662,7 +73650,7 @@ aae
 aae
 aae
 aae
-aal
+cJr
 aal
 aae
 aae
@@ -73909,7 +73897,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 bST
 bTj
 qUM
@@ -73919,8 +73907,8 @@ aae
 aae
 aae
 aae
-aal
-aae
+cJr
+aaa
 aae
 aae
 aae
@@ -74160,13 +74148,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 bST
 bQA
 bQA
@@ -74177,7 +74165,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -74413,11 +74401,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -74435,7 +74423,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -74668,9 +74656,9 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -74692,7 +74680,7 @@ rcv
 bQC
 bQC
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -74925,7 +74913,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -74949,8 +74937,8 @@ eaW
 bVw
 bQC
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 xwF
@@ -75182,7 +75170,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 bQC
 bQC
 bQC
@@ -75207,7 +75195,7 @@ teK
 bQC
 aae
 aae
-aae
+aaa
 aae
 aae
 xwF
@@ -75438,8 +75426,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 bQC
 bxO
 bRF
@@ -75464,7 +75452,7 @@ teK
 bQC
 aae
 aae
-aae
+aaa
 aae
 aae
 xwF
@@ -75695,7 +75683,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 bQC
 bQE
@@ -75721,8 +75709,8 @@ bRF
 bQC
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 xwF
 xwF
@@ -75952,8 +75940,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 bQC
 bQC
 rcv
@@ -75979,7 +75967,7 @@ bQC
 bQC
 bQC
 aae
-aae
+aaa
 aae
 xwF
 xwF
@@ -76210,7 +76198,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -76236,8 +76224,8 @@ bQM
 bXJ
 bQC
 aae
-aae
-aae
+aaa
+aaa
 xwF
 xwF
 aak
@@ -76467,7 +76455,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -76494,7 +76482,7 @@ bQC
 bQC
 bQA
 aae
-aae
+aaa
 xwF
 xwF
 xwF
@@ -76724,7 +76712,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -76751,8 +76739,8 @@ bQA
 bQA
 bQA
 aae
-aae
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -76982,7 +76970,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 bQC
@@ -77009,7 +76997,7 @@ bQA
 bQA
 aae
 aae
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -77239,7 +77227,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 bQC
@@ -77266,7 +77254,7 @@ bQC
 bQC
 bQC
 bQC
-xwF
+aaa
 xwF
 xwF
 aak
@@ -77496,7 +77484,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 bQC
@@ -77523,7 +77511,7 @@ bWH
 bXk
 bXJ
 bQC
-xwF
+aaa
 xwF
 aak
 xwF
@@ -77752,8 +77740,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -77780,7 +77768,7 @@ bWI
 bXl
 bXK
 bQC
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -78009,7 +77997,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 bQC
 bQC
@@ -78037,7 +78025,7 @@ bWJ
 bXm
 bXL
 bQC
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -78266,7 +78254,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 bQC
 bQC
 bQJ
@@ -78294,7 +78282,7 @@ bQC
 bQC
 bQC
 bQC
-xwF
+aaa
 xwF
 aaa
 aaa
@@ -78522,8 +78510,8 @@ aak
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 bQC
 bQF
 bQA
@@ -78550,8 +78538,8 @@ bQC
 aae
 aae
 aae
-aae
-xwF
+aaa
+aaa
 aaa
 aaA
 aaA
@@ -78779,7 +78767,7 @@ aak
 aae
 aae
 aae
-aae
+aaa
 aae
 bQC
 ctJ
@@ -78806,8 +78794,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aaa
 aaA
 aaA
@@ -79036,7 +79024,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 bQP
 bQC
 bQG
@@ -79062,8 +79050,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aaa
 aaA
@@ -79293,7 +79281,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 bQP
 bQC
 bQC
@@ -79319,7 +79307,7 @@ aae
 aae
 aae
 aae
-aak
+aaa
 aae
 aae
 aaa
@@ -79550,7 +79538,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 bQC
@@ -79575,8 +79563,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aaa
@@ -79807,7 +79795,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79832,7 +79820,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80065,7 +80053,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80088,7 +80076,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80323,7 +80311,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80345,7 +80333,7 @@ aae
 aae
 aae
 aak
-aak
+aaa
 aak
 aae
 aae
@@ -80581,7 +80569,7 @@ aae
 aae
 aae
 aak
-aae
+aaa
 aae
 aae
 aae
@@ -80602,7 +80590,7 @@ aae
 aae
 aae
 aak
-aak
+aaa
 aak
 aak
 aae
@@ -80837,8 +80825,8 @@ aae
 aae
 aae
 aak
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -80858,7 +80846,7 @@ aae
 aae
 aae
 aak
-aak
+aaa
 aak
 aak
 aak
@@ -81094,7 +81082,7 @@ aae
 aae
 aae
 aak
-aae
+aaa
 aae
 aae
 aae
@@ -81115,7 +81103,7 @@ aae
 aae
 aae
 aak
-aak
+aaa
 aak
 aak
 aak
@@ -81350,8 +81338,8 @@ aae
 aae
 aae
 aak
-aak
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -81371,8 +81359,8 @@ aae
 aae
 aae
 aae
-aak
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -81607,7 +81595,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -81627,8 +81615,8 @@ aak
 xwF
 aae
 aae
-aae
-aak
+aaa
+aaa
 aae
 aae
 aae
@@ -81863,7 +81851,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -81884,7 +81872,7 @@ xwF
 xwF
 aae
 aae
-aae
+aaa
 aak
 aae
 aae
@@ -82119,7 +82107,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -82141,7 +82129,7 @@ xwF
 xwF
 aae
 aae
-aae
+aaa
 aak
 aae
 aae
@@ -82372,11 +82360,11 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+aaa
+aaa
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -82398,7 +82386,7 @@ xwF
 aak
 aae
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -82627,8 +82615,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -82654,8 +82642,8 @@ xwF
 xwF
 xwF
 aae
-aae
-aae
+aaa
+aaa
 aak
 aak
 aak
@@ -82884,7 +82872,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -82911,7 +82899,7 @@ xwF
 xwF
 aak
 aae
-aae
+aaa
 aae
 aak
 aak
@@ -83141,7 +83129,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -83168,7 +83156,7 @@ xwF
 xwF
 xwF
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83397,8 +83385,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 aak
 aak
@@ -83425,7 +83413,7 @@ xwF
 xwF
 xwF
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83646,14 +83634,14 @@ xwF
 xwF
 xwF
 xwF
+aaa
+aaa
+aaa
+aaa
+aaa
 xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -83682,7 +83670,7 @@ xwF
 xwF
 xwF
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83902,14 +83890,14 @@ xwF
 xwF
 xwF
 xwF
+aaa
 xwF
 xwF
 xwF
 xwF
-xwF
-xwF
-xwF
-xwF
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -83939,7 +83927,7 @@ aak
 xwF
 xwF
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84159,7 +84147,7 @@ aak
 aak
 aak
 xwF
-xwF
+aaa
 aaB
 xwF
 xwF
@@ -84195,8 +84183,8 @@ mPz
 aak
 xwF
 xwF
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -84416,7 +84404,7 @@ aak
 aak
 xwF
 xwF
-xwF
+aaa
 xwF
 aaB
 aaB
@@ -84452,7 +84440,7 @@ tbh
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aae
@@ -84673,8 +84661,8 @@ aak
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 aaB
 aaB
@@ -84709,7 +84697,7 @@ owX
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aae
@@ -84931,8 +84919,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 aaB
 aaB
@@ -84966,7 +84954,7 @@ xwF
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aae
@@ -85223,7 +85211,7 @@ htL
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aak
@@ -85480,7 +85468,7 @@ xwF
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aak
@@ -85737,7 +85725,7 @@ xwF
 xwF
 xwF
 xwF
-aae
+aaa
 aae
 aae
 aak
@@ -85993,7 +85981,7 @@ xwF
 xwF
 xwF
 aak
-xwF
+aaa
 aae
 aae
 aae
@@ -86250,7 +86238,7 @@ xwF
 aaB
 xwF
 xwF
-xwF
+aaa
 aae
 aae
 aae
@@ -86507,7 +86495,7 @@ mUb
 xwF
 xwF
 xwF
-xwF
+aaa
 aae
 aae
 aae
@@ -86763,7 +86751,7 @@ aaB
 aaB
 xwF
 aak
-aak
+aaa
 xwF
 aae
 aae
@@ -87020,7 +87008,7 @@ aaB
 aar
 xwF
 aak
-aak
+aaa
 xwF
 aae
 aae
@@ -87276,7 +87264,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 aae
@@ -87532,7 +87520,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -87788,8 +87776,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -88044,8 +88032,8 @@ aak
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -88299,8 +88287,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -88555,8 +88543,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -88811,7 +88799,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -89068,7 +89056,7 @@ xwF
 xwF
 xwF
 xwF
-xwF
+aaa
 xwF
 xwF
 xwF
@@ -89323,8 +89311,8 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -89577,9 +89565,9 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
-xwF
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -89832,9 +89820,9 @@ xwF
 xwF
 xwF
 xwF
-xwF
-xwF
-xwF
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -90086,10 +90074,10 @@ aak
 aak
 aak
 aak
-xwF
-xwF
-xwF
-xwF
+aaa
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
@@ -90331,19 +90319,19 @@ aaa
 aaa
 aaa
 aaa
-xwF
-xwF
-xwF
-xwF
-aak
-xwF
-xwF
-xwF
-xwF
-xwF
-aak
-aak
-xwF
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 xwF
 xwF
 xwF
