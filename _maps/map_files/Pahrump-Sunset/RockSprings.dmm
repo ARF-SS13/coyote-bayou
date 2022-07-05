@@ -1162,7 +1162,7 @@
 	dir = 1;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "dp" = (
 /obj/structure/flora/burnedtree2,
 /turf/open/indestructible/ground/outside/desert,
@@ -2144,7 +2144,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "fP" = (
 /obj/item/bedsheet,
 /obj/structure/bed/old,
@@ -2834,6 +2834,7 @@
 "hJ" = (
 /obj/structure/bookshelf,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "hK" = (
@@ -3651,7 +3652,7 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "jU" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -3688,7 +3689,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2bottom"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "jZ" = (
 /obj/item/clothing/shoes/combat,
 /obj/structure/closet,
@@ -3963,7 +3964,7 @@
 /area/f13/wasteland)
 "kJ" = (
 /turf/closed/wall/rust,
-/area/f13/radiation)
+/area/f13/wasteland)
 "kK" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -4318,6 +4319,7 @@
 /area/f13/village/overpass_lower)
 "lC" = (
 /obj/structure/bookshelf,
+/obj/structure/table/wood,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "lD" = (
@@ -4697,7 +4699,7 @@
 	dir = 8;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "mD" = (
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4787,7 +4789,7 @@
 	dir = 1;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "mQ" = (
 /obj/structure/window/fulltile/house{
 	icon_state = "housewindowbroken"
@@ -5166,11 +5168,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "nQ" = (
-/obj/structure/fence{
-	dir = 4
+/obj/structure/chair/sofa/left{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/radiation)
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "nR" = (
 /obj/structure/flora/grass/wasteland,
 /obj/effect/decal/cleanable/dirt,
@@ -5458,7 +5460,7 @@
 	dir = 8;
 	icon_state = "innerpavementcorner"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "oI" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -6264,7 +6266,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "qO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/rock/pile/largejungle,
@@ -6541,7 +6543,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/radiation)
+/area/f13/wasteland)
 "rD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -8274,6 +8276,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/chair/sofa/right{
+	dir = 1
+	},
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
 "wm" = (
@@ -8433,7 +8438,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "wJ" = (
 /obj/structure/flora/tree/joshua,
 /obj/structure/flora/grass/coyote/twentyseven,
@@ -8876,7 +8881,7 @@
 /area/f13/building)
 "xT" = (
 /obj/structure/simple_door/house/clean,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "xU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9326,7 +9331,7 @@
 	dir = 1;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "zf" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/clothing_low,
@@ -9537,7 +9542,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "zG" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 8;
@@ -9592,7 +9597,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "zP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt{
@@ -9814,9 +9819,6 @@
 	icon_state = "verticalleftborderleft1"
 	},
 /area/f13/wasteland)
-"Av" = (
-/turf/open/indestructible/ground/outside/water,
-/area/f13/caves)
 "Aw" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -9935,7 +9937,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "AN" = (
 /obj/structure/flora/grass/wasteland,
 /obj/effect/decal/cleanable/dirt,
@@ -10034,7 +10036,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/radiation)
+/area/f13/wasteland)
 "Bc" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -10413,7 +10415,7 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2bottom"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "Cd" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/flora/rock/pile/largejungle,
@@ -10697,7 +10699,7 @@
 	dir = 4;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "CR" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/tree/jungle/small{
@@ -11457,11 +11459,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/village)
-"Fd" = (
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/radiation)
 "Fe" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -11723,7 +11720,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "FN" = (
 /obj/structure/toilet{
 	dir = 8
@@ -11885,7 +11882,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "Gh" = (
 /obj/structure/rack,
 /obj/machinery/light/small{
@@ -11936,6 +11933,7 @@
 "Gn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bookshelf,
+/obj/structure/table/wood,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "Go" = (
@@ -13239,7 +13237,7 @@
 "JN" = (
 /obj/structure/spacevine,
 /turf/closed/wall/rust,
-/area/f13/radiation)
+/area/f13/wasteland)
 "JO" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -14054,7 +14052,7 @@
 	dir = 4;
 	icon_state = "innerpavement"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "LY" = (
 /obj/structure/car/rubbish3,
 /turf/open/indestructible/ground/outside/dirt,
@@ -15189,6 +15187,7 @@
 /obj/structure/bookshelf,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "Pl" = (
@@ -15611,7 +15610,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "Qu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
@@ -16686,7 +16685,7 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "Tu" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17090,7 +17089,7 @@
 	},
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/radiation)
+/area/f13/wasteland)
 "UC" = (
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
@@ -17321,9 +17320,6 @@
 	},
 /area/f13/wasteland)
 "Vk" = (
-/obj/structure/chair/sofa/right{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/royalblue,
@@ -18363,7 +18359,7 @@
 /turf/open/indestructible/ground/outside/roaddirt{
 	icon_state = "innerpavementcorner"
 	},
-/area/f13/radiation)
+/area/f13/wasteland)
 "Ye" = (
 /obj/effect/turf_decal/trimline/white/line{
 	dir = 4;
@@ -18581,11 +18577,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "YG" = (
-/obj/structure/chair/sofa{
-	dir = 1
+/obj/structure/junk/small/tv{
+	desc = "Advertisements would've played on this tv before the bombs dropped.";
+	icon = 'icons/fallout/objects/decorations.dmi';
+	icon_state = "television";
+	name = "pre-war advertising television"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet/royalblue,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "YH" = (
 /obj/structure/flora/grass/wasteland{
@@ -19116,13 +19114,9 @@
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "ZZ" = (
-/obj/structure/junk/small/tv{
-	desc = "Advertisements would've played on this tv before the bombs dropped.";
-	icon = 'icons/fallout/objects/decorations.dmi';
-	icon_state = "television";
-	name = "pre-war advertising television"
+/obj/structure/chair/sofa{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
 
@@ -19628,16 +19622,16 @@ AH
 AH
 AH
 AH
-Av
-Av
-Av
-Av
-Av
-Av
-Av
-Av
-Av
-Av
+TA
+TA
+TA
+TA
+TA
+TA
+TA
+TA
+TA
+TA
 OC
 "}
 (3,1,1) = {"
@@ -19894,7 +19888,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (4,1,1) = {"
@@ -20151,7 +20145,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (5,1,1) = {"
@@ -20408,7 +20402,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (6,1,1) = {"
@@ -20665,7 +20659,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (7,1,1) = {"
@@ -20922,7 +20916,7 @@ UN
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (8,1,1) = {"
@@ -21179,7 +21173,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (9,1,1) = {"
@@ -21436,7 +21430,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (10,1,1) = {"
@@ -21693,7 +21687,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (11,1,1) = {"
@@ -21950,7 +21944,7 @@ TA
 TA
 UN
 TA
-Av
+TA
 OC
 "}
 (12,1,1) = {"
@@ -22207,7 +22201,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (13,1,1) = {"
@@ -22464,7 +22458,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (14,1,1) = {"
@@ -22721,7 +22715,7 @@ nZ
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (15,1,1) = {"
@@ -22978,7 +22972,7 @@ vl
 Ir
 TA
 TA
-Av
+TA
 OC
 "}
 (16,1,1) = {"
@@ -23235,7 +23229,7 @@ Ml
 Ir
 TA
 TA
-Av
+TA
 OC
 "}
 (17,1,1) = {"
@@ -23492,7 +23486,7 @@ Cr
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (18,1,1) = {"
@@ -23749,7 +23743,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (19,1,1) = {"
@@ -24006,7 +24000,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (20,1,1) = {"
@@ -24263,7 +24257,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (21,1,1) = {"
@@ -24520,7 +24514,7 @@ TA
 TA
 TA
 TA
-Av
+TA
 OC
 "}
 (22,1,1) = {"
@@ -62709,12 +62703,12 @@ hc
 Bk
 Bk
 Bk
-nQ
+CG
 jT
 Cc
-Fd
+Va
 zF
-Fd
+Va
 ze
 Bk
 Bk
@@ -63480,12 +63474,12 @@ Bk
 HB
 BV
 Bk
-nQ
+CG
 jT
 FM
 fO
-Fd
-Fd
+Va
+Va
 do
 Bk
 by
@@ -63742,7 +63736,7 @@ jT
 wI
 qN
 Qt
-Fd
+Va
 ze
 Bk
 Bk
@@ -77446,7 +77440,7 @@ bD
 FH
 FH
 FH
-FH
+nQ
 Lx
 Hm
 aU
@@ -77700,10 +77694,10 @@ Bk
 SK
 Bk
 bD
-FH
+YG
 iT
 iT
-iT
+ZZ
 iT
 FH
 aU
@@ -78215,9 +78209,9 @@ vZ
 Df
 fr
 GC
-ZZ
+Nb
 iT
-YG
+Nb
 iT
 Lx
 aU
@@ -84380,7 +84374,7 @@ ra
 ra
 ra
 dr
-ra
+dr
 dr
 dr
 dr
