@@ -677,14 +677,6 @@
 /obj/structure/plasticflaps,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
-"aDR" = (
-/obj/landmark/vertibird_enter{
-	id = "verti1star"
-	},
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
-	},
-/area/f13/building)
 "aEK" = (
 /obj/effect/decal/remains/human,
 /obj/item/clothing/head/f13/bandit,
@@ -2210,7 +2202,7 @@
 "ccu" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/landmark/vertibird_enter{
-	id = "verti1port"
+	id = s
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
@@ -2638,16 +2630,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cwX" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer1{
-	pixel_y = 0;
-	pixel_x = 5
-	},
-/obj/structure/reagent_dispensers/barrel/explosive{
-	pixel_y = 4;
-	pixel_x = -2
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/window/reinforced/fulltile,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/cave)
 "cxn" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -2778,8 +2763,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "cDq" = (
@@ -3040,12 +3023,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "cOo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/landmark/vertibird_enter{
+	id = "verti1star"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "cOs" = (
 /obj/machinery/shower{
 	dir = 8
@@ -6621,7 +6605,9 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "fIX" = (
@@ -12374,7 +12360,9 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -13788,7 +13776,9 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "mhm" = (
@@ -16853,10 +16843,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"oKm" = (
-/obj/structure/window/reinforced/fulltile,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/cave)
 "oKY" = (
 /obj/structure/table/wood,
 /obj/item/trash/plate,
@@ -19280,9 +19266,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "qGo" = (
@@ -19912,7 +19895,9 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -26134,11 +26119,6 @@
 "wCF" = (
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
-"wCS" = (
-/obj/effect/turf_decal/big,
-/obj/machinery/atmospherics/pipe/simple/supply,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
 "wDl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -51256,7 +51236,7 @@ szu
 tDc
 pRW
 rdB
-wCS
+uOf
 vjR
 vjR
 vjR
@@ -52025,11 +52005,11 @@ dDl
 sDT
 szu
 szu
-cwX
-cHJ
-cHJ
 vjR
-cOo
+vjR
+vjR
+vjR
+pRW
 cCN
 pRW
 szu
@@ -56898,9 +56878,9 @@ shC
 shC
 shC
 shC
-oKm
-oKm
-oKm
+cwX
+cwX
+cwX
 shC
 shC
 shC
@@ -58185,7 +58165,7 @@ shC
 cLG
 vOm
 dZG
-aDR
+cOo
 qWA
 shC
 shC

@@ -1,3 +1,3 @@
-var/list/vertibirdLandZone = list()
-var/vertibirdEnterZone = null
-var/vertibird = null
+var/list/vertibirdLandZone = list("Red River Army Depot - Nash")
+var/vertibirdEnterZone = list("verti1star")
+var/vertibird = list("verti1port")
