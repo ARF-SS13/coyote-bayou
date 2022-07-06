@@ -985,7 +985,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/museum)
 "bhn" = (
-/obj/structure/nest/supermutant,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
 "bhH" = (
@@ -4415,9 +4418,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/sewer)
 "bQG" = (
-/obj/machinery/autolathe/constructionlathe,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/sewer)
+/obj/machinery/chem_master/advanced,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "bQH" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/indestructible/ground/inside/mountain,
@@ -5897,9 +5902,12 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/museum)
 "ctJ" = (
-/obj/machinery/chem_master/advanced,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/sewer)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/mineral/plastitanium,
+/area/f13/caves)
 "ctU" = (
 /obj/effect/turf_decal/caution{
 	dir = 4
@@ -6587,10 +6595,7 @@
 	},
 /area/f13/caves)
 "ddH" = (
-/obj/structure/nest/supermutant,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "deg" = (
@@ -7304,11 +7309,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "dSQ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/obj/structure/nest/supermutant,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "dSY" = (
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
@@ -7869,6 +7874,10 @@
 	req_one_access_txt = ""
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/caves)
+"ewW" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "exb" = (
 /obj/machinery/conveyor/inverted,
@@ -9523,6 +9532,13 @@
 	pixel_y = 15
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/caves)
+"guN" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
 "gvg" = (
 /obj/effect/decal/cleanable/dirt,
@@ -11251,7 +11267,7 @@
 "iuc" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/cobweb,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
 "iul" = (
@@ -12568,6 +12584,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 4
 	},
@@ -14105,9 +14122,8 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "lFc" = (
-/obj/item/mine/explosive,
-/obj/machinery/light/small,
-/turf/open/indestructible/ground/inside/mountain,
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "lFw" = (
 /obj/item/radio/intercom{
@@ -14224,11 +14240,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "lKx" = (
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#706891"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/closed/mineral/random/low_chance,
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "lKP" = (
 /obj/item/flashlight/flare/torch,
@@ -14855,9 +14871,12 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "mpt" = (
-/obj/machinery/autolathe,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
+/turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/caves)
 "mqL" = (
 /obj/item/trash/f13/steak,
 /obj/effect/decal/cleanable/dirt,
@@ -16051,6 +16070,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spider/cocoon,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "nKR" = (
@@ -16944,9 +16964,9 @@
 	},
 /area/f13/bunker)
 "oKm" = (
-/obj/machinery/workbench/advanced,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/mineral/plastitanium,
+/area/f13/caves)
 "oLw" = (
 /obj/structure/showcase/horrific_experiment{
 	desc = "Some sort of pod. You wonder what could have been in that.";
@@ -18257,11 +18277,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building/museum)
 "pZM" = (
-/obj/structure/nest/supermutant,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/machinery/autolathe/constructionlathe,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "pZV" = (
 /obj/structure/cable{
@@ -18637,8 +18656,15 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "qrQ" = (
-/obj/structure/nest/supermutant,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/obj/machinery/light,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "qrR" = (
 /obj/effect/decal/cleanable/glass,
@@ -19182,6 +19208,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/floor{
 	icon_state = "floorrusty"
 	},
@@ -19410,10 +19437,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "rjZ" = (
-/obj/structure/nest/supermutant,
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelchess"
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
+/turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "rkk" = (
 /obj/structure/wreck/trash/four_barrels,
@@ -20175,7 +20206,13 @@
 	},
 /area/f13/caves)
 "sel" = (
-/obj/structure/nest/supermutant,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "seP" = (
@@ -20778,8 +20815,13 @@
 /turf/open/water,
 /area/f13/tunnel)
 "sOw" = (
-/obj/structure/nest/supermutant,
-/turf/open/floor/plating/tunnel,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	icon_state = "floorrusty"
+	},
 /area/f13/caves)
 "sOQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -20971,10 +21013,6 @@
 /area/f13/tunnel)
 "sZg" = (
 /obj/effect/decal/cleanable/glass,
-/obj/structure/nest/supermutant/melee{
-	max_mobs = 1;
-	spawn_time = 10
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/caves)
 "sZn" = (
@@ -21991,9 +22029,6 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/blood/gibs,
-/mob/living/simple_animal/hostile/supermutant/legendary{
-	name = "The Butcher"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
 "ugV" = (
@@ -22122,8 +22157,6 @@
 /area/f13/caves)
 "upT" = (
 /obj/structure/shelf_wood,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "uqh" = (
@@ -22178,11 +22211,6 @@
 "uuf" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/structure/nest/supermutant/melee{
-	max_mobs = 3;
-	spawn_once = 1;
-	spawn_time = 10
 	},
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -22340,6 +22368,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "uDo" = (
@@ -24118,6 +24147,7 @@
 /area/f13/caves)
 "wzI" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/nurse/midwife,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "wzY" = (
@@ -24725,6 +24755,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "xms" = (
@@ -24947,7 +24978,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/nest/supermutant,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -25635,6 +25665,7 @@
 /area/f13/tunnel)
 "ylT" = (
 /obj/item/trash/sosjerky,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 
@@ -35203,8 +35234,8 @@ qFR
 rTT
 aTZ
 upT
-oKm
-mpt
+alc
+alc
 bhP
 gFa
 qFR
@@ -39168,9 +39199,9 @@ bLL
 bLL
 bOR
 bLL
-bLL
 bOF
-bLL
+bPE
+mBz
 omO
 aae
 aae
@@ -58246,7 +58277,7 @@ aaB
 abV
 aae
 aae
-lKx
+aae
 aae
 aae
 aak
@@ -74437,7 +74468,7 @@ otS
 adz
 dJM
 adz
-xwF
+aaa
 hEN
 xwF
 xwF
@@ -75721,13 +75752,13 @@ xwF
 xwF
 xwF
 xwF
+aaa
 xwF
 xwF
 xwF
 xwF
 xwF
-xwF
-htL
+cJr
 eTB
 xwF
 aaa
@@ -78770,7 +78801,7 @@ aae
 aaa
 aae
 bQC
-ctJ
+bQA
 bQA
 bvK
 bQA
@@ -79025,9 +79056,9 @@ aae
 aae
 aae
 aaa
-bQP
+aae
 bQC
-bQG
+bQA
 bQA
 bQQ
 bQA
@@ -79282,7 +79313,7 @@ aae
 aae
 aae
 aaa
-bQP
+aae
 bQC
 bQC
 bQA
@@ -79330,8 +79361,8 @@ adz
 sIW
 iwR
 txt
-lFc
-aaA
+iwR
+aaa
 adz
 adz
 xwF
@@ -80730,7 +80761,7 @@ xOD
 bix
 bHT
 qHH
-pZM
+xsE
 mAh
 pVW
 bHT
@@ -81755,7 +81786,7 @@ fap
 fap
 lYT
 gwQ
-dRl
+sOw
 dze
 iLM
 wXa
@@ -82016,10 +82047,10 @@ qTC
 dze
 xxx
 ryR
-ryR
+oKm
 cVx
 xsE
-lPN
+sel
 bHT
 trn
 ryR
@@ -82257,7 +82288,7 @@ xTT
 eDO
 eDO
 jYj
-jYj
+kOW
 eDO
 pYh
 edw
@@ -82267,7 +82298,7 @@ aQa
 xTT
 lUl
 eDO
-qrQ
+eDO
 oGu
 dRl
 vNt
@@ -82511,20 +82542,20 @@ xFw
 joy
 jYj
 jYj
-jYj
+kOW
 jYj
 eDO
 edw
 eDO
 jYj
 jYj
-qrQ
+eDO
 aGw
 dHT
-dRl
+sOw
 wCy
 okD
-dRl
+sOw
 eAl
 dRl
 sNR
@@ -82772,7 +82803,7 @@ ppq
 eDO
 eDO
 edw
-eDO
+ddH
 pYh
 jYj
 opU
@@ -82783,10 +82814,10 @@ wCy
 wCy
 jYj
 eAl
-eDO
+ddH
 sNR
 iLM
-wXa
+ctJ
 wXa
 qZv
 pZV
@@ -83047,7 +83078,7 @@ ryR
 ryR
 ojf
 xsE
-mxd
+qrQ
 bHT
 xwF
 xwF
@@ -83281,7 +83312,7 @@ nXl
 xPa
 wzF
 mgI
-oXu
+guN
 tqq
 bHT
 sbY
@@ -83560,12 +83591,12 @@ weh
 pSM
 dkB
 mXJ
-dkB
+rjZ
 uCB
 mXR
 oZx
 oZx
-oZx
+jwj
 cTs
 vDJ
 oZx
@@ -83826,7 +83857,7 @@ cOD
 cOD
 vDJ
 oZx
-sel
+oZx
 cWV
 xsE
 eAj
@@ -84331,7 +84362,7 @@ oOk
 wqj
 xJt
 guJ
-xsE
+mpt
 mxd
 bHT
 xwF
@@ -84343,7 +84374,7 @@ sbY
 fXU
 fXU
 fXU
-dSQ
+fXU
 sbY
 fap
 fap
@@ -84586,7 +84617,7 @@ khN
 iJH
 mLc
 iXe
-weh
+dSQ
 weh
 nKJ
 xlS
@@ -84844,7 +84875,7 @@ xkj
 kmO
 cTs
 pHI
-oZx
+lFc
 oZx
 oZx
 bHT
@@ -85333,8 +85364,8 @@ sbY
 bHT
 bHT
 bHT
+euT
 bhn
-vtp
 ewG
 mgI
 mgI
@@ -85353,7 +85384,7 @@ xwF
 xwF
 xwF
 fap
-eAl
+lKx
 hsb
 hsb
 sbY
@@ -85363,7 +85394,7 @@ sbY
 sGv
 sbY
 jNJ
-sOw
+vDJ
 fap
 uPd
 pDW
@@ -86131,7 +86162,7 @@ xwF
 lwd
 gio
 uFd
-aaB
+ewW
 bao
 iZw
 hsb
@@ -86634,7 +86665,7 @@ fap
 sbY
 sbY
 nzz
-rjZ
+nzz
 nzz
 nzz
 sbY
@@ -87748,8 +87779,8 @@ iCD
 iCD
 iCD
 iCD
-mPz
-mPz
+bQG
+pZM
 iCD
 iCD
 iCD
@@ -88720,7 +88751,7 @@ lYT
 swO
 jYj
 tji
-ddH
+jYj
 jYj
 jYj
 xFw
@@ -88950,7 +88981,7 @@ ppq
 eDO
 dHT
 jYj
-ddH
+jYj
 jYj
 cBX
 cBX
