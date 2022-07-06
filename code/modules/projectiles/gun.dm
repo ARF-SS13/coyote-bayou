@@ -265,6 +265,9 @@ ATTACHMENTS
 	var/dryfire_sound = "gun_dry_fire"
 	var/dryfire_text = "*click*"
 
+	/// Time between cocking your gun, if it supports it
+	var/cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	var/automatic = 0 // Does the gun fire when the clicker's held down?
 
 /obj/item/gun/Initialize()

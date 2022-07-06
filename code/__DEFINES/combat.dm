@@ -592,3 +592,12 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_SLOWDOWN_SHOTGUN_FIXED 0.05
 #define GUN_SLOWDOWN_SHOTGUN_PUMP 0.10
 #define GUN_SLOWDOWN_SHOTGUN_AUTO 0.40
+
+/// Cock length
+/// Delay between cocking your gun
+#define GUN_COCK_BASE (1 SECONDS)
+
+#define GUN_COCK_INSTANT 0
+#define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
+#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
+#define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)
