@@ -248,7 +248,8 @@
 
 	return FALSE
 
-/turf/CanPass(atom/movable/mover)
+/turf/CanAllowThrough(atom/movable/mover)
+	..()
 	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
 		return !density
 

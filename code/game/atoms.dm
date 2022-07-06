@@ -4,6 +4,9 @@
 	var/level = 2
 	var/article  // If non-null, overrides a/an/some in all cases
 
+	/// pass_flags that we are. If any of this matches a pass_flag on a moving thing, by default, we let them through.
+	var/pass_flags_self = NONE
+
 	var/flags_1 = NONE
 	var/flags_2 = NONE // Sorry, we ran out of space and needed a second flag pit
 	var/interaction_flags_atom = NONE
@@ -89,6 +92,9 @@
 
 	///Mobs that are currently do_after'ing this atom, to be cleared from on Destroy()
 	var/list/targeted_by
+	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
+	var/generic_canpass = TRUE
+
 
 
 /atom/New(loc, ...)
@@ -194,11 +200,23 @@
 	return TRUE
 
 
-/**
- * Whether mover can enter enter or leave the turf src is in (or is, if it's a turf).
- * border_dir determines from which direction the attempted move is originating.
- */
+/// Whether the mover object can avoid being blocked by this atom, while arriving from (or leaving through) the border_dir.
 /atom/proc/CanPass(atom/movable/mover, border_dir)
+	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_BE_PURE(TRUE)
+	. = CanAllowThrough(mover, border_dir)
+	// This is cheaper than calling the proc every time since most things dont override CanPassThrough
+	if(!mover.generic_canpass)
+		return mover.CanPassThrough(src, REVERSE_DIR(border_dir), .)
+
+/// Returns true or false to allow the mover to move through src
+/atom/proc/CanAllowThrough(atom/movable/mover, border_dir)
+	SHOULD_CALL_PARENT(TRUE)
+	//SHOULD_BE_PURE(TRUE)
+	if(mover.pass_flags & pass_flags_self)
+		return TRUE
+	if(mover.throwing && (pass_flags_self & LETPASSTHROW))
+		return TRUE
 	return !density
 
 

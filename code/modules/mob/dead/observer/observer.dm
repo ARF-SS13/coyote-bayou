@@ -170,7 +170,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	QDEL_NULL(spawners_menu)
 	return ..()
 
-/mob/dead/CanPass(atom/movable/mover, border_dir)
+/mob/dead/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	return 1
 
 /*

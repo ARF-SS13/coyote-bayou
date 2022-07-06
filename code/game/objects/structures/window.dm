@@ -133,7 +133,8 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	else
 		..(FULLTILE_WINDOW_DIR)
 
-/obj/structure/window/CanPass(atom/movable/mover, border_dir)
+/obj/structure/window/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	if(dir == FULLTILE_WINDOW_DIR)

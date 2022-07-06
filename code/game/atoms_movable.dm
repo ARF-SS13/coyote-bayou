@@ -28,8 +28,6 @@
 	var/last_pushoff
 	/// These flags mark the ability of this movable to pass through certain blockers.
 	var/pass_flags = NONE
-	/// These flags mark the ability of this movable to let other movables past them if they share the flag values on the `pass_flags` var.
-	var/pass_flags_self = NONE
 	var/moving_diagonally = 0 //0: not doing a diagonal move. 1 and 2: doing the first/second step of the diagonal move
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
@@ -113,17 +111,17 @@
 			return FALSE
 	return !(movement_type & FLYING) && has_gravity(source) && !throwing
 
-/atom/movable/proc/onZImpact(turf/T, levels)
-	var/atom/highest = T
-	for(var/i in T.contents)
-		var/atom/A = i
-		if(!A.density)
+/atom/movable/proc/onZImpact(turf/impacted_turf, levels, message = TRUE)
+	if(message)
+		visible_message(span_danger("[src] crashes into [impacted_turf]!"))
+	var/atom/highest = impacted_turf
+	for(var/atom/hurt_atom as anything in impacted_turf.contents)
+		if(!hurt_atom.density)
 			continue
-		if(isobj(A) || ismob(A))
-			if(A.layer > highest.layer)
-				highest = A
+		if(isobj(hurt_atom) || ismob(hurt_atom))
+			if(hurt_atom.layer > highest.layer)
+				highest = hurt_atom
 	INVOKE_ASYNC(src, .proc/SpinAnimation, 5, 2)
-	throw_impact(highest)
 	return TRUE
 
 /*
@@ -526,14 +524,15 @@
 /atom/movable/proc/move_crushed(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	return FALSE
 
-/atom/movable/CanPass(atom/movable/mover, border_dir)
+/*/atom/movable/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(mover in buckled_mobs)
 		return TRUE
 	if(flags_1 & ON_BORDER_1)
 		if(ISDIAGONALDIR(dir) || border_dir == dir)
 			return !density
 		return TRUE
-	return ..()
+	return ..()*/
 
 // called when this atom is removed from a storage item, which is passed on as S. The loc variable is already set to the new destination before this is called.
 /atom/movable/proc/on_exit_storage(datum/component/storage/concrete/S)
@@ -842,3 +841,14 @@
 	move_stacks++
 	loc = new_loc
 	Moved(old_loc)
+
+/// Returns true or false to allow src to move through the blocker, mover has final say
+/atom/movable/proc/CanPassThrough(atom/blocker, movement_dir, blocker_opinion)
+	SHOULD_CALL_PARENT(TRUE)
+	SHOULD_BE_PURE(TRUE)
+	return blocker_opinion
+
+/atom/movable/CanAllowThrough(atom/movable/mover, border_dir)
+	. = ..()
+	if(mover in buckled_mobs)
+		return TRUE

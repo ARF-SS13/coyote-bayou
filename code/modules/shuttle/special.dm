@@ -220,7 +220,8 @@
 	var/static/list/check_times = list()
 
 
-/obj/effect/forcefield/luxury_shuttle/CanPass(atom/movable/mover, border_dir)
+/obj/effect/forcefield/luxury_shuttle/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(mover in approved_passengers)
 		return TRUE
 

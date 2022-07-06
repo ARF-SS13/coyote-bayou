@@ -23,7 +23,8 @@
 		opened = TRUE
 	update_icon()
 
-/obj/structure/closet/crate/CanPass(atom/movable/mover, border_dir)
+/obj/structure/closet/crate/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(!istype(mover, /obj/structure/closet))
 		var/obj/structure/closet/crate/locatedcrate = locate(/obj/structure/closet/crate) in get_turf(mover)
 		if(locatedcrate) //you can walk on it like tables, if you're not in an open crate trying to move to a closed crate

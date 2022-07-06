@@ -98,7 +98,8 @@
 	return attack_hand(user)
 
 
-/obj/structure/alien/resin/CanPass(atom/movable/mover, border_dir)
+/obj/structure/alien/resin/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	return !density
 
 

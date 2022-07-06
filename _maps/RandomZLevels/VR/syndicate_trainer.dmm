@@ -418,7 +418,7 @@
 /turf/open/floor/mineral/titanium,
 /area/awaymission/centcomAway/hangar)
 "cB" = (
-/obj/machinery/door/window/westleft,
+/obj/machinery/door/window/left,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/cafe)
 "cE" = (
@@ -536,7 +536,7 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/centcomAway/hangar)
 "dm" = (
-/obj/machinery/door/window/northright{
+/obj/machinery/door/window/right/directional/north{
 	base_state = "right";
 	dir = 4;
 	icon_state = "right";
@@ -997,7 +997,7 @@
 /turf/closed/indestructible/riveted,
 /area/awaymission/centcomAway/general)
 "fR" = (
-/obj/machinery/door/window/eastright,
+/obj/machinery/door/window/right,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "fT" = (
@@ -1619,7 +1619,7 @@
 /area/awaymission/centcomAway/general)
 "jx" = (
 /obj/machinery/door/window,
-/obj/machinery/door/window/northright,
+/obj/machinery/door/window/right/directional/north,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "jy" = (
@@ -1784,7 +1784,7 @@
 /turf/open/indestructible,
 /area/awaymission/centcomAway/general)
 "kD" = (
-/obj/machinery/door/window/northright{
+/obj/machinery/door/window/right/directional/north{
 	icon_state = "right";
 	dir = 2
 	},
@@ -2191,7 +2191,7 @@
 /area/awaymission/centcomAway/cafe)
 "mz" = (
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/window/northright,
+/obj/machinery/door/window/right/directional/north,
 /turf/open/indestructible,
 /area/awaymission/centcomAway/cafe)
 "mE" = (

@@ -51,7 +51,8 @@
 /obj/structure/windoor_assembly/update_icon_state()
 	icon_state = "[facing]_[secure ? "secure_" : ""]windoor_assembly[state]"
 
-/obj/structure/windoor_assembly/CanPass(atom/movable/mover, border_dir)
+/obj/structure/windoor_assembly/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	if(border_dir == dir) //Make sure looking at appropriate border

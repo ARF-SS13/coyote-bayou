@@ -170,7 +170,8 @@
 
 	StartBurning()
 
-/obj/structure/bonfire/CanPass(atom/movable/mover, border_dir)
+/obj/structure/bonfire/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return TRUE
 	if(mover.throwing)
