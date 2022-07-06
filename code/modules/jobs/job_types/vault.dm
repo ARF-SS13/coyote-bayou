@@ -112,7 +112,7 @@ Head of Security
 	ears = 			/obj/item/radio/headset/headset_vault_hos/alt
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	suit = 			/obj/item/clothing/suit/armor/vest/alt
+	suit = 			/obj/item/clothing/suit/armor/medium/vest/alt
 	head = 			/obj/item/clothing/head/collectable/police/cos
 	belt = 			/obj/item/storage/belt/security
 	glasses = 		/obj/item/clothing/glasses/sunglasses
@@ -248,7 +248,7 @@ Security Officer
 	ears = 			/obj/item/radio/headset/headset_vaultsec
 	uniform = 		/obj/item/clothing/under/f13/vault13
 	head = 			/obj/item/clothing/head/helmet/riot/vaultsec
-	suit =			/obj/item/clothing/suit/armor/vest
+	suit =			/obj/item/clothing/suit/armor/medium/vest
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	belt = 			/obj/item/storage/belt/security

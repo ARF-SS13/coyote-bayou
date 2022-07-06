@@ -171,3 +171,9 @@
 	name = "Messenger REAL_NAME"
 	desc = "Dont shoot the messenger..."
 	emote_see = list("licks an envelope.","looks ready to set off to send a letter...","works on barking!")
+
+/datum/dog_fashion/head/clown
+	name = "REAL_NAME the Clown"
+	desc = "Honkman's best friend."
+	speak = list("HONK!", "Honk!")
+	emote_see = list("plays tricks.", "slips.")

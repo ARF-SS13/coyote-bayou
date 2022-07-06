@@ -15,7 +15,7 @@
 	var/list/datum/stack_recipe/recipes
 	var/singular_name
 	var/amount = 1
-	var/max_amount = 5000 //also see stack recipes initialisation, param "max_res_amount" must be equal to this max_amount
+	var/max_amount = 50 //also see stack recipes initialisation, param "max_res_amount" must be equal to this max_amount
 	var/is_cyborg = 0 // It's 1 if module is used by a cyborg, and uses its storage
 	var/datum/robot_energy_storage/source
 	var/cost = 1 // How much energy from storage it costs
@@ -218,8 +218,8 @@
 			var/datum/stack_recipe_list/srl = recipes_list[text2num(href_list["sublist"])]
 			recipes_list = srl.recipes
 		var/datum/stack_recipe/R = recipes_list[text2num(href_list["make"])]
-		var/multiplier = text2num(href_list["multiplier"])
-		if (!multiplier ||(multiplier <= 0)) //href protection
+		var/multiplier = round(text2num(href_list["multiplier"]))
+		if (multiplier < 1) //href protection
 			return
 		if(!building_checks(R, multiplier))
 			return

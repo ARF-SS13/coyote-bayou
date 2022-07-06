@@ -780,7 +780,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 GLOBAL_LIST_INIT(bone_recipes, list(
 	new /datum/stack_recipe("bone dagger", /obj/item/melee/onehanded/knife/bone, 2, time = 20),
 	null, \
-	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/f13/tribal/light/bone, 6, time = 30),
+	new /datum/stack_recipe("bone armor", /obj/item/clothing/suit/armor/light/tribal/bone, 6, time = 30),
 	new /datum/stack_recipe("skull helmet", /obj/item/clothing/head/helmet/skull, 4, time = 30),
 	null, \
 	new/datum/stack_recipe_list("medicine", list( \
@@ -882,7 +882,7 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 /obj/item/stack/sheet/cotton
 	name = "raw cotton bundle"
 	desc = "A bundle of raw cotton ready to be spun on the loom."
-	max_amount = 5000
+	max_amount = 50
 	singular_name = "raw cotton ball"
 	icon_state = "sheet-cotton"
 	resistance_flags = FLAMMABLE
@@ -977,7 +977,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throwforce = 1
 	throw_speed = 1
 	throw_range = 2
-	max_amount = 5000 //reduced from 500, made stacks sprites irrelevant due to scaling.
+	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")
