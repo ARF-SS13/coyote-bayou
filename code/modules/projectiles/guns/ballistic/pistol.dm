@@ -31,6 +31,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	select = FALSE
 	automatic_burst_overlay = FALSE
@@ -52,17 +53,9 @@
 
 
 
-/////////////////
-//LIGHT PISTOLS//
-/////////////////
-
-/* * * * * * * *
- * .22, 9mm
- * Low accuracy (cept .22)
- * Low recoil (High if automatic'd)
- * Fast shooting
- * Two-Gunable
- * * * * * * * */
+/* * * * * * * * *
+ * LIGHT PISTOLS *
+ * * * * * * * * */
 
 /* * * * * * * * * * *
  * .22 pistol
@@ -289,6 +282,10 @@
 #undef BERETTA_RECOIL_BURST
 #undef BERETTA_RECOIL_COOLDOWN_SEMI
 #undef BERETTA_RECOIL_COOLDOWN_BURST
+
+/* * * * * * * * * *
+ * MEDIUM PISTOLS  *
+ * * * * * * * * * */
 
 /* * * * * * * * * * *
  * N99 Pistol Semi-Auto
