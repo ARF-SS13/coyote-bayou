@@ -500,7 +500,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 2)
 
 /// Gun fire delay Base
-#define GUN_FIRE_DELAY_BASE (1 SECOND)
+#define GUN_FIRE_DELAY_BASE (1 SECONDS)
 
 /// Gun fire delay modifiers
 #define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0) // Mostly just good for automatics
@@ -511,7 +511,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FIRE_DELAY_SLOWER (GUN_FIRE_DELAY_BASE) //1.0s
 
 /// Gun autofire delay Base
-#define GUN_AUTOFIRE_DELAY_BASE (1 DECISECOND)
+#define GUN_AUTOFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
 #define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0)
@@ -522,7 +522,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_AUTOFIRE_DELAY_SLOWER (GUN_AUTOFIRE_DELAY_BASE * 5)
 
 /// Gun burstfire delay Base
-#define GUN_BURSTFIRE_DELAY_BASE (1 DECISECOND)
+#define GUN_BURSTFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
 #define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0)

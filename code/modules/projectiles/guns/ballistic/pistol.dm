@@ -230,15 +230,6 @@
 #define BERETTA_RECOIL_COOLDOWN_SEMI GUN_RECOIL_TIMEOUT_QUICK
 #define BERETTA_RECOIL_COOLDOWN_BURST GUN_RECOIL_TIMEOUT_LONG
 
-#undef BERETTA_BURST_1
-#undef BERETTA_BURST_3 3
-#undef BERETTA_SPREAD_SEMI
-#undef BERETTA_SPREAD_BURST
-#undef BERETTA_RECOIL_SEMI
-#undef BERETTA_RECOIL_BURST
-#undef BERETTA_RECOIL_COOLDOWN_SEMI
-#undef BERETTA_RECOIL_COOLDOWN_BURST
-
 /* * * * * * * * * * *
  * Beretta M9R Burst
  * Burst Light pistol
@@ -291,7 +282,7 @@
 	return
 
 #undef BERETTA_BURST_1
-#undef BERETTA_BURST_3 3
+#undef BERETTA_BURST_3
 #undef BERETTA_SPREAD_SEMI
 #undef BERETTA_SPREAD_BURST
 #undef BERETTA_RECOIL_SEMI
@@ -412,7 +403,7 @@
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	extra_damage = GUN_LESS_DAMAGE_T1
+	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
 
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
@@ -475,7 +466,7 @@
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	extra_damage = GUN_EXTRA_DAMAGE_T1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Mk. 23 Semi-Auto
@@ -504,7 +495,7 @@
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	extra_damage = GUN_EXTRA_DAMAGE_T1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	can_flashlight = TRUE
 	gunlight_state = "flight"
@@ -609,7 +600,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	extra_damage = GUN_EXTRA_DAMAGE_T1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
