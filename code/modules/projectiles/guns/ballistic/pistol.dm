@@ -20,15 +20,18 @@
 	slot_flags = ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_FAST
-
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+
 	select = FALSE
 	automatic_burst_overlay = FALSE
 	can_automatic = FALSE
@@ -77,13 +80,17 @@
 	mag_type = /obj/item/ammo_box/magazine/m22
 	w_class = WEIGHT_CLASS_TINY
 	
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 	can_attachments = TRUE
 	can_suppress = FALSE
@@ -93,7 +100,7 @@
 
 /* * * * * * * * * * *
  * Browning Hi-Power
- * Light pistol
+ * Baseline Light pistol
  * 9mm
  * Common
  * * * * * * * * * * */
@@ -104,13 +111,17 @@
 	icon_state = "ninemil"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 	
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -120,11 +131,12 @@
 
 /* * * * * * * * * * *
  * Maria
- * Unique Light pistol
+ * Gaudy Light pistol
  * 9mm
  * +10% damage
  * Accurate
  * No recoil
+ * Unique
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/pistol/ninemil/maria
@@ -132,18 +144,22 @@
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
 	
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_NONE
+	recoil_multiplier = GUN_RECOIL_NONE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
 	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FAST
-	extra_damage = BULLET_DAMAGE_PISTOL_LIGHT * GUN_EXTRA_DAMAGE_T1
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Sig P220
- * Light pistol
+ * Another Light pistol
  * 9mm
  * Common
  * * * * * * * * * * */
@@ -155,13 +171,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -172,7 +192,7 @@
 
 /* * * * * * * * * * *
  * Beretta M9FS Semi-Auto
- * Light pistol
+ * Another Light pistol
  * 9mm
  * Common
  * * * * * * * * * * */
@@ -183,13 +203,17 @@
 	icon_state = "beretta"
 	mag_type = /obj/item/ammo_box/magazine/m9mmds
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
@@ -197,22 +221,47 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
 
-//Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
+#define BERETTA_BURST_1 1
+#define BERETTA_BURST_3 3
+#define BERETTA_SPREAD_SEMI GUN_SPREAD_POOR
+#define BERETTA_SPREAD_BURST GUN_SPREAD_POOR * 2
+#define BERETTA_RECOIL_SEMI GUN_RECOIL_PISTOL_LIGHT
+#define BERETTA_RECOIL_BURST GUN_RECOIL_PISTOL_LIGHT * 2
+#define BERETTA_RECOIL_COOLDOWN_SEMI GUN_RECOIL_TIMEOUT_QUICK
+#define BERETTA_RECOIL_COOLDOWN_BURST GUN_RECOIL_TIMEOUT_LONG
+
+#undef BERETTA_BURST_1
+#undef BERETTA_BURST_3 3
+#undef BERETTA_SPREAD_SEMI
+#undef BERETTA_SPREAD_BURST
+#undef BERETTA_RECOIL_SEMI
+#undef BERETTA_RECOIL_BURST
+#undef BERETTA_RECOIL_COOLDOWN_SEMI
+#undef BERETTA_RECOIL_COOLDOWN_BURST
+
+/* * * * * * * * * * *
+ * Beretta M9R Burst
+ * Burst Light pistol
+ * 9mm
+ * Rare
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic
 	name = "Beretta M93R"
 	desc = "A rare select fire variant of the M93R."
 	icon_state = "m93r"
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
-
-	burst_size = 2
-	burst_shot_delay = 2.5
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
 
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
@@ -223,39 +272,57 @@
 /obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
 	var/mob/living/carbon/human/user = usr
 	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 9
-			recoil = 0.1
-			weapon_weight = GUN_TWO_HAND_ONLY
-			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			recoil = 0
-			weapon_weight = GUN_ONE_HAND_ONLY
+			select = 2
+			burst_size = BERETTA_BURST_3
+			spread = BERETTA_SPREAD_BURST
+			recoil_multiplier = BERETTA_RECOIL_BURST
+			recoil_cooldown_time = BERETTA_RECOIL_COOLDOWN_BURST
+			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
+		if(2)
+			select = 1
+			burst_size = BERETTA_BURST_1
+			spread = BERETTA_SPREAD_SEMI
+			recoil_multiplier = BERETTA_RECOIL_SEMI
+			recoil_cooldown_time = BERETTA_RECOIL_COOLDOWN_SEMI
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
 	return
 
+#undef BERETTA_BURST_1
+#undef BERETTA_BURST_3 3
+#undef BERETTA_SPREAD_SEMI
+#undef BERETTA_SPREAD_BURST
+#undef BERETTA_RECOIL_SEMI
+#undef BERETTA_RECOIL_BURST
+#undef BERETTA_RECOIL_COOLDOWN_SEMI
+#undef BERETTA_RECOIL_COOLDOWN_BURST
 
-//N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
+/* * * * * * * * * * *
+ * N99 Pistol Semi-Auto
+ * Baseline Medium pistol
+ * 10mm
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/n99
 	name = "10mm pistol"
-	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
+	desc = "A large, pre-war styled, gas-operated 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 	
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	recoil_damping = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 	can_attachments = TRUE
 	can_automatic = TRUE
@@ -264,79 +331,181 @@
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
-//the Executive							Keywords: UNIQUE, 10mm, Automatic, 12/24 round magazine. Special modifiers: damage +4
+/* * * * * * * * * * *
+ * Executive Pistol Burst Only
+ * Burst Medium pistol
+ * 10mm
+ * Burst
+ * +10% damage
+ * Unique
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/n99/executive
 	name = "the Executive"
 	desc = "A modified N99 pistol with an accurate two-round-burst and a blue Vault-Tec finish, a status symbol for some Overseers."
 	icon_state = "executive"
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 2
-	extra_damage = 4
 	semi_auto = FALSE
 	can_automatic = FALSE
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
-//Crusader pistol
+/* * * * * * * * * * *
+ * Crusader Pistol Semi-Auto
+ * Cool Medium pistol
+ * 10mm
+ * Flavorful
+ * Unique
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/n99/crusader
 	name = "\improper Crusader pistol"
 	desc = "A large-framed N99 pistol emblazoned with the colors and insignia of the Brotherhood of Steel. It feels heavy in your hand."
-	extra_penetration = 0.1
-	extra_damage = 26
-	force = 18
 	icon_state = "crusader"
 	item_state = "crusader"
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+
 	can_attachments = FALSE
 	can_automatic = FALSE
 
 
-//Type 17								Keywords: 10mm, Semi-auto, 12/24 round magazine. Special modifiers: damage +1, spread +1
+/* * * * * * * * * * *
+ * Type 17 Semi-Auto
+ * Cheap Medium pistol
+ * 10mm
+ * Less accurate
+ * Less damage
+ * Common
+ * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/pistol/type17
 	name = "Type 17"
 	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
 	icon_state = "chinapistol"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	fire_delay = 1
-	extra_damage = 24
-	recoil = 0.1
-	spread = 3
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	extra_damage = GUN_LESS_DAMAGE_T1
+
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 
-//M1911									Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
+/* * * * * * * * * * *
+ * M1911 Semi-Auto
+ * Light Medium pistol
+ * .45ACP
+ * Less melee force
+ * More accurate
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/m1911
 	name = "M1911"
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
 	w_class = WEIGHT_CLASS_NORMAL
-	fire_delay = 2
-	slowdown = 0.05
 	mag_type = /obj/item/ammo_box/magazine/m45
-	extra_damage = 30
-	recoil = 0.15
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 21
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
-//M1911	Custom							Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
+/* * * * * * * * * * *
+ * M1911 Custom Semi-Auto
+ * Lighter Medium pistol
+ * .45ACP
+ * Lighter
+ * Less recoil
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/m1911/custom
 	name = "M1911 Custom"
 	desc = "A well-maintained stainless-steel frame 1911, with genuine wooden grips."
 	icon_state = "m1911_custom"
-	recoil = 0.05
-	fire_delay = 2
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	extra_damage = GUN_EXTRA_DAMAGE_T1
 
-//Mk. 23								Keywords: .45 ACP, Semi-auto, Long barrel (lasersight), 12 round magazine, Flashlight
+/* * * * * * * * * * *
+ * Mk. 23 Semi-Auto
+ * Tacticool Medium pistol
+ * .45ACP
+ * More accurate
+ * Lighter
+ * Less recoil
+ * Faster to shoot
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/mk23
 	name = "Mk. 23"
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
 	mag_type = /obj/item/ammo_box/magazine/m45exp
-	fire_delay = 2
-	slowdown = 0.07
-	extra_damage = 34
-	spread = 1
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	extra_damage = GUN_EXTRA_DAMAGE_T1
+
 	can_flashlight = TRUE
 	gunlight_state = "flight"
 	flight_x_offset = 16
@@ -348,88 +517,192 @@
 
 
 
-/////////////////
-//HEAVY PISTOLS//
-/////////////////
+/* * * * * * * * * * * * * *
+ * HEAVY SEMI-AUTO PISTOLS *
+ * * * * * * * * * * * * * */
 
+/* * * * * * * * * * *
+ * Desert Eagle Semi-Auto
+ * Baseline Heavy pistol
+ * .44 Magnum
+ * Uncommon
+ * * * * * * * * * * */
 
-//Desert Eagle							Keywords: .44 Magnum, Semi-auto, Long barrel, 8 round magazine, Heavy. Special modifiers: bullet speed +300, damage +1
 /obj/item/gun/ballistic/automatic/pistol/deagle
 	name = "Desert Eagle"
 	desc = "A robust .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m44
-	fire_delay = 3
-	force = 15
-	extra_damage = 38
-	extra_penetration = 0.05
-	extra_speed = 300
-	recoil = 0.2
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
-//El Capitan			Keywords: 14mm, Semi-auto, 7 round magazine, Heavy. Special modifiers: damage -2
+/* * * * * * * * * * *
+ * El Capitan Semi-Auto
+ * Big Heavy pistol
+ * 14mm
+ * More damage
+ * Unique
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
 	name = "El Capitan"
 	desc = "The Captain loves his gun, despite some silly gunsmith adding some gas venting to the barrel after his second visit to the surgeon for recoil-related wrist injuries."
 	icon_state = "elcapitan"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
-	fire_delay = 0
-	extra_damage = 45
-	extra_penetration = 0.15
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
+
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-//Automag			Keywords: .44 Magnum, Semi-auto, Long barrel, 7 rounds, Heavy. Special modifiers: bullet speed +300
+/* * * * * * * * * * *
+ * Automag Semi-Auto
+ * Cooler Heavy pistol
+ * .44 magnum
+ * More accurate
+ * Less recoil
+ * More damage
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/automag
 	name = "Automag"
 	desc = "A long-barreled .44 magnum semi-automatic handgun."
 	icon_state = "automag"
 	item_state = "deagle"
 	mag_type = /obj/item/ammo_box/magazine/automag
-	fire_delay = 4
-	extra_damage = 41
-	extra_speed = 300
-	recoil = 0.2
+	
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	extra_damage = GUN_EXTRA_DAMAGE_T1
+
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
 
-//14mm Pistol		Keywords: 14mm, Semi-auto, 7 rounds, Heavy
+/* * * * * * * * * * *
+ * 14mm Semi-Auto
+ * Super Heavy pistol
+ * 14mm
+ * Less accurate
+ * Shoots slower
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/pistol14
 	name = "14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
-	force = 15
-	extra_damage = 44
-	extra_penetration = 0.1
-	fire_delay = 5
-	recoil = 0.25
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
-//14mm compact		Keywords: 14mm, Semi-auto, Short barrel, 7 rounds, Heavy
+/* * * * * * * * * * *
+ * 14mm Compact Semi-Auto
+ * super Heavy pistol
+ * 14mm
+ * Even less accurate
+ * Shoots slower
+ * Slower to recover recoil
+ * Less melee damage
+ * Uncommon
+ * * * * * * * * * * */
 /obj/item/gun/ballistic/automatic/pistol/pistol14/compact
 	name = "compact 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a compact model for concealed carry."
 	icon_state = "pistol14_compact"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 42
-	spread = 5
 
-//Little Devil							Keywords: UNIQUE, 14mm, Semi-auto, Short barrel, 7 Rounds, Heavy. Special modifiers: damage +4, penetration +0.05, spread -3
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
+/* * * * * * * * * * *
+ * Little Devil Semi-Auto
+ * Super Duper Heavy pistol
+ * 14mm
+ * More accurate
+ * Shoots slower
+ * More damage
+ * Less recoil
+ * Unique
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/pistol14/lildevil
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 50
-	fire_delay = 4
 
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
@@ -437,5 +710,5 @@
 
 /obj/item/gun/ballistic/automatic/pistol/pistoltesting
 	name = "pistol"
-	extra_damage = 18
+	gun_damage_multiplier = 18
 	mag_type = /obj/item/ammo_box/magazine/testbullet

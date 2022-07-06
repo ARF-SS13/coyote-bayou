@@ -443,6 +443,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
  * Gun  defines! *
  * * * * * * * * */
 
+/// Gun Firemodes
+#define GUN_FIREMODE_SEMIAUTO 1
+#define GUN_FIREMODE_BURST 2
+#define GUN_FIREMODE_AUTO 3
+
 /// Max spread recoil can add
 #define GUN_RECOIL_MAX_SPREAD 2
 
@@ -451,9 +456,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 
 /// Hobogun recoil modifier
 #define HOBO_RECOIL_MULT 2
-
-/// Automatic pistol recoil modifier
-#define AUTOPISTOL_RECOIL_MULT 2
 
 /// Gun recoil modifier per shot defines
 #define GUN_RECOIL_NONE 0
@@ -485,6 +487,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_TIMEOUT_QUICK (GUN_RECOIL_TIMEOUT_BASE * 0.5)
 #define GUN_RECOIL_TIMEOUT_NORMAL (GUN_RECOIL_TIMEOUT_BASE * 1)
 #define GUN_RECOIL_TIMEOUT_LONG (GUN_RECOIL_TIMEOUT_BASE * 1.5)
+#define GUN_RECOIL_TIMEOUT_LONGER (GUN_RECOIL_TIMEOUT_BASE * 2)
 
 /// Gun spread Base
 #define GUN_SPREAD_BASE 1
@@ -494,6 +497,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
 #define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 1.5)
+#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 2)
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECOND)
@@ -542,14 +546,20 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_TWO_HAND_ONLY 3
 
 /// Gun bullet damage base
-/// Multiplied against the gun's default bullet and added to the damage
-/// A value of 1 would couble the gun's damage per shot
-#define GUN_EXTRA_DAMAGE_0 0
-#define GUN_EXTRA_DAMAGE_T1 0.10
-#define GUN_EXTRA_DAMAGE_T2 0.15
-#define GUN_EXTRA_DAMAGE_T3 0.25
-#define GUN_EXTRA_DAMAGE_T4 0.35
-#define GUN_EXTRA_DAMAGE_T5 0.50
+/// Multiplies the gun's projectile damage
+#define GUN_EXTRA_DAMAGE_0 1
+#define GUN_EXTRA_DAMAGE_T1 1.10
+#define GUN_EXTRA_DAMAGE_T2 1.15
+#define GUN_EXTRA_DAMAGE_T3 1.25
+#define GUN_EXTRA_DAMAGE_T4 1.35
+#define GUN_EXTRA_DAMAGE_T5 1.50
+
+/// Also multiplies the gun's projectile damage, but so it does less damage
+#define GUN_LESS_DAMAGE_T1 0.90
+#define GUN_LESS_DAMAGE_T2 0.85
+#define GUN_LESS_DAMAGE_T3 0.75
+#define GUN_LESS_DAMAGE_T4 0.65
+#define GUN_LESS_DAMAGE_T5 0.50
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
@@ -560,3 +570,25 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_MELEE_FORCE_RIFLE_LIGHT (GUN_MELEE_FORCE_BASE * 1.5) //18
 #define GUN_MELEE_FORCE_RIFLE_HEAVY (GUN_MELEE_FORCE_BASE * 2) // 24
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
+
+/// Gun slowdown
+#define GUN_SLOWDOWN_NONE 0
+#define GUN_SLOWDOWN_PISTOL_LIGHT 0.05
+#define GUN_SLOWDOWN_PISTOL_MEDIUM 0.10
+#define GUN_SLOWDOWN_PISTOL_HEAVY 0.15
+#define GUN_SLOWDOWN_REVOLVER_LIGHT 0.10
+#define GUN_SLOWDOWN_REVOLVER_HEAVY 0.15
+#define GUN_SLOWDOWN_REPEATER 0.20
+#define GUN_SLOWDOWN_CARBINE 0.20
+#define GUN_SLOWDOWN_SMG_LIGHT 0.10
+#define GUN_SLOWDOWN_SMG_HEAVY 0.25
+#define GUN_SLOWDOWN_RIFLE_BOLT 0.30
+#define GUN_SLOWDOWN_RIFLE_LIGHT_SEMI 0.25
+#define GUN_SLOWDOWN_RIFLE_LIGHT_AUTO 0.35
+#define GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI 0.30
+#define GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO 0.40
+#define GUN_SLOWDOWN_RIFLE_LMG 0.60
+#define GUN_SLOWDOWN_RIFLE_GAUSS 1
+#define GUN_SLOWDOWN_SHOTGUN_FIXED 0.05
+#define GUN_SLOWDOWN_SHOTGUN_PUMP 0.10
+#define GUN_SLOWDOWN_SHOTGUN_AUTO 0.40

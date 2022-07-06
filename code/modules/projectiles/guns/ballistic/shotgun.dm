@@ -265,7 +265,7 @@
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
 	fire_delay = 6
-	extra_damage = 0
+	gun_damage_multiplier = 0
 	recoil = 0.1
 	spread = 2
 
@@ -402,4 +402,4 @@
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal/test
-	extra_damage = 7
+	gun_damage_multiplier = 7

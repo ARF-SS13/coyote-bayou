@@ -134,7 +134,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	force = 10
-	extra_damage = 30
+	gun_damage_multiplier = 30
 	spread = 4
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
@@ -151,7 +151,7 @@
 	item_state = "45revolver"
 	icon_state = "45revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45
-	extra_damage = 34
+	gun_damage_multiplier = 34
 	fire_delay = 4.5
 	spread = 1
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
@@ -169,7 +169,7 @@
 	icon_state = "357colt"
 	item_state = "357colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-	extra_damage = 34
+	gun_damage_multiplier = 34
 	fire_delay = 4.5
 	spread = 0
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
@@ -180,7 +180,7 @@
 	icon_state = "mateba"
 	item_state = "mateba"
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-	extra_damage = 34
+	gun_damage_multiplier = 34
 
 //Lucky							Keywords: UNIQUE, .357, Double action, 6 rounds cylinder, Block chance, Fire delay -1
 /obj/item/gun/ballistic/revolver/colt357/lucky
@@ -189,7 +189,7 @@
 	icon_state = "lucky37"
 	item_state = "lucky"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 40
+	gun_damage_multiplier = 40
 	fire_delay = 3
 	block_chance = 20
 
@@ -198,7 +198,7 @@
 	name = "police revolver"
 	desc = "Pre-war double action police revolver chambered in .357 magnum."
 	icon_state = "police"
-	extra_damage = 32
+	gun_damage_multiplier = 32
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	w_class = WEIGHT_CLASS_SMALL
 	spread = 2
@@ -217,7 +217,7 @@
 	item_state = "model29"
 	icon_state = "m29"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
-	extra_damage = 38
+	gun_damage_multiplier = 38
 	extra_penetration = 0.1
 	recoil = 0.1
 	can_scope = FALSE
@@ -231,7 +231,7 @@
 	item_state = "44magnum"
 	icon_state = "mysterious_m29"
 	can_scope = FALSE
-	extra_damage = 38
+	gun_damage_multiplier = 38
 
 
 //Peacekeeper					 Keywords: OASIS, .44, Double action, 6 rounds cylinder, Extra Firemode
@@ -240,7 +240,7 @@
 	desc = "When you don't just need excessive force, but crave it. This .44 has a special hammer mechanism, allowing for measured powerful shots, or fanning for a flurry of inaccurate shots."
 	item_state = "m29peace"
 	icon_state = "m29peace"
-	extra_damage = 45
+	gun_damage_multiplier = 45
 	automatic = 1
 	autofire_shot_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
@@ -252,7 +252,7 @@
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
 	icon_state = "m29_snub"
 	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 36
+	gun_damage_multiplier = 36
 	spread = 3
 
 
@@ -264,7 +264,7 @@
 	icon_state = "44colt"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	fire_delay = 4.5
-	extra_damage = 40
+	gun_damage_multiplier = 40
 	spread = 0
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
 
@@ -275,7 +275,7 @@
 	desc = "I hadn't noticed, but there on his hip, was a really spiffy looking iron..."
 	fire_delay = 4
 	extra_penetration = 0.1
-	extra_damage = 40
+	gun_damage_multiplier = 40
 
 
 //////////////////////
@@ -291,7 +291,7 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	recoil = 0.2
 	fire_delay = 1
-	extra_damage = 45
+	gun_damage_multiplier = 45
 	extra_penetration = 0.1
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
@@ -322,7 +322,7 @@
 	recoil = 0.1
 	can_scope = TRUE
 	scope_state = "revolver_scope"
-	extra_damage = 44
+	gun_damage_multiplier = 44
 	extra_penetration = 0.1
 	fire_delay = 5.5
 	scope_x_offset = 9
@@ -332,7 +332,7 @@
 /obj/item/gun/ballistic/revolver/hunting/klatue
 	name = "degraded hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70. This one is very worn."
-	extra_damage = 34
+	gun_damage_multiplier = 34
 	extra_penetration = 0
 
 /////////////////////
@@ -347,7 +347,7 @@
 	item_state = "coltwalker"
 	icon_state = "peacemaker"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev45/gunslinger
-	extra_damage = 38
+	gun_damage_multiplier = 38
 	extra_penetration = 0.15
 	fire_delay = 4.5
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
@@ -361,7 +361,7 @@
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	weapon_weight = GUN_ONE_HAND_ONLY
-	extra_damage = 33
+	gun_damage_multiplier = 33
 	extra_penetration = 0.2
 	spread = 4
 	recoil = 0.5
@@ -377,7 +377,7 @@
 /obj/item/gun/ballistic/revolver/needler
 	name = "Needler pistol"
 	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
-	extra_damage = 21
+	gun_damage_multiplier = 21
 	icon_state = "needler"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'

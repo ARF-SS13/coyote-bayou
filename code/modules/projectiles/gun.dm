@@ -70,11 +70,11 @@ KEYWORDS
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 
 	LONG BARREL/LASERSIGHT
-	extra_damage = +2
+	gun_damage_multiplier = +2
 	spread = -1
 
 	SHORT BARREL
-	extra_damage = -2
+	gun_damage_multiplier = -2
 	spread = +2
 
 	HEAVY
@@ -155,7 +155,7 @@ ATTACHMENTS
 	var/fire_sound = "gunshot"
 	var/draw_time = GUN_DRAW_NORMAL // Time it takes between drawing the gun and shooting the gun
 	var/recoil = 0 // Counts up every shot, adds inaccuracy to shots after that, cleared after a delay
-	var/recoil_damping = GUN_RECOIL_PISTOL_LIGHT // Multiplier for how much the gun itself reduces (or adds) recoil
+	var/recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT // Multiplier for how much the gun itself reduces (or adds) recoil
 	var/recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL // Time between shooting that must pass to deplete recoil
 	var/recoil_cooldown_schedule = 0 // If time >= this, clear recoil and any related spread
 	var/clumsy_check = TRUE
@@ -163,6 +163,8 @@ ATTACHMENTS
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	var/sawn_desc = null				//description change if weapon is sawn-off
 	var/sawn_off = FALSE
+
+	slowdown = GUN_SLOWDOWN_NONE
 
 	/// can we be put into a turret
 	var/can_turret = TRUE
@@ -245,7 +247,7 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	var/extra_damage = 0				//Number to add to individual bullets.
+	var/gun_damage_multiplier = 0				//Number to add to individual bullets.
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	//Zooming
@@ -547,7 +549,7 @@ ATTACHMENTS
 		if(chambered)
 			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
 			before_firing(target,user)
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
+			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -582,7 +584,7 @@ ATTACHMENTS
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
+		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 			shoot_with_empty_chamber(user)
 			firing = FALSE
 			return FALSE
