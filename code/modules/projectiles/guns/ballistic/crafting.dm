@@ -566,7 +566,7 @@
 	fire_delay = 3
 	extra_damage = 10
 	extra_penetration = 0.2
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 /*
 /obj/item/gun/ballistic/automatic/service/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))

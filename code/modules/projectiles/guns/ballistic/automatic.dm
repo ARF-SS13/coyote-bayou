@@ -13,7 +13,7 @@
 	desc = "should not be here, bugreport."
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	slot_flags = 0
 	force = 15
 	burst_size = 1
@@ -190,7 +190,7 @@
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_HEAVY //Automatic fire and onehanded use mix poorly.
+	weapon_weight = GUN_TWO_HAND_ONLY //Automatic fire and onehanded use mix poorly.
 	slowdown = 0.4
 	fire_delay = 3.75
 	burst_shot_delay = 3
@@ -270,7 +270,7 @@
 			spread = 14
 			fire_delay = 3.25
 			recoil = 0.1
-			weapon_weight = WEAPON_HEAVY
+			weapon_weight = GUN_TWO_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 			enable_burst()
 		if(1)
@@ -278,7 +278,7 @@
 			automatic = 0
 			fire_delay = 3.25
 			spread = 2
-			weapon_weight = WEAPON_MEDIUM
+			weapon_weight = GUN_ONE_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -301,7 +301,7 @@
 			spread = 16.5
 			fire_delay = 3.75
 			recoil = 0.3
-			weapon_weight = WEAPON_HEAVY
+			weapon_weight = GUN_TWO_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 			enable_burst()
 		if(1)
@@ -309,7 +309,7 @@
 			automatic = 0
 			fire_delay = 3.75
 			spread = 2
-			weapon_weight = WEAPON_HEAVY
+			weapon_weight = GUN_TWO_HAND_ONLY
 			recoil = 0.2
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
@@ -359,7 +359,7 @@
 			spread = 12
 			fire_delay = 3.25
 			recoil = 0.1
-			weapon_weight = WEAPON_HEAVY
+			weapon_weight = GUN_TWO_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 			enable_burst()
 		if(1)
@@ -367,7 +367,7 @@
 			automatic = 0
 			fire_delay = 3.25
 			spread = 2
-			weapon_weight = WEAPON_MEDIUM
+			weapon_weight = GUN_ONE_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -405,7 +405,7 @@
 			spread = 16
 			fire_delay = 3
 			recoil = 0.1
-			weapon_weight = WEAPON_HEAVY
+			weapon_weight = GUN_TWO_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
 			enable_burst()
 		if(1)
@@ -413,7 +413,7 @@
 			automatic = 0
 			fire_delay = 3
 			spread = 3
-			weapon_weight = WEAPON_MEDIUM
+			weapon_weight = GUN_ONE_HAND_ONLY
 			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
 	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 	update_icon()
@@ -643,7 +643,7 @@
 	autofire_shot_delay = 1.75
 	extra_penetration = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	spread = 3 //foregrip
 	fire_delay = 1
 	can_bayonet = TRUE

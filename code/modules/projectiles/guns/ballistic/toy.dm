@@ -56,7 +56,7 @@
 	item_flags = NONE
 	casing_ejector = FALSE
 	can_suppress = FALSE
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/ballistic/shotgun/toy/process_chamber(mob/living/user, empty_chamber = 0)
 	..()
@@ -125,7 +125,7 @@
 	recoil = 0.1
 	can_suppress = FALSE
 	inaccuracy_modifier = 0.5
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	dualwield_spread_mult = 1.4
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -142,4 +142,4 @@
 	dualwield_spread_mult = 1.4
 	slot_flags = SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY

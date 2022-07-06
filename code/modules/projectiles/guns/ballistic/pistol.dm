@@ -17,13 +17,18 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_NORMAL //How much space it takes in a bag
-	weapon_weight = WEAPON_MEDIUM //can only dual wield small pistols
 	slot_flags = ITEM_SLOT_BELT
-	force = 12 //Pistol whip
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	spread = 2
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FAST
+
 	burst_size = 1
-	fire_delay = 0
 	select = FALSE
 	automatic_burst_overlay = FALSE
 	can_automatic = FALSE
@@ -48,21 +53,193 @@
 //LIGHT PISTOLS//
 /////////////////
 
+/* * * * * * * *
+ * .22, 9mm
+ * Low accuracy (cept .22)
+ * Low recoil (High if automatic'd)
+ * Fast shooting
+ * Two-Gunable
+ * * * * * * * */
 
-//.22 Sport								Keywords: .22, Semi-auto, 16 round magazine, Suppressed
+/* * * * * * * * * * *
+ * .22 pistol
+ * Extra light pistol
+ * .22LC
+ * Accurate
+ * Quiet
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/automatic/pistol/pistol22
 	name = ".22 pistol"
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
-	extra_damage = 18
-	weapon_weight = WEAPON_LIGHT
 	w_class = WEIGHT_CLASS_TINY
+	
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_FAST
+
 	can_attachments = TRUE
 	can_suppress = FALSE
 	can_unsuppress = FALSE
 	suppressed = 1
 	fire_sound = 'sound/f13weapons/22pistol.ogg'
+
+/* * * * * * * * * * *
+ * Browning Hi-Power
+ * Light pistol
+ * 9mm
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil
+	name = "Browning Hi-power"
+	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
+	icon_state = "ninemil"
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_FAST
+
+	can_attachments = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 19
+	fire_sound = 'sound/f13weapons/ninemil.ogg'
+
+/* * * * * * * * * * *
+ * Maria
+ * Unique Light pistol
+ * 9mm
+ * +10% damage
+ * Accurate
+ * No recoil
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/ninemil/maria
+	name = "Maria"
+	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
+	icon_state = "maria"
+	
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_FAST
+	extra_damage = BULLET_DAMAGE_PISTOL_LIGHT * GUN_EXTRA_DAMAGE_T1
+
+/* * * * * * * * * * *
+ * Sig P220
+ * Light pistol
+ * 9mm
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/sig
+	name = "Sig P220"
+	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
+	icon_state = "sig"
+	w_class = WEIGHT_CLASS_SMALL
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_FAST
+
+	can_attachments = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 20
+	fire_sound = 'sound/f13weapons/9mm.ogg'
+
+
+/* * * * * * * * * * *
+ * Beretta M9FS Semi-Auto
+ * Light pistol
+ * 9mm
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/beretta
+	name = "Beretta M9FS"
+	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
+	icon_state = "beretta"
+	mag_type = /obj/item/ammo_box/magazine/m9mmds
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_FAST
+
+	can_attachments = TRUE
+	can_suppress = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 20
+	fire_sound = 'sound/f13weapons/9mm.ogg'
+
+//Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
+/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
+	name = "Beretta M93R"
+	desc = "A rare select fire variant of the M93R."
+	icon_state = "m93r"
+
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_FAST
+
+	burst_size = 2
+	burst_shot_delay = 2.5
+
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+	automatic_burst_overlay = TRUE
+	can_attachments = FALSE
+	semi_auto = FALSE
+	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+/obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 2
+			spread = 9
+			recoil = 0.1
+			weapon_weight = GUN_TWO_HAND_ONLY
+			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 1
+			recoil = 0
+			weapon_weight = GUN_ONE_HAND_ONLY
+			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
+	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
+	update_icon()
+	return
 
 
 //N99  10mm								Keywords: 10mm, Semi-auto, 12/24 round magazine
@@ -71,9 +248,15 @@
 	desc = "A pre-war large-framed, gas-operated advanced 10mm pistol."
 	icon_state = "n99"
 	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
-	extra_damage = 22
-	fire_delay = 1
-	recoil = 0.05
+	
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	recoil_damping = GUN_RECOIL_PISTOL_MEDIUM
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FAST
+
 	can_attachments = TRUE
 	can_automatic = TRUE
 	suppressor_state = "n99_suppressor"
@@ -116,101 +299,6 @@
 	spread = 3
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
-
-
-//Browning Hi-power						Keywords: 9mm, Semi-auto
-/obj/item/gun/ballistic/automatic/pistol/ninemil
-	name = "Browning Hi-power"
-	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
-	icon_state = "ninemil"
-	mag_type = /obj/item/ammo_box/magazine/m9mmds
-	weapon_weight = WEAPON_LIGHT
-	w_class = WEIGHT_CLASS_SMALL
-	extra_damage = 20
-	can_attachments = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 19
-	fire_sound = 'sound/f13weapons/ninemil.ogg'
-
-//Maria									Keywords: UNIQUE, 9mm, Semi-auto, 10 round magazine. Special modifiers: fire delay -1, damage +10, penetration +0.2
-/obj/item/gun/ballistic/automatic/pistol/ninemil/maria
-	name = "Maria"
-	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
-	icon_state = "maria"
-	fire_delay = 2
-	extra_damage = 25
-	extra_penetration = 0.2
-
-
-//Sig Sauer P220						Keywords: 9mm, Semi-auto, 10 round magazine
-/obj/item/gun/ballistic/automatic/pistol/sig
-	name = "Sig P220"
-	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
-	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
-	mag_type = /obj/item/ammo_box/magazine/m9mm
-	extra_damage = 19
-	can_attachments = TRUE
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 20
-	fire_sound = 'sound/f13weapons/9mm.ogg'
-
-
-//Beretta M9FS							Keywords: 9mm, Semi-auto. Special modifiers: spread -1
-/obj/item/gun/ballistic/automatic/pistol/beretta
-	name = "Beretta M9FS"
-	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
-	icon_state = "beretta"
-	mag_type = /obj/item/ammo_box/magazine/m9mmds
-	weapon_weight = WEAPON_LIGHT
-	extra_damage = 20
-	spread = 1
-	can_attachments = TRUE
-	can_suppress = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 20
-	fire_sound = 'sound/f13weapons/9mm.ogg'
-
-//Beretta M93R							Keywords: 9mm, Automatic, 15 round magazine
-/obj/item/gun/ballistic/automatic/pistol/beretta/automatic
-	name = "Beretta M93R"
-	desc = "A rare select fire variant of the M93R."
-	icon_state = "m93r"
-	fire_delay = 2
-	burst_size = 2
-	burst_shot_delay = 2.5
-	spread = 9
-	recoil = 0.2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-	automatic_burst_overlay = TRUE
-	can_attachments = FALSE
-	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-
-/obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 9
-			recoil = 0.1
-			weapon_weight = WEAPON_HEAVY
-			to_chat(user, "<span class='notice'>You switch to automatic fire.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			recoil = 0
-			weapon_weight = WEAPON_MEDIUM
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
 
 //M1911									Keywords: .45 ACP, Semi-auto, 8 round magazine. Special modifiers: damage +1
 /obj/item/gun/ballistic/automatic/pistol/m1911

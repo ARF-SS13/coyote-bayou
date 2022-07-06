@@ -68,7 +68,7 @@
 	desc = "A crudely handcrafted zip gun that uses 9mm ammo."
 	item_state = "gun"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	slowdown = 0.1
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 	force = 16
@@ -90,7 +90,7 @@
 	icon_state = "piperifle"
 	item_state = "pepperbox"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 	force = 20
 	fire_delay = 0.25
@@ -114,7 +114,7 @@
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 	force = 20
 	fire_delay = 0.25
@@ -141,7 +141,7 @@
 	icon_state = "shotgunbat"
 	item_state = "shotgunbat"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	force = 26 //Good club
 	fire_delay = 0.5
@@ -159,7 +159,7 @@
 	icon_state = "knifegun"
 	item_state = "knifegun"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
 	force = 24
 	fire_delay = 0.5
@@ -175,7 +175,7 @@
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	slot_flags = ITEM_SLOT_GLOVES
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	force = 24
@@ -195,7 +195,7 @@
 	icon_state = "autopipe"
 	item_state = "autopipe"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
 	force = 20
 	extra_damage = 25 //a lot less than the .357 magnum, because OP
@@ -288,7 +288,7 @@
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slowdown = 0.1
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	extra_speed = 0
@@ -308,7 +308,7 @@
 	item_state = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	extra_damage = 30
 	fire_delay = 0.25
 	force = 20

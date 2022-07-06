@@ -19,7 +19,7 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	force = 15 //Decent clubs generally speaking
@@ -109,7 +109,7 @@
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	fire_delay = 0.5
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
@@ -146,7 +146,7 @@
 	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	fire_delay = 0.5
 	force = 20
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
@@ -394,7 +394,7 @@
 	recoil = 1
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting

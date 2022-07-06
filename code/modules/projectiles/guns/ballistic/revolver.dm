@@ -12,7 +12,7 @@
 	force = 12 // Pistol whip
 	casing_ejector = FALSE
 	spawnwithmagazine = TRUE
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	var/select = 0
@@ -288,7 +288,7 @@
 	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
 	icon_state = "sequoia"
 	item_state = "sequoia"
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	recoil = 0.2
 	fire_delay = 1
 	extra_damage = 45
@@ -317,7 +317,7 @@
 	name = "hunting revolver"
 	desc = "A scoped double action revolver chambered in 45-70."
 	icon_state = "hunting_revolver"
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	recoil = 0.1
 	can_scope = TRUE
@@ -360,7 +360,7 @@
 	desc = "A strange pistol firing rifle ammunition, possibly damaging the users wrist and with poor accuracy."
 	icon_state = "thatgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/thatgun
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	extra_damage = 33
 	extra_penetration = 0.2
 	spread = 4

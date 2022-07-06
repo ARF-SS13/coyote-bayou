@@ -101,7 +101,7 @@
 	fire_delay = 1
 	ranged_attack_speed = CLICK_CD_RAPID
 	spread = 12
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	extra_penetration = 0.01
 	extra_damage = 10
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'

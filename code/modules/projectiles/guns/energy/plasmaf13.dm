@@ -12,7 +12,7 @@
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -40,7 +40,7 @@
 	icon_state = "glock86"
 	slowdown = 0.1
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock)
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
@@ -120,7 +120,7 @@
 	item_state = "plasma"
 	icon_state = "plasma"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_LIGHT //you need to wield it to fire it
+	weapon_weight = GUN_ONE_HAND_AKIMBO //you need to wield it to fire it
 	slot_flags = ITEM_SLOT_BACK
 	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)

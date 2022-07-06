@@ -18,7 +18,7 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	slot_flags = ITEM_SLOT_BACK
 	can_automatic = FALSE
 	slowdown = 0.5

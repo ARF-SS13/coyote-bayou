@@ -1119,22 +1119,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 /obj/item/proc/get_held_item_speechspans(mob/living/carbon/user)
 	return
 
-/obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
-	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
-	user.SetWeaponDrawDelay(max((4 * G.weapon_weight + 1),(user.AmountWeaponDrawDelay())))
-	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
-	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
-
 /obj/item/throwing_star/proc/throwingweapondraw(obj/item/throwing_star/T, mob/living/user)
 	user.visible_message("<span class='danger'>[user] grabs \a [T]!</span>")
 	user.SetThrowDelay(6)
 	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)
-
-/obj/item/gun/proc/play_equip_sound(src, volume=50)
-	if(src && equipsound && volume)
-		var/played_sound = equipsound
-
-		if(islist(equipsound))
-			played_sound = pick(equipsound)
-
-		playsound(src, played_sound, volume, 1)

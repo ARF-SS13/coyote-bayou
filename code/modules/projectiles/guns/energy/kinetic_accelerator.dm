@@ -7,7 +7,7 @@
 	cell_type = /obj/item/stock_parts/cell/emproof
 	item_flags = NONE
 	obj_flags = UNIQUE_RENAME
-	weapon_weight = WEAPON_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 	can_flashlight = 1
 	flight_x_offset = 15
 	flight_y_offset = 9

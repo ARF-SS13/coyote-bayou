@@ -57,6 +57,7 @@
 	var/original_angle = 0		//Angle at firing
 	var/nondirectional_sprite = FALSE //Set TRUE to prevent projectiles from having their sprites rotated based on firing angle
 	var/spread = 0			//amount (in degrees) of projectile spread
+	var/recoil = 0 // How much recoil does this bullet do when shot, factors into repeated-shot inaccuracy
 	animate_movement = 0	//Use SLIDE_STEPS in conjunction with legacy
 	/// how many times we've ricochet'd so far (instance variable, not a stat)
 	var/ricochets = 0

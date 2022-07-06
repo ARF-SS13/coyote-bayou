@@ -14,7 +14,7 @@
 	obj_flags = NONE
 	fire_delay = 40
 	w_class = WEIGHT_CLASS_HUGE
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	selfcharge = EGUN_SELFCHARGE
 	charge_delay = 2
 	recoil = 2
@@ -141,7 +141,7 @@
 	item_state = "laser"
 	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
@@ -209,7 +209,7 @@
 	fire_delay = 0
 	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -232,7 +232,7 @@
 	selfcharge = 1
 	icon_state = "rechargerpistol"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
@@ -246,7 +246,7 @@
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -282,7 +282,7 @@
 	icon_state = "AEP5CR"
 	item_state = "AEP5CR"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/stun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -300,7 +300,7 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
@@ -318,7 +318,7 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_LIGHT //dual wielding
+	weapon_weight = GUN_ONE_HAND_AKIMBO //dual wielding
 	slowdown = 0.3
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //7dmg, 0 AP, but essentially fires a pinpoint beam
@@ -333,7 +333,7 @@
 	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
 	slowdown = 0.35
-	weapon_weight = WEAPON_MEDIUM //DO NOT DUAL WIELD
+	weapon_weight = GUN_ONE_HAND_ONLY //DO NOT DUAL WIELD
 
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
@@ -343,7 +343,7 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	fire_delay = 2
 	scope_x_offset = 7
@@ -521,7 +521,7 @@
 	icon_state = "alienblaster"
 	desc = "This weapon is unlike any other you've ever seen before, and appears to be made out of metals not usually found on Earth. It certainly packs a punch, though."
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	can_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/alien)
@@ -535,7 +535,7 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
@@ -647,7 +647,7 @@
 	autofire_shot_delay = 1.75
 	spread = 8
 	fire_delay = 1
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	fire_sound = 'sound/weapons/laser.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/gatling/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp

@@ -184,10 +184,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define EMBED_POINTY list("ignore_throwspeed_threshold" = TRUE)
 #define EMBED_POINTY_SUPERIOR list("embed_chance" = 100, "ignore_throwspeed_threshold" = TRUE)
 
-//Gun weapon weight
-#define WEAPON_LIGHT 1
-#define WEAPON_MEDIUM 2
-#define WEAPON_HEAVY 3
 //Gun trigger guards
 #define TRIGGER_GUARD_ALLOW_ALL -1
 #define TRIGGER_GUARD_NONE 0
@@ -204,9 +200,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 
 //Nice shot bonus
 #define NICE_SHOT_RICOCHET_BONUS	20	//if the shooter has the NICE_SHOT trait and they fire a ricocheting projectile, add this to the ricochet chance and auto aim angle
-
-///Time to spend without clicking on other things required for your shots to become accurate.
-#define GUN_AIMING_TIME (2 SECONDS)
 
 //Object/Item sharpness
 #define SHARP_NONE			0
@@ -294,9 +287,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
  */
 #define FEEBLE_ATTACK_MSG_THRESHOLD 0.5
 
-/* 
- * Bullet defines!
- */
+/* * * * * * * * * *
+ * Bullet defines! *
+ * * * * * * * * * */
 
 /// Bullet damage defines
 #define BULLET_DAMAGE_PISTOL_LIGHT 10
@@ -307,6 +300,16 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BULLET_DAMAGE_RIFLE_HEAVY 50
 #define BULLET_DAMAGE_SHOTGUN_PELLET 10
 #define BULLET_DAMAGE_SHOTGUN_SLUG 40
+
+/// Bullet recoil defines
+#define BULLET_RECOIL_PISTOL_LIGHT 0
+#define BULLET_RECOIL_PISTOL_MEDIUM 0.25
+#define BULLET_RECOIL_PISTOL_HEAVY 1
+#define BULLET_RECOIL_RIFLE_LIGHT 0.1
+#define BULLET_RECOIL_RIFLE_MEDIUM 0.5
+#define BULLET_RECOIL_RIFLE_HEAVY 2
+#define BULLET_RECOIL_SHOTGUN_PELLET 2 // The total recoil of the shell, not individual pellets
+#define BULLET_RECOIL_SHOTGUN_SLUG 2
 
 /// Rubber bullet damage multiplier
 #define RUBBERY_DAMAGE_MULT 0.1
@@ -340,9 +343,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define SHOTGUN_SPREAD_IMPROVISED 25
 
 /// Bullet damage modifier defines
-#define BULLET_DAMAGE_MATCH 1.5 // rare, pack a punch
-#define BULLET_DAMAGE_SURPLUS 1 // standard ammo from an ammobench
-#define BULLET_DAMAGE_HANDLOAD 0.5 // trash ammo you can make anywhere with a reloader tool, most common
+#define BULLET_MATCH_MULT 1.5 // rare, pack a punch
+#define BULLET_SURPLUS_MULT 1 // standard ammo from an ammobench
+#define BULLET_HANDLOAD_MULT 0.5 // trash ammo you can make anywhere with a reloader tool, most common
 
 /// Bullet spread modifier defines
 #define BULLET_SPREAD_BASE 2 // Base spread added from 'quality' ammo
@@ -436,3 +439,124 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BULLET_WOUND_POISON 0
 #define BULLET_NAKED_WOUND_POISON 0
 
+/* * * * * * * * *
+ * Gun  defines! *
+ * * * * * * * * */
+
+/// Max spread recoil can add
+#define GUN_RECOIL_MAX_SPREAD 2
+
+/// Sawed-off recoil modifier
+#define SAWEDOFF_RECOIL_MULT 2
+
+/// Hobogun recoil modifier
+#define HOBO_RECOIL_MULT 2
+
+/// Automatic pistol recoil modifier
+#define AUTOPISTOL_RECOIL_MULT 2
+
+/// Gun recoil modifier per shot defines
+#define GUN_RECOIL_NONE 0
+#define GUN_RECOIL_PISTOL_LIGHT 1
+#define GUN_RECOIL_PISTOL_MEDIUM 1.2
+#define GUN_RECOIL_PISTOL_HEAVY 1.5
+#define GUN_RECOIL_REVOLVER_LIGHT 1
+#define GUN_RECOIL_REVOLVER_HEAVY 0.5
+#define GUN_RECOIL_REPEATER 0.5
+#define GUN_RECOIL_CARBINE 0.5
+#define GUN_RECOIL_SMG_LIGHT 2
+#define GUN_RECOIL_SMG_HEAVY 1.5
+#define GUN_RECOIL_RIFLE_BOLT 0
+#define GUN_RECOIL_RIFLE_LIGHT_SEMI 1
+#define GUN_RECOIL_RIFLE_LIGHT_AUTO 2
+#define GUN_RECOIL_RIFLE_MEDIUM_SEMI 1
+#define GUN_RECOIL_RIFLE_MEDIUM_AUTO 2
+#define GUN_RECOIL_RIFLE_LMG 1
+#define GUN_RECOIL_RIFLE_GAUSS 5
+#define GUN_RECOIL_SHOTGUN_FIXED 2
+#define GUN_RECOIL_SHOTGUN_PUMP 1
+#define GUN_RECOIL_SHOTGUN_AUTO 3
+
+/// Gun recoil timeout Base
+#define GUN_RECOIL_TIMEOUT_BASE (1.5 SECONDS)
+
+/// Gun recoil timeout modifiers
+#define GUN_RECOIL_TIMEOUT_INSTANT (GUN_RECOIL_TIMEOUT_BASE * 0)
+#define GUN_RECOIL_TIMEOUT_QUICK (GUN_RECOIL_TIMEOUT_BASE * 0.5)
+#define GUN_RECOIL_TIMEOUT_NORMAL (GUN_RECOIL_TIMEOUT_BASE * 1)
+#define GUN_RECOIL_TIMEOUT_LONG (GUN_RECOIL_TIMEOUT_BASE * 1.5)
+
+/// Gun spread Base
+#define GUN_SPREAD_BASE 1
+
+/// Gun spread modifiers
+#define GUN_SPREAD_NONE (GUN_SPREAD_BASE * 0)
+#define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
+#define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
+#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 1.5)
+
+/// Gun fire delay Base
+#define GUN_FIRE_DELAY_BASE (1 SECOND)
+
+/// Gun fire delay modifiers
+#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0) // Mostly just good for automatics
+#define GUN_FIRE_DELAY_FASTER (GUN_FIRE_DELAY_BASE * CLICK_CD_RAPID * 0.1) // 0.2s Mostly just good for automatics
+#define GUN_FIRE_DELAY_FAST (GUN_FIRE_DELAY_BASE * CLICK_CD_RANGE * 0.1) // 0.5s
+#define GUN_FIRE_DELAY_NORMAL (GUN_FIRE_DELAY_BASE * 0.6) // 0.6s
+#define GUN_FIRE_DELAY_SLOW (GUN_FIRE_DELAY_BASE * CLICK_CD_MELEE * 0.1) //0.8s
+#define GUN_FIRE_DELAY_SLOWER (GUN_FIRE_DELAY_BASE) //1.0s
+
+/// Gun autofire delay Base
+#define GUN_AUTOFIRE_DELAY_BASE (1 DECISECOND)
+
+/// Gun fire delay modifiers
+#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0)
+#define GUN_AUTOFIRE_DELAY_FASTER (GUN_AUTOFIRE_DELAY_BASE * 1)
+#define GUN_AUTOFIRE_DELAY_FAST (GUN_AUTOFIRE_DELAY_BASE * 2)
+#define GUN_AUTOFIRE_DELAY_NORMAL (GUN_AUTOFIRE_DELAY_BASE * 3)
+#define GUN_AUTOFIRE_DELAY_SLOW (GUN_AUTOFIRE_DELAY_BASE * 4)
+#define GUN_AUTOFIRE_DELAY_SLOWER (GUN_AUTOFIRE_DELAY_BASE * 5)
+
+/// Gun burstfire delay Base
+#define GUN_BURSTFIRE_DELAY_BASE (1 DECISECOND)
+
+/// Gun fire delay modifiers
+#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0)
+#define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 1)
+#define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 2)
+#define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 3)
+#define GUN_BURSTFIRE_DELAY_SLOW (GUN_BURSTFIRE_DELAY_BASE * 4)
+#define GUN_BURSTFIRE_DELAY_SLOWER (GUN_BURSTFIRE_DELAY_BASE * 5)
+
+/// Time after you draw a gun that you're able to shoot it
+#define GUN_AIMING_TIME (1.5 SECONDS)
+
+/// Gun draw time modifiers
+#define GUN_DRAW_QUICK (GUN_AIMING_TIME * 0) // Draw, pardner
+#define GUN_DRAW_NORMAL (GUN_AIMING_TIME * 1)
+#define GUN_DRAW_LONG (GUN_AIMING_TIME * 1.5)
+
+/// Gun weapon weight
+#define GUN_ONE_HAND_AKIMBO 1
+#define GUN_ONE_HAND_ONLY 2
+#define GUN_TWO_HAND_ONLY 3
+
+/// Gun bullet damage base
+/// Multiplied against the gun's default bullet and added to the damage
+/// A value of 1 would couble the gun's damage per shot
+#define GUN_EXTRA_DAMAGE_0 0
+#define GUN_EXTRA_DAMAGE_T1 0.10
+#define GUN_EXTRA_DAMAGE_T2 0.15
+#define GUN_EXTRA_DAMAGE_T3 0.25
+#define GUN_EXTRA_DAMAGE_T4 0.35
+#define GUN_EXTRA_DAMAGE_T5 0.50
+
+/// Gun melee force base
+#define GUN_MELEE_FORCE_BASE 12
+
+/// Gun weapon weight
+#define GUN_MELEE_FORCE_PISTOL_LIGHT (GUN_MELEE_FORCE_BASE * 1) // 12
+#define GUN_MELEE_FORCE_PISTOL_HEAVY (GUN_MELEE_FORCE_BASE * 1.25) //15
+#define GUN_MELEE_FORCE_RIFLE_LIGHT (GUN_MELEE_FORCE_BASE * 1.5) //18
+#define GUN_MELEE_FORCE_RIFLE_HEAVY (GUN_MELEE_FORCE_BASE * 2) // 24
+#define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
