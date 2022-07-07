@@ -2139,11 +2139,11 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bJh" = (
-/obj/machinery/door/window/southright,
+/obj/machinery/door/window/right/directional/south,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bJi" = (
-/obj/machinery/door/window/southleft,
+/obj/machinery/door/window/left/directional/south,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "bJj" = (
@@ -3817,12 +3817,12 @@
 	pixel_y = 13
 	},
 /obj/item/reagent_containers/spray/cleaner{
-	pixel_y = -5;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -5
 	},
 /obj/item/reagent_containers/spray/cleaner{
-	pixel_y = -5;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -5
 	},
 /obj/item/storage/fancy/donut_box,
 /turf/open/floor/f13/wood,
@@ -3933,8 +3933,8 @@
 /obj/machinery/button/door{
 	id = "bankvault";
 	name = "bank vault button";
-	req_one_access_txt = "52";
-	pixel_y = -27
+	pixel_y = -27;
+	req_one_access_txt = "52"
 	},
 /turf/open/floor/f13{
 	icon_state = "floordirtysolid"
@@ -15318,7 +15318,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "mTh" = (
-/obj/machinery/door/window/brigdoor/security/cell/northleft{
+/obj/machinery/door/window/brigdoor/security/cell/left/directional/north{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -19296,7 +19296,7 @@
 	},
 /area/f13/caves)
 "qZv" = (
-/obj/machinery/door/window/brigdoor/security/cell/northleft{
+/obj/machinery/door/window/brigdoor/security/cell/left/directional/north{
 	dir = 2;
 	id = "vaultc2";
 	name = "Cell 2"
@@ -20843,7 +20843,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/caves)
 "sQg" = (
-/obj/machinery/door/window/brigdoor/security/cell/northleft{
+/obj/machinery/door/window/brigdoor/security/cell/left/directional/north{
 	dir = 2;
 	id = "vaultc1";
 	name = "Cell 1"
@@ -25484,8 +25484,8 @@
 /area/f13/tunnel)
 "ybG" = (
 /obj/structure/ladder/unbreakable{
-	id = "antnest";
-	height = 1
+	height = 1;
+	id = "antnest"
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
