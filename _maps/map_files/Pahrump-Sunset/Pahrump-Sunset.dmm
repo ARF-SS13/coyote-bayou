@@ -43712,7 +43712,7 @@
 /area/f13/wasteland)
 "mSq" = (
 /mob/living/simple_animal/hostile/wolf/playable/sheepdog{
-	faction = list("s");
+	faction = s;
 	name = "Scruffy"
 	},
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet{
