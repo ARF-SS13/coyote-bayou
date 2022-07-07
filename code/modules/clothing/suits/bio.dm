@@ -1,4 +1,4 @@
-//Biosuit complete with shoes (in the item sprite)
+/* //Biosuit complete with shoes (in the item sprite)
 /obj/item/clothing/head/bio_hood
 	name = "bio hood"
 	icon_state = "bio"
@@ -87,3 +87,4 @@
 	item_state = "bio_suit"
 	strip_delay = 40
 	equip_delay_other = 20
+ */

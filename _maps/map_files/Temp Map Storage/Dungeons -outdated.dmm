@@ -30,7 +30,7 @@
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
 /obj/item/storage/belt/military/assault,
-/obj/item/clothing/suit/armor/f13/combat/swat,
+/obj/item/clothing/suit/armor/medium/combat/swat,
 /obj/item/clothing/mask/gas/sechailer/swat,
 /obj/item/clothing/head/helmet/f13/combat/swat,
 /obj/item/clothing/glasses/legiongoggles,
@@ -3191,7 +3191,7 @@
 /obj/structure/closet,
 /obj/item/storage/box/gloves,
 /obj/item/storage/box/masks,
-/obj/item/clothing/suit/toggle/labcoat/f13/followers,
+/obj/item/clothing/suit/toggle/labcoat/followers,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -5241,8 +5241,8 @@
 /obj/structure/rack,
 /obj/item/storage/belt/security,
 /obj/item/storage/belt/security,
-/obj/item/clothing/suit/armor/bulletproof,
-/obj/item/clothing/suit/armor/bulletproof,
+/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
+/obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/shoes/f13/military,
@@ -7091,7 +7091,7 @@
 /area/f13/bunker)
 "heQ" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/f13/power_armor/excavator,
+/obj/item/clothing/suit/armor/power_armor/excavator,
 /obj/item/clothing/head/helmet/f13/power_armor/excavator,
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
@@ -8648,8 +8648,8 @@
 /obj/item/clothing/head/f13/police,
 /obj/item/clothing/shoes/f13/military,
 /obj/item/clothing/shoes/f13/military,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/restraints/handcuffs,
 /obj/item/restraints/handcuffs,
 /obj/item/flashlight{
@@ -12302,7 +12302,7 @@
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/gloves/color/captain,
 /obj/item/clothing/head/caphat/parade,
-/obj/item/clothing/suit/armor/vest/capcarapace/alt,
+/obj/item/clothing/suit/armor/medium/vest/capcarapace/alt,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "mvo" = (
@@ -14159,7 +14159,7 @@
 /obj/item/gun/ballistic/automatic/pistol/n99,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/flashlight/seclite,
@@ -14188,7 +14188,7 @@
 	desc = "A blue jumpsuit with a yellow vault pattern and the number 223 printed on it.";
 	name = "vault 223 jumpsuit"
 	},
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"
@@ -17675,7 +17675,7 @@
 /obj/item/gun/ballistic/automatic/pistol/n99,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/flashlight/seclite,
@@ -20174,7 +20174,7 @@
 /obj/item/gun/ballistic/automatic/pistol/n99,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/item/flashlight/seclite,
@@ -20404,7 +20404,7 @@
 /obj/item/gun/ballistic/automatic/pistol/n99,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
 /obj/item/ammo_box/magazine/m10mm_adv/simple,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /obj/item/clothing/glasses/sunglasses,
 /obj/effect/spawner/lootdrop/armory_contraband,
@@ -23441,7 +23441,7 @@
 /area/f13/bunker)
 "xFU" = (
 /obj/structure/table,
-/obj/item/clothing/suit/toggle/labcoat/f13/followers,
+/obj/item/clothing/suit/toggle/labcoat/followers,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -23498,7 +23498,7 @@
 "xKD" = (
 /obj/structure/table/wood,
 /obj/item/storage/book/bible,
-/obj/item/clothing/suit/f13/hubologist,
+/obj/item/clothing/suit/armor/light/duster/robe_hubologist,
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
 "xLo" = (
@@ -23766,7 +23766,7 @@
 	desc = "A blue jumpsuit with a yellow vault pattern and the number 223 printed on it.";
 	name = "vault 223 jumpsuit"
 	},
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /obj/item/clothing/head/helmet/riot/vaultsec,
 /turf/open/floor/plasteel/f13{
 	icon_state = "redrustyfull"

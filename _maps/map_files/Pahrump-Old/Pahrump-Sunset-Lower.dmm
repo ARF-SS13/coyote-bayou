@@ -611,7 +611,7 @@
 "avu" = (
 /obj/structure/closet/crate/secure,
 /obj/item/clothing/under/f13/recon,
-/obj/item/clothing/suit/armor/f13/power_armor/t45d,
+/obj/item/clothing/suit/armor/power_armor/t45d,
 /obj/item/clothing/head/helmet/f13/power_armor/t45d,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/bunker)
@@ -1073,7 +1073,7 @@
 	name = "formal attire cabinet"
 	},
 /obj/item/clothing/accessory/bos/elder,
-/obj/item/clothing/suit/f13/elder,
+/obj/item/clothing/suit/elder,
 /obj/item/pda/heads/hop{
 	name = "Elder's PDA"
 	},
@@ -1106,7 +1106,7 @@
 /obj/item/clothing/under/f13/combat,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/suit/armor/f13/combat/mk2,
+/obj/item/clothing/suit/armor/medium/combat/mk2,
 /obj/item/clothing/head/helmet/f13/combat/mk2,
 /obj/item/clothing/mask/gas/syndicate,
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
@@ -1828,7 +1828,7 @@
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/storage/belt/holster,
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior,
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/senior,
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/senior,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat/swat,
 /obj/item/storage/belt/military,
@@ -5846,6 +5846,7 @@
 /area/f13/enclave)
 "dmC" = (
 /obj/machinery/vending/boozeomat,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "dmI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9473,7 +9474,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
 "fgP" = (
-/obj/item/clothing/suit/armor/f13/rangercombat/foxcustom,
+/obj/item/clothing/suit/armor/rangercombat/foxcustom,
 /obj/item/clothing/head/helmet/f13/ncr/rangercombat/foxcustom,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -9628,6 +9629,7 @@
 "fkx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "fls" = (
 /obj/structure/filingcabinet,
@@ -11359,7 +11361,7 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/bunker)
 "ghs" = (
-/obj/item/clothing/suit/armor/f13/combatrusted,
+/obj/item/clothing/suit/armor/medium/combat/rusted,
 /obj/item/clothing/head/helmet/f13/hoodedmask,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
@@ -12441,7 +12443,7 @@
 "gPr" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/clothing/suit/armor/f13/combat/swat,
+/obj/item/clothing/suit/armor/medium/combat/swat,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -12909,7 +12911,7 @@
 /obj/item/clothing/gloves/color/white/bos,
 /obj/item/clothing/under/syndicate/brotherhood,
 /obj/item/storage/briefcase,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate{
+/obj/item/clothing/suit/armor/medium/vest/capcarapace/syndicate{
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking officer of some lost prewar army.";
 	name = "old officer's vest"
 	},
@@ -17380,10 +17382,10 @@
 /obj/effect/decal/fakelattice{
 	pixel_y = -17
 	},
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
-/obj/item/clothing/suit/armor/vest,
+/obj/item/clothing/suit/armor/medium/vest,
+/obj/item/clothing/suit/armor/medium/vest,
+/obj/item/clothing/suit/armor/medium/vest,
+/obj/item/clothing/suit/armor/medium/vest,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "kaE" = (
@@ -18936,23 +18938,23 @@
 	pixel_x = -9;
 	pixel_y = 10
 	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate{
 	pixel_x = -9;
 	pixel_y = 6
 	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate{
 	pixel_x = -9;
 	pixel_y = 6
 	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate{
 	pixel_x = -9;
 	pixel_y = 6
 	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate{
 	pixel_x = -9;
 	pixel_y = 6
 	},
-/obj/item/clothing/suit/armor/f13/combat/brotherhood/initiate{
+/obj/item/clothing/suit/armor/medium/combat/brotherhood/initiate{
 	pixel_x = -9;
 	pixel_y = 6
 	},
@@ -19667,8 +19669,8 @@
 "lqV" = (
 /obj/structure/rack,
 /obj/structure/window/reinforced/spawner,
-/obj/item/clothing/suit/bio_suit/f13/hazmat,
-/obj/item/clothing/head/bio_hood/f13/hazmat,
+/obj/item/clothing/suit/bio_suit/hazmat,
+/obj/item/clothing/head/bio_hood/hazmat,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/bunker)
 "lqY" = (
@@ -21026,18 +21028,6 @@
 	icon_state = "damaged4"
 	},
 /area/f13/bunker)
-"mmY" = (
-/obj/docking_port/stationary{
-	area_type = /area/f13;
-	dwidth = 1;
-	height = 3;
-	id = "Enclave_Bunker";
-	name = "Enclave Bunker";
-	roundstart_template = /datum/map_template/shuttle/enclave_elevator;
-	width = 3
-	},
-/turf/open/floor/plasteel/elevatorshaft,
-/area/f13/enclave)
 "mnk" = (
 /obj/structure/showcase/horrific_experiment,
 /turf/open/floor/f13{
@@ -21129,8 +21119,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/archives)
-"mpy" = (
-/area/f13/enclave)
 "mpC" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -21641,7 +21629,7 @@
 /area/f13/brotherhood/archives)
 "mMR" = (
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/f13/battlecoat,
+/obj/item/clothing/suit/armor/light/duster/battlecoat,
 /obj/item/circuitboard/machine/autolathe/ammo,
 /obj/item/circuitboard/machine/autolathe/ammo,
 /obj/item/circuitboard/machine/autolathe/ammo,
@@ -21875,7 +21863,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/shoes/combat/swat,
 /obj/item/clothing/gloves/f13/military,
-/obj/item/clothing/suit/armor/vest/warden,
+/obj/item/clothing/suit/armor/medium/vest/warden,
 /obj/item/clothing/head/collectable/police/cos,
 /obj/item/clothing/under/f13/police/chief,
 /obj/effect/spawner/bundle/f13/greasegun,
@@ -23575,6 +23563,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/storage/box/drinkingglasses,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "nWh" = (
 /obj/structure/table,
@@ -24071,6 +24060,7 @@
 	pixel_x = 9;
 	pixel_y = 3
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "oiV" = (
 /obj/structure/sign/poster/official/report_crimes,
@@ -24082,8 +24072,8 @@
 /obj/structure/window/reinforced/spawner,
 /obj/structure/rack,
 /obj/machinery/light/floor,
-/obj/item/clothing/suit/bio_suit/f13/hazmat,
-/obj/item/clothing/head/bio_hood/f13/hazmat,
+/obj/item/clothing/suit/bio_suit/hazmat,
+/obj/item/clothing/head/bio_hood/hazmat,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/bunker)
 "ojd" = (
@@ -24303,11 +24293,12 @@
 	},
 /obj/effect/light_emitter,
 /obj/item/clothing/head/cowboyhat/pink,
-/turf/open/water,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "oqJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "orp" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25068,11 +25059,6 @@
 /obj/structure/decoration/fire,
 /turf/closed/wall/r_wall,
 /area/f13/enclave)
-"oSc" = (
-/obj/effect/spawner/lootdrop/f13/cash_legion_med,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "oSf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4;
@@ -25220,7 +25206,7 @@
 	pixel_y = -17
 	},
 /obj/structure/rack,
-/obj/item/clothing/suit/armor/vest/oasis,
+/obj/item/clothing/suit/armor/medium/vest/oasis,
 /obj/item/clothing/head/helmet/blueshirt,
 /obj/item/clothing/under/rank/security/officer/blueshirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -26953,6 +26939,7 @@
 /area/f13/bunker)
 "qgk" = (
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "qgo" = (
 /obj/machinery/workbench,
@@ -27203,7 +27190,7 @@
 "qmj" = (
 /obj/structure/closet,
 /obj/item/clothing/under/f13/vault,
-/obj/item/clothing/suit/armor/f13/kit,
+/obj/item/clothing/suit/armor/kit,
 /turf/open/floor/carpet/vault,
 /area/f13/building)
 "qml" = (
@@ -28501,9 +28488,6 @@
 /obj/structure/filingcabinet,
 /obj/item/stack/f13Cash/random/med,
 /area/f13/building)
-"rcg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/area/f13/enclave)
 "rcj" = (
 /obj/structure/table,
 /obj/structure/cable,
@@ -30257,6 +30241,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_x = 33
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "rWQ" = (
 /obj/effect/decal/waste{
@@ -33143,10 +33128,6 @@
 	dir = 4
 	},
 /area/f13/building)
-"tOz" = (
-/obj/effect/spawner/lootdrop/f13/cash_legion_low,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "tOM" = (
 /obj/machinery/autolathe/ammo,
 /obj/item/book/granter/crafting_recipe/gunsmith_three,
@@ -33892,7 +33873,6 @@
 /area/f13/caves)
 "uqh" = (
 /obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/cash_legion_low,
 /area/f13/caves)
 "uqk" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -35719,10 +35699,6 @@
 	icon_state = "booth_east_north"
 	},
 /area/f13/building)
-"vCi" = (
-/obj/effect/spawner/lootdrop/f13/cash_ncr_med,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
 "vCF" = (
 /obj/structure/reagent_dispensers/barrel/four,
 /obj/effect/decal/waste{
@@ -35828,6 +35804,7 @@
 	dir = 1;
 	pixel_y = -1
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "vGU" = (
 /obj/structure/closet/crate/footlocker{
@@ -35850,6 +35827,7 @@
 	pixel_x = 9;
 	pixel_y = 19
 	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "vHk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37293,10 +37271,10 @@
 "wAC" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/suit/armor/f13/leather_jacket,
-/obj/item/clothing/suit/armor/f13/leather_jacket,
-/obj/item/clothing/suit/armor/f13/leather_jacket,
-/obj/item/clothing/suit/armor/f13/harpercoat,
+/obj/item/clothing/suit/armor/light/leather/leather_jacket,
+/obj/item/clothing/suit/armor/light/leather/leather_jacket,
+/obj/item/clothing/suit/armor/light/leather/leather_jacket,
+/obj/item/clothing/suit/armor/harpercoat,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -39092,6 +39070,7 @@
 	pixel_y = -1
 	},
 /obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "xBz" = (
 /obj/structure/window/reinforced/fulltile,
@@ -39970,10 +39949,6 @@
 "yeD" = (
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/archives)
-"yeG" = (
-/obj/effect/spawner/lootdrop/f13/cash_ncr_low,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "yeS" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/indestructible/ground/inside/subway,
@@ -47411,8 +47386,8 @@ qPy
 hxF
 qyz
 qwT
-mpy
-mpy
+qwT
+qwT
 vGE
 wcj
 bwt
@@ -47669,7 +47644,7 @@ goj
 qwT
 mLV
 oqJ
-rcg
+qyz
 xBw
 wcj
 bkZ
@@ -47926,7 +47901,7 @@ qwT
 qyz
 iqQ
 nWe
-rcg
+qyz
 oiD
 wcj
 bkZ
@@ -48681,7 +48656,7 @@ wcj
 wcj
 mvg
 mvg
-mmY
+mvg
 bkZ
 bkZ
 bkZ
@@ -51241,7 +51216,7 @@ vPg
 vPg
 vPg
 vPg
-tOz
+xVz
 aoj
 wcj
 euO
@@ -61377,7 +61352,7 @@ lnr
 lnr
 vPg
 lnr
-oSc
+rxG
 lnr
 lnr
 lnr
@@ -62142,7 +62117,7 @@ vPg
 vPg
 vPg
 xVz
-vCi
+lnr
 gpM
 vPg
 vPg
@@ -85453,7 +85428,7 @@ aoj
 aoj
 aoj
 ygo
-tOz
+xVz
 aoj
 aoj
 vPg
@@ -85950,7 +85925,7 @@ xVz
 xNt
 hLM
 xVz
-yeG
+xVz
 eLE
 yfy
 aoj

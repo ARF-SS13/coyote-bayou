@@ -21,7 +21,7 @@
 /datum/outfit/job/khan
 	name = "Khan"
 	jobtype = /datum/job/khan
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	id = /obj/item/card/id/khantattoo
 	ears = /obj/item/radio/headset/headset_khans
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
@@ -71,7 +71,7 @@
 /datum/outfit/job/khanleader
 	name = "Khan"
 	jobtype = /datum/job/khanleader
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket
 	id = /obj/item/card/id/khanleadertattoo
 	ears = /obj/item/radio/headset/headset_khans
 	head = /obj/item/clothing/head/helmet/f13/khan/bandana
@@ -219,7 +219,7 @@
 	name = "Veteran Fighter"
 	belt = /obj/item/storage/belt/bandolier
 	r_hand = /obj/item/gun/ballistic/automatic/m1garand
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/garand308 = 3,
@@ -230,7 +230,7 @@
 	name = "Sprayer"
 	belt = /obj/item/storage/belt/bandolier
 	r_hand = /obj/item/gun/ballistic/automatic/smg/smg10mm
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
@@ -242,7 +242,7 @@
 	belt = /obj/item/storage/backpack/spearquiver
 	l_hand = /obj/item/shield/riot/tower
 	r_hand = /obj/item/melee/onehanded/machete/scrapsabre
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
@@ -252,7 +252,7 @@
 
 /datum/outfit/loadout/privileged
 	name = "Privileged"
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat/goji
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat/goji
 	glasses = /obj/item/clothing/glasses/wraith_spectacles
 	head = /obj/item/clothing/head/collectable/petehat/gang
 	r_hand = /obj/item/gun/ballistic/revolver/colt357/lucky
@@ -283,7 +283,7 @@
 	belt =/obj/item/storage/belt/bandolier
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/deagle/elcapitan
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m14mm = 3,
@@ -295,7 +295,7 @@
 	gloves = /obj/item/melee/powerfist/f13
 	belt = /obj/item/storage/belt/bandolier
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
@@ -307,7 +307,7 @@
 	name = "People's leader"
 	r_hand = /obj/item/gun/ballistic/revolver/revolver45
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	neck = /obj/item/storage/belt/holster
 	backpack_contents = list(
@@ -320,7 +320,7 @@
 	name = "Pacifier"
 	r_hand = /obj/item/gun/ballistic/automatic/shotgun/riot
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
-	suit = /obj/item/clothing/suit/toggle/labcoat/f13/khan_jacket/coat
+	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/d12g = 2,

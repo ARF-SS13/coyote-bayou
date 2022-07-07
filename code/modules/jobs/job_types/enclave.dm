@@ -70,7 +70,7 @@
 
 	head = /obj/item/clothing/head/helmet/f13/enclave/officer
 	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = /obj/item/clothing/suit/armor/f13/enclavetrenchcoat
+	suit = /obj/item/clothing/suit/armor/enclavetrenchcoat
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
@@ -135,7 +135,7 @@
 	name = "Enclave Gunnery Sergeant"
 	jobtype = /datum/job/enclave/f13gysergeant
 	head = /obj/item/clothing/head/helmet/f13/power_armor/x02helmet
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/x02
+	suit = /obj/item/clothing/suit/armor/power_armor/advanced/x02
 	accessory = /obj/item/clothing/accessory/enclave/master_sergeant
 
 	backpack_contents = list(
@@ -197,7 +197,7 @@
 /datum/outfit/job/enclave/peacekeeper/enclavesgt
 	name = "Enclave Sergeant"
 	jobtype = /datum/job/enclave/enclavesgt
-	suit = /obj/item/clothing/suit/armor/f13/combat/mk2/remnant
+	suit = /obj/item/clothing/suit/armor/medium/combat/mk2/remnant
 	head = /obj/item/clothing/head/helmet/f13/combat/mk2/remnant
 	accessory = /obj/item/clothing/accessory/enclave/sergeant
 
@@ -250,7 +250,7 @@
 /datum/outfit/job/enclave/peacekeeper/f13specialist
 	name = "Enclave Specialist"
 	jobtype = /datum/job/enclave/f13specialist
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
 	accessory = /obj/item/clothing/accessory/enclave/specialist
 
@@ -303,7 +303,7 @@
 	name = "Enclave Private"
 	jobtype = /datum/job/enclave/enclavespy
 	head = /obj/item/clothing/head/helmet/f13/combat/swat
-	suit = /obj/item/clothing/suit/armor/f13/combat/swat
+	suit = /obj/item/clothing/suit/armor/medium/combat/swat
 	suit_store =  /obj/item/gun/ballistic/automatic/assault_carbine/worn
 	accessory = /obj/item/clothing/accessory/enclave
 
@@ -336,7 +336,7 @@
 	head = /obj/item/clothing/head/helmet/f13/envirosuit
 	mask =/obj/item/clothing/mask/breath/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	suit = /obj/item/clothing/suit/armor/f13/environmentalsuit
+	suit = /obj/item/clothing/suit/armor/environmentalsuit
 	belt = /obj/item/storage/belt/medical
 	suit_store =  /obj/item/tank/internals/oxygen
 

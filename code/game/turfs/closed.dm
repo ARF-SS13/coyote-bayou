@@ -98,23 +98,11 @@
 	layer = FLY_LAYER
 	bullet_bounce_sound = null
 
-INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
-
-/turf/closed/indestructible/splashscreen/Initialize()
-	. = ..()
+/turf/closed/indestructible/splashscreen/New()
 	SStitle.splash_turf = src
 	if(SStitle.icon)
 		icon = SStitle.icon
-		handle_generic_titlescreen_sizes()
-
-///helper proc that will center the screen if the icon is changed to a generic width, to make admins have to fudge around with pixel_x less. returns null
-/turf/closed/indestructible/splashscreen/proc/handle_generic_titlescreen_sizes()
-	var/icon/size_check = icon(SStitle.icon, icon_state)
-	var/width = size_check.Width()
-	if(width == 480) // 480x480 is nonwidescreen
-		pixel_x = 0
-	else if(width == 608) // 608x480 is widescreen
-		pixel_x = -64
+	..()
 
 /turf/closed/indestructible/splashscreen/vv_edit_var(var_name, var_value)
 	. = ..()
@@ -122,7 +110,6 @@ INITIALIZE_IMMEDIATE(/turf/closed/indestructible/splashscreen)
 		switch(var_name)
 			if(NAMEOF(src, icon))
 				SStitle.icon = icon
-				handle_generic_titlescreen_sizes()
 
 /turf/closed/indestructible/riveted
 	icon = 'icons/turf/walls/riveted.dmi'

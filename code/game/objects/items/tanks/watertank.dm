@@ -7,7 +7,7 @@
 	item_state = "waterbackpack"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
-	slowdown = 1
+	slowdown = 0
 	actions_types = list(/datum/action/item_action/toggle_mister)
 	max_integrity = 200
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
@@ -181,7 +181,6 @@
 	item_state = "waterbackpackatmos"
 	icon_state = "waterbackpackatmos"
 	volume = 200
-	slowdown = 0
 
 /obj/item/watertank/atmos/Initialize()
 	. = ..()
@@ -434,7 +433,6 @@
 	item_state = "waterbackpackjani"
 	w_class = WEIGHT_CLASS_NORMAL
 	volume = 2000
-	slowdown = 0
 
 /obj/item/watertank/op/Initialize()
 	. = ..()

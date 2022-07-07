@@ -25,7 +25,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Oasis"
-	description = "You are the civil leader of Oasis, chosen by the people to represent and lead them from your manor. Recent power struggles place the town within a treacherous position, and a good Mayor will have to work hard to stay out of the crossfire. Pass laws to protect your citizens, distribute town funds and make deals with the powers present within the region to better the people - and yourself, of course."
+	description = "You are the civil leader of the Town of Nash.  You were chosen by the people to represent and lead them from your manor.  Your town is in a terse situation with the slaver town to the south, Redwater.  While not at war, you will have to work to keep your people safe from their predations.  The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly.  Do what's best for the town, and it's people.  All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
@@ -61,7 +61,6 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-	ears = 			/obj/item/radio/headset/headset_town
 	id =            /obj/item/card/id/silver/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -91,7 +90,7 @@ Mayor
 /datum/outfit/loadout/mayoral
 	name = "Frontier Leader"
 	backpack_contents = list(
-		/obj/item/clothing/suit/armor/f13/town/mayor = 1,
+		/obj/item/clothing/suit/armor/town/mayor = 1,
 		/obj/item/clothing/head/f13/town/mayor = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -104,7 +103,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/vault = 1,
 		/obj/item/clothing/shoes/jackboots = 1,
-		/obj/item/clothing/suit/armor/f13/battlecoat/vault/overseer = 1,
+		/obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer = 1,
 		/obj/item/reagent_containers/food/drinks/flask/vault113,
 		/obj/item/gun/energy/laser/pistol= 1,
 		/obj/item/stock_parts/cell/ammo/ec = 1,
@@ -114,7 +113,7 @@ Mayor
 	name = "High Roller"
 	backpack_contents = list(
 		/obj/item/clothing/glasses/orange = 1,
-		/obj/item/clothing/suit/f13/vest = 1,
+		/obj/item/clothing/suit/armor/outfit/vest = 1,
 		/obj/item/clothing/under/f13/sleazeball = 1,
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/toy/cards/deck/unum = 1,
@@ -132,7 +131,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "The settlement of Oasis is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
+	description = "The settlement of Nash is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
 	enforces = "You are the stand-in leader of Oasis if a Mayor does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 400
@@ -159,7 +158,7 @@ Mayor
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
 
-	ears = 			/obj/item/radio/headset/headset_town
+
 	id =            /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
@@ -222,7 +221,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "The Mayor"
-	description = "You are the civil enforcer of Oasis, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
+	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
 	enforces = "You are the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 750
@@ -254,7 +253,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	ears = 			/obj/item/radio/headset/headset_town
+	
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	belt =			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
@@ -270,7 +269,7 @@ Mayor
 
 /datum/outfit/loadout/thelaw
 	name = "The Law Man"
-	suit = /obj/item/clothing/suit/armor/f13/town/sheriff
+	suit = /obj/item/clothing/suit/armor/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
 	neck = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
@@ -283,7 +282,7 @@ Mayor
 /datum/outfit/loadout/thechief
 	name = "The Chief"
 	uniform = /obj/item/clothing/under/f13/police/formal
-	suit = /obj/item/clothing/suit/armor/f13/town/chief
+	suit = /obj/item/clothing/suit/armor/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
 	neck = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -321,7 +320,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "The Sheriff"
-	description = "You are a loyal protector of Oasis, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Oasis undefended, and don't let its people die out."
+	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
 	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Oasis if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
@@ -348,12 +347,12 @@ Mayor
 	name = "Deputy"
 	jobtype = /datum/job/oasis/f13deputy
 
-	ears = /obj/item/radio/headset/headset_town
+
 	id = /obj/item/card/id/dogtag/deputy
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/storage/belt/military/assault
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	neck = /obj/item/storage/belt/holster/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -367,7 +366,7 @@ Mayor
 
 /datum/outfit/loadout/frontierjustice
 	name = "Frontier Justice"
-	suit = /obj/item/clothing/suit/armor/f13/town/deputy
+	suit = /obj/item/clothing/suit/armor/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
 	neck =	/obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
@@ -380,7 +379,7 @@ Mayor
 /datum/outfit/loadout/police
 	name = "Oasis PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
 	neck = /obj/item/storage/belt/holster/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
@@ -396,7 +395,7 @@ Mayor
 /datum/outfit/loadout/swat
 	name = "S.W.A.T. Officer"
 	uniform = /obj/item/clothing/under/f13/police/swat
-	suit = /obj/item/clothing/suit/armor/bulletproof
+	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/helmet/alt
 	mask = /obj/item/clothing/mask/balaclava
 	gloves = /obj/item/clothing/gloves/f13/military
@@ -422,9 +421,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "Bighorn laws"
-	description = "You are a farmer living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may purchase your produce."
-	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food over drugs."
+	supervisors = "Nash laws"
+	description = "You are a farmer living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace."
+	enforces = "Farming is a public service, and you are under control of local governance - and you are expected to produce food."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13farmer
@@ -445,7 +444,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13farmer
 
 	id = /obj/item/card/id/dogtag/town
-	ears = 			/obj/item/radio/headset/headset_town
+
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
@@ -499,8 +498,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13prospector
 
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
-	suit = /obj/item/clothing/suit/armor/f13/raider/iconoclast/
+	suit = /obj/item/clothing/suit/armor/light/raider/iconoclast/
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
@@ -537,10 +535,10 @@ Mayor
 	title = "Doctor"
 	flag = F13DENDOC
 	department_flag = DEP_OASIS
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Oasis. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
+	description = "Handy with a scalpel and scanner, your expertise in the practice of medicine makes you an indispensible asset to the settlement of Nash. Just remember that you're no Follower - medicine doesn't come for free, and you aren't here out of the kindness of your heart. Make sure to turn a profit on your services, or the Mayor might reconsider your position!"
 	enforces = "Medicine is a public service, and you are under control of local governance - but remember public doesn't equate to free."
 	selection_color = "#dcba97"
 
@@ -562,7 +560,7 @@ Mayor
 	chemwhiz = TRUE
 	uniform = /obj/item/clothing/under/f13/medic
 	glasses = /obj/item/clothing/glasses/hud/health
-	ears = /obj/item/radio/headset/headset_town
+
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	backpack = /obj/item/storage/backpack/medic
@@ -590,9 +588,9 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the free market and Bighorn laws"
-	description = "As a proprietor of the Blue Oyster, you are responsible for ensuring both citizens and travellers in Bighorn can get some food, drink and rest. This town is usually run by the Great Khans, and the farm within their compound could provide fresh supplies for your business, so try negotiating with them if they are present."
-	enforces = "The Blue Oyster is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	supervisors = "the free market and Nash's Laws"
+	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest.  Speak to the farmers for fresh produce!"
+	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13barkeep
@@ -621,7 +619,7 @@ Mayor
 
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
+
 	belt = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -637,7 +635,7 @@ Mayor
 	name = "Rugged"
 	head = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
 	uniform = /obj/item/clothing/under/f13/cowboyb
-	suit = /obj/item/clothing/suit/f13/cowboybvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	gloves = /obj/item/clothing/gloves/color/brown
 	shoes = /obj/item/clothing/shoes/f13/brownie
 
@@ -646,7 +644,7 @@ Mayor
 	head = /obj/item/clothing/head/bowler
 	mask = /obj/item/clothing/mask/fakemoustache
 	uniform = /obj/item/clothing/under/f13/westender
-	suit = /obj/item/clothing/suit/f13/westender
+	suit = /obj/item/clothing/suit/armor/outfit/vest/bartender
 	gloves = /obj/item/clothing/gloves/fingerless
 	shoes = /obj/item/clothing/shoes/f13/fancy
 
@@ -675,8 +673,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 8
 	spawn_positions = 8
-	supervisors = "Bighorn laws"
-	description = "You are a citizen living in Bighorn - a settlement typically run by the Great Khans. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses or the Khans themselves may have work if you require funds."
+	supervisors = "Nash's laws"
+	description = "You are a citizen living in Nash.  Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -704,10 +702,8 @@ Mayor
 /datum/outfit/job/den/f13settler
 	name = "Citizen"
 	jobtype = /datum/job/oasis/f13settler
-	ears = /obj/item/radio/headset/headset_town
 	belt = null
 	id = /obj/item/card/id/dogtag/town
-	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -757,7 +753,7 @@ Mayor
 /datum/outfit/loadout/outdoorsman
 	name = "Outdoorsman"
 	head = /obj/item/clothing/head/f13/beaver
-	suit = /obj/item/clothing/suit/f13/cowboybvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/cowboy
 	belt = /obj/item/storage/belt/bandolier
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	shoes = /obj/item/clothing/shoes/f13/fancy
@@ -770,7 +766,7 @@ Mayor
 /datum/outfit/loadout/militia
 	name = "Militia"
 	head = /obj/item/clothing/head/helmet/armyhelmet
-	suit = /obj/item/clothing/suit/armor/f13/metalarmor/steelbib
+	suit = /obj/item/clothing/suit/armor/medium/vest/breastplate
 	uniform = /obj/item/clothing/under/f13/mercc
 	r_hand = /obj/item/gun/ballistic/rifle/hunting
 	gloves = /obj/item/clothing/gloves/f13/leather
@@ -797,7 +793,7 @@ Mayor
 	flag = F13DETECTIVE
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "paying clients and Bighorn laws"
+	supervisors = "paying clients and Nash's laws"
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/oasis/f13detective
 
@@ -822,7 +818,6 @@ Mayor
 	name = "Detective"
 	jobtype = /datum/job/oasis/f13detective
 	suit = /obj/item/clothing/suit/det_suit/grey
-	ears = /obj/item/radio/headset/headset_town
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
 	shoes =  /obj/item/clothing/shoes/laceup
@@ -850,7 +845,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Oasis. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
@@ -870,7 +865,6 @@ Mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
-	ears = /obj/item/radio/headset/headset_town
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
@@ -882,7 +876,7 @@ Mayor
 	head = /obj/item/clothing/head/collectable/tophat
 	glasses = /obj/item/clothing/glasses/monocle
 	uniform = /obj/item/clothing/under/suit_jacket/charcoal
-	suit = /obj/item/clothing/suit/f13/banker
+	suit = /obj/item/clothing/suit/armor/outfit/jacket/banker
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(
@@ -897,7 +891,7 @@ Mayor
 	name = "Loanshark"
 	glasses = /obj/item/clothing/glasses/orange
 	mask = /obj/item/clothing/mask/cigarette/cigar
-	suit = /obj/item/clothing/suit/f13/vest
+	suit = /obj/item/clothing/suit/armor/outfit/vest
 	uniform = /obj/item/clothing/under/f13/sleazeball
 	shoes = /obj/item/clothing/shoes/sandal
 	backpack_contents = list(
@@ -926,8 +920,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the free market and Bighorn laws"
-	description = "The big trading caravan companies have often neglected humble Bighorn. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations. This town is usually under control of the Great Khans, so just be careful not to get in the way of their chem business."
+	supervisors = "the free market and Nash's laws"
+	description = "The big trading caravan companies have often neglected humble Nash. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
 	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
 	selection_color = "#dcba97"
 	exp_requirements = 300
@@ -950,7 +944,6 @@ Mayor
 
 	id = /obj/item/card/id/dogtag/town
 	uniform = /obj/item/clothing/under/f13/roving
-	ears = /obj/item/radio/headset/headset_town
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel
 	duffelbag = /obj/item/storage/backpack/duffelbag

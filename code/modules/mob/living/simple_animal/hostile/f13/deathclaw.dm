@@ -12,11 +12,10 @@
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
 	maxHealth = 750
-
+	reach = 2
 	speed = -1
 	health = 600
 	obj_damage = 200
-	armour_penetration = 0.3
 	melee_damage_lower = 40
 	melee_damage_upper = 50
 
@@ -72,7 +71,6 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
-	armour_penetration = 0.35
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
@@ -87,7 +85,6 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
-	armour_penetration = 0.5
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
 	var/turf/T = get_turf(src)
@@ -107,7 +104,6 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
-	armour_penetration = 0.7
 
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)

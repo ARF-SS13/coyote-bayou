@@ -125,7 +125,7 @@ Professor
 	jobtype = /datum/job/followers/f13Professor
 	backpack = /obj/item/storage/backpack/explorer
 	uniform = /obj/item/clothing/under/f13/followers
-	suit= /obj/item/clothing/suit/toggle/labcoat/f13/followers
+	suit= /obj/item/clothing/suit/toggle/labcoat/followers
 	belt =/obj/item/storage/belt/utility/full/engi
 	id = /obj/item/card/id/silver
 	glasses = /obj/item/clothing/glasses/science
@@ -201,7 +201,7 @@ Practitioner
 
 /datum/outfit/loadout/physician
 	name =	"Emergency Physician"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/f13/followers
+	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
 	mask =	/obj/item/clothing/mask/surgical
 	gloves =	/obj/item/clothing/gloves/color/latex/nitrile
 	glasses =	/obj/item/clothing/glasses/hud/health
@@ -235,7 +235,7 @@ Practitioner
 
 /datum/outfit/loadout/medical_researcher
 	name =	"Medical Researcher"
-	suit =	/obj/item/clothing/suit/toggle/labcoat/f13/followers
+	suit =	/obj/item/clothing/suit/toggle/labcoat/followers
 	backpack_contents = list(
 		/obj/item/clothing/accessory/pocketprotector/full = 1,
 		/obj/item/folder/white = 1,
@@ -318,7 +318,7 @@ Follower Volunteer
 /datum/outfit/loadout/volunteer_farmer
 	name =	"Farmer"
 	head =	/obj/item/clothing/head/helmet/f13/vaquerohat
-	suit =	/obj/item/clothing/suit/overalls
+	suit =	/obj/item/clothing/suit/armor/outfit/overalls/farmer
 	belt =	/obj/item/storage/bag/plants/portaseeder
 	backpack_contents = list(
 		/obj/item/hatchet = 1,
@@ -365,7 +365,7 @@ Follower Volunteer
 	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
 	uniform =	/obj/item/clothing/under/f13/bodyguard
-	suit =	/obj/item/clothing/suit/armor/vest/big
+	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat

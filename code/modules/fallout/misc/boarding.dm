@@ -36,7 +36,7 @@
 	else
 		return..()
 
-/obj/structure/barricade/wooden/planks/take_damage()
+/obj/structure/barricade/wooden/planks/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0)
 	..()
 	if(obj_integrity <= (planks - 1) * 50)
 		planks --

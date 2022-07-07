@@ -312,7 +312,7 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-/obj/item/clothing/suit/armor/navyblue/russian
+/obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian
 	name = "\improper Russian officer's jacket"
 	desc = "This jacket is for those special occasions when a russian officer isn't required to wear their armor."
 	icon_state = "officertanjacket"
@@ -336,7 +336,7 @@
 	item_state = "ran_hat"
 	flags_inv = HIDEEARS
 
-/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/costume
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/costume
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This one is made of syrofoam."
 	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 2, "bomb" = 10, "bio" = 10, "rad" = 2, "fire" = -50, "acid" = -50, "wound" = 10)
@@ -916,7 +916,7 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_cuirass_old"
 
-/obj/item/clothing/suit/ghost_sheet
+/obj/item/clothing/suit/armor/outfit/costume/ghost
 	name = "ghost sheet"
 	desc = "The hands float by themselves, so it's extra spooky."
 	icon_state = "ghost_sheet"
