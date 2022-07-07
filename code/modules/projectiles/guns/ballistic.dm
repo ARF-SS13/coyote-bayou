@@ -220,12 +220,17 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = GUN_ONE_HAND_ONLY // Nope. Not unless you want broken wrist.
+		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
 		item_state = "gun"
-		slot_flags &= ~ITEM_SLOT_BACK	//you can't sling it on your back
-		slot_flags |= ITEM_SLOT_BELT		//but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil = 2
-		spread = 10
+		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
+		recoil_multiplier = (recoil_multiplier + 1) * 2
+		recoil_cooldown_time *= 0.8
+		spread += 10
+		cock_delay = GUN_COCK_SHOTGUN_FAST
+		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
+			gun_damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
+		else
+			gun_damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
 		update_icon()
 		return 1
