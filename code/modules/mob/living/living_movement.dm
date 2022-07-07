@@ -76,6 +76,9 @@
 			return
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
 
+/mob/living/canZMove(dir, turf/target)
+	return can_zTravel(target, dir) && (movement_type & FLYING)
+
 /mob/living/Move(atom/newloc, direct, glide_size_override)
 	if (buckled && buckled.loc != newloc) //not updating position
 		if (!buckled.anchored)
@@ -147,11 +150,6 @@
 /mob/living/onTransitZ(old_z,new_z)
 	..()
 	update_z(new_z)
-
-/mob/set_currently_z_moving(value)
-	if(buckled)
-		return buckled.set_currently_z_moving(value)
-	return ..()
 
 /mob/living/canface()
 	if(!CHECK_MOBILITY(src, MOBILITY_MOVE))

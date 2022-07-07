@@ -274,7 +274,7 @@
 		var/atom/movable/AM = x
 		if(!AM.Move(loc))
 			RemoveItemFromTable(AM, AM.loc)
-	return ..()
+	return TRUE
 
 /*
  * Glass tables
