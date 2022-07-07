@@ -16,9 +16,9 @@
 /datum/component/sleeping_regeneration
 	var/maxHealAmount = 0.75 // idfk
 
-// We want to check to make sure the component is a /mob/living/carbon, if it isnt, this component is incompatible.
+// We want to check to make sure the component is a /mob/living, if it isnt, this component is incompatible.
 /datum/component/sleeping_regeneration/Initialize(...)
-	if(!iscarbon(parent))
+	if(!isliving(parent))
 		return COMPONENT_INCOMPATIBLE
 	. = ..()
 
@@ -41,10 +41,10 @@
 		return
 
 	// We use L, not parent, this is cause L has all the procs we need to adjust damage values and stuff <3 But we set the parent as L.
-	/mob/living/carbon/L = parent
+	var/mob/living/L = parent
 
 	// A list ready to store the damage values
-	var/list/damagedParts
+	var/list/damagedParts = new list()
 
 	// this checks if there's any damage on each type and if there is, add it to the list. |= adds it to the list but stops you adding it twice.
 	if(L.getBruteLoss())
