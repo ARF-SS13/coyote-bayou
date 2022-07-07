@@ -44,7 +44,7 @@
 	var/mob/living/L = parent
 
 	// A list ready to store the damage values
-	var/list/damagedParts = new list()
+	var/list/damagedParts = list()
 
 	// this checks if there's any damage on each type and if there is, add it to the list. |= adds it to the list but stops you adding it twice.
 	if(L.getBruteLoss())
