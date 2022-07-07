@@ -14648,18 +14648,6 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/building/massfusion)
-"aXC" = (
-/obj/effect/decal/marking{
-	icon_state = "dottedverticalcorroded"
-	},
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Shopping Center - Nash"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/wasteland)
 "aXD" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13{
@@ -21944,16 +21932,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"ckr" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "School - Nash"
-	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain1"
-	},
->>>>>>> 4bcd0c97e8a32a61f85f3e1363ebcc44653a96b2
 "cku" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/armor/random,
@@ -27130,14 +27108,6 @@
 	icon_state = "outerpavement"
 	},
 /area/f13/wasteland)
-"ewk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Police Station - Nash"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "ewo" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt{
@@ -27973,13 +27943,6 @@
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
-/area/f13/wasteland)
-"eRM" = (
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Red River Army Depot - Nash"
-	},
-/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eRS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -47084,13 +47047,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"oHJ" = (
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Heaven's Night - Nash"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland/bighorn)
 "oHK" = (
 /obj/structure/flora/tree/tall,
 /obj/effect/decal/cleanable/dirt,
@@ -50171,16 +50127,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"qoz" = (
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Park - Nash"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt"
-	},
-/area/f13/wasteland)
 "qoU" = (
 /turf/open/water,
 /area/f13/wasteland)
@@ -59130,12 +59076,19 @@
 	},
 /area/f13/building/hospital)
 "vdf" = (
-/obj/effect/landmark/vertibird{
-	id = "Shopping Center";
-	name = "Robot Filled Parking Lot - Nash"
+/obj/structure/table/reinforced,
+/obj/machinery/light/small{
+	dir = 1
 	},
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/wasteland)
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Business"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building)
 "vdr" = (
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
@@ -80930,15 +80883,15 @@ gdD
 bhI
 aQZ
 mbe
-vKI
-leO
-mMg
-mMg
-oHJ
-leO
-leO
-rnW
-pFZ
+aQZ
+fiV
+uNJ
+uNJ
+uNJ
+fiV
+fiV
+aPP
+aum
 abP
 tiK
 cex
@@ -82315,7 +82268,7 @@ aOk
 xFZ
 aOk
 aOk
-eRM
+aOk
 aOk
 aOk
 deN
@@ -92870,7 +92823,7 @@ dzB
 tJl
 xYE
 dcy
-vdf
+ean
 ean
 xYE
 dcy
@@ -107614,7 +107567,7 @@ kDp
 wVA
 aTw
 kDp
-ckr
+pWU
 tRk
 mGE
 okd
@@ -108419,7 +108372,7 @@ oiD
 rca
 oiD
 oiD
-qoz
+lRa
 fyR
 txT
 xOD
@@ -113855,7 +113808,7 @@ mHp
 fiV
 ass
 pjP
-ewk
+fiV
 pjP
 hEG
 ean
@@ -125035,7 +124988,7 @@ wDE
 wDE
 wDE
 lOp
-aXC
+dJf
 gMS
 ile
 add
