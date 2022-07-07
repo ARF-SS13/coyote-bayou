@@ -17,7 +17,9 @@
 	var/obj/item/start = new /obj/landmark/vertibird()
 	start.name = "Vertibird Initial Point"
 	start.loc = loc
-	vertibird = src
+	if(GLOB.vertibird)
+		CRASH("Vertibird already exists!")
+	GLOB.vertibird = src
 
 /obj/vertibird/attack_hand(mob/user)
 	if(locked)
@@ -50,18 +52,18 @@
 
 /obj/vertibird/proc/getIn(mob/U)
 	src.visible_message("[U] enters the vertibird.")
-	U.forceMove(vertibirdEnterZone)
+	U.forceMove(GLOB.vertibirdEnterZone)
 
 /obj/vertibird/proc/moveIn(obj/O)
-	O.forceMove(vertibirdEnterZone)
+	O.forceMove(GLOB.vertibirdEnterZone)
 
 /obj/vertibird/proc/ejectTurf()
 	return locate(src.x, src.y + 6, src.z)
 
 /obj/vertibird/proc/getLocationsHTML()
 	var/html
-	for(var/I = 1 to vertibirdLandZone.len)
-		var/obj/landmark/vertibird/mark = vertibirdLandZone[I]
+	for(var/I = 1 to GLOB.vertibirdLandZone.len)
+		var/obj/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
 		html += "<a href='?src=\ref[src];fly=true;x=[mark.x];y=[mark.y];z=[mark.z]'>[mark.name]</a><br>"
 	return html
 
@@ -72,7 +74,7 @@
 	z = targetZ
 
 	playsound(src, "sound/f13machines/vertibird_stop.ogg", 100)
-	playsound(vertibirdEnterZone, "sound/f13machines/vertibird_stop.ogg", 50)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_stop.ogg", 50)
 
 	spawn(100)
 		inFly = FALSE
@@ -100,12 +102,12 @@
 		return
 
 	playsound(src, "sound/f13machines/vertibird_start.ogg", 100)
-	playsound(vertibirdEnterZone, "sound/f13machines/vertibird_start.ogg", 50)
+	playsound(GLOB.vertibirdEnterZone, "sound/f13machines/vertibird_start.ogg", 50)
 	inFly = TRUE
 	icon_state = "vb-fast"
 	spawn(60)
 		playsound(src, "sound/effects/flyby.ogg", 100)
-		playsound(vertibirdEnterZone, "sound/effects/flyby.ogg", 50)
+		playsound(GLOB.vertibirdEnterZone, "sound/effects/flyby.ogg", 50)
 
 		flyGlobal()
 

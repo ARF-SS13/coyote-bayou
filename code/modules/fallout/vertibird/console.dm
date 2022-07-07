@@ -7,4 +7,4 @@
 	connectable = FALSE
 
 /obj/machinery/computer/vertibird_console/attack_hand(mob/user)
-	vertibird:beginFly()
+	GLOB.vertibird:beginFly()

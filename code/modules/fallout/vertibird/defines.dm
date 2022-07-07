@@ -1,4 +1,3 @@
-/atom
-var/list/vertibirdLandZone = list("Red River Army Depot - Nash")
-var/vertibirdEnterZone = list("verti1star")
-var/vertibird = list("verti1port")
+GLOBAL_LIST_INIT(vertibirdLandZone, list("Red River Army Depot - Nash"))
+GLOBAL_VAR(vertibirdEnterZone)
+GLOBAL_VAR(vertibird)
