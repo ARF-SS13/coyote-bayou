@@ -8,7 +8,7 @@
 // This meme has spread like a debilitating illness AND I CANT GET AWAY FROM IT. THE FALL OF WESTERN SOCIETY IS HERE AND THIS COMPLETE UNFUNNY DRIBBLE OF A MEME IS PART OF THE PROBLEM. WHAT THE FUCK DOES “gETtiNg MoRBed” EVEN MEAN. it makes ZERO SENSE. ITS JUST GIBBERISH. FUCKING GIBB ER ISH. ITS NOT FUNNY. Saying “morb” LIKE ITS ITS OWN PUNCHLINE IS NOT COMEDY. IT IS COMEDIC AND CULTURAL DEGRADATION. Are we really so stunted as a generation that even the mention of any word that starts with m-o-r-b is FUNNY??? IN WHAT FUCKING UNIVERSE. Is it funny because it isn’t funny because praising something bad is now good??????? HOW MANY LAYERS OF IRONY DO WE NEED. HOW FAR DOES THE RABBIT HOLE GO. This website has stripped me of EVERY LAST BRAINCELL. GOING ON REDDIT FEELS LIKE IM GETTING A SUPER HERO INDUCED LOBOTOMY. I hate MORBIUS. I HATE IT. I know I’m just going to get FLOODED WITH “get morbed, this guy got morbed, what morb does to a man” HAHAHAHHAHAHHAHAHAHAHAHAHHQHQHAHAHAHAHAHWHHSHWBSQIISHWINSIQKSBDD SSSSOOOOOOOOOOOO FUNNNNNNNNYYYYYYY AGAGAGGAGHHHHHHHHH
 
 /turf/closed/indestructible/f13/matrix/transition
-	color = COLOR_BLUE
+	icon_state = "matrixblue"
 	var/destination_z
 	var/destination_x
 	var/destination_y
