@@ -1,119 +1,6 @@
 /*
 IN THIS DOCUMENT: Universal Gun system rules/keywords. Universal gun template and procs/vars.
 
-/////////////////////////////////////
-//UNIVERSAL GUN KEYWORDS AND SYSTEM//
-/////////////////////////////////////
-
-GENERAL
-
-	Bonuses should not go far from this framework, for non-unique stuff plus minus one or two is enough to give a good spread, considering its compounded by tinkering and attachments and ammo.
-	A reduction of 1 in burst shot delay gives a lot more effect than adding 1 damage.
-
-KEYWORDS
-
-	SINGLE ACTION REVOLVER
-	fire_delay = 6
-	spread = 1
-
-	DOUBLE ACTION REVOLVER
-	fire_delay = 5
-	spread = 1
-
-	SEMI-AUTOMATIC PISTOL
-	fire_delay = 3-5
-	spread = 2
-
-	SEMI-AUTOMATIC RIFLE
-	fire_delay = 3-6
-	spread = 1
-
-	AUTOMATIC SMG
-	fire_delay = 2.5-6
-	burst_shot_delay = 2.75
-	spread = 8-14
-
-	AUTOMATIC RIFLE
-	fire_delay = 3-6
-	burst_shot_delay = 3
-	spread = 7-12
-
-	REPEATER
-	fire_delay = 6
-	spread = 0
-
-	DOUBLE BARREL
-	fire_delay = 0.5
-	extra damage = 1
-
-	PUMP-ACTION
-	fire_delay = 7
-	extra damage = 1
-	spread = 1 (to avoid slugs being too good snipers, might need to be set to 2 for all shotguns)
-	(requires manual action to cycle)
-
-	BOLT-ACTION
-	fire_delay = 10-15
-	extra damage = 6
-	extra_speed = 800
-	spread = 0
-	(requires manual action to cycle)
-
-	PISTOL GRIP/FOLDED STOCK MALUS (For rifles, not pistols obviously)
-	recoil = 0.5
-	spread = +2 (not for shotguns)
-	w_class = WEIGHT_CLASS_NORMAL
-
-	SAWN OFF
-	recoil = 1
-	spread = 10
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-
-	LONG BARREL/LASERSIGHT
-	gun_damage_multiplier = +2
-	spread = -1
-
-	SHORT BARREL
-	gun_damage_multiplier = -2
-	spread = +2
-
-	HEAVY
-	recoil = 0.1
-	weapon_weight = GUN_ONE_HAND_ONLY at least (no dual wield)
-
-GENERAL RULES
-
-	SMALL GUNS
-	slowdown = 0.1-0.2
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_AKIMBO - MEDIUM
-
-	MEDIUM GUNS
-	slowdown = 0.3-0.4
-	w_class = WEIGHT_CLASS_NORMAL - BULKY
-	weapon_weight = GUN_ONE_HAND_ONLY - HEAVY
-
-	RIFLES
-	slowdown = 0.5
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = GUN_TWO_HAND_ONLY
-
-	AMMO RECOIL BASE VALUES
-	.50  recoil = 1
-	.45/70  recoil = 0.25
-
-	2-ROUND BURST
-	recoil = 0.1
-
-	3-ROUND BURST
-	recoil = 0.25
-
-	FORCE
-	Delicate, clumsy or small gun force 10
-	Pistol whip force 12
-	Rifle type force 15
-	Unusually sturdy clublike 20
-
 ATTACHMENTS
 
 	BURST CAM
@@ -245,7 +132,7 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	var/gun_damage_multiplier = 0				//Number to add to individual bullets.
+	var/gun_damage_multiplier = 1 // Number to multiply the bullet's damage by
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	//Zooming
@@ -545,7 +432,7 @@ ATTACHMENTS
 			do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i, stam_cost)
 	else
 		if(chambered)
-			sprd = round(((rand() - 0.5) * GUN_AKIMBO_SPREAD_MOD) + process_recoil(user), 1)
+			sprd = get_per_shot_spread(randomized_gun_spread, user)
 			before_firing(target,user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 				shoot_with_empty_chamber(user)
@@ -578,7 +465,7 @@ ATTACHMENTS
 				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 		if(randomspread)
-			sprd = round(((rand() - 0.5) * GUN_AKIMBO_SPREAD_MOD) + process_recoil(user) , 1)
+			sprd = get_per_shot_spread(sprd, user)
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
@@ -656,10 +543,8 @@ ATTACHMENTS
 				return
 			recoil_decrease = R
 			src.desc += " It has a recoil compensator installed."
-			if (src.spread > 10)
-				src.spread -= 4
-			else
-				src.spread -= 2
+			recoil_multiplier *= 0.5
+			recoil_cooldown_time *= 0.5
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
 
@@ -1021,9 +906,9 @@ ATTACHMENTS
 	return max(bonus_spread + (base_inaccuracy * mult), 0) //no negative spread.
 
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
-	. = recoil
+	. = get_per_shot_recoil()
 	if(user && !user.has_gravity())
-		. = recoil*5
+		. *= 5
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
@@ -1055,17 +940,26 @@ ATTACHMENTS
 	recoil_cooldown_schedule = world.time + recoil_cooldown_time
 
 	/// Add on more recoil
-	var/bullet_recoil_base = 1
-	if(chambered?.BB)
-		bullet_recoil_base = chambered.BB.recoil
-	recoil = recoil + (bullet_recoil_base * recoil_multiplier)
+	recoil += get_per_shot_recoil()
 
 	/// And shake shake shake the camera
-	shake_camera(user, max(recoil + 1, 10), (recoil * 0.2)) // its gonna get bad
+	if(user)
+		shake_camera(user, min(recoil + 1, 5), min((recoil * 0.2), 5)) // its gonna get bad
 	return new_spread
 
+/// Gets the base amount of recoil one shot would do
+/obj/item/gun/proc/get_per_shot_recoil()
+	. = 0
+	if(chambered?.BB)
+		. = chambered.BB.recoil * recoil_multiplier
 
-
+/// Gets the spread this current shot should have
+/// Factors in base gun spread too
+/obj/item/gun/proc/get_per_shot_spread(extra_spread, mob/user)
+	/// Recoil based spread
+	. = round(((rand(-100,100) * 0.01) * process_recoil(user)), 0.1)
+	/// Add in the gun's spread
+	. += round(((rand(-100,100) * 0.01) * extra_spread), 0.1)
 
 
 

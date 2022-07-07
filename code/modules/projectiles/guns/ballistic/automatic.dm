@@ -265,6 +265,7 @@
 
 	can_unsuppress = FALSE
 	is_automatic = TRUE
+	automatic = TRUE
 	suppressed = 1
 	actions_types = null
 	fire_sound = 'sound/f13weapons/american180.ogg'
