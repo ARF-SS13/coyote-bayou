@@ -34,7 +34,7 @@
 		build_signal_listener()
 	update_surrounding()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED = .proc/on_exit,
+		COMSIG_ATOM_EXIT = .proc/on_exit,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
