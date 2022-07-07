@@ -1,27 +1,27 @@
 /obj/vertibird_exit_door
-	name = "Exit Hatch"
+	name = "exit hatch"
 	icon = 'icons/obj/doors/airlocks/survival/horizontal/survival.dmi'
 	icon_state = "closed"
 	anchored = 1
 	density = 1
 
 /obj/vertibird_exit_door/proc/eject(obj/I)
-	if(!vertibird)
+	if(!GLOB.vertibird)
 		return
 
 	if(istype(I, /obj/vertibird_exit_door))
 		to_chat(usr, "There's no escape, mutie.")
 		return
 
-	if(vertibird:locked)
+	if(GLOB.vertibird:locked)
 		to_chat(usr, "It's locked. Where's the damn key?")
 		return
 
-	if(vertibird:inFly)
+	if(GLOB.vertibird:inFly)
 		to_chat(usr, "WE ARE IN THE AIR, GET THE HELL AWAY FROM THE HATCH!")
 		return
 
-	I.forceMove(vertibird:ejectTurf())
+	I.forceMove(GLOB.vertibird:ejectTurf())
 
 /obj/vertibird_exit_door/attack_hand(mob/user)
 	eject(user)
