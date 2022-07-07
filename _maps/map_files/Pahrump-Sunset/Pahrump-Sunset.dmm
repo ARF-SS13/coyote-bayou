@@ -8611,8 +8611,8 @@
 	dir = 2
 	},
 /obj/structure/flora/rock/jungle{
-	pixel_y = 5;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -10220,7 +10220,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/village)
 "aIU" = (
-/obj/machinery/door/window/eastleft{
+/obj/machinery/door/window/left{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt{
@@ -15093,8 +15093,8 @@
 	pixel_y = -32
 	},
 /obj/structure/chair/booth{
-	icon_state = "booth_west_south";
-	dir = 8
+	dir = 8;
+	icon_state = "booth_west_south"
 	},
 /turf/open/floor/carpet/purple{
 	dir = 5
@@ -16301,8 +16301,8 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = -4;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = -4
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -16539,12 +16539,12 @@
 /area/f13/building)
 "beJ" = (
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 16;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 16
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 22;
-	pixel_x = 16
+	pixel_x = 16;
+	pixel_y = 22
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -16908,8 +16908,8 @@
 	color = "#363636"
 	},
 /obj/structure/chair/booth{
-	icon_state = "booth_east_south";
-	dir = 4
+	dir = 4;
+	icon_state = "booth_east_south"
 	},
 /turf/open/floor/carpet/purple{
 	dir = 5
@@ -17452,8 +17452,8 @@
 	dir = 1
 	},
 /obj/structure/flora/rock/jungle{
-	pixel_y = 5;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 5
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -19343,8 +19343,8 @@
 "bsX" = (
 /obj/structure/table,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "hydrofloor"
@@ -20060,8 +20060,8 @@
 /obj/structure/table/wood,
 /obj/structure/showcase/machinery/tv{
 	name = "Pre-war television";
-	pixel_y = 32;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 32
 	},
 /turf/open/floor/carpet/blue,
 /area/f13/building)
@@ -22981,8 +22981,8 @@
 /area/f13/caves)
 "csr" = (
 /obj/machinery/light/sign/oasis{
-	pixel_x = -27;
-	density = 0
+	density = 0;
+	pixel_x = -27
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -23056,8 +23056,8 @@
 	},
 /obj/structure/camera_assembly,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -23575,9 +23575,9 @@
 "cDf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trade_sign{
+	density = 0;
 	pixel_x = -6;
-	pixel_y = 4;
-	density = 0
+	pixel_y = 4
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontalbottomborderbottom0"
@@ -24366,7 +24366,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/door/window/westright,
+/obj/machinery/door/window/right/directional/west,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -27163,6 +27163,13 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"ewZ" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Behind Red River Army Depot";
+	name = "Nash - Behind Red River Army Depot"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "exq" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -27609,8 +27616,8 @@
 "eJJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /obj/structure/table/wood,
 /turf/open/floor/wood_common,
@@ -28039,6 +28046,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
 /area/f13/caves)
+"eUe" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Tribal Camp";
+	name = "Nash - Tribal Camp"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "eUh" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -29160,6 +29177,19 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"fyF" = (
+/obj/effect/decal/marking{
+	icon_state = "dottedvertical"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - By The Mall";
+	name = "Nash - By The Mall"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "fyR" = (
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 5;
@@ -29556,16 +29586,16 @@
 "fIh" = (
 /obj/structure/table/wood,
 /obj/item/folder/documents{
-	pixel_y = 2;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 2
 	},
 /obj/item/folder/yellow,
 /obj/item/folder/syndicate/blue{
 	pixel_y = 7
 	},
 /obj/item/folder/blue{
-	pixel_y = 3;
-	pixel_x = -4
+	pixel_x = -4;
+	pixel_y = 3
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -29786,8 +29816,8 @@
 	},
 /obj/item/storage/bag/money{
 	anchored = 1;
-	pixel_y = 3;
-	pixel_x = -32
+	pixel_x = -32;
+	pixel_y = 3
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -29873,8 +29903,8 @@
 /area/f13/building)
 "fOW" = (
 /obj/structure/closet/crate/wicker{
-	pixel_y = 17;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 17
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
@@ -30312,6 +30342,16 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"ged" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Texarkana";
+	name = "Nash - Middle of Texarkana"
+	},
+/turf/open/indestructible/ground/outside/road{
+	dir = 8;
+	icon_state = "horizontalinnermain2right"
+	},
 /area/f13/wasteland)
 "gef" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -30757,8 +30797,8 @@
 /area/f13/building)
 "gsz" = (
 /obj/effect/overlay/junk/toilet{
-	pixel_y = 19;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 19
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -32170,8 +32210,8 @@
 "gZI" = (
 /obj/structure/table/wood,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -34069,8 +34109,8 @@
 /obj/effect/decal/remains/human,
 /obj/item/twohanded/baseball/golfclub,
 /obj/structure/ladder/unbreakable{
-	id = "antnest";
-	height = 2
+	height = 2;
+	id = "antnest"
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
@@ -35865,9 +35905,9 @@
 /area/f13/wasteland)
 "iVj" = (
 /obj/item/trade_sign{
+	density = 0;
 	pixel_x = -6;
-	pixel_y = 4;
-	density = 0
+	pixel_y = 4
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -36772,6 +36812,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"juB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Just East of Nash city";
+	name = "Nash - Just East of Nash city"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "jvg" = (
 /obj/machinery/workbench,
 /obj/item/crafting/reloader,
@@ -40007,8 +40055,8 @@
 	name = "followers shutters"
 	},
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -40659,8 +40707,8 @@
 	color = "#363636"
 	},
 /obj/structure/chair/booth{
-	icon_state = "booth_west_north";
-	dir = 8
+	dir = 8;
+	icon_state = "booth_west_north"
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
@@ -42480,9 +42528,9 @@
 /area/f13/building/mall)
 "moJ" = (
 /obj/machinery/button{
-	pixel_y = -3;
+	id = "nasheast";
 	pixel_x = 27;
-	id = "nasheast"
+	pixel_y = -3
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -43004,8 +43052,8 @@
 /area/f13/building/mall)
 "mDu" = (
 /obj/effect/overlay/junk/toilet{
-	pixel_y = 16;
-	pixel_x = -8
+	pixel_x = -8;
+	pixel_y = 16
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -43712,12 +43760,12 @@
 /area/f13/wasteland)
 "mSq" = (
 /mob/living/simple_animal/hostile/wolf/playable/sheepdog{
-	faction = list("s");
+	faction = s;
 	name = "Scruffy"
 	},
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet{
-	pixel_y = 15;
-	pixel_x = -22
+	pixel_x = -22;
+	pixel_y = 15
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -44389,6 +44437,16 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/village)
+"nlx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Robot Parking Lot";
+	name = "Nash - Robot Parking Lot"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "nlI" = (
 /obj/structure/simple_door/room,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -48208,8 +48266,8 @@
 "pms" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/vending/coffee{
-	pixel_y = 23;
-	density = 0
+	density = 0;
+	pixel_y = 23
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -48805,8 +48863,8 @@
 "pzY" = (
 /obj/structure/table,
 /obj/machinery/recharger{
-	pixel_y = 4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = 4
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -51520,9 +51578,9 @@
 	dir = 1
 	},
 /obj/item/fishy/lobster{
-	pixel_y = -12;
+	name = "crawdad";
 	pixel_x = 9;
-	name = "crawdad"
+	pixel_y = -12
 	},
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/wasteland{
@@ -51532,8 +51590,8 @@
 /area/f13/wasteland)
 "raG" = (
 /obj/structure/statue/bone/rib{
-	pixel_y = 9;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 9
 	},
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/village)
@@ -52851,6 +52909,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/wasteland)
+"rQb" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Christus Saint Michaels Hospital";
+	name = "Nash - Christus Saint Michaels Hospital"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
 /area/f13/wasteland)
 "rQl" = (
 /obj/structure/chair/stool{
@@ -55292,6 +55359,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/wasteland)
+"thT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Nash town"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain3"
+	},
+/area/f13/wasteland)
 "thW" = (
 /obj/structure/chair/stool{
 	dir = 4;
@@ -57086,8 +57162,8 @@
 	dir = 4
 	},
 /obj/structure/flora/ausbushes/reedbush{
-	pixel_y = 5;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = 5
 	},
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -57321,8 +57397,8 @@
 /area/f13/wasteland)
 "uht" = (
 /obj/structure/statue/bone/rib{
-	pixel_y = 9;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 9
 	},
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/village)
@@ -58017,7 +58093,7 @@
 	},
 /area/f13/building/massfusion)
 "uBi" = (
-/obj/machinery/door/window/eastleft,
+/obj/machinery/door/window/left/directional/east,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "uBk" = (
@@ -59689,6 +59765,16 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"vva" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Mirelurk Park";
+	name = "Nash - Mirelurk Park"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirtcorner"
+	},
+/area/f13/wasteland)
 "vvB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/coyote/one,
@@ -60124,6 +60210,15 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
+"vFu" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - SE of the City of Nash";
+	name = "Nash - SE of the City of Nash"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland)
 "vFy" = (
 /obj/structure/simple_door/metal/store,
 /obj/effect/decal/cleanable/dirt,
@@ -60720,12 +60815,11 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "vWm" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
+/obj/effect/landmark/vertibird{
+	id = "Nash - Police Station";
+	name = "Nash - Police Station"
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "vWG" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -61913,8 +62007,8 @@
 /obj/structure/table/wood,
 /obj/item/storage/toolbox/mechanical,
 /obj/machinery/recharger{
-	pixel_y = 11;
-	pixel_x = 9
+	pixel_x = 9;
+	pixel_y = 11
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -62646,8 +62740,8 @@
 	color = "#363636"
 	},
 /obj/structure/chair/booth{
-	icon_state = "booth_east_north";
-	dir = 4
+	dir = 4;
+	icon_state = "booth_east_north"
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
@@ -62945,14 +63039,18 @@
 /area/f13/building)
 "xix" = (
 /obj/structure/decoration/clock/old/active{
-	pixel_y = -4;
-	pixel_x = 27
+	pixel_x = 27;
+	pixel_y = -4
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "xiA" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
+	},
+/obj/effect/landmark/vertibird{
+	id = "Nash - Museum";
+	name = "Nash - Museum"
 	},
 /turf/open/indestructible/ground/outside/road{
 	dir = 1;
@@ -64778,8 +64876,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/village)
 "yga" = (
-/obj/machinery/door/window/eastleft,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/window/left/directional/east,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -66131,7 +66229,7 @@ htq
 aon
 aoo
 rer
-xUs
+rer
 cYE
 adF
 agP
@@ -66389,7 +66487,7 @@ aon
 rer
 rer
 rer
-xUs
+rer
 adF
 ahf
 akv
@@ -66646,14 +66744,14 @@ aon
 nUG
 cnl
 clt
-xUs
+rer
 clS
 aQZ
 mHp
 aer
 ayn
 hEG
-kBL
+anR
 aOk
 mAk
 aQS
@@ -66903,7 +67001,7 @@ aon
 rer
 rqy
 qBj
-xUs
+rer
 hBQ
 aQZ
 rFj
@@ -67422,7 +67520,7 @@ clS
 eoi
 ojS
 tRk
-nTE
+ayn
 drC
 anR
 aOk
@@ -67935,7 +68033,7 @@ xfi
 clS
 trw
 mHp
-lSJ
+nvn
 wDX
 hEG
 anR
@@ -74192,7 +74290,7 @@ kDp
 nvn
 kDp
 ajb
-ajb
+thT
 nvn
 kDp
 kxH
@@ -82268,7 +82366,7 @@ aOk
 xFZ
 aOk
 aOk
-aOk
+ewZ
 aOk
 aOk
 deN
@@ -82782,7 +82880,7 @@ dBL
 aOk
 aOk
 xFZ
-cle
+aOk
 deN
 deN
 deN
@@ -83040,7 +83138,7 @@ aOk
 aOk
 aOk
 xFZ
-saI
+xFZ
 xFZ
 xFZ
 qmR
@@ -83990,7 +84088,7 @@ hoM
 eEW
 eEW
 ojt
-mHp
+vFu
 sXv
 igF
 hEG
@@ -85979,7 +86077,7 @@ biO
 aOk
 etg
 cFK
-cFK
+juB
 cFK
 cFK
 biO
@@ -86235,7 +86333,7 @@ aOk
 aOk
 aOk
 etg
-lWu
+aOk
 aOk
 wzK
 aOk
@@ -93084,7 +93182,7 @@ ean
 xYE
 aum
 ean
-dcy
+nlx
 dcy
 dcy
 xYE
@@ -106795,7 +106893,7 @@ ojt
 mHp
 rlf
 kxH
-rZe
+ged
 kxH
 nvn
 bAA
@@ -107087,7 +107185,7 @@ lRa
 cFK
 ciR
 eBH
-vWm
+xOD
 fKM
 sEB
 xLC
@@ -107343,11 +107441,11 @@ jut
 xOD
 aOk
 nWp
-iXx
+vva
 cpM
 eBH
 mZR
-kbA
+xLC
 vSP
 csO
 crO
@@ -111625,7 +111723,7 @@ ean
 ean
 aQZ
 mHp
-tRk
+rQb
 tRk
 bgH
 vGC
@@ -114062,7 +114160,7 @@ kxH
 aPP
 iLL
 tws
-uNJ
+vWm
 fiV
 nYO
 nYO
@@ -120761,7 +120859,7 @@ xLC
 egF
 aOk
 aOk
-mAk
+aOk
 aOk
 aOk
 www
@@ -121273,7 +121371,7 @@ aOk
 fKM
 xLC
 mUN
-oiD
+eUe
 oiD
 oiD
 oiD
@@ -124989,7 +125087,7 @@ wDE
 wDE
 lOp
 dJf
-gMS
+fyF
 ile
 add
 add
