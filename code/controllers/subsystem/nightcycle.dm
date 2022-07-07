@@ -32,18 +32,17 @@ SUBSYSTEM_DEF(nightcycle)
 	var/sunrise_sun_power = 80
 	var/morning_sun_color = "#fff2e6"
 	var/morning_sun_power = 160
-	var/daytime_sun_color = "#FFFFFF"
-	var/daytime_sun_power = 230
+	var/daytime_sun_color = "#fbf2ea"
+	var/daytime_sun_power = 200
 	var/afternoon_sun_color = "#fff2e6"
 	var/afternoon_sun_power = 160
 	var/sunset_sun_color = "#ffcccc"
 	var/sunset_sun_power = 80
 	var/nighttime_sun_color = "#00111a"
-	var/nighttime_sun_power = 10
-	/// How does it take to get darker or brighter each step.
-	var/cycle_transition_time = 120 SECONDS
+	var/nighttime_sun_power = 30
 	/// If defined with any number besides null it will determine how long each cycle lasts.
-	var/custom_cycle_wait = 1600 SECONDS
+//	var/custom_cycle_wait = 1600 SECONDS
+	var/custom_cycle_wait
 	var/last_custom_cycle = 0
 
 	// Light objects
@@ -122,9 +121,11 @@ SUBSYSTEM_DEF(nightcycle)
 
 /datum/controller/subsystem/nightcycle/proc/AnimateTransition()
 	var/atom/movable/sunlight/light_object = sunlight_source_object
-	animate(light_object, alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
+	light_object.alpha = current_sun_power
+	light_object.color = current_sun_color
 	for(var/key in sunlight_border_objects)
-		animate(sunlight_border_objects[key], alpha = current_sun_power, color = current_sun_color, time = cycle_transition_time)
+		sunlight_border_objects[key]?.alpha = current_sun_power
+		sunlight_border_objects[key]?.color = current_sun_color
 
 
 /datum/controller/subsystem/nightcycle/proc/get_border_object(object_key)
