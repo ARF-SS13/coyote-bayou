@@ -795,6 +795,15 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/offices2nd)
+"aLE" = (
+/obj/structure/closet/crate/silvercrate,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "aLG" = (
 /obj/structure/table/survival_pod,
 /obj/item/storage/toolbox/mechanical{
@@ -1059,6 +1068,23 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
+"aWS" = (
+/obj/effect/turf_decal/box/white,
+/obj/effect/turf_decal/arrows{
+	dir = 1
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -8
+	},
+/obj/effect/turf_decal/arrows{
+	dir = 1;
+	pixel_x = 8;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "aWX" = (
 /obj/item/radio/intercom{
 	frequency = 1361;
@@ -1199,6 +1225,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"bfc" = (
+/obj/structure/closet/crate/silvercrate,
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "bga" = (
 /obj/structure/lattice{
 	density = 1
@@ -2068,6 +2103,16 @@
 	},
 /turf/open/floor/plating/f13,
 /area/f13/vault)
+"bXQ" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "bYb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2155,15 +2200,6 @@
 	},
 /area/f13/vault)
 "ccu" = (
-/obj/vertibird{
-	icon_state = "vb-fast";
-	dir = 8;
-	id = "Verti2"
-	},
-/obj/effect/turf_decal/big{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
@@ -2591,16 +2627,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
 "cwX" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/layer1{
-	pixel_y = 0;
-	pixel_x = 5
-	},
-/obj/structure/reagent_dispensers/barrel/explosive{
-	pixel_y = 4;
-	pixel_x = -2
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/window/reinforced/fulltile,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/underground/cave)
 "cxn" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -2731,8 +2760,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/power/port_gen/pacman,
-/obj/structure/cable,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "cDq" = (
@@ -2940,9 +2967,8 @@
 	},
 /area/f13/brotherhood/rnd)
 "cLG" = (
-/obj/item/vertibird_flare,
-/turf/closed/indestructible/rock,
-/area/f13/underground/cave)
+/turf/closed/wall,
+/area/f13/building)
 "cLO" = (
 /obj/item/twohanded/required/kirbyplants/dead,
 /turf/open/floor/f13/wood,
@@ -2994,12 +3020,13 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "cOo" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/effect/landmark/vertibird_enter{
+	id = "verti1star"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "cOs" = (
 /obj/machinery/shower{
 	dir = 8
@@ -4569,6 +4596,11 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
+"dZG" = (
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "dZX" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/black,
@@ -5077,6 +5109,15 @@
 /obj/item/storage/box/drinkingglasses,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
+"esE" = (
+/obj/effect/turf_decal/vg_decals/numbers/zero{
+	pixel_x = -6
+	},
+/obj/effect/turf_decal/vg_decals/numbers/one{
+	pixel_x = 5
+	},
+/turf/closed/wall,
+/area/f13/building)
 "esJ" = (
 /turf/open/floor/plating/tunnel,
 /area/f13/bunker)
@@ -5271,12 +5312,14 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "eCi" = (
-/obj/machinery/computer/vertibird_console{
-	id = "Verti1"
+/obj/machinery/door/airlock/security{
+	name = "Brig";
+	req_access_txt = "134"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/enclave)
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "eCl" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -6559,7 +6602,9 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "fIX" = (
@@ -6819,6 +6864,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
+"fTm" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	dir = 8;
+	color = "#808080"
+	},
+/area/f13/building)
 "fTy" = (
 /obj/structure/bodycontainer/crematorium{
 	id = 700
@@ -7963,6 +8014,12 @@
 "gRX" = (
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
+"gSj" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	dir = 1;
+	color = "#808080"
+	},
+/area/f13/building)
 "gSn" = (
 /obj/effect/turf_decal/big{
 	dir = 9
@@ -8915,6 +8972,12 @@
 	icon_state = "bar"
 	},
 /area/f13/bunker)
+"hHs" = (
+/turf/closed/indestructible/oldshuttle/corner{
+	dir = 4;
+	color = "#808080"
+	},
+/area/f13/building)
 "hHG" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4;
@@ -11977,6 +12040,19 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
+"kDV" = (
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "kEv" = (
 /obj/structure/table/wood,
 /obj/item/grenade/empgrenade,
@@ -12281,7 +12357,9 @@
 	pixel_y = -1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -13695,7 +13773,9 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "mhm" = (
@@ -16087,9 +16167,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "oiU" = (
-/obj/vertibird_exit_door,
-/turf/closed/indestructible/rock,
-/area/f13/underground/cave)
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 1;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "ojM" = (
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/f13{
@@ -16097,10 +16183,15 @@
 	},
 /area/f13/bunker)
 "ojT" = (
+/obj/structure/window/reinforced{
+	color = "#3e3d42";
+	dir = 8
+	},
+/obj/machinery/computer/vertibird_console,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
-/area/f13/underground/cave)
+/area/f13/building)
 "ojX" = (
 /obj/structure/simple_door/metal/ventilation,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -16823,15 +16914,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/enclave)
 "oNB" = (
-/obj/vertibird{
-	icon_state = "vb-fast";
-	dir = 8;
-	id = "Verti1"
-	},
 /obj/effect/turf_decal/big{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/vertibird{
+	icon_state = "vb-fast";
+	dir = 8;
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "oNS" = (
@@ -19170,9 +19260,6 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "qGo" = (
@@ -19595,6 +19682,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/enclave)
+"qWA" = (
+/obj/vertibird_exit_door,
+/turf/closed/wall,
+/area/f13/building)
 "qWD" = (
 /obj/structure/chair/wood,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -19796,7 +19887,9 @@
 	pixel_y = -4
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/light/floor,
+/obj/machinery/light/floor{
+	pixel_y = -2
+	},
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -21001,9 +21094,15 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/f13/vault)
 "snE" = (
-/obj/landmark/vertibird,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
+	layer = 2.7;
+	name = "prewar lounge chair"
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "sor" = (
 /obj/structure/table{
 	layer = 2.9
@@ -21199,9 +21298,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "svz" = (
-/obj/landmark/vertibird_enter,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/chair/comfy/shuttle{
+	desc = "A comfortable, secure seat. It has a very futuristic vouge feel.";
+	dir = 8;
+	name = "prewar lounge chair"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "svZ" = (
 /obj/item/stack/crafting/electronicparts/three,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -25153,10 +25261,14 @@
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "vOm" = (
-/obj/landmark/vertibird_enter,
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
+/obj/structure/closet/crate/silvercrate,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 29
+	},
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/building)
 "vOr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -25999,11 +26111,6 @@
 "wCF" = (
 /turf/open/floor/plasteel/f13/vault_floor/green,
 /area/f13/vault)
-"wCS" = (
-/obj/effect/turf_decal/big,
-/obj/machinery/atmospherics/pipe/simple/supply,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/enclave)
 "wDl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -26399,12 +26506,10 @@
 /turf/closed/indestructible/rock,
 /area/space)
 "wXM" = (
-/obj/machinery/computer/vertibird_console{
-	id = "Verti2"
+/turf/closed/indestructible/oldshuttle/corner{
+	color = "#808080"
 	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/mineral/plastitanium,
-/area/f13/enclave)
+/area/f13/building)
 "wXV" = (
 /obj/structure/bookcase/random,
 /turf/open/floor/carpet/black,
@@ -49589,7 +49694,7 @@ hMw
 hMw
 hMw
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -49846,7 +49951,7 @@ szu
 szu
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -50103,7 +50208,7 @@ aZI
 szu
 amL
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -50360,7 +50465,7 @@ szu
 kHy
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -50617,7 +50722,7 @@ pRW
 szu
 szu
 gOq
-shC
+bpQ
 shC
 shC
 shC
@@ -50874,7 +50979,7 @@ wmh
 kpI
 amL
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -51123,7 +51228,7 @@ szu
 tDc
 pRW
 rdB
-wCS
+uOf
 vjR
 vjR
 vjR
@@ -51131,7 +51236,7 @@ vjR
 rQo
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -51366,11 +51471,11 @@ kHy
 kHy
 aVD
 vjR
-svz
+vjR
 uOf
-snE
-pRW
-svz
+vjR
+ccu
+aWS
 vjR
 rQo
 kHy
@@ -51379,16 +51484,16 @@ kHy
 szu
 tDc
 vjR
-svz
-tNW
-snE
 vjR
-vOm
+tNW
+vjR
+vjR
+pRW
 vjR
 dcT
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -51640,12 +51745,12 @@ fes
 rYf
 vjR
 qGk
-ccu
+mdx
 mdx
 vMN
 rAz
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -51892,17 +51997,17 @@ dDl
 sDT
 szu
 szu
-cwX
-cHJ
-cHJ
 vjR
-cOo
+vjR
+vjR
+vjR
+pRW
 cCN
 pRW
 szu
 szu
 gOq
-shC
+bpQ
 shC
 shC
 shC
@@ -52159,7 +52264,7 @@ pRW
 szu
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -52416,7 +52521,7 @@ szu
 szu
 amL
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -52673,7 +52778,7 @@ sDT
 kHy
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -52930,7 +53035,7 @@ szu
 kHy
 szu
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -53187,7 +53292,7 @@ ahh
 jjv
 bpQ
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -53425,9 +53530,9 @@ lxK
 szu
 bpQ
 vhF
-eCi
+cnl
 tlO
-wXM
+cnl
 pjW
 bpQ
 mhA
@@ -53444,7 +53549,7 @@ sYG
 sYG
 wtv
 iyX
-shC
+bpQ
 shC
 shC
 shC
@@ -53701,7 +53806,7 @@ cnl
 vOc
 cnl
 iyX
-shC
+bpQ
 shC
 shC
 shC
@@ -53958,7 +54063,7 @@ gRX
 mtH
 gRX
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -54215,7 +54320,7 @@ sMP
 gRX
 hQn
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -54472,7 +54577,7 @@ bpQ
 bpQ
 bpQ
 bpQ
-shC
+bpQ
 shC
 shC
 shC
@@ -54702,34 +54807,34 @@ bpQ
 bpQ
 bpQ
 bpQ
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
+bpQ
 shC
 shC
 shC
@@ -56765,9 +56870,9 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
+cwX
+cwX
+cwX
 shC
 shC
 shC
@@ -57021,11 +57126,11 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
+fTm
+cLG
+ojT
+cLG
+hHs
 shC
 shC
 shC
@@ -57278,17 +57383,17 @@ shC
 shC
 shC
 shC
-shC
-ojT
-ojT
-shC
-shC
-shC
-shC
+cLG
+cLG
+bXQ
+cLG
+cLG
 shC
 shC
-ojT
-ojT
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -57526,27 +57631,27 @@ shC
 shC
 shC
 shC
+shC
+shC
+shC
+shC
+shC
+shC
+cLG
+cLG
+cLG
+esE
+aLE
+dZG
+oiU
+cLG
+cLG
+cLG
 cLG
 shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-ojT
-ojT
-oiU
-shC
-shC
-shC
-shC
-shC
-ojT
-ojT
-oiU
 shC
 shC
 shC
@@ -57789,20 +57894,20 @@ shC
 shC
 shC
 shC
+cLG
+cLG
+cLG
+cLG
+bfc
+dZG
+oiU
+cLG
+cLG
+cLG
+cLG
 shC
 shC
 shC
-shC
-ojT
-ojT
-shC
-shC
-shC
-shC
-shC
-shC
-ojT
-ojT
 shC
 shC
 shC
@@ -58049,17 +58154,17 @@ shC
 shC
 shC
 shC
-shC
-ojT
-ojT
-shC
-shC
-shC
-shC
+cLG
+vOm
+dZG
+cOo
+qWA
 shC
 shC
-ojT
-ojT
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -58306,11 +58411,11 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
+cLG
+snE
+dZG
+oiU
+cLG
 shC
 shC
 shC
@@ -58563,11 +58668,11 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
+cLG
+kDV
+dZG
+oiU
+cLG
 shC
 shC
 shC
@@ -58820,11 +58925,11 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
+wXM
+cLG
+eCi
+cLG
+gSj
 shC
 shC
 shC
@@ -59078,9 +59183,9 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
+cLG
+svz
+cLG
 shC
 shC
 shC
@@ -59336,7 +59441,7 @@ shC
 shC
 shC
 shC
-shC
+cLG
 shC
 shC
 shC
