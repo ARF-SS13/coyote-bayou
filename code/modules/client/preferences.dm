@@ -484,8 +484,8 @@ Records disabled until a use for them is found
 
 			// Coyote ADD: Blurbleblurhs
 			dat += "<b>Sound Indicator:</b><BR>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[typing_indicator_sound_play]</a><BR>"
-			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[typing_indicator_sound]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound_play;task=input'>[features_speech["typing_indicator_sound_play"]]</a><BR>"
+			dat += "</b><a style='display:block;width:100px' href='?_src_=prefs;preference=typing_indicator_sound;task=input'>[features_speech["typing_indicator_sound"]]</a><BR>"
 			// Coyote ADD: End
 
 			if(HAIR in pref_species.species_traits)

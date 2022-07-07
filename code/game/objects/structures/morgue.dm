@@ -358,7 +358,8 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	icon_state = "morguet"
 	pass_flags_self = PASSTABLE
 
-/obj/structure/tray/m_tray/CanPass(atom/movable/mover, border_dir)
+/obj/structure/tray/m_tray/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return 1
 	if(locate(/obj/structure/table) in get_turf(mover))

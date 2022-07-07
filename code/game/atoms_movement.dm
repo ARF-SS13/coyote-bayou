@@ -1,15 +1,5 @@
 // File for movement procs for atom/movable
 
-/**
- * meant for movement with zero side effects. only use for objects that are supposed to move "invisibly" (like camera mobs or ghosts)
- * if you want something to move onto a tile with a beartrap or recycler or tripmine or mouse without that object knowing about it at all, use this
- * most of the time you want forceMove()
- */
-/atom/movable/proc/abstract_move(atom/new_loc)
-	var/atom/old_loc = loc
-	move_stacks++
-	loc = new_loc
-	Moved(old_loc)
 
 ////////////////////////////////////////
 // Here's where we rewrite how byond handles movement except slightly different
@@ -183,23 +173,11 @@
 					pulling.move_from_pull(src, target_turf, glide_size)
 			check_pulling()
 
+
 	//glide_size strangely enough can change mid movement animation and update correctly while the animation is playing
 	//This means that if you don't override it late like this, it will just be set back by the movement update that's called when you move turfs.
 	if(glide_size_override)
 		set_glide_size(glide_size_override)
-	
-	if(set_dir_on_move)
-		setDir(direct)
-	
-	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
-		. = FALSE
-
-	if(currently_z_moving)
-		if(. && loc == newloc)
-			var/turf/pitfall = get_turf(src)
-			pitfall.zFall(src, falling_from_move = TRUE)
-		else
-			set_currently_z_moving(FALSE, TRUE)
 
 	last_move = direct
 
@@ -208,12 +186,12 @@
 	if(. && has_buckled_mobs() && !handle_buckled_mob_movement(loc, direct, glide_size_override)) //movement failed due to buckled mob(s)
 		. = FALSE
 
-/*	if(currently_z_moving)
+	if(currently_z_moving)
 		if(. && loc == newloc)
 			var/turf/pitfall = get_turf(src)
-			pitfall.zFall(src, falling_from_move = TRUE)
+			pitfall.zFall(src)
 		else
-			set_currently_z_moving(FALSE, TRUE)*/
+			set_currently_z_moving(FALSE, TRUE)
 
 /atom/movable/proc/handle_buckled_mob_movement(newloc, direct, glide_size_override)
 	for(var/m in buckled_mobs)
@@ -226,14 +204,12 @@
 			return FALSE
 	return TRUE
 
-/**
- * Called after a successful Move(). By this point, we've already moved.
- * Arguments:
- * * old_loc is the location prior to the move. Can be null to indicate nullspace.
- * * movement_dir is the direction the movement took place. Can be NONE if it was some sort of teleport.
- * * The forced flag indicates whether this was a forced move, which skips many checks of regular movement.
- * * The old_locs is an optional argument, in case the moved movable was present in multiple locations before the movement.
- **/
+/atom/movable/proc/move_from_pull(atom/movable/puller, turf/target_turf, glide_size_override)
+	moving_from_pull = puller
+	Move(target_turf, get_dir(src, target_turf), glide_size_override)
+	moving_from_pull = null
+
+//Called after a successful Move(). By this point, we've already moved
 /atom/movable/proc/Moved(atom/old_loc, movement_dir, forced = FALSE, list/old_locs)
 	SHOULD_CALL_PARENT(TRUE)
 
@@ -259,36 +235,56 @@
 
 	if (old_turf?.z != new_turf?.z)
 		on_changed_z_level(old_turf, new_turf)
-
+	
 	return TRUE
 
 
-/// Called when src is being moved to a target turf because another movable (puller) is moving around.
-/atom/movable/proc/move_from_pull(atom/movable/puller, turf/target_turf, glide_size_override)
-	moving_from_pull = puller
-	Move(target_turf, get_dir(src, target_turf), glide_size_override)
-	moving_from_pull = null
-
 // Make sure you know what you're doing if you call this, this is intended to only be called by byond directly.
 // You probably want CanPass()
-/atom/movable/Cross(atom/movable/AM)
+/atom/movable/Cross(atom/movable/crossed_atom)
 	. = TRUE
-	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSS, AM)
-	return CanPass(AM, get_dir(src, AM), TRUE)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSS, crossed_atom)
+	SEND_SIGNAL(crossed_atom, COMSIG_MOVABLE_CROSS_OVER, src)
+	return CanPass(crossed_atom, get_dir(src, crossed_atom))
 
 //oldloc = old location on atom, inserted when forceMove is called and ONLY when forceMove is called!
-/atom/movable/Crossed(atom/movable/AM, oldloc)
-	SEND_SIGNAL(src, COMSIG_MOVABLE_CROSSED, AM)
+/atom/movable/Crossed(atom/movable/crossed_atom, oldloc)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	CRASH("atom/movable/Crossed() was called!")
 
-/atom/movable/Uncross(atom/movable/AM, atom/newloc)
-	. = ..()
-	if(SEND_SIGNAL(src, COMSIG_MOVABLE_UNCROSS, AM) & COMPONENT_MOVABLE_BLOCK_UNCROSS)
-		return FALSE
-	if(isturf(newloc) && !CheckExit(AM, newloc))
-		return FALSE
+/**
+ * `Uncross()` is a default BYOND proc that is called when something is *going*
+ * to exit this atom's turf. It is prefered over `Uncrossed` when you want to
+ * deny that movement, such as in the case of border objects, objects that allow
+ * you to walk through them in any direction except the one they block
+ * (think side windows).
+ *
+ * While being seemingly harmless, most everything doesn't actually want to
+ * use this, meaning that we are wasting proc calls for every single atom
+ * on a turf, every single time something exits it, when basically nothing
+ * cares.
+ *
+ * This overhead caused real problems on Sybil round #159709, where lag
+ * attributed to Uncross was so bad that the entire master controller
+ * collapsed and people made Among Us lobbies in OOC.
+ *
+ * If you want to replicate the old `Uncross()` behavior, the most apt
+ * replacement is [`/datum/element/connect_loc`] while hooking onto
+ * [`COMSIG_ATOM_EXIT`].
+ */
+/atom/movable/Uncross()
+	SHOULD_NOT_OVERRIDE(TRUE)
+	CRASH("Uncross() should not be being called, please read the doc-comment for it for why.")
 
-/atom/movable/Uncrossed(atom/movable/AM)
-	SEND_SIGNAL(src, COMSIG_MOVABLE_UNCROSSED, AM)
+/**
+ * default byond proc that is normally called on everything inside the previous turf
+ * a movable was in after moving to its current turf
+ * this is wasteful since the vast majority of objects do not use Uncrossed
+ * use connect_loc to register to COMSIG_ATOM_EXITED instead
+ */
+/atom/movable/Uncrossed(atom/movable/uncrossed_atom)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	CRASH("/atom/movable/Uncrossed() was called")
 
 /atom/movable/Bump(atom/A)
 	if(!A)
@@ -310,6 +306,22 @@
 
 /atom/movable/proc/setMovetype(newval)
 	movement_type = newval
+
+/**
+ * Called when a movable changes z-levels.
+ *
+ * Arguments:
+ * * old_z - The previous z-level they were on before.
+ * * notify_contents - Whether or not to notify the movable's contents that their z-level has changed.
+ */
+/atom/movable/proc/on_changed_z_level(turf/old_turf, turf/new_turf, notify_contents = TRUE)
+	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_turf, new_turf)
+
+	if(!notify_contents)
+		return
+
+	for (var/atom/movable/content as anything in src) // Notify contents of Z-transition.
+		content.on_changed_z_level(old_turf, new_turf)
 
 ///////////// FORCED MOVEMENT /////////////
 
@@ -364,21 +376,6 @@
 	Moved(oldloc, NONE, TRUE)
 
 
-/**
- * Called when a movable changes z-levels.
- *
- * Arguments:
- * * old_z - The previous z-level they were on before.
- * * notify_contents - Whether or not to notify the movable's contents that their z-level has changed.
- */
-/atom/movable/proc/on_changed_z_level(turf/old_turf, turf/new_turf, notify_contents = TRUE)
-	SEND_SIGNAL(src, COMSIG_MOVABLE_Z_CHANGED, old_turf, new_turf)
-
-	if(!notify_contents)
-		return
-
-	for (var/atom/movable/content as anything in src) // Notify contents of Z-transition.
-		content.on_changed_z_level(old_turf, new_turf)
 
 /**
  * Called whenever an object moves and by mobs when they attempt to move themselves through space
@@ -425,12 +422,3 @@
 	AddComponent(/datum/component/drift, direction, instant, start_delay)
 
 	return TRUE
-
-/// Sets the currently_z_moving variable to a new value. Used to allow some zMovement sources to have precedence over others.
-/atom/movable/proc/set_currently_z_moving(new_z_moving_value, forced = FALSE)
-	if(forced)
-		currently_z_moving = new_z_moving_value
-		return TRUE
-	var/old_z_moving_value = currently_z_moving
-	currently_z_moving = max(currently_z_moving, new_z_moving_value)
-	return currently_z_moving > old_z_moving_value

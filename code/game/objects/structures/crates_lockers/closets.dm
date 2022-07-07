@@ -122,7 +122,8 @@
 		. += "<span class='info'>It contains: [english_list(contents)].</span>"
 		investigate_log("had its contents examined by [user] as a ghost.", INVESTIGATE_GHOST)
 
-/obj/structure/closet/CanPass(atom/movable/mover, border_dir)
+/obj/structure/closet/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(wall_mounted)
 		return TRUE
 	return !density

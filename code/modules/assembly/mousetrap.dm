@@ -7,6 +7,14 @@
 	attachable = TRUE
 	var/armed = FALSE
 
+/obj/item/assembly/mousetrap/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 
 /obj/item/assembly/mousetrap/examine(mob/user)
 	. = ..()
@@ -96,8 +104,7 @@
 			return
 	return ..()
 
-
-/obj/item/assembly/mousetrap/Crossed(atom/movable/AM as mob|obj)
+/obj/item/assembly/mousetrap/proc/handle_entered(atom/movable/AM as mob|obj)
 	if(armed)
 		if(ismob(AM))
 			var/mob/MM = AM
@@ -112,7 +119,10 @@
 					triggered(MM)
 		else if(AM.density) // For mousetrap grenades, set off by anything heavy
 			triggered(AM)
-	..()
+
+/obj/item/assembly/mousetrap/proc/on_entered(atom/movable/AM as mob|obj)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/handle_entered, AM)
 
 
 /obj/item/assembly/mousetrap/on_found(mob/finder)

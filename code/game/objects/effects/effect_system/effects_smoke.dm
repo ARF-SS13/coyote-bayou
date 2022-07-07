@@ -133,7 +133,8 @@
 		M.emote("cough")
 		return 1
 
-/obj/effect/particle_effect/smoke/bad/CanPass(atom/movable/mover, border_dir)
+/obj/effect/particle_effect/smoke/bad/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover, /obj/item/projectile/beam))
 		var/obj/item/projectile/beam/B = mover
 		B.damage = (B.damage/2)

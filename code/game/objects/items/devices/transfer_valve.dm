@@ -16,6 +16,14 @@
 	var/ui_x = 310
 	var/ui_y = 320
 
+/obj/item/transfer_valve/Initialize()
+	. = ..()
+	
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/item/transfer_valve/IsAssemblyHolder()
 	return TRUE
 
@@ -74,10 +82,10 @@
 	if(attached_device)
 		attached_device.on_found(finder)
 
-/obj/item/transfer_valve/Crossed(atom/movable/AM as mob|obj)
-	. = ..()
+/obj/item/transfer_valve/proc/on_entered(atom/movable/AM as mob|obj)
+	SIGNAL_HANDLER
 	if(attached_device)
-		attached_device.Crossed(AM)
+		INVOKE_ASYNC(attached_device, .proc/on_entered, AM)
 
 /obj/item/transfer_valve/on_attack_hand()//Triggers mousetraps
 	. = ..()

@@ -15,6 +15,14 @@
 	var/check_antimagic = TRUE
 	var/check_holy = FALSE
 
+/obj/effect/clockwork/sigil/Initialize()
+	. = ..()
+
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/effect/clockwork/sigil/attackby(obj/item/I, mob/living/user, params)
 	if(I.force)
 		if(is_servant_of_ratvar(user) && user.a_intent != INTENT_HARM)
@@ -40,8 +48,8 @@
 	visible_message("<span class='warning'>[src] scatters into thousands of particles.</span>")
 	qdel(src)
 
-/obj/effect/clockwork/sigil/Crossed(atom/movable/AM)
-	..()
+/obj/effect/clockwork/sigil/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(L.stat <= stat_affected)
@@ -52,7 +60,7 @@
 						L.visible_message("<span class='warning'>[L]'s [I.name] [resist_string], protecting [L.p_them()] from [src]'s effects!</span>", \
 						"<span class='userdanger'>Your [I.name] [resist_string], protecting you!</span>")
 					return
-				sigil_effects(L)
+				INVOKE_ASYNC(src, .proc/sigil_effects, L)
 
 /obj/effect/clockwork/sigil/proc/sigil_effects(mob/living/L)
 

@@ -163,9 +163,15 @@
 
 /obj/structure/bonfire/prelit/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	StartBurning()
 
-/obj/structure/bonfire/CanPass(atom/movable/mover, border_dir)
+/obj/structure/bonfire/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return TRUE
 	if(mover.throwing)
@@ -243,9 +249,10 @@
 /obj/structure/bonfire/fire_act(exposed_temperature, exposed_volume)
 	StartBurning()
 
-/obj/structure/bonfire/Crossed(atom/movable/AM)
+/obj/structure/bonfire/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(burning & !grill)
-		Burn()
+		INVOKE_ASYNC(src, .proc/Burn)
 
 /obj/structure/bonfire/proc/Burn()
 	var/turf/current_location = get_turf(src)
