@@ -302,11 +302,11 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BULLET_DAMAGE_SHOTGUN_SLUG 40
 
 /// Bullet recoil defines
-#define BULLET_RECOIL_PISTOL_LIGHT 0
-#define BULLET_RECOIL_PISTOL_MEDIUM 0.25
+#define BULLET_RECOIL_PISTOL_LIGHT 0.5
+#define BULLET_RECOIL_PISTOL_MEDIUM 1
 #define BULLET_RECOIL_PISTOL_HEAVY 1
-#define BULLET_RECOIL_RIFLE_LIGHT 0.1
-#define BULLET_RECOIL_RIFLE_MEDIUM 0.5
+#define BULLET_RECOIL_RIFLE_LIGHT 1
+#define BULLET_RECOIL_RIFLE_MEDIUM 2
 #define BULLET_RECOIL_RIFLE_HEAVY 2
 #define BULLET_RECOIL_SHOTGUN_PELLET 2 // The total recoil of the shell, not individual pellets
 #define BULLET_RECOIL_SHOTGUN_SLUG 2
@@ -449,7 +449,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FIREMODE_AUTO 3
 
 /// Max spread recoil can add
-#define GUN_RECOIL_MAX_SPREAD 2
+#define GUN_RECOIL_MAX_SPREAD 20
 
 /// Sawed-off recoil modifier
 #define SAWEDOFF_RECOIL_MULT 2
@@ -499,6 +499,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
 #define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 1.5)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 2)
+
+// Gun Akimbo Spread modifier
+#define GUN_AKIMBO_SPREAD_MOD 2
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)

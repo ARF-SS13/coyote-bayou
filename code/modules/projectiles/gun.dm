@@ -132,8 +132,6 @@ ATTACHMENTS
 	spread + 6 (to bring it into the automatic template range)
 */
 
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
-
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -338,9 +336,6 @@ ATTACHMENTS
 	playsound(src, dryfire_sound, 30, 1)
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(recoil)
-		shake_camera(user, recoil + 1, recoil)
-
 	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
@@ -550,7 +545,7 @@ ATTACHMENTS
 			do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i, stam_cost)
 	else
 		if(chambered)
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			sprd = round(((rand() - 0.5) * GUN_AKIMBO_SPREAD_MOD) + process_recoil(user), 1)
 			before_firing(target,user)
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 				shoot_with_empty_chamber(user)
@@ -583,7 +578,7 @@ ATTACHMENTS
 				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 		if(randomspread)
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread), 1)
+			sprd = round(((rand() - 0.5) * GUN_AKIMBO_SPREAD_MOD) + process_recoil(user) , 1)
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
@@ -1044,6 +1039,42 @@ ATTACHMENTS
 			played_sound = pick(equipsound)
 
 		playsound(src, played_sound, volume, 1)
+
+/// Takes the current recoil, adds on some more recoil from the bullet and modded by the gun
+/// and returns a value for its adjusted spread
+/// Also clears the recoil if its been long enough
+/obj/item/gun/proc/process_recoil(mob/user)
+	if(world.time >= recoil_cooldown_schedule) // it cooled down
+		recoil = 0
+	
+	/// Calculate a new spread, basically recoil to spread, clamped
+	var/new_spread = 0
+	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, recoil)
+	
+	/// Set a new time to clear recoil
+	recoil_cooldown_schedule = world.time + recoil_cooldown_time
+
+	/// Add on more recoil
+	var/bullet_recoil_base = 1
+	if(chambered?.BB)
+		bullet_recoil_base = chambered.BB.recoil
+	recoil = recoil + (bullet_recoil_base * recoil_multiplier)
+
+	/// And shake shake shake the camera
+	shake_camera(user, max(recoil + 1, 10), (recoil * 0.2)) // its gonna get bad
+	return new_spread
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////
