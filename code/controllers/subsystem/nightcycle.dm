@@ -47,7 +47,7 @@ SUBSYSTEM_DEF(nightcycle)
 
 	// Light objects
 	var/atom/movable/sunlight/sunlight_source_object = new()
-	var/list/sunlight_border_objects = list()
+	var/list/atom/movable/sunlight/sunlight_border_objects = list()
 
 
 /datum/controller/subsystem/nightcycle/Initialize(start_timeofday)
