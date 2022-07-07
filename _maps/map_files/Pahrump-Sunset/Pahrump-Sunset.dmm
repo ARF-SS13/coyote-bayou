@@ -27163,6 +27163,13 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"ewZ" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Behind Red River Army Depot";
+	name = "Nash - Behind Red River Army Depot"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "exq" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -28039,6 +28046,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
 /area/f13/caves)
+"eUe" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Tribal Camp";
+	name = "Nash - Tribal Camp"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
+/area/f13/wasteland)
 "eUh" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -29159,6 +29176,19 @@
 	},
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
+"fyF" = (
+/obj/effect/decal/marking{
+	icon_state = "dottedvertical"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - By The Mall";
+	name = "Nash - By The Mall"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/wasteland)
 "fyR" = (
 /turf/open/indestructible/ground/outside/dirt{
@@ -30312,6 +30342,16 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"ged" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Texarkana";
+	name = "Nash - Middle of Texarkana"
+	},
+/turf/open/indestructible/ground/outside/road{
+	dir = 8;
+	icon_state = "horizontalinnermain2right"
+	},
 /area/f13/wasteland)
 "gef" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -36772,6 +36812,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"juB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Just East of Nash city";
+	name = "Nash - Just East of Nash city"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "jvg" = (
 /obj/machinery/workbench,
 /obj/item/crafting/reloader,
@@ -44389,6 +44437,16 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/village)
+"nlx" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Robot Parking Lot";
+	name = "Nash - Robot Parking Lot"
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "nlI" = (
 /obj/structure/simple_door/room,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -52852,6 +52910,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/wasteland)
+"rQb" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Christus Saint Michaels Hospital";
+	name = "Nash - Christus Saint Michaels Hospital"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/wasteland)
 "rQl" = (
 /obj/structure/chair/stool{
 	dir = 8;
@@ -55291,6 +55358,15 @@
 /obj/structure/nest/molerat,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/wasteland)
+"thT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/vertibird{
+	id = "Nash - Middle of Nash town"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain3"
+	},
 /area/f13/wasteland)
 "thW" = (
 /obj/structure/chair/stool{
@@ -59689,6 +59765,16 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"vva" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Mirelurk Park";
+	name = "Nash - Mirelurk Park"
+	},
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 1;
+	icon_state = "dirtcorner"
+	},
+/area/f13/wasteland)
 "vvB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/coyote/one,
@@ -60124,6 +60210,15 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
+"vFu" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - SE of the City of Nash";
+	name = "Nash - SE of the City of Nash"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland)
 "vFy" = (
 /obj/structure/simple_door/metal/store,
 /obj/effect/decal/cleanable/dirt,
@@ -60720,12 +60815,11 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "vWm" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
+/obj/effect/landmark/vertibird{
+	id = "Nash - Police Station";
+	name = "Nash - Police Station"
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "vWG" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -62953,6 +63047,10 @@
 "xiA" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
+	},
+/obj/effect/landmark/vertibird{
+	id = "Nash - Museum";
+	name = "Nash - Museum"
 	},
 /turf/open/indestructible/ground/outside/road{
 	dir = 1;
@@ -66131,7 +66229,7 @@ htq
 aon
 aoo
 rer
-xUs
+rer
 cYE
 adF
 agP
@@ -66389,7 +66487,7 @@ aon
 rer
 rer
 rer
-xUs
+rer
 adF
 ahf
 akv
@@ -66646,14 +66744,14 @@ aon
 nUG
 cnl
 clt
-xUs
+rer
 clS
 aQZ
 mHp
 aer
 ayn
 hEG
-kBL
+anR
 aOk
 mAk
 aQS
@@ -66903,7 +67001,7 @@ aon
 rer
 rqy
 qBj
-xUs
+rer
 hBQ
 aQZ
 rFj
@@ -67422,7 +67520,7 @@ clS
 eoi
 ojS
 tRk
-nTE
+ayn
 drC
 anR
 aOk
@@ -67935,7 +68033,7 @@ xfi
 clS
 trw
 mHp
-lSJ
+nvn
 wDX
 hEG
 anR
@@ -74192,7 +74290,7 @@ kDp
 nvn
 kDp
 ajb
-ajb
+thT
 nvn
 kDp
 kxH
@@ -82268,7 +82366,7 @@ aOk
 xFZ
 aOk
 aOk
-aOk
+ewZ
 aOk
 aOk
 deN
@@ -82782,7 +82880,7 @@ dBL
 aOk
 aOk
 xFZ
-cle
+aOk
 deN
 deN
 deN
@@ -83040,7 +83138,7 @@ aOk
 aOk
 aOk
 xFZ
-saI
+xFZ
 xFZ
 xFZ
 qmR
@@ -83990,7 +84088,7 @@ hoM
 eEW
 eEW
 ojt
-mHp
+vFu
 sXv
 igF
 hEG
@@ -85979,7 +86077,7 @@ biO
 aOk
 etg
 cFK
-cFK
+juB
 cFK
 cFK
 biO
@@ -86235,7 +86333,7 @@ aOk
 aOk
 aOk
 etg
-lWu
+aOk
 aOk
 wzK
 aOk
@@ -93084,7 +93182,7 @@ ean
 xYE
 aum
 ean
-dcy
+nlx
 dcy
 dcy
 xYE
@@ -106795,7 +106893,7 @@ ojt
 mHp
 rlf
 kxH
-rZe
+ged
 kxH
 nvn
 bAA
@@ -107087,7 +107185,7 @@ lRa
 cFK
 ciR
 eBH
-vWm
+xOD
 fKM
 sEB
 xLC
@@ -107343,11 +107441,11 @@ jut
 xOD
 aOk
 nWp
-iXx
+vva
 cpM
 eBH
 mZR
-kbA
+xLC
 vSP
 csO
 crO
@@ -111625,7 +111723,7 @@ ean
 ean
 aQZ
 mHp
-tRk
+rQb
 tRk
 bgH
 vGC
@@ -114062,7 +114160,7 @@ kxH
 aPP
 iLL
 tws
-uNJ
+vWm
 fiV
 nYO
 nYO
@@ -120761,7 +120859,7 @@ xLC
 egF
 aOk
 aOk
-mAk
+aOk
 aOk
 aOk
 www
@@ -121273,7 +121371,7 @@ aOk
 fKM
 xLC
 mUN
-oiD
+eUe
 oiD
 oiD
 oiD
@@ -124989,7 +125087,7 @@ wDE
 wDE
 lOp
 dJf
-gMS
+fyF
 ile
 add
 add

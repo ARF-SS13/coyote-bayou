@@ -5751,6 +5751,15 @@
 	icon_state = "housewood2"
 	},
 /area/f13/building)
+"po" = (
+/obj/effect/landmark/vertibird{
+	id = "Redwater - West of Town";
+	name = "Redwater - West of Town"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "pp" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -11348,6 +11357,18 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/water,
 /area/f13/wasteland)
+"Ef" = (
+/obj/effect/decal/marking{
+	icon_state = "doubleverticaldegraded"
+	},
+/obj/effect/landmark/vertibird{
+	id = "Redwater - Razor Twins";
+	name = "Redwater - Razor Twins"
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "Eg" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -11696,6 +11717,13 @@
 "Fi" = (
 /turf/open/floor/wood_common,
 /area/f13/village)
+"Fj" = (
+/obj/effect/landmark/vertibird{
+	id = "Redwater - Wilderness North of Town";
+	name = "Redwater - Wilderness North of Town"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Fk" = (
 /obj/structure/spacevine,
 /turf/closed/wall/f13/wood,
@@ -12839,6 +12867,12 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
+"Ic" = (
+/obj/effect/landmark/vertibird{
+	id = "Redwater - Wright Patman Lake"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Id" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -18027,6 +18061,13 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
+"Wm" = (
+/obj/effect/landmark/vertibird{
+	id = "Redwater - The Fields";
+	name = "Redwater - The Fields"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "Wn" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop0"
@@ -24447,7 +24488,7 @@ Df
 Bk
 Bk
 SK
-Bk
+Ic
 lL
 Vx
 Iv
@@ -45433,7 +45474,7 @@ zN
 zN
 zl
 tI
-tI
+Ef
 Dg
 zl
 zl
@@ -45874,7 +45915,7 @@ Va
 Va
 Va
 Va
-Va
+po
 Va
 Va
 Va
@@ -61396,7 +61437,7 @@ hE
 Bk
 Bk
 Bk
-Bk
+Fj
 Bk
 Bk
 pt
@@ -80564,7 +80605,7 @@ ig
 Vc
 UW
 bW
-Bk
+Wm
 Vc
 Bk
 lM
