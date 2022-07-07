@@ -1,4 +1,4 @@
-//ghouls-heal from radiation, do not breathe. do not go into crit. terrible at melee, easily dismembered. 
+//ghouls-heal from radiation, do not breathe. do not go into crit. terrible at melee, easily dismembered.
 //cannot use medical chemicals to heal brute or burn, must heal from rads, sutures. can use antitoxin chemicals.  //actually changed my mind i'll give stims reduced effect instead
 //Slower than humans at combat armor speed, appear dead. rotted organs unable to use for transplant.
 //like before, they cannot take piercing wounds or burn wounds or slash wounds, but they can have their bones broken by any source of wound now instead of being impervious
@@ -8,10 +8,17 @@
 	id = "ghoul"
 	say_mod = "rasps"
 	limbs_id = "ghoul"
-	species_traits = list(HAIR,FACEHAIR,HAS_BONE,NOGENITALS, NOBLOOD)
+	species_traits = list(HAIR,FACEHAIR,HAS_BONE, NOBLOOD, MUTCOLORS, EYECOLOR,LIPS, HORNCOLOR,WINGCOLOR)
 	inherent_traits = list(TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_NOBREATH, TRAIT_NOHARDCRIT, TRAIT_NOSOFTCRIT, TRAIT_GHOULMELEE, TRAIT_EASYDISMEMBER, TRAIT_EASYLIMBDISABLE, TRAIT_LIMBATTACHMENT, TRAIT_FAKEDEATH)
-	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
+	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID, MOB_BEAST)
+	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None", "mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
+	attack_verb = "claw"
 	punchstunthreshold = 9
+	tail_type = "tail_human"
+	wagging_type = "waggingtail_human"
+	species_type = "human"
+
+	allowed_limb_ids = list("human","mammal","aquatic","avian")
 	use_skintones = 0
 	speedmod = 0.3 //slightly slower than humans
 	sexes = 1
@@ -64,7 +71,7 @@
 /datum/species/ghoul/qualifies_for_rank(rank, list/features)
 	if(rank in GLOB.legion_positions) /* legion HATES these ghoul */
 		return 0
-	if(rank in GLOB.brotherhood_positions) //don't hate them, just tolorate. 
+	if(rank in GLOB.brotherhood_positions) //don't hate them, just tolorate.
 		return 0
 	if(rank in GLOB.vault_positions) //purest humans left in america. supposedly.
 		return 0
