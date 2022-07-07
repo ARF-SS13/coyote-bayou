@@ -58,7 +58,7 @@
 		playsound(get_turf(src),'sound/f13weapons/mine_one.ogg',100, extrarange = -5)
 
 /*
-/obj/item/bottlecap_mine/Crossed(go/AM)
+/obj/item/bottlecap_mine/proc/on_entered(go/AM)
 	if(state == ACTIVE && ishuman(AM))
 		boom()
 */
@@ -114,6 +114,11 @@
 
 /obj/item/mine/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	if(random)
 		wires = new /datum/wires/explosive/mine/random(src)
 	else
@@ -149,17 +154,17 @@
 /obj/item/mine/proc/mineEffect(mob/victim)
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
-/obj/item/mine/Crossed(atom/movable/AM)
+/obj/item/mine/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!armed)
 		return
 	if(triggered || !isturf(loc) || !isliving(AM) || isstructure(AM) || isnottriggermine(AM))
 		return
-	. = ..()
 
 	if(AM.movement_type & FLYING)
 		return
 
-	triggermine(AM)
+	INVOKE_ASYNC(src, .proc/triggermine, AM)
 
 /obj/item/mine/proc/triggermine(mob/victim)
 	if(triggered)

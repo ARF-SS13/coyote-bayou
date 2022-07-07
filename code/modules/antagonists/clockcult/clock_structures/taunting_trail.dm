@@ -29,6 +29,12 @@
 	transform = matrix()*1.3
 	animate(src, alpha = 100, time = 15)
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/structure/destructible/clockwork/taunting_trail/Destroy()
 	deltimer(timerid)
 	return ..()
@@ -36,12 +42,13 @@
 /obj/structure/destructible/clockwork/taunting_trail/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	playsound(src, 'sound/items/welder.ogg', 50, 1)
 
-/obj/structure/destructible/clockwork/taunting_trail/CanPass(atom/movable/mover, border_dir)
+/obj/structure/destructible/clockwork/taunting_trail/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	return TRUE
 
-/obj/structure/destructible/clockwork/taunting_trail/Crossed(atom/movable/AM)
+/obj/structure/destructible/clockwork/taunting_trail/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	affect_mob(AM)
-	return ..()
 
 /obj/structure/destructible/clockwork/taunting_trail/Bumped(atom/movable/AM)
 	affect_mob(AM)

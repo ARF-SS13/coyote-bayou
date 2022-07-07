@@ -165,6 +165,11 @@
 
 /obj/item/projectile/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	permutated = list()
 	decayedRange = range
 	if(LAZYLEN(embedding))
@@ -770,8 +775,8 @@
 		angle = arctan(y - oy, x - ox)
 	return list(angle, p_x, p_y)
 
-/obj/item/projectile/Crossed(atom/movable/AM) //A mob moving on a tile with a projectile is hit by it.
-	. = ..()
+/obj/item/projectile/proc/on_entered(atom/movable/AM) //A mob moving on a tile with a projectile is hit by it.
+	SIGNAL_HANDLER
 	if(isliving(AM) && !(pass_flags & PASSMOB))
 		var/mob/living/L = AM
 		if(can_hit_target(L, permutated, (AM == original)))

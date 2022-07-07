@@ -8,18 +8,27 @@
 	/// We manually check to see if we've been triggered in case multiple atoms cross us in the time between the mine being triggered and it actually deleting, to avoid a race condition with multiple detonations
 	var/triggered = FALSE
 
+/obj/effect/mine/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
+
 /obj/effect/mine/proc/mineEffect(mob/victim)
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
-/obj/effect/mine/Crossed(atom/movable/AM)
+/obj/effect/mine/proc/on_entered(datum/source, atom/movable/AM)
+	SIGNAL_HANDLER
 	if(triggered || !isturf(loc) || isnottriggermine(AM) || isstructure(AM))
 		return
-	. = ..()
 
 	if(AM.movement_type & FLYING)
 		return
 
-	triggermine(AM)
+	INVOKE_ASYNC(src, .proc/triggermine, AM)
 
 /obj/effect/mine/proc/triggermine(mob/victim)
 	if(triggered)

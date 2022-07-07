@@ -208,32 +208,16 @@
 /turf/proc/can_zFall(atom/movable/A, levels = 1, turf/target)
 	return zPassOut(A, DOWN, target) && target.zPassIn(A, DOWN, src)
 
-/turf/proc/zFall(atom/movable/falling, levels = 1, force = FALSE, falling_from_move = FALSE)
-	var/direction = DOWN
-	if(falling.has_gravity() == NEGATIVE_GRAVITY)
-		direction = UP
-	var/turf/target = get_step_multiz(src, direction)
-	if(!target)
+/turf/proc/zFall(atom/movable/A, levels = 1, force = FALSE)
+	var/turf/target = get_step_multiz(src, DOWN)
+	if(!target || (!isobj(A) && !ismob(A)))
 		return FALSE
-	var/isliving = isliving(falling)
-	if(!isliving && !isobj(falling))
-		return
-	if(isliving)
-		var/mob/living/falling_living = falling
-		//relay this mess to whatever the mob is buckled to.
-		if(falling_living.buckled)
-			falling = falling_living.buckled
-	if(!falling_from_move && falling.currently_z_moving)
-		return
-	if(!force && !falling.can_z_move(direction, src, target, ZMOVE_FALL_FLAGS))
-		falling.set_currently_z_moving(FALSE, TRUE)
+	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
-
-	// So it doesn't trigger other zFall calls. Cleared on zMove.
-	falling.set_currently_z_moving(CURRENTLY_Z_FALLING)
-
-	falling.zMove(null, target, ZMOVE_CHECK_PULLEDBY)
-	target.zImpact(falling, levels, src)
+	A.zfalling = TRUE
+	A.forceMove(target)
+	A.zfalling = FALSE
+	target.zImpact(A, levels, src)
 	return TRUE
 
 /turf/proc/handleRCL(obj/item/rcl/C, mob/user)
@@ -264,7 +248,8 @@
 
 	return FALSE
 
-/turf/CanPass(atom/movable/mover)
+/turf/CanAllowThrough(atom/movable/mover)
+	..()
 	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
 		return !density
 
@@ -298,22 +283,6 @@
 			mover.Bump(firstbump)
 		return CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE)
 	return TRUE
-
-/turf/Exit(atom/movable/mover, atom/newloc)
-	. = ..()
-	if(!.)
-		return FALSE
-	for(var/i in contents)
-		if(QDELETED(mover))
-			break
-		if(i == mover)
-			continue
-		var/atom/movable/thing = i
-		if(!thing.Uncross(mover, newloc))
-			if(thing.flags_1 & ON_BORDER_1)
-				mover.Bump(thing)
-			if(!CHECK_BITFIELD(mover.movement_type, UNSTOPPABLE))
-				return FALSE
 
 /turf/Entered(atom/movable/AM)
 	..()

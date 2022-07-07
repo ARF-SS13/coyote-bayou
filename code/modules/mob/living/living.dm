@@ -1,5 +1,10 @@
 /mob/living/Initialize()
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	register_init_signals()
 	if(unique_name)
 		name = "[name] ([rand(1, 1000)])"
@@ -639,8 +644,8 @@
 /mob/living/proc/update_damage_overlays()
 	return
 
-/mob/living/Crossed(atom/movable/AM)
-	. = ..()
+/mob/living/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	for(var/i in get_equipped_items())
 		var/obj/item/item = i
 		SEND_SIGNAL(item, COMSIG_ITEM_WEARERCROSSED, AM)
@@ -846,7 +851,7 @@
 		if(has_gravity == 1)
 			clear_alert("gravity")
 		else
-			if(has_gravity >= GRAVITY_DAMAGE_THRESHOLD)
+			if(has_gravity >= GRAVITY_DAMAGE_TRESHOLD)
 				throw_alert("gravity", /obj/screen/alert/veryhighgravity)
 			else
 				throw_alert("gravity", /obj/screen/alert/highgravity)

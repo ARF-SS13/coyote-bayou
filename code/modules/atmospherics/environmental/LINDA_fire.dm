@@ -56,6 +56,12 @@
 	setDir(pick(GLOB.cardinals))
 	air_update_turf()
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/effect/hotspot/proc/perform_exposure()
 	var/turf/open/location = loc
 	if(!istype(location) || !(location.air))
@@ -211,11 +217,10 @@
 				T.to_be_destroyed = FALSE
 				T.max_fire_temperature_sustained = 0
 
-/obj/effect/hotspot/Crossed(atom/movable/AM, oldLoc)
-	..()
+/obj/effect/hotspot/proc/on_entered(atom/movable/AM, oldLoc)
+	SIGNAL_HANDLER
 	if(isliving(AM))
-		var/mob/living/L = AM
-		L.fire_act(temperature, volume)
+		INVOKE_ASYNC(AM, /atom/.proc/fire_act, temperature, volume)
 
 /obj/effect/hotspot/singularity_pull()
 	return

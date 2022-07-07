@@ -131,8 +131,8 @@
 	icon_state = "lasergrid_full"
 	claimed = TRUE
 
-/obj/item/pressure_plate/hologrid/Crossed(atom/movable/AM)
-	. = ..()
+/obj/item/pressure_plate/hologrid/on_entered(atom/movable/AM)
+	..()
 	if(trigger_item && istype(AM, specific_item) && !claimed)
 		AM.anchored = TRUE
 		flick("laserbox_burn", AM)
