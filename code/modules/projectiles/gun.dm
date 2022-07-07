@@ -912,9 +912,12 @@ ATTACHMENTS
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
-	user.SetWeaponDrawDelay(max(draw_time,(user.AmountWeaponDrawDelay())))
+	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
+	if(do_after(user, time_till_gun_is_ready, needhand = FALSE, ignore_movement = TRUE))
+		user.show_message(span_notice("\The [src] is ready to fire."))
 
 /obj/item/gun/proc/play_equip_sound(src, volume=50)
 	if(src && equipsound && volume)
@@ -940,11 +943,21 @@ ATTACHMENTS
 	recoil_cooldown_schedule = world.time + recoil_cooldown_time
 
 	/// Add on more recoil
-	recoil += get_per_shot_recoil()
+	var/recoil_to_add = get_per_shot_recoil()
+
+	///Check if there's something in their other hand
+	if(user)
+		var/obj/thing_in_their_other_hand = user.get_item_for_held_index(user.get_inactive_hand_index())
+		if(istype(thing_in_their_other_hand, /obj/item/gun) && user.a_intent == INTENT_HARM) // Akimbo!
+			recoil_to_add *= GUN_AKIMBO_RECOIL_MOD
+		else
+			recoil_to_add *= GUN_FULL_OTHER_HAND_RECOIL_MOD
+
+	recoil += recoil_to_add
 
 	/// And shake shake shake the camera
 	if(user)
-		shake_camera(user, min(recoil + 1, 5), min((recoil * 0.2), 5)) // its gonna get bad
+		shake_camera(user, min(recoil + 1, 3), min((recoil * 0.5), 3)) // its gonna get bad
 	return new_spread
 
 /// Gets the base amount of recoil one shot would do

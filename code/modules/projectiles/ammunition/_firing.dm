@@ -1,5 +1,7 @@
 /obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, gun_damage_multiplier, extra_penetration, atom/fired_from)
 	distro += variance
+	if(istype(BB))
+		distro += BB.spread
 	var/targloc = get_turf(target)
 	ready_proj(target, user, quiet, zone_override, gun_damage_multiplier, extra_penetration, fired_from)
 	if(pellets == 1)

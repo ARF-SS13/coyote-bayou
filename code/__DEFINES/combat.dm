@@ -449,7 +449,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FIREMODE_AUTO 3
 
 /// Max spread recoil can add
-#define GUN_RECOIL_MAX_SPREAD 20
+#define GUN_RECOIL_MAX_SPREAD 30
 
 /// Sawed-off recoil modifier
 #define SAWEDOFF_RECOIL_MULT 2
@@ -457,10 +457,16 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 /// Hobogun recoil modifier
 #define HOBO_RECOIL_MULT 2
 
+// Gun Akimbo Spread modifier
+#define GUN_AKIMBO_RECOIL_MOD 2
+
+// If their other hand is full, multiply recoil by this much
+#define GUN_FULL_OTHER_HAND_RECOIL_MOD 2
+
 /// Gun recoil modifier per shot defines
 #define GUN_RECOIL_NONE 0
 #define GUN_RECOIL_PISTOL_LIGHT 1
-#define GUN_RECOIL_PISTOL_MEDIUM 1.2
+#define GUN_RECOIL_PISTOL_MEDIUM 2
 #define GUN_RECOIL_PISTOL_HEAVY 1.5
 #define GUN_RECOIL_REVOLVER_LIGHT 1.2
 #define GUN_RECOIL_REVOLVER_HEAVY 1.5
@@ -478,7 +484,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_RIFLE_GAUSS 5
 #define GUN_RECOIL_SHOTGUN_FIXED 2
 #define GUN_RECOIL_SHOTGUN_PUMP 1
-#define GUN_RECOIL_SHOTGUN_AUTO 3
+#define GUN_RECOIL_SHOTGUN_AUTO 10
 
 /// Gun recoil timeout Base
 #define GUN_RECOIL_TIMEOUT_BASE (1.5 SECONDS)
@@ -499,9 +505,6 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
 #define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 1.5)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 2)
-
-// Gun Akimbo Spread modifier
-#define GUN_AKIMBO_SPREAD_MOD 2
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
