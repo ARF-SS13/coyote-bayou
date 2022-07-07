@@ -14,7 +14,7 @@
 
 // Definition!
 /datum/component/sleeping_regeneration
-	var/maxHealAmount = 0.75 // idfk
+	var/maxHealAmount = 0.03 // idfk
 
 // We want to check to make sure the component is a /mob/living, if it isnt, this component is incompatible.
 /datum/component/sleeping_regeneration/Initialize(...)
@@ -47,14 +47,17 @@
 	var/list/damagedParts = list()
 
 	// this checks if there's any damage on each type and if there is, add it to the list. |= adds it to the list but stops you adding it twice.
-	if(L.getBruteLoss())
-		damagedParts |= BRUTE
-	if(L.getOxyLoss())
-		damagedParts |= OXY
-	if(L.getToxLoss())
-		damagedParts |= TOX
-	if(L.getFireLoss())
-		damagedParts |= BURN
+	if(L.getBruteLoss() > 0)
+		damagedParts += BRUTE
+	if(L.getOxyLoss() > 0)
+		damagedParts += OXY
+	if(L.getToxLoss() > 0)
+		damagedParts += TOX
+	if(L.getFireLoss() > 0)
+		damagedParts += BURN
+
+	if(!damagedParts.len) // We're done here!
+		return
 
 	// get a heal amount from 0 to the maxHealAmount.
 	var/healAmount = rand(0,maxHealAmount)
