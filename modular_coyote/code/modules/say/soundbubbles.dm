@@ -62,6 +62,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 //lmfao at lizard ~TK420634
 
 /datum/looping_sound/typing_indicator
+	mid_sounds = list('modular_coyote/sound/typing/default.ogg')
 	mid_length = 30
 	volume = 10
 
@@ -73,8 +74,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 
 
 /datum/preferences
-	var/typing_indicator_sound = 'modular_coyote/sound/typing/default.ogg'
-	var/typing_indicator_sound_play = PLAY_STARTING
+	var/list/features_speech = list("typing_indicator_sound" = 'modular_coyote/sound/typing/default.ogg', "typing_indicator_sound_play" = PLAY_STARTING)
 
 /mob
 	var/datum/looping_sound/typing_indicator/typing_sound
@@ -90,13 +90,13 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 /mob/proc/get_typing_indicator_sound()
 	if(client)
 		var/client/C = client
-		return C.prefs.typing_indicator_sound
+		return C.prefs.features["typing_indicator_sound"]
 	return
 
 /mob/proc/get_typing_indicator_pref()
 	if(client)
 		var/client/C = client
-		return C.prefs.typing_indicator_sound_play
+		return C.prefs.features["typing_indicator_sound_play"]
 	return
 
 
@@ -104,12 +104,12 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	if(((!typing_indicator_enabled || (stat != CONSCIOUS)) && !force) || typing_indicator_current)
 		return
 
-	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_STARTING])
-		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound], 15, FALSE)
+	if(client?.prefs.features["typing_indicator_sound_play"] == GLOB.play_methods[PLAY_STARTING])
+		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.features["typing_indicator_sound"]], 15, FALSE)
 
-	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_TYPING])
+	if(client?.prefs.features["typing_indicator_sound_play"] == GLOB.play_methods[PLAY_TYPING])
 		if(typing_sound)
-			typing_sound.mid_sounds = list(GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound])
+			typing_sound.mid_sounds = list(GLOB.typing_indicator_sounds[client.prefs.features["typing_indicator_sound"]])
 			typing_sound.start()
 
 	return ..()
@@ -119,8 +119,8 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	if(typing_sound)
 		typing_sound.stop()
 
-	if(client?.prefs.typing_indicator_sound_play == GLOB.play_methods[PLAY_FINISHED])
-		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.typing_indicator_sound], 15, FALSE)
+	if(client?.prefs.features["typing_indicator_sound_play"] == GLOB.play_methods[PLAY_FINISHED])
+		playsound_local(src, GLOB.typing_indicator_sounds[client.prefs.features["typing_indicator_sound"]], 15, FALSE)
 
 	return ..()
 
@@ -135,11 +135,11 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 
 	S.cd = "/character[slot]"
 
-	S["typing_indicator_sound"]			>> typing_indicator_sound
-	S["typing_indicator_sound_play"]	>> typing_indicator_sound_play
+	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"]
+	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"]
 
-	typing_indicator_sound				= sanitize_inlist(typing_indicator_sound, GLOB.typing_indicator_sounds)
-	typing_indicator_sound_play			= sanitize_inlist(typing_indicator_sound_play, GLOB.play_methods)
+	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds)
+	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods)
 
 	return 1
 
@@ -158,8 +158,8 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	S.cd = "/character[default_slot]"
 
 	//Character
-	WRITE_FILE(S["typing_indicator_sound"]				, typing_indicator_sound)
-	WRITE_FILE(S["typing_indicator_sound_play"]			, typing_indicator_sound_play)
+	WRITE_FILE(S["typing_indicator_sound"]				, features_speech["typing_indicator_sound"])
+	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
 
 	return 1
 
@@ -171,12 +171,15 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 					var/new_sound
 					new_sound = input(user, "Choose your typing sound:", "Character Pogerenfe") as null|anything in GLOB.typing_indicator_sounds
 					if(new_sound)
-						typing_indicator_sound = new_sound
+						features_speech["typing_indicator_sound"] = new_sound
 
 				if("typing_indicator_sound_play")
 
 					var/new_input = input(user, "Choose your typing sound behaviour", "You stink c:") as null|anything in GLOB.play_methods
 					if(new_input)
-						typing_indicator_sound_play = new_input
+						features_speech["typing_indicator_sound_play"] = new_input
 	..()
 
+/datum/preferences/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
+	features += features_speech
+	..()
