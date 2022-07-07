@@ -399,8 +399,9 @@ ATTACHMENTS
 
 	if(on_cooldown())
 		return
-	if(user.IsWeaponDrawDelayed())
-		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+	var/time_till_draw = user.AmountWeaponDrawDelay()
+	if(time_till_draw)
+		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
 		return
 	firing = TRUE
 	. = do_fire(target, user, message, params, zone_override, bonus_spread, stam_cost)
