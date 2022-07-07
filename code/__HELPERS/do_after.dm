@@ -222,7 +222,7 @@
 		checked_health["health"] = health
 	return ..()
 
-/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS, ignore_movement = FALSE)
+/proc/do_after(mob/user, delay, needhand = 1, atom/target = null, progress = 1, datum/callback/extra_checks = null, required_mobility_flags = (MOBILITY_USE|MOBILITY_MOVE), resume_time = 0 SECONDS)
 	if(!user)
 		return 0
 	var/atom/Tloc = null
@@ -268,7 +268,7 @@
 			. = 0
 			break
 
-		if(QDELETED(user) || user.stat || (!ignore_movement && (!drifting && user.loc != Uloc)) || (extra_checks && !extra_checks.Invoke()))
+		if(QDELETED(user) || user.stat || (!drifting && user.loc != Uloc) || (extra_checks && !extra_checks.Invoke()))
 			. = 0
 			break
 

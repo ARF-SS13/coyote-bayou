@@ -910,13 +910,13 @@ ATTACHMENTS
 	if(user && !user.has_gravity())
 		. *= 5
 
-/obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
+/obj/item/gun/proc/	(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
 	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
-	if(do_after(user, time_till_gun_is_ready, needhand = FALSE, ignore_movement = TRUE))
+	spawn(time_till_gun_is_ready)
 		user.show_message(span_notice("\The [src] is ready to fire."))
 
 /obj/item/gun/proc/play_equip_sound(src, volume=50)
