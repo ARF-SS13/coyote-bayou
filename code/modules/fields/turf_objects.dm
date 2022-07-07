@@ -15,6 +15,7 @@
 		parent = _monitor
 	return ..()
 
+
 /obj/effect/abstract/proximity_checker/advanced/center
 	name = "field anchor"
 	desc = "No."
@@ -23,22 +24,20 @@
 	name = "energy field"
 	desc = "Get off my turf!"
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/CanPass(atom/movable/AM, border_dir)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/CanAllowThrough(atom/movable/AM, border_dir)
+	..()
 	if(parent)
 		return parent.field_turf_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/Crossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/on_entered(atom/movable/AM)
+	. = ..()
 	if(parent)
 		return parent.field_turf_crossed(AM, src)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_turf/Uncross(atom/movable/AM)
-	if(parent)
-		return parent.field_turf_uncross(AM, src)
-	return TRUE
-
-/obj/effect/abstract/proximity_checker/advanced/field_turf/Uncrossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_turf/on_exit(atom/movable/AM)
+	. = ..()
 	if(parent)
 		return parent.field_turf_uncrossed(AM, src)
 	return TRUE
@@ -47,22 +46,20 @@
 	name = "energy field edge"
 	desc = "Edgy description here."
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/CanPass(atom/movable/AM, border_dir)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/CanAllowThrough(atom/movable/AM, border_dir)
+	..()
 	if(parent)
 		return parent.field_edge_canpass(AM, src, border_dir)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/Crossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/on_entered(atom/movable/AM)
+	..()
 	if(parent)
 		return parent.field_edge_crossed(AM, src)
 	return TRUE
 
-/obj/effect/abstract/proximity_checker/advanced/field_edge/Uncross(atom/movable/AM)
-	if(parent)
-		return parent.field_edge_uncross(AM, src)
-	return TRUE
-
-/obj/effect/abstract/proximity_checker/advanced/field_edge/Uncrossed(atom/movable/AM)
+/obj/effect/abstract/proximity_checker/advanced/field_edge/on_exit(atom/movable/AM)
+	..()
 	if(parent)
 		return parent.field_edge_uncrossed(AM, src)
 	return TRUE

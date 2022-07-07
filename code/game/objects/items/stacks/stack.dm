@@ -63,6 +63,11 @@
 			mats_per_unit[SSmaterials.GetMaterialRef(i)] = in_process_mat_list[i]
 			custom_materials[i] *= amount
 	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 	if(merge)
 		for(var/obj/item/stack/S in loc)
 			if(S.merge_type == merge_type)
@@ -399,10 +404,10 @@
 	S.add(transfer)
 	return transfer
 
-/obj/item/stack/Crossed(obj/o)
+/obj/item/stack/proc/on_entered(obj/o)
+	SIGNAL_HANDLER
 	if(istype(o, merge_type) && !o.throwing)
 		merge(o)
-	. = ..()
 
 /obj/item/stack/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(istype(AM, merge_type))

@@ -25,7 +25,7 @@
 	if(. && ishuman(target) && target != summoner)
 		new /datum/hallucination/delusion(target,TRUE,"custom",200,0, icon_state,icon)
 
-/mob/living/simple_animal/hostile/guardian/fire/Crossed(AM as mob|obj)
+/mob/living/simple_animal/hostile/guardian/fire/on_entered(AM as mob|obj)
 	..()
 	collision_ignite(AM)
 

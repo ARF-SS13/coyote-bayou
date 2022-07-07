@@ -670,7 +670,7 @@
 					L.DefaultCombatKnockdown(160)
 	return ..()
 
-// called from mob/living/carbon/human/Crossed()
+// called from mob/living/carbon/human/proc/on_entered()
 // when mulebot is in the same loc
 /mob/living/simple_animal/bot/mulebot/proc/RunOver(mob/living/carbon/human/H)
 	log_combat(src, H, "run over", null, "(DAMTYPE: [uppertext(BRUTE)])")

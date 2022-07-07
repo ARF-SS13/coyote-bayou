@@ -7,7 +7,15 @@
 	icon_state = "pressure_sensor"
 	alpha = 50
 
-/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/Crossed(atom/movable/AM)
+/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+/obj/structure/destructible/clockwork/trap/trigger/pressure_sensor/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(isliving(AM) && !is_servant_of_ratvar(AM))
 		var/mob/living/L = AM
 		if(L.stat || L.m_intent == MOVE_INTENT_WALK || L.movement_type & (FLYING|FLOATING))

@@ -324,6 +324,12 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 	if(T && is_station_level(T.z))
 		SSblackbox.record_feedback("tally", "station_mess_created", 1, name)
 
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
+
 /obj/item/shard/Destroy()
 	. = ..()
 
@@ -372,13 +378,13 @@ GLOBAL_LIST_INIT(plastitaniumglass_recipes, list(
 		qdel(src)
 	return TRUE
 
-/obj/item/shard/Crossed(mob/living/L)
+/obj/item/shard/proc/on_entered(mob/living/L)
+	SIGNAL_HANDLER
 	if(istype(L) && has_gravity(loc))
 		if(HAS_TRAIT(L, TRAIT_LIGHT_STEP))
 			playsound(loc, 'sound/effects/glass_step.ogg', 30, 1)
 		else
 			playsound(loc, 'sound/effects/glass_step.ogg', 50, 1)
-	return ..()
 
 /obj/item/shard/plasma
 	name = "purple shard"

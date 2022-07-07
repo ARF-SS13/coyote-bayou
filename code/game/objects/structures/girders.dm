@@ -297,7 +297,8 @@
 			qdel(src)
 		return TRUE
 
-/obj/structure/girder/CanPass(atom/movable/mover, border_dir)
+/obj/structure/girder/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & PASSGRILLE))
 		return prob(girderpasschance)
 	else

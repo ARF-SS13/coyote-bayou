@@ -60,15 +60,15 @@
 		..(gibbed)
 
 
-/mob/living/simple_animal/mouse/Crossed(AM as mob|obj)
+/mob/living/simple_animal/mouse/on_entered(AM as mob|obj)
+	..()
 	if( ishuman(AM) )
 		if(!stat)
 			var/mob/M = AM
 			to_chat(M, "<span class='notice'>[icon2html(src, M)] Squeak!</span>")
 	if(istype(AM, /obj/item/reagent_containers/food/snacks/royalcheese))
-		evolve()
+		INVOKE_ASYNC(src, .proc/evolve)
 		qdel(AM)
-	..()
 
 /mob/living/simple_animal/mouse/handle_automated_action()
 	if(!isturf(loc))

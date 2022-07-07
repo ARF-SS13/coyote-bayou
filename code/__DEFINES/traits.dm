@@ -368,30 +368,3 @@
 #define ACTIVE_PARRY_TRAIT				"active_parry"
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define TRAIT_SPACEWALK "spacewalk"
-
-///Movement type traits for movables. See elements/movetype_handler.dm
-#define TRAIT_MOVE_GROUND "move_ground"
-#define TRAIT_MOVE_FLYING "move_flying"
-#define TRAIT_MOVE_VENTCRAWLING "move_ventcrawling"
-#define TRAIT_MOVE_FLOATING "move_floating"
-#define TRAIT_MOVE_PHASING "move_phasing"
-/// Disables the floating animation. See above.
-#define TRAIT_NO_FLOATING_ANIM "no-floating-animation"
-
-/// trait associated to being buckled
-#define BUCKLED_TRAIT "buckled"
-/// trait associated to being held in a chokehold
-#define CHOKEHOLD_TRAIT "chokehold"
-/// trait associated to resting
-#define RESTING_TRAIT "resting"
-
-/** Mob related */
-#define ALERT_SUCCUMB "succumb"
-#define ALERT_BLIND "blind"
-#define ALERT_BUCKLED "buckled"
-#define ALERT_HANDCUFFED "handcuffed"
-#define ALERT_LEGCUFFED "legcuffed"
-#define ALERT_WOUNDED "wound"
-#define ALERT_IRRADIATED "irradiated"
-#define ALERT_EMBEDDED_OBJECT "embeddedobject"
-#define ALERT_SHOES_KNOT "shoealert"

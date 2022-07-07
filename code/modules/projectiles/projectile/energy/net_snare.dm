@@ -89,7 +89,7 @@
 		qdel(src)
 	if(iscarbon(target))
 		var/obj/item/restraints/legcuffs/beartrap/B = new /obj/item/restraints/legcuffs/beartrap/energy/cyborg(get_turf(target))
-		B.Crossed(target)
+		B.on_entered(target)
 	QDEL_IN(src, 10)
 	return ..()
 

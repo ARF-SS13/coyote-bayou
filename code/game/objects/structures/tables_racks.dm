@@ -97,7 +97,8 @@
 /obj/structure/table/attack_tk()
 	return FALSE
 
-/obj/structure/table/CanPass(atom/movable/mover, border_dir)
+/obj/structure/table/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))
 		return 1
 	if(mover.throwing)
@@ -256,6 +257,13 @@
 	icon_state = "rollingtable"
 	var/list/attached_items = list()
 
+/obj/structure/table/rolling/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
 	attached_items += I
@@ -267,14 +275,18 @@
 	attached_items -= source
 	UnregisterSignal(source, COMSIG_MOVABLE_MOVED)
 
-/obj/structure/table/rolling/Moved(atom/OldLoc, Dir)
+/obj/structure/table/rolling/proc/on_entered(atom/OldLoc, Dir)
+	SIGNAL_HANDLER
+	INVOKE_ASYNC(src, .proc/on_move, OldLoc, Dir)
+
+/obj/structure/table/rolling/proc/on_move(atom/OldLoc, Dir)
 	for(var/mob/M in OldLoc.contents)//Kidnap everyone on top
 		M.forceMove(loc)
 	for(var/x in attached_items)
 		var/atom/movable/AM = x
 		if(!AM.Move(loc))
 			RemoveItemFromTable(AM, AM.loc)
-	return ..()
+	return TRUE
 
 /*
  * Glass tables
@@ -291,6 +303,13 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 100)
 	var/list/debris = list()
 
+/obj/structure/table/glass/Initialize()
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/structure/table/glass/New()
 	. = ..()
 	debris += new frame
@@ -300,8 +319,8 @@
 	QDEL_LIST(debris)
 	. = ..()
 
-/obj/structure/table/glass/Crossed(atom/movable/AM)
-	. = ..()
+/obj/structure/table/glass/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(flags_1 & NODECONSTRUCT_1)
 		return
 	if(!isliving(AM))
@@ -705,7 +724,8 @@
 	. = ..()
 	. += "<span class='notice'>It's held together by a couple of <b>bolts</b>.</span>"
 
-/obj/structure/rack/CanPass(atom/movable/mover, border_dir)
+/obj/structure/rack/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
 		return 1
 	if(istype(mover) && (mover.pass_flags & pass_flags_self))

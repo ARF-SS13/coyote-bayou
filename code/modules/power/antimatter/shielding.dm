@@ -79,7 +79,8 @@
 	return ..()
 
 
-/obj/machinery/am_shielding/CanPass(atom/movable/mover, border_dir)
+/obj/machinery/am_shielding/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	return 0
 
 
