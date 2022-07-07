@@ -2201,9 +2201,6 @@
 /area/f13/vault)
 "ccu" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/landmark/vertibird_enter{
-	id = s
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
 "ccC" = (
@@ -3023,7 +3020,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/brotherhood/offices2nd)
 "cOo" = (
-/obj/landmark/vertibird_enter{
+/obj/effect/landmark/vertibird_enter{
 	id = "verti1star"
 	},
 /turf/open/floor/f13{
@@ -16190,9 +16187,7 @@
 	color = "#3e3d42";
 	dir = 8
 	},
-/obj/machinery/computer/vertibird_console{
-	id = "Verti1"
-	},
+/obj/machinery/computer/vertibird_console,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -16926,7 +16921,6 @@
 /obj/vertibird{
 	icon_state = "vb-fast";
 	dir = 8;
-	id = "verti1"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
@@ -19689,9 +19683,7 @@
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/enclave)
 "qWA" = (
-/obj/vertibird_exit_door{
-	id = "verti1"
-	},
+/obj/vertibird_exit_door,
 /turf/closed/wall,
 /area/f13/building)
 "qWD" = (

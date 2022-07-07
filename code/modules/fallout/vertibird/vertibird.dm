@@ -14,7 +14,7 @@
 	var/obj/machinery/camera/portable/builtInCamera
 
 /obj/vertibird/New()
-	var/obj/item/start = new /obj/landmark/vertibird()
+	var/obj/item/start = new /obj/effect/landmark/vertibird()
 	start.name = "Vertibird Initial Point"
 	start.loc = loc
 	if(GLOB.vertibird)
@@ -63,7 +63,7 @@
 /obj/vertibird/proc/getLocationsHTML()
 	var/html
 	for(var/I = 1 to GLOB.vertibirdLandZone.len)
-		var/obj/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
+		var/obj/effect/landmark/vertibird/mark = GLOB.vertibirdLandZone[I]
 		html += "<a href='?src=\ref[src];fly=true;x=[mark.x];y=[mark.y];z=[mark.z]'>[mark.name]</a><br>"
 	return html
 

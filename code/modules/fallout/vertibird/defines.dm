@@ -1,3 +1,3 @@
-GLOBAL_LIST_INIT(vertibirdLandZone, list("Red River Army Depot - Nash"))
+GLOBAL_LIST_EMPTY(vertibirdLandZone)
 GLOBAL_VAR(vertibirdEnterZone)
 GLOBAL_VAR(vertibird)
