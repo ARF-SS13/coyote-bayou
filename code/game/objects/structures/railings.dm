@@ -85,7 +85,7 @@
 	return TRUE
 
 /obj/structure/railing/do_climb(atom/movable/A)
-	if(A.loc == loc)
+	if(loc != A.loc)
 		return ..()
 	if(climbable)
 		density = FALSE
