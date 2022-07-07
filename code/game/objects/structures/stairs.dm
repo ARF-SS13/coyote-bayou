@@ -29,23 +29,19 @@
 	dir = WEST
 
 /obj/structure/stairs/Initialize(mapload)
-	GLOB.stairs += src
 	if(force_open_above)
 		force_open_above()
 		build_signal_listener()
 	update_surrounding()
-
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_EXIT = .proc/on_exit,
 	)
-
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 	return ..()
 
 /obj/structure/stairs/Destroy()
 	listeningTo = null
-	GLOB.stairs -= src
 	return ..()
 
 /obj/structure/stairs/Move()			//Look this should never happen but...
@@ -74,14 +70,6 @@
 		leaving.Bump(src)
 		return COMPONENT_ATOM_BLOCK_EXIT
 
-/obj/structure/stairs/Uncross(atom/movable/AM, turf/newloc)
-	if(!newloc || !AM)
-		return ..()
-	if(!isobserver(AM) && isTerminator() && (get_dir(src, newloc) == dir))
-		stair_ascend(AM)
-		return FALSE
-	return ..()
-
 /obj/structure/stairs/Cross(atom/movable/AM)
 	if(isTerminator() && (get_dir(src, AM) == dir))
 		return FALSE
@@ -100,7 +88,7 @@
 	if(!checking.zPassIn(climber, UP, get_turf(src)))
 		return
 	var/turf/target = get_step_multiz(get_turf(src), (dir|UP))
-	if(istype(target) && !climber.can_z_move(DOWN, target, z_move_flags = ZMOVE_FALL_FLAGS)) //Don't throw them into a tile that will just dump them back down.
+	if(istype(target) && !climber.canZMove(DOWN, target, z_move_flags = ZMOVE_FALL_FLAGS)) //Don't throw them into a tile that will just dump them back down.
 		climber.zMove(target = target, z_move_flags = ZMOVE_STAIRS_FLAGS)
 		/// Moves anything that's being dragged by src or anything buckled to it to the stairs turf.
 		climber.pulling?.move_from_pull(climber, loc, climber.glide_size)
@@ -134,7 +122,8 @@
 		T.ChangeTurf(/turf/open/transparent/openspace, flags = CHANGETURF_INHERIT_AIR)
 
 /obj/structure/stairs/proc/on_multiz_new(turf/source, dir)
-	SIGNAL_HANDLER
+	//SIGNAL_HANDLER
+	SHOULD_NOT_SLEEP(TRUE) //the same thing.
 
 	if(dir == UP)
 		var/turf/open/transparent/openspace/T = get_step_multiz(get_turf(src), UP)
@@ -143,8 +132,8 @@
 
 /obj/structure/stairs/intercept_zImpact(atom/movable/AM, levels = 1)
 	. = ..()
-	if(levels == 1 && isTerminator()) // Stairs won't save you from a steep fall.
-		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE | FALL_RETAIN_PULL
+	if(isTerminator())
+		. |= FALL_INTERCEPTED | FALL_NO_MESSAGE
 
 /obj/structure/stairs/proc/isTerminator()			//If this is the last stair in a chain and should move mobs up
 	if(terminator_mode != STAIR_TERMINATOR_AUTOMATIC)

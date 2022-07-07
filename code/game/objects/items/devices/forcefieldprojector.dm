@@ -101,7 +101,8 @@
 	generator = null
 	return ..()
 
-/obj/structure/projected_forcefield/CanPass(atom/movable/mover, border_dir)
+/obj/structure/projected_forcefield/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return 1
 	return !density

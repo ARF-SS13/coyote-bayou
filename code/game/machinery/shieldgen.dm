@@ -454,7 +454,8 @@
 		if(gen_secondary) //using power may cause us to be destroyed
 			gen_secondary.use_stored_power(drain_amount*0.5)
 
-/obj/machinery/shieldwall/CanPass(atom/movable/mover, border_dir)
+/obj/machinery/shieldwall/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return prob(20)
 	else

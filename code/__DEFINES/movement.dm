@@ -70,6 +70,7 @@ GLOBAL_VAR_INIT(glide_size_multiplier, 1.0)
 #define ZMOVE_ALLOW_BUCKLED (1<<7)
 /// If the movable is actually ventcrawling vertically.
 #define ZMOVE_VENTCRAWLING (1<<8)
+#define TRAIT_MOVE_VENTCRAWLING "move_ventcrawling"
 /// Includes movables that're either pulled by the source or mobs buckled to it in the list of moving movables.
 #define ZMOVE_INCLUDE_PULLED (1<<9)
 

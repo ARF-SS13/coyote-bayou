@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 /obj/effect/hallucination/simple/Moved(atom/OldLoc, Dir)
 	Show()
-	return ..()
+	. = ..()
 
 /obj/effect/hallucination/simple/Destroy()
 	if(target && target.client)
@@ -635,7 +635,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		target.playsound_local(get_turf(airlock), 'sound/machines/boltsup.ogg',30,0,3)
 	qdel(src)
 
-/obj/effect/hallucination/fake_door_lock/CanPass(atom/movable/mover, border_dir)
+/obj/effect/hallucination/fake_door_lock/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(mover == target && airlock.density)
 		return FALSE
 	return TRUE
@@ -1071,26 +1072,43 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /obj/effect/hallucination/danger/lava
 	name = "lava"
 
+/obj/effect/hallucination/danger/lava/Initialize(mapload, _target)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 /obj/effect/hallucination/danger/lava/show_icon()
 	image = image('icons/turf/floors/lava.dmi',src,"smooth",layer)
 	image.plane = plane
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/lava/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/lava/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(AM == target)
-		target.adjustStaminaLoss(20)
+		INVOKE_ASYNC(target, /mob/living/.proc/adjustStaminaLoss, 20)
 		new /datum/hallucination/fire(target)
 
 /obj/effect/hallucination/danger/chasm
 	name = "chasm"
+
+/obj/effect/hallucination/danger/chasm/Initialize(mapload, _target)
+	. = ..()
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 
 /obj/effect/hallucination/danger/chasm/show_icon()
 	image = image('icons/turf/floors/Chasms.dmi',src,"smooth",TURF_LAYER)
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/chasm/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/chasm/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
@@ -1105,6 +1123,11 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 /obj/effect/hallucination/danger/anomaly/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 
 /obj/effect/hallucination/danger/anomaly/process()
 	if(prob(70))
@@ -1119,7 +1142,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(target.client)
 		target.client.images += image
 
-/obj/effect/hallucination/danger/anomaly/Crossed(atom/movable/AM)
+/obj/effect/hallucination/danger/anomaly/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(AM == target)
 		new /datum/hallucination/shock(target)
 

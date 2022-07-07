@@ -279,6 +279,11 @@
 /obj/structure/spacevine/Initialize()
 	. = ..()
 	add_atom_colour("#ffffff", FIXED_COLOUR_PRIORITY)
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
+
 
 /obj/structure/spacevine/examine(mob/user)
 	. = ..()
@@ -329,11 +334,13 @@
 		if(BURN)
 			playsound(src.loc, 'sound/items/welder.ogg', 100, TRUE)
 
-/obj/structure/spacevine/Crossed(atom/movable/AM)
+/obj/structure/spacevine/proc/on_entered(atom/movable/AM)
+	SIGNAL_HANDLER
 	if(!isliving(AM))
 		return
 	for(var/datum/spacevine_mutation/SM in mutations)
 		SM.on_cross(src, AM)
+
 
 /obj/structure/spacevine/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	for(var/datum/spacevine_mutation/SM in mutations)
@@ -501,7 +508,8 @@
 	if(!override)
 		qdel(src)
 
-/obj/structure/spacevine/CanPass(atom/movable/mover, border_dir)
+/obj/structure/spacevine/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	. = ..()
 	if(isvineimmune(mover))
 		return TRUE

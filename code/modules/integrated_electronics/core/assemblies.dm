@@ -578,12 +578,12 @@
 	return FALSE
 
 /obj/item/electronic_assembly/Moved(oldLoc, dir)
+	..()
 	for(var/I in assembly_components)
 		var/obj/item/integrated_circuit/IC = I
 		IC.ext_moved(oldLoc, dir)
 	if(light) //Update lighting objects (From light circuits).
 		update_light()
-	return ..()
 
 /obj/item/electronic_assembly/stop_pulling()
 	for(var/I in assembly_components)

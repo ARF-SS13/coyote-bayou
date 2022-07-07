@@ -237,7 +237,8 @@ Difficulty: Hard
 	weather_immunities = list("lava","ash")
 	has_field_of_vision = FALSE
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter/CanPass(atom/movable/mover, border_dir)
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	if(istype(mover, /mob/living/simple_animal/hostile/megafauna/bubblegum))
 		return 1
 	return 0

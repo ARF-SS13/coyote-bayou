@@ -161,7 +161,8 @@
 /mob/living/simple_animal/shade/howling_ghost/adjustHealth()
 	. = 0
 
-/mob/living/simple_animal/shade/howling_ghost/CanPass(atom/movable/mover, border_dir)
+/mob/living/simple_animal/shade/howling_ghost/CanAllowThrough(atom/movable/mover, border_dir)
+	..()
 	return 1
 
 /////////////////////////
