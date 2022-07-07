@@ -95,7 +95,7 @@
 
 /datum/crafting_recipe/boneshovel
 	name = "Serrated Bone Shovel"
-	always_available = FALSE
+	always_available = TRUE
 	reqs = list(
 			/obj/item/stack/sheet/bone = 4,
 			/datum/reagent/oil = 5,
@@ -115,11 +115,11 @@
 	name = "Tribal Salvaged Power Armor"
 	time = 120
 	reqs = list(
-			/obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b = 1,
+			/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b = 1,
 			/obj/item/stack/sheet/sinew = 2,
 			/obj/item/stack/sheet/bone = 4
 			)
-	result = /obj/item/clothing/suit/armored/heavy/salvaged_pa/t45b/tribal
+	result = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
 	category = CAT_TRIBAL
 	always_available = FALSE
 
@@ -139,11 +139,11 @@
 	name = "Tribal Combat Armor"
 	time = 40
 	reqs = list(
-			/obj/item/clothing/suit/armor/f13/combat = 1,
+			/obj/item/clothing/suit/armor/medium/combat = 1,
 			/obj/item/stack/sheet/sinew = 1,
 			/obj/item/stack/sheet/bone = 2
 			)
-	result = /obj/item/clothing/suit/armor/f13/combat/tribal
+	result = /obj/item/clothing/suit/armor/medium/combat/tribal
 	category = CAT_TRIBAL
 	always_available = FALSE
 
@@ -151,11 +151,11 @@
 	name = "Tribal Reinforced Combat Armor"
 	time = 40
 	reqs = list(
-			/obj/item/clothing/suit/armor/f13/combat/mk2 = 1,
+			/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
 			/obj/item/stack/sheet/sinew = 1,
 			/obj/item/stack/sheet/bone = 2
 			)
-	result = /obj/item/clothing/suit/armor/f13/combat/mk2/tribal
+	result = /obj/item/clothing/suit/armor/medium/combat/mk2/tribal
 	category = CAT_TRIBAL
 	always_available = FALSE
 
@@ -191,7 +191,7 @@
 				/obj/item/stack/sheet/cloth = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/silverbow
 	name = "Silver Bow"
@@ -213,7 +213,7 @@
 				/obj/item/stack/sheet/sinew = 5)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/tribe_bow
 	name = "Short Bow"
@@ -222,7 +222,7 @@
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/crossbow
 	name = "CrossBow"
@@ -293,7 +293,7 @@
 				/obj/item/stack/sheet/mineral/wood = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 
 /datum/crafting_recipe/tribalwar/cheaparrow
@@ -337,7 +337,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 4,
 				/obj/item/stack/sheet/sinew = 1)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/boneaxe
 	name = "Bone Axe"
@@ -346,7 +346,7 @@
 	reqs = list(/obj/item/stack/sheet/bone = 6,
 				/obj/item/stack/sheet/sinew = 3)
 	category = CAT_TRIBAL
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/warclub
 	name = "Wooden Warclub"
@@ -356,7 +356,7 @@
 				/obj/item/stack/sheet/cloth = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
+	always_available = TRUE
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
@@ -378,7 +378,7 @@
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
-	result = /obj/item/clothing/suit/armor/f13/tribe_armor
+	result = /obj/item/clothing/suit/armor/tribe_armor
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 5)
@@ -388,7 +388,7 @@
 
 /datum/crafting_recipe/tribalwar/heavytribe
 	name = "Heavy Tribal Plates"
-	result = /obj/item/clothing/suit/armor/f13/tribe_heavy_armor
+	result = /obj/item/clothing/suit/armor/tribe_heavy_armor
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/sheet/cloth = 5)
@@ -409,7 +409,7 @@
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
-	result = /obj/item/clothing/suit/armor/f13/chitinarmor
+	result = /obj/item/clothing/suit/armor/light/tribal/chitinarmor
 	time = 30
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,
@@ -435,7 +435,7 @@
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"
-	result = /obj/item/clothing/suit/armor/f13/lightcloak
+	result = /obj/item/clothing/suit/armor/lightcloak
 	time = 120
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
 				/obj/item/stack/sheet/leather = 6,

@@ -414,7 +414,7 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	icon_state = "pigeoncrate"
 	terminal = "Legion Pigeon Carrier"
 	terminalType = 2
-	beepsound = 'sound/f13effects/pigeons.ogg'
+
 /*
 /obj/machinery/msgterminal/pigeon
 	icon = 'icons/obj/computer.dmi'

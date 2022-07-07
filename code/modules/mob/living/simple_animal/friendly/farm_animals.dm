@@ -144,8 +144,8 @@
 	attack_verb_continuous = "kicks"
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
-	health = 50
-	maxHealth = 50
+	health = 200
+	maxHealth = 200
 	var/obj/item/udder/udder = null
 	var/datum/reagent/milk_reagent = /datum/reagent/consumable/milk
 	var/food_type = /obj/item/reagent_containers/food/snacks/grown/wheat
@@ -481,11 +481,30 @@
 ///////////////////////
 //Dave's Brahmin Bags//
 ///////////////////////
-	var/bags = FALSE
-	var/collar = FALSE
+
+
 	var/mob/living/owner = null
 	var/follow = FALSE
+
 	var/bridle = FALSE
+	var/bags = FALSE
+	var/collar = FALSE
+	var/saddle = FALSE
+	var/brand = ""
+
+/mob/living/simple_animal/cow/brahmin/examine(mob/user)
+	. = ..()
+	desc = initial(desc)
+	if(collar)
+		desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
+	if(brand)
+		desc += "<br>It has a brand reading '[brand]' on its backside."
+	if(bridle)
+		desc += "<br>It has a bridle and reins attached to its head."
+	if(bags)
+		desc += "<br>It has some bags attached."
+	if(saddle)
+		desc += "<br>It has a saddle across its back."
 
 /obj/item/brahminbags
 	name = "brahmin bags"
@@ -500,18 +519,29 @@
 	icon_state = "petcollar"
 
 /obj/item/brahminbridle
-	name = "brahmin bridle set"
+	name = "brahmin bridle gear"
 	desc = "A set of headgear used to control and claim a brahmin. Consists of a bit, reins, and leather straps stored in a satchel."
-	icon = 'icons/fallout/objects/storage.dmi'
-	icon_state = "satchel_enclave"
+	icon = 'icons/fallout/objects/tools.dmi'
+	icon_state = "brahminbridle"
+
+/obj/item/brahminsaddle
+	name = "brahmin saddle"
+	desc = "A saddle fit for a mutant beast of burden."
+	icon = 'icons/fallout/objects/tools.dmi'
+	icon_state = "brahminsaddle"
+
+/obj/item/brahminbrand
+	name = "brahmin branding tool"
+	desc = "Use this on a brahmin to claim it as yours!"
+	icon = 'icons/fallout/objects/tools.dmi'
+	icon_state = "brahminbrand"
 
 /datum/crafting_recipe/brahminbags
 	name = "Brahmin bags"
 	result = /obj/item/brahminbags
 	time = 60
-	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/storage/backpack/duffelbag = 2,
-				/obj/item/weaponcrafting/string = 2)
+	reqs = list(/obj/item/storage/backpack/duffelbag = 2,
+				/obj/item/stack/sheet/cloth = 5)
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
@@ -520,19 +550,40 @@
 	name = "Brahmin collar"
 	result = /obj/item/brahmincollar
 	time = 60
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
+	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
 
 /datum/crafting_recipe/brahminbridle
-	name = "Brahmin bridle set"
+	name = "Brahmin bridle gear"
 	result = /obj/item/brahminbridle
 	time = 60
 	reqs = list(/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	subcategory = CAT_FARMING
+	category = CAT_MISC
+
+/datum/crafting_recipe/brahminsaddle
+	name = "Brahmin saddle"
+	result = /obj/item/brahminsaddle
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/leather = 4,
+				/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	subcategory = CAT_FARMING
+	category = CAT_MISC
+
+/datum/crafting_recipe/brahminbrand
+	name = "Brahmin branding tool"
+	result = /obj/item/brahminbrand
+	time = 60
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/rods = 1)
 	tools = list(TOOL_WORKBENCH)
 	subcategory = CAT_FARMING
 	category = CAT_MISC
@@ -548,7 +599,6 @@
 			return
 		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
 		bags = TRUE
-		desc += "<br>This one has some bags attached."
 		qdel(I)
 		src.ComponentInitialize()
 		return
@@ -564,7 +614,6 @@
 			return
 
 		collar = TRUE
-		desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
 		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
 		message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].</span>") //So people don't name their brahmin the N-Word without notice
 		qdel(I)
@@ -577,10 +626,39 @@
 
 		owner = user
 		bridle = TRUE
+		tame = TRUE
 		to_chat(user, "<span class='notice'>You add [I] to [src], claiming it as yours.</span>")
-		desc += "<br>It has a bridle and reins attached to its head."
 		qdel(I)
 		return
+
+	if(istype(I,/obj/item/brahminsaddle))
+		if(saddle)
+			to_chat(user, "<span class='warning'>This brahmin already has a saddle!</span>")
+			return
+
+		saddle = TRUE
+		can_buckle = TRUE
+		buckle_lying = FALSE
+		var/datum/component/riding/D = LoadComponent(/datum/component/riding)
+		D.set_riding_offsets(RIDING_OFFSET_ALL, list(TEXT_NORTH = list(0, 8), TEXT_SOUTH = list(0, 8), TEXT_EAST = list(-2, 8), TEXT_WEST = list(2, 8)))
+		D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
+		D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+		D.drive_verb = "ride"
+		to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
+		qdel(I)
+		return
+
+	if(istype(I,/obj/item/brahminbrand))
+		if(brand)
+			to_chat(user, "<span class='warning'>This brahmin already has a brand!</span>")
+			return
+
+		brand = input("What would you like to brand on your brahmin?","Brand", brand)
+
+		if(!brand)
+			return
 
 /datum/component/storage/concrete/brahminbag
 	max_w_class = WEIGHT_CLASS_HUGE //Allows the storage of shotguns and other two handed items.
@@ -610,40 +688,26 @@
 			step_to(src, owner)
 
 /mob/living/simple_animal/cow/brahmin/CtrlShiftClick(mob/user)
-	//if user not close return check!!!
 	if(get_dist(user, src) > 1)
-		return
-
-	if(!bridle)
 		return
 
 	if(bridle && user.a_intent == INTENT_DISARM)
 		bridle = FALSE
+		tame = FALSE
 		owner = null
 		to_chat(user, "<span class='notice'>You remove the bridle gear from [src], dropping it on the ground.</span>")
 		new /obj/item/brahminbridle(user.loc)
-		desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
-		if(collar)
-			desc += "<br>A collar with a tag etched '[name]' is hanging from its neck."
-		if(bags)
-			desc += "<br>This one has some bags attached."
-		return
 
 	if(collar && user.a_intent == INTENT_GRAB)
 		collar = FALSE
-		name = "brahmin"
+		name = initial(name)
 		to_chat(user, "<span class='notice'>You remove the collar from [src], dropping it on the ground.</span>")
 		new /obj/item/brahmincollar(user.loc)
-		desc = "Brahmin or brahma are mutated cattle with two heads and looking udderly ridiculous.<br>Known for their milk, just don't tip them over."
-		if(bridle)
-			desc += "<br>It has a bridle and reins attached to its head."
-		if(bags)
-			desc += "<br>This one has some bags attached."
 
 	if(user == owner)
 		if(bridle && user.a_intent == INTENT_HELP)
 			if(follow)
-				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to stop.</span>")
+				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to stay.</span>")
 				follow = FALSE
 				return
 			else if(!follow)
@@ -810,20 +874,17 @@
 	if(inventory_back && inventory_back.brahmin_fashion)
 		var/datum/brahmin_fashion/BF = new inventory_back.brahmin_fashion(src)
 		BF.apply(src)
-
 /mob/living/simple_animal/cow/brahmin/regenerate_icons()
 	..()
 	if(inventory_back)
 		var/image/back_icon
 		var/datum/brahmin_fashion/BF = new inventory_back.brahmin_fashion(src)
-
 		if(!BF.obj_icon_state)
 			BF.obj_icon_state = inventory_back.icon_state
 		if(!BF.obj_alpha)
 			BF.obj_alpha = inventory_back.alpha
 		if(!BF.obj_color)
 			BF.obj_color = inventory_back.color
-
 		if(health <= 0)
 			back_icon = BF.get_overlay(dir = EAST)
 			back_icon.pixel_y = -11
@@ -831,28 +892,22 @@
 		else
 			back_icon = BF.get_overlay()
 		add_overlay(back_icon)
-
 	return
-
 /mob/living/simple_animal/cow/brahmin/show_inv(mob/user)
 	user.set_machine(src)
 	if(user.stat)
 		return
-
 	var/dat = 	"<div align='center'><b>Inventory of [name]</b></div><p>"
 	if(inventory_back)
 		dat +=	"<br><b>Back:</b> [inventory_back] (<a href='?src=[REF(src)];remove_inv=back'>Remove</a>)"
 	else
 		dat +=	"<br><b>Back:</b> <a href='?src=[REF(src)];add_inv=back'>Nothing</a>"
-
 	user << browse(dat, text("window=mob[];size=325x500", real_name))
 	onclose(user, "mob[real_name]")
 	return
-
 mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 	if(usr.stat)
 		return
-
 	//Removing from inventory
 	if(href_list["remove_inv"])
 		if(!Adjacent(usr) || !(ishuman(usr) || ismonkey(usr) || iscyborg(usr) ||  isalienadult(usr)))
@@ -868,38 +923,29 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 				else
 					to_chat(usr, "<span class='danger'>There is nothing to remove from its [remove_from].</span>")
 					return
-
 		show_inv(usr)
-
 	//Adding things to inventory
 	else if(href_list["add_inv"])
 		if(!Adjacent(usr) || !(ishuman(usr) || ismonkey(usr) || iscyborg(usr) ||  isalienadult(usr)))
 			return
-
 		var/add_to = href_list["add_inv"]
-
 		switch(add_to)
-
 			if("back")
 				if(inventory_back)
 					to_chat(usr, "<span class='warning'>It's already wearing something!</span>")
 					return
 				else
 					var/obj/item/item_to_add = usr.get_active_held_item()
-
 					if(!item_to_add)
 						usr.visible_message("[usr] pets [src].","<span class='notice'>You rest your hand on [src]'s back for a moment.</span>")
 						return
-
 					if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
 						to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
 						return
-
 					//The objects that brahmin can wear on their backs.
 					var/allowed = FALSE
 					if(ispath(item_to_add.brahmin_fashion, /datum/brahmin_fashion/back))
 						allowed = TRUE
-
 					if(!allowed)
 						to_chat(usr, "<span class='warning'>You set [item_to_add] on [src]'s back, but it falls off!</span>")
 						item_to_add.forceMove(drop_location())
@@ -909,12 +955,10 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 							setDir(i)
 							sleep(1)
 						return
-
 					item_to_add.forceMove(src)
 					src.inventory_back = item_to_add
 					update_brahmin_fluff()
 					regenerate_icons()
-
 		show_inv(usr)
 	else
 		..()

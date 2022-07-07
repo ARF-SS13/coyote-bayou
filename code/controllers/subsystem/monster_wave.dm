@@ -2,13 +2,14 @@ SUBSYSTEM_DEF(monster_wave)
 	name = "Monster Wave"
 	wait = 20 MINUTES //change to either 30 MINUTES or 1 HOURS
 	var/successful_firing = 0
-	var/allowed_firings = 15
+	var/allowed_firings = 30
 	var/chance_of_fire = 80 //Fuck you, people need mobs to shoot! -TK
 
 //So admins, you want to be a tough guy, like it really rough guy?
 //just know you can't modify the time in between each fire
 //but you can allow it to always fire, by changing chance_of_fire to 0
 //and changing allowed_firings to like.... 12?
+//     ^This guy was a coward. ~TK
 
 /datum/controller/subsystem/monster_wave/fire(resumed = 0)
 	if(times_fired <= 0)
@@ -28,12 +29,12 @@ SUBSYSTEM_DEF(monster_wave)
 		to_chat(M, "<span class='notice'>You feel the ground tremor subtly beneath your feet. Something far off in the distance has emerged to the surface.</font></span>")
 
 /datum/controller/subsystem/monster_wave/proc/spawn_monsterwave()
-	var/pick_unfortune = pick("Ghoul", "Deathclaw", "Radscorpion", "Fireant", "Molerat", "Mirelurk", "Gecko", "Cazador", "Wolf")
+	var/pick_unfortune = pick("Ghoul", /*"Deathclaw",*/ "Radscorpion", "Fireant", "Molerat", "Mirelurk", "Gecko", "Cazador", "Wolf")
 	switch(pick_unfortune)
 		if("Ghoul")
 			ghoul_wave()
-		if("Deathclaw")
-			deathclaw_wave()
+//		if("Deathclaw")
+//			deathclaw_wave()
 		if("Radscorpion")
 			radscorpion_wave()
 		if("Fireant")
@@ -61,6 +62,7 @@ SUBSYSTEM_DEF(monster_wave)
 	message_admins("The Monster Wave for ghouls has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
 	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")
 
+/*
 /datum/controller/subsystem/monster_wave/proc/deathclaw_wave()
 	var/spawn_amount = CEILING(GLOB.player_list.len / 20, 1)
 	var/turf/choose_turf = quick_safe_turf()
@@ -72,6 +74,7 @@ SUBSYSTEM_DEF(monster_wave)
 	new /obj/structure/nest/deathclaw(choose_turf)
 	message_admins("The Monster Wave for Deathclaws has fired. A nest has been spawned at [ADMIN_VERBOSEJMP(pixel_turf)]")
 	log_game("The Monster Wave has fired. A nest has been spawned at [AREACOORD(pixel_turf)]")
+*/
 
 /datum/controller/subsystem/monster_wave/proc/radscorpion_wave()
 	var/spawn_amount = CEILING(GLOB.player_list.len / 15, 1)

@@ -108,7 +108,7 @@
 			C.throw_mode_on()
 		if(msg)
 			to_chat(user, "<span class='warning'>You prime [src]! [DisplayTimeText(det_time)]!</span>")
-	playsound(src, 'sound/weapons/armbomb.ogg', volume, 1)
+	playsound(src, 'sound/f13weapons/garand_ping.ogg', volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	item_state = initial(item_state) + "_active"

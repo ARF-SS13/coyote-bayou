@@ -530,6 +530,6 @@ obj/item/storage/bag/chemistry/tribal
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = INFINITY
-	STR.max_items = INFINITY
+	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
+	STR.max_items = 30
 	STR.can_hold = typecacheof(list(/obj/item/advanced_crafting_components, /obj/item/stack/crafting, /obj/item/crafting, /obj/item/multitool/advanced, /obj/item/crowbar/hightech, /obj/item/wrench/hightech, /obj/item/weldingtool/hightech, /obj/item/screwdriver/hightech, /obj/item/wirecutters/hightech, /obj/item/blueprint/research, /obj/item/multitool/advanced))

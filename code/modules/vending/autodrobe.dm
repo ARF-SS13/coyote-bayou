@@ -82,7 +82,7 @@
 						/obj/item/clothing/mask/frog = 1,
 						/obj/item/clothing/mask/rat/tribal = 1,
 						/obj/item/clothing/mask/rat = 1,
-						/obj/item/clothing/suit/overalls = 1,
+						/obj/item/clothing/suit/armor/outfit/overalls/farmer = 1,
 						/obj/item/clothing/head/rabbitears =1,
 						/obj/item/clothing/head/sombrero = 1,
 						/obj/item/clothing/head/sombrero/green = 1,

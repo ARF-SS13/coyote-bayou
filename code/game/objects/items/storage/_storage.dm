@@ -4,6 +4,7 @@
 	icon = 'icons/obj/storage.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 	var/component_type = /datum/component/storage/concrete
+	var/in_use = FALSE
 
 /obj/item/storage/get_dumping_location(obj/item/storage/source,mob/user)
 	return src

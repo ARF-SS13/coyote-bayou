@@ -53,7 +53,7 @@
 	name = "Mafia Head of Personnel"
 
 	uniform = /obj/item/clothing/under/rank/civilian/head_of_personnel
-	suit = /obj/item/clothing/suit/armor/vest/alt
+	suit = /obj/item/clothing/suit/armor/medium/vest/alt
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
 	glasses = /obj/item/clothing/glasses/sunglasses

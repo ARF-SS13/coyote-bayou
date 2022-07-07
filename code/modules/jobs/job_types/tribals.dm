@@ -382,8 +382,8 @@ Hunter
 	flag = F13HUNTER
 	department_flag = TRIBAL
 	faction = FACTION_TRIBE
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 5
+	spawn_positions = 2
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -430,7 +430,7 @@ Hunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
 	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/f13/tribe_armor
+	suit = 		/obj/item/clothing/suit/armor/tribe_armor
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/patch/healingpowder=2,
@@ -527,7 +527,7 @@ Guardian
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
 	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/f13/tribe_heavy_armor
+	suit = 		/obj/item/clothing/suit/armor/tribe_heavy_armor
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
