@@ -944,14 +944,14 @@ ATTACHMENTS
 	if(recoil_cooldown_schedule <= 1)
 		recoil_cooldown_schedule = 1
 
-	if(world.time >= recoil_cooldown_schedule) // it cooled down
-		recoil = 0
-	else if(recoil_cooldown_time > 0) // no zero divides plz
-		recoil *= (recoil_cooldown_schedule - world.time) / recoil_cooldown_time // Partial recoil cooldown
+	if(current_time >= current_recoil_schedule) // it cooled down
+		current_recoil = 0
+	else if(current_recoil_cooldown_time > 0) // no zero divides plz
+		current_recoil *= (current_recoil_schedule - current_time) / current_recoil_cooldown_time // Partial recoil cooldown
 	
 	/// Calculate a new spread, basically recoil to spread, clamped
 	var/new_spread = 0
-	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, recoil)
+	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, current_recoil)
 	
 	/// Set a new time to clear recoil
 	recoil_cooldown_schedule = world.time + recoil_cooldown_time
@@ -967,7 +967,8 @@ ATTACHMENTS
 		if(istype(thing_in_their_other_hand, /obj/item/gun) && user.a_intent == INTENT_HARM) // Akimbo!
 			recoil_to_add *= GUN_AKIMBO_RECOIL_MOD // Bit more than 2x cus that other hand isnt steadying the gun
 
-	recoil += recoil_to_add
+	current_recoil += recoil_to_add
+	recoil = current_recoil
 
 	/// And shake shake shake the camera
 	if(user)
