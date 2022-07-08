@@ -11693,9 +11693,9 @@
 	},
 /area/f13/building/firestation)
 "aNp" = (
-/obj/structure/rack,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "aNr" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -20524,9 +20524,9 @@
 	},
 /area/f13/wasteland)
 "bEY" = (
-/obj/machinery/workbench/advanced,
-/turf/open/floor/plasteel/vault,
-/area/f13/ncr)
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "bFu" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -22529,9 +22529,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "coc" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/machinery/workbench/advanced,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "coi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -31258,13 +31258,6 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
-"gCA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
-/turf/open/floor/plasteel/floorgrime,
-/area/f13/building)
 "gCF" = (
 /obj/structure/car/rubbish3,
 /obj/effect/decal/waste{
@@ -39595,10 +39588,14 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kZy" = (
-/obj/structure/shelf_wood,
-/obj/item/circuitboard/machine/sleeper,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/nest/securitron{
+	max_mobs = 1;
+	spawn_once = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building/museum)
 "kZE" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small/broken{
@@ -43639,6 +43636,11 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/mall)
+"mQc" = (
+/obj/structure/shelf_wood,
+/obj/item/circuitboard/machine/sleeper,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "mQk" = (
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
@@ -49634,6 +49636,13 @@
 	},
 /turf/open/water,
 /area/f13/wasteland)
+"pYm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/wood{
+	name = "Bighorn Residence"
+	},
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/building)
 "pYq" = (
 /obj/structure/window/reinforced/spawner,
 /obj/effect/decal/cleanable/dirt,
@@ -53990,15 +53999,6 @@
 	icon_state = "verticalinnermain3"
 	},
 /area/f13/wasteland)
-"ssb" = (
-/obj/structure/nest/securitron{
-	max_mobs = 1;
-	spawn_once = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building/museum)
 "ssf" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
@@ -64016,7 +64016,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/wooden/planks/pregame,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/space/basic,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "xHd" = (
 /obj/structure/spacevine,
@@ -73367,7 +73367,7 @@ aaa
 aae
 aae
 xLa
-bEY
+coc
 aog
 aLq
 bxA
@@ -78112,7 +78112,7 @@ bwG
 acl
 bWj
 fBf
-gCA
+pYm
 iXi
 jQm
 rMX
@@ -80695,7 +80695,7 @@ bqN
 bqN
 acl
 mGY
-coc
+aNp
 hHX
 acl
 ofA
@@ -99816,7 +99816,7 @@ puK
 aER
 gGC
 xWv
-ssb
+kZy
 bgS
 bgS
 aER
@@ -101358,7 +101358,7 @@ bgS
 xqx
 kJz
 xWv
-ssb
+kZy
 aER
 bgS
 bgS
@@ -111759,7 +111759,7 @@ vXd
 ijr
 dIV
 aJb
-aNp
+bEY
 ijr
 qmp
 bfz
@@ -112530,7 +112530,7 @@ vcV
 ijr
 gSw
 lhi
-kZy
+mQc
 ekB
 aEs
 bfz
