@@ -940,7 +940,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/carpet/purple,
 /area/f13/building)
 "adF" = (
@@ -7262,7 +7262,7 @@
 	color = "#363636"
 	},
 /obj/machinery/door/airlock/medical{
-	name = "Clinic Morgue";
+	name = null;
 	req_one_access_txt = "124"
 	},
 /obj/machinery/door/poddoor/shutters{
@@ -11693,11 +11693,9 @@
 	},
 /area/f13/building/firestation)
 "aNp" = (
-/obj/structure/shelf_wood,
-/obj/item/circuitboard/machine/ore_silo,
-/obj/item/circuitboard/machine/sleeper,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "aNr" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -19310,7 +19308,7 @@
 	id = "nasheast";
 	layer = 11;
 	max_integrity = 1500;
-	name = "General Atomics"
+	name = null
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -21961,7 +21959,7 @@
 	id = "nasheast";
 	layer = 11;
 	max_integrity = 1500;
-	name = "General Atomics"
+	name = null
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -22537,12 +22535,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "coc" = (
-/obj/structure/billboard/ritas,
-/turf/open/indestructible/ground/outside/roaddirt{
-	dir = 1;
-	icon_state = "innerpavement"
-	},
-/area/f13/wasteland)
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "coi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -31079,7 +31074,7 @@
 	color = "#363636"
 	},
 /obj/machinery/door/airlock/medical{
-	name = "Clinic Morgue";
+	name = null;
 	req_one_access_txt = "124"
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -34567,7 +34562,7 @@
 /area/f13/building/mall)
 "iod" = (
 /obj/structure/simple_door/house{
-	name = "Bank of Bighorn"
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
@@ -36542,7 +36537,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building)
 "jkY" = (
-/obj/structure/shelf_wood,
+/obj/structure/rack/large/shelf,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jld" = (
@@ -36557,10 +36552,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/village)
 "jlr" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/wood{
 	name = "Bighorn Residence"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "jlU" = (
@@ -40174,6 +40169,11 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
+"lnX" = (
+/obj/structure/shelf_wood,
+/obj/item/circuitboard/machine/sleeper,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "lor" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -50410,13 +50410,13 @@
 	},
 /area/f13/building)
 "quc" = (
-/obj/machinery/door/airlock/medical{
-	name = "Clinic Morgue";
-	req_one_access_txt = "124"
-	},
 /obj/machinery/door/poddoor/shutters{
 	id = "followersdeskshutters";
 	name = "followers shutters"
+	},
+/obj/machinery/door/airlock/medical{
+	name = null;
+	req_one_access_txt = "124"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -55339,7 +55339,7 @@
 /area/f13/ncr)
 "tht" = (
 /obj/machinery/door/airlock/medical{
-	name = "Clinic Morgue";
+	name = null;
 	req_one_access_txt = "124"
 	},
 /obj/machinery/door/poddoor/shutters{
@@ -55425,6 +55425,13 @@
 /turf/open/floor/carpet/purple{
 	dir = 5
 	},
+/area/f13/building)
+"tjk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/wood{
+	name = "Bighorn Residence"
+	},
+/turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "tju" = (
 /obj/structure/flora/grass/wasteland{
@@ -56596,10 +56603,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tNt" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/simple_door/wood{
 	name = "Bighorn Residence"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "tNE" = (
@@ -59489,7 +59496,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "vmG" = (
-/obj/structure/simple_door/house,
 /obj/structure/simple_door/house{
 	req_one_access_txt = "124"
 	},
@@ -78108,7 +78114,7 @@ bwG
 acl
 bWj
 fBf
-blm
+tjk
 iXi
 jQm
 rMX
@@ -80691,7 +80697,7 @@ bqN
 bqN
 acl
 mGY
-ahk
+aNp
 hHX
 acl
 ofA
@@ -97732,7 +97738,7 @@ mHp
 ecc
 tuX
 hEG
-coc
+anR
 aOk
 cFK
 aOk
@@ -111755,7 +111761,7 @@ vXd
 ijr
 dIV
 aJb
-tFm
+coc
 ijr
 qmp
 bfz
@@ -112267,7 +112273,7 @@ aHT
 qtn
 syG
 ekB
-aNp
+tFm
 aIV
 tZi
 ijr
@@ -112526,7 +112532,7 @@ vcV
 ijr
 gSw
 lhi
-tFm
+lnX
 ekB
 aEs
 bfz
