@@ -32,6 +32,7 @@
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 	emote_taunt = list("screeches")
 	emote_taunt_sound = list('sound/f13npc/gecko/gecko_charge1.ogg', 'sound/f13npc/gecko/gecko_charge2.ogg', 'sound/f13npc/gecko/gecko_charge3.ogg',)
@@ -51,6 +52,7 @@
 	anchored = FALSE
 	melee_damage_lower = 20
 	melee_damage_upper = 45
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 
 //////////////////////////
@@ -90,6 +92,7 @@
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 300
@@ -151,6 +154,7 @@
 	faction = list("gecko")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 	emote_taunt_sound = list('sound/f13npc/nightstalker/taunt1.ogg', 'sound/f13npc/nightstalker/taunt2.ogg')
 	emote_taunt = list("growls", "snarls")
@@ -171,6 +175,7 @@
 	anchored = FALSE
 	melee_damage_lower = 20
 	melee_damage_upper = 45
+	footstep_type = FOOTSTEP_MOB_CLAW
 
 /mob/living/simple_animal/hostile/stalker/AttackingTarget()
 	. = ..()

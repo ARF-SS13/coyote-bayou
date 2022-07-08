@@ -18,6 +18,7 @@
 	obj_damage = 200
 	melee_damage_lower = 40
 	melee_damage_upper = 50
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
@@ -71,6 +72,7 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
+	footstep_type = FOOTSTEP_MOB_HEAVY
 	color = rgb(95,104,94)
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/deathclaw = 6,
 							/obj/item/stack/sheet/animalhide/deathclaw = 3)
@@ -85,6 +87,8 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
+	footstep_type = FOOTSTEP_MOB_HEAVY
+
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
 	var/turf/T = get_turf(src)
@@ -104,6 +108,8 @@
 	stat_attack = UNCONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
+	footstep_type = FOOTSTEP_MOB_HEAVY
+
 
 /mob/living/simple_animal/hostile/deathclaw/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)

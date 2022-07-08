@@ -5585,7 +5585,7 @@
 /area/f13/building)
 "aul" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aum" = (
@@ -11693,9 +11693,9 @@
 	},
 /area/f13/building/firestation)
 "aNp" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "aNr" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -12524,6 +12524,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "aPM" = (
@@ -15184,7 +15185,6 @@
 /obj/structure/bed/mattress{
 	icon_state = "mattress2"
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "aZL" = (
@@ -20524,15 +20524,9 @@
 	},
 /area/f13/wasteland)
 "bEY" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul{
-	layer = 2.07;
-	max_mobs = 2
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building/museum)
+/obj/machinery/workbench/advanced,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "bFu" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -22535,9 +22529,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "coc" = (
-/obj/structure/rack,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "coi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -22898,8 +22892,8 @@
 /area/f13/caves)
 "crx" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/pill/healingpowder,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "cry" = (
@@ -29605,6 +29599,10 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/structure/nest/securitron{
+	max_mobs = 1;
+	spawn_once = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -31260,6 +31258,13 @@
 	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
+"gCA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/wood{
+	name = "Bighorn Residence"
+	},
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/building)
 "gCF" = (
 /obj/structure/car/rubbish3,
 /obj/effect/decal/waste{
@@ -33041,7 +33046,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hyV" = (
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
 	icon_state = "dirt"
@@ -33604,7 +33609,6 @@
 /obj/effect/spawner/lootdrop/f13/armor/costumes,
 /obj/item/clothing/under/suit_jacket/female,
 /obj/item/crafting/lunchbox,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -39591,13 +39595,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kZy" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building/museum)
+/obj/structure/shelf_wood,
+/obj/item/circuitboard/machine/sleeper,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "kZE" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small/broken{
@@ -40169,11 +40170,6 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
-"lnX" = (
-/obj/structure/shelf_wood,
-/obj/item/circuitboard/machine/sleeper,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "lor" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -42943,8 +42939,8 @@
 /area/f13/wasteland)
 "mAA" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/healingpowder,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/hypospray/medipen/medx,
@@ -43760,7 +43756,7 @@
 /area/f13/wasteland)
 "mSq" = (
 /mob/living/simple_animal/hostile/wolf/playable/sheepdog{
-	faction = list("s");
+	faction = s;
 	name = "Scruffy"
 	},
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet{
@@ -43883,7 +43879,7 @@
 /obj/item/stack/sheet/cloth/five,
 /obj/item/weaponcrafting/string,
 /obj/item/weaponcrafting/string,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "mVi" = (
@@ -45422,8 +45418,8 @@
 /area/f13/wasteland)
 "nMT" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/healingpowder,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "nMW" = (
@@ -45722,7 +45718,7 @@
 "nUp" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nUG" = (
@@ -51606,7 +51602,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/reagent_containers/pill/healingpowder,
+/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -53994,6 +53990,15 @@
 	icon_state = "verticalinnermain3"
 	},
 /area/f13/wasteland)
+"ssb" = (
+/obj/structure/nest/securitron{
+	max_mobs = 1;
+	spawn_once = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building/museum)
 "ssf" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = 32
@@ -55426,13 +55431,6 @@
 	dir = 5
 	},
 /area/f13/building)
-"tjk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
-/turf/open/floor/plasteel/floorgrime,
-/area/f13/building)
 "tju" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -56598,8 +56596,8 @@
 "tNm" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/pill/bitterdrink,
-/obj/item/reagent_containers/pill/bitterdrink,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
+/obj/item/reagent_containers/pill/patch/bitterdrink,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tNt" = (
@@ -60767,10 +60765,10 @@
 /obj/item/stack/medical/suture/emergency/five,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/item/reagent_containers/pill/healingpowder{
+/obj/item/reagent_containers/pill/patch/healingpowder{
 	pixel_y = 13
 	},
-/obj/item/reagent_containers/pill/healingpowder{
+/obj/item/reagent_containers/pill/patch/healingpowder{
 	pixel_x = -11;
 	pixel_y = 12
 	},
@@ -73369,7 +73367,7 @@ aaa
 aae
 aae
 xLa
-axe
+bEY
 aog
 aLq
 bxA
@@ -78114,7 +78112,7 @@ bwG
 acl
 bWj
 fBf
-tjk
+gCA
 iXi
 jQm
 rMX
@@ -80697,7 +80695,7 @@ bqN
 bqN
 acl
 mGY
-aNp
+coc
 hHX
 acl
 ofA
@@ -99818,7 +99816,7 @@ puK
 aER
 gGC
 xWv
-puK
+ssb
 bgS
 bgS
 aER
@@ -100333,7 +100331,7 @@ oqh
 lYv
 xWv
 eES
-bGz
+aER
 xCC
 aER
 bgS
@@ -100592,7 +100590,7 @@ xWv
 xDl
 aER
 wFX
-bEY
+bgS
 puK
 xWv
 aOk
@@ -101360,8 +101358,8 @@ bgS
 xqx
 kJz
 xWv
-puK
-kZy
+ssb
+aER
 bgS
 bgS
 qPw
@@ -111761,7 +111759,7 @@ vXd
 ijr
 dIV
 aJb
-coc
+aNp
 ijr
 qmp
 bfz
@@ -112532,7 +112530,7 @@ vcV
 ijr
 gSw
 lhi
-lnX
+kZy
 ekB
 aEs
 bfz
