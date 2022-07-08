@@ -84,6 +84,7 @@
 	if(check_rights(R_ADMIN))
 		return
 	plane_masters["[OBJITEM_PLANE]"].Hide()
+	mymob.client.show_popup_menus = 0
 
 /datum/hud/ghost/show_hud(version = 0, mob/viewmob)
 	// don't show this HUD if observing; show the HUD of the observee
