@@ -367,4 +367,3 @@
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
-	
