@@ -2076,6 +2076,7 @@
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
+	slowdown = 0.55
 	permeability_coefficient = 0.8
 	armor = list(
 		"melee" = 25, 
