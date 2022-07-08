@@ -13,8 +13,10 @@
 
 	if(length(equipment_by_slot))
 		for(var/slot in equipment_by_slot)
-			var/obj/item/I = new equipment_by_slot[slot]
-			mannequin.equip_to_slot_if_possible(I, slot, TRUE, TRUE, TRUE, TRUE)
+			var/item_path = equipment_by_slot[slot]
+			if(item_path)
+				var/obj/item/I = new item_path
+				mannequin.equip_to_slot_if_possible(I, text2num(slot), TRUE, TRUE, TRUE, TRUE)
 	if(length(inhand_equipment))
 		for(var/path in inhand_equipment)
 			var/obj/item/I = new path

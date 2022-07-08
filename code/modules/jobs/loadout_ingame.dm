@@ -138,7 +138,7 @@
 		data["items"] = selected_items
 		if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
 			generate_previews()
-		data["preview"] = preview_images[selected_datum.name][dir2text(selected_direction)]
+		data["preview"] = preview_images[selected_datum.name]
 	return data
 
 /datum/component/loadout_selector/ui_act(action, params)
@@ -150,8 +150,6 @@
 		if("loadout_confirm")
 			if (selected_datum)
 				finish()
-		if("loadout_preview_direction")
-			selected_direction = turn(selected_direction, 90 * text2num(params["direction"]))
 	return TRUE
 
 //Selects an outfit and loads the preview of it
@@ -191,28 +189,34 @@
 	if (!istype(parent, /mob))
 		return
 
+	var/mob/L = parent
 	//We need a client to send assets to
-	var/mob/M = parent
-	if (!M.client)
+	if (!L.client)
 		return
 
 	if (preview_images[selected_datum.name] && !selected_datum.contains_randomisation)
 		return //The images have already been generated
 
-	//They've not been made yet, lets do them. First of all, we make a mannequin based on the user's current appearance
-	var/mob/living/carbon/human/dummy/mannequin = duplicate_human(M)
+	var/equipment_list = CreateEquipList(selected_datum)
 
-	//Secondly, we equip the currently selected outfit onto that mannequin
-	selected_datum.equip(mannequin, visualsOnly = TRUE)
+	var/icon/preview_icon = generate_custom_holoform_from_prefs(L.client.prefs, equipment_list, null, copy_job = FALSE, apply_loadout = TRUE)
 
-	COMPILE_OVERLAYS(mannequin)
+	preview_images[selected_datum.name] = icon2base64(preview_icon)
 
-	//Now we have our mannequin, photoshoot time!
-	var/list/cached_icons = list()
-	for (var/direction in GLOB.cardinals)
-		var/icon/preview = getFlatIcon(mannequin, direction)
-		//preview.Scale(preview.Width() * 2.5, preview.Height() * 2.5) // scaled in CSS
-		cached_icons[dir2text(direction)] = icon2base64(preview)
 
-	preview_images[selected_datum.name] = cached_icons
-
+/datum/component/loadout_selector/proc/CreateEquipList(datum/outfit/O)
+	var/list/equipment = list(
+		"[SLOT_W_UNIFORM]"	= O.uniform,
+		"[SLOT_WEAR_SUIT]"	= O.suit,
+		"[SLOT_BACK]"		= O.back,
+		"[SLOT_BELT]"		= O.belt,
+		"[SLOT_GLOVES]"		= O.gloves,
+		"[SLOT_SHOES]"		= O.shoes,
+		"[SLOT_HEAD]"		= O.head,
+		"[SLOT_WEAR_MASK]"	= O.mask,
+		"[SLOT_NECK]"		= O.neck,
+		"[SLOT_EARS]"		= O.ears,
+		"[SLOT_GLASSES]"	= O.glasses,
+		"[SLOT_WEAR_ID]"	= O.id,
+	)
+	return equipment
