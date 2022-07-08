@@ -1,119 +1,6 @@
 /*
 IN THIS DOCUMENT: Universal Gun system rules/keywords. Universal gun template and procs/vars.
 
-/////////////////////////////////////
-//UNIVERSAL GUN KEYWORDS AND SYSTEM//
-/////////////////////////////////////
-
-GENERAL
-
-	Bonuses should not go far from this framework, for non-unique stuff plus minus one or two is enough to give a good spread, considering its compounded by tinkering and attachments and ammo.
-	A reduction of 1 in burst shot delay gives a lot more effect than adding 1 damage.
-
-KEYWORDS
-
-	SINGLE ACTION REVOLVER
-	fire_delay = 6
-	spread = 1
-
-	DOUBLE ACTION REVOLVER
-	fire_delay = 5
-	spread = 1
-
-	SEMI-AUTOMATIC PISTOL
-	fire_delay = 3-5
-	spread = 2
-
-	SEMI-AUTOMATIC RIFLE
-	fire_delay = 3-6
-	spread = 1
-
-	AUTOMATIC SMG
-	fire_delay = 2.5-6
-	burst_shot_delay = 2.75
-	spread = 8-14
-
-	AUTOMATIC RIFLE
-	fire_delay = 3-6
-	burst_shot_delay = 3
-	spread = 7-12
-
-	REPEATER
-	fire_delay = 6
-	spread = 0
-
-	DOUBLE BARREL
-	fire_delay = 0.5
-	extra damage = 1
-
-	PUMP-ACTION
-	fire_delay = 7
-	extra damage = 1
-	spread = 1 (to avoid slugs being too good snipers, might need to be set to 2 for all shotguns)
-	(requires manual action to cycle)
-
-	BOLT-ACTION
-	fire_delay = 10-15
-	extra damage = 6
-	extra_speed = 800
-	spread = 0
-	(requires manual action to cycle)
-
-	PISTOL GRIP/FOLDED STOCK MALUS (For rifles, not pistols obviously)
-	recoil = 0.5
-	spread = +2 (not for shotguns)
-	w_class = WEIGHT_CLASS_NORMAL
-
-	SAWN OFF
-	recoil = 1
-	spread = 10
-	weapon_weight = WEAPON_LIGHT
-
-	LONG BARREL/LASERSIGHT
-	extra_damage = +2
-	spread = -1
-
-	SHORT BARREL
-	extra_damage = -2
-	spread = +2
-
-	HEAVY
-	recoil = 0.1
-	weapon_weight = WEAPON_MEDIUM at least (no dual wield)
-
-GENERAL RULES
-
-	SMALL GUNS
-	slowdown = 0.1-0.2
-	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = WEAPON_LIGHT - MEDIUM
-
-	MEDIUM GUNS
-	slowdown = 0.3-0.4
-	w_class = WEIGHT_CLASS_NORMAL - BULKY
-	weapon_weight = WEAPON_MEDIUM - HEAVY
-
-	RIFLES
-	slowdown = 0.5
-	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-
-	AMMO RECOIL BASE VALUES
-	.50  recoil = 1
-	.45/70  recoil = 0.25
-
-	2-ROUND BURST
-	recoil = 0.1
-
-	3-ROUND BURST
-	recoil = 0.25
-
-	FORCE
-	Delicate, clumsy or small gun force 10
-	Pistol whip force 12
-	Rifle type force 15
-	Unusually sturdy clublike 20
-
 ATTACHMENTS
 
 	BURST CAM
@@ -132,8 +19,6 @@ ATTACHMENTS
 	spread + 6 (to bring it into the automatic template range)
 */
 
-#define DUALWIELD_PENALTY_EXTRA_MULTIPLIER 1.4
-
 /obj/item/gun
 	name = "gun"
 	desc = "It's a gun. It's pretty terrible, though."
@@ -151,14 +36,26 @@ ATTACHMENTS
 	force = 5
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	attack_verb = list("struck", "hit", "bashed")
-	var/ranged_attack_speed = CLICK_CD_RANGE
 	var/fire_sound = "gunshot"
-	var/recoil = 0						//boom boom shake the room
+	/// Time it takes between drawing the gun and shooting the gun
+	var/draw_time = GUN_DRAW_NORMAL 
+
+	/// Counts up every shot, adds inaccuracy to shots after that, cleared after a delay
+	var/recoil = 0 
+	/// Multiplier for how much the gun itself reduces (or adds) recoil. Numbers greater than 1 make more recoil, less than 1 less recoil. Its a multiplier! 
+	var/recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
+	/// Time between shooting that must pass to deplete recoil
+	var/recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	/// If time >= this, clear recoil and any related spread
+	var/recoil_cooldown_schedule = 0
+
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
 	var/sawn_desc = null				//description change if weapon is sawn-off
 	var/sawn_off = FALSE
+
+	slowdown = GUN_SLOWDOWN_NONE
 
 	/// can we be put into a turret
 	var/can_turret = TRUE
@@ -170,22 +67,28 @@ ATTACHMENTS
 	/// Weapon is burst fire if this is above 1
 	var/burst_size = 1
 	/// The time between shots in burst.
-	var/burst_shot_delay = 3
+	var/burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	/// The time between firing actions, this means between bursts if this is burst weapon. The reason this is 0 is because you are still, by default, limited by clickdelay.
-	var/fire_delay = 0
-	//Time between individual shots when firing full-auto.
-	var/autofire_shot_delay = 3
+	var/fire_delay = GUN_FIRE_DELAY_NORMAL
+	/// Time between individual shots when firing full-auto.
+	var/autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	/// Last world.time this was fired
 	var/last_fire = 0
 	/// Currently firing, whether or not it's a burst or not.
 	var/firing = FALSE
 	/// Used in gun-in-mouth execution/suicide and similar, while TRUE nothing should work on this like firing or modification and so on and so forth.
 	var/busy_action = FALSE
-	var/weapon_weight = WEAPON_LIGHT	//used for inaccuracy and wielding requirements/penalties
-	var/spread = 0						//Spread induced by the gun itself.
-	var/burst_spread = 0				//Spread induced by the gun itself during burst fire per iteration. Only checked if spread is 0.
-	var/randomspread = 1				//Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	/// used for inaccuracy and wielding requirements/penalties
+	var/weapon_weight = GUN_ONE_HAND_AKIMBO
+	/// Spread induced by the gun itself.
+	var/spread = 0
+	/// Spread induced by the gun itself during burst fire per iteration. Only checked if spread is 0.
+	var/burst_spread = 0
+	/// Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
+	var/randomspread = 1
+	/// Adds inaccuracy based on time between shots (?) and stamloss (??)
 	var/inaccuracy_modifier = 1
+	/// Adds this speed to the bullet, in pixels per second
 	var/extra_speed = 0
 
 	var/obj/item/attachments/scope
@@ -204,24 +107,24 @@ ATTACHMENTS
 	var/datum/action/item_action/toggle_gunlight/alight
 	var/gunlight_state = "flight"
 
+	var/can_bayonet = FALSE
 	var/obj/item/melee/onehanded/knife/bayonet/bayonet
 	var/mutable_appearance/knife_overlay
-	var/can_bayonet = FALSE
 	var/bayonet_state = "bayonetstraight"
 
-	var/mutable_appearance/scope_overlay
 	var/can_scope = FALSE
+	var/mutable_appearance/scope_overlay
 	var/scope_state = "scope"
 
-	var/mutable_appearance/flashlight_overlay
 	var/can_attachments = FALSE
 	var/can_automatic = FALSE
+	var/mutable_appearance/flashlight_overlay
 
-	var/mutable_appearance/suppressor_overlay
-	var/suppressor_state = null
-	var/suppressed = null					//whether or not a message is displayed when fired
 	var/can_suppress = FALSE
 	var/can_unsuppress = TRUE
+	var/suppressed = null					//whether or not a message is displayed when fired
+	var/mutable_appearance/suppressor_overlay
+	var/suppressor_state = null
 
 	var/ammo_x_offset = 0 //used for positioning ammo count overlay on sprite
 	var/ammo_y_offset = 0
@@ -235,7 +138,8 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	var/extra_damage = 0				//Number to add to individual bullets.
+	/// Multiplier to the bullet's damage
+	var/gun_damage_multiplier = 1
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	//Zooming
@@ -248,12 +152,13 @@ ATTACHMENTS
 	var/dualwield_spread_mult = 2		//dualwield spread multiplier
 
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
-	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
-//	var/projectile_damage_multiplier = 1
 	var/dryfire_sound = "gun_dry_fire"
 	var/dryfire_text = "*click*"
 
-	var/automatic = 0 //can gun use it, 0 is no, anything above 0 is the delay between clicks in ds
+	/// Time that much pass between cocking your gun, if it supports it
+	var/cock_delay = GUN_COCK_SHOTGUN_BASE
+
+	var/automatic = 0 // Does the gun fire when the clicker's held down?
 
 /obj/item/gun/Initialize()
 	. = ..()
@@ -323,9 +228,6 @@ ATTACHMENTS
 	playsound(src, dryfire_sound, 30, 1)
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(recoil)
-		shake_camera(user, recoil + 1, recoil)
-
 	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
@@ -421,12 +323,12 @@ ATTACHMENTS
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == WEAPON_HEAVY && user.get_inactive_held_item())
+	if(weapon_weight == GUN_TWO_HAND_ONLY && user.get_inactive_held_item())
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
 		return
 
 	if (automatic == 0)
-		user.DelayNextAction(ranged_attack_speed)
+		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
 		user.DelayNextAction(autofire_shot_delay)
 
@@ -436,10 +338,10 @@ ATTACHMENTS
 
 	if(user)
 		bonus_spread = getinaccuracy(user, bonus_spread, stamloss) //CIT CHANGE - adds bonus spread while not aiming
-	if(ishuman(user) && user.a_intent == INTENT_HARM && weapon_weight <= WEAPON_LIGHT)
+	if(ishuman(user) && user.a_intent == INTENT_HARM && weapon_weight <= GUN_ONE_HAND_AKIMBO)
 		var/mob/living/carbon/human/H = user
 		for(var/obj/item/gun/G in H.held_items)
-			if(G == src || G.weapon_weight >= WEAPON_MEDIUM)
+			if(G == src || G.weapon_weight >= GUN_ONE_HAND_ONLY)
 				continue
 			else if(G.can_trigger_gun(user))
 				bonus_spread += 24 * G.weapon_weight * G.dualwield_spread_mult
@@ -468,7 +370,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/get_clickcd()
 	if (automatic == 0)
-		return isnull(chambered?.click_cooldown_override)? CLICK_CD_RANGE : chambered.click_cooldown_override
+		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
 	if (automatic == 1)
 		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
 
@@ -502,8 +404,9 @@ ATTACHMENTS
 
 	if(on_cooldown())
 		return
-	if(user.IsWeaponDrawDelayed())
-		to_chat(user, "<span class='notice'>[src] is not yet ready to fire!</span>")
+	var/time_till_draw = user.AmountWeaponDrawDelay()
+	if(time_till_draw)
+		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
 		return
 	firing = TRUE
 	. = do_fire(target, user, message, params, zone_override, bonus_spread, stam_cost)
@@ -519,9 +422,9 @@ ATTACHMENTS
 	var/randomized_gun_spread = 0
 	var/rand_spr = rand()
 	if(spread)
-		randomized_gun_spread = rand(0, spread)
+		randomized_gun_spread = spread
 	else if(burst_size > 1 && burst_spread)
-		randomized_gun_spread = rand(0, burst_spread)
+		randomized_gun_spread = burst_spread
 	var/randomized_bonus_spread = rand(0, bonus_spread)
 	if(HAS_TRAIT(user, SPREAD_CONTROL))
 		randomized_gun_spread = max(0, randomized_gun_spread-8)
@@ -535,9 +438,9 @@ ATTACHMENTS
 			do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i, stam_cost)
 	else
 		if(chambered)
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread))
+			sprd = get_per_shot_spread(randomized_gun_spread, user)
 			before_firing(target,user)
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
+			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -568,11 +471,11 @@ ATTACHMENTS
 				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 		if(randomspread)
-			sprd = round((rand() - 0.5) * DUALWIELD_PENALTY_EXTRA_MULTIPLIER * (randomized_gun_spread + randomized_bonus_spread), 1)
+			sprd = get_per_shot_spread(sprd, user)
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, extra_damage, extra_penetration, src))
+		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 			shoot_with_empty_chamber(user)
 			firing = FALSE
 			return FALSE
@@ -646,10 +549,8 @@ ATTACHMENTS
 				return
 			recoil_decrease = R
 			src.desc += " It has a recoil compensator installed."
-			if (src.spread > 10)
-				src.spread -= 4
-			else
-				src.spread -= 2
+			recoil_multiplier *= 0.5
+			recoil_cooldown_time *= 0.5
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
 
@@ -992,7 +893,7 @@ ATTACHMENTS
 	var/base_inaccuracy = weapon_weight * 25 * inaccuracy_modifier //+ 50 + (-user.special_p*5)//SPECIAL Integration
 	var/aiming_delay = 0 //Otherwise aiming would be meaningless for slower guns such as sniper rifles and launchers.
 	if(fire_delay)
-		var/penalty = (last_fire + GUN_AIMING_TIME + fire_delay) - world.time
+		var/penalty = (last_fire + draw_time + fire_delay) - world.time
 		if(penalty > 0) //Yet we only penalize users firing it multiple times in a haste. fire_delay isn't necessarily cumbersomeness.
 			aiming_delay = penalty
 	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE) || HAS_TRAIT(user, TRAIT_INSANE_AIM)) //To be removed in favor of something less tactless later.
@@ -1005,15 +906,103 @@ ATTACHMENTS
 		else
 			//you have both poor aim and insane aim, why?
 			bonus_spread += rand(0,50)
-	var/mult = max((GUN_AIMING_TIME + aiming_delay + user.last_click_move - world.time)/GUN_AIMING_TIME, -0.5) //Yes, there is a bonus for taking time aiming.
+	var/mult = max((draw_time + aiming_delay + user.last_click_move - world.time)/draw_time, -0.5) //Yes, there is a bonus for taking time aiming.
 	if(mult < 0) //accurate weapons should provide a proper bonus with negative inaccuracy. the opposite is true too.
 		mult *= 1/inaccuracy_modifier
 	return max(bonus_spread + (base_inaccuracy * mult), 0) //no negative spread.
 
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
-	. = recoil
+	. = get_per_shot_recoil()
 	if(user && !user.has_gravity())
-		. = recoil*5
+		. *= 5
+
+/obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
+	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
+	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
+	user.SetWeaponDrawDelay(time_till_gun_is_ready)
+	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
+	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
+	spawn(time_till_gun_is_ready)
+		if(user.get_active_held_item() == src)
+			user.show_message(span_notice("\The [src] is ready to fire."))
+
+/obj/item/gun/proc/play_equip_sound(src, volume=50)
+	if(src && equipsound && volume)
+		var/played_sound = equipsound
+
+		if(islist(equipsound))
+			played_sound = pick(equipsound)
+
+		playsound(src, played_sound, volume, 1)
+
+/// Takes the current recoil, adds on some more recoil from the bullet and modded by the gun
+/// and returns a value for its adjusted spread
+/// Also clears the recoil if its been long enough
+/obj/item/gun/proc/process_recoil(mob/user)
+	if(world.time <= 1)
+		return
+	if(recoil_cooldown_schedule <= 1)
+		recoil_cooldown_schedule = 1
+
+	var/current_time = world.time
+	var/current_recoil = recoil
+	var/current_recoil_schedule = recoil_cooldown_schedule
+	var/current_recoil_cooldown_time = recoil_cooldown_time
+
+	if(current_time >= current_recoil_schedule) // it cooled down
+		current_recoil = 0
+	else if(current_recoil_cooldown_time > 0) // no zero divides plz
+		current_recoil *= (current_recoil_schedule - current_time) / current_recoil_cooldown_time // Partial recoil cooldown
+	
+	/// Calculate a new spread, basically recoil to spread, clamped
+	var/new_spread = 0
+	new_spread = clamp(0, GUN_RECOIL_MAX_SPREAD, current_recoil)
+	
+	/// Set a new time to clear recoil
+	recoil_cooldown_schedule = world.time + recoil_cooldown_time
+
+	/// Add on more recoil
+	var/recoil_to_add = get_per_shot_recoil()
+
+	///Check if there's something in their other hand
+	if(user)
+		var/obj/thing_in_their_other_hand = user.get_item_for_held_index(user.get_inactive_hand_index())
+		if(istype(thing_in_their_other_hand)) // Other hand cant steady the gun?
+			recoil_to_add *= GUN_FULL_OTHER_HAND_RECOIL_MOD
+		if(istype(thing_in_their_other_hand, /obj/item/gun) && user.a_intent == INTENT_HARM) // Akimbo!
+			recoil_to_add *= GUN_AKIMBO_RECOIL_MOD // Bit more than 2x cus that other hand isnt steadying the gun
+
+	current_recoil += recoil_to_add
+	recoil = current_recoil
+
+	/// And shake shake shake the camera
+	if(user)
+		shake_camera(user, min(recoil + 1, 3), min((recoil * 0.5), 3)) // its gonna get bad
+	return new_spread
+
+/// Gets the base amount of recoil one shot would do
+/obj/item/gun/proc/get_per_shot_recoil()
+	. = 0
+	if(chambered?.BB)
+		. = chambered.BB.recoil * recoil_multiplier
+
+/// Gets the spread this current shot should have
+/// Factors in base gun spread too
+/obj/item/gun/proc/get_per_shot_spread(extra_spread, mob/user)
+	/// Recoil based spread
+	. = round(((rand(-100,100) * 0.01) * process_recoil(user)), 0.1)
+	/// Add in the gun's spread
+	. += round(((rand(-100,100) * 0.01) * extra_spread), 0.1)
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////
 //GUNCODE ARCHIVE//
@@ -1149,7 +1138,7 @@ HOOK GUN CODE. Bizarre but could be made into something useful.
 	item_state = "shotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/bounty
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	force = 16 //it has a hook on it
 	attack_verb = list("slashed", "hooked", "stabbed")
 	hitsound = 'sound/weapons/bladeslice.ogg'

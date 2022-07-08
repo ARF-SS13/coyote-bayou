@@ -9,7 +9,6 @@
 
 
 /obj/item/gun/ballistic/shotgun
-	slowdown = 0.3 //Bulky gun slowdown with rebate since generally smaller than assault rifles
 	name = "shotgun template"
 	desc = "Should not exist"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
@@ -19,13 +18,23 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
-	force = 15 //Decent clubs generally speaking
-	fire_delay = 4 //Typical pump action, pretty fast.
-	spread = 2
-	recoil = 0.1
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
@@ -49,9 +58,9 @@
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
-		recentpump = world.time + 2
+		recentpump = world.time + GUN_COCK_SHOTGUN_LIGHTNING
 	else
-		recentpump = world.time + 10
+		recentpump = world.time + cock_delay
 		if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
 			user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
@@ -93,12 +102,17 @@
 
 
 
-////////////////////////////////////////
-//DOUBLE BARREL & PUMP ACTION SHOTGUNS//
-////////////////////////////////////////
+/* * * * * * * * * * * * * *
+ * Double barrel shotguns  *
+ * * * * * * * * * * * * * */
 
-
-//Caravan shotgun							Keywords: Shotgun, Double barrel, saw-off, extra damage +1
+/* * * * * * * * * * *
+ * Caravan shotgun
+ * Baseline DB shotgun
+ * 12g
+ * Sawable
+ * Common
+ * * * * * * * * * * */
 /obj/item/gun/ballistic/revolver/caravan_shotgun
 	name = "caravan shotgun"
 	desc = "An common over-under double barreled shotgun made in the post-war era."
@@ -109,10 +123,21 @@
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	fire_delay = 0.5
-	force = 20
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
@@ -133,8 +158,14 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/* * * * * * * * * * *
+ * Widowmaker shotgun
+ * Baseline DB shotgun
+ * 12g
+ * Sawable
+ * Common
+ * * * * * * * * * * */
 
-//Widowmaker				Keywords: Shotgun, Double barrel, saw-off
 /obj/item/gun/ballistic/revolver/widowmaker
 	name = "Winchester Widowmaker"
 	desc = "Old-world Winchester Widowmaker double-barreled 12 gauge shotgun, with mahogany furniture"
@@ -146,9 +177,20 @@
 	icon_prefix = "shotgundouble"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
-	fire_delay = 0.5
-	force = 20
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
 
@@ -169,8 +211,17 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/* * * * * * * * *
+ * Pump shotguns *
+ * * * * * * * * */
 
-//Hunting shotgun				Keywords: Shotgun, Pump-action, 4 rounds
+/* * * * * * * * * * *
+ * Hunting shotgun
+ * Baseline Pump shotgun
+ * 12g
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/shotgun/hunting
 	name = "hunting shotgun"
 	desc = "A traditional hunting shotgun with wood furniture and a four-shell capacity underneath."
@@ -178,7 +229,20 @@
 	item_state = "shotgunpump"
 	icon_prefix = "shotgunpump"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
-	fire_delay = 1
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP //penis
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
 	if(sawn_off)
@@ -188,8 +252,15 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/* * * * * * * * * * *
+ * Police shotgun
+ * Hideaway Pump shotgun
+ * 12g
+ * Folds up
+ * More recoil when folded up
+ * Common
+ * * * * * * * * * * */
 
-//Police Shotgun				Keywords: Shotgun, Pump-action, 6 rounds, Folding stock, Flashlight rail
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
@@ -199,8 +270,20 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/police
 	sawn_desc = "Portable but with a poor recoil managment."
 	w_class = WEIGHT_CLASS_NORMAL
-	recoil = 0.5
-	fire_delay = 1
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+
 	var/stock = FALSE
 	can_flashlight = TRUE
 	gunlight_state = "flightangle"
@@ -223,27 +306,45 @@
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil = 0.1
-		spread = 0
+		recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil = 0.5
+		recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP * 3
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
 	icon_state = "[current_skin ? unique_reskin[current_skin] : "shotgunpolice"][stock ? "" : "fold"]"
 
+/* * * * * * * * * * *
+ * Trench shotgun
+ * Hideaway Pump shotgun
+ * 12g
+ * Quicker to cock
+ * Common
+ * * * * * * * * * * */
 
-//Trench shotgun					Keywords: Shotgun, Pump-action, 5 rounds, Bayonet
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
 	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
 	item_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	var/select = 0
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_FAST
+
 	can_bayonet = TRUE
 	fire_delay = 2
 	bayonet_state = "bayonet"
@@ -257,17 +358,26 @@
 		icon_state = "[initial(icon_state)]"
 
 
-///////////////////////////
-//SEMI-AUTOMATIC SHOTGUNS//
-///////////////////////////
+/* * * * * * * * * * * *
+ * Semi-auto shotguns  *
+ * * * * * * * * * * * */
 
-//Semi-auto shotgun template
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
-	fire_delay = 6
-	extra_damage = 0
-	recoil = 0.1
-	spread = 2
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
 
 /obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
 	..()
@@ -279,18 +389,43 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
-//Browning Auto-5						Keywords: Shotgun, Semi-auto, 4 rounds internal
+/* * * * * * * * * * *
+ * Auto-5 shotgun
+ * Baseline semi-auto shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/shotgun/automatic/combat/auto5
 	name = "Browning Auto-5"
 	desc = "A semi automatic shotgun with a four round tube."
-	fire_delay = 5
 	icon_state = "auto5"
 	item_state = "shotgunauto5"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/compact
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
+/* * * * * * * * * * *
+ * Lever-Action shotgun
+ * Speedy semi-auto shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
 
-//Lever action shotgun					Keywords: Shotgun, Lever-action, 5 round magazine, Pistol grip
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
 	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
@@ -298,26 +433,57 @@
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
-	fire_delay = 4
-	recoil = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_FAST
+
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
 	knife_x_offset = 23
 	knife_y_offset = 23
 
+/* * * * * * * * * * *
+ * Neostead shotgun
+ * Two-Tube semi-auto shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
 
-//Neostead 2000							Keywords: BOS, Shotgun, Semi-auto, 12 rounds internal
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead
 	name = "Neostead 2000"
 	desc = "An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types."
 	icon_state = "neostead"
 	item_state = "shotguncity"
-	fire_delay = 5
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube
-	force = 10
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
@@ -352,19 +518,44 @@
 	toggle_tube(user)
 
 
-//Winchester City-Killer				Keywords: Shotgun, Semi-auto, 12 rounds internal
+/* * * * * * * * * * *
+ * City-Killer shotgun
+ * Super semi-auto shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
 	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
-	fire_delay = 5
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	var/semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
+/* * * * * * * * * * *
+ * Riot shotgun
+ * Magazine semi-auto shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
 
-//Riot shotgun							Keywords: Shotgun, Semi-auto, 12 round magazine, Pistol grip
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "Riot shotgun"
 	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."
@@ -375,12 +566,32 @@
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/d12g
-	fire_delay = 5
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	recoil = 0.5
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+
+
+/* * * * * * * * * * *
+ * Jackhammer shotgun
+ * Magazine automatic! shotgun
+ * 12g
+ * Uncommon
+ * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/shotgun/pancor
 	name = "Pancor Jackhammer"
@@ -390,11 +601,23 @@
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	is_automatic = TRUE
-	autofire_shot_delay = 4
-	recoil = 1
+
+	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_SHOTGUN_BASE
+
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting
@@ -402,4 +625,4 @@
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal/test
-	extra_damage = 7
+	gun_damage_multiplier = 7

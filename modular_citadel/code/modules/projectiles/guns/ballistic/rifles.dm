@@ -37,7 +37,7 @@
 	casing_ejector = 0
 	spread = 90		//MAXIMUM XCOM MEMES (actually that'd be 180 spread)
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 
 ///////security rifles special ammo///////
 
@@ -78,7 +78,7 @@
 	casing_ejector = 0
 	spread = 90		//MAXIMUM XCOM MEMES (actually that'd be 180 spread)
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 
 
 //////Flechette Launcher//////

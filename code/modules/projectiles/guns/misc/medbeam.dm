@@ -14,7 +14,7 @@
 	var/datum/beam/current_beam = null
 	var/mounted = 0 //Denotes if this is a handheld or mounted version
 
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 
 /obj/item/gun/medbeam/Initialize()
 	. = ..()

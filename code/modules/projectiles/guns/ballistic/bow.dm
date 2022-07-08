@@ -5,13 +5,13 @@
 	item_state = "bow"
 	icon_prefix = "bow"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_HEAVY //need both hands to fire
+	weapon_weight = GUN_TWO_HAND_ONLY //need both hands to fire
 	force = 5
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	fire_sound = 'sound/weapons/bowfire.wav'
 	slot_flags = ITEM_SLOT_BACK
 	item_flags = NONE
-	inaccuracy_modifier = 0 //to counteract the innaccuracy from WEAPON_HEAVY, bows are supposed to be accurate but only able to be fired with both hands
+	inaccuracy_modifier = 0 //to counteract the innaccuracy from GUN_TWO_HAND_ONLY, bows are supposed to be accurate but only able to be fired with both hands
 	pin = null
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it

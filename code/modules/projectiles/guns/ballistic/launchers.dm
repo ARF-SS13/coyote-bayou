@@ -10,7 +10,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
@@ -88,7 +88,7 @@
 	fire_delay = 0
 	inaccuracy_modifier = 0.25
 	casing_ejector = FALSE
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"
 
 /obj/item/gun/ballistic/rocketlauncher/handle_atom_del(atom/A)

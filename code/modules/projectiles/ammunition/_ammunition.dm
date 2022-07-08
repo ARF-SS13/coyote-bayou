@@ -14,7 +14,7 @@
 	var/obj/item/projectile/BB = null 			//The loaded bullet
 	var/pellets = 1								//Pellets for spreadshot
 	var/variance = 0							//Variance for inaccuracy fundamental to the casing
-	var/randomspread = 0						//Randomspread for automatics
+	var/randomspread = 1						//Randomspread for automatics
 	var/delay = 0								//Delay for energy weapons
 	/// Override this to make the gun check for a different cooldown rather than CLICK_CD_RANGE, which is 4 deciseconds.
 	var/click_cooldown_override

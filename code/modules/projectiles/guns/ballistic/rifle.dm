@@ -18,14 +18,24 @@
 	icon_state = "shotgun"
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
-	can_automatic = FALSE
-	slowdown = 0.5
-	fire_delay = 6
-	spread = 0
-	force = 15 //Decent clubs generally speaking
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	flags_1 =  CONDUCT_1
+	can_automatic = FALSE
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
@@ -47,9 +57,9 @@
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
-		recentpump = world.time + 2
+		recentpump = world.time + GUN_COCK_RIFLE_LIGHTNING
 	else
-		recentpump = world.time + 10
+		recentpump = world.time + cock_delay
 		if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
 			user.adjustStaminaLossBuffered(pump_stam_cost) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
@@ -88,18 +98,38 @@
 
 
 
-///////////////////
-//REPEATER RIFLES//
-///////////////////
+/* * * * * * *
+ * Repeaters *
+ * * * * * * */
 
+/* * * * * * * * * * *
+ * Revolvers, but bigger
+ * More magazine space
+ * Little more damage
+ * Two handed
+ * Common
+ * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/repeater
 	name = "repeater template"
 	desc = "should not exist"
 	can_scope = TRUE
 	scope_state = "scope_long"
-	fire_delay = 3
-	slowdown = 0.2
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_REPEATER_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	scope_x_offset = 5
 	scope_y_offset = 13
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
@@ -108,52 +138,118 @@
 	..()
 	src.pump(user)
 
+/* * * * * * * * * * *
+ * Cowboy Repeater
+ * Baseline Repeater
+ * .357 Magnum
+ * Common
+ * * * * * * * * * * */
 
-//Cowboy Repeater						Keywords: .357, Lever action, 12 round internal, Long barrel
 /obj/item/gun/ballistic/rifle/repeater/cowboy
 	name = "cowboy repeater"
 	desc = "A lever action rifle chambered in .357 Magnum. Smells vaguely of whiskey and cigarettes."
 	icon_state = "cowboyrepeater"
 	item_state = "cowboyrepeater"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube357
-	extra_damage = 35
-	extra_speed = 300
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_REPEATER_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
 
+/* * * * * * * * * * *
+ * Trail Repeater
+ * Big Repeater
+ * .44 Magnum
+ * Common
+ * * * * * * * * * * */
 
-//Trail carbine							Keywords: .44, Lever action, 12 round internal, Long barrel
 /obj/item/gun/ballistic/rifle/repeater/trail
 	name = "trail carbine"
 	desc = "A lever action rifle chambered in .44 Magnum."
 	icon_state = "trailcarbine"
 	item_state = "trailcarbine"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube44
-	extra_damage = 40
-	extra_speed = 200
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_REPEATER_LIGHT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	fire_sound = 'sound/f13weapons/44mag.ogg'
 
+/* * * * * * * * * * *
+ * Brush Repeater
+ * Bigger Repeater
+ * .45-70 Bigboy
+ * Common
+ * * * * * * * * * * */
 
-//Brush gun								Keywords: .45-70, Lever action, 10 round internal, Long barrel
 /obj/item/gun/ballistic/rifle/repeater/brush
 	name = "brush gun"
 	desc = "A short lever action rifle chambered in the heavy 45-70 round. Issued to NCR Veteran Rangers in the absence of heavier weaponry."
 	icon_state = "brushgun"
 	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube4570
-	extra_damage = 50
-	extra_penetration = 0.05
-	extra_speed = 100
-	fire_delay = 3
-	recoil = 0.15
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_REPEATER_HEAVY
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
 
 
-////////////////////////
-// BOLT ACTION RIFLES //
-////////////////////////
+/* * * * * * * * * * * *
+ * Bolt-Action Rifles  *
+ * * * * * * * * * * * */
 
+/* * * * * * * * * * *
+ * Slow rifles
+ * Low magazine space
+ * More damage
+ * Higher caliber
+ * Accurate
+ * Generally scopeable
+ * Common
+ * * * * * * * * * * */
 
-//Hunting Rifle							Keywords: .308, Bolt-action, 5 rounds internal
+/* * * * * * * * * * *
+ * Hunting Bolt-Action Rifle
+ * Baseline Bolt-Action Rifle
+ * .308 / 7.62
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/rifle/hunting
 	name = "hunting rifle"
 	desc = "A sturdy hunting rifle, chambered in .308. and in use before the war."
@@ -161,12 +257,21 @@
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 	sawn_desc = "A hunting rifle, crudely shortened with a saw. It's far from accurate, but the short barrel makes it quite portable."
-	fire_delay = 4
-	extra_damage = 37
-	extra_penetration = 0.20
-	extra_speed = 800
-	spread = 0
-	force = 18
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	can_scope = TRUE
 	scope_state = "scope_long"
 	scope_x_offset = 4
@@ -183,15 +288,31 @@
 		if(W.active)
 			sawoff(user)
 
-//Remington rifle						Keywords: 7.62, Bolt-action, 5 rounds internal
+/* * * * * * * * * * *
+ * Remmington Bolt-Action Rifle
+ * Accurate Bolt-Action Rifle
+ * .308 / 7.62
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/rifle/hunting/remington
 	name = "Remington rifle"
 	desc = "A militarized hunting rifle rechambered to 7.62. This one has had the barrel floated with shims to increase accuracy."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/remington
-	fire_delay = 2
-	extra_damage = 39
-	extra_speed = 800
-	force = 18
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
 
 /obj/item/gun/ballistic/rifle/hunting/remington/attackby(obj/item/A, mob/user, params) //DO NOT BUBBA YOUR STANDARD ISSUE RIFLE SOLDIER!
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -203,17 +324,36 @@
 	else
 		..()
 
+/* * * * * * * * * * *
+ * Paciencia Bolt-Action Rifle
+ * Superstrong Bolt-Action Rifle
+ * .308 / 7.62
+ * More damage
+ * Less magazine
+ * Unique
+ * * * * * * * * * * */
 
-//Paciencia								Keywords: UNIQUE, .308, Bolt-action, 5 rounds internal, Scoped
 /obj/item/gun/ballistic/rifle/hunting/paciencia
 	name = "Paciencia"
 	desc = "A modified .308 hunting rifle with a reduced magazine but an augmented receiver. A Mexican flag is wrapped around the stock. You only have three shots- make them count."
 	icon_state = "paciencia"
 	item_state = "paciencia"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting/paciencia
-	fire_delay = 9
-	extra_damage = 50 //hits like an AMR
-	extra_penetration = 0.2
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T4
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -229,18 +369,35 @@
 	else
 		..()
 
+/* * * * * * * * * * *
+ * Mosin Bolt-Action Rifle
+ * Moist Bolt-Action Rifle
+ * .308 / 7.62
+ * Can bayonet
+ * Common
+ * * * * * * * * * * */
 
-//Mosin-Nagant							Keywords: 7.62, Bolt-action, 5 rounds internal
 /obj/item/gun/ballistic/rifle/mosin
 	name = "Mosin-Nagant m38"
 	desc = "A rusty old Russian bolt action chambered in 7.62."
 	icon_state = "mosin"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 37
-	extra_speed = 600
-	fire_delay = 3
-	force = 18
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -252,18 +409,37 @@
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 
-//Lee-Enfield,SMLE 						Keywords: 7.62, Bolt-action, 5 rounds internal, very fast firing rate, high stamina cost on working bolt
+/* * * * * * * * * * *
+ * SMLE Bolt-Action Rifle
+ * Quick Bolt-Action Rifle
+ * .308 / 7.62
+ * Faster cock
+ * More tiring cock
+ * Can bayonet
+ * Common
+ * * * * * * * * * * */
+
 /obj/item/gun/ballistic/rifle/enfield
 	name = "Lee-Enfield rifle"
 	desc = "A british rifle sometimes known as the SMLE. It seems to have been re-chambered in .308."
 	icon_state = "enfield2"
 	item_state = "308"
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	extra_damage = 40
-	extra_speed = 600
-	fire_delay = 1
-	slowdown = 0.35
-	force = 16
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	cock_delay = GUN_COCK_RIFLE_FAST
+
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -277,17 +453,37 @@
 	pump_stam_cost = 15
 
 
+/* * * * * * * * * * * * * * * * * *
+ * Magazine-Fed Bolt-Action Rifles *
+ * * * * * * * * * * * * * * * * * */
 
-
-/////////////////////////////////////
-// MAGAZINE FED BOLT-ACTION RIFLES //
-/////////////////////////////////////
-
+/* * * * * * * * * * *
+ * Slower rifles
+ * Low magazine space
+ * More damage
+ * Higher caliber
+ * Accurate
+ * Generally scopeable
+ * Uncommon
+ * * * * * * * * * * */
 
 /obj/item/gun/ballistic/rifle/mag
 	name = "magazine fed bolt-action rifle template"
 	desc = "should not exist."
-	extra_speed = 800
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
 
 /obj/item/gun/ballistic/rifle/mag/examine(mob/user)
 	. = ..()
@@ -319,20 +515,35 @@
 /obj/item/gun/ballistic/rifle/mag/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
+/* * * * * * * * * * *
+ * Anti-Materiel Rifle
+ * Huge Bolt-Action Rifle
+ * .50MG
+ * Slow to fire
+ * Uncommon
+ * * * * * * * * * * */
 
-//Anti-Material Rifle						Keywords: .50, Bolt-action, 8 round magazine
 /obj/item/gun/ballistic/rifle/mag/antimateriel
 	name = "anti-materiel rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
 	icon_state = "amr"
 	item_state = "amr"
 	mag_type = /obj/item/ammo_box/magazine/amr
-	fire_delay = 12 //Heavy round, tiny bit slower
-	extra_damage = 50
-	extra_penetration = 0.6
-	recoil = 1
-	spread = 0
-	force = 10 //Big clumsy and sensitive scope, makes for a poor club
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_RIFLE_BOLT
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -343,4 +554,4 @@
 /obj/item/gun/ballistic/rifle/rifletesting
 	name = "hunting"
 	mag_type = /obj/item/ammo_box/magazine/testbullet
-	extra_damage = 30
+	gun_damage_multiplier = 30

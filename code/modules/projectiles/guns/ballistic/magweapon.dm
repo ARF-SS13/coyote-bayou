@@ -16,7 +16,7 @@
 	casing_ejector = FALSE
 	inaccuracy_modifier = 0.15
 	dualwield_spread_mult = 1.4
-	weapon_weight = WEAPON_MEDIUM
+	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/magnetic
@@ -68,7 +68,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	fire_delay = 40
 	recoil = 2
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 
 /obj/item/gun/ballistic/automatic/magrifle/hyperburst/update_icon_state()
 	icon_state = "hyperburst[magazine ? "-[get_ammo()]" : ""][chambered ? "" : "-e"]"
