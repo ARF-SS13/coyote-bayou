@@ -12,6 +12,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	icon = 'icons/obj/items_and_weapons.dmi'
 	blocks_emissive = EMISSIVE_BLOCK_GENERIC
 
+	plane = OBJITEM_PLANE
+
 	attack_hand_speed = 0
 	attack_hand_is_action = FALSE
 	attack_hand_unwieldlyness = 0

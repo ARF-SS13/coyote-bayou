@@ -24,7 +24,7 @@
 #define FIELD_OF_VISION_LAYER 17 //used to place the visual (not the mask) shadow cone above any other floor plane stuff.
 
 #define GAME_PLANE -4
-
+#define OBJITEM_PLANE -3 // Used for obj/items rendering.
 #define FIELD_OF_VISION_VISUAL_PLANE -2 //Yea, FoV does require quite a few planes to work with 513 filters to a decent degree.
 
 #define CHAT_PLANE -1 //We don't want heard messages to be hidden by FoV.
