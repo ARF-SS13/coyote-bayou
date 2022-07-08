@@ -31,67 +31,67 @@
 				/datum/reagent/medicine/silver_sulfadiazine = 10)
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/healpowder
+/datum/crafting_recipe/healpowder  //keep the number of plants needed low so picking wild plants is viable. balance botany instead.
 	name = "Healing powder"
-	result = /obj/item/reagent_containers/pill/patch/healingpowder
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 3,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 3)
+	result = /obj/item/reagent_containers/pill/healingpowder
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1)
 	time = 5
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/healpowder5
 	name = "Batch of healing powders (x5)"
 	result = /obj/item/storage/box/medicine/powder5
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 15,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 15)
-	time = 5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5)
+	time = 10
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/bitterdrink
 	name = "Bottle bitterdrink"
-	result = /obj/item/reagent_containers/pill/patch/bitterdrink
-	reqs = list(/datum/reagent/medicine/bitter_drink = 30)
-	time = 5
+	result = /obj/item/reagent_containers/pill/bitterdrink
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+				/obj/item/reagent_containers/glass/bottle = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
 	category = CAT_MEDICAL
+	always_available = FALSE // Only the Twin Mothers Tribe knew the secret to making bitter drink prior to legion annexation. Any clever chemist can bootleg the recipe though.
 
 /datum/crafting_recipe/bitterdrink5
 	name = "Batch of bitterdrink (x5)"
 	result = /obj/item/storage/box/medicine/bitterdrink5
-	reqs = list(/datum/reagent/medicine/bitter_drink = 150)
-	time = 5
-	category = CAT_MEDICAL
-
-/datum/crafting_recipe/berserker_powder
-	name = "Berserker powder"
-	result = /obj/item/reagent_containers/pill/patch/healingpowder/berserker
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/mushroom/angel = 2,
-				/obj/item/reagent_containers/food/snacks/grown/agave = 2,
-				/datum/reagent/blood = 30)
-	time = 40
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
+				/obj/item/reagent_containers/glass/bottle = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
 
 /datum/crafting_recipe/healpoultice
 	name = "Healing poultice"
 	result = /obj/item/reagent_containers/pill/patch/healpoultice
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
-				/obj/item/reagent_containers/food/snacks/grown/feracactus = 2,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 2,
-				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2)
-	time = 5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 1,
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
 	category = CAT_MEDICAL
+	always_available = FALSE // only tribals know the secret
 
 /datum/crafting_recipe/healpoultice5
 	name = "Batch of healing poultice (x5)"
 	result = /obj/item/storage/box/medicine/poultice5
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 10,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 10,
-				/obj/item/reagent_containers/food/snacks/grown/feracactus = 10,
-				/obj/item/reagent_containers/food/snacks/grown/fungus = 10,
-				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 10)
-	time = 5
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
+				/obj/item/reagent_containers/food/snacks/grown/agave = 5,
+				/obj/item/reagent_containers/food/snacks/grown/fungus = 5)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
 	category = CAT_MEDICAL
+	always_available = FALSE
 
 /datum/crafting_recipe/smell_salts
 	name = "Smelling salts"
@@ -103,45 +103,53 @@
 	time = 50
 	category = CAT_MEDICAL
 
-/datum/crafting_recipe/stimpak
+/datum/crafting_recipe/stimpak // Heals the same amount as healing powder and bitters for its material cost, just more refined and faster.
 	name = "Stimpak"
 	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
-	time = 5
+	time = 10
 	category = CAT_MEDICAL	
+	always_available = FALSE
 
 /datum/crafting_recipe/stimpak5
 	name = "Stimpak x5"
 	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 10,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 10,
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/broc = 5,
+				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/syringe = 5)
 	tools = list(TOOL_WORKBENCH)
-	time = 5
+	time = 20
 	category = CAT_MEDICAL
+	always_available = FALSE
 
 /datum/crafting_recipe/superstimpak
 	name = "Super Stimpak"
-	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak/super // Not terribly hard to make once you secure an advanced workbench. a dangerous chem to rely on completely though.
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-				/obj/item/stack/sheet/leather = 2,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 5
+				/obj/item/stack/sheet/leather = 1,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1,
+				/datum/reagent/consumable/nuka_cola = 25,
+				/datum/reagent/radium = 5) // Nuka-Cola bottles have 5u radium in them.
+	tools = list(TOOL_AWORKBENCH)
+	time = 10
 	category = CAT_MEDICAL
+	always_available = FALSE
 
 /datum/crafting_recipe/superstimpak5
 	name = "Super Stimpak (x5)"
 	result = /obj/item/storage/box/medicine/stimpaks/superstimpaks5
 	reqs = list(/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
-				/obj/item/stack/sheet/leather = 10,
-				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 10)
-	tools = list(TOOL_WORKBENCH)
-	time = 5
+				/obj/item/stack/sheet/leather = 5,
+				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 5,
+				/datum/reagent/consumable/nuka_cola = 125,
+				/datum/reagent/radium = 25)
+	tools = list(TOOL_AWORKBENCH)
+	time = 20
 	category = CAT_MEDICAL
+	always_available = FALSE
 
 /datum/crafting_recipe/salvage_stimpak
 	name = "Salvage injector"

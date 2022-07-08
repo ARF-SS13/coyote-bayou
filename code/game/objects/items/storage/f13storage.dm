@@ -447,14 +447,6 @@
 	for(var/i in 1 to 5)
 		new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 
-/obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5
-	name = "box of imitation stimpaks"
-	desc = "Mmm. Delicious flower juice."
-
-/obj/item/storage/box/medicine/stimpaks/imitation_stimpaks5/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/hypospray/medipen/stimpak/imitation(src)
-
 // -----------------------------------
 // SUPER STIMPAK BOX
 
@@ -478,7 +470,7 @@
 
 /obj/item/storage/box/medicine/powder5/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/patch/healingpowder(src)
+		new /obj/item/reagent_containers/pill/healingpowder(src)
 
 // -----------------------------------
 // POULTICE BOX
@@ -505,4 +497,4 @@
 
 /obj/item/storage/box/medicine/bitterdrink5/PopulateContents()
 	for(var/i in 1 to 5)
-		new /obj/item/reagent_containers/pill/patch/bitterdrink(src)
+		new /obj/item/reagent_containers/pill/bitterdrink(src)
