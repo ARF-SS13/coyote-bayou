@@ -40,10 +40,19 @@
 	time = 40
 	reqs = list(
 		/datum/reagent/consumable/nuka_cola = 10,
-		/datum/reagent/medicine/bitter_drink = 10,
+		/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+		/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 		/datum/reagent/consumable/sodawater = 5,
 		/datum/reagent/consumable/sugar = 5
 	)
 	result = /obj/item/reagent_containers/food/drinks/sunset/happyshark/bittercola
 	subcategory = CAT_MISCFOOD
 	always_available = FALSE
+
+/datum/crafting_recipe/food/sunset/happyshark/bittercola/alt
+	reqs = list(
+		/datum/reagent/consumable/nuka_cola = 10,
+		/datum/reagent/medicine/healing_powder = 10,
+		/datum/reagent/consumable/sodawater = 5,
+		/datum/reagent/consumable/sugar = 5
+	)

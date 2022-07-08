@@ -35,7 +35,7 @@
 
 /obj/item/storage/survivalkit_tribal/PopulateContents() //used by legion
 	. = ..()
-	new /obj/item/reagent_containers/pill/patch/healingpowder(src)
+	new /obj/item/reagent_containers/pill/healingpowder(src)
 	new /obj/item/stack/medical/gauze/improvised(src)
 	new /obj/item/stack/medical/mesh/aloe(src)
 	new /obj/item/stack/medical/suture/emergency(src)
@@ -61,8 +61,8 @@
 
 /obj/item/storage/survivalkit_tribal/chief/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/pill/patch/healingpowder(src)
-	new /obj/item/reagent_containers/pill/patch/healingpowder(src)
+	new /obj/item/reagent_containers/pill/healingpowder(src)
+	new /obj/item/reagent_containers/pill/healingpowder(src)
 	new /obj/item/reagent_containers/pill/patch/healpoultice(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/flashlight/flare/torch(src)

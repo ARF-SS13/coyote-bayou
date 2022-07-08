@@ -126,3 +126,11 @@
 /datum/movespeed_modifier/active_block
 	variable = TRUE
 	flags = IGNORE_NOSLOW
+
+/datum/movespeed_modifier/super_stimpak_slowdown
+	flags = IGNORE_NOSLOW
+	multiplicative_slowdown = 1.5
+
+/datum/movespeed_modifier/healing_poultice_slowdown
+	flags = IGNORE_NOSLOW
+	multiplicative_slowdown = 1.5

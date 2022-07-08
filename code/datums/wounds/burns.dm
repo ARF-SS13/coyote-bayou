@@ -43,15 +43,6 @@
 		if(victim.reagents.has_reagent(/datum/reagent/medicine/mine_salve))
 			sanitization += 4
 			flesh_healing += 1
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/healing_powder))
-			sanitization -= 0.02 //you are rubbing dirty powder in your burns
-			flesh_healing += 0.1
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/stimpak))
-			sanitization +=0.01
-			flesh_healing += 0.5
-		if(victim.reagents.has_reagent(/datum/reagent/medicine/bitter_drink))
-			sanitization +=0.5
-			flesh_healing +=0.3
 
 	if(limb.current_gauze)
 		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE)

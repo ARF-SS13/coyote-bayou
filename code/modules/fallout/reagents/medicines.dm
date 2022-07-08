@@ -1,138 +1,107 @@
-// ---------------------------
-// STIMPAK FLUID REAGENT
-
-/datum/reagent/medicine/stimpak
-	name = "Stimpak Fluid"
-	description = "Rapidly heals damage when injected. Deals minor toxin damage if ingested."
+/* 
+ * Stimpak Juice
+ * Initial insta-heal
+ * Some lingering heal over time
+ * Heals either brute or burn per tick, whichever's higher
+ * Overdose makes you barf stunlock yourself
+ */
+/datum/reagent/medicine/stimpak	// Supplemented by other chems within a stimpak
+	name = "Stimfluid"
+	description = "A cocktail of advanced medicines designed to rapidly heal wounds."
 	reagent_state = LIQUID
 	color = "#eb0000"
-	taste_description = "grossness"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 35
-	addiction_threshold = 25
+	taste_description = "numbness"
+	metabolization_rate = 2.5 * REAGENTS_METABOLISM
+	overdose_threshold = 60
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
 
-/datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
-		if(method in list(INGEST, VAPOR))
-			M.adjustToxLoss(3.75*reac_volume*REAGENTS_EFFECT_MULTIPLIER) //increased from 0.5*reac_volume, which was amusingly low since stimpak heals toxins. now a pill at safe max crits and then heals back up to low health within a few seconds
-			if(show_message)
-				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
+// insta-heal on inject, 1 of each brute and burn per volume
+/datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
+	if(iscarbon(M))
+		if(M.stat != DEAD)
+			return
+		if(method != INJECT)
+			return
+		if(M.getBruteLoss())
+			M.adjustBruteLoss(-reac_volume)
+		if(M.getFireLoss())
+			M.adjustFireLoss(-reac_volume)
 	..()
 
-/datum/reagent/medicine/stimpak/on_mob_add(mob/living/M)
-	. = ..()
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
-
+// heals 1 damage of either brute or burn on life, whichever's higher
 /datum/reagent/medicine/stimpak/on_mob_life(mob/living/carbon/M)
-	if(M.health < 0)					//Functions as epinephrine.
-		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	if(M.oxyloss > 35)
-		M.setOxyLoss(35, 0)
-	if(M.losebreath >= 4)
-		M.losebreath -= 2
-	if(M.losebreath < 0)
-		M.losebreath = 0
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	. = 1
-	if(prob(20))
-		M.AdjustAllImmobility(-20, 0)
-		M.AdjustUnconscious(-20, 0)
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found.We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
-	..()
+	if(M.getBruteLoss() > M.getFireLoss())	//Less effective at healing mixed damage types.
+		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+	else
+		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 
-/datum/reagent/medicine/stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(7*REAGENTS_EFFECT_MULTIPLIER)
-	M.drowsyness += 2*REAGENTS_EFFECT_MULTIPLIER
-	M.jitteriness += 3
+// Overdose makes you barflock yourself
+/datum/reagent/medicine/stimpak/overdose_process(mob/living/carbon/M)
+	if(M.disgust < 80)
+		M.adjust_disgust(10)
 	..()
 	. = TRUE
 
-// ---------------------------
-// IMITATION STIMPAK FLUID REAGENT
+/* 
+ * Super Stimpak Juice
+ * Initial insta-heal
+ * Fixes up cuts like a weaker sanguirite
+ * Overdose makes your heart die
+ */
 
-/datum/reagent/medicine/stimpakimitation
-	name = "Imitation Stimpak Fluid"
-	description = "Rapidly heals damage when injected. A poor man's stimpak."
-	reagent_state = LIQUID
-	color = "#FFA500"
-	ghoulfriendly = TRUE
-
-/datum/reagent/medicine/stimpakimitation/on_mob_life(mob/living/carbon/M)
-	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
-	M.AdjustKnockdown(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-1.7*REAGENTS_EFFECT_MULTIPLIER)
-	..()
-
-// ---------------------------
-// SUPER STIMPAK FLUID REAGENT
-
-/datum/reagent/medicine/super_stimpak
+/datum/reagent/medicine/super_stimpak // Handles superior healing of the super stim cocktail, plus its wound recovery, stim sickness, and dangerous OD.
 	name = "super stim chemicals"
-
-	description = "Chemicals found in pre-war stimpaks."
+	description = "Advanced, potent healing chemicals."
 	reagent_state = LIQUID
 	color = "#e50d0d"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 25
-	addiction_threshold = 16
+	taste_description = "numbness"
+	metabolization_rate = 3 * REAGENTS_METABOLISM	// 50 seconds, same as poultice
+	overdose_threshold = 40	// you can risk a second dose
 	ghoulfriendly = TRUE
+	var/clot_rate = 0.25
+	var/clot_coeff_per_wound = 0.7
 
-/datum/reagent/medicine/super_stimpak/on_mob_add(mob/living/M)
+/datum/reagent/medicine/super_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
+	if(iscarbon(M))
+		if(M.stat != DEAD)
+			return
+		if(method != INJECT)
+			return
+		if(M.getBruteLoss())
+			M.adjustBruteLoss(-reac_volume)
+		if(M.getFireLoss())
+			M.adjustFireLoss(-reac_volume)
+	..()
+
+/// Slows you down and tells you that your heart's gonna get wrecked if you keep taking more
+/datum/reagent/medicine/super_stimpak/on_mob_metabolize(mob/living/L) // Stim Sickness
 	. = ..()
-	if(M.mind)
-		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
-		if(istype(job))
-			switch(job.faction)
-				if(FACTION_LEGION)
-					SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "betrayed caesar", /datum/mood_event/betrayed_caesar, name)
+	L.add_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
+	to_chat(L, span_alert("You feel a sudden violent <i>lurch</i> in your chest, followed shortly by your heart racing at an agonizing pace and your muscles burning like you've run one too many marathons."))
 
-/datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
-	if(M.health < 0)					//Functions as epinephrine.
-		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-	if(M.oxyloss > 35)
-		M.setOxyLoss(35, 0)
-	if(M.losebreath >= 4)
-		M.losebreath -= 2
-	if(M.losebreath < 0)
-		M.losebreath = 0
-	M.adjustStaminaLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+/// Removes the slowdown and lets you know its safe to take another dose
+/datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
+	to_chat(L, span_notice("Your heart slows to a more reasonable pace, and your aching muscular fatigue fades.")) // tells you when it's safe to take another dose
+
+/// Seals up bleeds like a weaker sanguirite, doesnt do any passive heals though
+/datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/carbon/M) // Heals fleshwounds like a weak sanguirite
+	. = ..()
+	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+
+
+/datum/reagent/medicine/super_stimpak/overdose_process(mob/living/carbon/M)
+	M.adjustOrganLoss(ORGAN_SLOT_HEART, 4)
+	if((M.getOrganLoss(ORGAN_SLOT_HEART) >= 20) && prob(8))
+		var/superstim_od_message = pick(
+			"You feel like someone punched you in the chest, but from the inside.", 
+			"You breathe heavily, yet still feel winded.",
+			"Your heart stops for a moment.",
+			"You feel an agonizing shudder in your chest.")
+		to_chat(M, span_warning("[superstim_od_message]"))
 	. = 1
-	if(prob(20))
-		M.AdjustAllImmobility(-20, 0)
-		M.AdjustUnconscious(-20, 0)
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/healing_powder/poultice) && !M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)) // We don't want these healing items to stack, so we only apply the healing if these chems aren't found. We only check for the less powerful chems, so the least powerful one always heals.
-		M.adjustBruteLoss(-7*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustFireLoss(-5*REAGENTS_EFFECT_MULTIPLIER)
-		M.AdjustStun(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
-	..()
-
-/datum/reagent/medicine/super_stimpak/overdose_process(mob/living/M)
-	M.adjustToxLoss(10*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(10*REAGENTS_EFFECT_MULTIPLIER)
-	..()
-	. = TRUE
 
 // ---------------------------
 // LONGPORK STEW REAGENT
@@ -168,160 +137,77 @@
 	..()
 	. = TRUE
 
+/* 
+ * Healing Powder
+ * Bicaridine and Kelotane, in one chem
+ * Heals either brute or burn, whichever's higher
+ * Overdose makes you sleepy
+ * Ghouls love it
+ */
 
-/datum/reagent/medicine/berserker_powder
-	name = "Berserker powder"
-	description = "a combination of psychadelic mushrooms and tribal drugs used by the legion. Induces a trancelike state, allowing them much greater pain resistance. Extremely dangerous, even for those who are trained to use it. It's a really bad idea to use this if you're not initiated in the rites of the berserker. Even if you are, taking it for too long causes extreme symptoms when the trance ends."
-	reagent_state = SOLID
-	color =  "#7f7add"
-	taste_description = "heaven."
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30 //hard to OD on, besides if you use too much it kills you when it wears off
-
-/datum/reagent/medicine/berserker_powder/on_mob_life(mob/living/carbon/M)
-	if(HAS_TRAIT(M, TRAIT_BERSERKER))
-		M.AdjustStun(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustKnockdown(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.AdjustUnconscious(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-		M.adjustStaminaLoss(-2*REAGENTS_EFFECT_MULTIPLIER, 0)
-	else
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 8)
-		M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-		M.adjustOxyLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	..()
-	. = TRUE
-/datum/reagent/medicine/berserker_powder/on_mob_add(mob/living/carbon/human/M)
-	..()
-	if(isliving(M))
-		to_chat(M, "<span class='notice'>The veil breaks, and the heavens spill out! The spirits of Mars float down from the heavens, and the deafining beat of the holy legion's wardrums fills your ears. Their ethereal forms are guiding you in battle!</span>")
-		M.maxHealth += 25
-		M.health += 25
-		ADD_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
-
-/datum/reagent/medicine/berserker_powder/on_mob_delete(mob/living/carbon/human/M)
-	if(isliving(M))
-		to_chat(M, "<span class='notice'>The veil comes back, blocking out the heavenly visions. You breathe a sigh of relief...</span>")
-		M.maxHealth -= 25
-		M.health -= 25
-		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, "[type]")
-
-	switch(current_cycle)
-		if(1 to 30)
-			M.confused += 10
-			M.blur_eyes(20)
-			to_chat(M, "<span class='notice'>Your head is pounding. You feel like screaming. The visions beckon you to go further, to split the veil forever and cross over. You know you shouldn't. </span>")
-		if(30 to 55)
-			M.confused +=20
-			M.blur_eyes(30)
-			M.losebreath += 8
-			M.set_disgust(12)
-			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
-			to_chat(M, "<span class='danger'>Your stomach churns, you vomit, and the blurring of your vision doesn't go away. The visions beckon you further, you're so close.... </span>")
-		if(55 to INFINITY)
-			M.confused +=40
-			M.blur_eyes(30)
-			M.losebreath += 10
-			M.set_disgust(25)
-			M.adjustStaminaLoss(40*REAGENTS_EFFECT_MULTIPLIER)
-			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
-			M.Jitter(1000)
-			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
-			M.set_heartattack(TRUE)
-			M.visible_message("<span class='userdanger'>[M] grabs at their throat and vomits violently onto the ground, screaming as they have a seizure! They need medical attention immediately!</span>")
-			to_chat(M, "<span class='userdanger'>The sky splits in half, rays of golden light piercing down towards you. Mars reaches out of the sky above, the holy aura causing you to fall to your knees. He beckoning you to heaven, and you take his hand. Your whole body begins to seize up as you go in a glorious rapture. </span>")
-
-/datum/reagent/medicine/berserker/overdose_process(mob/living/M)
-	M.adjustToxLoss(5*REAGENTS_EFFECT_MULTIPLIER)
-	..()
-	. = TRUE
-
-// ---------------------------
-// BITTER DRINK REAGENT
-
-/datum/reagent/medicine/bitter_drink
-	name = "Bitter drink"
-	description = "An herbal healing concoction which enables wounded soldiers and travelers to tend to their wounds without stopping during journeys."
-	reagent_state = LIQUID
-	color ="#A9FBFB"
-	taste_description = "bitterness"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM //in between powder/stimpaks and poultice/superstims?
-	overdose_threshold = 31
-	var/heal_factor = -5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -5.5 //Multiplier if you have the right perk.
-	ghoulfriendly = TRUE
-
-/datum/reagent/medicine/bitter_drink/on_mob_life(mob/living/carbon/M)
-	var/is_tribal = FALSE
-	if(HAS_TRAIT(M, TRAIT_TRIBAL))
-		is_tribal = TRUE
-	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	if(!M.reagents.has_reagent(/datum/reagent/medicine/stimpak) && !M.reagents.has_reagent(/datum/reagent/medicine/healing_powder)&& !M.reagents.has_reagent(/datum/reagent/medicine/super_stimpak))
-		M.adjustFireLoss(heal_rate)
-		M.adjustBruteLoss(heal_rate)
-		M.adjustToxLoss(heal_rate)
-		M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
-		M.radiation -= min(M.radiation, 8)
-		. = TRUE
-	..()
-
-/datum/reagent/medicine/bitter_drink/overdose_process(mob/living/M)
-	M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(2*REAGENTS_EFFECT_MULTIPLIER)
-	..()
-	. = TRUE
-
-
-// ---------------------------
-// HEALING POWDER REAGENT
-
-/datum/reagent/medicine/healing_powder
+/datum/reagent/medicine/healing_powder	//about as strong as bicaridine or kelotane, but a safer OD.
 	name = "Healing powder"
-	description = "A healing powder derived from a mix of ground broc flowers and xander roots. Consumed orally, and produces a euphoric high."
+	description = "A healing powder derived from a mix of ground broc flowers and xander roots."
 	reagent_state = SOLID
 	color = "#A9FBFB"
 	taste_description = "bitterness"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 1 * REAGENTS_METABOLISM	// same as bicaridine
 	overdose_threshold = 30
-	var/heal_factor = -1.5 //Subtractive multiplier if you do not have the perk.
-	var/heal_factor_perk = -2.2 //Multiplier if you have the right perk.
 	ghoulfriendly = TRUE
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/carbon/M)
-	var/is_tribal = FALSE
-	if(HAS_TRAIT(M, TRAIT_TRIBAL))
-		is_tribal = TRUE
-	var/heal_rate = (is_tribal ? heal_factor_perk : heal_factor) * REAGENTS_EFFECT_MULTIPLIER
-	M.adjustFireLoss(heal_rate)
-	M.adjustBruteLoss(heal_rate)
-	M.adjustToxLoss(heal_rate)
-	M.hallucination = max(M.hallucination, is_tribal ? 0 : 5)
-	. = TRUE
-	..()
+	if(M.getBruteLoss() > M.getFireLoss())	//Less effective at healing mixed damage types.
+		M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	else
+		M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 
-/datum/reagent/medicine/healing_powder/reaction_mob(mob/living/M, method=TOUCH, reac_volume, show_message = 1)
-	if(iscarbon(M) && M.stat != DEAD)
-		if(method in list(INGEST, VAPOR, INJECT))
-			M.adjustToxLoss(3*reac_volume*REAGENTS_EFFECT_MULTIPLIER) //also increased from 0.5, reduced from 6
-			if(show_message)
-				to_chat(M, "<span class='warning'>You don't feel so good...</span>")
-	..()
-
-/datum/reagent/medicine/healing_powder/overdose_process(mob/living/M)
-	M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
-	M.adjustOxyLoss(4*REAGENTS_EFFECT_MULTIPLIER)
+/datum/reagent/medicine/healing_powder/overdose_process(mob/living/carbon/M)
+	M.drowsyness += 3
 	..()
 	. = TRUE
 
-// ---------------------------
-// HEALING POULTICE REAGENT
+/* 
+ * Healing Poultice
+ * Heals both brute and burn
+ * Seals up cuts
+ * Overdose poisons you
+ * Ghouls love it
+ */
 
-/datum/reagent/medicine/healing_powder/poultice
-	name = "Healing poultice"
-	description = "Restores limb condition and heals rapidly."
+/datum/reagent/medicine/healing_powder/poultice	// Handles superior healing of the poultice herbal mix, with its superior healing, wound recovery, and painful OD
+	name = "super stim chemicals"
+	description = "Potent, stinging herbs that swiftly aid in the recovery of grevious wounds."
 	color = "#C8A5DC"
-	overdose_threshold = 20
-	heal_factor = -3.0
-	heal_factor_perk = -3.5
+	overdose_threshold = 12
+	var/clot_rate = 0.25
+	var/clot_coeff_per_wound = 0.7
+
+/datum/reagent/medicine/healing_powder/poultice/on_mob_metabolize(mob/living/L) // a painful remedy!
+	. = ..()
+	L.add_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
+	to_chat(L, span_alert("You feel a burning pain spread through your skin, concentrating around your wounds."))
+
+/datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+	L.remove_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
+	to_chat(L, span_notice("The poultice's burning subsides."))
+
+/datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
+	. = ..()
+	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+
+	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+
+/datum/reagent/medicine/healing_powder/poultice/overdose_process(mob/living/carbon/M)
+	M.adjustToxLoss(4)
+	if((M.getToxLoss() >= 30) && prob(8))
+		var/poultice_od_message = pick(
+			"Burning red streaks form on your skin.", 
+			"You feel a searing pain shoot through your skin.",
+			"You feel like your blood's been replaced with acid. It burns.")
+		to_chat(M, span_notice("[poultice_od_message]"))
+	. = 1
 
 // ---------------------------
 // RAD-X REAGENT

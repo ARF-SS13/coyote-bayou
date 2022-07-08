@@ -410,7 +410,7 @@ GLOBAL_LIST_INIT(loot_medical_tool, list(
 ))
 
 GLOBAL_LIST_INIT(loot_medical_medicine, list(
-	/obj/item/reagent_containers/pill/patch/healingpowder,
+	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/storage/pill_bottle/chem_tin/radx,
 	/obj/item/reagent_containers/blood/radaway,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak,
@@ -422,7 +422,7 @@ GLOBAL_LIST_INIT(loot_medical_medicine, list(
 GLOBAL_LIST_INIT(loot_medical_drug, list(
 	/obj/item/reagent_containers/pill/patch/jet,
 	/obj/item/reagent_containers/pill/patch/turbo,
-	/obj/item/reagent_containers/pill/patch/healingpowder,
+	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/reagent_containers/pill/stimulant,
 	/obj/item/reagent_containers/hypospray/medipen/medx
 ))

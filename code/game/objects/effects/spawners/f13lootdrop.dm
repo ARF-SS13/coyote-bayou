@@ -539,7 +539,7 @@
 	name = "wasteland meds spawner"
 	lootcount = 1
 
-	loot = list(/obj/item/reagent_containers/pill/patch/healingpowder,
+	loot = list(/obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/storage/pill_bottle/chem_tin/radx,
 				/obj/item/reagent_containers/blood/radaway,
 				/obj/item/storage/pill_bottle/chem_tin/mentats,
@@ -556,7 +556,7 @@
 	loot = list(
 				/obj/item/reagent_containers/pill/patch/jet,
 				/obj/item/reagent_containers/pill/patch/turbo,
-				/obj/item/reagent_containers/pill/patch/healingpowder,
+				/obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout

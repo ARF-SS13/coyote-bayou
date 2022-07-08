@@ -29,7 +29,7 @@
 								/obj/item/reagent_containers/food/snacks/grown/fungus = 5,
 								/obj/item/reagent_containers/food/snacks/grown/agave = 5,
 								/obj/item/reagent_containers/pill/patch/jet = 10,
-								/obj/item/reagent_containers/pill/patch/healingpowder = 30,
+								/obj/item/reagent_containers/pill/healingpowder = 30,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 20,
 								/obj/item/reagent_containers/hypospray/medipen/medx = 75,
 								/obj/item/reagent_containers/pill/patch/healpoultice = 50,

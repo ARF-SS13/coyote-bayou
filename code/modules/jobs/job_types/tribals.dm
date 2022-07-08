@@ -88,7 +88,7 @@ Tribal Chief
 	suit_store =	/obj/item/twohanded/spear/bonespear/deathclaw
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/flashlight/lantern = 1,
 	)
@@ -216,7 +216,7 @@ Tribal Head Hunter
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
 		/obj/item/flashlight/flare/torch=1)
@@ -333,7 +333,7 @@ Villager
 	shoes = 	/obj/item/clothing/shoes/sandal
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=1,
+		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1)
 
@@ -342,7 +342,7 @@ Villager
 	backpack_contents = list(
 		/obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		)
 
 /datum/outfit/loadout/gardener
@@ -359,7 +359,7 @@ Villager
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
 		)
@@ -433,7 +433,7 @@ Hunter
 	suit = 		/obj/item/clothing/suit/armor/tribe_armor
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1)
 
@@ -445,7 +445,7 @@ Hunter
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		)
 
 /datum/outfit/loadout/melee
@@ -454,7 +454,7 @@ Hunter
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 1,
 		)
 
@@ -531,7 +531,7 @@ Guardian
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder=2,
+		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1)

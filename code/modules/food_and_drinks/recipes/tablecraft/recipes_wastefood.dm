@@ -135,7 +135,8 @@
 	time = 40
 	reqs = list(
 		/datum/reagent/consumable/nuka_cola = 10,
-		/datum/reagent/medicine/bitter_drink = 10,
+		/obj/item/reagent_containers/food/snacks/grown/broc = 1,
+		/obj/item/reagent_containers/food/snacks/grown/xander = 1,
 		/datum/reagent/consumable/sodawater = 5,
 		/datum/reagent/consumable/sugar = 5
 	)
@@ -143,9 +144,13 @@
 	subcategory = CAT_MISCFOOD
 	always_available = FALSE
 
-// ^For balancing reasons 10 units of bitter_drink turn into 1 unit with the crafted item.
-
-
+/datum/crafting_recipe/food/sunset/happyshark/bittercola/alt
+	reqs = list(
+		/datum/reagent/consumable/nuka_cola = 10,
+		/datum/reagent/medicine/healing_powder = 10,
+		/datum/reagent/consumable/sodawater = 5,
+		/datum/reagent/consumable/sugar = 5
+	)
 
 /* awaiting assets + code for completion
 
