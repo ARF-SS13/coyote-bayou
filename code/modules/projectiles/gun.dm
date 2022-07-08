@@ -944,6 +944,11 @@ ATTACHMENTS
 	if(recoil_cooldown_schedule <= 1)
 		recoil_cooldown_schedule = 1
 
+	var/current_time = world.time
+	var/current_recoil = recoil
+	var/current_recoil_schedule = recoil_cooldown_schedule
+	var/current_recoil_cooldown_time = recoil_cooldown_time
+
 	if(current_time >= current_recoil_schedule) // it cooled down
 		current_recoil = 0
 	else if(current_recoil_cooldown_time > 0) // no zero divides plz
