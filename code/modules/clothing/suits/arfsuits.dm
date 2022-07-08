@@ -836,7 +836,7 @@
 	icon_state = "painspike"
 	item_state = "painspike"
 
-/obj/item/clothing/suit/armor/light/raider/iconoclast
+/obj/item/clothing/suit/armor/medium/raider/iconoclast
 	name = "iconoclast raider armor"
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
@@ -2069,6 +2069,24 @@
 	icon_state = "wastewar"
 	item_state = "wastewar"
 	resistance_flags = FLAMMABLE
+
+/// Environmental raider armor
+/obj/item/clothing/suit/armor/medium/raider/iconoclast
+	name = "iconoclast raider armor"
+	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
+	icon_state = "iconoclast"
+	item_state = "iconoclast"
+	permeability_coefficient = 0.8
+	armor = list(
+		"melee" = 25, 
+		"bullet" = 25, 
+		"laser" = 20, 
+		"energy" = 5, 
+		"bomb" = 25, 
+		"bio" = 50, 
+		"rad" = 80, 
+		"fire" = 40, 
+		"acid" = 40)
 
 ///////////
 // HEAVY //

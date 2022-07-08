@@ -349,7 +349,7 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/suit/armor/light/duster,
-	/obj/item/clothing/suit/armor/light/raider/iconoclast
+	/obj/item/clothing/suit/armor/medium/raider/iconoclast
 ))
 
 GLOBAL_LIST_INIT(loot_t2_armor, list(
