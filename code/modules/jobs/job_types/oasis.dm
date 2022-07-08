@@ -498,7 +498,7 @@ Mayor
 	jobtype = /datum/job/oasis/f13prospector
 
 	id = /obj/item/card/id/dogtag/town
-	suit = /obj/item/clothing/suit/armor/light/raider/iconoclast/
+	suit = /obj/item/clothing/suit/armor/medium/raider/iconoclast/
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler

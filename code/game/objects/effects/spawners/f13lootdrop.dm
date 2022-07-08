@@ -234,7 +234,7 @@
 				/obj/effect/spawner/bundle/f13/armor/psycho,
 				/obj/item/clothing/suit/armor/light/duster,
 				/obj/effect/spawner/bundle/f13/armor/combatduster,
-				/obj/item/clothing/suit/armor/light/raider/iconoclast,
+				/obj/item/clothing/suit/armor/medium/raider/iconoclast,
 				/obj/item/clothing/suit/armor/medium/vest/breastplate/light,
 	)
 
