@@ -38,6 +38,7 @@
 	aggrosound = list('sound/f13npc/supermutant/alert1.ogg', 'sound/f13npc/supermutant/alert2.ogg', 'sound/f13npc/supermutant/alert3.ogg', 'sound/f13npc/supermutant/alert4.ogg')
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/playable
 	health = 500
@@ -112,6 +113,7 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -133,6 +135,7 @@
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	loot = list(/obj/item/ammo_box/a308)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -152,6 +155,7 @@
 	maxHealth = 700 //30 shots of 5.56, bring an extended mag
 	health = 700
 	mob_size = 5
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/legendary/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -174,6 +178,7 @@
 	melee_damage_upper = 60
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/Aggro()
 	..()
@@ -208,6 +213,7 @@
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/Aggro()
 	..()
@@ -241,6 +247,7 @@
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/Aggro()
 	..()
@@ -265,7 +272,8 @@
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 50
 	melee_damage_upper = 70
-
+	footstep_type = FOOTSTEP_MOB_HEAVY
+	
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/rain
 	name = "super mutant rain cultist"
 	desc = "A super mutant covered in blue markings that has been indoctrinated into the Cult Of Rain. This one wields a hunting rifle blessed by the rain gods."
@@ -277,6 +285,7 @@
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	melee_damage_lower = 50
 	melee_damage_upper = 70
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain
 	name = "nightkin berserker rain priest"
@@ -290,6 +299,7 @@
 	melee_damage_lower = 60
 	melee_damage_upper = 70
 	var/charging = FALSE
+	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain/bullet_act(obj/item/projectile/Proj)
 	if(!Proj)

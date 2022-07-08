@@ -22,6 +22,7 @@
 	wound_bonus = 0
 	retreat_distance = 5
 	minimum_distance = 5
+	footstep_type = FOOTSTEP_MOB_CRAWL
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
