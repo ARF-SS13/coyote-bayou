@@ -870,7 +870,7 @@
 	outfit = /datum/outfit/job/tribal/f13hunter
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/restraints/legcuffs/bola/tactical = 1
@@ -888,7 +888,7 @@
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1
+		/obj/item/reagent_containers/pill/healingpowder = 1
 	)
 
 /obj/effect/mob_spawn/human/fallout13/tribal/special(mob/living/new_spawn)

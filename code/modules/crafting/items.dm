@@ -71,10 +71,125 @@
 	desc = "A crafting blueprint for a weapon design."
 	icon_state = "blueprint2"
 
+GLOBAL_LIST_INIT(blueprint_fluff, list(
+	"iconstates" = list(
+		"docs_generic",
+		"docs_verified",
+		"docs_part",
+		"docs_red",
+		"docs_blue",
+		"scrap_bloodied",
+		"bountycardfull",
+		"folder_yellow",
+		"folder_red",
+		"folder_sred",
+		"folder_blue",
+		"folder_sblue",
+		"newspaper",
+		"paper_talisman",
+		"paper_stack_words",
+		"barcode"),
+	"prefixes" = list(
+		"strange",
+		"curious",
+		"odd",
+		"weird",
+		"mysterious",
+		"ancient",
+		"bizarre",
+		"poorly-formatted",
+		"singed",
+		"grody",
+		"illicit",
+		"unmentionable",
+		"exotic",
+		"alluring",
+		"attractive",
+		"stack of",
+		"wad of",
+		"pile of",
+		"clump of",
+		"tangle of",
+		"moist",
+		"historical",
+		"filthy",
+		"stapled together",
+		"loose",
+		"burnt",
+		"neatly stacked",
+		"large print",
+		"unreadable",
+		"French",
+		"lightly toasted",
+		"mummified",
+		"fossilized",
+		"decayed",
+		"mangy",
+		"smudged",
+		"salvaged",
+		"various",
+		"assorted",
+		"misc",
+		"lost",
+		"important",
+		"useful",
+		"well prepared",
+		"damp"),
+	"suffixes" = list(
+		"documents",
+		"files",
+		"papers",
+		"fliers",
+		"blueprints",
+		"magazine articles",
+		"torn-out pages",
+		"pictures",
+		"photospreads",
+		"words",
+		"newspapers",
+		"scraps",
+		"reports",
+		"essays",
+		"missives",
+		"fanfiction exerpts",
+		"grandma's recipes",
+		"opinion pieces",
+		"postcards",
+		"codesheets",
+		"timesheets",
+		"letters",
+		"mail",
+		"transcripts",
+		"tax forms",
+		"tax returns",
+		"accounting sheets",
+		"balance sheets",
+		"shopping lists",
+		"phonebook pages",
+		"comics",
+		"poems",
+		"stories",
+		"letters to the editor",
+		"bank statements",
+		"scriptures",
+		"songs",
+		"laundry lists",
+		"research results",
+		"scientific papers",
+		"parking tickets",
+		"punchcards")
+	))
+
 /obj/item/blueprint/research
 	name = "mysterious blueprint"
-	desc = "... (grants 10k research points when destructively analyzed - the BoS or Vault might want this.)"
-	icon_state = "blueprint2"
+	desc = "Some kind of collection of pre-war 'information'. Might be something in here worthwhile to people interested in that kind of thing. <br><br>(grants 10k research points when destructively analyzed)"
+	icon ='icons/obj/bureaucracy.dmi'
+	icon_state = "docs_generic"
+
+/obj/item/blueprint/research/Initialize()
+	. = ..()
+	name = "[pick(GLOB.blueprint_fluff["prefixes"])] [pick(GLOB.blueprint_fluff["suffixes"])]"
+	icon_state = pick(GLOB.blueprint_fluff["iconstates"])
 
 /obj/item/blueprint/misc/stim
 	name = "Stimpack blueprint"

@@ -151,17 +151,15 @@
 // FALLOUT HYPOS //
 ///////////////////
 
-// ---------------------------------
-// STIMPAK
-
-/obj/item/reagent_containers/hypospray/medipen/stimpak
+/obj/item/reagent_containers/hypospray/medipen/stimpak // 20hp instantly, plus 30hp over 20 seconds. stims in fallout contain a whole cocktail of chems, and this mix prevents them from stacking with healing powder and bitter drink.
 	name = "stimpak"
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_stimpak"
-	volume = 10
-	amount_per_transfer_from_this = 10
-	list_reagents = list(/datum/reagent/medicine/stimpak = 10)
+	volume = 26
+	amount_per_transfer_from_this = 26
+	reagent_flags = DRAWABLE
+	list_reagents = list(/datum/reagent/medicine/stimpak = 20, /datum/reagent/medicine/healing_powder = 2, /datum/reagent/medicine/bicaridine = 2, /datum/reagent/medicine/kelotane = 2)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/on_reagent_change(changetype)
 	update_icon()
@@ -174,22 +172,20 @@
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/custom
 	desc = "A handheld delivery system for medicine, this particular one will deliver a tailored cocktail."
+	volume = 10
+	amount_per_transfer_from_this = 10
 	list_reagents = null
-
-/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation
-	name = "imitation stimpak"
-	desc = "A handheld delivery system for medicine. This one is filled with ground up flower juice, but hey, whatever gets you moving, right?"
-	list_reagents = list(/datum/reagent/medicine/stimpakimitation = 10)
 
 // ---------------------------------
 // SUPER STIMPAK
 
-/obj/item/reagent_containers/hypospray/medipen/stimpak/super
+/obj/item/reagent_containers/hypospray/medipen/stimpak/super // 50hp instantly, plus 50hp over 20 seconds.
 	name = "super stimpak"
 	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
 	icon_state = "hypo_superstimpak"
-	amount_per_transfer_from_this = 10
-	list_reagents = list(/datum/reagent/medicine/super_stimpak = 10)
+	volume = 62
+	amount_per_transfer_from_this = 62
+	list_reagents = list(/datum/reagent/medicine/super_stimpak = 30, /datum/reagent/medicine/stimpak = 20, /datum/reagent/medicine/healing_powder = 4, /datum/reagent/medicine/bicaridine = 4, /datum/reagent/medicine/kelotane = 4)
 
 /obj/item/reagent_containers/hypospray/medipen/stimpak/super/custom
 	desc = "The super version comes in a hypodermic, but with an additional vial to inject more drugs than the basic model and a leather belt to strap the needle to a limb. This particular one will deliver a tailored cocktail."

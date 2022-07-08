@@ -89,14 +89,14 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/light/raider/iconoclast
+/obj/item/clothing/suit/armor/medium/raider/iconoclast
 	name = "iconoclast raider armor"
 	desc = "A rigid armor set that appears to be fashioned from a radiation suit, or a mining suit."
 	icon_state = "iconoclast"
 	item_state = "iconoclast"
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "bio" = 0, "rad" = 60, "fire" = 25, "acid" = 25, "wound" = 35)
 
-/obj/item/clothing/suit/armor/light/raider/iconoclast/Initialize()
+/obj/item/clothing/suit/armor/medium/raider/iconoclast/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

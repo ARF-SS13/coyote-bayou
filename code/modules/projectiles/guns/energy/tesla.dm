@@ -8,5 +8,5 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	fire_delay = 13
 	slowdown = 1
-	weapon_weight = WEAPON_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'

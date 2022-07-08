@@ -321,7 +321,6 @@ Raider
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak/imitation = 2,
 		)
 
 /datum/outfit/loadout/raider_tribal
@@ -1197,7 +1196,7 @@ datum/job/wasteland/f13dendoctor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
 		)
 
@@ -1234,7 +1233,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/twohanded/sledgehammer/warmace = 1,
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal = 1,
 	)
 
@@ -1291,7 +1290,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/deadhorses = 1,
 		/obj/item/melee/onehanded/club/warclub = 1,
 		/obj/item/storage/backpack/spearquiver = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2
+		/obj/item/reagent_containers/pill/healingpowder = 2
 	)
 
 /datum/outfit/loadout/deadhorsesranged
@@ -1313,7 +1312,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,
 		/obj/item/reagent_containers/glass/bucket/wood=1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/book/granter/crafting_recipe/tribal/deadhorses = 1
 	)
 
@@ -1340,7 +1339,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/storage/bag/plants = 1,
 		/obj/item/cultivator = 1,
 		/obj/item/reagent_containers/glass/bucket/wood = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/warpaint_bowl = 1,
 		/obj/item/toy/crayon/spraycan = 2,
@@ -1357,7 +1356,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/eighties = 1,
 		/obj/item/gun/ballistic/shotgun/trench = 1,
 		/obj/item/ammo_box/shotgun/buck = 2,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/pill/patch/turbo = 2,
 		/obj/item/reagent_containers/pill/patch/jet = 2
 	)
@@ -1372,7 +1371,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/gun/ballistic/automatic/smg/greasegun/worn = 1,
 		/obj/item/ammo_box/magazine/greasegun = 2,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2
+		/obj/item/reagent_containers/pill/healingpowder = 2
 	)
 
 /datum/outfit/loadout/eightiesshaman
@@ -1383,7 +1382,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/eighties = 1,
 		/obj/item/gun/ballistic/revolver/single_shotgun = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/storage/belt/utility/full = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/eighties = 1
 	)
@@ -1396,7 +1395,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
 		/obj/item/twohanded/spear/bonespear = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/bitterdrink = 1,
 	)
 
 
@@ -1410,7 +1409,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/warpaint_bowl=1,
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/wayfarer = 1,
 	)
 
@@ -1423,7 +1422,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/clothing/under/f13/female/rustwalkers = 1,
 		/obj/item/gun/ballistic/automatic/autopipe = 1,
 		/obj/item/ammo_box/magazine/autopipe = 2,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/circular_saw = 1
 	)
 
@@ -1521,7 +1520,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/electropack/shockcollar/explosive
 
 	backpack_contents =  list(
-		/obj/item/reagent_containers/pill/patch/healingpowder =1)
+		/obj/item/reagent_containers/pill/healingpowder =1)
 							
 
 //Worker

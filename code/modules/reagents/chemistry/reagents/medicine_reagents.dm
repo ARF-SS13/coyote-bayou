@@ -1688,19 +1688,7 @@
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(!M.blood_volume || !M.all_wounds)
-		return
-
-	var/effective_clot_rate = clot_rate
-
-	for(var/i in M.all_wounds)
-		var/datum/wound/iter_wound = i
-		if(iter_wound.blood_flow)
-			effective_clot_rate *= clot_coeff_per_wound
-
-	for(var/i in M.all_wounds)
-		var/datum/wound/iter_wound = i
-		iter_wound.blood_flow = max(0, iter_wound.blood_flow - effective_clot_rate)
+	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/M)
 	. = ..()
@@ -1726,3 +1714,35 @@
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
 	clot_coeff_per_wound = 0.8
+/* 
+ * Reduces blood flow on all wounds
+ * * User - Mob who's wounds we're treating
+ * * bleed_reduction_rate - Base amount their bloodloss will be reduced
+ * * coefficient_per_wound - For each wound, multiply the effective bleed rate by this (usually lessening it if theres more than one wound)
+ * * single_wound_full_effect - If there's only one wound, should it have its full effect? 
+ */
+/datum/reagent/medicine/proc/clot_bleed_wounds(mob/living/carbon/user, bleed_reduction_rate = 0.25, coefficient_per_wound = 0.9, single_wound_full_effect = FALSE)
+	if(!user || !iscarbon(user))
+		return
+
+	if(!user.blood_volume)
+		return
+
+	if(!user.all_wounds)
+		return
+
+	var/number_of_wounds = 0
+	if(single_wound_full_effect == FALSE)
+		number_of_wounds = 1
+
+	for(var/i in user.all_wounds)
+		var/datum/wound/iter_wound = i
+		if(iter_wound.blood_flow)
+			if(number_of_wounds++ > 1) // full effect if theres just one bleed wound
+				bleed_reduction_rate *= coefficient_per_wound
+
+	for(var/i in user.all_wounds)
+		var/datum/wound/iter_wound = i
+		iter_wound.blood_flow = max(0, iter_wound.blood_flow - bleed_reduction_rate)
+
+

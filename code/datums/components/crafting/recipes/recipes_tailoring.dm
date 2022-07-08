@@ -1088,7 +1088,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/iconoclast_reinforced
 	name = "reinforced iconoclast armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/iconoclast
-	reqs = list(/obj/item/clothing/suit/armor/light/raider/iconoclast = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/iconoclast = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)

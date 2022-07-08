@@ -387,7 +387,7 @@ datum/chemical_reaction/rezadone
 	RateUpLim 			= 5 //Optimal/max rate possible if all conditions are perfect
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
-
+/* 
 /datum/chemical_reaction/stimpak2
 	name = "Imitation Stimpak Fluid"
 	id = /datum/reagent/medicine/stimpakimitation
@@ -406,7 +406,7 @@ datum/chemical_reaction/rezadone
 	RateUpLim 			= 12 //Optimal/max rate possible if all conditions are perfect
 	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
 	FermiExplode 		= FALSE //If the chemical explodes in a special way
-
+ */
 /datum/chemical_reaction/superstimpak
 	name = "Super Stimpak Fluid"
 	id = /datum/reagent/medicine/super_stimpak
@@ -430,7 +430,7 @@ datum/chemical_reaction/rezadone
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx
 	results = list(/datum/reagent/medicine/medx = 4)
-	required_reagents = list(/datum/reagent/drug/aranesp = 1, /datum/reagent/phenol = 1, /datum/reagent/drug/heroin = 1, /datum/reagent/medicine/stimpakimitation = 1)
+	required_reagents = list(/datum/reagent/drug/aranesp = 1, /datum/reagent/phenol = 1, /datum/reagent/drug/heroin = 1, /datum/reagent/medicine/stimpak = 1)
 	OptimalTempMin 		= 780
 	OptimalTempMax		= 821
 	ExplodeTemp			= 824
@@ -451,15 +451,3 @@ datum/chemical_reaction/rezadone
 	results = list(/datum/reagent/medicine/mentat = 3)
 	required_reagents = list(/datum/reagent/medicine/neurine = 1, /datum/reagent/cellulose = 1)
 	required_temp = 451
-
-/datum/chemical_reaction/bitterdrink
-	name = "Bitter drink"
-	id = /datum/reagent/medicine/bitter_drink
-	results = list(/datum/reagent/medicine/bitter_drink = 30)
-	required_reagents = list(/datum/reagent/consumable/ethanol/salgam = 10 , /datum/reagent/consumable/ethanol/brocbrew = 10 , /datum/reagent/consumable/sunset = 10 , /datum/reagent/consumable/ethanol/yellowpulque = 10)
-
-/datum/chemical_reaction/drinkneutralization
-	name = "Neutralization reaction"
-	id = "drink_neutralization"
-	results = list(/datum/reagent/water = 1)
-	required_reagents = list(/datum/reagent/medicine/bitter_drink = 1, /datum/reagent/medicine/healing_powder/poultice = 1)

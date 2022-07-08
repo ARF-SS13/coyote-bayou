@@ -36,7 +36,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/legiongate)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/berserker_powder)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rip/crossexecution)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire
@@ -169,7 +168,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/binoculars = 1,
 		/obj/item/ammo_box/a357 = 2,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13orator/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -275,18 +274,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/ammo_box/magazine/m14mm = 3,
 		)
 
-/* /datum/outfit/loadout/berserkercenturion
-	name = 			"Praetorian Candidate"
-	suit = 			/obj/item/clothing/suit/armor/legion/centurion
-	head = 			/obj/item/clothing/head/helmet/f13/legion/centurion
-	backpack_contents = list(
-					/obj/item/melee/unarmed/sappers = 1,
-					/obj/item/book/granter/martial/berserker = 1,
-					/obj/item/reagent_containers/pill/patch/healingpowder/berserker = 2
-					)
-commented out pending rework*/
-
-
 // VETERAN DECANUS
 
 /datum/job/CaesarsLegion/Legionnaire/f13decanvet
@@ -359,7 +346,7 @@ commented out pending rework*/
 		/obj/item/melee/onehanded/machete/spatha = 1,
 		/obj/item/gun/ballistic/automatic/smg/cg45 = 1,
 		/obj/item/ammo_box/magazine/cg45 = 2,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
 
 /datum/outfit/loadout/decvetsnake
@@ -370,7 +357,7 @@ commented out pending rework*/
 		/obj/item/melee/powered/ripper = 1,
 		/obj/item/ammo_box/tube/c4570 = 3,
 		/obj/item/attachments/scope = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 2,
+		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
 
 /datum/outfit/loadout/decvetbrave
@@ -441,7 +428,7 @@ commented out pending rework*/
 		/obj/item/storage/bag/money/small/legofficers = 1,
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/binoculars = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/bitterdrink = 1,
 		)
 
 /datum/outfit/loadout/decprimfront
@@ -622,7 +609,6 @@ commented out pending rework*/
 	suit_store = /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	backpack_contents = list(
 		/obj/item/melee/unarmed/tigerclaw = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder/berserker = 2,
 		/obj/item/melee/powered/ripper = 1,
 		/obj/item/book/granter/martial/berserker = 1,
 		)
@@ -695,7 +681,7 @@ commented out pending rework*/
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/revolver45 = 1,
 		/obj/item/ammo_box/c45rev = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/melee/onehanded/machete = 1,
 		/obj/item/restraints/handcuffs = 1,
@@ -783,7 +769,7 @@ commented out pending rework*/
 		/obj/item/storage/bag/money/small/legenlisted = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/machete/gladius = 1,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/bitterdrink = 1,
 		)
 
 
@@ -827,7 +813,7 @@ commented out pending rework*/
 		/obj/item/gun/ballistic/revolver/colt357 = 1,
 		/obj/item/ammo_box/a357 = 1,
 		/obj/item/melee/onehanded/knife/throwing = 2,
-		/obj/item/reagent_containers/pill/patch/bitterdrink = 1,
+		/obj/item/reagent_containers/pill/bitterdrink = 1,
 		/obj/item/restraints/legcuffs/beartrap = 1,
 		)
 
@@ -956,7 +942,7 @@ commented out pending rework*/
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/legenlisted = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 1,
+		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/melee/onehanded/machete = 1,
 		)
 
@@ -1009,7 +995,7 @@ commented out pending rework*/
 	suit_store = /obj/item/melee/onehanded/machete/forgedmachete
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/legenlisted = 1,
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2
+		/obj/item/reagent_containers/pill/healingpowder = 2
 		)
 
 /datum/outfit/job/CaesarsLegion/Legionnaire/f13immune/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -1117,7 +1103,7 @@ commented out pending rework*/
 	belt = null
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/warpaint_bowl
 		)
 
@@ -1229,7 +1215,7 @@ commented out pending rework*/
 	shoes =	/obj/item/clothing/shoes/roman
 	r_pocket = /obj/item/flashlight/lantern
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/smelling_salts = 1,
 		/obj/item/book/granter/trait/lowsurgery = 1,
@@ -1338,7 +1324,7 @@ datum/job/CaesarsLegion/Legionnaire/f13slavemaster
 	shoes =			/obj/item/clothing/shoes/roman
 	suit_store = 	/obj/item/melee/onehanded/machete/forgedmachete
 	backpack_contents = list(
-		/obj/item/reagent_containers/pill/patch/healingpowder = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
 		/obj/item/electropack/shockcollar = 3,
 		/obj/item/assembly/signaler/advanced = 3,
