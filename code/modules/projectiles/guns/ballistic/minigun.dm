@@ -109,7 +109,6 @@
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	automatic = 1
-	ranged_attack_speed = CLICK_CD_RAPID
 	weapon_weight = GUN_TWO_HAND_ONLY
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/minigunbal5mm

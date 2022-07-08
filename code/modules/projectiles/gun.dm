@@ -36,13 +36,19 @@ ATTACHMENTS
 	force = 5
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	attack_verb = list("struck", "hit", "bashed")
-	var/ranged_attack_speed = CLICK_CD_RANGE
 	var/fire_sound = "gunshot"
-	var/draw_time = GUN_DRAW_NORMAL // Time it takes between drawing the gun and shooting the gun
-	var/recoil = 0 // Counts up every shot, adds inaccuracy to shots after that, cleared after a delay
-	var/recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT // Multiplier for how much the gun itself reduces (or adds) recoil
-	var/recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL // Time between shooting that must pass to deplete recoil
-	var/recoil_cooldown_schedule = 0 // If time >= this, clear recoil and any related spread
+	/// Time it takes between drawing the gun and shooting the gun
+	var/draw_time = GUN_DRAW_NORMAL 
+
+	/// Counts up every shot, adds inaccuracy to shots after that, cleared after a delay
+	var/recoil = 0 
+	/// Multiplier for how much the gun itself reduces (or adds) recoil. Numbers greater than 1 make more recoil, less than 1 less recoil. Its a multiplier! 
+	var/recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
+	/// Time between shooting that must pass to deplete recoil
+	var/recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	/// If time >= this, clear recoil and any related spread
+	var/recoil_cooldown_schedule = 0
+
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
@@ -132,7 +138,8 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	var/gun_damage_multiplier = 1 // Number to multiply the bullet's damage by
+	/// Multiplier to the bullet's damage
+	var/gun_damage_multiplier = 1
 	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	//Zooming
@@ -145,12 +152,10 @@ ATTACHMENTS
 	var/dualwield_spread_mult = 2		//dualwield spread multiplier
 
 	var/worn_out = FALSE	//If true adds overlay with suffix _worn, and a slight malus to stats
-	/// Just 'slightly' snowflakey way to modify projectile damage for projectiles fired from this gun.
-//	var/projectile_damage_multiplier = 1
 	var/dryfire_sound = "gun_dry_fire"
 	var/dryfire_text = "*click*"
 
-	/// Time between cocking your gun, if it supports it
+	/// Time that much pass between cocking your gun, if it supports it
 	var/cock_delay = GUN_COCK_SHOTGUN_BASE
 
 	var/automatic = 0 // Does the gun fire when the clicker's held down?
@@ -323,7 +328,7 @@ ATTACHMENTS
 		return
 
 	if (automatic == 0)
-		user.DelayNextAction(ranged_attack_speed)
+		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
 		user.DelayNextAction(autofire_shot_delay)
 
@@ -365,7 +370,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/get_clickcd()
 	if (automatic == 0)
-		return isnull(chambered?.click_cooldown_override)? CLICK_CD_RANGE : chambered.click_cooldown_override
+		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
 	if (automatic == 1)
 		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
 
@@ -417,9 +422,9 @@ ATTACHMENTS
 	var/randomized_gun_spread = 0
 	var/rand_spr = rand()
 	if(spread)
-		randomized_gun_spread = rand(0, spread)
+		randomized_gun_spread = spread
 	else if(burst_size > 1 && burst_spread)
-		randomized_gun_spread = rand(0, burst_spread)
+		randomized_gun_spread = burst_spread
 	var/randomized_bonus_spread = rand(0, bonus_spread)
 	if(HAS_TRAIT(user, SPREAD_CONTROL))
 		randomized_gun_spread = max(0, randomized_gun_spread-8)
@@ -918,7 +923,8 @@ ATTACHMENTS
 	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
 	spawn(time_till_gun_is_ready)
-		user.show_message(span_notice("\The [src] is ready to fire."))
+		if(user.get_active_held_item() == src)
+			user.show_message(span_notice("\The [src] is ready to fire."))
 
 /obj/item/gun/proc/play_equip_sound(src, volume=50)
 	if(src && equipsound && volume)
@@ -933,8 +939,15 @@ ATTACHMENTS
 /// and returns a value for its adjusted spread
 /// Also clears the recoil if its been long enough
 /obj/item/gun/proc/process_recoil(mob/user)
+	if(world.time <= 1)
+		return
+	if(recoil_cooldown_schedule <= 1)
+		recoil_cooldown_schedule = 1
+
 	if(world.time >= recoil_cooldown_schedule) // it cooled down
 		recoil = 0
+	else if(recoil_cooldown_time > 0) // no zero divides plz
+		recoil *= (recoil_cooldown_schedule - world.time) / recoil_cooldown_time // Partial recoil cooldown
 	
 	/// Calculate a new spread, basically recoil to spread, clamped
 	var/new_spread = 0
@@ -949,10 +962,10 @@ ATTACHMENTS
 	///Check if there's something in their other hand
 	if(user)
 		var/obj/thing_in_their_other_hand = user.get_item_for_held_index(user.get_inactive_hand_index())
-		if(istype(thing_in_their_other_hand, /obj/item/gun) && user.a_intent == INTENT_HARM) // Akimbo!
-			recoil_to_add *= GUN_AKIMBO_RECOIL_MOD
-		else
+		if(istype(thing_in_their_other_hand)) // Other hand cant steady the gun?
 			recoil_to_add *= GUN_FULL_OTHER_HAND_RECOIL_MOD
+		if(istype(thing_in_their_other_hand, /obj/item/gun) && user.a_intent == INTENT_HARM) // Akimbo!
+			recoil_to_add *= GUN_AKIMBO_RECOIL_MOD // Bit more than 2x cus that other hand isnt steadying the gun
 
 	recoil += recoil_to_add
 
