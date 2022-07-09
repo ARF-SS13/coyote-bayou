@@ -90,6 +90,11 @@
 		DelayNextAction(CLICK_CD_HANDCUFFED)
 		return RestrainedClickOn(A)
 
+	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		DelayNextAction(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
+		UnarmedAttack(A, FALSE, modifiers)
+		return
+
 	if(in_throw_mode)
 		throw_item(A)
 		return
