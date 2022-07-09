@@ -35,6 +35,8 @@
 		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 	else
 		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+	. = TRUE
+	..()
 
 // Overdose makes you barflock yourself
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/carbon/M)
@@ -90,6 +92,8 @@
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/carbon/M) // Heals fleshwounds like a weak sanguirite
 	. = ..()
 	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	. = TRUE
+	..()
 
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/carbon/M)
@@ -101,7 +105,9 @@
 			"Your heart stops for a moment.",
 			"You feel an agonizing shudder in your chest.")
 		to_chat(M, span_warning("[superstim_od_message]"))
-	. = 1
+	. = TRUE
+	..()
+
 
 // ---------------------------
 // LONGPORK STEW REAGENT
@@ -160,11 +166,14 @@
 		M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 	else
 		M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	. = TRUE
+	..()
+
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/carbon/M)
 	M.drowsyness += 3
-	..()
 	. = TRUE
+	..()
 
 /* 
  * Healing Poultice
@@ -198,6 +207,9 @@
 	M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 
 	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	. = TRUE
+	..()
+
 
 /datum/reagent/medicine/healing_powder/poultice/overdose_process(mob/living/carbon/M)
 	M.adjustToxLoss(4)
@@ -207,7 +219,9 @@
 			"You feel a searing pain shoot through your skin.",
 			"You feel like your blood's been replaced with acid. It burns.")
 		to_chat(M, span_notice("[poultice_od_message]"))
-	. = 1
+	. = TRUE
+	..()
+
 
 // ---------------------------
 // RAD-X REAGENT
