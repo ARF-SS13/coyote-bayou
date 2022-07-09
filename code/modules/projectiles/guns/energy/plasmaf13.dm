@@ -6,31 +6,60 @@
 //Plasma pistol
 /obj/item/gun/energy/laser/plasma/pistol
 	name ="plasma pistol"
-	slowdown = 0.1
-	armour_penetration = 0.02
 	item_state = "plasma-pistol"
 	icon_state = "plasma-pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas."
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 //BoS knight craftable plasma pistol
 /obj/item/gun/energy/laser/plasma/pistol/light
 	name = "lightweight plasma pistol"
-	slowdown = 0.1
 	icon_state = "light-plasma-pistol"
 	desc = "A lightweight modification of the common REPCONN-built plasma pistol. Fires heavy low penetration plasma clots at a slower rate than the regular design due to reduced cooling."
-	fire_delay = 5
 
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 /obj/item/gun/energy/laser/plasma/pistol/worn
 	name ="shoddy plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas. This one's internal parts have loose seals and corroded electronics."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/worn)
-	fire_delay = 4.5
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Glock 86 Plasma pistol
 /obj/item/gun/energy/laser/plasma/glock
@@ -38,13 +67,23 @@
 	desc = "Glock 86 Plasma Pistol. Designed by the Gaston Glock artificial intelligence. Shoots a small bolt of superheated plasma. Powered by a small energy cell."
 	item_state = "plasma-pistol"
 	icon_state = "glock86"
-	slowdown = 0.1
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock)
 	equipsound = 'sound/f13weapons/equipsounds/pistolplasequip.ogg'
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Glock 86 A Plasma pistol
 /obj/item/gun/energy/laser/plasma/glock/extended
@@ -55,20 +94,39 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/glock/extended)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Plasma Rifle
 /obj/item/gun/energy/laser/plasma
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
-	armour_penetration = 0.1
-	slowdown = 0.75 //this is one of the worst slowdowns in the game
-	gun_damage_multiplier = 30
-	fire_delay = 5.2
 	desc = "A miniaturized plasma caster that fires bolts of magnetically accelerated toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //Plasma carbine
@@ -79,9 +137,6 @@
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	gun_damage_multiplier = 15
-	burst_size = 2
-	burst_shot_delay = 1.5
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = TRUE
 	scope_state = "plasma_scope"
@@ -89,13 +144,25 @@
 	scope_y_offset = 16
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 2
+
 /obj/item/gun/energy/laser/plasma/carbine/enable_burst()
 	. = ..()
-	spread = 15
+	spread = GUN_SPREAD_AWFUL
 
 /obj/item/gun/energy/laser/plasma/carbine/disable_burst()
 	. = ..()
-	spread = 0
+	spread = GUN_SPREAD_POOR
 
 
 //Multiplas rifle
@@ -103,12 +170,22 @@
 	name = "multiplas rifle"
 	item_state = "multiplas"
 	icon_state = "multiplas"
-	fire_delay = 3
-	gun_damage_multiplier = 15
 	desc = "A modified A3-20 plasma caster built by REPCONN equipped with a multicasting kit that creates multiple weaker clots."
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/scatter)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 /obj/item/gun/energy/laser/plasma/spear
@@ -120,20 +197,28 @@
 	item_state = "plasma"
 	icon_state = "plasma"
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = GUN_ONE_HAND_AKIMBO //you need to wield it to fire it
 	slot_flags = ITEM_SLOT_BACK
 	desc = "An ergonomic pre-war plasmacaster designed for precision mining work. This one appears to be built into a single thick staff, with a bulbous hilt and sharp saturnite alloy blades ringing the caster assembly- strongly resembling sort of spear."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/miner)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	sharpness = SHARP_EDGED
 	max_reach = 2
-	force = 20
-	burst_size = 5
-	burst_shot_delay = 0.5
-	fire_delay = 10
 	scope_y_offset = 16
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
 	var/twohands = FALSE
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_GUNBLADE
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	automatic = 1
 
 /obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()
 	. = ..()

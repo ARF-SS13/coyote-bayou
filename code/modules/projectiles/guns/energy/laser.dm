@@ -2,6 +2,19 @@
 	name = "practice laser gun"
 	icon_state = "laser-p"
 	desc = "A modified version of the basic laser gun, this one fires less concentrated energy bolts designed for target practice."
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/practice)
 	clumsy_check = 0
 	item_flags = NONE
@@ -9,15 +22,26 @@
 /obj/item/gun/energy/laser/practice/hyperburst
 	name = "toy hyper-burst launcher"
 	desc = "A toy laser with a unique beam shaping lens that projects harmless bolts capable of going through objects. Compatible with existing laser tag systems."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/magtag)
 	icon_state = "toyburst"
-	obj_flags = NONE
-	fire_delay = 40
 	w_class = WEIGHT_CLASS_HUGE
+	obj_flags = NONE
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 	weapon_weight = GUN_TWO_HAND_ONLY
 	selfcharge = EGUN_SELFCHARGE
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/magtag)
 	charge_delay = 2
-	recoil = 2
 	cell_type = /obj/item/stock_parts/cell/toymagburst
 
 /obj/item/gun/energy/laser/retro
@@ -25,6 +49,18 @@
 	icon_state = "retro"
 	desc = "An older model of the basic lasergun, no longer used by Nanotrasen's private security or military forces. Nevertheless, it is still quite deadly and easy to maintain, making it a favorite amongst pirates and other outlaws."
 	ammo_x_offset = 3
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/captain
 	name = "antique laser gun"
@@ -36,17 +72,40 @@
 	selfcharge = EGUN_SELFCHARGE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 /obj/item/gun/energy/laser/cyborg
 	name = "integrated AER9"
 	can_charge = FALSE
 	desc = "An energy-based laser gun that draws power from the Handy's internal energy cell directly. So this is what freedom looks like?"
-	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	icon_state = "laser"
 	item_state = "laser-rifle9"
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 3
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/cyborg/emp_act()
 	return
@@ -60,6 +119,18 @@
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 //Laser Cannon
 /obj/item/gun/energy/lasercannon
 	name = "accelerator laser cannon"
@@ -67,12 +138,23 @@
 	icon_state = "lasercannon"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_BULKY
-	force = 10
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/accelerator)
 	pin = null
 	ammo_x_offset = 3
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_ACCURATE
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/ammo_casing/energy/laser/accelerator
 	projectile_type = /obj/item/projectile/beam/laser/accelerator
@@ -99,6 +181,18 @@
 	pin = null
 	ammo_x_offset = 3
 
+	slowdown = GUN_SLOWDOWN_RIFLE_GAUSS
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 ////////Laser Tag////////////////////
 
 /obj/item/gun/energy/laser/bluetag
@@ -111,6 +205,18 @@
 	pin = /obj/item/firing_pin/tag/blue
 	ammo_x_offset = 2
 	selfcharge = EGUN_SELFCHARGE
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/bluetag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/bluetag/hitscan)
@@ -126,6 +232,18 @@
 	ammo_x_offset = 2
 	selfcharge = EGUN_SELFCHARGE
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 /obj/item/gun/energy/laser/redtag/hitscan
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/redtag/hitscan)
 
@@ -139,14 +257,24 @@
 	desc = "Should not exists. Bugreport."
 	icon_state = "laser"
 	item_state = "laser"
-	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
 	shaded_charge = 1
 	var/select = 1
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -206,23 +334,43 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz1000"
 	item_state = "laser-pistol"
-	fire_delay = 0
-	slowdown = 0.2
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Watss 1000 Magneto-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
 	name = "Wattz 1000 magneto-laser pistol"
 	desc = "This Wattz 1000 laser pistol has been upgraded with a magnetic field targeting system that tightens the laser emission, giving this pistol extra penetrating power."
 	icon_state = "magnetowattz"
-	fire_delay = 0
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/magneto/hitscan)
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/wattz/recharger
 	name = "Recharger Pistol"
@@ -232,30 +380,50 @@
 	selfcharge = 1
 	icon_state = "rechargerpistol"
 	w_class = WEIGHT_CLASS_SMALL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 //AEP 7 Laser pistol
 /obj/item/gun/energy/laser/pistol
 	name = "\improper AEP7 laser pistol"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light."
-	slowdown = 0.2
 	icon_state = "AEP7"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	fire_delay = 0
-	can_scope = FALSE
+	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
 	scope_y_offset = 22
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/pistol/cyborg
 	name = "\improper assaultron AEP7 laser eye"
@@ -265,6 +433,18 @@
 	selfcharge = EGUN_SELFCHARGE_BORG
 	cell_type = /obj/item/stock_parts/cell/secborg
 	charge_delay = 3
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 /obj/item/gun/energy/laser/pistol/cyborg/gutsy
 	name = "\improper integrated laser pistol"
@@ -282,16 +462,26 @@
 	icon_state = "AEP5CR"
 	item_state = "AEP5CR"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/stun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
-	fire_delay = 0
-	can_scope = FALSE
+	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
 	scope_y_offset = 22
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NONE
+	fire_delay = GUN_FIRE_DELAY_FASTER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Solar Scorcher
 /obj/item/gun/energy/laser/solar
@@ -300,7 +490,6 @@
 	desc = "This modified AEP7 laser pistol takes its power from the sun, recharging slowly using stored solar energy. However, it cannot be recharged manually as a result."
 	icon_state = "solarscorcher"
 	item_state = "solarscorcher"
-	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/solar/hitscan) //27 dmg, .15 AP
@@ -308,6 +497,18 @@
 	can_charge = 0
 	selfcharge = 1 //selfcharging adds 100 a shot
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //autolaser, recycled from SS13
 
@@ -318,40 +519,66 @@
 	icon_state = "protolaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_AKIMBO //dual wielding
-	slowdown = 0.3
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //7dmg, 0 AP, but essentially fires a pinpoint beam
 	automatic = 1
-	autofire_shot_delay = 0.75 //pew pew pew
-	spread = 2
 	can_scope = FALSE
+
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
+	burst_size = 1
 
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
 	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
-	slowdown = 0.35
-	weapon_weight = GUN_ONE_HAND_ONLY //DO NOT DUAL WIELD
+
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
+	burst_size = 1
 
 //Ultracite Laser pistol
 /obj/item/gun/energy/laser/ultra_pistol
 	name = "\improper Ultracite laser pistol"
 	desc = "An ultracite enhanced energy-based laser gun that fires concentrated beams of light."
-	slowdown = 0.2
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
-	fire_delay = 2
 	scope_x_offset = 7
 	scope_y_offset = 22
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/ultra_pistol)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_POOR
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 ////////////////
@@ -363,19 +590,29 @@
 /obj/item/gun/energy/laser/wattz2k
 	name = "wattz 2000"
 	desc = "Wattz 2000 Laser Rifle. Uses micro fusion cells for more powerful lasers, and an extended barrel for additional range."
-	slowdown = 0.3
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
-	fire_delay = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Wattz 2000 Extended
 /obj/item/gun/energy/laser/wattz2k/extended
@@ -393,6 +630,18 @@
 	zoom_out_amt = 13
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 
 
 //AER9 Laser rifle
@@ -409,11 +658,33 @@
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
 	desc = "A sturdy pre-war laser rifle. Emits beams of concentrated light to kill targets. This one has been jury-rigged against common sense to dump more power into its shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused)
-	fire_delay = 5
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
@@ -423,11 +694,22 @@
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
-	fire_delay = 3
 	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //Tribeam Laser rifle
@@ -436,10 +718,21 @@
 	desc = "A modified AER9 equipped with a refraction kit that divides the laser shot into three separate beams. While powerful, it has a reputation for friendly fire."
 	icon_state = "tribeam"
 	item_state = "laser-rifle9"
-	fire_delay = 3
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOWER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //AER12 Laser rifle
@@ -450,11 +743,22 @@
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	fire_delay = 1.5
 	scope_state = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //AER14 Laser rifle
@@ -465,11 +769,22 @@
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	fire_delay = 1.5
 	scope_state = "AEP7_scope"
 	scope_x_offset = 12
 	scope_y_offset = 20
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //LAER Energy rifle
@@ -478,11 +793,21 @@
 	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
 	icon_state = "laer"
 	item_state = "laer"
-	fire_delay = 3
-	burst_size = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/laerequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //Fallout 4 laser tommy gun.
@@ -491,14 +816,22 @@
 	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds."
 	icon_state = "lasercw"
 	item_state = "rcw"
-	fire_delay = 3
-	burst_size = 1
 	automatic = 1
-	autofire_shot_delay = 2
-	spread = 14
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
 
 /obj/item/gun/energy/laser/rcw/burst_select()
 	var/mob/living/carbon/human/user = usr
@@ -516,17 +849,26 @@
 //Alien Blaster
 /obj/item/gun/energy/laser/plasma/pistol/alien
 	name = "alien blaster"
-	slowdown = 0.2
 	item_state = "alienblaster"
 	icon_state = "alienblaster"
 	desc = "This weapon is unlike any other you've ever seen before, and appears to be made out of metals not usually found on Earth. It certainly packs a punch, though."
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	can_charge = FALSE
 	ammo_type = list(/obj/item/ammo_casing/energy/plasma/pistol/alien)
 	cell_type = /obj/item/stock_parts/cell/ammo/alien //unchargeable, but removable
 
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 //Gamma gun
 /obj/item/gun/energy/gammagun
@@ -535,11 +877,22 @@
 	icon_state = "ultra_pistol"
 	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
-	weapon_weight = GUN_ONE_HAND_ONLY
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/gammagun)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	ammo_x_offset = 3
+
+	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //Gatling Laser
@@ -637,22 +990,27 @@
 	icon_state = "minigun_spin"
 	item_state = "minigun"
 	flags_1 = CONDUCT_1
-	slowdown = 1
 	slot_flags = null
 	w_class = WEIGHT_CLASS_HUGE
 	custom_materials = null
-	burst_size = 1
-	burst_shot_delay = 1
 	automatic = 1
-	autofire_shot_delay = 1.75
-	spread = 8
-	fire_delay = 1
-	weapon_weight = GUN_TWO_HAND_ONLY
 	fire_sound = 'sound/weapons/laser.ogg'
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/gatling/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpack/ammo_pack
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	recoil_multiplier = GUN_RECOIL_NONE
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
+	spread = GUN_SPREAD_AWFUL
+	fire_delay = GUN_FIRE_DELAY_FASTEST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
 
 /obj/item/gun/energy/minigun/Initialize()
 	if(istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.
