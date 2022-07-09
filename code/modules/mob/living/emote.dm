@@ -907,8 +907,10 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 
 /datum/emote/living/special
+	key = "special"
 	message = null
-	cooldown = 2.5 SECONDS	// longer than it takes for the emote to run
+	cooldown = 2.5 SECONDS // longer than it takes for the emote to run
+	stat_allowed = UNCONSCIOUS
 	var/special_delay = 2 SECONDS
 
 /datum/emote/living/special/run_emote(mob/user, params, type_override, intentional = FALSE)
@@ -924,10 +926,14 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	if(isnull(user.special_a))
 		to_chat(user, span_phobia("You arent special."))
 		to_chat(user, span_notice("Mainly because you're playing a mob withough any special skills. This is probably a bug~"))
-		return
+		return FALSE
 
 	var/special_noun = null
-	var/special_skill = null
+
+	if(!special_noun)
+		to_chat(user, span_alert("That's not a valid SPECIAL stat!"))
+		to_chat(user, span_notice("To use this emote, type '*special' followed by a SPECIAL stat. For instance, '*special luck' will do a (luck*10)% roll and say if you passed or not."))
+		return FALSE
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
@@ -938,6 +944,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		to_chat(user, span_alert("That's not a valid SPECIAL stat!"))
 		return
 
+	var/special_skill = null
 	switch(special_noun)
 		if(EMOTE_SPECIAL_STR)
 			special_skill = user.special_s
@@ -970,9 +977,9 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 		var/message_second
 		if(prob(special_skill * 10))
-			message_second = "\[Success] <b>[user]</b> [GLOB.special_phrases[special_noun]["success"]]" // [Success] User is pretty lucky!
+			message_second = span_green("\[Success\] <b>[user]</b> [GLOB.special_phrases[special_noun]["success"]]") // [Success] User is pretty lucky!
 		else
-			message_second = "\[Failure] <b>[user]</b> [GLOB.special_phrases[special_noun]["failure"]]" // [Failure} User isn't very lucky...
+			message_second = span_red("\[Failure\] <b>[user]</b> [GLOB.special_phrases[special_noun]["failure"]]") // [Failure} User isn't very lucky...
 
 		user.visible_message(
 			message = message_second,
