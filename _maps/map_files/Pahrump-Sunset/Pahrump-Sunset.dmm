@@ -11693,12 +11693,10 @@
 	},
 /area/f13/building/firestation)
 "aNp" = (
-/obj/machinery/chem_dispenser,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
-/area/f13/building)
+/obj/structure/shelf_wood,
+/obj/item/circuitboard/machine/sleeper,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "aNr" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -19406,6 +19404,10 @@
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"btB" = (
+/obj/machinery/workbench/advanced,
+/turf/open/floor/plasteel/vault,
+/area/f13/ncr)
 "btD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -20527,9 +20529,12 @@
 	},
 /area/f13/wasteland)
 "bEY" = (
-/obj/machinery/workbench/advanced,
-/turf/open/floor/plasteel/vault,
-/area/f13/ncr)
+/obj/machinery/chem_dispenser,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building)
 "bFu" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -22532,12 +22537,14 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "coc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
+/obj/structure/nest/securitron{
+	max_mobs = 1;
+	spawn_once = 1
 	},
-/turf/open/floor/plasteel/floorgrime,
-/area/f13/building)
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building/museum)
 "coi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/grass/wasteland{
@@ -23540,6 +23547,10 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/ncr)
+"cBC" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "cBG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -23559,13 +23570,6 @@
 /area/f13/wasteland)
 "cBX" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
-/area/f13/building)
-"cCJ" = (
-/obj/machinery/smartfridge/chemistry/preloaded,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
 /area/f13/building)
 "cDe" = (
 /obj/machinery/button/door{
@@ -43651,10 +43655,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/mall)
-"mQb" = (
-/obj/structure/simple_door/interior,
-/turf/open/floor/wood_common,
-/area/f13/building)
 "mQk" = (
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
@@ -46527,10 +46527,6 @@
 "oql" = (
 /turf/open/floor/carpet/blue,
 /area/f13/building)
-"oqq" = (
-/obj/structure/rack,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "oqr" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -46780,15 +46776,6 @@
 	icon_state = "floordirtysolid"
 	},
 /area/f13/ncr)
-"owf" = (
-/obj/structure/nest/securitron{
-	max_mobs = 1;
-	spawn_once = 1
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building/museum)
 "owi" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -48451,6 +48438,13 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/ncr)
+"pqS" = (
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building)
 "pro" = (
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /obj/effect/spawner/lootdrop/trash,
@@ -49290,6 +49284,19 @@
 	icon_state = "horizontalinnermain3"
 	},
 /area/f13/wasteland)
+"pKN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/nest/ghoul{
+	max_mobs = 2;
+	radius = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building)
 "pKW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/savannah,
@@ -50323,6 +50330,14 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/village)
+"qrt" = (
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/chem_heater,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
+	icon_state = "showroomfloor";
+	name = "tile"
+	},
+/area/f13/building)
 "qru" = (
 /obj/structure/fluff/railing,
 /obj/machinery/light/broken{
@@ -51118,6 +51133,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"qMt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/mineral/ore_redemption,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "qME" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -56093,6 +56115,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"tAJ" = (
+/obj/structure/simple_door/interior,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "tAP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -58856,14 +58882,6 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"uUz" = (
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/chem_heater,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
-/area/f13/building)
 "uUA" = (
 /obj/structure/closet/crate,
 /obj/effect/decal/cleanable/dirt,
@@ -59530,10 +59548,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "vmM" = (
-/obj/structure/shelf_wood,
-/obj/item/circuitboard/machine/sleeper,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/wood{
+	name = "Bighorn Residence"
+	},
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/building)
 "vnb" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -64723,19 +64743,6 @@
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building)
-"yaZ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
 	},
 /area/f13/building)
 "ybo" = (
@@ -73411,7 +73418,7 @@ aaa
 aae
 aae
 xLa
-bEY
+btB
 aog
 aLq
 bxA
@@ -74637,7 +74644,7 @@ aOk
 etg
 aXa
 muJ
-vsw
+qMt
 tCT
 vNL
 vNL
@@ -78156,7 +78163,7 @@ bwG
 acl
 bWj
 fBf
-coc
+vmM
 iXi
 jQm
 rMX
@@ -80739,7 +80746,7 @@ bqN
 bqN
 acl
 mGY
-mQb
+tAJ
 hHX
 acl
 ofA
@@ -99535,9 +99542,9 @@ oQn
 diX
 ayn
 bkO
-uUz
+qrt
 ssB
-yaZ
+pKN
 krM
 krM
 kKH
@@ -99792,7 +99799,7 @@ rTS
 diX
 ayn
 blg
-aNp
+bEY
 ssB
 ssB
 kBd
@@ -99860,7 +99867,7 @@ puK
 aER
 gGC
 xWv
-owf
+coc
 bgS
 bgS
 aER
@@ -100306,7 +100313,7 @@ eZJ
 blg
 ayn
 blg
-cCJ
+pqS
 awC
 wDO
 iPQ
@@ -101402,7 +101409,7 @@ bgS
 xqx
 kJz
 xWv
-owf
+coc
 aER
 bgS
 bgS
@@ -111803,7 +111810,7 @@ vXd
 ijr
 dIV
 aJb
-oqq
+cBC
 ijr
 qmp
 bfz
@@ -112574,7 +112581,7 @@ vcV
 ijr
 gSw
 lhi
-vmM
+aNp
 ekB
 aEs
 bfz
