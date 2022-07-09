@@ -4561,7 +4561,6 @@
 /area/f13/sewer)
 "bRp" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/pill/healingpowder,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -4838,11 +4837,6 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/f13/wood,
-/area/f13/sewer)
-"bVw" = (
-/obj/item/reagent_containers/pill/healingpowder,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "bVx" = (
@@ -10824,15 +10818,6 @@
 /area/f13/caves)
 "hZi" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "hZw" = (
@@ -74965,7 +74950,7 @@ bQC
 bUq
 bRF
 eaW
-bVw
+teK
 bQC
 aae
 aaa
