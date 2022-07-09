@@ -148,6 +148,5 @@
 /datum/component/slippery/clowning
 
 /datum/component/slippery/clowning/Slip_on_wearer(datum/source, atom/movable/AM)
-	var/obj/item/I = holder.get_item_by_slot(ITEM_SLOT_FEET)
 	if(holder.lying && !holder.buckled)
 		to_chat(holder,span_warning("[parent] failed to slip anyone. Perhaps I shouldn't have abandoned my legacy..."))
