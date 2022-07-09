@@ -174,8 +174,8 @@
 
 
 /obj/screen/alert/fat
-	name = "Fat"
-	desc = "You ate too much food, lardass. Run around the station and lose some weight."
+	name = "Stuffed"
+	desc = "You ate too much food, now your satiated gut is slowing you down."
 	icon_state = "fat"
 
 /obj/screen/alert/hungry
