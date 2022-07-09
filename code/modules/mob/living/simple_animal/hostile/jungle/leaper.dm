@@ -57,6 +57,7 @@
 	name = "leaper bubble"
 	icon = 'icons/obj/projectiles.dmi'
 	icon_state = "leaper_bubble_pop"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	duration = 3
 

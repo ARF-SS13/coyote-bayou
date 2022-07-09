@@ -90,10 +90,8 @@
 	else if(dispense)
 		cuffs = new type()
 
-	cuffs.forceMove(target)
-	target.handcuffed = cuffs
+	target.equip_to_slot(cuffs, SLOT_HANDCUFFED)
 
-	target.update_handcuffed()
 	if(trashtype && !dispense)
 		qdel(src)
 	if(iscyborg(user))

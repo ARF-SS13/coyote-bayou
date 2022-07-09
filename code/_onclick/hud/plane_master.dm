@@ -99,6 +99,12 @@
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
 
+/obj/screen/plane_master/mob
+	name = "mob plane master"
+	plane = MOB_PLANE
+	appearance_flags = PLANE_MASTER //should use client color
+	blend_mode = BLEND_OVERLAY
+
 //Reserved to chat messages, so they are still displayed above the field of vision masking.
 /obj/screen/plane_master/chat_messages
 	name = "chat messages plane master"

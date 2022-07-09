@@ -49,9 +49,11 @@ LINEN BINS
 	if(!user.dropItemToGround(src))
 		return
 	if(layer == initial(layer))
+		plane = MOB_PLANE // makes it render on the mob plane to overlay the mobs.
 		layer = ABOVE_MOB_LAYER
 		to_chat(user, "<span class='notice'>You cover yourself with [src].</span>")
 	else
+		plane = initial(plane) // sets it back!
 		layer = initial(layer)
 		to_chat(user, "<span class='notice'>You smooth [src] out beneath you.</span>")
 	add_fingerprint(user)
