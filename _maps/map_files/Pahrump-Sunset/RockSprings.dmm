@@ -5368,7 +5368,8 @@
 /area/f13/village)
 "om" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest"
+	id = "Redwaterwest";
+	name = "redwest"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 8;
@@ -11218,7 +11219,8 @@
 /obj/machinery/button{
 	id = "Redwaternorf";
 	pixel_x = -23;
-	pixel_y = -3
+	pixel_y = -3;
+	req_one_access_txt = null
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -12024,7 +12026,9 @@
 /obj/machinery/button{
 	id = "Redwaterwest";
 	pixel_x = 1;
-	pixel_y = -23
+	pixel_y = -23;
+	name = "redwest";
+	req_one_access_txt = null
 	},
 /obj/structure/chair{
 	dir = 8
@@ -14851,7 +14855,8 @@
 /area/f13/caves)
 "Nw" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest"
+	id = "Redwaterwest";
+	name = "redwest"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 10;
@@ -15554,7 +15559,8 @@
 /area/f13/building)
 "Pu" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest"
+	id = "Redwaterwest";
+	name = "redwest"
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 9;
