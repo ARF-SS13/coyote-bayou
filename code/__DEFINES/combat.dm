@@ -467,7 +467,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_GLOBAL_MULT 1
 
 /// Gun recoil modifier per shot defines
-#define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0)
+#define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0.1)
 #define GUN_RECOIL_PISTOL_LIGHT (GUN_RECOIL_GLOBAL_MULT * 1)
 #define GUN_RECOIL_PISTOL_MEDIUM (GUN_RECOIL_GLOBAL_MULT * 2)
 #define GUN_RECOIL_PISTOL_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.5)
@@ -493,7 +493,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_TIMEOUT_BASE (2 SECONDS)
 
 /// Gun recoil timeout modifiers
-#define GUN_RECOIL_TIMEOUT_INSTANT (GUN_RECOIL_TIMEOUT_BASE * 0)
+#define GUN_RECOIL_TIMEOUT_INSTANT (GUN_RECOIL_TIMEOUT_BASE * 0.1)
 #define GUN_RECOIL_TIMEOUT_QUICK (GUN_RECOIL_TIMEOUT_BASE * 0.75)
 #define GUN_RECOIL_TIMEOUT_NORMAL (GUN_RECOIL_TIMEOUT_BASE * 1)
 #define GUN_RECOIL_TIMEOUT_LONG (GUN_RECOIL_TIMEOUT_BASE * 1.5)
@@ -513,7 +513,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
 
 /// Gun fire delay modifiers
-#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0) // Mostly just good for automatics
+#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0.1) // Mostly just good for automatics
 #define GUN_FIRE_DELAY_FASTER (GUN_FIRE_DELAY_BASE * 0.2) // 0.2s Mostly just good for automatics
 #define GUN_FIRE_DELAY_FAST (GUN_FIRE_DELAY_BASE * 0.4) // 0.4s
 #define GUN_FIRE_DELAY_NORMAL (GUN_FIRE_DELAY_BASE * 0.6) // 0.6s
@@ -524,7 +524,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_AUTOFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
-#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0)
+#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0.1)
 #define GUN_AUTOFIRE_DELAY_FASTER (GUN_AUTOFIRE_DELAY_BASE * 1)
 #define GUN_AUTOFIRE_DELAY_FAST (GUN_AUTOFIRE_DELAY_BASE * 2)
 #define GUN_AUTOFIRE_DELAY_NORMAL (GUN_AUTOFIRE_DELAY_BASE * 3)
@@ -535,7 +535,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_BURSTFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
-#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0)
+#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0.1)
 #define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 1)
 #define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 2)
 #define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 3)
@@ -546,7 +546,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_AIMING_TIME (1.5 SECONDS)
 
 /// Gun draw time modifiers
-#define GUN_DRAW_QUICK (GUN_AIMING_TIME * 0) // Draw, pardner
+#define GUN_DRAW_QUICK (GUN_AIMING_TIME * 0.1) // Draw, pardner
 #define GUN_DRAW_NORMAL (GUN_AIMING_TIME * 1)
 #define GUN_DRAW_LONG (GUN_AIMING_TIME * 1.5)
 
@@ -582,7 +582,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
 
 /// Gun slowdown
-#define GUN_SLOWDOWN_NONE 0
+#define GUN_SLOWDOWN_NONE 0.1
 #define GUN_SLOWDOWN_PISTOL_LIGHT 0.05
 #define GUN_SLOWDOWN_PISTOL_MEDIUM 0.10
 #define GUN_SLOWDOWN_PISTOL_HEAVY 0.15
@@ -607,7 +607,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 /// Delay between cocking your gun
 #define GUN_COCK_BASE (1 SECONDS)
 
-#define GUN_COCK_INSTANT 0
+#define GUN_COCK_INSTANT 0.1
 #define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
 #define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
 #define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)
