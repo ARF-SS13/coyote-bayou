@@ -25,13 +25,13 @@
 #define WOUND_BURN		4
 
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind()]
-#define WOUND_DETERMINATION_MODERATE	1
-#define WOUND_DETERMINATION_SEVERE		2.5
-#define WOUND_DETERMINATION_CRITICAL	5
-#define WOUND_DETERMINATION_LOSS		7.5
+#define WOUND_DETERMINATION_MODERATE 5
+#define WOUND_DETERMINATION_SEVERE 8
+#define WOUND_DETERMINATION_CRITICAL 10
+#define WOUND_DETERMINATION_LOSS 15
 
 /// the max amount of determination you can have
-#define WOUND_DETERMINATION_MAX			10
+#define WOUND_DETERMINATION_MAX 20
 
 /// set wound_bonus on an item or attack to this to disable checking wounding for the attack
 #define CANT_WOUND -100
