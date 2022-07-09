@@ -133,8 +133,10 @@
 
 /obj/structure/chair/proc/handle_layer()
 	if(has_buckled_mobs() && dir == NORTH)
+		plane = MOB_PLANE
 		layer = ABOVE_MOB_LAYER
 	else
+		plane = initial(plane)
 		layer = OBJ_LAYER
 
 /obj/structure/chair/post_buckle_mob(mob/living/M)
