@@ -3,6 +3,7 @@
 	desc = "Puts reagents into containers, like bottles and beakers."
 	icon_state = "bottler"
 	layer = ABOVE_ALL_MOB_LAYER
+	plane = MOB_PLANE
 	reagent_flags = TRANSPARENT | DRAINABLE
 	rcd_cost = 50
 	rcd_delay = 50

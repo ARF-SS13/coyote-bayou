@@ -3,12 +3,14 @@
 	desc = "Wataaa!."
 	icon = 'icons/turf/pool.dmi'
 	icon_state = "splash"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 
 /obj/effect/whirlpool
 	name = "Whirlpool"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "whirlpool"
+	plane = MOB_PLANE
 	layer = 5
 	anchored = TRUE
 	mouse_opacity = 0
@@ -21,6 +23,7 @@
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "waterspout"
 	color = "#3399AA"
+	plane = MOB_PLANE
 	layer = 5
 	anchored = TRUE
 	mouse_opacity = 0
