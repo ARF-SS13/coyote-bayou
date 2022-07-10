@@ -7201,9 +7201,16 @@
 /area/f13/brotherhood/leisure)
 "geX" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
+/obj/item/ammo_box/magazine/m5mm,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "geZ" = (
@@ -10001,6 +10008,14 @@
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/brotherhood/operations)
+"iLv" = (
+/obj/structure/rack,
+/obj/item/clothing/suit/armor/medium/combat/swat,
+/obj/item/clothing/suit/armor/medium/combat/swat,
+/obj/item/clothing/suit/armor/medium/combat/swat,
+/obj/item/clothing/suit/armor/medium/combat/swat,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/enclave)
 "iLw" = (
 /obj/machinery/light{
 	dir = 8;
@@ -13914,7 +13929,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
 /obj/item/stack/ore/blackpowder/twenty,
-/obj/item/stack/crafting/armor_plate/ten,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "mnO" = (
@@ -15866,6 +15880,10 @@
 	light_color = "#e8eaff"
 	},
 /obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "nXb" = (
@@ -19572,6 +19590,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "qSg" = (
@@ -21936,6 +21955,7 @@
 "sYG" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
 "sYI" = (
@@ -22586,9 +22606,12 @@
 /area/f13/brotherhood/dorms)
 "tDT" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
+/obj/item/grenade/syndieminibomb/concussion/frag,
+/obj/item/grenade/syndieminibomb/concussion/frag,
+/obj/item/grenade/syndieminibomb/concussion/frag,
+/obj/item/grenade/syndieminibomb/concussion/frag,
+/obj/item/grenade/syndieminibomb/concussion/frag,
+/obj/item/grenade/syndieminibomb/concussion/frag,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "tED" = (
@@ -23907,6 +23930,10 @@
 /area/f13/brotherhood/leisure)
 "uHQ" = (
 /obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
+/obj/item/gun/ballistic/automatic/assault_carbine/worn,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/enclave)
 "uHR" = (
@@ -25900,6 +25927,7 @@
 /area/f13/bunker)
 "wtv" = (
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/enclave)
@@ -52031,7 +52059,7 @@ wMS
 wMS
 nWR
 uHQ
-tDT
+geX
 geX
 bpQ
 vJI
@@ -52546,7 +52574,7 @@ pRW
 pRW
 vjR
 vjR
-vjR
+iLv
 bpQ
 vLB
 vJI
@@ -52803,7 +52831,7 @@ vjR
 ivZ
 vID
 pRW
-vjR
+iLv
 bpQ
 kOt
 gmD
@@ -53057,7 +53085,7 @@ vjR
 ybM
 vjR
 pRW
-uHQ
+tDT
 dRg
 vjR
 vjR

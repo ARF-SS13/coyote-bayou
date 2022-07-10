@@ -5582,8 +5582,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aul" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 4
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aum" = (
@@ -22898,8 +22901,6 @@
 /area/f13/caves)
 "crx" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "cry" = (
@@ -29538,6 +29539,14 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"fGU" = (
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "fHl" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -30245,9 +30254,9 @@
 /area/f13/building)
 "gaX" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
+/turf/open/indestructible/ground/outside/roaddirt{
 	dir = 8;
-	icon_state = "outerpavementcorner"
+	icon_state = "innerpavementcorner"
 	},
 /area/f13/wasteland)
 "gbz" = (
@@ -33052,12 +33061,13 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "hyV" = (
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 8
 	},
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "hyY" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
@@ -38087,9 +38097,9 @@
 	icon_state = "goo12"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/sidewalk{
+/turf/open/indestructible/ground/outside/roaddirt{
 	dir = 10;
-	icon_state = "outerpavement"
+	icon_state = "innerpavement"
 	},
 /area/f13/wasteland)
 "kko" = (
@@ -42958,8 +42968,6 @@
 /area/f13/wasteland)
 "mAA" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
 /obj/effect/spawner/lootdrop/clothing_low,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/hypospray/medipen/medx,
@@ -43894,7 +43902,6 @@
 /obj/item/stack/sheet/cloth/five,
 /obj/item/weaponcrafting/string,
 /obj/item/weaponcrafting/string,
-/obj/item/reagent_containers/pill/patch/healingpowder,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "mVi" = (
@@ -45382,6 +45389,13 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"nLB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "nLL" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -45432,10 +45446,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nMT" = (
-/obj/structure/rack,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "nMW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -45733,7 +45748,17 @@
 "nUp" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/drinks/flask,
-/obj/item/reagent_containers/pill/patch/healingpowder,
+/turf/open/floor/f13/wood,
+/area/f13/building)
+"nUw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/kitchen/rollingpin{
+	pixel_x = -3
+	},
+/obj/item/kitchen/knife{
+	pixel_x = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "nUG" = (
@@ -47966,6 +47991,15 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"pcA" = (
+/obj/structure/nest/ghoul{
+	max_mobs = 2;
+	radius = 5
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom0"
+	},
+/area/f13/wasteland)
 "pdm" = (
 /turf/open/indestructible/ground/outside/desert{
 	icon_state = "wasteland33"
@@ -49094,6 +49128,13 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/mall)
+"pDj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pDu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/oil/slippery,
@@ -49427,6 +49468,13 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
+"pPL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pPO" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/desert,
@@ -49587,6 +49635,10 @@
 /obj/effect/turf_decal/bot_red,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/bunker)
+"pVj" = (
+/obj/structure/chair,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "pVB" = (
 /obj/structure/window/fulltile/house,
 /turf/closed/wall/f13/wood/house,
@@ -50647,6 +50699,15 @@
 /area/f13/wasteland)
 "qyX" = (
 /obj/structure/safe,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
+/obj/item/stack/f13Cash/random/med,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qzv" = (
@@ -51627,17 +51688,14 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "raS" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/nest/ghoul{
+	max_mobs = 2;
+	radius = 5
 	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft2"
 	},
-/obj/item/reagent_containers/pill/patch/healingpowder,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building/mall)
+/area/f13/wasteland)
 "rbg" = (
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/village)
@@ -53460,6 +53518,13 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"scq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/structure/closet/fridge,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "scB" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -56625,8 +56690,6 @@
 "tNm" = (
 /obj/structure/closet/crate,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/item/reagent_containers/pill/patch/bitterdrink,
-/obj/item/reagent_containers/pill/patch/bitterdrink,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tNt" = (
@@ -56781,6 +56844,11 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland)
+"tRz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "tRF" = (
 /obj/structure/rack,
 /obj/effect/decal/cleanable/dirt{
@@ -58585,6 +58653,18 @@
 "uNJ" = (
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"uNQ" = (
+/obj/structure/nest/ghoul{
+	max_mobs = 2;
+	radius = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "uNV" = (
 /obj/structure/flora/grass/coyote/six,
 /turf/open/indestructible/ground/outside/dirt,
@@ -60815,13 +60895,6 @@
 /obj/item/stack/medical/suture/emergency/five,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/obj/item/reagent_containers/pill/patch/healingpowder{
-	pixel_y = 13
-	},
-/obj/item/reagent_containers/pill/patch/healingpowder{
-	pixel_x = -11;
-	pixel_y = 12
-	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "vUJ" = (
@@ -62702,6 +62775,12 @@
 	icon_state = "innerpavement"
 	},
 /area/f13/wasteland)
+"wXr" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/structure/table,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "wXu" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -67030,9 +67109,9 @@ heG
 iGB
 aOk
 aOk
-esY
+tpP
 ean
-nbb
+anR
 bzW
 vAk
 oac
@@ -67287,9 +67366,9 @@ aOk
 aOk
 cFK
 cFK
-esY
+tpP
 abz
-nbb
+anR
 kGV
 bzW
 aon
@@ -67544,11 +67623,11 @@ cFK
 nrt
 cle
 aTo
-bas
+wXp
 mIt
-xxN
-rnk
-rnk
+ksO
+hEh
+hEh
 kGV
 aon
 aon
@@ -68059,8 +68138,8 @@ bZY
 bZY
 bZY
 aOk
-xHh
-fWo
+xPG
+tRd
 dcy
 vsg
 dcy
@@ -68317,9 +68396,9 @@ ans
 iSC
 cMS
 aOk
-xHh
-mfT
-sKy
+xPG
+pRE
+xJp
 ean
 jSv
 vsg
@@ -84475,7 +84554,7 @@ aaa
 aae
 aae
 aaa
-aaa
+kiu
 aae
 aae
 aae
@@ -84521,9 +84600,9 @@ aae
 afz
 afz
 afz
-afz
-afz
-afz
+xLC
+xLC
+xLC
 aQW
 aQW
 aQW
@@ -84731,8 +84810,8 @@ aaa
 aaa
 aae
 aae
-aae
-aae
+aaB
+aaB
 aaa
 aaa
 aae
@@ -84769,18 +84848,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
 afz
 afz
 afz
 afz
 afz
 afz
+afz
+afz
+afz
+afz
+afz
+xLC
 xLC
 xLC
 xLC
@@ -84988,8 +85067,8 @@ aaa
 aaa
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aaa
 aaa
@@ -85026,12 +85105,12 @@ aae
 aae
 aae
 aae
-aaa
-aaa
-aaa
-aae
-aae
-aae
+afz
+xyU
+pPL
+aul
+ddk
+xyU
 afz
 ala
 aoE
@@ -85246,8 +85325,8 @@ aaa
 aae
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -85273,7 +85352,7 @@ aab
 aaB
 aaB
 aaB
-aae
+aaB
 aab
 aab
 aae
@@ -85283,12 +85362,12 @@ aae
 aae
 aae
 aaa
-aaa
-aaa
-aaa
-aaa
-aae
-aae
+afz
+pVj
+tRz
+tRz
+fGU
+xyU
 afz
 cmc
 anW
@@ -85504,13 +85583,13 @@ aae
 aae
 aae
 aae
+aaB
+aaB
+aaB
 aae
 aae
 aae
-aae
-aae
-aae
-aaa
+aaB
 aae
 aae
 aae
@@ -85528,9 +85607,9 @@ aae
 aae
 aab
 aaB
-aae
-aae
-aae
+aaB
+aaB
+aaB
 aab
 aae
 aae
@@ -85540,13 +85619,13 @@ aae
 aae
 aae
 aae
-aaa
-aaa
-aaa
-aae
-aae
-aae
 afz
+nLB
+pDj
+wXr
+nMT
+kVQ
+bcF
 xyU
 kVQ
 xyU
@@ -85763,13 +85842,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaB
+ali
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 aak
@@ -85781,28 +85860,28 @@ aae
 aaa
 aaa
 aaa
-aae
-aae
+aaB
+aaB
+bpQ
+aaB
+aaB
+aaB
+aaB
 aab
 aae
 aae
-aae
-aae
-aab
-aae
-aae
 aaa
 aaa
 aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+afz
+xyU
+hyV
+uNQ
+kVQ
+kVQ
 afz
 cmA
 biD
@@ -86022,17 +86101,30 @@ aae
 aae
 aak
 aae
+aaB
+aaY
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
+aaB
+aaB
 aae
 aak
+aak
+aae
+aaB
+aaB
+aaB
+aae
+aaa
+aae
+aaB
+aaB
+aab
+aaB
+aaB
+aaB
+aaB
+aab
 aae
 aae
 aae
@@ -86040,26 +86132,13 @@ aaa
 aae
 aae
 aae
-aab
 aae
-aae
-aae
-aae
-aab
-aae
-aae
-aae
-aaa
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+afz
+xyU
+biD
+xUm
+pMN
+xUm
 afz
 aps
 fsY
@@ -86263,7 +86342,7 @@ vxU
 aaA
 gtu
 aae
-aae
+qqO
 qqO
 aae
 aae
@@ -86278,45 +86357,45 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aak
 aae
+aaB
+aaB
+aaB
 aak
-aak
-aak
-aak
+aaB
+aaB
 aae
+aaB
+aaB
 aae
+aaB
+aaB
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aab
+aaB
+aaB
+aaB
+aaB
 aab
 aae
 aae
 aae
 aae
-aab
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+afz
+xyU
+aKR
+aTd
+scq
+nUw
 afz
 qyX
 alL
@@ -86534,8 +86613,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -86543,35 +86622,35 @@ aae
 aak
 aak
 aak
+aaY
+ali
+aaB
 aak
-aak
-aak
-aak
 aae
 aae
+aaB
+aaB
+aaB
+aaY
 aae
-aae
-aae
-aae
-aae
+aab
+aaB
+aaB
+aaB
+aaB
 aab
 aae
 aae
 aae
 aae
-aab
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+afz
+afz
+afz
+afz
 afz
 afz
 afz
@@ -86790,31 +86869,31 @@ aae
 aae
 aae
 aae
+aaB
+aaB
+aae
+aae
+aae
+aae
 aae
 aak
+aaB
+aaB
+aaB
+aaB
+kiu
 aae
 aae
 aae
 aae
-aae
-aak
-aak
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
 aab
 aaB
-aae
-aae
+aaB
+aaB
 aaB
 aab
 aab
@@ -87034,7 +87113,7 @@ uHp
 aaA
 gtu
 qqO
-qqO
+ian
 aae
 aae
 aae
@@ -87047,7 +87126,7 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aae
 aae
 aae
@@ -87056,15 +87135,15 @@ aae
 aak
 aak
 aak
+aaB
 aak
-aak
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+kiu
+aaB
+aaB
+aaB
 aae
 aae
 aab
@@ -87304,23 +87383,23 @@ aae
 aae
 aak
 aae
+aaB
+aae
+aak
 aae
 aae
 aak
-aae
-aae
 aak
-aak
-aak
-aak
-aak
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+ali
+aaB
+aaB
 aae
 aae
 aae
@@ -87561,22 +87640,22 @@ aae
 aae
 aak
 aae
-aae
+aaB
 aak
 aae
 aae
+aaB
+aaB
+aaB
+aaB
 aak
 aak
-aak
-aak
-aak
-aak
+aaB
+aaB
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -87818,22 +87897,22 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
+aaY
 aak
 aak
 aak
-aak
-aak
 aae
 aae
+aaB
+aaB
 aae
 aae
-aae
-aae
-aae
+aaB
 aae
 aae
 oHM
@@ -88077,20 +88156,20 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aak
 aak
+aaB
+aaB
 aak
-aak
-aak
 aae
 aae
 aae
 aae
+aaB
 aae
-aae
-aae
-aae
+aaB
+aaB
 aae
 oHM
 oHM
@@ -88334,19 +88413,19 @@ aae
 aae
 aae
 aak
+aaB
 aak
 aak
 aak
-aak
+aaB
 aae
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
+aaB
+aaY
+aaB
 aae
 aae
 oHM
@@ -88591,18 +88670,18 @@ aae
 aae
 aae
 aae
-aak
-aak
-aae
-aak
+aaB
 aak
 aae
+aak
+aaB
+aae
 aae
 aak
 aae
 aae
 aae
-aae
+aaB
 aae
 aae
 aae
@@ -88848,18 +88927,18 @@ aae
 aae
 aae
 aae
-aak
-aak
-aae
-aae
-aae
-aak
-aae
+aaB
 aak
 aae
 aae
+aaB
+aak
+aae
+aak
 aae
 aae
+aaB
+aaB
 aae
 aae
 aae
@@ -89053,12 +89132,12 @@ ean
 ean
 ean
 ean
-xJp
-xJp
-xJp
-xJp
-xJp
-xJp
+hEh
+hEh
+hEh
+hEh
+hEh
+hEh
 vqc
 cFK
 aOk
@@ -89104,18 +89183,18 @@ aae
 aae
 aak
 aak
+aaB
+aaB
+kiu
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -89361,17 +89440,17 @@ aak
 aae
 aae
 aae
-aak
-aak
+aaB
+aaB
+aaB
+aaB
 aae
 aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 aae
@@ -89616,19 +89695,19 @@ aae
 aak
 aae
 aae
+aaB
+aaB
+aaB
+ali
+ali
+aaB
 aae
-aae
+aak
 aak
 aae
 aae
 aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -89872,20 +89951,20 @@ aaa
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
+aaB
+ali
+ali
+aaY
+aaB
+aaB
+aak
 aak
 aae
-aak
-aae
-aak
-aak
 aae
 aae
 aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -90129,20 +90208,20 @@ aaa
 aae
 aae
 aak
+aaB
 aae
-aae
-aae
-aae
-aak
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
+kiu
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 aae
@@ -90386,19 +90465,19 @@ aaa
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aak
-aak
-aak
+aaB
 aae
 aak
 aak
 aae
+aaB
+aak
+aak
 aae
+aak
+aak
+aaY
+aaB
 aae
 aae
 aae
@@ -90643,18 +90722,18 @@ aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
+aaB
 aae
 aae
 aae
 aak
+aaB
+aak
+aae
+aae
+aae
+aae
+aaB
 aak
 aae
 aae
@@ -90900,18 +90979,18 @@ aaa
 aae
 aae
 aak
-aae
+aaB
 aae
 aae
 aae
 aak
-aak
-aak
-aae
+aaB
 aak
 aae
+aak
 aae
 aae
+aaB
 aae
 aae
 aae
@@ -91157,18 +91236,18 @@ aaa
 aae
 aae
 aak
-aae
+aaB
 aae
 aae
 aae
 aak
+aaB
+aaB
+aak
+aak
 aak
 aae
-aak
-aak
-aak
-aae
-aae
+aaB
 aak
 aae
 aae
@@ -91414,18 +91493,18 @@ aaa
 aae
 aae
 aae
+aaB
 aae
 aae
 aae
 aae
 aae
+aaB
 aae
 aak
 aae
-aak
 aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -91671,18 +91750,18 @@ aaa
 aae
 aae
 aae
-aae
+aaB
 aak
 aae
 aae
 aae
 aak
-aae
+aaB
 aak
 aak
 aak
 aae
-aae
+aaB
 aae
 aae
 aae
@@ -91928,18 +92007,18 @@ aaa
 aae
 aae
 aae
+aaB
+aaB
 aae
-aak
-aae
-aae
-aae
-aak
 aae
 aae
 aak
+aaB
+aaB
 aak
 aak
 aak
+aaB
 aae
 aae
 aae
@@ -92186,17 +92265,17 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aae
-aae
-aae
+aaB
 aae
 aak
 aae
+aae
+aae
+aaB
 aak
-aak
+kiu
+aaB
+aaB
 aae
 aae
 aae
@@ -92443,16 +92522,16 @@ aae
 aae
 aae
 aae
+aaB
 aae
 aae
 aae
 aae
 aae
-aae
-aae
-aak
-aae
-aak
+aaB
+aaB
+aaY
+aaB
 aae
 aae
 aae
@@ -92700,16 +92779,16 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aak
 aae
 aae
 aae
 aak
 aae
-aae
-aae
-aak
+aaB
+ali
+aaB
 aak
 aae
 aae
@@ -92768,7 +92847,7 @@ sXv
 aer
 wVA
 kDp
-gSH
+raS
 iFp
 jLN
 wVA
@@ -92957,15 +93036,15 @@ aae
 aae
 aae
 aae
-aak
+aaB
 aae
 aae
 aak
 aae
 aak
-aae
-aak
-aak
+aaB
+ali
+aaB
 aae
 aae
 aak
@@ -93214,14 +93293,14 @@ aae
 aae
 aae
 aae
-aak
+aaB
 aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
 aak
 aae
 aae
@@ -93471,13 +93550,13 @@ aae
 aae
 aae
 aak
+aaB
 aae
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
+aaB
 aae
 aak
 aae
@@ -93728,12 +93807,12 @@ aae
 aae
 aae
 aae
+aaB
 aae
 aae
 aae
 aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -93985,12 +94064,12 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aae
 aak
 aak
 aak
-aae
+aaB
 aak
 aae
 aak
@@ -94242,12 +94321,12 @@ aae
 aae
 aae
 aae
+aaB
+aaB
+aaB
+aaB
 aae
-aae
-aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -94299,7 +94378,7 @@ asg
 sYZ
 atf
 fsY
-aul
+pgO
 auM
 oZC
 abP
@@ -94500,11 +94579,11 @@ aae
 aae
 aak
 aae
-aae
-aae
-aae
-aae
-aae
+aaB
+aaB
+aaB
+aaB
+aaB
 aae
 aae
 aae
@@ -94756,12 +94835,12 @@ aae
 aae
 aak
 aae
+aaB
+aaB
 aae
 aae
 aae
-aae
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -95013,12 +95092,12 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
 aaB
+aae
+aae
+aae
+aae
+abV
 aaA
 aae
 aae
@@ -95270,7 +95349,7 @@ aae
 aae
 aae
 aae
-aae
+aaB
 aae
 aae
 aaA
@@ -95526,8 +95605,8 @@ aaa
 aae
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aaB
@@ -95782,8 +95861,8 @@ aaa
 aaa
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aaA
@@ -95836,7 +95915,7 @@ odm
 odm
 iXF
 aQZ
-mHp
+pcA
 sXv
 hDy
 srN
@@ -96039,7 +96118,7 @@ aaa
 aaa
 aae
 aae
-aae
+aaB
 aae
 aae
 aae
@@ -96295,8 +96374,8 @@ aaa
 (122,1,1) = {"
 aaa
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -96552,8 +96631,8 @@ aaa
 (123,1,1) = {"
 aaa
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -97342,7 +97421,7 @@ aaB
 ajF
 srd
 adO
-nMT
+wSI
 ajF
 aae
 aae
@@ -107746,7 +107825,7 @@ aaQ
 oUj
 aaQ
 fOB
-hyV
+lRa
 xDz
 aOk
 aOk
@@ -123123,7 +123202,7 @@ rXk
 uul
 tzm
 sMq
-raS
+aNW
 vqo
 tzm
 tzm
