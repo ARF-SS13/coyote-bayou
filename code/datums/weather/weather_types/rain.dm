@@ -95,8 +95,8 @@
 				H.update_inv_belt()
 		CHECK_TICK
 
-
 /datum/weather/rain/weather_act_turf(turf/open/T)
+/* // Stops weather from cleaning the ground (though it still cleans mobs c:)
 	var/cleaned
 	if(!cleaned)
 		for(var/obj/effect/decal/O in T) //Clean cleanable decals in affected areas
@@ -104,6 +104,10 @@
 				qdel(O)
 				cleaned = 1
 				CHECK_TICK
+*/
+	for(var/obj/machinery/hydroponics/tray in T) // Makes it so plants get water from rain :o
+		tray.adjustWater(80)
+		CHECK_TICK
 
 /datum/weather/rain/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
