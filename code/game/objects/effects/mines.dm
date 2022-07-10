@@ -20,10 +20,12 @@
 /obj/effect/mine/proc/mineEffect(mob/victim)
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
-/obj/effect/mine/proc/on_entered(datum/source, atom/movable/AM)
+/obj/effect/mine/proc/on_entered(datum/source)
 	SIGNAL_HANDLER
-	if(triggered || !isturf(loc) || isnottriggermine(AM) || isstructure(AM))
+	if(triggered || !isturf(loc) || !isliving(usr) || isstructure(usr) || isnottriggermine(usr))
 		return
+	
+	var/atom/movable/AM = usr
 
 	if(AM.movement_type & FLYING)
 		return
