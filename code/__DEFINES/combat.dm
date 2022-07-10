@@ -292,14 +292,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
  * * * * * * * * * */
 
 /// Bullet damage defines
-#define BULLET_DAMAGE_PISTOL_LIGHT 10
-#define BULLET_DAMAGE_PISTOL_MEDIUM 15
-#define BULLET_DAMAGE_PISTOL_HEAVY 20
+#define BULLET_DAMAGE_PISTOL_LIGHT 20
+#define BULLET_DAMAGE_PISTOL_MEDIUM 25
+#define BULLET_DAMAGE_PISTOL_HEAVY 40
 #define BULLET_DAMAGE_RIFLE_LIGHT 25
-#define BULLET_DAMAGE_RIFLE_MEDIUM 40
-#define BULLET_DAMAGE_RIFLE_HEAVY 50
-#define BULLET_DAMAGE_SHOTGUN_PELLET 10
-#define BULLET_DAMAGE_SHOTGUN_SLUG 40
+#define BULLET_DAMAGE_RIFLE_MEDIUM 45
+#define BULLET_DAMAGE_RIFLE_HEAVY 60
+#define BULLET_DAMAGE_SHOTGUN_PELLET 11
+#define BULLET_DAMAGE_SHOTGUN_SLUG 50
 
 /// Bullet recoil defines
 #define BULLET_RECOIL_PISTOL_LIGHT 0.5
@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FULL_OTHER_HAND_RECOIL_MOD 2
 
 // Global recoil modifier
-#define GUN_RECOIL_GLOBAL_MULT 1
+#define GUN_RECOIL_GLOBAL_MULT 0.75
 
 /// Gun recoil modifier per shot defines
 #define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0.1)
@@ -500,14 +500,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_TIMEOUT_LONGER (GUN_RECOIL_TIMEOUT_BASE * 2)
 
 /// Gun spread Base
-#define GUN_SPREAD_BASE 2
+#define GUN_SPREAD_BASE 1
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE (GUN_SPREAD_BASE * 0.1)
 #define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
-#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 2)
-#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 4)
+#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 3)
+#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 6)
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
@@ -561,8 +561,8 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_EXTRA_DAMAGE_T1 1.10
 #define GUN_EXTRA_DAMAGE_T2 1.15
 #define GUN_EXTRA_DAMAGE_T3 1.25
-#define GUN_EXTRA_DAMAGE_T4 1.35
-#define GUN_EXTRA_DAMAGE_T5 1.50
+#define GUN_EXTRA_DAMAGE_T4 1.50
+#define GUN_EXTRA_DAMAGE_T5 2.00
 
 /// Also multiplies the gun's projectile damage, but so it does less damage
 #define GUN_LESS_DAMAGE_T1 0.90
