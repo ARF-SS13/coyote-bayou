@@ -23,6 +23,8 @@
 	var/hole_size= NO_HOLE
 	var/invulnerable = FALSE
 	var/hole_visuals = TRUE //Whether the fence piece has visuals for being cut. Used in update_cut_status()
+	max_integrity = 300 // juuuust about lower health than a door is.
+
 
 /obj/structure/fence/Initialize()
 	. = ..()
@@ -93,6 +95,8 @@
 						W.play_tool_sound(user, 20)
 
 				update_cut_status()
+				return TRUE
+		return FALSE
 
 		
 	if(istype(W, /obj/item/stack/rods))
@@ -125,8 +129,9 @@
 					hole_size = MEDIUM_HOLE
 
 		update_cut_status()
+		return TRUE
 
-	return TRUE
+	return ..()
 
 /obj/structure/fence/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
