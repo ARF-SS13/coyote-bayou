@@ -790,42 +790,45 @@ GLOBAL_LIST_INIT(special_skill_list, list(
 
 GLOBAL_LIST_INIT(special_triggers, list(
 	EMOTE_SPECIAL_STR = list(
+		"s",
+		"str",
 		"strength",
 		"strangth",
 		"strong",
 		"strongth",
 		"might",
-		"power",
-		"str",
-		"s"),
+		"power"),
 	EMOTE_SPECIAL_PER = list(
+		"p",
+		"per",
 		"perception",
 		"preception",
 		"look",
 		"see",
-		"peep",
-		"per",
-		"p"),
+		"peep"),
 	EMOTE_SPECIAL_END = list(
+		"e",
+		"end",
 		"endurance",
 		"endurence",
 		"toughness",
 		"tough",
 		"grit",
 		"beef",
-		"beefiness",
-		"e"),
+		"beefiness"),
 	EMOTE_SPECIAL_CHA = list(
+		"c",
+		"cha",
 		"charisma",
 		"charesma",
 		"charm",
 		"moxie",
 		"smarm",
 		"wink",
-		"char",
-		"cha",
-		"c"),
+		"char"),
 	EMOTE_SPECIAL_INT = list(
+		"int",
+		"i",
 		"intelligence",
 		"inteligence",
 		"intelligance",
@@ -841,10 +844,10 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dork",
 		"dorkiness",
 		"dweeb",
-		"dweebishness",
-		"int",
-		"i"),
+		"dweebishness"),
 	EMOTE_SPECIAL_AGI = list(
+		"agi",
+		"a",
 		"agility",
 		"agillity",
 		"quick",
@@ -860,10 +863,10 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"dodge",
 		"evade",
 		"evasion",
-		"cat",
-		"agi",
-		"a"),
+		"cat"),
 	EMOTE_SPECIAL_LCK = list(
+		"l",
+		"lck",
 		"luck",
 		"lick",
 		"lock",
@@ -872,8 +875,8 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"chance",
 		"fortune",
 		"dice",
-		"lck",
-		"l")))
+		"luk",
+		"luc")))
 
 GLOBAL_LIST_INIT(special_phrases, list(
 	EMOTE_SPECIAL_STR = list(
@@ -930,11 +933,6 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 	var/special_noun = null
 
-	if(!special_noun)
-		to_chat(user, span_alert("That's not a valid SPECIAL stat!"))
-		to_chat(user, span_notice("To use this emote, type '*special' followed by a SPECIAL stat. For instance, '*special luck' will do a (luck*10)% roll and say if you passed or not."))
-		return FALSE
-
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
 		if(params in GLOB.special_triggers[which_special])
@@ -942,6 +940,12 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 	if(!(special_noun in GLOB.special_skill_list) || !special_noun)
 		to_chat(user, span_alert("That's not a valid SPECIAL stat!"))
+		to_chat(user, span_notice("To use this emote, type '*special' followed by a SPECIAL stat. For instance, '*special luck' will do a (luck*10)% roll and say if you passed or not."))
+		var/valid_specials
+		for(var/word in GLOB.special_triggers)
+			valid_specials += "[GLOB.special_triggers[word][1]], "
+			valid_specials += "[GLOB.special_triggers[word][2]]. "
+		to_chat(user, span_notice("Some of the valid SPECIAL keywords are:[valid_specials]."))
 		return
 
 	var/special_skill = null
