@@ -26,7 +26,7 @@
 		return
 	
 	var/atom/movable/AM = usr
-
+	
 	if(AM.movement_type & FLYING)
 		return
 
