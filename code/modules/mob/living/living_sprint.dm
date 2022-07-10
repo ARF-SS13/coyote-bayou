@@ -72,6 +72,11 @@
 		if((m_intent == MOVE_INTENT_RUN) && CHECK_ALL_MOBILITY(src, MOBILITY_STAND|MOBILITY_MOVE))
 			playsound_local(src, 'sound/misc/sprintactivate.ogg', 50, FALSE, pressure_affected = FALSE)
 
+		if(iscarbon(src))
+			var/mob/living/carbon/C = src
+			C.doSprintLossTiles(1) // Makes it drain 1 movement of stamina loss when you spam the sprint key.
+
+
 /mob/living/proc/sprint_hotkey(targetstatus)
 	if(targetstatus != FORCE_BOOLEAN(combat_flags & COMBAT_FLAG_SPRINT_ACTIVE))
 		default_toggle_sprint()
