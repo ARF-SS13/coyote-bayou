@@ -33674,6 +33674,10 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
+"hPz" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/f13/caves)
 "hPC" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
@@ -35016,6 +35020,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/village)
+"iyZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/f13/caves)
 "izc" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/ausbushes/grassybush,
@@ -42613,9 +42622,9 @@
 "moJ" = (
 /obj/machinery/button{
 	id = "nasheast";
+	name = "nasheast";
 	pixel_x = 27;
-	pixel_y = -3;
-	name = "nasheast"
+	pixel_y = -3
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
@@ -52087,6 +52096,13 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"rlC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/pod,
+/area/f13/caves)
 "rlX" = (
 /obj/machinery/hydroponics/soil,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -57530,6 +57546,9 @@
 	icon_state = "verticalrightborderleft2bottom"
 	},
 /area/f13/wasteland)
+"uhK" = (
+/turf/open/floor/pod,
+/area/f13/caves)
 "uhY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -71412,11 +71431,11 @@ asS
 qeC
 qqO
 arF
-aae
-aae
-aae
-aae
-aae
+uhK
+uhK
+uhK
+uhK
+uhK
 aae
 qeC
 qqO
@@ -71669,11 +71688,11 @@ aae
 aak
 vNL
 aae
-asS
+hPz
 aae
 aae
 asS
-aae
+uhK
 aae
 aae
 qqO
@@ -71926,11 +71945,11 @@ aae
 qqO
 aae
 asS
-aae
+uhK
 aae
 aae
 asS
-aae
+uhK
 aae
 qqO
 ian
@@ -72183,11 +72202,11 @@ qqO
 vNL
 aae
 asS
+uhK
 aae
 aae
 aae
-aae
-aae
+uhK
 qqO
 qqO
 qqO
@@ -72697,11 +72716,11 @@ asS
 arF
 arF
 qqO
-kVp
-tLY
-qqO
-aae
-aae
+uhK
+hPz
+uhK
+uhK
+uhK
 aae
 aae
 aak
@@ -72955,10 +72974,10 @@ aae
 asS
 qqO
 qqO
-ian
+qqO
 aae
 aae
-aae
+uhK
 asS
 aae
 aak
@@ -73215,7 +73234,7 @@ aae
 asS
 aae
 aae
-aae
+uhK
 qeC
 aae
 aae
@@ -73468,15 +73487,15 @@ aae
 arF
 aae
 asS
-asS
-aae
-aae
-aae
-aae
+hPz
+uhK
+uhK
+uhK
+uhK
 aak
 asS
-aae
-qeC
+uhK
+hPz
 qeC
 gsr
 aae
@@ -73731,10 +73750,10 @@ aae
 aae
 aae
 asS
-asS
-arF
-lWN
-asS
+hPz
+iyZ
+rlC
+hPz
 asS
 aak
 arF
@@ -73982,15 +74001,15 @@ qeC
 asS
 aae
 aae
+uhK
+uhK
+uhK
+uhK
+uhK
 aae
-qqO
-aae
-aae
-aae
-aae
+iyZ
 pmP
-pmP
-asS
+hPz
 aae
 aae
 vNL
@@ -74239,16 +74258,16 @@ aae
 aae
 aae
 aae
-qqO
-qqO
+aae
+uhK
 aae
 aae
 asS
 aak
+uhK
 aak
-aae
-aae
-aae
+uhK
+uhK
 vNL
 asS
 aae
@@ -74496,9 +74515,9 @@ aae
 aae
 aae
 aae
-qqO
 aae
 aae
+uhK
 asS
 aae
 aae
@@ -74753,9 +74772,9 @@ aae
 aae
 aae
 qqO
-qqO
-qqO
-qqO
+aae
+aae
+uhK
 aae
 aae
 aae
@@ -75011,7 +75030,7 @@ aae
 qqO
 qqO
 aae
-aae
+uhK
 aae
 aae
 aae
@@ -75267,11 +75286,11 @@ aae
 qqO
 qqO
 aae
-aae
-aae
-aae
-aae
-aak
+uhK
+uhK
+uhK
+uhK
+uhK
 qqO
 ian
 qqO
