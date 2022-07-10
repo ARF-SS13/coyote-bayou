@@ -343,9 +343,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define SHOTGUN_SPREAD_IMPROVISED 25
 
 /// Bullet damage modifier defines
-#define BULLET_MATCH_MULT 1.5 // rare, pack a punch
+#define BULLET_MATCH_MULT 1.25 // rare, pack a punch
 #define BULLET_SURPLUS_MULT 1 // standard ammo from an ammobench
-#define BULLET_HANDLOAD_MULT 0.5 // trash ammo you can make anywhere with a reloader tool, most common
+#define BULLET_HANDLOAD_MULT 0.75 // trash ammo you can make anywhere with a reloader tool, most common
 
 /// Bullet spread modifier defines
 #define BULLET_SPREAD_BASE 2 // Base spread added from 'quality' ammo
@@ -561,8 +561,8 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_EXTRA_DAMAGE_T1 1.10
 #define GUN_EXTRA_DAMAGE_T2 1.15
 #define GUN_EXTRA_DAMAGE_T3 1.25
-#define GUN_EXTRA_DAMAGE_T4 1.50
-#define GUN_EXTRA_DAMAGE_T5 2.00
+#define GUN_EXTRA_DAMAGE_T4 1.35
+#define GUN_EXTRA_DAMAGE_T5 1.50
 
 /// Also multiplies the gun's projectile damage, but so it does less damage
 #define GUN_LESS_DAMAGE_T1 0.90
