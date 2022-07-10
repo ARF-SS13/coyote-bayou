@@ -292,14 +292,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
  * * * * * * * * * */
 
 /// Bullet damage defines
-#define BULLET_DAMAGE_PISTOL_LIGHT 10
-#define BULLET_DAMAGE_PISTOL_MEDIUM 15
-#define BULLET_DAMAGE_PISTOL_HEAVY 20
+#define BULLET_DAMAGE_PISTOL_LIGHT 20
+#define BULLET_DAMAGE_PISTOL_MEDIUM 25
+#define BULLET_DAMAGE_PISTOL_HEAVY 40
 #define BULLET_DAMAGE_RIFLE_LIGHT 25
-#define BULLET_DAMAGE_RIFLE_MEDIUM 40
-#define BULLET_DAMAGE_RIFLE_HEAVY 50
-#define BULLET_DAMAGE_SHOTGUN_PELLET 10
-#define BULLET_DAMAGE_SHOTGUN_SLUG 40
+#define BULLET_DAMAGE_RIFLE_MEDIUM 45
+#define BULLET_DAMAGE_RIFLE_HEAVY 60
+#define BULLET_DAMAGE_SHOTGUN_PELLET 11
+#define BULLET_DAMAGE_SHOTGUN_SLUG 50
 
 /// Bullet recoil defines
 #define BULLET_RECOIL_PISTOL_LIGHT 0.5
@@ -343,9 +343,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define SHOTGUN_SPREAD_IMPROVISED 25
 
 /// Bullet damage modifier defines
-#define BULLET_MATCH_MULT 1.5 // rare, pack a punch
+#define BULLET_MATCH_MULT 1.25 // rare, pack a punch
 #define BULLET_SURPLUS_MULT 1 // standard ammo from an ammobench
-#define BULLET_HANDLOAD_MULT 0.5 // trash ammo you can make anywhere with a reloader tool, most common
+#define BULLET_HANDLOAD_MULT 0.75 // trash ammo you can make anywhere with a reloader tool, most common
 
 /// Bullet spread modifier defines
 #define BULLET_SPREAD_BASE 2 // Base spread added from 'quality' ammo
@@ -464,7 +464,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FULL_OTHER_HAND_RECOIL_MOD 2
 
 // Global recoil modifier
-#define GUN_RECOIL_GLOBAL_MULT 1
+#define GUN_RECOIL_GLOBAL_MULT 0.75
 
 /// Gun recoil modifier per shot defines
 #define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0.1)
@@ -500,14 +500,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_TIMEOUT_LONGER (GUN_RECOIL_TIMEOUT_BASE * 2)
 
 /// Gun spread Base
-#define GUN_SPREAD_BASE 2
+#define GUN_SPREAD_BASE 1
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE (GUN_SPREAD_BASE * 0.1)
 #define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
-#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 2)
-#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 4)
+#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 3)
+#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 6)
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
