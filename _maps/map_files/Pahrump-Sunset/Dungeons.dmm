@@ -1113,7 +1113,7 @@
 "aXN" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "aZc" = (
 /obj/machinery/light/small{
@@ -5269,7 +5269,7 @@
 	pixel_y = 3
 	},
 /obj/structure/table,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "eAM" = (
 /obj/structure/fence/handrail{
@@ -7292,7 +7292,7 @@
 "giT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/fo13colored/Pink,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "giY" = (
 /obj/structure/rack,
@@ -11112,6 +11112,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/enclave)
+"jMk" = (
+/turf/open/space/basic,
+/area/f13/underground/cave)
 "jMn" = (
 /obj/machinery/light{
 	dir = 1
@@ -17638,7 +17641,7 @@
 /obj/structure/closet/crate/bin{
 	anchorable = 0
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "pmZ" = (
 /obj/structure/sink{
@@ -18420,7 +18423,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "pYA" = (
 /obj/structure/window/reinforced{
@@ -18445,7 +18448,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "pZo" = (
 /obj/structure/cable{
@@ -18552,7 +18555,7 @@
 /area/f13/brotherhood/offices1st)
 "qer" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "qfg" = (
 /obj/structure/rack,
@@ -18648,7 +18651,7 @@
 /obj/structure/curtain{
 	color = "#5c131b"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "qgQ" = (
 /obj/structure/rack,
@@ -22559,7 +22562,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "tCT" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
@@ -22766,9 +22769,6 @@
 	},
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/brotherhood/operations)
-"tKt" = (
-/turf/open/space/basic,
-/area/f13/underground/cave)
 "tKw" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/effect/decal/remains/human,
@@ -23905,7 +23905,7 @@
 "uHR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table/wood,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "uIf" = (
 /obj/machinery/light/small{
@@ -24759,7 +24759,7 @@
 	flicker_chance = 0
 	},
 /obj/structure/table,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "vpy" = (
 /obj/effect/decal/cleanable/dirt,
@@ -25147,7 +25147,9 @@
 	name = "Head Scribe's Office";
 	req_access_txt = "120"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "casino"
+	},
 /area/f13/brotherhood/offices2nd)
 "vHm" = (
 /obj/machinery/smartfridge/food,
@@ -27073,7 +27075,7 @@
 	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
 "xxD" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
@@ -56353,13 +56355,13 @@ shC
 shC
 shC
 shC
-tKt
-tKt
-tKt
-tKt
-tKt
-tKt
-tKt
+jMk
+jMk
+jMk
+jMk
+jMk
+jMk
+jMk
 shC
 shC
 shC
@@ -56610,13 +56612,13 @@ shC
 shC
 shC
 shC
-tKt
-tKt
-tKt
-tKt
-tKt
-tKt
-tKt
+jMk
+jMk
+jMk
+jMk
+jMk
+jMk
+jMk
 shC
 shC
 shC
@@ -56867,13 +56869,13 @@ shC
 shC
 shC
 shC
-tKt
-tKt
+jMk
+jMk
 cwX
 cwX
 cwX
-tKt
-tKt
+jMk
+jMk
 shC
 shC
 shC
@@ -57124,13 +57126,13 @@ shC
 shC
 shC
 shC
-tKt
+jMk
 fTm
 cLG
 ojT
 cLG
 hHs
-tKt
+jMk
 shC
 shC
 shC
