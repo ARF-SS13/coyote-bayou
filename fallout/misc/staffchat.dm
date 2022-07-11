@@ -170,3 +170,5 @@ GLOBAL_PROTECT(staff)
 		winset(src, "mainwindow", "is-maximized=false;can-resize=true;titlebar=true;menu=menu")
 		winset(src, "mainwindow.mainvsplit", "pos=3x0")
 	winset(src, "mainwindow", "is-maximized=true")
+
+// writing this here for testing reasons pls ignore
