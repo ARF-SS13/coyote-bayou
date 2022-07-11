@@ -69,9 +69,13 @@
 	AddElement(/datum/element/connect_loc, loc_connections)
 
 	if(merge)
-		for(var/obj/item/stack/S in loc)
-			if(S.merge_type == merge_type && S != src)
-				INVOKE_ASYNC(src, .proc/merge, S)
+		for(var/obj/item/stack/item_stack in loc)
+			if(item_stack == src)
+				continue
+			if(can_merge(item_stack))
+				INVOKE_ASYNC(src, .proc/merge_without_del, item_stack)
+				if(zero_amount(delete_if_zero = FALSE))
+					return INITIALIZE_HINT_QDEL
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
 	if(material_type)
