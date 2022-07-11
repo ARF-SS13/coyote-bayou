@@ -948,73 +948,73 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	EMOTE_SPECIAL_STR = list(
 		"initial" = list(
 			"tests their strength...",
-			"tests their strength..."),
+			"puts their back into it..."),
 		"success" = list(
 			"was strong!",
-			"was strong!"),
+			"had some strength behind it!"),
 		"failure" = list(
 			"was too weak...",
-			"was too weak...")),
+			"had some serious noodle arms...")),
 	EMOTE_SPECIAL_PER = list(
 		"initial" = list(
 			"takes a good, long look...",
-			"takes a good, long look..."),
+			"focuses in..."),
 		"success" = list(
 			"was perceptive!",
-			"was perceptive!"),
+			"noticed whatever they were trying to see!"),
 		"failure" = list(
 			"was totally oblivious...",
-			"was totally oblivious...")),
+			"didn't see anything...")),
 	EMOTE_SPECIAL_END = list(
 		"initial" = list(
 			"tests their toughness...",
-			"tests their toughness..."),
+			"braces themself..."),
 		"success" = list(
 			"was tough!",
-			"was tough!"),
+			"endured!"),
 		"failure" = list(
 			"was a floppy lil' noodle...",
-			"was a floppy lil' noodle...")),
+			"crumpled up and blew away...")),
 	EMOTE_SPECIAL_CHA = list(
 		"initial" = list(
 			"starts to be charismatic...",
-			"starts to be charismatic..."),
+			"puts on the charm..."),
 		"success" = list(
 			"was charismatic!",
-			"was charismatic!"),
+			"was good and charming!"),
 		"failure" = list(
 			"was totally uncharismatic...",
-			"was totally uncharismatic...")),
+			"had their charms fall flat...")),
 	EMOTE_SPECIAL_INT = list(
 		"initial" = list(
 			"thinks hard...",
-			"thinks hard..."),
+			"furrows their brow..."),
 		"success" = list(
 			"was clever!",
-			"was clever!"),
+			"had a thought!"),
 		"failure" = list(
 			"was dumb as a doornail...",
-			"was dumb as a doornail...")),
+			"was dense as a brick...")),
 	EMOTE_SPECIAL_AGI = list(
 		"initial" = list(
 			"tries to get agile...",
-			"tries to get agile..."),
+			"starts to get limber..."),
 		"success" = list(
 			"was agile as a cat!",
-			"was agile as a cat!"),
+			"was agile as a fox!"),
 		"failure" = list(
 			"was clumsy as a cat...",
-			"was clumsy as a cat...")),
+			"was clumsy as a fox...")),
 	EMOTE_SPECIAL_LCK = list(
 		"initial" = list(
 			"tries their luck...",
-			"tries their luck..."),
+			"puts it all on red..."),
 		"success" = list(
 			"lucked out!",
-			"lucked out!"),
+			"got lucky!"),
 		"failure" = list(
 			"was unlucky...",
-			"was unlucky..."))))
+			"showed that the house always wins..."))))
 
 
 /datum/emote/living/special
