@@ -323,7 +323,7 @@
  * TBD for sure
  * * * * * * * */
 
-#define BULLET_NEEDLE_DAMAGE_MULT 0.2 // 2 damage~
+#define BULLET_NEEDLE_DAMAGE_MULT 0.2 // Heck all for damage
 #define BULLET_NEEDLE_STAMINA_MULT 0.2 // Its a needle
 #define BULLET_NEEDLE_WOUND_MULT 10 // That RIPS AND TEARS
 #define BULLET_NEEDLE_NAKED_WOUND_MULT 15 // Okay maybe a flechette then
@@ -658,7 +658,7 @@
  * Fire rounds
  * * * * * * * */
 
-#define BULLET_44MAG_DAMAGE_MULT 1.3 // 26
+#define BULLET_44MAG_DAMAGE_MULT 1.1 // 44
 #define BULLET_44MAG_STAMINA_MULT 1.3
 #define BULLET_44MAG_WOUND_MULT 2
 #define BULLET_44MAG_NAKED_WOUND_MULT 2
@@ -728,7 +728,7 @@
  * Poison spray?
  * * * * * * * */
 
-#define BULLET_14MM_DAMAGE_MULT 2 // 40 damage
+#define BULLET_14MM_DAMAGE_MULT 1.2 // 48 damage
 #define BULLET_14MM_STAMINA_MULT 2
 #define BULLET_14MM_WOUND_MULT 2
 #define BULLET_14MM_NAKED_WOUND_MULT 2
