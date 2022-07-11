@@ -108,7 +108,7 @@
 			span_userdanger("You step on [parent]!")
 		)
 
-	INVOKE_ASYNC(H, /mob/living/carbon/human/.proc/apply_damage, damage, BRUTE, picked_def_zone, wound_bonus = CANT_WOUND)
+	INVOKE_ASYNC(H, /mob/living/carbon/human/.proc/apply_damage, damage, BRUTE, picked_def_zone, FALSE, FALSE, FALSE, CANT_WOUND)
 
 	if(!(flags & CALTROP_NOSTUN)) // Won't set off the paralysis.
 		H.Paralyze(60)
