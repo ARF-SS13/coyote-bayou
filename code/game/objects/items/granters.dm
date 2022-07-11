@@ -132,6 +132,7 @@
 		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!</span>",
 		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
 		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -1064,6 +1065,12 @@
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "hitting things"
 				remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
+
+	if(HAS_TRAIT(user, granted_trait))
+		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
+		granted_trait = null
+		return FALSE
+
 	return ..()
 
 
@@ -1106,7 +1113,13 @@
 			if("Desert Affinity")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"
-		return ..()
+
+	if(HAS_TRAIT(user, granted_trait))
+		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
+		granted_trait = null
+		return FALSE
+
+	return ..()
 
 /obj/item/book/granter/trait/selection/tribal/Initialize()
 	. = ..()
