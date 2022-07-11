@@ -91,7 +91,7 @@
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/ingot)) // That's it we're refactoring this code because I can't im literally crying rn ; _;
-		return HandleIngot()
+		return HandleIngot(I, user)
 
 	if(istype(I, /obj/item/melee/smith/hammer) || istype(I, /obj/item/twohanded/sledgehammer/simple)) // Hammer interactions:
 		var/obj/item/melee/smith/hammer/hammertime = I // Even though they are two seperate object paths, I believe because we're only accessing qualitymod, it casts accordingly.
