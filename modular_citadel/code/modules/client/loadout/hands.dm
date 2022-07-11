@@ -152,3 +152,7 @@
 /datum/gear/hands/lipstickblack
 	name = "black lipstick"
 	path = /obj/item/lipstick/black
+
+/datum/gear/hands/livestockdelivery
+	name = "Livestock Delivery Service"
+	path = /obj/item/choice_beacon/pet
