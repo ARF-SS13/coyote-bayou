@@ -141,10 +141,7 @@
 	SIGNAL_HANDLER
 	if(!istype(M))
 		return
-	if(M.put_in_hands(src))
-		if(src != M.get_active_held_item())
-			M.swap_hand()
-		equip_to_best_slot(M)
+	INVOKE_ASYNC(M, /mob/.proc/put_in_hands, src)
 
 /obj/item/rupee/equipped(mob/user, slot)
 	playsound(get_turf(loc), 'sound/misc/server-ready.ogg', 50, 1, -1)
