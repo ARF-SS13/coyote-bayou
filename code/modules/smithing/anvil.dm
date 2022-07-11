@@ -316,9 +316,10 @@
 
 			if(user.mind.skill_holder) // give them some experience!
 				user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 100, 10000000, silent = FALSE)
+
+			ResetAnvil() // Worse Case something might break if we dont do this. soo.... yeah!
 			break
 
-	ResetAnvil() // Worse Case no item is provided if something goes wrong, and we get to be able to use it again! :O
 
 //////////////////////
 //					//
