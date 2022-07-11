@@ -1068,7 +1068,7 @@
 
 	if(HAS_TRAIT(user, granted_trait))
 		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
-		granted_trait == null
+		granted_trait = null
 		return FALSE
 
 	return ..()
@@ -1116,7 +1116,7 @@
 
 	if(HAS_TRAIT(user, granted_trait))
 		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
-		granted_trait == null
+		granted_trait = null
 		return FALSE
 
 	return ..()
