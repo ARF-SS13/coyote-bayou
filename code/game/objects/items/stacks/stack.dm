@@ -74,7 +74,7 @@
 				continue
 			if(can_merge(item_stack))
 				INVOKE_ASYNC(src, .proc/merge_without_del, item_stack)
-				if(zero_amount(delete_if_zero = FALSE))
+				if(zero_amount())
 					return INITIALIZE_HINT_QDEL
 	var/list/temp_recipes = get_main_recipes()
 	recipes = temp_recipes.Copy()
