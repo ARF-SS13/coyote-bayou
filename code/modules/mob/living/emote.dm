@@ -946,33 +946,75 @@ GLOBAL_LIST_INIT(special_triggers, list(
 
 GLOBAL_LIST_INIT(special_phrases, list(
 	EMOTE_SPECIAL_STR = list(
-		"initial" = "tests their strength...",
-		"success" = "was strong!",
-		"failure" = "was too weak..."),
+		"initial" = list(
+			"tests their strength...",
+			"tests their strength..."),
+		"success" = list(
+			"was strong!",
+			"was strong!"),
+		"failure" = list(
+			"was too weak...",
+			"was too weak...")),
 	EMOTE_SPECIAL_PER = list(
-		"initial" = "takes a good, long look...",
-		"success" = "was perceptive!",
-		"failure" = "was totally oblivious..."),
+		"initial" = list(
+			"takes a good, long look...",
+			"takes a good, long look..."),
+		"success" = list(
+			"was perceptive!",
+			"was perceptive!"),
+		"failure" = list(
+			"was totally oblivious...",
+			"was totally oblivious...")),
 	EMOTE_SPECIAL_END = list(
-		"initial" = "tests their toughness...",
-		"success" = "was tough!",
-		"failure" = "was a floppy lil' noodle..."),
+		"initial" = list(
+			"tests their toughness...",
+			"tests their toughness..."),
+		"success" = list(
+			"was tough!",
+			"was tough!"),
+		"failure" = list(
+			"was a floppy lil' noodle...",
+			"was a floppy lil' noodle...")),
 	EMOTE_SPECIAL_CHA = list(
-		"initial" = "starts to be charismatic...",
-		"success" = "was charismatic!",
-		"failure" = "was totally uncharismatic..."),
+		"initial" = list(
+			"starts to be charismatic...",
+			"starts to be charismatic..."),
+		"success" = list(
+			"was charismatic!",
+			"was charismatic!"),
+		"failure" = list(
+			"was totally uncharismatic...",
+			"was totally uncharismatic...")),
 	EMOTE_SPECIAL_INT = list(
-		"initial" = "thinks hard...",
-		"success" = "was clever!",
-		"failure" = "was dumb as a doornail..."),
+		"initial" = list(
+			"thinks hard...",
+			"thinks hard..."),
+		"success" = list(
+			"was clever!",
+			"was clever!"),
+		"failure" = list(
+			"was dumb as a doornail...",
+			"was dumb as a doornail...")),
 	EMOTE_SPECIAL_AGI = list(
-		"initial" = "tries to get agile...",
-		"success" = "was agile as a cat!",
-		"failure" = "was clumsy as a cat..."),
+		"initial" = list(
+			"tries to get agile...",
+			"tries to get agile..."),
+		"success" = list(
+			"was agile as a cat!",
+			"was agile as a cat!"),
+		"failure" = list(
+			"was clumsy as a cat...",
+			"was clumsy as a cat...")),
 	EMOTE_SPECIAL_LCK = list(
-		"initial" = "tries their luck...",
-		"success" = "lucked out!",
-		"failure" = "was unlucky...")))
+		"initial" = list(
+			"tries their luck...",
+			"tries their luck..."),
+		"success" = list(
+			"lucked out!",
+			"lucked out!"),
+		"failure" = list(
+			"was unlucky...",
+			"was unlucky..."))))
 
 
 /datum/emote/living/special
@@ -1031,7 +1073,8 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		if(EMOTE_SPECIAL_LCK)
 			special_skill = user.special_l
 
-	var/message_first = span_notice("\[[special_noun], [special_skill]0%] <b>[user]</b> [GLOB.special_phrases[special_noun]["initial"]].")	// [Luck, 100%] User tests their Luck.
+	var/first_phrase = pick(GLOB.special_phrases[special_noun]["initial"])
+	var/message_first = span_notice("\[[special_noun], [special_skill]0%] <b>[user]</b> [first_phrase].")	// [Luck, 100%] User tests their Luck.
 
 	user.visible_message(
 		message = message_first,
@@ -1047,9 +1090,11 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 		var/message_second
 		if(prob(special_skill * 10))
-			message_second = span_green("\[Success\] <b>[user]</b> [GLOB.special_phrases[special_noun]["success"]]") // [Success] User is pretty lucky!
+			var/success_phrase = pick(GLOB.special_phrases[special_noun]["success"])
+			message_second = span_green("\[Success\] <b>[user]</b> [success_phrase]") // [Success] User is pretty lucky!
 		else
-			message_second = span_red("\[Failure\] <b>[user]</b> [GLOB.special_phrases[special_noun]["failure"]]") // [Failure} User isn't very lucky...
+			var/fail_phrase = pick(GLOB.special_phrases[special_noun]["failure"])
+			message_second = span_red("\[Failure\] <b>[user]</b> [fail_phrase]") // [Failure} User isn't very lucky...
 
 		user.visible_message(
 			message = message_second,
