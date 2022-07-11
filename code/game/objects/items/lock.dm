@@ -71,6 +71,7 @@ GLOBAL_LIST_EMPTY(global_locks)
 	icon = 'icons/obj/key.dmi'
 	w_class = WEIGHT_CLASS_TINY
 	var/lock_data = ""
+	obj_flags = UNIQUE_RENAME
 
 /obj/item/key/Initialize()
 	. = ..()
