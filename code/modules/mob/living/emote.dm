@@ -844,6 +844,8 @@
 #define EMOTE_SPECIAL_INT "Intelligence"
 #define EMOTE_SPECIAL_AGI "Agility"
 #define EMOTE_SPECIAL_LCK "Luck"
+#define EMOTE_SPECIAL_GEN "???"
+#define EMOTE_SPECIAL_SUF "Crit"
 
 GLOBAL_LIST_INIT(special_skill_list, list(
 	EMOTE_SPECIAL_STR,
@@ -852,7 +854,8 @@ GLOBAL_LIST_INIT(special_skill_list, list(
 	EMOTE_SPECIAL_CHA,
 	EMOTE_SPECIAL_INT,
 	EMOTE_SPECIAL_AGI,
-	EMOTE_SPECIAL_LCK))
+	EMOTE_SPECIAL_LCK,
+	EMOTE_SPECIAL_GEN))
 
 GLOBAL_LIST_INIT(special_triggers, list(
 	EMOTE_SPECIAL_STR = list(
@@ -942,37 +945,154 @@ GLOBAL_LIST_INIT(special_triggers, list(
 		"fortune",
 		"dice",
 		"luk",
-		"luc")))
+		"luc"),
+	EMOTE_SPECIAL_GEN = list(
+		"x",
+		"non",
+		"none",
+		"generic",
+		"something",
+		"else",
+		"smth",
+		"?",
+		"rand",
+		"huh",
+		"stuff",
+		"roll")))
 
 GLOBAL_LIST_INIT(special_phrases, list(
 	EMOTE_SPECIAL_STR = list(
-		"initial" = "tests their strength...",
-		"success" = "was strong!",
-		"failure" = "was too weak..."),
+		"initial" = list(
+			"tests their strength...",
+			"flexes their arm(s)...",
+			"prepares to lift...",
+			"puts their back into it..."),
+		"success" = list(
+			"is strong!",
+			"is beefy!",
+			"has some serious guns!",
+			"had some strength behind it!"),
+		"failure" = list(
+			"was too weak.",
+			"was a little wet noodle.",
+			"would loose an arm wrestling match with a mouse.",
+			"has some serious atrophy. it's a wonder they can move at all.")),
 	EMOTE_SPECIAL_PER = list(
-		"initial" = "takes a good, long look...",
-		"success" = "was perceptive!",
-		"failure" = "was totally oblivious..."),
+		"initial" = list(
+			"takes a good, long look...",
+			"squints...",
+			"looks around...",
+			"focuses in..."),
+		"success" = list(
+			"was perceptive!",
+			"noticed things!",
+			"has eyes like a hawk!",
+			"could find Doc Mitchell's keys!",
+			"noticed whatever they were trying to see!"),
+		"failure" = list(
+			"was totally oblivious.",
+			"forgot their glasses.",
+			"didn't see anything.")),
 	EMOTE_SPECIAL_END = list(
-		"initial" = "tests their toughness...",
-		"success" = "was tough!",
-		"failure" = "was a floppy lil' noodle..."),
+		"initial" = list(
+			"tests their toughness...",
+			"braces themself..."),
+		"success" = list(
+			"was tough!",
+			"was one tough cookie!",
+			"doesn't even flinch!",
+			"is solid as an oak!",
+			"endured!"),
+		"failure" = list(
+			"is a floppy lil' noodle.",
+			"is made of paper.",
+			"would be torn to shreds by a light breeze.",
+			"crumpled up and blew away.")),
 	EMOTE_SPECIAL_CHA = list(
-		"initial" = "starts to be charismatic...",
-		"success" = "was charismatic!",
-		"failure" = "was totally uncharismatic..."),
+		"initial" = list(
+			"starts to be charismatic...",
+			"puts on the charm..."),
+		"success" = list(
+			"was charismatic!",
+			"is an absolute charmer!",
+			"was good and charming!"),
+		"failure" = list(
+			"was totally uncharismatic.",
+			"isn't fooling anyone.",
+			"put their foot in their mouth.",
+			"could hear a pin drop.",
+			"miiiiight have some frontal lobe damage.",
+			"had their charms fall flat.")),
 	EMOTE_SPECIAL_INT = list(
-		"initial" = "thinks hard...",
-		"success" = "was clever!",
-		"failure" = "was dumb as a doornail..."),
+		"initial" = list(
+			"thinks hard...",
+			"ponders hard...",
+			"takes a moment to think...",
+			"furrows their brow..."),
+		"success" = list(
+			"was clever!",
+			"is a genius!",
+			"has a mind sharp as a whip!",
+			"had a thought!"),
+		"failure" = list(
+			"was dumb as a doornail.",
+			"burned their last braincell years ago.",
+			"is running low on braincells.",
+			"was dense as a brick.")),
 	EMOTE_SPECIAL_AGI = list(
-		"initial" = "tries to get agile...",
-		"success" = "was agile as a cat!",
-		"failure" = "was clumsy as a cat..."),
+		"initial" = list(
+			"tries to get agile...",
+			"prepares their moves...",
+			"starts to get limber..."),
+		"success" = list(
+			"was very flexible!",
+			"had some excellent footwork!",
+			"was in perfect control!",
+			"was agile as a cat!",
+			"was agile as a fox!"),
+		"failure" = list(
+			"fell flat on their face.",
+			"fell flat on their back.",
+			"triped over themself.",
+			"has two left feet.",
+			"was clumsy as a cat.",
+			"was clumsy as a fox.")),
 	EMOTE_SPECIAL_LCK = list(
-		"initial" = "tries their luck...",
-		"success" = "lucked out!",
-		"failure" = "was unlucky...")))
+		"initial" = list(
+			"tries their luck...",
+			"takes a chance...",
+			"puts it all on red..."),
+		"success" = list(
+			"lucked out!",
+			"was the luckiest son-of-a-gun in the wasteland!",
+			"could make a bullet turn right around and climb back into the gun!",
+			"got lucky!"),
+		"failure" = list(
+			"was unlucky.",
+			"realized their game was rigged from the start.",
+			"showed that the house always wins.")),
+	EMOTE_SPECIAL_GEN = list(
+		"initial" = list(
+			"tests their skills...",
+			"tries their skills...",
+			"attempts to do a thing...",
+			"puts their skills to the test..."),
+		"success" = list(
+			"succeeded!",
+			"did it!"),
+		"failure" = list(
+			"was really bad at whatever they did.",
+			"just really sucked.",
+			"messed up real bad.")),
+	EMOTE_SPECIAL_SUF = list(
+		"initial" = list(
+			"shouldnt see this lol"),
+		"success" = list(
+			"Ring-a-ding baby!",
+			"Wow!"),
+		"failure" = list(
+			"How could someone mess up so badly?",
+			"The game was rigged from the start."))))
 
 
 /datum/emote/living/special
@@ -1030,8 +1150,11 @@ GLOBAL_LIST_INIT(special_phrases, list(
 			special_skill = user.special_a
 		if(EMOTE_SPECIAL_LCK)
 			special_skill = user.special_l
+		if(EMOTE_SPECIAL_GEN) // generic random 50% chance
+			special_skill = 5
 
-	var/message_first = span_notice("\[[special_noun], [special_skill]0%] <b>[user]</b> [GLOB.special_phrases[special_noun]["initial"]].")	// [Luck, 100%] User tests their Luck.
+	var/first_phrase = pick(GLOB.special_phrases[special_noun]["initial"])
+	var/message_first = span_notice("\[[special_noun], [special_skill]0%] <b>[user]</b> [first_phrase].")	// [Luck, 100%] User tests their Luck.
 
 	user.visible_message(
 		message = message_first,
@@ -1047,9 +1170,15 @@ GLOBAL_LIST_INIT(special_phrases, list(
 
 		var/message_second
 		if(prob(special_skill * 10))
-			message_second = span_green("\[Success\] <b>[user]</b> [GLOB.special_phrases[special_noun]["success"]]") // [Success] User is pretty lucky!
+			var/success_phrase = pick(GLOB.special_phrases[special_noun]["success"])
+			if(prob(5)) // crit success!
+				success_phrase += " [pick(GLOB.special_phrases[EMOTE_SPECIAL_SUF]["success"])]"
+			message_second = span_green("\[Success\] <b>[user]</b> [success_phrase]") // [Success] User is pretty lucky!
 		else
-			message_second = span_red("\[Failure\] <b>[user]</b> [GLOB.special_phrases[special_noun]["failure"]]") // [Failure} User isn't very lucky...
+			var/fail_phrase = pick(GLOB.special_phrases[special_noun]["failure"])
+			if(prob(5)) // crit fail!
+				fail_phrase += " [pick(GLOB.special_phrases[EMOTE_SPECIAL_SUF]["failure"])]"
+			message_second = span_red("\[Failure\] <b>[user]</b> [fail_phrase]") // [Failure} User isn't very lucky...
 
 		user.visible_message(
 			message = message_second,

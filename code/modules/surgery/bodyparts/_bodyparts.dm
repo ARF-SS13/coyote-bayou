@@ -486,7 +486,7 @@
 /obj/item/bodypart/proc/update_disabled()
 	if(!owner)
 		return
-	set_disabled(is_disabled())
+	INVOKE_ASYNC(src, .proc/set_disabled, is_disabled())
 
 /obj/item/bodypart/proc/is_disabled()
 	if(!owner)
