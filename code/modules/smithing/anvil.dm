@@ -115,7 +115,7 @@
 
 	return F.busy || busy
 
-/obj/structure/anvil/proc/SetBusy(var/value, var/mob/living/carbon/human/H)
+/obj/structure/anvil/proc/SetBusy(value, mob/living/carbon/human/H)
 	if(H)
 		H.busy = value
 	busy = value
@@ -132,7 +132,7 @@
 	cut_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
 	SetBusy(FALSE, null)
 
-/obj/structure/anvil/proc/HandleIngot(var/obj/item/ingot/notsword, mob/user)
+/obj/structure/anvil/proc/HandleIngot(obj/item/ingot/notsword, mob/user)
 	if(workpiece_state)
 		to_chat(user, "There's already a workpiece! Finish it or take it off.")
 		return FALSE
