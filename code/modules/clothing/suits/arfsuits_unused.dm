@@ -1797,7 +1797,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	armor = list("melee" = 55, "bullet" = 40, "laser" = 50, "energy" = 50, "bomb" = 30, "bio" = 25, "rad" = 30, "fire" = 95, "acid" = 15)
 	resistance_flags = FIRE_PROOF
 
-/obj/item/clothing/suit/armor/heavy/raider/metal/old
+/obj/item/clothing/suit/armor/heavy/tribal/metal/old
 	name = "iron raider suit"
 	desc = "More rust than metal, with gaping holes in it, this armor looks like a pile of junk. Under the rust some quality steel still remains however."
 	icon_state = "raider_metal"
@@ -1906,3 +1906,20 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "steel_bib"
 	item_state = "steel_bib" */
+
+/* /obj/item/clothing/suit/hooded/cloak/birdclaw
+	name = "quickclaw armour"
+	icon_state = "birdarmor"
+	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
+	slowdown = 0.025
+	hoodtype = /obj/item/clothing/head/hooded/cloakhood/birdclaw
+	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
+	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/head/hooded/cloakhood/birdclaw
+	name = "quickclaw hood"
+	icon_state = "hood_bird"
+	desc = "A hood made of deathclaw hides, light while also being comfortable to wear, designed for speed."
+	heat_protection = HEAD
+	resistance_flags = FIRE_PROOF | ACID_PROOF */
