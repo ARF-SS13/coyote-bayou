@@ -81,7 +81,7 @@
 	if(H.buckled) //if they're buckled to something, that something should be checked instead.
 		return
 
-	if(H.body_position == LYING_DOWN && !(flags & CALTROP_NOCRAWL)) //if we're not standing we cant step on the caltrop
+	if(H.lying && !(flags & CALTROP_NOCRAWL)) //if we're not standing we cant step on the caltrop
 		return
 
 	var/picked_def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -89,7 +89,7 @@
 	if(!istype(O))
 		return
 
-	if(!IS_ORGANIC_LIMB(O))
+	if(!O.is_organic_limb())
 		return
 
 	if (!(flags & CALTROP_BYPASS_SHOES))
@@ -108,7 +108,7 @@
 			span_userdanger("You step on [parent]!")
 		)
 
-	H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = CANT_WOUND)
+	INVOKE_ASYNC(H, /mob/living/carbon/human/.proc/apply_damage, damage, BRUTE, picked_def_zone, wound_bonus = CANT_WOUND)
 
 	if(!(flags & CALTROP_NOSTUN)) // Won't set off the paralysis.
 		H.Paralyze(60)
