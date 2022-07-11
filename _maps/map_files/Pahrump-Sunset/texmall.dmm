@@ -708,6 +708,10 @@
 	icon_state = "bluedirtychess2"
 	},
 /area/f13/wasteland)
+"ev" = (
+/obj/structure/shopping_cart,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "ez" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5771,14 +5775,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"Ox" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/door/window/westright,
-/turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/building)
 "Oy" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -6242,7 +6238,6 @@
 /area/f13/building)
 "Rb" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/window/westright,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -6389,16 +6384,6 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
-/area/f13/building)
-"RW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/door/window/eastright,
-/turf/open/floor/f13{
-	icon_state = "redrustyfull"
-	},
 /area/f13/building)
 "RY" = (
 /obj/structure/closet/secure_closet/evidence,
@@ -6978,7 +6963,6 @@
 /area/f13/building)
 "Wn" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/window/eastright,
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building)
 "Wp" = (
@@ -8255,7 +8239,7 @@ Vx
 Vx
 Vx
 Vx
-Vx
+ev
 Vx
 DE
 Vx
@@ -14914,7 +14898,7 @@ Cx
 sD
 la
 sD
-RW
+Ok
 sD
 zh
 sD
@@ -15685,7 +15669,7 @@ Cx
 rm
 di
 Aq
-Ox
+MP
 Cj
 Lo
 sD

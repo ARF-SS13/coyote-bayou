@@ -128,11 +128,15 @@
 	name = "Porkapine"
 	icon_state = "porkupine"
 	icon = 'modular_coyote/icons/mob/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/tails/human/porkupine
 	name = "Porkapine"
 	icon_state = "porkupine"
 	icon = 'modular_coyote/icons/mob/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/tails/mam_tails/seviper
 	name = "Seviper"
