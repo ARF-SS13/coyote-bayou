@@ -9887,8 +9887,10 @@
 	},
 /area/f13/bunker)
 "gQX" = (
-/obj/machinery/door/airlock/abandoned,
-/turf/closed/wall/rust,
+/obj/machinery/door/airlock/abandoned{
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "gRv" = (
 /obj/effect/decal/cleanable/blood/old{

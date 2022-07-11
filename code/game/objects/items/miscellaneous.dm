@@ -161,17 +161,9 @@
 /obj/item/choice_beacon/pet //donator beacon that summons a small friendly animal
 	name = "pet beacon"
 	desc = "Straight from the outerspace pet shop to your feet."
-	var/static/list/pets = list("Crab" = /mob/living/simple_animal/crab,
-		"Cat" = /mob/living/simple_animal/pet/cat,
-		"Space cat" = /mob/living/simple_animal/pet/cat/space,
-		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
-		"Dog" = /mob/living/simple_animal/pet/dog,
-		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
-		"Pug" = /mob/living/simple_animal/pet/dog/pug,
-		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
-		"Fox" = /mob/living/simple_animal/pet/fox,
-		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
-		"Possum" = /mob/living/simple_animal/opossum)
+	var/static/list/pets = list(
+"Brahmin" = /mob/living/simple_animal/cow/brahmin,
+"Chicken" = /mob/living/simple_animal/chicken)
 	var/pet_name
 
 /obj/item/choice_beacon/pet/generate_display_names()
