@@ -627,6 +627,7 @@
 	fire_stacks = 0
 	confused = 0
 	update_mobility()
+	update_movespeed()
 	//Heal all organs
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
