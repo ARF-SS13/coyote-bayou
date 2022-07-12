@@ -74,3 +74,4 @@
 			L.adjustFireLoss(-healAmount)
 	
 	// And that's it! We dont really need to add anything else, it will continue to call this function every tick.
+// cum
