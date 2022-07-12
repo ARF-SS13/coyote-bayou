@@ -38,7 +38,7 @@
 	dna.features["ethcolor"] = COLOR_WHITE
 	dna.features["frills"] = "None"
 	dna.features["horns"] = "None"
-	dna.features["mcolor"] = "#00FF00"
+	dna.features["mcolor"] = "00FF00"
 	dna.features["moth_antennae"] = "Plain"
 	dna.features["moth_markings"] = "None"
 	dna.features["moth_wings"] = "Plain"
