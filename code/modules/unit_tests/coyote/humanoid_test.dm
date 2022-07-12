@@ -3,7 +3,7 @@
 
 /datum/unit_test/screenshot_humanoids/Run()
 	for (var/datum/species/species_type as anything in subtypesof(/datum/species))
-		test_screenshot("[species_type]", get_flat_icon_for_all_directions(make_dummy(species_type, /datum/outfit/job/wasteland/f13wastelander/consistent)))
+		test_screenshot("[species_type]", get_flat_icon_for_all_directions(make_dummy(species_type, /datum/outfit/job)))
 
 /datum/unit_test/screenshot_humanoids/proc/get_flat_icon_for_all_directions(atom/thing)
 	var/icon/output = icon('icons/effects/effects.dmi', "nothing")
@@ -50,7 +50,3 @@
 	dna.features["grad_style"] = "none"
 	dna.features["grad_color"] = COLOR_ALMOST_BLACK
 	hair_style == "Bald"
-
-/datum/outfit/job/wasteland/f13wastelander/consistent/pre_equip()
-	uniform = /obj/item/clothing/under/f13/settler
-	suit = /obj/item/clothing/suit/toggle/labcoat/wanderer
