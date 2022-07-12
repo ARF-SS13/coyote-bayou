@@ -998,7 +998,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/yankee_reinforced
 	name = "reinforced yankee armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/yankee
-	reqs = list(/obj/item/clothing/suit/armor/light/raider/yankee = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/yankee = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1018,7 +1018,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/blaster_reinforced
 	name = "reinforced blaster armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/blastmaster
-	reqs = list(/obj/item/clothing/suit/armor/light/raider/blastmaster = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/blastmaster = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
