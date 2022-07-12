@@ -296,36 +296,38 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/social_anxiety/add()
 	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, .proc/eye_contact)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
+	// RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, .proc/looks_at_floor)
 
 /datum/quirk/social_anxiety/remove()
 	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
 
 /datum/quirk/social_anxiety/on_process()
-	var/nearby_people = 2
-	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
+	var/nearby_people = 3
+	for(var/mob/living/carbon/human/H in oview(4, quirk_holder))
 		if(H.client)
 			nearby_people++
 	var/mob/living/carbon/human/H = quirk_holder
-	if(prob(2 + nearby_people))
+	if(prob(3 + nearby_people))
 		H.stuttering = max(3, H.stuttering)
-	else if(prob(min(3, nearby_people)) && !H.silent)
-		to_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
-		H.silent = max(10, H.silent)
+		//Murder fucking this spammy ass message.  This crap is insane.~ TK
+	// else if(prob(min(3, nearby_people)) && !H.silent)
+	//	o_chat(H, "<span class='danger'>You retreat into yourself. You <i>really</i> don't feel up to talking.</span>")
+	//	H.silent = max(10, H.silent)t
 	else if(prob(0.5) && dumb_thing)
 		to_chat(H, "<span class='userdanger'>You think of a dumb thing you said a long time ago and scream internally.</span>")
 		dumb_thing = FALSE //only once per life
 		if(prob(1))
 			new/obj/item/reagent_containers/food/snacks/pastatomato(get_turf(H)) //now that's what I call spaghetti code
 
-// small chance to make eye contact with inanimate objects/mindless mobs because of nerves
+/* small chance to make eye contact with inanimate objects/mindless mobs because of nerves  
+Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn't fucking socially anxious, it's a fucking mania.
 /datum/quirk/social_anxiety/proc/looks_at_floor(datum/source, atom/A)
 	var/mob/living/mind_check = A
 	if(prob(85) || (istype(mind_check) && mind_check.mind))
 		return
 
 	addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, quirk_holder, "<span class='smallnotice'>You make eye contact with [A].</span>"), 3)
-
+*/
 /datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
 	if(prob(75))
 		return
@@ -333,7 +335,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if(triggering_examiner)
 		msg = "You make eye contact with [other_mob], "
 	else
-		msg = "[other_mob] makes eye contact with you, "
+		msg = "[other_mob] is staring at you, "
 
 	switch(rand(1,3))
 		if(1)
