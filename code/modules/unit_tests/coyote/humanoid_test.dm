@@ -49,8 +49,8 @@
 	dna.features["pod_hair"] = "Ivy"
 	dna.features["grad_style"] = "none"
 	dna.features["grad_color"] = COLOR_ALMOST_BLACK
+	hair_style == "Bald"
 
 /datum/outfit/job/wasteland/f13wastelander/consistent/pre_equip()
-	..()
 	uniform = /obj/item/clothing/under/f13/settler
 	suit = /obj/item/clothing/suit/toggle/labcoat/wanderer
