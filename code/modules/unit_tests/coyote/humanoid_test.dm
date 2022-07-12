@@ -47,4 +47,5 @@
 	dna.features["tail_cat"] = "None"
 	dna.features["tail_lizard"] = "Smooth"
 	dna.features["pod_hair"] = "Ivy"
-	dna.features["grad_style"] = "None"
+	dna.features["grad_style"] = "none"
+	dna.features["grad_color"] = COLOR_ALMOST_BLACK
