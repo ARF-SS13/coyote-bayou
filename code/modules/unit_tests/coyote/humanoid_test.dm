@@ -52,3 +52,5 @@
 	facial_hair_style = "Shaved"
 	hair_style = "Bald"
 	hair_color = "FF0000"
+
+// com
