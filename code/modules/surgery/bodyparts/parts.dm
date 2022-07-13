@@ -65,7 +65,7 @@
 	body_zone = BODY_ZONE_L_ARM
 	body_part = ARM_LEFT
 	aux_icons = list(BODY_ZONE_PRECISE_L_HAND = HANDS_PART_LAYER, "l_hand_behind" = BODY_BEHIND_LAYER)
-	body_damage_coeff = 0
+	body_damage_coeff = 0.75
 	held_index = 1
 	px_x = -6
 	px_y = 0
@@ -125,7 +125,7 @@
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
 	aux_icons = list(BODY_ZONE_PRECISE_R_HAND = HANDS_PART_LAYER, "r_hand_behind" = BODY_BEHIND_LAYER)
-	body_damage_coeff = 0
+	body_damage_coeff = 0.75
 	held_index = 2
 	px_x = 6
 	px_y = 0
@@ -186,7 +186,7 @@
 	max_damage = 50
 	body_zone = BODY_ZONE_L_LEG
 	body_part = LEG_LEFT
-	body_damage_coeff = 0
+	body_damage_coeff = 0.75
 	px_x = -2
 	px_y = 12
 	stam_heal_tick = STAM_RECOVERY_LIMB
@@ -243,7 +243,7 @@
 	max_damage = 50
 	body_zone = BODY_ZONE_R_LEG
 	body_part = LEG_RIGHT
-	body_damage_coeff = 0
+	body_damage_coeff = 0.75
 	px_x = 2
 	px_y = 12
 	max_stamina_damage = 50
