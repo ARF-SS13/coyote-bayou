@@ -54,15 +54,6 @@ proc/get_top_level_mob(mob/S)
 	else if(!params)
 		var/subtle_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "[subtler ? "Subtler" : "Subtle"]", null, MAX_MESSAGE_LEN)
 		if(subtle_emote && !check_invalid(user, subtle_emote))
-			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
-			switch(type)
-				if("Visible")
-					emote_type = EMOTE_VISIBLE
-				if("Hearable")
-					emote_type = EMOTE_AUDIBLE
-				else
-					alert("Unable to use this emote, must be either hearable or visible.")
-					return
 			message = subtle_emote
 		else
 			return FALSE
@@ -77,25 +68,24 @@ proc/get_top_level_mob(mob/S)
 	user.log_message(message, LOG_EMOTE)
 	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
-	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(message=message,hearing_distance=1)
-	else
-		user.visible_message(message=message,self_message=message,vision_distance=1)
+	var/list/ghosties = list()
+	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
+	if(subtler)
+		for(var/mob/ghost in GLOB.dead_mob_list)
+			if(ghost.client && !check_rights_for(ghost.client, R_ADMIN))
+				continue
+			ghosties |= ghost
+
+	// Everyone in range can see it
+	user.visible_message(
+		message = message,
+		blind_message = message,
+		self_message = message,
+		vision_distance = 1,
+		ignored_mobs = ghosties)
 
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight,
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
-			continue
-		if(M.stat != DEAD)
-			continue
-		if(!(M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
-			continue
-		if(subtler)
-			if(M.client && !check_rights_for(M.client, R_ADMIN))
-				continue
-		if(M in viewers(1, get_turf(src)))
-			continue
-		M.show_message(message)
+	user.emote_for_ghost_sight(message, subtler)
 
 
 ///////////////// VERB CODE
