@@ -318,12 +318,12 @@
 		if("start")
 			user.visible_message(
 				span_warning("[user] begins bandaging the wounds on [target]'s [limb.name]..."), 
-				span_warning("You begin bandaging the wounds on [user == target ? "your" : "[target]'s" [limb.name]]..."))
+				span_warning("You begin bandaging the wounds on [user == target ? "your" : "[target]'s [limb.name]"]..."))
 
 		if("end")
 			user.visible_message(
 				span_green("[user] bandages [src] to [target]'s [limb.name].</span>"), 
-				span_green("You bandage the wounds on [user == target ? "your" : "[target]'s" [limb.name]]."))
+				span_green("You bandage the wounds on [user == target ? "your" : "[target]'s [limb.name]"]."))
 
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
@@ -389,7 +389,7 @@
 		if("end")
 			user.visible_message(
 				span_green("[user] sutures [src] to [target]'s [limb.name].</span>"), 
-				span_green("You suture the wounds on [user == target ? "your" : "[target]'s" [limb.name]]."))
+				span_green("You suture the wounds on [user == target ? "your" : "[target]'s [limb.name]"]."))
 
 /obj/item/stack/medical/suture/one
 	amount = 1
