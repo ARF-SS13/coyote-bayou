@@ -365,6 +365,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>Your confidence wipes away the fear that had been plaguing you.</span>"
 	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
 	var/datum/brain_trauma/mild/phobia/phobia
+	locked = TRUE
 
 /datum/quirk/phobia/post_add()
 	var/mob/living/carbon/human/H = quirk_holder
