@@ -19,9 +19,9 @@
 // insta-heal on inject, 1 of each brute and burn per volume
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
 	if(iscarbon(M))
-		if(M.stat != DEAD)
+		if(M.stat == DEAD) // Doesnt work on the dead
 			return
-		if(method != INJECT)
+		if(method != INJECT) // Gotta be injected
 			return
 		if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
@@ -66,7 +66,7 @@
 
 /datum/reagent/medicine/super_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
 	if(iscarbon(M))
-		if(M.stat != DEAD)
+		if(M.stat == DEAD)
 			return
 		if(method != INJECT)
 			return

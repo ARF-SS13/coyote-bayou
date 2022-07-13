@@ -922,7 +922,7 @@ Mayor
 	spawn_positions = 2
 	supervisors = "the free market and Nash's laws"
 	description = "The big trading caravan companies have often neglected humble Nash. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
-	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Bighorn."
+	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
 	selection_color = "#dcba97"
 	exp_requirements = 300
 

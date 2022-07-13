@@ -130,108 +130,140 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/stock_parts/get_part_rating()
 	return rating
 
-//Rating 1
+//Base parts. They aren't intended to be replicate-able by players, but are useful to describe what a machine needs, and round-start machines will have them.
 
 /obj/item/stock_parts/capacitor
 	name = "capacitor"
-	desc = "A basic capacitor used in the construction of a variety of devices."
+	desc = "A pre-war design for a simple consumer-grade capacitor. Not much better than a watch battery."
 	icon_state = "capacitor"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module
 	name = "scanning module"
-	desc = "A compact, high resolution scanning module used in the construction of certain devices."
+	desc = "A pre-war design for a simple consumer-grade scanning device. Not much better than a light sensitive circuit."
 	icon_state = "scan_module"
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator
-	name = "micro-manipulator"
-	desc = "A tiny little manipulator used in the construction of certain devices."
+	name = "manipulator"
+	desc = "A pre-war design for a simple consumer-grade manipulator. Not much better than a simple gear."
 	icon_state = "micro_mani"
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser
-	name = "micro-laser"
-	desc = "A tiny laser used in certain devices."
+	name = "laser"
+	desc = "A pre-war design for a simple consumer-grade laser. Not much better than a nixie tube."
 	icon_state = "micro_laser"
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin
 	name = "matter bin"
-	desc = "A container designed to hold compressed matter awaiting reconstruction."
+	desc = "A pre-war design for a simple consumer-grade storage bin. Not much better than a funnel."
 	icon_state = "matter_bin"
+	custom_materials = list(/datum/material/iron=80)
+
+//Rating 1
+
+/obj/item/stock_parts/capacitor/simple
+	name = "watch battery"
+	desc = "A small battery presumably used to keep a watch timing properly. Could be useful as a makeshift capacitor."
+	icon_state = "watch_battery"
+	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
+
+/obj/item/stock_parts/scanning_module/simple
+	name = "light sensitive circuit"
+	desc = "Sometimes found in cameras or infrared detectors. Useful for scanning things, if a little low-tech."
+	icon_state = "light_sensitive_circuit"
+	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
+
+/obj/item/stock_parts/manipulator/simple
+	name = "simple gear"
+	desc = "A simple gear. A couple of these could probably be used in a mechanism to manipulate things."
+	icon_state = "simple_gear"
+	custom_materials = list(/datum/material/iron=30)
+
+/obj/item/stock_parts/micro_laser/simple
+	name = "nixie tube"
+	desc = "A small bulb with a complicated filament pattern. Puts off enough heat that it could be used for heating small components in a pinch."
+	icon_state = "simple_bulb"
+	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
+
+/obj/item/stock_parts/matter_bin/simple
+	name = "intake funnel"
+	desc = "Practically a metal cone. Useful to store some stuff in a machine, at least."
+	icon_state = "funnel"
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 2
 
 /obj/item/stock_parts/capacitor/adv
-	name = "advanced capacitor"
-	desc = "An advanced capacitor used in the construction of a variety of devices."
-	icon_state = "adv_capacitor"
+	name = "capacitor"
+	desc = "A fairly modern design for a capacitor, it can take in and distribute power pretty quickly compared to a battery."
+	icon_state = "simple_capacitor"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/adv
-	name = "advanced scanning module"
-	desc = "A compact, high resolution scanning module used in the construction of certain devices."
+	name = "small antenna"
+	desc = "Useful for scanning and analyzing signals. Comes with a built in miniature light sensor, too!"
 	icon_state = "adv_scan_module"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/nano
-	name = "nano-manipulator"
-	desc = "A tiny little manipulator used in the construction of certain devices."
-	icon_state = "nano_mani"
+	name = "complex gearwork"
+	desc = "More than a few gears interlocked together, useful for manipulating things on a finer scale."
+	icon_state = "complex_gearwork"
 	rating = 2
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/high
-	name = "high-power micro-laser"
-	desc = "A tiny laser used in certain devices."
-	icon_state = "high_micro_laser"
+	name = "flash bulb"
+	desc = "A reusable flash bulb. Not only does it shine particularly bright, it can let out a fair bit of heat."
+	icon_state = "modern_bulb"
 	rating = 2
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/adv
-	name = "advanced matter bin"
-	desc = "A container designed to hold compressed matter awaiting reconstruction."
-	icon_state = "advanced_matter_bin"
+	name = "hopper"
+	desc = "A spacious hopper for containing just about anything in a machine and distributing it effectively."
+	icon_state = "hopper"
 	rating = 2
 	custom_materials = list(/datum/material/iron=80)
 
 //Rating 3
 
 /obj/item/stock_parts/capacitor/super
-	name = "super capacitor"
-	desc = "A super-high capacity capacitor used in the construction of a variety of devices."
-	icon_state = "super_capacitor"
+	name = "advanced capacitor"
+	desc = "A very effective capacitor, with a bit more heft to it."
+	icon_state = "advanced_capacitor"
 	rating = 3
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/phasic
-	name = "phasic scanning module"
-	desc = "A compact, high resolution phasic scanning module used in the construction of certain devices."
-	icon_state = "super_scan_module"
+	name = "advanced antenna"
+	desc = "A high-resolution antenna and camera device, this could scan a pretty wide variety of things."
+	icon_state = "advanced_antenna"
 	rating = 3
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/pico
-	name = "pico-manipulator"
-	desc = "A tiny little manipulator used in the construction of certain devices."
-	icon_state = "pico_mani"
+	name = "delicate mechanism"
+	desc = "A whole lot of finely crafted gears, belts, and gearshafts. This could probably manipulate things with microscopic precision."
+	icon_state = "delicate_mechanism"
 	rating = 3
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/ultra
-	name = "ultra-high-power micro-laser"
-	icon_state = "ultra_high_micro_laser"
-	desc = "A tiny laser used in certain devices."
+	name = "laser diode"
+	icon_state = "diode"
+	desc = "A laser diode able to put out heat and light very precisely."
 	rating = 3
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/super
-	name = "super matter bin"
-	desc = "A container designed to hold compressed matter awaiting reconstruction."
+	name = "storage bin"
+	desc = "A small container designed compressed and store just about anything safely in a machine."
 	icon_state = "super_matter_bin"
 	rating = 3
 	custom_materials = list(/datum/material/iron=80)
@@ -239,37 +271,37 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 //Rating 4
 
 /obj/item/stock_parts/capacitor/quadratic
-	name = "quadratic capacitor"
-	desc = "An capacity capacitor used in the construction of a variety of devices."
-	icon_state = "quadratic_capacitor"
+	name = "pre-war capacitor"
+	desc = "This absurdly efficient capacitor was made with pre-war materials and designs."
+	icon_state = "pre_war_capacitor"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/triphasic
-	name = "triphasic scanning module"
-	desc = "A compact, ultra resolution triphasic scanning module used in the construction of certain devices."
-	icon_state = "triphasic_scan_module"
+	name = "pre-war scanning device"
+	desc = "A compact, ultra-high resolution scanning device made with pre-war materials and designs."
+	icon_state = "pre_war_scanner"
 	rating = 4
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 
 /obj/item/stock_parts/manipulator/femto
-	name = "femto-manipulator"
-	desc = "A tiny little manipulator used in the construction of certain devices."
-	icon_state = "femto_mani"
+	name = "pre-war servo"
+	desc = "A microservo capable of manipulating things on the atomic scale, made using pre-war materials and designs."
+	icon_state = "pre_war_servo"
 	rating = 4
 	custom_materials = list(/datum/material/iron=30)
 
 /obj/item/stock_parts/micro_laser/quadultra
-	name = "quad-ultra micro-laser"
-	icon_state = "quadultra_micro_laser"
-	desc = "A tiny laser used in certain devices."
+	name = "pre-war laser emitter"
+	icon_state = "pre_war_emitter"
+	desc = "This extremely powerful micro-laser could only be made with pre-war materials and designs."
 	rating = 4
 	custom_materials = list(/datum/material/iron=10, /datum/material/glass=20)
 
 /obj/item/stock_parts/matter_bin/bluespace
-	name = "quantum matter bin"
-	desc = "A container designed to hold compressed matter awaiting reconstruction."
-	icon_state = "bluespace_matter_bin"
+	name = "pre-war storage system"
+	desc = "A container that uses the same pre-war tech that some Vaults pack into Pip-Boys to contain large amounts of material."
+	icon_state = "pre_war_storage"
 	rating = 4
 	custom_materials = list(/datum/material/iron=80)
 

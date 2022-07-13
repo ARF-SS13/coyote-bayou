@@ -197,7 +197,7 @@
 
 /obj/effect/mob_spawn/human/corpse/raider/baseball
 	uniform = /obj/item/clothing/under/f13/mechanic
-	suit = /obj/item/clothing/suit/armor/light/raider/yankee
+	suit = /obj/item/clothing/suit/armor/medium/raider/yankee
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
