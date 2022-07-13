@@ -32,7 +32,9 @@
 
 /mob/living/carbon/human/dummy/consistent/proc/setup_human_dna()
 	create_dna(src)
-	dna.initialize_dna()
+	dna.unique_enzymes = dna.generate_unique_enzymes()
+	dna.uni_identity = dna.generate_uni_identity()
+	dna.generate_dna_blocks()
 	dna.features["body_markings"] = "None"
 	dna.features["ears"] = "None"
 	dna.features["ethcolor"] = COLOR_WHITE
