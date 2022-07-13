@@ -16,6 +16,8 @@
 	var/bare_wound_bonus = 0
 
 	var/datum/armor/armor
+	/// Additional armor modifiers that are applied to the actual armor value
+	var/armor_tokens = list()
 	var/obj_integrity	//defaults to max_integrity
 	var/max_integrity = 500
 	var/super_advanced_technology = FALSE
@@ -49,6 +51,7 @@
 	return ..()
 
 /obj/Initialize()
+	setup_armor_values()
 	if (islist(armor))
 		armor = getArmor(arglist(armor))
 	else if (!armor)
@@ -376,3 +379,21 @@
 
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
 	return
+
+/obj/proc/setup_armor_values()
+	if(!armor)
+		return
+	if(!islist(armor))
+		return
+	if(length(armor_tokens) < 1)
+		return // all done!
+	
+	for(var/list/token in armor_tokens)
+		for(var/modifier in token)
+			switch(GLOB.armor_token_operation_legend[modifier])
+				if("MULT")
+					armor[modifier] *= token[modifier]
+				if("ADD")
+					armor[modifier] += token[modifier]
+				else
+					continue
