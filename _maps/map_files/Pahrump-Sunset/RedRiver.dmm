@@ -9840,7 +9840,7 @@
 /obj/structure/barricade/wooden/strong,
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/area/f13/wasteland)
 "mdc" = (
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/f13{
@@ -17400,7 +17400,7 @@
 "vAy" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
+/area/f13/wasteland)
 "vBW" = (
 /obj/effect/decal/cleanable/glass,
 /obj/machinery/light/broken{
@@ -17830,11 +17830,6 @@
 	icon_state = "verticaloutermain2bottom"
 	},
 /area/f13/wasteland)
-"wkm" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/caves)
 "wkD" = (
 /obj/structure/table,
 /obj/machinery/computer/terminal{
@@ -35730,7 +35725,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 rYb
 rYb
 rYb
@@ -35987,7 +35982,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 rYb
 rYb
 rYb
@@ -36244,7 +36239,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 rYb
 rYb
 gMW
@@ -36501,7 +36496,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 rYb
 gMW
 gMW
@@ -36758,7 +36753,7 @@ oph
 tfn
 oph
 oph
-pCS
+oph
 gMW
 gMW
 gMW
@@ -37015,7 +37010,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 gMW
 gMW
 fbH
@@ -37272,7 +37267,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 gMW
 fbH
 fbH
@@ -37529,7 +37524,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fbH
 fbH
 imM
@@ -37786,7 +37781,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fbH
 qAj
 mFk
@@ -38043,7 +38038,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fbH
 tOI
 lYf
@@ -38300,7 +38295,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fzH
 fzH
 cjF
@@ -38557,7 +38552,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fzH
 kLY
 ewX
@@ -38814,7 +38809,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fbH
 imM
 ptd
@@ -39071,7 +39066,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 lYf
 imM
 mFk
@@ -39328,7 +39323,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 lYf
 fbH
 imM
@@ -39585,7 +39580,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 lfe
 lYf
 lYf
@@ -39842,7 +39837,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 lfe
 lfe
 lYf
@@ -40099,7 +40094,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -40356,7 +40351,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 gRn
 glq
 glq
@@ -40613,7 +40608,7 @@ kgF
 kgF
 kgF
 kgF
-wkm
+kgF
 glH
 glH
 glH
@@ -42155,7 +42150,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 xbv
 xbv
@@ -42412,7 +42407,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 fhS
 glq
@@ -42669,7 +42664,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -42926,7 +42921,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -43183,7 +43178,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -43440,7 +43435,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -43697,7 +43692,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -43954,7 +43949,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -44211,7 +44206,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -44468,7 +44463,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 fhS
 glq
@@ -44725,7 +44720,7 @@ nTJ
 oph
 oph
 oph
-pCS
+oph
 fhS
 fhS
 glq
@@ -44982,7 +44977,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 fhS
 fhS
 glq
@@ -45239,7 +45234,7 @@ oph
 oph
 oph
 tfn
-pCS
+oph
 fhS
 glq
 glq
@@ -45496,7 +45491,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -45753,7 +45748,7 @@ nTJ
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -46010,7 +46005,7 @@ afz
 oph
 oph
 oph
-pCS
+oph
 glq
 glq
 glq
@@ -46267,7 +46262,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 fhS
 glq
 glq
@@ -46524,7 +46519,7 @@ oph
 oph
 oph
 tfn
-pCS
+oph
 fhS
 fhS
 glq
@@ -46781,7 +46776,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 eaC
 kzG
 kzG
@@ -47038,7 +47033,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 eaC
 vEm
 oFA
@@ -47295,7 +47290,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 eaC
 ogV
 nSg
@@ -47552,7 +47547,7 @@ oph
 oph
 tfn
 tfn
-pCS
+oph
 eaC
 qdG
 nSg
@@ -47809,7 +47804,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 eaC
 eHO
 nSg
@@ -48066,7 +48061,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 eaC
 eHO
 eHO
@@ -48323,7 +48318,7 @@ oph
 tfn
 oph
 oph
-pCS
+oph
 eaC
 hNW
 sBw
@@ -48580,7 +48575,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 eaC
 bbU
 qqp
@@ -48837,7 +48832,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 eaC
 mDp
 iUs
@@ -49094,7 +49089,7 @@ tfn
 oph
 oph
 oph
-pCS
+oph
 eaC
 ogV
 iUs
@@ -49351,7 +49346,7 @@ nTJ
 oph
 afz
 oph
-pCS
+oph
 eaC
 pyf
 iUs
@@ -50122,7 +50117,7 @@ oph
 oph
 afz
 oph
-pCS
+oph
 aJF
 oQm
 iUs
@@ -50379,7 +50374,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 aJF
 oQm
 ukf
@@ -51407,7 +51402,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 aJF
 oQm
 jgM
@@ -51664,7 +51659,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 nAm
 oQm
 jgM
@@ -53206,7 +53201,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 svx
 jgM
 vnW
@@ -53463,7 +53458,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 kzG
 cBL
 kzG
@@ -53720,7 +53715,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 jFp
 nSg
 nSg
@@ -53977,7 +53972,7 @@ oph
 oph
 oph
 afz
-pCS
+oph
 owe
 nSg
 nSg
@@ -54234,7 +54229,7 @@ oph
 oph
 oph
 afz
-pCS
+oph
 vrT
 nSg
 nSg
@@ -54491,7 +54486,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 kzG
 nSg
 nSg
@@ -54748,7 +54743,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 iTj
 nSg
 nSg
@@ -55005,7 +55000,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 ian
 nSg
 nSg
@@ -55262,7 +55257,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 sqG
 nSg
 nSg
@@ -55519,7 +55514,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 kzG
 nSg
 nSg
@@ -55776,7 +55771,7 @@ oph
 oph
 oph
 oph
-pCS
+oph
 wTU
 nSg
 nSg
@@ -56033,7 +56028,7 @@ oph
 oph
 afz
 oph
-pCS
+oph
 iZc
 nSg
 nSg
@@ -56290,7 +56285,7 @@ oph
 oph
 afz
 oph
-pCS
+oph
 cXM
 nSg
 nSg
@@ -57832,51 +57827,51 @@ afz
 oph
 oph
 oph
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
-pCS
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
+oph
 gMW
 gMW
 gMW
