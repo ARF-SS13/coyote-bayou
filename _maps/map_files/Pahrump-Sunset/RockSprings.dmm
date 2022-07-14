@@ -6525,6 +6525,27 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"hhm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/reagent_containers/dropper{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "hif" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -9469,12 +9490,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
-"kbc" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/turf/closed/wall/f13/wood/interior,
-/area/f13/village)
 "kbg" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -14951,27 +14966,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"pSS" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table,
-/obj/item/reagent_containers/dropper{
-	pixel_x = -5;
-	pixel_y = -6
-	},
-/obj/item/reagent_containers/syringe{
-	pixel_x = 2;
-	pixel_y = 1
-	},
-/obj/item/reagent_containers/syringe{
-	pixel_x = 2;
-	pixel_y = 1
-	},
-/obj/item/reagent_containers/glass/beaker{
-	pixel_x = 9;
-	pixel_y = 4
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "pUh" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13/wood,
@@ -17703,8 +17697,10 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "sPd" = (
-/obj/machinery/chem_master,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/closed/wall/f13/wood/interior,
 /area/f13/village)
 "sPf" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -19092,6 +19088,12 @@
 	},
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"uys" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "uyP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -20728,10 +20730,8 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/village)
 "wql" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/open/floor/f13/wood,
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/village)
 "wqK" = (
 /turf/open/indestructible/ground/outside/road{
@@ -27873,7 +27873,7 @@ cfs
 llt
 oXS
 ikn
-jXi
+ikn
 xIZ
 hkO
 tRd
@@ -82667,12 +82667,12 @@ jXC
 nQW
 cYX
 cMc
-wql
+uys
 vHF
 pJb
 hxV
 eUD
-sPd
+wql
 uOi
 iHo
 atx
@@ -83442,10 +83442,10 @@ pJb
 wmK
 pJb
 pJb
-pSS
+hhm
 ogO
 vBy
-kbc
+sPd
 aPy
 wgx
 fHN
