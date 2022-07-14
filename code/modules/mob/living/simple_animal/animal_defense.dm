@@ -32,7 +32,7 @@
 							"<span class='userdanger'>[M] [response_harm_continuous] you!</span>", null, COMBAT_MESSAGE_RANGE, null, \
 							M, "<span class='danger'>You [response_harm_simple] [src]!</span>")
 			playsound(loc, attacked_sound, 25, 1, -1)
-			attack_threshold_check(harm_intent_damage)
+			attack_threshold_check(M.dna?.species.punchdamagehigh)
 			log_combat(M, src, "attacked")
 			updatehealth()
 			return TRUE
