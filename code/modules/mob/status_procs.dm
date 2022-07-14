@@ -88,7 +88,7 @@
 /mob/proc/add_eyeblur()
 	if(!client)
 		return
-	var/list/screens = list(hud_used.plane_masters["[GAME_PLANE]"], hud_used.plane_masters["[OBJITEM_PLANE]"], hud_used.plane_masters["[FLOOR_PLANE]"],
+	var/list/screens = list(hud_used.plane_masters["[GAME_PLANE]"], hud_used.plane_masters["[OBJITEM_PLANE]"], hud_used.plane_masters["[MOB_PLANE]"], hud_used.plane_masters["[FLOOR_PLANE]"],
 							hud_used.plane_masters["[WALL_PLANE]"], hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
 	for(var/A in screens)
 		var/obj/screen/plane_master/P = A
@@ -97,7 +97,7 @@
 /mob/proc/remove_eyeblur()
 	if(!client)
 		return
-	var/list/screens = list(hud_used.plane_masters["[GAME_PLANE]"], hud_used.plane_masters["[OBJITEM_PLANE]"], hud_used.plane_masters["[FLOOR_PLANE]"],
+	var/list/screens = list(hud_used.plane_masters["[GAME_PLANE]"], hud_used.plane_masters["[OBJITEM_PLANE]"], hud_used.plane_masters["[MOB_PLANE]"], hud_used.plane_masters["[FLOOR_PLANE]"],
 							hud_used.plane_masters["[WALL_PLANE]"], hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
 	for(var/A in screens)
 		var/obj/screen/plane_master/P = A

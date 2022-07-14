@@ -28,7 +28,7 @@
 	new /obj/item/reagent_containers/pill/radx(src)
 
 /obj/item/storage/survivalkit_tribal
-	name = "legion survival kit"
+	name = "tribal survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
 	w_class = WEIGHT_CLASS_SMALL
@@ -40,7 +40,7 @@
 	new /obj/item/stack/medical/mesh/aloe(src)
 	new /obj/item/stack/medical/suture/emergency(src)
 	new /obj/item/flashlight/flare/torch(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
+	new /obj/item/flashlight/flare/torch(src)
 
 /obj/item/storage/survivalkit_outlaw
 	name = "survival kit"

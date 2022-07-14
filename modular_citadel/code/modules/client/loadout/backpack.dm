@@ -83,3 +83,56 @@
 	name = "Havanian cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars/havana
 	cost = 2
+
+
+/////////////////////
+//Coyote Additions//
+////////////////////
+//Suck on my fucking balls this shit suuuuuucks
+
+
+//Vault Guns
+/datum/gear/backpack/vaultguns/n99
+	name = "10mm Pistol"
+	path = /obj/item/gun/ballistic/automatic/pistol/n99
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS
+	cost = 2
+	restricted_desc = "Vault 113"
+	restricted_roles = list("Overseer",
+							"Chief of Security",
+							"Vault-tec Security",
+							"Vault-tec Doctor",
+							"Vault-tec Scientist",
+							"Vault-tec Engineer",
+							"Vault Dweller"
+						)
+
+/datum/gear/backpack/vaultguns/tenmil
+	name = "10mm Ammo Box"
+	path = /obj/item/ammo_box/c10mm
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS
+	cost = 1
+	restricted_desc = "Vault 113"
+	restricted_roles = list("Overseer",
+							"Chief of Security",
+							"Vault-tec Security",
+							"Vault-tec Doctor",
+							"Vault-tec Scientist",
+							"Vault-tec Engineer",
+							"Vault Dweller"
+						)
+
+/datum/gear/backpack/vaultguns/aep7
+	name = "AEP7"
+	path = /obj/item/gun/energy/laser/pistol 
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS
+	cost = 3
+	restricted_desc = "Vault 113"
+	restricted_roles = list("Overseer",
+							"Chief of Security",
+							"Vault-tec Security",
+							"Vault-tec Doctor",
+							"Vault-tec Scientist",
+							"Vault-tec Engineer",
+							"Vault Dweller"
+						)

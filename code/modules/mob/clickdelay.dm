@@ -44,6 +44,8 @@
 	/// Minimum world time for another resist. This should only be checked using [CheckResistCooldown()].
 	var/next_resist = 0
 
+	plane = MOB_PLANE
+
 /**
  * Applies a delay to next_action before we can do our next action.
  *

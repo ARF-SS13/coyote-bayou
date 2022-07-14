@@ -95,8 +95,8 @@
 				H.update_inv_belt()
 		CHECK_TICK
 
-
 /datum/weather/rain/weather_act_turf(turf/open/T)
+/* // Stops weather from cleaning the ground (though it still cleans mobs c:)
 	var/cleaned
 	if(!cleaned)
 		for(var/obj/effect/decal/O in T) //Clean cleanable decals in affected areas
@@ -104,6 +104,10 @@
 				qdel(O)
 				cleaned = 1
 				CHECK_TICK
+*/
+	for(var/obj/machinery/hydroponics/tray in T) // Makes it so plants get water from rain :o
+		tray.adjustWater(80)
+		CHECK_TICK
 
 /datum/weather/rain/proc/wash_obj(obj/O)
 	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
@@ -146,3 +150,31 @@
 	sound_ai.stop()
 
 	return ..()
+
+//Fog
+/datum/weather/rain/fog
+	probability = 15
+
+	telegraph_duration = 300
+	telegraph_overlay = "fog"
+	telegraph_message = "<span class='notice'><font size=2>You see the fog rolling in.</font></span>"
+//	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+
+//	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
+	weather_overlay = "fog"
+	weather_duration_lower = 2400
+	weather_duration_upper = 7200
+//	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	end_duration = 250
+	end_message = "<span class='notice'><font size=2>The blanket of fog finally lifts up.</font></span>"
+	end_overlay = "fog"
+	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
+	protected_areas = list(/area/shuttle)
+	target_trait = ZTRAIT_STATION
+	protect_indoors = TRUE
+	immunity_type = "water"
+
+	barometer_predictable = TRUE
+
+	affects_turfs = TRUE
+	carbons_only = TRUE

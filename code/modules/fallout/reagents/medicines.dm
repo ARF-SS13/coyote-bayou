@@ -19,9 +19,9 @@
 // insta-heal on inject, 1 of each brute and burn per volume
 /datum/reagent/medicine/stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
 	if(iscarbon(M))
-		if(M.stat != DEAD)
+		if(M.stat == DEAD) // Doesnt work on the dead
 			return
-		if(method != INJECT)
+		if(method != INJECT) // Gotta be injected
 			return
 		if(M.getBruteLoss())
 			M.adjustBruteLoss(-reac_volume)
@@ -35,6 +35,8 @@
 		M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 	else
 		M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
+	. = TRUE
+	..()
 
 // Overdose makes you barflock yourself
 /datum/reagent/medicine/stimpak/overdose_process(mob/living/carbon/M)
@@ -51,7 +53,7 @@
  */
 
 /datum/reagent/medicine/super_stimpak // Handles superior healing of the super stim cocktail, plus its wound recovery, stim sickness, and dangerous OD.
-	name = "super stim chemicals"
+	name = "super stimfluid"
 	description = "Advanced, potent healing chemicals."
 	reagent_state = LIQUID
 	color = "#e50d0d"
@@ -64,7 +66,7 @@
 
 /datum/reagent/medicine/super_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
 	if(iscarbon(M))
-		if(M.stat != DEAD)
+		if(M.stat == DEAD)
 			return
 		if(method != INJECT)
 			return
@@ -88,8 +90,9 @@
 
 /// Seals up bleeds like a weaker sanguirite, doesnt do any passive heals though
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/carbon/M) // Heals fleshwounds like a weak sanguirite
-	. = ..()
 	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	. = TRUE
+	..()
 
 
 /datum/reagent/medicine/super_stimpak/overdose_process(mob/living/carbon/M)
@@ -101,7 +104,9 @@
 			"Your heart stops for a moment.",
 			"You feel an agonizing shudder in your chest.")
 		to_chat(M, span_warning("[superstim_od_message]"))
-	. = 1
+	. = TRUE
+	..()
+
 
 // ---------------------------
 // LONGPORK STEW REAGENT
@@ -160,11 +165,13 @@
 		M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
 	else
 		M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	. = TRUE
+	..()
 
 /datum/reagent/medicine/healing_powder/overdose_process(mob/living/carbon/M)
 	M.drowsyness += 3
-	..()
 	. = TRUE
+	..()
 
 /* 
  * Healing Poultice
@@ -175,7 +182,7 @@
  */
 
 /datum/reagent/medicine/healing_powder/poultice	// Handles superior healing of the poultice herbal mix, with its superior healing, wound recovery, and painful OD
-	name = "super stim chemicals"
+	name = "Healing poultice"
 	description = "Potent, stinging herbs that swiftly aid in the recovery of grevious wounds."
 	color = "#C8A5DC"
 	overdose_threshold = 12
@@ -187,7 +194,7 @@
 	L.add_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
 	to_chat(L, span_alert("You feel a burning pain spread through your skin, concentrating around your wounds."))
 
-/datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/healing_powder/poultice/on_mob_end_metabolize(mob/living/L)
 	. = ..()
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
 	to_chat(L, span_notice("The poultice's burning subsides."))
@@ -196,8 +203,10 @@
 	. = ..()
 	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
 	M.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
-
 	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	. = TRUE
+	..()
+
 
 /datum/reagent/medicine/healing_powder/poultice/overdose_process(mob/living/carbon/M)
 	M.adjustToxLoss(4)
@@ -207,7 +216,9 @@
 			"You feel a searing pain shoot through your skin.",
 			"You feel like your blood's been replaced with acid. It burns.")
 		to_chat(M, span_notice("[poultice_od_message]"))
-	. = 1
+	. = TRUE
+	..()
+
 
 // ---------------------------
 // RAD-X REAGENT

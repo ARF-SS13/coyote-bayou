@@ -369,63 +369,6 @@ datum/chemical_reaction/rezadone
 	for(var/i = 1, i <= created_volume, i++)
 		new /obj/item/stack/medical/mesh/(location)
 
-/datum/chemical_reaction/stimpak
-	name = "Stimpak Fluid"
-	id = /datum/reagent/medicine/stimpak
-	results = list(/datum/reagent/medicine/stimpak = 1)
-	required_reagents = list(/datum/reagent/blood = 1, /datum/reagent/medicine/spaceacillin = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
-	OptimalTempMax		= 550 // Upper end for above
-	ExplodeTemp			= 9999 //Temperature at which reaction explodes
-	OptimalpHMin		= 3 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
-	OptimalpHMax		= 8 // Higest value for above
-	ReactpHLim			= 4 // How far out pH wil react, giving impurity place (Exponential phase)
-	CurveSharpT 		= 5 // How sharp the temperature exponential curve is (to the power of value)
-	CurveSharppH 		= 0.5 // How sharp the pH exponential curve is (to the power of value)
-	ThermicConstant		= -6 //Temperature change per 1u produced
-	HIonRelease 		= -0.1 //pH change per 1u reaction
-	RateUpLim 			= 5 //Optimal/max rate possible if all conditions are perfect
-	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
-	FermiExplode 		= FALSE //If the chemical explodes in a special way
-/* 
-/datum/chemical_reaction/stimpak2
-	name = "Imitation Stimpak Fluid"
-	id = /datum/reagent/medicine/stimpakimitation
-	results = list(/datum/reagent/medicine/stimpakimitation = 2)
-	required_reagents = list(/datum/reagent/consumable/brocjuice = 1, /datum/reagent/consumable/xanderjuice = 1)
-	OptimalTempMin 		= 500 // Lower area of bell curve for determining heat based rate reactions
-	OptimalTempMax		= 650 // Upper end for above
-	ExplodeTemp			= 9999 //Temperature at which reaction explodes
-	OptimalpHMin		= 2 // Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
-	OptimalpHMax		= 8 // Higest value for above
-	ReactpHLim			= 4 // How far out pH wil react, giving impurity place (Exponential phase)
-	CurveSharpT 		= 5 // How sharp the temperature exponential curve is (to the power of value)
-	CurveSharppH 		= 0.5 // How sharp the pH exponential curve is (to the power of value)
-	ThermicConstant		= -6 //Temperature change per 1u produced
-	HIonRelease 		= -0.1 //pH change per 1u reaction
-	RateUpLim 			= 12 //Optimal/max rate possible if all conditions are perfect
-	FermiChem 			= TRUE//If the chemical uses the Fermichem reaction mechanics
-	FermiExplode 		= FALSE //If the chemical explodes in a special way
- */
-/datum/chemical_reaction/superstimpak
-	name = "Super Stimpak Fluid"
-	id = /datum/reagent/medicine/super_stimpak
-	results = list(/datum/reagent/medicine/super_stimpak = 5)
-	required_reagents = list(/datum/reagent/blood/synthetics = 1, /datum/reagent/medicine/stimpak = 1, /datum/reagent/consumable/mutjuice = 1) //1 mutfruit at 50 potency yields 6 mutfruit juice
-	OptimalTempMin 		= 65
-	OptimalTempMax		= 95
-	ExplodeTemp			= 100
-	OptimalpHMin		= 0.5
-	OptimalpHMax		= 3
-	ReactpHLim			= 1
-	CurveSharpT 		= 1 //flat tcurve
-	CurveSharppH 		= 0.5
-	ThermicConstant		= 1.5
-	HIonRelease 		= 0.1
-	RateUpLim 			= 50 //this seems quite high but 1. runaway thermals 2. it's very slow since it's 100K
-	FermiChem 			= TRUE
-	FermiExplode 		= FALSE
-
 /datum/chemical_reaction/medx
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx

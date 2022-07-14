@@ -132,6 +132,7 @@
 		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!</span>",
 		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
 		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 		qdel(src)
 
 /obj/item/book/granter/action/drink_fling
@@ -879,7 +880,16 @@
 	granted_trait = TRAIT_CHEMWHIZ
 	traitname = "chemistry"
 	remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
-	crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/jet, 
+		/datum/crafting_recipe/turbo, 
+		/datum/crafting_recipe/psycho, 
+		/datum/crafting_recipe/medx, 
+		/datum/crafting_recipe/stimpak, 
+		/datum/crafting_recipe/stimpak5, 
+		/datum/crafting_recipe/superstimpak, 
+		/datum/crafting_recipe/superstimpak5, 
+		/datum/crafting_recipe/buffout)
 
 /obj/item/book/granter/trait/bigleagues
 	name = "Grognak the Barbarian"
@@ -1055,6 +1065,12 @@
 				granted_trait = TRAIT_BIG_LEAGUES
 				traitname = "hitting things"
 				remarks = list("Grognak hit the Death Knight only once, but that was enough.", "Grognak is surprisingly agile, never committing too heavily on an attack, dancing between his enemies.", "Grognak isn't good at talking, but he knows it has its place. He has friends to talk for him.", "Other barbarians might change their weapons, but Grognak could never leave his beloved axe.")
+
+	if(HAS_TRAIT(user, granted_trait))
+		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
+		granted_trait = null
+		return FALSE
+
 	return ..()
 
 
@@ -1097,7 +1113,13 @@
 			if("Desert Affinity")
 				granted_trait = TRAIT_HARD_YARDS
 				traitname = "trekking"
-		return ..()
+
+	if(HAS_TRAIT(user, granted_trait))
+		to_chat(user, "<span class ='notice'>You already have all the insight you need about [traitname].")
+		granted_trait = null
+		return FALSE
+
+	return ..()
 
 /obj/item/book/granter/trait/selection/tribal/Initialize()
 	. = ..()
@@ -1106,7 +1128,12 @@
 /obj/item/book/granter/crafting_recipe/tribal
 	name = "Tribal traditions"
 	desc = "A book of traditions passed down through generations within the tribe."
-	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/tribalwar/lighttribe, 
+		/datum/crafting_recipe/tribalwar/heavytribe, 
+		/datum/crafting_recipe/healpoultice, 
+		/datum/crafting_recipe/healpoultice5, 
+		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/crafting_recipe/tribal/whitelegs
 	name = "White Legs traditions"

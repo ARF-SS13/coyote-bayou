@@ -757,6 +757,7 @@
 	if(!open)
 		icon_state = "closed"
 		layer = WALL_OBJ_LAYER
+		plane = MOB_PLANE
 		density = TRUE
 		open = FALSE
 		set_opacity(TRUE)
@@ -764,6 +765,7 @@
 	else
 		icon_state = "open"
 		layer = SIGN_LAYER
+		plane = initial(plane)
 		density = FALSE
 		open = TRUE
 		set_opacity(FALSE)

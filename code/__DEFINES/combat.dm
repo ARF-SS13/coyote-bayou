@@ -234,6 +234,15 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BODY_ZONE_L_LEG		"l_leg"
 #define BODY_ZONE_R_LEG		"r_leg"
 
+GLOBAL_LIST_INIT(main_body_parts, list(
+	BODY_ZONE_HEAD,
+	BODY_ZONE_CHEST,
+	BODY_ZONE_L_ARM,
+	BODY_ZONE_R_ARM,
+	BODY_ZONE_L_LEG,
+	BODY_ZONE_R_LEG
+))
+
 #define BODY_ZONE_PRECISE_EYES		"eyes"
 #define BODY_ZONE_PRECISE_MOUTH		"mouth"
 #define BODY_ZONE_PRECISE_GROIN		"groin"
@@ -241,6 +250,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define BODY_ZONE_PRECISE_R_HAND	"r_hand"
 #define BODY_ZONE_PRECISE_L_FOOT	"l_foot"
 #define BODY_ZONE_PRECISE_R_FOOT	"r_foot"
+
 
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.01
@@ -292,14 +302,14 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
  * * * * * * * * * */
 
 /// Bullet damage defines
-#define BULLET_DAMAGE_PISTOL_LIGHT 10
-#define BULLET_DAMAGE_PISTOL_MEDIUM 15
-#define BULLET_DAMAGE_PISTOL_HEAVY 20
+#define BULLET_DAMAGE_PISTOL_LIGHT 20
+#define BULLET_DAMAGE_PISTOL_MEDIUM 25
+#define BULLET_DAMAGE_PISTOL_HEAVY 40
 #define BULLET_DAMAGE_RIFLE_LIGHT 25
-#define BULLET_DAMAGE_RIFLE_MEDIUM 40
-#define BULLET_DAMAGE_RIFLE_HEAVY 50
-#define BULLET_DAMAGE_SHOTGUN_PELLET 10
-#define BULLET_DAMAGE_SHOTGUN_SLUG 40
+#define BULLET_DAMAGE_RIFLE_MEDIUM 45
+#define BULLET_DAMAGE_RIFLE_HEAVY 60
+#define BULLET_DAMAGE_SHOTGUN_PELLET 11
+#define BULLET_DAMAGE_SHOTGUN_SLUG 50
 
 /// Bullet recoil defines
 #define BULLET_RECOIL_PISTOL_LIGHT 0.5
@@ -332,7 +342,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define RUBBERY_STAMINA_RIFLE_MEDIUM (BULLET_DAMAGE_RIFLE_MEDIUM * 2)
 #define RUBBERY_STAMINA_RIFLE_HEAVY (BULLET_DAMAGE_RIFLE_HEAVY * 3)
 #define RUBBERY_STAMINA_SHOTGUN_PELLET (BULLET_DAMAGE_SHOTGUN_PELLET)
-#define RUBBERY_STAMINA_SHOTGUN_SLUG (BULLET_STAMINA_SHOTGUN_SLUG * 2)
+#define RUBBERY_STAMINA_SHOTGUN_SLUG (BULLET_DAMAGE_SHOTGUN_SLUG * 2)
 
 /// Shotgun pellet count defines
 #define SHOTGUN_PELLET_BASE 5
@@ -343,9 +353,9 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define SHOTGUN_SPREAD_IMPROVISED 25
 
 /// Bullet damage modifier defines
-#define BULLET_MATCH_MULT 1.5 // rare, pack a punch
+#define BULLET_MATCH_MULT 1.25 // rare, pack a punch
 #define BULLET_SURPLUS_MULT 1 // standard ammo from an ammobench
-#define BULLET_HANDLOAD_MULT 0.5 // trash ammo you can make anywhere with a reloader tool, most common
+#define BULLET_HANDLOAD_MULT 0.75 // trash ammo you can make anywhere with a reloader tool, most common
 
 /// Bullet spread modifier defines
 #define BULLET_SPREAD_BASE 2 // Base spread added from 'quality' ammo
@@ -374,7 +384,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define RUBBERY_WOUND_RIFLE_MEDIUM (BULLET_WOUND_RIFLE_MEDIUM * 2)
 #define RUBBERY_WOUND_RIFLE_HEAVY (BULLET_WOUND_RIFLE_HEAVY * 5) // If this starts ripping off limbs... good~
 #define RUBBERY_WOUND_SHOTGUN_PELLET (-BULLET_WOUND_SHOTGUN_PELLET * 0.1) // cus negative
-#define RUBBERY_WOUND_SHOTGUN_SLUG (BULLET_WOUND_SHOTGUN_SLUG * 1.1)
+#define RUBBERY_WOUND_SHOTGUN_SLUG (BULLET_WOUND_SHOTGUN_SLUG * 3)
 
 /// Bullet wound falloff defines
 #define BULLET_WOUND_FALLOFF_PISTOL_LIGHT 0
@@ -464,10 +474,10 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_FULL_OTHER_HAND_RECOIL_MOD 2
 
 // Global recoil modifier
-#define GUN_RECOIL_GLOBAL_MULT 1
+#define GUN_RECOIL_GLOBAL_MULT 0.75
 
 /// Gun recoil modifier per shot defines
-#define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0)
+#define GUN_RECOIL_NONE (GUN_RECOIL_GLOBAL_MULT * 0.1)
 #define GUN_RECOIL_PISTOL_LIGHT (GUN_RECOIL_GLOBAL_MULT * 1)
 #define GUN_RECOIL_PISTOL_MEDIUM (GUN_RECOIL_GLOBAL_MULT * 2)
 #define GUN_RECOIL_PISTOL_HEAVY (GUN_RECOIL_GLOBAL_MULT * 1.5)
@@ -493,27 +503,27 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_RECOIL_TIMEOUT_BASE (2 SECONDS)
 
 /// Gun recoil timeout modifiers
-#define GUN_RECOIL_TIMEOUT_INSTANT (GUN_RECOIL_TIMEOUT_BASE * 0)
+#define GUN_RECOIL_TIMEOUT_INSTANT (GUN_RECOIL_TIMEOUT_BASE * 0.1)
 #define GUN_RECOIL_TIMEOUT_QUICK (GUN_RECOIL_TIMEOUT_BASE * 0.75)
 #define GUN_RECOIL_TIMEOUT_NORMAL (GUN_RECOIL_TIMEOUT_BASE * 1)
 #define GUN_RECOIL_TIMEOUT_LONG (GUN_RECOIL_TIMEOUT_BASE * 1.5)
 #define GUN_RECOIL_TIMEOUT_LONGER (GUN_RECOIL_TIMEOUT_BASE * 2)
 
 /// Gun spread Base
-#define GUN_SPREAD_BASE 2
+#define GUN_SPREAD_BASE 1
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE (GUN_SPREAD_BASE * 0.1)
 #define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
 #define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
-#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 2)
-#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 4)
+#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 3)
+#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 6)
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
 
 /// Gun fire delay modifiers
-#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0) // Mostly just good for automatics
+#define GUN_FIRE_DELAY_FASTEST (GUN_FIRE_DELAY_BASE * 0.1) // Mostly just good for automatics
 #define GUN_FIRE_DELAY_FASTER (GUN_FIRE_DELAY_BASE * 0.2) // 0.2s Mostly just good for automatics
 #define GUN_FIRE_DELAY_FAST (GUN_FIRE_DELAY_BASE * 0.4) // 0.4s
 #define GUN_FIRE_DELAY_NORMAL (GUN_FIRE_DELAY_BASE * 0.6) // 0.6s
@@ -524,7 +534,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_AUTOFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
-#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0)
+#define GUN_AUTOFIRE_DELAY_FASTEST (GUN_AUTOFIRE_DELAY_BASE * 0.1)
 #define GUN_AUTOFIRE_DELAY_FASTER (GUN_AUTOFIRE_DELAY_BASE * 1)
 #define GUN_AUTOFIRE_DELAY_FAST (GUN_AUTOFIRE_DELAY_BASE * 2)
 #define GUN_AUTOFIRE_DELAY_NORMAL (GUN_AUTOFIRE_DELAY_BASE * 3)
@@ -535,7 +545,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_BURSTFIRE_DELAY_BASE 1
 
 /// Gun fire delay modifiers
-#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0)
+#define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0.1)
 #define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 1)
 #define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 2)
 #define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 3)
@@ -546,7 +556,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_AIMING_TIME (1.5 SECONDS)
 
 /// Gun draw time modifiers
-#define GUN_DRAW_QUICK (GUN_AIMING_TIME * 0) // Draw, pardner
+#define GUN_DRAW_QUICK (GUN_AIMING_TIME * 0.1) // Draw, pardner
 #define GUN_DRAW_NORMAL (GUN_AIMING_TIME * 1)
 #define GUN_DRAW_LONG (GUN_AIMING_TIME * 1.5)
 
@@ -582,7 +592,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
 
 /// Gun slowdown
-#define GUN_SLOWDOWN_NONE 0
+#define GUN_SLOWDOWN_NONE 0.1
 #define GUN_SLOWDOWN_PISTOL_LIGHT 0.05
 #define GUN_SLOWDOWN_PISTOL_MEDIUM 0.10
 #define GUN_SLOWDOWN_PISTOL_HEAVY 0.15
@@ -607,7 +617,7 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(
 /// Delay between cocking your gun
 #define GUN_COCK_BASE (1 SECONDS)
 
-#define GUN_COCK_INSTANT 0
+#define GUN_COCK_INSTANT 0.1
 #define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
 #define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
 #define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)

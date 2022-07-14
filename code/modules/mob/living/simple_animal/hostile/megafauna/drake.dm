@@ -342,6 +342,7 @@ Difficulty: Medium
 	desc = "Don't just stand there, move!"
 	icon = 'icons/effects/96x96.dmi'
 	icon_state = "landing"
+	plane = MOB_PLANE
 	layer = BELOW_MOB_LAYER
 	pixel_x = -32
 	pixel_y = -32
@@ -351,6 +352,7 @@ Difficulty: Medium
 /obj/effect/temp_visual/dragon_flight
 	icon = 'icons/mob/lavaland/64x64megafauna.dmi'
 	icon_state = "dragon"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	pixel_x = -16
 	duration = 10

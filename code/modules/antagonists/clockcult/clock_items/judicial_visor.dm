@@ -179,6 +179,7 @@
 			C.DefaultCombatKnockdown(5) //knocks down for half a second if affected
 	sleep(!GLOB.ratvar_approaches ? 16 : 10)
 	name = "judicial blast"
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	flick("judicial_explosion", src)
 	set_light(1.4, 2, "#B451A1")

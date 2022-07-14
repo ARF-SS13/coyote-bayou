@@ -1,5 +1,5 @@
 /datum/movespeed_modifier/obesity
-	multiplicative_slowdown = 1.5
+	multiplicative_slowdown = 0.3
 
 /datum/movespeed_modifier/monkey_reagent_speedmod
 	blacklisted_movetypes = FLOATING
@@ -129,8 +129,8 @@
 
 /datum/movespeed_modifier/super_stimpak_slowdown
 	flags = IGNORE_NOSLOW
-	multiplicative_slowdown = 1.5
+	multiplicative_slowdown = 0.8
 
 /datum/movespeed_modifier/healing_poultice_slowdown
 	flags = IGNORE_NOSLOW
-	multiplicative_slowdown = 1.5
+	multiplicative_slowdown = 0.8

@@ -74,8 +74,8 @@ randomize_human(mob/living/carbon/human/H)
 	S["gradient_color"]		>> features_override["grad_color"]
 	S["gradient_style"]		>> features_override["grad_style"]
 
-	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE)
-	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients)
+	features_override["grad_color"]		= sanitize_hexcolor(features_override["grad_color"], 6, FALSE, default = COLOR_ALMOST_BLACK)
+	features_override["grad_style"]		= sanitize_inlist(features_override["grad_style"], GLOB.hair_gradients, "none")
 
 	return 1
 
@@ -106,7 +106,7 @@ randomize_human(mob/living/carbon/human/H)
 				if("grad_color")
 					var/new_grad_color = input(user, "Choose your character's fading hair colour:", "Character Preference","#"+features_override["grad_color"]) as color|null
 					if(new_grad_color)
-						features_override["grad_color"] = sanitize_hexcolor(new_grad_color, 6)
+						features_override["grad_color"] = sanitize_hexcolor(new_grad_color, 6, default = COLOR_ALMOST_BLACK)
 
 				if("grad_style")
 					var/new_grad_style

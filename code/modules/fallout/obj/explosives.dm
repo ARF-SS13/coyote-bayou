@@ -154,14 +154,15 @@
 /obj/item/mine/proc/mineEffect(mob/victim)
 	to_chat(victim, "<span class='danger'>*click*</span>")
 
-/obj/item/mine/proc/on_entered(atom/movable/AM)
+/obj/item/mine/proc/on_entered(datum/source)
 	SIGNAL_HANDLER
 	if(!armed)
 		return
-	if(triggered || !isturf(loc) || !isliving(AM) || isstructure(AM) || isnottriggermine(AM))
+	if(triggered || !isturf(loc) || !isliving(usr) || isstructure(usr) || isnottriggermine(usr))
 		return
-
-	if(AM.movement_type & FLYING)
+	
+	var/atom/movable/AM = usr
+	if(usr.movement_type & FLYING)
 		return
 
 	INVOKE_ASYNC(src, .proc/triggermine, AM)

@@ -458,6 +458,7 @@
 	icon = 'icons/obj/flora/largejungleflora.dmi'
 	pixel_x = -16
 	pixel_y = -12
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 
 /obj/structure/flora/junglebush/large/Initialize()

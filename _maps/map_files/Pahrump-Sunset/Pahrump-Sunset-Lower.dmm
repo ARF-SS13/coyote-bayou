@@ -495,10 +495,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
-"ayz" = (
-/obj/machinery/workbench/advanced,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "azk" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/museum)
@@ -4561,7 +4557,6 @@
 /area/f13/sewer)
 "bRp" = (
 /obj/structure/table/wood/settler,
-/obj/item/reagent_containers/pill/healingpowder,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
@@ -4838,11 +4833,6 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 5
 	},
-/turf/open/floor/f13/wood,
-/area/f13/sewer)
-"bVw" = (
-/obj/item/reagent_containers/pill/healingpowder,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "bVx" = (
@@ -6737,10 +6727,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
-"dls" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "dlE" = (
 /obj/structure/table/booth,
 /obj/effect/decal/waste{
@@ -9897,8 +9883,10 @@
 	},
 /area/f13/bunker)
 "gQX" = (
-/obj/machinery/door/airlock/abandoned,
-/turf/closed/wall/rust,
+/obj/machinery/door/airlock/abandoned{
+	req_one_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/tunnel)
 "gRv" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -10720,13 +10708,6 @@
 "hTx" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/tunnel)
-"hTN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/prewar/poster72{
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ncr)
 "hTP" = (
 /mob/living/simple_animal/hostile/chinese{
 	name = "Comrade Xiaojian"
@@ -10824,15 +10805,6 @@
 /area/f13/caves)
 "hZi" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment{
-	pixel_y = 3
-	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "hZw" = (
@@ -11181,13 +11153,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/building/museum)
-"ise" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Holding Cell";
-	req_one_access_txt = "121"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "isn" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress5"
@@ -17571,7 +17536,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/effect/landmark/start/f13/ncrranger,
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "ppq" = (
@@ -18323,12 +18287,6 @@
 	icon_state = "2-i"
 	},
 /area/f13/caves)
-"qdc" = (
-/obj/structure/sign/poster/ncr/keep_to_myself{
-	pixel_x = -32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "qdA" = (
 /obj/machinery/workbench/forge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -20795,12 +20753,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/radiation)
-"sNA" = (
-/obj/structure/sign/poster/prewar/poster60{
-	pixel_y = 32
-	},
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "sNR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -21132,13 +21084,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/caves)
-"tdZ" = (
-/obj/machinery/door/unpowered/securedoor{
-	name = "Office";
-	req_one_access_txt = "121"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "tep" = (
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/decal/waste{
@@ -22348,13 +22293,6 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
-"uCo" = (
-/obj/structure/sign/poster/prewar/poster82{
-	pixel_y = -32
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/ncr)
 "uCB" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -26958,7 +26896,7 @@ aaa
 aaa
 aaa
 aon
-hTN
+akt
 akt
 nqk
 uXy
@@ -27219,7 +27157,7 @@ clt
 rsu
 kaL
 uXy
-uCo
+uXy
 cpp
 aaa
 aae
@@ -27990,7 +27928,7 @@ cpp
 cpp
 cpp
 cpp
-ise
+fpS
 cpp
 cpp
 cpp
@@ -28245,15 +28183,15 @@ aaa
 cpp
 hvG
 bzD
-qdc
+bzD
 bzD
 bzD
 bzD
 uPw
 cpp
 sWp
-dls
-dls
+bzD
+bzD
 cpp
 aaa
 aak
@@ -28507,7 +28445,7 @@ uXy
 hxV
 bzD
 bzD
-tdZ
+fpS
 bzD
 bzD
 bxV
@@ -29275,7 +29213,7 @@ bzD
 bzD
 bzD
 cpp
-sNA
+bzD
 bzD
 bzD
 cpp
@@ -38432,7 +38370,7 @@ bOA
 bOA
 nid
 iMY
-ayz
+bLL
 uUw
 aak
 xwF
@@ -74965,7 +74903,7 @@ bQC
 bUq
 bRF
 eaW
-bVw
+teK
 bQC
 aae
 aaa

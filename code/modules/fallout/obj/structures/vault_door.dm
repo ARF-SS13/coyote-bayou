@@ -7,6 +7,7 @@
 	icon_state = "113closed"
 	density = 1
 	opacity = 1
+	plane = MOB_PLANE
 	layer = ABOVE_ALL_MOB_LAYER
 	anchored = 1
 	var/is_busy = 0

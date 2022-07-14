@@ -89,9 +89,9 @@ Raider
 		/obj/item/clothing/under/jabroni)
 	suit = pick(
 		/obj/item/clothing/suit/armor/light/raider/supafly,\
-		/obj/item/clothing/suit/armor/light/raider/yankee, \
+		/obj/item/clothing/suit/armor/medium/raider/yankee, \
 		/obj/item/clothing/suit/armor/light/raider/sadist, \
-		/obj/item/clothing/suit/armor/light/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/medium/raider/blastmaster, \
 		/obj/item/clothing/suit/armor/medium/raider/badlands, \
 		/obj/item/clothing/suit/armor/light/raider/painspike)
 	if(prob(10))
@@ -191,7 +191,7 @@ Raider
 
 /datum/outfit/loadout/raider_yankee
 	name = "Yankee"
-	suit = /obj/item/clothing/suit/armor/light/raider/yankee
+	suit = /obj/item/clothing/suit/armor/medium/raider/yankee
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 	backpack_contents = list(
 		/obj/item/shishkebabpack = 1,
@@ -201,7 +201,7 @@ Raider
 
 /datum/outfit/loadout/raider_blast
 	name = "Blastmaster"
-	suit = /obj/item/clothing/suit/armor/light/raider/blastmaster
+	suit = /obj/item/clothing/suit/armor/medium/raider/blastmaster
 	head = /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	backpack_contents = list(
 		/obj/item/kitchen/knife/butcher = 1,
@@ -1172,6 +1172,8 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribalwar/bonecodpiece,
 		/datum/crafting_recipe/tribalwar/bracers,
 		/datum/crafting_recipe/tribal/bonetalisman,
+		/datum/crafting_recipe/healpoultice,
+		/datum/crafting_recipe/healpoultice5,
 		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)

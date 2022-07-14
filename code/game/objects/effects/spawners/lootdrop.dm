@@ -638,11 +638,11 @@
 	name = "random stock parts spawner"
 	lootcount = 1
 	loot = list(
-				/obj/item/stock_parts/capacitor,
-				/obj/item/stock_parts/scanning_module,
-				/obj/item/stock_parts/manipulator,
-				/obj/item/stock_parts/micro_laser,
-				/obj/item/stock_parts/matter_bin,
+				/obj/item/stock_parts/capacitor/simple,
+				/obj/item/stock_parts/scanning_module/simple,
+				/obj/item/stock_parts/manipulator/simple,
+				/obj/item/stock_parts/micro_laser/simple,
+				/obj/item/stock_parts/matter_bin/simple,
 				/obj/item/stock_parts/cell
 				)
 
