@@ -62,7 +62,7 @@
 #include "surgeries.dm"
 #include "timer_sanity.dm"
 #include "unit_test.dm"
-//#include "_coyote_tests.dm"
+#include "_coyote_tests.dm"
 
 #undef TEST_ASSERT
 #undef TEST_ASSERT_EQUAL
