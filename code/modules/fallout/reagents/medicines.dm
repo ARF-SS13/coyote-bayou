@@ -271,60 +271,40 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 16
+	overdose_threshold = 9 // space those doses carefully
 	addiction_threshold = 6
+	var/od_strikes = 0 // So we dont get roflstomped by a sudden massive dose of medx
+	var/od_next_strike = 0 // there's a cool down between strikes, to give the user time to purge this stuff
+	var/od_strike_cooldown = 6 SECONDS
 
 /datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You feel tougher, able to shrug off pain more easily.</span>")
-		M.maxHealth += 50
-		M.health += 50
+		to_chat(M, span_alert("You feel a dull warmth spread throughout your body, masking all sense of pain with a not-unpleasant tingle. Injuries don't seem to hurt as much."))
+		M.maxHealth += 30
+		M.health += 30
 
 /datum/reagent/medicine/medx/on_mob_delete(mob/living/carbon/human/M)
 	if(isliving(M))
-		to_chat(M, "<span class='notice'>You feel as vulnerable to pain as a normal person.</span>")
-		M.maxHealth -= 50
-		M.health -= 50
-	switch(current_cycle)
-		if(1 to 40)
-			M.confused += 10
-			M.blur_eyes(20)
-			to_chat(M, "<span class='notice'>Your head is pounding. Med-X is hard on the body. </span>")
-		if(41 to 80)
-			M.confused +=20
-			M.blur_eyes(30)
-			M.losebreath += 8
-			M.set_disgust(12)
-			M.adjustStaminaLoss(30*REAGENTS_EFFECT_MULTIPLIER)
-			to_chat(M, "<span class='danger'>Your stomach churns, your eyes cloud and you're pretty sure you just popped a lung. You shouldn't take so much med-X at once. </span>")
-		if(81 to 120)
-			M.confused +=40
-			M.blur_eyes(30)
-			M.losebreath += 10
-			M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
-			M.set_disgust(25)
-			M.adjustStaminaLoss(40*REAGENTS_EFFECT_MULTIPLIER)
-			M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
-			M.Jitter(1000)
-			M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
-			M.visible_message("<span class='userdanger'>[M] clutches their stomach and vomits violently onto the ground, bloody froth covering their lips!</span>")
-			to_chat(M, "<span class='userdanger'>You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too. </span>")
-		if(121 to INFINITY)
-			M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
-			M.Unconscious(400)
-			M.Jitter(1000)
-			M.set_heartattack(TRUE)
-			M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
-			to_chat(M, "<span class='danger'>Your vision goes black and your heart stops beating as the amount of drugs in your system shut down your organs one by one. Say hello to Elvis in the afterlife. </span>")
-
+		to_chat(M, span_danger("The warmth fades, and every injury you you had slams into you like a truck."))
+		M.maxHealth -= 30
+		M.health -= 30
 	..()
 
 /datum/reagent/medicine/medx/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustKnockdown(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustUnconscious(-30*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	if(M.health < 0)
+		M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
+	if(M.oxyloss > 35)
+		M.setOxyLoss(35, 0)
+	if(M.losebreath >= 4)
+		M.losebreath = max(M.losebreath - 2, 0)
+	M.adjustStaminaLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
+	. = 1
+	if(prob(20))
+		M.AdjustAllImmobility(-20, 0)
+		M.AdjustUnconscious(-20, 0)
 	..()
 	if(M.mind)
 		var/datum/job/job = SSjob.GetJob(M.mind.assigned_role)
@@ -335,14 +315,65 @@
 	. = TRUE
 
 /datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
-	M.set_blurriness(30)
-	M.Unconscious(400)
-	M.Jitter(1000)
-	M.drop_all_held_items()
-	M.Dizzy(2)
-	M.visible_message("<span class='userdanger'>[M] suddenly passes out!</span>")
-	if(prob(10))
-		to_chat(M, "<span class='userdanger'>Too much med-x! </span>")
+	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/mentat) >= 10)
+		if(prob(5))
+			to_chat(M, span_danger("Your nerves buzz like a hive of angry bees, kept running by sheer force of mentat."))
+	else
+		switch(od_strikes)
+			if(0)
+				od_next_strike = od_strike_cooldown + world.time // give a delay before the next strike check
+				to_chat(M, span_danger("The numbing warmth attacks your senses, your body feeling like its in a dream, masking the sensation of your organs disintegrating under all that Med-X strain!"))
+				od_strikes = 1
+			if(1 to 3)
+				M.confused = clamp(M.confused + 1, 1, 20)
+				M.blur_eyes(5)
+				M.adjustOrganLoss(ORGAN_SLOT_EYES, 1)
+				if(prob(5))
+					to_chat(M, span_danger("You feel a dull, building pressure behind your eyes, this can't be good for you."))
+			if(4 to 6)
+				M.confused = clamp(M.confused + 1, 1, 20)
+				M.blur_eyes(10)
+				M.losebreath = clamp(M.losebreath + 1, 1, 8)
+				M.set_disgust(12)
+				M.adjustStaminaLoss(5*REAGENTS_EFFECT_MULTIPLIER)
+				M.adjustOrganLoss(ORGAN_SLOT_EYES, 2)
+				if(prob(5))
+					to_chat(M, span_danger("It takes conscious thought to continue breathing, thought continually interrupted by worrying throbs in your skull."))
+			if(6 to 12)
+				M.confused = clamp(M.confused + 1, 1, 200)
+				M.blur_eyes(30)
+				M.losebreath = clamp(M.losebreath + 1, 1, 10)
+				M.adjustToxLoss(2)
+				M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+				M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
+				M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
+				M.set_disgust(25)
+				M.adjustStaminaLoss(10*REAGENTS_EFFECT_MULTIPLIER)
+				M.Jitter(20)
+				M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
+				if(prob(5))
+					M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
+					to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
+				if(prob(20))
+					M.visible_message(
+						span_danger("[M] stumbles around drunkenly, gasping for air in between long stretches of not breathing!"),
+						span_danger("Your muscles don't seem to obey you, feeling like they're being pushed through a raging river. You feel dead inside."))
+			if(13 to INFINITY)
+				M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+				M.adjustOrganLoss(ORGAN_SLOT_EYES, 3)
+				M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
+				M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
+				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
+				M.set_heartattack(TRUE)
+				M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
+				if(prob(20))
+					M.visible_message(
+						span_danger("[M] twitches violently!"),
+						span_danger("You feel an ominous slosh within you, your organs dissolving under the chemical stress and shutting down. You see a light..."))
+	if(od_next_strike <= world.time)
+		od_next_strike = world.time + od_strike_cooldown
+		od_strikes = clamp(od_strikes + (((volume + current_cycle) / 3) % overdose_threshold), od_strikes + 1, od_strikes + 3)
 	..()
 
 /datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
@@ -370,78 +401,6 @@
 	..()
 
 /datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
-		M.Dizzy(5)
-		M.Jitter(5)
-	..()
-
-/datum/reagent/medicine/legionmedx
-	name = "natural painkiller"
-
-	description = "Med-X is a potent painkiller, allowing users to withstand high amounts of pain and continue functioning."
-	reagent_state = LIQUID
-	color = "#6D6374"
-	metabolization_rate = 0.7 * REAGENTS_METABOLISM
-	overdose_threshold = 14
-	addiction_threshold = 50
-
-/datum/reagent/medicine/legionmedx/on_mob_add(mob/M)
-	..()
-	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_HEALTHY
-		ADD_TRAIT(L, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
-
-/datum/reagent/medicine/legionmedx/on_mob_delete(mob/M)
-	if(isliving(M))
-		var/mob/living/carbon/L = M
-		L.hal_screwyhud = SCREWYHUD_NONE
-		REMOVE_TRAIT(M, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
-	..()
-
-/datum/reagent/medicine/legionmedx/on_mob_life(mob/living/carbon/M)
-	M.AdjustStun(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustKnockdown(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.AdjustUnconscious(-20*REAGENTS_EFFECT_MULTIPLIER, 0)
-	M.adjustStaminaLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
-	..()
-	. = TRUE
-
-/datum/reagent/medicine/legionmedx/overdose_process(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.Dizzy(2)
-		M.Jitter(2)
-	..()
-
-/datum/reagent/medicine/legionmedx/addiction_act_stage1(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.Jitter(2)
-	..()
-
-/datum/reagent/medicine/legionmedx/addiction_act_stage2(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
-		M.Dizzy(3)
-		M.Jitter(3)
-	..()
-
-/datum/reagent/medicine/legionmedx/addiction_act_stage3(mob/living/M)
-	if(prob(33))
-		M.drop_all_held_items()
-		M.adjustToxLoss(2*REAGENTS_EFFECT_MULTIPLIER)
-		. = TRUE
-		M.Dizzy(4)
-		M.Jitter(4)
-	..()
-
-/datum/reagent/medicine/legionmedx/addiction_act_stage4(mob/living/M)
 	if(prob(33))
 		M.drop_all_held_items()
 		M.adjustToxLoss(3*REAGENTS_EFFECT_MULTIPLIER)
@@ -480,15 +439,14 @@
 		to_chat(M, "<span class='warning'>The blackness in your peripheral vision fades.</span>")
 		M.cure_nearsighted(EYE_DAMAGE)
 		M.blur_eyes(10)*/
-	else if(M.eye_blind || M.eye_blurry)
+	if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
 		M.set_blurriness(0)
 		to_chat(M, "<span class='warning'>Your vision slowly returns to normal...</span>")
-//	else if(eyes.eye_damage > 0)
-//		M.adjust_eye_damage(-1)
-//	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2)
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1)
 	if (prob(5))
-		to_chat(M, "<span class='notice'>You feel way more intelligent!</span>")
+		to_chat(M, "<span class='notice'>You feel a strange mental fortitude!</span>")
 	..()
 	. = TRUE
 
