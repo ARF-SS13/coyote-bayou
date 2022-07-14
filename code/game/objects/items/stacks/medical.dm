@@ -23,6 +23,8 @@
 	novariants = FALSE
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/medical
+	/// We have an active do_after, dont superstack healing things
+	var/is_healing = FALSE
 	var/self_penalty_effectiveness = 0.8
 	var/self_delay = 50
 	var/other_delay = 0
@@ -45,19 +47,6 @@
 	INVOKE_ASYNC(src, .proc/try_heal, M, user)
 
 /obj/item/stack/medical/proc/try_heal(mob/living/M, mob/user, silent = FALSE)
-	if(!M.can_inject(user, TRUE))
-		return
-	if(M == user)
-		if(!silent)
-			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [user.p_them()]self...</span>", "<span class='notice'>You begin applying \the [src] on yourself...</span>")
-		if(!do_mob(user, M, self_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
-			return
-	else if(other_delay)
-		if(!silent)
-			user.visible_message("<span class='notice'>[user] starts to apply \the [src] on [M].</span>", "<span class='notice'>You begin applying \the [src] on [M]...</span>")
-		if(!do_mob(user, M, other_delay, extra_checks=CALLBACK(M, /mob/living/proc/can_inject, user, TRUE)))
-			return
-
 	if(heal(M, user))
 		log_combat(user, M, "healed", src.name)
 		use(1)
@@ -88,28 +77,36 @@
 	M.heal_bodypart_damage(heal_brute)
 	return TRUE
 
-/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/user)
+/obj/item/stack/medical/proc/heal_carbon(mob/living/carbon/C, mob/living/user)
 	if(!iscarbon(C) || !user)
 		return FALSE
+	if(is_healing)
+		user.show_message(span_alert("You're already doing something with this!"))
+		return
+	if(!user.can_inject(C, TRUE))
+		return
 	
 	var/list/heal_operations = pick_a_bodypart(C, user)
 	if(!islist(heal_operations))
 		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
 		return FALSE
 	if(!istype(heal_operations["bodypart"], /obj/item/bodypart))
-		to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
-		return FALSE
-	if(heal_operations["bodypart"] == UNABLE_TO_HEAL)
-		to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
-		return FALSE
+		if(heal_operations["bodypart"] == UNABLE_TO_HEAL)
+			to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
+			return FALSE
+		else
+			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
+			return FALSE
 
 	var/self_application = (user == C)
 	var/obj/item/bodypart/affected_bodypart = heal_operations["bodypart"]
 	do_medical_message(user, C, affected_bodypart, "start")
-	if(!do_after(user, (self_application ? self_delay : other_delay), target=C))
+	is_healing = TRUE
+	if(!do_mob(user, C, (self_application ? self_delay : other_delay), progress = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
+		is_healing = FALSE
 		return
-
+	is_healing = FALSE
 	/// now we start doing healy things!
 	if(heal_operations & DO_HEAL_DAMAGE)
 		if(affected_bodypart.heal_damage(heal_brute, heal_burn))
@@ -124,8 +121,8 @@
 			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
 				wounds_to_unburn.treat_burn(src, user, self_application)
 				break
-	if(heal_operations & DO_APPLY_BANDAGE)
-		affected_bodypart.apply_gauze(src)
+/* 	if(heal_operations & DO_APPLY_BANDAGE)
+		affected_bodypart.apply_gauze(src) */
 
 	do_medical_message(user, C, affected_bodypart, "end")
 	return TRUE
@@ -147,9 +144,9 @@
 	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
 		. |= DO_HEAL_DAMAGE
 	for(var/datum/wound/woundies in target_bodypart.wounds)
-		if(absorption_rate || absorption_capacity)
+/* 		if(absorption_rate || absorption_capacity)
 			if(woundies.wound_flags & ACCEPTS_GAUZE)
-				. |= DO_APPLY_BANDAGE
+				. |= DO_APPLY_BANDAGE */ 
 		if(stop_bleeding)
 			if(woundies.blood_flow)
 				. |= DO_UNBLEED_WOUND
@@ -199,13 +196,13 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_warning("[user] begins treating the wounds on [target]'s [limb.name]..."), 
-				span_warning("You begin treating the wounds on [user == target ? "your" : "[target]'s"] [limb.name]..."))
+				span_warning("[user] begins treating the wounds on [target]'s [limb]..."), 
+				span_warning("You begin treating the wounds on [user == target ? "your" : "[target]'s"] [limb]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] applies [src] to [target]'s [limb.name].</span>"), 
-				span_green("You treat the wounds on [user == target ? "yourself" : "[target]'s"] [limb.name]."))
+				span_green("[user] applies [src] to [target]'s [limb].</span>"), 
+				span_green("You treat the wounds on [user == target ? "yourself" : "[target]'s"] [limb]."))
 
 
 
@@ -243,12 +240,13 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	heal_brute = 5
-	self_delay = 50
-	other_delay = 20
+	self_delay = 10
+	other_delay = 5
 	amount = 10
 	max_amount = 10
 	absorption_rate = 0.45
 	absorption_capacity = 10
+	stop_bleeding = 2
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -261,7 +259,7 @@
 		to_chat(user, "<span class='notice'>There's nothing there to bandage!</span>")
 		return
 	if(!LAZYLEN(limb.wounds))
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!</span>") // good problem to have imo
+		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb]!</span>") // good problem to have imo
 		return
 
 	var/gauzeable_wound = FALSE
@@ -271,19 +269,19 @@
 			gauzeable_wound = TRUE
 			break
 	if(!gauzeable_wound)
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb.name]!</span>") // good problem to have imo
+		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb]!</span>") // good problem to have imo
 		return
 
 	if(limb.current_gauze && (limb.current_gauze.absorption_capacity * 0.8 > absorption_capacity)) // ignore if our new wrap is < 20% better than the current one, so someone doesn't bandage it 5 times in a row
-		to_chat(user, "<span class='warning'>The bandage currently on [user==M ? "your" : "[M]'s"] [limb.name] is still in good condition!</span>")
+		to_chat(user, "<span class='warning'>The bandage currently on [user==M ? "your" : "[M]'s"] [limb] is still in good condition!</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M]'s [limb.name] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb.name] with [src]...</span>")
+	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M]'s [limb] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb] with [src]...</span>")
 
 	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
 		return
 
-	user.visible_message("<span class='green'>[user] applies [src] to [M]'s [limb.name].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb.name].</span>")
+	user.visible_message("<span class='green'>[user] applies [src] to [M]'s [limb].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb].</span>")
 	limb.apply_gauze(src)
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
@@ -317,23 +315,24 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_warning("[user] begins bandaging the wounds on [target]'s [limb.name]..."), 
-				span_warning("You begin bandaging the wounds on [user == target ? "your" : "[target]'s [limb.name]"]..."))
+				span_warning("[user] begins bandaging the wounds on [target]'s [limb]..."), 
+				span_warning("You begin bandaging the wounds on [user == target ? "your" : "[target]'s [limb]"]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] bandages [src] to [target]'s [limb.name].</span>"), 
-				span_green("You bandage the wounds on [user == target ? "your" : "[target]'s [limb.name]"]."))
+				span_green("[user] bandages [src] to [target]'s [limb].</span>"), 
+				span_green("You bandage the wounds on [user == target ? "your" : "[target]'s [limb]"]."))
 
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
 	heal_brute = 0
 	desc = "A roll of cloth. Useful for staunching bleeding, healing burns, and reversing infection, but not THAT useful."
-	self_delay = 60
-	other_delay = 30
+	self_delay = 10
+	other_delay = 5
 	absorption_rate = 0.15
 	absorption_capacity = 4
+	stop_bleeding = 1
 	merge_type = /obj/item/stack/medical/gauze/improvised
 
 /obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
@@ -346,8 +345,9 @@
 	singular_name = "sterilized medical gauze"
 	desc = "A roll of elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns. "
 	heal_brute = 6
-	self_delay = 45
-	other_delay = 15
+	self_delay = 5
+	other_delay = 10
+	stop_bleeding = 3
 	absorption_rate = 0.4
 	absorption_capacity = 15
 	merge_type = /obj/item/stack/medical/gauze/adv
@@ -383,13 +383,13 @@
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_warning("[user] begins suturing the wounds on [target]'s [limb.name]..."), 
-				span_warning("You begin suturing the wounds on [user == target ? "your" : "[target]'s"] [limb.name]..."))
+				span_warning("[user] begins suturing the wounds on [target]'s [limb]..."), 
+				span_warning("You begin suturing the wounds on [user == target ? "your" : "[target]'s"] [limb]..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] sutures [src] to [target]'s [limb.name].</span>"), 
-				span_green("You suture the wounds on [user == target ? "your" : "[target]'s [limb.name]"]."))
+				span_green("[user] sutures [src] to [target]'s [limb].</span>"), 
+				span_green("You suture the wounds on [user == target ? "your" : "[target]'s [limb]"]."))
 
 /obj/item/stack/medical/suture/one
 	amount = 1
@@ -598,6 +598,7 @@
 	self_delay = 20
 	other_delay = 10
 	novariants = TRUE
+	heal_burn = 10
 	amount = 20
 	max_amount = 20
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
