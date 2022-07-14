@@ -816,7 +816,6 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
-//Yao Guai Gauntlet	Keywords: Damage 30, Fast, "Saw Bleed" Effect
 /obj/item/melee/unarmed/yaoguaigauntlet
 	name = "yao guai gauntlet"
 	desc = "The severed hand of a yao guai, the hide cured, the muscles and bone removed, and given a harness to turn it into a deadly gauntlet. Usually seen around the hands of the Sorrows tribe."
@@ -831,11 +830,10 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	attack_speed = CLICK_CD_MELEE * 0.7
 
 /obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user)
-	if(isliving(target))
-		target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
-	else
+	. = ..()
+	if(!isliving(target))
 		return
-
+	target.apply_status_effect(/datum/status_effect/stacking/saw_bleed/yaoguaigauntlet)
 
 ///////////
 // TOOLS //
