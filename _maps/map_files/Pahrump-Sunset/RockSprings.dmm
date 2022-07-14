@@ -4641,7 +4641,7 @@
 	},
 /area/f13/building)
 "eUD" = (
-/obj/structure/curtain,
+/obj/machinery/chem_dispenser,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "eVe" = (
@@ -6829,10 +6829,26 @@
 /area/f13/wasteland)
 "hxV" = (
 /obj/machinery/light/small{
-	dir = 8;
-	light_color = "red"
+	dir = 8
 	},
-/obj/structure/closet/crate/bin/trashbin,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/reagent_containers/glass/beaker/large{
+	pixel_x = -5;
+	pixel_y = 4
+	},
+/obj/item/storage/box/medsprays{
+	pixel_x = -3;
+	pixel_y = 13
+	},
+/obj/item/storage/box/pillbottles{
+	pixel_x = 10;
+	pixel_y = 7
+	},
+/obj/item/storage/box/beakers{
+	pixel_x = 7;
+	pixel_y = 11
+	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "hyh" = (
@@ -9453,6 +9469,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
+"kbc" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/turf/closed/wall/f13/wood/interior,
+/area/f13/village)
 "kbg" = (
 /obj/structure/fence,
 /turf/open/indestructible/ground/outside/roaddirt{
@@ -10355,7 +10377,7 @@
 	desc = "Scrawny looking red gecko, not very chonky.";
 	health = 30;
 	name = "Chonklette";
-	resize = .7
+	resize = 0.7
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
@@ -14929,6 +14951,27 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"pSS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table,
+/obj/item/reagent_containers/dropper{
+	pixel_x = -5;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/syringe{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/item/reagent_containers/glass/beaker{
+	pixel_x = 9;
+	pixel_y = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "pUh" = (
 /obj/effect/decal/cleanable/shreds,
 /turf/open/floor/f13/wood,
@@ -17660,9 +17703,8 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
 "sPd" = (
-/obj/structure/curtain,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/obj/machinery/chem_master,
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/village)
 "sPf" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -19337,6 +19379,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/obj/machinery/chem_heater,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/village)
 "uOA" = (
@@ -20061,6 +20104,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/chem_dispenser,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/village)
 "vBP" = (
@@ -20684,13 +20728,10 @@
 /turf/closed/wall/f13/wood/house,
 /area/f13/village)
 "wql" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/item/clothing/under/f13/doctorf,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
+/turf/open/floor/f13/wood,
 /area/f13/village)
 "wqK" = (
 /turf/open/indestructible/ground/outside/road{
@@ -20805,9 +20846,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "wzC" = (
-/obj/structure/chair/greyscale{
-	dir = 1
-	},
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/clothing/under/f13/doctorf,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/village)
 "wAU" = (
@@ -82626,12 +82667,12 @@ jXC
 nQW
 cYX
 cMc
-hWo
-hWo
+wql
+vHF
 pJb
 hxV
 eUD
-doV
+sPd
 uOi
 iHo
 atx
@@ -82883,11 +82924,11 @@ jXC
 nQW
 xtx
 com
-pJb
-pJb
-pJb
 vHF
-sPd
+oMc
+oMc
+oMc
+vHF
 doV
 hwu
 wzC
@@ -83140,14 +83181,14 @@ jws
 fHN
 lHt
 wRU
-pJb
-pJb
 vHF
-pJb
-sPd
+oMc
+vHF
+vHF
+vHF
 iFX
 mQK
-wql
+jSU
 xtx
 wgx
 nQW
@@ -83401,10 +83442,10 @@ pJb
 wmK
 pJb
 pJb
-eUD
+pSS
 ogO
 vBy
-jSU
+kbc
 aPy
 wgx
 fHN
@@ -83657,7 +83698,7 @@ avo
 rHg
 avo
 oqf
-vHF
+pJb
 avo
 avo
 jBj

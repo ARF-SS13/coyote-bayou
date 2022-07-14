@@ -41,7 +41,7 @@
 			R.forceMove(src)
 
 			if(bullet)
-				bullet.forceMove(drop_location())
+				bullet.forceMove(get_turf(src.loc))
 			return TRUE
 
 	return FALSE

@@ -32,21 +32,23 @@
 
 /mob/living/carbon/human/dummy/consistent/proc/setup_human_dna()
 	create_dna(src)
-	dna.initialize_dna()
-	dna.features["body_markings"] = "None"
-	dna.features["ears"] = "None"
-	dna.features["ethcolor"] = COLOR_WHITE
-	dna.features["frills"] = "None"
-	dna.features["horns"] = "None"
-	dna.features["mcolor"] = "00FF00"
-	dna.features["moth_antennae"] = "Plain"
-	dna.features["moth_markings"] = "None"
-	dna.features["moth_wings"] = "Plain"
-	dna.features["snout"] = "Round"
-	dna.features["spines"] = "None"
-	dna.features["tail_cat"] = "None"
-	dna.features["tail_lizard"] = "Smooth"
-	dna.features["pod_hair"] = "Ivy"
-	dna.features["grad_style"] = "none"
-	dna.features["grad_color"] = COLOR_ALMOST_BLACK
-	hair_style == "Bald"
+	dna.initialize_dna(null, FALSE)
+	// dna.features["body_markings"] = "None"
+	// dna.features["ears"] = "None"
+	// dna.features["ethcolor"] = COLOR_WHITE
+	// dna.features["frills"] = "None"
+	// dna.features["horns"] = "None"
+	// dna.features["mcolor"] = "00FF00"
+	// dna.features["moth_antennae"] = "Plain"
+	// dna.features["moth_markings"] = "None"
+	// dna.features["moth_wings"] = "Plain"
+	// dna.features["snout"] = "Round"
+	// dna.features["spines"] = "None"
+	// dna.features["tail_cat"] = "None"
+	// dna.features["tail_lizard"] = "Smooth"
+	// dna.features["pod_hair"] = "Ivy"
+	// dna.features["grad_style"] = "none"
+	// dna.features["grad_color"] = COLOR_ALMOST_BLACK
+	facial_hair_style = "Shaved"
+	hair_style = "Bald"
+	hair_color = "FF0000"
