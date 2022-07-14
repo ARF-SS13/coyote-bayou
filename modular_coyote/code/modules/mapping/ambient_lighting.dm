@@ -1,10 +1,13 @@
-/area/f13/ambientlighting/Initialize()
+/area/f13/ambientlighting/LateInitialize()
 	. = ..()
 	RegisterSignal(src, COMSIG_EXIT_AREA, .proc/HandleExitLighting)
 	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/HandleEnterLighting)
 
 /area/f13/ambientlighting/proc/HandleExitLighting(datum/source, mob/user)
 	if(!iscarbon(user))
+		if(isliving(user))
+			user.see_in_dark = max(user.see_in_dark, see_in_dark_override)
+			user.lighting_alpha = min(user.lighting_alpha, lighting_alpha_override)
 		return
 
 	var/mob/living/carbon/C = user
@@ -21,7 +24,10 @@
 	C.update_sight()
 
 /area/f13/ambientlighting/proc/HandleEnterLighting(datum/source, mob/user)
-	if(!isliving(user))
+	if(!iscarbon(user))
+		if(isliving(user))
+			user.see_in_dark = initial(user.see_in_dark)
+			user.lighting_alpha = initial(user.lighting_alpha)
 		return
 	
 	var/mob/living/carbon/C = user
