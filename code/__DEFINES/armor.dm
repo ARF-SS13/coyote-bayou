@@ -149,16 +149,16 @@
  * T3 - Dedicated hazardous environmental suits
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_ENV_T1 list(\
-		"bio" = 2, \
-		"rad" = 2, \
+		"bio" = 1.5, \
+		"rad" = 1.5, \
 		"fire" = 1.5, \
 		"acid" = 2)
 
 #define ARMOR_MODIFIER_UP_ENV_T2 list(\
-		"bio" = 3, \
-		"rad" = 3, \
+		"bio" = 2, \
+		"rad" = 2, \
 		"fire" = 2, \
-		"acid" = 3)
+		"acid" = 2)
 
 #define ARMOR_MODIFIER_UP_ENV_T3 list(\
 		"bio" = 5, \
@@ -387,7 +387,14 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 /// Extra tag saying what armor tier this armor is, for description purposes
 #define ARMOR_CLOTHING_PA "This is a suit of power armor, able to withstand a tank shell and still finish a marathon."
 
-
+/// Armor caps!
+#define ARMOR_CAP_BOMB 100
+#define ARMOR_CAP_BIO 90
+#define ARMOR_CAP_RAD 90
+#define ARMOR_CAP_FIRE 90
+#define ARMOR_CAP_ACID 90
+#define ARMOR_CAP_MAGIC 100
+#define ARMOR_CAP_WOUND 100
 
 
 
