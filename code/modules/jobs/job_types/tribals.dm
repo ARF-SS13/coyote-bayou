@@ -89,7 +89,6 @@ Tribal Chief
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/flashlight/lantern = 1,
 	)
@@ -143,7 +142,6 @@ Tribal Shaman
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/smelling_salts/wayfarer=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
@@ -218,7 +216,6 @@ Tribal Head Hunter
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/restraints/legcuffs/bola=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
@@ -280,7 +277,6 @@ Druid
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
 		/obj/item/reagent_containers/pill/patch/healpoultice=2)
 
@@ -339,7 +335,6 @@ Villager
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/flashlight/flare/torch=1)
 
 /datum/outfit/loadout/gatherer
@@ -439,7 +434,6 @@ Hunter
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1)
 
@@ -538,7 +532,6 @@ Guardian
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
-		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
 		/obj/item/restraints/legcuffs/bola/tactical=1)
