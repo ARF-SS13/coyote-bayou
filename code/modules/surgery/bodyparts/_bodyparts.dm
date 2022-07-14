@@ -954,7 +954,7 @@
 		return
 	QDEL_NULL(current_gauze)
 	current_gauze = new gauze.type(src, 1)
-	gauze.use(1) // handle it on the item, will be changed later
+	//gauze.use(1) // handle it on the item, will be changed later
 
 /**
  * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
