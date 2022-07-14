@@ -1674,3 +1674,14 @@ Not implemented due to balance at the moment
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 */
+//Let's get batty
+/datum/crafting_recipe/wooden_bat
+	name = "Wooden Bat"
+	result = /obj/item/twohanded/baseball
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
+				/obj/item/stack/sheet/leather = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 40
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
+

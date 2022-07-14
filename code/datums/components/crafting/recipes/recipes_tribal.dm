@@ -91,7 +91,7 @@
 	time = 30
 	reqs = list(/obj/item/stack/sheet/bone = 3,
 				/obj/item/stack/sheet/sinew = 2)
-	always_available = FALSE
+	always_available = TRUE
 
 /*
 /datum/crafting_recipe/headpike
