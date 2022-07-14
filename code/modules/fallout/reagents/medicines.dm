@@ -271,11 +271,12 @@
 	reagent_state = LIQUID
 	color = "#6D6374"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 9 // space those doses carefully
-	addiction_threshold = 6
+	overdose_threshold = 25
+	addiction_threshold = 15
 	var/od_strikes = 0 // So we dont get roflstomped by a sudden massive dose of medx
 	var/od_next_strike = 0 // there's a cool down between strikes, to give the user time to purge this stuff
 	var/od_strike_cooldown = 6 SECONDS
+	var/od_cycles = 0 // Number of cycles we've been ODing
 
 /datum/reagent/medicine/medx/on_mob_add(mob/living/carbon/human/M)
 	..()
@@ -315,7 +316,9 @@
 	. = TRUE
 
 /datum/reagent/medicine/medx/overdose_process(mob/living/carbon/human/M)
-	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/mentat) >= 10)
+	/// Dont cause the effects if they have more than 15u of mentat, and any epinephrine at all
+	/// Doesnt stop the severity ramping up, so if it goes below that... it all catches up
+	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/mentat) >= 5 && M.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
 		if(prob(5))
 			to_chat(M, span_danger("Your nerves buzz like a hive of angry bees, kept running by sheer force of mentat."))
 	else
@@ -355,7 +358,7 @@
 				if(prob(5))
 					M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
 					to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
-				if(prob(20))
+				if(prob(5))
 					M.visible_message(
 						span_danger("[M] stumbles around drunkenly, gasping for air in between long stretches of not breathing!"),
 						span_danger("Your muscles don't seem to obey you, feeling like they're being pushed through a raging river. You feel dead inside."))
@@ -365,15 +368,17 @@
 				M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 2)
 				M.adjustOrganLoss(ORGAN_SLOT_HEART, 2)
 				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2, BRAIN_DAMAGE_MILD)
-				M.set_heartattack(TRUE)
-				M.visible_message("<span class='userdanger'>[M] clutches at their chest as if their heart stopped!</span>")
+				if(prob(10))
+					M.vomit(30, 1, 1, 5, 0, 0, 0, 60)
+					to_chat(M, span_danger("You throw up everything you've eaten in the past week and some blood to boot. You're pretty sure your heart just stopped for a second, too."))
 				if(prob(20))
 					M.visible_message(
 						span_danger("[M] twitches violently!"),
 						span_danger("You feel an ominous slosh within you, your organs dissolving under the chemical stress and shutting down. You see a light..."))
 	if(od_next_strike <= world.time)
 		od_next_strike = world.time + od_strike_cooldown
-		od_strikes = clamp(od_strikes + (((volume + current_cycle) / 3) % overdose_threshold), od_strikes + 1, od_strikes + 3)
+		od_strikes = clamp(od_strikes + (((volume + od_cycles) / 3) % overdose_threshold), od_strikes + 1, od_strikes + 3)
+		od_cycles++
 	..()
 
 /datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
