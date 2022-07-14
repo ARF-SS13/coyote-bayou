@@ -201,9 +201,9 @@
 	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_medx"
-	volume = 15
-	amount_per_transfer_from_this = 5
-	list_reagents = list(/datum/reagent/medicine/medx = 15)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list(/datum/reagent/medicine/medx = 10)
 
 // ---------------------------------
 // PSYCHO
