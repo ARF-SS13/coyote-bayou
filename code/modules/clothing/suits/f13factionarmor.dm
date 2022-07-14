@@ -42,7 +42,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/light/raider/blastmaster
+/obj/item/clothing/suit/armor/medium/raider/blastmaster
 	name = "blastmaster raider armor"
 	desc = "A suit composed largely of blast plating, though there's so many holes it's hard to say if it will protect against much."
 	icon_state = "blastmaster"
@@ -51,17 +51,17 @@
 	armor = list("melee" = 40, "bullet" = 15, "laser" = 40, "bio" = 0, "bomb" = 90, "rad" = 0, "fire" = 25, "acid" = 25, "wound" = 40)
 	flash_protect = 2
 
-/obj/item/clothing/suit/armor/light/raider/blastmaster/Initialize()
+/obj/item/clothing/suit/armor/medium/raider/blastmaster/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/light/raider/yankee
+/obj/item/clothing/suit/armor/medium/raider/yankee
 	name = "yankee raider armor"
 	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
 	icon_state = "yankee"
 	item_state = "yankee"
 
-/obj/item/clothing/suit/armor/light/raider/yankee/Initialize()
+/obj/item/clothing/suit/armor/medium/raider/yankee/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

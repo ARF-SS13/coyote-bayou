@@ -457,10 +457,10 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 25 //fucc you normies
+	damage = 60 //fucc you normies
 	armour_penetration = 0 //no AP, armor shouldnt have more than 20 resist against plasma unless its specialized
 	flag = "energy" //checks vs. energy protection
-	wound_bonus = 45 //being hit with plasma is horrific
+	wound_bonus = 90 //being hit with plasma is horrific
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second =  TILES_TO_PIXELS(10) //same as 40mm grenade
@@ -469,9 +469,9 @@
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 35
+	damage = 40
 	flag = "energy" //checks vs. energy protection
-	wound_bonus = 0 //let's not make the carbine horrifying
+	wound_bonus = 50 //let's not make the carbine horrifying // nah lets make it horrifying
 	eyeblur = 0
 	is_reflectable = TRUE
 	pixels_per_second = TILES_TO_PIXELS(10)
@@ -480,7 +480,7 @@
 	name = "plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 20
+	damage = 90
 	flag = "energy" //checks vs. energy protection
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -489,7 +489,7 @@
 	name = "mining plasma stream"
 	icon_state = "plasma_clot"
 	damage_type = BURN
-	damage = 5
+	damage = 25
 	flag = "energy"
 	eyeblur = 0
 	is_reflectable = FALSE
@@ -501,18 +501,18 @@
 		M.gets_drilled(firer)
 
 /obj/item/projectile/f13plasma/pistol //Plasma pistol
-	damage = 18
-	wound_bonus = 20 //being hit with plasma is horrific
+	damage = 35
+	wound_bonus = 70 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/pistol/worn
-	damage = 16
+	damage = 30
 
 /obj/item/projectile/f13plasma/pistol/glock //Glock (streamlined plasma pistol)
-	damage = 20
-	wound_bonus = 35 //being hit with plasma is horrific
+	damage = 40
+	wound_bonus = 75 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/scatter //Multiplas, fires 3 shots, will melt you
-	damage = 25
+	damage = 35
 
 /obj/item/projectile/beam/laser/rcw //RCW
 	name = "rapidfire beam"

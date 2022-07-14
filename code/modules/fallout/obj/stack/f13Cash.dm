@@ -110,7 +110,7 @@
 	update_desc()
 	update_icon()
 
-/obj/item/stack/f13Cash/use(used, transfer = FALSE)
+/obj/item/stack/f13Cash/use(used, transfer = FALSE, check = TRUE)
 	. = ..()
 	update_desc()
 	update_icon()

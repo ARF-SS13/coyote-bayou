@@ -197,11 +197,8 @@
 	name = "Med-X"
 	result = /obj/item/reagent_containers/hypospray/medipen/medx
 	reqs = list(/obj/item/reagent_containers/syringe = 1,
-				/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2,
 				/obj/item/reagent_containers/food/snacks/grown/datura = 2,
-				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2,
-				/obj/item/reagent_containers/food/snacks/grown/xander = 2,
-				/obj/item/reagent_containers/food/snacks/grown/broc = 2)
+				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2)
 	time = 35
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
 	category = CAT_MEDICAL

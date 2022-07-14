@@ -13,23 +13,22 @@
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	body_parts_covered = CHEST|ARMS
-
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 50, "rad" = 20, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	togglename = "buttons"
 	species_exception = list(/datum/species/golem)
-
 
 /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	name = "fieldscribe suit"
 	desc = "A suit that protects against the weather, and looks stylish, but not much else."
 	icon_state = "fieldscribe"
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 10, "acid" = 40)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	name = "fieldscribe coat"
 	desc = "A heavy-duty coat and chestrig fitted with tons of pockets for every scribe's storage needs."
 	icon_state = "scribecoat"
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 10, "bomb" = 16, "bio" = 30, "rad" = 20, "fire" = 10, "acid" = 40)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1)
 
 /obj/item/clothing/suit/cyborg_suit
 	name = "cyborg suit"
@@ -140,14 +139,12 @@
 	icon_state = "puffervest"
 	item_state = "armor"
 	cold_protection = CHEST|GROIN
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -50, "acid" = 0)
 
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"
 	desc = "A canvas jacket styled after classical American military garb. Very durable, yet comfortable."
 	icon_state = "militaryjacket"
 	item_state = "militaryjacket"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 5, "rad" = 0, "fire" = 5, "acid" = 0)
 
 /obj/item/clothing/suit/jacket/letterman
 	name = "letterman jacket"
@@ -201,20 +198,6 @@
 /obj/item/clothing/head/hooded/winterhood/christmashoodr
 	icon_state = "christmashoodr"
 
-
-
-/obj/item/clothing/suit/toggle/labcoat/fieldscribe
-	name = "fieldscribe suit"
-	desc = "A suit that protects against the weather, and looks stylish, but not much else."
-	icon_state = "fieldscribe"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/toggle/labcoat/scribecoat
-	name = "fieldscribe coat"
-	desc = "A heavy-duty coat and chestrig fitted with tons of pockets for every scribe's storage needs."
-	icon_state = "scribecoat"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/suit/slavelabor
 	name = "old leather strips"
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
@@ -228,133 +211,6 @@
 	desc = "It looks like someone dragged this out of a muddy lake."
 	icon_state = "bomberalt"
 	item_state = "bomberalt"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0)
-
-
-/obj/item/clothing/suit/armor/light/duster/robe_hubologist
-	name = "hubologist robe"
-	desc = "A black robe worn by Adepts of Hubology Studies.<br>Beware - the spirits of the dead are all around us!"
-	icon_state = "hubologist"
-	item_state = "wcoat"
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	
-/obj/item/clothing/suit/armor/outfit/overalls/sexymaid
-	name = "sexy maid outfit"
-	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
-	icon_state = "sexymaid_s"
-	item_state = "sexymaid_s"
-	body_parts_covered = CHEST
-
-/obj/item/clothing/suit/armor/outfit/jacket/banker
-	name = "bankers tailcoat"
-	desc = "A long black jacket, finely crafted black leather and smooth finishings make this an extremely fancy piece of rich-mans apparel."
-	icon_state = "banker"
-	item_state = "banker"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-//Fallout 50s
-/obj/item/clothing/suit/armor/light/duster/tan_robe
-	name = "tan robe"
-	desc = "Only a monk would find this robe nice and comfortable."
-	icon_state = "robe_liz"
-	item_state = "brownjsuit"
-
-/obj/item/clothing/suit/armor/outfit/vest
-	name = "tan vest"
-	desc = "It's a vest made of tanned leather."
-	icon_state = "tanleather"
-	item_state = "det_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
-	name = "brown vest"
-	desc = "A brown vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboybvest"
-	item_state = "lb_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/armor/outfit/vest/bartender
-	name = "bartenders vest"
-	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
-	icon_state = "westender"
-	item_state = "lb_suit"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-/obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
-	name = "grey vest"
-	desc = "A grey vest, typically worn by wannabe cowboys and prospectors. It has a few pockets for tiny items."
-	icon_state = "cowboygvest"
-	item_state = "gy_suit"
-	body_parts_covered = CHEST|GROIN|LEGS
-
-/obj/item/clothing/suit/toggle/labcoat/wanderer
-	name = "wanderer jacket"
-	desc = "A zipped-up hoodie made of tanned leather."
-	icon_state = "wanderer"
-	item_state = "owl"
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-
-/obj/item/clothing/suit/toggle/labcoat/followers
-	name = "followers lab coat"
-	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
-	icon_state = "followers"
-	item_state = "labcoat"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 0, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
-
-/obj/item/clothing/suit/hooded/cloak/desert
-	name = "desert cloak"
-	icon_state = "desertcloak"
-	desc = "A practical cloak made out of animal hide."
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-
-
-/obj/item/clothing/head/hooded/cloakhood/desert
-	name = "desert cloak hood"
-	icon_state = "desertcloak"
-	desc = "A protective and concealing hood."
-	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
-	armor = list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
-
-/obj/item/clothing/suit/hooded/cloak/desert/raven_cloak
-	name = "Raven cloak"
-	desc = "A huge cloak made out of hundreds of knife-like black bird feathers. It glitters in the light, ranging from blue to dark green and purple."
-	icon_state = "raven_cloak"
-	item_state = "raven_cloak"
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-
-/obj/item/clothing/head/hooded/cloakhood/desert/raven_hood
-	name = "Raven cloak hood"
-	desc = "A hood fashioned out of patchwork and feathers"
-	icon_state = "raven_hood"
-	item_state = "raven_hood"
-
-
-/obj/item/clothing/suit/hooded/cloak/goliath/tatteredred
-	name = "tattered red cloak"
-	icon_state = "goliath_cloak"
-	desc = "An old ragged, tattered red cloak that is covered in burns and bullet holes."
-	armor = list("melee" = 25, "bullet" = 20, "laser" = 10, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath/tattered
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-
-
-/obj/item/clothing/head/hooded/cloakhood/goliath/tattered
-	name = "tattered red cloak hood"
-	icon_state = "golhood"
-	desc = "A tattered hood, better than nothing in the waste."
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30)
-
-
-
-/obj/item/clothing/suit/armor/outfit/jacket/jamrock
-	name = "disco-ass blazer"
-	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
-	icon_state = "jamrock_blazer"
-	item_state = "jamrock_blazer"
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 // "Funny" Masquerade suits. Keep off the maps.
 
@@ -366,21 +222,6 @@
 	user_vars_to_edit = list("name" = "Spooky Ghost", "real_name" = "Spooky Ghost" , "incorporeal_move" = INCORPOREAL_MOVE_BASIC, "appearance_flags" = KEEP_TOGETHER|TILE_BOUND, "alpha" = 150)
 	alternate_worn_layer = ABOVE_BODY_FRONT_LAYER //so the bedsheet goes over everything but fire
 	mutantrace_variation = NONE
-
-/obj/item/clothing/suit/armor/outfit/costume/ghost
-	name = "ghost sheet"
-	desc = "The hands float by themselves, so it's extra spooky."
-	icon_state = "ghost_sheet"
-	item_state = "ghost_sheet"
-	throwforce = 0
-	throw_speed = 1
-	throw_range = 2
-	w_class = WEIGHT_CLASS_TINY
-	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
-	alternate_worn_layer = UNDER_HEAD_LAYER
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
 
 /obj/item/clothing/suit/ran
 	name = "shikigami costume"
