@@ -9453,8 +9453,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "aGr" = (
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
 /area/f13/building/hospital)
 "aGs" = (
 /obj/effect/decal/cleanable/dirt{
@@ -12052,11 +12054,6 @@
 	icon_state = "horizontalbottombordertop0"
 	},
 /area/f13/wasteland)
-"aOA" = (
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate"
-	},
-/area/f13/building/hospital)
 "aOB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -21236,8 +21233,7 @@
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "cbM" = (
-/obj/structure/flora/tree/jungle/small{
-	},
+/obj/structure/flora/tree/jungle/small,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cbT" = (
@@ -25773,7 +25769,7 @@
 	color = "#363636"
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/closed/indestructible/f13/matrix,
 /area/f13/building/hospital)
 "dTw" = (
 /obj/effect/decal/cleanable/dirt,
@@ -37858,7 +37854,6 @@
 /area/f13/wasteland)
 "kzy" = (
 /obj/structure/simple_door/bunker,
-/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/hospital)
 "kzL" = (
@@ -42175,7 +42170,6 @@
 	color = "#363636"
 	},
 /obj/structure/simple_door/bunker,
-/obj/structure/barricade/wooden/planks/pregame,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/hospital)
 "mEN" = (
@@ -58396,9 +58390,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"vzn" = (
-/turf/open/indestructible/ground/outside/ruins,
-/area/f13/building/hospital)
 "vzr" = (
 /obj/structure/simple_door/house{
 	icon_state = "interior"
@@ -59398,7 +59389,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/indestructible/ground/outside/ruins,
+/turf/closed/indestructible/f13/matrix,
 /area/f13/building/hospital)
 "wbm" = (
 /obj/effect/decal/cleanable/dirt{
@@ -60732,14 +60723,6 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/building/museum)
-"wOS" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
-	},
-/area/f13/building/hospital)
 "wOT" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -107938,9 +107921,9 @@ aFP
 aEt
 aGq
 ijr
-vzn
-waZ
-wOS
+aNr
+aKO
+aKO
 aGr
 ijr
 uZi
@@ -108195,10 +108178,10 @@ aFP
 aEt
 tEH
 ijr
-waZ
-aOA
-vzn
-dTv
+aKO
+aNr
+aNr
+aKO
 ijr
 slG
 lqE
@@ -108452,8 +108435,8 @@ aFP
 aEt
 aGq
 ijr
-vzn
-vzn
+bYo
+bYo
 waZ
 dTv
 ijr

@@ -879,7 +879,10 @@
 "dOw" = (
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "dPm" = (
 /obj/structure/barricade/bars,
@@ -954,8 +957,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "egq" = (
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubbleplate"
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/building/hospital)
 "eiE" = (
@@ -1287,10 +1292,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/wasteland/ncr)
-"gcQ" = (
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
-/area/f13/building/hospital)
 "gde" = (
 /obj/structure/sink{
 	dir = 4;
@@ -1499,7 +1500,11 @@
 /area/f13/building/hospital)
 "hdk" = (
 /obj/item/trash/sosjerky,
-/turf/open/indestructible/ground/outside/ruins,
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "hgr" = (
 /obj/item/storage/toolbox/electrical{
@@ -2259,13 +2264,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
-"kNp" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
-/area/f13/building/hospital)
 "kQF" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -2714,8 +2712,9 @@
 	color = "#363636"
 	},
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
 	},
 /area/f13/building/hospital)
 "mBR" = (
@@ -3088,7 +3087,10 @@
 /obj/item/trash/candy,
 /obj/item/trash/sosjerky,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "ocx" = (
 /turf/open/floor/plasteel/f13{
@@ -4319,7 +4321,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "tXx" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -4413,7 +4418,10 @@
 	},
 /obj/item/trash/candy,
 /obj/structure/lattice/catwalk,
-/turf/open/indestructible/ground/outside/ruins,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
 /area/f13/building/hospital)
 "uoi" = (
 /obj/effect/decal/cleanable/generic,
@@ -49666,9 +49674,9 @@ gLr
 kJl
 lqO
 obr
-kNp
 mBg
-gcQ
+mBg
+egq
 lqO
 lqO
 lqO
@@ -49922,10 +49930,10 @@ bhm
 gLr
 gnV
 lqO
-kNp
+mBg
 egq
 hdk
-kNp
+mBg
 lqO
 iQu
 lqO
@@ -50182,7 +50190,7 @@ lqO
 dOw
 uoa
 tWw
-kNp
+mBg
 lqO
 rRC
 lqO
