@@ -7,7 +7,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	!!If you don't have digi-adapted sprites use `mutantrace_variation = NONE` instead. Should snap legs sprites to planti when related clothing is worn.
 	(unless suit doesn't cover legs in `body_parts_covered` var)
 */
-
+/* 
 /obj/item/clothing/suit/armor/light/duster/goner
 	name = "dev-patched dull trenchcoat"
 	desc = "A non-existent dull trenchcoat."
@@ -44,3 +44,4 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	name = "yellow-patched olive trenchcoat"
 	desc = "A rather crude looking, olive trenchcoat with yellow linings and arm patches.<br>Guess war can be boring too."
 	icon_state = "goner_suit_y"
+ */
