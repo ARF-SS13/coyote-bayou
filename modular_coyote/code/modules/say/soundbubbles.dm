@@ -77,7 +77,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 
 
 /datum/preferences
-	var/list/features_speech = list("typing_indicator_sound" = 'modular_coyote/sound/typing/default.ogg', "typing_indicator_sound_play" = PLAY_STARTING)
+	var/list/features_speech = list("typing_indicator_sound" = 'modular_coyote/sound/typing/default.ogg', "typing_indicator_sound_play" = "No Sound")
 
 /mob
 	var/datum/looping_sound/typing_indicator/typing_sound
@@ -141,8 +141,8 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	S["typing_indicator_sound"]			>> features_speech["typing_indicator_sound"]
 	S["typing_indicator_sound_play"]	>> features_speech["typing_indicator_sound_play"]
 
-	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds)
-	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods)
+	features_speech["typing_indicator_sound"]				= sanitize_inlist(features_speech["typing_indicator_sound"], GLOB.typing_indicator_sounds, 'modular_coyote/sound/typing/default.ogg')
+	features_speech["typing_indicator_sound_play"]			= sanitize_inlist(features_speech["typing_indicator_sound_play"], GLOB.play_methods, "No Sound")
 
 	return 1
 
