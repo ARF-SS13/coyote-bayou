@@ -895,6 +895,15 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
 
+/datum/crafting_recipe/chestpatch
+	name = "Chest patch / insignia"
+	result = /obj/item/clothing/accessory/patch
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
 /*
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Vest"
