@@ -10372,13 +10372,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_reststop)
 "kZL" = (
-/mob/living/simple_animal/hostile/gecko{
-	color = "#ff0000";
-	desc = "Scrawny looking red gecko, not very chonky.";
-	health = 30;
-	name = "Chonklette";
-	resize = .7
-	},
+/mob/living/simple_animal/hostile/gecko,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -12800,16 +12794,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nIv" = (
-/mob/living/simple_animal/hostile/gecko{
-	color = "#ff0000";
-	desc = "Damn boy, that's a thick ass boy!";
-	health = 80;
-	name = "Chonko";
-	resize = 1.3
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
+/mob/living/simple_animal/hostile/gecko,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -15810,16 +15798,7 @@
 /area/f13/wasteland)
 "qOg" = (
 /obj/effect/decal/marking,
-/mob/living/simple_animal/hostile/gecko{
-	color = "#ff0000";
-	desc = "Scrawny looking red gecko, not very chonky.";
-	health = 30;
-	name = "Chonklette";
-	resize = .7
-	},
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
+/mob/living/simple_animal/hostile/gecko,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermain0"
 	},
@@ -51152,7 +51131,7 @@ vNM
 kGl
 opY
 bod
-mmr
+qOg
 ezQ
 vMj
 iIF
@@ -51408,7 +51387,7 @@ xNa
 aln
 uJe
 uQO
-qFw
+nIv
 kZL
 vMj
 qak
@@ -51665,7 +51644,7 @@ rvr
 aln
 eol
 uQO
-kZL
+vMj
 nIv
 vMj
 vMj
@@ -51923,7 +51902,7 @@ vNM
 ilY
 opY
 bod
-qOg
+bod
 vMj
 vMj
 iIF
