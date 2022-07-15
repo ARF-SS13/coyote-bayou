@@ -264,7 +264,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define TOTAL_MASS_GIGANTIC_ITEM	7.5
 
 #define TOTAL_MASS_HAND_REPLACEMENT	5 //standard punching stamina cost. most hand replacements are huge items anyway.
-#define TOTAL_MASS_MEDIEVAL_WEAPON	3.6 //very, very generic average sword/warpick/etc. weight in pounds.
+#define TOTAL_MASS_MEDIEVAL_WEAPON	15 //very, very generic average sword/warpick/etc. weight in pounds.
 #define TOTAL_MASS_TOY_SWORD 1.5
 
 //stamina cost defines.
