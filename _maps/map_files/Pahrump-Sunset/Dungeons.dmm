@@ -2129,6 +2129,8 @@
 "bVS" = (
 /obj/machinery/light/small,
 /obj/structure/table/reinforced,
+/obj/item/stack/crafting/goodparts/five,
+/obj/item/stack/crafting/goodparts/five,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "bWh" = (
@@ -3317,6 +3319,11 @@
 	specialfunctions = 4
 	},
 /turf/open/floor/f13/wood,
+/area/f13/vault)
+"daL" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/slot_machine,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "daT" = (
 /obj/item/storage/trash_stack,
@@ -4664,6 +4671,11 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/rnd)
+"eaD" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/security,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
+/area/f13/vault)
 "ebv" = (
 /obj/structure/sign/poster/ripped,
 /turf/closed/wall/r_wall,
@@ -10708,6 +10720,11 @@
 	},
 /turf/open/water,
 /area/f13/brotherhood/offices1st)
+"jnU" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/arcade/orion_trail,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/vault)
 "joo" = (
 /obj/structure/chair/wood{
 	dir = 1
@@ -10753,8 +10770,7 @@
 "jse" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
-	dir = 8;
-	termtag = "Enclave Outpost, Medical Bay"
+	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -14720,6 +14736,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
+"mRx" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/crafting/metalparts/five,
+/obj/item/stack/crafting/metalparts/five,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
+/area/f13/vault)
 "mRP" = (
 /obj/structure/chair/comfy/shuttle{
 	desc = "A comfortable, secure seat. It has a futuristic vouge feel.";
@@ -15578,6 +15600,11 @@
 	},
 /obj/item/stack/sheet/plasteel/twenty,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
+/area/f13/vault)
+"nEM" = (
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/computer/arcade,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
 "nEW" = (
 /obj/structure/sign/poster/prewar/poster61,
@@ -17278,6 +17305,11 @@
 /obj/item/twohanded/required/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"oXl" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/pill_bottle/chem_tin/mentats,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/vault)
 "oXA" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/f13/wood,
@@ -18642,6 +18674,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/brotherhood/leisure)
+"qeW" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/metal/ten,
+/obj/item/stack/sheet/glass/ten,
+/obj/item/stack/sheet/glass/ten,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/vault)
 "qfg" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/green,
@@ -18844,6 +18883,11 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"qlb" = (
+/obj/machinery/smartfridge/bottlerack/lootshelf/cans,
+/obj/item/reagent_containers/food/snacks/tuna,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
+/area/f13/vault)
 "qlg" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Briefing Room";
@@ -20303,6 +20347,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
+/area/f13/vault)
+"rxk" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "rxL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22099,8 +22148,8 @@
 	},
 /area/f13/bunker)
 "tbb" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf/cans,
-/obj/item/reagent_containers/food/snacks/tuna,
+/obj/structure/table/reinforced,
+/obj/item/storage/belt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "tbd" = (
@@ -26696,6 +26745,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"wZB" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/crafting/electronicparts/five,
+/obj/item/stack/crafting/electronicparts/five,
+/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
+/area/f13/vault)
 "wZW" = (
 /obj/structure/fence/handrail{
 	density = 0;
@@ -30890,7 +30945,7 @@ egq
 cgT
 doB
 cgT
-how
+qeW
 uQS
 uQS
 uQS
@@ -31141,13 +31196,13 @@ wBR
 lcN
 tir
 lcN
-nBF
+qlb
 lcN
 wPI
 lcN
 gKD
 lcN
-sCK
+mRx
 uQS
 uQS
 uQS
@@ -31396,13 +31451,13 @@ uQS
 juw
 txw
 cgT
-lFO
+how
 cgT
 tbb
 cgT
-egq
+oXl
 cgT
-doB
+rxk
 cgT
 bVS
 uQS
@@ -31653,15 +31708,15 @@ uQS
 lcN
 qyB
 lcN
-dpr
+cgT
 lcN
-nBF
+cgT
 lcN
-wPI
+cgT
 lcN
-gKD
+cgT
 lcN
-sCK
+wZB
 uQS
 uQS
 uQS
@@ -31910,15 +31965,15 @@ uQS
 cgT
 txw
 cgT
-lFO
+lcN
 cgT
-aCV
+lcN
 cgT
-egq
+lcN
 cgT
-doB
+lcN
 cgT
-how
+daL
 uQS
 uQS
 uQS
@@ -32167,15 +32222,15 @@ uQS
 lcN
 cgT
 lcN
-dpr
-lcN
-nBF
-lcN
-wPI
-lcN
-gKD
+sCK
 lcN
 sCK
+lcN
+sCK
+lcN
+sCK
+lcN
+eaD
 uQS
 fyr
 sCn
@@ -32426,13 +32481,13 @@ lcN
 cgT
 avY
 cgT
-xvm
+aCV
 cgT
 egq
 cgT
 doB
 cgT
-how
+jnU
 uQS
 kXh
 sCn
@@ -32689,7 +32744,7 @@ wPI
 lcN
 gKD
 lcN
-sCK
+nEM
 dxs
 sCn
 sCn
