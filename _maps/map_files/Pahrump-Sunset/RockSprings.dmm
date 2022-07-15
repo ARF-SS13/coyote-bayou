@@ -16976,6 +16976,13 @@
 	pixel_y = 3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/barricade/wooden,
+/obj/structure/decoration/rag{
+	icon_state = "skin"
+	},
+/obj/structure/decoration/rag{
+	layer = 4.3
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "rXS" = (
@@ -17897,6 +17904,9 @@
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
 	icon_state = "skin"
+	},
+/obj/structure/decoration/rag{
+	layer = 4.3
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
@@ -26575,7 +26585,7 @@ nQW
 wSN
 oLi
 gzS
-qKt
+hXU
 lMm
 tgX
 lMm
