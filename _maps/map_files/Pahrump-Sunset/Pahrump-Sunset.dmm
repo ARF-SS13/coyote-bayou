@@ -18070,10 +18070,8 @@
 /turf/open/floor/plasteel/vault,
 /area/f13/ncr)
 "blm" = (
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/interior,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "bln" = (
@@ -18988,12 +18986,11 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bre" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/cabinet,
-/obj/effect/spawner/lootdrop/f13/armor/clothes,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "bri" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -21294,9 +21291,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cct" = (
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
+/obj/structure/simple_door/interior,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "ccy" = (
@@ -23684,11 +23679,11 @@
 	},
 /area/f13/building/museum)
 "cNW" = (
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "cOs" = (
 /obj/structure/chair,
 /obj/effect/decal/cleanable/dirt,
@@ -30223,6 +30218,12 @@
 /obj/structure/flora/wasteplant/wild_punga,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"gox" = (
+/obj/structure/simple_door/repaired{
+	name = "Heaven's Night"
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/wasteland)
 "goG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -33006,7 +33007,7 @@
 /area/f13/building)
 "hNd" = (
 /obj/machinery/door/unpowered/securedoor{
-	name = "First Bank of Bighorn";
+	name = "First Bank of Nash";
 	req_one_access_txt = "52"
 	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
@@ -34173,9 +34174,8 @@
 /area/f13/wasteland)
 "itt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/interior,
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "itH" = (
@@ -34330,6 +34330,10 @@
 	},
 /turf/open/water,
 /area/f13/wasteland)
+"ixW" = (
+/obj/structure/simple_door/interior,
+/turf/open/floor/plasteel/floorgrime,
+/area/f13/building)
 "ixY" = (
 /obj/structure/flora/grass/jungle,
 /obj/structure/flora/grass/wasteland{
@@ -35933,9 +35937,7 @@
 /area/f13/village)
 "jlr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
+/obj/structure/simple_door/interior,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "jlU" = (
@@ -39743,12 +39745,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
-"lwh" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "lwl" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -40353,13 +40349,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
-"lIV" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_3"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "lJy" = (
 /obj/structure/curtain{
 	color = "#845f58";
@@ -40702,6 +40691,13 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/elevatorshaft,
 /area/f13/building/massfusion)
+"lRX" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lRY" = (
 /obj/structure/table/wood/poker{
 	name = "felt table"
@@ -41004,6 +41000,15 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"lYm" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/closet/cabinet,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "lYn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood,
@@ -45664,11 +45669,6 @@
 "org" = (
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/museum)
-"orF" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "orG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -48933,9 +48933,7 @@
 	},
 /area/f13/ncr)
 "qiq" = (
-/obj/structure/simple_door/wood{
-	name = "Bighorn Residence"
-	},
+/obj/structure/simple_door/interior,
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "qiy" = (
@@ -51739,6 +51737,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
+"rPg" = (
+/obj/structure/simple_door/room,
+/turf/open/floor/wood_wide,
+/area/f13/building)
 "rPP" = (
 /obj/structure/simple_door/house{
 	icon_state = "interioropening"
@@ -54405,12 +54407,6 @@
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"tqm" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tqI" = (
@@ -61242,6 +61238,11 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"wYc" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "wYd" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -67900,7 +67901,7 @@ abP
 www
 bbx
 lVH
-lVH
+gox
 lVH
 xYa
 lVH
@@ -74260,7 +74261,7 @@ acl
 det
 det
 acl
-nim
+lYm
 aoj
 acl
 aOk
@@ -74516,12 +74517,12 @@ ozv
 acl
 ryZ
 cex
-ahk
+cex
 mkj
 bWk
 acl
 aOk
-aOk
+aXa
 aOk
 aOk
 aOk
@@ -74775,9 +74776,9 @@ cex
 fMX
 acl
 cex
-bre
+fMX
 abu
-mAk
+aOk
 aOk
 acl
 blQ
@@ -75032,7 +75033,7 @@ aYc
 ouK
 acl
 acl
-aoS
+wnb
 acl
 bZY
 cMS
@@ -76068,7 +76069,7 @@ rMX
 rMX
 bAl
 rMX
-aoS
+ixW
 wnb
 brD
 acl
@@ -77089,7 +77090,7 @@ kVS
 kVS
 ahk
 acl
-aOk
+aXa
 aOk
 acl
 abu
@@ -77346,7 +77347,7 @@ aOk
 aOk
 huu
 aOk
-mAk
+aOk
 hkV
 hkV
 aOk
@@ -77356,7 +77357,7 @@ bSt
 cFK
 aOk
 bSt
-orF
+wYc
 hkV
 bZY
 bZY
@@ -77609,7 +77610,7 @@ aOk
 aOk
 oMN
 hkV
-tqm
+cNW
 oMN
 oMN
 huu
@@ -78139,7 +78140,7 @@ aOk
 hkV
 aOk
 etg
-lIV
+lRX
 huu
 aOk
 etg
@@ -78631,7 +78632,7 @@ xFZ
 hkV
 aOk
 aOk
-lwh
+bre
 hkV
 huu
 aOk
@@ -79937,7 +79938,7 @@ aOk
 acl
 qlr
 rMX
-qiq
+rPg
 fMX
 cex
 fMX
@@ -80698,7 +80699,7 @@ cFK
 abu
 bWj
 xUx
-cNW
+avL
 xyU
 kVQ
 kVQ
