@@ -39743,6 +39743,12 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
+"lwh" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lwl" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -40347,6 +40353,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
+"lIV" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/grass/wasteland{
+	icon_state = "tall_grass_3"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lJy" = (
 /obj/structure/curtain{
 	color = "#845f58";
@@ -45651,6 +45664,11 @@
 "org" = (
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/museum)
+"orF" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "orG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -54387,6 +54405,12 @@
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"tqm" = (
+/obj/structure/destructible/tribal_torch/lit,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tqI" = (
@@ -75517,7 +75541,7 @@ aOk
 cMS
 aOk
 ozv
-ofA
+acl
 lLq
 bxH
 acl
@@ -76066,7 +76090,7 @@ ehj
 qEJ
 aOk
 huu
-aOk
+etg
 bnQ
 bPp
 fJC
@@ -77328,21 +77352,21 @@ hkV
 aOk
 huu
 cFK
-cFK
+bSt
 cFK
 aOk
-cFK
-mMn
-aOk
+bSt
+orF
+hkV
 bZY
 bZY
-aOk
+etg
 oMN
 mMn
 cFK
 cFK
-cFK
-aOk
+nky
+etg
 cFK
 lDN
 huu
@@ -77584,8 +77608,8 @@ xFZ
 aOk
 aOk
 oMN
-aOk
-aHP
+hkV
+tqm
 oMN
 oMN
 huu
@@ -77608,7 +77632,7 @@ huu
 huu
 huu
 huu
-aOk
+etg
 aua
 auo
 auo
@@ -77835,11 +77859,11 @@ hkV
 aOk
 xFZ
 huu
-aOk
+hkV
 aHP
 cFK
-aOk
-aOk
+hkV
+hkV
 huu
 huu
 huu
@@ -77865,7 +77889,7 @@ huu
 huu
 huu
 huu
-aOk
+etg
 bnQ
 aOk
 aOk
@@ -78102,27 +78126,27 @@ oMN
 mFl
 oMN
 huu
-aOk
+hkV
 mMn
-aOk
+hkV
 huu
-cFK
-aOk
-bjb
+bSt
+hkV
+gPE
 cFK
 mMn
 aOk
 hkV
 aOk
-aOk
-mMn
+etg
+lIV
 huu
 aOk
-aOk
+etg
 aOk
 mMn
 aOk
-aOk
+etg
 bnQ
 baH
 aXm
@@ -78365,7 +78389,7 @@ abu
 szs
 acl
 aOk
-aOk
+etg
 bZY
 etg
 etg
@@ -78607,8 +78631,8 @@ xFZ
 hkV
 aOk
 aOk
-mMn
-aOk
+lwh
+hkV
 huu
 aOk
 bZY
