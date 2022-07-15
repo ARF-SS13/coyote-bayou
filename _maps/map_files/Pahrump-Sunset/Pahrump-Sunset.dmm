@@ -19317,7 +19317,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bui" = (
-/obj/structure/table/wood,
 /obj/item/kirbyplants/random,
 /obj/structure/curtain{
 	color = "#845f58";
@@ -29713,11 +29712,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "fVZ" = (
+/obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c"
 	},
-/turf/closed/wall/f13/wood,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "fWo" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 10;
@@ -38104,6 +38104,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
+"kEz" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "kEE" = (
 /turf/closed/indestructible/f13/matrix/transition,
 /area/f13/caves)
@@ -65807,7 +65815,7 @@ aOk
 aOk
 aOk
 cFK
-tAB
+cFK
 aOk
 www
 bbx
@@ -75542,7 +75550,7 @@ abu
 jWP
 acl
 xsH
-aOk
+mAk
 huu
 aOk
 aOk
@@ -75799,7 +75807,7 @@ gbK
 kVQ
 xyU
 acl
-mAk
+aOk
 huu
 aOk
 dvy
@@ -77075,7 +77083,7 @@ abu
 tNt
 mGY
 acl
-bqS
+kEz
 cFK
 bZY
 qyV
@@ -78875,7 +78883,7 @@ mli
 abu
 aOk
 aOk
-aXa
+aOk
 oNw
 aOk
 aOk
@@ -79142,7 +79150,7 @@ acl
 ofA
 acl
 acl
-bjb
+fVZ
 nBl
 etg
 aOk
@@ -79655,7 +79663,7 @@ fMX
 det
 det
 fMX
-fVZ
+acl
 etg
 aOk
 xFZ
@@ -80423,8 +80431,8 @@ acl
 lZy
 aZR
 acl
-hHX
-hHX
+acl
+acl
 aoS
 acl
 aOk
