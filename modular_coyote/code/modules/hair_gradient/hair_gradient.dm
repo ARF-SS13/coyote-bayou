@@ -44,9 +44,6 @@ randomize_human(mob/living/carbon/human/H)
 */
 
 /mob/living/carbon/human/proc/change_hair_gradient(var/hair_gradient)
-	if(dna.features["grad_style"] == "none")
-		return
-
 	if(dna.features["grad_style"] == hair_gradient)
 		return
 
@@ -61,7 +58,7 @@ randomize_human(mob/living/carbon/human/H)
 
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
-	var/list/features_override = list("grad_style" = "none", "grad_color" = "333333")
+	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
 
 /datum/preferences/load_character(slot)
 	. = ..(slot)
