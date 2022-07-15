@@ -431,7 +431,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/storage/backpack/duffelbag/scavengers
 	l_hand = /obj/item/pickaxe/drill
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(/obj/item/mining_scanner=1,
 							/obj/item/metaldetector=1,
 							/obj/item/shovel=1,
@@ -443,7 +443,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/hatchet
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/n99
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(
 		/obj/item/stack/sheet/metal = 50,
 		/obj/item/stack/sheet/mineral/wood = 50,

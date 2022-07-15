@@ -135,7 +135,7 @@
 	name = "Prospector"
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/m1911/custom
 	l_hand = /obj/item/weldingtool/largetank
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	mask = /obj/item/clothing/mask/gas/welding
 	backpack_contents = list(
 		/obj/item/wrench = 1,
@@ -257,7 +257,7 @@
 	head = /obj/item/clothing/head/collectable/petehat/gang
 	r_hand = /obj/item/gun/ballistic/revolver/colt357/lucky
 	l_hand = /obj/item/twohanded/baseball/louisville
-	neck = /obj/item/storage/belt/holster
+	belt = /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/clipboard = 1,
@@ -268,7 +268,7 @@
 	name = "Tax Collector"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_hand = /obj/item/gun/ballistic/revolver/hunting
-	neck = /obj/item/storage/belt/holster
+	belt = /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/ammo_box/c4570 = 3,
 		/obj/item/twohanded/baseball = 1,
@@ -309,7 +309,7 @@
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
-	neck = /obj/item/storage/belt/holster
+	belt = /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/ammo_box/c45rev = 3,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,

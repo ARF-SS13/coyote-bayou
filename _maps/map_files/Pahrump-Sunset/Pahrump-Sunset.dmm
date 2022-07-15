@@ -7775,8 +7775,8 @@
 /area/f13/village)
 "aBw" = (
 /obj/structure/rack,
-/obj/item/storage/belt,
-/obj/item/storage/belt,
+/obj/item/storage/belt/fannypack,
+/obj/item/storage/belt/fannypack,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aBx" = (
@@ -60351,7 +60351,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/item/storage/belt,
+/obj/item/storage/belt/fannypack,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},

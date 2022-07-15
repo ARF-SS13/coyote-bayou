@@ -310,7 +310,7 @@
 	new /obj/item/gun/ballistic/automatic/smg/greasegun(src)
 	new /obj/item/ammo_box/magazine/greasegun(src)
 	new /obj/item/clothing/head/helmet/armyhelmet(src)
-	new /obj/item/storage/belt(src)
+	new /obj/item/storage/belt/fannypack(src)
 	new /obj/item/clothing/under/f13/army(src)
 	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
 	new /obj/item/grenade/frag(src)

@@ -20,7 +20,7 @@
 /datum/outfit/job/enclave/peacekeeper
 	id = /obj/item/card/id/dogtag/enclave/trooper
 	mask = /obj/item/clothing/mask/gas/enclave
-	neck = /obj/item/storage/belt/holster/legholster
+	l_pocket = /obj/item/storage/belt/holster/legholster
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
 	belt = /obj/item/storage/belt/military/assault/enclave

@@ -271,7 +271,7 @@ Mayor
 	name = "The Law Man"
 	suit = /obj/item/clothing/suit/armor/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
-	neck = /obj/item/storage/belt/holster
+	l_pocket = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	backpack_contents = list(
@@ -284,7 +284,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/formal
 	suit = /obj/item/clothing/suit/armor/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
-	neck = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_hand = /obj/item/gun/energy/laser/aer9
 
@@ -353,7 +353,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/storage/belt/military/assault
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
-	neck = /obj/item/storage/belt/holster/legholster/police
+	suit_store = /obj/item/storage/belt/holster/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -368,7 +368,7 @@ Mayor
 	name = "Frontier Justice"
 	suit = /obj/item/clothing/suit/armor/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
-	neck =	/obj/item/storage/belt/holster
+	belt = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
@@ -381,7 +381,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
-	neck = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/holster/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -730,7 +730,7 @@ Mayor
 /datum/outfit/loadout/groundskeeper
 	name = "Groundskeeper"
 	head = /obj/item/clothing/head/soft/grey
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	suit = /obj/item/clothing/under/f13/mechanic
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/spray/cleaner = 1,

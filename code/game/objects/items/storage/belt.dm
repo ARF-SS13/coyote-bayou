@@ -9,6 +9,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	attack_verb = list("whipped", "lashed", "disciplined")
 	max_integrity = 300
+	w_class = WEIGHT_CLASS_BULKY // keep out of backpack!
 	var/content_overlays = FALSE //If this is true, the belt will gain overlays based on what it's holding
 	var/onmob_overlays = FALSE //worn counterpart of the above.
 
@@ -49,26 +50,10 @@
 /obj/item/storage/belt/utility/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	var/static/list/can_hold = typecacheof(list(
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/multitool,
-		/obj/item/flashlight,
-		/obj/item/stack/cable_coil,
-		/obj/item/t_scanner,
-		/obj/item/analyzer,
-		/obj/item/geiger_counter,
-		/obj/item/extinguisher/mini,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/holosign_creator,
-		/obj/item/forcefield_projector,
-		/obj/item/assembly/signaler
-		))
-	STR.can_hold = can_hold
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.toolbelt_allowed
 
 /obj/item/storage/belt/utility/chief
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
@@ -103,29 +88,6 @@
 	name = "wastelander toolbelt"
 	desc = "Holds a collection of simple tools."
 
-/obj/item/storage/belt/utility/waster/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	var/static/list/can_hold = typecacheof(list(
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/multitool,
-		/obj/item/flashlight,
-		/obj/item/stack/cable_coil,
-		/obj/item/analyzer,
-		/obj/item/geiger_counter,
-		/obj/item/extinguisher/mini,
-		/obj/item/radio,
-		/obj/item/assembly/signaler,
-		/obj/item/twohanded/chainsaw,
-		/obj/item/melee/smith/hammer,
-		))
-	STR.can_hold = can_hold
-
 /obj/item/storage/belt/utility/waster/PopulateContents()
 	new /obj/item/crowbar(src)
 	new /obj/item/wrench(src)
@@ -138,7 +100,6 @@
 /obj/item/storage/belt/utility/waster/forgemaster
 	name = "forgemasters toolbelt"
 	desc = "Has a collection of basic tools and a hook rigging to sling a chainsaw from."
-	var/max_combined_w_class = WEIGHT_CLASS_SMALL * 8
 
 /obj/item/storage/belt/utility/waster/forgemaster/PopulateContents()
 	new /obj/item/crowbar(src)
@@ -160,18 +121,10 @@
 /obj/item/storage/belt/utility/gardener/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	var/static/list/can_hold = typecacheof(list(
-		/obj/item/shovel/spade,
-		/obj/item/cultivator,
-		/obj/item/hatchet,
-		/obj/item/book/manual/advice_farming,
-		/obj/item/reagent_containers/glass/bottle/nutrient,
-		/obj/item/reagent_containers/glass/bottle/killer,
-		/obj/item/reagent_containers/food/drinks/flask,
-		/obj/item/storage/bag/plants, // remove if it gets abused to breaking somehow
-		/obj/item/plant_analyzer, // out of place but mechanically useful for the foreseeable future, so included for QoL
-		))
-	STR.can_hold = can_hold
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.plantbelt_allowed
 
 // Primitive medical belt, meant to be part of a ghetto surgery improvement at some point
 /obj/item/storage/belt/medical/primitive
@@ -200,16 +153,10 @@
 /obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_box/shotgun,
-		/obj/item/ammo_box/lasmusket,
-		/obj/item/reagent_containers/food/drinks/flask,
-		/obj/item/grenade/f13,
-		/obj/item/reagent_containers/food/drinks/bottle/molotov,
-		/obj/item/grenade/homemade
-		))
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.ammobelt_allowed
 
 
 // END OF FALLOUT BELTS
@@ -234,59 +181,9 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
-		/obj/item/healthanalyzer,
-		/obj/item/dnainjector,
-		/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/glass/beaker,
-		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/pill,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/reagent_containers/medspray,
-		/obj/item/lighter,
-		/obj/item/storage/fancy/cigarettes,
-		/obj/item/storage/pill_bottle,
-		/obj/item/stack/medical,
-		/obj/item/flashlight/pen,
-		/obj/item/extinguisher/mini,
-		/obj/item/reagent_containers/hypospray,
-		/obj/item/hypospray/mkii,
-		/obj/item/sensor_device,
-		/obj/item/radio,
-		/obj/item/clothing/gloves/,
-		/obj/item/lazarus_injector,
-		/obj/item/clothing/mask/surgical,
-		/obj/item/clothing/mask/breath,
-		/obj/item/clothing/mask/breath/medical,
-		/obj/item/surgical_drapes, //for true paramedics
-		/obj/item/scalpel,
-		/obj/item/circular_saw,
-		/obj/item/bonesetter,
-		/obj/item/surgicaldrill,
-		/obj/item/retractor,
-		/obj/item/cautery,
-		/obj/item/hemostat,
-		/obj/item/geiger_counter,
-		/obj/item/clothing/neck/stethoscope,
-		/obj/item/stamp,
-		/obj/item/clothing/glasses,
-		/obj/item/wrench/medical,
-		/obj/item/clothing/mask/muzzle,
-		/obj/item/storage/bag/chemistry,
-		/obj/item/storage/bag/bio,
-		/obj/item/reagent_containers/blood,
-		/obj/item/tank/internals/emergency_oxygen,
-		/obj/item/implantcase,
-		/obj/item/implant,
-		/obj/item/implanter,
-		/obj/item/pinpointer/crew,
-		/obj/item/reagent_containers/chem_pack,
-		/obj/item/weldingtool/basic,
-		/obj/item/stack/sticky_tape, //surgical tape
-		/obj/item/handsaw
-		))
-
-
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.medibelt_allowed
 
 /obj/item/storage/belt/medical/surgery_belt_adv
 	name = "surgical supply belt"
@@ -298,6 +195,14 @@
 	new /obj/item/retractor/advanced(src)
 	new /obj/item/surgicaldrill/advanced(src)
 	new /obj/item/surgical_drapes/advanced(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/clothing/mask/surgical(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/razor(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
+	new /obj/item/stack/sticky_tape/surgical(src)
+	new /obj/item/stack/medical/bone_gel(src)
+	new /obj/item/stack/medical/bone_gel(src)
 
 /obj/item/storage/belt/security
 	name = "security belt"
@@ -309,26 +214,10 @@
 /obj/item/storage/belt/security/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
-		/obj/item/melee/baton,
-		/obj/item/melee/classic_baton,
-		/obj/item/grenade,
-		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash/handheld,
-		/obj/item/clothing/glasses,
-		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_box,
-		/obj/item/reagent_containers/food/snacks/donut,
-		/obj/item/melee/onehanded/knife/hunting,
-		/obj/item/flashlight/seclite,
-		/obj/item/melee/classic_baton/telescopic,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/restraints/legcuffs/bola
-		))
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/security/full/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -348,63 +237,10 @@
 /obj/item/storage/belt/mining/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.max_combined_w_class = 20
-	STR.can_hold = typecacheof(list(
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/multitool,
-		/obj/item/flashlight,
-		/obj/item/stack/cable_coil,
-		/obj/item/analyzer,
-		/obj/item/extinguisher/mini,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/resonator,
-		/obj/item/mining_scanner,
-		/obj/item/pickaxe,
-		/obj/item/stack/sheet/animalhide,
-		/obj/item/stack/sheet/sinew,
-		/obj/item/stack/sheet/bone,
-		/obj/item/lighter,
-		/obj/item/storage/fancy/cigarettes,
-		/obj/item/reagent_containers/food/drinks/bottle,
-		/obj/item/stack/medical,
-		/obj/item/kitchen/knife,
-		/obj/item/reagent_containers/hypospray,
-		/obj/item/gps,
-		/obj/item/storage/bag/ore,
-		/obj/item/survivalcapsule,
-		/obj/item/t_scanner/adv_mining_scanner,
-		/obj/item/reagent_containers/pill,
-		/obj/item/storage/pill_bottle,
-		/obj/item/stack/ore,
-		/obj/item/reagent_containers/food/drinks,
-		/obj/item/organ/regenerative_core,
-		/obj/item/wormhole_jaunter,
-		/obj/item/storage/bag/plants,
-		/obj/item/stack/marker_beacon,
-		/obj/item/melee/baton,
-		/obj/item/melee/classic_baton,
-		/obj/item/grenade,
-		/obj/item/reagent_containers/spray/pepper,
-		/obj/item/restraints/handcuffs,
-		/obj/item/assembly/flash/handheld,
-		/obj/item/clothing/glasses,
-		/obj/item/ammo_casing/shotgun,
-		/obj/item/ammo_box,
-		/obj/item/reagent_containers/food/snacks/donut,
-		/obj/item/flashlight/seclite,
-		/obj/item/melee/classic_baton/telescopic,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/restraints/legcuffs/bola
-		))
-
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.toolbelt_allowed
 
 /obj/item/storage/belt/mining/vendor
 	contents = newlist(/obj/item/survivalcapsule)
@@ -418,11 +254,6 @@
 	desc = "A versatile belt, woven from sinew."
 	icon_state = "ebelt"
 	item_state = "ebelt"
-
-/obj/item/storage/belt/mining/primitive/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
 
 /obj/item/storage/belt/champion
 	name = "championship belt"
@@ -449,7 +280,10 @@
 /obj/item/storage/belt/military/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.ammobelt_allowed
 
 /obj/item/storage/belt/military/snack
 	name = "tactical snack rig"
@@ -462,14 +296,13 @@
 /obj/item/storage/belt/military/snack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
+	STR.max_items = 21
 	STR.max_w_class = WEIGHT_CLASS_SMALL
 	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/food/snacks,
-		/obj/item/reagent_containers/food/drinks
+		/obj/item/reagent_containers/food
 		))
 
-	var/amount = 5
+	var/amount = 21
 	var/rig_snacks
 	while(contents.len <= amount)
 		rig_snacks = pick(list(
@@ -506,6 +339,14 @@
 	icon_state = "belt"
 	item_state = "security"
 
+/obj/item/storage/belt/military/abductor/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.toolbelt_allowed
+
 /obj/item/storage/belt/military/abductor/full/PopulateContents()
 	new /obj/item/screwdriver/abductor(src)
 	new /obj/item/wrench/abductor(src)
@@ -521,17 +362,19 @@
 	icon_state = "grenadebeltold"
 	item_state = "security"
 
+/obj/item/storage/belt/military/assault/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.ammobelt_allowed
+
 /obj/item/storage/belt/military/assault
 	name = "assault belt"
 	desc = "A tactical assault belt."
 	icon_state = "assaultbelt"
 	item_state = "security"
-
-/obj/item/storage/belt/military/assault/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-
 
 /obj/item/storage/belt/military/army/military/followers/PopulateContents()
 	new /obj/item/reagent_containers/spray/pepper(src)
@@ -542,7 +385,7 @@
 
 /obj/item/storage/belt/durathread
 	name = "durathread toolbelt"
-	desc = "A toolbelt made out of durathread, it seems robust enough to hold bigger tools like RCDs or RPDs, with enough pouches to hold more gear than a normal belt."
+	desc = "A toolbelt made out of durathread. Aside from the material being fireproof, this is virtually identical to a leather toolbelt."
 	icon_state = "webbing-durathread"
 	item_state = "webbing-durathread"
 	resistance_flags = FIRE_PROOF
@@ -551,35 +394,10 @@
 /obj/item/storage/belt/durathread/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 14
-	STR.max_combined_w_class = 32
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
-		/obj/item/crowbar,
-		/obj/item/screwdriver,
-		/obj/item/weldingtool,
-		/obj/item/wirecutters,
-		/obj/item/wrench,
-		/obj/item/multitool,
-		/obj/item/flashlight,
-		/obj/item/stack/cable_coil,
-		/obj/item/t_scanner,
-		/obj/item/analyzer,
-		/obj/item/geiger_counter,
-		/obj/item/extinguisher,
-		/obj/item/radio,
-		/obj/item/clothing/gloves,
-		/obj/item/holosign_creator,
-		/obj/item/forcefield_projector,
-		/obj/item/assembly/signaler,
-		/obj/item/lightreplacer,
-		/obj/item/rcd_ammo,
-		/obj/item/construction,
-		/obj/item/stack/rods,
-		/obj/item/stack/tile/plasteel,
-		/obj/item/grenade/chem_grenade/metalfoam,
-		/obj/item/grenade/chem_grenade/smart_metal_foam
-		))
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.toolbelt_allowed
 
 /obj/item/storage/belt/grenade
 	name = "grenadier belt"
@@ -643,38 +461,10 @@
 /obj/item/storage/belt/janitor/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.max_w_class = WEIGHT_CLASS_BULKY // Set to this so the  light replacer can fit.
-	STR.can_hold = typecacheof(list(
-		/obj/item/grenade/chem_grenade,
-		/obj/item/lightreplacer,
-		/obj/item/flashlight,
-		/obj/item/reagent_containers/glass/beaker,
-		/obj/item/reagent_containers/glass/bottle,
-		/obj/item/reagent_containers/spray,
-		/obj/item/soap,
-		/obj/item/holosign_creator,
-		/obj/item/forcefield_projector,
-		/obj/item/key/janitor,
-		/obj/item/clothing/gloves,
-		/obj/item/melee/flyswatter,
-		/obj/item/broom,
-		/obj/item/paint/paint_remover,
-		/obj/item/assembly/mousetrap,
-		/obj/item/screwdriver,
-		/obj/item/stack/cable_coil
-		))
-
-
-
-/obj/item/storage/belt/utility
-	name = "toolbelt" //Carn: utility belt is nicer, but it bamboozles the text parsing.
-	desc = "Holds tools."
-	icon_state = "utilitybelt"
-	item_state = "utility"
-	content_overlays = TRUE
-	custom_premium_price = 300
-
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.janibelt_allowed
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
@@ -686,11 +476,10 @@
 /obj/item/storage/belt/bandolier/durathread/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 32
-	STR.display_numerical_stacking = TRUE
-	STR.can_hold = typecacheof(list(
-		/obj/item/ammo_casing
-		))
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_BELT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
+	STR.can_hold = GLOB.ammobelt_allowed
 
 //CIT QUIVER
 /*/obj/item/storage/belt/quiver
@@ -757,45 +546,15 @@
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 4
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(
-		/obj/item/gun/ballistic/automatic/pistol,
-		/obj/item/gun/ballistic/revolver,
-		/obj/item/ammo_box/magazine,
-		/obj/item/ammo_box/tube,
-		/obj/item/ammo_box/a357,
-		/obj/item/ammo_box/c38,
-		/obj/item/ammo_box/l10mm,
-		/obj/item/ammo_box/a762,
-		/obj/item/ammo_box/shotgun,
-		/obj/item/ammo_box/m44,
-		/obj/item/ammo_box/a762,
-		/obj/item/ammo_box/a556/stripper,
-		/obj/item/ammo_box/needle,
-		/obj/item/ammo_box/a308,
-		/obj/item/ammo_box/c4570,
-		/obj/item/ammo_box/a50MG,
-		/obj/item/ammo_box/c45rev,
-		/obj/item/ammo_box/a45lcrev,
-		/obj/item/gun/energy/laser/solar,
-		/obj/item/gun/energy/laser/pistol,
-		/obj/item/gun/energy/laser/auto,
-		/obj/item/gun/energy/laser/complianceregulator,
-		/obj/item/gun/energy/laser/plasma/pistol,
-		/obj/item/gun/energy/laser/plasma/glock,
-		/obj/item/gun/energy/laser/plasma/glock/extended,
-		/obj/item/gun/energy/laser/wattz,
-		/obj/item/gun/energy/laser/wattz/magneto,
-		/obj/item/gun/energy/laser/plasma/pistol/alien,
-		/obj/item/stock_parts/cell/ammo/ec,
-		/obj/item/stock_parts/cell/ammo/ecp,
-		))
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/holster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
@@ -857,8 +616,9 @@
 /obj/item/storage/belt/fannypack/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 3
-	STR.max_w_class = WEIGHT_CLASS_SMALL
+	STR.max_w_class = WEIGHT_CLASS_TINY
+	STR.max_items = STORAGE_FANNYPACK_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_FANNYPACK_MAX_VOLUME
 
 /obj/item/storage/belt/fannypack/black
 	name = "black fannypack"
@@ -890,10 +650,10 @@
 /obj/item/storage/belt/sabre/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 1
-	STR.rustle_sound = FALSE
 	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(fitting_swords)
+	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.can_hold = GLOB.knifebelt_allowed
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -912,7 +672,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_BELT
 	fitting_swords = list(/obj/item/melee/smith/machete,
 	/obj/item/melee/smith/machete/reforged,
 	/obj/item/melee/smith/wakizashi,
@@ -1014,21 +774,11 @@
 	icon_state = "reconbandolier"
 	item_state = "reconbandolier"
 
-/obj/item/storage/belt/military/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_SMALL
-
 /obj/item/storage/belt/military/NCR_Bandolier
 	name = "NCR bandolier"
 	desc = "A standard issue NCR bandolier."
 	icon_state = "ncr_bandolier"
 	item_state = "ncr_bandolier"
-
-/obj/item/storage/belt/military/NCR_Bandolier/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
 
 //Regular Quiver
 /obj/item/storage/belt/tribe_quiver
@@ -1040,7 +790,7 @@
 /obj/item/storage/belt/tribe_quiver/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 8
+	STR.max_items = 14
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
 	STR.max_w_class = 3
 	STR.max_combined_w_class = 24
