@@ -1385,10 +1385,6 @@
 	icon_state = "graveldirtedge"
 	},
 /area/f13/raiders)
-"bmf" = (
-/obj/machinery/mineral/wasteland_vendor/clothing,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city)
 "bmC" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/brews,
 /obj/machinery/light/broken{
@@ -10784,9 +10780,6 @@
 /obj/structure/spacevine,
 /turf/closed/wall/f13/store,
 /area/f13/city)
-"iNl" = (
-/turf/closed/indestructible/fakeglass,
-/area/f13/city)
 "iNE" = (
 /obj/structure/obstacle/old_locked_door{
 	name = "Backend Books"
@@ -13978,13 +13971,6 @@
 /obj/structure/nest/gecko,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"lkW" = (
-/turf/open/floor/plating/f13/inside,
-/area/f13/city)
-"llf" = (
-/obj/machinery/mineral/wasteland_vendor/medical,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/city)
 "llh" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plating/rust,
@@ -20716,11 +20702,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/city)
-"qUF" = (
-/obj/machinery/light/small,
-/mob/living/simple_animal/pet/dog/protectron,
-/turf/open/floor/plating/f13/inside,
-/area/f13/city)
 "qVs" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2"
@@ -22936,10 +22917,6 @@
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
-/area/f13/city)
-"sPP" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/indestructible/opshuttle,
 /area/f13/city)
 "sQe" = (
 /obj/structure/bed/mattress{
@@ -25177,9 +25154,6 @@
 /obj/structure/table/wood,
 /obj/effect/spawner/lootdrop/raiderloot,
 /turf/open/floor/f13/wood,
-/area/f13/city)
-"uFQ" = (
-/turf/closed/indestructible/opshuttle,
 /area/f13/city)
 "uGb" = (
 /obj/structure/spacevine,
@@ -40400,9 +40374,9 @@ gEy
 pVV
 oWN
 cQC
-uFQ
-sPP
-sPP
+fBS
+fVd
+fVd
 bVE
 aVZ
 ksA
@@ -40657,9 +40631,9 @@ bxV
 oMa
 kRp
 vGR
-llf
-lkW
-uFQ
+fBS
+fBS
+fBS
 syb
 aVZ
 ryL
@@ -40914,9 +40888,9 @@ bxV
 oMa
 oWN
 cQC
-iNl
-qUF
-uFQ
+fBS
+fBS
+fBS
 wBZ
 aVZ
 ryL
@@ -41171,9 +41145,9 @@ gEy
 oMa
 kRp
 cQC
-bmf
-lkW
-sPP
+fBS
+fBS
+fVd
 inC
 aVZ
 pxM
@@ -41428,9 +41402,9 @@ siv
 lHJ
 oWN
 cQC
-uFQ
-uFQ
-uFQ
+fBS
+fBS
+fBS
 fBS
 dDr
 dIH
