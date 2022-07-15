@@ -118,7 +118,7 @@
 	icon_state = "gardener"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
-/obj/item/storage/belt/utility/gardener/ComponentInitialize() /// AAAAAAAAAAAAAAAAAAAAAAAA
+/obj/item/storage/belt/utility/gardener/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
@@ -150,7 +150,7 @@
 	item_state = "bandolier"
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
-/obj/item/storage/belt/bandolier/ComponentInitialize()// AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+/obj/item/storage/belt/bandolier/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
@@ -211,7 +211,7 @@
 	item_state = "security"//Could likely use a better one.
 	content_overlays = TRUE
 
-/obj/item/storage/belt/security/ComponentInitialize() /// combine with bandolier
+/obj/item/storage/belt/security/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
@@ -391,7 +391,7 @@
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //If normal belts get this, the upgraded version should too
 
-/obj/item/storage/belt/durathread/ComponentInitialize() /// AAAAAAAAAAAAAAAAAAA combine with toolbelt
+/obj/item/storage/belt/durathread/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_BULKY
