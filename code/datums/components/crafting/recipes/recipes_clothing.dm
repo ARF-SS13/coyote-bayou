@@ -5,7 +5,9 @@
 /datum/crafting_recipe/bandolier
 	name = "Bandolier"
 	result = /obj/item/storage/belt/bandolier
-	reqs = list(/obj/item/stack/sheet/hay = 3,
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 4)
 	tools = list(TOOL_WORKBENCH)
 	time = 40
@@ -13,9 +15,11 @@
 	subcategory = CAT_BELTS
 
 /datum/crafting_recipe/belt
-	name = "Belt"
-	result = /obj/item/storage/belt
-	reqs = list(/obj/item/stack/sheet/hay = 3,
+	name = "Fannypack"
+	result = /obj/item/storage/belt/fannypack
+	reqs = list(/obj/item/stack/sheet/metal = 3,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 3)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
@@ -27,6 +31,8 @@
 	result = /obj/item/storage/belt/military
 	tools = list(TOOL_AWORKBENCH)
 	reqs = list(/obj/item/stack/sheet/plastic = 2,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/cloth = 2,
 				/obj/item/stack/sheet/leather = 3)
 	time = 30
 	category = CAT_CLOTHING
@@ -36,6 +42,8 @@
 	name = "Webbing"
 	result = /obj/item/storage/belt/military/alt
 	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/metal = 2,
 				/obj/item/stack/sheet/cloth = 2)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
@@ -46,7 +54,9 @@
 	name = "Shoulder Holster"
 	result = /obj/item/storage/belt/holster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/hay = 3)
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_CLOTHING
@@ -56,7 +66,9 @@
 	name = "Leg Holster"
 	result = /obj/item/storage/belt/holster/legholster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/hay = 3)
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/cloth = 2,
+				/obj/item/stack/sheet/metal = 3)
 	tools = list(TOOL_WORKBENCH)
 	time = 15
 	category = CAT_CLOTHING
@@ -66,8 +78,9 @@
 	name = "Medolier"
 	result =  /obj/item/storage/belt/medolier
 	reqs = list(/obj/item/stack/sheet/metal = 2,
-	/obj/item/stack/sheet/cloth = 3,
-	/obj/item/stack/sheet/plastic = 4)
+				/obj/item/stack/sheet/cloth = 3,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/plastic = 4)
 	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
@@ -105,7 +118,7 @@
 /datum/crafting_recipe/heavysheath
 	name = "Heavy-Duty Sheath"
 	result = /obj/item/storage/belt/sabre/heavy
-	reqs = list(/obj/item/stack/sheet/hay = 1,
+	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)
@@ -116,7 +129,7 @@
 /datum/crafting_recipe/twinsheath
 	name = "Twin Sheath"
 	result = /obj/item/storage/belt/sword/twin
-	reqs = list(/obj/item/stack/sheet/hay = 1,
+	reqs = list(/obj/item/stack/sheet/metal = 1,
 				/obj/item/stack/sheet/leather = 3,
 				/obj/item/stack/crafting/metalparts = 2)
 	tools = list(TOOL_WORKBENCH)

@@ -320,7 +320,7 @@ Head Knight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	accessory =		/obj/item/clothing/accessory/bos/knightcaptain
 	belt =			/obj/item/storage/belt/security/full
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
@@ -751,7 +751,7 @@ Senior Knight
 	glasses =       /obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	belt = 			/obj/item/storage/belt/military/assault
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE
@@ -860,7 +860,7 @@ Knight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	belt = 			/obj/item/storage/belt/military/assault
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE

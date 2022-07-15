@@ -129,15 +129,16 @@
 
 /obj/item/storage/survivalkit_triple_empty
 	name = "large survival kit"
-	desc = "A large, robust leather pouch containing the essentials for wasteland survival. This one won't fit in your pocket, but holds three times as much."
-	icon_state = "survivalkit_triple"
-	w_class = WEIGHT_CLASS_NORMAL
+	desc = "A large, robust set of leather pouches tailored to hold lots and lots of tiny things. This one won't fit in your pocket, but it comes with straps that'll attach to most armors."
+	icon_state = "survivalkit"
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/survivalkit_triple_empty/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 21
-	STR.max_combined_w_class = 42
+	STR.max_w_class = WEIGHT_CLASS_TINY
+	STR.max_items = STORAGE_TRIPLEKIT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_TRIPLEKIT_MAX_VOLUME
 
 /obj/item/storage/survivalkit_empty/PopulateContents()
 	. = ..()
