@@ -90,7 +90,7 @@ Mayor
 /datum/outfit/loadout/mayoral
 	name = "Frontier Leader"
 	backpack_contents = list(
-		/obj/item/clothing/suit/armor/town/mayor = 1,
+		/obj/item/clothing/suit/armor/medium/duster/town/mayor = 1,
 		/obj/item/clothing/head/f13/town/mayor = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -269,7 +269,7 @@ Mayor
 
 /datum/outfit/loadout/thelaw
 	name = "The Law Man"
-	suit = /obj/item/clothing/suit/armor/town/sheriff
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
 	l_pocket = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
@@ -282,7 +282,7 @@ Mayor
 /datum/outfit/loadout/thechief
 	name = "The Chief"
 	uniform = /obj/item/clothing/under/f13/police/formal
-	suit = /obj/item/clothing/suit/armor/town/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
 	belt = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -366,7 +366,7 @@ Mayor
 
 /datum/outfit/loadout/frontierjustice
 	name = "Frontier Justice"
-	suit = /obj/item/clothing/suit/armor/town/deputy
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
 	belt = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail

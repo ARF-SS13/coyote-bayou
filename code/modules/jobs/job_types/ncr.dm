@@ -708,7 +708,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/rangerpatrol
 	name = "Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	head = /obj/item/clothing/head/f13/ranger
 	uniform	= /obj/item/clothing/under/f13/ranger/patrol
 	belt = /obj/item/storage/belt/military/assault/ncr
@@ -722,7 +722,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 
 /datum/outfit/loadout/rangerpatrolcqb
 	name = "CQB Patrol Ranger"
-	suit = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	head = /obj/item/clothing/head/f13/ranger
 	uniform	= /obj/item/clothing/under/f13/ranger/patrol
 	belt = /obj/item/storage/belt/military/assault/ncr

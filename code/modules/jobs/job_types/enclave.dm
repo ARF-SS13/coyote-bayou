@@ -70,7 +70,7 @@
 
 	head = /obj/item/clothing/head/helmet/f13/enclave/officer
 	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = /obj/item/clothing/suit/armor/enclavetrenchcoat
+	suit = /obj/item/clothing/suit/armor/medium/duster/enclave
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
@@ -336,7 +336,7 @@
 	head = /obj/item/clothing/head/helmet/f13/envirosuit
 	mask =/obj/item/clothing/mask/breath/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	suit = /obj/item/clothing/suit/armor/environmentalsuit
+	suit = /obj/item/clothing/suit/bio_suit/enclave
 	belt = /obj/item/storage/belt/medical
 	suit_store =  /obj/item/tank/internals/oxygen
 

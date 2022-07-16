@@ -435,7 +435,7 @@ Hunter
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
 	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/tribe_armor
+	suit = 		/obj/item/clothing/suit/armor/light/tribal/strips
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,

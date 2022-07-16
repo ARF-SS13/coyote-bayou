@@ -81,7 +81,7 @@ Elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
 	pa_wear = TRUE
-	suit =	/obj/item/clothing/suit/elder
+	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
 	suit_store =	/obj/item/gun/energy/laser/laer
@@ -244,7 +244,7 @@ Head Scribe
 	uniform = 		/obj/item/clothing/under/syndicate/brotherhood
 	accessory = 	/obj/item/clothing/accessory/bos/headscribe
 	glasses =       /obj/item/clothing/glasses/sunglasses
-	suit = 			/obj/item/clothing/suit/armor/headscribe
+	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
@@ -605,7 +605,7 @@ Senior Scribe
 	shoes =	/obj/item/clothing/shoes/combat
 	belt =	/obj/item/storage/belt/utility/full/engi
 	accessory =	/obj/item/clothing/accessory/bos/seniorscribe
-	suit =	/obj/item/clothing/suit/seniorscribe
+	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
 	id =	/obj/item/card/id/dogtag
 	glasses =	/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
@@ -664,7 +664,7 @@ Scribe
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	shoes = 		/obj/item/clothing/shoes/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit = 			/obj/item/clothing/suit/scribe
+	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/scribe
 	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
