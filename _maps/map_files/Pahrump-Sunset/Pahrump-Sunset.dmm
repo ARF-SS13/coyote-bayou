@@ -48116,10 +48116,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland)
-"pDZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/closed/wall/f13/wood,
-/area/f13/wasteland)
 "pEn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -61962,6 +61958,10 @@
 /obj/structure/mirror{
 	pixel_x = -32
 	},
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "xtI" = (
@@ -74797,7 +74797,7 @@ xFZ
 aOk
 etg
 cFK
-pDZ
+abu
 acl
 acl
 qHb
@@ -75054,7 +75054,7 @@ cFK
 cFK
 nHY
 aOk
-pDZ
+abu
 xtt
 ydE
 acl
