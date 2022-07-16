@@ -119,10 +119,12 @@
 	var/money_type = /obj/item/stack/f13Cash/caps
 	var/min_qty = LOW_MIN
 	var/max_qty = LOW_MAX
+	var/spawn_nothing_chance = 0 //chance no money at all spawns
 
 /obj/item/stack/f13Cash/random/Initialize()
 	..()
-	spawn_money()
+	if(!prob(spawn_nothing_chance))
+		spawn_money()
 	return INITIALIZE_HINT_QDEL
 
 /obj/item/stack/f13Cash/random/proc/spawn_money()
@@ -150,6 +152,12 @@
 /obj/item/stack/f13Cash/random/low
 	min_qty = LOW_MIN / CASH_CAP
 	max_qty = LOW_MAX / CASH_CAP
+
+/obj/item/stack/f13Cash/random/low/lowchance
+	spawn_nothing_chance = 75
+
+/obj/item/stack/f13Cash/random/low/medchance
+	spawn_nothing_chance = 50
 
 /obj/item/stack/f13Cash/random/med
 	min_qty = MED_MIN / CASH_CAP
