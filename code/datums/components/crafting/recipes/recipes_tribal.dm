@@ -458,7 +458,7 @@ datum/crafting_recipe/tribalwar/bone
 				/obj/item/clothing/head/helmet/skull = 1)
 
 //Cloth Eyepatch
-/datum/crafting_recipe/eyepatch
+/datum/crafting_recipe/tribal/eyepatch
 	name = "Bandage Eyepatch"
 	result = /obj/item/clothing/glasses/f13/tribaleyepatch
 	time = 10
