@@ -50,6 +50,7 @@
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
 	idlesound = list('sound/f13npc/ghoul/idle.ogg')
 	death_sound = 'sound/f13npc/ghoul/ghoul_death.ogg'
+	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 
@@ -66,6 +67,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 25
 	melee_damage_upper = 25
+	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
@@ -104,6 +106,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
 //Frozen Feral Ghoul
@@ -119,6 +122,7 @@
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
+	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Legendary Ghoul
@@ -138,6 +142,7 @@
 	mob_size = 5
 	wound_bonus = 0
 	bare_wound_bonus = 0
+	loot = list(/obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Glowing Ghoul
@@ -193,6 +198,7 @@
 	icon_gib = "syndicate_gib"
 	maxHealth = 90
 	health = 90
+	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Alive Ghoul
