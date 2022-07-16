@@ -19,7 +19,7 @@
 	health = 130 //7 shots of 9mm
 	maxHealth = 130
 	healable = FALSE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	melee_damage_lower = 28
 	melee_damage_upper = 28
 	robust_searching = TRUE

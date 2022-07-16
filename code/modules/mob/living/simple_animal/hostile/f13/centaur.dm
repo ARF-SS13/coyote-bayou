@@ -34,7 +34,7 @@
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("hostile", "supermutant")
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/centaur = 3,

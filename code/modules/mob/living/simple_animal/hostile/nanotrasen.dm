@@ -10,7 +10,7 @@
 	speak_chance = 12
 	turns_per_move = 5
 	speed = 0
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = 1
 	maxHealth = 100
 	health = 100
