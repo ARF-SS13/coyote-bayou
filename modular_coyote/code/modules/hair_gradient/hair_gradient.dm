@@ -21,6 +21,7 @@ GLOBAL_LIST_INIT(hair_gradients, list(
 	"Wavy" = "wavy"
 	))
 
+/* // Disabled random features from providing random gradients, simply to avoid reloading save file errors.
 random_features(intendedspecies, intended_gender)
 	. = ..(intendedspecies, intended_gender)
 	
@@ -34,16 +35,15 @@ random_features(intendedspecies, intended_gender)
 
 	return output
 
+
 randomize_human(mob/living/carbon/human/H)
 //	H.dna.features["flavor_text"] = "" // I'm so tempted to put lorem ipsum in the flavor text so freaking badly please someone hold me back god.
 	H.dna.features["grad_color"] = random_color()
 	H.dna.features["grad_style"] = pick(GLOB.hair_gradients)
 	..(H)
+*/
 
 /mob/living/carbon/human/proc/change_hair_gradient(var/hair_gradient)
-	if(dna.features["grad_style"] == "none")
-		return
-
 	if(dna.features["grad_style"] == hair_gradient)
 		return
 
@@ -58,7 +58,7 @@ randomize_human(mob/living/carbon/human/H)
 
 // Preferences + save file/copy_to and stuff.
 /datum/preferences
-	var/list/features_override = list("grad_style" = "none", "grad_color" = "FFFFFF")
+	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
 
 /datum/preferences/load_character(slot)
 	. = ..(slot)
