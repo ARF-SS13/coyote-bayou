@@ -100,7 +100,7 @@
 
 	var/self_application = (user == C)
 	var/obj/item/bodypart/affected_bodypart = heal_operations["bodypart"]
-	do_medical_message(user, C, affected_bodypart, "start")
+	do_medical_message(user, C, "start")
 	is_healing = TRUE
 	if(!do_mob(user, C, (self_application ? self_delay : other_delay), progress = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
@@ -124,7 +124,7 @@
 /* 	if(heal_operations & DO_APPLY_BANDAGE)
 		affected_bodypart.apply_gauze(src) */
 
-	do_medical_message(user, C, affected_bodypart, "end")
+	do_medical_message(user, C, "end")
 	return TRUE
 
 
@@ -190,21 +190,19 @@
 			return output_heal_instructions = list("bodypart" = affecting, "operations" = do_these_things)
 	return output_heal_instructions
 
-/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, obj/limb, which_message)
+/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, which_message)
 	if(!user || !target)
 		return
 	switch(which_message)
 		if("start")
 			user.visible_message(
-				span_warning("[user] begins treating the wounds on [target]'s [limb]..."), 
-				span_warning("You begin treating the wounds on [user == target ? "your" : "[target]'s"] [limb]..."))
+				span_warning("[user] begins applying \a [src] to [target]'s wounds..."), 
+				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] wounds..."))
 
 		if("end")
 			user.visible_message(
-				span_green("[user] applies [src] to [target]'s [limb].</span>"), 
-				span_green("You treat the wounds on [user == target ? "yourself" : "[target]'s"] [limb]."))
-
-
+				span_green("[user] applies \a [src] to [target]'s wounds.</span>"), 
+				span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] wounds."))
 
 /obj/item/stack/medical/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
@@ -276,12 +274,12 @@
 		to_chat(user, "<span class='warning'>The bandage currently on [user==M ? "your" : "[M]'s"] [limb] is still in good condition!</span>")
 		return
 
-	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M]'s [limb] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb] with [src]...</span>")
+	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb] with [src]...</span>")
 
 	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
 		return
 
-	user.visible_message("<span class='green'>[user] applies [src] to [M]'s [limb].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb].</span>")
+	user.visible_message("<span class='green'>[user] applies [src] to [M].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb].</span>")
 	limb.apply_gauze(src)
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
@@ -308,20 +306,6 @@
 /obj/item/stack/medical/gauze/suicide_act(mob/living/user)
 	user.visible_message("<span class='suicide'>[user] begins tightening \the [src] around [user.p_their()] neck! It looks like [user.p_they()] forgot how to use medical supplies!</span>")
 	return OXYLOSS
-
-/obj/item/stack/medical/gauze/do_medical_message(mob/user, mob/target, obj/limb, which_message)
-	if(!user || !target)
-		return
-	switch(which_message)
-		if("start")
-			user.visible_message(
-				span_warning("[user] begins bandaging the wounds on [target]'s [limb]..."), 
-				span_warning("You begin bandaging the wounds on [user == target ? "your" : "[target]'s [limb]"]..."))
-
-		if("end")
-			user.visible_message(
-				span_green("[user] bandages [src] to [target]'s [limb].</span>"), 
-				span_green("You bandage the wounds on [user == target ? "your" : "[target]'s [limb]"]."))
 
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
@@ -376,20 +360,6 @@
 	stop_bleeding = 2
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
-
-/obj/item/stack/medical/suture/do_medical_message(mob/user, mob/target, obj/limb, which_message)
-	if(!user || !target)
-		return
-	switch(which_message)
-		if("start")
-			user.visible_message(
-				span_warning("[user] begins suturing the wounds on [target]'s [limb]..."), 
-				span_warning("You begin suturing the wounds on [user == target ? "your" : "[target]'s"] [limb]..."))
-
-		if("end")
-			user.visible_message(
-				span_green("[user] sutures [src] to [target]'s [limb].</span>"), 
-				span_green("You suture the wounds on [user == target ? "your" : "[target]'s [limb]"]."))
 
 /obj/item/stack/medical/suture/one
 	amount = 1
