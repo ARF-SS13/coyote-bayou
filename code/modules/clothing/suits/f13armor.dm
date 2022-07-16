@@ -725,7 +725,7 @@
 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 
-/obj/item/clothing/suit/armor/light/tribal/chitinarmor
+/obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
 	desc = " set of light armor made of insect chitin. Tough and light, it provides some moderate protection from trauma while allowing the user to remain mobile and protected from the elements."
 	icon = 'icons/fallout/clothing/armored_light.dmi'
@@ -867,7 +867,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	slowdown = 0.05
 
-/obj/item/clothing/suit/armor/bone
+/obj/item/clothing/suit/armor/light/tribal/bone/cool
 	name = "bone armor"
 	desc = "A tribal armor plate, crafted from animal bone."
 	icon_state = "bonearmor"
@@ -928,7 +928,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/shankduster
+/obj/item/clothing/suit/armor/medium/duster/follower
 	name = "follower's duster"
 	desc = "An old military-grade pre-war combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "shank_follower"
@@ -937,7 +937,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 35, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 25, "acid" = 25)
 	strip_delay = 40
 
-/obj/item/clothing/suit/armor/shankduster/Initialize()
+/obj/item/clothing/suit/armor/medium/duster/follower/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

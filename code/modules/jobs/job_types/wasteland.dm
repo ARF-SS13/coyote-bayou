@@ -1031,7 +1031,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/desert_ranger
 	name = "Desert Ranger"
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	backpack_contents = list(
 							)
@@ -1076,7 +1076,7 @@ datum/job/wasteland/f13dendoctor
 	backpack = /obj/item/storage/backpack/satchel/trekker
 	gloves = /obj/item/clothing/gloves/f13/military
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	suit_store = /obj/item/gun/ballistic/revolver/sequoia/death
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	backpack_contents = list(
@@ -1392,7 +1392,7 @@ datum/job/wasteland/f13dendoctor
 //Wayfarers
 /datum/outfit/loadout/wayfarermelee
 	name = "Wayfarer Warrior"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
@@ -1403,7 +1403,7 @@ datum/job/wasteland/f13dendoctor
 
 /datum/outfit/loadout/wayfarershaman
 	name = "Wayfarer Shaman"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,

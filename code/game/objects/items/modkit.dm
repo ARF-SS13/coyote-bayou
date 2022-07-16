@@ -22,7 +22,7 @@
 /obj/item/modkit/riotgear
 	name = "desert ranger riot gear modkit"
 	target_items = list(/obj/item/clothing/suit/armor/rangercombat)
-	result_item = /obj/item/clothing/suit/armor/rangercombat/desert
+	result_item = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 
 /obj/item/modkit/riotgear_helmet
 	name = "desert ranger riot helmet modkit"
@@ -47,13 +47,13 @@
 
 /obj/item/modkit/thax_patrol
 	name = "modified patrol armor modkit"
-	target_items = list(/obj/item/clothing/suit/armor/medium/combat/ncr_patrol)
-	result_item = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol/thax
+	target_items = list(/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol)
+	result_item = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/thax
 
 /obj/item/modkit/shank
 	name = "follower's duster modkit"
 	target_items = list(/obj/item/clothing/suit/armor/medium/raider)
-	result_item = /obj/item/clothing/suit/armor/shankduster
+	result_item = /obj/item/clothing/suit/armor/medium/duster/follower
 
 /*
 /obj/item/modkit/custom_excess
@@ -108,7 +108,7 @@
 
 /obj/item/modkit/wolfvest
 	name = "subdued ranger vest modkit"
-	target_items = list(/obj/item/clothing/suit/armor/medium/combat/ncr_patrol)
+	target_items = list(/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol)
 	result_item = /obj/item/clothing/suit/armor/modif_r_vest
 
 //YEEHAWGUVNAH/Trinity Kemble

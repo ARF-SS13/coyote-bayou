@@ -4,7 +4,7 @@
 
 // WHISKEY //
 
-/obj/item/clothing/suit/armor/rangercombat/desert/whiskey
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/whiskey
 	name = "weathered ranger combat armor"
 	desc = "An original suit of pre-war combat armor used by elite military units, passed down through generations to where it is today. Though it's not lined with kevlar, this suit's still lightweight and easy to move around in."
 	icon = 'icons/fallout/clothing/custom/custom.dmi'
@@ -13,7 +13,7 @@
 	item_state = "desert_ranger"
 	armor = list("melee" = 20, "bullet" = 30, "laser" = 10, "energy" = 20, "bomb" = 30, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
-/obj/item/clothing/suit/armor/rangercombat/desert/whiskey/Initialize()
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/whiskey/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 

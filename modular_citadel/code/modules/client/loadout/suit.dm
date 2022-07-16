@@ -176,7 +176,7 @@
 
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
-	path = /obj/item/clothing/suit/armor/town
+	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
 	restricted_desc = "Oasis"

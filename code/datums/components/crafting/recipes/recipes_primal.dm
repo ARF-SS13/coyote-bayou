@@ -380,7 +380,7 @@
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
-	result = /obj/item/clothing/suit/armor/tribe_armor
+	result = /obj/item/clothing/suit/armor/light/tribal/strips
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 5)
@@ -411,7 +411,7 @@
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
-	result = /obj/item/clothing/suit/armor/light/tribal/chitinarmor
+	result = /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	time = 30
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,
@@ -437,7 +437,7 @@
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"
-	result = /obj/item/clothing/suit/armor/lightcloak
+	result = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	time = 120
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
 				/obj/item/stack/sheet/leather = 6,
