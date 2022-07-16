@@ -84,13 +84,15 @@
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.
-/mob/proc/emote_for_ghost_sight(message)
+/mob/proc/emote_for_ghost_sight(message, admin_only)
 	for(var/mob/ghost as anything in GLOB.dead_mob_list)
 		if(QDELETED(ghost))
 			continue
 		if(!ghost.client || isnewplayer(ghost))
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
+			continue
+		if(admin_only && (ghost.client && !check_rights_for(ghost.client, R_ADMIN)))
 			continue
 		var/ghost_view = ghost.client.view
 		if(ghost.z == z)
