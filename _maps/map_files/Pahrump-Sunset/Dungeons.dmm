@@ -3712,8 +3712,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "doB" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf/books,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/obj/structure/window/spawner/east,
+/obj/structure/window/spawner/north,
+/obj/structure/window/spawner/west,
+/obj/structure/window/spawner,
+/obj/machinery/light/floor,
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/f13{
+	icon_state = "grass2"
+	},
 /area/f13/vault)
 "dpk" = (
 /obj/machinery/computer/med_data{
@@ -7926,10 +7933,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"gKD" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf/books,
-/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
-/area/f13/vault)
 "gLc" = (
 /obj/structure/closet,
 /turf/open/floor/mineral/plastitanium,
@@ -31145,7 +31148,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 uQS
@@ -31402,7 +31405,7 @@ tbb
 cgT
 egq
 cgT
-doB
+lcN
 cgT
 bVS
 uQS
@@ -31659,7 +31662,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+doB
 lcN
 sCK
 uQS
@@ -31916,7 +31919,7 @@ aCV
 cgT
 egq
 cgT
-doB
+lcN
 cgT
 how
 uQS
@@ -32173,7 +32176,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 uQS
@@ -32687,7 +32690,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 dxs
