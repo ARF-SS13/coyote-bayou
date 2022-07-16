@@ -11,7 +11,7 @@
 	reagent_state = LIQUID
 	color = "#eb0000"
 	taste_description = "numbness"
-	metabolization_rate = 2.5 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	value = REAGENT_VALUE_COMMON
 	ghoulfriendly = TRUE
