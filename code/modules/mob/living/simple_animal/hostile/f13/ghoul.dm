@@ -290,7 +290,6 @@
 	name = "ravenous feral ghoul"
 	desc = "A ferocious feral ghoul, hungry for human meat."
 	faction = list("ghoul")
-	stat_attack = UNCONSCIOUS
 	maxHealth = 200
 	health = 200
 	footstep_type = FOOTSTEP_MOB_BAREFOOT

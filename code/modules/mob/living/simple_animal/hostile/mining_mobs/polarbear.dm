@@ -29,7 +29,6 @@
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/goliath_hide/polar_bear_hide = 1)
 	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/goliath_tentacle
-	stat_attack = UNCONSCIOUS
 	robust_searching = TRUE
 	/// Message for when the polar bear starts to attack faster
 	var/aggressive_message_said = FALSE

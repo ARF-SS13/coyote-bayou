@@ -46,7 +46,6 @@
 	response_harm_continuous = "hits"
 	response_harm_simple = "hit"
 	speed = 0
-	stat_attack = UNCONSCIOUS
 	robust_searching = 1
 	vision_range = 3
 	maxHealth = 100

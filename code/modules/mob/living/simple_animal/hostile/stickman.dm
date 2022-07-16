@@ -11,7 +11,6 @@
 	turns_per_move = 5
 	speed = 0
 	blood_volume = 0
-	stat_attack = UNCONSCIOUS
 	robust_searching = TRUE //This is also required for the paper robe rallying to work.
 	environment_smash = ENVIRONMENT_SMASH_NONE
 	maxHealth = 100

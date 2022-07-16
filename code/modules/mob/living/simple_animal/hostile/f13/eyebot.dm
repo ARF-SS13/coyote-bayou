@@ -16,7 +16,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	move_to_delay = 3
-	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 70
 	health = 70

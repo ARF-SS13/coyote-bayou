@@ -18,7 +18,6 @@
 	healable = 1
 	speed = 1.2
 	check_friendly_fire = 1
-	stat_attack = 1
 	obj_damage = 150
 	melee_damage_lower = 25
 	melee_damage_upper = 40
