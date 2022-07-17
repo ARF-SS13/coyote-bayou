@@ -68,13 +68,12 @@ proc/get_top_level_mob(mob/S)
 	user.log_message(message, LOG_EMOTE)
 	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
-	var/list/ghosties = list()
+	var/list/non_admin_ghosts = list()
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
 	if(subtler)
 		for(var/mob/ghost in GLOB.dead_mob_list)
-			if(ghost.client && !check_rights_for(ghost.client, R_ADMIN))
-				continue
-			ghosties |= ghost
+			if(!(ghost in GLOB.admins))
+				non_admin_ghosts |= ghost
 
 	// Everyone in range can see it
 	user.visible_message(
@@ -82,7 +81,7 @@ proc/get_top_level_mob(mob/S)
 		blind_message = message,
 		self_message = message,
 		vision_distance = 1,
-		ignored_mobs = ghosties)
+		ignored_mobs = non_admin_ghosts)
 
 	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight,
 	user.emote_for_ghost_sight(message, subtler)

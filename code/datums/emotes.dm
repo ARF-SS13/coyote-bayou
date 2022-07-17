@@ -92,7 +92,7 @@
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 			continue
-		if(admin_only && (ghost.client && !check_rights_for(ghost.client, R_ADMIN)))
+		if(admin_only && !(ghost in GLOB.admins))
 			continue
 		var/ghost_view = ghost.client.view
 		if(ghost.z == z)
