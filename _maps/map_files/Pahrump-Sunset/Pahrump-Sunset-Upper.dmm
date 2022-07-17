@@ -111,9 +111,9 @@
 	},
 /area/f13/building/massfusion)
 "aiG" = (
-/obj/structure/simple_door/metal/barred,
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
 /turf/open/floor/f13{
-	icon_state = "floorrusty"
+	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
 "aju" = (
@@ -452,7 +452,11 @@
 "bNw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/shelf_wood,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -482,8 +486,18 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/hospital)
 "bTS" = (
-/obj/structure/decoration/vent/rusty,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "bWg" = (
 /obj/structure/window/reinforced{
@@ -498,7 +512,11 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "caq" = (
-/obj/structure/shelf_wood,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -883,7 +901,12 @@
 	},
 /area/f13/building/hospital)
 "dPm" = (
-/obj/structure/barricade/bars,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1547,10 +1570,11 @@
 	},
 /area/f13/ncr)
 "hqx" = (
-/obj/structure/toilet/secret/high_loot{
-	dir = 1
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
+/obj/effect/decal/remains/human,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "hrg" = (
 /obj/structure/railing{
@@ -2317,12 +2341,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "kXI" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "kXK" = (
 /obj/structure/simple_door/room,
@@ -2854,13 +2876,6 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"nkA" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/toilet/secret/low_loot{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ncr)
 "nnp" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/blood/old{
@@ -2890,12 +2905,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
-"nuf" = (
-/obj/structure/toilet/secret/low_loot{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ncr)
 "nuj" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -4052,9 +4061,11 @@
 	},
 /area/f13/building/hospital)
 "sRu" = (
-/obj/structure/decoration/vent/rusty,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
 /area/f13/ncr)
 "sRA" = (
 /obj/structure/window/fulltile/house{
@@ -4184,6 +4195,7 @@
 /obj/effect/decal/waste{
 	icon_state = "goo12"
 	},
+/mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -4258,12 +4270,6 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
-"tQg" = (
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/ncr)
 "tRs" = (
 /obj/machinery/light{
 	dir = 4;
@@ -4344,9 +4350,11 @@
 	},
 /area/f13/building/hospital)
 "ubl" = (
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
 /area/f13/ncr)
 "ucd" = (
 /obj/machinery/light/small{
@@ -5662,7 +5670,7 @@ hHO
 noP
 caq
 xiI
-ejB
+ubl
 ejB
 lTP
 ejB
@@ -5672,10 +5680,10 @@ jxp
 bvK
 ejB
 kst
-lTP
+bTS
 ejB
 geI
-jxp
+caq
 quJ
 gDE
 jxp
@@ -5931,7 +5939,7 @@ jxp
 jxp
 nHV
 jxp
-ejB
+ubl
 jxp
 jxp
 xdk
@@ -5942,7 +5950,7 @@ cbO
 cbO
 jxp
 ejB
-jxp
+caq
 kur
 vje
 vje
@@ -6195,10 +6203,10 @@ kur
 bvK
 kur
 gkT
-ejB
+dPm
 jxp
 ejB
-jxp
+kXI
 ejB
 kur
 rLB
@@ -6448,7 +6456,7 @@ jof
 hYD
 ejB
 kur
-jxp
+caq
 jxp
 jxp
 xWX
@@ -6707,8 +6715,8 @@ jxp
 bvK
 jxp
 qQT
-lbC
-lbC
+aiG
+hqx
 jxp
 nHV
 jxp
@@ -7224,10 +7232,10 @@ lIQ
 jxp
 odS
 jxp
-aiG
+jxp
 gPM
-sRu
-nkA
+ujK
+ujK
 gkT
 rLB
 rLB
@@ -7481,10 +7489,10 @@ lwT
 ttz
 qQT
 jxp
-dPm
-ujK
-kXI
-tQg
+jxp
+pvV
+pvV
+pvV
 kur
 rLB
 rLB
@@ -7736,7 +7744,7 @@ gkT
 sGc
 lwT
 rma
-qQT
+sRu
 tpY
 kur
 kur
@@ -7995,10 +8003,10 @@ lwT
 rma
 qQT
 quJ
-aiG
+jxp
 cqK
-sRu
-hqx
+ujK
+cqK
 kur
 rLB
 rLB
@@ -8252,10 +8260,10 @@ lwT
 qOr
 dTO
 kst
-dPm
-ujK
-ujC
-ubl
+jxp
+bGT
+bGT
+bGT
 kur
 rLB
 rLB
@@ -8766,10 +8774,10 @@ sdE
 jxp
 rCg
 jxp
-aiG
+jxp
 ujK
-bTS
-nuf
+cqK
+cqK
 kur
 rLB
 rLB
@@ -9018,15 +9026,15 @@ rLB
 rLB
 rLB
 kur
+caq
 jxp
 jxp
 jxp
 jxp
 jxp
-dPm
-ujK
-ujC
-tQg
+fVt
+fVt
+fVt
 kur
 rLB
 rLB
@@ -10047,7 +10055,7 @@ rLB
 ggY
 kur
 rDL
-jxp
+kXI
 jxp
 ejB
 knP
@@ -10304,9 +10312,9 @@ rLB
 rLB
 kur
 kur
-dPm
-aiG
-dPm
+jxp
+jxp
+jxp
 kur
 kur
 rLB
