@@ -28,7 +28,7 @@
 	var/self_penalty_effectiveness = 0.8
 	var/self_delay = 50
 	var/other_delay = 0
-	var/repeating = FALSE
+	var/repeating = TRUE
 	/// How much brute we heal per application
 	var/heal_brute
 	/// How much burn we heal per application
@@ -121,7 +121,7 @@
 			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
 				wounds_to_unburn.treat_burn(src, user, self_application)
 				break
-/* 	if(heal_operations & DO_APPLY_BANDAGE)
+	/* if(heal_operations & DO_APPLY_BANDAGE)
 		affected_bodypart.apply_gauze(src) */
 
 	do_medical_message(user, C, "end")
@@ -144,9 +144,9 @@
 	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
 		. |= DO_HEAL_DAMAGE
 	for(var/datum/wound/woundies in target_bodypart.wounds)
-		if(absorption_rate || absorption_capacity)
-			if(woundies.wound_flags & ACCEPTS_GAUZE)
-				. |= DO_APPLY_BANDAGE
+		/*if(absorption_rate || absorption_capacity)
+			 if(woundies.wound_flags & ACCEPTS_GAUZE)
+				. |= DO_APPLY_BANDAGE */
 		if(stop_bleeding)
 			if(woundies.blood_flow)
 				. |= DO_UNBLEED_WOUND
@@ -238,49 +238,17 @@
 	singular_name = "medical gauze"
 	icon_state = "gauze"
 	heal_brute = 5
-	self_delay = 10
-	other_delay = 5
+	self_delay = 20
+	other_delay = 10
 	amount = 10
 	max_amount = 10
 	absorption_rate = 0.45
 	absorption_capacity = 10
-	stop_bleeding = 2
+	stop_bleeding = 3
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = list(/datum/reagent/cellulose = 2)
 	merge_type = /obj/item/stack/medical/gauze
-
-// gauze is only relevant for wounds, which are handled in the wounds themselves
-/obj/item/stack/medical/gauze/try_heal(mob/living/M, mob/user, silent)
-	var/obj/item/bodypart/limb = M.get_bodypart(check_zone(user.zone_selected))
-	if(!limb)
-		to_chat(user, "<span class='notice'>There's nothing there to bandage!</span>")
-		return
-	if(!LAZYLEN(limb.wounds))
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb]!</span>") // good problem to have imo
-		return
-
-	var/gauzeable_wound = FALSE
-	for(var/i in limb.wounds)
-		var/datum/wound/woundies = i
-		if(woundies.wound_flags & ACCEPTS_GAUZE)
-			gauzeable_wound = TRUE
-			break
-	if(!gauzeable_wound)
-		to_chat(user, "<span class='notice'>There's no wounds that require bandaging on [user==M ? "your" : "[M]'s"] [limb]!</span>") // good problem to have imo
-		return
-
-	if(limb.current_gauze && (limb.current_gauze.absorption_capacity * 0.8 > absorption_capacity)) // ignore if our new wrap is < 20% better than the current one, so someone doesn't bandage it 5 times in a row
-		to_chat(user, "<span class='warning'>The bandage currently on [user==M ? "your" : "[M]'s"] [limb] is still in good condition!</span>")
-		return
-
-	user.visible_message("<span class='warning'>[user] begins wrapping the wounds on [M] with [src]...</span>", "<span class='warning'>You begin wrapping the wounds on [user == M ? "your" : "[M]'s"] [limb] with [src]...</span>")
-
-	if(!do_after(user, (user == M ? self_delay : other_delay), target=M))
-		return
-
-	user.visible_message("<span class='green'>[user] applies [src] to [M].</span>", "<span class='green'>You bandage the wounds on [user == M ? "yourself" : "[M]'s"] [limb].</span>")
-	limb.apply_gauze(src)
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
@@ -310,13 +278,13 @@
 /obj/item/stack/medical/gauze/improvised
 	name = "improvised gauze"
 	singular_name = "improvised gauze"
-	heal_brute = 0
+	heal_brute = 3
 	desc = "A roll of cloth. Useful for staunching bleeding, healing burns, and reversing infection, but not THAT useful."
-	self_delay = 10
+	self_delay = 30
 	other_delay = 5
 	absorption_rate = 0.15
 	absorption_capacity = 4
-	stop_bleeding = 1
+	stop_bleeding = 2
 	merge_type = /obj/item/stack/medical/gauze/improvised
 
 /obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
@@ -328,10 +296,10 @@
 	name = "sterilized medical gauze"
 	singular_name = "sterilized medical gauze"
 	desc = "A roll of elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns. "
-	heal_brute = 6
-	self_delay = 5
+	heal_brute = 5
+	self_delay = 20
 	other_delay = 10
-	stop_bleeding = 3
+	stop_bleeding = 4
 	absorption_rate = 0.4
 	absorption_capacity = 15
 	merge_type = /obj/item/stack/medical/gauze/adv
@@ -351,13 +319,12 @@
 	gender = PLURAL
 	singular_name = "suture"
 	icon_state = "suture"
-	self_delay = 30
+	self_delay = 50
 	other_delay = 10
 	amount = 15
 	max_amount = 15
-	repeating = TRUE
 	heal_brute = 10
-	stop_bleeding = 2
+	stop_bleeding = 4
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
@@ -374,7 +341,7 @@
 	heal_brute = 5
 	amount = 5
 	max_amount = 15
-	stop_bleeding = 1
+	stop_bleeding = 3
 	merge_type = /obj/item/stack/medical/suture/emergency
 
 /obj/item/stack/medical/suture/emergency/five
@@ -440,7 +407,6 @@
 	amount = 15
 	max_amount = 15
 	heal_burn = 10
-	repeating = TRUE
 	sanitization = 2
 	flesh_regeneration = 6
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
@@ -596,7 +562,6 @@
 	heal_burn = 10
 	self_delay = 40
 	other_delay = 10
-	repeating = TRUE
 	merge_type = /obj/item/stack/medical/poultice
 	novariants = TRUE
 
@@ -605,11 +570,6 @@
 
 /obj/item/stack/medical/poultice/five
 	amount = 5
-
-/obj/item/stack/medical/poultice/heal(mob/living/M, mob/user)
-	if(iscarbon(M))
-		return heal_carbon(M, user, heal_brute, heal_burn)
-	return ..()
 
 /obj/item/stack/medical/poultice/post_heal_effects(amount_healed, mob/living/carbon/healed_mob, mob/user)
 	. = ..()
