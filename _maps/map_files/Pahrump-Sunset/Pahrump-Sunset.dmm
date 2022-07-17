@@ -37013,12 +37013,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jVJ" = (
-/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/circuitboard/machine/sleeper,
-/obj/structure/table,
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jWa" = (
@@ -39724,6 +39722,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -59466,7 +59465,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/circuitboard/machine/sleeper,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "vXG" = (
