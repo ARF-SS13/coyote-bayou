@@ -280,7 +280,7 @@
 	singular_name = "improvised gauze"
 	heal_brute = 3
 	desc = "A roll of cloth. Useful for staunching bleeding, healing burns, and reversing infection, but not THAT useful."
-	self_delay = 30
+	self_delay = 20
 	other_delay = 5
 	absorption_rate = 0.15
 	absorption_capacity = 4
