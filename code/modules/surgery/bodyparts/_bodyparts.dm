@@ -754,7 +754,7 @@
 		should_draw_gender = FALSE
 
 	var/list/markings_list = list()
-	if(is_organic_limb())
+	if(is_organic_limb() || render_like_organic == TRUE)
 		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
 		if(should_draw_gender)
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
@@ -954,7 +954,7 @@
 		return
 	QDEL_NULL(current_gauze)
 	current_gauze = new gauze.type(src, 1)
-	//gauze.use(1) // handle it on the item, will be changed later
+	gauze.use(1)
 
 /**
  * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
