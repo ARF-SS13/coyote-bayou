@@ -253,7 +253,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	
+
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	belt =			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
@@ -822,7 +822,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/det_hat_alt
 	shoes =  /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/silver
-	l_pocket = /obj/item/storage/bag/money/small/oasis
+	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
