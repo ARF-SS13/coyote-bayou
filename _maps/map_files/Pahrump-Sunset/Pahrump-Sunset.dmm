@@ -43877,6 +43877,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/village)
+"ntz" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "ntS" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
@@ -60353,6 +60362,12 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"wzI" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "wzK" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/jungle,
@@ -108412,10 +108427,10 @@ aFP
 aEt
 tEH
 ijr
-aKO
-aNr
-aNr
-aKO
+ntz
+wzI
+wzI
+ntz
 ijr
 slG
 lqE
