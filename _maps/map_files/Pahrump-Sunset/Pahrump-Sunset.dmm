@@ -36903,6 +36903,13 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"jRC" = (
+/obj/structure/simple_door/room{
+	name = "Morgue";
+	req_one_access_txt = "5"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/area/f13/building)
 "jRM" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
@@ -43664,7 +43671,9 @@
 /obj/item/clothing/under/lawyer/female,
 /obj/item/storage/box/lawyer,
 /obj/item/storage/briefcase/lawyer,
-/obj/structure/closet/secure_closet/detective,
+/obj/structure/closet/secure_closet/detective{
+	anchored = 1
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -44628,6 +44637,13 @@
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"nOz" = (
+/obj/structure/simple_door/room{
+	name = "Surgery";
+	req_one_access_txt = "5"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
+/area/f13/building)
 "nOD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/ghoul,
@@ -50910,13 +50926,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/mall)
 "rmM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/filingcabinet/employment,
-/turf/open/floor/f13{
-	icon_state = "reddirtyfull"
-	},
-/area/f13/building/museum)
+/obj/item/shovel,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/wasteland)
 "rnb" = (
 /obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
@@ -81045,7 +81057,7 @@ xtI
 xtI
 abP
 abP
-eMn
+nOz
 abP
 biV
 eZr
@@ -81561,11 +81573,11 @@ npK
 iXS
 npK
 npK
-biV
-etg
-aOk
-aOk
-aOk
+jRC
+amN
+xLC
+xLC
+xLC
 clS
 trw
 bgr
@@ -81819,10 +81831,10 @@ fkA
 bLh
 eMe
 abP
-aOk
-aOk
-aOk
-hkV
+xLC
+xLC
+xLC
+ndL
 clS
 aQZ
 rFj
@@ -82076,10 +82088,10 @@ abP
 abP
 abP
 abP
-aOk
-aOk
-aOk
-aOk
+xLC
+xLC
+rmM
+xLC
 clS
 aQZ
 rFj
@@ -101922,7 +101934,7 @@ sRe
 goh
 xyc
 nlM
-rmM
+eCc
 goh
 kJu
 tju
