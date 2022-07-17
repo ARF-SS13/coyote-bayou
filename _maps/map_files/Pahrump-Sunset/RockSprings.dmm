@@ -4816,6 +4816,7 @@
 	pixel_y = 4
 	},
 /obj/structure/table/wood,
+/obj/item/flashlight/lantern,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "faY" = (
@@ -12197,6 +12198,7 @@
 "mUJ" = (
 /obj/structure/table/wood/settler,
 /obj/effect/turf_decal/weather/dirt,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mVn" = (
@@ -13003,6 +13005,7 @@
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "nQB" = (
@@ -16868,6 +16871,13 @@
 /obj/structure/punji_sticks,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rFO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "rGk" = (
 /obj/structure/fence/wooden{
 	dir = 1
@@ -20599,9 +20609,11 @@
 	},
 /area/f13/wasteland)
 "vQy" = (
-/obj/structure/campfire,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vRr" = (
@@ -24227,7 +24239,7 @@ uXE
 tRd
 iOx
 dHm
-dHm
+rFO
 vQy
 tRd
 tRd
