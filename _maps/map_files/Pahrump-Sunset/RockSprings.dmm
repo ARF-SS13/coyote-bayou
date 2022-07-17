@@ -8069,10 +8069,11 @@
 	},
 /area/f13/building/tunnel)
 "iGN" = (
-/obj/item/fishingrod{
-	pixel_x = -8
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
 	},
-/turf/open/floor/wood_wide,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iGR" = (
 /obj/structure/railing/wood{
@@ -13918,11 +13919,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "oHz" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/item/fishingrod{
+	pixel_x = -8
 	},
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "oHS" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16823,10 +16823,6 @@
 	},
 /obj/structure/mirror{
 	pixel_x = -32
-	},
-/mob/living/simple_animal/pet/cat/kitten{
-	desc = "That's a tiny little baby kitten with a loose fitting collar made of leather, a nametag saying 'Sprinkles' is attached.  It's maybe a few weeks old at most.  The creature is missing large patches of hair and clearly has mange, nevermind that it's clearly underfed and on the edge of starvation.  Despite that, it's big black eyes practically scream that it loves you.";
-	name = "Sprinkles"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
@@ -30921,7 +30917,7 @@ lJG
 sPf
 vZy
 rus
-oHz
+iGN
 cOL
 cOL
 sRP
@@ -31947,7 +31943,7 @@ eff
 eff
 eff
 eff
-iGN
+oHz
 kVc
 eff
 eff
