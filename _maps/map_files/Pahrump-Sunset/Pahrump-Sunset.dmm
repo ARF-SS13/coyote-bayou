@@ -19128,15 +19128,6 @@
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"bsE" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "nasheast";
-	layer = 11;
-	max_integrity = 1500;
-	name = "nasheast"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "bsL" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21718,16 +21709,6 @@
 	dir = 4;
 	icon_state = "dirtcorner"
 	},
-/area/f13/wasteland)
-"ckH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters{
-	id = "nasheast";
-	layer = 11;
-	max_integrity = 1500;
-	name = "nasheast"
-	},
-/turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "ckT" = (
 /obj/structure/target_stake,
@@ -41711,16 +41692,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
-"moJ" = (
-/obj/machinery/button{
-	id = "nasheast";
-	pixel_x = 27;
-	pixel_y = -3;
-	name = "nasheast";
-	req_one_access_txt = null
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "moN" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -82052,7 +82023,7 @@ ean
 aQZ
 fiV
 uNJ
-moJ
+uNJ
 uNJ
 uNJ
 fiV
@@ -82310,9 +82281,9 @@ bZR
 ozv
 ozv
 ozv
-bsE
-bsE
-ckH
+uNJ
+uNJ
+fiV
 ozv
 ozv
 ozv
