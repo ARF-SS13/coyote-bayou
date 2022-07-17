@@ -8070,9 +8070,10 @@
 /area/f13/building/tunnel)
 "iGN" = (
 /obj/effect/turf_decal/weather/dirt{
-	dir = 8
+	dir = 4
 	},
-/turf/open/floor/wood_wide,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "iGR" = (
 /obj/structure/railing/wood{
@@ -13918,13 +13919,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "oHz" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
+/obj/item/fishingrod{
+	pixel_x = -8
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "oHS" = (
 /obj/effect/decal/cleanable/dirt{
@@ -16714,12 +16712,13 @@
 /turf/open/floor/wood_common,
 /area/f13/village)
 "ryZ" = (
-/obj/structure/flora/grass/wasteland,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
+/obj/item/fishingrod{
+	pixel_x = -8
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 8;
+	icon_state = "dirt"
+	},
 /area/f13/wasteland)
 "rzf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -16825,10 +16824,7 @@
 /obj/structure/mirror{
 	pixel_x = -32
 	},
-/mob/living/simple_animal/pet/cat/kitten{
-	desc = "That's a tiny little baby kitten with a loose fitting collar made of leather, a nametag saying "Sprinkles" is attached.  It's maybe a few weeks old at most.  The creature is missing large patches of hair and clearly has mange, nevermind that it's clearly underfed and on the edge of starvation.  Despite that, it's big black eyes practically scream that it loves you.";
-	name = "Sprinkles"
-	},
+/obj/item/toy/plush/mammal/fox,
 /turf/open/floor/f13/wood,
 /area/f13/village/overpass_trailer)
 "rEj" = (
@@ -21390,7 +21386,6 @@
 /obj/item/fishingrod{
 	pixel_x = -8
 	},
-/obj/item/fishingrod,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "wMr" = (
@@ -30665,7 +30660,7 @@ nHh
 kyp
 jrg
 kyp
-kyp
+ryZ
 jrg
 jrg
 kyp
@@ -30923,8 +30918,8 @@ lJG
 sPf
 vZy
 rus
-viX
-ryZ
+iGN
+cOL
 cOL
 sRP
 gzS
@@ -31178,11 +31173,11 @@ eff
 eff
 nEP
 nEP
-iGN
-iGN
 nEP
-rez
-oHz
+nEP
+gBR
+gBR
+cca
 oLi
 nLB
 nQW
@@ -31435,10 +31430,10 @@ eff
 eff
 eff
 eff
-gBR
-gBR
 eff
-pNw
+gBR
+gBR
+gBR
 jGb
 fGs
 nLB
@@ -31694,7 +31689,7 @@ eff
 eff
 wMp
 gBR
-eff
+gBR
 eff
 rez
 jYA
@@ -31949,7 +31944,7 @@ eff
 eff
 eff
 eff
-gBR
+oHz
 kVc
 eff
 eff
@@ -32206,8 +32201,8 @@ xLw
 eff
 eff
 eff
-gBR
-gBR
+eff
+eff
 eff
 eff
 pNw
