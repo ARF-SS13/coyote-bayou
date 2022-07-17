@@ -56,7 +56,6 @@ Overseer
 /datum/outfit/job/vault/f13overseer
 	name = "Overseer"
 	jobtype = /datum/job/vault/f13overseer
-	chemwhiz = TRUE
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -72,6 +71,7 @@ Overseer
 
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,
 		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
+		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/crowbar = 1)
 
 /*
