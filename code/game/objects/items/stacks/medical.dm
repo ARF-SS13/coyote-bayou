@@ -144,9 +144,9 @@
 	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
 		. |= DO_HEAL_DAMAGE
 	for(var/datum/wound/woundies in target_bodypart.wounds)
-		/*if(absorption_rate || absorption_capacity)
-			 if(woundies.wound_flags & ACCEPTS_GAUZE)
-				. |= DO_APPLY_BANDAGE */
+		//if(absorption_rate || absorption_capacity)
+		//	 if(woundies.wound_flags & ACCEPTS_GAUZE)
+		//		. |= DO_APPLY_BANDAGE
 		if(stop_bleeding)
 			if(woundies.blood_flow)
 				. |= DO_UNBLEED_WOUND
