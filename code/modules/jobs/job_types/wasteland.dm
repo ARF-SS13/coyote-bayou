@@ -1557,7 +1557,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1, 
-		/obj/item/clothing/under/jeanbshorts =1)
+		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave
