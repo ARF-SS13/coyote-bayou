@@ -19128,15 +19128,6 @@
 /obj/structure/window/fulltile/wood,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
-"bsE" = (
-/obj/machinery/door/poddoor/shutters{
-	id = "nasheast";
-	layer = 11;
-	max_integrity = 1500;
-	name = "nasheast"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "bsL" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -21719,16 +21710,6 @@
 	icon_state = "dirtcorner"
 	},
 /area/f13/wasteland)
-"ckH" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/poddoor/shutters{
-	id = "nasheast";
-	layer = 11;
-	max_integrity = 1500;
-	name = "nasheast"
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "ckT" = (
 /obj/structure/target_stake,
 /obj/item/target,
@@ -22935,11 +22916,6 @@
 	icon_state = "verticaloutermain1"
 	},
 /area/f13/wasteland)
-"ctV" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain2"
-	},
-/area/f13/wasteland/east)
 "ctZ" = (
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt,
@@ -30287,11 +30263,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
-"gpS" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain0"
-	},
-/area/f13/wasteland/east)
 "gqs" = (
 /obj/structure/tires/five,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -33408,11 +33379,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"hYk" = (
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaloutermain1"
-	},
-/area/f13/wasteland/east)
 "hYq" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -37047,12 +37013,10 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jVJ" = (
-/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/circuitboard/machine/sleeper,
-/obj/structure/table,
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jWa" = (
@@ -39758,6 +39722,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/sleeper,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
 	icon_state = "showroomfloor";
 	name = "tile"
@@ -41726,16 +41691,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
-"moJ" = (
-/obj/machinery/button{
-	id = "nasheast";
-	pixel_x = 27;
-	pixel_y = -3;
-	name = "nasheast";
-	req_one_access_txt = null
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/wasteland)
 "moN" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -43922,6 +43877,15 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue,
 /area/f13/village)
+"ntz" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "ntS" = (
 /obj/item/storage/trash_stack,
 /turf/open/floor/f13{
@@ -55648,9 +55612,6 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building/massfusion)
-"tSP" = (
-/turf/closed/wall/f13/store,
-/area/f13/wasteland/bighorn)
 "tTf" = (
 /obj/effect/decal/cleanable/oil,
 /obj/effect/decal/cleanable/dirt,
@@ -59513,7 +59474,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/circuitboard/machine/sleeper,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "vXG" = (
@@ -60399,6 +60362,12 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"wzI" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
+/area/f13/building/hospital)
 "wzK" = (
 /obj/structure/flora/rock/pile/largejungle,
 /obj/structure/flora/grass/jungle,
@@ -62607,10 +62576,6 @@
 	icon_state = "outerpavementcorner"
 	},
 /area/f13/wasteland)
-"xHo" = (
-/obj/structure/nest/securitron,
-/turf/open/indestructible/ground/outside/sidewalk,
-/area/f13/bunker)
 "xHH" = (
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -81525,11 +81490,11 @@ fzB
 fzB
 fzB
 ozv
-tSP
-tSP
-tSP
-tSP
-tSP
+ozv
+ozv
+ozv
+ozv
+ozv
 ozv
 ozv
 ozv
@@ -82074,7 +82039,7 @@ ean
 aQZ
 fiV
 uNJ
-moJ
+uNJ
 uNJ
 uNJ
 fiV
@@ -82332,9 +82297,9 @@ bZR
 ozv
 ozv
 ozv
-bsE
-bsE
-ckH
+uNJ
+uNJ
+fiV
 ozv
 ozv
 ozv
@@ -94271,7 +94236,7 @@ aae
 aae
 aaD
 qhr
-dKw
+dVh
 dKw
 dVh
 ofk
@@ -94531,7 +94496,7 @@ lXh
 lqQ
 pTT
 lqQ
-xHo
+lqQ
 aaD
 aae
 ean
@@ -101515,7 +101480,7 @@ paD
 paD
 azh
 azh
-ctV
+oHM
 paD
 paD
 aDI
@@ -101772,7 +101737,7 @@ aAw
 aAQ
 aBr
 azh
-ctV
+oHM
 paD
 aCn
 aCn
@@ -102029,7 +101994,7 @@ oic
 aAR
 aBr
 azh
-gpS
+vsg
 azh
 bsY
 aCn
@@ -102286,7 +102251,7 @@ qfA
 uwj
 aBs
 paD
-ctV
+oHM
 azh
 aDm
 aCn
@@ -102543,7 +102508,7 @@ ghB
 uwj
 aBt
 paD
-ctV
+oHM
 azh
 uFp
 aDJ
@@ -102800,7 +102765,7 @@ azB
 aAS
 aBr
 paD
-hYk
+xYE
 paD
 aDn
 muZ
@@ -103057,7 +103022,7 @@ uFp
 aHy
 azZ
 azh
-ctV
+oHM
 paD
 aDo
 muZ
@@ -103314,7 +103279,7 @@ aHA
 oJz
 aBu
 azh
-hYk
+xYE
 azh
 muZ
 orG
@@ -103571,7 +103536,7 @@ aAx
 aHA
 aBv
 azh
-ctV
+oHM
 azh
 jNe
 muZ
@@ -103828,7 +103793,7 @@ aHA
 aHA
 aBw
 azh
-ctV
+oHM
 azh
 aDp
 aDK
@@ -104085,7 +104050,7 @@ oUj
 oUj
 aBx
 paD
-ctV
+oHM
 azh
 aCn
 jNe
@@ -104342,7 +104307,7 @@ aHy
 azh
 azh
 azh
-ctV
+oHM
 paD
 aCn
 aDL
@@ -104599,7 +104564,7 @@ aHA
 aHA
 aBy
 azh
-hYk
+xYE
 paD
 aCn
 aCn
@@ -104856,7 +104821,7 @@ mzq
 aHA
 aBz
 azh
-ctV
+oHM
 paD
 aDq
 aDM
@@ -105113,7 +105078,7 @@ paD
 paD
 paD
 azh
-ctV
+oHM
 azh
 azh
 azh
@@ -108462,10 +108427,10 @@ aFP
 aEt
 tEH
 ijr
-aKO
-aNr
-aNr
-aKO
+ntz
+wzI
+wzI
+ntz
 ijr
 slG
 lqE
