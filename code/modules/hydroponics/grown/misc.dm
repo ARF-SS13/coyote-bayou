@@ -517,7 +517,7 @@
 
 /obj/item/seeds/aloe
 	name = "pack of aloe seeds"
-	desc = "These seeds grow into aloe, a plant useful for treating burns."
+	desc = "These seeds grow into aloe, a plant useful for its antiseptic properties."
 	icon_state = "seed-aloe"
 	species = "aloe"
 	plantname = "Aloe"
