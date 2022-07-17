@@ -111,9 +111,14 @@
 	},
 /area/f13/building/massfusion)
 "aiG" = (
-/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
 /turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
 "aju" = (
@@ -486,19 +491,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/hospital)
 "bTS" = (
-/obj/machinery/light{
-	dir = 8
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 2
-	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/ncr)
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "bWg" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -901,12 +899,7 @@
 	},
 /area/f13/building/hospital)
 "dPm" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 2
-	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -1083,6 +1076,20 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"ePx" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 2
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "ePI" = (
 /obj/machinery/light,
 /turf/open/floor/f13{
@@ -1570,12 +1577,11 @@
 	},
 /area/f13/ncr)
 "hqx" = (
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
-/obj/effect/decal/remains/human,
-/turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whitedirtysolid"
 	},
-/area/f13/ncr)
+/area/f13/building/hospital)
 "hrg" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -2262,12 +2268,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "kGW" = (
-/obj/structure/toilet/secret/high_loot{
-	dir = 8
-	},
 /obj/effect/decal/waste{
 	icon_state = "goo12"
 	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "kJl" = (
@@ -2341,7 +2345,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "kXI" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -2876,6 +2881,12 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"nkA" = (
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/ncr)
 "nnp" = (
 /obj/structure/bed/old,
 /obj/effect/decal/cleanable/blood/old{
@@ -2905,6 +2916,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland/ncr)
+"nuf" = (
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
+/obj/effect/decal/remains/human,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "nuj" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -4064,7 +4082,7 @@
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/f13{
-	icon_state = "darkdirtysolid"
+	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
 "sRA" = (
@@ -4270,6 +4288,12 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
+"tQg" = (
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "tRs" = (
 /obj/machinery/light{
 	dir = 4;
@@ -4350,16 +4374,14 @@
 	},
 /area/f13/building/hospital)
 "ubl" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/ncr)
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "ucd" = (
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "udt" = (
@@ -4403,10 +4425,7 @@
 	},
 /area/f13/building/massfusion)
 "ujC" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 12
-	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "ujK" = (
@@ -4437,6 +4456,7 @@
 /obj/structure/sign/poster/contraband/pinup_topless{
 	pixel_x = -32
 	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "uoR" = (
@@ -4761,6 +4781,13 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"wvf" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/f13{
+	icon_state = "darkdirtysolid"
+	},
+/area/f13/ncr)
 "wzC" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -5670,7 +5697,7 @@ hHO
 noP
 caq
 xiI
-ubl
+sRu
 ejB
 lTP
 ejB
@@ -5680,7 +5707,7 @@ jxp
 bvK
 ejB
 kst
-bTS
+ePx
 ejB
 geI
 caq
@@ -5939,7 +5966,7 @@ jxp
 jxp
 nHV
 jxp
-ubl
+sRu
 jxp
 jxp
 xdk
@@ -6203,11 +6230,11 @@ kur
 bvK
 kur
 gkT
-dPm
+aiG
 jxp
 ejB
+nkA
 kXI
-ejB
 kur
 rLB
 rLB
@@ -6463,7 +6490,7 @@ xWX
 jxp
 jxp
 ejB
-ejB
+kXI
 kur
 gkT
 rLB
@@ -6715,11 +6742,11 @@ jxp
 bvK
 jxp
 qQT
-aiG
-hqx
+tQg
+nuf
 jxp
 nHV
-jxp
+dPm
 kur
 gkT
 gkT
@@ -7744,7 +7771,7 @@ gkT
 sGc
 lwT
 rma
-sRu
+wvf
 tpY
 kur
 kur
@@ -10055,7 +10082,7 @@ rLB
 ggY
 kur
 rDL
-kXI
+nkA
 jxp
 ejB
 knP
@@ -10571,7 +10598,7 @@ kur
 cWQ
 wjd
 ujK
-cqK
+ujC
 uow
 gkT
 rLB
@@ -49674,7 +49701,7 @@ iCa
 owR
 npr
 wCN
-npr
+hqx
 lqO
 gah
 jic
@@ -51464,7 +51491,7 @@ kQF
 lqO
 cym
 jRW
-cym
+ubl
 lqO
 cnB
 hcD
@@ -51733,7 +51760,7 @@ iGi
 lqO
 xJf
 feQ
-dfR
+bTS
 lqO
 xNc
 kJl
@@ -51976,7 +52003,7 @@ bhm
 gLr
 kJl
 lqO
-aQV
+ubl
 ylJ
 aQV
 lqO
@@ -53261,7 +53288,7 @@ bhm
 tbU
 oab
 lqO
-aQV
+ubl
 pZN
 qhg
 lqO
