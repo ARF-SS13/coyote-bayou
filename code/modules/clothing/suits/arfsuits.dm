@@ -1638,7 +1638,7 @@
 
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
-	name = "heavy steel breastplate"
+	name = "oasis steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like oasis citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -1652,7 +1652,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
-	name = "steel breastplate"
+	name = "reinforced steel breastplate"
 	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
