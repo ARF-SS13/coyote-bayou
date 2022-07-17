@@ -4498,9 +4498,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "dUc" = (
-/obj/machinery/door/airlock/public/glass{
-	req_access_txt = "31"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -4511,6 +4508,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/public/glass{
+	req_access_txt = null
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
@@ -8831,6 +8831,20 @@
 	desc = "This is a plaque detailing and honoring the corporate dollars lost creating the vault. All craftsmanship is of the highest quality. The Business men are laughing. The Workers are crying. It menaces with spikes of gold."
 	},
 /area/f13/vault)
+"hyk" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/door/poddoor{
+	id = 103;
+	name = "Vault Blastdoor 1"
+	},
+/obj/machinery/door/airlock/public/glass{
+	req_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/vault)
 "hyL" = (
 /obj/structure/chair/bench,
 /obj/machinery/light/small{
@@ -10850,7 +10864,7 @@
 /area/f13/vault)
 "jyJ" = (
 /obj/machinery/door/airlock/public/glass{
-	req_access_txt = "31"
+	req_access_txt = null
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -40421,7 +40435,7 @@ xJQ
 lcN
 uTS
 lcN
-jyJ
+hyk
 cdq
 vRp
 gLv
