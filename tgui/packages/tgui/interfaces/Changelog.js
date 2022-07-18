@@ -187,7 +187,7 @@ export class Changelog extends Component {
         </p>
         <p>
           {'Current project maintainers can be found '}
-          <a href="https://github.com/ARF-SS13/coyote-bayou?tab=members">
+          <a href="https://github.com/ARF-SS13/coyote-bayou/people">
             here
           </a>
           {', recent GitHub contributors can be found '}
