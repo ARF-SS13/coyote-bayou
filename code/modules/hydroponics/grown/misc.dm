@@ -529,7 +529,7 @@
 	yield = 6
 	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/antitoxin = 0.01, /datum/reagent/consumable/aloejuice =  0.02)
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/kelotane = 0.01, /datum/reagent/consumable/aloejuice =  0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/aloe
 	seed = /obj/item/seeds/aloe
