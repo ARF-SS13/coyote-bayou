@@ -1755,7 +1755,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bRd" = (
 /obj/effect/decal/marking{
@@ -4816,6 +4816,7 @@
 	pixel_y = 4
 	},
 /obj/structure/table/wood,
+/obj/item/flashlight/lantern,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "faY" = (
@@ -8065,11 +8066,13 @@
 	},
 /area/f13/building/tunnel)
 "iGN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
+/obj/machinery/recycler{
+	name = "Blesed Recycler";
+	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
+	light_range = 1
 	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "iGR" = (
 /obj/structure/railing/wood{
 	dir = 8;
@@ -12197,6 +12200,7 @@
 "mUJ" = (
 /obj/structure/table/wood/settler,
 /obj/effect/turf_decal/weather/dirt,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "mVn" = (
@@ -13003,6 +13007,7 @@
 /obj/structure/table/wood,
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "nQB" = (
@@ -13910,15 +13915,6 @@
 /obj/structure/nest/mirelurk{
 	max_mobs = 2;
 	spawn_time = 20
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
-"oHz" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
-	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -16709,14 +16705,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
-"ryZ" = (
-/obj/structure/flora/grass/wasteland,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "rzf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood/wings{
@@ -16868,6 +16856,13 @@
 /obj/structure/punji_sticks,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"rFO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "rGk" = (
 /obj/structure/fence/wooden{
 	dir = 1
@@ -20599,9 +20594,11 @@
 	},
 /area/f13/wasteland)
 "vQy" = (
-/obj/structure/campfire,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vRr" = (
@@ -21383,9 +21380,7 @@
 /area/f13/wasteland)
 "wMp" = (
 /obj/structure/closet/crate/wicker,
-/obj/item/fishingrod{
-	pixel_x = -8
-	},
+/obj/item/fishingrod,
 /obj/item/fishingrod,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -24227,7 +24222,7 @@ uXE
 tRd
 iOx
 dHm
-dHm
+rFO
 vQy
 tRd
 tRd
@@ -24242,7 +24237,7 @@ lyy
 seA
 jML
 foZ
-sBx
+iGN
 tRd
 aQn
 eKQ
@@ -30920,7 +30915,7 @@ sPf
 vZy
 rus
 viX
-ryZ
+cOL
 cOL
 sRP
 gzS
@@ -31174,11 +31169,11 @@ eff
 eff
 nEP
 nEP
-iGN
-iGN
 nEP
-rez
-oHz
+nEP
+gBR
+gBR
+sfW
 oLi
 nLB
 nQW
@@ -31431,10 +31426,10 @@ eff
 eff
 eff
 eff
-gBR
-gBR
 eff
-pNw
+gBR
+gBR
+gBR
 jGb
 fGs
 nLB
@@ -31690,7 +31685,7 @@ eff
 eff
 wMp
 gBR
-eff
+gBR
 eff
 rez
 jYA
@@ -32202,8 +32197,8 @@ xLw
 eff
 eff
 eff
-gBR
-gBR
+eff
+eff
 eff
 eff
 pNw
