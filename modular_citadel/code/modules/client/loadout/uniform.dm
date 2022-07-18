@@ -23,14 +23,6 @@
 	name = "female brahmin skin outfit"
 	path = /obj/item/clothing/under/f13/female/brahmin
 
-/datum/gear/uniform/tribal
-	name = "male tribal outfit"
-	path = /obj/item/clothing/under/f13/tribal
-
-/datum/gear/uniform/tribal/female
-	name = "female tribal outfit"
-	path = /obj/item/clothing/under/f13/female/tribal
-
 /datum/gear/uniform/doctorfatigues
 	name = "doctor fatigues"
 	path = /obj/item/clothing/under/f13/doctorm
@@ -125,6 +117,10 @@
 /datum/gear/uniform/roving
 	name = "roving trader outfit"
 	path = /obj/item/clothing/under/f13/roving
+
+/datum/gear/uniform/gear_harness
+	name = "gear harness outfit"
+	path = /obj/item/clothing/under/misc/gear_harness
 
 /datum/gear/uniform/navy
 	name = "navy jumpsuit"
@@ -324,19 +320,19 @@
 
 /datum/gear/uniform/shorts/jeanbshorts
 	name = "jean booty shorts"
-	path = /obj/item/clothing/under/jeanbshorts
+	path = /obj/item/clothing/under/shorts/jeanbshorts
 
 /datum/gear/uniform/shorts/darkbshorts
 	name = "dark booty shorts"
-	path = /obj/item/clothing/under/darkbshorts
+	path = /obj/item/clothing/under/shorts/darkbshorts
 
 /datum/gear/uniform/shorts/blackbshorts
 	name = "black booty shorts"
-	path = /obj/item/clothing/under/blackbshorts
+	path = /obj/item/clothing/under/shorts/blackbshorts
 
 /datum/gear/uniform/shorts/brownbshorts
 	name = "Cargo booty shorts"
-	path = /obj/item/clothing/under/brownbshorts
+	path = /obj/item/clothing/under/shorts/brownbshorts
 
 /datum/gear/uniform/tealturtle
 	name = "teal turtleneck"
@@ -876,36 +872,6 @@
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
-/datum/gear/uniform/wasteland/bone/dancer
-	name = "Bone dancer outfit"
-	path = /obj/item/clothing/under/f13/bone
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
-/datum/gear/uniform/wasteland/sorrows
-	name = "Sorrows garb"
-	path = /obj/item/clothing/under/f13/sorrows
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
-/datum/gear/uniform/wasteland/deadhorses
-	name = "Dead horses garb"
-	path = /obj/item/clothing/under/f13/deadhorses
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
-/datum/gear/uniform/wasteland/rustwalker
-	name = "Rust walkers outfit"
-	path = /obj/item/clothing/under/f13/rustwalkers
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
-/datum/gear/uniform/wasteland/whitelegs
-	name = "White legs outfit"
-	path = /obj/item/clothing/under/f13/whitelegs
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
 /datum/gear/uniform/wasteland/masonduds
 	name = "Vagabond's gang attire"
 	path = /obj/item/clothing/under/f13/masonduds
@@ -1095,5 +1061,127 @@
 /datum/gear/uniform/wasteland/sleazeball
 	name = "Loanshark outfit"
 	path = /obj/item/clothing/under/f13/sleazeball
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/// Tribal stuff in wasteland tab below
+
+/datum/gear/uniform/wasteland/loincloth
+	name = "Loincloth outfit"
+	path = /obj/item/clothing/under/f13/wayfarer
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/hunter
+	name = "Rugged loincloth outfit"
+	path = /obj/item/clothing/under/f13/wayfarer/hunter
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/exiled
+	name = "Disleveled loincloth"
+	path = /obj/item/clothing/under/f13/exile/tribal
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/rags
+	name = "Tribal Rags outfit"
+	path = /obj/item/clothing/under/f13/tribe
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/razorclaw
+	name = "Razorclaw robes outfit"
+	path = /obj/item/clothing/under/f13/tribe_Hhunter
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/shamanrobes
+	name = "Tribal shaman robes outfit"
+	path = /obj/item/clothing/under/f13/tribe_shaman
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/shamanred
+	name = "Red shaman robes outfit"
+	path = /obj/item/clothing/under/f13/wayfarer/shamanred
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/shamanblue
+	name = "Blue shaman robes outfit"
+	path = /obj/item/clothing/under/f13/wayfarer/shamanblue
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/chiefrobes
+	name = "Tribal chief robes outfit"
+	path = /obj/item/clothing/under/f13/tribe_chief
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/maletribal
+	name = "male tribal outfit"
+	path = /obj/item/clothing/under/f13/tribal
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/loincloth/femaletribal
+	name = "female tribal outfit"
+	path = /obj/item/clothing/under/f13/female/tribal
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/bone/dancer
+	name = "Bone dancer outfit"
+	path = /obj/item/clothing/under/f13/bone
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/sorrows
+	name = "Sorrows garb"
+	path = /obj/item/clothing/under/f13/sorrows
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/sorrows/female
+	name = "Sorrows female garb"
+	path = /obj/item/clothing/under/f13/female/sorrows
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/deadhorses
+	name = "Dead horses garb"
+	path = /obj/item/clothing/under/f13/deadhorses
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/deadhorses/female
+	name = "Dead horses female garb"
+	path = /obj/item/clothing/under/f13/female/deadhorses
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/rustwalker
+	name = "Rust walkers outfit"
+	path = /obj/item/clothing/under/f13/rustwalkers
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/rustwalker/female
+	name = "Rust walkers female outfit"
+	path = /obj/item/clothing/under/f13/female/rustwalkers
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/whitelegs
+	name = "White legs outfit"
+	path = /obj/item/clothing/under/f13/whitelegs
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/whitelegs/female
+	name = "White legs female outfit"
+	path = /obj/item/clothing/under/f13/female/whitelegs
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND

@@ -266,10 +266,15 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/ammo_box,
 	/obj/item/ammo_casing,
 	/obj/item/storage/bag,
+	/obj/item/storage/box,
+	/obj/item/storage/survivalkit_triple_empty,
+	/obj/item/storage/belt,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/flashlight,
 	/obj/item/gun,
 	/obj/item/melee,
+	/obj/item/twohanded,
+	/obj/item/throwing_star,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
@@ -280,7 +285,6 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 ///extra things light armor can hold in their slot by default
 GLOBAL_LIST_INIT(light_armor_allowed, typecacheof(list(
 	/obj/item/storage/box,
-	/obj/item/storage/backpack,
 	/obj/item/storage/wallet,
 	/obj/item/melee/smith)))
 
@@ -358,8 +362,6 @@ GLOBAL_LIST_INIT(armor_allow_guns_and_melee, typecacheof(list(
 ///extra things medium armor can hold in their slot by default
 ///Basically most items, plus a box/belt
 GLOBAL_LIST_INIT(medium_armor_allowed, typecacheof(list(
-	/obj/item/storage/box,
-	/obj/item/storage/belt,
 	/obj/item/storage/wallet,
 	/obj/item/melee,
 	/obj/item/gun,
@@ -373,6 +375,207 @@ GLOBAL_LIST_INIT(medium_armor_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/throwing_star/spear,
 	/obj/item/restraints/legcuffs/bola)))
+
+/// Things allowed in a toolbelt
+GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
+	/obj/item/crowbar,
+	/obj/item/screwdriver,
+	/obj/item/weldingtool,
+	/obj/item/wirecutters,
+	/obj/item/wrench,
+	/obj/item/multitool,
+	/obj/item/inducer,
+	/obj/item/flashlight,
+	/obj/item/stack/cable_coil,
+	/obj/item/stack/sheet,
+	/obj/item/stock_parts,
+	/obj/item/twohanded/chainsaw,
+	/obj/item/melee/smith/hammer,
+	/obj/item/t_scanner,
+	/obj/item/analyzer,
+	/obj/item/geiger_counter,
+	/obj/item/extinguisher/mini,
+	/obj/item/radio,
+	/obj/item/lightreplacer,
+	/obj/item/rcd_ammo,
+	/obj/item/resonator,
+	/obj/item/mining_scanner,
+	/obj/item/pickaxe,
+	/obj/item/lighter,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/reagent_containers/food/drinks/bottle,
+	/obj/item/kitchen/knife,
+	/obj/item/gps,
+	/obj/item/storage/bag/ore,
+	/obj/item/survivalcapsule,
+	/obj/item/t_scanner/adv_mining_scanner,
+	/obj/item/stack/ore,
+	/obj/item/reagent_containers/food/drinks,
+	/obj/item/organ/regenerative_core,
+	/obj/item/wormhole_jaunter,
+	/obj/item/stack/marker_beacon,
+	/obj/item/reagent_containers/food/snacks/donut,
+	/obj/item/flashlight/seclite,
+	/obj/item/grenade/chem_grenade/metalfoam,
+	/obj/item/grenade/chem_grenade/smart_metal_foam,
+	/obj/item/construction,
+	/obj/item/circuitboard,
+	/obj/item/clothing/gloves,
+	/obj/item/clothing/mask/gas/welding,
+	/obj/item/clothing/glasses/welding,
+	/obj/item/clothing/head/welding,
+	/obj/item/clothing/head/helmet/f13/raider/arclight,
+	/obj/item/holosign_creator,
+	/obj/item/assembly/signaler)))
+
+/// Things allowed in a jannibelt
+GLOBAL_LIST_INIT(janibelt_allowed, typecacheof(list(
+	/obj/item/grenade/chem_grenade,
+	/obj/item/lightreplacer,
+	/obj/item/flashlight,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
+	/obj/item/soap,
+	/obj/item/holosign_creator,
+	/obj/item/forcefield_projector,
+	/obj/item/key/janitor,
+	/obj/item/clothing/gloves,
+	/obj/item/melee/flyswatter,
+	/obj/item/broom,
+	/obj/item/paint/paint_remover,
+	/obj/item/assembly/mousetrap,
+	/obj/item/screwdriver,
+	/obj/item/stack/cable_coil
+	)))
+
+/// Things allowed in a botanybelt
+GLOBAL_LIST_INIT(plantbelt_allowed, typecacheof(list(
+	/obj/item/shovel/spade,
+	/obj/item/cultivator,
+	/obj/item/hatchet,
+	/obj/item/reagent_containers/spray,
+	/obj/item/book/manual/advice_farming,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/glass/bucket,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/food/drinks/flask,
+	/obj/item/storage/bag/plants, // remove if it gets abused to breaking somehow
+	/obj/item/plant_analyzer, // out of place but mechanically useful for the foreseeable future, so included for QoL
+	)))
+
+/// Things allowed in a medibelt
+GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
+	/obj/item/healthanalyzer,
+	/obj/item/dnainjector,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/pill,
+	/obj/item/reagent_containers/syringe,
+	/obj/item/reagent_containers/medspray,
+	/obj/item/reagent_containers/hypospray,
+	/obj/item/reagent_containers/chem_pack,
+	/obj/item/lighter,
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/storage/pill_bottle,
+	/obj/item/stack/medical,
+	/obj/item/flashlight/pen,
+	/obj/item/extinguisher/mini,
+	/obj/item/hypospray/mkii,
+	/obj/item/sensor_device,
+	/obj/item/radio,
+	/obj/item/clothing/gloves,
+	/obj/item/lazarus_injector,
+	/obj/item/clothing/mask/surgical,
+	/obj/item/clothing/mask/breath,
+	/obj/item/surgical_drapes, //for true paramedics
+	/obj/item/bedsheet, //for true hobos
+	/obj/item/scalpel,
+	/obj/item/circular_saw,
+	/obj/item/bonesetter,
+	/obj/item/surgicaldrill,
+	/obj/item/retractor,
+	/obj/item/cautery,
+	/obj/item/hemostat,
+	/obj/item/geiger_counter,
+	/obj/item/clothing/neck/stethoscope,
+	/obj/item/stamp,
+	/obj/item/razor,
+	/obj/item/clothing/glasses,
+	/obj/item/wrench/medical,
+	/obj/item/clothing/mask/muzzle,
+	/obj/item/storage/bag/chemistry,
+	/obj/item/storage/bag/bio,
+	/obj/item/reagent_containers/blood,
+	/obj/item/tank/internals/emergency_oxygen,
+	/obj/item/implantcase,
+	/obj/item/implant,
+	/obj/item/implanter,
+	/obj/item/pinpointer/crew,
+	/obj/item/weldingtool,
+	/obj/item/gun/ballistic/revolver/needler, // the healing is not as rewarding as the hurting
+	/obj/item/ammo_box/needle,
+	/obj/item/tele_iv,
+	/obj/item/stack/sticky_tape, //surgical tape
+	/obj/item/handsaw)))
+
+/// Things allowed in a holster (more of a secbelt)
+GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/gun,
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing,
+	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/melee/onehanded/knife/hunting,
+	/obj/item/melee/baton,
+	/obj/item/melee/classic_baton/telescopic,
+	/obj/item/restraints/handcuffs,
+	/obj/item/tank/internals,
+	/obj/item/restraints/legcuffs/bola,
+	/obj/item/toy)))
+
+/// Things allowed in a bandolier
+GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing,
+	/obj/item/grenade,
+	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/restraints/handcuffs,
+	/obj/item/tank/internals,
+	/obj/item/restraints/legcuffs/bola,
+	/obj/item/toy)))
+
+/// Things allowed in a scabbard
+GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/melee,
+	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/restraints/handcuffs,
+	/obj/item/tank/internals,
+	/obj/item/restraints/legcuffs/bola,
+	/obj/item/toy)))
+
+/// How many items total fit in a holster
+#define STORAGE_HOLSTER_MAX_ITEMS 7
+/// How much volume fits in a holster
+#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_HOLSTER_MAX_ITEMS
+
+/// How many items total fit in a belt
+#define STORAGE_BELT_MAX_ITEMS 14
+/// How much volume fits in a belt
+#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_BELT_MAX_ITEMS
+
+/// How many items total fit in a belt
+#define STORAGE_FANNYPACK_MAX_ITEMS 7
+/// How much volume fits in a belt
+#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
+
+/// How many items total fit in a large survival kit
+#define STORAGE_TRIPLEKIT_MAX_ITEMS 21
+/// How much volume fits in a belt
+#define STORAGE_TRIPLEKIT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
 
 //Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

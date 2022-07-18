@@ -431,7 +431,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/storage/backpack/duffelbag/scavengers
 	l_hand = /obj/item/pickaxe/drill
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(/obj/item/mining_scanner=1,
 							/obj/item/metaldetector=1,
 							/obj/item/shovel=1,
@@ -443,7 +443,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/hatchet
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/n99
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(
 		/obj/item/stack/sheet/metal = 50,
 		/obj/item/stack/sheet/mineral/wood = 50,
@@ -1031,7 +1031,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/desert_ranger
 	name = "Desert Ranger"
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	backpack_contents = list(
 							)
@@ -1076,7 +1076,7 @@ datum/job/wasteland/f13dendoctor
 	backpack = /obj/item/storage/backpack/satchel/trekker
 	gloves = /obj/item/clothing/gloves/f13/military
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	suit_store = /obj/item/gun/ballistic/revolver/sequoia/death
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	backpack_contents = list(
@@ -1392,7 +1392,7 @@ datum/job/wasteland/f13dendoctor
 //Wayfarers
 /datum/outfit/loadout/wayfarermelee
 	name = "Wayfarer Warrior"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
@@ -1403,7 +1403,7 @@ datum/job/wasteland/f13dendoctor
 
 /datum/outfit/loadout/wayfarershaman
 	name = "Wayfarer Shaman"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,
@@ -1557,7 +1557,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1, 
-		/obj/item/clothing/under/jeanbshorts =1)
+		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave

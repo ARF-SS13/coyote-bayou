@@ -10,13 +10,13 @@
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON //yeah ok
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
-	force = 6
+	force = WEAPON_FORCE_TOOL_SMALL
 	obj_flags = UNIQUE_RENAME
 	var/quality
 	var/overlay_state = "stick"
 	var/mutable_appearance/overlay
 	var/wielded_mult = 1
-	var/wield_force = 15
+	var/wield_force = 15 // does nothing
 
 /obj/item/melee/smith/Initialize()
 	..()
@@ -36,8 +36,8 @@
 	item_flags = NEEDS_PERMIT //it's a bigass sword/spear. beepsky is going to give you shit for it.
 	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = 10
-	wielded_mult = 1.8
+	force = WEAPON_FORCE_TOOL_LARGE
+	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	w_class = WEIGHT_CLASS_BULKY
 	var/icon_prefix = null
 	var/wielded = FALSE
@@ -168,7 +168,7 @@
 	icon_state = "crowbar_smith"
 	item_state = "crowbar"
 	toolspeed = 0.8
-	force = 15
+	force = WEAPON_FORCE_TOOL_LARGE
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
 
 /obj/item/crowbar/smithed/Initialize()
@@ -181,15 +181,15 @@
 
 // Crowbar-axe. Just a crowbar with more force and a homemade vibe.
 /obj/item/crowbar/smithedunitool
-	name = "universal tool"
+	name = "crowbaxe"
 	icon = 'icons/fallout/objects/crafting/blacksmith.dmi'
 	icon_state = "unitool_smith"
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
 	item_state = "unitool_smith"
-	sharpness = SHARP_POINTY
+	sharpness = SHARP_EDGED
 	material_flags = MATERIAL_COLOR | MATERIAL_AFFECT_STATISTICS
-	force = 28
+	force = WEAPON_FORCE_AXE_TOOL
 
 /obj/item/crowbar/smithedunitool/Initialize()
 	..()
@@ -208,45 +208,41 @@
 //////////////////////////
 
 /obj/item/melee/smith/sword
-	name = "sword"
+	name = "scrap sword"
 	icon_state = "sword_smith"
 	item_state = "sword_smith"
 	overlay_state = "hilt_sword"
 	armour_penetration = 0.1
-	force = 25
+	force = WEAPON_FORCE_SLASH_LARGE
 	sharpness = SHARP_EDGED
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/captain_saber
 	w_class = WEIGHT_CLASS_BULKY
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
-	wound_bonus = 20
-	block_chance = 50
+	wound_bonus = WEAPON_SLASH_WOUND_ADD
+	//block_chance = 50
 
 /obj/item/melee/smith/sword/spatha
-	name = "spatha"
+	name = "papercutter"
 	icon_state = "spatha_smith"
 	item_state = "spatha_smith"
 	overlay_state = "hilt_spatha"
-	block_chance = 60
 
 /obj/item/melee/smith/sword/sabre
-	name = "sabre"
+	name = "bumper sabre"
 	icon_state = "sabre_smith"
 	item_state = "sabre_smith"
 	overlay_state = "hilt_sabre"
-	armour_penetration = 0.15
-	force = 24
-	block_chance = 55
 
 // go for the eyes Boo
 /obj/item/melee/smith/dagger
-	name = "dagger"
+	name = "shiv"
 	icon_state = "dagger_smith"
 	overlay_state = "hilt_dagger"
 	w_class = WEIGHT_CLASS_SMALL
-	sharpness = SHARP_EDGED
-	force = 24
+	sharpness = SHARP_POINTY
+	force = WEAPON_FORCE_PIERCE_SMALL
 	hitsound = 'sound/weapons/rapierhit.ogg'
 
 /obj/item/melee/smith/dagger/attack(mob/living/carbon/M, mob/living/carbon/user)
@@ -262,31 +258,32 @@
 	name = "machete"
 	icon_state = "machete_smith"
 	overlay_state = "hilt_machete"
-	force = 24
+	force = WEAPON_FORCE_SLASH_LARGE
 	sharpness = SHARP_EDGED
-	wound_bonus = 30
-	block_chance = 20
+	wound_bonus = WEAPON_SLASH_WOUND_ADD
 
 /obj/item/melee/smith/machete/gladius
-	name = "gladius"
+	name = "razorbar"
 	icon_state = "gladius_smith"
 	overlay_state = "hilt_gladius"
 
 /obj/item/melee/smith/machete/reforged
-	name = "reforged machete"
+	name = "mowerchete"
 	icon_state = "macheter_smith"
 	overlay_state = "hilt_macheter"
 
 /obj/item/melee/smith/wakizashi
-	name = "wakizashi"
+	name = "weedwhacker"
 	icon_state = "waki_smith"
 	overlay_state = "hilt_waki"
-	sharpness = SHARP_EDGED
-	force = 24
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/waki
 	hitsound = 'sound/weapons/rapierhit.ogg'
-	block_chance = 60
+
+/obj/item/melee/smith/wakizashi/Initialize()
+	if(prob(1))
+		name = pick("weebwhacker", "weedhacker", "weebhacker", "weewhacker")
+	. = ..()
 
 /datum/block_parry_data/waki //like longbokken but worse reflect
 	parry_stamina_cost = 6
@@ -304,10 +301,11 @@
 
 // Mace - low damage, high AP (25, 0,4)
 /obj/item/melee/smith/mace
-	name = "mace"
+	name = "club"
 	icon_state = "mace_smith"
 	overlay_state = "handle_mace"
-	force = 15
+	force = WEAPON_FORCE_BLUNT_LARGE
+	wound_bonus = WEAPON_BLUNT_WOUND_ADD
 
 /obj/item/melee/smith/mace/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -323,19 +321,18 @@
 //////////////////////////
 
 /obj/item/melee/smith/twohand/katana
-	name = "katana"
+	name = "scraptana"
 	icon_state = "katana_smith"
 	icon_prefix = "katana_smith"
 	overlay_state = "hilt_katana"
-	force = 22
-	wielded_mult = 1.5
+	force = WEAPON_FORCE_SLASH_LARGE
+	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	slot_flags = ITEM_SLOT_BELT
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	layer = MOB_UPPER_LAYER
-	block_chance = 50
 
 /datum/block_parry_data/smithrapier //Old rapier code reused. parry into riposte. i am pretty sure this is going to be nearly fucking impossible to land.
 	parry_stamina_cost = 12 //dont miss
@@ -354,80 +351,48 @@
 
 // Heavy axe, 2H focused chopper 27/54. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe
-	name = "heavy axe"
+	name = "woodsplitter"
 	icon_state = "axe_smith"
 	icon_prefix = "axe_smith"
 	overlay_state = "shaft_axe"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
-	force = 18
-	wielded_mult = 2
+	force = WEAPON_FORCE_AXE_LARGE
+	wielded_mult = WEAPON_AXE_TWOHAND_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
-	wound_bonus = 10
-	bare_wound_bonus = 10
 
 /obj/item/melee/smith/twohand/axe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 	if(!proximity || !wielded || IS_STAMCRIT(user))
 		return
-	if(istype(A, /obj/machinery/door))
+	if(istype(A, /obj/machinery/door) || istype(A, /obj/structure/simple_door) || istype(A, /obj/structure/barricade))
 		var/obj/machinery/door/D = A
-		D.take_damage(20, BRUTE, "melee", 0)
-	else if(istype(A, /obj/structure/simple_door))
-		var/obj/structure/simple_door/M = A
-		M.take_damage(20, BRUTE, "melee", 0)
+		D.take_damage(force, BRUTE, "melee", 0) // DOORFUCKER 9000
 
-
-// Legion axe
 /obj/item/melee/smith/twohand/axe/warhoned
-	name = "war honed axe"
+	name = "sledge axe"
 	icon_state = "warhoned_smith"
 	icon_prefix = "warhoned_smith"
 	overlay_state = "shaft_warhoned"
 
-/obj/item/melee/smith/twohand/axe/warhoned/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /obj/machinery/door))
-		var/obj/machinery/door/D = A
-		D.take_damage(20, BRUTE, "melee", 0)
-	else if(istype(A, /obj/structure/simple_door))
-		var/obj/structure/simple_door/M = A
-		M.take_damage(20, BRUTE, "melee", 0)
-
-// Scrap blade. 1/2 H chopper, variant on the axe basically 32/48. Can be worn on your back.
 /obj/item/melee/smith/twohand/axe/scrapblade
-	name = "scrap blade"
+	name = "homewrecker"
 	icon_state = "scrap_smith"
 	icon_prefix = "scrap_smith"
 	overlay_state = "hilt_scrap"
-	force = 21
-	wielded_mult = 1.5
-
-/obj/item/melee/smith/twohand/axe/scrapblade/afterattack(atom/A, mob/living/user, proximity)
-	. = ..()
-	if(!proximity || !wielded || IS_STAMCRIT(user))
-		return
-	if(istype(A, /obj/machinery/door))
-		var/obj/machinery/door/D = A
-		D.take_damage(20, BRUTE, "melee", 0)
-	else if(istype(A, /obj/structure/simple_door))
-		var/obj/structure/simple_door/M = A
-		M.take_damage(20, BRUTE, "melee", 0)
 
 /obj/item/melee/smith/twohand/spear
-	name = "spear"
+	name = "rebar spear"
 	icon_state = "spear_smith"
 	icon_prefix = "spear_smith"
 	overlay_state = "shaft_spear"
 	max_reach = 2
-	force = 10
+	force = WEAPON_FORCE_PIERCE_LARGE
 	sharpness = SHARP_POINTY
 
 /obj/item/melee/smith/twohand/spear/lance
-	name = "legion lance"
+	name = "rebar lance"
 	icon_state = "lance_smith"
 	icon_prefix = "lance_smith"
 	overlay_state = "shaft_lance"
@@ -442,24 +407,24 @@
 
 // Good throwing, thats about it (27, 40)
 /obj/item/melee/smith/javelin 
-	name = "javelin"
+	name = "rebar throwing spike"
 	icon_state = "javelin_smith"
 	overlay_state = "shaft_javelin"
 	item_state = "javelin_smith"
 	sharpness = SHARP_POINTY
 	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = 15
-	armour_penetration = 0.10
+	force = WEAPON_FORCE_PIERCE_LARGE
+	sharpness = SHARP_POINTY
 
 // Smaller weaker javelin, easier to store/carry, less effective
 /obj/item/melee/smith/throwingknife
-	name = "throwing knife"
+	name = "mower blade"
 	icon_state = "throwing_smith"
 	overlay_state = "handle_throwing"
 	item_state = "dagger_smith"
 	embedding = list("pain_mult" = 2, "embed_chance" = 50, "fall_chance" = 20, "ignore_throwspeed_threshold" = TRUE)
-	force = 14
-	w_class = WEIGHT_CLASS_SMALL
+	force = WEAPON_FORCE_PIERCE_SMALL
+	sharpness = SHARP_POINTY
 
 
 // TG stuff

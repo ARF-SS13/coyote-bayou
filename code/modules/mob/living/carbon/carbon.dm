@@ -584,8 +584,8 @@
 	health = round(maxHealth - getOxyLoss() - getToxLoss() - getCloneLoss() - total_burn - total_brute, DAMAGE_PRECISION)
 	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
-	if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD )
-		become_husk("burn")
+	//if(((maxHealth - total_burn) < HEALTH_THRESHOLD_DEAD*2) && stat == DEAD )
+	//	become_husk("burn")
 	med_hud_set_health()
 	if(stat == SOFT_CRIT)
 		add_movespeed_modifier(/datum/movespeed_modifier/carbon_softcrit)
@@ -874,12 +874,12 @@
 	update_hud_handcuffed()
 
 /mob/living/carbon/proc/can_revive(ignore_timelimit = FALSE, maximum_brute_dam = MAX_REVIVE_BRUTE_DAMAGE, maximum_fire_dam = MAX_REVIVE_FIRE_DAMAGE, ignore_heart = FALSE)
-	var/tlimit = DEFIB_TIME_LIMIT * 10
+	//var/tlimit = DEFIB_TIME_LIMIT * 10
 	var/obj/item/organ/heart = getorgan(/obj/item/organ/heart)
 	if(suiciding || hellbound || HAS_TRAIT(src, TRAIT_HUSK) || AmBloodsucker(src))
 		return
-	if(!ignore_timelimit && (world.time - timeofdeath) > tlimit)
-		return
+	/* if(!ignore_timelimit && (world.time - timeofdeath) > tlimit)
+		return */
 	if((getBruteLoss() >= maximum_brute_dam) || (getFireLoss() >= maximum_fire_dam))
 		return
 	if(!ignore_heart && (!heart || (heart.organ_flags & ORGAN_FAILING)))

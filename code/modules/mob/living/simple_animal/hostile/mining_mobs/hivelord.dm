@@ -118,7 +118,7 @@
 	loot = list(/obj/item/organ/regenerative_core/legion)
 	brood_type = /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion
 	del_on_death = 1
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = 1
 	var/dwarf_mob = FALSE
 	var/mob/living/carbon/human/stored_mob
@@ -190,7 +190,7 @@
 	attack_sound = 'sound/weapons/pierce.ogg'
 	throw_message = "is shrugged off by"
 	del_on_death = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = 1
 	swarming = TRUE
 	var/can_infest_dead = FALSE
@@ -319,7 +319,7 @@
 				head = /obj/item/clothing/head/helmet/gladiator
 			else
 				head = /obj/item/clothing/head/helmet/skull
-				suit = /obj/item/clothing/suit/armor/bone
+				suit = /obj/item/clothing/suit/armor/light/tribal/bone/cool
 				gloves = /obj/item/clothing/gloves/bracer
 			if(prob(5))
 				back = pickweight(list(/obj/item/twohanded/spear/bonespear = 3, /obj/item/twohanded/fireaxe/boneaxe = 2))

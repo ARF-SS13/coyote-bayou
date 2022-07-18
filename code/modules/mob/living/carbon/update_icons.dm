@@ -261,6 +261,8 @@
 			. += "-[BP.animal_origin]"
 		if(BP.status == BODYPART_ORGANIC)
 			. += "-organic"
+		else if(BP.status == BODYPART_ROBOTIC && BP.render_like_organic == TRUE)
+			. += "-organic"
 		else
 			. += "-robotic"
 

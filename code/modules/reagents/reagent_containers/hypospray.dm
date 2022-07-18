@@ -176,6 +176,13 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = null
 
+/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak
+	name = "epipak"
+	desc = "A rapid and safe way to stabilize patients in critical condition for personnel without advanced medical knowledge. Contains a powerful antiseptic that can help fight infections."
+	amount_per_transfer_from_this = 15
+	volume = 15
+	list_reagents = list(/datum/reagent/medicine/epinephrine = 10, /datum/reagent/medicine/spaceacillin = 3, /datum/reagent/medicine/coagulant = 2)
+
 // ---------------------------------
 // SUPER STIMPAK
 
@@ -201,9 +208,9 @@
 	desc = "A short-lasting shot of Med-X applied via hypodermic needle."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_medx"
-	volume = 15
-	amount_per_transfer_from_this = 5
-	list_reagents = list(/datum/reagent/medicine/medx = 15)
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list(/datum/reagent/medicine/medx = 10)
 
 // ---------------------------------
 // PSYCHO

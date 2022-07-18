@@ -250,6 +250,33 @@
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 
+/obj/item/clothing/suit/armor/outfit/police
+	name = "police officer's jacket"
+	desc = "A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_officer"
+	item_state = "police_officer"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/suit/armor/outfit/police/lieutenant
+	name = "police lieutenant's jacket"
+	desc = " A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_lieutenant"
+	item_state = "police_lieutenant"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/suit/armor/outfit/police/chief
+	name = "police chief's jacket"
+	desc = "A simple dark navy jacket, worn by police."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1)
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -523,6 +550,13 @@
 	item_state = "bone_dancer_armor_light"
 	blood_overlay_type = "armor"
 
+/obj/item/clothing/suit/armor/light/tribal/bone/cool
+	name = "bone armor suit"
+	desc = "A tribal armor plate, crafted from animal bone."
+	icon_state = "bonearmor"
+	item_state = "bonearmor"
+	blood_overlay_type = "armor"
+
 /obj/item/clothing/suit/armor/light/tribal/rustwalkers
 	name = "Rustwalkers armor"
 	desc = "A chestplate, pauldron and vambrace that bear a distinct resemblance to a coolant tank, engine valves and an exhaust. Commonly worn by members of the Rustwalkers tribe"
@@ -546,6 +580,18 @@
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a pair of black leather straps. Commonly worn by the members of the Dead Horses tribe."
 	icon_state = "dead_horses_armour"
 	item_state = "dead_horses_armour"
+
+/obj/item/clothing/suit/armor/light/tribal/geckocloak
+	name = "light tribal cloak"
+	desc = "Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
+	icon_state = "lightcloak"
+	item_state = "lightcloak"
+
+/obj/item/clothing/suit/armor/light/tribal/strips
+	name = "light tribal armor"
+	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
+	icon_state = "tribal_armor"
+	item_state = "tribal_armor"
 
 /// to be refactored to work with the New Tier System (tm)
 /obj/item/clothing/suit/hooded/cloak
@@ -988,11 +1034,11 @@
 	icon_state = "robe_liz"
 	item_state = "brownjsuit"
 
-/obj/item/clothing/suit/armor/light/duster/sheriff
-	name = "sheriff duster"
-	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
-	icon_state = "sheriff"
-	item_state = "det_suit"
+/obj/item/clothing/suit/armor/light/duster/town
+	name = "town trenchcoat"
+	desc = "A non-descript black trenchcoat."
+	icon_state = "towntrench"
+	item_state = "hostrench"
 
 /obj/item/clothing/suit/armor/light/duster/robe_hubologist
 	name = "hubologist robe"
@@ -1045,6 +1091,40 @@
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_TEMP_PROTECT
+
+/obj/item/clothing/suit/armor/light/duster/bos/scribe
+	name = "Brotherhood Scribe's robe"
+	desc = "A red cloth robe worn by the Brotherhood of Steel Scribes."
+	icon_state = "scribe"
+	item_state = "scribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2)
+
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe
+	name = "brotherhood head scribe robe"
+	desc = " A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
+	icon_state = "headscribe"
+	item_state = "headscribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2)
+
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
+	name = "Brotherhood Senior Scribe's robe"
+	desc = "A red cloth robe with silver gildings worn by the Brotherhood of Steel Senior Scribes."
+	icon_state = "seniorscribe"
+	item_state = "seniorscribe"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2)
+
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
+	name = "Brotherhood Elder's robe"
+	desc = "A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
+	icon_state = "elder"
+	item_state = "elder"
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2)
+
+/obj/item/clothing/suit/armor/light/duster/town
+	name = "town trenchcoat"
+	desc = "A non-descript black trenchcoat."
+	icon_state = "towntrench"
+	item_state = "hostrench"
 
 ///////////////////
 // LEATHER ARMOR //
@@ -1136,6 +1216,11 @@
 	item_state = "durathread"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
 
+/obj/item/clothing/suit/armor/light/leather/rig
+	name = "chest gear harness"
+	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
+	icon_state = "r_gear_rig"
+	item_state = "r_gear_rig"
 
 	
 ////////////////
@@ -1318,6 +1403,16 @@
 	item_state = "western_wayfarer_armor_heavy"
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
 
+/obj/item/clothing/suit/armor/tribe_heavy_armor
+	name = "heavy tribal armor"
+	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
+	icon = 'icons/fallout/clothing/armored_heavy.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
+	icon_state = "tribal_heavy"
+	item_state = "tribal_heavy"
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 30, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 50)
+	slowdown = 0.10
+
 ////////////////////////////////
 //// MEDIUM BALLISTIC VESTS ////
 ////////////////////////////////
@@ -1393,6 +1488,12 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "vest_flak"
 	item_state = "vest_flak"
+
+/obj/item/clothing/suit/armor/medium/vest/oasis
+	name = "OPD vest"
+	desc = "a lightweight ballistic vest that combines protection and comfort. This one has pockets sewn into the front and a badge pinned on it."
+	icon_state = "blueshift"
+	item_state = "blueshift"
 
 /obj/item/clothing/suit/armor/light/vest/russian
 	name = "russian vest"
@@ -1537,7 +1638,7 @@
 
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
-	name = "heavy steel breastplate"
+	name = "oasis steel breastplate"
 	desc = "a steel breastplate, inspired by a pre-war design. Looks like oasis citizens added an additional layer of metal on the front face."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -1551,7 +1652,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
-	name = "steel breastplate"
+	name = "reinforced steel breastplate"
 	desc = "a steel breastplate inspired by a pre-war design. It provides some protection against impacts, cuts, and medium-velocity bullets. It's pressed steel construction feels heavy."
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
@@ -1649,16 +1750,45 @@
 	icon_state = "towntrench_medium"
 	item_state = "hostrench"
 
+/obj/item/clothing/suit/armor/medium/duster/town/embroidered
+	name = "embroidered trenchcoat"
+	desc = "A custom armored trench coat with extra-length and a raised collar. There's a flower embroidered onto the back, although the color is a little faded."
+	icon_state = "towntrench_special"
+	item_state = "towntrench_special"
+
+/obj/item/clothing/suit/armor/medium/duster/town/deputy
+	name = "armored town trenchcoat"
+	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
+	icon_state = "towntrench_medium"
+
 /obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	name = "sheriff trenchcoat"
 	desc = "A trenchcoat which does a poor job at hiding the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
+
+/obj/item/clothing/suit/armor/medium/duster/town/sheriff/detsuit
+	name = "sheriff duster"
+	desc = "A long brown leather overcoat.<br>A powerful accessory of a respectful sheriff, bringer of justice."
+	icon_state = "sheriff"
+	item_state = "det_suit"
 
 /obj/item/clothing/suit/armor/medium/duster/town/commissioner
 	name = "commissioner's jacket"
 	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
 	icon_state = "warden_alt"
 	item_state = "armor"
+
+/obj/item/clothing/suit/armor/medium/duster/town/chief
+	name = "OPD Chief's jacket"
+	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
+	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_cosmetic.dmi'
+	icon_state = "police_chief"
+	item_state = "police_chief"
+
+/obj/item/clothing/suit/armor/medium/duster/town/mayor
+	name = "mayor trenchcoat"
+	desc = "A symbol of the mayor's authority (or lack thereof). It has discrete armor plating in the lining, to foil assassination attempts."
 
 /obj/item/clothing/suit/armor/medium/duster/motorball
 	name = "motorball suit"
@@ -1681,6 +1811,18 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "cloak_armored"
 	item_state = "cloak_armored"
+
+/obj/item/clothing/suit/armor/medium/duster/enclave
+	name = "enclave officer trenchcoat"
+	desc = "Premium prewar military armor worn under a coat for Enclave officers."
+	icon_state = "armor_enclave_officer"
+	item_state = "armor_enclave_officer"
+
+/obj/item/clothing/suit/armor/medium/duster/follower
+	name = "follower's duster"
+	desc = "An old military-grade pre-war combat armor under a white weathered duster. An emblem of the Followers is painted on the back of it. It appears to be fitted with metal plates to replace the crumbling ceramic."
+	icon_state = "shank_follower"
+	item_state = "shank_follower"
 
 //////////////////////
 //// COMBAT ARMOR ////
@@ -1734,6 +1876,37 @@
 	desc = "A reinforced model based of the pre-war combat armor. Now in dark, light, and smoky barbeque!"
 	color = "#302E2E"
 
+/obj/item/clothing/suit/armor/medium/combat/mk2/remnant
+	name = "remnant combat armor"
+	desc = "A dark armor, used commonly in espionage or shadow ops."
+	icon_state = "remnant"
+	item_state = "remnant"
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger
+	name = "reinforced desert ranger armor"
+	desc = "A suit of armor styled after those used by the Desert Rangers, with extra plates strapped to it to boot."
+	icon_state = "ncr_patrol"
+	item_state = "ncr_patrol"
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger/pro
+	name = "reinforced desert ranger suit"
+	desc = "A set of armor styled after those used by the Desert Rangers, with extra plates strapped to it to boot."
+	icon_state = "ncr_armor_mk2"
+	item_state = "ncr_armor_mk2"
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/raider
+	name = "raider combat armor"
+	desc = "An old set of reinforced combat armor with some parts supplanted with painspike armor. It seems less protective than a mint-condition set of combat armor."
+	item_state = "combat_armor_raider"
+
+/obj/item/clothing/suit/armor/medium/combat/mk2/tribal
+	name = "tribal reinforced combat armor"
+	desc = "An old military grade pre-war reinforced combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	icon_state = "tribecombatarmor"
+	item_state = "tribecombatarmor"
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
+
 /obj/item/clothing/suit/armor/medium/combat/swat
 	name = "SWAT combat armor"
 	desc = "A custom version of the pre-war combat armor, slimmed down and minimalist for domestic S.W.A.T. teams."
@@ -1745,6 +1918,66 @@
 	desc = "(An uncommon suit of pre-war Chinese combat armor. It's a very basic and straightforward piece of armor that covers the front of the user."
 	icon_state = "chicom_armor"
 	item_state = "chicom_armor"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger
+	name = "desert ranger combat armor"
+	desc = "A suit of combat armor styled after those used by the Desert Rangers. It smells like red mist."
+	icon_state = "desert_ranger"
+	item_state = "desert_ranger"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/combat
+	name = "desert ranger combat suit"
+	desc = "A suit of combat armor styled after those used by the Desert Rangers. It smells like red mist."
+	icon_state = "ncr_armor"
+	item_state = "ncr_armor"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/scout
+	name = "desert ranger scout armor"
+	desc = "A refurbished set of desert ranger scout armor, refitted for use in the swamps. A few shiny platinum shards stick out of the webbing."
+	icon_state = "refurb_scout"
+	item_state = "refurb_scout"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/officer
+	name = "desert ranger officer armor"
+	desc = "A suit of desert ranger styled armor, now with a fancy-looking coat to boot. Very official."
+	icon_state = "ncr_officer_coat"
+	item_state = "ncr_officer_coat"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/officer/colonel
+	name = "NCR colonels armor"
+	desc = "A suit of desert ranger styled armor, decorated to look more official. Very, very official."
+	icon_state = "ncr_captain_armour"
+	item_state = "ncr_captain_armour"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/outlaw
+	name = "desert outlaw armor"
+	desc = "A modified detoriated armor kit consisting of Desert Ranger style combat armor and scrap metal."
+	icon_state = "ncrexile"
+	item_state = "ncrexile"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/mutant
+	name = "NCR mutant armor"
+	desc = "Multiple sets of NCR patrol vests that have been fused, stitched and welded together in order to fit the frame of a Super Mutant."
+	icon_state = "mutie_ncr"
+	item_state = "mutie_ncr"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
+	name = "desert ranger patrol armor"
+	desc = "A set of desert ranger patrol armor, modified to be light and breezy here in the swamps, perfect for making blood sausage."
+	icon_state = "ncr_patrol"
+	item_state = "ncr_patrol"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/mutant
+	name = "mutant desert ranger armor"
+	desc = "Multiple sets of desert ranger patrol armor made to protect a massive humanoid, modified to be light and breezy here in the swamps, and smelling like blood sausage."
+	icon_state = "mutie_ranger_armour"
+	item_state = "mutie_ranger_armour"
+
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/thax
+	name = "desert ranger patrol duster"
+	desc = "A customized and moderately-worn suit of desert ranger armor. A sun-worn thick olive duster is worn over the armor."
+	icon_state = "thaxarmor"
+	item_state = "thaxarmor"
 
 /obj/item/clothing/suit/armor/medium/combat/rusted
 	name = "rusted combat armor"
@@ -1770,11 +2003,6 @@
 /obj/item/clothing/suit/armor/medium/combat/environmental/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/rad_insulation, RAD_NO_INSULATION, TRUE, FALSE)
-
-/obj/item/clothing/suit/armor/medium/combat/mk2/raider
-	name = "raider combat armor"
-	desc = "An old set of reinforced combat armor with some parts supplanted with painspike armor. It seems less protective than a mint-condition set of combat armor."
-	item_state = "combat_armor_raider"
 
 //recipe any combat armor + duster
 /obj/item/clothing/suit/armor/medium/combat/duster
@@ -1835,6 +2063,26 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1)
 
+/obj/item/clothing/suit/armor/medium/combat/tribal
+	name = "tribal combat armor"
+	desc = "An old military grade pre war combat armor, now decorated with sinew and the bones of the hunted for its new wearer."
+	icon_state = "tribecombatarmor"
+	item_state = "tribecombatarmor"
+	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T1)
+
+/obj/item/clothing/suit/armor/medium/combat/marine
+	name = "old United States Marine Corp Armor"
+	desc = "An advanced model of combat armor worn by marines aboard the USS Democracy, second only to power armor in protection used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	icon_state = "enclave_marine"
+	item_state = "enclave_marine"
+
+/obj/item/clothing/suit/armor/medium/combat/enclave
+	name = "enclave combat armor"
+	desc = "An old set of pre-war combat armor, painted black."
+	icon_state = "enclave_new"
+	item_state = "enclave_new"
 
 ///////////////////
 // MEDIUM RAIDER //
@@ -2180,6 +2428,25 @@
 	icon_state = "bulletproof_heavy"
 	item_state = "bulletproof_heavy"
 	desc = "Heavy armor with ballistic inserts, sewn into a padded riot police coat."
+
+/obj/item/clothing/suit/armor/heavy/riot/vault
+	name = "VTCC riot armour"
+	desc = "(VII) A suit of riot armour adapted from the design of the pre-war U.S.M.C. armour, painted blue and white."
+	icon_state = "vtcc_riot_gear"
+	item_state = "vtcc_riot_gear"
+
+/obj/item/clothing/suit/armor/heavy/riot/marine
+	name = "old United States Marine Corp riot suit"
+	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
+	icon_state = "usmc_riot_gear"
+	item_state = "usmc_riot_gear"
+
+/obj/item/clothing/suit/armor/heavy/riot/elite
+	name = "elite riot gear"
+	desc = "A heavily reinforced set of military grade armor."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	icon = 'icons/obj/clothing/suits.dmi'
 
 //////////////////////////
 // Salvaged Power Armor //
@@ -2711,8 +2978,22 @@
 	resistance_flags = ACID_PROOF
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T3)
+
+/obj/item/clothing/suit/bio_suit/enclave
+	name = "enclave envirosuit"
+	desc = "An advanced white and airtight environmental suit. It seems to be equipped with a fire-resistant seal and a refitted internals system. This one looks to have been developed by the Enclave sometime after the Great War. You'd usually exclusively see this on scientists of the Enclave."
+	icon_state = "envirosuit"
+	item_state = "envirosuit"
+	w_class = WEIGHT_CLASS_BULKY
+	gas_transfer_coefficient = 0.9
+	permeability_coefficient = 0.5
+	clothing_flags = THICKMATERIAL
+	strip_delay = 60
+	equip_delay_other = 60
+	flags_inv = HIDEJUMPSUIT
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 //Standard biosuit, orange stripe
 /obj/item/clothing/head/bio_hood/general
@@ -2771,3 +3052,18 @@
 	item_state = "bio_suit"
 	strip_delay = 40
 	equip_delay_other = 20
+
+/obj/item/clothing/suit/bio_suit/hazmat
+	name = "hazmat suit"
+	desc = "(Yellow Level A , hazmat protective suit.<br>You can see some numbers on the tag: 35 56."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "hazmat"
+	item_state = "hazmat"
+
+/obj/item/clothing/head/bio_hood/hazmat
+	name = "hazmat hood"
+	desc = "My star, my perfect silence."
+	icon = 'icons/fallout/clothing/hats.dmi'
+	icon_state = "hazmat"
+	item_state = "hazmat_helmet"

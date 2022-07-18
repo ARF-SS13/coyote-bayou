@@ -24,7 +24,7 @@
 		var/obj/item/bodypart/chopchop = c_user.get_bodypart(which_hand)
 		chopchop.dismember()
 		qdel(chopchop)
-		playsound(loc, 'sound/arcade/win.ogg', 10, 1, extrarange = -3, falloff = 10)
+		playsound(loc, 'sound/arcade/win.ogg', 10, 1, extrarange = -3, falloff_distance = 10)
 		for(var/i=1; i<=rand(3,5); i++)
 			prizevend(user)
 	else

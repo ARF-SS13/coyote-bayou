@@ -456,3 +456,10 @@ datum/crafting_recipe/tribalwar/bone
 	reqs = list(/obj/item/stack/sheet/cloth = 1,
 				/obj/item/stack/sheet/leather = 1,
 				/obj/item/clothing/head/helmet/skull = 1)
+
+//Cloth Eyepatch
+/datum/crafting_recipe/tribal/eyepatch
+	name = "Bandage Eyepatch"
+	result = /obj/item/clothing/glasses/f13/tribaleyepatch
+	time = 10
+	reqs = list(/obj/item/stack/medical/gauze/improvised = 2)

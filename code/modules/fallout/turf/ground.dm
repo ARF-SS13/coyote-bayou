@@ -356,7 +356,7 @@
 	desc = "Shallow river water."
 	icon = 'icons/fallout/turfs/ground.dmi'
 	icon_state = "riverwateruhh"
-	slowdown = 2
+	slowdown = 6
 	depth = 1
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null //needs a splashing sound one day.
