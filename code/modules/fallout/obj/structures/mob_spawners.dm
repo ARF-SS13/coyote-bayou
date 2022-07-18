@@ -13,7 +13,7 @@
 	var/coverable = TRUE
 	var/covered = FALSE
 	var/obj/covertype
-	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/spawn_text = "emerges from"
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
@@ -67,65 +67,73 @@
 	can_fire = fire
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
-	if(user.a_intent == INTENT_HARM)
-		to_chat(user, "<span class='warning'>You feel it is impossible to destroy this. Best to cover it up with something.</span>")
-		return
+
+	if(I.tool_behaviour == TOOL_CROWBAR)
+		return Unseal(FALSE, user, I)
 
 	if(istype(I, /obj/item/stack/rods))
-		if(!coverable)
-			to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
-			return
-		if(covered)
-			to_chat(user, "<span class='warning'>The hole is already covered!</span>")
-			return
-		var/obj/item/stack/rods/R = I
-		if(R.amount < 4)
-			to_chat(user, "<span class='warning'>You need four rods in order to cover the hole!</span>")
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
-			return
-		R.use(4)
-
-		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
-
-		covered = TRUE
-		covertype = /obj/item/stack/rods
-
-
-		var/image/rod_image = image(icon, icon_state = "rods")
-		add_overlay(rod_image)
-		QDEL_IN(src, 2 MINUTES)
-		return
-
+		return Seal(user, I, I.type, "rods", 2 HOURS)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
-		if(!coverable)
-			to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
+		return Seal(user, I, I.type, "planks", 30 MINUTES)
+	
+	if(covered) // allow you to interact only when it's sealed
+		..()
+	else
+		if(user.a_intent == INTENT_HARM)
+			to_chat(user, "<span class='warning'>You feel it is impossible to destroy this without covering it with something.</span>")
 			return
-		if(covered)
-			to_chat(user, "<span class='warning'>The hole is already covered!</span>")
-			return
-		var/obj/item/stack/sheet/mineral/wood/W = I
-		if(W.amount < 4)
-			to_chat(user, "<span class='warning'>You need four planks of wood in order to cover the hole!</span>")
-			return
-		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
-			return
-		W.use(4)
 
-		if(!covered)
-			new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-			to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
-
-		covered = TRUE
-		covertype = /obj/item/stack/sheet/mineral/wood
-		var/image/plank_image = image(icon, icon_state = "planks")
-		add_overlay(plank_image)
-		QDEL_IN(src, 2 MINUTES)
+/obj/structure/nest/proc/Seal(mob/user, obj/item/I, itempath, cover_state, timer)
+	if(!coverable)
+		to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
 		return
+	
+	if(covered)
+		to_chat(user, "<span class='warning'>The hole is already covered!</span>")
+		return
+	var/obj/item/stack/S = I
+	if(S.amount < 4)
+		to_chat(user, "<span class='warning'>You need four of [S.name] in order to cover the hole!</span>")
+		return
+	if(!do_after(user, 5 SECONDS, FALSE, src))
+		to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
+		return
+	S.use(4)
+
+	if(!covered)
+		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
+		to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+
+	covered = TRUE
+	covertype = itempath
+
+	var/image/overlay_image = image(icon, icon_state = cover_state)
+	add_overlay(overlay_image)
+
+//	QDEL_IN(src, 2 MINUTES)
+	addtimer(CALLBACK(src, .proc/Unseal), timer)
+	return
+
+/obj/structure/nest/proc/Unseal(override = TRUE, mob/user = null, obj/item/I = null)
+	if(override)
+		covered = initial(covered)
+		covertype = initial(covertype)
+		cut_overlays()
+		toggle_fire()
+		spawned_mobs.Cut()
+		return
+ 
+	if(user)
+		if(!I)
+			return
+		I.play_tool_sound(src, 50)
+		if(!do_after(user, 5 SECONDS, FALSE, src))
+			to_chat(user, "<span class='warning'>You must stand still to unseal the cover!</span>")
+			return
+		Unseal(TRUE)
+		return
+
+	
 
 //the nests themselves
 /*
