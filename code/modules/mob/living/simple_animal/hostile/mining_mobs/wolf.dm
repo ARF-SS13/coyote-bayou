@@ -31,7 +31,7 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	loot = list()
 	crusher_loot = /obj/item/crusher_trophy/watcher_wing
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	/// Message for when the wolf decides to start running away
 	var/retreat_message_said = FALSE

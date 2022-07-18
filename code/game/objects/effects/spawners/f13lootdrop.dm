@@ -255,14 +255,14 @@
 /obj/effect/spawner/bundle/f13/armor/blastmaster
 	name = "blastmaster raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/light/raider/blastmaster,
+				/obj/item/clothing/suit/armor/medium/raider/blastmaster,
 				/obj/item/clothing/head/helmet/f13/raider/blastmaster
 				)
 
 /obj/effect/spawner/bundle/f13/armor/yankee
 	name = "yankee raider armor spawner"
 	items = list(
-				/obj/item/clothing/suit/armor/light/raider/yankee,
+				/obj/item/clothing/suit/armor/medium/raider/yankee,
 				/obj/item/clothing/head/helmet/f13/raider/yankee
 				)
 

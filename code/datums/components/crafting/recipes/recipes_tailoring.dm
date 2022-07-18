@@ -132,8 +132,8 @@ datum/crafting_recipe/steelbib
 	subcategory = CAT_ARMOR
 
 datum/crafting_recipe/steelbib/heavy
-	name = "Heavy Steel Breastplate"
-	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
+	name = "Reinforved Steel Breastplate"
+	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/prewar = 5)
@@ -895,6 +895,24 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
 
+/datum/crafting_recipe/chestpatch
+	name = "Chest patch / insignia"
+	result = /obj/item/clothing/accessory/patch
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/armpatch
+	name = "Arm patch / insignia"
+	result = /obj/item/clothing/accessory/patch/arm
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
 /*
 /datum/crafting_recipe/durathread_vest
 	name = "Makeshift Vest"
@@ -998,7 +1016,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/yankee_reinforced
 	name = "reinforced yankee armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/yankee
-	reqs = list(/obj/item/clothing/suit/armor/light/raider/yankee = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/yankee = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)
@@ -1018,7 +1036,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/blaster_reinforced
 	name = "reinforced blaster armor"
 	result = /obj/item/clothing/suit/armor/medium/raider/r/blastmaster
-	reqs = list(/obj/item/clothing/suit/armor/light/raider/blastmaster = 1,
+	reqs = list(/obj/item/clothing/suit/armor/medium/raider/blastmaster = 1,
 				/obj/item/stack/crafting/goodparts = 2,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(TOOL_WORKBENCH)

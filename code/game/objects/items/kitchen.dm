@@ -63,9 +63,9 @@
 	icon_state = "knife_kitchen"
 	item_state = "knife"
 	flags_1 = CONDUCT_1
-	force = 15
+	force = WEAPON_FORCE_SLASH_SMALL
 	w_class = WEIGHT_CLASS_SMALL
-	throwforce = 15
+	throwforce = WEAPON_FORCE_SLASH_SMALL
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	throw_speed = 3
 	throw_range = 6

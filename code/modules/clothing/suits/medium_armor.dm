@@ -287,7 +287,7 @@
 	icon_state = "ncr_officer_coat"
 	item_state = "ncr_officer_coat"
 
-/obj/item/clothing/suit/armor/medium/combat/ncr
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	name = "NCR combat armor"
 	desc = "Combat armor painted in the khaki of the New California Republic, displaying its flag on the chest."
 	icon_state = "ncr_armor"
@@ -301,7 +301,7 @@
 	item_state = "ncr_captain_armour"
 	armor = list("melee" = 45, "bullet" = 45, "laser" = 40, "energy" = 40, "bomb" = 45, "bio" = 40, "rad" = 45, "fire" = 45, "acid" = 20)
 
-/obj/item/clothing/suit/armor/medium/combat/ncrranger
+/obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger
 	name = "ranger patrol armor"
 	desc = "The standard issue ranger patrol armor is based on pre-war combat armor design, and has similar capabilities."
 	icon_state = "ncr_patrol"

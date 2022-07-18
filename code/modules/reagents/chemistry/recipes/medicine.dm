@@ -373,19 +373,8 @@ datum/chemical_reaction/rezadone
 	name = "Med-X"
 	id = /datum/reagent/medicine/medx
 	results = list(/datum/reagent/medicine/medx = 4)
-	required_reagents = list(/datum/reagent/drug/aranesp = 1, /datum/reagent/phenol = 1, /datum/reagent/drug/heroin = 1, /datum/reagent/medicine/stimpak = 1)
-	OptimalTempMin 		= 780
-	OptimalTempMax		= 821
-	ExplodeTemp			= 824
-	OptimalpHMin		= 10
-	OptimalpHMax		= 14
-	ReactpHLim			= 1
-	CurveSharpT 		= 10
-	CurveSharppH 		= 0.5
-	ThermicConstant		= 8
-	HIonRelease 		= -0.5
-	RateUpLim 			= 40
-	FermiChem 			= TRUE
+	required_reagents = list(/datum/reagent/medicine/epinephrine = 1, /datum/reagent/medicine/morphine = 1, /datum/reagent/consumable/daturajuice = 2)
+	required_temp = 451
 
 
 /datum/chemical_reaction/mentats

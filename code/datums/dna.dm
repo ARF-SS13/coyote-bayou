@@ -323,13 +323,14 @@
 	uni_identity = generate_uni_identity()
 	unique_enzymes = generate_unique_enzymes()
 
-/datum/dna/proc/initialize_dna(newblood_type)
+/datum/dna/proc/initialize_dna(newblood_type, randomise = TRUE)
 	if(newblood_type)
 		blood_type = newblood_type
 	unique_enzymes = generate_unique_enzymes()
 	uni_identity = generate_uni_identity()
 	generate_dna_blocks()
-	features = random_features(species?.id, holder?.gender)
+	if(randomise)
+		features = random_features(species?.id, holder?.gender)
 
 
 /datum/dna/stored //subtype used by brain mob's stored_dna

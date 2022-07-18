@@ -105,9 +105,9 @@
 	applyOrganDamage(maxHealth * decay_factor)
 
 /obj/item/organ/proc/can_decay()
-	if(CHECK_BITFIELD(organ_flags, ORGAN_NO_SPOIL | ORGAN_SYNTHETIC | ORGAN_FAILING))
-		return FALSE
-	return TRUE
+	//if(CHECK_BITFIELD(organ_flags, ORGAN_NO_SPOIL | ORGAN_SYNTHETIC | ORGAN_FAILING))
+	//	return FALSE
+	return FALSE // no more death decay. cus. not really dead
 
 //Checks to see if the organ is frozen from temperature
 /obj/item/organ/proc/is_cold()

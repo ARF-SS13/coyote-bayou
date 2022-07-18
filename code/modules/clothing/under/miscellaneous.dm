@@ -594,35 +594,6 @@
 	item_color = "geisha"
 	can_adjust = FALSE
 
-/obj/item/clothing/under/jeanbshorts
-	name = "jean booty shorts"
-	desc = "A Pair of faded Daisy Dukes"
-	icon_state = "jeanbshorts"
-	item_color = "jeanbshorts"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/darkbshorts
-	name = "dark booty shorts"
-	desc = "A pair of Daisy Dukes that haven't faded."
-	icon_state = "darkbshorts"
-	item_color = "darkbshorts"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/blackbshorts
-	name = "black booty shorts"
-	desc = "A pair of black jeans cut super short."
-	icon_state = "blackbshorts"
-	item_color = "blackbshorts"
-	can_adjust = FALSE
-
-/obj/item/clothing/under/brownbshorts
-	name = "Cargo booty shorts"
-	desc = "A pair of Cargo pants cut super short."
-	icon_state = "brownbshorts"
-	item_color = "brownbshorts"
-	can_adjust = FALSE
-
-
 /obj/item/clothing/under/sailor
 	name = "sailor suit"
 	desc = "Skipper's in the wardroom drinkin gin'."

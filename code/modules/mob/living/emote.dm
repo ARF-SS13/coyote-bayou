@@ -1100,7 +1100,38 @@ GLOBAL_LIST_INIT(special_phrases, list(
 	message = null
 	cooldown = 2.5 SECONDS // longer than it takes for the emote to run
 	stat_allowed = UNCONSCIOUS
+	/// Delay between doing the emote and getting the results
 	var/special_delay = 2 SECONDS
+	/// So keybinds can use these emotes ezpz
+	var/special_override
+
+/datum/emote/living/special/s
+	key = "special_strength"
+	special_override = EMOTE_SPECIAL_STR
+
+/datum/emote/living/special/p
+	key = "special_perception"
+	special_override = EMOTE_SPECIAL_PER
+
+/datum/emote/living/special/e
+	key = "special_endurance"
+	special_override = EMOTE_SPECIAL_END
+
+/datum/emote/living/special/c
+	key = "special_charisma"
+	special_override = EMOTE_SPECIAL_CHA
+
+/datum/emote/living/special/i
+	key = "special_intelligence"
+	special_override = EMOTE_SPECIAL_INT
+
+/datum/emote/living/special/a
+	key = "special_agility"
+	special_override = EMOTE_SPECIAL_AGI
+
+/datum/emote/living/special/l
+	key = "special_luck"
+	special_override = EMOTE_SPECIAL_LCK
 
 /datum/emote/living/special/run_emote(mob/user, params, type_override, intentional = FALSE)
 	if(!can_run_emote(user, TRUE, intentional))
@@ -1118,10 +1149,11 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		return FALSE
 
 	var/special_noun = null
+	var/special_phrase_input = special_override ? special_override : params
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
-		if(params in GLOB.special_triggers[which_special])
+		if(special_phrase_input in GLOB.special_triggers[which_special])
 			special_noun = which_special
 
 	if(!(special_noun in GLOB.special_skill_list) || !special_noun)

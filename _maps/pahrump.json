@@ -8,6 +8,7 @@
 		"Pahrump-Sunset-Upper.dmm",
 		"Pahrump-Sunset-Upper-2.dmm",
 		"RockSprings.dmm",
+		"RedRiver.dmm",
 		"texmall.dmm"
 	],
 	"station_ruin_budget":0,
@@ -76,6 +77,17 @@
 			"Linkage" : "Cross",
 			"Force South": 1,
 			"Name": "Rock Springs"
+		},
+					{
+			"Gravity": true,
+			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
+			"Station": 1,
+			"Up": 1,
+			"Down": -1,
+			"No Parallax": true,
+			"Linkage" : "Cross",
+			"Force North": 1,
+			"Name": "Red River"
 		},
 		{
 			"Gravity": true,

@@ -199,13 +199,13 @@
 		try_treating(I, user)
 
 /// if someone is using mesh on our burns
-/datum/wound/burn/proc/mesh(obj/item/stack/medical/mesh/I, mob/user)
+/datum/wound/burn/proc/mesh(obj/item/stack/medical/mesh/I, mob/user, just_treat)
 	user.visible_message("<span class='notice'>[user] begins wrapping [victim]'s [limb.name] with [I]...</span>", "<span class='notice'>You begin wrapping [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]...</span>")
 	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 
-	limb.heal_damage(I.heal_brute, I.heal_burn)
 	user.visible_message("<span class='green'>[user] applies [I] to [victim].</span>", "<span class='green'>You apply [I] to [user == victim ? "your" : "[victim]'s"] [limb.name].</span>")
+	limb.heal_damage(I.heal_brute, I.heal_burn)
 	I.use(1)
 	sanitization += I.sanitization
 	flesh_healing += I.flesh_regeneration
@@ -228,6 +228,14 @@
 	user.visible_message("<span class='notice'>[user] flashes the burns on [victim]'s [limb] with [I].</span>", "<span class='notice'>You flash the burns on [user == victim ? "your" : "[victim]'s"] [limb.name] with [I].</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 	sanitization += I.uv_power
 	COOLDOWN_START(I, uv_cooldown, I.uv_cooldown_length)
+
+/// Generic burn wound treatment from whatever'll allow it
+/// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
+/datum/wound/burn/proc/treat_burn(obj/item/stack/medical/I, mob/user)
+	sanitization += I.sanitization
+	flesh_healing += I.flesh_regeneration
+	infestation -= I.sanitization * 0.05
+
 
 /datum/wound/burn/treat(obj/item/I, mob/user)
 	if(istype(I, /obj/item/stack/medical/ointment))

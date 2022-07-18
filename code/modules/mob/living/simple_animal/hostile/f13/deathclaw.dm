@@ -69,7 +69,7 @@
 	gender = FEMALE
 	maxHealth = 800
 	health = 800
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	melee_damage_lower = 50
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -84,7 +84,7 @@
 	maxHealth = 1200
 	health = 1200
 	color = "#FFFF00"
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	melee_damage_lower = 55
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -105,7 +105,7 @@
 	icon_dead = "combatclaw_dead"
 	maxHealth = 2500
 	health = 2500
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	melee_damage_lower = 70
 	melee_damage_upper = 80
 	footstep_type = FOOTSTEP_MOB_HEAVY

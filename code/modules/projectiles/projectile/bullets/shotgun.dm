@@ -1,3 +1,10 @@
+/* buckshot pellet
+ * DAMAGE: 11
+ * STAMIN: 1
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
 /obj/item/projectile/bullet/pellet/shotgun_buckshot
 	name = "buckshot pellet"
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_SURPLUS_MULT
@@ -11,6 +18,13 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 
+/* rubber pellet
+ * DAMAGE: 1
+ * STAMIN: 11
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
 /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	name = "rubbershot pellet"
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_SURPLUS_MULT * RUBBERY_DAMAGE_MULT
@@ -26,6 +40,13 @@
 	sharpness = SHARP_NONE
 	embedding = null
 
+/* handload pellet
+ * DAMAGE: 8
+ * STAMIN: 1
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
 /obj/item/projectile/bullet/pellet/shotgun_improvised
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_HANDLOAD_MULT
 	stamina = BULLET_STAMINA_SHOTGUN_PELLET * BULLET_HANDLOAD_MULT
@@ -51,6 +72,13 @@
 		do_sparks(1, FALSE, get_turf(target))
 	..()
 
+/* 12g slug
+ * DAMAGE: 50
+ * STAMIN: 10
+ * RECOIL: 2
+ * WOUNDS: 40
+ * WNAKED: 30
+ */
 /obj/item/projectile/bullet/shotgun_slug
 	name = "12g shotgun slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT
@@ -64,6 +92,13 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 
+/* 12g slug
+ * DAMAGE: 50
+ * STAMIN: 10
+ * RECOIL: 2
+ * WOUNDS: 80
+ * WNAKED: 30
+ */
 /obj/item/projectile/bullet/shotgun_slug/executioner
 	name = "executioner slug" // admin only, can dismember limbs
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT
@@ -78,6 +113,13 @@
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_EDGED
 
+/* 12g slug
+ * DAMAGE: 50
+ * STAMIN: 10
+ * RECOIL: 2
+ * WOUNDS: 80
+ * WNAKED: 30
+ */
 /obj/item/projectile/bullet/shotgun_slug/pulverizer
 	name = "pulverizer slug" // admin only, can crush bones
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT
@@ -92,6 +134,13 @@
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
 	
+/* 12g beanbag
+ * DAMAGE: 5
+ * STAMIN: 100
+ * RECOIL: 2
+ * WOUNDS: 120
+ * WNAKED: 90
+ */
 /obj/item/projectile/bullet/shotgun_beanbag
 	name = "beanbag slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * RUBBERY_DAMAGE_MULT
@@ -112,6 +161,13 @@
 #define BULLET_TRAINSLUG_NAKED_WOUND_MULT 1
 #define BULLET_TRAINSLUG_SPEED_MULT 0.9
 
+/* train
+ * DAMAGE: 20
+ * STAMIN: 4
+ * RECOIL: 2
+ * WOUNDS: 40
+ * WNAKED: 30
+ */
 /obj/item/projectile/bullet/pellet/trainshot
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * BULLET_TRAINSLUG_DAMAGE_MULT
 	stamina = BULLET_STAMINA_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * BULLET_TRAINSLUG_STAMINA_MULT
@@ -138,6 +194,13 @@
 #undef BULLET_TRAINSLUG_NAKED_WOUND_MULT
 #undef BULLET_TRAINSLUG_SPEED_MULT
 
+/* 12g slug fire
+ * DAMAGE: 25
+ * STAMIN: 50
+ * RECOIL: 2
+ * WOUNDS: 120
+ * WNAKED: 0
+ */
 /obj/item/projectile/bullet/incendiary/shotgun
 	name = "incendiary slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * BULLET_DAMAGE_FIRE
@@ -152,6 +215,13 @@
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
 
+/* 12g pellet fire
+ * DAMAGE: 5
+ * STAMIN: 5
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
 /obj/item/projectile/bullet/incendiary/shotgun/dragonsbreath
 	name = "dragonsbreath pellet"
 	damage = BULLET_DAMAGE_SHOTGUN_PELLET * BULLET_SURPLUS_MULT * BULLET_DAMAGE_FIRE
@@ -167,6 +237,13 @@
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	sharpness = SHARP_NONE
 
+/* 12g pellet fire
+ * DAMAGE: 5
+ * STAMIN: 5
+ * RECOIL: 2
+ * WOUNDS: 0
+ * WNAKED: 0
+ */
 /obj/item/projectile/incendiary/flamethrower
 	name = "FIREEEEEEEEEE!!!!!"
 	icon = 'icons/effects/fire.dmi'
@@ -193,6 +270,13 @@
 		M.adjust_fire_stacks(3)
 		M.IgniteMob()
 
+/* 12g slug stun
+ * DAMAGE: 5
+ * STAMIN: 100
+ * RECOIL: 2
+ * WOUNDS: 120
+ * WNAKED: 90
+ */
 /obj/item/projectile/bullet/shotgun_stunslug
 	name = "stunslug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * RUBBERY_DAMAGE_MULT
@@ -235,6 +319,13 @@
 #define BULLET_METEORSLUG_NAKED_WOUND_MULT 1
 #define BULLET_METEORSLUG_SPEED_MULT 0.8
 
+/* 12g slug meteor
+ * DAMAGE: 40
+ * STAMIN: 15
+ * RECOIL: 2
+ * WOUNDS: 40
+ * WNAKED: 30
+ */
 /obj/item/projectile/bullet/shotgun_meteorslug
 	name = "meteorslug"
 	icon = 'icons/obj/meteor.dmi'
@@ -270,6 +361,13 @@
 #undef BULLET_METEORSLUG_NAKED_WOUND_MULT
 #undef BULLET_METEORSLUG_SPEED_MULT
 
+/* 12g slug explode
+ * DAMAGE: 25
+ * STAMIN: 5
+ * RECOIL: 2
+ * WOUNDS: 80
+ * WNAKED: 60
+ */
 /obj/item/projectile/bullet/shotgun_frag12
 	name ="frag12 slug"
 	damage = BULLET_DAMAGE_SHOTGUN_SLUG * BULLET_SURPLUS_MULT * BULLET_DAMAGE_EXPLOSIVE
