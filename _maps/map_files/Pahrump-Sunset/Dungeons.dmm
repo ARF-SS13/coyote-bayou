@@ -3712,8 +3712,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/medical)
 "doB" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf/books,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+/obj/structure/window/spawner/east,
+/obj/structure/window/spawner/north,
+/obj/structure/window/spawner/west,
+/obj/structure/window/spawner,
+/obj/machinery/light/floor,
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/f13{
+	icon_state = "grass2"
+	},
 /area/f13/vault)
 "dpk" = (
 /obj/machinery/computer/med_data{
@@ -3970,7 +3977,7 @@
 	pixel_y = 32
 	},
 /obj/item/broom,
-/obj/item/storage/belt,
+/obj/item/storage/belt/fannypack,
 /obj/structure/rack/shelf_metal,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
@@ -4491,9 +4498,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "dUc" = (
-/obj/machinery/door/airlock/public/glass{
-	req_access_txt = "31"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -4504,6 +4508,9 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/public/glass{
+	req_access_txt = null
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
@@ -7926,10 +7933,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/bunker)
-"gKD" = (
-/obj/machinery/smartfridge/bottlerack/lootshelf/books,
-/turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
-/area/f13/vault)
 "gLc" = (
 /obj/structure/closet,
 /turf/open/floor/mineral/plastitanium,
@@ -8827,6 +8830,20 @@
 /turf/open/floor/goonplaque{
 	desc = "This is a plaque detailing and honoring the corporate dollars lost creating the vault. All craftsmanship is of the highest quality. The Business men are laughing. The Workers are crying. It menaces with spikes of gold."
 	},
+/area/f13/vault)
+"hyk" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/door/poddoor{
+	id = 103;
+	name = "Vault Blastdoor 1"
+	},
+/obj/machinery/door/airlock/public/glass{
+	req_access_txt = null
+	},
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/vault)
 "hyL" = (
 /obj/structure/chair/bench,
@@ -10847,7 +10864,7 @@
 /area/f13/vault)
 "jyJ" = (
 /obj/machinery/door/airlock/public/glass{
-	req_access_txt = "31"
+	req_access_txt = null
 	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -31145,7 +31162,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 uQS
@@ -31402,7 +31419,7 @@ tbb
 cgT
 egq
 cgT
-doB
+lcN
 cgT
 bVS
 uQS
@@ -31659,7 +31676,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+doB
 lcN
 sCK
 uQS
@@ -31916,7 +31933,7 @@ aCV
 cgT
 egq
 cgT
-doB
+lcN
 cgT
 how
 uQS
@@ -32173,7 +32190,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 uQS
@@ -32687,7 +32704,7 @@ nBF
 lcN
 wPI
 lcN
-gKD
+cgT
 lcN
 sCK
 dxs
@@ -40418,7 +40435,7 @@ xJQ
 lcN
 uTS
 lcN
-jyJ
+hyk
 cdq
 vRp
 gLv
