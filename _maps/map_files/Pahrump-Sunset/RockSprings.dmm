@@ -1755,7 +1755,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bRd" = (
 /obj/effect/decal/marking{
@@ -8065,6 +8065,14 @@
 	icon_state = "outerturn"
 	},
 /area/f13/building/tunnel)
+"iGN" = (
+/obj/machinery/recycler{
+	name = "Blesed Recycler";
+	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
+	light_range = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "iGR" = (
 /obj/structure/railing/wood{
 	dir = 8;
@@ -13910,14 +13918,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"oHz" = (
-/obj/machinery/recycler{
-	name = "Blesed Recycler";
-	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
-	light_range = 1
-	},
-/turf/open/floor/f13/wood,
-/area/f13/caves)
 "oHS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -24237,7 +24237,7 @@ lyy
 seA
 jML
 foZ
-oHz
+iGN
 tRd
 aQn
 eKQ
