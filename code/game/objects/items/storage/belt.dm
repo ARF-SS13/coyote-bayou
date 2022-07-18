@@ -539,8 +539,8 @@
 	..()
 
 /obj/item/storage/belt/holster
-	name = "shoulder holster"
-	desc = "A holster to carry a handgun and ammo. WARNING: Badasses only."
+	name = "side holster"
+	desc = "A holster to carry a hefty gun and ammo. WARNING: Badasses only."
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
@@ -551,7 +551,7 @@
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
 	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
 	STR.can_hold = GLOB.gunbelt_allowed
@@ -592,8 +592,8 @@
 	new /obj/item/ammo_box/c4570(src)
 
 /obj/item/storage/belt/holster/legholster
-	name = "leg holster"
-	desc = "A holster to carry a handgun and ammo worn on the leg."
+	name = "hip holster"
+	desc = "A holster to carry a hefty gun and ammo. WARNING: Badasses only."
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"

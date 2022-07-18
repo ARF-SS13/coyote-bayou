@@ -524,6 +524,8 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/gun,
+	/obj/item/ammo_box,
+	/obj/item/ammo_casing,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/melee/onehanded/knife/hunting,
 	/obj/item/melee/baton,
