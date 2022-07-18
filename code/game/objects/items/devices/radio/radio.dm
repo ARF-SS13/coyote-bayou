@@ -203,6 +203,10 @@
 			. = TRUE
 		if("broadcast")
 			broadcasting = !broadcasting
+			if(broadcasting && on) //we dont need hearing sensitivity if we arent broadcasting, because talk_into doesnt care about hearing
+				become_hearing_sensitive(INNATE_TRAIT)
+			else if(!broadcasting)
+				lose_hearing_sensitivity(INNATE_TRAIT)
 			. = TRUE
 		if("channel")
 			var/channel = params["channel"]
