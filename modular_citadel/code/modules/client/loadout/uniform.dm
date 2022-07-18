@@ -118,6 +118,10 @@
 	name = "roving trader outfit"
 	path = /obj/item/clothing/under/f13/roving
 
+/datum/gear/uniform/gear_harness
+	name = "gear harness outfit"
+	path = /obj/item/clothing/under/misc/gear_harness
+
 /datum/gear/uniform/navy
 	name = "navy jumpsuit"
 	path = /obj/item/clothing/under/f13/navy
