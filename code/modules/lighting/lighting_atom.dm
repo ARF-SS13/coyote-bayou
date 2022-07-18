@@ -47,6 +47,11 @@
 		else
 			light = new/datum/light_source(src, .)
 
+/atom/movable/Moved(atom/OldLoc, Dir)
+	. = ..()
+	for (var/datum/light_source/light as anything in light_sources) // Cycle through the light sources on this atom and tell them to update.
+		light.source_atom.update_light()
+
 
 /**
  * Updates the atom's opacity value.
