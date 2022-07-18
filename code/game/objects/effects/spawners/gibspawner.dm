@@ -9,6 +9,7 @@
 	var/list/gibtypes = list() //typepaths of the gib decals to spawn
 	var/list/gibamounts = list() //amount to spawn for each gib decal type we'll spawn.
 	var/list/gibdirections = list() //of lists of possible directions to spread each gib decal type towards.
+	var/timer // how long until it decides to delete itself
 
 /obj/effect/gibspawner/Initialize(mapload, mob/living/source_mob, list/datum/disease/diseases, list/blood_dna)
 	. = ..()
@@ -81,6 +82,8 @@
 				if(isturf(loc))
 					if(directions.len)
 						gib.streak(directions)
+				if(timer)
+					QDEL_IN(gib, timer)
 
 	return INITIALIZE_HINT_QDEL
 
@@ -89,6 +92,7 @@
 	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
 	gibamounts = list(2, 2, 1)
 	sound_vol = 40
+	timer = 1 HOURS // sets it so gibs will despawn in 1 hour of being created :o
 
 /obj/effect/gibspawner/generic/Initialize()
 	if(!gibdirections.len)
