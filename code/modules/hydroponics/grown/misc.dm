@@ -517,7 +517,7 @@
 
 /obj/item/seeds/aloe
 	name = "pack of aloe seeds"
-	desc = "These seeds grow into aloe, a plant useful for treating burns."
+	desc = "These seeds grow into aloe, a plant useful for its antiseptic properties."
 	icon_state = "seed-aloe"
 	species = "aloe"
 	plantname = "Aloe"
@@ -529,7 +529,7 @@
 	yield = 6
 	growthstages = 5
 	growing_icon = 'icons/obj/hydroponics/growing_vegetables.dmi'
-	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/kelotane = 0.01)
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.05, /datum/reagent/consumable/nutriment = 0.05, /datum/reagent/medicine/kelotane = 0.01, /datum/reagent/consumable/aloejuice =  0.02)
 
 /obj/item/reagent_containers/food/snacks/grown/aloe
 	seed = /obj/item/seeds/aloe
