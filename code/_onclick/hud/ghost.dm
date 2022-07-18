@@ -81,7 +81,7 @@
 	HandlePlanes()
 
 /datum/hud/ghost/proc/HandlePlanes()
-	if(check_rights(R_ADMIN), 0)
+	if(check_rights(R_ADMIN, 0))
 		return
 	plane_masters["[OBJITEM_PLANE]"].Hide()
 	mymob.client.show_popup_menus = 0
