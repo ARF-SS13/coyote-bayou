@@ -5214,6 +5214,23 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
+"chY" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "cid" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "floor4-old"
@@ -5680,6 +5697,24 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"cmP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola/radioactive,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "cne" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/floor/f13{
@@ -6263,6 +6298,9 @@
 "cJr" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
+/area/f13/caves)
+"cKd" = (
+/turf/open/floor/plasteel/f13,
 /area/f13/caves)
 "cKq" = (
 /obj/structure/simple_door/bunker,
@@ -6941,6 +6979,13 @@
 	pixel_y = 29
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
+"dyU" = (
+/obj/structure/stairs/north{
+	color = "#A47449";
+	dir = 2
+	},
+/turf/open/floor/wood_common,
 /area/f13/caves)
 "dze" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -8635,10 +8680,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/structure/simple_door/metal/ventilation{
-	name = "drainage system"
-	},
-/turf/open/floor/plating/tunnel,
+/turf/closed/wall/rust,
 /area/f13/tunnel)
 "fmh" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8966,6 +9008,20 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/radiation)
+"fLs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "fLv" = (
 /obj/effect/decal/cleanable/oil{
 	icon_state = "floor5"
@@ -9726,6 +9782,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"gFQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "gGQ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -11002,6 +11062,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/tunnel)
+"ikS" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/reagent_containers/food/drinks/bottle/nukashine,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "ikT" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/wood_common,
@@ -13033,6 +13110,10 @@
 /obj/structure/lattice/catwalk,
 /turf/open/water,
 /area/f13/tunnel)
+"kwX" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "kxA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/fakelattice,
@@ -16588,6 +16669,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"opd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "opv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/destructible/tribal_torch/lit,
@@ -16848,6 +16935,11 @@
 	pixel_y = -27
 	},
 /turf/open/floor/plating/tunnel,
+/area/f13/caves)
+"oFU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/nukacolavendfull,
+/turf/open/floor/plasteel/f13,
 /area/f13/caves)
 "oGa" = (
 /obj/structure/barricade/wooden,
@@ -18649,6 +18741,13 @@
 "qsY" = (
 /turf/open/floor/wood_common,
 /area/f13/caves)
+"qtg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "qtA" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -19061,6 +19160,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"qOj" = (
+/obj/structure/reagent_dispensers/keg/hearty_punch,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "qOQ" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/rag,
@@ -19106,6 +19209,10 @@
 "qPX" = (
 /obj/structure/bed/oldalt,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
+"qQa" = (
+/obj/structure/reagent_dispensers/keg/mead,
+/turf/open/floor/plasteel/f13,
 /area/f13/caves)
 "qQF" = (
 /obj/structure/wreck/trash/four_barrels,
@@ -20890,6 +20997,21 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/caves)
+"sVs" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "sWp" = (
 /obj/structure/bookcase/manuals,
 /turf/open/floor/f13/wood,
@@ -22109,6 +22231,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
+"uqE" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "uqG" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -22174,6 +22314,24 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/tunnel)
+"uvv" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "uvI" = (
 /obj/structure/simple_door/bunker,
 /obj/effect/decal/cleanable/dirt,
@@ -22181,6 +22339,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
+"uwo" = (
+/obj/structure/simple_door/metal/ventilation{
+	name = "drainage system"
+	},
+/turf/closed/wall/r_wall/rust,
+/area/f13/tunnel)
 "uwX" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -22661,6 +22825,11 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
+/area/f13/caves)
+"uWL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13,
 /area/f13/caves)
 "uXj" = (
 /obj/structure/lattice/catwalk,
@@ -24125,6 +24294,23 @@
 /obj/item/toy/plush/beeplushie,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"wBu" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/smartfridge/bottlerack,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/effect/spawner/lootdrop/f13/alcoholspawner,
+/obj/item/reagent_containers/food/drinks/bottle/nukashine,
+/obj/item/reagent_containers/food/drinks/bottle/nukashine,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "wCh" = (
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt,
@@ -25254,6 +25440,12 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"xSG" = (
+/obj/structure/reagent_dispensers/keg/milk,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13,
+/area/f13/caves)
 "xTs" = (
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -36808,7 +37000,7 @@ lFa
 bsC
 bsC
 bsC
-lwe
+uwo
 bsC
 bsC
 bsC
@@ -37073,8 +37265,8 @@ bsC
 aak
 aak
 aak
-aae
-aae
+aak
+aak
 bOD
 bLL
 bOY
@@ -37330,8 +37522,8 @@ bsC
 aak
 aak
 aak
-aae
-aae
+aak
+aak
 bPe
 bLL
 bPn
@@ -37584,11 +37776,11 @@ dTO
 oib
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+aak
+aak
+aak
+aak
+aak
 bPe
 bLL
 tFU
@@ -37841,11 +38033,11 @@ bsC
 qIu
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+aaA
+aaA
+aaA
+aaA
+aaA
 uUw
 bLL
 sJK
@@ -38097,12 +38289,12 @@ yiX
 yiX
 dpM
 flD
-bJq
-aae
-aae
-aae
-aae
-aae
+bsC
+gFQ
+uWL
+dyU
+aaA
+aaA
 bOD
 bLL
 sAn
@@ -38355,11 +38547,11 @@ bsC
 lFa
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+gFQ
+qtg
+gFQ
+gFQ
+kwX
 bPe
 bLL
 bLL
@@ -38612,11 +38804,11 @@ bsC
 lFa
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+oFU
+opd
+uWL
+uWL
+qQa
 bPE
 omO
 bOR
@@ -38869,11 +39061,11 @@ bsC
 lFa
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+uqE
+uWL
+sVs
+gFQ
+fLs
 omO
 qdA
 bLL
@@ -39126,11 +39318,11 @@ bsC
 lFa
 bsC
 bsC
-aae
-aae
-aae
-aae
-aae
+chY
+uWL
+sVs
+gFQ
+chY
 bPE
 bLL
 bLL
@@ -39383,11 +39575,11 @@ bsC
 lFa
 bsC
 bCt
-aae
-aae
-aae
-aae
-aae
+cmP
+cKd
+wBu
+gFQ
+uvv
 bPE
 bOG
 bLL
@@ -39642,9 +39834,9 @@ bCt
 bCt
 bCt
 bCt
-aae
-aae
-aae
+ikS
+cKd
+xSG
 omO
 bLL
 bPF
@@ -39901,7 +40093,7 @@ bAY
 bCt
 bCt
 bCt
-aae
+qOj
 omO
 bLL
 omO

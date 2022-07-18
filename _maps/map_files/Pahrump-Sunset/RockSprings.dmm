@@ -8065,12 +8065,6 @@
 	icon_state = "outerturn"
 	},
 /area/f13/building/tunnel)
-"iGN" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 8
-	},
-/turf/open/floor/wood_wide,
-/area/f13/wasteland)
 "iGR" = (
 /obj/structure/railing/wood{
 	dir = 8;
@@ -13917,14 +13911,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "oHz" = (
-/obj/structure/flora/grass/wasteland{
-	icon_state = "tall_grass_4"
+/obj/machinery/recycler{
+	name = "Blesed Recycler";
+	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
+	light_range = 1
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/caves)
 "oHS" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -16712,14 +16705,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
-"ryZ" = (
-/obj/structure/flora/grass/wasteland,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/wasteland)
 "rzf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood/wings{
@@ -21395,9 +21380,7 @@
 /area/f13/wasteland)
 "wMp" = (
 /obj/structure/closet/crate/wicker,
-/obj/item/fishingrod{
-	pixel_x = -8
-	},
+/obj/item/fishingrod,
 /obj/item/fishingrod,
 /turf/open/floor/wood_wide,
 /area/f13/wasteland)
@@ -24254,7 +24237,7 @@ lyy
 seA
 jML
 foZ
-sBx
+oHz
 tRd
 aQn
 eKQ
@@ -30932,7 +30915,7 @@ sPf
 vZy
 rus
 viX
-ryZ
+cOL
 cOL
 sRP
 gzS
@@ -31186,11 +31169,11 @@ eff
 eff
 nEP
 nEP
-iGN
-iGN
 nEP
-rez
-oHz
+nEP
+gBR
+gBR
+sfW
 oLi
 nLB
 nQW
@@ -31443,10 +31426,10 @@ eff
 eff
 eff
 eff
-gBR
-gBR
 eff
-pNw
+gBR
+gBR
+gBR
 jGb
 fGs
 nLB
@@ -31702,7 +31685,7 @@ eff
 eff
 wMp
 gBR
-eff
+gBR
 eff
 rez
 jYA
@@ -32214,8 +32197,8 @@ xLw
 eff
 eff
 eff
-gBR
-gBR
+eff
+eff
 eff
 eff
 pNw
