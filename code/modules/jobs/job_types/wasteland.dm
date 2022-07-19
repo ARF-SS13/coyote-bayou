@@ -1105,7 +1105,7 @@ datum/job/wasteland/f13dendoctor
 	spawn_positions = -1
 	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe."
-	
+
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -1156,7 +1156,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal_r_combat_armor,
 		/datum/crafting_recipe/tribal_r_combat_armor_helmet,
 		/datum/crafting_recipe/tribalwar/chitinarmor,
-//		/datum/crafting_recipe/tribalwar/deathclawspear,
+		/datum/crafting_recipe/tribalwar/deathclawspear,
 		/datum/crafting_recipe/tribalwar/lightcloak,
 		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
 		/datum/crafting_recipe/warpaint,
@@ -1470,7 +1470,7 @@ datum/job/wasteland/f13dendoctor
 
 
 /////////////////
-////Redwater///// 
+////Redwater/////
 /////////////////
 
 //Redwater Slave
@@ -1524,7 +1524,7 @@ datum/job/wasteland/f13dendoctor
 
 	backpack_contents =  list(
 		/obj/item/reagent_containers/pill/healingpowder =1)
-							
+
 
 //Worker
 /datum/outfit/loadout/worker
@@ -1541,7 +1541,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/shoes/f13/diesel =1,
 		/obj/item/storage/backpack/duffelbag =1,
-		/obj/item/storage/box = 4, 
+		/obj/item/storage/box = 4,
 		/obj/item/book/granter/trait/trekking = 1)
 
 //Entertainer
@@ -1557,7 +1557,7 @@ datum/job/wasteland/f13dendoctor
 	name = "Sex Slave"
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
-		/obj/item/clothing/under/dress/skirt/swept =1, 
+		/obj/item/clothing/under/dress/skirt/swept =1,
 		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
