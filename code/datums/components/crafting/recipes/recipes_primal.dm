@@ -420,8 +420,6 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
-/* Host says get rid of deathclaw spear.
-
 /datum/crafting_recipe/tribalwar/deathclawspear
 	name = "Deathclaw Spear"
 	result = /obj/item/twohanded/spear/bonespear/deathclaw
@@ -433,7 +431,6 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
-*/
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"

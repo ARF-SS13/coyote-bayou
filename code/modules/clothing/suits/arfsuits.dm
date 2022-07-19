@@ -705,9 +705,9 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
 
 /obj/item/clothing/suit/hooded/cloak/shunter
-	name = "Quickclaw armour"
+	name = "quickclaw armour"
 	desc = "A suit of armour fashioned out of the remains of a legendary deathclaw, this one has been crafted to remove a good portion of its protection to improve on speed and trekking."
-	icon_state = "birdarmor_t"
+	icon_state = "birdarmor"
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/shunter
 	heat_protection = CHEST|GROIN|LEGS|ARMS|HANDS
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
@@ -717,8 +717,8 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
 
 /obj/item/clothing/head/hooded/cloakhood/shunter
-	name = "Quickclaw hood"
-	desc = "A hood madde of deathclaw hides, light while also being comfortable to wear, designed for speed."
+	name = "quickclaw hood"
+	desc = "A hood made of deathclaw hides, light while also being comfortable to wear, designed for speed."
 	icon_state = "birdhood"
 	heat_protection = HEAD
 	resistance_flags = FIRE_PROOF | ACID_PROOF
