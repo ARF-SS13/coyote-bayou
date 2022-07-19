@@ -8003,6 +8003,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/item/storage/part_replacer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aCi" = (
@@ -16771,6 +16772,7 @@
 /area/f13/building)
 "bfD" = (
 /obj/machinery/light/small,
+/obj/machinery/vending/cigarette,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bfE" = (
@@ -34791,7 +34793,6 @@
 /area/f13/wasteland)
 "iIm" = (
 /obj/structure/table,
-/obj/item/storage/part_replacer,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},

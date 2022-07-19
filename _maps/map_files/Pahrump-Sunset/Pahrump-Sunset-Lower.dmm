@@ -48,6 +48,21 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"aaM" = (
+/obj/effect/turf_decal/delivery,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
+	faction = list("raider");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "aaW" = (
 /obj/structure/chair/comfy/beige{
 	dir = 1
@@ -150,6 +165,14 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"afo" = (
+/obj/structure/nest/raider/ranged{
+	pixel_y = -27
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "afx" = (
 /obj/effect/turf_decal/loading_area,
 /turf/open/floor/plasteel/f13,
@@ -2068,7 +2091,6 @@
 "bIX" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -4031,6 +4053,14 @@
 /obj/item/stack/sheet/cardboard/fifty,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"bPp" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/caves)
 "bPr" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
@@ -7347,11 +7377,17 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "dSY" = (
-/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
-/area/f13/caves)
+/area/f13/clinic)
 "dTa" = (
 /turf/open/floor/plasteel/darkpurple/side{
 	dir = 1
@@ -8064,6 +8100,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/caves)
+"eDo" = (
+/mob/living/simple_animal/hostile/securitron/sentrybot,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/caves)
 "eDr" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/burger/rib,
@@ -8188,8 +8230,6 @@
 /area/f13/tunnel)
 "eIn" = (
 /obj/structure/closet,
-/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -8736,6 +8776,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"fpY" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/caves)
 "fqM" = (
 /obj/effect/decal/cleanable/generic,
 /turf/open/indestructible/ground/inside/mountain,
@@ -8874,6 +8921,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/caves)
+"fAx" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/turf/open/floor/f13{
+	icon_state = "purplefull"
+	},
+/area/f13/clinic)
 "fAC" = (
 /obj/item/trash/f13/bubblegum_large,
 /obj/effect/decal/cleanable/dirt,
@@ -11032,6 +11085,10 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/caves)
+"ihn" = (
+/obj/structure/nest/raider/melee,
+/turf/open/floor/f13/wood,
+/area/f13/tunnel)
 "ihq" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/books,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -11044,12 +11101,13 @@
 	},
 /area/f13/tunnel)
 "ihS" = (
-/obj/structure/table,
-/obj/item/reagent_containers/hypospray/combat,
-/turf/open/floor/f13{
-	icon_state = "purplefull"
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/melee,
+/turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
+	icon_state = "darkdirtysolid"
 	},
-/area/f13/caves)
+/area/f13/tunnel)
 "ijX" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -11168,6 +11226,12 @@
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
+	},
+/area/f13/caves)
+"iof" = (
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
+/turf/open/floor/f13{
+	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
 "iol" = (
@@ -11360,6 +11424,7 @@
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -12215,6 +12280,12 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
+"jsN" = (
+/mob/living/simple_animal/mouse/brown/Tom,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/tunnel)
 "jtb" = (
 /obj/machinery/vending/wallmed{
 	pixel_x = -30
@@ -17732,7 +17803,6 @@
 "pwb" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/effect/decal/remains/human,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -21010,6 +21080,10 @@
 /obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"sWm" = (
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "sWp" = (
 /obj/structure/bookcase/manuals,
 /turf/open/floor/f13/wood,
@@ -30515,7 +30589,7 @@ bxo
 bJE
 bJT
 bKi
-bJT
+fAx
 bJT
 bKL
 bJS
@@ -31826,10 +31900,10 @@ bHS
 bLu
 bHS
 bHS
-bOb
 bLa
 bLa
-jsj
+bLa
+dSY
 bxo
 aaa
 aae
@@ -32594,7 +32668,7 @@ bLa
 bLa
 xfk
 vup
-bLa
+bOb
 bNl
 bLu
 bLa
@@ -33114,7 +33188,7 @@ bHS
 bLa
 bOk
 bLa
-jsj
+dSY
 bxo
 aaa
 aae
@@ -38826,7 +38900,7 @@ aaa
 aaA
 pRy
 xpI
-mVb
+fpY
 pRy
 aaA
 aaa
@@ -39339,7 +39413,7 @@ aaA
 aaA
 aaA
 bvn
-ihS
+mVb
 uLF
 iol
 aaA
@@ -40892,7 +40966,7 @@ aaA
 bxs
 aaA
 mjz
-mjz
+iof
 mjz
 aaA
 ajF
@@ -41148,7 +41222,7 @@ ouC
 aaA
 ouC
 aaA
-aaA
+mjz
 aaA
 aaA
 aaA
@@ -41164,7 +41238,7 @@ aaA
 pbi
 aaA
 aaA
-dSY
+ajF
 ajF
 ajF
 eIn
@@ -41421,7 +41495,7 @@ cGl
 ajF
 vBY
 aaA
-aMv
+aZy
 nIE
 shB
 uVz
@@ -43194,7 +43268,7 @@ aaA
 lkD
 dwM
 ouC
-cWp
+eDo
 oXb
 aaA
 dwM
@@ -43213,7 +43287,7 @@ acX
 ima
 aaA
 ajF
-ima
+bPp
 ajF
 aaA
 ajF
@@ -60365,7 +60439,7 @@ bKb
 bPR
 bPR
 bKb
-bKb
+jsN
 bKb
 bKb
 bKb
@@ -62607,7 +62681,7 @@ aak
 bCt
 lEE
 fOG
-jdR
+aaM
 jdR
 jdR
 owp
@@ -63185,7 +63259,7 @@ bJq
 bKb
 tGP
 rqX
-yih
+ihS
 elZ
 bsC
 dli
@@ -63696,7 +63770,7 @@ nJc
 bKb
 dHk
 dHk
-bKb
+afo
 bsC
 qqi
 nSM
@@ -64717,7 +64791,7 @@ boU
 boU
 boU
 boU
-boU
+sWm
 boU
 boU
 bIj
@@ -66003,7 +66077,7 @@ bsC
 mab
 mby
 qPV
-mVE
+ihn
 mby
 dhP
 oNM
@@ -67297,7 +67371,7 @@ bJq
 bKb
 bOl
 aah
-aah
+bHl
 aah
 bGZ
 aah
@@ -73745,12 +73819,12 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
 aaB
-aae
+aaa
 aae
 bsC
 bNY
@@ -74002,12 +74076,12 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
 aaB
-aae
+aaa
 aae
 bsC
 bsC
@@ -74259,13 +74333,13 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -74516,14 +74590,14 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
 aaB
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -74773,14 +74847,14 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 hlL
 hlL
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -75029,14 +75103,14 @@ abP
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
 xZB
 xZB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -75286,14 +75360,14 @@ abP
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aak
 hlL
 hlL
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -75543,14 +75617,14 @@ abP
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aak
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -75800,14 +75874,14 @@ abP
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
 aaB
 aaB
 aak
-aak
+aaa
 aak
 aae
 aae
@@ -76057,14 +76131,14 @@ abP
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
 aaB
 aaB
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -76313,7 +76387,7 @@ abP
 abP
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -76321,7 +76395,7 @@ aaB
 aaB
 aak
 aak
-aae
+aaa
 aak
 aak
 aae
@@ -76570,7 +76644,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
@@ -76578,7 +76652,7 @@ aaB
 aaB
 aak
 aak
-aak
+aaa
 aak
 aak
 aae
@@ -76827,7 +76901,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aaB
@@ -76835,7 +76909,7 @@ aaB
 aak
 aak
 aak
-aak
+aaa
 aak
 aak
 aak
@@ -77084,7 +77158,7 @@ aaD
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 hlL
@@ -77092,7 +77166,7 @@ hlL
 aak
 aak
 aak
-aae
+aaa
 aae
 aae
 aae
@@ -77340,7 +77414,7 @@ htv
 adt
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -77350,7 +77424,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -77597,7 +77671,7 @@ bPv
 bPL
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -77607,7 +77681,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -77854,7 +77928,7 @@ bPs
 htv
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -77864,7 +77938,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78111,7 +78185,7 @@ bPv
 dEL
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78121,7 +78195,7 @@ aae
 aaB
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78368,7 +78442,7 @@ htv
 adt
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78378,7 +78452,7 @@ aaB
 aaB
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78624,7 +78698,7 @@ bPD
 aaD
 aaD
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78635,7 +78709,7 @@ aaB
 aaB
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78881,7 +78955,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -78892,7 +78966,7 @@ aae
 aaB
 aae
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -79138,7 +79212,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79149,7 +79223,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -79394,7 +79468,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79406,7 +79480,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -79651,7 +79725,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79663,7 +79737,7 @@ aae
 aae
 aaB
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -79908,7 +79982,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -79920,7 +79994,7 @@ aae
 aae
 aaB
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -80165,7 +80239,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80177,7 +80251,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -80422,7 +80496,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80434,7 +80508,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -80679,7 +80753,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -80691,7 +80765,7 @@ aaB
 aaB
 aaB
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -80935,8 +81009,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -80948,7 +81022,7 @@ aaB
 aaB
 aae
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -81192,7 +81266,7 @@ aak
 aak
 aak
 aak
-aak
+aaa
 aak
 aae
 aae
@@ -81205,7 +81279,7 @@ aaB
 aae
 aae
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -81449,7 +81523,7 @@ aak
 aak
 aak
 aak
-aak
+aaa
 aak
 aae
 aae
@@ -81462,7 +81536,7 @@ aaB
 aae
 aae
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -81706,7 +81780,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -81718,8 +81792,8 @@ hlL
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aak
@@ -81963,7 +82037,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aak
 aak
 aak
@@ -81975,7 +82049,7 @@ xZB
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -82219,7 +82293,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aak
 aae
@@ -82231,8 +82305,8 @@ hlL
 hlL
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -82476,7 +82550,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aak
@@ -82488,7 +82562,7 @@ aaB
 aaB
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -82733,7 +82807,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aak
 aaB
@@ -82744,8 +82818,8 @@ aaB
 aaB
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -82990,7 +83064,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aak
 aae
 aaB
@@ -83001,7 +83075,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83247,7 +83321,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aak
 aae
@@ -83258,7 +83332,7 @@ aaB
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83504,8 +83578,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aak
 aae
 aae
@@ -83515,7 +83589,7 @@ aaB
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83762,7 +83836,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -83772,7 +83846,7 @@ aaB
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84019,7 +84093,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84029,7 +84103,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84276,8 +84350,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -84286,7 +84360,7 @@ aae
 aaB
 aaB
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84534,7 +84608,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84543,7 +84617,7 @@ aae
 aaB
 aaB
 aae
-aak
+aaa
 aae
 aae
 aae
@@ -84791,7 +84865,7 @@ aae
 aae
 aae
 aae
-aae
+aaa
 aae
 aae
 aae
@@ -84800,7 +84874,7 @@ aae
 aaB
 aaB
 aak
-aak
+aaa
 aae
 aae
 aae
