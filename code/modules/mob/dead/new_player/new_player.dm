@@ -656,7 +656,7 @@
 	src << browse(null, "window=preferences") //closes job selection
 	src << browse(null, "window=mob_occupation")
 	src << browse(null, "window=latechoices") //closes late job selection
-// test
+
 /*	Used to make sure that a player has a valid job preference setup, used to knock players out of eligibility for anything if their prefs don't make sense.
 	A "valid job preference setup" in this situation means at least having one job set to low, or not having "return to lobby" enabled
 	Prevents "antag rolling" by setting antag prefs on, all jobs to never, and "return to lobby if preferences not availible"
