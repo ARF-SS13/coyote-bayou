@@ -73,6 +73,7 @@ Raider
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/radio/redwater = 1,
 		)
 
 
