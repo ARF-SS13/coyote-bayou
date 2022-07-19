@@ -1548,6 +1548,10 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"gZe" = (
+/obj/structure/window/fulltile/house,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "hac" = (
 /obj/structure/window/reinforced,
 /obj/effect/decal/cleanable/generic,
@@ -5481,7 +5485,8 @@
 "ykR" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Mayor's Quarters";
-	req_one_access_txt = "62"
+	req_one_access_txt = "62";
+	req_access_txt = null
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -20052,7 +20057,7 @@ wAV
 wAV
 mha
 vvS
-hMq
+gZe
 dtb
 hqx
 nkA
@@ -20309,7 +20314,7 @@ cdN
 cdN
 vvS
 rMZ
-hMq
+gZe
 dtb
 dtb
 nkA
@@ -21851,8 +21856,8 @@ lHD
 cdN
 cdN
 cdN
-aju
-hMq
+cdN
+gZe
 bXX
 hqx
 dtb
@@ -22108,7 +22113,7 @@ cdN
 cdN
 cdN
 axq
-cdN
+aju
 hMq
 ina
 nkA
@@ -22364,7 +22369,7 @@ hMq
 hMq
 bJX
 hMq
-hMq
+gZe
 hMq
 hMq
 sJX
