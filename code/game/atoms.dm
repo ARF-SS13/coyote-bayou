@@ -37,6 +37,9 @@
 	///overlays managed by update_overlays() to prevent removing overlays that weren't added by the same proc
 	var/list/managed_overlays
 
+	///AI controller that controls this atom. type on init, then turned into an instance during runtime
+	var/datum/ai_controller/ai_controller
+
 	var/datum/proximity_monitor/proximity_monitor
 	var/fingerprintslast
 
@@ -174,6 +177,7 @@
 	targeted_by = null
 
 	QDEL_NULL(light)
+	QDEL_NULL(ai_controller)
 
 	return ..()
 
@@ -327,6 +331,16 @@
 
 /atom/proc/Bumped(atom/movable/AM)
 	set waitfor = FALSE
+
+/**
+* Instantiates the AI controller of this atom. Override this if you want to assign variables first.
+*
+* This will work fine without manually passing arguments.
+
++*/
+/atom/proc/InitializeAIController()
+	if(ispath(ai_controller))
+		ai_controller = new ai_controller(src)
 
 // Convenience procs to see if a container is open for chemistry handling
 /atom/proc/is_open_container()
@@ -915,6 +929,13 @@
 		var/newname = input(usr, "What do you want to rename this to?", "Automatic Rename") as null|text
 		if(newname)
 			vv_auto_rename(newname)
+	if(href_list[VV_HK_ADD_AI])
+		if(!check_rights(R_VAREDIT))
+			return
+		var/result = input(usr, "Choose the AI controller to apply to this atom WARNING: Not all AI works on all atoms.", "AI controller") as null|anything in subtypesof(/datum/ai_controller)
+		if(!result)
+			return
+		ai_controller = new result(src)
 
 /atom/vv_get_header()
 	. = ..()
