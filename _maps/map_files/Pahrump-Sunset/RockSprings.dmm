@@ -820,6 +820,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 2
 	},
+/obj/structure/fence/wooden{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "baj" = (
@@ -3910,6 +3913,9 @@
 	dir = 8;
 	pixel_x = -15
 	},
+/obj/structure/fence/corner/wooden{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "egL" = (
@@ -5575,6 +5581,9 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
+	},
+/obj/structure/fence/wooden{
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -10694,6 +10703,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"lgP" = (
+/mob/living/simple_animal/chicken{
+	faction = s
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "lgV" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -11203,6 +11218,9 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
+	},
+/obj/structure/fence/wooden{
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -11975,6 +11993,15 @@
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/grassybush,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"mCn" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/fence/wooden{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "mCp" = (
@@ -15156,6 +15183,21 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"pNV" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 2
+	},
+/obj/structure/fence/wooden{
+	dir = 4
+	},
+/obj/structure/fence/wooden{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "pOG" = (
 /obj/structure/fence/cut/large{
 	dir = 4
@@ -17517,6 +17559,16 @@
 "sfW" = (
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"sfZ" = (
+/obj/structure/flora/grass/coyote/twentyseven,
+/obj/structure/fence/wooden{
+	dir = 1
+	},
+/obj/structure/fence/corner/wooden{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "sgu" = (
 /obj/structure/fence/wooden{
 	dir = 4
@@ -19645,6 +19697,9 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
+	},
+/obj/structure/fence/wooden{
+	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -21884,13 +21939,11 @@
 /turf/open/floor/wood_common,
 /area/f13/village)
 "xcG" = (
-/obj/structure/flora/tree/jungle{
-	color = "#d9b51c"
+/mob/living/simple_animal/hostile/wolf/playable/sheepdog{
+	faction = list("neutral");
+	name = "Serdy"
 	},
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/water/running,
+/turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "xcL" = (
 /obj/structure/simple_door/interior,
@@ -32180,7 +32233,7 @@ eff
 eff
 gBR
 kVc
-eff
+gBR
 eff
 pNw
 wzr
@@ -33477,8 +33530,8 @@ nEP
 rez
 ntT
 seL
-tmJ
-xux
+xcG
+lgP
 fHN
 lVh
 nNW
@@ -35271,9 +35324,9 @@ ajO
 tGR
 nQW
 efI
-otE
-vgG
-xcG
+mCn
+pNV
+bRw
 eff
 hqe
 eff
@@ -36043,19 +36096,19 @@ nQW
 nQW
 nQW
 nQW
-bLw
-otE
+sfZ
+mCn
 uEV
-otE
+mCn
 fTS
 fTS
 fTS
-otE
+mCn
 lMp
-otE
-otE
-otE
-otE
+mCn
+mCn
+mCn
+mCn
 lVL
 lVL
 lVL
