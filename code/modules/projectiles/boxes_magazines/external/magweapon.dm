@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/mmag
 	icon_state = "mediummagmag"
 	ammo_type = /obj/item/ammo_casing/caseless/magnetic/disabler
-	caliber = "mag"
+	caliber = list(CALIBER_MAGNETIC)
 	max_ammo = 24
 	multiple_sprites = 2
 
@@ -23,7 +23,7 @@
 	name = "hyper-burst rifle magazine"
 	icon_state = "hypermag"
 	ammo_type = /obj/item/ammo_casing/caseless/magnetic/hyper
-	caliber = "hypermag"
+	caliber = list(CALIBER_MAGNETIC_HYPER)
 	desc = "A magazine for the Hyper-Burst Rifle. Loaded with a special slug that fragments into 6 smaller shards which can absolutely puncture anything, but has rather short effective range."
 	max_ammo = 4
 	multiple_sprites = 4

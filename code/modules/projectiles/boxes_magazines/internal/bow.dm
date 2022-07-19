@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/bow
 	name = "bow internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
-	caliber = "arrow"
+	caliber = list(CALIBER_ARROW)
 	max_ammo = 1
 
 
@@ -14,7 +14,6 @@
 /obj/item/ammo_box/magazine/internal/bow/claw
 	name = "bow internal magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/arrow
-	caliber = "arrow"
 	max_ammo = 7 // 8 shots in total
 
 //Sturdy Bow Ammo

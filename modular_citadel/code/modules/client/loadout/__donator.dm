@@ -58,9 +58,9 @@
 	new /obj/item/clothing/suit/armor/medium/combat(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
 	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
-	new /obj/item/ammo_box/magazine/m9mmds(src)
-	new /obj/item/ammo_box/magazine/m9mmds(src)
-	new /obj/item/ammo_box/magazine/m9mmds(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
 	new /obj/item/melee/rapier(src)
 
 /datum/gear/donator/kits/sugga

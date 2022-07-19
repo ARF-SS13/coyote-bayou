@@ -79,11 +79,11 @@
 	if(.)
 		return
 	if(istype(A, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = A
-		if(istype(AM, mag_type))
+		var/obj/item/ammo_box/magazine/new_mag = A
+		if(istype(new_mag, mag_type))
 			var/obj/item/ammo_box/magazine/oldmag = magazine
-			if(user.transferItemToLoc(AM, src))
-				magazine = AM
+			if(user.transferItemToLoc(new_mag, src))
+				magazine = new_mag
 				if(oldmag)
 					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
 					oldmag.forceMove(get_turf(src.loc))
@@ -248,6 +248,7 @@
 	item_state = "shotgun"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22smg
+	init_mag_type = /obj/item/ammo_box/magazine/m22smg
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -288,6 +289,7 @@
 	item_state = "14toploader"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
+	init_mag_type = /obj/item/ammo_box/magazine/smg14
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -326,6 +328,7 @@
 	item_state = "smg9mm"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/greasegun
+	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -446,8 +449,9 @@
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
 	icon_prefix = "smg10mm"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
+	extra_mag_types = list(/obj/item/ammo_box/magazine/cg45)
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -486,7 +490,6 @@
 /obj/item/gun/ballistic/automatic/smg/smg10mm/worn
 	name = "worn-out 10mm submachine gun"
 	desc = "Mass-produced weapon from the Great War, this one has seen use ever since. Grip is wrapped in tape to keep the plastic from crumbling, the metals are oxidizing, but the gun still works."
-	init_mag_type = /obj/item/ammo_box/magazine/m10mm_adv/ext
 	worn_out = TRUE
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
@@ -542,7 +545,8 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	init_mag_type = /obj/item/ammo_box/magazine/greasegun/uzim9mm
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -608,6 +612,8 @@
 	icon_state = "cg45"
 	item_state = "cg45"
 	mag_type = /obj/item/ammo_box/magazine/cg45
+	init_mag_type = /obj/item/ammo_box/magazine/cg45
+	extra_mag_types = list(/obj/item/ammo_box/magazine/m10mm)
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -676,6 +682,7 @@
 	name = "Storm Drum"
 	desc = "A recovered ancient Thompson from an armory far up North. Commonly used by raiders of the White Legs tribe."
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -709,6 +716,7 @@
 	item_state = "m90"
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -777,7 +785,8 @@
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	icon_state = "mp5"
 	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	mag_type = /obj/item/ammo_box/magazine/greasegun
+	init_mag_type = /obj/item/ammo_box/magazine/greasegun/uzim9mm
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -817,6 +826,7 @@
 	slowdown = 0.3
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/pps9mm
+	init_mag_type = /obj/item/ammo_box/magazine/pps9mm
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -865,7 +875,8 @@
 	desc = "The M1 Carbine was mass produced during some old war, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
 	icon_state = "m1carbine"
 	item_state = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv
+	mag_type = /obj/item/ammo_box/magazine/m10mm
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -992,7 +1003,8 @@
 	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. Chambered in 9mm."
 	icon_state = "delisle"
 	item_state = "varmintrifle"
-	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	mag_type = /obj/item/ammo_box/magazine/m9mm
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1025,7 +1037,8 @@
 	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. This modified version is often used by the Brotherhood of Steel. Its stock has been replaced by post-war polymer furniture, with space to mount a scope. Chambered in .45 ACP."
 	icon_state = "commando"
 	item_state = "commando"
-	mag_type = /obj/item/ammo_box/magazine/m45exp
+	mag_type = /obj/item/ammo_box/magazine/m45
+	init_mag_type = /obj/item/ammo_box/magazine/m45/socom
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1062,7 +1075,8 @@
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
-	mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1227,6 +1241,7 @@
 	item_state = "servicerifle"
 	icon_prefix = "servicerifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1263,7 +1278,6 @@
 	desc = "A 5.56x45mm rifle custom built off of a reproduction model AR15-style weapon. Sports a fancy holographic sight picture, forward grip, and a comfortable synthetic thumbhole stock. Bang bang."
 	icon_state = "alr15"
 	item_state = "alr15"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1336,6 +1350,7 @@
 	icon_state = "marksman_rifle"
 	item_state = "marksman"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1385,7 +1400,6 @@
 	icon_prefix = "assault_carbine"
 	icon_state = "rifle-police"
 	item_state = "assault_carbine"
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -1422,6 +1436,7 @@
 	icon_prefix = "308"
 	force = 20
 	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/m762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1468,6 +1483,7 @@
 	icon_state = "slr"
 	item_state = "slr"
 	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/m762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1513,6 +1529,7 @@
 	item_state = "rifle"
 	icon_prefix = "308"
 	mag_type = /obj/item/ammo_box/magazine/garand308
+	init_mag_type = /obj/item/ammo_box/magazine/garand308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1634,6 +1651,7 @@
 	icon_state = "sks"
 	item_state = "sks"
 	mag_type = /obj/item/ammo_box/magazine/sks
+	init_mag_type = /obj/item/ammo_box/magazine/sks
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1676,6 +1694,7 @@
 	icon_state = "sniper_rifle"
 	item_state = "sniper_rifle"
 	mag_type = /obj/item/ammo_box/magazine/w308
+	init_mag_type = /obj/item/ammo_box/magazine/w308
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1857,6 +1876,7 @@
 	icon_state = "assault_rifle"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1898,7 +1918,6 @@
 	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
-	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1940,6 +1959,7 @@
 	icon_state = "r93"
 	item_state = "r93"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1979,6 +1999,7 @@
 	item_state = "handmade_rifle"
 	icon_prefix = "handmade_rifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2054,6 +2075,7 @@
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2093,6 +2115,7 @@
 	icon_prefix = "assault_carbine"
 	slot_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/m5mm
+	init_mag_type = /obj/item/ammo_box/magazine/m5mm
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2199,6 +2222,8 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/
+	extra_mag_types = list(/obj/item/ammo_box/magazine/w308)
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2233,7 +2258,8 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "BAR"
 	item_state = "BAR"
 	icon_prefix = "rifle"
-	mag_type = /obj/item/ammo_box/magazine/m762/ext
+	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/m762/ext
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2266,6 +2292,7 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "g11"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/m473
+	init_mag_type = /obj/item/ammo_box/magazine/m473
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2305,7 +2332,8 @@ obj/item/gun/ballistic/automatic/bar
 	item_state = "m90"
 	icon_state = "WT550"
 	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m473/small
+	mag_type = /obj/item/ammo_box/magazine/m473
+	init_mag_type = /obj/item/ammo_box/magazine/m473/small
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -2355,6 +2383,7 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "R84"
 	item_state = "R84"
 	mag_type = /obj/item/ammo_box/magazine/lmg
+	init_mag_type = /obj/item/ammo_box/magazine/lmg
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2393,6 +2422,7 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "lsw"
 	item_state = "lsw"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 0.8
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2437,6 +2467,7 @@ obj/item/gun/ballistic/automatic/bar
 	slot_flags = 0
 	slowdown = 1.25
 	mag_type = /obj/item/ammo_box/magazine/mm762
+	init_mag_type = /obj/item/ammo_box/magazine/mm762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
@@ -2527,6 +2558,7 @@ obj/item/gun/ballistic/automatic/bar
 	item_state = "sniper"
 	slot_flags = SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
+	init_mag_type = /obj/item/ammo_box/magazine/m2mm
 
 	slowdown = GUN_SLOWDOWN_RIFLE_GAUSS
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2562,6 +2594,7 @@ obj/item/gun/ballistic/automatic/bar
 	icon_state = "xl70e3"
 	item_state = "xl70e3"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY

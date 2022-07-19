@@ -335,11 +335,11 @@
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 4
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	automatic = 1
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 

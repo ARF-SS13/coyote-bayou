@@ -4,8 +4,16 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/spawnwithmagazine = TRUE
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm_adv //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm/adv //Removes the need for max_ammo and caliber 
 	var/init_mag_type = null
+	var/list/extra_mag_types = list()
+	/// List of mags accepted by the gun
+	/// defaults to a typecache of mag_type
+	/// Dont set this, its handled by Init()
+	var/list/allowed_mags = list()
+	/// List of mags not accepted by the gun
+	var/list/disallowed_mags = list()
+	/// Loaded magazine
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
@@ -13,14 +21,19 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if(!spawnwithmagazine)
-		update_icon()
-		return
-	if (!magazine)
-		if(init_mag_type)
-			magazine = new init_mag_type(src)
-		else
-			magazine = new mag_type(src)
+	if(spawnwithmagazine)
+		if (!magazine)
+			if(init_mag_type)
+				magazine = new init_mag_type(src)
+			else
+				magazine = new mag_type(src)
+	allowed_mags |= mag_type
+	allowed_mags |= typecacheof(mag_type)
+	if(length(extra_mag_types))
+		for(var/obj/item/ammo_box/ammo_type in extra_mag_types)
+			extra_mag_types |= typecacheof(ammo_type.type)
+	if(length(disallowed_mags))
+		allowed_mags -= disallowed_mags
 	chamber_round()
 	update_icon()
 
@@ -56,37 +69,52 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
-	if(istype(src.magazine,/obj/item/ammo_box/magazine/internal))
-		if(.)
-			return
-		var/num_loaded = magazine.attackby(A, user, params, 1)
-		if(num_loaded)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
-			A.update_icon()
-			update_icon()
-			chamber_round(0)
-	else if(istype(A, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = A
-		if (!magazine && istype(AM, mag_type))
-			if(user.transferItemToLoc(AM, src))
-				magazine = AM
-				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
-				if(magazine.ammo_count())
-					playsound(src, "gun_insert_full_magazine", 70, 1)
-					if(!chambered)
-						chamber_round()
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
-				else
-					playsound(src, "gun_insert_empty_magazine", 70, 1)
+	if(istype(magazine, /obj/item/ammo_box))
+		if(magazine.fixed_mag)
+			if(.)
+				return FALSE
+			var/num_loaded = magazine.attackby(A, user, params, 1)
+			if(num_loaded)
+				to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
+				playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
 				A.update_icon()
 				update_icon()
-				return 1
-			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				chamber_round(0)
+				return TRUE
+		else
+			var/obj/item/ammo_box/new_mag = A
+			var/obj/item/ammo_box/old_mag = magazine
+
+			if(!(new_mag.type in allowed_mags))
+				to_chat(user, "<span class='notice'>You can't seem to fit \the [new_mag] into \the [src].</span>")
 				return
-		else if (magazine)
-			to_chat(user, "<span class='notice'>There's already a magazine in \the [src].</span>")
+
+			if(istype(old_mag))
+				attack_self(user)
+				/* to_chat(user, "<span class='notice'>You tactically eject \the [src]'s [old_mag].</span>")
+				old_mag.forceMove(get_turf(src.loc))
+				old_mag.update_icon()
+				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1) */
+
+			if(user.transferItemToLoc(new_mag, src))
+				magazine = new_mag
+				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
+			else
+				to_chat(user, "<span class='warning'>You cannot seem to get \the [new_mag] out of your hands!</span>")
+				return
+			
+			if(magazine.ammo_count())
+				playsound(src, "gun_insert_full_magazine", 70, 1)
+				if(!chambered)
+					chamber_round()
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
+			else
+				playsound(src, "gun_insert_empty_magazine", 70, 1)
+
+			A.update_icon()
+			update_icon()
+			return TRUE
+
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
 		if(!can_suppress)
@@ -103,7 +131,7 @@
 			install_suppressor(A)
 			update_overlays()
 			return
-	return 0
+	return FALSE
 
 /obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
 	// this proc assumes that the suppressor is already inside src

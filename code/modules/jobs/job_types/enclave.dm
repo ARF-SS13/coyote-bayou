@@ -151,7 +151,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/lsw
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		)
 
@@ -258,7 +258,7 @@
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/pda = 1,
 		/obj/item/storage/bag/money/small/wastelander = 1,
-		/obj/item/ammo_box/magazine/uzim9mm = 2,
+		/obj/item/ammo_box/magazine/greasegun/uzim9mm = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		)
 
