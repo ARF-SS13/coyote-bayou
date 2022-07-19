@@ -3,6 +3,9 @@
 	var/matrix/ntransform = matrix(transform) //aka transform.Copy()
 	var/final_pixel_y = pixel_y
 	var/changed = 0
+
+	appearance_flags |= PIXEL_SCALE
+
 	if(lying != lying_prev && rotate_on_lying)
 		changed++
 		ntransform.TurnTo(lying_prev,lying)

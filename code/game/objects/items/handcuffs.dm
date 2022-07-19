@@ -257,7 +257,7 @@
 	icon_state = "[initial(icon_state)][armed]"
 	
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = .proc/spring_trap,
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -273,40 +273,54 @@
 		icon_state = "[initial(icon_state)][armed]"
 		to_chat(user, "<span class='notice'>[src] is now [armed ? "armed" : "disarmed"]</span>")
 
-/obj/item/restraints/legcuffs/beartrap/proc/handle_enter(AM as mob|obj)
-	if(armed && isturf(src.loc))
-		if(isliving(AM))
-			var/mob/living/L = AM
-			var/snap = FALSE
-			var/def_zone = BODY_ZONE_CHEST
-			if(iscarbon(L))
-				var/mob/living/carbon/C = L
-				if(!C.lying)
-					def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-					if(!C.legcuffed && C.get_num_legs(FALSE) >= 2) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
-						snap = TRUE
-						C.legcuffed = src
-						forceMove(C)
-						C.update_equipment_speed_mods()
-						C.update_inv_legcuffed()
-						SSblackbox.record_feedback("tally", "handcuffs", 1, type)
-			else if(isanimal(L))
-				var/mob/living/simple_animal/SA = L
-				if(SA.mob_size > MOB_SIZE_TINY)
-					snap = TRUE
-			if(L.movement_type & (FLYING | FLOATING))
-				snap = FALSE
-			if(snap)
-				armed = FALSE
-				icon_state = "[initial(icon_state)][armed]"
-				playsound(src.loc, 'sound/effects/snap.ogg', 50, 1)
-				L.visible_message("<span class='danger'>[L] triggers \the [src].</span>", \
-						"<span class='userdanger'>You trigger \the [src]!</span>")
-				L.apply_damage(trap_damage, BRUTE, def_zone)
-
-/obj/item/restraints/legcuffs/beartrap/proc/on_entered(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/proc/spring_trap(datum/source, atom/movable/AM, thrown_at = FALSE)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/handle_enter, AM)
+	if(!armed || !isturf(loc) || !isliving(AM))
+		return
+	var/mob/living/L = AM
+	var/snap = TRUE
+	// if(istype(L.buckled, /obj/vehicle))
+	// 	var/obj/vehicle/ridden_vehicle = L.buckled
+	// 	if(!ridden_vehicle.are_legs_exposed) //close the trap without injuring/trapping the rider if their legs are inside the vehicle at all times.
+	// 		close_trap()
+	// 		ridden_vehicle.visible_message(span_danger("[ridden_vehicle] triggers \the [src]."))
+
+	if(!thrown_at && L.movement_type & (FLYING|FLOATING)) //don't close the trap if they're flying/floating over it.
+		snap = FALSE
+
+	var/def_zone = BODY_ZONE_CHEST
+	if(snap && iscarbon(L))
+		var/mob/living/carbon/C = L
+		if(!C.lying)
+			def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+			if(!C.legcuffed) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
+				INVOKE_ASYNC(C, /mob/living/carbon.proc/equip_to_slot, src, SLOT_LEGCUFFED)
+				SSblackbox.record_feedback("tally", "handcuffs", 1, type)
+	else if(snap && isanimal(L))
+		var/mob/living/simple_animal/SA = L
+		if(SA.mob_size <= MOB_SIZE_TINY) //don't close the trap if they're as small as a mouse.
+			snap = FALSE
+	if(snap)
+		close_trap()
+		if(!thrown_at)
+			L.visible_message(span_danger("[L] triggers \the [src]."), \
+					span_userdanger("You trigger \the [src]!"))
+		else
+			L.visible_message(span_danger("\The [src] ensnares [L]!"), \
+					span_userdanger("\The [src] ensnares you!"))
+		L.apply_damage(trap_damage, BRUTE, def_zone)
+
+/**
+ * Closes a bear trap
+ *
+ * Closes a bear trap.
+ * Arguments:
+ */
+/obj/item/restraints/legcuffs/beartrap/proc/close_trap()
+	armed = FALSE
+	update_icon()
+	playsound(src, 'sound/effects/snap.ogg', 50, TRUE)
+
 /obj/item/restraints/legcuffs/beartrap/energy
 	name = "energy snare"
 	armed = TRUE
