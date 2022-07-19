@@ -30,6 +30,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/tribalwar/lighttribe,
 	/datum/crafting_recipe/tribalwar/heavytribe,
 	/datum/crafting_recipe/tribalwar/legendaryclawcloak,
+	/datum/crafting_recipe/tribalwar/deathclawspear,
 	/datum/crafting_recipe/warpaint,
 	/datum/crafting_recipe/tribalradio,
 	/datum/crafting_recipe/tribalwar/goliathcloak,
