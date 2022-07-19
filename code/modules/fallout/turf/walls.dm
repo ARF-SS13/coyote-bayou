@@ -303,10 +303,10 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	update_icon()
 	in_use = TRUE
 	if(!do_after(user, 50, target = src))
-		icon_state = "matrix"
+		icon_state = initial(matrix)
 		in_use = FALSE
 		return
-	icon_state = "matrix"
+	icon_state = initial(matrix)
 	in_use = FALSE
 	update_icon()
 	var/dat = "[key_name(user)] has despawned [departing_mob == user ? "themselves" : departing_mob], job [departing_mob.job], at [AREACOORD(src)]. Contents despawned along:"
