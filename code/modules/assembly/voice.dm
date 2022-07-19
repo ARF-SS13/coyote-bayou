@@ -22,6 +22,10 @@
 								"recognizer",
 								"voice sensor")
 
+/obj/item/assembly/voice/Initialize(mapload)
+	. = ..()
+	become_hearing_sensitive(ROUNDSTART_TRAIT)
+
 /obj/item/assembly/voice/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Use a multitool to swap between \"inclusive\", \"exclusive\", \"recognizer\", and \"voice sensor\" mode.</span>"

@@ -18108,7 +18108,6 @@
 /obj/effect/overlay/junk/toilet{
 	pixel_y = 12
 	},
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
 "pOD" = (
@@ -24542,11 +24541,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
-"wSS" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white,
-/area/f13/caves)
 "wSW" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -83738,7 +83732,7 @@ fap
 mmz
 qNw
 ezZ
-wSS
+ttk
 dqz
 uaH
 lYT

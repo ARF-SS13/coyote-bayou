@@ -1519,6 +1519,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/redwatersalve
 	name = "Redwater Slave"
 	uniform = /obj/item/clothing/under/f13/rag
+	back = /obj/item/storage/backpack/satchel/explorer
 	neck = /obj/item/electropack/shockcollar/explosive
 
 	backpack_contents =  list(
