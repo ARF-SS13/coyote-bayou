@@ -155,7 +155,16 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	var/returntext = GLOB.reverseradiochannels["[freq]"]
 	if(returntext)
 		return returntext
-	return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"
+	return make_radio_name(freq)
+	//return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"
+
+/proc/make_radio_name(freq)
+	if(freq in GLOB.reverseradiochannels)
+		return GLOB.reverseradiochannels["[freq]"]
+	var/channel_number = rand(1,9999)
+	GLOB.reverseradiochannels["[freq]"] = "CH-[channel_number]"
+	return GLOB.reverseradiochannels["[freq]"]
+	
 
 /atom/movable/proc/attach_spans(input, list/spans)
 	if((input[1] == "!") && (length(input) > 2))
