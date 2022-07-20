@@ -40,7 +40,7 @@
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
 					/obj/item/storage/box/hug/medical = 1,
 					/obj/item/storage/pill_bottle/psicodine = 2,
-					/obj/item/reagent_containers/hypospray/medipen = 3,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier/full = 2,

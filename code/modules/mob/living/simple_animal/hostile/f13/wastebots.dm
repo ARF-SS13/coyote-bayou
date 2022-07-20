@@ -19,7 +19,7 @@
 	health = 130 //7 shots of 9mm
 	maxHealth = 130
 	healable = FALSE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	melee_damage_lower = 28
 	melee_damage_upper = 28
 	robust_searching = TRUE
@@ -79,8 +79,8 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "robot_dead"
-	health = 200
-	maxHealth = 200
+	health = 160
+	maxHealth = 160 //formerly 200
 	melee_damage_lower = 72
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'

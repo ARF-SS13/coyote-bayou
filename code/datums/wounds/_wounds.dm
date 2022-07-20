@@ -254,6 +254,18 @@
 	treat(I, user)
 	return TRUE
 
+/// Generic bleed wound treatment from whatever'll allow it
+/// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
+/datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0)
+	var/blood_sutured = I.stop_bleeding * (I.self_penalty_effectiveness * self_applied) * 0.5
+	blood_flow -= blood_sutured
+	limb.heal_damage(I.heal_brute, I.heal_burn)
+
+	if(blood_flow <= 0)
+		to_chat(user, "<span class='green'>You successfully stop the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name].</span>")
+	else
+		to_chat(user, "<span class='notice'>You reduce the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name].</span>")
+
 /// Return TRUE if we have an item that can only be used while aggro grabbed (unhanded aggro grab treatments go in [/datum/wound/proc/try_handling]). Treatment is still is handled in [/datum/wound/proc/treat]
 /datum/wound/proc/check_grab_treatments(obj/item/I, mob/user)
 	return FALSE

@@ -55,6 +55,9 @@
 	set name = "Toggle Rightclick"
 	set desc = "Did the context menu get stuck on or off? Press this button."
 
-	if(check_rights(R_ADMIN))
+	if(!(istype(src, /mob/dead/observer)))
+		show_popup_menus = !show_popup_menus
+		to_chat(src, "<span class='notice'>The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"].</span>")
+	else if(check_rights(R_ADMIN, 0))
 		show_popup_menus = !show_popup_menus
 		to_chat(src, "<span class='notice'>The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"].</span>")

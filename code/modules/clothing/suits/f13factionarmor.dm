@@ -525,7 +525,7 @@
 	item_state = "ncr_codressjack"
 	armor = list("melee" = 20, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 30)
 
-/obj/item/clothing/suit/armor/medium/combat/ncr/mutant
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/mutant
 	name = "NCR mutant armor"
 	desc = "Multiple sets of NCR patrol vests that have been fused, stitched and welded together in order to fit the frame of a Super Mutant."
 	icon_state = "mutie_ncr"
@@ -571,24 +571,24 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/combat/ncr_patrol
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	name = "ranger patrol armor"
 	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
 	armor = list("melee" = 30, "bullet" = 45, "laser" = 40, "energy" = 20, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 40)
 
-/obj/item/clothing/suit/armor/medium/combat/ncr_patrol/Initialize()
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/medium/combat/ncr_patrol/mutant
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/mutant
 	name = "mutant ranger armor"
 	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor. It's got NCR markings, making it clear who it was made by."
 	icon_state = "mutie_ranger_armour"
 	item_state = "mutie_ranger_armour"
 
-/obj/item/clothing/suit/armor/medium/combat/ncr_patrol/thax
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol/thax
 	name = "modified patrol armor"
 	desc = "A customized and moderately-worn suit of patrol ranger armor. A sun-worn thick olive duster is worn over the armor."
 	icon_state = "thaxarmor"
@@ -616,7 +616,7 @@
 
 //Brotherhood of Steel (PA in f13armor.dm)
 
-/obj/item/clothing/suit/armor/headscribe
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe
 	name = "brotherhood head scribe robe"
 	desc = " A red cloth robe with gold trimmings, worn eclusively by the Head Scribe of a chapter."
 	icon_state = "headscribe"
@@ -624,7 +624,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 10, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 36, "bio" = 50, "rad" = 69, "fire" = 10, "acid" = 70, "wound" = 30)
 
-/obj/item/clothing/suit/scribe
+/obj/item/clothing/suit/armor/light/duster/bos/scribe
 	name = "Brotherhood Scribe's robe"
 	desc = "A red cloth robe worn by the Brotherhood of Steel Scribes."
 	icon_state = "scribe"
@@ -632,7 +632,7 @@
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
 
-/obj/item/clothing/suit/seniorscribe
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
 	name = "Brotherhood Senior Scribe's robe"
 	desc = "A red cloth robe with silver gildings worn by the Brotherhood of Steel Senior Scribes."
 	icon_state = "seniorscribe"
@@ -640,7 +640,7 @@
 	body_parts_covered = CHEST|ARMS|LEGS
 	armor = list("melee" = 10, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 16, "bio" = 100, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 30)
 
-/obj/item/clothing/suit/elder
+/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	name = "Brotherhood Elder's robe"
 	desc = "A blue cloth robe with some scarlet red parts, traditionally worn by the Brotherhood of Steel Elder."
 	icon_state = "elder"
@@ -692,7 +692,7 @@
 	item_state = "brotherhood_armor_outcast"
 
 //Oasis/Town
-/obj/item/clothing/suit/armor/town
+/obj/item/clothing/suit/armor/light/duster/town
 	name = "town trenchcoat"
 	desc = "A non-descript black trenchcoat."
 	icon_state = "towntrench"
@@ -702,20 +702,20 @@
 	slowdown = 0.025 // zoom zoom
 
 
-/obj/item/clothing/suit/armor/town/mayor
+/obj/item/clothing/suit/armor/medium/duster/town/mayor
 	name = "mayor trenchcoat"
 	desc = "A symbol of the mayor's authority (or lack thereof). It has discrete armor plating in the lining, to foil assassination attempts."
 	armor = list("melee" = 40, "bullet" = 35, "laser" = 40, "energy" = 30, "bomb" = 25, "bio" = 15, "rad" = 10, "fire" = 15, "acid" = 5, "wound" = 45)
 	slowdown = 0.08
 
-/obj/item/clothing/suit/armor/town/sheriff
+/obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	name = "town combat coat"
 	desc = " A trenchcoat which does not attempt to hide the full-body combat armor beneath it."
 	icon_state = "towntrench_heavy"
 	armor = list("melee" = 45, "bullet" = 50, "laser" = 45,  "energy" = 35, "bomb" = 30, "bio" = 40, "rad" = 40, "fire" = 50, "acid" = 10, "wound" = 55)
 	slowdown = 0.12
 
-/obj/item/clothing/suit/armor/town/chief
+/obj/item/clothing/suit/armor/medium/duster/town/chief
 	name = "OPD Chief's jacket"
 	desc = "A navy-blue jacket with blue shoulder designations, '/OPD/' stitched into one of the chest pockets, and hidden ceramic trauma plates. It has a small compartment for a holdout pistol."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -726,11 +726,11 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/holdout
 	slowdown = 0.1  //CA statline
 
-/obj/item/clothing/suit/armor/town/chief/Initialize()
+/obj/item/clothing/suit/armor/medium/duster/town/chief/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/town/deputy
+/obj/item/clothing/suit/armor/medium/duster/town/deputy
 	name = "armored town trenchcoat"
 	desc = "An armored trench coat with added shoulderpads, a chestplate, and legguards."
 	icon_state = "towntrench_medium"
@@ -770,7 +770,7 @@
 	AddComponent(/datum/component/armor_plate)
 
 //Wayfarer
-/obj/item/clothing/suit/armor/lightcloak
+/obj/item/clothing/suit/armor/light/tribal/geckocloak
 	name = "light tribal cloak"
 	desc = "Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
 	icon_state = "lightcloak"
@@ -793,7 +793,7 @@
 	item_state = "tribecombatarmor"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 
-/obj/item/clothing/suit/armor/tribe_armor
+/obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
 	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
 	icon_state = "tribal_armor"
@@ -812,7 +812,7 @@
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 35, "energy" = 30, "bomb" = 55, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30, "wound" = 50)
 	slowdown = 0.10
 
-/obj/item/clothing/suit/armor/lightcloak
+/obj/item/clothing/suit/armor/light/tribal/geckocloak
 	name = "light tribal cloak"
 	desc = "Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
 	icon_state = "lightcloak"
@@ -846,7 +846,7 @@
 //Old World Law Enforcement
 //Police
 
-/obj/item/clothing/suit/police
+/obj/item/clothing/suit/armor/outfit/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -855,7 +855,7 @@
 	item_state = "police_officer"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
 
-/obj/item/clothing/suit/police/lieutenant
+/obj/item/clothing/suit/armor/outfit/police/lieutenant
 	name = "police lieutenant's jacket"
 	desc = " A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -864,7 +864,7 @@
 	item_state = "police_lieutenant"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
 
-/obj/item/clothing/suit/police/chief
+/obj/item/clothing/suit/armor/outfit/police/chief
 	name = "police chief's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -876,7 +876,7 @@
 
 //Enclave
 
-/obj/item/clothing/suit/armor/enclave/marine
+/obj/item/clothing/suit/armor/medium/combat/marine
 	name = "old United States Marine Corp Armor"
 	desc = "An advanced model of combat armor worn by marines aboard the USS Democracy, second only to power armor in protection used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "enclave_marine"
@@ -885,12 +885,12 @@
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 25, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 	slowdown = 0.1
 
-/obj/item/clothing/suit/armor/enclave/marine/Initialize()
+/obj/item/clothing/suit/armor/medium/combat/marine/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
 
-/obj/item/clothing/suit/armor/usmcriot
+/obj/item/clothing/suit/armor/heavy/riot/marine
 	name = "old United States Marine Corp riot suit"
 	desc = "A pre-war riot suit helmet used by the USCM For various tasks and operations, it's handled the nuclear wasteland somewhat better than the rest of the armors you've seen."
 	icon_state = "usmc_riot_gear"
@@ -898,11 +898,11 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 40, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 50)
 
-/obj/item/clothing/suit/armor/usmcriot/Initialize() //HQ parts reinforcement
+/obj/item/clothing/suit/armor/heavy/riot/marine/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/enclavetrenchcoat
+/obj/item/clothing/suit/armor/medium/duster/enclave
 	name = "enclave officer trenchcoat"
 	desc = "Premium prewar military armor worn under a coat for Enclave officers."
 	icon_state = "armor_enclave_officer"
@@ -910,11 +910,11 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 22, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 
-/obj/item/clothing/suit/armor/enclavetrenchcoat/Initialize() //HQ parts reinforcement
+/obj/item/clothing/suit/armor/medium/duster/enclave/Initialize() //HQ parts reinforcement
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/environmentalsuit
+/obj/item/clothing/suit/bio_suit/enclave
 	name = "enclave envirosuit"
 	desc = "An advanced white and airtight environmental suit. It seems to be equipped with a fire-resistant seal and a refitted internals system. This one looks to have been developed by the Enclave sometime after the Great War. You'd usually exclusively see this on scientists of the Enclave."
 	icon_state = "envirosuit"
@@ -942,14 +942,14 @@
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
 //IF PUT BACK INTO USE, PLEASE FILE IT BACK SOMEWHERE ABOVE
 
-/obj/item/clothing/suit/armor/town/embroidered
+/obj/item/clothing/suit/armor/medium/duster/town/embroidered
 	name = "embroidered trenchcoat"
 	desc = "A custom armored trench coat with extra-length and a raised collar. There's a flower embroidered onto the back, although the color is a little faded."
 	icon_state = "towntrench_special"
 	item_state = "towntrench_special"
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 
-/obj/item/clothing/suit/armor/rangercombat/eliteriot
+/obj/item/clothing/suit/armor/heavy/riot/elite
 	name = "elite riot gear"
 	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
 	icon_state = "elite_riot"
@@ -957,7 +957,7 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 60, "energy" = 40, "bomb" = 55, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20, "wound" = 55)
 	icon = 'icons/obj/clothing/suits.dmi'
 
-/obj/item/clothing/suit/armor/rangercombat/desert
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	name = "desert ranger combat armor"
 	desc = "This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
@@ -965,7 +965,7 @@
 
 //NCR
 
-/obj/item/clothing/suit/armor/rangerrig
+/obj/item/clothing/suit/armor/light/leather/rig
 	name = "chest gear harness"
 	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
 	icon_state = "r_gear_rig"
@@ -974,7 +974,7 @@
 	slowdown = 0.05
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt/ncr
 
-/obj/item/clothing/suit/armor/medium/combat/ncr_patrol/scout
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger/scout
 	name = "ranger scout armor"
 	desc = "A refurbished set of NCRA 3rd Scouts armor, now with heavier plating together with arm and leg guards. A two-headed bear has been painted on its chest."
 	icon_state = "refurb_scout"
@@ -1000,13 +1000,13 @@
 	desc = "A specialized variant of combat armor issued to officers of the 3rd Scout Battalion."
 	armor = list("melee" = 35, "bullet" = 40, "laser" = 35, "energy" = 20, "bomb" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 40)
 
-/obj/item/clothing/suit/armor/medium/combat/ncr
+/obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	name = "NCR combat armor"
 	desc = "An old military grade pre war combat armor and, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_armor"
 	item_state = "ncr_armor"
 
-/obj/item/clothing/suit/armor/medium/combat/mk2/ncr
+/o/obj/item/clothing/suit/armor/medium/combat/mk2/desert_ranger
 	name = "reinforced NCR combat armor"
 	desc = "A reinforced set of bracers, greaves, and torso plating of prewar design. This one is kitted with additional plates and, repainted to the colour scheme of the New California Republic."
 	icon_state = "ncr_armor_mk2"

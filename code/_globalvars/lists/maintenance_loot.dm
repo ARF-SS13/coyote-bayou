@@ -844,24 +844,15 @@ GLOBAL_LIST_INIT(loot_material, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t1_money, list(
-	/obj/item/stack/f13Cash/random/low,
-	/obj/item/stack/f13Cash/random/ncr/low,
-	/obj/item/stack/f13Cash/random/denarius/low,
-	/obj/item/stack/f13Cash/random/aureus/low
+	/obj/item/stack/f13Cash/random/low
 ))
 
 GLOBAL_LIST_INIT(loot_t2_money, list(
-	/obj/item/stack/f13Cash/random/med,
-	/obj/item/stack/f13Cash/random/ncr/med,
-	/obj/item/stack/f13Cash/random/denarius/med,
-	/obj/item/stack/f13Cash/random/aureus/med
+	/obj/item/stack/f13Cash/random/med
 ))
 
 GLOBAL_LIST_INIT(loot_t3_money, list(
-	/obj/item/stack/f13Cash/random/high,
-	/obj/item/stack/f13Cash/random/ncr/high,
-	/obj/item/stack/f13Cash/random/denarius/high,
-	/obj/item/stack/f13Cash/random/aureus/high
+	/obj/item/stack/f13Cash/random/high
 ))
 
 GLOBAL_LIST_INIT(loot_skillbook, list(

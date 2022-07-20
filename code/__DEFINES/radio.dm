@@ -81,6 +81,10 @@
 #define RADIO_KEY_DEN "j"
 #define RADIO_TOKEN_DEN ":j"
 
+#define RADIO_CHANNEL_REDWATER "Redwater"
+#define RADIO_KEY_REDWATER "d"
+#define RADIO_TOKEN_REDWATER ":d"
+
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"
 

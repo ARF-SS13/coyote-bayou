@@ -23,7 +23,7 @@
 	icon_state = "wasteland"
 //	ambience_area =  list('sound/f13ambience/wasteland.ogg')
 	ambientmusic = WASTELAND_AMBIENCE
-	ambientsounds = list('sound/f13ambience/battle_1.ogg','sound/f13ambience/battle_2.ogg','sound/f13ambience/battle_3.ogg', \
+	ambientsounds = list('sound/f13ambience/swampsounds.ogg','sound/f13ambience/battle_1.ogg','sound/f13ambience/battle_2.ogg','sound/f13ambience/battle_3.ogg', \
 	'sound/f13ambience/rattlesnake_1.ogg','sound/f13ambience/rattlesnake_2.ogg','sound/f13ambience/rattlesnake_3.ogg','sound/f13ambience/bird_1.ogg','sound/f13ambience/bird_2.ogg','sound/f13ambience/bird_3.ogg','sound/f13ambience/bird_4.ogg')
 	outdoors = 1
 	open_space = 1

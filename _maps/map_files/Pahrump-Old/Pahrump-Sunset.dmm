@@ -5401,7 +5401,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
-/obj/item/storage/belt,
+/obj/item/storage/belt/fannypack,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
@@ -29843,7 +29843,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/item/storage/belt,
+/obj/item/storage/belt/fannypack,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -31158,7 +31158,7 @@
 "mVB" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/clothing/under/f13/tribe_Hhunter,
-/obj/item/clothing/suit/armor/tribe_armor,
+/obj/item/clothing/suit/armor/light/tribal/strips,
 /obj/item/twohanded/fireaxe/boneaxe,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)

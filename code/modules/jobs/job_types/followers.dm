@@ -369,7 +369,7 @@ Follower Volunteer
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat
-	neck =	/obj/item/storage/belt/holster
+	l_pocket =	/obj/item/storage/belt/holster
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(

@@ -758,7 +758,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Chief of Police"
 
 /obj/effect/landmark/start/f13/deputy
-	name = "Officer"
+	name = "Deputy"
 	icon_state = "Officer"
 
 /obj/effect/landmark/start/f13/farmer
@@ -886,12 +886,15 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/druid
+	name = "Druid"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/spiritpledged
+	name = "Spirit-Pledged"
 	icon_state = "Tribal"
 
 /obj/effect/landmark/start/f13/guardian
+	name = "Guardian"
 	icon_state = "Tribal"
 
 //Followers of the Apocalypse

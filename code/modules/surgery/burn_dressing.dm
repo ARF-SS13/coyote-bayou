@@ -97,6 +97,7 @@
 		burn_wound.flesh_healing += 5
 		var/obj/item/bodypart/the_part = target.get_bodypart(target_zone)
 		the_part.apply_gauze(tool)
+		tool.use(1)
 	else
 		to_chat(user, "<span class='warning'>[target] has no burns there!</span>")
 	return ..()

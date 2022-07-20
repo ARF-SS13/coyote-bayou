@@ -202,7 +202,7 @@
 /obj/effect/mob_spawn/human/corpse/enclavescientist
 	name = "enclave scientist"
 	uniform = /obj/item/clothing/under/f13/enclave/science
-	suit = /obj/item/clothing/suit/armor/environmentalsuit
+	suit = /obj/item/clothing/suit/bio_suit/enclave
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	head = /obj/item/clothing/head/helmet/f13/envirosuit
@@ -395,7 +395,7 @@
 /obj/effect/mob_spawn/human/corpse/ncr/ranger
 	name = "NCR Ranger"
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
-	suit = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	shoes = /obj/item/clothing/shoes/f13/military/leather
 	gloves = /obj/item/clothing/gloves/patrol
 	head = /obj/item/clothing/head/f13/ranger

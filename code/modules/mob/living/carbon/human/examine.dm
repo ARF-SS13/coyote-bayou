@@ -137,10 +137,11 @@
 			. += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>"
 		if(hellbound)
 			. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.</span>"
-		if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and resuscitation is not possible...</span>"
+		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
+		if(key || !getorgan(/obj/item/organ/brain) || ghost?.can_reenter_corpse)
+			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
 		else
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life, however resuscitation may be possible...</span>"
+			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...")
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
 		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"

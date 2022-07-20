@@ -38,6 +38,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/list/overlays_icons = list('icons/obj/pda.dmi' = list("pda-r", "screen_default", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
 	var/static/list/standard_overlays_icons = list("pda-r", "blank", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay")
 	var/list/current_overlays //set on Initialize.
+	var/obj/item/radio/radio = null //the radio inside the pipboy
 
 	//variables exclusively used on 'update_overlays' (which should never be called directly, and 'update_icon' doesn't use args anyway)
 	var/new_overlays = FALSE
@@ -69,7 +70,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/last_everyone //No text for everyone spamming
 	var/last_noise //Also no honk spamming that's bad too
 	var/ttone = "beep" //The ringtone!
-	var/note = "Congratulations, your station has chosen the Thinktronic 5230 Personal Data Assistant! To help with navigation, we have provided the following definitions. North: Fore. South: Aft. West: Port. East: Starboard. Quarter is either side of aft." //Current note in the notepad function
+	var/note = "Congratulations, your has chosen the RobCo Pip-Boy 3000 Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East." //Current note in the notepad function
 	var/notehtml = ""
 	var/notescanned = FALSE // True if what is in the notekeeper was from a paper.
 	var/detonatable = TRUE // Can the PDA be blown up?
@@ -77,6 +78,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/emped = FALSE
 	var/equipped = FALSE  //used here to determine if this is the first time its been picked up
 	var/allow_emojis = TRUE //if the pda can send emojis and actually have them parsed as such
+	var/list/pipsounds = list("modular_coyote/sound/pipsounds/pip1.ogg", "modular_coyote/sound/pipsounds/pip2.ogg", "modular_coyote/sound/pipsounds/pip3.ogg")
 
 	var/obj/item/card/id/id = null //Making it possible to slot an ID card into the PDA so it can function as both.
 	var/ownjob = null //related to above
@@ -94,6 +96,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	var/underline_flag = TRUE //flag for underline
 
 	var/list/blocked_pdas
+
+	var/list/saved_frequencies = list("Common" = FREQ_COMMON)
 
 /obj/item/pda/suicide_act(mob/living/carbon/user)
 	var/deathMessage = msg_input(user)
@@ -123,6 +127,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		inserted_item = new inserted_item(src)
 	else
 		inserted_item =	new /obj/item/pen(src)
+	radio = new /obj/item/radio(src)
 	new_overlays = TRUE
 	update_icon()
 
@@ -195,7 +200,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	equipped = TRUE
 
 /obj/item/pda/proc/update_label()
-	name = "PDA-[owner] ([ownjob])" //Name generalisation
+	name = "Pip-Boy 3000-[owner] ([ownjob])" //Name generalisation
 
 /obj/item/pda/GetAccess()
 	if(id)
@@ -267,7 +272,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	user.set_machine(src)
 
-	var/dat = "<!DOCTYPE html><html><head><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Personal Data Assistant</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\"><style>body{" + font_mode + "}ul,ol{list-style-type: none;}a, a:link, a:visited, a:active, a:hover { color: #000000;text-decoration:none; }img {border-style:none;}a img{padding-right: 9px;}</style>"
+	var/dat = "<!DOCTYPE html><html><head><style>body {[font_mode] padding: 0; margin: 12px; background-color: #062113; color: #4aed92; line-height: 135%;} h2, h4 {color: #4aed92;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Personal Information Processor</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\">"
 	dat += assets.css_tag()
 	dat += emoji_s.css_tag()
 
@@ -278,7 +283,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if (mode)
 		dat += " | <a href='byond://?src=[REF(src)];choice=Return'>[PDAIMG(menu)]Return</a>"
 
+	/* UNUSED because of the new pipboy look
 	if (mode == 0)
+
 		dat += "<div align=\"center\">"
 		dat += "<br><a href='byond://?src=[REF(src)];choice=Toggle_Font'>Toggle Font</a>"
 		dat += " | <a href='byond://?src=[REF(src)];choice=Change_Color'>Change Color</a>"
@@ -287,6 +294,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		dat += "</div>"
 
 	dat += "<br>"
+	*/
 
 	if (!owner)
 		dat += "Warning: No owner information entered.  Please swipe card.<br><br>"
@@ -294,20 +302,21 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		switch (mode)
 			if (0)
-				dat += "<h2>PERSONAL DATA ASSISTANT v.1.2</h2>"
+				dat += "<h2><center>=======PERSONAL INFORMATION PROCESSOR v.1.2=======</center></h2>"
 				dat += "Owner: [owner], [ownjob]<br>"
-				dat += text("ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]")
-				dat += text("<br><a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</A><br><br>")
+				dat += "ID: <a href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]</a><br>"
+				dat += "<a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update Pip-Boy Info" : ""]</a><br><br>"
 
 				dat += "[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
 				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer]"
 
-				dat += "<br><br>"
+				dat += "<br>===========================================<br>"
 
 				dat += "<h4>General Functions</h4>"
 				dat += "<ul>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=1'>[PDAIMG(notes)]Notekeeper</a></li>"
 				dat += "<li><a href='byond://?src=[REF(src)];choice=2'>[PDAIMG(mail)]Messenger</a></li>"
+				dat += "<li><a href='byond://?src=[REF(src)];choice=99'>[PDAIMG(signaler)]Radio</a></li>"
 
 				if (cartridge)
 					if (cartridge.access & CART_MANIFEST)
@@ -341,6 +350,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 				dat += "<h4>Utilities</h4>"
 				dat += "<ul>"
+
 				if (cartridge)
 					if(cartridge.bot_access_flags)
 						dat += "<li><a href='byond://?src=[REF(src)];choice=54'>[PDAIMG(medbot)]Bots Access</a></li>"
@@ -379,7 +389,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<HR><font face=\"[PEN_FONT]\">[(!notehtml ? note : notehtml)]</font>"
 
 			if (2)
-				dat += "<h4>[PDAIMG(mail)] SpaceMessenger V3.9.6</h4>"
+				dat += "<h4>[PDAIMG(mail)] RobCo Messenger V3.9.6</h4>"
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Ringer'>[PDAIMG(bell)]Ringer: [silent == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Toggle Messenger'>[PDAIMG(mail)]Send / Receive: [toff == 1 ? "Off" : "On"]</a> | "
 				dat += "<a href='byond://?src=[REF(src)];choice=Ringtone'>[PDAIMG(bell)]Set Ringtone</a> | "
@@ -388,7 +398,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				if(cartridge)
 					dat += cartridge.message_header()
 
-				dat += "<h4>[PDAIMG(menu)] Detected PDAs</h4>"
+				dat += "<h4>[PDAIMG(menu)] Detected Pip-Boys</h4>"
 
 				dat += "<ul>"
 				var/count = 0
@@ -442,6 +452,28 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 					dat += "Temperature: [round(environment.return_temperature()-T0C)]&deg;C<br>"
 				dat += "<br>"
+
+			if (4)
+				dat += "<h4>Radio settings</h4>"
+
+				dat += "Microphone: <a href='byond://?src=[REF(src)];rmictoggle=1'>[radio.broadcasting?"Engaged":"Disengaged"]</a><br>"
+				dat += "Speaker: <a href='byond://?src=[REF(src)];rspktoggle=1'>[radio.listening?"Engaged":"Disengaged"]</a><br>"
+				dat += "Frequency:<br>"
+				dat += "<a href='?src=[REF(src)];rfreq=-10'>-</a>"
+				dat += "<a href='?src=[REF(src)];rfreq=-2'>-</a>"
+				dat += "[format_frequency(radio.frequency)]"
+				dat += "<a href='?src=[REF(src)];rfreq=2'>+</a>"
+				dat += "<a href='?src=[REF(src)];rfreq=10'>+</a>"
+				dat += " | <a href='?src=[REF(src)];rsavefreq=[radio.frequency]'>Save Frequency</a><br><br>"
+				
+				if(saved_frequencies)
+					dat += "<b>Saved Frequencies</b>"
+					dat += "<ul>"
+					for(var/freq in saved_frequencies)
+						dat += "<li><a href='?src=[REF(src)];rloadfreq=[saved_frequencies[freq]]'>[freq] ([format_frequency(saved_frequencies[freq])])</a>"
+						dat += " (<a href='?src=[REF(src)];rdelfreq=[saved_frequencies[freq]]'>Delete</a> | <a href='?src=[REF(src)];rrenfreq=[saved_frequencies[freq]]'>Rename</a>)</li>"
+					dat += "</ul>"
+
 			else//Else it links to the cart menu proc. Although, it really uses menu hub 4--menu 4 doesn't really exist as it simply redirects to hub.
 				dat += cartridge.generate_menu()
 
@@ -452,8 +484,14 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if (!underline_flag)
 		dat = replacetext(dat, "text-decoration:underline", "text-decoration:none")
 
-	user << browse(dat, "window=pda;size=400x450;border=1;can_resize=1;can_minimize=0")
-	onclose(user, "pda", src)
+	//user << browse(dat, "window=pda;size=600x500;border=1;can_resize=1;can_minimize=0")
+	var/datum/browser/popup = new(user, "pda", "", 600, 500)
+	popup.set_content(dat)
+	popup.open(FALSE)
+	//onclose(user, "pda", src)
+
+/obj/item/pda/proc/Boop()
+	playsound(src, pick(pipsounds), 40, 1)
 
 /obj/item/pda/Topic(href, href_list)
 	..()
@@ -463,242 +501,307 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK, FALSE) && !href_list["close"])
 		add_fingerprint(U)
 		U.set_machine(src)
+		
+		if(href_list["choice"])
 
-		switch(href_list["choice"])
+			switch(href_list["choice"])
 
 //BASIC FUNCTIONS===================================
 
-			if("Refresh")//Refresh, goes to the end of the proc.
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+				if("Refresh")//Refresh, goes to the end of the proc.
+					if (!silent)
+						Boop()
 
-			if ("Toggle_Font")
-				//CODE REVISION 2
-				font_index = (font_index + 1) % 4
+				if ("Toggle_Font")
+					//CODE REVISION 2
+					font_index = (font_index + 1) % 4
 
-				switch(font_index)
-					if (MODE_MONO)
-						font_mode = FONT_MONO
-					if (MODE_SHARE)
-						font_mode = FONT_SHARE
-					if (MODE_ORBITRON)
-						font_mode = FONT_ORBITRON
-					if (MODE_VT)
-						font_mode = FONT_VT
-						if (!silent)
-							playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+					switch(font_index)
+						if (MODE_MONO)
+							font_mode = FONT_MONO
+						if (MODE_SHARE)
+							font_mode = FONT_SHARE
+						if (MODE_ORBITRON)
+							font_mode = FONT_ORBITRON
+						if (MODE_VT)
+							font_mode = FONT_VT
+					if (!silent)
+						Boop()
 
-			if ("Change_Color")
-				var/new_color = input("Please enter a color name or hex value (Default is \'#808000\').",background_color)as color
-				background_color = new_color
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+				if ("Change_Color")
+					var/new_color = input("Please enter a color name or hex value (Default is \'#808000\').",background_color)as color
+					background_color = new_color
+					if (!silent)
+						Boop()
 
-			if ("Toggle_Underline")
-				underline_flag = !underline_flag
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+				if ("Toggle_Underline")
+					underline_flag = !underline_flag
+					if (!silent)
+						Boop()
 
-			if("Return")//Return
-				if(mode<=9)
-					mode = 0
-				else
-					mode = round(mode/10)
-					if(mode==4 || mode == 5)//Fix for cartridges. Redirects to hub.
+				if("Return")//Return
+					if(mode<=9)
 						mode = 0
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+					else
+						mode = round(mode/10)
+						if(mode==4 || mode == 5)//Fix for cartridges. Redirects to hub.
+							mode = 0
+					if (!silent)
+						Boop()
 
-			if ("Authenticate")//Checks for ID
-				id_check(U)
+				if ("Authenticate")//Checks for ID
+					id_check(U)
 
-			if("UpdateInfo")
-				ownjob = id.assignment
-				if(istype(id, /obj/item/card/id/syndicate))
-					owner = id.registered_name
-				update_label()
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_processing.ogg', 15, 1)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
+				if("UpdateInfo")
+					ownjob = id.assignment
+					if(istype(id, /obj/item/card/id/syndicate))
+						owner = id.registered_name
+					update_label()
+					if (!silent)
+						playsound(src, 'sound/machines/terminal_processing.ogg', 15, 1)
+					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/machines/terminal_success.ogg', 15, 1), 13)
 
-			if("Eject")//Ejects the cart, only done from hub.
-				if (!isnull(cartridge))
-					U.put_in_hands(cartridge)
-					to_chat(U, span_notice("You remove [cartridge] from [src]."))
-					scanmode = PDA_SCANNER_NONE
-					cartridge.host_pda = null
-					cartridge = null
-					update_icon()
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_eject_disc.ogg', 50, 1)
+				if("Eject")//Ejects the cart, only done from hub.
+					if (!isnull(cartridge))
+						U.put_in_hands(cartridge)
+						to_chat(U, span_notice("You remove [cartridge] from [src]."))
+						scanmode = PDA_SCANNER_NONE
+						cartridge.host_pda = null
+						cartridge = null
+						update_icon()
+					if (!silent)
+						playsound(src, 'sound/machines/terminal_eject_disc.ogg', 50, 1)
 
 //MENU FUNCTIONS===================================
 
-			if("0")//Hub
-				mode = 0
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-			if("1")//Notes
-				mode = 1
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-			if("2")//Messenger
-				mode = 2
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-			if("21")//Read messeges
-				mode = 21
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-			if("3")//Atmos scan
-				mode = 3
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-			if("4")//Redirects to hub
-				mode = 0
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+				if("0")//Hub
+					mode = 0
+					if (!silent)
+						Boop()
+				if("1")//Notes
+					mode = 1
+					if (!silent)
+						Boop()
+				if("2")//Messenger
+					mode = 2
+					if (!silent)
+						Boop()
+				if("99")//Radio
+					mode = 4
+					if(!silent)
+						Boop()
+				if("21")//Read messeges
+					mode = 21
+					if (!silent)
+						Boop()
+				if("3")//Atmos scan
+					mode = 3
+					if (!silent)
+						Boop()
+				if("4")//Redirects to hub
+					mode = 0
+					if (!silent)
+						Boop()
+
 
 
 //MAIN FUNCTIONS===================================
 
-			if("Light")
-				toggle_light()
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
+				if("Light")
+					toggle_light()
 
-			if("Medical Scan")
-				if(scanmode == PDA_SCANNER_MEDICAL)
-					scanmode = PDA_SCANNER_NONE
-				else if((!isnull(cartridge)) && (cartridge.access & CART_MEDICAL))
-					scanmode = PDA_SCANNER_MEDICAL
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-
-			if("Reagent Scan")
-				if(scanmode == PDA_SCANNER_REAGENT)
-					scanmode = PDA_SCANNER_NONE
-				else if((!isnull(cartridge)) && (cartridge.access & CART_REAGENT_SCANNER))
-					scanmode = PDA_SCANNER_REAGENT
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-
-			if("Halogen Counter")
-				if(scanmode == PDA_SCANNER_HALOGEN)
-					scanmode = PDA_SCANNER_NONE
-				else if((!isnull(cartridge)) && (cartridge.access & CART_ENGINE))
-					scanmode = PDA_SCANNER_HALOGEN
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-
-			if("Honk")
-				if ( !(last_noise && world.time < last_noise + 20) )
-					playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
-					last_noise = world.time
-
-			if("Trombone")
-				if ( !(last_noise && world.time < last_noise + 20) )
-					playsound(src, 'sound/misc/sadtrombone.ogg', 50, 1)
-					last_noise = world.time
-
-			if("Gas Scan")
-				if(scanmode == PDA_SCANNER_GAS)
-					scanmode = PDA_SCANNER_NONE
-				else if((!isnull(cartridge)) && (cartridge.access & CART_ATMOS))
-					scanmode = PDA_SCANNER_GAS
-				if (!silent)
-					playsound(src, 'sound/machines/terminal_select.ogg', 15, 1)
-
-			if("Drone Phone")
-				var/alert_s = input(U,"Alert severity level","Ping Drones",null) as null|anything in list("Low","Medium","High","Critical")
-				var/area/A = get_area(U)
-				if(A && alert_s && !QDELETED(U))
-					var/msg = "<span class='boldnotice'>NON-DRONE PING: [U.name]: [alert_s] priority alert in [A.name]!</span>"
-					_alert_drones(msg, TRUE, U)
-					to_chat(U, msg)
+				if("Medical Scan")
+					if(scanmode == PDA_SCANNER_MEDICAL)
+						scanmode = PDA_SCANNER_NONE
+					else if((!isnull(cartridge)) && (cartridge.access & CART_MEDICAL))
+						scanmode = PDA_SCANNER_MEDICAL
 					if (!silent)
-						playsound(src, 'sound/machines/terminal_success.ogg', 15, 1)
+						Boop()
+
+				if("Reagent Scan")
+					if(scanmode == PDA_SCANNER_REAGENT)
+						scanmode = PDA_SCANNER_NONE
+					else if((!isnull(cartridge)) && (cartridge.access & CART_REAGENT_SCANNER))
+						scanmode = PDA_SCANNER_REAGENT
+					if (!silent)
+						Boop()
+
+				if("Halogen Counter")
+					if(scanmode == PDA_SCANNER_HALOGEN)
+						scanmode = PDA_SCANNER_NONE
+					else if((!isnull(cartridge)) && (cartridge.access & CART_ENGINE))
+						scanmode = PDA_SCANNER_HALOGEN
+					if (!silent)
+						Boop()
+
+				if("Honk")
+					if ( !(last_noise && world.time < last_noise + 20) )
+						playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
+						last_noise = world.time
+
+				if("Trombone")
+					if ( !(last_noise && world.time < last_noise + 20) )
+						playsound(src, 'sound/misc/sadtrombone.ogg', 50, 1)
+						last_noise = world.time
+
+				if("Gas Scan")
+					if(scanmode == PDA_SCANNER_GAS)
+						scanmode = PDA_SCANNER_NONE
+					else if((!isnull(cartridge)) && (cartridge.access & CART_ATMOS))
+						scanmode = PDA_SCANNER_GAS
+					if (!silent)
+						Boop()
+
+				if("Drone Phone")
+					var/alert_s = input(U,"Alert severity level","Ping Drones",null) as null|anything in list("Low","Medium","High","Critical")
+					var/area/A = get_area(U)
+					if(A && alert_s && !QDELETED(U))
+						var/msg = "<span class='boldnotice'>NON-DRONE PING: [U.name]: [alert_s] priority alert in [A.name]!</span>"
+						_alert_drones(msg, TRUE, U)
+						to_chat(U, msg)
+						if (!silent)
+							Boop()
 
 
 //NOTEKEEPER FUNCTIONS===================================
 
-			if ("Edit")
-				var/n = stripped_multiline_input(U, "Please enter message", name, note)
-				if (in_range(src, U) && loc == U)
-					if (mode == 1 && n)
-						note = n
-						notehtml = parsemarkdown(n, U)
-						notescanned = FALSE
-				else
-					U << browse(null, "window=pda")
-					return
+				if ("Edit")
+					var/n = stripped_multiline_input(U, "Please enter message", name, note)
+					if (in_range(src, U) && loc == U)
+						if (mode == 1 && n)
+							note = n
+							notehtml = parsemarkdown(n, U)
+							notescanned = FALSE
+					else
+						U << browse(null, "window=pda")
+						return
 
 //MESSENGER FUNCTIONS===================================
 
-			if("Toggle Messenger")
-				toff = !toff
-			if("Toggle Ringer")//If viewing texts then erase them, if not then toggle silent status
-				silent = !silent
-			if("Clear")//Clears messages
-				tnote = null
-			if("Ringtone")
-				var/t = stripped_input(U, "Please enter new ringtone", name, ttone, 20)
-				if(in_range(src, U) && loc == U && t)
-					if(SEND_SIGNAL(src, COMSIG_PDA_CHANGE_RINGTONE, U, t) & COMPONENT_STOP_RINGTONE_CHANGE)
+				if("Toggle Messenger")
+					toff = !toff
+				if("Toggle Ringer")//If viewing texts then erase them, if not then toggle silent status
+					silent = !silent
+				if("Clear")//Clears messages
+					tnote = null
+				if("Ringtone")
+					var/t = stripped_input(U, "Please enter new ringtone", name, ttone, 20)
+					if(in_range(src, U) && loc == U && t)
+						if(SEND_SIGNAL(src, COMSIG_PDA_CHANGE_RINGTONE, U, t) & COMPONENT_STOP_RINGTONE_CHANGE)
+							U << browse(null, "window=pda")
+							return
+						else
+							ttone = t
+					else
 						U << browse(null, "window=pda")
 						return
+				if("Message")
+					create_message(U, locate(href_list["target"]))
+
+				if("MessageAll")
+					send_to_all(U)
+
+				if("toggle_block")
+					toggle_blocking(usr, href_list["target"])
+
+				if("block_pda")
+					block_pda(usr, href_list["target"])
+
+				if("unblock_pda")
+					unblock_pda(usr, href_list["target"])
+
+				if("cart")
+					if(cartridge)
+						cartridge.special(U, href_list)
 					else
-						ttone = t
-				else
-					U << browse(null, "window=pda")
-					return
-			if("Message")
-				create_message(U, locate(href_list["target"]))
-
-			if("MessageAll")
-				send_to_all(U)
-
-			if("toggle_block")
-				toggle_blocking(usr, href_list["target"])
-
-			if("block_pda")
-				block_pda(usr, href_list["target"])
-
-			if("unblock_pda")
-				unblock_pda(usr, href_list["target"])
-
-			if("cart")
-				if(cartridge)
-					cartridge.special(U, href_list)
-				else
-					U << browse(null, "window=pda")
-					return
+						U << browse(null, "window=pda")
+						return
 
 //SYNDICATE FUNCTIONS===================================
 
-			if("Toggle Door")
-				if(cartridge && cartridge.access & CART_REMOTE_DOOR)
-					for(var/obj/machinery/door/poddoor/M in GLOB.machines)
-						if(M.id == cartridge.remote_door_id)
-							if(M.density)
-								M.open()
-							else
-								M.close()
+				if("Toggle Door")
+					if(cartridge && cartridge.access & CART_REMOTE_DOOR)
+						for(var/obj/machinery/door/poddoor/M in GLOB.machines)
+							if(M.id == cartridge.remote_door_id)
+								if(M.density)
+									M.open()
+								else
+									M.close()
 
 //pAI FUNCTIONS===================================
-			if("pai")
-				switch(href_list["option"])
-					if("1")		// Configure pAI device
-						pai.attack_self(U)
-					if("2")		// Eject pAI device
-						var/turf/T = get_turf(loc)
-						if(T)
-							pai.forceMove(T)
+				if("pai")
+					switch(href_list["option"])
+						if("1")		// Configure pAI device
+							pai.attack_self(U)
+						if("2")		// Eject pAI device
+							var/turf/T = get_turf(loc)
+							if(T)
+								pai.forceMove(T)
 
 //LINK FUNCTIONS===================================
 
-			else//Cartridge menu linking
-				mode = max(text2num(href_list["choice"]), 0)
+				else//Cartridge menu linking
+					mode = max(text2num(href_list["choice"]), 0)
+
+//RADIO FUNCTIONS
+		if(href_list["rmictoggle"])
+			radio.broadcasting = !radio.broadcasting
+			Boop()
+
+		if(href_list["rspktoggle"])
+			radio.listening = !radio.listening
+			Boop()
+
+		if(href_list["rfreq"])
+			var/new_frequency = (radio.frequency + text2num(href_list["rfreq"]))
+			if (!radio.freerange || (radio.frequency < MIN_FREE_FREQ || radio.frequency > MAX_FREE_FREQ))
+				new_frequency = sanitize_frequency(new_frequency)
+			radio.set_frequency(new_frequency)
+			Boop()
+
+		if (href_list["rsavefreq"])
+			var/frequency = href_list["rsavefreq"]
+			frequency = text2num(frequency)
+			var/found = FALSE
+			for(var/freq in saved_frequencies)
+				if(saved_frequencies[freq] == frequency)
+					found = TRUE
+					break
+			if(found)
+				to_chat(U, span_notice("ERROR: Frequency already saved."))
+			else
+				var/frequency_name = stripped_input(U, "Please enter a name for the frequency", name, "", 20)
+				if (frequency_name)
+					if (frequency_name in saved_frequencies)
+						to_chat(U, span_notice("ERROR: Frequency with that name already saved."))
+					else
+						saved_frequencies[frequency_name] = frequency
+			Boop()
+
+		if (href_list["rloadfreq"])
+			var/loaded_frequency = href_list["rloadfreq"]
+			loaded_frequency = sanitize_frequency(text2num(loaded_frequency))
+			radio.set_frequency(loaded_frequency)
+			Boop()
+		
+		if (href_list["rrenfreq"])
+			var/renamed_frequency = href_list["rrenfreq"]
+			renamed_frequency = text2num(renamed_frequency)
+			var/frequency_name = stripped_input(U, "Please enter a new name for the frequency", name, "", 20)
+			if (frequency_name)
+				for(var/freq in saved_frequencies)
+					if(saved_frequencies[freq] == renamed_frequency)
+						saved_frequencies -= freq
+				saved_frequencies[frequency_name] = renamed_frequency
+			Boop()
+
+		if (href_list["rdelfreq"])
+			var/deleted_frequency = href_list["rdelfreq"]
+			deleted_frequency = text2num(deleted_frequency)
+			for(var/freq in saved_frequencies)
+				if(saved_frequencies[freq] == deleted_frequency)
+					saved_frequencies -= freq
+			Boop()
 
 	else//If not in range, can't interact or not using the pda.
 		U.unset_machine()
@@ -819,7 +922,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	// Log in the talk log
 	user.log_talk(message, LOG_PDA, tag="PDA: [initial(name)] to [target_text] (BLOCKED:[string_blocked])")
 	if (!silent)
-		playsound(src, 'sound/machines/terminal_success.ogg', 15, 1)
+		playsound(src, 'modular_coyote/sound/pipsounds/pipmsgsend.ogg', 30, 1)
 	// Reset the photo
 	picture = null
 	last_text = world.time
@@ -829,7 +932,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/receive_message(datum/signal/subspace/pda/signal)
 	tnote += "<i><b>&larr; From <a href='byond://?src=[REF(src)];choice=Message;target=[REF(signal.source)]'>[signal.data["name"]]</a> ([signal.data["job"]]):</b></i> <a href='byond://?src=[REF(src)];choice=toggle_block;target=[signal.data["name"]]'>(BLOCK/UNBLOCK)</a><br>[signal.format_message()]<br>"
 	if (!silent)
-		playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
+		playsound(src, 'modular_coyote/sound/pipsounds/pipmsgget.ogg', 80, 1)
 		audible_message("[icon2html(src, hearers(src))] *[ttone]*", null, 3)
 	//Search for holder of the PDA.
 	var/mob/living/L = null
@@ -925,9 +1028,11 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(fon)
 		fon = FALSE
 		set_light(0)
+		playsound(src, "modular_coyote/sound/pipsounds/piplightoff.ogg", 50, 1)
 	else if(f_lum)
 		fon = TRUE
 		set_light(f_lum, f_pow, f_col)
+		playsound(src, "modular_coyote/sound/pipsounds/piplighton.ogg", 50, 1)
 	update_icon()
 
 /obj/item/pda/proc/remove_pen()
@@ -1209,6 +1314,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 		if(!P.owner || P.toff || P.hidden)
 			continue
 		. += P
+
 
 #undef PDA_SCANNER_NONE
 #undef PDA_SCANNER_MEDICAL
