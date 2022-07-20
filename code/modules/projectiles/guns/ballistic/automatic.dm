@@ -74,7 +74,7 @@
 /obj/item/gun/ballistic/automatic/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "-[magazine.max_ammo]" : ""][chambered ? "" : "-e"]"
 
-/obj/item/gun/ballistic/automatic/attackby(obj/item/A, mob/user, params)
+/* /obj/item/gun/ballistic/automatic/attackby(obj/item/A, mob/user, params)
 	. = ..()
 	if(.)
 		return
@@ -97,7 +97,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>") */
 
 /obj/item/gun/ballistic/automatic/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_firemode))

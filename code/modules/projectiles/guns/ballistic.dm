@@ -69,51 +69,38 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
-	if(istype(magazine, /obj/item/ammo_box))
-		if(magazine.fixed_mag)
-			if(.)
+	if(istype(A, /obj/item/ammo_casing))
+		var/obj/item/ammo_box/new_casing = A
+		if(magazine?.fixed_mag) // fixed mag, just load bullets in
+			return load_fixed_magazine(new_casing, user, params)
+
+	if(istype(A, /obj/item/ammo_box))
+		var/obj/item/ammo_box/new_mag = A
+		if(magazine?.fixed_mag) // fixed mag, just load bullets in
+			return load_fixed_magazine(new_mag, user, params)
+		else // removable mag, eject the mag
+			if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
 				return FALSE
-			var/num_loaded = magazine.attackby(A, user, params, 1)
-			if(num_loaded)
-				to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-				playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
-				A.update_icon()
-				update_icon()
-				chamber_round(0)
-				return TRUE
+			attack_self(user)
+		// now we're sure there's no magazine in the gun
+		if(!is_magazine_allowed(new_mag, user))
+			return FALSE
+		if(user.transferItemToLoc(new_mag, src))
+			magazine = new_mag
+			to_chat(user, span_notice("You load a new magazine into \the [src]."))
 		else
-			var/obj/item/ammo_box/new_mag = A
-			var/obj/item/ammo_box/old_mag = magazine
-
-			if(!(new_mag.type in allowed_mags))
-				to_chat(user, "<span class='notice'>You can't seem to fit \the [new_mag] into \the [src].</span>")
-				return
-
-			if(istype(old_mag))
-				attack_self(user)
-				/* to_chat(user, "<span class='notice'>You tactically eject \the [src]'s [old_mag].</span>")
-				old_mag.forceMove(get_turf(src.loc))
-				old_mag.update_icon()
-				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1) */
-
-			if(user.transferItemToLoc(new_mag, src))
-				magazine = new_mag
-				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
-			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [new_mag] out of your hands!</span>")
-				return
-			
-			if(magazine.ammo_count())
-				playsound(src, "gun_insert_full_magazine", 70, 1)
-				if(!chambered)
-					chamber_round()
-					addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
-			else
-				playsound(src, "gun_insert_empty_magazine", 70, 1)
-
-			A.update_icon()
-			update_icon()
-			return TRUE
+			to_chat(user, span_warning("You cannot seem to get \the [new_mag] out of your hands!"))
+			return FALSE
+		if(magazine.ammo_count())
+			playsound(src, "gun_insert_full_magazine", 70, 1)
+			if(!chambered)
+				chamber_round()
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
+		else
+			playsound(src, "gun_insert_empty_magazine", 70, 1)
+		new_mag.update_icon()
+		update_icon()
+		return TRUE
 
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
@@ -132,6 +119,31 @@
 			update_overlays()
 			return
 	return FALSE
+
+/obj/item/gun/ballistic/proc/is_magazine_allowed(obj/item/ammo_box/mag_to_check, mob/user)
+	. = FALSE
+	if(!istype(mag_to_check))
+		if(user)
+			to_chat(user, span_phobia("Whatever you tried to stuff into \the [src] wasn't a thing! This is a bug~"))
+		return FALSE
+	if(mag_to_check.type in allowed_mags)
+		return TRUE
+	if(user)
+		to_chat(user, span_alert("You can't seem to fit \the [mag_to_check] into \the [src]."))
+
+/obj/item/gun/ballistic/proc/load_fixed_magazine(obj/item/casing_or_magazine, user, params)
+	if(istype(casing_or_magazine, /obj/item/ammo_casing) || istype(casing_or_magazine, /obj/item/ammo_box))
+		var/num_loaded = magazine.attackby(casing_or_magazine, user, params, 1)
+		if(num_loaded)
+			to_chat(user, span_notice("You load [num_loaded] shell\s into \the [src]!"))
+			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
+			casing_or_magazine.update_icon()
+			update_icon()
+			chamber_round(0)
+			return TRUE
+		else
+			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
+			return FALSE
 
 /obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
 	// this proc assumes that the suppressor is already inside src

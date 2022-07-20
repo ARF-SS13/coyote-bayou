@@ -307,7 +307,11 @@
 	desc = "A large, pre-war styled, gas-operated 10mm pistol."
 	icon_state = "n99"
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
-	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
+	disallowed_mags = list(
+		/obj/item/ammo_box/magazine/m10mm/adv/ext, 
+		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
+		/obj/item/ammo_box/magazine/m10mm/rifle)
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY

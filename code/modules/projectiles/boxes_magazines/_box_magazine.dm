@@ -69,13 +69,20 @@
 		if(!(CALIBER_ANY in caliber))
 			return FALSE
 
-	if (length(stored_ammo) < max_ammo)
-		stored_ammo += other_casing
-		other_casing.forceMove(src)
-		return 1
+	if(length(stored_ammo) < max_ammo) // found an empty slot, stuff it in!
+		insert_round(other_casing)
+		return TRUE
 
-	//for accessibles magazines (e.g internal ones) when full, start replacing spent ammo
-	else if(replace_spent)
+	if(replace_spent_rounds)
+		for(var/i in 1 to length(stored_ammo)) // mag is full, check for empties
+			var/obj/item/ammo_casing/bullet = stored_ammo[i]
+			if(isnull(bullet) || !bullet.BB || isnull(bullet.BB)) // Found a bullet, but its empty!)
+				eject_round(bullet, i) // pop it out
+				insert_round(other_casing, i) // pop it in
+				return TRUE
+	return FALSE
+
+/* 
 		for(var/obj/item/ammo_casing/AC in stored_ammo)
 			if(!AC.BB)//found a spent ammo
 				stored_ammo -= AC
@@ -83,9 +90,24 @@
 
 				stored_ammo += other_casing
 				other_casing.forceMove(src)
-				return 1
+				return 1 */
 
-	return 0
+/obj/item/ammo_box/proc/eject_round(obj/item/ammo_casing/casing_to_eject, index)
+	if(index)
+		stored_ammo[index] = null
+	casing_to_eject.forceMove(get_turf(src.loc))
+
+/obj/item/ammo_box/proc/insert_round(obj/item/ammo_casing/other_casing, index)
+	if(!istype(other_casing))
+		return FALSE
+	if(index) // For revolvers
+		stored_ammo[index] = other_casing // Carefully replace the spent round
+		. = TRUE
+	else
+		stored_ammo += other_casing // just stuff it in there
+		. = TRUE
+	if(.)
+		other_casing.forceMove(src)
 
 /obj/item/ammo_box/proc/can_load(mob/user)
 	return 1
