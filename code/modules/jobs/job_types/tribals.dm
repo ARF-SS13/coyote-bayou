@@ -17,6 +17,37 @@
 		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
 		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
 
+GLOBAL_LIST_INIT(tribal_job_recipes, list(
+	/datum/crafting_recipe/tribal_pa,
+	/datum/crafting_recipe/tribal_pa_helmet,
+	/datum/crafting_recipe/tribal_combat_armor,
+	/datum/crafting_recipe/tribal_combat_armor_helmet,
+	/datum/crafting_recipe/tribal_r_combat_armor,
+	/datum/crafting_recipe/tribal_r_combat_armor_helmet,
+	/datum/crafting_recipe/tribalwar/chitinarmor,
+	/datum/crafting_recipe/tribalwar/lightcloak,
+	/datum/crafting_recipe/warmace,
+	/datum/crafting_recipe/tribalwar/lighttribe,
+	/datum/crafting_recipe/tribalwar/heavytribe,
+	/datum/crafting_recipe/tribalwar/legendaryclawcloak,
+	/datum/crafting_recipe/tribalwar/deathclawspear,
+	/datum/crafting_recipe/warpaint,
+	/datum/crafting_recipe/tribalradio,
+	/datum/crafting_recipe/tribalwar/goliathcloak,
+	/datum/crafting_recipe/tribalwar/bonebow,
+	/datum/crafting_recipe/tribalwar/tribe_bow,
+	/datum/crafting_recipe/tribalwar/sturdybow,
+	/datum/crafting_recipe/tribalwar/warclub,
+	/datum/crafting_recipe/tribalwar/silverbow,
+	/datum/crafting_recipe/tribalwar/arrowbone,
+	/datum/crafting_recipe/tribalwar/bonespear,
+	/datum/crafting_recipe/tribalwar/bonecodpiece,
+	/datum/crafting_recipe/tribalwar/bracers,
+	/datum/crafting_recipe/tribal/bonetalisman,
+	/datum/crafting_recipe/healpoultice,
+	/datum/crafting_recipe/healpoultice5,
+	/datum/crafting_recipe/tribal/bonebag))
+
 /datum/outfit/job/tribal/
 	name = "Tribal"
 	jobtype = /datum/job/tribal/
@@ -34,16 +65,13 @@
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	H.grant_language(/datum/language/tribal)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/punji_sticks)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor_helmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa_helmet)
-
+	for(var/datum/crafting_recipe/recipe as() in GLOB.tribal_job_recipes)
+		H.mind.teach_crafting_recipe(recipe)
 
 /*
 Tribal Chief
@@ -147,7 +175,8 @@ Tribal Shaman
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/flashlight/lantern = 1,
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -217,12 +246,12 @@ Tribal Head Hunter
 	belt = 		/obj/item/melee/transforming/cleaving_saw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/flashlight/lantern = 1)
 
 /*
 Druid

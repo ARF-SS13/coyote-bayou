@@ -8003,6 +8003,7 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
+/obj/item/storage/part_replacer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aCi" = (
@@ -16771,6 +16772,7 @@
 /area/f13/building)
 "bfD" = (
 /obj/machinery/light/small,
+/obj/machinery/vending/cigarette,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bfE" = (
@@ -28619,6 +28621,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ftQ" = (
+/obj/item/tank/internals/oxygen/empty,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustysolid"
+	},
+/area/f13/building/massfusion)
 "fur" = (
 /obj/item/ammo_casing/c9mm,
 /obj/effect/decal/cleanable/dirt,
@@ -34791,7 +34799,6 @@
 /area/f13/wasteland)
 "iIm" = (
 /obj/structure/table,
-/obj/item/storage/part_replacer,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -40082,6 +40089,16 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"lDk" = (
+/obj/structure/table,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/obj/item/clothing/mask/gas,
+/turf/open/floor/plasteel/f13{
+	icon_state = "greenrustychess"
+	},
+/area/f13/building/massfusion)
 "lDv" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -49071,6 +49088,19 @@
 	icon_state = "freezerfloor"
 	},
 /area/f13/building/museum)
+"qkW" = (
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/suit/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/head/radiation,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
+/obj/item/clothing/glasses/welding,
+/obj/structure/shelf_wood,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/building/massfusion)
 "qlb" = (
 /obj/structure/fence{
 	dir = 4
@@ -55076,6 +55106,9 @@
 "tEm" = (
 /obj/item/toy/figure/engineer,
 /obj/structure/table,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
+/obj/item/tank/internals/oxygen,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -113816,7 +113849,7 @@ aeP
 lts
 ese
 agR
-wSN
+qkW
 wSN
 wSN
 wSN
@@ -114074,7 +114107,7 @@ oFJ
 ese
 agR
 tEm
-iGO
+ftQ
 qtQ
 mNo
 bkW
@@ -114587,7 +114620,7 @@ aeP
 oFJ
 bOE
 agR
-mMt
+lDk
 iGO
 iGO
 iGO
