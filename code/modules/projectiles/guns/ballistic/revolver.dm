@@ -82,7 +82,7 @@
 /obj/item/gun/ballistic/revolver/can_shoot()
 	return get_ammo(0,0)
 
-/obj/item/gun/ballistic/automatic/ui_action_click(mob/user, action)
+/obj/item/gun/ballistic/revolver/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_firemode))
 		if(is_automatic == FALSE)
 			burst_select()
