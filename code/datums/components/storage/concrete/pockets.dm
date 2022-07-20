@@ -99,6 +99,7 @@
 
 /datum/component/storage/concrete/pockets/tiny/magpouch/Initialize()
 	. = ..()
+	max_w_class = WEIGHT_CLASS_SMALL
 	can_hold = GLOB.storage_holster_can_hold
 	cant_hold = GLOB.storage_magpouch_cant_hold
 

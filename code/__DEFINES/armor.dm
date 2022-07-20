@@ -204,6 +204,24 @@
 #define ARMOR_MODIFIER_DOWN_FIRE_T3 list(\
 		"fire" = -2)
 
+#define ARMOR_MODIFIER_UP_BOMB_T1 list(\
+		"bomb" = 1.5)
+
+#define ARMOR_MODIFIER_UP_BOMB_T2 list(\
+		"bomb" = 3)
+
+#define ARMOR_MODIFIER_UP_BOMB_T3 list(\
+		"bomb" = 5)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T1 list(\
+		"bomb" = 0.5)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T2 list(\
+		"bomb" = 0.1)
+
+#define ARMOR_MODIFIER_DOWN_BOMB_T3 list(\
+		"bomb" = -2)
+
 
 /* Bullet armor
  * Adds on bullet protection
