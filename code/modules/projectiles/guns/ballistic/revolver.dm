@@ -82,15 +82,7 @@
 /obj/item/gun/ballistic/revolver/can_shoot()
 	return get_ammo(0,0)
 
-/obj/item/gun/ballistic/revolver/ui_action_click(mob/user, action)
-	if(istype(action, /datum/action/item_action/toggle_firemode))
-		if(is_automatic == FALSE)
-			burst_select()
-		if(is_automatic == TRUE)
-			auto_select()
-	else
-		return ..()
-		
+
 /obj/item/gun/ballistic/revolver/get_ammo(countchambered = 0, countempties = 1)
 	var/boolets = 0 //mature var names for mature people
 	if (chambered && countchambered)
@@ -428,6 +420,27 @@
 	autofire_shot_delay = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
+
+/obj/item/gun/ballistic/revolver/m29/peacekeeper/ui_action_click()
+	burst_select()
+
+/obj/item/gun/ballistic/revolver/m29/peacekeeper/proc/burst_select()
+	var/mob/living/carbon/human/user = usr
+	switch(select)
+		if(0)
+			select += 1
+			burst_size = 3 //fan the hammer
+			spread = 15
+			extra_penetration = 0
+			to_chat(user, "<span class='notice'>You prepare to fan the hammer for a rapid burst of shots.</span>")
+		if(1)
+			select = 0
+			burst_size = 1
+			spread = 0
+			extra_penetration = 0.1
+			fire_delay = 7
+			to_chat(user, "<span class='notice'>You switch to single-shot fire.</span>")
+	update_icon()
 
 /* * * * * * * * * * *
  * Snubnose .44 revolver
