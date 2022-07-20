@@ -82,6 +82,15 @@
 /obj/item/gun/ballistic/revolver/can_shoot()
 	return get_ammo(0,0)
 
+/obj/item/gun/ballistic/automatic/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/toggle_firemode))
+		if(is_automatic == FALSE)
+			burst_select()
+		if(is_automatic == TRUE)
+			auto_select()
+	else
+		return ..()
+		
 /obj/item/gun/ballistic/revolver/get_ammo(countchambered = 0, countempties = 1)
 	var/boolets = 0 //mature var names for mature people
 	if (chambered && countchambered)
