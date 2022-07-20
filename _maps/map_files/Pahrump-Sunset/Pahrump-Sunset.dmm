@@ -9434,6 +9434,7 @@
 /area/f13/building/hospital)
 "aGr" = (
 /obj/machinery/light,
+/obj/structure/closet/crate/bin/trashbin,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -23546,9 +23547,10 @@
 /turf/open/floor/wood_common,
 /area/f13/building)
 "cLm" = (
+/obj/effect/landmark/start/f13/followersvolunteer,
 /obj/effect/landmark/start/f13/followersdoctor,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
 	},
 /area/f13/building/hospital)
 "cLw" = (
@@ -28150,6 +28152,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/trading_machine/medical,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -29745,9 +29748,10 @@
 /turf/open/floor/carpet,
 /area/f13/building/mall)
 "fWG" = (
-/obj/effect/landmark/start/f13/followersdoctor,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
 /area/f13/building/hospital)
 "fWM" = (
 /obj/effect/decal/waste{
@@ -31457,7 +31461,6 @@
 /obj/structure/toilet{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/followersguard,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -31803,7 +31806,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/effect/landmark/start/f13/followersguard,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -37976,8 +37978,8 @@
 	},
 /area/f13/wasteland)
 "kzy" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/machinery/smartfridge,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "kzL" = (
 /turf/closed/wall/f13/ruins,
@@ -42326,8 +42328,11 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
+/obj/effect/landmark/start/f13/followersvolunteer,
+/obj/effect/landmark/start/f13/followersadministrator,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 4
+	},
 /area/f13/building/hospital)
 "mEJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43931,6 +43936,8 @@
 	color = "#363636"
 	},
 /obj/effect/landmark/start/f13/followersvolunteer,
+/obj/effect/landmark/start/f13/followersdoctor,
+/obj/effect/landmark/start/f13/followersdoctor,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -47793,8 +47800,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/museum)
 "pwG" = (
-/obj/effect/landmark/start/f13/followersadministrator,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/wall/f13/store,
 /area/f13/building/hospital)
 "pwK" = (
 /obj/structure/chair/booth{
@@ -48109,7 +48118,6 @@
 /obj/structure/chair/office/light{
 	dir = 8
 	},
-/obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
@@ -60444,6 +60452,9 @@
 /area/f13/caves)
 "wzI" = (
 /obj/effect/landmark/start/f13/followersvolunteer,
+/obj/effect/landmark/start/f13/followersdoctor,
+/obj/effect/landmark/start/f13/followersguard,
+/obj/effect/landmark/start/f13/followersguard,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -108001,10 +108012,10 @@ aFP
 aEt
 aGq
 ijr
-ijr
-kzy
-mEH
-ijr
+pwG
+aFY
+aFY
+cQC
 ijr
 hey
 wVw
@@ -108258,7 +108269,7 @@ aFP
 aEt
 aGq
 ijr
-aNr
+fWG
 aKO
 aKO
 aGr
@@ -108515,8 +108526,8 @@ aFP
 aEt
 tEH
 ijr
-ntz
-wzI
+mEH
+cLm
 wzI
 ntz
 ijr
@@ -108527,7 +108538,7 @@ uZi
 uZi
 wxJ
 uZi
-uZi
+kzy
 eAT
 gps
 ijr
@@ -109285,7 +109296,7 @@ tPB
 mMF
 aEs
 aGq
-ijr
+tFm
 pFw
 nKu
 rKl
@@ -109293,7 +109304,7 @@ ijr
 kKf
 qle
 ijr
-pwG
+vqp
 vlO
 pNF
 kEo
@@ -109542,7 +109553,7 @@ tPB
 mMF
 aEs
 aKA
-ijr
+tFm
 tFm
 aFD
 bqb
@@ -109799,7 +109810,7 @@ tPB
 mMF
 aEs
 aGq
-aJo
+tFm
 aFD
 tFm
 aFD
@@ -110056,7 +110067,7 @@ tPB
 mMF
 aEs
 aKA
-ijr
+tFm
 dIV
 aCh
 uZa
@@ -111094,7 +111105,7 @@ aGq
 ijr
 ahh
 aHT
-cLm
+aHT
 vcV
 ijr
 gSw
@@ -112126,7 +112137,7 @@ sIp
 jaC
 ijr
 rLI
-fWG
+tZi
 aIV
 aHQ
 oHk
