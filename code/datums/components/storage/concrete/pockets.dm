@@ -18,6 +18,13 @@
 /datum/component/storage/concrete/pockets/massive
 	max_w_class = WEIGHT_CLASS_HUGE
 
+/datum/component/storage/concrete/pockets/massive/swords
+	max_items = 1
+
+/datum/component/storage/concrete/pockets/massive/swords/Initialize()
+	. = ..()
+	can_hold = GLOB.knifebelt_allowed
+
 /datum/component/storage/concrete/pockets/small
 	max_items = 1
 	//attack_hand_interact = FALSE
@@ -99,6 +106,7 @@
 
 /datum/component/storage/concrete/pockets/tiny/magpouch/Initialize()
 	. = ..()
+	max_w_class = WEIGHT_CLASS_SMALL
 	can_hold = GLOB.storage_holster_can_hold
 	cant_hold = GLOB.storage_magpouch_cant_hold
 
