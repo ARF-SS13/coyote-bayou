@@ -470,7 +470,3 @@
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)
 	death_sound = 'sound/f13npc/roach/roach_death.ogg'
-
-/mob/living/simple_animal/hostile/radroach/Initialize()
-	. = ..()
-	AddComponent(/datum/component/swarming)
