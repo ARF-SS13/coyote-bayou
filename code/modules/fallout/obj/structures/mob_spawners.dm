@@ -21,6 +21,7 @@
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
 	var/infinite = FALSE
+	var/mobs_to_spawn = 1 //number of mobs to spawn at once, for swarms
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -47,12 +48,15 @@
 		return FALSE
 	toggle_fire(FALSE)
 	addtimer(CALLBACK(src, .proc/toggle_fire), spawn_time)
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(src.loc)
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+	var/chosen_mob_type
+	var/mob/living/simple_animal/L
+	for(var/i = 1 to mobs_to_spawn)
+		chosen_mob_type = pickweight(mob_types)
+		L = new chosen_mob_type(src.loc)
+		L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
+		spawned_mobs += L
+		L.nest = src
+		visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
 	if(spawnsound)
 		playsound(src, spawnsound, 30, 1)
 	if(!infinite)
@@ -208,7 +212,8 @@
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
-	max_mobs = 5
+	max_mobs = 15
+	mobs_to_spawn = 3
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant
