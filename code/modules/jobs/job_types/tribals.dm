@@ -562,7 +562,7 @@ Guardian
 	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
 	gloves = 	/obj/item/clothing/gloves/f13/handwraps
 	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/tribe_heavy_armor
+	suit = 		/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = 		/obj/item/card/id/tribetattoo
 	backpack_contents = list(
