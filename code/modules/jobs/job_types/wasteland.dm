@@ -73,6 +73,7 @@ Raider
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/radio/redwater = 1,
 		)
 
 
@@ -1156,7 +1157,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal_r_combat_armor,
 		/datum/crafting_recipe/tribal_r_combat_armor_helmet,
 		/datum/crafting_recipe/tribalwar/chitinarmor,
-//		/datum/crafting_recipe/tribalwar/deathclawspear,
+		/datum/crafting_recipe/tribalwar/deathclawspear,
 		/datum/crafting_recipe/tribalwar/lightcloak,
 		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
 		/datum/crafting_recipe/warpaint,
@@ -1519,6 +1520,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/redwatersalve
 	name = "Redwater Slave"
 	uniform = /obj/item/clothing/under/f13/rag
+	back = /obj/item/storage/backpack/satchel/explorer
 	neck = /obj/item/electropack/shockcollar/explosive
 
 	backpack_contents =  list(
@@ -1557,7 +1559,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1, 
-		/obj/item/clothing/under/jeanbshorts =1)
+		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave

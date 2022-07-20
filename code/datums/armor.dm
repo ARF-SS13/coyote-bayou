@@ -37,18 +37,18 @@
 	src.linebullet = linebullet
 	src.linelaser = linelaser
 	src.energy = energy
-	src.bomb = bomb
-	src.bio = bio
-	src.rad = rad
-	src.fire = fire
-	src.acid = acid
-	src.magic = magic
-	src.wound = wound
+	src.bomb = clamp(bomb, 0, ARMOR_CAP_BOMB)
+	src.bio = clamp(bio, 0, ARMOR_CAP_BIO)
+	src.rad = clamp(rad, 0, ARMOR_CAP_RAD)
+	src.fire = clamp(fire, 0, ARMOR_CAP_FIRE)
+	src.acid = clamp(acid, 0, ARMOR_CAP_ACID)
+	src.magic = clamp(magic, 0, ARMOR_CAP_MAGIC)
+	src.wound = clamp(wound, 0, ARMOR_CAP_WOUND)
 //DESERT ROSE 2 LINEARMOR EXPLAINED: Heavily influenced by this Skyrim mod https://www.nexusmods.com/skyrim/mods/15860 % damage reduction is exponential (E.G. 90 doubles the effective health increase of 80).
 //Linearmor is linear (so 100 armor is twice 50). Linearmor will never equal 100 armor. If a mob were to have 100 health, each point of linearmor would be the equivalent to +1 effective health. For example, 100 linearmor = 200 effective health or 50% damage reduction.
-	src.melee = 100*linemelee/(abs(linemelee)+100) || melee
-	src.bullet = 100*linebullet/(abs(linebullet)+100) || bullet
-	src.laser = 100*linelaser/(abs(linelaser)+100) || laser
+	src.melee = round(100*linemelee/(abs(linemelee)+100), 0.5) || melee
+	src.bullet = round(100*linebullet/(abs(linebullet)+100), 0.5) || bullet
+	src.laser = round(100*linelaser/(abs(linelaser)+100), 0.5) || laser
 
 	src.tier = 0
 	tag = ARMORID

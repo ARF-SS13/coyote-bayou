@@ -1206,15 +1206,6 @@
 	icon_state = "horizontaltopbordertop2left"
 	},
 /area/f13/wasteland)
-"bcQ" = (
-/obj/structure/table,
-/obj/structure/barricade/bars,
-/obj/structure/decoration/rag,
-/obj/item/paper/bitterdrink,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/raiders)
 "bcS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4471,7 +4462,6 @@
 /area/f13/caves)
 "dCb" = (
 /obj/structure/closet,
-/obj/item/stack/f13Cash/random/ncr/low,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13{
 	icon_state = "whitebluerustychess"
@@ -14435,7 +14425,9 @@
 /area/f13/wasteland)
 "lGq" = (
 /obj/structure/simple_door/bunker,
-/turf/open/space/basic,
+/turf/open/floor/f13{
+	icon_state = "dark"
+	},
 /area/f13/city)
 "lHJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22299,13 +22291,8 @@
 /area/f13/wasteland)
 "spo" = (
 /obj/structure/simple_door/bunker,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
 	},
 /area/f13/city)
 "spt" = (
@@ -24776,7 +24763,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/space/basic,
+/turf/open/floor/f13{
+	icon_state = "dark"
+	},
 /area/f13/city)
 "unX" = (
 /obj/structure/spacevine,
@@ -29151,10 +29140,6 @@
 /turf/open/floor/f13{
 	icon_state = "dark"
 	},
-/area/f13/city)
-"ykp" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/space/basic,
 /area/f13/city)
 "ykJ" = (
 /obj/structure/wreck/trash/two_tire,
@@ -60384,7 +60369,7 @@ blU
 ukf
 iUs
 kWE
-bcQ
+lAc
 nJf
 wOZ
 ecD
@@ -65285,7 +65270,7 @@ jXj
 jSg
 pyl
 fQz
-ykp
+pbw
 ode
 lVj
 iLx
@@ -65542,7 +65527,7 @@ jSg
 wms
 bDe
 shz
-ykp
+pbw
 iLx
 iLx
 bcS

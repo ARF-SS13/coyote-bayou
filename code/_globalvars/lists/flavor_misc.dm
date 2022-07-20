@@ -161,7 +161,8 @@ GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything
 	"Hiking Backpack" = /obj/item/storage/backpack,
 	"Grey Satchel" = /obj/item/storage/backpack/satchel,
 	"Grey Duffel Bag" = /obj/item/storage/backpack/duffelbag,
-	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,))
+	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,
+	"Bone Satchel" = /obj/item/storage/backpack/satchel/bone,))
 
 //Suit/Skirt
 #define PREF_SUIT "Jumpsuit"

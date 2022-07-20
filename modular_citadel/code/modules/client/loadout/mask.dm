@@ -78,31 +78,36 @@
 	name = "red bandana"
 	path = /obj/item/clothing/mask/bandana/red
 	subcategory = LOADOUT_SUBCATEGORY_MASK_BANDANA
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/bandana/blue
 	name = "blue bandana"
 	path = /obj/item/clothing/mask/bandana/blue
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/bandana/green
 	name = "green bandana"
 	path = /obj/item/clothing/mask/bandana/green
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/bandana/gold
 	name = "gold bandana"
 	path = /obj/item/clothing/mask/bandana/gold
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/bandana/black
 	name = "black bandana"
 	path = /obj/item/clothing/mask/bandana/black
-	cost = 2
+	cost = 1
 
 /datum/gear/mask/bandana/skull
 	name = "skull bandana"
 	path = /obj/item/clothing/mask/bandana/skull
+	cost = 1
+
+/datum/gear/mask/bandana/momento
+	name = "momento bandana"
+	path = /obj/item/clothing/mask/bandana/momentobandana
 	cost = 2
 
 /datum/gear/mask/moustache

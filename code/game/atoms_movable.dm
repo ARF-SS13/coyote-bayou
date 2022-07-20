@@ -67,6 +67,13 @@
 	///is the mob currently ascending or descending through z levels?
 	var/currently_z_moving
 
+	/**
+	 * an associative lazylist of relevant nested contents by "channel", the list is of the form: list(channel = list(important nested contents of that type))
+	 * each channel has a specific purpose and is meant to replace potentially expensive nested contents iteration.
+	 * do NOT add channels to this for little reason as it can add considerable memory usage.
+	 */
+	var/list/important_recursive_contents
+
 
 
 /atom/movable/Initialize(mapload)
@@ -397,6 +404,12 @@
 		qdel(movable_content)
 
 	moveToNullspace()
+
+	//This absolutely must be after moveToNullspace()
+	//We rely on Entered and Exited to manage this list, and the copy of this list that is on any /atom/movable "Containers"
+	//If we clear this before the nullspace move, a ref to this object will be hung in any of its movable containers
+	LAZYCLEARLIST(important_recursive_contents)
+
 
 	vis_locs = null //clears this atom out of all viscontents
 	vis_contents.Cut()

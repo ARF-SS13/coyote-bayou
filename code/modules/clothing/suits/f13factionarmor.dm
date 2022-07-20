@@ -802,7 +802,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 25, "bomb" = 25, "bio" = 70, "rad" = 65, "fire" = 80, "acid" = 100, "wound" = 50)
 	slowdown = 0.04
 
-/obj/item/clothing/suit/armor/tribe_heavy_armor
+/obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	name = "heavy tribal armor"
 	desc = "Heavy armor make of sturdy leather and pieces of bone. Worn by seasoned veterans within the Wayfinder tribe."
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'

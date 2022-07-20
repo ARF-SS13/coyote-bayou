@@ -1168,8 +1168,12 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-								
-								
-								
-								
-								
+/obj/item/book/granter/crafting_recipe/bitters
+	name = "Healing techniques of the midwestern tribes"
+	desc = "An old book written by a missionary studying the postwar tribes of the midwest."
+	remarks = list("Grind into a fine paste...", "Dilute in just enough water...", "Filter out the fibers...", "Do not boil for too long...")
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/bitterdrink, 
+		/datum/crafting_recipe/bitterdrink5, 
+		/datum/crafting_recipe/healpoultice, 
+		/datum/crafting_recipe/healpoultice5)

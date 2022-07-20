@@ -92,3 +92,33 @@ Snek for Enclave East*/
 	. = ..()
 	AddElement(/datum/element/wuv, "growls happily", EMOTE_AUDIBLE, /datum/mood_event/pet_animal, "growls!", EMOTE_AUDIBLE)
 	AddElement(/datum/element/mob_holder, held_icon)
+
+/mob/living/simple_animal/pet/dog/serdy
+	name = "Serdy"
+	desc = "The bestest boy."
+	icon = 'icons/fallout/mobs/animals/dogs.dmi'
+	icon_state = "shepherd"
+	icon_living = "shepherd"
+	icon_dead = "shepherd_dead"
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	response_help_continuous = "pets"
+	response_help_simple = "pet"
+	response_disarm_continuous = "bops"
+	response_disarm_simple = "bop"
+	response_harm_continuous = "kicks"
+	response_harm_simple = "kick"
+	speak = list("Whuf!", "Woof!", "Bark!", "Awoo?")
+	speak_emote = list("barks", "woofs")
+	emote_hear = list("barks!", "woofs!", "whines.","pants.")
+	emote_see = list("stares at nothing.", "sniffs the air.","licks its paw.")
+	faction = list("dog", "neutral")
+	see_in_dark = 5
+	speak_chance = 1
+	turns_per_move = 10
+	footstep_type = FOOTSTEP_MOB_CLAW
+	var/held_icon = "corgi"
+
+/mob/living/simple_animal/pet/dog/serdy/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/wuv, "woofs happily!", EMOTE_AUDIBLE, /datum/mood_event/pet_animal, "woof!", EMOTE_AUDIBLE)
+	AddElement(/datum/element/mob_holder, held_icon)

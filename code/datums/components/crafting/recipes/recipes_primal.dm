@@ -390,7 +390,7 @@
 
 /datum/crafting_recipe/tribalwar/heavytribe
 	name = "Heavy Tribal Plates"
-	result = /obj/item/clothing/suit/armor/tribe_heavy_armor
+	result = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/sheet/cloth = 5)
@@ -420,8 +420,6 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
 
-/* Host says get rid of deathclaw spear.
-
 /datum/crafting_recipe/tribalwar/deathclawspear
 	name = "Deathclaw Spear"
 	result = /obj/item/twohanded/spear/bonespear/deathclaw
@@ -433,7 +431,6 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
-*/
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"

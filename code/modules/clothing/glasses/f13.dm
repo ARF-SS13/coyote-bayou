@@ -11,7 +11,7 @@
 
 /obj/item/clothing/glasses/legiongoggles
 	name = "sandstorm goggles"
-	desc = "Post-war makeshift protective goggles made by legion artisans."
+	desc = "Simple, tight-fitting goggles useful for protecting your eyes from flying debris."
 	icon_state = "legion"
 	item_state = "legion"
 
@@ -27,13 +27,13 @@
 	darkness_view = 12
 	lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	glass_colour_type = /datum/client_colour/glass_colour/lightorange
-	
+
 /obj/item/clothing/glasses/night/f13/enclave
 	name = "\improper pilot goggles"
 	desc = "Heat-sensitive goggles commonly worn by Enclave Personnel."
 	icon_state = "enclavegoggles"
 	item_state = "enclavegoggles"
-	vision_correction = 1 
+	vision_correction = 1
 
 /obj/item/clothing/glasses/night/ncr
 	name = "lit shades"

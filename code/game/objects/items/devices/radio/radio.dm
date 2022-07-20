@@ -203,6 +203,10 @@
 			. = TRUE
 		if("broadcast")
 			broadcasting = !broadcasting
+			if(broadcasting && on) //we dont need hearing sensitivity if we arent broadcasting, because talk_into doesnt care about hearing
+				become_hearing_sensitive(INNATE_TRAIT)
+			else if(!broadcasting)
+				lose_hearing_sensitivity(INNATE_TRAIT)
 			. = TRUE
 		if("channel")
 			var/channel = params["channel"]
@@ -320,7 +324,7 @@
 
 /obj/item/radio/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	. = ..()
-	if(radio_freq || !broadcasting || get_dist(src, speaker) > canhear_range)
+	if(radio_freq || !broadcasting || get_dist(src, speaker) > (canhear_range)-2)
 		return
 
 	if(message_mode == MODE_WHISPER || message_mode == MODE_WHISPER_CRIT)
@@ -488,3 +492,39 @@
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_NORMAL
+
+GLOBAL_VAR_INIT(redwater_frequency, null)
+GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
+
+/obj/item/radio/redwater
+	name = "handheld transceiver"
+	icon_state = "walkietalkie"
+	item_state = "walkietalkie"
+	desc = "a rugged radio used by even more rugged folk. Looks kinda heavy!"
+	canhear_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone
+	sharpness = SHARP_NONE
+
+/obj/item/radio/redwater/Initialize()
+	. = ..()
+	setup_redwater_frequency()
+	set_frequency(GLOB.redwater_frequency)
+	color = "#5c5c5c"
+
+/obj/item/radio/redwater/proc/setup_redwater_frequency(mob/user)
+	if(GLOB.redwater_frequency > 1)
+		return // already setup!
+	var/frequency_ok = FALSE
+	var/tries_left = 5
+	while(!frequency_ok)
+		GLOB.redwater_frequency = rand(MIN_FREQ, MAX_FREQ)
+		if(GLOB.redwater_frequency in GLOB.banned_redwater_freqs)
+			if(tries_left-- > 0)
+				continue
+		frequency_ok = TRUE
+
+/obj/item/radio/redwater/examine(mob/user)
+	. = ..()
+	if(GLOB.redwater_frequency)
+		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to [span_boldnotice(GLOB.redwater_frequency * 0.1)]!\""
