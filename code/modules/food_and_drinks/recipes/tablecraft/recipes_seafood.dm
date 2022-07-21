@@ -218,7 +218,7 @@
 	name = "Lobster Roll"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/bun = 1,
-		/obj/item/reagent_containers/food/snacks/fishmeat/lobster = 1
+		/obj/item/reagent_containers/food/snacks/fishmeat/crawdad = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing/lobster_roll
 	subcategory = CAT_MISCFOOD
@@ -226,7 +226,7 @@
 /datum/crafting_recipe/food/lobsterdeluxe
 	name = "Fish fry"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked = 1,
+		/obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked = 1,
 		/obj/item/reagent_containers/food/snacks/grown/citrus/lemon =1,
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
 	)

@@ -48,18 +48,18 @@
 	icon = 'icons/obj/fish/seafood.dmi'
 	icon_state = "smokedsalmon"
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster
-	name = "lobster meat"
-	desc = "Raw lobster meat that has been prepared."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad
+	name = "crawdad meat"
+	desc = "Raw crawdad meat that has been prepared."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "raw_lobster_meat"
-	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
+	icon_state = "raw_crawdad_meat"
+	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
-	name = "cooked lobster meat"
-	desc = "A deliciously cooked lobster, all ready to consume."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
+	name = "cooked crawdad meat"
+	desc = "A deliciously cooked crawdad, all ready to consume."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "lobster_steamed_simple"
+	icon_state = "crawdad_steamed_simple"
 
 /obj/item/reagent_containers/food/snacks/fishmeat/shrimp
 	name = "shrimp"
