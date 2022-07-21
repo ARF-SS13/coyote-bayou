@@ -68,12 +68,13 @@ proc/get_top_level_mob(mob/S)
 	user.log_message(message, LOG_EMOTE)
 	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
-	var/list/non_admin_ghosts = list()
+	var/list/non_admin_ghosts
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
 	if(subtler)
-		for(var/mob/ghost in GLOB.dead_mob_list)
-			if(!(ghost in GLOB.admins))
-				non_admin_ghosts |= ghost
+		non_admin_ghosts = list(GLOB.dead_mob_list)
+		for(var/mob/ghostie in GLOB.dead_mob_list)
+			if(ghostie.client && check_rights_for(ghostie.client, R_ADMIN))
+				non_admin_ghosts -= ghostie
 
 	// Everyone in range can see it
 	user.visible_message(
