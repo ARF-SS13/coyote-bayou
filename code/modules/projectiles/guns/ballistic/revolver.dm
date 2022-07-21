@@ -389,10 +389,11 @@
 
 /* * * * * * * * * * *
  * Peacekeeper revolver
- * Fullauto? heavier revolver
+ * Quickfire heavier revolver
  * .44 magnum
  * Scope!
- * Full-auto?
+ * Quick fire
+ * Heavy recoil
  * Unique
  * * * * * * * * * * */
 
@@ -407,16 +408,16 @@
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
 	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY * 2
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL * 2
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
 	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 
-	automatic = 1
-	autofire_shot_delay = 1
+	automatic = 0
+	autofire_shot_delay = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
 
