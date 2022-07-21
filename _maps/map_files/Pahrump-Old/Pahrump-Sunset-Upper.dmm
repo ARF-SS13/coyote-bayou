@@ -995,7 +995,15 @@
 	},
 /turf/open/indestructible/ground/outside/woodalt,
 /area/f13/building)
-"er" = ()
+"er" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/spawner/north,
+/obj/item/paper/crumpled/bloody/ruins/thederelict/unfinished{
+	info = "Why's the [ILLEGIBLE] Here?? They're screaming something about [ILLEGIBLE]... No.. this can't be.."
+	},
+/turf/open/floor/f13,
+/area/f13/brotherhood/surface)
 "eu" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
