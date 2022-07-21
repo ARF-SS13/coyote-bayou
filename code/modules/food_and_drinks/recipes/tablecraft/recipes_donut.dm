@@ -69,6 +69,106 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/donut/blumpkin
 
+/datum/crafting_recipe/food/donut/bungo
+	name = "Bungo Donut"
+	reqs = list(
+		/datum/reagent/consumable/bungojuice = 3,
+		/obj/item/reagent_containers/food/snacks/donut/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/bungo
+
+/datum/crafting_recipe/food/donut/matcha
+	name = "Matcha Donut"
+	reqs = list(
+		/datum/reagent/toxin/teapowder = 3,
+		/obj/item/reagent_containers/food/snacks/donut/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/matcha
+
+
+/datum/crafting_recipe/food/donut/laugh
+	name = "Sweet Pea Donut"
+	reqs = list(
+		/datum/reagent/consumable/laughsyrup = 3,
+		/obj/item/reagent_containers/food/snacks/donut/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/laugh
+
+
+///JELLY DONUTS
+
+/datum/crafting_recipe/food/donut/jelly/apple
+	name = "Apple Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/applejuice = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/apple
+
+/datum/crafting_recipe/food/donut/jelly/berry
+	name = "Berry Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/berryjuice = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/berry
+
+/datum/crafting_recipe/food/donut/jelly/blumpkin
+	name = "Blumpkin Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/blumpkinjuice = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/blumpkin
+
+/datum/crafting_recipe/food/donut/jelly/bungo
+	name = "Bungo Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/bungojuice = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/bungo
+
+/datum/crafting_recipe/food/donut/jelly/caramel
+	name = "Caramel Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/caramel = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/caramel
+
+/datum/crafting_recipe/food/donut/jelly/choco
+	name = "Chocolate Jelly Donut"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 1,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/choco
+
+/datum/crafting_recipe/food/donut/jelly/matcha
+	name = "Matcha Jelly Donut"
+	reqs = list(
+		/datum/reagent/toxin/teapowder = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/matcha
+
+/datum/crafting_recipe/food/donut/jelly/trumpet
+	name = "Spaceman's Jelly Donut"
+	reqs = list(
+		/datum/reagent/medicine/polypyr = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/trumpet
+
+/datum/crafting_recipe/food/donut/jelly/laugh
+	name = "Sweet Pea Jelly Donut"
+	reqs = list(
+		/datum/reagent/consumable/laughsyrup = 3,
+		/obj/item/reagent_containers/food/snacks/donut/jelly/plain = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/donut/jelly/laugh
+
 //ICECREAM STUFF//
 
 /datum/crafting_recipe/food/dessert

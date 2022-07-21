@@ -190,3 +190,24 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= multiplier, i++)
 		new /obj/item/reagent_containers/food/snacks/butter/margarine(location)
+
+/datum/chemical_reaction/curd_cheese
+	required_reagents = list(/datum/reagent/consumable/milk = 15, /datum/reagent/consumable/flour = 5, /datum/reagent/consumable/cream = 5)
+	mix_message = "The milk curdles into cheese."
+	required_temp = 353
+
+/datum/chemical_reaction/curd_cheese/on_reaction(datum/reagents/holder, multiplier)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= multiplier, i++)
+		new /obj/item/reagent_containers/food/snacks/curd_cheese(location)
+
+/datum/chemical_reaction/mozzarella
+	required_reagents = list(/datum/reagent/consumable/milk = 10, /datum/reagent/consumable/cream = 10)
+	required_catalysts = list(/datum/reagent/consumable/enzyme = 1)
+	mix_message = "Fine ribbons of curd form in the milk."
+	required_temp = 353
+
+/datum/chemical_reaction/mozzarella/on_reaction(datum/reagents/holder, multiplier)
+	var/location = get_turf(holder.my_atom)
+	for(var/i = 1, i <= multiplier, i++)
+		new /obj/item/reagent_containers/food/snacks/mozzarella(location)
