@@ -144,6 +144,21 @@
 /obj/machinery/light/small,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"alz" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/mirror{
+	pixel_x = -1;
+	pixel_y = 29
+	},
+/obj/structure/sink{
+	pixel_y = 15
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building/hospital)
 "anv" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -924,9 +939,9 @@
 /turf/open/indestructible,
 /area/f13/wasteland)
 "dHP" = (
-/obj/structure/bodycontainer/morgue,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "dKF" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -1263,10 +1278,6 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/radiation)
-"flP" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "fmJ" = (
 /obj/structure/sign/poster/prewar/poster75{
 	pixel_y = 32
@@ -1388,19 +1399,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/wasteland/ncr)
 "gde" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/mirror{
-	pixel_x = -1;
-	pixel_y = 29
-	},
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/healthanalyzer,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "geI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2125,6 +2127,16 @@
 /obj/item/bodypart/l_arm,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
+"jkQ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "jof" = (
 /obj/structure/table,
 /obj/item/stack/medical/ointment,
@@ -2163,9 +2175,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "juL" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/healthanalyzer,
+/obj/item/bodybag/containment,
+/obj/item/bodybag/containment,
+/obj/item/storage/box/bodybags,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jvX" = (
@@ -2366,6 +2382,13 @@
 /obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"ktt" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "kur" = (
 /turf/closed/wall,
 /area/f13/ncr)
@@ -2407,6 +2430,11 @@
 "kEe" = (
 /turf/open/floor/carpet/orange,
 /area/f13/ncr)
+"kFg" = (
+/obj/structure/table,
+/obj/structure/bedsheetbin/towel,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "kFN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -2670,11 +2698,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"lCy" = (
-/obj/structure/table/wood,
-/obj/structure/destructible/tribal_torch/lit,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "lDT" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -2741,14 +2764,6 @@
 /obj/item/shard,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"lQW" = (
-/obj/structure/table,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "lSK" = (
 /obj/machinery/light{
 	dir = 8
@@ -2777,14 +2792,16 @@
 	},
 /area/f13/ncr)
 "lUm" = (
-/obj/machinery/light{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table/optable,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/curtain,
+/obj/machinery/shower{
+	pixel_y = 17
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/building/hospital)
 "lYF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3014,7 +3031,7 @@
 /area/f13/building/hospital)
 "mMf" = (
 /obj/structure/ladder/unbreakable{
-	id = Followers1;
+	id = hospitalroof;
 	height = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -3370,10 +3387,10 @@
 	},
 /area/f13/building/hospital)
 "ocx" = (
-/obj/structure/table,
-/obj/structure/bedsheetbin/towel,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/table/wood,
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "odJ" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -3400,6 +3417,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
+"ogI" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "oiY" = (
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -3484,10 +3505,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "oDl" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "oDo" = (
@@ -3623,6 +3643,13 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
+"pqc" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 1
+	},
+/obj/structure/fluff/beach_umbrella/syndi,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "psD" = (
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/med/surgery,
@@ -4038,18 +4065,6 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/ncr)
-"rqL" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/clothing/glasses/hud/health/night,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "rsw" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/wasteland/ncr)
@@ -4196,10 +4211,6 @@
 	sunlight_state = 1
 	},
 /area/f13/building)
-"rRc" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "rRp" = (
 /obj/structure/railing,
 /turf/open/transparent/openspace,
@@ -4308,12 +4319,9 @@
 	},
 /area/f13/building/massfusion)
 "sjy" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
-	},
-/obj/structure/fluff/beach_umbrella/syndi,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/obj/structure/bodycontainer/morgue,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "sjM" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -4377,10 +4385,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"sEl" = (
-/obj/machinery/light,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "sFr" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -4577,6 +4581,18 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
+"tun" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/clothing/glasses/hud/health/night,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "tvg" = (
 /obj/structure/simple_door/metal/store,
 /obj/effect/decal/cleanable/dirt{
@@ -4593,18 +4609,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"twf" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "txr" = (
 /obj/structure/rack,
 /obj/item/storage/book/bible/booze,
@@ -4625,6 +4629,14 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"tEn" = (
+/obj/structure/table,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "tEW" = (
 /obj/structure/barricade/bars,
 /obj/item/shard,
@@ -4760,6 +4772,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
+"ubG" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 1
+	},
+/obj/structure/fluff/beach_umbrella/security,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "ucd" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -5045,16 +5064,6 @@
 /obj/structure/table/booth,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"vwx" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/table,
-/obj/item/bodybag/containment,
-/obj/item/bodybag/containment,
-/obj/item/storage/box/bodybags,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "vAd" = (
 /obj/structure/railing/corner{
 	dir = 1
@@ -5084,13 +5093,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
-"vEn" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
-	},
-/obj/structure/fluff/beach_umbrella/security,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "vFt" = (
 /obj/item/organ/liver,
 /obj/effect/decal/cleanable/dirt,
@@ -5172,12 +5174,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
-"wdx" = (
-/obj/structure/mopbucket,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "wex" = (
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
@@ -5603,6 +5599,10 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"yha" = (
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "yic" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/mop,
@@ -50974,7 +50974,7 @@ nRq
 tfy
 wXb
 lqO
-gde
+alz
 kWR
 vfp
 gLr
@@ -51745,7 +51745,7 @@ xJA
 iRY
 xvZ
 lqO
-twf
+lUm
 kWR
 lqO
 gah
@@ -52238,7 +52238,7 @@ vqz
 vqz
 aaL
 aKa
-vEn
+ubG
 aKa
 aKa
 eCS
@@ -52495,7 +52495,7 @@ vqz
 vqz
 aaL
 aKa
-lCy
+ocx
 aKa
 aKa
 evf
@@ -52752,7 +52752,7 @@ vqz
 vqz
 aaL
 aKa
-sjy
+pqc
 aKa
 aKa
 aKa
@@ -53523,10 +53523,10 @@ vqz
 vqz
 aaL
 aKa
-lCy
+ocx
 aKa
 aKa
-sEl
+dHP
 bhm
 gLr
 oab
@@ -53538,10 +53538,10 @@ lqO
 lLE
 kJl
 lqO
-dHP
+sjy
 sRn
-dHP
-dHP
+sjy
+sjy
 lqO
 nnp
 ucd
@@ -54294,9 +54294,9 @@ vqz
 vqz
 vqz
 bhm
+ktt
+tun
 oDl
-rqL
-wdx
 cym
 bhm
 cnB
@@ -54567,9 +54567,9 @@ gah
 kJl
 lqO
 tmP
-vwx
-lUm
 juL
+jkQ
+gde
 lqO
 xpn
 pws
@@ -54808,10 +54808,10 @@ vqz
 vqz
 vqz
 bhm
-lQW
-ocx
-rRc
-flP
+tEn
+kFg
+yha
+ogI
 bhm
 gah
 kJl

@@ -1,45 +1,42 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
 "aj" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"aO" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/solar_control{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "bo" = (
 /turf/open/indestructible,
 /area/f13/wasteland)
-"bx" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
-"cE" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/smes,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
-"dC" = (
-/obj/structure/chair/wood{
-	dir = 4
+"cX" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 8
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "ed" = (
 /turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
+"eo" = (
+/obj/structure/barricade/tentclothcorner{
+	pixel_y = 3
+	},
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "fd" = (
 /obj/effect/decal/cleanable/dirt{
@@ -47,10 +44,16 @@
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
-"fk" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 4
-	},
+"fr" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
+"gK" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/f13/mre,
+/obj/item/reagent_containers/food/snacks/f13/mre,
+/obj/item/reagent_containers/glass/beaker/waterbottle,
+/obj/item/reagent_containers/glass/beaker/waterbottle,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "hm" = (
@@ -75,11 +78,16 @@
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"kn" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	pixel_y = -3
+"jP" = (
+/obj/machinery/light{
+	dir = 1
 	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
+"no" = (
+/obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "nF" = (
@@ -88,13 +96,29 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"pO" = (
-/obj/structure/chair/wood{
-	dir = 8
+"nK" = (
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
-/turf/open/indestructible/ground/outside/roof,
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
+"ql" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/transparent/openspace,
 /area/f13/wasteland)
-"qi" = (
+"rN" = (
+/turf/closed/wall/f13/wood,
+/area/f13/wasteland)
+"sn" = (
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"tg" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -105,51 +129,42 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
-"ql" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"qm" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/glass/beaker/waterbottle,
-/obj/item/reagent_containers/glass/beaker/waterbottle,
-/turf/open/floor/carpet/red,
-/area/f13/wasteland)
-"rq" = (
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"rN" = (
-/turf/closed/wall/f13/wood,
-/area/f13/wasteland)
-"sh" = (
-/obj/structure/chair/wood,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"sn" = (
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"tq" = (
-/obj/structure/campfire,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "tM" = (
 /turf/closed/indestructible/riveted,
 /area/f13/wasteland)
-"uD" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 8
+"ue" = (
+/obj/structure/campfire,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"uY" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"vq" = (
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
+"wd" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 1;
+	layer = 2.95;
+	pixel_y = 3
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"wj" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/solar,
+"wS" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"xf" = (
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
+"xi" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "xs" = (
@@ -162,6 +177,18 @@
 	smooth = 1
 	},
 /area/f13/building/hospital)
+"xt" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/tracker,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"yi" = (
+/obj/structure/barricade/tentclothedge{
+	dir = 1;
+	pixel_y = -3
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "yY" = (
 /obj/structure/railing{
 	dir = 6;
@@ -172,14 +199,29 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
-"zm" = (
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/pistol/m1911,
-/obj/item/ammo_box/magazine/m45,
-/obj/item/ammo_box/magazine/m45,
+"zx" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"zy" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/f13/mre,
+/obj/item/reagent_containers/food/snacks/f13/mre,
+/obj/item/reagent_containers/glass/beaker/waterbottle,
+/obj/item/reagent_containers/glass/beaker/waterbottle,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
-"zu" = (
+"zT" = (
+/obj/structure/simple_door/house,
+/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building/hospital)
+"AQ" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -191,36 +233,14 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
-"zx" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"zT" = (
-/obj/structure/simple_door/house,
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/building/hospital)
 "AZ" = (
 /obj/structure/railing{
 	dir = 1
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"Cq" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/m9mm,
-/obj/item/ammo_box/magazine/m9mm,
-/turf/open/floor/carpet/red,
-/area/f13/wasteland)
-"Dk" = (
-/obj/structure/simple_door/tentflap_cloth{
-	pixel_y = -3
-	},
+"Ed" = (
+/mob/living/simple_animal/hostile/raider/tribal,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Ey" = (
@@ -232,43 +252,7 @@
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/wasteland)
-"Iv" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
-"IF" = (
-/obj/structure/barricade/tentclothcorner{
-	pixel_y = 3
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"Jz" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/food/snacks/f13/mre,
-/obj/item/reagent_containers/glass/beaker/waterbottle,
-/obj/item/reagent_containers/glass/beaker/waterbottle,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"KE" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 1;
-	layer = 2.95;
-	pixel_y = 3
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"LT" = (
-/turf/open/floor/plasteel/f13/vault_floor/floor,
-/area/f13/wasteland)
-"MM" = (
-/turf/open/floor/carpet/red,
-/area/f13/wasteland)
-"Nl" = (
+"KR" = (
 /obj/structure/table/wood/settler,
 /obj/item/reagent_containers/food/snacks/f13/mre,
 /obj/item/reagent_containers/food/snacks/f13/mre,
@@ -276,11 +260,27 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
-"NH" = (
-/obj/structure/barricade/tentclothcorner{
+"Lf" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 1
 	},
+/area/f13/building/hospital)
+"LT" = (
+/turf/open/floor/plasteel/f13/vault_floor/floor,
+/area/f13/wasteland)
+"Mn" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/solar,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"MM" = (
+/obj/structure/bed/mattress{
+	icon_state = "mattress1"
+	},
+/turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "NT" = (
 /obj/structure/railing{
@@ -288,34 +288,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"OB" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
-"Qj" = (
-/obj/structure/barricade/tentclothcorner{
-	dir = 4;
-	pixel_y = 3
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"Ql" = (
-/obj/effect/decal/remains/human,
+"NV" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/m9mm,
+/obj/item/ammo_box/magazine/m9mm,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
-"QC" = (
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
-"Rt" = (
+"Op" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
 /obj/machinery/power/apc/auto_name/north,
 /obj/machinery/power/terminal{
@@ -325,16 +304,47 @@
 	dir = 1
 	},
 /area/f13/building/hospital)
+"Pl" = (
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
+"QW" = (
+/obj/structure/chair/wood{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Rf" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 4;
+	pixel_y = 3
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "RF" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
-"RZ" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
+"RG" = (
+/obj/structure/chair/wood{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"RQ" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "Sz" = (
 /obj/structure/ladder/unbreakable{
-	id = Followers1;
+	id = hospitalroof;
 	height = 2
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
@@ -344,14 +354,8 @@
 "SK" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"TJ" = (
-/obj/effect/decal/remains/human,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"TP" = (
-/obj/structure/barricade/tentclothedge{
-	dir = 8
-	},
+"TG" = (
+/obj/structure/chair/wood,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "UB" = (
@@ -361,9 +365,23 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
-"WT" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/tracker,
+"UV" = (
+/obj/structure/simple_door/tentflap_cloth{
+	pixel_y = -3
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"VF" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/pistol/m1911,
+/obj/item/ammo_box/magazine/m45,
+/obj/item/ammo_box/magazine/m45,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
+"Xi" = (
+/obj/structure/barricade/tentclothcorner{
+	dir = 8
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "XU" = (
@@ -378,31 +396,13 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"Ya" = (
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/solar_control{
-	dir = 1
-	},
-/obj/machinery/light,
+"Zf" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/smes,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 1
 	},
 /area/f13/building/hospital)
-"YP" = (
-/obj/structure/bed/mattress{
-	icon_state = "mattress1"
-	},
-/turf/open/floor/carpet/red,
-/area/f13/wasteland)
-"YU" = (
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/carpet/red,
-/area/f13/wasteland)
 
 (1,1,1) = {"
 RF
@@ -44180,7 +44180,7 @@ hm
 hm
 hm
 NT
-WT
+xt
 SK
 SK
 SK
@@ -44437,13 +44437,13 @@ hm
 hm
 hm
 NT
-RZ
-wj
-wj
-wj
-wj
-wj
-wj
+uY
+Mn
+Mn
+Mn
+Mn
+Mn
+Mn
 SK
 SK
 SK
@@ -44694,7 +44694,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -44951,13 +44951,13 @@ hm
 hm
 hm
 NT
-RZ
-wj
-wj
-wj
-wj
-wj
-wj
+uY
+Mn
+Mn
+Mn
+Mn
+Mn
+Mn
 SK
 SK
 SK
@@ -45208,7 +45208,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -45465,13 +45465,13 @@ hm
 hm
 hm
 NT
-RZ
-wj
-wj
-wj
-wj
-wj
-wj
+uY
+Mn
+Mn
+Mn
+Mn
+Mn
+Mn
 SK
 SK
 SK
@@ -45722,7 +45722,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -45979,13 +45979,13 @@ hm
 hm
 hm
 NT
-RZ
-wj
-wj
-wj
-wj
-wj
-wj
+uY
+Mn
+Mn
+Mn
+Mn
+Mn
+Mn
 SK
 SK
 SK
@@ -46236,7 +46236,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -46493,13 +46493,13 @@ hm
 hm
 hm
 NT
-RZ
-wj
-wj
-wj
-wj
-wj
-wj
+uY
+Mn
+Mn
+Mn
+Mn
+Mn
+Mn
 SK
 SK
 SK
@@ -46750,7 +46750,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -47007,7 +47007,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -47264,11 +47264,11 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
-dC
+QW
 SK
 SK
 SK
@@ -47521,12 +47521,12 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
-rq
-sh
-tq
-Jz
+Ed
+TG
+ue
+gK
 SK
 SK
 SK
@@ -47778,12 +47778,12 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
-TJ
-pO
-TJ
+no
+RG
+no
 SK
 SK
 SK
@@ -48035,7 +48035,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -48292,7 +48292,7 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
 SK
 SK
@@ -48549,13 +48549,13 @@ hm
 hm
 hm
 NT
-RZ
+uY
 SK
-NH
-TP
-TP
-TP
-Qj
+xi
+cX
+cX
+cX
+Rf
 SK
 SK
 SK
@@ -48806,13 +48806,13 @@ xs
 xs
 xs
 xs
-RZ
+uY
 SK
-kn
-Cq
-Nl
-YP
-KE
+yi
+NV
+KR
+MM
+wd
 SK
 SK
 SK
@@ -49058,18 +49058,18 @@ hm
 hm
 hm
 xs
-Rt
-OB
-cE
-cE
+Op
+RQ
+Zf
+Zf
 xs
-RZ
+uY
 SK
-kn
-MM
-MM
-YU
-KE
+yi
+xf
+xf
+vq
+wd
 SK
 SK
 SK
@@ -49315,18 +49315,18 @@ hm
 hm
 hm
 xs
-QC
+Pl
 Ey
-qi
-zu
+tg
+AQ
 xs
-RZ
+uY
 SK
-kn
-MM
-MM
-MM
-KE
+yi
+xf
+xf
+xf
+wd
 SK
 SK
 SK
@@ -49572,18 +49572,18 @@ hm
 hm
 hm
 xs
-bx
+jP
 Ey
 Ey
-Ya
+aO
 xs
-RZ
+uY
 SK
-kn
-MM
-MM
-MM
-KE
+yi
+xf
+xf
+xf
+wd
 SK
 SK
 SK
@@ -49832,15 +49832,15 @@ xs
 Ey
 Ey
 Ey
-ac
+nK
 xs
-RZ
+uY
 SK
-Dk
-MM
-Ql
-MM
-KE
+UV
+xf
+fr
+xf
+wd
 SK
 SK
 SK
@@ -50089,15 +50089,15 @@ xs
 Sz
 Ey
 Ey
-Iv
+Lf
 zT
-RZ
+uY
 SK
-kn
-zm
-qm
-YP
-KE
+yi
+VF
+zy
+MM
+wd
 SK
 SK
 SK
@@ -50350,11 +50350,11 @@ xs
 xs
 SK
 SK
-uD
-fk
-fk
-fk
-IF
+Xi
+wS
+wS
+wS
+eo
 SK
 SK
 SK
