@@ -53781,6 +53781,13 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"sUd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/house{
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/building/hospital)
 "sUl" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -109826,7 +109833,7 @@ kEo
 vlO
 vqp
 vlO
-ekB
+sUd
 aEs
 aGq
 aFP
