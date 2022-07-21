@@ -151,6 +151,8 @@
 	var/sharpness = SHARP_NONE
 	//Generic flags
 	var/simple_mob_flags = NONE
+	//Mob may be offset randomly on both axes by this much
+	var/randpixel = 0
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -166,6 +168,8 @@
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
+	pixel_x = rand(-randpixel, randpixel)
+	pixel_y = rand(-randpixel, randpixel)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
