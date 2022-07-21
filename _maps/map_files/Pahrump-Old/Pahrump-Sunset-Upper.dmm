@@ -332,7 +332,6 @@
 /area/f13/caves)
 "bB" = (
 /obj/effect/turf_decal/bot_red,
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/rockwell,
 /obj/structure/rack{
 	name = "ammo rack"
 	},
@@ -999,7 +998,9 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/window/spawner/north,
-/obj/item/paper/crumpled/bloody/ruins/thederelict/unfinished,
+/obj/item/paper/crumpled/bloody/ruins/thederelict/unfinished{
+	info = "Why's the [ILLEGIBLE] Here?? They're screaming something about [ILLEGIBLE]... No.. this can't be.."
+	},
 /turf/open/floor/f13,
 /area/f13/brotherhood/surface)
 "eu" = (
@@ -1088,7 +1089,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot_red,
-/obj/item/ammo_box/magazine/m10mm/adv,
 /obj/structure/rack{
 	name = "ammo rack"
 	},
@@ -1232,7 +1232,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fk" = (
-/obj/item/ammo_box/magazine/m10mm/adv,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/rack{
 	name = "ammo rack"
@@ -11101,7 +11100,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building)
 "Uc" = (
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/rockwell,
 /obj/effect/turf_decal/bot_red,
 /obj/structure/rack{
 	name = "ammo rack"
