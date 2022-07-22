@@ -16,38 +16,38 @@
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/greasegun
-	name = "Grease gun magazine (9mm)"
+	name = "Grease gun magazine (.45ACP)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "grease"
-	ammo_type = /obj/item/ammo_casing/c9mm
-	caliber = list(CALIBER_9MM)
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = list(CALIBER_45ACP)
 	max_ammo = 30
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/greasegun/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/greasegun/uzim9mm
+/obj/item/ammo_box/magazine/uzim9mm
 	name = "Uzi magazine (9mm)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "uzi9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 32
 
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/update_icon()
+/obj/item/ammo_box/magazine/uzim9mm/update_icon()
 	..()
 	icon_state = "[initial(icon_state)]-[round(ammo_count(),4)]"
 
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/empty
+/obj/item/ammo_box/magazine/uzim9mm/empty
 	start_empty = 1
 
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/rockwell
+/obj/item/ammo_box/magazine/uzim9mm/rockwell
 	name = "Rockwell magazine (9mm)"
 	icon_state = "rock"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 20
 
-/obj/item/ammo_box/magazine/greasegun/uzim9mm/rockwell/empty
+/obj/item/ammo_box/magazine/uzim9mm/rockwell/empty
 	start_empty = TRUE
 
 /obj/item/ammo_box/magazine/pps9mm
@@ -87,7 +87,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "tommystick"
 	ammo_type = /obj/item/ammo_casing/c45
-	max_ammo = 30
+	max_ammo = 20
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/tommygunm45/empty

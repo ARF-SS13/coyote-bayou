@@ -309,7 +309,7 @@
 /* * * * * * * * * * *
  * Autopipe Rifle
  * Waster BFG
- * .357 magnum
+ * .357 magnum-ish
  * Burst fire?
  * Akimbo
  * Awful accuracy
@@ -317,7 +317,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/autopipe
-	name = "Auto-pipe rifle (.357)"
+	name = "Auto-pipe rifle (.357-ish)"
 	desc = "A belt fed pipe rifle held together with duct tape. Highly inaccurate. What could go wrong."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'

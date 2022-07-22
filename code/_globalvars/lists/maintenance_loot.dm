@@ -540,7 +540,7 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
-	/obj/item/ammo_box/magazine/greasegun/uzim9mm,
+	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/gun/ballistic/automatic/smg/smg10mm,
 	/obj/item/ammo_box/magazine/m10mm/adv/ext,
 	/obj/item/gun/ballistic/automatic/smg/greasegun,
@@ -632,7 +632,7 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
 	/obj/item/ammo_box/shotgun/buck,
-	/obj/item/ammo_box/magazine/greasegun/uzim9mm,
+	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/ammo_box/needle,

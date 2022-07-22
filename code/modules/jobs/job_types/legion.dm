@@ -525,7 +525,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 		/obj/item/grenade/smokebomb = 1,
 		/obj/item/restraints/legcuffs/bola = 1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi = 1,
-		/obj/item/ammo_box/magazine/greasegun/uzim9mm = 3,
+		/obj/item/ammo_box/magazine/uzim9mm = 3,
 		/obj/item/stack/crafting/armor_plate = 5,
 		)
 
@@ -692,7 +692,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	suit_store = /obj/item/gun/ballistic/automatic/smg/mp5
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/greasegun/uzim9mm = 2,
+		/obj/item/ammo_box/magazine/uzim9mm = 2,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
 		/obj/item/bottlecap_mine = 1,
 		/obj/item/grenade/smokebomb = 1,

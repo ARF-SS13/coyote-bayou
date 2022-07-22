@@ -803,7 +803,7 @@ Raider
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	suit = /obj/item/clothing/suit/armor/medium/vest
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/greasegun/uzim9mm=3, \
+						/obj/item/ammo_box/magazine/uzim9mm=3, \
 						/obj/item/suppressor=1
 						)
 

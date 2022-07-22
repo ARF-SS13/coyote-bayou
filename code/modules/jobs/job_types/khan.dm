@@ -167,7 +167,7 @@
 	name = "Skirmisher"
 	r_hand = /obj/item/gun/ballistic/automatic/smg/mini_uzi
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/greasegun/uzim9mm = 3,
+		/obj/item/ammo_box/magazine/uzim9mm = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/belt/holster = 1)
 

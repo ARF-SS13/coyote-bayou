@@ -223,7 +223,7 @@
 	name = "empty mini uzi magazine (9mm)"
 	id = "mini_uzimag"
 	materials = list(/datum/material/iron = 4000)
-	build_path = /obj/item/ammo_box/magazine/greasegun/uzim9mm/empty
+	build_path = /obj/item/ammo_box/magazine/uzim9mm/empty
 	category = list("initial", "Basic Magazines")
 
 /datum/design/ammolathe/carl_gustafmag

@@ -1150,7 +1150,7 @@
 	name = "mini uzi and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/mini_uzi,
-				/obj/item/ammo_box/magazine/greasegun/uzim9mm/
+				/obj/item/ammo_box/magazine/uzim9mm/
 				)
 
 /obj/effect/spawner/bundle/f13/smg10mm
@@ -1383,7 +1383,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	name = "mp5 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/mp5,
-				/obj/item/ammo_box/magazine/greasegun/uzim9mm/
+				/obj/item/ammo_box/magazine/uzim9mm/
 	)
 
 /obj/effect/spawner/bundle/f13/citykiller
@@ -1564,7 +1564,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 
 	loot = list(
 				/obj/item/ammo_box/shotgun/buck,
-				/obj/item/ammo_box/magazine/greasegun/uzim9mm,
+				/obj/item/ammo_box/magazine/uzim9mm,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,
 				/obj/item/ammo_box/needle,

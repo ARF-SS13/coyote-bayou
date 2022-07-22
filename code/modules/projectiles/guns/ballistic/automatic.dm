@@ -314,16 +314,17 @@
 
 /* * * * * * * * * * *
  * Greasegun SMG
- * Baseline 9mm SMG
- * 9mm
+ * Easy-handle .45ACP SMG
+ * .45 ACP
  * One-handed
  * No akimbo
+ * Slowish autofire
  * Common
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
 	name = "9mm submachine gun"
-	desc = "An inexpensive submachine gun, chambered in 9mm. Very high rate of fire in bursts."
+	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -338,7 +339,7 @@
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FASTER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
@@ -378,8 +379,8 @@
 
 /* * * * * * * * * * *
  * Worn greasegun SMG
- * Cruddy 9mm SMG
- * 9mm
+ * Cruddy .45 SMG
+ * .45
  * One-handed
  * No akimbo
  * Less accuracy
@@ -399,7 +400,7 @@
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
 	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FASTER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
@@ -545,8 +546,8 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
-	mag_type = /obj/item/ammo_box/magazine/greasegun
-	init_mag_type = /obj/item/ammo_box/magazine/greasegun/uzim9mm
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -786,7 +787,7 @@
 	icon_state = "mp5"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/greasegun
-	init_mag_type = /obj/item/ammo_box/magazine/greasegun/uzim9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
 	slowdown = GUN_SLOWDOWN_SMG_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
