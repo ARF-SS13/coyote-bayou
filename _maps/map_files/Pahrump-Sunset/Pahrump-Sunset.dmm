@@ -31802,14 +31802,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"hbh" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "hbv" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -32512,12 +32504,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "hyh" = (
-/obj/structure/toilet{
-	dir = 4
+/obj/structure/ladder/unbreakable{
+	id = "followersbasement";
+	height = 2
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "hyj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43144,15 +43135,6 @@
 	icon_state = "hydrofloor"
 	},
 /area/f13/building)
-"mXB" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "mXD" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -61648,11 +61630,6 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/massfusion)
-"xfT" = (
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "xgk" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -107264,7 +107241,7 @@ qEh
 qEh
 gLa
 ijr
-xfT
+tFm
 hyh
 aFP
 oqr
@@ -107521,8 +107498,8 @@ uZi
 uZi
 aKA
 ijr
-hbh
-mXB
+aFD
+aFD
 aFP
 aae
 vGC
