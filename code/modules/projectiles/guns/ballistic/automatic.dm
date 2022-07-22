@@ -323,7 +323,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/greasegun
-	name = "9mm submachine gun"
+	name = "m3a1 greasegun"
 	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
@@ -336,8 +336,8 @@
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SMG_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
+	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
+	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_FASTER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST

@@ -69,22 +69,32 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
+	if(istype(A, /obj/item/stack/crafting/metalparts))
+		if(istype(magazine))
+			magazine.attackby(A, user)
+
 	if(istype(A, /obj/item/ammo_casing))
-		var/obj/item/ammo_box/new_casing = A
-		if(magazine?.fixed_mag) // fixed mag, just load bullets in
-			return load_fixed_magazine(new_casing, user, params)
+		if(istype(magazine))
+			if(magazine.caliber_change_step == MAGAZINE_CALIBER_CHANGE_STEP_3)
+				magazine.attackby(A, user)
+				return TRUE
+			if(magazine.fixed_mag) // fixed mag, just load bullets in
+				magazine.load_from_casing(A, user, FALSE)
+				update_icon()
+				chamber_round(0)
+				return TRUE
 
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/new_mag = A
 		if(magazine?.fixed_mag) // fixed mag, just load bullets in
-			return load_fixed_magazine(new_mag, user, params)
-		else // removable mag, eject the mag
-			if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
-				return FALSE
-			attack_self(user)
-		// now we're sure there's no magazine in the gun
-		if(!is_magazine_allowed(new_mag, user))
+			magazine.load_from_box(A, user, FALSE)
+			update_icon()
+			chamber_round(0)
+			return TRUE
+		// removable mag, eject the mag
+		if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
 			return FALSE
+		attack_self(user)
 		if(user.transferItemToLoc(new_mag, src))
 			magazine = new_mag
 			to_chat(user, span_notice("You load a new magazine into \the [src]."))
@@ -119,6 +129,31 @@
 			update_overlays()
 			return
 	return FALSE
+
+/obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(magazine)
+		magazine.screwdriver_act(user, I)
+		return
+
+/obj/item/gun/ballistic/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(magazine)
+		magazine.welder_act(user, I)
+		return
+
 
 /obj/item/gun/ballistic/proc/is_magazine_allowed(obj/item/ammo_box/mag_to_check, mob/user)
 	. = FALSE

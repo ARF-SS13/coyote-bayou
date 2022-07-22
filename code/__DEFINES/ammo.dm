@@ -37,3 +37,40 @@
 #define CALIBER_FUEL "flamer fuel"
 #define CALIBER_FOAM "foam darts"
 #define CALIBER_ANY "anything even remotely ammolike"
+
+GLOBAL_LIST_INIT(pipe_rifle_valid_calibers, list(
+	CALIBER_22LR,
+	CALIBER_5MM,
+	CALIBER_556,
+	CALIBER_762,
+	CALIBER_9MM,
+	CALIBER_10MM,
+	CALIBER_14MM,
+	CALIBER_38,
+	CALIBER_357,
+	CALIBER_44,
+	CALIBER_45LC,
+	CALIBER_45ACP,
+	CALIBER_4570,
+	CALIBER_50MG,
+	CALIBER_FOAM,
+	CALIBER_MUSKET_BALL,
+	CALIBER_SHOTGUN))
+
+GLOBAL_LIST_INIT(zipgun_valid_calibers, list(
+	CALIBER_22LR,
+	CALIBER_9MM,
+	CALIBER_10MM,
+	CALIBER_38,
+	CALIBER_45LC,
+	CALIBER_45ACP))
+
+GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
+	"prefix" = list("bullet","casing","cartridge","shell"),
+	"suffix" = list("chamber","holder","slot","hole","thing","pit"),
+	"postfix" = list("-thingy","-majig","...?"," assembly")
+))
+#define MAGAZINE_CALIBER_CHANGE_STEP_0 0 // use screwdriver to get to step 1
+#define MAGAZINE_CALIBER_CHANGE_STEP_1 1 // used a screwdriver on it, ready for a metal part
+#define MAGAZINE_CALIBER_CHANGE_STEP_2 2 // used a metal part on it, ready for welding
+#define MAGAZINE_CALIBER_CHANGE_STEP_3 3 // used a welder on it, ready for a new casing

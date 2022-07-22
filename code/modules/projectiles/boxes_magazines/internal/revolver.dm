@@ -45,10 +45,16 @@
 	. = ..()
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
-	name = "improvised internal magazine piperifle"
+	name = "pipe rifle"
 	ammo_type = /obj/item/ammo_casing/a556/sport
 	caliber = list(CALIBER_556)
 	max_ammo = 1
+	can_change_caliber = TRUE
+
+/obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe/Initialize()
+	. = ..()
+	name += " [pick(GLOB.hobo_gun_mag_fluff["prefix"])] [pick(GLOB.hobo_gun_mag_fluff["suffix"])][prob(20) ? pick(GLOB.hobo_gun_mag_fluff["prefix"]) : ""]"
+	valid_new_calibers = GLOB.pipe_rifle_valid_calibers
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised45
 	name = "improvised internal magazine .45"
@@ -63,10 +69,16 @@
 	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
-	name = "improvised internal magazine 10mm"
+	name = "pepperbox"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list(CALIBER_10MM)
 	max_ammo = 4
+	can_change_caliber = TRUE
+
+/obj/item/ammo_box/magazine/internal/cylinder/improvised10mm/Initialize()
+	. = ..()
+	name += " [pick(GLOB.hobo_gun_mag_fluff["prefix"])] [pick(GLOB.hobo_gun_mag_fluff["suffix"])][prob(20) ? pick(GLOB.hobo_gun_mag_fluff["prefix"]) : ""]"
+	valid_new_calibers = GLOB.zipgun_valid_calibers
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised44
 	name = "improvised internal magazine .44"
@@ -75,10 +87,15 @@
 	max_ammo = 1
 
 /obj/item/ammo_box/magazine/internal/cylinder/improvised762
-	name = "improvised internal magazine .308"
+	name = "rebored"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	caliber = list(CALIBER_762)
 	max_ammo = 2
+	can_change_caliber = TRUE
+
+/obj/item/ammo_box/magazine/internal/cylinder/improvised762/Initialize()
+	. = ..()
+	valid_new_calibers = GLOB.pipe_rifle_valid_calibers
 
 /obj/item/ammo_box/magazine/internal/cylinder/thatgun
 	name = ".223 pistol cylinder"

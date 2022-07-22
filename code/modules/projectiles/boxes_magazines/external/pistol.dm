@@ -32,6 +32,11 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 5
 	multiple_sprites = 2
+	can_change_caliber = TRUE
+
+/obj/item/ammo_box/magazine/zipgun/Initialize()
+	. = ..()
+	valid_new_calibers = GLOB.zipgun_valid_calibers
 
 //9mm
 /obj/item/ammo_box/magazine/m9mm
