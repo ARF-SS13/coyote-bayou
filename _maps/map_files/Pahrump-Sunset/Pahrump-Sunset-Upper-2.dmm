@@ -46,7 +46,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "ed" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -150,7 +150,7 @@
 /obj/item/stock_parts/cell/ammo/mfc,
 /obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "jX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -160,7 +160,7 @@
 "kY" = (
 /obj/machinery/workbench/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "lk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -292,7 +292,7 @@
 "ve" = (
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "vI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -300,10 +300,16 @@
 /obj/structure/legion_extractor,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"vT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "wA" = (
 /obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "wD" = (
 /obj/structure/cable,
 /obj/machinery/power/tracker,
@@ -322,7 +328,7 @@
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "yY" = (
 /obj/structure/railing{
 	dir = 6;
@@ -375,7 +381,7 @@
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Ef" = (
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/indestructible/ground/outside/roof,
@@ -383,7 +389,7 @@
 "Er" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Ey" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -485,20 +491,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "LT" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
-	},
-/area/f13/wasteland)
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
 "Nl" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Nw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -506,7 +506,7 @@
 	termtag = "Business"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "NT" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -516,20 +516,21 @@
 "Oi" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Pg" = (
 /obj/structure/reagent_dispensers/barrel/two,
+/obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "PZ" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Qx" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "RF" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
@@ -543,6 +544,13 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"Sl" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
 "Sn" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	pixel_y = 6
@@ -568,8 +576,9 @@
 /area/f13/wasteland)
 "To" = (
 /obj/structure/lattice/catwalk,
+/obj/machinery/light,
 /turf/open/transparent/openspace,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Tt" = (
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -593,8 +602,11 @@
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/item/stock_parts/cell/ammo/ec,
 /obj/item/stock_parts/cell/ammo/ec,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Vn" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/red,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -614,11 +626,11 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "Wa" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "WH" = (
 /obj/structure/nest/protectron{
 	layer = 3;
@@ -634,7 +646,7 @@
 "XC" = (
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
+/area/f13/building/hospital)
 "XU" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -44713,13 +44725,13 @@ SK
 SK
 SK
 SK
-LT
-LT
-LT
-LT
-LT
-LT
-LT
+xs
+xs
+xs
+xs
+xs
+xs
+xs
 SK
 SK
 SK
@@ -44960,23 +44972,23 @@ NT
 SK
 SK
 SK
-LT
-LT
-LT
-LT
-LT
-LT
+xs
+xs
+xs
+xs
+xs
+xs
 SK
 SK
 SK
 SK
-LT
+xs
 kY
-eQ
-eQ
-eQ
+Ey
+vT
+Ey
 Nl
-LT
+xs
 SK
 SK
 SK
@@ -45217,23 +45229,23 @@ NT
 SK
 SK
 SK
+xs
 LT
-To
-To
-To
-To
 LT
-SK
-SK
-SK
-SK
 LT
+LT
+xs
+SK
+SK
+SK
+SK
+xs
 Vp
-eQ
-eQ
+Ey
+Ey
 Oi
 Nw
-LT
+xs
 SK
 SK
 SK
@@ -45474,23 +45486,23 @@ NT
 SK
 SK
 SK
+xs
+Sl
+LT
 LT
 To
-To
-To
-To
-LT
+xs
 SK
 SK
 SK
 SK
-LT
+xs
 dH
 Wa
-eQ
-eQ
+Ey
+Ey
 Qx
-LT
+xs
 SK
 SK
 SK
@@ -45731,23 +45743,23 @@ NT
 SK
 SK
 SK
+xs
 LT
-To
-To
-To
-To
 LT
-SK
-SK
-SK
-SK
 LT
+LT
+xs
+SK
+SK
+SK
+SK
+xs
 jL
-eQ
-eQ
-eQ
+Ey
+Ey
+Ey
 wA
-LT
+xs
 SK
 SK
 SK
@@ -45988,23 +46000,23 @@ NT
 SK
 SK
 SK
-LT
-LT
+xs
+xs
 PZ
 PZ
-LT
-LT
+xs
+xs
 SK
 SK
 SK
 SK
-LT
+xs
 Vb
-eQ
-eQ
-eQ
+Ey
+Ey
+Ey
 Pg
-LT
+xs
 SK
 SK
 SK
@@ -46255,13 +46267,13 @@ SK
 SK
 SK
 SK
-LT
+xs
 Do
 ve
-eQ
+Ey
 yd
 XC
-LT
+xs
 SK
 SK
 SK
@@ -46512,13 +46524,13 @@ SK
 SK
 Ef
 SK
-LT
-LT
-LT
+xs
+xs
+xs
 Er
-LT
-LT
-LT
+xs
+xs
+xs
 SK
 SK
 SK
