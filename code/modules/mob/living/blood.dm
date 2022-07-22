@@ -28,6 +28,25 @@
 	if(stat != DEAD && is_bleeding())
 		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")
 
+GLOBAL_LIST_INIT(blood_loss_messages, list(
+	BLOOD_ANEMIA_MESSAGE_WARN = list(
+		"You feel oddly thirsty.",
+		"You feel a faint chill.",
+		"You feel tired."),
+	BLOOD_ANEMIA_MESSAGE_MINOR = list(
+		"You feel your heart flutter in your chest for a moment.",
+		"You feel very tired."),
+	BLOOD_ANEMIA_MESSAGE_ANNOYING = list(
+		"Your limbs feel cold.",
+		"You can't seem to catch your breath."),
+	BLOOD_ANEMIA_MESSAGE_DEBILITATING = list(
+		"Your limbs feel cold.",
+		"You can't seem to catch your breath."),
+	BLOOD_ANEMIA_MESSAGE_WORST = list(
+		"You feel like a light breeze would knock you over.",
+		"Your heart thrashes in your chest.",
+		"You struggle to summon the strength to take a step."),
+		))
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
@@ -40,46 +59,121 @@
 
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
 
-		//Blood regeneration if there is some space
-		if(blood_volume < BLOOD_VOLUME_NORMAL && !HAS_TRAIT(src, TRAIT_NOHUNGER))
-			var/nutrition_ratio = 0
-			switch(nutrition)
-				if(0 to NUTRITION_LEVEL_STARVING)
-					nutrition_ratio = 0.2
-				if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-					nutrition_ratio = 0.4
-				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					nutrition_ratio = 0.6
-				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					nutrition_ratio = 0.8
-				else
-					nutrition_ratio = 1
-			if(satiety > 80)
-				nutrition_ratio *= 1.25
-			adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
-			blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
+		regenerate_blood()
 
 		//Effects of bloodloss
-		var/word = pick("dizzy","woozy","faint")
-		switch(blood_volume)
+		apply_bloodloss_sprint_effects(reset = TRUE) // reset it initially
+		switch(get_blood())
 			if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
 				if(prob(10))
 					to_chat(src, "<span class='warning'>You feel terribly bloated.</span>")
-			if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+
+			// Blood loss detected, start warning that its getting low
+			if(BLOOD_VOLUME_SYMPTOMS_WARN to BLOOD_VOLUME_SYMPTOMS_MINOR)
 				if(prob(5))
-					to_chat(src, "<span class='warning'>You feel [word].</span>")
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
-			if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
-				adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-				if(prob(5))
-					blur_eyes(6)
-					to_chat(src, "<span class='warning'>You feel very [word].</span>")
-			if(BLOOD_VOLUME_SURVIVE to BLOOD_VOLUME_BAD)
-				adjustOxyLoss(5)
+					switch(rand(1,3))
+						if(1)
+							emote("shiver")
+						if(2)
+							emote("pale")
+						if(3)
+							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_WARN])))
+
+			// Blood loss progressed, start applying minor effects, not lethal, but kinda inconvenient
+			if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 				if(prob(15))
-					Unconscious(rand(20,60))
-					to_chat(src, "<span class='warning'>You feel extremely [word].</span>")
-			if(-INFINITY to BLOOD_VOLUME_SURVIVE)
+					switch(rand(1,3))
+						if(1)
+							emote("shiver")
+						if(2)
+							emote("pale")
+						if(3)
+							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_MINOR])))
+				apply_bloodloss_effects(
+					BLOOD_LOSS_OXYLOSS_CAP_MINOR,
+					BLOOD_LOSS_STAMLOSS_CAP_MINOR,
+					BLOOD_LOSS_DIZZINESS_CAP_MINOR,
+					BLOOD_LOSS_CONFUSION_CAP_MINOR,
+					BLOOD_LOSS_BLUR_CAP_MINOR,
+					BLOOD_LOSS_SPRINT_BUFFER_MULT_MINOR,
+					BLOOD_LOSS_SPRINT_REGEN_MULT_MINOR,
+					BLOOD_LOSS_SPRINT_COST_MULT_MINOR,
+					0,
+					0
+					)
+
+
+			// Blood loss is getting bad, start applying more effects, not lethal, but annoying
+			if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
+				if(prob(15))
+					switch(rand(1,3))
+						if(1)
+							emote("shiver")
+						if(2)
+							emote("pale")
+						if(3)
+							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_ANNOYING])))
+				apply_bloodloss_effects(
+					BLOOD_LOSS_OXYLOSS_CAP_ANNOYING,
+					BLOOD_LOSS_STAMLOSS_CAP_ANNOYING,
+					BLOOD_LOSS_DIZZINESS_CAP_ANNOYING,
+					BLOOD_LOSS_CONFUSION_CAP_ANNOYING,
+					BLOOD_LOSS_BLUR_CAP_ANNOYING,
+					BLOOD_LOSS_SPRINT_BUFFER_MULT_ANNOYING,
+					BLOOD_LOSS_SPRINT_REGEN_MULT_ANNOYING,
+					BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING,
+					BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING,
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING
+					)
+
+			// Blood loss is bad, mess them up a bunch
+			if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_WORST)
+				if(prob(15))
+					switch(rand(1,3))
+						if(1)
+							emote("shiver")
+						if(2)
+							emote("pale")
+						if(3)
+							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_DEBILITATING])))
+				apply_bloodloss_effects(
+					BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING,
+					BLOOD_LOSS_STAMLOSS_CAP_DEBILITATING,
+					BLOOD_LOSS_DIZZINESS_CAP_DEBILITATING,
+					BLOOD_LOSS_CONFUSION_CAP_DEBILITATING,
+					BLOOD_LOSS_BLUR_CAP_DEBILITATING,
+					BLOOD_LOSS_SPRINT_BUFFER_MULT_DEBILITATING,
+					BLOOD_LOSS_SPRINT_REGEN_MULT_DEBILITATING,
+					BLOOD_LOSS_SPRINT_COST_MULT_DEBILITATING,
+					BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING,
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING
+					)
+
+			// Blood loss is as bad as it'll get before they die, they're gonna have a very bad day
+			if(BLOOD_VOLUME_SYMPTOMS_WORST to BLOOD_VOLUME_DEATH)
+				if(prob(15))
+					switch(rand(1,3))
+						if(1)
+							emote("shiver")
+						if(2)
+							emote("pale")
+						if(3)
+							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_WORST])))
+				apply_bloodloss_effects(
+					BLOOD_LOSS_OXYLOSS_CAP_WORST,
+					BLOOD_LOSS_STAMLOSS_CAP_WORST,
+					BLOOD_LOSS_DIZZINESS_CAP_WORST,
+					BLOOD_LOSS_CONFUSION_CAP_WORST,
+					BLOOD_LOSS_BLUR_CAP_WORST,
+					BLOOD_LOSS_SPRINT_BUFFER_MULT_WORST,
+					BLOOD_LOSS_SPRINT_REGEN_MULT_WORST,
+					BLOOD_LOSS_SPRINT_COST_MULT_WORST,
+					BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST,
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST
+					)
+
+			// you blood fall out. dork.
+			if(-INFINITY to BLOOD_VOLUME_DEATH)
 				if(!HAS_TRAIT(src, TRAIT_NODEATH))
 					death()
 
@@ -92,8 +186,92 @@
 
 		if(temp_bleed)
 			bleed(temp_bleed)
+/* 
+ * Applies bloodloss effects
+ * oxy_loss_cap = How much do we cap their oxy damage? 
+ * stam_cap = What's their new stamina cap? causes stam damage until its above this amount
+ * dizzy = max dizziness to apply to this mob
+ * confusion = max confusion to apply to this mob
+ * sprint_max = Multiplier to the mob's sprint maximum
+ * sprint_regen = Multiplier to the mob's sprint regeneration (lower numbers mean less regen)
+ * sprint_cost = Multiplier to stamina cost per tile sprinted
+ * knockdown_chance = chance for a knockdown to occur
+ * knockdown_time = time they're knocked down for
+ */
+/mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time)
+	if(getOxyLoss() < oxy_loss_cap)
+		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.005, 1))
+	if(getStaminaLoss() < stam_cap)
+		adjustStaminaLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+	Dizzy(dizzy)
+	if(confused < confusion)
+		confused = confusion
+	if(prob(10))
+		blur_eyes(blurry)
+	if(prob(knockdown_chance))
+		AdjustKnockdown(knockdown_time, TRUE)
+	apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
 
-//Makes a blood drop, leaking amt units of blood from the mob
+
+/// Applies sprint modifiers. Here so it can be easily reset.
+/mob/living/carbon/proc/apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
+	sprint_buffer_max = initial(sprint_buffer_max) * reset ? 1 : sprint_max
+	sprint_buffer_regen_ds = initial(sprint_buffer_regen_ds) * reset ? 1 : sprint_regen
+	sprint_stamina_cost = initial(sprint_stamina_cost) * reset ? 1 : sprint_cost
+
+/// Returns how much blood you have, effective or otherwise
+/// just_blood just makes it return your real blood amount
+/mob/living/proc/get_blood(just_blood = FALSE)
+	. = blood_volume * blood_ratio
+	if(just_blood)
+		return
+	if(blood_volume < BLOOD_VOLUME_SYMPTOMS_WORST)
+		if(has_reagent(/datum/reagent/medicine/epinephrine))
+			return BLOOD_VOLUME_SYMPTOMS_ANNOYING + 10 // Vasopressors~
+
+	if(reagents)
+		var/datum/reagents/our_reagents = src.reagents
+		. += min(our_reagents.get_reagent_amount(/datum/reagent/water) * 1 , 100)
+		. += min(our_reagents.get_reagent_amount(/datum/reagent/water/holywater) * 2 , 50)
+		. += min(our_reagents.get_reagent_amount(/datum/reagent/medicine/salglu_solution) * 1 , 150)
+		. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/bloody_mary) * 0.35 , 100)
+		. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/brocbrew) * 0.5 , 100)
+
+// Passive blood regeneration
+/mob/living/carbon/proc/regenerate_blood()
+
+	// First check if there's enough room
+	if(blood_volume > BLOOD_VOLUME_MAXIMUM)
+		return
+	
+	// Food based blood replenishment, spends nutrition to regen blood
+	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
+	if(blood_volume < BLOOD_VOLUME_SAFE)
+		if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
+			var/nutrition_bonus = 0
+			switch(nutrition)
+				if(0 to NUTRITION_LEVEL_HUNGRY)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_STARVING
+				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_HUNGRY
+				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_FED
+				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_WELL_FED
+				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FAT)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_FULL
+				if(NUTRITION_LEVEL_FAT to INFINITY)
+					nutrition_bonus = BLOOD_REFILL_NUTRITION_FAT
+
+			if(satiety > 80)
+				nutrition_bonus *= 1.25
+			adjust_nutrition(-nutrition_bonus)
+			blood_volume += nutrition_bonus * BLOOD_UNIT_NUTRITION_COST
+
+
+
+
+
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)
 		blood_volume = max(blood_volume - amt, 0)

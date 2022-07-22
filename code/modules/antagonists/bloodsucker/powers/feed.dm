@@ -61,7 +61,7 @@
 		if(display_error)
 			to_chat(owner, "<span class='warning'>You may only feed from living beings.</span>")
 		return FALSE
-	if(target.blood_volume <= 0)
+	if(target.get_blood(TRUE) <= 0)
 		if(display_error)
 			to_chat(owner, "<span class='warning'>Your victim has no blood to take.</span>")
 		return FALSE
@@ -265,20 +265,20 @@
 				to_chat(user, "<span class='notice'>Your victim is dead. [target.p_their(TRUE)] blood barely nourishes you.</span>")
 				warning_target_dead = TRUE
 		// Full?
-		if(!warning_full && user.blood_volume >= bloodsuckerdatum.max_blood_volume)
+		if(!warning_full && user.get_blood(TRUE) >= bloodsuckerdatum.max_blood_volume)
 			to_chat(user, "<span class='notice'>You are full. Further blood will be wasted.</span>")
 			warning_full = TRUE
 		// Blood Remaining? (Carbons/Humans only)
 		if(iscarbon(target) && !AmBloodsucker(target, TRUE))
-			if(target.blood_volume <= BLOOD_VOLUME_BAD && warning_target_bloodvol > BLOOD_VOLUME_BAD)
+			if(target.get_blood(TRUE) <= BLOOD_VOLUME_BAD && warning_target_bloodvol > BLOOD_VOLUME_BAD)
 				to_chat(user, "<span class='warning'>Your victim's blood volume is fatally low!</span>")
-			else if(target.blood_volume <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_OKAY)
+			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_OKAY)
 				to_chat(user, "<span class='warning'>Your victim's blood volume is dangerously low.</span>")
-			else if(target.blood_volume <= BLOOD_VOLUME_SAFE && warning_target_bloodvol > BLOOD_VOLUME_SAFE)
+			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_SAFE && warning_target_bloodvol > BLOOD_VOLUME_SAFE)
 				to_chat(user, "<span class='notice'>Your victim's blood is at an unsafe level.</span>")
-			warning_target_bloodvol = target.blood_volume // If we had a warning to give, it's been given by now.
+			warning_target_bloodvol = target.get_blood(TRUE) // If we had a warning to give, it's been given by now.
 		// Done?
-		if(target.blood_volume <= 0)
+		if(target.get_blood(TRUE) <= 0)
 			to_chat(user, "<span class='notice'>You have bled your victim dry.</span>")
 			break
 

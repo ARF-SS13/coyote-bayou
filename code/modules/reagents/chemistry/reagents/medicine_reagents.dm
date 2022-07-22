@@ -80,7 +80,7 @@
 	M.SetSleeping(0, 0)
 	M.jitteriness = 0
 	M.cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume = (BLOOD_VOLUME_NORMAL*M.blood_ratio)
 
 	for(var/organ in M.internal_organs)
@@ -406,24 +406,24 @@
 	reagent_state = LIQUID
 	color = "#DCDCDC"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 60
+	overdose_threshold = 150 // enough to mitigate severe bleeding effects
 	taste_description = "sweetness and salt"
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
-	var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
+	//var/last_added = 0
+	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
+	//var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
 	pH = 5.5
 
 /datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M)
 	if((HAS_TRAIT(M, TRAIT_NOMARROW)))
 		return
-	if(last_added)
+	/* if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
 	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level + extra_regen
+		M.blood_volume = new_blood_level + extra_regen*/
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REM, 0)
 		M.adjustFireLoss(-0.5*REM, 0)
@@ -1291,7 +1291,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
 	M.adjustCloneLoss(-3*REM, FALSE)
 	M.adjustStaminaLoss(-25*REM,FALSE)
-	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 40 // blood fall out man bad
 	..()
 	. = 1
@@ -1312,7 +1312,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 	M.adjustCloneLoss(-1.25*REM, FALSE)
 	M.adjustStaminaLoss(-4*REM,FALSE)
-	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 3
 	..()
 	. = 1
@@ -1692,7 +1692,7 @@
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/M)
 	. = ..()
-	if(!M.blood_volume)
+	if(!M.get_blood(TRUE))
 		return
 
 	if(prob(15))
@@ -1725,7 +1725,7 @@
 	if(!user || !iscarbon(user))
 		return
 
-	if(!user.blood_volume)
+	if(!user.get_blood(TRUE))
 		return
 
 	if(!user.all_wounds)

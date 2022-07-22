@@ -74,7 +74,7 @@
 		return FALSE
 	// Have enough blood?
 	var/mob/living/L = owner
-	if(L.blood_volume < bloodcost)
+	if(L.get_blood(TRUE) < bloodcost)
 		if(display_error)
 			to_chat(owner, "<span class='warning'>You need at least [bloodcost] blood to activate [name]</span>")
 		return FALSE
@@ -111,7 +111,7 @@
 	// Constant Cost (out of blood)
 	if(warn_constant_cost)
 		var/mob/living/L = owner
-		if(L.blood_volume <= 0)
+		if(L.get_blood(TRUE) <= 0)
 			if(display_error)
 				to_chat(owner, "<span class='warning'>You don't have the blood to upkeep [src].</span>")
 			return FALSE
@@ -156,7 +156,7 @@
 	StartCooldown()
 
 /datum/action/bloodsucker/proc/ContinueActive(mob/living/user, mob/living/target) // Used by loops to make sure this power can stay active.
-	return active && user && (!warn_constant_cost || user.blood_volume > 0)
+	return active && user && (!warn_constant_cost || user.get_blood(TRUE) > 0)
 
 /datum/action/bloodsucker/proc/RemoveAfterUse()
 	// Un-Learn Me! (GO HOME

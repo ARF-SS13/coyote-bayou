@@ -150,15 +150,15 @@
 
 	var/incomingstammult = 1
 	var/bufferedstam = 0
-	var/stambuffer = 20
+	var/stambuffer = HUMAN_BUFFERED_STAMINA_MAX
 	var/stambufferregentime
 
 	//Sprint buffer---
-	var/sprint_buffer = 43					//Tiles
-	var/sprint_buffer_max = 43
-	var/sprint_buffer_regen_ds = 0.1		//Tiles per world.time decisecond
-	var/sprint_buffer_regen_last = 0		//last world.time this was regen'd for math.
-	var/sprint_stamina_cost = 0.70			//stamina loss per tile while insufficient sprint buffer.
+	var/sprint_buffer = 43 //Tiles
+	var/sprint_buffer_max = HUMAN_SPRINT_BUFFER_MAX
+	var/sprint_buffer_regen_ds = HUMAN_SPRINT_REGEN //Tiles per world.time decisecond
+	var/sprint_buffer_regen_last = 0 //last world.time this was regen'd for math.
+	var/sprint_stamina_cost = HUMAN_SPRINT_STAMINA_COST //stamina loss per tile while insufficient sprint buffer.
 	//---End
 
 	var/disconnect_time //how long have we been dc'd for

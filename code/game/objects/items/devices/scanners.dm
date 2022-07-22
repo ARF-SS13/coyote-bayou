@@ -445,11 +445,11 @@ GENETICS SCANNER
 				if(R)
 					blood_type = R.name
 			if(C.scan_blood_volume() <= (BLOOD_VOLUME_SAFE*C.blood_ratio) && C.scan_blood_volume() > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>LOW blood level [blood_percent] %, [C.scan_blood_volume()] cl,</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>LOW blood level [blood_percent] %,</span> <span class='info'>type: [blood_type]</span>\n"
 			else if(C.scan_blood_volume() <= (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>CRITICAL blood level [blood_percent] %, [C.scan_blood_volume()] cl,</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>CRITICAL blood level [blood_percent] %,</span> <span class='info'>type: [blood_type]</span>\n"
 			else
-				msg += "<span class='info'>Blood level [blood_percent] %, [C.scan_blood_volume()] cl, type: [blood_type]</span>\n"
+				msg += "<span class='info'>Blood level [blood_percent] %, type: [blood_type]</span>\n"
 
 		var/cyberimp_detect
 		for(var/obj/item/organ/cyberimp/CI in C.internal_organs)

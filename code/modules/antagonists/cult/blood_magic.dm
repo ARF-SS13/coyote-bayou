@@ -688,8 +688,8 @@
 				if(H.stat == DEAD)
 					to_chat(user,"<span class='warning'>Only a revive rune can bring back the dead!</span>")
 					return
-				if(H.blood_volume < (BLOOD_VOLUME_SAFE*H.blood_ratio))
-					var/restore_blood = (BLOOD_VOLUME_SAFE*H.blood_ratio) - H.blood_volume
+				if(H.get_blood(TRUE) < (BLOOD_VOLUME_SAFE*H.blood_ratio))
+					var/restore_blood = (BLOOD_VOLUME_SAFE*H.blood_ratio) - H.get_blood(TRUE)
 					if(uses*2 < restore_blood)
 						H.blood_volume += uses*2
 						to_chat(user,"<span class='danger'>You use the last of your blood rites to restore what blood you could!</span>")
@@ -731,7 +731,7 @@
 				if(H.cultslurring)
 					to_chat(user,"<span class='danger'>[H.p_their(TRUE)] blood has been tainted by an even stronger form of blood magic, it's no use to us like this!</span>")
 					return
-				if(H.blood_volume > (BLOOD_VOLUME_SAFE*H.blood_ratio))
+				if(H.get_blood(TRUE) > (BLOOD_VOLUME_SAFE*H.blood_ratio))
 					H.blood_volume -= 100
 					uses += 50
 					user.Beam(H,icon_state="drainbeam",time=10)

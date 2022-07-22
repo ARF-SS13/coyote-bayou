@@ -114,9 +114,9 @@ This file contains the cult dagger and rune list code
 		for(var/B in spiral_range_turfs(1, user, 1))
 			var/obj/structure/emergency_shield/sanguine/N = new(B)
 			shields += N
-	user.visible_message("<span class='warning'>[user] [user.blood_volume ? "cuts open [user.p_their()] arm and begins writing in [user.p_their()] own blood":"begins sketching out a strange design"]!</span>", \
-						"<span class='cult'>You [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil of the Geometer.</span>")
-	if(user.blood_volume)
+	user.visible_message("<span class='warning'>[user] [user.get_blood(TRUE) ? "cuts open [user.p_their()] arm and begins writing in [user.p_their()] own blood":"begins sketching out a strange design"]!</span>", \
+						"<span class='cult'>You [user.get_blood(TRUE) ? "slice open your arm and ":""]begin drawing a sigil of the Geometer.</span>")
+	if(user.get_blood(TRUE))
 		user.apply_damage(initial(rune_to_scribe.scribe_damage), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 	var/scribe_mod = initial(rune_to_scribe.scribe_delay)
 	if(istype(get_turf(user), /turf/open/floor/engine/cult) && !(ispath(rune_to_scribe, /obj/effect/rune/narsie)))
@@ -129,7 +129,7 @@ This file contains the cult dagger and rune list code
 		return
 	if(!check_rune_turf(Turf, user))
 		return
-	user.visible_message("<span class='warning'>[user] creates a strange circle[user.blood_volume ? " in [user.p_their()] own blood":""].</span>", \
+	user.visible_message("<span class='warning'>[user] creates a strange circle[user.get_blood(TRUE) ? " in [user.p_their()] own blood":""].</span>", \
 						"<span class='cult'>You finish drawing the arcane markings of the Geometer.</span>")
 	for(var/V in shields)
 		var/obj/structure/emergency_shield/S = V

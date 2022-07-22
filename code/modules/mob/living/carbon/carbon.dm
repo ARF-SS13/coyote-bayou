@@ -841,7 +841,7 @@
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
 			death()
 			return
-		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > 50 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
+		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > BLOOD_LOSS_OXYLOSS_UNCONSCIOUS || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
 			set_stat(UNCONSCIOUS)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			if(!eye_blind)
