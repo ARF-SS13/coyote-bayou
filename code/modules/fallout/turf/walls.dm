@@ -124,6 +124,7 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	icon_state = "tent0"
 	icon_type_smooth = "tent"
 	hardness = 10
+	unbreakable = 0
 	smooth = SMOOTH_OLD
 	//	disasemblable = 0
 	baseturfs = /turf/open/indestructible/ground/outside/ruins
