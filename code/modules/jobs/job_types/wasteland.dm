@@ -1102,6 +1102,7 @@ datum/job/wasteland/f13dendoctor
 	title = "Far-Lands Tribals"
 	flag = F13TRIBAL
 	faction = FACTION_WASTELAND
+	social_faction = FACTION_TRIBE
 	total_positions = -1
 	spawn_positions = -1
 	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
@@ -1180,7 +1181,6 @@ datum/job/wasteland/f13dendoctor
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)
 	H.grant_language(/datum/language/tribal)
-	H.social_faction = FACTION_WASTELAND
 	add_verb(H, /mob/living/proc/create_tribe)
 
 

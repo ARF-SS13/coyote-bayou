@@ -326,6 +326,9 @@
 	spawn_type = /obj/item/rollingpaper
 	custom_price = PRICE_REALLY_CHEAP
 
+/obj/item/storage/fancy/rollingpapers/makeshift
+	desc = "A pack of hand-made rolling papers."
+
 /obj/item/storage/fancy/rollingpapers/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)

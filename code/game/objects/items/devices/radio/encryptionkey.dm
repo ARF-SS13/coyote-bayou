@@ -178,8 +178,8 @@
 	channels = list(RADIO_CHANNEL_ENCLAVE = 1)
 
 /obj/item/encryptionkey/headset_town
-	name = "Town radio encryption key"
-	desc = "An encryption key for a radio headset.  To access the Town channel, use :f."
+	name = "Nash radio encryption key"
+	desc = "An encryption key for a radio headset.  To access the Nash channel, use :f."
 	icon_state = "cypherkey"
 	channels = list(RADIO_CHANNEL_TOWN = 1)
 
