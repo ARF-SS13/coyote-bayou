@@ -5,218 +5,28 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"aH" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"bo" = (
-/turf/open/indestructible,
-/area/f13/wasteland)
-"bO" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"dd" = (
-/obj/machinery/workbench/advanced,
+"aK" = (
+/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
-"dl" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 8
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"dF" = (
-/mob/living/simple_animal/hostile/handy/gutsy,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"ed" = (
-/turf/closed/mineral/random/low_chance,
-/area/f13/wasteland)
-"ep" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/wasteland)
-"eU" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	pixel_y = 6
-	},
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"fd" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/closed/mineral/random/low_chance,
-/area/f13/wasteland)
-"gV" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"hd" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"hm" = (
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"hx" = (
-/obj/machinery/power/port_gen/pacman/super,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"hS" = (
-/obj/structure/window/fulltile/wood{
-	max_integrity = 140
-	},
-/turf/open/floor/holofloor/carpet,
-/area/f13/wasteland)
-"iA" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"iF" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"jj" = (
-/obj/structure/railing/corner,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"ky" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"lh" = (
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"lN" = (
-/obj/structure/cable,
-/obj/machinery/power/solar,
-/turf/open/floor/plasteel/solarpanel,
-/area/f13/wasteland)
-"mp" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/legion_extractor,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"nF" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"pt" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/smartfridge/bottlerack/grownbin,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"pJ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/reagent_dispensers/compostbin,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"pW" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"qj" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"ql" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"qw" = (
-/obj/machinery/smoke_machine{
-	name = "HVAC Machine"
-	},
-/obj/machinery/atmospherics/pipe/simple/general/hidden,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"qC" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"qL" = (
-/obj/structure/lattice/catwalk,
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"rn" = (
-/obj/machinery/hydroponics/constructable,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"rN" = (
-/turf/closed/wall/f13/wood,
-/area/f13/wasteland)
-"sn" = (
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"sG" = (
+"bc" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"th" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
+"bh" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"bo" = (
+/turf/open/indestructible,
+/area/f13/wasteland)
+"bY" = (
+/obj/machinery/workbench/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
-"tj" = (
+"cx" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -227,393 +37,29 @@
 /obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"tM" = (
-/turf/closed/indestructible/riveted,
-/area/f13/wasteland)
-"vj" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/line{
+"dk" = (
+/obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
 	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"vt" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	pixel_y = 5
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
-"wa" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"xg" = (
-/obj/effect/landmark/vertibird{
-	id = "Nash - Christus Saint Michaels Hospital - Rooftop";
-	name = "Nash - Christus Saint Michaels Hospital - Rooftop"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"xh" = (
-/obj/machinery/power/smes,
-/obj/structure/cable,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"xl" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"xs" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
-	},
-/area/f13/building/hospital)
-"xQ" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"yC" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"yY" = (
-/obj/structure/railing{
-	dir = 6;
-	layer = 4.1
-	},
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"zo" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"zx" = (
-/obj/structure/railing{
-	dir = 4
-	},
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"zT" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/simple_door/house,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/building/hospital)
-"zZ" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"Al" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"AZ" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/open/transparent/openspace,
-/area/f13/wasteland)
-"Be" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/hydroponics/constructable,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"Bz" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"BQ" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"Co" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 4
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"CB" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/solar,
-/turf/open/floor/plasteel/solarpanel,
-/area/f13/wasteland)
-"CG" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Ey" = (
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"EF" = (
-/obj/machinery/power/smes,
-/obj/structure/cable,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"Fj" = (
-/obj/machinery/telecomms/relay/preset/telecomms,
-/turf/open/indestructible,
-/area/f13/wasteland)
-"Fl" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"FT" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"GB" = (
-/obj/structure/nest/protectron,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Hb" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"HT" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	pixel_y = 6
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"IF" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/terminal{
-	dir = 1;
-	termtag = "Business"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"JX" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/smartfridge/bottlerack/seedbin/primitive,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"JY" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"Lb" = (
-/obj/machinery/light/floor,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"Lv" = (
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"Lz" = (
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"LH" = (
-/obj/structure/wreck/trash/four_barrels,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"LQ" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"LT" = (
-/turf/closed/indestructible/rock{
-	desc = "A pre-War wall made of solid concrete.";
-	icon = 'icons/turf/walls/f13store.dmi';
-	icon_state = "store";
-	icon_type_smooth = "store";
-	name = "Concrete wall";
-	smooth = 1
-	},
-/area/f13/wasteland)
-"Mn" = (
-/obj/structure/cable,
-/obj/machinery/power/tracker,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"MO" = (
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Nx" = (
-/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
-/turf/open/floor/plasteel/f13/vault_floor/dark{
-	icon_state = "darkdirty"
-	},
-/area/f13/wasteland)
-"Ny" = (
+"dK" = (
 /obj/machinery/smoke_machine{
 	name = "HVAC Machine"
 	},
+/obj/machinery/atmospherics/pipe/simple/general/hidden,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"NT" = (
-/obj/structure/railing{
-	layer = 4.1
-	},
-/turf/open/transparent/openspace,
+"ed" = (
+/turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
-"QZ" = (
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"Rq" = (
-/obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Rw" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/machinery/light/floor,
+"ei" = (
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
-"RF" = (
-/turf/closed/indestructible/rock,
-/area/f13/wasteland)
-"Sz" = (
-/obj/structure/ladder/unbreakable{
-	id = hospitalroof;
-	height = 2
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"SK" = (
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"ST" = (
-/obj/structure/chair/f13chair2,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"TS" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Ut" = (
-/obj/structure/reagent_dispensers/barrel/two,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"UB" = (
-/obj/structure/railing/corner,
-/turf/open/transparent/openspace{
-	name = "air";
-	sunlight_state = 1
-	},
-/area/f13/wasteland)
-"Va" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/ammo/military,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"Vm" = (
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"Vr" = (
-/obj/machinery/atmospherics/pipe/simple/general/hidden,
-/obj/structure/wreck/trash/machinepiletwo,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
-"Wv" = (
-/obj/structure/rack/shelf_metal,
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"XO" = (
+"ek" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/electrical{
 	pixel_y = 6
@@ -629,22 +75,156 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
-"XU" = (
-/obj/structure/railing/corner{
-	dir = 4
+"fb" = (
+/obj/structure/wreck/trash/four_barrels,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"fd" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
+"fk" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/solarpanel,
+/area/f13/wasteland)
+"fo" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"gg" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"gK" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"hm" = (
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"hS" = (
+/obj/structure/window/fulltile/wood{
+	max_integrity = 140
+	},
+/turf/open/floor/holofloor/carpet,
+/area/f13/wasteland)
+"ih" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	pixel_y = 6
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"iF" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 1
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"XX" = (
-/obj/structure/railing{
+"jc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"jj" = (
+/obj/structure/railing/corner,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"kF" = (
+/obj/structure/rack/shelf_metal,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"kU" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/stock_parts/cell/ammo/ec,
+/obj/item/stock_parts/cell/ammo/ec,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"lF" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/reagent_dispensers/compostbin,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"lM" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
+/obj/effect/spawner/lootdrop/f13/advcrafting,
+/obj/item/stock_parts/cell/ammo/mfc,
+/obj/item/stock_parts/cell/ammo/mfc,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"lV" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"mK" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"mP" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"nd" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"nF" = (
+/obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
-"Zf" = (
+"oc" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/wasteland)
-"ZA" = (
+/area/f13/building/hospital)
+"oi" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
@@ -657,7 +237,153 @@
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"ZF" = (
+"oy" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	termtag = "Business"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"ql" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"rF" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"rN" = (
+/turf/closed/wall/f13/wood,
+/area/f13/wasteland)
+"sn" = (
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"sz" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"sE" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden,
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"te" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"to" = (
+/obj/machinery/power/smes,
+/obj/structure/cable,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"tp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"tJ" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"tM" = (
+/turf/closed/indestructible/riveted,
+/area/f13/wasteland)
+"uB" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"vc" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"wY" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"xj" = (
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"xs" = (
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
+/area/f13/building/hospital)
+"yB" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"yV" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"yY" = (
+/obj/structure/railing{
+	dir = 6;
+	layer = 4.1
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"zf" = (
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"zx" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"zK" = (
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
@@ -666,6 +392,280 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"zT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/simple_door/house,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building/hospital)
+"Am" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"AS" = (
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"AZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"Bg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/hydroponics/constructable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Bt" = (
+/obj/structure/cable,
+/obj/machinery/power/tracker,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"DL" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"En" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"Ey" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"EV" = (
+/obj/structure/chair/f13chair2,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"Fg" = (
+/obj/machinery/power/smes,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Fj" = (
+/obj/machinery/telecomms/relay/preset/telecomms,
+/turf/open/indestructible,
+/area/f13/wasteland)
+"Ki" = (
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"KV" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"KW" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Lj" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Ll" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"LT" = (
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
+/area/f13/wasteland)
+"Mv" = (
+/obj/structure/cable,
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/solarpanel,
+/area/f13/wasteland)
+"MG" = (
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"Nd" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/apc/auto_name/north,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Nh" = (
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Nt" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/legion_extractor,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"NT" = (
+/obj/structure/railing{
+	layer = 4.1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"OK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"OO" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"PU" = (
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"RF" = (
+/turf/closed/indestructible/rock,
+/area/f13/wasteland)
+"Sz" = (
+/obj/structure/ladder/unbreakable{
+	id = hospitalroof;
+	height = 2
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"SK" = (
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Tn" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	pixel_y = 6
+	},
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"TD" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Christus Saint Michaels Hospital - Rooftop";
+	name = "Nash - Christus Saint Michaels Hospital - Rooftop"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Ul" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"UB" = (
+/obj/structure/railing/corner,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"US" = (
+/obj/structure/reagent_dispensers/barrel/two,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"Vg" = (
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/wasteland)
+"Vr" = (
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"VU" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/ammo/military,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
+"WN" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Xb" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Xv" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"XU" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"XX" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"YO" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/smartfridge/bottlerack/seedbin/primitive,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"YT" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/wasteland)
 
 (1,1,1) = {"
 RF
@@ -44971,11 +44971,11 @@ SK
 SK
 SK
 LT
-dd
-Zf
-Zf
-Zf
-Va
+bY
+En
+En
+En
+VU
 LT
 SK
 SK
@@ -45218,21 +45218,21 @@ SK
 SK
 SK
 LT
-qL
-qL
-qL
-qL
+Vr
+Vr
+Vr
+Vr
 LT
 SK
 SK
 SK
 SK
 LT
-XO
-Zf
-Zf
-ST
-IF
+ek
+En
+En
+EV
+oy
 LT
 SK
 SK
@@ -45475,21 +45475,21 @@ SK
 SK
 SK
 LT
-qL
-qL
-qL
-qL
+Vr
+Vr
+Vr
+Vr
 LT
 SK
 SK
 SK
 SK
 LT
-vt
-dF
-Zf
-Zf
-CG
+nd
+AS
+En
+En
+Ul
 LT
 SK
 SK
@@ -45732,21 +45732,21 @@ SK
 SK
 SK
 LT
-qL
-qL
-qL
-qL
+Vr
+Vr
+Vr
+Vr
 LT
 SK
 SK
 SK
 SK
 LT
-th
-Zf
-Zf
-Zf
-GB
+lM
+En
+En
+En
+aK
 LT
 SK
 SK
@@ -45990,8 +45990,8 @@ SK
 SK
 LT
 LT
-ep
-ep
+Vg
+Vg
 LT
 LT
 SK
@@ -45999,11 +45999,11 @@ SK
 SK
 SK
 LT
-iA
-Zf
-Zf
-Zf
-Ut
+kU
+En
+En
+En
+US
 LT
 SK
 SK
@@ -46247,8 +46247,8 @@ SK
 SK
 SK
 SK
-Zf
-Zf
+En
+En
 SK
 SK
 SK
@@ -46256,11 +46256,11 @@ SK
 SK
 SK
 LT
-Wv
-hx
-Zf
-MO
-LH
+kF
+MG
+En
+YT
+fb
 LT
 SK
 SK
@@ -46501,21 +46501,21 @@ hm
 NT
 SK
 SK
-dl
+bh
 SK
 SK
-TS
-Zf
+dk
+En
 SK
-dl
+bh
 SK
 SK
-Bz
+Nh
 SK
 LT
 LT
 LT
-Rq
+Ki
 LT
 LT
 LT
@@ -46757,15 +46757,15 @@ hm
 hm
 NT
 SK
-Rw
-FT
-FT
-FT
-wa
-FT
-FT
-FT
-vj
+Ll
+Am
+Am
+Am
+KW
+Am
+Am
+Am
+rF
 SK
 SK
 SK
@@ -46774,7 +46774,7 @@ SK
 SK
 SK
 SK
-Vm
+xj
 SK
 SK
 SK
@@ -47013,17 +47013,17 @@ hm
 hm
 hm
 NT
-xQ
-zZ
-lh
-lh
-lh
-lh
-lh
-lh
-lh
-Lv
-HT
+DL
+yB
+zf
+zf
+zf
+zf
+zf
+zf
+zf
+vc
+ih
 SK
 SK
 SK
@@ -47271,25 +47271,25 @@ hm
 hm
 NT
 SK
-zZ
-lh
-lh
-Nx
-lh
-lh
-lh
-lh
-Lv
+yB
+zf
+zf
+ei
+zf
+zf
+zf
+zf
+vc
 SK
 SK
 SK
-qw
-sG
+dK
+bc
 SK
 SK
 SK
-Ny
-Ny
+te
+te
 SK
 SK
 SK
@@ -47528,25 +47528,25 @@ hm
 hm
 NT
 SK
-zZ
-lh
-lh
-lh
-lh
-lh
-lh
-lh
-Lv
+yB
+zf
+zf
+zf
+zf
+zf
+zf
+zf
+vc
 SK
 SK
 SK
-Vr
-Ny
+sE
+te
 SK
 SK
 SK
-Ny
-sG
+te
+bc
 SK
 SK
 SK
@@ -47784,26 +47784,26 @@ hm
 hm
 hm
 NT
-xQ
-Hb
-lh
-lh
-lh
-Lb
-lh
-xg
-lh
-ky
-HT
+DL
+WN
+zf
+zf
+zf
+Xb
+zf
+TD
+zf
+wY
+ih
 SK
 SK
-qw
-Ny
+dK
+te
 SK
 SK
 SK
-Ny
-Ny
+te
+te
 SK
 SK
 SK
@@ -48042,25 +48042,25 @@ hm
 hm
 NT
 SK
-zZ
-lh
-lh
-lh
-lh
-lh
-lh
-lh
-Lv
+yB
+zf
+zf
+zf
+zf
+zf
+zf
+zf
+vc
 SK
 SK
-Vm
-qw
-Ny
+xj
+dK
+te
 SK
 SK
 SK
-sG
-Ny
+bc
+te
 SK
 SK
 SK
@@ -48299,25 +48299,25 @@ hm
 hm
 NT
 SK
-zZ
-lh
-lh
-lh
-lh
-lh
-lh
-lh
-Lv
+yB
+zf
+zf
+zf
+zf
+zf
+zf
+zf
+vc
 SK
 SK
 SK
-Vr
-Ny
+sE
+te
 SK
 SK
 SK
-Ny
-Ny
+te
+te
 SK
 SK
 SK
@@ -48555,24 +48555,24 @@ hm
 hm
 hm
 NT
-xQ
-zZ
-lh
-lh
-lh
-lh
-lh
-lh
-lh
-Lv
-eU
+DL
+yB
+zf
+zf
+zf
+zf
+zf
+zf
+zf
+vc
+Tn
 SK
 SK
 SK
 SK
 SK
 SK
-Bz
+Nh
 SK
 SK
 SK
@@ -48813,15 +48813,15 @@ hm
 hm
 NT
 SK
-pW
-JY
-JY
-JY
-xl
-JY
-JY
-JY
-zo
+OK
+lV
+lV
+lV
+Xv
+lV
+lV
+lV
+yV
 SK
 SK
 SK
@@ -49070,26 +49070,26 @@ xs
 xs
 xs
 SK
-Bz
-Co
+Nh
+KV
 SK
-Vm
-Co
-SK
-SK
-Co
+xj
+KV
 SK
 SK
+KV
 SK
-CB
-yC
-lN
-CB
-yC
-lN
-CB
-yC
-lN
+SK
+SK
+fk
+gg
+Mv
+fk
+gg
+Mv
+fk
+gg
+Mv
 SK
 SK
 AZ
@@ -49321,10 +49321,10 @@ hm
 hm
 hm
 xs
-qj
-gV
-xh
-EF
+Nd
+Lj
+Fg
+to
 xs
 SK
 SK
@@ -49338,15 +49338,15 @@ SK
 SK
 SK
 SK
-CB
-qC
-lN
-CB
-qC
-lN
-CB
-qC
-lN
+fk
+fo
+Mv
+fk
+fo
+Mv
+fk
+fo
+Mv
 SK
 SK
 AZ
@@ -49578,10 +49578,10 @@ hm
 hm
 hm
 xs
-BQ
+OO
 Ey
-ZF
-tj
+zK
+cx
 xs
 SK
 SK
@@ -49591,19 +49591,19 @@ SK
 SK
 SK
 SK
-Vm
+xj
 SK
 SK
 SK
-CB
-qC
-lN
-CB
-qC
-lN
-CB
-qC
-lN
+fk
+fo
+Mv
+fk
+fo
+Mv
+fk
+fo
+Mv
 SK
 SK
 AZ
@@ -49835,10 +49835,10 @@ hm
 hm
 hm
 xs
-aH
+sz
 Ey
 Ey
-ZA
+oi
 xs
 SK
 SK
@@ -49852,15 +49852,15 @@ SK
 SK
 SK
 SK
-CB
-qC
-lN
-CB
-qC
-lN
-CB
-qC
-lN
+fk
+fo
+Mv
+fk
+fo
+Mv
+fk
+fo
+Mv
 SK
 SK
 AZ
@@ -50092,32 +50092,32 @@ hm
 hm
 hm
 xs
-Lz
+PU
 Ey
 Ey
-Al
+oc
 xs
 SK
 SK
-rn
-rn
-rn
-rn
-rn
-rn
+tJ
+tJ
+tJ
+tJ
+tJ
+tJ
 SK
 SK
 SK
 SK
-CB
-qC
-lN
-CB
-qC
-lN
-CB
-qC
-lN
+fk
+fo
+Mv
+fk
+fo
+Mv
+fk
+fo
+Mv
 SK
 SK
 AZ
@@ -50352,9 +50352,9 @@ xs
 Sz
 Ey
 Ey
-QZ
+gK
 zT
-bO
+mP
 SK
 SK
 SK
@@ -50367,13 +50367,13 @@ SK
 SK
 SK
 SK
-hd
+jc
 SK
 SK
-hd
+jc
 SK
 SK
-hd
+jc
 SK
 SK
 SK
@@ -50611,28 +50611,28 @@ xs
 xs
 xs
 xs
-JX
-mp
-Be
-Be
-Be
-Be
-Be
-Be
-pt
-pJ
-LQ
-LQ
-LQ
-Fl
-LQ
-LQ
-Fl
-LQ
-LQ
-Fl
-LQ
-Mn
+YO
+Nt
+Bg
+Bg
+Bg
+Bg
+Bg
+Bg
+mK
+lF
+tp
+tp
+tp
+uB
+tp
+tp
+uB
+tp
+tp
+uB
+tp
+Bt
 SK
 AZ
 hm

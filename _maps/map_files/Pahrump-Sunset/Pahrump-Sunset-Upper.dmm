@@ -232,12 +232,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland/ncr)
 "aCj" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
-	},
-/obj/structure/fluff/beach_umbrella/security,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "aGA" = (
 /obj/structure/bed/roller,
 /obj/effect/decal/cleanable/dirt,
@@ -849,9 +846,11 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "dnp" = (
-/obj/structure/mopbucket,
-/obj/item/mop,
-/obj/item/reagent_containers/glass/bucket,
+/obj/structure/table,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "dof" = (
@@ -919,9 +918,10 @@
 /turf/open/indestructible,
 /area/f13/wasteland)
 "dHP" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery,
-/obj/item/healthanalyzer,
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "dKF" = (
@@ -1380,19 +1380,16 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/wasteland/ncr)
 "gde" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/mirror{
-	pixel_x = -1;
-	pixel_y = 29
-	},
-/obj/structure/sink{
-	pixel_y = 15
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
+/obj/structure/closet/crate/trashcart,
+/obj/item/clothing/glasses/hud/health/night,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/obj/item/storage/bag/trash,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "geI" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2011,13 +2008,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "iDT" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
 /obj/structure/table,
-/obj/item/bodybag/containment,
-/obj/item/bodybag/containment,
-/obj/item/storage/box/bodybags,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/healthanalyzer,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "iFg" = (
@@ -2159,12 +2152,19 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "juL" = (
-/obj/structure/table,
-/obj/item/reagent_containers/spray/cleaner,
-/obj/machinery/light{
-	dir = 1
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/mirror{
+	pixel_x = -1;
+	pixel_y = 29
+	},
+/obj/structure/sink{
+	pixel_y = 15
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/building/hospital)
 "jvX" = (
 /obj/item/kirbyplants{
@@ -2263,6 +2263,10 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"jUZ" = (
+/obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jVE" = (
@@ -2435,18 +2439,6 @@
 /area/f13/wasteland)
 "kJl" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
-/area/f13/building/hospital)
-"kLi" = (
-/obj/structure/closet/crate/trashcart,
-/obj/item/clothing/glasses/hud/health/night,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/obj/item/storage/bag/trash,
-/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "kMB" = (
 /obj/structure/railing/corner{
@@ -2772,22 +2764,10 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/ncr)
-"lTX" = (
+"lUm" = (
 /obj/structure/table,
 /obj/structure/bedsheetbin/towel,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"lUm" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
 /area/f13/building/hospital)
 "lYF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3487,9 +3467,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
 "oDl" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/machinery/light,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "oDo" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/massfusion)
@@ -3566,15 +3546,12 @@
 /turf/open/indestructible,
 /area/f13/wasteland/ncr)
 "oSq" = (
-/obj/machinery/light{
-	dir = 4
+/obj/structure/chair/comfy/plywood{
+	dir = 1
 	},
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/table/optable,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/fluff/beach_umbrella/security,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "oTC" = (
 /obj/machinery/light{
 	dir = 1;
@@ -3878,6 +3855,13 @@
 "qvL" = (
 /turf/open/transparent/openspace,
 /area/f13/building/massfusion)
+"qDK" = (
+/obj/structure/chair/comfy/plywood{
+	dir = 1
+	},
+/obj/structure/fluff/beach_umbrella/syndi,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "qEi" = (
 /obj/structure/wreck/trash/engine,
 /obj/effect/decal/cleanable/dirt,
@@ -3981,13 +3965,6 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
-"rcU" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "rhv" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail{
@@ -4287,12 +4264,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "sfh" = (
-/obj/structure/chair/comfy/plywood{
-	dir = 1
-	},
-/obj/structure/fluff/beach_umbrella/syndi,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
+/obj/structure/mopbucket,
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "sjx" = (
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13{
@@ -4376,10 +4352,6 @@
 "sGc" = (
 /turf/open/transparent/openspace,
 /area/f13/ncr)
-"sHj" = (
-/obj/machinery/light,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "sHx" = (
 /obj/machinery/light{
 	dir = 4;
@@ -4868,8 +4840,16 @@
 	},
 /area/f13/building/massfusion)
 "uxf" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/curtain,
+/obj/machinery/shower{
+	pixel_y = 17
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/building/hospital)
 "uxm" = (
 /obj/structure/barricade/wooden,
@@ -5401,6 +5381,16 @@
 	icon_state = "whitedirtysolid"
 	},
 /area/f13/building/hospital)
+"xwZ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table,
+/obj/item/bodybag/containment,
+/obj/item/bodybag/containment,
+/obj/item/storage/box/bodybags,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "xAT" = (
 /obj/machinery/light{
 	dir = 1;
@@ -5497,6 +5487,16 @@
 	name = "concrete wall"
 	},
 /area/f13/wasteland/ncr)
+"xTt" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "xTy" = (
 /obj/structure/table,
 /obj/item/storage/crayons,
@@ -50925,7 +50925,7 @@ nRq
 tfy
 wXb
 lqO
-gde
+juL
 kWR
 vfp
 gLr
@@ -51696,7 +51696,7 @@ xJA
 iRY
 xvZ
 lqO
-lUm
+uxf
 kWR
 lqO
 gah
@@ -52189,7 +52189,7 @@ vqz
 vqz
 aaL
 aKa
-aCj
+oSq
 aKa
 aKa
 eCS
@@ -52703,7 +52703,7 @@ vqz
 vqz
 aaL
 aKa
-sfh
+qDK
 aKa
 aKa
 aKa
@@ -53477,7 +53477,7 @@ aKa
 ocx
 aKa
 aKa
-sHj
+oDl
 bhm
 gLr
 oab
@@ -54245,9 +54245,9 @@ vqz
 vqz
 vqz
 bhm
-rcU
-kLi
-dnp
+dHP
+gde
+sfh
 cym
 bhm
 cnB
@@ -54518,9 +54518,9 @@ gah
 kJl
 lqO
 tmP
+xwZ
+xTt
 iDT
-oSq
-dHP
 lqO
 xpn
 pws
@@ -54759,10 +54759,10 @@ vqz
 vqz
 vqz
 bhm
-juL
-lTX
-oDl
-uxf
+dnp
+lUm
+aCj
+jUZ
 bhm
 gah
 kJl
