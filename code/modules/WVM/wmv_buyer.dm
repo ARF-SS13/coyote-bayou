@@ -31,7 +31,7 @@
 								/obj/item/reagent_containers/pill/patch/jet = 10,
 								/obj/item/reagent_containers/pill/healingpowder = 5,
 								/obj/item/reagent_containers/hypospray/medipen/psycho = 10,
-								/obj/item/reagent_containers/hypospray/medipen/medx = 10,
+								/obj/item/reagent_containers/hypospray/medipen/medx = 15,
 								/obj/item/reagent_containers/pill/patch/healpoultice = 20,
 								/obj/item/export/bottle/gin = 10,
 								/obj/item/export/bottle/wine = 10,
@@ -90,7 +90,7 @@
 	dat += "Silver Bars: 5 caps<br>"
 	dat += "Gold Bars: 10 caps<br>"
 	dat += "Cut Diamonds : 15 caps<br>"
-	dat += "Jet/Psycho/MedX : 10 caps<br>"
+	dat += "Jet/Psycho/MedX : 10/15 caps<br>"
 	dat += "Healing Powder/Healing Paultice : 5/20 caps<br>"
 	dat += "Stimpak/Super Stimpak : 5/20 caps<br>"
 	dat += "Sealed Bottle of Alcohol: 10-50 caps<br>"
