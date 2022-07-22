@@ -164,6 +164,77 @@
 	result = /obj/item/reagent_containers/food/condiment/flour
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/poutine
+	name = "Poutine"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/fries = 1,
+		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
+		/obj/item/reagent_containers/food/snacks/meatball = 2
+	)
+	result = /obj/item/reagent_containers/food/snacks/poutine
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/trailmix
+	name = "Trail Mix"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/pinyon = 3,
+		/obj/item/reagent_containers/food/snacks/grown/apple = 1,
+		/obj/item/reagent_containers/food/snacks/grown/mutfruit = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/trailmix
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/herby_cheese
+	name = "Herby cheese"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/curd_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 4
+	)
+	result = /obj/item/reagent_containers/food/snacks/herby_cheese
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/pesto
+	name = "Pesto"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/firm_cheese_slice = 1,
+		/datum/reagent/consumable/sodiumchloride = 5,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 2,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/obj/item/reagent_containers/food/snacks/grown/pinyon = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pesto
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/tomato_sauce
+	name = "Tomato sauce"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
+		/datum/reagent/consumable/sodiumchloride = 2,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/tomato_sauce
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/bechamel_sauce
+	name = "Bechamel sauce"
+	reqs = list(
+		/datum/reagent/consumable/milk = 10,
+		/datum/reagent/consumable/flour = 5,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/bechamel_sauce
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/mozzarella_sticks
+	name = "Mozzarella sticks"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice/custom = 2,
+		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/mozzarella_sticks
+	subcategory = CAT_MISCFOOD
+
 /*
 /datum/crafting_recipe/food/melonkeg
 	name ="Melon keg"

@@ -48,18 +48,18 @@
 	icon = 'icons/obj/fish/seafood.dmi'
 	icon_state = "smokedsalmon"
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster
-	name = "lobster meat"
-	desc = "Raw lobster meat that has been prepared."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad
+	name = "crawdad meat"
+	desc = "Raw crawdad meat that has been prepared."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "raw_lobster_meat"
-	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
+	icon_state = "raw_crawdad_meat"
+	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
-	name = "cooked lobster meat"
-	desc = "A deliciously cooked lobster, all ready to consume."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
+	name = "cooked crawdad meat"
+	desc = "A deliciously cooked crawdad, all ready to consume."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "lobster_steamed_simple"
+	icon_state = "crawdad_steamed_simple"
 
 /obj/item/reagent_containers/food/snacks/fishmeat/shrimp
 	name = "shrimp"
@@ -140,10 +140,20 @@
 	name = "Raw Ant Brain"
 	desc = "Goppy reddish-grey flesh dug out of the brain case of a giant ant."
 	icon_state = "AntBrain"
+	cooked_type = /obj/item/reagent_containers/food/snacks/baked_ant_brain
 	bitesize = 3
 	filling_color = "#CD853F"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("fat" = 4, "bitter meat" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/baked_ant_brain
+	name = "Baked Ant Brain"
+	desc = "Strangely reminiscent of some kind of mushroom."
+	icon_state = "baked_ant_brain"
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("fat" = 2, "bitter meat" = 2)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sushi_adv
@@ -455,6 +465,14 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("meat" = 3, "smokey sauce" = 1)
 	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/lasagna
+	name = "Lasagna"
+	desc = "A slice of lasagna. Perfect for a Monday afternoon."
+	icon_state = "lasagna"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/tomatojuice = 10)
+	tastes = list("meat" = 3, "pasta" = 3, "tomato" = 2, "cheese" = 2)
+	foodtype = MEAT | DAIRY | GRAIN
 
 ////////////// Cubes //////////
 

@@ -76,12 +76,12 @@
 		var/mob/living/livingTarget = target
 		livingTarget.electrocute_act(35, src, 1, flags = SHOCK_NOGLOVES|SHOCK_ILLUSION)
 
-/obj/item/fishy/lobster
-	name = "lobster"
-	desc = "Lobsters have a hard time learning the alphabet, being stuck at C."
-	icon_state = "lobster"
-	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/lobster
-	secondary_drop = /obj/item/fishyegg/lobster
+/obj/item/fishy/crawdad
+	name = "Crawdad"
+	desc = "Crawdad not to be confused with lobster!"
+	icon_state = "crawdad"
+	meat_type = /obj/item/reagent_containers/food/snacks/fishmeat/crawdad
+	secondary_drop = /obj/item/fishyegg/crawdad
 
 /obj/item/fishy/shrimp
 	name = "shrimp"
@@ -121,10 +121,10 @@
 	icon_state = "electric_eel_eggs"
 	desc = "Eel eggs are not, typically, considered food. Then again, haute cuisine has fallen mostly by the wayside in the modern era, so go ham."
 
-/obj/item/fishyegg/lobster
-	name = "lobster fish egg"
+/obj/item/fishyegg/crawdad
+	name = "crawdad fish egg"
 	icon_state = "catfish_eggs"
-	desc = "Lobster eggs are historically widely eaten by absolutely nobody."
+	desc = "crawdad eggs are historically widely eaten by absolutely nobody."
 
 /obj/item/fishyegg/shrimp
 	name = "shrimp fish egg"

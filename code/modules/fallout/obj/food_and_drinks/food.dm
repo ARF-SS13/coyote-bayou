@@ -245,7 +245,7 @@
 	name = "deathclaw steak"
 	desc = "A piece of hot spicy meat, eaten by only the most worthy hunters - or the most rich clients."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/tricordrazine = 8) 
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 10, /datum/reagent/medicine/tricordrazine = 8)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/squirrel
 	name = "squirrel steak"
@@ -825,4 +825,99 @@
 	desc = "A canned food product containing the entree portion of a military combat ration. Better than Cram."
 	icon_state = "k_ration_can"
 	tastes = list("beef luncheon loaf" = 3, "jalapeno peppers and spices" = 2)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/broiled_death_claw
+	name = "broiled deathclaw"
+	desc = "All the flavor seared in for extra kick."
+	icon_state = "broiled_death_claw"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/medicine/omnizine = 5)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 10)
+	tastes = list("deathclaw meat" = 3, "butter" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/fire_ant_fricassee
+	name = "fire ant fricassee"
+	desc = "Breaded fire ant meat soaked in cram."
+	icon_state = "fire_ant_fricassee"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	tastes = list("Fire Ant Meat" = 2, "flour" = 1, "cram" = 1)
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/fried_brahmin_skin
+	name = "brahmin cracklings"
+	desc = "Cracklings are the solid material which remains after rendering animal fat and skin to produce lard, tallow, or schmaltz. It is often eaten as a snack food or made into animal feed. It is also used in cooking."
+	icon_state = "fried_brahmin_skin"
+	filling_color = "#CD5C5C"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("crispy skin" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/molerat_manicotti
+	name = "molerat manicotti"
+	desc = "Molerat meat wrapped in a pasta tube."
+	icon_state = "molerat_manicotti"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	tastes = list("molerat Meat" = 2, "dough" = 1)
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/chitlins_con_carne
+	name = "chitlins con carne"
+	desc = "Uses EVERY part of the cazador!"
+	icon_state = "chitlins_con_carne"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20)
+	tastes = list("cazador meat" = 2, "dough" = 1)
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/fried_molerat_lung
+	name = "fried molerat lung"
+	desc = "Halfway to molerat haggis."
+	icon_state = "fried_molerat_lung"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 6)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
+	tastes = list("molerat lung" = 2)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/tato_surpise
+	name = "tato suprise"
+	desc = "The surprise is Tato."
+	icon_state = "tato_surpise"
+	bonus_reagents = list(/datum/reagent/medicine/antitoxin = 0.01, /datum/reagent/medicine/salglu_solution = 0.01, /datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("tato" = 2, "xander" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/radscorpion_en_croute
+	name = "radscorpion en croute"
+	desc = "Radscorpion meat pie, no stingers included."
+	icon_state = "radscorpion_en_croute"
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("cooked insect guts" = 2, "pastry dough" = 1)
+	foodtype = MEAT | GRAIN
+
+/obj/item/reagent_containers/food/snacks/f13/deathclaw_egg_omelette
+	name = "deathclaw egg omelette"
+	desc = "An omelette made from a pristine deathclaw eggs."
+	icon_state = "deathclaw_egg_omelette"
+	bonus_reagents = list (/datum/reagent/consumable/nutriment/vitamin = 16, /datum/reagent/medicine/omnizine = 60, /datum/reagent/medicine/dexalin = 20)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 80)
+	tastes = list("deathclaw eggs" = 2, "deathclaw Meat" = 2, "cheese" = 1)
+	foodtype = MEAT | DAIRY
+
+/obj/item/reagent_containers/food/snacks/f13/baked_nightstalker_tail
+	name = "baked nightstalker tail"
+	desc = "Shake it to hear it rattle!"
+	icon_state = "baked_nightstalker_tail"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/f13/gecko_kebab
+	name = "gecko kebab"
+	desc = "Would you like to buy a nice kebab?"
+	icon_state = "gecko_kebab"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	foodtype = MEAT
