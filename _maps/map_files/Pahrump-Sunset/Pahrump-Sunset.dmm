@@ -31802,14 +31802,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"hbh" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "hbv" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -32512,12 +32504,14 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "hyh" = (
-/obj/structure/toilet{
-	dir = 4
+/obj/structure/ladder/unbreakable{
+	id = "followersbasement";
+	height = 2
 	},
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "hyj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -43144,15 +43138,6 @@
 	icon_state = "hydrofloor"
 	},
 /area/f13/building)
-"mXB" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/small,
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "mXD" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/beer,
@@ -53781,6 +53766,13 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"sUd" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/simple_door/house{
+	req_one_access_txt = "124"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/area/f13/building/hospital)
 "sUl" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -61641,11 +61633,6 @@
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/massfusion)
-"xfT" = (
-/turf/open/floor/f13{
-	icon_state = "whitegreenrustychess"
-	},
-/area/f13/building/hospital)
 "xgk" = (
 /obj/structure/chair/office{
 	dir = 4
@@ -107257,7 +107244,7 @@ qEh
 qEh
 gLa
 ijr
-xfT
+aFD
 hyh
 aFP
 oqr
@@ -107514,8 +107501,8 @@ uZi
 uZi
 aKA
 ijr
-hbh
-mXB
+aFD
+aFD
 aFP
 aae
 vGC
@@ -109826,7 +109813,7 @@ kEo
 vlO
 vqp
 vlO
-ekB
+sUd
 aEs
 aGq
 aFP
