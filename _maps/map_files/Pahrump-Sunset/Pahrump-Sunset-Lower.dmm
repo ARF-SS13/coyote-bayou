@@ -1047,11 +1047,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
 "bhq" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "bhH" = (
@@ -7135,7 +7134,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
 "dAT" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
 /turf/open/floor/plasteel/dark,
 /area/f13/radiation)
 "dBy" = (
@@ -12919,11 +12917,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "jQi" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "jQC" = (
@@ -13410,11 +13407,6 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
-"kuo" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/medical/vault,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "kuy" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
@@ -13709,7 +13701,6 @@
 /area/f13/tunnel)
 "kMM" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/medical/vault/equipment,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -14412,8 +14403,6 @@
 /area/f13/caves)
 "lAG" = (
 /obj/structure/rack,
-/obj/item/stock_parts/cell/ammo/ultracite,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -18126,7 +18115,6 @@
 /area/f13/building/hospital)
 "pmJ" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -18464,7 +18452,6 @@
 /area/f13/tunnel)
 "pFY" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -24095,7 +24082,6 @@
 /area/f13/tunnel)
 "vym" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "vyr" = (
@@ -70714,7 +70700,7 @@ qvD
 tYi
 tjr
 dEX
-bhq
+kyb
 gYI
 kDe
 dEX
@@ -72767,7 +72753,7 @@ gYI
 gYI
 dEX
 kDe
-jQi
+pFY
 dEX
 lmd
 tGK
@@ -73012,7 +72998,7 @@ xwF
 xwF
 aaa
 dEX
-gYI
+jQi
 gYI
 dEX
 nYd
@@ -73534,7 +73520,7 @@ nvA
 hBJ
 iWQ
 dEX
-gYI
+bhq
 gYI
 dEX
 gYI
@@ -73795,7 +73781,7 @@ kDe
 aoa
 dEX
 gYI
-kuo
+vym
 dEX
 eSA
 oFG
@@ -76099,7 +76085,7 @@ dEX
 gYI
 gYI
 raz
-gYI
+jQi
 gYI
 oLq
 kDe
@@ -76111,7 +76097,7 @@ gYI
 gYI
 ira
 gYI
-gYI
+bhq
 nbm
 gYI
 raz
@@ -76362,7 +76348,7 @@ gYI
 gYI
 cHS
 gYI
-gYI
+jQi
 oLq
 gYI
 bjf
