@@ -7831,11 +7831,6 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
-"giu" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/raider/boss,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/raiders)
 "gjf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -8531,12 +8526,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"gMj" = (
-/obj/structure/nest/raider/ranged,
-/turf/open/indestructible/ground/outside/graveldirt{
-	dir = 8
-	},
-/area/f13/raiders)
 "gMW" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -19579,11 +19568,6 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"pKC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/raider/ranged,
-/turf/open/floor/f13/wood,
-/area/f13/raiders)
 "pKS" = (
 /turf/open/indestructible,
 /area/f13/caves)
@@ -22297,6 +22281,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/city)
+"sha" = (
+/obj/structure/nest/raider/ranged,
+/turf/open/indestructible/ground/outside/graveldirt{
+	dir = 1
+	},
+/area/f13/raiders)
 "shp" = (
 /obj/structure/fence{
 	dir = 4
@@ -22523,6 +22513,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"snb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/boss,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/raiders)
 "snv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -26824,6 +26819,11 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
+"vVE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/ranged,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "vVH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -28032,12 +28032,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"wZI" = (
-/obj/structure/nest/raider/ranged,
-/turf/open/floor/f13{
-	icon_state = "yellowdirtyfull"
-	},
-/area/f13/raiders)
 "wZW" = (
 /obj/structure/fence{
 	pixel_x = -14
@@ -57899,7 +57893,7 @@ oph
 eaC
 eHO
 nSg
-giu
+snb
 nSg
 rQO
 lcM
@@ -58682,7 +58676,7 @@ sgM
 kEx
 xbT
 nJf
-wZI
+ecD
 wOZ
 tgN
 kzG
@@ -59962,7 +59956,7 @@ qES
 iUs
 ukf
 ukf
-ukf
+sha
 ukf
 wGZ
 jBU
@@ -60481,7 +60475,7 @@ ukf
 ukf
 fyC
 ecD
-wZI
+ecD
 ecD
 wXv
 kzG
@@ -61762,7 +61756,7 @@ cqc
 cqc
 oou
 jgM
-gMj
+iUs
 wGZ
 uJU
 wOZ
@@ -64843,7 +64837,7 @@ ndq
 ndq
 pQV
 rtl
-pKC
+vVE
 tBA
 tBA
 hkX
