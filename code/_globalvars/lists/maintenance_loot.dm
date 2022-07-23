@@ -189,7 +189,7 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/a308box = 3,
 	/obj/item/ammo_box/a556/sport = 3,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	/obj/item/ammo_box/magazine/zipgun = 3,
 	/obj/item/ammo_casing/shotgun/buckshot = 2,
 	/obj/item/ammo_box/c38 = 3,
@@ -504,13 +504,13 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/rifle/hunting,
 	/obj/item/ammo_box/a308,
 	/obj/item/gun/ballistic/automatic/pistol/n99,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/pistol/m1911,
 	/obj/item/ammo_box/magazine/m45,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil,
 	/obj/item/ammo_box/magazine/m9mm,
 	/obj/item/gun/ballistic/automatic/pistol/n99,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/varmint,
 	/obj/item/ammo_box/magazine/m556/rifle/small
 ))
@@ -533,16 +533,16 @@ GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo/ec,
 	/obj/item/gun/ballistic/automatic/m1carbine,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/delisle,
-	/obj/item/ammo_box/magazine/m9mmds
+	/obj/item/ammo_box/magazine/m9mm/doublestack
 ))
 
 GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/automatic/smg/mini_uzi,
 	/obj/item/ammo_box/magazine/uzim9mm,
 	/obj/item/gun/ballistic/automatic/smg/smg10mm,
-	/obj/item/ammo_box/magazine/m10mm_adv/ext,
+	/obj/item/ammo_box/magazine/m10mm/adv/ext,
 	/obj/item/gun/ballistic/automatic/smg/greasegun,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/gun/ballistic/shotgun/trench,
@@ -612,7 +612,7 @@ GLOBAL_LIST_INIT(loot_t1_ammo, list(
 	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/ammo_box/shotgun/bean,
 	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle/small
 ))
 
@@ -620,7 +620,7 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 	/obj/item/ammo_box/magazine/m45,
 	/obj/item/ammo_box/a762,
 	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/m556/rifle,
 	/obj/item/ammo_box/c38,
 	/obj/item/ammo_box/magazine/m9mm,
@@ -633,12 +633,12 @@ GLOBAL_LIST_INIT(loot_t2_ammo, list(
 GLOBAL_LIST_INIT(loot_t3_ammo, list(
 	/obj/item/ammo_box/shotgun/buck,
 	/obj/item/ammo_box/magazine/uzim9mm,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/ammo_box/magazine/greasegun,
 	/obj/item/ammo_box/needle,
 	/obj/item/ammo_box/magazine/tommygunm45,
 	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/magazine/m10mm_adv/ext,
+	/obj/item/ammo_box/magazine/m10mm/adv/ext,
 	/obj/item/stock_parts/cell/ammo/ec
 ))
 

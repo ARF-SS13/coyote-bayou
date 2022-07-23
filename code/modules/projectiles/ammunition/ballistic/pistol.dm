@@ -2,7 +2,7 @@
 /obj/item/ammo_casing/c10mm
 	name = "10mm FMJ bullet casing"
 	desc = "A 10mm FMJ bullet casing."
-	caliber = "10mm"
+	caliber = CALIBER_10MM
 	projectile_type = /obj/item/projectile/bullet/c10mm
 
 /obj/item/ammo_casing/c10mm/rubber
@@ -17,7 +17,7 @@
 /obj/item/ammo_casing/c9mm
 	name = "9mm FMJ bullet casing"
 	desc = "A 9mm FMJ bullet casing."
-	caliber = "9mm"
+	caliber = CALIBER_9MM
 	projectile_type = /obj/item/projectile/bullet/c9mm
 
 /obj/item/ammo_casing/c9mm/improv
@@ -34,17 +34,17 @@
 	name = "9mm incendiary bullet casing"
 	desc = "A 9mm incendiary bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c9mm/incendiary
+
 //14mm
 /obj/item/ammo_casing/p14mm
 	name = "14mm FMJ bullet casing"
 	desc = "A 14mm FMJ bullet casing."
-	caliber = "14"
+	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/mm14
 
 /obj/item/ammo_casing/p14mm/contam
 	name = "14mm contaminated bullet casing"
 	desc = "A 14mm contaminated bullet casing."
-	caliber = "14"
 	projectile_type = /obj/item/projectile/bullet/mm14/contam
 
 /*
@@ -59,7 +59,7 @@
 /obj/item/ammo_casing/a22
 	name = ".22lr bullet casing"
 	desc = "A .22lr bullet casing."
-	caliber = ".22lr"
+	caliber = CALIBER_22LR
 	projectile_type = /obj/item/projectile/bullet/c22
 
 /obj/item/ammo_casing/a22/rubber
@@ -76,5 +76,5 @@
 /obj/item/ammo_casing/testcasing
 	name = "casing"
 	desc = "casing."
-	caliber = "9mm"
+	caliber = CALIBER_9MM
 	projectile_type = /obj/item/projectile/bullet/test

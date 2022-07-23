@@ -3,7 +3,7 @@
 	desc = "A well-worn magazine fitted for the surplus rifle."
 	icon_state = "75-8"
 	ammo_type = /obj/item/ammo_casing/c10mm
-	caliber = "10mm"
+	caliber = list(CALIBER_10MM)
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/m10mm/rifle/update_icon()
@@ -16,7 +16,7 @@
 	name = "toploader magazine (5.56mm)"
 	icon_state = "5.56m"
 	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
+	caliber = list(CALIBER_556)
 	max_ammo = 30
 	multiple_sprites = 2
 
@@ -25,10 +25,10 @@
 */
 
 /obj/item/ammo_box/magazine/autopipe
-	name = "pipe rifle ammo belt (.357)"
+	name = "pipe rifle ammo belt (.357-ish)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	icon_state = "autopipe_belt"
-	caliber = "357"
+	caliber = list(CALIBER_357, CALIBER_9MM, CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 18
 	multiple_sprites = 2
@@ -43,7 +43,7 @@
 /obj/item/ammo_box/magazine/m556/rifle
 	name = "rifle magazine (5.56mm)"
 	icon_state = "r20"
-	caliber = "a556"
+	caliber = list(CALIBER_556)
 	max_ammo = 20
 	multiple_sprites = 2
 
@@ -77,7 +77,7 @@
 /obj/item/ammo_box/magazine/m5mm
 	name = "Assault Rifle Magazine (5mm)"
 	icon_state = "r30"
-	caliber = "m5mm"
+	caliber = list(CALIBER_5MM)
 	ammo_type = /obj/item/ammo_casing/m5mm
 	max_ammo = 30
 	multiple_sprites = 2
@@ -86,10 +86,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/garand308
-	name = "en-bloc clip (7.62x51mm)"
+	name = "en-bloc clip (7.62x51mm Match)"
 	icon_state = "enbloc-8"
 	ammo_type = /obj/item/ammo_casing/a762
-	caliber = "a762"
+	caliber = list(CALIBER_762)
 	max_ammo = 8
 
 
@@ -104,10 +104,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/sks
-	name = "7.62mm clip (SKS)"
+	name = "7.62mm clip (SKS match)"
 	icon_state = "enbloc-10"
 	ammo_type = /obj/item/ammo_casing/a762
-	caliber = "a762"
+	caliber = list(CALIBER_762)
 	max_ammo = 10
 
 /obj/item/ammo_box/magazine/sks/update_icon()
@@ -121,10 +121,10 @@
 	start_empty = 1
 
 /obj/item/ammo_box/magazine/m762
-	name = "rifle magazine (7.62x51)"
+	name = "rifle magazine (7.62x51mm)"
 	icon_state = "mag308"
 	ammo_type = /obj/item/ammo_casing/a762
-	caliber = "a762"
+	caliber = list(CALIBER_762)
 	max_ammo = 10
 	multiple_sprites = 2
 
@@ -143,7 +143,7 @@
 /obj/item/ammo_box/magazine/m473
 	name = "g11 magazine (4.73mm)"
 	icon_state = "473mm"
-	caliber = "473mm"
+	caliber = list(CALIBER_CASELESS)
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
 	multiple_sprites = 2
@@ -151,7 +151,6 @@
 /obj/item/ammo_box/magazine/m473/explosive
 	name = "g11 magazine (4.73mm explosive)"
 	icon_state = "473mm"
-	caliber = "473mm"
 	ammo_type = /obj/item/ammo_casing/caseless/g11/explosive
 	max_ammo = 50
 	multiple_sprites = 2
@@ -171,7 +170,7 @@
 	name = "2mm electromagnetic magazine"
 	icon_state = "2mm"
 	ammo_type = /obj/item/ammo_casing/c2mm
-	caliber = "2mm"
+	caliber = list(CALIBER_2MM)
 	max_ammo = 10
 	multiple_sprites = 2
 

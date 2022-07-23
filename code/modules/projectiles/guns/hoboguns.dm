@@ -97,8 +97,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
@@ -120,7 +120,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle
-	name = "pipe rifle (.223)"
+	name = "pipe rifle"
 	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
 	icon_state = "piperifle"
 	item_state = "pepperbox"
@@ -134,8 +134,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
@@ -177,8 +177,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
@@ -223,8 +223,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -261,8 +261,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -296,8 +296,8 @@
 	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -309,7 +309,7 @@
 /* * * * * * * * * * *
  * Autopipe Rifle
  * Waster BFG
- * .357 magnum
+ * .357 magnum-ish
  * Burst fire?
  * Akimbo
  * Awful accuracy
@@ -317,7 +317,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/autopipe
-	name = "Auto-pipe rifle (.357)"
+	name = "Auto-pipe rifle"
 	desc = "A belt fed pipe rifle held together with duct tape. Highly inaccurate. What could go wrong."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -334,12 +334,12 @@
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 4
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	automatic = 1
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -416,8 +416,8 @@
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -452,8 +452,8 @@
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
@@ -481,8 +481,8 @@
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_FIXED * HOBO_RECOIL_MULT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
 	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1

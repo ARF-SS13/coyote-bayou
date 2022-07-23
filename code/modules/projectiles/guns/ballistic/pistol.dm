@@ -9,16 +9,15 @@
 
 
 /obj/item/gun/ballistic/automatic/pistol
-	slowdown = 0
 	name = "pistol template"
 	desc = "should not be here. Bugreport."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	item_state = "gun"
-	w_class = WEIGHT_CLASS_NORMAL //How much space it takes in a bag
+	w_class = WEIGHT_CLASS_SMALL //How much space it takes in a bag
 	slot_flags = ITEM_SLOT_BELT
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
+	mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -102,7 +101,9 @@
 	name = "Browning Hi-power"
 	desc = "A mass produced pre-war Browning Hi-power 9mm pistol."
 	icon_state = "ninemil"
-	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	w_class = WEIGHT_CLASS_TINY
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -161,8 +162,9 @@
 	name = "Sig P220"
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
 	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/m9mm
+	w_class = WEIGHT_CLASS_TINY
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -194,7 +196,9 @@
 	name = "Beretta M9FS"
 	desc = "One of the more common 9mm pistols, the Beretta is popular due to its reliability, 15 round magazine and good looks."
 	icon_state = "beretta"
-	mag_type = /obj/item/ammo_box/magazine/m9mmds
+	w_class = WEIGHT_CLASS_TINY
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -234,6 +238,10 @@
 	name = "Beretta M93R"
 	desc = "A rare select fire variant of the M93R."
 	icon_state = "m93r"
+	w_class = WEIGHT_CLASS_TINY
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
+	extra_mag_types = list(/obj/item/ammo_box/magazine/greasegun) // let it take smg mags
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -298,7 +306,12 @@
 	name = "10mm pistol"
 	desc = "A large, pre-war styled, gas-operated 10mm pistol."
 	icon_state = "n99"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
+	disallowed_mags = list(
+		/obj/item/ammo_box/magazine/m10mm/adv/ext, 
+		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
+		/obj/item/ammo_box/magazine/m10mm/rifle)
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -389,7 +402,6 @@
 	name = "Type 17"
 	desc = "Chinese military sidearm at the time of the Great War. The ones around are old and worn, but somewhat popular due to the long barrel and rechambered in 10mm after the original ammo ran dry decades ago."
 	icon_state = "chinapistol"
-	mag_type = /obj/item/ammo_box/magazine/m10mm_adv/simple
 
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -419,8 +431,9 @@
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
-	w_class = WEIGHT_CLASS_NORMAL
-	mag_type = /obj/item/ammo_box/magazine/m45
+	w_class = WEIGHT_CLASS_TINY
+	init_mag_type = /obj/item/ammo_box/magazine/m45
+	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos	
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -480,7 +493,8 @@
 	name = "Mk. 23"
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
-	mag_type = /obj/item/ammo_box/magazine/m45exp
+	init_mag_type = /obj/item/ammo_box/magazine/m45/socom
+	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos	
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -521,7 +535,8 @@
 	desc = "A robust .44 magnum semi-automatic handgun."
 	icon_state = "deagle"
 	item_state = "deagle"
-	mag_type = /obj/item/ammo_box/magazine/m44
+	init_mag_type = /obj/item/ammo_box/magazine/m44
+	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos	
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -584,7 +599,8 @@
 	desc = "A long-barreled .44 magnum semi-automatic handgun."
 	icon_state = "automag"
 	item_state = "deagle"
-	mag_type = /obj/item/ammo_box/magazine/automag
+	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
+	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos	
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -618,6 +634,7 @@
 	desc = "A Swiss SIG-Sauer 14mm handgun, powerful but a little inaccurate"
 	icon_state = "pistol14"
 	mag_type = /obj/item/ammo_box/magazine/m14mm
+	init_mag_type = /obj/item/ammo_box/magazine/m14mm
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY

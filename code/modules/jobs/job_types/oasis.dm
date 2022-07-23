@@ -120,7 +120,7 @@ Mayor
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/toy/cards/deck/unum = 1,
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 	)
 
 
@@ -405,7 +405,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/f13/military
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m5mm=1,
 		/obj/item/flashlight/seclite = 1,
@@ -459,7 +459,7 @@ Mayor
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/ammo_box/magazine/m10mm/adv/simple=2)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -515,7 +515,7 @@ Mayor
 		/obj/item/shovel,
 		/obj/item/melee/onehanded/knife/hunting,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/book/granter/crafting_recipe/ODF = 1,
 		)
 
@@ -741,7 +741,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	)
 
 /datum/outfit/loadout/groundskeeper

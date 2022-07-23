@@ -208,7 +208,7 @@
 	belt = /obj/item/storage/belt/bandolier
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 3,
 		/obj/item/melee/onehanded/machete/scrapsabre = 1,
 		/obj/item/book/granter/trait/bigleagues = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3)
@@ -233,7 +233,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	head = /obj/item/clothing/head/helmet/f13/khan
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 3,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		/obj/item/book/granter/trait/bigleagues = 1)
 

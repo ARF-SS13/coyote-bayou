@@ -321,7 +321,7 @@ Raider
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext = 1,
 		)
 
 /datum/outfit/loadout/raider_tribal
@@ -499,7 +499,7 @@ Raider
 	ears = /obj/item/radio/headset
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple=2,
 		/obj/item/pda=1,)
 
 /datum/outfit/loadout/warrior
@@ -973,7 +973,7 @@ datum/job/wasteland/f13dendoctor
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/m10mm_adv/simple=1, \
+						/obj/item/ammo_box/magazine/m10mm/adv/simple=1, \
 						/obj/item/grenade/chem_grenade=1, \
 						/obj/item/clothing/mask/gas=1, \
 						/obj/item/reagent_containers/glass/beaker/large=2 \

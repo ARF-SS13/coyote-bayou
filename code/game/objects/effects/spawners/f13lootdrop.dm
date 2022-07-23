@@ -968,7 +968,7 @@
 	name = "10mm pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/n99,
-				/obj/item/ammo_box/magazine/m10mm_adv/simple/
+				/obj/item/ammo_box/magazine/m10mm/adv/simple/
 				)
 
 /obj/effect/spawner/bundle/f13/m1911
@@ -982,7 +982,7 @@
 	name = "9mm pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/ninemil,
-				/obj/item/ammo_box/magazine/m9mmds
+				/obj/item/ammo_box/magazine/m9mm/doublestack
 				)
 
 /obj/effect/spawner/bundle/f13/varmint
@@ -1003,7 +1003,7 @@
 	name = "beretta pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/beretta,
-				/obj/item/ammo_box/magazine/m9mmds/
+				/obj/item/ammo_box/magazine/m9mm/doublestack/
 				)
 
 /obj/effect/spawner/bundle/f13/sig
@@ -1060,7 +1060,7 @@
 	name = "automag and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/automag,
-				/obj/item/ammo_box/magazine/automag
+				/obj/item/ammo_box/magazine/m44/automag
 	)
 
 /obj/effect/spawner/bundle/f13/revolver45
@@ -1109,21 +1109,21 @@
 	name = "m1 carbine and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/m1carbine,
-				/obj/item/ammo_box/magazine/m10mm_adv/simple
+				/obj/item/ammo_box/magazine/m10mm/adv/simple
 	)
 
 /obj/effect/spawner/bundle/f13/guns/commando
 	name = "de lisle carbine and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/delisle,
-				/obj/item/ammo_box/magazine/m9mmds
+				/obj/item/ammo_box/magazine/m9mm/doublestack
 	)
 
 /obj/effect/spawner/bundle/f13/mk23
 	name = "mk23 and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/mk23,
-				/obj/item/ammo_box/magazine/m45exp/
+				/obj/item/ammo_box/magazine/m45/socom/
 	)
 
 /obj/effect/spawner/bundle/f13/thatgun
@@ -1157,7 +1157,7 @@
 	name = "10mm SMG and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/smg10mm,
-				/obj/item/ammo_box/magazine/m10mm_adv/ext/
+				/obj/item/ammo_box/magazine/m10mm/adv/ext/
 				)
 
 /obj/effect/spawner/bundle/f13/greasegun
@@ -1220,7 +1220,7 @@
 	name = "select-fire beretta pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/beretta/automatic,
-				/obj/item/ammo_box/magazine/m9mmds/
+				/obj/item/ammo_box/magazine/m9mm/doublestack/
 				)
 
 /obj/effect/spawner/bundle/f13/deagle
@@ -1532,7 +1532,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/shotgun/buck,
 				/obj/item/ammo_box/shotgun/slug,
 				/obj/item/ammo_box/c38,
-				/obj/item/ammo_box/magazine/m10mm_adv/simple,
+				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle/small
 				)
 
@@ -1544,7 +1544,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/ammo_box/magazine/m45,
 				/obj/item/ammo_box/a762,
 				/obj/item/ammo_box/a308,
-				/obj/item/ammo_box/magazine/m10mm_adv/simple,
+				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/m556/rifle,
 				/obj/item/ammo_box/c38,
 				/obj/item/ammo_box/magazine/m9mm,
@@ -1565,12 +1565,12 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	loot = list(
 				/obj/item/ammo_box/shotgun/buck,
 				/obj/item/ammo_box/magazine/uzim9mm,
-				/obj/item/ammo_box/magazine/m10mm_adv/simple,
+				/obj/item/ammo_box/magazine/m10mm/adv/simple,
 				/obj/item/ammo_box/magazine/greasegun,
 				/obj/item/ammo_box/needle,
 				/obj/item/ammo_box/magazine/tommygunm45,
 				/obj/item/ammo_box/tube/m44,
-				/obj/item/ammo_box/magazine/m10mm_adv/ext,
+				/obj/item/ammo_box/magazine/m10mm/adv/ext,
 				/obj/item/stock_parts/cell/ammo/ec
 				)
 
