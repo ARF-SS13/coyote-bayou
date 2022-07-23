@@ -1591,8 +1591,11 @@ datum/job/wasteland/f13dendoctor
 	/datum/outfit/loadout/overbossranged, //moni + drugs
 	)
 
+	outfit = /datum/outfit/job/wasteland/f13raider/overboss
+
+
 /datum/outfit/job/wasteland/f13raider/overboss
-	name = "Outlaw"
+	name = "Overboss"
 	jobtype = /datum/job/wasteland/f13overboss
 	id = null
 	ears = /obj/item/radio/headset
@@ -1606,10 +1609,56 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
-		/obj/item/melee/onehanded/knife/bowie = 1
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/radio/redwater = 1
 		)
 
 
+/datum/outfit/job/wasteland/f13raider/overboss/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/raider_leather, \
+		/obj/item/clothing/under/f13/raiderrags, \
+		/obj/item/clothing/under/pants/f13/ghoul, \
+		/obj/item/clothing/under/jabroni)
+	suit = pick(
+		/obj/item/clothing/suit/armor/light/raider/supafly,\
+		/obj/item/clothing/suit/armor/medium/raider/yankee, \
+		/obj/item/clothing/suit/armor/light/raider/sadist, \
+		/obj/item/clothing/suit/armor/medium/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/medium/raider/badlands, \
+		/obj/item/clothing/suit/armor/light/raider/painspike)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull)
+	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/raider/eyebot,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
+		/obj/item/clothing/head/helmet/f13/fiend)
+	shoes = pick(
+			/obj/item/clothing/shoes/jackboots,\
+			/obj/item/clothing/shoes/f13/raidertreads)
+
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil,\
+		/obj/item/gun/ballistic/automatic/pistol/m1911, \
+		/obj/item/gun/ballistic/automatic/pistol/type17, \
+		)
 
 /datum/outfit/loadout/overbossmelee
 	name = "Bruteboss"
@@ -1641,7 +1690,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/stack/f13Cash/caps/threefivezero = 1)
 
 /obj/effect/landmark/start/overboss
-	name = "Overboss"
+	name = "Redwater Overboss"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE
