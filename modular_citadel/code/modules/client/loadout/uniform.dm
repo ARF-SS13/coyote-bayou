@@ -664,7 +664,7 @@
 	path = /obj/item/clothing/under/rank/security/officer/blueshirt
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "Oasis"
+	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
 							"Chief of Police",

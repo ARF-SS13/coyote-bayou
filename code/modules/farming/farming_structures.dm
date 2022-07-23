@@ -289,6 +289,47 @@
 	else
 		return ..()
 
+////////////////////
+//  BUTTER CHURN  //
+////////////////////
+
+/obj/structure/butter_churn
+	name = "butter churn"
+	desc = "An old-fashioned wooden butter churn. A little bit of milk, and you'll have fresh butter! Just add an inordinate amount of effort."
+	icon = 'icons/fallout/farming/farming_structures.dmi'
+	icon_state = "butter_churn"
+	density = TRUE
+	anchored = FALSE
+	pressure_resistance = 2 * ONE_ATMOSPHERE
+	max_integrity = 160
+	proj_pass_rate = 80
+	pass_flags = LETPASSTHROW
+	pass_flags_self = PASSTABLE | LETPASSTHROW
+	climbable = TRUE
+
+/obj/structure/butter_churn/attackby(obj/item/I, mob/user, params)
+	var/obj/item/reagent_containers/R = I
+	if(!istype(R))
+		return ..()
+	if(!(R.reagents.reagents_holder_flags & DRAINABLE))
+		to_chat(user, span_warning("You need to be able to pour \the [I] into \the [src]."))
+		return TRUE
+	if(!R.reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+		to_chat(user, span_warning("There's not enough milk in \the [I] to churn into butter."))
+		return TRUE
+	to_chat(user, span_notice("You start churning some butter out of \the [I]..."))
+	if(do_after(user, 4.5 SECONDS, target = src))
+		if(!R.reagents.has_reagent(/datum/reagent/consumable/milk, 15))
+			to_chat(user, span_warning("There's not enough milk in \the [I] to churn into butter."))
+			return TRUE
+		to_chat(user, span_notice("You churn some butter out of \the [I] using \the [src]."))
+		R.reagents.remove_reagent(/datum/reagent/consumable/milk, 15)
+		new /obj/item/reagent_containers/food/snacks/butter(src.loc)
+		return TRUE
+	to_chat(user, span_warning("You have to stand still to churn butter!"))
+	return TRUE
+	
+
 #undef FABRIC_PER_SHEET
 #undef SPAN_WARNING
 #undef SPAN_NOTICE

@@ -73,15 +73,16 @@
 	new /obj/item/storage/box/funds(src)
 	
 /obj/item/storage/box/funds
-	name = "Oasis operating funds"
+	name = "Nash operating funds"
 	desc = "A box filled with both local and foreign currency, to cover unexpected purchases"
 
 // Secretary spawns with all 3 types of money for negotatiating with any side. ~325 caps worth
 /obj/item/storage/box/funds/PopulateContents()
-		new /obj/item/stack/f13Cash/random/ncr/med(src)
-		new /obj/item/stack/f13Cash/random/denarius/med(src)
-		new /obj/item/stack/f13Cash/random/ncr/med(src)
+//		new /obj/item/stack/f13Cash/random/ncr/med(src)
+//		new /obj/item/stack/f13Cash/random/denarius/med(src)
+//		new /obj/item/stack/f13Cash/random/ncr/med(src)
 		new /obj/item/stack/f13Cash/random/high(src)
+		new /obj/item/stack/f13Cash/random/med(src) // Adding some extra caps for 'em
 
 /obj/item/storage/box/lawyer
 	name = "Box of lawyer tools"

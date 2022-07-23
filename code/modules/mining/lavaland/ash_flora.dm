@@ -224,6 +224,39 @@
 	else
 		. = ..()
 
+//COYOTE - Wooden Bowls
+/obj/item/reagent_containers/glass/bowl/wooden_bowl
+	name = "wooden bowl"
+	desc = "A hand-carved wooden bowl, for all your bowl-related needs."
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "wooden_bowl"
+
+/obj/item/reagent_containers/glass/bowl/wooden_bowl/update_icon_state()
+	if(!reagents || !reagents.total_volume)
+		icon_state = "wooden_bowl"
+
+/obj/item/reagent_containers/glass/bowl/update_overlays()
+	. = ..()
+	if(reagents && reagents.total_volume)
+		. += mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "woodenfullbowl", color = mix_color_from_reagents(reagents.reagent_list))
+
+/obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
+	if(istype(I, /obj/item/reagent_containers/food/snacks))
+		var/obj/item/reagent_containers/food/snacks/S = I
+		if(I.w_class > WEIGHT_CLASS_SMALL)
+			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+		else if(contents.len >= 20)
+			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+		else
+			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
+				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup/woodsoup(get_turf(src))
+				A.initialize_custom_food(src, S, user)
+			else
+				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/salad/woodsalad(get_turf(src))
+				A.initialize_custom_food(src, S, user)
+	else
+		. = ..()
+
 ////// LAVALAND FLORA //////
 
 /obj/item/seeds/lavaland
@@ -297,12 +330,33 @@
 	reagents_add = list(/datum/reagent/consumable/tinlux = 0.04, /datum/reagent/consumable/nutriment/vitamin = 0.02, /datum/reagent/drug/space_drugs = 0.02)
 
 //what you can craft with these things
+/* COYOTE - Commented out crafting recipe as no mushrooms are here! The one below this is also an optional, but also commented out variety. Actually in sheet_types.dm
 /datum/crafting_recipe/mushroom_bowl
 	name = "Mushroom Bowl"
 	result = /obj/item/reagent_containers/glass/bowl/mushroom_bowl
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/ash_flora/shavings = 5)
 	time = 30
 	category = CAT_PRIMAL
+
+/datum/crafting_recipe/wooden_bowl
+	name = "Wooden Bowl"
+	result = /obj/item/reagent_containers/glass/bowl/wooden_bowl
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 3)
+	time = 30
+	category = CAT_PRIMAL
+*/
+
+/obj/item/reagent_containers/food/snacks/customizable/salad/woodsalad
+	desc = "A hand-made salad in a hand-made bowl. Now to find some hand-made hands to eat it with..."
+	trash = /obj/item/reagent_containers/glass/bowl/wooden_bowl
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "wooden_bowl"
+
+/obj/item/reagent_containers/food/snacks/customizable/soup/woodsoup
+	desc = "A wooden bowl with a homemade soup. Hope it's good!"
+	trash = /obj/item/reagent_containers/glass/bowl/wooden_bowl
+	icon = 'icons/obj/lavaland/ash_flora.dmi'
+	icon_state = "wooden_soup"
 
 /obj/item/reagent_containers/food/snacks/customizable/salad/ashsalad
 	desc = "Very ashy."
