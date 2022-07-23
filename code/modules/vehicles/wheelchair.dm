@@ -11,6 +11,7 @@
 	density = FALSE		//Thought I couldn't fix this one easily, phew
 	arms_required = 1
 	var/override_movespeed = FALSE
+	var/mutable_appearance/wheels
 
 /obj/vehicle/ridden/wheelchair/Initialize()
 	. = ..()
@@ -20,6 +21,8 @@
 	D.set_vehicle_dir_layer(NORTH, ABOVE_MOB_LAYER, MOB_PLANE)
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+
+	wheels = mutable_appearance(icon, "wheelchair_overlay", ABOVE_MOB_LAYER, MOB_PLANE)
 
 /obj/vehicle/ridden/wheelchair/ComponentInitialize()	//Since it's technically a chair I want it to have chair properties
 	. = ..()
@@ -87,9 +90,8 @@
 
 /obj/vehicle/ridden/wheelchair/proc/handle_rotation_overlayed()
 	cut_overlays()
-	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, dir = src.dir)
-	V.plane = MOB_PLANE
-	add_overlay(V)
+	wheels.dir = dir
+	add_overlay(wheels)
 
 
 
