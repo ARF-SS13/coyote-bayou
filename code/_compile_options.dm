@@ -73,6 +73,11 @@
 #error You need version 513.1508 or higher
 #endif
 
+#if DM_VERSION == 514 && DM_BUILD >= 1585
+#warn You are using BYOND 514.1585. There's a good chance that Auxtools will cause the project to compile incorrectly.area
+#warn You can download an earlier version of BYOND from https://www.byond.com/download/build/514, if it doesn't work.
+#endif // If this is fixed after 514.1585, please remove this warning.
+
 //Additional code for the above flags.
 #ifdef TESTING
 #warn compiling in TESTING mode. testing() debug messages will be visible.
