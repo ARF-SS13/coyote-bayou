@@ -962,7 +962,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m10mm/adv/simple,
+/obj/item/ammo_box/magazine/m10mm_adv/simple,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},
@@ -9608,8 +9608,10 @@
 	},
 /area/f13/caves)
 "gkC" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "gkH" = (
@@ -12916,13 +12918,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"jQi" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/nest/ghoul,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "jQC" = (
 /obj/structure/nest/deathclaw,
 /turf/open/floor/f13{
@@ -13407,6 +13402,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
+"kuo" = (
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "kuy" = (
 /obj/structure/table/wood/poker,
 /obj/effect/holodeck_effect/cards,
@@ -16350,10 +16349,7 @@
 /area/f13/caves)
 "nzr" = (
 /obj/structure/simple_door/house,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/turf/closed/wall/f13/store,
 /area/f13/building/hospital)
 "nzz" = (
 /turf/open/floor/plating/tunnel{
@@ -24080,10 +24076,6 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"vym" = (
-/obj/structure/rack,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "vyr" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating/tunnel{
@@ -24181,6 +24173,10 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
+"vCF" = (
+/obj/structure/simple_door/house,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/building/hospital)
 "vCG" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -25977,11 +25973,11 @@
 	},
 /area/f13/caves)
 "xFT" = (
+/obj/structure/bodycontainer/morgue{
+	dir = 3
+	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
-	},
-/obj/structure/bodycontainer/morgue{
-	dir = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -71218,7 +71214,7 @@ wYL
 gYI
 gYI
 dEX
-nzr
+xHk
 dEX
 dEX
 aaa
@@ -71980,7 +71976,7 @@ kDe
 kDe
 gYI
 gYI
-nzr
+xHk
 kDe
 gYI
 sqD
@@ -72758,7 +72754,7 @@ dEX
 lmd
 tGK
 vON
-gkC
+kuo
 dEX
 gYI
 gYI
@@ -72998,7 +72994,7 @@ xwF
 xwF
 aaa
 dEX
-jQi
+gkC
 gYI
 dEX
 nYd
@@ -73265,7 +73261,7 @@ pmJ
 dEX
 gYI
 gYI
-nzr
+xHk
 gYI
 kMM
 dEX
@@ -73273,7 +73269,7 @@ nkA
 gYI
 vuF
 gYI
-nzr
+vCF
 gYI
 maa
 dEX
@@ -73524,7 +73520,7 @@ bhq
 gYI
 dEX
 gYI
-vym
+kuo
 dEX
 gYI
 gYI
@@ -73781,7 +73777,7 @@ kDe
 aoa
 dEX
 gYI
-vym
+kuo
 dEX
 eSA
 oFG
@@ -75321,7 +75317,7 @@ dQf
 xHk
 aoa
 gYI
-xHk
+nzr
 kDe
 kDe
 kDe
@@ -76085,7 +76081,7 @@ dEX
 gYI
 gYI
 raz
-jQi
+gkC
 gYI
 oLq
 kDe
@@ -76348,7 +76344,7 @@ gYI
 gYI
 cHS
 gYI
-jQi
+gkC
 oLq
 gYI
 bjf
