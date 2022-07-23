@@ -1582,7 +1582,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
 	supervisors = "Your conscience (HAH), wallet, and constituents."
 	selection_color = "#df80af"
-	exp_requirements = 0
+	exp_requirements = 600
 	exp_type = EXP_TYPE_WASTELAND
 
 	loadout_options = list(
