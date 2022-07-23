@@ -105,6 +105,12 @@
 				cleaned = 1
 				CHECK_TICK
 */
+	for(var/obj/effect/decal/cleanable/blood/B in T)
+		if(is_cleanable(O))
+			qdel(O)
+			cleaned = 1
+			CHECK_TICK
+
 	for(var/obj/machinery/hydroponics/tray in T) // Makes it so plants get water from rain :o
 		tray.adjustWater(80)
 		CHECK_TICK
