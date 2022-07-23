@@ -583,6 +583,16 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
+/datum/crafting_recipe/leathersack
+	name = "leather sack"
+	result = /obj/item/storage/bag/trash/sack
+	reqs = list(/obj/item/stack/sheet/leather = 10,
+				/obj/item/stack/sheet/hay = 6)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
 //General clothing
 
 /datum/crafting_recipe/jeans

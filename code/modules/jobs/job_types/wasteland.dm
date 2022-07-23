@@ -1256,8 +1256,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
 		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver/archer = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/melee/onehanded/club/warclub = 1,
 		)
@@ -1330,7 +1329,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/gun/ballistic/bow = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 

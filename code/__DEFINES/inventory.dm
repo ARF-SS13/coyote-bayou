@@ -298,7 +298,7 @@ GLOBAL_LIST_INIT(light_armor_disallowed, typecacheof(list(
 GLOBAL_LIST_INIT(tribal_armor_allowed, typecacheof(list(
 	/obj/item/gun/ballistic/bow,
 	/obj/item/storage/backpack/spearquiver,
-	/obj/item/storage/belt/tribe_quiver,
+	/obj/item/storage/bag/tribe_quiver,
 	/obj/item/melee)))
 
 ///extra things raider armor can hold in their slot by default

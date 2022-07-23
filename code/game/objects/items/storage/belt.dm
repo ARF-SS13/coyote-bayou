@@ -781,6 +781,8 @@
 	item_state = "ncr_bandolier"
 
 //Regular Quiver
+//MOVING TO F13STORAGE
+/*
 /obj/item/storage/belt/tribe_quiver
 	name = "tribal quiver"
 	desc = "A simple leather quiver designed for holding arrows."
@@ -873,3 +875,4 @@
 	else
 		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
 	return TRUE
+*/

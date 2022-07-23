@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/caseless/magnetic
 	desc = "A large ferromagnetic slug intended to be launched out of a compatible weapon."
-	caliber = "mag"
+	caliber = CALIBER_MAGNETIC
 	icon_state = "mag-casing-live"
 	click_cooldown_override = 2.5
 	delay = 3
@@ -25,7 +25,7 @@
 
 /obj/item/ammo_casing/caseless/magnetic/hyper
 	desc = "A large block of speciallized ferromagnetic material designed to be fired out of the experimental Hyper-Burst Rifle."
-	caliber = "hypermag"
+	caliber = CALIBER_MAGNETIC_HYPER
 	icon_state = "hyper-casing-live"
 	projectile_type = /obj/item/projectile/bullet/magnetic/hyper
 	pellets = 8
