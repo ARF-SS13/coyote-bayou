@@ -1107,7 +1107,7 @@ datum/job/wasteland/f13dendoctor
 	spawn_positions = -1
 	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe."
-	
+
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -1471,7 +1471,7 @@ datum/job/wasteland/f13dendoctor
 
 
 /////////////////
-////Redwater///// 
+////Redwater/////
 /////////////////
 
 //Redwater Slave
@@ -1525,7 +1525,7 @@ datum/job/wasteland/f13dendoctor
 
 	backpack_contents =  list(
 		/obj/item/reagent_containers/pill/healingpowder =1)
-							
+
 
 //Worker
 /datum/outfit/loadout/worker
@@ -1542,7 +1542,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/shoes/f13/diesel =1,
 		/obj/item/storage/backpack/duffelbag =1,
-		/obj/item/storage/box = 4, 
+		/obj/item/storage/box = 4,
 		/obj/item/book/granter/trait/trekking = 1)
 
 //Entertainer
@@ -1558,12 +1558,91 @@ datum/job/wasteland/f13dendoctor
 	name = "Sex Slave"
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
-		/obj/item/clothing/under/dress/skirt/swept =1, 
+		/obj/item/clothing/under/dress/skirt/swept =1,
 		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave
 	name = "Redwater Slave"
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+
+
+
+/datum/job/wasteland/f13overboss
+	title = "Redwater Overboss"
+	flag = F13MOBBOSS
+	faction = FACTION_WASTELAND
+	department_head = list("Captain")
+	head_announce = list("Security")
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
+	total_positions = 1
+	spawn_positions = 1
+	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
+	supervisors = "Your conscience (HAH), wallet, and constituents."
+	selection_color = "#df80af"
+	exp_requirements = 0
+	exp_type = EXP_TYPE_WASTELAND
+
+	loadout_options = list(
+	/datum/outfit/loadout/overbossmelee,	//goliath
+	/datum/outfit/loadout/overbossamr,		//AMR
+	/datum/outfit/loadout/overbossranged, //moni + drugs
+	)
+
+/datum/outfit/job/wasteland/f13raider/overboss
+	name = "Outlaw"
+	jobtype = /datum/job/wasteland/f13overboss
+	id = null
+	ears = /obj/item/radio/headset
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs = 2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/radio/redwater = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1
+		)
+
+
+
+/datum/outfit/loadout/overbossmelee
+	name = "Bruteboss"
+	backpack_contents = list(
+		/obj/item/melee/powerfist/f13/goliath = 1,
+		/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/clothing/head/helmet/f13/raider/arclight = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 2,
+		/obj/item/reagent_containers/pill/patch/turbo = 2)
+
+//AMR
+/datum/outfit/loadout/overbossamr
+	name = "Overpenetration"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/light/duster/battlecoat = 1,
+		/obj/item/ammo_box/magazine/amr = 1,
+		/obj/item/crafting/reloader = 1,
+		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1)
+
+//Sex
+/datum/outfit/loadout/overbossranged
+	name = "Crooked Mayor"
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small = 1,
+		/obj/item/gun/ballistic/revolver/colt357/mateba = 1,
+		/obj/item/clothing/under/suit/black = 1,
+		/obj/item/reagent_containers/glass/bottle/chloralhydrate = 1,
+		/obj/item/stack/f13Cash/caps/threefivezero = 1)
+
+/obj/effect/landmark/start/overboss
+	name = "Overboss"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE

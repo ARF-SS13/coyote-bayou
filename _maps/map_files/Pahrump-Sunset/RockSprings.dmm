@@ -1599,8 +1599,8 @@
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/bow/sturdy,
 /obj/item/gun/ballistic/bow/sturdy{
-	pixel_y = -3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = -3
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -2725,8 +2725,8 @@
 /obj/structure/flora/grass/jungle/b,
 /obj/structure/flora/tree/jungle/small{
 	color = "#d9b51c";
-	pixel_y = -15;
-	pixel_x = -28
+	pixel_x = -28;
+	pixel_y = -15
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
@@ -3165,8 +3165,8 @@
 "dpp" = (
 /obj/structure/shelf_wood,
 /obj/item/storage/backpack/spearquiver{
-	pixel_y = 1;
-	pixel_x = -5
+	pixel_x = -5;
+	pixel_y = 1
 	},
 /obj/item/storage/backpack/spearquiver{
 	pixel_y = -3
@@ -5059,9 +5059,9 @@
 "flm" = (
 /obj/machinery/button{
 	id = "Redwaterwest";
+	name = "redwest";
 	pixel_x = 1;
 	pixel_y = -23;
-	name = "redwest";
 	req_one_access_txt = null
 	},
 /obj/structure/chair{
@@ -5603,8 +5603,8 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
-	pixel_y = 2;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt{
@@ -6058,8 +6058,8 @@
 	},
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4;
-	pixel_y = 2;
-	pixel_x = 15
+	pixel_x = 15;
+	pixel_y = 2
 	},
 /turf/open/indestructible/ground/outside/dirt{
 	dir = 1;
@@ -6291,16 +6291,16 @@
 "gLq" = (
 /obj/structure/table/wood,
 /obj/item/throwing_star/spear{
-	pixel_y = 10;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 10
 	},
 /obj/item/throwing_star/spear{
-	pixel_y = 2;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 2
 	},
 /obj/item/throwing_star/spear{
-	pixel_y = 4;
-	pixel_x = -3
+	pixel_x = -3;
+	pixel_y = 4
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -7579,6 +7579,10 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"idR" = (
+/obj/effect/landmark/start/overboss,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building)
 "ieN" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -8154,9 +8158,9 @@
 /area/f13/building/tunnel)
 "iGN" = (
 /obj/machinery/recycler{
-	name = "Blesed Recycler";
 	desc = "A large, rumbling machine. A soft glow emits from it, as if it has been blessed by the gods themselves. A name is etched into the side of it, one that read EarthMother";
-	light_range = 1
+	light_range = 1;
+	name = "Blesed Recycler"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/caves)
@@ -81098,7 +81102,7 @@ nQW
 yie
 lya
 oDR
-oDR
+idR
 oDR
 xPz
 riI
