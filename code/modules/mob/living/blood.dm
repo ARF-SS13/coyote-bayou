@@ -62,14 +62,10 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		regenerate_blood()
 
 		//Effects of bloodloss
-		apply_bloodloss_sprint_effects(reset = TRUE) // reset it initially
-		switch(get_blood())
-			if(BLOOD_VOLUME_MAXIMUM to BLOOD_VOLUME_EXCESS)
-				if(prob(10))
-					to_chat(src, "<span class='warning'>You feel terribly bloated.</span>")
-
+		var/current_blood = get_blood()
+		switch(current_blood)
 			// Blood loss detected, start warning that its getting low
-			if(BLOOD_VOLUME_SYMPTOMS_WARN to BLOOD_VOLUME_SYMPTOMS_MINOR)
+			if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
 				if(prob(5))
 					switch(rand(1,3))
 						if(1)
@@ -80,7 +76,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 							to_chat(src, span_warning(pick(GLOB.blood_loss_messages[BLOOD_ANEMIA_MESSAGE_WARN])))
 
 			// Blood loss progressed, start applying minor effects, not lethal, but kinda inconvenient
-			if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+			if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_MINOR)
 				if(prob(15))
 					switch(rand(1,3))
 						if(1)
@@ -99,12 +95,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 					BLOOD_LOSS_SPRINT_REGEN_MULT_MINOR,
 					BLOOD_LOSS_SPRINT_COST_MULT_MINOR,
 					0,
-					0
+					0,
+					BLOOD_LOSS_SLOWDOWN_MINOR
 					)
 
-
 			// Blood loss is getting bad, start applying more effects, not lethal, but annoying
-			if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
+			if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 				if(prob(15))
 					switch(rand(1,3))
 						if(1)
@@ -123,11 +119,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 					BLOOD_LOSS_SPRINT_REGEN_MULT_ANNOYING,
 					BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING,
 					BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING,
-					BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING,
+					BLOOD_LOSS_SLOWDOWN_ANNOYING
 					)
 
 			// Blood loss is bad, mess them up a bunch
-			if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_WORST)
+			if(BLOOD_VOLUME_SYMPTOMS_WORST to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 				if(prob(15))
 					switch(rand(1,3))
 						if(1)
@@ -146,11 +143,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 					BLOOD_LOSS_SPRINT_REGEN_MULT_DEBILITATING,
 					BLOOD_LOSS_SPRINT_COST_MULT_DEBILITATING,
 					BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING,
-					BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING,
+					BLOOD_LOSS_SLOWDOWN_DEBILITATING
 					)
 
 			// Blood loss is as bad as it'll get before they die, they're gonna have a very bad day
-			if(BLOOD_VOLUME_SYMPTOMS_WORST to BLOOD_VOLUME_DEATH)
+			if(BLOOD_VOLUME_DEATH to BLOOD_VOLUME_SYMPTOMS_WORST)
 				if(prob(15))
 					switch(rand(1,3))
 						if(1)
@@ -169,13 +167,18 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 					BLOOD_LOSS_SPRINT_REGEN_MULT_WORST,
 					BLOOD_LOSS_SPRINT_COST_MULT_WORST,
 					BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST,
-					BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST
+					BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST,
+					BLOOD_LOSS_SLOWDOWN_WORST
 					)
 
 			// you blood fall out. dork.
 			if(-INFINITY to BLOOD_VOLUME_DEATH)
 				if(!HAS_TRAIT(src, TRAIT_NODEATH))
 					death()
+
+			else // blood's fine
+				remove_movespeed_modifier(/datum/movespeed_modifier/bloodloss_slowdown)
+				apply_bloodloss_sprint_effects(reset = TRUE) // reset it initially
 
 		var/temp_bleed = 0
 		//Bleeding out
@@ -197,8 +200,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
  * sprint_cost = Multiplier to stamina cost per tile sprinted
  * knockdown_chance = chance for a knockdown to occur
  * knockdown_time = time they're knocked down for
- */
-/mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time)
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time, slowdown)
 	if(getOxyLoss() < oxy_loss_cap)
 		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.005, 1))
 	if(getStaminaLoss() < stam_cap)
@@ -206,12 +209,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	Dizzy(dizzy)
 	if(confused < confusion)
 		confused = confusion
-	if(prob(10))
+	if(prob(35))
 		blur_eyes(blurry)
 	if(prob(knockdown_chance))
 		AdjustKnockdown(knockdown_time, TRUE)
 	apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
-
+	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bloodloss_slowdown, TRUE, slowdown)
 
 /// Applies sprint modifiers. Here so it can be easily reset.
 /mob/living/carbon/proc/apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
@@ -227,15 +230,16 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		return
 	if(blood_volume < BLOOD_VOLUME_SYMPTOMS_WORST)
 		if(has_reagent(/datum/reagent/medicine/epinephrine))
-			return BLOOD_VOLUME_SYMPTOMS_ANNOYING + 10 // Vasopressors~
+			return BLOOD_VOLUME_SYMPTOMS_WORST - 10 // Vasopressors~
 
-	if(reagents)
-		var/datum/reagents/our_reagents = src.reagents
-		. += min(our_reagents.get_reagent_amount(/datum/reagent/water) * 1 , 100)
-		. += min(our_reagents.get_reagent_amount(/datum/reagent/water/holywater) * 2 , 50)
-		. += min(our_reagents.get_reagent_amount(/datum/reagent/medicine/salglu_solution) * 1 , 150)
-		. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/bloody_mary) * 0.35 , 100)
-		. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/brocbrew) * 0.5 , 100)
+	if(blood_volume > BLOOD_VOLUME_SYMPTOMS_WORST)
+		if(reagents)
+			var/datum/reagents/our_reagents = src.reagents
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/water) * 1 , 100)
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/water/holywater) * 2 , 50)
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/medicine/salglu_solution) * 1 , 150)
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/bloody_mary) * 0.35 , 100)
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/brocbrew) * 0.5 , 100)
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
@@ -267,10 +271,6 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 				nutrition_bonus *= 1.25
 			adjust_nutrition(-nutrition_bonus)
 			blood_volume += nutrition_bonus * BLOOD_UNIT_NUTRITION_COST
-
-
-
-
 
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)

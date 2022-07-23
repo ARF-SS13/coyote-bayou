@@ -6,7 +6,7 @@
 /// an attack must do this much damage after armor in order to be eliigible to dismember a suitably mushed bodypart
 #define DISMEMBER_MINIMUM_DAMAGE	10
 /// any damage dealt over this is ignored for damage rolls unless the target has the frail quirk (35^1.4=145)
-#define WOUND_MAX_CONSIDERED_DAMAGE	35
+#define WOUND_MAX_CONSIDERED_DAMAGE	50
 
 
 #define WOUND_SEVERITY_TRIVIAL	0 // for jokey/meme wounds like stubbed toe, no standard messages/sounds or second winds
@@ -38,14 +38,14 @@
 
 // list in order of highest severity to lowest
 GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate),
-		WOUND_SLASH = list(/datum/wound/slash/critical, /datum/wound/slash/severe, /datum/wound/slash/moderate),
-		WOUND_PIERCE = list(/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate),
+		WOUND_SLASH = list(/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate),
+		WOUND_PIERCE = list(/datum/wound/bleed/pierce/critical, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/moderate),
 		WOUND_BURN = list(/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate)
 		))
 
 GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate,
-	/datum/wound/slash/critical, /datum/wound/slash/severe, /datum/wound/slash/moderate,
-	/datum/wound/pierce/critical, /datum/wound/pierce/severe, /datum/wound/pierce/moderate,
+	/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate,
+	/datum/wound/bleed/pierce/critical, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/moderate,
 	/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate))
 
 // Thresholds for infection for burn wounds, once infestation hits each threshold, things get steadily worse
@@ -63,7 +63,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// how quickly sanitization removes infestation and decays per tick
 #define WOUND_BURN_SANITIZATION_RATE 	0.4
 /// how much blood you can lose per tick per slash max. 8 is a LOT of blood for one cut so don't worry about hitting it easily
-#define WOUND_SLASH_MAX_BLOODFLOW		8
+#define WOUND_MAX_BLOODFLOW		8
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
 #define WOUND_SLASH_DEAD_CLOT_MIN		0.05
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)

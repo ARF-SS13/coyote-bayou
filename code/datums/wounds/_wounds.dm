@@ -184,7 +184,7 @@
  * This proc actually instantiates the new wound based off the specific type path passed, then returns the new instantiated wound datum.
  *
  * Arguments:
- * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/slash/severe
+ * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/bleed/slash/severe
  * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
  */
 /datum/wound/proc/replace_wound(new_type, smited = FALSE)

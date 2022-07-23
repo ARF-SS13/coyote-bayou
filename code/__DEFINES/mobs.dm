@@ -11,26 +11,28 @@
 #define MOVE_INTENT_WALK "walk"
 #define MOVE_INTENT_RUN  "run"
 
+/// Normal baseline blood volume
+#define BLOOD_VOLUME_NORMAL 1000
+/// The amount blood typically regenerates to on its own
+#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
+/// First stage of bloodloss, mostly warnings
+#define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.90)
+/// Second stage of bloodloss, minor harmless symptoms
+#define BLOOD_VOLUME_SYMPTOMS_MINOR (BLOOD_VOLUME_NORMAL * 0.85)
+/// Third stage of bloodloss, annoying, but not particularly disabling, symptoms
+#define BLOOD_VOLUME_SYMPTOMS_ANNOYING (BLOOD_VOLUME_NORMAL * 0.75)
+/// Fourth stage of bloodloss, worst symptoms begin, combat sucks
+#define BLOOD_VOLUME_SYMPTOMS_DEBILITATING (BLOOD_VOLUME_NORMAL * 0.50)
+/// Fifth stage of bloodloss, absolutely disabling, combat is impossible, rip~
+#define BLOOD_VOLUME_SYMPTOMS_WORST (BLOOD_VOLUME_NORMAL * 0.30)
+/// Okay die now
+#define BLOOD_VOLUME_DEATH 1
 //Blood levels
-#define BLOOD_VOLUME_MAX_LETHAL (BLOOD_VOLUME_NORMAL * 2.5)
+#define BLOOD_VOLUME_MAX_LETHAL (BLOOD_VOLUME_NORMAL * 2.50)
 #define BLOOD_VOLUME_EXCESS (BLOOD_VOLUME_NORMAL * 2.25)
 #define BLOOD_VOLUME_MAXIMUM (BLOOD_VOLUME_NORMAL * 2)
 #define BLOOD_VOLUME_SLIME_SPLIT (BLOOD_VOLUME_NORMAL * 1.25)
 
-/// Normal baseline blood volume
-#define BLOOD_VOLUME_NORMAL 1000
-/// First stage of bloodloss, mostly warnings
-#define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.85)
-/// Second stage of bloodloss, minor harmless symptoms
-#define BLOOD_VOLUME_SYMPTOMS_MINOR (BLOOD_VOLUME_NORMAL * 0.80)
-/// Third stage of bloodloss, annoying, but not particularly disabling, symptoms
-#define BLOOD_VOLUME_SYMPTOMS_ANNOYING (BLOOD_VOLUME_NORMAL * 0.60)
-/// Fourth stage of bloodloss, worst symptoms begin, combat sucks
-#define BLOOD_VOLUME_SYMPTOMS_DEBILITATING (BLOOD_VOLUME_NORMAL * 0.50)
-/// Fifth stage of bloodloss, absolutely disabling, combat is impossible, rip~
-#define BLOOD_VOLUME_SYMPTOMS_WORST (BLOOD_VOLUME_NORMAL * 0.25)
-/// Okay die now
-#define BLOOD_VOLUME_DEATH 1
 
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 0.75 // 600 nutrition = 400 blood
@@ -41,104 +43,111 @@
 /// Nutrition spent for being well fed
 #define BLOOD_REFILL_NUTRITION_WELL_FED 1.5
 /// Nutrition spent for being fed
-#define BLOOD_REFILL_NUTRITION_FED 1
+#define BLOOD_REFILL_NUTRITION_FED 0.5
 /// Nutrition spent for being hungie
-#define BLOOD_REFILL_NUTRITION_HUNGRY 1
+#define BLOOD_REFILL_NUTRITION_HUNGRY 0.25
 /// Nutrition spent for being starving
-#define BLOOD_REFILL_NUTRITION_STARVING 0.5
+#define BLOOD_REFILL_NUTRITION_STARVING 0.1
 
 /// The amount blood typically regenerates to on its own
-#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.90)
+#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
 /// Lowest amount normal bleeding can take you
 #define BLOOD_VOLUME_LOSS_FLOOR (BLOOD_VOLUME_NORMAL * 0.05)
 
 /// Cap for oxyloss in minor blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_MINOR 10
 /// Cap for dizziness in minor blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_MINOR 1
+#define BLOOD_LOSS_DIZZINESS_CAP_MINOR 2
 /// Cap for confusion in minor blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_MINOR 1
+#define BLOOD_LOSS_CONFUSION_CAP_MINOR 3
 /// Cap for blurriness in minor blood loss
-#define BLOOD_LOSS_BLUR_CAP_MINOR 1
+#define BLOOD_LOSS_BLUR_CAP_MINOR 2
 /// Cap for stamloss in minor blood loss
-#define BLOOD_LOSS_STAMLOSS_CAP_MINOR 10
+#define BLOOD_LOSS_STAMLOSS_CAP_MINOR 25
 /// Multiplier sprint buffer in minor blood loss
-#define BLOOD_LOSS_SPRINT_BUFFER_MULT_MINOR 0.9
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_MINOR 1
 /// How fast the sprint buffer regens in minor blood loss
 #define BLOOD_LOSS_SPRINT_REGEN_MULT_MINOR 0.75
 /// How much sprinting a tile costs in minor blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_MINOR 1.25
+/// Chance for a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_MINOR 5
+/// Length of a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_MINOR 1 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_MINOR 0.3
 
 /// Cap for oxyloss in annoying blood loss
-#define BLOOD_LOSS_OXYLOSS_CAP_ANNOYING 20
+#define BLOOD_LOSS_OXYLOSS_CAP_ANNOYING 30
 /// Cap for dizziness in annoying blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_ANNOYING 3
+#define BLOOD_LOSS_DIZZINESS_CAP_ANNOYING 5
 /// Cap for confusion in annoying blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_ANNOYING 3
+#define BLOOD_LOSS_CONFUSION_CAP_ANNOYING 5
 /// Cap for blurriness in annoying blood loss
-#define BLOOD_LOSS_BLUR_CAP_ANNOYING 2
+#define BLOOD_LOSS_BLUR_CAP_ANNOYING 3
 /// Cap for stamloss in annoying blood loss
-#define BLOOD_LOSS_STAMLOSS_CAP_ANNOYING 30
+#define BLOOD_LOSS_STAMLOSS_CAP_ANNOYING 50
 /// Multiplier sprint buffer in annoying blood loss
-#define BLOOD_LOSS_SPRINT_BUFFER_MULT_ANNOYING 0.75
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_ANNOYING 1
 /// How fast the sprint buffer regens in annoying blood loss
 #define BLOOD_LOSS_SPRINT_REGEN_MULT_ANNOYING 0.5
 /// How much sprinting a tile costs in annoying blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING 2
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 3
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 12
 /// Length of a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 1 SECONDS
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 2 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_ANNOYING 0.6
 
 /// Cap for oxyloss in worst blood loss
-#define BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING 45
+#define BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING 50
 /// Cap for dizziness in worst blood loss
 #define BLOOD_LOSS_DIZZINESS_CAP_DEBILITATING 8
 /// Cap for confusion in worst blood loss
 #define BLOOD_LOSS_CONFUSION_CAP_DEBILITATING 8
 /// Cap for blurriness in worst blood loss
-#define BLOOD_LOSS_BLUR_CAP_DEBILITATING 3
+#define BLOOD_LOSS_BLUR_CAP_DEBILITATING 5
 /// Cap for stamloss in worst blood loss
 #define BLOOD_LOSS_STAMLOSS_CAP_DEBILITATING 75
 /// Multiplier sprint buffer in worst blood loss
-#define BLOOD_LOSS_SPRINT_BUFFER_MULT_DEBILITATING 0.40
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_DEBILITATING 1
 /// How fast the sprint buffer regens in worst blood loss
 #define BLOOD_LOSS_SPRINT_REGEN_MULT_DEBILITATING 0.25
 /// How much sprinting a tile costs in worst blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_DEBILITATING 4
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING 7
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING 17
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING 2 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_DEBILITATING 1
 
 /// Cap for oxyloss in worst blood loss
-#define BLOOD_LOSS_OXYLOSS_CAP_WORST 49 // constant random passouts
+#define BLOOD_LOSS_OXYLOSS_CAP_WORST 87 // constant random passouts
 /// Cap for dizziness in worst blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_WORST 20
+#define BLOOD_LOSS_DIZZINESS_CAP_WORST 30
 /// Cap for confusion in worst blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_WORST 20
+#define BLOOD_LOSS_CONFUSION_CAP_WORST 30
 /// Cap for blurriness in worst blood loss
-#define BLOOD_LOSS_BLUR_CAP_WORST 10
+#define BLOOD_LOSS_BLUR_CAP_WORST 30
 /// Cap for stamloss in worst blood loss
 #define BLOOD_LOSS_STAMLOSS_CAP_WORST 105
 /// Multiplier sprint buffer in worst blood loss
-#define BLOOD_LOSS_SPRINT_BUFFER_MULT_WORST 0.10
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_WORST 1
 /// How fast the sprint buffer regens in worst blood loss
 #define BLOOD_LOSS_SPRINT_REGEN_MULT_WORST 0.10
 /// How much sprinting a tile costs in worst blood loss
-#define BLOOD_LOSS_SPRINT_COST_MULT_WORST 5 // basically you cant sprint
+#define BLOOD_LOSS_SPRINT_COST_MULT_WORST 10 // basically you cant sprint
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST 25
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST 35
 /// Length of a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST 3 SECONDS
-
-#define HUMAN_BUFFERED_STAMINA_MAX 20
-#define HUMAN_SPRINT_BUFFER_MAX 43
-#define HUMAN_SPRINT_REGEN 0.1
-#define HUMAN_SPRINT_STAMINA_COST 0.70
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST 5 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_WORST 2
 
 /// Oxyloss when you actually go unconscious
-#define BLOOD_LOSS_OXYLOSS_UNCONSCIOUS 50
+#define BLOOD_LOSS_OXYLOSS_UNCONSCIOUS 90
 
 /// Defines for getting the right anemia message
 /// Warning message
