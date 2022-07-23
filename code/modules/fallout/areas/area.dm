@@ -153,7 +153,7 @@
 	icon_state = "massfusionin"
 
 /area/f13/building/hospital
-	name = "Yuma General"
+	name = "Christus Saint Michaels Hospital"
 	icon_state = "hospital"
 
 /area/f13/building/mall

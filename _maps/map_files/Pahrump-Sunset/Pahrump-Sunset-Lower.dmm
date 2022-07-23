@@ -16361,7 +16361,10 @@
 /area/f13/caves)
 "nzr" = (
 /obj/structure/simple_door/house,
-/turf/closed/wall/f13/store,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "nzz" = (
 /turf/open/floor/plating/tunnel{
@@ -24192,10 +24195,6 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
-"vCF" = (
-/obj/structure/simple_door/house,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/building/hospital)
 "vCG" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -25992,11 +25991,11 @@
 	},
 /area/f13/caves)
 "xFT" = (
-/obj/structure/bodycontainer/morgue{
-	dir = 3
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/bodycontainer/morgue{
+	dir = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -71233,7 +71232,7 @@ wYL
 gYI
 gYI
 dEX
-xHk
+nzr
 dEX
 dEX
 aaa
@@ -71995,7 +71994,7 @@ kDe
 kDe
 gYI
 gYI
-xHk
+nzr
 kDe
 gYI
 sqD
@@ -73280,7 +73279,7 @@ pmJ
 dEX
 gYI
 gYI
-xHk
+nzr
 gYI
 kMM
 dEX
@@ -73288,7 +73287,7 @@ nkA
 gYI
 vuF
 gYI
-vCF
+nzr
 gYI
 maa
 dEX
@@ -75336,7 +75335,7 @@ dQf
 xHk
 aoa
 gYI
-nzr
+xHk
 kDe
 kDe
 kDe
