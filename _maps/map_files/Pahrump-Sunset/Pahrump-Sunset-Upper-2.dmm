@@ -145,10 +145,6 @@
 /area/f13/wasteland)
 "jL" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/mfc,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "jX" = (
@@ -158,7 +154,7 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "kY" = (
-/obj/machinery/workbench/advanced,
+/obj/structure/table/reinforced,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "lk" = (
@@ -231,11 +227,6 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
-"sv" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -378,8 +369,6 @@
 "Do" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Ef" = (
@@ -476,7 +465,6 @@
 	dir = 1
 	},
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "KV" = (
@@ -493,11 +481,6 @@
 "LT" = (
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
-/area/f13/building/hospital)
-"Nl" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/ammo/military,
-/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Nw" = (
 /obj/structure/table/reinforced,
@@ -525,11 +508,6 @@
 "PZ" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building/hospital)
-"Qx" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
-/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "RF" = (
 /turf/closed/indestructible/rock,
@@ -598,10 +576,6 @@
 /area/f13/wasteland)
 "Vb" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
-/obj/effect/spawner/lootdrop/f13/advcrafting,
-/obj/item/stock_parts/cell/ammo/ec,
-/obj/item/stock_parts/cell/ammo/ec,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -44987,7 +44961,7 @@ kY
 Ey
 vT
 Ey
-Nl
+kY
 xs
 SK
 SK
@@ -45499,9 +45473,9 @@ SK
 xs
 dH
 Wa
+Wa
 Ey
-Ey
-Qx
+kY
 xs
 SK
 SK
@@ -49590,7 +49564,7 @@ hm
 hm
 hm
 xs
-sv
+jL
 Ey
 fQ
 KV

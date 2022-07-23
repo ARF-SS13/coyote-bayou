@@ -1541,10 +1541,10 @@
 /area/f13/building/hospital)
 "gMv" = (
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "gPM" = (
@@ -3487,7 +3487,6 @@
 /area/f13/ncr)
 "oDl" = (
 /obj/structure/closet/crate/trashcart,
-/obj/item/clothing/glasses/hud/health/night,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
 /obj/item/storage/bag/trash,
@@ -3835,14 +3834,6 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/purple,
-/area/f13/building/hospital)
-"qox" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "qoB" = (
 /obj/structure/table/reinforced,
@@ -51171,7 +51162,7 @@ kJl
 lqO
 xJf
 gLD
-qox
+bvd
 nNq
 uEj
 mxG
