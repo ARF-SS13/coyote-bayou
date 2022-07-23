@@ -22281,6 +22281,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/city)
+"sha" = (
+/obj/structure/nest/raider/ranged,
+/turf/open/indestructible/ground/outside/graveldirt{
+	dir = 1
+	},
+/area/f13/raiders)
 "shp" = (
 /obj/structure/fence{
 	dir = 4
@@ -22507,6 +22513,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"snb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/boss,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/raiders)
 "snv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -26284,7 +26295,7 @@
 /area/f13/wasteland)
 "vse" = (
 /obj/machinery/workbench,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintLowMid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/raiders)
 "vsk" = (
@@ -26808,6 +26819,11 @@
 	icon_state = "outerbordercorner"
 	},
 /area/f13/wasteland)
+"vVE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/ranged,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "vVH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/rack,
@@ -27661,7 +27677,7 @@
 "wHP" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
 /turf/open/water,
 /area/f13/city)
 "wIi" = (
@@ -57877,7 +57893,7 @@ oph
 eaC
 eHO
 nSg
-rQO
+snb
 nSg
 rQO
 lcM
@@ -59940,7 +59956,7 @@ qES
 iUs
 ukf
 ukf
-ukf
+sha
 ukf
 wGZ
 jBU
@@ -64821,7 +64837,7 @@ ndq
 ndq
 pQV
 rtl
-oaw
+vVE
 tBA
 tBA
 hkX
