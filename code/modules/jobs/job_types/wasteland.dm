@@ -1572,7 +1572,7 @@ datum/job/wasteland/f13dendoctor
 
 /datum/job/wasteland/f13overboss
 	title = "Redwater Overboss"
-	flag = F13RAIDER
+	flag = F13MOBBOSS
 	faction = FACTION_WASTELAND
 	department_head = list("Captain")
 	head_announce = list("Security")
