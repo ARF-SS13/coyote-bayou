@@ -12,7 +12,7 @@
 /// called after an explosion happened : (epicenter, devastation_range, heavy_impact_range, light_impact_range, took, orig_dev_range, orig_heavy_range, orig_light_range)
 #define COMSIG_GLOB_EXPLOSION "!explosion"
 /// called after when a mob/login() finishes: (mob)
-#define COMSIG_GLOB_MOB_LOGIN "!mob_login"
+#define COMSIG_MOB_CLIENT_LOGIN "!mob_login"
 /// mob was created somewhere : (mob)
 #define COMSIG_GLOB_MOB_CREATED "!mob_created"
 /// mob died somewhere : (mob , gibbed)
