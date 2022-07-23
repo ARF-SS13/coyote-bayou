@@ -16359,10 +16359,6 @@
 /obj/structure/spider/cocoon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
-"nzr" = (
-/obj/structure/simple_door/house,
-/turf/closed/wall/f13/store,
-/area/f13/building/hospital)
 "nzz" = (
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
@@ -24194,7 +24190,10 @@
 /area/f13/caves)
 "vCF" = (
 /obj/structure/simple_door/house,
-/turf/open/indestructible/ground/outside/desert,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "vCG" = (
 /obj/effect/decal/cleanable/glass,
@@ -25992,11 +25991,11 @@
 	},
 /area/f13/caves)
 "xFT" = (
-/obj/structure/bodycontainer/morgue{
-	dir = 3
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
+	},
+/obj/structure/bodycontainer/morgue{
+	dir = 0
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
@@ -71233,7 +71232,7 @@ wYL
 gYI
 gYI
 dEX
-xHk
+vCF
 dEX
 dEX
 aaa
@@ -71746,7 +71745,7 @@ dEX
 rbm
 gYI
 gYI
-nzr
+vCF
 gYI
 gYI
 dEX
@@ -71995,7 +71994,7 @@ kDe
 kDe
 gYI
 gYI
-xHk
+vCF
 kDe
 gYI
 sqD
@@ -73280,7 +73279,7 @@ pmJ
 dEX
 gYI
 gYI
-xHk
+vCF
 gYI
 kMM
 dEX
@@ -75336,7 +75335,7 @@ dQf
 xHk
 aoa
 gYI
-nzr
+xHk
 kDe
 kDe
 kDe
