@@ -16359,6 +16359,13 @@
 /obj/structure/spider/cocoon,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"nzr" = (
+/obj/structure/simple_door/house,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "nzz" = (
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess"
@@ -24188,13 +24195,6 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
-"vCF" = (
-/obj/structure/simple_door/house,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "vCG" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -71232,7 +71232,7 @@ wYL
 gYI
 gYI
 dEX
-vCF
+nzr
 dEX
 dEX
 aaa
@@ -71745,7 +71745,7 @@ dEX
 rbm
 gYI
 gYI
-vCF
+nzr
 gYI
 gYI
 dEX
@@ -71994,7 +71994,7 @@ kDe
 kDe
 gYI
 gYI
-vCF
+nzr
 kDe
 gYI
 sqD
@@ -73279,7 +73279,7 @@ pmJ
 dEX
 gYI
 gYI
-vCF
+nzr
 gYI
 kMM
 dEX
@@ -73287,7 +73287,7 @@ nkA
 gYI
 vuF
 gYI
-vCF
+nzr
 gYI
 maa
 dEX
