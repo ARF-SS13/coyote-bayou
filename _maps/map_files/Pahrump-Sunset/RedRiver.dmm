@@ -7831,6 +7831,11 @@
 	icon_state = "horizontaltopbordertop0"
 	},
 /area/f13/wasteland)
+"giu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/boss,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/raiders)
 "gjf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -8526,6 +8531,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"gMj" = (
+/obj/structure/nest/raider/ranged,
+/turf/open/indestructible/ground/outside/graveldirt{
+	dir = 8
+	},
+/area/f13/raiders)
 "gMW" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
@@ -19568,6 +19579,11 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"pKC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/raider/ranged,
+/turf/open/floor/f13/wood,
+/area/f13/raiders)
 "pKS" = (
 /turf/open/indestructible,
 /area/f13/caves)
@@ -26284,7 +26300,7 @@
 /area/f13/wasteland)
 "vse" = (
 /obj/machinery/workbench,
-/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/obj/effect/spawner/lootdrop/f13/blueprintLowMid,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/raiders)
 "vsk" = (
@@ -27661,7 +27677,7 @@
 "wHP" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
 /turf/open/water,
 /area/f13/city)
 "wIi" = (
@@ -28016,6 +28032,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"wZI" = (
+/obj/structure/nest/raider/ranged,
+/turf/open/floor/f13{
+	icon_state = "yellowdirtyfull"
+	},
+/area/f13/raiders)
 "wZW" = (
 /obj/structure/fence{
 	pixel_x = -14
@@ -57877,7 +57899,7 @@ oph
 eaC
 eHO
 nSg
-rQO
+giu
 nSg
 rQO
 lcM
@@ -58660,7 +58682,7 @@ sgM
 kEx
 xbT
 nJf
-ecD
+wZI
 wOZ
 tgN
 kzG
@@ -60459,7 +60481,7 @@ ukf
 ukf
 fyC
 ecD
-ecD
+wZI
 ecD
 wXv
 kzG
@@ -61740,7 +61762,7 @@ cqc
 cqc
 oou
 jgM
-iUs
+gMj
 wGZ
 uJU
 wOZ
@@ -64821,7 +64843,7 @@ ndq
 ndq
 pQV
 rtl
-oaw
+pKC
 tBA
 tBA
 hkX
