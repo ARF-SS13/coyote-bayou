@@ -28,6 +28,8 @@
 	var/caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 	/// What valid calibers can this magazine be changed to?
 	var/list/valid_new_calibers
+	/// If its been rebored, dont add any more rebored to its everything
+	var/been_rebored = FALSE
 	var/start_empty = 0
 	var/list/bullet_cost
 	var/list/base_cost// override this one as well if you override bullet_cost
@@ -189,6 +191,12 @@
 		caliber |= casing_to_use.caliber
 		to_chat(user, span_notice("You press \the [casing_to_use] into the glowing hot metal of \the [src]! The casing melts, and leaves behind a hole roughly its diameter! Looks like this mag'll accept [casing_to_use.caliber] now!"))
 		qdel(casing_to_use)
+		if(!been_rebored)
+			name = "rebored [name]"
+			if(fixed_mag && istype(src.loc, /obj/item/gun))
+				var/obj/item/gun/gun_this_is_in = src.loc
+				gun_this_is_in.name = "rebored [gun_this_is_in.name]"
+			been_rebored = TRUE
 		caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_0
 		return TRUE
 	else
@@ -310,9 +318,9 @@
 /obj/item/ammo_box/examine(mob/user)
 	. = ..()
 	if(islist(caliber))
-		. += "This accepts [english_list(caliber)]!"
+		. += "This accepts [span_notice(english_list(caliber))]!"
 	if(length(stored_ammo))
-		. += "There [length(stored_ammo) == 1 ? "is" : "are"] [length(stored_ammo)] shell\s left!"
+		. += "There [length(stored_ammo) == 1 ? "is" : "are"] [span_notice("[length(stored_ammo)]")] shell\s left!"
 
 /obj/item/ammo_box/update_icon_state()
 	switch(multiple_sprites)

@@ -235,7 +235,9 @@
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
-	. += "It has [get_ammo()] round\s remaining."
+	if(istype(magazine) && magazine.fixed_mag && length(magazine.caliber))
+		. += "It accepts [span_notice(english_list(magazine.caliber))]"
+	. += "It has [span_notice("[get_ammo()]")] round\s remaining."
 
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = 1)
 	var/boolets = 0 //mature var names for mature people
