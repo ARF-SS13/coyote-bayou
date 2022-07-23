@@ -176,6 +176,12 @@
 	reqs = list(/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribal/shittycleaver
+	name = "Carving Knife"
+	result = /obj/item/kitchen/knife/butcher/tribal
+	time = 45
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 2, /obj/item/stack/sheet/metal = 3)
+
 /datum/crafting_recipe/warpaint
 	name = "Body Paint"
 	result = /obj/item/warpaint_bowl
