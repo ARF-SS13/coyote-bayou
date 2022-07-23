@@ -9,6 +9,7 @@
 
 	var/list/riding_offsets = list()	//position_of_user = list(dir = list(px, py)), or RIDING_OFFSET_ALL for a generic one.
 	var/list/directional_vehicle_layers = list()	//["[DIRECTION]"] = layer. Don't set it for a direction for default, set a direction to null for no change.
+	var/list/directional_vehicle_planes = list()	//["[DIRECTION]"] = plane. Don't set it for a direction for default, set a direction to null for no change.
 	var/list/directional_vehicle_offsets = list()	//same as above but instead of layer you have a list(px, py)
 	var/list/allowed_turf_typecache
 	var/list/forbid_turf_typecache					//allow typecache for only certain turfs, forbid to allow all but those. allow only certain turfs will take precedence.
@@ -53,8 +54,17 @@
 		. = AM.layer
 	AM.layer = .
 
-/datum/component/riding/proc/set_vehicle_dir_layer(dir, layer)
+	var/planeValue = 
+	if(directional_vehicle_planes["[AM.dir]"])
+		planeValue = directional_vehicle_planes["[AM.dir]"]
+	if(isnull(.))	//you can set it to null to not change it.
+		planeValue = AM.plane
+	AM.plane = planeValue
+
+/datum/component/riding/proc/set_vehicle_dir_layer(dir, layer, plane = null)
 	directional_vehicle_layers["[dir]"] = layer
+	if(plane)
+		directional_vehicle_planes["[dir]"] = plane
 
 /datum/component/riding/proc/vehicle_moved(datum/source, dir)
 	var/atom/movable/movable_parent = parent

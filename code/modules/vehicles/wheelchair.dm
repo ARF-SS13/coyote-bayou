@@ -17,7 +17,7 @@
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 0
 	D.set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
-	D.set_vehicle_dir_layer(NORTH, ABOVE_MOB_LAYER)
+	D.set_vehicle_dir_layer(NORTH, ABOVE_MOB_LAYER, MOB_PLANE)
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 
@@ -87,7 +87,7 @@
 
 /obj/vehicle/ridden/wheelchair/proc/handle_rotation_overlayed()
 	cut_overlays()
-	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, dir = src.dir)
+	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, plane = MOB_PLANE, dir = src.dir)
 	add_overlay(V)
 
 
