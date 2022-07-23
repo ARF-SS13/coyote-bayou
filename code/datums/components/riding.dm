@@ -54,7 +54,7 @@
 		. = AM.layer
 	AM.layer = .
 
-	var/planeValue = 
+	var/planeValue = initial(AM.plane)
 	if(directional_vehicle_planes["[AM.dir]"])
 		planeValue = directional_vehicle_planes["[AM.dir]"]
 	if(isnull(.))	//you can set it to null to not change it.

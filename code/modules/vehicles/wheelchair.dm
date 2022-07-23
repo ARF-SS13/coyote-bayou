@@ -87,7 +87,8 @@
 
 /obj/vehicle/ridden/wheelchair/proc/handle_rotation_overlayed()
 	cut_overlays()
-	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, plane = MOB_PLANE, dir = src.dir)
+	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, dir = src.dir)
+	V.plane = MOB_PLANE
 	add_overlay(V)
 
 
