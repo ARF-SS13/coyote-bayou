@@ -71,7 +71,7 @@
 	base_state = "Oasis"
 	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
 	density = 1
-	desc = "A sign marking the town of Oasis. It's remarkably fancy."
+	desc = "A sign marking the Oasis Motel. It's remarkably fancy."
 	light_color = LIGHT_COLOR_YELLOW
 
 /obj/machinery/light/sign/oasis_sign
@@ -79,7 +79,7 @@
 	icon_state = "oasis_sign"
 	base_state = "oasis_sign"
 	icon = 'icons/fallout/objects/structures/kebabtown.dmi'
-	desc = "A sign marking the town of Oasis. It's remarkably fancy.."
+	desc = "A sign marking the Oasis Motel. It's remarkably fancy.."
 	light_color = LIGHT_COLOR_YELLOW
 
 /obj/machinery/light/sign/chiken_ranch

@@ -3,7 +3,7 @@
 	name = "metal arrow"
 	desc = "A simple arrow with a metal head."
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow
-	caliber = "arrow"
+	caliber = CALIBER_ARROW
 	icon_state = "arrow"
 	custom_materials = list(/datum/material/iron = 500)
 	throwforce = 8 //good luck hitting someone with the pointy end of the arrow

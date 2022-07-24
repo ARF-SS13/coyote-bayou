@@ -1645,8 +1645,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
 		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver/archer = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/book/granter/trait/tribaltraditions =1,
@@ -1720,7 +1719,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/gun/ballistic/bow = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
@@ -1978,7 +1977,7 @@ datum/job/wasteland/f13dendoctor
 	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
 	supervisors = "Your conscience (HAH), wallet, and constituents."
 	selection_color = "#df80af"
-	exp_requirements = 0
+	exp_requirements = 600
 	exp_type = EXP_TYPE_WASTELAND
 
 	outfit = /datum/outfit/job/wasteland/f13overboss
@@ -1989,8 +1988,11 @@ datum/job/wasteland/f13dendoctor
 			/datum/outfit/loadout/overbossranged, //moni + drugs
 	)
 
-/datum/outfit/job/wasteland/f13overboss
-	name = "Redwater Overboss"
+	outfit = /datum/outfit/job/wasteland/f13raider/overboss
+
+
+/datum/outfit/job/wasteland/f13raider/overboss
+	name = "Overboss"
 	jobtype = /datum/job/wasteland/f13overboss
 
 	id = null
@@ -2007,6 +2009,55 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
 		/obj/item/radio/redwater = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/radio/redwater = 1
+		)
+
+
+/datum/outfit/job/wasteland/f13raider/overboss/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/raider_leather, \
+		/obj/item/clothing/under/f13/raiderrags, \
+		/obj/item/clothing/under/pants/f13/ghoul, \
+		/obj/item/clothing/under/jabroni)
+	suit = pick(
+		/obj/item/clothing/suit/armor/light/raider/supafly,\
+		/obj/item/clothing/suit/armor/medium/raider/yankee, \
+		/obj/item/clothing/suit/armor/light/raider/sadist, \
+		/obj/item/clothing/suit/armor/medium/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/medium/raider/badlands, \
+		/obj/item/clothing/suit/armor/light/raider/painspike)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull)
+	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/raider/eyebot,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
+		/obj/item/clothing/head/helmet/f13/fiend)
+	shoes = pick(
+			/obj/item/clothing/shoes/jackboots,\
+			/obj/item/clothing/shoes/f13/raidertreads)
+
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil,\
+		/obj/item/gun/ballistic/automatic/pistol/m1911, \
+		/obj/item/gun/ballistic/automatic/pistol/type17, \
 		)
 
 /datum/outfit/loadout/overbossmelee

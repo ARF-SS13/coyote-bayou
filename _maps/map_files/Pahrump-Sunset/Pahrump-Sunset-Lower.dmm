@@ -9607,13 +9607,6 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
-"gkC" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/nest/ghoul,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "gkH" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -12918,6 +12911,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jQi" = (
+/obj/structure/rack,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "jQC" = (
 /obj/structure/nest/deathclaw,
 /turf/open/floor/f13{
@@ -18446,13 +18446,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
-"pFY" = (
-/obj/structure/rack,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "pGB" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -19358,11 +19351,6 @@
 	name = "cave"
 	},
 /area/f13/caves)
-"qvD" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/stockparts/deluxe,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "qvL" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/museum)
@@ -21948,8 +21936,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
 "tjr" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/rndboards,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "tjD" = (
@@ -70692,9 +70682,9 @@ gYI
 gYI
 ira
 dEX
-qvD
+uUZ
 tYi
-tjr
+uUZ
 dEX
 kyb
 gYI
@@ -72994,7 +72984,7 @@ xwF
 xwF
 aaa
 dEX
-gkC
+tjr
 gYI
 dEX
 nYd
@@ -73006,7 +72996,7 @@ gYI
 kfw
 dEX
 kDe
-pFY
+jQi
 dEX
 oDy
 gYI
@@ -76081,7 +76071,7 @@ dEX
 gYI
 gYI
 raz
-gkC
+tjr
 gYI
 oLq
 kDe
@@ -76344,7 +76334,7 @@ gYI
 gYI
 cHS
 gYI
-gkC
+tjr
 oLq
 gYI
 bjf

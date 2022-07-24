@@ -635,7 +635,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
 
-/obj/item/twohanded/sledgehammer/atomsjudgement/ComponentInitialize()
+/obj/item/twohanded/sledgehammer/warmace/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
 

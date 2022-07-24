@@ -360,7 +360,7 @@
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
-	result = /obj/item/storage/belt/tribe_quiver
+	result = /obj/item/storage/bag/tribe_quiver
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/metal = 4,

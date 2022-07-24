@@ -174,7 +174,7 @@
 	..()
 
 /datum/reagent/consumable/ethanol/daturatea/on_mob_delete(mob/living/M)
-	ADD_TRAIT(M, TRAIT_SPIRITUAL, "[type]")
+	REMOVE_TRAIT(M, TRAIT_SPIRITUAL, "[type]")
 	M.set_drugginess(0)
 	M.hallucination += 0
 	..()
