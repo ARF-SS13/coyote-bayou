@@ -87,6 +87,9 @@
 	var/selected_direction = SOUTH
 
 	var/obj/item/loadout_token/token = null
+	
+	var/selectionComplete = FALSE // Sanity check to stop duplicating windows.
+	// I don't know TGUI well enough if there's a framework built in to prevent it from reopening.
 
 //Lets check that the assigned parent is a mob with a job
 /datum/component/loadout_selector/Initialize()
@@ -119,14 +122,20 @@
 	selected_datum.spawn_at(duffelkit)
 	M.dropItemToGround(token)
 	M.put_in_hands(duffelkit)
+
 	M.disable_loadout_select()
-	token = null
+	QDEL_NULL(token)
+
+	selectionComplete = TRUE
 
 /datum/component/loadout_selector/ui_interact(mob/user, datum/tgui/ui)
+	if(selectionComplete)
+		return // NO MORE. ST O P, YOU GOT LOADOUTS AT HOME
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "LoadoutSelect", "Loadout Select")
-		ui.set_autoupdate(FALSE)
+//		ui.set_autoupdate(FALSE)
 		ui.open()
 //		ui.send_asset(get_asset_datum(/datum/asset/spritesheet/loadout))
 
@@ -142,8 +151,7 @@
 	return data
 
 /datum/component/loadout_selector/ui_act(action, params)
-	if(..())
-		return
+	. = ..()
 	switch(action)
 		if("loadout_select")
 			select_outfit(params["name"])
