@@ -7,7 +7,7 @@
 	icon = 'icons/obj/Ritas.dmi'
 	bound_width = 64
 	var/moving = 0
-	var/using_time = 2
+	var/using_time = 2 SECONDS
 
 /obj/structure/sink/well/attackby(obj/item/O, mob/living/user, params)
 	. = ..()
