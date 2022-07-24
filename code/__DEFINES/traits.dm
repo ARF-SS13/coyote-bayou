@@ -281,7 +281,13 @@
 #define TRAIT_GUNSMITH_TWO      "gunsmith_two" //crafts mid level guns
 #define TRAIT_GUNSMITH_THREE    "gunsmith_three" //crafts weapon parts
 #define TRAIT_GUNSMITH_FOUR     "gunsmith_four" //currently unused
-
+#define TRAIT_WHITELEGS_TRAD	"whiteleg_traditions"
+#define TRAIT_DEADHORSES_TRAD	"deadhorses_traditions"
+#define TRAIT_RUSTWALKERS_TRAD	"rustwalker_traditions"
+#define TRAIT_EIGHTIES_TRAD		"eighties_traditions"
+#define TRAIT_SORROWS_TRAD		"sorrows_traditions"
+#define TRAIT_WAYFARER_TRAD		"wayfarers_traditions"
+#define TRAIT_BONEDANCER_TRAD	"bonedancer_traditions"
 
 //non-mob traits
 #define TRAIT_PARALYSIS				"paralysis" //Used for limb-based paralysis, where replacing the limb will fix it
