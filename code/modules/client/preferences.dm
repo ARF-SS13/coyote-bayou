@@ -500,8 +500,8 @@ Records disabled until a use for them is found
 
 				// Coyote ADD: Hair gradients
 				dat += "<h3>Hair Gradient</h3>"
-				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features["grad_style"]]</a>"
-				dat += "<span style='border:1px solid #161616; background-color: #[features["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
+				dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[features_override["grad_style"]]</a>"
+				dat += "<span style='border:1px solid #161616; background-color: #[features_override["grad_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
 				// Coyote ADD: End
 
 				dat += "<h3>Facial Hair Style</h3>"

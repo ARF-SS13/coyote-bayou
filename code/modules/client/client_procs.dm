@@ -413,7 +413,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			to_chat(src, memo)
 		adminGreet()
 	else if(!BC_IsKeyAllowedToConnect(ckey))
-		to_chat(src, "Sorry, but the server is currently only accepting whitelisted players.  Please see the discord to be whitelisted.")
+		src << "Sorry, but the server is currently only accepting whitelisted players.  Please see the discord to be whitelisted."
 		log_and_message_admins("[ckey] was denied a connection due to not being whitelisted.")
 		qdel(src)
 		return 0
