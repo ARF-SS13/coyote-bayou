@@ -911,8 +911,8 @@
 	},
 /obj/machinery/door/unpowered/securedoor{
 	name = "Bar";
-	req_one_access_txt = "25, 28";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "25, 28"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -1599,8 +1599,8 @@
 "agb" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Check Point";
-	req_one_access_txt = "62, 1";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "62, 1"
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -6373,8 +6373,8 @@
 	},
 /obj/machinery/door/unpowered/securedoor{
 	name = "Bar";
-	req_one_access_txt = "25, 28";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "25, 28"
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
@@ -8711,8 +8711,8 @@
 	},
 /obj/machinery/door/unpowered/securedoor{
 	name = "Bar";
-	req_one_access_txt = "25, 28";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "25, 28"
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
@@ -11483,12 +11483,12 @@
 "aMY" = (
 /obj/structure/table/wood/bar,
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 7;
-	pixel_x = 11
+	pixel_x = 11;
+	pixel_y = 7
 	},
 /obj/item/reagent_containers/food/drinks/drinkingglass/shotglass{
-	pixel_y = 7;
-	pixel_x = -9
+	pixel_x = -9;
+	pixel_y = 7
 	},
 /obj/item/reagent_containers/food/drinks/bottle/brown/wine{
 	pixel_y = 12
@@ -18227,9 +18227,9 @@
 /area/f13/building)
 "blU" = (
 /mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
-	name = "Bighorn eyebot";
-	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Bighorn!")
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about...something. There are many marks on it, and an old sticker of a U.S flag.";
+	name = "loud eyebot";
+	speak = list("Remember- YOU are the future of America!", "America lives on in the hearts of her people!",  "Reject Communist agents- build a future on Democracy!", "Report ALL foreign seditionists!")
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -19993,9 +19993,9 @@
 /area/f13/building)
 "bzV" = (
 /mob/living/simple_animal/pet/dog/eyebot{
-	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about Bighorn.";
-	name = "Bighorn eyebot";
-	speak = list("Need a drink? Want to trade? Need your cuts and bruises mended? Head on over to Bighorn!")
+	desc = "This eyebot's weapons module has been removed and replaced with a loudspeaker. It appears to be shouting about...something. There are many marks on it, and an old sticker of a U.S flag.";
+	name = "loud eyebot";
+	speak = list("Remember- YOU are the future of America!", "America lives on in the hearts of her people!",  "Reject Communist agents- build a future on Democracy!", "Report ALL foreign seditionists!")
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalinnermainbottom"
@@ -29786,8 +29786,8 @@
 "fYU" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Bar";
-	req_one_access_txt = "25, 28";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "25, 28"
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -32505,8 +32505,8 @@
 /area/f13/building/mall)
 "hyh" = (
 /obj/structure/ladder/unbreakable{
-	id = "followersbasement";
-	height = 2
+	height = 2;
+	id = "followersbasement"
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -50576,11 +50576,6 @@
 	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
-	},
-/obj/item/fishy/lobster{
-	name = "crawdad";
-	pixel_x = 9;
-	pixel_y = -12
 	},
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/grass/wasteland{
