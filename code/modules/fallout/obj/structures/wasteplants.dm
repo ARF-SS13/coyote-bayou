@@ -188,6 +188,9 @@ obj/structure/flora/wasteplant/wild_punga
 	. = ..()
 	icon_state = "joshua_[rand(1,4)]"
 	AddComponent(/datum/component/largetransparency, y_offset = 1)
+	if(CHRISTMAS in SSevents.holidays)
+		if(prob(30))
+			icon_state = "joshua_xmas"
 
 /obj/structure/flora/tree/cactus
 	name = "cactus"
