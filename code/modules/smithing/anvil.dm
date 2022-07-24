@@ -28,15 +28,43 @@
 #define RECIPE_THROWING "dbd" //draw bend draw
 
 //Tablevil specific
-#define RECIPE_MACHREFORG "fdf" //fold punch punch
-#define RECIPE_SCRAP "udsp" //upset draw shrink punch
-#define RECIPE_UNITOOL "bbb"  //bend bend bend
+#define RECIPE_MACHREFORG "fddf" //fold punch punch
+#define RECIPE_SCRAP "udpp" //upset draw shrink punch
+#define RECIPE_UNITOOL "bbu"  //bend bend upset
 
 //Legion specific
-#define RECIPE_LANCE "ddbf" //draw draw fold fold
-#define RECIPE_GLADIUS "fdf" //fold draw fold
-#define RECIPE_SPATHA "ffdf" // fold fold draw fold
-#define RECIPE_WARHONED "udsp" //upset draw shrink punch
+#define RECIPE_LANCE "dbdf" //draw bend fold fold
+#define RECIPE_GLADIUS "fbf" //fold bend fold
+#define RECIPE_SPATHA "ffbf" // fold fold bend fold
+#define RECIPE_WARHONED "udup" //upset draw upset punch
+
+GLOBAL_LIST_INIT(anvil_recipes, list(
+	RECIPE_HAMMER = /obj/item/smithing/hammerhead,
+	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
+	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
+	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
+	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
+	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
+	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
+	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
+	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
+	RECIPE_MACHETE = /obj/item/smithing/macheteblade,
+	RECIPE_SWORD = /obj/item/smithing/swordblade,
+	RECIPE_SABRE = /obj/item/smithing/sabreblade,
+	RECIPE_WAKI = /obj/item/smithing/wakiblade,
+	RECIPE_KATANA = /obj/item/smithing/katanablade,
+	RECIPE_MACE = /obj/item/smithing/macehead,
+	RECIPE_AXE = /obj/item/smithing/axehead,
+	RECIPE_SPEAR = /obj/item/smithing/spearhead,
+	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
+	RECIPE_THROWING = /obj/item/smithing/throwingknife,
+	RECIPE_UNITOOL = /obj/item/smithing/unitool,
+	RECIPE_MACHREFORG = /obj/item/smithing/macheterblade,
+	RECIPE_SCRAP = /obj/item/smithing/scrapblade,
+	RECIPE_GLADIUS =  /obj/item/smithing/gladiusblade,
+	RECIPE_SPATHA = /obj/item/smithing/spathablade,
+	RECIPE_WARHONED = /obj/item/smithing/warhonedhead,
+	RECIPE_LANCE = /obj/item/smithing/lancehead))
 
 // Logic of smithing recipes: Tools start with bend and have 3 steps. 1h weapons have 3-4 steps. 2h weapons have 4-5 steps. Bigger bladed stuff start with a fold. Pointy stuff generally start with a draw. Unusual stuff migth start with upset.
 // Point of having a structure is obviously to help remember, not just keeping every recipe as pure rote memory with no internal logic. If you add more stuff and fuck this up and don't read comments I hope you get a prolapse. - Pebbles
@@ -64,26 +92,7 @@
 	var/debug = FALSE //vv this if you want an artifact
 	var/artifactrolled = FALSE
 	var/itemqualitymax = 8
-	var/list/smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
-	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
-	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
-	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
-	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
-	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
-	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
-	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
-	RECIPE_MACHETE = /obj/item/smithing/macheteblade,
-	RECIPE_SWORD = /obj/item/smithing/swordblade,
-	RECIPE_SABRE = /obj/item/smithing/sabreblade,
-	RECIPE_WAKI = /obj/item/smithing/wakiblade,
-	RECIPE_KATANA = /obj/item/smithing/katanablade,
-	RECIPE_MACE = /obj/item/smithing/macehead,
-	RECIPE_AXE = /obj/item/smithing/axehead,
-	RECIPE_SPEAR = /obj/item/smithing/spearhead,
-	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
-	RECIPE_THROWING = /obj/item/smithing/throwingknife,
-)
+
 
 /obj/structure/anvil/Initialize()
 	. = ..()
@@ -283,10 +292,10 @@
 		return SetBusy(FALSE, user) 
 	
 	// IF YOU DIDN'T FUCK UP THE RECIPE
-	for(var/i in smithrecipes) // for each recipes.
+	for(var/i in GLOB.anvil_recipes) // for each recipes.
 		if(i == stepsdone) // if... "cum" == "bbu" idfk what the fuck am I looking at why isnt this a GLOB recipe list...
 
-			var/obj/item/smithing/finisheditem = smithrecipes[stepsdone]
+			var/obj/item/smithing/finisheditem = GLOB.anvil_recipes[stepsdone]
 			finisheditem = new finisheditem(get_turf(src)) // Lets just spawn the item in immediately!
 
 			to_chat(user, "You finish your [finisheditem]!")
@@ -349,27 +358,6 @@
 	currentquality = 1
 	itemqualitymax = 8
 	anchored = TRUE
-	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
-	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
-	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
-	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
-	RECIPE_CROWBAR = /obj/item/smithing/crowbar,
-	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
-	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
-	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
-	RECIPE_GLADIUS =  /obj/item/smithing/gladiusblade,
-	RECIPE_SPATHA = /obj/item/smithing/spathablade,
-	RECIPE_SABRE = /obj/item/smithing/sabreblade,
-	RECIPE_WAKI = /obj/item/smithing/wakiblade,
-	RECIPE_KATANA = /obj/item/smithing/katanablade,
-	RECIPE_MACE = /obj/item/smithing/macehead,
-	RECIPE_WARHONED = /obj/item/smithing/warhonedhead,
-	RECIPE_LANCE = /obj/item/smithing/lancehead,
-	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
-	RECIPE_THROWING = /obj/item/smithing/throwingknife,
-)
-
 
 // Decent makeshift anvil, can break, mobile. Gets the exclusive scrap version of the machete and 2h chopper, as well as the universal tool instead of a crowbar
 /obj/structure/anvil/obtainable/table
@@ -378,26 +366,6 @@
 	icon_state = "tablevil"
 	currentquality = 0
 	itemqualitymax = 7
-	smithrecipes = list(RECIPE_HAMMER = /obj/item/smithing/hammerhead,
-	RECIPE_SHOVEL = /obj/item/smithing/shovelhead,
-	RECIPE_PICKAXE = /obj/item/smithing/pickaxehead,
-	RECIPE_PROSPECTPICK = /obj/item/smithing/prospectingpickhead,
-	RECIPE_KITCHENKNIFE = /obj/item/smithing/knifeblade,
-	RECIPE_UNITOOL = /obj/item/smithing/unitool,
-	RECIPE_RING = /obj/item/smithing/special/jewelry/ring,
-	RECIPE_BALLANDCHAIN = /obj/item/smithing/ballandchain,
-	RECIPE_DAGGER = /obj/item/smithing/daggerblade,
-	RECIPE_MACHREFORG = /obj/item/smithing/macheterblade,
-	RECIPE_SWORD = /obj/item/smithing/swordblade,
-	RECIPE_SABRE = /obj/item/smithing/sabreblade,
-	RECIPE_WAKI = /obj/item/smithing/wakiblade,
-	RECIPE_KATANA = /obj/item/smithing/katanablade,
-	RECIPE_MACE = /obj/item/smithing/macehead,
-	RECIPE_SPEAR = /obj/item/smithing/spearhead,
-	RECIPE_SCRAP = /obj/item/smithing/scrapblade,
-	RECIPE_JAVELIN = /obj/item/smithing/javelinhead,
-	RECIPE_THROWING = /obj/item/smithing/throwingknife,
-)
 
 /obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)
 	..()

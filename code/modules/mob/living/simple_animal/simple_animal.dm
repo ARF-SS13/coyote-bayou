@@ -151,6 +151,8 @@
 	var/sharpness = SHARP_NONE
 	//Generic flags
 	var/simple_mob_flags = NONE
+	//Mob may be offset randomly on both axes by this much
+	var/randpixel = 0
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -166,6 +168,8 @@
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
+	pixel_x = rand(-randpixel, randpixel)
+	pixel_y = rand(-randpixel, randpixel)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
@@ -371,7 +375,7 @@
 		drop_all_held_items()
 	if(!gibbed)
 		if(death_sound)
-			playsound(get_turf(src),death_sound, 200, 1)
+			playsound(get_turf(src),death_sound, 200, 1, ignore_walls = FALSE)
 		if(deathmessage || !del_on_death)
 			INVOKE_ASYNC(src, .proc/emote, "deathgasp")
 	if(del_on_death)
@@ -648,4 +652,4 @@
 	if (idlesound)
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
-			playsound(src, chosen_sound, 60, FALSE)
+			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)

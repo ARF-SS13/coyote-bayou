@@ -91,7 +91,7 @@
 
 /obj/item/instrument/violin/golden
 	name = "golden violin"
-	desc = "A golden musical instrument with four strings and a bow. \"The devil went down to space, he was looking for an assistant to grief.\""
+	desc = "A golden musical instrument with four strings and a bow. \"The devil went down to Georgia, he was looking for a soul to steal...\""
 	icon_state = "golden_violin"
 	item_state = "golden_violin"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF

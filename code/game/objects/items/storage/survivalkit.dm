@@ -7,6 +7,7 @@
 /obj/item/storage/survivalkit/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/gauze/improvised(src)
 	new /obj/item/stack/medical/mesh/aloe(src)
 	new /obj/item/flashlight/seclite(src)
@@ -23,6 +24,7 @@
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/reagent_containers/pill/radx(src)
@@ -51,6 +53,7 @@
 /obj/item/storage/survivalkit_outlaw/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/gauze(src)
@@ -76,13 +79,13 @@
 /obj/item/storage/survivalkit_adv/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/reagent_containers/pill/radx(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
 
 /obj/item/storage/survivalkit_aid
 	name = "individual first aid kit"
@@ -98,6 +101,7 @@
 /obj/item/storage/survivalkit_aid/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
@@ -117,6 +121,7 @@
 /obj/item/storage/survivalkit_aid_adv/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak/super(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/gauze/adv(src)
 	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh/advanced(src)
@@ -129,15 +134,16 @@
 
 /obj/item/storage/survivalkit_triple_empty
 	name = "large survival kit"
-	desc = "A large, robust leather pouch containing the essentials for wasteland survival. This one won't fit in your pocket, but holds three times as much."
-	icon_state = "survivalkit_triple"
-	w_class = WEIGHT_CLASS_NORMAL
+	desc = "A large, robust set of leather pouches tailored to hold lots and lots of tiny things. This one won't fit in your pocket, but it comes with straps that'll attach to most armors."
+	icon_state = "survivalkit"
+	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/storage/survivalkit_triple_empty/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 21
-	STR.max_combined_w_class = 42
+	STR.max_w_class = WEIGHT_CLASS_TINY
+	STR.max_items = STORAGE_TRIPLEKIT_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_TRIPLEKIT_MAX_VOLUME
 
 /obj/item/storage/survivalkit_empty/PopulateContents()
 	. = ..()

@@ -61,6 +61,17 @@ Administrator
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
@@ -116,6 +127,15 @@ Professor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
@@ -174,10 +194,20 @@ Practitioner
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
+	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
 
 	//the follower practitioner doesn't need access because it's already set in the /datum/job/follower
 	//personally, I don't think a practitioner should have more access than a volunteer.
@@ -369,7 +399,7 @@ Follower Volunteer
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat
-	neck =	/obj/item/storage/belt/holster
+	l_pocket =	/obj/item/storage/belt/holster
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(

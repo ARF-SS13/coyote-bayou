@@ -40,6 +40,8 @@ Main doors: ACCESS_CAPTAIN 20
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombatarmor)
@@ -75,13 +77,22 @@ Elder
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13elder
 	name = "Elder"
 	jobtype = /datum/job/bos/f13elder
 	pa_wear = TRUE
-	suit =	/obj/item/clothing/suit/elder
+	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
 	suit_store =	/obj/item/gun/energy/laser/laer
@@ -133,6 +144,15 @@ Head Paladin
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
@@ -155,7 +175,7 @@ Head Paladin
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		)
 
@@ -230,6 +250,15 @@ Head Scribe
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -244,7 +273,7 @@ Head Scribe
 	uniform = 		/obj/item/clothing/under/syndicate/brotherhood
 	accessory = 	/obj/item/clothing/accessory/bos/headscribe
 	glasses =       /obj/item/clothing/glasses/sunglasses
-	suit = 			/obj/item/clothing/suit/armor/headscribe
+	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/scribe/headscribe
 	belt = 			/obj/item/storage/belt/utility/full/engi
 	id = 			/obj/item/card/id/dogtag
 	backpack_contents = list(
@@ -299,6 +328,15 @@ Head Knight
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightplasmapistol)
@@ -320,7 +358,7 @@ Head Knight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	accessory =		/obj/item/clothing/accessory/bos/knightcaptain
 	belt =			/obj/item/storage/belt/security/full
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
@@ -593,6 +631,15 @@ Senior Scribe
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -605,7 +652,7 @@ Senior Scribe
 	shoes =	/obj/item/clothing/shoes/combat
 	belt =	/obj/item/storage/belt/utility/full/engi
 	accessory =	/obj/item/clothing/accessory/bos/seniorscribe
-	suit =	/obj/item/clothing/suit/seniorscribe
+	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/seniorscribe
 	id =	/obj/item/card/id/dogtag
 	glasses =	/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
@@ -664,7 +711,7 @@ Scribe
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	shoes = 		/obj/item/clothing/shoes/combat
 	belt = 			/obj/item/storage/belt/utility/full/engi
-	suit = 			/obj/item/clothing/suit/scribe
+	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/scribe
 	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
@@ -678,6 +725,15 @@ Scribe
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
@@ -751,7 +807,7 @@ Senior Knight
 	glasses =       /obj/item/clothing/glasses/night
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	belt = 			/obj/item/storage/belt/military/assault
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/senior
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE
@@ -772,7 +828,7 @@ Senior Knight
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/attachments/scope = 1,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/sknightb
@@ -860,7 +916,7 @@ Knight
 	uniform =		/obj/item/clothing/under/syndicate/brotherhood
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	belt = 			/obj/item/storage/belt/military/assault
-	neck =			/obj/item/storage/belt/holster
+	l_pocket =			/obj/item/storage/belt/holster
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood
 	id = 			/obj/item/card/id/dogtag
 	gunsmith_one = TRUE
@@ -881,7 +937,7 @@ Knight
 		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/knightb
@@ -910,7 +966,7 @@ Knight
 		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/knighte

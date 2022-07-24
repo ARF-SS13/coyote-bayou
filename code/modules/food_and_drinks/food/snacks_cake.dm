@@ -410,3 +410,19 @@ obj/item/reagent_containers/food/snacks/store/cake/pound_cake
 	filling_color = "#7A3D80"
 	tastes = list("cake" = 4, "violets" = 2, "jam" = 2)
 	foodtype = GRAIN | DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/store/cake/pavlova
+	name = "pavlova"
+	desc = "A sweet berry pavlova. Invented in New Zealand, some how the cake survived the war."
+	icon_state = "pavlova"
+	slice_path = /obj/item/reagent_containers/food/snacks/cakeslice/pavlovacream
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("meringue" = 5, "creaminess" = 1, "berries" = 1)
+	foodtype = DAIRY | FRUIT | SUGAR
+
+/obj/item/reagent_containers/food/snacks/cakeslice/pavlovacream
+	name = "pavlova slice"
+	desc = "A cracked slice of pavlova stacked with berries."
+	icon_state = "pavlova_slice"
+	tastes = list("meringue" = 5, "creaminess" = 1, "berries" = 1)
+	foodtype = DAIRY | FRUIT | SUGAR

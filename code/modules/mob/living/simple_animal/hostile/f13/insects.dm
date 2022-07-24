@@ -304,7 +304,7 @@
 	emote_taunt_sound = list('sound/f13npc/cazador/cazador_alert.ogg')
 	aggrosound = list('sound/f13npc/cazador/cazador_charge1.ogg', 'sound/f13npc/cazador/cazador_charge2.ogg', 'sound/f13npc/cazador/cazador_charge3.ogg')
 	idlesound = list('sound/creatures/cazador_buzz.ogg')
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = -0.5
@@ -440,12 +440,12 @@
 	icon_gib = "radroach_gib"
 
 	speed = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 5
+	melee_damage_upper = 8
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -462,7 +462,10 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	a_intent = INTENT_HARM
+	pass_flags = PASSTABLE | PASSMOB
+	density = FALSE
 	gold_core_spawnable = HOSTILE_SPAWN
+	randpixel = 12
 
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)

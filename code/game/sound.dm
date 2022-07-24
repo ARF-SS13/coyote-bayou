@@ -1,4 +1,4 @@
-/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = TRUE, soundenvwet = -10000, soundenvdry = 0)
+/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = FALSE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = FALSE)
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
@@ -12,24 +12,38 @@
 
 	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = sound(get_sfx(soundin))
-	var/maxdistance = (world.view + extrarange)
-	var/z = turf_source.z
-	var/list/listeners = SSmobs.clients_by_zlevel[z]
+	var/maxdistance = SOUND_RANGE + extrarange
+	var/source_z = turf_source.z
+	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
+
+	var/turf/above_turf = SSmapping.get_turf_above(turf_source)
+	var/turf/below_turf = SSmapping.get_turf_below(turf_source)
+
 	if(!ignore_walls) //these sounds don't carry through walls
 		listeners = listeners & hearers(maxdistance,turf_source)
-	for(var/P in listeners)
-		var/mob/M = P
-		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S, soundenvwet, soundenvdry)
-	for(var/P in SSmobs.dead_players_by_zlevel[z])
-		var/mob/M = P
-		if(get_dist(M, turf_source) <= maxdistance)
-			M.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S, soundenvwet, soundenvdry)
 
-/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, envwet = -10000, envdry = 0, manual_x, manual_y, distance_multiplier = 1)
-	if(audiovisual_redirect)
-		var/turf/T = get_turf(src)
-		audiovisual_redirect.playsound_local(turf_source, soundin, vol, vary, frequency, falloff, channel, pressure_affected, S, 0, -1000, turf_source.x - T.x, turf_source.y - T.y, distance_multiplier)
+		if(above_turf && istransparentturf(above_turf))
+			listeners += hearers(maxdistance,above_turf)
+
+		if(below_turf && istransparentturf(turf_source))
+			listeners += hearers(maxdistance,below_turf)
+
+	else
+		if(above_turf && istransparentturf(above_turf))
+			listeners += SSmobs.clients_by_zlevel[above_turf.z]
+
+		if(below_turf && istransparentturf(turf_source))
+			listeners += SSmobs.clients_by_zlevel[below_turf.z]
+
+	for(var/mob/listening_mob as anything in listeners)
+		if(get_dist(listening_mob, turf_source) <= maxdistance)
+			listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb)
+	for(var/mob/listening_mob as anything in SSmobs.dead_players_by_zlevel[source_z])
+		if(get_dist(listening_mob, turf_source) <= maxdistance)
+			listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb)
+
+
+/mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = FALSE)
 	if(!client || !can_hear())
 		return
 
@@ -39,7 +53,6 @@
 	S.wait = 0 //No queue
 	S.channel = channel || SSsounds.random_available_channel()
 	S.volume = vol
-	S.environment = 7
 
 	if(vary)
 		if(frequency)
@@ -51,13 +64,13 @@
 		var/turf/T = get_turf(src)
 
 		//sound volume falloff with distance
-		var/distance = 0
-		if(!manual_x && !manual_y)
-			distance = get_dist(T, turf_source)
+		var/distance = get_dist(T, turf_source)
 
 		distance *= distance_multiplier
 
-		S.volume -= max(distance - world.view, 0) * 2 //multiplicative falloff to add on top of natural audio falloff.
+		if(max_distance) //If theres no max_distance we're not a 3D sound, so no falloff.
+			S.volume -= (max(distance - falloff_distance, 0) ** (1 / falloff_exponent)) / ((max(max_distance, distance) - falloff_distance) ** (1 / falloff_exponent)) * S.volume
+			//https://www.desmos.com/calculator/sqdfl8ipgf
 
 		if(pressure_affected)
 			//Atmosphere affects sound
@@ -72,8 +85,6 @@
 			else //space
 				pressure_factor = 0
 
-			S.echo = list(envdry, null, envwet, null, null, null, null, null, null, null, null, null, null, 1, 1, 1, null, null)
-
 			if(distance <= 1)
 				pressure_factor = max(pressure_factor, 0.15) //touching the source of the sound
 
@@ -83,21 +94,27 @@
 		if(S.volume <= 0)
 			return //No sound
 
-		var/dx = 0 // Hearing from the right/left
-		if(!manual_x)
-			dx = turf_source.x - T.x
-		else
-			dx = manual_x
+		var/dx = turf_source.x - T.x // Hearing from the right/left
 		S.x = dx * distance_multiplier
-		var/dz = 0 // Hearing from infront/behind
-		if(!manual_x)
-			dz = turf_source.y - T.y
-		else
-			dz = manual_y
+		var/dz = turf_source.y - T.y // Hearing from infront/behind
 		S.z = dz * distance_multiplier
-		// The y value is for above your head, but there is no ceiling in 2d spessmens.
-		S.y = 1
-		S.falloff = (falloff ? falloff : FALLOFF_SOUNDS)
+		var/dy = (turf_source.z - T.z) * 5 * distance_multiplier // Hearing from  above / below, multiplied by 5 because we assume height is further along coords.
+		S.y = dy
+
+		S.falloff = max_distance || 1 //use max_distance, else just use 1 as we are a direct sound so falloff isnt relevant.
+
+		// Sounds can't have their own environment. A sound's environment will be:
+		// 1. the mob's
+		// 2. the area's (defaults to SOUND_ENVRIONMENT_NONE)
+		if(sound_environment_override != SOUND_ENVIRONMENT_NONE)
+			S.environment = sound_environment_override
+		else
+			var/area/A = get_area(src)
+			S.environment = A.sound_environment
+
+		if(use_reverb && S.environment != SOUND_ENVIRONMENT_NONE) //We have reverb, reset our echo setting
+			S.echo[3] = 0 //Room setting, 0 means normal reverb
+			S.echo[4] = 0 //RoomHF setting, 0 means normal reverb.
 
 	SEND_SOUND(src, S)
 

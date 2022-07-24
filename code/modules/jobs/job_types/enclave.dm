@@ -20,7 +20,7 @@
 /datum/outfit/job/enclave/peacekeeper
 	id = /obj/item/card/id/dogtag/enclave/trooper
 	mask = /obj/item/clothing/mask/gas/enclave
-	neck = /obj/item/storage/belt/holster/legholster
+	l_pocket = /obj/item/storage/belt/holster/legholster
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
 	belt = /obj/item/storage/belt/military/assault/enclave
@@ -42,6 +42,8 @@
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 
@@ -70,7 +72,7 @@
 
 	head = /obj/item/clothing/head/helmet/f13/enclave/officer
 	uniform = /obj/item/clothing/under/f13/enclave/officer
-	suit = /obj/item/clothing/suit/armor/enclavetrenchcoat
+	suit = /obj/item/clothing/suit/armor/medium/duster/enclave
 	accessory = /obj/item/clothing/accessory/ncr/LT1
 	id = /obj/item/card/id/dogtag/enclave/officer
 	ears = /obj/item/radio/headset/headset_enclave/command
@@ -151,7 +153,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/lsw
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		)
 
@@ -336,7 +338,7 @@
 	head = /obj/item/clothing/head/helmet/f13/envirosuit
 	mask =/obj/item/clothing/mask/breath/medical
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
-	suit = /obj/item/clothing/suit/armor/environmentalsuit
+	suit = /obj/item/clothing/suit/bio_suit/enclave
 	belt = /obj/item/storage/belt/medical
 	suit_store =  /obj/item/tank/internals/oxygen
 
@@ -356,6 +358,15 @@
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)

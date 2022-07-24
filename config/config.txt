@@ -523,7 +523,7 @@ DISABLE_HIGH_POP_MC_MODE_AMOUNT 60
 ##	By default, this is 15x15, which gets simplified to 7 by BYOND, as it is a 1:1 screen ratio.
 ##	For reference, Goonstation uses a resolution of 21x15 for it's widescreen mode.
 ##	Do note that changing this value will affect the title screen. The title screen will have to be updated manually if this is changed.
-DEFAULT_VIEW 17x15
+DEFAULT_VIEW 19x15
 
 ### FAIL2TOPIC:
 ### Automated IP bans for world/Topic() spammers
@@ -551,4 +551,4 @@ CENTCOM_BAN_DB https://centcom.melonmesa.com/ban/search
 ## 0 Disables Border Control
 ## 1 Puts Border Control into 'learning mode' and will have it automatically whitelist new connections
 ## 2 Puts Border Control into 'enforcing mode' and will have it deny connections that are not already whitelisted.
-BORDER_CONTROL 0
+BORDER_CONTROL 2

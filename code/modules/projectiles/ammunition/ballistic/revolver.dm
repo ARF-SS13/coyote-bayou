@@ -2,7 +2,7 @@
 /obj/item/ammo_casing/a357
 	name = ".357 FMJ bullet casing"
 	desc = "A .357 FMJ bullet casing."
-	caliber = "357"
+	caliber = CALIBER_357
 	projectile_type = /obj/item/projectile/bullet/a357
 
 /obj/item/ammo_casing/a357/ricochet
@@ -25,13 +25,12 @@
 /obj/item/ammo_casing/c38
 	name = ".38 special bullet casing"
 	desc = "A .38 special bullet casing."
-	caliber = "38"
+	caliber = CALIBER_38
 	projectile_type = /obj/item/projectile/bullet/c38
 
 /obj/item/ammo_casing/c38/improv
 	name = "homemade .38 special bullet casing"
 	desc = "A .38 special bullet casing."
-	caliber = "38"
 	projectile_type = /obj/item/projectile/bullet/c38/improv
 
 /obj/item/ammo_casing/c38/rubber
@@ -44,14 +43,11 @@
 	desc = "A .38 special incendiary bullet casing. For when you want to be slightly less useless."
 	projectile_type = /obj/item/projectile/bullet/c38/incendiary
 
-
-
-
 // .44 magnum
 /obj/item/ammo_casing/m44
 	name = ".44 magnum FMJ bullet casing"
 	desc = "A .44 magnum full metal jacket bullet casing."
-	caliber = "44"
+	caliber = CALIBER_44
 	projectile_type = /obj/item/projectile/bullet/m44
 
 /obj/item/ammo_casing/m44/incendiary
@@ -63,15 +59,13 @@
 /obj/item/ammo_casing/c4570
 	name = ".45-70 FMJ bullet casing"
 	desc = "A .45-70 full metal jacket bullet casing."
-	caliber = "4570"
+	caliber = CALIBER_4570
 	projectile_type = /obj/item/projectile/bullet/c4570
 
 /obj/item/ammo_casing/c4570/explosive
 	name = ".45-70 explosive bullet casing"
 	desc = "A .45-70 explosive bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c4570/explosive
-
-
 
 /obj/item/ammo_casing/c4570/knockback
 	name = ".45-70 ultradense bullet casing"
@@ -82,5 +76,5 @@
 /obj/item/ammo_casing/a45lc
 	name = ".45 Long Colt bullet casing"
 	desc = "An archaic .45 long colt bullet casing."
-	caliber = "a45lc"
+	caliber = CALIBER_45LC
 	projectile_type = /obj/item/projectile/bullet/a45lc

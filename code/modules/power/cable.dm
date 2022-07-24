@@ -556,7 +556,7 @@ By design, d1 is the smallest direction and d2 is the highest
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && affecting.status == BODYPART_ROBOTIC)
 		//only heal to 25 if limb is damaged to or past 25 burn, otherwise heal normally
-		var/difference = affecting.burn_dam - 25
+		var/difference = affecting.burn_dam - 0
 		var/heal_amount = 15
 		if(difference >= 0)
 			heal_amount = difference
@@ -873,4 +873,3 @@ By design, d1 is the smallest direction and d2 is the highest
 	. = ..()
 	var/list/cable_colors = GLOB.cable_colors
 	color = pick(cable_colors)
-

@@ -20,7 +20,7 @@
 	maxHealth = 80
 	health = 80
 	spacewalk = TRUE
-	stat_attack = UNCONSCIOUS
+	stat_attack = CONSCIOUS
 	robust_searching = 1
 	blood_volume = 0
 

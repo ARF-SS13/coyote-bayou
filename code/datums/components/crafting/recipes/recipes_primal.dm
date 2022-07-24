@@ -360,7 +360,7 @@
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
-	result = /obj/item/storage/belt/tribe_quiver
+	result = /obj/item/storage/bag/tribe_quiver
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/metal = 4,
@@ -380,7 +380,7 @@
 
 /datum/crafting_recipe/tribalwar/lighttribe
 	name = "Light Tribal Plates"
-	result = /obj/item/clothing/suit/armor/tribe_armor
+	result = /obj/item/clothing/suit/armor/light/tribal/strips
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/sheet/cloth = 5)
@@ -390,7 +390,7 @@
 
 /datum/crafting_recipe/tribalwar/heavytribe
 	name = "Heavy Tribal Plates"
-	result = /obj/item/clothing/suit/armor/tribe_heavy_armor
+	result = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	time = 600
 	reqs = list(/obj/item/stack/sheet/metal = 20,
 				/obj/item/stack/sheet/cloth = 5)
@@ -411,7 +411,7 @@
 
 /datum/crafting_recipe/tribalwar/chitinarmor
 	name = "Insect Chitin Armor"
-	result = /obj/item/clothing/suit/armor/light/tribal/chitinarmor
+	result = /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	time = 30
 	reqs = list(/obj/item/stack/sheet/animalhide/chitin = 12,
 				/obj/item/stack/sheet/sinew = 4,
@@ -419,8 +419,6 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
-
-/* Host says get rid of deathclaw spear.
 
 /datum/crafting_recipe/tribalwar/deathclawspear
 	name = "Deathclaw Spear"
@@ -433,11 +431,10 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = FALSE
-*/
 
 /datum/crafting_recipe/tribalwar/lightcloak
 	name = "Light Armored Cloak"
-	result = /obj/item/clothing/suit/armor/lightcloak
+	result = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	time = 120
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 8,
 				/obj/item/stack/sheet/leather = 6,

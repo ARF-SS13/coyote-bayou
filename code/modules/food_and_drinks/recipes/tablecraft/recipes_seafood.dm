@@ -1,6 +1,6 @@
 // see code/module/crafting/table.dm
 
-/*
+
 ///////////////////////Sushi Components///////////////////////////
 
 /datum/crafting_recipe/food/sushi_rice
@@ -10,17 +10,17 @@
 		/datum/reagent/consumable/rice = 10
 	)
 	result = /obj/item/reagent_containers/food/snacks/sushi_rice
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sea_weed
 	name = "Sea Weed Sheet"
 	reqs = list(
 		/datum/reagent/water = 30,
 		/datum/reagent/consumable/soysauce = 5,
-		/obj/item/reagent_containers/food/snacks/grown/kudzupod = 1,
+		/obj/item/reagent_containers/food/snacks/grown/herbs = 1,
 	)
 	result = /obj/item/reagent_containers/food/snacks/sea_weed
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 //////////////////////////Sushi/////////////////////////////////
 
@@ -32,7 +32,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sashimi
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/riceball
 	name = "Onigiri"
@@ -42,7 +42,7 @@
 		/obj/item/reagent_containers/food/snacks/sushi_rice = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/riceball
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushie_egg
 	name = "Tobiko"
@@ -52,7 +52,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 2,
 	)
 	result = /obj/item/reagent_containers/food/snacks/tobiko
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushie_basic
 	name = "Funa Hosomaki"
@@ -63,7 +63,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 3,
 	)
 	result = /obj/item/reagent_containers/food/snacks/sushie_basic
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushie_adv
 	name = "Funa Nigiri"
@@ -73,7 +73,7 @@
 		/obj/item/reagent_containers/food/snacks/fishmeat/carp = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sushie_adv
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushie_pro
 	name = "Well made Funa Nigiri"
@@ -84,7 +84,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/sushie_pro
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_sake
 	name = "Sake Sushi (Salmon)"
@@ -95,7 +95,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/sake_sushi
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_cookedsalmon
 	name = "Cooked Salmon Sushi"
@@ -106,7 +106,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/sake_cookedsalmon
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_ebi
 	name = "Ebi Sushi (Cooked Shrimp)"
@@ -117,7 +117,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/ebi_sushi
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_ikura
 	name = "Ikura Sushi (Salmon Roe)"
@@ -128,7 +128,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/ikura_sushi
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_maguro
 	name = "Maguro Sushi (Tuna)"
@@ -139,7 +139,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/maguro_sushi
-	subcategory = CAT_SEAFOOD
+	subcategory = CAT_MISCFOOD
 
 /datum/crafting_recipe/food/sushi_masago
 	name = "Masago Sushi (Any Roe)"
@@ -150,8 +150,7 @@
 		/obj/item/reagent_containers/food/snacks/sea_weed = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing_sushi/masago_sushi
-	subcategory = CAT_SEAFOOD
-*/
+	subcategory = CAT_MISCFOOD
 
 //////////////////////////////////////////////FISH///////////////////////////////////////////
 
@@ -219,7 +218,7 @@
 	name = "Lobster Roll"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/bun = 1,
-		/obj/item/reagent_containers/food/snacks/fishmeat/lobster = 1
+		/obj/item/reagent_containers/food/snacks/fishmeat/crawdad = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/fishing/lobster_roll
 	subcategory = CAT_MISCFOOD
@@ -227,7 +226,7 @@
 /datum/crafting_recipe/food/lobsterdeluxe
 	name = "Fish fry"
 	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked = 1,
+		/obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked = 1,
 		/obj/item/reagent_containers/food/snacks/grown/citrus/lemon =1,
 		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1
 	)

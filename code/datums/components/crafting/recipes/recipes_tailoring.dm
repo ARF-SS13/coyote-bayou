@@ -132,8 +132,8 @@ datum/crafting_recipe/steelbib
 	subcategory = CAT_ARMOR
 
 datum/crafting_recipe/steelbib/heavy
-	name = "Heavy Steel Breastplate"
-	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
+	name = "Reinforved Steel Breastplate"
+	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/prewar = 5)
@@ -583,6 +583,16 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
+/datum/crafting_recipe/leathersack
+	name = "leather sack"
+	result = /obj/item/storage/bag/trash/sack
+	reqs = list(/obj/item/stack/sheet/leather = 10,
+				/obj/item/stack/sheet/hay = 6)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
+
 //General clothing
 
 /datum/crafting_recipe/jeans
@@ -892,6 +902,60 @@ datum/crafting_recipe/steelbib/heavy
 	reqs = list(/obj/item/stack/sheet/cloth = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 5
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/chestpatch
+	name = "Chest patch / insignia"
+	result = /obj/item/clothing/accessory/patch
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/armpatch
+	name = "Arm patch / insignia"
+	result = /obj/item/clothing/accessory/patch/arm
+	reqs = list(/obj/item/stack/sheet/cloth = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/rainbowbunchcrown
+	name = "Rainbow Flower Crown"
+	result = /obj/item/clothing/head/rainbowbunchcrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/sunflowercrown
+	name = "Sunflower Crown"
+	result = /obj/item/clothing/head/sunflowercrown/
+	time = 20
+	reqs = list(/obj/item/grown/sunflower = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/poppycrown
+	name = "Poppy Crown"
+	result = /obj/item/clothing/head/poppycrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy = 5,
+				/obj/item/stack/cable_coil = 3)
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/lilycrown
+	name = "Lily Crown"
+	result = /obj/item/clothing/head/lilycrown/
+	time = 20
+	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 3,
+				/obj/item/stack/cable_coil = 3)
 	category = CAT_CLOTHING
 	subcategory = CAT_MISCCLOTHING
 

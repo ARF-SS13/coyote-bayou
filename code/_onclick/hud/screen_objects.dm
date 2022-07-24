@@ -186,7 +186,11 @@
 		if(I)
 			I.Click(location, control, params)
 	else
-		user.swap_hand(held_index)
+		var/obj/item/I = user.get_inactive_held_item()
+		if(I)
+			I.Click(location, control, params)
+		else
+			user.swap_hand(held_index)
 	return TRUE
 
 

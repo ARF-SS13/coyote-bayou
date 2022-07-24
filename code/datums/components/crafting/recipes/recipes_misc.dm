@@ -66,7 +66,7 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/sink
 	name = "Sink"
@@ -75,7 +75,8 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/shower
 	name = "Shower"
 	result = /obj/machinery/shower
@@ -102,6 +103,7 @@
 	result = /obj/structure/curtain
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 /datum/crafting_recipe/dogbed
 	name = "Dog Bed"
 	result = /obj/structure/bed/dogbed
@@ -119,6 +121,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 ///////////////////////////
 //Scavenging and Tinkering//
 ///////////////////////////
@@ -419,42 +422,6 @@
 
 */
 
-/datum/crafting_recipe/rainbowbunchcrown
-	name = "Rainbow Flower Crown"
-	result = /obj/item/clothing/head/rainbowbunchcrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/sunflowercrown
-	name = "Sunflower Crown"
-	result = /obj/item/clothing/head/sunflowercrown/
-	time = 20
-	reqs = list(/obj/item/grown/sunflower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/poppycrown
-	name = "Poppy Crown"
-	result = /obj/item/clothing/head/poppycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lilycrown
-	name = "Lily Crown"
-	result = /obj/item/clothing/head/lilycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 3,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
 	result = /obj/item/electropack/shockcollar
@@ -463,5 +430,22 @@
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
 	time = 30
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rolling_paper
+	name = "Rolling Paper"
+	result = /obj/item/rollingpaper
+	reqs = list(/obj/item/paper/natural = 1)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rolling_paper_bulk
+	name = "Rolling Paper (Bulk)"
+	result = /obj/item/storage/fancy/rollingpapers/makeshift
+	reqs = list(/obj/item/paper/natural = 10,
+				/obj/item/stack/sheet/cardboard = 1)
+	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

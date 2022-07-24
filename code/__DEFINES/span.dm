@@ -101,6 +101,8 @@
 #define span_smallnotice(str) ("<span class='smallnotice'>" + str + "</span>")
 #define span_smallnoticeital(str) ("<span class='smallnoticeital'>" + str + "</span>")
 #define span_spider(str) ("<span class='spider'>" + str + "</span>")
+#define span_subtle(str) ("<span class='subtle'>" + str + "</span>") // literally just a blank wrapper
+#define span_subtler(str) ("<span class='subtler'>" + str + "</span>") // so it'll be picked up by the filter
 #define span_suicide(str) ("<span class='suicide'>" + str + "</span>")
 #define span_suppradio(str) ("<span class='suppradio'>" + str + "</span>")
 #define span_swarmer(str) ("<span class='swarmer'>" + str + "</span>")

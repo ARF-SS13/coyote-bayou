@@ -3,7 +3,7 @@
 	desc = "A drum magazine."
 	icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
-	caliber = "shotgun"
+	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/m12g/update_icon()
@@ -49,7 +49,7 @@
 	desc = "A 12g drum magazine."
 	icon_state = "riotmag"
 	ammo_type = /obj/item/ammo_casing/shotgun
-	caliber = "shotgun"
+	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 12
 	multiple_sprites = 2
 

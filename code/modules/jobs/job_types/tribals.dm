@@ -1,4 +1,4 @@
-/datum/job/tribals 
+/datum/job/tribal 
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
@@ -17,13 +17,44 @@
 		"This week is one of rememberance.  Think of the times when our tribe came forth from The Cave of Crying.  Of the friends and loved ones lost.  Remember peace, and cry for what is lost.",
 		"This week is one of rememberance.  Think of the times when our tribe has failed at our duties and work together as the family we are to try and solve internal issues. Tomorrow can be better, if only we try today.")
 
+GLOBAL_LIST_INIT(tribal_job_recipes, list(
+	/datum/crafting_recipe/tribal_pa,
+	/datum/crafting_recipe/tribal_pa_helmet,
+	/datum/crafting_recipe/tribal_combat_armor,
+	/datum/crafting_recipe/tribal_combat_armor_helmet,
+	/datum/crafting_recipe/tribal_r_combat_armor,
+	/datum/crafting_recipe/tribal_r_combat_armor_helmet,
+	/datum/crafting_recipe/tribalwar/chitinarmor,
+	/datum/crafting_recipe/tribalwar/lightcloak,
+	/datum/crafting_recipe/warmace,
+	/datum/crafting_recipe/tribalwar/lighttribe,
+	/datum/crafting_recipe/tribalwar/heavytribe,
+	/datum/crafting_recipe/tribalwar/legendaryclawcloak,
+	/datum/crafting_recipe/tribalwar/deathclawspear,
+	/datum/crafting_recipe/warpaint,
+	/datum/crafting_recipe/tribalradio,
+	/datum/crafting_recipe/tribalwar/goliathcloak,
+	/datum/crafting_recipe/tribalwar/bonebow,
+	/datum/crafting_recipe/tribalwar/tribe_bow,
+	/datum/crafting_recipe/tribalwar/sturdybow,
+	/datum/crafting_recipe/tribalwar/warclub,
+	/datum/crafting_recipe/tribalwar/silverbow,
+	/datum/crafting_recipe/tribalwar/arrowbone,
+	/datum/crafting_recipe/tribalwar/bonespear,
+	/datum/crafting_recipe/tribalwar/bonecodpiece,
+	/datum/crafting_recipe/tribalwar/bracers,
+	/datum/crafting_recipe/tribal/bonetalisman,
+	/datum/crafting_recipe/healpoultice,
+	/datum/crafting_recipe/healpoultice5,
+	/datum/crafting_recipe/tribal/bonebag))
+
 /datum/outfit/job/tribal/
 	name = "Tribal"
 	jobtype = /datum/job/tribal/
-	shoes = 		/obj/item/clothing/shoes/sandal
-	gloves =        /obj/item/clothing/gloves/f13/handwraps
-	backpack = 	/obj/item/storage/backpack/explorer
-	satchel = 	/obj/item/storage/backpack/satchel/explorer
+	shoes = /obj/item/clothing/shoes/sandal
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	backpack = /obj/item/storage/backpack/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
 	id = null
 	box = /obj/item/storage/survivalkit_tribal
 	ears = null
@@ -34,22 +65,17 @@
 		return
 	ADD_TRAIT(H, TRAIT_TRIBAL, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	ADD_TRAIT(H, TRAIT_TRAPPER, src)
 	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, src)
+	ADD_TRAIT(H, TRAIT_AUTO_DRAW, src)
+	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 	H.grant_language(/datum/language/tribal)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/punji_sticks)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_combat_armor_helmet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribal_pa_helmet)
-
+	for(var/datum/crafting_recipe/recipe as() in GLOB.tribal_job_recipes)
+		H.mind.teach_crafting_recipe(recipe)
 
 /*
 Tribal Chief
 */
-/datum/job/tribal
-	exp_type = EXP_TYPE_TRIBAL
 
 /datum/job/tribal/f13chief
 	title = "Chief"
@@ -58,6 +84,7 @@ Tribal Chief
 	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Elders of the tribe."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -104,6 +131,7 @@ Tribal Shaman
 	faction = FACTION_TRIBE
 	total_positions = 2
 	spawn_positions = 2
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -136,18 +164,19 @@ Tribal Shaman
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
 	jobtype = /datum/job/tribal/f13shaman
-	uniform = 	/obj/item/clothing/under/f13/tribe
-	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/sandal
-	r_hand = 	/obj/item/twohanded/sledgehammer/shamanstaff
-	id = 		/obj/item/card/id/tribetattoo
+	uniform = /obj/item/clothing/under/f13/tribe
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	r_hand = /obj/item/twohanded/sledgehammer/shamanstaff
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/smelling_salts/wayfarer=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2
+		/obj/item/reagent_containers/pill/patch/healpoultice=2,
+		/obj/item/flashlight/lantern = 1,
 	)
 
 /datum/outfit/job/tribal/f13shaman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -180,6 +209,7 @@ Tribal Head Hunter
 	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Elders of the tribe and the chief."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -212,17 +242,18 @@ Tribal Head Hunter
 /datum/outfit/job/tribal/f13Hhunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13Hhunter
-	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
-	suit = 		/obj/item/clothing/suit/hooded/cloak/shunter
-	belt = 		/obj/item/melee/transforming/cleaving_saw
-	id = 		/obj/item/card/id/tribetattoo
+	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
+	suit = /obj/item/clothing/suit/hooded/cloak/shunter
+	belt = /obj/item/melee/transforming/cleaving_saw
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
-		/obj/item/restraints/legcuffs/bola=1,
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/restraints/legcuffs/bola/tactical=2,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1,
+		/obj/item/flashlight/lantern = 1
+	)
 
 /*
 Druid
@@ -235,6 +266,7 @@ Druid
 	faction = FACTION_TRIBE
 	total_positions = 1
 	spawn_positions = 1
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The Chief and the Shaman."
 	enforces = "The ways of the Sulphur River  spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -271,18 +303,19 @@ Druid
 /datum/outfit/job/tribal/f13druid
 	name = "Druid"
 	jobtype = /datum/job/tribal/f13druid
-	head = 		/obj/item/clothing/head/helmet/f13/wayfarer/antler
-	uniform = 	/obj/item/clothing/under/f13/wayfarer/acolyte
-	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/sandal
-	id = 		/obj/item/card/id/tribetattoo
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/antler
+	uniform = /obj/item/clothing/under/f13/wayfarer/acolyte
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/glass/mortar=1,
 		/obj/item/pestle=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/melee/onehanded/knife/ritualdagger=1,
 		/obj/item/reagent_containers/glass/primitive_chem_isolator=1,
-		/obj/item/reagent_containers/pill/patch/healpoultice=2)
+		/obj/item/reagent_containers/pill/patch/healpoultice=2
+	)
 
 /*
 Villager
@@ -295,6 +328,7 @@ Villager
 	faction = FACTION_TRIBE
 	total_positions = 10
 	spawn_positions = 10
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "Tribal Chief, Shaman and Headhunter"
 	description = "A proud member of the Sulphur Bottom tribe, you do what needs to be done to ensure the survival of yourself and your people while following the laws of the tribe. While it is common to venture out into the wasteland, do not tread far or without informing your kin."
 	selection_color = "#006666"
@@ -332,15 +366,16 @@ Villager
 /datum/outfit/job/tribal/f13villager
 	name = "Villager"
 	jobtype = /datum/job/tribal/f13villager
-	uniform = 	/obj/item/clothing/under/f13/wayfarer
-	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/sandal
-	id = 		/obj/item/card/id/tribetattoo
+	uniform = /obj/item/clothing/under/f13/wayfarer
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=1,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1
+	)
 
 /datum/outfit/loadout/gatherer
 	name = "Gatherer"
@@ -348,7 +383,7 @@ Villager
 		/obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
-		)
+	)
 
 /datum/outfit/loadout/gardener
 	name = "Gardener"
@@ -367,7 +402,7 @@ Villager
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/reagent_containers/glass/mortar = 1,
 		/obj/item/pestle=1,
-		)
+	)
 
 /datum/outfit/loadout/craftsman
 	name = "Craftsman"
@@ -389,6 +424,7 @@ Hunter
 	faction = FACTION_TRIBE
 	total_positions = 5
 	spawn_positions = 2
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "The chief and Head Hunter."
 	enforces = "The ways of the Sulphur River spirits."
 	forbids = "Abusing technology and using Pre-Collapse weapons."
@@ -431,28 +467,29 @@ Hunter
 /datum/outfit/job/tribal/f13hunter
 	name = "Hunter"
 	jobtype = /datum/job/tribal/f13hunter
-	head = 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter
-	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
-	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/tribe_armor
-	id = 		/obj/item/card/id/tribetattoo
+	head = /obj/item/clothing/head/helmet/f13/wayfarer/hunter
+	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	suit = /obj/item/clothing/suit/armor/light/tribal/strips
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
-		/obj/item/flashlight/flare/torch=1)
+		/obj/item/flashlight/flare/torch=1
+	)
 
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
 		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
+		/obj/item/storage/bag/tribe_quiver/bone = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
-		)
+	)
 
 /datum/outfit/loadout/melee
 	name = "Frontline"
@@ -462,7 +499,7 @@ Hunter
 		/obj/item/restraints/legcuffs/bola/tactical = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 		/obj/item/twohanded/spear/bonespear/deathclaw = 1,
-		)
+	)
 
 /*
 Spirit-Pledged
@@ -474,6 +511,7 @@ Spirit-Pledged
 	faction = FACTION_TRIBE
 	total_positions = 3
 	spawn_positions = 3
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All other tribals."
 	description = "An outsider to the tribe, you have been welcomed to learn their ways and grow closer to their culture and lifestyle, do NOT run off alone into the wasteland without the supervision of another higher ranking tribal."
 	selection_color = "#006666"
@@ -496,12 +534,12 @@ Spirit-Pledged
 /datum/outfit/job/tribal/f13spiritpledged
 	name = "Spirit-Pledged"
 	jobtype = /datum/job/tribal/f13spiritpledged
-	uniform =	/obj/item/clothing/under/f13/wayfarer
-	id = 		/obj/item/card/id/tribetattoo
+	uniform = /obj/item/clothing/under/f13/wayfarer
+	id = /obj/item/card/id/tribetattoo
 
-
+/*
 Guardian
-
+*/
 
 /datum/job/tribal/f13guardian
 	title = "Guardian"
@@ -510,6 +548,7 @@ Guardian
 	faction = FACTION_TRIBE
 	total_positions = 3
 	spawn_positions = 3
+	exp_type = EXP_TYPE_TRIBAL
 	supervisors = "All leadership, but the Chief is priority"
 	description = "A hand chosen Hunter with much promise, you are one of the village Guardians. An elite Hunter given the duty to protect the village, your duty is to ensure your kin are safe at all costs, as well as follow any orders from your superiors and enforce the law of the tribe. Do not leave the village unless circumstances allow it."
 	selection_color = "#006666"
@@ -530,15 +569,16 @@ Guardian
 /datum/outfit/job/tribal/f13guardian
 	name = "Guardian"
 	jobtype = /datum/job/tribal/f13guardian
-	uniform = 	/obj/item/clothing/under/f13/wayfarer/hunter
-	gloves = 	/obj/item/clothing/gloves/f13/handwraps
-	shoes = 	/obj/item/clothing/shoes/sandal
-	suit = 		/obj/item/clothing/suit/armor/tribe_heavy_armor
+	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	shoes = /obj/item/clothing/shoes/sandal
+	suit = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
-	id = 		/obj/item/card/id/tribetattoo
+	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,
 		/obj/item/warpaint_bowl=1,
 		/obj/item/stack/medical/gauze=1,
 		/obj/item/flashlight/flare/torch=1,
-		/obj/item/restraints/legcuffs/bola/tactical=1)
+		/obj/item/restraints/legcuffs/bola/tactical=1
+	)

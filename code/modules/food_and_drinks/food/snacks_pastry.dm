@@ -683,6 +683,15 @@
 	tastes = list("cake" = 2, "strawberry" = 1)
 	foodtype = GRAIN | FRUIT | SUGAR
 
+/obj/item/reagent_containers/food/snacks/cannoli
+	name = "cannoli"
+	desc = "A sicilian treat that makes you into a wise guy."
+	icon_state = "cannoli"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("pastry" = 1)
+	foodtype = GRAIN | DAIRY | SUGAR
+	w_class = WEIGHT_CLASS_TINY
+
 /obj/item/reagent_containers/food/snacks/honeybun
 	name = "honey bun"
 	desc = "A sticky pastry bun glazed with honey."

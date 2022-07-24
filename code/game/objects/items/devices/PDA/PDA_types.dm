@@ -95,7 +95,7 @@
 	ttone = "bwoink"
 	detonatable = FALSE
 	hidden = TRUE
-	note = "Congratulations, you have chosen the Thinktronic 5230-2 Personal Data Assistant Prestige Edition! To help with navigation, we have provided the following definitions. North: Fore. South: Aft. West: Port. East: Starboard. Quarter is either side of aft."
+	note = "Congratulations, you have chosen the RobCo Pip-Boy 3000 Personal Information Processor Prestige Edition! To help with navigation, we have provided the following definitions. North, South, West, East."
 
 /obj/item/pda/cargo
 	name = "cargo technician PDA"
@@ -147,8 +147,8 @@
 	current_overlays = list("pda-r-library","blank","id_overlay","insert_overlay", "light_overlay", "pai_overlay")
 	default_cartridge = /obj/item/cartridge/curator
 	inserted_item = /obj/item/pen/fountain
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. This model is a WGW-11 series e-reader."
-	note = "Congratulations, your station has chosen the Thinktronic 5290 WGW-11 Series E-reader and Personal Data Assistant! To help with navigation, we have provided the following definitions. North: Fore. South: Aft. West: Port. East: Starboard. Quarter is either side of aft."
+	desc = "A portable microcomputer by RobCo Industries. This model is a WGW-11 series e-reader."
+	note = "Congratulations, your Vault has chosen the RobCo Pip-Boy 3000 E-reader and Personal Information Processor! To help with navigation, we have provided the following definitions. North, South, West, East."
 	silent = TRUE //Quiet in the library!
 	overlays_offsets = list('icons/obj/pda.dmi' = list(-3,0))
 	overlays_x_offset = -3
@@ -156,15 +156,15 @@
 /obj/item/pda/clear
 	name = "clear PDA"
 	icon_state = "pda-clear"
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. This model is a special edition with a transparent case."
-	note = "Congratulations, you have chosen the Thinktronic 5230 Personal Data Assistant Deluxe Special Max Turbo Limited Edition! To help with navigation, we have provided the following definitions. North: Fore. South: Aft. West: Port. East: Starboard. Quarter is either side of aft."
+	desc = "A portable microcomputer by RobCo Industries. This model is a special edition with a transparent case."
+	note = "Congratulations, your Vault has chosen the RobCo Pip-Boy 3000 Personal Information Processor Deluxe Special Max Turbo Limited Edition! To help with navigation, we have provided the following definitions. North, South, West, East."
 
 /obj/item/pda/neko
 	name = "neko PDA"
 	icon_state = "pda-neko"
 	overlays_icons = list('icons/obj/pda_alt.dmi' = list("pda-r", "screen_neko", "id_overlay", "insert_overlay", "light_overlay", "pai_overlay"))
-	desc = "A portable microcomputer by Thinktronic Systems, LTD. This model is a special feline edition."
-	note = "Congratulations, you have chosen the Thinktronic 5230 Personal Data Assistant Deluxe Special Mew Turbo Limited Edition NYA~! To help with navigation, we have provided the following definitions. North: Fore. South: Aft. West: Port. East: Starboard. Quarter is either side of aft."
+	desc = "A portable microcomputer by RobCo Industries. This model is a special feline edition."
+	note = "Congratulations, your Vault has chosen the RobCo Pip-Boy 3000 Personal Information Processor Deluxe Special Max Turbo Limited Edition NYA~!  To help with navigation, we have provided the following definitions. North, South, West, East."
 
 /obj/item/pda/cook
 	name = "cook PDA"
@@ -189,3 +189,5 @@
 	name = "geneticist PDA"
 	default_cartridge = /obj/item/cartridge/medical
 	icon_state = "pda-genetics"
+
+

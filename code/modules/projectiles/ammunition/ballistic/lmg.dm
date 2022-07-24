@@ -4,7 +4,7 @@
 	name = "1.95x129mm bullet casing"
 	desc = "A 1.95x129mm bullet casing."
 	icon_state = "762-casing"
-	caliber = "mm195129"
+	caliber = CALIBER_195
 	projectile_type = /obj/item/projectile/bullet/mm195x129
 
 /obj/item/ammo_casing/mm195x129/ap
@@ -25,6 +25,7 @@
 /obj/item/ammo_casing/mm712x82/match
 	name = "7.12x82mm match bullet casing"
 	desc = "A 7.12x82mm bullet casing manufactured to unfailingly high standards, you could pull off some cool trickshots with this."
+	caliber = CALIBER_712
 	projectile_type = /obj/item/projectile/bullet/mm712x82_match
 
 /obj/item/projectile/bullet/mm712x82_match

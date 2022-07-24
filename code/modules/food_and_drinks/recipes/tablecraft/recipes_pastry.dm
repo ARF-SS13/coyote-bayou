@@ -173,3 +173,14 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/plumphelmetbiscuit
 	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/cannoli
+	time = 15
+	name = "Cannoli"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1,
+		/datum/reagent/consumable/milk = 1,
+		/datum/reagent/consumable/sugar = 3
+	)
+	result = /obj/item/reagent_containers/food/snacks/cannoli
+	subcategory = CAT_PASTRY

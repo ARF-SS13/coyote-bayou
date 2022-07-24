@@ -73,6 +73,7 @@ Raider
 		/obj/item/melee/onehanded/club = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/radio/redwater = 1,
 		)
 
 
@@ -320,7 +321,7 @@ Raider
 	id = /obj/item/card/id/rusted/fadedvaultid
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/smg/smg10mm = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 1,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext = 1,
 		)
 
 /datum/outfit/loadout/raider_tribal
@@ -431,7 +432,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/storage/backpack/duffelbag/scavengers
 	l_hand = /obj/item/pickaxe/drill
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(/obj/item/mining_scanner=1,
 							/obj/item/metaldetector=1,
 							/obj/item/shovel=1,
@@ -443,7 +444,7 @@ Raider
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	r_hand = /obj/item/hatchet
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/n99
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	backpack_contents = list(
 		/obj/item/stack/sheet/metal = 50,
 		/obj/item/stack/sheet/mineral/wood = 50,
@@ -498,7 +499,7 @@ Raider
 	ears = /obj/item/radio/headset
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple=2,
 		/obj/item/pda=1,)
 
 /datum/outfit/loadout/warrior
@@ -972,7 +973,7 @@ datum/job/wasteland/f13dendoctor
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/type17
 	suit = /obj/item/clothing/suit/toggle/labcoat/chemist
 	backpack_contents = list(
-						/obj/item/ammo_box/magazine/m10mm_adv/simple=1, \
+						/obj/item/ammo_box/magazine/m10mm/adv/simple=1, \
 						/obj/item/grenade/chem_grenade=1, \
 						/obj/item/clothing/mask/gas=1, \
 						/obj/item/reagent_containers/glass/beaker/large=2 \
@@ -1031,7 +1032,7 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/desert_ranger
 	name = "Desert Ranger"
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	r_hand = /obj/item/gun/ballistic/revolver/revolver44/desert_ranger
 	backpack_contents = list(
 							)
@@ -1076,7 +1077,7 @@ datum/job/wasteland/f13dendoctor
 	backpack = /obj/item/storage/backpack/satchel/trekker
 	gloves = /obj/item/clothing/gloves/f13/military
 	head = /obj/item/clothing/head/helmet/f13/ncr/rangercombat/desert
-	suit = /obj/item/clothing/suit/armor/rangercombat/desert
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger
 	suit_store = /obj/item/gun/ballistic/revolver/sequoia/death
 	glasses = /obj/item/clothing/glasses/hud/health/night
 	backpack_contents = list(
@@ -1101,11 +1102,12 @@ datum/job/wasteland/f13dendoctor
 	title = "Far-Lands Tribals"
 	flag = F13TRIBAL
 	faction = FACTION_WASTELAND
+	social_faction = FACTION_TRIBE
 	total_positions = -1
 	spawn_positions = -1
 	description = "You are a member of the of a tribe who has wandered to this area, but does not belong to the Sulphur Bottom tribe.  From where you came is up to you, why you are here is your own, and it is up to you to survive on your own and attempt to thrive."
 	supervisors = "the Ways of your own tribe."
-	
+
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/wasteland/f13tribal
@@ -1156,7 +1158,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal_r_combat_armor,
 		/datum/crafting_recipe/tribal_r_combat_armor_helmet,
 		/datum/crafting_recipe/tribalwar/chitinarmor,
-//		/datum/crafting_recipe/tribalwar/deathclawspear,
+		/datum/crafting_recipe/tribalwar/deathclawspear,
 		/datum/crafting_recipe/tribalwar/lightcloak,
 		/datum/crafting_recipe/tribalwar/legendaryclawcloak,
 		/datum/crafting_recipe/warpaint,
@@ -1179,7 +1181,6 @@ datum/job/wasteland/f13dendoctor
 	for(var/datum/crafting_recipe/recipe as() in recipes)
 		H.mind.teach_crafting_recipe(recipe)
 	H.grant_language(/datum/language/tribal)
-	H.social_faction = FACTION_WASTELAND
 	add_verb(H, /mob/living/proc/create_tribe)
 
 
@@ -1255,8 +1256,7 @@ datum/job/wasteland/f13dendoctor
 	neck = /obj/item/clothing/neck/mantle/brown
 	backpack_contents = list(
 		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/belt/tribe_quiver/bone = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver/archer = 1,
 		/obj/item/binoculars = 1,
 		/obj/item/melee/onehanded/club/warclub = 1,
 		)
@@ -1329,7 +1329,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/unarmed/yaoguaigauntlet = 1,
 		/obj/item/reagent_containers/pill/patch/healpoultice = 2,
 		/obj/item/gun/ballistic/bow = 1,
-		/obj/item/storage/belt/tribe_quiver = 1,
+		/obj/item/storage/bag/tribe_quiver = 1,
 		/obj/item/book/granter/crafting_recipe/tribal/sorrows = 1
 	)
 
@@ -1392,7 +1392,7 @@ datum/job/wasteland/f13dendoctor
 //Wayfarers
 /datum/outfit/loadout/wayfarermelee
 	name = "Wayfarer Warrior"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/clothing/under/f13/wayfarer = 1,
 		/obj/item/clothing/head/helmet/f13/wayfarer/hunter = 1,
@@ -1403,7 +1403,7 @@ datum/job/wasteland/f13dendoctor
 
 /datum/outfit/loadout/wayfarershaman
 	name = "Wayfarer Shaman"
-	suit = /obj/item/clothing/suit/armor/lightcloak
+	suit = /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,
@@ -1470,7 +1470,7 @@ datum/job/wasteland/f13dendoctor
 
 
 /////////////////
-////Redwater///// 
+////Redwater/////
 /////////////////
 
 //Redwater Slave
@@ -1519,11 +1519,12 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/redwatersalve
 	name = "Redwater Slave"
 	uniform = /obj/item/clothing/under/f13/rag
+	back = /obj/item/storage/backpack/satchel/explorer
 	neck = /obj/item/electropack/shockcollar/explosive
 
 	backpack_contents =  list(
 		/obj/item/reagent_containers/pill/healingpowder =1)
-							
+
 
 //Worker
 /datum/outfit/loadout/worker
@@ -1540,7 +1541,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/shoes/f13/diesel =1,
 		/obj/item/storage/backpack/duffelbag =1,
-		/obj/item/storage/box = 4, 
+		/obj/item/storage/box = 4,
 		/obj/item/book/granter/trait/trekking = 1)
 
 //Entertainer
@@ -1556,12 +1557,140 @@ datum/job/wasteland/f13dendoctor
 	name = "Sex Slave"
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
-		/obj/item/clothing/under/dress/skirt/swept =1, 
-		/obj/item/clothing/under/jeanbshorts =1)
+		/obj/item/clothing/under/dress/skirt/swept =1,
+		/obj/item/clothing/under/shorts/jeanbshorts =1)
 
 //Redwater Slave Spawn Point code
 /obj/effect/landmark/start/redwaterSlave
 	name = "Redwater Slave"
+	icon_state = "Wastelander"
+	jobspawn_override = TRUE
+	delete_after_roundstart = FALSE
+
+
+
+/datum/job/wasteland/f13overboss
+	title = "Redwater Overboss"
+	flag = F13MOBBOSS
+	faction = FACTION_WASTELAND
+	department_head = list("Captain")
+	head_announce = list("Security")
+	faction = FACTION_WASTELAND
+	social_faction = FACTION_RAIDERS
+	total_positions = 1
+	spawn_positions = 1
+	description = "You're the big gun here, pardner. As the Overboss of Redwater, you have the unfortunate position of being a mayor to all these hooligans and miscreants. Use your supply of caps and bullets to keep people in order. "
+	supervisors = "Your conscience (HAH), wallet, and constituents."
+	selection_color = "#df80af"
+	exp_requirements = 600
+	exp_type = EXP_TYPE_WASTELAND
+
+	loadout_options = list(
+	/datum/outfit/loadout/overbossmelee,	//goliath
+	/datum/outfit/loadout/overbossamr,		//AMR
+	/datum/outfit/loadout/overbossranged, //moni + drugs
+	)
+
+	outfit = /datum/outfit/job/wasteland/f13raider/overboss
+
+
+/datum/outfit/job/wasteland/f13raider/overboss
+	name = "Overboss"
+	jobtype = /datum/job/wasteland/f13overboss
+	id = null
+	ears = /obj/item/radio/headset
+	belt = null
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	satchel = /obj/item/storage/backpack/satchel/explorer
+	gloves = /obj/item/clothing/gloves/f13/handwraps
+	r_pocket = /obj/item/flashlight/flare
+	backpack_contents = list(
+		/obj/item/restraints/handcuffs = 2,
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
+		/obj/item/storage/bag/money/small/raider = 1,
+		/obj/item/radio/redwater = 1,
+		/obj/item/melee/onehanded/knife/bowie = 1,
+		/obj/item/radio/redwater = 1
+		)
+
+
+/datum/outfit/job/wasteland/f13raider/overboss/pre_equip(mob/living/carbon/human/H)
+	. = ..()
+	uniform = pick(
+		/obj/item/clothing/under/f13/merca, \
+		/obj/item/clothing/under/f13/mercc, \
+		/obj/item/clothing/under/f13/cowboyb, \
+		/obj/item/clothing/under/f13/cowboyg, \
+		/obj/item/clothing/under/f13/raider_leather, \
+		/obj/item/clothing/under/f13/raiderrags, \
+		/obj/item/clothing/under/pants/f13/ghoul, \
+		/obj/item/clothing/under/jabroni)
+	suit = pick(
+		/obj/item/clothing/suit/armor/light/raider/supafly,\
+		/obj/item/clothing/suit/armor/medium/raider/yankee, \
+		/obj/item/clothing/suit/armor/light/raider/sadist, \
+		/obj/item/clothing/suit/armor/medium/raider/blastmaster, \
+		/obj/item/clothing/suit/armor/medium/raider/badlands, \
+		/obj/item/clothing/suit/armor/light/raider/painspike)
+	if(prob(10))
+		mask = pick(
+			/obj/item/clothing/mask/bandana/red,\
+			/obj/item/clothing/mask/bandana/blue,\
+			/obj/item/clothing/mask/bandana/green,\
+			/obj/item/clothing/mask/bandana/gold,\
+			/obj/item/clothing/mask/bandana/black,\
+			/obj/item/clothing/mask/bandana/skull)
+	head = pick(
+		/obj/item/clothing/head/sombrero,\
+		/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/raider/eyebot,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee,\
+		/obj/item/clothing/head/helmet/f13/raider/psychotic,\
+		/obj/item/clothing/head/helmet/f13/fiend)
+	shoes = pick(
+			/obj/item/clothing/shoes/jackboots,\
+			/obj/item/clothing/shoes/f13/raidertreads)
+
+	suit_store = pick(
+		/obj/item/gun/ballistic/revolver/detective, \
+		/obj/item/gun/ballistic/automatic/pistol/ninemil,\
+		/obj/item/gun/ballistic/automatic/pistol/m1911, \
+		/obj/item/gun/ballistic/automatic/pistol/type17, \
+		)
+
+/datum/outfit/loadout/overbossmelee
+	name = "Bruteboss"
+	backpack_contents = list(
+		/obj/item/melee/powerfist/f13/goliath = 1,
+		/obj/item/clothing/suit/armor/medium/combat/mk2 = 1,
+		/obj/item/book/granter/trait/bigleagues = 1,
+		/obj/item/clothing/head/helmet/f13/raider/arclight = 1,
+		/obj/item/reagent_containers/hypospray/medipen/psycho = 2,
+		/obj/item/reagent_containers/pill/patch/turbo = 2)
+
+//AMR
+/datum/outfit/loadout/overbossamr
+	name = "Overpenetration"
+	backpack_contents = list(
+		/obj/item/clothing/suit/armor/light/duster/battlecoat = 1,
+		/obj/item/ammo_box/magazine/amr = 1,
+		/obj/item/crafting/reloader = 1,
+		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1)
+
+//Sex
+/datum/outfit/loadout/overbossranged
+	name = "Crooked Mayor"
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small = 1,
+		/obj/item/gun/ballistic/revolver/colt357/mateba = 1,
+		/obj/item/clothing/under/suit/black = 1,
+		/obj/item/reagent_containers/glass/bottle/chloralhydrate = 1,
+		/obj/item/stack/f13Cash/caps/threefivezero = 1)
+
+/obj/effect/landmark/start/overboss
+	name = "Redwater Overboss"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
 	delete_after_roundstart = FALSE

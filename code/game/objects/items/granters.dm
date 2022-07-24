@@ -858,11 +858,11 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/set_vrboard/den)
 
 /obj/item/book/granter/crafting_recipe/ODF
-	name = "Weapons of Yuma and the Oasis Defense Force"
+	name = "Weapons of Texarkana and the Nash Defense Force"
 	desc = "a book detailing weapons used in the region and by the local town, it has lithiographed pictures of hand-drawn schematics for each weapon type"
 	oneuse = TRUE
 	crafting_recipe_types = list(/datum/crafting_recipe/policepistol, /datum/crafting_recipe/durathread_vest, /datum/crafting_recipe/policerifle, /datum/crafting_recipe/steelbib/heavy, /datum/crafting_recipe/armyhelmetheavy, /datum/crafting_recipe/huntingshotgun)
-	remarks = list("Looks like Oasis hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
+	remarks = list("Looks like Nash hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
 
 
 /obj/item/book/granter/trait/tagger
@@ -1168,8 +1168,12 @@
 	name = "Bone Dancer traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
 								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-								
-								
-								
-								
-								
+/obj/item/book/granter/crafting_recipe/bitters
+	name = "Healing techniques of the midwestern tribes"
+	desc = "An old book written by a missionary studying the postwar tribes of the midwest."
+	remarks = list("Grind into a fine paste...", "Dilute in just enough water...", "Filter out the fibers...", "Do not boil for too long...")
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/bitterdrink, 
+		/datum/crafting_recipe/bitterdrink5, 
+		/datum/crafting_recipe/healpoultice, 
+		/datum/crafting_recipe/healpoultice5)

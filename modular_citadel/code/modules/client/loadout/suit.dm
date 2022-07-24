@@ -176,10 +176,10 @@
 
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
-	path = /obj/item/clothing/suit/armor/town
+	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis"
+	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
 							"Sheriff",
@@ -194,11 +194,11 @@
 							)
 
 /datum/gear/suit/deputyvest
-	name = "OPD armor vest"
+	name = "NPD armor vest"
 	path = /obj/item/clothing/suit/armor/medium/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police, Oasis Officials"
+	restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",

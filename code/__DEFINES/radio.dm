@@ -21,7 +21,7 @@
 #define RADIO_KEY_SCIENCE "n"
 #define RADIO_TOKEN_SCIENCE ":n"
 
-#define RADIO_CHANNEL_MEDICAL "Medical"
+#define RADIO_CHANNEL_MEDICAL "Followers"
 #define RADIO_KEY_MEDICAL "m"
 #define RADIO_TOKEN_MEDICAL ":m"
 
@@ -65,7 +65,7 @@
 #define RADIO_KEY_ENCLAVE "z"
 #define RADIO_TOKEN_ENCLAVE ":z"
 
-#define RADIO_CHANNEL_TOWN "Town"
+#define RADIO_CHANNEL_TOWN "Nash"
 #define RADIO_KEY_TOWN "f"
 #define RADIO_TOKEN_TOWN ":f"
 
@@ -80,6 +80,10 @@
 #define RADIO_CHANNEL_DEN "Den"
 #define RADIO_KEY_DEN "j"
 #define RADIO_TOKEN_DEN ":j"
+
+#define RADIO_CHANNEL_REDWATER "Redwater"
+#define RADIO_KEY_REDWATER "d"
+#define RADIO_TOKEN_REDWATER ":d"
 
 #define RADIO_CHANNEL_CTF_RED "Red Team"
 #define RADIO_CHANNEL_CTF_BLUE "Blue Team"

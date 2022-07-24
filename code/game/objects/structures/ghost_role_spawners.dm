@@ -744,7 +744,7 @@
 	flavour_text = "Rangers lead the way!"
 	assignedrole = "NCR Ranger"
 	outfit = /datum/outfit/job/ncr/f13ranger
-	suit = /obj/item/clothing/suit/armor/medium/combat/ncr_patrol
+	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
 	belt = /obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ranger
@@ -819,7 +819,7 @@
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
-		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
@@ -883,7 +883,7 @@
 	job_description = "Bow Hunter"
 	assignedrole = "Bow Hunter"
 	suit_store = /obj/item/gun/ballistic/automatic/tribalbow
-	belt = /obj/item/storage/belt/tribe_quiver/bone
+	belt = /obj/item/storage/bag/tribe_quiver/bone
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,

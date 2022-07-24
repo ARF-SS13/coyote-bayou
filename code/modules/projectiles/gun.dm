@@ -606,7 +606,6 @@ ATTACHMENTS
 		update_icon()
 		return TRUE
 
-
 /obj/item/gun/proc/clear_gunlight()
 	if(!gun_light)
 		return

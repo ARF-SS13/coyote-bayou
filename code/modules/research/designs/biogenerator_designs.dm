@@ -45,6 +45,14 @@
 	build_path = /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
 	category = list("initial", "Food")
 
+/datum/design/seaweed
+	name = "Sea Weed Sheet"
+	id = "sweetweed"
+	build_type = BIOGENERATOR
+	materials = list(/datum/material/biomass = 50)
+	build_path = /obj/item/reagent_containers/food/snacks/sea_weed
+	category = list("initial", "Food")
+
 /datum/design/ez_nut
 	name = "10u E-Z Nutrient"
 	id = "ez_nut"

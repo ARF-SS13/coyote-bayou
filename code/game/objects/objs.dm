@@ -392,7 +392,7 @@
 		for(var/modifier in token)
 			switch(GLOB.armor_token_operation_legend[modifier])
 				if("MULT")
-					armor[modifier] *= token[modifier]
+					armor[modifier] = round(armor[modifier] * token[modifier], 1)
 				if("ADD")
 					armor[modifier] += token[modifier]
 				else

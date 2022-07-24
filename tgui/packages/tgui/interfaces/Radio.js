@@ -51,7 +51,7 @@ export const Radio = (props, context) => {
                 <NumberInput
                   animate
                   unit="kHz"
-                  step={0.2}
+                  step={0.1}
                   stepPixelSize={10}
                   minValue={minFrequency / 10}
                   maxValue={maxFrequency / 10}

@@ -56,7 +56,6 @@ Overseer
 /datum/outfit/job/vault/f13overseer
 	name = "Overseer"
 	jobtype = /datum/job/vault/f13overseer
-	chemwhiz = TRUE
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -71,7 +70,8 @@ Overseer
 		/obj/item/storage/box/ids = 1,
 
 		/obj/item/gun/ballistic/automatic/pistol/n99/executive = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 3,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 3,
+		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/crowbar = 1)
 
 /*
@@ -125,7 +125,7 @@ Head of Security
 	box = 			/obj/item/storage/box/security
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/crowbar = 1)
 
 	implants = list(/obj/item/implant/mindshield)
@@ -261,7 +261,7 @@ Security Officer
 	box = 			/obj/item/storage/box/security
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/crowbar = 1)
 
 	implants = list(/obj/item/implant/mindshield)

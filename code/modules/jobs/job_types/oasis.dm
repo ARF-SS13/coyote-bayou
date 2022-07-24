@@ -24,8 +24,8 @@ Mayor
 	department_flag = DEP_OASIS
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Oasis"
-	description = "You are the civil leader of the Town of Nash.  You were chosen by the people to represent and lead them from your manor.  Your town is in a terse situation with the slaver town to the south, Redwater.  While not at war, you will have to work to keep your people safe from their predations.  The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly.  Do what's best for the town, and it's people.  All while lining your pockets occasionally, of course."
+	supervisors = "Nash"
+	description = "You are the civil leader of the Town of Nash. You were chosen by the people to represent and lead them from your manor. Your town is in a terse situation with the slaver town to the south, Redwater. While not at war, you will have to work to keep your people safe from their predations. The Tribals to the south east are also a nuisance but it's best not to provoke them needlessly. Do what's best for the town, and it's people. All while lining your pockets occasionally, of course."
 	enforces = "The Secretary is your stand-in replacement, and under this the Sheriff."
 	selection_color = "#d7b088"
 
@@ -55,6 +55,8 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -90,7 +92,7 @@ Mayor
 /datum/outfit/loadout/mayoral
 	name = "Frontier Leader"
 	backpack_contents = list(
-		/obj/item/clothing/suit/armor/town/mayor = 1,
+		/obj/item/clothing/suit/armor/medium/duster/town/mayor = 1,
 		/obj/item/clothing/head/f13/town/mayor = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -118,7 +120,7 @@ Mayor
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/toy/cards/deck/unum = 1,
 		/obj/item/gun/ballistic/automatic/pistol/type17 = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 	)
 
 
@@ -132,7 +134,7 @@ Mayor
 	spawn_positions = 1
 	supervisors = "The Mayor"
 	description = "The settlement of Nash is a busy place, and the Mayor often can't handle everything by themselves. You are here to help them with anything and everything they require, and make sure the more trivial problems do not concern them. You handle clerical work, hear complaints, and set meetings within the manor. An efficient and smooth running town means a happy Mayor - just remember that if things go wrong, you're a convenient scapegoat."
-	enforces = "You are the stand-in leader of Oasis if a Mayor does not exist."
+	enforces = "You are the stand-in leader of Nash if a Mayor does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 400
 
@@ -202,6 +204,8 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policepistol)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
@@ -222,7 +226,7 @@ Mayor
 	spawn_positions = 1
 	supervisors = "The Mayor"
 	description = "You are the civil enforcer of Nash, keeping the settlement within firm control under the authority of the Mayor. With your loyal patrolmen, you maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out. If this town falls, new conquerors don't tend to look kindly upon the old law."
-	enforces = "You are the stand-in leader of Oasis if a Mayor or Secretary does not exist."
+	enforces = "You are the stand-in leader of Nash if a Mayor or Secretary does not exist."
 	selection_color = "#d7b088"
 	exp_requirements = 750
 
@@ -253,7 +257,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 
-	
+
 	uniform =  		/obj/item/clothing/under/f13/sheriff
 	belt =			/obj/item/storage/belt/military/army
 	shoes = 		/obj/item/clothing/shoes/f13/cowboy
@@ -269,9 +273,9 @@ Mayor
 
 /datum/outfit/loadout/thelaw
 	name = "The Law Man"
-	suit = /obj/item/clothing/suit/armor/town/sheriff
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
-	neck = /obj/item/storage/belt/holster
+	l_pocket = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	belt = /obj/item/gun/ballistic/revolver/m29/peacekeeper
 	backpack_contents = list(
@@ -282,9 +286,9 @@ Mayor
 /datum/outfit/loadout/thechief
 	name = "The Chief"
 	uniform = /obj/item/clothing/under/f13/police/formal
-	suit = /obj/item/clothing/suit/armor/town/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
-	neck = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/holster/legholster
 	shoes = /obj/item/clothing/shoes/jackboots
 	r_hand = /obj/item/gun/energy/laser/aer9
 
@@ -321,7 +325,7 @@ Mayor
 	spawn_positions = 4
 	supervisors = "The Sheriff"
 	description = "You are a loyal protector of Nash, keeping the settlement within firm control under the authority of the Mayor. The sheriff is your direct superior, and you should expect to take your day-to-day orders from them. Maintain your claim to authority by keeping the peace, managing disputes, and protecting the citizens from threats within and without. Never leave Nash undefended, and don't let its people die out."
-	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Oasis if a Mayor or Secretary does not exist."
+	enforces = "You may be elected temporary Sheriff if one does not exist. This may make you the stand-in leader of Nash if a Mayor or Secretary does not exist."
 	selection_color = "#dcba97"
 	exp_type = EXP_TYPE_OASIS
 	exp_requirements = 300
@@ -353,7 +357,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/storage/belt/military/assault
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
-	neck = /obj/item/storage/belt/holster/legholster/police
+	suit_store = /obj/item/storage/belt/holster/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -366,9 +370,9 @@ Mayor
 
 /datum/outfit/loadout/frontierjustice
 	name = "Frontier Justice"
-	suit = /obj/item/clothing/suit/armor/town/deputy
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
-	neck =	/obj/item/storage/belt/holster
+	belt = /obj/item/storage/belt/holster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
@@ -377,11 +381,11 @@ Mayor
 		)
 
 /datum/outfit/loadout/police
-	name = "Oasis PD"
+	name = "Nash PD"
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
-	neck = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/holster/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -401,7 +405,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/f13/military
 	suit_store = /obj/item/gun/ballistic/automatic/assault_carbine/policerifle
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m5mm=1,
 		/obj/item/flashlight/seclite = 1,
@@ -455,7 +459,7 @@ Mayor
 		/obj/item/hatchet=1,
 		/obj/item/shovel/spade=1, \
 		/obj/item/gun/ballistic/automatic/pistol/n99, \
-		/obj/item/ammo_box/magazine/m10mm_adv/simple=2)
+		/obj/item/ammo_box/magazine/m10mm/adv/simple=2)
 	shoes = 		/obj/item/clothing/shoes/workboots
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
@@ -476,7 +480,7 @@ Mayor
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "The Mayor"
-	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Oasis understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
+	description = "Prospecting is a complicated business. Some call it scrounging or looting, but there is more to it than sifting through rubble - few can boast the valuable skills of mining and scavenging the ruins of fallen empires. The settlement of Nash understands the value of this, and you've found purpose within their mines. Sell the materials you find to the highest bidder - the local store may be particularly interested in metals."
 	enforces = "Mining is a public service, and you are under control of local governance - but by default you are expected to work with private businesses and individual clients."
 	selection_color = "#dcba97"
 
@@ -511,7 +515,7 @@ Mayor
 		/obj/item/shovel,
 		/obj/item/melee/onehanded/knife/hunting,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/book/granter/crafting_recipe/ODF = 1,
 		)
 
@@ -526,6 +530,8 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -578,6 +584,17 @@ Mayor
 	..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
 /*--------------------------------------------------------------*/
@@ -724,13 +741,13 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/flask = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	/obj/item/ammo_box/magazine/m10mm_adv/simple = 1,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
 	)
 
 /datum/outfit/loadout/groundskeeper
 	name = "Groundskeeper"
 	head = /obj/item/clothing/head/soft/grey
-	belt = /obj/item/storage/belt
+	belt = /obj/item/storage/belt/fannypack
 	suit = /obj/item/clothing/under/f13/mechanic
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(/obj/item/storage/bag/trash = 1, /obj/item/reagent_containers/spray/cleaner = 1,
@@ -822,7 +839,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/det_hat_alt
 	shoes =  /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/silver
-	l_pocket = /obj/item/storage/bag/money/small/oasis
+	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
@@ -845,7 +862,7 @@ Mayor
 	total_positions = 1
 	spawn_positions = 2
 	supervisors = "The Mayor"
-	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Oasis, but perhaps deal-making will take you into other alliances."
+	description = "No matter the nature of society, fortune and profit are there to be made! It is up to you to make deals, distribute caps and earn interest - an easy first venture might be safekeeping possessions in the strongboxes of your vault within the First Bank of Nash. Ensure you make a profit and retain enough capital for your day-to-day operations. You are under the governance of Nash, but perhaps deal-making will take you into other alliances."
 	enforces = "Your bank is a private business and you are not under direct control of local governance, but are subject to their laws."
 	selection_color = "#dcba97"
 	outfit = /datum/outfit/job/den/f13banker
@@ -961,6 +978,8 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/policerifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steelbib/heavy)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/armyhelmetheavy)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/trail_carbine)

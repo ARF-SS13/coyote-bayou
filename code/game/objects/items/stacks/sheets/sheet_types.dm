@@ -311,8 +311,10 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		new /datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 		)), \
 	new/datum/stack_recipe_list("cooking", list( \
+		new /datum/stack_recipe("wooden bowl", /obj/item/reagent_containers/glass/bowl/wooden_bowl, 3, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
 		new /datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
-		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("butter churn", /obj/structure/butter_churn, 7, time = 35, one_per_turf = TRUE, on_floor = TRUE),\
 		)), \
 	null, \
 	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/room, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
