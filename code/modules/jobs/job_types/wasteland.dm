@@ -444,7 +444,7 @@ Raider
 	neck = /obj/item/storage/belt/holster/ranger44
 	mask =  /obj/item/clothing/mask/bandana/durathread
 	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/smg/greasegun/mid = 1,
+		/obj/item/gun/ballistic/automatic/smg/greasegun = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/ammo_box/magazine/greasegun = 2
 		)
