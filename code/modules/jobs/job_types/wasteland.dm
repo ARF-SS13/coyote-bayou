@@ -1979,8 +1979,6 @@ datum/job/wasteland/f13dendoctor
 	selection_color = "#df80af"
 	exp_requirements = 600
 	exp_type = EXP_TYPE_WASTELAND
-
-	outfit = /datum/outfit/job/wasteland/f13overboss
 	
 	loadout_options = list(
 			/datum/outfit/loadout/overbossmelee,	//goliath
