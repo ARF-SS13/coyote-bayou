@@ -1135,61 +1135,6 @@
 		/datum/crafting_recipe/healpoultice5, 
 		/datum/crafting_recipe/warmace)
 
-/obj/item/book/granter/trait/tribaltraditions
-	name = "Tribal Traditions Booklet"
-	desc = "An instruction manual on your tribes garments!"
-	oneuse = TRUE
-	granted_trait = null
-	pages_to_mastery = 0
-	time_per_page = 0
-
-/obj/item/book/granter/trait/tribaltraditions/attack_self(mob/user)
-	var/list/choices = list("Dead Horses traditions","White Legs traditions","Rustwalkers traditions","Eighties traditions","Sorrows traditions","Wayfarer traditions","Bone Dancer traditions")
-	if(granted_trait == null)
-		var/choice = input("Choose a trait:") in choices
-		switch(choice)
-			if(null)
-				return 0
-			if("White Legs traditions")
-				traitname = "White Legs traditions"
-				granted_trait = TRAIT_WHITELEGS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb, /datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour)
-			if("Dead Horses traditions")
-				traitname = "Dead Horses traditions"
-				granted_trait = TRAIT_DEADHORSES_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour, /datum/crafting_recipe/tribalwar/deadhorses/garb,
-								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour)
-			if("Rustwalkers traditions")
-				traitname = "Rustwalkers traditions"
-				granted_trait = TRAIT_RUSTWALKERS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
-								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour)
-			if("Eighties traditions")
-				traitname = "Eighties traditions"
-				granted_trait = TRAIT_EIGHTIES_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour, /datum/crafting_recipe/tribalwar/eighties/garb,
-								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour)
-			if("Sorrows traditions")
-				traitname = "Sorrows traditions"
-				granted_trait = TRAIT_SORROWS_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb, /datum/crafting_recipe/tribalwar/sorrows/femalegarb,
-								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet)
-			if("Wayfarer traditions")
-				traitname = "Wayfarer traditions"
-				granted_trait = TRAIT_WAYFARER_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
-			if("Bone Dancer traditions")
-				traitname = "Bone Dancer traditions"
-				granted_trait = TRAIT_BONEDANCER_TRAD
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
-								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
-		return ..()
-
-
-/obj/item/book/granter/trait/tribaltraditions/Initialize()
-	. = ..()
-	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-
 /obj/item/book/granter/crafting_recipe/tribal/whitelegs
 	name = "White Legs traditions"
 	crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb,

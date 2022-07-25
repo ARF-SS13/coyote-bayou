@@ -101,19 +101,19 @@
 	name = "Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 5
 
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 5
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 3
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
@@ -130,9 +130,9 @@
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/utilityvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-/*	restricted_desc = "NCR"
+	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
 							"NCR Medical Officer",
@@ -149,7 +149,7 @@
 							"NCR Off-Duty",
 							"NCR Ranger"
 						)
-*/
+
 
 
 /datum/gear/suit/fieldscribe

@@ -986,18 +986,6 @@
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 
-/datum/gear/uniform/wasteland/female/mercadv
-	name = "Female mercenary outfit"
-	path = /obj/item/clothing/under/f13/female/mercadv
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
-/datum/gear/uniform/wasteland/merca
-	name = "Mercenary outfit"
-	path = /obj/item/clothing/under/f13/merca
-	cost = 1
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
-
 /datum/gear/uniform/wasteland/bodyguard
 	name = "Bodyguard outfit"
 	path = /obj/item/clothing/under/f13/bodyguard

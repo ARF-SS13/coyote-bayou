@@ -538,12 +538,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"aIP" = (
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/village)
 "aIW" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -6897,11 +6891,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"hrX" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/wood_common,
-/area/f13/village)
 "hrZ" = (
 /obj/item/clothing/shoes/combat,
 /obj/structure/closet,
@@ -9370,10 +9359,6 @@
 	icon_state = "horizontalinnermain0"
 	},
 /area/f13/wasteland)
-"jJS" = (
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
 "jKa" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -9426,13 +9411,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"jLV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "jMu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -9498,12 +9476,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"jPz" = (
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13/wood{
-	icon_state = "housewood2"
-	},
-/area/f13/building)
 "jQG" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -11182,11 +11154,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"lJZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13/wood,
-/area/f13/building)
 "lKD" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/road,
@@ -12308,13 +12275,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"mPw" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "mQi" = (
 /turf/closed/indestructible/riveted,
 /area/f13/caves)
@@ -15721,11 +15681,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"qoF" = (
-/obj/effect/landmark/start/f13/raider,
-/obj/effect/landmark/start/overboss,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "qoP" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17961,10 +17916,6 @@
 /obj/structure/tires/two,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"sCq" = (
-/obj/effect/landmark/start/redwaterResident,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "sCW" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 1;
@@ -69595,7 +69546,7 @@ fHN
 bxU
 jXi
 jXi
-jLV
+ecS
 iyP
 azA
 wQj
@@ -72130,7 +72081,7 @@ rTt
 mrv
 bOz
 jXi
-lJZ
+iyP
 jXi
 oca
 jXi
@@ -73705,7 +73656,7 @@ fHN
 etX
 iAl
 wUH
-hrX
+wUH
 cTR
 sXg
 ryT
@@ -74199,7 +74150,7 @@ gll
 bSp
 bSs
 eJG
-aIP
+vzh
 vzh
 tRM
 avo
@@ -74701,7 +74652,7 @@ kYA
 kUQ
 sui
 bCj
-jPz
+duS
 duS
 lQU
 ydM
@@ -78580,7 +78531,7 @@ jlH
 nNW
 qIh
 mrv
-jJS
+oDR
 jyq
 igV
 kUV
@@ -80371,7 +80322,7 @@ ova
 gpH
 gAu
 gkl
-sCq
+pJb
 gAu
 uvh
 tQt
@@ -84497,7 +84448,7 @@ qWY
 kRH
 sHq
 kgL
-mPw
+jMY
 kRH
 jMY
 hrZ
@@ -87542,7 +87493,7 @@ bPw
 bPw
 bPw
 cEX
-qoF
+eMt
 eMt
 eMt
 eMt
