@@ -750,7 +750,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/brahmin
 	name = "Brahmin-skin outfit (male)"
-	result = /obj/item/clothing/under/f13/brahminm
+	result = /obj/item/clothing/under/f13/mercadv
 	reqs = list(/obj/item/stack/sheet/animalhide/brahmin = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 15

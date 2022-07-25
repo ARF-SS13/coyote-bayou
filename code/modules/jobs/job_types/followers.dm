@@ -45,9 +45,9 @@ Administrator
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "No one."
-	description = "You are the Followers Administrator. You are the administrator, supervisor and director for the on-site followers and the facility. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	description = "You are the Follower Administrator. You are the administrator for the on-site followers. While there is no tradtional chain of command that is used, you have been chosen to lead due to your expert knowledge in the field of medicine and other general knowledges. Make sure that the supplies donated are being put to use, help secure more donations, and fill in as needed whenever short staffed or if the clinic is busy."
+	forbids = "Causing harm to others except in times of self-defense."
+	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. While your goal is to assist those who need your help, you do not have to help everyone, and may turn away anyone - you are not obligated to revive a raider or Legionnaire dropped at your doorstep. Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FF95FF"
 	exp_requirements = 750
 
@@ -74,6 +74,7 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 
@@ -96,6 +97,7 @@ Administrator
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/reagent_containers/hypospray/combat = 1,
 		/obj/item/clothing/glasses/hud/health = 1,
+		/obj/item/book/granter/trait/chemistry = 1,
 		/obj/item/book/granter/trait/techno = 1,
 	)
 
@@ -109,18 +111,14 @@ Professor
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
-	description = "You are a Follower Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across. You are free to expand upon what projects you wish to accomplish as long as they align with the principles of the Followers."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	description = "You are a Follower Scientist. As a Scientist it is your job to teach the wastes- be it teaching them how to make medicine, grow crops or treat toxic water. You are a learned individual in your chosen field, you know how to do research and have all the basic tools to teach others how to handle the technology they will come across.Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life, Provide free education for all those who are willing to learn."
+	forbids = "Causing harm to others except in times of self-defense."
+	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them.Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 540
 	exp_type = EXP_TYPE_FOLLOWERS
 
 	outfit = /datum/outfit/job/followers/f13Professor
-	loadout_options = list(
-	/datum/outfit/loadout/environmental_scientist,
-	/datum/outfit/loadout/medical_specialist
-	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -140,6 +138,7 @@ Professor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/followers/f13Professor
 	name = "Followers Scientist"
@@ -152,29 +151,7 @@ Professor
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
-		/obj/item/storage/firstaid/ancient=1,)
-
-/datum/outfit/loadout/environmental_scientist
-	name =	"Environmental Scientist"
-	neck = /obj/item/clothing/neck/apron/labor
-	gloves = /obj/item/clothing/gloves/botanic_leather
-	backpack_contents = list(
-		/obj/item/book/manual/advice_farming = 1,
-		/obj/item/circuitboard/machine/hydroponics = 6,
-		/obj/item/storage/bag/plants/portaseeder = 1,
-	)
-
-/datum/outfit/loadout/medical_specialist
-	name =	"Medical Specialist"
-	neck = /obj/item/clothing/neck/stethoscope
-	gloves = /obj/item/clothing/gloves/color/latex
-	glasses =	/obj/item/clothing/glasses/hud/health
-	backpack_contents = list(
-		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/circuitboard/machine/bloodbankgen = 1,
-		/obj/item/gun/syringe/dart = 1,
-		/obj/item/reagent_containers/syringe/dart = 3,
-	)
+		/obj/item/storage/firstaid/ancient=1)
 
 /*
 Practitioner
@@ -187,9 +164,9 @@ Practitioner
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance."
-	description = "You are a Followers Doctor. As a Followers Doctor it is your responsibility to maintain working order in the hospital and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the hospital with a guard to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	description ="You are a Followers Doctor. As a Followers Doctor it is your responsibility to maintain working order in the hospital and to manage its staff and to treat patients who come in regardless of whether or not they can afford care. Some Doctors are known for leaving the hospital to look for injured or those who need help who may not come to a health facility, however it is key that those who do travel around to give aid keep in touch with the rest of staff and if there are no other able physicans or chemist that they stay to offer the best aid possible."
+	forbids = "Causing harm to others except in times of self-defense."
+	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. While your goal is to assist those who need your help, you do not have to help everyone, and may turn away anyone - you are not obligated to revive a raider or Legionnaire dropped at your doorstep. Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	exp_requirements = 300
 
@@ -227,6 +204,7 @@ Practitioner
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
+	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -292,9 +270,9 @@ Practitioner
 		/obj/item/clothing/accessory/pocketprotector/full = 1,
 		/obj/item/folder/white = 1,
 		/obj/item/pda/medical = 1,
-		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/reagent_containers/syringe/bluespace = 1,
+		/obj/item/book/granter/trait/techno = 1,
 	)
+
 
 /*
 Follower Volunteer
@@ -309,8 +287,8 @@ Follower Volunteer
 	spawn_positions = 3
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Follower Volunteer. As a Volunteer, you make sure they get connected to the right people to find treatment, assist in the functions of the hospital, learn from senior Followers, and utilize first aid to the best of your capacity when Doctors are not present."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	forbids = "Causing harm to others except in times of self-defense."
+	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. Legion is our mistake and its our job to correct the mistake by speaking of the truth, but recognize that the best way to fight the legion is to teach them and sometimes that can mean helping them. Preaching humanitarianism and valuing human life. Assist and provide medical services to any who require it, regardless of faction. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 	outfit = /datum/outfit/job/followers/f13followervolunteer
 	loadout_options = list(
@@ -364,6 +342,7 @@ Follower Volunteer
 	glasses =	/obj/item/clothing/glasses/welding
 	backpack_contents = list(
 		/obj/item/flashlight/pen = 1,
+		/obj/item/pda/chemist = 1,
 	)
 
 /datum/outfit/loadout/volunteer_farmer
@@ -384,7 +363,6 @@ Follower Volunteer
 		/obj/item/clothing/accessory/pocketprotector/full = 1,
 		/obj/item/clipboard = 1,
 		/obj/item/pen/fourcolor = 1,
-		/obj/item/pda = 1,
 	)
 
 
@@ -398,9 +376,9 @@ Follower Volunteer
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
-	description = "You are a Followers Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the hospital."
-	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
-	enforces = "Preach the values of the Followers of Apocolypse. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
+	description = "You are a Follower Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. "
+	forbids = "Causing harm to others except in times of self-defense or in defense of other followers."
+	enforces = "Followers are not fond of the NCR due to their corruption, but they will help them. They dislike the Brotherhood for hoarding tech, but will make deals to work with them if it furthers the spreading of knowledge. While your goal is to assist those who need your help, you do not have to help everyone, and may turn away anyone - you are not obligated to revive a raider or Legionnaire dropped at your doorstep. Preaching humanitarianism and valuing human life. Assist and provide medical services to those in need. Provide free education for all those who are willing to learn."
 	selection_color = "#FFDDFF"
 
 	outfit = /datum/outfit/job/followers/f13followerguard
@@ -436,12 +414,11 @@ Follower Volunteer
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/a357 = 2,
-		/obj/item/attachments/scope = 1,
 	)
 
 /datum/outfit/loadout/guard_close
 	name = "Followers Close Protection Guard"
-	suit_store = /obj/item/gun/ballistic/shotgun/police
+	suit_store = /obj/item/gun/ballistic/shotgun/hunting
 	backpack_contents = list(
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,

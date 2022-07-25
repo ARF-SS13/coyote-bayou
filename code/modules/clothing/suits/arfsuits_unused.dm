@@ -244,7 +244,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	item_state = "vest_utility"
 	icon = 'icons/fallout/clothing/suits_utility.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 
 /obj/item/clothing/suit/armor/utilityvest/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"

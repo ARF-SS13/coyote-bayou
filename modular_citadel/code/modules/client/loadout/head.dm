@@ -148,12 +148,12 @@
 /datum/gear/head/cowboy
 	name = "brahmin leather cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	cost = 5
+	cost = 3
 
 /datum/gear/head/cowboy_alt
 	name = "rusted cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
-	cost = 5
+	cost = 3
 
 /datum/gear/head/bountyhunter
 	name = "bounty hunter hat"

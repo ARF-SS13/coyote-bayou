@@ -443,11 +443,6 @@ Mayor
 		),
 	)
 
-	loadout_options = list(
-	/datum/outfit/loadout/abiotic,
-	/datum/outfit/loadout/pomologist,
-	/datum/outfit/loadout/zany,)
-
 /datum/outfit/job/den/f13farmer
 	name = "Farmer"
 	jobtype = /datum/job/oasis/f13farmer
@@ -476,30 +471,6 @@ Mayor
 		/obj/item/clothing/under/f13/lumberjack, \
 		/obj/item/clothing/under/f13/roving)
 
-/datum/outfit/loadout/abiotic
-	name = "Abiotic"
-	backpack_contents = list(
-		/obj/item/seeds/bamboo = 1,
-		/obj/item/seeds/glowshroom = 1,
-		/obj/item/seeds/tower = 1,
-		)
-
-/datum/outfit/loadout/pomologist
-	name = "Pomologist"
-	backpack_contents = list(
-		/obj/item/seeds/grape/green = 1,
-		/obj/item/seeds/apple/gold = 1,
-		/obj/item/seeds/cherry/blue = 1,
-		)
-
-/datum/outfit/loadout/zany
-	name = "Zany"
-	backpack_contents = list(
-		/obj/item/clothing/mask/cigarette/pipe = 1,
-		/obj/item/seeds/cannabis = 1,
-		/obj/item/seeds/tea/catnip = 1,
-		)
-
 /*--------------------------------------------------------------*/
 
 /datum/job/oasis/f13prospector
@@ -526,23 +497,22 @@ Mayor
 		),
 	)
 
-	loadout_options = list(
-	/datum/outfit/loadout/engineer,
-	/datum/outfit/loadout/miner,)
-
 /datum/outfit/job/den/f13prospector
 	name = "Prospector"
 	jobtype = /datum/job/oasis/f13prospector
 
 	id = /obj/item/card/id/dogtag/town
+	suit = /obj/item/clothing/suit/armor/medium/raider/iconoclast/
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/lantern
+	r_hand = /obj/item/pickaxe
 	belt = /obj/item/storage/bag/ore
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/workboots
 	backpack_contents = list(
 		/obj/item/mining_scanner,
+		/obj/item/shovel,
 		/obj/item/melee/onehanded/knife/hunting,
 		/obj/item/gun/ballistic/automatic/pistol/n99,
 		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
@@ -564,31 +534,6 @@ Mayor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
-
-/datum/outfit/loadout/engineer
-	name = "Engineer"
-	suit = /obj/item/clothing/suit/apron/overalls
-	glasses = /obj/item/clothing/glasses/welding
-	uniform = /obj/item/clothing/under/misc/overalls
-	belt = /obj/item/storage/belt/utility/full
-	shoes = /obj/item/clothing/shoes/workboots
-	backpack_contents = list(
-		/obj/item/pickaxe/mini = 1,
-		/obj/item/shovel/spade = 1,
-		)
-
-/datum/outfit/loadout/miner
-	name = "Miner"
-	suit = /obj/item/clothing/suit/armor/light/leather/rig
-	uniform = /obj/item/clothing/under/f13/lumberjack
-	head = /obj/item/clothing/head/hardhat
-	belt = /obj/item/storage/belt/mining/alt
-	shoes = /obj/item/clothing/shoes/f13/miner
-	backpack_contents = list(
-		/obj/item/t_scanner/adv_mining_scanner = 1,
-		/obj/item/pickaxe/silver = 1,
-		/obj/item/shovel = 1,
-		)
 
 /*--------------------------------------------------------------*/
 
