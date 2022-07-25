@@ -2,7 +2,7 @@ SUBSYSTEM_DEF(idlenpcpool)
 	name = "Idling NPC Pool"
 	flags = SS_POST_FIRE_TIMING|SS_BACKGROUND|SS_NO_INIT
 	priority = FIRE_PRIORITY_IDLE_NPC
-	wait = 120
+	wait = 60
 	runlevels = RUNLEVEL_GAME | RUNLEVEL_POSTGAME
 
 	var/list/currentrun = list()
@@ -33,8 +33,9 @@ SUBSYSTEM_DEF(idlenpcpool)
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
-		if (!SA)
+		if (QDELETED(SA))
 			GLOB.simple_animals[AI_IDLE] -= SA
+			stack_trace("Found a null in simple_animals deactive list [SA.type]!")
 			continue
 
 		if(!SA.ckey)
