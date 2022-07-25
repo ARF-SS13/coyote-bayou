@@ -240,6 +240,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 			. += min(our_reagents.get_reagent_amount(/datum/reagent/medicine/salglu_solution) * 1 , 150)
 			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/bloody_mary) * 0.35 , 100)
 			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/brocbrew) * 0.5 , 100)
+			. += min(our_reagents.get_reagent_amount(/datum/reagent/determination) * 10 , 400)
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()

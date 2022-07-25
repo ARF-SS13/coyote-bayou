@@ -24,6 +24,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 40
 	threshold_penalty = 15
+	low_blood_threshold = WOUND_BLEED_MODERATE_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_MODERATE_BLOOD_LOSS_MULTIPLIER
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
@@ -45,6 +47,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 40
 	threshold_penalty = 25
+	low_blood_threshold = WOUND_BLEED_SEVERE_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_SEVERE_BLOOD_LOSS_MULTIPLIER
 	demotes_to = /datum/wound/bleed/pierce/moderate
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
@@ -67,6 +71,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 60
 	threshold_penalty = 45
+	low_blood_threshold = WOUND_BLEED_CRITICAL_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_CRITICAL_BLOOD_LOSS_MULTIPLIER
 	demotes_to = /datum/wound/bleed/pierce/severe
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	scar_keyword = "piercecritical"

@@ -69,6 +69,23 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
 #define WOUND_BONE_HEAD_TIME_VARIANCE 	20
 
+/// Threshold for moderate wounds to slow down bleeding if the mob has less than this blood volume
+#define WOUND_BLEED_MODERATE_BLOOD_LOSS_THRESHOLD BLOOD_VOLUME_SYMPTOMS_MINOR - 50
+/// Threshold for severe wounds to slow down bleeding if the mob has less than this blood volume
+#define WOUND_BLEED_SEVERE_BLOOD_LOSS_THRESHOLD BLOOD_VOLUME_SYMPTOMS_WORST - 100
+/// Threshold for critical wounds to slow down bleeding if the mob has less than this blood volume
+#define WOUND_BLEED_CRITICAL_BLOOD_LOSS_THRESHOLD BLOOD_VOLUME_DEATH + 100
+
+/// Multiplier for moderate wounds to slow down bleeding by below the blood volume threshold
+#define WOUND_BLEED_MODERATE_BLOOD_LOSS_MULTIPLIER 0.25
+/// Multiplier for severe wounds to slow down bleeding by below the blood volume threshold
+#define WOUND_BLEED_SEVERE_BLOOD_LOSS_MULTIPLIER 0.1
+/// Multiplier for critical wounds to slow down bleeding by below the blood volume threshold
+#define WOUND_BLEED_CRITICAL_BLOOD_LOSS_MULTIPLIER 0.05
+
+/// Multiplier for bleeding if the wound has enough bandaging on it
+#define WOUND_BLEED_MAX_BANDAGE_MULTIPLIER 0.05
+
 // The following are for persistent scar save formats
 /// The version number of the scar we're saving
 #define SCAR_SAVE_VERS				1

@@ -61,7 +61,7 @@
 	/// How much we're contributing to this limb's bleed_rate
 	var/blood_flow
 
-	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding] to begin suffering this wound, see check_wounding_mods() for more
+	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding()] to begin suffering this wound, see check_wounding_mods() for more
 	var/threshold_minimum
 	/// How much having this wound will add to all future check_wounding() rolls on this limb, to allow progression to worse injuries with repeated damage
 	var/threshold_penalty
@@ -311,6 +311,10 @@
 /// Used when we're being dragged while bleeding, the value we return is how much bloodloss this wound causes from being dragged. Since it's a proc, you can let bandages soak some of the blood
 /datum/wound/proc/drag_bleed_amount()
 	return
+
+/// Returns how much the wound should be bleeding given an amount of blood, so we can scale bleeding for minor wounds
+/datum/wound/proc/get_blood_flow()
+	return blood_flow
 
 /**
  * get_examine_description() is used in carbon/examine and human/examine to show the status of this wound. Useful if you need to show some status like the wound being splinted or bandaged.

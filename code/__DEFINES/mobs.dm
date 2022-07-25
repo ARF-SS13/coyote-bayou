@@ -37,9 +37,9 @@
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 0.75 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
-#define BLOOD_REFILL_NUTRITION_FAT 3 // Eat a lot for quicker blood regen!
+#define BLOOD_REFILL_NUTRITION_FAT 2 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 2
+#define BLOOD_REFILL_NUTRITION_FULL 1
 /// Nutrition spent for being well fed
 #define BLOOD_REFILL_NUTRITION_WELL_FED 1.5
 /// Nutrition spent for being fed
@@ -49,8 +49,6 @@
 /// Nutrition spent for being starving
 #define BLOOD_REFILL_NUTRITION_STARVING 0.1
 
-/// The amount blood typically regenerates to on its own
-#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
 /// Lowest amount normal bleeding can take you
 #define BLOOD_VOLUME_LOSS_FLOOR (BLOOD_VOLUME_NORMAL * 0.05)
 
@@ -75,7 +73,7 @@
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_MINOR 1 SECONDS
 /// Slowdown applied in this level of bloodloss
-#define BLOOD_LOSS_SLOWDOWN_MINOR 0.3
+#define BLOOD_LOSS_SLOWDOWN_MINOR 1
 
 /// Cap for oxyloss in annoying blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_ANNOYING 30
@@ -98,7 +96,7 @@
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 2 SECONDS
 /// Slowdown applied in this level of bloodloss
-#define BLOOD_LOSS_SLOWDOWN_ANNOYING 0.6
+#define BLOOD_LOSS_SLOWDOWN_ANNOYING 1.5
 
 /// Cap for oxyloss in worst blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING 50
@@ -121,7 +119,7 @@
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING 2 SECONDS
 /// Slowdown applied in this level of bloodloss
-#define BLOOD_LOSS_SLOWDOWN_DEBILITATING 1
+#define BLOOD_LOSS_SLOWDOWN_DEBILITATING 2
 
 /// Cap for oxyloss in worst blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_WORST 87 // constant random passouts
@@ -144,7 +142,7 @@
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST 5 SECONDS
 /// Slowdown applied in this level of bloodloss
-#define BLOOD_LOSS_SLOWDOWN_WORST 2
+#define BLOOD_LOSS_SLOWDOWN_WORST 3
 
 /// Oxyloss when you actually go unconscious
 #define BLOOD_LOSS_OXYLOSS_UNCONSCIOUS 90

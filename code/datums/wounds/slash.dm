@@ -24,6 +24,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 40
 	threshold_penalty = 15
+	low_blood_threshold = WOUND_BLEED_MODERATE_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_MODERATE_BLOOD_LOSS_MULTIPLIER
 	status_effect_type = /datum/status_effect/wound/slash/moderate
 	scar_keyword = "slashmoderate"
 
@@ -45,6 +47,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 40
 	threshold_penalty = 25
+	low_blood_threshold = WOUND_BLEED_SEVERE_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_SEVERE_BLOOD_LOSS_MULTIPLIER
 	demotes_to = /datum/wound/bleed/slash/moderate
 	status_effect_type = /datum/status_effect/wound/slash/severe
 	scar_keyword = "slashsevere"
@@ -67,6 +71,8 @@
 	internal_bleeding_coefficient = 1.25
 	threshold_minimum = 60
 	threshold_penalty = 45
+	low_blood_threshold = WOUND_BLEED_CRITICAL_BLOOD_LOSS_THRESHOLD
+	low_blood_multiplier = WOUND_BLEED_CRITICAL_BLOOD_LOSS_MULTIPLIER
 	demotes_to = /datum/wound/bleed/slash/severe
 	status_effect_type = /datum/status_effect/wound/slash/critical
 	scar_keyword = "slashcritical"

@@ -19,6 +19,11 @@
 	/// How fast our blood flow will naturally decrease per tick, not only do larger cuts bleed more faster, they clot slower
 	var/clot_rate
 
+	/// How much to scale the bleeding if the owner's blood is below low_blood_threshold
+	var/low_blood_multiplier = 1
+	/// If our owner's blood level is below this, we'll multiply blood loss by low_blood_multiplier
+	var/low_blood_threshold
+
 	/// Once the blood flow drops below minimum_flow, we demote it to this type of wound. If there's none, we're all better
 	var/demotes_to
 
@@ -34,7 +39,7 @@
 	var/gauzed_clot_rate
 
 	/// Bandage power needed to stop the bleeding. Bandage power less than this will proportionally slow the bleeding
-	var/required_bandage_power
+	var/required_bandage_power = 1
 
 	/// When hit on this bodypart, we have this chance of losing some blood + the incoming damage
 	var/internal_bleeding_chance
@@ -149,6 +154,20 @@
 		return
 
 	return bleed_amt
+
+/datum/wound/bleed/get_blood_flow()
+	. = blood_flow
+	if(victim.mobility_flags & ~MOBILITY_STAND)
+		. *= 0.75
+	var/owner_blood_volume = victim.get_blood(TRUE)
+	if(owner_blood_volume < low_blood_threshold)
+		. *= low_blood_multiplier
+	if(limb.current_gauze)
+		var/obj/item/stack/bandage = limb.current_gauze
+		if(bandage.absorption_capacity >= required_bandage_power)
+			. *= WOUND_BLEED_MAX_BANDAGE_MULTIPLIER
+		else if(bandage.absorption_capacity > 0)
+			. *= (bandage.absorption_capacity / required_bandage_power)
 
 /datum/wound/bleed/on_stasis()
 	if(blood_flow >= minimum_flow)
