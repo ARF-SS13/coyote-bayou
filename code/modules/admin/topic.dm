@@ -3326,15 +3326,15 @@
 		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
 		if(!query_add_mentor.warn_execute())
 			return
-		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-			VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
-			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		)
-		if(!query_add_admin_log.warn_execute())
-			qdel(query_add_admin_log)
-			return
-		qdel(query_add_admin_log)
+		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // Just comments out the admin part, as it seems to not be functioning.
+		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+		// 	VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
+		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
+		// )
+		// if(!query_add_admin_log.warn_execute())
+		// 	qdel(query_add_admin_log)
+		// 	return
+		// qdel(query_add_admin_log)
 	else
 		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
 	new /datum/mentors(ckey)
@@ -3362,13 +3362,13 @@
 		)
 		if(!query_remove_mentor.warn_execute())
 			return		
-		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-			VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
-			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		)
-		if(!query_add_admin_log.warn_execute())
-			return
+		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // stops the adminip error for now ~ w~
+		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+		// 	VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
+		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
+		// )
+		// if(!query_add_admin_log.warn_execute())
+		// 	return
 	else
 		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
 	to_chat(usr, "<span class='adminnotice'>Mentor removed.</span>")
