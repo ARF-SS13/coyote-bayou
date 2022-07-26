@@ -293,8 +293,7 @@ Practitioner
 		/obj/item/folder/white = 1,
 		/obj/item/pda/medical = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/reagent_containers/syringe/bluespace = 1,
-	)
+		/obj/item/book/granter/trait/techno = 1,)
 
 /*
 Follower Volunteer
@@ -305,8 +304,8 @@ Follower Volunteer
 	flag = F13FOLLOWERVOLUNTEER
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 6
+	spawn_positions = 6
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Follower Volunteer. As a Volunteer, you make sure they get connected to the right people to find treatment, assist in the functions of the hospital, learn from senior Followers, and utilize first aid to the best of your capacity when Doctors are not present."
 	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or being accompanied by a guard. Treating raiders or slavers without a good reason."
@@ -416,6 +415,7 @@ Follower Volunteer
 	jobtype =	/datum/job/followers/f13followerguard
 	belt =	/obj/item/storage/belt/military/army/military/followers
 	id =	/obj/item/card/id/silver
+	r_hand = /obj/item/book/granter/trait/selection
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec

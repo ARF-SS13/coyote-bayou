@@ -163,8 +163,8 @@
 	backpack_contents = list(/obj/item/storage/box/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/clothing/mask/gas/sechailer=1,\
-		/obj/item/gun/energy/e_gun=1,\
-		/obj/item/construction/rcd/loaded=1)
+		/obj/item/gun/energy/e_gun=1)
+//		/obj/item/construction/rcd/loaded=1
 
 /datum/outfit/ert/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -272,8 +272,8 @@
 		/obj/item/storage/box/handcuffs=1,
 		/obj/item/clothing/mask/gas/sechailer=1,
 		/obj/item/gun/energy/e_gun/stun=1,
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/construction/rcd/loaded=1)
+		/obj/item/melee/baton/loaded=1)
+//		/obj/item/construction/rcd/loaded=1
 
 /datum/outfit/ert/medic/inquisitor
 	name = "Inquisition Medic"
