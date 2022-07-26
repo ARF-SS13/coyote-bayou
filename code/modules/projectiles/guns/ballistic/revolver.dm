@@ -410,7 +410,7 @@
 	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY * 2
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
 	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_FASTEST
+	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
