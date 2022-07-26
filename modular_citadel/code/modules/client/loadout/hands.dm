@@ -42,6 +42,11 @@
 	path = /obj/item/storage/backpack/cultpack
 	cost = 3
 
+/datum/gear/hands/backpack/old
+	name = "old satchel"
+	path = /obj/item/storage/backpack/satchel/old
+	cost = 3 
+
 /datum/gear/hands/briefcase/crafted
 	name = "briefcase"
 	path = /obj/item/storage/briefcase/crafted
