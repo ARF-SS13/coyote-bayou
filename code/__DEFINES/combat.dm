@@ -637,10 +637,10 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
-#define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, fire_delay = 2  , icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, fire_delay = 1.5, icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, fire_delay = 1  , icon="auto", damage_mult_add = -0.2)
-#define FULL_AUTO_800		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   automatic = 1, fire_delay = 0.8, icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, autofire_shot_delay = 1, burst_size = 1, icon="auto", damage_mult_add = -0.2)
+#define FULL_AUTO_800		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   automatic = 1, autofire_shot_delay = 0.8, burst_size = 1, icon="auto", damage_mult_add = -0.2)
 
 #define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", automatic = 0, burst_size=1, fire_delay=0, icon="semi")
 

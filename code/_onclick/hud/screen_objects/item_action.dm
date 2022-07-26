@@ -7,19 +7,14 @@
 	owner = null
 
 /obj/screen/item_action/Click()
-	to_chat(usr, "start")
 	if(!usr || !owner)
 		return TRUE
-	to_chat(usr, "checkactioncooldown")
 	if(!usr.CheckActionCooldown())
 		return
-	to_chat(usr, "stat and restrained")
 	if(usr.stat || usr.restrained())
 		return TRUE
-	to_chat(usr, "owner in usr")
 	if(!(owner in usr))
 		return TRUE
-	to_chat(usr, "should be working??? [name], [owner]")
 	owner.ui_action_click(usr, name)
 	update_icon()
 	return TRUE
