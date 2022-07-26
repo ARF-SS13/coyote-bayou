@@ -38,6 +38,7 @@
 	semi_auto = TRUE
 	can_suppress = TRUE
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
+	init_recoil = HANDGUN_RECOIL(1)
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE

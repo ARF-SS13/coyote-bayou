@@ -15,7 +15,7 @@
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
+	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SMG_HEAVY
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -40,6 +40,7 @@
 	var/is_automatic = FALSE
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
+	init_recoil = SMG_RECOIL(1)
 
 /obj/item/gun/ballistic/automatic/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)
@@ -263,6 +264,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2 // -15%
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.8)
 
 	can_unsuppress = FALSE
 	is_automatic = TRUE
@@ -304,6 +306,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.1)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -344,6 +347,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.8)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -405,6 +409,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.2)
 
 	can_attachments = FALSE
 
@@ -467,6 +472,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.25)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -506,6 +512,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.4)
 
 /* /obj/item/gun/ballistic/automatic/smg/smg10mm/auto_select()
 	var/mob/living/carbon/human/user = usr
@@ -562,6 +569,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.4)
 
 	automatic = 1
 	is_automatic = TRUE
@@ -629,6 +637,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.9)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -665,6 +674,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.1)
 
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	is_automatic = TRUE
@@ -732,6 +742,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.8)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -770,6 +781,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1)
 
 /* * * * * * * * * * *
  * MP-5 SD SMG
@@ -802,6 +814,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.7)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -831,7 +844,6 @@
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SMG_LIGHT
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -842,6 +854,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -881,7 +894,6 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -892,6 +904,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(1)
 
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -927,7 +940,6 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -955,7 +967,6 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -966,6 +977,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(1.3)
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/AltClick(mob/user)
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
@@ -983,10 +995,12 @@
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
 		spread = GUN_SPREAD_ACCURATE
+		init_recoil = RIFLE_RECOIL(0.9)
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
 		spread = GUN_SPREAD_AWFUL
+		init_recoil = RIFLE_RECOIL(1.3)
 	update_icon()
 
 /obj/item/gun/ballistic/automatic/m1carbine/compact/update_icon_state()
@@ -1009,7 +1023,6 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1020,6 +1033,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(1.1)
 
 	can_scope = TRUE
 	can_unsuppress = FALSE
@@ -1043,7 +1057,6 @@
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1092,6 +1105,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.1)
 
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
@@ -1129,7 +1143,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1140,6 +1153,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
 
 	can_bayonet = FALSE
 	semi_auto = TRUE
@@ -1172,7 +1186,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1210,7 +1223,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1221,6 +1233,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.1)
 
 	suppressed = 1
 	zoomable = TRUE
@@ -1246,7 +1259,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1257,6 +1269,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1)
 
 	can_attachments = TRUE
 	automatic_burst_overlay = FALSE
@@ -1282,7 +1295,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1293,6 +1305,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.9)
 
 	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
@@ -1329,6 +1342,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.9)
 
 	can_scope = TRUE
 	scope_state = "scope_short"
@@ -1355,7 +1369,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1366,6 +1379,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.8)
 
 	can_attachments = TRUE
 	semi_auto = TRUE
@@ -1404,7 +1418,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1415,6 +1428,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.1)
 
 	can_suppress = FALSE
 	can_scope = TRUE
@@ -1441,7 +1455,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1452,6 +1465,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.8)
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1488,7 +1502,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1499,6 +1512,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(0.9)
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1534,7 +1548,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1545,6 +1558,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.1)
 
 	en_bloc = 1
 	auto_eject = 1
@@ -1597,6 +1611,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 /* * * * * * * * * * *
  * Republic's Pride Rifle
@@ -1656,7 +1671,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_SEMI
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -1667,6 +1681,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
@@ -1710,6 +1725,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5)
 
 	zoom_amt = 10
 	zoom_out_amt = 13
@@ -1845,7 +1861,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -1856,6 +1871,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -1881,7 +1897,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -1892,6 +1907,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -1922,7 +1938,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -1964,7 +1979,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -1975,6 +1989,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.4)
 
 	can_attachments = FALSE
 	semi_auto = TRUE
@@ -2004,7 +2019,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2015,6 +2029,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2044,7 +2059,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2055,6 +2069,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.5)
 
 	can_suppress = FALSE
 
@@ -2091,6 +2106,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2120,7 +2136,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2131,6 +2146,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2167,7 +2183,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2178,6 +2193,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.3)
 
 	can_scope = TRUE
 
@@ -2198,7 +2214,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2228,7 +2243,6 @@
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2239,6 +2253,7 @@
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.1)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2264,7 +2279,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2275,6 +2289,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.1)
 
 	automatic = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
@@ -2297,7 +2312,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
@@ -2308,6 +2322,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2338,7 +2353,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_CARBINE
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_CARBINE
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -2349,6 +2363,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1)
 
 	is_automatic = TRUE
 	automatic = TRUE
@@ -2388,7 +2403,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LMG
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -2399,6 +2413,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.2)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2427,7 +2442,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 0.8
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_LMG
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -2438,6 +2452,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.1)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2472,7 +2487,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LMG * 1.5
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG * 2
 	recoil_multiplier = GUN_RECOIL_RIFLE_LMG * 2
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL * 2
@@ -2483,6 +2497,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(1.3)
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2563,7 +2578,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_GAUSS
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_GAUSS
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
@@ -2574,6 +2588,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.6)
 
 	zoomable = TRUE
 	zoom_amt = 10
@@ -2599,7 +2614,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -2610,6 +2624,7 @@ obj/item/gun/ballistic/automatic/bar
 	burst_size = 1
 	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1)
 
 	is_automatic = TRUE
 	spawnwithmagazine = TRUE

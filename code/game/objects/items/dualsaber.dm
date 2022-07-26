@@ -38,7 +38,6 @@
 	var/spinnable = TRUE
 	total_mass = 0.4 //Survival flashlights typically weigh around 5 ounces.
 	var/total_mass_on = 3.4
-	var/wielded = FALSE // track wielded status on item
 	var/slowdown_wielded = 0
 
 /datum/block_parry_data/dual_esword // please run at the man going apeshit with his funny doublesword

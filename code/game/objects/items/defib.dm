@@ -303,7 +303,6 @@
 	var/grab_ghost = FALSE
 	var/tlimit = DEFIB_TIME_LIMIT * 10
 	var/disarm_shock_time = 10
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/shockpaddles/Initialize()
 	. = ..()

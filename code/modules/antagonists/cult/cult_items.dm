@@ -706,7 +706,6 @@
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/datum/action/innate/cult/spear/spear_act
-	var/wielded = FALSE // track wielded status on item
 
 
 /obj/item/cult_spear/Initialize()

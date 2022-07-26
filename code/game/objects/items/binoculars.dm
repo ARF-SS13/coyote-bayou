@@ -11,21 +11,8 @@
 	var/zoom_out_amt = 6
 	var/zoom_amt = 10
 
-/obj/item/binoculars/Initialize()
+/obj/item/binoculars/wield(mob/living/user)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-
-/obj/item/binoculars/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
-
-/obj/item/binoculars/Destroy()
-	listeningTo = null
-	return ..()
-
-/obj/item/binoculars/proc/on_wield(obj/item/source, mob/user)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/unwield)
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 	listeningTo = user
 	user.visible_message("<span class='notice'>[user] holds [src] up to [user.p_their()] eyes.</span>", "<span class='notice'>You hold [src] up to your eyes.</span>")
@@ -91,4 +78,4 @@
 		var/client/C = user.client
 		C.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
-		user.client.pixel_y = 0
+		user.client.pixel_y = 0*/

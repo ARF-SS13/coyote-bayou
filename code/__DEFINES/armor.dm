@@ -414,6 +414,11 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define ARMOR_CAP_MAGIC 100
 #define ARMOR_CAP_WOUND 100
 
+/// Armor stiffness - How much recoil we get while running and gunning!
+#define LIGHT_STIFFNESS 0.5
+#define MEDIUM_STIFFNESS 1
+#define HEAVY_STIFFNESS 1.5
+
 
 
 

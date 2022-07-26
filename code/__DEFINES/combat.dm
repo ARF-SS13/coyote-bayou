@@ -312,14 +312,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_DAMAGE_SHOTGUN_SLUG 50
 
 /// Bullet recoil defines
-#define BULLET_RECOIL_PISTOL_LIGHT 0.5
-#define BULLET_RECOIL_PISTOL_MEDIUM 1
-#define BULLET_RECOIL_PISTOL_HEAVY 1
-#define BULLET_RECOIL_RIFLE_LIGHT 1
-#define BULLET_RECOIL_RIFLE_MEDIUM 2
-#define BULLET_RECOIL_RIFLE_HEAVY 2
-#define BULLET_RECOIL_SHOTGUN_PELLET 2 // The total recoil of the shell, not individual pellets
-#define BULLET_RECOIL_SHOTGUN_SLUG 2
+#define BULLET_RECOIL_PISTOL_LIGHT 3
+#define BULLET_RECOIL_PISTOL_MEDIUM 3.5
+#define BULLET_RECOIL_PISTOL_HEAVY 4
+#define BULLET_RECOIL_RIFLE_LIGHT 3
+#define BULLET_RECOIL_RIFLE_MEDIUM 5
+#define BULLET_RECOIL_RIFLE_HEAVY 6
+#define BULLET_RECOIL_SHOTGUN_PELLET 40 // The total recoil of the shell, not individual pellets
+#define BULLET_RECOIL_SHOTGUN_SLUG 20
 
 /// Rubber bullet damage multiplier
 #define RUBBERY_DAMAGE_MULT 0.1
@@ -624,3 +624,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_COCK_RIFLE_BASE (GUN_COCK_BASE)
 #define GUN_COCK_RIFLE_FAST (GUN_COCK_BASE * 0.75)
 #define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.1)
+
+#define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
+#define RECOIL_REDUCTION_TIME 1 SECOND
+
+#define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
+#define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
+#define SMG_RECOIL(x)          list(1   *x, 0.2*x, 1.2*x )
+#define CARBINE_RECOIL(x)      list(0.85*x, 0.3*x, 1.8*x )
+#define RIFLE_RECOIL(x)        list(0.7 *x, 0.4*x, 2.4*x )
+#define LMG_RECOIL(x)          list(0.55*x, 0.5*x, 3*x   )
+#define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )

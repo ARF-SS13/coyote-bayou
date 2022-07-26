@@ -48,14 +48,19 @@
 
 /mob/living/carbon/swap_hand(held_index)
 	. = ..()
+	var/obj/item/held_item = get_active_held_item()
 	if(!.)
-		var/obj/item/held_item = get_active_held_item()
 		to_chat(usr, "<span class='warning'>Your other hand is too busy holding [held_item].</span>")
 		return
 	if(!held_index)
 		held_index = (active_hand_index % held_items.len)+1
 	var/oindex = active_hand_index
 	active_hand_index = held_index
+	var/obj/item/new_item = get_active_held_item()
+	if(held_item)
+		held_item.swapped_from(src)
+	if(new_item)
+		new_item.swapped_to(src)
 	if(hud_used)
 		var/obj/screen/inventory/hand/H
 		H = hud_used.hand_slots["[oindex]"]

@@ -49,6 +49,7 @@ ATTACHMENTS
 	/// If time >= this, clear recoil and any related spread
 	var/recoil_cooldown_schedule = 0
 
+
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
@@ -160,7 +161,19 @@ ATTACHMENTS
 
 	var/automatic = 0 // Does the gun fire when the clicker's held down?
 
+	var/init_offset = 0
+	var/datum/recoil/recoil_dat // Reference to the recoil datum in datum/recoil.dm
+	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
+	var/braced = FALSE
+	var/braceable = FALSE
+
+	var/safety = FALSE
+
 /obj/item/gun/Initialize()
+	if(!recoil_dat && islist(init_recoil))
+		recoil_dat = getRecoil(arglist(init_recoil))
+	else if(!islist(init_recoil))
+		recoil_dat = getRecoil()
 	. = ..()
 	if(no_pin_required)
 		pin = null
@@ -227,7 +240,7 @@ ATTACHMENTS
 	to_chat(user, "<span class='danger'>[dryfire_text]</span>")
 	playsound(src, dryfire_sound, 30, 1)
 
-/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+/obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P)
 	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
@@ -241,6 +254,7 @@ ATTACHMENTS
 				user.visible_message("<span class='danger'>[user] fires [src] point blank at [pbtarget]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 			else
 				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+	kickback(user, P)
 
 //Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
 /obj/item/gun/pickup(mob/living/user)
@@ -323,7 +337,7 @@ ATTACHMENTS
 				user.dropItemToGround(src, TRUE)
 				return
 
-	if(weapon_weight == GUN_TWO_HAND_ONLY && user.get_inactive_held_item())
+	if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
 		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
 		return
 
@@ -438,16 +452,18 @@ ATTACHMENTS
 			do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i, stam_cost)
 	else
 		if(chambered)
-			sprd = get_per_shot_spread(randomized_gun_spread, user)
+			sprd = user.calculate_offset(init_offset)//get_per_shot_spread(randomized_gun_spread, user)
+			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
+			var/BB = chambered.BB
 			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
 				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message, stam_cost)
+					shoot_live_shot(user, 1, target, message, stam_cost, BB)
 				else
-					shoot_live_shot(user, 0, target, message, stam_cost)
+					shoot_live_shot(user, 0, target, message, stam_cost, BB)
 		else
 			shoot_with_empty_chamber(user)
 			return
@@ -471,7 +487,8 @@ ATTACHMENTS
 				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
 				return
 		if(randomspread)
-			sprd = get_per_shot_spread(sprd, user)
+			sprd = user.calculate_offset(init_offset)//get_per_shot_spread(sprd, user)
+			sprd = roll(2, sprd) - (sprd + 1)
 		else //Smart spread
 			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
 		before_firing(target,user)
@@ -481,9 +498,9 @@ ATTACHMENTS
 			return FALSE
 		else
 			if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-				shoot_live_shot(user, 1, target, message, stam_cost)
+				shoot_live_shot(user, 1, target, message, stam_cost, chambered.BB)
 			else
-				shoot_live_shot(user, 0, target, message, stam_cost)
+				shoot_live_shot(user, 0, target, message, stam_cost, chambered.BB)
 			if (iteration >= burst_size)
 				firing = FALSE
 	else
@@ -541,7 +558,7 @@ ATTACHMENTS
 			update_overlays()
 			update_icon()
 		return
-
+	/*
 	if(istype(I, /obj/item/attachments/recoil_decrease))
 		var/obj/item/attachments/recoil_decrease/R = I
 		if(!recoil_decrease && can_attachments)
@@ -553,7 +570,7 @@ ATTACHMENTS
 			recoil_cooldown_time *= 0.5
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
-
+	*/
 	if(istype(I, /obj/item/attachments/burst_improvement))
 		var/obj/item/attachments/burst_improvement/T = I
 		if(!burst_improvement && burst_size > 1 && can_attachments)
@@ -911,7 +928,7 @@ ATTACHMENTS
 	return max(bonus_spread + (base_inaccuracy * mult), 0) //no negative spread.
 
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
-	. = get_per_shot_recoil()
+	. = 0 //get_per_shot_recoil()
 	if(user && !user.has_gravity())
 		. *= 5
 
@@ -934,6 +951,7 @@ ATTACHMENTS
 
 		playsound(src, played_sound, volume, 1)
 
+/*
 /// Takes the current recoil, adds on some more recoil from the bullet and modded by the gun
 /// and returns a value for its adjusted spread
 /// Also clears the recoil if its been long enough
@@ -992,16 +1010,64 @@ ATTACHMENTS
 	. = round(((rand(-100,100) * 0.01) * process_recoil(user)), 0.1)
 	/// Add in the gun's spread
 	. += round(((rand(-100,100) * 0.01) * extra_spread), 0.1)
+*/
 
+/obj/item/gun/proc/kickback(mob/living/user, obj/item/projectile/P)
+	var/base_recoil = recoil_dat.getRating(RECOIL_BASE)
+	var/brace_recoil = 0
+	var/unwielded_recoil = 0
 
+	if(!braced)
+		brace_recoil = recoil_dat.getRating(RECOIL_TWOHAND)
+	else if(braceable > 1)
+		base_recoil /= 4 // With a bipod, you can negate most of your recoil
 
+	if(!wielded)
+		unwielded_recoil = recoil_dat.getRating(RECOIL_ONEHAND)
 
+	if(unwielded_recoil)
+		switch(recoil_dat.getRating(RECOIL_ONEHAND_LEVEL))
+			if(0.6 to 0.8)
+				if(prob(25)) // Don't need to tell them every single time
+					to_chat(user, span_warning("Your aim wavers slightly."))
+			if(0.8 to 1)
+				if(prob(50))
+					to_chat(user, span_warning("Your aim wavers as you fire \the [src] with just one hand."))
+			if(1 to 1.5)
+				to_chat(user, span_warning("You have trouble keeping \the [src] on target with just one hand."))
+			if(1.5 to INFINITY)
+				to_chat(user, span_warning("You struggle to keep \the [src] on target with just one hand!"))
 
+	else if(brace_recoil)
+		switch(recoil_dat.getRating(RECOIL_BRACE_LEVEL))
+			if(0.6 to 0.8)
+				if(prob(25))
+					to_chat(user, span_warning("Your aim wavers slightly."))
+			if(0.8 to 1)
+				if(prob(50))
+					to_chat(user, span_warning("Your aim wavers as you fire \the [src] while carrying it."))
+			if(1 to 1.2)
+				to_chat(user, span_warning("You have trouble keeping \the [src] on target while carrying it!"))
+			if(1.2 to INFINITY)
+				to_chat(user, span_warning("You struggle to keep \the [src] on target while carrying it!"))
 
+	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
+/obj/item/gun/proc/check_safety_cursor(mob/living/user)
+	if(safety)
+		user.remove_cursor()
+	else
+		user.update_cursor(src)
 
+/*
+/obj/item/gun/swapped_from()
+	.=..()
+	update_firemode(FALSE)
 
-
+/obj/item/gun/swapped_to()
+	.=..()
+	update_firemode()
+*/
 
 ///////////////////
 //GUNCODE ARCHIVE//

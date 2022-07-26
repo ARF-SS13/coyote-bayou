@@ -23,7 +23,7 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
+	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -42,6 +42,7 @@
 	spawnwithmagazine = TRUE
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	init_recoil = RIFLE_RECOIL(2.8)
 
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
@@ -127,7 +128,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -180,7 +180,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -232,7 +231,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP //penis
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -273,7 +271,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -333,7 +330,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_PUMP
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -367,7 +363,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -405,7 +400,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -438,7 +432,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -472,7 +465,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
@@ -534,7 +526,6 @@
 
 	slowdown = GUN_SLOWDOWN_SHOTGUN_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
-	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
 	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
 	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
