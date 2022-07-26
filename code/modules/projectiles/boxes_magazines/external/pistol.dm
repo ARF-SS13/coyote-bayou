@@ -158,6 +158,10 @@
 /obj/item/ammo_box/magazine/m44/automag/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m44/automag/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[stored_ammo.len ? "[max_ammo]" : "0"]"
+
 //14mm
 /obj/item/ammo_box/magazine/m14mm
 	name = "handgun magazine (14mm)"

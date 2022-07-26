@@ -31,7 +31,7 @@
 	allowed_mags |= typecacheof(mag_type)
 	if(length(extra_mag_types))
 		for(var/obj/item/ammo_box/ammo_type in extra_mag_types)
-			extra_mag_types |= typecacheof(ammo_type.type)
+			extra_mag_types |= typecacheof(ammo_type)
 	if(length(disallowed_mags))
 		allowed_mags -= disallowed_mags
 	chamber_round()
@@ -94,7 +94,8 @@
 		// removable mag, eject the mag
 		if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
 			return FALSE
-		attack_self(user)
+		if(istype(magazine))
+			attack_self(user) //stop ejecting perfectly good shells!
 		if(user.transferItemToLoc(new_mag, src))
 			magazine = new_mag
 			to_chat(user, span_notice("You load a new magazine into \the [src]."))
