@@ -122,7 +122,7 @@
 				wounds_to_unburn.treat_burn(src, user, self_application)
 				break
 	if(heal_operations & DO_APPLY_BANDAGE)
-		affected_bodypart.apply_bandage(src)
+		affected_bodypart.apply_gauze(src)
 
 	do_medical_message(user, C, "end")
 	return TRUE

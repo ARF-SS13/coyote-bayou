@@ -156,7 +156,7 @@
 	return bleed_amt
 
 /datum/wound/bleed/get_blood_flow()
-	. = blood_flow
+	. = min(blood_flow, WOUND_MAX_BLOODFLOW)
 	if(victim.mobility_flags & ~MOBILITY_STAND)
 		. *= 0.75
 	var/owner_blood_volume = victim.get_blood(TRUE)
