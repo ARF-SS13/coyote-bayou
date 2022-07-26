@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(npcpool)
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
-		if(!SA) //sanity
+		if(QDELETED(SA)) //sanity
 			break
 		if(!SA.ckey && !SA.mob_transforming)
 			if(SA.stat != DEAD)
