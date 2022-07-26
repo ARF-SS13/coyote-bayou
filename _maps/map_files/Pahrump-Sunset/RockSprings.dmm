@@ -6867,6 +6867,9 @@
 /obj/structure/toilet{
 	pixel_y = 10
 	},
+/obj/effect/decal/waste{
+	icon_state = "goo12"
+	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -28988,11 +28991,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "uaL" = (
-/mob/living/simple_animal/hostile/raider/legendary{
-	speak = list(Shitter's clogged);
-	speak_chance = 5;
-	speak_emote = s
-	},
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
