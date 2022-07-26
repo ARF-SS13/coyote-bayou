@@ -185,7 +185,7 @@ All foods are distributed among various categories. Use common sense.
 					span_warning("[user] cannot force any more of [src] down [M]'s throat!"),
 					span_warning("[user] cannot force any more of [src] down your throat!"))
 				return
-			if(!do_mob(user, M, ((HAS_TRAIT(M, TRAIT_VORACIOUS)) ? 1 SECOND : 3 SECONDS))) //Wait 3 / 1 second(s) before you can feed
+			if(!do_mob(user, M, ((HAS_TRAIT(M, TRAIT_VORACIOUS)) ? 1 SECONDS : 3 SECONDS))) //Wait 3 / 1 second(s) before you can feed
 				return
 
 			M.visible_message(
