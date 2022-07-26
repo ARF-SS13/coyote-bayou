@@ -22,8 +22,8 @@ SUBSYSTEM_DEF(itemspawners)
 
 //Called when a human swaps hands to a hand which is holding this item
 /obj/item/proc/swapped_to(mob/user)
-	//add_hud_actions(user)
+	add_hud_actions(user)
 
 //Called when a human swaps hands away from a hand which is holding this item
 /obj/item/proc/swapped_from(mob/user)
-	//remove_hud_actions(user)
+	remove_hud_actions(user)

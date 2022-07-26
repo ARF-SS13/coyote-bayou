@@ -8,12 +8,10 @@
 		H.remove_cursor()
 
 /obj/item/gun/swapped_from()
-	usr << "swapped from"
 	if(isliving(loc))
 		check_safety_cursor(loc)
 
 /obj/item/gun/swapped_to()
-	usr << "swapped to"
 	if(isliving(loc))
 		check_safety_cursor(loc)
 

@@ -36,6 +36,7 @@ ATTACHMENTS
 	force = 5
 	item_flags = NEEDS_PERMIT | SLOWS_WHILE_IN_HAND
 	attack_verb = list("struck", "hit", "bashed")
+	hud_actions = list()
 	var/fire_sound = "gunshot"
 	/// Time it takes between drawing the gun and shooting the gun
 	var/draw_time = GUN_DRAW_NORMAL 
@@ -168,6 +169,14 @@ ATTACHMENTS
 	var/braceable = FALSE
 
 	var/safety = FALSE
+	var/restrict_safety = FALSE //To restrict the users ability to toggle the safety
+
+	var/sel_mode = 1 //index of the currently selected mode
+	var/list/firemodes = list()
+	var/list/init_firemodes = list()
+	var/currently_firing = FALSE // To prevent firemode swapping while shooting.
+
+	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -181,7 +190,33 @@ ATTACHMENTS
 		pin = new pin(src)
 	if(gun_light)
 		alight = new (src)
+	if(!restrict_safety)
+		var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/gun/safety
+		action.owner = src
+		hud_actions += action
+
+	var/obj/screen/item_action/action = new /obj/screen/item_action/top_bar/weapon_info
+	action.owner = src
+	hud_actions += action
+	initialize_firemodes()
 	build_zooming()
+
+/obj/item/gun/proc/initialize_firemodes()
+	QDEL_LIST(firemodes)
+
+	for(var/i in 1 to init_firemodes.len)
+		var/list/L = init_firemodes[i]
+		add_firemode(L)
+
+	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
+	if(firemodes.len > 1)
+		if(!action)
+			action = new /obj/screen/item_action/top_bar/gun/fire_mode
+			action.owner = src
+			hud_actions += action
+	else
+		qdel(action)
+		hud_actions -= action
 
 /obj/item/gun/Destroy()
 	if(pin)
@@ -223,6 +258,10 @@ ATTACHMENTS
 			. += "<span class='info'>[gun_light] looks like it can be <b>unscrewed</b> from [src].</span>"
 	else if(can_flashlight)
 		. += "It has a mounting point for a <b>seclite</b>."
+	if(recoil_dat.getRating(RECOIL_TWOHAND) > 0.4)
+		. += span_warning("This gun needs to be braced against something to be used effectively.")
+	else if(recoil_dat.getRating(RECOIL_ONEHAND) > 0.6)
+		. += span_warning("This gun needs to be wielded in both hands to be used most effectively.")
 
 //called after the gun has successfully fired its chambered ammo.
 /obj/item/gun/proc/process_chamber(mob/living/user)
@@ -239,6 +278,7 @@ ATTACHMENTS
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	to_chat(user, "<span class='danger'>[dryfire_text]</span>")
 	playsound(src, dryfire_sound, 30, 1)
+	update_firemode()
 
 /obj/item/gun/proc/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0, obj/item/projectile/P)
 	if(stam_cost) //CIT CHANGE - makes gun recoil cause staminaloss
@@ -418,6 +458,10 @@ ATTACHMENTS
 
 	if(on_cooldown())
 		return
+	if(safety)
+		to_chat(user, span_danger("The gun's safety is on!"))
+		shoot_with_empty_chamber(user)
+		return
 	var/time_till_draw = user.AmountWeaponDrawDelay()
 	if(time_till_draw)
 		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
@@ -435,6 +479,7 @@ ATTACHMENTS
 	var/sprd = 0
 	var/randomized_gun_spread = 0
 	var/rand_spr = rand()
+	currently_firing = TRUE
 	if(spread)
 		randomized_gun_spread = spread
 	else if(burst_size > 1 && burst_spread)
@@ -443,16 +488,9 @@ ATTACHMENTS
 	if(HAS_TRAIT(user, SPREAD_CONTROL))
 		randomized_gun_spread = max(0, randomized_gun_spread-8)
 		randomized_bonus_spread = max(0, randomized_bonus_spread-8)
-	if(burst_size > 1)
-		do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, 1)
-		for(var/i in 2 to burst_size)
-			sleep(burst_shot_delay)
-			if(QDELETED(src))
-				break
-			do_burst_shot(user, target, message, params, zone_override, sprd, randomized_gun_spread, randomized_bonus_spread, rand_spr, i, stam_cost)
-	else
+	for(var/i in 1 to burst_size)
 		if(chambered)
-			sprd = user.calculate_offset(init_offset)//get_per_shot_spread(randomized_gun_spread, user)
+			sprd = user.calculate_offset(init_offset)
 			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
 			var/BB = chambered.BB
@@ -467,48 +505,13 @@ ATTACHMENTS
 		else
 			shoot_with_empty_chamber(user)
 			return
+		if(i < burst_size)
+			sleep(burst_shot_delay)
 		process_chamber(user)
 		update_icon()
 
+	currently_firing = FALSE
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
-	return TRUE
-
-/obj/item/gun/proc/do_burst_shot(mob/living/user, atom/target, message = TRUE, params=null, zone_override = "", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0, stam_cost = 0)
-	if(!user || !firing)
-		firing = FALSE
-		return FALSE
-	if(!issilicon(user))
-		if(iteration > 1 && !(user.is_holding(src))) //for burst firing
-			firing = FALSE
-			return FALSE
-	if(chambered && chambered.BB)
-		if(HAS_TRAIT(user, TRAIT_PACIFISM)) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
-			if(chambered.harmful) // Is the bullet chambered harmful?
-				to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
-				return
-		if(randomspread)
-			sprd = user.calculate_offset(init_offset)//get_per_shot_spread(sprd, user)
-			sprd = roll(2, sprd) - (sprd + 1)
-		else //Smart spread
-			sprd = round((((rand_spr/burst_size) * iteration) - (0.5 + (rand_spr * 0.25))) * (randomized_gun_spread + randomized_bonus_spread), 1)
-		before_firing(target,user)
-		if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
-			shoot_with_empty_chamber(user)
-			firing = FALSE
-			return FALSE
-		else
-			if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-				shoot_live_shot(user, 1, target, message, stam_cost, chambered.BB)
-			else
-				shoot_live_shot(user, 0, target, message, stam_cost, chambered.BB)
-			if (iteration >= burst_size)
-				firing = FALSE
-	else
-		shoot_with_empty_chamber(user)
-		firing = FALSE
-		return FALSE
-	process_chamber(user)
-	update_icon()
 	return TRUE
 
 /obj/item/gun/attackby(obj/item/I, mob/user, params)
@@ -662,12 +665,13 @@ ATTACHMENTS
 
 	gun_light = new_light
 
-
+/*
 /obj/item/gun/ui_action_click(mob/user, action)
 	if(istype(action, /datum/action/item_action/toggle_scope_zoom))
 		zoom(user)
 	else if(istype(action, alight))
 		toggle_gunlight()
+*/
 
 /obj/item/gun/proc/toggle_gunlight()
 	if(!gun_light)
@@ -1053,21 +1057,90 @@ ATTACHMENTS
 
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
+/obj/item/gun/proc/add_firemode(list/firemode)
+	//If this var is set, it means spawn a specific subclass of firemode
+	if (firemode["mode_type"])
+		var/newtype = firemode["mode_type"]
+		firemodes.Add(new newtype(src, firemode))
+	else
+		firemodes.Add(new /datum/firemode(src, firemode))
+
+/obj/item/gun/proc/switch_firemodes()
+	if(firemodes.len <= 1)
+		return null
+	update_firemode(FALSE) //Disable the old firing mode before we switch away from it
+	sel_mode++
+	if(sel_mode > firemodes.len)
+		sel_mode = 1
+	return set_firemode(sel_mode)
+
+/obj/item/gun/proc/set_firemode(index)
+	//refresh_upgrades()
+	if(index > firemodes.len)
+		index = 1
+	var/datum/firemode/new_mode = firemodes[sel_mode]
+	new_mode.apply_to(src)
+	new_mode.update()
+	update_hud_actions()
+	return new_mode
+
+/obj/item/gun/proc/toggle_firemode(mob/living/user)
+	if(currently_firing) // Prevents a bug with swapping fire mode while burst firing.
+		return
+	var/datum/firemode/new_mode = switch_firemodes()
+	if(new_mode)
+		playsound(src.loc, 'sound/weapons/selector.ogg', 100, 1)
+		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
+
+/obj/item/gun/proc/toggle_safety(mob/living/user)
+	to_chat(user, "[restrict_safety], [src != user.get_active_held_item()]")
+	if(restrict_safety || src != user.get_active_held_item())
+		return
+
+	safety = !safety
+	playsound(user, 'sound/weapons/selector.ogg', 50, 1)
+	to_chat(user, span_notice("You toggle the safety [safety ? "on":"off"]."))
+	//Update firemode when safeties are toggled
+	update_firemode()
+	update_hud_actions()
+	check_safety_cursor(user)
+
 /obj/item/gun/proc/check_safety_cursor(mob/living/user)
 	if(safety)
 		user.remove_cursor()
 	else
 		user.update_cursor(src)
 
-/*
 /obj/item/gun/swapped_from()
 	.=..()
 	update_firemode(FALSE)
+	remove_hud_actions(usr)
 
 /obj/item/gun/swapped_to()
 	.=..()
 	update_firemode()
-*/
+	add_hud_actions(usr)
+
+/obj/item/gun/ui_action_click(mob/living/user, action_name)
+	switch(action_name)
+		if("fire mode")
+			toggle_firemode(user)
+		if("scope")
+			//toggle_scope(user)
+		if("safety")
+			toggle_safety(user)
+		if("Weapon Info")
+			ui_interact(user)
+
+//Finds the current firemode and calls update on it. This is called from a few places:
+//When firemode is changed
+//When safety is toggled
+//When gun is picked up
+//When gun is readied
+/obj/item/gun/proc/update_firemode(force_state = null)
+	if (sel_mode && firemodes && firemodes.len)
+		var/datum/firemode/new_mode = firemodes[sel_mode]
+		new_mode.update(force_state)
 
 ///////////////////
 //GUNCODE ARCHIVE//

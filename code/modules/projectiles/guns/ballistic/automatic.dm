@@ -41,6 +41,12 @@
 	can_suppress = FALSE
 	equipsound = 'sound/f13weapons/equipsounds/riflequip.ogg'
 	init_recoil = SMG_RECOIL(1)
+	init_firemodes = list(
+		FULL_AUTO_400,
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND,
+		BURST_5_ROUND
+	)
 
 /obj/item/gun/ballistic/automatic/attackby(obj/item/I, mob/user, params)
 	if(user.a_intent == INTENT_HARM)

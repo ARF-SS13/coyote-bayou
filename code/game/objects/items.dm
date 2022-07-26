@@ -165,6 +165,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/stiffness = 0 // How much recoil is caused by moving
 	var/obscuration = 0 // How much firearm accuracy is decreased
 
+	// HUD action buttons. Only used by guns atm.
+	var/list/hud_actions
 
 /obj/item/Initialize()
 
@@ -453,12 +455,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user) & COMPONENT_DROPPED_RELOCATION)
 		. = ITEM_RELOCATED_BY_DROPPED
 	user?.update_equipment_speed_mods()
+	remove_hud_actions(user)
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
 	item_flags |= IN_INVENTORY
+	add_hud_actions(user)
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
 /obj/item/proc/on_found(mob/finder)
@@ -539,7 +543,34 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 //The default action is attack_self().
 //Checks before we get to here are: mob is alive, mob is not restrained, stunned, asleep, resting, laying, item is on the mob.
 /obj/item/proc/ui_action_click(mob/user, actiontype)
+	to_chat(user, "HUH???")
 	attack_self(user)
+
+/obj/item/proc/add_hud_actions(mob/user)
+	if(!hud_actions || !user.client)
+		return
+
+	update_hud_actions()
+
+	for(var/action in hud_actions)
+		user.client.screen |= action
+
+/obj/item/proc/remove_hud_actions(mob/user)
+	if(!user)
+		return
+	if(!hud_actions || !user.client)
+		return
+
+	for(var/action in hud_actions)
+		user.client.screen -= action
+
+/obj/item/proc/update_hud_actions()
+	if(!hud_actions)
+		return
+
+	for(var/A in hud_actions)
+		var/obj/item/action = A
+		action.update_icon()
 
 /obj/item/proc/eyestab(mob/living/carbon/M, mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -1128,3 +1159,5 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.visible_message("<span class='danger'>[user] grabs \a [T]!</span>")
 	user.SetThrowDelay(6)
 	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)
+
+	

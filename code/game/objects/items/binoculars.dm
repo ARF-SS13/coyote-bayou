@@ -65,7 +65,8 @@
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
 
-/obj/item/binoculars/proc/unwield(mob/user)
+/obj/item/binoculars/unwield(mob/user)
+	. = ..()
 	if(listeningTo)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
@@ -78,4 +79,4 @@
 		var/client/C = user.client
 		C.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
-		user.client.pixel_y = 0*/
+		user.client.pixel_y = 0

@@ -150,11 +150,6 @@
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
 	return ..()
 
-/obj/item/gun/energy/do_burst_shot(mob/living/user, atom/target, message = TRUE, params = null, zone_override="", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0, stam_cost = 0)
-	if(!chambered && can_shoot())
-		process_chamber()	// Ditto.
-	return ..()
-
 // Firemodes/Ammotypes
 
 /obj/item/gun/energy/proc/update_ammo_types()
