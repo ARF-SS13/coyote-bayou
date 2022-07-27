@@ -676,6 +676,11 @@ GLOBAL_LIST_INIT(storage_bulletbelt_can_hold, typecacheof(list(
 /// How much volume fits in a holster
 #define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_HOLSTER_MAX_ITEMS
 
+/// How many items total fit in a shoulder holster
+#define STORAGE_SHOULDER_HOLSTER_MAX_ITEMS 4
+/// How much volume fits in a holster
+#define STORAGE_SHOULDER_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+
 /// How many items total fit in a belt
 #define STORAGE_BELT_MAX_ITEMS 14
 /// How much volume fits in a belt
