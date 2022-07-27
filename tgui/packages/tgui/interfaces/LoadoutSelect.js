@@ -32,17 +32,6 @@ export const LoadoutSelect = (props, context) => {
                 </div>))}
             </Section>
           </Flex.Item>
-          <Flex.Item height="100%" width="50%" style={{ "vertical-align": "top" }}>
-            <Section title="Preview" fill>
-              {!data.preview && "No outfit selected."
-              || (
-                <div style={{ "text-align": "center" }}>
-                  <img src={`data:image/jpeg;base64,${data.preview}`} style={{ "image-rendering": "pixelated", "-ms-interpolation-mode": "nearest-neighbor" }} width={220} height={220} /><br />
-                  <br />
-                  <Button style={{ "margin": "auto", "display": "block", "text-align": "center" }} content={"Finished"} onClick={() => act('loadout_confirm')} />
-                </div>)}
-            </Section>
-          </Flex.Item>
         </Flex>
       </Window.Content>
     </Window>

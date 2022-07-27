@@ -136,9 +136,9 @@
 	data["selected"] = selected_name
 	if (selected_name)
 		data["items"] = selected_items
-		if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
-			generate_previews()
-		data["preview"] = preview_images[selected_datum.name]
+		// if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
+		// 	generate_previews()
+		// data["preview"] = preview_images[selected_datum.name]
 	return data
 
 /datum/component/loadout_selector/ui_act(action, params)
@@ -161,8 +161,8 @@
 
 	if (selected_datum)
 		//If random is used, get rid of the generated previews so we'll regenerate them if we re-select this outfit
-		if (selected_datum.contains_randomisation)
-			preview_images[selected_datum.name] = null
+//		if (selected_datum.contains_randomisation)
+//			preview_images[selected_datum.name] = null
 
 		//Clean up old dummy/outfit
 		QDEL_NULL(selected_datum)
@@ -178,7 +178,7 @@
 	selected_datum = new newtype
 	selected_items = selected_datum.ui_data()
 
-	generate_previews()
+//	generate_previews()
 	spawn()
 		if (usr)
 			ui_interact(usr)
