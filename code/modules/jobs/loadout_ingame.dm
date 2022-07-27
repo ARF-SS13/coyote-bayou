@@ -138,7 +138,7 @@
 		data["items"] = selected_items
 		// if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
 		// 	generate_previews()
-		// data["preview"] = preview_images[selected_datum.name]
+		data["preview"] = preview_images[selected_datum.name]
 	return data
 
 /datum/component/loadout_selector/ui_act(action, params)
