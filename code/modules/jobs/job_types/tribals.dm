@@ -160,8 +160,6 @@ Tribal Shaman
 		return
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/daturanasuture)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/daturanasuture15)
 
 /datum/outfit/job/tribal/f13shaman
 	name = "Shaman"
