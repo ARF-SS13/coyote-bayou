@@ -356,7 +356,7 @@
 /obj/item/stack/medical/suture/emergency/daturana
 	name = "daturana suture"
 	icon_state = "suture_tribal"
-	desc = "Improvised sutures that have been thoroguhly soaked in oils from the root of datura flowers. Better than the basic improvised suture, but harder to mass produce."
+	desc = "Improvised sutures that have been thoroughly soaked in oils from the root of datura flowers. Better than the basic improvised suture, but harder to mass produce."
 	heal_brute = 7
 	max_amount = 15
 	stop_bleeding = 4
