@@ -1,5 +1,3 @@
-#define OUTDOOR_AREAS list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
-
 /obj/item/seeds/tower
 	name = "pack of tower-cap mycelium"
 	desc = "This mycelium grows into tower-cap mushrooms."
@@ -184,37 +182,14 @@
 /obj/structure/bonfire/attackby(obj/item/W, mob/user, params)
 	//SMOKE SIGNALS. Burn cloth to send a radio message to everyone who knows tribal.
 	if(istype(W, /obj/item/stack/sheet/cloth) && !grill && burning)
-		var/obj/item/stack/sheet/cloth/C = W
 		if(!user.has_language(/datum/language/tribal))
 			return ..()
-		var/outdoors = FALSE
-		for(var/area_type in OUTDOOR_AREAS)
-			if(istype(get_area(src), area_type))
-				outdoors = TRUE
-				break
-		if(!outdoors)
-			to_chat(user, span_warning("You must be outside to send a smoke signal."))
-			return
-		var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
-		if(!signalmessage)
-			return
-		var/send_time = length(signalmessage) * 2 //Deciseconds. A 10 character message would take 20 deciseconds, or two seconds, to send.
-		if(!user.canUseTopic(src, BE_CLOSE))
-			to_chat(user, span_warning("You have to stand still to send a smoke signal."))
-			return
-		if(do_after(user, send_time, target = src))
-			if(!C.use(1))
-				to_chat(user, span_warning("You don't have enough cloth to send a smoke signal."))
-				return
-			smoke_signal(user, signalmessage, src)
-			user.visible_message("[user] burns \the [W] in short, controlled bursts.")
-		else
-			to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+		attempt_smoke_signal(W, user)
 		return
 	//SANDSTONE GUARDRAIL. Use sandstone to make the bonfire dense to avoid accidentally walking onto the fire.
 	if(istype(W, /obj/item/stack/sheet/mineral/sandstone) && !stones)
-		var/obj/item/stack/sheet/mineral/sandstone/S = W
-		if(S.use(3))
+		var/obj/item/stack/sheet/mineral/sandstone/stone = W
+		if(stone.use(3))
 			to_chat(user, span_warning("You surround \the [src] with stones to make it safer."))
 			density = TRUE
 			stones = TRUE
@@ -225,11 +200,11 @@
 			return
 	//STAKE AND GRILL. Use metal rods to add either a stake to burn your enemies on, or a grill to cook food like a microwave.
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
-		var/obj/item/stack/rods/R = W
+		var/obj/item/stack/rods/rod = W
 		var/choice = input(user, "What would you like to construct?", "Bonfire") as null|anything in list("Stake","Grill")
 		switch(choice)
 			if("Stake")
-				R.use(1)
+				rod.use(1)
 				can_buckle = TRUE
 				buckle_requires_restraints = TRUE
 				to_chat(user, "<span class='italics'>You add a rod to \the [src].")
@@ -238,7 +213,7 @@
 				underlays += rod_underlay
 				return
 			if("Grill")
-				R.use(1)
+				rod.use(1)
 				grill = TRUE
 				to_chat(user, "<span class='italics'>You add a grill to \the [src].")
 				add_overlay("bonfire_grill")
@@ -352,6 +327,37 @@
 		set_light(0)
 		STOP_PROCESSING(SSobj, src)
 
+/obj/structure/bonfire/proc/attempt_smoke_signal(obj/item/stack/sheet/cloth/sheet, mob/living/user, )
+	var/outdoors = FALSE
+	for(var/area_type in GLOB.outdoor_areas)
+		if(istype(get_area(src), area_type))
+			outdoors = TRUE
+			break
+	if(!outdoors)
+		to_chat(user, span_warning("You must be outside to send a smoke signal."))
+		return
+	var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
+	if(!signalmessage)
+		return
+	var/send_time = length(signalmessage) * 2 //Deciseconds. A 10 character message would take 20 deciseconds, or two seconds, to send.
+	if(!user.canUseTopic(src, BE_CLOSE))
+		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		return
+	if(do_after(user, send_time, target = src))
+		if(!sheet.use(1))
+			to_chat(user, span_warning("You don't have enough cloth to send a smoke signal."))
+			to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+			return
+		smoke_signal(user, signalmessage, src)
+		user.visible_message("[user] burns \the [sheet] in short, controlled bursts.")
+		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+	else
+		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		return
+	
+
 /obj/structure/bonfire/proc/smoke_signal(mob/living/M, message, obj/structure/bonfire/B)
 	var/log_message = "(Smoke Signal) [message]"
 	log_say(log_message, M)
@@ -365,9 +371,9 @@
 			var/msg_dead = "(Smoke Signal) [M]: "+span_papyrus("\"[message]\"")
 			to_chat(player, msg_dead)
 			continue
-		if(player.has_language(/datum/language/tribal))
+		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
 			var/outdoors = FALSE
-			for(var/area_type in OUTDOOR_AREAS)
+			for(var/area_type in GLOB.outdoor_areas)
 				if(istype(get_area(src), area_type))
 					outdoors = TRUE
 					break
@@ -403,5 +409,3 @@
 /obj/structure/bonfire/unbuckle_mob(mob/living/buckled_mob, force=FALSE)
 	if(..())
 		buckled_mob.pixel_y -= 13
-
-#undef OUTDOOR_AREAS
