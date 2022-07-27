@@ -551,8 +551,8 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
-	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.max_items = STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_SHOULDER_HOLSTER_MAX_VOLUME
 	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/holster/full/PopulateContents()
