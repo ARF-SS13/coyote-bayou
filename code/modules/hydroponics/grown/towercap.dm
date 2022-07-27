@@ -367,7 +367,7 @@
 			var/msg = "You send a message by smoke signal: "+span_papyrus("\"[message]\"")
 			to_chat(player, msg)
 			continue
-		if(istype(player,/mob/dead))
+		if(istype(player, /mob/dead))
 			var/msg_dead = "(Smoke Signal) [M]: "+span_papyrus("\"[message]\"")
 			to_chat(player, msg_dead)
 			continue
