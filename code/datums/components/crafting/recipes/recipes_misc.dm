@@ -367,22 +367,6 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 
-/datum/crafting_recipe/rollingpaper
-	name = "Rolling Paper"
-	time = 10
-	reqs = list(/obj/item/paper = 1)
-	result = /obj/item/rollingpaper
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
-/datum/crafting_recipe/rollingpaperbundle
-	name = "Rolling Paper (x10)"
-	time = 10
-	reqs = list(/obj/item/paper = 10)
-	result = /obj/item/storage/fancy/rollingpapers
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISC
-
 /*
 /datum/crafting_recipe/electrochromatic_kit
 	name = "Electrochromatic Kit"
