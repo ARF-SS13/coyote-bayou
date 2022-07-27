@@ -1,9 +1,7 @@
 GLOBAL_LIST_INIT(potion_rates, list(
 	/obj/item/slimepotion/slime/sentience		=9,
-	/obj/item/slimepotion/speed		=2,
 	/obj/item/slimepotion/slime/renaming			=9,
 	/obj/item/slimepotion/slime/slimeradio		=9,
-	/obj/item/slimepotion/peacepotion		=9
 ))
 
 GLOBAL_LIST_INIT(gunparts_rates, list(
@@ -34,7 +32,6 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 	if(istype(I, /obj/item/gun))
 		to_chat(user, "<span class='notice'>You attempt to sacrifice [I] by invoking the sacrificial ritual, it melts and breaks into pieces.</span>")
 		qdel(I)
-		message_admins("[ADMIN_LOOKUPFLW(user)] has sacrificed [key_name_admin(I)] on the sacrificial altar at [AREACOORD(src)].")
 		switch(divine)
 			if(FALSE)
 				var/loot_item = pick(GLOB.gunparts_rates)
@@ -49,10 +46,12 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 	var/mob/living/L = locate() in buckled_mobs
 	if(!L)
 		return
+	if(L.stat != DEAD)
+		to_chat(user, "<span class='notice'>You should kill it first!.</span>")
+		return
 	if(istype(I, /obj/item/clothing/accessory/talisman))
 		to_chat(user, "<span class='notice'>You attempt to sacrifice [L] by invoking the sacrificial ritual, during the sacrifice, you removed something from the stomach of the victim.</span>")
 		L.gib()
-		message_admins("[ADMIN_LOOKUPFLW(user)] has sacrificed [key_name_admin(L)] on the sacrificial altar at [AREACOORD(src)].")
 		switch(divine)
 			if(FALSE)
 				var/seed_item = pick(GLOB.loot_seed)
