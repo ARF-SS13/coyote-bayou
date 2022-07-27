@@ -148,6 +148,7 @@
 	desc = "A bandolier for holding shotgun boxes, flasks, las musket cells or various grenades."
 	icon_state = "bandolier"
 	item_state = "bandolier"
+	slot_flags = ITEM_SLOT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 /obj/item/storage/belt/bandolier/ComponentInitialize()
