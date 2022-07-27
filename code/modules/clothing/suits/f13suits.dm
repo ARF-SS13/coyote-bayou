@@ -82,7 +82,7 @@
 	icon_state = "westender"
 	item_state = "lb_suit"
 	armor = list("melee" = 25, "bullet" = 15, "laser" = 15, "energy" = 5, "bomb" = 16, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"

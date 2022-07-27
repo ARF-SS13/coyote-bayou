@@ -199,6 +199,11 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/under/rank/civilian/janitor/maid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/A = new (src)
+	attach_accessory(A)
+
 /obj/item/clothing/under/rank/civilian/lawyer
 	desc = "Slick threads."
 	name = "Lawyer suit"

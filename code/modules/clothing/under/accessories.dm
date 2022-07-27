@@ -94,10 +94,16 @@
 
 /obj/item/clothing/accessory/maidapron
 	name = "maid apron"
-	desc = "The best part of a maid costume."
+	desc = "The best part of a maid costume. Comes with lots of pockets for cooking, cleaning, and making a house a home."
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
+
+/obj/item/clothing/accessory/maidapron/Initialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.clickopen = TRUE
 
 //////////
 //Medals//

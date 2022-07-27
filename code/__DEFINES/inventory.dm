@@ -429,7 +429,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/assembly/signaler)))
 
 /// Things allowed in a jannibelt
-GLOBAL_LIST_INIT(janibelt_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
 	/obj/item/flashlight,
@@ -446,6 +446,10 @@ GLOBAL_LIST_INIT(janibelt_allowed, typecacheof(list(
 	/obj/item/paint/paint_remover,
 	/obj/item/assembly/mousetrap,
 	/obj/item/screwdriver,
+	/obj/item/kitchen,
+	/obj/item/reagent_containers/food,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/stack/cable_coil
 	)))
 
@@ -482,7 +486,7 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/stack/medical,
 	/obj/item/flashlight/pen,
 	/obj/item/extinguisher/mini,
-	/obj/item/hypospray/mkii,
+	/obj/item/hypospray,
 	/obj/item/sensor_device,
 	/obj/item/radio,
 	/obj/item/clothing/gloves,
@@ -525,6 +529,7 @@ GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/gun,
 	/obj/item/ammo_box,
+	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/melee/onehanded/knife/hunting,
@@ -539,6 +544,7 @@ GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/ammo_box,
+	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/grenade,
 	/obj/item/reagent_containers/spray/pepper,
@@ -556,6 +562,114 @@ GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/toy)))
+
+GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
+	/obj/item/reagent_containers/syringe,
+	/obj/item/reagent_containers/hypospray/medipen,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/screwdriver,
+	/obj/item/weldingtool/mini,
+	/obj/item/pen,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/revolver/hobo/knifegun,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/scalpel,
+	)))
+
+GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
+	/obj/item/gun/ballistic/automatic/pistol,
+	/obj/item/gun/ballistic/revolver,
+	/obj/item/ammo_box/magazine,
+	/obj/item/ammo_box/tube,
+	/obj/item/ammo_box/a357,
+	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/l10mm,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/shotgun,
+	/obj/item/ammo_box/m44,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a556/stripper,
+	/obj/item/ammo_box/needle,
+	/obj/item/ammo_box/a308,
+	/obj/item/ammo_box/c4570,
+	/obj/item/ammo_box/a50MG,
+	/obj/item/ammo_box/c45rev,
+	/obj/item/gun/energy/laser/solar,
+	/obj/item/gun/energy/laser/pistol,
+	/obj/item/gun/energy/laser/plasma/pistol,
+	/obj/item/gun/energy/laser/plasma/glock,
+	/obj/item/gun/energy/laser/plasma/glock/extended,
+	/obj/item/gun/energy/laser/wattz,
+	/obj/item/gun/energy/laser/wattz/magneto,
+	/obj/item/gun/energy/laser/plasma/pistol/alien,
+	/obj/item/stock_parts/cell/ammo/ec,
+	)))
+
+GLOBAL_LIST_INIT(storage_magpouch_cant_hold, typecacheof(list(
+	/obj/item/gun
+	)))
+
+GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/toy/cards/deck,
+	/obj/item/ammo_casing,
+	)))
+
+GLOBAL_LIST_INIT(storage_binocular_can_hold, typecacheof(list(
+	/obj/item/binoculars,
+	)))
+
+GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
+	/obj/item/stack/f13Cash,
+	/obj/item/key,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/paper,
+	/obj/item/folder,
+	/obj/item/storage/bag/money/small,
+	/obj/item/binoculars,
+	/obj/item/lipstick,
+	/obj/item/pen,
+	/obj/item/melee/smith/dagger,
+	)))
+
+GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
+	/obj/item/gun/ballistic/automatic/pistol/sig,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun,
+	/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/gun/ballistic/revolver/colt357/lucky,
+	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/revolver/needler,
+	/obj/item/gun/energy/laser/wattz,
+)))
+
+GLOBAL_LIST_INIT(storage_bulletbelt_can_hold, typecacheof(list(
+	/obj/item/ammo_box/magazine,
+	/obj/item/ammo_box/tube,
+	/obj/item/ammo_box/a357,
+	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/l10mm,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/shotgun,
+	/obj/item/ammo_box/m44,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a556/stripper,
+	/obj/item/ammo_box/needle,
+	/obj/item/ammo_box/a308,
+	/obj/item/ammo_box/c4570,
+	/obj/item/ammo_box/a50MG,
+	/obj/item/gun/energy/laser/solar,
+	/obj/item/gun/energy/laser/pistol,
+	/obj/item/gun/energy/laser/plasma/pistol,
+	/obj/item/gun/energy/laser/plasma/glock,
+	/obj/item/gun/energy/laser/plasma/glock/extended,
+	/obj/item/gun/energy/laser/wattz,
+	/obj/item/gun/energy/laser/wattz/magneto,
+	/obj/item/gun/energy/laser/plasma/pistol/alien,
+	/obj/item/stock_parts/cell/ammo/ec,
+)))
+
 
 /// How many items total fit in a holster
 #define STORAGE_HOLSTER_MAX_ITEMS 7

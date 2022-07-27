@@ -464,7 +464,7 @@
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_items = STORAGE_BELT_MAX_ITEMS
 	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
-	STR.can_hold = GLOB.janibelt_allowed
+	STR.can_hold = GLOB.servicebelt_allowed
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
@@ -499,9 +499,10 @@
 */
 /obj/item/storage/belt/medolier
 	name = "medolier"
-	desc = "A medical bandolier for holding smartdarts."
+	desc = "A medical bandolier for holding smartdarts, also medical equipment that aren't smartdarts."
 	icon_state = "medolier"
 	item_state = "medolier"
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/storage/belt/medolier/ComponentInitialize()
 	. = ..()
@@ -511,15 +512,13 @@
 	STR.allow_quick_gather = TRUE
 	STR.allow_quick_empty = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/syringe/dart
-		))
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/syringe/dart)) + GLOB.medibelt_allowed
 
 /obj/item/storage/belt/medolier/full/PopulateContents()
 	for(var/i in 1 to 16)
 		new /obj/item/reagent_containers/syringe/dart/(src)
 
-/obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
+/* /obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
 	if(!(istype(target, /obj/item/reagent_containers/glass/beaker)))
 		return
 	if(!proximity)
@@ -536,17 +535,17 @@
 
 		D.afterattack(target, user, proximity)
 
-	..()
+	..() */ // Kinda messes with things
 
 /obj/item/storage/belt/holster
-	name = "side holster"
+	name = "shoulder holster"
 	desc = "A holster to carry a hefty gun and ammo. WARNING: Badasses only."
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
@@ -598,6 +597,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
 	item_state = "holster_leg"
+	slot_flags = ITEM_SLOT_BELT
 
 /obj/item/storage/belt/holster/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
@@ -672,7 +672,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_NECK
 	fitting_swords = list(/obj/item/melee/smith/machete,
 	/obj/item/melee/smith/machete/reforged,
 	/obj/item/melee/smith/wakizashi,
@@ -714,6 +714,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
+	slot_flags = ITEM_SLOT_NECK
 	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
 	var/starting_sword = null
 

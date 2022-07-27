@@ -126,17 +126,20 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/farmer/overalls
 
-/obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
+/obj/item/clothing/suit/armor/outfit/overalls/farmer/Initialize()
 	. = ..()
-	allowed |= GLOB.sexymaid_apron_allowed
+	allowed |= GLOB.farmer_apron_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid // best suit
 	name = "sexy maid outfit"
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
-	// body_parts_covered = CHEST
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
 	. = ..()
@@ -149,6 +152,7 @@
 	icon_state = "forge"
 	item_state = "forge"
 	blood_overlay_type = "armor"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter/overalls
 /* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it
@@ -179,7 +183,7 @@
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
 	item_state = "lb_suit"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
