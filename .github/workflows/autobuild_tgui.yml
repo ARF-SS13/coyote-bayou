@@ -31,6 +31,7 @@ jobs:
           git pull origin master
           git commit -m "Automatic TGUI Rebuild [ci skip]" -a || true
       - name: Push Artifacts
-        uses: ad-m/github-push-action@master
+        uses: CasperWA/push-protected@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PUSH_TO_PROTECTED_BRANCH }}
+          branch: protected
