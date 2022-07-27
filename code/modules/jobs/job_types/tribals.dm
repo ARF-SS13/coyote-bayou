@@ -299,8 +299,6 @@ Druid
 		return
 	ADD_TRAIT(H, TRAIT_SPIRITUAL, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_LOW, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/daturanasuture)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/daturanasuture15)
 
 /datum/outfit/job/tribal/f13druid
 	name = "Druid"
