@@ -140,18 +140,12 @@
 
 /mob/living/carbon/proc/throw_mode_off()
 	in_throw_mode = 0
-	if(!TIMER_COOLDOWN_CHECK(src, "throwmode_off"))
-		emote("me", EMOTE_VISIBLE, "puts [p_their()] arm back down.")
-		TIMER_COOLDOWN_START(src, "throwmode_off", CLICK_CD_MELEE)
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_off"
 
 
 /mob/living/carbon/proc/throw_mode_on()
 	in_throw_mode = 1
-	if(!TIMER_COOLDOWN_CHECK(src, "throwmode_on"))
-		emote("me", EMOTE_VISIBLE, "rears back [p_their()] arm!")
-		TIMER_COOLDOWN_START(src, "throwmode_on", CLICK_CD_MELEE)
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 
