@@ -93,6 +93,28 @@
 	category = CAT_MEDICAL
 	always_available = FALSE
 
+/datum/crafting_recipe/daturanasuture
+	name = "Daturana suture (x5)"
+	result = /obj/item/stack/medical/suture/emergency/daturana
+	reqs = list(/obj/item/stack/medical/suture/emergency = 5,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 3,
+				/datum/reagent/water = 10)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/daturanasuture15
+	name = "Daturana suture (x15)"
+	result = /obj/item/stack/medical/suture/emergency/daturana
+	reqs = list(/obj/item/stack/medical/suture/emergency = 15,
+				/obj/item/reagent_containers/food/snacks/grown/datura = 9,
+				/datum/reagent/water = 30)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+	always_available = FALSE
+
 /datum/crafting_recipe/smell_salts
 	name = "Smelling salts"
 	result = /obj/item/smelling_salts

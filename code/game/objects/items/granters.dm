@@ -1135,6 +1135,18 @@
 		/datum/crafting_recipe/healpoultice5, 
 		/datum/crafting_recipe/warmace)
 
+/obj/item/book/granter/crafting_recipe/tribal/shaman
+	name = "Exalted Tribal traditions"
+	desc = "A book of traditions passed down through generations among the tribe's healers and leaders."
+	crafting_recipe_types = list(
+		/datum/crafting_recipe/tribalwar/lighttribe, 
+		/datum/crafting_recipe/tribalwar/heavytribe, 
+		/datum/crafting_recipe/healpoultice, 
+		/datum/crafting_recipe/healpoultice5, 
+		/datum/crafting_recipe/warmace,
+		/datum/crafting_recipe/daturanasuture,
+		/datum/crafting_recipe/daturanasuture15)
+
 /obj/item/book/granter/trait/tribaltraditions
 	name = "Tribal Traditions Booklet"
 	desc = "An instruction manual on your tribes garments!"

@@ -1619,7 +1619,7 @@ datum/job/wasteland/f13dendoctor
 		/obj/item/melee/onehanded/knife/ritualdagger = 1,
 		/obj/item/stack/medical/gauze/improvised = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 2,
-		/obj/item/book/granter/crafting_recipe/tribal = 1,
+		/obj/item/book/granter/crafting_recipe/tribal/shaman = 1,
 		/obj/item/book/granter/trait/tribaltraditions =1,
 	)
 
