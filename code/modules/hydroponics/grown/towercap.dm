@@ -362,7 +362,7 @@
 			to_chat(player, msg)
 			continue
 		if(istype(player,/mob/dead))
-			var/msg_dead = span_papyrus("(Smoke Signal) [M]: "+span_papyrus("\"[message]\"")
+			var/msg_dead = "(Smoke Signal) [M]: "+span_papyrus("\"[message]\"")
 			to_chat(player, msg_dead)
 			continue
 		if(player.has_language(/datum/language/tribal))
@@ -393,7 +393,7 @@
 						dirmessage = "in the southeast"
 					if(SOUTHWEST)
 						dirmessage = "in the southwest"
-			var/msg = span_papyrus("Smoke rises [dirmessage]: "+span_papyrus("\"[message]\""))
+			var/msg = "Smoke rises [dirmessage]: "+span_papyrus("\"[message]\"")
 			to_chat(player, msg)
 
 /obj/structure/bonfire/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
