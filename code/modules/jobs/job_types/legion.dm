@@ -1132,7 +1132,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/auxmedicus
 	name = "Medicus (Surgeon)"
-	neck = /obj/item/clothing/neck/apron/medicus
+	neck = /obj/item/clothing/neck/apron/medical
 	gloves = /obj/item/clothing/gloves/f13/crudemedical
 	belt = /obj/item/storage/belt/medical/primitive
 	backpack_contents = list(
