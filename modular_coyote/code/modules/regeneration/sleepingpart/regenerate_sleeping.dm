@@ -1,3 +1,4 @@
+#define BED_HEAL_BONUS 0.02
 
 // To trigger the sleeping tickies when the player is sleeping
 /datum/status_effect/incapacitating/sleeping/tick()
@@ -14,7 +15,7 @@
 
 // Definition!
 /datum/component/sleeping_regeneration
-	var/maxHealAmount = 0.03 // idfk
+	var/maxHealAmount = 0.02 // idfk
 
 // We want to check to make sure the component is a /mob/living, if it isnt, this component is incompatible.
 /datum/component/sleeping_regeneration/Initialize(...)
@@ -62,6 +63,11 @@
 	// get a heal amount from 0 to the maxHealAmount.
 	var/healAmount = rand(0,maxHealAmount)
 
+	var/obj/buckled_obj = L.buckled
+	if(buckled_obj && istype(buckled_obj, /obj/structure/bed))
+		if(!is_type_in_list(get_area(L), GLOB.outdoor_areas))
+			healAmount += BED_HEAL_BONUS
+
 	// Now pick a random element from the list, if it is BRUTE, OXY, TOX or BURN, apply the heal amount to one of them.
 	switch(pick(damagedParts))
 		if(BRUTE)
@@ -74,3 +80,5 @@
 			L.adjustFireLoss(-healAmount)
 	
 	// And that's it! We dont really need to add anything else, it will continue to call this function every tick.
+
+#undef BED_HEAL_BONUS
