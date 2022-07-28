@@ -10,6 +10,8 @@
 					/obj/item/kitchen/rollingpin = 4,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 8,
 					/obj/item/clothing/neck/apron/chef = 2,
+					/obj/item/clothing/neck/apron/bartender = 2,
+					/obj/item/clothing/suit/armor/outfit/overalls/sexymaid = 5,
 					/obj/item/storage/box/cups = 2,
 					/obj/item/reagent_containers/food/condiment/pack/ketchup = 5,
 					/obj/item/reagent_containers/food/condiment/pack/mustard = 5,
@@ -22,6 +24,8 @@
 					/obj/item/book/manual/nuka_recipes = 1)
 	contraband = list(
 					/obj/item/kitchen/knife/butcher = 2,
+					/obj/item/clothing/under/janimaid = 2,
+					/obj/item/clothing/head/maid = 2,
 					/obj/item/reagent_containers/syringe = 3)
 	premium = list(
 					/obj/item/reagent_containers/food/condiment/enzyme = 1)
