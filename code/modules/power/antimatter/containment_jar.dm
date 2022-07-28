@@ -1,6 +1,6 @@
 /obj/item/am_containment
-	name = "antimatter containment jar"
-	desc = "Holds antimatter."
+	name = "nuclear fuel rod"
+	desc = "a fuel rod for a General Atomics nuclear fission reactor."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "jar"
 	density = FALSE
@@ -38,3 +38,8 @@
 		wanted = fuel
 	fuel -= wanted
 	return wanted
+
+/obj/item/am_containment/loot
+	name = "old nuclear fuel rod"
+	desc = "a fuel rod for a General Dynamics nuclear fission reactor. This one is far lighter then usual."
+	fuel = 1000
