@@ -85,6 +85,19 @@
 	category = CAT_CRAFTING
 	subcategory = CAT_FORGING
 
+/datum/crafting_recipe/bone_ingot
+	name = "Processable bone"
+	result = /obj/item/ingot/bone
+	time = 100
+	reqs = list(
+		/obj/item/stack/sheet/bone = 2,
+		/obj/item/crafting/wonderglue = 1,
+		/obj/item/stack/rods = 2
+		)
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_CRAFTING
+	subcategory = CAT_FORGING
+
 //KNIVES//
 
 /datum/crafting_recipe/melee/forged/cleaver
