@@ -141,7 +141,7 @@
 	desc = "A seminal work on the dying art of booze sliding."
 	icon_state = "barbook"
 	actionname = "drink flinging"
-	oneuse = FALSE
+	oneuse = TRUE
 	remarks = list("The trick is keeping a low center of gravity it seems...", "The viscosity of the liquid is important...", "Accounting for crosswinds... really?", "Drag coefficients of various popular drinking glasses...", "What the heck is laminar flow and why does it matter here?", "Greasing the bar seems like it'd be cheating...", "I don't think I'll be working with superfluids...")
 
 /datum/action/innate/drink_fling

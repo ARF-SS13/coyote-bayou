@@ -24,6 +24,8 @@
 	var/inertia_moving = 0
 	var/inertia_next_move = 0
 	var/inertia_move_delay = 5
+	var/old_x = 0
+	var/old_y = 0
 	///This is a hack to get around dumb him him me scenarios
 	var/last_pushoff
 	/// These flags mark the ability of this movable to pass through certain blockers.
