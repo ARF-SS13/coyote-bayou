@@ -51,7 +51,7 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 		to_chat(user, "<span class='notice'>You should kill it first!.</span>")
 		return
 	if(istype(I, /obj/item/clothing/accessory/talisman))
-		to_chat(user, "<span class='notice'>You attempt to sacrifice [L] by invoking the sacrificial ritual, during the sacrifice, you removed something from the stomach of the victim.</span>")
+		to_chat(user, span_notice("You attempt to sacrifice [L] by invoking the sacrificial ritual, during the sacrifice, you removed something from the stomach of the victim."))
 		L.gib()
 		log_combat(user, L, "has sacrificed")
 		switch(divine)
