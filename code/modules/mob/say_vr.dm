@@ -65,7 +65,7 @@ proc/get_top_level_mob(mob/S)
 	if(!can_run_emote(user))
 		return FALSE
 
-	user.log_message(message, LOG_EMOTE)
+	user.log_message(message, subtler ? LOG_SUBTLER : LOG_SUBTLE)
 	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
 	var/list/non_admin_ghosts
@@ -84,7 +84,7 @@ proc/get_top_level_mob(mob/S)
 		vision_distance = 1,
 		ignored_mobs = non_admin_ghosts)
 
-	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight,
+	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
 	user.emote_for_ghost_sight(message, subtler)
 
 
