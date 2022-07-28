@@ -32,6 +32,16 @@
 			ChangeTurf(/turf/open/floor/plating)
 		else
 			to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
+		return
+	if(istype(C,/obj/item/stack/tile/wood))
+		var/obj/item/stack/tile/wood/S = C
+		if(S.use(1))
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			to_chat(user, span_notice("You build a house base."))
+			ChangeTurf(/turf/open/floor/plating/wooden)
+		else
+			to_chat(user, span_warning("You need one floor tile to build a house base!"))
+		return
 	else
 		return ..()
 /*

@@ -84,6 +84,8 @@
 	custom_materials = list(/datum/material/brass=12000)
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking."
 
+/obj/item/ingot/bone
+	custom_materials = list(/datum/material/bone=12000)
 
 /obj/item/smithing/attackby(obj/item/I, mob/user)
 	if(istype(I, finishingitem))
