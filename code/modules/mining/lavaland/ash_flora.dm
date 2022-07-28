@@ -237,7 +237,7 @@
 	if(!reagents || !reagents.total_volume)
 		icon_state = "wooden_bowl"
 
-/obj/item/reagent_containers/glass/bowl/wooden_bowl/attackby(obj/item/I,mob/user, params)
+/obj/item/reagent_containers/glass/bowl/wooden_bowl/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
