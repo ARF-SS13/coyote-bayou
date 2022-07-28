@@ -351,7 +351,6 @@
 			return
 		smoke_signal(user, signalmessage, src)
 		user.visible_message("[user] burns \the [sheet] in short, controlled bursts.")
-		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
 	else
 		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
 		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
