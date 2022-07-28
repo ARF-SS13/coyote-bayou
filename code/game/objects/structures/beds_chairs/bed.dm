@@ -63,9 +63,9 @@
 	name = "double bed"
 	icon_state = "doublebed"
 	var/base_icon = "doublebed"
-
+/*
 /obj/structure/bed/double/padded/New(var/newloc)
-	..(newloc,"wood","cotton")
+	..(newloc,"wood","cotton")*/
 
 /obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
 	if(M.buckled == src)
