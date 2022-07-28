@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(gunparts_rates, list(
 	if(.)
 		return
 	if(istype(I, /obj/item/gun))
-		to_chat(user, "<span class='notice'>You attempt to sacrifice [I] by invoking the sacrificial ritual, it melts and breaks into pieces.</span>")
+		to_chat(user, span_notice("You attempt to sacrifice [I] by invoking the sacrificial ritual, it melts and breaks into pieces."))
 		qdel(I)
 		log_combat(user, I, "has sacrificed")
 		switch(divine)
