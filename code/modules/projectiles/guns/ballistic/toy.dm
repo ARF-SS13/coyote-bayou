@@ -131,10 +131,7 @@
 	burst_size = 1
 	actions_types = null
 	fire_delay = 3
-	spread = 60
-	recoil = 0.1
 	can_suppress = FALSE
-	inaccuracy_modifier = 0.5
 	weapon_weight = GUN_ONE_HAND_ONLY
 	dualwield_spread_mult = 1.4
 	w_class = WEIGHT_CLASS_BULKY
@@ -147,8 +144,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/mag
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	fire_delay = 2
-	recoil = 0.1
-	inaccuracy_modifier = 0.25
 	dualwield_spread_mult = 1.4
 	slot_flags = SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL

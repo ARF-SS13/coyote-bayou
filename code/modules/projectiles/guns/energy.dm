@@ -21,9 +21,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -52,6 +49,10 @@
 	var/right_click_overridden = FALSE
 	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
 	dryfire_text = "*power failure*"
+
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()

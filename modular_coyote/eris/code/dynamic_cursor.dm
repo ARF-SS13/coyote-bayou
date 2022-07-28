@@ -7,14 +7,6 @@
 	else
 		H.remove_cursor()
 
-/obj/item/gun/swapped_from()
-	if(isliving(loc))
-		check_safety_cursor(loc)
-
-/obj/item/gun/swapped_to()
-	if(isliving(loc))
-		check_safety_cursor(loc)
-
 /obj/item/gun/afterattack(obj/target, mob/living/user, flag)
 	. = ..()
 	if(user.get_active_held_item() != src)

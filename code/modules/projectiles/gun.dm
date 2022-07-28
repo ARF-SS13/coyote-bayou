@@ -41,16 +41,6 @@ ATTACHMENTS
 	/// Time it takes between drawing the gun and shooting the gun
 	var/draw_time = GUN_DRAW_NORMAL 
 
-	/// Counts up every shot, adds inaccuracy to shots after that, cleared after a delay
-	var/recoil = 0 
-	/// Multiplier for how much the gun itself reduces (or adds) recoil. Numbers greater than 1 make more recoil, less than 1 less recoil. Its a multiplier! 
-	var/recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	/// Time between shooting that must pass to deplete recoil
-	var/recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	/// If time >= this, clear recoil and any related spread
-	var/recoil_cooldown_schedule = 0
-
-
 	var/clumsy_check = TRUE
 	var/obj/item/ammo_casing/chambered = null
 	trigger_guard = TRIGGER_GUARD_NORMAL	//trigger guard on the weapon, hulks can't fire them with their big meaty fingers
@@ -58,6 +48,9 @@ ATTACHMENTS
 	var/sawn_off = FALSE
 
 	slowdown = GUN_SLOWDOWN_NONE
+
+	var/damage_multiplier = 1 //Multiplies damage of projectiles fired from this gun
+	var/penetration_multiplier = 1 //Multiplies armor penetration of projectiles fired from this gun
 
 	/// can we be put into a turret
 	var/can_turret = TRUE
@@ -82,14 +75,6 @@ ATTACHMENTS
 	var/busy_action = FALSE
 	/// used for inaccuracy and wielding requirements/penalties
 	var/weapon_weight = GUN_ONE_HAND_AKIMBO
-	/// Spread induced by the gun itself.
-	var/spread = 0
-	/// Spread induced by the gun itself during burst fire per iteration. Only checked if spread is 0.
-	var/burst_spread = 0
-	/// Set to 0 for shotguns. This is used for weapons that don't fire all their bullets at once.
-	var/randomspread = 1
-	/// Adds inaccuracy based on time between shots (?) and stamloss (??)
-	var/inaccuracy_modifier = 1
 	/// Adds this speed to the bullet, in pixels per second
 	var/extra_speed = 0
 
@@ -140,9 +125,6 @@ ATTACHMENTS
 	var/suppressor_y_offset = 0
 
 	var/equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
-	/// Multiplier to the bullet's damage
-	var/gun_damage_multiplier = 1
-	var/extra_penetration = 0			//Number to add to armor penetration of individual bullets.
 
 	//Zooming
 	var/zoomable = FALSE //whether the gun generates a Zoom action on creation
@@ -166,7 +148,7 @@ ATTACHMENTS
 	var/datum/recoil/recoil_dat // Reference to the recoil datum in datum/recoil.dm
 	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
 	var/braced = FALSE
-	var/braceable = FALSE
+	var/braceable = 1 //can the gun be used for gun_brace proc, modifies recoil. If the gun has foregrip mod installed, it's not braceable. Bipod mod increases value by 1.
 
 	var/safety = FALSE
 	var/restrict_safety = FALSE //To restrict the users ability to toggle the safety
@@ -174,7 +156,6 @@ ATTACHMENTS
 	var/sel_mode = 1 //index of the currently selected mode
 	var/list/firemodes = list()
 	var/list/init_firemodes = list()
-	var/currently_firing = FALSE // To prevent firemode swapping while shooting.
 
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
 
@@ -200,6 +181,8 @@ ATTACHMENTS
 	hud_actions += action
 	initialize_firemodes()
 	build_zooming()
+	if(firemodes.len)
+		set_firemode(sel_mode)
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
@@ -300,9 +283,6 @@ ATTACHMENTS
 /obj/item/gun/pickup(mob/living/user)
 	. = ..()
 	weapondraw(src, user)
-
-/obj/item/gun/pickup(mob/living/user)
-	. = ..()
 	play_equip_sound(src)
 
 /obj/item/gun/emp_act(severity)
@@ -338,7 +318,6 @@ ATTACHMENTS
 		return
 	if(firing)
 		return
-	var/stamloss = user.getStaminaLoss()
 	if(flag) //It's adjacent, is the user, or is on the user's person
 		if(target in user.contents) //can't shoot stuff inside us.
 			return
@@ -387,25 +366,21 @@ ATTACHMENTS
 		user.DelayNextAction(autofire_shot_delay)
 
 	//DUAL (or more!) WIELDING
-	var/bonus_spread = 0
 	var/loop_counter = 0
 
-	if(user)
-		bonus_spread = getinaccuracy(user, bonus_spread, stamloss) //CIT CHANGE - adds bonus spread while not aiming
 	if(ishuman(user) && user.a_intent == INTENT_HARM && weapon_weight <= GUN_ONE_HAND_AKIMBO)
 		var/mob/living/carbon/human/H = user
 		for(var/obj/item/gun/G in H.held_items)
-			if(G == src || G.weapon_weight >= GUN_ONE_HAND_ONLY)
+			if(G == src || G.weapon_weight == GUN_TWO_HAND_ONLY)
 				continue
 			else if(G.can_trigger_gun(user))
-				bonus_spread += 24 * G.weapon_weight * G.dualwield_spread_mult
 				loop_counter++
 				var/stam_cost = G.getstamcost(user)
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, bonus_spread, stam_cost), loop_counter)
+				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
 
-	process_fire(target, user, TRUE, params, null, bonus_spread, stam_cost)
+	process_fire(target, user, TRUE, params, null, stam_cost)
 
 /obj/item/gun/can_trigger_gun(mob/living/user)
 	. = ..()
@@ -453,7 +428,7 @@ ATTACHMENTS
 	if (automatic == 1)
 		return busy_action || firing
 
-/obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
+/obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", stam_cost = 0)
 	add_fingerprint(user)
 
 	if(on_cooldown())
@@ -467,34 +442,25 @@ ATTACHMENTS
 		to_chat(user, "<span class='notice'>You're still drawing your [src]! It'll take another <u>[time_till_draw*0.1] seconds</u> until it's ready!</span>")
 		return
 	firing = TRUE
-	. = do_fire(target, user, message, params, zone_override, bonus_spread, stam_cost)
+	. = do_fire(target, user, message, params, zone_override, stam_cost)
 	firing = FALSE
 	last_fire = world.time
 
 	if(user)
 		user.update_inv_hands()
-		SEND_SIGNAL(user, COMSIG_LIVING_GUN_PROCESS_FIRE, target, params, zone_override, bonus_spread, stam_cost)
+		SEND_SIGNAL(user, COMSIG_LIVING_GUN_PROCESS_FIRE, target, params, zone_override, stam_cost)
 
-/obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
+/obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	var/sprd = 0
-	var/randomized_gun_spread = 0
-	var/rand_spr = rand()
-	currently_firing = TRUE
-	if(spread)
-		randomized_gun_spread = spread
-	else if(burst_size > 1 && burst_spread)
-		randomized_gun_spread = burst_spread
-	var/randomized_bonus_spread = rand(0, bonus_spread)
 	if(HAS_TRAIT(user, SPREAD_CONTROL))
-		randomized_gun_spread = max(0, randomized_gun_spread-8)
-		randomized_bonus_spread = max(0, randomized_bonus_spread-8)
+		//nothing for now
 	for(var/i in 1 to burst_size)
 		if(chambered)
 			sprd = user.calculate_offset(init_offset)
 			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
 			var/BB = chambered.BB
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, gun_damage_multiplier, extra_penetration, src))
+			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, damage_multiplier, penetration_multiplier, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -509,8 +475,6 @@ ATTACHMENTS
 			sleep(burst_shot_delay)
 		process_chamber(user)
 		update_icon()
-
-	currently_firing = FALSE
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
 	return TRUE
 
@@ -574,6 +538,7 @@ ATTACHMENTS
 			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
 			return
 	*/
+	/*
 	if(istype(I, /obj/item/attachments/burst_improvement))
 		var/obj/item/attachments/burst_improvement/T = I
 		if(!burst_improvement && burst_size > 1 && can_attachments)
@@ -586,7 +551,7 @@ ATTACHMENTS
 			src.burst_shot_delay += 0.25
 			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
 			update_icon()
-			return
+			return*/
 	return ..()
 
 
@@ -691,16 +656,10 @@ ATTACHMENTS
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
 
-/obj/item/gun/pickup(mob/user)
-	..()
-	if(azoom)
-		azoom.Grant(user)
-	if(alight)
-		alight.Grant(user)
-
 /obj/item/gun/equipped(mob/living/user, slot)
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
+		remove_hud_actions(user)
 		zoom(user, FALSE)
 		if(zoomable == TRUE)
 			azoom.Remove(user)
@@ -907,30 +866,6 @@ ATTACHMENTS
 	if(zoomable)
 		azoom = new(src)
 
-/obj/item/gun/proc/getinaccuracy(mob/living/user, bonus_spread, stamloss)
-	if(inaccuracy_modifier == 0)
-		return bonus_spread
-	var/base_inaccuracy = weapon_weight * 25 * inaccuracy_modifier //+ 50 + (-user.special_p*5)//SPECIAL Integration
-	var/aiming_delay = 0 //Otherwise aiming would be meaningless for slower guns such as sniper rifles and launchers.
-	if(fire_delay)
-		var/penalty = (last_fire + draw_time + fire_delay) - world.time
-		if(penalty > 0) //Yet we only penalize users firing it multiple times in a haste. fire_delay isn't necessarily cumbersomeness.
-			aiming_delay = penalty
-	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_ACTIVE) || HAS_TRAIT(user, TRAIT_INSANE_AIM)) //To be removed in favor of something less tactless later.
-		base_inaccuracy /= 1.5
-	if(stamloss > STAMINA_NEAR_SOFTCRIT) //This can null out the above bonus.
-		base_inaccuracy *= 1 + (stamloss - STAMINA_NEAR_SOFTCRIT)/(STAMINA_NEAR_CRIT - STAMINA_NEAR_SOFTCRIT)*0.5
-	if(HAS_TRAIT(user, TRAIT_POOR_AIM)) //nice shootin' tex
-		if(!HAS_TRAIT(user, TRAIT_INSANE_AIM))
-			bonus_spread += 60
-		else
-			//you have both poor aim and insane aim, why?
-			bonus_spread += rand(0,50)
-	var/mult = max((draw_time + aiming_delay + user.last_click_move - world.time)/draw_time, -0.5) //Yes, there is a bonus for taking time aiming.
-	if(mult < 0) //accurate weapons should provide a proper bonus with negative inaccuracy. the opposite is true too.
-		mult *= 1/inaccuracy_modifier
-	return max(bonus_spread + (base_inaccuracy * mult), 0) //no negative spread.
-
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
 	. = 0 //get_per_shot_recoil()
 	if(user && !user.has_gravity())
@@ -940,6 +875,8 @@ ATTACHMENTS
 	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
+	if(safety && user.a_intent == INTENT_HARM)
+		toggle_safety(user, ignore_held = TRUE)
 	// TODO: Define where you're grabbing it from, assign numbers to them, and then divide the paralyze total by that. Tables/holster/belt/back/container.
 	user.log_message("[user] pulled a [G]", INDIVIDUAL_ATTACK_LOG)
 	spawn(time_till_gun_is_ready)
@@ -1085,21 +1022,21 @@ ATTACHMENTS
 	return new_mode
 
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
-	if(currently_firing) // Prevents a bug with swapping fire mode while burst firing.
+	if(firing) // Prevents a bug with swapping fire mode while burst firing.
 		return
 	var/datum/firemode/new_mode = switch_firemodes()
 	if(new_mode)
 		playsound(src.loc, 'sound/weapons/selector.ogg', 100, 1)
 		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
 
-/obj/item/gun/proc/toggle_safety(mob/living/user)
-	to_chat(user, "[restrict_safety], [src != user.get_active_held_item()]")
-	if(restrict_safety || src != user.get_active_held_item())
+/obj/item/gun/proc/toggle_safety(mob/living/user, var/ignore_held = FALSE)
+	if((restrict_safety || src != user.get_active_held_item()) && !ignore_held)
 		return
-
 	safety = !safety
 	playsound(user, 'sound/weapons/selector.ogg', 50, 1)
 	to_chat(user, span_notice("You toggle the safety [safety ? "on":"off"]."))
+	if(!safety)
+		user.visible_message(span_danger("[user] toggles the safety of [user.p_their()] \a [src] off!"))
 	//Update firemode when safeties are toggled
 	update_firemode()
 	update_hud_actions()
@@ -1111,15 +1048,35 @@ ATTACHMENTS
 	else
 		user.update_cursor(src)
 
+/obj/item/gun/proc/gun_brace(mob/living/user, atom/target)
+	if(braceable && !braced)
+		var/atom/original_loc = user.loc
+		var/brace_direction = get_dir(user, target)
+		to_chat(user, span_notice("You brace your weapon on \the [target]."))
+		braced = TRUE
+		while(user.loc == original_loc && user.dir == brace_direction)
+			sleep(2)
+		to_chat(user, span_notice("You stop bracing your weapon."))
+		braced = FALSE
+	else
+		if(braced)
+			to_chat(user, span_notice("You are already bracing your weapon!"))
+		else
+			to_chat(user, span_notice("You can\'t properly place your weapon on \the [target] because of the foregrip!"))
+
 /obj/item/gun/swapped_from()
 	.=..()
 	update_firemode(FALSE)
 	remove_hud_actions(usr)
+	if(isliving(loc))
+		check_safety_cursor(loc)
 
 /obj/item/gun/swapped_to()
 	.=..()
 	update_firemode()
 	add_hud_actions(usr)
+	if(isliving(loc))
+		check_safety_cursor(loc)
 
 /obj/item/gun/ui_action_click(mob/living/user, action_name)
 	switch(action_name)
@@ -1132,6 +1089,68 @@ ATTACHMENTS
 		if("Weapon Info")
 			ui_interact(user)
 
+/*
+/obj/item/gun/ui_data(mob/user)
+	var/list/data = list()
+	data["damage_multiplier"] = damage_multiplier
+	data["pierce_multiplier"] = pierce_multiplier
+	data["ricochet_multiplier"] = ricochet_multiplier
+	data["penetration_multiplier"] = penetration_multiplier
+
+	data["fire_delay"] = fire_delay //time between shot, in ms
+	data["burst"] = burst //How many shots are fired per click
+	data["burst_delay"] = burst_delay //time between shot in burst mode, in ms
+
+	data["force"] = force
+	data["force_max"] = initial(force)*10
+	data["armor_penetration"] = armor_penetration
+	data["muzzle_flash"] = muzzle_flash
+
+	var/total_recoil = 0
+	var/list/recoilList = recoil.getFancyList()
+	if(recoilList.len)
+		var/list/recoil_vals = list()
+		for(var/i in recoilList)
+			if(recoilList[i])
+				recoil_vals += list(list(
+					"name" = i,
+					"value" = recoilList[i]
+					))
+				total_recoil += recoilList[i]
+		data["recoil_info"] = recoil_vals
+
+	data["total_recoil"] = total_recoil
+
+	data += ui_data_projectile(get_dud_projectile())
+
+	if(firemodes.len)
+		var/list/firemodes_info = list()
+		for(var/i = 1 to firemodes.len)
+			data["firemode_count"] += 1
+			var/datum/firemode/F = firemodes[i]
+			var/list/firemode_info = list(
+				"index" = i,
+				"current" = (i == sel_mode),
+				"name" = F.name,
+				"desc" = F.desc,
+				"burst" = F.settings["burst"],
+				"fire_delay" = F.settings["fire_delay"],
+				"move_delay" = F.settings["move_delay"],
+				)
+			if(F.settings["projectile_type"])
+				var/proj_path = F.settings["projectile_type"]
+				var/list/proj_data = ui_data_projectile(new proj_path)
+				firemode_info += proj_data
+			firemodes_info += list(firemode_info)
+		data["firemode_info"] = firemodes_info
+
+	if(item_upgrades.len)
+		data["attachments"] = list()
+		for(var/atom/A in item_upgrades)
+			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
+
+	return data
+*/
 //Finds the current firemode and calls update on it. This is called from a few places:
 //When firemode is changed
 //When safety is toggled
@@ -1141,6 +1160,8 @@ ATTACHMENTS
 	if (sel_mode && firemodes && firemodes.len)
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
+
+
 
 ///////////////////
 //GUNCODE ARCHIVE//
@@ -1334,25 +1355,6 @@ CODE FOR ASSAULT RIFE WITH GRENADE LAUNCHER ATTACHED
 
 /obj/item/gun/ballistic/automatic/m90/update_icon_state()
 	icon_state = "[initial(icon_state)][magazine ? "" : "-e"]"
-
-/obj/item/gun/ballistic/automatic/m90/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select = 1
-			burst_size = initial(burst_size)
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 2
-			to_chat(user, "<span class='notice'>You switch to grenades.</span>")
-		if(2)
-			select = 0
-			burst_size = 1
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
 
 LONG SCOPE
 	zoomable = TRUE

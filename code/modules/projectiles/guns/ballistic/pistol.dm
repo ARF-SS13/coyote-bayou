@@ -23,14 +23,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	select = FALSE
 	automatic_burst_overlay = FALSE
@@ -39,6 +36,9 @@
 	can_suppress = TRUE
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 	init_recoil = HANDGUN_RECOIL(1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 /obj/item/gun/ballistic/automatic/pistol/no_mag
 	spawnwithmagazine = FALSE
@@ -77,13 +77,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(0.6)
 
 	can_attachments = TRUE
 	can_suppress = FALSE
@@ -110,13 +108,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
@@ -143,14 +139,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Sig P220
@@ -171,9 +164,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -205,28 +195,17 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/9mm.ogg'
-
-#define BERETTA_BURST_1 1
-#define BERETTA_BURST_3 3
-#define BERETTA_SPREAD_SEMI GUN_SPREAD_POOR
-#define BERETTA_SPREAD_BURST GUN_SPREAD_POOR * 2
-#define BERETTA_RECOIL_SEMI GUN_RECOIL_PISTOL_LIGHT
-#define BERETTA_RECOIL_BURST GUN_RECOIL_PISTOL_LIGHT * 2
-#define BERETTA_RECOIL_COOLDOWN_SEMI GUN_RECOIL_TIMEOUT_QUICK
-#define BERETTA_RECOIL_COOLDOWN_BURST GUN_RECOIL_TIMEOUT_LONG
 
 /* * * * * * * * * * *
  * Beretta M9R Burst
@@ -248,49 +227,19 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(1.2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+	)
 
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	automatic_burst_overlay = TRUE
 	can_attachments = FALSE
 	semi_auto = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
-
-/obj/item/gun/ballistic/automatic/pistol/beretta/automatic/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(1)
-			select = 2
-			burst_size = BERETTA_BURST_3
-			spread = BERETTA_SPREAD_BURST
-			recoil_multiplier = BERETTA_RECOIL_BURST
-			recoil_cooldown_time = BERETTA_RECOIL_COOLDOWN_BURST
-			to_chat(user, "<span class='notice'>You switch to burst fire.</span>")
-		if(2)
-			select = 1
-			burst_size = BERETTA_BURST_1
-			spread = BERETTA_SPREAD_SEMI
-			recoil_multiplier = BERETTA_RECOIL_SEMI
-			recoil_cooldown_time = BERETTA_RECOIL_COOLDOWN_SEMI
-			to_chat(user, "<span class='notice'>You switch to semi-auto.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
-
-#undef BERETTA_BURST_1
-#undef BERETTA_BURST_3
-#undef BERETTA_SPREAD_SEMI
-#undef BERETTA_SPREAD_BURST
-#undef BERETTA_RECOIL_SEMI
-#undef BERETTA_RECOIL_BURST
-#undef BERETTA_RECOIL_COOLDOWN_SEMI
-#undef BERETTA_RECOIL_COOLDOWN_BURST
 
 /* * * * * * * * * *
  * MEDIUM PISTOLS  *
@@ -318,9 +267,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -351,16 +297,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 2
 	semi_auto = FALSE
 	can_automatic = FALSE
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Crusader Pistol Semi-Auto
@@ -380,12 +323,10 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	can_attachments = FALSE
 	can_automatic = FALSE
@@ -407,13 +348,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.6)
 
 	can_suppress = FALSE
 	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
@@ -440,9 +379,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -471,13 +407,10 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Mk. 23 Semi-Auto
@@ -501,13 +434,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	can_flashlight = TRUE
 	gunlight_state = "flight"
@@ -543,13 +474,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
@@ -574,14 +503,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // POW
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -607,14 +533,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
@@ -641,9 +564,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -672,13 +592,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 /* * * * * * * * * * *
  * Little Devil Semi-Auto
@@ -700,15 +618,12 @@
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
-	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_PISTOL_MEDIUM
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 /////////////////////////////////
 // TEMPORARY REMOVE AFTER BETA //
@@ -716,5 +631,5 @@
 
 /obj/item/gun/ballistic/automatic/pistol/pistoltesting
 	name = "pistol"
-	gun_damage_multiplier = 18
+	damage_multiplier = 18
 	mag_type = /obj/item/ammo_box/magazine/testbullet

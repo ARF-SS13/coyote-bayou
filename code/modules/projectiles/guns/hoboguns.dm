@@ -94,14 +94,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -131,14 +128,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -174,14 +168,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -220,14 +211,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -258,14 +246,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -293,14 +278,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -331,13 +313,10 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	automatic = 1
 
@@ -413,14 +392,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	can_attachments = FALSE
@@ -449,14 +425,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	can_scope = FALSE
@@ -478,14 +451,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_FIXED * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
