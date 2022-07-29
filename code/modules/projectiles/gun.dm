@@ -660,6 +660,7 @@ ATTACHMENTS
 	. = ..()
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		remove_hud_actions(user)
+		unwield(user)
 		zoom(user, FALSE)
 		if(zoomable == TRUE)
 			azoom.Remove(user)
