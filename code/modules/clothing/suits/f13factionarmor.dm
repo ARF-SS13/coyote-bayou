@@ -348,7 +348,7 @@
 	icon_state = "legion_combat2"
 	item_state = "legion_combat2"
 
-/obj/item/clothing/suit/armor/slavelabor
+/obj/item/clothing/suit/armor/outfit/slavelabor
 	name = "old leather strips"
 	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
 	icon = 'icons/fallout/clothing/suits_utility.dmi'

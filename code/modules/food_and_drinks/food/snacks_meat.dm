@@ -285,6 +285,15 @@
 	tastes = list("meat" = 1, "ketchup" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/pemmican
+	name = "pemmican"
+	desc = "A dense meat block made up of a monstrous amount of protein and fat. Easy to store, very nutritious but very dry food. It's flavored with a variety of spices. Perfect survival food which is highly valued by merchants. Unfortunately, tribals keep the recipe for this culinary miracle in a secret."
+	icon_state = "meatloaf"
+	filling_color = "#8f0f0f"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 80)
+	tastes = list("meat" = 1)
+	foodtype = MEAT
+
 /obj/item/reagent_containers/food/snacks/kebab
 	icon_state = "kebab"
 	w_class = WEIGHT_CLASS_NORMAL

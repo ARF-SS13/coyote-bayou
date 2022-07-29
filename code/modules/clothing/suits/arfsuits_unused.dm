@@ -218,16 +218,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "legion_combat2"
 	item_state = "legion_combat2"
 
-/obj/item/clothing/suit/armor/slavelabor
-	name = "old leather strips"
-	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	icon_state = "legion_slaveleather"
-	item_state = "legion_slaveleather"
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-
 /obj/item/clothing/suit/armor/legion/vet/explorercanada
 	name = "custom explorer armor"
 	desc = "Armor based on layered strips of laminated linen and leather, the technique giving it surprising resilience for low weight. This one has been custom made."
