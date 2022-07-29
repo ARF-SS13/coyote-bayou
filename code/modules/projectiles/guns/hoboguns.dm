@@ -9,7 +9,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
+	if(prob(boom_chance))
 		playsound(user, fire_sound, 50, 1)
 		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
 		user.take_bodypart_damage(0,20)
@@ -180,7 +180,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(2.4)
 	init_firemodes = list(
