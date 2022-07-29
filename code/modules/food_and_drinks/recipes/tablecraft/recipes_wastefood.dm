@@ -51,7 +51,7 @@
 /datum/crafting_recipe/food/moleratstew
 	name = "Molerat Stew"
 	reqs = list(
-		/obj/item/reagent_containers/food/drinks/beer = 1,
+		/datum/reagent/consumable/ethanol/beer = 10,
 		/obj/item/reagent_containers/food/snacks/meat/slab/molerat = 1,
 		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
 		/obj/item/reagent_containers/food/snacks/grown/soybeans = 1,
