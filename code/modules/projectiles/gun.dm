@@ -1174,7 +1174,7 @@ ATTACHMENTS
 /obj/item/gun/proc/get_dud_projectile()
 	return null
 
-/obj/item/gun/proc/ui_data_projectile(var/obj/item/projectile/P)
+/obj/item/gun/proc/ui_data_projectile(obj/item/projectile/P)
 	if(!P)
 		return list()
 	var/list/data = list()
