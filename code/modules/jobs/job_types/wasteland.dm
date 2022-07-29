@@ -1556,6 +1556,7 @@ datum/job/wasteland/f13dendoctor
 		/datum/crafting_recipe/tribal/bonetalisman,
 		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5,
+		/datum/crafting_recipe/food/pemmican,
 		/datum/crafting_recipe/tribal/bonebag
 	)
 	for(var/datum/crafting_recipe/recipe as() in recipes)
