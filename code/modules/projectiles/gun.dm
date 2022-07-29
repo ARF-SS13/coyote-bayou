@@ -1029,7 +1029,7 @@ ATTACHMENTS
 		playsound(src.loc, 'sound/weapons/selector.ogg', 100, 1)
 		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
 
-/obj/item/gun/proc/toggle_safety(mob/living/user, var/ignore_held = FALSE)
+/obj/item/gun/proc/toggle_safety(mob/living/user, ignore_held = FALSE)
 	if((restrict_safety || src != user.get_active_held_item()) && !ignore_held)
 		return
 	safety = !safety
