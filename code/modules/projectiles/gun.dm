@@ -1093,7 +1093,7 @@ ATTACHMENTS
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "WeaponInfo", "Weapon Info")
-    	ui.open()
+		ui.open()
 
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
