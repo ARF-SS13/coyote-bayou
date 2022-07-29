@@ -548,7 +548,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 //The default action is attack_self().
 //Checks before we get to here are: mob is alive, mob is not restrained, stunned, asleep, resting, laying, item is on the mob.
 /obj/item/proc/ui_action_click(mob/user, actiontype)
-	to_chat(user, "HUH???")
 	attack_self(user)
 
 /obj/item/proc/add_hud_actions(mob/user)
