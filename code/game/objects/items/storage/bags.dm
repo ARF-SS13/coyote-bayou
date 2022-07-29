@@ -219,11 +219,11 @@
 	STR.max_combined_stack_amount = INFINITY
 
 // -----------------------------
-//          Plant bag
+//          Plant bag/Produce Bag
 // -----------------------------
 
 /obj/item/storage/bag/plants
-	name = "plant bag"
+	name = "produce bag"
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "plantbag"
 	w_class = WEIGHT_CLASS_TINY
@@ -235,7 +235,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 100
 	STR.max_items = 100
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb))
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb, /obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/egg, /obj/item/fishy ))
 
 ////////
 
