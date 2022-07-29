@@ -1242,7 +1242,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 //Laborers farm and mine.
 /datum/outfit/loadout/slaveworker
 	name = "Worker"
-	suit = /obj/item/clothing/suit/armor/slavelabor
+	suit = /obj/item/clothing/suit/armor/outfit/slavelabor
 	uniform = /obj/item/clothing/under/f13/legslave
 	shoes =	/obj/item/clothing/shoes/f13/rag
 	r_hand = /obj/item/flashlight/flare/torch
