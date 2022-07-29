@@ -9,7 +9,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 
 /obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(boom_chance))
+	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
 		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
 		user.take_bodypart_damage(0,20)
