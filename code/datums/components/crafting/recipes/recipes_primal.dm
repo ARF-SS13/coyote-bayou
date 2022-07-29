@@ -38,6 +38,19 @@
 	result = /obj/item/crafting/wonderglue
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/food/pemmican
+	name = "Pemmican"
+	always_available = FALSE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meatball = 15,
+		/datum/reagent/consumable/eggyolk = 25,
+		/obj/item/reagent_containers/food/snacks/grown/yucca = 5,
+		/obj/item/reagent_containers/food/snacks/grown/pinyon = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/pemmican
+	category = CAT_TRIBAL
+
 /datum/crafting_recipe/duct_tape
 	name = "Bonfire"
 	time = 60
