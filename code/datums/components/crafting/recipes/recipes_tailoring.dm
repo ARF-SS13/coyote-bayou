@@ -775,6 +775,33 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_GENCLOTHES
 
+/datum/crafting_recipe/overalls_farmer
+	name = "Farmer Overalls"
+	result = /obj/item/clothing/suit/armor/outfit/overalls/farmer
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/overalls_maid
+	name = "Sexy Maid Overalls"
+	result = /obj/item/clothing/suit/armor/outfit/overalls/sexymaid
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
+/datum/crafting_recipe/overalls_blacksmith
+	name = "Smithing Overalls"
+	result = /obj/item/clothing/suit/armor/outfit/overalls/blacksmith
+	reqs = list(/obj/item/stack/sheet/cloth = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_GENCLOTHES
+
 /////////////////////
 //HATS, SCARVES ETC//
 /////////////////////

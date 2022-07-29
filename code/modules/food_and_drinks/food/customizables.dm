@@ -296,6 +296,8 @@
 	reagent_flags = OPENCONTAINER
 	custom_materials = list(/datum/material/glass = 500)
 	w_class = WEIGHT_CLASS_NORMAL
+	var/fill_icon = 'icons/obj/food/soupsalad.dmi'
+	var/fill_state = "fullbowl"
 
 /obj/item/reagent_containers/glass/bowl/attackby(obj/item/I,mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
@@ -327,7 +329,7 @@
 /obj/item/reagent_containers/glass/bowl/update_overlays()
 	. = ..()
 	if(reagents && reagents.total_volume)
-		var/mutable_appearance/filling = mutable_appearance('icons/obj/food/soupsalad.dmi', "fullbowl")
+		var/mutable_appearance/filling = mutable_appearance(fill_icon, fill_state)
 		filling.color = mix_color_from_reagents(reagents.reagent_list)
 		. += filling
 

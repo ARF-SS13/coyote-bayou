@@ -10,40 +10,44 @@
 
 /obj/item/clothing/neck/apron/bartender
 	name = "bartenders apron"
-	desc = "A fancy purple apron for a stylish bartender. Can hold some bottles, a few kitchen trinkets and maybe a small discrete revolver...."
+	desc = "A fancy purple apron for a stylish bartender. Has stylish loops for bottles and snacks, sheaths for kitchen trinkets, and a discrete little holster under a flap. Service with a smile!"
 	icon_state = "bartender"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
-/obj/item/clothing/neck/apron/medicus
-	name = "medicus apron"
-	desc = "The waxed cotton apron of a Medicus, marked with a red bull insignia. Has pockets for some small medical equipment."
+/obj/item/clothing/neck/apron/medical
+	name = "nurse's apron"
+	desc = "The waxed cotton apron of a medical professional. Has pockets for some small medical equipment."
 	icon_state = "medicus"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 20, "rad" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/neck/apron/medical/surgical
+	name = "surgeon's apron"
+	desc = "The sterile apron of a medical professional. Has pockets for some small medical equipment."
+	icon_state = "surgical"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
 
 /obj/item/clothing/neck/apron/chef
-	name = "chefs apron"
-	desc = "A white apron for kitchenwork, or for some improvised surgery. Got loops to attach kitchen knives and rollings pin to it."
+	name = "chef's apron"
+	desc = "A white apron for kitchenwork, or for some improvised surgery. Has robust loops for bottles and snacks, sheathes for kitchen trinkets, and a discrete little holster under a flap. Order up!"
 	icon_state = "chef"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/kitchen
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/neck/apron/labor
 	name = "labor apron"
-	desc = "A dark apron for manual labor."
+	desc = "A dark apron for manual labor. Comes with various pockets and loops for holding everything a handycritter could need."
 	icon_state = "labor"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter
-
-/obj/item/clothing/neck/apron/labor/forge
-	name = "forgemasters apron"
-	desc = "A heavy leather apron designed for protecting the user when metalforging and help carry some minor tools. The bull insignia marks the wearer as a Forgemaster."
-	icon_state = "forge"
 	heat_protection = CHEST|GROIN|LEGS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+
+/obj/item/clothing/neck/apron/labor/forge
+	name = "smith's apron"
+	desc = "A heavy leather apron designed for protecting the user when metalforging and help carry some minor tools."
+	icon_state = "forge"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter
 
 /obj/item/clothing/neck/apron/housewife
 	name = "50s housewife apron"
-	desc = "A cutesy pink checkerboard apron. The pattern is inspired by ancient commercial billboards. Some kitchen equipment can be stored in its pocket."
+	desc = "A cutesy pink checkerboard apron. The pattern is inspired by ancient commercial billboards. Comes with deep pockets to hold everything a homemaker/wrecker could need."
 	icon_state = "housewife"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/kitchen
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service

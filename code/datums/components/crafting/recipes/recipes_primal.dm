@@ -27,6 +27,27 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/wonderglue
+	name = "Animal Glue"
+	time = 60
+	always_available = TRUE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/bone = 3,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/sinew = 3)
+	result = /obj/item/crafting/wonderglue
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/duct_tape
+	name = "Bonfire"
+	time = 60
+	always_available = TRUE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/durathread = 4,
+				/obj/item/crafting/wonderglue = 1)
+	result = /obj/item/crafting/duct_tape
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/headpikelegion
 	name = "Spike Head (Throwing Spear)"
 	time = 65
