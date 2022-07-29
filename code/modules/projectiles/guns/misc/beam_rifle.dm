@@ -20,7 +20,6 @@
 	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	custom_materials = null
-	recoil = 4
 	ammo_x_offset = 3
 	ammo_y_offset = 3
 	modifystate = FALSE
@@ -85,7 +84,6 @@
 	delay = 0
 	cell_type = /obj/item/stock_parts/cell/infinite
 	aiming_time = 0
-	recoil = 0
 	pin = /obj/item/firing_pin
 
 /obj/item/gun/energy/beam_rifle/equipped(mob/user)

@@ -6,7 +6,6 @@
 	name = "grenade rifle"
 	icon_state = "dshotgun-sawn"
 	item_state = "gun"
-	inaccuracy_modifier = 0.5
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
@@ -87,8 +86,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	slowdown = 1
-	fire_delay = 0
-	inaccuracy_modifier = 0.25
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"

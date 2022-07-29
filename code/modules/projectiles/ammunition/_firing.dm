@@ -1,9 +1,9 @@
-/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, gun_damage_multiplier, extra_penetration, atom/fired_from)
+/obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier, penetration_multiplier, atom/fired_from)
 	distro += variance
 	if(istype(BB))
 		distro += BB.spread
 	var/targloc = get_turf(target)
-	ready_proj(target, user, quiet, zone_override, gun_damage_multiplier, extra_penetration, fired_from)
+	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, fired_from)
 	if(pellets == 1)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
 			if(randomspread)
@@ -23,7 +23,7 @@
 	update_icon()
 	return 1
 
-/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", gun_damage_multiplier = 0, extra_penetration = 0, fired_from)
+/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 0, penetration_multiplier = 0, fired_from)
 	if (!BB)
 		return
 	BB.original = target
@@ -37,8 +37,8 @@
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from
-		BB.damage *= G.gun_damage_multiplier
-		BB.armour_penetration += G.extra_penetration
+		BB.damage *= G.damage_multiplier
+		BB.armour_penetration *= G.penetration_multiplier
 		BB.pixels_per_second += G.extra_speed
 		if(HAS_TRAIT(user, TRAIT_INSANE_AIM))
 			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!

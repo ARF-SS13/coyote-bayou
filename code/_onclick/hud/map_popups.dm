@@ -163,3 +163,5 @@
 /client/verb/handle_popup_close(window_id as text)
 	set hidden = TRUE
 	clear_map("[window_id]_map")
+
+

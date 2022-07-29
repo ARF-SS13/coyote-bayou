@@ -13,7 +13,6 @@
 	suppressed = TRUE
 	burst_size = 1
 	fire_delay = 0
-	spread = 20
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/toy/pistol/stealth/update_overlays()
