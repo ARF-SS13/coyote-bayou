@@ -394,3 +394,17 @@
 	. = ..()
 	if(can_charge == 1)
 		. += span_notice("Alt-click to eject the battery.")
+
+/obj/item/gun/energy/ui_data(mob/user)
+	var/list/data = ..()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+	data["charge_cost"] = shot.e_cost
+	if(cell)
+		data["cell_charge"] = cell.percent()
+		data["shots_remaining"] = round(cell.charge/shot.e_cost)
+		data["max_shots"] = round(cell.maxcharge/shot.e_cost)
+	return data
+
+/obj/item/gun/energy/get_dud_projectile()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+	return new shot.projectile_type

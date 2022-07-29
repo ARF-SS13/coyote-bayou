@@ -60,3 +60,15 @@
 /datum/keybinding/carbon/select_harm_intent/down(client/user)
 	user.mob?.a_intent_change(INTENT_HARM)
 	return TRUE
+
+/datum/keybinding/carbon/wield 
+	hotkey_keys = list("ShiftX")
+	name = "wield_item"
+	full_name = "Wield held item"
+	description = ""
+	category = CATEGORY_CARBON
+
+/datum/keybinding/carbon/wield/down(client/user)
+	var/mob/living/carbon/C = user.mob
+	C.do_wield()
+	return TRUE

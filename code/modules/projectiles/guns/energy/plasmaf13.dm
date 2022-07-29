@@ -185,7 +185,8 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	automatic = 1
-	force_wielded_multiplier = 2
+	force_unwielded = GUN_MELEE_FORCE_RIFLE_LIGHT
+	force_wielded = GUN_MELEE_FORCE_RIFLE_LIGHT * 2
 	wielded_icon = "plasma2"
 
 /obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()

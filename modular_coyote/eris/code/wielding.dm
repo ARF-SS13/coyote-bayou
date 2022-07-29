@@ -5,7 +5,8 @@
 	var/wieldsound = 'sound/weapons/thudswoosh.ogg' //Generic sound. Replace it with a special one if you have one.
 	var/unwieldsound //If you want it to make a sound when you unwield, put one here.
 	var/wielded_icon //The item state used when it's wielded. Guns are snowflakey and have their own shit for this. This is for non guns.
-	var/force_wielded_multiplier = 0 //If you have a specific force for it being unwielded. If for whatever reason you don't want to use the original force of the weapon.
+	var/force_unwielded = 0 //If you have a specific force for it being unwielded. If for whatever reason you don't want to use the original force of the weapon.
+	var/force_wielded = 0 //If you have a specific force for it being wielded.
 
 
 /mob/living/proc/do_wield()//The proc we actually care about.
@@ -18,8 +19,8 @@
 	if(!wielded || !user)
 		return
 	wielded = FALSE
-	if(force_wielded_multiplier)
-		force = (force / force_wielded_multiplier)	
+	if(force_unwielded)
+		force = force_unwielded
 	else
 		force = (force / 1.3)
 	
@@ -50,8 +51,8 @@
 		to_chat(user, span_warning("You need your other hand to be empty!</span>"))
 		return
 	wielded = TRUE
-	if(force_wielded_multiplier)
-		force = force * force_wielded_multiplier
+	if(force_wielded)
+		force = force_wielded
 	else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
 		force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
 	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name

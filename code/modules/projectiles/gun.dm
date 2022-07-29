@@ -958,11 +958,11 @@ ATTACHMENTS
 	var/brace_recoil = 0
 	var/unwielded_recoil = 0
 
-	if(!braced)
+	/*if(!braced)
 		brace_recoil = recoil_dat.getRating(RECOIL_TWOHAND)
 	else if(braceable > 1)
 		base_recoil /= 4 // With a bipod, you can negate most of your recoil
-
+	*/
 	if(!wielded)
 		unwielded_recoil = recoil_dat.getRating(RECOIL_ONEHAND)
 
@@ -1089,25 +1089,30 @@ ATTACHMENTS
 		if("Weapon Info")
 			ui_interact(user)
 
-/*
+/obj/item/gun/ui_interact(mob/user, datum/tgui/ui)
+  ui = SStgui.try_update_ui(user, src, ui)
+  if(!ui)
+    ui = new(user, src, "WeaponInfo", "Weapon Info")
+    ui.open()
+
 /obj/item/gun/ui_data(mob/user)
 	var/list/data = list()
 	data["damage_multiplier"] = damage_multiplier
-	data["pierce_multiplier"] = pierce_multiplier
-	data["ricochet_multiplier"] = ricochet_multiplier
+	//data["pierce_multiplier"] = pierce_multiplier
+	//data["ricochet_multiplier"] = ricochet_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 
 	data["fire_delay"] = fire_delay //time between shot, in ms
-	data["burst"] = burst //How many shots are fired per click
-	data["burst_delay"] = burst_delay //time between shot in burst mode, in ms
+	data["burst"] = burst_size //How many shots are fired per click
+	data["burst_delay"] = burst_shot_delay //time between shot in burst mode, in ms
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
-	data["armor_penetration"] = armor_penetration
-	data["muzzle_flash"] = muzzle_flash
+	data["armor_penetration"] = armour_penetration
+	//data["muzzle_flash"] = muzzle_flash
 
 	var/total_recoil = 0
-	var/list/recoilList = recoil.getFancyList()
+	var/list/recoilList = recoil_dat.getFancyList()
 	if(recoilList.len)
 		var/list/recoil_vals = list()
 		for(var/i in recoilList)
@@ -1133,9 +1138,9 @@ ATTACHMENTS
 				"current" = (i == sel_mode),
 				"name" = F.name,
 				"desc" = F.desc,
-				"burst" = F.settings["burst"],
+				"burst" = F.settings["burst_size"],
 				"fire_delay" = F.settings["fire_delay"],
-				"move_delay" = F.settings["move_delay"],
+				//"move_delay" = F.settings["move_delay"],
 				)
 			if(F.settings["projectile_type"])
 				var/proj_path = F.settings["projectile_type"]
@@ -1144,13 +1149,42 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 
-	if(item_upgrades.len)
+	/*if(item_upgrades.len)
 		data["attachments"] = list()
 		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))
-
+			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))*/
 	return data
-*/
+
+/obj/item/gun/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if(action == "firemode")
+		var/new_firemode = params["firemode"]
+		sel_mode = new_firemode
+		set_firemode(sel_mode)
+		playsound(src.loc, 'sound/weapons/selector.ogg', 100, 1)
+		var/mob/living/carbon/human/user = usr
+		var/datum/firemode/new_mode = firemodes[sel_mode]
+		to_chat(user, span_notice("\The [src] is now set to [new_mode.name]."))
+		. = TRUE
+	update_icon()
+
+//Returns a projectile that's not for active usage.
+/obj/item/gun/proc/get_dud_projectile()
+	return null
+
+/obj/item/gun/proc/ui_data_projectile(var/obj/item/projectile/P)
+	if(!P)
+		return list()
+	var/list/data = list()
+	data["projectile_name"] = P.name
+	data["projectile_damage"] = (P.damage * damage_multiplier)
+	data["projectile_AP"] = P.armour_penetration * penetration_multiplier
+	data["projectile_recoil"] = P.recoil
+	qdel(P)
+	return data
+
 //Finds the current firemode and calls update on it. This is called from a few places:
 //When firemode is changed
 //When safety is toggled

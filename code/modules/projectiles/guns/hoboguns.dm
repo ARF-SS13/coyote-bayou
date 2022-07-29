@@ -100,6 +100,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2.1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -134,6 +138,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -174,6 +182,11 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2.4)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -217,6 +230,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3.1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
@@ -252,6 +269,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -284,6 +305,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(1.6)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -319,6 +344,12 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	automatic = 1
+	init_recoil = RIFLE_RECOIL(2.7)
+	init_firemodes = list(
+		FULL_AUTO_300,
+		BURST_3_ROUND,
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -353,6 +384,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 
 //Plasma musket.
@@ -372,6 +406,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 /* * * * * * * * * * *
  * Destroyer Carbine
@@ -407,6 +444,10 @@
 	scope_x_offset = 6
 	scope_y_offset = 14
 	semi_auto = FALSE
+	init_recoil = CARBINE_RECOIL(2.3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 
 //Obrez, sawn off bolt action rifle						Keywords: .308, 5 round internal
@@ -431,6 +472,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(4)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	can_scope = FALSE
 
@@ -457,6 +502,10 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(2.3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'

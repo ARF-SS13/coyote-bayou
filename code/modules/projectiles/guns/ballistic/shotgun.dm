@@ -131,9 +131,13 @@
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+	)
 
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -180,9 +184,13 @@
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+	)
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'

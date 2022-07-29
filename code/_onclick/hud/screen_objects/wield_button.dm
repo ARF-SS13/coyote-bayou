@@ -5,7 +5,6 @@
 	icon = 'icons/fallout/UI/buttons_fallout2.dmi'
 	icon_state = "wield"
 	layer = HUD_LAYER - 0.1
-	var/mutable_appearance/flashy
 
 
 /obj/screen/wield/Click()

@@ -16,6 +16,7 @@
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
 	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	force_unwielded = force
 
 /obj/item/twohanded/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
@@ -46,11 +47,13 @@
 	resistance_flags = FIRE_PROOF
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	wielded_icon = "legionaxe2"
+	force_unwielded = 30
+	force_wielded = 60
 
 /obj/item/twohanded/legionaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=30, force_wielded=60, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/legionaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -87,11 +90,13 @@
 	resistance_flags = FIRE_PROOF
 	attack_verb = list("axed", "chopped", "cleaved", "torn", "hacked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	wielded_icon = "fireaxe2"
+	force_unwielded = 26
+	force_wielded = 46
 
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=26, force_wielded=46, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/fireaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -122,10 +127,9 @@
 	icon_state = "boneaxe"
 	icon_prefix = "boneaxe"
 	resistance_flags = null
-
-/obj/item/twohanded/fireaxe/boneaxe/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
+	wielded_icon = "boneaxe2"
+	force_unwielded = 25
+	force_wielded = 40
 
 /obj/item/twohanded/fireaxe/boneaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -153,6 +157,7 @@
 	wound_bonus = null
 	sharpness = SHARP_NONE
 	resistance_flags = null
+	wielded_icon = "bumper2"
 
 /obj/item/twohanded/fireaxe/bmprsword/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -191,6 +196,9 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
 	wound_bonus = -15
 	bare_wound_bonus = 15
+	wielded_icon = "spear-metal2"
+	force_unwielded = 10
+	force_wielded = 30
 	var/obj/item/grenade/explosive = null
 	var/war_cry = "AAAAARGH!!!"
 
@@ -198,7 +206,6 @@
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 70) //decent in a pinch, but pretty bad.
 	AddElement(/datum/element/sword_point)
-	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=30, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/spear/rightclick_attack_self(mob/user)
 	if(explosive)
@@ -277,11 +284,10 @@
 	desc = "A long spear made in the Legions war foundries. Useful for fighting tribals and hunting when ammunition is scarce."
 	icon_state = "spear-lance"
 	icon_prefix = "spear-lance"
-
-/obj/item/twohanded/spear/lance/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=25, force_wielded=40, icon_wielded="[icon_prefix]2")
-
+	wielded_icon = "spear-lance2"
+	force = 25
+	force_unwielded = 25
+	force_wielded = 40
 
 // Scrap spear		Keywords: Damage 17/28, Reach, Throw bonus
 /obj/item/twohanded/spear/scrapspear
@@ -291,11 +297,10 @@
 	icon_prefix = "spear-scrap"
 	throwforce = 28
 	embedding = list("pain_mult" = 2, "embed_chance" = 35, "fall_chance" = 20)
-
-/obj/item/twohanded/spear/scrapspear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=17, force_wielded=28, icon_wielded="[icon_prefix]2")
-
+	wielded_icon = "spear-scrap2"
+	force = 17
+	force_unwielded = 17
+	force_wielded = 28
 
 // Bone Spear		Keywords: TRIBAL, Damage 18/30, Armor-piercing +0.2, Reach
 /obj/item/twohanded/spear/bonespear
@@ -303,7 +308,7 @@
 	desc = "A haphazardly-constructed yet still deadly weapon. The pinnacle of modern technology."
 	icon_state = "spear-bone"
 	icon_prefix = "spear-bone"
-	force = 15
+	force = 18
 	throwforce = 25
 	throw_speed = 4
 	armour_penetration = 0.07
@@ -312,11 +317,9 @@
 	custom_materials = null
 	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-
-/obj/item/twohanded/spear/bonespear/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=18, force_wielded=30, icon_wielded="[icon_prefix]2")
-
+	wielded_icon = "spear-bone2"
+	force_unwielded = 18
+	force_wielded = 30
 
 // Deathclaw Spear		Keywords: TRIBAL, Damage 20/45, Armor-piercing +0.3, Reach
 /obj/item/twohanded/spear/bonespear/deathclaw
@@ -327,11 +330,9 @@
 	force = 20
 	armour_penetration = 0.15
 	sharpness = SHARP_EDGED
-
-/obj/item/twohanded/spear/bonespear/deathclaw/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 45, icon_wielded="[icon_prefix]2")
-
+	wielded_icon = "spear-claw2"
+	force_unwielded = 20
+	force_wielded = 45
 
 
 /////////////////
@@ -350,10 +351,9 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
 	icon_prefix = "baseball"
-
-/obj/item/twohanded/baseball/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 24, force_wielded = 30, icon_wielded="[icon_prefix]2")
+	wielded_icon = "baseball2"
+	force_unwielded = 24
+	force_wielded = 30
 
 // Spiked Baseball Bat		Keywords: Damage 24/33, Damage bonus Stamina, Sharp
 /obj/item/twohanded/baseball/spiked
@@ -365,10 +365,9 @@
 	throwforce = 15
 	wound_bonus = 5
 	sharpness = SHARP_POINTY
-
-/obj/item/twohanded/baseball/spiked/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 26, force_wielded = 33, icon_wielded="[icon_prefix]2")
+	wielded_icon = "baseballspike2"
+	force_unwielded = 26
+	force_wielded = 33
 
 /obj/item/twohanded/baseball/spiked/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -383,10 +382,10 @@
 	icon_state = "louisville"
 	icon_prefix = "louisville"
 	attack_verb = list("thwacked", "bashed", "louisville slugged", "hit", "bludgeoned", "whacked", "bonked")
-
-/obj/item/twohanded/baseball/louisville/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 34, icon_wielded="[icon_prefix]2")
+	wielded_icon = "louisville2"
+	force = 25
+	force_unwielded = 25
+	force_wielded = 34
 
 /obj/item/twohanded/baseball/louisville/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -401,10 +400,10 @@
 	icon_state = "golfclub"
 	icon_prefix = "golfclub"
 	attack_verb = list("smashed", "bashed", "fored", "hit", "bludgeoned", "whacked")
-
-/obj/item/twohanded/baseball/golfclub/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 22, force_wielded = 32, icon_wielded="[icon_prefix]2")
+	wielded_icon = "golfclub2"
+	force = 22
+	force_unwielded = 22
+	force_wielded = 32
 
 /obj/item/twohanded/baseball/golfclub/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -427,6 +426,7 @@
 	throwforce = 20 // Huge hammers aren't that great for throwing
 	sharpness = SHARP_NONE
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
+	force_unwielded = 25
 
 
 // Sledgehammer			Keywords: Damage 25/45, Blacksmithing
@@ -434,10 +434,8 @@
 	icon_state = "hammer-sledge"
 	icon_prefix = "hammer-sledge"
 	var/qualitymod = 0
-
-/obj/item/twohanded/sledgehammer/simple/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
+	wielded_icon = "hammer-sledge2"
+	force_wielded = 45
 
 /obj/item/twohanded/sledgehammer/simple/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -470,10 +468,9 @@
 	throw_range = 3
 	attack_verb = list("burned", "welded", "cauterized", "melted", "charred")
 	hitsound = 'sound/items/welder2.ogg'
-
-/obj/item/twohanded/thermic_lance/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=60, icon_wielded="[icon_prefix]2")
+	wielded_icon = "thermiclance2"
+	force_unwielded = 5
+	force_wielded = 60
 
 /obj/item/twohanded/thermic_lance/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -528,10 +525,9 @@
 	icon_state = "hammer-super"
 	icon_prefix = "hammer-super"
 	force = 25
-
-obj/item/twohanded/sledgehammer/supersledge/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 60, icon_wielded="[icon_prefix]2")
+	wielded_icon = "hammer-super2"
+	force_unwielded = 25
+	force_wielded = 60
 
 obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -562,10 +558,12 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	var/digrange = 1
 	var/attacksound = "sound/f13effects/explosion_distant_2.ogg"
 	var/sound = "sound/f13effects/explosion_distant_2.ogg"
+	wielded_icon = "hammer-rocket2"
+	force_unwielded = 20
+	force_wielded = 52
 
 /obj/item/twohanded/sledgehammer/rockethammer/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 20, force_wielded = 52, icon_wielded="[icon_prefix]2")
 	AddComponent(/datum/component/knockback, 1, FALSE, TRUE)
 
 /obj/item/twohanded/sledgehammer/rockethammer/afterattack(atom/A, mob/living/user, proximity)
@@ -611,10 +609,9 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	icon_state = "hammer-atom"
 	icon_prefix = "hammer-atom"
 	force = 25
-
-/obj/item/twohanded/sledgehammer/atomsjudgement/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 55, icon_wielded="[icon_prefix]2")
+	wielded_icon = "hammer-atom2"
+	force_unwielded = 25
+	force_wielded = 55
 
 /obj/item/twohanded/sledgehammer/atomsjudgement/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -633,10 +630,9 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	throwforce = 20
 	armour_penetration = 0.2
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
-
-/obj/item/twohanded/sledgehammer/warmace/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 25, force_wielded = 45, icon_wielded="[icon_prefix]2")
+	wielded_icon = "hammer-war2"
+	force_unwielded = 25
+	force_wielded = 45
 
 
 // Shaman staff				Keywords: Damage 15/30, Big stamina damage buff
@@ -647,10 +643,9 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	icon_prefix = "staff-shaman"
 	force = 15
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "thrashed")
-
-/obj/item/twohanded/sledgehammer/shamanstaff/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 15, force_wielded = 30, icon_wielded="[icon_prefix]2")
+	wielded_icon = "staff-shaman2"
+	force_unwielded = 15
+	force_wielded = 30
 
 /obj/item/twohanded/sledgehammer/shamanstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -666,10 +661,10 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	icon_prefix = "staff-mars"
 	hitsound = "swing_hit"
 	attack_verb = list("bashed", "pounded", "bludgeoned", "pummeled", "enlightened")
-
-/obj/item/twohanded/sledgehammer/marsstaff/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded = 5, force_wielded = 10, icon_wielded="[icon_prefix]2")
+	wielded_icon = "staff-mars2"
+	force = 5
+	force_unwielded = 5
+	force_wielded = 10
 
 /obj/item/twohanded/sledgehammer/marsstaff/attack(mob/living/M, mob/living/user)
 	. = ..()
@@ -709,11 +704,13 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 	toolspeed = 0.5
 	tool_behaviour = TOOL_SAW
 	hitsound = 'sound/weapons/chainsawhit.ogg'
+	wielded_icon = "chainsaw2"
+	force_unwielded = 8
+	force_wielded = 55
 
 /obj/item/twohanded/chainsaw/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 30, 100, 0, 'sound/weapons/chainsawhit.ogg', TRUE)
-	AddComponent(/datum/component/two_handed, force_unwielded = 8, force_wielded = 55, icon_wielded="[icon_prefix]2")
 
 /obj/item/twohanded/chainsaw/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
