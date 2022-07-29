@@ -654,5 +654,6 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BURST_3_ROUND_RAPID		list(mode_name=" High-delay Rapid 3-round bursts", mode_desc = "Short, fast bursts with a higher delay between bursts", automatic = 0, burst_size=3, fire_delay=15, icon="auto", burst_shot_delay = 0.9)
 #define BURST_5_ROUND		list(mode_name="5-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=5, fire_delay=null, icon="burst")
 #define BURST_8_ROUND		list(mode_name="8-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=8, fire_delay=null, icon="burst")
+#define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
 
 #define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
