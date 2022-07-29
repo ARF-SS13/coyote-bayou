@@ -79,8 +79,8 @@
 	emote_taunt = list("growls")
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 180 //9 shots to kill with 9mm
-	health = 180
+	maxHealth = 160 
+	health = 160
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 10
@@ -229,8 +229,8 @@
 	health = 25
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 7
+	melee_damage_upper = 14
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")

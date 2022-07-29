@@ -173,3 +173,19 @@
 	icon_state = "vap"
 	icon = 'modular_coyote/icons/mob/mam_tails.dmi'
 
+/datum/sprite_accessory/tails/human/deertail
+	name = "deer"
+	icon_state = "deertail"
+	icon = 'modular_coyote/icons/mob/mam_tails.dmi'
+	color_src = MUTCOLORS
+	extra = TRUE
+	extra_color_src = MUTCOLORS2
+
+/datum/sprite_accessory/tails/mam_tails/deertail
+	name = "deer"
+	icon_state = "deertail"
+	icon = 'modular_coyote/icons/mob/mam_tails.dmi'
+	color_src = MUTCOLORS
+	extra = TRUE
+	extra_color_src = MUTCOLORS2
+

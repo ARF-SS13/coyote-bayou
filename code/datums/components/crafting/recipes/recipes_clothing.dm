@@ -137,6 +137,87 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
 
+/* * * * * *
+ * APRONS  *
+ * * * * * */
+
+/datum/crafting_recipe/bar_apron
+	name = "Bartender's Apron"
+	result = /obj/item/clothing/neck/apron/bartender
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/medical_apron
+	name = "Nurse's Apron"
+	result = /obj/item/clothing/neck/apron/medical
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/surgical_apron
+	name = "Surgeon's Apron"
+	result = /obj/item/clothing/neck/apron/medical/surgical
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/chef_apron
+	name = "Chef's Apron"
+	result = /obj/item/clothing/neck/apron/chef
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/labor_apron
+	name = "Labor Apron"
+	result = /obj/item/clothing/neck/apron/labor
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/forge_apron
+	name = "Smith's Apron"
+	result = /obj/item/clothing/neck/apron/labor/forge
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
+/datum/crafting_recipe/housewife_apron
+	name = "Housewife Apron"
+	result = /obj/item/clothing/neck/apron/housewife
+	reqs = list(/obj/item/stack/sheet/cloth = 8,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_MISCCLOTHING
+
 /////////
 //SHOES//
 /////////

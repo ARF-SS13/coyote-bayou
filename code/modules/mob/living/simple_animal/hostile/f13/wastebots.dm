@@ -20,7 +20,7 @@
 	maxHealth = 130
 	healable = FALSE
 	stat_attack = CONSCIOUS
-	melee_damage_lower = 28
+	melee_damage_lower = 14
 	melee_damage_upper = 28
 	robust_searching = TRUE
 	attack_verb_simple = "saws"
@@ -81,13 +81,13 @@
 	icon_dead = "robot_dead"
 	health = 160
 	maxHealth = 160 //formerly 200
-	melee_damage_lower = 72
+	melee_damage_lower = 20
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
 	attack_verb_simple = "shoots a burst of flame at"
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/f13plasma/scatter
-	extra_projectiles = 2
+	extra_projectiles = 1
 	ranged = TRUE
 	retreat_distance = 2
 	minimum_distance = 2
@@ -169,7 +169,7 @@
 	icon_dead = "robobrain_d"
 	health = 180
 	maxHealth = 180
-	melee_damage_lower = 30
+	melee_damage_lower = 25
 	melee_damage_upper = 45
 	attack_verb_simple = "slaps"
 	attack_sound = 'sound/weapons/punch1.ogg'

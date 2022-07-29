@@ -57,6 +57,7 @@
 								/obj/item/export/bottle/nukashine = 50,
 								/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
 								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 20,
+								/obj/item/reagent_containers/food/snacks/pemmican = 100
 								)
 
 /obj/machinery/mineral/wasteland_trader/general

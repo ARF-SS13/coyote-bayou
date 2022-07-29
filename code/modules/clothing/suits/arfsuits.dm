@@ -126,17 +126,20 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/farmer/overalls
 
-/obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
+/obj/item/clothing/suit/armor/outfit/overalls/farmer/Initialize()
 	. = ..()
-	allowed |= GLOB.sexymaid_apron_allowed
+	allowed |= GLOB.farmer_apron_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid // best suit
 	name = "sexy maid outfit"
 	desc = "A maid outfit that shows just a little more skin than needed for cleaning duties."
+	icon = 'icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	icon_state = "sexymaid_s"
 	item_state = "sexymaid_s"
-	// body_parts_covered = CHEST
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
 	. = ..()
@@ -149,6 +152,7 @@
 	icon_state = "forge"
 	item_state = "forge"
 	blood_overlay_type = "armor"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter/overalls
 /* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it
@@ -167,6 +171,7 @@
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	body_parts_hidden = GROIN
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
@@ -179,7 +184,7 @@
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
 	item_state = "lb_suit"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bartender
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
@@ -291,6 +296,8 @@
 	species_exception = list(/datum/species/golem)
 	armor = ARMOR_VALUE_CLOTHES
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	body_parts_hidden = CHEST | ARMS
+	toggled_hidden_parts = ARMS
 
 /obj/item/clothing/suit/toggle/labcoat/cmo
 	name = "chief medical officer's labcoat"
@@ -336,6 +343,7 @@
 	icon_state = "sci_dep_jacket"
 	item_state = "sci_dep_jacket"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/med
 	name = "medical jacket"
@@ -388,12 +396,15 @@
 	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
 	icon_state = "warriors"
 	item_state = "owl"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/toggle/labcoat/wanderer
 	name = "wanderer jacket"
 	desc = "A zipped-up hoodie made of tanned leather."
 	icon_state = "wanderer"
 	item_state = "owl"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+
 /obj/item/clothing/suit/toggle/labcoat/followers
 	name = "followers lab coat"
 	desc = "A worn-down white labcoat with some wiring hanging from the right side.<br>Upon closer inspection, you can see an ancient bloodstains that could tell an entire story about thrilling adventures of a previous owner."
@@ -406,6 +417,7 @@
 	icon_state = "armormedical"
 	desc = "A staunch, practical parka made out of a wind-breaking jacket, reinforced with metal plates."
 	hoodtype = /obj/item/clothing/head/hooded/parkahood/medical
+	body_parts_hidden = CHEST | ARMS
 
 /obj/item/clothing/head/hooded/parkahood/medical
 	name = "armored medical parka hood"
@@ -439,6 +451,15 @@
 	throw_range = 2
 	w_class = WEIGHT_CLASS_TINY
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+/obj/item/clothing/suit/armor/outfit/slavelabor
+	name = "old leather strips"
+	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	icon_state = "legion_slaveleather"
+	item_state = "legion_slaveleather"
+	body_parts_hidden = 0
 
 ///////////
 // LIGHT //
@@ -516,19 +537,22 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "tribal"
 	item_state = "tribal"
-	flags_inv = HIDEJUMPSUIT
+	body_parts_hidden = GROIN|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/light/tribal/cloak
 	name = "light tribal cloak"
 	desc = "A light cloak made from gecko skins and small metal plates at vital areas to give some protection, a favorite amongst scouts of the tribe."
 	icon_state = "lightcloak"
 	item_state = "lightcloak"
+	body_parts_hidden = CHEST|ARMS|LEGS
+
 
 /obj/item/clothing/suit/armor/light/tribal/simple
 	name = "simple tribal armor"
 	desc = "Armor made of leather strips and a large, flat piece of turquoise. The wearer is displaying the Wayfinders traditional garb."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
+	body_parts_hidden = CHEST|ARMS|LEGS
 
 /obj/item/clothing/suit/armor/light/tribal/sorrows
 	name = "Sorrows armour"
@@ -554,45 +578,51 @@
 /obj/item/clothing/suit/armor/light/tribal/bone/cool
 	name = "bone armor suit"
 	desc = "A tribal armor plate, crafted from animal bone."
-	icon_state = "bonearmor"
-	item_state = "bonearmor"
+	icon_state = "bonearmor_light"
+	item_state = "bonearmor_light"
 	blood_overlay_type = "armor"
 
 /obj/item/clothing/suit/armor/light/tribal/rustwalkers
-	name = "Rustwalkers armor"
+	name = "Rustwalkers light armor"
 	desc = "A chestplate, pauldron and vambrace that bear a distinct resemblance to a coolant tank, engine valves and an exhaust. Commonly worn by members of the Rustwalkers tribe"
-	icon_state = "rustwalkers_armour"
-	item_state = "rustwalkers_armour"
+	icon_state = "rustwalkers_armour_light"
+	item_state = "rustwalkers_armour_light"
+	body_parts_hidden = ARMS
 	
 /obj/item/clothing/suit/armor/light/tribal/whitelegs
-	name = "White Legs armour"
+	name = "White Legs light armour"
 	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping. Commonly worn by members of the White Legs tribe."
-	icon_state = "white_legs_armour"
-	item_state = "white_legs_armour"
+	icon_state = "white_legs_armour_light"
+	item_state = "white_legs_armour_light"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/tribal/eighties
-	name = "80s armour"
+	name = "80s light armour"
 	desc = "A plain, slightly cropped leather jacket with a black lining and neck brace, paired with a set of metal vambraces and a black belt of pouches. Commonly worn by the members of the 80s tribe."
-	icon_state = "80s_armour"
-	item_state = "80s_armour"
+	icon_state = "80s_armour_light"
+	item_state = "80s_armour_light"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/tribal/deadhorses
-	name = "Dead Horses armour"
+	name = "Dead Horses light armour"
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a pair of black leather straps. Commonly worn by the members of the Dead Horses tribe."
-	icon_state = "dead_horses_armour"
-	item_state = "dead_horses_armour"
+	icon_state = "dead_horses_armour_light"
+	item_state = "dead_horses_armour_light"
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/tribal/geckocloak
 	name = "light tribal cloak"
 	desc = "Light cloak armor, made of gecko skins and minor metal plating to protect against light weaponry, a favorite amongst scouts of the tribe."
 	icon_state = "lightcloak"
 	item_state = "lightcloak"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
 	desc = "Light armor made of leather stips and a large, flat piece of turquoise. Armor commonplace among the Wayfinders."
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
+	body_parts_hidden = CHEST
 
 /// to be refactored to work with the New Tier System (tm)
 /obj/item/clothing/suit/hooded/cloak
@@ -609,6 +639,7 @@
 	equip_delay_other = 10
 	max_integrity = 100
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	body_parts_hidden = 0
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
@@ -694,6 +725,7 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/hhunter
 	name = "Razorclaw helm"
@@ -716,6 +748,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/shunter
 	name = "quickclaw hood"
@@ -736,6 +769,7 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2)
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/deathclaw
 	name = "deathclaw cloak hood"
@@ -757,6 +791,7 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2)
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/razorclaw
 	name = "razorclaw helm"
@@ -773,7 +808,6 @@
 	icon_state = "desertcloak"
 	desc = "A practical cloak made out of animal hide."
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/desert
-	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
 /obj/item/clothing/head/hooded/cloakhood/desert
 	name = "desert cloak hood"
@@ -806,7 +840,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1)
-
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/outcast
 	name = "patched leather hood"
@@ -833,6 +867,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1)
+	body_parts_hidden = 0
 
 /obj/item/clothing/head/hooded/cloakhood/tribaloutcast
 	name = "patched leather hood"
@@ -873,6 +908,7 @@
 	desc = "A leather top with a bandolier over it and a straps that cover the arms. Suited for warm climates, comes with storage space."
 	icon_state = "badlands"
 	item_state = "badlands"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/raider/tribalraider
 	name = "tribal raider wear"
@@ -881,6 +917,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "tribal_outcast"
 	item_state = "tribal_outcast"
+	body_parts_hidden = ARMS | GROIN
 
 /obj/item/clothing/suit/armor/light/raider/supafly
 	name = "supa-fly raider armor"
@@ -1148,6 +1185,7 @@
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2)
+	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/Initialize()
 	/// make sure the parents work first for this, child lists take priority
@@ -1173,19 +1211,22 @@
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 0.9
+	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
 
 /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	name = "bouncer jacket"
 	icon_state = "leather_jacket_fighter"
 	item_state = "leather_jacket_fighter"
 	desc = "A very stylish pre-War black, heavy leather jacket. Not always a good choice to wear this the scorching sun of the desert, and one of the arms has been torn off"
+	body_parts_hidden = ARMS | CHEST
+
 /obj/item/clothing/suit/armor/light/leather/leather_jacketmk2
 	name = "thick leather jacket"
 	desc = "This heavily padded leather jacket is unusual in that it has two sleeves. You'll definitely make a fashion statement whenever, and wherever, you rumble."
 	icon_state = "leather_jacket_thick"
 	item_state = "leather_jacket_thick"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2)
-
+	body_parts_hidden = ARMS | CHEST | LEGS
 
 // Recipe : one of the above + a suit_fashion leather coat
 /obj/item/clothing/suit/armor/light/leather/leathercoat
@@ -1195,12 +1236,14 @@
 	item_state = "leather_coat_fighter"
 	siemens_coefficient = 0.8
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2)
+	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/tanvest
 	name = "tanned vest"
 	icon_state = "tanleather"
 	item_state = "tanleather"
 	desc = "Layers of leather glued together to make a stiff vest, crude but gives some protection against wild beasts and knife stabs to the liver."
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/leather/cowboyvest
 	name = "cowboy vest"
@@ -1222,7 +1265,7 @@
 	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
 	icon_state = "r_gear_rig"
 	item_state = "r_gear_rig"
-
+	body_parts_hidden = 0
 	
 ////////////////
 // ARMOR KITS // 
@@ -1237,6 +1280,7 @@
 	item_state = "armorkit"
 	heat_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 1.1
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/kit/Initialize()
 	/// make sure the parents work first for this, child lists take priority
@@ -1265,6 +1309,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	desc = "Well-made metal plates covering your vital organs."
 	icon_state = "light_plates"
+	body_parts_hidden = CHEST
 
 /* /obj/item/clothing/suit/armor/light/kit/Initialize()
 	. = ..()
@@ -1352,7 +1397,7 @@
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
 	desc = "A suit made from gleaming insect chitin. The glittering black scales are remarkably resistant to hostile environments, except cold."
-	icon = 'icons/fallout/clothing/armored_light.dmi'
+	icon = 'icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "insect"
 	item_state = "insect"
@@ -1364,29 +1409,33 @@
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1) // tribal enviro armor
 
 /obj/item/clothing/suit/armor/medium/tribal/rustwalkers
-	name = "Rustwalkers heavy armor"
+	name = "Rustwalkers armor"
 	desc = "A car seat leather duster, a timing belt bandolier, and armour plating made from various parts of a car, it surely would weigh the wearer down. Commonly worn by members of the Rustwalkers tribe."
-	icon_state = "rustwalkers_armour_heavy"
-	item_state = "rustwalkers_armour_heavy"
+	icon_state = "rustwalkers_armour"
+	item_state = "rustwalkers_armour"
+	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/medium/tribal/whitelegs
-	name = "White Legs heavy armour"
+	name = "White Legs armour"
 	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping and possibly duct tape. Commonly worn by members of the White Legs tribe."
-	icon_state = "white_legs_armour_heavy"
-	item_state = "white_legs_armour_heavy"
+	icon_state = "white_legs_armour"
+	item_state = "white_legs_armour"
+	body_parts_hidden = ARMS | LEGS
 
 /obj/item/clothing/suit/armor/medium/tribal/eighties
-	name = "80s heavy armour"
+	name = "80s armour"
 	desc = "A ballistic duster with the number 80 stitched onto the back worn over a breastplate made from a motorcycle's engine housing, with kneepads made from stirrups. Worn by the members of the 80s tribe."
-	icon_state = "80s_armour_heavy"
-	item_state = "80s_armour_heavy"
+	icon_state = "80s_armour"
+	item_state = "80s_armour"
+	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/medium/tribal/deadhorses
-	name = "Dead Horses heavy armour"
+	name = "Dead Horses armour"
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a set of black leather straps, one holding a shinpad in place. Commonly worn by the members of the Dead Horses tribe."
-	icon_state = "dead_horses_armour_heavy"
-	item_state = "dead_horses_armour_heavy"
+	icon_state = "dead_horses_armour"
+	item_state = "dead_horses_armour"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/medium/tribal/bone
 	name = "Reinforced Bone armor"
@@ -1396,14 +1445,13 @@
 	blood_overlay_type = "armor"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
-/obj/item/clothing/suit/armor/medium/tribal/westernwayfarer
-	name = "Western Wayfarer heavy armor"
+/*/obj/item/clothing/suit/armor/medium/tribal/westernwayfarer
+	name = "Western Wayfarer armor"
 	desc = "A Suit of armor crafted by Tribals using pieces of scrap metals and the armor of fallen foes, a bighorner's skull sits on the right pauldron along with bighorner fur lining the collar of the leather bound chest. Along the leather straps adoring it are multiple bone charms with odd markings on them."
-	icon = 'icons/fallout/clothing/armored_heavy.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
-	icon_state = "western_wayfarer_armor_heavy"
-	item_state = "western_wayfarer_armor_heavy"
+	icon_state = "western_wayfarer_armor"
+	item_state = "western_wayfarer_armor"
 	// body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+	*/
 
 /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
 	name = "heavy tribal armor"
@@ -1430,7 +1478,7 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
-
+	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/medium/vest/flak
 	name = "ancient flak vest"
@@ -1626,7 +1674,6 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1)
 
-
 /obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"
 	desc = "Well-made metal plates covering your vital organs."
@@ -1636,7 +1683,6 @@
 	item_state = "armorkit"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
-
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/oasis
 	name = "Nash steel breastplate"
@@ -1660,7 +1706,6 @@
 	icon_state = "steel_bib"
 	item_state = "steel_bib"
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1)
-
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap
 	name = "scrap metal chestplate"
@@ -2110,6 +2155,7 @@
 	strip_delay = 40
 	icon = 'icons/fallout/clothing/armored_medium.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
+	body_parts_hidden = ARMS | LEGS | GROIN
 
 /obj/item/clothing/suit/armor/medium/raider/rebel
 	name = "rebel raider armor"
@@ -2131,6 +2177,7 @@
 	icon_state = "badlands"
 	item_state = "badlands"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/magpouch
+	body_parts_hidden = ARMS | LEGS | GROIN
 
 /obj/item/clothing/suit/armor/medium/raider/combatduster
 	name = "combat duster"
@@ -2171,6 +2218,7 @@
 	item_state = "wastewar"
 	resistance_flags = FLAMMABLE
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/massive/swords
+	body_parts_hidden = CHEST | GROIN
 
 /obj/item/clothing/suit/armor/medium/raider/blastmaster
 	name = "blastmaster raider armor"
@@ -2185,6 +2233,7 @@
 	desc = "A set of armor made from bulky plastic and rubber. A faded sports team logo is printed in various places. Go Desert Rats!"
 	icon_state = "yankee"
 	item_state = "yankee"
+	body_parts_hidden = ARMS | CHEST
 
 /// Environmental raider armor
 /obj/item/clothing/suit/armor/medium/raider/iconoclast
@@ -2285,6 +2334,45 @@
 	icon_state = "raider_metal"
 	item_state = "raider_metal"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1)
+
+/obj/item/clothing/suit/armor/heavy/tribal/rustwalkers
+	name = "Rustwalkers heavy armor"
+	desc = "A car seat leather duster, a timing belt bandolier, and armour plating made from various parts of a car, it surely would weigh the wearer down. Commonly worn by members of the Rustwalkers tribe."
+	icon_state = "rustwalkers_armour_heavy"
+	item_state = "rustwalkers_armour_heavy"
+
+/obj/item/clothing/suit/armor/heavy/tribal/whitelegs
+	name = "White Legs heavy armour"
+	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping and possibly duct tape. Commonly worn by members of the White Legs tribe."
+	icon_state = "white_legs_armour_heavy"
+	item_state = "white_legs_armour_heavy"
+
+/obj/item/clothing/suit/armor/heavy/tribal/eighties
+	name = "80s heavy armour"
+	desc = "A ballistic duster with the number 80 stitched onto the back worn over a breastplate made from a motorcycle's engine housing, with kneepads made from stirrups. Worn by the members of the 80s tribe."
+	icon_state = "80s_armour_heavy"
+	item_state = "80s_armour_heavy"
+
+/obj/item/clothing/suit/armor/heavy/tribal/deadhorses
+	name = "Dead Horses heavy armour"
+	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a set of black leather straps, one holding a shinpad in place. Commonly worn by the members of the Dead Horses tribe."
+	icon_state = "dead_horses_armour_heavy"
+	item_state = "dead_horses_armour_heavy"
+
+/obj/item/clothing/suit/armor/heavy/tribal/westernwayfarer
+	name = "Western Wayfarer heavy armor"
+	desc = "A Suit of armor crafted by Tribals using pieces of scrap metals and the armor of fallen foes, a bighorner's skull sits on the right pauldron along with bighorner fur lining the collar of the leather bound chest. Along the leather straps adoring it are multiple bone charms with odd markings on them."
+	icon_state = "western_wayfarer_armor_heavy"
+	item_state = "western_wayfarer_armor_heavy"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS
+
+/obj/item/clothing/suit/armor/heavy/tribal/bone
+	name = "Heavy Bone armor"
+	desc = "A tribal full armor plate, crafted from animal bone, metal and leather. Usually worn by the Bone Dancers"
+	icon_state = "bone_dancer_armor_heavy"
+	item_state = "bone_dancer_armor_heavy"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 
 /////////////////////
 //// METAL ARMOR ////

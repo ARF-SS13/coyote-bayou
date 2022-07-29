@@ -230,17 +230,14 @@
 	desc = "A hand-carved wooden bowl, for all your bowl-related needs."
 	icon = 'icons/obj/lavaland/ash_flora.dmi'
 	icon_state = "wooden_bowl"
+	fill_icon = 'icons/obj/lavaland/ash_flora.dmi'
+	fill_state =  "woodenfullbowl"
 
 /obj/item/reagent_containers/glass/bowl/wooden_bowl/update_icon_state()
 	if(!reagents || !reagents.total_volume)
 		icon_state = "wooden_bowl"
 
-/obj/item/reagent_containers/glass/bowl/update_overlays()
-	. = ..()
-	if(reagents && reagents.total_volume)
-		. += mutable_appearance('icons/obj/lavaland/ash_flora.dmi', "woodenfullbowl", color = mix_color_from_reagents(reagents.reagent_list))
-
-/obj/item/reagent_containers/glass/bowl/mushroom_bowl/attackby(obj/item/I,mob/user, params)
+/obj/item/reagent_containers/glass/bowl/wooden_bowl/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)

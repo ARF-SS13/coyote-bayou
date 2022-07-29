@@ -1,6 +1,6 @@
 /obj/item/flashlight
 	name = "flashlight"
-	desc = "A hand-held emergency light."
+	desc = "A hand-held emergency light. Comes with a robust lanyard and set of clips for hands-free use. Neat!"
 	custom_price = PRICE_REALLY_CHEAP
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "flashlight"
@@ -9,7 +9,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
@@ -165,9 +165,10 @@
 
 /obj/item/flashlight/pen
 	name = "penlight"
-	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance."
+	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance. Comes with a handy necklace and bite-resistant coating for hands-free use. Try not to swallow it."
 	icon_state = "penlight"
 	item_state = ""
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK | ITEM_SLOT_MASK
 	flags_1 = CONDUCT_1
 	light_range = 2
 	light_color = "#FFDDCC"
@@ -188,7 +189,7 @@
 // see: [/datum/wound/burn/proc/uv()]
 /obj/item/flashlight/pen/paramedic
 	name = "paramedic penlight"
-	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into."
+	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into. Comes with a rubberized coating for 'that comfy mouth-feel'."
 	icon_state = "penlight_surgical"
 	/// Our current UV cooldown
 	var/uv_cooldown = 0
@@ -220,6 +221,7 @@
 	force = 9 // Not as good as a stun baton.
 	light_range = 5 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	hitsound = 'sound/weapons/genhit1.ogg'
 	custom_price = PRICE_ALMOST_CHEAP
 
@@ -236,6 +238,7 @@
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	light_on = TRUE
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	on = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
@@ -276,6 +279,7 @@
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
+	slot_flags = ITEM_SLOT_BELT // its a little hot for your neck
 	var/fuel = 0
 	var/on_damage = 9
 	var/produce_heat = 1500
@@ -389,6 +393,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	light_range = 6	// luminosity when on
 	light_color = "#FFAA44"
 	custom_price = PRICE_CHEAP
@@ -469,7 +474,7 @@
 // but not similar enough to make it worth a refactor
 /obj/item/flashlight/glowstick
 	name = "glowstick"
-	desc = "A military-grade glowstick."
+	desc = "A military-grade glowstick. Has a long lanyard that should fit around someone's neck."
 	custom_price = PRICE_CHEAP_AS_FREE
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
@@ -477,6 +482,7 @@
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	rad_flags = RAD_NO_CONTAMINATE
 	var/fuel = 0

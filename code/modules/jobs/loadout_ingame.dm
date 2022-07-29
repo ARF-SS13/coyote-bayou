@@ -87,6 +87,9 @@
 	var/selected_direction = SOUTH
 
 	var/obj/item/loadout_token/token = null
+	
+	var/selectionComplete = FALSE // Sanity check to stop duplicating windows.
+	// I don't know TGUI well enough if there's a framework built in to prevent it from reopening.
 
 //Lets check that the assigned parent is a mob with a job
 /datum/component/loadout_selector/Initialize()
@@ -119,14 +122,20 @@
 	selected_datum.spawn_at(duffelkit)
 	M.dropItemToGround(token)
 	M.put_in_hands(duffelkit)
+
 	M.disable_loadout_select()
-	token = null
+	QDEL_NULL(token)
+
+	selectionComplete = TRUE
 
 /datum/component/loadout_selector/ui_interact(mob/user, datum/tgui/ui)
+	if(selectionComplete)
+		return // NO MORE. ST O P, YOU GOT LOADOUTS AT HOME
+
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "LoadoutSelect", "Loadout Select")
-		ui.set_autoupdate(FALSE)
+//		ui.set_autoupdate(FALSE)
 		ui.open()
 //		ui.send_asset(get_asset_datum(/datum/asset/spritesheet/loadout))
 
@@ -136,14 +145,13 @@
 	data["selected"] = selected_name
 	if (selected_name)
 		data["items"] = selected_items
-		if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
-			generate_previews()
+		// if(!(selected_datum.name in preview_images) || !(dir2text(selected_direction) in preview_images[selected_datum.name]))
+		// 	generate_previews()
 		data["preview"] = preview_images[selected_datum.name]
 	return data
 
 /datum/component/loadout_selector/ui_act(action, params)
-	if(..())
-		return
+	. = ..()
 	switch(action)
 		if("loadout_select")
 			select_outfit(params["name"])
@@ -161,8 +169,8 @@
 
 	if (selected_datum)
 		//If random is used, get rid of the generated previews so we'll regenerate them if we re-select this outfit
-		if (selected_datum.contains_randomisation)
-			preview_images[selected_datum.name] = null
+//		if (selected_datum.contains_randomisation)
+//			preview_images[selected_datum.name] = null
 
 		//Clean up old dummy/outfit
 		QDEL_NULL(selected_datum)
@@ -178,7 +186,7 @@
 	selected_datum = new newtype
 	selected_items = selected_datum.ui_data()
 
-	generate_previews()
+//	generate_previews()
 	spawn()
 		if (usr)
 			ui_interact(usr)

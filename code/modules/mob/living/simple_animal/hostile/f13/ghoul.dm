@@ -10,6 +10,7 @@
 	icon_state = "feralghoul"
 	icon_living = "feralghoul"
 	icon_dead = "feralghoul_dead"
+	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
 	turns_per_move = 5
@@ -20,7 +21,7 @@
 	health = 60
 	speed = 3
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 5
 	melee_damage_upper = 15
 	attack_verb_simple = "claw"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
@@ -53,6 +54,12 @@
 	loot = list(/obj/item/stack/f13Cash/random/low/lowchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
+/mob/living/simple_animal/hostile/ghoul/Initialize()
+	. = ..()
+	if(prob(50))
+		icon_state = rare_icon
+		icon_living = rare_icon
+		icon_dead = "[rare_icon]_dead"
 
 // Ghoul Reaver
 /mob/living/simple_animal/hostile/ghoul/reaver
@@ -61,11 +68,12 @@
 	icon_state = "ghoulreaver"
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
+	rare_icon = "ghoulreaver_h"
 	speed = 2
 	maxHealth = 120
 	health = 120
 	harm_intent_damage = 8
-	melee_damage_lower = 25
+	melee_damage_lower = 10
 	melee_damage_upper = 25
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -152,11 +160,12 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
+	rare_icon = "glowinghoul_h"
 	maxHealth = 100
 	health = 100
 	speed = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 25
+	melee_damage_lower = 15
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2

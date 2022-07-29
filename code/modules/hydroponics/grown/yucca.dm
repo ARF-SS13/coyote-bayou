@@ -17,7 +17,7 @@
 	icon_dead = "yucca-dead"
 	icon_harvest = "yucca-harvest"
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	reagents_add = list( /datum/reagent/consumable/nutriment = 0.2, /datum/reagent/consumable/sugar = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.2)
+	reagents_add = list( /datum/reagent/consumable/nutriment = 0.2, /datum/reagent/consumable/sugar = 0.1,  /datum/reagent/consumable/nutriment/vitamin = 0.1, /datum/reagent/consumable/banana_peel = 0.05)
 
 
 /obj/item/reagent_containers/food/snacks/grown/yucca

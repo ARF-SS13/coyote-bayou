@@ -30,8 +30,8 @@
 	health = 160
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 8
+	melee_damage_upper = 25
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -75,8 +75,8 @@
 	health = 140
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 10
+	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -204,7 +204,7 @@
 	health = 150
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 35
+	melee_damage_lower = 15
 	melee_damage_upper = 35
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -312,7 +312,7 @@
 	health = 40
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
+	melee_damage_lower = 10
 	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
