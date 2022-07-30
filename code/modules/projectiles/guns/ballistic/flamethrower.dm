@@ -111,6 +111,10 @@
 	casing_ejector = FALSE
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/m2flamethrowertank/ammo_pack
+	init_firemodes = list(
+		BURST_2_ROUND,
+		SEMI_AUTO_NODELAY
+	)
 
 /obj/item/gun/ballistic/m2flamethrower/Initialize()
 	if(istype(loc, /obj/item/m2flamethrowertank)) //We should spawn inside an ammo pack so let's use that one.

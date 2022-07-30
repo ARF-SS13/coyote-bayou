@@ -248,6 +248,14 @@
 		boolets += magazine.ammo_count()
 	return boolets
 
+/obj/item/gun/ballistic/proc/get_max_ammo(countchambered = 1)
+	var/boolets = 0 //mature var names for very mature people
+	if (chambered && countchambered)
+		boolets++
+	if (magazine)
+		boolets += magazine.max_ammo
+	return boolets
+
 #define BRAINS_BLOWN_THROW_RANGE 3
 #define BRAINS_BLOWN_THROW_SPEED 1
 /obj/item/gun/ballistic/suicide_act(mob/living/user)
@@ -301,17 +309,41 @@
 		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_multiplier = (recoil_multiplier + 1) * 2
-		recoil_cooldown_time *= 0.8
-		spread += 10
+		recoil_dat.modifyAllRatings(1.2)
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
-			gun_damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
+			damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
 		else
-			gun_damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
+			damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
 		update_icon()
 		return 1
+
+/obj/item/gun/ballistic/get_dud_projectile()
+	var/proj_type
+	if(chambered)
+		if(!chambered.BB)
+			return null
+		proj_type = chambered.BB.type
+	else if(magazine && get_ammo(0,0))
+		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
+		if(!A)
+			return null
+		if(!A.BB)
+			return null
+		proj_type = A.BB.type
+	if(!proj_type)
+		return null
+	return new proj_type
+
+/obj/item/gun/ballistic/ui_data(mob/user)
+	var/list/data = ..()
+	if(istype(magazine) && length(magazine.caliber))
+		data["caliber"] = english_list(magazine.caliber)
+	data["current_ammo"] = get_ammo()
+	data["max_shells"] = get_max_ammo()
+
+	return data
 
 // Sawing guns related proc
 /obj/item/gun/ballistic/proc/blow_up(mob/user)

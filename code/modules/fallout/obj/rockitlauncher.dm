@@ -220,7 +220,6 @@ Possible solution: Only add the minimum weight class of a stack (which is basica
 	checktank = FALSE
 	fire_mode = PCANNON_FIFO
 	throw_amount = 1
-	var/wielded = FALSE
 	var/obj/item/rockitlauncher_pack/ammo_pack
 	var/gtimer = 15
 	var/speen = TRUE

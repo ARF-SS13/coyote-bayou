@@ -16,8 +16,8 @@
 	speed = -1
 	health = 600
 	obj_damage = 200
-	melee_damage_lower = 40
-	melee_damage_upper = 50
+	melee_damage_lower = 20
+	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 	gender = MALE

@@ -532,8 +532,12 @@
 /turf/open/transparent/openspace,
 /area/f13/radiation)
 "bTK" = (
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/blue/white,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = -27
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whitedirtysolid"
+	},
 /area/f13/building/hospital)
 "bTS" = (
 /obj/structure/chair/wood{
@@ -1056,7 +1060,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/corner,
+/turf/open/floor/plasteel/f13/vault_floor/blue/corner{
+	dir = 16
+	},
 /area/f13/building/hospital)
 "evf" = (
 /obj/structure/closet/crate/trashcart,
@@ -3962,6 +3968,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/ncr)
+"qUA" = (
+/obj/structure/simple_door/house,
+/obj/structure/barricade/wooden,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/building/hospital)
 "qVi" = (
 /obj/item/shard,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -4742,9 +4755,6 @@
 	pixel_y = -10
 	},
 /obj/item/organ/heart,
-/obj/machinery/light{
-	dir = 1
-	},
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -50141,7 +50151,7 @@ lqO
 lqO
 iCa
 owR
-npr
+bTK
 wCN
 ncX
 lqO
@@ -50394,7 +50404,7 @@ egq
 hdk
 mBg
 lqO
-iQu
+lqO
 lqO
 sxs
 npr
@@ -50651,7 +50661,7 @@ uoa
 tWw
 mBg
 lqO
-rRC
+iQu
 lqO
 lxF
 npr
@@ -50908,7 +50918,7 @@ lqO
 lqO
 lqO
 lqO
-bTK
+rRC
 lqO
 lYF
 kRP
@@ -51423,7 +51433,7 @@ bvd
 lqO
 hjx
 oab
-lqO
+qUA
 udt
 auN
 lzE
@@ -52192,7 +52202,7 @@ lqO
 lqO
 lqO
 lqO
-kTF
+gLr
 oab
 lqO
 iGi
@@ -53991,7 +54001,7 @@ cym
 mMd
 pAS
 lqO
-gLr
+kTF
 kJl
 iFg
 cym

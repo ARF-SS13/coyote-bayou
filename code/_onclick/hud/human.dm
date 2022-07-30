@@ -138,6 +138,12 @@
 	clickdelay.screen_loc = ui_clickdelay
 	static_inventory += clickdelay
 
+	// wield
+	wield_button = new /obj/screen/wield
+	wield_button.screen_loc = ui_wield
+	wield_button.hud = src
+	static_inventory += wield_button
+
 	// resistdelay
 	resistdelay = new
 	resistdelay.hud = src

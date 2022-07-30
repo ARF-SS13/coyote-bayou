@@ -15,14 +15,15 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	var/select = 0
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
@@ -156,14 +157,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
@@ -186,14 +185,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -219,14 +215,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
@@ -247,14 +240,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -275,14 +266,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	block_chance = 20
 
@@ -311,14 +299,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1)
 
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 
@@ -343,14 +329,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	can_scope = TRUE
 	scope_state = "revolver_scope"
@@ -375,14 +358,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	can_scope = TRUE
 
@@ -407,14 +387,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY * 2
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	automatic = 0
 	autofire_shot_delay = 0
@@ -445,14 +422,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -476,14 +451,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	can_scope = TRUE
 
@@ -508,14 +481,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	can_scope = TRUE
 
@@ -537,14 +507,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 	can_scope = TRUE
 	scope_state = "revolver_scope"
@@ -568,14 +536,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 
 /* * * * * * * * * * *
  * Sequoia revolvers
@@ -599,14 +564,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -621,14 +584,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -640,14 +600,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Single Action Army revolvers
@@ -667,14 +624,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -700,14 +655,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -730,14 +682,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
@@ -751,14 +701,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 

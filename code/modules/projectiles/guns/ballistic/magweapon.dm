@@ -11,10 +11,7 @@
 	burst_size = 1
 	actions_types = null
 	fire_delay = 3
-	spread = 0
-	recoil = 0.1
 	casing_ejector = FALSE
-	inaccuracy_modifier = 0.15
 	dualwield_spread_mult = 1.4
 	weapon_weight = GUN_ONE_HAND_ONLY
 	w_class = WEIGHT_CLASS_BULKY
@@ -67,7 +64,6 @@
 	fire_sound = 'sound/weapons/magburst.ogg'
 	w_class = WEIGHT_CLASS_HUGE
 	fire_delay = 40
-	recoil = 2
 	weapon_weight = GUN_TWO_HAND_ONLY
 
 /obj/item/gun/ballistic/automatic/magrifle/hyperburst/update_icon_state()
@@ -84,7 +80,6 @@
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/mmag/small
 	fire_delay = 2
-	inaccuracy_modifier = 0.25
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
 	automatic_burst_overlay = FALSE
 
