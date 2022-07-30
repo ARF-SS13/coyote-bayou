@@ -20,14 +20,14 @@
 #define BULLET_22LR_WOUND_MULT 0.25 // Any kind of armor's gonna block it
 #define BULLET_22LR_NAKED_WOUND_MULT 1.5 // Skin though? different story
 #define BULLET_22LR_SPEED_MULT 2 // Speedy round
-#define BULLET_22LR_RECOIL_MULT 0 // Kicks like a wet noodle
+#define BULLET_22LR_RECOIL_MULT 0.5 // Kicks like a wet noodle
 
 /obj/item/projectile/bullet/c22
 	name = ".22lr bullet"
 	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_22LR_DAMAGE_MULT
 	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_22LR_STAMINA_MULT
 	spread = BULLET_SPREAD_SURPLUS
-	recoil = BULLET_RECOIL_PISTOL_LIGHT * BULLET_22LR_RECOIL_MULT
+	recoil = BULLET_RECOIL_PISTOL_LIGHT
 
 	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_22LR_WOUND_MULT
 	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_22LR_NAKED_WOUND_MULT
@@ -405,7 +405,7 @@
 #define BULLET_NEEDLE_WOUND_MULT 10 // That RIPS AND TEARS
 #define BULLET_NEEDLE_NAKED_WOUND_MULT 15 // Okay maybe a flechette then
 #define BULLET_NEEDLE_SPEED_MULT 0.8
-#define BULLET_NEEDLE_RECOIL_MULT 0 // tiny needle
+#define BULLET_NEEDLE_RECOIL_MULT 0.2 // tiny needle
 
 /* needle
  * DAMAGE: 4

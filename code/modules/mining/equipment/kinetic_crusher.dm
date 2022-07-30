@@ -27,7 +27,6 @@
 	var/charge_time = 15
 	var/detonation_damage = 30
 	var/backstab_bonus = 30
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/kinetic_crusher/cyborg //probably give this a unique sprite later
 	desc = "An integrated version of the standard kinetic crusher with a grinded down axe head to dissuade mis-use against crewmen. Deals damage equal to the standard crusher against creatures, however."

@@ -52,7 +52,7 @@
 
 /obj/item/projectile/neurotox
 	name = "spit"
-	damage = 30
+	damage = 25
 	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/centaur/strong // Mostly for FEV mutation

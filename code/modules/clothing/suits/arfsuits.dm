@@ -499,6 +499,7 @@
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
+	stiffness = LIGHT_STIFFNESS
 
 
 /obj/item/clothing/suit/armor/light/Initialize()
@@ -1362,6 +1363,7 @@
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/medium/Initialize()
 	/// make sure the parents work first for this, child lists take priority
@@ -2274,6 +2276,7 @@
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_HEAVY
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
+	stiffness = HEAVY_STIFFNESS
 
 
 /obj/item/clothing/suit/armor/heavy/Initialize()
@@ -2663,6 +2666,7 @@
 	slowdown = ARMOR_SLOWDOWN_PA * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_PA
 	armor_tier_desc = ARMOR_CLOTHING_PA
+	stiffness = MEDIUM_STIFFNESS
 
 /obj/item/clothing/suit/armor/power_armor/Initialize()
 	. = ..()

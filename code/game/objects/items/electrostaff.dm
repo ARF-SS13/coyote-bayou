@@ -32,7 +32,6 @@
 	var/stun_stamdmg = 40
 	var/stun_status_duration = 25
 	var/stun_stam_cost = 3.5
-	var/wielded = FALSE // track wielded status on item
 
 // haha security desword time /s
 /datum/block_parry_data/electrostaff
