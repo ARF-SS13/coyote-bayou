@@ -374,3 +374,72 @@
 	M.adjustOrganLoss(ORGAN_SLOT_HEART, 20)
 	..()
 	return
+
+/datum/reagent/drug/steady
+	name = "Steady Fluid"
+	description = "A potent, untested drug which increases the user's accuracy."
+	color = "#E0D532"
+	reagent_state = LIQUID
+	overdose_threshold = 20
+	addiction_threshold = 9 //Addicted on the first dose
+	metabolization_rate = 0.8 * REAGENTS_METABOLISM
+	ghoulfriendly = TRUE
+
+/datum/reagent/drug/steady/on_mob_add(mob/living/M)
+	..()
+	if(M)
+		to_chat(M, span_notice("You feel your senses becoming sharper, your trigger finger moving instinctively."))
+		ADD_TRAIT(M, SPREAD_CONTROL, "steady")
+
+/datum/reagent/drug/steady/on_mob_delete(mob/living/M)
+	..()
+	if(M)
+		to_chat(M, "You feel your aim going back to normal.")
+		REMOVE_TRAIT(M, SPREAD_CONTROL, "steady")
+
+/datum/reagent/drug/steady/overdose_process(mob/living/M)
+	if(prob(33))
+		M.visible_message(span_danger("[M]'s fingers twitch incontrollably, making them drop what they were holding!"))
+		M.drop_all_held_items()
+	M.adjustOrganLoss(ORGAN_SLOT_EYES, 2)
+	..()
+
+/datum/reagent/drug/steady/addiction_act_stage1(mob/living/M)
+	if(prob(50))
+		to_chat(M, span_notice("Your senses feel dull."))
+	if(prob(15))
+		M.emote(pick("twitch","blink"))
+	M.Dizzy(5)
+	..()
+	return
+
+/datum/reagent/drug/steady/addiction_act_stage2(mob/living/M)
+	if(prob(50))
+		to_chat(M, span_notice("Your senses seem to lag."))
+	if(prob(30))
+		M.emote(pick("twitch","blink"))
+	M.Dizzy(10)
+	..()
+	return
+
+/datum/reagent/drug/steady/addiction_act_stage3(mob/living/M)
+	M.adjustToxLoss(2, 0)
+	if(prob(50))
+		to_chat(M, span_notice("You feel like a snail, your reaction times have slowed down to a crawl."))
+	if(prob(50))
+		M.emote(pick("twitch","blink"))
+	M.Dizzy(15)
+	..()
+	return
+
+/datum/reagent/drug/steady/addiction_act_stage4(mob/living/M)
+	M.adjustToxLoss(2, 0)
+	if(prob(50))
+		to_chat(M, span_danger("Your hand-eye coordination is a thing of the past, even walking feels hard!"))
+	if(prob(90))
+		M.emote(pick("blink","twitch"))
+	if(CHECK_MOBILITY(M, MOBILITY_MOVE) && !isspaceturf(M.loc) && prob(75))
+		step(M, pick(GLOB.cardinals))
+	M.Dizzy(30)
+	..()
+	return
