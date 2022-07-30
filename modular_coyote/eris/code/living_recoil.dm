@@ -12,6 +12,8 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 /mob/living/proc/add_recoil(var/recoil_buildup)
 	if(recoil_buildup)
+		if(HAS_TRAIT(src, SPREAD_CONTROL))
+			recoil_buildup *= 0.5
 		recoil += recoil_buildup
 		update_recoil()
 
@@ -19,6 +21,9 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 	var/base = 0.4
 	var/scale = 0.9
+
+	if(HAS_TRAIT(src, SPREAD_CONTROL))
+		scale = 0.5
 
 	if(recoil <= base)
 		recoil = 0

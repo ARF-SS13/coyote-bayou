@@ -224,6 +224,18 @@
 	amount_per_transfer_from_this = 10
 	list_reagents = list(/datum/reagent/drug/psycho = 10)
 
+// ---------------------------------
+// STEADY
+
+/obj/item/reagent_containers/hypospray/medipen/steady
+	name = "Steady"
+	desc = "An inhaler of Steady, a combat drug which provides the user with a steady aim that makes it impossible to miss in sharpshooting. However, it is also highly addictive"
+	icon = 'icons/fallout/objects/medicine/drugs.dmi'
+	icon_state = "hypo_steady"
+	volume = 10
+	amount_per_transfer_from_this = 10
+	list_reagents = list(/datum/reagent/drug/steady = 10)
+
 // End Fallout -------------------------------------------------
 
 /obj/item/reagent_containers/hypospray/medipen/ekit
