@@ -332,17 +332,6 @@
 		G.armor_penetration += weapon_upgrades[GUN_UPGRADE_MELEEPENETRATION]
 	if(weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
 		G.recoil = G.recoil.modifyRating(_one_hand_penalty = weapon_upgrades[GUN_UPGRADE_ONEHANDPENALTY])
-
-	if(weapon_upgrades[GUN_UPGRADE_DNALOCK])
-		G.dna_compare_samples = TRUE
-		if(G.dna_lock_sample == "not_set")
-			G.dna_lock_sample = usr.real_name
-
-	if(G.dna_compare_samples == FALSE)
-		G.dna_lock_sample = "not_set"
-
-	if(G.dna_lock_sample == "not_set") //that may look stupid, but without it previous two lines won't trigger on DNALOCK removal.
-		G.dna_compare_samples = FALSE
 	
 	if(!isnull(weapon_upgrades[GUN_UPGRADE_FORCESAFETY]))
 		G.restrict_safety = TRUE
@@ -351,17 +340,11 @@
 		var/obj/item/gun/energy/E = G
 		if(weapon_upgrades[GUN_UPGRADE_CHARGECOST])
 			E.charge_cost *= weapon_upgrades[GUN_UPGRADE_CHARGECOST]
-		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
-			E.overcharge_rate *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
-		if(weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX])
-			E.overcharge_max *= weapon_upgrades[GUN_UPGRADE_OVERCHARGE_MAX]
-		if(weapon_upgrades[GUN_UPGRADE_AGONY_MULT])
-			E.proj_agony_multiplier *= weapon_upgrades[GUN_UPGRADE_AGONY_MULT]
 
 	if(istype(G, /obj/item/gun/projectile))
 		var/obj/item/gun/projectile/P = G
 		if(weapon_upgrades[GUN_UPGRADE_MAGUP])
-			P.max_shells += weapon_upgrades[GUN_UPGRADE_MAGUP]
+			P.magazine?.max_ammo += weapon_upgrades[GUN_UPGRADE_MAGUP]
 
 	for(var/datum/firemode/F in G.firemodes)
 		apply_values_firemode(F)
@@ -574,9 +557,10 @@
 		to_chat(user, english_list(req_gun_tags))
 
 /datum/component/item_upgrade/UnregisterFromParent()
-	UnregisterSignal(parent, COMSIG_IATTACK)
-	UnregisterSignal(parent, COMSIG_EXAMINE)
-	UnregisterSignal(parent, COMSIG_REMOVE)
+	UnregisterSignal(parent, COMSIG_ITEM_ATTACK)
+	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
+	UnregisterSignal(parent, COMSIG_ITEM_REMOVE)
+	COMSIG_AREA_ENTERED
 
 /datum/component/item_upgrade/PostTransfer()
 	return COMPONENT_TRANSFER
@@ -648,9 +632,6 @@
 /obj/item/tool_upgrade
 	name = "tool upgrade"
 	icon = 'icons/obj/tool_upgrades.dmi'
-	force = WEAPON_FORCE_HARMLESS
-	w_class = ITEM_SIZE_SMALL
-	spawn_tags = SPAWN_TAG_TOOL_UPGRADE
-	price_tag = 200
-	rarity_value = 15
+	force = 0
+	w_class = WEIGHT_CLASS_SMALL
 	bad_type = /obj/item/tool_upgrade
