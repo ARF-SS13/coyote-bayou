@@ -3806,6 +3806,7 @@
 #include "modular_coyote\code\modules\turf_changes\PlantGrass.dm"
 #include "modular_coyote\code\modules\vending\medical.dm"
 #include "modular_coyote\eris\code\dynamic_cursor.dm"
+#include "modular_coyote\eris\code\gun_firemode.dm"
 #include "modular_coyote\eris\code\living_recoil.dm"
 #include "modular_coyote\eris\code\wielding.dm"
 #include "modular_sunset\code\_globalvars\lists\maintenance_loot.dm"
@@ -3827,5 +3828,4 @@
 #include "modular_sunset\code\modules\fluff\happyshark_granter.dm"
 #include "modular_sunset\code\modules\fluff\happyshark_recipe.dm"
 #include "modular_sunset\code\modules\food_and_drinks\happy_shark\happy_shark.dm"
-#include "modular_coyote\eris\code\gun_firemode.dm"
 // END_INCLUDE
