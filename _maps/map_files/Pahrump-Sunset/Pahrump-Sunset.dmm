@@ -20272,6 +20272,7 @@
 	},
 /obj/structure/table,
 /obj/item/circuitboard/computer/operating,
+/obj/item/stack/cable_coil,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "bCG" = (
@@ -50021,9 +50022,6 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2"
-	},
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "gibbearcore"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
