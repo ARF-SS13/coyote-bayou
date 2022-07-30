@@ -394,8 +394,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		abstract_move(NewLoc)
 		update_parallax_contents()
 	else
-		var/turf/destination = get_turf(src)
-
+		abstract_move(get_turf(src))  //Get out of closets and such as a ghost
 		if((direct & NORTH) && y < world.maxy)
 			destination = get_step(destination, NORTH)
 
@@ -781,7 +780,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			var/tz = text2num(href_list["z"])
 			var/turf/target = locate(tx, ty, tz)
 			if(istype(target))
-				forceMove(target)
+				abstract_move(target)
 				return
 		if(href_list["reenter"])
 			reenter_corpse()
