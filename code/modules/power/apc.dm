@@ -1311,26 +1311,6 @@
 	var/equipment_satisfied = FALSE
 	var/lighting_satisfied = FALSE
 
-	if(cur_excess >= lastused_environ)
-		autoset(environ, 1)
-		add_load(lastused_environ)
-		cur_excess -= lastused_environ
-		cur_used -= lastused_environ
-		environ_satisfied = TRUE
-
-	if(cur_excess >= lastused_equip)
-		autoset(equipment, 1)
-		add_load(lastused_equip)
-		cur_excess -= lastused_equip
-		cur_used -= lastused_equip
-		equipment_satisfied = TRUE
-
-	if(cur_excess >= lastused_light)
-		autoset(lighting, 1)
-		add_load(lastused_light)
-		cur_excess -= lastused_light
-		cur_used -= lastused_light
-		lighting_satisfied = TRUE
 
 	//If drained by an integration cog: Forcefully avert as much of the powerdrain as possible, though a maximum of MAXIMUM_COG_REGAIN
 	if(cur_excess && cog_drained && cell)
@@ -1404,6 +1384,27 @@
 		environ = autoset(environ, environ_satisfied)
 		equipment = autoset(equipment, equipment_satisfied)
 		lighting = autoset(lighting, lighting_satisfied)
+
+	if(cur_excess >= lastused_environ)
+		autoset(environ, 1)
+		add_load(lastused_environ)
+		cur_excess -= lastused_environ
+		cur_used -= lastused_environ
+		environ_satisfied = TRUE
+
+	if(cur_excess >= lastused_equip)
+		autoset(equipment, 1)
+		add_load(lastused_equip)
+		cur_excess -= lastused_equip
+		cur_used -= lastused_equip
+		equipment_satisfied = TRUE
+
+	if(cur_excess >= lastused_light)
+		autoset(lighting, 1)
+		add_load(lastused_light)
+		cur_excess -= lastused_light
+		cur_used -= lastused_light
+		lighting_satisfied = TRUE
 
 	// update icon & area power if anything changed
 
