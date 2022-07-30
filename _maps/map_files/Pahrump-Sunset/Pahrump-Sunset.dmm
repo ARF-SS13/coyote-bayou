@@ -11714,9 +11714,9 @@
 "aNE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/old,
-/obj/structure/curtain,
 /obj/effect/landmark/start/f13/followersvolunteer,
 /obj/effect/landmark/start/f13/followersguard,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "aNF" = (
@@ -27777,9 +27777,9 @@
 /area/f13/building)
 "eVi" = (
 /obj/structure/bed/old,
-/obj/structure/curtain,
 /obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/landmark/start/f13/followersvolunteer,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "eVj" = (
@@ -29858,6 +29858,7 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/lamp/green,
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building/hospital)
 "fWM" = (
@@ -29992,9 +29993,9 @@
 /area/f13/building)
 "gcN" = (
 /obj/structure/bed/old,
-/obj/structure/curtain,
 /obj/effect/landmark/start/f13/followersvolunteer,
 /obj/effect/landmark/start/f13/followersdoctor,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "gcT" = (
@@ -35005,9 +35006,6 @@
 /area/f13/ncr)
 "iKJ" = (
 /obj/structure/reagent_dispensers/watertank,
-/obj/machinery/light/small/broken{
-	dir = 8
-	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "iLn" = (
@@ -36617,7 +36615,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "jFG" = (
@@ -53244,11 +53242,8 @@
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/reagent_containers/blood/radaway,
 /obj/item/book/granter/trait/lowsurgery,
-/obj/machinery/light/small{
-	dir = 8;
-	pixel_y = 11
-	},
 /obj/item/crafting/abraxo,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "sxW" = (
@@ -55203,9 +55198,9 @@
 /area/f13/building)
 "tBc" = (
 /obj/structure/bed/old,
-/obj/structure/curtain,
 /obj/effect/landmark/start/f13/followersdoctor,
 /obj/effect/landmark/start/f13/followersguard,
+/obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "tBw" = (
@@ -61301,7 +61296,7 @@
 	},
 /area/f13/building/museum)
 "wPu" = (
-/obj/machinery/light/small/broken,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "wPE" = (
