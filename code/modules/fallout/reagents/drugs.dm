@@ -423,7 +423,7 @@
 	return
 
 /datum/reagent/drug/steady/addiction_act_stage3(mob/living/M)
-	M.adjustToxLoss(3, 0)
+	M.adjustToxLoss(2, 0)
 	if(prob(50))
 		to_chat(M, "<span class='notice'>You feel like a snail, your reaction times have slowed down to a crawl.</span>")
 	if(prob(50))
@@ -433,7 +433,7 @@
 	return
 
 /datum/reagent/drug/steady/addiction_act_stage4(mob/living/M)
-	M.adjustToxLoss(3, 0)
+	M.adjustToxLoss(2, 0)
 	if(prob(50))
 		to_chat(M, "<span class='danger'>Your hand-eye coordination is a thing of the past, even walking feels hard!</span>")
 	if(prob(90))

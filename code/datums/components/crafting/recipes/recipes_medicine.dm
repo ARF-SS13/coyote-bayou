@@ -222,8 +222,8 @@
 	result = /obj/item/reagent_containers/hypospray/medipen/steady
 	reqs = list(/datum/reagent/consumable/sunset = 15,
 				/obj/item/reagent_containers/food/drinks/bottle = 1,
-				/obj/item/reagent_containers/food/snacks/grown/horsenettle = 3,
-				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 3)
+				/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1,
+				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 1)
 	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
