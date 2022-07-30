@@ -161,7 +161,7 @@ ATTACHMENTS
 	var/gilded = FALSE
 	/*	SILENCER HANDLING */
 	var/silenced = FALSE
-	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/fire_sound_silenced = ''//'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
 	var/zoom_factor = 0 //How much to scope in when using weapons
 
 /obj/item/gun/Initialize()
