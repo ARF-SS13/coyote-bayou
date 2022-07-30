@@ -393,7 +393,7 @@
 
 /datum/reagent/drug/steady/on_mob_delete(mob/living/M)
 	..()
-	if((M))
+	if(M)
 		to_chat(M, "You feel your aim going back to normal.")
 		REMOVE_TRAIT(M, SPREAD_CONTROL, "steady")
 
