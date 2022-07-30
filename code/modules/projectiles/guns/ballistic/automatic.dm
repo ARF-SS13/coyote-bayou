@@ -844,6 +844,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1.1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	can_scope = TRUE
 	can_unsuppress = FALSE
