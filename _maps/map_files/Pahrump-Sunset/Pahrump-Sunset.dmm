@@ -7995,6 +7995,9 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2"
 	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -27
+	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -9413,7 +9416,7 @@
 	color = "#363636"
 	},
 /obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "aGq" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
@@ -30687,7 +30690,7 @@
 	req_one_access_txt = "124"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "gzc" = (
 /obj/effect/decal/cleanable/dirt,
@@ -35284,6 +35287,10 @@
 	},
 /area/f13/building/massfusion)
 "iUE" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_x = 27;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 9
 	},
@@ -36478,6 +36485,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/f13/building/mall)
+"jDy" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 27
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
+/area/f13/building/hospital)
 "jDL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -38384,10 +38402,10 @@
 	},
 /area/f13/wasteland)
 "kKf" = (
-/obj/structure/frame/computer,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "whitedirtysolid"
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -27
 	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
 /area/f13/building/hospital)
 "kKh" = (
 /mob/living/simple_animal/hostile/raider/firefighter{
@@ -47947,8 +47965,6 @@
 	color = "#363636"
 	},
 /obj/structure/table,
-/obj/item/circuitboard/computer/operating,
-/obj/item/stack/cable_coil,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "pyD" = (
@@ -52988,6 +53004,10 @@
 	name = "tile"
 	},
 /area/f13/building)
+"ssV" = (
+/obj/structure/simple_door/house,
+/turf/open/floor/plasteel/neutral,
+/area/f13/building/hospital)
 "stD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -57066,6 +57086,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/f13/ncr)
+"uDm" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = -27
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "uDn" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -57219,6 +57248,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"uIa" = (
+/obj/structure/simple_door/house,
+/turf/open/floor/f13/wood,
+/area/f13/building/hospital)
 "uIi" = (
 /obj/item/storage/trash_stack,
 /obj/effect/decal/cleanable/dirt,
@@ -109378,13 +109411,13 @@ hmz
 tPB
 mMF
 aEs
-aGq
+kKf
 ijr
 lhi
 tZi
 tFm
 gSw
-kKf
+aHT
 ijr
 kLx
 rSW
@@ -109396,7 +109429,7 @@ kEo
 aJb
 uor
 ijr
-aEt
+jDy
 aGq
 aFP
 aRP
@@ -110673,7 +110706,7 @@ ijr
 ijr
 ijr
 ijr
-aJo
+xXG
 ijr
 ijr
 ijr
@@ -111957,7 +111990,7 @@ fut
 ijr
 cZv
 otp
-aJo
+uIa
 aEs
 aKA
 ijr
@@ -112462,7 +112495,7 @@ nBO
 tJV
 aFP
 aEt
-aKA
+uDm
 ijr
 ijr
 ijr
@@ -112472,7 +112505,7 @@ ijr
 ijr
 ijr
 ijr
-aEt
+jDy
 aKA
 ijr
 oWd
@@ -112480,7 +112513,7 @@ kRO
 ibk
 lfs
 ijr
-aEt
+jDy
 aKA
 aFP
 aae
@@ -113242,7 +113275,7 @@ aNA
 tdC
 aOj
 aOj
-aJo
+ssV
 aEs
 aGq
 xXG
