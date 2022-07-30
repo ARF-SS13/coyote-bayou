@@ -452,7 +452,7 @@ ATTACHMENTS
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	var/sprd = 0
-	if(HAS_TRAIT(user, SPREAD_CONTROL))
+	//if(HAS_TRAIT(user, SPREAD_CONTROL))
 		//nothing for now
 	for(var/i in 1 to burst_size)
 		if(chambered)

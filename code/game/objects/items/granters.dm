@@ -885,8 +885,11 @@
 		/datum/crafting_recipe/turbo, 
 		/datum/crafting_recipe/psycho, 
 		/datum/crafting_recipe/medx, 
+		/datum/crafting_recipe/medx/chemistry, 
 		/datum/crafting_recipe/stimpak, 
+		/datum/crafting_recipe/stimpak/chemistry, 
 		/datum/crafting_recipe/stimpak5, 
+		/datum/crafting_recipe/stimpak5/chemistry, 
 		/datum/crafting_recipe/superstimpak, 
 		/datum/crafting_recipe/superstimpak5, 
 		/datum/crafting_recipe/buffout)
@@ -1019,7 +1022,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	return ..()
 
@@ -1054,7 +1057,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 			if("Dean's Electronics")
 				granted_trait = TRAIT_TECHNOPHREAK

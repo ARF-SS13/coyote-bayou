@@ -33,6 +33,7 @@
 #define TOOL_BOTTLER		"bottler"
 #define TOOL_AWORKBENCH     "advanced workbench"
 #define TOOL_LOOM			"Loom"
+#define TOOL_CHEMMASTER		"ChemMaster / refinery"
 //
 #define TOOL_GUNTIER1		"Guns and Bullets: Part 1"
 #define TOOL_GUNTIER2		"Guns and Bullets: Part 2"
