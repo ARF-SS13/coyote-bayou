@@ -22,7 +22,7 @@
 	if(force_unwielded)
 		force = force_unwielded
 	else
-		force = (force / 1.3)
+		force = (force / 1.15)
 	
 	var/sf = findtext(name," (Wielded)")
 	if(sf)
@@ -47,14 +47,17 @@
 		return
 	if(user.get_num_arms() < 2)
 		return
-	if(user.get_inactive_held_item())
-		to_chat(user, span_warning("You need your other hand to be empty!</span>"))
+
+	var/obj/item/other_item = user.get_inactive_held_item()
+
+	if(!user.dropItemToGround(other_item, force=FALSE)) //If you cannot remove the item in your hand, don't try and wield.
+		to_chat(user, span_notice("You cannot seem to drop the item in your other hand!"))
 		return
 	wielded = TRUE
 	if(force_wielded)
 		force = force_wielded
-	else //This will give items wielded 30% more damage. This is balanced by the fact you cannot use your other hand.
-		force = (force * 1.3) //Items that do 0 damage will still do 0 damage though.
+	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
+		force = (force * 1.15) //Items that do 0 damage will still do 0 damage though.
 	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
 	name = "[name] (Wielded)"
 	update_wield_icon()
@@ -147,7 +150,6 @@
 		II.unwield(user)
 	if(!QDELETED(src))
 		qdel(src)
-
 
 /mob/living/verb/wield_hotkey()//For the hotkeys. Not sure where this should be put. But it pertains to two-handing so *shrug*.
 	set name = ".wield"

@@ -509,6 +509,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				A.Grant(user)
 	item_flags |= IN_INVENTORY
 	user.update_equipment_speed_mods()
+	if(user.get_active_held_item() != src && user.get_inactive_held_item() != src)
+		unwield(user)
 
 //Overlays for the worn overlay so you can overlay while you overlay
 //eg: ammo counters, primed grenade flashing, etc.

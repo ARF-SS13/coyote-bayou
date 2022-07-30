@@ -357,9 +357,10 @@ ATTACHMENTS
 				return
 
 	if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
-		return
-
+		wield(user)
+		if(!wielded)
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
+			return
 	if (automatic == 0)
 		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
