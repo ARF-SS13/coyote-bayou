@@ -213,7 +213,7 @@
 /obj/structure/nest/radroach
 	name = "radroach nest"
 	max_mobs = 15
-	mobs_to_spawn = 3
+	mobs_to_spawn = 1
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant

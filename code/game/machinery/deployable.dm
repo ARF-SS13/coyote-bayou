@@ -126,6 +126,14 @@
 		qdel(src)
 		return
 
+/*
+/obj/structure/barricade/sandbags/attackby(obj/item/W, mob/user)
+	if(user.a_intent == INTENT_HELP && istype(W, /obj/item/gun))
+		var/obj/item/gun/G = W
+		G.gun_brace(user, src)
+		return
+	return ..()*/
+	
 /obj/structure/barricade/sandbags/make_debris()
 	new /obj/item/stack/ore/glass(get_turf(src), drop_amount)
 

@@ -21,7 +21,7 @@
 	health = 60
 	speed = 3
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 5
 	melee_damage_upper = 15
 	attack_verb_simple = "claw"
 	attack_sound = 'sound/hallucinations/growl1.ogg'
@@ -73,7 +73,7 @@
 	maxHealth = 120
 	health = 120
 	harm_intent_damage = 8
-	melee_damage_lower = 25
+	melee_damage_lower = 10
 	melee_damage_upper = 25
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
@@ -165,7 +165,7 @@
 	health = 100
 	speed = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 25
+	melee_damage_lower = 15
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2

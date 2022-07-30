@@ -17,7 +17,7 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
 	maxHealth = 150
 	health = 150
-	melee_damage_lower = 10
+	melee_damage_lower = 5
 	melee_damage_upper = 20
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
@@ -35,8 +35,8 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
 	maxHealth = 250
 	health = 250
-	melee_damage_lower = 30
-	melee_damage_upper = 45
+	melee_damage_lower = 15
+	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 

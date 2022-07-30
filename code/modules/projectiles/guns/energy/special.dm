@@ -88,7 +88,6 @@
 	suppressed = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_weight = GUN_ONE_HAND_AKIMBO
-	inaccuracy_modifier = 0.25
 	obj_flags = 0
 	overheat_time = 20
 	holds_charge = TRUE
@@ -125,7 +124,6 @@
 	attack_verb = list("attacked", "slashed", "cut", "sliced")
 	force = 12
 	sharpness = SHARP_EDGED
-	inaccuracy_modifier = 0.25
 	can_charge = 0
 
 	heat = 3800
@@ -179,7 +177,6 @@
 	item_state = null
 	icon_state = "wormhole_projector"
 	pin = null
-	inaccuracy_modifier = 0.25
 	automatic_charge_overlays = FALSE
 	var/obj/effect/portal/p_blue
 	var/obj/effect/portal/p_orange
@@ -317,7 +314,6 @@
 	icon_state = "emitter_carbine"
 	force = 12
 	w_class = WEIGHT_CLASS_SMALL
-	inaccuracy_modifier = 0.25
 	cell_type = /obj/item/stock_parts/cell/super
 	ammo_type = list(/obj/item/ammo_casing/energy/emitter)
 	automatic_charge_overlays = FALSE

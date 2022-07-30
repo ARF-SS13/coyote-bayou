@@ -21,9 +21,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -52,6 +49,10 @@
 	var/right_click_overridden = FALSE
 	dryfire_sound = 'sound/f13weapons/noammoenergy.ogg'
 	dryfire_text = "*power failure*"
+
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -148,11 +149,6 @@
 /obj/item/gun/energy/do_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(!chambered && can_shoot())
 		process_chamber()	// If the gun was drained and then recharged, load a new shot.
-	return ..()
-
-/obj/item/gun/energy/do_burst_shot(mob/living/user, atom/target, message = TRUE, params = null, zone_override="", sprd = 0, randomized_gun_spread = 0, randomized_bonus_spread = 0, rand_spr = 0, iteration = 0, stam_cost = 0)
-	if(!chambered && can_shoot())
-		process_chamber()	// Ditto.
 	return ..()
 
 // Firemodes/Ammotypes
@@ -398,3 +394,17 @@
 	. = ..()
 	if(can_charge == 1)
 		. += span_notice("Alt-click to eject the battery.")
+
+/obj/item/gun/energy/ui_data(mob/user)
+	var/list/data = ..()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+	data["charge_cost"] = shot.e_cost
+	if(cell)
+		data["cell_charge"] = cell.percent()
+		data["shots_remaining"] = round(cell.charge/shot.e_cost)
+		data["max_shots"] = round(cell.maxcharge/shot.e_cost)
+	return data
+
+/obj/item/gun/energy/get_dud_projectile()
+	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+	return new shot.projectile_type

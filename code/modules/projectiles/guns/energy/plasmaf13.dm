@@ -19,9 +19,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -37,13 +34,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+
 /obj/item/gun/energy/laser/plasma/pistol/worn
 	name ="shoddy plasma pistol"
 	desc = "A pistol-sized miniaturized plasma caster built by REPCONN. It fires a bolt of superhot ionized gas. This one's internal parts have loose seals and corroded electronics."
@@ -53,9 +48,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -77,9 +69,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -98,9 +87,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -120,9 +106,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -137,7 +120,6 @@
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = TRUE
 	scope_state = "plasma_scope"
 	scope_x_offset = 13
@@ -148,22 +130,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 2
-
-/obj/item/gun/energy/laser/plasma/carbine/enable_burst()
-	. = ..()
-	spread = GUN_SPREAD_AWFUL
-
-/obj/item/gun/energy/laser/plasma/carbine/disable_burst()
-	. = ..()
-	spread = GUN_SPREAD_POOR
-
+	init_firemodes = list(
+		BURST_2_ROUND
+	)
 
 //Multiplas rifle
 /obj/item/gun/energy/laser/plasma/scatter
@@ -179,9 +152,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -205,39 +175,20 @@
 	max_reach = 2
 	scope_y_offset = 16
 	equipsound = 'sound/f13weapons/equipsounds/plasequip.ogg'
-	var/twohands = FALSE
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_GUNBLADE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	automatic = 1
+	force_unwielded = GUN_MELEE_FORCE_RIFLE_LIGHT
+	force_wielded = GUN_MELEE_FORCE_RIFLE_LIGHT * 2
+	wielded_icon = "plasma2"
 
 /obj/item/gun/energy/laser/plasma/spear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=20, force_wielded=40, icon_wielded="[item_state]2")
 	AddElement(/datum/element/update_icon_updates_onmob)
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/allow_fire)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/deny_fire)
-
-/obj/item/gun/energy/laser/plasma/spear/proc/allow_fire()
-	twohands = TRUE
-/obj/item/gun/energy/laser/plasma/spear/proc/deny_fire()
-	twohands = FALSE
-
-/obj/item/gun/energy/laser/plasma/spear/Destroy()
-	..()
-	UnregisterSignal(src, list(COMSIG_TWOHANDED_WIELD,
-								COMSIG_TWOHANDED_UNWIELD))
-
-/obj/item/gun/energy/laser/plasma/spear/can_shoot()
-	. = ..()
-	if(!twohands)
-		return FALSE

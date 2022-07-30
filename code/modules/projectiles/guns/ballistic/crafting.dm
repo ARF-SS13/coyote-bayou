@@ -25,13 +25,6 @@
 /obj/item/gun/ballistic/automatic/smg/greasegun/mid
 	name = "enhanced m3a1 grease gun"
 
-/obj/item/gun/ballistic/automatic/smg/greasegun/mid/enable_burst()
-	. = ..()
-	spread = 7.5
-
-/obj/item/gun/ballistic/automatic/smg/greasegun/mid/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/greasegun/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -60,16 +53,8 @@
 	burst_size = 3
 	fire_delay = 2
 	burst_shot_delay = 2
-	extra_penetration = 0.1
-	gun_damage_multiplier = 5
-
-/obj/item/gun/ballistic/automatic/smg/greasegun/mid/enable_burst()
-	. = ..()
-	spread = 5
-
-/obj/item/gun/ballistic/automatic/smg/greasegun/mid/disable_burst()
-	. = ..()
-	spread = 0
+	penetration_multiplier = 1.1
+	damage_multiplier = 5
 
 /*
 /obj/item/gun/ballistic/automatic/smg/greasegun/high/attackby(obj/item/W, mob/user, params)
@@ -119,16 +104,8 @@
 */
 /obj/item/gun/ballistic/automatic/smg/smg10mm/mid
 	name = "enhanced 10mm submachine gun"
-	extra_penetration = 0
-	gun_damage_multiplier = 0
-
-/obj/item/gun/ballistic/automatic/smg/smg10mm/mid/enable_burst()
-	. = ..()
-	spread = 13.5
-
-/obj/item/gun/ballistic/automatic/smg/smg10mm/mid/disable_burst()
-	. = ..()
-	spread = 0
+	penetration_multiplier = 1
+	damage_multiplier = 0
 
 /*
 /obj/item/gun/ballistic/automatic/smg/smg10mm/mid/attackby(obj/item/W, mob/user, params)
@@ -158,16 +135,9 @@
 	burst_size = 3
 	fire_delay = 2
 	burst_shot_delay = 2
-	gun_damage_multiplier = 6
-	extra_penetration = 0.12
+	damage_multiplier = 6
+	penetration_multiplier = 1.12
 
-/obj/item/gun/ballistic/automatic/smg/smg10mm/high/enable_burst()
-	. = ..()
-	spread = 9
-
-/obj/item/gun/ballistic/automatic/smg/smg10mm/high/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/smg10mm/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -218,16 +188,9 @@
 	name = "enhanced ppsh-41"
 	burst_shot_delay = 1.5
 	fire_delay = 5
-	gun_damage_multiplier = -9
-	extra_penetration = 0
+	damage_multiplier = -9
+	penetration_multiplier = 1
 
-/obj/item/gun/ballistic/automatic/smg/ppsh/mid/enable_burst()
-	. = ..()
-	spread = 15
-
-/obj/item/gun/ballistic/automatic/smg/ppsh/mid/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/ppsh/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -253,17 +216,10 @@
 */
 /obj/item/gun/ballistic/automatic/smg/ppsh/high
 	name = "advanced ppsh41"
-	gun_damage_multiplier = 0
-	extra_penetration = 0.1
+	damage_multiplier = 0
+	penetration_multiplier = 1.1
 	burst_shot_delay = 1.5
 
-/obj/item/gun/ballistic/automatic/smg/ppsh/high/enable_burst()
-	. = ..()
-	spread = 10
-
-/obj/item/gun/ballistic/automatic/smg/ppsh/high/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/ppsh/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -287,28 +243,7 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/smg/ppsh/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 3
-			spread = 28
-			if (burst_improvement)
-				burst_size = 4
-			if (recoil_decrease)
-				spread = 20
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 10
-			if (recoil_decrease)
-				spread = 2
-			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
+
 /*
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -336,16 +271,9 @@
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mid
 	name = "enhanced uzi"
 	fire_delay = 4
-	extra_penetration = 0
-	gun_damage_multiplier = 0
+	penetration_multiplier = 1
+	damage_multiplier = 0
 
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/enable_burst()
-	. = ..()
-	spread = 7.5
-
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -372,16 +300,9 @@
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 	name = "advanced uzi"
 	fire_delay = 3
-	gun_damage_multiplier = 5
-	extra_penetration = 0.1
+	damage_multiplier = 5
+	penetration_multiplier = 1.1
 
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/enable_burst()
-	. = ..()
-	spread = 5
-
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/high/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -405,28 +326,6 @@
 		to_chat(usr,"You dissasemble the [src].")
 	. = ..()
 */
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/burst_select()
-	var/mob/living/carbon/human/user = usr
-	switch(select)
-		if(0)
-			select += 1
-			burst_size = 2
-			spread = 18
-			if (burst_improvement)
-				burst_size = 3
-			if (recoil_decrease)
-				spread = 10
-			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-		if(1)
-			select = 0
-			burst_size = 1
-			spread = 1
-			if (recoil_decrease)
-				spread = 0
-			to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-	return
 
 // R91 //
 /*
@@ -457,17 +356,10 @@
 /obj/item/gun/ballistic/automatic/assault_rifle/mid
 	name = "enhanced r91 assault rifle"
 	fire_delay = 3
-	extra_penetration = 0
-	gun_damage_multiplier = 0
+	penetration_multiplier = 1
+	damage_multiplier = 0
 	burst_shot_delay = 2
 
-/obj/item/gun/ballistic/automatic/assault_rifle/mid/enable_burst()
-	. = ..()
-	spread = 6
-
-/obj/item/gun/ballistic/automatic/assault_rifle/mid/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/assault_rifle/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -496,18 +388,11 @@
 /obj/item/gun/ballistic/automatic/assault_rifle/high
 	name = "advanced r91 assault rifle"
 	fire_delay = 3
-	gun_damage_multiplier = 6
-	extra_penetration = 0.12
+	damage_multiplier = 6
+	penetration_multiplier = 1.12
 	burst_shot_delay = 2
 	burst_size = 3
 
-/obj/item/gun/ballistic/automatic/assault_rifle/high/enable_burst()
-	. = ..()
-	spread = 6
-
-/obj/item/gun/ballistic/automatic/assault_rifle/high/disable_burst()
-	. = ..()
-	spread = 0
 /*
 /obj/item/gun/ballistic/automatic/assault_rifle/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -535,10 +420,9 @@
 */
 /obj/item/gun/ballistic/automatic/service/mid
 	name = "service rifle (improved)"
-	randomspread = 0
 	fire_delay = 4
-	gun_damage_multiplier = 0
-	extra_penetration = 0
+	damage_multiplier = 0
+	penetration_multiplier = 1
 /*
 /obj/item/gun/ballistic/automatic/service/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -562,10 +446,9 @@
 */
 /obj/item/gun/ballistic/automatic/service/high
 	name = "service rifle (masterwork)"
-	randomspread = 0
 	fire_delay = 3
-	gun_damage_multiplier = 10
-	extra_penetration = 0.2
+	damage_multiplier = 10
+	penetration_multiplier = 1.2
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 /*
 /obj/item/gun/ballistic/automatic/service/high/attackby(obj/item/W, mob/user, params)
@@ -615,8 +498,8 @@
 */
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/mid
 	name = "enhanced colt rangemaster"
-	extra_penetration = 0
-	gun_damage_multiplier = 0
+	penetration_multiplier = 1
+	damage_multiplier = 1
 /*
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/mid/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))
@@ -645,8 +528,8 @@
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high
 	name = "advanced colt rangemaster"
 	fire_delay = 4
-	extra_penetration = 0.14
-	gun_damage_multiplier = 7
+	penetration_multiplier = 1.14
+	damage_multiplier = 7
 /*
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))

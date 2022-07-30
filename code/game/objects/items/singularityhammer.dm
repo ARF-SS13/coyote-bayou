@@ -15,7 +15,6 @@
 	force_string = "LORD SINGULOTH HIMSELF"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 	var/charged = 5
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/singularityhammer/New()
 	..()
@@ -95,7 +94,6 @@
 	throw_range = 7
 	w_class = WEIGHT_CLASS_HUGE
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	var/wielded = FALSE // track wielded status on item
 
 /obj/item/mjollnir/Initialize()
 	. = ..()

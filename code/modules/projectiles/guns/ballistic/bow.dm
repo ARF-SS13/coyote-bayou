@@ -11,7 +11,6 @@
 	fire_sound = 'sound/weapons/bowfire.wav'
 	slot_flags = ITEM_SLOT_BACK
 	item_flags = NONE
-	inaccuracy_modifier = 0 //to counteract the innaccuracy from GUN_TWO_HAND_ONLY, bows are supposed to be accurate but only able to be fired with both hands
 	pin = null
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it
@@ -20,6 +19,11 @@
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
 	dryfire_sound = ""
+	safety = 0
+	restrict_safety = 1
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round

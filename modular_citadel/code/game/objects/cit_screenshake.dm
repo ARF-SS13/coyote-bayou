@@ -20,24 +20,6 @@
 			animate(pixel_x=rand(min,max)+oldx, pixel_y=rand(min,max)+oldy, time=1)
 	animate(pixel_x=oldx, pixel_y=oldy, time=1)
 
-/obj/item/gun/energy
-	recoil = 0.1
-
-/obj/item/gun/energy/kinetic_accelerator
-	recoil = 0.5
-
-/obj/item/gun/ballistic
-	recoil = 0.25
-
-/obj/item/gun/ballistic/shotgun
-	recoil = 1
-
-/obj/item/gun/ballistic/revolver
-	recoil = 0.5
-
-/obj/item/gun/syringe
-	recoil = 0.1
-
 /obj/item/pneumatic_cannon/fire_items(turf/target, mob/user)
 	. = ..()
 	shake_camera(user, (pressureSetting * 0.75 + 1), (pressureSetting * 0.75))
