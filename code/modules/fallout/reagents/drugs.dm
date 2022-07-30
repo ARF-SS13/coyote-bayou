@@ -387,7 +387,7 @@
 
 /datum/reagent/drug/steady/on_mob_add(mob/living/M)
 	..()
-	if((M))
+	if(M)
 		to_chat(M, span_notice("You feel your senses becoming sharper, your trigger finger moving instinctively."))
 		ADD_TRAIT(M, SPREAD_CONTROL, "steady")
 
