@@ -158,6 +158,11 @@ ATTACHMENTS
 	var/list/init_firemodes = list()
 
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
+	var/gilded = FALSE
+	/*	SILENCER HANDLING */
+	var/silenced = FALSE
+	var/fire_sound_silenced = 'sound/weapons/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/zoom_factor = 0 //How much to scope in when using weapons
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -1196,6 +1201,13 @@ ATTACHMENTS
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
 
+/obj/item/gun/proc/generate_guntags()
+	if(recoil_dat.getRating(RECOIL_BASE) < recoil_dat.getRating(RECOIL_TWOHAND))
+		gun_tags |= GUN_GRIP
+	if(!zoom_factor && !w_class < WEIGHT_CLASS_NORMAL)
+		gun_tags |= GUN_SCOPE
+	if(!get_sharpness())
+		gun_tags |= SLOT_BAYONET
 
 
 ///////////////////
