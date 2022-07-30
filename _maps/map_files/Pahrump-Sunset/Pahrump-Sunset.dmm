@@ -9416,7 +9416,7 @@
 	color = "#363636"
 	},
 /obj/structure/simple_door/bunker,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "aGq" = (
 /turf/open/floor/plasteel/f13/vault_floor/blue/side,
@@ -53004,6 +53004,10 @@
 	name = "tile"
 	},
 /area/f13/building)
+"ssV" = (
+/obj/structure/simple_door/house,
+/turf/open/floor/plasteel/neutral,
+/area/f13/building/hospital)
 "stD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -113271,7 +113275,7 @@ aNA
 tdC
 aOj
 aOj
-aJo
+ssV
 aEs
 aGq
 xXG
