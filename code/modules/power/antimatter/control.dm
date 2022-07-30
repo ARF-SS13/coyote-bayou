@@ -1,6 +1,6 @@
 /obj/machinery/power/am_control_unit
-	name = "antimatter control unit"
-	desc = "This device injects antimatter into connected shielding units, the more antimatter injected the more power produced.  Wrench the device to set it up."
+	name = "reactor control unit"
+	desc = "A General Atomics reactor control unit. Controls exposure of a fuel rod inserted into it.  Wrench the device to set it up."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "control"
 	anchored = FALSE
@@ -277,7 +277,7 @@
 			return
 
 	var/dat = ""
-	dat += "AntiMatter Control Panel<BR>"
+	dat += "Fission Control Panel<BR>"
 	dat += "<A href='?src=[REF(src)];close=1'>Close</A><BR>"
 	dat += "<A href='?src=[REF(src)];refresh=1'>Refresh</A><BR>"
 	dat += "<A href='?src=[REF(src)];refreshicons=1'>Force Shielding Update</A><BR><BR>"
@@ -293,12 +293,12 @@
 
 	dat += "Fuel: "
 	if(!fueljar)
-		dat += "<BR>No fuel receptacle detected."
+		dat += "<BR>No fuel rod detected."
 	else
 		dat += "<A href='?src=[REF(src)];ejectjar=1'>Eject</A><BR>"
 		dat += "- [fueljar.fuel]/[fueljar.fuel_max] Units<BR>"
 
-		dat += "- Injecting: [fuel_injection] units<BR>"
+		dat += "- Fuel Rod Exposure: [fuel_injection]<BR>"
 		dat += "- <A href='?src=[REF(src)];strengthdown=1'>--</A>|<A href='?src=[REF(src)];strengthup=1'>++</A><BR><BR>"
 
 

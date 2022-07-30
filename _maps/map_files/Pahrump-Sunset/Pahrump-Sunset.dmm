@@ -5158,6 +5158,7 @@
 /obj/structure/rack,
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/am_containment/loot,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -7245,6 +7246,7 @@
 	pixel_y = 7
 	},
 /obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/am_containment/loot,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright0"
 	},
@@ -31851,6 +31853,7 @@
 /area/f13/wasteland)
 "hbG" = (
 /obj/structure/table/wood,
+/obj/item/am_containment/loot,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -53703,6 +53706,12 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
+"sQU" = (
+/obj/item/am_containment/loot,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalrightborderleft1"
+	},
+/area/f13/building/hospital)
 "sRe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/broken,
@@ -111462,7 +111471,7 @@ wHv
 rnw
 wiS
 sXS
-aAY
+sQU
 aAF
 loB
 aFP
