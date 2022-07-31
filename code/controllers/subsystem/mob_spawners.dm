@@ -4,6 +4,8 @@ SUBSYSTEM_DEF(mobspawners)
 
 /datum/controller/subsystem/mobspawners/fire(resumed = 0)
 	for(var/obj/structure/nest/N in GLOB.mob_nests)
+		if(QDELETED(N))
+			GLOB.mob_nests -= N
 		if(N.can_fire)
 			N.spawn_mob()
 	for(var/mob/living/simple_animal/hostile/giantantqueen/Q in GLOB.mob_nests)
