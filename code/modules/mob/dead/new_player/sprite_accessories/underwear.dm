@@ -35,13 +35,13 @@
 	has_digitigrade = TRUE
 	gender = MALE
 
-/*
 /datum/sprite_accessory/underwear/bottom/male_stripe
 	name = "Boxers - Striped"
 	icon_state = "boxers_striped"
 	has_digitigrade = TRUE
 	gender = MALE
 
+/*
 /datum/sprite_accessory/underwear/bottom/male_commie
 	name = "Boxers - Striped Communist"
 	icon_state = "boxers_commie"
@@ -140,13 +140,11 @@
 	has_color = TRUE
 	gender = FEMALE
 
-/*
 /datum/sprite_accessory/underwear/bottom/striped_panties
 	name = "Panties - Striped"
 	icon_state = "striped_panties"
 	has_color = TRUE
 	gender = FEMALE
-*/
 
 /datum/sprite_accessory/underwear/bottom/panties_swimsuit
 	name = "Panties - Swimsuit"
