@@ -111,7 +111,17 @@
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
-	category = CAT_MEDICAL	
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
+	name = "Stimpak (from chems)"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/datum/reagent/medicine/stimpak = 20,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_CHEMMASTER)
+	time = 10
+	category = CAT_MEDICAL
 	always_available = FALSE
 
 /datum/crafting_recipe/stimpak5
@@ -121,6 +131,16 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/syringe = 5)
 	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/stimpak5/chemistry // Purely chemistry recipe
+	name = "Stimpak x5 (from chems)"
+	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	reqs = list(/datum/reagent/medicine/stimpak = 100,
+				/obj/item/reagent_containers/syringe = 5)
+	tools = list(TOOL_CHEMMASTER)
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -201,6 +221,17 @@
 				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 2)
 	time = 35
 	tools = list(TOOL_WORKBENCH, TOOL_WELDER)
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/medx/chemistry
+	name = "Med-X (from chems)"
+	result = /obj/item/reagent_containers/hypospray/medipen/medx
+	reqs = list(/obj/item/reagent_containers/syringe = 1,
+				/datum/reagent/medicine/epinephrine = 5,
+				/datum/reagent/medicine/morphine = 5)
+	time = 10
+	tools = list(TOOL_CHEMMASTER)
 	category = CAT_MEDICAL
 	always_available = FALSE
 
