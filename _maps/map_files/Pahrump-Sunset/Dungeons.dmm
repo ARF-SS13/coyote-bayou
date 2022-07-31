@@ -1387,6 +1387,7 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/am_containment/loot,
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "bke" = (
@@ -9213,10 +9214,10 @@
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
 "hIK" = (
-/obj/item/am_containment,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
+/obj/item/am_containment/loot,
 /turf/open/floor/plasteel,
 /area/f13/vault)
 "hJk" = (
@@ -20944,14 +20945,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/enclave)
 "rMX" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Reactor APC";
-	pixel_x = -28
-	},
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/vault)
 "rMY" = (

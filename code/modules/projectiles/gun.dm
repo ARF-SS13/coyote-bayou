@@ -357,9 +357,10 @@ ATTACHMENTS
 				return
 
 	if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
-		to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
-		return
-
+		wield(user)
+		if(!wielded)
+			to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
+			return
 	if (automatic == 0)
 		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
@@ -452,8 +453,6 @@ ATTACHMENTS
 
 /obj/item/gun/proc/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", stam_cost = 0)
 	var/sprd = 0
-	//if(HAS_TRAIT(user, SPREAD_CONTROL))
-		//nothing for now
 	for(var/i in 1 to burst_size)
 		if(chambered)
 			sprd = user.calculate_offset(init_offset)

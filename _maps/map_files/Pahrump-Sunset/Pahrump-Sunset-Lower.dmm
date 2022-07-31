@@ -213,6 +213,7 @@
 "agq" = (
 /obj/structure/window/reinforced,
 /obj/structure/closet/crate/trashcart,
+/obj/item/am_containment,
 /turf/open/floor/plasteel/caution{
 	dir = 6
 	},
@@ -14408,6 +14409,7 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/item/am_containment/loot,
 /turf/open/floor/plasteel/dark,
 /area/f13/radiation)
 "lAI" = (
@@ -25932,6 +25934,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"xDO" = (
+/obj/effect/turf_decal/weather/dirt,
+/obj/item/am_containment/loot,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/radiation)
 "xDR" = (
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plating/dirt,
@@ -77032,7 +77041,7 @@ fKL
 erg
 taP
 qpK
-aEH
+xDO
 pua
 lJk
 fSI
