@@ -1401,7 +1401,7 @@
 			cell.charge = cell.maxcharge
 			charging = APC_FULLY_CHARGED
 
-	else // no cell, can still run but not very well
+	else // no cell, NO POWER. See line 1309
 		charging = APC_NOT_CHARGING
 		chargecount = 0
 		environ = autoset(environ, 0)
