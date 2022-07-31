@@ -2933,6 +2933,7 @@
 "mAu" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/am_containment,
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
 	},
@@ -5210,7 +5211,6 @@
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gibbear1"
 	},
-/obj/machinery/light/small,
 /obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"

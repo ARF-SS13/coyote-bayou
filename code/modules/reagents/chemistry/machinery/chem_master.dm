@@ -10,6 +10,7 @@
 	idle_power_usage = 20
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_master
+	machine_tool_behaviour = TOOL_CHEMMASTER
 
 	var/basereagents = 100
 	var/obj/item/reagent_containers/beaker = null

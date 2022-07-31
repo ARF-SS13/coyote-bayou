@@ -130,6 +130,10 @@
 /obj/item/ammo_box/magazine/m45/socom/empty
 	start_empty = 1
 
+/obj/item/ammo_box/magazine/m45/socom/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[stored_ammo.len ? "[max_ammo]" : "0"]" // I hate this system
+
 //.44 Magnum
 /obj/item/ammo_box/magazine/m44
 	name = "handgun magazine (.44 magnum)"
