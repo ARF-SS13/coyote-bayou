@@ -236,8 +236,10 @@
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 				W.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
 				W.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
-		else
-			return ..()
+		else //Standard attackby response, but also expose anything used on it to flame.
+			. = ..()
+			if(burning)
+				W.fire_act(1000, 500)
 
 
 /obj/structure/bonfire/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -328,12 +330,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/bonfire/proc/attempt_smoke_signal(obj/item/stack/sheet/cloth/sheet, mob/living/user, )
-	var/outdoors = FALSE
-	for(var/area_type in GLOB.outdoor_areas)
-		if(istype(get_area(src), area_type))
-			outdoors = TRUE
-			break
-	if(!outdoors)
+	if(!is_type_in_list(get_area(src), GLOB.outdoor_areas))
 		to_chat(user, span_warning("You must be outside to send a smoke signal."))
 		return
 	var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
@@ -358,8 +355,8 @@
 	
 
 /obj/structure/bonfire/proc/smoke_signal(mob/living/M, message, obj/structure/bonfire/B)
-	var/log_message = "(Smoke Signal) [message]"
-	log_say(log_message, M)
+	var/log_message = "[message]"
+	M.log_talk(log_message, LOG_CHAT)
 
 	for(var/mob/player in GLOB.player_list)
 		if(player == M)
@@ -371,12 +368,7 @@
 			to_chat(player, msg_dead)
 			continue
 		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
-			var/outdoors = FALSE
-			for(var/area_type in GLOB.outdoor_areas)
-				if(istype(get_area(src), area_type))
-					outdoors = TRUE
-					break
-			if(!outdoors)
+			if(!is_type_in_list(get_area(player), GLOB.outdoor_areas))
 				continue
 			var/dirmessage = "somewhere in the distance"
 			if(player.z == B.z)
