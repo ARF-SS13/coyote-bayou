@@ -92,7 +92,6 @@
 	charge_max = 400
 	invocation = "NEC CANTIO"
 	invocation_type = "shout"
-	range = -1
 	include_user = 1
 	cooldown_min = 200 //50 deciseconds reduction per rank
 

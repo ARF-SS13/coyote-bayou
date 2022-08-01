@@ -1124,5 +1124,4 @@
 	reagent_state = SOLID
 	taste_description = "bitter powder"
 	glass_name = "glass of banana peel powder"
-	description = "You took a banana peel... pulped it... baked it... Where are you going with this?"
 	ghoulfriendly = TRUE

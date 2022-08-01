@@ -755,7 +755,6 @@
 	name = "Mayonnaise"
 	description = "An white and oily mixture of mixed egg yolks."
 	color = "#DFDFDF"
-	value = 5
 	taste_description = "mayonnaise"
 	value = REAGENT_VALUE_COMMON
 

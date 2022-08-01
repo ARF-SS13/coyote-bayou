@@ -539,7 +539,6 @@
 	icon_state = "wattz2k_ext"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc

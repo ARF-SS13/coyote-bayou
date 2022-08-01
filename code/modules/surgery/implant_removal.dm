@@ -4,7 +4,6 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_CHEST)
 	//Its easier to pull stuff out than it is to put it back in.
-	requires_trait = 2
 	requires_trait = "MEDICALGRADUATE"
 
 //extract implant

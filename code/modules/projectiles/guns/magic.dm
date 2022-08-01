@@ -21,9 +21,6 @@
 	trigger_guard = TRIGGER_GUARD_ALLOW_ALL // Has no trigger at all, uses magic instead
 	pin = /obj/item/firing_pin/magic
 
-	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi' //not really a gun and some toys use these inhands
-	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-
 /obj/item/gun/magic/afterattack(atom/target, mob/living/user, flag)
 	if(no_den_usage)
 		var/area/A = get_area(user)

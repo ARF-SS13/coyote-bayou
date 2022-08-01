@@ -350,7 +350,6 @@
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
-	icon_prefix = "baseball"
 	wielded_icon = "baseball2"
 	force_unwielded = 24
 	force_wielded = 30

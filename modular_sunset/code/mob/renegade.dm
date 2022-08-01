@@ -17,7 +17,6 @@
 	health = 140
 	healable = 1
 	speed = 1.2
-	check_friendly_fire = 1
 	stat_attack = 1
 	obj_damage = 150
 	melee_damage_lower = 25
@@ -48,7 +47,6 @@
 	maxHealth = 200
 	health = 200
 	healable = 1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 2
@@ -100,7 +98,6 @@
 	health = 300
 	healable = 1
 	speed = 1.1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 7
 	minimum_distance = 3
@@ -151,7 +148,6 @@
 	health = 280
 	healable = 1
 	speed = 1.3
-	ranged = 1
 	vision_range = 12
 	aggro_vision_range = 15
 	check_friendly_fire = 1
@@ -178,7 +174,6 @@
 	health = 420
 	healable = 1
 	speed = 0.9
-	ranged = 1
 	check_friendly_fire = 1
 	minimum_distance = 2
 	ranged_cooldown_time = 3
@@ -209,7 +204,6 @@
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
 	ranged_cooldown_time = 30
-	attack_verb_simple = "power-fists"
 	extra_projectiles = 5
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
@@ -232,11 +226,9 @@
 	maxHealth = 250
 	health = 250
 	healable = 1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 8
-	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	casingtype = /obj/item/ammo_casing/m44

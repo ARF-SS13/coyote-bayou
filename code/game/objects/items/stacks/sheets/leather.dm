@@ -76,7 +76,6 @@ GLOBAL_LIST_INIT(corgi_recipes, list ( \
 	desc = "The by-product of monkey farming."
 	singular_name = "monkey hide piece"
 	icon_state = "sheet-monkey"
-	icon_state = "sheet-monkey"
 	merge_type = /obj/item/stack/sheet/animalhide/monkey
 
 GLOBAL_LIST_INIT(monkey_recipes, list ( \

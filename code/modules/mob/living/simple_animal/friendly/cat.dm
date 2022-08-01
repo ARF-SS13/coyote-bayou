@@ -306,7 +306,6 @@
 	speak_emote = list("wigglepurrs", "mewls")
 	emote_hear = list("meows.", "mews.")
 	emote_see = list("looks at you eagerly for pets!", "wiggles enthusiastically.")
-	gold_core_spawnable = NO_SPAWN
 	var/pseudo_death = FALSE
 	var/mob/living/carbon/human/origin
 

@@ -274,7 +274,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
 	light_range = 7 // Pretty bright.
-	light_color = "#FA421A"
+	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
 	item_state = "flare"
@@ -284,7 +284,6 @@
 	var/on_damage = 9
 	var/produce_heat = 1500
 	heat = 1000
-	light_color = LIGHT_COLOR_FLARE
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/New()

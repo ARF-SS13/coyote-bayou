@@ -868,7 +868,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	custom_materials = list(/datum/material/paper = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/paperframes
 	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/sheet/paperframes
 	material_type = /datum/material/paper
 
 /obj/item/stack/sheet/paperframes/get_main_recipes()

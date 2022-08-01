@@ -7,6 +7,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	can_charge = 0
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi' //not really a gun and some toys use these inhands
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	var/variable_charges = 1
 
 /obj/item/gun/magic/wand/Initialize()

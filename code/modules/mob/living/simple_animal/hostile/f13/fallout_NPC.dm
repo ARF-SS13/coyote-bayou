@@ -9,7 +9,6 @@
 	icon_state = "vault_dweller"
 	icon_living = "vault_dweller"
 	icon_dead = "vault_dweller"
-	speak_chance = 0
 	turns_per_move = 5
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	response_help_simple = "pokes"
@@ -152,10 +151,8 @@
 	faction = list("enclave")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = 1
 	speak = list("For the Enclave!", "Stars and Stripes!", "Liberty or death!")
 	speak_emote = list("pulls out a weapon", "shouts")
-	speak_chance = 0
 
 // Enclave Scientist
 /mob/living/simple_animal/hostile/enclave/scientist
@@ -234,7 +231,6 @@
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight"
-	speak_chance = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	faction = list("BOS")
 	turns_per_move = 5
@@ -326,7 +322,6 @@
 	icon_dead = "ncr_trooper"
 	faction = list("NCR")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -413,7 +408,6 @@
 	icon_dead = "legion_prime"
 	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -501,7 +495,6 @@
 	icon_dead = "tribal_raider_dead"
 	faction = list("Tribe")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"

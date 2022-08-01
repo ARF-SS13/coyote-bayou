@@ -421,7 +421,6 @@
 	invocation_type = "none"
 	clothes_req = FALSE
 	action_background_icon_state = "bg_ecult"
-	range = -1
 	include_user = TRUE
 	charge_max = 300
 	range = 14

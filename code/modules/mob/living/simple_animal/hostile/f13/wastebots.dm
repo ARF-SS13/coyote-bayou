@@ -137,7 +137,6 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	attack_verb_simple = "slaps"
-	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
 	extra_projectiles = 1
@@ -172,7 +171,6 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 45
 	attack_verb_simple = "slaps"
-	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser
 	extra_projectiles = 1
