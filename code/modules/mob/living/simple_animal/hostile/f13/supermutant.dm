@@ -22,11 +22,11 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "hits"
-	maxHealth = 200 //20 x 10, 1 full mag of 9mm with no misses
-	health = 200
+	maxHealth = 160 
+	health = 160
 	force_threshold = 14
 	faction = list("hostile", "supermutant")
-	melee_damage_lower = 35
+	melee_damage_lower = 25
 	melee_damage_upper = 45
 	mob_size = MOB_SIZE_LARGE
 	move_resist = MOVE_FORCE_OVERPOWERING
@@ -79,8 +79,8 @@
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_brahmin_s"
 	icon_dead = "hulk_brahmin_s"
-	maxHealth = 300
-	health = 300
+	maxHealth = 240
+	health = 240
 	speak_chance = 7 //30 //Oh my god he never shuts up.
 	move_resist = MOVE_FORCE_OVERPOWERING
 	mob_size = MOB_SIZE_LARGE
@@ -107,10 +107,10 @@
 	icon_state = "hulk_melee_s"
 	icon_living = "hulk_melee_s"
 	icon_dead = "hulk_melee_s"
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	force_threshold = 14
-	melee_damage_lower = 40
+	melee_damage_lower = 20
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -128,8 +128,8 @@
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
 	ranged = 1
-	maxHealth = 180 //9 shots of 9mm, more room for error to account for dodges
-	health = 180
+	maxHealth = 144 //9 shots of 9mm, more room for error to account for dodges
+	health = 144
 	retreat_distance = 4
 	minimum_distance = 6
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
@@ -150,10 +150,10 @@
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
-	melee_damage_lower = 55
+	melee_damage_lower = 35
 	melee_damage_upper = 70
-	maxHealth = 700 //30 shots of 5.56, bring an extended mag
-	health = 700
+	maxHealth = 560
+	health = 560
 	mob_size = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -170,11 +170,11 @@
 	icon_state = "night_s"
 	icon_living = "night_s"
 	icon_dead = "night_s"
-	maxHealth = 300
-	health = 300
+	maxHealth = 240
+	health = 240
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 50
+	melee_damage_lower = 35
 	melee_damage_upper = 60
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
@@ -198,8 +198,8 @@
 	icon_state = "night_ranged_s"
 	icon_living = "night_ranged_s"
 	icon_dead = "night_ranged_s"
-	maxHealth = 300
-	health = 300
+	maxHealth = 240
+	health = 240
 	ranged = 1
 	alpha = 80
 	force_threshold = 15
@@ -234,11 +234,11 @@
 	icon_living = "night_boss_s"
 	icon_dead = "night_boss_s"
 	ranged = 1
-	maxHealth = 500
-	health = 500
+	maxHealth = 400
+	health = 400
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 45
+	melee_damage_lower = 25
 	melee_damage_upper = 55
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
@@ -267,11 +267,11 @@
 	color = "#6B87C0"
 	speak_chance = 10
 	speak = list("The rain cleanses!", "Sacrifices for the rain gods!", "The thunder guides my fury!", "I am become the storm, destroyer of all heretics!", "The priests will be pleased with my sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 50
-	melee_damage_upper = 70
+	melee_damage_lower = 25
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/rain
@@ -280,11 +280,11 @@
 	color = "#6B87C0"
 	speak_chance = 10
 	speak = list("The rain cleanses!", "Sacrifices for the rain gods!", "The thunder guides my fury!", "I am become the storm, destroyer of all heretics!", "The priests will be pleased with my sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 50
-	melee_damage_upper = 70
+	melee_damage_lower = 25
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain
@@ -293,11 +293,11 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = -0.1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
-	melee_damage_upper = 70
+	melee_damage_lower = 30
+	melee_damage_upper = 65
 	var/charging = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -385,10 +385,10 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 380
+	health = 380
 	damage_coeff = list(BRUTE = 1, BURN = -0.25, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
+	melee_damage_lower = 40
 	melee_damage_upper = 70
 	extra_projectiles = 2
 	retreat_distance = 2
@@ -442,10 +442,10 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The great flood will come, I will make sure of it!", "Rain god Odile, I call upon you for wrath!", "Rain god Hyacinth, I call upon you for a tranquil mind!", "Rain god Ignacio, I call upon you for protection!", "The storm rages within!")
-	maxHealth = 550
-	health = 550
+	maxHealth = 440
+	health = 440
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
+	melee_damage_lower = 35
 	melee_damage_upper = 70
 	extra_projectiles = 1
 

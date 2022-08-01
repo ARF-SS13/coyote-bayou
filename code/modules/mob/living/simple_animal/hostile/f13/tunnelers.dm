@@ -7,11 +7,11 @@
 	icon_dead = "trog_dead"
 
 	speed = 2
-	maxHealth = 50
-	health = 50
+	maxHealth = 40
+	health = 40
 	obj_damage = 30
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	melee_damage_lower = 5
+	melee_damage_upper = 15
 	harm_intent_damage = 5
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -37,10 +37,10 @@
 	icon_state = "spore_carrier"
 	icon_living = "spore_carrier"
 	icon_dead = "spore_dead"
-	health = 100
-	maxHealth = 100
+	health = 80
+	maxHealth = 80
 	harm_intent_damage = 5
-	melee_damage_lower = 15
+	melee_damage_lower = 10
 	melee_damage_upper = 25
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -56,10 +56,10 @@
 	icon_dead = "tunneler_dead"
 	robust_searching = TRUE
 	stat_attack = CONSCIOUS
-	health = 180 //9shots to kill
-	maxHealth = 180
+	health = 144 
+	maxHealth = 144
 	speed = -1
-	melee_damage_lower = 35
+	melee_damage_lower = 25
 	melee_damage_upper = 40
 	armour_penetration = 0.25
 	obj_damage = 150

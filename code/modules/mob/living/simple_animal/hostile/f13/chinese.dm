@@ -12,11 +12,11 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	speed = 1
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	melee_damage_lower = 25
-	melee_damage_upper = 50
+	melee_damage_upper = 47
 	attack_verb_simple = "punches"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
@@ -44,8 +44,8 @@
 	name = "chinese remnant assault soldier"
 	icon_state = "chineseassault"
 	icon_living = "chineseassault"
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	extra_projectiles = 2
 	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/assault, /obj/item/gun/ballistic/automatic/type93, /obj/item/ammo_box/magazine/m556/rifle/assault)
 	projectiletype = /obj/item/projectile/bullet/a556/ap
