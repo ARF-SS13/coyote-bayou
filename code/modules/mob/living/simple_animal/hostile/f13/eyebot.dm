@@ -119,7 +119,6 @@
 /mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)
-	AddElement(/datum/element/mob_holder, held_icon)
 
 /mob/living/simple_animal/pet/dog/eyebot/emp_act(severity)
 	. = ..()
