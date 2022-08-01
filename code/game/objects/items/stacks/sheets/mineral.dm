@@ -409,14 +409,15 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
  * Alien Alloy
  */
 /obj/item/stack/sheet/mineral/abductor //Start Fortuna edit: alien alloy -> polymer alloy
-	name = "experimental polymer alloy"
+	name = "Pre-War polymer alloy"
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "sheet-abductor"
 	item_state = "sheet-abductor"
-	singular_name = "experimental polymer alloy sheet"
+	singular_name = "Pre-war polymer alloy sheet"
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
+	custom_materials = list(/datum/material/prewarpolymer=MINERAL_MATERIAL_AMOUNT) //CB-Edit. Needed to make go brr in lathes
 
 /obj/item/stack/sheet/mineral/abductor/ten
 	amount = 10
