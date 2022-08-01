@@ -619,11 +619,11 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 #define GUN_COCK_INSTANT 0.1
 #define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
-#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
+#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.4)
 #define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)
 #define GUN_COCK_RIFLE_BASE (GUN_COCK_BASE)
 #define GUN_COCK_RIFLE_FAST (GUN_COCK_BASE * 0.75)
-#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.1)
+#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.5)
 
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECOND
@@ -637,6 +637,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
+#define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
 #define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
 #define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
 #define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, autofire_shot_delay = 1, burst_size = 1, icon="auto")
