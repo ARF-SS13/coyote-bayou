@@ -350,6 +350,7 @@
 /* * * * * * * * * * * *
  * Semi-auto shotguns  *
  * * * * * * * * * * * */
+/// warning, most arent semi-automatic
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
@@ -363,10 +364,6 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
-
-/obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	..()
-	src.pump(user)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -400,9 +397,13 @@
 
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	src.pump(user)
+
 /* * * * * * * * * * *
  * Lever-Action shotgun
- * Speedy semi-auto shotgun
+ * Speedy pump shotgun
  * 12g
  * Uncommon
  * * * * * * * * * * */
@@ -502,7 +503,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
-	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
+	desc = "A high capacity pump action shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
@@ -518,7 +519,6 @@
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_recoil = RIFLE_RECOIL(2.8)
 
-	var/semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 /* * * * * * * * * * *
