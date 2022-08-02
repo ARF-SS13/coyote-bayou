@@ -436,6 +436,7 @@
 	key = "me"
 	key_third_person = "custom"
 	message = null
+	emote_type = EMOTE_VISIBLE
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
@@ -454,16 +455,11 @@
 		return FALSE
 	else if(!params)
 		var/custom_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "Custom Emote", null, MAX_MESSAGE_LEN)
-		if(custom_emote && !check_invalid(user, custom_emote))
-			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
-			switch(type)
-				if("Visible")
-					emote_type = EMOTE_VISIBLE
-				if("Hearable")
-					emote_type = EMOTE_AUDIBLE
-				else
-					return
-			message = custom_emote
+		if(!custom_emote)
+			return FALSE
+		if(check_invalid(user, custom_emote))
+			return FALSE
+		message = custom_emote
 	else
 		message = params
 		if(type_override)
@@ -471,7 +467,6 @@
 	message = user.say_emphasis(message)
 	. = ..()
 	message = null
-	emote_type = EMOTE_VISIBLE
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
 	return message
@@ -1149,7 +1144,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		return FALSE
 
 	var/special_noun = null
-	var/special_phrase_input = special_override ? special_override : params
+	var/special_phrase_input = special_override ? special_override : lowertext(params)
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key
