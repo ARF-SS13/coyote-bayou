@@ -1,14 +1,14 @@
 //The code execution of the emote datum is located at code/datums/emotes.dm
 /mob/proc/emote(act, m_type = null, message = null, intentional = FALSE)
-	var/input_text = lowertext(act)
+	act = lowertext(act)
 	var/param = message
-	var/custom_param = findchar(input_text, " ")
+	var/custom_param = findchar(act, " ")
 	if(custom_param)
 		param = copytext(act, custom_param + length(act[custom_param]))
-		input_text = copytext(input_text, 1, custom_param)
+		act = copytext(act, 1, custom_param)
 
 	var/datum/emote/E
-	E = E.emote_list[input_text]
+	E = E.emote_list[act]
 	if(!E)
 		to_chat(src, "<span class='notice'>Unusable emote '[act]'. Say *help for a list.</span>")
 		return
