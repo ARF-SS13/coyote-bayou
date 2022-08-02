@@ -2026,8 +2026,7 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/
-	extra_mag_types = list(/obj/item/ammo_box/magazine/w308)
+	init_mag_type = /obj/item/ammo_box/magazine/m762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
