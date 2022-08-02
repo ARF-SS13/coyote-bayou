@@ -1855,7 +1855,6 @@
 	dir = 1
 	},
 /obj/effect/spawner/lootdrop/f13/medical/surgical,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "ahi" = (
@@ -25173,7 +25172,7 @@
 /area/f13/building)
 "dIV" = (
 /obj/structure/table,
-/obj/item/defibrillator/primitive,
+/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "dIZ" = (
@@ -27921,7 +27920,6 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/trading_machine/medical,
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -31220,6 +31218,7 @@
 	dir = 8;
 	pixel_x = -12
 	},
+/obj/machinery/iv_drip,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -36790,8 +36789,9 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "jVJ" = (
-/obj/machinery/iv_drip,
 /obj/machinery/light,
+/obj/structure/table,
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -38951,7 +38951,6 @@
 /obj/structure/table,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/obj/effect/spawner/lootdrop/f13/medical/surgical,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "lhl" = (
@@ -47633,6 +47632,7 @@
 	color = "#363636"
 	},
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "pyD" = (
@@ -48521,6 +48521,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qab" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/trading_machine/medical,
+/turf/open/floor/plasteel/f13/vault_floor/blue/side,
+/area/f13/building/hospital)
 "qaP" = (
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building/massfusion)
@@ -50143,6 +50150,12 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
+"qVf" = (
+/obj/machinery/smartfridge/chemistry,
+/turf/open/indestructible/ground/outside/ruins{
+	icon_state = "rubblepillar"
+	},
+/area/f13/building/hospital)
 "qVz" = (
 /obj/structure/simple_door/metal/fence{
 	dir = 8
@@ -50495,7 +50508,6 @@
 /obj/structure/table,
 /obj/item/healthanalyzer/advanced,
 /obj/item/clothing/gloves/color/latex,
-/obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -107000,8 +107012,8 @@ tGu
 qEh
 cQC
 aNf
-cQC
-cQC
+aFY
+aFY
 aNf
 qEh
 qEh
@@ -107253,16 +107265,16 @@ cQC
 aFY
 aFY
 azL
-aEs
+aEt
 uZi
+wxJ
+wxJ
+eAT
+eAT
 uZi
+wxJ
 uZi
-uZi
-uZi
-uZi
-uZi
-uZi
-aKA
+qab
 ijr
 aFD
 aFD
@@ -107511,11 +107523,11 @@ aNr
 aNr
 tht
 iUE
-aNr
+aKO
 ppJ
 aNs
-aNr
-aNr
+aKO
+aKO
 fhE
 spS
 aNr
@@ -108543,7 +108555,7 @@ ijr
 ekB
 gza
 ekB
-ijr
+qVf
 ijr
 ekB
 dPY
