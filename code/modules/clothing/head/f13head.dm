@@ -794,8 +794,8 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13/flatranger
-	name = "NCR gambler ranger hat"
-	desc = "A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
+	name = "gambler ranger hat"
+	desc = "A rustic, homely style gambler hat adorning an Texas Ranger patch. Yeehaw!"
 	icon_state = "gamblerrang"
 	item_state = "gamblerrang"
 

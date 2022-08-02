@@ -1262,10 +1262,11 @@
 
 /obj/item/clothing/suit/armor/light/leather/rig
 	name = "chest gear harness"
-	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt."
+	desc = "a handmade tactical rig. The actual rig is made of a black, fiberous cloth, being attached to a dusty desert-colored belt with enough room for four small items."
 	icon_state = "r_gear_rig"
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
 	
 ////////////////
 // ARMOR KITS // 
@@ -1759,7 +1760,7 @@
 	max_integrity = 200
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/medium/duster/navyblue
 	name = "head of security's jacket"
