@@ -7916,13 +7916,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "aCh" = (
-/obj/structure/table,
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor2"
 	},
 /obj/machinery/defibrillator_mount/loaded{
 	pixel_y = -27
 	},
+/obj/structure/table/optable,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "whitedirtysolid"
 	},
@@ -41417,6 +41417,14 @@
 /obj/machinery/vending/nukacolavend,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/village)
+"mns" = (
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
+	icon_state = "whitedirtysolid"
+	},
+/area/f13/building/hospital)
 "mnA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -109043,7 +109051,7 @@ lhi
 tZi
 tFm
 gSw
-aHT
+mns
 ijr
 kLx
 rSW
