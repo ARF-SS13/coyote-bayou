@@ -5,49 +5,52 @@
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = stripped_input(usr, "", "say")
+	var/message = input(usr, "", "say") as text|null
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()
+	clear_typing_indicator()		// clear it immediately!
 	if(!length(message))
 		return
 	return say_verb(message)
 
-/mob/verb/say_verb(message as text) // only still here cus nerds wont stop using the command bar
+/mob/verb/say_verb(message as text)
 	set name = "say"
 	set category = "IC"
-	display_typing_indicator() // you're getting the damned indicator
 	if(!length(message))
-		clear_typing_indicator()
 		return
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
-		clear_typing_indicator()
 		return
-	clear_typing_indicator()
+	clear_typing_indicator()		// clear it immediately!
 	say(message)
 
 /mob/verb/me_typing_indicator()
-	set name = "me"
+	set name = "me_indicator"
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = stripped_multiline_input_or_reflect(usr, "", "me")
+	var/message = input(usr, "", "me") as message|null
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()
+	clear_typing_indicator()		// clear it immediately!
 	if(!length(message))
 		return
+	return me_verb(message)
+
+/mob/verb/me_verb(message as message)
+	set name = "me"
+	set category = "IC"
 	if(!length(message))
 		return
-	if(GLOB.say_disabled)
+	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
+	
 	if(length(message) > MAX_MESSAGE_LEN)
 		to_chat(usr, message)
 		to_chat(usr, "<span class='danger'>^^^----- The preceeding message has been DISCARDED for being over the maximum length of [MAX_MESSAGE_LEN]. It has NOT been sent! -----^^^</span>")
 		return
 
-	message = trim(copytext_char(html_encode(message), 1, MAX_MESSAGE_LEN))
-	clear_typing_indicator()
+	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
+	clear_typing_indicator()		// clear it immediately!
 
 	usr.emote("me",1,message,TRUE)
 

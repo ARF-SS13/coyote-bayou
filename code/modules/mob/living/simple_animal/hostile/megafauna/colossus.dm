@@ -627,6 +627,7 @@ Difficulty: Very Hard
 /mob/living/simple_animal/hostile/lightgeist/Initialize()
 	. = ..()
 	remove_verb(src, /mob/living/verb/pulled)
+	remove_verb(src, /mob/verb/me_verb)
 	var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 	medsensor.add_hud_to(src)
 
