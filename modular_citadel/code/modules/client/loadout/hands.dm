@@ -57,34 +57,6 @@
 	path = /obj/item/storage/toolbox/mechanical/old
 	cost = 2
 
-/datum/gear/hands/backpack/legionr
-	name = "legion red cape backpack"
-	path = /obj/item/storage/backpack/legionr
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
-
-/datum/gear/hands/backpack/legionb
-	name = "legion black cape backpack"
-	path = /obj/item/storage/backpack/legionb
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
-
 /datum/gear/hands/cane
 	name = "cane"
 	path = /obj/item/cane
