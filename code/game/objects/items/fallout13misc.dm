@@ -195,7 +195,7 @@
 	item_state = "followersflag"
 	faction = FACTION_FOLLOWERS
 
-/// Locust flag but renamed
+/// Locust flag but renamed to bandit.
 
 /obj/item/flag/locust
 	name = "Bandit flag"
@@ -203,6 +203,8 @@
 	icon_state = "locustflag"
 	item_state = "locustflag"
 	faction = "Locust"
+
+/// Gunner flag but renamed to Outlaw.
 
 /obj/item/flag/outlaw
 	name = "Outlaw flag"
