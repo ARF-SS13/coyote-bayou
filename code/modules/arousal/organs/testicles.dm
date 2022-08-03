@@ -40,10 +40,11 @@
 
 /obj/item/organ/genital/testicles/update_appearance()
 	. = ..()
-	desc = "You see an [size_name] pair of testicles."
 	var/datum/sprite_accessory/S = GLOB.balls_shapes_list[shape]
 	var/icon_shape = S ? S.icon_state : "single"
 	icon_state = "testicles_[icon_shape]_[size]"
+	var/lowershape = lowertext(shape)
+	desc = "You see an [size_name] [lowershape]."
 	if(owner)
 		if(owner.dna.species.use_skintones)
 			if(ishuman(owner)) // Check before recasting type, although someone fucked up if you're not human AND have use_skintones somehow...
