@@ -232,7 +232,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 	"Den Mob Boss",
 	"Den Mob Enforcer",
 	"Den Doctor",
-	"Outlaw",
+//	"Outlaw",
 	"Faithful",
 	"Vigilante",
 	"Preacher",
@@ -242,7 +242,7 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 
 GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Slave",
-//	"Outlaw",
+	"Outlaw",
 	"Redwater Resident",
 	"Redwater Watcher",
 	"Redwater Overboss",
