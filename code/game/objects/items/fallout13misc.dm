@@ -195,12 +195,21 @@
 	item_state = "followersflag"
 	faction = FACTION_FOLLOWERS
 
+/// Locust flag but renamed
+
 /obj/item/flag/locust
-	name = "Locust flag"
-	desc = "A flag with a skull, the symbol of Locusts."
+	name = "Bandit flag"
+	desc = "A flag with a skull, maybe it marking where the cemetary is."
 	icon_state = "locustflag"
 	item_state = "locustflag"
 	faction = "Locust"
+
+/obj/item/flag/outlaw
+	name = "Outlaw flag"
+	desc = "A ragged flag with a skull emblazoned on it, commonly used by the local raider gangs."
+	icon_state = "gunnerflag"
+	item_state = "gunnerflag"
+	faction = "Gunner"
 
 /obj/item/flag/yuma
 	name = "Yuma banner"
@@ -233,27 +242,21 @@
 		if(do_after(user, 60, target = src))
 			var/obj/item/stack/sheet/leather/H = I
 			if(H.use(1))
-				var/list/choices = list("NCR", "Legion", "Yuma", "BOS", "Followers", "Great Khans")
+				var/list/choices = list("Bandit", "Outlaw", "BOS", "Followers")
 				var/flag = input("Please choose which faction flag you wish to create.") in choices
 				switch(flag)
-					if(FACTION_NCR)
-						name = "NCR flag"
-						desc = "A flag with a two headed bear, the symbol of the New California Republic."
-						icon_state = "ncrflag"
-						item_state = "ncrflag"
-						faction = "NCR"
-					if(FACTION_LEGION)
-						name = "Legion flag"
-						desc = "A flag with a golden bull, the symbol of Caesar's Legion."
-						icon_state = "legionflag"
-						item_state = "legionflag"
-						faction = FACTION_LEGION
-					if("Yuma")
-						name = "Yuma flag"
-						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
-						icon_state = "cornflag"
-						item_state = "cornflag"
-						faction = FACTION_OASIS
+					if("Bandit")
+						name = "Bandit flag"
+						desc = "A flag with a skull, maybe it marking where the cemetary is."
+						icon_state = "locustflag"
+						item_state = "locustflag"
+						faction = "Locust"
+					if("Outlaw")
+						name = "Outlaw flag"
+						desc = "A ragged flag with a skull emblazoned on it, commonly used by the local raider gangs."
+						icon_state = "gunnerflag"
+						item_state = "gunnerflag"
+						faction = "Gunner"
 					if(FACTION_BROTHERHOOD)
 						name = "BOS flag"
 						desc = "A red and black flag with a sword surrounded in gears and wings, in a dazzling gold."
@@ -266,12 +269,6 @@
 						icon_state = "followersflag"
 						item_state = "followersflag"
 						faction = FACTION_FOLLOWERS
-					if("Great Khans")
-						name = "Great Khans flag"
-						desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
-						icon_state = "khanflag"
-						item_state = "khanflag"
-						faction = "Great Khans"
 				update_icon()
 	else
 		attack_hand(user)
