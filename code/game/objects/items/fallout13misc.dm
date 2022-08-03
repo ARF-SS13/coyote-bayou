@@ -297,6 +297,37 @@
 
 /obj/item/flag/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first)
 	dropped(thrower)
+
+
+/*   OLDER things that isnt the flags in a way, and how to use them in the upper things.
+				var/list/choices = list("NCR", "Legion", "Yuma", "BOS", "Followers", "Great Khans")
+					if(FACTION_NCR)
+						name = "NCR flag"
+						desc = "A flag with a two headed bear, the symbol of the New California Republic."
+						icon_state = "ncrflag"
+						item_state = "ncrflag"
+						faction = "NCR"
+					if(FACTION_LEGION)
+						name = "Legion flag"
+						desc = "A flag with a golden bull, the symbol of Caesar's Legion."
+						icon_state = "legionflag"
+						item_state = "legionflag"
+						faction = FACTION_LEGION
+					if("Yuma")
+						name = "Yuma flag"
+						desc = "A banner depicting three rivers meeting at its center, overlaid with an ear of corn."
+						icon_state = "cornflag"
+						item_state = "cornflag"
+						faction = FACTION_OASIS
+
+					if("Great Khans")
+						name = "Great Khans flag"
+						desc = "A flag worn and weathered from a long cherished history. A decorated smiling skull smiles mockingly upon those who challenge it."
+						icon_state = "khanflag"
+						item_state = "khanflag"
+						faction = "Great Khans"
+*/
+
 ////////Viper stuff////// subject to change, but this way was simple
 /obj/item/viper_venom
 	name = "Viper venom"
