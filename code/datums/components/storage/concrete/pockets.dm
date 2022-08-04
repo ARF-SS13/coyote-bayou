@@ -114,14 +114,6 @@
 	max_w_class = WEIGHT_CLASS_TINY
 	//attack_hand_interact = FALSE
 
-/datum/component/storage/concrete/pockets/tiny/magpouch
-	max_items = 4
-
-/datum/component/storage/concrete/pockets/tiny/magpouch/Initialize()
-	. = ..()
-	max_w_class = WEIGHT_CLASS_SMALL
-	can_hold = GLOB.gunbelt_allowed
-
 /datum/component/storage/concrete/pockets/small/detective
 	attack_hand_interact = TRUE // so the detectives would discover pockets in their hats
 
@@ -189,3 +181,12 @@
 	. = ..()
 	can_hold = GLOB.ammobelt_allowed
 
+/// Combat armor bandolier / holster
+/datum/component/storage/concrete/pockets/magpouch
+	max_w_class = WEIGHT_CLASS_SMALL
+	max_items = STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+	max_combined_w_class = STORAGE_SHOULDER_HOLSTER_MAX_VOLUME
+
+/datum/component/storage/concrete/pockets/magpouch/Initialize()
+	. = ..()
+	can_hold = GLOB.gunbelt_allowed
