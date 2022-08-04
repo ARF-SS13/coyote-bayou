@@ -18,7 +18,7 @@
 	minimum_flow = 0.375
 	max_per_type = 3
 	required_bandage_power = 10
-	clot_rate = 0.2
+	clot_rate = 0.05
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 30
 	internal_bleeding_coefficient = 1.25
@@ -41,7 +41,7 @@
 	minimum_flow = 3
 	max_per_type = 3
 	required_bandage_power = 20
-	clot_rate = 0.1
+	clot_rate = 0.025
 	gauzed_clot_rate = 0.9
 	internal_bleeding_chance = 60
 	internal_bleeding_coefficient = 1.25
@@ -65,7 +65,7 @@
 	minimum_flow = 6
 	max_per_type = 3
 	required_bandage_power = 40
-	clot_rate = -0.5
+	clot_rate = 0
 	gauzed_clot_rate = 0.8
 	internal_bleeding_chance = 80
 	internal_bleeding_coefficient = 1.25

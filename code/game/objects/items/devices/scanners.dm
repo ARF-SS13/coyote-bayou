@@ -435,21 +435,41 @@ GENETICS SCANNER
 		var/mob/living/carbon/C = M
 		var/blood_typepath = C.get_blood_id()
 		if(blood_typepath)
-			if(ishuman(C))
-				if(H.is_bleeding())
-					msg += "<span class='danger'>Subject is bleeding!</span>\n"
 			var/blood_percent =  round((C.scan_blood_volume() / (BLOOD_VOLUME_NORMAL * C.blood_ratio))*100)
 			var/blood_type = C.dna.blood_type
 			if(!(blood_typepath in GLOB.blood_reagent_types))
 				var/datum/reagent/R = GLOB.chemical_reagents_list[blood_typepath]
 				if(R)
 					blood_type = R.name
-			if(C.scan_blood_volume() <= (BLOOD_VOLUME_SAFE*C.blood_ratio) && C.scan_blood_volume() > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>LOW blood level [blood_percent] %,</span> <span class='info'>type: [blood_type]</span>\n"
-			else if(C.scan_blood_volume() <= (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>CRITICAL blood level [blood_percent] %,</span> <span class='info'>type: [blood_type]</span>\n"
-			else
-				msg += "<span class='info'>Blood level [blood_percent] %, type: [blood_type]</span>\n"
+			var/scanned_blood_volume = C.scan_blood_volume()
+			if(ishuman(C))
+				if(H.is_bleeding())
+					msg += "\n"
+					msg += span_danger("<u>Subject is bleeding!</u>\n")
+					for(var/obj/item/bodypart/BP in C.bodyparts)
+						for(var/datum/wound/bleed/bloody_wound in BP.wounds)
+							var/bleeding_amount = bloody_wound.get_blood_flow()
+							if(bleeding_amount)
+								msg += span_warning("\improper[BP] blood loss: [bleeding_amount]u.\n")
+					msg += "\n"
+			switch(scanned_blood_volume)
+				if(BLOOD_VOLUME_SAFE to INFINITY)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+				if(BLOOD_VOLUME_SYMPTOMS_WARN to BLOOD_VOLUME_SAFE)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+					msg += span_info("Minor blood loss detected. No action necessary.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+					msg += span_warning("Blood loss detected. Rest and iron infusion recommended.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_MINOR)
+					msg += span_warning("LOW Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_warning("Significant anemia detected. Blood transfusion recommended.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+					msg += span_danger("VERY LOW Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_warning("Severe anemia detected. Immediate blood transfusion recommended.\n")
+				if(-INFINITY to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
+					msg += span_danger("CRITICAL Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_danger("Hypovolemic shock detected. Immediate blood transfusion, epinephrine, and blood volume expanders recommended.\n")
 
 		var/cyberimp_detect
 		for(var/obj/item/organ/cyberimp/CI in C.internal_organs)
