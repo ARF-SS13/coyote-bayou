@@ -37,11 +37,11 @@
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 0.75 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
-#define BLOOD_REFILL_NUTRITION_FAT 2 // Eat a lot for quicker blood regen!
+#define BLOOD_REFILL_NUTRITION_FAT 3 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 1
+#define BLOOD_REFILL_NUTRITION_FULL 2
 /// Nutrition spent for being well fed
-#define BLOOD_REFILL_NUTRITION_WELL_FED 1.5
+#define BLOOD_REFILL_NUTRITION_WELL_FED 1
 /// Nutrition spent for being fed
 #define BLOOD_REFILL_NUTRITION_FED 0.5
 /// Nutrition spent for being hungie
@@ -55,7 +55,7 @@
 /// Cap for oxyloss in minor blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_MINOR 10
 /// Cap for dizziness in minor blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_MINOR 2
+#define BLOOD_LOSS_DIZZINESS_CAP_MINOR 0
 /// Cap for confusion in minor blood loss
 #define BLOOD_LOSS_CONFUSION_CAP_MINOR 3
 /// Cap for blurriness in minor blood loss
@@ -92,7 +92,7 @@
 /// How much sprinting a tile costs in annoying blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING 2
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 12
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 10
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 2 SECONDS
 /// Slowdown applied in this level of bloodloss

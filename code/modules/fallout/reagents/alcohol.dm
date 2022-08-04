@@ -74,13 +74,15 @@
 
 /datum/reagent/consumable/ethanol/brocbrew
 	name = "Broc Brew"
-	description = "A potent healing beverage brewed from the Broc flower."
+	description = "A potent healing beverage brewed from the Broc flower. Known to promote blood flow."
 	color = "#DFA866"
 	boozepwr = 50
 	taste_description = "dirt and roses"
 	glass_icon_state = "cognacglass"
 	glass_name = "broc brew"
 	glass_desc = "A potent healing beverage brewed from the Broc flower."
+	effective_blood_multiplier = 1.5 // Mostly water, also the healy stuff
+	effective_blood_max = 150
 	//var/last_added = 0
 	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 

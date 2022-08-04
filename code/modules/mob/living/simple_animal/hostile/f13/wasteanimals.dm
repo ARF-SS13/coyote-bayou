@@ -93,6 +93,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	footstep_type = FOOTSTEP_MOB_CLAW
+	sharpness = SHARP_POINTY // snek
 
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 300
@@ -155,6 +156,7 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	footstep_type = FOOTSTEP_MOB_CLAW
+	sharpness = SHARP_POINTY // snek
 
 	emote_taunt_sound = list('sound/f13npc/nightstalker/taunt1.ogg', 'sound/f13npc/nightstalker/taunt2.ogg')
 	emote_taunt = list("growls", "snarls")

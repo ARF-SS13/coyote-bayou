@@ -253,6 +253,8 @@
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
 	ghoulfriendly = TRUE
+	effective_blood_multiplier = 1
+	effective_blood_max = 150
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -371,6 +373,8 @@
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	pH = 7.5 //God is alkaline
+	effective_blood_multiplier = 2
+	effective_blood_max = 300
 
 	// Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
 /datum/reagent/water/holywater/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -2653,6 +2657,8 @@
 	reagent_state = LIQUID
 	color = "#D2FFFA"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
+	effective_blood_multiplier = 10 // quick burst of stabilizing, adrenaline and such
+	effective_blood_max = 200
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 	self_consuming = TRUE

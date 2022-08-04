@@ -34,18 +34,21 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		"You feel a faint chill.",
 		"You feel tired."),
 	BLOOD_ANEMIA_MESSAGE_MINOR = list(
-		"You feel your heart flutter in your chest for a moment.",
+		"You feel your heart flutter for a moment.",
+		"You feel woozy.",
 		"You feel very tired."),
 	BLOOD_ANEMIA_MESSAGE_ANNOYING = list(
 		"Your limbs feel cold.",
+		"Your heart keeps fluttering.",
 		"You can't seem to catch your breath."),
 	BLOOD_ANEMIA_MESSAGE_DEBILITATING = list(
-		"Your limbs feel cold.",
-		"You can't seem to catch your breath."),
+		"You feel a deep chill.",
+		"You feel lethargic.",
+		"You gasp for air!"),
 	BLOOD_ANEMIA_MESSAGE_WORST = list(
 		"You feel like a light breeze would knock you over.",
 		"Your heart thrashes in your chest.",
-		"You struggle to summon the strength to take a step."),
+		"You struggle to summon the strength to take a step.")
 		))
 
 // Takes care blood loss and regeneration
@@ -203,15 +206,16 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time, slowdown)
 	if(getOxyLoss() < oxy_loss_cap)
-		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.005, 1))
+		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 	if(getStaminaLoss() < stam_cap)
-		adjustStaminaLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.01, 1))
+		adjustStaminaLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
 	Dizzy(dizzy)
 	if(confused < confusion)
 		confused = confusion
 	if(prob(35))
 		blur_eyes(blurry)
 	if(prob(knockdown_chance))
+		to_chat(src, span_warning("You stumble over, dazed by your blood loss!"))
 		AdjustKnockdown(knockdown_time, TRUE)
 	apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
 	add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bloodloss_slowdown, TRUE, slowdown)
@@ -228,19 +232,17 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	. = blood_volume * blood_ratio
 	if(just_blood)
 		return
-	if(blood_volume < BLOOD_VOLUME_SYMPTOMS_WORST)
-		if(has_reagent(/datum/reagent/medicine/epinephrine))
-			return BLOOD_VOLUME_SYMPTOMS_WORST - 10 // Vasopressors~
 
-	if(blood_volume > BLOOD_VOLUME_SYMPTOMS_WORST)
-		if(reagents)
-			var/datum/reagents/our_reagents = src.reagents
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/water) * 1 , 100)
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/water/holywater) * 2 , 50)
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/medicine/salglu_solution) * 1 , 150)
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/bloody_mary) * 0.35 , 100)
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/consumable/ethanol/brocbrew) * 0.5 , 100)
-			. += min(our_reagents.get_reagent_amount(/datum/reagent/determination) * 10 , 400)
+	if(. < BLOOD_VOLUME_SYMPTOMS_ANNOYING) // start adding in blood volume buffs
+		var/extra_blood
+		for(var/datum/reagent/blood_expander in reagents.reagent_list)
+			if(!blood_expander.effective_blood_multiplier)
+				continue
+			extra_blood += min(blood_expander.volume * blood_expander.effective_blood_multiplier, blood_expander.effective_blood_max)
+		. = min(. + extra_blood, BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+
+		if(has_reagent(/datum/reagent/medicine/epinephrine))
+			. = max(., BLOOD_VOLUME_SYMPTOMS_WORST - 10) // Vasopressors~
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
@@ -275,6 +277,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)
+		if(blood_volume < BLOOD_VOLUME_LOSS_FLOOR)
+			amt *= 0.05
 		blood_volume = max(blood_volume - amt, 0)
 		if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
 			if(amt >= 10)

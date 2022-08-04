@@ -405,9 +405,11 @@
 	description = "Has a 33% chance per metabolism cycle to heal brute and burn damage. Can be used as a temporary blood substitute, as well as slowly speeding blood regeneration."
 	reagent_state = LIQUID
 	color = "#DCDCDC"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 150 // enough to mitigate severe bleeding effects
 	taste_description = "sweetness and salt"
+	effective_blood_multiplier = 3
+	effective_blood_max = 250
 	//var/last_added = 0
 	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
 	//var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
@@ -425,8 +427,8 @@
 		last_added = new_blood_level - M.blood_volume
 		M.blood_volume = new_blood_level + extra_regen*/
 	if(prob(33))
-		M.adjustBruteLoss(-0.5*REM, 0)
-		M.adjustFireLoss(-0.5*REM, 0)
+		M.adjustBruteLoss(-0.25*REM, 0)
+		M.adjustFireLoss(-0.25*REM, 0)
 		. = TRUE
 	..()
 
