@@ -9779,7 +9779,6 @@
 /obj/machinery/light/small/broken{
 	dir = 4
 	},
-/obj/structure/nest/radroach,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -11156,6 +11155,7 @@
 /obj/machinery/shower{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -13834,7 +13834,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aUL" = (
@@ -13891,6 +13891,7 @@
 /obj/machinery/light/small/broken{
 	dir = 4
 	},
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aUX" = (
@@ -29674,7 +29675,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fTG" = (
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -29906,7 +29907,7 @@
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "gca" = (
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "gcc" = (
@@ -35940,7 +35941,7 @@
 "jjH" = (
 /obj/structure/bed,
 /obj/item/bedsheet,
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "jjJ" = (
@@ -39892,7 +39893,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -42247,7 +42248,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "mzq" = (
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "mzU" = (
@@ -42767,7 +42768,7 @@
 /area/f13/building)
 "mLx" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "mLF" = (
@@ -49911,7 +49912,7 @@
 /area/f13/building/mall)
 "qCv" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "qCz" = (
@@ -50841,10 +50842,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "rcQ" = (
-/obj/structure/nest/radroach,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
-/area/f13/village)
+/mob/living/simple_animal/bot/cleanbot,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain3"
+	},
+/area/f13/wasteland)
 "rcY" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
@@ -53446,6 +53448,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"sFt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "sFD" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
@@ -53643,9 +53651,9 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/structure/nest/radroach,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
@@ -60589,7 +60597,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "wxZ" = (
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	name = "metal plating"
 	},
@@ -94637,7 +94645,7 @@ dNL
 xLC
 eeK
 tJp
-srN
+rcQ
 qmG
 oBf
 tRk
@@ -95303,7 +95311,7 @@ aaD
 aaD
 aae
 aae
-gca
+aaB
 aaB
 abV
 aaB
@@ -95562,7 +95570,7 @@ aae
 aae
 aaB
 aaB
-aaB
+gca
 abV
 aae
 aae
@@ -104077,8 +104085,8 @@ pBa
 hEG
 aHy
 oJz
-rcQ
-aHA
+mLx
+sFt
 aHA
 aBw
 azh
