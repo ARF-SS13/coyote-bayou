@@ -1402,7 +1402,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/citizenship_permits
 	name = "box of citizenship permits"
-	desc = "A box containing spare citizenship permits for Oasis. Use a mayor's ID on a citizenship permit to assign its owner."
+	desc = "A box containing spare citizenship permits for Nash. Use a mayor's ID on a citizenship permit to assign its owner."
 	illustration = "id"
 
 /obj/item/storage/box/citizenship_permits/PopulateContents()

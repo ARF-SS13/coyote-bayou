@@ -42,6 +42,11 @@
 	path = /obj/item/storage/backpack/cultpack
 	cost = 3
 
+/datum/gear/hands/backpack/old
+	name = "old satchel"
+	path = /obj/item/storage/backpack/satchel/old
+	cost = 3 
+
 /datum/gear/hands/briefcase/crafted
 	name = "briefcase"
 	path = /obj/item/storage/briefcase/crafted
@@ -51,34 +56,6 @@
 	name = "rusty blue toolbox"
 	path = /obj/item/storage/toolbox/mechanical/old
 	cost = 2
-
-/datum/gear/hands/backpack/legionr
-	name = "legion red cape backpack"
-	path = /obj/item/storage/backpack/legionr
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
-
-/datum/gear/hands/backpack/legionb
-	name = "legion black cape backpack"
-	path = /obj/item/storage/backpack/legionb
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
 
 /datum/gear/hands/cane
 	name = "cane"

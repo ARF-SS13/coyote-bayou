@@ -56,7 +56,7 @@
 // Goliath				Throws targets far. Max damage 50.
 /obj/item/melee/powerfist/f13/goliath
 	name = "Goliath"
-	desc = "A massive, experimental metal gauntlet captured by the Legion. The piston-powered ram on top is designed to throw targets very, very far."
+	desc = "A massive, experimental metal gauntlet crafted by some poor bastard in Redwater that since outlived their usefulness. The piston-powered ram on top is designed to throw targets very, very far."
 	icon = 'icons/fallout/objects/melee/melee.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/melee1h_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/melee1h_righthand.dmi'
@@ -86,7 +86,7 @@
 	var/transfer_prints = TRUE //prevents runtimes with forensics when held in glove slot
 
 
-// Mole Miner				
+// Mole Miner
 /obj/item/melee/powerfist/f13/moleminer
 	name = "mole miner gauntlet"
 	desc = "A hand-held mining and cutting implement, repurposed into a deadly melee weapon.  Its name origins are a mystery..."

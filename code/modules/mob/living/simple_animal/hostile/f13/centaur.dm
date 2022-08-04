@@ -12,8 +12,8 @@
 	icon_dead = "centaur_dead"
 	icon_gib = "centaur_g"
 
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	speed = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 15
@@ -52,7 +52,7 @@
 
 /obj/item/projectile/neurotox
 	name = "spit"
-	damage = 30
+	damage = 25
 	icon_state = "toxin"
 
 /mob/living/simple_animal/hostile/centaur/strong // Mostly for FEV mutation

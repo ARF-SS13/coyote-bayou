@@ -4,7 +4,8 @@
 	icon = 'icons/obj/guns/toy.dmi'
 	icon_state = "saber"
 	item_state = "gun"
-	mag_type = /obj/item/ammo_box/magazine/toy/smg
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/smg
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	force = 0
 	throwforce = 0
@@ -22,7 +23,8 @@
 	desc = "A small, easily concealable toy handgun. Ages 8 and up."
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_SMALL
-	mag_type = /obj/item/ammo_box/magazine/toy/pistol
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/pistol
 	fire_sound = 'sound/weapons/gunshot.ogg'
 	burst_size = 1
 	fire_delay = 0
@@ -33,7 +35,8 @@
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/pistol/riot
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/pistol/riot
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot/Initialize()
 	magazine = new /obj/item/ammo_box/magazine/toy/pistol/riot(src)
@@ -83,16 +86,19 @@
 	icon = 'icons/obj/guns/toy.dmi'
 	can_suppress = TRUE
 	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
 
 /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/smgm45
 
 /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/smgm45/riot
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy //This is the syndicate variant with syndicate firing pin and riot darts.
 	name = "donksoft LMG"
@@ -100,31 +106,32 @@
 	icon = 'icons/obj/guns/toy.dmi'
 	can_suppress = FALSE
 	item_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 	casing_ejector = FALSE
 	clumsy_check = FALSE
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted //Use this for actual toys
 	pin = /obj/item/firing_pin
-	mag_type = /obj/item/ammo_box/magazine/toy/m762
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/m762
 
 /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted/riot
-	mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
+	mag_type = /obj/item/ammo_box/magazine/toy/m762
+	init_mag_type = /obj/item/ammo_box/magazine/toy/m762/riot
 
 /obj/item/gun/ballistic/automatic/toy/magrifle
 	name = "foamag rifle"
 	desc = "A foam launching magnetic rifle. Ages 8 and up."
 	icon_state = "foamagrifle"
 	obj_flags = NONE
-	mag_type = /obj/item/ammo_box/magazine/toy/foamag
+	mag_type = /obj/item/ammo_box/magazine/toy
+	init_mag_type = /obj/item/ammo_box/magazine/toy/foamag
 	fire_sound = 'sound/weapons/magrifle.ogg'
 	burst_size = 1
 	actions_types = null
 	fire_delay = 3
-	spread = 60
-	recoil = 0.1
 	can_suppress = FALSE
-	inaccuracy_modifier = 0.5
 	weapon_weight = GUN_ONE_HAND_ONLY
 	dualwield_spread_mult = 1.4
 	w_class = WEIGHT_CLASS_BULKY
@@ -137,8 +144,6 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/toy/mag
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	fire_delay = 2
-	recoil = 0.1
-	inaccuracy_modifier = 0.25
 	dualwield_spread_mult = 1.4
 	slot_flags = SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL

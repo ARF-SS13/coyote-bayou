@@ -7,9 +7,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -30,9 +27,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -54,9 +48,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -76,9 +67,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -99,9 +87,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -123,9 +108,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -148,9 +130,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -185,9 +164,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -210,9 +186,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -236,9 +209,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -268,13 +238,13 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 /obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -302,24 +272,6 @@
 			else
 				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 
-/obj/item/gun/energy/laser/proc/burst_select()
-	var/mob/living/carbon/human/user = usr
-	select = !select
-	if(!select)
-		disable_burst()
-		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	else
-		enable_burst()
-		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-
-/obj/item/gun/energy/laser/proc/enable_burst()
-	burst_size = initial(burst_size)
-
-/obj/item/gun/energy/laser/proc/disable_burst()
-	burst_size = 1
-
-
-
 /////////////////
 //LASER PISTOLS//
 /////////////////
@@ -344,9 +296,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -364,9 +313,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -389,9 +335,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -417,9 +360,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -438,9 +378,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -475,9 +412,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FASTER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -502,9 +436,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -528,9 +459,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
@@ -546,9 +474,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
@@ -572,9 +497,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -606,9 +528,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -634,9 +553,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -662,9 +578,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -678,9 +591,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -703,9 +613,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -726,9 +633,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -752,9 +656,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -778,9 +679,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -801,9 +699,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -825,25 +720,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-
-/obj/item/gun/energy/laser/rcw/burst_select()
-	var/mob/living/carbon/human/user = usr
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-//	for(var/X in actions)
-//		var/datum/action/A = X
-
-/obj/item/gun/energy/laser/rcw/afterattack()
-	. = ..()
-//	empty_alarm()
-	return
+	init_firemodes = list(
+		BURST_2_BEAM,
+		WEAPON_NORMAL
+	)
 
 
 //Alien Blaster
@@ -862,9 +746,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -886,9 +767,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -1004,13 +882,13 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
+	init_firemodes = list(
+		FULL_AUTO_1000
+	)
 
 /obj/item/gun/energy/minigun/Initialize()
 	if(istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.

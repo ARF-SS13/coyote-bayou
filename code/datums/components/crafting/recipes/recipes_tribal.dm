@@ -176,6 +176,12 @@
 	reqs = list(/obj/item/stack/sheet/cloth = 3)
 	tools = list(TOOL_WORKBENCH)
 
+/datum/crafting_recipe/tribal/shittycleaver
+	name = "Carving Knife"
+	result = /obj/item/kitchen/knife/butcher/tribal
+	time = 45
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 2, /obj/item/stack/sheet/metal = 3)
+
 /datum/crafting_recipe/warpaint
 	name = "Body Paint"
 	result = /obj/item/warpaint_bowl
@@ -234,7 +240,7 @@
 
 /datum/crafting_recipe/tribalwar/whitelegs/armour
 	name = "White Legs Armour"
-	result = /obj/item/clothing/suit/armor/light/tribal/whitelegs
+	result = /obj/item/clothing/suit/armor/medium/tribal/whitelegs
 	time = 60
 	reqs = list(/obj/item/stack/sheet/animalhide/gecko = 3,
 				/obj/item/stack/sheet/leather = 2,
@@ -242,7 +248,7 @@
 
 /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour
 	name = "White Legs Heavy Armour"
-	result = /obj/item/clothing/suit/armor/medium/tribal/whitelegs
+	result = /obj/item/clothing/suit/armor/heavy/tribal/whitelegs
 	time = 60
 	reqs = list(/obj/item/clothing/suit/armor/light/tribal/whitelegs = 1,
 				/obj/item/stack/sheet/animalhide/gecko = 3,
@@ -276,7 +282,7 @@
 
 /datum/crafting_recipe/tribalwar/rustwalkers/armour
 	name = "Rustwalkers Armour"
-	result = /obj/item/clothing/suit/armor/light/tribal/rustwalkers
+	result = /obj/item/clothing/suit/armor/medium/tribal/rustwalkers
 	time = 60
 	reqs = list(/obj/item/stack/crafting/metalparts = 3,
 				/obj/item/stack/sheet/leather = 2,
@@ -284,7 +290,7 @@
 
 /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour
 	name = "Rustwalkers Heavy Armour"
-	result = /obj/item/clothing/suit/armor/medium/tribal/rustwalkers
+	result = /obj/item/clothing/suit/armor/heavy/tribal/rustwalkers
 	time = 60
 	reqs = list(/obj/item/clothing/suit/armor/light/tribal/rustwalkers =1,
 				/obj/item/clothing/suit/armor/light/tribal/rustwalkers = 1,
@@ -316,7 +322,7 @@
 
 /datum/crafting_recipe/tribalwar/eighties/armour
 	name = "Eighties Armour"
-	result = /obj/item/clothing/suit/armor/light/tribal/eighties
+	result = /obj/item/clothing/suit/armor/medium/tribal/eighties
 	time = 60
 	reqs = list(/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/leather = 3,
@@ -324,7 +330,7 @@
 
 /datum/crafting_recipe/tribalwar/eighties/heavyarmour
 	name = "Eighties Heavy Armour"
-	result = /obj/item/clothing/suit/armor/medium/tribal/eighties
+	result = /obj/item/clothing/suit/armor/heavy/tribal/eighties
 	time = 60
 	reqs = list(/obj/item/clothing/suit/armor/light/tribal/eighties =1,
 				/obj/item/clothing/suit/armor/light/tribal/eighties = 1,
@@ -355,7 +361,7 @@
 
 /datum/crafting_recipe/tribalwar/deadhorses/armour
 	name = "Dead Horses Armour"
-	result = /obj/item/clothing/suit/armor/light/tribal/deadhorses
+	result = /obj/item/clothing/suit/armor/medium/tribal/deadhorses
 	time = 60
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/animalhide/gecko = 3,
@@ -363,7 +369,7 @@
 
 /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour
 	name = "Dead Horses Heavy Armour"
-	result = /obj/item/clothing/suit/armor/medium/tribal/deadhorses
+	result = /obj/item/clothing/suit/armor/heavy/tribal/deadhorses
 	time = 60
 	reqs = list(/obj/item/clothing/suit/armor/light/tribal/deadhorses =1,
 				/obj/item/clothing/suit/armor/light/tribal/deadhorses = 1,
@@ -426,7 +432,7 @@ datum/crafting_recipe/tribalwar/bone
 
 /datum/crafting_recipe/tribalwar/bone/armour
 	name = "Bone Dancer Reinforced Armor"
-	result = /obj/item/clothing/suit/armor/light/tribal/bone
+	result = /obj/item/clothing/suit/armor/medium/tribal/bone
 	time = 60
 	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/leather = 3,
@@ -434,7 +440,7 @@ datum/crafting_recipe/tribalwar/bone
 
 /datum/crafting_recipe/tribalwar/bone/heavyarmour
 	name = "Bone Dancer Heavy Armor"
-	result = /obj/item/clothing/suit/armor/medium/tribal/bone
+	result = /obj/item/clothing/suit/armor/heavy/tribal/bone
 	time = 60
 	reqs = list(/obj/item/clothing/suit/armor/light/tribal/bone =1,
 				/obj/item/clothing/suit/armor/light/tribal/bone = 1,

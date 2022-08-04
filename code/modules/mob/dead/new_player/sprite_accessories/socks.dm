@@ -32,6 +32,8 @@
 /datum/sprite_accessory/underwear/socks/usa_knee
 	name = "Knee-High - Freedom"
 	icon_state = "assblastusa_knee"
+*/
+
 
 /datum/sprite_accessory/underwear/socks/rainbow_knee
 	name = "Knee-high - Rainbow"
@@ -49,7 +51,7 @@
 	name = "Knee-high - Striped"
 	icon_state = "striped_knee"
 	has_color = TRUE
-*/
+
 
 /datum/sprite_accessory/underwear/socks/thin_knee
 	name = "Knee-high - Thin"
@@ -75,6 +77,7 @@
 /datum/sprite_accessory/underwear/socks/christmas_norm
 	name = "Normal - Christmas"
 	icon_state = "christmas_norm"
+*/
 
 /datum/sprite_accessory/underwear/socks/candycaner_norm
 	name = "Normal - Red Candy Cane"
@@ -83,7 +86,7 @@
 /datum/sprite_accessory/underwear/socks/candycaneg_norm
 	name = "Normal - Green Candy Cane"
 	icon_state = "candycaneg_norm"
-*/
+
 
 /datum/sprite_accessory/underwear/socks/pantyhose
 	name = "Pantyhose"
@@ -94,7 +97,7 @@
 	icon_state = "socks_short"
 	has_color = TRUE
 
-/*
+
 /datum/sprite_accessory/underwear/socks/stockings_blue
 	name = "Stockings - Blue"
 	icon_state = "stockings_blue"
@@ -114,13 +117,13 @@
 /datum/sprite_accessory/underwear/socks/stockings_orange
 	name = "Stockings - Orange"
 	icon_state = "stockings_orange"
-*/
+
 
 /datum/sprite_accessory/underwear/socks/stockings_programmer
 	name = "Stockings - Programmer"
 	icon_state = "stockings_lpink"
 
-/*
+
 /datum/sprite_accessory/underwear/socks/stockings_purple
 	name = "Stockings - Purple"
 	icon_state = "stockings_purple"
@@ -128,7 +131,7 @@
 /datum/sprite_accessory/underwear/socks/stockings_yellow
 	name = "Stockings - Yellow"
 	icon_state = "stockings_yellow"
-*/
+
 
 /datum/sprite_accessory/underwear/socks/socks_thigh
 	name = "Thigh-high"

@@ -101,19 +101,19 @@
 	name = "Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 5
+	cost = 4
 
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 5
+	cost = 4
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 4
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
@@ -130,9 +130,9 @@
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
 	path = /obj/item/clothing/suit/armor/utilityvest
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 4
-	restricted_desc = "NCR"
+/*	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
 							"NCR Medical Officer",
@@ -149,7 +149,7 @@
 							"NCR Off-Duty",
 							"NCR Ranger"
 						)
-
+*/
 
 
 /datum/gear/suit/fieldscribe
@@ -179,7 +179,7 @@
 	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis"
+	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
 							"Sheriff",
@@ -194,11 +194,11 @@
 							)
 
 /datum/gear/suit/deputyvest
-	name = "OPD armor vest"
+	name = "NPD armor vest"
 	path = /obj/item/clothing/suit/armor/medium/vest/oasis
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 4
-	restricted_desc = "Oasis Police, Oasis Officials"
+	restricted_desc = "Nash Police, Nash Officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",

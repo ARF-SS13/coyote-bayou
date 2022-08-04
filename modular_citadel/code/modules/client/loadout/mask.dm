@@ -110,6 +110,28 @@
 	path = /obj/item/clothing/mask/bandana/momentobandana
 	cost = 2
 
+/datum/gear/mask/bandana/outlaw
+	name = "outlaw bandana"
+	path = /obj/item/clothing/mask/bandana/legion/legdecan
+	cost = 2
+
+/datum/gear/mask/bandana/bandito 
+	name = "bandito bandana"
+	path = /obj/item/clothing/mask/bandana/legion/legvet
+	cost = 2
+
+/datum/gear/mask/bandana/thieves
+	name = "thieves bandana"
+	path = /obj/item/clothing/mask/bandana/legion/legrecruit
+	cost = 2
+
+/datum/gear/mask/bandana/desperado
+	name = "desperado bandana"
+	path = /obj/item/clothing/mask/bandana/legion/camp
+	cost = 2
+
+/// Misc
+
 /datum/gear/mask/moustache
 	name = "fake moustache"
 	path = /obj/item/clothing/mask/fakemoustache

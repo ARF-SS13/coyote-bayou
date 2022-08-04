@@ -200,6 +200,7 @@
 	desc = "We've saved money by giving you half a shirt!"
 	icon_state = "croptop"
 	body_parts_covered = CHEST|GROIN|ARMS
+	body_parts_hidden = CHEST
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
@@ -268,6 +269,7 @@
 	icon_state = "gear_harness"
 	item_state = "gear_harness"
 	body_parts_covered = CHEST|GROIN
+	body_parts_hidden = 0 // nudie~
 	can_adjust = FALSE
 
 /obj/item/clothing/under/misc/durathread
@@ -547,6 +549,11 @@
 	body_parts_covered = CHEST|GROIN
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+/obj/item/clothing/under/janimaid/Initialize()
+	. = ..()
+	var/obj/item/clothing/accessory/maidapron/A = new (src)
+	attach_accessory(A)
 
 /obj/item/clothing/under/suit_jacket/charcoal
 	name = "charcoal suit"

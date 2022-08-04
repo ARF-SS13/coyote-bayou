@@ -84,6 +84,8 @@
 	custom_materials = list(/datum/material/brass=12000)
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking."
 
+/obj/item/ingot/bone
+	custom_materials = list(/datum/material/bone=12000)
 
 /obj/item/smithing/attackby(obj/item/I, mob/user)
 	if(istype(I, finishingitem))
@@ -459,8 +461,9 @@
 /obj/item/smithing/spearhead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/finalforreal = new /obj/item/melee/smith/twohand/spear(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
 	..()
@@ -474,8 +477,9 @@
 /obj/item/smithing/lancehead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
 	..()
@@ -489,8 +493,9 @@
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -502,8 +507,9 @@
 /obj/item/smithing/warhonedhead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -516,8 +522,9 @@
 /obj/item/smithing/scrapblade/startfinish()
 	var/obj/item/melee/smith/twohand/axe/scrapblade/finalforreal = new /obj/item/melee/smith/twohand/axe/scrapblade(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -605,8 +612,9 @@
 /obj/item/smithing/katanablade/startfinish()
 	var/obj/item/melee/smith/twohand/katana/finalforreal = new /obj/item/melee/smith/twohand/katana(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 

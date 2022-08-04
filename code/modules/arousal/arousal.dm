@@ -228,3 +228,10 @@
 		return
 
 	mb_cd_timer = world.time + mb_cd_length
+
+/* /mob/living/carbon/human/verb/climax_verb()
+	set category = "IC"
+	set name = "Climax"
+	set desc = "Lets you choose a couple ways to ejaculate."
+	mob_climax()
+ */ // Just until the darn verb actually works =3

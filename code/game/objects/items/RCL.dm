@@ -25,8 +25,6 @@
 
 /obj/item/rcl/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	update_icon()
 
 /obj/item/rcl/ComponentInitialize()
@@ -35,11 +33,13 @@
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
-/obj/item/rcl/proc/on_wield(obj/item/source, mob/user)
+/obj/item/rcl/wield(mob/user)
+	. = ..()
 	active = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/rcl/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/rcl/unwield(mob/user)
+	. = ..()
 	active = FALSE
 
 /obj/item/rcl/attackby(obj/item/W, mob/user)

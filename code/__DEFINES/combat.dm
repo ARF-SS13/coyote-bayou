@@ -312,14 +312,14 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_DAMAGE_SHOTGUN_SLUG 50
 
 /// Bullet recoil defines
-#define BULLET_RECOIL_PISTOL_LIGHT 0.5
-#define BULLET_RECOIL_PISTOL_MEDIUM 1
-#define BULLET_RECOIL_PISTOL_HEAVY 1
-#define BULLET_RECOIL_RIFLE_LIGHT 1
-#define BULLET_RECOIL_RIFLE_MEDIUM 2
-#define BULLET_RECOIL_RIFLE_HEAVY 2
-#define BULLET_RECOIL_SHOTGUN_PELLET 2 // The total recoil of the shell, not individual pellets
-#define BULLET_RECOIL_SHOTGUN_SLUG 2
+#define BULLET_RECOIL_PISTOL_LIGHT 3
+#define BULLET_RECOIL_PISTOL_MEDIUM 3.5
+#define BULLET_RECOIL_PISTOL_HEAVY 4
+#define BULLET_RECOIL_RIFLE_LIGHT 4.5
+#define BULLET_RECOIL_RIFLE_MEDIUM 5.5
+#define BULLET_RECOIL_RIFLE_HEAVY 7
+#define BULLET_RECOIL_SHOTGUN_PELLET 40 // The total recoil of the shell, not individual pellets
+#define BULLET_RECOIL_SHOTGUN_SLUG 20
 
 /// Rubber bullet damage multiplier
 #define RUBBERY_DAMAGE_MULT 0.1
@@ -546,11 +546,11 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Gun fire delay modifiers
 #define GUN_BURSTFIRE_DELAY_FASTEST (GUN_BURSTFIRE_DELAY_BASE * 0.1)
-#define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 1)
-#define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 2)
-#define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 3)
-#define GUN_BURSTFIRE_DELAY_SLOW (GUN_BURSTFIRE_DELAY_BASE * 4)
-#define GUN_BURSTFIRE_DELAY_SLOWER (GUN_BURSTFIRE_DELAY_BASE * 5)
+#define GUN_BURSTFIRE_DELAY_FASTER (GUN_BURSTFIRE_DELAY_BASE * 0.5)
+#define GUN_BURSTFIRE_DELAY_FAST (GUN_BURSTFIRE_DELAY_BASE * 1)
+#define GUN_BURSTFIRE_DELAY_NORMAL (GUN_BURSTFIRE_DELAY_BASE * 2)
+#define GUN_BURSTFIRE_DELAY_SLOW (GUN_BURSTFIRE_DELAY_BASE * 3)
+#define GUN_BURSTFIRE_DELAY_SLOWER (GUN_BURSTFIRE_DELAY_BASE * 4)
 
 /// Time after you draw a gun that you're able to shoot it
 #define GUN_AIMING_TIME (1.5 SECONDS)
@@ -619,8 +619,42 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 #define GUN_COCK_INSTANT 0.1
 #define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
-#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
+#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.4)
 #define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)
 #define GUN_COCK_RIFLE_BASE (GUN_COCK_BASE)
 #define GUN_COCK_RIFLE_FAST (GUN_COCK_BASE * 0.75)
-#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.1)
+#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.5)
+
+#define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
+#define RECOIL_REDUCTION_TIME 1 SECOND
+
+#define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
+#define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
+#define SMG_RECOIL(x)          list(1   *x, 0.2*x, 1.2*x )
+#define CARBINE_RECOIL(x)      list(0.85*x, 0.3*x, 1.8*x )
+#define RIFLE_RECOIL(x)        list(0.7 *x, 0.4*x, 2.4*x )
+#define LMG_RECOIL(x)          list(0.55*x, 0.5*x, 3*x   )
+#define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
+
+//Quick defines for fire modes
+#define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
+#define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
+#define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
+#define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, autofire_shot_delay = 1, burst_size = 1, icon="auto")
+#define FULL_AUTO_800		list(mode_name = "fuller auto",  mode_desc = "800 rounds per minute",   automatic = 1, autofire_shot_delay = 0.8, burst_size = 1, icon="auto")
+#define FULL_AUTO_1000		list(mode_name = "fullerer auto",  mode_desc = "1000 rounds per minute",   automatic = 1, autofire_shot_delay = 0.6, burst_size = 1, icon="auto")
+#define FULL_AUTO_1200		list(mode_name = "ludicrous auto",  mode_desc = "1200 rounds per minute",   automatic = 1, autofire_shot_delay = 0.5, burst_size = 1, icon="auto")
+
+#define SEMI_AUTO_NODELAY	list(mode_name = "semiauto",  mode_desc = "Fire as fast as you can pull the trigger", automatic = 0, burst_size=1, icon="semi")
+
+//Cog firemode
+#define BURST_2_BEAM		list(mode_name="2-beam bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=2, fire_delay=null, icon="burst")
+
+#define BURST_2_ROUND		list(mode_name="2-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=2, fire_delay=null, icon="burst")
+#define BURST_3_ROUND		list(mode_name="3-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=3, fire_delay=null, icon="burst")
+#define BURST_3_ROUND_RAPID		list(mode_name=" High-delay Rapid 3-round bursts", mode_desc = "Short, fast bursts with a higher delay between bursts", automatic = 0, burst_size=3, fire_delay=15, icon="auto", burst_shot_delay = 0.9)
+#define BURST_5_ROUND		list(mode_name="5-round bursts", mode_desc = "Short, controlled bursts", automatic = 0, burst_size=5, fire_delay=null, icon="burst")
+#define BURST_8_ROUND		list(mode_name="8-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=8, fire_delay=null, icon="burst")
+#define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
+
+#define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")

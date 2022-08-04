@@ -40,7 +40,6 @@
 	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	w_class = WEIGHT_CLASS_BULKY
 	var/icon_prefix = null
-	var/wielded = FALSE
 
 /obj/item/melee/smith/twohand/Initialize()
 	. = ..()

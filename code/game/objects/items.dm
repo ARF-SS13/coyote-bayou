@@ -88,6 +88,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/mutantrace_variation = NONE //Are there special sprites for specific situations? Don't use this unless you need to.
 
 	var/body_parts_covered = 0 //see setup.dm for appropriate bit flags
+	/// The bodyparts *hidden* by the item, in case they should be different from what's covered. For things like open jackets and skimpy raider gear that should be a little bit revealing while still protective. Defaults to body_part_covered if not set
+	var/body_parts_hidden 
 	var/gas_transfer_coefficient = 1 // for leaking gas from turf to mask and vice-versa (for masks right now, but at some point, i'd like to include space helmets)
 	var/permeability_coefficient = 1 // for chemicals/diseases
 	var/siemens_coefficient = 1 // for electrical admittance/conductance (electrocution checks and shit)
@@ -162,6 +164,11 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	var/canMouseDown = FALSE
 
+	var/stiffness = 0 // How much recoil is caused by moving
+	var/obscuration = 0 // How much firearm accuracy is decreased
+
+	// HUD action buttons. Only used by guns atm.
+	var/list/hud_actions
 
 /obj/item/Initialize()
 
@@ -189,6 +196,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 
 	if(w_class <= WEIGHT_CLASS_NORMAL) //pulling small items doesn't slow you down much
 		drag_delay = 0.05 SECONDS
+	
+	if(isnull(body_parts_hidden))
+		body_parts_hidden = body_parts_covered
 
 /obj/item/Destroy()
 	item_flags &= ~DROPDEL	//prevent reqdels
@@ -450,12 +460,14 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	if(SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user) & COMPONENT_DROPPED_RELOCATION)
 		. = ITEM_RELOCATED_BY_DROPPED
 	user?.update_equipment_speed_mods()
+	remove_hud_actions(user)
 
 // called just as an item is picked up (loc is not yet changed)
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
 	item_flags |= IN_INVENTORY
+	add_hud_actions(user)
 
 // called when "found" in pockets and storage items. Returns 1 if the search should end.
 /obj/item/proc/on_found(mob/finder)
@@ -497,6 +509,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				A.Grant(user)
 	item_flags |= IN_INVENTORY
 	user.update_equipment_speed_mods()
+	if(user.get_active_held_item() != src && user.get_inactive_held_item() != src)
+		unwield(user)
 
 //Overlays for the worn overlay so you can overlay while you overlay
 //eg: ammo counters, primed grenade flashing, etc.
@@ -537,6 +551,32 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 //Checks before we get to here are: mob is alive, mob is not restrained, stunned, asleep, resting, laying, item is on the mob.
 /obj/item/proc/ui_action_click(mob/user, actiontype)
 	attack_self(user)
+
+/obj/item/proc/add_hud_actions(mob/user)
+	if(!hud_actions || !user.client)
+		return
+
+	update_hud_actions()
+
+	for(var/action in hud_actions)
+		user.client.screen |= action
+
+/obj/item/proc/remove_hud_actions(mob/user)
+	if(!user)
+		return
+	if(!hud_actions || !user.client)
+		return
+
+	for(var/action in hud_actions)
+		user.client.screen -= action
+
+/obj/item/proc/update_hud_actions()
+	if(!hud_actions)
+		return
+
+	for(var/A in hud_actions)
+		var/obj/item/action = A
+		action.update_icon()
 
 /obj/item/proc/eyestab(mob/living/carbon/M, mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -1125,3 +1165,5 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.visible_message("<span class='danger'>[user] grabs \a [T]!</span>")
 	user.SetThrowDelay(6)
 	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)
+
+	

@@ -579,6 +579,7 @@
 				"<span class='notice'>You insert the power cell.</span>")
 			chargecount = 0
 			update_icon()
+			return
 	else if (W.GetID())
 		togglelock(user)
 	else if (istype(W, /obj/item/stack/cable_coil) && opened)
@@ -1304,21 +1305,23 @@
 
 	var/cur_excess = excess
 	var/cur_used = lastused_total
-
+	/*
 	// first: if we have enough power, power the essentials DIRECTLY
+	// This shit doesn't work. It just makes power states flicker.
+	// Especially lights!
 
 	var/environ_satisfied = FALSE
 	var/equipment_satisfied = FALSE
 	var/lighting_satisfied = FALSE
-
-	if(cur_excess >= lastused_environ)
+	
+	if(cur_excess >= lastused_environ && environ != 0)
 		autoset(environ, 1)
 		add_load(lastused_environ)
 		cur_excess -= lastused_environ
 		cur_used -= lastused_environ
 		environ_satisfied = TRUE
 
-	if(cur_excess >= lastused_equip)
+	if(cur_excess >= lastused_equip && equipment !=0)
 		autoset(equipment, 1)
 		add_load(lastused_equip)
 		cur_excess -= lastused_equip
@@ -1331,6 +1334,7 @@
 		cur_excess -= lastused_light
 		cur_used -= lastused_light
 		lighting_satisfied = TRUE
+	*/
 
 	//If drained by an integration cog: Forcefully avert as much of the powerdrain as possible, though a maximum of MAXIMUM_COG_REGAIN
 	if(cur_excess && cog_drained && cell)
@@ -1373,7 +1377,6 @@
 			lighting = autoset(lighting, 0)
 			environ = autoset(environ, 0)
 			area.poweralert(0, src)
-
 		else if(cell_percent < 15 && longtermpower < 0)	// <15%, turn off lighting & equipment
 			equipment = autoset(equipment, 2)
 			lighting = autoset(lighting, 2)
@@ -1398,12 +1401,12 @@
 			cell.charge = cell.maxcharge
 			charging = APC_FULLY_CHARGED
 
-	else // no cell, can still run but not very well
+	else // no cell, NO POWER. See line 1309
 		charging = APC_NOT_CHARGING
 		chargecount = 0
-		environ = autoset(environ, environ_satisfied)
-		equipment = autoset(equipment, equipment_satisfied)
-		lighting = autoset(lighting, lighting_satisfied)
+		environ = autoset(environ, 0)
+		equipment = autoset(equipment, 0)
+		lighting = autoset(lighting, 0)
 
 	// update icon & area power if anything changed
 

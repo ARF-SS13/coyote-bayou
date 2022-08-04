@@ -7,7 +7,7 @@
 	display_typing_indicator()
 	var/message = input(usr, "", "say") as text|null
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
 	if(!length(message))
 		return
 	return say_verb(message)
@@ -17,10 +17,10 @@
 	set category = "IC"
 	if(!length(message))
 		return
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+	if(GLOB.say_disabled)
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
 	say(message)
 
 /mob/verb/me_typing_indicator()
@@ -28,19 +28,22 @@
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = input(usr, "", "me") as message|null
+	var/message = stripped_multiline_input_or_reflect(usr, "", "me")
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
+	if(GLOB.say_disabled)
+		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		return
 	if(!length(message))
 		return
-	return me_verb(message)
+	usr.emote("me",1,message,TRUE)
 
 /mob/verb/me_verb(message as message)
 	set name = "me"
 	set category = "IC"
 	if(!length(message))
 		return
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
+	if(GLOB.say_disabled)
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	

@@ -46,12 +46,6 @@
 	range = 4
 	log_override = TRUE
 
-/obj/item/gun/energy/kinetic_accelerator/getinaccuracy(mob/living/user, bonus_spread, stamloss)
-	var/old_fire_delay = fire_delay //It's pretty irrelevant tbh but whatever.
-	fire_delay = overheat_time
-	. = ..()
-	fire_delay = old_fire_delay
-
 /obj/item/gun/energy/kinetic_accelerator/examine(mob/user)
 	. = ..()
 	if(max_mod_capacity)

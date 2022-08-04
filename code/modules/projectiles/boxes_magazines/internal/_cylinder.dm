@@ -1,8 +1,9 @@
 /obj/item/ammo_box/magazine/internal/cylinder
 	name = "revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = "357"
+	caliber = list(CALIBER_357, CALIBER_38)
 	max_ammo = 7
+	replace_spent_rounds = 1
 
 /obj/item/ammo_box/magazine/internal/cylinder/ammo_count(countempties = 1)
 	var/boolets = 0
@@ -30,7 +31,7 @@
 	for(var/i in 1 to rand(0, max_ammo*2))
 		rotate()
 
-/obj/item/ammo_box/magazine/internal/cylinder/give_round(obj/item/ammo_casing/R, replace_spent = 0)
+/* /obj/item/ammo_box/magazine/internal/cylinder/give_round(obj/item/ammo_casing/R, replace_spent = 0)
 	if(!R || (caliber && R.caliber != caliber) || (!caliber && R.type != ammo_type))
 		return FALSE
 
@@ -45,4 +46,4 @@
 			return TRUE
 
 	return FALSE
-
+ */

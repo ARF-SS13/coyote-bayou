@@ -4,8 +4,16 @@
 	icon_state = "pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	var/spawnwithmagazine = TRUE
-	var/mag_type = /obj/item/ammo_box/magazine/m10mm_adv //Removes the need for max_ammo and caliber info
+	var/mag_type = /obj/item/ammo_box/magazine/m10mm/adv //Removes the need for max_ammo and caliber 
 	var/init_mag_type = null
+	var/list/extra_mag_types = list()
+	/// List of mags accepted by the gun
+	/// defaults to a typecache of mag_type
+	/// Dont set this, its handled by Init()
+	var/list/allowed_mags = list()
+	/// List of mags not accepted by the gun
+	var/list/disallowed_mags = list()
+	/// Loaded magazine
 	var/obj/item/ammo_box/magazine/magazine
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
@@ -13,14 +21,19 @@
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
-	if(!spawnwithmagazine)
-		update_icon()
-		return
-	if (!magazine)
-		if(init_mag_type)
-			magazine = new init_mag_type(src)
-		else
-			magazine = new mag_type(src)
+	if(spawnwithmagazine)
+		if (!magazine)
+			if(init_mag_type)
+				magazine = new init_mag_type(src)
+			else
+				magazine = new mag_type(src)
+	allowed_mags |= mag_type
+	allowed_mags |= typecacheof(mag_type)
+	if(length(extra_mag_types))
+		for(var/obj/item/ammo_box/ammo_type in extra_mag_types)
+			extra_mag_types |= typecacheof(ammo_type)
+	if(length(disallowed_mags))
+		allowed_mags -= disallowed_mags
 	chamber_round()
 	update_icon()
 
@@ -56,37 +69,50 @@
 
 /obj/item/gun/ballistic/attackby(obj/item/A, mob/user, params)
 	..()
-	if(istype(src.magazine,/obj/item/ammo_box/magazine/internal))
-		if(.)
-			return
-		var/num_loaded = magazine.attackby(A, user, params, 1)
-		if(num_loaded)
-			to_chat(user, "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>")
-			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
-			A.update_icon()
+	if(istype(A, /obj/item/stack/crafting/metalparts))
+		if(istype(magazine))
+			magazine.attackby(A, user)
+
+	if(istype(A, /obj/item/ammo_casing))
+		if(istype(magazine))
+			if(magazine.caliber_change_step == MAGAZINE_CALIBER_CHANGE_STEP_3)
+				magazine.attackby(A, user)
+				return TRUE
+			if(magazine.fixed_mag) // fixed mag, just load bullets in
+				magazine.load_from_casing(A, user, FALSE)
+				update_icon()
+				chamber_round(0)
+				return TRUE
+
+	if(istype(A, /obj/item/ammo_box))
+		var/obj/item/ammo_box/new_mag = A
+		if(magazine?.fixed_mag) // fixed mag, just load bullets in
+			magazine.load_from_box(A, user, FALSE)
 			update_icon()
 			chamber_round(0)
-	else if(istype(A, /obj/item/ammo_box/magazine))
-		var/obj/item/ammo_box/magazine/AM = A
-		if (!magazine && istype(AM, mag_type))
-			if(user.transferItemToLoc(AM, src))
-				magazine = AM
-				to_chat(user, "<span class='notice'>You load a new magazine into \the [src].</span>")
-				if(magazine.ammo_count())
-					playsound(src, "gun_insert_full_magazine", 70, 1)
-					if(!chambered)
-						chamber_round()
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
-				else
-					playsound(src, "gun_insert_empty_magazine", 70, 1)
-				A.update_icon()
-				update_icon()
-				return 1
-			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
-				return
-		else if (magazine)
-			to_chat(user, "<span class='notice'>There's already a magazine in \the [src].</span>")
+			return TRUE
+		// removable mag, eject the mag
+		if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
+			return FALSE
+		if(istype(magazine))
+			attack_self(user) //stop ejecting perfectly good shells!
+		if(user.transferItemToLoc(new_mag, src))
+			magazine = new_mag
+			to_chat(user, span_notice("You load a new magazine into \the [src]."))
+		else
+			to_chat(user, span_warning("You cannot seem to get \the [new_mag] out of your hands!"))
+			return FALSE
+		if(magazine.ammo_count())
+			playsound(src, "gun_insert_full_magazine", 70, 1)
+			if(!chambered)
+				chamber_round()
+				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, 'sound/weapons/gun_chamber_round.ogg', 100, 1), 3)
+		else
+			playsound(src, "gun_insert_empty_magazine", 70, 1)
+		new_mag.update_icon()
+		update_icon()
+		return TRUE
+
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
 		if(!can_suppress)
@@ -103,7 +129,57 @@
 			install_suppressor(A)
 			update_overlays()
 			return
-	return 0
+	return FALSE
+
+/obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(magazine)
+		magazine.screwdriver_act(user, I)
+		return
+
+/obj/item/gun/ballistic/welder_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(magazine)
+		magazine.welder_act(user, I)
+		return
+
+
+/obj/item/gun/ballistic/proc/is_magazine_allowed(obj/item/ammo_box/mag_to_check, mob/user)
+	. = FALSE
+	if(!istype(mag_to_check))
+		if(user)
+			to_chat(user, span_phobia("Whatever you tried to stuff into \the [src] wasn't a thing! This is a bug~"))
+		return FALSE
+	if(mag_to_check.type in allowed_mags)
+		return TRUE
+	if(user)
+		to_chat(user, span_alert("You can't seem to fit \the [mag_to_check] into \the [src]."))
+
+/obj/item/gun/ballistic/proc/load_fixed_magazine(obj/item/casing_or_magazine, user, params)
+	if(istype(casing_or_magazine, /obj/item/ammo_casing) || istype(casing_or_magazine, /obj/item/ammo_box))
+		var/num_loaded = magazine.attackby(casing_or_magazine, user, params, 1)
+		if(num_loaded)
+			to_chat(user, span_notice("You load [num_loaded] shell\s into \the [src]!"))
+			playsound(user, 'sound/weapons/shotguninsert.ogg', 60, 1)
+			casing_or_magazine.update_icon()
+			update_icon()
+			chamber_round(0)
+			return TRUE
+		else
+			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
+			return FALSE
 
 /obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
 	// this proc assumes that the suppressor is already inside src
@@ -160,7 +236,9 @@
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
-	. += "It has [get_ammo()] round\s remaining."
+	if(istype(magazine) && magazine.fixed_mag && length(magazine.caliber))
+		. += "It accepts [span_notice(english_list(magazine.caliber))]"
+	. += "It has [span_notice("[get_ammo()]")] round\s remaining."
 
 /obj/item/gun/ballistic/proc/get_ammo(countchambered = 1)
 	var/boolets = 0 //mature var names for mature people
@@ -168,6 +246,14 @@
 		boolets++
 	if (magazine)
 		boolets += magazine.ammo_count()
+	return boolets
+
+/obj/item/gun/ballistic/proc/get_max_ammo(countchambered = 1)
+	var/boolets = 0 //mature var names for very mature people
+	if (chambered && countchambered)
+		boolets++
+	if (magazine)
+		boolets += magazine.max_ammo
 	return boolets
 
 #define BRAINS_BLOWN_THROW_RANGE 3
@@ -223,17 +309,41 @@
 		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_multiplier = (recoil_multiplier + 1) * 2
-		recoil_cooldown_time *= 0.8
-		spread += 10
+		recoil_dat.modifyAllRatings(1.2)
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
-			gun_damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
+			damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
 		else
-			gun_damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
+			damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
 		update_icon()
 		return 1
+
+/obj/item/gun/ballistic/get_dud_projectile()
+	var/proj_type
+	if(chambered)
+		if(!chambered.BB)
+			return null
+		proj_type = chambered.BB.type
+	else if(magazine && get_ammo(0,0))
+		var/obj/item/ammo_casing/A = magazine.stored_ammo[1]
+		if(!A)
+			return null
+		if(!A.BB)
+			return null
+		proj_type = A.BB.type
+	if(!proj_type)
+		return null
+	return new proj_type
+
+/obj/item/gun/ballistic/ui_data(mob/user)
+	var/list/data = ..()
+	if(istype(magazine) && length(magazine.caliber))
+		data["caliber"] = english_list(magazine.caliber)
+	data["current_ammo"] = get_ammo()
+	data["max_shells"] = get_max_ammo()
+
+	return data
 
 // Sawing guns related proc
 /obj/item/gun/ballistic/proc/blow_up(mob/user)

@@ -148,12 +148,12 @@
 /datum/gear/head/cowboy
 	name = "brahmin leather cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	cost = 3
+	cost = 5
 
 /datum/gear/head/cowboy_alt
 	name = "rusted cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
-	cost = 3
+	cost = 5
 
 /datum/gear/head/bountyhunter
 	name = "bounty hunter hat"
@@ -260,6 +260,21 @@
 /datum/gear/head/chinese/officer
 	name = "PLA officer's cap"
 	path = /obj/item/clothing/head/f13/chinese/officer
+	cost = 3
+
+/datum/gear/head/khan_horned
+	name = "horned helmet"
+	path = /obj/item/clothing/head/helmet/f13/khan
+	cost = 3
+
+/datum/gear/head/khan_furtrimmed
+	name = "horned fur-trimmed helmet"
+	path = /obj/item/clothing/head/helmet/f13/khan/pelt
+	cost = 3
+
+/datum/gear/head/khan_bandana
+	name = "outlaw bandana"
+	path = /obj/item/clothing/head/helmet/f13/khan/bandana
 	cost = 3
 
 //NCR
@@ -405,28 +420,12 @@ datum/gear/head/steelpot_bandolier
 							"NCR Heavy Trooper"
 						)
 
-/datum/gear/head/khan_bandana
-	name = "Great Khan bandana"
-	path = /obj/item/clothing/head/helmet/f13/khan/bandana
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
-	cost = 2
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
-
-/datum/gear/head/khan_furtrimmed
-	name = "Great Khan fur-trimmed helmet"
-	path = /obj/item/clothing/head/helmet/f13/khan/pelt
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
-	cost = 2
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
-
 /datum/gear/head/oasishelmet
 	name = "light security helmet"
 	path = /obj/item/clothing/head/helmet/blueshirt
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_FACTIONS
 	cost = 3
-	restricted_desc = "Oasis PD, Oasis officials"
+	restricted_desc = "Nash PD, Nash officials"
 	restricted_roles = list("Chief of Police",
 							"Officer",
 							"Mayor",

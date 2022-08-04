@@ -3,7 +3,7 @@
 	name = "7.62 FMJ bullet casing"
 	desc = "A 7.62 FMJ bullet casing."
 	icon_state = "762-casing"
-	caliber = "a762"
+	caliber = CALIBER_762
 	projectile_type = /obj/item/projectile/bullet/a762
 
 /obj/item/ammo_casing/a762/sport
@@ -32,7 +32,7 @@
 /obj/item/ammo_casing/a556
 	name = "5.56mm FMJ bullet casing"
 	desc = "A 5.56mm bullet casing."
-	caliber = "a556"
+	caliber = CALIBER_556
 	projectile_type = /obj/item/projectile/bullet/a556
 
 /obj/item/ammo_casing/a556/rubber
@@ -62,7 +62,7 @@
 /obj/item/ammo_casing/m5mm
 	name = "5mm FMJ bullet casing"
 	desc = "A 5mm bullet casing."
-	caliber = "m5mm"
+	caliber = CALIBER_5MM
 	projectile_type = /obj/item/projectile/bullet/m5mm
 
 
@@ -75,7 +75,7 @@
 /obj/item/ammo_casing/a40mm
 	name = "40mm HE shell"
 	desc = "A cased high explosive grenade that can only be activated once fired out of a grenade launcher."
-	caliber = "40mm"
+	caliber = CALIBER_40MM
 	icon_state = "40mmHE"
 	projectile_type = /obj/item/projectile/bullet/a40mm
 
@@ -83,11 +83,10 @@
 /obj/item/ammo_casing/c2mm
 	name = "2mm gauss projectile casing"
 	desc = "A 2mm gauss projectile casing."
-	caliber = "2mm"
+	caliber = CALIBER_2MM
 	projectile_type = /obj/item/projectile/bullet/c2mm
 
 /obj/item/ammo_casing/c2mm/blender
 	name = "2mm gauss blender projectile casing"
 	desc = "A 2mm gauss projectile casing, \"Blender\" variant. Bounces off walls at hypersonic speeds."
-	caliber = "2mm"
 	projectile_type = /obj/item/projectile/bullet/c2mm/blender

@@ -81,11 +81,15 @@ Elder
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 
 /datum/outfit/job/bos/f13elder
@@ -148,11 +152,15 @@ Head Paladin
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_LIFEGIVER, src)
 	ADD_TRAIT(H, TRAIT_IRONFIST, src)
@@ -175,7 +183,7 @@ Head Paladin
 		/obj/item/melee/onehanded/knife/hunting = 1,
 		/obj/item/melee/powerfist/f13 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/n99/crusader = 1,
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 3,
 		)
 
@@ -254,11 +262,15 @@ Head Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -332,11 +344,15 @@ Head Knight
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightplasmapistol)
@@ -635,11 +651,15 @@ Senior Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST, src)
@@ -729,11 +749,15 @@ Scribe
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
@@ -828,7 +852,7 @@ Senior Knight
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/attachments/scope = 1,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/sknightb
@@ -937,7 +961,7 @@ Knight
 		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/knightb
@@ -966,7 +990,7 @@ Knight
 		/obj/item/gun/energy/laser/aer9=1,
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		)
 
 /datum/outfit/loadout/knighte

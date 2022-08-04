@@ -26,12 +26,12 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 160
-	health = 160
+	maxHealth = 128
+	health = 128
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 8
+	melee_damage_upper = 25
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -71,12 +71,12 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 140
-	health = 140
+	maxHealth = 112
+	health = 112
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 10
+	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -123,8 +123,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 700
-	health = 700
+	maxHealth = 560
+	health = 560
 	ranged = 1
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -200,11 +200,11 @@
 	icon_dead = "radscorpion_dead"
 
 	speed = 1.25
-	maxHealth = 150
-	health = 150
+	maxHealth = 120
+	health = 120
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 35
+	melee_damage_lower = 15
 	melee_damage_upper = 35
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -276,8 +276,8 @@
 	icon_dead = "radscorpion_blue_d"
 	icon_gib = "radscorpion_blue_gib"
 	speed = 1.35
-	maxHealth = 140
-	health = 140
+	maxHealth = 110
+	health = 110
 	move_to_delay = 4
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -309,11 +309,11 @@
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = -0.5
-	maxHealth = 40
-	health = 40
+	maxHealth = 32
+	health = 32
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
+	melee_damage_lower = 10
 	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
@@ -350,8 +350,8 @@
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -392,8 +392,8 @@
 	icon_gib = null
 
 	speed = -1
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5

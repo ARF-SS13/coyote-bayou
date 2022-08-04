@@ -27,6 +27,40 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/wonderglue
+	name = "Animal Glue"
+	time = 60
+	always_available = TRUE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/bone = 3,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/sheet/sinew = 3)
+	result = /obj/item/crafting/wonderglue
+	category = CAT_PRIMAL
+
+/datum/crafting_recipe/food/pemmican
+	name = "Pemmican"
+	always_available = FALSE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meatball = 15,
+		/datum/reagent/consumable/eggyolk = 25,
+		/obj/item/reagent_containers/food/snacks/grown/yucca = 5,
+		/obj/item/reagent_containers/food/snacks/grown/pinyon = 5
+	)
+	result = /obj/item/reagent_containers/food/snacks/pemmican
+	category = CAT_TRIBAL
+
+/datum/crafting_recipe/duct_tape
+	name = "Bonfire"
+	time = 60
+	always_available = TRUE
+	tools = list(TOOL_WORKBENCH)
+	reqs = list(/obj/item/stack/sheet/durathread = 4,
+				/obj/item/crafting/wonderglue = 1)
+	result = /obj/item/crafting/duct_tape
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/headpikelegion
 	name = "Spike Head (Throwing Spear)"
 	time = 65
@@ -360,7 +394,7 @@
 
 /datum/crafting_recipe/tribalwar/tribe_quiver
 	name = "Craft Quiver and Arrows"
-	result = /obj/item/storage/belt/tribe_quiver
+	result = /obj/item/storage/bag/tribe_quiver
 	time = 80
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 8,
 				/obj/item/stack/sheet/metal = 4,

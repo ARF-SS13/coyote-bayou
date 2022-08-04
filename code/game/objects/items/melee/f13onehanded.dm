@@ -841,6 +841,15 @@ obj/item/melee/unarmed/punchdagger/cyborg
 // TOOLS //
 ///////////		-generally max 24 damage
 
+//Tribal Butcher's Knife
+/obj/item/kitchen/knife/butcher/tribal
+	name = "Carving Knife"
+	desc = "A simple, hand-fashioned carving knife meant for separating meat from bone. Hardly more than some sharpened, rusty metal stuck between a tied wooden handle."
+	icon_state = "knife_butcher_primal"
+	force = 13
+	throwforce = 7
+	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT*3, /datum/material/wood=MINERAL_MATERIAL_AMOUNT*2)
+	custom_price = PRICE_ALMOST_CHEAP
 
 // Frying pan
 /obj/item/melee/onehanded/club/fryingpan

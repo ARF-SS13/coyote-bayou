@@ -189,9 +189,6 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/vegetable
 	subcategory = CAT_SOUP
 
-
-
-
 /datum/crafting_recipe/food/peasoup
 	name = "Pea soup"
 	reqs = list(
@@ -279,3 +276,36 @@
 	result = /obj/item/reagent_containers/food/snacks/soup/coldchili
 	subcategory = CAT_SOUP
 
+/datum/crafting_recipe/food/cornmeal_porridge
+	name = "Cornmeal porridge"
+	reqs = list(
+		/datum/reagent/water = 10,
+		/obj/item/reagent_containers/food/snacks/grown/corn = 3,
+		/obj/item/reagent_containers/glass/bowl = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
+	subcategory = CAT_SOUP
+
+/datum/crafting_recipe/food/cheesy_porridge
+	name = "Cheesy porridge"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge = 1,
+		/datum/reagent/consumable/milk = 5,
+		/obj/item/reagent_containers/food/snacks/firm_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/curd_cheese = 1,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/cheesy_porridge
+	subcategory = CAT_SOUP
+
+/datum/crafting_recipe/food/fried_eggplant_polenta
+	name = "Fried eggplant and polenta"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/soup/cheesy_porridge = 1,
+		/obj/item/reagent_containers/food/snacks/grown/eggplant = 1,
+		/obj/item/reagent_containers/food/snacks/breadslice/custom = 2,
+		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1,
+		/obj/item/reagent_containers/food/snacks/mozzarella = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
+	subcategory = CAT_SOUP

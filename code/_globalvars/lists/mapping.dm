@@ -55,3 +55,6 @@ GLOBAL_LIST_EMPTY(stationroom_landmarks) //List of all spawns for stationrooms
 GLOBAL_LIST_EMPTY(random_zlevels_generated)
 GLOBAL_LIST_INIT(potential_away_levels, generateMapList(filename = "[global.config.directory]/awaymissionconfig.txt"))
 GLOBAL_LIST_INIT(potential_vr_levels, generateMapList(filename = "[global.config.directory]/vr_config.txt"))
+
+//Typepaths of outdoor areas.
+GLOBAL_LIST_INIT(outdoor_areas, list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins))

@@ -18,9 +18,15 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
 	integrity_failure = 0.35
+	dir = EAST
 	var/buildstacktype = /obj/item/stack/sheet/metal
 	var/buildstackamount = 2
 	var/bolts = TRUE
+	var/use_directionals = FALSE
+
+/obj/structure/bed/Initialize()
+	. = ..()
+	UpdateDir()
 
 /obj/structure/bed/examine(mob/user)
 	. = ..()
@@ -42,6 +48,29 @@
 		deconstruct(TRUE)
 	else
 		return ..()
+
+/obj/structure/bed/proc/UpdateDir()
+	if(use_directionals)
+		switch(dir)
+			if(NORTH,SOUTH)
+				buckle_lying = FALSE
+			else
+				buckle_lying = TRUE
+
+// double beds
+
+/obj/structure/bed/double
+	name = "double bed"
+	icon_state = "doublebed"
+	var/base_icon = "doublebed"
+
+/obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
+	if(M.buckled == src)
+		M.pixel_y = 13
+		M.old_y = 13
+	else
+		M.pixel_y = 0
+		M.old_y = 0
 
 /*
  * Wooden beds and old beds - Use wood for low tech like Oasis and Legion. Old for ruins.
@@ -83,6 +112,7 @@
 	anchored = FALSE
 	resistance_flags = NONE
 	var/foldabletype = /obj/item/roller
+	use_directionals = FALSE
 
 /obj/structure/bed/roller/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/roller/robo))

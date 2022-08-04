@@ -172,7 +172,12 @@ GLOBAL_LIST_INIT(barefootstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 100, 0)
+		'sound/effects/footstep/rustystep1.ogg'), 100, 0),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
 ))
 
 //claw footsteps lists
@@ -218,7 +223,13 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 100, 0)
+		'sound/effects/footstep/rustystep1.ogg'), 100, 0),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
+
 ))
 
 //heavy footsteps list

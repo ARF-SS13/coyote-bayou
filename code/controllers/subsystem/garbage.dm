@@ -53,6 +53,17 @@ SUBSYSTEM_DEF(garbage)
 /datum/controller/subsystem/garbage/PreInit()
 	InitQueues()
 
+// Holy shit this is hard to understand... uhhh... Basically:
+// Q: Queued deletions in each queue, seems to be 3 queues.
+// D: How many things we thanos snapped last tick.
+// G: How many things we garbage collected last tick.
+// GR: D and G added together then divided by G. Made into a percentage. bruh.. Like a shitty barebones delta time, but delta garbage.
+// TD: Is total deletions done.
+// TG: Is total garbage it's collected.
+// TGR: is basically the same fucking thing as GR, I think this is a ratio..?
+// P: Passed deletions
+// F: Failed deletions.
+
 /datum/controller/subsystem/garbage/stat_entry(msg)
 	var/list/counts = list()
 	for (var/list/L in queues)

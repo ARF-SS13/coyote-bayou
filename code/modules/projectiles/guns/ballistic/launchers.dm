@@ -6,8 +6,8 @@
 	name = "grenade rifle"
 	icon_state = "dshotgun-sawn"
 	item_state = "gun"
-	inaccuracy_modifier = 0.5
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -35,6 +35,7 @@
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
+	init_mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
 	fire_delay = 0
 	actions_types = list()
@@ -85,8 +86,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	slowdown = 1
-	fire_delay = 0
-	inaccuracy_modifier = 0.25
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"

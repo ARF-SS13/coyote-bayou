@@ -3,7 +3,7 @@
 	desc = "A rechargeable, detachable battery that serves as a magazine for laser rifles."
 	icon_state = "oldrifle-20"
 	ammo_type = /obj/item/ammo_casing/caseless/laser
-	caliber = "laser"
+	caliber = list(CALIBER_LASER)
 	max_ammo = 20
 
 /obj/item/ammo_box/magazine/recharge/update_icon()
@@ -20,7 +20,7 @@
 
 	icon = 'icons/obj/ammo.dmi'
 	icon_state = "mws_mag"
-	caliber = "mws"
+	caliber = list(CALIBER_MWS)
 	ammo_type = /obj/item/ammo_casing/mws_batt
 	start_empty = TRUE
 	max_ammo = 3
@@ -57,7 +57,7 @@
 	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 1
 
-	caliber = "mws"
+	caliber = list(CALIBER_MWS)
 	var/type_color = null
 	var/type_name = null
 

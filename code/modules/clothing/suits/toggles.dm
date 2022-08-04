@@ -102,6 +102,9 @@
 			qdel(src)
 
 //Toggle exosuits for different aesthetic styles (hoodies, suit jacket buttons, etc)
+/obj/item/clothing/suit/toggle
+	/// If the suit has different hidden parts when toggled, use these for what it hides
+	var/toggled_hidden_parts
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	. = ..()
@@ -122,11 +125,17 @@
 	to_chat(usr, "<span class='notice'>You toggle [src]'s [togglename].</span>")
 	if(src.suittoggled)
 		src.icon_state = "[initial(icon_state)]"
+		src.body_parts_hidden = initial(src.body_parts_hidden)
 		src.suittoggled = FALSE
 	else if(!src.suittoggled)
 		src.icon_state = "[initial(icon_state)]_t"
+		if(!isnull(toggled_hidden_parts))
+			src.body_parts_hidden = src.toggled_hidden_parts
 		src.suittoggled = TRUE
 	usr.update_inv_wear_suit()
+	if(ismob(src.loc))
+		var/mob/mob_carrying_this = src.loc
+		mob_carrying_this.update_body(TRUE) // update skimpiness
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()

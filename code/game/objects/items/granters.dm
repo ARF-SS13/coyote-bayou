@@ -141,7 +141,7 @@
 	desc = "A seminal work on the dying art of booze sliding."
 	icon_state = "barbook"
 	actionname = "drink flinging"
-	oneuse = FALSE
+	oneuse = TRUE
 	remarks = list("The trick is keeping a low center of gravity it seems...", "The viscosity of the liquid is important...", "Accounting for crosswinds... really?", "Drag coefficients of various popular drinking glasses...", "What the heck is laminar flow and why does it matter here?", "Greasing the bar seems like it'd be cheating...", "I don't think I'll be working with superfluids...")
 
 /datum/action/innate/drink_fling
@@ -858,11 +858,11 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/set_vrboard/den)
 
 /obj/item/book/granter/crafting_recipe/ODF
-	name = "Weapons of Yuma and the Oasis Defense Force"
+	name = "Weapons of Texarkana and the Nash Defense Force"
 	desc = "a book detailing weapons used in the region and by the local town, it has lithiographed pictures of hand-drawn schematics for each weapon type"
 	oneuse = TRUE
 	crafting_recipe_types = list(/datum/crafting_recipe/policepistol, /datum/crafting_recipe/durathread_vest, /datum/crafting_recipe/policerifle, /datum/crafting_recipe/steelbib/heavy, /datum/crafting_recipe/armyhelmetheavy, /datum/crafting_recipe/huntingshotgun)
-	remarks = list("Looks like Oasis hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
+	remarks = list("Looks like Nash hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
 
 
 /obj/item/book/granter/trait/tagger
@@ -885,11 +885,15 @@
 		/datum/crafting_recipe/turbo, 
 		/datum/crafting_recipe/psycho, 
 		/datum/crafting_recipe/medx, 
+		/datum/crafting_recipe/medx/chemistry, 
 		/datum/crafting_recipe/stimpak, 
+		/datum/crafting_recipe/stimpak/chemistry, 
 		/datum/crafting_recipe/stimpak5, 
+		/datum/crafting_recipe/stimpak5/chemistry, 
 		/datum/crafting_recipe/superstimpak, 
 		/datum/crafting_recipe/superstimpak5, 
-		/datum/crafting_recipe/buffout)
+		/datum/crafting_recipe/buffout,
+		/datum/crafting_recipe/steady)
 
 /obj/item/book/granter/trait/bigleagues
 	name = "Grognak the Barbarian"
@@ -1019,7 +1023,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout, /datum/crafting_recipe/steady)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	return ..()
 
@@ -1054,7 +1058,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout, /datum/crafting_recipe/steady)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 			if("Dean's Electronics")
 				granted_trait = TRAIT_TECHNOPHREAK
@@ -1134,6 +1138,61 @@
 		/datum/crafting_recipe/healpoultice, 
 		/datum/crafting_recipe/healpoultice5, 
 		/datum/crafting_recipe/warmace)
+
+/obj/item/book/granter/trait/tribaltraditions
+	name = "Tribal Traditions Booklet"
+	desc = "An instruction manual on your tribes garments!"
+	oneuse = TRUE
+	granted_trait = null
+	pages_to_mastery = 0
+	time_per_page = 0
+
+/obj/item/book/granter/trait/tribaltraditions/attack_self(mob/user)
+	var/list/choices = list("Dead Horses traditions","White Legs traditions","Rustwalkers traditions","Eighties traditions","Sorrows traditions","Wayfarer traditions","Bone Dancer traditions")
+	if(granted_trait == null)
+		var/choice = input("Choose a trait:") in choices
+		switch(choice)
+			if(null)
+				return 0
+			if("White Legs traditions")
+				traitname = "White Legs traditions"
+				granted_trait = TRAIT_WHITELEGS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb, /datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour)
+			if("Dead Horses traditions")
+				traitname = "Dead Horses traditions"
+				granted_trait = TRAIT_DEADHORSES_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour, /datum/crafting_recipe/tribalwar/deadhorses/garb,
+								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour)
+			if("Rustwalkers traditions")
+				traitname = "Rustwalkers traditions"
+				granted_trait = TRAIT_RUSTWALKERS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
+								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour)
+			if("Eighties traditions")
+				traitname = "Eighties traditions"
+				granted_trait = TRAIT_EIGHTIES_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour, /datum/crafting_recipe/tribalwar/eighties/garb,
+								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour)
+			if("Sorrows traditions")
+				traitname = "Sorrows traditions"
+				granted_trait = TRAIT_SORROWS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb, /datum/crafting_recipe/tribalwar/sorrows/femalegarb,
+								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet)
+			if("Wayfarer traditions")
+				traitname = "Wayfarer traditions"
+				granted_trait = TRAIT_WAYFARER_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
+			if("Bone Dancer traditions")
+				traitname = "Bone Dancer traditions"
+				granted_trait = TRAIT_BONEDANCER_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
+								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+		return ..()
+
+
+/obj/item/book/granter/trait/tribaltraditions/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/book/granter/crafting_recipe/tribal/whitelegs
 	name = "White Legs traditions"

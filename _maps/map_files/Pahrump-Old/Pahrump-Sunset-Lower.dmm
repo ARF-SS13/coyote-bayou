@@ -3966,7 +3966,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/item/ammo_box/magazine/m10mm_adv/simple,
+/obj/item/ammo_box/magazine/m10mm/adv/simple,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
 	},
@@ -24166,7 +24166,7 @@
 /obj/structure/sign/poster/prewar/vault_tec{
 	pixel_y = 30
 	},
-/obj/item/ammo_box/magazine/m10mm_adv/simple,
+/obj/item/ammo_box/magazine/m10mm/adv/simple,
 /turf/open/floor/carpet/vault,
 /area/f13/building)
 "omD" = (
@@ -38481,7 +38481,7 @@
 /area/f13/brotherhood/offices2nd)
 "xlL" = (
 /obj/structure/table/wood/fancy/black,
-/obj/item/construction/rcd/loaded,
+///obj/item/construction/rcd/loaded,
 /obj/item/construction/rld,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small,

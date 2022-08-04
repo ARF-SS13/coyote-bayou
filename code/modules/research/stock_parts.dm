@@ -199,14 +199,14 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 /obj/item/stock_parts/capacitor/adv
 	name = "capacitor"
 	desc = "A fairly modern design for a capacitor, it can take in and distribute power pretty quickly compared to a battery."
-	icon_state = "simple_capacitor"
+	icon_state = "basic_capacitor"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=50)
 
 /obj/item/stock_parts/scanning_module/adv
 	name = "small antenna"
 	desc = "Useful for scanning and analyzing signals. Comes with a built in miniature light sensor, too!"
-	icon_state = "adv_scan_module"
+	icon_state = "small_antenna"
 	rating = 2
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 

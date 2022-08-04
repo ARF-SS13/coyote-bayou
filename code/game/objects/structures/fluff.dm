@@ -251,3 +251,19 @@
 
 /obj/structure/fluff/beach_umbrella/syndi
 	icon_state = "syndi_brella"
+
+/obj/structure/fluff/hedge
+	name = "hedge"
+	desc = "A large bushy hedge."
+	icon = 'icons/obj/smooth_structures/hedge.dmi'
+	icon_state = "hedge-0"
+	density = TRUE
+	anchored = TRUE
+	deconstructible = FALSE
+	max_integrity = 80
+
+/**
+ * useful for mazes and such
+ */
+/obj/structure/fluff/hedge/opaque
+	opacity = TRUE

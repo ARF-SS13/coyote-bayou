@@ -153,7 +153,7 @@
 	suit_store = /obj/item/gun/ballistic/automatic/lsw
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 3,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
 		)
 
@@ -362,11 +362,15 @@
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
 	ADD_TRAIT(H, TRAIT_CYBERNETICIST_EXPERT, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)

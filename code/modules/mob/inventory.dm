@@ -324,6 +324,8 @@
 		I.layer = initial(I.layer)
 		I.plane = initial(I.plane)
 		I.appearance_flags &= ~NO_CLIENT_COLOR
+		if(I.wielded)
+			I.unwield(src)
 		if(!no_move && !(I.item_flags & DROPDEL))	//item may be moved/qdel'd immedietely, don't bother moving it
 			if (isnull(newloc))
 				I.moveToNullspace()
