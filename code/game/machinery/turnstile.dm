@@ -43,7 +43,7 @@
 			if(B in behind.contents)
 				allowed_access = allowed_access(B)
 			else
-				to_chat(usr, "<span class='notice'>\the [src] resists your efforts.</span>")
+				to_chat(usr, span_notice("\the [src] resists your efforts."))
 				return FALSE
 
 			if(allowed_access)
@@ -79,7 +79,7 @@
 		var/canexit = (target == src.loc) | (target == outturf)
 
 		if(!canexit && world.time - M.last_bumped <= 5)
-			to_chat(usr, "<span class='notice'>\the [src] resists your efforts.</span>")
+			to_chat(usr, span_notice("\the [src] resists your efforts."))
 		M.last_bumped = world.time
 		return canexit
 	else

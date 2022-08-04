@@ -16,11 +16,11 @@
 
 /datum/antagonist/heretic_monster/greet()
 	owner.current.playsound_local(get_turf(owner.current), 'sound/ambience/antag/ecult_op.ogg', 100, FALSE, pressure_affected = FALSE)//subject to change
-	to_chat(owner, "<span class='boldannounce'>You became an Eldritch Horror!</span>")
+	to_chat(owner, span_boldannounce("You became an Eldritch Horror!"))
 
 /datum/antagonist/heretic_monster/on_removal()
 	if(owner)
-		to_chat(owner, "<span class='boldannounce'>Your master is no longer [master.owner.current.real_name]</span>")
+		to_chat(owner, span_boldannounce("Your master is no longer [master.owner.current.real_name]"))
 		owner = null
 	return ..()
 
@@ -31,7 +31,7 @@
 	master_obj.explanation_text = "Assist your master in any way you can!"
 	objectives += master_obj
 	owner.announce_objectives()
-	to_chat(owner, "<span class='boldannounce'>Your master is [master.owner.current.real_name]</span>")
+	to_chat(owner, span_boldannounce("Your master is [master.owner.current.real_name]"))
 	return
 
 /datum/antagonist/heretic_monster/apply_innate_effects(mob/living/mob_override)

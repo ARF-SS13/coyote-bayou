@@ -42,5 +42,5 @@
 	if(affecting)
 		if(affecting.receive_damage(0, force))
 			C.update_damage_overlays()
-	to_chat(C, "<span class='userdanger'>The thorns pierce your bare hand!</span>")
+	to_chat(C, span_userdanger("The thorns pierce your bare hand!"))
 	return TRUE

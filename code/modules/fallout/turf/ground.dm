@@ -28,10 +28,10 @@
 		var/obj/item/stack/tile/plasteel/S = C
 		if(S.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			ChangeTurf(/turf/open/floor/plating)
 		else
-			to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
+			to_chat(user, span_warning("You need one floor tile to build a floor!"))
 		return
 	if(istype(C,/obj/item/stack/tile/wood))
 		var/obj/item/stack/tile/wood/S = C
@@ -386,7 +386,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, "<span class='warning'>You get drenched in water!</span>")
+			to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 	..()
 
@@ -397,7 +397,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, span_warning("You climb out of \the [src]."))
 	..()
 
 /turf/open/indestructible/ground/outside/water/update_icon()

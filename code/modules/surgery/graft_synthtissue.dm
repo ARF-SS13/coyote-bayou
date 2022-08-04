@@ -32,7 +32,7 @@
 	if(implement_type in implements)
 		var/list/organs = target.getorganszone(target_zone)
 		if(!organs.len)
-			to_chat(user, "<span class='notice'>There are no targetable organs in [target]'s [parse_zone(target_zone)]!</span>")
+			to_chat(user, span_notice("There are no targetable organs in [target]'s [parse_zone(target_zone)]!"))
 			return -1
 		else
 			for(var/obj/item/organ/O in organs)
@@ -44,15 +44,15 @@
 			if(!chosen_organ)
 				return -1
 			if(!target.reagents.has_reagent(/datum/reagent/synthtissue))
-				to_chat(user, "<span class='notice'>There's no synthtissue available for use on [chosen_organ]</span>")
+				to_chat(user, span_notice("There's no synthtissue available for use on [chosen_organ]"))
 				return -1
 			var/datum/reagent/synthtissue/Sf = locate(/datum/reagent/synthtissue) in target.reagents.reagent_list
 			if(Sf.volume < 10)
-				to_chat(user, "<span class='notice'>There's not enough synthtissue to perform the operation! There needs to be at least 10u.</span>")
+				to_chat(user, span_notice("There's not enough synthtissue to perform the operation! There needs to be at least 10u."))
 				return -1
 
 			if((chosen_organ.organ_flags & ORGAN_FAILING) && !(Sf.volume>= 80))
-				to_chat(user, "<span class='notice'>[chosen_organ] is too damaged to graft onto!</span>")
+				to_chat(user, span_notice("[chosen_organ] is too damaged to graft onto!"))
 				return -1
 
 			if(health_restored != 10)
@@ -63,11 +63,11 @@
 	target.reagents.remove_reagent(/datum/reagent/synthtissue, 10)
 
 /datum/surgery_step/graft_synthtissue/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("[user] successfully grafts synthtissue to [chosen_organ].", "<span class='notice'>You succeed in grafting 10u of the synthflesh to the [chosen_organ].</span>")
+	user.visible_message("[user] successfully grafts synthtissue to [chosen_organ].", span_notice("You succeed in grafting 10u of the synthflesh to the [chosen_organ]."))
 	chosen_organ.applyOrganDamage(-health_restored)
 	return TRUE
 
 /datum/surgery_step/graft_synthtissue/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	user.visible_message("<span class='warning'>[user] accidentally damages part of [chosen_organ]!</span>", "<span class='warning'>You damage [chosen_organ]! Apply more synthtissue if it's run out.</span>")
+	user.visible_message(span_warning("[user] accidentally damages part of [chosen_organ]!"), span_warning("You damage [chosen_organ]! Apply more synthtissue if it's run out."))
 	chosen_organ.applyOrganDamage(10)
 	return FALSE

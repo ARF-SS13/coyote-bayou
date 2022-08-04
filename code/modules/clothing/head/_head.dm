@@ -42,19 +42,19 @@
 		var/mob/living/carbon/H = hit_atom
 		if(istype(H.head, /obj/item))
 			var/obj/item/WH = H.head
-			H.visible_message("<span class='warning'>[src] bounces off [H]'s [WH.name]!", "<span class='warning'>[src] bounces off your [WH.name], falling to the floor.</span>")
+			H.visible_message("<span class='warning'>[src] bounces off [H]'s [WH.name]!", span_warning("[src] bounces off your [WH.name], falling to the floor."))
 			return
 		if(H.equip_to_slot_if_possible(src, SLOT_HEAD, FALSE, TRUE))
-			H.visible_message("<span class='notice'>[src] lands neatly on [H]'s head!", "<span class='notice'>[src] lands perfectly onto your head!</span>")
+			H.visible_message("<span class='notice'>[src] lands neatly on [H]'s head!", span_notice("[src] lands perfectly onto your head!"))
 		return
 	if(iscyborg(hit_atom))
 		var/mob/living/silicon/robot/R = hit_atom
 		///hats in the borg's blacklist bounce off
 		if(!is_type_in_typecache(src, R.equippable_hats) || R.hat_offset == INFINITY)
-			R.visible_message("<span class='warning'>[src] bounces off [R]!", "<span class='warning'>[src] bounces off you, falling to the floor.</span>")
+			R.visible_message("<span class='warning'>[src] bounces off [R]!", span_warning("[src] bounces off you, falling to the floor."))
 			return
 		else
-			R.visible_message("<span class='notice'>[src] lands neatly on top of [R].", "<span class='notice'>[src] lands perfectly on top of you.</span>")
+			R.visible_message("<span class='notice'>[src] lands neatly on top of [R].", span_notice("[src] lands perfectly on top of you."))
 			R.place_on_head(src) //hats aren't designed to snugly fit borg heads or w/e so they'll always manage to knock eachother off
 
 
@@ -117,11 +117,11 @@
 		var/obj/item/clothing/armoraccessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		if(dummy_thick)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] is too bulky and cannot have accessories attached to it!</span>")
+				to_chat(user, span_warning("[src] is too bulky and cannot have accessories attached to it!"))
 			return
 
 		else
@@ -131,7 +131,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+				to_chat(user, span_notice("You attach [I] to [src]."))
 
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
@@ -157,9 +157,9 @@
 		var/obj/item/clothing/armoraccessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

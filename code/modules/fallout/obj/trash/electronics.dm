@@ -56,7 +56,7 @@
 	if(istype(W,/obj/item/kitchen/fork) || istype(W,/obj/item/melee/onehanded/knife))
 		if(alert(U, "You sure you want to jam that in there?",,"Yes","No") == "Yes")
 			if(do_after(user, 10, 1, target = src))
-				U.visible_message("<span class='warning'>[user] jams [W] into [src]!</span>", "<span class='notice'>You jam [W] into [src]!</span>")
+				U.visible_message(span_warning("[user] jams [W] into [src]!"), span_notice("You jam [W] into [src]!"))
 				U.transferItemToLoc(W,src)
 				playsound(get_turf(src), "sparks", 40, 1)
 				if(cell && cell.charge)
@@ -74,21 +74,21 @@
 		return
 
 	if(LAZYLEN(src.contents) - 1 >= toast_slots) //Account for the power cell
-		to_chat(user, "<span class='warning'>[src] looks full. Adding more to it might cause instability in the local space-time continuum, or worse; bad toast.</span>")
+		to_chat(user, span_warning("[src] looks full. Adding more to it might cause instability in the local space-time continuum, or worse; bad toast."))
 		return
 
 	if(!cell || cell.charge <= 0)
-		to_chat(user, "<span class='warning'>The power cell light on [src] blinks red. Putting things in it now would make it a mere bread holder and thus a mockery of all toasters.</span>")
+		to_chat(user, span_warning("The power cell light on [src] blinks red. Putting things in it now would make it a mere bread holder and thus a mockery of all toasters."))
 		return
 
 	if(is_type_in_typecache(W,toastables))
 		if(user.transferItemToLoc(W, src))
-			U.visible_message("<span class='notice'>[user] slides [W] smoothly into [src].</span>", "<span class='notice'>You slide [W] smoothly into [src].</span>")
+			U.visible_message(span_notice("[user] slides [W] smoothly into [src]."), span_notice("You slide [W] smoothly into [src]."))
 			is_toasting = 1
 			addtimer(CALLBACK(src,.proc/toasterize),toast_time)
 			return
 
-	to_chat(user, "<span class='warning'>Try as you might, you can't get [W] to fit into [src].</span>")
+	to_chat(user, span_warning("Try as you might, you can't get [W] to fit into [src]."))
 	return ..()
 
 /obj/item/trash/f13/electronic/toaster/proc/spew_contents()

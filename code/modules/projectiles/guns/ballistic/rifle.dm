@@ -54,7 +54,7 @@
 	if(recentpump > world.time)
 		return
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
-		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
@@ -73,7 +73,7 @@
 
 /obj/item/gun/ballistic/rifle/proc/pump(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
+		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
 	playsound(M, pump_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -465,7 +465,7 @@
 
 /obj/item/gun/ballistic/rifle/mag/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to remove the magazine.</span>"
+	. += span_notice("Alt-click to remove the magazine.")
 
 /obj/item/gun/ballistic/rifle/mag/AltClick(mob/living/user)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
@@ -478,15 +478,15 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		magazine = null
-		to_chat(user, "<span class='notice'>You pull the magazine out of \the [src].</span>")
+		to_chat(user, span_notice("You pull the magazine out of \the [src]."))
 	else if(chambered)
 		AC.forceMove(drop_location())
 		AC.bounce_away()
 		chambered = null
-		to_chat(user, "<span class='notice'>You unload the round from \the [src]'s chamber.</span>")
+		to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
 	else
-		to_chat(user, "<span class='notice'>There's no magazine in \the [src].</span>")
+		to_chat(user, span_notice("There's no magazine in \the [src]."))
 	update_icon()
 	return
 

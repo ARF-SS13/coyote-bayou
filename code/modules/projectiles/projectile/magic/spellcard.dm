@@ -23,7 +23,7 @@
 	var/mob/living/carbon/M = target
 	if(ismob(target))
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
 			return BULLET_ACT_BLOCK
 	
 	if(iscarbon(target))
@@ -49,10 +49,10 @@
 	var/mob/living/carbon/M = target
 	if(ismob(target))
 		if(M.anti_magic_check())
-			M.visible_message("<span class='warning'>[src] vanishes on contact with [target]!</span>")
+			M.visible_message(span_warning("[src] vanishes on contact with [target]!"))
 			return BULLET_ACT_BLOCK
 	if(iscarbon(target))
-		M.visible_message("<span class='warning'>[src] mends [target]!</span>")
+		M.visible_message(span_warning("[src] mends [target]!"))
 		M.adjustBruteLoss(-5) //HEALS
 		M.adjustOxyLoss(-5)
 		M.adjustBruteLoss(-5)

@@ -1119,8 +1119,8 @@ NEEDLE INJECTION CODE
 				return TRUE
 			else
 				blocked = 100
-				target.visible_message("<span class='danger'>\The [src] was deflected!</span>", \
-									   "<span class='userdanger'>You were protected against \the [src]!</span>")
+				target.visible_message(span_danger("\The [src] was deflected!"), \
+									   span_userdanger("You were protected against \the [src]!"))
 
 	..(target, blocked)
 	DISABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)

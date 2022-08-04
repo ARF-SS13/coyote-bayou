@@ -24,7 +24,7 @@
 		if(!O.anchored || ismecha(O))	//Mechs need their launch platforms.
 			O_limit++
 			if(O_limit >= 20)
-				audible_message("<span class='notice'>[src] lets out a screech, it doesn't seem to be able to handle the load.</span>")
+				audible_message(span_notice("[src] lets out a screech, it doesn't seem to be able to handle the load."))
 				break
 			use_power(500)
 			O.throw_at(target, drive_range * power, power)
@@ -56,5 +56,5 @@
 
 	if(isliving(AM))
 		var/mob/living/L = AM
-		to_chat(L, "<span class='warning'>You feel something click beneath you!</span>")
+		to_chat(L, span_warning("You feel something click beneath you!"))
 	addtimer(CALLBACK(src, .proc/drive), drive_delay)

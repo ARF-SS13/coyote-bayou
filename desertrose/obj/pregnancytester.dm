@@ -27,7 +27,7 @@
 	icon_state 	= "negative"
 	name = "[results] pregnancy test"
 	status = 1
-	to_chat(user, "<span class='notice'>You use the pregnancy test, the display reads negative!</span>")
+	to_chat(user, span_notice("You use the pregnancy test, the display reads negative!"))
 
 
 /obj/item/pregnancytest/proc/test(mob/living/user)
@@ -38,6 +38,6 @@
 		icon_state 	= "positive"
 		name = "[results] pregnancy test"
 		status = 1
-		to_chat(user, "<span class='notice'>You use the pregnancy test, the display reads positive!</span>")
+		to_chat(user, span_notice("You use the pregnancy test, the display reads positive!"))
 	else
 		force(user)

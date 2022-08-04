@@ -4,11 +4,11 @@
 	desc = "A shell formed out of brass, presumably for housing machinery."
 	clockwork_desc = "A construct chassis. It can be activated at any time by a willing ghost."
 	var/construct_name = "basic construct"
-	var/construct_desc = "<span class='alloy'>There is no construct for this chassis. Report this to a coder.</span>"
+	var/construct_desc = "There is no construct for this chassis. Report this to a coder."
 	icon_state = "anime_fragment"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	w_class = WEIGHT_CLASS_HUGE
-	var/creation_message = "<span class='brass'>The chassis shudders and hums to life!</span>"
+	var/creation_message = span_brass("The chassis shudders and hums to life!")
 	var/construct_type //The construct this shell will create
 
 /obj/item/clockwork/construct_chassis/Initialize()
@@ -33,7 +33,7 @@
 
 /obj/item/clockwork/construct_chassis/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(w_class >= WEIGHT_CLASS_HUGE)
-		to_chat(user, "<span class='warning'>[src] is too cumbersome to carry! Drag it around instead!</span>")
+		to_chat(user, span_warning("[src] is too cumbersome to carry! Drag it around instead!"))
 		return
 	. = ..()
 
@@ -42,16 +42,16 @@
 	if(!user.can_reenter_round())
 		return FALSE
 	if(!SSticker.mode)
-		to_chat(user, "<span class='danger'>You cannot use that before the game has started.</span>")
+		to_chat(user, span_danger("You cannot use that before the game has started."))
 		return
 	if(QDELETED(src))
-		to_chat(user, "<span class='danger'>You were too late! Better luck next time.</span>")
+		to_chat(user, span_danger("You were too late! Better luck next time."))
 		return
 	user.forceMove(get_turf(src)) //If we attack through the alert, jump to the chassis so we know what we're getting into
 	if(alert(user, "Become a [construct_name]? You can no longer be cloned!", construct_name, "Yes", "Cancel") == "Cancel")
 		return
 	if(QDELETED(src))
-		to_chat(user, "<span class='danger'>You were too late! Better luck next time.</span>")
+		to_chat(user, span_danger("You were too late! Better luck next time."))
 		return
 	pre_spawn()
 	visible_message(creation_message)

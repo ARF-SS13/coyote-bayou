@@ -26,7 +26,7 @@
 		user.emote("scream")
 		user.regenerate_limbs(0, list(BODY_ZONE_HEAD))
 	user.regenerate_organs()
-	to_chat(user, "<span class='notice'>We have revived ourselves.</span>")
+	to_chat(user, span_notice("We have revived ourselves."))
 	var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 	changeling.purchasedpowers -= src
 	src.action.Remove(user)

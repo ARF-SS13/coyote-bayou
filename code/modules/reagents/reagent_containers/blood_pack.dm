@@ -88,7 +88,7 @@
 /obj/item/reagent_containers/blood/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen) || istype(I, /obj/item/toy/crayon))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on the label of [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on the label of [src]!"))
 			return
 		var/t = stripped_input(user, "What would you like to label the blood pack?", name, null, 53)
 		if(!user.canUseTopic(src, BE_CLOSE))
@@ -107,19 +107,19 @@
 /obj/item/reagent_containers/blood/attack(mob/living/carbon/C, mob/user, def_zone)
 	if(user.a_intent == INTENT_HELP && reagents.total_volume > 0 && iscarbon(C) && user.a_intent == INTENT_HELP)
 		if(C.is_mouth_covered())
-			to_chat(user, "<span class='notice'>You cant drink from the [src] while your mouth is covered.</span>")
+			to_chat(user, span_notice("You cant drink from the [src] while your mouth is covered."))
 			return
 		if(user != C)
-			user.visible_message("<span class='danger'>[user] forces [C] to drink from the [src].</span>", \
-			"<span class='notice'>You force [C] to drink from the [src]</span>")
+			user.visible_message(span_danger("[user] forces [C] to drink from the [src]."), \
+			span_notice("You force [C] to drink from the [src]"))
 			if(!do_mob(user, C, 50))
 				return
 		else
 			if(!do_mob(user, C, 10))
 				return
 
-			to_chat(user, "<span class='notice'>You take a sip from the [src].</span>")
-			user.visible_message("<span class='notice'>[user] puts the [src] up to their mouth.</span>")
+			to_chat(user, span_notice("You take a sip from the [src]."))
+			user.visible_message(span_notice("[user] puts the [src] up to their mouth."))
 		if(reagents.total_volume <= 0) // Safety: In case you spam clicked the blood bag on yourself, and it is now empty (below will divide by zero)
 			return
 		var/gulp_size = 3
@@ -140,10 +140,10 @@
 /obj/item/reagent_containers/blood/bluespace/attack(mob/living/carbon/C, mob/user, def_zone)
 	if(user.a_intent == INTENT_HELP)
 		if(user != C)
-			to_chat(user, "<span class='notice'>You can't force people to drink from the [src]. Nothing comes out from it.</span>")
+			to_chat(user, span_notice("You can't force people to drink from the [src]. Nothing comes out from it."))
 			return
 		else
-			to_chat(user, "<span class='notice'>You try to suck on the [src], but nothing comes out.</span>")
+			to_chat(user, span_notice("You try to suck on the [src], but nothing comes out."))
 			return
 	else
 		..()

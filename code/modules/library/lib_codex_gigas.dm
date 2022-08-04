@@ -22,25 +22,25 @@
 
 /obj/item/book/codex_gigas/attack_self(mob/user)
 	if(is_blind(user))
-		to_chat(user, "<span class='warning'>As you are trying to read, you suddenly feel very stupid.</span>")
+		to_chat(user, span_warning("As you are trying to read, you suddenly feel very stupid."))
 		return
 	if(!user.is_literate())
-		to_chat(user, "<span class='notice'>You skim through the book but can't comprehend any of it.</span>")
+		to_chat(user, span_notice("You skim through the book but can't comprehend any of it."))
 		return
 	if(inUse)
-		to_chat(user, "<span class='notice'>Someone else is reading it.</span>")
+		to_chat(user, span_notice("Someone else is reading it."))
 	if(ishuman(user))
 		var/mob/living/carbon/human/U = user
 		if(U.check_acedia())
-			to_chat(user, "<span class='notice'>None of this matters, why are you reading this? You put [title] down.</span>")
+			to_chat(user, span_notice("None of this matters, why are you reading this? You put [title] down."))
 			return
-	user.visible_message("<span class='notice'>[user] opens [title] and begins reading intently.</span>")
+	user.visible_message(span_notice("[user] opens [title] and begins reading intently."))
 	ask_name(user)
 
 
 /obj/item/book/codex_gigas/proc/perform_research(mob/user, devilName)
 	if(!devilName)
-		user.visible_message("<span class='notice'>[user] closes [title] without looking anything up.</span>")
+		user.visible_message(span_notice("[user] closes [title] without looking anything up."))
 		return
 	inUse = TRUE
 	var/speed = 300

@@ -447,7 +447,7 @@
 			owner.research_scanner++
 		else
 			owner.research_scanner--
-		to_chat(owner, "<span class='notice'>[target] research scanner has been [active ? "activated" : "deactivated"].</span>")
+		to_chat(owner, span_notice("[target] research scanner has been [active ? "activated" : "deactivated"]."))
 		return 1
 
 /datum/action/item_action/toggle_research_scanner/Remove(mob/M)
@@ -513,7 +513,7 @@
 		owner.put_in_hands(I)
 		I.attack_self(owner)
 	else
-		to_chat(owner, "<span class='cultitalic'>Your hands are full!</span>")
+		to_chat(owner, span_cultitalic("Your hands are full!"))
 
 //MGS Box
 /datum/action/item_action/agent_box
@@ -598,7 +598,7 @@
 	if (!istype(H))
 		return
 	if (H.stealthcooldown > world.time)
-		to_chat(owner,"<span class='warning'>The hijack implant's stealth mode toggle is still rebooting!</span>")
+		to_chat(owner,span_warning("The hijack implant's stealth mode toggle is still rebooting!"))
 		return
 	H.stealthmode = !H.stealthmode
 	for (var/area/area in H.imp_in.siliconaccessareas)
@@ -608,7 +608,7 @@
 			apc.update_icon()
 	H.stealthcooldown = world.time + 15 SECONDS
 	H.toggle_eyes()
-	to_chat(owner,"<span class='notice'>You toggle the hijack implant's stealthmode [H.stealthmode ? "on" : "off"].</span>")
+	to_chat(owner,span_notice("You toggle the hijack implant's stealthmode [H.stealthmode ? "on" : "off"]."))
 
 /datum/action/item_action/flash
 	name = "Flash"

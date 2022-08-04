@@ -223,7 +223,7 @@
 	if(!.)
 		return
 	if(!ready)
-		to_chat(owner, "<span class='warning'>[src]'s internal magic supply is still recharging!</span>")
+		to_chat(owner, span_warning("[src]'s internal magic supply is still recharging!"))
 		return FALSE
 	var/summon = TRUE
 	if(length(summoned_stickmen) >= max_stickmen)
@@ -252,7 +252,7 @@
 /datum/action/item_action/stickmen/proc/ready_again()
 	ready = TRUE
 	if(owner)
-		to_chat(owner, "<span class='notice'>[src] hums, its internal magic supply restored.</span>")
+		to_chat(owner, span_notice("[src] hums, its internal magic supply restored."))
 
 /**
  * Rallies your army of stickmen to whichever target the user is pointing.
@@ -340,9 +340,9 @@
 /obj/item/wizard_armour_charge/afterattack(obj/item/clothing/suit/space/hardsuit/shielded/wizard/W, mob/user)
 	. = ..()
 	if(!istype(W))
-		to_chat(user, "<span class='warning'>The rune can only be used on battlemage armour!</span>")
+		to_chat(user, span_warning("The rune can only be used on battlemage armour!"))
 		return
 	var/datum/component/shielded/S = GetComponent(/datum/component/shielded)
 	S.adjust_charges(8)
-	to_chat(user, "<span class='notice'>You charge \the [W]. It can now absorb [S.charges] hits.</span>")
+	to_chat(user, span_notice("You charge \the [W]. It can now absorb [S.charges] hits."))
 	qdel(src)

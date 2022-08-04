@@ -96,7 +96,7 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!right_click_overridden)
-		. += "<span class='notice'>Right click in combat mode to switch modes.</span>"
+		. += span_notice("Right click in combat mode to switch modes.")
 
 /obj/item/gun/energy/process()
 	if(selfcharge && cell?.charge < cell.maxcharge)
@@ -177,7 +177,7 @@
 	fire_sound = C.fire_sound
 	//fire_delay = C.delay
 	if(user_for_feedback)
-		to_chat(user_for_feedback, "<span class='notice'>[src] is now set to [C.select_name || C].</span>")
+		to_chat(user_for_feedback, span_notice("[src] is now set to [C.select_name || C]."))
 	post_set_firemode()
 	update_icon(TRUE)
 
@@ -284,10 +284,10 @@
 
 /obj/item/gun/energy/suicide_act(mob/living/user)
 	if (istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message("<span class='suicide'>[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
 		sleep(25)
 		if(user.is_holding(src))
-			user.visible_message("<span class='suicide'>[user] melts [user.p_their()] face off with [src]!</span>")
+			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
 			playsound(loc, fire_sound, 50, 1, -1)
 			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
@@ -295,7 +295,7 @@
 			update_icon()
 			return(FIRELOSS)
 		else
-			user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
+			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
 			return(OXYLOSS)
 	else
 		user.visible_message("<span class='suicide'>[user] is pretending to melt [user.p_their()] face off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
@@ -322,13 +322,13 @@
 		if(!BB)
 			. = ""
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
-			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
+			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
 			cell.use(E.e_cost)
 			. = ""
 		else if(BB.damage_type != BURN)
-			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
+			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
 			cell.use(E.e_cost)
@@ -338,7 +338,7 @@
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
 			cell.use(E.e_cost)
-			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
+			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
 
 /obj/item/gun/energy/altafterattack(atom/target, mob/user, proximity_flags, params)
 	if(!right_click_overridden)
@@ -352,16 +352,16 @@
 	if (get_dist(src, user)<2)
 		if(cell)
 			if(can_charge == 0 && can_remove == 0)
-				to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
+				to_chat(user, span_notice("You can't remove the cell from \the [src]."))
 				return
 			cell.forceMove(drop_location())
 			user.put_in_hands(cell)
 			cell.update_icon()
 			cell = null
-			to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
+			to_chat(user, span_notice("You pull the cell out of \the [src]."))
 			playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
 		else
-			to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
+			to_chat(user, span_notice("There's no cell in \the [src]."))
 		return
 	else
 		return
@@ -380,15 +380,15 @@
 		if (!cell && istype(AM, cell_type))
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
-				to_chat(user, "<span class='notice'>You load a new cell into \the [src].</span>")
+				to_chat(user, span_notice("You load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 				return
 		//else if (cell)
-			//to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
+			//to_chat(user, span_notice("There's already a cell in \the [src]."))
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()

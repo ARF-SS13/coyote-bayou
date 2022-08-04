@@ -49,7 +49,7 @@
 		if(stunning)
 			H.DefaultCombatKnockdown(20)	//splat!
 		H.adjust_blurriness(1)
-		H.visible_message("<span class='warning'>[H] is creamed by [src]!</span>", "<span class='userdanger'>You've been creamed by [src]!</span>")
+		H.visible_message(span_warning("[H] is creamed by [src]!"), span_userdanger("You've been creamed by [src]!"))
 		playsound(H, "desceration", 50, TRUE)
 		if(!H.is_mouth_covered())
 			reagents.trans_to(H, 15, log = TRUE)	//Cream pie combat

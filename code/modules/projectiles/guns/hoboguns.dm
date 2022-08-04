@@ -11,7 +11,7 @@
 /obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -26,7 +26,7 @@
 /obj/item/gun/ballistic/revolver/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,22)
 		user.dropItemToGround(src)
 		return FALSE
@@ -41,7 +41,7 @@
 /obj/item/gun/ballistic/rifle/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] overheats and blasts you with superheated air!</span>")
+		to_chat(user, span_userdanger("[src] overheats and blasts you with superheated air!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -50,7 +50,7 @@
 /obj/item/gun/ballistic/automatic/autopipe/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -148,7 +148,7 @@
 /obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -193,7 +193,7 @@
 /obj/item/gun/ballistic/revolver/hobo/pepperbox/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE

@@ -23,7 +23,7 @@
 	var/damp_threshold = 0.5
 
 /obj/item/reagent_containers/glass/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (OXYLOSS)
 
 /obj/item/reagent_containers/glass/rag/afterattack(atom/A as obj|turf|area, mob/user,proximity)
@@ -36,7 +36,7 @@
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
 			reagents.reaction(C, INGEST)
 			reagents.trans_to(C, reagents.total_volume)
-			C.visible_message("<span class='danger'>[user] has smothered \the [C] with \the [src]!</span>", "<span class='userdanger'>[user] has smothered you with \the [src]!</span>", "<span class='italics'>You hear some struggling and muffled cries of surprise.</span>")
+			C.visible_message(span_danger("[user] has smothered \the [C] with \the [src]!"), span_userdanger("[user] has smothered you with \the [src]!"), span_italic("You hear some struggling and muffled cries of surprise."))
 			log_game("[key_name(user)] smothered [key_name(A)] with a damp rag containing [reagentlist]")
 			log_attack("[key_name(user)] smothered [key_name(A)] with a damp rag containing [reagentlist]")
 		else
@@ -44,12 +44,12 @@
 			reagents.clear_reagents()
 			log_game("[key_name(user)] touched [key_name(A)] with a damp rag containing [reagentlist]")
 			log_attack("[key_name(user)] touched [key_name(A)] with a damp rag containing [reagentlist]")
-			C.visible_message("<span class='notice'>[user] has touched \the [C] with \the [src].</span>")
+			C.visible_message(span_notice("[user] has touched \the [C] with \the [src]."))
 
 	else if(istype(A) && (src in user))
-		user.visible_message("[user] starts to wipe down [A] with [src]!", "<span class='notice'>You start to wipe down [A] with [src]...</span>")
+		user.visible_message("[user] starts to wipe down [A] with [src]!", span_notice("You start to wipe down [A] with [src]..."))
 		if(do_after(user,30, target = A))
-			user.visible_message("[user] finishes wiping off [A]!", "<span class='notice'>You finish wiping off [A].</span>")
+			user.visible_message("[user] finishes wiping off [A]!", span_notice("You finish wiping off [A]."))
 			SEND_SIGNAL(A, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 	return
 
@@ -105,7 +105,7 @@
 /obj/item/reagent_containers/glass/rag/towel/attack_self(mob/user)
 	if(!user.can_reach(src) || !user.dropItemToGround(src))
 		return
-	to_chat(user, "<span class='notice'>You lay out \the [src] flat on the ground.</span>")
+	to_chat(user, span_notice("You lay out \the [src] flat on the ground."))
 	icon_state = flat_icon
 	layer = BELOW_OBJ_LAYER
 

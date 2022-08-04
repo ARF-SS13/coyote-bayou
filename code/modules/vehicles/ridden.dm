@@ -15,9 +15,9 @@
 	. = ..()
 	if(key_type)
 		if(!inserted_key)
-			. += "<span class='notice'>Put a key inside it by clicking it with the key.</span>"
+			. += span_notice("Put a key inside it by clicking it with the key.")
 		else
-			. += "<span class='notice'>Alt-click [src] to remove the key.</span>"
+			. += span_notice("Alt-click [src] to remove the key.")
 
 /obj/vehicle/ridden/generate_action_type(actiontype)
 	var/datum/action/vehicle/ridden/A = ..()
@@ -32,19 +32,19 @@
 /obj/vehicle/ridden/post_buckle_mob(mob/living/M)
 	add_occupant(M)
 	if(M.get_num_legs() < legs_required)
-		to_chat(M, "<span class='warning'>You don't have enough legs to operate the pedals!</span>")
+		to_chat(M, span_warning("You don't have enough legs to operate the pedals!"))
 		unbuckle_mob(M)
 	return ..()
 
 /obj/vehicle/ridden/attackby(obj/item/I, mob/user, params)
 	if(key_type && !is_key(inserted_key) && is_key(I))
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='notice'>You insert \the [I] into \the [src].</span>")
+			to_chat(user, span_notice("You insert \the [I] into \the [src]."))
 			if(inserted_key)	//just in case there's an invalid key
 				inserted_key.forceMove(drop_location())
 			inserted_key = I
 		else
-			to_chat(user, "<span class='notice'>[I] seems to be stuck to your hand!</span>")
+			to_chat(user, span_notice("[I] seems to be stuck to your hand!"))
 		return
 	return ..()
 
@@ -52,9 +52,9 @@
 	. = ..()
 	if(inserted_key && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		if(!is_occupant(user))
-			to_chat(user, "<span class='notice'>You must be riding the [src] to remove [src]'s key!</span>")
+			to_chat(user, span_notice("You must be riding the [src] to remove [src]'s key!"))
 			return
-		to_chat(user, "<span class='notice'>You remove \the [inserted_key] from \the [src].</span>")
+		to_chat(user, span_notice("You remove \the [inserted_key] from \the [src]."))
 		inserted_key.forceMove(drop_location())
 		user.put_in_hands(inserted_key)
 		inserted_key = null
@@ -62,7 +62,7 @@
 
 /obj/vehicle/ridden/driver_move(mob/user, direction)
 	if(key_type && !is_key(inserted_key))
-		to_chat(user, "<span class='warning'>[src] has no key inserted!</span>")
+		to_chat(user, span_warning("[src] has no key inserted!"))
 		return FALSE
 	var/datum/component/riding/R = GetComponent(/datum/component/riding)
 	R.handle_ride(user, direction)

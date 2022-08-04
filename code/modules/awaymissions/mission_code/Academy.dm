@@ -150,7 +150,7 @@
 /obj/structure/academy_wizard_spawner/deconstruct(disassembled = TRUE)
 	if(!broken)
 		broken = 1
-		visible_message("<span class='warning'>[src] breaks down!</span>")
+		visible_message(span_warning("[src] breaks down!"))
 		icon_state = "forge_off"
 		STOP_PROCESSING(SSobj, src)
 
@@ -178,7 +178,7 @@
 	..()
 	if(!used)
 		if(!ishuman(user) || !user.mind || (user.mind in SSticker.mode.wizards))
-			to_chat(user, "<span class='warning'>You feel the magic of the dice is restricted to ordinary humans!</span>")
+			to_chat(user, span_warning("You feel the magic of the dice is restricted to ordinary humans!"))
 			return
 		if(rigged)
 			effect(user,rigged)
@@ -187,7 +187,7 @@
 
 /obj/item/dice/d20/fate/equipped(mob/user, slot)
 	if(!ishuman(user) || !user.mind || (user.mind in SSticker.mode.wizards))
-		to_chat(user, "<span class='warning'>You feel the magic of the dice is restricted to ordinary humans! You should leave it alone.</span>")
+		to_chat(user, span_warning("You feel the magic of the dice is restricted to ordinary humans! You should leave it alone."))
 		user.dropItemToGround(src)
 		return
 	return ..()
@@ -196,7 +196,7 @@
 /obj/item/dice/d20/fate/proc/effect(mob/living/carbon/human/user,roll)
 	if(!reusable)
 		used = 1
-	visible_message("<span class='userdanger'>The die flare briefly.</span>")
+	visible_message(span_userdanger("The die flare briefly."))
 	switch(roll)
 		if(1)
 			//Dust
@@ -236,7 +236,7 @@
 			user.ForceContractDisease(D, FALSE, TRUE)
 		if(10)
 			//Nothing
-			visible_message("<span class='notice'>[src] roll perfectly.</span>")
+			visible_message(span_notice("[src] roll perfectly."))
 		if(11)
 			//Cookie
 			var/obj/item/reagent_containers/food/snacks/cookie/C = new(drop_location())
@@ -289,7 +289,7 @@
 			new /obj/item/card/id/captains_spare(drop_location())
 		if(19)
 			//Instrinct Resistance
-			to_chat(user, "<span class='notice'>You feel robust.</span>")
+			to_chat(user, span_notice("You feel robust."))
 			var/datum/species/S = user.dna.species
 			S.brutemod *= 0.5
 			S.burnmod *= 0.5
@@ -344,7 +344,7 @@
 	AddElement(/datum/element/update_icon_blocker)
 
 /obj/structure/ladder/unbreakable/rune/show_fluff_message(up,mob/user)
-	user.visible_message("[user] activates \the [src].","<span class='notice'>You activate \the [src].</span>")
+	user.visible_message("[user] activates \the [src].",span_notice("You activate \the [src]."))
 
 /obj/structure/ladder/unbreakable/rune/use(mob/user, is_ghost=FALSE)
 	if(is_ghost || !(user.mind in SSticker.mode.wizards))

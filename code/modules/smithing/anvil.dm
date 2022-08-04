@@ -238,8 +238,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			currentquality -= 1
 
 	// Display message
-	user.visible_message("<span class='notice'>[user] works the metal on the anvil with their hammer with a loud clang!</span>", \
-						"<span class='notice'>You [stepdone] the metal with a loud clang!</span>")
+	user.visible_message(span_notice("[user] works the metal on the anvil with their hammer with a loud clang!"), \
+						span_notice("You [stepdone] the metal with a loud clang!"))
 	
 	// more sounds... uhhh...
 	playsound(src, 'sound/effects/clang2.ogg',40, 2)
@@ -280,7 +280,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	// I hate this. If you hit more than 10 times, or the final piece failed and you have no artifact. Why it gotta look so awkward.
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
 	
-		to_chat(user, "<span class='warning'>You overwork the metal, causing it to turn into useless slag!</span>")
+		to_chat(user, span_warning("You overwork the metal, causing it to turn into useless slag!"))
 		
 		new /obj/item/stack/ore/slag(get_turf(src)) // Spawn some slag
 
@@ -421,7 +421,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(is_servant_of_ratvar(user))
 		return ..()
 	else
-		to_chat(user, "<span class='neovgre'>KNPXWN, QNJCQNW!</span>") //rot13 then rot22 if anyone wants to decode
+		to_chat(user, span_neovgre("KNPXWN, QNJCQNW!")) //rot13 then rot22 if anyone wants to decode
 
 /obj/structure/anvil/obtainable/narsie
 	name = "runic anvil"
@@ -436,7 +436,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(iscultist(user))
 		return ..()
 	else
-		to_chat(user, "<span class='narsiesmall'>That is not yours to use!</span>")
+		to_chat(user, span_narsiesmall("That is not yours to use!"))
 
 #undef WORKPIECE_PRESENT
 #undef WORKPIECE_INPROGRESS

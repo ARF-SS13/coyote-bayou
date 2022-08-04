@@ -68,11 +68,11 @@
 			if(user.transferItemToLoc(new_mag, src))
 				magazine = new_mag
 				if(oldmag)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the magazine."))
 					oldmag.forceMove(get_turf(src.loc))
 					oldmag.update_icon()
 				else
-					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
+					to_chat(user, span_notice("You insert the magazine into \the [src]."))
 
 				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1)
 				chamber_round()
@@ -80,7 +80,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>") */
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!")) */
 
 /obj/item/gun/ballistic/automatic/can_shoot()
 	return get_ammo()
@@ -98,7 +98,7 @@
 		magazine.dropped()
 		user.visible_message(
 			"[magazine] falls out and clatters on the floor!",
-			"<span class='notice'>[magazine] falls out and clatters on the floor!</span>"
+			span_notice("[magazine] falls out and clatters on the floor!")
 		)
 		if(auto_eject_sound)
 			playsound(user, auto_eject_sound, 40, 1)
@@ -2309,7 +2309,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, span_notice("You [cover_open ? "open" : "close"] [src]'s cover."))
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -2318,7 +2318,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, span_warning("[src]'s cover is open! Close it before firing!"))
 	else
 		. = ..()
 		update_icon()
@@ -2336,12 +2336,12 @@ obj/item/gun/ballistic/automatic/bar
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You remove the magazine from [src].</span>")
+		to_chat(user, span_notice("You remove the magazine from [src]."))
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/m1919/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
+		to_chat(user, span_warning("[src]'s cover is closed! You can't insert a new mag."))
 		return
 	..()
 

@@ -55,7 +55,7 @@
 	if(recentpump > world.time)
 		return
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
-		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
 	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
@@ -74,7 +74,7 @@
 
 /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
+		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
 	playsound(M, pump_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
@@ -292,7 +292,7 @@
 
 /obj/item/gun/ballistic/shotgun/police/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to toggle the stock.</span>"
+	. += span_notice("Alt-click to toggle the stock.")
 
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
@@ -465,7 +465,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to switch tubes.</span>"
+	. += span_notice("Alt-click to switch tubes.")
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/Initialize()
 	. = ..()

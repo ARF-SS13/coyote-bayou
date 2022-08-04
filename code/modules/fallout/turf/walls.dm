@@ -62,7 +62,7 @@
 		if(I.amount < 2)
 			return
 		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to fix the wall!</span>")
+			to_chat(user, span_warning("You must stand still to fix the wall!"))
 			return
 		W.use(2)
 		ChangeTurf(/turf/closed/wall/f13/wood/house)
@@ -290,16 +290,16 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 		return
 	var/mob/living/carbon/human/departing_mob = dropping
 	if(departing_mob != user && departing_mob.client)
-		to_chat(user, "<span class='warning'>This one retains their free will. It's their choice if they want to depart or not.</span>")
+		to_chat(user, span_warning("This one retains their free will. It's their choice if they want to depart or not."))
 		return
 	if(alert("Are you sure you want to [departing_mob == user ? "depart the area for good (you" : "send this person away (they"] will be removed from the current round, the job slot freed)?", "Departing the swamps", "Confirm", "Cancel") != "Confirm")
 		return
 	if(user.incapacitated() || QDELETED(departing_mob) || (departing_mob != user && departing_mob.client) || get_dist(src, dropping) > 2 || get_dist(src, user) > 2)
 		return //Things have changed since the alert happened.
 	if(departing_mob.logout_time && departing_mob.logout_time + 2 MINUTES > world.time)
-		to_chat(user, "<span class='warning'>This mind has only recently departed. Wait at most two minutes before sending this character out of the round.</span>")
+		to_chat(user, span_warning("This mind has only recently departed. Wait at most two minutes before sending this character out of the round."))
 		return
-	user.visible_message("<span class='warning'>[user] [departing_mob == user ? "is trying to leave the swamps!" : "is trying to send [departing_mob] away!"]</span>", "<span class='notice'>You [departing_mob == user ? "are trying to leave the swamps." : "are trying to send [departing_mob] away."]</span>")
+	user.visible_message(span_warning("[user] [departing_mob == user ? "is trying to leave the swamps!" : "is trying to send [departing_mob] away!"]"), span_notice("You [departing_mob == user ? "are trying to leave the swamps." : "are trying to send [departing_mob] away."]"))
 	icon_state = "matrix_going" // ALERT, WEE WOO
 	update_icon()
 	in_use = TRUE
@@ -323,9 +323,9 @@ turf/closed/wall/f13/wood/house/update_damage_overlay()
 	message_admins(dat)
 	log_admin(dat)
 	if(departing_mob.stat == DEAD)
-		departing_mob.visible_message("<span class='notice'>[user] pushes the body of [departing_mob] over the border. They're someone else's problem now.</span>")
+		departing_mob.visible_message(span_notice("[user] pushes the body of [departing_mob] over the border. They're someone else's problem now."))
 	else
-		departing_mob.visible_message("<span class='notice'>[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps.</span>")
+		departing_mob.visible_message(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] crosses the border and departs the swamps."))
 	departing_mob.despawn()
 
 

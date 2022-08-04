@@ -70,8 +70,8 @@
 		// Knockdown!
 		var/powerlevel = min(5, 1 + level_current)
 		if(rand(5 + powerlevel) >= 5)
-			target.visible_message("<span class='danger'>[user] lands a vicious punch, sending [target] away!</span>", \
-							  "<span class='userdanger'>[user] has landed a horrifying punch on you, sending you flying!!</span>", null, COMBAT_MESSAGE_RANGE)
+			target.visible_message(span_danger("[user] lands a vicious punch, sending [target] away!"), \
+							  span_userdanger("[user] has landed a horrifying punch on you, sending you flying!!"), null, COMBAT_MESSAGE_RANGE)
 			target.DefaultCombatKnockdown(min(5, rand(10, 10 * powerlevel)) )
 		// Attack!
 		playsound(get_turf(target), 'sound/weapons/punch4.ogg', 60, 1, -1)
@@ -87,10 +87,10 @@
 	else if(istype(target, /obj/machinery/door))
 		var/obj/machinery/door/D = target
 		playsound(get_turf(usr), 'sound/machines/airlock_alien_prying.ogg', 40, 1, -1)
-		to_chat(user, "<span class='notice'>You prepare to tear open [D].</span>")
+		to_chat(user, span_notice("You prepare to tear open [D]."))
 		if(do_mob(usr,target,25))
 			if (D.Adjacent(user))
-				to_chat(user, "<span class='notice'>You tear open the [D].</span>")
+				to_chat(user, span_notice("You tear open the [D]."))
 				user.Stun(10)
 				user.do_attack_animation(D, ATTACK_EFFECT_SMASH)
 				playsound(get_turf(D), 'sound/effects/bang.ogg', 30, 1, -1)
@@ -117,8 +117,8 @@
 		if(user_H.wear_suit && user_H.wear_suit.breakouttime)
 			var/obj/item/clothing/suit/straight_jacket/S = user_H.get_item_by_slot(ITEM_SLOT_ICLOTHING)
 			if(istype(S))
-				user_C.visible_message("<span class='warning'>[user_C] attempts to remove [S]!</span>", \
-									"<span class='warning'>You rip through [S] like it's nothing!</span>")
+				user_C.visible_message(span_warning("[user_C] attempts to remove [S]!"), \
+									span_warning("You rip through [S] like it's nothing!"))
 				user_C.clear_cuffs(S,TRUE)
 				playsound(get_turf(usr), 'sound/effects/grillehit.ogg', 80, 1, -1)
 				return TRUE */
@@ -148,8 +148,8 @@
 	M.throw_at(T, pull_power, TRUE, owner, FALSE) // Throw distance based on grab state! Harder grabs punished more aggressively.
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, M, "used Brawn power")
-	owner.visible_message("<span class='warning'>[owner] tears free of [M]'s grasp!</span>", \
-						"<span class='warning'>You shrug off [M]'s grasp!</span>")
+	owner.visible_message(span_warning("[owner] tears free of [M]'s grasp!"), \
+						span_warning("You shrug off [M]'s grasp!"))
 	owner.pulledby = null // It's already done, but JUST IN CASE.
 	return TRUE
 /* Doesnt work
@@ -159,7 +159,7 @@
 		playsound(get_turf(owner), 'sound/machines/airlock_alien_prying.ogg', 40, 1, -1)
 		if(do_mob(owner ,target, 25))
 			var/obj/structure/closet/C = owner.loc
-			to_chat(owner, "<span class='notice'>You prepare to tear open the [C].</span>")
+			to_chat(owner, span_notice("You prepare to tear open the [C]."))
 			owner.do_attack_animation(C, ATTACK_EFFECT_SMASH)
 			playsound(get_turf(C), 'sound/effects/bang.ogg', 30, 1, -1)
 			C.bust_open()
