@@ -712,10 +712,10 @@
 /area/f13/city)
 "aBv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2"
 	},
@@ -1328,10 +1328,7 @@
 	},
 /area/f13/wasteland)
 "bbH" = (
-/obj/item/flag/locust{
-	desc = "A flag with a skull, maybe it marking where the cemetary is.";
-	name = "outlaw flag"
-	},
+/obj/item/flag/outlaw,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bbS" = (
@@ -1643,14 +1640,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "boF" = (
-/obj/structure/flora/grass/wasteland{
-	pixel_x = -3
-	},
-/obj/item/flag/locust{
-	desc = "A flag with a skull, maybe it marking where the cemetary is.";
-	name = "outlaw flag"
-	},
-/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "boM" = (
@@ -3850,9 +3840,9 @@
 	},
 /area/f13/wasteland)
 "cPR" = (
-/obj/structure/nest/radroach,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/f13/wood,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
 "cQl" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6384,6 +6374,7 @@
 	light_color = "#d8b1b1"
 	},
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "eEr" = (
@@ -7032,14 +7023,9 @@
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/city)
 "ffE" = (
-/obj/item/flag/locust{
-	desc = "A flag with a skull, maybe it marking where the cemetary is.";
-	name = "outlaw flag"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
+/obj/item/flag/outlaw,
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
+	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
 "ffL" = (
@@ -9777,9 +9763,11 @@
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "hnr" = (
-/obj/structure/nest/radroach,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/city)
+/obj/item/flag/outlaw,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outerbordercorner"
+	},
+/area/f13/wasteland)
 "hnu" = (
 /obj/structure/reagent_dispensers/fueltank,
 /turf/open/indestructible/ground/outside/road,
@@ -10259,10 +10247,10 @@
 /area/f13/city)
 "hJG" = (
 /mob/living/simple_animal/hostile/radroach,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
-/area/f13/wasteland)
+/area/f13/city)
 "hJZ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah/topcenter,
@@ -11196,7 +11184,7 @@
 /area/f13/city)
 "isi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "isk" = (
@@ -12305,7 +12293,7 @@
 	},
 /area/f13/city)
 "jfi" = (
-/obj/structure/nest/radroach,
+/mob/living/simple_animal/hostile/radroach,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain1"
 	},
@@ -12901,10 +12889,9 @@
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
 "jzE" = (
-/obj/structure/nest/radroach,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/city)
 "jzT" = (
 /obj/machinery/light/lampost{
 	dir = 1;
@@ -19836,7 +19823,8 @@
 /turf/open/water,
 /area/f13/wasteland)
 "oNk" = (
-/obj/structure/nest/radroach,
+/obj/effect/decal/cleanable/dirt/dust,
+/mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "oNE" = (
@@ -24918,6 +24906,12 @@
 	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
+"sFq" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontaltopborderbottom2"
+	},
+/area/f13/wasteland)
 "sFs" = (
 /obj/structure/debris/v2{
 	pixel_x = -10
@@ -26235,10 +26229,7 @@
 /turf/open/floor/carpet,
 /area/f13/city)
 "tBZ" = (
-/obj/item/flag/locust{
-	desc = "A flag with a skull, maybe it marking where the cemetary is.";
-	name = "outlaw flag"
-	},
+/obj/item/flag/outlaw,
 /turf/open/indestructible/ground/outside/dirt/dark{
 	icon_state = "dirtfull_dark"
 	},
@@ -26612,9 +26603,7 @@
 /area/f13/wasteland)
 "tRa" = (
 /obj/structure/closet/cabinet,
-/obj/item/gun/ballistic/automatic/m1garand,
-/obj/item/ammo_box/magazine/garand308,
-/obj/item/ammo_box/magazine/garand308,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 /turf/open/floor/carpet,
 /area/f13/wasteland)
 "tRi" = (
@@ -26731,6 +26720,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"tUH" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/road{
+	dir = 8;
+	icon_state = "horizontalinnermain2left"
+	},
+/area/f13/wasteland)
 "tUZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -26897,7 +26893,6 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 28
 	},
-/obj/structure/nest/radroach,
 /turf/open/floor/plating/rust,
 /area/f13/caves)
 "ubi" = (
@@ -28608,10 +28603,7 @@
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland)
 "vpy" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
-/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "vpP" = (
@@ -29851,6 +29843,12 @@
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
 	},
+/area/f13/city)
+"wxu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/handy,
+/turf/open/floor/f13/wood,
 /area/f13/city)
 "wxH" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -31922,6 +31920,12 @@
 	icon_state = "dark"
 	},
 /area/f13/city)
+"xYO" = (
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain3"
+	},
+/area/f13/wasteland)
 "xYP" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -32922,8 +32926,8 @@ euo
 euo
 euo
 qqi
-hnr
-tiQ
+uhE
+hJG
 pjA
 osK
 sGV
@@ -33181,7 +33185,7 @@ euo
 qqi
 fAO
 tiQ
-uhE
+jzE
 tiQ
 tiQ
 xdt
@@ -33437,7 +33441,7 @@ euo
 euo
 qqi
 hBk
-uhE
+jzE
 hZn
 tCU
 hZn
@@ -34464,8 +34468,8 @@ euo
 euo
 eWO
 qqi
-hnr
-fDo
+uhE
+cPR
 gGs
 pXw
 gZM
@@ -36963,7 +36967,7 @@ soQ
 uCA
 isi
 urv
-wYK
+isi
 eDu
 gGs
 bYS
@@ -38014,7 +38018,7 @@ pzg
 fVZ
 mIh
 aBv
-kCj
+sFq
 oWN
 cQC
 ipV
@@ -39806,7 +39810,7 @@ gUg
 ctk
 rMX
 pnb
-hJG
+pnb
 dlq
 wWA
 pnb
@@ -40836,7 +40840,7 @@ xme
 oia
 pXw
 geV
-pXw
+oNk
 ifF
 gGs
 dty
@@ -41093,7 +41097,7 @@ btL
 aCQ
 gGs
 fsh
-vpy
+ifF
 pXw
 xRB
 oRy
@@ -41864,7 +41868,7 @@ xme
 toQ
 fzQ
 gGs
-oNk
+gGs
 wYK
 wYK
 iNE
@@ -42649,7 +42653,7 @@ oFm
 oMa
 oMa
 gUg
-goN
+tUH
 oMa
 oWN
 oge
@@ -42891,7 +42895,7 @@ art
 xme
 hOh
 wYK
-gGs
+vpy
 wQK
 gGs
 kcr
@@ -42905,7 +42909,7 @@ scQ
 pUW
 fbj
 jfi
-bJy
+xYO
 aGc
 ezc
 qaR
@@ -43407,7 +43411,7 @@ cVO
 wYK
 qys
 gGs
-cVO
+wxu
 wYK
 iEQ
 roR
@@ -43660,7 +43664,7 @@ oFm
 oMa
 vGR
 jWm
-cPR
+wYK
 lSI
 wZx
 wYK
@@ -53241,7 +53245,7 @@ euo
 euo
 vrN
 pnb
-pnb
+ffE
 pnb
 pnb
 pnb
@@ -54994,7 +54998,7 @@ bxV
 oMa
 ojX
 cQC
-jzl
+hnr
 kgF
 kgF
 kgF
@@ -56250,7 +56254,7 @@ iPP
 vGR
 qPG
 quA
-ffE
+sSV
 siv
 lHJ
 oWN
@@ -62440,7 +62444,7 @@ oph
 iPv
 vEK
 mMb
-boF
+oah
 cQC
 shX
 gEy
@@ -84691,7 +84695,7 @@ oph
 oph
 gEj
 tfn
-oph
+boF
 oph
 oph
 oph
@@ -85718,9 +85722,9 @@ oph
 tiN
 oph
 oph
-jzE
+tiN
 pkw
-oph
+nVz
 oph
 oph
 oph
@@ -85975,12 +85979,12 @@ oph
 oph
 oph
 oph
+boF
 oph
 oph
 oph
 oph
-nVz
-oph
+boF
 oph
 oph
 oph
@@ -86490,9 +86494,9 @@ oph
 tfn
 oph
 oph
-nVz
 oph
 oph
+boF
 oph
 oph
 oph
@@ -87007,7 +87011,7 @@ oph
 oph
 oph
 oph
-oph
+boF
 oph
 oph
 oph
@@ -87516,10 +87520,10 @@ oph
 oph
 oph
 oph
-nVz
 oph
 oph
-nVz
+oph
+oph
 tfn
 oph
 oph
