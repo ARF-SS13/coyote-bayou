@@ -233,13 +233,13 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	if(just_blood)
 		return
 
-	if(. < BLOOD_VOLUME_SYMPTOMS_ANNOYING) // start adding in blood volume buffs
+	if(. < BLOOD_VOLUME_EXPANDER_MAX) // start adding in blood volume buffs
 		var/extra_blood
 		for(var/datum/reagent/blood_expander in reagents.reagent_list)
 			if(!blood_expander.effective_blood_multiplier)
 				continue
 			extra_blood += min(blood_expander.volume * blood_expander.effective_blood_multiplier, blood_expander.effective_blood_max)
-		. = min(. + extra_blood, BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+		. = min(. + extra_blood, BLOOD_VOLUME_EXPANDER_MAX)
 
 		if(has_reagent(/datum/reagent/medicine/epinephrine))
 			. = max(., BLOOD_VOLUME_SYMPTOMS_WORST - 10) // Vasopressors~
@@ -247,13 +247,9 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
 
-	// First check if there's enough room
-	if(blood_volume > BLOOD_VOLUME_MAXIMUM)
-		return
-	
 	// Food based blood replenishment, spends nutrition to regen blood
 	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(blood_volume < BLOOD_VOLUME_SAFE)
+	if(blood_volume < BLOOD_REFILL_NUTRITION_MAX)
 		if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 			var/nutrition_bonus = 0
 			switch(nutrition)
