@@ -1872,8 +1872,8 @@
 	},
 /area/f13/tunnel/northwest)
 "ahh" = (
-/obj/structure/sign/departments/science,
-/turf/closed/wall/f13/store,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "ahi" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -11624,6 +11624,9 @@
 "aNs" = (
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/radio/intercom{
+	pixel_x = 27
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
@@ -28174,6 +28177,9 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/prewar/protectron{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -28661,13 +28667,18 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "fut" = (
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
-/obj/machinery/light/small{
-	dir = 4
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/stone,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 27
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 1
+	},
 /area/f13/building/hospital)
 "fuu" = (
 /obj/structure/chalkboard,
@@ -29780,6 +29791,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/stone,
 /area/f13/building/hospital)
+"fWI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/blue/side{
+	dir = 8
+	},
+/area/f13/building/hospital)
 "fWM" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -30286,8 +30306,8 @@
 	},
 /area/f13/wasteland)
 "gps" = (
-/obj/structure/closet/crate/bin/trashbin,
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/obj/structure/sign/departments/science,
+/turf/closed/wall/f13/store,
 /area/f13/building/hospital)
 "gpH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -31943,6 +31963,7 @@
 	id = "followersdeskshutters";
 	name = "followers shutters"
 	},
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "heG" = (
@@ -34324,6 +34345,15 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
+"iwJ" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/stone,
+/area/f13/building/hospital)
 "iwQ" = (
 /obj/structure/chair/wood{
 	dir = 4
@@ -36180,15 +36210,6 @@
 /obj/structure/sink/deep_water,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"jtj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 8
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 8
-	},
-/area/f13/building/hospital)
 "jts" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -36932,6 +36953,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "jQm" = (
@@ -39455,6 +39477,7 @@
 	pixel_x = 1;
 	pixel_y = 4
 	},
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "lkG" = (
@@ -42012,6 +42035,10 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/building/massfusion)
+"mue" = (
+/obj/structure/closet/crate/bin/trashbin,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "muJ" = (
 /obj/structure/flora/grass/jungle,
 /obj/effect/decal/cleanable/dirt,
@@ -47616,9 +47643,6 @@
 /area/f13/building)
 "ppJ" = (
 /obj/item/chair,
-/obj/structure/sign/poster/prewar/protectron{
-	pixel_x = 32
-	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/side{
 	dir = 4
 	},
@@ -49318,6 +49342,12 @@
 	icon_state = "horizontalinnermain2left"
 	},
 /area/f13/wasteland)
+"qnb" = (
+/obj/vehicle/ridden/wheelchair{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building/hospital)
 "qnk" = (
 /obj/structure/table/wood,
 /obj/machinery/processor/chopping_block,
@@ -52476,10 +52506,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"scg" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "scB" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -53165,12 +53191,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"syC" = (
-/obj/vehicle/ridden/wheelchair{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "syG" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -57036,20 +57056,6 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
-"uAu" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 27
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/building/hospital)
 "uAJ" = (
 /obj/item/clothing/suit/armor/outfit/slavelabor,
 /obj/structure/flora/grass/coyote/one,
@@ -61437,6 +61443,7 @@
 	id = "followersdeskshutters";
 	name = "followers shutters"
 	},
+/obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
 "wVA" = (
@@ -108202,14 +108209,14 @@ ijr
 ijr
 ijr
 quc
-ijr
+wVw
 gmT
 lkE
 jQa
 ijr
 hey
 wVw
-wVw
+ijr
 ijr
 aEs
 aGq
@@ -108459,13 +108466,13 @@ aGr
 ijr
 uZi
 wxJ
-uZi
+lCD
 aMz
 uZi
 pCd
 cDe
-uZi
 lCD
+uZi
 eAT
 ijr
 oHk
@@ -108966,7 +108973,7 @@ aFP
 aEt
 aGq
 ijr
-fut
+iwJ
 waZ
 waZ
 dTv
@@ -109487,7 +109494,7 @@ gSw
 mns
 ijr
 kLx
-syC
+qnb
 lfs
 uRL
 ijr
@@ -109496,7 +109503,7 @@ kEo
 aJb
 uor
 ijr
-uAu
+fut
 aGq
 aFP
 aae
@@ -110255,7 +110262,7 @@ fFx
 tFm
 tZi
 tFm
-scg
+ahh
 ijr
 qGH
 rSW
@@ -111032,7 +111039,7 @@ cQC
 nBm
 aFY
 ehN
-jtj
+fWI
 aFY
 aFY
 aFY
@@ -111796,7 +111803,7 @@ ijr
 rbE
 tZi
 tFm
-gps
+mue
 ijr
 sFQ
 aFB
@@ -112820,7 +112827,7 @@ oHV
 aFP
 aEt
 jkY
-ahh
+gps
 pFw
 nAu
 rKl
