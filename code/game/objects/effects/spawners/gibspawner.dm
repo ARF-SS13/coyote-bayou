@@ -18,9 +18,7 @@
 	if(gibamounts.len != gibdirections.len)
 		stack_trace("Gib list dir length mismatch!")
 		return
-	INVOKE_ASYNC(src, .proc/do_gibs) // shitty hack
 
-/obj/effect/gibspawner/proc/do_gibs(mob/living/source_mob, list/datum/disease/diseases, list/blood_dna)
 	var/obj/effect/decal/cleanable/blood/gibs/gib = null
 
 	if(sound_to_play && isnum(sound_vol))
@@ -61,7 +59,6 @@
 		qdel(temp_mob)
 	else
 		dna_to_add = list("Non-human DNA" = random_blood_type()) //else, generate a random bloodtype for it.
-
 
 	for(var/i = 1, i<= gibtypes.len, i++)
 		if(gibamounts[i])
