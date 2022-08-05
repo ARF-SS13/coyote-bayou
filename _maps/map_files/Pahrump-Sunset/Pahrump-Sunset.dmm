@@ -27996,6 +27996,12 @@
 /obj/machinery/light/small/broken,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"fce" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "fck" = (
 /obj/structure/decoration/rag,
 /obj/effect/decal/cleanable/dirt,
@@ -42767,10 +42773,11 @@
 /turf/open/floor/f13,
 /area/f13/building)
 "mLx" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/floor/f13/wood,
-/area/f13/village)
+/mob/living/simple_animal/bot/cleanbot,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain3"
+	},
+/area/f13/wasteland)
 "mLF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -50842,11 +50849,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "rcQ" = (
-/mob/living/simple_animal/bot/cleanbot,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain3"
-	},
-/area/f13/wasteland)
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/radroach,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "rcY" = (
 /obj/structure/spacevine,
 /turf/closed/indestructible/rock{
@@ -53448,12 +53454,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"sFt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/radroach,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "sFD" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
@@ -61778,6 +61778,10 @@
 	},
 /turf/open/water,
 /area/f13/wasteland)
+"xeF" = (
+/obj/machinery/gear_painter,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/building)
 "xeL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
@@ -77970,8 +77974,8 @@ vGN
 axz
 bYq
 gTk
-aaT
 yiK
+xeF
 qwd
 kFF
 bqM
@@ -94645,7 +94649,7 @@ dNL
 xLC
 eeK
 tJp
-rcQ
+mLx
 qmG
 oBf
 tRk
@@ -103605,7 +103609,7 @@ aNB
 wxZ
 tdj
 oUj
-mLx
+rcQ
 fvm
 oJz
 tdj
@@ -104085,8 +104089,8 @@ pBa
 hEG
 aHy
 oJz
-mLx
-sFt
+rcQ
+fce
 aHA
 aBw
 azh
