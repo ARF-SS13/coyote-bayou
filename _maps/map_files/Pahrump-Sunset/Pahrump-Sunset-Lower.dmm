@@ -348,11 +348,13 @@
 	},
 /area/f13/caves)
 "aoa" = (
-/obj/structure/nest/supermutant,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/obj/structure/nest/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whitedirtysolid"
+	},
 /area/f13/building/hospital)
 "aon" = (
 /turf/closed/wall/rust,
@@ -514,6 +516,7 @@
 	icon_state = "goo12"
 	},
 /mob/living/simple_animal/hostile/ghoul/reaver,
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plasteel/dark,
 /area/f13/radiation)
 "axw" = (
@@ -7131,6 +7134,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
 "dAT" = (
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plasteel/dark,
 /area/f13/radiation)
 "dBy" = (
@@ -10141,6 +10145,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -10726,12 +10731,6 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/caves)
-"hBJ" = (
-/obj/structure/nest/supermutant,
-/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
-	icon_state = "whitedirtysolid"
-	},
-/area/f13/building/hospital)
 "hCA" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
@@ -14115,6 +14114,7 @@
 	icon_state = "goo8"
 	},
 /mob/living/simple_animal/hostile/ghoul,
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plasteel/dark,
 /area/f13/radiation)
 "lkD" = (
@@ -17361,10 +17361,6 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/clinic)
-"oDy" = (
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "oDA" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -23013,6 +23009,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/stack/sheet/mineral/uranium,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -70675,7 +70672,7 @@ kDe
 raz
 kDe
 kDe
-oDy
+kDe
 kDe
 gYI
 gYI
@@ -71959,7 +71956,7 @@ oqm
 gYI
 dEX
 kDe
-ira
+kDe
 gYI
 kDe
 kDe
@@ -72738,7 +72735,7 @@ gYI
 gYI
 dEX
 kDe
-dEX
+kuo
 dEX
 lmd
 tGK
@@ -72997,7 +72994,7 @@ dEX
 kDe
 jQi
 dEX
-oDy
+kDe
 gYI
 gYI
 gYI
@@ -73501,8 +73498,8 @@ kDe
 gYI
 dEX
 auG
-nvA
-hBJ
+aoa
+yjm
 iWQ
 dEX
 bhq
@@ -73763,7 +73760,7 @@ wKp
 nvA
 xHk
 kDe
-aoa
+gYI
 dEX
 gYI
 kuo
@@ -74544,7 +74541,7 @@ xzy
 tHm
 xzy
 dEX
-vuF
+gYI
 kfw
 dEX
 aaa
@@ -74783,7 +74780,7 @@ xwF
 aaa
 dEX
 gYI
-ira
+kDe
 dEX
 dEX
 dEX
@@ -75304,7 +75301,7 @@ nKT
 nxU
 dQf
 xHk
-aoa
+gYI
 gYI
 xHk
 kDe
@@ -76080,7 +76077,7 @@ gYI
 gYI
 gYI
 gYI
-ira
+kDe
 gYI
 bhq
 nbm
