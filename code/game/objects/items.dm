@@ -1169,4 +1169,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.SetThrowDelay(6)
 	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)
 
+/obj/item/proc/refresh_upgrades()
+	return
 	

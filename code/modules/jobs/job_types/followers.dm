@@ -436,7 +436,7 @@ Follower Volunteer
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/a357 = 2,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 	)
 
 /datum/outfit/loadout/guard_close

@@ -32,7 +32,7 @@
 	automatic_burst_overlay = FALSE
 
 /obj/item/gun/ballistic/automatic/toy/pistol/update_icon_state()
-	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /obj/item/gun/ballistic/automatic/toy/pistol/riot
 	mag_type = /obj/item/ammo_box/magazine/toy

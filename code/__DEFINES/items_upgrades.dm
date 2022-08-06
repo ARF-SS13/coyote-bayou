@@ -1,3 +1,7 @@
+#define REQ_FUEL 1
+#define REQ_CELL 2
+#define REQ_FUEL_OR_CELL 4
+
 //Aspect defines
 #define UPGRADE_PRECISION "precision"
 #define UPGRADE_WORKSPEED "workspeed"
@@ -27,8 +31,6 @@
 //flags
 #define UPGRADE_ITEMFLAGPLUS "item_flag_add"
 
-
-
 //Weapon upgrade defines
 
 //Int multiplier
@@ -40,7 +42,7 @@
 #define GUN_UPGRADE_MOVE_DELAY_MULT "move_delay_mult"
 #define GUN_UPGRADE_RECOIL "recoil_mult"
 #define GUN_UPGRADE_MUZZLEFLASH "muzzleflash_mult"
-#define GUN_UPGRADE_STEPDELAY_MULT "stepdelay_mult"
+#define GUN_UPGRADE_PROJ_SPEED_MULT "projspeed_mult"
 #define GUN_UPGRADE_CHARGECOST "chargecost_mult"
 #define GUN_UPGRADE_OVERCHARGE_MAX "overcharge_max_mult"
 #define GUN_UPGRADE_OVERCHARGE_RATE "overcharge_rate_mult"
@@ -64,8 +66,6 @@
 
 #define GUN_UPGRADE_OFFSET "offset" //Constant offset, in degrees
 #define GUN_UPGRADE_ZOOM "zoom"
-
-
 
 //boolean
 #define GUN_UPGRADE_SILENCER "silencable"

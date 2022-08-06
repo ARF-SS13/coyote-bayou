@@ -31,7 +31,6 @@
 
 	select = FALSE
 	automatic_burst_overlay = FALSE
-	can_automatic = FALSE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
@@ -45,12 +44,6 @@
 
 /obj/item/gun/ballistic/automatic/pistol/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
-
-/obj/item/gun/ballistic/automatic/pistol/suppressed/Initialize(mapload)
-	. = ..()
-	var/obj/item/suppressor/S = new(src)
-	install_suppressor(S)
-
 
 
 /* * * * * * * * *
@@ -83,11 +76,9 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.6)
 
-	can_attachments = TRUE
 	can_suppress = FALSE
-	can_unsuppress = FALSE
-	suppressed = 1
-	fire_sound = 'sound/f13weapons/22pistol.ogg'
+	silenced = TRUE
+	fire_sound_silenced = 'sound/f13weapons/22pistol.ogg'
 
 /* * * * * * * * * * *
  * Browning Hi-Power
@@ -114,7 +105,6 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.8)
 
-	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 19
@@ -169,7 +159,6 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
-	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -201,7 +190,6 @@
 	burst_size = 1
 	init_recoil = HANDGUN_RECOIL(0.8)
 
-	can_attachments = TRUE
 	can_suppress = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 20
@@ -238,7 +226,6 @@
 	)
 
 	automatic_burst_overlay = TRUE
-	can_attachments = FALSE
 	semi_auto = FALSE
 
 /* * * * * * * * * *
@@ -272,8 +259,6 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
-	can_attachments = TRUE
-	can_automatic = TRUE
 	suppressor_state = "n99_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 15
@@ -302,7 +287,6 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 2
 	semi_auto = FALSE
-	can_automatic = FALSE
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
@@ -327,9 +311,6 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	init_recoil = HANDGUN_RECOIL(0.8)
-
-	can_attachments = FALSE
-	can_automatic = FALSE
 
 
 /* * * * * * * * * * *
@@ -383,7 +364,6 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 
-	can_attachments = TRUE
 	suppressor_state = "pistol_suppressor"
 	suppressor_x_offset = 30
 	suppressor_y_offset = 21

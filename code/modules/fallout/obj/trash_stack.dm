@@ -47,6 +47,17 @@
 				//		bonusitem.from_trash = TRUE
 				if(istype(item))
 					item.from_trash = TRUE
+				if(isgun(item))
+					var/obj/item/gun/trash_gun = item
+					var/prob_trash = 80
+					while(prob_trash > 0)
+						if(prob(prob_trash))
+							var/trash_mod_path = pick(GLOB.trash_gunmods)
+							var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
+							if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
+								break
+							QDEL_NULL(trash_mod)
+						prob_trash -= 40
 		loot_players += user
 	else
 		return ..()

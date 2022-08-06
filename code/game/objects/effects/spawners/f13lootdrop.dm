@@ -2068,10 +2068,11 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/advanced_crafting_components/receiver,
 		/obj/item/advanced_crafting_components/assembly,
 		/obj/item/advanced_crafting_components/alloys,
-		/obj/item/attachments/scope,
-		/obj/item/attachments/burst_improvement,
-		/obj/item/attachments/recoil_decrease,
-		/obj/item/attachments/auto_sear
+		/obj/item/gun_upgrade/scope/watchman,
+		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/tool_upgrade/productivity/ergonomic_grip,
+		/obj/item/tool_upgrade/refinement/ported_barrel,
+		/obj/item/tool_upgrade/productivity/red_paint
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintLowPartsWeighted
@@ -2086,10 +2087,11 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/advanced_crafting_components/receiver = 2,
 		/obj/item/advanced_crafting_components/assembly = 2,
 		/obj/item/advanced_crafting_components/alloys = 2,
-		/obj/item/attachments/scope,
-		/obj/item/attachments/burst_improvement,
-		/obj/item/attachments/recoil_decrease,
-		/obj/item/attachments/auto_sear
+		/obj/item/gun_upgrade/scope/watchman,
+		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/tool_upgrade/productivity/ergonomic_grip,
+		/obj/item/tool_upgrade/refinement/ported_barrel,
+		/obj/item/tool_upgrade/productivity/red_paint
 	)
 
 /obj/effect/spawner/lootdrop/f13/blueprintLowMid
@@ -2191,10 +2193,14 @@ obj/effect/spawner/bundle/f13/combat_rifle
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(
-		/obj/item/attachments/scope,
-		/obj/item/attachments/burst_improvement,
-		/obj/item/attachments/recoil_decrease,
-		/obj/item/attachments/auto_sear
+		/obj/item/gun_upgrade/scope/watchman,
+		/obj/item/gun_upgrade/trigger/dangerzone,
+		/obj/item/tool_upgrade/productivity/ergonomic_grip,
+		/obj/item/tool_upgrade/refinement/ported_barrel,
+		/obj/item/tool_upgrade/refinement/stabilized_grip,
+		/obj/item/tool_upgrade/refinement/laserguide,
+		/obj/item/tool_upgrade/productivity/booster,
+		/obj/item/tool_upgrade/productivity/red_paint
 	)
 
 /obj/effect/spawner/lootdrop/f13/npc_raider

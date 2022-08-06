@@ -364,6 +364,7 @@
 	#define COMPONENT_NO_INTERACT 1
 #define COMSIG_ITEM_ATTACK_OBJ "item_attack_obj"				//from base of obj/item/attack_obj(): (/obj, /mob)
 	#define COMPONENT_NO_ATTACK_OBJ 1
+#define COMSIG_ITEM_ATTACK_OBJ_NOHIT "item_attack_obj_nohit"
 #define COMSIG_ITEM_PRE_ATTACK "item_pre_attack"				//from base of obj/item/pre_attack(): (atom/target, mob/user, params)
 	#define COMPONENT_NO_ATTACK 1
 #define COMSIG_ITEM_AFTERATTACK "item_afterattack"				//from base of obj/item/afterattack(): (atom/target, mob/user, params)
@@ -380,13 +381,14 @@
 #define COMSIG_ITEM_HIT_REACT "item_hit_react"					//from base of obj/item/hit_reaction(): (list/args)
 #define COMSIG_ITEM_WEARERCROSSED "wearer_crossed"				//called on item when crossed by something (): (/atom/movable)
 #define COMSIG_ITEM_SHARPEN_ACT "sharpen_act"					//from base of item/sharpener/attackby(): (amount, max)
-#define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
-#define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
-#define COMSIG_UPGRADE_REMOVE "uninstall"
 	#define COMPONENT_BLOCK_SHARPEN_APPLIED 1
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
 	#define COMPONENT_BLOCK_SHARPEN_ALREADY 4
 	#define COMPONENT_BLOCK_SHARPEN_MAXED 8
+#define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
+#define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
+
+#define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)
 #define COMSIG_ITEM_WORN_OVERLAYS "item_worn_overlays"			//from base of obj/item/worn_overlays(): (isinhands, icon_file, used_state, style_flags, list/overlays)
 // THE FOLLOWING TWO BLOCKS SHOULD RETURN BLOCK FLAGS AS DEFINED IN __DEFINES/combat.dm!
