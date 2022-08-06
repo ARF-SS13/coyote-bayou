@@ -1,3 +1,35 @@
+GLOBAL_LIST_INIT(chemwhiz_recipes, list(
+    /datum/crafting_recipe/jet, 
+    /datum/crafting_recipe/turbo, 
+    /datum/crafting_recipe/psycho, 
+    /datum/crafting_recipe/medx, 
+    /datum/crafting_recipe/medx/chemistry, 
+    /datum/crafting_recipe/stimpak, 
+    /datum/crafting_recipe/stimpak/chemistry, 
+    /datum/crafting_recipe/stimpak5, 
+    /datum/crafting_recipe/stimpak5/chemistry, 
+    /datum/crafting_recipe/superstimpak, 
+    /datum/crafting_recipe/superstimpak5, 
+    /datum/crafting_recipe/buffout,
+    /datum/crafting_recipe/steady))
+
+GLOBAL_LIST_INIT(basic_explosive_recipes, list(
+	/datum/crafting_recipe/frag_shrapnel, 
+	/datum/crafting_recipe/stinger, 
+	/datum/crafting_recipe/flashbang,
+	/datum/crafting_recipe/smokebomb, 
+	/datum/crafting_recipe/rocket_base, 
+	/datum/crafting_recipe/weakrocket))
+
+GLOBAL_LIST_INIT(adv_explosive_recipes, list(
+	/datum/crafting_recipe/incendiary, 
+	/datum/crafting_recipe/concussion, 
+	/datum/crafting_recipe/radgrenade, 
+	/datum/crafting_recipe/empgrenade, 
+	/datum/crafting_recipe/incendiaryrocket, 
+	/datum/crafting_recipe/strongrocket))
+
+
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
@@ -330,38 +362,14 @@
 /datum/quirk/chemwhiz/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	H.mind.learned_recipes += list(
-		/datum/crafting_recipe/jet, 
-		/datum/crafting_recipe/turbo, 
-		/datum/crafting_recipe/psycho, 
-		/datum/crafting_recipe/medx, 
-		/datum/crafting_recipe/medx/chemistry, 
-		/datum/crafting_recipe/stimpak, 
-		/datum/crafting_recipe/stimpak/chemistry, 
-		/datum/crafting_recipe/stimpak5, 
-		/datum/crafting_recipe/stimpak5/chemistry, 
-		/datum/crafting_recipe/superstimpak, 
-		/datum/crafting_recipe/superstimpak5, 
-		/datum/crafting_recipe/buffout,
-		/datum/crafting_recipe/steady)
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.chemwhiz_recipes
 
 /datum/quirk/chemwhiz/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
-		H.mind.learned_recipes -= list(
-			/datum/crafting_recipe/jet, 
-			/datum/crafting_recipe/turbo, 
-			/datum/crafting_recipe/psycho, 
-			/datum/crafting_recipe/medx, 
-			/datum/crafting_recipe/medx/chemistry, 
-			/datum/crafting_recipe/stimpak, 
-			/datum/crafting_recipe/stimpak/chemistry, 
-			/datum/crafting_recipe/stimpak5, 
-			/datum/crafting_recipe/stimpak5/chemistry, 
-			/datum/crafting_recipe/superstimpak, 
-			/datum/crafting_recipe/superstimpak5, 
-			/datum/crafting_recipe/buffout,
-			/datum/crafting_recipe/steady)
+		H.mind.learned_recipes -= GLOB.chemwhiz_recipes
 
 
 /datum/quirk/pa_wear
@@ -456,25 +464,15 @@
 
 /datum/quirk/explosive_crafting/add()
 	var/mob/living/carbon/human/H = quirk_holder
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	H.mind.learned_recipes += list(
-		/datum/crafting_recipe/frag_shrapnel, 
-		/datum/crafting_recipe/stinger, 
-		/datum/crafting_recipe/flashbang,
-		/datum/crafting_recipe/smokebomb, 
-		/datum/crafting_recipe/rocket_base, 
-		/datum/crafting_recipe/weakrocket)
+	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
 
 /datum/quirk/explosive_crafting/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
-		H.mind.learned_recipes -= list(
-			/datum/crafting_recipe/frag_shrapnel, 
-			/datum/crafting_recipe/stinger, 
-			/datum/crafting_recipe/flashbang,
-			/datum/crafting_recipe/smokebomb, 
-			/datum/crafting_recipe/rocket_base, 
-			/datum/crafting_recipe/weakrocket)
+		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
 
 /datum/quirk/advanced_explosive_crafting
 	name = "Advanced Explosive Crafting"
@@ -488,36 +486,16 @@
 /datum/quirk/advanced_explosive_crafting/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
-	H.mind.learned_recipes += list(
-		/datum/crafting_recipe/incendiary, 
-		/datum/crafting_recipe/concussion, 
-		/datum/crafting_recipe/radgrenade, 
-		/datum/crafting_recipe/empgrenade, 
-		/datum/crafting_recipe/incendiaryrocket, 
-		/datum/crafting_recipe/strongrocket, 
-		/datum/crafting_recipe/frag_shrapnel, 
-		/datum/crafting_recipe/stinger, 
-		/datum/crafting_recipe/flashbang,
-		/datum/crafting_recipe/smokebomb, 
-		/datum/crafting_recipe/rocket_base, 
-		/datum/crafting_recipe/weakrocket)
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.basic_explosive_recipes
+	H.mind.learned_recipes |= GLOB.adv_explosive_recipes
 
 /datum/quirk/advanced_explosive_crafting/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
-		H.mind.learned_recipes -= list(
-			/datum/crafting_recipe/incendiary, 
-			/datum/crafting_recipe/concussion, 
-			/datum/crafting_recipe/radgrenade, 
-			/datum/crafting_recipe/empgrenade, 
-			/datum/crafting_recipe/incendiaryrocket, 
-			/datum/crafting_recipe/strongrocket, 
-			/datum/crafting_recipe/frag_shrapnel, 
-			/datum/crafting_recipe/stinger, 
-			/datum/crafting_recipe/flashbang,
-			/datum/crafting_recipe/smokebomb, 
-			/datum/crafting_recipe/rocket_base, 
-			/datum/crafting_recipe/weakrocket)
+		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
+		H.mind.learned_recipes -= GLOB.adv_explosive_recipes
 
 
 /datum/quirk/whitelegstraditions
