@@ -1,17 +1,17 @@
 GLOBAL_LIST_INIT(chemwhiz_recipes, list(
-    /datum/crafting_recipe/jet,
-    /datum/crafting_recipe/turbo,
-    /datum/crafting_recipe/psycho,
-    /datum/crafting_recipe/medx,
-    /datum/crafting_recipe/medx/chemistry,
-    /datum/crafting_recipe/stimpak,
-    /datum/crafting_recipe/stimpak/chemistry,
-    /datum/crafting_recipe/stimpak5,
-    /datum/crafting_recipe/stimpak5/chemistry,
-    /datum/crafting_recipe/superstimpak,
-    /datum/crafting_recipe/superstimpak5,
-    /datum/crafting_recipe/buffout,
-    /datum/crafting_recipe/steady))
+	/datum/crafting_recipe/jet,
+	/datum/crafting_recipe/turbo,
+	/datum/crafting_recipe/psycho,
+	/datum/crafting_recipe/medx,
+	/datum/crafting_recipe/medx/chemistry,
+	/datum/crafting_recipe/stimpak,
+	/datum/crafting_recipe/stimpak/chemistry,
+	/datum/crafting_recipe/stimpak5,
+	/datum/crafting_recipe/stimpak5/chemistry,
+	/datum/crafting_recipe/superstimpak,
+	/datum/crafting_recipe/superstimpak5,
+	/datum/crafting_recipe/buffout,
+	/datum/crafting_recipe/steady))
 
 GLOBAL_LIST_INIT(basic_explosive_recipes, list(
 	/datum/crafting_recipe/frag_shrapnel,
