@@ -101,8 +101,12 @@
 
 /mob/Login()
 	. = ..()
-	if(length(statusMessage))
-		client.m_statusMessage = statusMessage // cursed way to get around disconnects.
+	if(client) // cursed way to get around disconnects and mob changes.
+		if(length(statusMessage))
+			client.m_statusMessage = statusMessage
+		else
+			if(length(client.m_statusMessage))
+				statusMessage = client.m_statusMessage
 
 // Make the verb here.
 /mob/verb/SetStatusMsg()
