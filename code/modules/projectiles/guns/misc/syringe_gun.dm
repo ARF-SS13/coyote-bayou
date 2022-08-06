@@ -10,6 +10,7 @@
 	custom_materials = list(/datum/material/iron=2000)
 	clumsy_check = 0
 	fire_sound = 'sound/items/syringeproj.ogg'
+	fire_sound_silenced = 'sound/items/syringeproj.ogg'
 	var/list/syringes = list()
 	var/max_syringes = 1
 
@@ -75,8 +76,7 @@
 	item_state = "gun" //Smaller inhand
 	w_class = WEIGHT_CLASS_SMALL
 	force = 2 //Also very weak because it's smaller
-	suppressed = TRUE //Softer fire sound
-	can_unsuppress = FALSE //Permanently silenced
+	silenced = TRUE //Softer fire sound
 
 /obj/item/gun/syringe/dna
 	name = "modified syringe gun"
@@ -109,8 +109,7 @@
 	icon_state = "dartgun"
 	item_state = "dartgun"
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500)
-	suppressed = TRUE //Softer fire sound
-	can_unsuppress = FALSE
+	silenced = TRUE //Softer fire sound
 
 /obj/item/gun/syringe/dart/Initialize()
 	..()

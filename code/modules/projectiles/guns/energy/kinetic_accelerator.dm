@@ -176,7 +176,7 @@
 
 /obj/item/gun/energy/kinetic_accelerator/proc/reload()
 	cell.give(cell.maxcharge)
-	if(!suppressed)
+	if(!silenced)
 		playsound(src.loc, 'sound/weapons/kenetic_reload.ogg', 60, 1)
 	else
 		to_chat(loc, "<span class='warning'>[src] silently charges up.</span>")

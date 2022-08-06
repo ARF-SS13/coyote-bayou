@@ -600,6 +600,14 @@
 	item_state = "holster_leg"
 	slot_flags = ITEM_SLOT_BELT
 
+/obj/item/storage/belt/holster/legholster/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.can_hold = GLOB.gunbelt_allowed
+
 /obj/item/storage/belt/holster/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
