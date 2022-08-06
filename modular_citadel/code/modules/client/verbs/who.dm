@@ -1,4 +1,4 @@
-/client/verb/mentorwho()
+/client/verb/mentorwho() // Lots of these will be overridden in modular_coyote :) Ignore the first line in that file though, I just like making infinite logical loops.
 	set category = "Mentor"
 	set name = "Mentorwho"
 	var/msg = "<b>Current Mentors:</b>\n"
