@@ -65,8 +65,7 @@
 
 /obj/screen/item_action/top_bar/gun
 	icon = 'modular_coyote/eris/icons/gun_actions.dmi'
-	screen_loc = "8-1:15,1+1:13"
-	minloc = "7,2:13"
+	screen_loc = "CENTER-1:14,SOUTH+1:13"
 
 /obj/screen/item_action/top_bar/gun/safety
 	name = "safety"
@@ -93,8 +92,8 @@
 /obj/screen/item_action/top_bar/gun/scope
 	name = "scope"
 	icon_state = "scope0"
-	screen_loc = "9,1:13"
-	minloc = "8,2:13"
+	screen_loc = "CENTER:15,SOUTH+1:13"
+	minloc = null
 
 /obj/screen/item_action/top_bar/gun/scope/update_icon()
 	..()
@@ -104,19 +103,7 @@
 
 /obj/screen/item_action/top_bar/weapon_info
 	icon = 'modular_coyote/eris/icons/gun_actions.dmi'
-	screen_loc = "9,1+1:13"
+	screen_loc = "CENTER+1,SOUTH+1:13"
 	minloc = null
 	name = "Weapon Info"
 	icon_state = "info"
-
-/*
-/obj/item/gun/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 1, state = GLOB.default_state)
-	var/list/data = ui_data(user)
-
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if (!ui)
-		ui = new(user, src, ui_key, "weapon_stats.tmpl", name, 700, 550, state = state)
-		ui.auto_update_layout = 1
-		ui.set_initial_data(data)
-		ui.open()
-*/
