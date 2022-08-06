@@ -905,8 +905,9 @@ GLOBAL_LIST_INIT(loot_attachment_advanced, list(
 	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
 	/obj/item/tool_upgrade/productivity/motor = 1,
 	/obj/item/gun_upgrade/mechanism/overdrive = 1,
-	/obj/item/gun_upgrade/mechanism/shunt = 1,
-	/obj/item/gun_upgrade/mechanism/weintraub = 1
+	/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
+	/obj/item/gun_upgrade/mechanism/weintraub = 1,
+	/obj/item/gun_upgrade/barrel/excruciator = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(
