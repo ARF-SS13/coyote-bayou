@@ -40,7 +40,6 @@
 	for(var/propname in settings)
 		if(propname in gun.vars)
 			gun.vars[propname] = settings[propname]
-			/*
 			// Apply gunmods effects that have been erased by the previous line
 			if(propname == "charge_cost")
 				for(var/obj/I in gun.item_upgrades)
@@ -53,7 +52,7 @@
 					if(IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT])
 						gun.vars["fire_delay"] *= IU.weapon_upgrades[GUN_UPGRADE_FIRE_DELAY_MULT]
 		else if(propname == "damage_mult_add")
-			gun.damage_multiplier += settings[propname]*/
+			gun.damage_multiplier += settings[propname]
 
 //Called whenever the firemode is switched to, or the gun is picked up while its active
 /datum/firemode/proc/update()

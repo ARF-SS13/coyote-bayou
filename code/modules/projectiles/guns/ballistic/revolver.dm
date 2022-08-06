@@ -25,6 +25,7 @@
 		SEMI_AUTO_NODELAY
 	)
 
+
 	var/select = 0
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
 
@@ -32,6 +33,10 @@
 	. = ..()
 	if(!istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))
 		verbs += /obj/item/gun/ballistic/revolver/verb/spin
+
+/obj/item/gun/ballistic/revolver/generate_guntags()
+	..()
+	gun_tags |= GUN_REVOLVER
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin = 1)
 	if(spin)

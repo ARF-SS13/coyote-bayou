@@ -108,7 +108,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
-	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /* * * * * * * * * * *
  * Pipe Gun
@@ -354,7 +354,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
-	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 
 
@@ -436,8 +436,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
-	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
 	can_scope = FALSE
 	scope_state = "scope_medium"

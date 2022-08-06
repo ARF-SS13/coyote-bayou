@@ -27,6 +27,16 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/spearfisher
+	name = "Spearfisher"
+	time = 60
+	reqs = list(/obj/item/grown/log = 2,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/leather = 3)
+	result = /obj/item/fishingrod/spearfisher
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/wonderglue
 	name = "Animal Glue"
 	time = 60

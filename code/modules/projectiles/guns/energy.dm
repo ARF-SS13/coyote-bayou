@@ -44,6 +44,7 @@
 	var/charge_delay = 4
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
+	var/charge_cost_multiplier = 1
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -53,6 +54,7 @@
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
+	init_recoil = HANDGUN_RECOIL(0.1)
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -130,11 +132,11 @@
 			var/mob/living/silicon/robot/R = loc
 			if(R.cell)
 				var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index] //Necessary to find cost of shot
-				if(R.cell.use(shot.e_cost)) 		//Take power from the borg...
-					cell.give(shot.e_cost)	//... to recharge the shot
+				if(R.cell.use(shot.e_cost * charge_cost_multiplier)) 		//Take power from the borg...
+					cell.give(shot.e_cost * charge_cost_multiplier)	//... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
-		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...
+		if(cell.charge >= AC.e_cost * charge_cost_multiplier) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
@@ -142,7 +144,7 @@
 /obj/item/gun/energy/process_chamber()
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
 		var/obj/item/ammo_casing/energy/shot = chambered
-		cell.use(shot.e_cost)//... drain the cell cell
+		cell.use(shot.e_cost * charge_cost_multiplier)//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	recharge_newshot() //try to charge a new shot
 
@@ -291,7 +293,7 @@
 			playsound(loc, fire_sound, 50, 1, -1)
 			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-			cell.use(shot.e_cost)
+			cell.use(shot.e_cost * charge_cost_multiplier)
 			update_icon()
 			return(FIRELOSS)
 		else
@@ -325,19 +327,19 @@
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
+			cell.use(E.e_cost * charge_cost_multiplier)
 			. = ""
 		else if(BB.damage_type != BURN)
 			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
+			cell.use(E.e_cost * charge_cost_multiplier)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
+			cell.use(E.e_cost * charge_cost_multiplier)
 			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
 
 /obj/item/gun/energy/altafterattack(atom/target, mob/user, proximity_flags, params)
@@ -398,13 +400,23 @@
 /obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-	data["charge_cost"] = shot.e_cost
+	data["charge_cost"] = shot.e_cost * charge_cost_multiplier
 	if(cell)
 		data["cell_charge"] = cell.percent()
-		data["shots_remaining"] = round(cell.charge/shot.e_cost)
-		data["max_shots"] = round(cell.maxcharge/shot.e_cost)
+		data["shots_remaining"] = round(cell.charge / (shot.e_cost * charge_cost_multiplier))
+		data["max_shots"] = round(cell.maxcharge / (shot.e_cost * charge_cost_multiplier))
 	return data
 
 /obj/item/gun/energy/get_dud_projectile()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	return new shot.projectile_type
+
+/obj/item/gun/energy/generate_guntags()
+	..()
+	gun_tags |= GUN_ENERGY
+	gun_tags |= GUN_LASER
+
+/obj/item/gun/energy/refresh_upgrades()
+	//refresh our unique variables before applying upgrades too
+	charge_cost_multiplier = initial(charge_cost_multiplier)
+	..()

@@ -752,7 +752,7 @@
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
 		/obj/item/clothing/mask/gas/ranger = 1,

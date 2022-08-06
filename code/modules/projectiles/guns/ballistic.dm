@@ -27,6 +27,8 @@
 				magazine = new init_mag_type(src)
 			else
 				magazine = new mag_type(src)
+			if(magazine.fixed_mag)
+				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
 	allowed_mags |= typecacheof(mag_type)
 	if(length(extra_mag_types))
@@ -112,23 +114,6 @@
 		new_mag.update_icon()
 		update_icon()
 		return TRUE
-
-	if(istype(A, /obj/item/suppressor))
-		var/obj/item/suppressor/S = A
-		if(!can_suppress)
-			to_chat(user, "<span class='warning'>You can't seem to figure out how to fit [S] on [src]!</span>")
-			return
-		if(!user.is_holding(src))
-			to_chat(user, "<span class='notice'>You need be holding [src] to fit [S] to it!</span>")
-			return
-		if(suppressed)
-			to_chat(user, "<span class='warning'>[src] already has a suppressor!</span>")
-			return
-		if(user.transferItemToLoc(A, src))
-			to_chat(user, "<span class='notice'>You screw [S] onto [src].</span>")
-			install_suppressor(A)
-			update_overlays()
-			return
 	return FALSE
 
 /obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
@@ -180,27 +165,6 @@
 		else
 			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
 			return FALSE
-
-/obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
-	// this proc assumes that the suppressor is already inside src
-	suppressed = S
-	S.oldsound = fire_sound
-	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
-	update_icon()
-
-/obj/item/gun/ballistic/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(loc == user)
-		if(suppressed && can_unsuppress)
-			var/obj/item/suppressor/S = suppressed
-			if(!user.is_holding(src))
-				return ..()
-			to_chat(user, "<span class='notice'>You unscrew [suppressed] from [src].</span>")
-			user.put_in_hands(suppressed)
-			fire_sound = S.oldsound
-			suppressed = null
-			update_icon()
-			return
-	return ..()
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
@@ -353,16 +317,11 @@
 			process_fire(user, user, FALSE)
 			. = 1
 
+/obj/item/gun/ballistic/generate_guntags()
+	..()
+	gun_tags |= GUN_PROJECTILE
 
-/obj/item/suppressor
-	name = "suppressor"
-	desc = "A syndicate small-arms suppressor for maximum espionage."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "suppressor"
-	w_class = WEIGHT_CLASS_TINY
-	var/oldsound = null
-
-
-/obj/item/suppressor/specialoffer
-	name = "cheap suppressor"
-	desc = "A foreign knock-off suppressor, it feels flimsy, cheap, and brittle. Still fits some weapons."
+/obj/item/gun/ballistic/refresh_upgrades()
+	if(istype(magazine,/obj/item/ammo_box/magazine/internal))
+		magazine?.max_ammo = initial(magazine?.max_ammo)
+	..()
