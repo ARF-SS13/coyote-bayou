@@ -532,6 +532,9 @@ GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
 	/obj/item/melee/onehanded/knife/hunting,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
@@ -576,39 +579,6 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/scalpel,
 	)))
 
-GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
-	/obj/item/gun/ballistic/automatic/pistol,
-	/obj/item/gun/ballistic/revolver,
-	/obj/item/ammo_box/magazine,
-	/obj/item/ammo_box/tube,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/l10mm,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/shotgun,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/a556/stripper,
-	/obj/item/ammo_box/needle,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a50MG,
-	/obj/item/ammo_box/c45rev,
-	/obj/item/gun/energy/laser/solar,
-	/obj/item/gun/energy/laser/pistol,
-	/obj/item/gun/energy/laser/plasma/pistol,
-	/obj/item/gun/energy/laser/plasma/glock,
-	/obj/item/gun/energy/laser/plasma/glock/extended,
-	/obj/item/gun/energy/laser/wattz,
-	/obj/item/gun/energy/laser/wattz/magneto,
-	/obj/item/gun/energy/laser/plasma/pistol/alien,
-	/obj/item/stock_parts/cell/ammo/ec,
-	)))
-
-GLOBAL_LIST_INIT(storage_magpouch_cant_hold, typecacheof(list(
-	/obj/item/gun
-	)))
-
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/toy/cards/deck,
@@ -644,52 +614,25 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/energy/laser/wattz,
 )))
 
-GLOBAL_LIST_INIT(storage_bulletbelt_can_hold, typecacheof(list(
-	/obj/item/ammo_box/magazine,
-	/obj/item/ammo_box/tube,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/l10mm,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/shotgun,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/a556/stripper,
-	/obj/item/ammo_box/needle,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a50MG,
-	/obj/item/gun/energy/laser/solar,
-	/obj/item/gun/energy/laser/pistol,
-	/obj/item/gun/energy/laser/plasma/pistol,
-	/obj/item/gun/energy/laser/plasma/glock,
-	/obj/item/gun/energy/laser/plasma/glock/extended,
-	/obj/item/gun/energy/laser/wattz,
-	/obj/item/gun/energy/laser/wattz/magneto,
-	/obj/item/gun/energy/laser/plasma/pistol/alien,
-	/obj/item/stock_parts/cell/ammo/ec,
-)))
-
-
 /// How many items total fit in a holster
 #define STORAGE_HOLSTER_MAX_ITEMS 7
 /// How much volume fits in a holster
-#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_HOLSTER_MAX_ITEMS
+#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_HOLSTER_MAX_ITEMS
 
 /// How many items total fit in a shoulder holster
 #define STORAGE_SHOULDER_HOLSTER_MAX_ITEMS 4
 /// How much volume fits in a holster
-#define STORAGE_SHOULDER_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+#define STORAGE_SHOULDER_HOLSTER_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
 
 /// How many items total fit in a belt
 #define STORAGE_BELT_MAX_ITEMS 14
 /// How much volume fits in a belt
-#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_BELT_MAX_ITEMS
+#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_BELT_MAX_ITEMS
 
 /// How many items total fit in a belt
 #define STORAGE_FANNYPACK_MAX_ITEMS 7
 /// How much volume fits in a belt
-#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
+#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_FANNYPACK_MAX_ITEMS
 
 /// How many items total fit in a large survival kit
 #define STORAGE_TRIPLEKIT_MAX_ITEMS 21

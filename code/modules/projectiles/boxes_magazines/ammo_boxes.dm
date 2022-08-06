@@ -239,7 +239,7 @@
 	name = "bag with reloaded .44 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 
 
 // .45 ACP
@@ -269,7 +269,7 @@
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
-	multiple_sprites = 1
+	multiple_sprites = 3
 
 
 //.45-70 Gov't

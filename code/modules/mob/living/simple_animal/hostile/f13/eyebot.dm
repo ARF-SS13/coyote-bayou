@@ -18,8 +18,8 @@
 	move_to_delay = 3
 	stat_attack = 1
 	robust_searching = 1
-	maxHealth = 70
-	health = 70
+	maxHealth = 56
+	health = 56
 	healable = 0
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	blood_volume = 0
@@ -149,11 +149,11 @@
 	name = "reinforced eyebot"
 	desc = "An eyebot with beefier protection, and extra electronic aggression."
 	color = "#B85C00"
-	maxHealth = 150
-	health = 150
+	maxHealth = 100
+	health = 100
 	faction = list("raider", "wastebot")
 	extra_projectiles = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	melee_damage_lower = 5
+	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6

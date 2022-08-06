@@ -69,7 +69,7 @@
 	icon_state = "galoshes"
 	permeability_coefficient = 0.01
 	clothing_flags = NOSLIP
-	slowdown = SHOES_SLOWDOWN+1
+//	slowdown = SHOES_SLOWDOWN+1
 	strip_delay = 50
 	equip_delay_other = 50
 	resistance_flags = NONE

@@ -383,3 +383,15 @@ datum/chemical_reaction/rezadone
 	results = list(/datum/reagent/medicine/mentat = 3)
 	required_reagents = list(/datum/reagent/medicine/neurine = 1, /datum/reagent/cellulose = 1)
 	required_temp = 451
+
+/datum/chemical_reaction/stimfluid
+	name = "stimfluid"
+	id = /datum/reagent/medicine/stimpak
+	results = list(/datum/reagent/medicine/stimpak = 20)
+	required_reagents = list(
+		/datum/reagent/medicine/bicaridine = 5, 
+		/datum/reagent/medicine/kelotane = 5, 
+		/datum/reagent/medicine/styptic_powder = 5, 
+		/datum/reagent/medicine/silver_sulfadiazine = 5, 
+		)
+	required_temp = 451

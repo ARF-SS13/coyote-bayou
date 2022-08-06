@@ -93,8 +93,10 @@
 /obj/item/clothing/shoes/f13/military/desert
 	name = "desert combat boots"
 	desc = "An old pair of desert combat boots. This one seems to have a tighter fit, and a padded interior."
-	icon_state = "erin_boot"
+	icon_state = "laced"
 	item_state = "erin_boot"
+
+///// "NCR" boots below
 
 /obj/item/clothing/shoes/f13/military/ncr
 	name = "patrol boots"
@@ -108,6 +110,8 @@
 	icon_state = "ncr_officer_boots"
 	item_state = "ncr_officer_boots"
 
+
+//// "Legion" Stuff below
 
 /obj/item/clothing/shoes/roman
 	name = "roman sandals"
@@ -216,7 +220,24 @@
 	icon_state = "khan_peltboots"
 	item_state = "khan_peltboots"
 
+///// End of "khans"
 
+/obj/item/clothing/shoes/f13/military/duty
+	name = "duty boots"
+	desc = "A pair of laced old combat boots used by pre-war riot police. These have a very shining front as if they were made from rubber. (can be reskinned by alt clicking once)"
+	icon_state = "duty"
+	item_state = "duty"
+	unique_reskin = list(
+						"Standard" = "duty",
+						"Alternative" = "duty_alt",
+						"Tall" = "duty_long"
+						)
+
+/obj/item/clothing/shoes/f13/military/patrol
+	name = "patrol boots"
+	desc = "A pair of hardened leather boots made for combat."
+	icon_state = "patrol"
+	item_state = "patrol"
 
 //Fluff
 

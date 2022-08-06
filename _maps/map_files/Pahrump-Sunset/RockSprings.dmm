@@ -19026,6 +19026,7 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/gear_painter,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
 "lxy" = (
@@ -19965,12 +19966,7 @@
 	dir = 2;
 	pixel_y = 15
 	},
-/turf/open/pool{
-	desc = "Deep, warm, relaxing water.";
-	icon_state = "stagnant_tile";
-	name = "Hot Springs";
-	color = "#886B63"
-	},
+/turf/open/indestructible/ground/outside/water,
 /area/f13/building)
 "mcr" = (
 /obj/machinery/smartfridge/bottlerack/grownbin,
@@ -31950,14 +31946,6 @@
 	color = "#845f58"
 	},
 /turf/open/floor/wood_common,
-/area/f13/building)
-"tFm" = (
-/turf/open/pool{
-	desc = "Deep, warm, relaxing water.";
-	icon_state = "stagnant_tile";
-	name = "Hot Springs";
-	color = "#886B63"
-	},
 /area/f13/building)
 "tFr" = (
 /obj/structure/flora/tree/jungle/small{
@@ -48249,7 +48237,7 @@ qnn
 tRd
 nQW
 nQW
-nQW
+vhH
 uVV
 nQW
 nQW
@@ -48766,7 +48754,7 @@ nQW
 nQW
 jHu
 kVq
-vhH
+nQW
 nQW
 nQW
 wgx
@@ -54917,11 +54905,11 @@ rez
 vxs
 vxs
 mlJ
-tFm
-tFm
-tFm
-tFm
-tFm
+fLa
+fLa
+fLa
+fLa
+fLa
 umK
 vxs
 qnn
@@ -55174,11 +55162,11 @@ lGx
 vxs
 bue
 rMp
-tFm
-tFm
-tFm
-tFm
-tFm
+fLa
+fLa
+fLa
+fLa
+fLa
 nbA
 vxs
 qnn
@@ -55432,10 +55420,10 @@ bhB
 rGG
 rGG
 mcj
-tFm
-tFm
-tFm
-tFm
+fLa
+fLa
+fLa
+fLa
 ree
 vxs
 qnn
@@ -55688,11 +55676,11 @@ raG
 vxs
 cDv
 jkP
-tFm
-tFm
-tFm
-tFm
-tFm
+fLa
+fLa
+fLa
+fLa
+fLa
 iNc
 vxs
 qnn
@@ -55945,11 +55933,11 @@ jrm
 vxs
 vxs
 ixc
-tFm
-tFm
-tFm
-tFm
-tFm
+fLa
+fLa
+fLa
+fLa
+fLa
 nbA
 vxs
 qnn

@@ -1655,11 +1655,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -1700,7 +1700,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -1740,7 +1740,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_600
+		FULL_AUTO_300
 	)
 
 	semi_auto = TRUE
@@ -1889,11 +1889,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_300,
 		BURST_3_ROUND
 	)
 
@@ -1989,8 +1989,7 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/
-	extra_mag_types = list(/obj/item/ammo_box/magazine/w308)
+	init_mag_type = /obj/item/ammo_box/magazine/m762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -1999,11 +1998,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T4 // 57 damage per shot, full auto, great grouping? not on my watch!
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -2147,7 +2146,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/r84
 	name = "R84 LMG"
-	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs NCR has produced."
+	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs still commonly found."
 	icon_state = "R84"
 	item_state = "R84"
 	mag_type = /obj/item/ammo_box/magazine/lmg
@@ -2164,7 +2163,7 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600
+		FULL_AUTO_400
 	)
 
 	is_automatic = TRUE

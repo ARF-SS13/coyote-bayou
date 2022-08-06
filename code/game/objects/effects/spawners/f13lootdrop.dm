@@ -559,7 +559,8 @@
 				/obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
-				/obj/item/storage/pill_bottle/chem_tin/buffout
+				/obj/item/storage/pill_bottle/chem_tin/buffout,
+				/obj/item/reagent_containers/hypospray/medipen/steady
 				)
 
 

@@ -119,6 +119,16 @@
 	path = /obj/item/clothing/shoes/f13/military/khan_pelt
 	cost = 2
 
+/datum/gear/shoes/duty
+	name = "duty boots"
+	path = /obj/item/clothing/shoes/f13/military/duty
+	cost = 2
+
+/datum/gear/shoes/patrol
+	name = "patrol boots"
+	path = /obj/item/clothing/shoes/f13/military/patrol
+	cost = 2
+
 /datum/gear/shoes/patrol_boots
 	name = "NCR patrol boots"
 	path = /obj/item/clothing/shoes/f13/military/ncr

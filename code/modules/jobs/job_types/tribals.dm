@@ -1,12 +1,12 @@
-/datum/job/tribal 
+/datum/job/tribal
 	department_flag = TRIBAL
 	selection_color = "#ffeeaa"
 	exp_type = EXP_TYPE_TRIBAL
 	forbids = "The use of pre-collapse technology, especially pre-collapse weapons of war."
 	enforces = "The tribe operate as if they are a part of a singular clan. Any harm dealt upon another member is likened to harm placed upon your brother or sister. Above all things, the tribe comes first."
 	objectivesList = list(
-		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.", 
-		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.", 
+		"The Clan has decided to look for fresh blood from the out-peoples.  See if you can find someone to willingly join the tribe and learn our ways.",
+		"This week we hunt, gecko's are to be reduced in numbers to a more sustainable level on this land for having murdered too many of our brahmin.",
 		"This week we hunt, the Cazador menace is too strong in this land.  Their stingers are dangerous and the elders demand their extinction.",
 		"The druids far off have asked us to find a cursed pre-war weapon that throws burning light at whatever you seek to destroy.  All of them must be found and destroyed, or our crops might fail.",
 		"The Village rests, defend it and prosper this week.  Peace is rare, and we should enjoy it with song, dance, and good company.  Feel free to include outsiders if they will follow our ways when on our lands.",
@@ -44,6 +44,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/tribalwar/bonecodpiece,
 	/datum/crafting_recipe/tribalwar/bracers,
 	/datum/crafting_recipe/tribal/bonetalisman,
+	/datum/crafting_recipe/spearfisher,
 	/datum/crafting_recipe/healpoultice,
 	/datum/crafting_recipe/healpoultice5,
 	/datum/crafting_recipe/food/pemmican,
