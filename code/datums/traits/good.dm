@@ -1,32 +1,32 @@
 GLOBAL_LIST_INIT(chemwhiz_recipes, list(
-    /datum/crafting_recipe/jet, 
-    /datum/crafting_recipe/turbo, 
-    /datum/crafting_recipe/psycho, 
-    /datum/crafting_recipe/medx, 
-    /datum/crafting_recipe/medx/chemistry, 
-    /datum/crafting_recipe/stimpak, 
-    /datum/crafting_recipe/stimpak/chemistry, 
-    /datum/crafting_recipe/stimpak5, 
-    /datum/crafting_recipe/stimpak5/chemistry, 
-    /datum/crafting_recipe/superstimpak, 
-    /datum/crafting_recipe/superstimpak5, 
+    /datum/crafting_recipe/jet,
+    /datum/crafting_recipe/turbo,
+    /datum/crafting_recipe/psycho,
+    /datum/crafting_recipe/medx,
+    /datum/crafting_recipe/medx/chemistry,
+    /datum/crafting_recipe/stimpak,
+    /datum/crafting_recipe/stimpak/chemistry,
+    /datum/crafting_recipe/stimpak5,
+    /datum/crafting_recipe/stimpak5/chemistry,
+    /datum/crafting_recipe/superstimpak,
+    /datum/crafting_recipe/superstimpak5,
     /datum/crafting_recipe/buffout,
     /datum/crafting_recipe/steady))
 
 GLOBAL_LIST_INIT(basic_explosive_recipes, list(
-	/datum/crafting_recipe/frag_shrapnel, 
-	/datum/crafting_recipe/stinger, 
+	/datum/crafting_recipe/frag_shrapnel,
+	/datum/crafting_recipe/stinger,
 	/datum/crafting_recipe/flashbang,
-	/datum/crafting_recipe/smokebomb, 
-	/datum/crafting_recipe/rocket_base, 
+	/datum/crafting_recipe/smokebomb,
+	/datum/crafting_recipe/rocket_base,
 	/datum/crafting_recipe/weakrocket))
 
 GLOBAL_LIST_INIT(adv_explosive_recipes, list(
-	/datum/crafting_recipe/incendiary, 
-	/datum/crafting_recipe/concussion, 
-	/datum/crafting_recipe/radgrenade, 
-	/datum/crafting_recipe/empgrenade, 
-	/datum/crafting_recipe/incendiaryrocket, 
+	/datum/crafting_recipe/incendiary,
+	/datum/crafting_recipe/concussion,
+	/datum/crafting_recipe/radgrenade,
+	/datum/crafting_recipe/empgrenade,
+	/datum/crafting_recipe/incendiaryrocket,
 	/datum/crafting_recipe/strongrocket))
 
 
