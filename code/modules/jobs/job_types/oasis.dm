@@ -280,7 +280,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		)
 
 /datum/outfit/loadout/thechief
@@ -954,7 +954,7 @@ Mayor
 	/obj/item/shovel/trench =1,
 	/obj/item/binoculars = 1,
 	/obj/item/gun/ballistic/rifle/hunting = 1,
-	/obj/item/attachments/scope = 1,
+	/obj/item/gun_upgrade/scope/watchman = 1,
 	)
 
 /datum/outfit/loadout/singer
