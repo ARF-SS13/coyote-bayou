@@ -124,4 +124,4 @@
 	if(length(input))	
 		statusMessage = input
 		client.statusMessage = input
-		to_chat(usr, "Your status message is now: [stripped_input]")
+		to_chat(usr, "Your status message is now: [input]")
