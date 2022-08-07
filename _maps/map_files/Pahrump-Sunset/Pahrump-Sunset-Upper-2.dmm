@@ -297,6 +297,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"ww" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "wD" = (
 /obj/structure/cable,
 /obj/machinery/power/tracker,
@@ -547,6 +553,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"Tx" = (
+/obj/structure/cable,
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Um" = (
 /mob/living/simple_animal/hostile/raider/tribal,
@@ -50587,9 +50597,9 @@ St
 St
 ch
 lk
-jX
-jX
-jX
+Tx
+SK
+ww
 ic
 jX
 jX
