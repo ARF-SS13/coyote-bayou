@@ -1,3 +1,4 @@
+// overridden by code\modules\client\verbs\who.dm, don't read this code ;)
 // Author: Gremling
 // Goal: Redo the who.dm procs to be more up to date with TG + refactored to allow Ckeys to be shown to admins plus some useful buttons to use.
 // Relevant Meme: https://youtu.be/8B8On0__AJs
@@ -50,7 +51,7 @@
 		
 
 
-		assembled += "\t [admin_mode? (key + " - "):""][charName][show_sum_info(C, admin_mode)] ([round(C.avgping, 1)]ms) [C.m_statusMessage? ("@ " + C.m_statusMessage) : ""]"
+		assembled += "\t [admin_mode? (C.key + " - "):""][charName][show_sum_info(C, admin_mode)] ([round(C.avgping, 1)]ms) [C.statusMessage? ("@ " + C.statusMessage) : ""]"
 	Lines += sortList(assembled)
 	
 	for(var/line in Lines)
@@ -94,7 +95,7 @@
 
 
 /client
-	var/m_statusMessage = null
+	var/statusMessage = null // Bruh I did the prefix cause I'm that used to working in C++ STILL REEEE
 
 /mob
 	var/statusMessage = null // Shouldn't be explicitly written to, this is a backup copy of the client incase they disconnect
@@ -103,24 +104,24 @@
 	. = ..()
 	if(client) // cursed way to get around disconnects and mob changes.
 		if(length(statusMessage))
-			client.m_statusMessage = statusMessage
+			client.statusMessage = statusMessage
 		else
-			if(length(client.m_statusMessage))
-				statusMessage = client.m_statusMessage
+			if(length(client.statusMessage))
+				statusMessage = client.statusMessage
 
 // Make the verb here.
 /mob/verb/SetStatusMsg()
-	set name = "Set Status Message"
+	set name = "Set Status"
 	set category = "OOC"
 
 	if(!client)
 		return
 	
 	statusMessage = null // Resetting just in case <3
-	client.m_statusMessage = null
+	client.statusMessage = null
 
 	var/input = stripped_input(usr,"This adds a short message on the end of your record in who. Useful for informing if you're in the mood to RP. (Char Limit: [MAX_STATUS_LEN])",max_length=MAX_STATUS_LEN)
 	if(length(input))	
 		statusMessage = input
-		client.m_statusMessage = input
-
+		client.statusMessage = input
+		to_chat(usr, "Your status message is now: [stripped_input]")
