@@ -52,6 +52,11 @@ Administrator
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
+	loadout_options = list(
+	/datum/outfit/loadout/surgical_specialist,
+	/datum/outfit/loadout/chemical_specialist,
+	/datum/outfit/loadout/research_specialist
+	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -95,12 +100,33 @@ Administrator
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
-		/obj/item/reagent_containers/glass/beaker/bluespace = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/reagent_containers/hypospray/combat = 1,
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
+	)
+
+/datum/outfit/loadout/surgical_specialist
+	name =	"Surgical Specialist"
+	backpack_contents = list(
+		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
+		/obj/item/stack/medical/suture/medicated = 1,
+		/obj/item/stack/medical/gauze/adv = 1,
+		/obj/item/stack/medical/mesh/advanced = 1,
+	)
+
+/datum/outfit/loadout/chemical_specialist
+	name =	"Chemical Specialist"
+	backpack_contents = list(
+		/obj/item/circuitboard/machine/chem_master/advanced = 1,
+		/obj/item/reagent_containers/glass/beaker/bluespace = 1,
+	)
+
+/datum/outfit/loadout/research_specialist
+	name =	"Research Specialist"
+	backpack_contents = list(
+		/obj/item/circuitboard/machine/ore_redemption = 1,
+		/obj/item/blueprint/research = 1,
 	)
 
 Professor
