@@ -51,8 +51,6 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "ej" = (
-/obj/machinery/power/smes,
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -68,11 +66,10 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "fQ" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -172,6 +169,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"mQ" = (
+/obj/structure/table/reinforced,
+/obj/item/blueprint/research,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "mU" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -297,12 +299,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
-"ww" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "wD" = (
 /obj/structure/cable,
 /obj/machinery/power/tracker,
@@ -439,18 +435,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Jr" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/cable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "JB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -470,7 +457,6 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
@@ -496,6 +482,11 @@
 /area/f13/wasteland)
 "Oi" = (
 /obj/structure/chair/f13chair2,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"OQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Pg" = (
@@ -548,15 +539,17 @@
 /obj/machinery/light,
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"Tq" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "Tt" = (
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
-/area/f13/wasteland)
-"Tx" = (
-/obj/structure/cable,
-/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Um" = (
 /mob/living/simple_animal/hostile/raider/tribal,
@@ -577,7 +570,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vn" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vp" = (
@@ -44951,7 +44948,7 @@ kY
 Ey
 vT
 Ey
-kY
+mQ
 xs
 SK
 SK
@@ -45465,7 +45462,7 @@ dH
 Wa
 Ey
 Ey
-kY
+OQ
 xs
 SK
 SK
@@ -49039,7 +49036,7 @@ hm
 hm
 hm
 hm
-xs
+hm
 xs
 xs
 xs
@@ -49296,8 +49293,8 @@ hm
 hm
 hm
 hm
+hm
 xs
-Jr
 Vn
 ej
 CY
@@ -49553,10 +49550,10 @@ hm
 hm
 hm
 hm
+hm
 xs
-Ey
-Ey
 fQ
+Ey
 KV
 xs
 SK
@@ -49810,9 +49807,9 @@ hm
 hm
 hm
 hm
+hm
 xs
 KT
-Ey
 Ey
 Yb
 xs
@@ -50067,9 +50064,9 @@ hm
 hm
 hm
 hm
+hm
 xs
 WH
-Ey
 Ey
 uu
 xs
@@ -50324,8 +50321,8 @@ hm
 hm
 hm
 hm
+hm
 xs
-Ey
 Ey
 Ey
 ij
@@ -50581,7 +50578,7 @@ hm
 hm
 hm
 hm
-xs
+hm
 xs
 xs
 xs
@@ -50597,9 +50594,9 @@ St
 St
 ch
 lk
-Tx
+Jr
 SK
-ww
+Tq
 ic
 jX
 jX
