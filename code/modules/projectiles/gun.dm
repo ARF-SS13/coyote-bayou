@@ -530,53 +530,6 @@ ATTACHMENTS
 		update_icon()
 		update_overlays()
 		return
-<<<<<<< HEAD
-
-	if(istype(I, /obj/item/attachments/scope))
-		if(!can_scope)
-			return ..()
-		var/obj/item/attachments/scope/C = I
-		if(!scope)
-			if(!user.transferItemToLoc(I, src))
-				return
-			to_chat(user, span_notice("You attach \the [C] to the top of \the [src]."))
-			scope = C
-			src.zoomable = TRUE
-			src.zoom_amt = 10
-			src.zoom_out_amt = 13
-			src.build_zooming()
-			update_overlays()
-			update_icon()
-		return
-	/*
-	if(istype(I, /obj/item/attachments/recoil_decrease))
-		var/obj/item/attachments/recoil_decrease/R = I
-		if(!recoil_decrease && can_attachments)
-			if(!user.transferItemToLoc(I, src))
-				return
-			recoil_decrease = R
-			src.desc += " It has a recoil compensator installed."
-			recoil_multiplier *= 0.5
-			recoil_cooldown_time *= 0.5
-			to_chat(user, span_notice("You attach \the [R] to \the [src]."))
-			return
-	*/
-	/*
-	if(istype(I, /obj/item/attachments/burst_improvement))
-		var/obj/item/attachments/burst_improvement/T = I
-		if(!burst_improvement && burst_size > 1 && can_attachments)
-			if(!user.transferItemToLoc(I, src))
-				return
-			burst_improvement = T
-			src.desc += " It has a modified burst cam installed."
-			src.burst_size += 2
-			src.spread += 5
-			src.burst_shot_delay += 0.25
-			to_chat(user, span_notice("You attach \the [T] to \the [src]."))
-			update_icon()
-			return*/
-=======
->>>>>>> master
 	return ..()
 
 
@@ -605,20 +558,6 @@ ATTACHMENTS
 		update_icon()
 		return TRUE
 
-<<<<<<< HEAD
-	if(scope)
-		I.play_tool_sound(src)
-		to_chat(user, span_notice("You unscrew the scope from \the [src]."))
-		var/obj/item/attachments/scope/C = scope
-		C.forceMove(get_turf(user))
-		src.zoomable = FALSE
-		azoom.Remove(user)
-		scope = null
-		update_icon()
-		return TRUE
-
-=======
->>>>>>> master
 /obj/item/gun/proc/clear_gunlight()
 	if(!gun_light)
 		return
