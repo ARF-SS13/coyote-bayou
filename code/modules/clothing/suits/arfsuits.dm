@@ -1716,6 +1716,7 @@
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
 	siemens_coefficient = 1.3
+	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/reinforced
 	name = "reinforced metal chestplate"
@@ -1725,6 +1726,7 @@
 	icon_state = "metal_chestplate2"
 	item_state = "metal_chestplate2"
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1)
+	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/brokencombat
 	name = "broken combat armor chestpiece"
@@ -1733,6 +1735,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "combat_chestpiece"
 	item_state = "combat_chestpiece"
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/scrap/mutant
 	name = "mutant armour"
@@ -1741,6 +1744,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_medium.dmi'
 	icon_state = "mutie_heavy_metal"
 	item_state = "mutie_heavy_metal"
+	mutantrace_variation = NONE
 
 ///////////////////////
 //// MEDIUM DUSTER ////
@@ -2388,7 +2392,7 @@
 	item_state = "metal_chestplate"
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2)
-
+	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/heavy/metal/polished
 	name = "polished metal armor"
@@ -2398,7 +2402,7 @@
 	icon_state = "armor_enclave_peacekeeper"
 	item_state = "armor_enclave_peacekeeper"
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_ENV_T1)
-
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof // also actually_unobtainable
 	name = "reflector vest"
@@ -2412,6 +2416,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	var/hit_reflect_chance = 40
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
+	mutantrace_variation = NONE
 	armor = list(
 		"melee" = 0, 
 		"bullet" = 0, 
@@ -2440,6 +2445,7 @@
 	resistance_flags = FIRE_PROOF
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+	mutantrace_variation = NONE
 	armor = list(
 		"melee" = 5, 
 		"bullet" = 5, 
@@ -2465,7 +2471,7 @@
 	item_state = "metal_chestplate2"
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2)
-
+	mutantrace_variation = STYLE_PAW_TAURIC
 
 /obj/item/clothing/suit/armor/heavy/metal/mutant
 	name = "mutant armour"
@@ -2473,6 +2479,7 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "mutie_metal_armour"
 	item_state = "mutie_metal_armour"
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/heavy/metal/mutant/reinforced
 	name = "mutant armour"
@@ -2481,7 +2488,7 @@
 	item_state = "mutie_metal_armour_mk2"
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2)
-
+	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/armor/heavy/metal/sulphite
 	name = "sulphite armor"
@@ -2493,7 +2500,7 @@
 	item_state = "sulphite"
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_MORE_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_FIRE_T3)
-
+	mutantrace_variation = NONE
 
 ////////////////////
 //// RIOT ARMOR ////
