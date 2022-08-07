@@ -519,9 +519,8 @@
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
@@ -544,9 +543,8 @@
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
@@ -582,6 +580,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	can_scope = TRUE
 
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
@@ -595,6 +594,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	can_scope = TRUE
 
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
@@ -604,9 +604,8 @@
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
@@ -683,6 +682,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	can_scope = TRUE
 
 
 //LAER Energy rifle
@@ -725,7 +725,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
 	init_firemodes = list(
-		BURST_2_BEAM,
+		FULL_AUTO_400,
 		WEAPON_NORMAL
 	)
 

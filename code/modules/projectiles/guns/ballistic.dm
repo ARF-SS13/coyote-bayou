@@ -27,6 +27,8 @@
 				magazine = new init_mag_type(src)
 			else
 				magazine = new mag_type(src)
+			if(magazine.fixed_mag)
+				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
 	allowed_mags |= typecacheof(mag_type)
 	if(length(extra_mag_types))
@@ -112,6 +114,7 @@
 		new_mag.update_icon()
 		update_icon()
 		return TRUE
+<<<<<<< HEAD
 
 	if(istype(A, /obj/item/suppressor))
 		var/obj/item/suppressor/S = A
@@ -129,6 +132,8 @@
 			install_suppressor(A)
 			update_overlays()
 			return
+=======
+>>>>>>> master
 	return FALSE
 
 /obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
@@ -181,6 +186,7 @@
 			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
 			return FALSE
 
+<<<<<<< HEAD
 /obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
 	// this proc assumes that the suppressor is already inside src
 	suppressed = S
@@ -202,6 +208,8 @@
 			return
 	return ..()
 
+=======
+>>>>>>> master
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(magazine)
@@ -353,16 +361,11 @@
 			process_fire(user, user, FALSE)
 			. = 1
 
+/obj/item/gun/ballistic/generate_guntags()
+	..()
+	gun_tags |= GUN_PROJECTILE
 
-/obj/item/suppressor
-	name = "suppressor"
-	desc = "A syndicate small-arms suppressor for maximum espionage."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "suppressor"
-	w_class = WEIGHT_CLASS_TINY
-	var/oldsound = null
-
-
-/obj/item/suppressor/specialoffer
-	name = "cheap suppressor"
-	desc = "A foreign knock-off suppressor, it feels flimsy, cheap, and brittle. Still fits some weapons."
+/obj/item/gun/ballistic/refresh_upgrades()
+	if(istype(magazine,/obj/item/ammo_box/magazine/internal))
+		magazine?.max_ammo = initial(magazine?.max_ammo)
+	..()

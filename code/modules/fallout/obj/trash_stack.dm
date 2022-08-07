@@ -12,7 +12,7 @@
 /obj/item/storage/trash_stack/proc/initialize_lootable_trash()
 	garbage_list = list(GLOB.trash_ammo, GLOB.trash_chem, GLOB.trash_clothing, GLOB.trash_craft,
 						GLOB.trash_gun, GLOB.trash_misc, GLOB.trash_money,
-						GLOB.trash_part, GLOB.trash_tool)
+						GLOB.trash_part, GLOB.trash_tool, GLOB.trash_attachment)
 	lootable_trash = list() //we are setting them to an empty list so you can't double the amount of stuff
 	for(var/i in garbage_list)
 		for(var/ii in i)
@@ -47,6 +47,17 @@
 				//		bonusitem.from_trash = TRUE
 				if(istype(item))
 					item.from_trash = TRUE
+				if(isgun(item))
+					var/obj/item/gun/trash_gun = item
+					var/prob_trash = 80
+					while(prob_trash > 0)
+						if(prob(prob_trash))
+							var/trash_mod_path = pick(GLOB.trash_gunmods)
+							var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
+							if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
+								break
+							QDEL_NULL(trash_mod)
+						prob_trash -= 40
 		loot_players += user
 	else
 		return ..()

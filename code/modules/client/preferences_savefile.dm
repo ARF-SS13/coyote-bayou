@@ -594,6 +594,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_cock_visibility"]		>> features["cock_visibility"]
 	//balls features
 	S["feature_has_balls"]				>> features["has_balls"]
+	S["feature_balls_shape"]			>> features["balls_shape"]
 	S["feature_balls_color"]			>> features["balls_color"]
 	S["feature_balls_size"]				>> features["balls_size"]
 	S["feature_balls_visibility"]		>> features["balls_visibility"]

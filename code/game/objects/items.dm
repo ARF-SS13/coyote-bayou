@@ -170,6 +170,9 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	// HUD action buttons. Only used by guns atm.
 	var/list/hud_actions
 
+	var/list/item_upgrades = list()
+	var/max_upgrades = 3
+
 /obj/item/Initialize()
 
 	if(attack_verb)
@@ -1166,4 +1169,6 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	user.SetThrowDelay(6)
 	user.log_message("[user] pulled a [T]", INDIVIDUAL_ATTACK_LOG)
 
+/obj/item/proc/refresh_upgrades()
+	return
 	

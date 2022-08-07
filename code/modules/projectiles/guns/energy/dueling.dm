@@ -282,7 +282,7 @@
 	D.hugbox = hugbox
 	D.update_icon()
 
-/obj/item/ammo_casing/energy/duel/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
+/obj/item/ammo_casing/energy/duel/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, atom/fired_from)
 	. = ..()
 	var/obj/effect/temp_visual/dueling_chaff/C = new(get_turf(user))
 	C.setting = setting

@@ -17,10 +17,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
-	RADIO_CHANNEL_DEN = RADIO_TOKEN_DEN,
-	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION,
+	RADIO_CHANNEL_TOWN_MAYOR = RADIO_TOKEN_TOWN_MAYOR,
+	RADIO_CHANNEL_TOWN_PD = RADIO_TOKEN_TOWN_PD,
 	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER,
-	RADIO_CHANNEL_KHANS = RADIO_TOKEN_KHANS
+	RADIO_CHANNEL_TOWN_COMMERCE = RADIO_TOKEN_TOWN_COMMERCE
 ))
 
 /obj/item/radio/headset
@@ -399,10 +399,39 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_khans
 
 /obj/item/radio/headset/headset_town
-	name = "nash radio headset"
-	desc = "This is used by the town of Nash.\nTo access the Nash channel, use :f."
+	name = "Nash radio headset"
+	desc = "This is used by the town of Nash.\
+		\nTo access the Nash channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
+
+/obj/item/radio/headset/headset_town/lawman
+	name = "Nash sheriff radio headset"
+	desc = "This is used by Nash's local sheriff force. Protects ears from flashbangs.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash sheriff channel, use :l."
+	icon_state = "sec_headset_alt"
+	item_state = "sec_headset_alt"
+	bowman = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_town/lawman
+
+/obj/item/radio/headset/headset_town/commerce
+	name = "Nash commerce radio headset"
+	desc = "This is used by Nash's small business owners.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash commerce channel, use :j."
+	keyslot = new /obj/item/encryptionkey/headset_town/commerce
+
+/obj/item/radio/headset/headset_town/mayor
+	name = "Nash mayoral radio headset"
+	desc = "This is used by Nash's mayor (and secretary). Protects ears from flashbangs.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash mayor channel, use :y.\
+		\nTo access the Nash sheriff channel, use :l.\
+		\nTo access the Nash commerce channel, use :j."
+	bowman = TRUE
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_town/mayor
 
 /obj/item/radio/headset/headset_followers
 	name = "followers radio headset"

@@ -180,12 +180,11 @@
 		FULL_AUTO_400
 	)
 
-	can_unsuppress = FALSE
 	is_automatic = TRUE
 	automatic = TRUE
-	suppressed = 1
+	silenced = TRUE
 	actions_types = null
-	fire_sound = 'sound/f13weapons/american180.ogg'
+	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
 /* * * * * * * * * * *
  * 14mm SMG
@@ -225,7 +224,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -266,7 +264,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
@@ -302,8 +299,6 @@
 	init_firemodes = list(
 		FULL_AUTO_300
 	)
-
-	can_attachments = FALSE
 
 /* * * * * * * * * * *
  * 10mm SMG
@@ -342,7 +337,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
@@ -417,7 +411,6 @@
 	automatic = 1
 	is_automatic = TRUE
 	can_suppress = TRUE
-	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
@@ -460,7 +453,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 /* * * * * * * * * * *
@@ -637,9 +629,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
-	can_suppress = FALSE
-	can_unsuppress = FALSE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 
 /* * * * * * * * * * *
@@ -676,7 +665,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 9
@@ -723,6 +711,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -733,8 +722,6 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 5
 	scope_y_offset = 14
-	can_attachments = TRUE
-	can_automatic = TRUE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
@@ -847,11 +834,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
 	can_scope = TRUE
-	can_unsuppress = FALSE
-	suppressed = 1
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	silenced = TRUE
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Commando Carbine
@@ -882,7 +869,7 @@
 		SEMI_AUTO_NODELAY
 	)
 
-	suppressed = 1
+	silenced = TRUE
 	can_scope = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
@@ -920,8 +907,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'
@@ -1008,13 +995,11 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_unsuppress = FALSE
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
 	suppressor_state = "none"
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Ratslayer Rifle
@@ -1042,11 +1027,10 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Service Rifle
@@ -1077,8 +1061,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = TRUE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1110,7 +1094,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1180,14 +1163,12 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
+	zoom_factor = 1
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 22
@@ -1263,10 +1244,10 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1310,10 +1291,10 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1435,9 +1416,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	fire_delay = 0.5
 	can_scope = FALSE
 
@@ -1513,12 +1492,11 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
-	zoom_amt = 10
-	zoom_out_amt = 13
 	semi_auto = TRUE
-	can_automatic = FALSE
 	can_bayonet = FALSE
+	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	zoom_factor = 2
 
 /* * * * * * * * * * *
  * Gold Sniper Rifle
@@ -1578,9 +1556,6 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-
-	zoom_amt = 8
-	zoom_out_amt = 8
 
 /* * * * * * * * * * *
  * Compact Sniper Rifle
@@ -1690,7 +1665,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 23
@@ -1733,15 +1707,12 @@
 	is_automatic = TRUE
 	automatic = 1
 	can_suppress = FALSE
-	can_unsuppress = FALSE
-	suppressed = 1
+	silenced = TRUE
 	can_bayonet = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
+	zoom_factor = 0.8
 
 /* * * * * * * * * * *
  * R93 PDW rifle
@@ -1772,13 +1743,9 @@
 		FULL_AUTO_300
 	)
 
-	can_attachments = FALSE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	can_bayonet = FALSE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
@@ -1894,12 +1861,9 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	zoom_factor = 1.2
 
 /* * * * * * * * * * *
  * Assault Carbine Rifle
@@ -1935,7 +1899,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -2116,12 +2079,9 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	semi_auto = TRUE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	select = 0
 
@@ -2208,7 +2168,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
@@ -2248,12 +2207,8 @@ obj/item/gun/ballistic/automatic/bar
 	is_automatic = TRUE
 	automatic = 1
 	spawnwithmagazine = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_attachments = TRUE
+	zoom_factor = 1
 	can_scope = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /* * * * * * * * * * *
@@ -2292,7 +2247,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	var/cover_open = FALSE
 	var/require_twohands = FALSE
 	actions_types = null
@@ -2381,9 +2335,8 @@ obj/item/gun/ballistic/automatic/bar
 		SEMI_AUTO_NODELAY
 	)
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1.2
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
 
@@ -2420,8 +2373,5 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	spawnwithmagazine = TRUE
-	can_attachments = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	can_scope = FALSE

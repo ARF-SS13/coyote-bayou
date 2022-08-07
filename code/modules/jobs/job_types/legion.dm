@@ -356,7 +356,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/melee/powered/ripper = 1,
 		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
 
@@ -706,7 +706,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/sks = 2,
 		/obj/item/grenade/smokebomb = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		)
 
 

@@ -59,6 +59,8 @@
 		return
 	if(obj_flags & CAN_BE_HIT)
 		. |= I.attack_obj(src, user)
+	else
+		. |= I.attack_obj_nohit(src, user)
 
 /mob/living/attackby(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
@@ -146,6 +148,10 @@
 		return
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
+
+/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ_NOHIT, O, user) & COMPONENT_NO_ATTACK_OBJ)
+		return
 
 /atom/movable/proc/attacked_by()
 	return

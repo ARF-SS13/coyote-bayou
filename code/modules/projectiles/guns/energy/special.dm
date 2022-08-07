@@ -85,7 +85,7 @@
 	item_state = "crossbow"
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=2000)
-	suppressed = TRUE
+	silenced = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	obj_flags = 0
@@ -108,7 +108,7 @@
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=4000)
-	suppressed = null
+	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = null

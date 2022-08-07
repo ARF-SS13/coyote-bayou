@@ -103,3 +103,13 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			var/pick_fish = pickweight(GLOB.fish_rates) //add your in the global list
 			new pick_fish(current_turf)
 			return 3
+
+// craftable/obtainable fishing rods
+
+/obj/item/fishingrod/spearfisher
+	name = "Spearfisher"
+	desc = "In the ancient books, fishermen speak of a technique called spear-fishing. Over time, the tribe has recreated what they must have spoken of; a spear with a fishing line attached. It both fishes, and self-defenses. Truly, the ancients were wise."
+	icon_state = "spearfisher"
+	force = 22
+	force_unwielded = 22
+	force_wielded = 35

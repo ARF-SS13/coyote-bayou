@@ -78,11 +78,6 @@ ATTACHMENTS
 	/// Adds this speed to the bullet, in pixels per second
 	var/extra_speed = 0
 
-	var/obj/item/attachments/scope
-	var/obj/item/attachments/recoil_decrease
-	var/obj/item/attachments/burst_improvement
-	var/obj/item/attachments/auto_sear
-
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
@@ -103,13 +98,9 @@ ATTACHMENTS
 	var/mutable_appearance/scope_overlay
 	var/scope_state = "scope"
 
-	var/can_attachments = FALSE
-	var/can_automatic = FALSE
 	var/mutable_appearance/flashlight_overlay
 
 	var/can_suppress = FALSE
-	var/can_unsuppress = TRUE
-	var/suppressed = null					//whether or not a message is displayed when fired
 	var/mutable_appearance/suppressor_overlay
 	var/suppressor_state = null
 
@@ -131,7 +122,6 @@ ATTACHMENTS
 	var/zoomed = FALSE //Zoom toggle
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/zoom_out_amt = 0
-	var/datum/action/item_action/toggle_scope_zoom/azoom
 
 	var/dualwield_spread_mult = 2		//dualwield spread multiplier
 
@@ -158,6 +148,14 @@ ATTACHMENTS
 	var/list/init_firemodes = list()
 
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
+	var/gilded = FALSE
+	/*	SILENCER HANDLING */
+	var/silenced = FALSE
+	var/fire_sound_silenced = 'modular_coyote/eris/sound/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/zoom_factor = 0 //How much to scope in when using weapons
+	var/rigged = FALSE
+	var/vision_flags = 0
+	var/projectile_speed_multiplier = 1
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -180,9 +178,10 @@ ATTACHMENTS
 	action.owner = src
 	hud_actions += action
 	initialize_firemodes()
-	build_zooming()
+	initialize_scope()
 	if(firemodes.len)
 		set_firemode(sel_mode)
+	generate_guntags()
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
@@ -190,7 +189,9 @@ ATTACHMENTS
 	for(var/i in 1 to init_firemodes.len)
 		var/list/L = init_firemodes[i]
 		add_firemode(L)
+	update_firemode_hud()
 
+/obj/item/gun/proc/update_firemode_hud()
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
@@ -200,6 +201,17 @@ ATTACHMENTS
 	else
 		qdel(action)
 		hud_actions -= action
+
+/obj/item/gun/proc/initialize_scope()
+	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	if(zoom_factor > 0)
+		if(!action)
+			action = new /obj/screen/item_action/top_bar/gun/scope
+			action.owner = src
+			hud_actions += action
+	else
+		hud_actions -= action
+		qdel(action)
 
 /obj/item/gun/Destroy()
 	if(pin)
@@ -268,8 +280,8 @@ ATTACHMENTS
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
-	if(suppressed)
-		playsound(user, fire_sound, 10, 1)
+	if(silenced)
+		playsound(user, fire_sound_silenced, 10, 1)
 	else
 		playsound(user, fire_sound, 50, 1)
 		if(message)
@@ -361,6 +373,17 @@ ATTACHMENTS
 		if(!wielded)
 			to_chat(user, span_userdanger("You need both hands free to fire \the [src]!"))
 			return
+
+	if(rigged)
+		user.visible_message(
+			span_danger("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
+			span_danger("Your \the [src] fires backwards, shooting you in the face!")
+		)
+		process_fire(user, user, FALSE, params, BODY_ZONE_HEAD)
+		if(rigged > TRUE)
+			explosion(get_turf(src),0,0,2,1)
+		return
+
 	if (automatic == 0)
 		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
@@ -459,7 +482,7 @@ ATTACHMENTS
 			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
 			var/BB = chambered.BB
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, damage_multiplier, penetration_multiplier, src))
+			if(!chambered.fire_casing(target, user, params, , silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -507,6 +530,7 @@ ATTACHMENTS
 		update_icon()
 		update_overlays()
 		return
+<<<<<<< HEAD
 
 	if(istype(I, /obj/item/attachments/scope))
 		if(!can_scope)
@@ -551,6 +575,8 @@ ATTACHMENTS
 			to_chat(user, span_notice("You attach \the [T] to \the [src]."))
 			update_icon()
 			return*/
+=======
+>>>>>>> master
 	return ..()
 
 
@@ -579,6 +605,7 @@ ATTACHMENTS
 		update_icon()
 		return TRUE
 
+<<<<<<< HEAD
 	if(scope)
 		I.play_tool_sound(src)
 		to_chat(user, span_notice("You unscrew the scope from \the [src]."))
@@ -590,6 +617,8 @@ ATTACHMENTS
 		update_icon()
 		return TRUE
 
+=======
+>>>>>>> master
 /obj/item/gun/proc/clear_gunlight()
 	if(!gun_light)
 		return
@@ -629,14 +658,6 @@ ATTACHMENTS
 
 	gun_light = new_light
 
-/*
-/obj/item/gun/ui_action_click(mob/user, action)
-	if(istype(action, /datum/action/item_action/toggle_scope_zoom))
-		zoom(user)
-	else if(istype(action, alight))
-		toggle_gunlight()
-*/
-
 /obj/item/gun/proc/toggle_gunlight()
 	if(!gun_light)
 		return
@@ -660,15 +681,11 @@ ATTACHMENTS
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		remove_hud_actions(user)
 		zoom(user, FALSE)
-		if(zoomable == TRUE)
-			azoom.Remove(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	if(zoomed)
 		zoom(user,FALSE)
-	if(azoom)
-		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
 
@@ -695,7 +712,7 @@ ATTACHMENTS
 		. += knife_overlay
 	else
 		knife_overlay = null
-
+	/*
 	if(scope)
 		if(scope.icon_state in icon_states('icons/fallout/objects/guns/attachments.dmi'))
 			scope_overlay = scope.icon_state
@@ -706,8 +723,8 @@ ATTACHMENTS
 		. += scope_overlay
 	else
 		scope_overlay = null
-
-	if(suppressed)
+	*/
+	if(silenced)
 		var/icon/suppressor_icons = 'icons/fallout/objects/guns/attachments.dmi'
 		suppressor_overlay = mutable_appearance(suppressor_icons, suppressor_state)
 		suppressor_overlay.pixel_x = suppressor_x_offset
@@ -718,12 +735,6 @@ ATTACHMENTS
 
 	if(worn_out)
 		. += ("[initial(icon_state)]_worn")
-
-
-/obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
-	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)
-		return FALSE
-	return ..()
 
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
@@ -773,27 +784,6 @@ ATTACHMENTS
 /////////////
 // ZOOMING //
 /////////////
-
-/datum/action/item_action/toggle_scope_zoom
-	name = "Toggle Scope"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "sniper_zoom"
-
-/datum/action/item_action/toggle_scope_zoom/Trigger()
-	var/obj/item/gun/gun = target
-	gun.zoom(owner)
-
-/datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
-	. = ..()
-	if(!. && target)
-		var/obj/item/gun/gun = target
-		gun.zoom(owner, FALSE)
-
-/datum/action/item_action/toggle_scope_zoom/Remove(mob/living/L)
-	var/obj/item/gun/gun = target
-	gun.zoom(L, FALSE)
-	..()
 
 /obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
 	if(!(user?.client))
@@ -856,14 +846,6 @@ ATTACHMENTS
 	user.client.change_view(zoom_out_amt)
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
-
-//Proc, so that gun accessories/scopes/etc. can easily add zooming.
-/obj/item/gun/proc/build_zooming()
-	if(azoom)
-		return
-
-	if(zoomable)
-		azoom = new(src)
 
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
 	. = 0 //get_per_shot_recoil()
@@ -1020,6 +1002,16 @@ ATTACHMENTS
 	update_hud_actions()
 	return new_mode
 
+/// Set firemode , but without a refresh_upgrades at the start
+/obj/item/gun/proc/very_unsafe_set_firemode(index)
+	if(index > firemodes.len)
+		index = 1
+	var/datum/firemode/new_mode = firemodes[sel_mode]
+	new_mode.apply_to(src)
+	new_mode.update()
+	update_hud_actions()
+	return new_mode
+
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
 	if(firing) // Prevents a bug with swapping fire mode while burst firing.
 		return
@@ -1082,11 +1074,34 @@ ATTACHMENTS
 		if("fire mode")
 			toggle_firemode(user)
 		if("scope")
-			//toggle_scope(user)
+			toggle_scope(user)
 		if("safety")
 			toggle_safety(user)
 		if("Weapon Info")
 			ui_interact(user)
+
+/obj/item/gun/proc/toggle_scope(mob/living/user)
+	//looking through a scope limits your periphereal vision
+	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
+	if(!zoom_factor)
+		zoomed = FALSE
+		return
+	var/zoom_offset = round(world.view * zoom_factor)
+
+	zoom_amt = zoom_offset
+	if(zoom_factor >= 1)
+		zoom_out_amt = zoom_amt + 1
+	else
+		zoom_out_amt = world.view
+	
+	zoom(user)
+
+	if(safety)
+		user.remove_cursor()
+	else
+		user.update_cursor(src)
+	if(user.get_active_held_item() == src)
+		update_hud_actions()
 
 /obj/item/gun/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -1101,9 +1116,9 @@ ATTACHMENTS
 	//data["ricochet_multiplier"] = ricochet_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 
-	data["fire_delay"] = fire_delay //time between shot, in ms
+	data["fire_delay"] = fire_delay * 100 //time between shot, in ms
 	data["burst"] = burst_size //How many shots are fired per click
-	data["burst_delay"] = burst_shot_delay //time between shot in burst mode, in ms
+	data["burst_delay"] = burst_shot_delay * 100 //time between shot in burst mode, in ms
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
@@ -1148,10 +1163,9 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 
-	/*if(item_upgrades.len)
-		data["attachments"] = list()
-		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))*/
+	data["attachments"] = list()
+	for(var/atom/A in item_upgrades)
+		data["attachments"] += list(list("name" = A.name, "desc" = A.desc))
 	return data
 
 /obj/item/gun/ui_act(action, params)
@@ -1194,7 +1208,60 @@ ATTACHMENTS
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
 
+/obj/item/gun/proc/generate_guntags()
+	if(recoil_dat.getRating(RECOIL_BASE) < recoil_dat.getRating(RECOIL_TWOHAND))
+		gun_tags |= GUN_GRIP
+	if(can_scope)
+		gun_tags |= GUN_SCOPE
+	if(can_suppress)
+		gun_tags |= GUN_SILENCABLE
+	//if(!get_sharpness())
+	//	gun_tags |= SLOT_BAYONET
 
+/obj/item/gun/refresh_upgrades()
+	//First of all, lets reset any var that could possibly be altered by an upgrade
+	damage_multiplier = initial(damage_multiplier)
+	penetration_multiplier = initial(penetration_multiplier)
+	//pierce_multiplier = initial(pierce_multiplier)
+	//ricochet_multiplier = initial(ricochet_multiplier)
+	projectile_speed_multiplier = initial(projectile_speed_multiplier)
+	//proj_agony_multiplier = initial(proj_agony_multiplier)
+	fire_delay = initial(fire_delay)
+	burst_shot_delay = initial(burst_shot_delay)
+	//move_delay = initial(move_delay)
+	//muzzle_flash = initial(muzzle_flash)
+	silenced = initial(silenced)
+	restrict_safety = initial(restrict_safety)
+	init_offset = initial(init_offset)
+	//proj_damage_adjust = list()
+	//fire_sound = initial(fire_sound)
+	restrict_safety = initial(restrict_safety)
+	rigged = initial(rigged)
+	zoom_factor = initial(zoom_factor)
+	//darkness_view = initial(darkness_view)
+	vision_flags = initial(vision_flags)
+	force = initial(force)
+	armour_penetration = initial(armour_penetration)
+	sharpness = initial(sharpness)
+	braced = initial(braced)
+	recoil_dat = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+
+	//attack_verb = list()
+	initialize_firemodes()
+
+	//Now lets have each upgrade reapply its modifications
+	SEND_SIGNAL(src, COMSIG_UPGRADE_ADDVAL, src)
+	SEND_SIGNAL(src, COMSIG_UPGRADE_APPVAL, src)
+
+	initialize_scope()
+	update_firemode_hud()
+	update_hud_actions()
+
+	if(firemodes.len)
+		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
+
+	update_icon()
+	//then update any UIs with the new stats
 
 ///////////////////
 //GUNCODE ARCHIVE//

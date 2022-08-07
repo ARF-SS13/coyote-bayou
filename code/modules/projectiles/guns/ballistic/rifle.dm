@@ -36,7 +36,6 @@
 	)
 
 	flags_1 =  CONDUCT_1
-	can_automatic = FALSE
 	casing_ejector = FALSE
 	var/recentpump = 0 // to prevent spammage
 	spawnwithmagazine = TRUE
