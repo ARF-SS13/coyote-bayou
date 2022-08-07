@@ -67,10 +67,12 @@
 	var/entry = ""
 	if (isnewplayer(C.mob))
 		entry += " - <font color='darkgray'><b>In Lobby</b></font>"
-	else if(isobserver(C.mob)) // I hate making long chains but yea.
+	else if(isobserver(C.mob) && !_adminStatus) // I hate making long chains but yea.
 		var/mob/dead/observer/O = C.mob
 		if(O.started_as_observer)
 			entry += " - <font color='gray'>Observing</font>"
+		else
+			entry += " - Playing" // just cause im lazy and cba trying to find a fix for this.
 	else
 		entry += " - Playing"
 		if(_adminStatus)
