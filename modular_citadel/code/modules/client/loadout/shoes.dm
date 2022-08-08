@@ -6,7 +6,7 @@
 /datum/gear/shoes/laceup
 	name = "laceup shoes"
 	path = /obj/item/clothing/shoes/laceup
-	cost = 2
+	cost = 1
 
 /datum/gear/shoes/workboots
 	name = "work boots"
@@ -43,22 +43,22 @@
 /datum/gear/shoes/wraps
 	name = "golden leg wraps"
 	path = /obj/item/clothing/shoes/wraps 
-	cost = 2
+	cost = 1
 
 /datum/gear/shoes/wrapssilver
 	name = "silver leg wraps"
 	path = /obj/item/clothing/shoes/wraps/silver
-	cost = 2
+	cost = 1
 
 /datum/gear/shoes/wrapsblue
 	name = "blue leg wraps"
 	path = /obj/item/clothing/shoes/wraps/blue 
-	cost = 2
+	cost = 1
 
 /datum/gear/shoes/wrapsred
 	name = "red leg wraps"
 	path = /obj/item/clothing/shoes/wraps/red 
-	cost = 2
+	cost = 1
 
 /datum/gear/shoes/wornboots
 	name = "worn boots"
@@ -84,50 +84,47 @@
 	name = "female diesel boots"
 	path = /obj/item/clothing/shoes/f13/diesel/alt
 
-/datum/gear/shoes/jackboots
-	name = "jackboots"
-	path = /obj/item/clothing/shoes/jackboots
-	cost = 2
+/// Military aka Two point boots
 
 /datum/gear/shoes/military
 	name = "military boots"
-	path = /obj/item/clothing/shoes/f13/military 
+	path = /obj/item/clothing/shoes/f13/military
+	subcategory = LOADOUT_SUBCATEGORY_SHOES_MILITARY
 	cost = 2
 
-/datum/gear/shoes/leather
+/datum/gear/shoes/military/leather
 	name = "leather combat boots"
 	path = /obj/item/clothing/shoes/f13/military/leather 
-	cost = 2
 
-/datum/gear/shoes/desert
+/datum/gear/shoes/military/desert
 	name = "desert combat boots"
 	path = /obj/item/clothing/shoes/f13/military/desert 
-	cost = 2
 
-/datum/gear/shoes/plated
+/datum/gear/shoes/military/plated
 	name = "plated war boots"
 	path = /obj/item/clothing/shoes/f13/military/plated
-	cost = 2
 
-/datum/gear/shoes/steeltipped
+/datum/gear/shoes/military/steeltipped
 	name = "steel tipped boots"
 	path = /obj/item/clothing/shoes/f13/military/khan
-	cost = 2
 
-/datum/gear/shoes/steelpelts
+/datum/gear/shoes/military/steelpelts
 	name = "steel tipped pelt boots"
 	path = /obj/item/clothing/shoes/f13/military/khan_pelt
-	cost = 2
 
-/datum/gear/shoes/duty
+/datum/gear/shoes/military/duty
 	name = "duty boots"
 	path = /obj/item/clothing/shoes/f13/military/duty
-	cost = 2
 
-/datum/gear/shoes/patrol
+/datum/gear/shoes/military/patrol
 	name = "patrol boots"
 	path = /obj/item/clothing/shoes/f13/military/patrol
-	cost = 2
+
+/datum/gear/shoes/military/jackboots
+	name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
+
+/// Factions Shoes or well NCR boots.
 
 /datum/gear/shoes/patrol_boots
 	name = "NCR patrol boots"
