@@ -288,11 +288,11 @@
 			target.playsound_local(null, 'sound/effects/singlebeat.ogg', 40, TRUE)
 	// DONE!
 	//DeactivatePower(user,target)
-	if(amSilent)
-		to_chat(user, span_notice("You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.") : ""))
-	else
-		user.visible_message(span_warning("[user] unclenches their teeth from [target]'s neck."), \
-							span_warning("You retract your fangs and release [target] from your bite."))
+	//if(amSilent)
+	//	to_chat(user, span_notice("You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.") : ""))
+	//else
+	//	user.visible_message(span_warning("[user] unclenches their teeth from [target]'s neck."),
+	//						span_warning("You retract your fangs and release [target] from your bite."))
 
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, target, "fed on blood", addition="(and took [amount_taken] blood)")
