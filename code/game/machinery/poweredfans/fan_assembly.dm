@@ -27,7 +27,7 @@
 			// Stat 1
 			if(istype(W, /obj/item/weldingtool))
 				if(weld(W, user))
-					to_chat(user, "<span class='notice'>You weld the fan assembly securely into place.</span>")
+					to_chat(user, span_notice("You weld the fan assembly securely into place."))
 					setAnchored(TRUE)
 					stat = 2
 					update_icon_state()
@@ -36,11 +36,11 @@
 			// Stat 2
 			if(istype(W, /obj/item/stack/cable_coil))
 				if(!W.tool_start_check(user, amount=2))
-					to_chat(user, "<span class='warning'>You need two lengths of cable to wire the fan assembly!</span>")
+					to_chat(user, span_warning("You need two lengths of cable to wire the fan assembly!"))
 					return
-				to_chat(user, "<span class='notice'>You start to add wires to the assembly...</span>")
+				to_chat(user, span_notice("You start to add wires to the assembly..."))
 				if(W.use_tool(src, user, 30, volume=50, amount=2))
-					to_chat(user, "<span class='notice'>You add wires to the fan assembly.</span>")
+					to_chat(user, span_notice("You add wires to the fan assembly."))
 					stat = 3
 					var/obj/machinery/poweredfans/F = new(loc, src)
 					forceMove(F)
@@ -48,7 +48,7 @@
 					return
 			else if(istype(W, /obj/item/weldingtool))
 				if(weld(W, user))
-					to_chat(user, "<span class='notice'>You unweld the fan assembly from its place.</span>")
+					to_chat(user, span_notice("You unweld the fan assembly from its place."))
 					stat = 1
 					update_icon_state()
 					setAnchored(FALSE)
@@ -58,8 +58,8 @@
 /obj/machinery/fan_assembly/wrench_act(mob/user, obj/item/I)
 	if(stat != 1)
 		return FALSE
-	user.visible_message("<span class='warning'>[user] disassembles [src].</span>",
-		"<span class='notice'>You start to disassemble [src]...</span>", "You hear wrenching noises.")
+	user.visible_message(span_warning("[user] disassembles [src]."),
+		span_notice("You start to disassemble [src]..."), "You hear wrenching noises.")
 	if(I.use_tool(src, user, 30, volume=50))
 		deconstruct()
 	return TRUE
@@ -69,9 +69,9 @@
 		return FALSE
 	switch(stat)
 		if(1)
-			to_chat(user, "<span class='notice'>You start to weld \the [src]...</span>")
+			to_chat(user, span_notice("You start to weld \the [src]..."))
 		if(2)
-			to_chat(user, "<span class='notice'>You start to unweld \the [src]...</span>")
+			to_chat(user, span_notice("You start to unweld \the [src]..."))
 	if(W.use_tool(src, user, 30, volume=50))
 		return TRUE
 	return FALSE

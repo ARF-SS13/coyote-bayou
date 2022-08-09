@@ -14,9 +14,9 @@
 	var/mob/living/carbon/c_user = user
 	if(!c_user.get_bodypart(BODY_ZONE_L_ARM) && !c_user.get_bodypart(BODY_ZONE_R_ARM))
 		return
-	to_chat(c_user, "<span class='warning'>You move your hand towards the machine, and begin to hesitate as a bloodied guillotine emerges from inside of it...</span>")
+	to_chat(c_user, span_warning("You move your hand towards the machine, and begin to hesitate as a bloodied guillotine emerges from inside of it..."))
 	if(do_after(c_user, 50, target = src))
-		to_chat(c_user, "<span class='userdanger'>The guillotine drops on your arm, and the machine sucks it in!</span>")
+		to_chat(c_user, span_userdanger("The guillotine drops on your arm, and the machine sucks it in!"))
 		playsound(loc, 'sound/weapons/slice.ogg', 10, 1, -1)
 		var/which_hand = BODY_ZONE_L_ARM
 		if(!(c_user.active_hand_index % 2))
@@ -28,4 +28,4 @@
 		for(var/i=1; i<=rand(3,5); i++)
 			prizevend(user)
 	else
-		to_chat(c_user, "<span class='notice'>You (wisely) decide against putting your hand in the machine.</span>")
+		to_chat(c_user, span_notice("You (wisely) decide against putting your hand in the machine."))

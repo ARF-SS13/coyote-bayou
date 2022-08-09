@@ -81,7 +81,7 @@
 
 /obj/machinery/computer/shuttle/mining/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(is_station_level(user.z) && user.mind && is_head_revolutionary(user) && !(user.mind in dumb_rev_heads))
-		to_chat(user, "<span class='warning'>You get a feeling that leaving the station might be a REALLY dumb idea...</span>")
+		to_chat(user, span_warning("You get a feeling that leaving the station might be a REALLY dumb idea..."))
 		dumb_rev_heads += user.mind
 		return
 	. = ..()

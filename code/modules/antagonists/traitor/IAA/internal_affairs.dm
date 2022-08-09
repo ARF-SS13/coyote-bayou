@@ -128,7 +128,7 @@
 /datum/antagonist/traitor/internal_affairs/proc/steal_targets(datum/mind/victim)
 	if(!owner.current||owner.current.stat==DEAD)
 		return
-	to_chat(owner.current, "<span class='userdanger'> Target eliminated: [victim.name]</span>")
+	to_chat(owner.current, span_userdanger(" Target eliminated: [victim.name]"))
 	LAZYINITLIST(targets_stolen)
 	for(var/objective_ in victim.get_all_objectives())
 		if(istype(objective_, /datum/objective/assassinate/internal))
@@ -143,7 +143,7 @@
 				add_objective(new_objective)
 				targets_stolen += objective.target
 				var/status_text = objective.check_completion() ? "neutralised" : "active"
-				to_chat(owner.current, "<span class='userdanger'> New target added to database: [objective.target.name] ([status_text]) </span>")
+				to_chat(owner.current, span_userdanger(" New target added to database: [objective.target.name] ([status_text]) "))
 		else if(istype(objective_, /datum/objective/destroy/internal))
 			var/datum/objective/destroy/internal/objective = objective_
 			var/datum/objective/destroy/internal/new_objective = new
@@ -156,7 +156,7 @@
 				add_objective(new_objective)
 				targets_stolen += objective.target
 				var/status_text = objective.check_completion() ? "neutralised" : "active"
-				to_chat(owner.current, "<span class='userdanger'> New target added to database: [objective.target.name] ([status_text]) </span>")
+				to_chat(owner.current, span_userdanger(" New target added to database: [objective.target.name] ([status_text]) "))
 	last_man_standing = TRUE
 	for(var/objective_ in objectives)
 		if(!is_internal_objective(objective_))
@@ -167,10 +167,10 @@
 			return
 	if(last_man_standing)
 		if(syndicate)
-			to_chat(owner.current,"<span class='userdanger'>All the suspected agents are dead, and no more is required of you. Die a glorious death, agent.</span>")
+			to_chat(owner.current,span_userdanger("All the suspected agents are dead, and no more is required of you. Die a glorious death, agent."))
 			replace_escape_objective(owner)
 		else
-			to_chat(owner.current,"<span class='userdanger'>All the other agents are dead. You have done us all a great service and shall be honorably exiled upon returning to base.</span>")
+			to_chat(owner.current,span_userdanger("All the other agents are dead. You have done us all a great service and shall be honorably exiled upon returning to base."))
 
 /datum/antagonist/traitor/internal_affairs/proc/iaa_process()
 	if(owner&&owner.current&&owner.current.stat!=DEAD)
@@ -188,10 +188,10 @@
 					objective.stolen = TRUE
 			else
 				if(objective.stolen)
-					var/fail_msg = "<span class='userdanger'>Your sensors tell you that [objective.target.current.real_name], one of the targets you were meant to have killed, pulled one over on you, and is still alive - do the job properly this time! </span>"
+					var/fail_msg = span_userdanger("Your sensors tell you that [objective.target.current.real_name], one of the targets you were meant to have killed, pulled one over on you, and is still alive - do the job properly this time! ")
 					if(last_man_standing)
 						if(syndicate)
-							fail_msg += "<span class='userdanger'> You no longer have permission to die. </span>"
+							fail_msg += span_userdanger(" You no longer have permission to die. ")
 						else
 							fail_msg += "<span class='userdanger'> The truth could still slip out!</font><B><font size=5 color=red> Cease any terrorist actions as soon as possible, unneeded property damage or loss of employee life will lead to great shame.</span>"
 						reinstate_escape_objective(owner)
@@ -228,21 +228,21 @@
 /datum/antagonist/traitor/internal_affairs/proc/greet_iaa()
 	var/crime = pick("distribution of contraband" , "embezzlement", "piloting under the influence", "dereliction of duty", "syndicate collaboration", "mutiny", "multiple homicides", "corporate espionage", "receiving bribes", "malpractice", "worship of prohibited life forms", "possession of profane texts", "murder", "arson", "insulting their manager", "grand theft", "conspiracy", "attempting to unionize", "vandalism", "gross incompetence")
 
-	to_chat(owner.current, "<span class='userdanger'>You are the [special_role].</span>")
+	to_chat(owner.current, span_userdanger("You are the [special_role]."))
 	if(syndicate)
-		to_chat(owner.current, "<span class='userdanger'>GREAT LEADER IS DEAD. NANOTRASEN MUST FALL.</span>")
-		to_chat(owner.current, "<span class='userdanger'>Your have infiltrated this vessel to cause chaos and assassinate targets known to have conspired against the Syndicate.</span>")
-		to_chat(owner.current, "<span class='userdanger'>Any damage you cause will be a further embarrassment to Nanotrasen, so you have no limits on collateral damage.</span>")
-		to_chat(owner.current, "<span class='userdanger'>You have been provided with a standard uplink to accomplish your task. </span>")
-		to_chat(owner.current, "<span class='userdanger'>By no means reveal that you are a Syndicate agent. By no means reveal that your targets are being hunted.</span>")
+		to_chat(owner.current, span_userdanger("GREAT LEADER IS DEAD. NANOTRASEN MUST FALL."))
+		to_chat(owner.current, span_userdanger("Your have infiltrated this vessel to cause chaos and assassinate targets known to have conspired against the Syndicate."))
+		to_chat(owner.current, span_userdanger("Any damage you cause will be a further embarrassment to Nanotrasen, so you have no limits on collateral damage."))
+		to_chat(owner.current, span_userdanger("You have been provided with a standard uplink to accomplish your task. "))
+		to_chat(owner.current, span_userdanger("By no means reveal that you are a Syndicate agent. By no means reveal that your targets are being hunted."))
 	else
-		to_chat(owner.current, "<span class='userdanger'>CAUTION: Your legal status as a citizen of NanoTrasen will be permanently revoked upon completion of your first contract.</span>")
-		to_chat(owner.current, "<span class='userdanger'>Your target has been suspected of [crime], and must be removed from this plane.</span>")
-		to_chat(owner.current, "<span class='userdanger'>While you have a license to kill, you are to eliminate your targets with no collateral or unrelated deaths.</span>")
-		to_chat(owner.current, "<span class='userdanger'>For the sake of plausable deniability, you have been equipped with captured Syndicate equipment via uplink.</span>")
-		to_chat(owner.current, "<span class='userdanger'>By no means reveal that you, or any other NT employees, are undercover agents.</span>")
+		to_chat(owner.current, span_userdanger("CAUTION: Your legal status as a citizen of NanoTrasen will be permanently revoked upon completion of your first contract."))
+		to_chat(owner.current, span_userdanger("Your target has been suspected of [crime], and must be removed from this plane."))
+		to_chat(owner.current, span_userdanger("While you have a license to kill, you are to eliminate your targets with no collateral or unrelated deaths."))
+		to_chat(owner.current, span_userdanger("For the sake of plausable deniability, you have been equipped with captured Syndicate equipment via uplink."))
+		to_chat(owner.current, span_userdanger("By no means reveal that you, or any other NT employees, are undercover agents."))
 
-	to_chat(owner.current, "<span class='userdanger'>Finally, watch your back. Your target has friends in high places, and intel suggests someone may have taken out a contract of their own to protect them.</span>")
+	to_chat(owner.current, span_userdanger("Finally, watch your back. Your target has friends in high places, and intel suggests someone may have taken out a contract of their own to protect them."))
 	owner.announce_objectives()
 
 /datum/antagonist/traitor/internal_affairs/greet()

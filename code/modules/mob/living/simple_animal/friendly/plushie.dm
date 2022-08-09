@@ -48,7 +48,7 @@
 		var/safety = alert(user, "The plushie is staring back at you intensely, it seems cursed! (Permanently become a plushie)", "Hugging this is a bad idea.", "Hug it!", "Cancel")
 		if(safety == "Cancel" || !in_range(src, user))
 			return
-		to_chat(user, "<span class='userdanger'>You hug the strange plushie. You fool.</span>")
+		to_chat(user, span_userdanger("You hug the strange plushie. You fool."))
 
 		//setup the mob
 		var/mob/living/simple_animal/pet/plushie/new_plushie = new /mob/living/simple_animal/pet/plushie/(user.loc)

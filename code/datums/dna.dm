@@ -301,17 +301,17 @@
 		if(alert)
 			switch(stability)
 				if(70 to 90)
-					message = "<span class='warning'>You shiver.</span>"
+					message = span_warning("You shiver.")
 				if(60 to 69)
-					message = "<span class='warning'>You feel cold.</span>"
+					message = span_warning("You feel cold.")
 				if(40 to 59)
-					message = "<span class='warning'>You feel sick.</span>"
+					message = span_warning("You feel sick.")
 				if(20 to 39)
-					message = "<span class='warning'>It feels like your skin is moving.</span>"
+					message = span_warning("It feels like your skin is moving.")
 				if(1 to 19)
-					message = "<span class='warning'>You can feel your cells burning.</span>"
+					message = span_warning("You can feel your cells burning.")
 				if(-INFINITY to 0)
-					message = "<span class='boldwarning'>You can feel your DNA exploding, we need to do something fast!</span>"
+					message = span_boldwarning("You can feel your DNA exploding, we need to do something fast!")
 		if(stability <= 0)
 			holder.apply_status_effect(STATUS_EFFECT_DNA_MELT)
 		if(message)
@@ -667,7 +667,7 @@
 			if(2)
 				corgize()
 			if(3)
-				to_chat(src, "<span class='notice'>Oh, we actually feel quite alright!</span>")
+				to_chat(src, span_notice("Oh, we actually feel quite alright!"))
 	else
 		switch(rand(0,3))
 			if(0)

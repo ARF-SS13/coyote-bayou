@@ -115,7 +115,7 @@
 		return ..()
 	if(parry_efficiency < D.parry_data["HUMAN_PARRY_MINIMUM_EFFICIENCY"])
 		return ..()
-	visible_message("<span class='warning'>[src] strikes back perfectly at [attacker], staggering them!</span>")
+	visible_message(span_warning("[src] strikes back perfectly at [attacker], staggering them!"))
 	if(D.parry_data["HUMAN_PARRY_PUNCH"])
 		UnarmedAttack(attacker, TRUE, INTENT_HARM, ATTACK_IS_PARRY_COUNTERATTACK | ATTACK_IGNORE_ACTION | ATTACK_IGNORE_CLICKDELAY | NO_AUTO_CLICKDELAY_HANDLING)
 	var/mob/living/L = attacker

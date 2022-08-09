@@ -68,14 +68,14 @@
 /obj/item/storage/belt/waistsheath/examine(mob/user)
 	..()
 	if(length(contents))
-		to_chat(user, "<span class='notice'>Alt-click it to quickly draw the blade.</span>")
+		to_chat(user, span_notice("Alt-click it to quickly draw the blade."))
 
 /obj/item/storage/belt/waistsheath/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
 		var/obj/item/I = contents[2]
-		user.visible_message("[user] takes [I] out of [src].", "<span class='notice'>You take [I] out of [src].</span>")
+		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_icon()
 	else
@@ -180,7 +180,7 @@
 						show_message = TRUE
 					else
 						if(!spam_protection)
-							to_chat(user, "<span class='warning'>Your [name] is full and can't hold any more!</span>")
+							to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
 							spam_protection = TRUE
 							continue
 				else
@@ -189,8 +189,8 @@
 				continue
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
-		user.visible_message("<span class='notice'>[user] scoops up the casings beneath [user.p_them()].</span>", \
-			"<span class='notice'>You scoop up the casings beneath you with your [name].</span>")
+		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \
+			span_notice("You scoop up the casings beneath you with your [name]."))
 	spam_protection = FALSE
 
 /obj/item/storage/bag/tribe_quiver
@@ -223,21 +223,21 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take \a [L] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [L] out of the quiver."))
 		return TRUE
 	var/obj/item/ammo_casing/caseless/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take \a [W] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the quiver."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
 
 //Bone Arrow Quiver

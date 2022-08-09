@@ -13,24 +13,24 @@
 
 /obj/item/compressionkit/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It has [charges] charges left. Recharge with bluespace crystals.</span>"
-	. += "<span class='notice'>Use in-hand to swap toggle compress/expand mode (expand mode not yet implemented).</span>"
+	. += span_notice("It has [charges] charges left. Recharge with bluespace crystals.")
+	. += span_notice("Use in-hand to swap toggle compress/expand mode (expand mode not yet implemented).")
 
 /obj/item/compressionkit/attack_self(mob/user)
 	if(mode == 0)
 		mode = 1
 		icon_state = "compression_e"
-		to_chat(user, "<span class='notice'>You switch the compressor to expand mode. This isn't implemented yet, so right now it wont do anything different!</span>")
+		to_chat(user, span_notice("You switch the compressor to expand mode. This isn't implemented yet, so right now it wont do anything different!"))
 		return
 	if(mode == 1)
 		mode = 0
 		icon_state = "compression_c"
-		to_chat(user, "<span class='notice'>You switch the compressor to compress mode. Usage will now reduce the size of objects.</span>")
+		to_chat(user, span_notice("You switch the compressor to compress mode. Usage will now reduce the size of objects."))
 		return
 	else
 		mode = 0
 		icon_state = "compression_c"
-		to_chat(user, "<span class='notice'>Some coder cocked up or an admin broke your compressor. It's been set back to compress mode..</span>")
+		to_chat(user, span_notice("Some coder cocked up or an admin broke your compressor. It's been set back to compress mode.."))
 
 /obj/item/compressionkit/proc/sparks()
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
@@ -38,7 +38,7 @@
 	s.start()
 
 /obj/item/compressionkit/suicide_act(mob/living/carbon/M)
-	M.visible_message("<span class='suicide'>[M] is sticking their head in [src] and turning it on! [M.p_theyre(TRUE)] going to compress their own skull!</span>")
+	M.visible_message(span_suicide("[M] is sticking their head in [src] and turning it on! [M.p_theyre(TRUE)] going to compress their own skull!"))
 	var/obj/item/bodypart/head = M.get_bodypart("head")
 	if(!head)
 		return
@@ -64,20 +64,20 @@
 	else
 		if(charges == 0)
 			playsound(get_turf(src), 'sound/machines/buzz-two.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>The bluespace compression kit is out of charges! Recharge it with bluespace crystals.</span>")
+			to_chat(user, span_notice("The bluespace compression kit is out of charges! Recharge it with bluespace crystals."))
 			return
 	if(istype(target, /obj/item))
 		var/obj/item/O = target
 		if(O.w_class == 1)
 			playsound(get_turf(src), 'sound/machines/buzz-two.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>[target] cannot be compressed smaller!.</span>")
+			to_chat(user, span_notice("[target] cannot be compressed smaller!."))
 			return
 		if(O.GetComponent(/datum/component/storage))
-			to_chat(user, "<span class='notice'>You feel like compressing an item that stores other items would be counterproductive.</span>")
+			to_chat(user, span_notice("You feel like compressing an item that stores other items would be counterproductive."))
 			return
 		if(O.w_class > 1)
 			playsound(get_turf(src), 'sound/weapons/flash.ogg', 50, 1)
-			user.visible_message("<span class='warning'>[user] is compressing [O] with their bluespace compression kit!</span>")
+			user.visible_message(span_warning("[user] is compressing [O] with their bluespace compression kit!"))
 			if(do_mob(user, O, 40) && charges > 0 && O.w_class > 1)
 				playsound(get_turf(src), 'sound/weapons/emitter2.ogg', 50, 1)
 				sparks()
@@ -85,16 +85,16 @@
 				O.w_class -= 1
 				// O.force_mult -= damage_multiplier
 				charges -= 1
-				to_chat(user, "<span class='notice'>You successfully compress [target]! The compressor now has [charges] charges.</span>")
+				to_chat(user, span_notice("You successfully compress [target]! The compressor now has [charges] charges."))
 		else
-			to_chat(user, "<span class='notice'>Anomalous error. Summon a coder.</span>")
+			to_chat(user, span_notice("Anomalous error. Summon a coder."))
 
 /obj/item/compressionkit/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/stack/ore/bluespace_crystal))
 		var/obj/item/stack/ore/bluespace_crystal/B = I
 		charges += 2
-		to_chat(user, "<span class='notice'>You insert [I] into [src]. It now has [charges] charges.</span>")
+		to_chat(user, span_notice("You insert [I] into [src]. It now has [charges] charges."))
 		if(B.amount > 1)
 			B.amount -= 1
 		else

@@ -96,7 +96,7 @@
 
 	else if(istype(W, /obj/item/screwdriver) && igniter && !lit)
 		status = !status
-		to_chat(user, "<span class='notice'>[igniter] is now [status ? "secured" : "unsecured"]!</span>")
+		to_chat(user, span_notice("[igniter] is now [status ? "secured" : "unsecured"]!"))
 		update_icon()
 		return
 
@@ -117,7 +117,7 @@
 			if(user.transferItemToLoc(W,src))
 				ptank.forceMove(get_turf(src))
 				ptank = W
-				to_chat(user, "<span class='notice'>You swap the plasma tank in [src]!</span>")
+				to_chat(user, span_notice("You swap the plasma tank in [src]!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
@@ -142,23 +142,23 @@
 	if(ptank && isliving(user) && user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		user.put_in_hands(ptank)
 		ptank = null
-		to_chat(user, "<span class='notice'>You remove the plasma tank from [src]!</span>")
+		to_chat(user, span_notice("You remove the plasma tank from [src]!"))
 		update_icon()
 		return TRUE
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
 	if(ptank)
-		. += "<span class='notice'>\The [src] has \a [ptank] attached. Alt-click to remove it.</span>"
+		. += span_notice("\The [src] has \a [ptank] attached. Alt-click to remove it.")
 
 /obj/item/flamethrower/proc/toggle_igniter(mob/user)
 	if(!ptank)
-		to_chat(user, "<span class='notice'>Attach a plasma tank first!</span>")
+		to_chat(user, span_notice("Attach a plasma tank first!"))
 		return
 	if(!status)
-		to_chat(user, "<span class='notice'>Secure the igniter first!</span>")
+		to_chat(user, span_notice("Secure the igniter first!"))
 		return
-	to_chat(user, "<span class='notice'>You [lit ? "extinguish" : "ignite"] [src]!</span>")
+	to_chat(user, span_notice("You [lit ? "extinguish" : "ignite"] [src]!"))
 	lit = !lit
 	if(lit)
 		START_PROCESSING(SSobj, src)
@@ -235,7 +235,7 @@
 	if(attack_type & ATTACK_TYPE_PROJECTILE)
 		var/obj/item/projectile/P = object
 		if(istype(P) && (P.damage_type != STAMINA) && damage && !P.nodamage && prob(15))
-			owner.visible_message("<span class='danger'>\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!</span>")
+			owner.visible_message(span_danger("\The [attack_text] hits the fueltank on [owner]'s [name], rupturing it! What a shot!"))
 			var/target_turf = get_turf(owner)
 			igniter.ignite_turf(src,target_turf, release_amount = 100)
 			qdel(ptank)

@@ -15,13 +15,13 @@
 /obj/item/plant_analyzer/attack_self(mob/user)
 	. = ..()
 	scan_mode = !scan_mode
-	to_chat(user, "<span class='notice'>You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"].</span>")
+	to_chat(user, span_notice("You switch [src] to [scan_mode == PLANT_SCANMODE_CHEMICALS ? "scan for chemical reagents and traits" : "scan for plant growth statistics"]."))
 
 /obj/item/plant_analyzer/attack(mob/living/M, mob/living/carbon/human/user)
 	//Checks if target is a podman
 	if(ispodperson(M))
-		user.visible_message("<span class='notice'>[user] analyzes [M]'s vitals.</span>", \
-							"<span class='notice'>You analyze [M]'s vitals.</span>")
+		user.visible_message(span_notice("[user] analyzes [M]'s vitals."), \
+							span_notice("You analyze [M]'s vitals."))
 		if(scan_mode== PLANT_SCANMODE_STATS)
 			healthscan(user, M, advanced = TRUE)
 		else
@@ -46,7 +46,7 @@
 	list_reagents = list(/datum/reagent/toxin/plantbgone/weedkiller = 100)
 
 /obj/item/reagent_containers/spray/weedspray/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (TOXLOSS)
 
 /obj/item/reagent_containers/spray/pestspray // -- Skie
@@ -61,7 +61,7 @@
 	list_reagents = list(/datum/reagent/toxin/pestkiller = 100)
 
 /obj/item/reagent_containers/spray/pestspray/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is huffing [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (TOXLOSS)
 
 

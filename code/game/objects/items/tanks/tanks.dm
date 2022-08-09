@@ -32,13 +32,13 @@
 		return
 
 	if(H.internal == src)
-		to_chat(H, "<span class='notice'>You close [src] valve.</span>")
+		to_chat(H, span_notice("You close [src] valve."))
 		H.internal = null
 		H.update_internals_hud_icon(0)
 	else
 		if(!H.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
 			if(HAS_TRAIT(H, TRAIT_NO_INTERNALS))
-				to_chat(H, "<span class='warning'>Due to cumbersome equipment or anatomy, you are currently unable to use internals!</span>")
+				to_chat(H, span_warning("Due to cumbersome equipment or anatomy, you are currently unable to use internals!"))
 				return
 			var/obj/item/clothing/check
 			var/internals = FALSE
@@ -52,13 +52,13 @@
 					internals = TRUE
 
 			if(!internals)
-				to_chat(H, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(H, span_warning("You are not wearing an internals mask!"))
 				return
 
 		if(H.internal)
-			to_chat(H, "<span class='notice'>You switch your internals to [src].</span>")
+			to_chat(H, span_notice("You switch your internals to [src]."))
 		else
-			to_chat(H, "<span class='notice'>You open [src] valve.</span>")
+			to_chat(H, span_notice("You open [src] valve."))
 		H.internal = src
 		H.update_internals_hud_icon(1)
 	H.update_action_buttons_icon()
@@ -104,10 +104,10 @@
 		icon = src.loc
 	if(!in_range(src, user) && !isobserver(user))
 		if(icon == src)
-			. += "<span class='notice'>If you want any more information you'll need to get closer.</span>"
+			. += span_notice("If you want any more information you'll need to get closer.")
 		return
 
-	. += "<span class='notice'>The pressure gauge reads [round(src.air_contents.return_pressure(),0.01)] kPa.</span>"
+	. += span_notice("The pressure gauge reads [round(src.air_contents.return_pressure(),0.01)] kPa.")
 
 	var/celsius_temperature = src.air_contents.return_temperature()-T0C
 	var/descriptive
@@ -125,7 +125,7 @@
 	else
 		descriptive = "furiously hot"
 
-	. += "<span class='notice'>It feels [descriptive].</span>"
+	. += span_notice("It feels [descriptive].")
 
 /obj/item/tank/blob_act(obj/structure/blob/B)
 	if(B && B.loc == loc)
@@ -153,7 +153,7 @@
 
 /obj/item/tank/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is putting [src]'s valve to [user.p_their()] lips! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is putting [src]'s valve to [user.p_their()] lips! It looks like [user.p_theyre()] trying to commit suicide!"))
 	playsound(loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
 	if(!QDELETED(H) && air_contents && air_contents.return_pressure() >= 1000)
 		for(var/obj/item/W in H)
@@ -169,7 +169,7 @@
 		H.spread_bodyparts()
 		return MANUAL_SUICIDE
 	else
-		to_chat(user, "<span class='warning'>There isn't enough pressure in [src] to commit suicide with...</span>")
+		to_chat(user, span_warning("There isn't enough pressure in [src] to commit suicide with..."))
 	return SHAME
 
 /obj/item/tank/attackby(obj/item/W, mob/user, params)

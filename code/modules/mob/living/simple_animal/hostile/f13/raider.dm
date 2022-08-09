@@ -319,7 +319,7 @@
 	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)
 	spawned_mobs += L
 	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+	visible_message(span_danger("[L] [spawn_text] [src]."))
 
 /mob/living/simple_animal/hostile/raider/junker/boss
 	name = "Junker Boss"

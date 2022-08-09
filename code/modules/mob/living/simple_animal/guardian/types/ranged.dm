@@ -18,9 +18,9 @@
 	projectilesound = 'sound/effects/hit_on_shattered_glass.ogg'
 	ranged = 1
 	playstyle_string = "<span class='holoparasite'>As a <b>ranged</b> type, you have 10% damage reduction, but are capable of spraying shards of crystal at incredibly high speed. You can also deploy surveillance snares to monitor enemy movement. Finally, you can switch to scout mode, in which you can't attack, but can move without limit.</span>"
-	magic_fluff_string = "<span class='holoparasite'>..And draw the Sentinel, an alien master of ranged combat.</span>"
-	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Ranged combat modules active. Holoparasite swarm online.</span>"
-	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! Caught one, it's a ranged carp. This fishy can watch people pee in the ocean.</span>"
+	magic_fluff_string = span_holoparasite("..And draw the Sentinel, an alien master of ranged combat.")
+	tech_fluff_string = span_holoparasite("Boot sequence complete. Ranged combat modules active. Holoparasite swarm online.")
+	carp_fluff_string = span_holoparasite("CARP CARP CARP! Caught one, it's a ranged carp. This fishy can watch people pee in the ocean.")
 	see_invisible = SEE_INVISIBLE_LIVING
 	see_in_dark = 8
 	toggle_button_type = /obj/screen/guardian/ToggleMode
@@ -75,7 +75,7 @@
 			lighting_alpha = LIGHTING_PLANE_ALPHA_VISIBLE
 			msg = "You deactivate your night vision."
 
-	to_chat(src, "<span class='notice'>[msg]</span>")
+	to_chat(src, span_notice("[msg]"))
 
 
 /mob/living/simple_animal/hostile/guardian/ranged/verb/Snare()

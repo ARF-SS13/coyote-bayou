@@ -6,16 +6,16 @@
 	desc = "You can't taste anything! Toxic food will still poison you."
 	value = 0
 	mob_trait = TRAIT_AGEUSIA
-	gain_text = "<span class='notice'>You can't taste anything!</span>"
-	lose_text = "<span class='notice'>You can taste again!</span>"
+	gain_text = span_notice("You can't taste anything!")
+	lose_text = span_notice("You can taste again!")
 	medical_record_text = "Patient suffers from ageusia and is incapable of tasting food or reagents."
 
 /datum/quirk/snob
 	name = "Snob"
 	desc = "You care about the finer things, if a room doesn't look nice its just not really worth it, is it?"
 	value = 0
-	gain_text = "<span class='notice'>You feel like you understand what things should look like.</span>"
-	lose_text = "<span class='notice'>Well who cares about deco anyways?</span>"
+	gain_text = span_notice("You feel like you understand what things should look like.")
+	lose_text = span_notice("Well who cares about deco anyways?")
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
@@ -23,8 +23,8 @@
 	name = "Ananas Affinity"
 	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"
 	value = 0
-	gain_text = "<span class='notice'>You feel an intense craving for pineapple.</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
+	gain_text = span_notice("You feel an intense craving for pineapple.")
+	lose_text = span_notice("Your feelings towards pineapples seem to return to a lukewarm state.")
 	medical_record_text = "Patient demonstrates a pathological love of pineapple."
 
 /datum/quirk/pineapple_liker/add()
@@ -42,8 +42,8 @@
 	name = "Ananas Aversion"
 	desc = "You find yourself greatly detesting fruits of the ananas genus. Serious, how the hell can anyone say these things are good? And what kind of madman would even dare putting it on a pizza!?"
 	value = 0
-	gain_text = "<span class='notice'>You find yourself pondering what kind of idiot actually enjoys pineapples...</span>"
-	lose_text = "<span class='notice'>Your feelings towards pineapples seem to return to a lukewarm state.</span>"
+	gain_text = span_notice("You find yourself pondering what kind of idiot actually enjoys pineapples...")
+	lose_text = span_notice("Your feelings towards pineapples seem to return to a lukewarm state.")
 	medical_record_text = "Patient is correct to think that pineapple is disgusting."
 
 /datum/quirk/pineapple_hater/add()
@@ -61,8 +61,8 @@
 	name = "Deviant Tastes"
 	desc = "You dislike food that most people enjoy, and find delicious what they don't."
 	value = 0
-	gain_text = "<span class='notice'>You start craving something that tastes strange.</span>"
-	lose_text = "<span class='notice'>You feel like eating normal food again.</span>"
+	gain_text = span_notice("You start craving something that tastes strange.")
+	lose_text = span_notice("You feel like eating normal food again.")
 	medical_record_text = "Patient demonstrates irregular nutrition preferences."
 
 /datum/quirk/deviant_tastes/add()
@@ -90,7 +90,7 @@
 
 /datum/quirk/monochromatic/post_add()
 	if(quirk_holder.mind.assigned_role == "Detective")
-		to_chat(quirk_holder, "<span class='boldannounce'>Mmm. Nothing's ever clear on this station. It's all shades of gray...</span>")
+		to_chat(quirk_holder, span_boldannounce("Mmm. Nothing's ever clear on this station. It's all shades of gray..."))
 		quirk_holder.playsound_local(quirk_holder, 'sound/ambience/ambidet1.ogg', 50, FALSE)
 
 /datum/quirk/monochromatic/remove()
@@ -102,8 +102,8 @@
 	desc = "You are aroused by pain."
 	value = 0
 	mob_trait = TRAIT_MASO
-	gain_text = "<span class='notice'>You desire to be hurt.</span>"
-	lose_text = "<span class='notice'>Pain has become less exciting for you.</span>"
+	gain_text = span_notice("You desire to be hurt.")
+	lose_text = span_notice("Pain has become less exciting for you.")
 
 
 /datum/quirk/alcohol_intolerance
@@ -128,8 +128,8 @@
 	name = "Longtimer"
 	desc = "You've been around for a long time and seen more than your fair share of action, suffering some pretty nasty scars along the way. For whatever reason, you've declined to get them removed or augmented."
 	value = 0
-	gain_text = "<span class='notice'>Your body has seen better days.</span>"
-	lose_text = "<span class='notice'>Your sins may wash away, but those scars are here to stay...</span>"
+	gain_text = span_notice("Your body has seen better days.")
+	lose_text = span_notice("Your sins may wash away, but those scars are here to stay...")
 	medical_record_text = "Patient has withstood significant physical trauma and declined plastic surgery procedures to heal scarring."
 	/// the minimum amount of scars we can generate
 	var/min_scars = 3

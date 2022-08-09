@@ -45,7 +45,7 @@
 /obj/item/organ/heart/vampheart/HeartStrengthMessage()
 	if(fakingit)
 		return "a healthy"
-	return "<span class='danger'>no</span>"	// Bloodsuckers don't have a heartbeat at all when stopped (default is "an unstable")
+	return span_danger("no")	// Bloodsuckers don't have a heartbeat at all when stopped (default is "an unstable")
 // 		EYES 		//
 
 /obj/item/organ/eyes/vassal/

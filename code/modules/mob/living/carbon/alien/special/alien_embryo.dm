@@ -28,24 +28,24 @@
 			if(prob(2))
 				owner.emote("cough")
 			if(prob(2))
-				to_chat(owner, "<span class='danger'>Your throat feels sore.</span>")
+				to_chat(owner, span_danger("Your throat feels sore."))
 			if(prob(2))
-				to_chat(owner, "<span class='danger'>Mucous runs down the back of your throat.</span>")
+				to_chat(owner, span_danger("Mucous runs down the back of your throat."))
 		if(4)
 			if(prob(2))
 				owner.emote("sneeze")
 			if(prob(2))
 				owner.emote("cough")
 			if(prob(4))
-				to_chat(owner, "<span class='danger'>Your muscles ache.</span>")
+				to_chat(owner, span_danger("Your muscles ache."))
 				if(prob(20))
 					owner.take_bodypart_damage(1)
 			if(prob(4))
-				to_chat(owner, "<span class='danger'>Your stomach hurts.</span>")
+				to_chat(owner, span_danger("Your stomach hurts."))
 				if(prob(20))
 					owner.adjustToxLoss(1)
 		if(5)
-			to_chat(owner, "<span class='danger'>You feel something tearing its way out of your stomach...</span>")
+			to_chat(owner, span_danger("You feel something tearing its way out of your stomach..."))
 			owner.adjustToxLoss(10)
 
 /obj/item/organ/body_egg/alien_embryo/egg_process()
@@ -103,13 +103,13 @@
 
 	var/mob/living/carbon/old_owner = owner
 	if(kill_on_sucess) //ITS TOO LATE
-		new_xeno.visible_message("<span class='danger'>[new_xeno] bursts out of [owner]!</span>", "<span class='userdanger'>You exit [owner], your previous host.</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
+		new_xeno.visible_message(span_danger("[new_xeno] bursts out of [owner]!"), span_userdanger("You exit [owner], your previous host."), span_italic("You hear organic matter ripping and tearing!"))
 		owner.apply_damage(rand(100,300),BRUTE,zone,FALSE) //Random high damage to torso so health sensors don't metagame.
 		var/obj/item/bodypart/B = owner.get_bodypart(zone)
 		B.drop_organs(owner) //Lets still make the death gruesome and impossible to just simply defib someone.
 		owner.death(FALSE) //Just in case some freak occurance occurs where you somehow survive all your organs being removed from you and the 100-300 brute damage.
 	else //When it is removed via surgery at a late stage, rather than forced.
-		new_xeno.visible_message("<span class='danger'>[new_xeno] wriggles out of [owner]!</span>", "<span class='userdanger'>You exit [owner], your previous host.</span>")
+		new_xeno.visible_message(span_danger("[new_xeno] wriggles out of [owner]!"), span_userdanger("You exit [owner], your previous host."))
 		owner.adjustBruteLoss(40)
 	old_owner.cut_overlay(overlay)
 	qdel(src)

@@ -11,7 +11,7 @@
 	max_integrity = 40
 	construction_value = 5
 	layer = WALL_OBJ_LAYER
-	break_message = "<span class='warning'>The stargazer's fragile body shatters into pieces!</span>"
+	break_message = span_warning("The stargazer's fragile body shatters into pieces!")
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	light_color = "#DAAA18"
 	var/star_light_star_bright = FALSE //If this stargazer can see starlight
@@ -29,7 +29,7 @@
 	if(is_servant_of_ratvar(user))
 		. += "<span class='nzcrentr_small'>Generates <b>[DisplayPower(STARGAZER_POWER)]</b> per second while viewing starlight within [STARGAZER_RANGE] tiles.</span>"
 	if(star_light_star_bright)
-		. += "[is_servant_of_ratvar(user) ? "<span class='nzcrentr_small'>It can see starlight!</span>" : "It's shining brilliantly!"]"
+		. += "[is_servant_of_ratvar(user) ? span_nzcrentr_small("It can see starlight!") : "It's shining brilliantly!"]"
 
 /obj/structure/destructible/clockwork/stargazer/process()
 	star_light_star_bright = check_starlight()
@@ -56,15 +56,15 @@
 			has_starlight = FALSE
 	if(old_status != has_starlight)
 		if(has_starlight)
-			visible_message("<span class='nzcrentr_small'>[src] hums and shines brilliantly!</span>")
+			visible_message(span_nzcrentr_small("[src] hums and shines brilliantly!"))
 			playsound(src, 'sound/machines/clockcult/stargazer_activate.ogg', 50, TRUE)
 			add_overlay("stargazer_light")
 			set_light(1.5, 5)
 		else
 			if(anchored) //We lost visibility somehow
-				visible_message("<span class='danger'>[src] flickers, and falls dark.</span>")
+				visible_message(span_danger("[src] flickers, and falls dark."))
 			else
-				visible_message("<span class='danger'>[src] whooshes quietly as it slides into a less bulky form.</span>")
+				visible_message(span_danger("[src] whooshes quietly as it slides into a less bulky form."))
 			cut_overlays()
 			set_light(0)
 	return has_starlight

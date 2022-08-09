@@ -73,14 +73,14 @@
 	traitor_kind.on_removal(src)
 	SSticker.mode.traitors -= owner
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='userdanger'> You are no longer the [special_role]! </span>")
+		to_chat(owner.current,span_userdanger(" You are no longer the [special_role]! "))
 	owner.special_role = null
 	. = ..()
 
 /datum/antagonist/traitor/proc/handle_hearing(datum/source, list/hearing_args)
 	var/message = hearing_args[HEARING_RAW_MESSAGE]
-	message = GLOB.syndicate_code_phrase_regex.Replace(message, "<span class='blue'>$1</span>")
-	message = GLOB.syndicate_code_response_regex.Replace(message, "<span class='red'>$1</span>")
+	message = GLOB.syndicate_code_phrase_regex.Replace(message, span_blue("$1"))
+	message = GLOB.syndicate_code_response_regex.Replace(message, span_red("$1"))
 	hearing_args[HEARING_RAW_MESSAGE] = message
 
 // needs to be refactored to base /datum/antagonist sometime..
@@ -267,9 +267,9 @@
 		result += contractor_round_end()
 
 	if(traitorwin)
-		result += "<span class='greentext'>The [special_role_text] was successful!</span>"
+		result += span_greentext("The [special_role_text] was successful!")
 	else
-		result += "<span class='redtext'>The [special_role_text] has failed!</span>"
+		result += span_redtext("The [special_role_text] has failed!")
 		SEND_SOUND(owner.current, 'sound/ambience/ambifailure.ogg')
 
 	return result.Join("<br>")

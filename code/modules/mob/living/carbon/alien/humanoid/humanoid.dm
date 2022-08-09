@@ -69,8 +69,8 @@
 			SEND_SIGNAL(src, COMSIG_CARBON_EMBED_RIP, I, L)
 			return
 		if(href_list["pouches"])
-			visible_message("<span class='danger'>[usr] tries to empty [src]'s pouches.</span>", \
-							"<span class='userdanger'>[usr] tries to empty [src]'s pouches.</span>")
+			visible_message(span_danger("[usr] tries to empty [src]'s pouches."), \
+							span_userdanger("[usr] tries to empty [src]'s pouches."))
 			if(do_mob(usr, src, POCKET_STRIP_DELAY * 0.5))
 				dropItemToGround(r_store)
 				dropItemToGround(l_store)
@@ -81,7 +81,7 @@
 
 /mob/living/carbon/alien/humanoid/do_resist_grab(moving_resist, forced, silent = FALSE)
 	if(pulledby.grab_state && !silent)
-		visible_message("<span class='danger'>[src] has broken free of [pulledby]'s grip!</span>")
+		visible_message(span_danger("[src] has broken free of [pulledby]'s grip!"))
 	pulledby.stop_pulling()
 	return TRUE
 

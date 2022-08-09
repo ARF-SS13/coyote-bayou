@@ -291,7 +291,7 @@ Auto Patrol: []"},
 			return
 	if(H.a_intent == INTENT_HELP && bot_accessory)
 
-		to_chat(H, "<span class='warning'>You knock [bot_accessory] off of [src]'s head!</span>")
+		to_chat(H, span_warning("You knock [bot_accessory] off of [src]'s head!"))
 		reset_fashion()
 		return
 
@@ -311,19 +311,19 @@ Auto Patrol: []"},
 
 /mob/living/simple_animal/bot/secbot/proc/attempt_place_on_head(mob/user, obj/item/clothing/head/H)
 	if(user && !user.temporarilyRemoveItemFromInventory(H))
-		to_chat(user, "<span class='warning'>\The [H] is stuck to your hand, you cannot put it on [src]'s head!</span>")
+		to_chat(user, span_warning("\The [H] is stuck to your hand, you cannot put it on [src]'s head!"))
 		return
 	if(bot_accessory)
-		to_chat("<span class='warning'>\[src] already has an accessory, and the laws of physics disallow him from wearing a second!</span>")
+		to_chat(span_warning("\[src] already has an accessory, and the laws of physics disallow him from wearing a second!"))
 		return
 
 	if(H.beepsky_fashion)
-		to_chat(user, "<span class='warning'>You set [H] on [src].</span>")
+		to_chat(user, span_warning("You set [H] on [src]."))
 		bot_accessory = H
 		H.forceMove(src)
 		apply_fashion(H.beepsky_fashion)
 	else
-		to_chat(user, "<span class='warning'>You set [H] on [src]'s head, but it falls off!</span>")
+		to_chat(user, span_warning("You set [H] on [src]'s head, but it falls off!"))
 		H.forceMove(drop_location())
 
 /mob/living/simple_animal/bot/secbot/regenerate_icons()
@@ -347,9 +347,9 @@ Auto Patrol: []"},
 	. = ..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, "<span class='danger'>You short out [src]'s target assessment circuits.</span>")
+			to_chat(user, span_danger("You short out [src]'s target assessment circuits."))
 			oldtarget_name = user.name
-		audible_message("<span class='danger'>[src] buzzes oddly!</span>")
+		audible_message(span_danger("[src] buzzes oddly!"))
 		declare_arrests = FALSE
 		update_icon()
 
@@ -386,8 +386,8 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/proc/cuff(mob/living/carbon/C)
 	mode = BOT_ARREST
 	playsound(src, 'sound/weapons/cablecuff.ogg', 30, TRUE, -2)
-	C.visible_message("<span class='danger'>[process_emote("CAPTURE_ONE", C)]</span>",\
-						"<span class='userdanger'>[process_emote("CAPTURE_TWO", C)]</span>")
+	C.visible_message(span_danger("[process_emote("CAPTURE_ONE", C)]"),\
+						span_userdanger("[process_emote("CAPTURE_TWO", C)]"))
 	if(do_after(src, 60, FALSE, C))
 		attempt_handcuff(C)
 
@@ -426,8 +426,8 @@ Auto Patrol: []"},
 	if(declare_arrests)
 		var/area/location = get_area(src)
 		speak(process_emote("ARREST", C, threat, arrest_type, location), radio_channel)
-	C.visible_message("<span class='danger'>[process_emote("ATTACK_ONE", C)]</span>",\
-							"<span class='userdanger'>[process_emote("ATTACK_TWO", C)]</span>")
+	C.visible_message(span_danger("[process_emote("ATTACK_ONE", C)]"),\
+							span_userdanger("[process_emote("ATTACK_TWO", C)]"))
 
 /mob/living/simple_animal/bot/secbot/handle_automated_action()
 	if(!..())
@@ -566,7 +566,7 @@ Auto Patrol: []"},
 /mob/living/simple_animal/bot/secbot/explode()
 
 	walk_to(src,0)
-	visible_message("<span class='boldannounce'>[process_emote("DEATH")]</span>")
+	visible_message(span_boldannounce("[process_emote("DEATH")]"))
 	var/atom/Tsec = drop_location()
 
 	var/obj/item/bot_assembly/secbot/Sa = new (Tsec)

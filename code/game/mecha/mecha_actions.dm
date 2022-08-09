@@ -209,13 +209,13 @@
 		chassis.bumpsmash = 1
 		chassis.step_in = max(1, round(chassis.step_in*0.75, 0.25))
 		chassis.step_energy_drain = max(chassis.overload_step_energy_drain_min,chassis.step_energy_drain*chassis.leg_overload_coeff)
-		chassis.occupant_message("<span class='danger'>You enable leg actuators overload.</span>")
+		chassis.occupant_message(span_danger("You enable leg actuators overload."))
 	else
 		chassis.leg_overload_mode = 0
 		chassis.bumpsmash = 0
 		chassis.step_in = initial(chassis.step_in)
 		chassis.step_energy_drain = chassis.normal_step_energy_drain
-		chassis.occupant_message("<span class='notice'>You disable leg actuators overload.</span>")
+		chassis.occupant_message(span_notice("You disable leg actuators overload."))
 	UpdateButtonIcon()
 
 /datum/action/innate/mecha/mech_smoke

@@ -64,7 +64,7 @@
 	if(prob(85) || Proj.damage > 26)
 		return ..()
 	else
-		visible_message("<span class='danger'>\The [Proj] is deflected harmlessly by \the [src]'s thick skin!</span>")
+		visible_message(span_danger("\The [Proj] is deflected harmlessly by \the [src]'s thick skin!"))
 		return FALSE
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
@@ -98,7 +98,7 @@
 	icon_state = icon_dead
 	anchored = FALSE
 	if(!gibbed)
-		visible_message("<span class='danger'>\the [src] shouts something incoherent about brahmins for the last time and stops moving...</span>")
+		visible_message(span_danger("\the [src] shouts something incoherent about brahmins for the last time and stops moving..."))
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant
@@ -431,7 +431,7 @@
 			if(istype(L, /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain))
 				continue
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by the nightkin's release of energy!</span>")
+			to_chat(L, span_userdanger("You're hit by the nightkin's release of energy!"))
 			hit_things += L
 		previousturf = J
 		addtimer(1)

@@ -190,9 +190,9 @@ GLOBAL_LIST_INIT_TYPED(skill_datums, /datum/skill, init_skill_datums())
 	if(silent || !(M?.current))
 		return
 	if(. > 0)
-		to_chat(M.current, "<span class='nicegreen'>I feel like I've become more proficient at [name]!</span>")
+		to_chat(M.current, span_nicegreen("I feel like I've become more proficient at [name]!"))
 	else if(. < 0)
-		to_chat(M.current, "<span class='warning'>I feel like I've become worse at [name]!</span>")
+		to_chat(M.current, span_warning("I feel like I've become worse at [name]!"))
 
 /datum/skill/level/get_skill_data(datum/skill_holder/H)
 	. = ..()

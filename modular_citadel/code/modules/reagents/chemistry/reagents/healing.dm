@@ -33,14 +33,14 @@
 			T.Remove()
 			qdel(T)
 			nT.Insert(C)
-			to_chat(C, "<span class='notice'>You feel your tongue.... unfluffify...?</span>")
+			to_chat(C, span_notice("You feel your tongue.... unfluffify...?"))
 			holder.remove_reagent(type, 10)
 	..()
 
 /datum/reagent/fermi/yamerol/overdose_process(mob/living/carbon/C)
 	var/obj/item/organ/tongue/oT = C.getorganslot(ORGAN_SLOT_TONGUE)
 	if(current_cycle == 1)
-		to_chat(C, "<span class='notice'>You feel the Yamerol sooth your tongue and lungs.</span>")
+		to_chat(C, span_notice("You feel the Yamerol sooth your tongue and lungs."))
 	if(current_cycle > 10)
 		if(!C.getorganslot(ORGAN_SLOT_TONGUE))
 			var/obj/item/organ/tongue/T
@@ -49,7 +49,7 @@
 			else
 				T = new()
 			T.Insert(C)
-			to_chat(C, "<span class='notice'>You feel your tongue reform in your mouth.</span>")
+			to_chat(C, span_notice("You feel your tongue reform in your mouth."))
 			holder.remove_reagent(type, 10)
 		else
 			if((oT.name == "fluffy tongue") && (purity == 1))
@@ -61,13 +61,13 @@
 				oT.Remove()
 				qdel(oT)
 				T.Insert(C)
-				to_chat(C, "<span class='notice'>You feel your tongue.... unfluffify...?</span>")
+				to_chat(C, span_notice("You feel your tongue.... unfluffify...?"))
 				holder.remove_reagent(type, 10)
 
 		if(!C.getorganslot(ORGAN_SLOT_LUNGS))
 			var/obj/item/organ/lungs/yamerol/L = new()
 			L.Insert(C)
-			to_chat(C, "<span class='notice'>You feel the yamerol merge in your chest.</span>")
+			to_chat(C, span_notice("You feel the yamerol merge in your chest."))
 			holder.remove_reagent(type, 10)
 	C.adjustOxyLoss(-3)
 	..()
@@ -144,7 +144,7 @@
 				if(active_tissue && active_tissue.borrowed_health)
 					borrowed_health += (preheal_brute - C.getBruteLoss()) + (preheal_burn - C.getFireLoss())
 					imperfect = TRUE
-				to_chat(M, "<span class='danger'>You feel your flesh [imperfect ? "partially and painfully" : ""] merge with the synthetic tissue! It stings like hell[imperfect ? " and is making you feel terribly sick" : ""]!</span>")
+				to_chat(M, span_danger("You feel your flesh [imperfect ? "partially and painfully" : ""] merge with the synthetic tissue! It stings like hell[imperfect ? " and is making you feel terribly sick" : ""]!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
 			data["borrowed_health"] += borrowed_health //Preserve health offset
 			borrowed_health = 0	//We are applying this to someone else, so this info will be transferred via data.
@@ -163,7 +163,7 @@
 			if(volume >= 14)
 				if(C.regenerate_organs(only_one = TRUE))
 					C.reagents.remove_reagent(type, 15)
-					to_chat(C, "<span class='notice'>You feel something reform inside of you!</span>")
+					to_chat(C, span_notice("You feel something reform inside of you!"))
 
 	data["injected_vol"] = max(0, data["injected_vol"] - metabolization_rate * C.metabolism_efficiency)	//No negatives.
 	if(borrowed_health)

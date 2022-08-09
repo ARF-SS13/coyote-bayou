@@ -10,7 +10,7 @@
 /obj/item/organ/cyberimp/arm/clockwork/ui_action_click()
 	if(is_servant_of_ratvar(owner) || (obj_flags & EMAGGED)) //If you somehow manage to steal a clockie's implant AND have an emag AND manage to get it implanted for yourself, good on ya!
 		return ..()
-	to_chat(owner, "<span class='warning'>The implant refuses to activate..</span>")
+	to_chat(owner, span_warning("The implant refuses to activate.."))
 
 /obj/item/organ/cyberimp/arm/clockwork/examine(mob/user)
 	if((is_servant_of_ratvar(user) || isobserver(user)) && clockwork_desc)
@@ -22,7 +22,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(usr, "<span class='notice'>You emag [src], hoping it'll achieve something..</span>")
+	to_chat(usr, span_notice("You emag [src], hoping it'll achieve something.."))
 
 //Brass claw implant. Holds the brass claw from brass_claw.dm and can extend / retract it at will.
 /obj/item/organ/cyberimp/arm/clockwork/claw

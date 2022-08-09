@@ -702,7 +702,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You adjust the [src].</span>")
+	to_chat(usr, span_notice("You adjust the [src]."))
 	if(src.uniformtoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"

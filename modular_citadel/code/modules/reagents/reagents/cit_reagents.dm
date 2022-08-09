@@ -137,7 +137,7 @@
 			M.emote(pick("moan","blush"))
 		if(prob(5))
 			var/aroused_message = pick("You feel frisky.", "You're having trouble suppressing your urges.", "You feel in the mood.")
-			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+			to_chat(M, span_userlove("[aroused_message]"))
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -166,7 +166,7 @@
 				aroused_message = pick("You need to fuck someone!", "You're bursting with sexual tension!", "You can't get sex off your mind!")
 			else
 				aroused_message = pick("You feel a bit hot.", "You feel strong sexual urges.", "You feel in the mood.", "You're ready to go down on someone.")
-			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+			to_chat(M, span_userlove("[aroused_message]"))
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
@@ -187,7 +187,7 @@
 	if(M && M.canbearoused && !HAS_TRAIT(M, TRAIT_CROCRIN_IMMUNE) && prob(33))
 		if(prob(5) && M.getArousalLoss() >= 100 && ishuman(M) && M.has_dna())
 			if(prob(5)) //Less spam
-				to_chat(M, "<span class='love'>Your libido is going haywire!</span>")
+				to_chat(M, span_love("Your libido is going haywire!"))
 		if(M.min_arousal < 50)
 			M.min_arousal += 1
 		if(M.min_arousal < M.max_arousal)
