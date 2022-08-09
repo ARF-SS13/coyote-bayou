@@ -99,21 +99,21 @@
 	id = /datum/reagent/toxin/heparin
 	results = list(/datum/reagent/toxin/heparin = 4)
 	required_reagents = list(/datum/reagent/toxin/formaldehyde = 1, /datum/reagent/sodium = 1, /datum/reagent/chlorine = 1, /datum/reagent/lithium = 1)
-	mix_message = "<span class='danger'>The mixture thins and loses all color.</span>"
+	mix_message = span_danger("The mixture thins and loses all color.")
 
 /datum/chemical_reaction/rotatium
 	name = "Rotatium"
 	id = /datum/reagent/toxin/rotatium
 	results = list(/datum/reagent/toxin/rotatium = 3)
 	required_reagents = list(/datum/reagent/toxin/mindbreaker = 1, /datum/reagent/teslium = 1, /datum/reagent/toxin/fentanyl = 1)
-	mix_message = "<span class='danger'>After sparks, fire, and the smell of mindbreaker, the mix is constantly spinning with no stop in sight.</span>"
+	mix_message = span_danger("After sparks, fire, and the smell of mindbreaker, the mix is constantly spinning with no stop in sight.")
 
 /datum/chemical_reaction/skewium
 	name = "Skewium"
 	id = /datum/reagent/toxin/skewium
 	results = list(/datum/reagent/toxin/skewium = 5)
 	required_reagents = list(/datum/reagent/toxin/rotatium = 2, /datum/reagent/toxin/plasma = 2, /datum/reagent/toxin/acid = 1)
-	mix_message = "<span class='danger'>Wow! it turns out if you mix rotatium with some plasma and sulphuric acid, it gets even worse!</span>"
+	mix_message = span_danger("Wow! it turns out if you mix rotatium with some plasma and sulphuric acid, it gets even worse!")
 
 /datum/chemical_reaction/anacea
 	name = "Anacea"
@@ -126,11 +126,11 @@
 	id = /datum/reagent/toxin/bonehurtingjuice
 	results = list(/datum/reagent/toxin/bonehurtingjuice = 5)
 	required_reagents = list(/datum/reagent/toxin/mutagen = 1, /datum/reagent/toxin/itching_powder = 3, /datum/reagent/consumable/milk = 1)
-	mix_message = "<span class='danger'>The mixture suddenly becomes clear and looks a lot like water. You feel a strong urge to drink it.</span>"
+	mix_message = span_danger("The mixture suddenly becomes clear and looks a lot like water. You feel a strong urge to drink it.")
 
 /datum/chemical_reaction/spewium
 	name = "Spewium"
 	id = /datum/reagent/toxin/spewium
 	results = list(/datum/reagent/toxin/spewium = 5)
 	required_reagents = list (/datum/reagent/toxin/skewium = 1, /datum/reagent/consumable/ethanol/buffalo = 2, /datum/reagent/consumable/ethanol/yellowpulque = 2)
-	mix_message = "<span class='danger'>The mixture gives off a nauseating odor.</span>"
+	mix_message = span_danger("The mixture gives off a nauseating odor.")

@@ -47,15 +47,15 @@
 /obj/structure/table/snooker/attackby(obj/item/I, mob/user, params)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(istype(I, /obj/item/screwdriver) && deconstruction_ready)
-			to_chat(user, "<span class='notice'>You start disassembling [src]...</span>")
+			to_chat(user, span_notice("You start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
 				deconstruct(TRUE)
 			return
 		if(istype(I, /obj/item/wrench))
-			to_chat(user, "<span class='notice'>You [anchored ? "unwrench" : "wrench"] the [src].</span>")
+			to_chat(user, span_notice("You [anchored ? "unwrench" : "wrench"] the [src]."))
 			anchored = !anchored
 		if(istype(I, /obj/item/crowbar) && deconstruction_ready)
-			to_chat(user, "<span class='notice'>You start deconstructing [src]...</span>")
+			to_chat(user, span_notice("You start deconstructing [src]..."))
 			if(I.use_tool(src, user, 40, volume=50))
 				playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
 				deconstruct(TRUE, 1)
@@ -75,7 +75,7 @@
 
 /obj/structure/table/snooker/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] cannot be rotated while the spinning bolts are in place!</span>")
+		to_chat(user, span_warning("[src] cannot be rotated while the spinning bolts are in place!"))
 		return FALSE
 
 /obj/structure/table/snooker/ComponentInitialize()

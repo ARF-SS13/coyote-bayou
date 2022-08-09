@@ -24,7 +24,7 @@
 	if(in_use)
 		return
 	if(world.time < time_to_use)
-		to_chat(user, "<span class='warning'>They are not ready smell something so pungent yet, I should wait a moment.</span>")
+		to_chat(user, span_warning("They are not ready smell something so pungent yet, I should wait a moment."))
 		return
 	if(!user.IsAdvancedToolUser())
 		to_chat(user, span_warning("You don't know how to use [src]!"))

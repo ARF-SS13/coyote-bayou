@@ -62,10 +62,10 @@
 
 /obj/structure/vault_door/proc/toggle()
 	if(destroyed)
-		usr << "<span class='warning'>[src] is broken.</span>"
+		usr << span_warning("[src] is broken.")
 		return
 	if(is_busy)
-		usr << "<span class='warning'>[src] is busy.</span>"
+		usr << span_warning("[src] is busy.")
 		return
 	if (density)
 		open()

@@ -4,7 +4,7 @@
 	probability = 6
 
 	telegraph_duration = 700
-	telegraph_message = "<span class='userdanger'>The skies slowly turn into a glowing green, distant distorted thunder can be heard as dark clouds approach.</span>"
+	telegraph_message = span_userdanger("The skies slowly turn into a glowing green, distant distorted thunder can be heard as dark clouds approach.")
 	telegraph_sound = 'modular_sunset/sound/weather/radstorm2.ogg'
 
 
@@ -16,7 +16,7 @@
 	weather_sound = 'modular_sunset/sound/weather/radstorm.ogg'
 
 	end_duration = 100
-	end_message = "<span class='userdanger'>The air seems to be cooling off again as the radiation storm passes, the sky returning to it's normal color.</span>"
+	end_message = span_userdanger("The air seems to be cooling off again as the radiation storm passes, the sky returning to it's normal color.")
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/maintenance, /area/ai_monitored/turret_protected/ai_upload, /area/ai_monitored/turret_protected/ai_upload_foyer,

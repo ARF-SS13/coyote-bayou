@@ -125,7 +125,7 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(istype(Itm.loc, /mob))
 			var/mob/M = Itm.loc
 			if(!M.dropItemToGround(Itm))
-				to_chat(usr, "<span class='warning'>\the [Itm] is stuck to your hand, you cannot put it in \the [src]!</span>")
+				to_chat(usr, span_warning("\the [Itm] is stuck to your hand, you cannot put it in \the [src]!"))
 				return
 
 		Itm.forceMove(src)
@@ -277,8 +277,8 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 		if(!OtherItem.tool_start_check(user, amount=3))
 			return
 		user.visible_message("[user.name] repairs \the [src].", \
-						"<span class='notice'>You start repairing the vending machine.</span>", \
-						"<span class='italics'>You hear welding.</span>")
+						span_notice("You start repairing the vending machine."), \
+						span_italic("You hear welding."))
 		if(OtherItem.use_tool(src, user, 100, volume=50, amount=20))
 			to_chat(user, span_notice("You repair the vending machine."))
 			stat &= ~BROKEN
@@ -844,14 +844,14 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	name = "Wasteland Vending Machine - Attachments"
 	icon_state = "generic_idle"
 	prize_list = list(
-		new /datum/data/wasteland_equipment("Weapon Optics",				/obj/item/attachments/scope,									25),
-		new /datum/data/wasteland_equipment("Recoil Compensator",			/obj/item/attachments/recoil_decrease,							25),
-		new /datum/data/wasteland_equipment("Burst Cam",					/obj/item/attachments/burst_improvement,						25)
+		new /datum/data/wasteland_equipment("ACOG Scope",					/obj/item/gun_upgrade/scope/watchman,							25),
+		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				25),
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							25)
 		)
 	highpop_list = list(
-		new /datum/data/wasteland_equipment("Weapon Optics",				/obj/item/attachments/scope,									25),
-		new /datum/data/wasteland_equipment("Recoil Compensator",			/obj/item/attachments/recoil_decrease,							25),
-		new /datum/data/wasteland_equipment("Burst Cam",					/obj/item/attachments/burst_improvement,						25)
+		new /datum/data/wasteland_equipment("ACOG Scope",					/obj/item/gun_upgrade/scope/watchman,							25),
+		new /datum/data/wasteland_equipment("Ergonomic Grip",				/obj/item/tool_upgrade/productivity/ergonomic_grip,				25),
+		new /datum/data/wasteland_equipment("Forged Barrel",				/obj/item/gun_upgrade/barrel/forged,							25)
 		)
 
 /obj/machinery/mineral/wasteland_vendor/crafting
@@ -957,27 +957,27 @@ GLOBAL_VAR_INIT(vendor_cash, 0)
 	if(href_list["purchase"] && GLOB.player_list.len>50)
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
 		if (!prize || !(prize in highpop_list))
-			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
+			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
+			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
-			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
+			to_chat(usr, span_notice("[src] clanks to life briefly before vending [prize.equipment_name]!"))
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
 	else if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
 		if (!prize || !(prize in prize_list))
-			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
+			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
+			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
-			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
+			to_chat(usr, span_notice("[src] clanks to life briefly before vending [prize.equipment_name]!"))
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
 	updateUsrDialog()

@@ -11,7 +11,7 @@
 /obj/machinery/computer/shuttle/bos/Topic(href, href_list)
 	if(href_list["move"])
 		if(!is_centcom_level(z))
-			to_chat(usr, "<span class='warning'>The controls have malfunctioned, and you cannot seem to lock the base down!</span>")
+			to_chat(usr, span_warning("The controls have malfunctioned, and you cannot seem to lock the base down!"))
 			return 0
 	..()
 	

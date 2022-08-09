@@ -25,7 +25,7 @@
 /// triggered on wield of two handed item
 /obj/item/broom/wield(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>You brace the [src] against the ground in a firm sweeping stance.</span>")
+	to_chat(user, span_notice("You brace the [src] against the ground in a firm sweeping stance."))
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/sweep)
 
 /// triggered on unwield of two handed item

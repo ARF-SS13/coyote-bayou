@@ -22,15 +22,15 @@
 	if(.)
 		return
 	if(burning)
-		user.visible_message("<span class='notice'>[user] snuffs [src] out.</span>", "<span class='notice'>You snuff [src] out.</span>")
+		user.visible_message(span_notice("[user] snuffs [src] out."), span_notice("You snuff [src] out."))
 		burning = FALSE
 		update_icon()
 		set_light(0)
 		return
 	if(!burning)
-		user.visible_message("<span class='notice'>[user] starts to pull [src] free from the ground....</span>", "<span class='notice'>You start to pull [src] free from the ground...</span>")
+		user.visible_message(span_notice("[user] starts to pull [src] free from the ground...."), span_notice("You start to pull [src] free from the ground..."))
 		if(do_after(user, 20, progress = 1, target = src))
-			to_chat(user, "<span class='notice'>You pull [src] free from the ground.</span>")
+			to_chat(user, span_notice("You pull [src] free from the ground."))
 			var/torch = new /obj/item/candle/tribal_torch
 			user.put_in_hands(torch)
 			qdel(src)
@@ -39,7 +39,7 @@
 /obj/structure/destructible/tribal_torch/attackby(obj/item/W, mob/user, params)
 	if(W.get_temperature())
 		StartBurning()
-		user.visible_message("<span class='notice'>[user] lights [src] with [W].</span>", "<span class='notice'>You light [src] with [W].</span>")
+		user.visible_message(span_notice("[user] lights [src] with [W]."), span_notice("You light [src] with [W]."))
 		return
 
 /obj/structure/destructible/tribal_torch/proc/StartBurning()

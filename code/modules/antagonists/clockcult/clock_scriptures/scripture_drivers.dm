@@ -11,8 +11,8 @@
 	channel_time = 50
 	power_cost = 200
 	object_path = /obj/structure/destructible/clockwork/stargazer
-	creator_message = "<span class='brass'>You form a stargazer, which will generate power near starlight.</span>"
-	observer_message = "<span class='warning'>A large lantern-shaped machine forms!</span>"
+	creator_message = span_brass("You form a stargazer, which will generate power near starlight.")
+	observer_message = span_warning("A large lantern-shaped machine forms!")
 	usage_tip = "For obvious reasons, make sure to place this near a window or somewhere else that can see space!"
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
@@ -24,7 +24,7 @@
 /datum/clockwork_scripture/create_object/stargazer/check_special_requirements()
 	var/area/A = get_area(invoker)
 	if(A.outdoors || A.map_name == "Space" || !A.blob_allowed)
-		to_chat(invoker, "<span class='danger'>Stargazers can't be built off-station.</span>")
+		to_chat(invoker, span_danger("Stargazers can't be built off-station."))
 		return
 	return ..()
 
@@ -39,7 +39,7 @@
 	power_cost = 10
 	whispered = TRUE
 	object_path = /obj/item/clockwork/integration_cog
-	creator_message = "<span class='brass'>You form an integration cog, which can be inserted into an open APC to passively siphon power.</span>"
+	creator_message = span_brass("You form an integration cog, which can be inserted into an open APC to passively siphon power.")
 	usage_tip = "Tampering isn't visible unless the APC is opened. You can use the cog on a locked APC to unlock it."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -60,7 +60,7 @@
 	power_cost = 50
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/transgression
-	creator_message = "<span class='brass'>A sigil silently appears below you. The next non-Servant to cross it will be smitten.</span>"
+	creator_message = span_brass("A sigil silently appears below you. The next non-Servant to cross it will be smitten.")
 	usage_tip = "The sigil does not silence its victim, and is generally used to soften potential converts or would-be invaders."
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
@@ -80,7 +80,7 @@
 	power_cost = 125
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/submission
-	creator_message = "<span class='brass'>A luminous sigil appears below you. Any non-Servants to cross it will be converted and healed of some of their wounds after 8 seconds if they do not move.</span>"
+	creator_message = span_brass("A luminous sigil appears below you. Any non-Servants to cross it will be converted and healed of some of their wounds after 8 seconds if they do not move.")
 	usage_tip = "This is the primary conversion method, though it will not penetrate mindshield implants."
 	tier = SCRIPTURE_DRIVER
 	one_per_tile = TRUE
@@ -179,7 +179,7 @@
 
 /datum/clockwork_scripture/vanguard/check_special_requirements()
 	if(!GLOB.ratvar_awakens && islist(invoker.stun_absorption) && invoker.stun_absorption["vanguard"] && invoker.stun_absorption["vanguard"]["end_time"] > world.time)
-		to_chat(invoker, "<span class='warning'>You are already shielded by a Vanguard!</span>")
+		to_chat(invoker, span_warning("You are already shielded by a Vanguard!"))
 		return FALSE
 	return TRUE
 
@@ -237,10 +237,10 @@
 
 /datum/clockwork_scripture/abscond/check_special_requirements()
 	if(is_reebe(invoker.z))
-		to_chat(invoker, "<span class='danger'>You're at Reebe, attempting to warp in the void could cause you to share your masters fate of banishment!.</span>")
+		to_chat(invoker, span_danger("You're at Reebe, attempting to warp in the void could cause you to share your masters fate of banishment!."))
 		return
 	if(!isturf(invoker.loc))
-		to_chat(invoker, "<span class='danger'>You must be visible to warp!</span>")
+		to_chat(invoker, span_danger("You must be visible to warp!"))
 		return
 	return TRUE
 
@@ -255,9 +255,9 @@
 		T = get_turf(pick(GLOB.servant_spawns))
 	if(!do_teleport(invoker, T, channel = TELEPORT_CHANNEL_CULT, forced = TRUE))
 		return
-	invoker.visible_message("<span class='warning'>[invoker] flickers and phases out of existence!</span>", \
+	invoker.visible_message(span_warning("[invoker] flickers and phases out of existence!"), \
 	"<span class='bold sevtug_small'>You feel a dizzying sense of vertigo as you're yanked through the fabric of reality!</span>")
-	T.visible_message("<span class='warning'>[invoker] flickers and phases into existence!</span>")
+	T.visible_message(span_warning("[invoker] flickers and phases into existence!"))
 	playsound(invoker, 'sound/magic/magic_missile.ogg', 50, TRUE)
 	playsound(T, 'sound/magic/magic_missile.ogg', 50, TRUE)
 	do_sparks(5, TRUE, invoker)
@@ -274,7 +274,7 @@
 	power_cost = 25
 	whispered = TRUE
 	object_path = /obj/item/clockwork/slab
-	creator_message = "<span class='brass'>You copy a piece of replicant alloy and command it into a new slab.</span>"
+	creator_message = span_brass("You copy a piece of replicant alloy and command it into a new slab.")
 	usage_tip = "This is inefficient as a way to produce power, as the slab produced must be held by someone with no other slabs to produce any."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -295,7 +295,7 @@
 	power_cost = 50
 	whispered = TRUE
 	object_path = /obj/item/clothing/glasses/wraith_spectacles
-	creator_message = "<span class='brass'>You form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.</span>"
+	creator_message = span_brass("You form a pair of wraith spectacles, which grant true sight but cause gradual vision loss.")
 	usage_tip = "\"True sight\" means that you are able to see through walls and in darkness."
 	tier = SCRIPTURE_DRIVER
 	space_allowed = TRUE
@@ -325,7 +325,7 @@
 
 /datum/clockwork_scripture/spatial_gateway/check_special_requirements()
 	if(!isturf(invoker.loc))
-		to_chat(invoker, "<span class='warning'>You must not be inside an object to use this scripture!</span>")
+		to_chat(invoker, span_warning("You must not be inside an object to use this scripture!"))
 		return FALSE
 	var/other_servants = 0
 	for(var/mob/living/L in GLOB.alive_mob_list)
@@ -335,7 +335,7 @@
 		if(O.anchored)
 			other_servants++
 	if(!other_servants)
-		to_chat(invoker, "<span class='warning'>There are no other conscious servants or anchored clockwork obelisks!</span>")
+		to_chat(invoker, span_warning("There are no other conscious servants or anchored clockwork obelisks!"))
 		return FALSE
 	return TRUE
 

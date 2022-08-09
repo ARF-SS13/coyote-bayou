@@ -30,7 +30,7 @@
 			if(iscyborg(user))
 				var/mob/living/silicon/robot/S = user
 				if(S.cell?.charge < 20)
-					to_chat(S, "<span class='warning'>Scream module deactivated. Please recharge.</span>")
+					to_chat(S, span_warning("Scream module deactivated. Please recharge."))
 					return
 				S.cell.use(200)
 		if(ismonkey(user))

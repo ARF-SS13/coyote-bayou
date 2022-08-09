@@ -18,10 +18,10 @@
 	if(parrying)
 		return		// already parrying
 	if(!(mobility_flags & MOBILITY_USE))
-		to_chat(src, "<span class='warning'>You can't move your arms!</span>")
+		to_chat(src, span_warning("You can't move your arms!"))
 		return
 	if(!(combat_flags & COMBAT_FLAG_PARRY_CAPABLE))
-		to_chat(src, "<span class='warning'>You are not something that can parry attacks.</span>")
+		to_chat(src, span_warning("You are not something that can parry attacks."))
 		return
 	// Prioritize item, then martial art, then unarmed.
 	// yanderedev else if time
@@ -51,26 +51,26 @@
 			method = ITEM_PARRY
 	var/list/other_items = list()
 	if(SEND_SIGNAL(src, COMSIG_LIVING_ACTIVE_PARRY_START, method, tool, other_items) & COMPONENT_PREVENT_PARRY_START)
-		to_chat(src, "<span class='warning'>Something is preventing you from parrying!</span>")
+		to_chat(src, span_warning("Something is preventing you from parrying!"))
 		return
 	if(!using_item && !method && length(other_items))
 		using_item = other_items[1]
 		method = ITEM_PARRY
 		data = using_item.block_parry_data
 	if(!method)
-		to_chat(src, "<span class='warning'>You have nothing to parry with!</span>")
+		to_chat(src, span_warning("You have nothing to parry with!"))
 		return FALSE
 	//QOL: Try to enable combat mode if it isn't already
 	SEND_SIGNAL(src, COMSIG_ENABLE_COMBAT_MODE)
 	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		to_chat(src, "<span class='warning'>You must be in combat mode to parry!</span>")
+		to_chat(src, span_warning("You must be in combat mode to parry!"))
 		return FALSE
 	data = return_block_parry_datum(data)
 	var/full_parry_duration = data.parry_time_windup + data.parry_time_active + data.parry_time_spindown
 	// no system in place to "fallback" if out of the 3 the top priority one can't parry due to constraints but something else can.
 	// can always implement it later, whatever.
 	if((data.parry_respect_clickdelay && !CheckActionCooldown()) || ((parry_end_time_last + data.parry_cooldown) > world.time))
-		to_chat(src, "<span class='warning'>You are not ready to parry (again)!</span>")
+		to_chat(src, span_warning("You are not ready to parry (again)!"))
 		return
 	// Point of no return, make sure everything is set.
 	parrying = method
@@ -140,9 +140,9 @@
 	parry_visual_effect = new /obj/effect/abstract/parry/main(null, TRUE, src, data.parry_effect_icon_state, data.parry_time_windup_visual_override || data.parry_time_windup, data.parry_time_active_visual_override || data.parry_time_active, data.parry_time_spindown_visual_override || data.parry_time_spindown)
 	switch(parrying)
 		if(ITEM_PARRY)
-			visible_message("<span class='warning'>[src] swings [active_parry_item]!</span>")
+			visible_message(span_warning("[src] swings [active_parry_item]!"))
 		else
-			visible_message("<span class='warning'>[src] rushes forwards!</span>")
+			visible_message(span_warning("[src] rushes forwards!"))
 
 /**
  * Handles ending effects for parrying.
@@ -269,7 +269,7 @@
 		knockdown_check = TRUE
 	if(data.parry_sounds)
 		playsound(src, pick(data.parry_sounds), 75)
-	visible_message("<span class='danger'>[src] parries [attack_text][length(effect_text)? ", [english_list(effect_text)] [attacker]" : ""][length(effect_text) && knockdown_check? " and" : ""][knockdown_check? " knocking them to the ground" : ""]!</span>")
+	visible_message(span_danger("[src] parries [attack_text][length(effect_text)? ", [english_list(effect_text)] [attacker]" : ""][length(effect_text) && knockdown_check? " and" : ""][knockdown_check? " knocking them to the ground" : ""]!"))
 
 /// Run counterattack if any
 /mob/living/proc/run_parry_countereffects(atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/return_list = list(), parry_efficiency)

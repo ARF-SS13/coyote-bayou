@@ -35,7 +35,7 @@
 	var/health = (obj_integrity/max_integrity)
 	if(health < 1)
 		if(health < 0.5 && fuel > 100 && prob(10)) // If vehicle is broken it will burn
-			visible_message("<span class='warning'>[src] is badly damaged, the engine has burst into flames!</span>")
+			visible_message(span_warning("[src] is badly damaged, the engine has burst into flames!"))
 			fuel_wasting += 2
 			PoolOrNew(/obj/effect/hotspot, get_turf(src))
 			if(prob(50)) //MOAR FIRE
@@ -48,7 +48,7 @@
 
 /obj/vehicle/ridden/fuel/start_engine()
 	if(fuel_holder.reagents.get_reagent_amount("welding_fuel") < 1)
-		to_chat(usr, "<span class='warning'>[src] has run out of fuel!</span>")
+		to_chat(usr, span_warning("[src] has run out of fuel!"))
 		return
 	..()
 	START_PROCESSING(SSobj, src)
@@ -97,25 +97,25 @@
 	if(W.is_open_container() && W.reagents)
 		if(inside)
 			if(!W.reagents.total_volume)
-				to_chat(user, "<span class='warning'>[W] is empty!</span>")
+				to_chat(user, span_warning("[W] is empty!"))
 				return
 
 			if(src.reagents.total_volume >= src.reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, span_notice("[src] is full."))
 				return
 
 
 			var/trans = W.reagents.trans_to(src, amount_per_transfer_from_this)
-			to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to [src].</span>")
+			to_chat(user, span_notice("You transfer [trans] units of the solution to [src]."))
 		else
 			if(!src.reagents.total_volume)
-				to_chat(user, "<span class='warning'>[src] is empty!</span>")
+				to_chat(user, span_warning("[src] is empty!"))
 				return
 
 			if(W.reagents.total_volume >= W.reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[W] is full.</span>")
+				to_chat(user, span_notice("[W] is full."))
 				return
 
 
 			var/trans = src.reagents.trans_to(W, amount_per_transfer_from_this)
-			to_chat(user, "<span class='notice'>You transfer [trans] units of the solution to [W].</span>")
+			to_chat(user, span_notice("You transfer [trans] units of the solution to [W]."))

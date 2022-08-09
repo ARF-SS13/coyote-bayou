@@ -8,12 +8,12 @@
 /mob/living/carbon/human/UnarmedAttack(atom/A, proximity, intent = a_intent, attackchain_flags = NONE)
 
 	if(!has_active_hand()) //can't attack without a hand.
-		to_chat(src, "<span class='notice'>You look at your arm and sigh.</span>")
+		to_chat(src, span_notice("You look at your arm and sigh."))
 		return
 
 	var/obj/item/bodypart/check_arm = get_active_hand()
 	if(check_arm && check_arm.is_disabled() == BODYPART_DISABLED_WOUND)
-		to_chat(src, "<span class='warning'>The damage in your [check_arm.name] is preventing you from using it! Get it fixed, or at least splinted!</span>")
+		to_chat(src, span_warning("The damage in your [check_arm.name] is preventing you from using it! Get it fixed, or at least splinted!"))
 		return
 
 	. = attackchain_flags
@@ -67,7 +67,7 @@
 	if(!user.can_interact_with(src))
 		return FALSE
 	if((interaction_flags_atom & INTERACT_ATOM_REQUIRES_DEXTERITY) && !user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 	if(!(interaction_flags_atom & INTERACT_ATOM_IGNORE_INCAPACITATED) && user.incapacitated((interaction_flags_atom & INTERACT_ATOM_IGNORE_RESTRAINED), !(interaction_flags_atom & INTERACT_ATOM_CHECK_GRAB)))
 		return FALSE
@@ -174,15 +174,15 @@
 		var/armor = ML.run_armor_check(affecting, "melee")
 		if(prob(75))
 			ML.apply_damage(rand(1,3), BRUTE, affecting, armor)
-			ML.visible_message("<span class='danger'>[name] bites [ML]!</span>", \
-							"<span class='userdanger'>[name] bites [ML]!</span>")
+			ML.visible_message(span_danger("[name] bites [ML]!"), \
+							span_userdanger("[name] bites [ML]!"))
 			if(armor >= 2)
 				return
 			for(var/thing in diseases)
 				var/datum/disease/D = thing
 				ML.ForceContractDisease(D)
 		else
-			ML.visible_message("<span class='danger'>[src] has attempted to bite [ML]!</span>")
+			ML.visible_message(span_danger("[src] has attempted to bite [ML]!"))
 	DelayNextAction()
 
 /*

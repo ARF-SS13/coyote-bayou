@@ -47,20 +47,20 @@
 
 /obj/structure/filingcabinet/attackby(obj/item/P, mob/user, params)
 	if(P.tool_behaviour == TOOL_WRENCH && user.a_intent != INTENT_HELP)
-		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
+		to_chat(user, span_notice("You begin to [anchored ? "unwrench" : "wrench"] [src]."))
 		if(P.use_tool(src, user, 20, volume=50))
-			to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
+			to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
 			anchored = !anchored
 	else if(P.w_class < WEIGHT_CLASS_NORMAL)
 		if(!user.transferItemToLoc(P, src))
 			return
-		to_chat(user, "<span class='notice'>You put [P] in [src].</span>")
+		to_chat(user, span_notice("You put [P] in [src]."))
 		icon_state = "[initial(icon_state)]-open"
 		sleep(5)
 		icon_state = initial(icon_state)
 		updateUsrDialog()
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, "<span class='warning'>You can't put [P] in [src]!</span>")
+		to_chat(user, span_warning("You can't put [P] in [src]!"))
 	else
 		return ..()
 
@@ -68,7 +68,7 @@
 /obj/structure/filingcabinet/ui_interact(mob/user)
 	. = ..()
 	if(contents.len <= 0)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, span_notice("[src] is empty."))
 		return
 
 	var/dat = "<center><table>"
@@ -92,9 +92,9 @@
 			I.forceMove(loc)
 			if(prob(25))
 				step_rand(I)
-			to_chat(user, "<span class='notice'>You pull \a [I] out of [src] at random.</span>")
+			to_chat(user, span_notice("You pull \a [I] out of [src] at random."))
 			return
-	to_chat(user, "<span class='notice'>You find nothing in [src].</span>")
+	to_chat(user, span_notice("You find nothing in [src]."))
 
 /obj/structure/filingcabinet/Topic(href, href_list)
 	if(!usr.canUseTopic(src, BE_CLOSE, ismonkey(usr)))
@@ -211,7 +211,7 @@ GLOBAL_LIST_EMPTY(employmentCabinets)
 
 /obj/structure/filingcabinet/employment/interact(mob/user)
 	if(TIMER_COOLDOWN_CHECK(src, COOLDOWN_EMPLOYMENT_CABINET))
-		to_chat(user, "<span class='warning'>[src] is jammed, give it a few seconds.</span>")
+		to_chat(user, span_warning("[src] is jammed, give it a few seconds."))
 		return ..()
 
 	TIMER_COOLDOWN_START(src, COOLDOWN_EMPLOYMENT_CABINET, 10 SECONDS) // prevents the devil from just instantly emptying the cabinet, ensuring an easy win.

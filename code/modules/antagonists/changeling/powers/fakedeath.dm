@@ -12,7 +12,7 @@
 
 //Fake our own death and fully heal. You will appear to be dead but regenerate fully after a short delay.
 /obj/effect/proc_holder/changeling/fakedeath/sting_action(mob/living/user)
-	to_chat(user, "<span class='notice'>We begin our stasis, preparing energy to arise once more.</span>")
+	to_chat(user, span_notice("We begin our stasis, preparing energy to arise once more."))
 	if(user.stat != DEAD)
 		user.emote("deathgasp")
 		user.tod = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
@@ -26,14 +26,14 @@
 	if(user && user.mind)
 		var/datum/antagonist/changeling/C = user.mind.has_antag_datum(/datum/antagonist/changeling)
 		if(C && C.purchasedpowers)
-			to_chat(user, "<span class='notice'>We are ready to revive.</span>")
+			to_chat(user, span_notice("We are ready to revive."))
 			var/obj/effect/proc_holder/changeling/revive/RV =  new /obj/effect/proc_holder/changeling/revive(null)
 			C.purchasedpowers += RV
 			RV.action.Grant(user)
 
 /obj/effect/proc_holder/changeling/fakedeath/can_sting(mob/living/user)
 	if(HAS_TRAIT_FROM(user, TRAIT_DEATHCOMA, "changeling"))
-		to_chat(user, "<span class='warning'>We are already reviving.</span>")
+		to_chat(user, span_warning("We are already reviving."))
 		return
 	if(!user.stat) //Confirmation for living changelings if they want to fake their death
 		switch(alert("Are we sure we wish to fake our own death?",,"Yes", "No"))

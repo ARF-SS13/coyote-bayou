@@ -27,7 +27,7 @@
 	if(!istype(user))
 		return
 	if(user.get_item_by_slot(user.getBackSlot()) != src)
-		to_chat(user, "<span class='warning'>The backpack must be worn properly to use!</span>")
+		to_chat(user, span_warning("The backpack must be worn properly to use!"))
 		return
 	if(user.incapacitated())
 		return
@@ -37,7 +37,7 @@
 	if(sword in src)
 		//Detach the sword into the user's hands
 		if(!user.put_in_hands(sword))
-			to_chat(user, "<span class='warning'>You need a free hand to hold the shishkebab!</span>")
+			to_chat(user, span_warning("You need a free hand to hold the shishkebab!"))
 			return
 	else
 		//Remove from their hands and put back "into" the tank
@@ -120,6 +120,6 @@
 /obj/item/weapon/melee/shishkebab/doMove(atom/destination)
 	if(destination && (destination != tank.loc || !ismob(destination)))
 		if (loc != tank)
-			to_chat(tank.loc, "<span class='notice'>The shishkebab slides back into the backpack tank.</span>")
+			to_chat(tank.loc, span_notice("The shishkebab slides back into the backpack tank."))
 		destination = tank
 	..()

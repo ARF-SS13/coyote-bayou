@@ -261,13 +261,13 @@
 				var/mob/living/M = AM
 				M.DefaultCombatKnockdown(100, override_hardstun = 20)
 				M.adjustBruteLoss(5)
-				to_chat(M, "<span class='userdanger'>You're slammed into the floor by [user]!</span>")
+				to_chat(M, span_userdanger("You're slammed into the floor by [user]!"))
 		else
 			new sparkle_path(get_turf(AM), get_dir(user, AM)) //created sparkles will disappear on their own
 			if(isliving(AM))
 				var/mob/living/M = AM
 				M.DefaultCombatKnockdown(stun_amt, override_hardstun = stun_amt * 0.2)
-				to_chat(M, "<span class='userdanger'>You're thrown back by [user]!</span>")
+				to_chat(M, span_userdanger("You're thrown back by [user]!"))
 			AM.throw_at(throwtarget, ((clamp((maxthrow - (clamp(distfromcaster - 2, 0, distfromcaster))), 3, maxthrow))), 1,user)//So stuff gets tossed around at the same time.
 			safety--
 

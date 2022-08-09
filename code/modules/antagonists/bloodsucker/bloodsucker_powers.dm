@@ -76,7 +76,7 @@
 	var/mob/living/L = owner
 	if(L.blood_volume < bloodcost)
 		if(display_error)
-			to_chat(owner, "<span class='warning'>You need at least [bloodcost] blood to activate [name]</span>")
+			to_chat(owner, span_warning("You need at least [bloodcost] blood to activate [name]"))
 		return FALSE
 	return TRUE
 
@@ -86,12 +86,12 @@
 	// Torpor?
 	if(!can_use_in_torpor && HAS_TRAIT(owner, TRAIT_DEATHCOMA))
 		if(display_error)
-			to_chat(owner, "<span class='warning'>Not while you're in Torpor.</span>")
+			to_chat(owner, span_warning("Not while you're in Torpor."))
 		return FALSE
 	// Stake?
 	if(!can_be_staked && owner.AmStaked())
 		if(display_error)
-			to_chat(owner, "<span class='warning'>You have a stake in your chest! Your powers are useless.</span>")
+			to_chat(owner, span_warning("You have a stake in your chest! Your powers are useless."))
 		return FALSE
 	if(istype(owner.get_item_by_slot(SLOT_NECK), /obj/item/clothing/neck/garlic_necklace))
 		if(display_error)
@@ -99,21 +99,21 @@
 		return FALSE
 	if(owner.reagents?.has_reagent(/datum/reagent/consumable/garlic))
 		if(display_error)
-			to_chat(owner, "<span class='warning'>Garlic in your blood is interfering with your powers!</span>")
+			to_chat(owner, span_warning("Garlic in your blood is interfering with your powers!"))
 		return FALSE
 	// Incap?
 	if(must_be_capacitated)
 		var/mob/living/L = owner
 		if (L.incapacitated(TRUE, TRUE) || !CHECK_MOBILITY(L, MOBILITY_STAND) && !can_be_immobilized)
 			if(display_error)
-				to_chat(owner, "<span class='warning'>Not while you're incapacitated!</span>")
+				to_chat(owner, span_warning("Not while you're incapacitated!"))
 			return FALSE
 	// Constant Cost (out of blood)
 	if(warn_constant_cost)
 		var/mob/living/L = owner
 		if(L.blood_volume <= 0)
 			if(display_error)
-				to_chat(owner, "<span class='warning'>You don't have the blood to upkeep [src].</span>")
+				to_chat(owner, span_warning("You don't have the blood to upkeep [src]."))
 			return FALSE
 	return TRUE
 
@@ -222,7 +222,7 @@
 	bs_proc_holder.add_ranged_ability(L)
 
 	if(message_Trigger != "")
-		to_chat(owner, "<span class='announce'>[message_Trigger]</span>")
+		to_chat(owner, span_announce("[message_Trigger]"))
 
 /datum/action/bloodsucker/targeted/CheckCanUse(display_error)
 	. = ..()
@@ -250,7 +250,7 @@
 	// Out of Range
 	if(!(A in view(target_range, owner)))
 		if(display_error && target_range > 1) // Only warn for range if it's greater than 1. Brawn doesn't need to announce itself.
-			to_chat(owner, "<span class='warning'>Your target is out of range.</span>")
+			to_chat(owner, span_warning("Your target is out of range."))
 		return FALSE
 	return istype(A)
 

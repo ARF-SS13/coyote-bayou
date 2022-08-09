@@ -49,7 +49,7 @@
 	//fortuna addition end. radio management.
 
 /obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
@@ -375,9 +375,9 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += span_notice("It can be attached and modified.")
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += span_notice("It cannot be modified or attached.")
 	//Fortuna edit start. Radio management
 	if(kill_switched)
 		. += span_warning("The radio has been disabled remotely and no longer functions!")
@@ -392,9 +392,9 @@
 	if(istype(W, /obj/item/screwdriver))
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 /*
@@ -404,7 +404,7 @@
 		return
 	if(prob(severity * 1.5))
 		if(listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-			to_chat(loc, "<span class='warning'>\The [src] shorts out!</span>")
+			to_chat(loc, span_warning("\The [src] shorts out!"))
 		broadcasting = FALSE
 		listening = FALSE
 		for (var/ch_name in channels)
@@ -448,14 +448,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)

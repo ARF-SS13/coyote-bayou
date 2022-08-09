@@ -5,7 +5,7 @@
 
 	telegraph_duration = 700
 	telegraph_overlay = "acid_rain"
-	telegraph_message = "<span class='userdanger'>Thunder rumbles far above. You hear droplets land around you, and audible fizzling can be heard as they make contact.. acid rain is coming.</span>"
+	telegraph_message = span_userdanger("Thunder rumbles far above. You hear droplets land around you, and audible fizzling can be heard as they make contact.. acid rain is coming.")
 	telegraph_sound = 'sound/ambience/acidrain_start.ogg'
 
 	weather_message = "<span class='userdanger'><i>Acidic rain pours down around you! Get inside!</i></span>"
@@ -15,7 +15,7 @@
 	weather_sound = 'sound/ambience/acidrain_mid.ogg'
 
 	end_duration = 100
-	end_message = "<span class='userdanger'>The downpour gradually slows to a light shower. It should be safe outside now.</span>"
+	end_message = span_userdanger("The downpour gradually slows to a light shower. It should be safe outside now.")
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)

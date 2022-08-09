@@ -13,7 +13,7 @@
 	power_cost = 200
 	whispered = TRUE
 	object_path = /obj/effect/clockwork/sigil/transmission
-	creator_message = "<span class='brass'>A sigil silently appears below you. It will automatically power clockwork structures near it and will drain power when activated.</span>"
+	creator_message = span_brass("A sigil silently appears below you. It will automatically power clockwork structures near it and will drain power when activated.")
 	usage_tip = "Cyborgs can charge from this sigil by remaining over it for 5 seconds."
 	tier = SCRIPTURE_APPLICATION
 	one_per_tile = TRUE
@@ -32,8 +32,8 @@
 	channel_time = 80
 	power_cost = 300
 	object_path = /obj/structure/destructible/clockwork/powered/prolonging_prism
-	creator_message = "<span class='brass'>You form a prolonging prism, which will delay the arrival of an emergency shuttle at a massive power cost.</span>"
-	observer_message = "<span class='warning'>An onyx prism forms in midair and sprouts tendrils to support itself!</span>"
+	creator_message = span_brass("You form a prolonging prism, which will delay the arrival of an emergency shuttle at a massive power cost.")
+	observer_message = span_warning("An onyx prism forms in midair and sprouts tendrils to support itself!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
 	usage_tip = "The power cost to delay a shuttle increases based on the number of times activated."
@@ -47,11 +47,11 @@
 
 /datum/clockwork_scripture/create_object/prolonging_prism/check_special_requirements()
 	if(SSshuttle.emergency.mode == SHUTTLE_DOCKED || SSshuttle.emergency.mode == SHUTTLE_IGNITING || SSshuttle.emergency.mode == SHUTTLE_STRANDED || SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
-		to_chat(invoker, "<span class='inathneq'>\"It is too late to construct one of these, champion.\"</span>")
+		to_chat(invoker, span_inathneq("\"It is too late to construct one of these, champion.\""))
 		return FALSE
 	var/turf/T = get_turf(invoker)
 	if(!T || !is_station_level(T.z))
-		to_chat(invoker, "<span class='inathneq'>\"You must be on the station to construct one of these, champion.\"</span>")
+		to_chat(invoker, span_inathneq("\"You must be on the station to construct one of these, champion.\""))
 		return FALSE
 	return ..()
 
@@ -64,8 +64,8 @@
 	channel_time = 80
 	power_cost = 750
 	object_path = /obj/structure/destructible/clockwork/powered/mania_motor
-	creator_message = "<span class='brass'>You form a mania motor, which causes minor damage and negative mental effects in non-Servants.</span>"
-	observer_message = "<span class='warning'>A two-pronged machine rises from the ground!</span>"
+	creator_message = span_brass("You form a mania motor, which causes minor damage and negative mental effects in non-Servants.")
+	observer_message = span_warning("A two-pronged machine rises from the ground!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
 	usage_tip = "It will also cure hallucinations and brain damage in nearby Servants."
@@ -87,8 +87,8 @@
 	channel_time = 80
 	power_cost = 300
 	object_path = /obj/structure/destructible/clockwork/powered/clockwork_obelisk
-	creator_message = "<span class='brass'>You form a clockwork obelisk which can broadcast messages or produce Spatial Gateways.</span>"
-	observer_message = "<span class='warning'>A brass obelisk appears hanging in midair!</span>"
+	creator_message = span_brass("You form a clockwork obelisk which can broadcast messages or produce Spatial Gateways.")
+	observer_message = span_warning("A brass obelisk appears hanging in midair!")
 	invokers_required = 2
 	multiple_invokers_used = TRUE
 	usage_tip = "Producing a gateway has a high power cost. Gateways to or between clockwork obelisks receive double duration and uses."
@@ -117,7 +117,7 @@
 /datum/clockwork_scripture/memory_allocation/check_special_requirements()
 	for(var/mob/living/simple_animal/hostile/clockwork/marauder/guardian/M in GLOB.all_clockwork_mobs)
 		if(M.host == invoker)
-			to_chat(invoker, "<span class='warning'>You can only house one guardian at a time!</span>")
+			to_chat(invoker, span_warning("You can only house one guardian at a time!"))
 			return FALSE
 	return TRUE
 
@@ -125,13 +125,13 @@
 	return create_guardian()
 
 /datum/clockwork_scripture/memory_allocation/proc/create_guardian()
-	invoker.visible_message("<span class='warning'>A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.p_their()] forehead!</span>", \
-	"<span class='sevtug'>A tendril flies from [slab] into your forehead. You begin waiting while it painfully rearranges your thought pattern...</span>")
+	invoker.visible_message(span_warning("A purple tendril appears from [invoker]'s [slab.name] and impales itself in [invoker.p_their()] forehead!"), \
+	span_sevtug("A tendril flies from [slab] into your forehead. You begin waiting while it painfully rearranges your thought pattern..."))
 	//invoker.notransform = TRUE //Vulnerable during the process
 	slab.busy = "Thought Modification in progress"
 	if(!do_after(invoker, 50, target = invoker))
-		invoker.visible_message("<span class='warning'>The tendril, covered in blood, retracts from [invoker]'s head and back into the [slab.name]!</span>", \
-		"<span class='userdanger'>Total agony overcomes you as the tendril is forced out early!</span>")
+		invoker.visible_message(span_warning("The tendril, covered in blood, retracts from [invoker]'s head and back into the [slab.name]!"), \
+		span_userdanger("Total agony overcomes you as the tendril is forced out early!"))
 		invoker.Knockdown(100)
 		invoker.apply_damage(50, BRUTE, "head")//Sevtug leaves a gaping hole in your face if interrupted.
 		slab.busy = null
@@ -141,21 +141,21 @@
 	slab.busy = "Guardian Selection in progress"
 	if(!check_special_requirements())
 		return FALSE
-	to_chat(invoker, "<span class='warning'>The tendril shivers slightly as it selects a guardian...</span>")
+	to_chat(invoker, span_warning("The tendril shivers slightly as it selects a guardian..."))
 	var/list/marauder_candidates = pollGhostCandidates("Do you want to play as the clockwork guardian of [invoker.real_name]?", ROLE_SERVANT_OF_RATVAR, null, FALSE, 50, POLL_IGNORE_HOLOPARASITE)
 	if(!check_special_requirements())
 		return FALSE
 	if(!marauder_candidates.len)
-		invoker.visible_message("<span class='warning'>The tendril retracts from [invoker]'s head, sealing the entry wound as it does so!</span>", \
-		"<span class='warning'>The tendril was unsuccessful! Perhaps you should try again another time.</span>")
+		invoker.visible_message(span_warning("The tendril retracts from [invoker]'s head, sealing the entry wound as it does so!"), \
+		span_warning("The tendril was unsuccessful! Perhaps you should try again another time."))
 		return FALSE
 	clockwork_say(invoker, text2ratvar("...sword and shield!"))
 	var/mob/dead/observer/theghost = pick(marauder_candidates)
 	var/mob/living/simple_animal/hostile/clockwork/marauder/guardian/M = new(invoker)
 	M.key = theghost.key
 	M.bind_to_host(invoker)
-	invoker.visible_message("<span class='warning'>The tendril retracts from [invoker]'s head, sealing the entry wound as it does so!</span>", \
-	"<span class='sevtug'>[M.true_name], a clockwork guardian, has taken up residence in your mind. Communicate with it via the \"Linked Minds\" action button.</span>")
+	invoker.visible_message(span_warning("The tendril retracts from [invoker]'s head, sealing the entry wound as it does so!"), \
+	span_sevtug("[M.true_name], a clockwork guardian, has taken up residence in your mind. Communicate with it via the \"Linked Minds\" action button."))
 	return TRUE
 
 //Clockwork Marauder: Creates a construct shell for a clockwork marauder, a well-rounded frontline fighter.
@@ -166,7 +166,7 @@
 	invocations = list("Arise, avatar of Arbiter!", "Defend the Ark with vengeful zeal.")
 	channel_time = 80
 	power_cost = 8000
-	creator_message = "<span class='brass'>Your slab disgorges several chunks of replicant alloy that form into a suit of thrumming armor.</span>"
+	creator_message = span_brass("Your slab disgorges several chunks of replicant alloy that form into a suit of thrumming armor.")
 	usage_tip = "Reciting this scripture multiple times in a short period will cause it to take longer!"
 	tier = SCRIPTURE_APPLICATION
 	one_per_tile = TRUE
@@ -186,7 +186,7 @@
 /datum/clockwork_scripture/create_object/construct/clockwork_marauder/pre_recital()
 	if(!is_reebe(invoker.z))
 		if(!CONFIG_GET(flag/allow_clockwork_marauder_on_station))
-			to_chat(invoker, "<span class='brass'>This particular station is too far from the influence of the Hierophant Network. You can not summon a marauder here.</span>")
+			to_chat(invoker, span_brass("This particular station is too far from the influence of the Hierophant Network. You can not summon a marauder here."))
 			return FALSE
 		if(world.time < (last_marauder + CONFIG_GET(number/marauder_delay_non_reebe)))
 			to_chat(invoker, "<span class='brass'>The hierophant network is still strained from the last summoning of a marauder on a plane without the strong energy connection of Reebe to support it. \
@@ -224,10 +224,10 @@
 	tier = SCRIPTURE_APPLICATION
 	primary_component = BELLIGERENT_EYE
 	sort_priority = 7
-	creator_message = "<span class='brass'>Neovgre, the Anima Bulwark towers over you... your enemies reckoning has come.</span>"
+	creator_message = span_brass("Neovgre, the Anima Bulwark towers over you... your enemies reckoning has come.")
 
 /datum/clockwork_scripture/create_object/summon_arbiter/check_special_requirements()
 	if(GLOB.neovgre_exists)
-		to_chat(invoker, "<span class='nezbere'>\"Only one of my weapons may exist in this temporal stream!\"</span>")
+		to_chat(invoker, span_nezbere("\"Only one of my weapons may exist in this temporal stream!\""))
 		return FALSE
 	return ..()

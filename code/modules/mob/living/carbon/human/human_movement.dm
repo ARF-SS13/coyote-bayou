@@ -63,7 +63,7 @@
 		if(!HAS_TRAIT(src, TRAIT_FREESPRINT))
 			doSprintLossTiles(1)
 		if((oldpseudoheight - pseudo_z_axis) >= 8)
-			to_chat(src, "<span class='warning'>You trip off of the elevated surface!</span>")
+			to_chat(src, span_warning("You trip off of the elevated surface!"))
 			for(var/obj/item/I in held_items)
 				accident(I)
 			DefaultCombatKnockdown(80)

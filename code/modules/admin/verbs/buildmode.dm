@@ -302,7 +302,7 @@
 		if(ADV_BUILDMODE)
 			if(left_click && alt_click)
 				objholder = object.type
-				to_chat(user, "<span class='notice'>[initial(object.name)] ([object.type]) selected.</span>")
+				to_chat(user, span_notice("[initial(object.name)] ([object.type]) selected."))
 			else if(left_click)
 				if(ispath(objholder, /turf))
 					var/turf/T = get_turf(object)
@@ -323,17 +323,17 @@
 					if(object.vv_edit_var(varholder, valueholder))
 						log_admin("Build Mode: [key_name(user)] modified [object.name]'s [varholder] to [valueholder]")
 					else
-						to_chat(user, "<span class='warning'>Varedit rejected</span>")
+						to_chat(user, span_warning("Varedit rejected"))
 				else
-					to_chat(user, "<span class='warning'>[initial(object.name)] does not have a var called '[varholder]'</span>")
+					to_chat(user, span_warning("[initial(object.name)] does not have a var called '[varholder]'"))
 			if(right_click)
 				if(object.vars.Find(varholder))
 					if(object.vv_edit_var(varholder, initial(object.vars[varholder])))
 						log_admin("Build Mode: [key_name(user)] modified [object.name]'s [varholder] to [valueholder]")
 					else
-						to_chat(user, "<span class='warning'>Varedit rejected</span>")
+						to_chat(user, span_warning("Varedit rejected"))
 				else
-					to_chat(user, "<span class='warning'>[initial(object.name)] does not have a var called '[varholder]'</span>")
+					to_chat(user, span_warning("[initial(object.name)] does not have a var called '[varholder]'"))
 
 		if(THROW_BUILDMODE)
 			if(left_click)
@@ -357,16 +357,16 @@
 					preview += image('icons/turf/overlays.dmi',cornerB,"blueOverlay")
 					usr.client.images -= preview
 					usr.client.images += preview
-					to_chat(user, "<span class='boldwarning'>Region selected, if you're happy with your selection left click again, otherwise right click.</span>")
+					to_chat(user, span_boldwarning("Region selected, if you're happy with your selection left click again, otherwise right click."))
 					return
 				if(cornerA && cornerB)
 					if(!generator_path)
-						to_chat(user, "<span class='warning'>Select generator type first.</span>")
+						to_chat(user, span_warning("Select generator type first."))
 						return
 					var/datum/mapGenerator/G = new generator_path
 					if(istype(G, /datum/mapGenerator/repair/reload_station_map))
 						if(GLOB.reloading_map)
-							to_chat(user, "<span class='boldwarning'>You are already reloading an area! Please wait for it to fully finish loading before trying to load another!</span>")
+							to_chat(user, span_boldwarning("You are already reloading an area! Please wait for it to fully finish loading before trying to load another!"))
 							return
 					G.defineRegion(cornerA, cornerB, 1)
 					for(var/t in G.map)

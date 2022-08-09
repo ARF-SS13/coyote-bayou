@@ -11,7 +11,7 @@
 /obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -26,7 +26,7 @@
 /obj/item/gun/ballistic/revolver/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,22)
 		user.dropItemToGround(src)
 		return FALSE
@@ -41,7 +41,7 @@
 /obj/item/gun/ballistic/rifle/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] overheats and blasts you with superheated air!</span>")
+		to_chat(user, span_userdanger("[src] overheats and blasts you with superheated air!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -50,7 +50,7 @@
 /obj/item/gun/ballistic/automatic/autopipe/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -108,7 +108,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
-	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /* * * * * * * * * * *
  * Pipe Gun
@@ -148,7 +148,7 @@
 /obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -193,7 +193,7 @@
 /obj/item/gun/ballistic/revolver/hobo/pepperbox/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -354,7 +354,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
-	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 
 
@@ -436,8 +436,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
-	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
 	can_scope = FALSE
 	scope_state = "scope_medium"

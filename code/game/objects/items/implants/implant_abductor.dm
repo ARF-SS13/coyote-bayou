@@ -13,7 +13,7 @@
 		home.Retrieve(imp_in,1)
 		next_use = world.time + 60 SECONDS
 	else
-		to_chat(imp_in, "<span class='warning'>You must wait [DisplayTimeText(next_use - world.time)] to use [src] again!</span>")
+		to_chat(imp_in, span_warning("You must wait [DisplayTimeText(next_use - world.time)] to use [src] again!"))
 
 /obj/item/implant/abductor/implant(mob/living/target, mob/user)
 	. = ..()

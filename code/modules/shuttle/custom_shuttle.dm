@@ -72,7 +72,7 @@
 	usr.set_machine(src)
 	src.add_fingerprint(usr)
 	if(!allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, span_danger("Access denied."))
 		return
 
 	if(href_list["calculate"])
@@ -210,13 +210,13 @@
 		return	//Only way this would happen is if someone else delinks the console while in use somehow
 	var/obj/docking_port/mobile/M = SSshuttle.getShuttle(shuttleId)
 	if(M?.mode != SHUTTLE_IDLE)
-		to_chat(usr, "<span class='warning'>You cannot target locations while in transit.</span>")
+		to_chat(usr, span_warning("You cannot target locations while in transit."))
 		return
 	..()
 
 /obj/machinery/computer/camera_advanced/shuttle_docker/custom/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(!shuttleId)
-		to_chat(user, "<span class='warning'>You must link the console to a shuttle first.</span>")
+		to_chat(user, span_warning("You must link the console to a shuttle first."))
 		return
 	return ..()
 

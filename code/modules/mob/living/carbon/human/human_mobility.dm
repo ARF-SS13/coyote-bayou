@@ -9,7 +9,7 @@
 		return TRUE
 	else if(!CHECK_MOBILITY(src, MOBILITY_RESIST))
 		if(!automatic)
-			to_chat(src, "<span class='warning'>You are unable to stand up right now.</span>")
+			to_chat(src, span_warning("You are unable to stand up right now."))
 		return FALSE
 	else
 		var/totaldelay = 3 //A little bit less than half of a second as a baseline for getting up from a rest
@@ -33,8 +33,8 @@
 				standupwarning = "[src] weakly attempts to stand up."
 			if(80 to INFINITY)
 				standupwarning = "[src] struggles to stand up."
-		var/usernotice = automatic ? "<span class='notice'>You are now getting up. (Auto)</span>" : "<span class='notice'>You are now getting up.</span>"
-		visible_message("<span class='notice'>[standupwarning]</span>", usernotice, vision_distance = 5)
+		var/usernotice = automatic ? span_notice("You are now getting up. (Auto)") : span_notice("You are now getting up.")
+		visible_message(span_notice("[standupwarning]"), usernotice, vision_distance = 5)
 		if(do_after(src, totaldelay, target = src, required_mobility_flags = MOBILITY_RESIST))
 			set_resting(FALSE, TRUE)
 
@@ -43,7 +43,7 @@
 		else
 			combat_flags &= ~COMBAT_FLAG_RESISTING_REST
 			if(resting)		//we didn't shove ourselves up or something
-				visible_message("<span class='notice'>[src] falls right back down.</span>", "<span class='notice'>You fall right back down.</span>")
+				visible_message(span_notice("[src] falls right back down."), span_notice("You fall right back down."))
 				if(has_gravity())
 					playsound(src, "bodyfall", 20, 1)
 			return FALSE

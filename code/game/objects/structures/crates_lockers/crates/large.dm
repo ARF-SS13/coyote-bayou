@@ -13,7 +13,7 @@
 	if(manifest)
 		tear_manifest(user)
 	else
-		to_chat(user, "<span class='warning'>You need a crowbar to pry this open!</span>")
+		to_chat(user, span_warning("You need a crowbar to pry this open!"))
 
 /obj/structure/closet/crate/large/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/crowbar))
@@ -21,8 +21,8 @@
 			tear_manifest(user)
 
 		user.visible_message("[user] pries \the [src] open.", \
-							"<span class='notice'>You pry open \the [src].</span>", \
-							"<span class='italics'>You hear splitting wood.</span>")
+							span_notice("You pry open \the [src]."), \
+							span_italic("You hear splitting wood."))
 		playsound(src.loc, 'sound/weapons/slashmiss.ogg', 75, 1)
 
 		var/turf/T = get_turf(src)
@@ -40,7 +40,7 @@
 		else
 			if(HAS_TRAIT(user, TRAIT_SKITTISH)) //for our stealthy skittish types to close crates after they've used them
 				close()
-			to_chat(user, "<span class='warning'>You need a crowbar to pry this open!</span>")
+			to_chat(user, span_warning("You need a crowbar to pry this open!"))
 			return FALSE 
 
 /obj/structure/closet/crate/large/CtrlShiftClick()

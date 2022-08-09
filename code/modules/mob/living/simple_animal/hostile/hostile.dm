@@ -84,7 +84,7 @@
 		walk(src, 0) //stops walking
 		if(decompose)
 			if(prob(1)) // 1% chance every cycle to decompose
-				visible_message("<span class='notice'>\The dead body of the [src] decomposes!</span>")
+				visible_message(span_notice("\The dead body of the [src] decomposes!"))
 				gib(FALSE, FALSE, FALSE, TRUE)
 		CHECK_TICK
 		return
@@ -463,7 +463,7 @@
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
 		playsound(src, projectilesound, 100, 1)
-		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, src)
+		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
 		playsound(src, projectilesound, 100, 1)

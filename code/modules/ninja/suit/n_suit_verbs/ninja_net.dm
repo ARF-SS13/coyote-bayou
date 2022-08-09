@@ -34,7 +34,7 @@
 		var/obj/structure/energy_net/E = new /obj/structure/energy_net(C.drop_location())
 		E.affecting = C
 		E.master = H
-		H.visible_message("<span class='danger'>[H] caught [C] with an energy net!</span>","<span class='notice'>You caught [C] with an energy net!</span>")
+		H.visible_message(span_danger("[H] caught [C] with an energy net!"),span_notice("You caught [C] with an energy net!"))
 
 		if(C.buckled)
 			C.buckled.unbuckle_mob(affecting,TRUE)

@@ -62,8 +62,8 @@
 		icon_state = initial(icon_state)
 
 /obj/machinery/sleeper/container_resist(mob/living/user)
-	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
-		"<span class='notice'>You climb out of [src]!</span>")
+	visible_message(span_notice("[occupant] emerges from [src]!"),
+		span_notice("You climb out of [src]!"))
 	open_machine()
 
 /obj/machinery/sleeper/Exited(atom/movable/user)
@@ -116,10 +116,10 @@
 	if(..())
 		return
 	if(occupant)
-		to_chat(user, "<span class='warning'>[src] is currently occupied!</span>")
+		to_chat(user, span_warning("[src] is currently occupied!"))
 		return
 	if(state_open)
-		to_chat(user, "<span class='warning'>[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!</span>")
+		to_chat(user, span_warning("[src] must be closed to [panel_open ? "close" : "open"] its maintenance hatch!"))
 		return
 	if(default_deconstruction_screwdriver(user, "[initial(icon_state)]", initial(icon_state), I))
 		return
@@ -141,7 +141,7 @@
 	. = !(state_open || panel_open || (flags_1 & NODECONSTRUCT_1)) && I.tool_behaviour == TOOL_CROWBAR
 	if(.)
 		I.play_tool_sound(src, 50)
-		visible_message("<span class='notice'>[usr] pries open [src].</span>", "<span class='notice'>You pry open [src].</span>")
+		visible_message(span_notice("[usr] pries open [src]."), span_notice("You pry open [src]."))
 		open_machine()
 
 /obj/machinery/sleeper/ui_state(mob/user)
@@ -157,10 +157,10 @@
 			ui.open()
 	else
 		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
 			return
 		if(!user.IsAdvancedToolUser())
-			to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+			to_chat(user, span_warning("The legion has no use for drugs! Better to destroy it."))
 			return
 		if(!ui)
 			ui = new(user, src, "Sleeper", name)
@@ -176,7 +176,7 @@
 
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
+	. += span_notice("Alt-click [src] to [state_open ? "close" : "open"] it.")
 
 /obj/machinery/sleeper/process()
 	..()
@@ -248,13 +248,13 @@
 			if(inject_chem(chem, usr))
 				. = TRUE
 				if(scrambled_chems && prob(5))
-					to_chat(usr, "<span class='warning'>Chemical system re-route detected, results may not be as expected!</span>")
+					to_chat(usr, span_warning("Chemical system re-route detected, results may not be as expected!"))
 
 /obj/machinery/sleeper/emag_act(mob/user)
 	. = ..()
 	obj_flags |= EMAGGED
 	scramble_chem_buttons()
-	to_chat(user, "<span class='warning'>You scramble the sleeper's user interface!</span>")
+	to_chat(user, span_warning("You scramble the sleeper's user interface!"))
 	return TRUE
 
 /obj/machinery/sleeper/proc/inject_chem(chem, mob/user)

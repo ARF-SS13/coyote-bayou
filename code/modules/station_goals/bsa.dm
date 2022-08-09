@@ -44,9 +44,9 @@
 	if(istype(I, /obj/item/multitool)) // Only this multitool type has a data buffer.
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+		to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	else
-		to_chat(user, "<span class='warning'>[I] has no data buffer!</span>")
+		to_chat(user, span_warning("[I] has no data buffer!"))
 	return TRUE
 
 /obj/machinery/bsa/front
@@ -58,9 +58,9 @@
 	if(istype(I, /obj/item/multitool)) // Only this multitool type has a data buffer.
 		var/obj/item/multitool/M = I
 		M.buffer = src
-		to_chat(user, "<span class='notice'>You store linkage information in [I]'s buffer.</span>")
+		to_chat(user, span_notice("You store linkage information in [I]'s buffer."))
 	else
-		to_chat(user, "<span class='warning'>[I] has no data buffer!</span>")
+		to_chat(user, span_warning("[I] has no data buffer!"))
 	return TRUE
 
 /obj/machinery/bsa/middle
@@ -77,15 +77,15 @@
 			if(istype(M.buffer, /obj/machinery/bsa/back))
 				back = M.buffer
 				M.buffer = null
-				to_chat(user, "<span class='notice'>You link [src] with [back].</span>")
+				to_chat(user, span_notice("You link [src] with [back]."))
 			else if(istype(M.buffer, /obj/machinery/bsa/front))
 				front = M.buffer
 				M.buffer = null
-				to_chat(user, "<span class='notice'>You link [src] with [front].</span>")
+				to_chat(user, span_notice("You link [src] with [front]."))
 		else
-			to_chat(user, "<span class='warning'>[I]'s data buffer is empty!</span>")
+			to_chat(user, span_warning("[I]'s data buffer is empty!"))
 	else
-		to_chat(user, "<span class='warning'>[I] has no data buffer!</span>")
+		to_chat(user, span_warning("[I] has no data buffer!"))
 	return TRUE
 
 /obj/machinery/bsa/middle/proc/check_completion()

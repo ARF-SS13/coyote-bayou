@@ -26,7 +26,7 @@
 /obj/item/melee/transforming/energy/suicide_act(mob/user)
 	if(!active)
 		transform_weapon(user, TRUE)
-	user.visible_message("<span class='suicide'>[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!</span>")
+	user.visible_message(span_suicide("[user] is [pick("slitting [user.p_their()] stomach open with", "falling on")] [src]! It looks like [user.p_theyre()] trying to commit seppuku!"))
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/add_blood_DNA(list/blood_dna)
@@ -62,7 +62,7 @@
 		var/mob/living/carbon/C = user
 		if(C.wear_mask)
 			in_mouth = ", barely missing [C.p_their()] nose"
-	. = "<span class='warning'>[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.</span>"
+	. = span_warning("[user] swings [user.p_their()] [name][in_mouth]. [user.p_they(TRUE)] light[user.p_s()] [user.p_their()] [A.name] in the process.")
 	playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 	add_fingerprint(user)
 
@@ -89,7 +89,7 @@
 	total_mass = null
 
 /obj/item/melee/transforming/energy/axe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] swings [src] towards [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/melee/transforming/energy/sword
@@ -166,7 +166,7 @@
 		var/obj/item/stock_parts/cell/C = R.cell
 		if(active && !(C.use(hitcost)))
 			attack_self(R)
-			to_chat(R, "<span class='notice'>It's out of charge!</span>")
+			to_chat(R, span_notice("It's out of charge!"))
 			return
 		return ..()
 
@@ -222,13 +222,13 @@
 		if(!hacked)
 			hacked = TRUE
 			sword_color = "rainbow"
-			to_chat(user, "<span class='warning'>RNBW_ENGAGE</span>")
+			to_chat(user, span_warning("RNBW_ENGAGE"))
 
 			if(active)
 				icon_state = "swordrainbow"
 				user.update_inv_hands()
 		else
-			to_chat(user, "<span class='warning'>It's already fabulous!</span>")
+			to_chat(user, span_warning("It's already fabulous!"))
 	else
 		return ..()
 
@@ -318,7 +318,7 @@
 /obj/item/melee/transforming/energy/sword/cx/transform_messages(mob/living/user, supress_message_text)
 	playsound(user, active ? 'sound/weapons/nebon.ogg' : 'sound/weapons/neboff.ogg', 65, 1)
 	if(!supress_message_text)
-		to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
+		to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
 
 
 /obj/item/melee/transforming/energy/sword/cx/update_overlays()
@@ -340,7 +340,7 @@
 	if(!in_range(src, user))	//Basic checks to prevent abuse
 		return
 	if(user.incapacitated() || !istype(user))
-		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 
 	if(alert("Are you sure you want to recolor your blade?", "Confirm Repaint", "Yes", "No") == "Yes")
@@ -352,7 +352,7 @@
 
 /obj/item/melee/transforming/energy/sword/cx/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to recolor it.</span>"
+	. += span_notice("Alt-click to recolor it.")
 
 /obj/item/melee/transforming/energy/sword/cx/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)
 	. = ..()
@@ -371,10 +371,10 @@
 /obj/item/melee/transforming/energy/sword/cx/attackby(obj/item/W, mob/living/user, params)
 	if(istype(W, /obj/item/melee/transforming/energy/sword/cx))
 		if(HAS_TRAIT(W, TRAIT_NODROP) || HAS_TRAIT(src, TRAIT_NODROP))
-			to_chat(user, "<span class='warning'>\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!</span>")
+			to_chat(user, span_warning("\the [HAS_TRAIT(src, TRAIT_NODROP) ? src : W] is stuck to your hand, you can't attach it to \the [HAS_TRAIT(src, TRAIT_NODROP) ? W : src]!"))
 			return
 		else
-			to_chat(user, "<span class='notice'>You combine the two light swords, making a single supermassive blade! You're cool.</span>")
+			to_chat(user, span_notice("You combine the two light swords, making a single supermassive blade! You're cool."))
 			new /obj/item/dualsaber/hypereutactic(user.drop_location())
 			qdel(W)
 			qdel(src)
@@ -398,4 +398,4 @@
 /obj/item/melee/transforming/energy/sword/cx/traitor/transform_messages(mob/living/user, supress_message_text)
 	playsound(user, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, 1)
 	if(!supress_message_text)
-		to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
+		to_chat(user, span_notice("[src] [active ? "is now active":"can now be concealed"]."))
