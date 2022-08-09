@@ -129,13 +129,8 @@ This file contains the cult dagger and rune list code
 		return
 	if(!check_rune_turf(Turf, user))
 		return
-<<<<<<< HEAD
 	user.visible_message(span_warning("[user] creates a strange circle[user.get_blood(TRUE) ? " in [user.p_their()] own blood":""]."), \
 						span_cult("You finish drawing the arcane markings of the Geometer."))
-=======
-	user.visible_message(span_warning("[user] creates a strange circle[user.blood_volume ? " in [user.p_their()] own blood":""]."), \
-						span_cult("You finish drawing the arcane markings of the Geometer."))
->>>>>>> upstream/master
 	for(var/V in shields)
 		var/obj/structure/emergency_shield/S = V
 		if(S && !QDELETED(S))

@@ -308,13 +308,8 @@
 		useLock = FALSE
 		return
 	// Check: Blood
-<<<<<<< HEAD
 	if(user.get_blood(TRUE) < CONVERT_COST)
-		to_chat(user, "<span class='notice'>You don't have enough blood to initiate the Dark Communion with [target], you need [CONVERT_COST - user.get_blood(TRUE)] units more!</span>")
-=======
-	if(user.blood_volume < CONVERT_COST)
 		to_chat(user, span_notice("You don't have enough blood to initiate the Dark Communion with [target], you need [CONVERT_COST - user.blood_volume] units more!"))
->>>>>>> upstream/master
 		useLock = FALSE
 		return
 	B.AddBloodVolume(-CONVERT_COST)
