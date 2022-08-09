@@ -863,8 +863,8 @@
 		return
 	else
 		user.dropItemToGround(src)
-		to_chat(user,"<span class='large_brass'>\"Amusing that you think you are fit to wear this.\"</span>")
-		to_chat(user,"<span class='userdanger'>Your skin burns where the coat touched your skin!</span>")
+		to_chat(user,span_large_brass("\"Amusing that you think you are fit to wear this.\""))
+		to_chat(user,span_userdanger("Your skin burns where the coat touched your skin!"))
 		user.adjustFireLoss(rand(10,16))
 
 /obj/item/clothing/suit/hooded/wintercoat/narsie
@@ -883,8 +883,8 @@
 		return
 	else
 		user.dropItemToGround(src)
-		to_chat(user,"<span class='cultlarge'>\"You are not fit to wear my follower's coat!\"</span>")
-		to_chat(user,"<span class='userdanger'>Sharp spines jab you from within the coat!</span>")
+		to_chat(user,span_cultlarge("\"You are not fit to wear my follower's coat!\""))
+		to_chat(user,span_userdanger("Sharp spines jab you from within the coat!"))
 		user.adjustBruteLoss(rand(10,16))
 
 /obj/item/clothing/head/hooded/winterhood/narsie

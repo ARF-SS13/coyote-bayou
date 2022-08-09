@@ -163,7 +163,7 @@
 	set_color(target, source.owner)
 
 /datum/element/polychromic/proc/on_examine(atom/source, mob/user, list/examine_list)
-	examine_list += "<span class='notice'>Alt-click to recolor it.</span>"
+	examine_list += span_notice("Alt-click to recolor it.")
 
 /datum/element/polychromic/proc/register_helmet(atom/source, obj/item/clothing/head/H)
 	if(!isitem(H)) //backup in case if it messes up somehow

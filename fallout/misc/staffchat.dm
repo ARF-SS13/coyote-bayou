@@ -71,15 +71,15 @@ GLOBAL_PROTECT(staff)
 				valid_recipe = TRUE
 			var/add_name = initial(chosen_recipe.name)
 			if(!valid_recipe)
-				to_chat(src, "<span class='notice'>No crafting recipe by that name found. Maybe you made a typo?</span>")
+				to_chat(src, span_notice("No crafting recipe by that name found. Maybe you made a typo?"))
 				return
 			if(chosen_recipe in our_known_recipes)
-				to_chat(src, "<span class='notice'>Target already knows the [add_name] recipe! Maybe you made a typo?</span>")
+				to_chat(src, span_notice("Target already knows the [add_name] recipe! Maybe you made a typo?"))
 				return
 			else
 				target?.mind.teach_crafting_recipe(chosen_recipe)
-				to_chat(src, "<span class='notice'>Target now knows the [add_name] recipe! They may need to reenter any open crafting menus.</span>")
-				to_chat(target, "<span class='warning'>You begin to remember how to make '[add_name]...'</span>")
+				to_chat(src, span_notice("Target now knows the [add_name] recipe! They may need to reenter any open crafting menus."))
+				to_chat(target, span_warning("You begin to remember how to make '[add_name]...'"))
 				log_admin("[key_name(usr)] added [chosen_recipe] recipe to [key_name(target)].")
 				message_admins("[key_name(usr)] added [chosen_recipe] recipe to [key_name(target)].")
 		if("Remove")
@@ -88,16 +88,16 @@ GLOBAL_PROTECT(staff)
 				var/remove_name = initial(chosen_recipe.name)
 				if(chosen_recipe in our_known_recipes)
 					target?.mind.learned_recipes -= chosen_recipe
-					to_chat(src, "<span class='notice'>Target now no longer knows [remove_name].</span>")
-					to_chat(target, "<span class='warning'>You feel the knowledge of '[remove_name]' slipping from your mind...</span>")
+					to_chat(src, span_notice("Target now no longer knows [remove_name]."))
+					to_chat(target, span_warning("You feel the knowledge of '[remove_name]' slipping from your mind..."))
 					log_admin("[key_name(usr)] removed [remove_name] from [key_name(target)].")
 					message_admins("[key_name(usr)] removed [remove_name] from [key_name(target)].")
 					return
 				else
-					to_chat(src, "<span class='notice'>Target did not know [chosen_recipe]. Maybe you made a typo?</span>")
+					to_chat(src, span_notice("Target did not know [chosen_recipe]. Maybe you made a typo?"))
 					return
 			else
-				to_chat(src, "<span class='warning'>Target does not know any recipes!</span>")
+				to_chat(src, span_warning("Target does not know any recipes!"))
 				return
 
 			

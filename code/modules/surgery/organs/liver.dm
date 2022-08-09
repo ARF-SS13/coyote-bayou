@@ -14,9 +14,9 @@
 	healing_factor = STANDARD_ORGAN_HEALING
 	decay_factor = STANDARD_ORGAN_DECAY
 
-	high_threshold_passed = "<span class='warning'>You feel a stange ache in your abdomen, almost like a stitch. This pain is encumbering your movements.</span>"
-	high_threshold_cleared = "<span class='notice'>The stitching ache in your abdomen passes away, unencumbering your movements.</span>"
-	now_fixed = "<span class='notice'>The stabbing pain in your abdomen slowly calms down into a more tolerable ache.</span>"
+	high_threshold_passed = span_warning("You feel a stange ache in your abdomen, almost like a stitch. This pain is encumbering your movements.")
+	high_threshold_cleared = span_notice("The stitching ache in your abdomen passes away, unencumbering your movements.")
+	now_fixed = span_notice("The stabbing pain in your abdomen slowly calms down into a more tolerable ache.")
 
 	var/alcohol_tolerance = ALCOHOL_RATE//affects how much damage the liver takes from alcohol
 	var/toxTolerance = LIVER_DEFAULT_TOX_TOLERANCE//maximum amount of toxins the liver can just shrug off
@@ -43,7 +43,7 @@
 	owner.reagents.metabolize(owner, can_overdose=TRUE)
 
 	if(damage > 10 && prob(damage/3))//the higher the damage the higher the probability
-		to_chat(owner, "<span class='warning'>You feel a dull pain in your abdomen.</span>")
+		to_chat(owner, span_warning("You feel a dull pain in your abdomen."))
 
 /obj/item/organ/liver/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()

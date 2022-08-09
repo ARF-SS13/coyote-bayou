@@ -36,7 +36,7 @@
 								to_chat(M, "<i><font color=#800080>We can faintly sense an outsider trying to communicate through the hivemind...</font></i>")
 		if(LINGHIVE_LING)
 			if (HAS_TRAIT(user, CHANGELING_HIVEMIND_MUTE))
-				to_chat(user, "<span class='warning'>The poison in the air hinders our ability to interact with the hivemind.</span>")
+				to_chat(user, span_warning("The poison in the air hinders our ability to interact with the hivemind."))
 				return FALSE
 			var/datum/antagonist/changeling/changeling = user.mind.has_antag_datum(/datum/antagonist/changeling)
 			var/msg = "<i><font color=#800080><b>[changeling.changelingID]:</b> [message]</font></i>"
@@ -131,7 +131,7 @@
 	if(is_monkey_leader(mind) || (ismonkey(user) && is_monkey(mind)))
 		user.log_talk(message, LOG_SAY, tag="monkey")
 		if(prob(75) && ismonkey(user))
-			user.visible_message("<span class='notice'>\The [user] chimpers.</span>")
+			user.visible_message(span_notice("\The [user] chimpers."))
 		var/msg = "<span class='[is_monkey_leader(mind) ? "monkeylead" : "monkeyhive"]'><b><font size=2>\[[is_monkey_leader(mind) ? "Monkey Leader" : "Monkey"]\]</font> [user]</b>: [message]</span>"
 		for(var/_M in GLOB.mob_list)
 			var/mob/M = _M

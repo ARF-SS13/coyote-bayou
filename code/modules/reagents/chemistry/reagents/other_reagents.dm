@@ -175,7 +175,7 @@
 /datum/reagent/blood/jellyblood/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		if(M.dna?.species?.exotic_bloodtype != "GEL")
-			to_chat(M, "<span class='danger'>Your insides are burning!</span>")
+			to_chat(M, span_danger("Your insides are burning!"))
 		M.adjustToxLoss(rand(20,60)*REM, 0)
 		. = 1
 	else if(prob(40) && isjellyperson(M))
@@ -389,9 +389,9 @@
 	ADD_TRAIT(L, TRAIT_HOLY, type)
 
 	if(is_servant_of_ratvar(L))
-		to_chat(L, "<span class='userdanger'>A fog spreads through your mind, purging the Justiciar's influence!</span>")
+		to_chat(L, span_userdanger("A fog spreads through your mind, purging the Justiciar's influence!"))
 	else if(iscultist(L))
-		to_chat(L, "<span class='userdanger'>A fog spreads through your mind, weakening your connection to the veil and purging Nar-sie's influence</span>")
+		to_chat(L, span_userdanger("A fog spreads through your mind, weakening your connection to the veil and purging Nar-sie's influence"))
 
 /datum/reagent/water/holywater/on_mob_end_metabolize(mob/living/L)
 	REMOVE_TRAIT(L, TRAIT_HOLY, type)
@@ -411,7 +411,7 @@
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
 				BM.holy_dispel = TRUE
-				to_chat(M, "<span class='cultlarge'>Your blood rites falter as holy water scours your body!</span>")
+				to_chat(M, span_cultlarge("Your blood rites falter as holy water scours your body!"))
 				for(var/datum/action/innate/cult/blood_spell/BS in BM.spells)
 					qdel(BS)
 	if(data["misc"] >= 25)		// 10 units, 45 seconds @ metabolism 0.4 units & tick rate 1.8 sec
@@ -422,7 +422,7 @@
 		if(iscultist(M) && prob(20))
 			M.say(pick("Av'te Nar'Sie","Pa'lid Mors","INO INO ORA ANA","SAT ANA!","Daim'niodeis Arc'iai Le'eones","R'ge Na'sie","Diabo us Vo'iscum","Eld' Mon Nobis"), forced = "holy water")
 			if(prob(10))
-				M.visible_message("<span class='danger'>[M] starts having a seizure!</span>", "<span class='userdanger'>You have a seizure!</span>")
+				M.visible_message(span_danger("[M] starts having a seizure!"), span_userdanger("You have a seizure!"))
 				M.Unconscious(120)
 				to_chat(M, "<span class='cultlarge'>[pick("Your blood is your bond - you are nothing without it", "Do not forget your place", \
 				"All that power, and you still fail?", "If you cannot scour this poison, I shall scour your meager life!")].</span>")
@@ -434,7 +434,7 @@
 					to_chat(M, "<span class='boldwarning'>[pick("Ratvar's illumination of your mind has begun to flicker", "He lies rusting in Reebe, derelict and forgotten. And there he shall stay", \
 					"You can't save him. Nothing can save him now", "It seems that Nar'Sie will triumph after all")].</span>")
 				if("emote")
-					M.visible_message("<span class='warning'>[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")].</span>")
+					M.visible_message(span_warning("[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")]."))
 	if(data["misc"] >= 60)	// 30 units, 135 seconds
 		if(iscultist(M, FALSE, TRUE) || is_servant_of_ratvar(M, FALSE, TRUE))
 			if(iscultist(M))
@@ -612,7 +612,7 @@
 
 	if(method == INGEST)
 		if(show_message)
-			to_chat(M, "<span class='notice'>That tasted horrible.</span>")
+			to_chat(M, span_notice("That tasted horrible."))
 
 	return ..()
 
@@ -720,13 +720,13 @@
 		for(var/i in mutationtexts)
 			if(mutationtexts[i] == filter)
 				pick_ur_fav += i
-		to_chat(H, "<span class='warning'>[pick(pick_ur_fav)]</span>")
+		to_chat(H, span_warning("[pick(pick_ur_fav)]"))
 
 	if(current_cycle >= cycles_to_turn)
 		var/datum/species/species_type = race
 		H.set_species(species_type)
 		holder.del_reagent(type)
-		to_chat(H, "<span class='warning'>You've become \a [lowertext(initial(species_type.name))]!</span>")
+		to_chat(H, span_warning("You've become \a [lowertext(initial(species_type.name))]!"))
 		return
 	..()
 
@@ -739,7 +739,7 @@
 		to_chat(H, mutationtext)
 		H.set_species(mutation)
 	else
-		to_chat(H, "<span class='danger'>The pain vanishes suddenly. You feel no different.</span>")
+		to_chat(H, span_danger("The pain vanishes suddenly. You feel no different."))
 
 
 /datum/reagent/mutationtoxin/classic //The one from plasma on green slimes
@@ -747,52 +747,52 @@
 	description = "A corruptive toxin."
 	color = "#13BC5E" // rgb: 19, 188, 94
 	race = /datum/species/jelly/slime
-	mutationtext = "<span class='danger'>The pain subsides. Your whole body feels like slime.</span>"
+	mutationtext = span_danger("The pain subsides. Your whole body feels like slime.")
 
 /datum/reagent/mutationtoxin/felinid
 	name = "Felinid Mutation Toxin"
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/human/felinid
-	mutationtext = "<span class='danger'>The pain subsides. You feel... like a degenerate.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... like a degenerate.")
 
 /datum/reagent/mutationtoxin/lizard
 	name = "Lizard Mutation Toxin"
 	description = "A lizarding toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard
-	mutationtext = "<span class='danger'>The pain subsides. You feel... scaly.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... scaly.")
 
 /datum/reagent/mutationtoxin/fly
 	name = "Fly Mutation Toxin"
 	description = "An insectifying toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/fly
-	mutationtext = "<span class='danger'>The pain subsides. You feel... buzzy.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... buzzy.")
 
 /datum/reagent/mutationtoxin/insect
 	name = "Insect Mutation Toxin"
 	description = "A glowing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/insect
-	mutationtext = "<span class='danger'>The pain subsides. You feel... attracted to light.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... attracted to light.")
 
 /datum/reagent/mutationtoxin/pod
 	name = "Podperson Mutation Toxin"
 	description = "A vegetalizing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/pod
-	mutationtext = "<span class='danger'>The pain subsides. You feel... plantlike.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... plantlike.")
 
 /datum/reagent/mutationtoxin/jelly
 	name = "Imperfect Mutation Toxin"
 	description = "An jellyfying toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/jelly
-	mutationtext = "<span class='danger'>The pain subsides. You feel... wobbly.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... wobbly.")
 
 /datum/reagent/mutationtoxin/jelly/on_mob_life(mob/living/carbon/human/H)
 	if(isjellyperson(H))
-		to_chat(H, "<span class='warning'>Your jelly shifts and morphs, turning you into another subspecies!</span>")
+		to_chat(H, span_warning("Your jelly shifts and morphs, turning you into another subspecies!"))
 		var/species_type = pick(subtypesof(/datum/species/jelly))
 		H.set_species(species_type)
 		holder.del_reagent(type)
@@ -801,7 +801,7 @@
 		var/datum/species/species_type = pick(subtypesof(race))
 		H.set_species(species_type)
 		holder.del_reagent(type)
-		to_chat(H, "<span class='warning'>You've become \a [initial(species_type.name)]!</span>")
+		to_chat(H, span_warning("You've become \a [initial(species_type.name)]!"))
 		return TRUE
 	return ..()
 
@@ -810,21 +810,21 @@
 	description = "A crystal toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/golem/random
-	mutationtext = "<span class='danger'>The pain subsides. You feel... rocky.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... rocky.")
 
 /datum/reagent/mutationtoxin/abductor
 	name = "Abductor Mutation Toxin"
 	description = "An alien toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/abductor
-	mutationtext = "<span class='danger'>The pain subsides. You feel... alien.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... alien.")
 
 /datum/reagent/mutationtoxin/android
 	name = "Android Mutation Toxin"
 	description = "A robotic toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/android
-	mutationtext = "<span class='danger'>The pain subsides. You feel... artificial.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... artificial.")
 
 //Citadel Races
 /datum/reagent/mutationtoxin/mammal
@@ -832,21 +832,21 @@
 	description = "A glowing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/mammal
-	mutationtext = "<span class='danger'>The pain subsides. You feel... fluffier.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... fluffier.")
 
 /datum/reagent/mutationtoxin/insect
 	name = "Insect Mutation Toxin"
 	description = "A glowing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/insect
-	mutationtext = "<span class='danger'>The pain subsides. You feel... attracted to dark, moist areas.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... attracted to dark, moist areas.")
 
 /datum/reagent/mutationtoxin/xenoperson
 	name = "Xeno-Hybrid Mutation Toxin"
 	description = "A glowing toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/xeno
-	mutationtext = "<span class='danger'>The pain subsides. You feel... oddly longing for the Queen.</span>" //sadly, not the British one.
+	mutationtext = span_danger("The pain subsides. You feel... oddly longing for the Queen.") //sadly, not the British one.
 
 //BLACKLISTED RACES
 /datum/reagent/mutationtoxin/skeleton
@@ -854,21 +854,21 @@
 	description = "A scary toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/skeleton
-	mutationtext = "<span class='danger'>The pain subsides. You feel... spooky.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... spooky.")
 
 /datum/reagent/mutationtoxin/zombie
 	name = "Zombie Mutation Toxin"
 	description = "An undead toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/zombie //Not the infectious kind. The days of xenobio zombie outbreaks are long past.
-	mutationtext = "<span class='danger'>The pain subsides. You feel... undead.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... undead.")
 
 /datum/reagent/mutationtoxin/ash
 	name = "Ash Mutation Toxin"
 	description = "An ashen toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/lizard/ashwalker
-	mutationtext = "<span class='danger'>The pain subsides. You feel... savage.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... savage.")
 
 
 //DANGEROUS RACES
@@ -877,14 +877,14 @@
 	description = "A dark toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/shadow
-	mutationtext = "<span class='danger'>The pain subsides. You feel... darker.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... darker.")
 
 /datum/reagent/mutationtoxin/plasma
 	name = "Plasma Mutation Toxin"
 	description = "A plasma-based toxin."
 	color = "#5EFF3B" //RGB: 94, 255, 59
 	race = /datum/species/plasmaman
-	mutationtext = "<span class='danger'>The pain subsides. You feel... flammable.</span>"
+	mutationtext = span_danger("The pain subsides. You feel... flammable.")
 
 /datum/reagent/slime_toxin
 	name = "Slime Mutation Toxin"
@@ -902,7 +902,7 @@
 		return
 
 	if(isjellyperson(H))
-		to_chat(H, "<span class='warning'>Your jelly shifts and morphs, turning you into another subspecies!</span>")
+		to_chat(H, span_warning("Your jelly shifts and morphs, turning you into another subspecies!"))
 		var/species_type = pick(subtypesof(/datum/species/jelly))
 		H.set_species(species_type)
 		H.reagents.del_reagent(type)
@@ -910,18 +910,18 @@
 	switch(current_cycle)
 		if(1 to 6)
 			if(prob(10))
-				to_chat(H, "<span class='warning'>[pick("You don't feel very well.", "Your skin feels a little slimy.")]</span>")
+				to_chat(H, span_warning("[pick("You don't feel very well.", "Your skin feels a little slimy.")]"))
 		if(7 to 12)
 			if(prob(10))
-				to_chat(H, "<span class='warning'>[pick("Your appendages are melting away.", "Your limbs begin to lose their shape.")]</span>")
+				to_chat(H, span_warning("[pick("Your appendages are melting away.", "Your limbs begin to lose their shape.")]"))
 		if(13 to 19)
 			if(prob(10))
-				to_chat(H, "<span class='warning'>[pick("You feel your internal organs turning into slime.", "You feel very slimelike.")]</span>")
+				to_chat(H, span_warning("[pick("You feel your internal organs turning into slime.", "You feel very slimelike.")]"))
 		if(20 to INFINITY)
 			var/species_type = pick(subtypesof(/datum/species/jelly))
 			H.set_species(species_type)
 			H.reagents.del_reagent(type)
-			to_chat(H, "<span class='warning'>You've become \a jellyperson!</span>")
+			to_chat(H, span_warning("You've become \a jellyperson!"))
 
 
 /datum/reagent/mulligan
@@ -1270,7 +1270,7 @@
 	..()
 
 /datum/reagent/iron/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You start feeling your guts twisting painfully!</span>")
+	to_chat(M, span_userdanger("You start feeling your guts twisting painfully!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/iron/overdose_process(mob/living/M)
@@ -1351,7 +1351,7 @@
 
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
-		to_chat(M, "<span class='warning'>You feel unstable...</span>")
+		to_chat(M, span_warning("You feel unstable..."))
 		M.Jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
@@ -2072,7 +2072,7 @@
 	if(method == TOUCH || method == VAPOR)
 		if(M && ishuman(M))
 			var/mob/living/carbon/human/H = M
-			to_chat(H, "<span class='danger'>Your hair is falling out in clumps!</span>")
+			to_chat(H, span_danger("Your hair is falling out in clumps!"))
 			H.hair_style = "Bald"
 			H.facial_hair_style = "Shaved"
 			H.update_hair()
@@ -2745,21 +2745,21 @@ datum/reagent/eldritch
 		if(prob(10))
 			M.losebreath += 1
 			M.emote("cough")
-			to_chat(M, "<span class='notice'>You clear your throat.</span>")
+			to_chat(M, span_notice("You clear your throat."))
 	else
 		if(!knotted)
-			to_chat(M, "<span class='notice'>You feel a knot in your stomach.</span>")
+			to_chat(M, span_notice("You feel a knot in your stomach."))
 			knotted = TRUE
 
 		if(prob(5 + amount * 0.5)) // don't want this to cause too much damage
 			M.losebreath += 2
-			to_chat(M, "<span class='notice'>You feel a knot in your throat.</span>")
+			to_chat(M, span_notice("You feel a knot in your throat."))
 			M.emote("cough")
 
 		else if(prob(amount - 4))
-			to_chat(M, "<span class='warning'>Your stomach feels awfully bloated.</span>")
+			to_chat(M, span_warning("Your stomach feels awfully bloated."))
 			playsound(M,'sound/voice/catpeople/distressed.ogg', 50, FALSE)
-			M.visible_message("<span class='warning'>[M] seems distressed!.</span>", ignored_mobs=M)
+			M.visible_message(span_warning("[M] seems distressed!."), ignored_mobs=M)
 
 		else if(prob(amount - 8))
 			knotted = FALSE
@@ -2768,9 +2768,9 @@ datum/reagent/eldritch
 			sleep(30) //snowflake but it works, don't wanna proc this
 			if(QDELETED(M) || QDELETED(src)) //this handles race conditions about m or src not existing.
 				return
-			M.visible_message("<span class='warning'>[M] throws up a hairball! Disgusting!</span>", ignored_mobs=M)
+			M.visible_message(span_warning("[M] throws up a hairball! Disgusting!"), ignored_mobs=M)
 			new /obj/item/toy/plush/hairball(get_turf(M))
-			to_chat(M, "<span class='notice'>Aaaah that's better!</span>")
+			to_chat(M, span_notice("Aaaah that's better!"))
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "cleared_stomach", /datum/mood_event/cleared_stomach, name)
 			M.reagents.del_reagent(/datum/reagent/hairball)
 			return

@@ -29,7 +29,7 @@
 	unique abilities, you're a fearsome fighter in one-on-one combat, and your shield protects from projectiles!<br><br>Obey the Servants and do as they \
 	tell you. Your primary goal is to defend the Ark from destruction; they are your allies in this, and should be protected from harm.</b> \
 	<span class='danger big'>Be warned, however, that you will rapidly decay near the void of space.</span>"
-	empower_string = "<span class='neovgre'>The Anima Bulwark's power flows through you! Your weapon will strike harder, your armor is sturdier, and your shield is more durable.</span>"
+	empower_string = span_neovgre("The Anima Bulwark's power flows through you! Your weapon will strike harder, your armor is sturdier, and your shield is more durable.")
 	var/default_speed = 0
 	var/max_shield_health = 3
 	var/shield_health = 3 //Amount of projectiles that can be deflected within
@@ -37,7 +37,7 @@
 
 /mob/living/simple_animal/hostile/clockwork/marauder/examine_info()
 	if(!shield_health)
-		return "<span class='warning'>Its shield has been destroyed!</span>"
+		return span_warning("Its shield has been destroyed!")
 
 /mob/living/simple_animal/hostile/clockwork/marauder/BiologicalLife(seconds, times_fired)
 	if(!(. = ..()))
@@ -51,7 +51,7 @@
 			S = nearS
 			less_space_damage = TRUE
 	if(S)
-		to_chat(src, "<span class='userdanger'>The void of space drains Ratvar's Light from you! You feel yourself rapidly decaying. It would be wise to get back inside!</span>")
+		to_chat(src, span_userdanger("The void of space drains Ratvar's Light from you! You feel yourself rapidly decaying. It would be wise to get back inside!"))
 		adjustBruteLoss(less_space_damage? MARAUDER_SPACE_NEAR_DAMAGE : MARAUDER_SPACE_FULL_DAMAGE)
 	if(!GLOB.ratvar_awakens && health / maxHealth <= MARAUDER_SLOWDOWN_PERCENTAGE)
 		speed = default_speed + 1 //Yes, this slows them down
@@ -83,8 +83,8 @@
 		max_shield_health = 4
 
 /mob/living/simple_animal/hostile/clockwork/marauder/death(gibbed)
-	visible_message("<span class='danger'>[src]'s equipment clatters lifelessly to the ground as the red flames within dissipate.</span>", \
-	"<span class='userdanger'>Dented and scratched, your armor falls away, and your fragile form breaks apart without its protection.</span>")
+	visible_message(span_danger("[src]'s equipment clatters lifelessly to the ground as the red flames within dissipate."), \
+	span_userdanger("Dented and scratched, your armor falls away, and your fragile form breaks apart without its protection."))
 	. = ..()
 
 /mob/living/simple_animal/hostile/clockwork/marauder/Process_Spacemove(movement_dir = 0, continuous_move)
@@ -94,7 +94,7 @@
 	if(amount > 0)
 		for(var/mob/living/L in view(2, src))
 			if(L.is_holding_item_of_type(/obj/item/nullrod))
-				to_chat(src, "<span class='userdanger'>The presence of a brandished holy artifact weakens your armor!</span>")
+				to_chat(src, span_userdanger("The presence of a brandished holy artifact weakens your armor!"))
 				amount *= 4 //if a wielded null rod is nearby, it takes four times the health damage
 				break
 	. = ..()
@@ -108,7 +108,7 @@
 	if(!shield_health)
 		return
 	var/energy_projectile = istype(P, /obj/item/projectile/energy) || istype(P, /obj/item/projectile/beam)
-	visible_message("<span class='danger'>[src] deflects [P] with [p_their()] shield!</span>", \
+	visible_message(span_danger("[src] deflects [P] with [p_their()] shield!"), \
 	"<span class='danger'>You block [P] with your shield! <i>Blocks left:</i> <b>[shield_health - 1]</b></span>")
 	if(energy_projectile)
 		playsound(src, 'sound/weapons/effects/searwall.ogg', 50, TRUE)
@@ -116,7 +116,7 @@
 		playsound(src, "ricochet", 50, TRUE)
 	shield_health--
 	if(!shield_health)
-		visible_message("<span class='warning'>[src]'s shield breaks from deflecting the attack!</span>", "<span class='boldwarning'>Your shield breaks! Give it some time to recover...</span>")
+		visible_message(span_warning("[src]'s shield breaks from deflecting the attack!"), span_boldwarning("Your shield breaks! Give it some time to recover..."))
 		playsound(src, "shatter", 100, TRUE)
 	shield_health_regen = world.time + MARAUDER_SHIELD_REGEN_TIME
 	return TRUE
@@ -182,8 +182,8 @@
 		if(!recovering)
 			heal_host() //also heal our host if inside of them and we aren't recovering
 		else if(health == maxHealth)
-			to_chat(src, "<span class='userdanger'>Your strength has returned. You can once again come forward!</span>")
-			to_chat(host, "<span class='userdanger'>Your guardian is now strong enough to come forward again!</span>")
+			to_chat(src, span_userdanger("Your strength has returned. You can once again come forward!"))
+			to_chat(host, span_userdanger("Your guardian is now strong enough to come forward again!"))
 			recovering = FALSE
 	else
 		if(GLOB.ratvar_awakens) //If Ratvar is alive, guardians don't need a host and are downright impossible to kill
@@ -195,7 +195,7 @@
 				return
 			if(host.stat == DEAD)
 				adjustHealth(50)
-				to_chat(src, "<span class='userdanger'>Your host is dead!</span>")
+				to_chat(src, span_userdanger("Your host is dead!"))
 				return
 			if(z && host.z && z == host.z)
 				switch(get_dist(get_turf(src), get_turf(host)))
@@ -213,19 +213,19 @@
 						adjustHealth(9)
 					if(8 to INFINITY)
 						adjustHealth(15)
-						to_chat(src, "<span class='userdanger'>You're too far from your host and rapidly taking damage!</span>")
+						to_chat(src, span_userdanger("You're too far from your host and rapidly taking damage!"))
 					else //right next to or on top of host
 						adjustHealth(-2)
 						heal_host() //gradually heal host if nearby and host is very weak
 			else //well then, you're not even in the same zlevel
 				adjustHealth(15)
-				to_chat(src, "<span class='userdanger'>You're too far from your host and rapidly taking damage!</span>")
+				to_chat(src, span_userdanger("You're too far from your host and rapidly taking damage!"))
 
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/death(gibbed)
 	emerge_from_host(FALSE, TRUE)
 	unbind_from_host()
-	visible_message("<span class='warning'>[src]'s equipment clatters lifelessly to the ground as the red flames within dissipate.</span>", \
-	"<span class='userdanger'>Your equipment falls away. You feel a moment of confusion before your fragile form is annihilated.</span>")
+	visible_message(span_warning("[src]'s equipment clatters lifelessly to the ground as the red flames within dissipate."), \
+	span_userdanger("Your equipment falls away. You feel a moment of confusion before your fragile form is annihilated."))
 	. = ..()
 
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/Stat()
@@ -287,7 +287,7 @@
 	if(amount > 0)
 		for(var/mob/living/L in view(2, src))
 			if(L.is_holding_item_of_type(/obj/item/nullrod))
-				to_chat(src, "<span class='userdanger'>The presence of a brandished holy artifact weakens your armor!</span>")
+				to_chat(src, span_userdanger("The presence of a brandished holy artifact weakens your armor!"))
 				amount *= 4 //if a wielded null rod is nearby, it takes four times the health damage
 				break
 	. = ..()
@@ -402,8 +402,8 @@
 			target.DelayNextAction(CLICK_CD_MELEE)
 		blockchance = initial(blockchance)
 		playsound(src, 'sound/magic/clockwork/fellowship_armory.ogg', 30, 1, 0, 1) //clang
-		visible_message("<span class='boldannounce'>[src] blocks [target && isitem(textobject) ? "[target]'s [textobject.name]":"\the [textobject]"]!</span>", \
-		"<span class='userdanger'>You block [target && isitem(textobject) ? "[target]'s [textobject.name]":"\the [textobject]"]!</span>")
+		visible_message(span_boldannounce("[src] blocks [target && isitem(textobject) ? "[target]'s [textobject.name]":"\the [textobject]"]!"), \
+		span_userdanger("You block [target && isitem(textobject) ? "[target]'s [textobject.name]":"\the [textobject]"]!"))
 		if(target && Adjacent(target))
 			if(prob(counterchance))
 				counterchance = initial(counterchance)
@@ -428,8 +428,8 @@
 	return ..()
 */
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/proc/guardian_comms(message)
-	var/name_part = "<span class='sevtug'>[src] ([true_name])</span>"
-	message = "<span class='sevtug_small'>\"[message]\"</span>" //Processed output
+	var/name_part = span_sevtug("[src] ([true_name])")
+	message = span_sevtug_small("\"[message]\"") //Processed output
 	to_chat(src, "[name_part]<span class='sevtug_small'>:</span> [message]")
 	to_chat(host, "[name_part]<span class='sevtug_small'>:</span> [message]")
 	for(var/M in GLOB.mob_list)
@@ -442,30 +442,30 @@
 	if(is_in_host())
 		return FALSE
 	if(!host)
-		to_chat(src, "<span class='warning'>You don't have a host!</span>")
+		to_chat(src, span_warning("You don't have a host!"))
 		return FALSE
 	var/resulthealth = round((host.health / host.maxHealth) * 100, 0.5)
 	if(iscarbon(host))
 		resulthealth = round((abs(HEALTH_THRESHOLD_DEAD - host.health) / abs(HEALTH_THRESHOLD_DEAD - host.maxHealth)) * 100)
-	host.visible_message("<span class='warning'>[host]'s skin flashes crimson!</span>", "<span class='sevtug'>You feel [true_name]'s consciousness settle in your mind.</span>")
-	visible_message("<span class='warning'>[src] suddenly disappears!</span>", "<span class='sevtug'>You return to [host].</span>")
+	host.visible_message(span_warning("[host]'s skin flashes crimson!"), span_sevtug("You feel [true_name]'s consciousness settle in your mind."))
+	visible_message(span_warning("[src] suddenly disappears!"), span_sevtug("You return to [host]."))
 	forceMove(host)
 	if(resulthealth > GUARDIAN_EMERGE_THRESHOLD && health != maxHealth)
 		recovering = TRUE
-		to_chat(src, "<span class='userdanger'>You have weakened and will need to recover before manifesting again!</span>")
-		to_chat(host, "<span class='sevtug'>[true_name] has weakened and will need to recover before manifesting again!</span>")
+		to_chat(src, span_userdanger("You have weakened and will need to recover before manifesting again!"))
+		to_chat(host, span_sevtug("[true_name] has weakened and will need to recover before manifesting again!"))
 	return TRUE
 
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/proc/try_emerge()
 	if(!host)
-		to_chat(src, "<span class='warning'>You don't have a host!</span>")
+		to_chat(src, span_warning("You don't have a host!"))
 		return FALSE
 	if(!GLOB.ratvar_awakens)
 		var/resulthealth = round((host.health / host.maxHealth) * 100, 0.5)
 		if(iscarbon(host))
 			resulthealth = round((abs(HEALTH_THRESHOLD_DEAD - host.health) / abs(HEALTH_THRESHOLD_DEAD - host.maxHealth)) * 100)
 		if(host.stat != DEAD && resulthealth > GUARDIAN_EMERGE_THRESHOLD) //if above 20 health, fails
-			to_chat(src, "<span class='warning'>Your host must be at [GUARDIAN_EMERGE_THRESHOLD]% or less health to emerge like this!</span>")
+			to_chat(src, span_warning("Your host must be at [GUARDIAN_EMERGE_THRESHOLD]% or less health to emerge like this!"))
 			return FALSE
 	return emerge_from_host(FALSE)
 
@@ -474,18 +474,18 @@
 		return FALSE
 	if(!force && recovering)
 		if(hostchosen)
-			to_chat(host, "<span class='sevtug'>[true_name] is too weak to come forth!</span>")
+			to_chat(host, span_sevtug("[true_name] is too weak to come forth!"))
 		else
-			to_chat(host, "<span class='sevtug'>[true_name] tries to emerge to protect you, but it's too weak!</span>")
-		to_chat(src, "<span class='userdanger'>You try to come forth, but you're too weak!</span>")
+			to_chat(host, span_sevtug("[true_name] tries to emerge to protect you, but it's too weak!"))
+		to_chat(src, span_userdanger("You try to come forth, but you're too weak!"))
 		return FALSE
 	if(!force)
 		if(hostchosen) //guardian approved
-			to_chat(host, "<span class='sevtug'>Your words echo with power as [true_name] emerges from your body!</span>")
+			to_chat(host, span_sevtug("Your words echo with power as [true_name] emerges from your body!"))
 		else
-			to_chat(host, "<span class='sevtug'>[true_name] emerges from your body to protect you!</span>")
+			to_chat(host, span_sevtug("[true_name] emerges from your body to protect you!"))
 	forceMove(host.loc)
-	visible_message("<span class='warning'>[host]'s skin glows red as [name] emerges from their body!</span>", "<span class='sevtug_small'>You exit the safety of [host]'s body!</span>")
+	visible_message(span_warning("[host]'s skin glows red as [name] emerges from their body!"), span_sevtug_small("You exit the safety of [host]'s body!"))
 	return TRUE
 
 /mob/living/simple_animal/hostile/clockwork/marauder/guardian/get_alt_name()
@@ -546,10 +546,10 @@
 	if(!owner || !message)
 		return FALSE
 	if(!linked_guardian)
-		to_chat(owner, "<span class='warning'>Your guardian seems to have been destroyed!</span>")
+		to_chat(owner, span_warning("Your guardian seems to have been destroyed!"))
 		return FALSE
-	var/name_part = "<span class='sevtug'>Servant [findtextEx(owner.name, owner.real_name) ? "[owner.name]" : "[owner.real_name] (as [owner.name])"]</span>"
-	message = "<span class='sevtug_small'>\"[message]\"</span>" //Processed output
+	var/name_part = span_sevtug("Servant [findtextEx(owner.name, owner.real_name) ? "[owner.name]" : "[owner.real_name] (as [owner.name])"]")
+	message = span_sevtug_small("\"[message]\"") //Processed output
 	to_chat(owner, "[name_part]<span class='sevtug_small'>:</span> [message]")
 	to_chat(linked_guardian, "[name_part]<span class='sevtug_small'>:</span> [message]")
 	for(var/M in GLOB.mob_list)

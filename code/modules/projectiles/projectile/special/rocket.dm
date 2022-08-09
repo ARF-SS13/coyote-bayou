@@ -48,7 +48,7 @@
 		if(istype(C))
 			C.adjust_fire_stacks(fire_stacks)
 			C.IgniteMob()
-			to_chat(C, "<span class='userdanger'>The incendiary rocket sets you ablaze!</span>")
+			to_chat(C, span_userdanger("The incendiary rocket sets you ablaze!"))
 			C.emote("scream")
 	return BULLET_ACT_HIT
 

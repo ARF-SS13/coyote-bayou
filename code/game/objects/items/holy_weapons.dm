@@ -134,7 +134,7 @@
 		SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
 		GLOB.holy_armor_type = choice
 	else
-		to_chat(M, "<span class='warning'>A selection has already been made. Self-Destructing...</span>")
+		to_chat(M, span_warning("A selection has already been made. Self-Destructing..."))
 		return
 
 /obj/item/storage/box/holy
@@ -289,7 +289,7 @@
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
 /obj/item/nullrod/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!</span>")
+	user.visible_message(span_suicide("[user] is killing [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to get closer to god!"))
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
@@ -540,7 +540,7 @@
 		else
 			qdel(S)
 	possessed = FALSE
-	visible_message("<span class='warning'>The blade makes a short sigh. The spirit within seems to have passed on...</span>")
+	visible_message(span_warning("The blade makes a short sigh. The spirit within seems to have passed on..."))
 	return PROCESS_KILL
 
 /obj/item/nullrod/scythe/talking/relaymove(mob/user)
@@ -706,7 +706,7 @@
 		return ..()
 	var/mob/living/carbon/C = target
 	if(C.stat || C.health < 0 || C.staminaloss > 130 )
-		to_chat(user, "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>")
+		to_chat(user, span_warning("It would be dishonorable to attack a foe while they cannot retaliate."))
 		return
 	if(user.a_intent == INTENT_DISARM)
 		if(!ishuman(target))
@@ -718,8 +718,8 @@
 									  "[user] smashes [H]'s head with [src]!", \
 									  "[user] beats [H] with front of [src]!", \
 									  "[user] twirls and slams [H] with [src]!")
-		H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
-							   "<span class='userdanger'>[pick(fluffmessages)]</span>")
+		H.visible_message(span_warning("[pick(fluffmessages)]"), \
+							   span_userdanger("[pick(fluffmessages)]"))
 		playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
 		H.adjustStaminaLoss(rand(12,18))
 		if(prob(25))
@@ -783,25 +783,25 @@
 		return ..()
 
 	if(!user.mind || user.mind.assigned_role != "Chaplain")
-		to_chat(user, "<span class='notice'>You are not close enough with [deity_name] to use [src].</span>")
+		to_chat(user, span_notice("You are not close enough with [deity_name] to use [src]."))
 		return
 
 	if(praying)
-		to_chat(user, "<span class='notice'>You are already using [src].</span>")
+		to_chat(user, span_notice("You are already using [src]."))
 		return
 
-	user.visible_message("<span class='info'>[user] kneels[M == user ? null : " next to [M]"] and begins to utter a prayer to [deity_name].</span>", \
-		"<span class='info'>You kneel[M == user ? null : " next to [M]"] and begin a prayer to [deity_name].</span>")
+	user.visible_message(span_info("[user] kneels[M == user ? null : " next to [M]"] and begins to utter a prayer to [deity_name]."), \
+		span_info("You kneel[M == user ? null : " next to [M]"] and begin a prayer to [deity_name]."))
 
 	praying = TRUE
 	if(do_after(user, 20, target = M))
 		M.reagents?.add_reagent(/datum/reagent/water/holywater, 5)
-		to_chat(M, "<span class='notice'>[user]'s prayer to [deity_name] has eased your pain!</span>")
+		to_chat(M, span_notice("[user]'s prayer to [deity_name] has eased your pain!"))
 		M.adjustToxLoss(-5, TRUE, TRUE)
 		M.adjustOxyLoss(-5)
 		M.adjustBruteLoss(-5)
 		M.adjustFireLoss(-5)
 		praying = FALSE
 	else
-		to_chat(user, "<span class='notice'>Your prayer to [deity_name] was interrupted.</span>")
+		to_chat(user, span_notice("Your prayer to [deity_name] was interrupted."))
 		praying = FALSE

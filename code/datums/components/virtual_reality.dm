@@ -212,7 +212,7 @@
 		var/mob/dreamer = override || mastermind.current
 		if(!dreamer) //This shouldn't happen.
 			stack_trace("virtual reality component quit() called without a mob to transfer the parent ckey to.")
-			to_chat(M, "<span class='warning'>You feel a dreadful sensation, something terrible happened. You try to wake up, but you find yourself unable to...</span>")
+			to_chat(M, span_warning("You feel a dreadful sensation, something terrible happened. You try to wake up, but you find yourself unable to..."))
 			qdel(src)
 			return
 		if(level_below?.parent)
@@ -220,7 +220,7 @@
 		else
 			M.transfer_ckey(dreamer, FALSE)
 			if(deathcheck)
-				to_chat(dreamer, "<span class='warning'>You feel everything fading away...</span>")
+				to_chat(dreamer, span_warning("You feel everything fading away..."))
 				dreamer.death(FALSE)
 		mastermind.current.audiovisual_redirect = null
 		if(!cleanup)

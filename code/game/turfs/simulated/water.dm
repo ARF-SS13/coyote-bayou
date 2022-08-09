@@ -36,7 +36,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/water))
-			to_chat(L, "<span class='warning'>You get drenched in water!</span>")
+			to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 	..()
 
@@ -47,7 +47,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, span_warning("You climb out of \the [src]."))
 	..()
 
 /mob/living/proc/check_submerged()
@@ -76,7 +76,7 @@
 			else
 				drownee.adjustOxyLoss(1)
 				if(prob(35))
-					to_chat(drownee, "<span class='danger'>You're drowning!</span>")
+					to_chat(drownee, span_danger("You're drowning!"))
 	adjust_fire_stacks(-amount * 5)
 	for(var/atom/movable/AM in contents)
 		AM.water_act(amount)

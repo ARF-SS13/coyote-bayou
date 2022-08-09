@@ -44,7 +44,7 @@
 	if(alertresult == "No" || QDELETED(O) || !istype(O) || !O.key)
 		return FALSE
 	var/mob/living/simple_animal/drone/cogscarab/ratvar/R = new/mob/living/simple_animal/drone/cogscarab/ratvar(get_turf(src))
-	R.visible_message("<span class='heavy_brass'>[R] forms, and its eyes blink open, glowing bright red!</span>")
+	R.visible_message(span_heavy_brass("[R] forms, and its eyes blink open, glowing bright red!"))
 	O.transfer_ckey(R, FALSE)
 
 /obj/structure/destructible/clockwork/massive/ratvar/Bump(atom/A)

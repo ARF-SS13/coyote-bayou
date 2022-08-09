@@ -32,16 +32,16 @@
 	var/turf/ST = get_turf(src)
 	if(user?.a_intent != INTENT_HARM)
 		if(user in loot_players)
-			to_chat(user, "<span class='notice'>You already have looted [src].</span>")
+			to_chat(user, span_notice("You already have looted [src]."))
 			return
 		for(var/i=0, i<rand(1,4), i++)
 			var/itemtype= pickweight(lootable_trash)
 			//var/itemtypebonus= pickweight(lootable_trash)
 			if(itemtype)
-				to_chat(user, "<span class='notice'>You scavenge through [src].</span>")
+				to_chat(user, span_notice("You scavenge through [src]."))
 				var/obj/item/item = new itemtype(ST)
 				//if (prob(10+(user.special_l*3.5)))//SPECIAL Integration
-				//	to_chat(user, "<span class='notice'>You get lucky and find even more loot!</span>")
+				//	to_chat(user, span_notice("You get lucky and find even more loot!"))
 				//	var/obj/item/bonusitem = new itemtypebonus(ST)				
 				//	if(istype(bonusitem))
 				//		bonusitem.from_trash = TRUE
@@ -92,12 +92,12 @@
 	var/turf/ST = get_turf(src)
 	if(user?.a_intent != INTENT_HARM)
 		if(user in paid_players)
-			to_chat(user, "<span class='notice'>You have already taken your pay from the [src].</span>")
+			to_chat(user, span_notice("You have already taken your pay from the [src]."))
 			return
 		for(var/i=0, i<rand(1,2), i++)
 			var/itemtype = pick(pay)
 			if(itemtype)
-				to_chat(user, "<span class='notice'>You get your pay from the [src].</span>")
+				to_chat(user, span_notice("You get your pay from the [src]."))
 				new itemtype(ST)
 		paid_players += user
 	else

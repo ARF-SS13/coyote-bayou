@@ -3,15 +3,15 @@
 /mob/living/proc/HaveBloodsuckerBodyparts(displaymessage = "") // displaymessage can be something such as "rising from death" for Torpid Sleep. givewarningto is the person receiving messages.
 	if(!getorganslot(ORGAN_SLOT_HEART))
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a heart, you are incapable of [displaymessage].</span>")
+			to_chat(src, span_warning("Without a heart, you are incapable of [displaymessage]."))
 		return FALSE
 	if(!get_bodypart(BODY_ZONE_HEAD))
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a head, you are incapable of [displaymessage].</span>")
+			to_chat(src, span_warning("Without a head, you are incapable of [displaymessage]."))
 		return FALSE
 	if(!getorgan(/obj/item/organ/brain)) // NOTE: This is mostly just here so we can do one scan for all needed parts when creating a vamp. You probably won't be trying to use powers w/out a brain.
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a brain, you are incapable of [displaymessage].</span>")
+			to_chat(src, span_warning("Without a brain, you are incapable of [displaymessage]."))
 		return FALSE
 	return TRUE
 
@@ -38,7 +38,7 @@
 
 	// In Disguise (Veil)?
 	//if (name_override != null)
-	//	returnString += "<span class='suicide'> ([real_name] in disguise!) </span>"
+	//	returnString += span_suicide(" ([real_name] in disguise!) ")
 
 	//returnString += "\n"  Don't need spacers. Using . += "" in examine.dm does this on its own.
 	return returnIcon + returnString

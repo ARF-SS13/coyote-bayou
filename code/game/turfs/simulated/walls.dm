@@ -105,7 +105,7 @@
 	switch(M.damtype)
 		if(BRUTE)
 			playsound(src, 'sound/weapons/punch4.ogg', 50, 1)
-			visible_message("<span class='danger'>[M.name] has hit [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+			visible_message(span_danger("[M.name] has hit [src]!"), null, null, COMBAT_MESSAGE_RANGE)
 			if(M.force >= hardness*0.8)
 				dismantle_wall(1)
 				playsound(src, 'sound/effects/meteorimpact.ogg', 100, 1)
@@ -146,9 +146,9 @@
 	else
 		playsound(src, 'sound/effects/bang.ogg', 50, TRUE)
 		add_dent(WALL_DENT_HIT)
-		user.visible_message("<span class='danger'>[user] smashes \the [src]!</span>", \
-					"<span class='danger'>You smash \the [src]!</span>", \
-					"<span class='hear'>You hear a booming smash!</span>")
+		user.visible_message(span_danger("[user] smashes \the [src]!"), \
+					span_danger("You smash \the [src]!"), \
+					span_hear("You hear a booming smash!"))
 	return TRUE
 
 /**
@@ -170,7 +170,7 @@
 	smasher.break_an_arm(arm)
 
 /turf/closed/wall/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, "<span class='notice'>You push the wall but nothing happens!</span>")
+	to_chat(user, span_notice("You push the wall but nothing happens!"))
 	playsound(src, 'sound/weapons/genhit.ogg', 25, 1)
 	add_fingerprint(user)
 
@@ -178,7 +178,7 @@
 	if(!user.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	if (!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return
 
 	//get the user's location
@@ -205,10 +205,10 @@
 		if(!W.tool_start_check(user, amount=0))
 			return FALSE
 
-		to_chat(user, "<span class='notice'>You begin fixing dents on the wall...</span>")
+		to_chat(user, span_notice("You begin fixing dents on the wall..."))
 		if(W.use_tool(src, user, 0, volume=100))
 			if(iswallturf(src) && LAZYLEN(dent_decals))
-				to_chat(user, "<span class='notice'>You fix some dents on the wall.</span>")
+				to_chat(user, span_notice("You fix some dents on the wall."))
 				cut_overlay(dent_decals)
 				dent_decals.Cut()
 			return TRUE
@@ -243,10 +243,10 @@
 		if(!I.tool_start_check(user, amount=0))
 			return FALSE
 
-		to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
+		to_chat(user, span_notice("You begin slicing through the outer plating..."))
 		if(I.use_tool(src, user, slicing_duration, volume=100))
 			if(iswallturf(src))
-				to_chat(user, "<span class='notice'>You remove the outer plating.</span>")
+				to_chat(user, span_notice("You remove the outer plating."))
 				dismantle_wall()
 			return TRUE
 
@@ -255,12 +255,12 @@
 
 /turf/closed/wall/proc/try_destroy(obj/item/I, mob/user, turf/T)
 	if(istype(I, /obj/item/pickaxe/drill/jackhammer))
-		to_chat(user, "<span class='notice'>You begin to smash though [src]...</span>")
+		to_chat(user, span_notice("You begin to smash though [src]..."))
 		if(do_after(user, 70, target = src))
 			if(!istype(src, /turf/closed/wall))
 				return TRUE
 			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
+			visible_message(span_warning("[user] smashes through [src] with [I]!"), span_italic("You hear the grinding of metal."))
 			dismantle_wall()
 			return TRUE
 	return FALSE
@@ -305,7 +305,7 @@
 /turf/closed/wall/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, "<span class='notice'>You deconstruct the wall.</span>")
+			to_chat(user, span_notice("You deconstruct the wall."))
 			ScrapeAway()
 			return TRUE
 	return FALSE

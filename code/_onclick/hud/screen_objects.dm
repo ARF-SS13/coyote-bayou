@@ -67,7 +67,7 @@
 		return TRUE
 	var/area/A = get_area(usr)
 	if(!A.outdoors)
-		to_chat(usr, "<span class='warning'>There is already a defined structure here.</span>")
+		to_chat(usr, span_warning("There is already a defined structure here."))
 		return TRUE
 	create_area(usr)
 
@@ -254,12 +254,12 @@
 
 	if(C.internal)
 		C.internal = null
-		to_chat(C, "<span class='notice'>You are no longer running on internals.</span>")
+		to_chat(C, span_notice("You are no longer running on internals."))
 		icon_state = "internal0"
 	else
 		if(!C.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
 			if(HAS_TRAIT(C, TRAIT_NO_INTERNALS))
-				to_chat(C, "<span class='warning'>Due to cumbersome equipment or anatomy, you are currently unable to use internals!</span>")
+				to_chat(C, span_warning("Due to cumbersome equipment or anatomy, you are currently unable to use internals!"))
 				return
 			var/obj/item/clothing/check
 			var/internals = FALSE
@@ -272,37 +272,37 @@
 				if(CHECK_BITFIELD(check.clothing_flags, ALLOWINTERNALS))
 					internals = TRUE
 			if(!internals)
-				to_chat(C, "<span class='warning'>You are not wearing an internals mask!</span>")
+				to_chat(C, span_warning("You are not wearing an internals mask!"))
 				return
 
 		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)
 		if(I)
-			to_chat(C, "<span class='notice'>You are now running on internals from [I] in your [C.get_held_index_name(C.get_held_index_of_item(I))].</span>")
+			to_chat(C, span_notice("You are now running on internals from [I] in your [C.get_held_index_name(C.get_held_index_of_item(I))]."))
 			C.internal = I
 		else if(ishuman(C))
 			var/mob/living/carbon/human/H = C
 			if(istype(H.s_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.s_store] on your [H.wear_suit.name].</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.s_store] on your [H.wear_suit.name]."))
 				H.internal = H.s_store
 			else if(istype(H.belt, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.belt] on your belt.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.belt] on your belt."))
 				H.internal = H.belt
 			else if(istype(H.l_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.l_store] in your left pocket.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.l_store] in your left pocket."))
 				H.internal = H.l_store
 			else if(istype(H.r_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>You are now running on internals from [H.r_store] in your right pocket.</span>")
+				to_chat(H, span_notice("You are now running on internals from [H.r_store] in your right pocket."))
 				H.internal = H.r_store
 
 		//Separate so CO2 jetpacks are a little less cumbersome.
 		if(!C.internal && istype(C.back, /obj/item/tank))
-			to_chat(C, "<span class='notice'>You are now running on internals from [C.back] on your back.</span>")
+			to_chat(C, span_notice("You are now running on internals from [C.back] on your back."))
 			C.internal = C.back
 
 		if(C.internal)
 			icon_state = "internal1"
 		else
-			to_chat(C, "<span class='warning'>You don't have an oxygen tank!</span>")
+			to_chat(C, span_warning("You don't have an oxygen tank!"))
 			return
 	C.update_action_buttons_icon()
 

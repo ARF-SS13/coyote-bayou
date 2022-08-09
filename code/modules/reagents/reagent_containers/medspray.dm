@@ -29,46 +29,46 @@
 		amount_per_transfer_from_this = squirt_amount
 	else
 		amount_per_transfer_from_this = initial(amount_per_transfer_from_this)
-	to_chat(user, "<span class='notice'>You will now apply the medspray's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use.</span>")
+	to_chat(user, span_notice("You will now apply the medspray's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use."))
 
 /obj/item/reagent_containers/medspray/attack(mob/living/L, mob/user, def_zone)
 	INVOKE_ASYNC(src, .proc/attempt_spray, L, user, def_zone)		// this is shitcode because the params for attack aren't even right but i'm not in the mood to refactor right now.
 
 /obj/item/reagent_containers/medspray/proc/attempt_spray(mob/living/L, mob/user, def_zone)
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return
 
 	if(ishuman(L))
 		var/obj/item/bodypart/affecting = L.get_bodypart(check_zone(user.zone_selected))
 		if(!affecting)
-			to_chat(user, "<span class='warning'>The limb is missing!</span>")
+			to_chat(user, span_warning("The limb is missing!"))
 			return
 		if(!L.can_inject(user, TRUE, user.zone_selected, FALSE, TRUE)) //stopped by clothing, like patches
 			return
 		if(affecting.status != BODYPART_ORGANIC)
-			to_chat(user, "<span class='notice'>Medicine won't work on a robotic limb!</span>")
+			to_chat(user, span_notice("Medicine won't work on a robotic limb!"))
 			return
 
 	if(L == user)
-		L.visible_message("<span class='notice'>[user] attempts to [apply_method] [src] on [user.p_them()]self.</span>")
+		L.visible_message(span_notice("[user] attempts to [apply_method] [src] on [user.p_them()]self."))
 		if(self_delay)
 			if(!do_mob(user, L, self_delay))
 				return
 			if(!reagents || !reagents.total_volume)
 				return
-		to_chat(L, "<span class='notice'>You [apply_method] yourself with [src].</span>")
+		to_chat(L, span_notice("You [apply_method] yourself with [src]."))
 
 	else
 		log_combat(user, L, "attempted to apply", src, reagents.log_list())
-		L.visible_message("<span class='danger'>[user] attempts to [apply_method] [src] on [L].</span>", \
-							"<span class='userdanger'>[user] attempts to [apply_method] [src] on [L].</span>")
+		L.visible_message(span_danger("[user] attempts to [apply_method] [src] on [L]."), \
+							span_userdanger("[user] attempts to [apply_method] [src] on [L]."))
 		if(!do_mob(user, L))
 			return
 		if(!reagents || !reagents.total_volume)
 			return
-		L.visible_message("<span class='danger'>[user] [apply_method]s [L] down with [src].</span>", \
-							"<span class='userdanger'>[user] [apply_method]s [L] down with [src].</span>")
+		L.visible_message(span_danger("[user] [apply_method]s [L] down with [src]."), \
+							span_userdanger("[user] [apply_method]s [L] down with [src]."))
 
 	if(!reagents || !reagents.total_volume)
 		return

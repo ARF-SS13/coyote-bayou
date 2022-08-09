@@ -30,7 +30,7 @@
 	movement_type = GROUND
 	var/charging = 0
 	blood_volume = BLOOD_VOLUME_NORMAL
-	deathmessage = "<span class='colossus'>chokes on their own blood, gurgling out 'You're coming with me, mutie' as they activate their self destruct!</span>"
+	deathmessage = span_colossus("chokes on their own blood, gurgling out 'You're coming with me, mutie' as they activate their self destruct!")
 	deathsound = 'sound/effects/gravhit.ogg'
 	del_on_death = FALSE
 	loot = list(/obj/item/keycard/library)
@@ -130,7 +130,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 
 	else if(isliving(hit_atom))
 		var/mob/living/L = hit_atom
-		L.visible_message("<span class='danger'>[src] laughs maniacally as he rends[L]!</span>", "<span class='userdanger'>[src] slams into you, laughing maniacally!</span>")
+		L.visible_message(span_danger("[src] laughs maniacally as he rends[L]!"), span_userdanger("[src] slams into you, laughing maniacally!"))
 		L.apply_damage(50, BRUTE)
 		playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, 1)
 		shake_camera(L, 4, 3)
@@ -163,7 +163,7 @@ mob/living/simple_animal/hostile/megafauna/captainarlem/do_attack_animation(atom
 		fire_plasmacaster(target_turf, angle_to_target + i)
 
 /mob/living/simple_animal/hostile/megafauna/captainarlem/proc/eyebots()
-	visible_message("<span class='danger'>[src] presses a button on their wrist, activating some of the eyebots!</span>")
+	visible_message(span_danger("[src] presses a button on their wrist, activating some of the eyebots!"))
 	for(var/obj/effect/decal/remains/deadeyebot/H in range(src, 10))
 		if(prob(40))
 			new /mob/living/simple_animal/hostile/eyebot(H.loc)

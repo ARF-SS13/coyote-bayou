@@ -56,7 +56,7 @@
 		L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
 		spawned_mobs += L
 		L.nest = src
-		visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+		visible_message(span_danger("[L] [spawn_text] [src]."))
 	if(spawnsound)
 		playsound(src, spawnsound, 30, 1)
 	if(!infinite)
@@ -84,29 +84,29 @@
 		..()
 	else
 		if(user.a_intent == INTENT_HARM)
-			to_chat(user, "<span class='warning'>You feel it is impossible to destroy this without covering it with something.</span>")
+			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
 			return
 
 /obj/structure/nest/proc/Seal(mob/user, obj/item/I, itempath, cover_state, timer)
 	if(!coverable)
-		to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
+		to_chat(user, span_warning("The hole is unable to be covered!"))
 		return
 	
 	if(covered)
-		to_chat(user, "<span class='warning'>The hole is already covered!</span>")
+		to_chat(user, span_warning("The hole is already covered!"))
 		return
 	var/obj/item/stack/S = I
 	if(S.amount < 4)
-		to_chat(user, "<span class='warning'>You need four of [S.name] in order to cover the hole!</span>")
+		to_chat(user, span_warning("You need four of [S.name] in order to cover the hole!"))
 		return
 	if(!do_after(user, 5 SECONDS, FALSE, src))
-		to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
+		to_chat(user, span_warning("You must stand still to build the cover!"))
 		return
 	S.use(4)
 
 	if(!covered)
 		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-		to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+		to_chat(user, span_warning("You find something while covering the hole!"))
 
 	covered = TRUE
 	covertype = itempath
@@ -132,7 +132,7 @@
 			return
 		I.play_tool_sound(src, 50)
 		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to unseal the cover!</span>")
+			to_chat(user, span_warning("You must stand still to unseal the cover!"))
 			return
 		Unseal(TRUE)
 		return

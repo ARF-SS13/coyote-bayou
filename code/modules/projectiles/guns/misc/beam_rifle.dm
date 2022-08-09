@@ -105,13 +105,13 @@
 			zoom_lock = 0
 		switch(zoom_lock)
 			if(ZOOM_LOCK_AUTOZOOM_FREEMOVE)
-				to_chat(owner, "<span class='boldnotice'>You switch [src]'s zooming processor to free directional.</span>")
+				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to free directional."))
 			if(ZOOM_LOCK_AUTOZOOM_ANGLELOCK)
-				to_chat(owner, "<span class='boldnotice'>You switch [src]'s zooming processor to locked directional.</span>")
+				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to locked directional."))
 			if(ZOOM_LOCK_CENTER_VIEW)
-				to_chat(owner, "<span class='boldnotice'>You switch [src]'s zooming processor to center mode.</span>")
+				to_chat(owner, span_boldnotice("You switch [src]'s zooming processor to center mode."))
 			if(ZOOM_LOCK_OFF)
-				to_chat(owner, "<span class='boldnotice'>You disable [src]'s zooming system.</span>")
+				to_chat(owner, span_boldnotice("You disable [src]'s zooming system."))
 		reset_zooming()
 	else
 		return ..()
@@ -164,7 +164,7 @@
 		projectile_setting_pierce = FALSE
 		return
 	projectile_setting_pierce = !projectile_setting_pierce
-	to_chat(user, "<span class='boldnotice'>You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode.</span>")
+	to_chat(user, span_boldnotice("You set \the [src] to [projectile_setting_pierce? "pierce":"impact"] mode."))
 	aiming_beam()
 
 /obj/item/gun/energy/beam_rifle/Initialize()
@@ -435,7 +435,7 @@
 	new /obj/effect/temp_visual/explosion/fast(epicenter)
 	for(var/mob/living/L in range(aoe_mob_range, epicenter))		//handle aoe mob damage
 		L.adjustFireLoss(aoe_mob_damage)
-		to_chat(L, "<span class='userdanger'>\The [src] sears you!</span>")
+		to_chat(L, span_userdanger("\The [src] sears you!"))
 	for(var/turf/T in range(aoe_fire_range, epicenter))		//handle aoe fire
 		if(prob(aoe_fire_chance))
 			new /obj/effect/hotspot(T)

@@ -18,7 +18,7 @@
 			P.add_fingerprint(user)
 			P.forceMove(user.loc)
 			user.put_in_active_hand(P)
-			to_chat(user, "<span class='notice'>You take [P] out of \the [src].</span>")
+			to_chat(user, span_notice("You take [P] out of \the [src]."))
 			numberOfPages--
 			playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 			add_fingerprint(user)
@@ -26,7 +26,7 @@
 				icon_state = "pHbookletEmpty"
 			return
 		else
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			add_fingerprint(user)
 			return
 	. = ..()
@@ -43,7 +43,7 @@
 		P.add_fingerprint(user)
 		P.forceMove(user)
 		user.put_in_active_hand(P)
-		to_chat(user, "<span class='notice'>You take [P] out of \the [src].</span>")
+		to_chat(user, span_notice("You take [P] out of \the [src]."))
 		numberOfPages--
 		playsound(user.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 		add_fingerprint(user)
@@ -51,7 +51,7 @@
 			icon_state = "pHbookletEmpty"
 		return
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		add_fingerprint(user)
 		return
 
@@ -70,7 +70,7 @@
 	if(!istype(cont))
 		return
 	if(used == TRUE)
-		to_chat(user, "<span class='warning'>[src] has already been used!</span>")
+		to_chat(user, span_warning("[src] has already been used!"))
 		return
 	if(!LAZYLEN(cont.reagents.reagent_list))
 		return
@@ -120,10 +120,10 @@
 
 /obj/item/fermichem/pHmeter/attack_self(mob/user)
 	if(!scanmode)
-		to_chat(user, "<span class='notice'>You switch the chemical analyzer to give a detailed report.</span>")
+		to_chat(user, span_notice("You switch the chemical analyzer to give a detailed report."))
 		scanmode = 1
 	else
-		to_chat(user, "<span class='notice'>You switch the chemical analyzer to give a reduced report.</span>")
+		to_chat(user, span_notice("You switch the chemical analyzer to give a reduced report."))
 		scanmode = 0
 
 /obj/item/fermichem/pHmeter/afterattack(atom/A, mob/user, proximity)

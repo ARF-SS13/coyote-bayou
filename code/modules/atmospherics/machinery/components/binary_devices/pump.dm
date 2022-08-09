@@ -48,7 +48,7 @@
 	var/turf/T = get_turf(src)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE,))
 		target_pressure = MAX_OUTPUT_PRESSURE
-		to_chat(user,"<span class='notice'>You maximize the pressure on the [src].</span>")
+		to_chat(user,span_notice("You maximize the pressure on the [src]."))
 		investigate_log("Pump, [src.name], was maximized by [key_name(usr)] at [x], [y], [z], [A]", INVESTIGATE_ATMOS)
 		message_admins("Pump, [src.name], was maximized by [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
 		return TRUE
@@ -184,7 +184,7 @@
 	. = ..()
 	var/area/A = get_area(src)
 	if(. && on && is_operational())
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 	else
 		investigate_log("Pump, [src.name], was unwrenched by [key_name(usr)] at [x], [y], [z], [A]", INVESTIGATE_ATMOS)

@@ -54,11 +54,11 @@
 /obj/mecha/proc/report_internal_damage()
 	. = ""
 	var/list/dam_reports = list(
-		"[MECHA_INT_FIRE]" = "<span class='userdanger'>INTERNAL FIRE</span>",
-		"[MECHA_INT_TEMP_CONTROL]" = "<span class='userdanger'>LIFE SUPPORT SYSTEM MALFUNCTION</span>",
-		"[MECHA_INT_TANK_BREACH]" = "<span class='userdanger'>GAS TANK BREACH</span>",
+		"[MECHA_INT_FIRE]" = span_userdanger("INTERNAL FIRE"),
+		"[MECHA_INT_TEMP_CONTROL]" = span_userdanger("LIFE SUPPORT SYSTEM MALFUNCTION"),
+		"[MECHA_INT_TANK_BREACH]" = span_userdanger("GAS TANK BREACH"),
 		"[MECHA_INT_CONTROL_LOST]" = "<span class='userdanger'>COORDINATION SYSTEM CALIBRATION FAILURE</span> - <a href='?src=[REF(src)];repair_int_control_lost=1'>Recalibrate</a>",
-		"[MECHA_INT_SHORT_CIRCUIT]" = "<span class='userdanger'>SHORT CIRCUIT</span>"
+		"[MECHA_INT_SHORT_CIRCUIT]" = span_userdanger("SHORT CIRCUIT")
 								)
 	for(var/tflag in dam_reports)
 		var/intdamflag = text2num(tflag)
@@ -84,7 +84,7 @@
 						<b>Air source: </b>[use_internal_tank?"Internal Airtank":"Environment"]<br>
 						<b>Airtank pressure: </b>[tank_pressure]kPa<br>
 						<b>Airtank temperature: </b>[tank_temperature]&deg;K|[tank_temperature - T0C]&deg;C<br>
-						<b>Cabin pressure: </b>[cabin_pressure>WARNING_HIGH_PRESSURE ? "<span class='danger'>[cabin_pressure]</span>": cabin_pressure]kPa<br>
+						<b>Cabin pressure: </b>[cabin_pressure>WARNING_HIGH_PRESSURE ? span_danger("[cabin_pressure]"): cabin_pressure]kPa<br>
 						<b>Cabin temperature: </b> [return_temperature()]&deg;K|[return_temperature() - T0C]&deg;C<br>
 						[dna_lock?"<b>DNA-locked:</b><br> <span style='font-size:10px;letter-spacing:-1px;'>[dna_lock]</span> \[<a href='?src=[REF(src)];reset_dna=1'>Reset</a>\]<br>":""]<br>
 						[thrusters_action.owner ? "<b>Thrusters: </b> [thrusters_active ? "Enabled" : "Disabled"]<br>" : ""]
@@ -185,7 +185,7 @@
 			continue //there's some strange access without a name
 		. += "[a_name] - <a href='?src=[REF(src)];add_req_access=[a];user=[REF(user)];id_card=[REF(id_card)]'>Add</a><br>"
 	. += "<hr><a href='?src=[REF(src)];finish_req_access=1;user=[REF(user)]'>Finish</a> "
-	. += "<span class='danger'>(Warning! The ID upload panel will be locked. It can be unlocked only through Exosuit Interface.)</span>"
+	. += span_danger("(Warning! The ID upload panel will be locked. It can be unlocked only through Exosuit Interface.)")
 	. += "</body></html>"
 	user << browse(., "window=exosuit_add_access")
 	onclose(user, "exosuit_add_access")
@@ -309,7 +309,7 @@
 
 	if(href_list["toggle_maint_access"])
 		if(state)
-			occupant_message("<span class='danger'>Maintenance protocols in effect</span>")
+			occupant_message(span_danger("Maintenance protocols in effect"))
 			return
 		maint_access = !maint_access
 		send_byjax(usr,"exosuit.browser","t_maint_access","[maint_access?"Forbid":"Permit"] maintenance protocols")
@@ -320,7 +320,7 @@
 				occupant_message("Disconnected from the air system port.")
 				mecha_log_message("Disconnected from gas port.")
 			else
-				occupant_message("<span class='warning'>Unable to disconnect from the air system port!</span>")
+				occupant_message(span_warning("Unable to disconnect from the air system port!"))
 				return
 		else
 			var/obj/machinery/atmospherics/components/unary/portables_connector/possible_port = locate() in loc
@@ -328,7 +328,7 @@
 				occupant_message("Connected to the air system port.")
 				mecha_log_message("Connected to gas port.")
 			else
-				occupant_message("<span class='warning'>Unable to connect with air system port!</span>")
+				occupant_message(span_warning("Unable to connect with air system port!"))
 				return
 		send_byjax(occupant,"exosuit.browser","t_port_connection","[internal_tank.connected_port?"Disconnect from":"Connect to"] gas port")
 
@@ -337,7 +337,7 @@
 			return
 		var/mob/living/carbon/C = occupant
 		if(!istype(C) || !C.dna)
-			to_chat(C, "<span class='danger'> You do not have any DNA!</span>")
+			to_chat(C, span_danger(" You do not have any DNA!"))
 			return
 		if(can_be_locked)
 			dna_lock = C.dna.unique_enzymes
@@ -356,9 +356,9 @@
 		spawn(100)
 			if(T == loc)
 				clearInternalDamage(MECHA_INT_CONTROL_LOST)
-				occupant_message("<span class='notice'>Recalibration successful.</span>")
+				occupant_message(span_notice("Recalibration successful."))
 				mecha_log_message("Recalibration of coordination system finished with 0 errors.")
 			else
-				occupant_message("<span class='warning'>Recalibration failed!</span>")
+				occupant_message(span_warning("Recalibration failed!"))
 				mecha_log_message("Recalibration of coordination system failed with 1 error.", color="red")
 

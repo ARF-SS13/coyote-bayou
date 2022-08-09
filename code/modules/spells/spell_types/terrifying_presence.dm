@@ -16,13 +16,13 @@
 /obj/effect/proc_holder/spell/terrifying_presence/can_cast(mob/living/user = usr, skipcharge = FALSE, silent = TRUE)
 	if(!user.can_speak())
 		if(!silent)
-			to_chat(user, "<span class='warning'>You are unable to speak!</span>")
+			to_chat(user, span_warning("You are unable to speak!"))
 		return FALSE
 	if(!skipcharge && !charge_check(user, silent))
 		return FALSE
 	if(user.stat && !stat_allowed)
 		if(!silent)
-			to_chat(user, "<span class='notice'>Not when you're incapacitated.</span>")
+			to_chat(user, span_notice("Not when you're incapacitated."))
 		return FALSE
 	return TRUE
 

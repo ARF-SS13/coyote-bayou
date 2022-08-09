@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(bos_radios)
 	if(..())
 		return
 	if(!allowed(usr))
-		to_chat(usr, "<span class='warning'>Access denied.</span>")
+		to_chat(usr, span_warning("Access denied."))
 		return
 	usr.set_machine(src)
 	add_fingerprint(usr)
@@ -75,26 +75,26 @@ GLOBAL_LIST_EMPTY(bos_radios)
 /obj/machinery/radioterminal/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/wrench))
 		if(anchored)
-			to_chat(user, "<span class='notice'>You unsecure the terminal.</span>")
+			to_chat(user, span_notice("You unsecure the terminal."))
 			anchored = FALSE
 		else
-			to_chat(user, "<span class='notice'>You secure the terminal.</span>")
+			to_chat(user, span_notice("You secure the terminal."))
 			anchored = TRUE
 		update_icon()
 		return
 	if(istype(O, /obj/item/crowbar))
 		if(open)
-			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, span_notice("You close the maintenance panel."))
 			open = FALSE
 		else
-			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, span_notice("You open the maintenance panel."))
 			open = TRUE
 		update_icon()
 		return
 	if(istype(O, /obj/item/radio))
 		var/obj/item/radio/new_radio = O
 		if(new_radio.factionized && new_radio.linked_faction == assigned_faction && !new_radio.linked_mob)
-			to_chat(user, "<span class='notice'>The radio has been linked!</span>")
+			to_chat(user, span_notice("The radio has been linked!"))
 			new_radio.linked_mob = user
 			new_radio.kill_switched = FALSE
 			new_radio.Factionize()

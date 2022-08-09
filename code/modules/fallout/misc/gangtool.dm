@@ -25,7 +25,7 @@
 /obj/item/device/gangtool/attack_self(mob/user)
 	var/datum/gang/GA = user.gang
 	if(!GA || GA.leader != user || GA != gang)
-		to_chat(user, "<span class='warning'>Underground suppliers refuse to talk with you!</span>")
+		to_chat(user, span_warning("Underground suppliers refuse to talk with you!"))
 		return
 
 	var/dat
@@ -71,7 +71,7 @@
 /obj/item/device/gangtool/Topic(href, href_list)
 	var/datum/gang/GA = usr.gang
 	if(!GA || GA.leader != usr)
-		to_chat(usr, "<span class='warning'>Underground suppliers refuse to talk with you!</span>")
+		to_chat(usr, span_warning("Underground suppliers refuse to talk with you!"))
 		return
 
 	add_fingerprint(usr)

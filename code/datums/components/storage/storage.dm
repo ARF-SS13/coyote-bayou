@@ -212,14 +212,14 @@
 		things = typecache_filter_list(things, typecacheof(I.type))
 	var/len = length(things)
 	if(!len)
-		to_chat(M, "<span class='notice'>You failed to pick up anything with [parent].</span>")
+		to_chat(M, span_notice("You failed to pick up anything with [parent]."))
 		return
 	var/datum/progressbar/progress = new(M, len, I.loc)
 	var/list/rejections = list()
 	while(do_after(M, 10, TRUE, parent, FALSE, CALLBACK(src, .proc/handle_mass_pickup, things, I.loc, rejections, progress)))
 		stoplag(1)
 	qdel(progress)
-	to_chat(M, "<span class='notice'>You put everything you could [insert_preposition] [parent].</span>")
+	to_chat(M, span_notice("You put everything you could [insert_preposition] [parent]."))
 	A.do_squish(1.4, 0.4)
 
 /datum/component/storage/proc/handle_mass_item_insertion(list/things, datum/component/storage/src_object, mob/user, datum/progressbar/progress)
@@ -270,7 +270,7 @@
 	if(check_locked(null, M, TRUE))
 		return FALSE
 	A.add_fingerprint(M)
-	to_chat(M, "<span class='notice'>You start dumping out [parent].</span>")
+	to_chat(M, span_notice("You start dumping out [parent]."))
 	var/turf/T = get_turf(A)
 	var/list/things = contents()
 	var/datum/progressbar/progress = new(M, length(things), T)
@@ -492,21 +492,21 @@
 	if(!length(can_hold_extra) || !is_type_in_typecache(I, can_hold_extra))
 		if(length(can_hold) && !is_type_in_typecache(I, can_hold))
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
+				to_chat(M, span_warning("[host] cannot hold [I]!"))
 			return FALSE
 		if(is_type_in_typecache(I, cant_hold)) //Check for specific items which this container can't hold.
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[host] cannot hold [I]!</span>")
+				to_chat(M, span_warning("[host] cannot hold [I]!"))
 			return FALSE
 		if(storage_flags & STORAGE_LIMIT_MAX_W_CLASS && I.w_class > max_w_class)
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[I] is too long for [host]!</span>")
+				to_chat(M, span_warning("[I] is too long for [host]!"))
 			return FALSE
 		// STORAGE LIMITS
 	if(storage_flags & STORAGE_LIMIT_MAX_ITEMS)
 		if(real_location.contents.len >= max_items)
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[host] has too many things in it, make some space!</span>")
+				to_chat(M, span_warning("[host] has too many things in it, make some space!"))
 			return FALSE //Storage item is full
 	if(storage_flags & STORAGE_LIMIT_COMBINED_W_CLASS)
 		var/sum_w_class = I.w_class
@@ -514,7 +514,7 @@
 			sum_w_class += _I.w_class //Adds up the combined w_classes which will be in the storage item if the item is added to it.
 		if(sum_w_class > max_combined_w_class)
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[I] won't fit in [host], make some space!</span>")
+				to_chat(M, span_warning("[I] won't fit in [host], make some space!"))
 			return FALSE
 	if(storage_flags & STORAGE_LIMIT_VOLUME)
 		var/sum_volume = I.get_w_volume()
@@ -522,7 +522,7 @@
 			sum_volume += _I.get_w_volume()
 		if(sum_volume > get_max_volume())
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[I] is too spacious to fit in [host], make some space!</span>")
+				to_chat(M, span_warning("[I] is too spacious to fit in [host], make some space!"))
 			return FALSE
 	/////////////////
 	if(isitem(host))
@@ -530,10 +530,10 @@
 		var/datum/component/storage/STR_I = I.GetComponent(/datum/component/storage)
 		if((I.w_class >= IP.w_class) && STR_I && !allow_big_nesting)
 			if(!stop_messages)
-				to_chat(M, "<span class='warning'>[IP] cannot hold [I] as it's a storage item of the same size!</span>")
+				to_chat(M, span_warning("[IP] cannot hold [I] as it's a storage item of the same size!"))
 			return FALSE //To prevent the stacking of same sized storage items.
 	if(HAS_TRAIT(I, TRAIT_NODROP)) //SHOULD be handled in unEquip, but better safe than sorry.
-		to_chat(M, "<span class='warning'>\the [I] is stuck to your hand, you can't put it in \the [host]!</span>")
+		to_chat(M, span_warning("\the [I] is stuck to your hand, you can't put it in \the [host]!"))
 		return FALSE
 	var/datum/component/storage/concrete/master = master()
 	if(!istype(master))
@@ -562,12 +562,12 @@
 		return
 	if(rustle_sound)
 		playsound(parent, "rustle", 50, 1, -5)
-	to_chat(user, "<span class='notice'>You put [I] [insert_preposition]to [parent].</span>")
+	to_chat(user, span_notice("You put [I] [insert_preposition]to [parent]."))
 	for(var/mob/viewing in fov_viewers(world.view, user)-M)
 		if(in_range(M, viewing)) //If someone is standing close enough, they can tell what it is...
-			viewing.show_message("<span class='notice'>[M] puts [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent]."), MSG_VISUAL)
 		else if(I && I.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
-			viewing.show_message("<span class='notice'>[M] puts [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message(span_notice("[M] puts [I] [insert_preposition]to [parent]."), MSG_VISUAL)
 
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))
@@ -594,7 +594,7 @@
 /datum/component/storage/proc/check_locked(datum/source, mob/user, message = FALSE)
 	. = locked
 	if(message && . && user)
-		to_chat(user, "<span class='warning'>[parent] seems to be locked!</span>")
+		to_chat(user, span_warning("[parent] seems to be locked!"))
 
 /datum/component/storage/proc/signal_take_type(datum/source, type, atom/destination, amount = INFINITY, check_adjacent = FALSE, force = FALSE, mob/user, list/inserted)
 	if(!force)
@@ -689,10 +689,10 @@
 		A.add_fingerprint(user)
 		remove_from_storage(I, get_turf(user))
 		if(!user.put_in_hands(I))
-			user.visible_message("<span class='warning'>[user] fumbles with the [parent], letting [I] fall on the floor.</span>", \
-								"<span class='notice'>You fumble with [parent], letting [I] fall on the floor.</span>")
+			user.visible_message(span_warning("[user] fumbles with the [parent], letting [I] fall on the floor."), \
+								span_notice("You fumble with [parent], letting [I] fall on the floor."))
 			return TRUE
-		user.visible_message("<span class='warning'>[user] draws [I] from [parent]!</span>", "<span class='notice'>You draw [I] from [parent].</span>")
+		user.visible_message(span_warning("[user] draws [I] from [parent]!"), span_notice("You draw [I] from [parent]."))
 		return TRUE
 
 /datum/component/storage/proc/action_trigger(datum/action/source, obj/target)

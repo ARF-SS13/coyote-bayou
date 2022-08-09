@@ -78,7 +78,7 @@
 				if(obj_flags & EMAGGED)
 					authenticated = 2
 					auth_id = "Unknown"
-					to_chat(M, "<span class='warning'>[src] lets out a quiet alarm as its login is overridden.</span>")
+					to_chat(M, span_warning("[src] lets out a quiet alarm as its login is overridden."))
 					playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 					playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
 					if(prob(25))
@@ -97,7 +97,7 @@
 			if (I && istype(I))
 				if(ACCESS_CAPTAIN in I.access)
 					if(security_level_cd > world.time)
-						to_chat(usr, "<span class='warning'>Security level protocols are currently on cooldown. Please stand by.</span>")
+						to_chat(usr, span_warning("Security level protocols are currently on cooldown. Please stand by."))
 						return
 					var/old_level = GLOB.security_level
 					if(!tmp_alertlevel)
@@ -109,7 +109,7 @@
 					set_security_level(tmp_alertlevel)
 					security_level_cd = world.time + 15 SECONDS
 					if(GLOB.security_level != old_level)
-						to_chat(usr, "<span class='notice'>Authorization confirmed. Modifying security level.</span>")
+						to_chat(usr, span_notice("Authorization confirmed. Modifying security level."))
 						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 						//Only notify people if an actual change happened
 						var/security_level = NUM2SECLEVEL(GLOB.security_level)
@@ -118,12 +118,12 @@
 						deadchat_broadcast("<span class='deadsay'><span class='name'>[usr.real_name]</span> has changed the security level to [security_level] with [src] at <span class='name'>[get_area_name(usr, TRUE)]</span>.</span>", usr)
 					tmp_alertlevel = 0
 				else
-					to_chat(usr, "<span class='warning'>You are not authorized to do this!</span>")
+					to_chat(usr, span_warning("You are not authorized to do this!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					tmp_alertlevel = 0
 				state = STATE_DEFAULT
 			else
-				to_chat(usr, "<span class='warning'>You need to swipe your ID!</span>")
+				to_chat(usr, span_warning("You need to swipe your ID!"))
 				playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 
 		if("announce")
@@ -135,7 +135,7 @@
 			if(authenticated==2)
 				var/dest = href_list["cross_dest"]
 				if(!checkCCcooldown())
-					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
+					to_chat(usr, span_warning("Arrays recycling. Please stand by."))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				var/warning = dest == "all" ? "Please choose a message to transmit to allied stations." : "Please choose a message to transmit to [dest] sector station."
@@ -162,12 +162,12 @@
 				var/datum/map_template/shuttle/S = locate(href_list["chosen_shuttle"]) in shuttles
 				if(S && istype(S))
 					if(SSshuttle.emergency.mode != SHUTTLE_RECALL && SSshuttle.emergency.mode != SHUTTLE_IDLE)
-						to_chat(usr, "<span class='alert'>It's a bit late to buy a new shuttle, don't you think?</span>")
+						to_chat(usr, span_alert("It's a bit late to buy a new shuttle, don't you think?"))
 						return
 					if(SSshuttle.shuttle_purchased)
-						to_chat(usr, "<span class='alert'>A replacement shuttle has already been purchased.</span>")
+						to_chat(usr, span_alert("A replacement shuttle has already been purchased."))
 					else if(!S.prerequisites_met())
-						to_chat(usr, "<span class='alert'>You have not met the requirements for purchasing this shuttle.</span>")
+						to_chat(usr, span_alert("You have not met the requirements for purchasing this shuttle."))
 					else
 						var/points_to_check
 						var/datum/bank_account/D = SSeconomy.get_dep_account(ACCOUNT_CAR)
@@ -185,7 +185,7 @@
 							log_shuttle("[key_name(usr)] has purchased [S.name].")
 							SSblackbox.record_feedback("text", "shuttle_purchase", 1, "[S.name]")
 						else
-							to_chat(usr, "<span class='alert'>Insufficient credits.</span>")
+							to_chat(usr, span_alert("Insufficient credits."))
 
 		if("callshuttle")
 			state = STATE_DEFAULT
@@ -290,14 +290,14 @@
 		if("MessageCentCom")
 			if(authenticated)
 				if(!checkCCcooldown())
-					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
+					to_chat(usr, span_warning("Arrays recycling. Please stand by."))
 					return
 				var/input = stripped_input(usr, "Please choose a message to transmit to CentCom via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination.  Transmission does not guarantee a response.", "Send a message to CentCom.", "")
 				if(!input || !(usr in view(1,src)) || !checkCCcooldown())
 					return
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 				CentCom_announce(input, usr)
-				to_chat(usr, "<span class='notice'>Message transmitted to Central Command.</span>")
+				to_chat(usr, span_notice("Message transmitted to Central Command."))
 				for(var/client/X in GLOB.admins)
 					if(X.prefs.toggles & SOUND_ADMINHELP)
 						SEND_SOUND(X, sound('sound/effects/printer.ogg'))
@@ -310,7 +310,7 @@
 		if("MessageSyndicate")
 			if((authenticated) && (obj_flags & EMAGGED))
 				if(!checkCCcooldown())
-					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
+					to_chat(usr, span_warning("Arrays recycling. Please stand by."))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
 				var/input = stripped_input(usr, "Please choose a message to transmit to \[ABNORMAL ROUTING COORDINATES\] via quantum entanglement.  Please be aware that this process is very expensive, and abuse will lead to... termination. Transmission does not guarantee a response.", "Send a message to /??????/.", "")
@@ -318,7 +318,7 @@
 					return
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 				Syndicate_announce(input, usr)
-				to_chat(usr, "<span class='danger'>SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND.</span>")
+				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ MESSAGE TRANSMITTED TO SYNDICATE COMMAND."))
 				for(var/client/X in GLOB.admins)
 					if(X.prefs.toggles & SOUND_ADMINHELP)
 						SEND_SOUND(X, sound('sound/effects/printer.ogg'))
@@ -328,7 +328,7 @@
 				CM.lastTimeUsed = world.time
 
 		if("RestoreBackup")
-			to_chat(usr, "<span class='notice'>Backup routing data restored!</span>")
+			to_chat(usr, span_notice("Backup routing data restored!"))
 			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			obj_flags &= ~EMAGGED
 			updateDialog()
@@ -336,13 +336,13 @@
 		if("nukerequest") //When there's no other way
 			if(authenticated==2)
 				if(!checkCCcooldown())
-					to_chat(usr, "<span class='warning'>Arrays recycling. Please stand by.</span>")
+					to_chat(usr, span_warning("Arrays recycling. Please stand by."))
 					return
 				var/input = stripped_input(usr, "Please enter the reason for requesting the nuclear self-destruct codes. Misuse of the nuclear request system will not be tolerated under any circumstances.  Transmission does not guarantee a response.", "Self-Destruct Code Request.","")
 				if(!input || !(usr in view(1,src)) || !checkCCcooldown())
 					return
 				Nuke_request(input, usr)
-				to_chat(usr, "<span class='notice'>Request sent.</span>")
+				to_chat(usr, span_notice("Request sent."))
 				usr.log_message("has requested the nuclear codes from CentCom with reason \"[input]\"", LOG_SAY)
 				priority_announce("The codes for the on-station nuclear self-destruct have been requested by [usr]. Confirmation or denial of this request will be sent shortly.", "Nuclear Self Destruct Codes Requested","commandreport")
 				CM.lastTimeUsed = world.time
@@ -396,7 +396,7 @@
 			make_announcement(usr, 1)
 		if("ai-securitylevel")
 			if(security_level_cd > world.time)
-				to_chat(usr, "<span class='warning'>Security level protocols are currently on cooldown. Please stand by.</span>")
+				to_chat(usr, span_warning("Security level protocols are currently on cooldown. Please stand by."))
 				return
 			tmp_alertlevel = text2num( href_list["newalertlevel"] )
 			if(!tmp_alertlevel)
@@ -451,7 +451,7 @@
 	SSshuttle.shuttle_purchase_requirements_met |= "emagged"
 	if(authenticated == 1)
 		authenticated = 2
-	to_chat(user, "<span class='danger'>You scramble the communication routing circuits!</span>")
+	to_chat(user, span_danger("You scramble the communication routing circuits!"))
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
 	return TRUE
 
@@ -731,14 +731,14 @@
 
 /obj/machinery/computer/communications/proc/make_announcement(mob/living/user, is_silicon)
 	if(!SScommunications.can_announce(user, is_silicon))
-		to_chat(user, "<span class='alert'>Intercomms recharging. Please stand by.</span>")
+		to_chat(user, span_alert("Intercomms recharging. Please stand by."))
 		return
 	var/input = stripped_input(user, "Please choose a message to announce to the station crew.", "What?")
 	if(!input || !user.canUseTopic(src, !issilicon(usr)))
 		return
 	if(!(user.can_speak())) //No more cheating, mime/random mute guy!
 		input = "..."
-		to_chat(user, "<span class='warning'>You find yourself unable to speak.</span>")
+		to_chat(user, span_warning("You find yourself unable to speak."))
 	else
 		input = user.treat_message(input) //Adds slurs and so on. Someone should make this use languages too.
 	SScommunications.make_announcement(user, is_silicon, input)

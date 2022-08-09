@@ -85,7 +85,7 @@
 			for(var/mob/living/carbon/C in T)
 				C.adjust_fire_stacks(fire_stacks)
 				C.IgniteMob()
-				to_chat(C, "<span class='userdanger'>The incendiary grenade sets you ablaze!</span>")
+				to_chat(C, span_userdanger("The incendiary grenade sets you ablaze!"))
 				C.emote("scream")
 	qdel(src)
 

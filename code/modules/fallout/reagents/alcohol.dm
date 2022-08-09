@@ -151,7 +151,7 @@
 /datum/reagent/consumable/ethanol/deathroach/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		var/drink_message = pick("You feel rugged.", "You feel manly.","You feel western.","You feel like a madman.")
-		to_chat(M, "<span class='notice'>[drink_message]</span>")
+		to_chat(M, span_notice("[drink_message]"))
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
@@ -296,7 +296,7 @@
 /datum/reagent/consumable/ethanol/nukabomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustBruteLoss(-6*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -341,7 +341,7 @@
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
 	if(prob(20))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -472,7 +472,7 @@
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>EXTREME</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
 	if(prob(100))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -609,7 +609,7 @@
 		M.playsound_local(M, 'sound/f13effects/explosion_2.ogg', 100, 0)
 	var/high_message = pick("<br><font color='#FF0000'><b><BIG>FUCKING KILL!<BIG></b></font>", "<br><font color='#FF0000'><b><BIG>RAAAAR!<BIG></b></font>", "<br><font color='#FF0000'><b><BIG>BRING IT!<BIG></b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.hallucination += 40
 	M.Jitter(2)
 	if(iscarbon(M))
@@ -641,7 +641,7 @@
 /datum/reagent/consumable/ethanol/bbrew/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>WAR</b></font>", "<br><font color='#FF0000'><b>GLORY</b></font>", "<br><font color='#FF0000'><b>OOORAH</b></font>")
 	if(prob(10))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustKnockdown(-40, 0)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
@@ -721,7 +721,7 @@
 	M.adjust_bodytemperature(heating)
 	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	if(prob(50))
-		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+		M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
 
 /datum/reagent/consumable/ethanol/firecracker
@@ -837,7 +837,7 @@
 /datum/reagent/consumable/ethanol/oldpossum/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>eat the possum</b></font>")
 	if(prob(0.1))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
@@ -932,7 +932,7 @@
 /datum/reagent/consumable/ethanol/atombomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	if(prob(50))
 		M.playsound_local(M, 'sound/f13effects/explosion_fire.ogg', 100, 0)
 	if(prob(50))
@@ -991,7 +991,7 @@
 /datum/reagent/consumable/ethanol/henessey/on_mob_delete(mob/living/M)
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	REMOVE_TRAIT(M, TRAIT_IRONFIST, "[type]")
-	to_chat(M, "<span class='danger'>You feel light-headed as you start to return to your senses.</span>")
+	to_chat(M, span_danger("You feel light-headed as you start to return to your senses."))
 	M.Dizzy(5)
 	M.blur_eyes(5)
 	if(rage)
@@ -1132,7 +1132,7 @@
 /datum/reagent/consumable/ethanol/corporate/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#006600'><b>Business!</b></font>, <br><font color='#006600'><b>Sales!</b></font>, <br><font color='#006600'><b>Profit!</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.Jitter(100)
 	M.dizziness +=5
 	M.drowsyness = 0
@@ -1154,7 +1154,7 @@
 /datum/reagent/consumable/ethanol/ranchwhiskey/on_mob_life(mob/living/carbon/M)
 	if(prob(50))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)

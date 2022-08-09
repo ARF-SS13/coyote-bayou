@@ -45,15 +45,15 @@
 /obj/item/stake/basic/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/weldingtool))
 		//if (amWelded)
-		//	to_chat(user, "<span class='warning'>This stake has already been treated with fire.</span>")
+		//	to_chat(user, span_warning("This stake has already been treated with fire."))
 		//	return
 		//amWelded = TRUE
 		// Weld it
 		var/obj/item/weldingtool/WT = W
 		if(WT.use(0))//remove_fuel(0,user))
 			user.visible_message("[user.name] scorched the pointy end of [src] with the welding tool.", \
-						"<span class='notice'>You scorch the pointy end of [src] with the welding tool.</span>", \
-						"<span class='italics'>You hear welding.</span>")
+						span_notice("You scorch the pointy end of [src] with the welding tool."), \
+						span_italic("You hear welding."))
 		// 8 Second Timer
 		if(!do_mob(user, src, 80))
 			return
@@ -65,27 +65,27 @@
 		return ..()
 
 /obj/item/stake/afterattack(atom/target, mob/user, proximity)
-	//to_chat(world, "<span class='notice'>DEBUG: Staking </span>")
+	//to_chat(world, span_notice("DEBUG: Staking "))
 	// Invalid Target, or not targetting chest with HARM intent?
 	if(!iscarbon(target) || check_zone(user.zone_selected) != "chest" || user.a_intent != INTENT_HARM)
 		return
 	var/mob/living/carbon/C = target
 	// Needs to be Down/Slipped in some way to Stake.
 	if(!C.can_be_staked() || target == user)
-		to_chat(user, "<span class='danger'>You can't stake [target] when they are moving about! They have to be laying down or grabbed by the neck!</span>")
+		to_chat(user, span_danger("You can't stake [target] when they are moving about! They have to be laying down or grabbed by the neck!"))
 		return
 			// Oops! Can't.
 	if(HAS_TRAIT(C, TRAIT_PIERCEIMMUNE))
-		to_chat(user, "<span class='danger'>[target]'s chest resists the stake. It won't go in.</span>")
+		to_chat(user, span_danger("[target]'s chest resists the stake. It won't go in."))
 		return
 	// Make Attempt...
-	to_chat(user, "<span class='notice'>You put all your weight into embedding the stake into [target]'s chest...</span>")
+	to_chat(user, span_notice("You put all your weight into embedding the stake into [target]'s chest..."))
 	playsound(user, 'sound/magic/Demon_consume.ogg', 50, 1)
 	if(!do_mob(user, C, staketime, 0, 1, extra_checks=CALLBACK(C, /mob/living/carbon/proc/can_be_staked))) // user / target / time / uninterruptable / show progress bar / extra checks
 		return
 	// Drop & Embed Stake
-	user.visible_message("<span class='danger'>[user.name] drives the [src] into [target]'s chest!</span>", \
-			"<span class='danger'>You drive the [src] into [target]'s chest!</span>")
+	user.visible_message(span_danger("[user.name] drives the [src] into [target]'s chest!"), \
+			span_danger("You drive the [src] into [target]'s chest!"))
 	playsound(get_turf(target), 'sound/effects/splat.ogg', 40, 1)
 	user.dropItemToGround(src, TRUE) //user.drop_item() // "drop item" doesn't seem to exist anymore. New proc is user.dropItemToGround() but it doesn't seem like it's needed now?
 	var/obj/item/bodypart/B = C.get_bodypart("chest")  // This was all taken from hitby() in human_defense.dm
@@ -102,8 +102,8 @@
 				bloodsucker.FinalDeath()
 				return
 			else
-				to_chat(target, "<span class='userdanger'>You have been staked! Your powers are useless, your death forever, while it remains in place.</span>")
-				to_chat(user, "<span class='warning'>You missed [C.p_their(TRUE)]'s heart! It would be easier if [C.p_they(TRUE)] weren't struggling so much.</span>")
+				to_chat(target, span_userdanger("You have been staked! Your powers are useless, your death forever, while it remains in place."))
+				to_chat(user, span_warning("You missed [C.p_their(TRUE)]'s heart! It would be easier if [C.p_they(TRUE)] weren't struggling so much."))
 
 // Can this target be staked? If someone stands up before this is complete, it fails. Best used on someone stationary.
 /mob/living/carbon/proc/can_be_staked()
@@ -150,7 +150,7 @@
 				if(S.amount >= S.max_amount)
 					continue
 				S.attackby(newsheet, user)
-			to_chat(user, "<span class='notice'>You melt down the stake and add it to the stack. It now contains [newsheet.amount] sheet\s.</span>")
+			to_chat(user, span_notice("You melt down the stake and add it to the stack. It now contains [newsheet.amount] sheet\s."))
 			qdel(src)
 	else
 		return ..()

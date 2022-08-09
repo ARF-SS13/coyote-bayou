@@ -428,13 +428,13 @@
 	INVOKE_ASYNC(door, /obj/structure/mineral_door.proc/Open)
 	var/turf/T = get_turf(door)
 	wearer.forceMove(T)
-	wearer.visible_message("<span class='boldnotice'>[wearer] rolls to [wearer.p_their()] sides and slips past [door]!</span>")
+	wearer.visible_message(span_boldnotice("[wearer] rolls to [wearer.p_their()] sides and slips past [door]!"))
 
 /obj/item/flightpack/proc/crash_grille(obj/structure/grille/target)
 	target.hitby(wearer)
 	target.take_damage(60, BRUTE, "melee", 1)
 	if(wearer.Move(target.loc))
-		wearer.visible_message("<span class='warning'>[wearer] smashes straight past [target]!</span>")
+		wearer.visible_message(span_warning("[wearer] smashes straight past [target]!"))
 
 /obj/item/flightpack/proc/airlock_pass(obj/machinery/door/A)
 	var/nopass = FALSE
@@ -446,7 +446,7 @@
 			nopass = TRUE
 	if(!nopass)
 		INVOKE_ASYNC(A, /obj/machinery/door.proc/open)
-		wearer.visible_message("<span class='warning'>[wearer] rolls sideways and slips past [A]</span>")
+		wearer.visible_message(span_warning("[wearer] rolls sideways and slips past [A]"))
 		var/turf/target = get_turf(A)
 		if(istype(A, /obj/machinery/door/window) && (get_turf(wearer) == get_turf(A)))
 			target = get_step(A, A.dir)
@@ -458,7 +458,7 @@
 		return FALSE
 	if(!victim.anchored)
 		var/knockback = (power + ((part_manip.rating + part_bin.rating) / 2) - (victim.density * 2)) * 2
-		victim.visible_message("<span class='warning'>[victim.name] is sent flying by the impact!</span>")
+		victim.visible_message(span_warning("[victim.name] is sent flying by the impact!"))
 		var/turf/target = get_turf(victim)
 		for(var/i in 1 to knockback)
 			target = get_step(target, direction)
@@ -472,14 +472,14 @@
 /obj/item/flightpack/proc/losecontrol(knockdown = FALSE, move = TRUE)
 	usermessage("Warning: Control system not responding. Deactivating!", "boldwarning")
 	if(wearer)
-		wearer.visible_message("<span class='warning'>[wearer]'s flight suit abruptly shuts off and [wearer.p_they()] lose[wearer.p_s()] control!</span>")
+		wearer.visible_message(span_warning("[wearer]'s flight suit abruptly shuts off and [wearer.p_they()] lose[wearer.p_s()] control!"))
 		if(move)
 			while(momentum_x != 0 || momentum_y != 0)
 				sleep(2)
 				step(wearer, pick(GLOB.cardinals))
 				momentum_decay()
 				adjust_momentum(0, 0, 10)
-		wearer.visible_message("<span class='warning'>[wearer]'s flight suit crashes into the ground!</span>")
+		wearer.visible_message(span_warning("[wearer]'s flight suit crashes into the ground!"))
 		if(knockdown)
 			wearer.Knockdown(80)
 	momentum_x = 0
@@ -854,7 +854,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/flightsuit/proc/lock_suit(mob/wearer)
 	user = wearer
-	user.visible_message("<span class='notice'>[wearer]'s flight suit locks around [wearer.p_them()], powered buckles and straps automatically adjusting to [wearer.p_their()] body!</span>")
+	user.visible_message(span_notice("[wearer]'s flight suit locks around [wearer.p_them()], powered buckles and straps automatically adjusting to [wearer.p_their()] body!"))
 	playsound(src.loc, 'sound/items/rped.ogg', 65, 1)
 	resync()
 	strip_delay = locked_strip_delay
@@ -876,7 +876,7 @@
 			usermessage("Your flight shoes must be fully retracted first!", "boldwarning")
 			return FALSE
 		if(wearer)
-			user.visible_message("<span class='notice'>[wearer]'s flight suit detaches from [wearer.p_their()] body, becoming nothing more then a bulky metal skeleton.</span>")
+			user.visible_message(span_notice("[wearer]'s flight suit detaches from [wearer.p_their()] body, becoming nothing more then a bulky metal skeleton."))
 	playsound(src, 'sound/items/rped.ogg', 65, 1)
 	resync()
 	strip_delay = initial(strip_delay)
@@ -899,7 +899,7 @@
 		user.equip_to_slot_if_possible(pack,SLOT_BACK,0,0,1)
 		pack.item_flags |= NODROP
 		resync()
-		user.visible_message("<span class='notice'>A [pack.name] extends from [user]'s [name] and clamps to [user.p_their()] back!</span>")
+		user.visible_message(span_notice("A [pack.name] extends from [user]'s [name] and clamps to [user.p_their()] back!"))
 		user.update_inv_wear_suit()
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
 	deployedpack = TRUE
@@ -916,7 +916,7 @@
 		if(user)
 			user.transferItemToLoc(pack, src, TRUE)
 			user.update_inv_wear_suit()
-			user.visible_message("<span class='notice'>[user]'s [pack.name] detaches from [user.p_their()] back and retracts into [user.p_their()] [src]!</span>")
+			user.visible_message(span_notice("[user]'s [pack.name] detaches from [user.p_their()] back and retracts into [user.p_their()] [src]!"))
 	pack.forceMove(src)
 	playsound(src, 'sound/mecha/mechmove03.ogg', 50, 1)
 	deployedpack = FALSE
@@ -936,7 +936,7 @@
 			return FALSE
 		user.equip_to_slot_if_possible(shoes,SLOT_SHOES,0,0,1)
 		shoes.item_flags |= NODROP
-		user.visible_message("<span class='notice'>[user]'s [name] extends a pair of [shoes.name] over [user.p_their()] feet!</span>")
+		user.visible_message(span_notice("[user]'s [name] extends a pair of [shoes.name] over [user.p_their()] feet!"))
 		user.update_inv_wear_suit()
 	playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
 	deployedshoes = TRUE
@@ -947,7 +947,7 @@
 	if(user)
 		user.transferItemToLoc(shoes, src, TRUE)
 		user.update_inv_wear_suit()
-		user.visible_message("<span class='notice'>[user]'s [shoes.name] retracts back into [user.p_their()] [name]!</span>")
+		user.visible_message(span_notice("[user]'s [shoes.name] retracts back into [user.p_their()] [name]!"))
 	shoes.forceMove(src)
 	deployedshoes = FALSE
 
@@ -1109,11 +1109,11 @@
 /obj/item/clothing/head/helmet/space/hardsuit/flightsuit/proc/toggle_zoom(mob/living/user, force_off = FALSE)
 	if(zoom || force_off)
 		user.client.change_view(CONFIG_GET(string/default_view))
-		to_chat(user, "<span class='boldnotice'>Disabling smart zooming image enhancement...</span>")
+		to_chat(user, span_boldnotice("Disabling smart zooming image enhancement..."))
 		zoom = FALSE
 		return FALSE
 	else
 		user.client.change_view(zoom_range)
-		to_chat(user, "<span class='boldnotice'>Enabling smart zooming image enhancement!</span>")
+		to_chat(user, span_boldnotice("Enabling smart zooming image enhancement!"))
 		zoom = TRUE
 		return TRUE

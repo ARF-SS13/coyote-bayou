@@ -26,7 +26,7 @@
 /mob/living/carbon/human/proc/resume_bleeding()
 	bleedsuppress = 0
 	if(stat != DEAD && is_bleeding())
-		to_chat(src, "<span class='warning'>The blood soaks through your bandage.</span>")
+		to_chat(src, span_warning("The blood soaks through your bandage."))
 
 GLOBAL_LIST_INIT(blood_loss_messages, list(
 	BLOOD_ANEMIA_MESSAGE_WARN = list(

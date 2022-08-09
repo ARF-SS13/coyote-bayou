@@ -183,7 +183,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return FALSE
 	if(world.time < loadprefcooldown)
 		if(istype(parent))
-			to_chat(parent, "<span class='warning'>You're attempting to load your preferences a little too fast. Wait half a second, then try again.</span>")
+			to_chat(parent, span_warning("You're attempting to load your preferences a little too fast. Wait half a second, then try again."))
 		return FALSE
 	loadprefcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	if(!fexists(path))
@@ -359,7 +359,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return 0
 	if(world.time < saveprefcooldown)
 		if(istype(parent))
-			to_chat(parent, "<span class='warning'>You're attempting to save your preferences a little too fast. Wait half a second, then try again.</span>")
+			to_chat(parent, span_warning("You're attempting to save your preferences a little too fast. Wait half a second, then try again."))
 		return 0
 	saveprefcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
@@ -429,7 +429,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return FALSE
 	if(world.time < loadcharcooldown) //This is before the check to see if the filepath exists to ensure that BYOND can't get hung up on read attempts when the hard drive is a little slow
 		if(istype(parent))
-			to_chat(parent, "<span class='warning'>You're attempting to load your character a little too fast. Wait half a second, then try again.</span>")
+			to_chat(parent, span_warning("You're attempting to load your character a little too fast. Wait half a second, then try again."))
 		return "SLOW THE FUCK DOWN" //the reason this isn't null is to make sure that people don't have their character slots overridden by random chars if they accidentally double-click a slot
 	loadcharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	if(!fexists(path))
@@ -594,6 +594,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["feature_cock_visibility"]		>> features["cock_visibility"]
 	//balls features
 	S["feature_has_balls"]				>> features["has_balls"]
+	S["feature_balls_shape"]			>> features["balls_shape"]
 	S["feature_balls_color"]			>> features["balls_color"]
 	S["feature_balls_size"]				>> features["balls_size"]
 	S["feature_balls_visibility"]		>> features["balls_visibility"]
@@ -817,7 +818,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return 0
 	if(world.time < savecharcooldown)
 		if(istype(parent))
-			to_chat(parent, "<span class='warning'>You're attempting to save your character a little too fast. Wait half a second, then try again.</span>")
+			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)

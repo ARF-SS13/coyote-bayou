@@ -209,6 +209,7 @@
 	do_medical_message(user, C, "end", is_skilled, bandage_output)
 	return TRUE
 
+<<<<<<< HEAD
 /// Returns if the user is skilled enough to use this thing effectively
 /obj/item/stack/medical/proc/is_skilled_enough(mob/user, mob/target)
 	if(!needed_trait)
@@ -245,6 +246,72 @@
 		. *= unskilled_speed_mult
 
 /obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, which_message, is_skilled, bandage_code)
+=======
+
+/// Checks the limb for things we can do to it
+/// Returns a string if the limb is certainly not suitable for healing
+/// Returns a bitfield if the limb can be healed
+/// Returns 0 if the limb just doesnt need healing
+/obj/item/stack/medical/proc/check_bodypart(mob/living/carbon/C, obj/item/bodypart/target_bodypart, output_message = FALSE)
+	if(!iscarbon(C))
+		return output_message ? CARBON_ISNT : UNABLE_TO_HEAL
+	if(!target_bodypart || !istype(target_bodypart, /obj/item/bodypart))
+		return output_message ? BODYPART_MISSING : UNABLE_TO_HEAL
+	if(target_bodypart.status != BODYPART_ORGANIC)
+		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
+	/// Okay we can reasonably assume this limb is okay to try and treat
+	. = BODYPART_FINE
+	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
+		. |= DO_HEAL_DAMAGE
+	for(var/datum/wound/woundies in target_bodypart.wounds)
+		//if(absorption_rate || absorption_capacity)
+		//	 if(woundies.wound_flags & ACCEPTS_GAUZE)
+		//		. |= DO_APPLY_BANDAGE
+		if(stop_bleeding)
+			if(woundies.blood_flow)
+				. |= DO_UNBLEED_WOUND
+	for(var/datum/wound/burn/burndies in target_bodypart.wounds)
+		if(sanitization || flesh_regeneration)
+			if(burndies.flesh_damage || burndies.infestation)
+				. |= DO_UNBURN_WOUND
+
+/// Returns a bodypart and a bitfield in a list with the first valid bodypart we can work on
+/// Returns just a number (FALSE) if nothing is found
+/obj/item/stack/medical/proc/pick_a_bodypart(mob/living/carbon/C, mob/user)
+	var/obj/item/bodypart/first_choice = C.get_bodypart(check_zone(user.zone_selected))
+	var/do_these_things = check_bodypart(C, first_choice, TRUE)
+	var/list/output_heal_instructions = list("bodypart" = UNABLE_TO_HEAL, "operations" = UNABLE_TO_HEAL)
+	// shouldnt happen, but just in case
+	if(do_these_things == CARBON_ISNT)
+		to_chat(user, span_warning("That can't be healed with this!"))
+		return output_heal_instructions
+
+	// limb is missing, output a message and move on
+	if(do_these_things == BODYPART_MISSING)
+		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
+
+	// limb is missing, output a message and move on
+	if(do_these_things == BODYPART_INORGANIC)
+		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
+	
+	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
+	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
+		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
+		return output_heal_instructions
+	
+	// Part wasn't there, or needed no healing. Lets find one that does need healing!
+	var/obj/item/bodypart/affecting
+	for(var/limb_slot_to_check in GLOB.main_body_parts)
+		if(limb_slot_to_check == user.zone_selected)
+			continue // We already checked this, dont check again
+		affecting = C.get_bodypart(check_zone(limb_slot_to_check))
+		do_these_things = check_bodypart(C, affecting)
+		if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
+			return output_heal_instructions = list("bodypart" = affecting, "operations" = do_these_things)
+	return output_heal_instructions
+
+/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, which_message)
+>>>>>>> upstream/master
 	if(!user || !target)
 		return
 	switch(which_message)
@@ -366,7 +433,11 @@
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
 					span_notice("You cut [src] into pieces of cloth with [I]."), \
+<<<<<<< HEAD
 					"You hear cutting.")
+=======
+					span_italic("You hear cutting."))
+>>>>>>> upstream/master
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10))

@@ -141,7 +141,7 @@
 	var/datum/effect_system/spark_spread/s = new
 	s.set_up(2, 1, source)
 	s.start()
-	owner.visible_message("<span class='danger'>[holder]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	owner.visible_message(span_danger("[holder]'s shields deflect [attack_text] in a shower of sparks!"))
 	charges--
 	var/rounded_charges = round(charges)
 	if(recharge_delay && recharge_rate && !dissipating)
@@ -173,7 +173,7 @@
 	var/datum/effect_system/spark_spread/s = new
 	s.set_up(2, 1, source)
 	s.start()
-	source.visible_message("<span class='danger'>[source]'s shields deflect [attack_text] in a shower of sparks!</span>")
+	source.visible_message(span_danger("[source]'s shields deflect [attack_text] in a shower of sparks!"))
 	charges--
 	var/rounded_charges = round(charges)
 	if(recharge_delay && recharge_rate && !dissipating)

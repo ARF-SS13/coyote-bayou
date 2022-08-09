@@ -138,7 +138,7 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message("<span class='notice'>[user] scroops up some snow from [src].</span>", "<span class='notice'>You scoop up some snow from [src].</span>")
+	user.visible_message(span_notice("[user] scroops up some snow from [src]."), span_notice("You scoop up some snow from [src]."))
 	var/obj/item/toy/snowball/S = new(get_turf(src))
 	user.put_in_hands(S)
 
