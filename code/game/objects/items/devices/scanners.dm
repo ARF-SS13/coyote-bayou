@@ -448,9 +448,9 @@ GENETICS SCANNER
 					msg += span_danger("<u>Subject is bleeding!</u>\n")
 					for(var/obj/item/bodypart/BP in C.bodyparts)
 						for(var/datum/wound/bleed/bloody_wound in BP.wounds)
-							var/bleeding_amount = bloody_wound.get_blood_flow()
+							var/bleeding_amount = round(bloody_wound.get_blood_flow(TRUE), 0.25)
 							if(bleeding_amount)
-								msg += span_warning("\improper[BP] blood loss: [bleeding_amount]u.\n")
+								msg += span_warning("\improper[BP] - [bloody_wound]: [bleeding_amount]u.\n")
 					msg += "\n"
 			switch(scanned_blood_volume)
 				if(BLOOD_VOLUME_SAFE to INFINITY)

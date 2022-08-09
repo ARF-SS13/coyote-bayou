@@ -82,9 +82,27 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define WOUND_BLEED_SEVERE_BLOOD_LOSS_MULTIPLIER 0.1
 /// Multiplier for critical wounds to slow down bleeding by below the blood volume threshold
 #define WOUND_BLEED_CRITICAL_BLOOD_LOSS_MULTIPLIER 0.05
+/// Multiplier for all wounds to slow down bleeding by if they're lying down
+#define WOUND_BLEED_LYING_DOWN_MULTIPLIER 0.75
+
+/// Max time an improvised bandage will stay on someone before falling off
+#define BANDAGE_POOR_MAX_DURATION 10 MINUTES
+/// Max time a normal bandage will stay on someone before falling off
+#define BANDAGE_OKAY_MAX_DURATION 20 MINUTES
+/// Max time a sterilized bandage will stay on someone before falling off
+#define BANDAGE_GOOD_MAX_DURATION 1 HOURS
+/// Bandage is just barely through its life at this point
+#define BANDAGE_GOODLIFE_DURATION 0.9
+/// Bandage is at half its life at this point
+#define BANDAGE_MIDLIFE_DURATION 0.5
+/// Bandage is gonna fall off soon
+#define BANDAGE_ENDLIFE_DURATION 0.1
+
+/// ID for the bandage timer
+#define BANDAGE_COOLDOWN_ID "bandage_cooldown_id"
 
 /// Multiplier for bleeding if the wound has enough bandaging on it
-#define WOUND_BLEED_MAX_BANDAGE_MULTIPLIER 0.05
+#define WOUND_BLEED_BANDAGE_MULTIPLIER 0.05
 
 // The following are for persistent scar save formats
 /// The version number of the scar we're saving
@@ -134,3 +152,29 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define MANGLES_BONE	(1<<3)
 /// If this wound marks the limb as being allowed to have gauze applied
 #define ACCEPTS_GAUZE	(1<<4)
+
+/// Limb reports new bandage was applied
+#define BANDAGE_NEW_APPLIED (1<<0)
+/// Limb reports old bandage was repaired
+#define BANDAGE_WAS_REPAIRED (1<<1)
+/// Limb reports old bandage was repaired to full
+#define BANDAGE_WAS_REPAIRED_TO_FULL (1<<2)
+/// Limb reports old bandage's timer was refilled
+#define BANDAGE_TIMER_REFILLED (1<<3)
+/// Limb reports bandage was not applied
+#define BANDAGE_NOT_APPLIED (1<<4)
+/// Limb reports bandage was checked for time and it still had time left
+#define BANDAGE_STILL_INTACT (1<<5)
+/// Limb reports bandage was checked for time and it ran out
+#define BANDAGE_TIMED_OUT (1<<6)
+/// Limb reports bandage does not exist
+#define BANDAGE_NOT_FOUND (1<<7)
+
+/// Damage required to damage a bandage by 1 point, enough to destroy improv bandages
+#define BANDAGE_DAMAGE_THRESHOLD_LOW 5
+/// Damage required to damage a bandage by 3 points, enough to destroy good bandages
+#define BANDAGE_DAMAGE_THRESHOLD_MED 20
+/// Damage required to destroy a bandage outright
+#define BANDAGE_DAMAGE_THRESHOLD_MAX 45
+/// How much burn damage is multiplied for bandage damage calcs
+#define BANDAGE_BURN_MULT 3 // its very flammable

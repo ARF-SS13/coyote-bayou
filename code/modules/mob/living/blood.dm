@@ -268,6 +268,8 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 			if(satiety > 80)
 				nutrition_bonus *= 1.25
+			if(HAS_TRAIT(src, TRAIT_HIGH_BLOOD))
+				nutrition_bonus *= 2 // you just convert more nutrition to blood
 			adjust_nutrition(-nutrition_bonus)
 			blood_volume += nutrition_bonus * BLOOD_UNIT_NUTRITION_COST
 

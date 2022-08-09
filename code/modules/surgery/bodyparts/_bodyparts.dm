@@ -1,4 +1,3 @@
-
 /obj/item/bodypart
 	name = "limb"
 	desc = "Why is it detached..."
@@ -94,14 +93,14 @@
 	/// How much generic bleedstacks we have on this bodypart
 	var/generic_bleedstacks
 	/// If we have a gauze wrapping currently applied (not including splints)
-	var/obj/item/stack/current_gauze
+	var/obj/item/stack/medical/current_gauze
 
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
+		. += span_warning("This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.")
 	if(burn_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
+		. += span_warning("This limb has [burn_dam > 30 ? "severe" : "minor"] burns.")
 
 /obj/item/bodypart/blob_act()
 	take_damage(max_damage)
@@ -118,11 +117,11 @@
 		if(HAS_TRAIT(C, TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!"),\
+					span_notice("You force [src] into your empty socket, and it locks into place!"))
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!"),\
+					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				attach_limb(C)
 				return
@@ -132,11 +131,11 @@
 	if(W.sharpness)
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
+			to_chat(user, span_warning("There is nothing left inside [src]!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>You begin to cut open [src]...</span>")
+		user.visible_message(span_warning("[user] begins to cut open [src]."),\
+			span_notice("You begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user)
 	else
@@ -275,6 +274,8 @@
 
 	if(can_inflict <= 0)
 		return FALSE
+
+	damage_gauze(brute, burn)
 
 	brute_dam += brute
 	burn_dam += burn
@@ -913,7 +914,9 @@
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
 	if(!LAZYLEN(wounds) && current_gauze && !replaced)
-		owner.visible_message("<span class='notice'>\The [current_gauze] on [owner]'s [name] fall away.</span>", "<span class='notice'>The [current_gauze] on your [name] fall away.</span>")
+		owner.visible_message(
+			span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."), 
+			span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
 		QDEL_NULL(current_gauze)
 	wound_damage_multiplier = dam_mul
 	update_disabled()
@@ -933,9 +936,9 @@
 
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
-		bleed_rate += W.blood_flow
-	if(owner.mobility_flags & ~MOBILITY_STAND)
-		bleed_rate *= 0.75
+		bleed_rate += W.get_blood_flow(TRUE)
+	//if(owner.mobility_flags & ~MOBILITY_STAND) // handled by the wound
+	//	bleed_rate *= 0.75
 	return bleed_rate
 
 /**
@@ -949,12 +952,38 @@
  * Arguments:
  * * gauze- Just the gauze stack we're taking a sheet from to apply here
  */
-/obj/item/bodypart/proc/apply_gauze(obj/item/stack/gauze)
-	if(!istype(gauze) || !gauze.absorption_capacity)
-		return
-	QDEL_NULL(current_gauze)
-	current_gauze = new gauze.type(src, 1)
-	//gauze.use(1) // handle it on the item, will be changed later
+/obj/item/bodypart/proc/apply_gauze(obj/item/stack/medical/gauze/gauze, skill_mult = 1)
+	if(!istype(gauze) || !gauze)
+		return BANDAGE_NOT_APPLIED
+	var/apply_new_gauze = FALSE
+	if(!istype(current_gauze)) // No bandage, put one on
+		apply_new_gauze = TRUE
+	else if(gauze?.bandage_length > current_gauze?.bandage_length) // Bandage has more base duration, put it on
+		apply_new_gauze = TRUE
+	else if(initial(gauze?.bandage_hitpoints) > initial(current_gauze?.bandage_hitpoints)) // Bandage is more durable, put it on
+		apply_new_gauze = TRUE
+
+	if(apply_new_gauze) // Either no bandage was on, or we're getting a better one
+		QDEL_NULL(current_gauze)
+		current_gauze = new gauze.type(src, 1)
+		S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.bandage_length * skill_mult)
+		return BANDAGE_NEW_APPLIED
+	
+	// from here, a new bandage isnt required, lets see if we can freshen it up
+	if(istype(current_gauze)) // just to be sure its still there
+		var/current_bandage_max_hp = initial(current_gauze.bandage_hitpoints)
+		if(current_gauze.bandage_hitpoints < current_bandage_max_hp) // repair that bandage
+			current_gauze.bandage_hitpoints = min(current_gauze.bandage_hitpoints + gauze.bandage_hitpoints, current_bandage_max_hp)
+			if(current_gauze.bandage_hitpoints >= current_bandage_max_hp)
+				return BANDAGE_WAS_REPAIRED_TO_FULL
+			else
+				return BANDAGE_WAS_REPAIRED
+		
+		if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // restore its length
+			S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
+			S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.bandage_length * skill_mult)
+			return BANDAGE_TIMER_REFILLED
+
 
 /**
  * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
@@ -963,11 +992,57 @@
  *
  * Arguments:
  * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
+ * * note, that arg doesnt do anything rn
  */
 /obj/item/bodypart/proc/seep_gauze(seep_amt = 0)
-	if(!current_gauze)
-		return
-	current_gauze.absorption_capacity -= seep_amt
-	if(current_gauze.absorption_capacity < 0)
-		owner.visible_message("<span class='danger'>\The [current_gauze] on [owner]'s [name] fall away in rags.</span>", "<span class='warning'>\The [current_gauze] on your [name] fall away in rags.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+	if(!current_gauze || !istype(current_gauze, /obj/item/stack/medical/gauze))
+		return BANDAGE_NOT_FOUND
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // Bandage has some time left in it
+		return BANDAGE_STILL_INTACT
+	owner.visible_message(
+		span_warning("\The [current_gauze] on [owner]'s [name] become totally soaked, and fall off in a bloody heap."), 
+		span_warning("\The [current_gauze] on your [name] become totally soaked, and fall off in a bloody heap."), 
+		vision_distance=COMBAT_MESSAGE_RANGE)
+	QDEL_NULL(current_gauze)
+	return BANDAGE_TIMED_OUT
+
+/**
+ * damage_gauze() simply damages the gauze on the limb, reducing its HP
+ *
+ * The passed amount of damage deducts hitspoints from the bandage 
+ *
+ * Arguments:
+ * * brute - How much brute is being calculated for bandage damage
+ * * burn - How much burn is being calculated for bandage damage - usually multiplied
+ */
+/obj/item/bodypart/proc/damage_gauze(brute = 0, burn = 0)
+	if(!istype(current_gauze))
+		return FALSE
+	if(brute < 1 && burn < 1)
+		return FALSE
+	
+	var/damage_raw = brute + (burn * BANDAGE_BURN_MULT)
+	var/damage_to_do = 0
+	switch(damage_raw)
+		if(BANDAGE_DAMAGE_THRESHOLD_LOW to BANDAGE_DAMAGE_THRESHOLD_MED)
+			damage_to_do = 1
+		if(BANDAGE_DAMAGE_THRESHOLD_MED to BANDAGE_DAMAGE_THRESHOLD_MAX)
+			damage_to_do = 3
+		if(BANDAGE_DAMAGE_THRESHOLD_MAX to INFINITY)
+			damage_to_do = INFINITY // fucker's coming off
+		else
+			return FALSE
+
+	current_gauze.bandage_hitpoints -= damage_to_do
+	if(current_gauze.bandage_hitpoints > 0)
+		owner.visible_message(
+			span_warning("\The [current_gauze] on [owner]'s [name] tears from the blow!"), 
+			span_warning("\The [current_gauze] on your [name] tear from the blow!"), 
+			vision_distance=COMBAT_MESSAGE_RANGE)
+	else
+		owner.visible_message(
+			span_warning("\The [current_gauze] on [owner]'s [name] rip to shreds from the impact, falling away in a heap!"), 
+			span_warning("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"), 
+			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
+	return TRUE
