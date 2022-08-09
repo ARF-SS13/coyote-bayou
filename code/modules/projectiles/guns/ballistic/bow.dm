@@ -43,7 +43,7 @@
 		user.put_in_hands(chambered)
 		chambered = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You gently release the bowstring, removing the arrow.</span>")
+		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
 		return
 	if(recentdraw > world.time || !get_ammo(FALSE))
 		return
@@ -53,7 +53,7 @@
 
 /obj/item/gun/ballistic/bow/proc/draw(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message("<span class='warning'>[M] draws the string on [src]!</span>", "<span class='warning'>You draw the string on [src]!</span>")
+		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
 	playsound(M, draw_sound, 60, 1)
 	draw_load(M)
 	update_icon()
@@ -67,7 +67,7 @@
 
 /obj/item/gun/ballistic/bow/attackby(obj/item/A, mob/user, params)
 	if(magazine.attackby(A, user, params, 1))
-		to_chat(user, "<span class='notice'>You load [A] into \the [src].</span>")
+		to_chat(user, span_notice("You load [A] into \the [src]."))
 		update_icon()
 
 /obj/item/gun/ballistic/bow/update_icon()
@@ -77,7 +77,7 @@
 /obj/item/gun/ballistic/bow/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	..()
 	if(HAS_TRAIT(user, TRAIT_AUTO_DRAW) && !chambered && get_ammo(FALSE))
-		user.visible_message("<span class='warning'>[user] instinctively draws the string on [src]!</span>", "<span class='warning'>You instinctively draw the string on [src]!</span>")
+		user.visible_message(span_warning("[user] instinctively draws the string on [src]!"), span_warning("You instinctively draw the string on [src]!"))
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 

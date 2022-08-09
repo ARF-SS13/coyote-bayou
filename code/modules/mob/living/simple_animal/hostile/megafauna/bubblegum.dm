@@ -167,7 +167,7 @@ Difficulty: Hard
 
 	else if(isliving(hit_atom))
 		var/mob/living/L = hit_atom
-		L.visible_message("<span class='danger'>[src] slams into [L]!</span>", "<span class='userdanger'>[src] slams into you!</span>")
+		L.visible_message(span_danger("[src] slams into [L]!"), span_userdanger("[src] slams into you!"))
 		L.apply_damage(40, BRUTE)
 		playsound(get_turf(L), 'sound/effects/meteorimpact.ogg', 100, 1)
 		shake_camera(L, 4, 3)
@@ -193,15 +193,15 @@ Difficulty: Hard
 		shuffle_inplace(pools)
 		found_bloodpool = pick(pools)
 	if(found_bloodpool)
-		visible_message("<span class='danger'>[src] sinks into the blood...</span>")
+		visible_message(span_danger("[src] sinks into the blood..."))
 		playsound(get_turf(src), 'sound/magic/enter_blood.ogg', 100, 1, -1)
 		forceMove(get_turf(found_bloodpool))
 		playsound(get_turf(src), 'sound/magic/exit_blood.ogg', 100, 1, -1)
-		visible_message("<span class='danger'>And springs back out!</span>")
+		visible_message(span_danger("And springs back out!"))
 
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/blood_spray()
-	visible_message("<span class='danger'>[src] sprays a stream of gore!</span>")
+	visible_message(span_danger("[src] sprays a stream of gore!"))
 	var/turf/E = get_edge_target_turf(src, src.dir)
 	var/range = 10
 	var/turf/previousturf = get_turf(src)
@@ -218,7 +218,7 @@ Difficulty: Hard
 		sleep(1)
 
 /mob/living/simple_animal/hostile/megafauna/bubblegum/proc/slaughterlings()
-	visible_message("<span class='danger'>[src] summons a shoal of slaughterlings!</span>")
+	visible_message(span_danger("[src] summons a shoal of slaughterlings!"))
 	for(var/obj/effect/decal/cleanable/blood/H in range(src, 10))
 		if(prob(25))
 			new /mob/living/simple_animal/hostile/asteroid/hivelordbrood/slaughter(H.loc)

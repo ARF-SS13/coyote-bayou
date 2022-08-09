@@ -35,7 +35,7 @@
 	if(!istype(M))
 		return FALSE
 	if(!silent)
-		M.visible_message("<span class='boldnotice'>[M] climbs into \the [src]!</span>")
+		M.visible_message(span_boldnotice("[M] climbs into \the [src]!"))
 	M.forceMove(src)
 	add_occupant(M)
 	return TRUE
@@ -49,7 +49,7 @@
 	remove_occupant(M)
 	M.forceMove(exit_location(M))
 	if(!silent)
-		M.visible_message("<span class='boldnotice'>[M] drops out of \the [src]!</span>")
+		M.visible_message(span_boldnotice("[M] drops out of \the [src]!"))
 	return TRUE
 
 /obj/vehicle/sealed/proc/exit_location(M)

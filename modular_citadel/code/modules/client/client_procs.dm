@@ -57,7 +57,7 @@
 
 	if(!(istype(src, /mob/dead/observer)))
 		show_popup_menus = !show_popup_menus
-		to_chat(src, "<span class='notice'>The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"].</span>")
+		to_chat(src, span_notice("The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"]."))
 	else if(check_rights(R_ADMIN, 0))
 		show_popup_menus = !show_popup_menus
-		to_chat(src, "<span class='notice'>The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"].</span>")
+		to_chat(src, span_notice("The right-click context menu is now [show_popup_menus ? "enabled" : "disabled"]."))

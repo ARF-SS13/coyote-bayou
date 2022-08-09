@@ -26,7 +26,7 @@
 /obj/item/organ/heart/gland/examine(mob/user)
 	. = ..()
 	if((user.mind && HAS_TRAIT(user.mind, TRAIT_ABDUCTOR_SCIENTIST_TRAINING)) || isobserver(user))
-		. += "<span class='notice'>It is \a [true_name].</span>"
+		. += span_notice("It is \a [true_name].")
 
 /obj/item/organ/heart/gland/proc/ownerCheck()
 	if(ishuman(owner))
@@ -56,8 +56,8 @@
 	if(!ownerCheck() || !mind_control_uses || active_mind_control)
 		return FALSE
 	mind_control_uses--
-	to_chat(owner, "<span class='userdanger'>You suddenly feel an irresistible compulsion to follow an order...</span>")
-	to_chat(owner, "<span class='mind_control'>[command]</span>")
+	to_chat(owner, span_userdanger("You suddenly feel an irresistible compulsion to follow an order..."))
+	to_chat(owner, span_mind_control("[command]"))
 	active_mind_control = TRUE
 	message_admins("[key_name(user)] sent an abductor mind control message to [key_name(owner)]: [command]")
 	update_gland_hud()

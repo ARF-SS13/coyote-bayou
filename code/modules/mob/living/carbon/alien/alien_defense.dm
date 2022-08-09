@@ -24,21 +24,21 @@ In all, this is a lot like the monkey code. /N
 			AdjustUnconscious(-60, FALSE)
 			AdjustSleeping(-100, FALSE)
 			update_mobility()
-			visible_message("<span class='notice'>[M.name] nuzzles [src] trying to wake [p_them()] up!</span>",
-				"<span class='notice'>[M.name] nuzzles you trying to wake you up!</span>", target = M,
-				target_message = "<span class='notice'>You nuzzle [src] trying to wake [p_them()] up!</span>")
+			visible_message(span_notice("[M.name] nuzzles [src] trying to wake [p_them()] up!"),
+				span_notice("[M.name] nuzzles you trying to wake you up!"), target = M,
+				target_message = span_notice("You nuzzle [src] trying to wake [p_them()] up!"))
 		if(INTENT_DISARM, INTENT_HARM)
 			if(health > 0)
 				M.do_attack_animation(src, ATTACK_EFFECT_BITE)
 				playsound(loc, 'sound/weapons/bite.ogg', 50, 1, -1)
-				visible_message("<span class='danger'>[M.name] bites [src]!</span>", \
-						"<span class='userdanger'>[M.name] bites [src]!</span>", null, COMBAT_MESSAGE_RANGE, null, M,
-						"<span class='danger'>You bite [src]!</span>")
+				visible_message(span_danger("[M.name] bites [src]!"), \
+						span_userdanger("[M.name] bites [src]!"), null, COMBAT_MESSAGE_RANGE, null, M,
+						span_danger("You bite [src]!"))
 				adjustBruteLoss(1)
 				log_combat(M, src, "attacked")
 				updatehealth()
 			else
-				to_chat(M, "<span class='warning'>[name] is too injured for that.</span>")
+				to_chat(M, span_warning("[name] is too injured for that."))
 
 
 /mob/living/carbon/alien/attack_larva(mob/living/carbon/alien/larva/L)
@@ -58,12 +58,12 @@ In all, this is a lot like the monkey code. /N
 			grabbedby(M)
 		if (INTENT_HARM)
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
-				to_chat(M, "<span class='notice'>You don't want to hurt [src]!</span>")
+				to_chat(M, span_notice("You don't want to hurt [src]!"))
 				return TRUE
 			M.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 		if(INTENT_DISARM)
 			if(HAS_TRAIT(M, TRAIT_PACIFISM))
-				to_chat(M, "<span class='notice'>You don't want to hurt [src]!</span>")
+				to_chat(M, span_notice("You don't want to hurt [src]!"))
 				return TRUE
 			M.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 

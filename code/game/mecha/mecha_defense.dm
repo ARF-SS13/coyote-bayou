@@ -18,7 +18,7 @@
 			else
 				check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT))
 		if(. >= 5 || prob(33))
-			occupant_message("<span class='userdanger'>Taking damage!</span>")
+			occupant_message(span_userdanger("Taking damage!"))
 			var/integrity = obj_integrity*100/max_integrity
 			if(. && integrity < 20)
 				to_chat(occupant, "[icon2html(src, occupant)][span_userdanger("HULL DAMAGE CRITICAL!")]")
@@ -49,7 +49,7 @@
 		booster_damage_modifier /= facing_modifier
 		booster_deflection_modifier *= facing_modifier
 	if(prob(deflect_chance * booster_deflection_modifier))
-		visible_message("<span class='danger'>[src]'s armour deflects the attack!</span>")
+		visible_message(span_danger("[src]'s armour deflects the attack!"))
 		log_append_to_last("Armor saved.")
 		return 0
 	if(.)
@@ -59,7 +59,7 @@
 /obj/mecha/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 	playsound(loc, 'sound/weapons/tap.ogg', 40, 1, -1)
-	user.visible_message("<span class='danger'>[user] hits [name]. Nothing happens</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user] hits [name]. Nothing happens"), null, null, COMBAT_MESSAGE_RANGE)
 	mecha_log_message("Attack by hand/paw. Attacker - [user].", color="red")
 	log_append_to_last("Armor saved.")
 
@@ -175,9 +175,9 @@
 				if(!user.temporarilyRemoveItemFromInventory(W))
 					return
 				E.attach(src)
-				user.visible_message("[user] attaches [W] to [src].", "<span class='notice'>You attach [W] to [src].</span>")
+				user.visible_message("[user] attaches [W] to [src].", span_notice("You attach [W] to [src]."))
 			else
-				to_chat(user, "<span class='warning'>You were unable to attach [W] to [src]!</span>")
+				to_chat(user, span_warning("You were unable to attach [W] to [src]!"))
 		return
 	if(W.GetID())
 		if(add_req_access || maint_access)
@@ -191,46 +191,46 @@
 				output_maintenance_dialog(id_card, user)
 				return
 			else
-				to_chat(user, "<span class='warning'>Invalid ID: Access denied.</span>")
+				to_chat(user, span_warning("Invalid ID: Access denied."))
 		else
-			to_chat(user, "<span class='warning'>Maintenance protocols disabled by operator.</span>")
+			to_chat(user, span_warning("Maintenance protocols disabled by operator."))
 	else if(istype(W, /obj/item/wrench))
 		if(state==1)
 			state = 2
-			to_chat(user, "<span class='notice'>You undo the securing bolts.</span>")
+			to_chat(user, span_notice("You undo the securing bolts."))
 		else if(state==2)
 			state = 1
-			to_chat(user, "<span class='notice'>You tighten the securing bolts.</span>")
+			to_chat(user, span_notice("You tighten the securing bolts."))
 		return
 	else if(istype(W, /obj/item/crowbar))
 		if(state==2)
 			state = 3
-			to_chat(user, "<span class='notice'>You open the hatch to the power unit.</span>")
+			to_chat(user, span_notice("You open the hatch to the power unit."))
 		else if(state==3)
 			state=2
-			to_chat(user, "<span class='notice'>You close the hatch to the power unit.</span>")
+			to_chat(user, span_notice("You close the hatch to the power unit."))
 		return
 	else if(istype(W, /obj/item/stack/cable_coil))
 		if(state == 3 && (internal_damage & MECHA_INT_SHORT_CIRCUIT))
 			if(W.use_tool(src, user, 0, 2))
 				clearInternalDamage(MECHA_INT_SHORT_CIRCUIT)
-				to_chat(user, "<span class='notice'>You replace the fused wires.</span>")
+				to_chat(user, span_notice("You replace the fused wires."))
 			else
-				to_chat(user, "<span class='warning'>You need two lengths of cable to fix this mech!</span>")
+				to_chat(user, span_warning("You need two lengths of cable to fix this mech!"))
 		return
 	else if(istype(W, /obj/item/screwdriver) && user.a_intent != INTENT_HARM)
 		if(internal_damage & MECHA_INT_TEMP_CONTROL)
 			clearInternalDamage(MECHA_INT_TEMP_CONTROL)
-			to_chat(user, "<span class='notice'>You repair the damaged temperature controller.</span>")
+			to_chat(user, span_notice("You repair the damaged temperature controller."))
 		else if(state==3 && cell)
 			cell.forceMove(loc)
 			cell = null
 			state = 4
-			to_chat(user, "<span class='notice'>You unscrew and pry out the powercell.</span>")
+			to_chat(user, span_notice("You unscrew and pry out the powercell."))
 			mecha_log_message("Powercell removed")
 		else if(state==4 && cell)
 			state=3
-			to_chat(user, "<span class='notice'>You screw the cell in place.</span>")
+			to_chat(user, span_notice("You screw the cell in place."))
 		return
 
 	else if(istype(W, /obj/item/stock_parts/cell))
@@ -239,11 +239,11 @@
 				if(!user.transferItemToLoc(W, src))
 					return
 				var/obj/item/stock_parts/cell/C = W
-				to_chat(user, "<span class='notice'>You install the powercell.</span>")
+				to_chat(user, span_notice("You install the powercell."))
 				cell = C
 				mecha_log_message("Powercell installed")
 			else
-				to_chat(user, "<span class='notice'>There's already a powercell installed.</span>")
+				to_chat(user, span_notice("There's already a powercell installed."))
 		return
 
 	else if(istype(W, /obj/item/weldingtool) && user.a_intent != INTENT_HARM)
@@ -252,15 +252,15 @@
 			if(W.use_tool(src, user, 0, volume=50, amount=1))
 				if (internal_damage & MECHA_INT_TANK_BREACH)
 					clearInternalDamage(MECHA_INT_TANK_BREACH)
-					to_chat(user, "<span class='notice'>You repair the damaged gas tank.</span>")
+					to_chat(user, span_notice("You repair the damaged gas tank."))
 				else
-					user.visible_message("<span class='notice'>[user] repairs some damage to [name].</span>", "<span class='notice'>You repair some damage to [src].</span>")
+					user.visible_message(span_notice("[user] repairs some damage to [name]."), span_notice("You repair some damage to [src]."))
 					obj_integrity += min(10, max_integrity-obj_integrity)
 					if(obj_integrity == max_integrity)
-						to_chat(user, "<span class='notice'>It looks to be fully repaired now.</span>")
+						to_chat(user, span_notice("It looks to be fully repaired now."))
 			return 1
 		else
-			to_chat(user, "<span class='warning'>The [name] is at full integrity!</span>")
+			to_chat(user, span_warning("The [name] is at full integrity!"))
 		return 1
 
 	else if(istype(W, /obj/item/mecha_parts/mecha_tracking))

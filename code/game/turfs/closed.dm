@@ -35,7 +35,7 @@
 		var/mob/living/carbon/human/humanAM = AM
 		humanAM.adjustBruteLoss(10)
 		humanAM.AdjustKnockdown(25)
-		visible_message("<span class='warning'>[humanAM] smashes into [src]!</span>")
+		visible_message(span_warning("[humanAM] smashes into [src]!"))
 
 /turf/closed/Bumped(atom/movable/AM) //don't run into walls, you'll give yourself a concussion
 	. = ..()
@@ -44,7 +44,7 @@
 		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
 			humanAM.disable_sprint_mode()
 			humanAM.AdjustKnockdown(25)
-			visible_message("<span class='warning'>[humanAM] runs straight into [src]!</span>")
+			visible_message(span_warning("[humanAM] runs straight into [src]!"))
 
 /turf/closed/indestructible
 	name = "wall"

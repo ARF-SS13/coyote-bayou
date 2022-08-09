@@ -13,9 +13,9 @@
 /obj/machinery/computer/aifixer/attackby(obj/I, mob/user, params)
 	if(occupier && istype(I, /obj/item/screwdriver))
 		if(stat & (NOPOWER|BROKEN))
-			to_chat(user, "<span class='warning'>The screws on [name]'s screen won't budge.</span>")
+			to_chat(user, span_warning("The screws on [name]'s screen won't budge."))
 		else
-			to_chat(user, "<span class='warning'>The screws on [name]'s screen won't budge and it emits a warning beep.</span>")
+			to_chat(user, span_warning("The screws on [name]'s screen won't budge and it emits a warning beep."))
 	else
 		return ..()
 
@@ -53,7 +53,7 @@
 	switch(action)
 		if("PRG_beginReconstruction")
 			if(occupier?.health < 100)
-				to_chat(usr, "<span class='notice'>Reconstruction in progress. This will take several minutes.</span>")
+				to_chat(usr, span_notice("Reconstruction in progress. This will take several minutes."))
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, FALSE)
 				active = TRUE
 				occupier.notify_ghost_cloning("Your core files are being restored!", source = src)

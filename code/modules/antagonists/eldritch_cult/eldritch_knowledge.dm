@@ -40,7 +40,7 @@
  * This proc is called whenever a new eldritch knowledge is added to an antag datum
  */
 /datum/eldritch_knowledge/proc/on_gain(mob/user)
-	to_chat(user, "<span class='warning'>[gain_text]</span>")
+	to_chat(user, span_warning("[gain_text]"))
 	return
 /**
  * What happens when you loose this
@@ -150,7 +150,7 @@
 			compiled_list[human_to_check.real_name] = human_to_check
 
 	if(compiled_list.len == 0)
-		to_chat(user, "<span class='warning'>The items don't posses required fingerprints.</span>")
+		to_chat(user, span_warning("The items don't posses required fingerprints."))
 		return FALSE
 
 	var/chosen_mob = input("Select the person you wish to curse","Your target") as null|anything in sortList(compiled_list, /proc/cmp_mob_realname_dsc)
@@ -177,7 +177,7 @@
 	message_admins("[summoned.name] is being summoned by [user.real_name] in [loc]")
 	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as [summoned.name]", ROLE_HERETIC, null, FALSE, 100, summoned)
 	if(!LAZYLEN(candidates))
-		to_chat(user,"<span class='warning'>No ghost could be found...</span>")
+		to_chat(user,span_warning("No ghost could be found..."))
 		qdel(summoned)
 		return FALSE
 	var/mob/dead/observer/C = pick(candidates)
@@ -245,7 +245,7 @@
 	for(var/obj/item/living_heart/LH in atoms)
 
 		if(LH.target && LH.target.stat == DEAD)
-			to_chat(carbon_user,"<span class='danger'>Your patrons accepts your offer...</span>")
+			to_chat(carbon_user,span_danger("Your patrons accepts your offer..."))
 			var/mob/living/carbon/human/H = LH.target
 			H.become_husk("burn") //Husks the target with removable husking, but causes a bunch of additional burn damage to prevent it from being 'too easy' to do
 			H.adjustFireLoss(200)
@@ -268,10 +268,10 @@
 			LH.target = targeted.current
 			qdel(A)
 			if(LH.target)
-				to_chat(user,"<span class='warning'>Your new target has been selected, go and sacrifice [LH.target.real_name]!</span>")
+				to_chat(user,span_warning("Your new target has been selected, go and sacrifice [LH.target.real_name]!"))
 
 			else
-				to_chat(user,"<span class='warning'>target could not be found for living heart.</span>")
+				to_chat(user,span_warning("target could not be found for living heart."))
 
 /datum/eldritch_knowledge/spell/basic/cleanup_atoms(list/atoms)
 	return

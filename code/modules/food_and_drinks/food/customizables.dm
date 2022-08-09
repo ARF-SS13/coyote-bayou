@@ -42,11 +42,11 @@
 	if(!istype(I, /obj/item/reagent_containers/food/snacks/customizable) && istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if((ingredients.len >= ingMax) || (reagents.total_volume >= volume))
-			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
 		else if(istype(I, /obj/item/reagent_containers/food/snacks/pizzaslice/custom) || istype(I, /obj/item/reagent_containers/food/snacks/cakeslice/custom))
-			to_chat(user, "<span class='warning'>Adding [I.name] to [src] would make a mess.</span>")
+			to_chat(user, span_warning("Adding [I.name] to [src] would make a mess."))
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
@@ -60,7 +60,7 @@
 			//quality of customised food is average of the ingredient's qualities
 			total_quality += S.food_quality
 			food_quality = total_quality / length(ingredients)
-			to_chat(user, "<span class='notice'>You add the [I.name] to the [name].</span>")
+			to_chat(user, span_notice("You add the [I.name] to the [name]."))
 			update_name(S)
 	else
 		. = ..()
@@ -252,7 +252,7 @@
 		var/obj/item/reagent_containers/food/snacks/breadslice/BS = I
 		if(finished)
 			return
-		to_chat(user, "<span class='notice'>You finish the [src.name].</span>")
+		to_chat(user, span_notice("You finish the [src.name]."))
 		finished = 1
 		name = "[customname] sandwich"
 		BS.reagents.trans_to(src, BS.reagents.total_volume)
@@ -303,9 +303,9 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks))
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(I.w_class > WEIGHT_CLASS_SMALL)
-			to_chat(user, "<span class='warning'>The ingredient is too big for [src]!</span>")
+			to_chat(user, span_warning("The ingredient is too big for [src]!"))
 		else if(contents.len >= 20)
-			to_chat(user, "<span class='warning'>You can't add more ingredients to [src]!</span>")
+			to_chat(user, span_warning("You can't add more ingredients to [src]!"))
 		else
 			if(reagents.has_reagent(/datum/reagent/water, 10)) //are we starting a soup or a salad?
 				var/obj/item/reagent_containers/food/snacks/customizable/A = new/obj/item/reagent_containers/food/snacks/customizable/soup(get_turf(src))

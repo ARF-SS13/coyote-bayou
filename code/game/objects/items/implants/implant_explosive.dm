@@ -58,12 +58,12 @@
 	heavy = round(heavy)
 	medium = round(medium)
 	weak = round(weak)
-	to_chat(imp_in, "<span class='notice'>You activate your [name].</span>")
+	to_chat(imp_in, span_notice("You activate your [name]."))
 	active = TRUE
 	var/turf/boomturf = get_turf(imp_in)
 	message_admins("[ADMIN_LOOKUPFLW(imp_in)] has activated their [name] at [ADMIN_VERBOSEJMP(boomturf)], with cause of [cause].")
 	if(delay > 7)
-		imp_in?.visible_message("<span class='warning'>[imp_in] starts beeping ominously!</span>")
+		imp_in?.visible_message(span_warning("[imp_in] starts beeping ominously!"))
 		playsound(get_turf(imp_in ? imp_in : src), 'sound/items/timer.ogg', 30, 0)
 		addtimer(CALLBACK(src, .proc/double_pain, TRUE), delay * 0.25)
 		addtimer(CALLBACK(src, .proc/double_pain), delay * 0.5)
@@ -77,7 +77,7 @@
 	if(!imp_in)
 		return
 	if(message && imp_in.stat == CONSCIOUS)
-		imp_in.visible_message("<span class='warning'>[imp_in] doubles over in pain!</span>")
+		imp_in.visible_message(span_warning("[imp_in] doubles over in pain!"))
 	imp_in.DefaultCombatKnockdown(140)
 
 /obj/item/implant/explosive/proc/boom_goes_the_weasel()

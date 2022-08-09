@@ -4,7 +4,7 @@
 	quality = POSITIVE
 	get_chance = 25
 	lowest_value = 256 * 12
-	text_gain_indication = "<span class='notice'>Your body feels warm!</span>"
+	text_gain_indication = span_notice("Your body feels warm!")
 	time_coeff = 5
 
 /datum/mutation/human/cold_resistance/New()

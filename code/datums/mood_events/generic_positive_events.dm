@@ -1,149 +1,149 @@
 /datum/mood_event/hug
-	description = "<span class='nicegreen'>Hugs are nice.</span>\n"
+	description = span_nicegreen("Hugs are nice.")
 	mood_change = 1
 	timeout = 2 MINUTES
 
 /datum/mood_event/arcade
-	description = "<span class='nicegreen'>I beat the arcade game!</span>\n"
+	description = span_nicegreen("I beat the arcade game!")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/blessing
-	description = "<span class='nicegreen'>I've been blessed.</span>\n"
+	description = span_nicegreen("I've been blessed.")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/book_nerd
-	description = "<span class='nicegreen'>I have recently read a book.</span>\n"
+	description = span_nicegreen("I have recently read a book.")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/exercise
-	description = "<span class='nicegreen'>Working out releases those endorphins!</span>\n"
+	description = span_nicegreen("Working out releases those endorphins!")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/pet_animal
-	description = "<span class='nicegreen'>Animals are adorable! I can't stop petting them!</span>\n"
+	description = span_nicegreen("Animals are adorable! I can't stop petting them!")
 	mood_change = 2
 	timeout = 5 MINUTES
 
 /datum/mood_event/pet_animal/add_effects(mob/animal)
-	description = "<span class='nicegreen'>\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!</span>\n"
+	description = span_nicegreen("\The [animal.name] is adorable! I can't stop petting [animal.p_them()]!")
 
 /datum/mood_event/honk
-	description = "<span class='nicegreen'>Maybe clowns aren't so bad after all. Honk!</span>\n"
+	description = span_nicegreen("Maybe clowns aren't so bad after all. Honk!")
 	mood_change = 2
 	timeout = 2400
 
 /datum/mood_event/bshonk
-	description = "<span class='nicegreen'>Quantum mechanics can be fun and silly, too! Honk!</span>\n"
+	description = span_nicegreen("Quantum mechanics can be fun and silly, too! Honk!")
 	mood_change = 6
 	timeout = 4800
 
 /datum/mood_event/perform_cpr
-	description = "<span class='nicegreen'>It feels good to save a life.</span>\n"
+	description = span_nicegreen("It feels good to save a life.")
 	mood_change = 6
 	timeout = 3000
 
 /datum/mood_event/oblivious
-	description = "<span class='nicegreen'>What a lovely day.</span>\n"
+	description = span_nicegreen("What a lovely day.")
 	mood_change = 3
 
 /datum/mood_event/jolly
-	description = "<span class='nicegreen'>I feel happy for no particular reason.</span>\n"
+	description = span_nicegreen("I feel happy for no particular reason.")
 	mood_change = 6
 	timeout = 2 MINUTES
 
 /datum/mood_event/focused
-	description = "<span class='nicegreen'>I have a goal, and I will reach it, whatever it takes!</span>\n" //Used for syndies, nukeops etc so they can focus on their goals
+	description = span_nicegreen("I have a goal, and I will reach it, whatever it takes!") //Used for syndies, nukeops etc so they can focus on their goals
 	mood_change = 12
 	hidden = TRUE
 
 /datum/mood_event/revolution
-	description = "<span class='nicegreen'>VIVA LA REVOLUTION!</span>\n"
+	description = span_nicegreen("VIVA LA REVOLUTION!")
 	mood_change = 3
 	hidden = TRUE
 
 /datum/mood_event/cult
-	description = "<span class='nicegreen'>I have seen the truth, praise the almighty one!</span>\n"
+	description = span_nicegreen("I have seen the truth, praise the almighty one!")
 	mood_change = 40 //maybe being a cultist isnt that bad after all
 	hidden = TRUE
 
 /datum/mood_event/heretics
-	description = "<span class='nicegreen'>THE HIGHER I RISE, THE MORE I SEE.</span>\n"
+	description = span_nicegreen("THE HIGHER I RISE, THE MORE I SEE.")
 	mood_change = 12 //maybe being a cultist isnt that bad after all
 	hidden = TRUE
 
 /datum/mood_event/family_heirloom
-	description = "<span class='nicegreen'>My family heirloom is safe with me.</span>\n"
+	description = span_nicegreen("My family heirloom is safe with me.")
 	mood_change = 1
 
 /datum/mood_event/goodmusic
-	description = "<span class='nicegreen'>There is something soothing about this music.</span>\n"
+	description = span_nicegreen("There is something soothing about this music.")
 	mood_change = 3
 	timeout = 600
 
 /datum/mood_event/chemical_euphoria
-	description = "<span class='nicegreen'>Heh...hehehe...hehe...</span>\n"
+	description = span_nicegreen("Heh...hehehe...hehe...")
 	mood_change = 4
 
 /datum/mood_event/chemical_laughter
-	description = "<span class='nicegreen'>Laughter really is the best medicine! Or is it?</span>\n"
+	description = span_nicegreen("Laughter really is the best medicine! Or is it?")
 	mood_change = 4
 	timeout = 3 MINUTES
 
 /datum/mood_event/chemical_superlaughter
-	description = "<span class='nicegreen'>*WHEEZE*</span>\n"
+	description = span_nicegreen("*WHEEZE*")
 	mood_change = 12
 	timeout = 3 MINUTES
 
 /datum/mood_event/betterhug
-	description = "<span class='nicegreen'>Someone was very nice to me.</span>\n"
+	description = span_nicegreen("Someone was very nice to me.")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/betterhug/add_effects(mob/friend)
-	description = "<span class='nicegreen'>[friend.name] was very nice to me.</span>\n"
+	description = span_nicegreen("[friend.name] was very nice to me.")
 
 /datum/mood_event/besthug
-	description = "<span class='nicegreen'>Someone is great to be around, they make me feel so happy!</span>\n"
+	description = span_nicegreen("Someone is great to be around, they make me feel so happy!")
 	mood_change = 5
 	timeout = 3000
 
 /datum/mood_event/besthug/add_effects(mob/friend)
-	description = "<span class='nicegreen'>[friend.name] is great to be around, [friend.p_they()] makes me feel so happy!</span>\n"
+	description = span_nicegreen("[friend.name] is great to be around, [friend.p_they()] makes me feel so happy!")
 
 /datum/mood_event/happy_empath
-	description = "<span class='warning'>Someone seems happy!</span>\n"
+	description = span_warning("Someone seems happy!")
 	mood_change = 3
 	timeout = 600
 
 /datum/mood_event/happy_empath/add_effects(mob/happytarget)
-	description = "<span class='nicegreen'>[happytarget.name]'s happiness is infectious!</span>\n"
+	description = span_nicegreen("[happytarget.name]'s happiness is infectious!")
 
 /datum/mood_event/headpat
-	description = "<span class='nicegreen'>Headpats are nice.</span>\n"
+	description = span_nicegreen("Headpats are nice.")
 	mood_change = 2
 	timeout = 2 MINUTES
 
 /datum/mood_event/hugbox
-	description = "<span class='nicegreen'>I hugged a box of hugs recently.</span>\n"
+	description = span_nicegreen("I hugged a box of hugs recently.")
 	mood_change = 1
 	timeout = 2 MINUTES
 
 /datum/mood_event/plushpet
-	description = "<span class='nicegreen'>I pet a plush recently.</span>\n"
+	description = span_nicegreen("I pet a plush recently.")
 	mood_change = 1
 	timeout = 3000
 
 /datum/mood_event/plushplay
-	description = "<span class='nicegreen'>I've played with plushes recently.</span>\n"
+	description = span_nicegreen("I've played with plushes recently.")
 	mood_change = 3
 	timeout = 3000
 
 /datum/mood_event/breakfast
-	description = "<span class='nicegreen'>Nothing like a hearty breakfast to start the shift.</span>\n"
+	description = span_nicegreen("Nothing like a hearty breakfast to start the shift.")
 	mood_change = 2
 	timeout = 15 MINUTES
 
@@ -155,7 +155,7 @@
 	description = "<span class='nicegreen robot'>+++++++[message]+++++++</span>\n"
 
 /datum/mood_event/homicidalracist
-	description = "<span class='nicegreen'>I killed a ghoul recently. The world is a better place.</span>\n"
+	description = span_nicegreen("I killed a ghoul recently. The world is a better place.")
 	mood_change = 5
 	timeout = 15 MINUTES
 
@@ -164,62 +164,62 @@
 	mood_change = 0
 //Power gamer stuff below
 /datum/mood_event/drankblood
-	description = "<span class='nicegreen'>I have fed greedly from that which nourishes me.</span>\n"
+	description = span_nicegreen("I have fed greedly from that which nourishes me.")
 	mood_change = 10
 	timeout = 900
 
 /datum/mood_event/coffinsleep
-	description = "<span class='nicegreen'>I slept in a coffin during the day. I feel whole again.</span>\n"
+	description = span_nicegreen("I slept in a coffin during the day. I feel whole again.")
 	mood_change = 8
 	timeout = 1200
 
 //Cursed stuff below.
 
 /datum/mood_event/orgasm
-	description = "<span class='userlove'>I came!</span>\n" //funny meme haha
+	description = span_userlove("I came!") //funny meme haha
 	mood_change = 3
 	timeout = 100 SECONDS
 
 /datum/mood_event/fedpred
-	description = "<span class='nicegreen'>I've devoured someone!</span>\n"
+	description = span_nicegreen("I've devoured someone!")
 	mood_change = 3
 
 /datum/mood_event/fedprey
-	description = "<span class='nicegreen'>It feels quite cozy in here.</span>\n"
+	description = span_nicegreen("It feels quite cozy in here.")
 	mood_change = 3
 
 /datum/mood_event/hope_lavaland
-	description = "<span class='nicegreen'>What a peculiar emblem.  It makes me feel hopeful for my future.</span>\n"
+	description = span_nicegreen("What a peculiar emblem.  It makes me feel hopeful for my future.")
 	mood_change = 5
 
 /datum/mood_event/artok
-	description = "<span class='nicegreen'>It's nice to see people are making art around here.</span>\n"
+	description = span_nicegreen("It's nice to see people are making art around here.")
 	mood_change = 2
 	timeout = 2 MINUTES
 
 /datum/mood_event/artgood
-	description = "<span class='nicegreen'>What a thought-provoking piece of art. I'll remember that for a while.</span>\n"
+	description = span_nicegreen("What a thought-provoking piece of art. I'll remember that for a while.")
 	mood_change = 3
 	timeout = 3 MINUTES
 
 /datum/mood_event/artgreat
-	description = "<span class='nicegreen'>That work of art was so great it made me believe in the goodness of humanity. Says a lot in a place like this.</span>\n"
+	description = span_nicegreen("That work of art was so great it made me believe in the goodness of humanity. Says a lot in a place like this.")
 	mood_change = 4
 	timeout = 4 MINUTES
 
 /datum/mood_event/cleared_stomach
-	description = "<span class='nicegreen'>Feels nice to get that out of the way!</span>\n"
+	description = span_nicegreen("Feels nice to get that out of the way!")
 	mood_change = 3
 
 //SILVER RING
 /datum/mood_event/equipped_ring
-	description = "<span class='nicegreen'>You feel like you have a new purpose in life with your newly equipped silver ring.</span>\n"
+	description = span_nicegreen("You feel like you have a new purpose in life with your newly equipped silver ring.")
 	mood_change = 0.3 //Just enough to cross a mood threshold
 
 /datum/mood_event/equipped_ring/gold
-	description = "<span class='nicegreen'>Having such a gold ring on your hand makes you feel a bit more secure about your personal wealth status.</span>\n"
+	description = span_nicegreen("Having such a gold ring on your hand makes you feel a bit more secure about your personal wealth status.")
 	mood_change = 0.6
 
 /datum/mood_event/equipped_ring/diamond
-	description = "<span class='nicegreen'>Wherever or however you gotten this diamond ring, it took a good amount of work trying to get this.</span>\n"
+	description = span_nicegreen("Wherever or however you gotten this diamond ring, it took a good amount of work trying to get this.")
 	mood_change = 1

@@ -197,7 +197,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You mess around with the shin guards.</span>")
+	to_chat(usr, span_notice("You mess around with the shin guards."))
 	if(src.boottoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"

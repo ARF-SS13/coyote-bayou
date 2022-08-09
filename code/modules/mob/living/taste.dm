@@ -27,7 +27,7 @@
 		"defeat","pain","bliss","revenge","poison","time","space","death","life","truth","lies","justice","memory",\
 		"regrets","your soul","suffering","music","noise","blood","hunger","the american way")
 	if(text_output != last_taste_text || last_taste_time + 100 < world.time)
-		to_chat(src, "<span class='notice'>You can taste [text_output].</span>")
+		to_chat(src, span_notice("You can taste [text_output]."))
 		// "something indescribable" -> too many tastes, not enough flavor.
 		last_taste_time = world.time
 		last_taste_text = text_output
@@ -46,20 +46,20 @@
 		return
 	if ((from.pH > 12.5) || (from.pH < 1.5))
 		T.applyOrganDamage(5)
-		to_chat(src, "<span class='warning'>You taste chemical burns!</span>")
+		to_chat(src, span_warning("You taste chemical burns!"))
 	if(istype(T, /obj/item/organ/tongue/cybernetic))
-		to_chat(src, "<span class='notice'>Your tongue moves on it's own in response to the liquid.</span>")
+		to_chat(src, span_notice("Your tongue moves on it's own in response to the liquid."))
 		say("The pH is appropriately [round(from.pH, 1)].")
 		return
 	if (!HAS_TRAIT(src, TRAIT_AGEUSIA)) //I'll let you get away with not having 1 damage.
 		switch(from.pH)
 			if(11.5 to 12.5)
-				to_chat(src, "<span class='warning'>You taste a strong alkaline flavour!</span>")
+				to_chat(src, span_warning("You taste a strong alkaline flavour!"))
 			if(8.5 to 11.5)
-				to_chat(src, "<span class='notice'>You taste a sort of soapy tone in the mixture.</span>")
+				to_chat(src, span_notice("You taste a sort of soapy tone in the mixture."))
 			if(2.5 to 5.5)
-				to_chat(src, "<span class='notice'>You taste a sort of acid tone in the mixture.</span>")
+				to_chat(src, span_notice("You taste a sort of acid tone in the mixture."))
 			if(1.5 to 2.5)
-				to_chat(src, "<span class='warning'>You taste a strong acidic flavour!</span>")
+				to_chat(src, span_warning("You taste a strong acidic flavour!"))
 
 #undef DEFAULT_TASTE_SENSITIVITY

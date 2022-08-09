@@ -18,18 +18,18 @@
 		var/obj/item/stack/rods/R = I
 		if(R.get_amount() >= 4)
 			R.use(4)
-			to_chat(user, "<span class='notice'>You add spikes to the frame.</span>")
+			to_chat(user, span_notice("You add spikes to the frame."))
 			var/obj/F = new /obj/structure/kitchenspike(src.loc)
 			transfer_fingerprints_to(F)
 			qdel(src)
 	else if(istype(I, /obj/item/weldingtool))
 		if(!I.tool_start_check(user, amount=0))
 			return
-		to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
+		to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 		if(I.use_tool(src, user, 50, volume=50))
-			visible_message("<span class='notice'>[user] slices apart \the [src].</span>",
-				"<span class='notice'>You cut \the [src] apart with \the [I].</span>",
-				"<span class='italics'>You hear welding.</span>")
+			visible_message(span_notice("[user] slices apart \the [src]."),
+				span_notice("You cut \the [src] apart with \the [I]."),
+				span_italic("You hear welding."))
 			new /obj/item/stack/sheet/metal(src.loc, 4)
 			qdel(src)
 		return
@@ -52,11 +52,11 @@
 
 /obj/structure/kitchenspike/crowbar_act(mob/living/user, obj/item/I)
 	if(has_buckled_mobs())
-		to_chat(user, "<span class='notice'>You can't do that while something's on the spike!</span>")
+		to_chat(user, span_notice("You can't do that while something's on the spike!"))
 		return TRUE
 
 	if(I.use_tool(src, user, 20, volume=100))
-		to_chat(user, "<span class='notice'>You pry the spikes out of the frame.</span>")
+		to_chat(user, span_notice("You pry the spikes out of the frame."))
 		deconstruct(TRUE)
 	return TRUE
 
@@ -64,7 +64,7 @@
 	if(VIABLE_MOB_CHECK(user.pulling) && user.a_intent == INTENT_GRAB && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
 		if(HAS_TRAIT(user, TRAIT_PACIFISM) && L.stat != DEAD)
-			to_chat(user, "<span class='warning'>You don't want to hurt a living creature!</span>")
+			to_chat(user, span_warning("You don't want to hurt a living creature!"))
 			return
 		if(do_mob(user, src, 120))
 			if(has_buckled_mobs()) //to prevent spam/queing up attacks
@@ -74,7 +74,7 @@
 			if(user.pulling != L)
 				return
 			playsound(src.loc, 'sound/effects/splat.ogg', 25, 1)
-			L.visible_message("<span class='danger'>[user] slams [L] onto the meat spike!</span>", "<span class='userdanger'>[user] slams you onto the meat spike!</span>", "<span class='italics'>You hear a squishy wet noise.</span>")
+			L.visible_message(span_danger("[user] slams [L] onto the meat spike!"), span_userdanger("[user] slams you onto the meat spike!"), span_italic("You hear a squishy wet noise."))
 			L.forceMove(drop_location())
 			L.emote("scream")
 			if(iscarbon(L))
@@ -106,24 +106,24 @@
 		if(M != user)
 			M.visible_message(\
 				"[user] tries to pull [M] free of [src]!",\
-				"<span class='notice'>[user] is trying to pull you off [src], opening up fresh wounds!</span>",\
-				"<span class='italics'>You hear a squishy wet noise.</span>")
+				span_notice("[user] is trying to pull you off [src], opening up fresh wounds!"),\
+				span_italic("You hear a squishy wet noise."))
 			if(!do_after(user, 300, target = src))
 				if(M && M.buckled)
 					M.visible_message(\
 					"[user] fails to free [M]!",\
-					"<span class='notice'>[user] fails to pull you off of [src].</span>")
+					span_notice("[user] fails to pull you off of [src]."))
 				return
 
 		else
 			M.visible_message(\
-			"<span class='warning'>[M] struggles to break free from [src]!</span>",\
-			"<span class='notice'>You struggle to break free from [src], exacerbating your wounds! (Stay still for two minutes.)</span>",\
-			"<span class='italics'>You hear a wet squishing noise..</span>")
+			span_warning("[M] struggles to break free from [src]!"),\
+			span_notice("You struggle to break free from [src], exacerbating your wounds! (Stay still for two minutes.)"),\
+			span_italic("You hear a wet squishing noise.."))
 			M.adjustBruteLoss(30)
 			if(!do_after(M, 1200, target = src))
 				if(M && M.buckled)
-					to_chat(M, "<span class='warning'>You fail to free yourself!</span>")
+					to_chat(M, span_warning("You fail to free yourself!"))
 				return
 		if(!M.buckled)
 			return
@@ -135,7 +135,7 @@
 	animate(M, transform = m180, time = 3)
 	M.pixel_y = M.get_standard_pixel_y_offset(180)
 	M.adjustBruteLoss(30)
-	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
+	src.visible_message(span_danger("[M] falls free of [src]!"))
 	unbuckle_mob(M,force=1)
 	M.emote("scream")
 	M.DefaultCombatKnockdown(20)

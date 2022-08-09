@@ -62,7 +62,7 @@
 	var/old = (combat_flags & COMBAT_FLAG_SPRINT_TOGGLED)
 	if(old)
 		if(combat_flags & COMBAT_FLAG_SPRINT_FORCED)
-			to_chat(src, "<span class='warning'>You are unable to stop sprinting!</span>")
+			to_chat(src, span_warning("You are unable to stop sprinting!"))
 			return
 		disable_intentional_sprint_mode()
 		if((m_intent == MOVE_INTENT_RUN) && CHECK_ALL_MOBILITY(src, MOBILITY_STAND|MOBILITY_MOVE))

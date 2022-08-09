@@ -506,7 +506,7 @@
 	if(prob(30))
 		M.slip(5, M.loc, GALOSHES_DONT_HELP, 0, FALSE)
 		playsound(M, 'sound/effects/bang.ogg', 10, 1)
-		to_chat(usr, "<span class='warning'>You trip on the pipes!</span>")
+		to_chat(usr, span_warning("You trip on the pipes!"))
 		return
 
 /turf/open/floor/plasteel/f13/metal/pipe/corner

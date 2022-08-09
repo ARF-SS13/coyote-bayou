@@ -5,7 +5,7 @@
 	set category = null
 	set name = "Admin PM Mob"
 	if(!holder)
-		to_chat(src, "<span class='danger'>Error: Admin-PM-Context: Only administrators may use this command.</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM-Context: Only administrators may use this command."), confidential = TRUE)
 		return
 	if( !ismob(M) || !M.client )
 		return
@@ -17,7 +17,7 @@
 	set category = "Admin"
 	set name = "Admin PM"
 	if(!holder)
-		to_chat(src, "<span class='danger'>Error: Admin-PM-Panel: Only administrators may use this command.</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM-Panel: Only administrators may use this command."), confidential = TRUE)
 		return
 	var/list/client/targets[0]
 	for(var/client/T)
@@ -36,7 +36,7 @@
 
 /client/proc/cmd_ahelp_reply(whom)
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class='danger'>Error: Admin-PM: You are unable to use admin PM-s (muted).</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM: You are unable to use admin PM-s (muted)."), confidential = TRUE)
 		return
 	var/client/C
 	if(istext(whom))
@@ -47,7 +47,7 @@
 		C = whom
 	if(!C)
 		if(holder)
-			to_chat(src, "<span class='danger'>Error: Admin-PM: Client not found.</span>", confidential = TRUE)
+			to_chat(src, span_danger("Error: Admin-PM: Client not found."), confidential = TRUE)
 		return
 
 	var/datum/admin_help/AH = C.current_ticket
@@ -62,7 +62,7 @@
 		if(GLOB.directory[AH.initiator_ckey]) // Client has reconnected, lets try to recover
 			whom = GLOB.directory[AH.initiator_ckey]
 		else
-			to_chat(src, "<span class='danger'>Error: Admin-PM: Client not found.</span>", confidential = TRUE)
+			to_chat(src, span_danger("Error: Admin-PM: Client not found."), confidential = TRUE)
 			to_chat(src, "<span class='danger'><b>Message not sent:</b></span><br>[sanitize(msg)]", confidential = TRUE)
 			AH.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
 			return
@@ -72,12 +72,12 @@
 //Fetching a message if needed. src is the sender and C is the target client
 /client/proc/cmd_admin_pm(whom, msg)
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class='danger'>Error: Admin-PM: You are unable to use admin PM-s (muted).</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM: You are unable to use admin PM-s (muted)."), confidential = TRUE)
 		return
 
 	if(!holder && !current_ticket)	//no ticket? https://www.youtube.com/watch?v=iHSPf6x1Fdo
-		to_chat(src, "<span class='danger'>You can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be.</span>", confidential = TRUE)
-		to_chat(src, "<span class='notice'>Message: [msg]</span>", confidential = TRUE)
+		to_chat(src, span_danger("You can no longer reply to this ticket, please open another one by using the Adminhelp verb if need be."), confidential = TRUE)
+		to_chat(src, span_notice("Message: [msg]"), confidential = TRUE)
 		return
 
 	var/client/recipient
@@ -95,7 +95,7 @@
 		recipient = whom
 
 	if(!recipient)
-		to_chat(src, "<span class='danger'>Error: Admin-PM: Client not found.</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM: Client not found."), confidential = TRUE)
 		return
 
 	recipient_ckey = recipient.ckey
@@ -110,7 +110,7 @@
 		if(!msg)
 			return
 		if(holder)
-			to_chat(src, "<span class='danger'>Error: Use the admin IRC/Discord channel, nerd.</span>", confidential = TRUE)
+			to_chat(src, span_danger("Error: Use the admin IRC/Discord channel, nerd."), confidential = TRUE)
 			return
 
 
@@ -127,7 +127,7 @@
 				recipient = GLOB.directory[recipient_ckey]
 			else
 				if(holder)
-					to_chat(src, "<span class='danger'>Error: Admin-PM: Client not found.</span>", confidential = TRUE)
+					to_chat(src, span_danger("Error: Admin-PM: Client not found."), confidential = TRUE)
 					to_chat(src, "<span class='danger'><b>Message not sent:</b></span><br>[msg]", confidential = TRUE)
 					if(recipient_ticket)
 						recipient_ticket.AddInteraction("<b>No client found, message not sent:</b><br>[msg]")
@@ -143,7 +143,7 @@
 
 
 	if(prefs.muted & MUTE_ADMINHELP)
-		to_chat(src, "<span class='danger'>Error: Admin-PM: You are unable to use admin PM-s (muted).</span>", confidential = TRUE)
+		to_chat(src, span_danger("Error: Admin-PM: You are unable to use admin PM-s (muted)."), confidential = TRUE)
 		return
 
 	if(src.handle_spam_prevention(msg,MUTE_ADMINHELP))
@@ -186,7 +186,7 @@
 			else		//recipient is an admin but sender is not
 				var/replymsg = "Reply PM from-<b>[key_name(src, recipient, 1)]</b>: <span class='linkify'>[keywordparsedmsg]</span>"
 				admin_ticket_log(src, "<font color='red'>[replymsg]</font>")
-				to_chat(recipient, "<span class='danger'>[replymsg]</span>", confidential = TRUE)
+				to_chat(recipient, span_danger("[replymsg]"), confidential = TRUE)
 				to_chat(src, "<span class='notice'>PM to-<b>Admins</b>: <span class='linkify'>[msg]</span></span>", confidential = TRUE)
 				// SSblackbox.LogAhelp(current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
 
@@ -221,7 +221,7 @@
 					INVOKE_ASYNC(src, .proc/popup_admin_pm, recipient, msg)
 
 			else		//neither are admins
-				to_chat(src, "<span class='danger'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</span>", confidential = TRUE)
+				to_chat(src, span_danger("Error: Admin-PM: Non-admin to non-admin PM communication is forbidden."), confidential = TRUE)
 				return
 
 	if(external)

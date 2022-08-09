@@ -61,7 +61,7 @@
 /datum/reagent/consumable/tea/coyotetea/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	M.AdjustStun(-40, 0)
 	M.AdjustKnockdown(-40, 0)
 	M.AdjustUnconscious(-40, 0)

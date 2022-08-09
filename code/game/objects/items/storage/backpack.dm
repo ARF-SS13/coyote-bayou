@@ -89,21 +89,21 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take a spear out of the quiver.</span>")
+		to_chat(user, span_notice("You take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take a bola out of the quiver.</span>")
+		to_chat(user, span_notice("You take a bola out of the quiver."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
 
 /obj/item/storage/backpack/holding/satchel
@@ -120,7 +120,7 @@
 	item_state = "holdingduffel"
 
 /obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
+	user.visible_message(span_suicide("[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide."))
 	user.dropItemToGround(src, TRUE)
 	user.Stun(100, ignore_canstun = TRUE)
 	sleep(20)
@@ -148,7 +148,7 @@
 	STR.max_combined_w_class = 60
 
 /obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
+	user.visible_message(span_suicide("[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit..."))
 	return (OXYLOSS)
 
 /obj/item/storage/backpack/cultpack

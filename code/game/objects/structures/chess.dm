@@ -8,7 +8,7 @@
 	max_integrity = 100
 
 /obj/structure/chess/wrench_act(mob/user, obj/item/tool)
-	to_chat(user, "<span class='notice'>You take apart the chess piece.</span>")
+	to_chat(user, span_notice("You take apart the chess piece."))
 	var/obj/item/stack/sheet/metal/M = new (drop_location(), 2)
 	M.add_fingerprint(user)
 	tool.play_tool_sound(src)

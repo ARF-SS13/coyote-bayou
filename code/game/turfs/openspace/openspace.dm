@@ -87,22 +87,22 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
 		var/obj/structure/lattice/catwalk/W = locate(/obj/structure/lattice/catwalk, src)
 		if(W)
-			to_chat(user, "<span class='warning'>There is already a catwalk here!</span>")
+			to_chat(user, span_warning("There is already a catwalk here!"))
 			return
 		if(L)
 			if(R.use(1))
-				to_chat(user, "<span class='notice'>You construct a catwalk.</span>")
+				to_chat(user, span_notice("You construct a catwalk."))
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 				new/obj/structure/lattice/catwalk(src)
 			else
-				to_chat(user, "<span class='warning'>You need two rods to build a catwalk!</span>")
+				to_chat(user, span_warning("You need two rods to build a catwalk!"))
 			return
 		if(R.use(1))
-			to_chat(user, "<span class='notice'>You construct a lattice.</span>")
+			to_chat(user, span_notice("You construct a lattice."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			ReplaceWithLattice()
 		else
-			to_chat(user, "<span class='warning'>You need some support under this space to make a lattice.</span>")
+			to_chat(user, span_warning("You need some support under this space to make a lattice."))
 		return
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		if(!CanCoverUp())
@@ -113,12 +113,12 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 			if(S.use(1))
 				qdel(L)
 				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-				to_chat(user, "<span class='notice'>You build a floor.</span>")
+				to_chat(user, span_notice("You build a floor."))
 				PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			else
-				to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
+				to_chat(user, span_warning("You need one floor tile to build a floor!"))
 		else
-			to_chat(user, "<span class='warning'>The plating is going to need some support! Place metal rods first.</span>")
+			to_chat(user, span_warning("The plating is going to need some support! Place metal rods first."))
 
 /turf/open/transparent/openspace/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
 	if(!CanBuildHere())
@@ -136,7 +136,7 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 /turf/open/transparent/openspace/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_FLOORWALL)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			PlaceOnTop(/turf/open/floor/plating, flags = CHANGETURF_INHERIT_AIR)
 			return TRUE
 	return FALSE

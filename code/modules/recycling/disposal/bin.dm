@@ -82,15 +82,15 @@
 		if(I.tool_behaviour == TOOL_SCREWDRIVER)
 			panel_open = !panel_open
 			I.play_tool_sound(src)
-			to_chat(user, "<span class='notice'>You [panel_open ? "remove":"attach"] the screws around the power connection.</span>")
+			to_chat(user, span_notice("You [panel_open ? "remove":"attach"] the screws around the power connection."))
 			return
 		else if(I.tool_behaviour == TOOL_WELDER && panel_open)
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You start slicing the floorweld off \the [src]...</span>")
+			to_chat(user, span_notice("You start slicing the floorweld off \the [src]..."))
 			if(I.use_tool(src, user, 20, volume=100) && panel_open)
-				to_chat(user, "<span class='notice'>You slice the floorweld off \the [src].</span>")
+				to_chat(user, span_notice("You slice the floorweld off \the [src]."))
 				deconstruct()
 			return
 
@@ -114,7 +114,7 @@
 		return//you don't want this going into disposals ever
 	if(user.temporarilyRemoveItemFromInventory(I)) //double-checks never hurt
 		I.forceMove(src)
-		user.visible_message("[user.name] places \the [I] into \the [src].", "<span class='notice'>You place \the [I] into \the [src].</span>")
+		user.visible_message("[user.name] places \the [I] into \the [src].", span_notice("You place \the [I] into \the [src]."))
 //mouse drop another mob or self
 /obj/machinery/disposal/MouseDrop_T(mob/living/target, mob/living/user)
 	if(istype(target))
@@ -125,17 +125,17 @@
 		return
 	add_fingerprint(user)
 	if(user == target)
-		user.visible_message("[user] starts climbing into [src].", "<span class='notice'>You start climbing into [src]...</span>")
+		user.visible_message("[user] starts climbing into [src].", span_notice("You start climbing into [src]..."))
 	else
-		target.visible_message("<span class='danger'>[user] starts putting [target] into [src].</span>", "<span class='userdanger'>[user] starts putting you into [src]!</span>")
+		target.visible_message(span_danger("[user] starts putting [target] into [src]."), span_userdanger("[user] starts putting you into [src]!"))
 	if(do_mob(user, target, 20))
 		if (!loc)
 			return
 		target.forceMove(src)
 		if(user == target)
-			user.visible_message("[user] climbs into [src].", "<span class='notice'>You climb into [src].</span>")
+			user.visible_message("[user] climbs into [src].", span_notice("You climb into [src]."))
 		else
-			target.visible_message("<span class='danger'>[user] has placed [target] in [src].</span>", "<span class='userdanger'>[user] has placed [target] in [src].</span>")
+			target.visible_message(span_danger("[user] has placed [target] in [src]."), span_userdanger("[user] has placed [target] in [src]."))
 			log_combat(user, target, "stuffed", addition="into [src]")
 			target.LAssailant = WEAKREF(user)
 		update_icon()
@@ -154,7 +154,7 @@
 		return FALSE
 	if(target.mob_size > MOB_SIZE_HUMAN)
 		if(!pushing)
-			to_chat(user, "<span class='warning'>[target] doesn't fit inside [src]!</span>")
+			to_chat(user, span_warning("[target] doesn't fit inside [src]!"))
 		return FALSE
 	return TRUE
 
@@ -289,7 +289,7 @@
 	if(istype(I, /obj/item/storage/bag/trash))	//Not doing component overrides because this is a specific type.
 		var/obj/item/storage/bag/trash/T = I
 		var/datum/component/storage/STR = T.GetComponent(/datum/component/storage)
-		to_chat(user, "<span class='warning'>You empty the bag.</span>")
+		to_chat(user, span_warning("You empty the bag."))
 		for(var/obj/item/O in T.contents)
 			STR.remove_from_storage(O,src)
 		T.update_icon()
@@ -359,10 +359,10 @@
 	if(isitem(AM) && AM.CanEnterDisposals())
 		if(prob(75))
 			AM.forceMove(src)
-			visible_message("<span class='notice'>[AM] lands in [src].</span>")
+			visible_message(span_notice("[AM] lands in [src]."))
 			update_icon()
 		else
-			visible_message("<span class='notice'>[AM] bounces off of [src]'s rim!</span>")
+			visible_message(span_notice("[AM] bounces off of [src]'s rim!"))
 			return ..()
 	else
 		return ..()
@@ -372,8 +372,8 @@
 		return FALSE
 	target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_SOLID)
 	target.forceMove(src)
-	user.visible_message("<span class='danger'>[user.name] shoves [target.name] into \the [src]!</span>",
-		"<span class='danger'>You shove [target.name] into \the [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user.name] shoves [target.name] into \the [src]!"),
+		span_danger("You shove [target.name] into \the [src]!"), null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, target, "shoved", "into [src] (disposal bin)")
 	return TRUE
 
@@ -507,7 +507,7 @@
 	else if(ismob(AM))
 		var/mob/M = AM
 		if(prob(2)) // to prevent mobs being stuck in infinite loops
-			to_chat(M, "<span class='warning'>You hit the edge of the chute.</span>")
+			to_chat(M, span_warning("You hit the edge of the chute."))
 			return
 		M.forceMove(src)
 	flush()

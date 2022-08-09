@@ -30,10 +30,10 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			id = W
-			to_chat(user, "<span class='notice'>You insert [W].</span>")
+			to_chat(user, span_notice("You insert [W]."))
 			return
 		else
-			to_chat(user, "<span class='notice'>There's an ID inserted already.</span>")
+			to_chat(user, span_notice("There's an ID inserted already."))
 	return ..()
 
 /obj/machinery/computer/gulag_teleporter_computer/ui_interact(mob/user, ui_key = "main", datum/tgui/ui = null, force_open = FALSE, \
@@ -83,7 +83,7 @@
 	if(..())
 		return
 	if(!allowed(usr))
-		to_chat(usr, "<span class='warning'>Access denied.</span>")
+		to_chat(usr, span_warning("Access denied."))
 		return
 	switch(action)
 		if("scan_teleporter")
@@ -153,7 +153,7 @@
 	playsound(src, 'sound/weapons/emitter.ogg', 50, 1)
 	prisoner.forceMove(get_turf(beacon))
 	prisoner.Knockdown(40) // small travel dizziness
-	to_chat(prisoner, "<span class='warning'>The teleportation makes you a little dizzy.</span>")
+	to_chat(prisoner, span_warning("The teleportation makes you a little dizzy."))
 	new /obj/effect/particle_effect/sparks(get_turf(prisoner))
 	playsound(src, "sparks", 50, 1)
 	if(teleporter.locked)

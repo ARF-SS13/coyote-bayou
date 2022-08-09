@@ -72,7 +72,7 @@
 		var/mob/living/L = user
 		if(tooadvanced == TRUE)
 			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE))
-				to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+				to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
 				return FALSE
 			else
 				. = ..()
@@ -307,7 +307,7 @@
 			continue
 
 		if(disabled || !can_build(D))
-			dat += "<span class='linkOff'>[D.name]</span>"
+			dat += span_linkOff("[D.name]")
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 
@@ -341,7 +341,7 @@
 	for(var/v in matching_designs)
 		var/datum/design/D = v
 		if(disabled || !can_build(D))
-			dat += "<span class='linkOff'>[D.name]</span>"
+			dat += span_linkOff("[D.name]")
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 
@@ -500,21 +500,21 @@
 	if(DRM && panel_open)
 		if(constage == 0)
 			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
+				to_chat(user, span_notice("You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts."))
 				constage = 1
 				qdel(O)
 		if(constage == 1)
 			if(istype(O, /obj/item/stack/crafting/goodparts))
 				var/obj/item/stack/crafting/goodparts/S = O
 				if(S.get_amount() < 5)
-					to_chat(user, "<span class='warning'>You need at least 5 high-quality metal parts to upgrade [src].</span>")
+					to_chat(user, span_warning("You need at least 5 high-quality metal parts to upgrade [src]."))
 					return
 				S.use(5)
-				to_chat(user, "<span class='notice'>You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process.</span>")
+				to_chat(user, span_notice("You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process."))
 				constage = 2
 		if(constage == 2)
 			if(istype(O, /obj/item/crafting/reloader))
-				to_chat(user, "<span class='notice'>You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again.</span>")
+				to_chat(user, span_notice("You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again."))
 				constage = 3
 				DRM = 0
 				categories = list(
@@ -553,7 +553,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(L.has_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC))
-			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+			to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
 			return FALSE
 		else
 			. = ..()
@@ -590,22 +590,22 @@
 	..()
 	if(!simple && panel_open)
 		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
 			simple = 1
 			qdel(O)
 	if(!basic && panel_open)
 		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
 			basic = 1
 			qdel(O)
 	if(!intermediate && panel_open)
 		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
 			intermediate = 1
 			qdel(O)
 	if(!advanced && panel_open)
 		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
+			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
 			advanced = 1
 			qdel(O)
 	else

@@ -12,9 +12,9 @@
 //Heals the things that the other regenerative abilities don't.
 /obj/effect/proc_holder/changeling/panacea/sting_action(mob/living/user)
 	if(user.has_status_effect(STATUS_EFFECT_PANACEA))
-		to_chat(user, "<span class='warning'>We are already cleansing our impurities!</span>")
+		to_chat(user, span_warning("We are already cleansing our impurities!"))
 		return
-	to_chat(user, "<span class='notice'>We cleanse impurities from our form.</span>")
+	to_chat(user, span_notice("We cleanse impurities from our form."))
 	user.apply_status_effect(STATUS_EFFECT_PANACEA)
 	return TRUE
 

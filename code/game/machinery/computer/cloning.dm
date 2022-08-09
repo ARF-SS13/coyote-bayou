@@ -129,7 +129,7 @@
 			if (!user.transferItemToLoc(W,src))
 				return
 			src.diskette = W
-			to_chat(user, "<span class='notice'>You insert [W].</span>")
+			to_chat(user, span_notice("You insert [W]."))
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
 			src.updateUsrDialog()
 	else if(istype(W, /obj/item/multitool))
@@ -167,7 +167,7 @@
 			else
 				dat += "<a href='byond://?src=[REF(src)];task=stopautoprocess'>Stop autoclone</a>"
 		else
-			dat += "<span class='linkOff'>Autoclone</span>"
+			dat += span_linkOff("Autoclone")
 	dat += "<h3>Cloning Pod Status</h3>"
 	dat += "<div class='statusDisplay'>[temp]&nbsp;</div>"
 
@@ -207,7 +207,7 @@
 					dat += "<a href='byond://?src=[REF(src)];scan=1'>[use_records ? "Start Scan" : "Clone"]</a>"
 					dat += "<br><a href='byond://?src=[REF(src)];lock=1'>[scanner.locked ? "Unlock Scanner" : "Lock Scanner"]</a>"
 				else
-					dat += "<span class='linkOff'>[use_records ? "Start Scan" : "Clone"]</span>"
+					dat += span_linkOff("[use_records ? "Start Scan" : "Clone"]")
 			if(use_records)
 				// Database
 				dat += "<h3>Database Functions</h3>"
