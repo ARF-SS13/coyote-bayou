@@ -270,16 +270,19 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
+		weapon_weight = GUN_ONE_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_dat.modifyAllRatings(1.2)
+		recoil_dat.modifyAllRatings(2)
 		cock_delay = GUN_COCK_SHOTGUN_FAST
-		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
-			damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
-		else
-			damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
+		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
+		init_firemodes = list(
+			list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		)
+		initialize_firemodes()
+		if(firemodes.len)
+			set_firemode(sel_mode)
 		update_icon()
 		return 1
 

@@ -155,7 +155,7 @@
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
@@ -498,7 +498,6 @@
  * Hunting revolver
  * Super heavy revolver
  * .45-70
- * Less damage
  * Uncommon
  * * * * * * * * * * */
 
@@ -516,7 +515,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2)
 
 	can_scope = TRUE
