@@ -246,7 +246,7 @@
 
 /datum/crafting_recipe/shutters/old
 	name = "Shutters"
-	reqs = list(/obj/item/stack/sheet/plasteel = 10, //5x as expensive as a reinforced wall, can be destroyed by mid-tier guns or high-tier melee. More useful to townies/comfy roles then for NCR/Legion.
+	reqs = list(/obj/item/stack/sheet/prewar = 10, //Changed to use more readily available Pre-War Alloys for CB. Maybe we'll see more use out of them this way.
 				/obj/item/stack/cable_coil = 10,
 				/obj/item/electronics/airlock = 1
 				)
