@@ -258,7 +258,7 @@
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
-	reqs = list(/obj/item/stack/sheet/plasteel = 20, // 10x as expensive as a reinforced wall, but will block anything save for top-tier melee weapons or explosives
+	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials. 
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/electronics/airlock = 1
 				)
