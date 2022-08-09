@@ -229,7 +229,7 @@
 	name = "Mozzarella sticks"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/mozzarella = 1,
-		/obj/item/reagent_containers/food/snacks/breadslice/custom = 2,
+		/obj/item/reagent_containers/food/snacks/breadslice/plain = 2,
 		/obj/item/reagent_containers/food/snacks/tomato_sauce = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/mozzarella_sticks

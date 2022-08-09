@@ -154,6 +154,7 @@
 	desc = "Some good down-home country-style, rootin'-tootin', revolver-shootin', dad-gum yeehaw cornbread."
 	icon_state = "cornbread"
 	slice_path = /obj/item/reagent_containers/food/snacks/breadslice/corn
+	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30, /datum/reagent/consumable/nutriment/vitamin = 5)
 	tastes = list("cornbread" = 10)
 	foodtype = GRAIN
