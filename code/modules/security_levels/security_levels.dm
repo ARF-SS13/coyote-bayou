@@ -106,7 +106,7 @@ GLOBAL_LIST_INIT(all_security_levels, list("green", "blue", "amber", "red", "del
 		if(level >= SEC_LEVEL_RED)
 			for(var/obj/machinery/door/D in GLOB.machines)
 				if(D.red_alert_access)
-					D.visible_message("<span class='notice'>[D] whirrs as it automatically lifts access requirements!</span>")
+					D.visible_message(span_notice("[D] whirrs as it automatically lifts access requirements!"))
 					playsound(D, 'sound/machines/boltsup.ogg', 50, TRUE)
 		SSblackbox.record_feedback("tally", "security_level_changes", 1, NUM2SECLEVEL(GLOB.security_level))
 		SSnightshift.check_nightshift()

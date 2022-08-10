@@ -29,7 +29,7 @@
 
 /obj/item/clothing/head/helmet/space/new_rig/attack_self(mob/user)
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot turn the light on while in this [user.loc].</span>")//To prevent some lighting anomalities.
+		to_chat(user, span_warning("You cannot turn the light on while in this [user.loc]."))//To prevent some lighting anomalities.
 
 		return
 	toggle_light(user)
@@ -40,7 +40,7 @@
 		icon_state = "[item_color][on]"
 		set_light_on(on)
 	else
-		to_chat(user, "<span class='warning'>You cannot turn the light on while the suit isn't sealed.</span>")
+		to_chat(user, span_warning("You cannot turn the light on while the suit isn't sealed."))
 
 	if(istype(user,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = user
@@ -73,7 +73,7 @@
 	if(flags & AIRTIGHT) //Could also check for STOPSPRESSUREDMAGE, but one is enough, both get toggled when the seal gets toggled.
 		..(user)
 	else
-		to_chat(user, "<span class='warning'>You cannot activate mag-pulse traction system while the suit is not sealed.</span>")
+		to_chat(user, span_warning("You cannot activate mag-pulse traction system while the suit is not sealed."))
 	*/
 /obj/item/clothing/suit/space/new_rig
 	name = "chestpiece"

@@ -43,7 +43,7 @@
 		//log_message("[src] is destroyed.", LOG_MECHA)
 		chassis.log_append_to_last("[src] is destroyed.",1)
 		if(chassis.occupant)
-			chassis.occupant_message("<span class='danger'>[src] is destroyed!</span>")
+			chassis.occupant_message(span_danger("[src] is destroyed!"))
 			SEND_SOUND(chassis.occupant, sound(istype(src, /obj/item/mecha_parts/mecha_equipment/weapon) ? 'sound/mecha/weapdestr.ogg' : 'sound/mecha/critdestr.ogg', volume=50))
 			//chassis.occupant.playsound_local(chassis, destroy_sound, 50)
 		//if(!detachable) //If we're a built-in nondetachable equipment, let's lock up the slot that we were in.

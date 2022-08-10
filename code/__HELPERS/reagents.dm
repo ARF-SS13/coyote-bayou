@@ -89,7 +89,7 @@
 				else
 					valid_id = TRUE
 				if(!valid_id)
-					to_chat(user, "<span class='warning'>A reagent with that ID doesn't exist!</span>")
+					to_chat(user, span_warning("A reagent with that ID doesn't exist!"))
 		if("Choose from a list")
 			chosen_id = input(user, "Choose a reagent to add.", "Choose a reagent.") as null|anything in subtypesof(/datum/reagent)
 		if("I'm feeling lucky")

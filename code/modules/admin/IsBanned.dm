@@ -45,8 +45,8 @@
 		if(!check_whitelist(ckey))
 			if (admin)
 				log_admin("The admin [key] has been allowed to bypass the whitelist")
-				message_admins("<span class='adminnotice'>The admin [key] has been allowed to bypass the whitelist</span>")
-				addclientmessage(ckey,"<span class='adminnotice'>You have been allowed to bypass the whitelist</span>")
+				message_admins(span_adminnotice("The admin [key] has been allowed to bypass the whitelist"))
+				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass the whitelist"))
 			else
 				log_access("Failed Login: [key] - Not on whitelist")
 				key_cache[key] = 0
@@ -77,8 +77,8 @@
 		if(.)
 			if (admin)
 				log_admin("The admin [key] has been allowed to bypass a matching ban on [.["key"]]")
-				message_admins("<span class='adminnotice'>The admin [key] has been allowed to bypass a matching ban on [.["key"]]</span>")
-				addclientmessage(ckey,"<span class='adminnotice'>You have been allowed to bypass a matching ban on [.["key"]]</span>")
+				message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching ban on [.["key"]]"))
+				addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching ban on [.["key"]]"))
 			else
 				log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
 				key_cache[key] = 0
@@ -126,11 +126,11 @@
 			if (admin)
 				if (bantype == "ADMIN_PERMABAN" || bantype == "ADMIN_TEMPBAN")
 					log_admin("The admin [key] is admin banned (#[banid]), and has been disallowed access")
-					message_admins("<span class='adminnotice'>The admin [key] is admin banned (#[banid]), and has been disallowed access</span>")
+					message_admins(span_adminnotice("The admin [key] is admin banned (#[banid]), and has been disallowed access"))
 				else
 					log_admin("The admin [key] has been allowed to bypass a matching ban on [pkey] (#[banid])")
-					message_admins("<span class='adminnotice'>The admin [key] has been allowed to bypass a matching ban on [pkey] (#[banid])</span>")
-					addclientmessage(ckey,"<span class='adminnotice'>You have been allowed to bypass a matching ban on [pkey] (#[banid])</span>")
+					message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching ban on [pkey] (#[banid])"))
+					addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching ban on [pkey] (#[banid])"))
 					continue
 			var/expires = ""
 			if(text2num(duration) > 0)
@@ -214,8 +214,8 @@
 		//So it's safe to let admins walk thru host/sticky bans here
 		if (admin)
 			log_admin("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]")
-			message_admins("<span class='adminnotice'>The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]</span>")
-			addclientmessage(ckey,"<span class='adminnotice'>You have been allowed to bypass a matching host/sticky ban on [bannedckey]</span>")
+			message_admins(span_adminnotice("The admin [key] has been allowed to bypass a matching host/sticky ban on [bannedckey]"))
+			addclientmessage(ckey,span_adminnotice("You have been allowed to bypass a matching host/sticky ban on [bannedckey]"))
 			key_cache[key] = 0
 			return null
 

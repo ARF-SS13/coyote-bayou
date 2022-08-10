@@ -142,7 +142,7 @@
 
 /obj/item/storage/fancy/cigarettes/attack_self(mob/user)
 	if(contents.len == 0 && spawn_coupon)
-		to_chat(user, "<span class='notice'>You rip the back off \the [src] and get a coupon!</span>")
+		to_chat(user, span_notice("You rip the back off \the [src] and get a coupon!"))
 		var/obj/item/coupon/attached_coupon = new
 		user.put_in_hands(attached_coupon)
 		attached_coupon.generate()
@@ -163,30 +163,30 @@
 
 /obj/item/storage/fancy/cigarettes/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to extract contents.</span>"
+	. += span_notice("Alt-click to extract contents.")
 	if(spawn_coupon)
-		. += "<span class='notice'>There's a coupon on the back of the pack! You can tear it off once it's empty.</span>"
+		. += span_notice("There's a coupon on the back of the pack! You can tear it off once it's empty.")
 
 /obj/item/storage/fancy/cigarettes/AltClick(mob/living/carbon/user)
 	. = ..()
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return	
 	var/obj/item/lighter/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take \a [L] out of the pack.</span>")
+		to_chat(user, span_notice("You take \a [L] out of the pack."))
 		return TRUE
 	var/obj/item/clothing/mask/cigarette/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the pack."))
 	else
-		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
+		to_chat(user, span_notice("There are no [icon_type]s left in the pack."))
 	return TRUE
 
 /obj/item/storage/fancy/cigarettes/update_icon_state()
@@ -225,11 +225,11 @@
 			SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, M)
 			M.equip_to_slot_if_possible(W, SLOT_WEAR_MASK)
 			contents -= W
-			to_chat(user, "<span class='notice'>You take \a [W] out of the pack.</span>")
+			to_chat(user, span_notice("You take \a [W] out of the pack."))
 		else
 			return ..()
 	else
-		to_chat(user, "<span class='notice'>There are no [icon_type]s left in the pack.</span>")
+		to_chat(user, span_notice("There are no [icon_type]s left in the pack."))
 
 /obj/item/storage/fancy/cigarettes/dromedaryco
 	name = "\improper DromedaryCo packet"

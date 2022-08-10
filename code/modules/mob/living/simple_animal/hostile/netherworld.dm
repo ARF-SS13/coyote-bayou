@@ -86,8 +86,8 @@
 	START_PROCESSING(SSprocessing, src)
 
 /obj/structure/spawner/nether/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-		user.visible_message("<span class='warning'>[user] is violently pulled into the link!</span>", \
-						  "<span class='userdanger'>Touching the portal, you are quickly pulled through into a world of unimaginable horror!</span>")
+		user.visible_message(span_warning("[user] is violently pulled into the link!"), \
+						  span_userdanger("Touching the portal, you are quickly pulled through into a world of unimaginable horror!"))
 		contents.Add(user)
 
 
@@ -102,5 +102,5 @@
 				blank = new(loc)
 				blank.name = "[M]"
 				blank.desc = "It's [M], but [M.p_their()] flesh has an ashy texture, and [M.p_their()] face is featureless save an eerie smile."
-				src.visible_message("<span class='warning'>[M] reemerges from the link!</span>")
+				src.visible_message(span_warning("[M] reemerges from the link!"))
 				qdel(M)

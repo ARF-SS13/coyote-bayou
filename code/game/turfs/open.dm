@@ -194,8 +194,8 @@
 		if(is_servant_of_ratvar(L) && L.stat != DEAD)
 			. = TRUE
 			L.forceMove(get_turf(pick(GLOB.servant_spawns)))
-			visible_message("<span class='warning'>[L] vanishes in a flash of red!</span>")
-			L.visible_message("<span class='warning'>[L] appears in a flash of red!</span>", \
+			visible_message(span_warning("[L] vanishes in a flash of red!"))
+			L.visible_message(span_warning("[L] appears in a flash of red!"), \
 			"<span class='bold cult'>sas'so c'arta forbici</span><br><span class='danger'>You're yanked away from [src]!</span>")
 			playsound(src, 'sound/magic/enter_blood.ogg', 50, TRUE)
 			playsound(L, 'sound/magic/exit_blood.ogg', 40, TRUE)
@@ -260,7 +260,7 @@
 				if(!(H.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE) && H.getStaminaLoss() <= 20)
 					return FALSE
 	if(!(lube&SLIDE_ICE))
-		to_chat(C, "<span class='notice'>You slipped[ O ? " on the [O.name]" : ""]!</span>")
+		to_chat(C, span_notice("You slipped[ O ? " on the [O.name]" : ""]!"))
 		playsound(C.loc, 'sound/misc/slip.ogg', 50, 1, -3)
 
 	SEND_SIGNAL(C, COMSIG_ADD_MOOD_EVENT, "slipped", /datum/mood_event/slipped)

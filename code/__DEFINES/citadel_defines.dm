@@ -41,7 +41,7 @@
 #define BALLS_VOLUME_BASE	25
 #define BALLS_VOLUME_MULT	1
 
-#define DEF_BALLS_SHAPE		"Single"
+#define DEF_BALLS_SHAPE		"Pair of testicles"
 
 #define BALLS_SIZE_MIN		1
 #define BALLS_SIZE_DEF		2

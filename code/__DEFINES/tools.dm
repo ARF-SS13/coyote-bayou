@@ -43,3 +43,14 @@
 // If delay between the start and the end of tool operation is less than MIN_TOOL_SOUND_DELAY,
 // tool sound is only played when op is started. If not, it's played twice.
 #define MIN_TOOL_SOUND_DELAY 20
+
+//Time for a work for tool system calculated in that way: basic time - tool level - stat check..
+//It means that basic tools will give -30 on time, and people on right job should have -20 at least, or even more.
+//This isn't used yet but it's kept for compatibility.
+#define WORKTIME_INSTANT				0
+#define WORKTIME_NEAR_INSTANT			30
+#define WORKTIME_FAST					60
+#define WORKTIME_NORMAL					90
+#define WORKTIME_SLOW					120
+#define WORKTIME_LONG					170
+#define WORKTIME_EXTREMELY_LONG			250

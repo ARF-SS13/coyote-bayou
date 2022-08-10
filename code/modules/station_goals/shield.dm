@@ -105,10 +105,10 @@
 /obj/machinery/satellite/proc/toggle(mob/user)
 	if(!active && !isinspace())
 		if(user)
-			to_chat(user, "<span class='warning'>You can only activate [src] in space.</span>")
+			to_chat(user, span_warning("You can only activate [src] in space."))
 		return FALSE
 	if(user)
-		to_chat(user, "<span class='notice'>You [active ? "deactivate": "activate"] [src].</span>")
+		to_chat(user, span_notice("You [active ? "deactivate": "activate"] [src]."))
 	active = !active
 	if(active)
 		animate(src, pixel_y = 2, time = 10, loop = -1)
@@ -123,7 +123,7 @@
 
 /obj/machinery/satellite/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/multitool))
-		to_chat(user, "<span class='notice'>// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]</span>")
+		to_chat(user, span_notice("// NTSAT-[id] // Mode : [active ? "PRIMARY" : "STANDBY"] //[(obj_flags & EMAGGED) ? "DEBUG_MODE //" : ""]"))
 	else
 		return ..()
 
@@ -146,7 +146,7 @@
 
 /obj/machinery/satellite/meteor_shield/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/disk/meteor))
-		to_chat(user, "<span class='notice'>The disk uploads better tracking and rang modification software.</span>")
+		to_chat(user, span_notice("The disk uploads better tracking and rang modification software."))
 		kill_range = 17
 	else
 		return ..()
@@ -202,7 +202,7 @@
 	if(obj_flags & EMAGGED)
 		return
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='notice'>You access the satellite's debug mode, increasing the chance of meteor strikes.</span>")
+	to_chat(user, span_notice("You access the satellite's debug mode, increasing the chance of meteor strikes."))
 	if(active)
 		change_meteor_chance(4)
 	return TRUE

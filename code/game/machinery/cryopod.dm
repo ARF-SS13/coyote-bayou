@@ -88,14 +88,14 @@
 
 	if(href_list["item"])
 		if(!allowed(user))
-			to_chat(user, "<span class='warning'>Access Denied.</span>")
+			to_chat(user, span_warning("Access Denied."))
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			updateUsrDialog()
 			return
 		if(!allow_items) return
 
 		if(frozen_items.len == 0)
-			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
+			to_chat(user, span_notice("There is nothing to recover from storage."))
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			updateUsrDialog()
 			return
@@ -106,12 +106,12 @@
 			return
 
 		if(!(I in frozen_items))
-			to_chat(user, "<span class='notice'>\The [I] is no longer in storage.</span>")
+			to_chat(user, span_notice("\The [I] is no longer in storage."))
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			updateUsrDialog()
 			return
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges \the [I].</span>")
+		visible_message(span_notice("The console beeps happily as it disgorges \the [I]."))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 
 		I.forceMove(drop_location())
@@ -123,7 +123,7 @@
 	else if(href_list["allitems"])
 		playsound(src, "terminal_type", 25, 0)
 		if(!allowed(user))
-			to_chat(user, "<span class='warning'>Access Denied.</span>")
+			to_chat(user, span_warning("Access Denied."))
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			updateUsrDialog()
 			return
@@ -131,11 +131,11 @@
 			return
 
 		if(frozen_items.len == 0)
-			to_chat(user, "<span class='notice'>There is nothing to recover from storage.</span>")
+			to_chat(user, span_notice("There is nothing to recover from storage."))
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return
 
-		visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>")
+		visible_message(span_notice("The console beeps happily as it disgorges the desired objects."))
 		playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, 0)
 
 		for(var/obj/item/I in frozen_items)
@@ -243,7 +243,7 @@
 		var/mob/living/mob_occupant = occupant
 		investigate_log("Cryogenics machine closed with occupant [key_name(occupant)] by user [key_name(user)].", INVESTIGATE_CRYOGENICS)
 		if(mob_occupant && mob_occupant.stat != DEAD)
-			to_chat(occupant, "<span class='boldnotice'>You feel cool air surround you. You go numb as your senses turn inward.</span>")
+			to_chat(occupant, span_boldnotice("You feel cool air surround you. You go numb as your senses turn inward."))
 		if(mob_occupant.client)//if they're logged in
 			despawn_world_time = world.time + (time_till_despawn * 0.1)
 		else
@@ -260,8 +260,8 @@
 
 /obj/machinery/cryopod/container_resist(mob/living/user)
 	investigate_log("Cryogenics machine container resisted by [key_name(user)] with occupant [key_name(occupant)].", INVESTIGATE_CRYOGENICS)
-	visible_message("<span class='notice'>[occupant] emerges from [src]!</span>",
-		"<span class='notice'>You climb out of [src]!</span>")
+	visible_message(span_notice("[occupant] emerges from [src]!"),
+		span_notice("You climb out of [src]!"))
 	open_machine()
 
 /obj/machinery/cryopod/relaymove(mob/user)
@@ -406,7 +406,7 @@
 	if(GLOB.announcement_systems.len)
 		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 		announcer.announce("CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
-		visible_message("<span class='notice'>\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage.</span>")
+		visible_message(span_notice("\The [src] hums and hisses as it moves [mob_occupant.real_name] into storage."))
 
 	// Ghost and delete the mob.
 	if(!mob_occupant.get_ghost(1))
@@ -431,18 +431,18 @@
 		return
 
 	if(occupant)
-		to_chat(user, "<span class='boldnotice'>The cryo pod is already occupied!</span>")
+		to_chat(user, span_boldnotice("The cryo pod is already occupied!"))
 		return
 
 	if(target.stat == DEAD)
-		to_chat(user, "<span class='notice'>Dead people can not be put into cryo.</span>")
+		to_chat(user, span_notice("Dead people can not be put into cryo."))
 		return
 
 	if(target.client && user != target)
 		if(iscyborg(target))
-			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're online.</span>")
+			to_chat(user, span_danger("You can't put [target] into [src]. They're online."))
 		else
-			to_chat(user, "<span class='danger'>You can't put [target] into [src]. They're conscious.</span>")
+			to_chat(user, span_danger("You can't put [target] into [src]. They're conscious."))
 		return
 	else if(target.client)
 		if(alert(target,"Would you like to enter cryosleep?",,"Yes","No") == "No")
@@ -480,13 +480,13 @@
 		visible_message("[user] starts putting [target] into the cryo pod.")
 
 	if(occupant)
-		to_chat(user, "<span class='boldnotice'>\The [src] is in use.</span>")
+		to_chat(user, span_boldnotice("\The [src] is in use."))
 		return
 	close_machine(target)
 
-	to_chat(target, "<span class='boldnotice'>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</span>")
+	to_chat(target, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
 	name = "[name] ([occupant.name])"
-	log_admin("<span class='notice'>[key_name(target)] entered a stasis pod.</span>")
+	log_admin(span_notice("[key_name(target)] entered a stasis pod."))
 	message_admins("[key_name_admin(target)] entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[x];Y=[y];Z=[z]'>JMP</a>)")
 	add_fingerprint(target)
 

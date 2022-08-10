@@ -16,11 +16,11 @@
 		return
 
 	if(!holder.wearer.put_in_hands(device))
-		to_chat(holder.wearer, "<span class='notice'>You need a free hand to hold \the [device].</span>")
+		to_chat(holder.wearer, span_notice("You need a free hand to hold \the [device]."))
 		active = FALSE
 		return
 
-	to_chat(holder.wearer, "<span class='notice'>You deploy \the [device].</span>")
+	to_chat(holder.wearer, span_notice("You deploy \the [device]."))
 
 
 /obj/item/rig_module/handheld/deactivate()
@@ -31,7 +31,7 @@
 		M.temporarilyRemoveItemFromInventory(device, 1)
 
 	device.loc = src
-	to_chat(holder.wearer, "<span class='notice'>You retract \the [device].</span>")
+	to_chat(holder.wearer, span_notice("You retract \the [device]."))
 
 /obj/item/rig_module/handheld/Initialize()
 	..()

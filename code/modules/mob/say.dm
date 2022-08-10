@@ -18,7 +18,7 @@
 	if(!length(message))
 		return
 	if(GLOB.say_disabled)
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	clear_typing_indicator()
 	say(message)
@@ -32,7 +32,7 @@
 	// If they don't type anything just drop the message.
 	clear_typing_indicator()
 	if(GLOB.say_disabled)
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	if(!length(message))
 		return
@@ -44,12 +44,12 @@
 	if(!length(message))
 		return
 	if(GLOB.say_disabled)
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	
 	if(length(message) > MAX_MESSAGE_LEN)
 		to_chat(usr, message)
-		to_chat(usr, "<span class='danger'>^^^----- The preceeding message has been DISCARDED for being over the maximum length of [MAX_MESSAGE_LEN]. It has NOT been sent! -----^^^</span>")
+		to_chat(usr, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [MAX_MESSAGE_LEN]. It has NOT been sent! -----^^^"))
 		return
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
@@ -106,7 +106,7 @@
 	if(!length(message))
 		return
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	whisper(message)
 
@@ -118,7 +118,7 @@
 	var/alt_name = ""
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	var/jb = jobban_isbanned(src, "OOC")
@@ -126,14 +126,14 @@
 		return
 
 	if(jb)
-		to_chat(src, "<span class='danger'>You have been banned from deadchat.</span>")
+		to_chat(src, span_danger("You have been banned from deadchat."))
 		return
 
 
 
 	if (src.client)
 		if(src.client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, "<span class='danger'>You cannot talk in deadchat (muted).</span>")
+			to_chat(src, span_danger("You cannot talk in deadchat (muted)."))
 			return
 
 		if(src.client.handle_spam_prevention(message,MUTE_DEADCHAT))

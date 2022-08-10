@@ -17,7 +17,7 @@
 	var/shock_cooldown = FALSE
 
 /obj/item/electropack/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] hooks [user.p_them()]self to the electropack and spams the trigger! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (FIRELOSS)
 
 /obj/item/electropack/Initialize()
@@ -32,7 +32,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.back)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+			to_chat(user, span_warning("You need help taking this off!"))
 			return
 	return ..()
 
@@ -42,7 +42,7 @@
 		A.icon = 'icons/obj/assemblies.dmi'
 
 		if(!user.transferItemToLoc(W, A))
-			to_chat(user, "<span class='warning'>[W] is stuck to your hand, you cannot attach it to [src]!</span>")
+			to_chat(user, span_warning("[W] is stuck to your hand, you cannot attach it to [src]!"))
 			return
 		W.master = A
 		A.part1 = W
@@ -68,7 +68,7 @@
 		var/mob/living/L = loc
 		step(L, pick(GLOB.cardinals))
 
-		to_chat(L, "<span class='danger'>You feel a sharp shock!</span>")
+		to_chat(L, span_danger("You feel a sharp shock!"))
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 		s.set_up(3, 1, L)
 		s.start()
@@ -166,7 +166,7 @@
 
 /obj/item/electropack/shockcollar/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user && user.get_item_by_slot(SLOT_NECK))
-		to_chat(user, "<span class='warning'>The collar is fastened tight! You'll need help taking this off!</span>")
+		to_chat(user, span_warning("The collar is fastened tight! You'll need help taking this off!"))
 		return
 	return ..()
 
@@ -184,7 +184,7 @@
 		addtimer(VARSET_CALLBACK(src, shock_cooldown, FALSE), 100)
 		step(L, pick(GLOB.cardinals))
 
-		to_chat(L, "<span class='danger'>You feel a sharp shock from the collar!</span>")
+		to_chat(L, span_danger("You feel a sharp shock from the collar!"))
 		var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 		s.set_up(3, 1, L)
 		s.start()
@@ -206,11 +206,11 @@
 		return
 	/*if(istype(W, /obj/item/key/scollar)) //SCRAPPING FOR NOW
 		if(lock != FALSE)
-			to_chat(user, "<span class='warning'>With a click the shock collar unlocks!</span>")
+			to_chat(user, span_warning("With a click the shock collar unlocks!"))
 			lock = FALSE
 			REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 		else
-			to_chat(user, "<span class='warning'>With a click the shock collar locks!</span>")
+			to_chat(user, span_warning("With a click the shock collar locks!"))
 			lock = TRUE
 		if(ismob(src.loc))
 			return
@@ -245,10 +245,10 @@
 		return
 /*	if(istype(W, /obj/item/key/bcollar)) //SCRAPPING FOR NOW
 		if(lock != FALSE)
-			to_chat(user, "<span class='warning'>With a click the explosive collar unlocks!</span>")
+			to_chat(user, span_warning("With a click the explosive collar unlocks!"))
 			lock = FALSE
 			REMOVE_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
-		to_chat(user, "<span class='warning'>With a click the explosive collar locks!</span>")
+		to_chat(user, span_warning("With a click the explosive collar locks!"))
 		lock = TRUE
 		if(!ismob(src.loc))
 			return
@@ -264,7 +264,7 @@
 	if(isliving(loc))
 		var/mob/living/L = loc
 		step(L, pick(GLOB.cardinals))
-		to_chat(L, "<span class='danger'>Beep beep</span>")
+		to_chat(L, span_danger("Beep beep"))
 		boom(L)
 
 	if(master)
@@ -289,7 +289,7 @@
 		return ..()
 	var/obj/item/electropack/shockcollar/shockCollar = M.get_item_by_slot(SLOT_NECK)
 	shockCollar.lock = !shockCollar.lock
-	visible_message("<span class='warning'>[shockCollar] [shockCollar.lock ? "locks" : "unlocks"] around [M]'s neck.</span>")
+	visible_message(span_warning("[shockCollar] [shockCollar.lock ? "locks" : "unlocks"] around [M]'s neck."))
 	if(shockCollar.lock)
 		ADD_TRAIT(shockCollar, TRAIT_NODROP, TRAIT_GENERIC)
 		return

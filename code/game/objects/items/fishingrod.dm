@@ -61,12 +61,12 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			var/fish_result = complete_fishing()
 			switch(fish_result)
 				if(1)
-					to_chat(current_user, "<span class='warning'>You got trash, lame...</span>")
+					to_chat(current_user, span_warning("You got trash, lame..."))
 				if(2)
-					to_chat(current_user, "<span class='warning'>You got nothing, lame...</span>")
+					to_chat(current_user, span_warning("You got nothing, lame..."))
 				if(3)
-					to_chat(current_user, "<span class='green'>You got a fish, nice!</span>")
-		to_chat(current_user, "<span class='notice'>You pull back your line!</span>")
+					to_chat(current_user, span_green("You got a fish, nice!"))
+		to_chat(current_user, span_notice("You pull back your line!"))
 		inuse = FALSE
 		return //yea, we aren't terraria with a fishing rod that has multiple lines
 	inuse = TRUE
@@ -74,7 +74,7 @@ GLOBAL_LIST_INIT(fish_rates, list(
 	addtimer(CALLBACK(src, .proc/play_readysound), random_fishtime)
 	current_wait = world.time + random_fishtime
 	current_waitfail = current_wait + max_afterfish
-	to_chat(current_user, "<span class='notice'>You cast your fishing line, get ready to reel it back in!</span>")
+	to_chat(current_user, span_notice("You cast your fishing line, get ready to reel it back in!"))
 	current_turf = get_turf(current_user)
 
 /obj/item/fishingrod/proc/falsify_inuse()
@@ -103,3 +103,13 @@ GLOBAL_LIST_INIT(fish_rates, list(
 			var/pick_fish = pickweight(GLOB.fish_rates) //add your in the global list
 			new pick_fish(current_turf)
 			return 3
+
+// craftable/obtainable fishing rods
+
+/obj/item/fishingrod/spearfisher
+	name = "Spearfisher"
+	desc = "In the ancient books, fishermen speak of a technique called spear-fishing. Over time, the tribe has recreated what they must have spoken of; a spear with a fishing line attached. It both fishes, and self-defenses. Truly, the ancients were wise."
+	icon_state = "spearfisher"
+	force = 22
+	force_unwielded = 22
+	force_wielded = 35

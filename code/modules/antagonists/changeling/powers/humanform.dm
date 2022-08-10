@@ -23,7 +23,7 @@
 		return
 	if(!user || user.mob_transforming)
 		return 0
-	to_chat(user, "<span class='notice'>We transform our appearance.</span>")
+	to_chat(user, span_notice("We transform our appearance."))
 
 	changeling.purchasedpowers -= src
 

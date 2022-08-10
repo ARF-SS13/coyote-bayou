@@ -22,7 +22,7 @@
 /obj/effect/proc_holder/spell/targeted/area_teleport/before_cast(list/targets)
 	var/area/U = get_area(usr)
 	if(U.noteleport && !istype(U, /area/wizard_station)) // Wizard den special check for those complaining about being unable to tele on station.
-		to_chat(usr, "<span class='warning'>Unseen forces prevent you from casting this spell in this area</span>")
+		to_chat(usr, span_warning("Unseen forces prevent you from casting this spell in this area"))
 		return
 	var/A
 	if(!randomise_selection)

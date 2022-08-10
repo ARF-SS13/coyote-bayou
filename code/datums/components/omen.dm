@@ -17,12 +17,12 @@
 		return COMPONENT_INCOMPATIBLE
 	var/mob/person = parent
 	if(!silent)
-		to_chat(person, "<span class='warning'>You get a bad feeling...</span>")
+		to_chat(person, span_warning("You get a bad feeling..."))
 	src.vessel = vessel
 
 /datum/component/omen/Destroy(force, silent)
 	if(vessel)
-		vessel.visible_message("<span class='warning'>[vessel] burns up in a sinister flash, taking an evil energy with it...</span>")
+		vessel.visible_message(span_warning("[vessel] burns up in a sinister flash, taking an evil energy with it..."))
 		vessel = null
 	return ..()
 
@@ -61,7 +61,7 @@
 		return
 
 	playsound(get_turf(our_guy), "sound/effects/tableheadsmash.ogg", 90, TRUE)
-	our_guy.visible_message("<span class='danger'>[our_guy] hits [our_guy.p_their()] head really badly falling down!</span>", "<span class='userdanger'>You hit your head really badly falling down!</span>")
+	our_guy.visible_message(span_danger("[our_guy] hits [our_guy.p_their()] head really badly falling down!"), span_userdanger("You hit your head really badly falling down!"))
 	the_head.receive_damage(75)
 	our_guy.adjustOrganLoss(ORGAN_SLOT_BRAIN, 100)
 	qdel(src)
@@ -70,5 +70,5 @@
 /datum/component/omen/proc/check_bless(mob/living/our_guy, category)
 	if(category != "blessing")
 		return
-	to_chat(our_guy, "<span class='nicegreen'>You feel a horrible omen lifted off your shoulders!</span>")
+	to_chat(our_guy, span_nicegreen("You feel a horrible omen lifted off your shoulders!"))
 	qdel(src)

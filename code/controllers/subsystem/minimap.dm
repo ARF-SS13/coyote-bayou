@@ -24,18 +24,18 @@ SUBSYSTEM_DEF(minimap)
 		fdel(hash_path())
 		text2file(hash, hash_path())
 	else
-		to_chat(world, "<span class='boldannounce'>Minimap generation disabled. Loading from cache...</span>")
+		to_chat(world, span_boldannounce("Minimap generation disabled. Loading from cache..."))
 		var/fileloc = 0
 		if(check_files(0))	//Let's first check if we have maps cached in the data folder. NOTE: This will override the backup files even if this map is older.
 			if(hash != trim(file2text(hash_path())))
-				to_chat(world, "<span class='boldannounce'>Loaded cached minimap is outdated. There may be minor discrepancies in layout.</span>"	)
+				to_chat(world, span_boldannounce("Loaded cached minimap is outdated. There may be minor discrepancies in layout.")	)
 			fileloc = 0
 		else
 			if(!check_files(1))
-				to_chat(world, "<span class='boldannounce'>Failed to load backup minimap file. Aborting.</span>"	)
+				to_chat(world, span_boldannounce("Failed to load backup minimap file. Aborting.")	)
 				return
 			fileloc = 1	//No map image cached with the current map, and we have a backup. Let's fall back to it.
-			to_chat(world, "<span class='boldannounce'>No cached minimaps detected. Backup files loaded.</span>")
+			to_chat(world, span_boldannounce("No cached minimaps detected. Backup files loaded."))
 		for(var/z in z_levels)
 			register_asset("minimap_[z].png", fcopy_rsc(map_path(z,fileloc)))
 	..()

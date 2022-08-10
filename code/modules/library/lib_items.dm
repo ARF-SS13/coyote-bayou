@@ -68,12 +68,12 @@
 		if(0)
 			if(istype(I, /obj/item/wrench))
 				if(I.use_tool(src, user, 20, volume=50))
-					to_chat(user, "<span class='notice'>You wrench the frame into place.</span>")
+					to_chat(user, span_notice("You wrench the frame into place."))
 					anchored = TRUE
 					state = 1
 			if(istype(I, /obj/item/crowbar))
 				if(I.use_tool(src, user, 20, volume=50))
-					to_chat(user, "<span class='notice'>You pry the frame apart.</span>")
+					to_chat(user, span_notice("You pry the frame apart."))
 					deconstruct(TRUE)
 
 		if(1)
@@ -81,12 +81,12 @@
 				var/obj/item/stack/sheet/mineral/wood/W = I
 				if(W.get_amount() >= 2)
 					W.use(2)
-					to_chat(user, "<span class='notice'>You add a shelf.</span>")
+					to_chat(user, span_notice("You add a shelf."))
 					state = 2
 					icon_state = "book-0"
 			if(istype(I, /obj/item/wrench))
 				I.play_tool_sound(src, 100)
-				to_chat(user, "<span class='notice'>You unwrench the frame.</span>")
+				to_chat(user, span_notice("You unwrench the frame."))
 				anchored = FALSE
 				state = 0
 
@@ -100,11 +100,11 @@
 				for(var/obj/item/T in I.contents)
 					if(istype(T, /obj/item/book) || istype(T, /obj/item/spellbook))
 						STR.remove_from_storage(T, src)
-				to_chat(user, "<span class='notice'>You empty \the [I] into \the [src].</span>")
+				to_chat(user, span_notice("You empty \the [I] into \the [src]."))
 				update_icon()
 			else if(istype(I, /obj/item/pen))
 				if(!user.is_literate())
-					to_chat(user, "<span class='notice'>You scribble illegibly on the side of [src]!</span>")
+					to_chat(user, span_notice("You scribble illegibly on the side of [src]!"))
 					return
 				var/newname = stripped_input(user, "What would you like to title this bookshelf?")
 				if(!user.canUseTopic(src, BE_CLOSE))
@@ -115,10 +115,10 @@
 					name = "bookcase ([sanitize(newname)])"
 			else if(istype(I, /obj/item/crowbar))
 				if(contents.len)
-					to_chat(user, "<span class='warning'>You need to remove the books first!</span>")
+					to_chat(user, span_warning("You need to remove the books first!"))
 				else
 					I.play_tool_sound(src, 100)
-					to_chat(user, "<span class='notice'>You pry the shelf out.</span>")
+					to_chat(user, span_notice("You pry the shelf out."))
 					new /obj/item/stack/sheet/mineral/wood(drop_location(), 2)
 					state = 1
 					icon_state = "bookempty"
@@ -144,7 +144,7 @@
 /obj/structure/bookcase/attack_ghost(mob/dead/observer/user)
 	. = ..()
 	if(!length(contents))
-		to_chat(user, "<span class='warning'>It's empty!</span>")
+		to_chat(user, span_warning("It's empty!"))
 		return
 	var/obj/item/book/choice = input("Which book would you like to read?") as null|obj in contents
 	if(choice)
@@ -217,16 +217,16 @@
 
 /obj/item/book/attack_self(mob/user)
 	if(is_blind(user))
-		to_chat(user, "<span class='warning'>As you are trying to read, you suddenly feel very stupid!</span>")
+		to_chat(user, span_warning("As you are trying to read, you suddenly feel very stupid!"))
 		return
 	if(ismonkey(user))
-		to_chat(user, "<span class='notice'>You skim through the book but can't comprehend any of it.</span>")
+		to_chat(user, span_notice("You skim through the book but can't comprehend any of it."))
 		return
 	if(dat)
 		show_to(user)
 		user.visible_message("[user] opens a book titled \"[title]\" and begins reading intently.")
 	else
-		to_chat(user, "<span class='notice'>This book is completely blank!</span>")
+		to_chat(user, span_notice("This book is completely blank!"))
 
 /obj/item/book/attack_ghost(mob/dead/observer/O)
 	. = ..()
@@ -238,14 +238,14 @@
 /obj/item/book/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/pen))
 		if(is_blind(user))
-			to_chat(user, "<span class='warning'> As you are trying to write on the book, you suddenly feel very stupid!</span>")
+			to_chat(user, span_warning(" As you are trying to write on the book, you suddenly feel very stupid!"))
 			return
 		if(unique)
-			to_chat(user, "<span class='warning'>These pages don't seem to take the ink well! Looks like you can't modify it.</span>")
+			to_chat(user, span_warning("These pages don't seem to take the ink well! Looks like you can't modify it."))
 			return
 		var/literate = user.is_literate()
 		if(!literate)
-			to_chat(user, "<span class='notice'>You scribble illegibly on the cover of [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on the cover of [src]!"))
 			return
 		var/choice = input("What would you like to change?") in list("Title", "Contents", "Author", "Cancel")
 		if(!user.canUseTopic(src, BE_CLOSE, literate))
@@ -316,9 +316,9 @@
 					to_chat(user, "[I]'s screen flashes: 'Book stored in buffer. Title added to general inventory.'")
 
 	else if(istype(I, /obj/item/kitchen/knife) || istype(I, /obj/item/wirecutters))
-		to_chat(user, "<span class='notice'>You begin to carve out [title]...</span>")
+		to_chat(user, span_notice("You begin to carve out [title]..."))
 		if(do_after(user, 30, target = src))
-			to_chat(user, "<span class='notice'>You carve out the pages from [title]! You didn't want to read it anyway.</span>")
+			to_chat(user, span_notice("You carve out the pages from [title]! You didn't want to read it anyway."))
 			var/obj/item/storage/book/B = new
 			B.name = src.name
 			B.title = src.title

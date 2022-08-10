@@ -10,6 +10,22 @@ Detective : 4 ACCESS_FORENSICS_LOCKERS
 here's a tip, go search DEFINES/access.dm
 */
 
+// Headsets for everyone!!
+/datum/outfit/job/den
+	name = "Nash Default Template"
+	ears = /obj/item/radio/headset/headset_town
+	belt = null
+	id = /obj/item/card/id/dogtag/town
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/jackboots
+	backpack = /obj/item/storage/backpack/satchel/explorer
+	r_pocket = /obj/item/flashlight/flare
+	r_hand = /obj/item/book/granter/trait/selection
+	backpack_contents = list(
+		/obj/item/storage/bag/money/small/settler = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1
+		)
+
 /*
 Mayor
 */
@@ -36,19 +52,19 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 	loadout_options = list(
-			/datum/outfit/loadout/mayoral,
-			/datum/outfit/loadout/dictator,
-			/datum/outfit/loadout/firstcitizen,
-			/datum/outfit/loadout/highroller,
-					)
+		/datum/outfit/loadout/mayoral,
+		/datum/outfit/loadout/dictator,
+		/datum/outfit/loadout/firstcitizen,
+		/datum/outfit/loadout/highroller
+		)
 
 
 /datum/outfit/job/den/f13mayor/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -63,17 +79,18 @@ Mayor
 /datum/outfit/job/den/f13mayor
 	name = "Mayor"
 	jobtype = /datum/job/oasis/f13mayor
-	id =            /obj/item/card/id/silver/mayor
+	id = /obj/item/card/id/silver/mayor
+	ears = /obj/item/radio/headset/headset_town/mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	l_pocket = /obj/item/storage/bag/money/small/oasis
 	r_pocket = /obj/item/flashlight/seclite
-	shoes = 		/obj/item/clothing/shoes/f13/tan
+	shoes = /obj/item/clothing/shoes/f13/tan
 	uniform = /obj/item/clothing/under/f13/gentlesuit
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
-		/obj/item/storage/box/citizenship_permits = 1, \
-		/obj/item/pen/fountain/captain = 1,
+		/obj/item/storage/box/citizenship_permits = 1, 
+		/obj/item/pen/fountain/captain = 1
 		)
 
 
@@ -86,7 +103,7 @@ Mayor
 	/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
 	/obj/item/ammo_box/magazine/m45 = 2,
 	/obj/item/clothing/shoes/jackboots = 1,
-	/obj/item/clothing/mask/cigarette/pipe/cobpipe = 1,
+	/obj/item/clothing/mask/cigarette/pipe/cobpipe = 1
 	)
 
 /datum/outfit/loadout/mayoral
@@ -97,7 +114,7 @@ Mayor
 		/obj/item/gun/ballistic/revolver/m29/peacekeeper = 1,
 		/obj/item/ammo_box/m44 = 2,
 		/obj/item/clothing/shoes/f13/cowboy = 1,
-		/obj/item/clothing/mask/cigarette/cigar = 1,
+		/obj/item/clothing/mask/cigarette/cigar = 1
 		)
 
 /datum/outfit/loadout/firstcitizen
@@ -108,7 +125,7 @@ Mayor
 		/obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer = 1,
 		/obj/item/reagent_containers/food/drinks/flask/vault113,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 1,
-		/obj/item/ammo_box/magazine/m9mm/doublestack = 1,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 1
 		)
 
 /datum/outfit/loadout/highroller
@@ -120,7 +137,7 @@ Mayor
 		/obj/item/clothing/shoes/laceup = 1,
 		/obj/item/toy/cards/deck/unum = 1,
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45/socom = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2
 	)
 
 
@@ -142,26 +159,25 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/pr,
-	/datum/outfit/loadout/pw,
+	/datum/outfit/loadout/pw
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_CLINIC, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 /datum/outfit/job/den/f13secretary
 	name = "Secretary"
 	jobtype = /datum/job/oasis/f13secretary
-
-
-	id =            /obj/item/card/id/silver
+	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/headset_town/mayor
 	glasses = /obj/item/clothing/glasses/regular/hipster
 	gloves = /obj/item/clothing/gloves/color/white
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -169,12 +185,12 @@ Mayor
 	r_hand = /obj/item/storage/briefcase/secretary
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/seclite
-	shoes = 		/obj/item/clothing/shoes/f13/fancy
+	shoes = /obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
-		/obj/item/pda = 1,
+		/obj/item/pda = 1
 		)
 
 /datum/outfit/loadout/pr
@@ -186,7 +202,7 @@ Mayor
 		/obj/item/clothing/gloves/color/latex/nitrile = 1,
 		/obj/item/camera = 1,
 		/obj/item/storage/crayons = 1,
-		/obj/item/choice_beacon/box/carpet = 1,
+		/obj/item/choice_beacon/box/carpet = 1
 		)
 
 /datum/outfit/loadout/pw
@@ -233,41 +249,39 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/thechief,
+	/datum/outfit/loadout/thechief
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_CLINIC, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 /datum/outfit/job/den/f13sheriff
 	name = "Sheriff"
 	jobtype = /datum/job/oasis/f13sheriff
-
 	id = /obj/item/card/id/dogtag/sheriff
 	belt = null
+	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-
-
-	uniform =  		/obj/item/clothing/under/f13/sheriff
-	belt =			/obj/item/storage/belt/military/army
-	shoes = 		/obj/item/clothing/shoes/f13/cowboy
-	glasses =		/obj/item/clothing/glasses/sunglasses
-	l_pocket =		/obj/item/storage/bag/money/small/den
+	uniform = /obj/item/clothing/under/f13/sheriff
+	belt = /obj/item/storage/belt/military/army
+	shoes = /obj/item/clothing/shoes/f13/cowboy
+	glasses = /obj/item/clothing/glasses/sunglasses
+	l_pocket = /obj/item/storage/bag/money/small/den
 	backpack_contents = list(
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/grenade/flashbang = 1,
+		/obj/item/grenade/flashbang = 1
 		)
 
 /datum/outfit/loadout/thelaw
@@ -280,7 +294,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1
 		)
 
 /datum/outfit/loadout/thechief
@@ -292,7 +306,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/combat
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1, 
-		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/ammo_box/shotgun/buck = 2
 		)
 /*
 /datum/outfit/loadout/pew
@@ -343,19 +357,18 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_GATEWAY)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 /datum/outfit/job/den/f13deputy
 	name = "Deputy"
 	jobtype = /datum/job/oasis/f13deputy
-
-
 	id = /obj/item/card/id/dogtag/deputy
+	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	belt = /obj/item/storage/belt/military/assault
@@ -367,7 +380,7 @@ Mayor
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/grenade/flashbang = 1,
+		/obj/item/grenade/flashbang = 1
 		)
 
 /datum/outfit/loadout/frontierjustice
@@ -395,7 +408,7 @@ Mayor
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/flashlight/seclite = 1,
-		/obj/item/gun/ballistic/revolver/police = 1,
+		/obj/item/gun/ballistic/revolver/police = 1
 		)
 
 /datum/outfit/loadout/swat
@@ -410,7 +423,7 @@ Mayor
 		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m5mm=1,
-		/obj/item/flashlight/seclite = 1,
+		/obj/item/flashlight/seclite = 1
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -434,8 +447,8 @@ Mayor
 
 	outfit = /datum/outfit/job/den/f13farmer
 
-	access = list(ACCESS_BAR,  ACCESS_KITCHEN)
-	minimal_access = list(ACCESS_BAR,  ACCESS_KITCHEN)
+	access = list(ACCESS_BAR, ACCESS_KITCHEN)
+	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/oasis,
@@ -617,20 +630,20 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_CLINIC, ACCESS_CLONING)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 /datum/outfit/job/den/f13dendoc
 	name = "Doctor"
 	jobtype = /datum/job/oasis/f13dendoc
 	chemwhiz = TRUE
+	ears = /obj/item/radio/headset/headset_town/commerce
 	uniform = /obj/item/clothing/under/f13/medic
 	glasses = /obj/item/clothing/glasses/hud/health
-
 	neck = /obj/item/clothing/neck/stethoscope
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	backpack = /obj/item/storage/backpack/medic
@@ -640,27 +653,15 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
-		/obj/item/reagent_containers/hypospray/medipen/stimpak=2, \
+		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/firstaid/regular,
-		/obj/item/clothing/accessory/armband/medblue  \
+		/obj/item/clothing/accessory/armband/medblue
 		)
 /datum/outfit/job/den/f13dendoc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(GLOB.chemwhiz_recipes)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
@@ -672,7 +673,7 @@ Mayor
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/clothing/suit/toggle/labcoat/paramedic = 1,
 		/obj/item/folder/white = 1,
-		/obj/item/flashlight/pen/paramedic = 1,
+		/obj/item/flashlight/pen/paramedic = 1
 		)
 
 /datum/outfit/loadout/stitcher
@@ -684,7 +685,7 @@ Mayor
 		/obj/item/storage/medical/ancientfirstaid = 1,
 		/obj/item/circuitboard/machine/limbgrower = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/belt/holster/legholster/police = 1,
+		/obj/item/storage/belt/holster/legholster/police = 1
 		)
 	
 /datum/outfit/loadout/mixer
@@ -695,7 +696,7 @@ Mayor
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
 		/obj/item/reagent_containers/glass/beaker/meta = 1, 
 		/obj/item/reagent_containers/hypospray = 1,
-		/obj/item/circuitboard/machine/bloodbankgen = 1,
+		/obj/item/circuitboard/machine/bloodbankgen = 1
 		)
 
 /datum/outfit/loadout/holidaydoc
@@ -705,7 +706,7 @@ Mayor
 		/obj/item/clothing/suit/hooded/surgical = 1,
 		/obj/item/storage/medical/ancientfirstaid = 1,
 		/obj/item/ammo_box/m44 = 1,
-		/obj/item/gun/ballistic/revolver/m29/snub = 1,
+		/obj/item/gun/ballistic/revolver/m29/snub = 1
 		)
 /*--------------------------------------------------------------*/
 
@@ -716,7 +717,7 @@ Mayor
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the free market and Nash's Laws"
-	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest.  Speak to the farmers for fresh produce!"
+	description = "As a proprietor of Heavens Night, you are responsible for ensuring both citizens and travellers in Nash can get some food, drink and rest. Speak to the farmers for fresh produce!"
 	enforces = "Heaven's Night is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
 	selection_color = "#dcba97"
 
@@ -732,21 +733,20 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_KITCHEN)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 
 /datum/outfit/job/den/f13barkeep
 	name = "Barkeep"
 	jobtype = /datum/job/oasis/f13barkeep
-
 	uniform = /obj/item/clothing/under/f13/bartenderalt
 	id = /obj/item/card/id/dogtag/town
-
+	ears = /obj/item/radio/headset/headset_town/commerce
 	belt = /obj/item/gun/ballistic/revolver/caravan_shotgun
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
@@ -755,7 +755,7 @@ Mayor
 		/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
 		/obj/item/stack/f13Cash/caps/onezerozero = 1,
-		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/rotgut = 1
 		)
 
 /datum/outfit/loadout/rugged
@@ -801,7 +801,7 @@ Mayor
 	total_positions = 8
 	spawn_positions = 8
 	supervisors = "Nash's laws"
-	description = "You are a citizen living in Nash.  Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
+	description = "You are a citizen living in Nash. Treat your town with respect and make sure to follow the laws in place, as your premium status may be revoked if you are considered a danger to the populace. One of the local businesses may have work if you require funds."
 	selection_color = "#dcba97"
 
 	outfit = /datum/outfit/job/den/f13settler
@@ -814,17 +814,17 @@ Mayor
 		/datum/outfit/loadout/militia,
 		/datum/outfit/loadout/singer,
 		/datum/outfit/loadout/farmer,
-		/datum/outfit/loadout/prospector,
+		/datum/outfit/loadout/prospector
 	)
 	access = list(ACCESS_BAR)
 	minimal_access = list(ACCESS_BAR)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 
@@ -840,34 +840,34 @@ Mayor
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/settler = 1,
-		/obj/item/melee/onehanded/knife/hunting = 1,
+		/obj/item/melee/onehanded/knife/hunting = 1
 		)
 
 /datum/outfit/job/den/f13settler/pre_equip(mob/living/carbon/human/H)
 	. = ..()
-	head = pick(/obj/item/clothing/head/f13/ranger_hat/tan,\
-		/obj/item/clothing/head/soft/mime,\
-		/obj/item/clothing/head/soft/black,\
-		/obj/item/clothing/head/soft/grey,\
-		/obj/item/clothing/head/f13/gambler,\
-		/obj/item/clothing/head/f13/cowboy,\
-		/obj/item/clothing/head/f13/ranger_hat/banded,\
-		/obj/item/clothing/head/cowboyhat/white,\
-		/obj/item/clothing/head/beret/headband,\
-		/obj/item/clothing/head/cowboyhat/pink,\
-		/obj/item/clothing/head/f13/police/trooper,\
-		/obj/item/clothing/head/fedora/curator,\
-		/obj/item/clothing/head/fedora/det_hat,\
+	head = pick(/obj/item/clothing/head/f13/ranger_hat/tan,
+		/obj/item/clothing/head/soft/mime,
+		/obj/item/clothing/head/soft/black,
+		/obj/item/clothing/head/soft/grey,
+		/obj/item/clothing/head/f13/gambler,
+		/obj/item/clothing/head/f13/cowboy,
+		/obj/item/clothing/head/f13/ranger_hat/banded,
+		/obj/item/clothing/head/cowboyhat/white,
+		/obj/item/clothing/head/beret/headband,
+		/obj/item/clothing/head/cowboyhat/pink,
+		/obj/item/clothing/head/f13/police/trooper,
+		/obj/item/clothing/head/fedora/curator,
+		/obj/item/clothing/head/fedora/det_hat,
 		/obj/item/clothing/head/bowler)
 	uniform = pick(
-		/obj/item/clothing/under/f13/gentlesuit,\
-		/obj/item/clothing/under/f13/formal,\
-		/obj/item/clothing/under/f13/spring,\
-		/obj/item/clothing/under/f13/relaxedwear,\
-		/obj/item/clothing/under/f13/machinist,\
-		/obj/item/clothing/under/f13/brahminf,\
-		/obj/item/clothing/under/f13/cowboyb,\
-		/obj/item/clothing/under/f13/cowboyg,\
+		/obj/item/clothing/under/f13/gentlesuit,
+		/obj/item/clothing/under/f13/formal,
+		/obj/item/clothing/under/f13/spring,
+		/obj/item/clothing/under/f13/relaxedwear,
+		/obj/item/clothing/under/f13/machinist,
+		/obj/item/clothing/under/f13/brahminf,
+		/obj/item/clothing/under/f13/cowboyb,
+		/obj/item/clothing/under/f13/cowboyg,
 		/obj/item/clothing/under/f13/cowboyt)
 
 /datum/outfit/loadout/provisioner
@@ -887,7 +887,7 @@ Mayor
 	/obj/item/reagent_containers/food/drinks/flask/survival = 1,
 	/obj/item/book/granter/trait/trekking = 1,
 	/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
+	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1
 	)
 
 /datum/outfit/loadout/groundskeeper
@@ -905,7 +905,7 @@ Mayor
 	/obj/item/broom = 1,
 	/obj/item/stack/sheet/metal/fifty = 1,
 	/obj/item/lightreplacer = 1,
-	/obj/item/reagent_containers/spray/cleaner = 1,
+	/obj/item/reagent_containers/spray/cleaner = 1
 	)
 
 /datum/outfit/loadout/artisan
@@ -922,7 +922,7 @@ Mayor
 	/obj/item/melee/smith/hammer/premade = 1,
 	/obj/item/stack/sheet/mineral/titanium = 15,
 	/obj/item/pickaxe/mini = 1,
-	/obj/item/mining_scanner = 1,
+	/obj/item/mining_scanner = 1
 	)
 
 /datum/outfit/loadout/outdoorsman
@@ -934,11 +934,11 @@ Mayor
 	gloves = /obj/item/clothing/gloves/botanic_leather
 	shoes = /obj/item/clothing/shoes/f13/peltboots
 	backpack_contents = list(/obj/item/gun/ballistic/revolver/winchesterrebored = 1,
-	/obj/item/ammo_box/a762/doublestacked  = 2,
+	/obj/item/ammo_box/a762/doublestacked = 2,
 	/obj/item/fishingrod = 1,
 	/obj/item/binoculars = 1,
 	/obj/item/crafting/campfirekit = 1,
-	/obj/item/storage/fancy/rollingpapers/makeshift =1,
+	/obj/item/storage/fancy/rollingpapers/makeshift = 1
 	)
 
 /datum/outfit/loadout/militia
@@ -954,7 +954,7 @@ Mayor
 	/obj/item/shovel/trench =1,
 	/obj/item/binoculars = 1,
 	/obj/item/gun/ballistic/rifle/hunting = 1,
-	/obj/item/attachments/scope = 1,
+	/obj/item/gun_upgrade/scope/watchman = 1
 	)
 
 /datum/outfit/loadout/singer
@@ -969,7 +969,7 @@ Mayor
 	/obj/item/clothing/accessory/pocketprotector/full = 1,
 	/obj/item/choice_beacon/music = 1,
 	/obj/item/gun/energy/laser/complianceregulator = 1,
-	/obj/item/stock_parts/cell/ammo/ec = 1,
+	/obj/item/stock_parts/cell/ammo/ec = 1
 	)
 
 // if we ever add back the loadout display you'll have to put the items in places you want it to appear on the display model
@@ -988,7 +988,7 @@ Mayor
 	/obj/item/storage/bag/plants/portaseeder= 1,
 	/obj/item/seeds/bamboo = 1,
 	/obj/item/seeds/apple/gold = 1,
-	/obj/item/seeds/cannabis = 1,
+	/obj/item/seeds/cannabis = 1
 	)
 
 /datum/outfit/loadout/prospector
@@ -998,11 +998,11 @@ Mayor
 	/obj/item/clothing/suit/armor/light/leather/rig = 1,
 	/obj/item/clothing/gloves/patrol = 1,
 	/obj/item/clothing/shoes/workboots = 1,
-	/obj/item/storage/belt/utility/waster  = 1,
+	/obj/item/storage/belt/utility/waster = 1,
 	/obj/item/shovel/spade = 1,
 	/obj/item/pickaxe/silver = 1,
 	/obj/item/clothing/glasses/welding = 1,
-	/obj/item/t_scanner/adv_mining_scanner  = 1,
+	/obj/item/t_scanner/adv_mining_scanner = 1,
 	/obj/item/ammo_box/m44 = 2,
 	/obj/item/gun/ballistic/revolver/m29/snub 
 	)
@@ -1024,15 +1024,15 @@ Mayor
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
+			/datum/job/oasis/f13detective
 		),
 		/datum/matchmaking_pref/rival = list(
 			/datum/job/wasteland/f13wastelander,
-			/datum/job/oasis/f13detective,
+			/datum/job/oasis/f13detective
 		),
 		/datum/matchmaking_pref/mentor = list(
-			/datum/job/wasteland/f13wastelander,
-		),
+			/datum/job/wasteland/f13wastelander
+		)
 	)
 
 
@@ -1042,7 +1042,8 @@ Mayor
 	suit = /obj/item/clothing/suit/det_suit/grey
 	uniform = /obj/item/clothing/under/f13/detectivealt
 	head = /obj/item/clothing/head/f13/det_hat_alt
-	shoes =  /obj/item/clothing/shoes/laceup
+	ears = /obj/item/radio/headset/headset_town/lawman
+	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/silver
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
@@ -1075,7 +1076,7 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/classy,
 	/datum/outfit/loadout/loanshark,
-	/datum/outfit/loadout/investor,
+	/datum/outfit/loadout/investor
 	)
 
 	access = list(ACCESS_BAR, ACCESS_MINT_VAULT)
@@ -1087,11 +1088,12 @@ Mayor
 
 	uniform = /obj/item/clothing/under/lawyer/blacksuit
 	id = /obj/item/card/id/silver
+	ears = /obj/item/radio/headset/headset_town/commerce
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/storage/bag/money/small/ = 1)
+		/obj/item/storage/bag/money/small = 1)
 
 /datum/outfit/loadout/classy
 	name = "Classy"
@@ -1106,7 +1108,7 @@ Mayor
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1,
-		/obj/item/lighter/gold = 1,
+		/obj/item/lighter/gold = 1
 		)
 
 /datum/outfit/loadout/loanshark
@@ -1119,7 +1121,7 @@ Mayor
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 		/obj/item/storage/box/matches=1,
 		/obj/item/gun/ballistic/automatic/smg/mini_uzi=1,
-		/obj/item/instrument/violin/golden = 1,
+		/obj/item/instrument/violin/golden = 1
 		)
 
 /datum/outfit/loadout/investor
@@ -1132,7 +1134,7 @@ Mayor
 	backpack_contents = list(/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/storage/box/matches=1,
 		/obj/item/ingot/gold = 1,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever = 1
 		)
 /*--------------------------------------------------------------*/
 
@@ -1153,18 +1155,18 @@ Mayor
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	matchmaking_allowed = list(
 		/datum/matchmaking_pref/friend = list(
-			/datum/job/oasis,
+			/datum/job/oasis
 		),
 		/datum/matchmaking_pref/rival = list(
-			/datum/job/oasis,
-		),
+			/datum/job/oasis
+		)
 	)
 
 /datum/outfit/job/den/f13shopkeeper
 	name = "Shopkeeper"
 	jobtype = /datum/job/oasis/f13shopkeeper
-
 	id = /obj/item/card/id/dogtag/town
+	ears = /obj/item/radio/headset/headset_town/commerce
 	uniform = /obj/item/clothing/under/f13/roving
 	backpack = /obj/item/storage/backpack
 	satchel = /obj/item/storage/backpack/satchel

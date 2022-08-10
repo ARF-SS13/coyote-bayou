@@ -49,7 +49,7 @@
 	if(istype(L))
 		if(prob(25))
 			L.DefaultCombatKnockdown(20)
-			L.visible_message("<span class='danger'>\the [src] knocks down \the [L]!</span>")
+			L.visible_message(span_danger("\the [src] knocks down \the [L]!"))
 
 
 /mob/living/simple_animal/hostile/shark/laser

@@ -78,11 +78,6 @@ ATTACHMENTS
 	/// Adds this speed to the bullet, in pixels per second
 	var/extra_speed = 0
 
-	var/obj/item/attachments/scope
-	var/obj/item/attachments/recoil_decrease
-	var/obj/item/attachments/burst_improvement
-	var/obj/item/attachments/auto_sear
-
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 
@@ -103,13 +98,9 @@ ATTACHMENTS
 	var/mutable_appearance/scope_overlay
 	var/scope_state = "scope"
 
-	var/can_attachments = FALSE
-	var/can_automatic = FALSE
 	var/mutable_appearance/flashlight_overlay
 
 	var/can_suppress = FALSE
-	var/can_unsuppress = TRUE
-	var/suppressed = null					//whether or not a message is displayed when fired
 	var/mutable_appearance/suppressor_overlay
 	var/suppressor_state = null
 
@@ -131,7 +122,6 @@ ATTACHMENTS
 	var/zoomed = FALSE //Zoom toggle
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/zoom_out_amt = 0
-	var/datum/action/item_action/toggle_scope_zoom/azoom
 
 	var/dualwield_spread_mult = 2		//dualwield spread multiplier
 
@@ -158,6 +148,14 @@ ATTACHMENTS
 	var/list/init_firemodes = list()
 
 	var/list/gun_tags = list() //Attributes of the gun, used to see if an upgrade can be applied to this weapon.
+	var/gilded = FALSE
+	/*	SILENCER HANDLING */
+	var/silenced = FALSE
+	var/fire_sound_silenced = 'modular_coyote/eris/sound/Gunshot_silenced.wav' //Firing sound used when silenced
+	var/zoom_factor = 0 //How much to scope in when using weapons
+	var/rigged = FALSE
+	var/vision_flags = 0
+	var/projectile_speed_multiplier = 1
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -180,9 +178,10 @@ ATTACHMENTS
 	action.owner = src
 	hud_actions += action
 	initialize_firemodes()
-	build_zooming()
+	initialize_scope()
 	if(firemodes.len)
 		set_firemode(sel_mode)
+	generate_guntags()
 
 /obj/item/gun/proc/initialize_firemodes()
 	QDEL_LIST(firemodes)
@@ -190,7 +189,9 @@ ATTACHMENTS
 	for(var/i in 1 to init_firemodes.len)
 		var/list/L = init_firemodes[i]
 		add_firemode(L)
+	update_firemode_hud()
 
+/obj/item/gun/proc/update_firemode_hud()
 	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/fire_mode) in hud_actions
 	if(firemodes.len > 1)
 		if(!action)
@@ -200,6 +201,17 @@ ATTACHMENTS
 	else
 		qdel(action)
 		hud_actions -= action
+
+/obj/item/gun/proc/initialize_scope()
+	var/obj/screen/item_action/action = locate(/obj/screen/item_action/top_bar/gun/scope) in hud_actions
+	if(zoom_factor > 0)
+		if(!action)
+			action = new /obj/screen/item_action/top_bar/gun/scope
+			action.owner = src
+			hud_actions += action
+	else
+		hud_actions -= action
+		qdel(action)
 
 /obj/item/gun/Destroy()
 	if(pin)
@@ -259,7 +271,7 @@ ATTACHMENTS
 	return TRUE
 
 /obj/item/gun/proc/shoot_with_empty_chamber(mob/living/user as mob|obj)
-	to_chat(user, "<span class='danger'>[dryfire_text]</span>")
+	to_chat(user, span_danger("[dryfire_text]"))
 	playsound(src, dryfire_sound, 30, 1)
 	update_firemode()
 
@@ -268,15 +280,15 @@ ATTACHMENTS
 		var/safe_cost = clamp(stam_cost, 0, STAMINA_NEAR_CRIT - user.getStaminaLoss())*(firing && burst_size >= 2 ? 1/burst_size : 1)
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
-	if(suppressed)
-		playsound(user, fire_sound, 10, 1)
+	if(silenced)
+		playsound(user, fire_sound_silenced, 10, 1)
 	else
 		playsound(user, fire_sound, 50, 1)
 		if(message)
 			if(pointblank)
-				user.visible_message("<span class='danger'>[user] fires [src] point blank at [pbtarget]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+				user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
 			else
-				user.visible_message("<span class='danger'>[user] fires [src]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+				user.visible_message(span_danger("[user] fires [src]!"), null, null, COMBAT_MESSAGE_RANGE)
 	kickback(user, P)
 
 //Adds logging to the attack log whenever anyone draws a gun, adds a pause after drawing a gun before you can do anything based on it's size
@@ -350,7 +362,7 @@ ATTACHMENTS
 	if(clumsy_check)
 		if(istype(user))
 			if (HAS_TRAIT(user, TRAIT_CLUMSY) && prob(40))
-				to_chat(user, "<span class='userdanger'>You shoot yourself in the foot with [src]!</span>")
+				to_chat(user, span_userdanger("You shoot yourself in the foot with [src]!"))
 				var/shot_leg = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 				process_fire(user, user, FALSE, params, shot_leg)
 				user.dropItemToGround(src, TRUE)
@@ -359,8 +371,19 @@ ATTACHMENTS
 	if(weapon_weight == GUN_TWO_HAND_ONLY && !wielded)
 		wield(user)
 		if(!wielded)
-			to_chat(user, "<span class='userdanger'>You need both hands free to fire \the [src]!</span>")
+			to_chat(user, span_userdanger("You need both hands free to fire \the [src]!"))
 			return
+
+	if(rigged)
+		user.visible_message(
+			span_danger("As \the [user] pulls the trigger on \the [src], a bullet fires backwards out of it"),
+			span_danger("Your \the [src] fires backwards, shooting you in the face!")
+		)
+		process_fire(user, user, FALSE, params, BODY_ZONE_HEAD)
+		if(rigged > TRUE)
+			explosion(get_turf(src),0,0,2,1)
+		return
+
 	if (automatic == 0)
 		user.DelayNextAction(fire_delay)
 	if (automatic == 1)
@@ -390,7 +413,7 @@ ATTACHMENTS
 	if(!handle_pins(user))
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_PACIFISM) && chambered?.harmful) // If the user has the pacifist trait, then they won't be able to fire [src] if the round chambered inside of [src] is lethal.
-		to_chat(user, "<span class='notice'> [src] is lethally chambered! You don't want to risk harming anyone...</span>")
+		to_chat(user, span_notice(" [src] is lethally chambered! You don't want to risk harming anyone..."))
 		return FALSE
 
 /obj/item/gun/CheckAttackCooldown(mob/user, atom/target)
@@ -417,7 +440,7 @@ ATTACHMENTS
 			pin.auth_fail(user)
 			return FALSE
 	else
-		to_chat(user, "<span class='warning'>[src]'s trigger is locked. This weapon doesn't have a firing pin installed!</span>")
+		to_chat(user, span_warning("[src]'s trigger is locked. This weapon doesn't have a firing pin installed!"))
 	return FALSE
 
 /obj/item/gun/proc/recharge_newshot()
@@ -459,7 +482,7 @@ ATTACHMENTS
 			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
 			var/BB = chambered.BB
-			if(!chambered.fire_casing(target, user, params, , suppressed, zone_override, sprd, damage_multiplier, penetration_multiplier, src))
+			if(!chambered.fire_casing(target, user, params, , silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
 				shoot_with_empty_chamber(user)
 				return
 			else
@@ -488,7 +511,7 @@ ATTACHMENTS
 		if(!gun_light)
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You click [S] into place on [src].</span>")
+			to_chat(user, span_notice("You click [S] into place on [src]."))
 			set_gun_light(S)
 			update_gunlight()
 			alight = new(src)
@@ -502,55 +525,11 @@ ATTACHMENTS
 			return ..()
 		if(!user.transferItemToLoc(I, src))
 			return
-		to_chat(user, "<span class='notice'>You attach \the [K] to the front of \the [src].</span>")
+		to_chat(user, span_notice("You attach \the [K] to the front of \the [src]."))
 		bayonet = K
 		update_icon()
 		update_overlays()
 		return
-
-	if(istype(I, /obj/item/attachments/scope))
-		if(!can_scope)
-			return ..()
-		var/obj/item/attachments/scope/C = I
-		if(!scope)
-			if(!user.transferItemToLoc(I, src))
-				return
-			to_chat(user, "<span class='notice'>You attach \the [C] to the top of \the [src].</span>")
-			scope = C
-			src.zoomable = TRUE
-			src.zoom_amt = 10
-			src.zoom_out_amt = 13
-			src.build_zooming()
-			update_overlays()
-			update_icon()
-		return
-	/*
-	if(istype(I, /obj/item/attachments/recoil_decrease))
-		var/obj/item/attachments/recoil_decrease/R = I
-		if(!recoil_decrease && can_attachments)
-			if(!user.transferItemToLoc(I, src))
-				return
-			recoil_decrease = R
-			src.desc += " It has a recoil compensator installed."
-			recoil_multiplier *= 0.5
-			recoil_cooldown_time *= 0.5
-			to_chat(user, "<span class='notice'>You attach \the [R] to \the [src].</span>")
-			return
-	*/
-	/*
-	if(istype(I, /obj/item/attachments/burst_improvement))
-		var/obj/item/attachments/burst_improvement/T = I
-		if(!burst_improvement && burst_size > 1 && can_attachments)
-			if(!user.transferItemToLoc(I, src))
-				return
-			burst_improvement = T
-			src.desc += " It has a modified burst cam installed."
-			src.burst_size += 2
-			src.spread += 5
-			src.burst_shot_delay += 0.25
-			to_chat(user, "<span class='notice'>You attach \the [T] to \the [src].</span>")
-			update_icon()
-			return*/
 	return ..()
 
 
@@ -565,28 +544,17 @@ ATTACHMENTS
 	if(can_flashlight && gun_light)
 		I.play_tool_sound(src)
 		var/obj/item/flashlight/seclite/S = gun_light
-		to_chat(user, "<span class='notice'>You unscrew the seclite from \the [src].</span>")
+		to_chat(user, span_notice("You unscrew the seclite from \the [src]."))
 		S.forceMove(get_turf(user))
 		clear_gunlight()
 		return TRUE
 
 	if(can_bayonet && bayonet)
 		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You unscrew the bayonet from \the [src].</span>")
+		to_chat(user, span_notice("You unscrew the bayonet from \the [src]."))
 		var/obj/item/melee/onehanded/knife/bayonet/K = bayonet
 		K.forceMove(get_turf(user))
 		bayonet = null
-		update_icon()
-		return TRUE
-
-	if(scope)
-		I.play_tool_sound(src)
-		to_chat(user, "<span class='notice'>You unscrew the scope from \the [src].</span>")
-		var/obj/item/attachments/scope/C = scope
-		C.forceMove(get_turf(user))
-		src.zoomable = FALSE
-		azoom.Remove(user)
-		scope = null
 		update_icon()
 		return TRUE
 
@@ -629,14 +597,6 @@ ATTACHMENTS
 
 	gun_light = new_light
 
-/*
-/obj/item/gun/ui_action_click(mob/user, action)
-	if(istype(action, /datum/action/item_action/toggle_scope_zoom))
-		zoom(user)
-	else if(istype(action, alight))
-		toggle_gunlight()
-*/
-
 /obj/item/gun/proc/toggle_gunlight()
 	if(!gun_light)
 		return
@@ -644,7 +604,7 @@ ATTACHMENTS
 	var/mob/living/carbon/human/user = usr
 	gun_light.on = !gun_light.on
 	gun_light.update_brightness()
-	to_chat(user, "<span class='notice'>You toggle the gunlight [gun_light.on ? "on":"off"].</span>")
+	to_chat(user, span_notice("You toggle the gunlight [gun_light.on ? "on":"off"]."))
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_gunlight()
@@ -660,15 +620,11 @@ ATTACHMENTS
 	if(user.get_active_held_item() != src) //we can only stay zoomed in if it's in our hands	//yeah and we only unzoom if we're actually zoomed using the gun!!
 		remove_hud_actions(user)
 		zoom(user, FALSE)
-		if(zoomable == TRUE)
-			azoom.Remove(user)
 
 /obj/item/gun/dropped(mob/user)
 	. = ..()
 	if(zoomed)
 		zoom(user,FALSE)
-	if(azoom)
-		azoom.Remove(user)
 	if(alight)
 		alight.Remove(user)
 
@@ -695,7 +651,7 @@ ATTACHMENTS
 		. += knife_overlay
 	else
 		knife_overlay = null
-
+	/*
 	if(scope)
 		if(scope.icon_state in icon_states('icons/fallout/objects/guns/attachments.dmi'))
 			scope_overlay = scope.icon_state
@@ -706,8 +662,8 @@ ATTACHMENTS
 		. += scope_overlay
 	else
 		scope_overlay = null
-
-	if(suppressed)
+	*/
+	if(silenced)
 		var/icon/suppressor_icons = 'icons/fallout/objects/guns/attachments.dmi'
 		suppressor_overlay = mutable_appearance(suppressor_icons, suppressor_state)
 		suppressor_overlay.pixel_x = suppressor_x_offset
@@ -719,12 +675,6 @@ ATTACHMENTS
 	if(worn_out)
 		. += ("[initial(icon_state)]_worn")
 
-
-/obj/item/gun/item_action_slot_check(slot, mob/user, datum/action/A)
-	if(istype(A, /datum/action/item_action/toggle_scope_zoom) && slot != SLOT_HANDS)
-		return FALSE
-	return ..()
-
 /obj/item/gun/proc/handle_suicide(mob/living/carbon/human/user, mob/living/carbon/human/target, params, bypass_timer)
 	if(!ishuman(user) || !ishuman(target))
 		return
@@ -733,26 +683,26 @@ ATTACHMENTS
 		return
 
 	if(user == target)
-		target.visible_message("<span class='warning'>[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>You stick [src] in your mouth, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] sticks [src] in [user.p_their()] mouth, ready to pull the trigger..."), \
+			span_userdanger("You stick [src] in your mouth, ready to pull the trigger..."))
 	else
-		target.visible_message("<span class='warning'>[user] points [src] at [target]'s head, ready to pull the trigger...</span>", \
-			"<span class='userdanger'>[user] points [src] at your head, ready to pull the trigger...</span>")
+		target.visible_message(span_warning("[user] points [src] at [target]'s head, ready to pull the trigger..."), \
+			span_userdanger("[user] points [src] at your head, ready to pull the trigger..."))
 
 	busy_action = TRUE
 
 	if(!bypass_timer && (!do_mob(user, target, 120) || user.zone_selected != BODY_ZONE_PRECISE_MOUTH))
 		if(user)
 			if(user == target)
-				user.visible_message("<span class='notice'>[user] decided not to shoot.</span>")
+				user.visible_message(span_notice("[user] decided not to shoot."))
 			else if(target && target.Adjacent(user))
-				target.visible_message("<span class='notice'>[user] has decided to spare [target]</span>", "<span class='notice'>[user] has decided to spare your life!</span>")
+				target.visible_message(span_notice("[user] has decided to spare [target]"), span_notice("[user] has decided to spare your life!"))
 		busy_action = FALSE
 		return
 
 	busy_action = FALSE
 
-	target.visible_message("<span class='warning'>[user] pulls the trigger!</span>", "<span class='userdanger'>[user] pulls the trigger!</span>")
+	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[user] pulls the trigger!"))
 
 	playsound('sound/weapons/dink.ogg', 30, 1)
 
@@ -773,27 +723,6 @@ ATTACHMENTS
 /////////////
 // ZOOMING //
 /////////////
-
-/datum/action/item_action/toggle_scope_zoom
-	name = "Toggle Scope"
-	check_flags = AB_CHECK_CONSCIOUS|AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_LYING
-	icon_icon = 'icons/mob/actions/actions_items.dmi'
-	button_icon_state = "sniper_zoom"
-
-/datum/action/item_action/toggle_scope_zoom/Trigger()
-	var/obj/item/gun/gun = target
-	gun.zoom(owner)
-
-/datum/action/item_action/toggle_scope_zoom/IsAvailable(silent = FALSE)
-	. = ..()
-	if(!. && target)
-		var/obj/item/gun/gun = target
-		gun.zoom(owner, FALSE)
-
-/datum/action/item_action/toggle_scope_zoom/Remove(mob/living/L)
-	var/obj/item/gun/gun = target
-	gun.zoom(L, FALSE)
-	..()
 
 /obj/item/gun/proc/zoom(mob/living/user, forced_zoom)
 	if(!(user?.client))
@@ -825,14 +754,14 @@ ATTACHMENTS
 		user.client.pixel_y = world.icon_size*_y
 		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED) //pls don't conflict with anything else using this signal
-		user.visible_message("<span class='notice'>[user] looks down the scope of [src].</span>", "<span class='notice'>You look down the scope of [src].</span>")
+		user.visible_message(span_notice("[user] looks down the scope of [src]."), span_notice("You look down the scope of [src]."))
 	else
 		user.remove_movespeed_modifier(/datum/movespeed_modifier/scoped_in)
 		user.client.change_view(CONFIG_GET(string/default_view))
 		user.client.pixel_x = 0
 		user.client.pixel_y = 0
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
-		user.visible_message("<span class='notice'>[user] looks up from the scope of [src].</span>", "<span class='notice'>You look up from the scope of [src].</span>")
+		user.visible_message(span_notice("[user] looks up from the scope of [src]."), span_notice("You look up from the scope of [src]."))
 		RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_walk) //Extra proc to make sure your zoom resets for bug where you don't unzoom when toggling while moving
 
 /obj/item/gun/proc/on_walk(mob/living/user)
@@ -857,21 +786,13 @@ ATTACHMENTS
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
 
-//Proc, so that gun accessories/scopes/etc. can easily add zooming.
-/obj/item/gun/proc/build_zooming()
-	if(azoom)
-		return
-
-	if(zoomable)
-		azoom = new(src)
-
 /obj/item/gun/proc/getstamcost(mob/living/carbon/user)
 	. = 0 //get_per_shot_recoil()
 	if(user && !user.has_gravity())
 		. *= 5
 
 /obj/item/gun/proc/weapondraw(obj/item/gun/G, mob/living/user) // Eventually, this will be /obj/item/weapon and guns will be /obj/item/weapon/gun/etc. SOON.tm
-	user.visible_message("<span class='danger'>[user] grabs \a [G]!</span>") // probably could code in differences as to where you're picking it up from and so forth. later.
+	user.visible_message(span_danger("[user] grabs \a [G]!")) // probably could code in differences as to where you're picking it up from and so forth. later.
 	var/time_till_gun_is_ready = max(draw_time,(user.AmountWeaponDrawDelay()))
 	user.SetWeaponDrawDelay(time_till_gun_is_ready)
 	if(safety && user.a_intent == INTENT_HARM)
@@ -1020,6 +941,16 @@ ATTACHMENTS
 	update_hud_actions()
 	return new_mode
 
+/// Set firemode , but without a refresh_upgrades at the start
+/obj/item/gun/proc/very_unsafe_set_firemode(index)
+	if(index > firemodes.len)
+		index = 1
+	var/datum/firemode/new_mode = firemodes[sel_mode]
+	new_mode.apply_to(src)
+	new_mode.update()
+	update_hud_actions()
+	return new_mode
+
 /obj/item/gun/proc/toggle_firemode(mob/living/user)
 	if(firing) // Prevents a bug with swapping fire mode while burst firing.
 		return
@@ -1082,11 +1013,34 @@ ATTACHMENTS
 		if("fire mode")
 			toggle_firemode(user)
 		if("scope")
-			//toggle_scope(user)
+			toggle_scope(user)
 		if("safety")
 			toggle_safety(user)
 		if("Weapon Info")
 			ui_interact(user)
+
+/obj/item/gun/proc/toggle_scope(mob/living/user)
+	//looking through a scope limits your periphereal vision
+	//still, increase the view size by a tiny amount so that sniping isn't too restricted to NSEW
+	if(!zoom_factor)
+		zoomed = FALSE
+		return
+	var/zoom_offset = round(world.view * zoom_factor)
+
+	zoom_amt = zoom_offset
+	if(zoom_factor >= 1)
+		zoom_out_amt = zoom_amt + 1
+	else
+		zoom_out_amt = world.view
+	
+	zoom(user)
+
+	if(safety)
+		user.remove_cursor()
+	else
+		user.update_cursor(src)
+	if(user.get_active_held_item() == src)
+		update_hud_actions()
 
 /obj/item/gun/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -1101,9 +1055,9 @@ ATTACHMENTS
 	//data["ricochet_multiplier"] = ricochet_multiplier
 	data["penetration_multiplier"] = penetration_multiplier
 
-	data["fire_delay"] = fire_delay //time between shot, in ms
+	data["fire_delay"] = fire_delay * 100 //time between shot, in ms
 	data["burst"] = burst_size //How many shots are fired per click
-	data["burst_delay"] = burst_shot_delay //time between shot in burst mode, in ms
+	data["burst_delay"] = burst_shot_delay * 100 //time between shot in burst mode, in ms
 
 	data["force"] = force
 	data["force_max"] = initial(force)*10
@@ -1148,10 +1102,9 @@ ATTACHMENTS
 			firemodes_info += list(firemode_info)
 		data["firemode_info"] = firemodes_info
 
-	/*if(item_upgrades.len)
-		data["attachments"] = list()
-		for(var/atom/A in item_upgrades)
-			data["attachments"] += list(list("name" = A.name, "icon" = getAtomCacheFilename(A)))*/
+	data["attachments"] = list()
+	for(var/atom/A in item_upgrades)
+		data["attachments"] += list(list("name" = A.name, "desc" = A.desc))
 	return data
 
 /obj/item/gun/ui_act(action, params)
@@ -1194,7 +1147,60 @@ ATTACHMENTS
 		var/datum/firemode/new_mode = firemodes[sel_mode]
 		new_mode.update(force_state)
 
+/obj/item/gun/proc/generate_guntags()
+	if(recoil_dat.getRating(RECOIL_BASE) < recoil_dat.getRating(RECOIL_TWOHAND))
+		gun_tags |= GUN_GRIP
+	if(can_scope)
+		gun_tags |= GUN_SCOPE
+	if(can_suppress)
+		gun_tags |= GUN_SILENCABLE
+	//if(!get_sharpness())
+	//	gun_tags |= SLOT_BAYONET
 
+/obj/item/gun/refresh_upgrades()
+	//First of all, lets reset any var that could possibly be altered by an upgrade
+	damage_multiplier = initial(damage_multiplier)
+	penetration_multiplier = initial(penetration_multiplier)
+	//pierce_multiplier = initial(pierce_multiplier)
+	//ricochet_multiplier = initial(ricochet_multiplier)
+	projectile_speed_multiplier = initial(projectile_speed_multiplier)
+	//proj_agony_multiplier = initial(proj_agony_multiplier)
+	fire_delay = initial(fire_delay)
+	burst_shot_delay = initial(burst_shot_delay)
+	//move_delay = initial(move_delay)
+	//muzzle_flash = initial(muzzle_flash)
+	silenced = initial(silenced)
+	restrict_safety = initial(restrict_safety)
+	init_offset = initial(init_offset)
+	//proj_damage_adjust = list()
+	//fire_sound = initial(fire_sound)
+	restrict_safety = initial(restrict_safety)
+	rigged = initial(rigged)
+	zoom_factor = initial(zoom_factor)
+	//darkness_view = initial(darkness_view)
+	vision_flags = initial(vision_flags)
+	force = initial(force)
+	armour_penetration = initial(armour_penetration)
+	sharpness = initial(sharpness)
+	braced = initial(braced)
+	recoil_dat = getRecoil(init_recoil[1], init_recoil[2], init_recoil[3])
+
+	//attack_verb = list()
+	initialize_firemodes()
+
+	//Now lets have each upgrade reapply its modifications
+	SEND_SIGNAL(src, COMSIG_UPGRADE_ADDVAL, src)
+	SEND_SIGNAL(src, COMSIG_UPGRADE_APPVAL, src)
+
+	initialize_scope()
+	update_firemode_hud()
+	update_hud_actions()
+
+	if(firemodes.len)
+		very_unsafe_set_firemode(sel_mode) // Reset the firemode so it gets the new changes
+
+	update_icon()
+	//then update any UIs with the new stats
 
 ///////////////////
 //GUNCODE ARCHIVE//
@@ -1204,13 +1210,13 @@ ATTACHMENTS
 STICK GUN PICKUP WEIRDNESS
 /obj/item/gun/ballistic/automatic/pistol/stickman/pickup(mob/living/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>As you try to pick up [src], it slips out of your grip..</span>")
+	to_chat(user, span_notice("As you try to pick up [src], it slips out of your grip.."))
 	if(prob(50))
-		to_chat(user, "<span class='notice'>..and vanishes from your vision! Where the hell did it go?</span>")
+		to_chat(user, span_notice("..and vanishes from your vision! Where the hell did it go?"))
 		qdel(src)
 		user.update_icons()
 	else
-		to_chat(user, "<span class='notice'>..and falls into view. Whew, that was a close one.</span>")
+		to_chat(user, span_notice("..and falls into view. Whew, that was a close one."))
 		user.dropItemToGround(src)
 
 /obj/item/gun/ballistic/automatic/pistol/deagle/update_overlays()
@@ -1270,7 +1276,7 @@ SOME SORT OF  BOLT ACTION CODE UNUSED
 
 /obj/item/gun/ballistic/shotgun/boltaction/attackby(obj/item/A, mob/user, params)
 	if(!bolt_open)
-		to_chat(user, "<span class='notice'>The bolt is closed!</span>")
+		to_chat(user, span_notice("The bolt is closed!"))
 		return
 	. = ..()
 
@@ -1288,7 +1294,7 @@ CODE FOR RESKIN
 DUAL TUBE PUMP ACTION (seems redundant with neostead but why not keep it.)
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to pump it.</span>"
+	. += span_notice("Alt-click to pump it.")
 
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube/attack_self(mob/living/user)
 	if(!chambered && magazine.contents.len)
@@ -1310,11 +1316,11 @@ ATTACHING SLING
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>You tie the lengths of cable to the rifle, making a sling.</span>")
+			to_chat(user, span_notice("You tie the lengths of cable to the rifle, making a sling."))
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/shotgun/boltaction/improvised/update_overlays()
 	. = ..()

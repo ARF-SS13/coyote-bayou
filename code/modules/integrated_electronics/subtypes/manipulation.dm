@@ -107,7 +107,7 @@
 					if(!TR.myseed)
 						if(istype(O, /obj/item/seeds/tomato))
 							investigate_log("had kudzu planted in it by [acting_object] at [AREACOORD(src)]","kudzu")
-						acting_object.visible_message("<span class='notice'>[acting_object] plants [O].</span>")
+						acting_object.visible_message(span_notice("[acting_object] plants [O]."))
 						TR.dead = 0
 						TR.myseed = O
 						TR.age = 1
@@ -339,7 +339,7 @@
 	A.throwforce = 0
 	A.embedding = list("embed_chance" = 0)
 	//throw it
-	assembly.visible_message("<span class='danger'>[assembly] has thrown [A]!</span>")
+	assembly.visible_message(span_danger("[assembly] has thrown [A]!"))
 	log_attack("[assembly] [REF(assembly)] has thrown [A] with non-lethal force.")
 	A.forceMove(drop_location())
 	A.throw_at(locate(x_abs, y_abs, T.z), range, 3, null, null, null, CALLBACK(src, .proc/post_throw, A))

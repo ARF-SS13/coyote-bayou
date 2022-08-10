@@ -41,7 +41,7 @@
 			to_chat(user, "You can't add more fuel - wait untill some of it burns away!")
 			return
 		if(W.use(1))
-			user.visible_message("[user] has added fuel to [src].", "<span class='notice'>You have added fuel to [src].</span>")
+			user.visible_message("[user] has added fuel to [src].", span_notice("You have added fuel to [src]."))
 			fuel += 300
 	else if(fired && istype(P, /obj/item/reagent_containers/food/snacks))
 		if(!ishuman(user))
@@ -91,7 +91,7 @@
 	fired = 1
 	desc = "A warm, bright, and hopeful fire source."
 	if(user)
-		user.visible_message("[user] has lit a [src].", "<span class='notice'>You have lit a [src].</span>")
+		user.visible_message("[user] has lit a [src].", span_notice("You have lit a [src]."))
 	update_icon()
 	burned = 0
 	burn_process()

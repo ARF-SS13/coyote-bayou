@@ -84,7 +84,7 @@
 /obj/item/circuitboard/computer/card/minor/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/screwdriver))
 		target_dept = (target_dept == dept_list.len) ? 1 : (target_dept + 1)
-		to_chat(user, "<span class='notice'>You set the board to \"[dept_list[target_dept]]\".</span>")
+		to_chat(user, span_notice("You set the board to \"[dept_list[target_dept]]\"."))
 	else
 		return ..()
 
@@ -209,11 +209,11 @@
 		if(build_path == /obj/machinery/computer/rdconsole/core)
 			name = "R&D Console - Robotics (Computer Board)"
 			build_path = /obj/machinery/computer/rdconsole/robotics
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
+			to_chat(user, span_notice("Access protocols successfully updated."))
 		else
 			name = "R&D Console (Computer Board)"
 			build_path = /obj/machinery/computer/rdconsole/core
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
+			to_chat(user, span_notice("Defaulting access protocols."))
 	else
 		return ..()
 
@@ -241,9 +241,9 @@
 /obj/item/circuitboard/computer/cargo/multitool_act(mob/living/user)
 	if(!(obj_flags & EMAGGED))
 		contraband = !contraband
-		to_chat(user, "<span class='notice'>Receiver spectrum set to [contraband ? "Broad" : "Standard"].</span>")
+		to_chat(user, span_notice("Receiver spectrum set to [contraband ? "Broad" : "Standard"]."))
 	else
-		to_chat(user, "<span class='notice'>The spectrum chip is unresponsive.</span>")
+		to_chat(user, span_notice("The spectrum chip is unresponsive."))
 
 /obj/item/circuitboard/computer/cargo/emag_act(mob/living/user)
 	. = ..()
@@ -251,7 +251,7 @@
 		return
 	contraband = TRUE
 	obj_flags |= EMAGGED
-	to_chat(user, "<span class='notice'>You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband.</span>")
+	to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 	return TRUE
 
 /obj/item/circuitboard/computer/cargo/express
@@ -260,16 +260,16 @@
 
 /obj/item/circuitboard/computer/cargo/express/multitool_act(mob/living/user)
 	if (!(obj_flags & EMAGGED))
-		to_chat(user, "<span class='notice'>Routing protocols are already set to: \"factory defaults\".</span>")
+		to_chat(user, span_notice("Routing protocols are already set to: \"factory defaults\"."))
 	else
-		to_chat(user, "<span class='notice'>You reset the routing protocols to: \"factory defaults\".</span>")
+		to_chat(user, span_notice("You reset the routing protocols to: \"factory defaults\"."))
 		obj_flags &= ~EMAGGED
 
 /obj/item/circuitboard/computer/cargo/express/emag_act(mob/living/user)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT)
 	if(obj_flags & EMAGGED)
 		return
-	to_chat(user, "<span class='notice'>You change the routing protocols, allowing the Drop Pod to land anywhere on the station.</span>")
+	to_chat(user, span_notice("You change the routing protocols, allowing the Drop Pod to land anywhere on the station."))
 	obj_flags |= EMAGGED
 	return TRUE
 
@@ -356,11 +356,11 @@
 		if(build_path == /obj/machinery/computer/libraryconsole/bookmanagement)
 			name = "Library Visitor Console (Computer Board)"
 			build_path = /obj/machinery/computer/libraryconsole
-			to_chat(user, "<span class='notice'>Defaulting access protocols.</span>")
+			to_chat(user, span_notice("Defaulting access protocols."))
 		else
 			name = "Book Inventory Management Console (Computer Board)"
 			build_path = /obj/machinery/computer/libraryconsole/bookmanagement
-			to_chat(user, "<span class='notice'>Access protocols successfully updated.</span>")
+			to_chat(user, span_notice("Access protocols successfully updated."))
 	else
 		return ..()
 

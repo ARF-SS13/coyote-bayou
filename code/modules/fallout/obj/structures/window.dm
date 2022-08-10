@@ -52,29 +52,29 @@
 	if(istype(W, /obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/Z = W
 		if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
-			to_chat(user, "<span class='warning'>This window is already barricaded!</span>")
+			to_chat(user, span_warning("This window is already barricaded!"))
 			return
 		if(!anchored)
-			to_chat(user, "<span class='warning'>The window must be firmly anchored to the ground!</span>")
+			to_chat(user, span_warning("The window must be firmly anchored to the ground!"))
 			return
 		if(Z.get_amount() < 3)
-			to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this window!</span>")
+			to_chat(user, span_warning("You need atleast 3 wooden planks to reinforce this window!"))
 			return
 		else
-			to_chat(user, "<span class='notice'>You start adding [Z] to [src]...</span>")
+			to_chat(user, span_notice("You start adding [Z] to [src]..."))
 			if(do_after(user, 50, target=src))
 				if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))
-					to_chat(user, "<span class='warning'>This window is already barricaded!</span>")
+					to_chat(user, span_warning("This window is already barricaded!"))
 					return
 				if(!anchored)
-					to_chat(user, "<span class='warning'>The window must be firmly anchored to the ground!</span>")
+					to_chat(user, span_warning("The window must be firmly anchored to the ground!"))
 					return
 				if(Z.get_amount() < 3)
-					to_chat(user, "<span class='warning'>You need atleast 3 wooden planks to reinforce this window!</span>")
+					to_chat(user, span_warning("You need atleast 3 wooden planks to reinforce this window!"))
 					return
 				Z.use(3)
 				new /obj/structure/barricade/wooden/planks(get_turf(src))
-				user.visible_message("<span class='notice'>[user] reinforces the window with some planks</span>", "<span class='notice'>You reinforce the window with some planks.</span>")
+				user.visible_message(span_notice("[user] reinforces the window with some planks"), span_notice("You reinforce the window with some planks."))
 				return
 	else if(!istype(W, /obj/item/stack/sheet/mineral/wood))
 		if(locate(/obj/structure/barricade/wooden/planks) in get_turf(src))

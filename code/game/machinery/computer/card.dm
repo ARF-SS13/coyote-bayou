@@ -39,7 +39,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 /obj/machinery/computer/card/examine(mob/user)
 	. = ..()
 	if(inserted_scan_id || inserted_modify_id)
-		. += "<span class='notice'>Alt-click to eject the ID card.</span>"
+		. += span_notice("Alt-click to eject the ID card.")
 
 /obj/machinery/computer/card/attackby(obj/I, mob/user, params)
 	if(isidcard(I))
@@ -97,22 +97,22 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 		else
 			id_eject(user, target)
 
-	user.visible_message("<span class='notice'>[user] inserts \the [card_to_insert] into \the [src].</span>",
-						"<span class='notice'>You insert \the [card_to_insert] into \the [src].</span>")
+	user.visible_message(span_notice("[user] inserts \the [card_to_insert] into \the [src]."),
+						span_notice("You insert \the [card_to_insert] into \the [src]."))
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 	updateUsrDialog()
 	return TRUE
 
 /obj/machinery/computer/card/proc/id_eject(mob/user, obj/target)
 	if(!target)
-		to_chat(user, "<span class='warning'>That slot is empty!</span>")
+		to_chat(user, span_warning("That slot is empty!"))
 		return FALSE
 	else
 		target.forceMove(drop_location())
 		if(!issilicon(user) && Adjacent(user))
 			user.put_in_hands(target)
-		user.visible_message("<span class='notice'>[user] gets \the [target] from \the [src].</span>", \
-							"<span class='notice'>You get \the [target] from \the [src].</span>")
+		user.visible_message(span_notice("[user] gets \the [target] from \the [src]."), \
+							span_notice("You get \the [target] from \the [src]."))
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 		updateUsrDialog()
 		return TRUE
@@ -134,7 +134,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 
 /obj/machinery/computer/card/ui_interact(mob/user)
 	if(LAZYLEN(job_req) && !(user.mind?.assigned_role in job_req))
-		to_chat(user, "<span class='warning'>You have no idea how to use it...</span>")
+		to_chat(user, span_warning("You have no idea how to use it..."))
 		return
 	. = ..()
 	var/list/dat = list()
@@ -337,7 +337,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						if(region_access)
 							authenticated = 1
 			else if ((!( authenticated ) && hasSiliconAccessInArea(usr)) && (!inserted_modify_id))
-				to_chat(usr, "<span class='warning'>You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in.</span>")
+				to_chat(usr, span_warning("You can't modify an ID without an ID inserted to modify! Once one is in the modify slot on the computer, you can log in."))
 		if ("logout")
 			region_access = null
 			head_subordinates = null
@@ -388,7 +388,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 							updateUsrDialog()
 							break
 					if(!jobdatum)
-						to_chat(usr, "<span class='alert'>No log exists for this job.</span>")
+						to_chat(usr, span_alert("No log exists for this job."))
 						updateUsrDialog()
 						return
 					if(inserted_modify_id.registered_account)
@@ -402,7 +402,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 				inserted_modify_id.assignment = "Unassigned"
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 			else
-				to_chat(usr, "<span class='alert'>You are not authorized to demote this position.</span>")
+				to_chat(usr, span_alert("You are not authorized to demote this position."))
 		if ("reg")
 			if (authenticated)
 				var/t2 = inserted_modify_id
@@ -412,7 +412,7 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 						inserted_modify_id.registered_name = newName
 						playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 					else
-						to_chat(usr, "<span class='alert'>Invalid name entered.</span>")
+						to_chat(usr, span_alert("Invalid name entered."))
 						updateUsrDialog()
 						return
 		if ("mode")

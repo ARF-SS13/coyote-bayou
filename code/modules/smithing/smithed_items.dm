@@ -34,10 +34,10 @@
 		else
 			prot = 0
 	if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
-		to_chat(user, "<span class='notice'>You pick up the [src].</span>")
+		to_chat(user, span_notice("You pick up the [src]."))
 		return ..()
 	else
-		to_chat(user, "<span class='warning'>You try to move the [src], but you burn your hand on it!</span>")
+		to_chat(user, span_warning("You try to move the [src], but you burn your hand on it!"))
 	if(H)
 		var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 		if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
@@ -171,15 +171,15 @@
 /obj/item/blacksmith/woodrod/attackby/(obj/item/W, mob/user, params)
 	if (istype(W, /obj/item/stack/sheet/leatherstrips))
 		user.visible_message("[user] begins finishing the [src] into a sword handle.", \
-				"<span class='notice'>You begin wrapping the [src] with leather strips, and shaping the wood into a sword handle.</span>", \
-				"<span class='italics'>You hear faint sounds of handcrafting.</span>")
+				span_notice("You begin wrapping the [src] with leather strips, and shaping the wood into a sword handle."), \
+				span_italic("You hear faint sounds of handcrafting."))
 		// 6 Second Timer
 		if(!do_after(user, 60, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/swordhandle/new_item = new(user.loc)
 		user.visible_message("[user] finishes making a sword handle from the [src].", \
-				"<span class='notice'>You finish making a sword handle from the [src].</span>")
+				span_notice("You finish making a sword handle from the [src]."))
 		qdel(src)
 		// Prepare to Put xin Hands (if holding wood)
 		var/obj/item/stack/sheet/leatherstrips/N = src
@@ -392,7 +392,7 @@
 /obj/item/clothing/shoes/ballandchain/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user && user.get_item_by_slot(SLOT_SHOES))
 		playsound(usr.loc, 'sound/weapons/chainhit.ogg', 75, 1)
-		to_chat(user, "<span class='warning'>The ball and chain are too hard to remove by yourself! You'll need help taking this off!</span>")
+		to_chat(user, span_warning("The ball and chain are too hard to remove by yourself! You'll need help taking this off!"))
 		return
 	return ..()
 

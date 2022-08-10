@@ -34,13 +34,13 @@
 	///this is the critical hit damage added to the attack if it rolls, it starts at 0 because it'll be changed when rolled
 	var/crit_damage = 0
 	var/damage = damage_roll(A,D)
-	D.visible_message("<span class='danger'>[A] [atk_verb]s [D]!</span>", \
-					"<span class='userdanger'>[A] [atk_verb]s you!</span>", null, null, A)
-	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
+	D.visible_message(span_danger("[A] [atk_verb]s [D]!"), \
+					span_userdanger("[A] [atk_verb]s you!"), null, null, A)
+	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	if(prob(10))
 		crit_damage += (damage + 3.5)
 		playsound(get_turf(D), 'sound/weapons/bite.ogg', 50, TRUE, -1)
-		D.visible_message("<span class='warning'>[D] staggers as they're slammed in the stomach</span>", "<span class='userdanger'>You are struck with incredible precision by [A]!</span>")
+		D.visible_message(span_warning("[D] staggers as they're slammed in the stomach"), span_userdanger("You are struck with incredible precision by [A]!"))
 		log_combat(A, D, "critcal hard punched (Berserker)")//log it here because a critical can swing for 40 force and it's important for the sake of how hard they hit
 	else
 		playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
@@ -54,13 +54,13 @@
 	var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_CHEST)
 	var/armor_block = D.run_armor_check(affecting, "melee")
 	A.do_attack_animation(D, ATTACK_EFFECT_KICK)
-	D.visible_message("<span class='warning'>[A] shoulder checks [D] square in the chest, sending them flying!</span>", \
-					"<span class='userdanger'>You are shoulderchecked in the chest by [A], sending you flying!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
+	D.visible_message(span_warning("[A] shoulder checks [D] square in the chest, sending them flying!"), \
+					span_userdanger("You are shoulderchecked in the chest by [A], sending you flying!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
 	var/atom/throw_target = get_edge_target_turf(D, A.dir)
 	D.throw_at(throw_target, 3, 5, A, TRUE)
 	D.apply_damage(damage, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND, wound_bonus = CANT_WOUND)
-	to_chat(A, "<span class='danger'>You shouldercheck [D]!</span>")
+	to_chat(A, span_danger("You shouldercheck [D]!"))
 	log_combat(A, D, "shoulderchecked (Berserker)")
 	return TRUE
 
@@ -75,16 +75,16 @@
 		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		D.DefaultCombatKnockdown(10, null, TRUE)
 		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND) //A cit specific change form the tg port to really punish anyone who tries to stand up
-		D.visible_message("<span class='warning'>[A] grabs [D] by the throat, slamming them face first into the ground!</span>", \
-					"<span class='userdanger'>[A] grabs you by the throat, slammed your head into the ground!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, "<span class='danger'>You chokeslam [D]!</span>")
+		D.visible_message(span_warning("[A] grabs [D] by the throat, slamming them face first into the ground!"), \
+					span_userdanger("[A] grabs you by the throat, slammed your head into the ground!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, span_danger("You chokeslam [D]!"))
 	else
 		D.apply_damage(damage*0.5, BRUTE, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		D.apply_damage(damage + 20, STAMINA, BODY_ZONE_HEAD, armor_block, wound_bonus = CANT_WOUND)
 		D.drop_all_held_items()
-		D.visible_message("<span class='warning'>[A] pummels [D]!</span>", \
-					"<span class='userdanger'>You are kicked in the head by [A]!</span>", "<span class='hear'>You hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, "<span class='danger'>You pummel [D]!</span>")
+		D.visible_message(span_warning("[A] pummels [D]!"), \
+					span_userdanger("You are kicked in the head by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
+		to_chat(A, span_danger("You pummel [D]!"))
 	log_combat(A, D, "chokeslammed (Berserker")
 	return TRUE
 
@@ -104,9 +104,9 @@
 	var/armor_block = D.run_armor_check(affecting, "melee")
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	var/atk_verb = pick("slam", "gouge", "hit", "brutalize")
-	D.visible_message("<span class='danger'>[A] [atk_verb]s [D]!</span>", \
-					"<span class='userdanger'>[A] [atk_verb]s you!</span>", null, null, A)
-	to_chat(A, "<span class='danger'>You [atk_verb] [D]!</span>")
+	D.visible_message(span_danger("[A] [atk_verb]s [D]!"), \
+					span_userdanger("[A] [atk_verb]s you!"), null, null, A)
+	to_chat(A, span_danger("You [atk_verb] [D]!"))
 	D.apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus = CANT_WOUND)
 	playsound(get_turf(D), 'sound/weapons/punch1.ogg', 25, TRUE, -1)
 	log_combat(A, D, "punched (Berserker)")
@@ -151,5 +151,5 @@
 	to_chat(usr, "<span class='notice'>Gutpunch</span>: Harm Harm. Deal additional damage every second punch, with a chance for even more damage!")
 	to_chat(usr, "<span class='notice'>Shoulder Check</span>: Harm Disarm. Launch people brutally across rooms, and away from you.")
 	to_chat(usr, "<span class='notice'>Chokeslam</span>: Harm  Grab. Chokeslam to the floor. Against prone targets, deal additional stamina damage and disarm them.")
-	to_chat(usr, "<span class='notice'>In addition, your body is better conditioned, giving you further stamina and increased stun resistance.</span>")
+	to_chat(usr, span_notice("In addition, your body is better conditioned, giving you further stamina and increased stun resistance."))
 

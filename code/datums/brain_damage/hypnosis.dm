@@ -17,7 +17,7 @@
 	else
 		friendliify(phrase)
 	if(IsAdminAdvancedProcCall())
-		to_chat(usr, "<span class='danger'>Hypnosis New() skipped due to try/catch incompatibility with admin proccalling.</span>")
+		to_chat(usr, span_danger("Hypnosis New() skipped due to try/catch incompatibility with admin proccalling."))
 		qdel(src)
 	try
 		target_phrase = new("(\\b[hypnotic_phrase]\\b)","ig")
@@ -54,7 +54,7 @@
 /datum/brain_trauma/hypnosis/on_lose()
 	message_admins("[ADMIN_LOOKUPFLW(owner)] is no longer hypnotized with the phrase '[hypnotic_phrase]'.")
 	log_game("[key_name(owner)] is no longer hypnotized with the phrase '[hypnotic_phrase]'.")
-	to_chat(owner, "<span class='userdanger'>You suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you.</span>")
+	to_chat(owner, span_userdanger("You suddenly snap out of your hypnosis. The phrase '[hypnotic_phrase]' no longer feels important to you."))
 	owner.clear_alert("hypnosis")
 	..()
 
@@ -65,7 +65,7 @@
 			if(1)
 				to_chat(owner, "<span class='hypnophrase'><i>...[lowertext(hypnotic_phrase)]...</i></span>")
 			if(2)
-				new /datum/hallucination/chat(owner, TRUE, FALSE, "<span class='hypnophrase'>[hypnotic_phrase]</span>")
+				new /datum/hallucination/chat(owner, TRUE, FALSE, span_hypnophrase("[hypnotic_phrase]"))
 
 /datum/brain_trauma/hypnosis/handle_hearing(datum/source, list/hearing_args)
-	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace(hearing_args[HEARING_RAW_MESSAGE], "<span class='hypnophrase'>$1</span>")
+	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("$1"))

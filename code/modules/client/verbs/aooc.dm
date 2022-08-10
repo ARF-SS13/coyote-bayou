@@ -7,28 +7,28 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	if(!mob)
 		return
 
 	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, "<span class='danger'> You have OOC muted.</span>")
+		to_chat(src, span_danger(" You have OOC muted."))
 		return
 	if(jobban_isbanned(mob, "OOC"))
-		to_chat(src, "<span class='danger'>You have been banned from OOC.</span>")
+		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 
 	if(!holder)
 		if(!GLOB.aooc_allowed)
-			to_chat(src, "<span class='danger'>AOOC is currently muted.</span>")
+			to_chat(src, span_danger("AOOC is currently muted."))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'>You cannot use AOOC (muted).</span>")
+			to_chat(src, span_danger("You cannot use AOOC (muted)."))
 			return
 		if(!is_special_character(mob))
-			to_chat(usr, "<span class='danger'>You aren't an antagonist!</span>")
+			to_chat(usr, span_danger("You aren't an antagonist!"))
 		if(handle_spam_prevention(msg,MUTE_OOC))
 			return
 		if(findtext(msg, "byond://"))
@@ -36,13 +36,13 @@ GLOBAL_VAR_INIT(normal_aooc_colour, "#ce254f")
 			log_admin("[key_name(src)] has attempted to advertise in LOOC: [msg]")
 			return
 		if(mob.stat)
-			to_chat(usr, "<span class='danger'>You cannot use AOOC while unconscious or dead.</span>")
+			to_chat(usr, span_danger("You cannot use AOOC while unconscious or dead."))
 			return
 		if(isdead(mob))
-			to_chat(src, "<span class='danger'>You cannot use AOOC while ghosting.</span>")
+			to_chat(src, span_danger("You cannot use AOOC while ghosting."))
 			return
 		if(HAS_TRAIT(mob, TRAIT_AOOC_MUTE))
-			to_chat(src, "<span class='danger'>You cannot use AOOC right now.</span>")
+			to_chat(src, span_danger("You cannot use AOOC right now."))
 			return
 
 	if(QDELETED(src))

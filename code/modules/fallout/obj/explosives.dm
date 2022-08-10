@@ -132,15 +132,15 @@
 
 /obj/item/mine/attack_self(mob/user)
 	if(armed)
-		to_chat(user, "<span class='danger'>The mine is already armed!</span>") //how did we get here
+		to_chat(user, span_danger("The mine is already armed!")) //how did we get here
 	if(user.dropItemToGround(src))
 		anchored = TRUE
 		addtimer(CALLBACK(src, .proc/arm), 5 SECONDS)
-		to_chat(user, "<span class='notice'>You drop the mine and activate the 5-second arming process.</span>")
+		to_chat(user, span_notice("You drop the mine and activate the 5-second arming process."))
 		return
 
 /obj/item/mine/proc/arm()
-	visible_message("<span class='danger'>[src] beeps!</span>")
+	visible_message(span_danger("[src] beeps!"))
 	if(armed)
 		triggermine()
 		return
@@ -152,7 +152,7 @@
 	else ..()
 
 /obj/item/mine/proc/mineEffect(mob/victim)
-	to_chat(victim, "<span class='danger'>*click*</span>")
+	to_chat(victim, span_danger("*click*"))
 
 /obj/item/mine/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER
@@ -169,7 +169,7 @@
 /obj/item/mine/proc/triggermine(mob/victim)
 	if(triggered)
 		return
-	visible_message("<span class='danger'>[victim] sets off [icon2html(src, viewers(src))] [src]!</span>")
+	visible_message(span_danger("[victim] sets off [icon2html(src, viewers(src))] [src]!"))
 	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
 	s.set_up(3, 1, src)
 	s.start()
@@ -185,9 +185,9 @@
 /obj/item/mine/screwdriver_act(mob/living/user, obj/item/S)
 	if(!armed)
 		return
-	to_chat(user, "<span class='danger'>You begin carefully disarming [src].</span>")
+	to_chat(user, span_danger("You begin carefully disarming [src]."))
 	if(S.use_tool(src, user, 200, volume=100)) //20 seconds base, if you don't want to play the game of chance
-		to_chat(user, "<span class='notice'>You carefully destroy the detonator of the mine!</span>")
+		to_chat(user, span_notice("You carefully destroy the detonator of the mine!"))
 		qdel(src)
 	else
 		triggermine(user)
@@ -248,7 +248,7 @@
 
 /obj/item/mine/kickmine/mineEffect(mob/victim)
 	if(isliving(victim) && victim.client)
-		to_chat(victim, "<span class='userdanger'>You have been kicked FOR NO REISIN!</span>")
+		to_chat(victim, span_userdanger("You have been kicked FOR NO REISIN!"))
 		qdel(victim.client)
 
 

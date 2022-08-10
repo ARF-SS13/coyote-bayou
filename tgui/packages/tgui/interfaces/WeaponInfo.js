@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, Section, ProgressBar, Table } from '../components';
+import { Button, LabeledList, Section, ProgressBar, Flex } from '../components';
 import { Window } from '../layouts';
 
 export const WeaponInfo = (props, context) => {
@@ -45,12 +45,16 @@ export const WeaponInfo = (props, context) => {
             <LabeledList.Item label="Fire delay">
               {data.fire_delay} ms
             </LabeledList.Item>
-            <LabeledList.Item label="Rounds per burst">
-              {data.burst} rounds
-            </LabeledList.Item>
-            <LabeledList.Item label="Burst delay">
-              {data.burst_delay} ms
-            </LabeledList.Item>
+            {data.burst > 1 && (
+              <LabeledList.Item label="Rounds per burst">
+                {data.burst} rounds
+              </LabeledList.Item>
+            )}
+            {data.burst > 1 && (
+              <LabeledList.Item label="Burst delay">
+                {data.burst_delay} ms
+              </LabeledList.Item>
+            )}
           </LabeledList>
         </Section>
         <Section title="Recoil details:">
@@ -174,16 +178,30 @@ export const WeaponInfo = (props, context) => {
         )}
         {data.firemode_count && (
           <Section title="Firemodes:">
-            <LabeledList>
-              {data.firemode_info.map(firemodevalue => (
-                <LabeledList.Item key={firemodevalue.index}>
+            {data.firemode_info.map(firemodevalue => (
+              <Flex key={firemodevalue.index}>
+                <Flex.Item grow="0" basis="20%">
                   <Button
                     content={firemodevalue.name}
                     color={firemodevalue.current ? ('red') : (null)}
                     onClick={firemodevalue.current ? (null) : (() => act('firemode', {
                       firemode: firemodevalue.index,
                     }))} />
+                </Flex.Item>
+                <Flex.Item grow="1" basis="auto">
                   {firemodevalue.desc}
+                </Flex.Item>
+              </Flex>
+            ))}
+          </Section>
+        )}
+        {data.attachments.length > 0 && (
+          <Section title="Attachments:">
+            <LabeledList>
+              {data.attachments.map(attachmentvalue => (
+                <LabeledList.Item key={attachmentvalue.name}
+                  label={attachmentvalue.name}>
+                  {attachmentvalue.desc}
                   <LabeledList.Divider />
                 </LabeledList.Item>
               ))}
