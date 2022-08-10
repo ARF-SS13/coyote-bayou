@@ -45,7 +45,7 @@
 			flesh_healing += 1
 
 	if(limb.current_gauze)
-		limb.seep_gauze(WOUND_BURN_SANITIZATION_RATE)
+		limb.check_gauze_time()
 
 	if(flesh_healing > 0)
 		var/bandage_factor = (limb.current_gauze ? limb.current_gauze.splint_factor : 1)

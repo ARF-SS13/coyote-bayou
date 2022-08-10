@@ -256,10 +256,11 @@
 
 /// Generic bleed wound treatment from whatever'll allow it
 /// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
+/// Currently unused
 /datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0, effectiveness)
-	if(!I.close_wound_amount)
+	if(!I.is_suture)
 		return
-	var/blood_sutured = I.close_wound_amount * (I.self_penalty_effectiveness * self_applied * effectiveness)
+	var/blood_sutured = I.is_suture * (I.self_penalty_effectiveness * self_applied * effectiveness)
 	blood_flow -= blood_sutured
 	//limb.heal_damage(I.heal_brute, I.heal_burn)
 

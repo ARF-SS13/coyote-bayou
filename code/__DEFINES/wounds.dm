@@ -98,11 +98,25 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// Bandage is gonna fall off soon
 #define BANDAGE_ENDLIFE_DURATION 0.1
 
+/// Max time an improvised suture will stay on someone before falling off
+#define SUTURE_POOR_MAX_DURATION 10 MINUTES
+/// Max time a normal suture will stay on someone before falling off
+#define SUTURE_OKAY_MAX_DURATION 20 MINUTES
+/// Max time a sterilized suture will stay on someone before falling off
+#define SUTURE_GOOD_MAX_DURATION 1 HOURS
+
 /// ID for the bandage timer
 #define BANDAGE_COOLDOWN_ID "bandage_cooldown_id"
+/// ID for the suture timer
+#define SUTURE_COOLDOWN_ID "suture_cooldown_id"
+/// Minimum time between bleed healing ticks
+#define BLEED_HEAL_COOLDOWN_TIME 1 SECONDS
 
 /// Multiplier for bleeding if the wound has enough bandaging on it
-#define WOUND_BLEED_BANDAGE_MULTIPLIER 0.05
+#define WOUND_BLEED_BANDAGE_MULTIPLIER 0.1
+
+/// Multiplier for bleeding if the wound has enough sutures on it
+#define WOUND_BLEED_SUTURE_MULTIPLIER 0 // no blood!
 
 // The following are for persistent scar save formats
 /// The version number of the scar we're saving
@@ -152,6 +166,8 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define MANGLES_BONE	(1<<3)
 /// If this wound marks the limb as being allowed to have gauze applied
 #define ACCEPTS_GAUZE	(1<<4)
+/// If this wound marks the limb as being allowed to have sutures applied
+#define ACCEPTS_SUTURE	(1<<5)
 
 /// Limb reports new bandage was applied
 #define BANDAGE_NEW_APPLIED (1<<0)
@@ -170,6 +186,23 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// Limb reports bandage does not exist
 #define BANDAGE_NOT_FOUND (1<<7)
 
+/// Limb reports new suture was applied
+#define SUTURE_NEW_APPLIED (1<<8)
+/// Limb reports old suture was repaired
+#define SUTURE_WAS_REPAIRED (1<<9)
+/// Limb reports old suture was repaired to full
+#define SUTURE_WAS_REPAIRED_TO_FULL (1<<10)
+/// Limb reports old suture's timer was refilled
+#define SUTURE_TIMER_REFILLED (1<<11)
+/// Limb reports suture was not applied
+#define SUTURE_NOT_APPLIED (1<<12)
+/// Limb reports suture was checked for time and it still had time left
+#define SUTURE_STILL_INTACT (1<<13)
+/// Limb reports suture was checked for time and it ran out
+#define SUTURE_TIMED_OUT (1<<14)
+/// Limb reports suture does not exist
+#define SUTURE_NOT_FOUND (1<<15)
+
 /// Damage required to damage a bandage by 1 point, enough to destroy improv bandages
 #define BANDAGE_DAMAGE_THRESHOLD_LOW 5
 /// Damage required to damage a bandage by 3 points, enough to destroy good bandages
@@ -178,3 +211,46 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define BANDAGE_DAMAGE_THRESHOLD_MAX 45
 /// How much burn damage is multiplied for bandage damage calcs
 #define BANDAGE_BURN_MULT 3 // its very flammable
+
+/// Damage required to damage a suture by 1 point, enough to destroy improv sutures
+#define SUTURE_DAMAGE_THRESHOLD_LOW 1
+/// Damage required to damage a suture by 3 points, enough to destroy good sutures
+#define SUTURE_DAMAGE_THRESHOLD_MED 20
+/// Damage required to destroy a suture outright
+#define SUTURE_DAMAGE_THRESHOLD_MAX 35
+/// How much burn damage is multiplied for suture damage calcs
+#define SUTURE_BURN_MULT 5 // its very flammable
+
+/// Base amount sutures assist wound closure
+#define SUTURE_BASE_WOUND_CLOSURE 0.01
+/// Amount normal sutures close wounds
+#define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
+/// Amount top tier sutures close wounds
+#define SUTURE_BEST_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 3)
+
+/// Extra wound healing done if we have both sutures and a bandage
+#define SUTURE_AND_BANDAGE_BONUS 1.2
+
+/// Nutrition cost for one unit of wound healing
+#define WOUND_HEAL_NUTRITION_COST 30 // 30 nutrition = 1 less bleed (6 bleed = 180 nutrition, bring a snack)
+/// Nutrition spent for being well fed
+#define WOUND_HEAL_FULL 10 // Eat a lot for quicker wound regen!
+/// Nutrition spent for being not hungry
+#define WOUND_HEAL_FED 1
+/// Nutrition spent for being hungie
+#define WOUND_HEAL_HUNGRY 0.25
+
+/// looking for a suture
+#define COVERING_SUTURE "suture"
+/// looking for a bandage
+#define COVERING_BANDAGE "bandage"
+
+/// Requesting true time in deciseconds
+#define COVERING_TIME_TRUE "time in deciseconds"
+/// Requesting time in minutes
+#define COVERING_TIME_MINUTE "time in minutes"
+/// Requesting time in minutes, but inaccurate
+#define COVERING_TIME_MINUTE_FUZZY "fuzzy time in minutes"
+/// How much to be off when fuzzy
+#define COVERING_TIME_MINUTE_FUZZY_DELTA (5 MINUTES)
+

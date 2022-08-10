@@ -30,8 +30,8 @@
 
 GLOBAL_LIST_INIT(blood_loss_messages, list(
 	BLOOD_ANEMIA_MESSAGE_WARN = list(
-		"You feel oddly thirsty.",
-		"You feel a faint chill.",
+		"You feel thirsty.",
+		"You feel a chill.",
 		"You feel tired."),
 	BLOOD_ANEMIA_MESSAGE_MINOR = list(
 		"You feel your heart flutter for a moment.",
@@ -39,12 +39,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		"You feel very tired."),
 	BLOOD_ANEMIA_MESSAGE_ANNOYING = list(
 		"Your limbs feel cold.",
-		"Your heart keeps fluttering.",
+		"Your heart races.",
 		"You can't seem to catch your breath."),
 	BLOOD_ANEMIA_MESSAGE_DEBILITATING = list(
 		"You feel a deep chill.",
 		"You feel lethargic.",
-		"You gasp for air!"),
+		"You gasp for air, but it doesn't help!"),
 	BLOOD_ANEMIA_MESSAGE_WORST = list(
 		"You feel like a light breeze would knock you over.",
 		"Your heart thrashes in your chest.",
@@ -65,7 +65,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		regenerate_blood()
 
 		//Effects of bloodloss
-		var/current_blood = get_blood()
+		var/current_blood = get_blood(FALSE)
 		switch(current_blood)
 			// Blood loss detected, start warning that its getting low
 			if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 			BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
 
 		if(temp_bleed)
-			bleed(temp_bleed)
+			bleed(rand(temp_bleed*0.5, temp_bleed))
 /* 
  * Applies bloodloss effects
  * oxy_loss_cap = How much do we cap their oxy damage? 
@@ -232,7 +232,6 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	. = blood_volume * blood_ratio
 	if(just_blood)
 		return
-
 	if(. < BLOOD_VOLUME_EXPANDER_MAX) // start adding in blood volume buffs
 		var/extra_blood
 		for(var/datum/reagent/blood_expander in reagents.reagent_list)
@@ -246,7 +245,6 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
-
 	// Food based blood replenishment, spends nutrition to regen blood
 	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
 	if(blood_volume < BLOOD_REFILL_NUTRITION_MAX)
@@ -261,7 +259,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 					nutrition_bonus = BLOOD_REFILL_NUTRITION_FED
 				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
 					nutrition_bonus = BLOOD_REFILL_NUTRITION_WELL_FED
-				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FAT)
+				if(NUTRITION_LEVEL_FULL to NUTRITION_LEVEL_FAT)
 					nutrition_bonus = BLOOD_REFILL_NUTRITION_FULL
 				if(NUTRITION_LEVEL_FAT to INFINITY)
 					nutrition_bonus = BLOOD_REFILL_NUTRITION_FAT
@@ -271,7 +269,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 			if(HAS_TRAIT(src, TRAIT_HIGH_BLOOD))
 				nutrition_bonus *= 2 // you just convert more nutrition to blood
 			adjust_nutrition(-nutrition_bonus)
-			blood_volume += nutrition_bonus * BLOOD_UNIT_NUTRITION_COST
+			blood_volume += (nutrition_bonus / BLOOD_UNIT_NUTRITION_COST)
 
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)

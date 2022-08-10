@@ -446,11 +446,15 @@ GENETICS SCANNER
 				if(H.is_bleeding())
 					msg += "\n"
 					msg += span_danger("<u>Subject is bleeding!</u>\n")
+					var/total_bleeding = 0
+					var/modified_bleeding = 0
 					for(var/obj/item/bodypart/BP in C.bodyparts)
 						for(var/datum/wound/bleed/bloody_wound in BP.wounds)
-							var/bleeding_amount = round(bloody_wound.get_blood_flow(TRUE), 0.25)
-							if(bleeding_amount)
-								msg += span_warning("\improper[BP] - [bloody_wound]: [bleeding_amount]u.\n")
+							var/true_bleeding = round(bloody_wound.get_blood_flow(FALSE),0.1)
+							total_bleeding += true_bleeding
+							modified_bleeding += round(bloody_wound.get_blood_flow(TRUE),0.1)
+							msg += span_warning("[BP] - [bloody_wound] - [true_bleeding]\n")
+					msg += span_warning("Total blood loss: [modified_bleeding]u\n")
 					msg += "\n"
 			switch(scanned_blood_volume)
 				if(BLOOD_VOLUME_SAFE to INFINITY)
@@ -460,7 +464,7 @@ GENETICS SCANNER
 					msg += span_info("Minor blood loss detected. No action necessary.\n")
 				if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
 					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
-					msg += span_warning("Blood loss detected. Rest and iron infusion recommended.\n")
+					msg += span_warning("Blood loss detected. Rest and nutrition recommended.\n")
 				if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_MINOR)
 					msg += span_warning("LOW Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
 					msg += span_warning("Significant anemia detected. Blood transfusion recommended.\n")

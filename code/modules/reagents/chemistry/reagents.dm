@@ -38,6 +38,8 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/effective_blood_multiplier = 0
 	/// The maximum effective blood to be added from this reagent
 	var/effective_blood_max = 0
+	/// How much this reagent slows bleeding to by while in you
+	var/bleed_mult = 1
 	var/overdose_threshold = 0
 	var/addiction_threshold = 0
 	var/addiction_stage = 0

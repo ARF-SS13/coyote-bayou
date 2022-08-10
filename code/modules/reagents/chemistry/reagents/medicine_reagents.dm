@@ -1681,16 +1681,17 @@
 	description = "A proprietary coagulant used to help bleeding wounds clot faster."
 	reagent_state = LIQUID
 	color = "#bb2424"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.10 * REAGENTS_METABOLISM
 	overdose_threshold = 20
+	bleed_mult = 0.05
 	/// How much base clotting we do per bleeding wound, multiplied by the below number for each bleeding wound
-	var/clot_rate = 0.25
+	//var/clot_rate = 0.25
 	/// If we have multiple bleeding wounds, we count the number of bleeding wounds, then multiply the clot rate by this^(n) before applying it to each cut, so more cuts = less clotting per cut (though still more total clotting)
-	var/clot_coeff_per_wound = 0.9
+	//var/clot_coeff_per_wound = 0.9
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	//clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/M)
 	. = ..()
@@ -1715,7 +1716,7 @@
 /datum/reagent/medicine/coagulant/weak
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
-	clot_coeff_per_wound = 0.8
+	bleed_mult = 0.15
 /* 
  * Reduces blood flow on all wounds
  * * User - Mob who's wounds we're treating
