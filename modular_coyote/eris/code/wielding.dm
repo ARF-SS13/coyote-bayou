@@ -7,7 +7,7 @@
 	var/wielded_icon //The item state used when it's wielded. Guns are snowflakey and have their own shit for this. This is for non guns.
 	var/force_unwielded = 0 //If you have a specific force for it being unwielded. If for whatever reason you don't want to use the original force of the weapon.
 	var/force_wielded = 0 //If you have a specific force for it being wielded.
-
+	var/wielded_mult = 1
 
 /mob/living/proc/do_wield()//The proc we actually care about.
 	var/obj/item/I = get_active_held_item()
@@ -21,6 +21,8 @@
 	wielded = FALSE
 	if(force_unwielded)
 		force = force_unwielded
+	if(wielded_mult)
+		force = (force / wielded_mult)
 	else
 		force = (force / 1.15)
 	
@@ -56,6 +58,8 @@
 	wielded = TRUE
 	if(force_wielded)
 		force = force_wielded
+	if(wielded_mult)
+		force = (force * wielded_mult)
 	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
 		force = (force * 1.15) //Items that do 0 damage will still do 0 damage though.
 	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
