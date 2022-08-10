@@ -23150,7 +23150,9 @@
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
 	},
-/turf/open/indestructible/ground/outside/savannah/edgesnew,
+/turf/open/indestructible/ground/outside/savannah/cornersnew{
+	dir = 1
+	},
 /area/f13/wasteland)
 "qZX" = (
 /obj/structure/spider/stickyweb,
@@ -24284,6 +24286,12 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
+"rUO" = (
+/obj/structure/flora/tree/jungle{
+	color = "#d9b51c"
+	},
+/turf/open/indestructible/ground/outside/savannah/topcenter,
+/area/f13/wasteland)
 "rVz" = (
 /obj/machinery/smartfridge/drying_rack{
 	pixel_y = 4
@@ -35890,7 +35898,7 @@ uhE
 uhE
 fMF
 eQa
-uRH
+qZD
 euo
 euo
 euo
@@ -36404,7 +36412,7 @@ ptd
 gWW
 fbH
 eQa
-xBo
+doA
 euo
 euo
 euo
@@ -36661,7 +36669,7 @@ bHR
 imM
 pMU
 eQa
-xBo
+doA
 euo
 euo
 euo
@@ -36918,7 +36926,7 @@ imM
 imM
 fbH
 eQa
-syc
+eQa
 uRH
 euo
 euo
@@ -37175,7 +37183,7 @@ qFx
 fbH
 fbH
 eQa
-syc
+eQa
 doA
 euo
 euo
@@ -37690,7 +37698,7 @@ oph
 nZZ
 eQa
 eQa
-doA
+xBo
 euo
 euo
 euo
@@ -39488,7 +39496,7 @@ gEj
 sBx
 lna
 aKV
-oyc
+jAW
 euo
 euo
 euo
@@ -39744,8 +39752,8 @@ nng
 oph
 wnL
 hYM
-eQa
-xBo
+syc
+doA
 euo
 euo
 euo
@@ -40515,7 +40523,7 @@ gKS
 dTi
 oFC
 czc
-qZD
+nZZ
 doA
 euo
 euo
@@ -41542,7 +41550,7 @@ cpu
 cpu
 eQa
 iEK
-sMZ
+rUO
 lmY
 euo
 eWO
