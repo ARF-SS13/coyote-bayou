@@ -521,7 +521,9 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.2)
 
-	can_scope = TRUE
+	zoomable = TRUE	
+	zoom_amt = 10
+	zoom_out_amt = 13
 
 /* * * * * * * * * * *
  * Hunting revolver

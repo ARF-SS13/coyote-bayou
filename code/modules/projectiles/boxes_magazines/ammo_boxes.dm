@@ -678,6 +678,9 @@
 	max_ammo = 10
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000)
+	
+/obj/item/ammo_box/rev308/empty
+	start_empty = 1
 
 //.45-70 Gov't
 /obj/item/ammo_box/c4570

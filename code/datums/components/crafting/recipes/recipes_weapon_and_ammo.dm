@@ -1358,6 +1358,22 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+	//M2045 Magnum Revolver Rifle
+/datum/crafting_recipe/m2405
+	name = "M2045 Magnum Revolver Rifle"
+	result = /obj/item/gun/ballistic/revolver/m2405
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //city killer
 /datum/crafting_recipe/city_killer
 	name = "City-Killer Shotgun"
