@@ -667,6 +667,17 @@
 /obj/item/ammo_box/a45lcrev/empty
 	start_empty = 1
 
+// 308
+
+/obj/item/ammo_box/rev308
+	name = "speed loader (.308)"
+	desc = "Designed to quickly reload revolvers."
+	icon_state = "rev308"
+	caliber = list(CALIBER_762)
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	max_ammo = 10
+	multiple_sprites = 1
+	custom_materials = list(/datum/material/iron = 2000)
 
 //.45-70 Gov't
 /obj/item/ammo_box/c4570
