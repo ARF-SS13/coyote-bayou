@@ -567,7 +567,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/trail,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
-	/obj/item/ammo_box/rev308
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/energy/gammagun
