@@ -1,11 +1,13 @@
 //Fallout 13 crafting items directory
 //All of the items listed are useful only for crafting things.
 
+/*
 /obj/item/weaponcrafting/reciever
 	name = "modular receiver"
 	desc = "A prototype modular receiver and trigger assembly for a firearm."
 	icon = 'icons/fallout/objects/crafting.dmi'
 	icon_state = "receiver"
+*/ //this...tentatively...does nothing? does not appear anywhere? and has an identical twin called /obj/item/weaponcrafting/receiver, which is properly spelled. wtf. like actually w t f
 
 /obj/item/weaponcrafting/stock
 	name = "rifle stock"
