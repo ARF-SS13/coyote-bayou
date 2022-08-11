@@ -15,8 +15,7 @@
 	var/quality
 	var/overlay_state = "stick"
 	var/mutable_appearance/overlay
-	var/wielded_mult = 1
-	var/wield_force = 15 // does nothing
+	//var/wielded_mult = 1
 
 /obj/item/melee/smith/Initialize()
 	..()
