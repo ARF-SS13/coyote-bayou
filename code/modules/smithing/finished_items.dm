@@ -324,7 +324,7 @@
 	icon_prefix = "katana_smith"
 	overlay_state = "hilt_katana"
 	force = WEAPON_FORCE_SLASH_LARGE
-	wielded_mult = 1.5
+	wielded_mult = WEAPON_SLASH_TWOHAND_MULT
 	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 	block_parry_data = /datum/block_parry_data/smithrapier
 	hitsound = 'sound/weapons/rapierhit.ogg'
@@ -355,7 +355,7 @@
 	overlay_state = "shaft_axe"
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON * 2
 	force = WEAPON_FORCE_AXE_LARGE
-	wielded_mult = 1.8
+	wielded_mult = WEAPON_AXE_TWOHAND_MULT
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	slot_flags = ITEM_SLOT_BACK
 	layer = MOB_UPPER_LAYER
