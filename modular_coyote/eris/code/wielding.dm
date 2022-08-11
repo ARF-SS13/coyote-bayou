@@ -21,10 +21,9 @@
 	wielded = FALSE
 	if(force_unwielded)
 		force = force_unwielded
-	if(wielded_mult)
-		force = (force / wielded_mult)
 	else
-		force = (force / 1.15)
+		force = (force / wielded_mult)
+		force = (force / FALLBACK_MULT)
 	
 	var/sf = findtext(name," (Wielded)")
 	if(sf)
@@ -57,9 +56,7 @@
 		return
 	wielded = TRUE
 	if(force_wielded)
-		force = force_wielded
-	if(wielded_mult)
-		force = (force * wielded_mult)
+		force = (force_wielded * wielded_mult)
 	else //This will give items wielded 15% more damage. This is balanced by the fact you cannot use your other hand.
 		force = (force * FALLBACK_FORCE) //Items that do 0 damage will still do 0 damage though.
 	var/original_name = name //Else using [initial(name)] for the name of object returns compile-time name without any changes that've happened to the object's name
