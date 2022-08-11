@@ -8,7 +8,7 @@
 	response_help_continuous = "pets"
 	response_help_simple = "pet"
 	response_disarm_continuous = "brushes aside"
-	response_help_simple = "brush aside"
+	response_disarm_simple = "brush aside"
 	response_harm_continuous = "squashes"
 	response_harm_simple = "squash"
 	speak_emote = list("buzzes")

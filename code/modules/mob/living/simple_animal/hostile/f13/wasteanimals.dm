@@ -241,7 +241,6 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	taunt_chance = 30
 	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'

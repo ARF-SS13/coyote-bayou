@@ -327,7 +327,6 @@
 	name = "pharaoh hat"
 	desc = "Walk like an Egyptian."
 	icon_state = "pharaoh_hat"
-	icon_state = "pharaoh_hat"
 
 /obj/item/clothing/head/jester/alt
 	name = "jester hat"
@@ -338,7 +337,6 @@
 /obj/item/clothing/head/nemes
 	name = "headdress of Nemes"
 	desc = "Lavish space tomb not included."
-	icon_state = "nemes_headdress"
 	icon_state = "nemes_headdress"
 
 /obj/item/clothing/head/frenchberet

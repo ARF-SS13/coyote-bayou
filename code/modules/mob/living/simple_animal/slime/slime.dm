@@ -29,7 +29,6 @@
 	maxHealth = 150
 	health = 150
 	healable = 0
-	gender = NEUTER
 	blood_volume = 0 //Until someome reworks for them to have slime jelly
 	nutrition = 700
 

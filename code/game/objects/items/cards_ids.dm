@@ -886,7 +886,6 @@
 /obj/item/card/id/dogtag/vigilante
 	name = "vigilante's badge"
 	desc = "An old silver badge."
-	assignment = "badge"
 	assignment = "Vigilante"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -895,7 +894,6 @@
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"
 	desc = "A silver badge which shows honour and dedication."
-	assignment = "badge"
 	assignment = "Deputy"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -961,7 +959,6 @@
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
 	item_state = "card-doctor"
-	assignment = "citizenship permit"
 	assignment = "Settler"
 	obj_flags = UNIQUE_RENAME
 	access = list(ACCESS_BAR)
@@ -1097,7 +1094,6 @@
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
 	item_state = "card-id_leg2"
-	assignment = "venator medallion"
 	assignment = "Venator"
 
 

@@ -15,7 +15,6 @@
 	sharpness = SHARP_POINTY //it's a claw, they're sharp.
 	damtype = "brute"
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
-	sharpness = SHARP_EDGED
 	wound_bonus = -30
 	bare_wound_bonus = 15
 
@@ -100,7 +99,6 @@
 	sharpness = SHARP_POINTY
 	damtype = "brute"
 	total_mass = TOTAL_MASS_HAND_REPLACEMENT
-	sharpness = SHARP_EDGED
 	wound_bonus = -30
 	bare_wound_bonus = 15
 

@@ -223,7 +223,6 @@
 	name = "brown hood"
 	desc = "Perfect for concealing your identity."
 	icon_state = "eldritch"
-	icon_state = "eldritch"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flash_protect = 2

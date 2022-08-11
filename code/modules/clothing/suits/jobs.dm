@@ -42,7 +42,6 @@
 	name = "pharaoh tunic"
 	desc = "Lavish tomb not included."
 	icon_state = "pharaoh"
-	icon_state = "pharaoh"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/chaplain/holidaypriest

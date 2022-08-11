@@ -19,7 +19,6 @@
 
 /datum/reagent/nitroglycerin
 	name = "Nitroglycerin"
-	value = 5
 	description = "Nitroglycerin is a heavy, colorless, oily, explosive liquid obtained by nitrating glycerol."
 	color = "#808080" // rgb: 128, 128, 128
 	taste_description = "oil"

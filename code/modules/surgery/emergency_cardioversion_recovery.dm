@@ -5,7 +5,6 @@
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
 	requires_trait = 2
-	requires_trait = TRAIT_SURGERY_MID
 
 /datum/surgery_step/ventricular_electrotherapy
 	name = "ventricular electrotherapy"

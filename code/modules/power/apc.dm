@@ -53,7 +53,6 @@
 	plane = ABOVE_WALL_PLANE
 	icon_state = "apc0"
 	use_power = NO_POWER_USE
-	req_access = null
 	max_integrity = 300
 	integrity_failure = 0.17
 	var/damage_deflection = 10
