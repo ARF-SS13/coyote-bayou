@@ -1,6 +1,6 @@
 /datum/material/prewarpolymer
-	name = "Pre-War Polymer Alloy"
-	desc = "An ancient alloy of polymers common in much of the Pre-War worlds cutting edge technology"
+	name = "Saturnite Alloy"
+	desc = "A strong Ultracite based alloy common in much of the Pre-War worlds cutting edge technology"
 	color = list(119/255, 217/255, 396/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	integrity_modifier = 1
 	alpha = 200
