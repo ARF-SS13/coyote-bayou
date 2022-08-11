@@ -263,8 +263,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		world.SetConfig("APP/admin", ckey, null)
 	//END CITADEL EDIT
 	if(CONFIG_GET(flag/enable_localhost_rank) && !connecting_admin)
-		var/localhost_addresses = list("127.0.0.1", "::1")
-		if(isnull(address) || (address in localhost_addresses))
+		if(isnull(address) || (address in LOCALHOST_ADDRESSES))
 			var/datum/admin_rank/localhost_rank = new("!localhost!", R_EVERYTHING, R_DBRANKS, R_EVERYTHING) //+EVERYTHING -DBRANKS *EVERYTHING
 			new /datum/admins(localhost_rank, ckey, 1, 1)
 	//preferences datum - also holds some persistent data for the client (because we may as well keep these datums to a minimum)
@@ -295,7 +294,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			var/client/C = I
 			if(C.key && (C.key != key) )
 				var/matches
-				if( (C.address == address) )
+				if( (C.address == address && !(address in LOCALHOST_ADDRESSES)) )
 					matches += "IP ([address])"
 				if( (C.computer_id == computer_id) )
 					if(matches)
@@ -402,7 +401,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			qdel(src)
 			return 0
 
-	if( (world.address == address || !address) && !GLOB.host )
+	if( ((world.address == address && !(address in LOCALHOST_ADDRESSES)) || !address) && !GLOB.host )
 		GLOB.host = key
 		world.update_status()
 
