@@ -90,6 +90,8 @@
 	return FALSE
 
 /obj/item/ammo_box/proc/eject_round(obj/item/ammo_casing/casing_to_eject, index)
+	if(!istype(casing_to_eject, /obj/item/ammo_casing))
+		return
 	if(index)
 		stored_ammo[index] = null
 	casing_to_eject.forceMove(get_turf(src.loc))
