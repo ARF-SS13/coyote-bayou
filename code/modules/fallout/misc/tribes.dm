@@ -98,10 +98,10 @@
 
 	var/datum/gang/tribe/G = gang
 	if(alert(C, "[src] invites you to join the [G.name].", "Tribe invitation", "Yes", "No") == "No")
-		visible_message(C, span_warning("[C.name] refused an offer to join the [G.name]!"))
+		C.visible_message(span_warning("[C] refused an offer to join the [G.name]!"), span_warning("You refused to join the [G.name]!"))
 		return
 	else
-		visible_message(C, span_notice("[C.name] accepted an offer to join the [G.name]!"))
+		C.visible_message(span_notice("[C] accepted an offer to join the [G.name]!"), span_notice("You agree to join the [G.name]!"))
 
 	G.add_member(C)
 	C.gang = G
