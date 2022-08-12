@@ -92,9 +92,9 @@
 
 /obj/machinery/water_purifier/examine(mob/user)
 	. += ..()
-	var/percent = round((output.reagents.total_volume / output.volume) * 100)
 	if(output)
-		. += span_notice("[output] is [percent]% full.")
+		var/percent = round((output.reagents.total_volume / output.volume) * 100)
+		. += "<span class='notice'>[output] is [percent]% full.</span>"
 	else
 		. += span_notice("[src] has no reagent container installed.")
 
