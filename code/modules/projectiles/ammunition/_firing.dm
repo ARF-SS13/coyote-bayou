@@ -40,6 +40,8 @@
 		BB.damage *= G.damage_multiplier
 		BB.armour_penetration *= G.penetration_multiplier
 		BB.pixels_per_second *= G.projectile_speed_multiplier
+		if(BB.zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE)
+			BB.zone_accuracy_type = G.get_zone_accuracy_type()
 		if(HAS_TRAIT(user, TRAIT_INSANE_AIM))
 			BB.ricochets_max = max(BB.ricochets_max, 10) //bouncy!
 			BB.ricochet_chance = max(BB.ricochet_chance, 100) //it wont decay so we can leave it at 100 for always bouncing

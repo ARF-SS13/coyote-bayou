@@ -626,6 +626,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY
@@ -716,6 +717,7 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -839,6 +841,7 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // tacticool
 
 	can_scope = TRUE
 	silenced = TRUE
@@ -959,6 +962,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	can_bayonet = FALSE
 	semi_auto = TRUE
@@ -1168,6 +1172,7 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
@@ -1249,6 +1254,7 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1296,6 +1302,7 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -1341,6 +1348,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	en_bloc = 1
 	auto_eject = 1
@@ -1495,6 +1503,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	semi_auto = TRUE
 	can_bayonet = FALSE
@@ -2046,6 +2055,7 @@ obj/item/gun/ballistic/automatic/bar
 		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
@@ -2080,6 +2090,7 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_5_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	automatic = 1
@@ -2338,6 +2349,7 @@ obj/item/gun/ballistic/automatic/bar
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // obviously
 
 	can_scope = FALSE
 	zoom_factor = 1.2
@@ -2374,6 +2386,7 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	spawnwithmagazine = TRUE

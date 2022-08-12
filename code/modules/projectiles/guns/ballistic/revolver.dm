@@ -312,8 +312,7 @@
 	init_recoil = HANDGUN_RECOIL(1)
 
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
 /* * * * * * * * * * *
  * .44 magnum revolver
@@ -433,6 +432,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -462,6 +462,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	can_scope = TRUE
 
@@ -491,6 +492,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	can_scope = TRUE
 
@@ -517,6 +519,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	can_scope = TRUE
 	scope_state = "revolver_scope"
@@ -574,6 +577,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -634,6 +638,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -664,10 +669,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-
-
 
 /* * * * * * * * * * *
  * Needler 'revolver'
@@ -692,6 +696,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
