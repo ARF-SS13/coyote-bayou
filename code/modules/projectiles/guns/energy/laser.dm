@@ -641,8 +641,9 @@
 /obj/item/gun/energy/laser/aer12
 	name = "\improper AER12 laser rifle"
 	desc = "A cutting-edge, pre-war laser rifle. Its focusing crystal array is housed in gold alloy, making it difficult to maintain."
-	icon_state = "aer12"
-	item_state = "laser-rifle9"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "aer12new"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
