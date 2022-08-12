@@ -75,6 +75,7 @@
 
 	if(do_spin())
 		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		playsound(src.loc, 'sound/weapons/revolver_spin.ogg', 100, 1) // Coyote Bayou addon. Sound is from Baystation12
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
