@@ -10,9 +10,10 @@
 
 
 /obj/screen/sprintbutton/Click()
-	if(ishuman(usr))
+	return
+	/*if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
-		H.default_toggle_sprint()
+		H.default_toggle_sprint()*/
 
 
 /obj/screen/sprintbutton/update_icon_state()
@@ -44,7 +45,7 @@
 
 /obj/screen/sprint_buffer
 	name = "sprint buffer"
-	icon = 'icons/fallout/UI/sprintbar.dmi'
+	//icon = 'icons/fallout/UI/sprintbar.dmi'
 	icon_state = "prog_bar_100"
 
 /obj/screen/sprint_buffer/Click()
