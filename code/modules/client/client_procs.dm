@@ -536,17 +536,17 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		return
 	if(!SSdbcore.Connect())
 		return
-	var/datum/db_query/query_get_related_ip = SSdbcore.NewQuery(
-		"SELECT ckey FROM [format_table_name("player")] WHERE ip = INET_ATON(:address) AND ckey != :ckey",
-		list("address" = address, "ckey" = ckey)
-	)
-	if(!query_get_related_ip.Execute())
-		qdel(query_get_related_ip)
-		return
-	related_accounts_ip = ""
-	while(query_get_related_ip.NextRow())
-		related_accounts_ip += "[query_get_related_ip.item[1]], "
-	qdel(query_get_related_ip)
+	// var/datum/db_query/query_get_related_ip = SSdbcore.NewQuery(
+	// 	"SELECT ckey FROM [format_table_name("player")] WHERE ip = INET_ATON(:address) AND ckey != :ckey",
+	// 	list("address" = address, "ckey" = ckey)
+	// )
+	// if(!query_get_related_ip.Execute())
+	// 	qdel(query_get_related_ip)
+	// 	return
+	// related_accounts_ip = ""
+	// while(query_get_related_ip.NextRow())
+	// 	related_accounts_ip += "[query_get_related_ip.item[1]], "
+	// qdel(query_get_related_ip)
 	var/datum/db_query/query_get_related_cid = SSdbcore.NewQuery(
 		"SELECT ckey FROM [format_table_name("player")] WHERE computerid = :computerid AND ckey != :ckey",
 		list("computerid" = computer_id, "ckey" = ckey)
