@@ -503,8 +503,13 @@
 /obj/item/gun/ballistic/rifle/mag/antimateriel
 	name = "anti-materiel rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
+	icon = 'icons/fallout/objects/guns/longguns.dmi'	
 	icon_state = "amr"
 	item_state = "amr"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	lefthand_file = 'icons/fallout/onmob/weapons/64x64_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/64x64_righthand.dmi'
 	mag_type = /obj/item/ammo_box/magazine/amr
 
 	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
