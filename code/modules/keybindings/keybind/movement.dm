@@ -132,7 +132,7 @@
 	var/list/client/is_down = list()
 
 /datum/keybinding/living/hold_sprint/can_use(client/user)
-	return ishuman(user.mob) || iscyborg(user.mob)
+	return iscyborg(user.mob) // Coyote Bayou Change
 
 /datum/keybinding/living/hold_sprint/down(client/user)
 	var/mob/living/L = user.mob
@@ -155,7 +155,7 @@
 	var/list/client/is_down = list()
 
 /datum/keybinding/living/toggle_sprint/can_use(client/user)
-	return ishuman(user.mob) || iscyborg(user.mob)
+	return iscyborg(user.mob) // Coyote Bayou Change
 
 /datum/keybinding/living/toggle_sprint/down(client/user)
 	is_down |= user
