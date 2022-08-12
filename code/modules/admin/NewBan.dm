@@ -38,10 +38,10 @@ GLOBAL_PROTECT(Banlist)
 				if(matches)
 					matches += "/"
 				matches += "id"
-			if( address == GLOB.Banlist["ip"] && !(address in LOCALHOST_ADDRESSES))
-				if(matches)
-					matches += "/"
-				matches += "ip"
+			// if( address == GLOB.Banlist["ip"] )
+			// 	if(matches)
+			// 		matches += "/"
+			// 	matches += "ip"
 
 			if(matches)
 				if(GLOB.Banlist["temp"])
