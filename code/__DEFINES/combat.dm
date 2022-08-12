@@ -661,7 +661,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.5)
 
 /// Refire speed multiplier for manual action guns, cus we no longer care about your cock length
-#define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.5
+#define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
 
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECOND
