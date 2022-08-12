@@ -69,10 +69,7 @@
 						else
 							M.reagents.add_reagent(R.type, R.volume)
 
-
-
-				target.visible_message(span_notice("\The [src] beeps!"))
-				to_chat("<span class='notice'><i>You feel a tiny prick as a smartdart embeds itself in you with a beep.</i></span>")
+				target.visible_message(span_notice("\The [src] beeps!"), span_hear("You feel a tiny prick as a smartdart embeds itself in you with a beep."))
 				return BULLET_ACT_HIT
 			else
 				blocked = 100
