@@ -75,6 +75,7 @@
 
 	if(do_spin())
 		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		playsound(src, 'sound/f13weapons/revolverspin.ogg', 30, 1)
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -506,7 +507,7 @@
 	name = "M2045 Magnum Revolver Rifle"
 	desc = "A relic from before the Great War returns to the wasteland. This rifle uses .308 ammunition and has considerable recoil."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev308
-	icon = 'icons/fallout/objects/guns/long.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	item_state = "m2405"
 	icon_state = "m2405"
 
