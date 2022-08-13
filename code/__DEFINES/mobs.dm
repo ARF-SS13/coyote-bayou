@@ -16,15 +16,15 @@
 /// The amount blood typically regenerates to on its own
 #define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
 /// First stage of bloodloss, mostly warnings
-#define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.90)
+#define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.70)
 /// Second stage of bloodloss, minor harmless symptoms
-#define BLOOD_VOLUME_SYMPTOMS_MINOR (BLOOD_VOLUME_NORMAL * 0.85)
+#define BLOOD_VOLUME_SYMPTOMS_MINOR (BLOOD_VOLUME_NORMAL * 0.60)
 /// Third stage of bloodloss, annoying, but not particularly disabling, symptoms
-#define BLOOD_VOLUME_SYMPTOMS_ANNOYING (BLOOD_VOLUME_NORMAL * 0.75)
+#define BLOOD_VOLUME_SYMPTOMS_ANNOYING (BLOOD_VOLUME_NORMAL * 0.40)
 /// Fourth stage of bloodloss, worst symptoms begin, combat sucks
-#define BLOOD_VOLUME_SYMPTOMS_DEBILITATING (BLOOD_VOLUME_NORMAL * 0.50)
+#define BLOOD_VOLUME_SYMPTOMS_DEBILITATING (BLOOD_VOLUME_NORMAL * 0.30)
 /// Fifth stage of bloodloss, absolutely disabling, combat is impossible, rip~
-#define BLOOD_VOLUME_SYMPTOMS_WORST (BLOOD_VOLUME_NORMAL * 0.30)
+#define BLOOD_VOLUME_SYMPTOMS_WORST (BLOOD_VOLUME_NORMAL * 0.20)
 /// Okay die now
 #define BLOOD_VOLUME_DEATH 1
 //Blood levels
@@ -41,17 +41,17 @@
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
-#define BLOOD_REFILL_NUTRITION_FAT 3 // Eat a lot for quicker blood regen!
+#define BLOOD_REFILL_NUTRITION_FAT 5 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 2
+#define BLOOD_REFILL_NUTRITION_FULL 4
 /// Nutrition spent for being well fed
-#define BLOOD_REFILL_NUTRITION_WELL_FED 1
+#define BLOOD_REFILL_NUTRITION_WELL_FED 3
 /// Nutrition spent for being fed
-#define BLOOD_REFILL_NUTRITION_FED 0.5
+#define BLOOD_REFILL_NUTRITION_FED 2
 /// Nutrition spent for being hungie
-#define BLOOD_REFILL_NUTRITION_HUNGRY 0.25
+#define BLOOD_REFILL_NUTRITION_HUNGRY 1
 /// Nutrition spent for being starving
-#define BLOOD_REFILL_NUTRITION_STARVING 0.1
+#define BLOOD_REFILL_NUTRITION_STARVING 0.5
 
 /// Lowest amount normal bleeding can take you
 #define BLOOD_VOLUME_LOSS_FLOOR (BLOOD_VOLUME_NORMAL * 0.05)
@@ -61,9 +61,9 @@
 /// Cap for dizziness in minor blood loss
 #define BLOOD_LOSS_DIZZINESS_CAP_MINOR 0
 /// Cap for confusion in minor blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_MINOR 3
+#define BLOOD_LOSS_CONFUSION_CAP_MINOR 1
 /// Cap for blurriness in minor blood loss
-#define BLOOD_LOSS_BLUR_CAP_MINOR 2
+#define BLOOD_LOSS_BLUR_CAP_MINOR 1
 /// Cap for stamloss in minor blood loss
 #define BLOOD_LOSS_STAMLOSS_CAP_MINOR 25
 /// Multiplier sprint buffer in minor blood loss
@@ -73,7 +73,7 @@
 /// How much sprinting a tile costs in minor blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_MINOR 1.25
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_MINOR 5
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_MINOR 1
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_MINOR 1 SECONDS
 /// Slowdown applied in this level of bloodloss
@@ -82,9 +82,9 @@
 /// Cap for oxyloss in annoying blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_ANNOYING 30
 /// Cap for dizziness in annoying blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_ANNOYING 5
+#define BLOOD_LOSS_DIZZINESS_CAP_ANNOYING 3
 /// Cap for confusion in annoying blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_ANNOYING 5
+#define BLOOD_LOSS_CONFUSION_CAP_ANNOYING 2
 /// Cap for blurriness in annoying blood loss
 #define BLOOD_LOSS_BLUR_CAP_ANNOYING 3
 /// Cap for stamloss in annoying blood loss
@@ -96,7 +96,7 @@
 /// How much sprinting a tile costs in annoying blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING 2
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 10
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 2
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 2 SECONDS
 /// Slowdown applied in this level of bloodloss
@@ -105,9 +105,9 @@
 /// Cap for oxyloss in worst blood loss
 #define BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING 50
 /// Cap for dizziness in worst blood loss
-#define BLOOD_LOSS_DIZZINESS_CAP_DEBILITATING 8
+#define BLOOD_LOSS_DIZZINESS_CAP_DEBILITATING 5
 /// Cap for confusion in worst blood loss
-#define BLOOD_LOSS_CONFUSION_CAP_DEBILITATING 8
+#define BLOOD_LOSS_CONFUSION_CAP_DEBILITATING 5
 /// Cap for blurriness in worst blood loss
 #define BLOOD_LOSS_BLUR_CAP_DEBILITATING 5
 /// Cap for stamloss in worst blood loss
@@ -119,7 +119,7 @@
 /// How much sprinting a tile costs in worst blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_DEBILITATING 4
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING 17
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING 3
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING 2 SECONDS
 /// Slowdown applied in this level of bloodloss
@@ -142,7 +142,7 @@
 /// How much sprinting a tile costs in worst blood loss
 #define BLOOD_LOSS_SPRINT_COST_MULT_WORST 10 // basically you cant sprint
 /// Chance for a random knockdown
-#define BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST 35
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST 10
 /// Length of a random knockdown
 #define BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST 5 SECONDS
 /// Slowdown applied in this level of bloodloss

@@ -565,7 +565,7 @@
 //			* ADD: TRAIT_COLDBLOODED <-- add to carbon/life.dm /natural_bodytemperature_stabilization()
 //
 // MASQUERADE	Appear as human!
-//				** examine.dm /examine() <-- Change "blood_volume < BLOOD_VOLUME_SAFE" to a new examine
+//				** examine.dm /examine() <-- Change "get_blood(FALSE) < BLOOD_VOLUME_SAFE" to a new examine
 //
 // NOSFERATU ** ADD_TRAIT(human, TRAIT_DISFIGURED, "insert_vamp_datum_here") <-- Makes you UNKNOWN unless your ID says otherwise.
 // STEALTH   ** human_helpers.dm /get_visible_name()     ** shadowpeople.dm has rules for Light.
@@ -696,7 +696,7 @@
 		var/valuecolor = "#FF6666"
 		if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_SAFE)
 			valuecolor =  "#FFDDDD"
-		else if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_BAD)
+		else if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 			valuecolor =  "#FFAAAA"
 		owner.current.hud_used.blood_display.update_counter(owner.current.get_blood(TRUE), valuecolor)
 

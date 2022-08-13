@@ -250,7 +250,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 /mob/living/carbon/proc/regenerate_blood()
 	// Food based blood replenishment, spends nutrition to regen blood
 	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(blood_volume < BLOOD_REFILL_NUTRITION_MAX)
+	if(get_blood(FALSE) < BLOOD_REFILL_NUTRITION_MAX)
 		if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 			var/nutrition_bonus = 0
 			switch(nutrition)
@@ -276,7 +276,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)
-		if(blood_volume < BLOOD_VOLUME_LOSS_FLOOR)
+		if(get_blood(FALSE) < BLOOD_VOLUME_LOSS_FLOOR)
 			amt *= 0.05
 		blood_volume = max(blood_volume - amt, 0)
 		if(isturf(src.loc)) //Blood loss still happens in locker, floor stays clean
@@ -309,12 +309,13 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 //Gets blood from mob to a container or other mob, preserving all data in it.
 /mob/living/proc/transfer_blood_to(atom/movable/AM, amount, forced)
-	if(!blood_volume || !AM.reagents)
+	var/our_blood = get_blood(FALSE)
+	if(!our_blood || !AM.reagents)
 		return FALSE
-	if(blood_volume < (BLOOD_VOLUME_BAD * blood_ratio) && !forced)
+	if(our_blood < (BLOOD_VOLUME_SYMPTOMS_DEBILITATING * blood_ratio) && !forced)
 		return FALSE
 
-	if(blood_volume < amount)
+	if(our_blood < amount)
 		amount = blood_volume
 
 	var/blood_id = get_blood_id()

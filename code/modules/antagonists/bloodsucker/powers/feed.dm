@@ -270,9 +270,9 @@
 			warning_full = TRUE
 		// Blood Remaining? (Carbons/Humans only)
 		if(iscarbon(target) && !AmBloodsucker(target, TRUE))
-			if(target.get_blood(TRUE) <= BLOOD_VOLUME_BAD && warning_target_bloodvol > BLOOD_VOLUME_BAD)
+			if(target.get_blood(TRUE) <= BLOOD_VOLUME_SYMPTOMS_DEBILITATING && warning_target_bloodvol > BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 				to_chat(user, span_warning("Your victim's blood volume is fatally low!"))
-			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_OKAY)
+			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_SYMPTOMS_MINOR)
 				to_chat(user, span_warning("Your victim's blood volume is dangerously low."))
 			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_SAFE && warning_target_bloodvol > BLOOD_VOLUME_SAFE)
 				to_chat(user, span_notice("Your victim's blood is at an unsafe level."))

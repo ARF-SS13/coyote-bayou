@@ -257,13 +257,13 @@
 
 	var/apparent_blood_volume = blood_volume
 	if(dna.species.use_skintones && skin_tone == "albino")
-		apparent_blood_volume -= 150 // enough to knock you down one tier
+		apparent_blood_volume -= 300 // enough to knock you down one tier
 	switch(apparent_blood_volume)
-		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+		if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_WARN)
 			msg += "[t_He] [t_has] pale skin.\n"
-		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
+		if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
-		if(-INFINITY to BLOOD_VOLUME_BAD)
+		if(-INFINITY to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 			msg += "<span class='deadsay'><b>[t_He] resemble[p_s()] a crushed, empty juice pouch.</b></span>\n"
 
 	if(bleedsuppress)

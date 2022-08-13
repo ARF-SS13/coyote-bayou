@@ -152,7 +152,7 @@
 				iter_wound.apply_wound(target_bodypart)
 
 		C1.blood_volume -= 20
-		if(C2.blood_volume < BLOOD_VOLUME_MAXIMUM) //we dont want to explode after all
+		if(C2.get_blood(FALSE) < BLOOD_VOLUME_MAXIMUM) //we dont want to explode after all
 			C2.blood_volume += 20
 		return ..()
 

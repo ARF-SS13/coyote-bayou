@@ -47,7 +47,7 @@
 	if(!ishuman(target))
 		target.blood_volume -= (blood_taken / max(target.mob_size, 0.1)) * 3.5 // max() to prevent divide-by-zero
 		target.apply_damage_type(blood_taken / 3.5) // Don't do too much damage, or else they die and provide no blood nourishment.
-		if(target.blood_volume <= 0)
+		if(target.get_blood(FALSE) <= 0)
 			target.blood_volume = 0
 			target.death(0)
 	///////////
@@ -168,11 +168,11 @@
 	// EMPTY:	Frenzy!
 	// BLOOD_VOLUME_GOOD: [336]  Pale (handled in bloodsucker_integration.dm
 	// BLOOD_VOLUME_BAD: [224]  Jitter
-	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
 		owner.current.Jitter(3)
 	// BLOOD_VOLUME_SURVIVE: [122]  Blur Vision
-	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD / 2)
-		owner.current.blur_eyes(8 - 8 * (owner.current.get_blood(TRUE) / BLOOD_VOLUME_BAD))
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING / 2)
+		owner.current.blur_eyes(8 - 8 * (owner.current.get_blood(TRUE) / BLOOD_VOLUME_SYMPTOMS_DEBILITATING))
 	// Nutrition
 	owner.current.set_nutrition(min(owner.current.get_blood(TRUE), NUTRITION_LEVEL_FED)) //The amount of blood is how full we are.
 	//A bit higher regeneration based on blood volume
@@ -180,9 +180,9 @@
 		additional_regen = 0.4
 	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
 		additional_regen = 0.3
-	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_OKAY)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 		additional_regen = 0.2
-	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 		additional_regen  = 0.1
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

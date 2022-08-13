@@ -421,7 +421,7 @@
 	/* if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
-	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
+	if(M.get_blood(FALSE) < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
@@ -1678,12 +1678,12 @@
 // helps bleeding wounds clot faster
 /datum/reagent/medicine/coagulant
 	name = "Sanguirite"
-	description = "A proprietary coagulant used to help bleeding wounds clot faster."
+	description = "A proprietary coagulant used to help bleeding wounds stop bleeding."
 	reagent_state = LIQUID
 	color = "#bb2424"
-	metabolization_rate = 0.10 * REAGENTS_METABOLISM
+	metabolization_rate = 0.075 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	bleed_mult = 0.05
+	bleed_mult = 0.025
 	/// How much base clotting we do per bleeding wound, multiplied by the below number for each bleeding wound
 	//var/clot_rate = 0.25
 	/// If we have multiple bleeding wounds, we count the number of bleeding wounds, then multiply the clot rate by this^(n) before applying it to each cut, so more cuts = less clotting per cut (though still more total clotting)
@@ -1715,8 +1715,8 @@
 // can be synthesized on station rather than bought. made by grinding a banana peel, heating it up, then mixing the banana peel powder with salglu
 /datum/reagent/medicine/coagulant/weak
 	name = "Synthi-Sanguirite"
-	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
-	bleed_mult = 0.15
+	description = "A synthetic coagulant used to help bleeding wounds stop bleeding. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
+	bleed_mult = 0.05
 /* 
  * Reduces blood flow on all wounds
  * * User - Mob who's wounds we're treating
