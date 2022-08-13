@@ -42,13 +42,11 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	if(delete_after_roundstart)
 		qdel(src)
 
-/obj/effect/landmark/start/New()
+/obj/effect/landmark/start/Initialize(mapload)
+	. = ..()
 	GLOB.start_landmarks_list += src
 	if(jobspawn_override)
-		if(!GLOB.jobspawn_overrides[name])
-			GLOB.jobspawn_overrides[name] = list()
-		GLOB.jobspawn_overrides[name] += src
-	..()
+		LAZYADD(GLOB.jobspawn_overrides[name], src)
 	if(name != "start")
 		tag = "start*[name]"
 
@@ -208,8 +206,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "department_sec"
 	icon_state = "Security Officer"
 
-/obj/effect/landmark/start/depsec/New()
-	..()
+/obj/effect/landmark/start/depsec/Initialize(mapload)
+	. = ..()
 	GLOB.department_security_spawns += src
 
 /obj/effect/landmark/start/depsec/Destroy()
@@ -422,8 +420,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	layer = HIGH_LANDMARK_LAYER
 
 
-/obj/effect/landmark/event_spawn/New()
-	..()
+/obj/effect/landmark/event_spawn/Initialize(mapload)
+	. = ..()
 	GLOB.generic_event_spawns += src
 
 /obj/effect/landmark/event_spawn/Destroy()
@@ -433,9 +431,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 /obj/effect/landmark/ruin
 	var/datum/map_template/ruin/ruin_template
 
-/obj/effect/landmark/ruin/New(loc, my_ruin_template)
+/obj/effect/landmark/ruin/Initialize(mapload, my_ruin_template)
+	. = ..()
 	name = "ruin_[GLOB.ruin_landmarks.len + 1]"
-	..(loc)
 	ruin_template = my_ruin_template
 	GLOB.ruin_landmarks |= src
 
@@ -450,8 +448,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	layer = BULLET_HOLE_LAYER
 	plane = ABOVE_WALL_PLANE
 
-/obj/effect/landmark/stationroom/New()
-	..()
+/obj/effect/landmark/stationroom/Initialize(mapload)
+	. = ..()
 	GLOB.stationroom_landmarks += src
 
 /obj/effect/landmark/stationroom/Destroy()
@@ -489,8 +487,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	templates = list("Engine SM" = 3, "Engine Singulo" = 3, "Engine Tesla" = 3)
 	icon = 'icons/rooms/box/engine.dmi'
 
-/obj/effect/landmark/stationroom/box/engine/New()
-	. = ..()
+/obj/effect/landmark/stationroom/box/engine/Initialize(mapload)
+	. = ..(mapload)
 	templates = CONFIG_GET(keyed_list/box_random_engine)
 
 // Landmark for the mining station
