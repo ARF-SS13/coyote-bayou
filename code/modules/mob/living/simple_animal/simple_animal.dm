@@ -366,11 +366,9 @@
 
 
 /mob/living/simple_animal/proc/drop_loot()
-	if(!loot.len)
-		return
 	for(var/drop in loot)
 		for(var/i in 1 to max(1, loot[drop]))
-			new drop(loc)
+			new drop(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
