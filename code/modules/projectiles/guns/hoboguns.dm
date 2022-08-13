@@ -36,6 +36,7 @@
 /obj/item/gun/ballistic/rifle/hobo
 	slowdown = 0.4
 	icon = 'icons/fallout/objects/guns/energy.dmi'
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /obj/item/gun/ballistic/rifle/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
@@ -333,7 +334,7 @@
 	item_state = "autopipe"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
-	
+
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO

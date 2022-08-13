@@ -339,7 +339,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
@@ -368,7 +368,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 
@@ -464,7 +464,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
@@ -494,7 +494,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /* * * * * * * * * * *
@@ -524,7 +524,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.2)
 
-	zoomable = TRUE	
+	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 
@@ -552,7 +552,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 9

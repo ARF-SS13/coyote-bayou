@@ -674,6 +674,7 @@
 	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
+	gun_tags = list(GUN_SCOPE)
 
 /* * * * * * *
  * Carbines  *
@@ -716,7 +717,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-	gun_tags = list(GUN_FA_MODDABLE)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
@@ -840,7 +841,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-	gun_tags = list(GUN_FA_MODDABLE)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // tacticool
 
 	can_scope = TRUE
@@ -875,7 +876,6 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
 	silenced = TRUE
 	can_scope = TRUE
 	semi_auto = TRUE
@@ -937,7 +937,7 @@
  * Light semi-auto rifle
  * .223 / 5.56mm
  * Slow to fire
- * 
+ *
  * Common
  * * * * * * * * * * */
 
@@ -964,6 +964,8 @@
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
+	gun_tags = list(GUN_SCOPE)
+
 	can_bayonet = FALSE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
@@ -983,7 +985,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1003,6 +1005,8 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
+	gun_tags = list()
+
 	silenced = TRUE
 	can_scope = FALSE
 	zoom_factor = 1.5
@@ -1015,7 +1019,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1034,6 +1038,8 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
+
+	gun_tags = list()
 
 	silenced = TRUE
 	can_scope = FALSE
@@ -1135,6 +1141,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
 
+	gun_tags = list(GUN_SCOPE)
+
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -1217,6 +1225,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
@@ -1253,7 +1263,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-	gun_tags = list(GUN_FA_MODDABLE)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
@@ -1301,7 +1311,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-	gun_tags = list(GUN_FA_MODDABLE)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
@@ -1349,6 +1359,8 @@
 		SEMI_AUTO_NODELAY
 	)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
 
 	en_bloc = 1
 	auto_eject = 1
@@ -1909,7 +1921,7 @@
 		FULL_AUTO_300,
 		BURST_3_ROUND
 	)
-
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	is_automatic = TRUE
 	automatic = 1
 	can_scope = TRUE
@@ -1956,7 +1968,7 @@
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /* * * * * * * * * * *
