@@ -1,6 +1,6 @@
 
 
-/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
+/mob/living/carbon/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked = FALSE, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0)
 	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone)
 	var/hit_percent = (100-blocked)/100
 	if(!forced && hit_percent <= 0)
@@ -18,6 +18,9 @@
 				BP = bodyparts[1]
 
 	var/damage_amount = forced ? damage : damage * hit_percent
+	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage_amount = max(damage_amount - min(damage_threshold, ARMOR_CAP_DT), 1)
+
 	switch(damagetype)
 		if(BRUTE)
 			if(BP)

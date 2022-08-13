@@ -90,7 +90,7 @@
 	can_hold = GLOB.toolbelt_allowed
 
 
-/datum/component/storage/concrete/pockets/medical
+/datum/component/storage/concrete/pockets/medicalb
 	max_items = 7
 
 /datum/component/storage/concrete/pockets/medical/Initialize()

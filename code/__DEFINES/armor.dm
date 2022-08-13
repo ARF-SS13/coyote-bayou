@@ -14,7 +14,8 @@
 		"rad" = 0, \
 		"fire" = 0, \
 		"acid" = 0, \
-		"wound" = 0)
+		"wound" = 0, \
+		"damage_threshold" = 0)
 
 /* Basic clothing armor values
  * Mild environmental resistances
@@ -30,7 +31,8 @@
 		"rad" = 10, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 0)
+		"wound" = 0, \
+		"damage_threshold" = 0)
 
 /* Light armor values
  * High mobility
@@ -50,7 +52,8 @@
 		"rad" = 10, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 5)
+		"wound" = 5, \
+		"damage_threshold" = 3)
 
 /* Medium armor values
  * Decent mobility
@@ -70,7 +73,8 @@
 		"rad" = 25, \
 		"fire" = 25, \
 		"acid" = 25, \
-		"wound" = 10)
+		"wound" = 10, \
+		"damage_threshold" = 7)
 
 /* Heavy armor values
  * Low mobility
@@ -90,7 +94,8 @@
 		"rad" = 25, \
 		"fire" = 35, \
 		"acid" = 35, \
-		"wound" = 25)
+		"wound" = 25, \
+		"damage_threshold" = 11)
 
 /* Salvaged PA values
  * Next to no mobility
@@ -111,7 +116,8 @@
 		"rad" = 50, \
 		"fire" = 80, \
 		"acid" = 80, \
-		"wound" = 45)
+		"wound" = 45, \
+		"damage_threshold" = 20)
 
 /* Power armor values
  * High mobility
@@ -132,7 +138,8 @@
 		"rad" = 50, \
 		"fire" = 95, \
 		"acid" = 95, \
-		"wound" = 100)
+		"wound" = 100, \
+		"damage_threshold" = 30)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
@@ -301,6 +308,33 @@
 #define ARMOR_MODIFIER_DOWN_LASER_T4 list(\
 		"linelaser" = -200)
 
+/* DT tokens
+ * Adds on damage threshold
+ * T1 - Small plated inserts, or heavy leather
+ * T2 - Sturdy plated inserts, or deathclaw plating
+ * T3 - Dedicated armor reinforcements
+ * * * * * * * * * * * */
+#define ARMOR_MODIFIER_UP_DT_T1 list(\
+		"damage_threshold" = 1)
+
+#define ARMOR_MODIFIER_UP_DT_T2 list(\
+		"damage_threshold" = 3)
+
+#define ARMOR_MODIFIER_UP_DT_T3 list(\
+		"damage_threshold" = 5)
+
+#define ARMOR_MODIFIER_DOWN_DT_T1 list(\
+		"damage_threshold" = -1)
+
+#define ARMOR_MODIFIER_DOWN_DT_T2 list(\
+		"damage_threshold" = -3)
+
+#define ARMOR_MODIFIER_DOWN_DT_T3 list(\
+		"damage_threshold" = -5)
+
+#define ARMOR_MODIFIER_DOWN_DT_T4 list(\
+		"damage_threshold" = -20)
+
 /// Should the modifier MULTiply or ADD the value?
 GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"melee" = "MULT",
@@ -315,7 +349,9 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"rad" = "MULT",
 		"fire" = "MULT",
 		"acid" = "MULT",
-		"wound" = "MULT"))
+		"wound" = "MULT",
+		"magic" = "MULT",
+		"damage_threshold" = "ADD"))
 
 
 /* Armor slowdowns
@@ -413,11 +449,16 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define ARMOR_CAP_ACID 90
 #define ARMOR_CAP_MAGIC 100
 #define ARMOR_CAP_WOUND 100
+#define ARMOR_CAP_DT 40
+#define ARMOR_CAP_DR 95
 
 /// Armor stiffness - How much recoil we get while running and gunning!
 #define LIGHT_STIFFNESS 1
 #define MEDIUM_STIFFNESS 1.5
 #define HEAVY_STIFFNESS 2
+
+/// Damages DT is effective with
+GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
 
 
 
