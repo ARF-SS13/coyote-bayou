@@ -34,7 +34,7 @@
 #define BLOOD_VOLUME_SLIME_SPLIT (BLOOD_VOLUME_NORMAL * 1.25)
 
 /// Max level blood stretchers can bring your blood up to
-#define BLOOD_VOLUME_EXPANDER_MAX BLOOD_VOLUME_SYMPTOMS_ANNOYING + 10
+#define BLOOD_VOLUME_EXPANDER_MAX BLOOD_VOLUME_SYMPTOMS_MINOR + 10
 
 /// Max level blood will regenerate naturally with nutrition
 #define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_SYMPTOMS_MINOR - 10

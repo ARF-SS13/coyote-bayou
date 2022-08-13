@@ -14,7 +14,7 @@
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 4
+	initial_flow = 2
 	minimum_flow = 0.05
 	clot_rate = 0.025
 	internal_bleeding_chance = 30
@@ -34,7 +34,7 @@
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 8
+	initial_flow = 5
 	minimum_flow = 0.01
 	clot_rate = 0.005
 	internal_bleeding_chance = 60
@@ -55,7 +55,7 @@
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 12
+	initial_flow = 8
 	minimum_flow = 0.005
 	clot_rate = 0
 	internal_bleeding_chance = 80

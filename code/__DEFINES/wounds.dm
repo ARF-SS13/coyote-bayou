@@ -63,7 +63,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// how quickly sanitization removes infestation and decays per tick
 #define WOUND_BURN_SANITIZATION_RATE 	0.4
 /// how much blood you can lose per tick per slash max. 8 is a LOT of blood for one cut so don't worry about hitting it easily
-#define WOUND_MAX_BLOODFLOW		8
+#define WOUND_MAX_BLOODFLOW		2
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
 #define WOUND_SLASH_DEAD_CLOT_MIN		0.05
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define BLEED_HEAL_COOLDOWN_TIME 1 SECONDS
 
 /// Multiplier for bleeding if the wound has enough bandaging on it
-#define WOUND_BLEED_BANDAGE_MULTIPLIER 0.1
+#define WOUND_BLEED_BANDAGE_MULTIPLIER 0.05
 
 /// Multiplier for bleeding if the wound has enough sutures on it
 #define WOUND_BLEED_SUTURE_MULTIPLIER 0 // no blood!
