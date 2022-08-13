@@ -842,6 +842,7 @@
 	color = "#C8C8C8" //RGB: 200, 200, 200
 	metabolization_rate = 0.2 * REAGENTS_METABOLISM
 	toxpwr = 0
+	bleed_mult = 2
 	value = REAGENT_VALUE_VERY_RARE
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious

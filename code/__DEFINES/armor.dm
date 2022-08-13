@@ -36,6 +36,7 @@
  * High mobility
  * Mild environmental resistances
  * Low defense 
+ * Does almost nothing for wounds
  * 
  * +25 effective HP
  * 1.25x effective healing
@@ -56,6 +57,7 @@
  * Decent mobility
  * Decent environmental resistances
  * Decent defense 
+ * Should stop ghouls from making you blood fall out
  * 
  * +50 effective HP
  * 1.5x effective healing
@@ -70,12 +72,13 @@
 		"rad" = 25, \
 		"fire" = 25, \
 		"acid" = 25, \
-		"wound" = 10)
+		"wound" = 15)
 
 /* Heavy armor values
  * Low mobility
  * Decent environmental resistances
  * High defense 
+ * High wound protection
  * 
  * +100 effective HP
  * 2x effective healing
@@ -90,12 +93,13 @@
 		"rad" = 25, \
 		"fire" = 35, \
 		"acid" = 35, \
-		"wound" = 25)
+		"wound" = 30)
 
 /* Salvaged PA values
  * Next to no mobility
  * Good environmental resistances
  * Great defense
+ * Near immunity to wounds
  * 
  * +250 effective HP
  * +50 laser HP
@@ -111,12 +115,13 @@
 		"rad" = 50, \
 		"fire" = 80, \
 		"acid" = 80, \
-		"wound" = 45)
+		"wound" = 60)
 
 /* Power armor values
  * High mobility
  * Amazing environmental resistances
  * OP defense
+ * Wounds just dont happen
  * 
  * +400 effective HP
  * +50 laser HP

@@ -16,7 +16,7 @@
 	if(owner.current.stat == CONSCIOUS && !poweron_feed && !HAS_TRAIT(owner.current, TRAIT_FAKEDEATH)) // Deduct Blood
 		AddBloodVolume(passive_blood_drain) // -.1 currently
 	if(HandleHealing(1)) 		// Heal
-		if(!notice_healing && owner.current.blood_volume > 0)
+		if(!notice_healing && owner.current.get_blood(TRUE) > 0)
 			to_chat(owner, span_notice("The power of your blood begins knitting your wounds..."))
 			notice_healing = TRUE
 	else if(notice_healing)
@@ -36,12 +36,12 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/antagonist/bloodsucker/proc/AddBloodVolume(value)
-	owner.current.blood_volume = clamp(owner.current.blood_volume + value, 0, max_blood_volume)
+	owner.current.blood_volume = clamp(owner.current.get_blood(TRUE) + value, 0, max_blood_volume)
 	update_hud()
 
 /datum/antagonist/bloodsucker/proc/HandleFeeding(mob/living/carbon/target, mult=1)
 	// mult: SILENT feed is 1/3 the amount
-	var/blood_taken = min(feed_amount, target.blood_volume) * mult	// Starts at 15 (now 8 since we doubled the Feed time)
+	var/blood_taken = min(feed_amount, target.get_blood(TRUE)) * mult	// Starts at 15 (now 8 since we doubled the Feed time)
 	target.blood_volume -= blood_taken
 	// Simple Animals lose a LOT of blood, and take damage. This is to keep cats, cows, and so forth from giving you insane amounts of blood.
 	if(!ishuman(target))
@@ -52,7 +52,7 @@
 			target.death(0)
 	///////////
 	// Shift Body Temp (toward Target's temp, by volume taken)
-	owner.current.bodytemperature = ((owner.current.blood_volume * owner.current.bodytemperature) + (blood_taken * target.bodytemperature)) / (owner.current.blood_volume + blood_taken)
+	owner.current.bodytemperature = ((owner.current.get_blood(TRUE) * owner.current.bodytemperature) + (blood_taken * target.bodytemperature)) / (owner.current.get_blood(TRUE) + blood_taken)
 	// our volume * temp, + their volume * temp, / total volume
 	///////////
 	// Reduce Value Quantity
@@ -134,7 +134,7 @@
 	var/limb_regen_cost = 50 * costMult
 	var/mob/living/carbon/C = owner.current
 	var/list/missing = C.get_missing_limbs()
-	if(missing.len && C.blood_volume < limb_regen_cost + 5)
+	if(missing.len && C.get_blood(TRUE) < limb_regen_cost + 5)
 		return FALSE
 	for(var/targetLimbZone in missing) 			// 1) Find ONE Limb and regenerate it.
 		C.regenerate_limb(targetLimbZone, FALSE)		// regenerate_limbs() <--- If you want to EXCLUDE certain parts, do it like this ----> regenerate_limbs(0, list("head"))
@@ -168,21 +168,21 @@
 	// EMPTY:	Frenzy!
 	// BLOOD_VOLUME_GOOD: [336]  Pale (handled in bloodsucker_integration.dm
 	// BLOOD_VOLUME_BAD: [224]  Jitter
-	if(owner.current.blood_volume < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
 		owner.current.Jitter(3)
 	// BLOOD_VOLUME_SURVIVE: [122]  Blur Vision
-	if(owner.current.blood_volume < BLOOD_VOLUME_BAD / 2)
-		owner.current.blur_eyes(8 - 8 * (owner.current.blood_volume / BLOOD_VOLUME_BAD))
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD / 2)
+		owner.current.blur_eyes(8 - 8 * (owner.current.get_blood(TRUE) / BLOOD_VOLUME_BAD))
 	// Nutrition
-	owner.current.set_nutrition(min(owner.current.blood_volume, NUTRITION_LEVEL_FED)) //The amount of blood is how full we are.
+	owner.current.set_nutrition(min(owner.current.get_blood(TRUE), NUTRITION_LEVEL_FED)) //The amount of blood is how full we are.
 	//A bit higher regeneration based on blood volume
-	if(owner.current.blood_volume < 700)
+	if(owner.current.get_blood(TRUE) < 700)
 		additional_regen = 0.4
-	else if(owner.current.blood_volume < BLOOD_VOLUME_NORMAL)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
 		additional_regen = 0.3
-	else if(owner.current.blood_volume < BLOOD_VOLUME_OKAY)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_OKAY)
 		additional_regen = 0.2
-	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_BAD)
 		additional_regen  = 0.1
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -366,7 +366,7 @@
 				to_chat(C, span_warning("You purge the food of the living from your viscera! You've never felt worse."))
 				//Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
-					C.blood_volume = max(0, C.blood_volume - foodInGut * 2)
+					C.blood_volume = max(0, C.get_blood(TRUE) - foodInGut * 2)
 					C.vomit(foodInGut * 4, foodInGut * 2, 0)
 				else
 					C.vomit(foodInGut * 4, FALSE, 0)

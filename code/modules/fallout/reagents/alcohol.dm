@@ -74,15 +74,17 @@
 
 /datum/reagent/consumable/ethanol/brocbrew
 	name = "Broc Brew"
-	description = "A potent healing beverage brewed from the Broc flower."
+	description = "A potent healing beverage brewed from the Broc flower. Known to promote blood flow."
 	color = "#DFA866"
 	boozepwr = 50
 	taste_description = "dirt and roses"
 	glass_icon_state = "cognacglass"
 	glass_name = "broc brew"
 	glass_desc = "A potent healing beverage brewed from the Broc flower."
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
+	effective_blood_multiplier = 1.5 // Mostly water, also the healy stuff
+	effective_blood_max = 150
+	//var/last_added = 0
+	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 
 /datum/reagent/consumable/ethanol/brocbrew/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -90,14 +92,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/brocbrew/on_mob_life(mob/living/carbon/M)
-	if(last_added)
+/* 	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
 	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level
+		M.blood_volume = new_blood_level */
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)

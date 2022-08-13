@@ -7,6 +7,11 @@
 #define DO_UNBLEED_WOUND (1<<2)
 #define DO_UNBURN_WOUND (1<<3)
 #define DO_APPLY_BANDAGE (1<<4)
+#define DO_APPLY_SUTURE (1<<5)
+#define DO_HURT_DAMAGE (1<<6)
+#define USER_HAS_THE_SKILLS 1
+#define VICTIM_HAS_THE_SKILLS 2
+#define NO_SKILLS_REQUIRED 3
 
 /obj/item/stack/medical
 	name = "medical pack"
@@ -19,28 +24,44 @@
 	throw_speed = 3
 	throw_range = 7
 	resistance_flags = FLAMMABLE
-	max_integrity = 40
+	max_integrity = 50
 	novariants = FALSE
 	item_flags = NOBLUDGEON
 	merge_type = /obj/item/stack/medical
+	/// Bandages have a number of hits it can sustain before falling apart. this is that number
+	var/covering_hitpoints
 	/// We have an active do_after, dont superstack healing things
 	var/is_healing = FALSE
+	/// trait needed to use this at full speed and effectiveness. Accepts TRAIT_SURGERY_LOW, TRAIT_SURGERY_MID, TRAIT_SURGERY_HIGH
+	var/needed_trait
+	/// Time penalty multiplier if they dont have the trait
+	var/unskilled_speed_mult = 2
+	/// Effectiveness penalty multiplier if they dont have the trait
+	var/unskilled_effectiveness_mult = 0.5
 	var/self_penalty_effectiveness = 0.8
 	var/self_delay = 50
-	var/other_delay = 0
+	var/other_delay = 50
 	var/repeating = TRUE
+	/// How much brute we hurt per application
+	var/hurt_brute
 	/// How much brute we heal per application
 	var/heal_brute
 	/// How much burn we heal per application
 	var/heal_burn
-	/// How much we reduce bleeding per application on cut wounds
-	var/stop_bleeding
+	/// Is this a bandage?
+	var/is_bandage = FALSE
+	/// Is this a suture?
+	var/is_suture = FALSE
+	/// How much of an effect does the suture have on wound healing?
+	var/suture_power
 	/// How much sanitization to apply to burns on application
 	var/sanitization
 	/// How much we add to flesh_healing for burn wounds on application
 	var/flesh_regeneration
 	/// Can this heal critters?
 	var/can_heal_critters = TRUE
+	/// How long this bandage should last on someone before falling apart
+	var/covering_lifespan = BANDAGE_OKAY_MAX_DURATION
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -59,6 +80,71 @@
 	if(isanimal(M) && can_heal_critters)
 		return heal_critter(M, user)
 	to_chat(user, span_warning("You can't heal [M] with \the [src]!"))
+
+
+/// Returns a bodypart and a bitfield in a list with the first valid bodypart we can work on
+/// Returns just a number (FALSE) if nothing is found
+/obj/item/stack/medical/proc/pick_a_bodypart(mob/living/carbon/C, mob/user)
+	var/obj/item/bodypart/first_choice = C.get_bodypart(check_zone(user.zone_selected))
+	var/do_these_things = check_bodypart(C, first_choice, TRUE)
+	var/list/output_heal_instructions = list("bodypart" = UNABLE_TO_HEAL, "operations" = UNABLE_TO_HEAL)
+	// shouldnt happen, but just in case
+	if(do_these_things == CARBON_ISNT)
+		to_chat(user, span_warning("That can't be healed with this!"))
+		return output_heal_instructions
+
+	// limb is missing, output a message and move on
+	if(do_these_things == BODYPART_MISSING)
+		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
+
+	// limb is missing, output a message and move on
+	if(do_these_things == BODYPART_INORGANIC)
+		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
+	
+	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
+	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
+		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
+		return output_heal_instructions
+	
+	// Part wasn't there, or needed no healing. Lets find one that does need healing!
+	var/obj/item/bodypart/affecting
+	for(var/limb_slot_to_check in GLOB.main_body_parts)
+		if(limb_slot_to_check == user.zone_selected)
+			continue // We already checked this, dont check again
+		affecting = C.get_bodypart(check_zone(limb_slot_to_check))
+		do_these_things = check_bodypart(C, affecting)
+		if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
+			return output_heal_instructions = list("bodypart" = affecting, "operations" = do_these_things)
+	return output_heal_instructions
+
+/// Checks the limb for things we can do to it
+/// Returns a string if the limb is certainly not suitable for healing
+/// Returns a bitfield if the limb can be healed
+/// Returns 0 if the limb just doesnt need healing
+/obj/item/stack/medical/proc/check_bodypart(mob/living/carbon/C, obj/item/bodypart/target_bodypart, output_message = FALSE)
+	if(!iscarbon(C))
+		return output_message ? CARBON_ISNT : UNABLE_TO_HEAL
+	if(!target_bodypart || !istype(target_bodypart, /obj/item/bodypart))
+		return output_message ? BODYPART_MISSING : UNABLE_TO_HEAL
+	if(target_bodypart.status != BODYPART_ORGANIC)
+		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
+	/// Okay we can reasonably assume this limb is okay to try and treat
+	. = BODYPART_FINE
+	if(hurt_brute)
+		. |= DO_HURT_DAMAGE
+	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
+		. |= DO_HEAL_DAMAGE
+	for(var/datum/wound/woundies in target_bodypart.wounds)
+		if(is_bandage)
+			if(woundies.wound_flags & ACCEPTS_GAUZE)
+				. |= DO_APPLY_BANDAGE
+		if(is_suture)
+			if(woundies.wound_flags & ACCEPTS_SUTURE)
+				. |= DO_APPLY_SUTURE
+	for(var/datum/wound/burn/burndies in target_bodypart.wounds)
+		if(sanitization || flesh_regeneration)
+			if(burndies.flesh_damage || burndies.infestation)
+				. |= DO_UNBURN_WOUND
 
 /obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user)
 	if(!isanimal(M))
@@ -98,99 +184,79 @@
 			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
 			return FALSE
 
-	var/self_application = (user == C)
 	var/obj/item/bodypart/affected_bodypart = heal_operations["bodypart"]
 	do_medical_message(user, C, "start")
 	is_healing = TRUE
-	if(!do_mob(user, C, (self_application ? self_delay : other_delay), progress = TRUE))
+	var/covering_output = null
+	var/is_skilled = is_skilled_enough(user, C)
+	if(!do_mob(user, C, get_delay_time(user, C, is_skilled), progress = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
 		is_healing = FALSE
 		return
 	is_healing = FALSE
-	/// now we start doing healy things!
-	if(heal_operations & DO_HEAL_DAMAGE)
-		if(affected_bodypart.heal_damage(heal_brute, heal_burn))
+	/// now we start doing 'healy' things!
+	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
+		if(affected_bodypart.receive_damage(hurt_brute * (is_skilled ? 1 : 2), sharpness = SHARP_EDGED))
+			if(prob(50))
+				C.emote("scream") // a
 			C.update_damage_overlays()
-	if(heal_operations & DO_UNBLEED_WOUND)
+	if(heal_operations & DO_HEAL_DAMAGE)
+		if(affected_bodypart.heal_damage(heal_brute * is_skilled ? 1 : unskilled_effectiveness_mult, heal_burn * is_skilled ? 1 : unskilled_effectiveness_mult))
+			C.update_damage_overlays()
+	/* if(heal_operations & DO_UNBLEED_WOUND)
 		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
 			if(wounds_to_unbleed.blood_flow)
-				wounds_to_unbleed.treat_bleed(src, user, self_application)
-				break
+				wounds_to_unbleed.treat_bleed(src, user, (user == C), is_skilled ? 1 : unskilled_effectiveness_mult)
+				break */
 	if(heal_operations & DO_UNBURN_WOUND)
 		for(var/datum/wound/burn/wounds_to_unburn in affected_bodypart.wounds)
 			if(wounds_to_unburn.flesh_damage || wounds_to_unburn.infestation)
-				wounds_to_unburn.treat_burn(src, user, self_application)
+				wounds_to_unburn.treat_burn(src, user, (user == C))
 				break
-	/* if(heal_operations & DO_APPLY_BANDAGE)
-		affected_bodypart.apply_gauze(src) */
+	if(heal_operations & DO_APPLY_BANDAGE)
+		covering_output = affected_bodypart.apply_gauze(src, is_skilled ? 1 : unskilled_effectiveness_mult)
+	if(heal_operations & DO_APPLY_SUTURE)
+		covering_output = affected_bodypart.apply_suture(src, is_skilled ? 1 : unskilled_effectiveness_mult)
 
-	do_medical_message(user, C, "end")
+	do_medical_message(user, C, "end", is_skilled, covering_output)
 	return TRUE
 
+/// Returns if the user is skilled enough to use this thing effectively
+/obj/item/stack/medical/proc/is_skilled_enough(mob/user, mob/target)
+	if(!needed_trait)
+		return NO_SKILLS_REQUIRED
+	if(HAS_TRAIT(user, needed_trait))
+		return USER_HAS_THE_SKILLS
+	if(HAS_TRAIT(target, needed_trait)) // doc's walking you through it
+		return VICTIM_HAS_THE_SKILLS
 
-/// Checks the limb for things we can do to it
-/// Returns a string if the limb is certainly not suitable for healing
-/// Returns a bitfield if the limb can be healed
-/// Returns 0 if the limb just doesnt need healing
-/obj/item/stack/medical/proc/check_bodypart(mob/living/carbon/C, obj/item/bodypart/target_bodypart, output_message = FALSE)
-	if(!iscarbon(C))
-		return output_message ? CARBON_ISNT : UNABLE_TO_HEAL
-	if(!target_bodypart || !istype(target_bodypart, /obj/item/bodypart))
-		return output_message ? BODYPART_MISSING : UNABLE_TO_HEAL
-	if(target_bodypart.status != BODYPART_ORGANIC)
-		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
-	/// Okay we can reasonably assume this limb is okay to try and treat
-	. = BODYPART_FINE
-	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
-		. |= DO_HEAL_DAMAGE
-	for(var/datum/wound/woundies in target_bodypart.wounds)
-		//if(absorption_rate || absorption_capacity)
-		//	 if(woundies.wound_flags & ACCEPTS_GAUZE)
-		//		. |= DO_APPLY_BANDAGE
-		if(stop_bleeding)
-			if(woundies.blood_flow)
-				. |= DO_UNBLEED_WOUND
-	for(var/datum/wound/burn/burndies in target_bodypart.wounds)
-		if(sanitization || flesh_regeneration)
-			if(burndies.flesh_damage || burndies.infestation)
-				. |= DO_UNBURN_WOUND
+	switch(needed_trait)
+		if(TRAIT_SURGERY_LOW)
+			if(HAS_TRAIT(user, TRAIT_SURGERY_LOW) || HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+				return USER_HAS_THE_SKILLS
+			if(HAS_TRAIT(target, TRAIT_SURGERY_LOW) || HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+				return VICTIM_HAS_THE_SKILLS
+		if(TRAIT_SURGERY_MID)
+			if(HAS_TRAIT(user, TRAIT_SURGERY_MID) || HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+				return USER_HAS_THE_SKILLS
+			if(HAS_TRAIT(target, TRAIT_SURGERY_MID)|| HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+				return VICTIM_HAS_THE_SKILLS
+		if(TRAIT_SURGERY_HIGH)
+			if(HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
+				return USER_HAS_THE_SKILLS
+			if(HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
+				return VICTIM_HAS_THE_SKILLS
 
-/// Returns a bodypart and a bitfield in a list with the first valid bodypart we can work on
-/// Returns just a number (FALSE) if nothing is found
-/obj/item/stack/medical/proc/pick_a_bodypart(mob/living/carbon/C, mob/user)
-	var/obj/item/bodypart/first_choice = C.get_bodypart(check_zone(user.zone_selected))
-	var/do_these_things = check_bodypart(C, first_choice, TRUE)
-	var/list/output_heal_instructions = list("bodypart" = UNABLE_TO_HEAL, "operations" = UNABLE_TO_HEAL)
-	// shouldnt happen, but just in case
-	if(do_these_things == CARBON_ISNT)
-		to_chat(user, span_warning("That can't be healed with this!"))
-		return output_heal_instructions
 
-	// limb is missing, output a message and move on
-	if(do_these_things == BODYPART_MISSING)
-		to_chat(user, span_warning("[C] doesn't have \a [parse_zone(user.zone_selected)]! Let's try another part..."))
+/// returns how long it should take to use this thing
+/obj/item/stack/medical/proc/get_delay_time(mob/user, mob/target, is_skilled = TRUE)
+	. = other_delay
+	if(user == target)
+		. = self_delay
+	if(!is_skilled)
+		. *= unskilled_speed_mult
 
-	// limb is missing, output a message and move on
-	if(do_these_things == BODYPART_INORGANIC)
-		to_chat(user, span_warning("[C]'s [parse_zone(user.zone_selected)] is robotic! Let's try another part..."))
-	
-	// If our operations are a number, and that number corresponds to operations to do, good! output what we're working on and what to do
-	if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
-		output_heal_instructions = list("bodypart" = first_choice, "operations" = do_these_things)
-		return output_heal_instructions
-	
-	// Part wasn't there, or needed no healing. Lets find one that does need healing!
-	var/obj/item/bodypart/affecting
-	for(var/limb_slot_to_check in GLOB.main_body_parts)
-		if(limb_slot_to_check == user.zone_selected)
-			continue // We already checked this, dont check again
-		affecting = C.get_bodypart(check_zone(limb_slot_to_check))
-		do_these_things = check_bodypart(C, affecting)
-		if(isnum(do_these_things) && do_these_things > BODYPART_FINE)
-			return output_heal_instructions = list("bodypart" = affecting, "operations" = do_these_things)
-	return output_heal_instructions
-
-/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, which_message)
+/obj/item/stack/medical/proc/do_medical_message(mob/user, mob/target, which_message, is_skilled, bandage_code)
 	if(!user || !target)
 		return
 	switch(which_message)
@@ -198,11 +264,63 @@
 			user.visible_message(
 				span_warning("[user] begins applying \a [src] to [target]'s wounds..."), 
 				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] wounds..."))
+			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
+				switch(needed_trait)
+					if(TRAIT_SURGERY_LOW)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("Your first aid training helps you breeze through this!"))
+						else
+							user.show_message(span_green("[target]'s first aid training steadies your hand and helps you work!"))
+					if(TRAIT_SURGERY_MID)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("Your medical training makes this easy as could be!"))
+						else
+							user.show_message(span_green("[target]'s medical training inspires you to steady your hand!"))
+					if(TRAIT_SURGERY_HIGH)
+						if(is_skilled == USER_HAS_THE_SKILLS)
+							user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
+						else
+							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!"))
 
 		if("end")
-			user.visible_message(
-				span_green("[user] applies \a [src] to [target]'s wounds.</span>"), 
-				span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] wounds."))
+			if(isnull(bandage_code))
+				user.visible_message(
+					span_green("[user] applies \a [src] to [target]'s wounds."), 
+					span_green("You apply \a [src] to [user == target ? "your" : "[target]'s"] wounds."))
+			else
+				if(bandage_code & BANDAGE_NEW_APPLIED)
+					user.visible_message(
+						span_green("[user] applies \a fresh new [src] to [target]'s wounds!"), 
+						span_green("You apply \a fresh new [src] to [user == target ? "your" : "[target]'s"] wounds!"))
+				if(bandage_code & BANDAGE_WAS_REPAIRED)
+					user.visible_message(
+						span_green("[user] fixes up [target]'s bandages with [src]!"), 
+						span_green("You fix up [user == target ? "your" : "[target]'s"] bandages with [src]!"))
+				if(bandage_code & BANDAGE_WAS_REPAIRED_TO_FULL)
+					user.visible_message(
+						span_green("[user] fixes up [target]'s bandages with [src], repairing them completely!"), 
+						span_green("You fix up [user == target ? "your" : "[target]'s"] bandages with [src], repairing them completely!"))
+				if(bandage_code & BANDAGE_TIMER_REFILLED)
+					user.visible_message(
+						span_green("[user] freshens up [target]'s bandages with [src]!"), 
+						span_green("You freshen up [user == target ? "your" : "[target]'s"] bandages with [src]!"))
+				
+				if(bandage_code & SUTURE_NEW_APPLIED)
+					user.visible_message(
+						span_green("[user] applies \a fresh new set of [src] to [target]'s wounds!"), 
+						span_green("You apply \a fresh new set of [src] to [user == target ? "your" : "[target]'s"] wounds!"))
+				if(bandage_code & SUTURE_WAS_REPAIRED)
+					user.visible_message(
+						span_green("[user] reinforces [target]'s sutures with [src]!"), 
+						span_green("You reinforce [user == target ? "your" : "[target]'s"] sutures with [src]!"))
+				if(bandage_code & SUTURE_WAS_REPAIRED_TO_FULL)
+					user.visible_message(
+						span_green("[user] reinforces [target]'s sutures with [src], repairing them completely!"), 
+						span_green("You reinforce [user == target ? "your" : "[target]'s"] sutures with [src], repairing them completely!"))
+				if(bandage_code & SUTURE_TIMER_REFILLED)
+					user.visible_message(
+						span_green("[user] freshens up [target]'s sutures with [src]!"), 
+						span_green("You freshen up [user == target ? "your" : "[target]'s"] sutures with [src]!"))
 
 /obj/item/stack/medical/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")
@@ -212,16 +330,18 @@
 	return
 
 /obj/item/stack/medical/bruise_pack
-	name = "bruise pack"
-	singular_name = "bruise pack"
-	desc = "A therapeutic gel pack and bandages designed to treat blunt-force trauma."
+	name = "medical pack"
+	singular_name = "medical pack"
+	desc = "A self-contained medical kit, containing therapeutic gel packs and bandages designed to treat blunt-force trauma and burns. Seems the instructions are missing."
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	heal_brute = 40
+	needed_trait = TRAIT_SURGERY_LOW
+	heal_brute = 30
+	heal_burn = 30
 	self_delay = 40
 	other_delay = 20
-	grind_results = list(/datum/reagent/medicine/styptic_powder = 10)
+	grind_results = list(/datum/reagent/medicine/styptic_powder = 10, /datum/reagent/medicine/silver_sulfadiazine = 10)
 	merge_type = /obj/item/stack/medical/bruise_pack
 
 /obj/item/stack/medical/bruise_pack/one
@@ -231,20 +351,38 @@
 	user.visible_message(span_suicide("[user] is bludgeoning [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS)
 
+/* * * * * *
+ * BANDAGES
+ * * * * * */
+
+/* * * * * * * * * * * * * * * * * * *
+ * + Quick to apply
+ * + Low skill needed
+ * + Prevents further blood loss 
+ * + Heals a little brute and burn
+ * - Doesnt stop bleeding on its own
+ * - Falls apart easily
+ * * * * * * * * * * * * * * * * * * */
+
+/// Mid tier bandage
 /obj/item/stack/medical/gauze
-	name = "medical gauze"
+	name = "medical bandages"
 	desc = "A roll of elastic cloth. Use it to staunch and heal bleeding and burns, and treat infection."
-	gender = PLURAL
-	singular_name = "medical gauze"
 	icon_state = "gauze"
+	singular_name = "medical bandage"
+	gender = PLURAL
+	covering_hitpoints = 3
 	heal_brute = 5
-	self_delay = 20
+	heal_burn = 5
+	self_delay = 30
 	other_delay = 10
 	amount = 10
 	max_amount = 10
-	absorption_rate = 0.45
-	absorption_capacity = 10
-	stop_bleeding = 3
+	is_bandage = TRUE
+	repeating = FALSE // typically need one bandage
+	//absorption_rate = 0.45
+	//absorption_capacity = 10
+	//is_bandage = 3
 	splint_factor = 0.35
 	custom_price = PRICE_REALLY_CHEAP
 	grind_results = list(/datum/reagent/cellulose = 2)
@@ -258,7 +396,7 @@
 		new /obj/item/stack/sheet/cloth(user.drop_location())
 		user.visible_message("[user] cuts [src] into pieces of cloth with [I].", \
 					span_notice("You cut [src] into pieces of cloth with [I]."), \
-					span_italic("You hear cutting."))
+					"You hear cutting.")
 		use(2)
 	else if(I.is_drainable() && I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine))
 		if(!I.reagents.has_reagent(/datum/reagent/abraxo_cleaner/sterilizine, 10))
@@ -275,16 +413,20 @@
 	user.visible_message(span_suicide("[user] begins tightening \the [src] around [user.p_their()] neck! It looks like [user.p_they()] forgot how to use medical supplies!"))
 	return OXYLOSS
 
+/// Low tier bandage
 /obj/item/stack/medical/gauze/improvised
-	name = "improvised gauze"
-	singular_name = "improvised gauze"
+	name = "improvised bandages"
+	singular_name = "improvised bandage"
+	desc = "A roll of cloth. Useful for staunching bleeding, healing bruises and burns, as well as reversing infection. Sort of."
+	covering_hitpoints = 1 // fragile!
 	heal_brute = 3
-	desc = "A roll of cloth. Useful for staunching bleeding, healing burns, and reversing infection, but not THAT useful."
-	self_delay = 20
-	other_delay = 5
-	absorption_rate = 0.15
-	absorption_capacity = 4
-	stop_bleeding = 2
+	heal_burn = 3
+	self_delay = 30
+	other_delay = 10
+	//absorption_rate = 0.15
+	//absorption_capacity = 4
+	is_bandage = TRUE
+	covering_lifespan = BANDAGE_POOR_MAX_DURATION
 	merge_type = /obj/item/stack/medical/gauze/improvised
 
 /obj/item/stack/medical/gauze/improvised/microwave_act(obj/machinery/microwave/MW)
@@ -292,16 +434,22 @@
 	new /obj/item/stack/medical/gauze(drop_location(), amount)
 	qdel(src)
 
+/// High tier bandage
+/// needs some training to use properly
 /obj/item/stack/medical/gauze/adv
-	name = "sterilized medical gauze"
-	singular_name = "sterilized medical gauze"
-	desc = "A roll of elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns. "
-	heal_brute = 5
-	self_delay = 20
+	name = "sterilized medical bandages"
+	singular_name = "sterilized medical bandage"
+	desc = "A roll of durable elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns. Somewhat awkward to use without training."
+	covering_hitpoints = 5
+	heal_brute = 10
+	heal_brute = 10
+	self_delay = 10
 	other_delay = 10
-	stop_bleeding = 4
-	absorption_rate = 0.4
-	absorption_capacity = 15
+	is_bandage = TRUE
+	needed_trait = TRAIT_SURGERY_LOW
+	//absorption_rate = 0.4
+	//absorption_capacity = 15
+	covering_lifespan = BANDAGE_GOOD_MAX_DURATION
 	merge_type = /obj/item/stack/medical/gauze/adv
 
 /obj/item/stack/medical/gauze/adv/one
@@ -313,18 +461,36 @@
 	cost = 250
 	merge_type = /obj/item/stack/medical/gauze/cyborg
 
+/* * * * * *
+ * SUTURES
+ * * * * * */
+
+/* * * * * * * * * * * * * * * * * * *
+ * + Actually reduces bleeding on use
+ * ! Best used with bandages on them
+ * - Slow to apply
+ * - High skill needed
+ * - Doesnt stop blood loss immediately
+ * - Hurts a little brute to use
+ * * * * * * * * * * * * * * * * * * */
+
+/// Mid tier suture
 /obj/item/stack/medical/suture
-	name = "suture"
-	desc = "Basic sterile sutures used to seal up cuts and lacerations and stop bleeding."
+	name = "sutures"
+	desc = "Basic sterile sutures used to seal up cuts and lacerations and stop bleeding. Painful, but ought to do the trick. Requires mid-level medical training to use effectively."
 	gender = PLURAL
 	singular_name = "suture"
 	icon_state = "suture"
-	self_delay = 50
-	other_delay = 10
+	needed_trait = TRAIT_SURGERY_MID
+	covering_hitpoints = 3
+	self_delay = 80
+	other_delay = 60
 	amount = 15
 	max_amount = 15
-	heal_brute = 10
-	stop_bleeding = 4
+	hurt_brute = -3
+	suture_power = SUTURE_GOOD_WOUND_CLOSURE
+	repeating = FALSE // One's enough
+	is_suture = TRUE
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
 
@@ -334,14 +500,21 @@
 /obj/item/stack/medical/suture/five
 	amount = 5
 
+/// Low tier suture - usable by anyone, but they suuuuuuuuck
+/// better have some bandages
 /obj/item/stack/medical/suture/emergency
-	name = "improvised suture"
+	name = "improvised sutures"
 	icon_state = "suture_imp"
-	desc = "A set of improvised sutures consisting of clothing thread and a sewing needle, not very good at repairing damage, but still decent at stopping bleeding."
-	heal_brute = 5
+	desc = "A set of improvised sutures consisting of clothing thread and a sewing needle. Liable to tear up your flesh, but will eventually close up minor bleeds. Medical training won't help you with this."
+	needed_trait = null
+	covering_hitpoints = 1
+	hurt_brute = -8
+	self_delay = 100
+	other_delay = 80
 	amount = 5
 	max_amount = 15
-	stop_bleeding = 3
+	suture_power = SUTURE_BASE_WOUND_CLOSURE
+	is_suture = TRUE
 	merge_type = /obj/item/stack/medical/suture/emergency
 
 /obj/item/stack/medical/suture/emergency/five
@@ -353,12 +526,20 @@
 /obj/item/stack/medical/suture/emergency/fifteen
 	amount = 15
 
+/// High tier sutures
+/// Actually heals you too, but needs a real doc
 /obj/item/stack/medical/suture/medicated
-	name = "medicated suture"
+	name = "advanced medicated sutures"
 	icon_state = "suture_purp"
-	desc = "A suture infused with drugs that speed up wound healing of the treated laceration."
-	heal_brute = 15
-	stop_bleeding = 8
+	desc = "An advanced suture and ultra-sharp needle, both infused with specialized coagulants and painkillers that make for a quick and painless wound treatment. It's very delicate and requires extensive medical training to use effectively."
+	needed_trait = TRAIT_SURGERY_HIGH
+	covering_hitpoints = 5
+	self_delay = 80
+	other_delay = 60
+	heal_brute = 10
+	heal_burn = 10
+	suture_power = SUTURE_GOOD_WOUND_CLOSURE
+	is_suture = TRUE
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)
 	merge_type = /obj/item/stack/medical/suture/medicated
 

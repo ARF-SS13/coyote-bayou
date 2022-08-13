@@ -846,7 +846,7 @@
 		if(health <= HEALTH_THRESHOLD_DEAD && !HAS_TRAIT(src, TRAIT_NODEATH))
 			death()
 			return
-		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > 50 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
+		if(IsUnconscious() || IsSleeping() || IsAdminSleeping() || getOxyLoss() > BLOOD_LOSS_OXYLOSS_UNCONSCIOUS || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
 			set_stat(UNCONSCIOUS)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			if(!eye_blind)
@@ -1197,7 +1197,7 @@
 /mob/living/carbon/proc/is_bleeding()
 	for(var/i in bodyparts)
 		var/obj/item/bodypart/BP = i
-		if(BP.get_bleed_rate())
+		if(BP.get_bleed_rate(FALSE)) // get the base bleed rate before modifiers
 			return TRUE
 
 // get our total bleedrate

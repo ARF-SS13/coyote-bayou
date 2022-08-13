@@ -3,9 +3,9 @@
 	desc = "Contains blood used for transfusion. Must be attached to an IV drip."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
-	volume = 200
+	volume = 1000 // people're gonna need a lot of blood
 	w_class = WEIGHT_CLASS_SMALL
-	reagent_flags = DRAINABLE
+	reagent_flags = DRAWABLE | TRANSPARENT
 	var/blood_type = null
 	var/labelled = 0
 	var/color_to_apply = "#FFFFFF"
@@ -14,7 +14,7 @@
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
 	if(blood_type != null)
-		reagents.add_reagent(/datum/reagent/blood, 200, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color(blood_type), "blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
+		reagents.add_reagent(/datum/reagent/blood, 1000, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color(blood_type), "blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
 		update_icon()
 
 /obj/item/reagent_containers/blood/on_reagent_change(changetype)
@@ -105,37 +105,16 @@
 		return ..()
 
 /obj/item/reagent_containers/blood/attack(mob/living/carbon/C, mob/user, def_zone)
-	if(user.a_intent == INTENT_HELP && reagents.total_volume > 0 && iscarbon(C) && user.a_intent == INTENT_HELP)
-		if(C.is_mouth_covered())
-			to_chat(user, span_notice("You cant drink from the [src] while your mouth is covered."))
-			return
-		if(user != C)
-			user.visible_message(span_danger("[user] forces [C] to drink from the [src]."), \
-			span_notice("You force [C] to drink from the [src]"))
-			if(!do_mob(user, C, 50))
-				return
-		else
-			if(!do_mob(user, C, 10))
-				return
-
-			to_chat(user, span_notice("You take a sip from the [src]."))
-			user.visible_message(span_notice("[user] puts the [src] up to their mouth."))
-		if(reagents.total_volume <= 0) // Safety: In case you spam clicked the blood bag on yourself, and it is now empty (below will divide by zero)
-			return
-		var/gulp_size = 3
-		var/fraction = min(gulp_size / reagents.total_volume, 1)
-		reagents.reaction(C, INGEST, fraction) 	//checkLiked(fraction, M) // Blood isn't food, sorry.
-		reagents.trans_to(C, gulp_size)
-		reagents.remove_reagent(src, 2) //Inneficency, so hey, IVs are usefull.
-		playsound(C.loc,'sound/items/drink.ogg', rand(10, 50), TRUE)
-		return
-	..()
+	if(ismob(C))
+		to_chat(user, span_notice("There's a specialized valve on [src] that requires a syringe or an IV to access. You can't just drink from it!"))
+	else
+		. = ..()
 
 /obj/item/reagent_containers/blood/bluespace
 	name = "bluespace blood pack"
 	desc = "Contains blood used for transfusion, this one has been made with bluespace technology to hold much more blood. Must be attached to an IV drip."
 	icon_state = "bsbloodpack"
-	volume = 600 //its a blood bath!
+	volume = 2000 //its a blood bath!
 
 /obj/item/reagent_containers/blood/bluespace/attack(mob/living/carbon/C, mob/user, def_zone)
 	if(user.a_intent == INTENT_HELP)
@@ -154,11 +133,10 @@
 	desc = "RadAway is an intravenous chemical solution that bonds with radiation and toxin particles and passes them through the body's system. It takes some time to work and is a potent diuretic."
 	labelled = 1
 	blood_type = null
+	volume = 200
 	list_reagents = list(/datum/reagent/medicine/radaway = 200)
-
 
 /obj/item/reagent_containers/blood/small
 	name = "small blood pack"
 	volume = 150 //same as plasbucket
 	w_class = WEIGHT_CLASS_SMALL
-	reagent_flags = INJECTABLE | DRAINABLE | AMOUNT_VISIBLE

@@ -400,8 +400,8 @@
 	taste_description = "dirt"
 
 /datum/reagent/consumable/xanderjuice/on_mob_life(mob/living/carbon/M)
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 1)
+	if(M.get_blood() < BLOOD_VOLUME_SYMPTOMS_WARN)
+		M.blood_volume += 1
 	..()
 
 /datum/reagent/consumable/agavejuice

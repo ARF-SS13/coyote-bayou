@@ -61,7 +61,7 @@
 	/// How much we're contributing to this limb's bleed_rate
 	var/blood_flow
 
-	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding] to begin suffering this wound, see check_wounding_mods() for more
+	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding()] to begin suffering this wound, see check_wounding_mods() for more
 	var/threshold_minimum
 	/// How much having this wound will add to all future check_wounding() rolls on this limb, to allow progression to worse injuries with repeated damage
 	var/threshold_penalty
@@ -184,7 +184,7 @@
  * This proc actually instantiates the new wound based off the specific type path passed, then returns the new instantiated wound datum.
  *
  * Arguments:
- * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/slash/severe
+ * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/bleed/slash/severe
  * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
  */
 /datum/wound/proc/replace_wound(new_type, smited = FALSE)
@@ -256,10 +256,13 @@
 
 /// Generic bleed wound treatment from whatever'll allow it
 /// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
-/datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0)
-	var/blood_sutured = I.stop_bleeding * (I.self_penalty_effectiveness * self_applied) * 0.5
+/// Currently unused
+/datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0, effectiveness)
+	if(!I.is_suture)
+		return
+	var/blood_sutured = I.is_suture * (I.self_penalty_effectiveness * self_applied * effectiveness)
 	blood_flow -= blood_sutured
-	limb.heal_damage(I.heal_brute, I.heal_burn)
+	//limb.heal_damage(I.heal_brute, I.heal_burn)
 
 	if(blood_flow <= 0)
 		to_chat(user, span_green("You successfully stop the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
@@ -311,6 +314,10 @@
 /// Used when we're being dragged while bleeding, the value we return is how much bloodloss this wound causes from being dragged. Since it's a proc, you can let bandages soak some of the blood
 /datum/wound/proc/drag_bleed_amount()
 	return
+
+/// Returns how much the wound should be bleeding given an amount of blood, so we can scale bleeding for minor wounds
+/datum/wound/proc/get_blood_flow()
+	return blood_flow
 
 /**
  * get_examine_description() is used in carbon/examine and human/examine to show the status of this wound. Useful if you need to show some status like the wound being splinted or bandaged.
