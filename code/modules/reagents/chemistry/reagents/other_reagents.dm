@@ -49,7 +49,7 @@
 		var/mob/living/carbon/C = L
 		var/blood_id = C.get_blood_id()
 		if((HAS_TRAIT(C, TRAIT_NOMARROW) || blood_id == /datum/reagent/blood || blood_id == /datum/reagent/blood/jellyblood) && (method == INJECT || (method == INGEST && C.dna && C.dna.species && (DRINKSBLOOD in C.dna.species.species_traits))))
-			C.blood_volume = min(C.get_blood(TRUE) + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM * C.blood_ratio)
+			C.blood_volume = min(C.blood_volume + round(reac_volume, 0.1), BLOOD_VOLUME_MAXIMUM * C.blood_ratio)
 			// we don't care about bloodtype here, we're just refilling the mob
 
 	if(reac_volume >= 10 && istype(L) && method != INJECT)
@@ -253,12 +253,10 @@
 	glass_desc = "The father of all refreshments."
 	shot_glass_icon_state = "shotglassclear"
 	ghoulfriendly = TRUE
-	effective_blood_multiplier = 1
-	effective_blood_max = 150
 
 /datum/reagent/water/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(M.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+	if(M.blood_volume)
 		M.blood_volume += 0.1 // water is good for you!
 
 /*
@@ -373,8 +371,6 @@
 	glass_name = "glass of holy water"
 	glass_desc = "A glass of holy water."
 	pH = 7.5 //God is alkaline
-	effective_blood_multiplier = 2
-	effective_blood_max = 300
 
 	// Holy water. Mostly the same as water, it also heals the plant a little with the power of the spirits. Also ALSO increases instability.
 /datum/reagent/water/holywater/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
@@ -401,8 +397,8 @@
 	return ..()
 
 /datum/reagent/water/holywater/on_mob_life(mob/living/carbon/M)
-	if(M.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_MINOR)
-		M.blood_volume += 0.1 // holy water is goodder for you!
+	if(M.blood_volume)
+		M.blood_volume += 0.1 // water is good for you!
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
@@ -488,7 +484,7 @@
 		M.adjustOxyLoss(-2, FALSE)
 		M.adjustBruteLoss(-2, FALSE)
 		M.adjustFireLoss(-2, FALSE)
-		if(ishuman(M) && M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+		if(ishuman(M) && M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 			M.blood_volume += 3
 	else  // Will deal about 90 damage when 50 units are thrown
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
@@ -1259,7 +1255,7 @@
 /datum/reagent/iron/on_mob_life(mob/living/carbon/C)
 	if((HAS_TRAIT(C, TRAIT_NOMARROW)))
 		return
-	if(C.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*C.blood_ratio))
+	if(C.blood_volume < (BLOOD_VOLUME_NORMAL*C.blood_ratio))
 		C.blood_volume += 0.25
 	..()
 
@@ -1684,7 +1680,7 @@
 	M.drowsyness += 2
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.blood_volume = max(H.get_blood(TRUE) - 2.5, 0)
+		H.blood_volume = max(H.blood_volume - 2.5, 0)
 	if(prob(20))
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
@@ -2657,8 +2653,6 @@
 	reagent_state = LIQUID
 	color = "#D2FFFA"
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM // 5u (WOUND_DETERMINATION_CRITICAL) will last for ~17 ticks
-	effective_blood_multiplier = 10 // quick burst of stabilizing, adrenaline and such
-	effective_blood_max = 200
 	/// Whether we've had at least WOUND_DETERMINATION_SEVERE (2.5u) of determination at any given time. No damage slowdown immunity or indication we're having a second wind if it's just a single moderate wound
 	var/significant = FALSE
 	self_consuming = TRUE

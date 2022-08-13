@@ -61,7 +61,7 @@
 		if(display_error)
 			to_chat(owner, span_warning("You may only feed from living beings."))
 		return FALSE
-	if(target.get_blood(TRUE) <= 0)
+	if(target.blood_volume <= 0)
 		if(display_error)
 			to_chat(owner, span_warning("Your victim has no blood to take."))
 		return FALSE
@@ -265,20 +265,20 @@
 				to_chat(user, span_notice("Your victim is dead. [target.p_their(TRUE)] blood barely nourishes you."))
 				warning_target_dead = TRUE
 		// Full?
-		if(!warning_full && user.get_blood(TRUE) >= bloodsuckerdatum.max_blood_volume)
+		if(!warning_full && user.blood_volume >= bloodsuckerdatum.max_blood_volume)
 			to_chat(user, span_notice("You are full. Further blood will be wasted."))
 			warning_full = TRUE
 		// Blood Remaining? (Carbons/Humans only)
 		if(iscarbon(target) && !AmBloodsucker(target, TRUE))
-			if(target.get_blood(TRUE) <= BLOOD_VOLUME_BAD && warning_target_bloodvol > BLOOD_VOLUME_BAD)
+			if(target.blood_volume <= BLOOD_VOLUME_BAD && warning_target_bloodvol > BLOOD_VOLUME_BAD)
 				to_chat(user, span_warning("Your victim's blood volume is fatally low!"))
-			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_OKAY)
+			else if(target.blood_volume <= BLOOD_VOLUME_OKAY && warning_target_bloodvol > BLOOD_VOLUME_OKAY)
 				to_chat(user, span_warning("Your victim's blood volume is dangerously low."))
-			else if(target.get_blood(TRUE) <= BLOOD_VOLUME_SAFE && warning_target_bloodvol > BLOOD_VOLUME_SAFE)
+			else if(target.blood_volume <= BLOOD_VOLUME_SAFE && warning_target_bloodvol > BLOOD_VOLUME_SAFE)
 				to_chat(user, span_notice("Your victim's blood is at an unsafe level."))
-			warning_target_bloodvol = target.get_blood(TRUE) // If we had a warning to give, it's been given by now.
+			warning_target_bloodvol = target.blood_volume // If we had a warning to give, it's been given by now.
 		// Done?
-		if(target.get_blood(TRUE) <= 0)
+		if(target.blood_volume <= 0)
 			to_chat(user, span_notice("You have bled your victim dry."))
 			break
 
@@ -288,11 +288,11 @@
 			target.playsound_local(null, 'sound/effects/singlebeat.ogg', 40, TRUE)
 	// DONE!
 	//DeactivatePower(user,target)
-	//if(amSilent)
-	//	to_chat(user, span_notice("You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.") : ""))
-	//else
-	//	user.visible_message(span_warning("[user] unclenches their teeth from [target]'s neck."),
-	//						span_warning("You retract your fangs and release [target] from your bite."))
+	if(amSilent)
+		to_chat(user, "<span class='notice'>You slowly release [target]'s wrist." + (target.stat == 0 ? " [target.p_their(TRUE)] face lacks expression, like you've already been forgotten.</span>" : ""))
+	else
+		user.visible_message(span_warning("[user] unclenches their teeth from [target]'s neck."), \
+							span_warning("You retract your fangs and release [target] from your bite."))
 
 	// /proc/log_combat(atom/user, atom/target, what_done, atom/object=null, addition=null)
 	log_combat(owner, target, "fed on blood", addition="(and took [amount_taken] blood)")

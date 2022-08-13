@@ -98,7 +98,7 @@
 /datum/nanite_program/blood_restoring/check_conditions()
 	if(iscarbon(host_mob))
 		var/mob/living/carbon/C = host_mob
-		if(C.get_blood(TRUE) >= (BLOOD_VOLUME_SAFE*C.blood_ratio) || (HAS_TRAIT(C, TRAIT_NOMARROW)))
+		if(C.blood_volume >= (BLOOD_VOLUME_SAFE*C.blood_ratio) || (HAS_TRAIT(C, TRAIT_NOMARROW)))
 			return FALSE
 	else
 		return FALSE

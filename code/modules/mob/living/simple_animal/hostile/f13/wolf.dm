@@ -27,8 +27,6 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	move_to_delay = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	sharpness = SHARP_EDGED // nom
-
 
 	emote_taunt_sound = list('sound/f13npc/dog/dog_charge1.ogg', 'sound/f13npc/dog/dog_charge2.ogg', 'sound/f13npc/dog/dog_charge3.ogg', 'sound/f13npc/dog/dog_charge4.ogg', 'sound/f13npc/dog/dog_charge5.ogg', 'sound/f13npc/dog/dog_charge6.ogg', 'sound/f13npc/dog/dog_charge7.ogg',)
 	emote_taunt = list("growls", "barks", "snarls")

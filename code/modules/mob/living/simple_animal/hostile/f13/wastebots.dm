@@ -33,7 +33,6 @@
 	deathmessage = "blows apart!"
 	taunt_chance = 30
 	blood_volume = 0
-	sharpness = SHARP_EDGED
 
 	emote_taunt_sound = list('sound/f13npc/handy/taunt1.ogg', 'sound/f13npc/handy/taunt2.ogg')
 	emote_taunt = list("raises a saw")
@@ -94,7 +93,6 @@
 	minimum_distance = 2
 	check_friendly_fire = TRUE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
-	sharpness = SHARP_NONE
 
 	emote_taunt_sound = list('sound/f13npc/gutsy/taunt1.ogg', 'sound/f13npc/gutsy/taunt2.ogg', 'sound/f13npc/gutsy/taunt3.ogg', 'sound/f13npc/gutsy/taunt4.ogg')
 	emote_taunt = list("raises a flamer")
@@ -187,7 +185,6 @@
 	idlesound = null
 	death_sound = null
 	attack_sound = null
-	sharpness = SHARP_NONE
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
 	. = ..()
@@ -224,7 +221,6 @@
 	faction = list("wastebot")
 	check_friendly_fire = TRUE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five)
-	sharpness = SHARP_NONE
 
 	emote_taunt_sound = list('sound/f13npc/protectron/taunt1.ogg', 'sound/f13npc/protectron/taunt2.ogg', 'sound/f13npc/protectron/taunt3.ogg')
 	emote_taunt = list("raises a laser")

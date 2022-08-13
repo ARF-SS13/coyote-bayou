@@ -61,7 +61,7 @@
 	metabolization_rate = 3 * REAGENTS_METABOLISM	// 50 seconds, same as poultice
 	overdose_threshold = 40	// you can risk a second dose
 	ghoulfriendly = TRUE
-	var/clot_rate = 0.05
+	var/clot_rate = 0.25
 	var/clot_coeff_per_wound = 0.7
 
 /datum/reagent/medicine/super_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
@@ -186,7 +186,7 @@
 	description = "Potent, stinging herbs that swiftly aid in the recovery of grevious wounds."
 	color = "#C8A5DC"
 	overdose_threshold = 12
-	var/clot_rate = 0.05
+	var/clot_rate = 0.25
 	var/clot_coeff_per_wound = 0.7
 
 /datum/reagent/medicine/healing_powder/poultice/on_mob_metabolize(mob/living/L) // a painful remedy!

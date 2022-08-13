@@ -80,7 +80,7 @@
 	M.SetSleeping(0, 0)
 	M.jitteriness = 0
 	M.cure_all_traumas(TRAUMA_RESILIENCE_MAGIC)
-	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume = (BLOOD_VOLUME_NORMAL*M.blood_ratio)
 
 	for(var/organ in M.internal_organs)
@@ -405,30 +405,28 @@
 	description = "Has a 33% chance per metabolism cycle to heal brute and burn damage. Can be used as a temporary blood substitute, as well as slowly speeding blood regeneration."
 	reagent_state = LIQUID
 	color = "#DCDCDC"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
-	overdose_threshold = 150 // enough to mitigate severe bleeding effects
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 60
 	taste_description = "sweetness and salt"
-	effective_blood_multiplier = 3
-	effective_blood_max = 250
-	//var/last_added = 0
-	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
-	//var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
+	var/last_added = 0
+	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10	//So that normal blood regeneration can continue with salglu active
+	var/extra_regen = 0.25 // in addition to acting as temporary blood, also add this much to their actual blood per tick
 	pH = 5.5
 
 /datum/reagent/medicine/salglu_solution/on_mob_life(mob/living/carbon/M)
 	if((HAS_TRAIT(M, TRAIT_NOMARROW)))
 		return
-	/* if(last_added)
+	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
 	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level + extra_regen*/
+		M.blood_volume = new_blood_level + extra_regen
 	if(prob(33))
-		M.adjustBruteLoss(-0.25*REM, 0)
-		M.adjustFireLoss(-0.25*REM, 0)
+		M.adjustBruteLoss(-0.5*REM, 0)
+		M.adjustFireLoss(-0.5*REM, 0)
 		. = TRUE
 	..()
 
@@ -1293,7 +1291,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -15*REM)
 	M.adjustCloneLoss(-3*REM, FALSE)
 	M.adjustStaminaLoss(-25*REM,FALSE)
-	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 40 // blood fall out man bad
 	..()
 	. = 1
@@ -1314,7 +1312,7 @@
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 	M.adjustCloneLoss(-1.25*REM, FALSE)
 	M.adjustStaminaLoss(-4*REM,FALSE)
-	if(M.get_blood(TRUE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 3
 	..()
 	. = 1
@@ -1681,21 +1679,20 @@
 	description = "A proprietary coagulant used to help bleeding wounds clot faster."
 	reagent_state = LIQUID
 	color = "#bb2424"
-	metabolization_rate = 0.10 * REAGENTS_METABOLISM
+	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 20
-	bleed_mult = 0.05
 	/// How much base clotting we do per bleeding wound, multiplied by the below number for each bleeding wound
-	//var/clot_rate = 0.25
+	var/clot_rate = 0.25
 	/// If we have multiple bleeding wounds, we count the number of bleeding wounds, then multiply the clot rate by this^(n) before applying it to each cut, so more cuts = less clotting per cut (though still more total clotting)
-	//var/clot_coeff_per_wound = 0.9
+	var/clot_coeff_per_wound = 0.9
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	//clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
+	clot_bleed_wounds(user = M, bleed_reduction_rate = clot_rate, coefficient_per_wound = clot_coeff_per_wound, single_wound_full_effect = FALSE)
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/M)
 	. = ..()
-	if(!M.get_blood(TRUE))
+	if(!M.blood_volume)
 		return
 
 	if(prob(15))
@@ -1716,7 +1713,7 @@
 /datum/reagent/medicine/coagulant/weak
 	name = "Synthi-Sanguirite"
 	description = "A synthetic coagulant used to help bleeding wounds clot faster. Not quite as effective as name brand Sanguirite, especially on patients with lots of cuts."
-	bleed_mult = 0.15
+	clot_coeff_per_wound = 0.8
 /* 
  * Reduces blood flow on all wounds
  * * User - Mob who's wounds we're treating
@@ -1728,7 +1725,7 @@
 	if(!user || !iscarbon(user))
 		return
 
-	if(!user.get_blood(TRUE))
+	if(!user.blood_volume)
 		return
 
 	if(!user.all_wounds)

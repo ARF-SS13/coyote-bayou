@@ -27,7 +27,7 @@
 		return 0
 	charge_tick = 0
 	var/mob/living/M = loc
-	if(istype(M) && M.get_blood() >= 5)
+	if(istype(M) && M.blood_volume >= 5)
 		charges++
 		M.blood_volume -= 5
 	if(charges == 1)

@@ -1482,11 +1482,11 @@ GLOBAL_LIST_EMPTY(custom_outfits) //Admin created outfits
 			var/mob/living/carbon/C = target
 			for(var/i in C.bodyparts)
 				var/obj/item/bodypart/slice_part = i
-				var/type_wound = pick(list(/datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate))
+				var/type_wound = pick(list(/datum/wound/slash/severe, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate))
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/severe, /datum/wound/slash/moderate))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
-				type_wound = pick(list(/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe))
+				type_wound = pick(list(/datum/wound/slash/critical, /datum/wound/slash/severe))
 				slice_part.force_wound_upwards(type_wound, smited=TRUE)
 		if(ADMIN_PUNISHMENT_SCARIFY)
 			if(!iscarbon(target))
