@@ -28,11 +28,14 @@
 	return zone
 
 
-/proc/ran_zone(zone, probability = 80)
+/proc/ran_zone(zone, probability = 80, list/list_type = ZONE_WEIGHT_LIST_DEFAULT)
 	if(prob(probability))
 		zone = check_zone(zone)
 	else
-		zone = pickweight(list(BODY_ZONE_HEAD = 6, BODY_ZONE_CHEST = 6, BODY_ZONE_L_ARM = 22, BODY_ZONE_R_ARM = 22, BODY_ZONE_L_LEG = 22, BODY_ZONE_R_LEG = 22))
+		if(islist(list_type))
+			zone = pickweight(list_type)
+		else
+			zone = pickweight(ZONE_WEIGHT_LIST_DEFAULT)
 	return zone
 
 /proc/above_neck(zone)

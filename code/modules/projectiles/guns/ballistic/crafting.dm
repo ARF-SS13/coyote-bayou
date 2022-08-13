@@ -54,7 +54,7 @@
 	fire_delay = 2
 	burst_shot_delay = 2
 	penetration_multiplier = 1.1
-	damage_multiplier = 5
+	damage_multiplier = 1
 
 /*
 /obj/item/gun/ballistic/automatic/smg/greasegun/high/attackby(obj/item/W, mob/user, params)
@@ -105,7 +105,7 @@
 /obj/item/gun/ballistic/automatic/smg/smg10mm/mid
 	name = "enhanced 10mm submachine gun"
 	penetration_multiplier = 1
-	damage_multiplier = 0
+	damage_multiplier = 1
 
 /*
 /obj/item/gun/ballistic/automatic/smg/smg10mm/mid/attackby(obj/item/W, mob/user, params)
@@ -135,7 +135,7 @@
 	burst_size = 3
 	fire_delay = 2
 	burst_shot_delay = 2
-	damage_multiplier = 6
+	damage_multiplier = 1
 	penetration_multiplier = 1.12
 
 /*
@@ -188,7 +188,7 @@
 	name = "enhanced ppsh-41"
 	burst_shot_delay = 1.5
 	fire_delay = 5
-	damage_multiplier = -9
+	damage_multiplier = 1
 	penetration_multiplier = 1
 
 /*
@@ -216,8 +216,8 @@
 */
 /obj/item/gun/ballistic/automatic/smg/ppsh/high
 	name = "advanced ppsh41"
-	damage_multiplier = 0
-	penetration_multiplier = 1.1
+	damage_multiplier = 1
+	penetration_multiplier = 1
 	burst_shot_delay = 1.5
 
 /*
@@ -272,7 +272,7 @@
 	name = "enhanced uzi"
 	fire_delay = 4
 	penetration_multiplier = 1
-	damage_multiplier = 0
+	damage_multiplier = 1
 
 /*
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/mid/attackby(obj/item/W, mob/user, params)
@@ -300,7 +300,7 @@
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/high
 	name = "advanced uzi"
 	fire_delay = 3
-	damage_multiplier = 5
+	damage_multiplier = 1
 	penetration_multiplier = 1.1
 
 /*
@@ -357,7 +357,7 @@
 	name = "enhanced r91 assault rifle"
 	fire_delay = 3
 	penetration_multiplier = 1
-	damage_multiplier = 0
+	damage_multiplier = 1
 	burst_shot_delay = 2
 
 /*
@@ -388,7 +388,7 @@
 /obj/item/gun/ballistic/automatic/assault_rifle/high
 	name = "advanced r91 assault rifle"
 	fire_delay = 3
-	damage_multiplier = 6
+	damage_multiplier = 1
 	penetration_multiplier = 1.12
 	burst_shot_delay = 2
 	burst_size = 3
@@ -421,7 +421,7 @@
 /obj/item/gun/ballistic/automatic/service/mid
 	name = "service rifle (improved)"
 	fire_delay = 4
-	damage_multiplier = 0
+	damage_multiplier = 1
 	penetration_multiplier = 1
 /*
 /obj/item/gun/ballistic/automatic/service/mid/attackby(obj/item/W, mob/user, params)
@@ -447,7 +447,7 @@
 /obj/item/gun/ballistic/automatic/service/high
 	name = "service rifle (masterwork)"
 	fire_delay = 3
-	damage_multiplier = 10
+	damage_multiplier = 1
 	penetration_multiplier = 1.2
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 /*
@@ -529,7 +529,7 @@
 	name = "advanced colt rangemaster"
 	fire_delay = 4
 	penetration_multiplier = 1.14
-	damage_multiplier = 7
+	damage_multiplier = 1
 /*
 /obj/item/gun/ballistic/automatic/rangemaster/scoped/high/attackby(obj/item/W, mob/user, params)
 	if(istype(W,/obj/item/screwdriver))

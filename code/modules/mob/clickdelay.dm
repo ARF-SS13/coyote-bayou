@@ -77,7 +77,7 @@
 	var/attack_speed = unarmed_attack_speed * GetActionCooldownMod() + GetActionCooldownAdjust()
 	var/obj/item/I = get_active_held_item()
 	if(I)
-		attack_speed = I.GetEstimatedAttackSpeed()
+		attack_speed = I.GetEstimatedAttackSpeed(src)
 		if(!I.clickdelay_mod_bypass)
 			attack_speed = attack_speed * GetActionCooldownMod() + GetActionCooldownAdjust()
 	return max(next_action, next_action_immediate, max(last_action, last_action_immediate) + attack_speed)

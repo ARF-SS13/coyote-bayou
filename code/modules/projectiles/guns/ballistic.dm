@@ -277,6 +277,7 @@
 		cock_delay = GUN_COCK_SHOTGUN_FAST
 		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
+		gun_accuracy_zone_type = ZONE_WEIGHT_SHOTGUN
 		init_firemodes = list(
 			list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
 		)
