@@ -262,7 +262,7 @@
 /obj/structure/bloodsucker/vassalrack/proc/torture_victim(mob/living/user, mob/living/target)
 	var/datum/antagonist/bloodsucker/B = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 	// Check Bloodmob/living/M, force = FALSE, check_loc = TRUE
-	if(user.get_blood(TRUE) < CONVERT_COST + 5)
+	if(user.blood_volume < CONVERT_COST + 5)
 		to_chat(user, span_notice("You don't have enough blood to initiate the Dark Communion with [target]."))
 		return
 	if(B.count_vassals(user.mind) > B.bloodsucker_level)
@@ -308,7 +308,7 @@
 		useLock = FALSE
 		return
 	// Check: Blood
-	if(user.get_blood(TRUE) < CONVERT_COST)
+	if(user.blood_volume < CONVERT_COST)
 		to_chat(user, span_notice("You don't have enough blood to initiate the Dark Communion with [target], you need [CONVERT_COST - user.blood_volume] units more!"))
 		useLock = FALSE
 		return

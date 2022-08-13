@@ -106,7 +106,7 @@
 		var/datum/antagonist/bloodsucker/bloodsuckerdatum = mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 		if (istype(bloodsuckerdatum) && bloodsuckerdatum.poweron_masquerade)
 			return BLOOD_VOLUME_NORMAL
-	return get_blood(TRUE)
+	return blood_volume
 
 /mob/living/proc/IsFrenzied()
 	return FALSE

@@ -134,7 +134,3 @@
 /datum/movespeed_modifier/healing_poultice_slowdown
 	flags = IGNORE_NOSLOW
 	multiplicative_slowdown = 0.8
-
-/datum/movespeed_modifier/bloodloss_slowdown
-	flags = IGNORE_NOSLOW
-	variable = TRUE

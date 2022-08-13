@@ -299,7 +299,7 @@
 		if(!choice || !options[choice] || (locate(options[choice]) in powers)) // ADDED: Check to see if you already have this power, due to window stacking.
 			to_chat(owner.current, span_notice("You prevent your blood from thickening just yet, but you may try again later."))
 			return
-		if(L.get_blood(TRUE) < level_bloodcost)
+		if(L.blood_volume < level_bloodcost)
 			to_chat(owner.current, span_warning("You dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!"))
 			return
 		// Buy New Powers
@@ -694,11 +694,11 @@
 	// Update Blood Counter
 	if (owner.current.hud_used.blood_display)
 		var/valuecolor = "#FF6666"
-		if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_SAFE)
+		if(owner.current.blood_volume > BLOOD_VOLUME_SAFE)
 			valuecolor =  "#FFDDDD"
-		else if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_BAD)
+		else if(owner.current.blood_volume > BLOOD_VOLUME_BAD)
 			valuecolor =  "#FFAAAA"
-		owner.current.hud_used.blood_display.update_counter(owner.current.get_blood(TRUE), valuecolor)
+		owner.current.hud_used.blood_display.update_counter(owner.current.blood_volume, valuecolor)
 
 	// Update Rank Counter
 	if(owner.current.hud_used.vamprank_display)

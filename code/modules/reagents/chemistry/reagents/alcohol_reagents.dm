@@ -559,14 +559,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "bloodymaryglass"
 	glass_name = "Bloody Mary"
 	glass_desc = "Tomato juice, mixed with Vodka and a lil' bit of lime. Tastes like liquid murder."
-	effective_blood_multiplier = 2.5
-	effective_blood_max = 250 // If you drink 100 units of liquor, you deserve something (other than liver failure)
 
 /datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C)
 	if(AmBloodsucker(C))
 		disgust_bloodsucker(FALSE, 1) //Bloodsuckers get SOME blood from it, for style reasons.
-	if(C.get_blood(TRUE) < (BLOOD_VOLUME_SYMPTOMS_DEBILITATING*C.blood_ratio))
-		C.blood_volume += 1 //Bloody Mary quickly restores blood loss.
+	if(C.blood_volume < (BLOOD_VOLUME_NORMAL*C.blood_ratio))
+		C.blood_volume = min((BLOOD_VOLUME_NORMAL*C.blood_ratio), C.blood_volume + 3) //Bloody Mary quickly restores blood loss.
 	..()
 
 /datum/reagent/consumable/ethanol/brave_bull

@@ -1,3 +1,4 @@
+
 /obj/item/bodypart
 	name = "limb"
 	desc = "Why is it detached..."
@@ -93,9 +94,7 @@
 	/// How much generic bleedstacks we have on this bodypart
 	var/generic_bleedstacks
 	/// If we have a gauze wrapping currently applied (not including splints)
-	var/obj/item/stack/medical/current_gauze
-	/// If we have a suture stitching our wounds closed
-	var/obj/item/stack/medical/current_suture
+	var/obj/item/stack/current_gauze
 
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
@@ -207,13 +206,6 @@
 	switch(animal_origin)
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take some additional burn //nothing can burn with so much snowflake code around
 			burn *= 1.2
-
-	// Sutures take damage if you get hurt at all. Slow down, man!
-	for(var/obj/item/bodypart/every_limb in owner.bodyparts)
-		every_limb.damage_suture(brute, burn)
-		if(every_limb != src && prob(50)) // every limb that isnt this one has a 50% chance of their bandage getting hurt
-			continue
-		every_limb.damage_gauze(brute, burn) // but if the limb with the bandage gets hit? it gets hurt
 
 	/*
 	// START WOUND HANDLING
@@ -920,21 +912,13 @@
 		var/datum/wound/iter_wound = i
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
-	if(!LAZYLEN(wounds) && !replaced)
-		if(current_gauze)
-			owner.visible_message(
-				span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."), 
-				span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
-			QDEL_NULL(current_gauze)
-		if(current_suture)
-			owner.visible_message(
-				span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."), 
-				span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
-			QDEL_NULL(current_suture)
+	if(!LAZYLEN(wounds) && current_gauze && !replaced)
+		owner.visible_message(span_notice("\The [current_gauze] on [owner]'s [name] fall away."), span_notice("The [current_gauze] on your [name] fall away."))
+		QDEL_NULL(current_gauze)
 	wound_damage_multiplier = dam_mul
 	update_disabled()
 
-/obj/item/bodypart/proc/get_bleed_rate(include_reductions = TRUE)
+/obj/item/bodypart/proc/get_bleed_rate()
 	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
 		return
 	var/bleed_rate = 0
@@ -949,244 +933,41 @@
 
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
-		bleed_rate += min(W.get_blood_flow(include_reductions), WOUND_MAX_BLOODFLOW)
-	//if(owner.mobility_flags & ~MOBILITY_STAND) // handled by the wound
-	//	bleed_rate *= 0.75
+		bleed_rate += W.blood_flow
+	if(owner.mobility_flags & ~MOBILITY_STAND)
+		bleed_rate *= 0.75
 	return bleed_rate
 
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart
  *
- * Gauze (bandages) wraps the limb in bandages
- * Bandages reduce bloodflow to a low fraction, to give them time to heal or get treatment
- * Bandages are also fragile, and damaging them'll make them rip
- * Bandages also don't directly help healing, unless the limb is also stitched up
+ * As of the Wounds 2 PR, all bleeding is now bodypart based rather than the old bleedstacks system, and 90% of standard bleeding comes from flesh wounds (the exception is embedded weapons).
+ * The same way bleeding is totaled up by bodyparts, gauze now applies to all wounds on the same part. Thus, having a slash wound, a pierce wound, and a broken bone wound would have the gauze
+ * applying blood staunching to the first two wounds, while also acting as a sling for the third one. Once enough blood has been absorbed or all wounds with the ACCEPTS_GAUZE flag have been cleared,
+ * the gauze falls off.
  *
  * Arguments:
  * * gauze- Just the gauze stack we're taking a sheet from to apply here
  */
-/obj/item/bodypart/proc/apply_gauze(obj/item/stack/medical/gauze/gauze, skill_mult = 1)
-	if(!istype(gauze) || !gauze)
-		return BANDAGE_NOT_APPLIED
-	var/apply_new_gauze = FALSE
-	if(!istype(current_gauze)) // No bandage, put one on
-		apply_new_gauze = TRUE
-	else if(gauze?.covering_lifespan > current_gauze?.covering_lifespan) // Bandage has more base duration, put it on
-		apply_new_gauze = TRUE
-	else if(initial(gauze?.covering_hitpoints) > initial(current_gauze?.covering_hitpoints)) // Bandage is more durable, put it on
-		apply_new_gauze = TRUE
-
-	if(apply_new_gauze) // Either no bandage was on, or we're getting a better one
-		QDEL_NULL(current_gauze)
-		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
-		current_gauze = new gauze.type(src, 1)
-		S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
-		return BANDAGE_NEW_APPLIED
-	
-	// from here, a new bandage isnt required, lets see if we can freshen it up
-	if(istype(current_gauze)) // just to be sure its still there
-		var/current_bandage_max_hp = initial(current_gauze.covering_hitpoints)
-		if(current_gauze.covering_hitpoints < current_bandage_max_hp) // repair that bandage
-			current_gauze.covering_hitpoints = min(current_gauze.covering_hitpoints + gauze.covering_hitpoints, current_bandage_max_hp)
-			if(current_gauze.covering_hitpoints >= current_bandage_max_hp)
-				return BANDAGE_WAS_REPAIRED_TO_FULL
-			else
-				return BANDAGE_WAS_REPAIRED
-		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // restore its length
-			S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
-			S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
-			return BANDAGE_TIMER_REFILLED
-
-
-/**
- * check_gauze_time() checks if the gauze has time left to be on the wound
- */
-/obj/item/bodypart/proc/check_gauze_time()
-	if(!current_gauze || !istype(current_gauze, /obj/item/stack/medical/gauze))
-		return BANDAGE_NOT_FOUND
-	if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // Bandage has some time left in it
-		return BANDAGE_STILL_INTACT
-	owner.visible_message(
-		span_warning("\The [current_gauze] on [owner]'s [name] become totally soaked, and fall off in a bloody heap."), 
-		span_warning("\The [current_gauze] on your [name] become totally soaked, and fall off in a bloody heap."), 
-		vision_distance=COMBAT_MESSAGE_RANGE)
+/obj/item/bodypart/proc/apply_gauze(obj/item/stack/gauze)
+	if(!istype(gauze) || !gauze.absorption_capacity)
+		return
 	QDEL_NULL(current_gauze)
-	return BANDAGE_TIMED_OUT
+	current_gauze = new gauze.type(src, 1)
+	//gauze.use(1) // handle it on the item, will be changed later
 
 /**
- * damage_gauze() simply damages the gauze on the limb, reducing its HP
+ * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
  *
- * The passed amount of damage deducts hitspoints from the bandage 
+ * The passed amount of seepage is deducted from the bandage's absorption capacity, and if we reach a negative absorption capacity, the bandages fall off and we're left with nothing.
  *
  * Arguments:
- * * brute - How much brute is being calculated for bandage damage
- * * burn - How much burn is being calculated for bandage damage - usually multiplied
+ * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
  */
-/obj/item/bodypart/proc/damage_gauze(brute = 0, burn = 0)
-	if(!istype(current_gauze))
-		return FALSE
-	if(brute < 1 && burn < 1)
-		return FALSE
-	
-	var/damage_raw = brute + (burn * BANDAGE_BURN_MULT)
-	var/damage_to_do = 0
-	switch(damage_raw)
-		if(BANDAGE_DAMAGE_THRESHOLD_LOW to BANDAGE_DAMAGE_THRESHOLD_MED)
-			damage_to_do = 1
-		if(BANDAGE_DAMAGE_THRESHOLD_MED to BANDAGE_DAMAGE_THRESHOLD_MAX)
-			damage_to_do = 3
-		if(BANDAGE_DAMAGE_THRESHOLD_MAX to INFINITY)
-			damage_to_do = INFINITY // fucker's coming off
-		else
-			return FALSE
-
-	current_gauze.covering_hitpoints -= damage_to_do
-	if(current_gauze.covering_hitpoints > 0)
-		owner.visible_message(
-			span_warning("\The [current_gauze] on [owner]'s [name] tears from the blow!"), 
-			span_warning("\The [current_gauze] on your [name] tear from the blow!"), 
-			vision_distance=COMBAT_MESSAGE_RANGE)
-	else
-		owner.visible_message(
-			span_warning("\The [current_gauze] on [owner]'s [name] rip to shreds from the impact, falling away in a heap!"), 
-			span_warning("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"), 
-			vision_distance=COMBAT_MESSAGE_RANGE)
+/obj/item/bodypart/proc/seep_gauze(seep_amt = 0)
+	if(!current_gauze)
+		return
+	current_gauze.absorption_capacity -= seep_amt
+	if(current_gauze.absorption_capacity < 0)
+		owner.visible_message(span_danger("\The [current_gauze] on [owner]'s [name] fall away in rags."), span_warning("\The [current_gauze] on your [name] fall away in rags."), vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
-		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
-	return TRUE
-
-/**
- * apply_suture() is used put a suture on a bodypart
- *
- * Sutures fully close up the wound and prevent bleeding from happening
- * They also passively heal the wound under it while applied
- * They are also delicate and are prone to just ripping the fuck open if damaged
- *
- * Arguments:
- * * suture - The suture item getting put on
- * * skill_mult - How much to multiply the effects by, used for unskilled application
- */
-
-/obj/item/bodypart/proc/apply_suture(obj/item/stack/medical/suture/suture, skill_mult = 1)
-	if(!istype(suture) || !suture)
-		return SUTURE_NOT_APPLIED
-	var/apply_new_suture = FALSE
-	if(!istype(current_suture, /obj/item/stack/medical/suture)) // No suture, put one on
-		apply_new_suture = TRUE
-	else if(suture?.covering_lifespan > current_suture?.covering_lifespan) // Bandage has more base duration, put it on
-		apply_new_suture = TRUE
-	else if(initial(suture?.covering_hitpoints) > initial(current_suture?.covering_hitpoints)) // Bandage is more durable, put it on
-		apply_new_suture = TRUE
-	else if(current_suture.suture_power < (suture.suture_power * skill_mult)) // suture is more better
-		apply_new_suture = TRUE
-
-	if(apply_new_suture) // Either no suture was on, or we're getting a better one
-		QDEL_NULL(current_suture)
-		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
-		current_suture = new suture.type(src, 1)
-		current_suture.suture_power = (suture.suture_power * skill_mult)
-		S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
-		return SUTURE_NEW_APPLIED
-	
-	// from here, a new suture isnt required, lets see if we can freshen it up
-	if(istype(current_suture)) // just to be sure its still there
-		var/current_bandage_max_hp = initial(current_suture.covering_hitpoints)
-		if(current_suture.covering_hitpoints < current_bandage_max_hp) // repair that suture
-			current_suture.covering_hitpoints = min(current_suture.covering_hitpoints + suture.covering_hitpoints, current_bandage_max_hp)
-			if(current_suture.covering_hitpoints >= current_bandage_max_hp)
-				return SUTURE_WAS_REPAIRED_TO_FULL
-			else
-				return SUTURE_WAS_REPAIRED
-		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)) // restore its length
-			S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
-			S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
-			return SUTURE_TIMER_REFILLED
-
-
-/**
- * check_suture_time() checks if the suture has time left to be on the wound
- */
-/obj/item/bodypart/proc/check_suture_time(seep_amt = 0)
-	if(!current_suture || !istype(current_suture, /obj/item/stack/medical/suture))
-		return SUTURE_NOT_FOUND
-	if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)) // Bandage has some time left in it
-		return SUTURE_STILL_INTACT
-	owner.visible_message(
-		span_warning("\The [current_suture] on [owner]'s [name] fray to the point of breaking!"), 
-		span_warning("\The [current_suture] on your [name] fray to the point of breaking!"), 
-		vision_distance=COMBAT_MESSAGE_RANGE)
-	QDEL_NULL(current_suture)
-	return SUTURE_TIMED_OUT
-
-/**
- * damage_suture() simply damages the suture on the limb, reducing its HP
- *
- * The passed amount of damage deducts hitspoints from the bandage 
- *
- * Arguments:
- * * brute - How much brute is being calculated for bandage damage
- * * burn - How much burn is being calculated for bandage damage - usually multiplied
- */
-/obj/item/bodypart/proc/damage_suture(brute = 0, burn = 0)
-	if(!istype(current_suture))
-		return FALSE
-	if((brute + burn) < 1)
-		return FALSE
-	
-	var/damage_raw = brute + (burn * SUTURE_BURN_MULT)
-	var/damage_to_do = 0
-	switch(damage_raw)
-		if(SUTURE_DAMAGE_THRESHOLD_LOW to SUTURE_DAMAGE_THRESHOLD_MED)
-			damage_to_do = 1
-		if(SUTURE_DAMAGE_THRESHOLD_MED to SUTURE_DAMAGE_THRESHOLD_MAX)
-			damage_to_do = 3
-		if(SUTURE_DAMAGE_THRESHOLD_MAX to INFINITY)
-			damage_to_do = INFINITY // fucker's coming off
-		else
-			return FALSE
-
-	current_suture.covering_hitpoints -= damage_to_do
-	if(current_suture.covering_hitpoints > 0)
-		owner.visible_message(
-			span_warning("\The [current_suture] on [owner]'s [name] tears from the blow!"), 
-			span_warning("\The [current_suture] on your [name] tear from the blow!"), 
-			vision_distance=COMBAT_MESSAGE_RANGE)
-	else
-		owner.visible_message(
-			span_warning("\The [current_suture] on [owner]'s [name] pops wide open, shredded to bloody fragments!"), 
-			span_warning("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"), 
-			vision_distance=COMBAT_MESSAGE_RANGE)
-		QDEL_NULL(current_suture)
-		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
-	return TRUE
-
-/**
- * get_covering_timeleft() returns how much time's left in the bandage/suture
- *
- * Can return the actual amount, a precise minute amount, or an imprecise minute amount
- *
- * Arguments:
- * * covering - either COVERING_SUTURE or COVERING_BANDAGE, picks which to check
- * * format_out - either COVERING_TIME_TRUE, COVERING_TIME_MINUTE, COVERING_TIME_MINUTE_FUZZY
- */
-/obj/item/bodypart/proc/get_covering_timeleft(covering, format_out = COVERING_TIME_MINUTE)
-	if(!istype(current_gauze) && !istype(current_suture))
-		return FALSE
-	if(!covering)
-		return FALSE
-
-	switch(covering)
-		if(COVERING_SUTURE)
-			. = S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)
-		else
-			. = S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)
-
-	switch(format_out)
-		if(COVERING_TIME_TRUE)
-			return
-		if(COVERING_TIME_MINUTE, COVERING_TIME_MINUTE_FUZZY)
-			. %= 600
-			if(covering == COVERING_TIME_MINUTE_FUZZY)
-				. = round(., 5)
