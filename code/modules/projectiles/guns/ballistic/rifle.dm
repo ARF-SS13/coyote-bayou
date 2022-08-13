@@ -266,7 +266,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(3)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_long"
 	scope_x_offset = 4
@@ -386,7 +386,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(2.5)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -427,7 +427,7 @@
 	cock_delay = GUN_COCK_RIFLE_FAST
 	init_recoil = RIFLE_RECOIL(2.8)
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "scope_mosin"
 	scope_x_offset = 3
@@ -511,7 +511,7 @@
 /obj/item/gun/ballistic/rifle/mag/antimateriel
 	name = "anti-materiel rifle"
 	desc = "The Hecate II is a heavy, high-powered bolt action sniper rifle chambered in .50 caliber ammunition. Lacks an iron sight."
-	icon = 'icons/fallout/objects/guns/longguns.dmi'	
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	icon_state = "amr"
 	item_state = "amr"
 	inhand_x_dimension = 64
