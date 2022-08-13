@@ -222,9 +222,12 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 /// Applies sprint modifiers. Here so it can be easily reset.
 /mob/living/carbon/proc/apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
-	sprint_buffer_max = initial(sprint_buffer_max) * reset ? 1 : sprint_max
-	sprint_buffer_regen_ds = initial(sprint_buffer_regen_ds) * reset ? 1 : sprint_regen
-	sprint_stamina_cost = initial(sprint_stamina_cost) * reset ? 1 : sprint_cost
+	if(reset)
+		update_config_movespeed()
+		return
+	sprint_buffer_max = CONFIG_GET(number/movedelay/sprint_buffer_max) * sprint_max
+	sprint_buffer_regen_ds = CONFIG_GET(number/movedelay/sprint_buffer_regen_per_ds) * sprint_regen
+	sprint_stamina_cost = CONFIG_GET(number/movedelay/sprint_stamina_cost) * sprint_cost
 
 /// Returns how much blood you have, effective or otherwise
 /// just_blood just makes it return your real blood amount
