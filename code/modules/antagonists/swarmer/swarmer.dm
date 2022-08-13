@@ -270,11 +270,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, span_warning("Destroying this object has the potential to cause a hull breach. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, span_warning("Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return FALSE
 	S.DisIntegrate(src)
 	return TRUE
@@ -351,11 +351,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, span_warning("Destroying this object has the potential to cause a hull breach. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, span_warning("Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
@@ -365,11 +365,11 @@
 		var/area/A = get_area(T)
 		if(isspaceturf(T) || (!isonshuttle && (istype(A, /area/shuttle) || istype(A, /area/space))) || (isonshuttle && !istype(A, /area/shuttle)))
 			to_chat(S, span_warning("Destroying this object has the potential to cause a hull breach. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 		else if(istype(A, /area/engine/supermatter))
 			to_chat(S, span_warning("Disrupting the containment of a supermatter crystal would not be to our benefit. Aborting."))
-			S.target = null
+			S.LoseTarget()
 			return TRUE
 	return ..()
 
