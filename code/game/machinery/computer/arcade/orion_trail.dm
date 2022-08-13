@@ -401,7 +401,7 @@
 							playsound(src, 'sound/items/weeoo1.ogg', 10, FALSE)
 							for(var/i, i<=3, i++)
 								var/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion/O = new/mob/living/simple_animal/hostile/syndicate/ranged/smg/orion(get_turf(src))
-								O.target = usr
+								O.GiveTarget(usr)
 
 
 				fuel += FU
