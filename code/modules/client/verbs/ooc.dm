@@ -55,7 +55,19 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	mob.log_talk(raw_msg, LOG_OOC, tag="(OOC)")
 
-	var/keyname = key
+//	var/keyname = key // commented it out for people to be aware how to revert it. Just delete the edit below <3
+
+	// main edit here - Changes it to IC name instead of key in OOC messages.
+	var/keyname
+	if(iscarbon(mob)) // If mob is null I'll be very surprised, worse case, add a sanity check if this becomes an issue in the future.
+		keyname = mob.real_name
+	else
+		keyname = prefs.real_name
+
+	if(!keyname)
+		return
+	// edit end here
+
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
