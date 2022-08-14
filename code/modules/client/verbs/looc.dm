@@ -72,8 +72,15 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 	for(var/client/C in GLOB.admins)
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			var/prefix = "(R)LOOC"
+			var/proximity = FALSE // Not the best solution but it's a good 'nuff hack, cant be assed lmao.
+
 			if (C.mob in heard)
 				prefix = "LOOC"
+				proximity = TRUE // yeah this is kinda scuffed.
+			
+			if(!proximity && C.prefs.chat_toggles & CHAT_REMOTE_LOOC)
+				continue
+
 			if(GLOB.LOOC_COLOR)
 				to_chat(C, "<font color='[GLOB.LOOC_COLOR]'><b>[ADMIN_FLW(usr)] <span class='prefix'>[prefix]:</span> <EM>[src.key]/[src.mob.name]:</EM> <span class='message'>[msg]</span></b></font>")
 			else
