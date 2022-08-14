@@ -17,7 +17,7 @@
 	name = "Bomber jacket"
 	path = /obj/item/clothing/suit/jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 1
 
 /datum/gear/suit/bomber/oldjacketbomber
 	name = "Old bomber jacket"
@@ -29,7 +29,7 @@
 	name = "Red flannel jacket"
 	path = /obj/item/clothing/suit/jacket/flannel/red
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/flannel/jacketflannelblack
 	name = "Black flannel jacket"
@@ -47,67 +47,67 @@
 	name = "Leather jacket"
 	path = /obj/item/clothing/suit/armor/light/leather/leather_jacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 2
 
 /datum/gear/suit/overcoatleather
 	name = "Leather overcoat"
 	path = /obj/item/clothing/suit/jacket/leather/overcoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 1
 
 /datum/gear/suit/jacketpuffer
 	name = "Puffer jacket"
 	path = /obj/item/clothing/suit/jacket/puffer
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/vestpuffer
 	name = "Puffer vest"
 	path = /obj/item/clothing/suit/jacket/puffer/vest
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/jacketlettermanbrown
 	name = "Brown letterman jacket"
 	path = /obj/item/clothing/suit/jacket/letterman
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/jacketlettermanred
 	name = "Red letterman jacket"
 	path = /obj/item/clothing/suit/jacket/letterman_red
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 2
+	cost = 1
 
 /datum/gear/suit/militaryjacket
 	name = "Military Jacket"
 	path = /obj/item/clothing/suit/jacket/miljacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 1
 
 /datum/gear/suit/flakjack
 	name = "Flak Jacket"
 	path = /obj/item/clothing/suit/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 3
+	cost = 2
 
 /datum/gear/suit/armorkit
 	name = "Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 2
 
 /datum/gear/suit/punkkit
 	name = "Punk Armor Kit"
 	path = /obj/item/clothing/suit/armor/light/kit/punk
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 2
 
 /datum/gear/suit/autumn
 	name = "tan trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/autumn
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 2
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
@@ -119,7 +119,7 @@
 	name = "Rusted Samurai Armor"
 	path = /obj/item/clothing/suit/samurai
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	cost = 4
+	cost = 2
 
 /// 	Beginning of Coats/Armor section 
 // 	Below are one points as they are cosmetics 
@@ -169,7 +169,7 @@
 	name = "Fieldscribe suit"
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 5
+	cost = 2
 	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
@@ -180,7 +180,7 @@
 	name = "Fieldscribe coat"
 	path = /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 5
+	cost = 2
 	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
@@ -191,7 +191,7 @@
 	name = "Town Trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/town
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
-	cost = 3
+	cost = 2
 	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
