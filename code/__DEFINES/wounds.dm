@@ -1,13 +1,16 @@
 
-#define WOUND_DAMAGE_EXPONENT	1.2
+#define WOUND_DAMAGE_EXPONENT 1.2
 
 /// an attack must do this much damage after armor in order to roll for being a wound (incremental pressure damage need not apply)
-#define WOUND_MINIMUM_DAMAGE		5
+#define WOUND_MINIMUM_DAMAGE 5
 /// an attack must do this much damage after armor in order to be eliigible to dismember a suitably mushed bodypart
-#define DISMEMBER_MINIMUM_DAMAGE	10
+#define DISMEMBER_MINIMUM_DAMAGE 10
 /// any damage dealt over this is ignored for damage rolls unless the target has the frail quirk (35^1.4=145)
 #define WOUND_MAX_CONSIDERED_DAMAGE	50
-
+/// when rolling for wounds, this is the lowest it'll be multiplied by
+#define WOUND_DAMAGE_RANDOM_FLOOR_MULT 0.5
+/// when rolling for wounds, this is the highest it'll be multiplied by
+#define WOUND_DAMAGE_RANDOM_MAX_MULT 1.1
 
 #define WOUND_SEVERITY_TRIVIAL	0 // for jokey/meme wounds like stubbed toe, no standard messages/sounds or second winds
 #define WOUND_SEVERITY_MODERATE	1
@@ -16,13 +19,13 @@
 #define WOUND_SEVERITY_LOSS		4 // theoretical total limb loss, like dismemberment for cuts
 
 /// any brute weapon/attack that doesn't have sharpness. rolls for blunt bone wounds
-#define WOUND_BLUNT		1
+#define WOUND_BLUNT 1
 /// any brute weapon/attack with sharpness = SHARP_EDGED. rolls for slash wounds
-#define WOUND_SLASH		2
+#define WOUND_SLASH 2
 /// any brute weapon/attack with sharpness = SHARP_POINTY. rolls for piercing wounds
-#define WOUND_PIERCE	3
+#define WOUND_PIERCE 3
 /// any concentrated burn attack (lasers really). rolls for burning wounds
-#define WOUND_BURN		4
+#define WOUND_BURN 4
 
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind()]
 #define WOUND_DETERMINATION_MODERATE 5
@@ -92,9 +95,9 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 /// Max time a sterilized bandage will stay on someone before falling off
 #define BANDAGE_GOOD_MAX_DURATION 1 HOURS
 /// Bandage is just barely through its life at this point
-#define BANDAGE_GOODLIFE_DURATION 0.9
+#define BANDAGE_GOODLIFE_DURATION 0.70
 /// Bandage is at half its life at this point
-#define BANDAGE_MIDLIFE_DURATION 0.5
+#define BANDAGE_MIDLIFE_DURATION 0.30
 /// Bandage is gonna fall off soon
 #define BANDAGE_ENDLIFE_DURATION 0.1
 

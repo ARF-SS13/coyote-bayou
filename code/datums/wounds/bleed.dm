@@ -119,6 +119,7 @@
 			return
 
 	limb.check_gauze_time()
+	limb.check_suture_time()
 	
 	reduce_bloodflow()
 
@@ -200,7 +201,7 @@
 		for(var/datum/reagent/bleed_changer in victim.reagents.reagent_list)
 			. *= bleed_changer.bleed_mult
 
-	var/owner_blood_volume = victim.get_blood(TRUE)
+	var/owner_blood_volume = victim.get_blood(FALSE)
 	if(owner_blood_volume < low_blood_threshold)
 		. *= low_blood_multiplier
 	

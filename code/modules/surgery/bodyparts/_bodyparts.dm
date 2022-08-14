@@ -366,7 +366,7 @@
 	else
 		damage = min(damage, WOUND_MAX_CONSIDERED_DAMAGE)
 
-	var/base_roll = rand(max(damage/1.5,25), round(damage ** CONFIG_GET(number/wound_exponent))) + (get_damage()*CONFIG_GET(number/wound_damage_multiplier))
+	var/base_roll = rand(max(damage * WOUND_DAMAGE_RANDOM_MIN_MULT, WOUND_MAX_CONSIDERED_DAMAGE), round(damage * WOUND_DAMAGE_RANDOM_MAX_MULT)) + (get_damage()*CONFIG_GET(number/wound_damage_multiplier))
 	var/injury_roll = base_roll
 	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus)
 	var/list/wounds_checking = GLOB.global_wound_types[woundtype]
@@ -977,6 +977,8 @@
 		apply_new_gauze = TRUE
 
 	if(apply_new_gauze) // Either no bandage was on, or we're getting a better one
+		if(just_check)
+			return TRUE
 		QDEL_NULL(current_gauze)
 		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
 		current_gauze = new gauze.type(src, 1)
@@ -987,13 +989,17 @@
 	if(istype(current_gauze)) // just to be sure its still there
 		var/current_bandage_max_hp = initial(current_gauze.covering_hitpoints)
 		if(current_gauze.covering_hitpoints < current_bandage_max_hp) // repair that bandage
+			if(just_check)
+				return TRUE
 			current_gauze.covering_hitpoints = min(current_gauze.covering_hitpoints + gauze.covering_hitpoints, current_bandage_max_hp)
 			if(current_gauze.covering_hitpoints >= current_bandage_max_hp)
 				return BANDAGE_WAS_REPAIRED_TO_FULL
 			else
 				return BANDAGE_WAS_REPAIRED
 		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // restore its length
+		if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID) < (current_suture.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
+			if(just_check)
+				return TRUE
 			S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
 			S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
 			return BANDAGE_TIMER_REFILLED
@@ -1068,7 +1074,7 @@
  * * skill_mult - How much to multiply the effects by, used for unskilled application
  */
 
-/obj/item/bodypart/proc/apply_suture(obj/item/stack/medical/suture/suture, skill_mult = 1)
+/obj/item/bodypart/proc/apply_suture(obj/item/stack/medical/suture/suture, skill_mult = 1, just_check = FALSE)
 	if(!istype(suture) || !suture)
 		return SUTURE_NOT_APPLIED
 	var/apply_new_suture = FALSE
@@ -1082,6 +1088,8 @@
 		apply_new_suture = TRUE
 
 	if(apply_new_suture) // Either no suture was on, or we're getting a better one
+		if(just_check)
+			return TRUE
 		QDEL_NULL(current_suture)
 		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
 		current_suture = new suture.type(src, 1)
@@ -1093,13 +1101,17 @@
 	if(istype(current_suture)) // just to be sure its still there
 		var/current_bandage_max_hp = initial(current_suture.covering_hitpoints)
 		if(current_suture.covering_hitpoints < current_bandage_max_hp) // repair that suture
+			if(just_check)
+				return TRUE
 			current_suture.covering_hitpoints = min(current_suture.covering_hitpoints + suture.covering_hitpoints, current_bandage_max_hp)
 			if(current_suture.covering_hitpoints >= current_bandage_max_hp)
 				return SUTURE_WAS_REPAIRED_TO_FULL
 			else
 				return SUTURE_WAS_REPAIRED
 		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)) // restore its length
+		if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID) < (current_suture.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
+			if(just_check)
+				return TRUE
 			S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
 			S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
 			return SUTURE_TIMER_REFILLED
@@ -1187,6 +1199,6 @@
 		if(COVERING_TIME_TRUE)
 			return
 		if(COVERING_TIME_MINUTE, COVERING_TIME_MINUTE_FUZZY)
-			. %= 600
+			. = round(. / 600, 1)
 			if(covering == COVERING_TIME_MINUTE_FUZZY)
 				. = round(., 5)
