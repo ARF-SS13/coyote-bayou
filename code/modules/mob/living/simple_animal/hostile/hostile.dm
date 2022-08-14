@@ -396,7 +396,7 @@
 /mob/living/simple_animal/hostile/proc/Aggro()
 	vision_range = aggro_vision_range
 	if(target && LAZYLEN(emote_taunt) && prob(taunt_chance))
-		emote("me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
+		INVOKE_ASYNC(src, .proc/emote, "me", EMOTE_VISIBLE, "[pick(emote_taunt)] at [target].")
 		taunt_chance = max(taunt_chance-7,2)
 	if(LAZYLEN(emote_taunt_sound))
 		var/taunt_choice = pick(emote_taunt_sound)
