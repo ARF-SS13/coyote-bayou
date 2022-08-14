@@ -183,6 +183,8 @@
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
+	
+	QDEL_NULL(access_card)
 
 	return ..()
 

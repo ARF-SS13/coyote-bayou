@@ -167,10 +167,6 @@
 	access_card.access |= ACCESS_CENT_BAR
 	ADD_TRAIT(access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 
-/mob/living/simple_animal/hostile/alien/maid/barmaid/Destroy()
-	qdel(access_card)
-	. = ..()
-
 // Bar table, a wooden table that kicks you in a direction if you're not
 // barstaff (defined as someone who was a roundstart bartender or someone
 // with CENTCOM_BARSTAFF)
