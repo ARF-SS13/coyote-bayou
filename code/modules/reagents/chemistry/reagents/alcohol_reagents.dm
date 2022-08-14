@@ -140,8 +140,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.Jitter(5)
 	..()
 	. = 1
 

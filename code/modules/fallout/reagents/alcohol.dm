@@ -431,7 +431,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
 		M.adjustBruteLoss(-0.1)
 		M.adjustFireLoss(-0.1)
