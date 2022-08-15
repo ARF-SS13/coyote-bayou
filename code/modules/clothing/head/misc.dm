@@ -6,7 +6,7 @@
 	desc = "It's good to be emperor."
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 30)
+	armor = ARMOR_VALUE_HEAVY
 	strip_delay = 80
 
 /obj/item/clothing/head/powdered_wig
@@ -45,7 +45,8 @@
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 25, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list()
 	permeability_coefficient = 0.01
 
 

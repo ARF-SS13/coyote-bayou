@@ -38,9 +38,9 @@
  * High mobility
  * Mild environmental resistances
  * Low defense 
+ * Lowish DT
  * 
  * +25 effective HP
- * 1.25x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
 		"linemelee" = 25, \
@@ -59,9 +59,9 @@
  * Decent mobility
  * Decent environmental resistances
  * Decent defense 
+ * Decent DT
  * 
  * +50 effective HP
- * 1.5x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_MEDIUM list(\
 		"linemelee" = 50, \
@@ -80,14 +80,14 @@
  * Low mobility
  * Decent environmental resistances
  * High defense 
+ * Lot of DT
  * 
- * +100 effective HP
- * 2x effective healing
+ * +75 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_HEAVY list(\
-		"linemelee" = 100, \
-		"linebullet" = 100, \
-		"linelaser" = 100, \
+		"linemelee" = 75, \
+		"linebullet" = 75, \
+		"linelaser" = 75, \
 		"energy" = 0, \
 		"bomb" = 25, \
 		"bio" = 25, \
@@ -101,15 +101,15 @@
  * Next to no mobility
  * Good environmental resistances
  * Great defense
+ * Lots of DT
  * 
- * +250 effective HP
- * +50 laser HP
- * 3.5x effective healing
+ * +125 effective HP
+ * +75 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_SALVAGE list(\
-		"linemelee" = 250, \
-		"linebullet" = 250, \
-		"linelaser" = 300, \
+		"linemelee" = 125, \
+		"linebullet" = 125, \
+		"linelaser" = 200, \
 		"energy" = 30, \
 		"bomb" = 60, \
 		"bio" = 80, \
@@ -124,14 +124,13 @@
  * Amazing environmental resistances
  * OP defense
  * 
- * +400 effective HP
+ * +200 effective HP
  * +50 laser HP
- * 5x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_PA list(\
-		"linemelee" = 400, \
-		"linebullet" = 400, \
-		"linelaser" = 450, \
+		"linemelee" = 200, \
+		"linebullet" = 200, \
+		"linelaser" = 250, \
 		"energy" = 40, \
 		"bomb" = 90, \
 		"bio" = 100, \

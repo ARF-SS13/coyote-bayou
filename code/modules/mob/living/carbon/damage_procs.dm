@@ -17,9 +17,9 @@
 			if(!BP)
 				BP = bodyparts[1]
 
-	var/damage_amount = forced ? damage : damage * hit_percent
 	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
-		damage_amount = max(damage_amount - min(damage_threshold, ARMOR_CAP_DT), 1)
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+	var/damage_amount = forced ? damage : damage * hit_percent
 
 	switch(damagetype)
 		if(BRUTE)

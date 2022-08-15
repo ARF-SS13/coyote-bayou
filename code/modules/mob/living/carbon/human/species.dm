@@ -1708,6 +1708,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	var/armor_block = H.run_armor_check(affecting, "melee", span_notice("Your armor has protected your [hit_area]."), span_notice("Your armor has softened a hit to your [hit_area]."),I.armour_penetration)
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
+	var/dt = max(H.run_armor_check(def_zone, "damage_threshold") - I.damage_threshold_penetration, 0)
 	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 	var/Iwound_bonus = I.wound_bonus
 
@@ -1716,7 +1717,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		Iwound_bonus = CANT_WOUND
 
 	var/weakness = H.check_weakness(I, user)
-	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
+	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
 
 
 	H.send_item_attack_message(I, user, hit_area, affecting, totitemdamage)
@@ -1954,12 +1955,13 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!BP)
 			BP = H.bodyparts[1]
 
+	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
+
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod * sharp_mod
-			if(!forced && damage_threshold)
-				damage_amount = max(damage_amount - min(damage_threshold, ARMOR_CAP_DT), 1)
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -1971,8 +1973,6 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(BURN)
 			H.damageoverlaytemp = 20
 			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
-			if(!forced && damage_threshold)
-				damage_amount = max(damage_amount - min(damage_threshold, ARMOR_CAP_DT), 1)
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
