@@ -91,7 +91,7 @@
 		"fire" = 25, \
 		"acid" = 25, \
 		"wound" = 10, \
-		"damage_threshold" = 7)
+		"damage_threshold" = 5)
 
 /* Heavy armor values
  * Low mobility
@@ -112,7 +112,7 @@
 		"fire" = 35, \
 		"acid" = 35, \
 		"wound" = 25, \
-		"damage_threshold" = 11)
+		"damage_threshold" = 10)
 
 /* Salvaged PA values
  * Next to no mobility
