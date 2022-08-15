@@ -71,7 +71,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
 			if(check_rights_for(C, R_ADMIN))
-				keyname = "[key]/[keyname]"
+				keyname = "[key]/[GetOOCName()]"
 			else
 				keyname = GetOOCName()
 			
