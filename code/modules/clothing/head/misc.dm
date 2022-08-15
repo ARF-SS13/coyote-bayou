@@ -484,7 +484,6 @@
 	icon_state = "kabuto"
 	item_state = "kabuto"
 	flags_inv = HIDEHAIR|HIDEEARS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/fluff/bandit
 	name = "bandit hat"

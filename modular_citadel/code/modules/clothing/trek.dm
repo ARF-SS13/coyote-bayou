@@ -27,7 +27,7 @@
 		/obj/item/reagent_containers/glass/bottle/vial,/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle, /obj/item/restraints/handcuffs,/obj/item/hypospray
 		)
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/suit/storage/trek/ds9/admiral // Only for adminuz
 	name = "Admiral Overcoat"
@@ -35,7 +35,7 @@
 	icon_state = "trek_ds9_coat_adm"
 	item_state = "trek_ds9_coat_adm"
 	permeability_coefficient = 0.01
-	armor = list("linemelee" = 100, "linebullet" = 100, "linelaser" = 100,"energy" = 50, "bomb" = 50, "bio" = 50, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
 
 //MODERN ish Joan sqrl sprites. I think
 
@@ -66,7 +66,7 @@
 				/obj/item/reagent_containers/glass/beaker,
 				/obj/item/storage/pill_bottle,
 				/obj/item/taperecorder)
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 	var/unbuttoned = 0
 
 	verb/toggle()
@@ -122,7 +122,7 @@
 		/obj/item/reagent_containers/glass/bottle/vial,/obj/item/reagent_containers/glass/beaker,
 		/obj/item/reagent_containers/pill,/obj/item/storage/pill_bottle, /obj/item/restraints/handcuffs,/obj/item/hypospray
 		)
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 
 	//Variants
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/medsci
@@ -139,7 +139,7 @@
 
 /obj/item/clothing/head/caphat/formal/fedcover
 	name = "Federation Officer's Cap"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 	desc = "An officer's cap that demands discipline from the one who wears it."
 	icon = 'modular_citadel/icons/obj/clothing/trek_item_icon.dmi'
 	icon_state = "fedcapofficer"
