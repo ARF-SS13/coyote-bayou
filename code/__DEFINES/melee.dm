@@ -36,7 +36,7 @@
 /// A large blade
 #define WEAPON_FORCE_SLASH_LARGE 15
 /// Two-handed blade multiplier
-#define WEAPON_SLASH_TWOHAND_MULT 1.5
+#define WEAPON_SLASH_TWOHAND_MULT 1.35
 /// Slash wound addition
 #define WEAPON_SLASH_WOUND_ADD 50
 
@@ -47,7 +47,7 @@
 /// A long spear
 #define WEAPON_FORCE_PIERCE_LARGE 10
 /// Two-handed blade multiplier
-#define WEAPON_PIERCE_TWOHAND_MULT 1
+#define WEAPON_PIERCE_TWOHAND_MULT 1.35
 
 /// A blunt thing designed as a tool (wrench)
 #define WEAPON_FORCE_BLUNT_TOOL 5
