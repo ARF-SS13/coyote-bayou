@@ -4,7 +4,7 @@
 	icon_state = "pod-off"
 	density = TRUE
 	max_integrity = 350
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 30, "acid" = 30)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	layer = ABOVE_WINDOW_LAYER
 	plane = GAME_PLANE
 	state_open = FALSE

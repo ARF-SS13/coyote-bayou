@@ -3,7 +3,7 @@
 /obj/item/melee //Melee weapon template
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -43,7 +43,7 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
@@ -150,7 +150,7 @@
 	throw_range = 6
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/bayonet = FALSE	//Can this be attached to a gun?
 	bare_wound_bonus = 5
 	custom_materials = list(/datum/material/iron=6000)

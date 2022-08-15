@@ -17,6 +17,23 @@
 		"wound" = 0, \
 		"damage_threshold" = 0)
 
+/* Generic item armor
+ * Usually isnt actual armor
+ * Has some good fire resist, but thats about it
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GENERIC_ITEM list(\
+		"linemelee" = 0, \
+		"linebullet" = 0, \
+		"linelaser" = 0, \
+		"energy" = 0, \
+		"bomb" = 0, \
+		"bio" = 10, \
+		"rad" = 10, \
+		"fire" = 50, \
+		"acid" = 50, \
+		"wound" = 0, \
+		"damage_threshold" = 0)
+
 /* Basic clothing armor values
  * Mild environmental resistances
  * No actual defense

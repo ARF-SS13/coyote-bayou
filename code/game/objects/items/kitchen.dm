@@ -27,7 +27,7 @@
 	flags_1 = CONDUCT_1
 	attack_verb = list("attacked", "stabbed", "poked")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	sharpness = SHARP_POINTY
 	var/datum/reagent/forkload //used to eat omelette
 
@@ -72,7 +72,7 @@
 	custom_materials = list(/datum/material/iron=4000)
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/bayonet = FALSE	//Can this be attached to a gun?
 	wound_bonus = -5
 	bare_wound_bonus = 10

@@ -6,7 +6,7 @@
 	icon = 'icons/effects/effects.dmi'
 	anchored = TRUE
 	max_integrity = 1
-	armor = list("melee" = 0, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 20)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/obj/item/holosign_creator/projector
 	var/init_vis_overlay = TRUE
 	rad_flags = RAD_NO_CONTAMINATE

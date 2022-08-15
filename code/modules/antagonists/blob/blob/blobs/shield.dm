@@ -9,7 +9,7 @@
 	explosion_block = 3
 	point_return = 4
 	atmosblock = TRUE
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 15, "energy" = 10, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	armor = ARMOR_VALUE_LIGHT
 	var/weakened
 
 /obj/structure/blob/shield/scannerreport()

@@ -8,7 +8,7 @@
 	flags_1 = CONDUCT_1
 	pressure_resistance = 5*ONE_ATMOSPHERE
 	layer = BELOW_OBJ_LAYER
-	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 	max_integrity = 50
 	attack_hand_is_action = TRUE
 	attack_hand_speed = 8

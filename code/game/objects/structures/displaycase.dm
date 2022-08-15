@@ -6,7 +6,7 @@
 	density = TRUE
 	anchored = TRUE
 	resistance_flags = ACID_PROOF
-	armor = list("melee" = 30, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 100)
+	armor = ARMOR_VALUE_LIGHT
 	max_integrity = 200
 	integrity_failure = 0.25
 	attack_hand_speed = CLICK_CD_MELEE
