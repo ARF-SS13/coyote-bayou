@@ -249,30 +249,30 @@
 	remove_the_traits(M)
 
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
-	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/radx) < RADX_FULL_IMMUNITY_THRESHOLD && HAS_TRAIT_FROM(M, TRAIT_100_RAD_RESIST, RADX_TRAIT))
+	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/radx) < RADX_FULL_IMMUNITY_THRESHOLD && HAS_TRAIT_FROM(M, TRAIT_75_RAD_RESIST, RADX_TRAIT))
 		to_chat(M, span_alert("The insulating tingle dulls considerably."))
-		REMOVE_TRAIT(M, TRAIT_100_RAD_RESIST, RADX_TRAIT)
-		if (!HAS_TRAIT_FROM(M, TRAIT_80_RAD_RESIST, RADX_TRAIT))
-			ADD_TRAIT(M, TRAIT_80_RAD_RESIST, RADX_TRAIT) // just in case
+		REMOVE_TRAIT(M, TRAIT_75_RAD_RESIST, RADX_TRAIT)
+		if (!HAS_TRAIT_FROM(M, TRAIT_50_RAD_RESIST, RADX_TRAIT))
+			ADD_TRAIT(M, TRAIT_50_RAD_RESIST, RADX_TRAIT) // just in case
 	. = TRUE
 	..()
 
 /datum/reagent/medicine/radx/proc/remove_the_traits(mob/living/L)
-	if(HAS_TRAIT_FROM(L, TRAIT_100_RAD_RESIST, RADX_TRAIT))
+	if(HAS_TRAIT_FROM(L, TRAIT_75_RAD_RESIST, RADX_TRAIT))
 		to_chat(L, span_alert("The insulating tingle fades."))
-	else if (HAS_TRAIT_FROM(L, TRAIT_80_RAD_RESIST, RADX_TRAIT))
+	else if (HAS_TRAIT_FROM(L, TRAIT_50_RAD_RESIST, RADX_TRAIT))
 		to_chat(L, span_alert("The tingling fades."))
 	// just remove them both
-	REMOVE_TRAIT(L, TRAIT_80_RAD_RESIST, RADX_TRAIT)
-	REMOVE_TRAIT(L, TRAIT_100_RAD_RESIST, RADX_TRAIT)
+	REMOVE_TRAIT(L, TRAIT_50_RAD_RESIST, RADX_TRAIT)
+	REMOVE_TRAIT(L, TRAIT_75_RAD_RESIST, RADX_TRAIT)
 
 /datum/reagent/medicine/radx/proc/add_the_traits(mob/living/L)
-	if(L.reagents.get_reagent_amount(/datum/reagent/medicine/radx) >= RADX_FULL_IMMUNITY_THRESHOLD && !HAS_TRAIT_FROM(L, TRAIT_100_RAD_RESIST, RADX_TRAIT))
+	if(L.reagents.get_reagent_amount(/datum/reagent/medicine/radx) >= RADX_FULL_IMMUNITY_THRESHOLD && !HAS_TRAIT_FROM(L, TRAIT_75_RAD_RESIST, RADX_TRAIT))
 		to_chat(L, span_notice("You feel a deep, insulating tingle."))
-		ADD_TRAIT(L, TRAIT_100_RAD_RESIST, RADX_TRAIT)
-	else if (!HAS_TRAIT_FROM(L, TRAIT_80_RAD_RESIST, RADX_TRAIT))
+		ADD_TRAIT(L, TRAIT_75_RAD_RESIST, RADX_TRAIT)
+	else if (!HAS_TRAIT_FROM(L, TRAIT_50_RAD_RESIST, RADX_TRAIT))
 		to_chat(L, span_notice("You feel a slight tingle in your flesh."))
-		ADD_TRAIT(L, TRAIT_80_RAD_RESIST, RADX_TRAIT)
+		ADD_TRAIT(L, TRAIT_50_RAD_RESIST, RADX_TRAIT)
 
 
 #undef RADX_FULL_IMMUNITY_THRESHOLD

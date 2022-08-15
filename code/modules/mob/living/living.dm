@@ -1111,12 +1111,15 @@
 
 	if(!amount || (amount < RAD_MOB_SKIN_PROTECTION))
 		return
-	if(HAS_TRAIT(src, TRAIT_100_RAD_RESIST))
+	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
 		return
 
 	amount -= RAD_BACKGROUND_RADIATION // This will always be at least 1 because of how skin protection is calculated
-	if(HAS_TRAIT(src, TRAIT_80_RAD_RESIST))
-		amount *= 0.2
+	
+	if(HAS_TRAIT(src, TRAIT_75_RAD_RESIST))
+		amount *= 0.25
+	else if(HAS_TRAIT(src, TRAIT_50_RAD_RESIST))
+		amount *= 0.5
 
 	var/blocked = getarmor(null, "rad")
 	apply_effect((amount*RAD_MOB_COEFFICIENT)/max(1, (radiation**2)*RAD_OVERDOSE_REDUCTION), EFFECT_IRRADIATE, blocked)
