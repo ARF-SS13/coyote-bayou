@@ -34,11 +34,15 @@
 	. = ..()
 
 /obj/structure/nest/proc/spawn_mob()
+	var/turf/our_turf = get_turf(src) //if you want to stop mobs from not spawning due to dense things on burrows, remove this...
 	if(!can_fire)
 		return FALSE
 	if(covered)
 		can_fire = FALSE
 		return FALSE
+	for(var/atom/maybe_heavy_thing in our_turf.contents) //...and this
+		if(maybe_heavy_thing.density == TRUE)
+			return FALSE
 	CHECK_TICK
 	if(spawned_mobs.len >= max_mobs)
 		return FALSE
@@ -79,7 +83,7 @@
 		return Seal(user, I, I.type, "rods", 2 HOURS)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		return Seal(user, I, I.type, "planks", 30 MINUTES)
-	
+
 	if(covered) // allow you to interact only when it's sealed
 		..()
 	else
@@ -91,7 +95,7 @@
 	if(!coverable)
 		to_chat(user, span_warning("The hole is unable to be covered!"))
 		return
-	
+
 	if(covered)
 		to_chat(user, span_warning("The hole is already covered!"))
 		return
@@ -126,7 +130,7 @@
 		toggle_fire()
 		spawned_mobs.Cut()
 		return
- 
+
 	if(user)
 		if(!I)
 			return
@@ -137,7 +141,7 @@
 		Unseal(TRUE)
 		return
 
-	
+
 
 //the nests themselves
 /*

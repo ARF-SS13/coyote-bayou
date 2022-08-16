@@ -34,6 +34,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_22LR_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* .22 rubber
  * DAMAGE: 1.5
@@ -55,6 +56,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_22LR_SPEED_MULT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* .22 EMP
  * DAMAGE: 0.75
@@ -119,6 +121,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /* 9mm handload
  * DAMAGE: 15
@@ -160,6 +163,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 9mm acid
  * DAMAGE: 10
@@ -305,6 +309,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 /obj/item/projectile/bullet/c38/rubber
 	name = ".38 rubber bullet"
@@ -319,6 +324,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_38SPECIAL_SPEED_MULT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /obj/item/projectile/bullet/c38/improv
 	name = ".38 improvised bullet"
@@ -428,6 +434,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_NEEDLE_SPEED_MULT
 	var/piercing = FALSE // not sure what this does
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
 
 #undef BULLET_NEEDLE_DAMAGE_MULT
 #undef BULLET_NEEDLE_STAMINA_MULT
@@ -467,6 +474,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_MEDIUM
 
 /* 10mm handload
  * DAMAGE: 18
@@ -528,6 +536,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 10mm fire
  * DAMAGE: 12.5
@@ -596,6 +605,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_MEDIUM
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM * BULLET_45ACP_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_MEDIUM
 
 /* 10mm simplemob
  * DAMAGE: 25
@@ -657,6 +667,7 @@
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_MEDIUM * BULLET_45ACP_SPEED_MULT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 10mm fire
  * DAMAGE: 12.5
@@ -725,6 +736,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_HEAVY
 
 /* 357 handload
  * DAMAGE: 30
@@ -870,6 +882,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_44MAG_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_HEAVY
 
 /* 44 simple
  * DAMAGE: 44
@@ -962,6 +975,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_PISTOL_HEAVY * BULLET_14MM_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_HEAVY
 
 /* 14mm poison
  * DAMAGE: 24
@@ -1048,6 +1062,7 @@
 	ricochet_decay_chance = 11
 	ricochet_chance = 80 //100% if you have the vet's trait
 	ricochet_auto_aim_range = 4
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_MEDIUM
 
 ////////////////
 //CODE ARCHIVE//
@@ -1062,7 +1077,6 @@ SYNDIE AMMO
 	knockdown = 100
 	dismemberment = 50
 	armour_penetration = 0.85
-	zone_accuracy_factor = 100		//guarunteed 100%
 	var/breakthings = TRUE
 
 /obj/item/projectile/bullet/p50/on_hit(atom/target, blocked = 0)

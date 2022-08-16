@@ -314,7 +314,7 @@ Auto Patrol: []"},
 		to_chat(user, span_warning("\The [H] is stuck to your hand, you cannot put it on [src]'s head!"))
 		return
 	if(bot_accessory)
-		to_chat(span_warning("\[src] already has an accessory, and the laws of physics disallow him from wearing a second!"))
+		to_chat(user, span_warning("[src] already has an accessory, and the laws of physics disallow \him from wearing a second!"))
 		return
 
 	if(H.beepsky_fashion)

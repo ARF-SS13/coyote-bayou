@@ -300,9 +300,7 @@
 	operating = FALSE
 	air_update_turf(1)
 	update_freelook_sight()
-	if(autoclose)
-		spawn(autoclose)
-			close()
+	autoclose_in(autoclose)
 	return 1
 
 /obj/machinery/door/proc/close()

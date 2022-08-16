@@ -350,6 +350,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
@@ -402,6 +403,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/stun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
@@ -579,6 +581,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /obj/item/gun/energy/laser/aer9/focused
@@ -593,6 +596,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 //Ultracite Laser rifle
@@ -641,8 +645,9 @@
 /obj/item/gun/energy/laser/aer12
 	name = "\improper AER12 laser rifle"
 	desc = "A cutting-edge, pre-war laser rifle. Its focusing crystal array is housed in gold alloy, making it difficult to maintain."
-	icon_state = "aer12"
-	item_state = "laser-rifle9"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "aer12new"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
@@ -658,6 +663,8 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
 
 
 //AER14 Laser rifle
@@ -681,6 +688,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 

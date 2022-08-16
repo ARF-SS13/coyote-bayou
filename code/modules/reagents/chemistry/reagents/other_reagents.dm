@@ -2841,8 +2841,8 @@ datum/reagent/eldritch
 	description = "A volatile collodial mixture derived from milk that encourages mammary production via a potent estrogen mix."
 	color = "#E60584" // rgb: 96, 0, 255
 	taste_description = "a milky ice cream like flavour"
-	overdose_threshold = 17
-	metabolization_rate = 0.25
+	overdose_threshold = 100
+	metabolization_rate = 0.20
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE
 
@@ -2938,7 +2938,7 @@ datum/reagent/eldritch
 	description = "A volatile collodial mixture derived from various masculine solutions that encourages a larger gentleman's package via a potent testosterone mix, formula derived from a collaboration from Fermichem  and Doctor Ronald Hyatt, who is well known for his phallus palace." //The toxic masculinity thing is a joke because I thought it would be funny to include it in the reagents, but I don't think many would find it funny? dumb
 	color = "#888888" // This is greyish..?
 	taste_description = "chinese dragon powder"
-	overdose_threshold = 17 //ODing makes you male and removes female genitals
+	overdose_threshold = 100
 	metabolization_rate = 0.5
 	can_synth = FALSE
 	value = REAGENT_VALUE_RARE

@@ -4,7 +4,7 @@
 /obj/machinery/door/unpowered
 	icon = 'icons/fallout/structures/doors.dmi'
 	armor = ARMOR_VALUE_LIGHT
-	autoclose = TRUE // Difficulty: Monkey to reduce amount of secure doors left open.
+	autoclose = 5 SECONDS // Difficulty: Monkey to reduce amount of secure doors left open.
 	max_integrity = 500
 	obj_integrity = 500
 	req_one_access_txt = null // Add the channel for the ID you want to lock this door to, check defines.

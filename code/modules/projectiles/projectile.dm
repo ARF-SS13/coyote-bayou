@@ -127,9 +127,6 @@
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/is_reflectable = FALSE // Can it be reflected or not?
 
-	/// factor to multiply by for zone accuracy percent.
-	var/zone_accuracy_factor = 1
-
 		//Effects
 	var/stun = 0
 	var/knockdown = 0
@@ -162,6 +159,10 @@
 	var/embed_falloff_tile
 	/// For telling whether we want to roll for bone breaking or lacerations if we're bothering with wounds
 	sharpness = SHARP_NONE
+	/// Defines how much damage to lose per tile, and at what distance to start losing damage - currently unused
+	var/list/damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	/// bullet's general zone hit accuracy
+	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 
 /obj/item/projectile/Initialize()
 	. = ..()
@@ -186,6 +187,9 @@
 		bare_wound_bonus = max(0, bare_wound_bonus + wound_falloff_tile)
 	if(LAZYLEN(embedding))
 		embedding["embed_chance"] += embed_falloff_tile
+	//if(LAZYLEN(damage_falloff))
+	//	if(initial(range) - range >= damage_falloff[BULLET_FALLOFF_START])
+	//		damage = max(BULLET_FALLOFF_MIN_DAMAGE, damage - damage_falloff[BULLET_FALLOFF])
 	if(range <= 0 && loc)
 		on_range()
 
@@ -349,8 +353,19 @@
 			return TRUE
 
 	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
-	if(def_zone && check_zone(def_zone) != BODY_ZONE_CHEST)
-		def_zone = ran_zone(def_zone, max(100-(7*distance), 5) * zone_accuracy_factor) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+	if(distance > 1) // Point blank, you'll hit what you're aiming at
+		if(zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE) // Someone didnt set our accuracy! Naughty!
+			zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
+		switch(zone_accuracy_type)
+			if(ZONE_WEIGHT_PRECISION) // guaranteed to hit the zone you aim for, unless its the head and they're more than 2 tiles away
+				if(def_zone && check_zone(def_zone) == BODY_ZONE_HEAD && distance > 2) // Aiming for the head more than 2 tiles away means a 20ish% chance to hit the head
+					def_zone = ran_zone(def_zone, 0, ZONE_WEIGHT_LIST_PRECISION) // Keeps good accuracy
+			if(ZONE_WEIGHT_SEMI_AUTO)
+				def_zone = ran_zone(def_zone, 100-(7*distance), ZONE_WEIGHT_LIST_DEFAULT) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+			if(ZONE_WEIGHT_AUTOMATIC)
+				def_zone = ran_zone(def_zone, 100-(20*distance), ZONE_WEIGHT_LIST_AUTOMATIC)
+			if(ZONE_WEIGHT_SHOTGUN)
+				def_zone = ran_zone(def_zone, 0, ZONE_WEIGHT_LIST_AUTOMATIC)
 
 	if(isturf(A) && hitsound_wall)
 		var/volume = clamp(vol_by_damage() + 20, 0, 100)

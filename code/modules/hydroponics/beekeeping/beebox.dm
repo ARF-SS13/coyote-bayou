@@ -205,7 +205,7 @@
 				continue
 			if(B.loc == src)
 				B.forceMove(drop_location())
-			B.target = user
+			B.GiveTarget(user)
 			bees = TRUE
 		if(bees)
 			visible_message(span_danger("[user] disturbs the bees!"))

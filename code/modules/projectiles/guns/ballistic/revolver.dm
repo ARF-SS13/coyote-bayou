@@ -75,6 +75,7 @@
 
 	if(do_spin())
 		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		playsound(src, 'sound/f13weapons/revolverspin.ogg', 30, 1)
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -312,8 +313,7 @@
 	init_recoil = HANDGUN_RECOIL(1)
 
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
 /* * * * * * * * * * *
  * .44 magnum revolver
@@ -339,7 +339,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
@@ -368,7 +368,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 
@@ -433,6 +433,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -462,7 +463,8 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
@@ -491,7 +493,8 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /* * * * * * * * * * *
@@ -506,7 +509,7 @@
 	name = "M2045 Magnum Revolver Rifle"
 	desc = "A relic from before the Great War returns to the wasteland. This rifle uses .308 ammunition and has considerable recoil."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev308
-	icon = 'icons/fallout/objects/guns/long.dmi'
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	item_state = "m2405"
 	icon_state = "m2405"
 
@@ -521,7 +524,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = RIFLE_RECOIL(2.2)
 
-	zoomable = TRUE	
+	zoomable = TRUE
 	zoom_amt = 10
 	zoom_out_amt = 13
 
@@ -548,7 +551,8 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(1.2)
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 9
@@ -605,6 +609,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -665,6 +670,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -695,10 +701,9 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-
-
 
 /* * * * * * * * * * *
  * Needler 'revolver'
@@ -723,6 +728,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
