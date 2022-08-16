@@ -26,3 +26,5 @@
 #define FOOD_IN_CONTAINER (1<<0)
 
 #define STOP_SERVING_BREAKFAST (15 MINUTES)
+
+#define IS_EDIBLE(O) (O.GetComponent(/datum/component/edible))
