@@ -215,7 +215,7 @@ GLOBAL_LIST_INIT(trash_craft, list(
 GLOBAL_LIST_INIT(trash_gun, list(
 	/obj/item/gun/ballistic/automatic/hobo/zipgun = 2,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 2,
-	/obj/item/gun/ballistic/rifle/mosin = 1,
+	/obj/item/gun/ballistic/automatic/varmint = 1,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1

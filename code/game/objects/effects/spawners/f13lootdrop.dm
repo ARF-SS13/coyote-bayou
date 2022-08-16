@@ -818,7 +818,7 @@
 	name = "very low tier non-hobo ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/ninemil,
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
-				//obj/effect/spawner/bundle/f13/mosin, No. More. Mosin.
+				/obj/item/gun/ballistic/rifle/hunting, //No. More. Mosin.
 				/obj/effect/spawner/bundle/f13/remington,
 				/obj/effect/spawner/bundle/f13/widowmaker,
 				/obj/effect/spawner/bundle/f13/varmint
@@ -959,7 +959,7 @@
 				)
 
 /obj/effect/spawner/bundle/f13/remington
-	name = "remington rifle and ammo spawner"
+	name = "hunting rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/rifle/hunting,
 				/obj/item/ammo_box/a308
