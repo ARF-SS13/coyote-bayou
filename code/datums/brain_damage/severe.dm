@@ -162,7 +162,7 @@
 	..()
 	if(check_alone())
 		stress = min(stress + 0.5, 100)
-		if(stress > 10 && (prob(5)))
+		if(stress > 30 && (prob(5)))
 			stress_reaction()
 	else
 		stress = max(stress - 4, 0)
