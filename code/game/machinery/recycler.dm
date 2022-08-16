@@ -85,7 +85,7 @@
 		safety_mode = FALSE
 		update_icon()
 	playsound(src, "sparks", 75, 1, -1)
-	to_chat(user, "<span class='notice'>You use the cryptographic sequencer on [src].</span>")
+	to_chat(user, span_notice("You use the cryptographic sequencer on [src]."))
 	return TRUE
 
 /obj/machinery/recycler/update_icon_state()
@@ -103,7 +103,7 @@
 	if(move_dir == eat_dir)
 		return TRUE
 
-/obj/machinery/recycler/proc/on_entered(atom/movable/AM)
+/obj/machinery/recycler/proc/on_entered(datum/source, atom/movable/AM)
 	SIGNAL_HANDLER
 	INVOKE_ASYNC(src, .proc/eat, AM)
 

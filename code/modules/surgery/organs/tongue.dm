@@ -34,12 +34,12 @@
 	. = ..()
 	for(var/accent in initial_accents)
 		accents += new accent
-	low_threshold_passed = "<span class='info'>Your [name] feels a little sore.</span>"
-	low_threshold_cleared = "<span class='info'>Your [name] soreness has subsided.</span>"
-	high_threshold_passed = "<span class='warning'>Your [name] is really starting to hurt.</span>"
-	high_threshold_cleared = "<span class='info'>The pain of your [name] has subsided a little.</span>"
-	now_failing = "<span class='warning'>Your [name] feels like it's about to fall out!.</span>"
-	now_fixed = "<span class='info'>The excruciating pain of your [name] has subsided.</span>"
+	low_threshold_passed = span_info("Your [name] feels a little sore.")
+	low_threshold_cleared = span_info("Your [name] soreness has subsided.")
+	high_threshold_passed = span_warning("Your [name] is really starting to hurt.")
+	high_threshold_cleared = span_info("The pain of your [name] has subsided a little.")
+	now_failing = span_warning("Your [name] feels like it's about to fall out!.")
+	now_fixed = span_info("The excruciating pain of your [name] has subsided.")
 	languages_possible = languages_possible_base
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args) //this wont proc unless there's initial_accents on the tongue
@@ -49,7 +49,7 @@
 /obj/item/organ/tongue/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
 	if(damage >= maxHealth)
-		to_chat(owner, "<span class='userdanger'>Your tongue is singed beyond recognition, and disintegrates!</span>")
+		to_chat(owner, span_userdanger("Your tongue is singed beyond recognition, and disintegrates!"))
 		SSblackbox.record_feedback("tally", "fermi_chem", 1, "Tongues lost to Fermi")
 		qdel(src)
 
@@ -109,21 +109,21 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as your own.</span>")
+		to_chat(H, span_notice("[src] is already attuned to the same channel as your own."))
 		return
 
-	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>You attempt to modify the attunation of [src].</span>")
+	H.visible_message(span_notice("[H] holds [src] in their hands, and concentrates for a moment."), span_notice("You attempt to modify the attunation of [src]."))
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span class='notice'>You attune [src] to your own channel.</span>")
+		to_chat(H, span_notice("You attune [src] to your own channel."))
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_ABDUCTOR_TRAINING) || HAS_TRAIT(M.mind, TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			. += "<span class='notice'>It is not attuned to a specific mothership.</span>"
+			. += span_notice("It is not attuned to a specific mothership.")
 		else
-			. += "<span class='notice'>It is attuned to [mothership].</span>"
+			. += span_notice("It is attuned to [mothership].")
 
 /obj/item/organ/tongue/zombie
 	name = "rotting tongue"
@@ -177,7 +177,7 @@
 		return
 	var/target = owner.get_bodypart(BODY_ZONE_HEAD)
 	owner.apply_damage(d, BURN, target)
-	to_chat(owner, "<span class='userdanger'>You feel your skull burning! Oof, your bones!</span>")
+	to_chat(owner, span_userdanger("You feel your skull burning! Oof, your bones!"))
 	return
 
 /obj/item/organ/tongue/bone/handle_speech(datum/source, list/speech_args)

@@ -15,9 +15,9 @@
 	playsound(user, pick('sound/effects/pageturn1.ogg','sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg'), 30, 1)
 	if(do_after(user,50, TRUE, user))
 		if(remarks.len)
-			to_chat(user, "<span class='notice'>[pick(remarks)]</span>")
+			to_chat(user, span_notice("[pick(remarks)]"))
 		else
-			to_chat(user, "<span class='notice'>You keep reading...</span>")
+			to_chat(user, span_notice("You keep reading..."))
 		return TRUE
 	return FALSE
 
@@ -27,13 +27,13 @@
 	return FALSE
 
 /obj/item/book/granter/proc/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading [name]...</span>")
+	to_chat(user, span_notice("You start reading [name]..."))
 
 /obj/item/book/granter/proc/on_reading_stopped(mob/user)
-	to_chat(user, "<span class='notice'>You stop reading...</span>")
+	to_chat(user, span_notice("You stop reading..."))
 
 /obj/item/book/granter/proc/on_reading_finished(mob/user)
-	to_chat(user, "<span class='notice'>You finish reading [name]!</span>")
+	to_chat(user, span_notice("You finish reading [name]!"))
 
 /obj/item/book/granter/proc/onlearned(mob/user)
 	used = TRUE
@@ -41,10 +41,10 @@
 
 /obj/item/book/granter/attack_self(mob/user)
 	//if(user.special_i<5&&!istype(src,/obj/item/book/granter/trait/selection))//SPECIAL Integration
-	//	to_chat(user, "<span class='warning'>You feel like you are too stupid to understand this.</span>")
+	//	to_chat(user, span_warning("You feel like you are too stupid to understand this."))
 	//	return
 	if(reading)
-		to_chat(user, "<span class='warning'>You're already reading this!</span>")
+		to_chat(user, span_warning("You're already reading this!"))
 		return FALSE
 	if(already_known(user))
 		return FALSE
@@ -78,18 +78,18 @@
 	return FALSE
 
 /obj/item/book/granter/trait/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [traitname]...</span>")
+	to_chat(user, span_notice("You start reading about [traitname]..."))
 
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
+	to_chat(user, span_notice("You feel like you've got a good handle on [traitname]!"))
 	ADD_TRAIT(user, granted_trait, BOOK_TRAIT)
 	if(!user.mind)
 		return
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
-		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
+		to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
 	onlearned(user)
 
 /obj/item/book/granter/trait/rifleman
@@ -112,15 +112,15 @@
 		return TRUE
 	for(var/datum/action/A in user.actions)
 		if(A.type == granted_action)
-			to_chat(user, "<span class='notice'>You already know all about [actionname].</span>")
+			to_chat(user, span_notice("You already know all about [actionname]."))
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/action/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [actionname]...</span>")
+	to_chat(user, span_notice("You start reading about [actionname]..."))
 
 /obj/item/book/granter/action/on_reading_finished(mob/user)
-	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [actionname]!</span>")
+	to_chat(user, span_notice("You feel like you've got a good handle on [actionname]!"))
 	var/datum/action/G = new granted_action
 	G.Grant(user)
 	onlearned(user)
@@ -129,9 +129,9 @@
 	..()
 	if(oneuse)
 		user.visible_message(
-		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!</span>",
-		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
-		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		message = span_notice("Just as [user] finishes reading [p_their(user)] copy of [src], the ancient book crumbles to dust!"),
+		self_message = span_caution("The ancient copy of [src] crumbles to dust as you finish reading it."),
+		blind_message = span_notice("You hear something crumble."))
 		ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 		qdel(src)
 
@@ -141,7 +141,7 @@
 	desc = "A seminal work on the dying art of booze sliding."
 	icon_state = "barbook"
 	actionname = "drink flinging"
-	oneuse = FALSE
+	oneuse = TRUE
 	remarks = list("The trick is keeping a low center of gravity it seems...", "The viscosity of the liquid is important...", "Accounting for crosswinds... really?", "Drag coefficients of various popular drinking glasses...", "What the heck is laminar flow and why does it matter here?", "Greasing the bar seems like it'd be cheating...", "I don't think I'll be working with superfluids...")
 
 /datum/action/innate/drink_fling
@@ -176,13 +176,13 @@
 	check_flags = NONE
 
 /datum/action/innate/origami/Activate()
-	to_chat(owner, "<span class='notice'>You will now fold origami planes.</span>")
+	to_chat(owner, span_notice("You will now fold origami planes."))
 	button_icon_state = "origami_on"
 	active = TRUE
 	UpdateButtonIcon()
 
 /datum/action/innate/origami/Deactivate()
-	to_chat(owner, "<span class='notice'>You will no longer fold origami planes.</span>")
+	to_chat(owner, span_notice("You will no longer fold origami planes."))
 	button_icon_state = "origami_off"
 	active = FALSE
 	UpdateButtonIcon()
@@ -200,29 +200,29 @@
 		if(knownspell.type == spell)
 			if(user.mind)
 				if(iswizard(user))
-					to_chat(user,"<span class='notice'>You're already far more versed in this spell than this flimsy how-to book can provide.</span>")
+					to_chat(user,span_notice("You're already far more versed in this spell than this flimsy how-to book can provide."))
 				else
-					to_chat(user,"<span class='notice'>You've already read this one.</span>")
+					to_chat(user,span_notice("You've already read this one."))
 			return TRUE
 	return FALSE
 
 /obj/item/book/granter/spell/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about casting [spellname]...</span>")
+	to_chat(user, span_notice("You start reading about casting [spellname]..."))
 
 /obj/item/book/granter/spell/on_reading_finished(mob/user)
-	to_chat(user, "<span class='notice'>You feel like you've experienced enough to cast [spellname]!</span>")
+	to_chat(user, span_notice("You feel like you've experienced enough to cast [spellname]!"))
 	var/obj/effect/proc_holder/spell/S = new spell
 	user.mind.AddSpell(S)
 	user.log_message("learned the spell [spellname] ([S])", LOG_ATTACK, color="orange")
 	onlearned(user)
 
 /obj/item/book/granter/spell/recoil(mob/user)
-	user.visible_message("<span class='warning'>[src] glows in a black light!</span>")
+	user.visible_message(span_warning("[src] glows in a black light!"))
 
 /obj/item/book/granter/spell/onlearned(mob/user)
 	..()
 	if(oneuse)
-		user.visible_message("<span class='caution'>[src] glows dark for a second!</span>")
+		user.visible_message(span_caution("[src] glows dark for a second!"))
 
 /obj/item/book/granter/spell/fireball
 	spell = /obj/effect/proc_holder/spell/aimed/fireball
@@ -245,7 +245,7 @@
 
 /obj/item/book/granter/spell/nuclearfist/recoil(mob/living/carbon/user)
 	..()
-	to_chat(user, "<span class='danger'>Your arm spontaneously detonates!</span>")
+	to_chat(user, span_danger("Your arm spontaneously detonates!"))
 	explosion(user.loc, -1, 0, 2, -1, FALSE, FALSE, 2)
 	var/obj/item/bodypart/part = user.get_holding_bodypart_of_item(src)
 	if(part)
@@ -272,7 +272,7 @@
 
 /obj/item/book/granter/spell/smoke/recoil(mob/user)
 	..()
-	to_chat(user,"<span class='caution'>Your stomach rumbles...</span>")
+	to_chat(user,span_caution("Your stomach rumbles..."))
 	if(user.nutrition > NUTRITION_LEVEL_STARVING + 50)
 		user.set_nutrition(NUTRITION_LEVEL_STARVING + 50)
 
@@ -285,7 +285,7 @@
 
 /obj/item/book/granter/spell/blind/recoil(mob/user)
 	..()
-	to_chat(user,"<span class='warning'>You go blind!</span>")
+	to_chat(user,span_warning("You go blind!"))
 	user.blind_eyes(10)
 
 /obj/item/book/granter/spell/mindswap
@@ -308,17 +308,17 @@
 		stored_swap = null
 	if(!stored_swap)
 		stored_swap = user
-		to_chat(user,"<span class='warning'>For a moment you feel like you don't even know who you are anymore.</span>")
+		to_chat(user,span_warning("For a moment you feel like you don't even know who you are anymore."))
 		return
 	if(stored_swap == user)
-		to_chat(user,"<span class='notice'>You stare at the book some more, but there doesn't seem to be anything else to learn...</span>")
+		to_chat(user,span_notice("You stare at the book some more, but there doesn't seem to be anything else to learn..."))
 		return
 	var/obj/effect/proc_holder/spell/pointed/mind_transfer/swapper = new
 	if(swapper.cast(list(stored_swap), user, TRUE, TRUE))
-		to_chat(user,"<span class='warning'>You're suddenly somewhere else... and someone else?!</span>")
-		to_chat(stored_swap,"<span class='warning'>Suddenly you're staring at [src] again... where are you, who are you?!</span>")
+		to_chat(user,span_warning("You're suddenly somewhere else... and someone else?!"))
+		to_chat(stored_swap,span_warning("Suddenly you're staring at [src] again... where are you, who are you?!"))
 	else
-		user.visible_message("<span class='warning'>[src] fizzles slightly as it stops glowing!</span>") //if the mind_transfer failed to transfer mobs, likely due to the target being catatonic.
+		user.visible_message(span_warning("[src] fizzles slightly as it stops glowing!")) //if the mind_transfer failed to transfer mobs, likely due to the target being catatonic.
 
 	stored_swap = null
 
@@ -331,7 +331,7 @@
 
 /obj/item/book/granter/spell/forcewall/recoil(mob/living/user)
 	..()
-	to_chat(user,"<span class='warning'>You suddenly feel very solid!</span>")
+	to_chat(user,span_warning("You suddenly feel very solid!"))
 	user.Stun(40, ignore_canstun = TRUE)
 	user.petrify(30)
 
@@ -344,7 +344,7 @@
 
 /obj/item/book/granter/spell/knock/recoil(mob/living/user)
 	..()
-	to_chat(user,"<span class='warning'>You're knocked down!</span>")
+	to_chat(user,span_warning("You're knocked down!"))
 	user.DefaultCombatKnockdown(40)
 
 /obj/item/book/granter/spell/barnyard
@@ -363,7 +363,7 @@
 		user.equip_to_slot_if_possible(magichead, SLOT_WEAR_MASK, TRUE, TRUE)
 		qdel(src)
 	else
-		to_chat(user,"<span class='notice'>I say thee neigh</span>") //It still lives here
+		to_chat(user,span_notice("I say thee neigh")) //It still lives here
 
 /obj/item/book/granter/spell/charge
 	spell = /obj/effect/proc_holder/spell/targeted/charge
@@ -374,7 +374,7 @@
 
 /obj/item/book/granter/spell/charge/recoil(mob/user)
 	..()
-	to_chat(user,"<span class='warning'>[src] suddenly feels very warm!</span>")
+	to_chat(user,span_warning("[src] suddenly feels very warm!"))
 	empulse_using_range(src, 1)
 
 /obj/item/book/granter/spell/summonitem
@@ -386,7 +386,7 @@
 
 /obj/item/book/granter/spell/summonitem/recoil(mob/user)
 	..()
-	to_chat(user,"<span class='warning'>[src] suddenly vanishes!</span>")
+	to_chat(user,span_warning("[src] suddenly vanishes!"))
 	qdel(src)
 
 /obj/item/book/granter/spell/random
@@ -404,12 +404,12 @@
 		return TRUE
 	var/datum/martial_art/MA = martial
 	if(user.mind.has_martialart(initial(MA.id)))
-		to_chat(user,"<span class='warning'>You already know [martialname]!</span>")
+		to_chat(user,span_warning("You already know [martialname]!"))
 		return TRUE
 	return FALSE
 
 /obj/item/book/granter/martial/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [martialname]...</span>")
+	to_chat(user, span_notice("You start reading about [martialname]..."))
 
 /obj/item/book/granter/martial/on_reading_finished(mob/user)
 	to_chat(user, "[greet]")
@@ -423,17 +423,17 @@
 	name = "old manual"
 	martialname = "close quarters combat"
 	desc = "A small, black manual. There are drawn instructions of tactical hand-to-hand combat."
-	greet = "<span class='boldannounce'>You've mastered the basics of CQC.</span>"
+	greet = span_boldannounce("You've mastered the basics of CQC.")
 	icon_state = "cqcmanual"
 	remarks = list("Kick... Slam...", "Lock... Kick...", "Strike their abdomen, neck and back for critical damage...", "Slam... Lock...", "I could probably combine this with some other martial arts!", "Words that kill...", "The last and final moment is yours...")
 
 /obj/item/book/granter/martial/cqc/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		to_chat(user, "<span class='warning'>[src] beeps ominously...</span>")
+		to_chat(user, span_warning("[src] beeps ominously..."))
 
 /obj/item/book/granter/martial/cqc/recoil(mob/living/carbon/user)
-	to_chat(user, "<span class='warning'>[src] explodes!</span>")
+	to_chat(user, span_warning("[src] explodes!"))
 	playsound(src,'sound/effects/explosion1.ogg',40,1)
 	user.flash_act(1, 1)
 	user.adjustBruteLoss(6)
@@ -464,7 +464,7 @@
 	name = "shifting scroll"
 	martialname = "rising bass"
 	desc = "A paper scroll that seems to move even as you read it, the letters never seem to stay still."
-	greet = "<span class='sciradio'>You have learned the ancient martial art of the Rising Bass. Your skill at running away has increased quite a bit. Use the combos to get away from opponents quickly. Along with this, you now dodge all projectiles and catch anything thrown at you.</span>"
+	greet = span_sciradio("You have learned the ancient martial art of the Rising Bass. Your skill at running away has increased quite a bit. Use the combos to get away from opponents quickly. Along with this, you now dodge all projectiles and catch anything thrown at you.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
 	remarks = list("The trick is to disarm them...","Running away helps in many situations...","Never stay still...","Fighting won't help unless you're forced to...", "Crush their limbs to incapacitate them...", "Stay as far away as possible...")
@@ -481,7 +481,7 @@
 	name = "berserker's rites"
 	martialname = "berserkers rites"
 	desc = "A paper scroll detailing the sacred rites of the berserker. It is against the law of the Legion for any not walking the path of the berserker to read this."
-	greet = "<span class='sciradio'>You have mastered the rites of the berserker. Use the help verb to see your combos.</span>"
+	greet = span_sciradio("You have mastered the rites of the berserker. Use the help verb to see your combos.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state = "scroll2"
 	remarks = list("Rip and tear...", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "You are huge, that means you have huge guts...")
@@ -516,7 +516,7 @@
 	name = "parchment scroll"
 	martialname = "krav maga"
 	desc = "A worn parchment scrap written in an ancient language. Somehow you can still understand the lessons!"
-	greet = "<span class='sciradio'>You have learned the ancient martial art of Krav Maga. You have special attacks with which to take down your foes.</span>"
+	greet = span_sciradio("You have learned the ancient martial art of Krav Maga. You have special attacks with which to take down your foes.")
 	icon = 'icons/obj/wizard.dmi'
 	icon_state ="scroll2"
 	remarks = list("Sweep the legs...", "Chop the throat...", "Punch the lungs...", "Get the gold...", "Where are my sick gloves..?")
@@ -543,16 +543,16 @@
 	for(var/crafting_recipe_type in crafting_recipe_types)
 		var/datum/crafting_recipe/R = crafting_recipe_type
 		user.mind.teach_crafting_recipe(crafting_recipe_type)
-		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")
+		to_chat(user,span_notice("You learned how to make [initial(R.name)]."))
 	onlearned(user)
 
 /obj/item/book/granter/crafting_recipe/onlearned(mob/living/user)
 	..()
 	if(oneuse)
 		user.visible_message(
-		message = "<span class='notice'>Just as [user] finishes reading [p_their(user)] copy of [src], the ancient document crumbles to dust!</span>",
-		self_message = "<span class='caution'>The ancient copy of [src] crumbles to dust as you finish reading it.</span>",
-		blind_message = "<span class='notice'>You hear something crumble.</span>")
+		message = span_notice("Just as [user] finishes reading [p_their(user)] copy of [src], the ancient document crumbles to dust!"),
+		self_message = span_caution("The ancient copy of [src] crumbles to dust as you finish reading it."),
+		blind_message = span_notice("You hear something crumble."))
 		qdel(src)
 
 
@@ -618,7 +618,7 @@
 	icon_state = "gab3"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/burst_improvement, /datum/crafting_recipe/recoil_decrease)
+	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/ergonomic_grip, /datum/crafting_recipe/metal_guard, /datum/crafting_recipe/forged_barrel, /datum/crafting_recipe/booster, /datum/crafting_recipe/laserguide)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_four
 	name = "Guns and Bullets, Part 4"
@@ -858,11 +858,11 @@
 	crafting_recipe_types = list(/datum/crafting_recipe/set_vrboard/den)
 
 /obj/item/book/granter/crafting_recipe/ODF
-	name = "Weapons of Yuma and the Oasis Defense Force"
+	name = "Weapons of Texarkana and the Nash Defense Force"
 	desc = "a book detailing weapons used in the region and by the local town, it has lithiographed pictures of hand-drawn schematics for each weapon type"
 	oneuse = TRUE
 	crafting_recipe_types = list(/datum/crafting_recipe/policepistol, /datum/crafting_recipe/durathread_vest, /datum/crafting_recipe/policerifle, /datum/crafting_recipe/steelbib/heavy, /datum/crafting_recipe/armyhelmetheavy, /datum/crafting_recipe/huntingshotgun)
-	remarks = list("Looks like Oasis hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
+	remarks = list("Looks like Nash hand-crafts replicas from a pre-war police armory", "Some of these weapons are more than 200 years old....", "Duct tape really can hold it together!", "So that is how you laminate armor sheets together", "Looks like you can beat metal into just the right shape to replace the bits")
 
 
 /obj/item/book/granter/trait/tagger
@@ -885,11 +885,15 @@
 		/datum/crafting_recipe/turbo, 
 		/datum/crafting_recipe/psycho, 
 		/datum/crafting_recipe/medx, 
+		/datum/crafting_recipe/medx/chemistry, 
 		/datum/crafting_recipe/stimpak, 
+		/datum/crafting_recipe/stimpak/chemistry, 
 		/datum/crafting_recipe/stimpak5, 
+		/datum/crafting_recipe/stimpak5/chemistry, 
 		/datum/crafting_recipe/superstimpak, 
 		/datum/crafting_recipe/superstimpak5, 
-		/datum/crafting_recipe/buffout)
+		/datum/crafting_recipe/buffout,
+		/datum/crafting_recipe/steady)
 
 /obj/item/book/granter/trait/bigleagues
 	name = "Grognak the Barbarian"
@@ -1019,7 +1023,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout, /datum/crafting_recipe/steady)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	return ..()
 
@@ -1054,7 +1058,7 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/buffout)
+				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout, /datum/crafting_recipe/steady)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 			if("Dean's Electronics")
 				granted_trait = TRAIT_TECHNOPHREAK
@@ -1134,6 +1138,61 @@
 		/datum/crafting_recipe/healpoultice, 
 		/datum/crafting_recipe/healpoultice5, 
 		/datum/crafting_recipe/warmace)
+
+/obj/item/book/granter/trait/tribaltraditions
+	name = "Tribal Traditions Booklet"
+	desc = "An instruction manual on your tribes garments!"
+	oneuse = TRUE
+	granted_trait = null
+	pages_to_mastery = 0
+	time_per_page = 0
+
+/obj/item/book/granter/trait/tribaltraditions/attack_self(mob/user)
+	var/list/choices = list("Dead Horses traditions","White Legs traditions","Rustwalkers traditions","Eighties traditions","Sorrows traditions","Wayfarer traditions","Bone Dancer traditions")
+	if(granted_trait == null)
+		var/choice = input("Choose a trait:") in choices
+		switch(choice)
+			if(null)
+				return 0
+			if("White Legs traditions")
+				traitname = "White Legs traditions"
+				granted_trait = TRAIT_WHITELEGS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/whitelegs/lightarmour, /datum/crafting_recipe/tribalwar/whitelegs/armour, /datum/crafting_recipe/tribalwar/whitelegs/garb, /datum/crafting_recipe/tribalwar/whitelegs/femalegarb, /datum/crafting_recipe/tribalwar/whitelegs/heavyarmour)
+			if("Dead Horses traditions")
+				traitname = "Dead Horses traditions"
+				granted_trait = TRAIT_DEADHORSES_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/deadhorses/lightarmour, /datum/crafting_recipe/tribalwar/deadhorses/armour, /datum/crafting_recipe/tribalwar/deadhorses/garb,
+								/datum/crafting_recipe/tribalwar/deadhorses/femalegarb, /datum/crafting_recipe/tribalwar/deadhorses/heavyarmour)
+			if("Rustwalkers traditions")
+				traitname = "Rustwalkers traditions"
+				granted_trait = TRAIT_RUSTWALKERS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/rustwalkers/lightarmour, /datum/crafting_recipe/tribalwar/rustwalkers/armour, /datum/crafting_recipe/tribalwar/rustwalkers/garb,
+								/datum/crafting_recipe/tribalwar/rustwalkers/femalegarb, /datum/crafting_recipe/tribalwar/rustwalkers/heavyarmour)
+			if("Eighties traditions")
+				traitname = "Eighties traditions"
+				granted_trait = TRAIT_EIGHTIES_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/eighties/lightarmour, /datum/crafting_recipe/tribalwar/eighties/armour, /datum/crafting_recipe/tribalwar/eighties/garb,
+								/datum/crafting_recipe/tribalwar/eighties/femalegarb, /datum/crafting_recipe/tribalwar/eighties/heavyarmour)
+			if("Sorrows traditions")
+				traitname = "Sorrows traditions"
+				granted_trait = TRAIT_SORROWS_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/sorrows/armour, /datum/crafting_recipe/tribalwar/sorrows/garb, /datum/crafting_recipe/tribalwar/sorrows/femalegarb,
+								/datum/crafting_recipe/tribalwar/sorrows/yaoguaigauntlet)
+			if("Wayfarer traditions")
+				traitname = "Wayfarer traditions"
+				granted_trait = TRAIT_WAYFARER_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/lighttribe, /datum/crafting_recipe/tribalwar/heavytribe, /datum/crafting_recipe/warmace)
+			if("Bone Dancer traditions")
+				traitname = "Bone Dancer traditions"
+				granted_trait = TRAIT_BONEDANCER_TRAD
+				crafting_recipe_types = list(/datum/crafting_recipe/tribalwar/bone/lightarmour,/datum/crafting_recipe/tribalwar/bone/armour, /datum/crafting_recipe/tribalwar/bone/heavyarmour,
+								/datum/crafting_recipe/tribalwar/bone/garb,/datum/crafting_recipe/tribalwar/bone/helmet)
+		return ..()
+
+
+/obj/item/book/granter/trait/tribaltraditions/Initialize()
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 
 /obj/item/book/granter/crafting_recipe/tribal/whitelegs
 	name = "White Legs traditions"

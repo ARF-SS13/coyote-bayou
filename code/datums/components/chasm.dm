@@ -87,8 +87,8 @@
 
 	if(T)
 		// send to the turf below
-		AM.visible_message("<span class='boldwarning'>[AM] falls into [parent]!</span>", "<span class='userdanger'>[fall_message]</span>")
-		T.visible_message("<span class='boldwarning'>[AM] falls from above!</span>")
+		AM.visible_message(span_boldwarning("[AM] falls into [parent]!"), span_userdanger("[fall_message]"))
+		T.visible_message(span_boldwarning("[AM] falls from above!"))
 		AM.forceMove(T)
 		if(isliving(AM))
 			var/mob/living/L = AM
@@ -98,7 +98,7 @@
 
 	else
 		// send to oblivion
-		AM.visible_message("<span class='boldwarning'>[AM] falls into [parent]!</span>", "<span class='userdanger'>[oblivion_message]</span>")
+		AM.visible_message(span_boldwarning("[AM] falls into [parent]!"), span_userdanger("[oblivion_message]"))
 		if (isliving(AM))
 			var/mob/living/L = AM
 			L.mob_transforming = TRUE
@@ -127,7 +127,7 @@
 		qdel(AM)
 		if(AM && !QDELETED(AM))	//It's indestructible
 			var/atom/parent = src.parent
-			parent.visible_message("<span class='boldwarning'>[parent] spits out [AM]!</span>")
+			parent.visible_message(span_boldwarning("[parent] spits out [AM]!"))
 			AM.alpha = oldalpha
 			AM.color = oldcolor
 			AM.transform = oldtransform

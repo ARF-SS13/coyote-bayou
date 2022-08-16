@@ -112,7 +112,7 @@
 			picked_organ.toggle_visibility(picked_visibility)
 	return
 
-/*/mob/living/carbon/verb/toggle_arousal_state()
+/mob/living/carbon/verb/toggle_arousal_state()
 	set category = "IC"
 	set name = "Toggle genital arousal"
 	set desc = "Allows you to toggle which genitals are showing signs of arousal."
@@ -128,11 +128,12 @@
 		var/original_state = picked_organ.aroused_state
 		picked_organ.set_aroused_state(!picked_organ.aroused_state)
 		if(original_state != picked_organ.aroused_state)
-			to_chat(src,"<span class='userlove'>[picked_organ.aroused_state ? picked_organ.arousal_verb : picked_organ.unarousal_verb].</span>")
+			to_chat(src,span_userlove("[picked_organ.aroused_state ? picked_organ.arousal_verb : picked_organ.unarousal_verb]."))
 		else
-			to_chat(src,"<span class='userlove'>You can't make that genital [picked_organ.aroused_state ? "unaroused" : "aroused"]!</span>")
+			to_chat(src,span_userlove("You can't make that genital [picked_organ.aroused_state ? "unaroused" : "aroused"]!"))
 		picked_organ.update_appearance()
-	return*/
+		update_body(TRUE)
+	return
 
 
 /obj/item/organ/genital/proc/modify_size(modifier, min = -INFINITY, max = INFINITY)

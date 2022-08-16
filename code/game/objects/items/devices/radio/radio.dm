@@ -49,7 +49,7 @@
 	//fortuna addition end. radio management.
 
 /obj/item/radio/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] starts bouncing [src] off [user.p_their()] head! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/radio/proc/set_frequency(new_frequency)
@@ -375,9 +375,9 @@
 /obj/item/radio/examine(mob/user)
 	. = ..()
 	if (unscrewed)
-		. += "<span class='notice'>It can be attached and modified.</span>"
+		. += span_notice("It can be attached and modified.")
 	else
-		. += "<span class='notice'>It cannot be modified or attached.</span>"
+		. += span_notice("It cannot be modified or attached.")
 	//Fortuna edit start. Radio management
 	if(kill_switched)
 		. += span_warning("The radio has been disabled remotely and no longer functions!")
@@ -392,9 +392,9 @@
 	if(istype(W, /obj/item/screwdriver))
 		unscrewed = !unscrewed
 		if(unscrewed)
-			to_chat(user, "<span class='notice'>The radio can now be attached and modified!</span>")
+			to_chat(user, span_notice("The radio can now be attached and modified!"))
 		else
-			to_chat(user, "<span class='notice'>The radio can no longer be modified or attached!</span>")
+			to_chat(user, span_notice("The radio can no longer be modified or attached!"))
 	else
 		return ..()
 /*
@@ -404,7 +404,7 @@
 		return
 	if(prob(severity * 1.5))
 		if(listening && ismob(loc))	// if the radio is turned on and on someone's person they notice
-			to_chat(loc, "<span class='warning'>\The [src] shorts out!</span>")
+			to_chat(loc, span_warning("\The [src] shorts out!"))
 		broadcasting = FALSE
 		listening = FALSE
 		for (var/ch_name in channels)
@@ -448,14 +448,14 @@
 					keyslot = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption key in the radio.</span>")
+			to_chat(user, span_notice("You pop out the encryption key in the radio."))
 
 		else
-			to_chat(user, "<span class='warning'>This radio doesn't have any encryption keys!</span>")
+			to_chat(user, span_warning("This radio doesn't have any encryption keys!"))
 
 	else if(istype(W, /obj/item/encryptionkey/))
 		if(keyslot)
-			to_chat(user, "<span class='warning'>The radio can't hold another key!</span>")
+			to_chat(user, span_warning("The radio can't hold another key!"))
 			return
 
 		if(!keyslot)
@@ -492,3 +492,39 @@
 	desc = "a homemade radio transceiver made out of transistors and wire."
 	canhear_range = 2
 	w_class = WEIGHT_CLASS_NORMAL
+
+GLOBAL_VAR_INIT(redwater_frequency, null)
+GLOBAL_LIST_INIT(banned_redwater_freqs, list(FREQ_COMMON, 1488))
+
+/obj/item/radio/redwater
+	name = "handheld transceiver"
+	icon_state = "walkietalkie"
+	item_state = "walkietalkie"
+	desc = "a rugged radio used by even more rugged folk. Looks kinda heavy!"
+	canhear_range = 2
+	w_class = WEIGHT_CLASS_TINY
+	force = WEAPON_FORCE_BLUNT_LARGE // 15 Brute, enough to daze someone
+	sharpness = SHARP_NONE
+
+/obj/item/radio/redwater/Initialize()
+	. = ..()
+	setup_redwater_frequency()
+	set_frequency(GLOB.redwater_frequency)
+	color = "#5c5c5c"
+
+/obj/item/radio/redwater/proc/setup_redwater_frequency(mob/user)
+	if(GLOB.redwater_frequency > 1)
+		return // already setup!
+	var/frequency_ok = FALSE
+	var/tries_left = 5
+	while(!frequency_ok)
+		GLOB.redwater_frequency = rand(MIN_FREQ, MAX_FREQ)
+		if(GLOB.redwater_frequency in GLOB.banned_redwater_freqs)
+			if(tries_left-- > 0)
+				continue
+		frequency_ok = TRUE
+
+/obj/item/radio/redwater/examine(mob/user)
+	. = ..()
+	if(GLOB.redwater_frequency)
+		. += "Scratched into the bottom is a note, \"Don't forget, we're tuned to [span_boldnotice(GLOB.redwater_frequency * 0.1)]!\""

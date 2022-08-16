@@ -15,9 +15,9 @@
 	icon_dead = "mirelurk_d"
 	speed = 1
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
-	maxHealth = 150
-	health = 150
-	melee_damage_lower = 10
+	maxHealth = 120
+	health = 120
+	melee_damage_lower = 5
 	melee_damage_upper = 20
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
@@ -33,10 +33,10 @@
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
-	maxHealth = 250
-	health = 250
-	melee_damage_lower = 30
-	melee_damage_upper = 45
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -50,8 +50,8 @@
 	icon_gib = "gib"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
 	speed = 1
-	maxHealth = 50
-	health = 50
+	maxHealth = 40
+	health = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	gold_core_spawnable = HOSTILE_SPAWN

@@ -39,7 +39,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
 	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_ID
+	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_BELT | ITEM_SLOT_NECK
 
 /obj/item/storage/bag/money/small/Initialize()
 	. = ..()

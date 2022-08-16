@@ -151,6 +151,8 @@
 	var/sharpness = SHARP_NONE
 	//Generic flags
 	var/simple_mob_flags = NONE
+	//Mob may be offset randomly on both axes by this much
+	var/randpixel = 0
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -166,6 +168,8 @@
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
+	pixel_x = rand(-randpixel, randpixel)
+	pixel_y = rand(-randpixel, randpixel)
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
@@ -179,6 +183,8 @@
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
+	
+	QDEL_NULL(access_card)
 
 	return ..()
 
@@ -208,16 +214,23 @@
 
 /mob/living/simple_animal/proc/handle_automated_movement()
 	set waitfor = FALSE
-	if(!stop_automated_movement && wander)
-		if((isturf(src.loc) || allow_movement_on_non_turfs) && CHECK_MULTIPLE_BITFIELDS(mobility_flags, MOBILITY_STAND|MOBILITY_MOVE) && !buckled)		//This is so it only moves if it's not inside a closet, gentics machine, etc.
-			turns_since_move++
-			if(turns_since_move >= turns_per_move)
-				if(!(stop_automated_movement_when_pulled && pulledby)) //Some animals don't move when pulled
-					var/anydir = pick(GLOB.cardinals)
-					if(Process_Spacemove(anydir))
-						Move(get_step(src, anydir), anydir)
-						turns_since_move = 0
-			return 1
+	if(stop_automated_movement || !wander)
+		return
+	if(!isturf(loc) && !allow_movement_on_non_turfs)
+		return
+	if(!(mobility_flags & MOBILITY_MOVE)) //This is so it only moves if it's not inside a closet, gentics machine, etc.
+		return TRUE
+
+	turns_since_move++
+	if(turns_since_move < turns_per_move)
+		return TRUE
+	if(stop_automated_movement_when_pulled && pulledby) //Some animals don't move when pulled
+		return TRUE
+	var/anydir = pick(GLOB.cardinals)
+	if(Process_Spacemove(anydir))
+		Move(get_step(src, anydir), anydir)
+		turns_since_move = 0
+	return TRUE
 
 /mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
@@ -355,11 +368,9 @@
 
 
 /mob/living/simple_animal/proc/drop_loot()
-	if(!loot.len)
-		return
 	for(var/drop in loot)
 		for(var/i in 1 to max(1, loot[drop]))
-			new drop(loc)
+			new drop(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
@@ -451,13 +462,13 @@
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, "<span class='warning'>You are too far away!</span>")
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	if(!(no_dextery || dextrous))
-		to_chat(src, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(src, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 

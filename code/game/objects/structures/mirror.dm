@@ -54,7 +54,7 @@
 
 	. = ..()
 	if(broken) // breaking a mirror truly gets you bad luck!
-		to_chat(user, "<span class='warning'>A chill runs down your spine as [src] shatters...</span>")
+		to_chat(user, span_warning("A chill runs down your spine as [src] shatters..."))
 		user.AddComponent(/datum/component/omen, silent=TRUE) // we have our own message
 
 /obj/structure/mirror/bullet_act(obj/item/projectile/P)
@@ -64,7 +64,7 @@
 	. = ..()
 	if(broken) // breaking a mirror truly gets you bad luck!
 		var/mob/living/unlucky_dude = P.firer
-		to_chat(unlucky_dude, "<span class='warning'>A chill runs down your spine as [src] shatters...</span>")
+		to_chat(unlucky_dude, span_warning("A chill runs down your spine as [src] shatters..."))
 		unlucky_dude.AddComponent(/datum/component/omen, silent=TRUE) // we have our own message
 
 /obj/structure/mirror/obj_break(damage_flag, mapload)
@@ -93,9 +93,9 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+	to_chat(user, span_notice("You begin repairing [src]..."))
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, "<span class='notice'>You repair [src].</span>")
+		to_chat(user, span_notice("You repair [src]."))
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)
@@ -184,7 +184,7 @@
 						if(custom_tone)
 							var/temp_hsv = RGBtoHSV(new_s_tone)
 							if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
-								to_chat(H,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+								to_chat(H,span_danger("Invalid color. Your color is not bright enough."))
 							else
 								H.skin_tone = custom_tone
 								H.dna.skin_tone_override = custom_tone
@@ -201,7 +201,7 @@
 						H.dna.features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 
 					else
-						to_chat(H, "<span class='notice'>Invalid color. Your color is not bright enough.</span>")
+						to_chat(H, span_notice("Invalid color. Your color is not bright enough."))
 
 			H.update_body()
 			H.update_hair()
@@ -216,14 +216,14 @@
 			if(H.gender == "male")
 				if(alert(H, "Become a Witch?", "Confirmation", "Yes", "No") == "Yes")
 					H.gender = "female"
-					to_chat(H, "<span class='notice'>Man, you feel like a woman!</span>")
+					to_chat(H, span_notice("Man, you feel like a woman!"))
 				else
 					return
 
 			else
 				if(alert(H, "Become a Warlock?", "Confirmation", "Yes", "No") == "Yes")
 					H.gender = "male"
-					to_chat(H, "<span class='notice'>Whoa man, you feel like a man!</span>")
+					to_chat(H, span_notice("Whoa man, you feel like a man!"))
 				else
 					return
 			H.dna.update_ui_block(DNA_GENDER_BLOCK)

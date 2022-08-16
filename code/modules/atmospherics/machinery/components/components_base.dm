@@ -153,7 +153,7 @@
 /obj/machinery/atmospherics/components/ui_status(mob/user)
 	if(allowed(user))
 		return ..()
-	to_chat(user, "<span class='danger'>Access denied.</span>")
+	to_chat(user, span_danger("Access denied."))
 	return UI_CLOSE
 
 /obj/machinery/atmospherics/components/attack_ghost(mob/dead/observer/O)

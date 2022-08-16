@@ -25,8 +25,6 @@
 
 /obj/item/rcl/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	update_icon()
 
 /obj/item/rcl/ComponentInitialize()
@@ -35,11 +33,13 @@
 	AddComponent(/datum/component/two_handed)
 
 /// triggered on wield of two handed item
-/obj/item/rcl/proc/on_wield(obj/item/source, mob/user)
+/obj/item/rcl/wield(mob/user)
+	. = ..()
 	active = TRUE
 
 /// triggered on unwield of two handed item
-/obj/item/rcl/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/rcl/unwield(mob/user)
+	. = ..()
 	active = FALSE
 
 /obj/item/rcl/attackby(obj/item/W, mob/user)
@@ -48,7 +48,7 @@
 
 		if(!loaded)
 			if(!user.transferItemToLoc(W, src))
-				to_chat(user, "<span class='warning'>[src] is stuck to your hand!</span>")
+				to_chat(user, span_warning("[src] is stuck to your hand!"))
 				return
 			else
 				loaded = W //W.loc is src at this point.
@@ -62,12 +62,12 @@
 		else
 			return
 		update_icon()
-		to_chat(user, "<span class='notice'>You add the cables to [src]. It now contains [loaded.amount].</span>")
+		to_chat(user, span_notice("You add the cables to [src]. It now contains [loaded.amount]."))
 	else if(istype(W, /obj/item/screwdriver))
 		if(!loaded)
 			return
 		if(ghetto && prob(10)) //Is it a ghetto RCL? If so, give it a 10% chance to fall apart
-			to_chat(user, "<span class='warning'>You attempt to loosen the securing screws on the side, but it falls apart!</span>")
+			to_chat(user, span_warning("You attempt to loosen the securing screws on the side, but it falls apart!"))
 			while(loaded.amount > 30) //There are only two kinds of situations: "nodiff" (60,90), or "diff" (31-59, 61-89)
 				var/diff = loaded.amount % 30
 				if(diff)
@@ -79,7 +79,7 @@
 			qdel(src)
 			return
 
-		to_chat(user, "<span class='notice'>You loosen the securing screws on the side, allowing you to lower the guiding edge and retrieve the wires.</span>")
+		to_chat(user, span_notice("You loosen the securing screws on the side, allowing you to lower the guiding edge and retrieve the wires."))
 		while(loaded.amount > 30) //There are only two kinds of situations: "nodiff" (60,90), or "diff" (31-59, 61-89)
 			var/diff = loaded.amount % 30
 			if(diff)
@@ -100,7 +100,7 @@
 /obj/item/rcl/examine(mob/user)
 	. = ..()
 	if(loaded)
-		. += "<span class='info'>It contains [loaded.amount]/[max_amount] cables.</span>"
+		. += span_info("It contains [loaded.amount]/[max_amount] cables.")
 
 /obj/item/rcl/Destroy()
 	QDEL_NULL(loaded)
@@ -136,7 +136,7 @@
 	update_icon()
 	if(!loaded || !loaded.amount)
 		if(loud)
-			to_chat(user, "<span class='notice'>The last of the cables unreel from [src].</span>")
+			to_chat(user, span_notice("The last of the cables unreel from [src]."))
 		if(loaded)
 			QDEL_NULL(loaded)
 			loaded = null
@@ -186,11 +186,11 @@ obj/item/rcl/proc/getMobhook(mob/to_hook)
 	if(!isturf(user.loc))
 		return
 	if(is_empty(user, 0))
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, span_warning("\The [src] is empty!"))
 		return
 
 	if(prob(2) && ghetto) //Give ghetto RCLs a 2% chance to jam, requiring it to be reactviated manually.
-		to_chat(user, "<span class='warning'>[src]'s wires jam!</span>")
+		to_chat(user, span_warning("[src]'s wires jam!"))
 		active = FALSE
 		return
 	else
@@ -275,7 +275,7 @@ obj/item/rcl/proc/getMobhook(mob/to_hook)
 	if(!isturf(user.loc))
 		return
 	if(is_empty(user, 0))
-		to_chat(user, "<span class='warning'>\The [src] is empty!</span>")
+		to_chat(user, span_warning("\The [src] is empty!"))
 		return
 
 	var/turf/T = get_turf(user)

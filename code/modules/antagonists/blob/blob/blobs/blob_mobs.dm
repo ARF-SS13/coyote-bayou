@@ -135,7 +135,7 @@
 	H.forceMove(src)
 	oldguy = H
 	update_icons()
-	visible_message("<span class='warning'>The corpse of [H.name] suddenly rises!</span>")
+	visible_message(span_warning("The corpse of [H.name] suddenly rises!"))
 
 /mob/living/simple_animal/hostile/blob/blobspore/death(gibbed)
 	// On death, create a small smoke of harmful gas (s-Acid)
@@ -230,7 +230,7 @@
 /mob/living/simple_animal/hostile/blob/blobbernaut/start_pulling(atom/movable/AM, state, force = pull_force, supress_message = FALSE)
 	if(!independent && ismob(AM))
 		if(!supress_message)
-			to_chat(src, "<span class='warning'>You are unable to grasp people in this form.</span>")
+			to_chat(src, span_warning("You are unable to grasp people in this form."))
 		return FALSE
 	return ..()
 

@@ -31,7 +31,7 @@
 	repeatable = TRUE
 
 /datum/surgery_step/dissection/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You start dissecting [target].</span>",
+	display_results(user, target, span_notice("You start dissecting [target]."),
 	"[user] starts dissecting [target].",
 	"[user] starts dissecting [target].")
 
@@ -74,7 +74,7 @@
 
 /datum/surgery_step/dissection/success(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	var/points_earned = check_value(target, surgery)
-	display_results(user, target, "<span class='notice'>You dissect [target], and add your [points_earned] point\s worth of discoveries to the research database!</span>",
+	display_results(user, target, span_notice("You dissect [target], and add your [points_earned] point\s worth of discoveries to the research database!"),
 	"[user] dissects [target], discovering [points_earned] point\s of data!",
 	"[user] dissects [target]!")
 	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = points_earned))
@@ -85,7 +85,7 @@
 	return TRUE
 
 /datum/surgery_step/dissection/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You dissect [target], but do not find anything particularly interesting.</span>",
+	display_results(user, target, span_notice("You dissect [target], but do not find anything particularly interesting."),
 	"[user] dissects [target], however it seems [user.p_they()] didn't find anything useful.",
 	"[user] dissects [target], but looks a little dissapointed.")
 	SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = (round(check_value(target, surgery) * 0.01))))

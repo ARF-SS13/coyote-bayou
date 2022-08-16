@@ -7,6 +7,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	can_charge = 0
 	max_charges = 100 //100, 50, 50, 34 (max charge distribution by 25%ths)
+	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi' //not really a gun and some toys use these inhands
+	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	var/variable_charges = 1
 
 /obj/item/gun/magic/wand/Initialize()
@@ -37,7 +39,7 @@
 		if(no_den_usage)
 			var/area/A = get_area(user)
 			if(istype(A, /area/wizard_station))
-				to_chat(user, "<span class='warning'>You know better than to violate the security of The Den, best wait until you leave to use [src].</span>")
+				to_chat(user, span_warning("You know better than to violate the security of The Den, best wait until you leave to use [src]."))
 				return
 			else
 				no_den_usage = 0
@@ -48,7 +50,7 @@
 
 
 /obj/item/gun/magic/wand/proc/zap_self(mob/living/user)
-	user.visible_message("<span class='danger'>[user] zaps [user.p_them()]self with [src].</span>")
+	user.visible_message(span_danger("[user] zaps [user.p_them()]self with [src]."))
 	playsound(user, fire_sound, 50, 1)
 	user.log_message("zapped [user.p_them()]self with a <b>[src]</b>", LOG_ATTACK)
 
@@ -96,14 +98,14 @@
 	..()
 	charges--
 	if(user.anti_magic_check())
-		user.visible_message("<span class='warning'>[src] has no effect on [user]!</span>")
+		user.visible_message(span_warning("[src] has no effect on [user]!"))
 		return
 	user.revive(full_heal = 1)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		C.regenerate_limbs()
 		C.regenerate_organs()
-	to_chat(user, "<span class='notice'>You feel great!</span>")
+	to_chat(user, span_notice("You feel great!"))
 
 /obj/item/gun/magic/wand/resurrection/debug //for testing
 	name = "debug wand of healing"
@@ -161,7 +163,7 @@
 	no_den_usage = 1
 
 /obj/item/gun/magic/wand/door/zap_self(mob/living/user)
-	to_chat(user, "<span class='notice'>You feel vaguely more open with your feelings.</span>")
+	to_chat(user, span_notice("You feel vaguely more open with your feelings."))
 	charges--
 	..()
 
@@ -198,4 +200,4 @@
 	..()
 	charges--
 	user.take_overall_damage(0,30)
-	to_chat(user, "<span class='warning'>You zap yourself. Why?</span>")
+	to_chat(user, span_warning("You zap yourself. Why?"))

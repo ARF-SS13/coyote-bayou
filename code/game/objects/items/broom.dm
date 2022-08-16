@@ -15,26 +15,22 @@
 	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
 	resistance_flags = FLAMMABLE
 	var/max_things_to_sweep = BROOM_SWEEP_MAX
-
-/obj/item/broom/Initialize()
-	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-
-/obj/item/broom/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12, icon_wielded="broom1")
+	force_unwielded = 8
+	force_wielded = 12
+	wielded_icon = "broom1"
 
 /obj/item/broom/update_icon_state()
 	icon_state = "broom0"
 
 /// triggered on wield of two handed item
-/obj/item/broom/proc/on_wield(obj/item/source, mob/user)
-	to_chat(user, "<span class='notice'>You brace the [src] against the ground in a firm sweeping stance.</span>")
+/obj/item/broom/wield(mob/user)
+	. = ..()
+	to_chat(user, span_notice("You brace the [src] against the ground in a firm sweeping stance."))
 	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/sweep)
 
 /// triggered on unwield of two handed item
-/obj/item/broom/proc/on_unwield(obj/item/source, mob/user)
+/obj/item/broom/unwield(mob/user)
+	. = ..()
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
 
 /obj/item/broom/afterattack(atom/A, mob/user, proximity)

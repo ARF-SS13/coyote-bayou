@@ -6,8 +6,8 @@
 	name = "grenade rifle"
 	icon_state = "dshotgun-sawn"
 	item_state = "gun"
-	inaccuracy_modifier = 0.5
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
+	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -35,6 +35,7 @@
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	mag_type = /obj/item/ammo_box/magazine/m75
+	init_mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
 	fire_delay = 0
 	actions_types = list()
@@ -70,7 +71,7 @@
 /obj/item/gun/ballistic/automatic/speargun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] spear\s into \the [src].</span>")
+		to_chat(user, span_notice("You load [num_loaded] spear\s into \the [src]."))
 		update_icon()
 		chamber_round()
 
@@ -85,8 +86,6 @@
 	can_suppress = FALSE
 	burst_size = 1
 	slowdown = 1
-	fire_delay = 0
-	inaccuracy_modifier = 0.25
 	casing_ejector = FALSE
 	weapon_weight = GUN_TWO_HAND_ONLY
 	magazine_wording = "rocket"
@@ -115,20 +114,20 @@
 		if(AC)
 			if(!user.put_in_hands(AC))
 				AC.bounce_away(FALSE, NONE)
-			to_chat(user, "<span class='notice'>You remove \the [AC] from \the [src]!</span>")
+			to_chat(user, span_notice("You remove \the [AC] from \the [src]!"))
 			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, TRUE)
 			chambered = null
 		else
-			to_chat(user, "<span class='notice'>There's no [magazine_wording] in [src].</span>")
+			to_chat(user, span_notice("There's no [magazine_wording] in [src]."))
 	update_icon()
 
 /obj/item/gun/ballistic/rocketlauncher/attackby(obj/item/A, mob/user, params)
 	if(magazine && istype(A, /obj/item/ammo_casing))
 		if(chambered)
-			to_chat(user, "<span class='notice'>[src] already has a [magazine_wording] chambered.</span>")
+			to_chat(user, span_notice("[src] already has a [magazine_wording] chambered."))
 			return
 		if(magazine.attackby(A, user, silent = TRUE))
-			to_chat(user, "<span class='notice'>You load a new [A] into \the [src].</span>")
+			to_chat(user, span_notice("You load a new [A] into \the [src]."))
 			playsound(src, "gun_insert_full_magazine", 70, 1)
 			chamber_round()
 			update_icon()
@@ -137,8 +136,8 @@
 	icon_state = "[initial(icon_state)]-[chambered ? "1" : "0"]"
 
 /obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message("<span class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!</span>", \
-		"<span class='userdanger'>You aim [src] at the ground to perform a bisnasty rocket jump...</span>")
+	user.visible_message(span_warning("[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!"), \
+		span_userdanger("You aim [src] at the ground to perform a bisnasty rocket jump..."))
 	if(can_shoot())
 		user.mob_transforming = TRUE
 		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 80, 1, 5)
@@ -155,7 +154,7 @@
 		sleep(5)
 		shoot_with_empty_chamber(user)
 		sleep(20)
-		user.visible_message("<span class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
-			"<span class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
+		user.visible_message(span_warning("[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!"), \
+			span_userdanger("You look around after realizing you're still here, then proceed to choke yourself to death with [src]!"))
 		sleep(20)
 		return OXYLOSS

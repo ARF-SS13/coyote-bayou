@@ -16,7 +16,7 @@
 	icon_grow = "chili-grow" // Uses one growth icons set for all the subtypes
 	icon_dead = "chili-dead" // Same for the dead icon
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
-	mutatelist = list(/obj/item/seeds/chili/ice, /obj/item/seeds/chili/ghost)
+	mutatelist = list(/obj/item/seeds/chili/ice, /obj/item/seeds/chili/ghost, /obj/item/seeds/chili/bell_pepper)
 	reagents_add = list(/datum/reagent/consumable/capsaicin = 0.25, /datum/reagent/consumable/nutriment/vitamin = 0.04, /datum/reagent/consumable/nutriment = 0.04)
 
 /obj/item/reagent_containers/food/snacks/grown/chili
@@ -94,7 +94,35 @@
 				return
 			held_mob.adjust_bodytemperature(15 * TEMPERATURE_DAMAGE_COEFFICIENT)
 			if(prob(10))
-				to_chat(held_mob, "<span class='warning'>Your hand holding [src] burns!</span>")
+				to_chat(held_mob, span_warning("Your hand holding [src] burns!"))
 	else
 		held_mob = null
 		..()
+
+// Bell Pepper
+/obj/item/seeds/chili/bell_pepper
+	name = "pack of bell pepper seeds"
+	desc = "These seeds grow into bell pepper plants. MILD! MILD! MILD!"
+	icon_state = "seed-bell-pepper"
+	species = "bellpepper"
+	plantname = "Bell Pepper Plants"
+	product = /obj/item/reagent_containers/food/snacks/grown/bell_pepper
+	endurance = 10
+	maturation = 10
+	production = 10
+	yield = 3
+	rarity = 20
+	genes = list(/datum/plant_gene/trait/repeated_harvest)
+	mutatelist = null
+	reagents_add = list(/datum/reagent/consumable/nutriment/vitamin = 0.08, /datum/reagent/consumable/nutriment = 0.04)
+
+/obj/item/reagent_containers/food/snacks/grown/bell_pepper
+	seed = /obj/item/seeds/chili/bell_pepper
+	name = "bell pepper"
+	desc = "A big mild pepper that's good for many things."
+	icon_state = "bell_pepper"
+	foodtype = FRUIT
+
+/obj/item/reagent_containers/food/snacks/grown/bell_pepper/microwave_act(obj/machinery/microwave/M)
+	new /obj/item/reagent_containers/food/snacks/roasted_bell_pepper(drop_location(), 1)
+	qdel(src)

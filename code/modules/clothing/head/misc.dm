@@ -201,7 +201,7 @@
 	if(user.gender == FEMALE)
 		return 0
 	var/mob/living/carbon/human/H = user
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls.</span>")
+	user.visible_message(span_suicide("[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls."))
 	user.say("M'lady.", forced = "fedora suicide")
 	sleep(10)
 	H.facial_hair_style = "Neckbeard"
@@ -327,7 +327,6 @@
 	name = "pharaoh hat"
 	desc = "Walk like an Egyptian."
 	icon_state = "pharaoh_hat"
-	icon_state = "pharaoh_hat"
 
 /obj/item/clothing/head/jester/alt
 	name = "jester hat"
@@ -338,7 +337,6 @@
 /obj/item/clothing/head/nemes
 	name = "headdress of Nemes"
 	desc = "Lavish space tomb not included."
-	icon_state = "nemes_headdress"
 	icon_state = "nemes_headdress"
 
 /obj/item/clothing/head/frenchberet

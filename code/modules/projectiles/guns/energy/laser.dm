@@ -7,9 +7,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -30,9 +27,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -54,9 +48,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -76,9 +67,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -99,9 +87,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -123,9 +108,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -148,9 +130,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -185,9 +164,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -210,9 +186,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -236,9 +209,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -268,13 +238,13 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 /obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
 	. = ..()
@@ -287,12 +257,12 @@
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
 				if(oldcell)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the cell.</span>")
+					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
 					oldcell.dropped()
 					oldcell.forceMove(get_turf(src.loc))
 					oldcell.update_icon()
 				//else
-				//	to_chat(user, "<span class='notice'>You insert the cell into \the [src].</span>")
+				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
 
 				//playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
 				//chamber_round()
@@ -300,25 +270,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
-
-/obj/item/gun/energy/laser/proc/burst_select()
-	var/mob/living/carbon/human/user = usr
-	select = !select
-	if(!select)
-		disable_burst()
-		to_chat(user, "<span class='notice'>You switch to semi-automatic.</span>")
-	else
-		enable_burst()
-		to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd burst.</span>")
-
-/obj/item/gun/energy/laser/proc/enable_burst()
-	burst_size = initial(burst_size)
-
-/obj/item/gun/energy/laser/proc/disable_burst()
-	burst_size = 1
-
-
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 
 /////////////////
 //LASER PISTOLS//
@@ -344,9 +296,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -364,9 +313,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -389,9 +335,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -407,6 +350,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
@@ -417,9 +361,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -438,9 +379,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -465,6 +403,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/stun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 7
@@ -475,9 +414,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_FASTER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -502,9 +438,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -528,9 +461,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
@@ -546,9 +476,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
@@ -572,9 +499,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -597,18 +521,14 @@
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -621,22 +541,17 @@
 	icon_state = "wattz2k_ext"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	icon_state = "wattz2k"
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/extended/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -662,13 +577,12 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
 
 /obj/item/gun/energy/laser/aer9/focused
 	name = "\improper Hot-wired AER9 laser rifle"
@@ -678,13 +592,12 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
 
 //Ultracite Laser rifle
 /obj/item/gun/energy/laser/ultra_rifle
@@ -694,18 +607,14 @@
 	item_state = "laser-rifle9"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer9equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -726,9 +635,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -739,8 +645,9 @@
 /obj/item/gun/energy/laser/aer12
 	name = "\improper AER12 laser rifle"
 	desc = "A cutting-edge, pre-war laser rifle. Its focusing crystal array is housed in gold alloy, making it difficult to maintain."
-	icon_state = "aer12"
-	item_state = "laser-rifle9"
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	icon_state = "aer12new"
+	item_state = "aer12new"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
@@ -752,13 +659,12 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
 
 
 //AER14 Laser rifle
@@ -778,13 +684,12 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_tags = list(GUN_SCOPE)
+	can_scope = TRUE
 
 
 //LAER Energy rifle
@@ -801,9 +706,6 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -825,25 +727,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-
-/obj/item/gun/energy/laser/rcw/burst_select()
-	var/mob/living/carbon/human/user = usr
-	playsound(user, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
-//	for(var/X in actions)
-//		var/datum/action/A = X
-
-/obj/item/gun/energy/laser/rcw/afterattack()
-	. = ..()
-//	empty_alarm()
-	return
+	init_firemodes = list(
+		FULL_AUTO_400,
+		WEAPON_NORMAL
+	)
 
 
 //Alien Blaster
@@ -862,9 +753,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -886,9 +774,6 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_NORMAL
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
@@ -928,12 +813,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, "<span class='warning'>You need a free hand to hold the gun!</span>")
+					to_chat(user, span_warning("You need a free hand to hold the gun!"))
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, "<span class='warning'>You are already holding the gun!</span>")
+			to_chat(user, span_warning("You are already holding the gun!"))
 	else
 		..()
 
@@ -977,9 +862,9 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, "<span class='notice'>You attach the [gun.name] to the [name].</span>")
+		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
 	else
-		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
+		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
 	user.update_inv_back()
 
@@ -1004,13 +889,13 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_NONE
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_INSTANT
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
+	init_firemodes = list(
+		FULL_AUTO_1000
+	)
 
 /obj/item/gun/energy/minigun/Initialize()
 	if(istype(loc, /obj/item/minigunpack)) //We should spawn inside an ammo pack so let's use that one.

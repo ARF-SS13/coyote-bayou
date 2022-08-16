@@ -81,7 +81,7 @@
 	if(linked_mobs[mob_linked])
 		return FALSE
 
-	to_chat(mob_linked, "<span class='notice'>You feel something new enter your sphere of mind, you hear whispers of people far away, screeches of horror and a humming of welcome to [src]'s Mansus Link.</span>")
+	to_chat(mob_linked, span_notice("You feel something new enter your sphere of mind, you hear whispers of people far away, screeches of horror and a humming of welcome to [src]'s Mansus Link."))
 	var/datum/action/innate/mansus_speech/action = new(src)
 	linked_mobs[mob_linked] = action
 	action.Grant(mob_linked)
@@ -95,7 +95,7 @@
 	var/datum/action/innate/mansus_speech/action = linked_mobs[mob_linked]
 	action.Remove(mob_linked)
 	qdel(action)
-	to_chat(mob_linked, "<span class='notice'>Your mind shatters as the [src]'s Mansus Link leaves your mind.</span>")
+	to_chat(mob_linked, span_notice("Your mind shatters as the [src]'s Mansus Link leaves your mind."))
 	mob_linked.emote("Scream")
 	//micro stun
 	mob_linked.AdjustParalyzed(0.5 SECONDS)
@@ -244,7 +244,7 @@
 
 
 /mob/living/simple_animal/hostile/eldritch/armsy/Shoot(atom/targeted_atom)
-	target = targeted_atom
+	GiveTarget(targeted_atom)
 	AttackingTarget()
 
 
@@ -256,7 +256,7 @@
 	if(target == back || target == front)
 		return
 	if(back)
-		back.target = target
+		back.GiveTarget(target)
 		back.AttackingTarget()
 	if(!Adjacent(target))
 		return

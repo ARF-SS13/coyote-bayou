@@ -270,22 +270,22 @@
 					// At lower pp, give out a little warning
 					SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "smell")
 					if(prob(5))
-						to_chat(src, "<span class='notice'>There is an unpleasant smell in the air.</span>")
+						to_chat(src, span_notice("There is an unpleasant smell in the air."))
 				if(5 to 20)
 					//At somewhat higher pp, warning becomes more obvious
 					if(prob(15))
-						to_chat(src, "<span class='warning'>You smell something horribly decayed inside this room.</span>")
+						to_chat(src, span_warning("You smell something horribly decayed inside this room."))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/bad_smell)
 				if(15 to 30)
 					//Small chance to vomit. By now, people have internals on anyway
 					if(prob(5))
-						to_chat(src, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(src, span_warning("The stench of rotting carcasses is unbearable!"))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						vomit()
 				if(30 to INFINITY)
 					//Higher chance to vomit. Let the horror start
 					if(prob(25))
-						to_chat(src, "<span class='warning'>The stench of rotting carcasses is unbearable!</span>")
+						to_chat(src, span_warning("The stench of rotting carcasses is unbearable!"))
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "smell", /datum/mood_event/disgust/nauseating_stench)
 						vomit()
 				else
@@ -631,15 +631,15 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		if(drunkenness >= 81)
 			adjustToxLoss(0.2)
 			if(prob(5) && !stat)
-				to_chat(src, "<span class='warning'>Maybe you should lie down for a bit...</span>")
+				to_chat(src, span_warning("Maybe you should lie down for a bit..."))
 
 		if(drunkenness >= 91)
 			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.4, 60)
 			if(prob(20) && !stat)
 				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z)) //QoL mainly
-					to_chat(src, "<span class='warning'>You're so tired... but you can't miss that shuttle...</span>")
+					to_chat(src, span_warning("You're so tired... but you can't miss that shuttle..."))
 				else
-					to_chat(src, "<span class='warning'>Just a quick nap...</span>")
+					to_chat(src, span_warning("Just a quick nap..."))
 					Sleeping(900)
 
 		if(drunkenness >= 101)
@@ -682,7 +682,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		return
 	adjustToxLoss(4, TRUE,  TRUE)
 	if(prob(15))
-		to_chat(src, "<span class='danger'>You feel a stabbing pain in your abdomen!</span>")
+		to_chat(src, span_danger("You feel a stabbing pain in your abdomen!"))
 
 
 ////////////////

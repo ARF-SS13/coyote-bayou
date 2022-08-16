@@ -62,7 +62,7 @@
 
 /obj/machinery/pool/controller/examine(mob/user)
 	. = ..()
-	. += "<span class='boldnotice'>Alt click to drain reagents.</span>"
+	. += span_boldnotice("Alt click to drain reagents.")
 
 /obj/machinery/pool/controller/Initialize()
 	. = ..()
@@ -99,7 +99,7 @@
 /obj/machinery/pool/controller/emag_act(mob/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED)) //If it is not already emagged, emag it.
-		to_chat(user, "<span class='warning'>You disable the [src]'s safety features.</span>")
+		to_chat(user, span_warning("You disable the [src]'s safety features."))
 		do_sparks(5, TRUE, src)
 		obj_flags |= EMAGGED
 		temperature_unlocked = TRUE
@@ -107,7 +107,7 @@
 		log_game("[key_name(user)] emagged [src]")
 		message_admins("[key_name_admin(user)] emagged [src]")
 	else
-		to_chat(user, "<span class='warning'>The interface on [src] is already too damaged to short it again.</span>")
+		to_chat(user, span_warning("The interface on [src] is already too damaged to short it again."))
 		return
 
 /obj/machinery/pool/controller/AltClick(mob/living/user)
@@ -116,13 +116,13 @@
 		return FALSE
 	if(!user.Adjacent(src) || !user.can_reach(src) || !CHECK_MOBILITY(user, MOBILITY_USE))
 		return FALSE
-	visible_message("<span class='boldwarning'>[user] starts to drain [src]!</span>")
+	visible_message(span_boldwarning("[user] starts to drain [src]!"))
 	draining = TRUE
 	if(!do_after(user, 50, target = src))
 		draining = FALSE
 		return TRUE
 	reagents.remove_all(INFINITY)
-	visible_message("<span class='boldnotice'>[user] drains [src].</span>")
+	visible_message(span_boldnotice("[user] drains [src]."))
 	say("Reagents cleared.")
 	update_color()
 	draining = FALSE
@@ -135,7 +135,7 @@
 		return
 	if(istype(W,/obj/item/reagent_containers))
 		if(W.reagents.total_volume) //check if there's reagent
-			user.visible_message("<span class='boldwarning'>[user] is feeding [src] some chemicals from [W].</span>")
+			user.visible_message(span_boldwarning("[user] is feeding [src] some chemicals from [W]."))
 			if(do_after(user, 50, target = src))
 				for(var/datum/reagent/R in W.reagents.reagent_list)
 					if(R.type in GLOB.blacklisted_pool_reagents)
@@ -147,7 +147,7 @@
 				reagents.clear_reagents()
 				// This also reacts them. No nitroglycerin deathpools, sorry gamers :(
 				W.reagents.trans_to(reagents, max_beaker_transfer)
-				user.visible_message("<span class='notice'>[src] makes a slurping noise.</span>", "<span class='notice'>All of the contents of [W] are quickly suctioned out by the machine!</span")
+				user.visible_message(span_notice("[src] makes a slurping noise."), "<span class='notice'>All of the contents of [W] are quickly suctioned out by the machine!</span")
 				updateUsrDialog()
 				var/list/reagent_names = list()
 				var/list/rejected = list()
@@ -164,10 +164,10 @@
 					message_admins(msg)
 				if(length(rejected))
 					rejected = english_list(rejected)
-					to_chat(user, "<span class='warning'>[src] rejects the following chemicals as they do not have at least [min_reagent_amount] units of volume: [rejected]</span>")
+					to_chat(user, span_warning("[src] rejects the following chemicals as they do not have at least [min_reagent_amount] units of volume: [rejected]"))
 				update_color()
 		else
-			to_chat(user, "<span class='notice'>[src] beeps unpleasantly as it rejects the beaker. Why are you trying to feed it an empty beaker?</span>")
+			to_chat(user, span_notice("[src] beeps unpleasantly as it rejects the beaker. Why are you trying to feed it an empty beaker?"))
 			return
 	else if(panel_open && is_wire_tool(W))
 		wires.interact(user)
@@ -253,7 +253,7 @@
 				else
 					drownee.adjustOxyLoss(4)
 					if(prob(35))
-						to_chat(drownee, "<span class='danger'>You're drowning!</span>")
+						to_chat(drownee, span_danger("You're drowning!"))
 
 /obj/machinery/pool/controller/proc/set_bloody(state)
 	if(bloody == state)
@@ -317,7 +317,7 @@
 		return
 	if(href_list["IncreaseTemp"])
 		if(CanUpTemp(usr))
-			visible_message("<span class='warning'>[usr] presses a button on [src].</span>")
+			visible_message(span_warning("[usr] presses a button on [src]."))
 			temperature++
 			update_temp()
 			var/msg = "POOL: [key_name(usr)] increased [src]'s pool temperature at [COORD(src)] to [temperature]"
@@ -326,7 +326,7 @@
 			interact_delay = world.time + 15
 	if(href_list["DecreaseTemp"])
 		if(CanDownTemp(usr))
-			visible_message("<span class='warning'>[usr] presses a button on [src].</span>")
+			visible_message(span_warning("[usr] presses a button on [src]."))
 			temperature--
 			update_temp()
 			var/msg = "POOL: [key_name(usr)] decreased [src]'s pool temperature at [COORD(src)] to [temperature]"
@@ -338,7 +338,7 @@
 			var/msg = "POOL: [key_name(usr)] activated [src]'s pool drain in [linked_drain.filling? "FILLING" : "DRAINING"] mode at [COORD(src)]"
 			log_game(msg)
 			message_admins(msg)
-			visible_message("<span class='warning'>[usr] presses a button on [src].</span>")
+			visible_message(span_warning("[usr] presses a button on [src]."))
 			mist_off()
 			interact_delay = world.time + 60
 			linked_drain.active = TRUE
@@ -356,15 +356,15 @@
 /obj/machinery/pool/controller/proc/temp2text()
 	switch(temperature)
 		if(POOL_FRIGID)
-			return "<span class='boldwarning'>Frigid</span>"
+			return span_boldwarning("Frigid")
 		if(POOL_COOL)
-			return "<span class='boldnotice'>Cool</span>"
+			return span_boldnotice("Cool")
 		if(POOL_NORMAL)
-			return "<span class='notice'>Normal</span>"
+			return span_notice("Normal")
 		if(POOL_WARM)
-			return "<span class='boldnotice'>Warm</span>"
+			return span_boldnotice("Warm")
 		if(POOL_SCALDING)
-			return "<span class='boldwarning'>Scalding</span>"
+			return span_boldwarning("Scalding")
 		else
 			return "Outside of possible range."
 
@@ -391,7 +391,7 @@
 		</div>
 		<h3>Drain</h3>
 		<div class='statusDisplay'>
-		<B>Drain status:</B> [(issilicon(user) || IsAdminGhost(user) || drainable) ? "<span class='bad'>Enabled</span>" : "<span class='good'>Disabled</span>"]
+		<B>Drain status:</B> [(issilicon(user) || IsAdminGhost(user) || drainable) ? span_bad("Enabled") : span_good("Disabled")]
 		<br><b>Pool status:</b> "})
 	if(!drained)
 		dat += "<span class='good'>Full</span><BR>"

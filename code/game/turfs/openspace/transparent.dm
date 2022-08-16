@@ -71,7 +71,7 @@
 
 
 /turf/open/transparent/glass/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You begin removing glass...</span>")
+	to_chat(user, span_notice("You begin removing glass..."))
 	if(I.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/transparent/glass))
 			return TRUE
@@ -87,7 +87,7 @@
 	floor_tile = /obj/item/stack/sheet/rglass
 
 /turf/open/transparent/glass/reinforced/wrench_act(mob/living/user, obj/item/I)
-	to_chat(user, "<span class='notice'>You begin removing reinforced glass...</span>")
+	to_chat(user, span_notice("You begin removing reinforced glass..."))
 	if(I.use_tool(src, user, 30, volume=80))
 		if(!istype(src, /turf/open/transparent/glass/reinforced))
 			return TRUE

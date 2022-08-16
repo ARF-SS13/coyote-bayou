@@ -28,10 +28,20 @@
 		var/obj/item/stack/tile/plasteel/S = C
 		if(S.use(1))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			to_chat(user, "<span class='notice'>You build a floor.</span>")
+			to_chat(user, span_notice("You build a floor."))
 			ChangeTurf(/turf/open/floor/plating)
 		else
-			to_chat(user, "<span class='warning'>You need one floor tile to build a floor!</span>")
+			to_chat(user, span_warning("You need one floor tile to build a floor!"))
+		return
+	if(istype(C,/obj/item/stack/tile/wood))
+		var/obj/item/stack/tile/wood/S = C
+		if(S.use(1))
+			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
+			to_chat(user, span_notice("You build a house base."))
+			ChangeTurf(/turf/open/floor/plating/wooden)
+		else
+			to_chat(user, span_warning("You need one floor tile to build a house base!"))
+		return
 	else
 		return ..()
 /*
@@ -56,10 +66,10 @@
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-#define GRASS_SPONTANEOUS_GROUND 		2
-#define GRASS_WEIGHT_GROUND			4
-#define LUSH_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2, /obj/item/storage/trash_stack  = 3)
-#define DESOLATE_PLANT_SPAWN_LIST_GROUND list(/obj/structure/flora/grass/wasteland = 1)
+#define GRASS_SPONTANEOUS 		  2
+#define GRASS_WEIGHT			  4
+#define LUSH_PLANT_SPAWN_LIST     list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_horsenettle = 5, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
+#define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
 
 /turf/open/indestructible/ground/outside/dirthole
 	name = "Dirt hole"
@@ -376,7 +386,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(oldloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, "<span class='warning'>You get drenched in water!</span>")
+			to_chat(L, span_warning("You get drenched in water!"))
 	AM.water_act(5)
 	..()
 
@@ -387,7 +397,7 @@
 		if(L.check_submerged() <= 0)
 			return
 		if(!istype(newloc, /turf/open/indestructible/ground/outside/water))
-			to_chat(L, "<span class='warning'>You climb out of \the [src].</span>")
+			to_chat(L, span_warning("You climb out of \the [src]."))
 	..()
 
 /turf/open/indestructible/ground/outside/water/update_icon()

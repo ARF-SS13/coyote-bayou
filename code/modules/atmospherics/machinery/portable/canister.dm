@@ -65,7 +65,7 @@
 
 /obj/machinery/portable_atmospherics/canister/interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, "<span class='warning'>Error - Unauthorized User</span>")
+		to_chat(user, span_warning("Error - Unauthorized User"))
 		playsound(src, 'sound/misc/compiler-failure.ogg', 50, 1)
 		return
 	..()
@@ -269,10 +269,10 @@
 		return TRUE
 	var/pressure = air_contents.return_pressure()
 	if(pressure > 300)
-		to_chat(user, "<span class='alert'>The pressure gauge on \the [src] indicates a high pressure inside... maybe you want to reconsider?</span>")
-	to_chat(user, "<span class='notice'>You begin cutting \the [src] apart...</span>")
+		to_chat(user, span_alert("The pressure gauge on \the [src] indicates a high pressure inside... maybe you want to reconsider?"))
+	to_chat(user, span_notice("You begin cutting \the [src] apart..."))
 	if(I.use_tool(src, user, 3 SECONDS, volume=50))
-		to_chat(user, "<span class='notice'>You cut \the [src] apart.</span>")
+		to_chat(user, span_notice("You cut \the [src] apart."))
 		deconstruct(TRUE)
 		message_admins("[src] deconstructed by [ADMIN_LOOKUPFLW(user)]")
 		log_game("[src] deconstructed by [key_name(user)]")

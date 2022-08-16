@@ -47,7 +47,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(badquirk)
 		cli.prefs.save_character()
 	if (!silent && LAZYLEN(cut))
-		to_chat(to_chat_target || user, "<span class='boldwarning'>Some quirks have been cut from your character because of these quirks conflicting with your job assignment: [english_list(cut)].</span>")
+		to_chat(to_chat_target || user, span_boldwarning("Some quirks have been cut from your character because of these quirks conflicting with your job assignment: [english_list(cut)]."))
 
 /datum/controller/subsystem/processing/quirks/proc/quirk_path_by_name(name)
 	return quirks[name]

@@ -32,7 +32,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, energy = "25", "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS | HIDEHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -40,7 +40,6 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -291,7 +290,6 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	lefthand_file = ""
 	righthand_file = ""
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 20, "rad" = 20, "fire" = 25, "acid" = 0, "wound" = 40)
-	flags_inv = HIDEEARS|HIDEHAIR
 	flags_inv = HIDEEARS|HIDEHAIR
 	strip_delay = 50
 	dynamic_hair_suffix = ""
@@ -852,7 +850,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/town/officer
-	name = "oasis officer's cap"
+	name = "Nash officer's cap"
 	desc = "A simple dark navy peaked cap, worn by police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -875,7 +873,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	AddComponent(/datum/component/armor_plate)
 
 /obj/item/clothing/head/f13/town/chief
-	name = "OPD Chief's hat"
+	name = "NPD Chief's hat"
 	desc = "A blue hat with a silver badge."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
@@ -901,8 +899,8 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 ////////////////////////
 
 /obj/item/clothing/head/helmet/f13/khan
-	name = "Great Khan helmet"
-	desc = "A piece of headwear commonly worn by the Great Khans that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a pre-War motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
+	name = "horned helmet"
+	desc = "A piece of headwear commonly worn by the horned tribals that appears to resemble stereotypical traditional Mongolian helmets - likely adapted from a pre-War motorcycle helmet.<br>It is black with two horns on either side and a small spike jutting from the top, much like a pickelhaube.<br>A leather covering protects the wearer's neck and ears from sunburn."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_helmet"
@@ -920,7 +918,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 
 
 /obj/item/clothing/head/helmet/f13/khan/pelt
-	desc = "A helmet with traditional horns, but wasteland-chique fur trimming instead of the classic leather cover. For the Khan who wants to show off their hair."
+	desc = "A helmet with traditional horns, but wasteland-chique fur trimming instead of the classic leather cover. For the horned tribals who wants to show off their hair."
 	icon_state = "khan_helmetpelt"
 	item_state = "khan_helmetpelt"
 
@@ -930,7 +928,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 
 
 /obj/item/clothing/head/helmet/f13/khan/bandana
-	name = "Great Khan bandana"
+	name = "outlaw bandana"
 	desc = "A bandana. Tougher than it looks. One side of the cloth is dark, the other red, so it can be reversed."
 	icon_state = "khan_bandana"
 	item_state = "khan_bandana"
@@ -959,7 +957,7 @@ obj/item/clothing/head/helmet/f13/enclave/usmcriot
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You turn the [src] inside out.</span>")
+	to_chat(usr, span_notice("You turn the [src] inside out."))
 	if(src.helmettoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -1206,8 +1204,6 @@ obj/item/clothing/head/f13/army/beret
 	desc = "A gray campaign hat, worn by the State Police."
 	icon = 'icons/fallout/clothing/hats.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/head.dmi'
-	icon_state = "police_chief"
-	item_state = "police_chief"
 	icon_state = "state_trooper"
 	item_state = "state_trooper"
 	armor = list("melee" = 27, "bullet" = 12, "laser" = 12, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)

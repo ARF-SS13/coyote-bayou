@@ -17,6 +17,7 @@
 #define LOADOUT_CATEGORY_BACKPACK 				"In backpack"
 #define LOADOUT_SUBCATEGORY_BACKPACK_GENERAL 	"General" //basically anything that there's not enough of to have its own subcategory
 #define LOADOUT_SUBCATEGORY_BACKPACK_TOYS 		"Toys"
+#define LOADOUT_SUBCATEGORY_BACKPACK_BACKPACKS 	"Backpacks"
 #define LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS	"Vault Guns"
 
 //neck
@@ -61,6 +62,7 @@
 //shoes
 #define LOADOUT_CATEGORY_SHOES 		"Shoes"
 #define LOADOUT_SUBCATEGORY_SHOES_GENERAL 	"General"
+#define LOADOUT_SUBCATEGORY_SHOES_MILITARY 	"Military"
 #define LOADOUT_SUBCATEGORY_SHOES_FACTIONS 		"Factions"
 
 //gloves

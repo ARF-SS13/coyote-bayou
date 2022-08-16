@@ -21,6 +21,7 @@
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
 	var/infinite = FALSE
+	var/mobs_to_spawn = 1 //number of mobs to spawn at once, for swarms
 
 /obj/structure/nest/Initialize()
 	. = ..()
@@ -33,11 +34,15 @@
 	. = ..()
 
 /obj/structure/nest/proc/spawn_mob()
+	var/turf/our_turf = get_turf(src) //if you want to stop mobs from not spawning due to dense things on burrows, remove this...
 	if(!can_fire)
 		return FALSE
 	if(covered)
 		can_fire = FALSE
 		return FALSE
+	for(var/atom/maybe_heavy_thing in our_turf.contents) //...and this
+		if(maybe_heavy_thing.density == TRUE)
+			return FALSE
 	CHECK_TICK
 	if(spawned_mobs.len >= max_mobs)
 		return FALSE
@@ -47,12 +52,15 @@
 		return FALSE
 	toggle_fire(FALSE)
 	addtimer(CALLBACK(src, .proc/toggle_fire), spawn_time)
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(src.loc)
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+	var/chosen_mob_type
+	var/mob/living/simple_animal/L
+	for(var/i = 1 to mobs_to_spawn)
+		chosen_mob_type = pickweight(mob_types)
+		L = new chosen_mob_type(src.loc)
+		L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
+		spawned_mobs += L
+		L.nest = src
+		visible_message(span_danger("[L] [spawn_text] [src]."))
 	if(spawnsound)
 		playsound(src, spawnsound, 30, 1)
 	if(!infinite)
@@ -75,34 +83,34 @@
 		return Seal(user, I, I.type, "rods", 2 HOURS)
 	if(istype(I, /obj/item/stack/sheet/mineral/wood))
 		return Seal(user, I, I.type, "planks", 30 MINUTES)
-	
+
 	if(covered) // allow you to interact only when it's sealed
 		..()
 	else
 		if(user.a_intent == INTENT_HARM)
-			to_chat(user, "<span class='warning'>You feel it is impossible to destroy this without covering it with something.</span>")
+			to_chat(user, span_warning("You feel it is impossible to destroy this without covering it with something."))
 			return
 
 /obj/structure/nest/proc/Seal(mob/user, obj/item/I, itempath, cover_state, timer)
 	if(!coverable)
-		to_chat(user, "<span class='warning'>The hole is unable to be covered!</span>")
+		to_chat(user, span_warning("The hole is unable to be covered!"))
 		return
-	
+
 	if(covered)
-		to_chat(user, "<span class='warning'>The hole is already covered!</span>")
+		to_chat(user, span_warning("The hole is already covered!"))
 		return
 	var/obj/item/stack/S = I
 	if(S.amount < 4)
-		to_chat(user, "<span class='warning'>You need four of [S.name] in order to cover the hole!</span>")
+		to_chat(user, span_warning("You need four of [S.name] in order to cover the hole!"))
 		return
 	if(!do_after(user, 5 SECONDS, FALSE, src))
-		to_chat(user, "<span class='warning'>You must stand still to build the cover!</span>")
+		to_chat(user, span_warning("You must stand still to build the cover!"))
 		return
 	S.use(4)
 
 	if(!covered)
 		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
-		to_chat(user, "<span class='warning'>You find something while covering the hole!</span>")
+		to_chat(user, span_warning("You find something while covering the hole!"))
 
 	covered = TRUE
 	covertype = itempath
@@ -122,18 +130,18 @@
 		toggle_fire()
 		spawned_mobs.Cut()
 		return
- 
+
 	if(user)
 		if(!I)
 			return
 		I.play_tool_sound(src, 50)
 		if(!do_after(user, 5 SECONDS, FALSE, src))
-			to_chat(user, "<span class='warning'>You must stand still to unseal the cover!</span>")
+			to_chat(user, span_warning("You must stand still to unseal the cover!"))
 			return
 		Unseal(TRUE)
 		return
 
-	
+
 
 //the nests themselves
 /*
@@ -208,7 +216,8 @@
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
-	max_mobs = 5
+	max_mobs = 15
+	mobs_to_spawn = 1
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 1)
 
 /obj/structure/nest/fireant

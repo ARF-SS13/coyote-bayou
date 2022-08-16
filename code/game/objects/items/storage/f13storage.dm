@@ -68,14 +68,14 @@
 /obj/item/storage/belt/waistsheath/examine(mob/user)
 	..()
 	if(length(contents))
-		to_chat(user, "<span class='notice'>Alt-click it to quickly draw the blade.</span>")
+		to_chat(user, span_notice("Alt-click it to quickly draw the blade."))
 
 /obj/item/storage/belt/waistsheath/AltClick(mob/user)
 	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(length(contents))
 		var/obj/item/I = contents[2]
-		user.visible_message("[user] takes [I] out of [src].", "<span class='notice'>You take [I] out of [src].</span>")
+		user.visible_message("[user] takes [I] out of [src].", span_notice("You take [I] out of [src]."))
 		user.put_in_hands(I)
 		update_icon()
 	else
@@ -152,6 +152,7 @@
 	STR.max_combined_w_class = 600
 	STR.max_items = 600
 	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
+	STR.cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
 
 /obj/item/storage/bag/casings/equipped(mob/user)
 	. = ..()
@@ -179,7 +180,7 @@
 						show_message = TRUE
 					else
 						if(!spam_protection)
-							to_chat(user, "<span class='warning'>Your [name] is full and can't hold any more!</span>")
+							to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
 							spam_protection = TRUE
 							continue
 				else
@@ -188,9 +189,94 @@
 				continue
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
-		user.visible_message("<span class='notice'>[user] scoops up the casings beneath [user.p_them()].</span>", \
-			"<span class='notice'>You scoop up the casings beneath you with your [name].</span>")
+		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \
+			span_notice("You scoop up the casings beneath you with your [name]."))
 	spam_protection = FALSE
+
+/obj/item/storage/bag/tribe_quiver
+	name = "tribal quiver"
+	desc = "A simple leather quiver designed for holding arrows."
+	icon = 'icons/obj/clothing/belts.dmi'
+	icon_state = "tribal_quiver"
+	item_state = "tribal_quiver"
+
+/obj/item/storage/bag/tribe_quiver/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 30
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	STR.max_w_class = 3
+	STR.max_combined_w_class = 100
+
+/obj/item/storage/bag/tribe_quiver/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+
+/obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, span_warning("Your hands are full!"))
+		return
+	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, span_notice("You take \a [L] out of the quiver."))
+		return TRUE
+	var/obj/item/ammo_casing/caseless/W = locate() in contents
+	if(W && contents.len > 0)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		user.put_in_hands(W)
+		to_chat(user, span_notice("You take \a [W] out of the quiver."))
+	else
+		to_chat(user, span_notice("There is nothing left in the quiver."))
+	return TRUE
+
+//Bone Arrow Quiver
+/obj/item/storage/bag/tribe_quiver/bone
+	name = "hunters quiver"
+	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
+	
+
+/obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+//Archer Quiver so the Far-Lands Archer doesn't start with two quivers
+/obj/item/storage/bag/tribe_quiver/archer
+	name = "archers quiver"
+
+/obj/item/storage/bag/tribe_quiver/archer/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+/obj/item/storage/bag/trash/sack
+	name = "leather sack"
+	desc = "A sack made out of rough leathers. It's probably not filled with gifts."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "sack"
+	item_state = "sack"
 
 /*
  * Ration boxes

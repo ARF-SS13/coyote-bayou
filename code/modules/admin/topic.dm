@@ -51,7 +51,7 @@
 			return
 		var/mob/M = locate(href_list["getplaytimewindow"]) in GLOB.mob_list
 		if(!M)
-			to_chat(usr, "<span class='danger'>ERROR: Mob not found.</span>")
+			to_chat(usr, span_danger("ERROR: Mob not found."))
 			return
 		cmd_show_exp_panel(M.client)
 
@@ -62,7 +62,7 @@
 			return
 		var/client/C = locate(href_list["toggleexempt"]) in GLOB.clients
 		if(!C)
-			to_chat(usr, "<span class='danger'>ERROR: Client not found.</span>")
+			to_chat(usr, span_danger("ERROR: Client not found."))
 			return
 		toggle_exempt_status(C)
 
@@ -72,7 +72,7 @@
 			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): makeAntag without admin perms.")
 			return
 		if (!SSticker.mode)
-			to_chat(usr, "<span class='danger'>Not until the round starts!</span>")
+			to_chat(usr, span_danger("Not until the round starts!"))
 			return
 		switch(href_list["makeAntag"])
 			if("traitors")
@@ -278,7 +278,7 @@
 			message_admins("Ban process: A mob matching [playermob.key] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob.")
 
 		if(!DB_ban_record(bantype, playermob, banduration, banreason, banjob, bankey, banip, bancid ))
-			to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+			to_chat(usr, span_danger("Failed to apply ban."))
 			return
 		create_message("note", bankey, null, banreason, null, null, 0, 0, null, 0, banseverity)
 
@@ -320,7 +320,7 @@
 					return
 				SSshuttle.emergency.request()
 				log_admin("[key_name(usr)] called the Train.")
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Train to the train station.</span>")
+				message_admins(span_adminnotice("[key_name_admin(usr)] called the Train to the train station."))
 
 			if("2")
 				if(EMERGENCY_AT_LEAST_DOCKED)
@@ -329,11 +329,11 @@
 					if(SHUTTLE_CALL)
 						SSshuttle.emergency.cancel()
 						log_admin("[key_name(usr)] sent the Train back.")
-						message_admins("<span class='adminnotice'>[key_name_admin(usr)] sent the Train back.</span>")
+						message_admins(span_adminnotice("[key_name_admin(usr)] sent the Train back."))
 					else
 						SSshuttle.emergency.cancel()
 						log_admin("[key_name(usr)] called the Train.")
-						message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Train to the train station.</span>")
+						message_admins(span_adminnotice("[key_name_admin(usr)] called the Train to the train station."))
 
 
 		href_list["secrets"] = "check_antagonist"
@@ -348,7 +348,7 @@
 		SSshuttle.emergency.setTimer(timer*10)
 		log_admin("[key_name(usr)] edited the Train's timeleft to [timer] seconds.")
 		minor_announce("The train will reach its destination in [round(SSshuttle.emergency.timeLeft(600))] minutes.")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the Train's timeleft to [timer] seconds.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] edited the Train's timeleft to [timer] seconds."))
 		href_list["secrets"] = "check_antagonist"
 	else if(href_list["trigger_centcom_recall"])
 		if(!check_rights(R_ADMIN))
@@ -369,7 +369,7 @@
 		else
 			continuous[SSticker.mode.config_tag] = FALSE
 
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled the round to [continuous[SSticker.mode.config_tag] ? "continue if all antagonists die" : "end with the antagonists"].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] toggled the round to [continuous[SSticker.mode.config_tag] ? "continue if all antagonists die" : "end with the antagonists"]."))
 		check_antagonists()
 
 	else if(href_list["toggle_midround_antag"])
@@ -384,7 +384,7 @@
 		else
 			midround_antag[SSticker.mode.config_tag] = FALSE
 
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] toggled the round to [midround_antag[SSticker.mode.config_tag] ? "use" : "skip"] the midround antag system.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] toggled the round to [midround_antag[SSticker.mode.config_tag] ? "use" : "skip"] the midround antag system."))
 		check_antagonists()
 
 	else if(href_list["alter_midround_time_limit"])
@@ -397,7 +397,7 @@
 		if(!timer)
 			return
 		CONFIG_SET(number/midround_antag_time_check, timer)
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the maximum midround antagonist time to [timer] minutes.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] edited the maximum midround antagonist time to [timer] minutes."))
 		check_antagonists()
 
 	else if(href_list["alter_midround_life_limit"])
@@ -411,7 +411,7 @@
 			return
 		CONFIG_SET(number/midround_antag_life_check, ratio / 100)
 
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the midround antagonist living crew ratio to [ratio]% alive.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] edited the midround antagonist living crew ratio to [ratio]% alive."))
 		check_antagonists()
 
 	else if(href_list["toggle_noncontinuous_behavior"])
@@ -425,7 +425,7 @@
 		else
 			SSticker.mode.round_ends_with_antag_death = 0
 
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the midround antagonist system to [SSticker.mode.round_ends_with_antag_death ? "end the round" : "continue as extended"] upon failure.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] edited the midround antagonist system to [SSticker.mode.round_ends_with_antag_death ? "end the round" : "continue as extended"] upon failure."))
 		check_antagonists()
 
 	else if(href_list["delay_round_end"])
@@ -452,16 +452,16 @@
 			log_admin("INVALID ADMIN PROC ACCESS: [key_name(usr)] tried to use /datum/admins/proc/searchmessages(): end_round without admin perms.")
 			return
 
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] is considering ending the round.</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] is considering ending the round."))
 		if(alert(usr, "This will end the round, are you SURE you want to do this?", "Confirmation", "Yes", "No") == "Yes")
 			if(alert(usr, "Final Confirmation: End the round NOW?", "Confirmation", "Yes", "No") == "Yes")
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] has ended the round.</span>")
+				message_admins(span_adminnotice("[key_name_admin(usr)] has ended the round."))
 				SSticker.force_ending = 1 //Yeah there we go APC destroyed mission accomplished
 				return
 			else
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] decided against ending the round.</span>")
+				message_admins(span_adminnotice("[key_name_admin(usr)] decided against ending the round."))
 		else
-			message_admins("<span class='adminnotice'>[key_name_admin(usr)] decided against ending the round.</span>")
+			message_admins(span_adminnotice("[key_name_admin(usr)] decided against ending the round."))
 
 	else if(href_list["simplemake"])
 		if(!check_rights(R_SPAWN))
@@ -480,7 +480,7 @@
 				delmob = 1
 
 		log_admin("[key_name(usr)] has used rudimentary transformation on [key_name(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] has used rudimentary transformation on [key_name_admin(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] has used rudimentary transformation on [key_name_admin(M)]. Transforming to [href_list["simplemake"]].; deletemob=[delmob]"))
 		switch(href_list["simplemake"])
 			if("observer")
 				M.change_mob_type( /mob/dead/observer , null, null, delmob )
@@ -577,7 +577,7 @@
 					mins = minutes - GLOB.CMinutes
 				mins = input(usr,"How long (in minutes)? (Default: 1440)","Ban time",mins ? mins : 1440) as num|null
 				if(mins <= 0)
-					to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
+					to_chat(usr, span_danger("[mins] is not a valid duration."))
 					return
 				minutes = GLOB.CMinutes + mins
 				duration = GetExp(minutes)
@@ -593,7 +593,7 @@
 
 		log_admin_private("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
 		ban_unban_log_save("[key_name(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] edited [banned_key]'s ban. Reason: [reason] Duration: [duration]"))
 		GLOB.Banlist.cd = "/base/[banfolder]"
 		WRITE_FILE(GLOB.Banlist["reason"], reason)
 		WRITE_FILE(GLOB.Banlist["temp"], temp)
@@ -624,7 +624,7 @@
 					DB_ban_unban(M.ckey, BANTYPE_ANY_JOB, "appearance")
 					if(M.client)
 						jobban_buildcache(M.client)
-					message_admins("<span class='adminnotice'>[key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban.</span>")
+					message_admins(span_adminnotice("[key_name_admin(usr)] removed [key_name_admin(M)]'s appearance ban."))
 					to_chat(M, "<span class='boldannounce'><BIG>[usr.client.key] has removed your appearance ban.</BIG></span>")
 
 		else switch(alert("Appearance ban [M.key]?",,"Yes","No", "Cancel"))
@@ -636,22 +636,22 @@
 				if(!severity)
 					return
 				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, "appearance"))
-					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+					to_chat(usr, span_danger("Failed to apply ban."))
 					return
 				if(M.client)
 					jobban_buildcache(M.client)
 				ban_unban_log_save("[key_name(usr)] appearance banned [key_name(M)]. reason: [reason]")
 				log_admin_private("[key_name(usr)] appearance banned [key_name(M)]. \nReason: [reason]")
 				create_message("note", M.key, null, "Appearance banned - [reason]", null, null, 0, 0, null, 0, severity)
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] appearance banned [key_name_admin(M)].</span>")
+				message_admins(span_adminnotice("[key_name_admin(usr)] appearance banned [key_name_admin(M)]."))
 				to_chat(M, "<span class='boldannounce'><BIG>You have been appearance banned by [usr.client.key].</BIG></span>")
-				to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
-				to_chat(M, "<span class='danger'>Appearance ban can be lifted only upon request.</span>")
+				to_chat(M, span_boldannounce("The reason is: [reason]"))
+				to_chat(M, span_danger("Appearance ban can be lifted only upon request."))
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
+					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
 				else
-					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
+					to_chat(M, span_danger("No ban appeals URL has been set."))
 			if("No")
 				return
 
@@ -1101,7 +1101,7 @@
 				if("Yes")
 					var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 					if(mins <= 0)
-						to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
+						to_chat(usr, span_danger("[mins] is not a valid duration."))
 						return
 					var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 					if(!reason)
@@ -1112,7 +1112,7 @@
 					var/msg
 					for(var/job in notbannedlist)
 						if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
-							to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+							to_chat(usr, span_danger("Failed to apply ban."))
 							return
 						if(M.client)
 							jobban_buildcache(M.client)
@@ -1123,10 +1123,10 @@
 						else
 							msg += ", [job]"
 					create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-					message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes.</span>")
+					message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes."))
 					to_chat(M, "<span class='boldannounce'><BIG>You have been [(msg == ("ooc" || "appearance")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg].</BIG></span>")
-					to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
-					to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
+					to_chat(M, span_boldannounce("The reason is: [reason]"))
+					to_chat(M, span_danger("This jobban will be lifted in [mins] minutes."))
 					href_list["jobban2"] = 1 // lets it fall through and refresh
 					return 1
 				if("No")
@@ -1138,7 +1138,7 @@
 						var/msg
 						for(var/job in notbannedlist)
 							if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
-								to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+								to_chat(usr, span_danger("Failed to apply ban."))
 								return
 							if(M.client)
 								jobban_buildcache(M.client)
@@ -1149,10 +1149,10 @@
 							else
 								msg += ", [job]"
 						create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-						message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg].</span>")
+						message_admins(span_adminnotice("[key_name_admin(usr)] banned [key_name_admin(M)] from [msg]."))
 						to_chat(M, "<span class='boldannounce'><BIG>You have been [(msg == ("ooc" || "appearance")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg].</BIG></span>")
-						to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
-						to_chat(M, "<span class='danger'>Jobban can be lifted only upon request.</span>")
+						to_chat(M, span_boldannounce("The reason is: [reason]"))
+						to_chat(M, span_danger("Jobban can be lifted only upon request."))
 						href_list["jobban2"] = 1 // lets it fall through and refresh
 						return 1
 				if("Cancel")
@@ -1180,7 +1180,7 @@
 					else
 						continue
 			if(msg)
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
+				message_admins(span_adminnotice("[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg]."))
 				to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")
 				href_list["jobban2"] = 1 // lets it fall through and refresh
 			return 1
@@ -1194,19 +1194,19 @@
 		var/mob/M = locate(href_list["boot2"])
 		if(ismob(M))
 			if(!check_if_greater_rights_than(M.client))
-				to_chat(usr, "<span class='danger'>Error: They have more rights than you do.</span>")
+				to_chat(usr, span_danger("Error: They have more rights than you do."))
 				return
 			if(alert(usr, "Kick [key_name(M)]?", "Confirm", "Yes", "No") != "Yes")
 				return
 			if(!M)
-				to_chat(usr, "<span class='danger'>Error: [M] no longer exists!</span>")
+				to_chat(usr, span_danger("Error: [M] no longer exists!"))
 				return
 			if(!M.client)
-				to_chat(usr, "<span class='danger'>Error: [M] no longer has a client!</span>")
+				to_chat(usr, span_danger("Error: [M] no longer has a client!"))
 				return
-			to_chat(M, "<span class='danger'>You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].</span>")
+			to_chat(M, span_danger("You have been kicked from the server by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."))
 			log_admin("[key_name(usr)] kicked [key_name(M)].")
-			message_admins("<span class='adminnotice'>[key_name_admin(usr)] kicked [key_name_admin(M)].</span>")
+			message_admins(span_adminnotice("[key_name_admin(usr)] kicked [key_name_admin(M)]."))
 			qdel(M.client)
 
 	else if(href_list["addmessage"])
@@ -1425,25 +1425,25 @@
 			if("Yes")
 				var/mins = input(usr,"How long (in minutes)?","Ban time",1440) as num|null
 				if(mins <= 0)
-					to_chat(usr, "<span class='danger'>[mins] is not a valid duration.</span>")
+					to_chat(usr, span_danger("[mins] is not a valid duration."))
 					return
 				var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 				if(!reason)
 					return
 				if(!DB_ban_record(BANTYPE_TEMP, M, mins, reason))
-					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+					to_chat(usr, span_danger("Failed to apply ban."))
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
 				ban_unban_log_save("[key_name(usr)] has banned [key_name(M)]. - Reason: [reason] - This will be removed in [mins] minutes.")
 				to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
-				to_chat(M, "<span class='danger'>This is a temporary ban, it will be removed in [mins] minutes. The round ID is [GLOB.round_id].</span>")
+				to_chat(M, span_danger("This is a temporary ban, it will be removed in [mins] minutes. The round ID is [GLOB.round_id]."))
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
+					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
 				else
-					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
+					to_chat(M, span_danger("No ban appeals URL has been set."))
 				log_admin_private("[key_name(usr)] has banned [key_name(M)].\nReason: [key_name(M)]\nThis will be removed in [mins] minutes.")
-				var/msg = "<span class='adminnotice'>[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis will be removed in [mins] minutes.</span>"
+				var/msg = span_adminnotice("[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis will be removed in [mins] minutes.")
 				message_admins(msg)
 				var/datum/admin_help/AH = M.client ? M.client.current_ticket : null
 				if(AH)
@@ -1461,18 +1461,18 @@
 					if("No")
 						AddBan(M.ckey, M.computer_id, reason, usr.ckey, 0, 0)
 				to_chat(M, "<span class='boldannounce'><BIG>You have been banned by [usr.client.key].\nReason: [reason]</BIG></span>")
-				to_chat(M, "<span class='danger'>This is a permanent ban. The round ID is [GLOB.round_id].</span>")
+				to_chat(M, span_danger("This is a permanent ban. The round ID is [GLOB.round_id]."))
 				var/bran = CONFIG_GET(string/banappeals)
 				if(bran)
-					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
+					to_chat(M, span_danger("To try to resolve this matter head to [bran]"))
 				else
-					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
+					to_chat(M, span_danger("No ban appeals URL has been set."))
 				if(!DB_ban_record(BANTYPE_PERMA, M, -1, reason))
-					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
+					to_chat(usr, span_danger("Failed to apply ban."))
 					return
 				ban_unban_log_save("[key_name(usr)] has permabanned [key_name(M)]. - Reason: [reason] - This is a permanent ban.")
 				log_admin_private("[key_name(usr)] has banned [key_name(M)].\nReason: [reason]\nThis is a permanent ban.")
-				var/msg = "<span class='adminnotice'>[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis is a permanent ban.</span>"
+				var/msg = span_adminnotice("[key_name_admin(usr)] has banned [key_name_admin(M)].\nReason: [reason]\nThis is a permanent ban.")
 				message_admins(msg)
 				var/datum/admin_help/AH = M.client ? M.client.current_ticket : null
 				if(AH)
@@ -1853,7 +1853,7 @@
 			return alert(usr, "The game has already started.", null, null, null, null)
 		GLOB.master_mode = href_list["c_mode2"]
 		log_admin("[key_name(usr)] set the mode as [GLOB.master_mode].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] set the mode as [GLOB.master_mode].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] set the mode as [GLOB.master_mode]."))
 		to_chat(world, "<span class='adminnotice'><b>The mode is now: [GLOB.master_mode]</b></span>")
 		Game() // updates the main game menu
 		SSticker.save_mode(GLOB.master_mode)
@@ -1869,7 +1869,7 @@
 			return alert(usr, "The game mode has to be secret!", null, null, null, null)
 		GLOB.secret_force_mode = href_list["f_secret2"]
 		log_admin("[key_name(usr)] set the forced secret mode as [GLOB.secret_force_mode].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] set the forced secret mode as [GLOB.secret_force_mode].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] set the forced secret mode as [GLOB.secret_force_mode]."))
 		Game() // updates the main game menu
 		HandleFSecret()
 
@@ -1883,7 +1883,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to monkeyize [key_name(H)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to monkeyize [key_name_admin(H)].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to monkeyize [key_name_admin(H)]."))
 		H.monkeyize()
 
 	else if(href_list["humanone"])
@@ -1896,7 +1896,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to humanize [key_name(Mo)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to humanize [key_name_admin(Mo)].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to humanize [key_name_admin(Mo)]."))
 		Mo.humanize()
 
 	else if(href_list["corgione"])
@@ -1909,7 +1909,7 @@
 			return
 
 		log_admin("[key_name(usr)] attempting to corgize [key_name(H)].")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] attempting to corgize [key_name_admin(H)].</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] attempting to corgize [key_name_admin(H)]."))
 		H.corgize()
 
 
@@ -1927,7 +1927,7 @@
 		M.say(speech, forced = "admin speech")
 		speech = sanitize(speech) // Nah, we don't trust them
 		log_admin("[key_name(usr)] forced [key_name(M)] to say: [speech]")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]</span>")
+		message_admins(span_adminnotice("[key_name_admin(usr)] forced [key_name_admin(M)] to say: [speech]"))
 
 	else if(href_list["makeeligible"])
 		if(!check_rights(R_ADMIN))
@@ -1958,7 +1958,7 @@
 			return
 
 		M.forceMove(pick(GLOB.prisonwarp))
-		to_chat(M, "<span class='adminnotice'>You have been sent to Prison!</span>")
+		to_chat(M, span_adminnotice("You have been sent to Prison!"))
 
 		log_admin("[key_name(usr)] has sent [key_name(M)] to Prison!")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(M)] to Prison!")
@@ -1972,11 +1972,11 @@
 		var/mob/M = locate(href_list["sendbacktolobby"])
 
 		if(!isobserver(M))
-			to_chat(usr, "<span class='notice'>You can only send ghost players back to the Lobby.</span>")
+			to_chat(usr, span_notice("You can only send ghost players back to the Lobby."))
 			return
 
 		if(!M.client)
-			to_chat(usr, "<span class='warning'>[M] doesn't seem to have an active client.</span>")
+			to_chat(usr, span_warning("[M] doesn't seem to have an active client."))
 			return
 
 		if(alert(usr, "Send [key_name(M)] back to Lobby?", "Message", "Yes", "No") != "Yes")
@@ -2012,7 +2012,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome1))
 		spawn(50)
-			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
+			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 1)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 1)")
 
@@ -2039,7 +2039,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdome2))
 		spawn(50)
-			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
+			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Team 2)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Team 2)")
 
@@ -2063,7 +2063,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeadmin))
 		spawn(50)
-			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
+			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Admin.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Admin.)")
 
@@ -2094,7 +2094,7 @@
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeobserve))
 		spawn(50)
-			to_chat(L, "<span class='adminnotice'>You have been sent to the Thunderdome.</span>")
+			to_chat(L, span_adminnotice("You have been sent to the Thunderdome."))
 		log_admin("[key_name(usr)] has sent [key_name(L)] to the thunderdome. (Observer.)")
 		message_admins("[key_name_admin(usr)] has sent [key_name_admin(L)] to the thunderdome. (Observer.)")
 
@@ -2110,7 +2110,7 @@
 			return
 
 		L.revive(full_heal = 1, admin_revive = 1)
-		message_admins("<span class='danger'>Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!</span>")
+		message_admins(span_danger("Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!"))
 		log_admin("[key_name(usr)] healed / Revived [key_name(L)].")
 
 	else if(href_list["makeai"])
@@ -2122,7 +2122,7 @@
 			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.")
 			return
 
-		message_admins("<span class='danger'>Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!</span>")
+		message_admins(span_danger("Admin [key_name_admin(usr)] AIized [key_name_admin(H)]!"))
 		log_admin("[key_name(usr)] AIized [key_name(H)].")
 		H.AIize()
 
@@ -3049,7 +3049,7 @@
 			if(alert("Are you sure you want to kick all [afkonly ? "AFK" : ""] clients from the lobby??","Message","Yes","Cancel") != "Yes")
 				to_chat(usr, "Kick clients from lobby aborted")
 				return
-			var/list/listkicked = kick_clients_in_lobby("<span class='danger'>You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"].</span>", afkonly)
+			var/list/listkicked = kick_clients_in_lobby(span_danger("You were kicked from the lobby by [usr.client.holder.fakekey ? "an Administrator" : "[usr.client.key]"]."), afkonly)
 
 			var/strkicked = ""
 			for(var/name in listkicked)
@@ -3125,7 +3125,7 @@
 	else if(href_list["viewruntime"])
 		var/datum/error_viewer/error_viewer = locate(href_list["viewruntime"])
 		if(!istype(error_viewer))
-			to_chat(usr, "<span class='warning'>That runtime viewer no longer exists.</span>")
+			to_chat(usr, span_warning("That runtime viewer no longer exists."))
 			return
 
 		if(href_list["viewruntime_backto"])
@@ -3159,7 +3159,7 @@
 			return
 
 		if(!CONFIG_GET(string/centcom_ban_db))
-			to_chat(usr, "<span class='warning'>Centcom Galactic Ban DB is disabled!</span>")
+			to_chat(usr, span_warning("Centcom Galactic Ban DB is disabled!"))
 			return
 
 		var/ckey = href_list["centcomlookup"]
@@ -3308,7 +3308,7 @@
 	var/client/C = GLOB.directory[ckey]
 	if(C)
 		if(check_rights_for(C, R_ADMIN,0))
-			to_chat(usr, "<span class='danger'>The client chosen is an admin! Cannot mentorize.</span>")
+			to_chat(usr, span_danger("The client chosen is an admin! Cannot mentorize."))
 			return
 	if(SSdbcore.Connect())
 		var/datum/db_query/query_get_mentor = SSdbcore.NewQuery(
@@ -3319,26 +3319,26 @@
 			qdel(query_get_mentor)
 			return
 		if(query_get_mentor.NextRow())
-			to_chat(usr, "<span class='danger'>[ckey] is already a mentor.</span>")
+			to_chat(usr, span_danger("[ckey] is already a mentor."))
 			qdel(query_get_mentor)
 			return
 		qdel(query_get_mentor)
 		var/datum/db_query/query_add_mentor = SSdbcore.NewQuery("INSERT INTO `[format_table_name("mentor")]` (`id`, `ckey`) VALUES (null, :ckey)", list("ckey" = ckey))
 		if(!query_add_mentor.warn_execute())
 			return
-		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-			VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
-			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		)
-		if(!query_add_admin_log.warn_execute())
-			qdel(query_add_admin_log)
-			return
-		qdel(query_add_admin_log)
+		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // Just comments out the admin part, as it seems to not be functioning.
+		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+		// 	VALUES (:time, :round_id, :adminckey, :addr, 'add mentor', :mentorkey, CONCAT('Added new mentor ', :mentorkey));"},
+		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
+		// )
+		// if(!query_add_admin_log.warn_execute())
+		// 	qdel(query_add_admin_log)
+		// 	return
+		// qdel(query_add_admin_log)
 	else
-		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
+		to_chat(usr, span_danger("Failed to establish database connection. The changes will last only for the current round."))
 	new /datum/mentors(ckey)
-	to_chat(usr, "<span class='adminnotice'>New mentor added.</span>")
+	to_chat(usr, span_adminnotice("New mentor added."))
 
 /datum/admins/proc/removeMentor(ckey)
 	if(!usr.client)
@@ -3350,7 +3350,7 @@
 	var/client/C = GLOB.directory[ckey]
 	if(C)
 		if(check_rights_for(C, R_ADMIN,0))
-			to_chat(usr, "<span class='danger'>The client chosen is an admin, not a mentor! Cannot de-mentorize.</span>")
+			to_chat(usr, span_danger("The client chosen is an admin, not a mentor! Cannot de-mentorize."))
 			return
 		C.remove_mentor_verbs()
 		C.mentor_datum = null
@@ -3362,13 +3362,13 @@
 		)
 		if(!query_remove_mentor.warn_execute())
 			return		
-		var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({"
-			INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
-			VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
-			list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
-		)
-		if(!query_add_admin_log.warn_execute())
-			return
+		// var/datum/db_query/query_add_admin_log = SSdbcore.NewQuery({" // stops the adminip error for now ~ w~
+		// 	INSERT INTO `[format_table_name("admin_log")]` (`datetime`, `round_id`, `adminckey`, `adminip`, `operation`, `target`, `log`)
+		// 	VALUES (:time, :round_id, :adminckey, :addr, 'remove mentor', :mentorkey, CONCAT('Removed mentor ', :mentorkey));"},
+		// 	list("time" = SQLtime(), "round_id" = GLOB.round_id, "adminckey" = usr.ckey, "addr" = usr.client.address, "round_id" = GLOB.round_id, "mentorkey" = ckey)
+		// )
+		// if(!query_add_admin_log.warn_execute())
+		// 	return
 	else
-		to_chat(usr, "<span class='danger'>Failed to establish database connection. The changes will last only for the current round.</span>")
-	to_chat(usr, "<span class='adminnotice'>Mentor removed.</span>")
+		to_chat(usr, span_danger("Failed to establish database connection. The changes will last only for the current round."))
+	to_chat(usr, span_adminnotice("Mentor removed."))

@@ -61,14 +61,11 @@ randomize_human(mob/living/carbon/human/H)
 	var/list/features_override = list("grad_style" = "None", "grad_color" = "333333")
 
 /datum/preferences/load_character(slot)
-	. = ..(slot)
-	if(!(. == TRUE))
+	. = ..()
+	if(!(. == 1))
 		return . // There's an error!!
 	
 	var/savefile/S = new /savefile(path)
-	S.cd = "/"
-	slot = sanitize_integer(slot, 1, max_save_slots, initial(default_slot))
-
 	S.cd = "/character[slot]"
 
 	S["gradient_color"]		>> features_override["grad_color"]
@@ -81,7 +78,6 @@ randomize_human(mob/living/carbon/human/H)
 
 
 /datum/preferences/save_character()
-
 	. = ..()
 
 	if(!(. == TRUE))

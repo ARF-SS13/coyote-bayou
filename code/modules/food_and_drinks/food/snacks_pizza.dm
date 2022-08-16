@@ -14,10 +14,10 @@
 /obj/item/reagent_containers/food/snacks/pizzaslice/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(!isturf(loc))
-			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
 			return
 		new /obj/item/stack/sheet/pizza(loc)
-		to_chat(user, "<span class='notice'>You smoosh [src] into a cheesy sheet.</span>")
+		to_chat(user, span_notice("You smoosh [src] into a cheesy sheet."))
 		qdel(src)
 		return
 	return ..()
@@ -195,7 +195,7 @@
 	var/obj/item/bodypart/l_arm = user.get_bodypart(BODY_ZONE_L_ARM)
 	var/obj/item/bodypart/r_arm = user.get_bodypart(BODY_ZONE_R_ARM)
 	if(prob(50) && iscarbon(user) && M == user && (r_arm || l_arm))
-		user.visible_message("<span class='warning'>\The [src] breaks off [user]'s arm!!</span>", "<span class='warning'>\The [src] breaks off your arm!</span>")
+		user.visible_message(span_warning("\The [src] breaks off [user]'s arm!!"), span_warning("\The [src] breaks off your arm!"))
 		if(l_arm)
 			l_arm.dismember()
 		else

@@ -71,6 +71,9 @@
 		. += "There [prize_amount > 1 ? "are" : "is"] [prize_amount] [prize_amount > 1 ? "objects" : "object"]."
 
 /obj/item/locked_box/proc/initialize_prizes()
+	if(!global_loot_lists.len)
+		return // Stop proceeding if we have no prizes.
+	
 	potential_prizes = list() //we are setting them to an empty list so you can't double the amount of stuff
 	prizes = list()
 	for(var/i in global_loot_lists) //go back up to understand why we populate potential_prizes
@@ -97,13 +100,13 @@
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) / 2 //the higher the lock tier, the harder it is, down to a max of 0, divided by 2
 		if(!prob(success_after_tier))
 			if(fragile)
-				to_chat(user, "<span class='warning'>You fail to open [src]. It crumbles apart, all the contents being destroyed.</span>")
+				to_chat(user, span_warning("You fail to open [src]. It crumbles apart, all the contents being destroyed."))
 				qdel(src)
 				return
-			to_chat(user, "<span class='warning'>You fail to unlock [src]. It looks like it took some damage from the attempt.</span>")
+			to_chat(user, span_warning("You fail to unlock [src]. It looks like it took some damage from the attempt."))
 			fragile = TRUE
 			return
-		to_chat(user, "<span class='green'>You successfully unlock [src].</span>")
+		to_chat(user, span_green("You successfully unlock [src]."))
 		locked = FALSE
 		return
 	else if(istype(W, /obj/item/lockpick_set))
@@ -112,9 +115,9 @@
 		var/success_after_tier = max(100 - (lock_tier * 20), 0) //the higher the lock tier, the harder it is, down to a max of 0
 		var/success_after_skill = min((user.client.prefs.special_l * 5) + success_after_tier, 100) //the higher the persons luck, the better, up to a max of 100, with 50 added
 		if(!prob(success_after_skill))
-			to_chat(user, "<span class='warning'>You fail to pick [src].</span>")
+			to_chat(user, span_warning("You fail to pick [src]."))
 			return
-		to_chat(user, "<span class='green'>You successfully unlock [src].</span>")
+		to_chat(user, span_green("You successfully unlock [src]."))
 		locked = FALSE
 		return
 	else
@@ -128,7 +131,7 @@
 		used = TRUE
 		spawn_prizes()
 		return
-	to_chat(user, "<span class='warning'>[src] is locked up tight, perhaps you can open it?</span>")
+	to_chat(user, span_warning("[src] is locked up tight, perhaps you can open it?"))
 
 /************
 *** ARMOR ***

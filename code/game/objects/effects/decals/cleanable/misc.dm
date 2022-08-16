@@ -90,14 +90,10 @@
 	name = "glowing goo"
 	desc = "Jeez. I hope that's not for lunch."
 	light_power = 1
-	light_range = 1
+	light_range = 2
 	light_color = LIGHT_COLOR_GREEN
 	icon_state = "greenglow"
 	beauty = -300
-	light_system = MOVABLE_LIGHT
-	light_range = 2
-	light_power = 0.8
-	light_color = "#22FFAA"
 
 /obj/effect/decal/cleanable/greenglow/ex_act()
 	return
@@ -142,7 +138,7 @@
 		var/mob/living/carbon/human/H = user
 		if(isflyperson(H))
 			playsound(get_turf(src), 'sound/items/drink.ogg', 50, 1) //slurp
-			H.visible_message("<span class='alert'>[H] extends a small proboscis into the vomit pool, sucking it with a slurping sound.</span>")
+			H.visible_message(span_alert("[H] extends a small proboscis into the vomit pool, sucking it with a slurping sound."))
 			if(reagents)
 				for(var/datum/reagent/consumable/R in reagents.reagent_list)
 					if(R.nutriment_factor > 0)

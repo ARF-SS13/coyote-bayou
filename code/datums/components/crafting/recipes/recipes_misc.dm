@@ -66,7 +66,7 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
 
 /datum/crafting_recipe/sink
 	name = "Sink"
@@ -75,7 +75,8 @@
 				/obj/item/stack/crafting/metalparts = 5)
 	time = 50
 	subcategory = CAT_MISCELLANEOUS
-	category = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
 /datum/crafting_recipe/shower
 	name = "Shower"
 	result = /obj/machinery/shower
@@ -102,6 +103,7 @@
 	result = /obj/structure/curtain
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 /datum/crafting_recipe/dogbed
 	name = "Dog Bed"
 	result = /obj/structure/bed/dogbed
@@ -119,6 +121,7 @@
 	time = 10
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
+
 ///////////////////////////
 //Scavenging and Tinkering//
 ///////////////////////////
@@ -243,7 +246,7 @@
 
 /datum/crafting_recipe/shutters/old
 	name = "Shutters"
-	reqs = list(/obj/item/stack/sheet/plasteel = 10, //5x as expensive as a reinforced wall, can be destroyed by mid-tier guns or high-tier melee. More useful to townies/comfy roles then for NCR/Legion.
+	reqs = list(/obj/item/stack/sheet/prewar = 10, //Changed to use more readily available Pre-War Alloys for CB. Maybe we'll see more use out of them this way.
 				/obj/item/stack/cable_coil = 10,
 				/obj/item/electronics/airlock = 1
 				)
@@ -255,7 +258,7 @@
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
-	reqs = list(/obj/item/stack/sheet/plasteel = 20, // 10x as expensive as a reinforced wall, but will block anything save for top-tier melee weapons or explosives
+	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials. 
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/electronics/airlock = 1
 				)
@@ -359,8 +362,7 @@
 /datum/crafting_recipe/naturalpaper
 	name = "Hand-Pressed Paper"
 	time = 30
-	reqs = list(/datum/reagent/water = 50, /obj/item/stack/sheet/mineral/wood = 1)
-	tools = list(/obj/item/hatchet)
+	reqs = list(/datum/reagent/water = 50, /datum/reagent/ash = 20, /obj/item/stack/sheet/mineral/wood = 1)
 	result = /obj/item/paper_bin/bundlenatural
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
@@ -388,7 +390,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	always_available = FALSE
+	
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"
@@ -419,42 +421,6 @@
 
 */
 
-/datum/crafting_recipe/rainbowbunchcrown
-	name = "Rainbow Flower Crown"
-	result = /obj/item/clothing/head/rainbowbunchcrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rainbow_flower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/sunflowercrown
-	name = "Sunflower Crown"
-	result = /obj/item/clothing/head/sunflowercrown/
-	time = 20
-	reqs = list(/obj/item/grown/sunflower = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/poppycrown
-	name = "Poppy Crown"
-	result = /obj/item/clothing/head/poppycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy = 5,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
-/datum/crafting_recipe/lilycrown
-	name = "Lily Crown"
-	result = /obj/item/clothing/head/lilycrown/
-	time = 20
-	reqs = list(/obj/item/reagent_containers/food/snacks/grown/poppy/lily = 3,
-				/obj/item/stack/cable_coil = 3)
-	subcategory = CAT_MISCELLANEOUS
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/shock_collar
 	name = "Shock Collar"
 	result = /obj/item/electropack/shockcollar
@@ -463,5 +429,22 @@
 				/obj/item/stack/sheet/leather = 1)
 	tools = list(TOOL_SCREWDRIVER,TOOL_WORKBENCH)
 	time = 30
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rolling_paper
+	name = "Rolling Paper"
+	result = /obj/item/rollingpaper
+	reqs = list(/obj/item/paper/natural = 1)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/rolling_paper_bulk
+	name = "Rolling Paper (Bulk)"
+	result = /obj/item/storage/fancy/rollingpapers/makeshift
+	reqs = list(/obj/item/paper/natural = 10,
+				/obj/item/stack/sheet/cardboard = 1)
+	time = 80
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

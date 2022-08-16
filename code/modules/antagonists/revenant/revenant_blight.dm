@@ -27,11 +27,11 @@
 /datum/disease/revblight/stage_act()
 	if(!finalstage)
 		if(affected_mob.lying && prob(stage*4))
-			to_chat(affected_mob, "<span class='notice'>You feel better.</span>")
+			to_chat(affected_mob, span_notice("You feel better."))
 			cure()
 			return
 		if(prob(stage*3))
-			to_chat(affected_mob, "<span class='revennotice'>You suddenly feel [pick("sick and tired", "disoriented", "tired and confused", "nauseated", "faint", "dizzy")]...</span>")
+			to_chat(affected_mob, span_revennotice("You suddenly feel [pick("sick and tired", "disoriented", "tired and confused", "nauseated", "faint", "dizzy")]..."))
 			affected_mob.confused += 8
 			affected_mob.adjustStaminaLoss(8)
 			new /obj/effect/temp_visual/revenant(affected_mob.loc)
@@ -56,12 +56,12 @@
 		if(5)
 			if(!finalstage)
 				finalstage = TRUE
-				to_chat(affected_mob, "<span class='revenbignotice'>You feel like [pick("nothing's worth it anymore", "nobody ever needed your help", "nothing you did mattered", "everything you tried to do was worthless")].</span>")
+				to_chat(affected_mob, span_revenbignotice("You feel like [pick("nothing's worth it anymore", "nobody ever needed your help", "nothing you did mattered", "everything you tried to do was worthless")]."))
 				affected_mob.adjustStaminaLoss(45)
 				if(affected_mob.dna?.species)
 					affected_mob.dna.species.handle_mutant_bodyparts(affected_mob,"#1d2953")
 					affected_mob.dna.species.handle_hair(affected_mob,"#1d2953")
-				affected_mob.visible_message("<span class='warning'>[affected_mob] looks terrifyingly gaunt...</span>", "<span class='revennotice'>You suddenly feel like your skin is <i>wrong</i>...</span>")
+				affected_mob.visible_message(span_warning("[affected_mob] looks terrifyingly gaunt..."), "<span class='revennotice'>You suddenly feel like your skin is <i>wrong</i>...</span>")
 				affected_mob.add_atom_colour("#1d2953", TEMPORARY_COLOUR_PRIORITY)
 				new /obj/effect/temp_visual/revenant(affected_mob.loc)
 				addtimer(CALLBACK(src, .proc/curses), 150)
@@ -70,6 +70,6 @@
 	if(QDELETED(affected_mob))
 		return
 	affected_mob.playsound_local(affected_mob, 'sound/effects/curse5.ogg', 40, 1, -1)
-	to_chat(affected_mob, "<span class='revendanger'>You sense the terrific curse of a vengeful ghost befall upon you...</span>")
+	to_chat(affected_mob, span_revendanger("You sense the terrific curse of a vengeful ghost befall upon you..."))
 	affected_mob.apply_necropolis_curse(null, 7 MINUTES) //Once the blight has done its course without being cured beforehand, it will cast a necrocurse to compensate how underpowered it's.
 	cure()

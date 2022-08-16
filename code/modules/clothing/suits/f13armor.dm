@@ -267,9 +267,7 @@
 	equip_delay_other = 60
 	strip_delay = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 20)
 	salvage_tool_behavior = TOOL_WELDER
@@ -304,7 +302,7 @@
 	if(src == H.wear_suit) //Suit is already equipped
 		return ..()
 	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_WEAR_SUIT && requires_training)
-		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		to_chat(user, span_warning("You don't have the proper training to operate the power armor!"))
 		return FALSE
 	if(slot == SLOT_WEAR_SUIT)
 		return ..()
@@ -354,16 +352,16 @@
 
 /obj/item/clothing/suit/armor/power_armor/proc/remove_power(mob/user)
 	if(salvage_step > 1) // Being salvaged
-		to_chat(user, "<span class='warning'>Components in [src] require repairs!</span>")
+		to_chat(user, span_warning("Components in [src] require repairs!"))
 	else
-		to_chat(user, "<span class='warning'>\The [src] has ran out of charge!</span>")
+		to_chat(user, span_warning("\The [src] has ran out of charge!"))
 	slowdown += unpowered_slowdown
 	no_power = TRUE
 	remove_traits(user)
 	user.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/power_armor/proc/restore_power(mob/user)
-	to_chat(user, "<span class='notice'>\The [src]'s power restored.</span>")
+	to_chat(user, span_notice("\The [src]'s power restored."))
 	slowdown -= unpowered_slowdown
 	no_power = FALSE
 	assign_traits(user)
@@ -372,11 +370,11 @@
 /obj/item/clothing/suit/armor/power_armor/attackby(obj/item/I, mob/living/carbon/human/user, params)
 	if(powered && istype(I, /obj/item/stock_parts/cell))
 		if(cell)
-			to_chat(user, "<span class='warning'>\The [src] already has a cell installed.</span>")
+			to_chat(user, span_warning("\The [src] already has a cell installed."))
 			return
 		if(user.transferItemToLoc(I, src))
 			cell = I
-			to_chat(user, "<span class='notice'>You successfully install \the [cell] into [src].</span>")
+			to_chat(user, span_notice("You successfully install \the [cell] into [src]."))
 		return
 
 	if(ispath(salvaged_type))
@@ -385,85 +383,85 @@
 				// Salvage
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You begin unsecuring the wiring cover...</span>")
+					to_chat(user, span_notice("You begin unsecuring the wiring cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 1
-						to_chat(user, "<span class='notice'>You unsecure the wiring cover.</span>")
+						to_chat(user, span_notice("You unsecure the wiring cover."))
 					return
 			if(1)
 				// Salvage
 				if(istype(I, /obj/item/wirecutters))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You start to cut down the wiring...</span>")
+					to_chat(user, span_notice("You start to cut down the wiring..."))
 					if(I.use_tool(src, user, 80, volume=50))
 						salvage_step = 2
-						to_chat(user, "<span class='notice'>You disconnect the wires.</span>")
+						to_chat(user, span_notice("You disconnect the wires."))
 					return
 				// Fix
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You begin securing the wiring cover...</span>")
+					to_chat(user, span_notice("You begin securing the wiring cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 0
-						to_chat(user, "<span class='notice'>You secure the wiring cover.</span>")
+						to_chat(user, span_notice("You secure the wiring cover."))
 					return
 			if(2)
 				// Salvage
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You start loosening the bolts that secure components to the frame...</span>")
+					to_chat(user, span_notice("You start loosening the bolts that secure components to the frame..."))
 					if(I.use_tool(src, user, 100, volume=50))
 						salvage_step = 3
-						to_chat(user, "<span class='notice'>You disconnect the inner components.</span>")
+						to_chat(user, span_notice("You disconnect the inner components."))
 					return
 				// Fix
 				if(istype(I, /obj/item/wirecutters))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You begin placing wires back into their place...</span>")
+					to_chat(user, span_notice("You begin placing wires back into their place..."))
 					if(I.use_tool(src, user, 80, volume=50))
 						salvage_step = 1
-						to_chat(user, "<span class='notice'>You re-connect the wires.</span>")
+						to_chat(user, span_notice("You re-connect the wires."))
 					return
 			if(3)
 				// Salvage
 				if(istype(I, /obj/item/weldingtool) || istype(I, /obj/item/gun/energy/plasmacutter))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You begin slicing the servomotors apart from the frame...</span>")
+					to_chat(user, span_notice("You begin slicing the servomotors apart from the frame..."))
 					if(I.use_tool(src, user, 150, volume=60))
 						salvage_step = 4
-						to_chat(user, "<span class='notice'>You disconnect servomotors from the main frame.</span>")
+						to_chat(user, span_notice("You disconnect servomotors from the main frame."))
 					return
 				// Fix
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You start securing components to the frame...</span>")
+					to_chat(user, span_notice("You start securing components to the frame..."))
 					if(I.use_tool(src, user, 100, volume=50))
 						salvage_step = 2
-						to_chat(user, "<span class='notice'>You re-connect the inner components.</span>")
+						to_chat(user, span_notice("You re-connect the inner components."))
 					return
 			if(4)
 				// Salvage
 				if(istype(I, /obj/item/crowbar))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You start to remove remaining components...</span>")
+					to_chat(user, span_notice("You start to remove remaining components..."))
 					if(I.use_tool(src, user, 50, volume=70))
-						to_chat(user, "<span class='notice'>You finish salvaging the suit.</span>")
+						to_chat(user, span_notice("You finish salvaging the suit."))
 						var/obj/item/ST = new salvaged_type(src)
 						user.put_in_hands(ST)
 						qdel(src)
@@ -471,12 +469,12 @@
 				// Fix
 				if(istype(I, /obj/item/weldingtool) || istype(I, /obj/item/gun/energy/plasmacutter))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the suit before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the suit before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You begin welding the servomotors to the frame...</span>")
+					to_chat(user, span_notice("You begin welding the servomotors to the frame..."))
 					if(I.use_tool(src, user, 150, volume=60))
 						salvage_step = 3
-						to_chat(user, "<span class='notice'>You re-connect servomotors to the main frame.</span>")
+						to_chat(user, span_notice("You re-connect servomotors to the main frame."))
 					return
 	return ..()
 
@@ -494,13 +492,13 @@
 
 /obj/item/clothing/suit/armor/power_armor/proc/toggle_cell(mob/living/user)
 	if(cell)
-		user.visible_message("<span class='notice'>[user] removes \the [cell] from [src]!</span>", \
-			"<span class='notice'>You remove [cell].</span>")
+		user.visible_message(span_notice("[user] removes \the [cell] from [src]!"), \
+			span_notice("You remove [cell]."))
 		cell.add_fingerprint(user)
 		user.put_in_hands(cell)
 		cell = null
 	else
-		to_chat(user, "<span class='warning'>[src] has no cell installed.</span>")
+		to_chat(user, span_warning("[src] has no cell installed."))
 
 /obj/item/clothing/suit/armor/power_armor/examine(mob/user)
 	. = ..()
@@ -539,10 +537,10 @@
 			var/induced_slowdown = 0
 			if(severity >= 41) //heavy emp
 				induced_slowdown = 4
-				to_chat(L, "<span class='boldwarning'>Warning: severe electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+				to_chat(L, span_boldwarning("Warning: severe electromagnetic surge detected in armor. Rerouting power to emergency systems."))
 			else
 				induced_slowdown = 2
-				to_chat(L, "<span class='warning'>Warning: light electromagnetic surge detected in armor. Rerouting power to emergency systems.</span>")
+				to_chat(L, span_warning("Warning: light electromagnetic surge detected in armor. Rerouting power to emergency systems."))
 			emped = TRUE
 			slowdown += induced_slowdown
 			L.update_equipment_speed_mods()
@@ -554,7 +552,7 @@
 	slowdown -= slowdown_induced // Even if armor is dropped it'll fix slowdown
 	if(isliving(loc))
 		var/mob/living/L = loc
-		to_chat(L, "<span class='warning'>Armor power reroute successful. All systems operational.</span>")
+		to_chat(L, span_warning("Armor power reroute successful. All systems operational."))
 		L.update_equipment_speed_mods()
 
 /obj/item/clothing/suit/armor/power_armor/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)

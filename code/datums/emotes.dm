@@ -92,7 +92,7 @@
 			continue
 		if(!(ghost.client.prefs.chat_toggles & CHAT_GHOSTSIGHT))
 			continue
-		if(admin_only && !(ghost in GLOB.admins))
+		if(admin_only && ghost.client && !check_rights_for(ghost.client, R_ADMIN))
 			continue
 		var/ghost_view = ghost.client.view
 		if(ghost.z == z)
@@ -149,22 +149,22 @@
 				return FALSE
 			switch(user.stat)
 				if(SOFT_CRIT)
-					to_chat(user, "<span class='notice'>You cannot [key] while in a critical condition.</span>")
+					to_chat(user, span_notice("You cannot [key] while in a critical condition."))
 				if(UNCONSCIOUS)
-					to_chat(user, "<span class='notice'>You cannot [key] while unconscious.</span>")
+					to_chat(user, span_notice("You cannot [key] while unconscious."))
 				if(DEAD)
-					to_chat(user, "<span class='notice'>You cannot [key] while dead.</span>")
+					to_chat(user, span_notice("You cannot [key] while dead."))
 			return FALSE
 		var/mob/living/L = user
 		if(restraint_check && (istype(L) && !CHECK_MOBILITY(L, MOBILITY_USE)))
 			if(!intentional)
 				return FALSE
-			to_chat(user, "<span class='notice'>You cannot [key] while stunned.</span>")
+			to_chat(user, span_notice("You cannot [key] while stunned."))
 			return FALSE
 		if(restraint_check && user.restrained())
 			if(!intentional)
 				return FALSE
-			to_chat(user, "<span class='notice'>You cannot [key] while restrained.</span>")
+			to_chat(user, span_notice("You cannot [key] while restrained."))
 			return FALSE
 
 	if(isliving(user))

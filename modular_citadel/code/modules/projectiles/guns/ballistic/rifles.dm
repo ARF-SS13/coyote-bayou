@@ -13,8 +13,6 @@
 	can_suppress = 0
 	burst_size = 6	//in line with XCOMEU stats. This can fire 5 bursts from a full magazine.
 	fire_delay = 1
-	spread = 30	//should be 40 for XCOM memes, but since its adminspawn only, might as well make it useable
-	recoil = 1
 
 ///toy memes///
 
@@ -35,7 +33,6 @@
 	obj_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/toy/x9
 	casing_ejector = 0
-	spread = 90		//MAXIMUM XCOM MEMES (actually that'd be 180 spread)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = GUN_TWO_HAND_ONLY
 
@@ -76,7 +73,6 @@
 	obj_flags = 0
 	mag_type = /obj/item/ammo_box/magazine/toy/x9
 	casing_ejector = 0
-	spread = 90		//MAXIMUM XCOM MEMES (actually that'd be 180 spread)
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = GUN_TWO_HAND_ONLY
 
@@ -153,8 +149,6 @@
 	burst_size = 5
 	fire_delay = 1
 	casing_ejector = 0
-	spread = 10
-	recoil = 0.05
 	automatic_burst_overlay = FALSE
 	var/magtype = "flechettegun"
 
@@ -187,8 +181,6 @@
 	name = "\improper CX Shredder"
 	desc = "A flechette launching machine pistol made of ultra-light CFRP optimized for firing serrated monofillament flechettes."
 	w_class = WEIGHT_CLASS_SMALL
-	spread = 15
-	recoil = 0.1
 	magtype = "shreddergun"
 
 /*/////////////////////////////////////////////////////////////
@@ -212,7 +204,6 @@
 	can_suppress = 0
 	item_flags = NEEDS_PERMIT
 	casing_ejector = 0
-	spread = 30		//Assault Rifleeeeeee
 	w_class = WEIGHT_CLASS_NORMAL
 	burst_size = 4	//Shh.
 	fire_delay = 1
@@ -236,7 +227,7 @@
 		return
 	. = TRUE
 	if(user.incapacitated() || !istype(user))
-		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(user, span_warning("You can't do that right now!"))
 		return
 	if(alert("Are you sure you want to recolor your gun?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/body_color_input = input(usr,"","Choose Shroud Color",body_color) as color|null
@@ -246,7 +237,7 @@
 
 /obj/item/gun/ballistic/automatic/AM4B/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to recolor it.</span>"
+	. += span_notice("Alt-click to recolor it.")
 
 /obj/item/ammo_box/magazine/toy/AM4C
 	name = "foam force AM4-C magazine"
@@ -266,7 +257,6 @@
 	can_suppress = 0
 	item_flags = NEEDS_PERMIT
 	casing_ejector = 0
-	spread = 45		//Assault Rifleeeeeee
 	w_class = WEIGHT_CLASS_NORMAL
 	burst_size = 4	//Shh.
 	fire_delay = 1

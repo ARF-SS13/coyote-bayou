@@ -247,32 +247,6 @@ GLOBAL_LIST_INIT(blueprint_fluff, list(
 	desc = "A general crafting part, a craftsman might want to have this."
 	icon_state = "alloys"
 
-/obj/item/attachments
-	name = "attachment"
-	icon = 'icons/fallout/objects/crafting.dmi'
-	icon_state = "alloys"
-	w_class = WEIGHT_CLASS_TINY
-
-/obj/item/attachments/scope
-	name = "weapon optics"
-	desc = "A long-range scope, attach to a compatible weapon. Remove with a screwdriver. Makes the weapon slightly slower to fire."
-	icon_state = "scope"
-
-/obj/item/attachments/recoil_decrease
-	name = "recoil compensator"
-	desc = "Improves stability and recoil, attach to a compatible weapon. Cannot be removed."
-	icon_state = "recoilcomp"
-
-/obj/item/attachments/burst_improvement
-	name = "burst cam"
-	desc = "Increases burst size, attach to a compatible weapon. Cannot be removed."
-	icon_state = "burstcam"
-
-/obj/item/attachments/auto_sear
-	name = "auto sear"
-	desc = "A rare gun part that allows certain weapons to have select fire capabilities. Cannot be removed."
-	icon_state = "auto_sear"
-
 //salvage
 /obj/item/salvage
 	name = "salvage"

@@ -160,7 +160,6 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	id = /obj/item/card/id/dogtag/legorator
 	gloves = null
 	backpack = /obj/item/storage/backpack/legionr
-	shoes = /obj/item/clothing/shoes/roman
 	suit_store = /obj/item/gun/ballistic/revolver/colt357
 	r_pocket = /obj/item/storage/bag/money/small/legofficers
 	l_pocket = /obj/item/flashlight/lantern
@@ -356,7 +355,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/melee/powered/ripper = 1,
 		/obj/item/ammo_box/tube/c4570 = 3,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/reagent_containers/pill/bitterdrink = 2,
 		)
 
@@ -706,7 +705,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/sks = 2,
 		/obj/item/grenade/smokebomb = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		)
 
 
@@ -1132,7 +1131,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 
 /datum/outfit/loadout/auxmedicus
 	name = "Medicus (Surgeon)"
-	neck = /obj/item/clothing/neck/apron/medicus
+	neck = /obj/item/clothing/neck/apron/medical
 	gloves = /obj/item/clothing/gloves/f13/crudemedical
 	belt = /obj/item/storage/belt/medical/primitive
 	backpack_contents = list(
@@ -1242,7 +1241,7 @@ Weapons		Lever shotgun, Grease gun, Repeater carbines, Revolvers, simple guns al
 //Laborers farm and mine.
 /datum/outfit/loadout/slaveworker
 	name = "Worker"
-	suit = /obj/item/clothing/suit/armor/slavelabor
+	suit = /obj/item/clothing/suit/armor/outfit/slavelabor
 	uniform = /obj/item/clothing/under/f13/legslave
 	shoes =	/obj/item/clothing/shoes/f13/rag
 	r_hand = /obj/item/flashlight/flare/torch

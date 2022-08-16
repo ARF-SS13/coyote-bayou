@@ -15,14 +15,16 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+
 
 	var/select = 0
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
@@ -31,6 +33,10 @@
 	. = ..()
 	if(!istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))
 		verbs += /obj/item/gun/ballistic/revolver/verb/spin
+
+/obj/item/gun/ballistic/revolver/generate_guntags()
+	..()
+	gun_tags |= GUN_REVOLVER
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin = 1)
 	if(spin)
@@ -53,9 +59,9 @@
 			CB.bounce_away(FALSE, NONE)
 			num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You unload [num_unloaded] shell\s from [src].</span>")
+		to_chat(user, span_notice("You unload [num_unloaded] shell\s from [src]."))
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
@@ -68,7 +74,8 @@
 		return
 
 	if(do_spin())
-		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
+		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		playsound(src, 'sound/f13weapons/revolverspin.ogg', 30, 1)
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -102,31 +109,31 @@
 	if(..())
 		return TRUE
 	if("38" in magazine.caliber)
-		to_chat(user, "<span class='notice'>You begin to reinforce the barrel of [src]...</span>")
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//you know the drill
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, span_warning("You can't modify it!"))
 				return TRUE
 			magazine.caliber = "357"
 			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
 	else
-		to_chat(user, "<span class='notice'>You begin to revert the modifications to [src]...</span>")
+		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
 		if(magazine.ammo_count())
 			afterattack(user, user)	//and again
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
 			return TRUE
 		if(I.use_tool(src, user, 30))
 			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
+				to_chat(user, span_warning("You can't modify it!"))
 				return
 			magazine.caliber = "38"
 			desc = initial(desc)
-			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
+			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
 	return TRUE
 
 
@@ -149,21 +156,19 @@
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
 
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
@@ -186,14 +191,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -219,14 +221,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
 
@@ -247,14 +246,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.2)
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
 
@@ -275,14 +272,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	block_chance = 20
 
@@ -311,18 +305,15 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1)
 
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
 
 /* * * * * * * * * * *
  * .44 magnum revolver
@@ -343,15 +334,12 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
@@ -375,24 +363,22 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 
 /* * * * * * * * * * *
  * Peacekeeper revolver
- * Fullauto? heavier revolver
+ * Quickfire heavier revolver
  * .44 magnum
  * Scope!
- * Full-auto?
+ * Quick fire
+ * Heavy recoil
  * Unique
  * * * * * * * * * * */
 
@@ -406,17 +392,14 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY * 2
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL * 2
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
-	automatic = 1
-	autofire_shot_delay = 1
+	automatic = 0
+	autofire_shot_delay = 0
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	can_scope = FALSE
 
@@ -444,14 +427,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_POOR
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
+	damage_multiplier = GUN_LESS_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -475,15 +457,14 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
@@ -507,22 +488,50 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_NONE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
+
+/* * * * * * * * * * *
+ * M2045 Magnum Revolver Rifle
+ * Heavy revolver rifle
+ * Scoped
+ * .308
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/m2405
+	name = "M2045 Magnum Revolver Rifle"
+	desc = "A relic from before the Great War returns to the wasteland. This rifle uses .308 ammunition and has considerable recoil."
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev308
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	item_state = "m2405"
+	icon_state = "m2405"
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(2.2)
+
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
 
 /* * * * * * * * * * *
  * Hunting revolver
  * Super heavy revolver
  * .45-70
- * Less damage
  * Uncommon
  * * * * * * * * * * */
 
@@ -536,15 +545,14 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T1
-
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 9
@@ -567,14 +575,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOWER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 
 /* * * * * * * * * * *
  * Sequoia revolvers
@@ -598,14 +603,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -620,14 +624,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -639,14 +640,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_HEAVY
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_NORMAL
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 
 /* * * * * * * * * * *
  * Single Action Army revolvers
@@ -666,14 +664,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
@@ -699,18 +696,14 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-
-
 
 /* * * * * * * * * * *
  * Needler 'revolver'
@@ -729,14 +722,13 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
@@ -750,14 +742,11 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	recoil_multiplier = GUN_RECOIL_REVOLVER_LIGHT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_QUICK
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
@@ -812,13 +801,13 @@
 			return
 	if(target != user)
 		if(ismob(target))
-			to_chat(user, "<span class='warning'>A mechanism prevents you from shooting anyone but yourself!</span>")
+			to_chat(user, span_warning("A mechanism prevents you from shooting anyone but yourself!"))
 		return
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!spun)
-			to_chat(user, "<span class='warning'>You need to spin \the [src]'s chamber first!</span>")
+			to_chat(user, span_warning("You need to spin \the [src]'s chamber first!"))
 			return
 
 		spun = FALSE
@@ -832,21 +821,21 @@
 				if(zone == BODY_ZONE_HEAD || zone == BODY_ZONE_PRECISE_EYES || zone == BODY_ZONE_PRECISE_MOUTH)
 					shoot_self(user, affecting)
 				else
-					user.visible_message("<span class='danger'>[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!</span>", "<span class='userdanger'>You cowardly fire [src] at your [affecting.name]!</span>", "<span class='italics'>You hear a gunshot!</span>")
+					user.visible_message(span_danger("[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!"), span_userdanger("You cowardly fire [src] at your [affecting.name]!"), span_italic("You hear a gunshot!"))
 				chambered = null
 				return
 
-		user.visible_message("<span class='danger'>*click*</span>")
+		user.visible_message(span_danger("*click*"))
 		playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/ballistic/revolver/russian/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	add_fingerprint(user)
 	playsound(src, "gun_dry_fire", 30, TRUE)
-	user.visible_message("<span class='danger'>[user.name] tries to fire \the [src] at the same time, but only succeeds at looking like an idiot.</span>", "<span class='danger'>\The [src]'s anti-combat mechanism prevents you from firing it at the same time!</span>")
+	user.visible_message(span_danger("[user.name] tries to fire \the [src] at the same time, but only succeeds at looking like an idiot."), span_danger("\The [src]'s anti-combat mechanism prevents you from firing it at the same time!"))
 
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
-	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='italics'>You hear a gunshot!</span>")
+	user.visible_message(span_danger("[user.name] fires [src] at [user.p_their()] head!"), span_userdanger("You fire [src] at your head!"), span_italic("You hear a gunshot!"))
 
 /obj/item/gun/ballistic/revolver/russian/soul
 	name = "cursed Russian revolver"
@@ -858,7 +847,7 @@
 	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
 		qdel(SS)
 		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
+	user.visible_message(span_danger("[user.name]'s soul is captured by \the [src]!"), span_userdanger("You've lost the gamble! Your soul is forfeit!"))
 
 
 //////////////////
@@ -871,11 +860,11 @@
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
+			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/update_overlays()
 	. = ..()
@@ -900,15 +889,15 @@
 		CB.update_icon()
 		num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You break open \the [src] and unload [num_unloaded] shell\s.</span>")
+		to_chat(user, span_notice("You break open \the [src] and unload [num_unloaded] shell\s."))
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 //DODGE CODE
 /obj/item/gun/ballistic/revolver/colt357/lucky/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		if(prob(block_chance))
-			owner.visible_message("<span class='danger'>[owner] seems to dodge [attack_text] entirely thanks to [src]!</span>")
+			owner.visible_message(span_danger("[owner] seems to dodge [attack_text] entirely thanks to [src]!"))
 			playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 			return 1
 	return 0
@@ -934,12 +923,12 @@
 
 /obj/item/gun/ballistic/revolver/mws/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to remove the magazine.</span>"
+	. += span_notice("Alt-click to remove the magazine.")
 
 /obj/item/gun/ballistic/revolver/mws/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	process_chamber(user)
 	if(!chambered || !chambered.BB)
-		to_chat(user, "<span class='danger'>*click*</span>")
+		to_chat(user, span_danger("*click*"))
 		playsound(src, "gun_dry_fire", 30, 1)
 
 
@@ -959,9 +948,9 @@
 /obj/item/gun/ballistic/revolver/mws/proc/switch_to(obj/item/ammo_casing/mws_batt/new_batt, mob/living/user)
 	if(ishuman(user))
 		if(chambered && new_batt.type == chambered.type)
-			to_chat(user,"<span class='warning'>[src] is now using the next [new_batt.type_name] power cell.</span>")
+			to_chat(user,span_warning("[src] is now using the next [new_batt.type_name] power cell."))
 		else
-			to_chat(user,"<span class='warning'>[src] is now firing [new_batt.type_name].</span>")
+			to_chat(user,span_warning("[src] is now firing [new_batt.type_name]."))
 
 	chambered = new_batt
 	update_icon()
@@ -995,7 +984,7 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		magazine = null
-		to_chat(user, "<span class='notice'>You pull the magazine out of [src].</span>")
+		to_chat(user, span_notice("You pull the magazine out of [src]."))
 		if(chambered)
 			chambered = null
 		update_icon()
@@ -1031,7 +1020,7 @@
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
+		user.visible_message(span_warning("[user] somehow manages to shoot [user.p_them()]self in the face!"), span_userdanger("You somehow shoot yourself in the face! How the hell?!"))
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.DefaultCombatKnockdown(80)

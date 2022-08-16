@@ -50,7 +50,7 @@
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.sharpness)
-		user.show_message("<span class='notice'>You make [plank_name] out of \the [src]!</span>", MSG_VISUAL)
+		user.show_message(span_notice("You make [plank_name] out of \the [src]!"), MSG_VISUAL)
 		var/seed_modifier = 3
 		if(seed)
 			seed_modifier = round(seed.potency / 25)
@@ -60,13 +60,13 @@
 			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
 				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
 		if(plank.amount > old_plank_amount)
-			to_chat(user, "<span class='notice'>You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name].</span>")
+			to_chat(user, span_notice("You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
 		qdel(src)
 
 	if(CheckAccepted(W))
 		var/obj/item/reagent_containers/food/snacks/grown/leaf = W
 		if(leaf.dry)
-			user.show_message("<span class='notice'>You wrap \the [W] around the log, turning it into a torch!</span>")
+			user.show_message(span_notice("You wrap \the [W] around the log, turning it into a torch!"))
 			var/obj/item/flashlight/flare/torch/T = new /obj/item/flashlight/flare/torch(user.loc)
 			usr.dropItemToGround(W)
 			usr.put_in_active_hand(T)
@@ -156,6 +156,7 @@
 	var/burning = 0
 	var/burn_icon = "bonfire_on_fire" //for a softer more burning embers icon, use "bonfire_warm"
 	var/grill = FALSE
+	var/stones = FALSE
 	var/fire_stack_strength = 5
 
 /obj/structure/bonfire/dense
@@ -179,27 +180,51 @@
 	return ..()
 
 /obj/structure/bonfire/attackby(obj/item/W, mob/user, params)
+	//SMOKE SIGNALS. Burn cloth to send a radio message to everyone who knows tribal.
+	if(istype(W, /obj/item/stack/sheet/cloth) && !grill && burning)
+		if(!user.has_language(/datum/language/tribal))
+			return ..()
+		attempt_smoke_signal(W, user)
+		return
+	//SANDSTONE GUARDRAIL. Use sandstone to make the bonfire dense to avoid accidentally walking onto the fire.
+	if(istype(W, /obj/item/stack/sheet/mineral/sandstone) && !stones)
+		var/obj/item/stack/sheet/mineral/sandstone/stone = W
+		if(stone.use(3))
+			to_chat(user, span_warning("You surround \the [src] with stones to make it safer."))
+			density = TRUE
+			stones = TRUE
+			add_overlay("bonfire_stones")
+			return
+		else
+			to_chat(user, span_warning("You do not have enough [W] to surround \the [src] with stones."))
+			return
+	//STAKE AND GRILL. Use metal rods to add either a stake to burn your enemies on, or a grill to cook food like a microwave.
 	if(istype(W, /obj/item/stack/rods) && !can_buckle && !grill)
-		var/obj/item/stack/rods/R = W
+		var/obj/item/stack/rods/rod = W
 		var/choice = input(user, "What would you like to construct?", "Bonfire") as null|anything in list("Stake","Grill")
 		switch(choice)
 			if("Stake")
-				R.use(1)
+				rod.use(1)
 				can_buckle = TRUE
 				buckle_requires_restraints = TRUE
 				to_chat(user, "<span class='italics'>You add a rod to \the [src].")
 				var/mutable_appearance/rod_underlay = mutable_appearance('icons/obj/hydroponics/equipment.dmi', "bonfire_rod")
 				rod_underlay.pixel_y = 16
 				underlays += rod_underlay
+				return
 			if("Grill")
-				R.use(1)
+				rod.use(1)
 				grill = TRUE
 				to_chat(user, "<span class='italics'>You add a grill to \the [src].")
 				add_overlay("bonfire_grill")
+				return
 			else
 				return ..()
+	//IGNITE. Use a hot object to light the bonfire.
 	if(W.get_temperature())
 		StartBurning()
+		return
+	//COOKING. Place an object on the bonfire as if it were a table, using its grill.
 	if(grill)
 		if(user.a_intent != INTENT_HARM && !(W.item_flags & ABSTRACT))
 			if(user.temporarilyRemoveItemFromInventory(W))
@@ -211,13 +236,15 @@
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 				W.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
 				W.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
-		else
-			return ..()
+		else //Standard attackby response, but also expose anything used on it to flame.
+			. = ..()
+			if(burning)
+				W.fire_act(1000, 500)
 
 
 /obj/structure/bonfire/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(burning)
-		to_chat(user, "<span class='warning'>You need to extinguish [src] before removing the logs!</span>")
+		to_chat(user, span_warning("You need to extinguish [src] before removing the logs!"))
 		return
 	if(!has_buckled_mobs() && do_after(user, 50, target = src))
 		for(var/I in 1 to 5)
@@ -226,6 +253,8 @@
 			L.pixel_y += rand(1,4)
 		if(can_buckle || grill)
 			new /obj/item/stack/rods(loc, 1)
+		if(stones)
+			new /obj/item/stack/sheet/mineral/sandstone(loc, 3)
 		qdel(src)
 		return
 
@@ -299,6 +328,70 @@
 		burning = 0
 		set_light(0)
 		STOP_PROCESSING(SSobj, src)
+
+/obj/structure/bonfire/proc/attempt_smoke_signal(obj/item/stack/sheet/cloth/sheet, mob/living/user, )
+	if(!is_type_in_list(get_area(src), GLOB.outdoor_areas))
+		to_chat(user, span_warning("You must be outside to send a smoke signal."))
+		return
+	var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
+	if(!signalmessage)
+		return
+	var/send_time = length(signalmessage) * 2 //Deciseconds. A 10 character message would take 20 deciseconds, or two seconds, to send.
+	if(!user.canUseTopic(src, BE_CLOSE))
+		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		return
+	if(do_after(user, send_time, target = src))
+		if(!sheet.use(1))
+			to_chat(user, span_warning("You don't have enough cloth to send a smoke signal."))
+			to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+			return
+		smoke_signal(user, signalmessage, src)
+		user.visible_message("[user] burns \the [sheet] in short, controlled bursts.")
+	else
+		to_chat(user, span_warning("You have to stand still to send a smoke signal."))
+		to_chat(user, span_warning("You attempted to send: [signalmessage]"))
+		return
+	
+
+/obj/structure/bonfire/proc/smoke_signal(mob/living/M, message, obj/structure/bonfire/B)
+	var/log_message = "[message]"
+	M.log_talk(log_message, LOG_CHAT)
+
+	for(var/mob/player in GLOB.player_list)
+		if(player == M)
+			var/msg = "You send a message by smoke signal: "+span_papyrus("\"[message]\"")
+			to_chat(player, msg)
+			continue
+		if(istype(player, /mob/dead))
+			var/msg_dead = "(Smoke Signal) [M]: "+span_papyrus("\"[message]\"")
+			to_chat(player, msg_dead)
+			continue
+		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
+			if(!is_type_in_list(get_area(player), GLOB.outdoor_areas))
+				continue
+			var/dirmessage = "somewhere in the distance"
+			if(player.z == B.z)
+				var/dir = get_dir(get_turf(player), get_turf(B))
+				switch(dir)
+					if(NORTH)
+						dirmessage = "in the north"
+					if(SOUTH)
+						dirmessage = "in the south"
+					if(EAST)
+						dirmessage = "in the east"
+					if(WEST)
+						dirmessage = "in the west"
+					if(NORTHEAST)
+						dirmessage = "in the northeast"
+					if(NORTHWEST)
+						dirmessage = "in the northwest"
+					if(SOUTHEAST)
+						dirmessage = "in the southeast"
+					if(SOUTHWEST)
+						dirmessage = "in the southwest"
+			var/msg = "Smoke rises [dirmessage]: "+span_papyrus("\"[message]\"")
+			to_chat(player, msg)
 
 /obj/structure/bonfire/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
 	if(..())

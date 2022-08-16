@@ -41,7 +41,7 @@
 			// State 1
 			if(istype(W, /obj/item/weldingtool))
 				if(weld(W, user))
-					to_chat(user, "<span class='notice'>You weld the assembly securely into place.</span>")
+					to_chat(user, span_notice("You weld the assembly securely into place."))
 					setAnchored(TRUE)
 					state = 2
 				return
@@ -49,17 +49,17 @@
 			// State 2
 			if(istype(W, /obj/item/stack/cable_coil))
 				if(W.use_tool(src, user, 0, 2))
-					to_chat(user, "<span class='notice'>You add wires to the assembly.</span>")
+					to_chat(user, span_notice("You add wires to the assembly."))
 					state = 3
 				else
-					to_chat(user, "<span class='warning'>You need two lengths of cable to wire a camera!</span>")
+					to_chat(user, span_warning("You need two lengths of cable to wire a camera!"))
 					return
 				return
 
 			else if(istype(W, /obj/item/weldingtool))
 
 				if(weld(W, user))
-					to_chat(user, "<span class='notice'>You unweld the assembly from its place.</span>")
+					to_chat(user, span_notice("You unweld the assembly from its place."))
 					state = 1
 					setAnchored(TRUE)
 				return
@@ -68,7 +68,7 @@
 	if(is_type_in_typecache(W, possible_upgrades) && !is_type_in_list(W, upgrades)) // Is a possible upgrade and isn't in the camera already.
 		if(!user.transferItemToLoc(W, src))
 			return
-		to_chat(user, "<span class='notice'>You attach \the [W] into the assembly inner circuits.</span>")
+		to_chat(user, span_notice("You attach \the [W] into the assembly inner circuits."))
 		upgrades += W
 		return
 
@@ -79,7 +79,7 @@
 		return FALSE
 	var/obj/U = locate(/obj) in upgrades
 	if(U)
-		to_chat(user, "<span class='notice'>You detach an upgrade from the assembly.</span>")
+		to_chat(user, span_notice("You detach an upgrade from the assembly."))
 		tool.play_tool_sound(src)
 		U.forceMove(drop_location())
 		upgrades -= U
@@ -95,11 +95,11 @@
 	tool.play_tool_sound(src)
 	var/input = stripped_input(user, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: SS13,Security,Secret ", "Set Network", "SS13")
 	if(!input)
-		to_chat(user, "<span class='warning'>No input found, please hang up and try your call again!</span>")
+		to_chat(user, span_warning("No input found, please hang up and try your call again!"))
 		return
 	var/list/tempnetwork = splittext(input, ",")
 	if(tempnetwork.len < 1)
-		to_chat(user, "<span class='warning'>No network found, please hang up and try your call again!</span>")
+		to_chat(user, span_warning("No network found, please hang up and try your call again!"))
 		return
 	for(var/i in tempnetwork)
 		tempnetwork -= i
@@ -120,7 +120,7 @@
 
 	new /obj/item/stack/cable_coil(drop_location(), 2)
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You cut the wires from the circuits.</span>")
+	to_chat(user, span_notice("You cut the wires from the circuits."))
 	state = 2
 	return TRUE
 
@@ -128,7 +128,7 @@
 	if(state != 1)
 		return FALSE
 	I.play_tool_sound(src)
-	to_chat(user, "<span class='notice'>You detach the assembly from its place.</span>")
+	to_chat(user, span_notice("You detach the assembly from its place."))
 	new /obj/item/wallframe/camera(drop_location())
 	qdel(src)
 	return TRUE
@@ -136,7 +136,7 @@
 /obj/structure/camera_assembly/proc/weld(obj/item/weldingtool/W, mob/living/user)
 	if(!W.tool_start_check(user, amount=0))
 		return FALSE
-	to_chat(user, "<span class='notice'>You start to weld \the [src]...</span>")
+	to_chat(user, span_notice("You start to weld \the [src]..."))
 	if(W.use_tool(src, user, 20, volume=50))
 		return TRUE
 	return FALSE

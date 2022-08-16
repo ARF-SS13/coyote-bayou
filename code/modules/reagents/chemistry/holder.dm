@@ -347,7 +347,7 @@
 	update_total()
 
 /datum/reagents/proc/remove_addiction(datum/reagent/R)
-	to_chat(my_atom, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
+	to_chat(my_atom, span_notice("You feel like you've gotten over your need for [R.name]."))
 	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 	if(ismob(my_atom))
 		var/turf/T = get_turf(my_atom)
@@ -536,14 +536,14 @@
 							playsound(get_turf(cached_my_atom), selected_reaction.mix_sound, 80, 1)
 
 						for(var/mob/M in seen)
-							to_chat(M, "<span class='notice'>[iconhtml] [selected_reaction.mix_message]</span>")
+							to_chat(M, span_notice("[iconhtml] [selected_reaction.mix_message]"))
 
 					if(istype(cached_my_atom, /obj/item/slime_extract))//if there's an extract and it's used up.
 						var/obj/item/slime_extract/ME2 = my_atom
 						ME2.Uses--
 						if(ME2.Uses <= 0) // give the notification that the slime core is dead
 							for(var/mob/M in seen)
-								to_chat(M, "<span class='notice'>[iconhtml] \The [my_atom]'s power is consumed in the reaction.</span>")
+								to_chat(M, span_notice("[iconhtml] \The [my_atom]'s power is consumed in the reaction."))
 								ME2.name = "used slime extract"
 								ME2.desc = "This extract has been used up."
 
@@ -610,7 +610,7 @@
 	handle_reactions()
 	update_total()
 	//Reaction sounds and words
-	my_atom.visible_message("<span class='notice'>[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [C.mix_message]</span>")
+	my_atom.visible_message(span_notice("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [C.mix_message]"))
 
 /datum/reagents/proc/fermiReact(selected_reaction, cached_temp, cached_pH, reactedVol, targetVol, cached_required_reagents, cached_results, multiplier)
 	var/datum/chemical_reaction/C = selected_reaction

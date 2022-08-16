@@ -36,22 +36,22 @@
 		return FALSE
 
 	if(M == user)
-		M.visible_message("<span class='notice'>[user] attempts to [apply_method] [src].</span>")
+		M.visible_message(span_notice("[user] attempts to [apply_method] [src]."))
 		if(self_delay)
 			if(!do_mob(user, M, self_delay))
 				return FALSE
-		to_chat(M, "<span class='notice'>You [apply_method] [src].</span>")
+		to_chat(M, span_notice("You [apply_method] [src]."))
 	else
-		M.visible_message("<span class='danger'>[user] attempts to force [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] attempts to force [M] to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] attempts to force [M] to [apply_method] [src]."), \
+							span_userdanger("[user] attempts to force [M] to [apply_method] [src]."))
 		if(!do_mob(user, M))
 			return FALSE
-		M.visible_message("<span class='danger'>[user] forces [M] to [apply_method] [src].</span>", \
-							"<span class='userdanger'>[user] forces [M] to [apply_method] [src].</span>")
+		M.visible_message(span_danger("[user] forces [M] to [apply_method] [src]."), \
+							span_userdanger("[user] forces [M] to [apply_method] [src]."))
 
 	var/makes_me_think = pick(strings("redpill.json", "redpill_questions"))
 	if(icon_state == "pill4" && prob(5)) //you take the red pill - you stay in Wonderland, and I show you how deep the rabbit hole goes
-		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, M, "<span class='notice'>[makes_me_think]</span>"), 50)
+		addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, M, span_notice("[makes_me_think]")), 50)
 
 	log_combat(user, M, "fed", reagents.log_list())
 	if(reagents.total_volume)
@@ -67,15 +67,15 @@
 	if(!dissolvable || !target.is_refillable())
 		return
 	if(target.is_drainable() && !target.reagents.total_volume)
-		to_chat(user, "<span class='warning'>[target] is empty! There's nothing to dissolve [src] in.</span>")
+		to_chat(user, span_warning("[target] is empty! There's nothing to dissolve [src] in."))
 		return
 
 	if(target.reagents.holder_full())
-		to_chat(user, "<span class='warning'>[target] is full.</span>")
+		to_chat(user, span_warning("[target] is full."))
 		return
 
-	user.visible_message("<span class='warning'>[user] slips something into [target]!</span>",
-						"<span class='notice'>You dissolve [src] in [target].</span>", vision_distance = 2)
+	user.visible_message(span_warning("[user] slips something into [target]!"),
+						span_notice("You dissolve [src] in [target]."), vision_distance = 2)
 	log_combat(user, target, "spiked", src, reagents.log_list())
 	reagents.trans_to(target, reagents.total_volume, log = TRUE)
 	qdel(src)
@@ -278,7 +278,7 @@
 
 /obj/item/reagent_containers/pill/radx
 	name = "Rad-X pill"
-	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
+	desc = "A pill that reduces radiation buildup, totally shielding the user at high doses. Does not treat radiation sickness, best taken before exposure."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_radx"
 	list_reagents = list(/datum/reagent/medicine/radx = 20)

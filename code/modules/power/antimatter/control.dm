@@ -1,6 +1,6 @@
 /obj/machinery/power/am_control_unit
-	name = "antimatter control unit"
-	desc = "This device injects antimatter into connected shielding units, the more antimatter injected the more power produced.  Wrench the device to set it up."
+	name = "reactor control unit"
+	desc = "A General Atomics reactor control unit. Controls exposure of a fuel rod inserted into it.  Wrench the device to set it up."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "control"
 	anchored = FALSE
@@ -155,31 +155,31 @@
 		if(!anchored)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] secures the [src.name] to the floor.", \
-				"<span class='notice'>You secure the anchor bolts to the floor.</span>", \
-				"<span class='italics'>You hear a ratchet.</span>")
+				span_notice("You secure the anchor bolts to the floor."), \
+				span_italic("You hear a ratchet."))
 			src.anchored = TRUE
 			connect_to_network()
 		else if(!linked_shielding.len > 0)
 			W.play_tool_sound(src, 75)
 			user.visible_message("[user.name] unsecures the [src.name].", \
-				"<span class='notice'>You remove the anchor bolts.</span>", \
-				"<span class='italics'>You hear a ratchet.</span>")
+				span_notice("You remove the anchor bolts."), \
+				span_italic("You hear a ratchet."))
 			src.anchored = FALSE
 			disconnect_from_network()
 		else
-			to_chat(user, "<span class='warning'>Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!</span>")
+			to_chat(user, span_warning("Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!"))
 
 	else if(istype(W, /obj/item/am_containment))
 		if(fueljar)
-			to_chat(user, "<span class='warning'>There is already a [fueljar] inside!</span>")
+			to_chat(user, span_warning("There is already a [fueljar] inside!"))
 			return
 
 		if(!user.transferItemToLoc(W, src))
 			return
 		fueljar = W
 		user.visible_message("[user.name] loads an [W.name] into the [src.name].", \
-				"<span class='notice'>You load an [W.name].</span>", \
-				"<span class='italics'>You hear a thunk.</span>")
+				span_notice("You load an [W.name]."), \
+				span_italic("You hear a thunk."))
 	else
 		return ..()
 
@@ -277,7 +277,7 @@
 			return
 
 	var/dat = ""
-	dat += "AntiMatter Control Panel<BR>"
+	dat += "Fission Control Panel<BR>"
 	dat += "<A href='?src=[REF(src)];close=1'>Close</A><BR>"
 	dat += "<A href='?src=[REF(src)];refresh=1'>Refresh</A><BR>"
 	dat += "<A href='?src=[REF(src)];refreshicons=1'>Force Shielding Update</A><BR><BR>"
@@ -293,12 +293,12 @@
 
 	dat += "Fuel: "
 	if(!fueljar)
-		dat += "<BR>No fuel receptacle detected."
+		dat += "<BR>No fuel rod detected."
 	else
 		dat += "<A href='?src=[REF(src)];ejectjar=1'>Eject</A><BR>"
 		dat += "- [fueljar.fuel]/[fueljar.fuel_max] Units<BR>"
 
-		dat += "- Injecting: [fuel_injection] units<BR>"
+		dat += "- Fuel Rod Exposure: [fuel_injection]<BR>"
 		dat += "- <A href='?src=[REF(src)];strengthdown=1'>--</A>|<A href='?src=[REF(src)];strengthup=1'>++</A><BR><BR>"
 
 

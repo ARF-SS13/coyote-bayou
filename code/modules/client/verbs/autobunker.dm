@@ -4,7 +4,7 @@
 	set category = "OOC"
 	
 	if(autobunker_last_try + 5 SECONDS > world.time)
-		to_chat(src, "<span class='danger'>Function on cooldown, try again in 5 seconds.</span>")
+		to_chat(src, span_danger("Function on cooldown, try again in 5 seconds."))
 		return
 	autobunker_last_try = world.time
 
@@ -21,17 +21,17 @@
 	message["auto_bunker_override"] = TRUE
 	var/list/servers = CONFIG_GET(keyed_list/cross_server_bunker_override)
 	if(!length(servers))
-		to_chat(C, "<span class='boldwarning'>AUTOBUNKER: No servers are configured to receive from this one.</span>")
+		to_chat(C, span_boldwarning("AUTOBUNKER: No servers are configured to receive from this one."))
 		return
 	log_admin("[key] ([key_name(C)]) has initiated an autobunker authentication with linked servers.")
 	for(var/name in servers)
 		var/returned = world.Export("[servers[name]]?[list2params(message)]")
 		switch(returned)
 			if("Bad Key")
-				to_chat(C, "<span class='boldwarning'>AUTOBuNKER: [name] failed to authenticate with this server.</span>")
+				to_chat(C, span_boldwarning("AUTOBuNKER: [name] failed to authenticate with this server."))
 			if("Function Disabled")
-				to_chat(C, "<span class='boldwarning'>AUTOBUNKER: [name] has autobunker receive disabled.</span>")
+				to_chat(C, span_boldwarning("AUTOBUNKER: [name] has autobunker receive disabled."))
 			if("Success")
 				to_chat(C, "<span class='boldwarning'>AUTOBUNKER: Successfully authenticated with [name]. Panic bunker bypass granted to [key].</span>.")
 			else
-				to_chat(C, "<span class='boldwarning'>AUTOBUNKER: Unknown error ([name]).</span>")
+				to_chat(C, span_boldwarning("AUTOBUNKER: Unknown error ([name])."))

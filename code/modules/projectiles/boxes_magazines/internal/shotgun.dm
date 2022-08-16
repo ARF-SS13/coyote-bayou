@@ -1,7 +1,7 @@
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
-	caliber = "shotgun"
+	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 4
 	multiload = 0
 
@@ -67,21 +67,21 @@
 /obj/item/ammo_box/magazine/internal/shot/tube44
 	name = ".44 magnum internal tube magazine" //trail carbine
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = "44"
+	caliber = list(CALIBER_44)
 	max_ammo = 12
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube357
 	name = ".357 magnum internal tube magazine" //cowboy repeater
 	ammo_type = /obj/item/ammo_casing/a357
-	caliber = "357"
+	caliber = list(CALIBER_357, CALIBER_38)
 	max_ammo = 12
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/tube4570
 	name = "4570 internal tube magazine" //brush gun
 	ammo_type = /obj/item/ammo_casing/c4570
-	caliber = "4570"
+	caliber = list(CALIBER_4570)
 	max_ammo = 10
 	multiload = 1
 
@@ -89,7 +89,7 @@
 	name = "lasmusket magazine"
 	desc = "Oh god, this shouldn't be here"
 	ammo_type = /obj/item/ammo_casing/caseless/lasermusket
-	caliber = "lasmusket"
+	caliber = list(CALIBER_MUSKET_LASER)
 	max_ammo = 6
 	multiload = 1
 
@@ -97,6 +97,6 @@
 	name = "plasmacaster magazine"
 	desc = "Oh god, this shouldn't be here"
 	ammo_type = /obj/item/ammo_casing/caseless/plasmacaster
-	caliber = "plasmacaster"
+	caliber = list(CALIBER_MUSKET_PLASMA)
 	max_ammo = 2
 	multiload = 1

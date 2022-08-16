@@ -73,11 +73,11 @@
 		var/obj/item/clothing/armoraccessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		if(dummy_thick)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] is too bulky and cannot have accessories attached to it!</span>")
+				to_chat(user, span_warning("[src] is too bulky and cannot have accessories attached to it!"))
 			return
 
 		else
@@ -87,7 +87,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+				to_chat(user, span_notice("You attach [I] to [src]."))
 
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
@@ -113,9 +113,9 @@
 		var/obj/item/clothing/armoraccessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc

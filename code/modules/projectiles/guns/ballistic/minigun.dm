@@ -28,12 +28,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, "<span class='warning'>You need a free hand to hold the gun!</span>")
+					to_chat(user, span_warning("You need a free hand to hold the gun!"))
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, "<span class='warning'>You are already holding the gun!</span>")
+			to_chat(user, span_warning("You are already holding the gun!"))
 	else
 		..()
 
@@ -77,9 +77,9 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, "<span class='notice'>You attach the [gun.name] to the [name].</span>")
+		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
 	else
-		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
+		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
 	user.update_inv_back()
 
@@ -95,15 +95,16 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_RIFLE_LMG
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTEST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = LMG_RECOIL(0.5)
+	init_firemodes = list(
+		FULL_AUTO_1200
+	)
 	
 	flags_1 = CONDUCT_1
 	slot_flags = null

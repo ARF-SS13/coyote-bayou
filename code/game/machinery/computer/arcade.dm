@@ -70,7 +70,7 @@
 	if(!circuit)
 		var/list/gameodds = list(/obj/item/circuitboard/computer/arcade/battle = 33,
 								/obj/item/circuitboard/computer/arcade/orion_trail = 33,
-								/obj/machinery/computer/arcade/amputation = 33)
+								/obj/item/circuitboard/computer/arcade/amputation = 33)
 		var/thegame = pickweight(gameodds)
 		var/obj/item/circuitboard/CB = new thegame()
 		var/obj/machinery/computer/arcade/A = new CB.build_path(loc, CB)
@@ -96,7 +96,7 @@
 		new prizeselect(src)
 
 	var/atom/movable/prize = pick(contents)
-	visible_message("<span class='notice'>[src] dispenses [prize]!</span>", "<span class='notice'>You hear a chime and a clunk.</span>")
+	visible_message(span_notice("[src] dispenses [prize]!"), span_notice("You hear a chime and a clunk."))
 
 	prize.forceMove(get_turf(src))
 
@@ -118,11 +118,11 @@
 		var/obj/item/stack/arcadeticket/T = O
 		var/amount = T.get_amount()
 		if(amount <2)
-			to_chat(user, "<span class='warning'>You need 2 tickets to claim a prize!</span>")
+			to_chat(user, span_warning("You need 2 tickets to claim a prize!"))
 			return
 		prizevend(user)
 		T.pay_tickets()
 		T.update_icon()
 		O = T
-		to_chat(user, "<span class='notice'>You turn in 2 tickets to the [src] and claim a prize!</span>")
+		to_chat(user, span_notice("You turn in 2 tickets to the [src] and claim a prize!"))
 		return

@@ -175,7 +175,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	id = /obj/item/card/id/dogtag/ncrcaptain
 	uniform	= /obj/item/clothing/under/f13/ncr/ncr_officer
 	head = /obj/item/clothing/head/beret/ncr
-	glasses = /obj/item/clothing/glasses/sunglasses/big
 	ears = /obj/item/radio/headset/headset_ncr_com
 	glasses = /obj/item/clothing/glasses/night/ncr
 	gloves = /obj/item/clothing/gloves/f13/leather
@@ -353,7 +352,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/extended = 2,
 		/obj/item/storage/box/ration/menu_eight = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/book/granter/trait/trekking = 1,
 		)
 
@@ -408,7 +407,6 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	head = /obj/item/clothing/head/f13/ncr/ncr_campaign
 	shoes = /obj/item/clothing/shoes/f13/military/ncr_officer_boots
 	glasses	= /obj/item/clothing/glasses/sunglasses
-	head = /obj/item/clothing/head/f13/ncr/ncr_campaign
 	belt = /obj/item/storage/belt/holster
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bayonet = 1,
@@ -445,7 +443,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/book/granter/trait/rifleman = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mmds = 2,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 2,
 		/obj/item/clothing/accessory/ncr/SSGT = 1
 		)
 
@@ -701,7 +699,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m762 = 3,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/colt357 = 2,
 		/obj/item/ammo_box/a357=4,
 		)
@@ -728,7 +726,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv = 2,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/gun/ballistic/revolver/m29/snub = 1,
 		/obj/item/ammo_box/m44box = 1,
@@ -779,7 +777,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	suit = /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/ncr
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/mk23 = 1,
-		/obj/item/ammo_box/magazine/m45exp = 2,
+		/obj/item/ammo_box/magazine/m45/socom = 2,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		)
 
@@ -845,6 +843,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingrifle)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/huntingshotgun)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/m1carbine)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
 
@@ -885,7 +885,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/assault/ncr/engineer
 	suit_store = /obj/item/gun/ballistic/automatic/smg/smg10mm
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext = 2,
 		/obj/item/book/granter/crafting_recipe/blueprint/trapper = 1,
 		/obj/item/book/granter/trait/explosives = 1,
 		/obj/item/book/granter/trait/explosives_advanced = 1,
@@ -987,7 +987,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/armband/med/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/simple = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
@@ -1000,6 +1000,19 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	. = ..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
 	ADD_TRAIT(H, TRAIT_HARD_YARDS, src)
@@ -1069,7 +1082,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle = 2,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mmds = 1,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 1,
 		/obj/item/storage/box/ration/menu_two = 1,
 		)
 
@@ -1101,10 +1114,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/holster/legholster
 	head = /obj/item/clothing/head/f13/ncr/steelpot_goggles
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m10mm_adv/ext = 2,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext = 2,
 		/obj/item/binoculars = 1,
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mmds = 1,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 1,
 		/obj/item/storage/box/ration/menu_one = 1,
 		)
 
@@ -1294,9 +1307,22 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	. = ..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_HIGH, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+
 
 
 // LOGISTICS OFFICER
@@ -1318,6 +1344,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	. = ..()
 	if(visualsOnly)
 		return
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribalradio)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/durathread_vest)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/marksmancarbine)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lmg)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/scoutcarbine)
@@ -1450,7 +1478,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/holster/legholster
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mmds = 2,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 2,
 		/obj/item/melee/onehanded/knife/survival = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/book/granter/trait/chemistry = 1,
@@ -1465,7 +1493,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
-		/obj/item/ammo_box/magazine/m9mmds = 2,
+		/obj/item/ammo_box/magazine/m9mm/doublestack = 2,
 		/obj/item/melee/onehanded/knife/bayonet = 1,
 		/obj/item/reagent_containers/food/snacks/cheesyburrito = 2,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 1,

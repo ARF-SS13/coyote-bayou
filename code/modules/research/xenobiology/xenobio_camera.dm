@@ -142,13 +142,13 @@
 			if(I == XENOBIO_UPGRADE_SLIMEADV)
 				max_slimes = 10
 		if(successfulupgrade)
-			to_chat(user, "<span class='notice'>You have successfully upgraded [src] with [O].</span>")
+			to_chat(user, span_notice("You have successfully upgraded [src] with [O]."))
 		else
-			to_chat(user, "<span class='warning'>[src] already has the contents of [O] installed!</span>")
+			to_chat(user, span_warning("[src] already has the contents of [O] installed!"))
 		return
 	if(istype(O, /obj/item/reagent_containers/food/snacks/cube/monkey) && (upgradetier & XENOBIO_UPGRADE_MONKEYS)) //CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
 		monkeys++
-		to_chat(user, "<span class='notice'>You feed [O] to [src]. It now has [monkeys] monkey cubes stored.</span>")
+		to_chat(user, span_notice("You feed [O] to [src]. It now has [monkeys] monkey cubes stored."))
 		qdel(O)
 		return
 	else if(istype(O, /obj/item/storage/bag) && (upgradetier & XENOBIO_UPGRADE_MONKEYS)) //CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
@@ -160,7 +160,7 @@
 				monkeys++
 				qdel(G)
 		if(loaded)
-			to_chat(user, "<span class='notice'>You fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored.</span>")
+			to_chat(user, span_notice("You fill [src] with the monkey cubes stored in [O]. [src] now has [monkeys] monkey cubes stored."))
 		return
 	else if(istype(O, /obj/item/slimepotion/slime)  && (upgradetier & XENOBIO_UPGRADE_SLIMEADV)) // CIT CHANGE - makes giving slimes potions via console require XENOBIO_UPGRADE_SLIMEADV
 		var/replaced = FALSE
@@ -170,7 +170,7 @@
 			current_potion.forceMove(drop_location())
 			replaced = TRUE
 		current_potion = O
-		to_chat(user, "<span class='notice'>You load [O] in the console's potion slot[replaced ? ", replacing the one that was there before" : ""].</span>")
+		to_chat(user, span_notice("You load [O] in the console's potion slot[replaced ? ", replacing the one that was there before" : ""]."))
 		return
 	..()
 
@@ -192,7 +192,7 @@
 			S.visible_message("[S] warps in!")
 			X.stored_slimes -= S
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 /datum/action/innate/slime_pick_up
 	name = "Pick up Slime"
@@ -217,7 +217,7 @@
 				S.forceMove(X)
 				X.stored_slimes += S
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 
 /datum/action/innate/feed_slime
@@ -238,11 +238,11 @@
 			if (!QDELETED(food))
 				food.LAssailant = WEAKREF(C)
 				X.monkeys --
-				to_chat(owner, "<span class='notice'>[X] now has [X.monkeys] monkey(s) left.</span>")
+				to_chat(owner, span_notice("[X] now has [X.monkeys] monkey(s) left."))
 		else
-			to_chat(owner, "<span class='warning'>[X] needs to have at least 1 monkey stored. Currently has [X.monkeys] monkeys stored.</span>")
+			to_chat(owner, span_warning("[X] needs to have at least 1 monkey stored. Currently has [X.monkeys] monkeys stored."))
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 
 /datum/action/innate/monkey_recycle
@@ -264,7 +264,7 @@
 				X.monkeys = round(X.monkeys + 0.2,0.1)
 				qdel(M)
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 /datum/action/innate/slime_scan
 	name = "Scan Slime"
@@ -281,7 +281,7 @@
 		for(var/mob/living/simple_animal/slime/S in remote_eye.loc)
 			slime_scan(S, C)
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 /datum/action/innate/feed_potion
 	name = "Apply Potion"
@@ -297,7 +297,7 @@
 	var/obj/machinery/computer/camera_advanced/xenobio/X = target
 
 	if(QDELETED(X.current_potion))
-		to_chat(owner, "<span class='notice'>No potion loaded.</span>")
+		to_chat(owner, span_notice("No potion loaded."))
 		return
 
 	if(GLOB.cameranet.checkTurfVis(remote_eye.loc))
@@ -305,7 +305,7 @@
 			X.current_potion.attack(S, C)
 			break
 	else
-		to_chat(owner, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(owner, span_warning("Target is not near a camera. Cannot proceed."))
 
 
 //Demodularized Code
@@ -389,7 +389,7 @@
 // Scans slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickCtrl(mob/living/user, mob/living/simple_animal/slime/S)
 	if(!GLOB.cameranet.checkTurfVis(S.loc))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
@@ -400,17 +400,17 @@
 //Feeds a potion to slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickAlt(mob/living/user, mob/living/simple_animal/slime/S)
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEADV)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEADV
-		to_chat(user, "<span class='warning'>This console does not have the advanced slime upgrade.</span>")
+		to_chat(user, span_warning("This console does not have the advanced slime upgrade."))
 		return
 	if(!GLOB.cameranet.checkTurfVis(S.loc))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
 	var/obj/machinery/computer/camera_advanced/xenobio/X = E.origin
 	var/area/mobarea = get_area(S.loc)
 	if(QDELETED(X.current_potion))
-		to_chat(C, "<span class='warning'>No potion loaded.</span>")
+		to_chat(C, span_warning("No potion loaded."))
 		return
 	if(mobarea.name == E.allowed_area || mobarea.xenobiology_compatible)
 		X.current_potion.attack(S, C)
@@ -418,10 +418,10 @@
 //Picks up slime
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoSlimeClickShift(mob/living/user, mob/living/simple_animal/slime/S)
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEBASIC)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEBASIC
-		to_chat(user, "<span class='warning'>This console does not have the basic slime upgrade.</span>")
+		to_chat(user, span_warning("This console does not have the basic slime upgrade."))
 		return
 	if(!GLOB.cameranet.checkTurfVis(S.loc))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
@@ -429,10 +429,10 @@
 	var/area/mobarea = get_area(S.loc)
 	if(mobarea.name == E.allowed_area || mobarea.xenobiology_compatible)
 		if(X.stored_slimes.len >= X.max_slimes)
-			to_chat(C, "<span class='warning'>Slime storage is full.</span>")
+			to_chat(C, span_warning("Slime storage is full."))
 			return
 		if(S.ckey)
-			to_chat(C, "<span class='warning'>The slime wiggled free!</span>")
+			to_chat(C, span_warning("The slime wiggled free!"))
 			return
 		if(S.buckled)
 			S.Feedstop(silent = TRUE)
@@ -443,10 +443,10 @@
 //Place slimes
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoTurfClickShift(mob/living/user, turf/open/T)
 	if(!(upgradetier & XENOBIO_UPGRADE_SLIMEBASIC)) //CIT CHANGE - makes slime-related actions require XENOBIO_UPGRADE_SLIMEBASIC
-		to_chat(user, "<span class='warning'>This console does not have the basic slime upgrade.</span>")
+		to_chat(user, span_warning("This console does not have the basic slime upgrade."))
 		return
 	if(!GLOB.cameranet.checkTurfVis(T))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
@@ -461,10 +461,10 @@
 //Place monkey
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoTurfClickCtrl(mob/living/user, turf/open/T)
 	if(!(upgradetier & XENOBIO_UPGRADE_MONKEYS)) // CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
-		to_chat(user, "<span class='warning'>This console does not have the monkey upgrade.</span>")
+		to_chat(user, span_warning("This console does not have the monkey upgrade."))
 		return
 	if(!GLOB.cameranet.checkTurfVis(T))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
@@ -477,17 +477,17 @@
 				food.LAssailant = WEAKREF(C)
 				X.monkeys--
 				X.monkeys = round(X.monkeys, 0.1)		//Prevents rounding errors
-				to_chat(C, "<span class='notice'>[X] now has [X.monkeys] monkey(s) stored.</span>")
+				to_chat(C, span_notice("[X] now has [X.monkeys] monkey(s) stored."))
 		else
-			to_chat(C, "<span class='warning'>[X] needs to have at least 1 monkey stored. Currently has [X.monkeys] monkeys stored.</span>")
+			to_chat(C, span_warning("[X] needs to have at least 1 monkey stored. Currently has [X.monkeys] monkeys stored."))
 
 //Pick up monkey
 /obj/machinery/computer/camera_advanced/xenobio/proc/XenoMonkeyClickCtrl(mob/living/user, mob/living/carbon/monkey/M)
 	if(!(upgradetier & XENOBIO_UPGRADE_MONKEYS)) // CIT CHANGE - makes monkey-related actions require XENOBIO_UPGRADE_MONKEYS
-		to_chat(user, "<span class='warning'>This console does not have the monkey upgrade.</span>")
+		to_chat(user, span_warning("This console does not have the monkey upgrade."))
 		return
 	if(!isturf(M.loc) || !GLOB.cameranet.checkTurfVis(M.loc))
-		to_chat(user, "<span class='warning'>Target is not near a camera. Cannot proceed.</span>")
+		to_chat(user, span_warning("Target is not near a camera. Cannot proceed."))
 		return
 	var/mob/living/C = user
 	var/mob/camera/aiEye/remote/xenobio/E = C.remote_control
@@ -500,4 +500,4 @@
 		X.monkeys = round(X.monkeys + 0.2,0.1)
 		qdel(M)
 		if (X.monkeys == (round(X.monkeys,1)))
-			to_chat(C, "<span class='notice'>[X] now has [X.monkeys] monkey(s) available.</span>")
+			to_chat(C, span_notice("[X] now has [X.monkeys] monkey(s) available."))

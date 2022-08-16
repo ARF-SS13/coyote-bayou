@@ -17,10 +17,10 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_BOS = RADIO_TOKEN_BOS,
 	RADIO_CHANNEL_ENCLAVE = RADIO_TOKEN_ENCLAVE,
 	RADIO_CHANNEL_TOWN = RADIO_TOKEN_TOWN,
-	RADIO_CHANNEL_DEN = RADIO_TOKEN_DEN,
-	RADIO_CHANNEL_LEGION = RADIO_TOKEN_LEGION,
+	RADIO_CHANNEL_TOWN_MAYOR = RADIO_TOKEN_TOWN_MAYOR,
+	RADIO_CHANNEL_TOWN_PD = RADIO_TOKEN_TOWN_PD,
 	RADIO_CHANNEL_RANGER = RADIO_TOKEN_RANGER,
-	RADIO_CHANNEL_KHANS = RADIO_TOKEN_KHANS
+	RADIO_CHANNEL_TOWN_COMMERCE = RADIO_TOKEN_TOWN_COMMERCE
 ))
 
 /obj/item/radio/headset
@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	var/bowman = FALSE
 
 /obj/item/radio/headset/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!</span>")
+	user.visible_message(span_suicide("[user] begins putting \the [src]'s antenna up [user.p_their()] nose! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer!"))
 	return TOXLOSS
 
 /obj/item/radio/headset/examine(mob/user)
@@ -58,9 +58,9 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		. += "<span class='notice'>A small screen on the headset displays the following available frequencies:\n[english_list(avail_chans)]."
 
 		if(command)
-			. += "<span class='info'>Alt-click to toggle the high-volume mode.</span>"
+			. += span_info("Alt-click to toggle the high-volume mode.")
 	else
-		. += "<span class='notice'>A small screen on the headset flashes, it's too small to read without holding or wearing the headset.</span>"
+		. += span_notice("A small screen on the headset flashes, it's too small to read without holding or wearing the headset.")
 
 /obj/item/radio/headset/ComponentInitialize()
 	. = ..()
@@ -399,17 +399,45 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	keyslot = new /obj/item/encryptionkey/headset_khans
 
 /obj/item/radio/headset/headset_town
-	name = "town radio headset"
-	desc = "This is used by the town.\nTo access the town channel, use :f."
+	name = "Nash radio headset"
+	desc = "This is used by the town of Nash.\
+		\nTo access the Nash channel, use :f."
 	icon_state = "mine_headset"
 	keyslot = new /obj/item/encryptionkey/headset_town
 
+/obj/item/radio/headset/headset_town/lawman
+	name = "Nash sheriff radio headset"
+	desc = "This is used by Nash's local sheriff force. Protects ears from flashbangs.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash sheriff channel, use :l."
+	icon_state = "sec_headset_alt"
+	item_state = "sec_headset_alt"
+	bowman = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_town/lawman
+
+/obj/item/radio/headset/headset_town/commerce
+	name = "Nash commerce radio headset"
+	desc = "This is used by Nash's small business owners.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash commerce channel, use :j."
+	keyslot = new /obj/item/encryptionkey/headset_town/commerce
+
+/obj/item/radio/headset/headset_town/mayor
+	name = "Nash mayoral radio headset"
+	desc = "This is used by Nash's mayor (and secretary). Protects ears from flashbangs.\
+		\nTo access the Nash channel, use :f.\
+		\nTo access the Nash mayor channel, use :y.\
+		\nTo access the Nash sheriff channel, use :l.\
+		\nTo access the Nash commerce channel, use :j."
+	bowman = TRUE
+	command = TRUE
+	keyslot = new /obj/item/encryptionkey/headset_town/mayor
+
 /obj/item/radio/headset/headset_followers
 	name = "followers radio headset"
-	desc = "This is used by the followers.\nTo access the town channel, use :f. \nTo access the medical channel, use :m"
+	desc = "This is used by the Followers.\nTo access the Followers channel, use :m"
 	icon_state = "med_headset"
 	keyslot = new /obj/item/encryptionkey/headset_med
-	keyslot2 = new /obj/item/encryptionkey/headset_town
 
 /obj/item/radio/headset/headset_den
 	name = "den radio headset"
@@ -458,7 +486,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	user.set_machine(src)
 	if (istype(W,/obj/item/headsetupgrader))
 		if (!bowman)
-			to_chat(user,"<span class='notice'>You upgrade [src].</span>")
+			to_chat(user,span_notice("You upgrade [src]."))
 			bowmanize()
 			qdel(W)
 	if(istype(W, /obj/item/screwdriver) && !factionized) //Fortuna edit. Radio management
@@ -477,14 +505,14 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 					keyslot2 = null
 
 			recalculateChannels()
-			to_chat(user, "<span class='notice'>You pop out the encryption keys in the headset.</span>")
+			to_chat(user, span_notice("You pop out the encryption keys in the headset."))
 
 		else
-			to_chat(user, "<span class='warning'>This headset doesn't have any unique encryption keys!  How useless...</span>")
+			to_chat(user, span_warning("This headset doesn't have any unique encryption keys!  How useless..."))
 
 	else if(istype(W, /obj/item/encryptionkey))
 		if(keyslot && keyslot2)
-			to_chat(user, "<span class='warning'>The headset can't hold another key!</span>")
+			to_chat(user, span_warning("The headset can't hold another key!"))
 			return
 
 		if(!keyslot)
@@ -526,7 +554,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 		return
 	if (command)
 		use_command = !use_command
-		to_chat(user, "<span class='notice'>You toggle high-volume mode [use_command ? "on" : "off"].</span>")
+		to_chat(user, span_notice("You toggle high-volume mode [use_command ? "on" : "off"]."))
 		return TRUE
 
 /obj/item/radio/headset/proc/bowmanize()

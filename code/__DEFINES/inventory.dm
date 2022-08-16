@@ -298,7 +298,7 @@ GLOBAL_LIST_INIT(light_armor_disallowed, typecacheof(list(
 GLOBAL_LIST_INIT(tribal_armor_allowed, typecacheof(list(
 	/obj/item/gun/ballistic/bow,
 	/obj/item/storage/backpack/spearquiver,
-	/obj/item/storage/belt/tribe_quiver,
+	/obj/item/storage/bag/tribe_quiver,
 	/obj/item/melee)))
 
 ///extra things raider armor can hold in their slot by default
@@ -429,7 +429,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/assembly/signaler)))
 
 /// Things allowed in a jannibelt
-GLOBAL_LIST_INIT(janibelt_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/grenade/chem_grenade,
 	/obj/item/lightreplacer,
 	/obj/item/flashlight,
@@ -446,6 +446,10 @@ GLOBAL_LIST_INIT(janibelt_allowed, typecacheof(list(
 	/obj/item/paint/paint_remover,
 	/obj/item/assembly/mousetrap,
 	/obj/item/screwdriver,
+	/obj/item/kitchen,
+	/obj/item/reagent_containers/food,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/stack/cable_coil
 	)))
 
@@ -482,7 +486,7 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/stack/medical,
 	/obj/item/flashlight/pen,
 	/obj/item/extinguisher/mini,
-	/obj/item/hypospray/mkii,
+	/obj/item/hypospray,
 	/obj/item/sensor_device,
 	/obj/item/radio,
 	/obj/item/clothing/gloves,
@@ -525,8 +529,12 @@ GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/gun,
 	/obj/item/ammo_box,
+	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/reagent_containers/spray/pepper,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
 	/obj/item/melee/onehanded/knife/hunting,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
@@ -539,6 +547,7 @@ GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
 GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/ammo_box,
+	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/grenade,
 	/obj/item/reagent_containers/spray/pepper,
@@ -557,20 +566,73 @@ GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/toy)))
 
+GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
+	/obj/item/reagent_containers/syringe,
+	/obj/item/reagent_containers/hypospray/medipen,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/screwdriver,
+	/obj/item/weldingtool/mini,
+	/obj/item/pen,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/revolver/hobo/knifegun,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/scalpel,
+	)))
+
+GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
+	/obj/item/storage/fancy/cigarettes,
+	/obj/item/toy/cards/deck,
+	/obj/item/ammo_casing,
+	)))
+
+GLOBAL_LIST_INIT(storage_binocular_can_hold, typecacheof(list(
+	/obj/item/binoculars,
+	)))
+
+GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
+	/obj/item/stack/f13Cash,
+	/obj/item/key,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/paper,
+	/obj/item/folder,
+	/obj/item/storage/bag/money/small,
+	/obj/item/binoculars,
+	/obj/item/lipstick,
+	/obj/item/pen,
+	/obj/item/melee/smith/dagger,
+	)))
+
+GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
+	/obj/item/gun/ballistic/automatic/pistol/sig,
+	/obj/item/gun/ballistic/revolver/detective,
+	/obj/item/gun/ballistic/automatic/hobo/zipgun,
+	/obj/item/gun/ballistic/automatic/pistol/pistol14/compact,
+	/obj/item/gun/ballistic/revolver/police,
+	/obj/item/gun/ballistic/revolver/colt357/lucky,
+	/obj/item/gun/ballistic/revolver/m29/snub,
+	/obj/item/gun/ballistic/revolver/needler,
+	/obj/item/gun/energy/laser/wattz,
+)))
+
 /// How many items total fit in a holster
 #define STORAGE_HOLSTER_MAX_ITEMS 7
 /// How much volume fits in a holster
-#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_HOLSTER_MAX_ITEMS
+#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_HOLSTER_MAX_ITEMS
+
+/// How many items total fit in a shoulder holster
+#define STORAGE_SHOULDER_HOLSTER_MAX_ITEMS 4
+/// How much volume fits in a holster
+#define STORAGE_SHOULDER_HOLSTER_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
 
 /// How many items total fit in a belt
 #define STORAGE_BELT_MAX_ITEMS 14
 /// How much volume fits in a belt
-#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_BELT_MAX_ITEMS
+#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_BELT_MAX_ITEMS
 
 /// How many items total fit in a belt
 #define STORAGE_FANNYPACK_MAX_ITEMS 7
 /// How much volume fits in a belt
-#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
+#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_SMALL * STORAGE_FANNYPACK_MAX_ITEMS
 
 /// How many items total fit in a large survival kit
 #define STORAGE_TRIPLEKIT_MAX_ITEMS 21

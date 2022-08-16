@@ -38,16 +38,16 @@
 	if(istype(O, /obj/item/reagent_containers))
 		. = TRUE //no afterattack
 		if(output)
-			to_chat(user, "<span class='warning'>Remove [output] from the machine first.</span>")
+			to_chat(user, span_warning("Remove [output] from the machine first."))
 			return
 		if(!user.transferItemToLoc(O, src))
 			return
-		to_chat(user, "<span class='notice'>You install [O] in the slot and [lowertext(initial(reagent_type.name))] starts to fill it.</span>")
+		to_chat(user, span_notice("You install [O] in the slot and [lowertext(initial(reagent_type.name))] starts to fill it."))
 		output = O
 		update_icon()
 		return
 
-	to_chat(user, "<span class='warning'>You cannot install [O] into the machine.</span>")
+	to_chat(user, span_warning("You cannot install [O] into the machine."))
 	return
 
 /obj/machinery/water_purifier/on_attack_hand(mob/living/carbon/user)
@@ -92,9 +92,9 @@
 
 /obj/machinery/water_purifier/examine(mob/user)
 	. += ..()
-	var/percent = round((output.reagents.total_volume / output.volume) * 100)
 	if(output)
+		var/percent = round((output.reagents.total_volume / output.volume) * 100)
 		. += "<span class='notice'>[output] is [percent]% full.</span>"
 	else
-		. += "<span class='notice'>[src] has no reagent container installed.</span>"
+		. += span_notice("[src] has no reagent container installed.")
 

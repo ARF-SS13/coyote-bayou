@@ -76,7 +76,6 @@ GLOBAL_LIST_INIT(corgi_recipes, list ( \
 	desc = "The by-product of monkey farming."
 	singular_name = "monkey hide piece"
 	icon_state = "sheet-monkey"
-	icon_state = "sheet-monkey"
 	merge_type = /obj/item/stack/sheet/animalhide/monkey
 
 GLOBAL_LIST_INIT(monkey_recipes, list ( \
@@ -267,9 +266,9 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 /obj/item/stack/sheet/animalhide/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting hair off \the [src].", "<span class='notice'>You start cutting the hair off \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		user.visible_message("[user] starts cutting hair off \the [src].", span_notice("You start cutting the hair off \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut the hair from this [src.singular_name].</span>")
+			to_chat(user, span_notice("You cut the hair from this [src.singular_name]."))
 			new /obj/item/stack/sheet/hairlesshide(user.drop_location(), 1)
 			use(1)
 	else
@@ -297,9 +296,9 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 /obj/item/stack/sheet/leather/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts shredding the [src] into strips.", "<span class='notice'>You start shredding the [src] into strips</span>", "<span class='italics'>You hear the sound of leather being ripped.</span>")
+		user.visible_message("[user] starts shredding the [src] into strips.", span_notice("You start shredding the [src] into strips"), span_italic("You hear the sound of leather being ripped."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut strips from this [src.singular_name].</span>")
+			to_chat(user, span_notice("You cut strips from this [src.singular_name]."))
 			new /obj/item/stack/sheet/leatherstrips(user.drop_location(), 1)
 			use(1)
 	else
@@ -314,7 +313,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list ( \
 	merge_type = /obj/item/stack/sheet/leatherstrips
 
 GLOBAL_LIST_INIT(leatherstrips_recipes, list ( \
-	new/datum/stack_recipe("slave labor outfit", /obj/item/clothing/suit/armor/slavelabor, 2, time = 50),  \
+	new/datum/stack_recipe("slave labor outfit", /obj/item/clothing/suit/armor/outfit/slavelabor, 2, time = 50),  \
 	new/datum/stack_recipe("jabroni outfit", /obj/item/clothing/under/jabroni, 4, time = 80), \
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2, time = 40),  \
 	new/datum/stack_recipe("pet collar", /obj/item/clothing/neck/petcollar, 2, time = 40) \

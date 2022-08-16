@@ -53,7 +53,7 @@ Difficulty: Very Hard
 	death_sound = 'sound/magic/demon_dies.ogg'
 
 /mob/living/simple_animal/hostile/megafauna/colossus/devour(mob/living/L)
-	visible_message("<span class='colossus'>[src] disintegrates [L]!</span>")
+	visible_message(span_colossus("[src] disintegrates [L]!"))
 	L.dust()
 
 /mob/living/simple_animal/hostile/megafauna/colossus/OpenFire()
@@ -254,7 +254,7 @@ Difficulty: Very Hard
 	if(!istype(O))
 		return FALSE
 	if(blacklist[O])
-		visible_message("<span class='boldwarning'>[src] ripples as it rejects [O]. The device will not accept items that have been removed from it.</span>")
+		visible_message(span_boldwarning("[src] ripples as it rejects [O]. The device will not accept items that have been removed from it."))
 		return FALSE
 	return TRUE
 
@@ -615,7 +615,6 @@ Difficulty: Very Hard
 	faction = list("neutral")
 	del_on_death = TRUE
 	unsuitable_atmos_damage = 0
-	movement_type = FLYING
 	minbodytemp = 0
 	maxbodytemp = 1500
 	obj_damage = 0

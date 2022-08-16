@@ -26,12 +26,12 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 160
-	health = 160
+	maxHealth = 128
+	health = 128
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
-	melee_damage_upper = 20
+	melee_damage_lower = 8
+	melee_damage_upper = 25
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -71,12 +71,12 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 140
-	health = 140
+	maxHealth = 112
+	health = 112
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 10
+	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/radroach_attack.ogg'
 	speak_emote = list("skitters")
@@ -123,8 +123,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 700
-	health = 700
+	maxHealth = 560
+	health = 560
 	ranged = 1
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -184,7 +184,7 @@
 	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
 	spawned_mobs += L
 	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
+	visible_message(span_danger("[L] [spawn_text] [src]."))
 
 
 /////////////////
@@ -200,11 +200,11 @@
 	icon_dead = "radscorpion_dead"
 
 	speed = 1.25
-	maxHealth = 150
-	health = 150
+	maxHealth = 120
+	health = 120
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 35
+	melee_damage_lower = 15
 	melee_damage_upper = 35
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -275,8 +275,8 @@
 	icon_dead = "radscorpion_blue_d"
 	icon_gib = "radscorpion_blue_gib"
 	speed = 1.35
-	maxHealth = 140
-	health = 140
+	maxHealth = 110
+	health = 110
 	move_to_delay = 4
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -308,11 +308,11 @@
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = -0.5
-	maxHealth = 40
-	health = 40
+	maxHealth = 32
+	health = 32
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 20
+	melee_damage_lower = 10
 	melee_damage_upper = 20
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
@@ -341,15 +341,15 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
+		visible_message(span_danger("[src] dodges [Proj]!"))
 		return 0
 
 
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -390,8 +390,8 @@
 	icon_gib = null
 
 	speed = -1
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
@@ -423,7 +423,7 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
+		visible_message(span_danger("[src] dodges [Proj]!"))
 		return 0
 
 //////////////
@@ -440,12 +440,12 @@
 	icon_gib = "radroach_gib"
 
 	speed = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
-	melee_damage_upper = 10
+	melee_damage_lower = 5
+	melee_damage_upper = 8
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -462,7 +462,10 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	a_intent = INTENT_HARM
+	pass_flags = PASSTABLE | PASSMOB
+	density = FALSE
 	gold_core_spawnable = HOSTILE_SPAWN
+	randpixel = 12
 
 	aggrosound = list('sound/creatures/radroach_chitter.ogg',)
 	idlesound = list('sound/f13npc/roach/idle1.ogg', 'sound/f13npc/roach/idle2.ogg', 'sound/f13npc/roach/idle3.ogg',)

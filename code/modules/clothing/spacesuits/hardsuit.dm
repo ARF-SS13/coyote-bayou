@@ -113,28 +113,28 @@
 /obj/item/clothing/suit/space/hardsuit/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/tank/jetpack/suit))
 		if(jetpack)
-			to_chat(user, "<span class='warning'>[src] already has a jetpack installed.</span>")
+			to_chat(user, span_warning("[src] already has a jetpack installed."))
 			return
 		if(src == user.get_item_by_slot(SLOT_WEAR_SUIT)) //Make sure the player is not wearing the suit before applying the upgrade.
-			to_chat(user, "<span class='warning'>You cannot install the upgrade to [src] while wearing it.</span>")
+			to_chat(user, span_warning("You cannot install the upgrade to [src] while wearing it."))
 			return
 
 		if(user.transferItemToLoc(I, src))
 			jetpack = I
-			to_chat(user, "<span class='notice'>You successfully install the jetpack into [src].</span>")
+			to_chat(user, span_notice("You successfully install the jetpack into [src]."))
 			return
 	else if(istype(I, /obj/item/screwdriver))
 		if(!jetpack)
-			to_chat(user, "<span class='warning'>[src] has no jetpack installed.</span>")
+			to_chat(user, span_warning("[src] has no jetpack installed."))
 			return
 		if(src == user.get_item_by_slot(SLOT_WEAR_SUIT))
-			to_chat(user, "<span class='warning'>You cannot remove the jetpack from [src] while wearing it.</span>")
+			to_chat(user, span_warning("You cannot remove the jetpack from [src] while wearing it."))
 			return
 
 		jetpack.turn_off(user)
 		jetpack.forceMove(drop_location())
 		jetpack = null
-		to_chat(user, "<span class='notice'>You successfully remove the jetpack from [src].</span>")
+		to_chat(user, span_notice("You successfully remove the jetpack from [src]."))
 		return
 	return ..()
 
@@ -279,11 +279,11 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/attack_self(mob/user) //Toggle Helmet
 	if(!isturf(user.loc))
-		to_chat(user, "<span class='warning'>You cannot toggle your helmet while in this [user.loc]!</span>" )
+		to_chat(user, span_warning("You cannot toggle your helmet while in this [user.loc]!") )
 		return
 	on = !on
 	if(on || force)
-		to_chat(user, "<span class='notice'>You switch your hardsuit to EVA mode, sacrificing speed for space protection.</span>")
+		to_chat(user, span_notice("You switch your hardsuit to EVA mode, sacrificing speed for space protection."))
 		name = initial(name)
 		desc = initial(desc)
 		set_light_on(TRUE)
@@ -292,7 +292,7 @@
 		flags_inv |= visor_flags_inv
 		cold_protection |= HEAD
 	else
-		to_chat(user, "<span class='notice'>You switch your hardsuit to combat mode and can now run at full speed.</span>")
+		to_chat(user, span_notice("You switch your hardsuit to combat mode and can now run at full speed."))
 		name += " (combat)"
 		desc = alt_desc
 		set_light_on(FALSE)
@@ -914,7 +914,7 @@
 	if(!in_range(src, user) || !istype(user))
 		return
 	if(user.incapacitated())
-		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(user, span_warning("You can't do that right now!"))
 		return TRUE
 
 	if(alert("Are you sure you want to recolor your armor stripes?", "Confirm Repaint", "Yes", "No") == "Yes")
@@ -935,4 +935,4 @@
 
 /obj/item/clothing/suit/space/hardsuit/lavaknight/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to recolor it.</span>"
+	. += span_notice("Alt-click to recolor it.")

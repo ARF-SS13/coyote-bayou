@@ -213,7 +213,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	. += GLOB.metal_recipes
 
 /obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 
@@ -276,10 +276,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 
 GLOBAL_LIST_INIT(wood_recipes, list ( \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = TRUE, on_floor = TRUE), \
-	null, \
-	new/datum/stack_recipe_list("floor tiles", list( \
 	new/datum/stack_recipe("wooden floor tile", /obj/item/stack/tile/wood, 1, 4, 20), \
-		)), \
 	null, \
 	new/datum/stack_recipe_list("pews", list( \
 		new /datum/stack_recipe("pew (middle)", /obj/structure/chair/pew, 3, one_per_turf = TRUE, on_floor = TRUE),\
@@ -306,18 +303,25 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 		new /datum/stack_recipe("harvest bin", /obj/machinery/smartfridge/bottlerack/grownbin, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 		new /datum/stack_recipe("seed bin", /obj/machinery/smartfridge/bottlerack/seedbin, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE), \
 		new /datum/stack_recipe("alchemy rack", /obj/machinery/smartfridge/bottlerack/alchemy_rack, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("bottle rack", /obj/machinery/smartfridge/bottlerack, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("garden tool rack", /obj/machinery/smartfridge/bottlerack/gardentool, 20, time = 40, one_per_turf = TRUE, on_floor = TRUE),\
 		null, \
 		new /datum/stack_recipe("primitive chemistry table", /obj/machinery/chem_master/primitive, 25, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 		new /datum/stack_recipe("loom", /obj/structure/loom, 10, time = 15, one_per_turf = TRUE, on_floor = TRUE),\
 		)), \
 	new/datum/stack_recipe_list("cooking", list( \
+		new /datum/stack_recipe("wooden bowl", /obj/item/reagent_containers/glass/bowl/wooden_bowl, 3, time = 30, one_per_turf = FALSE, on_floor = TRUE),\
 		new /datum/stack_recipe("rolling pin", /obj/item/kitchen/rollingpin, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
-		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE), \
+		new /datum/stack_recipe("chopping block", /obj/item/chopping_block, 2, time = 30, one_per_turf = TRUE, on_floor = TRUE),\
+		new /datum/stack_recipe("butter churn", /obj/structure/butter_churn, 7, time = 35, one_per_turf = TRUE, on_floor = TRUE),\
 		)), \
 	null, \
 	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/room, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("interior wooden door", /obj/structure/simple_door/interior, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("wooden house door", /obj/structure/simple_door/house, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden fence", /obj/structure/fence/wooden, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden fence corner", /obj/structure/fence/corner/wooden, 10, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
+	new/datum/stack_recipe("wooden fence gate", /obj/structure/simple_door/metal/fence/wooden, 20, time = 20, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("ore box", /obj/structure/ore_box, 4, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
 	new/datum/stack_recipe("wooden crate", /obj/structure/closet/crate/wooden, 6, time = 50, one_per_turf = TRUE, on_floor = TRUE),\
@@ -348,15 +352,15 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
 	if(W.get_sharpness())
 		user.visible_message("[user] begins whittling [src] into a rod.", \
-				"<span class='notice'>You begin whittling [src] into a rod, suitable as a weapon shaft.</span>", \
-				"<span class='italics'>You hear wood carving.</span>")
+				span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), \
+				span_italic("You hear wood carving."))
 		// 7 Second Timer
 		if(!do_after(user, 70, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
 		user.visible_message("[user] finishes carving a rod from the [src].", \
-				"<span class='notice'>You finish carving a rod from the [src].</span>")
+				span_notice("You finish carving a rod from the [src]."))
 		// Prepare to Put in Hands (if holding wood)
 		var/obj/item/stack/sheet/mineral/wood/N = src
 		var/replace = (user.get_inactive_held_item() == N)
@@ -368,7 +372,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	if(istype(W, merge_type))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, "<span class='notice'>Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s.</span>")
+			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
 	else
 		. = ..()
 
@@ -610,12 +614,12 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 
 /obj/item/stack/sheet/runed_metal/attack_self(mob/living/user)
 	if(!iscultist(user))
-		to_chat(user, "<span class='warning'>Only one with forbidden knowledge could hope to work this metal...</span>")
+		to_chat(user, span_warning("Only one with forbidden knowledge could hope to work this metal..."))
 		return
 	var/turf/T = get_turf(user) //we may have moved. adjust as needed...
 	var/area/A = get_area(user)
 	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !A.blob_allowed))
-		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
+		to_chat(user, span_warning("The veil is not weak enough here."))
 		return FALSE
 	return ..()
 
@@ -691,7 +695,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 
 /obj/item/stack/tile/brass/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, "<span class='danger'>[src] seems far too fragile and rigid to build with.</span>") //haha that's because it's actually replicant alloy you DUMMY
+		to_chat(user, span_danger("[src] seems far too fragile and rigid to build with.")) //haha that's because it's actually replicant alloy you DUMMY
 		return
 	..()
 
@@ -743,7 +747,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 /obj/item/stack/sheet/bronze/attack_self(mob/living/user)
 	if(is_servant_of_ratvar(user)) //still lets them build with it, just gives a message
-		to_chat(user, "<span class='danger'>Wha... what is this cheap imitation crap? This isn't brass at all!</span>")
+		to_chat(user, span_danger("Wha... what is this cheap imitation crap? This isn't brass at all!"))
 	..()
 
 /obj/item/stack/sheet/bronze/get_main_recipes()
@@ -864,7 +868,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	custom_materials = list(/datum/material/paper = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/paperframes
 	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/sheet/paperframes
 	material_type = /datum/material/paper
 
 /obj/item/stack/sheet/paperframes/get_main_recipes()
@@ -989,7 +992,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	return ..()
 
 /obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!"))
 	addtimer(CALLBACK(user, /mob/proc/gib), 30)
 	return BRUTELOSS
 

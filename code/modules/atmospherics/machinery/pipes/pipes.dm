@@ -121,4 +121,4 @@
 	if(parent)
 		atmosanalyzer_scan(parent.air, O, src, FALSE)
 	else
-		to_chat(O, "<span class='warning'>[src] doesn't have a pipenet, which is probably a bug.</span>")
+		to_chat(O, span_warning("[src] doesn't have a pipenet, which is probably a bug."))

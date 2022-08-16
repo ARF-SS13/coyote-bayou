@@ -14,7 +14,7 @@
 	var/onmob_overlays = FALSE //worn counterpart of the above.
 
 /obj/item/storage/belt/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins belting [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/storage/belt/update_overlays()
@@ -148,6 +148,7 @@
 	desc = "A bandolier for holding shotgun boxes, flasks, las musket cells or various grenades."
 	icon_state = "bandolier"
 	item_state = "bandolier"
+	slot_flags = ITEM_SLOT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 /obj/item/storage/belt/bandolier/ComponentInitialize()
@@ -464,7 +465,7 @@
 	STR.max_w_class = WEIGHT_CLASS_BULKY
 	STR.max_items = STORAGE_BELT_MAX_ITEMS
 	STR.max_combined_w_class = STORAGE_BELT_MAX_VOLUME
-	STR.can_hold = GLOB.janibelt_allowed
+	STR.can_hold = GLOB.servicebelt_allowed
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
@@ -499,9 +500,10 @@
 */
 /obj/item/storage/belt/medolier
 	name = "medolier"
-	desc = "A medical bandolier for holding smartdarts."
+	desc = "A medical bandolier for holding smartdarts, also medical equipment that aren't smartdarts."
 	icon_state = "medolier"
 	item_state = "medolier"
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/storage/belt/medolier/ComponentInitialize()
 	. = ..()
@@ -511,15 +513,13 @@
 	STR.allow_quick_gather = TRUE
 	STR.allow_quick_empty = TRUE
 	STR.click_gather = TRUE
-	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/syringe/dart
-		))
+	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/syringe/dart)) + GLOB.medibelt_allowed
 
 /obj/item/storage/belt/medolier/full/PopulateContents()
 	for(var/i in 1 to 16)
 		new /obj/item/reagent_containers/syringe/dart/(src)
 
-/obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
+/* /obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
 	if(!(istype(target, /obj/item/reagent_containers/glass/beaker)))
 		return
 	if(!proximity)
@@ -529,31 +529,31 @@
 
 	for(var/obj/item/reagent_containers/syringe/dart/D in contents)
 		if(round(target.reagents.total_volume, 1) <= 0)
-			to_chat(user, "<span class='notice'>You soak as many of the darts as you can with the contents from [target].</span>")
+			to_chat(user, span_notice("You soak as many of the darts as you can with the contents from [target]."))
 			return
 		if(D.mode == SYRINGE_INJECT)
 			continue
 
 		D.afterattack(target, user, proximity)
 
-	..()
+	..() */ // Kinda messes with things
 
 /obj/item/storage/belt/holster
-	name = "side holster"
+	name = "shoulder holster"
 	desc = "A holster to carry a hefty gun and ammo. WARNING: Badasses only."
 	icon = 'icons/fallout/clothing/belts.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_shoulder"
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
-	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_NECK
 
 /obj/item/storage/belt/holster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
-	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.max_items = STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_SHOULDER_HOLSTER_MAX_VOLUME
 	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/holster/full/PopulateContents()
@@ -598,6 +598,15 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
 	item_state = "holster_leg"
+	slot_flags = ITEM_SLOT_BELT
+
+/obj/item/storage/belt/holster/legholster/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_items = STORAGE_HOLSTER_MAX_ITEMS
+	STR.max_combined_w_class = STORAGE_HOLSTER_MAX_VOLUME
+	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/holster/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
@@ -659,10 +668,11 @@
 /obj/item/storage/belt/sabre/examine(mob/user)
 	. = ..()
 	if(length(contents))
-		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+		. += span_notice("Alt-click it to quickly draw the blade.")
 
 /obj/item/storage/belt/sabre/PopulateContents()
-	new starting_sword(src)
+	if(ispath(starting_sword))
+		new starting_sword(src)
 
 /obj/item/storage/belt/sabre/heavy
 	name = "heavy-duty sheath"
@@ -672,7 +682,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_NECK
 	fitting_swords = list(/obj/item/melee/smith/machete,
 	/obj/item/melee/smith/machete/reforged,
 	/obj/item/melee/smith/wakizashi,
@@ -714,8 +724,8 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
+	slot_flags = ITEM_SLOT_NECK
 	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
-	var/starting_sword = null
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
 /obj/item/storage/belt/sword/twin
@@ -724,7 +734,6 @@
 	icon_state = "sheath_twin"
 	item_state = "sheath_twin"
 	fitting_swords = list(/obj/item/melee/smith/wakizashi, /obj/item/melee/smith/twohand/katana, /obj/item/melee/bokken)
-	starting_sword = null
 
 /obj/item/storage/belt/sword/twin/ComponentInitialize()
 	. = ..()
@@ -781,6 +790,8 @@
 	item_state = "ncr_bandolier"
 
 //Regular Quiver
+//MOVING TO F13STORAGE
+/*
 /obj/item/storage/belt/tribe_quiver
 	name = "tribal quiver"
 	desc = "A simple leather quiver designed for holding arrows."
@@ -810,21 +821,21 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take \a [L] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [L] out of the quiver."))
 		return TRUE
 	var/obj/item/ammo_casing/caseless/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take \a [W] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the quiver."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
 
 //Bone Arrow Quiver
@@ -857,19 +868,20 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take \a [L] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [L] out of the quiver."))
 		return TRUE
 	var/obj/item/ammo_casing/caseless/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take \a [W] out of the quiver.</span>")
+		to_chat(user, span_notice("You take \a [W] out of the quiver."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
+*/

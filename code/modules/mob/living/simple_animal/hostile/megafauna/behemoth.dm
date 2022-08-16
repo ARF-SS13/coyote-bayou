@@ -45,14 +45,14 @@
 	name = "Heavy Stomp"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
 	button_icon_state = "sniper_zoom"
-	chosen_message = "<span class='colossus'>You are now stomping the ground around you.</span>"
+	chosen_message = span_colossus("You are now stomping the ground around you.")
 	chosen_attack_num = 1
 
 /datum/action/innate/megafauna_attack/disorienting_scream
 	name = "Disorienting Scream"
 	icon_icon = 'icons/turf/walls/wall.dmi'
 	button_icon_state = "wall"
-	chosen_message = "<span class='colossus'>You are now screeching, disorienting targets around you.</span>"
+	chosen_message = span_colossus("You are now screeching, disorienting targets around you.")
 	chosen_attack_num = 3
 
 /mob/living/simple_animal/hostile/megafauna/behemoth/Initialize()
@@ -110,7 +110,7 @@
 			for(var/mob/living/L in T)
 				if(L == src || L.throwing)
 					continue
-				to_chat(L, "<span class='userdanger'>[src]'s ground slam shockwave sends you flying!</span>")
+				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 8, 2, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
@@ -134,7 +134,7 @@
 	animate(pixel_z = 0, time = 1)
 	for(var/mob/living/L in get_hearers_in_view(7, src) - src)
 		shake_camera(L, 30, 1)
-		to_chat(L, "<span class='danger'>The behemoth screams loudly!</span>")
+		to_chat(L, span_danger("The behemoth screams loudly!"))
 	SetRecoveryTime(30, 0)
 	SLEEP_CHECK_DEATH(12)
 	can_move = TRUE

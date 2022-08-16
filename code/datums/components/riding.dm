@@ -9,6 +9,7 @@
 
 	var/list/riding_offsets = list()	//position_of_user = list(dir = list(px, py)), or RIDING_OFFSET_ALL for a generic one.
 	var/list/directional_vehicle_layers = list()	//["[DIRECTION]"] = layer. Don't set it for a direction for default, set a direction to null for no change.
+	var/list/directional_vehicle_planes = list()	//["[DIRECTION]"] = plane. Don't set it for a direction for default, set a direction to null for no change.
 	var/list/directional_vehicle_offsets = list()	//same as above but instead of layer you have a list(px, py)
 	var/list/allowed_turf_typecache
 	var/list/forbid_turf_typecache					//allow typecache for only certain turfs, forbid to allow all but those. allow only certain turfs will take precedence.
@@ -53,8 +54,17 @@
 		. = AM.layer
 	AM.layer = .
 
-/datum/component/riding/proc/set_vehicle_dir_layer(dir, layer)
+	var/planeValue = initial(AM.plane)
+	if(directional_vehicle_planes["[AM.dir]"])
+		planeValue = directional_vehicle_planes["[AM.dir]"]
+	if(isnull(.))	//you can set it to null to not change it.
+		planeValue = AM.plane
+	AM.plane = planeValue
+
+/datum/component/riding/proc/set_vehicle_dir_layer(dir, layer, plane = null)
 	directional_vehicle_layers["[dir]"] = layer
+	if(plane)
+		directional_vehicle_planes["[dir]"] = plane
 
 /datum/component/riding/proc/vehicle_moved(datum/source, dir)
 	var/atom/movable/movable_parent = parent
@@ -72,7 +82,7 @@
 	var/atom/movable/AM = parent
 	var/mob/AMM = AM
 	if((ride_check_rider_restrained && M.restrained(TRUE)) || (ride_check_rider_incapacitated && M.incapacitated(FALSE, TRUE)) || (ride_check_ridden_incapacitated && istype(AMM) && AMM.incapacitated(FALSE, TRUE)))
-		AM.visible_message("<span class='warning'>[M] falls off of [AM]!</span>")
+		AM.visible_message(span_warning("[M] falls off of [AM]!"))
 		AM.unbuckle_mob(M)
 	return TRUE
 
@@ -189,7 +199,7 @@
 		handle_vehicle_offsets()
 		handle_vehicle_layer()
 	else
-		to_chat(user, "<span class='notice'>You'll need the keys in one of your hands to [drive_verb] [AM].</span>")
+		to_chat(user, span_notice("You'll need the keys in one of your hands to [drive_verb] [AM]."))
 
 /datum/component/riding/proc/Unbuckle(atom/movable/M)
 	addtimer(CALLBACK(parent, /atom/movable/.proc/unbuckle_mob, M), 0, TIMER_UNIQUE)
@@ -273,7 +283,7 @@
 	AM.unbuckle_mob(user)
 	user.DefaultCombatKnockdown(60)
 	user.Daze(50)
-	user.visible_message("<span class='warning'>[AM] pushes [user] off of [AM.p_them()]!</span>")
+	user.visible_message(span_warning("[AM] pushes [user] off of [AM.p_them()]!"))
 
 /datum/component/riding/cyborg
 	del_on_unbuckle_all = TRUE
@@ -291,14 +301,14 @@
 			if(R.module && R.module.ride_allow_incapacitated)
 				kick = FALSE
 		if(kick)
-			to_chat(user, "<span class='userdanger'>You fall off of [AM]!</span>")
+			to_chat(user, span_userdanger("You fall off of [AM]!"))
 			Unbuckle(user)
 			return
 	if(iscarbon(user))
 		var/mob/living/carbon/carbonuser = user
 		if(!carbonuser.get_num_arms())
 			Unbuckle(user)
-			to_chat(user, "<span class='userdanger'>You can't grab onto [AM] with no hands!</span>")
+			to_chat(user, span_userdanger("You can't grab onto [AM] with no hands!"))
 			return
 
 /datum/component/riding/cyborg/handle_vehicle_layer()
@@ -333,7 +343,7 @@
 	var/turf/target = get_edge_target_turf(AM, AM.dir)
 	var/turf/targetm = get_step(get_turf(AM), AM.dir)
 	M.Move(targetm)
-	M.visible_message("<span class='warning'>[M] is thrown clear of [AM]!</span>")
+	M.visible_message(span_warning("[M] is thrown clear of [AM]!"))
 	M.throw_at(target, 14, 5, AM)
 	M.DefaultCombatKnockdown(60)
 

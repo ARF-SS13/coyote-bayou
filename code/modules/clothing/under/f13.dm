@@ -702,7 +702,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You adjust the [src].</span>")
+	to_chat(usr, span_notice("You adjust the [src]."))
 	if(src.uniformtoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -1326,8 +1326,8 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat/militia
-	name = "ODF fatigues"
-	desc = "An olive-green combat uniform, issued to members of the Oasis Defense Force."
+	name = "NDF fatigues"
+	desc = "An olive-green combat uniform, issued to members of the Nash Defense Force."
 
 /obj/item/clothing/under/f13/enclave_officer
 	name = "officer uniform"
@@ -1355,7 +1355,7 @@
 
 /obj/item/clothing/under/f13/general/oasis
 	name = "dictator's overcoat"
-	desc = "A grim looking overcoat - preferable standard for the ruler of oasis.<br>It's decorated with golden stars, each one adorned with a tree."
+	desc = "A grim looking overcoat - preferable standard for the ruler of Nash.<br>It's decorated with golden stars, each one adorned with a tree."
 
 /obj/item/clothing/under/f13/recon
 	name = "recon armor"

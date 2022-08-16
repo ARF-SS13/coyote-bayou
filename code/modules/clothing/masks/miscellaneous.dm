@@ -13,7 +13,7 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.wear_mask)
-			to_chat(user, "<span class='warning'>You need help taking this off!</span>")
+			to_chat(user, span_warning("You need help taking this off!"))
 			return
 	..()
 
@@ -253,10 +253,10 @@
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if((C.get_item_by_slot(SLOT_HEAD == src)) || (C.get_item_by_slot(SLOT_WEAR_MASK) == src))
-			to_chat(user, "<span class='warning'>You can't tie [src] while wearing it!</span>")
+			to_chat(user, span_warning("You can't tie [src] while wearing it!"))
 			return
 	if(slot_flags & ITEM_SLOT_HEAD)
-		to_chat(user, "<span class='warning'>You must undo [src] before you can tie it into a neckerchief!</span>")
+		to_chat(user, span_warning("You must undo [src] before you can tie it into a neckerchief!"))
 	else
 		if(user.is_holding(src))
 			var/obj/item/clothing/neck/neckerchief/nk = new(src)
@@ -267,7 +267,7 @@
 			var/currentHandIndex = user.get_held_index_of_item(src)
 			user.transferItemToLoc(src, null)
 			user.put_in_hand(nk, currentHandIndex)
-			user.visible_message("<span class='notice'>You tie [src] up like a neckerchief.</span>", "<span class='notice'>[user] ties [src] up like a neckerchief.</span>")
+			user.visible_message(span_notice("You tie [src] up like a neckerchief."), span_notice("[user] ties [src] up like a neckerchief."))
 			qdel(src)
 		else
 			to_chat(user, "<span class='warning'>You must be holding [src] in order to tie it!")
@@ -395,7 +395,7 @@
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
-		to_chat(user, "<span class='notice'>Your paper mask now has a [choice] symbol!</span>")
+		to_chat(user, span_notice("Your paper mask now has a [choice] symbol!"))
 		return 1
 
 
@@ -417,9 +417,9 @@
 /obj/item/clothing/mask/ncr_facewrap/attack_self(mob/user)
 	adjustmask(user)
 
-///////////////////
-//LEGION BANDANAS//
-///////////////////
+/////////////////////
+//"LEGION" BANDANAS//
+/////////////////////
 
 /obj/item/clothing/mask/bandana/legion
 	name = "legion mask template"
@@ -432,13 +432,13 @@
 	actions_types = list(/datum/action/item_action/adjust)
 
 /obj/item/clothing/mask/bandana/legion/camp
-	name = "camp duty bandana"
-	desc = "Simple black cloth intended for men on camp duty."
+	name = "desperado bandana"
+	desc = "Simple black cloth normally used by desperados"
 	icon_state = "legaux"
 
 /obj/item/clothing/mask/bandana/legion/legrecruit
-	name = "recruit bandana"
-	desc = "A coarse dark recruit bandana."
+	name = "thieves bandana"
+	desc = "A coarse dark thieves bandana."
 	icon_state = "legrecruit"
 
 /obj/item/clothing/mask/bandana/legion/legprime
@@ -447,20 +447,20 @@
 	icon_state = "legdecan"
 
 /obj/item/clothing/mask/bandana/legion/legvet
-	name = "veteran bandana"
-	desc = "A veterans bandana in red."
+	name = "bandito bandana"
+	desc = "A banditos bandana in red."
 	icon_state = "legvet"
 
 /obj/item/clothing/mask/bandana/legion/legdecan
-	name = "decanus bandana"
-	desc = "A fine decan bandana in dark red."
+	name = "outlaw bandana"
+	desc = "A fine bandana in dark red."
 	icon = 'icons/fallout/clothing/masks.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/mask.dmi'
 	icon_state = "legdecan"
 
 /obj/item/clothing/mask/bandana/legion/legcenturion
-	name = "centurion bandana"
-	desc = "A high quality bandana made for a centurion."
+	name = "overboss bandana"
+	desc = "A high quality bandana made for a overboss."
 	icon_state = "legcenturion"
 
 

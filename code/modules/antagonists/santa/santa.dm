@@ -11,7 +11,7 @@
 
 /datum/antagonist/santa/greet()
 	. = ..()
-	to_chat(owner, "<span class='boldannounce'>You are Santa! Your objective is to bring joy to the people on this station. You can conjure more presents using a spell, and there are several presents in your bag.</span>")
+	to_chat(owner, span_boldannounce("You are Santa! Your objective is to bring joy to the people on this station. You can conjure more presents using a spell, and there are several presents in your bag."))
 
 /datum/antagonist/santa/proc/give_equipment()
 	var/mob/living/carbon/human/H = owner.current

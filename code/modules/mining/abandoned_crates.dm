@@ -131,7 +131,7 @@
 
 /obj/structure/closet/crate/secure/loot/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(locked)
-		to_chat(user, "<span class='notice'>The crate is locked with a Deca-code lock.</span>")
+		to_chat(user, span_notice("The crate is locked with a Deca-code lock."))
 		var/input = input(usr, "Enter [codelen] digits. All digits must be unique.", "Deca-Code Lock", "") as text
 		if(user.canUseTopic(src, BE_CLOSE))
 			var/list/sanitised = list()
@@ -146,15 +146,15 @@
 					if(sanitised[i] == sanitised[j])
 						sanitycheck = FALSE //if a digit is repeated, reject the input
 			if(input == code)
-				to_chat(user, "<span class='notice'>The crate unlocks!</span>")
+				to_chat(user, span_notice("The crate unlocks!"))
 				locked = FALSE
 				cut_overlays()
 				add_overlay("securecrateg")
 				tamperproof = 0 // set explosion chance to zero, so we dont accidently hit it with a multitool and instantly die
 			else if(!input || !sanitycheck || length(sanitised) != codelen)
-				to_chat(user, "<span class='notice'>You leave the crate alone.</span>")
+				to_chat(user, span_notice("You leave the crate alone."))
 			else
-				to_chat(user, "<span class='warning'>A red light flashes.</span>")
+				to_chat(user, span_warning("A red light flashes."))
 				lastattempt = input
 				attempts--
 				if(attempts == 0)
@@ -171,11 +171,11 @@
 /obj/structure/closet/crate/secure/loot/attackby(obj/item/W, mob/user)
 	if(locked)
 		if(istype(W, /obj/item/multitool))
-			to_chat(user, "<span class='notice'>DECA-CODE LOCK REPORT:</span>")
+			to_chat(user, span_notice("DECA-CODE LOCK REPORT:"))
 			if(attempts == 1)
-				to_chat(user, "<span class='warning'>* Anti-Tamper Bomb will activate on next failed access attempt.</span>")
+				to_chat(user, span_warning("* Anti-Tamper Bomb will activate on next failed access attempt."))
 			else
-				to_chat(user, "<span class='notice'>* Anti-Tamper Bomb will activate after [attempts] failed access attempts.</span>")
+				to_chat(user, span_notice("* Anti-Tamper Bomb will activate after [attempts] failed access attempts."))
 			if(lastattempt != null)
 				var/bulls = 0 //right position, right number
 				var/cows = 0 //wrong position but in the puzzle
@@ -199,14 +199,14 @@
 					lastattempt_it += length(lastattempt_char)
 					code_it += length(code_char)
 
-				to_chat(user, "<span class='notice'>Last code attempt, [lastattempt], had [bulls] correct digits at correct positions and [cows] correct digits at incorrect positions.</span>")
+				to_chat(user, span_notice("Last code attempt, [lastattempt], had [bulls] correct digits at correct positions and [cows] correct digits at incorrect positions."))
 			return
 	return ..()
 
 /obj/structure/closet/secure/loot/dive_into(mob/living/user)
 	if(!locked)
 		return ..()
-	to_chat(user, "<span class='notice'>That seems like a stupid idea.</span>")
+	to_chat(user, span_notice("That seems like a stupid idea."))
 	return FALSE
 
 /obj/structure/closet/crate/secure/loot/emag_act(mob/user)

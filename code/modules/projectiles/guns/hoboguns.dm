@@ -11,7 +11,7 @@
 /obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -26,7 +26,7 @@
 /obj/item/gun/ballistic/revolver/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,22)
 		user.dropItemToGround(src)
 		return FALSE
@@ -36,12 +36,13 @@
 /obj/item/gun/ballistic/rifle/hobo
 	slowdown = 0.4
 	icon = 'icons/fallout/objects/guns/energy.dmi'
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /obj/item/gun/ballistic/rifle/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] overheats and blasts you with superheated air!</span>")
+		to_chat(user, span_userdanger("[src] overheats and blasts you with superheated air!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -50,7 +51,7 @@
 /obj/item/gun/ballistic/automatic/autopipe/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -94,20 +95,21 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2.1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
-	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /* * * * * * * * * * *
  * Pipe Gun
@@ -120,7 +122,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle
-	name = "pipe rifle (.223)"
+	name = "pipe rifle"
 	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
 	icon_state = "piperifle"
 	item_state = "pepperbox"
@@ -131,22 +133,23 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_T5
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -174,22 +177,24 @@
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T5
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2.4)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/revolver/hobo/pepperbox/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	if(prob(1))
 		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
+		to_chat(user, span_userdanger("[src] misfires, detonating the round in the barrel prematurely!"))
 		user.take_bodypart_damage(0,20)
 		user.dropItemToGround(src)
 		return FALSE
@@ -220,15 +225,16 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3.1)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
@@ -258,15 +264,16 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -293,15 +300,16 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_PISTOL_LIGHT * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(1.6)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -309,7 +317,7 @@
 /* * * * * * * * * * *
  * Autopipe Rifle
  * Waster BFG
- * .357 magnum
+ * .357 magnum-ish
  * Burst fire?
  * Akimbo
  * Awful accuracy
@@ -317,7 +325,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/autopipe
-	name = "Auto-pipe rifle (.357)"
+	name = "Auto-pipe rifle"
 	desc = "A belt fed pipe rifle held together with duct tape. Highly inaccurate. What could go wrong."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
@@ -326,25 +334,28 @@
 	item_state = "autopipe"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
-	
+
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
-	burst_size = 4
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	automatic = 1
+	init_recoil = RIFLE_RECOIL(2.7)
+	init_firemodes = list(
+		FULL_AUTO_300,
+		BURST_3_ROUND,
+		SEMI_AUTO_NODELAY
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
-	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 
 
@@ -374,6 +385,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 
 //Plasma musket.
@@ -393,6 +407,9 @@
 	fire_sound = 'sound/f13weapons/lasmusket_fire.ogg'
 	pump_sound = 'sound/f13weapons/lasmusket_crank.ogg'
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+	init_firemodes = list(
+		WEAPON_NORMAL
+	)
 
 /* * * * * * * * * * *
  * Destroyer Carbine
@@ -413,24 +430,23 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_LIGHT_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
-	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
 	can_scope = FALSE
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
 	semi_auto = FALSE
+	init_recoil = CARBINE_RECOIL(2.3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 
 //Obrez, sawn off bolt action rifle						Keywords: .308, 5 round internal
@@ -449,15 +465,16 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_RIFLE_MEDIUM_AUTO * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = HANDGUN_RECOIL(4)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	can_scope = FALSE
 
@@ -478,15 +495,16 @@
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
 	draw_time = GUN_DRAW_QUICK
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_FIXED * HOBO_RECOIL_MULT
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONGER
-	spread = GUN_SPREAD_AWFUL
-	fire_delay = GUN_FIRE_DELAY_SLOWER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(2.3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'

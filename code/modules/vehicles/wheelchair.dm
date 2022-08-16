@@ -11,15 +11,18 @@
 	density = FALSE		//Thought I couldn't fix this one easily, phew
 	arms_required = 1
 	var/override_movespeed = FALSE
+	var/mutable_appearance/wheels
 
 /obj/vehicle/ridden/wheelchair/Initialize()
 	. = ..()
 	var/datum/component/riding/D = LoadComponent(/datum/component/riding)
 	D.vehicle_move_delay = 0
 	D.set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
-	D.set_vehicle_dir_layer(NORTH, ABOVE_MOB_LAYER)
+	D.set_vehicle_dir_layer(NORTH, ABOVE_MOB_LAYER, MOB_PLANE)
 	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
+
+	wheels = mutable_appearance(icon, "wheelchair_overlay", ABOVE_MOB_LAYER, MOB_PLANE)
 
 /obj/vehicle/ridden/wheelchair/ComponentInitialize()	//Since it's technically a chair I want it to have chair properties
 	. = ..()
@@ -39,7 +42,7 @@
 /obj/vehicle/ridden/wheelchair/driver_move(mob/living/user, direction)
 	if(istype(user))
 		if(canmove && (user.get_num_arms() < arms_required))
-			to_chat(user, "<span class='warning'>You don't have enough arms to operate the wheels!</span>")
+			to_chat(user, span_warning("You don't have enough arms to operate the wheels!"))
 			canmove = FALSE
 			addtimer(VARSET_CALLBACK(src, canmove, TRUE), 20)
 			return FALSE
@@ -70,9 +73,9 @@
 	handle_rotation(newdir)
 
 /obj/vehicle/ridden/wheelchair/wrench_act(mob/living/user, obj/item/I)	//Attackby should stop it attacking the wheelchair after moving away during decon
-	to_chat(user, "<span class='notice'>You begin to detach the wheels...</span>")
+	to_chat(user, span_notice("You begin to detach the wheels..."))
 	if(I.use_tool(src, user, 40, volume=50))
-		to_chat(user, "<span class='notice'>You detach the wheels and deconstruct the chair.</span>")
+		to_chat(user, span_notice("You detach the wheels and deconstruct the chair."))
 		new /obj/item/stack/rods(drop_location(), 6)
 		new /obj/item/stack/sheet/metal(drop_location(), 4)
 		qdel(src)
@@ -87,8 +90,8 @@
 
 /obj/vehicle/ridden/wheelchair/proc/handle_rotation_overlayed()
 	cut_overlays()
-	var/image/V = image(icon = icon, icon_state = "wheelchair_overlay", layer = FLY_LAYER, dir = src.dir)
-	add_overlay(V)
+	wheels.dir = dir
+	add_overlay(wheels)
 
 
 

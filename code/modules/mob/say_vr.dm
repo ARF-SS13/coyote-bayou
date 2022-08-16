@@ -40,7 +40,7 @@ proc/get_top_level_mob(mob/S)
 
 /datum/emote/living/subtle/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 
@@ -65,15 +65,16 @@ proc/get_top_level_mob(mob/S)
 	if(!can_run_emote(user))
 		return FALSE
 
-	user.log_message(message, LOG_EMOTE)
+	user.log_message(message, subtler ? LOG_SUBTLER : LOG_SUBTLE)
 	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
-	var/list/non_admin_ghosts = list()
+	var/list/non_admin_ghosts
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*
 	if(subtler)
-		for(var/mob/ghost in GLOB.dead_mob_list)
-			if(!(ghost in GLOB.admins))
-				non_admin_ghosts |= ghost
+		non_admin_ghosts = list(GLOB.dead_mob_list)
+		for(var/mob/ghostie in GLOB.dead_mob_list)
+			if(ghostie.client && check_rights_for(ghostie.client, R_ADMIN))
+				non_admin_ghosts -= ghostie
 
 	// Everyone in range can see it
 	user.visible_message(
@@ -83,7 +84,7 @@ proc/get_top_level_mob(mob/S)
 		vision_distance = 1,
 		ignored_mobs = non_admin_ghosts)
 
-	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight,
+	//broadcast to ghosts, if they have a client, are dead, arent in the lobby, allow ghostsight, and, if subtler, are admemes
 	user.emote_for_ghost_sight(message, subtler)
 
 
@@ -98,7 +99,7 @@ proc/get_top_level_mob(mob/S)
 	set name = "Subtle"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	usr.emote("subtle")
 
@@ -107,7 +108,7 @@ proc/get_top_level_mob(mob/S)
 	set name = "Subtler Anti-Ghost"
 	set category = "IC"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	usr.emote("subtler")
 
@@ -158,7 +159,7 @@ proc/get_top_level_mob(mob/S)
 
 /datum/emote/living/subtler/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 

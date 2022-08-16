@@ -172,7 +172,34 @@ GLOBAL_LIST_INIT(barefootstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 100, 0)
+		'sound/effects/footstep/hull1.ogg',
+		'sound/effects/footstep/hull2.ogg',
+		'sound/effects/footstep/hull3.ogg',
+		'sound/effects/footstep/hull4.ogg',
+		'sound/effects/footstep/hull5.ogg'), 100, 1),
+	FOOTSTEP_SNOW = list(list(
+		'sound/effects/footstep/snow1.ogg',
+		'sound/effects/footstep/snow2.ogg',
+		'sound/effects/footstep/snow3.ogg',
+		'sound/effects/footstep/snow4.ogg',
+		'sound/effects/footstep/snow5.ogg'), 100, 1),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
+	FOOTSTEP_LOOSE_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 100, 1),
+	FOOTSTEP_ROAD = list(list(
+		'sound/f13effects/footstep/Road/road_walk1.ogg',
+		'sound/f13effects/footstep/Road/road_walk2.ogg',
+		'sound/f13effects/footstep/Road/road_walk3.ogg',
+		'sound/f13effects/footstep/Road/road_walk4.ogg',
+		'sound/f13effects/footstep/Road/road_walk5.ogg',
+		'sound/f13effects/footstep/Road/road_walk6.ogg'), 50, 1)
 ))
 
 //claw footsteps lists
@@ -218,7 +245,34 @@ GLOBAL_LIST_INIT(clawfootstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 100, 0)
+		'sound/effects/footstep/hull1.ogg',
+		'sound/effects/footstep/hull2.ogg',
+		'sound/effects/footstep/hull3.ogg',
+		'sound/effects/footstep/hull4.ogg',
+		'sound/effects/footstep/hull5.ogg'), 100, 1),
+	FOOTSTEP_SNOW = list(list(
+		'sound/effects/footstep/snow1.ogg',
+		'sound/effects/footstep/snow2.ogg',
+		'sound/effects/footstep/snow3.ogg',
+		'sound/effects/footstep/snow4.ogg',
+		'sound/effects/footstep/snow5.ogg'), 100, 1),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
+	FOOTSTEP_LOOSE_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 100, 1),
+	FOOTSTEP_ROAD = list(list(
+		'sound/f13effects/footstep/Road/road_walk1.ogg',
+		'sound/f13effects/footstep/Road/road_walk2.ogg',
+		'sound/f13effects/footstep/Road/road_walk3.ogg',
+		'sound/f13effects/footstep/Road/road_walk4.ogg',
+		'sound/f13effects/footstep/Road/road_walk5.ogg',
+		'sound/f13effects/footstep/Road/road_walk6.ogg'), 50, 1)
 ))
 
 //heavy footsteps list
@@ -238,5 +292,32 @@ GLOBAL_LIST_INIT(heavyfootstep, list(
 	FOOTSTEP_MEAT = list(list(
 		'sound/effects/meatslap.ogg'), 100, 0),
 	FOOTSTEP_RUST = list(list(
-		'sound/effects/footstep/rustystep1.ogg'), 150, 2)
+		'sound/effects/footstep/hull1.ogg',
+		'sound/effects/footstep/hull2.ogg',
+		'sound/effects/footstep/hull3.ogg',
+		'sound/effects/footstep/hull4.ogg',
+		'sound/effects/footstep/hull5.ogg'), 100, 1),
+	FOOTSTEP_SNOW = list(list(
+		'sound/effects/footstep/snow1.ogg',
+		'sound/effects/footstep/snow2.ogg',
+		'sound/effects/footstep/snow3.ogg',
+		'sound/effects/footstep/snow4.ogg',
+		'sound/effects/footstep/snow5.ogg'), 100, 1),
+	FOOTSTEP_GRAVEL = list(list(
+		'sound/effects/footstep/gravel1.ogg',
+		'sound/effects/footstep/gravel2.ogg',
+		'sound/effects/footstep/gravel3.ogg',
+		'sound/effects/footstep/gravel4.ogg'), 100, 1),
+	FOOTSTEP_LOOSE_SAND = list(list(
+		'sound/effects/footstep/sand1.ogg',
+		'sound/effects/footstep/sand2.ogg',
+		'sound/effects/footstep/sand3.ogg',
+		'sound/effects/footstep/sand4.ogg'), 100, 1),
+	FOOTSTEP_ROAD = list(list(
+		'sound/f13effects/footstep/Road/road_walk1.ogg',
+		'sound/f13effects/footstep/Road/road_walk2.ogg',
+		'sound/f13effects/footstep/Road/road_walk3.ogg',
+		'sound/f13effects/footstep/Road/road_walk4.ogg',
+		'sound/f13effects/footstep/Road/road_walk5.ogg',
+		'sound/f13effects/footstep/Road/road_walk6.ogg'), 50, 1),
 ))

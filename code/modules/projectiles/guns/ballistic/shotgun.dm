@@ -25,16 +25,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 
+	gun_skill_check = AFFECTED_BY_FAST_PUMP
 	can_scope = FALSE
 	flags_1 =  CONDUCT_1
 	casing_ejector = FALSE
@@ -42,6 +40,10 @@
 	spawnwithmagazine = TRUE
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	init_recoil = RIFLE_RECOIL(2.5)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
@@ -51,18 +53,18 @@
 	return !!chambered?.BB
 
 /obj/item/gun/ballistic/shotgun/attack_self(mob/living/user)
-	if(recentpump > world.time)
-		return
+	//if(recentpump > world.time)
+	//	return
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes pumping shotguns impossible in stamina softcrit
-		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
 		return//CIT CHANGE - ditto
 	pump(user, TRUE)
-	if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
-		recentpump = world.time + GUN_COCK_SHOTGUN_LIGHTNING
-	else
-		recentpump = world.time + cock_delay
-		if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
-			user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
+	//if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
+	//	recentpump = world.time + GUN_COCK_SHOTGUN_LIGHTNING
+	//else
+	//	recentpump = world.time + cock_delay
+	if(istype(user))//CIT CHANGE - makes pumping shotguns cost a lil bit of stamina.
+		user.adjustStaminaLossBuffered(2) //CIT CHANGE - DITTO. make this scale inversely to the strength stat when stats/skills are added
 	return
 
 /obj/item/gun/ballistic/shotgun/blow_up(mob/user)
@@ -73,11 +75,12 @@
 
 /obj/item/gun/ballistic/shotgun/proc/pump(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message("<span class='warning'>[M] racks [src].</span>", "<span class='warning'>You rack [src].</span>")
+		M.visible_message(span_warning("[M] racks [src]."), span_warning("You rack [src]."))
 	playsound(M, pump_sound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
+	update_firemode()
 	return 1
 
 /obj/item/gun/ballistic/shotgun/proc/pump_unload(mob/M)
@@ -100,7 +103,12 @@
 /obj/item/gun/ballistic/shotgun/lethal
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal
 
-
+/// Pump if click with empty thing
+/obj/item/gun/ballistic/shotgun/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	if(chambered)
+		attack_self(user)
+	else
+		..()
 
 /* * * * * * * * * * * * * *
  * Double barrel shotguns  *
@@ -129,14 +137,15 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+	)
 
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -182,14 +191,16 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	init_firemodes = list(
+		list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		list(mode_name="Both Barrels", mode_desc="Give them the side-by-side", burst_size=2, icon="burst"),
+	)
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
@@ -234,14 +245,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 
 /obj/item/gun/ballistic/shotgun/hunting/update_icon_state()
@@ -275,14 +283,11 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	var/stock = FALSE
 	can_flashlight = TRUE
@@ -299,18 +304,18 @@
 
 /obj/item/gun/ballistic/shotgun/police/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to toggle the stock.</span>"
+	. += span_notice("Alt-click to toggle the stock.")
 
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
-		recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
+		recoil_dat = getRecoil(RIFLE_RECOIL(2.2)[1],RIFLE_RECOIL(2.2)[2],RIFLE_RECOIL(2.2)[3])
 	else
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
-		recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP * 3
+		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
 	update_icon()
 
 /obj/item/gun/ballistic/shotgun/police/update_icon_state()
@@ -326,7 +331,7 @@
 
 /obj/item/gun/ballistic/shotgun/trench
 	name = "trench shotgun"
-	desc = "A military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
+	desc = "A quick military shotgun designed for close-quarters fighting, equipped with a bayonet lug."
 	icon_state = "trench"
 	item_state = "shotguntrench"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/trench
@@ -335,18 +340,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
 
 	can_bayonet = TRUE
-	fire_delay = 2
 	bayonet_state = "bayonet"
 	knife_x_offset = 24
 	knife_y_offset = 22
@@ -361,6 +362,7 @@
 /* * * * * * * * * * * *
  * Semi-auto shotguns  *
  * * * * * * * * * * * */
+/// warning, most arent semi-automatic
 
 /obj/item/gun/ballistic/shotgun/automatic/combat
 	name = "semi-auto shotgun template"
@@ -369,19 +371,12 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
-
-/obj/item/gun/ballistic/shotgun/automatic/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	..()
-	src.pump(user)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -407,28 +402,29 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_SLOW
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 
 	fire_sound = 'sound/f13weapons/auto5.ogg'
 
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
+	..()
+	src.pump(user)
+
 /* * * * * * * * * * *
  * Lever-Action shotgun
- * Speedy semi-auto shotgun
+ * Speedy pump shotgun
  * 12g
  * Uncommon
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever
 	name = "lever action shotgun"
-	desc = "A pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
+	desc = "A speedy pistol grip lever action shotgun with a five-shell capacity underneath plus one in chamber."
 	icon_state = "shotgunlever"
 	item_state = "shotgunlever"
 	icon_prefix = "shotgunlever"
@@ -440,15 +436,13 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_FAST
+	init_recoil = RIFLE_RECOIL(2.8)
 
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	can_bayonet = TRUE
@@ -474,22 +468,20 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_recoil = RIFLE_RECOIL(2.2)
 
 	var/toggled = FALSE
 	var/obj/item/ammo_box/magazine/internal/shot/alternate_magazine
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to switch tubes.</span>"
+	. += span_notice("Alt-click to switch tubes.")
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/neostead/Initialize()
 	. = ..()
@@ -527,7 +519,7 @@
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	name = "Winchester City-Killer shotgun"
-	desc = "A semi automatic shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
+	desc = "A high capacity pump action shotgun with black tactical furniture made by Winchester Arms. This particular model uses a internal tube magazine."
 	icon_state = "citykiller"
 	item_state = "shotguncity"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/citykiller
@@ -536,17 +528,14 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_FIRE_DELAY_SLOW
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_recoil = RIFLE_RECOIL(2.8)
 
-	var/semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 
 /* * * * * * * * * * *
@@ -571,15 +560,16 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_firemodes = list(
+		FULL_AUTO_400,
+		SEMI_AUTO_NODELAY
+	)
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
@@ -606,15 +596,17 @@
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_TWO_HAND_ONLY
 	draw_time = GUN_DRAW_LONG
-	recoil_multiplier = GUN_RECOIL_SHOTGUN_PUMP
-	recoil_cooldown_time = GUN_RECOIL_TIMEOUT_LONG
-	spread = GUN_SPREAD_ACCURATE
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	gun_damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	init_recoil = RIFLE_RECOIL(2.8)
+	init_firemodes = list(
+		FULL_AUTO_300,
+		SEMI_AUTO_NODELAY
+	)
 
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
@@ -625,4 +617,4 @@
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lethal/test
-	gun_damage_multiplier = 7
+	damage_multiplier = 7

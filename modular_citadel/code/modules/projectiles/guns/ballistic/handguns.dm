@@ -9,11 +9,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/toy/pistol
 	can_suppress = FALSE
-	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
-	suppressed = TRUE
+	fire_sound_silenced = 'sound/weapons/gunshot_silenced.ogg'
+	silenced = TRUE
 	burst_size = 1
 	fire_delay = 0
-	spread = 20
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/toy/pistol/stealth/update_overlays()

@@ -219,7 +219,7 @@
 
 	CHECK_TICK
 
-	set_observer_default_invisibility(0, "<span class='warning'>The round is over! You are now visible to the living.</span>")
+	set_observer_default_invisibility(0, span_warning("The round is over! You are now visible to the living."))
 
 	CHECK_TICK
 	
@@ -316,7 +316,7 @@
 			parts += "[FOURSPACES][FOURSPACES][choice]: [score]"
 
 	parts += "[FOURSPACES]Round Duration: <B>[DisplayTimeText(world.time - SSticker.round_start_time)]</B>"
-	//parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? "<span class='redtext'>Destroyed</span>" : "[popcount["station_integrity"]]%"]</B>"
+	//parts += "[FOURSPACES]Station Integrity: <B>[mode.station_was_nuked ? span_redtext("Destroyed") : "[popcount["station_integrity"]]%"]</B>"
 	var/total_players = GLOB.joined_player_list.len
 	if(total_players)
 		parts+= "[FOURSPACES]Total Population: <B>[total_players]</B>"
@@ -383,14 +383,14 @@
 					parts += "<span class='marooned'>You managed to survive the events in [station_name()]...</span>"
 				else
 					parts += "<div class='panel greenborder'>"
-					parts += "<span class='greentext'>You managed to survive the events in [station_name()] as [M.real_name].</span>"
+					parts += span_greentext("You managed to survive the events in [station_name()] as [M.real_name].")
 			else
 				parts += "<div class='panel greenborder'>"
-				parts += "<span class='greentext'>You managed to survive the events in [station_name()] as [M.real_name].</span>"
+				parts += span_greentext("You managed to survive the events in [station_name()] as [M.real_name].")
 
 		else
 			parts += "<div class='panel redborder'>"
-			parts += "<span class='redtext'>You did not survive the events in [station_name()]...</span>"
+			parts += span_redtext("You did not survive the events in [station_name()]...")
 	else
 		parts += "<div class='panel stationborder'>"
 	parts += "<br>"
@@ -456,7 +456,7 @@
 /datum/controller/subsystem/ticker/proc/medal_report()
 	if(GLOB.commendations.len)
 		var/list/parts = list()
-		parts += "<span class='header'>Medal Commendations:</span>"
+		parts += span_header("Medal Commendations:")
 		for (var/com in GLOB.commendations)
 			parts += com
 		return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
@@ -467,7 +467,7 @@
 	var/list/matches_log = SSmatchmaking.matches_log
 	if(!length(matches_log))
 		return ""
-	var/list/parts = list("<span class='header'>Matchmakings:</span>")
+	var/list/parts = list(span_header("Matchmakings:"))
 	parts += matches_log
 	return "<div class='panel stationborder'>[parts.Join("<br>")]</div>"
 

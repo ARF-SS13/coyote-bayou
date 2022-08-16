@@ -19,7 +19,7 @@
 	. = ..()
 	if(user.get_item_by_slot(SLOT_GLASSES) == src)
 		if(world.time >= nextadrenalinepop)
-			. += "<span class='notice'>The built-in adrenaline injector is ready for use.</span>"
+			. += span_notice("The built-in adrenaline injector is ready for use.")
 		else
 			. += "<span class='notice'>[DisplayTimeText(nextadrenalinepop - world.time)] left before the adrenaline injector can be used again."
 

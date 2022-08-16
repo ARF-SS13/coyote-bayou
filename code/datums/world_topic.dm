@@ -70,7 +70,7 @@
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span class='announce'>PR: [input[keyword]]</span>"
+	var/final_composed = span_announce("PR: [input[keyword]]")
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -279,7 +279,7 @@
 	.["Legion"] = legion
 	.["Followers"] = followers
 	.["Brotherhood of Steel"] = brotherhood
-	.["Oasis"] = oasis
+	.["Nash"] = oasis
 	.["Wastelanders"] = wastelanders
 	.["Other"] = misc
 	return json_encode(.)

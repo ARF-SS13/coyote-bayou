@@ -59,7 +59,7 @@
 
 /obj/item/clothing/suit/hooded/proc/ToggleHood()
 	if(!hood)
-		to_chat(loc, "<span class='warning'>[src] seems to be missing its hood..</span>")
+		to_chat(loc, span_warning("[src] seems to be missing its hood.."))
 		return
 	if(atom_colours)
 		hood.atom_colours = atom_colours.Copy()
@@ -68,10 +68,10 @@
 		if(ishuman(src.loc))
 			var/mob/living/carbon/human/H = src.loc
 			if(H.wear_suit != src)
-				to_chat(H, "<span class='warning'>You must be wearing [src] to put up the hood!</span>")
+				to_chat(H, span_warning("You must be wearing [src] to put up the hood!"))
 				return
 			if(H.head)
-				to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
+				to_chat(H, span_warning("You're already wearing something on your head!"))
 				return
 			else if(H.equip_to_slot_if_possible(hood,SLOT_HEAD,0,0,1))
 				suittoggled = TRUE
@@ -102,6 +102,9 @@
 			qdel(src)
 
 //Toggle exosuits for different aesthetic styles (hoodies, suit jacket buttons, etc)
+/obj/item/clothing/suit/toggle
+	/// If the suit has different hidden parts when toggled, use these for what it hides
+	var/toggled_hidden_parts
 
 /obj/item/clothing/suit/toggle/AltClick(mob/user)
 	. = ..()
@@ -119,14 +122,20 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You toggle [src]'s [togglename].</span>")
+	to_chat(usr, span_notice("You toggle [src]'s [togglename]."))
 	if(src.suittoggled)
 		src.icon_state = "[initial(icon_state)]"
+		src.body_parts_hidden = initial(src.body_parts_hidden)
 		src.suittoggled = FALSE
 	else if(!src.suittoggled)
 		src.icon_state = "[initial(icon_state)]_t"
+		if(!isnull(toggled_hidden_parts))
+			src.body_parts_hidden = src.toggled_hidden_parts
 		src.suittoggled = TRUE
 	usr.update_inv_wear_suit()
+	if(ismob(src.loc))
+		var/mob/mob_carrying_this = src.loc
+		mob_carrying_this.update_body(TRUE) // update skimpiness
 	for(var/X in actions)
 		var/datum/action/A = X
 		A.UpdateButtonIcon()
@@ -182,7 +191,7 @@
 		H.transferItemToLoc(helmet, src, TRUE)
 		H.update_inv_wear_suit()
 		if(message)
-			to_chat(H, "<span class='notice'>The helmet on the hardsuit disengages.</span>")
+			to_chat(H, span_notice("The helmet on the hardsuit disengages."))
 		playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
 	else
 		helmet.forceMove(src)
@@ -197,7 +206,7 @@
 	if(!helmettype)
 		return
 	if(!helmet)
-		to_chat(H, "<span class='warning'>[src] seems to be missing its helmet..</span>")
+		to_chat(H, span_warning("[src] seems to be missing its helmet.."))
 		return
 	if(atom_colours)
 		helmet.atom_colours = atom_colours.Copy()
@@ -206,15 +215,15 @@
 		if(ishuman(src.loc))
 			if(H.wear_suit != src)
 				if(message)
-					to_chat(H, "<span class='warning'>You must be wearing [src] to engage the helmet!</span>")
+					to_chat(H, span_warning("You must be wearing [src] to engage the helmet!"))
 				return
 			if(H.head)
 				if(message)
-					to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
+					to_chat(H, span_warning("You're already wearing something on your head!"))
 				return
 			else if(H.equip_to_slot_if_possible(helmet,SLOT_HEAD,0,0,1))
 				if(message)
-					to_chat(H, "<span class='notice'>You engage the helmet on the hardsuit.</span>")
+					to_chat(H, span_notice("You engage the helmet on the hardsuit."))
 				suittoggled = TRUE
 				H.update_inv_wear_suit()
 				playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)

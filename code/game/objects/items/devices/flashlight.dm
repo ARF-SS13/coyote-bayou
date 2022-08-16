@@ -1,6 +1,6 @@
 /obj/item/flashlight
 	name = "flashlight"
-	desc = "A hand-held emergency light."
+	desc = "A hand-held emergency light. Comes with a robust lanyard and set of clips for hands-free use. Neat!"
 	custom_price = PRICE_REALLY_CHEAP
 	icon = 'icons/obj/lighting.dmi'
 	icon_state = "flashlight"
@@ -9,7 +9,7 @@
 	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	w_class = WEIGHT_CLASS_SMALL
 	flags_1 = CONDUCT_1
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	actions_types = list(/datum/action/item_action/toggle_light)
 	light_system = MOVABLE_LIGHT_DIRECTIONAL
@@ -45,9 +45,9 @@
 
 /obj/item/flashlight/suicide_act(mob/living/carbon/human/user)
 	if (user.eye_blind)
-		user.visible_message("<span class='suicide'>[user]  is putting [src] close to [user.p_their()] eyes and turning it on ... but [user.p_theyre()] blind!</span>")
+		user.visible_message(span_suicide("[user]  is putting [src] close to [user.p_their()] eyes and turning it on ... but [user.p_theyre()] blind!"))
 		return SHAME
-	user.visible_message("<span class='suicide'>[user] is putting [src] close to [user.p_their()] eyes and turning it on! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is putting [src] close to [user.p_their()] eyes and turning it on! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (FIRELOSS)
 
 /obj/item/flashlight/attack(mob/living/carbon/M, mob/living/carbon/human/user)
@@ -58,11 +58,11 @@
 			return ..()	//just hit them in the head
 
 		if(!user.IsAdvancedToolUser())
-			to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+			to_chat(user, span_warning("You don't have the dexterity to do this!"))
 			return
 
 		if(!M.get_bodypart(BODY_ZONE_HEAD))
-			to_chat(user, "<span class='warning'>[M] doesn't have a head!</span>")
+			to_chat(user, span_warning("[M] doesn't have a head!"))
 			return
 
 		if(light_power < 1)
@@ -72,33 +72,33 @@
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_EYES)
 				if((M.head && M.head.flags_cover & HEADCOVERSEYES) || (M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSEYES) || (M.glasses && M.glasses.flags_cover & GLASSESCOVERSEYES))
-					to_chat(user, "<span class='notice'>You're going to need to remove that [(M.head && M.head.flags_cover & HEADCOVERSEYES) ? "helmet" : (M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSEYES) ? "mask": "glasses"] first.</span>")
+					to_chat(user, span_notice("You're going to need to remove that [(M.head && M.head.flags_cover & HEADCOVERSEYES) ? "helmet" : (M.wear_mask && M.wear_mask.flags_cover & MASKCOVERSEYES) ? "mask": "glasses"] first."))
 					return
 
 				var/obj/item/organ/eyes/E = M.getorganslot(ORGAN_SLOT_EYES)
 				if(!E)
-					to_chat(user, "<span class='danger'>[M] doesn't have any eyes!</span>")
+					to_chat(user, span_danger("[M] doesn't have any eyes!"))
 					return
 
 				if(M == user)	//they're using it on themselves
 					if(M.flash_act(visual = 1))
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", "<span class='notice'>You wave the light in front of your eyes! Trippy!</span>")
+						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("You wave the light in front of your eyes! Trippy!"))
 					else
-						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", "<span class='notice'>You wave the light in front of your eyes.</span>")
+						M.visible_message("[M] directs [src] to [M.p_their()] eyes.", span_notice("You wave the light in front of your eyes."))
 				else
-					user.visible_message("<span class='warning'>[user] directs [src] to [M]'s eyes.</span>", \
-										"<span class='danger'>You direct [src] to [M]'s eyes.</span>")
+					user.visible_message(span_warning("[user] directs [src] to [M]'s eyes."), \
+										span_danger("You direct [src] to [M]'s eyes."))
 					if(M.stat == DEAD || (HAS_TRAIT(M, TRAIT_BLIND)) || !M.flash_act(visual = 1)) //mob is dead or fully blind
-						to_chat(user, "<span class='warning'>[M]'s pupils don't react to the light!</span>")
+						to_chat(user, span_warning("[M]'s pupils don't react to the light!"))
 					else if(M.dna && M.dna.check_mutation(XRAY))	//mob has X-ray vision
-						to_chat(user, "<span class='danger'>[M]'s pupils give an eerie glow!</span>")
+						to_chat(user, span_danger("[M]'s pupils give an eerie glow!"))
 					else //they're okay!
-						to_chat(user, "<span class='notice'>[M]'s pupils narrow.</span>")
+						to_chat(user, span_notice("[M]'s pupils narrow."))
 
 			if(BODY_ZONE_PRECISE_MOUTH)
 
 				if(M.is_mouth_covered())
-					to_chat(user, "<span class='notice'>You're going to need to remove that [(M.head && M.head.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] first.</span>")
+					to_chat(user, span_notice("You're going to need to remove that [(M.head && M.head.flags_cover & HEADCOVERSMOUTH) ? "helmet" : "mask"] first."))
 					return
 
 				var/their = M.p_their()
@@ -139,35 +139,36 @@
 									can_use_mirror = mirror.pixel_x < 0
 
 					M.visible_message("[M] directs [src] to [their] mouth.", \
-					"<span class='notice'>You point [src] into your mouth.</span>")
+					span_notice("You point [src] into your mouth."))
 					if(!can_use_mirror)
-						to_chat(user, "<span class='notice'>You can't see anything without a mirror.</span>")
+						to_chat(user, span_notice("You can't see anything without a mirror."))
 						return
 					if(organ_count)
-						to_chat(user, "<span class='notice'>Inside your mouth [organ_count > 1 ? "are" : "is"] [organ_list].</span>")
+						to_chat(user, span_notice("Inside your mouth [organ_count > 1 ? "are" : "is"] [organ_list]."))
 					else
-						to_chat(user, "<span class='notice'>There's nothing inside your mouth.</span>")
+						to_chat(user, span_notice("There's nothing inside your mouth."))
 					if(pill_count)
-						to_chat(user, "<span class='notice'>You have [pill_count] implanted pill[pill_count > 1 ? "s" : ""].</span>")
+						to_chat(user, span_notice("You have [pill_count] implanted pill[pill_count > 1 ? "s" : ""]."))
 
 				else
-					user.visible_message("<span class='notice'>[user] directs [src] to [M]'s mouth.</span>",\
-										"<span class='notice'>You direct [src] to [M]'s mouth.</span>")
+					user.visible_message(span_notice("[user] directs [src] to [M]'s mouth."),\
+										span_notice("You direct [src] to [M]'s mouth."))
 					if(organ_count)
-						to_chat(user, "<span class='notice'>Inside [their] mouth [organ_count > 1 ? "are" : "is"] [organ_list].</span>")
+						to_chat(user, span_notice("Inside [their] mouth [organ_count > 1 ? "are" : "is"] [organ_list]."))
 					else
-						to_chat(user, "<span class='notice'>[M] doesn't have any organs in [their] mouth.</span>")
+						to_chat(user, span_notice("[M] doesn't have any organs in [their] mouth."))
 					if(pill_count)
-						to_chat(user, "<span class='notice'>[M] has [pill_count] pill[pill_count > 1 ? "s" : ""] implanted in [their] teeth.</span>")
+						to_chat(user, span_notice("[M] has [pill_count] pill[pill_count > 1 ? "s" : ""] implanted in [their] teeth."))
 
 	else
 		return ..()
 
 /obj/item/flashlight/pen
 	name = "penlight"
-	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance."
+	desc = "A pen-sized light, used by medical staff. It can also be used to create a hologram to alert people of incoming medical assistance. Comes with a handy necklace and bite-resistant coating for hands-free use. Try not to swallow it."
 	icon_state = "penlight"
 	item_state = ""
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK | ITEM_SLOT_MASK
 	flags_1 = CONDUCT_1
 	light_range = 2
 	light_color = "#FFDDCC"
@@ -177,7 +178,7 @@
 	. = ..()
 	if(!proximity_flag)
 		if(holo_cooldown > world.time)
-			to_chat(user, "<span class='warning'>[src] is not ready yet!</span>")
+			to_chat(user, span_warning("[src] is not ready yet!"))
 			return
 		var/T = get_turf(target)
 		if(locate(/mob/living) in T)
@@ -188,7 +189,7 @@
 // see: [/datum/wound/burn/proc/uv()]
 /obj/item/flashlight/pen/paramedic
 	name = "paramedic penlight"
-	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into."
+	desc = "A high-powered UV penlight intended to help stave off infection in the field on serious burned patients. Probably really bad to look into. Comes with a rubberized coating for 'that comfy mouth-feel'."
 	icon_state = "penlight_surgical"
 	/// Our current UV cooldown
 	var/uv_cooldown = 0
@@ -207,7 +208,7 @@
 	. = ..()
 	playsound(loc, 'sound/machines/ping.ogg', 50, 0) //make some noise!
 	if(creator)
-		visible_message("<span class='danger'>[creator] created a medical hologram!</span>")
+		visible_message(span_danger("[creator] created a medical hologram!"))
 
 
 /obj/item/flashlight/seclite
@@ -220,6 +221,7 @@
 	force = 9 // Not as good as a stun baton.
 	light_range = 5 // A little better than the standard flashlight.
 	light_color = "#CDDDFF"
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	hitsound = 'sound/weapons/genhit1.ogg'
 	custom_price = PRICE_ALMOST_CHEAP
 
@@ -236,6 +238,7 @@
 	light_color = "#FFDDBB"
 	light_system = STATIC_LIGHT
 	light_on = TRUE
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	on = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
@@ -271,16 +274,16 @@
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
 	light_range = 7 // Pretty bright.
-	light_color = "#FA421A"
+	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
 	item_state = "flare"
 	actions_types = list()
+	slot_flags = ITEM_SLOT_BELT // its a little hot for your neck
 	var/fuel = 0
 	var/on_damage = 9
 	var/produce_heat = 1500
 	heat = 1000
-	light_color = LIGHT_COLOR_FLARE
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/New()
@@ -324,16 +327,16 @@
 
 	// Usual checks
 	if(!fuel)
-		to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
+		to_chat(user, span_warning("[src] is out of fuel!"))
 		return
 	if(on)
-		to_chat(user, "<span class='notice'>[src] is already on.</span>")
+		to_chat(user, span_notice("[src] is already on."))
 		return
 
 	. = ..()
 	// All good, turn it on.
 	if(.)
-		user.visible_message("<span class='notice'>[user] lights \the [src].</span>", "<span class='notice'>You light \the [src]!</span>")
+		user.visible_message(span_notice("[user] lights \the [src]."), span_notice("You light \the [src]!"))
 		playsound(loc, 'sound/effects/flare_light.ogg', 50, 0)
 		force = on_damage
 		damtype = "fire"
@@ -360,14 +363,14 @@
 /obj/item/flashlight/flare/torch/attack_self(mob/user)
 	// Usual checks
 	if(!fuel)
-		to_chat(user, "<span class='warning'>[src] is out of fuel!</span>")
+		to_chat(user, span_warning("[src] is out of fuel!"))
 		return
 	if(on)
-		to_chat(user, "<span class='notice'>[src] is already lit.</span>")
+		to_chat(user, span_notice("[src] is already lit."))
 		return
 	// All good, turn it on.
 	else
-		user.visible_message("<span class='notice'>[user] lights [src].</span>", "<span class='notice'>You light [src]!</span>")
+		user.visible_message(span_notice("[user] lights [src]."), span_notice("You light [src]!"))
 		playsound(loc, 'sound/effects/torch_light.ogg', 50, 0)
 		force = on_damage
 		damtype = BURN
@@ -389,6 +392,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A mining lantern."
 	light_system = MOVABLE_LIGHT
+	slot_flags = ITEM_SLOT_BELT // Big and heavy!
 	light_range = 6	// luminosity when on
 	light_color = "#FFAA44"
 	custom_price = PRICE_CHEAP
@@ -457,7 +461,7 @@
 		to_chat(user, "\The [src] now has [emp_cur_charges] charge\s.")
 		A.emp_act(80)
 	else
-		to_chat(user, "<span class='warning'>\The [src] needs time to recharge!</span>")
+		to_chat(user, span_warning("\The [src] needs time to recharge!"))
 	return
 
 /obj/item/flashlight/emp/debug //for testing emp_act()
@@ -469,7 +473,7 @@
 // but not similar enough to make it worth a refactor
 /obj/item/flashlight/glowstick
 	name = "glowstick"
-	desc = "A military-grade glowstick."
+	desc = "A military-grade glowstick. Has a long lanyard that should fit around someone's neck."
 	custom_price = PRICE_CHEAP_AS_FREE
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
@@ -477,6 +481,7 @@
 	color = LIGHT_COLOR_GREEN
 	icon_state = "glowstick"
 	item_state = "glowstick"
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	grind_results = list(/datum/reagent/phenol = 15, /datum/reagent/hydrogen = 10, /datum/reagent/oxygen = 5) //Meth-in-a-stick
 	rad_flags = RAD_NO_CONTAMINATE
 	var/fuel = 0
@@ -519,15 +524,15 @@
 
 /obj/item/flashlight/glowstick/attack_self(mob/user)
 	if(!fuel)
-		to_chat(user, "<span class='notice'>[src] is spent.</span>")
+		to_chat(user, span_notice("[src] is spent."))
 		return
 	if(on)
-		to_chat(user, "<span class='notice'>[src] is already lit.</span>")
+		to_chat(user, span_notice("[src] is already lit."))
 		return
 
 	. = ..()
 	if(.)
-		user.visible_message("<span class='notice'>[user] cracks and shakes [src].</span>", "<span class='notice'>You crack and shake [src], turning it on!</span>")
+		user.visible_message(span_notice("[user] cracks and shakes [src]."), span_notice("You crack and shake [src], turning it on!"))
 		activate()
 
 /obj/item/flashlight/glowstick/proc/activate()

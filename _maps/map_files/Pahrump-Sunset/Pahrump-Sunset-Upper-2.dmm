@@ -1,9 +1,63 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aj" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"aN" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"bc" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/solarpanel,
+/area/f13/wasteland)
 "bo" = (
 /turf/open/indestructible,
 /area/f13/wasteland)
+"ce" = (
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"ch" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/smartfridge/bottlerack/grownbin,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"cr" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/smartfridge/bottlerack/seedbin/primitive,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"dH" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "ed" = (
 /turf/closed/mineral/random/low_chance,
+/area/f13/wasteland)
+"ej" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"eQ" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
 "fd" = (
 /obj/effect/decal/cleanable/dirt{
@@ -11,8 +65,22 @@
 	},
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
+"fQ" = (
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "hm" = (
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"hH" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "hS" = (
 /obj/structure/window/fulltile/wood{
@@ -20,9 +88,137 @@
 	},
 /turf/open/floor/holofloor/carpet,
 /area/f13/wasteland)
+"ic" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"id" = (
+/obj/structure/cable,
+/obj/machinery/power/solar,
+/turf/open/floor/plasteel/solarpanel,
+/area/f13/wasteland)
+"ie" = (
+/obj/machinery/smoke_machine{
+	name = "HVAC Machine"
+	},
+/obj/machinery/atmospherics/pipe/simple/general/hidden,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"ij" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"in" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"iF" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"jj" = (
+/obj/structure/railing/corner,
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"jL" = (
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"jX" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"kY" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"lk" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/reagent_dispensers/compostbin,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"mG" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"mQ" = (
+/obj/structure/table/reinforced,
+/obj/item/blueprint/research,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"mU" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden,
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"nF" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"oy" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"oA" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"pm" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"pq" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "ql" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/transparent/openspace,
+/area/f13/wasteland)
+"ri" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
 "rN" = (
 /turf/closed/wall/f13/wood,
@@ -33,21 +229,414 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"tA" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
 "tM" = (
 /turf/closed/indestructible/riveted,
+/area/f13/wasteland)
+"uu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"uw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"uI" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"uJ" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"ve" = (
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"vI" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/legion_extractor,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"vT" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"wD" = (
+/obj/structure/cable,
+/obj/machinery/power/tracker,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"xs" = (
+/turf/closed/indestructible/rock{
+	desc = "A pre-War wall made of solid concrete.";
+	icon = 'icons/turf/walls/f13store.dmi';
+	icon_state = "store";
+	icon_type_smooth = "store";
+	name = "Concrete wall";
+	smooth = 1
+	},
+/area/f13/building/hospital)
+"yd" = (
+/obj/structure/wreck/trash/machinepiletwo,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"yY" = (
+/obj/structure/railing{
+	dir = 6;
+	layer = 4.1
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"zx" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"zT" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/simple_door/house,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/building/hospital)
+"AZ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"CQ" = (
+/obj/effect/landmark/vertibird{
+	id = "Nash - Christus Saint Michaels Hospital - Rooftop";
+	name = "Nash - Christus Saint Michaels Hospital - Rooftop"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"CY" = (
+/obj/machinery/power/smes,
+/obj/structure/cable,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Do" = (
+/obj/structure/rack/shelf_metal,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Ef" = (
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Er" = (
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Ey" = (
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"ED" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Fj" = (
 /obj/machinery/telecomms/relay/preset/telecomms,
 /turf/open/indestructible,
 /area/f13/wasteland)
-"LT" = (
-/obj/effect/spawner/lootdrop/trash,
-/turf/open/floor/plasteel/f13/vault_floor/floor,
+"GG" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
 /area/f13/wasteland)
+"GH" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Hw" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Ik" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Im" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Jo" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Jr" = (
+/obj/structure/cable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"JB" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"KT" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"KV" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"LT" = (
+/obj/structure/lattice/catwalk,
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
+"Nw" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	termtag = "Business"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"NT" = (
+/obj/structure/railing{
+	layer = 4.1
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"Oi" = (
+/obj/structure/chair/f13chair2,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"OQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Pg" = (
+/obj/structure/reagent_dispensers/barrel/two,
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"PZ" = (
+/obj/structure/simple_door/bunker,
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/hospital)
 "RF" = (
 /turf/closed/indestructible/rock,
 /area/f13/wasteland)
+"RU" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/machinery/light/floor,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Sl" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
+"Sn" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	pixel_y = 6
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"St" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/hydroponics/constructable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "SK" = (
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"To" = (
+/obj/structure/lattice/catwalk,
+/obj/machinery/light,
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
+"Tq" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Tt" = (
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkdirty"
+	},
+/area/f13/wasteland)
+"Um" = (
+/mob/living/simple_animal/hostile/raider/tribal,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"UB" = (
+/obj/structure/railing/corner,
+/turf/open/transparent/openspace{
+	name = "air";
+	sunlight_state = 1
+	},
+/area/f13/wasteland)
+"Vb" = (
+/obj/structure/rack/shelf_metal,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Vn" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Vp" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 6
+	},
+/obj/item/crowbar{
+	pixel_y = 6
+	},
+/obj/item/wrench{
+	pixel_y = 6
+	},
+/obj/item/screwdriver{
+	pixel_y = 10
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"Wa" = (
+/mob/living/simple_animal/hostile/handy/gutsy,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"WH" = (
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
+"WL" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"XC" = (
+/obj/structure/wreck/trash/four_barrels,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"XU" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"XX" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
+"Yb" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/solar_control{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"ZO" = (
+/obj/effect/turf_decal/caution/stand_clear{
+	dir = 1
+	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 
@@ -43063,23 +43652,23 @@ sn
 sn
 sn
 sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-hm
+UB
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+XU
 hm
 hm
 hm
@@ -43312,15 +43901,15 @@ hm
 hm
 hm
 hm
-hm
-sn
-sn
-sn
-sn
-sn
-sn
-sn
-sn
+jj
+zx
+zx
+zx
+zx
+zx
+zx
+zx
+yY
 SK
 SK
 SK
@@ -43336,7 +43925,7 @@ SK
 SK
 SK
 SK
-hm
+AZ
 hm
 hm
 hm
@@ -43569,7 +44158,7 @@ hm
 hm
 hm
 hm
-hm
+NT
 SK
 SK
 SK
@@ -43593,7 +44182,7 @@ SK
 SK
 SK
 SK
-hm
+AZ
 hm
 hm
 hm
@@ -43826,7 +44415,7 @@ hm
 hm
 hm
 hm
-hm
+NT
 SK
 SK
 SK
@@ -43850,7 +44439,7 @@ SK
 SK
 SK
 SK
-hm
+AZ
 hm
 hm
 hm
@@ -44083,7 +44672,7 @@ hm
 hm
 hm
 hm
-hm
+NT
 SK
 SK
 SK
@@ -44097,17 +44686,17 @@ SK
 SK
 SK
 SK
+xs
+xs
+xs
+xs
+xs
+xs
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -44340,31 +44929,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+SK
+xs
+xs
+xs
+xs
+xs
+xs
 SK
 SK
 SK
 SK
+xs
+kY
+Ey
+vT
+Ey
+mQ
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -44597,31 +45186,31 @@ hm
 hm
 hm
 hm
-hm
+NT
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
+xs
 LT
+LT
+LT
+LT
+xs
 SK
 SK
 SK
-hm
+SK
+xs
+Vp
+Ey
+Ey
+Oi
+Nw
+xs
+SK
+SK
+SK
+AZ
 hm
 hm
 hm
@@ -44854,31 +45443,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+SK
+xs
+Sl
+LT
+LT
+To
+xs
 SK
 SK
 SK
 SK
+xs
+dH
+Wa
+Ey
+Ey
+OQ
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -45111,31 +45700,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+SK
+xs
+LT
+LT
+LT
+LT
+xs
 SK
 SK
 SK
 SK
+xs
+jL
+Ey
+Ey
+Ey
+Ey
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -45368,31 +45957,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+SK
+xs
+xs
+PZ
+PZ
+xs
+xs
 SK
 SK
 SK
 SK
+xs
+Vb
+Ey
+Ey
+Ey
+Pg
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -45625,31 +46214,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+SK
+SK
+SK
+eQ
+eQ
 SK
 SK
 SK
 SK
 SK
 SK
+xs
+Do
+ve
+Ey
+yd
+XC
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -45882,31 +46471,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+SK
+ED
+SK
+SK
+ri
+eQ
+SK
+ED
+SK
+SK
+Ef
+SK
+xs
+xs
+xs
+Er
+xs
+xs
+xs
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -46139,7 +46728,17 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+uw
+GH
+GH
+GH
+oy
+GH
+GH
+GH
+tA
 SK
 SK
 SK
@@ -46153,17 +46752,7 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+iF
 hm
 hm
 hm
@@ -46396,7 +46985,18 @@ hm
 hm
 hm
 hm
-hm
+NT
+ZO
+mG
+ce
+ce
+ce
+ce
+ce
+ce
+ce
+oA
+Sn
 SK
 SK
 SK
@@ -46409,18 +47009,7 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -46653,31 +47242,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+mG
+ce
+ce
+Tt
+ce
+ce
+ce
+ce
+oA
 SK
 SK
 SK
+ie
+pm
 SK
 SK
 SK
+hH
+hH
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -46910,31 +47499,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+mG
+ce
+ce
+ce
+ce
+ce
+ce
+ce
+oA
 SK
 SK
 SK
+mU
+hH
 SK
 SK
 SK
+hH
+pm
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -47167,31 +47756,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+ZO
+Im
+ce
+ce
+ce
+aN
+ce
+CQ
+ce
+GG
+Sn
+SK
+SK
+ie
+hH
 SK
 SK
 SK
+hH
+hH
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -47424,31 +48013,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+mG
+ce
+ce
+ce
+ce
+ce
+ce
+ce
+oA
+SK
+SK
+Um
+ie
+hH
 SK
 SK
 SK
+pm
+hH
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -47681,31 +48270,31 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+mG
+ce
+ce
+ce
+ce
+ce
+ce
+ce
+oA
 SK
 SK
 SK
+mU
+hH
 SK
 SK
 SK
+hH
+hH
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -47938,7 +48527,18 @@ hm
 hm
 hm
 hm
-hm
+NT
+ZO
+mG
+ce
+ce
+ce
+ce
+ce
+ce
+ce
+oA
+Sn
 SK
 SK
 SK
@@ -47951,18 +48551,7 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -48195,7 +48784,17 @@ hm
 hm
 hm
 hm
-hm
+NT
+SK
+in
+Hw
+Hw
+Hw
+JB
+Hw
+Hw
+Hw
+RU
 SK
 SK
 SK
@@ -48209,17 +48808,7 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -48448,35 +49037,35 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+xs
+xs
+xs
+xs
+SK
+Ef
+pq
+SK
+Um
+pq
+SK
+SK
+pq
 SK
 SK
 SK
+bc
+uI
+id
+bc
+uI
+id
+bc
+uI
+id
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -48705,11 +49294,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+Vn
+ej
+CY
+xs
 SK
 SK
 SK
@@ -48722,18 +49311,18 @@ SK
 SK
 SK
 SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -48962,11 +49551,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+fQ
+Ey
+KV
+xs
 SK
 SK
 SK
@@ -48975,22 +49564,22 @@ SK
 SK
 SK
 SK
+Um
 SK
 SK
 SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -49219,11 +49808,11 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+KT
+Ey
+Yb
+xs
 SK
 SK
 SK
@@ -49236,18 +49825,18 @@ SK
 SK
 SK
 SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -49476,35 +50065,35 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+WH
+Ey
+uu
+xs
+SK
+SK
+WL
+WL
+WL
+WL
+WL
+WL
 SK
 SK
 SK
 SK
+bc
+uJ
+id
+bc
+uJ
+id
+bc
+uJ
+id
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -49733,11 +50322,12 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+Ey
+Ey
+ij
+zT
+Jo
 SK
 SK
 SK
@@ -49750,18 +50340,17 @@ SK
 SK
 SK
 SK
+Ik
+SK
+SK
+Ik
+SK
+SK
+Ik
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -49990,35 +50579,35 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
+xs
+xs
+xs
+xs
+xs
+cr
+vI
+St
+St
+St
+St
+St
+St
+ch
+lk
+Jr
 SK
+Tq
+ic
+jX
+jX
+ic
+jX
+jX
+ic
+jX
+wD
 SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hm
+AZ
 hm
 hm
 hm
@@ -50251,31 +50840,31 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+nF
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+XX
+aj
 hm
 hm
 hm

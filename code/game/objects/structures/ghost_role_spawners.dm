@@ -62,7 +62,7 @@
 		to_chat(new_spawn, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Glory to the Necropolis!</b>")
 		to_chat(new_spawn, "<b>You can expand the weather proof area provided by your shelters by using the 'New Area' key near the bottom right of your HUD.</b>")
 	else
-		to_chat(new_spawn, "<span class='userdanger'>You have been born outside of your natural home! Whether you decide to return home, or make due with your new home is your own decision.</span>")
+		to_chat(new_spawn, span_userdanger("You have been born outside of your natural home! Whether you decide to return home, or make due with your new home is your own decision."))
 
 //Ash walkers on birth understand how to make bone bows, bone arrows and ashen arrows
 
@@ -196,7 +196,7 @@
 		if(transfer_choice != "Yes" || QDELETED(src) || uses <= 0 || !user.canUseTopic(src, BE_CLOSE, NO_DEXTERY, NO_TK))
 			return
 		log_game("[key_name(user)] golem-swapped into [src]")
-		user.visible_message("<span class='notice'>A faint light leaves [user], moving to [src] and animating it!</span>","<span class='notice'>You leave your old body behind, and transfer into [src]!</span>")
+		user.visible_message(span_notice("A faint light leaves [user], moving to [src] and animating it!"),span_notice("You leave your old body behind, and transfer into [src]!"))
 		show_flavour = FALSE
 		create(ckey = user.ckey,name = user.real_name)
 		user.death()
@@ -426,7 +426,7 @@
 		id.registered_name = L.real_name
 		id.update_label()
 	else
-		to_chat(L, "<span class='userdanger'>Your owner is already dead!  You will soon perish.</span>")
+		to_chat(L, span_userdanger("Your owner is already dead!  You will soon perish."))
 		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
@@ -654,10 +654,10 @@
 	var/mob/M = target
 	if(HAS_TRAIT_FROM(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT))
 		REMOVE_TRAIT(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT)
-		to_chat(M,"<span class='notice'>You're no longer hearing deadchat.</span>")
+		to_chat(M,span_notice("You're no longer hearing deadchat."))
 	else
 		ADD_TRAIT(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT)
-		to_chat(M,"<span class='notice'>You're once again longer hearing deadchat.</span>")
+		to_chat(M,span_notice("You're once again longer hearing deadchat."))
 
 
 /obj/effect/mob_spawn/human/ghostcafe/special(mob/living/carbon/human/new_spawn)
@@ -673,7 +673,7 @@
 		ADD_TRAIT(new_spawn, TRAIT_EXEMPT_HEALTH_EVENTS, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_NO_MIDROUND_ANTAG, GHOSTROLE_TRAIT) //The mob can't be made into a random antag, they are still eligible for ghost roles popups.
 		ADD_TRAIT(new_spawn, TRAIT_PACIFISM, GHOSTROLE_TRAIT)
-		to_chat(new_spawn,"<span class='boldwarning'>Ghosting is free!</span>")
+		to_chat(new_spawn,span_boldwarning("Ghosting is free!"))
 		var/datum/action/toggle_dead_chat_mob/D = new(new_spawn)
 		D.Grant(new_spawn)
 
@@ -752,7 +752,7 @@
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
 		/obj/item/storage/survivalkit_aid = 1,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
 		/obj/item/clothing/mask/gas/ranger = 1,
@@ -819,7 +819,7 @@
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc=2,
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
-		/obj/item/ammo_box/magazine/m45exp=2,
+		/obj/item/ammo_box/magazine/m45/socom=2,
 		/obj/item/clothing/accessory/bos/paladin=1
 		)
 
@@ -850,7 +850,7 @@
 
 /obj/effect/mob_spawn/human/fallout13/raider/special(mob/living/new_spawn)
 	new_spawn.real_name = random_unique_name(gender)
-	to_chat(new_spawn, "<span class='userdanger'>You are a raider, therefore, an antagonist! You must maintain immersion and roleplay according. Remember, you are still beholden to escalation rules!</span>")
+	to_chat(new_spawn, span_userdanger("You are a raider, therefore, an antagonist! You must maintain immersion and roleplay according. Remember, you are still beholden to escalation rules!"))
 
 /obj/effect/mob_spawn/human/fallout13/raider/Initialize(mapload)
 	. = ..()
@@ -883,7 +883,7 @@
 	job_description = "Bow Hunter"
 	assignedrole = "Bow Hunter"
 	suit_store = /obj/item/gun/ballistic/automatic/tribalbow
-	belt = /obj/item/storage/belt/tribe_quiver/bone
+	belt = /obj/item/storage/bag/tribe_quiver/bone
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/restraints/legcuffs/bola = 2,

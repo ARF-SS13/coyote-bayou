@@ -37,40 +37,6 @@
 	. = ..()
 	flags_2 |= GLOBAL_LIGHT_TURF_2
 
-#define GRASS_SPONTANEOUS 		2
-#define GRASS_WEIGHT 			4
-#define LUSH_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
-#define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
-
-/turf/open/floor/plating/f13/outside/desert
-	name = "\proper desert"
-	desc = "A stretch of desert."
-	icon = 'icons/turf/f13desert.dmi'
-	icon_state = "wasteland1"
-
-	archdrops = list(/obj/item/stack/ore/glass = list(ARCH_PROB = 100,ARCH_MAXDROP = 5)) //sand
-	slowdown = 0
-	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
-	var/pit_sand = 2
-	var/storedindex = 0			//amount of stored items
-	var/mob/living/gravebody	//is there a body in the pit?
-	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
-	var/pitcontents = list()
-	var/obj/dugpit/mypit
-	var/unburylevel = 0
-
-/turf/open/floor/plating/f13/outside/desert/Initialize()
-	. = ..()
-	icon_state = "wasteland[rand(1,31)]"
-
-/turf/open/floor/plating/f13/outside/desert/harsh
-	icon_state = "wasteland"
-	icon = 'icons/fallout/turfs/ground_harsh.dmi'
-
-/turf/open/floor/plating/f13/outside/desert/harsh/Initialize()
-	. = ..()
-	icon_state = "wasteland[rand(1,31)]"
-
 /turf/open/floor/plating/f13/outside/road
 	name = "\proper road"
 	desc = "A stretch of road."
@@ -506,7 +472,7 @@
 	if(prob(30))
 		M.slip(5, M.loc, GALOSHES_DONT_HELP, 0, FALSE)
 		playsound(M, 'sound/effects/bang.ogg', 10, 1)
-		to_chat(usr, "<span class='warning'>You trip on the pipes!</span>")
+		to_chat(usr, span_warning("You trip on the pipes!"))
 		return
 
 /turf/open/floor/plasteel/f13/metal/pipe/corner

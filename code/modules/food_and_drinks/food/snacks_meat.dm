@@ -48,18 +48,18 @@
 	icon = 'icons/obj/fish/seafood.dmi'
 	icon_state = "smokedsalmon"
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster
-	name = "lobster meat"
-	desc = "Raw lobster meat that has been prepared."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad
+	name = "crawdad meat"
+	desc = "Raw crawdad meat that has been prepared."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "raw_lobster_meat"
-	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
+	icon_state = "raw_crawdad_meat"
+	cooked_type = /obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
 
-/obj/item/reagent_containers/food/snacks/fishmeat/lobster/cooked
-	name = "cooked lobster meat"
-	desc = "A deliciously cooked lobster, all ready to consume."
+/obj/item/reagent_containers/food/snacks/fishmeat/crawdad/cooked
+	name = "cooked crawdad meat"
+	desc = "A deliciously cooked crawdad, all ready to consume."
 	icon = 'icons/obj/fish/food.dmi'
-	icon_state = "lobster_steamed_simple"
+	icon_state = "crawdad_steamed_simple"
 
 /obj/item/reagent_containers/food/snacks/fishmeat/shrimp
 	name = "shrimp"
@@ -140,10 +140,20 @@
 	name = "Raw Ant Brain"
 	desc = "Goppy reddish-grey flesh dug out of the brain case of a giant ant."
 	icon_state = "AntBrain"
+	cooked_type = /obj/item/reagent_containers/food/snacks/baked_ant_brain
 	bitesize = 3
 	filling_color = "#CD853F"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2)
 	tastes = list("fat" = 4, "bitter meat" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/baked_ant_brain
+	name = "Baked Ant Brain"
+	desc = "Strangely reminiscent of some kind of mushroom."
+	icon_state = "baked_ant_brain"
+	bitesize = 3
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("fat" = 2, "bitter meat" = 2)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/sushi_adv
@@ -273,6 +283,15 @@
 	icon_state = "meatloaf_slice"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/ketchup = 1)
 	tastes = list("meat" = 1, "ketchup" = 1)
+	foodtype = MEAT
+
+/obj/item/reagent_containers/food/snacks/pemmican
+	name = "pemmican"
+	desc = "A dense meat block made up of a monstrous amount of protein and fat. Easy to store, very nutritious but very dry food. It's flavored with a variety of spices. Perfect survival food which is highly valued by merchants. Unfortunately, tribals keep the recipe for this culinary miracle in a secret."
+	icon_state = "meatloaf"
+	filling_color = "#8f0f0f"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 80)
+	tastes = list("meat" = 1)
 	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/kebab
@@ -456,6 +475,14 @@
 	tastes = list("meat" = 3, "smokey sauce" = 1)
 	foodtype = MEAT
 
+/obj/item/reagent_containers/food/snacks/lasagna
+	name = "Lasagna"
+	desc = "A slice of lasagna. Perfect for a Monday afternoon."
+	icon_state = "lasagna"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/tomatojuice = 10)
+	tastes = list("meat" = 3, "pasta" = 3, "tomato" = 2, "cheese" = 2)
+	foodtype = MEAT | DAIRY | GRAIN
+
 ////////////// Cubes //////////
 
 /obj/item/reagent_containers/food/snacks/cube
@@ -483,10 +510,10 @@
 	var/mob/spammer = get_mob_by_key(fingerprintslast)
 	var/mob/living/water = new dried_being(drop_location(), TRUE, spammer)
 	if (!QDELETED(water))
-		visible_message("<span class='notice'>[src] expands!</span>")
+		visible_message(span_notice("[src] expands!"))
 		water.log_message("Spawned via [src] at [AREACOORD(src)], Last attached mob: [key_name(spammer)].", LOG_ATTACK)
 	else if (!spammer) // Visible message in case there are no fingerprints
-		visible_message("<span class='notice'>[src] fails to expand!</span>")
+		visible_message(span_notice("[src] fails to expand!"))
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/cube/monkey

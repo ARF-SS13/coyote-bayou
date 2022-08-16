@@ -103,12 +103,12 @@
 
 /mob/living/simple_animal/bot/floorbot/attackby(obj/item/W , mob/user, params)
 	if(istype(W, /obj/item/stack/tile/plasteel))
-		to_chat(user, "<span class='notice'>The floorbot can produce normal tiles itself.</span>")
+		to_chat(user, span_notice("The floorbot can produce normal tiles itself."))
 		return
 	if(specialtiles && istype(W, /obj/item/stack/tile))
 		var/obj/item/stack/tile/usedtile = W
 		if(usedtile.type != tiletype)
-			to_chat(user, "<span class='warning'>Different custom tiles are already inside the floorbot.</span>")
+			to_chat(user, span_warning("Different custom tiles are already inside the floorbot."))
 			return
 	if(istype(W, /obj/item/stack/tile))
 		if(specialtiles >= maxtiles)
@@ -119,37 +119,37 @@
 		tiles.use(loaded)
 		specialtiles += loaded
 		if(loaded > 0)
-			to_chat(user, "<span class='notice'>You load [loaded] tiles into the floorbot. It now contains [specialtiles] tiles.</span>")
+			to_chat(user, span_notice("You load [loaded] tiles into the floorbot. It now contains [specialtiles] tiles."))
 		else
-			to_chat(user, "<span class='warning'>You need at least one floor tile to put into [src]!</span>")
+			to_chat(user, span_warning("You need at least one floor tile to put into [src]!"))
 
 	else if(istype(W, /obj/item/storage/toolbox/artistic))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_FLOOR_ARTBOX))
-			to_chat(user, "<span class='notice'>You upgrade \the [src] case to hold more!</span>")
+			to_chat(user, span_notice("You upgrade \the [src] case to hold more!"))
 			upgrades |= UPGRADE_FLOOR_ARTBOX
 			maxtiles += 100 //Double the storage!
 			qdel(W)
 		if(!open)
-			to_chat(user, "<span class='notice'>The [src] access pannle is not open!</span>")
+			to_chat(user, span_notice("The [src] access pannle is not open!"))
 			return
 		if(!bot_core.allowed(user))
-			to_chat(user, "<span class='notice'>The [src] access pannel locked off to you!</span>")
+			to_chat(user, span_notice("The [src] access pannel locked off to you!"))
 			return
 		else
-			to_chat(user, "<span class='notice'>The [src] already has a upgraded case!</span>")
+			to_chat(user, span_notice("The [src] already has a upgraded case!"))
 
 	else if(istype(W, /obj/item/storage/toolbox/syndicate))
 		if(bot_core.allowed(user) && open && !CHECK_BITFIELD(upgrades,UPGRADE_FLOOR_SYNDIBOX))
-			to_chat(user, "<span class='notice'>You upgrade \the [src] case to hold more!</span>")
+			to_chat(user, span_notice("You upgrade \the [src] case to hold more!"))
 			upgrades |= UPGRADE_FLOOR_SYNDIBOX
 			maxtiles += 200 //Double bse storage
 			base_speed = 1 //2x faster!
 			qdel(W)
 		if(!bot_core.allowed(user))
-			to_chat(user, "<span class='notice'>The [src] access pannel locked off to you!</span>")
+			to_chat(user, span_notice("The [src] access pannel locked off to you!"))
 			return
 		else
-			to_chat(user, "<span class='notice'>The [src] already has a upgraded case!</span>")
+			to_chat(user, span_notice("The [src] already has a upgraded case!"))
 
 
 	else
@@ -159,7 +159,7 @@
 	. = ..()
 	if(emagged == 2)
 		if(user)
-			to_chat(user, "<span class='danger'>[src] buzzes and beeps.</span>")
+			to_chat(user, span_danger("[src] buzzes and beeps."))
 
 /mob/living/simple_animal/bot/floorbot/Topic(href, href_list)
 	if(..())
@@ -265,7 +265,7 @@
 				anchored = TRUE
 				mode = BOT_REPAIRING
 				F.ReplaceWithLattice()
-				audible_message("<span class='danger'>[src] makes an excited booping sound.</span>")
+				audible_message(span_danger("[src] makes an excited booping sound."))
 				spawn(5)
 					anchored = FALSE
 					mode = BOT_IDLE
@@ -345,7 +345,7 @@
 	if(isspaceturf(target_turf)) //If we are fixing an area not part of pure space, it is
 		anchored = TRUE
 		icon_state = "floorbot-c"
-		visible_message("<span class='notice'>[targetdirection ? "[src] begins installing a bridge plating." : "[src] begins to repair the hole."] </span>")
+		visible_message(span_notice("[targetdirection ? "[src] begins installing a bridge plating." : "[src] begins to repair the hole."] "))
 		mode = BOT_REPAIRING
 		sleep(50)
 		if(mode == BOT_REPAIRING && src.loc == target_turf)
@@ -361,7 +361,7 @@
 			anchored = TRUE
 			icon_state = "floorbot-c"
 			mode = BOT_REPAIRING
-			visible_message("<span class='notice'>[src] begins repairing the floor.</span>")
+			visible_message(span_notice("[src] begins repairing the floor."))
 			sleep(50)
 			if(mode == BOT_REPAIRING && F && src.loc == F)
 				F.broken = 0
@@ -372,7 +372,7 @@
 			anchored = TRUE
 			icon_state = "floorbot-c"
 			mode = BOT_REPAIRING
-			visible_message("<span class='notice'>[src] begins replacing the floor tiles.</span>")
+			visible_message(span_notice("[src] begins replacing the floor tiles."))
 			sleep(50)
 			if(mode == BOT_REPAIRING && F && src.loc == F)
 				F.broken = 0
@@ -392,7 +392,7 @@
 
 /mob/living/simple_animal/bot/floorbot/explode()
 	on = FALSE
-	visible_message("<span class='boldannounce'>[src] blows apart!</span>")
+	visible_message(span_boldannounce("[src] blows apart!"))
 	var/atom/Tsec = drop_location()
 
 	drop_part(toolbox, Tsec)

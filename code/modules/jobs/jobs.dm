@@ -156,8 +156,8 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Secretary",
 	"Sheriff",
 	"Deputy",
-	"Farmer",
-	"Prospector",
+//	"Farmer",
+//	"Prospector",
 	"Doctor",
 	"Detective",
 	"Banker",
@@ -242,7 +242,10 @@ GLOBAL_LIST_INIT(wasteland_positions, list(
 
 GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Slave",
-	"Outlaw"
+	"Outlaw",
+	"Redwater Resident",
+	"Redwater Watcher",
+	"Redwater Overboss",
 ))
 
 GLOBAL_LIST_INIT(khan_positions, list(
@@ -301,9 +304,9 @@ GLOBAL_LIST_INIT(position_categories, list(
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
 	// EXP_TYPE_KHAN = list("jobs" = khan_positions, "color" = "#006666"),
-	Nash = list("jobs" = oasis_positions, "color" = "#d7b088"),
+	"Nash" = list("jobs" = oasis_positions, "color" = "#d7b088"),
 	EXP_TYPE_TRIBAL = list("jobs" = tribal_positions, "color" = "#006666"),
-	Redwater = list("jobs" = redwater_positions, "color" = "#f81717"),
+	"Redwater" = list("jobs" = redwater_positions, "color" = "#f81717"),
 ))
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
@@ -329,6 +332,7 @@ GLOBAL_LIST_INIT(exp_jobsmap, list(
 	EXP_TYPE_KHAN = list("titles" = khan_positions),
 	EXP_TYPE_FOLLOWERS = list("titles" = followers_positions),
 	EXP_TYPE_ENCLAVE = list("titles" = enclave_positions),
+	EXP_TYPE_TRIBAL = list("titles" = tribal_positions),
 	EXP_TYPE_RANGER = list("titles" = list("NCR Veteran Ranger","NCR Ranger")),
 	EXP_TYPE_SCRIBE = list("titles" = list("Scribe")),
 	EXP_TYPE_DECANUS = list("titles" = list("Legion Decanus")),

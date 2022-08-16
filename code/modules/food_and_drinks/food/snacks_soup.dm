@@ -281,3 +281,30 @@
 	tastes = list("creamy peas"= 2, "parsnip" = 1)
 	filling_color = "#9dc530"
 	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/soup/cornmeal_porridge
+	name = "cornmeal porridge"
+	desc = "A plate of cornmeal porridge. It's more flavourful than most porridges, and makes a good base for other flavours, too."
+	icon_state = "cornmeal_porridge"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("cornmeal" = 1)
+	foodtype = GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/cheesy_porridge
+	name = "cheesy porridge"
+	desc = "A rich and creamy bowl of cheesy cornmeal porridge."
+	icon_state = "cheesy_porridge"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("cornmeal" = 1, "cheese" = 1, "more cheese" = 1, "lots of cheese" = 1)
+	foodtype = DAIRY | GRAIN
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/fried_eggplant_polenta
+	name = "fried eggplant and polenta"
+	desc = "Polenta loaded with cheese, served with a few discs of fried eggplant and some tomato sauce!"
+	icon_state = "fried_eggplant_polenta"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 5)
+	tastes = list("cornmeal" = 1, "cheese" = 1, "eggplant" = 1, "tomato sauce" = 1)
+	foodtype = DAIRY | GRAIN
+	w_class = WEIGHT_CLASS_SMALL

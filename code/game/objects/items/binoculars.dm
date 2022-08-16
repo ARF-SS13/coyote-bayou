@@ -11,24 +11,11 @@
 	var/zoom_out_amt = 6
 	var/zoom_amt = 10
 
-/obj/item/binoculars/Initialize()
+/obj/item/binoculars/wield(mob/living/user)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
-
-/obj/item/binoculars/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12)
-
-/obj/item/binoculars/Destroy()
-	listeningTo = null
-	return ..()
-
-/obj/item/binoculars/proc/on_wield(obj/item/source, mob/user)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/unwield)
 	RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
 	listeningTo = user
-	user.visible_message("<span class='notice'>[user] holds [src] up to [user.p_their()] eyes.</span>", "<span class='notice'>You hold [src] up to your eyes.</span>")
+	user.visible_message(span_notice("[user] holds [src] up to [user.p_their()] eyes."), span_notice("You hold [src] up to your eyes."))
 	item_state = "binoculars_wielded"
 	user.regenerate_icons()
 	if(!user?.client)
@@ -78,12 +65,13 @@
 	user.client.pixel_x = world.icon_size*_x
 	user.client.pixel_y = world.icon_size*_y
 
-/obj/item/binoculars/proc/unwield(mob/user)
+/obj/item/binoculars/unwield(mob/user)
+	. = ..()
 	if(listeningTo)
 		UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
 		listeningTo = null
-	user.visible_message("<span class='notice'>[user] lowers [src].</span>", "<span class='notice'>You lower [src].</span>")
+	user.visible_message(span_notice("[user] lowers [src]."), span_notice("You lower [src]."))
 	item_state = "binoculars"
 	user.regenerate_icons()
 	if(user && user.client)

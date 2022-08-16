@@ -10,17 +10,17 @@
 /* LOW_MIN / AUR = amount in AUR */
 
 // A low value cash spawn is on average worth 25
-#define LOW_MIN 1
-#define LOW_MAX 5
+#define LOW_MIN 7
+#define LOW_MAX 19
 
 // A medium value cash spawn is on average worth 60ish
-#define MED_MIN 5
-#define MED_MAX 15
+#define MED_MIN 20
+#define MED_MAX 35
 
 
 // A high value cash spawn is on average worth 280
-#define HIGH_MIN 16
-#define HIGH_MAX 30
+#define HIGH_MIN 36
+#define HIGH_MAX 45
 
 
 // Bad Pebbles fix to NCR money fudgery
@@ -69,8 +69,8 @@
 			sleep(15)
 			if(loc == oldloc && user && !user.incapacitated())
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
-									"<span class='notice'>You flip [src]. It lands on [coinflip].</span>", \
-									"<span class='italics'>You hear the clattering of loose change.</span>")
+									span_notice("You flip [src]. It lands on [coinflip]."), \
+									span_italic("You hear the clattering of loose change."))
 		return TRUE//did the coin flip? useful for suicide_act
 
 /obj/item/stack/f13Cash/caps

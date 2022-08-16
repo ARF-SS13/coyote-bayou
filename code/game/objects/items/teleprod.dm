@@ -13,8 +13,8 @@
 	do_teleport(L, get_turf(L), 15, channel = TELEPORT_CHANNEL_BLUESPACE)
 
 /obj/item/melee/baton/cattleprod/teleprod/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
-						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
+	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
+						span_userdanger("You accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamforce * 6)
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
@@ -33,9 +33,9 @@
 			qdel(src)
 			BSC.use(1)
 			user.put_in_hands(S)
-			to_chat(user, "<span class='notice'>You place the bluespace crystal firmly into the igniter.</span>")
+			to_chat(user, span_notice("You place the bluespace crystal firmly into the igniter."))
 		else
-			user.visible_message("<span class='warning'>You can't put the crystal onto the stunprod while it has a power cell installed!</span>")
+			user.visible_message(span_warning("You can't put the crystal onto the stunprod while it has a power cell installed!"))
 	else
 		return ..()
 */

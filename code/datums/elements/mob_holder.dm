@@ -39,22 +39,22 @@
 	if(!ishuman(user) || !user.Adjacent(source) || user.incapacitated())
 		return FALSE
 	if(user.get_active_held_item())
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return FALSE
 	if(source.buckled)
-		to_chat(user, "<span class='warning'>[source] is buckled to something!</span>")
+		to_chat(user, span_warning("[source] is buckled to something!"))
 		return FALSE
 	if(source == user)
-		to_chat(user, "<span class='warning'>You can't pick yourself up.</span>")
+		to_chat(user, span_warning("You can't pick yourself up."))
 		return FALSE
-	source.visible_message("<span class='warning'>[user] starts picking up [source].</span>", \
-					"<span class='userdanger'>[user] starts picking you up!</span>")
+	source.visible_message(span_warning("[user] starts picking up [source]."), \
+					span_userdanger("[user] starts picking you up!"))
 	if(!do_after(user, 20, target = source) || source.buckled)
 		return FALSE
 
-	source.visible_message("<span class='warning'>[user] picks up [source]!</span>", \
-					"<span class='userdanger'>[user] picks you up!</span>")
-	to_chat(user, "<span class='notice'>You pick [source] up.</span>")
+	source.visible_message(span_warning("[user] picks up [source]!"), \
+					span_userdanger("[user] picks you up!"))
+	to_chat(user, span_notice("You pick [source] up."))
 	source.drop_all_held_items()
 	var/obj/item/clothing/head/mob_holder/holder = new(get_turf(source), source, worn_state, alt_worn, right_hand, left_hand, inv_slots)
 	holder.escape_on_find = escape_on_find
@@ -165,7 +165,7 @@
 /obj/item/clothing/head/mob_holder/container_resist()
 	if(isliving(loc))
 		var/mob/living/L = loc
-		L.visible_message("<span class='warning'>[held_mob] escapes from [L]!</span>", "<span class='warning'>[held_mob] escapes your grip!</span>")
+		L.visible_message(span_warning("[held_mob] escapes from [L]!"), span_warning("[held_mob] escapes your grip!"))
 	release()
 
 /obj/item/clothing/head/mob_holder/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)

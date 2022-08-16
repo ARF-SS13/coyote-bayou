@@ -9,7 +9,6 @@
 	var/list/gibtypes = list() //typepaths of the gib decals to spawn
 	var/list/gibamounts = list() //amount to spawn for each gib decal type we'll spawn.
 	var/list/gibdirections = list() //of lists of possible directions to spread each gib decal type towards.
-	var/timer // how long until it decides to delete itself
 
 /obj/effect/gibspawner/Initialize(mapload, mob/living/source_mob, list/datum/disease/diseases, list/blood_dna)
 	. = ..()
@@ -19,9 +18,7 @@
 	if(gibamounts.len != gibdirections.len)
 		stack_trace("Gib list dir length mismatch!")
 		return
-	INVOKE_ASYNC(src, .proc/do_gibs) // shitty hack
 
-/obj/effect/gibspawner/proc/do_gibs(mob/living/source_mob, list/datum/disease/diseases, list/blood_dna)
 	var/obj/effect/decal/cleanable/blood/gibs/gib = null
 
 	if(sound_to_play && isnum(sound_vol))
@@ -63,7 +60,6 @@
 	else
 		dna_to_add = list("Non-human DNA" = random_blood_type()) //else, generate a random bloodtype for it.
 
-
 	for(var/i = 1, i<= gibtypes.len, i++)
 		if(gibamounts[i])
 			for(var/j = 1, j<= gibamounts[i], j++)
@@ -82,8 +78,6 @@
 				if(isturf(loc))
 					if(directions.len)
 						gib.streak(directions)
-				if(timer)
-					QDEL_IN(gib, timer)
 
 	return INITIALIZE_HINT_QDEL
 
@@ -92,7 +86,6 @@
 	gibtypes = list(/obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs, /obj/effect/decal/cleanable/blood/gibs/core)
 	gibamounts = list(2, 2, 1)
 	sound_vol = 40
-	timer = 1 HOURS // sets it so gibs will despawn in 1 hour of being created :o
 
 /obj/effect/gibspawner/generic/Initialize()
 	if(!gibdirections.len)

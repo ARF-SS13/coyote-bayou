@@ -34,10 +34,10 @@
 		else
 			prot = 0
 	if(prot > 0 || HAS_TRAIT(user, TRAIT_RESISTHEAT) || HAS_TRAIT(user, TRAIT_RESISTHEATHANDS))
-		to_chat(user, "<span class='notice'>You pick up the [src].</span>")
+		to_chat(user, span_notice("You pick up the [src]."))
 		return ..()
 	else
-		to_chat(user, "<span class='warning'>You try to move the [src], but you burn your hand on it!</span>")
+		to_chat(user, span_warning("You try to move the [src], but you burn your hand on it!"))
 	if(H)
 		var/obj/item/bodypart/affecting = H.get_bodypart("[(user.active_hand_index % 2 == 0) ? "r" : "l" ]_arm")
 		if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
@@ -84,6 +84,8 @@
 	custom_materials = list(/datum/material/brass=12000)
 	desc = "On closer inspection, what appears to be wholly-unsuitable-for-smithing brass is actually primarily replicant alloy. Nezbere must have switched it while you weren't looking."
 
+/obj/item/ingot/bone
+	custom_materials = list(/datum/material/bone=12000)
 
 /obj/item/smithing/attackby(obj/item/I, mob/user)
 	if(istype(I, finishingitem))
@@ -169,15 +171,15 @@
 /obj/item/blacksmith/woodrod/attackby/(obj/item/W, mob/user, params)
 	if (istype(W, /obj/item/stack/sheet/leatherstrips))
 		user.visible_message("[user] begins finishing the [src] into a sword handle.", \
-				"<span class='notice'>You begin wrapping the [src] with leather strips, and shaping the wood into a sword handle.</span>", \
-				"<span class='italics'>You hear faint sounds of handcrafting.</span>")
+				span_notice("You begin wrapping the [src] with leather strips, and shaping the wood into a sword handle."), \
+				span_italic("You hear faint sounds of handcrafting."))
 		// 6 Second Timer
 		if(!do_after(user, 60, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/swordhandle/new_item = new(user.loc)
 		user.visible_message("[user] finishes making a sword handle from the [src].", \
-				"<span class='notice'>You finish making a sword handle from the [src].</span>")
+				span_notice("You finish making a sword handle from the [src]."))
 		qdel(src)
 		// Prepare to Put xin Hands (if holding wood)
 		var/obj/item/stack/sheet/leatherstrips/N = src
@@ -390,7 +392,7 @@
 /obj/item/clothing/shoes/ballandchain/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(loc == user && user.get_item_by_slot(SLOT_SHOES))
 		playsound(usr.loc, 'sound/weapons/chainhit.ogg', 75, 1)
-		to_chat(user, "<span class='warning'>The ball and chain are too hard to remove by yourself! You'll need help taking this off!</span>")
+		to_chat(user, span_warning("The ball and chain are too hard to remove by yourself! You'll need help taking this off!"))
 		return
 	return ..()
 
@@ -459,8 +461,9 @@
 /obj/item/smithing/spearhead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/finalforreal = new /obj/item/melee/smith/twohand/spear(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
 	..()
@@ -474,8 +477,9 @@
 /obj/item/smithing/lancehead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
 	..()
@@ -489,8 +493,9 @@
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -502,8 +507,9 @@
 /obj/item/smithing/warhonedhead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/warhoned/finalforreal = new /obj/item/melee/smith/twohand/axe/warhoned(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -516,8 +522,9 @@
 /obj/item/smithing/scrapblade/startfinish()
 	var/obj/item/melee/smith/twohand/axe/scrapblade/finalforreal = new /obj/item/melee/smith/twohand/axe/scrapblade(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 
@@ -605,8 +612,9 @@
 /obj/item/smithing/katanablade/startfinish()
 	var/obj/item/melee/smith/twohand/katana/finalforreal = new /obj/item/melee/smith/twohand/katana(src)
 	finalforreal.force += quality
-	finalforreal.wield_force = finalforreal.force*finalforreal.wielded_mult
-	finalforreal.AddComponent(/datum/component/two_handed, force_unwielded=finalforreal.force, force_wielded=finalforreal.wield_force, icon_wielded="[icon_state]2")
+	finalforreal.force_unwielded = force
+	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
+	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
 

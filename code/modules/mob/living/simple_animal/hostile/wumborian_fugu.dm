@@ -27,7 +27,6 @@
 	attack_verb_simple = "chomp"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	throw_message = "is avoided by the"
-	vision_range = 5
 	aggro_vision_range = 9
 	mob_size = MOB_SIZE_SMALL
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -74,13 +73,13 @@
 /datum/action/innate/fugu/expand/Activate()
 	var/mob/living/simple_animal/hostile/asteroid/fugu/F = owner
 	if(F.wumbo)
-		to_chat(F, "<span class='notice'>YOU'RE ALREADY WUMBO!</span>")
+		to_chat(F, span_notice("YOU'RE ALREADY WUMBO!"))
 		return
 	if(F.inflate_cooldown)
-		to_chat(F, "<span class='notice'>You need time to gather your strength.</span>")
+		to_chat(F, span_notice("You need time to gather your strength."))
 		return
 	if(F.buffed)
-		to_chat(F, "<span class='notice'>Something is interfering with your growth.</span>")
+		to_chat(F, span_notice("Something is interfering with your growth."))
 		return
 	F.wumbo = 1
 	F.icon_state = "Fugu1"
@@ -134,7 +133,7 @@
 	if(proximity_flag && isanimal(target))
 		var/mob/living/simple_animal/A = target
 		if(A.buffed || (A.type in banned_mobs) || A.stat)
-			to_chat(user, "<span class='warning'>Something's interfering with [src]'s effects. It's no use.</span>")
+			to_chat(user, span_warning("Something's interfering with [src]'s effects. It's no use."))
 			return
 		A.buffed++
 		A.maxHealth *= 1.5
@@ -143,5 +142,5 @@
 		A.melee_damage_upper = max((A.melee_damage_upper * 2), 10)
 		A.transform *= 2
 		A.environment_smash |= ENVIRONMENT_SMASH_STRUCTURES | ENVIRONMENT_SMASH_RWALLS
-		to_chat(user, "<span class='info'>You increase the size of [A], giving it a surge of strength!</span>")
+		to_chat(user, span_info("You increase the size of [A], giving it a surge of strength!"))
 		qdel(src)

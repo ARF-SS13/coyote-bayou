@@ -14,49 +14,50 @@
 	var/expected_price = 0
 	var/list/prize_list = list()  //if you add something to this, please, for the love of god, sort it by price/type. use tabs and not spaces.
 
-	var/list/goods_list = list( /obj/item/stack/sheet/mineral/diamond = 20,
+	var/list/goods_list = list( /obj/item/stack/sheet/mineral/diamond = 15,
 								/obj/item/stack/sheet/mineral/gold = 10,
 								/obj/item/stack/sheet/mineral/silver = 5,
-								/obj/item/stack/sheet/metal = 1.5,
+								/obj/item/stack/sheet/metal = 0.5,
 								/obj/item/reagent_containers/food/snacks/grown/wheat = 1,
 								/obj/item/reagent_containers/food/snacks/grown/rice = 1,
 								/obj/item/reagent_containers/food/snacks/grown/oat = 1,
 								/obj/item/stack/sheet/hay = 1,
-								/obj/item/reagent_containers/food/snacks/grown/broc = 5,
-								/obj/item/reagent_containers/food/snacks/grown/xander = 5,
-								/obj/item/reagent_containers/food/snacks/grown/pungafruit = 5,
-								/obj/item/reagent_containers/food/snacks/grown/feracactus = 5,
-								/obj/item/reagent_containers/food/snacks/grown/fungus = 5,
-								/obj/item/reagent_containers/food/snacks/grown/agave = 5,
+								/obj/item/reagent_containers/food/snacks/grown/broc = 2.5,
+								/obj/item/reagent_containers/food/snacks/grown/xander = 2.5,
+								/obj/item/reagent_containers/food/snacks/grown/pungafruit = 2.5,
+								/obj/item/reagent_containers/food/snacks/grown/feracactus = 2.5,
+								/obj/item/reagent_containers/food/snacks/grown/fungus = 2.5,
+								/obj/item/reagent_containers/food/snacks/grown/agave = 2.5,
 								/obj/item/reagent_containers/pill/patch/jet = 10,
-								/obj/item/reagent_containers/pill/healingpowder = 30,
-								/obj/item/reagent_containers/hypospray/medipen/psycho = 20,
-								/obj/item/reagent_containers/hypospray/medipen/medx = 75,
-								/obj/item/reagent_containers/pill/patch/healpoultice = 50,
-								/obj/item/export/bottle/gin = 25,
-								/obj/item/export/bottle/wine = 25,
-								/obj/item/export/bottle/whiskey = 25,
-								/obj/item/export/bottle/vodka = 25,
-								/obj/item/export/bottle/tequila = 25,
-								/obj/item/export/bottle/patron = 50,
-								/obj/item/export/bottle/rum = 25,
-								/obj/item/export/bottle/vermouth = 25,
-								/obj/item/export/bottle/kahlua = 25,
-								/obj/item/export/bottle/goldschlager = 75,
-								/obj/item/export/bottle/hcider = 25,
-								/obj/item/export/bottle/cognac = 25,
-								/obj/item/export/bottle/absinthe = 25,
-								/obj/item/export/bottle/grappa = 25,
-								/obj/item/export/bottle/sake = 25,
-								/obj/item/export/bottle/fernet = 25,
-								/obj/item/export/bottle/applejack = 25,
-								/obj/item/export/bottle/champagne = 25,
-								/obj/item/export/bottle/blazaam = 25,
-								/obj/item/export/bottle/trappist = 25,
-								/obj/item/export/bottle/minikeg = 25,
-								/obj/item/export/bottle/nukashine = 100,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak = 50,
-								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 100,
+								/obj/item/reagent_containers/pill/healingpowder = 5,
+								/obj/item/reagent_containers/hypospray/medipen/psycho = 10,
+								/obj/item/reagent_containers/hypospray/medipen/medx = 15,
+								/obj/item/reagent_containers/pill/patch/healpoultice = 20,
+								/obj/item/export/bottle/gin = 10,
+								/obj/item/export/bottle/wine = 10,
+								/obj/item/export/bottle/whiskey = 10,
+								/obj/item/export/bottle/vodka = 10,
+								/obj/item/export/bottle/tequila = 10,
+								/obj/item/export/bottle/patron = 20,
+								/obj/item/export/bottle/rum = 10,
+								/obj/item/export/bottle/vermouth = 10,
+								/obj/item/export/bottle/kahlua = 10,
+								/obj/item/export/bottle/goldschlager = 35,
+								/obj/item/export/bottle/hcider = 10,
+								/obj/item/export/bottle/cognac = 10,
+								/obj/item/export/bottle/absinthe = 10,
+								/obj/item/export/bottle/grappa = 10,
+								/obj/item/export/bottle/sake = 10,
+								/obj/item/export/bottle/fernet = 10,
+								/obj/item/export/bottle/applejack = 10,
+								/obj/item/export/bottle/champagne = 10,
+								/obj/item/export/bottle/blazaam = 10,
+								/obj/item/export/bottle/trappist = 10,
+								/obj/item/export/bottle/minikeg = 10,
+								/obj/item/export/bottle/nukashine = 50,
+								/obj/item/reagent_containers/hypospray/medipen/stimpak = 5,
+								/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 20,
+								/obj/item/reagent_containers/food/snacks/pemmican = 100
 								)
 
 /obj/machinery/mineral/wasteland_trader/general
@@ -85,15 +86,15 @@
 	dat +="<div class='statusDisplay'>"
 	dat += "<b>Accepted goods and prices:</b><br>"
 	dat += "Wheat/Oats/Rice/Hay : 1 caps<br>"
-	dat += "Broc/Xander/Punga Fruit/Barrel Cactus Fruit/Cave Fungus/Agave : 5 caps<br>"
-	dat += "Iron Sheets : 1.5 caps<br>"
+	dat += "Broc/Xander/Punga Fruit/Barrel Cactus Fruit/Cave Fungus/Agave : 2.5 caps<br>"
+	dat += "Iron Sheets : 0.5 caps<br>"
 	dat += "Silver Bars: 5 caps<br>"
 	dat += "Gold Bars: 10 caps<br>"
-	dat += "Cut Diamonds : 20 caps<br>"
-	dat += "Jet/Psycho/MedX : 10/20/100 caps<br>"
-	dat += "Healing Powder/Healing Paultice : 30/50 caps<br>"
-	dat += "Stimpak/Super Stimpak : 50/100 caps<br>"
-	dat += "Sealed Bottle of Alcohol: 25-100 caps<br>"
+	dat += "Cut Diamonds : 15 caps<br>"
+	dat += "Jet/Psycho/MedX : 10/15 caps<br>"
+	dat += "Healing Powder/Healing Paultice : 5/20 caps<br>"
+	dat += "Stimpak/Super Stimpak : 5/20 caps<br>"
+	dat += "Sealed Bottle of Alcohol: 10-50 caps<br>"
 	dat += ""
 	dat += "</div>"
 
@@ -110,14 +111,14 @@
 	if(href_list["purchase"])
 		var/datum/data/wasteland_equipment/prize = locate(href_list["purchase"])
 		if (!prize || !(prize in prize_list))
-			to_chat(usr, "<span class='warning'>Error: Invalid choice!</span>")
+			to_chat(usr, span_warning("Error: Invalid choice!"))
 			return
 		if(prize.cost > stored_caps)
-			to_chat(usr, "<span class='warning'>Error: Insufficent bottle caps value for [prize.equipment_name]!</span>")
+			to_chat(usr, span_warning("Error: Insufficent bottle caps value for [prize.equipment_name]!"))
 		else
 			stored_caps -= prize.cost
 			GLOB.vendor_cash += prize.cost
-			to_chat(usr, "<span class='notice'>[src] clanks to life briefly before vending [prize.equipment_name]!</span>")
+			to_chat(usr, span_notice("[src] clanks to life briefly before vending [prize.equipment_name]!"))
 			new prize.equipment_path(src.loc)
 			SSblackbox.record_feedback("nested tally", "wasteland_equipment_bought", 1, list("[type]", "[prize.equipment_path]"))
 	updateUsrDialog()
@@ -133,7 +134,7 @@
 	var/value_per = 0
 
 	if(!(I?.type in goods_list))
-		to_chat(usr, "<span class='notice'>[src] is not buying that!</span>")
+		to_chat(usr, span_notice("[src] is not buying that!"))
 		return
 
 	value_per = goods_list[I.type]
@@ -223,7 +224,7 @@ ORGAN SELLER
 	var/value_per = 0
 
 	if(!(I?.type in goods_list))
-		to_chat(usr, "<span class='notice'>[src] is not buying that!</span>")
+		to_chat(usr, span_notice("[src] is not buying that!"))
 		return
 
 	value_per = goods_list[I.type]
@@ -333,7 +334,6 @@ Fence
 						/obj/item/gun/ballistic/revolver/winchesterrebored = 10,
 						/obj/item/gun/ballistic/automatic/autopipe = 15,
 						/obj/item/gun/ballistic/rifle/hobo/lasmusket = 15,
-						/obj/item/stack/crafting/armor_plate = 20,
 						)
 
 /obj/machinery/mineral/wasteland_trader/gunbuyer/ui_interact(mob/user)
@@ -349,7 +349,6 @@ Fence
 	dat += "<b>Accepted goods and prices:</b><br>"
 	dat += "Pistols and revolvers: 5-10 caps<br>"
 	dat += "Rifles and Shotguns : 10-15 caps<br>"
-	dat += "Armor Plate: 20 caps<br>"
 	dat += "Does not accept weapons of historical or artisanal value. Those belong in a musuem."
 	dat += ""
 	dat += "</div>"

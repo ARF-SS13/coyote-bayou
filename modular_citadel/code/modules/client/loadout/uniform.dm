@@ -596,7 +596,7 @@
 						)
 
 /datum/gear/uniform/ncr_shorts
-	name = "NCR Rhodesian shorts"
+	name = "NCR fatigue shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"
@@ -664,7 +664,7 @@
 	path = /obj/item/clothing/under/rank/security/officer/blueshirt
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "Oasis"
+	restricted_desc = "Nash"
 	restricted_roles = list("Mayor",
 							"Secretary",
 							"Chief of Police",
@@ -983,6 +983,18 @@
 /datum/gear/uniform/wasteland/westender
 	name = "Classic tender outfit"
 	path = /obj/item/clothing/under/f13/westender
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/female/mercadv
+	name = "Female mercenary outfit"
+	path = /obj/item/clothing/under/f13/female/mercadv
+	cost = 1
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
+
+/datum/gear/uniform/wasteland/merca
+	name = "Mercenary outfit"
+	path = /obj/item/clothing/under/f13/merca
 	cost = 1
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_WASTELAND
 

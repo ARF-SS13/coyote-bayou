@@ -108,7 +108,7 @@
 	var/list/trait_list = list(TRAIT_RESISTHEAT,TRAIT_NOFIRE)
 
 /datum/eldritch_knowledge/flame_immunity/on_gain(mob/living/user)
-	to_chat(user, "<span class='warning'>[gain_text]</span>")
+	to_chat(user, span_warning("[gain_text]"))
 	for(var/X in trait_list)
 		ADD_TRAIT(user,X,MAGIC_TRAIT)
 
