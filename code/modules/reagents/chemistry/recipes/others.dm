@@ -223,6 +223,7 @@
 	id = "virusfood"
 	results = list(/datum/reagent/consumable/virus_food = 15)
 	required_reagents = list(/datum/reagent/water = 5, /datum/reagent/consumable/milk = 5)
+	required_temp = 300
 
 /datum/chemical_reaction/virus_food_mutagen
 	name = "mutagenic agar"

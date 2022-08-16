@@ -214,13 +214,13 @@
 		for(var/i in M.all_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(2)
-		. = 1
 	else
 		if(M.getBruteLoss() && prob(20))
 			M.heal_bodypart_damage(1,0, 0)
-			. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	M.radiation -= min(M.radiation, 2)
+	. = TRUE
 	..()
 
 /datum/reagent/consumable/soymilk
