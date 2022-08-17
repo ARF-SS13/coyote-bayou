@@ -17,3 +17,8 @@
 /obj/effect/mob_spawner/cazador
 	name = "cazadors spawner"
 	mob_type = /mob/living/simple_animal/hostile/cazador
+
+/obj/effect/mob_spawner/random_at_init
+	name = "totally uninitialized globally-randomized spawner"
+	desc = "You shouldnt be able to see this oh no"
+	mob_type = /mob/living/simple_animal/hostile/cazador
