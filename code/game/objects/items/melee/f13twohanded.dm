@@ -347,7 +347,6 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("slashed", "stabbed", "sliced", "gored", "speared", "cut")
 	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
 	sharpness = SHARP_EDGED
 	wound_bonus = 5
 	bare_wound_bonus = 10
