@@ -745,7 +745,7 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	name = "M1/N carbine"
-	desc = "An M1 Carbine with a faded, vaguely military markings. Looks beat up but functional."
+	desc = "An M1 Carbine with faded military markings. Looks beat up but functional."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
