@@ -224,13 +224,14 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc ="Ignore a player's messages on the OOC channel"
 
 
-	var/see_ghost_names = isobserver(mob)
+	// var/see_ghost_names = isobserver(mob)
 	var/list/choices = list()
 	for(var/client/C in GLOB.clients)
-		if(isobserver(C.mob) && see_ghost_names)
-			choices["[C.mob]([C])"] = C
-		else
-			choices[C] = C
+		choices[GetOOCName()] = C // This is to keep the ckey anonymity.
+		// if(isobserver(C.mob) && see_ghost_names)
+		// 	choices["[C.mob]([C])"] = C
+		// else
+		// 	choices[C] = C
 	choices = sortList(choices)
 	var/selection = input("Please, select a player!", "Ignore", null, null) as null|anything in choices
 	if(!selection || !(selection in choices))
