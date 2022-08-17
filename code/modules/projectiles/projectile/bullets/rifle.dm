@@ -652,8 +652,8 @@
  * * * * * * * */
 
 /* .50MG Match
- * DAMAGE: 75
- * STAMIN: 112
+ * DAMAGE: 93
+ * STAMIN: 140
  * RECOIL: 2
  * WOUNDS: 50
  * WNAKED: 30
@@ -673,8 +673,8 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .50MG surplus
- * DAMAGE: 60
- * STAMIN: 90
+ * DAMAGE: 75
+ * STAMIN: 140
  * RECOIL: 2
  * WOUNDS: 40
  * WNAKED: 30
@@ -693,8 +693,8 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 
 /* .50MG improv
- * DAMAGE: 45
- * STAMIN: 67
+ * DAMAGE: 56
+ * STAMIN: 84
  * RECOIL: 2
  * WOUNDS: 30
  * WNAKED: 30
@@ -713,7 +713,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 
 /* .50MG fire
- * DAMAGE: 30
+ * DAMAGE: 37
  * STAMIN: 25
  * RECOIL: 2
  * WOUNDS: 40
@@ -722,7 +722,7 @@
 /obj/item/projectile/bullet/a50MG/incendiary
 	name = "incendiary .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_FIRE
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_FIRE
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_FIRE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -742,7 +742,7 @@
 		M.IgniteMob()
 
 /* .50MG explode
- * DAMAGE: 30
+ * DAMAGE: 37
  * STAMIN: 25
  * RECOIL: 2
  * WOUNDS: 80
@@ -751,7 +751,7 @@
 /obj/item/projectile/bullet/a50MG/explosive
 	name = "explosive .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_EXPLOSIVE
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_EXPLOSIVE
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_EXPLOSIVE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -766,8 +766,8 @@
 	explosion(target, 0, 1, 1, 1)
 
 /* .50MG rubber
- * DAMAGE: 6
- * STAMIN: 180 gnight
+ * DAMAGE: 7
+ * STAMIN: 225 gnight
  * RECOIL: 2
  * WOUNDS: 200
  * WNAKED: 150
@@ -788,8 +788,8 @@
 	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* .50MG rubber-penetrator
- * DAMAGE: 6
- * STAMIN: 180
+ * DAMAGE: 7
+ * STAMIN: 225
  * RECOIL: 2
  * WOUNDS: 200
  * WNAKED: 150
@@ -827,7 +827,7 @@
 /obj/item/projectile/bullet/a50MG/contam
 	name = "contaminated .50MG bullet"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_POISON
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_POISON
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_POISON
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -868,16 +868,16 @@
  * Microshrapnel
  * * * * * * * */
 
-#define BULLET_4570_DAMAGE_MULT 0.75 //30 damage, 4 hits, but it slaps
-#define BULLET_4570_STAMINA_MULT 0.50
+#define BULLET_4570_DAMAGE_MULT 0.75
+#define BULLET_4570_STAMINA_MULT 0.5
 #define BULLET_4570_WOUND_MULT 0.50
 #define BULLET_4570_NAKED_WOUND_MULT 0.50
 #define BULLET_4570_SPEED_MULT 0.50
-#define BULLET_4570_RECOIL_MULT 0.50
+#define BULLET_4570_RECOIL_MULT 1
 
 /* .45-70 match
- * DAMAGE: 56
- * STAMIN: 56
+ * DAMAGE: 70
+ * STAMIN: 70
  * RECOIL: 1
  * WOUNDS: 25
  * WNAKED: 15
@@ -897,8 +897,8 @@
 	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .45-70 surplus
- * DAMAGE: 45
- * STAMIN: 45
+ * DAMAGE: 56
+ * STAMIN: 56
  * RECOIL: 1
  * WOUNDS: 25
  * WNAKED: 15
@@ -917,7 +917,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
 
 /* .45-70 improv
- * DAMAGE: 33
+ * DAMAGE: 42 // cant kill a ghoul
  * STAMIN: 33
  * RECOIL: 1
  * WOUNDS: 15
@@ -937,7 +937,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
 
 /* .45-70 explode
- * DAMAGE: 28
+ * DAMAGE: 35
  * STAMIN: 28
  * RECOIL: 1
  * WOUNDS: 50
@@ -961,7 +961,7 @@
 	explosion(target, 0, 0, 1, 1, flame_range = 1)
 
 /* .45-70 acid
- * DAMAGE: 28
+ * DAMAGE: 35
  * STAMIN: 28
  * RECOIL: 1
  * WOUNDS: 50
@@ -995,8 +995,8 @@
 		reagents.trans_to(M, reagents.total_volume)
 
 /* .45-70 rubber
- * DAMAGE: 5
- * STAMIN: 112
+ * DAMAGE: 7
+ * STAMIN: 281
  * RECOIL: 1
  * WOUNDS: 125
  * WNAKED: 75
