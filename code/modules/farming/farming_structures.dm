@@ -251,53 +251,64 @@
 	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
-/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, obj/structure/legion_extractor/extractor, mob/living/user)
+/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, mob/living/user)
 	var/t_amount = 0
-	var/list/seeds = list()
 	if(t_max == -1)
 		t_max = rand(1,2) //Slightly worse than the actual thing
 
-	var/seedloc = O.loc
-	if(extractor)
-		seedloc = extractor.loc
+	var/atom/seedloc = src.drop_location()
 
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/))
 		var/obj/item/reagent_containers/food/snacks/grown/F = O
 		if(F.seed)
 			if(user && !user.temporarilyRemoveItemFromInventory(O)) //couldn't drop the item
 				return
-			while(t_amount < t_max)
-				var/obj/item/seeds/t_prod = F.seed.Copy()
-				seeds.Add(t_prod)
-				t_prod.forceMove(seedloc)
-				t_amount++
-			qdel(O)
-			return seeds
-
-	else if(istype(O, /obj/item/grown))
-		var/obj/item/grown/F = O
-		if(F.seed)
-			if(user && !user.temporarilyRemoveItemFromInventory(O))
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null)) // couldn't remove from storage
 				return
 			while(t_amount < t_max)
 				var/obj/item/seeds/t_prod = F.seed.Copy()
 				t_prod.forceMove(seedloc)
 				t_amount++
 			qdel(O)
-		return 1
-
-	return 0
+	else if(istype(O, /obj/item/grown))
+		var/obj/item/grown/F = O
+		if(F.seed)
+			if(user && !user.temporarilyRemoveItemFromInventory(O))
+				return
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null))
+				return
+			while(t_amount < t_max)
+				var/obj/item/seeds/t_prod = F.seed.Copy()
+				t_prod.forceMove(seedloc)
+				t_amount++
+			qdel(O)
+	return t_amount
 
 /obj/structure/legion_extractor/attackby(obj/item/O, mob/user, params)
-
 	if(default_unfasten_wrench(user, O)) //So we can move them around
 		return
-
-	else if(seedify(O,-1, src, user))
+	else if(istype(O, /obj/item/storage/bag/plants))
+		var/obj/item/storage/bag/plants/PB = O
+		if(!PB.contents.len)
+			to_chat(user, span_warning("There's nothing in \the [PB]!"))
+			return
+		to_chat(user, span_info("You start to empty \the [PB] into \the [src]."))
+		var/count = 0
+		if(!do_after(user, 2 SECONDS, target = src))
+			return
+		for(var/obj/item/G in PB.contents)
+			count += seedify(G, -1, user) // seedify handles removing applicable items from storage
+		if(count > 0)
+			to_chat(user, span_info("You empty \the [PB] into \the [src]."))
+			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
+		else
+			to_chat(user, span_warning("You can't extract seeds from anything in \the [PB]!"))
+		return
+	else if(seedify(O, -1, user))
 		to_chat(user, span_notice("You extract some seeds."))
 		return
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_warning("You can't extract any seeds from \the [O.name]!"))
+		to_chat(user, span_warning("You can't extract any seeds from \the [O]!"))
 	else
 		return ..()
 
