@@ -261,9 +261,9 @@
 /*
 	Hostile animals
 */
-/mob/living/simple_animal/hostile/UnarmedAttack(atom/A, proximity, intent = a_intent, flags = NONE)
-	target = A
-	if(dextrous && !ismob(A))
+/mob/living/simple_animal/hostile/UnarmedAttack(atom/attack_target, proximity, intent = a_intent, flags = NONE)
+	GiveTarget(attack_target)
+	if(dextrous && !ismob(attack_target))
 		return ..()
 	else
 		AttackingTarget()

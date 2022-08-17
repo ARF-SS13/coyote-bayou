@@ -308,18 +308,18 @@ ATTACHMENTS
 			O.emp_act(severity)
 
 /obj/item/gun/attack(mob/living/M, mob/user)
-	. = ..()
 	if(bayonet && user.a_intent == INTENT_HARM)
 		M.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
-	. = ..()
-	if(bayonet && user.a_intent == INTENT_HARM)
+	if(bayonet && user.a_intent == INTENT_HARM) // Must run BEFORE parent call, so we don't smack them with the gun body too.
 		O.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 

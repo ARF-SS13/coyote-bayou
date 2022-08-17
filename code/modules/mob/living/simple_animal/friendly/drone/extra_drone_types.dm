@@ -143,8 +143,7 @@
 
 /mob/living/simple_animal/drone/cogscarab/Initialize()
 	. = ..()
-	qdel(access_card) //we don't have free access
-	access_card = null
+	QDEL_NULL(access_card) //we don't have free access
 	remove_verb(src, /mob/living/simple_animal/drone/verb/check_laws)
 	remove_verb(src, /mob/living/simple_animal/drone/verb/drone_ping)
 
