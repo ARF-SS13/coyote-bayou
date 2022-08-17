@@ -34291,6 +34291,10 @@
 /obj/structure/sign/poster/contraband/have_a_puff,
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building/mall)
+"iua" = (
+/mob/living/simple_animal/pet/redpanda,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "iuc" = (
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/dirt{
@@ -34681,6 +34685,10 @@
 	icon_state = "yellowrustysolid"
 	},
 /area/f13/building/massfusion)
+"iCM" = (
+/mob/living/simple_animal/pet/fox,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "iCX" = (
 /obj/effect/decal/remains{
 	icon_state = "remains"
@@ -40656,6 +40664,10 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/bunker)
+"lLT" = (
+/mob/living/simple_animal/pet/dog/corgi,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "lLY" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -56961,6 +56973,11 @@
 /obj/item/trash/f13/k_ration,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"uuQ" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/pet/cat,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "uuT" = (
 /obj/item/reagent_containers/food/snacks/f13/canned/dog,
 /turf/open/indestructible/ground/outside/road{
@@ -59010,6 +59027,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"vyZ" = (
+/mob/living/simple_animal/mouse,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "vzh" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -59550,6 +59571,10 @@
 /obj/machinery/light/broken,
 /turf/open/floor/f13/wood,
 /area/f13/village)
+"vNk" = (
+/mob/living/simple_animal/pet/dog/pug,
+/turf/open/indestructible/ground/inside/dirt,
+/area/f13/caves)
 "vNB" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/bloatfly,
@@ -68372,8 +68397,8 @@ asS
 aae
 aae
 sLy
-qqO
-aae
+lLT
+vyZ
 aae
 aae
 asS
@@ -68629,8 +68654,8 @@ arF
 arF
 asS
 asS
-qqO
-vNL
+vNk
+uuQ
 qqO
 aae
 arF
@@ -68886,7 +68911,7 @@ tLY
 asS
 asS
 asS
-qqO
+iCM
 arF
 asS
 asS
@@ -69143,7 +69168,7 @@ qqO
 asS
 arF
 asS
-qqO
+iua
 bRS
 vNL
 asS
