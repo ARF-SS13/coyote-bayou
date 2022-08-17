@@ -16,7 +16,7 @@
 	invokers_required = 6
 	multiple_invokers_used = TRUE
 	object_path = /obj/structure/destructible/clockwork/massive/celestial_gateway
-	creator_message = "<span class='heavy_brass'>The Ark swirls into existance before you with the help of the Generals. After all this time, he shall, finally, be free</span>"
+	creator_message = span_heavy_brass("The Ark swirls into existance before you with the help of the Generals. After all this time, he shall, finally, be free")
 	usage_tip = "The gateway is completely vulnerable to attack during its five-minute duration. It will periodically give indication of its general position to everyone on the station \
 	as well as being loud enough to be heard throughout the entire sector. Defend it with your life!"
 	tier = SCRIPTURE_APPLICATION
@@ -26,19 +26,19 @@
 /datum/clockwork_scripture/create_object/ark_of_the_clockwork_justiciar/check_special_requirements()
 	if(!slab.no_cost)
 		if(GLOB.ratvar_awakens)
-			to_chat(invoker, "<span class='big_brass'>\"I am already here, there is no point in that.\"</span>")
+			to_chat(invoker, span_big_brass("\"I am already here, there is no point in that.\""))
 			return FALSE
 		for(var/obj/structure/destructible/clockwork/massive/celestial_gateway/G in GLOB.all_clockwork_objects)
 			var/area/gate_area = get_area(G)
-			to_chat(invoker, "<span class='userdanger'>There is already an Ark at [gate_area.map_name]!</span>")
+			to_chat(invoker, span_userdanger("There is already an Ark at [gate_area.map_name]!"))
 			return FALSE
 		var/area/A = get_area(invoker)
 		var/turf/T = get_turf(invoker)
 		if(!T || !is_station_level(T.z) || istype(A, /area/shuttle) || !A.blob_allowed)
-			to_chat(invoker, "<span class='warning'>You must be on the station to activate the Ark!</span>")
+			to_chat(invoker, span_warning("You must be on the station to activate the Ark!"))
 			return FALSE
 		if(GLOB.clockwork_gateway_activated)
-			to_chat(invoker, "<span class='warning'>Ratvar's recent banishment renders him too weak to be wrung forth from Reebe!</span>")
+			to_chat(invoker, span_warning("Ratvar's recent banishment renders him too weak to be wrung forth from Reebe!"))
 			return FALSE
 	return ..()
 

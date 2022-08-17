@@ -68,11 +68,11 @@
 			if(user.transferItemToLoc(new_mag, src))
 				magazine = new_mag
 				if(oldmag)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the magazine."))
 					oldmag.forceMove(get_turf(src.loc))
 					oldmag.update_icon()
 				else
-					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
+					to_chat(user, span_notice("You insert the magazine into \the [src]."))
 
 				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1)
 				chamber_round()
@@ -80,7 +80,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>") */
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!")) */
 
 /obj/item/gun/ballistic/automatic/can_shoot()
 	return get_ammo()
@@ -98,7 +98,7 @@
 		magazine.dropped()
 		user.visible_message(
 			"[magazine] falls out and clatters on the floor!",
-			"<span class='notice'>[magazine] falls out and clatters on the floor!</span>"
+			span_notice("[magazine] falls out and clatters on the floor!")
 		)
 		if(auto_eject_sound)
 			playsound(user, auto_eject_sound, 40, 1)
@@ -131,7 +131,7 @@
 	icon_prefix = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -180,12 +180,11 @@
 		FULL_AUTO_400
 	)
 
-	can_unsuppress = FALSE
 	is_automatic = TRUE
 	automatic = TRUE
-	suppressed = 1
+	silenced = TRUE
 	actions_types = null
-	fire_sound = 'sound/f13weapons/american180.ogg'
+	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
 
 /* * * * * * * * * * *
  * 14mm SMG
@@ -225,7 +224,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
@@ -245,7 +243,7 @@
 	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 
@@ -266,7 +264,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
@@ -303,8 +300,6 @@
 		FULL_AUTO_300
 	)
 
-	can_attachments = FALSE
-
 /* * * * * * * * * * *
  * 10mm SMG
  * Baseline 10mm SMG
@@ -322,6 +317,7 @@
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
 	icon_prefix = "smg10mm"
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 
@@ -342,7 +338,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
@@ -397,6 +392,7 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
@@ -417,7 +413,6 @@
 	automatic = 1
 	is_automatic = TRUE
 	can_suppress = TRUE
-	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
@@ -439,6 +434,7 @@
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	init_mag_type = /obj/item/ammo_box/magazine/cg45
 
@@ -460,7 +456,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 
 /* * * * * * * * * * *
@@ -542,7 +537,7 @@
 	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
 	icon_state = "p90"
 	item_state = "m90"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 
@@ -617,6 +612,7 @@
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	icon_state = "mp5"
 	item_state = "fnfal"
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
@@ -630,6 +626,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY
@@ -637,9 +634,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
-	can_suppress = FALSE
-	can_unsuppress = FALSE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
 
 /* * * * * * * * * * *
@@ -676,11 +670,11 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
+	gun_tags = list(GUN_SCOPE)
 
 /* * * * * * *
  * Carbines  *
@@ -723,6 +717,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -733,8 +729,6 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 5
 	scope_y_offset = 14
-	can_attachments = TRUE
-	can_automatic = TRUE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
@@ -847,17 +841,18 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // tacticool
 
 	can_scope = TRUE
-	can_unsuppress = FALSE
-	suppressed = 1
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	silenced = TRUE
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Commando Carbine
  * Silent .45 carbine
  * Silent!
- * Common
+ * Common?
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/delisle/commando
@@ -881,8 +876,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
-	suppressed = 1
+	silenced = TRUE
 	can_scope = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
@@ -920,8 +914,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'
@@ -943,7 +937,7 @@
  * Light semi-auto rifle
  * .223 / 5.56mm
  * Slow to fire
- * 
+ *
  * Common
  * * * * * * * * * * */
 
@@ -968,6 +962,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
 
 	can_bayonet = FALSE
 	semi_auto = TRUE
@@ -988,7 +985,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1008,13 +1005,13 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_unsuppress = FALSE
+	gun_tags = list()
+
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
 	suppressor_state = "none"
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Ratslayer Rifle
@@ -1022,7 +1019,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1042,11 +1039,12 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	gun_tags = list()
+
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Service Rifle
@@ -1077,8 +1075,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = TRUE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1110,7 +1108,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1143,6 +1140,8 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
+
+	gun_tags = list(GUN_SCOPE)
 
 	can_scope = TRUE
 	scope_state = "scope_short"
@@ -1180,14 +1179,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
-	can_attachments = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
+	zoom_factor = 1
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 22
@@ -1227,6 +1225,8 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+
 	can_suppress = FALSE
 	can_scope = TRUE
 	zoomable = FALSE
@@ -1263,10 +1263,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1310,10 +1311,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1356,6 +1358,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
 
 	en_bloc = 1
 	auto_eject = 1
@@ -1435,9 +1440,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	fire_delay = 0.5
 	can_scope = FALSE
 
@@ -1512,13 +1515,13 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
-	zoom_amt = 10
-	zoom_out_amt = 13
 	semi_auto = TRUE
-	can_automatic = FALSE
 	can_bayonet = FALSE
+	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	zoom_factor = 2
 
 /* * * * * * * * * * *
  * Gold Sniper Rifle
@@ -1578,9 +1581,6 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-
-	zoom_amt = 8
-	zoom_out_amt = 8
 
 /* * * * * * * * * * *
  * Compact Sniper Rifle
@@ -1690,7 +1690,6 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 23
@@ -1733,15 +1732,12 @@
 	is_automatic = TRUE
 	automatic = 1
 	can_suppress = FALSE
-	can_unsuppress = FALSE
-	suppressed = 1
+	silenced = TRUE
 	can_bayonet = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
+	zoom_factor = 0.8
 
 /* * * * * * * * * * *
  * R93 PDW rifle
@@ -1772,13 +1768,9 @@
 		FULL_AUTO_300
 	)
 
-	can_attachments = FALSE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	can_bayonet = FALSE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
 
@@ -1894,12 +1886,9 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	zoom_factor = 1.2
 
 /* * * * * * * * * * *
  * Assault Carbine Rifle
@@ -1932,10 +1921,9 @@
 		FULL_AUTO_300,
 		BURST_3_ROUND
 	)
-
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -1980,7 +1968,7 @@
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /* * * * * * * * * * *
@@ -2079,6 +2067,7 @@ obj/item/gun/ballistic/automatic/bar
 		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
@@ -2113,15 +2102,13 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_5_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	semi_auto = TRUE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	select = 0
 
@@ -2208,7 +2195,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
@@ -2248,12 +2234,8 @@ obj/item/gun/ballistic/automatic/bar
 	is_automatic = TRUE
 	automatic = 1
 	spawnwithmagazine = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_attachments = TRUE
+	zoom_factor = 1
 	can_scope = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 
 /* * * * * * * * * * *
@@ -2292,7 +2274,6 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	var/cover_open = FALSE
 	var/require_twohands = FALSE
 	actions_types = null
@@ -2309,7 +2290,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, span_notice("You [cover_open ? "open" : "close"] [src]'s cover."))
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -2318,7 +2299,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, span_warning("[src]'s cover is open! Close it before firing!"))
 	else
 		. = ..()
 		update_icon()
@@ -2336,12 +2317,12 @@ obj/item/gun/ballistic/automatic/bar
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You remove the magazine from [src].</span>")
+		to_chat(user, span_notice("You remove the magazine from [src]."))
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/m1919/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
+		to_chat(user, span_warning("[src]'s cover is closed! You can't insert a new mag."))
 		return
 	..()
 
@@ -2380,10 +2361,10 @@ obj/item/gun/ballistic/automatic/bar
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // obviously
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1.2
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
 
@@ -2417,11 +2398,9 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	spawnwithmagazine = TRUE
-	can_attachments = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	can_scope = FALSE

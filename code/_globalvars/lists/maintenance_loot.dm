@@ -269,7 +269,19 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/light/bulb = 5,
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
-	/obj/item/toy/crayon/spraycan = 5
+	/obj/item/toy/crayon/spraycan = 5,
+	/obj/item/laser_pointer = 5
+))
+
+GLOBAL_LIST_INIT(trash_attachment, list(
+	/obj/item/gun_upgrade/scope/watchman = 1,
+	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
+	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
+	/obj/item/tool_upgrade/refinement/laserguide = 1,
+	/obj/item/tool_upgrade/productivity/booster = 1,
+	/obj/item/tool_upgrade/productivity/red_paint = 2
 ))
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
@@ -555,6 +567,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/trail,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/energy/gammagun
@@ -581,6 +594,8 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/gun/ballistic/rifle/mag/antimateriel,
 	/obj/item/ammo_box/magazine/amr,
+	/obj/item/gun/ballistic/revolver/m2405,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/ballistic/automatic/rangemaster,
 	/obj/item/ammo_box/magazine/m762,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
@@ -876,10 +891,27 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 ))
 
 GLOBAL_LIST_INIT(loot_attachment, list(
-	/obj/item/attachments/scope,
-	/obj/item/attachments/burst_improvement,
-	/obj/item/attachments/recoil_decrease,
-	/obj/item/attachments/auto_sear
+	/obj/item/gun_upgrade/scope/watchman = 1,
+	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
+	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
+	/obj/item/tool_upgrade/refinement/laserguide = 1,
+	/obj/item/tool_upgrade/productivity/booster = 1,
+	/obj/item/tool_upgrade/productivity/red_paint = 1
+))
+
+GLOBAL_LIST_INIT(loot_attachment_advanced, list(
+	/obj/item/gun_upgrade/scope/killer = 2,
+	/obj/item/gun_upgrade/barrel/mag_accel = 2,
+	/obj/item/tool_upgrade/reinforcement/plasmablock = 2,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 2,
+	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
+	/obj/item/tool_upgrade/productivity/motor = 1,
+	/obj/item/gun_upgrade/mechanism/overdrive = 1,
+	/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
+	/obj/item/gun_upgrade/mechanism/weintraub = 1,
+	/obj/item/gun_upgrade/barrel/excruciator = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

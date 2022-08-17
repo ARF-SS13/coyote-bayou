@@ -85,7 +85,7 @@
 	item_state = "crossbow"
 	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron=2000)
-	suppressed = TRUE
+	silenced = TRUE
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt)
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	obj_flags = 0
@@ -108,7 +108,7 @@
 	icon_state = "crossbowlarge"
 	w_class = WEIGHT_CLASS_BULKY
 	custom_materials = list(/datum/material/iron=4000)
-	suppressed = null
+	silenced = null
 	ammo_type = list(/obj/item/ammo_casing/energy/bolt/large)
 	weapon_weight = GUN_TWO_HAND_ONLY
 	pin = null
@@ -139,17 +139,17 @@
 /obj/item/gun/energy/plasmacutter/examine(mob/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>[src] is [round(cell.percent())]% charged.</span>"
+		. += span_notice("[src] is [round(cell.percent())]% charged.")
 
 /obj/item/gun/energy/plasmacutter/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/stack/sheet/mineral/plasma))
 		I.use(1)
 		cell.give(1000)
-		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
 	else if(istype(I, /obj/item/stack/ore/plasma))
 		I.use(1)
 		cell.give(500)
-		to_chat(user, "<span class='notice'>You insert [I] in [src], recharging it.</span>")
+		to_chat(user, span_notice("You insert [I] in [src], recharging it."))
 	else
 		..()
 
@@ -158,7 +158,7 @@
 	if(!QDELETED(cell) && (cell.charge >= amount * 100))
 		return TRUE
 
-	to_chat(user, "<span class='warning'>You need more charge to complete this task!</span>")
+	to_chat(user, span_warning("You need more charge to complete this task!"))
 	return FALSE
 
 /obj/item/gun/energy/plasmacutter/use(amount)

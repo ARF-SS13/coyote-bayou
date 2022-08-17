@@ -27,7 +27,7 @@
 	..()
 
 /datum/reagent/drug/space_drugs/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You start tripping hard!</span>")
+	to_chat(M, span_userdanger("You start tripping hard!"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "[type]_overdose", /datum/mood_event/overdose, name)
 
 /datum/reagent/drug/space_drugs/overdose_process(mob/living/M)
@@ -48,7 +48,7 @@
 /datum/reagent/drug/nicotine/on_mob_life(mob/living/carbon/M)
 	if(prob(1))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smoked", /datum/mood_event/smoked, name)
 	M.AdjustAllImmobility(-20, 0)
 	M.AdjustUnconscious(-20, 0)
@@ -69,7 +69,7 @@
 /datum/reagent/drug/crank/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
 		var/high_message = pick("You feel jittery.", "You feel like you gotta go fast.", "You feel like you need to step it up.")
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustAllImmobility(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	..()
@@ -117,7 +117,7 @@
 /datum/reagent/drug/krokodil/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel calm.", "You feel collected.", "You feel like you need to relax.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	..()
 
 /datum/reagent/drug/krokodil/overdose_process(mob/living/M)
@@ -134,12 +134,12 @@
 
 /datum/reagent/drug/krokodil/addiction_act_stage2(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>Your skin feels loose...</span>")
+		to_chat(M, span_danger("Your skin feels loose..."))
 	..()
 
 /datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>Your skin starts to peel away...</span>")
+		to_chat(M, span_danger("Your skin starts to peel away..."))
 	M.adjustBruteLoss(3*REM, 0)
 	..()
 	. = 1
@@ -147,7 +147,7 @@
 /datum/reagent/drug/krokodil/addiction_act_stage4(mob/living/carbon/human/M)
 	CHECK_DNA_AND_SPECIES(M)
 	if(!istype(M.dna.species, /datum/species/krokodil_addict))
-		to_chat(M, "<span class='userdanger'>Your skin falls off easily!</span>")
+		to_chat(M, span_userdanger("Your skin falls off easily!"))
 		M.adjustBruteLoss(50*REM, 0) // holy shit your skin just FELL THE FUCK OFF
 		M.set_species(/datum/species/krokodil_addict)
 	else
@@ -169,7 +169,7 @@
 /datum/reagent/drug/heroin/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel like you're floating.", "Life feels like a beautiful dream.", "Everything seems right with the world.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 		M.emote(pick("twitch","drool","moan"))
 	..()
 
@@ -187,14 +187,14 @@
 
 /datum/reagent/drug/heroin/addiction_act_stage2(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>Life feels so hard</span>")
+		to_chat(M, span_danger("Life feels so hard"))
 	M.adjustToxLoss(3*REM, 0)
 	..()
 	. = 1
 
 /datum/reagent/drug/heroin/addiction_act_stage3(mob/living/M)
 	if(prob(25))
-		to_chat(M, "<span class='danger'>YOU CAN'T TAKE THIS ANYMORE!!</span>")
+		to_chat(M, span_danger("YOU CAN'T TAKE THIS ANYMORE!!"))
 	M.adjustToxLoss(4*REM, 0)
 	..()
 	. = 1
@@ -226,7 +226,7 @@
 /datum/reagent/drug/methamphetamine/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustAllImmobility(-40, 0)
 	M.AdjustUnconscious(-40, 0)
 	M.adjustStaminaLoss(-7.5 * REM, 0)
@@ -247,7 +247,7 @@
 	if(prob(20))
 		M.emote("laugh")
 	if(prob(33))
-		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+		M.visible_message(span_danger("[M]'s hands flip out and flail everywhere!"))
 		M.drop_all_held_items()
 	..()
 	M.adjustToxLoss(1, 0)
@@ -330,7 +330,7 @@
 /datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-5, 0)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
 	M.hallucination += 5
@@ -411,7 +411,7 @@
 /datum/reagent/drug/aranesp/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustStaminaLoss(-10, 0)
 	M.adjustToxLoss(0.5, 0)
 	if(prob(50))
@@ -590,16 +590,16 @@
 	. = ..()
 	if(istype(M))
 		M.action_cooldown_mod *= 0.5
-		to_chat(M, "<span class='notice'>You feel an intense surge of energy rushing through your veins.</span>")
+		to_chat(M, span_notice("You feel an intense surge of energy rushing through your veins."))
 
 /datum/reagent/syndicateadrenals/on_mob_end_metabolize(mob/living/M)
 	. = ..()
 	if(istype(M))
 		M.action_cooldown_mod *= 2
-		to_chat(M, "<span class='notice'>You feel as though the world around you is going faster.</span>")
+		to_chat(M, span_notice("You feel as though the world around you is going faster."))
 
 /datum/reagent/syndicateadrenals/overdose_start(mob/living/M)
-	to_chat(M, "<span class='danger'>You feel an intense pain in your chest...</span>")
+	to_chat(M, span_danger("You feel an intense pain in your chest..."))
 
 /datum/reagent/syndicateadrenals/overdose_process(mob/living/M)
 	if(iscarbon(M))
@@ -620,13 +620,13 @@
 			M.emote(pick("moan","blush"))
 		if(prob(min(current_cycle/4,10)))
 			var/aroused_message = pick("You feel frisky.", "You're having trouble suppressing your urges.", "You feel in the mood.")
-			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+			to_chat(M, span_userlove("[aroused_message]"))
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/list/genits = H.adjust_arousal(current_cycle, "crocin", aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
+				to_chat(M, span_userlove("[G.arousal_verb]!"))
 	..()
 
 /datum/reagent/drug/aphrodisiacplus
@@ -653,14 +653,14 @@
 				aroused_message = pick("You need to fuck someone!", "You're bursting with sexual tension!", "You can't get sex off your mind!")
 			else
 				aroused_message = pick("You feel a bit hot.", "You feel strong sexual urges.", "You feel in the mood.", "You're ready to go down on someone.")
-			to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+			to_chat(M, span_userlove("[aroused_message]"))
 			REMOVE_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			var/list/genits = H.adjust_arousal(100, "hexacrocin", aphro = TRUE) // redundant but should still be here
 			for(var/g in genits)
 				var/obj/item/organ/genital/G = g
-				to_chat(M, "<span class='userlove'>[G.arousal_verb]!</span>")
+				to_chat(M, span_userlove("[G.arousal_verb]!"))
 	..()
 
 /datum/reagent/drug/aphrodisiacplus/addiction_act_stage2(mob/living/M)
@@ -681,7 +681,7 @@
 	if(M && M.client?.prefs.arousable && !(M.client?.prefs.cit_toggles & NO_APHRO) && prob(33))
 		if(prob(5) && ishuman(M) && M.has_dna() && (M.client?.prefs.cit_toggles & BIMBOFICATION))
 			if(!HAS_TRAIT(M,TRAIT_PERMABONER))
-				to_chat(M, "<span class='userlove'>Your libido is going haywire!</span>")
+				to_chat(M, span_userlove("Your libido is going haywire!"))
 				M.log_message("Made perma-horny by hexacrocin.",LOG_EMOTE)
 				ADD_TRAIT(M,TRAIT_PERMABONER,APHRO_TRAIT)
 	..()
@@ -727,6 +727,6 @@
 
 /datum/reagent/drug/anaphrodisiacplus/overdose_process(mob/living/M)
 	if(M && M.client?.prefs.arousable && prob(5))
-		to_chat(M, "<span class='userlove'>You feel like you'll never feel aroused again...</span>")
+		to_chat(M, span_userlove("You feel like you'll never feel aroused again..."))
 		ADD_TRAIT(M,TRAIT_NEVERBONER,APHRO_TRAIT)
 	..()

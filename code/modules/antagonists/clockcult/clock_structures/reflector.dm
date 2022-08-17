@@ -7,7 +7,7 @@
 	max_integrity = 40
 	construction_value = 5
 	layer = WALL_OBJ_LAYER
-	break_message = "<span class='warning'>The reflectors's fragile shield shatters into pieces!</span>"
+	break_message = span_warning("The reflectors's fragile shield shatters into pieces!")
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	light_color = "#DAAA18"
 	var/list/allowed_projectile_typecache = list(
@@ -61,7 +61,7 @@
 
 /obj/structure/destructible/clockwork/reflector/proc/can_be_rotated(mob/user,rotation_type)
 	if(anchored)
-		to_chat(user, "<span class='warning'>[src] cannot be rotated while it is fastened to the floor!</span>")
+		to_chat(user, span_warning("[src] cannot be rotated while it is fastened to the floor!"))
 		return FALSE
 
 	return TRUE
@@ -81,6 +81,6 @@
 		return ..()
 
 	anchored = !anchored
-	to_chat(user, "<span class='notice'>You [anchored ? "secure" : "unsecure"] \the [src].</span>")
+	to_chat(user, span_notice("You [anchored ? "secure" : "unsecure"] \the [src]."))
 	I.play_tool_sound(src)
 	return TRUE

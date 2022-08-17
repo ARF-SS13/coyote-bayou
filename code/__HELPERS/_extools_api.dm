@@ -7,6 +7,10 @@
 /proc/auxtools_stack_trace(msg)
 	CRASH(msg)
 
+// for debug evaluation
+/proc/auxtools_expr_stub()
+	CRASH("auxtools not loaded")
+
 GLOBAL_LIST_EMPTY(auxtools_initialized)
 
 #define AUXTOOLS_CHECK(LIB)\

@@ -374,7 +374,7 @@ SUBSYSTEM_DEF(vote)
 			message_admins("The map has been voted for and will change to: [VM.map_name]")
 			log_admin("The map has been voted for and will change to: [VM.map_name]")
 			if(SSmapping.changemap(config.maplist[.]))
-				to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
+				to_chat(world, span_boldannounce("The map vote has chosen [VM.map_name] for next round!"))
 	if(end_round)
 	/* Fortuna edit, shuttle will autocall after a successful transfer vote even when admins are online
 		var/active_admins = 0
@@ -449,7 +449,7 @@ SUBSYSTEM_DEF(vote)
 		if(started_time)
 			var/next_allowed_time = (started_time + CONFIG_GET(number/vote_delay))
 			if(mode)
-				to_chat(usr, "<span class='warning'>There is already a vote in progress! please wait for it to finish.</span>")
+				to_chat(usr, span_warning("There is already a vote in progress! please wait for it to finish."))
 				return 0
 
 			var/admin = FALSE
@@ -458,7 +458,7 @@ SUBSYSTEM_DEF(vote)
 				admin = TRUE
 
 			if(next_allowed_time > world.time && !admin)
-				to_chat(usr, "<span class='warning'>A vote was initiated recently, you must wait [DisplayTimeText(next_allowed_time-world.time)] before a new vote can be started!</span>")
+				to_chat(usr, span_warning("A vote was initiated recently, you must wait [DisplayTimeText(next_allowed_time-world.time)] before a new vote can be started!"))
 				return 0
 
 		SEND_SOUND(world, sound('sound/f13/mysterious_stranger.ogg'))

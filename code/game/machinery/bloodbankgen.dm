@@ -179,10 +179,10 @@
 		if(!anchored)
 			. += "[msg ? " and a" : "A"]nchor its bolts"
 		if(length(msg))
-			to_chat(user, "<span class='warning'>[msg] first.</span>")
+			to_chat(user, span_warning("[msg] first."))
 			return
 		if(bag && outbag)
-			to_chat(user, "<span class='warning'>This machine already has bags attached.</span>")
+			to_chat(user, span_warning("This machine already has bags attached."))
 
 		if(!bag && !outbag)
 			var/choice = alert(user, "Choose where to place [O]", "", "Input", "Cancel", "Output")
@@ -198,7 +198,7 @@
 		else if(!outbag)
 			attachoutput(O, user)
 	else
-		to_chat(user, "<span class='warning'>You cannot put this in [src]!</span>")
+		to_chat(user, span_warning("You cannot put this in [src]!"))
 
 /obj/machinery/bloodbankgen/is_operational()
 	return ..() && anchored
@@ -251,7 +251,7 @@
 		draining = TRUE
 		update_icon()
 	else
-		to_chat(usr, "<span class='warning'>There is no blood bag in the input slot.</span>")
+		to_chat(usr, span_warning("There is no blood bag in the input slot."))
 		return
 
 /obj/machinery/bloodbankgen/proc/activateoutput()
@@ -259,7 +259,7 @@
 		filling = TRUE
 		update_icon()
 	else
-		to_chat(usr, "<span class='warning'>There is no blood bag in the output slot.</span>")
+		to_chat(usr, span_warning("There is no blood bag in the output slot."))
 		return
 
 /obj/machinery/bloodbankgen/proc/check_container_volume(list/reagents, multiplier = 1)
@@ -297,22 +297,22 @@
 		if(!user.transferItemToLoc(O, src))
 			return
 		bag = O
-		to_chat(user, "<span class='notice'>You add [O] to the machine's input slot.</span>")
+		to_chat(user, span_notice("You add [O] to the machine's input slot."))
 		update_icon()
 		updateUsrDialog()
 	else
-		to_chat(user, "<span class='notice'>There is already something in this slot!</span>")
+		to_chat(user, span_notice("There is already something in this slot!"))
 
 /obj/machinery/bloodbankgen/proc/attachoutput(obj/item/O, mob/user)
 	if(!outbag)
 		if(!user.transferItemToLoc(O, src))
 			return
 		outbag = O
-		to_chat(user, "<span class='notice'>You add [O] to the machine's output slot.</span>")
+		to_chat(user, span_notice("You add [O] to the machine's output slot."))
 		update_icon()
 		updateUsrDialog()
 	else
-		to_chat(user, "<span class='notice'>There is already something in this slot!</span>")
+		to_chat(user, span_notice("There is already something in this slot!"))
 
 /obj/machinery/bloodbankgen/Topic(href, href_list)
 	. = ..()

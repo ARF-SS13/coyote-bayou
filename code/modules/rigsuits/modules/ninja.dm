@@ -45,7 +45,7 @@
 
 	var/mob/living/carbon/human/H = holder.wearer
 
-	to_chat(H, "<span class='danger'>You are now visible.</span>")
+	to_chat(H, span_danger("You are now visible."))
 	animate(H, alpha = 255, time = 15)
 
 	new /obj/effect/temp_visual/dir_setting/ninja(get_turf(H), H.dir)
@@ -92,7 +92,7 @@
 	var/mob/living/carbon/human/H = holder.wearer
 
 	if(!istype(H.loc, /turf))
-		to_chat(H, "<span class='warning'>You cannot teleport out of your current location.</span>")
+		to_chat(H, span_warning("You cannot teleport out of your current location."))
 		return 0
 
 	var/turf/T
@@ -102,11 +102,11 @@
 		T = get_teleport_loc(get_turf(H), H, rand(5, 9))
 
 	/*if(!T || T.density)
-		to_chat(H, "<span class='warning'>You cannot teleport into solid walls.</span>")
+		to_chat(H, span_warning("You cannot teleport into solid walls."))
 		return 0*///Who the fuck cares? Ninjas in walls are cool.
 
 	if(is_centcom_level(T.z))
-		to_chat(H, "<span class='warning'>You cannot use your teleporter on this Z-level.</span>")
+		to_chat(H, span_warning("You cannot use your teleporter on this Z-level."))
 		return 0
 
 	phase_out(H,get_turf(H))

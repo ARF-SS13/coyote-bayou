@@ -43,7 +43,7 @@
 		. += H
 
 /obj/structure/headpike/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, "<span class='notice'>You take down [src].</span>")
+	to_chat(user, span_notice("You take down [src]."))
 	var/obj/item/bodypart/head/H = locate() in contents
 	var/obj/item/twohanded/spear/spear = locate() in contents //i dont know why byond needs to be told this twice maybe it needs to call the superclass idk
 	if(H)

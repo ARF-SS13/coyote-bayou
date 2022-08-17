@@ -147,8 +147,6 @@
 
 	helm_type = /obj/item/clothing/head/helmet/space/new_rig/hazmat
 
-	helm_type = /obj/item/clothing/head/helmet/space/new_rig/ert
-
 	allowed = list(/obj/item/flashlight,/obj/item/tank,/obj/item/pickaxe,/obj/item/healthanalyzer,/obj/item/gps,/obj/item/radio/beacon)
 
 	req_access = list()

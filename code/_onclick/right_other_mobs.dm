@@ -1,6 +1,6 @@
 /mob/living/carbon/human/AltUnarmedAttack(atom/A, proximity)
 	if(!has_active_hand())
-		to_chat(src, "<span class='notice'>You look at the state of the universe and sigh.</span>") //lets face it, people rarely ever see this message in its intended condition.
+		to_chat(src, span_notice("You look at the state of the universe and sigh.")) //lets face it, people rarely ever see this message in its intended condition.
 		return TRUE
 
 	return A.alt_attack_hand(src)
@@ -15,7 +15,7 @@
 	if(!(src in target_viewers)) //click catcher issuing calls for out of view objects.
 		return TRUE
 	if(!has_active_hand())
-		to_chat(src, "<span class='notice'>You ponder your life choices and sigh.</span>")
+		to_chat(src, span_notice("You ponder your life choices and sigh."))
 		return TRUE
 	var/list/src_viewers = viewers(DEFAULT_MESSAGE_RANGE, src) - src // src has a different message.
 	var/the_action = "waves to [A]"

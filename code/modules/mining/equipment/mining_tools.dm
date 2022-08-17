@@ -23,19 +23,19 @@
 		if(digrange == 0)
 			digrange = initial(digrange)
 			toolspeed = initial(toolspeed)
-			to_chat(user, "<span class='notice'>You increase the tools dig range, decreasing its mining speed.</span>")
+			to_chat(user, span_notice("You increase the tools dig range, decreasing its mining speed."))
 		else
 			digrange = 0
 			toolspeed = toolspeed/2
-			to_chat(user, "<span class='notice'>You decrease the tools dig range, increasing its mining speed.</span>")
+			to_chat(user, span_notice("You decrease the tools dig range, increasing its mining speed."))
 	else
-		to_chat(user, "<span class='notice'>Tool does not have a configureable dig range.</span>")
+		to_chat(user, span_notice("Tool does not have a configureable dig range."))
 
 /obj/item/pickaxe/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins digging into [user.p_their()] chest!  It looks like [user.p_theyre()] trying to commit suicide!"))
 	if(use_tool(user, user, 30, volume=50))
 		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")
+	user.visible_message(span_suicide("[user] couldn't do it!"))
 	return SHAME
 
 /obj/item/pickaxe/mini
@@ -160,10 +160,10 @@
 	AddComponent(/datum/component/butchering, 150, 40) //it's sharp, so it works, but barely.
 
 /obj/item/shovel/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] begins digging their own grave!  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins digging their own grave!  It looks like [user.p_theyre()] trying to commit suicide!"))
 	if(use_tool(user, user, 30, volume=50))
 		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] couldn't do it!</span>")
+	user.visible_message(span_suicide("[user] couldn't do it!"))
 	return SHAME
 
 /obj/item/shovel/serrated

@@ -46,7 +46,7 @@
 	set category = "Admin"
 	set name = "Check MetaMoney(tm)"
 	if(!GLOB.admin_datums[src.ckey])
-		to_chat(src, "<span class='danger'>Only administrators may use this command.</span>", confidential = TRUE)
+		to_chat(src, span_danger("Only administrators may use this command."), confidential = TRUE)
 		return
 	var/list/client/targets[0]
 	for(var/client/T)
@@ -68,7 +68,7 @@
 	set category = "Admin"
 	set name = "Add/Remove MetaMoney(tm)"
 	if(!GLOB.admin_datums[src.ckey])
-		to_chat(src, "<span class='danger'>Only administrators may use this command.</span>", confidential = TRUE)
+		to_chat(src, span_danger("Only administrators may use this command."), confidential = TRUE)
 		return
 	var/list/client/targets[0]
 	for(var/client/T)

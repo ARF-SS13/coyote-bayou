@@ -1,7 +1,6 @@
 /obj/effect/proc_holder/spell/bloodcrawl
 	name = "Blood Crawl"
 	desc = "Use pools of blood to phase out of existence."
-	charge_max = 0
 	clothes_req = NONE
 	//If you couldn't cast this while phased, you'd have a problem
 	phase_allowed = 1
@@ -21,7 +20,7 @@
 			perform(target)
 			return
 	revert_cast()
-	to_chat(user, "<span class='warning'>There must be a nearby source of blood!</span>")
+	to_chat(user, span_warning("There must be a nearby source of blood!"))
 
 /obj/effect/proc_holder/spell/bloodcrawl/perform(obj/effect/decal/cleanable/target, recharge = 1, mob/living/user = usr)
 	if(istype(user))
@@ -39,4 +38,4 @@
 		start_recharge()
 		return
 	revert_cast()
-	to_chat(user, "<span class='warning'>You are unable to blood crawl!</span>")
+	to_chat(user, span_warning("You are unable to blood crawl!"))

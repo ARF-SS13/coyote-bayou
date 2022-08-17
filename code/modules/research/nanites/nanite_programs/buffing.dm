@@ -27,7 +27,7 @@
 	rogue_types = list(/datum/nanite_program/toxic, /datum/nanite_program/nerve_decay)
 
 /datum/nanite_program/adrenaline/on_trigger()
-	host_mob.do_adrenaline(50, TRUE, TRUE, FALSE, TRUE, list(), "<span class='notice'>You feel a sudden surge of energy!</span>", 25)
+	host_mob.do_adrenaline(50, TRUE, TRUE, FALSE, TRUE, list(), span_notice("You feel a sudden surge of energy!"), 25)
 
 /datum/nanite_program/hardening
 	name = "Dermal Hardening"

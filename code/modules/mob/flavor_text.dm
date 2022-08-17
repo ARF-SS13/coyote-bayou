@@ -29,6 +29,6 @@ but I am not sure you even want non-humans to have it (not even Bay does that), 
 		// We are decoding and then encoding to not only get correct amount of characters, but also to prevent partial escaping characters being shown.
 //		var/msg = html_decode(replacetext(flavor_text, "\n", " "))
 //		if(length(msg) <= 40)
-//			return "<span class='notice'>[html_encode(msg)]</span>"
+//			return span_notice("[html_encode(msg)]")
 //		else
 //			return "<span class='notice'>[html_encode(copytext(msg, 1, 37))]... <a href='?src=[REF(src)];flavor_more=1'>More...</span></a>"

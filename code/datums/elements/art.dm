@@ -27,8 +27,8 @@
 	return ..()
 
 /datum/element/art/proc/apply_moodlet(atom/source, mob/M, impress)
-	M.visible_message("<span class='notice'>[M] stops and looks intently at [source].</span>", \
-						"<span class='notice'>You stop to take in [source].</span>")
+	M.visible_message(span_notice("[M] stops and looks intently at [source]."), \
+						span_notice("You stop to take in [source]."))
 	switch(impress)
 		if (0 to BAD_ART)
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artbad", /datum/mood_event/artbad)
@@ -47,7 +47,7 @@
 	apply_moodlet(source, M, impressiveness *(O.obj_integrity/O.max_integrity))
 
 /datum/element/art/proc/on_attack_hand(atom/source, mob/M)
-	to_chat(M, "<span class='notice'>You start examining [source]...</span>")
+	to_chat(M, span_notice("You start examining [source]..."))
 	if(!do_after(M, 20, target = source))
 		return
 	on_obj_examine(source, M)
@@ -55,8 +55,8 @@
 /datum/element/art/rev
 
 /datum/element/art/rev/apply_moodlet(atom/source, mob/M, impress)
-	M.visible_message("<span class='notice'>[M] stops to inspect [source].</span>", \
-						"<span class='notice'>You take in [source], inspecting the fine craftsmanship of the proletariat.</span>")
+	M.visible_message(span_notice("[M] stops to inspect [source]."), \
+						span_notice("You take in [source], inspecting the fine craftsmanship of the proletariat."))
 
 	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev))
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "artgreat", /datum/mood_event/artgreat)

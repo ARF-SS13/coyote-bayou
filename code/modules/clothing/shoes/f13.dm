@@ -197,7 +197,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You mess around with the shin guards.</span>")
+	to_chat(usr, span_notice("You mess around with the shin guards."))
 	if(src.boottoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -294,12 +294,10 @@
 	name = "super mutant sandals"
 	desc = "A pair of oversized sandals, likely designed for super mutants."
 	icon_state = "mutie_sandals"
-	icon_state = "mutie_sandals"
 
 /obj/item/clothing/shoes/f13/mutie/boots
 	name = "super mutant boots"
 	desc = "A pair of oversized boots."
-	icon_state = "mutie_boots"
 	icon_state = "mutie_boots"
 	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 	cold_protection = FEET

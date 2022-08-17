@@ -30,6 +30,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 5.56 match
  * DAMAGE: 31.25
@@ -111,6 +112,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 5.56 embed
  * DAMAGE: 12.5
@@ -226,6 +228,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 4.73 rubber
  * DAMAGE: 2.5
@@ -247,6 +250,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 4.73 fire
  * DAMAGE: 12.5
@@ -269,7 +273,6 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
 	var/fire_stacks = 3
-	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a473/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -411,6 +414,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 5mm simple
  * DAMAGE: 31.25
@@ -516,6 +520,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_MEDIUM
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_MEDIUM
 
 /* 7.62mm surplus
  * DAMAGE: 45
@@ -577,6 +582,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 7.62mm embed
  * DAMAGE: 12
@@ -664,7 +670,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .50MG surplus
  * DAMAGE: 60
@@ -685,7 +691,6 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
 
 /* .50MG improv
  * DAMAGE: 45
@@ -706,7 +711,6 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
 
 /* .50MG fire
  * DAMAGE: 30
@@ -729,7 +733,6 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 	sharpness = SHARP_NONE
 	var/fire_stacks = 4
-	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -782,6 +785,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* .50MG rubber-penetrator
  * DAMAGE: 6
@@ -890,6 +894,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .45-70 surplus
  * DAMAGE: 45
@@ -1058,6 +1063,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_GAUSS_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* 2mmEC blender
  * DAMAGE: 150

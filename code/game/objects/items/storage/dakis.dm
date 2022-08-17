@@ -28,7 +28,7 @@
 		icon_state = "daki_[body_choice]"
 		custom_name = stripped_input(user, "What's her name?")
 		if(length(custom_name) > MAX_NAME_LEN)
-			to_chat(user,"<span class='danger'>Name is too long!</span>")
+			to_chat(user,span_danger("Name is too long!"))
 			return FALSE
 		if(custom_name)
 			name = custom_name
@@ -36,16 +36,16 @@
 	else
 		switch(user.a_intent)
 			if(INTENT_HELP)
-				user.visible_message("<span class='notice'>[user] hugs the [name].</span>")
+				user.visible_message(span_notice("[user] hugs the [name]."))
 				playsound(src, "rustle", 50, 1, -5)
 			if(INTENT_DISARM)
-				user.visible_message("<span class='notice'>[user] kisses the [name].</span>")
+				user.visible_message(span_notice("[user] kisses the [name]."))
 				playsound(src, "rustle", 50, 1, -5)
 			if(INTENT_GRAB)
-				user.visible_message("<span class='warning'>[user] holds the [name]!</span>")
+				user.visible_message(span_warning("[user] holds the [name]!"))
 				playsound(src, 'sound/items/bikehorn.ogg', 50, 1)
 			if(INTENT_HARM)
-				user.visible_message("<span class='danger'>[user] punches the [name]!</span>")
+				user.visible_message(span_danger("[user] punches the [name]!"))
 				playsound(src, 'sound/effects/shieldbash.ogg', 50, 1)
 		user.DelayNextAction(CLICK_CD_MELEE)
 

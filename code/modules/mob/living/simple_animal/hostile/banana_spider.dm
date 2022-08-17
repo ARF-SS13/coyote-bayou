@@ -54,7 +54,7 @@
 	if(be_spider == "No" || QDELETED(src) || !isobserver(user))
 		return
 	if(key)
-		to_chat(user, "<span class='notice'>Someone else already took this banana spider.</span>")
+		to_chat(user, span_notice("Someone else already took this banana spider."))
 		return
 	sentience_act()
 	user.transfer_ckey(src, FALSE)
@@ -74,17 +74,17 @@
 			var/mob/living/A = AM
 			if(A.mob_size > MOB_SIZE_SMALL && !(A.movement_type & FLYING))
 				if(prob(squish_chance))
-					A.visible_message("<span class='notice'>[A] squashed [src].</span>", "<span class='notice'>You squashed [src] under your weight as you fell.</span>")
+					A.visible_message(span_notice("[A] squashed [src]."), span_notice("You squashed [src] under your weight as you fell."))
 					adjustBruteLoss(1)
 				else
-					visible_message("<span class='notice'>[src] avoids getting crushed.</span>")
+					visible_message(span_notice("[src] avoids getting crushed."))
 	else
 		if(isstructure(AM))
 			if(prob(squish_chance))
-				AM.visible_message("<span class='notice'>[src] was crushed under [AM]'s weight as they fell.</span>")
+				AM.visible_message(span_notice("[src] was crushed under [AM]'s weight as they fell."))
 				adjustBruteLoss(1)
 			else
-				visible_message("<span class='notice'>[src] avoids getting crushed.</span>")
+				visible_message(span_notice("[src] avoids getting crushed."))
 
 /mob/living/simple_animal/banana_spider/ex_act()
 	return

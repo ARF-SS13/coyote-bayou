@@ -110,9 +110,9 @@
 	var/msg = "[victim.p_they(TRUE)] [victim.p_have()] [description] on [victim.p_their()] [precise_location]."
 	switch(severity)
 		if(WOUND_SEVERITY_MODERATE)
-			msg = "<span class='tinynotice'>[msg]</span>"
+			msg = span_tinynotice("[msg]")
 		if(WOUND_SEVERITY_SEVERE)
-			msg = "<span class='smallnoticeital'>[msg]</span>"
+			msg = span_smallnoticeital("[msg]")
 		if(WOUND_SEVERITY_CRITICAL)
 			msg = "<span class='smallnoticeital'><b>[msg]</b></span>"
 		if(WOUND_SEVERITY_LOSS)

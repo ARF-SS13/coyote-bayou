@@ -160,7 +160,7 @@
 /obj/item/toy/plush/attack_self(mob/user)
 	. = ..()
 	if(stuffed || grenade)
-		to_chat(user, "<span class='notice'>You pet [src]. D'awww.</span>")
+		to_chat(user, span_notice("You pet [src]. D'awww."))
 		if(grenade && !grenade.active)
 			if(istype(grenade, /obj/item/grenade/chem_grenade))
 				var/obj/item/grenade/chem_grenade/G = grenade
@@ -170,45 +170,45 @@
 			grenade.preprime(user, msg = FALSE, volume = 10)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plushpet", /datum/mood_event/plushpet)
 	else
-		to_chat(user, "<span class='notice'>You try to pet [src], but it has no stuffing. Aww...</span>")
+		to_chat(user, span_notice("You try to pet [src], but it has no stuffing. Aww..."))
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_nostuffing", /datum/mood_event/plush_nostuffing)
 
 /obj/item/toy/plush/attackby(obj/item/I, mob/living/user, params)
 	if(I.get_sharpness())
 		if(!grenade)
 			if(unstuffable)
-				to_chat(user, "<span class='notice'>Nothing to do here.</span>")
+				to_chat(user, span_notice("Nothing to do here."))
 				return
 			if(!stuffed)
-				to_chat(user, "<span class='warning'>You already murdered it!</span>")
+				to_chat(user, span_warning("You already murdered it!"))
 				return
-			user.visible_message("<span class='notice'>[user] tears out the stuffing from [src]!</span>", "<span class='notice'>You rip a bunch of the stuffing from [src]. Murderer.</span>")
+			user.visible_message(span_notice("[user] tears out the stuffing from [src]!"), span_notice("You rip a bunch of the stuffing from [src]. Murderer."))
 			I.play_tool_sound(src)
 			stuffed = FALSE
 			SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plushjack", /datum/mood_event/plushjack)
 		else
-			to_chat(user, "<span class='notice'>You remove the grenade from [src].</span>")
+			to_chat(user, span_notice("You remove the grenade from [src]."))
 			user.put_in_hands(grenade)
 			grenade = null
 		return
 	if(istype(I, /obj/item/grenade))
 		if(unstuffable)
-			to_chat(user, "<span class='warning'>No... you should destroy it now!</span>")
+			to_chat(user, span_warning("No... you should destroy it now!"))
 			sleep(10)
 			if(QDELETED(user) || QDELETED(src))
 				return
 			SEND_SOUND(user, 'sound/weapons/armbomb.ogg')
 			return
 		if(stuffed)
-			to_chat(user, "<span class='warning'>You need to remove some stuffing first!</span>")
+			to_chat(user, span_warning("You need to remove some stuffing first!"))
 			return
 		if(grenade)
-			to_chat(user, "<span class='warning'>[src] already has a grenade!</span>")
+			to_chat(user, span_warning("[src] already has a grenade!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
-		user.visible_message("<span class='warning'>[user] slides [grenade] into [src].</span>", \
-		"<span class='danger'>You slide [I] into [src].</span>")
+		user.visible_message(span_warning("[user] slides [grenade] into [src]."), \
+		span_danger("You slide [I] into [src]."))
 		grenade = I
 		var/turf/grenade_turf = get_turf(src)
 		log_game("[key_name(user)] added a grenade ([I.name]) to [src] at [AREACOORD(grenade_turf)].")
@@ -227,19 +227,19 @@
 
 	//we are not catholic
 	if(young == TRUE || Kisser.young == TRUE)
-		user.show_message("<span class='notice'>[src] plays tag with [Kisser].</span>", MSG_VISUAL,
-			"<span class='notice'>They're happy.</span>", 0)
+		user.show_message(span_notice("[src] plays tag with [Kisser]."), MSG_VISUAL,
+			span_notice("They're happy."), 0)
 		Kisser.cheer_up()
 		cheer_up()
 
 	//never again
 	else if(Kisser in scorned)
 		//message, visible, alternate message, neither visible nor audible
-		user.show_message("<span class='notice'>[src] rejects the advances of [Kisser]!</span>", MSG_VISUAL,
-			"<span class='notice'>That didn't feel like it worked.</span>", 0)
+		user.show_message(span_notice("[src] rejects the advances of [Kisser]!"), MSG_VISUAL,
+			span_notice("That didn't feel like it worked."), 0)
 	else if(src in Kisser.scorned)
-		user.show_message("<span class='notice'>[Kisser] realises who [src] is and turns away.</span>", MSG_VISUAL,
-			"<span class='notice'>That didn't feel like it worked.</span>", 0)
+		user.show_message(span_notice("[Kisser] realises who [src] is and turns away."), MSG_VISUAL,
+			span_notice("That didn't feel like it worked."), 0)
 
 	//first comes love
 	else if(Kisser.lover != src && Kisser.partner != src)	//cannot be lovers or married
@@ -252,39 +252,39 @@
 			chance -= duty	//do we mate for life?
 
 		if(prob(chance))	//did we bag a date?
-			user.visible_message("<span class='notice'>[user] makes [Kisser] kiss [src]!</span>",
-									"<span class='notice'>You make [Kisser] kiss [src]!</span>")
+			user.visible_message(span_notice("[user] makes [Kisser] kiss [src]!"),
+									span_notice("You make [Kisser] kiss [src]!"))
 			if(lover)	//who cares for the past, we live in the present
 				lover.heartbreak(src)
 			new_lover(Kisser)
 			Kisser.new_lover(src)
 		else
-			user.show_message("<span class='notice'>[src] rejects the advances of [Kisser], maybe next time?</span>", MSG_VISUAL,
-								"<span class='notice'>That didn't feel like it worked, this time.</span>", 0)
+			user.show_message(span_notice("[src] rejects the advances of [Kisser], maybe next time?"), MSG_VISUAL,
+								span_notice("That didn't feel like it worked, this time."), 0)
 
 	//then comes marriage
 	else if(Kisser.lover == src && Kisser.partner != src)	//need to be lovers (assumes loving is a two way street) but not married (also assumes similar)
-		user.visible_message("<span class='notice'>[user] pronounces [Kisser] and [src] married! D'aw.</span>",
-									"<span class='notice'>You pronounce [Kisser] and [src] married!</span>")
+		user.visible_message(span_notice("[user] pronounces [Kisser] and [src] married! D'aw."),
+									span_notice("You pronounce [Kisser] and [src] married!"))
 		new_partner(Kisser)
 		Kisser.new_partner(src)
 
 	//then comes a baby in a baby's carriage, or an adoption in an adoption's orphanage
 	else if(Kisser.partner == src && !plush_child)	//the one advancing does not take ownership of the child and we have a one child policy in the toyshop
-		user.visible_message("<span class='notice'>[user] is going to break [Kisser] and [src] by bashing them like that.</span>",
-									"<span class='notice'>[Kisser] passionately embraces [src] in your hands. Look away you perv!</span>")
+		user.visible_message(span_notice("[user] is going to break [Kisser] and [src] by bashing them like that."),
+									span_notice("[Kisser] passionately embraces [src] in your hands. Look away you perv!"))
 		if(plop(Kisser))
-			user.visible_message("<span class='notice'>Something drops at the feet of [user].</span>",
-								"<span class='notice'>The miracle of oh god did that just come out of [src]?!</span>")
+			user.visible_message(span_notice("Something drops at the feet of [user]."),
+								span_notice("The miracle of oh god did that just come out of [src]?!"))
 
 	//then comes protection, or abstinence if we are catholic
 	else if(Kisser.partner == src && plush_child)
-		user.visible_message("<span class='notice'>[user] makes [Kisser] nuzzle [src]!</span>",
-									"<span class='notice'>You make [Kisser] nuzzle [src]!</span>")
+		user.visible_message(span_notice("[user] makes [Kisser] nuzzle [src]!"),
+									span_notice("You make [Kisser] nuzzle [src]!"))
 
 	//then oh fuck something unexpected happened
 	else
-		user.show_message("<span class='warning'>[Kisser] and [src] don't know what to do with one another.</span>", 0)
+		user.show_message(span_warning("[Kisser] and [src] don't know what to do with one another."), 0)
 
 /obj/item/toy/plush/proc/heartbreak(obj/item/toy/plush/Brutus)
 	if(lover != Brutus)
@@ -495,7 +495,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 			clash_target = null
 			return
 		if(!Adjacent(P))
-			visible_message("<span class='warning'>The two plushies angrily flail at each other before giving up.</span>")
+			visible_message(span_warning("The two plushies angrily flail at each other before giving up."))
 			clash_target = null
 			P.clashing = FALSE
 			return
@@ -771,7 +771,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 /obj/item/toy/plush/plushling/attack_self(mob/user)
 	if(!user) //hmmmmm
 		return
-	to_chat(user, "<span class='warning'>You try to pet the plushie, but recoil as it bites your hand instead! OW!</span>")
+	to_chat(user, span_warning("You try to pet the plushie, but recoil as it bites your hand instead! OW!"))
 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"plush_bite", /datum/mood_event/plush_bite)
 	var/mob/living/carbon/human/H = user
 	if(!H)
@@ -807,7 +807,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 			if(istype(P, /obj/item/toy/plush/plushling)) //These do not hunt their own kind
 				continue
 			src.throw_at(P, 1, 2)
-			visible_message("<span class='danger'>[src] leaps at [P]!</span>")
+			visible_message(span_danger("[src] leaps at [P]!"))
 			break
 		return
 	if(istype(target, /obj/item/toy/plush/plushling)) //These do not consume their own.
@@ -818,7 +818,7 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 /obj/item/toy/plush/plushling/proc/plushie_absorb(obj/item/toy/plush/victim)
 	if(!victim)
 		return
-	visible_message("<span class='warning'>[src] gruesomely mutilliates [victim], leaving nothing more than dust!</span>")
+	visible_message(span_warning("[src] gruesomely mutilliates [victim], leaving nothing more than dust!"))
 	if(victim.snowflake_id) //Snowflake code for snowflake plushies.
 		set_snowflake_from_config(victim.snowflake_id)
 		desc += " Wait, did it just move..?"

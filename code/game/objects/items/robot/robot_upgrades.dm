@@ -19,11 +19,11 @@
 
 /obj/item/borg/upgrade/proc/action(mob/living/silicon/robot/R, user = usr)
 	if(R.stat == DEAD)
-		to_chat(user, "<span class='warning'>[src] will not function on a deceased cyborg.</span>")
+		to_chat(user, span_warning("[src] will not function on a deceased cyborg."))
 		return FALSE
 	if(module_type && !is_type_in_list(R.module, module_type))
-		to_chat(R, "<span class='alert'>Upgrade mounting error! No suitable hardpoint detected.</span>")
-		to_chat(user, "<span class='warning'>There's no mounting point for the module!</span>")
+		to_chat(R, span_alert("Upgrade mounting error! No suitable hardpoint detected."))
+		to_chat(user, span_warning("There's no mounting point for the module!"))
 		return FALSE
 	return TRUE
 
@@ -66,7 +66,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 /obj/item/borg/upgrade/restart/action(mob/living/silicon/robot/R, user = usr)
 	if(R.health < 0)
-		to_chat(user, "<span class='warning'>You have to repair the cyborg before using this module!</span>")
+		to_chat(user, span_warning("You have to repair the cyborg before using this module!"))
 		return FALSE
 
 	if(R.mind)
@@ -85,8 +85,8 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	. = ..()
 	if(.)
 		if(!R.cansprint)
-			to_chat(R, "<span class='notice'>A VTEC unit is already installed!</span>")
-			to_chat(user, "<span class='notice'>There's no room for another VTEC unit!</span>")
+			to_chat(R, span_notice("A VTEC unit is already installed!"))
+			to_chat(user, span_notice("There's no room for another VTEC unit!"))
 			return FALSE
 
 		//R.speed = -2 // Gotta go fast.
@@ -118,11 +118,11 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 			T.charge_delay = max(2, T.charge_delay - 4)
 			successflag = 1
 		if(!successflag)
-			to_chat(user, "<span class='notice'>There's no energy-based firearm in this unit!</span>")
+			to_chat(user, span_notice("There's no energy-based firearm in this unit!"))
 			return FALSE
 		if(successflag == 2)
-			to_chat(R, "<span class='notice'>A cooling unit is already installed!</span>")
-			to_chat(user, "<span class='notice'>There's no room for another cooling unit!</span>")
+			to_chat(R, span_notice("A cooling unit is already installed!"))
+			to_chat(user, span_notice("There's no room for another cooling unit!"))
 			return FALSE
 
 /obj/item/borg/upgrade/disablercooler/deactivate(mob/living/silicon/robot/R, user = usr)
@@ -142,7 +142,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	. = ..()
 	if(.)
 		if(R.ionpulse)
-			to_chat(user, "<span class='notice'>This unit already has ion thrusters installed!</span>")
+			to_chat(user, span_notice("This unit already has ion thrusters installed!"))
 			return FALSE
 
 		R.ionpulse = TRUE
@@ -326,7 +326,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	if(.)
 		var/obj/item/borg/upgrade/selfrepair/U = locate() in R
 		if(U)
-			to_chat(user, "<span class='warning'>This unit is already equipped with a self-repair module.</span>")
+			to_chat(user, span_warning("This unit is already equipped with a self-repair module."))
 			return FALSE
 
 		icon_state = "selfrepair_off"
@@ -342,10 +342,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 /obj/item/borg/upgrade/selfrepair/ui_action_click()
 	if(on)
-		to_chat(toggle_action.owner, "<span class='notice'>You deactivate the self-repair module.</span>")
+		to_chat(toggle_action.owner, span_notice("You deactivate the self-repair module."))
 		deactivate_sr()
 	else
-		to_chat(toggle_action.owner, "<span class='notice'>You activate the self-repair module.</span>")
+		to_chat(toggle_action.owner, span_notice("You activate the self-repair module."))
 		activate_sr()
 
 /obj/item/borg/upgrade/selfrepair/update_icon_state()
@@ -373,12 +373,12 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 	if(istype(cyborg) && (cyborg.stat != DEAD) && on)
 		if(!cyborg.cell)
-			to_chat(cyborg, "<span class='warning'>Self-repair module deactivated. Please, insert the power cell.</span>")
+			to_chat(cyborg, span_warning("Self-repair module deactivated. Please, insert the power cell."))
 			deactivate_sr()
 			return
 
 		if(cyborg.cell.charge < powercost * 2)
-			to_chat(cyborg, "<span class='warning'>Self-repair module deactivated. Please recharge.</span>")
+			to_chat(cyborg, span_warning("Self-repair module deactivated. Please recharge."))
 			deactivate_sr()
 			return
 
@@ -534,10 +534,10 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	. = ..()
 	if(.)
 		if(R.shell)
-			to_chat(user, "<span class='warning'>This unit is already an AI shell!</span>")
+			to_chat(user, span_warning("This unit is already an AI shell!"))
 			return FALSE
 		if(R.key) //You cannot replace a player unless the key is completely removed.
-			to_chat(user, "<span class='warning'>Intelligence patterns detected in this [R.braintype]. Aborting.</span>")
+			to_chat(user, span_warning("Intelligence patterns detected in this [R.braintype]. Aborting."))
 			return FALSE
 
 		R.make_shell(src)
@@ -559,7 +559,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	if(.)
 
 		if(R.hasExpanded)
-			to_chat(usr, "<span class='notice'>This unit already has an expand module installed!</span>")
+			to_chat(usr, span_notice("This unit already has an expand module installed!"))
 			return FALSE
 
 		R.mob_transforming = TRUE
@@ -608,7 +608,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		if(!BSRPED)
 			BSRPED = locate() in R.module //There's gotta be a smarter way to do this.
 		if(BSRPED)
-			to_chat(user, "<span class='warning'>This unit is already equipped with a BSRPED module.</span>")
+			to_chat(user, span_warning("This unit is already equipped with a BSRPED module."))
 			return FALSE
 
 		BSRPED = new(R.module)
@@ -639,7 +639,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 		var/obj/item/pinpointer/crew/PP = locate() in R
 		if(PP)
-			to_chat(user, "<span class='warning'>This unit is already equipped with a pinpointer module.</span>")
+			to_chat(user, span_warning("This unit is already equipped with a pinpointer module."))
 			return FALSE
 
 		PP = new(R.module)

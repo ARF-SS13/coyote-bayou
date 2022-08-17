@@ -39,16 +39,16 @@
 		if (istype(W, /obj/item/screwdriver))
 			if (W.use_tool(src, user, 20))
 				open =! open
-				to_chat(user, "<span class='notice'>You [open ? "open" : "close"] the service panel.</span>")
+				to_chat(user, span_notice("You [open ? "open" : "close"] the service panel."))
 			return
 		if (istype(W, /obj/item/wirecutters))
 			to_chat(user, "<span class='danger'>[src] is protected from this sort of tampering, yet it appears the internal memory wires can still be <b>pulsed</b>.</span>")
 		if ((istype(W, /obj/item/multitool)) && (!l_hacking))
 			if(open == 1)
-				to_chat(user, "<span class='danger'>Now attempting to reset internal memory, please hold.</span>")
+				to_chat(user, span_danger("Now attempting to reset internal memory, please hold."))
 				l_hacking = 1
 				if (W.use_tool(src, user, 400))
-					to_chat(user, "<span class='danger'>Internal memory reset - lock has been disengaged.</span>")
+					to_chat(user, span_danger("Internal memory reset - lock has been disengaged."))
 					l_set = 0
 					l_hacking = 0
 				else

@@ -10,17 +10,17 @@
 
 /datum/action/ranger_takedown/Trigger()
 	if(owner.incapacitated())
-		to_chat(owner, "<span class='warning'>You can't use [name] while you're incapacitated.</span>")
+		to_chat(owner, span_warning("You can't use [name] while you're incapacitated."))
 		return
 	var/mob/living/carbon/human/H = owner
 	if (H.mind.martial_art.streak == "ranger_takedown")
-		owner.visible_message("<span class='danger'>[owner] assumes a neutral stance.</span>", "<b><i>Your next attack is cleared.</i></b>")
+		owner.visible_message(span_danger("[owner] assumes a neutral stance."), "<b><i>Your next attack is cleared.</i></b>")
 		H.mind.martial_art.streak = ""
 	else
 		if(HAS_TRAIT(H, TRAIT_PACIFISM))
-			to_chat(H, "<span class='warning'>You don't want to harm other people!</span>")
+			to_chat(H, span_warning("You don't want to harm other people!"))
 			return
-		owner.visible_message("<span class='danger'>[owner] assumes the Ranger Takedown stance!</span>", "<b><i>Your next attack will be a Ranger Takedown.</i></b>")
+		owner.visible_message(span_danger("[owner] assumes the Ranger Takedown stance!"), "<b><i>Your next attack will be a Ranger Takedown.</i></b>")
 		H.mind.martial_art.streak = "ranger_takedown"
 
 /datum/martial_art/rangertakedown/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
@@ -61,7 +61,7 @@
 	if(!CHECK_MOBILITY(D, MOBILITY_STAND)) //If the target is not upright, it is a regular disarm.
 		return FALSE
 	D.visible_message("<span class='warning'>[A] leg sweeps [D], performing a Ranger Takedown!", \
-						"<span class='userdanger'>[A] uses the Ranger Takedown on you!</span>")
+						span_userdanger("[A] uses the Ranger Takedown on you!"))
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
 	A.adjustStaminaLoss(30) //The disarm will cost stamina to use. You are able to take down four opponents in quick succession before your stamina caps out.
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, 1, -1)

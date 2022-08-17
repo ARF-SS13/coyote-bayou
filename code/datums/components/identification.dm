@@ -9,7 +9,7 @@
 	/// General flags for how we can be identified.
 	var/identification_method_flags = NONE
 	/// If this is set, show this on examine to the examiner if they know how to use it.
-	var/additional_examine_text = "<span class='notice'>You seem to know more about this item than others..</span>"
+	var/additional_examine_text = span_notice("You seem to know more about this item than others..")
 	/// Added to deconstructive analyzer say on success if set
 	var/deconstructor_reveal_text = "item operation instructions"
 

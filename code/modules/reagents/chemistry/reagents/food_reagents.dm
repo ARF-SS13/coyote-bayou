@@ -119,7 +119,7 @@
 /datum/reagent/consumable/cooking_oil/reaction_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
 		if(isitem(O) && !O.GetComponent(/datum/component/fried) && !(O.resistance_flags & (FIRE_PROOF|INDESTRUCTIBLE)) && (!O.reagents || isfood(O))) //don't fry stuff we shouldn't
-			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
+			O.loc.visible_message(span_warning("[O] rapidly fries as it's splashed with hot oil! Somehow."))
 			O.fry(volume)
 			if(O.reagents)
 				O.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
@@ -131,8 +131,8 @@
 		boiling = TRUE
 	if(method == VAPOR || method == TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
 		if(boiling)
-			M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
-			"<span class='userdanger'>You're covered in boiling oil!</span>")
+			M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!"), \
+			span_userdanger("You're covered in boiling oil!"))
 			M.emote("scream")
 			playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 			var/oil_damage = min((holder.chem_temp / fry_temperature) * 0.33,1) //Damage taken per unit
@@ -168,7 +168,7 @@
 		mytray.adjustPests(rand(1,2))
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
+	to_chat(M, span_userdanger("You go into hyperglycaemic shock! Lay off the twinkies!"))
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 
@@ -358,7 +358,7 @@
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+		M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
 
 /datum/reagent/consumable/sodiumchloride
@@ -449,7 +449,7 @@
 /datum/reagent/consumable/coyotejuice/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	M.AdjustStun(-4, 0)
 	M.AdjustKnockdown(-4, 0)
 	M.AdjustUnconscious(-4, 0)
@@ -546,7 +546,7 @@
 /datum/reagent/consumable/garlic/on_mob_life(mob/living/carbon/M)
 	if(isvampire(M)) //incapacitating but not lethal. Unfortunately, vampires cannot vomit.
 		if(prob(min(25, current_cycle)))
-			to_chat(M, "<span class='danger'>You can't get the scent of garlic out of your nose! You can barely think...</span>")
+			to_chat(M, span_danger("You can't get the scent of garlic out of your nose! You can barely think..."))
 			M.Stun(10)
 			M.Jitter(10)
 			return
@@ -564,10 +564,10 @@
 		switch(method)
 			if(INGEST)
 				if(prob(min(30, current_cycle)))
-					to_chat(M, "<span class='warning'>You cant get the smell of garlic out of your nose! You cant think straight because of it!</span>")
+					to_chat(M, span_warning("You cant get the smell of garlic out of your nose! You cant think straight because of it!"))
 					M.Jitter(15)
 				if(prob(min(15, current_cycle)))
-					M.visible_message("<span class='danger'>Something you ate is burning your stomach!</span>", "<span class='warning'>[M] clutches their stomach and falls to the ground!</span>")
+					M.visible_message(span_danger("Something you ate is burning your stomach!"), span_warning("[M] clutches their stomach and falls to the ground!"))
 					M.Knockdown(20)
 					M.emote("scream")
 				if(prob(min(5, current_cycle)) && iscarbon(M))
@@ -575,7 +575,7 @@
 					C.vomit()
 			if(INJECT)
 				if(prob(min(20, current_cycle)))
-					to_chat(M, "<span class='warning'>You feel like your veins are boiling!</span>")
+					to_chat(M, span_warning("You feel like your veins are boiling!"))
 					M.emote("scream")
 					M.adjustFireLoss(5)
 	..()
@@ -755,7 +755,6 @@
 	name = "Mayonnaise"
 	description = "An white and oily mixture of mixed egg yolks."
 	color = "#DFDFDF"
-	value = 5
 	taste_description = "mayonnaise"
 	value = REAGENT_VALUE_COMMON
 

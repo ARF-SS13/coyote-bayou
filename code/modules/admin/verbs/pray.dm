@@ -3,7 +3,7 @@
 	set name = "Pray"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	msg = copytext_char(sanitize(msg), 1, MAX_MESSAGE_LEN)
@@ -12,7 +12,7 @@
 	log_prayer("[src.key]/([src.name]): [msg]")
 	if(usr.client)
 		if(usr.client.prefs.muted & MUTE_PRAY)
-			to_chat(usr, "<span class='danger'>You cannot pray (muted).</span>")
+			to_chat(usr, span_danger("You cannot pray (muted)."))
 			return
 		if(src.client.handle_spam_prevention(msg,MUTE_PRAY))
 			return
@@ -50,7 +50,7 @@
 					SEND_SOUND(C, sound('sound/effects/pray.ogg'))
 				else
 					SEND_SOUND(C, sound('sound/effects/ding.ogg'))
-	to_chat(usr, "<span class='info'>You pray to the gods: \"[msg_tmp]\"</span>")
+	to_chat(usr, span_info("You pray to the gods: \"[msg_tmp]\""))
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Prayer") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	//log_admin("HELP: [key_name(src)]: [msg]")

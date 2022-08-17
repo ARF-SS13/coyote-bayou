@@ -56,7 +56,7 @@
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
 /obj/item/twohanded/legionaxe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS)
 
 /obj/item/twohanded/legionaxe/afterattack(atom/A, mob/living/user, proximity)
@@ -99,7 +99,7 @@
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
 
 /obj/item/twohanded/fireaxe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] axes [user.p_them()]self from head to toe! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS)
 
 /obj/item/twohanded/fireaxe/afterattack(atom/A, mob/living/user, proximity)
@@ -219,7 +219,7 @@
 		. += "spearbomb_overlay"
 
 /obj/item/twohanded/spear/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins to sword-swallow \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	if(explosive) //Citadel Edit removes qdel and explosive.forcemove(AM)
 		user.say("[war_cry]", forced="spear warcry")
 		explosive.prime()
@@ -230,8 +230,8 @@
 /obj/item/twohanded/spear/examine(mob/user)
 	. = ..()
 	if(explosive)
-		. += "<span class='notice'>Alt-click to set your war cry.</span>"
-		. += "<span class='notice'>Right-click in combat mode to activate the attached explosive.</span>"
+		. += span_notice("Alt-click to set your war cry.")
+		. += span_notice("Right-click in combat mode to activate the attached explosive.")
 
 /obj/item/twohanded/spear/afterattack(atom/movable/AM, mob/user, proximity)
 	. = ..()
@@ -350,7 +350,6 @@
 	attack_verb = list("beat", "smacked", "clubbed", "clobbered")
 	w_class = WEIGHT_CLASS_NORMAL
 	sharpness = SHARP_NONE
-	icon_prefix = "baseball"
 	wielded_icon = "baseball2"
 	force_unwielded = 24
 	force_wielded = 30
@@ -679,7 +678,7 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 		var/mob/living/carbon/human/U = user
 		if(U.job in list("Priestess of Mars"))
 		else
-			to_chat(user, "<span class='userdanger'>You invoke the wrath of Mars!</span>")
+			to_chat(user, span_userdanger("You invoke the wrath of Mars!"))
 			user.emote("scream")
 			user.apply_damage(30, BURN, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
 			user.dropItemToGround(src, TRUE)
@@ -801,13 +800,13 @@ obj/item/twohanded/sledgehammer/supersledge/afterattack(atom/A, mob/living/user,
 
 /obj/item/twohanded/steelsaw/suicide_act(mob/living/carbon/user)
 	if(on)
-		user.visible_message("<span class='suicide'>[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] begins to tear [user.p_their()] head off with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 		playsound(src, 'sound/weapons/chainsawhit.ogg', 100, 1)
 		var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 		if(myhead)
 			myhead.dismember()
 	else
-		user.visible_message("<span class='suicide'>[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] smashes [src] into [user.p_their()] neck, destroying [user.p_their()] esophagus! It looks like [user.p_theyre()] trying to commit suicide!"))
 		playsound(src, 'sound/weapons/genhit1.ogg', 100, 1)
 	return(BRUTELOSS)
 
@@ -903,10 +902,10 @@ CODE FOR POISON EFFECT
 
 	if(!wielded) //sends empty message when venom is dry and defaults back to normal attack, and allows for injection attack if possible//
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src]'s venom has been used up!</span>")
+			to_chat(user, span_warning("[src]'s venom has been used up!"))
 		else
 			if(L.can_inject(user, 1))
-				to_chat(user, "<span class='warning'>Your light strike successfully injects venom into [L]'s veins.</span>")
+				to_chat(user, span_warning("Your light strike successfully injects venom into [L]'s veins."))
 				. = 1
 
 				add_logs(user, L, "stabbed", src) //left this here, but it may or may not work properly

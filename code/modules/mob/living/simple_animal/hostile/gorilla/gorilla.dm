@@ -6,7 +6,6 @@
 	desc = "A ground-dwelling, predominantly herbivorous ape that inhabits the forests of central Africa."
 	icon = 'icons/mob/gorilla.dmi'
 	icon_state = "crawling"
-	icon_state = "crawling"
 	icon_living = "crawling"
 	icon_dead = "dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -76,7 +75,7 @@
 			L.throw_at(throw_target, rand(1,2), 7, src)
 		else
 			L.DefaultCombatKnockdown(20)
-			visible_message("<span class='danger'>[src] knocks [L] down!</span>")
+			visible_message(span_danger("[src] knocks [L] down!"))
 
 /mob/living/simple_animal/hostile/gorilla/CanAttack(atom/the_target)
 	var/list/parts = target_bodyparts(target)
@@ -102,7 +101,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/gorilla/can_use_guns(obj/item/G)
-	to_chat(src, "<span class='warning'>Your meaty finger is much too large for the trigger guard!</span>")
+	to_chat(src, span_warning("Your meaty finger is much too large for the trigger guard!"))
 	return FALSE
 
 

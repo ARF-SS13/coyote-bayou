@@ -96,30 +96,30 @@
 		if("vr_connect")
 			var/mob/M = occupant
 			if(M?.mind && M == usr)
-				to_chat(M, "<span class='warning'>Transferring to virtual reality...</span>")
+				to_chat(M, span_warning("Transferring to virtual reality..."))
 				var/datum/component/virtual_reality/VR
 				if(vr_mob)
 					VR = vr_mob.GetComponent(/datum/component/virtual_reality)
 				if(!(VR?.connect(M)))
 					if(allow_creating_vr_mobs)
-						to_chat(occupant, "<span class='warning'>Virtual avatar [vr_mob ? "corrupted" : "missing"], attempting to create one...</span>")
+						to_chat(occupant, span_warning("Virtual avatar [vr_mob ? "corrupted" : "missing"], attempting to create one..."))
 						var/obj/effect/landmark/vr_spawn/V = get_vr_spawnpoint()
 						var/turf/T = get_turf(V)
 						if(T)
 							new_player(occupant, T, V.vr_outfit)
 						else
-							to_chat(occupant, "<span class='warning'>Virtual world misconfigured, aborting transfer</span>")
+							to_chat(occupant, span_warning("Virtual world misconfigured, aborting transfer"))
 					else
-						to_chat(occupant, "<span class='warning'>The virtual world does not support the creation of new virtual avatars, aborting transfer</span>")
+						to_chat(occupant, span_warning("The virtual world does not support the creation of new virtual avatars, aborting transfer"))
 				else
-					to_chat(vr_mob, "<span class='notice'>Transfer successful! You are now playing as [vr_mob] in VR!</span>")
+					to_chat(vr_mob, span_notice("Transfer successful! You are now playing as [vr_mob] in VR!"))
 			. = TRUE
 		if("delete_avatar")
 			if(!occupant || usr == occupant)
 				if(vr_mob)
 					cleanup_vr_mob()
 			else
-				to_chat(usr, "<span class='warning'>The VR Sleeper's safeties prevent you from doing that.</span>")
+				to_chat(usr, span_warning("The VR Sleeper's safeties prevent you from doing that."))
 			. = TRUE
 		if("toggle_open")
 			if(state_open)
@@ -182,9 +182,9 @@
 			VR.RegisterSignal(src, COMSIG_ATOM_EMAG_ACT, /datum/component/virtual_reality.proc/you_only_live_once)
 		VR.RegisterSignal(src, COMSIG_MACHINE_EJECT_OCCUPANT, /datum/component/virtual_reality.proc/revert_to_reality)
 		VR.RegisterSignal(src, COMSIG_PARENT_QDELETING, /datum/component/virtual_reality.proc/machine_destroyed)
-		to_chat(vr_mob, "<span class='notice'>Transfer successful! You are now playing as [vr_mob] in VR!</span>")
+		to_chat(vr_mob, span_notice("Transfer successful! You are now playing as [vr_mob] in VR!"))
 	else
-		to_chat(M, "<span class='notice'>Transfer failed! virtual reality data likely corrupted!</span>")
+		to_chat(M, span_notice("Transfer failed! virtual reality data likely corrupted!"))
 
 /obj/machinery/vr_sleeper/proc/unset_vr_mob(datum/component/virtual_reality/VR)
 	vr_mob = null

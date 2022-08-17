@@ -26,7 +26,7 @@
 
 /obj/item/melee/baton/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Right click attack while in combat mode to disarm instead of stun.</span>"
+	. += span_notice("Right click attack while in combat mode to disarm instead of stun.")
 
 /obj/item/melee/baton/get_cell()
 	. = cell
@@ -35,7 +35,7 @@
 		. = R.get_cell()
 
 /obj/item/melee/baton/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is putting the live [name] in [user.p_their()] mouth! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (FIRELOSS)
 
 /obj/item/melee/baton/Initialize(mapload)
@@ -97,23 +97,23 @@
 	. = ..()
 	var/obj/item/stock_parts/cell/copper_top = get_cell()
 	if(copper_top)
-		. += "<span class='notice'>\The [src] is [round(copper_top.percent())]% charged.</span>"
+		. += span_notice("\The [src] is [round(copper_top.percent())]% charged.")
 	else
-		. += "<span class='warning'>\The [src] does not have a power source installed.</span>"
+		. += span_warning("\The [src] does not have a power source installed.")
 
 /obj/item/melee/baton/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/C = W
 		if(cell)
-			to_chat(user, "<span class='notice'>[src] already has a cell.</span>")
+			to_chat(user, span_notice("[src] already has a cell."))
 		else
 			if(C.maxcharge < (hitcost * STUNBATON_CHARGE_LENIENCY))
-				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
+				to_chat(user, span_notice("[src] requires a higher capacity cell."))
 				return
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = W
-			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
+			to_chat(user, span_notice("You install a cell in [src]."))
 			update_icon()
 
 	else if(istype(W, /obj/item/screwdriver))
@@ -121,7 +121,7 @@
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
+			to_chat(user, span_notice("You remove the cell from [src]."))
 			switch_status(FALSE, TRUE)
 	else
 		return ..()
@@ -131,12 +131,12 @@
 	if(!copper_top || copper_top.charge < (hitcost * STUNBATON_CHARGE_LENIENCY))
 		switch_status(FALSE, TRUE)
 		if(!copper_top)
-			to_chat(user, "<span class='warning'>[src] does not have a power source!</span>")
+			to_chat(user, span_warning("[src] does not have a power source!"))
 		else
-			to_chat(user, "<span class='warning'>[src] is out of charge.</span>")
+			to_chat(user, span_warning("[src] is out of charge."))
 	else
 		switch_status(!turned_on)
-		to_chat(user, "<span class='notice'>[src] is now [turned_on ? "on" : "off"].</span>")
+		to_chat(user, span_notice("[src] is now [turned_on ? "on" : "off"]."))
 	add_fingerprint(user)
 
 /obj/item/melee/baton/attack(mob/M, mob/living/carbon/human/user)
@@ -156,7 +156,7 @@
 	if(turned_on && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		clowning_around(user)
 	if(IS_STAMCRIT(user))			//CIT CHANGE - makes it impossible to baton in stamina softcrit
-		to_chat(user, "<span class='danger'>You're too exhausted to use [src] properly.</span>")
+		to_chat(user, span_danger("You're too exhausted to use [src] properly."))
 		return TRUE
 	user.DelayNextAction()
 	if(ishuman(M))
@@ -168,8 +168,8 @@
 			user.do_attack_animation(M)
 			user.adjustStaminaLossBuffered(getweight(user, STAM_COST_BATON_MOB_MULT))
 	else if(user.a_intent != INTENT_HARM)			//they'll try to bash in the last proc.
-		M.visible_message("<span class='warning'>[user] has prodded [M] with [src]. Luckily it was off.</span>", \
-						"<span class='warning'>[user] has prodded you with [src]. Luckily it was off</span>")
+		M.visible_message(span_warning("[user] has prodded [M] with [src]. Luckily it was off."), \
+						span_warning("[user] has prodded you with [src]. Luckily it was off"))
 	return disarming || (user.a_intent != INTENT_HARM)
 
 /obj/item/melee/baton/proc/baton_stun(mob/living/L, mob/user, disarming = FALSE)
@@ -189,8 +189,8 @@
 		return FALSE
 	if(stuncharge < hitcost)
 		if(stuncharge < (hitcost * STUNBATON_CHARGE_LENIENCY))
-			L.visible_message("<span class='warning'>[user] has prodded [L] with [src]. Luckily it was out of charge.</span>", \
-							"<span class='warning'>[user] has prodded you with [src]. Luckily it was out of charge.</span>")
+			L.visible_message(span_warning("[user] has prodded [L] with [src]. Luckily it was out of charge."), \
+							span_warning("[user] has prodded you with [src]. Luckily it was out of charge."))
 			return FALSE
 		stunpwr *= round(stuncharge/hitcost, 0.1)
 
@@ -206,8 +206,8 @@
 	if(user)
 		L.lastattacker = user.real_name
 		L.lastattackerckey = user.ckey
-		L.visible_message("<span class='danger'>[user] has [disarming? "disarmed" : "stunned"] [L] with [src]!</span>", \
-								"<span class='userdanger'>[user] has [disarming? "disarmed" : "stunned"] you with [src]!</span>")
+		L.visible_message(span_danger("[user] has [disarming? "disarmed" : "stunned"] [L] with [src]!"), \
+								span_userdanger("[user] has [disarming? "disarmed" : "stunned"] you with [src]!"))
 		log_combat(user, L, disarming? "disarmed" : "stunned")
 
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
@@ -220,8 +220,8 @@
 	return TRUE
 
 /obj/item/melee/baton/proc/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
-						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
+	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
+						span_userdanger("You accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	user.DefaultCombatKnockdown(stamforce*6)
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
@@ -268,9 +268,9 @@
 			qdel(O) //Gets rid of the baton
 			qdel(src) //gets rid of the kit
 			return
-		to_chat(user,"<span class='warning'>Remove the powercell first!</span>") //We make this check because the stunsword starts without a battery.
+		to_chat(user,span_warning("Remove the powercell first!")) //We make this check because the stunsword starts without a battery.
 		return
-	to_chat(user, "<span class='warning'>You can't modify [O] with this kit!</span>")
+	to_chat(user, span_warning("You can't modify [O] with this kit!"))
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/cattleprod

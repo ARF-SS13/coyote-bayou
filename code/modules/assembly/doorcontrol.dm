@@ -20,15 +20,15 @@
 /obj/item/assembly/control/examine(mob/user)
 	. = ..()
 	if(id && show_id)
-		. += "<span class='notice'>Its channel ID is '[id]'.</span>"
+		. += span_notice("Its channel ID is '[id]'.")
 	if(can_change_id)
-		. += "<span class='notice'>Use in hand to change ID.</span>"
+		. += span_notice("Use in hand to change ID.")
 
 /obj/item/assembly/control/multitool_act(mob/living/user)
 	var/change_id = input("Set the shutters/blast door/blast door controllers ID. It must be a number between 1 and 100.", "ID", id) as num|null
 	if(change_id)
 		id = clamp(round(change_id, 1), 1, 100)
-		to_chat(user, "<span class='notice'>You change the ID to [id].</span>")
+		to_chat(user, span_notice("You change the ID to [id]."))
 /obj/item/assembly/control/attack_self(mob/living/user)
 	. = ..()
 	if(!can_change_id)

@@ -11,7 +11,7 @@
 	level = 3
 	glass_amount = 2
 
-	/obj/structure/window/reinforced/fulltile/wood_window
+/obj/structure/window/reinforced/fulltile/wood_window
 
 	icon_state = "woodwindow"
 	max_integrity = 150
