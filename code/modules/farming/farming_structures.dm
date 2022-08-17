@@ -31,39 +31,53 @@
 	. = ..()
 	. += span_notice("It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]")
 
-/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
-	var/amount = fruit.seed.potency / 4
-	if(fruit.distill_reagent)
-		reagents.add_reagent(fruit.distill_reagent, amount)
-	else
-		var/data = list()
-		data["names"] = list("[initial(fruit.name)]" = 1)
-		data["color"] = fruit.filling_color
-		data["boozepwr"] = fruit.wine_power
-		if(fruit.wine_flavor)
-			data["tastes"] = list(fruit.wine_flavor = 1)
+/obj/structure/fermenting_barrel/proc/makeWine(list/obj/item/reagent_containers/food/snacks/grown/fruits)
+	for(var/obj/item/reagent_containers/food/snacks/grown/fruit in fruits)
+		var/amount = fruit.seed.potency / 4
+		if(fruit.distill_reagent)
+			reagents.add_reagent(fruit.distill_reagent, amount)
 		else
-			data["tastes"] = list(fruit.tastes[1] = 1)
-		reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
-	qdel(fruit)
+			var/data = list()
+			data["names"] = list("[initial(fruit.name)]" = 1)
+			data["color"] = fruit.filling_color
+			data["boozepwr"] = fruit.wine_power
+			if(fruit.wine_flavor)
+				data["tastes"] = list(fruit.wine_flavor = 1)
+			else
+				data["tastes"] = list(fruit.tastes[1] = 1)
+			reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
+		qdel(fruit)
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 
 /obj/structure/fermenting_barrel/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
-			to_chat(user, span_warning("You can't distill this into anything..."))
+			to_chat(user, span_warning("You can't ferment this into anything..."))
 			return TRUE
 		else if(!user.transferItemToLoc(I,src))
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
 		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
-		addtimer(CALLBACK(src, .proc/makeWine, fruit), rand(80, 120) * speed_multiplier)
+		addtimer(CALLBACK(src, .proc/makeWine, list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 		return TRUE
-	var/obj/item/W = I
-	if(W)
-		if(W.is_refillable())
-			return FALSE //so we can refill them via their afterattack.
+	else if(SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && do_after(user, 2 SECONDS, target = src))
+		var/list/storage_contents = list()
+		SEND_SIGNAL(I, COMSIG_TRY_STORAGE_RETURN_INVENTORY, storage_contents)
+		var/list/fruits = list()
+		for(var/obj/item in storage_contents)
+			fruit = item
+			if(!istype(fruit) || !fruit.can_distill || !SEND_SIGNAL(I, COMSIG_TRY_STORAGE_TAKE, fruit, src))
+				continue
+			fruits += fruit
+		if (length(fruits))
+			addtimer(CALLBACK(src, .proc/makeWine, fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
+			to_chat(user, span_notice("You fill \the [src] from \the [I] and start the fermentation process."))
+		else
+			to_chat(user, span_warning("There's nothing in \the [I] that you can ferment!"))
+		return TRUE
+	if(I?.is_refillable())
+		return FALSE //so we can refill them via their afterattack.
 	else
 		return ..()
 
@@ -237,53 +251,64 @@
 	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
-/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, obj/structure/legion_extractor/extractor, mob/living/user)
+/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, mob/living/user)
 	var/t_amount = 0
-	var/list/seeds = list()
 	if(t_max == -1)
 		t_max = rand(1,2) //Slightly worse than the actual thing
 
-	var/seedloc = O.loc
-	if(extractor)
-		seedloc = extractor.loc
+	var/atom/seedloc = src.drop_location()
 
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/))
 		var/obj/item/reagent_containers/food/snacks/grown/F = O
 		if(F.seed)
 			if(user && !user.temporarilyRemoveItemFromInventory(O)) //couldn't drop the item
 				return
-			while(t_amount < t_max)
-				var/obj/item/seeds/t_prod = F.seed.Copy()
-				seeds.Add(t_prod)
-				t_prod.forceMove(seedloc)
-				t_amount++
-			qdel(O)
-			return seeds
-
-	else if(istype(O, /obj/item/grown))
-		var/obj/item/grown/F = O
-		if(F.seed)
-			if(user && !user.temporarilyRemoveItemFromInventory(O))
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null)) // couldn't remove from storage
 				return
 			while(t_amount < t_max)
 				var/obj/item/seeds/t_prod = F.seed.Copy()
 				t_prod.forceMove(seedloc)
 				t_amount++
 			qdel(O)
-		return 1
-
-	return 0
+	else if(istype(O, /obj/item/grown))
+		var/obj/item/grown/F = O
+		if(F.seed)
+			if(user && !user.temporarilyRemoveItemFromInventory(O))
+				return
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null))
+				return
+			while(t_amount < t_max)
+				var/obj/item/seeds/t_prod = F.seed.Copy()
+				t_prod.forceMove(seedloc)
+				t_amount++
+			qdel(O)
+	return t_amount
 
 /obj/structure/legion_extractor/attackby(obj/item/O, mob/user, params)
-
 	if(default_unfasten_wrench(user, O)) //So we can move them around
 		return
-
-	else if(seedify(O,-1, src, user))
+	else if(istype(O, /obj/item/storage/bag/plants))
+		var/obj/item/storage/bag/plants/PB = O
+		if(!PB.contents.len)
+			to_chat(user, span_warning("There's nothing in \the [PB]!"))
+			return
+		to_chat(user, span_info("You start to empty \the [PB] into \the [src]."))
+		var/count = 0
+		if(!do_after(user, 2 SECONDS, target = src))
+			return
+		for(var/obj/item/G in PB.contents)
+			count += seedify(G, -1, user) // seedify handles removing applicable items from storage
+		if(count > 0)
+			to_chat(user, span_info("You empty \the [PB] into \the [src]."))
+			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
+		else
+			to_chat(user, span_warning("You can't extract seeds from anything in \the [PB]!"))
+		return
+	else if(seedify(O, -1, user))
 		to_chat(user, span_notice("You extract some seeds."))
 		return
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, span_warning("You can't extract any seeds from \the [O.name]!"))
+		to_chat(user, span_warning("You can't extract any seeds from \the [O]!"))
 	else
 		return ..()
 
