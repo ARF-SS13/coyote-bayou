@@ -31,39 +31,53 @@
 	. = ..()
 	. += span_notice("It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]")
 
-/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
-	var/amount = fruit.seed.potency / 4
-	if(fruit.distill_reagent)
-		reagents.add_reagent(fruit.distill_reagent, amount)
-	else
-		var/data = list()
-		data["names"] = list("[initial(fruit.name)]" = 1)
-		data["color"] = fruit.filling_color
-		data["boozepwr"] = fruit.wine_power
-		if(fruit.wine_flavor)
-			data["tastes"] = list(fruit.wine_flavor = 1)
+/obj/structure/fermenting_barrel/proc/makeWine(list/obj/item/reagent_containers/food/snacks/grown/fruits)
+	for(var/obj/item/reagent_containers/food/snacks/grown/fruit in fruits)
+		var/amount = fruit.seed.potency / 4
+		if(fruit.distill_reagent)
+			reagents.add_reagent(fruit.distill_reagent, amount)
 		else
-			data["tastes"] = list(fruit.tastes[1] = 1)
-		reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
-	qdel(fruit)
+			var/data = list()
+			data["names"] = list("[initial(fruit.name)]" = 1)
+			data["color"] = fruit.filling_color
+			data["boozepwr"] = fruit.wine_power
+			if(fruit.wine_flavor)
+				data["tastes"] = list(fruit.wine_flavor = 1)
+			else
+				data["tastes"] = list(fruit.tastes[1] = 1)
+			reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
+		qdel(fruit)
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 
 /obj/structure/fermenting_barrel/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
-			to_chat(user, span_warning("You can't distill this into anything..."))
+			to_chat(user, span_warning("You can't ferment this into anything..."))
 			return TRUE
 		else if(!user.transferItemToLoc(I,src))
 			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
 		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
-		addtimer(CALLBACK(src, .proc/makeWine, fruit), rand(80, 120) * speed_multiplier)
+		addtimer(CALLBACK(src, .proc/makeWine, list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 		return TRUE
-	var/obj/item/W = I
-	if(W)
-		if(W.is_refillable())
-			return FALSE //so we can refill them via their afterattack.
+	else if(SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && do_after(user, 2 SECONDS, target = src))
+		var/list/storage_contents = list()
+		SEND_SIGNAL(I, COMSIG_TRY_STORAGE_RETURN_INVENTORY, storage_contents)
+		var/list/fruits = list()
+		for(var/obj/item in storage_contents)
+			fruit = item
+			if(!istype(fruit) || !fruit.can_distill || !SEND_SIGNAL(I, COMSIG_TRY_STORAGE_TAKE, fruit, src))
+				continue
+			fruits += fruit
+		if (length(fruits))
+			addtimer(CALLBACK(src, .proc/makeWine, fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
+			to_chat(user, span_notice("You fill \the [src] from \the [I] and start the fermentation process."))
+		else
+			to_chat(user, span_warning("There's nothing in \the [I] that you can ferment!"))
+		return TRUE
+	if(I?.is_refillable())
+		return FALSE //so we can refill them via their afterattack.
 	else
 		return ..()
 
