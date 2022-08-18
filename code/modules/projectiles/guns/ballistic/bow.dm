@@ -15,7 +15,7 @@
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it
 	spawnwithmagazine = TRUE
-	casing_ejector = FALSE
+	casing_ejector = TRUE
 	var/recentdraw
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
@@ -30,12 +30,12 @@
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
-		if(casing_ejector)
-			AC.forceMove(drop_location()) //Eject casing onto ground.
+		AC.forceMove(drop_location()) //Eject casing onto ground.
+		chambered = null
+		/* if(casing_ejector)
 			AC.bounce_away(TRUE)
-			chambered = null
 		else if(empty_chamber)
-			chambered = null
+			chambered = null */
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
