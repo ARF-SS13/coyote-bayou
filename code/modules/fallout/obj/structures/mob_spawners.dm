@@ -208,14 +208,18 @@
 	desc = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_DESC]
 	icon_state = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_STATE]
 	spawnsound = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_SOUND]
-	max_mobs = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY]][MOB_SPAWNER_LIST_COUNT]
-	spawn_time = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY]][MOB_SPAWNER_LIST_TIME]
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND] & MOB_SPAWNER_DIFFICULTY_EASY)
-		mob_types |= GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_EASY][MOB_SPAWNER_LIST_MOBS]
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND] & MOB_SPAWNER_DIFFICULTY_MED)
-		mob_types |= GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_MED][MOB_SPAWNER_LIST_MOBS]
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND] & MOB_SPAWNER_DIFFICULTY_HARD)
-		mob_types |= GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_HARD][MOB_SPAWNER_LIST_MOBS]
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
+		apply_mob_list_from_list(MOB_SPAWNER_EASY, our_randomizer)
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
+		apply_mob_list_from_list(MOB_SPAWNER_MED, our_randomizer)
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
+		apply_mob_list_from_list(MOB_SPAWNER_HARD, our_randomizer)
+
+/obj/structure/nest/proc/apply_mob_list_from_list(var/difficulty, var/list/randomizer_list)
+	mob_types |= GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_MOBS]
+	max_mobs = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_COUNT]
+	spawn_time = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_TIME]
+
 
 //the nests themselves
 /*
@@ -464,7 +468,7 @@
 	randomizer_kind = MOB_SPAWNER_KIND_RAIDER_LOW
 	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
 
-/obj/structure/nest/randomized/test4
+/obj/structure/nest/randomized/test5
 	name = "Gross uninitialized carp spawner thing"
 	desc = "Shouldnt see this! probably a bug~"
 	randomizer_tag = "Pisscock 1"
