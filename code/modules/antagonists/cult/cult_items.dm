@@ -297,7 +297,7 @@
 	desc = "A torn, dust-caked hood. Strange letters line the inside."
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEEARS
 	flags_cover = HEADCOVERSEYES
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 65, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -309,7 +309,7 @@
 	icon_state = "cultrobes"
 	item_state = "cultrobes"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 65, "bio" = 10, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -349,7 +349,7 @@
 	item_state = "magus"
 	desc = "A helm worn by the followers of Nar'Sie."
 	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDEEYES|HIDESNOUT
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	mutantrace_variation = STYLE_MUZZLE
 
@@ -359,7 +359,7 @@
 	icon_state = "magusred"
 	item_state = "magusred"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
 /obj/item/clothing/head/helmet/space/hardsuit/cult
@@ -367,7 +367,7 @@
 	desc = "A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	icon_state = "cult_helmet"
 	item_state = "cult_helmet"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	light_range = 0
 	actions_types = list()
 
@@ -382,7 +382,7 @@
 	item_state = "cult_armor"
 	desc = "A heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum."
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/cult
 
 /obj/item/clothing/suit/space/hardsuit/cult/ComponentInitialize()
@@ -410,7 +410,7 @@
 	icon_state = "cult_armor"
 	item_state = "cult_armor"
 	w_class = WEIGHT_CLASS_BULKY
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	var/current_charges = 3
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
@@ -419,7 +419,7 @@
 	name = "empowered cultist armor"
 	desc = "Empowered garb which creates a powerful shield around the user."
 	icon_state = "cult_hoodalt"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_MEDIUM
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
 
@@ -468,7 +468,7 @@
 	item_state = "cultrobes"
 	flags_inv = HIDEJUMPSUIT
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = -100, "bullet" = -100, "laser" = -100,"energy" = -50, "bomb" = -50, "bio" = -50, "rad" = -50, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 	slowdown = -1
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
 
@@ -478,7 +478,7 @@
 	icon_state = "culthood"
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS
-	armor = list("melee" = -100, "bullet" = -100, "laser" = -100,"energy" = -50, "bomb" = -50, "bio" = -50, "rad" = -50, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/item/clothing/suit/hooded/cultrobes/berserker/equipped(mob/living/user, slot)
 	..()

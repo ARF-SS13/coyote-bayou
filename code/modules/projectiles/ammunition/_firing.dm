@@ -3,7 +3,7 @@
 	if(istype(BB))
 		distro += BB.spread
 	var/targloc = get_turf(target)
-	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from)
+	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
 	if(pellets == 1)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
 			if(randomspread)
@@ -23,7 +23,7 @@
 	update_icon()
 	return 1
 
-/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from)
+/obj/item/ammo_casing/proc/ready_proj(atom/target, mob/living/user, quiet, zone_override = "", damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, fired_from, damage_threshold_penetration = 0)
 	if (!BB)
 		return
 	BB.original = target
@@ -34,6 +34,7 @@
 	else
 		BB.def_zone = user.zone_selected
 	BB.suppressed = quiet
+	BB.damage_threshold_penetration = damage_threshold_penetration
 
 	if(isgun(fired_from))
 		var/obj/item/gun/G = fired_from

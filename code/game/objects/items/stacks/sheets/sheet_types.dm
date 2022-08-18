@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/plasteel
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/wood=MINERAL_MATERIAL_AMOUNT)
 	sheettype = "wood"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/wood
 	novariants = FALSE
@@ -406,7 +406,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/bamboo = MINERAL_MATERIAL_AMOUNT)
 	throwforce = 15
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/bamboo
 	grind_results = list(/datum/reagent/cellulose = 10)
@@ -981,7 +981,7 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throw_speed = 1
 	throw_range = 2
 	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
@@ -1026,7 +1026,7 @@ GLOBAL_LIST_INIT(prewar_recipes, list ( \
 	custom_materials = list()
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/prewar
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)

@@ -5,7 +5,7 @@
 	step_in = 3 //Move speed, lower is faster.
 	max_temperature = 20000
 	max_integrity = 300
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 10, "energy" = 20, "bomb" = 40, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_MEDIUM
 	max_equip = 6
 	wreckage = /obj/structure/mecha_wreckage/ripley
 	var/list/cargo = new
@@ -40,7 +40,7 @@
 	max_integrity = 400
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	lights_power = 7
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 60, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_MEDIUM
 	max_equip = 5 // More armor, less tools
 	wreckage = /obj/structure/mecha_wreckage/ripley/firefighter
 
@@ -52,7 +52,7 @@
 	step_in = 2
 	max_temperature = 100000
 	max_integrity = 500
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 80, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_MEDIUM
 	lights_power = 7
 	wreckage = /obj/structure/mecha_wreckage/ripley/deathripley
 	step_energy_drain = 0
@@ -84,7 +84,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	lights_power = 7
 	step_energy_drain = 30 //slightly higher energy drain since you movin those wheels FAST
-	armor = list("melee" = 35, "bullet" = 15, "laser" = 20, "energy" = 20, "bomb" = 60, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_MEDIUM
 	max_equip = 5
 	wreckage = /obj/structure/mecha_wreckage/clarke
 	cargo_capacity = 10

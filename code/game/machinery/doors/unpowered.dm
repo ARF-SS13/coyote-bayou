@@ -3,7 +3,7 @@
 
 /obj/machinery/door/unpowered
 	icon = 'icons/fallout/structures/doors.dmi'
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 25, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
+	armor = ARMOR_VALUE_LIGHT
 	autoclose = 5 SECONDS // Difficulty: Monkey to reduce amount of secure doors left open.
 	max_integrity = 500
 	obj_integrity = 500

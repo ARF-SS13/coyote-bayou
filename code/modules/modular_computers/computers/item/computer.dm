@@ -8,7 +8,7 @@
 	icon_state = "laptop-open"
 	integrity_failure = 0.5
 	max_integrity = 100
-	armor = list("melee" = 0, "bullet" = 20, "laser" = 20, "energy" = 100, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 
 	var/enabled = 0											// Whether the computer is turned on.
 	var/screen_on = 1										// Whether the computer is active/opened/it's screen is on.

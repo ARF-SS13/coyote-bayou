@@ -6,7 +6,7 @@
 	desc = "It's good to be emperor."
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 30)
+	armor = ARMOR_VALUE_HEAVY
 	strip_delay = 80
 
 /obj/item/clothing/head/powdered_wig
@@ -45,7 +45,8 @@
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 25, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T3)
 	permeability_coefficient = 0.01
 
 
@@ -61,7 +62,8 @@
 	desc = "It allows quick identification of trained medical personnel."
 	icon_state = "nursehat"
 	dynamic_hair_suffix = ""
-
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	dog_fashion = /datum/dog_fashion/head/nurse
 
 /obj/item/clothing/head/syndicatefake
@@ -296,7 +298,7 @@
 	name = "crown"
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
 	beepsky_fashion = /datum/beepsky_fashion/king
@@ -450,13 +452,13 @@
 	desc = "Ain't nobody gonna cheat the hangman in my town."
 	icon_state = "hunter"
 	item_state = "hunter"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/kepi
 	name = "kepi"
 	desc = "A white cap with visor. Oui oui, mon capitane!"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 5, "rad" = 5, "fire" = 30, "acid" = 5)
+	armor = ARMOR_VALUE_LIGHT
 	icon_state = "kepi"
 
 /obj/item/clothing/head/kepi/old
@@ -482,7 +484,6 @@
 	icon_state = "kabuto"
 	item_state = "kabuto"
 	flags_inv = HIDEHAIR|HIDEEARS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
 
 /obj/item/clothing/head/fluff/bandit
 	name = "bandit hat"

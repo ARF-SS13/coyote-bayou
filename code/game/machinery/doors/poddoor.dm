@@ -11,7 +11,7 @@
 	heat_proof = TRUE
 	safe = FALSE
 	max_integrity = 1200
-	armor = list("melee" = 50, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 65, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 70)
+	armor = ARMOR_VALUE_MEDIUM
 	resistance_flags = FIRE_PROOF
 	damage_deflection = 73
 	proj_resist = 100

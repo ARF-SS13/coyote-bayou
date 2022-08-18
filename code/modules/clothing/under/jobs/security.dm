@@ -19,7 +19,6 @@
 	desc = "A red security jumpsuit for those who couldn't hack it in the police force."
 	icon_state = "rsecurity"
 	item_state = "r_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 
 /obj/item/clothing/under/rank/security/officer/util
 	name = "security utility uniform"
@@ -96,7 +95,6 @@
 	desc = "A formal red security uniform for those who are competent enough for private security to be in charge."
 	icon_state = "rwarden"
 	item_state = "r_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 
 /obj/item/clothing/under/rank/security/warden/grey
 	name = "grey security suit"
@@ -130,7 +128,6 @@
 	desc = "Someone who wears this means business."
 	icon_state = "detective"
 	item_state = "det"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 30, "wound" = 10)
 
 /obj/item/clothing/under/rank/security/detective/brown
 	name = "dark boiled suit"
@@ -177,7 +174,6 @@
 	desc = "A security jumpsuit decorated for those few with the dedication to achieve the position of Head of Security."
 	icon_state = "rhos"
 	item_state = "r_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50, "wound" = 10)
 	strip_delay = 60
 
 /obj/item/clothing/under/rank/security/head_of_security/skirt

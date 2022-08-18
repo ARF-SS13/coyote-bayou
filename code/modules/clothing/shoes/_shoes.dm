@@ -4,6 +4,7 @@
 	desc = "Comfortable-looking shoes."
 	gender = PLURAL //Carn: for grammarically correct text-parsing
 	var/chained = 0
+	armor = ARMOR_VALUE_CLOTHES
 
 	body_parts_covered = FEET
 	slot_flags = ITEM_SLOT_FEET
