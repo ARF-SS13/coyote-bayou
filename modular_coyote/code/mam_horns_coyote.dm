@@ -84,3 +84,43 @@
 	name = "unihorn"
 	icon_state = "unihorn"
 	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/upwardshorns
+	name = "upwards horns"
+	icon_state = "upwardshorns"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/outstretched
+	name = "outstretched"
+	icon_state = "outstretched"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/halo
+	name = "halo"
+	icon_state = "halo"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/greathorns
+	name = "Great Horns"
+	icon_state = "greathorns"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/bunhorns
+	name = "bunny horns"
+	icon_state = "bunhorns"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/murauder
+	name = "murauder"
+	icon_state = "murauder"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/faceguard
+	name = "faceguard"
+	icon_state = "faceguard"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/horns/sheephorns
+	name = "sheep horns"
+	icon_state = "sheephorn"
+	icon = 'modular_coyote/icons/mob/mam_ears.dmi'
