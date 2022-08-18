@@ -246,12 +246,12 @@
 	maxstack = 50
 
 /datum/design/titanium
-    name = "Titanium"
-    id = "titanium"
-    materials = list(/datum/material/titanium = 2000)
-    build_path = /obj/item/stack/sheet/mineral/titanium
-    category = list("initial", "Construction")
-    maxstack = 50
+	name = "Titanium"
+	id = "titanium"
+	materials = list(/datum/material/titanium = 2000)
+	build_path = /obj/item/stack/sheet/mineral/titanium
+	category = list("initial", "Construction")
+	maxstack = 50
 
 /datum/design/rcd_ammo
 	name = "Compressed Matter Cartridge"
