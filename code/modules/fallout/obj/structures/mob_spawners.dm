@@ -22,8 +22,16 @@
 	var/spawn_once
 	var/infinite = FALSE
 	var/mobs_to_spawn = 1 //number of mobs to spawn at once, for swarms
+	/// The ID of our randomizer, so all spawners with this ID will spawn from the same list. Leave null to skip global randomization for this thing
+	var/randomizer_tag
+	/// Which spawner list to pick from
+	var/randomizer_kind
+	/// Which difficulties to pick from - its a bitfield!
+	var/randomizer_difficulty
 
 /obj/structure/nest/Initialize()
+	if(randomizer_tag)
+		setup_random_nest()
 	. = ..()
 	GLOB.mob_nests += src
 
@@ -141,6 +149,77 @@
 		Unseal(TRUE)
 		return
 
+/obj/structure/nest/proc/setup_random_nest()
+	if(!randomizer_tag)
+		return FALSE
+	if(!randomizer_kind)
+		return FALSE
+	if(!randomizer_difficulty)
+		return FALSE
+	/// Is our tag not in the global mob spawner thing?
+	if(!(randomizer_tag in GLOB.mob_spawner_random_index))
+		add_nest_to_global_list()
+	apply_nest_from_global_list()
+	return
+
+/// Takes an entry from our global list and uses it to make our fancy nest!
+/obj/structure/nest/proc/add_nest_to_global_list()
+	if(!randomizer_tag)
+		return FALSE
+	if(!randomizer_kind)
+		return FALSE
+	if(!randomizer_difficulty)
+		return FALSE
+	var/mob_list_to_use
+	switch(randomizer_kind) // might be a better way, but this is what I got
+		if(MOB_SPAWNER_KIND_ALL)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_all)
+		if(MOB_SPAWNER_KIND_ROBOT_LOW)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_robot_low)
+		if(MOB_SPAWNER_KIND_ROBOT_HIGH)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_robot_high)
+		if(MOB_SPAWNER_KIND_TRASH)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_trash)
+		if(MOB_SPAWNER_KIND_LOW)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_low)
+		if(MOB_SPAWNER_KIND_MID)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_mid)
+		if(MOB_SPAWNER_KIND_HIGH)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_high)
+		if(MOB_SPAWNER_KIND_HIGHER)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_higher)
+		if(MOB_SPAWNER_KIND_DEATH)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_death)
+		if(MOB_SPAWNER_KIND_RAIDER_LOW)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_raider_low)
+		if(MOB_SPAWNER_KIND_RAIDER_HIGH)
+			mob_list_to_use = pick(GLOB.mob_spawner_tier_raider_high)
+
+	var/list/new_nest_thing = list(
+		MOB_SPAWNER_GLOBAL_LIST_KIND = mob_list_to_use,
+		MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY = randomizer_difficulty
+		)
+	GLOB.mob_spawner_random_index[randomizer_tag] = new_nest_thing
+
+/// Takes an entry from our global list and uses it to make our fancy nest!
+/obj/structure/nest/proc/apply_nest_from_global_list()
+	mob_types = null
+	var/list/our_randomizer = GLOB.mob_spawner_random_index[randomizer_tag]
+	name = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_NAME]
+	desc = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_DESC]
+	icon_state = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_STATE]
+	spawnsound = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_SOUND]
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
+		apply_mob_list_from_list(MOB_SPAWNER_EASY, our_randomizer)
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
+		apply_mob_list_from_list(MOB_SPAWNER_MED, our_randomizer)
+	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
+		apply_mob_list_from_list(MOB_SPAWNER_HARD, our_randomizer)
+
+/obj/structure/nest/proc/apply_mob_list_from_list(difficulty, list/randomizer_list)
+	mob_types |= GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_MOBS]
+	max_mobs = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_COUNT]
+	spawn_time = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_TIME]
 
 
 //the nests themselves
@@ -357,3 +436,45 @@
 	max_mobs = 5
 	mob_types = list(/mob/living/simple_animal/hostile/trog/tunneler = 1)
 	spawn_time = 20 SECONDS
+
+/obj/structure/nest/randomized
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+
+/obj/structure/nest/randomized/test1
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 1"
+	randomizer_kind = MOB_SPAWNER_KIND_DEATH
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY | MOB_SPAWNER_DIFFICULTY_MED | MOB_SPAWNER_DIFFICULTY_HARD
+
+/obj/structure/nest/randomized/test2
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 2"
+	randomizer_kind = MOB_SPAWNER_KIND_ALL
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY | MOB_SPAWNER_DIFFICULTY_HARD
+
+/obj/structure/nest/randomized/test3
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 3"
+	randomizer_kind = MOB_SPAWNER_KIND_ROBOT_HIGH
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_HARD
+
+/obj/structure/nest/randomized/test4
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 4"
+	randomizer_kind = MOB_SPAWNER_KIND_RAIDER_LOW
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
+
+/obj/structure/nest/randomized/test5
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 1"
+	randomizer_kind = MOB_SPAWNER_KIND_RAIDER_LOW
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
+
+
+
