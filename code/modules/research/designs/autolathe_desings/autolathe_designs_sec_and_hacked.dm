@@ -53,6 +53,7 @@
 	category = list("hacked", "Security")
 */
 
+/*
 /datum/design/rcd
 	name = "Rapid Construction Device (RCD)"
 	id = "rcd"
@@ -60,6 +61,7 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/construction/rcd
 	category = list("hacked", "Construction")
+*/
 
 /datum/design/rpd
 	name = "Rapid Pipe Dispenser (RPD)"
