@@ -23,7 +23,7 @@
 	name = "Old bomber jacket"
 	path = /obj/item/clothing/suit/bomber
 
-/// Flannels Below 
+/// Flannels Below
 
 /datum/gear/suit/flannel
 	name = "Red flannel jacket"
@@ -121,8 +121,8 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 2
 
-/// 	Beginning of Coats/Armor section 
-// 	Below are one points as they are cosmetics 
+/// 	Beginning of Coats/Armor section
+// 	Below are one points as they are cosmetics
 
 /datum/gear/suit/coat/marlow
 	name = "Marlow gang overcoat"
@@ -138,7 +138,7 @@
 	name = "Vagabond's vest"
 	path = /obj/item/clothing/suit/armor/marlowsuit/masonsuit
 
-/// End of Coats/Armor section 
+/// End of Coats/Armor section
 
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
@@ -170,23 +170,23 @@
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 2
-	restricted_desc = "Scribes"
+/*	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
 							"Scribe",
 							)
-
+*/
 /datum/gear/suit/scribecoat
 	name = "Fieldscribe coat"
 	path = /obj/item/clothing/suit/toggle/labcoat/scribecoat
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
 	cost = 2
-	restricted_desc = "Scribes"
+/*	restricted_desc = "Scribes"
 	restricted_roles = list("Head Scribe",
 							"Senior Scribe",
 							"Scribe",
 							)
-
+*/
 /datum/gear/suit/town
 	name = "Town Trenchcoat"
 	path = /obj/item/clothing/suit/armor/light/duster/town
