@@ -627,7 +627,7 @@
 	materials = list(MAT_METAL = 30000)
 	build_path = /obj/item/construction/rcd
 	category = list("hacked", "Construction")
-*/______qdel_list_wrapper(list/L)
+*/
 
 /datum/design/rpd
 	name = "Rapid Pipe Dispenser (RPD)"
