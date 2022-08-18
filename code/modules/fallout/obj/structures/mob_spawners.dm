@@ -216,7 +216,7 @@
 	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
 		apply_mob_list_from_list(MOB_SPAWNER_HARD, our_randomizer)
 
-/obj/structure/nest/proc/apply_mob_list_from_list(var/difficulty, var/list/randomizer_list)
+/obj/structure/nest/proc/apply_mob_list_from_list(difficulty, list/randomizer_list)
 	mob_types |= GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_MOBS]
 	max_mobs = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_COUNT]
 	spawn_time = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_TIME]
