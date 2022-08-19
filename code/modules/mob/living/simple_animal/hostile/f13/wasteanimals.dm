@@ -20,11 +20,11 @@
 	response_harm_simple = "hits"
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 35
+	health = 35
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
+	melee_damage_lower = 5
 	melee_damage_upper = 15
 	attack_verb_simple = "claws"
 	speak_emote = list("hisses")
@@ -79,11 +79,11 @@
 	emote_taunt = list("growls")
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 160 
-	health = 160
+	maxHealth = 128
+	health = 128
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 10
+	melee_damage_lower = 8
 	melee_damage_upper = 20
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
@@ -113,11 +113,6 @@
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
 
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 16)
-		M.adjustToxLoss(5, 0)
-	..()
-
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
 	desc = "A nightstalker bred specifically for the legion under the use of combat and companionship. legionstalkers have the body and loyalty of a canine but the agility and deadlyness of rattlesnake."
@@ -142,8 +137,8 @@
 	response_harm_simple = "kicks"
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 50
-	health = 100
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
@@ -182,11 +177,6 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
-
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 20)
-		M.adjustToxLoss(5, 0)
-	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -229,8 +219,8 @@
 	health = 25
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 7
-	melee_damage_upper = 14
+	melee_damage_lower = 4
+	melee_damage_upper = 12
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
@@ -241,7 +231,6 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	taunt_chance = 30
 	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'

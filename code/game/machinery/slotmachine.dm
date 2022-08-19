@@ -84,7 +84,7 @@
 		var/obj/item/stack/f13Cash/currency = I
 		if(!user.temporarilyRemoveItemFromInventory(currency))
 			return
-		to_chat(user, "<span class='notice'>You insert [currency] into [src]'s slot!</span>")
+		to_chat(user, span_notice("You insert [currency] into [src]'s slot!"))
 		give_money(round(currency.value * currency.amount))
 		qdel(currency)
 	else
@@ -157,7 +157,7 @@
 	if(!can_spin(user))
 		return
 
-	visible_message("<span class='notice'>[user] pulls the lever and the slot machine starts spinning!</span>")
+	visible_message(span_notice("[user] pulls the lever and the slot machine starts spinning!"))
 
 	balance -= SPIN_PRICE
 	money += SPIN_PRICE
@@ -185,14 +185,14 @@
 	if(!user)
 		return 0
 	if(stat & NOPOWER)
-		to_chat(user, "<span class='warning'>The slot machine has no power!</span>")
+		to_chat(user, span_warning("The slot machine has no power!"))
 	if(stat & BROKEN)
-		to_chat(user, "<span class='warning'>The slot machine is broken!</span>")
+		to_chat(user, span_warning("The slot machine is broken!"))
 	if(working)
-		to_chat(user, "<span class='warning'>You need to wait until the machine stops spinning before you can play again!</span>")
+		to_chat(user, span_warning("You need to wait until the machine stops spinning before you can play again!"))
 		return 0
 	if(balance < SPIN_PRICE)
-		to_chat(user, "<span class='warning'>Insufficient money to play!</span>")
+		to_chat(user, span_warning("Insufficient money to play!"))
 		return 0
 	return 1
 
@@ -227,12 +227,12 @@
 		give_money(SMALL_PRIZE)
 
 	else if(linelength == 3)
-		to_chat(user, "<span class='notice'>You win three free games!</span>")
+		to_chat(user, span_notice("You win three free games!"))
 		give_money(SPIN_PRICE * 4)
 		money = max(money - SPIN_PRICE * 4, money)
 
 	else
-		to_chat(user, "<span class='warning'>No luck!</span>")
+		to_chat(user, span_warning("No luck!"))
 /obj/machinery/computer/slot_machine/proc/get_lines()
 	var/amountthesame
 	for(var/i = 1, i <= 3, i++)

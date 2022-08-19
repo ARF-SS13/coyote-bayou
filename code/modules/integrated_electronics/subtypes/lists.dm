@@ -329,7 +329,6 @@
 	outputs = list(
 		"joined text" = IC_PINTYPE_STRING
 		)
-	icon_state = "addition"
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 	cooldown_per_use = 1
 

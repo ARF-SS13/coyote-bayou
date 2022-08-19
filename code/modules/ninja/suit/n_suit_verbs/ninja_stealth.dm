@@ -14,13 +14,13 @@ Contents:
 		cancel_stealth()
 	else
 		if(cell.charge <= 0)
-			to_chat(affecting, "<span class='warning'>You don't have enough power to enable Stealth!</span>")
+			to_chat(affecting, span_warning("You don't have enough power to enable Stealth!"))
 			return
 		stealth = TRUE
 		stealth_cooldown = world.time + 5 SECONDS
 		animate(affecting, alpha = 15, time = 3 SECONDS)
-		affecting.visible_message("<span class='warning'>[affecting.name] vanishes into thin air!</span>", \
-						"<span class='notice'>You are now mostly invisible to normal detection.</span>")
+		affecting.visible_message(span_warning("[affecting.name] vanishes into thin air!"), \
+						span_notice("You are now mostly invisible to normal detection."))
 		addtimer(CALLBACK(src, .proc/enable_signals), 3 SECONDS)
 
 /obj/item/clothing/suit/space/space_ninja/proc/enable_signals()
@@ -43,12 +43,12 @@ Contents:
 	stealth_cooldown = world.time + 5 SECONDS
 	UnregisterSignal(affecting, list(COMSIG_MOB_ITEM_ATTACK, COMSIG_MOB_ATTACK_RANGED, COMSIG_HUMAN_MELEE_UNARMED_ATTACK, COMSIG_MOB_ATTACK_HAND, COMSIG_MOB_THROW, COMSIG_PARENT_ATTACKBY, COMSIG_MOVABLE_BUMP, COMSIG_MOVABLE_TELEPORTED, COMSIG_LIVING_GUN_PROCESS_FIRE))
 	animate(affecting, alpha = 255, time = 3 SECONDS)
-	affecting.visible_message("<span class='warning'>[affecting.name] appears from thin air!</span>", \
-					"<span class='notice'>You are now visible.</span>")
+	affecting.visible_message(span_warning("[affecting.name] appears from thin air!"), \
+					span_notice("You are now visible."))
 	return TRUE
 
 /obj/item/clothing/suit/space/space_ninja/proc/stealth()
 	if(!s_busy)
 		toggle_stealth()
 	else
-		to_chat(affecting, "<span class='danger'>Stealth does not appear to work!</span>")
+		to_chat(affecting, span_danger("Stealth does not appear to work!"))

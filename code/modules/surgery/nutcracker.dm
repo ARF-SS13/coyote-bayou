@@ -40,28 +40,28 @@
 	if(user.zone_selected != "head")
 		return
 	if(!target_limb)
-		to_chat(user, "<span class='notice'>[M] has no [parse_zone(target_zone)]!</span>")
+		to_chat(user, span_notice("[M] has no [parse_zone(target_zone)]!"))
 		return
 	if(!get_location_accessible(M, target_zone))
-		to_chat(user, "<span class='notice'>Expose [M]\s head before trying to crush it!</span>")
+		to_chat(user, span_notice("Expose [M]\s head before trying to crush it!"))
 		return
 
-	M.visible_message("<span class='warning'>[user] is trying to crush [M]\s head with \the [src]!</span>")
+	M.visible_message(span_warning("[user] is trying to crush [M]\s head with \the [src]!"))
 
 	var/crush_time = max(0, 400 - target_limb.brute_dam*2)
 	if(do_mob(user, M, crush_time))
 		if(get_location_accessible(M, target_zone)) //Yes, two checks, before and after the timer. What if someone puts a helmet on the guy while you're crushing his head?
 			if(target_limb)//If he still has the head. In case you queue up a lot of these up at once or the guy loses the head while you're removing it.
-				M.visible_message("<span class='warning'>[M]\s head cracks like a watermelon, spilling everything inside, as it becomes an unrecognizable mess!</span>")
+				M.visible_message(span_warning("[M]\s head cracks like a watermelon, spilling everything inside, as it becomes an unrecognizable mess!"))
 				gib_head(M)
 		else
-			to_chat(user, "<span class='notice'>Expose [M]\s head before trying to crush it!</span>")
+			to_chat(user, span_notice("Expose [M]\s head before trying to crush it!"))
 
 
 /obj/item/nutcracker/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/target_limb = user.get_bodypart("head")
 	if(target_limb) //I mean like... for example lings can be still alive without heads.
-		user.visible_message("<span class='suicide'>[user] is crushing [user.p_their()] own head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] is crushing [user.p_their()] own head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 		if(do_after(user, 30))
 			gib_head(user)
 	else

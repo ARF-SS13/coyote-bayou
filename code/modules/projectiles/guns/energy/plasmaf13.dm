@@ -120,6 +120,7 @@
 	desc = "A burst-fire energy weapon that fires a steady stream of toroidal plasma towards an unlucky target."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmacarbine)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "plasma_scope"
 	scope_x_offset = 13

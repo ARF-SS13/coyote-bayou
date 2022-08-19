@@ -3,7 +3,7 @@
 	set category = "Mentor"
 	set name = "Mentor PM"
 	if(!is_mentor())
-		to_chat(src, "<span class='danger'>Error: Mentor-PM-Panel: Only Mentors and Admins may use this command.</span>")
+		to_chat(src, span_danger("Error: Mentor-PM-Panel: Only Mentors and Admins may use this command."))
 		return
 	var/list/client/targets[0]
 	for(var/client/T)
@@ -27,7 +27,7 @@
 	else if(istype(whom,/client))
 		C = whom
 	if(!C)
-		if(is_mentor())	to_chat(src, "<span class='danger'>Error: Mentor-PM: Client not found.</span>")
+		if(is_mentor())	to_chat(src, span_danger("Error: Mentor-PM: Client not found."))
 		else		mentorhelp(msg)	//Mentor we are replying to left. Mentorhelp instead(check below)
 		return
 
@@ -40,12 +40,12 @@
 
 		if(!msg)
 			if (is_mentor(whom))
-				to_chat(GLOB.admins | GLOB.mentors, "<span class='purple'>[src] has stopped their reply to [whom]'s mhelp.</span>")
+				to_chat(GLOB.admins | GLOB.mentors, span_purple("[src] has stopped their reply to [whom]'s mhelp."))
 			return
 
 		if(!C)
 			if(is_mentor())
-				to_chat(src, "<span class='danger'>Error: Mentor-PM: Client not found.</span>")
+				to_chat(src, span_danger("Error: Mentor-PM: Client not found."))
 			else
 				mentorhelp(msg)	//Mentor we are replying to has vanished, Mentorhelp instead (how the fuck does this work?let's hope it works,shrug)
 				return
@@ -57,7 +57,7 @@
 	msg = sanitize(copytext_char(msg, 1, MAX_MESSAGE_LEN))
 	if(!msg)
 		if (is_mentor(whom))
-			to_chat(GLOB.admins | GLOB.mentors, "<span class='purple'>[src] has stopped their reply to [whom]'s mhelp.</span>")
+			to_chat(GLOB.admins | GLOB.mentors, span_purple("[src] has stopped their reply to [whom]'s mhelp."))
 		return
 	log_mentor("Mentor PM: [key_name(src)]->[key_name(C)]: [msg]")
 

@@ -327,7 +327,7 @@
 	if(istype(O, /obj/item/screwdriver) && CHECK_BITFIELD(obj_flags, EMAGGED))
 		//Stops people from just unscrewing the monitor and putting it back to get the console working again. 
 		//Why this though, you should make it emag to a board level. (i wont do it)
-		to_chat(user, "<span class='warning'>It is too hot to mess with!</span>")
+		to_chat(user, span_warning("It is too hot to mess with!"))
 	else
 		return ..()
 
@@ -336,7 +336,7 @@
 	if(CHECK_BITFIELD(obj_flags, EMAGGED))
 		return
 	if(isnull(linkedServer))
-		to_chat(user, "<span class='notice'>A no server error appears on the screen.</span>")
+		to_chat(user, span_notice("A no server error appears on the screen."))
 		return
 	ENABLE_BITFIELD(obj_flags, EMAGGED)
 	spark_system.set_up(5, 0, src)
@@ -358,10 +358,10 @@
 
 /obj/machinery/computer/message_monitor/proc/BruteForce(mob/user)
 	if(isnull(linkedServer))
-		to_chat(user, "<span class='warning'>Could not complete brute-force: Linked Server Disconnected!</span>")
+		to_chat(user, span_warning("Could not complete brute-force: Linked Server Disconnected!"))
 	else
 		var/currentKey = linkedServer.decryptkey
-		to_chat(user, "<span class='warning'>Brute-force completed! The key is '[currentKey]'.</span>")
+		to_chat(user, span_warning("Brute-force completed! The key is '[currentKey]'."))
 	hacking = FALSE
 	message = ""
 

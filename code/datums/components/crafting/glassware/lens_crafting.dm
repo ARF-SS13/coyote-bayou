@@ -24,7 +24,7 @@
 	name = "powered laser pointer assembly"
 	desc = "A laser pointer hull with a capacitor inside of it. It's missing a lens."
 	icon_state = "laser_wire"
-	icon_state = "laser_case"
+	icon = 'icons/obj/glass_ware.dmi'
 	next_step = /obj/item/glasswork/glass_base/laserpointer_shell_2
 
 /obj/item/glasswork/glass_base/laserpointer_shell_1/attackby(obj/item/I, mob/user, params)
@@ -36,8 +36,8 @@
 /obj/item/glasswork/glass_base/laserpointer_shell_2
 	name = "near-complete laser pointer assembly"
 	desc = "A laser pointer hull with a capacitor and a lens inside of it. It needs to be screwed together."
-	icon_state = "laser_wire"
-	icon_state = "laser_case"
+	icon_state = "laser_lens"
+	icon = 'icons/obj/glass_ware.dmi'
 	next_step = /obj/item/laser_pointer/blue/handmade
 
 /obj/item/glasswork/glass_base/laserpointer_shell_2/attackby(obj/item/I, mob/user, params)

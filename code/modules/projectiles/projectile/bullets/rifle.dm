@@ -30,6 +30,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 5.56 match
  * DAMAGE: 31.25
@@ -111,6 +112,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 5.56 embed
  * DAMAGE: 12.5
@@ -226,6 +228,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 4.73 rubber
  * DAMAGE: 2.5
@@ -247,6 +250,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 4.73 fire
  * DAMAGE: 12.5
@@ -269,7 +273,6 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	sharpness = SHARP_NONE
 	var/fire_stacks = 3
-	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a473/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -411,6 +414,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
 /* 5mm simple
  * DAMAGE: 31.25
@@ -516,6 +520,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_MEDIUM
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_MEDIUM
 
 /* 7.62mm surplus
  * DAMAGE: 45
@@ -577,6 +582,7 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* 7.62mm embed
  * DAMAGE: 12
@@ -646,8 +652,8 @@
  * * * * * * * */
 
 /* .50MG Match
- * DAMAGE: 75
- * STAMIN: 112
+ * DAMAGE: 93
+ * STAMIN: 140
  * RECOIL: 2
  * WOUNDS: 50
  * WNAKED: 30
@@ -664,11 +670,11 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .50MG surplus
- * DAMAGE: 60
- * STAMIN: 90
+ * DAMAGE: 75
+ * STAMIN: 140
  * RECOIL: 2
  * WOUNDS: 40
  * WNAKED: 30
@@ -685,11 +691,10 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
 
 /* .50MG improv
- * DAMAGE: 45
- * STAMIN: 67
+ * DAMAGE: 56
+ * STAMIN: 84
  * RECOIL: 2
  * WOUNDS: 30
  * WNAKED: 30
@@ -706,10 +711,9 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
-	zone_accuracy_factor = 100
 
 /* .50MG fire
- * DAMAGE: 30
+ * DAMAGE: 37
  * STAMIN: 25
  * RECOIL: 2
  * WOUNDS: 40
@@ -718,7 +722,7 @@
 /obj/item/projectile/bullet/a50MG/incendiary
 	name = "incendiary .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_FIRE
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_FIRE
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_FIRE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -729,7 +733,6 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 	sharpness = SHARP_NONE
 	var/fire_stacks = 4
-	zone_accuracy_factor = 100
 
 /obj/item/projectile/bullet/a50MG/incendiary/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -739,7 +742,7 @@
 		M.IgniteMob()
 
 /* .50MG explode
- * DAMAGE: 30
+ * DAMAGE: 37
  * STAMIN: 25
  * RECOIL: 2
  * WOUNDS: 80
@@ -748,7 +751,7 @@
 /obj/item/projectile/bullet/a50MG/explosive
 	name = "explosive .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_EXPLOSIVE
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_EXPLOSIVE
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_EXPLOSIVE
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -763,8 +766,8 @@
 	explosion(target, 0, 1, 1, 1)
 
 /* .50MG rubber
- * DAMAGE: 6
- * STAMIN: 180 gnight
+ * DAMAGE: 7
+ * STAMIN: 225 gnight
  * RECOIL: 2
  * WOUNDS: 200
  * WNAKED: 150
@@ -782,10 +785,11 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION // Rubbers go where you want
 
 /* .50MG rubber-penetrator
- * DAMAGE: 6
- * STAMIN: 180
+ * DAMAGE: 7
+ * STAMIN: 225
  * RECOIL: 2
  * WOUNDS: 200
  * WNAKED: 150
@@ -823,7 +827,7 @@
 /obj/item/projectile/bullet/a50MG/contam
 	name = "contaminated .50MG bullet"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_DAMAGE_POISON
-	stamina = RUBBERY_STAMINA_PISTOL_MEDIUM * BULLET_SURPLUS_MULT * BULLET_STAMINA_POISON
+	stamina = RUBBERY_STAMINA_RIFLE_HEAVY * BULLET_SURPLUS_MULT * BULLET_STAMINA_POISON
 	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_HEAVY
 
@@ -864,16 +868,16 @@
  * Microshrapnel
  * * * * * * * */
 
-#define BULLET_4570_DAMAGE_MULT 0.75 //30 damage, 4 hits, but it slaps
-#define BULLET_4570_STAMINA_MULT 0.50
+#define BULLET_4570_DAMAGE_MULT 0.75
+#define BULLET_4570_STAMINA_MULT 0.5
 #define BULLET_4570_WOUND_MULT 0.50
 #define BULLET_4570_NAKED_WOUND_MULT 0.50
 #define BULLET_4570_SPEED_MULT 0.50
-#define BULLET_4570_RECOIL_MULT 0.50
+#define BULLET_4570_RECOIL_MULT 1
 
 /* .45-70 match
- * DAMAGE: 56
- * STAMIN: 56
+ * DAMAGE: 70
+ * STAMIN: 70
  * RECOIL: 1
  * WOUNDS: 25
  * WNAKED: 15
@@ -890,10 +894,11 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* .45-70 surplus
- * DAMAGE: 45
- * STAMIN: 45
+ * DAMAGE: 56
+ * STAMIN: 56
  * RECOIL: 1
  * WOUNDS: 25
  * WNAKED: 15
@@ -912,7 +917,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
 
 /* .45-70 improv
- * DAMAGE: 33
+ * DAMAGE: 42 // cant kill a ghoul
  * STAMIN: 33
  * RECOIL: 1
  * WOUNDS: 15
@@ -932,7 +937,7 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
 
 /* .45-70 explode
- * DAMAGE: 28
+ * DAMAGE: 35
  * STAMIN: 28
  * RECOIL: 1
  * WOUNDS: 50
@@ -956,7 +961,7 @@
 	explosion(target, 0, 0, 1, 1, flame_range = 1)
 
 /* .45-70 acid
- * DAMAGE: 28
+ * DAMAGE: 35
  * STAMIN: 28
  * RECOIL: 1
  * WOUNDS: 50
@@ -990,8 +995,8 @@
 		reagents.trans_to(M, reagents.total_volume)
 
 /* .45-70 rubber
- * DAMAGE: 5
- * STAMIN: 112
+ * DAMAGE: 7
+ * STAMIN: 281
  * RECOIL: 1
  * WOUNDS: 125
  * WNAKED: 75
@@ -1058,6 +1063,7 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_GAUSS_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
 
 /* 2mmEC blender
  * DAMAGE: 150

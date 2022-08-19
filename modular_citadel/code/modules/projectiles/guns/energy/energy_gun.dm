@@ -31,7 +31,7 @@ obj/item/gun/energy/e_gun/cx/AltClick(mob/living/user)
 		return
 	. = TRUE
 	if(user.incapacitated() || !istype(user))
-		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(user, span_warning("You can't do that right now!"))
 		return
 	if(alert("Are you sure you want to repaint your gun?", "Confirm Repaint", "Yes", "No") == "Yes")
 		var/body_color_input = input(usr,"","Choose Body Color",body_color) as color|null

@@ -113,7 +113,7 @@
 		return null
 	if(length(name) > max_length)
 		to_chat(user, name)
-		to_chat(user, "<span class='danger'>^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^</span>")
+		to_chat(user, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^"))
 		return null
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)

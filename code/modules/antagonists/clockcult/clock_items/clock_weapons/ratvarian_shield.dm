@@ -7,7 +7,7 @@
 	item_state = "ratvarian_shield"
 	desc = "A resilient shield made out of brass.. It feels warm to the touch."
 	var/clockwork_desc = "A powerful shield of ratvarian making. It absorbs blocked attacks to charge devastating bashes."
-	armor = list("melee" = 80, "bullet" = 70, "laser" = -10, "energy" = -20, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_HEAVY
 	shield_flags = SHIELD_FLAGS_DEFAULT
 	max_integrity = 300 //High integrity, extremely strong against melee / bullets, but still quite easy to destroy with lasers and energy
 	repair_material = /obj/item/stack/tile/brass
@@ -40,7 +40,7 @@ obj/item/shield/riot/ratvarian/proc/calc_bash_mult()
 		return ..()
 
 	if(!is_servant_of_ratvar(owner))
-		owner.visible_message("<span class='warning'>As [owner] blocks the attack with [src], [owner.p_they()] suddenly drops it, whincing in pain! </span>", "<span class='warning'>As you block the attack with [src], it heats up tremendously, forcing you to drop it from the pain alone! </span>")
+		owner.visible_message(span_warning("As [owner] blocks the attack with [src], [owner.p_they()] suddenly drops it, whincing in pain! "), span_warning("As you block the attack with [src], it heats up tremendously, forcing you to drop it from the pain alone! "))
 		owner.emote("scream")
 		playsound(src, 'sound/machines/fryer/deep_fryer_emerge.ogg', 50)
 		if(iscarbon(owner)) //Type safety for if a drone somehow got a shield (ratvar protect us)

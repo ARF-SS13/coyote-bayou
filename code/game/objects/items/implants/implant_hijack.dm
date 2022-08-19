@@ -18,7 +18,7 @@
 	toggled = !toggled
 	imp_in.click_intercept = toggled ? src : null
 	imp_in.siliconaccesstoggle = toggled ? TRUE : FALSE
-	to_chat(imp_in,"<span class='notice'>You turn [toggled ? "on" : "off"] [src]'s silicon interactions.</span>")
+	to_chat(imp_in,span_notice("You turn [toggled ? "on" : "off"] [src]'s silicon interactions."))
 	toggle_eyes()
 
 /obj/item/implant/hijack/proc/toggle_eyes()
@@ -94,27 +94,27 @@
 		return FALSE //can't remotely hijack an already hijacked APC
 
 	if(apc.being_hijacked)
-		to_chat(imp_in, "<span class='warning'>This APC is already being hijacked!</span>")
+		to_chat(imp_in, span_warning("This APC is already being hijacked!"))
 		return FALSE
 
 	apc.being_hijacked = TRUE
 	hijacking = TRUE
-	to_chat(imp_in, "<span class='notice'>Establishing remote connection with APC.</span>")
+	to_chat(imp_in, span_notice("Establishing remote connection with APC."))
 	if (!do_after(imp_in, 4 SECONDS,target=apc))
-		to_chat(imp_in, "<span class='warning'>Aborting.</span>")
+		to_chat(imp_in, span_warning("Aborting."))
 		apc.being_hijacked = FALSE
 		hijacking = FALSE
 		return TRUE
 	if (LAZYLEN(imp_in.siliconaccessareas) >= HIJACK_APC_MAX_AMOUNT)
-		to_chat(src,"<span class='warning'>You are connected to too many APCs! Too many more will fry your brain.</span>")
+		to_chat(src,span_warning("You are connected to too many APCs! Too many more will fry your brain."))
 		hijacking = FALSE
 		return TRUE
 	imp_in.set_light_power(2)
 	imp_in.set_light_range(2)
 	imp_in.set_light_color(COLOR_YELLOW)
 	imp_in.update_light()
-	imp_in.visible_message("<span class='warning'>[imp_in] starts glowing a with a hollow yellow light!</span>")
-	to_chat(imp_in, "<span class='notice'>Beginning hijack of APC.</span>")
+	imp_in.visible_message(span_warning("[imp_in] starts glowing a with a hollow yellow light!"))
+	to_chat(imp_in, span_notice("Beginning hijack of APC."))
 	if (do_after(imp_in, 21 SECONDS,target=apc))
 		apc.hijacker = imp_in
 		stealthmode = FALSE
@@ -124,7 +124,7 @@
 		stealthcooldown = world.time + 1 MINUTES + 30 SECONDS
 		toggle_eyes()
 	else
-		to_chat(imp_in, "<span class='warning'>Aborting.</span>")
+		to_chat(imp_in, span_warning("Aborting."))
 	apc.being_hijacked = FALSE
 	hijacking = FALSE
 	imp_in.set_light_power(0)

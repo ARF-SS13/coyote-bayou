@@ -14,6 +14,7 @@
 
 /// Melee item defines
 /// Base forces!
+#define FALLBACK_FORCE 1.15
 /// A small, generic tool
 #define WEAPON_FORCE_TOOL_SMALL 5
 /// A large, generic tool
@@ -26,7 +27,7 @@
 /// A big axe
 #define WEAPON_FORCE_AXE_LARGE 20
 /// Two-handed axe multiplier
-#define WEAPON_AXE_TWOHAND_MULT 1.5
+#define WEAPON_AXE_TWOHAND_MULT 1.8
 
 /// A cutting thing designed as a tool (wirecutters)
 #define WEAPON_FORCE_SLASH_TOOL 5

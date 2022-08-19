@@ -6,7 +6,7 @@
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	plane = FLOOR_PLANE
 	max_integrity = 200
-	armor = list("melee" = 50, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	armor = ARMOR_VALUE_MEDIUM
 
 	var/uses = 20
 	var/cooldown = 0
@@ -32,10 +32,10 @@
 
 /obj/machinery/ai_slipper/interact(mob/user)
 	if(!allowed(user))
-		to_chat(user, "<span class='danger'>Access denied.</span>")
+		to_chat(user, span_danger("Access denied."))
 		return
 	if(!uses)
-		to_chat(user, "<span class='danger'>[src] is out of foam and cannot be activated.</span>")
+		to_chat(user, span_danger("[src] is out of foam and cannot be activated."))
 		return
 	if(cooldown_time > world.time)
 		to_chat(user, "<span class='danger'>[src] cannot be activated for <b>[DisplayTimeText(world.time - cooldown_time)]</b>.</span>")

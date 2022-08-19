@@ -596,7 +596,7 @@
 						)
 
 /datum/gear/uniform/ncr_shorts
-	name = "NCR Rhodesian shorts"
+	name = "NCR fatigue shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
 	restricted_desc = "NCR"

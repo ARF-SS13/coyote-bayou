@@ -78,7 +78,6 @@
 	name = "janitor's jumpsuit"
 	icon_state = "janitor"
 	item_color = "janitor"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/lawyer
 	desc = "Slick threads."
@@ -125,7 +124,7 @@
 
 /obj/item/clothing/under/lawyer/blacksuit
 	name = "black suit"
-	desc = "A professional black suit. Vault-TecInvestigation Bureau approved!"
+	desc = "A professional black suit. Vault-Tec Investigation Bureau approved!"
 	icon_state = "blacksuit"
 	item_state = "bar_suit"
 	item_color = "blacksuit"

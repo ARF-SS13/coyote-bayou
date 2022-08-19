@@ -31,18 +31,18 @@
 			if(!I.tool_start_check(user, amount=0))
 				return
 
-			to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+			to_chat(user, span_notice("You begin repairing [src]..."))
 			if(I.use_tool(src, user, 40, volume=40))
 				obj_integrity = clamp(obj_integrity + 20, 0, max_integrity)
 	else if(istype(I, /obj/item/stack/ore/glass) && bar_material == SAND)
 		if(obj_integrity < max_integrity)
-			to_chat(user, "<span class='notice'>You begin packing sand into the damaged \the [src], repairing them...</span>")
+			to_chat(user, span_notice("You begin packing sand into the damaged \the [src], repairing them..."))
 			if(do_after(user, 30, target = src))
 				obj_integrity = clamp(obj_integrity + 30, 0, max_integrity)
-				user.visible_message("<span class='notice'>[user] repairs [src] with some sand.</span>","<span class='notice'>You repair [src] with some sand.</span>")
+				user.visible_message(span_notice("[user] repairs [src] with some sand."),span_notice("You repair [src] with some sand."))
 				I.use(1)
 		else
-			to_chat(user, "<span class='notice'>The [src] doesn't need to be repaired.</span>")
+			to_chat(user, span_notice("The [src] doesn't need to be repaired."))
 	else
 		return ..()
 
@@ -86,9 +86,9 @@
 	if(istype(I,/obj/item/stack/sheet/mineral/wood))
 		var/obj/item/stack/sheet/mineral/wood/W = I
 		if(W.amount < 5)
-			to_chat(user, "<span class='warning'>You need at least five wooden planks to make a wall!</span>")
+			to_chat(user, span_warning("You need at least five wooden planks to make a wall!"))
 			return
-		to_chat(user, "<span class='notice'>You start adding [I] to [src]...</span>")
+		to_chat(user, span_notice("You start adding [I] to [src]..."))
 		if(do_after(user, 50, target=src))
 			W.use(5)
 			var/turf/T = get_turf(src)
@@ -119,9 +119,9 @@
 	. = ..()
 	if(.)
 		return
-	user.visible_message("<span class='notice'>[user] starts to take down [src]...</span>", "<span class='notice'>You start to take down [src]...</span>")
+	user.visible_message(span_notice("[user] starts to take down [src]..."), span_notice("You start to take down [src]..."))
 	if(!has_buckled_mobs() && do_after(user, 80, target = src))
-		to_chat(user, "<span class='notice'>You take down [src].</span>")
+		to_chat(user, span_notice("You take down [src]."))
 		new /obj/item/stack/sheet/mineral/sandbags(src.loc)
 		qdel(src)
 		return
@@ -146,7 +146,7 @@
 	anchored = FALSE
 	max_integrity = 180
 	proj_pass_rate = 20
-	armor = list("melee" = 10, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 10, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 
 	var/deploy_time = 40
 	var/deploy_message = TRUE
@@ -161,7 +161,7 @@
 	density = TRUE
 	anchored = TRUE
 	if(deploy_message)
-		visible_message("<span class='warning'>[src] deploys!</span>")
+		visible_message(span_warning("[src] deploys!"))
 
 
 /obj/item/grenade/barrier
@@ -175,7 +175,7 @@
 
 /obj/item/grenade/barrier/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to toggle modes.</span>"
+	. += span_notice("Alt-click to toggle modes.")
 
 /obj/item/grenade/barrier/AltClick(mob/living/carbon/user)
 	. = ..()

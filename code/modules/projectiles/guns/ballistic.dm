@@ -27,6 +27,8 @@
 				magazine = new init_mag_type(src)
 			else
 				magazine = new mag_type(src)
+			if(magazine.fixed_mag)
+				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
 	allowed_mags |= typecacheof(mag_type)
 	if(length(extra_mag_types))
@@ -112,23 +114,6 @@
 		new_mag.update_icon()
 		update_icon()
 		return TRUE
-
-	if(istype(A, /obj/item/suppressor))
-		var/obj/item/suppressor/S = A
-		if(!can_suppress)
-			to_chat(user, "<span class='warning'>You can't seem to figure out how to fit [S] on [src]!</span>")
-			return
-		if(!user.is_holding(src))
-			to_chat(user, "<span class='notice'>You need be holding [src] to fit [S] to it!</span>")
-			return
-		if(suppressed)
-			to_chat(user, "<span class='warning'>[src] already has a suppressor!</span>")
-			return
-		if(user.transferItemToLoc(A, src))
-			to_chat(user, "<span class='notice'>You screw [S] onto [src].</span>")
-			install_suppressor(A)
-			update_overlays()
-			return
 	return FALSE
 
 /obj/item/gun/ballistic/screwdriver_act(mob/living/user, obj/item/I)
@@ -181,27 +166,6 @@
 			to_chat(user, span_alert("You can't fit \the [casing_or_magazine] into \the [src]!"))
 			return FALSE
 
-/obj/item/gun/ballistic/proc/install_suppressor(obj/item/suppressor/S)
-	// this proc assumes that the suppressor is already inside src
-	suppressed = S
-	S.oldsound = fire_sound
-	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
-	update_icon()
-
-/obj/item/gun/ballistic/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(loc == user)
-		if(suppressed && can_unsuppress)
-			var/obj/item/suppressor/S = suppressed
-			if(!user.is_holding(src))
-				return ..()
-			to_chat(user, "<span class='notice'>You unscrew [suppressed] from [src].</span>")
-			user.put_in_hands(suppressed)
-			fire_sound = S.oldsound
-			suppressed = null
-			update_icon()
-			return
-	return ..()
-
 /obj/item/gun/ballistic/attack_self(mob/living/user)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(magazine)
@@ -211,7 +175,7 @@
 			magazine.update_icon()
 			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
 			magazine = null
-			to_chat(user, "<span class='notice'>You eject the enbloc clip out of \the [src].</span>")
+			to_chat(user, span_notice("You eject the enbloc clip out of \the [src]."))
 		else
 			magazine.forceMove(drop_location())
 			user.put_in_hands(magazine)
@@ -221,15 +185,15 @@
 			else
 				playsound(src, "gun_remove_empty_magazine", 70, 1)
 			magazine = null
-			to_chat(user, "<span class='notice'>You pull the magazine out of \the [src].</span>")
+			to_chat(user, span_notice("You pull the magazine out of \the [src]."))
 	else if(chambered)
 		AC.forceMove(drop_location())
 		AC.bounce_away()
 		chambered = null
-		to_chat(user, "<span class='notice'>You unload the round from \the [src]'s chamber.</span>")
+		to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
 		playsound(src, "gun_slide_lock", 70, 1)
 	else
-		to_chat(user, "<span class='notice'>There's no magazine in \the [src].</span>")
+		to_chat(user, span_notice("There's no magazine in \the [src]."))
 	update_icon()
 	return
 
@@ -261,12 +225,12 @@
 /obj/item/gun/ballistic/suicide_act(mob/living/user)
 	var/obj/item/organ/brain/B = user.getorganslot(ORGAN_SLOT_BRAIN)
 	if (B && chambered && chambered.BB && can_trigger_gun(user) && !chambered.BB.nodamage)
-		user.visible_message("<span class='suicide'>[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
 		sleep(25)
 		if(user.is_holding(src))
 			var/turf/T = get_turf(user)
 			process_fire(user, user, FALSE, null, BODY_ZONE_HEAD)
-			user.visible_message("<span class='suicide'>[user] blows [user.p_their()] brain[user.p_s()] out with [src]!</span>")
+			user.visible_message(span_suicide("[user] blows [user.p_their()] brain[user.p_s()] out with [src]!"))
 			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 			var/turf/target = get_ranged_target_turf(user, turn(user.dir, 180), BRAINS_BLOWN_THROW_RANGE)
 			B.Remove()
@@ -278,7 +242,7 @@
 			B.throw_at(target, BRAINS_BLOWN_THROW_RANGE, BRAINS_BLOWN_THROW_SPEED, callback=gibspawner)
 			return(BRUTELOSS)
 		else
-			user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
+			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
 			return(OXYLOSS)
 	else
 		user.visible_message("<span class='suicide'>[user] is pretending to blow [user.p_their()] brain[user.p_s()] out with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
@@ -289,33 +253,37 @@
 
 /obj/item/gun/ballistic/proc/sawoff(mob/user)
 	if(sawn_off)
-		to_chat(user, "<span class='warning'>\The [src] is already shortened!</span>")
+		to_chat(user, span_warning("\The [src] is already shortened!"))
 		return
 	user.DelayNextAction(CLICK_CD_MELEE)
-	user.visible_message("[user] begins to shorten \the [src].", "<span class='notice'>You begin to shorten \the [src]...</span>")
+	user.visible_message("[user] begins to shorten \the [src].", span_notice("You begin to shorten \the [src]..."))
 
 	//if there's any live ammo inside the gun, makes it go off
 	if(blow_up(user))
-		user.visible_message("<span class='danger'>\The [src] goes off!</span>", "<span class='danger'>\The [src] goes off in your face!</span>")
+		user.visible_message(span_danger("\The [src] goes off!"), span_danger("\The [src] goes off in your face!"))
 		return
 
 	if(do_after(user, 30, target = src))
 		if(sawn_off)
 			return
-		user.visible_message("[user] shortens \the [src]!", "<span class='notice'>You shorten \the [src].</span>")
+		user.visible_message("[user] shortens \the [src]!", span_notice("You shorten \the [src]."))
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
+		weapon_weight = GUN_ONE_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_dat.modifyAllRatings(1.2)
+		recoil_dat.modifyAllRatings(2)
 		cock_delay = GUN_COCK_SHOTGUN_FAST
-		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
-			damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
-		else
-			damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
+		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
+		gun_accuracy_zone_type = ZONE_WEIGHT_SHOTGUN
+		init_firemodes = list(
+			list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		)
+		initialize_firemodes()
+		if(firemodes.len)
+			set_firemode(sel_mode)
 		update_icon()
 		return 1
 
@@ -353,16 +321,11 @@
 			process_fire(user, user, FALSE)
 			. = 1
 
+/obj/item/gun/ballistic/generate_guntags()
+	..()
+	gun_tags |= GUN_PROJECTILE
 
-/obj/item/suppressor
-	name = "suppressor"
-	desc = "A syndicate small-arms suppressor for maximum espionage."
-	icon = 'icons/obj/guns/projectile.dmi'
-	icon_state = "suppressor"
-	w_class = WEIGHT_CLASS_TINY
-	var/oldsound = null
-
-
-/obj/item/suppressor/specialoffer
-	name = "cheap suppressor"
-	desc = "A foreign knock-off suppressor, it feels flimsy, cheap, and brittle. Still fits some weapons."
+/obj/item/gun/ballistic/refresh_upgrades()
+	if(istype(magazine,/obj/item/ammo_box/magazine/internal))
+		magazine?.max_ammo = initial(magazine?.max_ammo)
+	..()

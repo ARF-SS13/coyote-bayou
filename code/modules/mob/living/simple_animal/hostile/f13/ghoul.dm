@@ -17,8 +17,8 @@
 	speak_emote = list("growls")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
-	maxHealth = 60
-	health = 60
+	maxHealth = 48
+	health = 48
 	speed = 3
 	harm_intent_damage = 8
 	melee_damage_lower = 5
@@ -70,11 +70,11 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	maxHealth = 120
-	health = 120
+	maxHealth = 96
+	health = 96
 	harm_intent_damage = 8
-	melee_damage_lower = 10
-	melee_damage_upper = 25
+	melee_damage_lower = 9
+	melee_damage_upper = 20
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
@@ -88,17 +88,17 @@
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr
 	name = "feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 160
+	maxHealth = 128
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "feral ghoul soldier"
+	name = "plated feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 180
+	maxHealth = 144
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
 	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 250
+	maxHealth = 150
 	speed = 3
 
 //Cold Feral Ghoul
@@ -109,8 +109,8 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -125,8 +125,8 @@
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
 	speed = 1.5
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -141,11 +141,11 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 300
-	health = 300
+	maxHealth = 240
+	health = 240
 	speed = 2.5
 	harm_intent_damage = 8
-	melee_damage_lower = 30
+	melee_damage_lower = 25
 	melee_damage_upper = 35
 	mob_size = 5
 	wound_bonus = 0
@@ -161,11 +161,11 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	rare_icon = "glowinghoul_h"
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	speed = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 12
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
@@ -190,8 +190,8 @@
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
-	maxHealth = 320
-	health = 320
+	maxHealth = 256
+	health = 256
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35
@@ -205,8 +205,8 @@
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 90
-	health = 90
+	maxHealth = 72
+	health = 72
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
@@ -218,8 +218,8 @@
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Alive Ghoul
@@ -323,8 +323,8 @@
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
 	speed = 2
-	maxHealth = 270
-	health = 270
+	maxHealth = 216
+	health = 216
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -336,8 +336,8 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 240
-	health = 240
+	maxHealth = 192
+	health = 192
 	speed = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 30
@@ -371,8 +371,8 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 650
-	health = 650
+	maxHealth = 520
+	health = 520
 	speed = 2.5
 	harm_intent_damage = 8
 	melee_damage_lower = 30

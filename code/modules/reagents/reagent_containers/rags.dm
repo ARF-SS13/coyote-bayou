@@ -19,13 +19,13 @@
 	var/damp_threshold = 0.5
 
 /obj/item/reagent_containers/rag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is smothering [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (OXYLOSS)
 
 /obj/item/reagent_containers/rag/examine(mob/user)
 	. = ..()
 	if(reagents.total_volume)
-		. += "<span class='notice'>It's soaked. Alt-Click to squeeze it dry, and perhaps gather the liquids into another held open container.</span>"
+		. += span_notice("It's soaked. Alt-Click to squeeze it dry, and perhaps gather the liquids into another held open container.")
 
 /obj/item/reagent_containers/rag/afterattack(atom/A, mob/user,proximity)
 	. = ..()
@@ -36,43 +36,43 @@
 		var/reagentlist = pretty_string_from_reagent_list(reagents)
 		var/log_object = "a damp rag containing [reagentlist]"
 		if(user.a_intent == INTENT_HARM && !C.is_mouth_covered())
-			C.visible_message("<span class='danger'>[user] is trying to smother \the [C] with \the [src]!</span>", "<span class='userdanger'>[user] is trying to smother you with \the [src]!</span>", "<span class='italics'>You hear some struggling and muffled cries of surprise.</span>")
+			C.visible_message(span_danger("[user] is trying to smother \the [C] with \the [src]!"), span_userdanger("[user] is trying to smother you with \the [src]!"), span_italic("You hear some struggling and muffled cries of surprise."))
 			if(do_after(user, 20, target = C))
 				reagents.reaction(C, INGEST)
 				reagents.trans_to(C, 5, log = TRUE)
-				C.visible_message("<span class='danger'>[user] has smothered \the [C] with \the [src]!</span>", "<span class='userdanger'>[user] has smothered you with \the [src]!</span>", "<span class='italics'>You hear some struggling and a heavy breath taken.</span>")
+				C.visible_message(span_danger("[user] has smothered \the [C] with \the [src]!"), span_userdanger("[user] has smothered you with \the [src]!"), span_italic("You hear some struggling and a heavy breath taken."))
 				log_combat(user, C, "smothered", log_object)
 		else
-			C.visible_message("<span class='notice'>[user] is trying to wipe \the [C] with \the [src].</span>")
+			C.visible_message(span_notice("[user] is trying to wipe \the [C] with \the [src]."))
 			if(do_after(user, 20, target = C))
 				reagents.reaction(C, TOUCH)
 				reagents.remove_all(5)
-				C.visible_message("<span class='notice'>[user] has wiped \the [C] with \the [src].</span>")
+				C.visible_message(span_notice("[user] has wiped \the [C] with \the [src]."))
 				log_combat(user, C, "touched", log_object)
 
 	else if(istype(A) && (src in user))
-		user.visible_message("[user] starts to wipe down [A] with [src]!", "<span class='notice'>You start to wipe down [A] with [src]...</span>")
+		user.visible_message("[user] starts to wipe down [A] with [src]!", span_notice("You start to wipe down [A] with [src]..."))
 		if(do_after(user, action_speed, target = A))
-			user.visible_message("[user] finishes wiping off [A]!", "<span class='notice'>You finish wiping off [A].</span>")
+			user.visible_message("[user] finishes wiping off [A]!", span_notice("You finish wiping off [A]."))
 			SEND_SIGNAL(A, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
 
 /obj/item/reagent_containers/rag/alt_pre_attack(mob/living/M, mob/living/user, params)
 	if(istype(M) && user.a_intent == INTENT_HELP)
 		user.DelayNextAction(CLICK_CD_MELEE)
 		if(M.on_fire)
-			user.visible_message("<span class='warning'>\The [user] uses \the [src] to pat out [M == user ? "[user.p_their()]" : "\the [M]'s"] flames!</span>")
+			user.visible_message(span_warning("\The [user] uses \the [src] to pat out [M == user ? "[user.p_their()]" : "\the [M]'s"] flames!"))
 			if(hitsound)
 				playsound(M, hitsound, 25, 1)
 			M.adjust_fire_stacks(-min(extinguish_efficiency, M.fire_stacks))
 		else
 			if(reagents.total_volume > (volume * damp_threshold))
-				to_chat(user, "<span class='warning'>\The [src] is too drenched to be used to dry [user == M ? "yourself" : "\the [M]"] off.</span>")
+				to_chat(user, span_warning("\The [src] is too drenched to be used to dry [user == M ? "yourself" : "\the [M]"] off."))
 				return TRUE
-			user.visible_message("<span class='notice'>\The [user] starts drying [M == user ? "[user.p_them()]self" : "\the [M]"] off with \the [src]...</span>")
+			user.visible_message(span_notice("\The [user] starts drying [M == user ? "[user.p_them()]self" : "\the [M]"] off with \the [src]..."))
 			if(do_mob(user, M, action_speed))
 				if(reagents.total_volume > (volume * damp_threshold))
 					return
-				user.visible_message("<span class='notice'>\The [user] dries [M == user ? "[user.p_them()]self" : "\the [M]"] off with \the [src].</span>")
+				user.visible_message(span_notice("\The [user] dries [M == user ? "[user.p_them()]self" : "\the [M]"] off with \the [src]."))
 				if(wipe_sound)
 					playsound(M, wipe_sound, 25, 1)
 				if(M.fire_stacks)
@@ -90,7 +90,7 @@
 /obj/item/reagent_containers/rag/AltClick(mob/user)
 	. = ..()
 	if(reagents.total_volume && user.canUseTopic(src, BE_CLOSE))
-		to_chat(user, "<span class='notice'>You start squeezing \the [src] dry...</span>")
+		to_chat(user, span_notice("You start squeezing \the [src] dry..."))
 		if(do_after(user, action_speed, TRUE, src))
 			var/msg = "You squeeze \the [src]"
 			var/obj/item/target
@@ -108,7 +108,7 @@
 			else
 				msg += "'s liquids into \the [target]"
 				reagents.trans_to(target, reagents.total_volume, log = TRUE)
-			to_chat(user, "<span class='notice'>[msg].</span>")
+			to_chat(user, span_notice("[msg]."))
 		return TRUE
 
 
@@ -166,7 +166,7 @@
 /obj/item/reagent_containers/rag/towel/attack_self(mob/user)
 	if(!user.can_reach(src) || !user.dropItemToGround(src))
 		return
-	to_chat(user, "<span class='notice'>You lay out \the [src] flat on the ground.</span>")
+	to_chat(user, span_notice("You lay out \the [src] flat on the ground."))
 	icon_state = flat_icon
 	layer = BELOW_OBJ_LAYER
 
@@ -192,4 +192,4 @@
 	extinguish_efficiency = 5
 	action_speed = 15
 	damp_threshold = 0.8
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 20, "rad" = 20, "fire" = 50, "acid" = 50) //items don't provide armor to wearers unlike clothing yet.
+	armor = ARMOR_VALUE_LIGHT

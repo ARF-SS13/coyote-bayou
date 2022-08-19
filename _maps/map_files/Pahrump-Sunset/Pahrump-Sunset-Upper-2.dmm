@@ -51,8 +51,6 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "ej" = (
-/obj/machinery/power/smes,
-/obj/structure/cable,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -68,11 +66,10 @@
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
 "fQ" = (
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/terminal{
-	dir = 8
+/obj/structure/nest/protectron{
+	layer = 3;
+	max_mobs = 1;
+	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
@@ -172,6 +169,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"mQ" = (
+/obj/structure/table/reinforced,
+/obj/item/blueprint/research,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
 "mU" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -295,10 +297,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
-"wA" = (
-/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "wD" = (
@@ -430,13 +428,6 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
-"Ir" = (
-/obj/effect/turf_decal/caution/stand_clear{
-	pixel_y = 6
-	},
-/mob/living/simple_animal/hostile/raider/tribal,
-/turf/open/indestructible/ground/outside/roof,
-/area/f13/wasteland)
 "Jo" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -444,13 +435,9 @@
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
 "Jr" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
-/obj/machinery/power/apc/auto_name/north,
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
+/obj/structure/cable,
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "JB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -464,18 +451,15 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "KV" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
-/obj/structure/cable,
 /obj/machinery/power/terminal{
 	dir = 8
 	},
-/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "LT" = (
@@ -498,6 +482,11 @@
 /area/f13/wasteland)
 "Oi" = (
 /obj/structure/chair/f13chair2,
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/hospital)
+"OQ" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Pg" = (
@@ -542,13 +531,6 @@
 /obj/machinery/hydroponics/constructable,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
-"Sz" = (
-/obj/structure/ladder/unbreakable{
-	id = "hospitalroof";
-	height = 2
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "SK" = (
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
@@ -557,6 +539,12 @@
 /obj/machinery/light,
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"Tq" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "Tt" = (
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -582,7 +570,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vn" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "Vp" = (
@@ -606,12 +598,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "WH" = (
-/obj/structure/nest/protectron{
-	layer = 3;
-	max_mobs = 1;
-	pixel_y = 20
-	},
-/turf/open/floor/plasteel/f13/vault_floor/white,
+/turf/open/transparent/openspace,
 /area/f13/building/hospital)
 "WL" = (
 /obj/machinery/hydroponics/constructable,
@@ -5140,20 +5127,20 @@ SK
 SK
 SK
 hm
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-rN
-sn
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -5397,20 +5384,20 @@ SK
 SK
 SK
 hm
-rN
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hS
-sn
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -5654,20 +5641,20 @@ SK
 hm
 hm
 hm
-hS
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-rN
-rN
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -5911,20 +5898,20 @@ SK
 hm
 hm
 hm
-hS
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hS
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 hm
 hm
 hm
@@ -6168,21 +6155,21 @@ SK
 hm
 hm
 hm
-rN
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hS
 hm
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+rN
+sn
 hm
 hm
 hm
@@ -6425,21 +6412,21 @@ SK
 hm
 hm
 hm
-hS
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-SK
-hS
 hm
+rN
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+hS
+sn
 hm
 hm
 hm
@@ -6682,6 +6669,7 @@ SK
 hm
 hm
 hm
+hm
 hS
 SK
 SK
@@ -6696,7 +6684,6 @@ SK
 SK
 rN
 rN
-hm
 hm
 hm
 hm
@@ -6939,7 +6926,9 @@ SK
 hm
 hm
 hm
-rN
+hm
+hS
+SK
 SK
 SK
 SK
@@ -6952,8 +6941,6 @@ SK
 SK
 SK
 hS
-sn
-hm
 hm
 hm
 hm
@@ -7196,21 +7183,21 @@ SK
 hm
 hm
 hm
-rN
-rN
-hS
-hS
-rN
-rN
-hS
-hS
-rN
-hS
-hS
-rN
-rN
-sn
 hm
+rN
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+hS
 hm
 hm
 hm
@@ -7454,20 +7441,20 @@ hm
 sn
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+hS
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+hS
 hm
 hm
 hm
@@ -7711,20 +7698,20 @@ SK
 sn
 sn
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+hS
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+rN
+rN
 hm
 hm
 hm
@@ -7968,20 +7955,20 @@ SK
 sn
 sn
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+rN
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+hS
+sn
 hm
 hm
 hm
@@ -8225,20 +8212,20 @@ SK
 sn
 sn
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+rN
+rN
+hS
+hS
+rN
+rN
+hS
+hS
+rN
+hS
+hS
+rN
+rN
+sn
 hm
 hm
 hm
@@ -44961,7 +44948,7 @@ kY
 Ey
 vT
 Ey
-kY
+mQ
 xs
 SK
 SK
@@ -45473,9 +45460,9 @@ SK
 xs
 dH
 Wa
-Wa
 Ey
-kY
+Ey
+OQ
 xs
 SK
 SK
@@ -45732,7 +45719,7 @@ jL
 Ey
 Ey
 Ey
-wA
+Ey
 xs
 SK
 SK
@@ -46760,7 +46747,7 @@ SK
 SK
 SK
 SK
-Um
+SK
 SK
 SK
 SK
@@ -48551,14 +48538,14 @@ ce
 ce
 ce
 oA
-Ir
+Sn
 SK
 SK
 SK
 SK
 SK
 SK
-Ef
+SK
 SK
 SK
 SK
@@ -49049,7 +49036,7 @@ hm
 hm
 hm
 hm
-xs
+hm
 xs
 xs
 xs
@@ -49306,8 +49293,8 @@ hm
 hm
 hm
 hm
+hm
 xs
-Jr
 Vn
 ej
 CY
@@ -49563,10 +49550,10 @@ hm
 hm
 hm
 hm
+hm
 xs
-jL
-Ey
 fQ
+Ey
 KV
 xs
 SK
@@ -49820,9 +49807,9 @@ hm
 hm
 hm
 hm
+hm
 xs
 KT
-Ey
 Ey
 Yb
 xs
@@ -50077,9 +50064,9 @@ hm
 hm
 hm
 hm
+hm
 xs
 WH
-Ey
 Ey
 uu
 xs
@@ -50334,8 +50321,8 @@ hm
 hm
 hm
 hm
+hm
 xs
-Sz
 Ey
 Ey
 ij
@@ -50591,7 +50578,7 @@ hm
 hm
 hm
 hm
-xs
+hm
 xs
 xs
 xs
@@ -50607,9 +50594,9 @@ St
 St
 ch
 lk
-jX
-jX
-jX
+Jr
+SK
+Tq
 ic
 jX
 jX

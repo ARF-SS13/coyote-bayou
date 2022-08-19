@@ -154,7 +154,7 @@ SUBSYSTEM_DEF(pai)
 				continue
 			if(!G.can_reenter_round()) // this should use notify_ghosts() instead one day.
 				return FALSE
-			to_chat(G, "<span class='ghostalert'>[user] is requesting a pAI personality! Use the pAI button to submit yourself as one.</span>")
+			to_chat(G, span_ghostalert("[user] is requesting a pAI personality! Use the pAI button to submit yourself as one."))
 		addtimer(CALLBACK(src, .proc/spam_again), spam_delay)
 	var/list/available = list()
 	for(var/datum/paiCandidate/c in SSpai.candidates)

@@ -72,7 +72,7 @@
 		var/mob/living/L = user
 		if(tooadvanced == TRUE)
 			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE))
-				to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+				to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
 				return FALSE
 			else
 				. = ..()
@@ -307,7 +307,7 @@
 			continue
 
 		if(disabled || !can_build(D))
-			dat += "<span class='linkOff'>[D.name]</span>"
+			dat += span_linkOff("[D.name]")
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 
@@ -341,7 +341,7 @@
 	for(var/v in matching_designs)
 		var/datum/design/D = v
 		if(disabled || !can_build(D))
-			dat += "<span class='linkOff'>[D.name]</span>"
+			dat += span_linkOff("[D.name]")
 		else
 			dat += "<a href='?src=[REF(src)];make=[D.id];multiplier=1'>[D.name]</a>"
 
@@ -500,21 +500,21 @@
 	if(DRM && panel_open)
 		if(constage == 0)
 			if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-				to_chat(user, "<span class='notice'>You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts.</span>")
+				to_chat(user, span_notice("You upgrade [src] with ammunition schematics. You'll still need to bypass the DRM with some high-quality metal parts."))
 				constage = 1
 				qdel(O)
 		if(constage == 1)
 			if(istype(O, /obj/item/stack/crafting/goodparts))
 				var/obj/item/stack/crafting/goodparts/S = O
 				if(S.get_amount() < 5)
-					to_chat(user, "<span class='warning'>You need at least 5 high-quality metal parts to upgrade [src].</span>")
+					to_chat(user, span_warning("You need at least 5 high-quality metal parts to upgrade [src]."))
 					return
 				S.use(5)
-				to_chat(user, "<span class='notice'>You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process.</span>")
+				to_chat(user, span_notice("You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process."))
 				constage = 2
 		if(constage == 2)
 			if(istype(O, /obj/item/crafting/reloader))
-				to_chat(user, "<span class='notice'>You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again.</span>")
+				to_chat(user, span_notice("You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again."))
 				constage = 3
 				DRM = 0
 				categories = list(
@@ -553,7 +553,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(L.has_trait(TRAIT_TECHNOPHOBE, TRAIT_GENERIC))
-			to_chat(user, "<span class='warning'>The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?</span>")
+			to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
 			return FALSE
 		else
 			. = ..()
@@ -586,31 +586,63 @@
 	var/intermediate = 0
 	var/advanced = 0
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
+
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	..()
-	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
+	if(!busy && !stat && istype(O, /obj/item/storage/bag/casings))
+		var/obj/item/storage/bag/casings/casings_bag = O
+		var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+		var/count = 0
+		if(INTERACTING_WITH(user, src))
+			return
+		if(!length(casings_bag.contents))
+			to_chat(user, span_warning("There's nothing in \the [casings_bag] to load into \the [src]!"))
+			return
+		to_chat(user, span_notice("You start dumping \the [casings_bag] into \the [src]."))
+		if(!do_after(user, 2 SECONDS, target = src))
+			to_chat(user, span_notice("You stop dumping \the [casings_bag] into \the [src]."))
+			return
+		for(var/obj/item/ammo_casing/casing in casings_bag.contents)
+			var/mat_amount = mats.get_item_material_amount(casing)
+			if(!mat_amount)
+				continue
+			if(!mats.has_space(mat_amount))
+				to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+				return
+			if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
+				continue
+			// Forgive me for this.
+			if(mats.after_insert)
+				mats.after_insert.Invoke(casing, mats.last_inserted_id, mats.insert_item(casing))
+			// I blame whoever wrote material containers.
+			qdel(casing)
+			count++
+		if(count > 0)
+			to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		else
+			to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
+		return
+	if(panel_open)
+		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
-			simple = 1
+			simple = TRUE
 			qdel(O)
-	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
+			return
+		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
 			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
-			basic = 1
+			basic = TRUE
 			qdel(O)
-	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
+			return
+		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
 			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
-			intermediate = 1
+			intermediate = TRUE
 			qdel(O)
-	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
+			return
+		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
 			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
-			advanced = 1
+			advanced = TRUE
 			qdel(O)
-	else
-		attack_hand(user)
-		return TRUE
+			return
+	return ..()
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Simple Ammo" in D.category)

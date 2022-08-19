@@ -37,16 +37,16 @@
 	else
 		tune_time_left = 0
 		if (song.playing)
-			loc.visible_message("<span class='warning'>[src] starts sounding a little off...</span>")
+			loc.visible_message(span_warning("[src] starts sounding a little off..."))
 		STOP_PROCESSING(SSprocessing, src)
 
 /obj/item/instrument/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins to play 'Gloomy Sunday'! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS)
 
 /obj/item/instrument/attack_self(mob/user)
 	if(!user.IsAdvancedToolUser())
-		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
 		return TRUE
 	interact(user)
 
@@ -55,13 +55,13 @@
 		var/mob/living/carbon/human/H = user
 		if (HAS_TRAIT(H, TRAIT_MUSICIAN))
 			if (!is_tuned())
-				H.visible_message("[H] tunes the [src] to perfection!", "<span class='notice'>You tune the [src] to perfection!</span>")
+				H.visible_message("[H] tunes the [src] to perfection!", span_notice("You tune the [src] to perfection!"))
 				tune_time_left = 600 SECONDS
 				START_PROCESSING(SSprocessing, src)
 			else
-				to_chat(H, "<span class='notice'>[src] is already well tuned!</span>")
+				to_chat(H, span_notice("[src] is already well tuned!"))
 		else
-			to_chat(H, "<span class='warning'>You have no idea how to use this.</span>")
+			to_chat(H, span_warning("You have no idea how to use this."))
 
 /obj/item/instrument/proc/is_tuned()
 	return tune_time_left > 0
@@ -230,7 +230,7 @@
 
 /obj/item/instrument/harmonica/proc/handle_speech(datum/source, list/speech_args)
 	if(song.playing && ismob(loc))
-		to_chat(loc, "<span class='warning'>You stop playing the harmonica to talk...</span>")
+		to_chat(loc, span_warning("You stop playing the harmonica to talk..."))
 		song.playing = FALSE
 
 /obj/item/instrument/harmonica/equipped(mob/M, slot)

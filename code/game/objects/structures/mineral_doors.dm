@@ -16,7 +16,7 @@
 	var/isSwitchingStates = 0
 	var/close_delay = -1 //-1 if does not auto close.
 	max_integrity = 200
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_MEDIUM
 	var/sheetType = /obj/item/stack/sheet/metal
 	var/sheetAmount = 7
 	var/openSound = 'sound/effects/stonedoor_openclose.ogg'
@@ -124,9 +124,9 @@
 
 /obj/structure/mineral_door/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_MINING)
-		to_chat(user, "<span class='notice'>You start digging the [name]...</span>")
+		to_chat(user, span_notice("You start digging the [name]..."))
 		if(I.use_tool(src, user, 40, volume=50))
-			to_chat(user, "<span class='notice'>You finish digging.</span>")
+			to_chat(user, span_notice("You finish digging."))
 			deconstruct(TRUE)
 	else if(user.a_intent != INTENT_HARM)
 		return attack_hand(user)

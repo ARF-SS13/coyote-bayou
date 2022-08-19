@@ -14,7 +14,25 @@
 		"rad" = 0, \
 		"fire" = 0, \
 		"acid" = 0, \
-		"wound" = 0)
+		"wound" = 0, \
+		"damage_threshold" = 0)
+
+/* Generic item armor
+ * Usually isnt actual armor
+ * Has some good fire resist, but thats about it
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GENERIC_ITEM list(\
+		"linemelee" = 0, \
+		"linebullet" = 0, \
+		"linelaser" = 0, \
+		"energy" = 0, \
+		"bomb" = 0, \
+		"bio" = 10, \
+		"rad" = 10, \
+		"fire" = 50, \
+		"acid" = 50, \
+		"wound" = 0, \
+		"damage_threshold" = 0)
 
 /* Basic clothing armor values
  * Mild environmental resistances
@@ -30,15 +48,16 @@
 		"rad" = 10, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 0)
+		"wound" = 0, \
+		"damage_threshold" = 0)
 
 /* Light armor values
  * High mobility
  * Mild environmental resistances
  * Low defense 
+ * Lowish DT
  * 
  * +25 effective HP
- * 1.25x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
 		"linemelee" = 25, \
@@ -50,15 +69,16 @@
 		"rad" = 10, \
 		"fire" = 10, \
 		"acid" = 10, \
-		"wound" = 5)
+		"wound" = 5, \
+		"damage_threshold" = 3)
 
 /* Medium armor values
  * Decent mobility
  * Decent environmental resistances
  * Decent defense 
+ * Decent DT
  * 
  * +50 effective HP
- * 1.5x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_MEDIUM list(\
 		"linemelee" = 50, \
@@ -70,69 +90,72 @@
 		"rad" = 25, \
 		"fire" = 25, \
 		"acid" = 25, \
-		"wound" = 10)
+		"wound" = 10, \
+		"damage_threshold" = 5)
 
 /* Heavy armor values
  * Low mobility
  * Decent environmental resistances
  * High defense 
+ * Lot of DT
  * 
- * +100 effective HP
- * 2x effective healing
+ * +75 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_HEAVY list(\
-		"linemelee" = 100, \
-		"linebullet" = 100, \
-		"linelaser" = 100, \
+		"linemelee" = 75, \
+		"linebullet" = 75, \
+		"linelaser" = 75, \
 		"energy" = 0, \
 		"bomb" = 25, \
 		"bio" = 25, \
 		"rad" = 25, \
 		"fire" = 35, \
 		"acid" = 35, \
-		"wound" = 25)
+		"wound" = 25, \
+		"damage_threshold" = 10)
 
 /* Salvaged PA values
  * Next to no mobility
  * Good environmental resistances
  * Great defense
+ * Lots of DT
  * 
- * +250 effective HP
- * +50 laser HP
- * 3.5x effective healing
+ * +125 effective HP
+ * +75 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_SALVAGE list(\
-		"linemelee" = 250, \
-		"linebullet" = 250, \
-		"linelaser" = 300, \
+		"linemelee" = 125, \
+		"linebullet" = 125, \
+		"linelaser" = 200, \
 		"energy" = 30, \
 		"bomb" = 60, \
 		"bio" = 80, \
 		"rad" = 50, \
 		"fire" = 80, \
 		"acid" = 80, \
-		"wound" = 45)
+		"wound" = 45, \
+		"damage_threshold" = 20)
 
 /* Power armor values
  * High mobility
  * Amazing environmental resistances
  * OP defense
  * 
- * +400 effective HP
+ * +200 effective HP
  * +50 laser HP
- * 5x effective healing
  * * * * * * * * * * * */
 #define ARMOR_VALUE_PA list(\
-		"linemelee" = 400, \
-		"linebullet" = 400, \
-		"linelaser" = 450, \
+		"linemelee" = 200, \
+		"linebullet" = 200, \
+		"linelaser" = 250, \
 		"energy" = 40, \
 		"bomb" = 90, \
 		"bio" = 100, \
 		"rad" = 50, \
 		"fire" = 95, \
 		"acid" = 95, \
-		"wound" = 100)
+		"wound" = 100, \
+		"damage_threshold" = 30)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
@@ -301,6 +324,33 @@
 #define ARMOR_MODIFIER_DOWN_LASER_T4 list(\
 		"linelaser" = -200)
 
+/* DT tokens
+ * Adds on damage threshold
+ * T1 - Small plated inserts, or heavy leather
+ * T2 - Sturdy plated inserts, or deathclaw plating
+ * T3 - Dedicated armor reinforcements
+ * * * * * * * * * * * */
+#define ARMOR_MODIFIER_UP_DT_T1 list(\
+		"damage_threshold" = 1)
+
+#define ARMOR_MODIFIER_UP_DT_T2 list(\
+		"damage_threshold" = 3)
+
+#define ARMOR_MODIFIER_UP_DT_T3 list(\
+		"damage_threshold" = 5)
+
+#define ARMOR_MODIFIER_DOWN_DT_T1 list(\
+		"damage_threshold" = -1)
+
+#define ARMOR_MODIFIER_DOWN_DT_T2 list(\
+		"damage_threshold" = -3)
+
+#define ARMOR_MODIFIER_DOWN_DT_T3 list(\
+		"damage_threshold" = -5)
+
+#define ARMOR_MODIFIER_DOWN_DT_T4 list(\
+		"damage_threshold" = -20)
+
 /// Should the modifier MULTiply or ADD the value?
 GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"melee" = "MULT",
@@ -315,7 +365,9 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"rad" = "MULT",
 		"fire" = "MULT",
 		"acid" = "MULT",
-		"wound" = "MULT"))
+		"wound" = "MULT",
+		"magic" = "MULT",
+		"damage_threshold" = "ADD"))
 
 
 /* Armor slowdowns
@@ -413,11 +465,16 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define ARMOR_CAP_ACID 90
 #define ARMOR_CAP_MAGIC 100
 #define ARMOR_CAP_WOUND 100
+#define ARMOR_CAP_DT 40
+#define ARMOR_CAP_DR 95
 
 /// Armor stiffness - How much recoil we get while running and gunning!
 #define LIGHT_STIFFNESS 1
 #define MEDIUM_STIFFNESS 1.5
 #define HEAVY_STIFFNESS 2
+
+/// Damages DT is effective with
+GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
 
 
 

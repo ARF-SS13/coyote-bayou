@@ -526,7 +526,6 @@
 /datum/design/foam_x9
 	name = "Foam Force X9 Rifle"
 	id = "foam_x9"
-	build_type = TOYLATHE
 	materials = list(/datum/material/plastic = 4000, /datum/material/iron = 500)
 	build_path = /obj/item/gun/ballistic/automatic/x9/toy
 	category = list("initial", "Rifles")
@@ -584,7 +583,6 @@
 /datum/design/am4c
 	name = "Foam Force AM4-C Rifle"
 	id = "foam_am4c"
-	build_type = TOYLATHE
 	materials = list(/datum/material/plastic = 4000, /datum/material/iron = 500)
 	build_path = /obj/item/gun/ballistic/automatic/AM4C
 	category = list("initial", "Rifles")
@@ -617,7 +615,6 @@
 /datum/design/foam_smg
 	name = "Foam Force SMG"
 	id = "foam_smg"
-	build_type = TOYLATHE
 	materials = list(/datum/material/plastic = 2000, /datum/material/iron = 250)
 	build_path = /obj/item/gun/ballistic/automatic/toy/unrestricted
 	category = list("initial", "Pistols")
@@ -666,7 +663,6 @@
 /datum/design/foam_c20
 	name = "Donksoft C20R"
 	id = "foam_c20"
-	build_type = TOYLATHE
 	materials = list(/datum/material/plastic = 4000, /datum/material/iron = 500)
 	build_path = /obj/item/gun/ballistic/automatic/c20r/toy/unrestricted
 	category = list("hacked", "Rifles")
@@ -675,7 +671,6 @@
 /datum/design/foam_l6
 	name = "Donksoft LMG"
 	id = "foam_LMG"
-	build_type = TOYLATHE
 	materials = list(/datum/material/plastic = 4000, /datum/material/iron = 500)
 	build_path = /obj/item/gun/ballistic/automatic/l6_saw/toy/unrestricted
 	category = list("hacked", "Rifles")

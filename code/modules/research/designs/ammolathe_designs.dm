@@ -213,7 +213,7 @@
 	category = list("initial", "Basic Magazines")
 
 /datum/design/ammolathe/greasegunmag
-	name = "empty grease submachine gun magazine (9mm)"
+	name = "empty grease submachine gun magazine (.45)"
 	id = "greasegunmag"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/greasegun/empty
@@ -252,7 +252,7 @@
 	id = "Thompsonstick"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/tommygunm45/stick/empty
-	category = list("initial", "Basic Magazines")
+	category = list("initial", "Basic Magazines")	
 
 //Tier 2 Ammo
 
@@ -453,6 +453,13 @@
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/sks/empty
 	category = list("initial", "Intermediate Magazines")
+	
+/datum/design/ammolathe/rev308
+	name = "Empty 7.62mm/.308 Speedloader"
+	id = "rev308"	
+	materials = list(/datum/material/iron = 6000)
+	build_path = /obj/item/ammo_box/rev308/empty
+	category = list("initial", "Intermediate Magazines")	
 
 /datum/design/ammolathe/amrmag
 	name = "empty anti-materiel rifle magazine (.50)"

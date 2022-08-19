@@ -60,7 +60,7 @@ Slimecrossing Armor
 		set_light_color(newcolor)
 
 /obj/structure/light_prism/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	to_chat(user, "<span class='notice'>You dispel [src]</span>")
+	to_chat(user, span_notice("You dispel [src]"))
 	qdel(src)
 
 /datum/action/item_action/change_prism_colour
@@ -87,13 +87,13 @@ Slimecrossing Armor
 		return
 	var/obj/item/clothing/glasses/prism_glasses/glasses = target
 	if(locate(/obj/structure/light_prism) in get_turf(owner))
-		to_chat(owner, "<span class='warning'>There isn't enough ambient energy to fabricate another light prism here.</span>")
+		to_chat(owner, span_warning("There isn't enough ambient energy to fabricate another light prism here."))
 		return
 	if(istype(glasses))
 		if(!glasses.glasses_color)
-			to_chat(owner, "<span class='warning'>The lens is oddly opaque...</span>")
+			to_chat(owner, span_warning("The lens is oddly opaque..."))
 			return
-		to_chat(owner, "<span class='notice'>You channel nearby light into a glowing, ethereal prism.</span>")
+		to_chat(owner, span_notice("You channel nearby light into a glowing, ethereal prism."))
 		new /obj/structure/light_prism(get_turf(owner), glasses.glasses_color)
 
 /obj/item/clothing/head/peaceflower
@@ -137,7 +137,7 @@ Slimecrossing Armor
 	obj_flags = IMMUTABLE_SLOW
 	slowdown = 4
 	var/hit_reflect_chance = 10 // Citadel Change: because 40% chance of bouncing lasers back into peoples faces isn't good.
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 40, "energy" = 40, "bomb" = 80, "bio" = 80, "rad" = 80, "fire" = 70, "acid" = 90) //Citadel Change to avoid immortal Xenobiologists.
+	armor = ARMOR_VALUE_PA
 
 /obj/item/clothing/suit/armor/heavy/adamantine/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(is_energy_reflectable_projectile(object) && prob(hit_reflect_chance))

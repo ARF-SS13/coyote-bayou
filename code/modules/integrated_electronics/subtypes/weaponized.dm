@@ -46,15 +46,15 @@
 	if(istype(O, /obj/item/gun/energy))
 		var/obj/item/gun/gun = O
 		if(!gun.can_circuit)
-			to_chat(user, "<span class='warning'>[gun] does not fit into circuits.</span>")
+			to_chat(user, span_warning("[gun] does not fit into circuits."))
 			return
 		if(installed_gun)
-			to_chat(user, "<span class='warning'>There's already a weapon installed.</span>")
+			to_chat(user, span_warning("There's already a weapon installed."))
 			return
 		user.transferItemToLoc(gun,src)
 		installed_gun = gun
 		var/list/gun_properties = gun.get_turret_properties()
-		to_chat(user, "<span class='notice'>You slide \the [gun] into the firing mechanism.</span>")
+		to_chat(user, span_notice("You slide \the [gun] into the firing mechanism."))
 		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
 		stun_projectile = gun_properties["stun_projectile"]
 		stun_projectile_sound = gun_properties["stun_projectile_sound"]
@@ -74,14 +74,14 @@
 /obj/item/integrated_circuit/weaponized/weapon_firing/attack_self(mob/user)
 	if(installed_gun)
 		installed_gun.forceMove(drop_location())
-		to_chat(user, "<span class='notice'>You slide \the [installed_gun] out of the firing mechanism.</span>")
+		to_chat(user, span_notice("You slide \the [installed_gun] out of the firing mechanism."))
 		size = initial(size)
 		playsound(src, 'sound/items/Crowbar.ogg', 50, 1)
 		installed_gun = null
 		set_pin_data(IC_OUTPUT, 1, WEAKREF(null))
 		push_data()
 	else
-		to_chat(user, "<span class='notice'>There's no weapon to remove from the mechanism.</span>")
+		to_chat(user, span_notice("There's no weapon to remove from the mechanism."))
 
 /obj/item/integrated_circuit/weaponized/weapon_firing/do_work()
 	if(!assembly || !installed_gun || !installed_gun.can_shoot())
@@ -108,7 +108,7 @@
 	var/target_x = clamp(T.x + xo.data, 0, world.maxx)
 	var/target_y = clamp(T.y + yo.data, 0, world.maxy)
 
-	assembly.visible_message("<span class='danger'>[assembly] fires [installed_gun]!</span>")
+	assembly.visible_message(span_danger("[assembly] fires [installed_gun]!"))
 	shootAt(locate(target_x, target_y, T.z))
 
 /obj/item/integrated_circuit/weaponized/weapon_firing/proc/shootAt(turf/target)
@@ -173,9 +173,9 @@
 /obj/item/integrated_circuit/weaponized/grenade/attackby(obj/item/grenade/G, mob/user)
 	if(istype(G))
 		if(attached_grenade)
-			to_chat(user, "<span class='warning'>There is already a grenade attached!</span>")
+			to_chat(user, span_warning("There is already a grenade attached!"))
 		else if(user.transferItemToLoc(G,src))
-			user.visible_message("<span class='warning'>\The [user] attaches \a [G] to \the [src]!</span>", "<span class='notice'>You attach \the [G] to \the [src].</span>")
+			user.visible_message(span_warning("\The [user] attaches \a [G] to \the [src]!"), span_notice("You attach \the [G] to \the [src]."))
 			attach_grenade(G)
 			G.forceMove(src)
 	else
@@ -183,7 +183,7 @@
 
 /obj/item/integrated_circuit/weaponized/grenade/attack_self(mob/user)
 	if(attached_grenade)
-		user.visible_message("<span class='warning'>\The [user] removes \an [attached_grenade] from \the [src]!</span>", "<span class='notice'>You remove \the [attached_grenade] from \the [src].</span>")
+		user.visible_message(span_warning("\The [user] removes \an [attached_grenade] from \the [src]!"), span_notice("You remove \the [attached_grenade] from \the [src]."))
 		user.put_in_hands(attached_grenade)
 		detach_grenade()
 	else
@@ -261,7 +261,7 @@
 		if(!I.can_trigger_gun(L)) //includes hulk and other chunky fingers checks.
 			return
 		if(HAS_TRAIT(L, TRAIT_PACIFISM) && A.throwforce)
-			to_chat(L, "<span class='notice'> [I] is lethally chambered! You don't want to risk harming anyone...</span>")
+			to_chat(L, span_notice(" [I] is lethally chambered! You don't want to risk harming anyone..."))
 			return
 	else if(T != I.loc)
 		return
@@ -297,7 +297,7 @@
 	var/y_abs = clamp(T.y + target_y_rel, 0, world.maxy)
 	var/range = round(clamp(sqrt(target_x_rel*target_x_rel+target_y_rel*target_y_rel),0,8),1)
 	playsound(src, 'sound/weapons/sonic_jackhammer.ogg', 50, 1)
-	assembly.visible_message("<span class='danger'>\The [assembly] has thrown [A]!</span>")
+	assembly.visible_message(span_danger("\The [assembly] has thrown [A]!"))
 	log_attack("[assembly] [REF(assembly)] has thrown [A] with lethal force.")
 	A.forceMove(drop_location())
 	A.throw_at(locate(x_abs, y_abs, T.z), range, 3)
@@ -342,7 +342,7 @@
 
 	message_admins("stunned someone with an assembly. Last touches: Assembly: [assembly.fingerprintslast] Circuit: [fingerprintslast]")
 
-	L.visible_message("<span class='danger'>\The [assembly] has stunned \the [L] with \the [src]!</span>", "<span class='userdanger'>\The [assembly] has stunned you with \the [src]!</span>")
+	L.visible_message(span_danger("\The [assembly] has stunned \the [L] with \the [src]!"), span_userdanger("\The [assembly] has stunned you with \the [src]!"))
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, 1, -1)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L

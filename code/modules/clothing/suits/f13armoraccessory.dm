@@ -75,9 +75,9 @@
 
 /obj/item/clothing/armoraccessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a suit. Alt-click to remove it once attached.</span>"
+	. += span_notice("\The [src] can be attached to a suit. Alt-click to remove it once attached.")
 	if(initial(above_suit))
-		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
+		. += span_notice("\The [src] can be worn above or below your suit. Alt-click to toggle.")
 
 /obj/item/clothing/armoraccessory/kevlar
 	name = "kevlar plating"

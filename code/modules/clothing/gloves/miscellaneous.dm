@@ -80,7 +80,7 @@
 	icon_state = "narsiearmwraps"
 	item_state = "narsiearmwraps"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 35, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
 	enhancement = 3
 	secondary_trait = TRAIT_KI_VAMPIRE
 
@@ -90,7 +90,7 @@
 	icon_state = "ratvararmwraps"
 	item_state = "ratvararmwraps"
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	armor = list("melee" = 10, "bullet" = 0, "laser" = -10, "energy" = 0, "bomb" = 0, "bio" = 35, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
 	enhancement = 4 //The artifice of Ratvar is unmatched except when it is.
 	secondary_trait = TRAIT_STRONG_GRABBER
 
@@ -160,7 +160,8 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 80, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 	strip_mod = 1.5
 
 
@@ -177,7 +178,8 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 15, "bullet" = 35, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/gloves/thief
 	name = "black gloves"

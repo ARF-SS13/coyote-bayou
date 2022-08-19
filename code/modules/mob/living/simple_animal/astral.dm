@@ -39,7 +39,7 @@
 	Stun(1000)
 	pseudo_death = TRUE
 	incorporeal_move = 0
-	to_chat(src, "<span class='notice'>Your astral projection is interrupted and your mind is sent back to your body with a shock!</span>")
+	to_chat(src, span_notice("Your astral projection is interrupted and your mind is sent back to your body with a shock!"))
 
 /mob/living/simple_animal/astral/ClickOn(atom/A, params)
 	. = ..()

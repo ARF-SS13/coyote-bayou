@@ -42,7 +42,6 @@
 	name = "pharaoh tunic"
 	desc = "Lavish tomb not included."
 	icon_state = "pharaoh"
-	icon_state = "pharaoh"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/chaplain/holidaypriest
@@ -73,7 +72,7 @@
 	icon_state = "detective"
 	item_state = "det_suit"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 33,"energy" = 15, "bomb" = 10, "bio" = 30, "rad" = 0, "fire" = 0, "acid" = 45)
+	armor = ARMOR_VALUE_LIGHT
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -117,7 +116,7 @@
 	item_state = "hazard"
 	blood_overlay_type = "armor"
 	resistance_flags = NONE
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 35,"energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 0, "fire" = 0, "acid" = 45)
+	armor = ARMOR_VALUE_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
 
@@ -146,7 +145,6 @@
 
 /obj/item/clothing/suit/toggle/lawyer/black/syndie
 	desc = "A snappy dress jacket. Suspiciously has no tags or branding."
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
 
 /obj/item/clothing/suit/suspenders
 	name = "suspenders"
@@ -164,7 +162,6 @@
 	icon_state = "curator"
 	item_state = "curator"
 	blood_overlay_type = "coat"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 40, "acid" = 40)
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

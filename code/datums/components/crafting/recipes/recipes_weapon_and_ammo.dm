@@ -213,8 +213,7 @@
 /datum/crafting_recipe/m22
 	name = ".22 Long Rifle ammo box"
 	result = /obj/item/ammo_box/m22
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/metal = 1,
+	reqs = list(/obj/item/stack/sheet/metal = 5,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
@@ -304,7 +303,7 @@
 	name = "10mm handloaded ammo bag"
 	result = /obj/item/ammo_box/c10mm/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 5
@@ -878,7 +877,7 @@
 	reqs = list(/obj/item/gun/ballistic/automatic/assault_rifle = 1,
 				/obj/item/stack/sheet/glass = 2,
 				/obj/item/stack/crafting/goodparts = 1,
-				/obj/item/suppressor = 1,
+				/obj/item/gun_upgrade/muzzle/silencer = 1,
 				/obj/item/stack/sheet/plastic = 3,
 	)
 	tools = list(TOOL_AWORKBENCH)
@@ -951,7 +950,7 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/alloys = 1,
 				/obj/item/stack/crafting/goodparts = 5,
-				/obj/item/attachments/scope = 1
+				/obj/item/gun_upgrade/scope/watchman = 1
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -967,7 +966,8 @@
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/stack/crafting/metalparts = 10,
 				/obj/item/stack/sheet/mineral/wood = 5,
-				/obj/item/stack/crafting/goodparts = 5
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/advanced_crafting_components/receiver = 1
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -1155,7 +1155,7 @@
 
 //grease gun
 /datum/crafting_recipe/grease_gun
-	name = "9mm SMG"
+	name = "m3a1 grease gun"
 	result = /obj/item/gun/ballistic/automatic/smg/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,
@@ -1358,6 +1358,22 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
+	//M2045 Magnum Revolver Rifle
+/datum/crafting_recipe/m2405
+	name = "M2045 Magnum Revolver Rifle"
+	result = /obj/item/gun/ballistic/revolver/m2405
+	reqs = list(/obj/item/stack/sheet/metal = 10,
+				/obj/item/advanced_crafting_components/assembly = 1,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 5
+				)
+	tools = list(TOOL_AWORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+	always_available = FALSE
+
 //city killer
 /datum/crafting_recipe/city_killer
 	name = "City-Killer Shotgun"
@@ -1473,7 +1489,7 @@
 				/obj/item/advanced_crafting_components/assembly = 1,
 				/obj/item/advanced_crafting_components/receiver = 1,
 				/obj/item/stack/sheet/mineral/wood = 5,
-				/obj/item/stack/crafting/goodparts = 5
+				/obj/item/stack/crafting/goodparts = 5,
 				)
 	tools = list(TOOL_WORKBENCH)
 	time = 120
@@ -1502,8 +1518,8 @@
 ///GUN ATTACHMENT/PARTS CRAFTING//
 //////////////////////////////////
 /datum/crafting_recipe/scope
-	name = "Weapon Optics"
-	result = /obj/item/attachments/scope
+	name = "ACOG Scope"
+	result = /obj/item/gun_upgrade/scope/watchman
 	reqs = list(
 				/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/glass = 3,
@@ -1517,8 +1533,8 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/suppressor
-	name = "Suppressor"
-	result = /obj/item/suppressor
+	name = "Silencer"
+	result = /obj/item/gun_upgrade/muzzle/silencer
 	reqs = list(
 				/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/sheet/plastic = 2,
@@ -1531,41 +1547,123 @@
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
-/datum/crafting_recipe/burst_improvement
-	name = "Burst Cam"
-	result = /obj/item/attachments/burst_improvement
+/datum/crafting_recipe/ergonomic_grip
+	name = "Ergonomic Grip"
+	result = /obj/item/tool_upgrade/productivity/ergonomic_grip
+	reqs = list(
+				/obj/item/stack/sheet/plastic = 5,
+				/obj/item/stack/sheet/leather = 2
+				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/metal_guard
+	name = "Metal Guard"
+	result = /obj/item/tool_upgrade/reinforcement/guard
 	reqs = list(
 				/obj/item/stack/sheet/metal = 5,
 				/obj/item/stack/crafting/metalparts = 5,
 				/obj/item/stack/crafting/goodparts = 5
 				)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/forged_barrel
+	name = "Forged Barrel"
+	result = /obj/item/gun_upgrade/barrel/forged
+	reqs = list(
+				/obj/item/stack/sheet/mineral/titanium = 5,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/crafting/goodparts = 5
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/booster
+	name = "Booster Chip"
+	result = /obj/item/tool_upgrade/productivity/booster
+	reqs = list(
+				/obj/item/stack/crafting/electronicparts = 5,
+				/obj/item/stack/sheet/plastic = 5,
+				/obj/item/stack/cable_coil = 5
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/heatsink
+	name = "Heatsink"
+	result = /obj/item/tool_upgrade/reinforcement/heatsink
+	reqs = list(
+				/obj/item/stack/crafting/electronicparts = 2,
+				/obj/item/stack/crafting/metalparts = 5,
+				/obj/item/stack/cable_coil = 5
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/laserguide
+	name = "Laser Guide"
+	result = /obj/item/tool_upgrade/refinement/laserguide
+	reqs = list(
+				/obj/item/laser_pointer = 1,
+				/obj/item/crafting/duct_tape = 1
+	)
+	tools = list(TOOL_WORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/gigalens
+	name = "GigaLens"
+	result = /obj/item/gun_upgrade/barrel/excruciator
+	reqs = list(
+				/obj/item/advanced_crafting_components/lenses = 1,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/advanced_crafting_components/flux = 1
+	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
-/datum/crafting_recipe/recoil_decrease
-	name = "Recoil Compensator"
-	result = /obj/item/attachments/recoil_decrease
+/datum/crafting_recipe/coolant
+	name = "Coolant Coil"
+	result = /obj/item/tool_upgrade/reinforcement/plasmablock
 	reqs = list(
-				/obj/item/stack/sheet/metal = 5,
-				/obj/item/stack/crafting/metalparts = 5,
-				/obj/item/stack/crafting/goodparts = 5
-				)
+				/obj/item/advanced_crafting_components/conductors = 1,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/advanced_crafting_components/alloys = 1
+	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
-/datum/crafting_recipe/automatic_sear
-	name = "Automatic Sear"
-	result = /obj/item/attachments/auto_sear
+/datum/crafting_recipe/coolant
+	name = "Full Auto Kit"
+	result = /obj/item/gun_upgrade/mechanism/weintraub
 	reqs = list(
-				/obj/item/stack/sheet/metal = 8,
-				/obj/item/stack/crafting/metalparts = 8,
-				/obj/item/stack/crafting/goodparts = 8
+				/obj/item/advanced_crafting_components/receiver = 1,
+				/obj/item/stack/crafting/goodparts = 5,
+				/obj/item/advanced_crafting_components/assembly = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 30

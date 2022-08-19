@@ -307,9 +307,44 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BULLET_DAMAGE_PISTOL_HEAVY 40
 #define BULLET_DAMAGE_RIFLE_LIGHT 25
 #define BULLET_DAMAGE_RIFLE_MEDIUM 45
-#define BULLET_DAMAGE_RIFLE_HEAVY 60
+#define BULLET_DAMAGE_RIFLE_HEAVY 75
 #define BULLET_DAMAGE_SHOTGUN_PELLET 11
 #define BULLET_DAMAGE_SHOTGUN_SLUG 50
+
+/// Bullet damage falloff per tile defines
+#define BULLET_FALLOFF "bullet falloff per tile"
+#define BULLET_FALLOFF_PISTOL_LIGHT 3
+#define BULLET_FALLOFF_PISTOL_MEDIUM 5
+#define BULLET_FALLOFF_PISTOL_HEAVY 6
+#define BULLET_FALLOFF_RIFLE_LIGHT 5
+#define BULLET_FALLOFF_RIFLE_MEDIUM 10
+#define BULLET_FALLOFF_RIFLE_HEAVY 10
+#define BULLET_FALLOFF_SHOTGUN_PELLET 4
+#define BULLET_FALLOFF_SHOTGUN_SLUG 2
+
+/// Bullet damage falloff starting distance defines
+#define BULLET_FALLOFF_START "bullet falloff start distance"
+#define BULLET_FALLOFF_START_PISTOL_LIGHT 2
+#define BULLET_FALLOFF_START_PISTOL_MEDIUM 4
+#define BULLET_FALLOFF_START_PISTOL_HEAVY 5
+#define BULLET_FALLOFF_START_RIFLE_LIGHT 3
+#define BULLET_FALLOFF_START_RIFLE_MEDIUM 10
+#define BULLET_FALLOFF_START_RIFLE_HEAVY 20
+#define BULLET_FALLOFF_START_SHOTGUN_PELLET 0
+#define BULLET_FALLOFF_START_SHOTGUN_SLUG 5
+
+/// Bullet damage falloff default defines
+#define BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_LIGHT)
+#define BULLET_FALLOFF_DEFAULT_PISTOL_MEDIUM list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_MEDIUM, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_MEDIUM)
+#define BULLET_FALLOFF_DEFAULT_PISTOL_HEAVY list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_HEAVY, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_HEAVY)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_LIGHT)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_MEDIUM list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_MEDIUM, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_MEDIUM)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_HEAVY, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_HEAVY)
+#define BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET list(BULLET_FALLOFF = BULLET_FALLOFF_START_PISTOL_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_SHOTGUN_PELLET)
+#define BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG list(BULLET_FALLOFF = BULLET_FALLOFF_SHOTGUN_PELLET, BULLET_FALLOFF_START = BULLET_FALLOFF_START_SHOTGUN_SLUG)
+
+/// Minimum bullet damage that falloff can take it to
+#define BULLET_FALLOFF_MIN_DAMAGE 3
 
 /// Bullet recoil defines
 #define BULLET_RECOIL_PISTOL_LIGHT 3
@@ -625,6 +660,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_COCK_RIFLE_FAST (GUN_COCK_BASE * 0.75)
 #define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.5)
 
+/// Refire speed multiplier for manual action guns, cus we no longer care about your cock length
+#define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
+
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECOND
 
@@ -658,3 +696,59 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
 
 #define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
+
+/// Bullet zone favoring defines
+/// High accuracy, generally goes where you mean to put it, for precision rifles and such
+#define ZONE_WEIGHT_PRECISION "precision_aim"
+/// Typical accuracy, based a bit on range
+#define ZONE_WEIGHT_SEMI_AUTO "semiauto_aim"
+/// Heavily weights limbs after its effective distance
+#define ZONE_WEIGHT_AUTOMATIC "automatic_aim"
+/// Always weights limbs heavily
+#define ZONE_WEIGHT_SHOTGUN "shotgun_aim"
+/// Always defers to the gun's setting, defaults to semi-auto if not defined
+#define ZONE_WEIGHT_GUNS_CHOICE "gun's_choice"
+
+/// Typical accuracy falloff
+#define ZONE_WEIGHT_FALLOFF_SEMI_AUTO 7
+/// Zone accuracy falls off quickly
+#define ZONE_WEIGHT_FALLOFF_AUTOMATIC 20
+/// You're hitting limbs most of the time
+#define ZONE_WEIGHT_FALLOFF_SHOTGUN 100
+
+/// Default zone weight list
+#define ZONE_WEIGHT_LIST_DEFAULT list(\
+	BODY_ZONE_HEAD = 6,\
+	BODY_ZONE_CHEST = 6,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+/// Precision zone weight list
+#define ZONE_WEIGHT_LIST_PRECISION list(\
+	BODY_ZONE_HEAD = 20,\
+	BODY_ZONE_CHEST = 40,\
+	BODY_ZONE_L_ARM = 5,\
+	BODY_ZONE_R_ARM = 5,\
+	BODY_ZONE_L_LEG = 5,\
+	BODY_ZONE_R_LEG = 5)
+/// Autofire zone weight list
+#define ZONE_WEIGHT_LIST_AUTOMATIC list(\
+	BODY_ZONE_HEAD = 1,\
+	BODY_ZONE_CHEST = 3,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+/// Pellet zone weight list
+#define ZONE_WEIGHT_LIST_SHOTGUN list(\
+	BODY_ZONE_HEAD = 1,\
+	BODY_ZONE_CHEST = 1,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+
+/// Gun skill flags
+/// Gun is affected by rifleman skill
+#define AFFECTED_BY_FAST_PUMP (1<<0)

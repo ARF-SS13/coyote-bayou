@@ -74,7 +74,7 @@
 
 	else if(istype(O, /obj/item/pda))
 		if(storedpda)
-			to_chat(user, "<span class='warning'>There is already a PDA inside!</span>")
+			to_chat(user, span_warning("There is already a PDA inside!"))
 			return
 		else if(!user.transferItemToLoc(O, src))
 			return
@@ -87,17 +87,17 @@
 			if(!O.tool_start_check(user, amount=0))
 				return
 			user.visible_message("[user] is repairing [src].", \
-							"<span class='notice'>You begin repairing [src]...</span>", \
-							"<span class='italics'>You hear welding.</span>")
+							span_notice("You begin repairing [src]..."), \
+							span_italic("You hear welding."))
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(stat & BROKEN))
 					return
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, span_notice("You repair [src]."))
 				stat &= ~BROKEN
 				obj_integrity = max_integrity
 				update_icon()
 		else
-			to_chat(user, "<span class='notice'>[src] does not need repairs.</span>")
+			to_chat(user, span_notice("[src] does not need repairs."))
 	else
 		return ..()
 
@@ -110,7 +110,7 @@
 /obj/machinery/pdapainter/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 
 	if(!storedpda)
-		to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		to_chat(user, span_notice("[src] is empty."))
 		return
 	var/choice = input(user, "Select the new skin!", "PDA Painting") as null|anything in colorlist
 	if(!choice || !storedpda || !in_range(src, user))
@@ -137,7 +137,7 @@
 		storedpda = null
 		update_icon()
 	else
-		to_chat(usr, "<span class='notice'>[src] is empty.</span>")
+		to_chat(usr, span_notice("[src] is empty."))
 
 
 /obj/machinery/pdapainter/power_change()

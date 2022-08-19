@@ -149,6 +149,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto
+	damage_threshold_penetration = 7
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/hitscan
@@ -245,7 +246,6 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/musket
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	e_cost = 250
-	fire_sound = 'sound/f13weapons/aer9fire.ogg'
 	fire_sound = 'sound/weapons/laser3.ogg'
 	
 //autolasers

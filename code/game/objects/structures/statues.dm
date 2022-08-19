@@ -36,10 +36,10 @@
 				return FALSE
 
 			user.visible_message("[user] is slicing apart the [name].", \
-								"<span class='notice'>You are slicing apart the [name]...</span>")
+								span_notice("You are slicing apart the [name]..."))
 			if(W.use_tool(src, user, 40, volume=50))
 				user.visible_message("[user] slices apart the [name].", \
-									"<span class='notice'>You slice apart the [name]!</span>")
+									span_notice("You slice apart the [name]!"))
 				deconstruct(TRUE)
 			return
 	return ..()
@@ -302,7 +302,7 @@
 /obj/structure/statue/wood/headstonewood/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/clothing/head))
 		if(Helmet)
-			to_chat(user, "<span class='notice'>There's already a hat on the marker.</span>")
+			to_chat(user, span_notice("There's already a hat on the marker."))
 			return
 		W.forceMove(src)
 		Helmet = W
@@ -311,7 +311,7 @@
 		return
 	if(istype(W, /obj/item/card/id/dogtag))
 		if(Dogtags)
-			to_chat(user, "<span class='notice'>There's already some dogtags on the marker.</span>")
+			to_chat(user, span_notice("There's already some dogtags on the marker."))
 			return
 		W.forceMove(src)
 		Dogtags = W

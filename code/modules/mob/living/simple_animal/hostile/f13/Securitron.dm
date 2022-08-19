@@ -20,8 +20,8 @@
 	move_to_delay = 5
 	stat_attack = SOFT_CRIT
 	robust_searching = TRUE
-	maxHealth = 150
-	health = 150
+	maxHealth = 120
+	health = 120
 	blood_volume = 0
 	del_on_death = TRUE
 	healable = FALSE
@@ -103,11 +103,11 @@
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot_dead"
-	health = 210
-	maxHealth = 210
+	health = 168
+	maxHealth = 168
 	del_on_death = FALSE
-	melee_damage_lower = 48
-	melee_damage_upper = 72
+	melee_damage_lower = 28
+	melee_damage_upper = 65
 	extra_projectiles = 4 //5 projectiles
 	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
 	retreat_distance = 2
@@ -160,7 +160,6 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb
 	name = "sentry bot"
 	aggro_vision_range = 15
-	faction = list("raider")
 	obj_damage = 300
 
 //Raider friendly Sentry bot with non-lethals
@@ -170,7 +169,7 @@
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag
 	retreat_distance = 0
-	environment_smash = 2 //wall-busts
+	extra_projectiles = 0
 
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable
@@ -195,8 +194,8 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/suicide
 	name = "explosive sentry bot"
 	desc = "A pre-war military robot armed with a deadly gatling laser and covered in thick armor plating. Don't get too close to this one, it looks like it's rigged to blow!"
-	maxHealth = 200
-	health = 200
+	maxHealth = 160
+	health = 160
 	color = "#B85C00"
 	retreat_distance = null
 	minimum_distance = 1

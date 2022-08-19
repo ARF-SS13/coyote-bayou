@@ -156,8 +156,8 @@ GLOBAL_LIST_INIT(oasis_positions, list(
 	"Secretary",
 	"Sheriff",
 	"Deputy",
-	"Farmer",
-	"Prospector",
+//	"Farmer",
+//	"Prospector",
 	"Doctor",
 	"Detective",
 	"Banker",
@@ -244,6 +244,7 @@ GLOBAL_LIST_INIT(redwater_positions, list(
 	"Redwater Slave",
 	"Outlaw",
 	"Redwater Resident",
+	"Redwater Watcher",
 	"Redwater Overboss",
 ))
 

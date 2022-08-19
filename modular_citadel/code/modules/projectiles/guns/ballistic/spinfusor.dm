@@ -48,7 +48,7 @@
 /obj/item/gun/ballistic/automatic/spinfusor/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] disk\s into \the [src].</span>")
+		to_chat(user, span_notice("You load [num_loaded] disk\s into \the [src]."))
 		update_icon()
 		chamber_round()
 

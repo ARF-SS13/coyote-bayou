@@ -55,7 +55,7 @@
 	var/obj/structure/closet/supplypod/bluespacepod/pod = new()
 	pod.explosionSize = list(0,0,0,0)
 	new_item.forceMove(pod)
-	var/msg = "<span class='danger'>After making your selection, you notice a strange target on the ground. It might be best to step back!</span>"
+	var/msg = span_danger("After making your selection, you notice a strange target on the ground. It might be best to step back!")
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(istype(H.ears, /obj/item/radio/headset))
@@ -163,7 +163,14 @@
 	desc = "Straight from the outerspace pet shop to your feet."
 	var/static/list/pets = list(
 "Brahmin" = /mob/living/simple_animal/cow/brahmin,
-"Chicken" = /mob/living/simple_animal/chicken)
+"Chicken" = /mob/living/simple_animal/chicken,
+"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+"Pug" = /mob/living/simple_animal/pet/dog/pug,
+"Fox" = /mob/living/simple_animal/pet/fox,
+"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+"Mouse" = /mob/living/simple_animal/mouse,
+"Cat" = /mob/living/simple_animal/pet/cat
+)
 	var/pet_name
 
 /obj/item/choice_beacon/pet/generate_display_names()
@@ -201,7 +208,7 @@
 	var/choice_text = choice
 	if(ispath(choice_text))
 		choice_text = initial(choice.name)
-	to_chat(M, "<span class='hear'>The box opens, revealing the [choice_text]!</span>")
+	to_chat(M, span_hear("The box opens, revealing the [choice_text]!"))
 	playsound(src.loc, 'sound/items/poster_ripped.ogg', 50, 1)
 	M.temporarilyRemoveItemFromInventory(src, TRUE)
 	M.put_in_hands(new choice)

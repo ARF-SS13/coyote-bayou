@@ -84,7 +84,7 @@
 	. = ..()
 
 /datum/antagonist/vamphunter/greet()
-	var/vamp_hunter_greet = "<span class='userdanger'>You are a fearless Monster Hunter!</span>"
+	var/vamp_hunter_greet = span_userdanger("You are a fearless Monster Hunter!")
 	vamp_hunter_greet += "<span class='boldannounce'>You know there's one or more filthy creature onboard the station, though their identities elude you.<span>"
 	vamp_hunter_greet += "<span class='boldannounce'>It's your job to root them out, destroy their nests, and save the crew.<span>"
 	vamp_hunter_greet += "<span class='boldannounce'>Use <b>WHATEVER MEANS NECESSARY</b> to find these creatures...no matter who gets hurt or what you have to destroy to do it.</span>"
@@ -102,7 +102,7 @@
 	to_chat(owner, vamp_hunter_greet)
 
 /datum/antagonist/vamphunter/farewell()
-	to_chat(owner, "<span class='userdanger'>Your hunt has ended: you are no longer a monster hunter!</span>")
+	to_chat(owner, span_userdanger("Your hunt has ended: you are no longer a monster hunter!"))
 
 
 // TAKEN FROM:  /datum/action/changeling/pheromone_receptors    // pheromone_receptors.dm      for a version of tracking that Changelings have!
@@ -143,7 +143,7 @@
 		to_chat(owner, "<span class='warning'>You detect signs of monsters to the <b>[dir2text(get_dir(my_loc,get_turf(scan_target)))]!</b></span>")
 	// Will yield a "?"
 	else
-		to_chat(owner, "<span class='notice'>There are no monsters nearby.</span>")
+		to_chat(owner, span_notice("There are no monsters nearby."))
 	// Force Point-To Immediately
 	point_to_target()
 
@@ -157,7 +157,7 @@
 
 /datum/status_effect/agent_pinpointer/hunter_edition/Destroy()
 	if (scan_target)
-		to_chat(owner, "<span class='notice'>You've lost the trail.</span>")
+		to_chat(owner, span_notice("You've lost the trail."))
 	..()
 */
 
@@ -180,7 +180,7 @@
 /datum/action/bloodsucker/trackvamp/ActivatePower()
 
 	var/mob/living/user = owner
-	to_chat(user, "<span class='notice'>You look around, scanning your environment and discerning signs of any filthy, wretched affronts to the natural order.</span>")
+	to_chat(user, span_notice("You look around, scanning your environment and discerning signs of any filthy, wretched affronts to the natural order."))
 
 	if (!do_mob(user,owner,80))
 		return
@@ -228,11 +228,11 @@
 	if(best_vamp)
 		var/distString = best_dist <= HUNTER_SCAN_MAX_DISTANCE / 2 ? "<b>somewhere closeby!</b>" : "somewhere in the distance."
 		//to_chat(owner, "<span class='warning'>You detect signs of Bloodsuckers to the <b>[dir2text(get_dir(my_loc,get_turf(targetVamp)))]!</b></span>")
-		to_chat(owner, "<span class='warning'>You detect signs of monsters [distString]</span>")
+		to_chat(owner, span_warning("You detect signs of monsters [distString]"))
 
 	// Will yield a "?"
 	else
-		to_chat(owner, "<span class='notice'>There are no monsters nearby.</span>")
+		to_chat(owner, span_notice("There are no monsters nearby."))
 
 
 

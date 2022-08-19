@@ -3,7 +3,7 @@
 /obj/item/melee //Melee weapon template
 	attack_speed = CLICK_CD_MELEE
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 
 /obj/item/melee/onehanded
 	name = "onehand melee template"
@@ -43,7 +43,7 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_EDGED
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
@@ -150,7 +150,7 @@
 	throw_range = 6
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = SHARP_POINTY
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/bayonet = FALSE	//Can this be attached to a gun?
 	bare_wound_bonus = 5
 	custom_materials = list(/datum/material/iron=6000)
@@ -167,9 +167,9 @@
 		return ..()
 
 /obj/item/melee/onehanded/knife/suicide_act(mob/user)
-	user.visible_message(pick("<span class='suicide'>[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide.</span>", \
-						"<span class='suicide'>[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.</span>"))
+	user.visible_message(pick(span_suicide("[user] is slitting [user.p_their()] wrists with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
+						span_suicide("[user] is slitting [user.p_their()] throat with the [src.name]! It looks like [user.p_theyre()] trying to commit suicide."), \
+						span_suicide("[user] is slitting [user.p_their()] stomach open with the [src.name]! It looks like [user.p_theyre()] trying to commit seppuku.")))
 	return (BRUTELOSS)
 
 
@@ -291,8 +291,8 @@ obj/item/melee/onehanded/knife/switchblade
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
 	if(istype(C, /obj/item/crafting/abraxo))
 		user.visible_message("[user] begins cleaning the blade of the [src].", \
-				"<span class='notice'>You begin scrubbing the [src] with Abraxo. Smells nice.</span>", \
-				"<span class='italics'>You hear faint sounds of scrubbing.</span>")
+				span_notice("You begin scrubbing the [src] with Abraxo. Smells nice."), \
+				span_italic("You hear faint sounds of scrubbing."))
 		playsound(get_turf(src), 'sound/FermiChem/heatdam.ogg', 50, TRUE)
 		if(!do_after(user, 60, TRUE, src))
 			return
@@ -315,8 +315,8 @@ obj/item/melee/onehanded/knife/switchblade
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
 	if(I.use_tool(src, user, 20, volume=50, amount=15))
 		user.visible_message("[user] heats up the blade of the [src].", \
-				"<span class='notice'>You heat up the [src] until the blade glows!</span>", \
-				"<span class='italics'>You hear faint sounds of a welder working.</span>")
+				span_notice("You heat up the [src] until the blade glows!"), \
+				span_italic("You hear faint sounds of a welder working."))
 		new /obj/item/melee/onehanded/knife/cosmicheated(drop_location())
 		qdel(src)
 		return
@@ -463,8 +463,8 @@ obj/item/melee/onehanded/knife/switchblade
 // Default message for stunning a silicon.
 /obj/item/melee/classic_baton/proc/get_silicon_stun_description(mob/living/target, mob/living/user)
 	. = list()
-	.["visible"] = "<span class='danger'>[user] pulses [target]'s sensors with the baton!</span>"
-	.["local"] = "<span class='danger'>You pulse [target]'s sensors with the baton!</span>"
+	.["visible"] = span_danger("[user] pulses [target]'s sensors with the baton!")
+	.["local"] = span_danger("You pulse [target]'s sensors with the baton!")
 	return .
 
 // Are we applying any special effects when we stun to carbon
@@ -480,7 +480,7 @@ obj/item/melee/onehanded/knife/switchblade
 		return ..()
 
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes batons unusuable in stamina softcrit
-		to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")//CIT CHANGE - ditto
+		to_chat(user, span_warning("You're too exhausted for that."))//CIT CHANGE - ditto
 		return //CIT CHANGE - ditto
 
 	add_fingerprint(user)
@@ -591,7 +591,7 @@ obj/item/melee/onehanded/knife/switchblade
 	var/mob/living/carbon/human/H = user
 	var/obj/item/organ/brain/B = H.getorgan(/obj/item/organ/brain)
 
-	user.visible_message("<span class='suicide'>[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind.</span>")
+	user.visible_message(span_suicide("[user] stuffs [src] up [user.p_their()] nose and presses the 'extend' button! It looks like [user.p_theyre()] trying to clear [user.p_their()] mind."))
 	if(!on)
 		src.attack_self(user)
 	else
@@ -699,9 +699,9 @@ obj/item/melee/onehanded/knife/switchblade
 	. = ..()
 	if(can_adjust_unarmed == TRUE)
 		if(unarmed_adjusted == TRUE)
-			. += "<span class='notice'>Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.</span>"
+			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
 		else
-			. += "<span class='notice'>Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.</span>"
+			. += span_notice("Alt-click on [src] to wear it on a different hand. You must take it off first, then put it on again.")
 
 /obj/item/melee/unarmed/AltClick(mob/user)
 	. = ..()
@@ -712,7 +712,7 @@ obj/item/melee/onehanded/knife/switchblade
 
 /obj/item/melee/unarmed/proc/toggle_unarmed_adjust()
 	unarmed_adjusted = !unarmed_adjusted
-	to_chat(usr, "<span class='notice'>[src] is ready to be worn on another hand.</span>")
+	to_chat(usr, span_notice("[src] is ready to be worn on another hand."))
 
 
 // Brass knuckles	Keywords: Damage 23

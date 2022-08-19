@@ -160,9 +160,9 @@
 		if(istype(ai_card, /obj/item/aicard))
 			if(integrated_ai && !integrated_ai.stat)
 				if(user)
-					to_chat(user, "<span class='danger'>You cannot eject your currently stored AI. Purge it manually.</span>")
+					to_chat(user, span_danger("You cannot eject your currently stored AI. Purge it manually."))
 				return 0
-			to_chat(user, "<span class='danger'>You purge the remaining scraps of data from your previous AI, freeing it for use.</span>")
+			to_chat(user, span_danger("You purge the remaining scraps of data from your previous AI, freeing it for use."))
 			QDEL_NULL(integrated_ai)
 			QDEL_NULL(ai_card)
 		else if(user)
@@ -213,9 +213,9 @@
 				integrated_ai = null
 				eject_ai()
 		else
-			to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
+			to_chat(user, span_warning("There is no active AI within \the [ai]."))
 	else
-		to_chat(user, "<span class='warning'>There is no active AI within \the [ai].</span>")
+		to_chat(user, span_warning("There is no active AI within \the [ai]."))
 	update_verb_holder()
 
 /obj/item/rig_module/datajack
@@ -259,9 +259,9 @@
 				to_chat(user, "<font color='blue'>Download successful; disk erased.</font>")
 				disk.stored = null
 			else
-				to_chat(user, "<span class='warning'>The disk is corrupt. It is useless to you.</span>")
+				to_chat(user, span_warning("The disk is corrupt. It is useless to you."))
 		else
-			to_chat(user, "<span class='warning'>The disk is blank. It is useless to you.</span>")
+			to_chat(user, span_warning("The disk is blank. It is useless to you."))
 		return 1
 
 	// I fucking hate R&D code. This typecheck spam would be totally unnecessary in a sane setup.
@@ -278,13 +278,13 @@
 			incoming_files = input_machine.files
 
 		if(!incoming_files || !incoming_files.known_tech || !incoming_files.known_tech.len)
-			to_chat(user, "<span class='warning'>Memory failure. There is nothing accessible stored on this terminal.</span>")
+			to_chat(user, span_warning("Memory failure. There is nothing accessible stored on this terminal."))
 		else
 			// Maybe consider a way to drop all your data into a target repo in the future.
 			if(load_data(incoming_files.known_tech))
 				to_chat(user, "<font color='blue'>Download successful; local and remote repositories synchronized.</font>")
 			else
-				to_chat(user, "<span class='warning'>Scan complete. There is nothing useful stored on this terminal.</span>")
+				to_chat(user, span_warning("Scan complete. There is nothing useful stored on this terminal."))
 		return 1
 	return 0
 

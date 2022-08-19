@@ -55,7 +55,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 	var/emergency //If an emergency has been called by this device. Acts as both a cooldown and lets the responder know where it the emergency was triggered from
 	var/receive_ore_updates = FALSE //If ore redemption machines will send an update when it receives new ores.
 	max_integrity = 300
-	armor = list("melee" = 70, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/machinery/requests_console/power_change()
 	..()
@@ -220,7 +220,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 			dat += "<div class='notice'>You may authenticate your message now by scanning your ID or your stamp</div> <br>"
 
 			dat += "<b>Validated by:</b> [msgVerified ? "<span class='good'><b>[msgVerified]</b></span>" : "<i>Not Validated</i>"] <br>"
-			dat += "<b>Stamped by:</b> [msgStamped ? "<span class='boldnotice'>[msgStamped]</span>" : "<i>Not Stamped</i>"] <br><br>"
+			dat += "<b>Stamped by:</b> [msgStamped ? span_boldnotice("[msgStamped]") : "<i>Not Stamped</i>"] <br><br>"
 
 			dat += "<a href='?src=[REF(src)];department=[dpt]'>Send Message</a> <br><br>"
 			dat += "<a href='?src=[REF(src)];setScreen=0'><< Discard Message</a> <br>"
@@ -504,10 +504,10 @@ GLOBAL_LIST_EMPTY(allConsoles)
 /obj/machinery/requests_console/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/crowbar))
 		if(open)
-			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, span_notice("You close the maintenance panel."))
 			open = FALSE
 		else
-			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, span_notice("You open the maintenance panel."))
 			open = TRUE
 		update_icon()
 		return
@@ -515,12 +515,12 @@ GLOBAL_LIST_EMPTY(allConsoles)
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				to_chat(user, "<span class='notice'>You modify the wiring.</span>")
+				to_chat(user, span_notice("You modify the wiring."))
 			else
-				to_chat(user, "<span class='notice'>You reset the wiring.</span>")
+				to_chat(user, span_notice("You reset the wiring."))
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You must open the maintenance panel first!</span>")
+			to_chat(user, span_warning("You must open the maintenance panel first!"))
 		return
 
 	if(istype(O, /obj/item/card/id))
@@ -535,7 +535,7 @@ GLOBAL_LIST_EMPTY(allConsoles)
 				announceAuth = TRUE
 			else
 				announceAuth = FALSE
-				to_chat(user, "<span class='warning'>You are not authorized to send announcements!</span>")
+				to_chat(user, span_warning("You are not authorized to send announcements!"))
 			updateUsrDialog()
 		return
 

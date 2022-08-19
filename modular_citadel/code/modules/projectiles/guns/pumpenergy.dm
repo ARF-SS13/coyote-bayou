@@ -77,7 +77,7 @@
 
 	if(ammo_type.len > 1)
 		if(user.incapacitated() || !istype(user))
-			to_chat(user, "<span class='warning'>You can't do that right now!</span>")
+			to_chat(user, span_warning("You can't do that right now!"))
 		else
 			select_fire(user)
 			update_icon()
@@ -85,7 +85,7 @@
 
 /obj/item/gun/energy/pumpaction/examine(mob/user)	//so people don't ask HOW TO CHANGE FIRING MODE
 	. = ..()
-	. += "<span class='notice'>Alt-click to change firing modes.</span>"
+	. += span_notice("Alt-click to change firing modes.")
 
 /obj/item/gun/energy/pumpaction/worn_overlays(isinhands, icon_file, used_state, style_flags = NONE)	//ammo counter for inhands
 	. = ..()

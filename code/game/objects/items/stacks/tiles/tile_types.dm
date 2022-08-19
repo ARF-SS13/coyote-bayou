@@ -36,32 +36,32 @@
 				verb = "mediocre"
 		if(!verb)
 			return
-		. += "<span class='notice'>Those could work as a [verb] throwing weapon.</span>"
+		. += span_notice("Those could work as a [verb] throwing weapon.")
 
 /obj/item/stack/tile/attackby(obj/item/W, mob/user, params)
 
 	if (istype(W, /obj/item/weldingtool))
 		if(get_amount() < 4)
-			to_chat(user, "<span class='warning'>You need at least four tiles to do this!</span>")
+			to_chat(user, span_warning("You need at least four tiles to do this!"))
 			return
 
 		if(!mineralType)
-			to_chat(user, "<span class='warning'>You can not reform this!</span>")
+			to_chat(user, span_warning("You can not reform this!"))
 			return
 
 		if(W.use_tool(src, user, 0, volume=40))
 			if(mineralType == "plasma")
 				atmos_spawn_air("plasma=5;TEMP=1000")
-				user.visible_message("<span class='warning'>[user.name] sets the plasma tiles on fire!</span>", \
-									"<span class='warning'>You set the plasma tiles on fire!</span>")
+				user.visible_message(span_warning("[user.name] sets the plasma tiles on fire!"), \
+									span_warning("You set the plasma tiles on fire!"))
 				qdel(src)
 				return
 
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
 				user.visible_message("[user.name] shaped [src] into metal with the welding tool.", \
-							"<span class='notice'>You shaped [src] into metal with the welding tool.</span>", \
-							"<span class='italics'>You hear welding.</span>")
+							span_notice("You shaped [src] into metal with the welding tool."), \
+							span_italic("You hear welding."))
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -73,8 +73,8 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message("[user.name] shaped [src] into a sheet with the welding tool.", \
-							"<span class='notice'>You shaped [src] into a sheet with the welding tool.</span>", \
-							"<span class='italics'>You hear welding.</span>")
+							span_notice("You shaped [src] into a sheet with the welding tool."), \
+							span_italic("You hear welding."))
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -546,7 +546,7 @@
 	flags_1 = CONDUCT_1
 	turf_type = /turf/open/floor/plasteel
 	mineralType = "metal"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/tile/plasteel
 

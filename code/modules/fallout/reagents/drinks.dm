@@ -19,7 +19,7 @@
 	..()
 
 /datum/reagent/consumable/nuka_cola/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>Too much Nuka-Cola! This cannot be good for you!</span>")
+	to_chat(M, span_userdanger("Too much Nuka-Cola! This cannot be good for you!"))
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 
@@ -214,7 +214,7 @@
 	. = TRUE
 
 /datum/reagent/consumable/nukaice/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>Too much Nuka-Cola! This cannot be good for you!</span>")
+	to_chat(M, span_userdanger("Too much Nuka-Cola! This cannot be good for you!"))
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 

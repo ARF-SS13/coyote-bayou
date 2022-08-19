@@ -251,7 +251,7 @@ or something covering your eyes."
 
 /obj/screen/alert/mind_control/Click()
 	var/mob/living/L = usr
-	to_chat(L, "<span class='mind_control'>[command]</span>")
+	to_chat(L, span_mind_control("[command]"))
 
 /obj/screen/alert/hypnosis
 	name = "Hypnosis"

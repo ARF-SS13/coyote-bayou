@@ -354,6 +354,7 @@
 	category = list("Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
+/*
 /datum/design/portable_chem_mixer
 	name = "Portable Chemical Mixer"
 	desc = "A portable device that dispenses and mixes chemicals. Reagents have to be supplied with beakers."
@@ -363,7 +364,7 @@
 	materials = list(/datum/material/plastic = 5000, /datum/material/iron = 10000, /datum/material/glass = 3000)
 	build_path = /obj/item/storage/portable_chem_mixer
 	category = list("Equipment")
-
+*/
 /////////////////////////////////////////
 //////////Cybernetic Implants////////////
 /////////////////////////////////////////

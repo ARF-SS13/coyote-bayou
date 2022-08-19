@@ -17,7 +17,7 @@
 /obj/effect/proc_holder/spell/voice_of_god/can_cast(mob/user = usr, skipcharge = FALSE, silent = TRUE)
 	if(!user.can_speak())
 		if(!silent)
-			to_chat(user, "<span class='warning'>You are unable to speak!</span>")
+			to_chat(user, span_warning("You are unable to speak!"))
 		return FALSE
 	return TRUE
 

@@ -49,7 +49,7 @@ GLOBAL_LIST_EMPTY(allTerminals)
 	var/dpt = "" //the terminal which will be receiving the message
 	var/priority = NORMAL_MESSAGE_PRIORITY //Priority of the message being sent. why is the default -1??
 	max_integrity = 300
-	armor = list("melee" = 70, "bullet" = 30, "laser" = 30, "energy" = 30, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/machinery/msgterminal/power_change()
 	..()
@@ -370,19 +370,19 @@ GLOBAL_LIST_EMPTY(allTerminals)
 /obj/machinery/msgterminal/attackby(obj/item/O, mob/user, params)
 	if(istype(O, /obj/item/wrench))
 		if(anchored)
-			to_chat(user, "<span class='notice'>You unsecure the terminal.</span>")
+			to_chat(user, span_notice("You unsecure the terminal."))
 			anchored = FALSE
 		else
-			to_chat(user, "<span class='notice'>You secure the terminal.</span>")
+			to_chat(user, span_notice("You secure the terminal."))
 			anchored = TRUE
 		update_icon()
 		return
 	if(istype(O, /obj/item/crowbar))
 		if(open)
-			to_chat(user, "<span class='notice'>You close the maintenance panel.</span>")
+			to_chat(user, span_notice("You close the maintenance panel."))
 			open = FALSE
 		else
-			to_chat(user, "<span class='notice'>You open the maintenance panel.</span>")
+			to_chat(user, span_notice("You open the maintenance panel."))
 			open = TRUE
 		update_icon()
 		return
@@ -390,12 +390,12 @@ GLOBAL_LIST_EMPTY(allTerminals)
 		if(open)
 			hackState = !hackState
 			if(hackState)
-				to_chat(user, "<span class='notice'>You modify the wiring.</span>")
+				to_chat(user, span_notice("You modify the wiring."))
 			else
-				to_chat(user, "<span class='notice'>You reset the wiring.</span>")
+				to_chat(user, span_notice("You reset the wiring."))
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You must open the maintenance panel first!</span>")
+			to_chat(user, span_warning("You must open the maintenance panel first!"))
 		return
 
 #undef NO_NEW_MESSAGE

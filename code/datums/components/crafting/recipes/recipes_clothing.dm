@@ -580,7 +580,7 @@
 	subcategory = CAT_GENCLOTHES
 	always_available = FALSE
 
-	/datum/crafting_recipe/garlic_necklace
+/datum/crafting_recipe/garlic_necklace
 	name = "Garlic Necklace"
 	result = /obj/item/clothing/neck/garlic_necklace
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/garlic = 15,

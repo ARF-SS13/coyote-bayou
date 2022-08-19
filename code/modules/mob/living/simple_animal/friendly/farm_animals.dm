@@ -65,7 +65,7 @@
 		if(enemies.len && prob(10))
 			enemies = list()
 			LoseTarget()
-			src.visible_message("<span class='notice'>[src] calms down.</span>")
+			src.visible_message(span_notice("[src] calms down."))
 		udder.generateMilk(milk_reagent)
 		eat_plants()
 		if(!pulledby)
@@ -77,7 +77,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/goat/Retaliate()
 	..()
-	src.visible_message("<span class='danger'>[src] gets an evil-looking gleam in [p_their()] eye.</span>")
+	src.visible_message(span_danger("[src] gets an evil-looking gleam in [p_their()] eye."))
 
 /mob/living/simple_animal/hostile/retaliate/goat/Move()
 	. = ..()
@@ -113,8 +113,8 @@
 		var/mob/living/carbon/human/H = target
 		if(istype(H.dna.species, /datum/species/pod))
 			var/obj/item/bodypart/NB = pick(H.bodyparts)
-			H.visible_message("<span class='warning'>[src] takes a big chomp out of [H]!</span>", \
-								  "<span class='userdanger'>[src] takes a big chomp out of your [NB]!</span>")
+			H.visible_message(span_warning("[src] takes a big chomp out of [H]!"), \
+								  span_userdanger("[src] takes a big chomp out of your [NB]!"))
 			NB.dismember()
 //cow
 /mob/living/simple_animal/cow
@@ -172,14 +172,14 @@
 		return 1
 	else if(stat == CONSCIOUS && istype(O, food_type))
 		if(is_calf)
-			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			visible_message(span_alertalien("[src] adorably chews the [O]."))
 			qdel(O)
 		if(!has_calf && !is_calf)
 			has_calf = 1
-			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			visible_message(span_alertalien("[src] hungrily consumes the [O]."))
 			qdel(O)
 		else
-			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			visible_message(span_alertalien("[src] absently munches the [O]."))
 			qdel(O)
 	else
 		return ..()
@@ -192,7 +192,7 @@
 			has_calf++
 		if(has_calf > 10)
 			has_calf = 0
-			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			visible_message(span_alertalien("[src] gives birth to a calf."))
 			new young_type(get_turf(src))
 
 		if(is_calf)
@@ -203,15 +203,15 @@
 					name = "brahmin"
 				else
 					name = "cow"
-				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+				visible_message(span_alertalien("[src] has fully grown."))
 		else
 			udder.generateMilk(milk_reagent)
 
 /mob/living/simple_animal/cow/on_attack_hand(mob/living/carbon/M)
 	if(!stat && M.a_intent == INTENT_DISARM && icon_state != icon_dead)
-		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
-			"<span class='notice'>You tip over [src].</span>")
-		to_chat(src, "<span class='userdanger'>You are tipped over by [M]!</span>")
+		M.visible_message(span_warning("[M] tips over [src]."),
+			span_notice("You tip over [src]."))
+		to_chat(src, span_userdanger("You are tipped over by [M]!"))
 		DefaultCombatKnockdown(60,ignore_canknockdown = TRUE)
 		icon_state = icon_dead
 		spawn(rand(20,50))
@@ -228,8 +228,8 @@
 					if(4)
 						external = "[src] seems resigned to its fate."
 						internal = "You resign yourself to your fate."
-				visible_message("<span class='notice'>[external]</span>",
-					"<span class='revennotice'>[internal]</span>")
+				visible_message(span_notice("[external]"),
+					span_revennotice("[internal]"))
 	else
 		..()
 
@@ -382,7 +382,7 @@
 			qdel(O)
 			eggsleft += rand(1, 4)
 		else
-			to_chat(user, "<span class='warning'>[name] doesn't seem hungry!</span>")
+			to_chat(user, span_warning("[name] doesn't seem hungry!"))
 	else
 		..()
 
@@ -390,7 +390,7 @@
 	if(!(. = ..()))
 		return
 	if((!stat && prob(3) && eggsleft > 0) && egg_type)
-		visible_message("<span class='alertalien'>[src] [pick(layMessage)]</span>")
+		visible_message(span_alertalien("[src] [pick(layMessage)]"))
 		eggsleft--
 		var/obj/item/E = new egg_type(get_turf(src))
 		E.pixel_x = rand(-6,6)
@@ -432,13 +432,13 @@
 /obj/item/udder/proc/milkAnimal(obj/O, mob/user)
 	var/obj/item/reagent_containers/glass/G = O
 	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='danger'>[O] is full.</span>")
+		to_chat(user, span_danger("[O] is full."))
 		return
 	var/transfered = reagents.trans_to(O, rand(5,10))
 	if(transfered)
-		user.visible_message("[user] milks [src] using \the [O].", "<span class='notice'>You milk [src] using \the [O].</span>")
+		user.visible_message("[user] milks [src] using \the [O].", span_notice("You milk [src] using \the [O]."))
 	else
-		to_chat(user, "<span class='danger'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, span_danger("The udder is dry. Wait a bit longer..."))
 
 
 
@@ -471,9 +471,7 @@
 	attack_verb_simple = "kick"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	young_type = /mob/living/simple_animal/cow/brahmin/calf
-	emote_hear = list("brays.")
 	var/obj/item/inventory_back
-	speak_chance = 0.4
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/reagent_containers/food/snacks/rawbrahminliver = 1, /obj/item/reagent_containers/food/snacks/rawbrahmintongue = 2, /obj/item/stack/sheet/animalhide/brahmin = 3, /obj/item/stack/sheet/bone = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 4, /obj/item/stack/sheet/bone = 2)
 	butcher_difficulty = 1
@@ -592,12 +590,12 @@
 	. = ..()
 	if(istype(I,/obj/item/brahminbags))
 		if(bags)
-			to_chat(user, "<span class='warning'>The brahmin already has bags attached!</span>")
+			to_chat(user, span_warning("The brahmin already has bags attached!"))
 			return
 		if(is_calf)
-			to_chat(user, "<span class='warning'>The calf cannot carry the bags!</span>")
+			to_chat(user, span_warning("The calf cannot carry the bags!"))
 			return
-		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
+		to_chat(user, span_notice("You add [I] to [src]..."))
 		bags = TRUE
 		qdel(I)
 		src.ComponentInitialize()
@@ -605,7 +603,7 @@
 
 	if(istype(I,/obj/item/brahmincollar))
 		if(user != owner)
-			to_chat(user, "<span class='warning'>You need to claim the brahmin with a bridle before you can rename it!</span>")
+			to_chat(user, span_warning("You need to claim the brahmin with a bridle before you can rename it!"))
 			return
 
 		name = input("Choose a new name for your brahmin!","Name", name)
@@ -614,26 +612,26 @@
 			return
 
 		collar = TRUE
-		to_chat(user, "<span class='notice'>You add [I] to [src]...</span>")
-		message_admins("<span class='notice'>[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].</span>") //So people don't name their brahmin the N-Word without notice
+		to_chat(user, span_notice("You add [I] to [src]..."))
+		message_admins(span_notice("[ADMIN_LOOKUPFLW(user)] renamed a brahmin to [name].")) //So people don't name their brahmin the N-Word without notice
 		qdel(I)
 		return
 
 	if(istype(I,/obj/item/brahminbridle))
 		if(bridle)
-			to_chat(user, "<span class='warning'>This brahmin already has a bridle!</span>")
+			to_chat(user, span_warning("This brahmin already has a bridle!"))
 			return
 
 		owner = user
 		bridle = TRUE
 		tame = TRUE
-		to_chat(user, "<span class='notice'>You add [I] to [src], claiming it as yours.</span>")
+		to_chat(user, span_notice("You add [I] to [src], claiming it as yours."))
 		qdel(I)
 		return
 
 	if(istype(I,/obj/item/brahminsaddle))
 		if(saddle)
-			to_chat(user, "<span class='warning'>This brahmin already has a saddle!</span>")
+			to_chat(user, span_warning("This brahmin already has a saddle!"))
 			return
 
 		saddle = TRUE
@@ -646,13 +644,13 @@
 		D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
 		D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 		D.drive_verb = "ride"
-		to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
+		to_chat(user, span_notice("You add [I] to [src]."))
 		qdel(I)
 		return
 
 	if(istype(I,/obj/item/brahminbrand))
 		if(brand)
-			to_chat(user, "<span class='warning'>This brahmin already has a brand!</span>")
+			to_chat(user, span_warning("This brahmin already has a brand!"))
 			return
 
 		brand = input("What would you like to brand on your brahmin?","Brand", brand)
@@ -695,23 +693,23 @@
 		bridle = FALSE
 		tame = FALSE
 		owner = null
-		to_chat(user, "<span class='notice'>You remove the bridle gear from [src], dropping it on the ground.</span>")
+		to_chat(user, span_notice("You remove the bridle gear from [src], dropping it on the ground."))
 		new /obj/item/brahminbridle(user.loc)
 
 	if(collar && user.a_intent == INTENT_GRAB)
 		collar = FALSE
 		name = initial(name)
-		to_chat(user, "<span class='notice'>You remove the collar from [src], dropping it on the ground.</span>")
+		to_chat(user, span_notice("You remove the collar from [src], dropping it on the ground."))
 		new /obj/item/brahmincollar(user.loc)
 
 	if(user == owner)
 		if(bridle && user.a_intent == INTENT_HELP)
 			if(follow)
-				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to stay.</span>")
+				to_chat(user, span_notice("You tug on the reins of [src], telling it to stay."))
 				follow = FALSE
 				return
 			else if(!follow)
-				to_chat(user, "<span class='notice'>You tug on the reins of [src], telling it to follow.</span>")
+				to_chat(user, span_notice("You tug on the reins of [src], telling it to follow."))
 				follow = TRUE
 				return
 
@@ -825,14 +823,14 @@
 		return 1
 	if(stat == CONSCIOUS && istype(O, food_type))
 		if(is_calf)
-			visible_message("<span class='alertalien'>[src] adorably chews the [O].</span>")
+			visible_message(span_alertalien("[src] adorably chews the [O]."))
 			qdel(O)
 		if(!has_calf && !is_calf)
 			has_calf = 1
-			visible_message("<span class='alertalien'>[src] hungrily consumes the [O].</span>")
+			visible_message(span_alertalien("[src] hungrily consumes the [O]."))
 			qdel(O)
 		else
-			visible_message("<span class='alertalien'>[src] absently munches the [O].</span>")
+			visible_message(span_alertalien("[src] absently munches the [O]."))
 			qdel(O)
 	else
 		return ..()
@@ -844,7 +842,7 @@
 			has_calf++
 		if(has_calf > 10)
 			has_calf = 0
-			visible_message("<span class='alertalien'>[src] gives birth to a calf.</span>")
+			visible_message(span_alertalien("[src] gives birth to a calf."))
 			new young_type(get_turf(src))
 
 		if(is_calf)
@@ -855,7 +853,7 @@
 					name = "bighorn"
 				else
 					name = "bighorn"
-				visible_message("<span class='alertalien'>[src] has fully grown.</span>")
+				visible_message(span_alertalien("[src] has fully grown."))
 		else
 			udder.generateMilk(milk_reagent)
 
@@ -921,7 +919,7 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 					update_brahmin_fluff()
 					regenerate_icons()
 				else
-					to_chat(usr, "<span class='danger'>There is nothing to remove from its [remove_from].</span>")
+					to_chat(usr, span_danger("There is nothing to remove from its [remove_from]."))
 					return
 		show_inv(usr)
 	//Adding things to inventory
@@ -932,22 +930,22 @@ mob/living/simple_animal/cow/brahmin/Topic(href, href_list)
 		switch(add_to)
 			if("back")
 				if(inventory_back)
-					to_chat(usr, "<span class='warning'>It's already wearing something!</span>")
+					to_chat(usr, span_warning("It's already wearing something!"))
 					return
 				else
 					var/obj/item/item_to_add = usr.get_active_held_item()
 					if(!item_to_add)
-						usr.visible_message("[usr] pets [src].","<span class='notice'>You rest your hand on [src]'s back for a moment.</span>")
+						usr.visible_message("[usr] pets [src].",span_notice("You rest your hand on [src]'s back for a moment."))
 						return
 					if(!usr.temporarilyRemoveItemFromInventory(item_to_add))
-						to_chat(usr, "<span class='warning'>\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!</span>")
+						to_chat(usr, span_warning("\The [item_to_add] is stuck to your hand, you cannot put it on [src]'s back!"))
 						return
 					//The objects that brahmin can wear on their backs.
 					var/allowed = FALSE
 					if(ispath(item_to_add.brahmin_fashion, /datum/brahmin_fashion/back))
 						allowed = TRUE
 					if(!allowed)
-						to_chat(usr, "<span class='warning'>You set [item_to_add] on [src]'s back, but it falls off!</span>")
+						to_chat(usr, span_warning("You set [item_to_add] on [src]'s back, but it falls off!"))
 						item_to_add.forceMove(drop_location())
 						if(prob(25))
 							step_rand(item_to_add)
