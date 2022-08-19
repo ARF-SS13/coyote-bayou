@@ -71,7 +71,7 @@
 	icon_state = "frozen"
 	density = TRUE
 	max_integrity = 100
-	armor = list("melee" = 30, "bullet" = 50, "laser" = -50, "energy" = -50, "bomb" = 0, "bio" = 100, "rad" = 100, "fire" = -80, "acid" = 30)
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/structure/ice_stasis/Initialize()
 	. = ..()

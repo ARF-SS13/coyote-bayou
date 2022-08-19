@@ -9,7 +9,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 30)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/icon_prefix = null
 
 /obj/item/twohanded/Initialize()
@@ -193,7 +193,7 @@
 	attack_verb = list("attacked", "impaled", "jabbed", "torn", "gored")
 	sharpness = SHARP_POINTY
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	wound_bonus = -15
 	bare_wound_bonus = 15
 	wielded_icon = "spear-metal2"
@@ -334,6 +334,29 @@
 	force_unwielded = 20
 	force_wielded = 45
 
+// Deathclaw Spear-Axe		Keywords: TRIBAL, Damage 25/30, Armor-piercing +0.25, Reach, Wound Bonus
+/obj/item/twohanded/spearaxe
+	name = "deathclaw spear-axe"
+	desc = "An exceptionally crafted spear-axe with a light shaft wrapped in deathclaw leather. It is tipped with a claw from a terrifying beast and well weighted for single-hand use."
+	icon = 'icons/fallout/objects/melee/twohanded.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/melee2h_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/melee2h_righthand.dmi'
+	icon_state = "spearaxe"
+	icon_prefix = "spearaxe"
+	wielded_icon = "spearaxe2"
+	hitsound = 'sound/weapons/bladeslice.ogg'
+	attack_verb = list("slashed", "stabbed", "sliced", "gored", "speared", "cut")
+	w_class = WEIGHT_CLASS_BULKY
+	sharpness = SHARP_EDGED
+	wound_bonus = 5
+	bare_wound_bonus = 10
+	max_reach = 2
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT + SLOT_BACK
+	force = 20
+	force_unwielded = 25
+	force_wielded = 30
+	
 
 /////////////////
 // HEAVY CLUBS //

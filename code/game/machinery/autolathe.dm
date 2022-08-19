@@ -586,31 +586,63 @@
 	var/intermediate = 0
 	var/advanced = 0
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
+
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	..()
-	if(!simple && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
-			to_chat(user, span_notice("You upgrade [src] with simple ammunition schematics."))
-			simple = 1
+	if(!busy && !stat && istype(O, /obj/item/storage/bag/casings))
+		var/obj/item/storage/bag/casings/casings_bag = O
+		var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+		var/count = 0
+		if(INTERACTING_WITH(user, src))
+			return
+		if(!length(casings_bag.contents))
+			to_chat(user, span_warning("There's nothing in \the [casings_bag] to load into \the [src]!"))
+			return
+		to_chat(user, span_notice("You start dumping \the [casings_bag] into \the [src]."))
+		if(!do_after(user, 2 SECONDS, target = src))
+			to_chat(user, span_notice("You stop dumping \the [casings_bag] into \the [src]."))
+			return
+		for(var/obj/item/ammo_casing/casing in casings_bag.contents)
+			var/mat_amount = mats.get_item_material_amount(casing)
+			if(!mat_amount)
+				continue
+			if(!mats.has_space(mat_amount))
+				to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+				return
+			if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
+				continue
+			// Forgive me for this.
+			if(mats.after_insert)
+				mats.after_insert.Invoke(casing, mats.last_inserted_id, mats.insert_item(casing))
+			// I blame whoever wrote material containers.
+			qdel(casing)
+			count++
+		if(count > 0)
+			to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+		else
+			to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
+		return
+	if(panel_open)
+		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
+			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
+			simple = TRUE
 			qdel(O)
-	if(!basic && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
-			to_chat(user, span_notice("You upgrade [src] with basic ammunition schematics."))
-			basic = 1
+			return
+		if(!basic && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_two))
+			to_chat(user, "<span class='notice'>You upgrade [src] with basic ammunition schematics.</span>")
+			basic = TRUE
 			qdel(O)
-	if(!intermediate && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
-			to_chat(user, span_notice("You upgrade [src] with intermediate ammunition schematics."))
-			intermediate = 1
+			return
+		else if(!intermediate && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_three))
+			to_chat(user, "<span class='notice'>You upgrade [src] with intermediate ammunition schematics.</span>")
+			intermediate = TRUE
 			qdel(O)
-	if(!advanced && panel_open)
-		if(istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
-			to_chat(user, span_notice("You upgrade [src] with advanced ammunition schematics."))
-			advanced = 1
+			return
+		else if(!advanced && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_four))
+			to_chat(user, "<span class='notice'>You upgrade [src] with advanced ammunition schematics.</span>")
+			advanced = TRUE
 			qdel(O)
-	else
-		attack_hand(user)
-		return TRUE
+			return
+	return ..()
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Simple Ammo" in D.category)

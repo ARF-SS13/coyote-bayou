@@ -86,5 +86,5 @@
 	path = /obj/item/lipstick/black
 
 /datum/gear/hands/livestockdelivery
-	name = "Livestock Delivery Service"
+	name = "Pet Delivery Service"
 	path = /obj/item/choice_beacon/pet

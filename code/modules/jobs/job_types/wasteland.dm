@@ -2307,7 +2307,7 @@ datum/job/wasteland/f13dendoctor
 
 //Sex
 /datum/outfit/loadout/sex
-	name = "Sex Slave"
+	name = "Domestic Slave"
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small = 1,
 		/obj/item/clothing/under/dress/skirt/swept =1,

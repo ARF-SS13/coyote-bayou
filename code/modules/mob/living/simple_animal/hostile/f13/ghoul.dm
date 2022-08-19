@@ -91,14 +91,14 @@
 	maxHealth = 128
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "feral ghoul soldier"
+	name = "plated feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
 	maxHealth = 144
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
 	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 200
+	maxHealth = 150
 	speed = 3
 
 //Cold Feral Ghoul

@@ -19,6 +19,10 @@
 	icon_state = "human"
 	name = "Human"
 
+/datum/sprite_accessory/penis/nondescript
+	icon_state = "nondescript"
+	name = "Nondescript"
+
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"

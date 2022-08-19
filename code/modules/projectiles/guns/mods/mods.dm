@@ -208,8 +208,8 @@
 /obj/item/gun_upgrade/scope
 
 /obj/item/gun_upgrade/scope/watchman
-	name = "ACOG scope"
-	desc = "A medium range scope, with a bit of heft to it."
+	name = "old scope"
+	desc = "A medium range scope, with a bit of heft to it.  Amazing that it's even still dialed in."
 	icon_state = "Watchman"
 
 /obj/item/gun_upgrade/scope/watchman/New()

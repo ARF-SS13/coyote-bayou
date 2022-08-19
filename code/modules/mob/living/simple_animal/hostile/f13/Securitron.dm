@@ -160,7 +160,6 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb
 	name = "sentry bot"
 	aggro_vision_range = 15
-	faction = list("raider")
 	obj_damage = 300
 
 //Raider friendly Sentry bot with non-lethals
@@ -170,7 +169,7 @@
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag
 	retreat_distance = 0
-	environment_smash = 2 //wall-busts
+	extra_projectiles = 0
 
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable

@@ -4,7 +4,6 @@
 	icon_state = "syndicate"
 	item_state = "bl_suit"
 	has_sensor = NO_SENSORS
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 5)
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/skirt
@@ -13,7 +12,6 @@
 	icon_state = "syndicate_skirt"
 	item_state = "bl_suit"
 	has_sensor = NO_SENSORS
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 5)
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
@@ -24,7 +22,6 @@
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
 	dummy_thick = TRUE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 50, "acid" = 40, "wound" = 10)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
 
@@ -35,7 +32,6 @@
 	item_state = "bl_suit"
 	item_color = "syndicate"
 	has_sensor = NO_SENSORS
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40)
 	alt_covers_chest = TRUE
 
 /obj/item/clothing/under/syndicate/bloodred/sleepytime
@@ -43,21 +39,18 @@
 	desc = "Do operatives dream of nuclear sheep?"
 	icon_state = "bloodred_pajamas"
 	item_state = "bl_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 5)
 
 /obj/item/clothing/under/syndicate/tacticool
 	name = "tacticool turtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool"
 	item_state = "bl_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 5)
 
 /obj/item/clothing/under/syndicate/tacticool/skirt
 	name = "tacticool skirtleneck"
 	desc = "Just looking at it makes you want to buy an SKS, go into the woods, and -operate-."
 	icon_state = "tactifool_skirt"
 	item_state = "bl_suit"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 5)
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -67,7 +60,6 @@
 	icon_state = "tactifool"
 	item_state = "bl_suit"
 	has_sensor = TRUE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 5)
 
 /obj/item/clothing/under/syndicate/sniper
 	name = "Tactical turtleneck suit"
@@ -84,14 +76,12 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/syndicate/camo/cosmetic
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/syndicate/soviet
 	name = "Ratnik 5 tracksuit"
 	desc = "Badly translated labels tell you to clean this in Vodka. Great for squatting in."
 	icon_state = "trackpants"
 	can_adjust = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 5)
 	resistance_flags = NONE
 
 /obj/item/clothing/under/syndicate/combat
@@ -106,7 +96,6 @@
 	desc = "Military grade tracksuits for frontline squatting."
 	icon_state = "rus_under"
 	can_adjust = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 5)
 	resistance_flags = NONE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
@@ -116,7 +105,6 @@
 	icon_state = "syndicatebaseball"
 	item_state = "syndicatebaseball"
 	has_sensor = NO_SENSORS
-	armor = list("melee" = 0, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 40, "wound" = 10)
 	alt_covers_chest = TRUE
 	mutantrace_variation = USE_TAUR_CLIP_MASK
 

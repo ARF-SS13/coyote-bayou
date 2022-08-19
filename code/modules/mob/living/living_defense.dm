@@ -95,8 +95,9 @@
 			return BULLET_ACT_BLOCK
 		totaldamage = block_calculate_resultant_damage(totaldamage, returnlist)
 	var/armor = run_armor_check(def_zone, P.flag, null, null, P.armour_penetration, null)
+	var/dt = max(run_armor_check(def_zone, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
 	if(!P.nodamage)
-		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness)
+		apply_damage(totaldamage, P.damage_type, def_zone, armor, wound_bonus = P.wound_bonus, bare_wound_bonus = P.bare_wound_bonus, sharpness = P.sharpness, damage_threshold = dt)
 		if(P.dismemberment)
 			check_projectile_dismemberment(P, def_zone)
 	var/missing = 100 - final_percent
@@ -152,7 +153,8 @@
 				if(!I.throwforce)
 					return
 				var/armor = run_armor_check(impacting_zone, "melee", "Your armor has protected your [parse_zone(impacting_zone)].", "Your armor has softened hit to your [parse_zone(impacting_zone)].",I.armour_penetration)
-				apply_damage(I.throwforce, dtype, impacting_zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND))
+				var/dt = max(run_armor_check("damage_threshold", "melee", null, null, 0, null) - I.damage_threshold_penetration, 0)
+				apply_damage(I.throwforce, dtype, impacting_zone, armor, sharpness=I.get_sharpness(), wound_bonus=(nosell_hit * CANT_WOUND), damage_threshold = dt)
 		else
 			return 1
 	else

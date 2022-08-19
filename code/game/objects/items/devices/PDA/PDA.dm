@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	item_flags = NOBLUDGEON
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_ID | ITEM_SLOT_GLOVES
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 	//Main variables

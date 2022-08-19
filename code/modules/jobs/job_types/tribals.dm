@@ -246,7 +246,7 @@ Tribal Head Hunter
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	suit = /obj/item/clothing/suit/hooded/cloak/shunter
-	belt = /obj/item/melee/transforming/cleaving_saw
+	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,

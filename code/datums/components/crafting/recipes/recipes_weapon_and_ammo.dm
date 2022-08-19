@@ -213,8 +213,7 @@
 /datum/crafting_recipe/m22
 	name = ".22 Long Rifle ammo box"
 	result = /obj/item/ammo_box/m22
-	reqs = list(/obj/item/stack/crafting/metalparts = 1,
-	/obj/item/stack/sheet/metal = 1,
+	reqs = list(/obj/item/stack/sheet/metal = 5,
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
@@ -304,7 +303,7 @@
 	name = "10mm handloaded ammo bag"
 	result = /obj/item/ammo_box/c10mm/improvised
 	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/datum/reagent/blackpowder = 25
+	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_MSRELOADER)
 	time = 5
@@ -1156,7 +1155,7 @@
 
 //grease gun
 /datum/crafting_recipe/grease_gun
-	name = "9mm SMG"
+	name = "m3a1 grease gun"
 	result = /obj/item/gun/ballistic/automatic/smg/greasegun
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/receiver = 1,

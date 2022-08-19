@@ -64,6 +64,8 @@
 	var/zones_disabled
 	///These are armor values that protect the wearer, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/armor_list = list()
+	///These are armor values that protect the wearer from the environment, taken from the clothing's armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
+	var/list/environmental_list = list()
 	///These are armor values that protect the clothing, taken from its armor datum. List updates on examine because it's currently only used to print armor ratings to chat in Topic().
 	var/list/durability_list = list()
 
@@ -289,14 +291,21 @@
 		armor_list += list("LASER" = armor.laser)
 	if(armor.energy)
 		armor_list += list("ENERGY" = armor.energy)
+	if(armor.damage_threshold)
+		armor_list += list("DT" = armor.damage_threshold)
+	if(armor.wound)
+		environmental_list += list("WOUND" = armor.wound)
+
+	if(LAZYLEN(environmental_list))
+		environmental_list.Cut()
 	if(armor.bio)
-		armor_list += list("TOXIN" = armor.bio)
+		environmental_list += list("TOXIN" = armor.bio)
 	if(armor.bomb)
-		armor_list += list("EXPLOSIVE" = armor.bomb)
+		environmental_list += list("EXPLOSIVE" = armor.bomb)
 	if(armor.rad)
-		armor_list += list("RADIATION" = armor.rad)
+		environmental_list += list("RADIATION" = armor.rad)
 	if(armor.magic)
-		armor_list += list("MAGIC" = armor.magic)
+		environmental_list += list("MAGIC" = armor.magic)
 
 	if(LAZYLEN(durability_list))
 		durability_list.Cut()
@@ -314,12 +323,17 @@
 	. = ..()
 
 	if(href_list["list_armor"])
-		var/list/readout = list("<span class='notice'><u><b>PROTECTION CLASSES (I-X)</u></b>")
+		var/list/readout = list("<span class='notice'><u><b>PROTECTION CLASSES</u></b>")
 		if(LAZYLEN(armor_list))
 			readout += "\n<b>ARMOR</b>"
 			for(var/dam_type in armor_list)
 				var/armor_amount = armor_list[dam_type]
 				readout += "\n[dam_type] [armor_amount]" //e.g. MELEE 27
+		if(LAZYLEN(environmental_list))
+			readout += "\n<b>ARMOR</b>"
+			for(var/dam_type in environmental_list)
+				var/env_amount = environmental_list[dam_type]
+				readout += "\n[dam_type] [env_amount]" //e.g. MELEE 27
 		if(LAZYLEN(durability_list))
 			readout += "\n<b>DURABILITY</b>"
 			for(var/dam_type in durability_list)

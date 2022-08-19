@@ -233,7 +233,8 @@
 		if(!affecting)
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		var/armor = run_armor_check(affecting, "melee", armour_penetration = M.armour_penetration)
-		apply_damage(damage, M.melee_damage_type, affecting, armor, wound_bonus = M.wound_bonus, bare_wound_bonus = M.bare_wound_bonus, sharpness = M.sharpness)
+		var/dt = max(run_armor_check(affecting, "damage_threshold") - M.damage_threshold_penetration_mob, 0)
+		apply_damage(damage, M.melee_damage_type, affecting, armor, wound_bonus = M.wound_bonus, bare_wound_bonus = M.bare_wound_bonus, sharpness = M.sharpness, damage_threshold = dt)
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)
 	. = ..()
