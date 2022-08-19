@@ -192,7 +192,6 @@
 /datum/reagent/consumable/ethanol/pinkpulque/on_mob_life(mob/living/carbon/M)
 	if(prob(33))
 		M.Dizzy(2)
-		M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/yellowpulque
@@ -608,7 +607,6 @@
 	if(prob(50))
 		to_chat(M, span_notice("[high_message]"))
 	M.hallucination += 40
-	M.Jitter(2)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
@@ -754,7 +752,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/jakejuice
@@ -773,7 +770,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/wastetequila
@@ -792,7 +788,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/nukashine
@@ -840,7 +835,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-0.3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/species_drink/sludge
@@ -934,7 +928,6 @@
 		M.playsound_local(M, 'sound/f13effects/explosion_fire.ogg', 100, 0)
 	if(prob(50))
 		M.playsound_local(M, 'sound/f13effects/alarm.ogg', 100, 0)
-	M.Jitter(100)
 	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.dizziness +=1.5
 	M.drowsyness = 0
@@ -954,7 +947,6 @@
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 
 /datum/reagent/consumable/ethanol/henessey/on_mob_life(mob/living/carbon/M)
-	M.Jitter(40)
 	M.dizziness +=1.5
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -966,7 +958,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 100
-	M.Jitter(2)
 	switch(current_cycle)
 		if(1 to 10)
 			M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -1130,7 +1121,6 @@
 	var/high_message = pick("<br><font color='#006600'><b>Business!</b></font>, <br><font color='#006600'><b>Sales!</b></font>, <br><font color='#006600'><b>Profit!</b></font>")
 	if(prob(50))
 		to_chat(M, span_notice("[high_message]"))
-	M.Jitter(100)
 	M.dizziness +=5
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
