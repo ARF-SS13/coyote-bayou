@@ -11,21 +11,21 @@
 /datum/sprite_accessory/ears/mam_ears/avali
 	name = "avali"
 	icon_state = "avali"
-	icon = 'icons/mob/shadekin/mam_ears.dmi'
+	icon = 'icons/mob/mam/shadekin/shadekin_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/ears/mam_ears/gret
 	name = "gret"
 	icon_state = "gret"
-	icon = 'icons/mob/shadekin/mam_ears.dmi'
+	icon = 'icons/mob/mam/shadekin/shadekin_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/ears/mam_ears/chemlight
 	name = "chemlight"
 	icon_state = "chemlight"
-	icon = 'icons/mob/shadekin/mam_ears.dmi'
+	icon = 'icons/mob/mam/shadekin/shadekin_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 

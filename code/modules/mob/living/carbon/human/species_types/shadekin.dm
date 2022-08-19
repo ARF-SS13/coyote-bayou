@@ -14,7 +14,7 @@
 
 /obj/item/organ/eyes/shadekin
 	name = "ipc eyes"
-	icon = 'icons/mob/shadekin/eyes.dmi'
+	icon = 'icons/mob/mam/shadekin/shadekin_eyes.dmi'
 	icon_state = "cybernetic_eyeballs"
 
 
