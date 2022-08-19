@@ -694,7 +694,6 @@
 	M.adjustOxyLoss(-3*REM, 0)
 	if(M.losebreath >= 4)
 		M.losebreath -= 2
-	M.Jitter(5)
 	..()
 	. = 1
 
@@ -729,7 +728,6 @@
 	M.AdjustAllImmobility(-20, FALSE)
 	M.AdjustUnconscious(-20, FALSE)
 	M.adjustStaminaLoss(-4.5*REM, FALSE)
-	M.Jitter(10)
 	if(prob(50))
 		M.confused = max(M.confused, 1)
 	..()
