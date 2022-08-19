@@ -20,7 +20,7 @@
 	name = "Human"
 
 /datum/sprite_accessory/penis/nondescript
-	icon_state = "blunt"
+	icon_state = "nondescript"
 	name = "Nondescript"
 
 /datum/sprite_accessory/penis/knotted
