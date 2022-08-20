@@ -806,7 +806,7 @@ obj/effect/landmark/start/f13/ncrlogisticsofficer
 	icon_state = "Enforcer"
 
 /obj/effect/landmark/start/f13/dendoctor
-	name = "Den Doctor"
+	name = "Doctor"
 
 /obj/effect/landmark/start/f13/mobboss
 	name = "Den Mob Boss"
