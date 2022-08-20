@@ -15,6 +15,8 @@
 #define MOB_SPAWNER_CAZADOR "cazadors"
 #define MOB_SPAWNER_DEATHCLAW "deathclaws"
 #define MOB_SPAWNER_HELLPIG "hellpiggy"
+#define MOB_SPAWNER_YAOGUAI "bear"
+#define MOB_SPAWNER_WOLF "woof"
 #define MOB_SPAWNER_SCORPIONS "scorpins"
 #define MOB_SPAWNER_ANT "ants"
 #define MOB_SPAWNER_NIGHTSTALKER "nightstalker"
@@ -65,12 +67,31 @@
 #define MOB_SPAWNER_KIND_ALL "all mobs"
 #define MOB_SPAWNER_KIND_ROBOT_LOW "low level robots"
 #define MOB_SPAWNER_KIND_ROBOT_HIGH "high level robots"
+/// mostly for dungeons
 #define MOB_SPAWNER_KIND_TRASH "trash mobs"
 #define MOB_SPAWNER_KIND_LOW "low level mobs"
 #define MOB_SPAWNER_KIND_MID "mid level mobs"
 #define MOB_SPAWNER_KIND_HIGH "high level mobs"
 #define MOB_SPAWNER_KIND_HIGHER "really high level mobs"
 #define MOB_SPAWNER_KIND_DEATH "OP mobs"
+
+/// random-ass animals and mutated wierd shit
+#define MOB_SPAWNER_KIND_ANIMALS_TRASH "trash animals" // me_irl
+#define MOB_SPAWNER_KIND_ANIMALS_LOW "low level animals"
+#define MOB_SPAWNER_KIND_ANIMALS_MID "mid level animals"
+#define MOB_SPAWNER_KIND_ANIMALS_HIGH "high level animals"
+#define MOB_SPAWNER_KIND_ANIMALS_HIGHER "really high level animals"
+#define MOB_SPAWNER_KIND_ANIMALS_DEATH "OP animals"
+
+/// swampy wildlife
+#define MOB_SPAWNER_KIND_SWAMPLIFE_TRASH "trash swamp animals" // #swamplyfe
+#define MOB_SPAWNER_KIND_SWAMPLIFE_LOW "low level swamp animals"
+#define MOB_SPAWNER_KIND_SWAMPLIFE_MID "mid level swamp animals"
+#define MOB_SPAWNER_KIND_SWAMPLIFE_HIGH "high level swamp animals"
+#define MOB_SPAWNER_KIND_SWAMPLIFE_HIGHER "really high level swamp animals"
+#define MOB_SPAWNER_KIND_SWAMPLIFE_DEATH "OP swamp animals"
+
+/// random-ass humanoids, mostly just raiders tbh
 #define MOB_SPAWNER_KIND_RAIDER_LOW "low level raider"
 #define MOB_SPAWNER_KIND_RAIDER_HIGH "high level raider"
 
@@ -78,6 +99,29 @@
 #define MOB_SPAWNER_DIFFICULTY_EASY (1<<0)
 #define MOB_SPAWNER_DIFFICULTY_MED (1<<1)
 #define MOB_SPAWNER_DIFFICULTY_HARD (1<<2)
+
+/// Global list of random mob spawners, to coordinate them all
+/// format: "spawner_key" = list(MOB_SPAWNER_GLOBAL_LIST_KIND = MOB_SPAWNER_GHOUL, MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY = MOB_SPAWNER_DIFFICULTIES)
+GLOBAL_LIST_EMPTY(mob_spawner_random_index)
+GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
+GLOBAL_LIST_EMPTY(random_mob_nest_spawner_groups)
+
+/// Datumized!
+/datum/random_mob_spawner
+	var/nest_name
+	var/nest_desc
+	var/nest_icon_state
+	var/sound_to_play
+	var/num_mobs_to_spawn
+	var/mob_respawn_time
+	var/list/mob_list_easy
+	var/list/mob_list_medium
+	var/list/mob_list_hard
+
+/datum/random_mob_spawner/Initialize()
+	GLOB.random_mob_nest_spawner_datums[nest_name] |= src
+
+
 
 GLOBAL_LIST_INIT(mob_spawner_tier_all, list(
 	MOB_SPAWNER_GHOUL,
@@ -141,16 +185,10 @@ GLOBAL_LIST_INIT(mob_spawner_tier_mid, list(
 	MOB_SPAWNER_MIRELURK,
 	MOB_SPAWNER_CAZADOR,
 	MOB_SPAWNER_ROBOT_DOMESTIC,
-	MOB_SPAWNER_ROBOT_SECURITY,
-	MOB_SPAWNER_DEATHCLAW,
 	MOB_SPAWNER_SCORPIONS,
 	MOB_SPAWNER_ANT,
 	MOB_SPAWNER_RAIDER_MELEE,
-	MOB_SPAWNER_RAIDER_RANGED,
-	MOB_SPAWNER_RAIDER_MIXED,
-	MOB_SPAWNER_NIGHTSTALKER,
-	MOB_SPAWNER_TUNNELLER,
-	MOB_SPAWNER_SPORECARRIER,
+	MOB_SPAWNER_NIGHTSTALKER
 ))
 
 GLOBAL_LIST_INIT(mob_spawner_tier_high, list(
@@ -172,13 +210,11 @@ GLOBAL_LIST_INIT(mob_spawner_tier_high, list(
 ))
 
 GLOBAL_LIST_INIT(mob_spawner_tier_higher, list(
-	MOB_SPAWNER_ROBOT_DOMESTIC,
 	MOB_SPAWNER_ROBOT_SECURITY,
 	MOB_SPAWNER_ROBOT_MILITARY,
 	MOB_SPAWNER_SUPERMUTANT,
 	MOB_SPAWNER_SUPERMUTANT_AND_CENTAUR,
 	MOB_SPAWNER_HELLPIG,
-	MOB_SPAWNER_RAIDER_MELEE,
 	MOB_SPAWNER_RAIDER_RANGED,
 	MOB_SPAWNER_RAIDER_MIXED,
 	MOB_SPAWNER_WANAMINGO
@@ -204,37 +240,32 @@ GLOBAL_LIST_INIT(mob_spawner_tier_raider_high, list(
 	MOB_SPAWNER_RAIDER_MIXED
 ))
 
-/// Global list of random mob spawners, to coordinate them all
-/// format: "spawner_key" = list(MOB_SPAWNER_GLOBAL_LIST_KIND = MOB_SPAWNER_GHOUL, MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY = MOB_SPAWNER_DIFFICULTIES)
-GLOBAL_LIST_EMPTY(mob_spawner_random_index)
+
 
 /// Mob spawner kinds (CW: HUGE FUCKIN LIST)
 GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 	MOB_SPAWNER_GHOUL = list(
-		MOB_SPAWNER_LIST_NAME = "Ghoul nest",
+		MOB_SPAWNER_LIST_NAME = "Ghoul pit",
 		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
 		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/ghoul = 5,
-				/mob/living/simple_animal/hostile/ghoul/reaver = 3,
-				/mob/living/simple_animal/hostile/ghoul/glowing = 1),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/ghoul = 1),
+			MOB_SPAWNER_LIST_COUNT = 6,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/ghoul = 5,
-				/mob/living/simple_animal/hostile/ghoul/reaver = 3,
-				/mob/living/simple_animal/hostile/ghoul/glowing = 1),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/ghoul/reaver = 3),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/ghoul = 5,
 				/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 				/mob/living/simple_animal/hostile/ghoul/glowing = 1),
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 8,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT)),
 
 	MOB_SPAWNER_MIRELURK = list(
@@ -244,24 +275,21 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/mirelurk = 2,
-				/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
-				/mob/living/simple_animal/hostile/mirelurk/baby = 5),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/mirelurk/baby = 1),
+			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/mirelurk = 2,
-				/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 				/mob/living/simple_animal/hostile/mirelurk/baby = 5),
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/mirelurk = 2,
 				/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
 				/mob/living/simple_animal/hostile/mirelurk/baby = 5),
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT)),
 
 	MOB_SPAWNER_DEATHCLAW = list(
@@ -272,39 +300,39 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/deathclaw = 2),
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 1,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGEST),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/deathclaw/mother = 1,
-				/mob/living/simple_animal/hostile/deathclaw = 2),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/deathclaw = 5),
+			MOB_SPAWNER_LIST_COUNT = 2,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGER),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/deathclaw/mother = 1,
+				/mob/living/simple_animal/hostile/deathclaw/mother = 5,
 				/mob/living/simple_animal/hostile/deathclaw/legendary = 1),
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 2,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGER)),
 
 	MOB_SPAWNER_HELLPIG = list(
-		MOB_SPAWNER_LIST_NAME = "Hellpig nest",
+		MOB_SPAWNER_LIST_NAME = "Hellpig sty",
 		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
 		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/hellpig = 3),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/hellpig = 1),
+			MOB_SPAWNER_LIST_COUNT = 1,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGEST),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/hellpig = 3),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/hellpig = 1),
+			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGER),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/hellpig = 3),
+				/mob/living/simple_animal/hostile/hellpig = 1),
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONGER)),
 
@@ -315,18 +343,18 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/radroach = 50),
+				/mob/living/simple_animal/hostile/radroach = 1),
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/radroach = 50),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/radroach = 1),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/radroach = 50),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/radroach = 1),
+			MOB_SPAWNER_LIST_COUNT = 9,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_GECKO = list(
@@ -336,17 +364,17 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 50),
+				/mob/living/simple_animal/hostile/gecko = 1),
 			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 50),
+				/mob/living/simple_animal/hostile/gecko = 1),
 			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 50),
+				/mob/living/simple_animal/hostile/gecko = 1),
 			MOB_SPAWNER_LIST_COUNT = 10,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
@@ -357,18 +385,18 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/bloatfly = 50),
+				/mob/living/simple_animal/hostile/bloatfly = 1),
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/bloatfly = 50),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/bloatfly = 1),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/bloatfly = 50),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/bloatfly = 1),
+			MOB_SPAWNER_LIST_COUNT = 9,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_BLOATFLY_AND_GECKO = list(
@@ -378,21 +406,21 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 25,
-				/mob/living/simple_animal/hostile/bloatfly = 25),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/gecko = 5,
+				/mob/living/simple_animal/hostile/bloatfly = 1),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 25,
-				/mob/living/simple_animal/hostile/bloatfly = 25),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/gecko = 5,
+				/mob/living/simple_animal/hostile/bloatfly = 3),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/gecko = 25,
-				/mob/living/simple_animal/hostile/bloatfly = 25),
-			MOB_SPAWNER_LIST_COUNT = 5,
+				/mob/living/simple_animal/hostile/gecko = 1,
+				/mob/living/simple_animal/hostile/bloatfly = 1),
+			MOB_SPAWNER_LIST_COUNT = 7,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_MOLERAT = list(
@@ -401,19 +429,19 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 15,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/molerat = 50),
+				/mob/living/simple_animal/hostile/molerat = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 15,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/molerat = 50),
+				/mob/living/simple_animal/hostile/molerat = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
-			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_COUNT = 15,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/molerat = 50),
+				/mob/living/simple_animal/hostile/molerat = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_CAZADOR = list(
@@ -425,19 +453,19 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/cazador/young = 10,
-				/mob/living/simple_animal/hostile/cazador = 8),
+				/mob/living/simple_animal/hostile/cazador = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/cazador/young = 10,
-				/mob/living/simple_animal/hostile/cazador = 8),
+				/mob/living/simple_animal/hostile/cazador/young = 5,
+				/mob/living/simple_animal/hostile/cazador = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/cazador/young = 10,
-				/mob/living/simple_animal/hostile/cazador = 8),
+				/mob/living/simple_animal/hostile/cazador/young = 3,
+				/mob/living/simple_animal/hostile/cazador = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_SCORPIONS = list(
@@ -448,21 +476,21 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/radscorpion = 10),
+				/mob/living/simple_animal/hostile/radscorpion = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/radscorpion = 5,
-				/mob/living/simple_animal/hostile/radscorpion/black = 5,
-				/mob/living/simple_animal/hostile/radscorpion/blue = 5),
+				/mob/living/simple_animal/hostile/radscorpion/black = 1,
+				/mob/living/simple_animal/hostile/radscorpion/blue = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/radscorpion = 5,
-				/mob/living/simple_animal/hostile/radscorpion/black = 10,
-				/mob/living/simple_animal/hostile/radscorpion/blue = 10),
+				/mob/living/simple_animal/hostile/radscorpion/black = 4,
+				/mob/living/simple_animal/hostile/radscorpion/blue = 4),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_ANT = list(
@@ -473,19 +501,19 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/giantant = 10),
+				/mob/living/simple_animal/hostile/giantant = 1),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
 				/mob/living/simple_animal/hostile/giantant = 5,
-				/mob/living/simple_animal/hostile/fireant = 5),
+				/mob/living/simple_animal/hostile/fireant = 2),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICK),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_COUNT = 5,
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/giantant = 15,
-				/mob/living/simple_animal/hostile/fireant = 15),
+				/mob/living/simple_animal/hostile/giantant = 2,
+				/mob/living/simple_animal/hostile/fireant = 5),
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_QUICKER)),
 			
 	MOB_SPAWNER_NIGHTSTALKER = list(
@@ -571,34 +599,34 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/handy/robobrain = 5,
+				/mob/living/simple_animal/hostile/handy/robobrain = 1,
 				/mob/living/simple_animal/hostile/securitron = 5,
-				/mob/living/simple_animal/hostile/handy/protectron = 5),
+				/mob/living/simple_animal/hostile/handy/protectron = 10),
 			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_MED = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/handy/assaultron = 5,
-				/mob/living/simple_animal/hostile/handy/robobrain = 5,
-				/mob/living/simple_animal/hostile/securitron = 5),
+				/mob/living/simple_animal/hostile/handy/assaultron = 1,
+				/mob/living/simple_animal/hostile/handy/robobrain = 1,
+				/mob/living/simple_animal/hostile/securitron = 1),
 			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
 		MOB_SPAWNER_HARD = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/handy/assaultron = 5,
-				/mob/living/simple_animal/hostile/handy/gutsy = 5,
-				/mob/living/simple_animal/hostile/securitron = 5),
+				/mob/living/simple_animal/hostile/handy/assaultron = 1,
+				/mob/living/simple_animal/hostile/handy/gutsy = 1,
+				/mob/living/simple_animal/hostile/securitron = 1),
 			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT)),
 			
 	MOB_SPAWNER_SUPERMUTANT = list(
-		MOB_SPAWNER_LIST_NAME = "Supermutant nest",
+		MOB_SPAWNER_LIST_NAME = "Supermutant cavern",
 		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
 		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
 		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
 		MOB_SPAWNER_EASY = list(
 			MOB_SPAWNER_LIST_MOBS = list(
-				/mob/living/simple_animal/hostile/supermutant/meleemutant = 2,
+				/mob/living/simple_animal/hostile/supermutant/meleemutant = 1,
 				/mob/living/simple_animal/hostile/supermutant = 5),
 			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONG),
@@ -788,7 +816,51 @@ GLOBAL_LIST_INIT(mob_spawner_random_master_list, list(
 				/mob/living/simple_animal/hostile/trog/sporecarrier = 10),
 			MOB_SPAWNER_LIST_COUNT = 3,
 			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT)),
-			
+
+	MOB_SPAWNER_YAOGUAI = list(
+		MOB_SPAWNER_LIST_NAME = "yao-guai den",
+		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
+		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
+		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
+		MOB_SPAWNER_EASY = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/bear/yaoguai = 1),
+			MOB_SPAWNER_LIST_COUNT = 3,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONG),
+		MOB_SPAWNER_MED = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/bear/yaoguai = 1),
+			MOB_SPAWNER_LIST_COUNT = 4,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONG),
+		MOB_SPAWNER_HARD = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/bear/yaoguai = 1),
+			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_LONG)),
+
+	MOB_SPAWNER_WOLF = list(
+		MOB_SPAWNER_LIST_NAME = "wolf den",
+		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
+		MOB_SPAWNER_LIST_STATE = MOB_SPAWNER_ICONSTATE_DEFAULT,
+		MOB_SPAWNER_LIST_SOUND = MOB_SPAWNER_SOUND_DEFAULT,
+		MOB_SPAWNER_EASY = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/wolf = 1),
+			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
+		MOB_SPAWNER_MED = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/wolf = 10,
+				/mob/living/simple_animal/hostile/wolf/alpha = 1),
+			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT),
+		MOB_SPAWNER_HARD = list(
+			MOB_SPAWNER_LIST_MOBS = list(
+				/mob/living/simple_animal/hostile/wolf = 3,
+				/mob/living/simple_animal/hostile/wolf/alpha = 1),
+			MOB_SPAWNER_LIST_COUNT = 5,
+			MOB_SPAWNER_LIST_TIME = MOB_SPAWNER_TIME_DEFAULT)),
+
 	MOB_SPAWNER_WANAMINGO = list(
 		MOB_SPAWNER_LIST_NAME = "Alien nest",
 		MOB_SPAWNER_LIST_DESC = "A gross hole in the ground with monsters in it.",
