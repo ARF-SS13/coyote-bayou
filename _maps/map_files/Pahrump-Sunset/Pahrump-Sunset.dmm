@@ -6709,7 +6709,7 @@
 /obj/structure/nest/randomized{
 	randomizer_kind = "mid level mobs";
 	randomizer_tag = "Texarkana Residential District 1";
-	randomizer_difficulty = 1
+	randomizer_difficulty = 3
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalrightborderleft2bottom"
@@ -16036,7 +16036,7 @@
 /obj/structure/nest/randomized{
 	randomizer_kind = "mid level mobs";
 	randomizer_tag = "Store Sneeds";
-	randomizer_difficulty = 1
+	randomizer_difficulty = 3
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain0"
@@ -18698,12 +18698,15 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bre" = (
-/obj/structure/sign/stop{
-	icon_state = "flag_texas";
-	pixel_y = 37
+/obj/structure/nest/randomized{
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
+	randomizer_difficulty = 3
 	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
+/area/f13/wasteland)
 "bri" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -27406,6 +27409,14 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
+"eVD" = (
+/obj/structure/nest/randomized{
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Nash East Road";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "eVP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood{
@@ -27970,6 +27981,15 @@
 "fkI" = (
 /obj/structure/dresser,
 /obj/effect/decal/cleanable/dirt,
+/turf/open/floor/f13/wood,
+/area/f13/village)
+"fkN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
+	randomizer_difficulty = 3
+	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "fkV" = (
@@ -34293,6 +34313,13 @@
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
+"iCn" = (
+/obj/structure/sign/stop{
+	icon_state = "flag_texas";
+	pixel_y = 37
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/building)
 "iCr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -36924,15 +36951,16 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "kaj" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
 /obj/structure/nest/randomized{
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1";
-	randomizer_difficulty = 1
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Nash East Road";
+	randomizer_difficulty = 3
 	},
-/turf/open/indestructible/ground/outside/desert{
-	icon_state = "wasteland33"
-	},
-/area/f13/wasteland)
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "kax" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -38134,8 +38162,8 @@
 	},
 /obj/structure/nest/randomized{
 	randomizer_kind = "low level mobs";
-	randomizer_tag = "Pharm Block & Park";
-	randomizer_difficulty = 1
+	randomizer_tag = "Nash East Road";
+	randomizer_difficulty = 3
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building)
@@ -42574,6 +42602,14 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"mRH" = (
+/obj/structure/nest/randomized{
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "mSa" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
@@ -55782,7 +55818,7 @@
 /obj/structure/nest/randomized{
 	randomizer_kind = "mid level mobs";
 	randomizer_tag = "Store Sneeds";
-	randomizer_difficulty = 1
+	randomizer_difficulty = 3
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -60764,7 +60800,7 @@
 /obj/structure/nest/randomized{
 	randomizer_kind = "low level mobs";
 	randomizer_tag = "Nash East Road";
-	randomizer_difficulty = 1
+	randomizer_difficulty = 3
 	},
 /turf/open/floor/f13{
 	icon_state = "hydrofloor"
@@ -81445,7 +81481,7 @@ fzM
 fzM
 fzM
 fzM
-bre
+iCn
 aZq
 kJr
 acl
@@ -89855,7 +89891,7 @@ aCN
 kZE
 oUj
 aHy
-aSC
+mRH
 aGT
 aHy
 oJz
@@ -90385,7 +90421,7 @@ xLC
 liO
 eoN
 aHy
-aSC
+mRH
 ada
 aaQ
 vsg
@@ -91683,7 +91719,7 @@ bbs
 aQU
 oUj
 aRw
-aSC
+mRH
 oUj
 aAf
 oUj
@@ -92696,7 +92732,7 @@ aLK
 aED
 aCN
 oUj
-aeQ
+fkN
 aLU
 aOe
 aOq
@@ -93972,7 +94008,7 @@ imF
 lUD
 iWo
 qmG
-sXv
+bre
 sXv
 sXv
 sXv
@@ -93987,7 +94023,7 @@ imF
 bMM
 srN
 cRP
-kaj
+pdm
 xOD
 aPF
 eBH
@@ -94482,7 +94518,7 @@ aqA
 bFI
 qhx
 bFI
-aCU
+qhx
 qhx
 aJk
 tnZ
@@ -96053,7 +96089,7 @@ aaQ
 oUj
 oJz
 oUj
-aSC
+mRH
 aSz
 oJz
 aaQ
@@ -97117,7 +97153,7 @@ bwN
 afS
 bsS
 eML
-bbE
+kaj
 uWc
 blg
 ahQ
@@ -100190,7 +100226,7 @@ bau
 yjE
 cnG
 aHt
-aZD
+eVD
 fbT
 aAf
 cnZ
