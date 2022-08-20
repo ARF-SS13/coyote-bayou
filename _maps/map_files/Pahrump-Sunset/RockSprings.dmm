@@ -2026,6 +2026,15 @@
 	color = "#897F7F"
 	},
 /area/f13/building)
+"bsF" = (
+/obj/effect/decal/marking{
+	icon_state = "doublevertical"
+	},
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/caves)
 "bsI" = (
 /obj/structure/fence{
 	dir = 4
@@ -12226,6 +12235,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/village)
+"hyy" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/caves)
 "hyB" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -14706,6 +14721,12 @@
 	},
 /turf/closed/wall/f13/wood/interior,
 /area/f13/village)
+"iRS" = (
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain2"
+	},
+/area/f13/caves)
 "iRV" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -25771,6 +25792,10 @@
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland)
+"pXT" = (
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "pYs" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/ausbushes/brflowers,
@@ -28283,6 +28308,10 @@
 	name = "rocky dirt"
 	},
 /area/f13/village)
+"rwH" = (
+/obj/effect/landmark/latejoin,
+/turf/open/indestructible/ground/outside/road,
+/area/f13/caves)
 "rwS" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
@@ -34835,6 +34864,12 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"vEa" = (
+/obj/effect/landmark/start/f13/wastelander,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/caves)
 "vEE" = (
 /obj/structure/reagent_dispensers/barrel/three,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -39795,11 +39830,11 @@ qdr
 qdr
 qdr
 qdr
-qdr
-qdr
-qdr
-qdr
-qdr
+rwH
+pXT
+pXT
+pXT
+rwH
 qdr
 qdr
 qdr
@@ -64792,7 +64827,7 @@ dzx
 dzx
 geZ
 geZ
-geZ
+hyy
 geZ
 gpt
 qnn
@@ -65050,7 +65085,7 @@ dzx
 geZ
 geZ
 geZ
-geZ
+vEa
 gpt
 qnn
 "}
@@ -65307,7 +65342,7 @@ vyO
 fMq
 fMq
 fMq
-fMq
+bsF
 gpt
 qnn
 "}
@@ -65564,7 +65599,7 @@ dzx
 geZ
 geZ
 geZ
-eiC
+iRS
 gpt
 qnn
 "}
@@ -65821,7 +65856,7 @@ ymh
 geZ
 geZ
 geZ
-geZ
+vEa
 gpt
 qnn
 "}
@@ -66077,7 +66112,7 @@ dzx
 dzx
 geZ
 geZ
-geZ
+hyy
 geZ
 gpt
 qnn

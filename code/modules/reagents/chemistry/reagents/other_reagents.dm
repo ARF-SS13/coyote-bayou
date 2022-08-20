@@ -402,7 +402,6 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
@@ -1348,7 +1347,6 @@
 /datum/reagent/bluespace/on_mob_life(mob/living/carbon/M)
 	if(current_cycle > 10 && prob(15))
 		to_chat(M, span_warning("You feel unstable..."))
-		M.Jitter(2)
 		current_cycle = 1
 		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
 	..()
