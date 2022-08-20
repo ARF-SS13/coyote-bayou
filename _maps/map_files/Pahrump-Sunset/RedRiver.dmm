@@ -2479,9 +2479,13 @@
 /area/f13/city)
 "bQF" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/securitron,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/stop{
+	pixel_y = 35;
+	icon_state = "flag_arkansas"
+	},
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
+	icon_state = "horizontaltopborderbottom0"
 	},
 /area/f13/wasteland)
 "bRe" = (
@@ -23651,10 +23655,9 @@
 	},
 /area/f13/city)
 "rsm" = (
+/obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/ghoul,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "rsE" = (
 /obj/structure/barricade/tentclothedge{
@@ -29243,9 +29246,12 @@
 	},
 /area/f13/raiders)
 "vBT" = (
-/mob/living/simple_animal/hostile/ghoul,
+/obj/structure/sign/stop{
+	pixel_y = 17
+	},
 /turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
+	dir = 8;
+	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
 "vBW" = (
@@ -54357,7 +54363,7 @@ pVV
 pVV
 oMa
 oMa
-rsm
+oMa
 oMa
 oMa
 oMa
@@ -55126,7 +55132,7 @@ pnb
 pnb
 pnb
 pnb
-vBT
+pnb
 pnb
 pnb
 pnb
@@ -55153,11 +55159,11 @@ pnb
 pnb
 rMX
 pnb
-lcQ
+vBT
 duP
 qPZ
 kRp
-xNk
+vrN
 pnb
 pnb
 pnb
@@ -55168,7 +55174,7 @@ pnb
 pnb
 pnb
 pnb
-lcQ
+vBT
 oFm
 qPZ
 kRp
@@ -55239,7 +55245,7 @@ eOB
 siv
 igU
 oMa
-vrN
+xNk
 pnb
 pnb
 pnb
@@ -55652,7 +55658,7 @@ tiN
 oph
 oph
 tiN
-tiN
+rsm
 oph
 oph
 oph
@@ -57483,7 +57489,7 @@ oph
 oph
 sSV
 siv
-bQF
+pVV
 oMa
 cQC
 oph
@@ -64767,7 +64773,7 @@ xqD
 raT
 raT
 obO
-siv
+bQF
 gUg
 nGx
 pVV

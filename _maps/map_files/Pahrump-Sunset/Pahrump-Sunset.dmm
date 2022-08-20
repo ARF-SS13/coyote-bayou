@@ -18698,11 +18698,12 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bre" = (
-/obj/structure/destructible/tribal_torch/lit,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
+/obj/structure/sign/stop{
+	icon_state = "flag_texas";
+	pixel_y = 37
+	},
+/turf/open/indestructible/ground/outside/road,
+/area/f13/building)
 "bri" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -77531,7 +77532,7 @@ xFZ
 hkV
 aOk
 aOk
-bre
+jMH
 hkV
 aOk
 aOk
@@ -81444,7 +81445,7 @@ fzM
 fzM
 fzM
 fzM
-bby
+bre
 aZq
 kJr
 acl
