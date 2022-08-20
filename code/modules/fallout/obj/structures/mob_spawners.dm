@@ -203,7 +203,7 @@
 
 /// Takes an entry from our global list and uses it to make our fancy nest!
 /obj/structure/nest/proc/apply_nest_from_global_list()
-	mob_types = null
+	mob_types = list()
 	var/list/our_randomizer = GLOB.mob_spawner_random_index[randomizer_tag]
 	name = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_NAME]
 	desc = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_DESC]
