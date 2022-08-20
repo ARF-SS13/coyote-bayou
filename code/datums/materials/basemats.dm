@@ -101,7 +101,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 ///Adds firestacks on hit (Still needs support to turn into gas on destruction)
 /datum/material/plasma
 	name = "Ultracite"
-	desc = "A mterial common in the construction of Pre-War technologies.."
+	desc = "A material common in the construction of Pre-War technologies.."
 	color = list(298/255, 46/255, 352/255,0, 0,0,0,0, 0,0,0,0, 0,0,0,1, 0,0,0,0)
 	categories = list(MAT_CATEGORY_ORE = TRUE, MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/mineral/plasma
