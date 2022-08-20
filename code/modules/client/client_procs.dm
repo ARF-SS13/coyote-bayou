@@ -145,7 +145,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 /client/proc/is_content_unlocked()
 	if(!prefs.unlock_content)
-		to_chat(src, "Become a BYOND member to access member-perks and features, as well as support the engine that makes this game possible. Only 10 bucks for 3 months! <a href=\"https://secure.byond.com/membership\">Click Here to find out more</a>.")
 		return 0
 	return 1
 /*
