@@ -30,10 +30,11 @@
 	var/randomizer_difficulty
 
 /obj/structure/nest/Initialize()
+	initialize_random_mob_spawners()
 	if(randomizer_tag)
 		setup_random_nest()
 	. = ..()
-	GLOB.mob_nests += src
+	GLOB.mob_nests |= src
 
 /obj/structure/nest/Destroy()
 	GLOB.mob_nests -= src
@@ -170,33 +171,11 @@
 		return FALSE
 	if(!randomizer_difficulty)
 		return FALSE
-	var/mob_list_to_use
-	switch(randomizer_kind) // might be a better way, but this is what I got
-		if(MOB_SPAWNER_KIND_ALL)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_all)
-		if(MOB_SPAWNER_KIND_ROBOT_LOW)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_robot_low)
-		if(MOB_SPAWNER_KIND_ROBOT_HIGH)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_robot_high)
-		if(MOB_SPAWNER_KIND_TRASH)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_trash)
-		if(MOB_SPAWNER_KIND_LOW)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_low)
-		if(MOB_SPAWNER_KIND_MID)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_mid)
-		if(MOB_SPAWNER_KIND_HIGH)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_high)
-		if(MOB_SPAWNER_KIND_HIGHER)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_higher)
-		if(MOB_SPAWNER_KIND_DEATH)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_death)
-		if(MOB_SPAWNER_KIND_RAIDER_LOW)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_raider_low)
-		if(MOB_SPAWNER_KIND_RAIDER_HIGH)
-			mob_list_to_use = pick(GLOB.mob_spawner_tier_raider_high)
+	var/datum/random_mob_spawner_group/our_group = GLOB.random_mob_nest_spawner_groups[randomizer_kind]
+	var/mob_list_tag_to_use = pick(our_group.group_list)
 
 	var/list/new_nest_thing = list(
-		MOB_SPAWNER_GLOBAL_LIST_KIND = mob_list_to_use,
+		MOB_SPAWNER_GLOBAL_LIST_KIND = mob_list_tag_to_use,
 		MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY = randomizer_difficulty
 		)
 	GLOB.mob_spawner_random_index[randomizer_tag] = new_nest_thing
@@ -204,23 +183,37 @@
 /// Takes an entry from our global list and uses it to make our fancy nest!
 /obj/structure/nest/proc/apply_nest_from_global_list()
 	mob_types = list()
-	var/list/our_randomizer = GLOB.mob_spawner_random_index[randomizer_tag]
-	name = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_NAME]
-	desc = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_DESC]
-	icon_state = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_STATE]
-	spawnsound = GLOB.mob_spawner_random_master_list[our_randomizer[MOB_SPAWNER_GLOBAL_LIST_KIND]][MOB_SPAWNER_LIST_SOUND]
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
-		apply_mob_list_from_list(MOB_SPAWNER_EASY, our_randomizer)
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
-		apply_mob_list_from_list(MOB_SPAWNER_MED, our_randomizer)
-	if(our_randomizer[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
-		apply_mob_list_from_list(MOB_SPAWNER_HARD, our_randomizer)
+	var/list/our_randomizer_index = GLOB.mob_spawner_random_index[randomizer_tag]
+	var/datum/random_mob_spawner/our_spawner = GLOB.random_mob_nest_spawner_datums[our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_KIND]]
+	if(!istype(our_spawner))
+		message_admins(span_phobia("Hey! [src] was passed randomizer index [our_randomizer_index], which gave a null spawner datum! Tell Superlagg to fix his shit!"))
+		return
+	name = our_spawner.nest_name
+	desc = our_spawner.nest_desc
+	icon_state = our_spawner.nest_icon_state
+	spawnsound = our_spawner.sound_to_play
+	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
+		mob_types |= our_spawner.mob_list_easy
+		max_mobs = our_spawner.num_mobs_to_spawn_easy
+		spawn_time = our_spawner.num_mobs_to_spawn_easy
+	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
+		mob_types |= our_spawner.mob_list_medium
+		max_mobs = our_spawner.num_mobs_to_spawn_medium
+		spawn_time = our_spawner.num_mobs_to_spawn_medium
+	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
+		mob_types |= our_spawner.mob_list_hard
+		max_mobs = our_spawner.num_mobs_to_spawn_hard
+		spawn_time = our_spawner.num_mobs_to_spawn_hard
 
-/obj/structure/nest/proc/apply_mob_list_from_list(difficulty, list/randomizer_list)
-	mob_types |= GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_MOBS]
-	max_mobs = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_COUNT]
-	spawn_time = GLOB.mob_spawner_random_master_list[randomizer_list[MOB_SPAWNER_GLOBAL_LIST_KIND]][difficulty][MOB_SPAWNER_LIST_TIME]
-
+/obj/structure/nest/proc/initialize_random_mob_spawners()
+	if(!LAZYLEN(GLOB.random_mob_nest_spawner_datums))
+		for(var/r_spawn in subtypesof(/datum/random_mob_spawner))
+			var/datum/random_mob_spawner/r_spawn_datum = new r_spawn()
+			GLOB.random_mob_nest_spawner_datums[r_spawn_datum.nest_tag] = r_spawn_datum
+	if(!LAZYLEN(GLOB.random_mob_nest_spawner_groups))
+		for(var/r_group in subtypesof(/datum/random_mob_spawner_group))
+			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
+			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
 //the nests themselves
 /*
