@@ -844,13 +844,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
-"aIW" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 4
-	},
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "aKj" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	density = 0;
@@ -24477,10 +24470,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"paC" = (
-/obj/structure/flora/tallgrass9,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "paF" = (
 /obj/structure/closet/crate/large,
 /obj/item/stack/sheet/leather/twenty,
@@ -34587,13 +34576,6 @@
 	icon_state = "horizontalinnermain2"
 	},
 /area/f13/wasteland)
-"vuR" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/obj/structure/nest/gecko,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "vvh" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -40849,7 +40831,7 @@ fhX
 jFE
 hfs
 xAc
-aIW
+xAc
 nQW
 hoC
 hoC
@@ -41391,7 +41373,7 @@ tRd
 tRd
 tRd
 tRd
-paC
+tRd
 tRd
 vxs
 ybl
@@ -45217,7 +45199,7 @@ fhX
 hKQ
 hKQ
 gbb
-vuR
+eVe
 nQW
 eRI
 nQW
