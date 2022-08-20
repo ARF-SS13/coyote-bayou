@@ -184,8 +184,8 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/stack/ore/plasma
 	name = "Ultracite chunks"
-	icon_state = "slag"
-	item_state = "slag"
+	icon_state = "ultracite"
+	item_state = "ultracite"
 	singular_name = "Ultracite chunk"
 	points = 15
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
