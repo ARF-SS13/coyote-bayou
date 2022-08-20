@@ -17322,13 +17322,13 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "biQ" = (
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /obj/machinery/light/small{
 	dir = 4;
 	light_color = "red"
 	},
+/obj/structure/closet/cabinet,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "biV" = (
@@ -17383,9 +17383,9 @@
 	},
 /area/f13/building/massfusion)
 "bjd" = (
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/structure/closet/cabinet,
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "bjg" = (
@@ -18635,7 +18635,9 @@
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "bqO" = (
-/obj/structure/closet/fridge,
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -18698,15 +18700,12 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "bre" = (
-/obj/structure/nest/randomized{
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1";
-	randomizer_difficulty = 3
+/obj/structure/sign/stop{
+	icon_state = "flag_texas";
+	pixel_y = 37
 	},
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalinnermain0"
-	},
-/area/f13/wasteland)
+/turf/open/indestructible/ground/outside/road,
+/area/f13/building)
 "bri" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -19383,13 +19382,15 @@
 	},
 /area/f13/wasteland)
 "bwZ" = (
-/obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "bxh" = (
@@ -19570,9 +19571,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "byK" = (
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier3,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/structure/closet/cabinet,
 /turf/open/floor/wood_wide/wood_wide_dark,
 /area/f13/building)
 "byL" = (
@@ -19605,8 +19606,8 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "byU" = (
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/clothing_low,
+/obj/structure/closet/cabinet,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "byV" = (
@@ -20782,6 +20783,12 @@
 "bWv" = (
 /obj/effect/landmark/start/f13/deputy,
 /turf/open/floor/wood_common,
+/area/f13/building)
+"bWV" = (
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "bXh" = (
 /obj/structure/table,
@@ -27125,6 +27132,14 @@
 /obj/structure/flora/grass/coyote/one,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"eOI" = (
+/obj/structure/nest/randomized{
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Nash East Road";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "eOX" = (
 /obj/structure/window,
 /obj/structure/flora/ausbushes/sunnybush{
@@ -27409,14 +27424,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/wasteland)
-"eVD" = (
-/obj/structure/nest/randomized{
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Nash East Road";
-	randomizer_difficulty = 3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "eVP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/chair/wood{
@@ -27983,15 +27990,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/village)
-"fkN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/randomized{
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1";
-	randomizer_difficulty = 3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "fkV" = (
 /obj/item/storage/bag/plants,
 /turf/open/indestructible/ground/outside/dirt,
@@ -28165,9 +28163,11 @@
 	},
 /area/f13/wasteland)
 "fqc" = (
-/obj/structure/closet/fridge,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "fqn" = (
@@ -32212,7 +32212,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "hxJ" = (
-/obj/machinery/vending/boozeomat,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/effect/spawner/lootdrop/f13/foodspawner,
+/obj/structure/closet/fridge{
+	anchored = 1
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "hxP" = (
@@ -34313,13 +34319,6 @@
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"iCn" = (
-/obj/structure/sign/stop{
-	icon_state = "flag_texas";
-	pixel_y = 37
-	},
-/turf/open/indestructible/ground/outside/road,
-/area/f13/building)
 "iCr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -36648,6 +36647,15 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/building/hospital)
+"jQf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "jQm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -36951,16 +36959,13 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "kaj" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
 /obj/structure/nest/randomized{
-	randomizer_kind = "low level mobs";
-	randomizer_tag = "Nash East Road";
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
 	randomizer_difficulty = 3
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/village)
 "kax" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -38844,6 +38849,15 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass,
 /area/f13/caves)
+"lbg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/randomized{
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Downtown Detractors";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "lbk" = (
 /obj/item/clothing/under/jabroni,
 /turf/open/floor/f13{
@@ -38868,9 +38882,9 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "lbN" = (
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/structure/closet/cabinet,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "lbT" = (
@@ -40780,9 +40794,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/obj/structure/closet/cabinet,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/structure/closet/cabinet,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "lYn" = (
@@ -41865,7 +41879,9 @@
 	dir = 8;
 	light_color = "#d8b1b1"
 	},
-/obj/structure/closet/cabinet/anchored,
+/obj/structure/closet/cabinet/anchored{
+	anchored = ss
+	},
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "mzW" = (
@@ -42602,14 +42618,6 @@
 /obj/structure/flora/grass/jungle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"mRH" = (
-/obj/structure/nest/randomized{
-	randomizer_kind = "mid level mobs";
-	randomizer_tag = "Texarkana Residential District 1";
-	randomizer_difficulty = 3
-	},
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "mSa" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/cash_random_med,
@@ -49840,6 +49848,17 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
+"qNW" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/nest/randomized{
+	randomizer_kind = "low level mobs";
+	randomizer_tag = "Nash East Road";
+	randomizer_difficulty = 3
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "qOh" = (
 /obj/structure/chair{
 	dir = 4
@@ -53793,6 +53812,16 @@
 	icon_state = "rubble"
 	},
 /area/f13/wasteland)
+"tfq" = (
+/obj/structure/nest/randomized{
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Texarkana Residential District 1";
+	randomizer_difficulty = 3
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "verticalinnermain0"
+	},
+/area/f13/wasteland)
 "tfr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/barricade/wooden/planks/pregame,
@@ -54601,6 +54630,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"tAN" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/cabinet/anchored{
+	anchored = ss
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "tAP" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2";
@@ -57783,7 +57821,7 @@
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "barcounter"
 	},
-/obj/machinery/smartfridge/drinks,
+/obj/machinery/vending/boozeomat,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "vkh" = (
@@ -60811,21 +60849,13 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "wTM" = (
-/obj/structure/closet/fridge/standard,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/foodspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
-/obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
 	},
+/obj/machinery/smartfridge/bottlerack,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "wTS" = (
@@ -74239,7 +74269,7 @@ acl
 iXi
 aXF
 acl
-lZy
+hxJ
 aZR
 acl
 acl
@@ -74783,7 +74813,7 @@ abP
 awe
 aHz
 fjQ
-ayJ
+tAN
 bgk
 cex
 bcc
@@ -76558,7 +76588,7 @@ wNL
 bbA
 sUG
 bbA
-bbA
+bWV
 acl
 abu
 bwZ
@@ -76578,7 +76608,7 @@ bUD
 acl
 bnm
 cex
-hxJ
+cex
 abP
 wTM
 bbm
@@ -81481,7 +81511,7 @@ fzM
 fzM
 fzM
 fzM
-iCn
+bre
 aZq
 kJr
 acl
@@ -89891,7 +89921,7 @@ aCN
 kZE
 oUj
 aHy
-mRH
+kaj
 aGT
 aHy
 oJz
@@ -90421,7 +90451,7 @@ xLC
 liO
 eoN
 aHy
-mRH
+kaj
 ada
 aaQ
 vsg
@@ -91719,7 +91749,7 @@ bbs
 aQU
 oUj
 aRw
-mRH
+kaj
 oUj
 aAf
 oUj
@@ -92732,7 +92762,7 @@ aLK
 aED
 aCN
 oUj
-fkN
+jQf
 aLU
 aOe
 aOq
@@ -94008,7 +94038,7 @@ imF
 lUD
 iWo
 qmG
-bre
+tfq
 sXv
 sXv
 sXv
@@ -96089,7 +96119,7 @@ aaQ
 oUj
 oJz
 oUj
-mRH
+kaj
 aSz
 oJz
 aaQ
@@ -97153,7 +97183,7 @@ bwN
 afS
 bsS
 eML
-kaj
+qNW
 uWc
 blg
 ahQ
@@ -98095,7 +98125,7 @@ azh
 oUj
 oJz
 oUj
-cVU
+lbg
 oUj
 azh
 aDj
@@ -100226,7 +100256,7 @@ bau
 yjE
 cnG
 aHt
-eVD
+eOI
 fbT
 aAf
 cnZ

@@ -9206,7 +9206,8 @@
 	},
 /area/f13/radiation)
 "fLs" = (
-/obj/structure/reagent_dispensers/keg/hearty_punch,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/keg/milk,
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "fLv" = (
@@ -17239,6 +17240,11 @@
 /obj/machinery/autolathe/ammo,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"oux" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/reagent_dispensers/keg/hearty_punch,
+/turf/open/floor/plasteel/f13,
+/area/f13/building)
 "ouC" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
@@ -19793,9 +19799,10 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "qQa" = (
-/obj/structure/reagent_dispensers/keg/milk,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/bottlerack,
+/obj/item/reagent_containers/food/drinks/bottle/nukashine,
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "qQF" = (
@@ -38115,7 +38122,7 @@ tcl
 mkZ
 bsC
 bsC
-uvv
+fLs
 wBu
 wbm
 bPE
@@ -38372,7 +38379,7 @@ eaB
 aGu
 bsC
 bsC
-uvv
+oux
 opd
 uvv
 uvv
@@ -39918,7 +39925,7 @@ aae
 omO
 bPE
 bPE
-fLs
+omO
 omO
 bLL
 omO
@@ -40174,8 +40181,8 @@ bsC
 aae
 aae
 aae
-omO
-omO
+aae
+aae
 omO
 bLL
 bPj
