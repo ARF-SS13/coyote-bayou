@@ -710,19 +710,19 @@ GLOBAL_LIST_EMPTY(random_mob_nest_spawner_datums)
 	nest_icon_state = MOB_SPAWNER_ICONSTATE_DEFAULT
 	sound_to_play = MOB_SPAWNER_SOUND_DEFAULT
 	
-	num_mobs_to_spawn_easy = 5
+	num_mobs_to_spawn_easy = 2
 	mob_respawn_time_easy = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_easy = list(
 		/mob/living/simple_animal/hostile/radscorpion = 1
 		)
-	num_mobs_to_spawn_medium = 5
+	num_mobs_to_spawn_medium = 3
 	mob_respawn_time_medium = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_medium = list(
 		/mob/living/simple_animal/hostile/radscorpion = 5,
 		/mob/living/simple_animal/hostile/radscorpion/black = 1,
 		/mob/living/simple_animal/hostile/radscorpion/blue = 1
 		)
-	num_mobs_to_spawn_hard = 5
+	num_mobs_to_spawn_hard = 4
 	mob_respawn_time_hard = MOB_SPAWNER_TIME_DEFAULT
 	mob_list_hard = list(
 		/mob/living/simple_animal/hostile/radscorpion = 5,
