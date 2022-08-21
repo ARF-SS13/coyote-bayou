@@ -44,10 +44,10 @@
 	if(randomizer_tag)
 		setup_random_nest()
 	. = ..()
-	GLOB.mob_nests |= src
+	// null faction, so we don't overwrite it
+	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
 
 /obj/structure/nest/Destroy()
-	GLOB.mob_nests -= src
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
 	covering_object = null
@@ -56,85 +56,8 @@
 		spawned_mobs -= our_spawned_mob
 	. = ..()
 
-/obj/structure/nest/process()
-	if(!has_mobs_left())
-		qdel(src)
-		return FALSE
-	if(!can_spawn_mob())
-		return FALSE
-	spawn_mob()
-	
-/// Do we have any mobs left?
-/obj/structure/nest/proc/has_mobs_left()
-	var/has_mobs_left
-	for(var/mob_in_list in mob_types)
-		if(mob_types[mob_in_list] >= 1)
-			has_mobs_left = TRUE
-			break
-	if(!has_mobs_left)
-		return FALSE
-	return TRUE
-
-/// For some reason deathclaw spawners dont stop spawning shit
-/obj/structure/nest/proc/dangling_mob_check()
-	if(LAZYLEN(mob_types) == 1)
-		for(var/the_mob in mob_types)
-			if(mob_types[the_mob] <= 1)
-				return TRUE
-
-/// Basic checks to see if we can spawn something
-/obj/structure/nest/proc/can_spawn_mob()
-	if(!can_fire)
-		return FALSE
-	if(COOLDOWN_TIMELEFT(src, spawner_cooldown))
-		return FALSE
-	if(covered)
-		return FALSE
-	if(coverable_by_dense_things)
-		var/turf/our_turf = get_turf(src)
-		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
-		if(previous_heavy_thing)
-			if(get_turf(previous_heavy_thing) == our_turf)
-				return FALSE
-			else
-				covering_object = null // mustve wandered off
-		/// Accounts for anything dense, which includes mobs, mechs, lockers, etc
-		for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
-			if(maybe_heavy_thing.density == TRUE)
-				covering_object = WEAKREF(maybe_heavy_thing)
-				return FALSE
-	var/mobs_in_range
-	for(var/mob/living/simple_animal/living_mob in range(overpopulation_range, get_turf(src)))
-		if(mobs_in_range++ >= max_mobs)
-			return FALSE
-	/* if(needs_player)
-		var/player_found = FALSE
-		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
-			if(humie?.client) // good enough
-				player_found = TRUE
-				break
-		if(!player_found)
-			return FALSE */
-	return TRUE
-
-/obj/structure/nest/proc/spawn_mob()
-	var/chosen_mob
-	var/mob/living/simple_animal/output_mob
-	for(var/i = 1 to mobs_to_spawn)
-		chosen_mob = pickweight_n_reduce(mob_types)
-		if(chosen_mob)
-			output_mob = new chosen_mob(get_turf(src))
-			output_mob.flags_1 |= (flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
-			spawned_mobs += output_mob
-			output_mob.nest = src
-			visible_message(span_danger("[output_mob] [spawn_text] [src]."))
-		else
-			qdel(src)
-			return
-	if(spawnsound)
-		playsound(src, spawnsound, 30, 1)
-	if(dangling_mob_check()) // 9 deathclaws came out of a spawner that shouldve spawned ONE ffs
-		qdel(src)
+/obj/structure/nest/proc/cover_with(obj/item/stack/cover_stack, mob/user)
+	if(!istype(cover_stack))
 		return
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 
@@ -215,16 +138,33 @@
 	apply_nest_from_global_list()
 	return
 
-/// Takes an entry from our global list and uses it to make our fancy nest!
-/obj/structure/nest/proc/add_nest_to_global_list()
-	if(!randomizer_tag)
-		return FALSE
-	if(!randomizer_kind)
-		return FALSE
-	if(!randomizer_difficulty)
-		return FALSE
-	var/datum/random_mob_spawner_group/our_group = GLOB.random_mob_nest_spawner_groups[randomizer_kind]
-	var/mob_list_tag_to_use = pick(our_group.group_list)
+//the nests themselves
+/*
+	var/list/cazadors 	= list(/mob/living/simple_animal/hostile/cazador = 5,
+					/mob/living/simple_animal/hostile/cazador/young = 3,)
+
+	var/list/ghouls 	= list(/mob/living/simple_animal/hostile/ghoul = 5,
+					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
+					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
+
+	var/list/deathclaw 	= list(/mob/living/simple_animal/hostile/deathclaw = 19,
+					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
+
+	var/list/scorpion	= list(/mob/living/simple_animal/hostile/radscorpion = 1,
+					/mob/living/simple_animal/hostile/radscorpion/black = 1)
+
+	var/list/radroach	= list(/mob/living/simple_animal/hostile/radroach = 1)
+
+	var/list/fireant	= list(/mob/living/simple_animal/hostile/fireant = 1,
+					/mob/living/simple_animal/hostile/giantant = 1)
+
+	var/list/wanamingo 	= list(/mob/living/simple_animal/hostile/alien = 1)
+
+	var/list/molerat	= list(/mob/living/simple_animal/hostile/molerat = 1)
+
+	var/list/mirelurk	= list(/mob/living/simple_animal/hostile/mirelurk = 2,
+					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
+					/mob/living/simple_animal/hostile/mirelurk/baby = 5)
 
 	var/list/new_nest_thing = list(
 		MOB_SPAWNER_GLOBAL_LIST_KIND = mob_list_tag_to_use,
@@ -283,7 +223,6 @@
 
 /obj/structure/nest/deathclaw/mother
 	name = "mother deathclaw nest"
-	max_mobs = 1
 	spawn_time = 120 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw/mother = 1)
 

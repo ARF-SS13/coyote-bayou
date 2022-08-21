@@ -177,7 +177,7 @@
 		SSnpcpool.currentrun -= src
 
 	if(nest)
-		nest.spawned_mobs -= src
+		nest.spawned_mobs -= WEAKREF(src)
 		nest = null
 
 	var/turf/T = get_turf(src)
@@ -375,7 +375,7 @@
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
 	if(nest)
-		nest.spawned_mobs -= src
+		nest.spawned_mobs -= WEAKREF(src)
 		nest = null
 	drop_loot()
 	if(dextrous)
