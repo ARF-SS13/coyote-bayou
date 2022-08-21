@@ -467,6 +467,14 @@
 		. = pickweight(L, base_weight)
 		L.Remove(.)
 
+//Pick a random element from the list by weight and reduce its weight by one.
+//Result is returned as a list in the format list(key, value)
+/proc/pickweight_n_reduce(list/L, base_weight = 1)
+	if (L.len)
+		. = pickweight(L, base_weight)
+		if((L[.]-= 1) <= 0)
+			L.Remove(.)
+
 //Returns the top(last) element from the list and removes it from the list (typical stack function)
 /proc/pop(list/L)
 	if(L.len)
