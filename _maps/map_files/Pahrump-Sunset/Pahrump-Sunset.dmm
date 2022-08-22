@@ -16558,11 +16558,10 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/sign/poster/contraband/pinup_pink{
-	pixel_x = -15;
-	pixel_y = -32
+/obj/structure/table/booth,
+/obj/machinery/light{
+	pixel_x = -16
 	},
-/obj/machinery/light,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "bfG" = (
@@ -24661,16 +24660,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
-"duY" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/light/sign/heaven{
-	pixel_x = -18;
-	pixel_y = -32
-	},
-/turf/open/floor/wood_common,
-/area/f13/building)
 "dvs" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -25809,12 +25798,12 @@
 	},
 /area/f13/building/massfusion)
 "dZR" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/structure/flora/rock/jungle{
+	pixel_x = -9;
+	pixel_y = 5
 	},
-/obj/structure/chair/booth,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "dZW" = (
 /mob/living/simple_animal/hostile/raider/firefighter{
 	name = "City Boys Raider"
@@ -52389,7 +52378,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/chem_master/condimaster,
+/obj/machinery/smartfridge/bottlerack,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "sbe" = (
@@ -61377,7 +61366,7 @@
 /obj/machinery/light/sign/heaven{
 	pixel_y = 32
 	},
-/obj/machinery/smartfridge/bottlerack,
+/obj/machinery/chem_master/condimaster,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "wTS" = (
@@ -76907,8 +76896,8 @@ abP
 abP
 abP
 abP
-abP
 aBM
+dZR
 cMS
 cMS
 arJ
@@ -77161,13 +77150,13 @@ nNt
 ayJ
 rmU
 ayJ
-dZR
 wQD
 sCB
 ufD
 arv
+etg
 emG
-aOk
+etg
 arJ
 aQZ
 eHN
@@ -77420,11 +77409,11 @@ ayJ
 ayJ
 ayJ
 ayJ
-ayJ
 ufD
 bhd
-bjb
 aOk
+bjb
+dZR
 kRc
 aQZ
 kxH
@@ -77675,11 +77664,11 @@ bAT
 aHw
 ayJ
 ayJ
-dZR
-bai
-sCB
+ath
+bco
 abP
 aMV
+etg
 cMS
 cMS
 arJ
@@ -77932,10 +77921,10 @@ asY
 aHw
 ayJ
 ayJ
-ayJ
-ayJ
-duY
+bai
+bfF
 abP
+ans
 ans
 ans
 ans
@@ -78189,13 +78178,13 @@ aEk
 aHw
 ayJ
 ayJ
-ayJ
-ath
-bco
+yeY
+vpP
 abP
-bjb
 aOk
-aLh
+tsH
+aOk
+etg
 kTq
 ojt
 kDp
@@ -78447,9 +78436,9 @@ ayJ
 ayJ
 ayJ
 ayJ
-bai
-bai
+ayJ
 abP
+aOk
 bjb
 iAq
 hkV
@@ -78703,10 +78692,10 @@ ayJ
 ayJ
 ayJ
 ayJ
-ayJ
-yeY
-vpP
+ath
+bco
 ufD
+aOk
 aDR
 gdD
 bhI
@@ -78960,10 +78949,10 @@ aHw
 bbm
 ayJ
 ayJ
-bbm
-ayJ
-ayJ
+bai
+bfF
 ufD
+aOk
 kZu
 lVH
 pxb
@@ -79217,10 +79206,10 @@ aJO
 aLX
 ayJ
 bbm
-bbm
-ayJ
-bfF
+yeY
+vpP
 ufD
+aOk
 vMe
 aAH
 oTo
@@ -79475,9 +79464,9 @@ aLX
 bbm
 ayJ
 ayJ
-ayJ
 bcb
 ufD
+aOk
 bjb
 acD
 bjb
@@ -79734,7 +79723,7 @@ ptK
 abP
 abP
 abP
-abP
+hEN
 aOk
 aLh
 nHY
@@ -80774,7 +80763,7 @@ fiV
 rZe
 ppw
 eMz
-eMz
+baZ
 abP
 xtI
 xtI
