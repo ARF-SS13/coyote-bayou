@@ -112,7 +112,7 @@
 			return FALSE
 	if(needs_player)
 		var/player_found = FALSE
-		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
+		for(var/mob/living/carbon/human/humie in view(radius, get_turf(src)))
 			if(humie?.client) // good enough
 				player_found = TRUE
 				break
