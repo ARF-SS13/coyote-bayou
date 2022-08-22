@@ -11997,6 +11997,13 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/city)
+"iNL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/city)
 "iNY" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -12068,7 +12075,10 @@
 /area/f13/wasteland)
 "iPU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/ghoul,
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "uplick"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -52004,10 +52014,10 @@ tZR
 fBS
 vlp
 gjm
-hZn
+iNL
 tiQ
 uDV
-cSI
+tiQ
 mdc
 fBS
 fBS
@@ -52015,9 +52025,9 @@ quO
 quO
 oyO
 sqH
+sYC
+sYC
 iPU
-sYC
-sYC
 gau
 jHw
 gMW

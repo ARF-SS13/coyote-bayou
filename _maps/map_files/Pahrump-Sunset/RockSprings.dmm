@@ -4680,14 +4680,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "cRL" = (
-/obj/machinery/button{
-	id = "Redwatereast";
-	name = "redeast";
-	pixel_x = 25;
-	req_one_access_txt = null
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "geckorassic"
 	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/village)
+/turf/open/water,
+/area/f13/building/tunnel)
 "cRS" = (
 /obj/structure/decoration/rag,
 /obj/structure/decoration/rag{
@@ -4699,12 +4697,12 @@
 	},
 /area/f13/building)
 "cSe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest";
+	id = "redwaterwest";
 	name = "redwest"
 	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "cSV" = (
@@ -5621,7 +5619,7 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwatereast";
+	id = "rednorth";
 	name = "redeast"
 	},
 /turf/open/indestructible/ground/outside/gravel,
@@ -6431,15 +6429,15 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ebO" = (
-/obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest";
-	name = "redwest"
-	},
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/poddoor/preopen{
+	id = "redwaterwest";
+	name = "redwest"
+	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
 "ebV" = (
@@ -7882,7 +7880,7 @@
 	dir = 8
 	},
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwatereast";
+	id = "rednorth";
 	name = "redeast"
 	},
 /turf/open/indestructible/ground/outside/gravel,
@@ -8629,7 +8627,7 @@
 /area/f13/building)
 "flI" = (
 /obj/machinery/button{
-	id = "Redwaterwest";
+	id = "redwaterwest";
 	name = "redwest";
 	pixel_x = 1;
 	pixel_y = -23;
@@ -15077,7 +15075,7 @@
 /area/f13/village)
 "jch" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwaterwest";
+	id = "redwaterwest";
 	name = "redwest"
 	},
 /obj/effect/turf_decal/weather/dirt,
@@ -22146,7 +22144,7 @@
 /area/f13/wasteland)
 "nCs" = (
 /obj/machinery/door/poddoor/preopen{
-	id = "Redwatereast";
+	id = "rednorth";
 	name = "redeast"
 	},
 /turf/open/indestructible/ground/outside/gravel,
@@ -37609,7 +37607,7 @@
 /area/f13/wasteland)
 "xqD" = (
 /obj/machinery/button{
-	id = "Redwatereast";
+	id = "rednorth";
 	name = "redeast";
 	pixel_x = -25;
 	req_one_access_txt = null
@@ -65205,7 +65203,7 @@ vKq
 qOw
 qOw
 ikx
-tHx
+cRL
 tHx
 kjz
 kjz
@@ -94133,7 +94131,7 @@ fhX
 fhX
 roc
 gtT
-pKJ
+xqD
 pKJ
 pKJ
 wUf
@@ -94648,7 +94646,7 @@ fhX
 roc
 gtT
 ozX
-cRL
+pKJ
 jYj
 wUf
 fHN
