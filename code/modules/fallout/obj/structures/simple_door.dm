@@ -44,7 +44,7 @@
 		padlock = null
 	//fortuna edit
 	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
-	message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
+	//message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
