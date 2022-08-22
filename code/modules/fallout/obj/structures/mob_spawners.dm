@@ -8,7 +8,7 @@
 	var/can_fire = TRUE
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
 	//make spawn_time's multiples of 10. The SS runs on 10 seconds.
-	var/spawn_time = 20 SECONDS
+	var/spawn_time = 40 SECONDS
 	var/coverable = TRUE
 	/// spawner can be covered by dense things
 	var/coverable_by_dense_things = TRUE
@@ -21,10 +21,10 @@
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	/// Range to check for other mobs to see if there's too many around
-	var/overpopulation_range = 5
+	var/overpopulation_range = 10
 	/// max mobs that can be alive and nearby before it refuses to spawn more
-	var/max_mobs = 3
-	var/radius = 10
+	var/max_mobs = 1
+	var/radius = 6
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
 	/// Needs a living, cliented player around to spawn stuff
@@ -75,6 +75,13 @@
 		return FALSE
 	return TRUE
 
+/// For some reason deathclaw spawners dont stop spawning shit
+/obj/structure/nest/proc/dangling_mob_check()
+	if(LAZYLEN(mob_types) == 1)
+		for(var/the_mob in mob_types)
+			if(mob_types[the_mob] <= 1)
+				return TRUE
+
 /// Basic checks to see if we can spawn something
 /obj/structure/nest/proc/can_spawn_mob()
 	if(!can_fire)
@@ -88,6 +95,7 @@
 		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
 		if(previous_heavy_thing)
 			if(get_turf(previous_heavy_thing) == our_turf)
+				COOLDOWN_START(src, spawner_cooldown, spawn_time)
 				return FALSE
 			else
 				covering_object = null // mustve wandered off
@@ -95,13 +103,13 @@
 		for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
 			if(maybe_heavy_thing.density == TRUE)
 				covering_object = WEAKREF(maybe_heavy_thing)
+				COOLDOWN_START(src, spawner_cooldown, spawn_time)
 				return FALSE
-	if(max_mobs >= 1)
-		var/mobs_in_range
-		for(var/mob/living/living_mob in view(overpopulation_range, get_turf(src)))
-			if(living_mob.stat != DEAD)
-				if(mobs_in_range++ >= max_mobs)
-					return FALSE
+	var/mobs_in_range
+	for(var/mob/living/living_mob in range(overpopulation_range, get_turf(src)))
+		if(mobs_in_range++ >= max_mobs)
+			COOLDOWN_START(src, spawner_cooldown, spawn_time)
+			return FALSE
 	if(needs_player)
 		var/player_found = FALSE
 		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
@@ -116,10 +124,7 @@
 	var/chosen_mob
 	var/mob/living/simple_animal/output_mob
 	for(var/i = 1 to mobs_to_spawn)
-		if(infinite)
-			chosen_mob = pickweight(mob_types)
-		else
-			chosen_mob = pickweight_n_reduce(mob_types)
+		chosen_mob = pickweight_n_reduce(mob_types)
 		if(chosen_mob)
 			output_mob = new chosen_mob(get_turf(src))
 			output_mob.flags_1 |= (flags_1 & ADMIN_SPAWNED_1) //If we were admin spawned, lets have our children count as that as well.
@@ -131,6 +136,9 @@
 			return
 	if(spawnsound)
 		playsound(src, spawnsound, 30, 1)
+	if(dangling_mob_check()) // 9 deathclaws came out of a spawner that shouldve spawned ONE ffs
+		qdel(src)
+		return
 	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
@@ -240,15 +248,15 @@
 	icon_state = our_spawner.nest_icon_state
 	spawnsound = our_spawner.sound_to_play
 	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
-		mob_types |= our_spawner.mob_list_easy
+		counterlist_combine(mob_types, our_spawner.mob_list_easy)
 		max_mobs = our_spawner.num_mobs_to_spawn_easy
 		spawn_time = our_spawner.num_mobs_to_spawn_easy
 	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
-		mob_types |= our_spawner.mob_list_medium
+		counterlist_combine(mob_types, our_spawner.mob_list_medium)
 		max_mobs = our_spawner.num_mobs_to_spawn_medium
 		spawn_time = our_spawner.num_mobs_to_spawn_medium
 	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
-		mob_types |= our_spawner.mob_list_hard
+		counterlist_combine(mob_types, our_spawner.mob_list_hard)
 		max_mobs = our_spawner.num_mobs_to_spawn_hard
 		spawn_time = our_spawner.num_mobs_to_spawn_hard
 
@@ -262,53 +270,9 @@
 			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
 			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
-//the nests themselves
-/*
-	var/list/cazadors 	= list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
-
-	var/list/ghouls 	= list(/mob/living/simple_animal/hostile/ghoul = 5,
-					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
-					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
-
-	var/list/deathclaw 	= list(/mob/living/simple_animal/hostile/deathclaw = 19,
-					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
-
-	var/list/scorpion	= list(/mob/living/simple_animal/hostile/radscorpion = 1,
-					/mob/living/simple_animal/hostile/radscorpion/black = 1)
-
-	var/list/radroach	= list(/mob/living/simple_animal/hostile/radroach = 1)
-
-	var/list/fireant	= list(/mob/living/simple_animal/hostile/fireant = 1,
-					/mob/living/simple_animal/hostile/giantant = 1)
-
-	var/list/wanamingo 	= list(/mob/living/simple_animal/hostile/alien = 1)
-
-	var/list/molerat	= list(/mob/living/simple_animal/hostile/molerat = 1)
-
-	var/list/mirelurk	= list(/mob/living/simple_animal/hostile/mirelurk = 2,
-					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
-					/mob/living/simple_animal/hostile/mirelurk/baby = 5)
-
-	var/list/raider		= list(/mob/living/simple_animal/hostile/raider = 5,
-					/mob/living/simple_animal/hostile/raider/firefighter = 2,
-					/mob/living/simple_animal/hostile/raider/baseball = 2,
-					/mob/living/simple_animal/hostile/raider/ranged = 2,
-					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 1,
-					/mob/living/simple_animal/hostile/raider/ranged/biker = 1,
-					/mob/living/simple_animal/hostile/raider/ranged/boss = 1,
-					/mob/living/simple_animal/hostile/raider/legendary = 1)
-
-	var/list/protectron	= list(/mob/living/simple_animal/hostile/handy/protectron = 5,
-					/mob/living/simple_animal/hostile/handy = 3)
-
-	var/list/cazador	= list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
-
-*/
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
-	max_mobs = 3
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/ghoul = 5,
 					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
 					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
@@ -329,13 +293,13 @@
 /obj/structure/nest/scorpion
 	name = "scorpion nest"
 	spawn_time = 40 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/radscorpion = 5,
 					/mob/living/simple_animal/hostile/radscorpion/black = 5)
 
 /obj/structure/nest/radroach
 	name = "radroach nest"
-	max_mobs = 15
+	max_mobs = 3
 	mobs_to_spawn = 3
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 15)
 
@@ -385,7 +349,7 @@
 					/mob/living/simple_animal/hostile/raider/tribal = 1)
 
 /obj/structure/nest/raider/ranged
-	max_mobs = 3
+	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/raider/ranged = 4,
 					/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged = 2,
 					/mob/living/simple_animal/hostile/raider/ranged/biker = 2)
@@ -408,27 +372,27 @@
 /obj/structure/nest/securitron
 	name = "securitron pod"
 	desc = "An old securitron containment pod system. This one looks like it is connected to a storage system underground."
-	max_mobs = 3
+	max_mobs = 1
 	icon_state = "scanner_modified"
-	mob_types = list(/mob/living/simple_animal/hostile/securitron = 5)
+	mob_types = list(/mob/living/simple_animal/hostile/securitron = 2)
 
 /obj/structure/nest/assaultron
 	name = "assaultron pod"
 	desc = "An old assaultron containment pod system. This one looks like it is connected to a storage system underground."
 	spawn_time = 40 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	icon_state = "scanner_modified"
-	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 5)
+	mob_types = list(/mob/living/simple_animal/hostile/handy/assaultron = 2)
 
 /obj/structure/nest/cazador
 	name = "cazador nest"
-	max_mobs = 4
+	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
+					/mob/living/simple_animal/hostile/cazador/young = 3)
 
 /obj/structure/nest/gecko
 	name = "gecko nest"
-	max_mobs = 5
+	max_mobs = 2
 	mob_types = list(/mob/living/simple_animal/hostile/gecko = 10)
 
 /obj/structure/nest/wolf
@@ -439,7 +403,7 @@
 /obj/structure/nest/supermutant
 	name = "supermutant den"
 	spawn_time = 30 SECONDS
-	max_mobs = 2
+	max_mobs = 1
 	mob_types = list(/mob/living/simple_animal/hostile/supermutant/meleemutant = 5,
 					/mob/living/simple_animal/hostile/supermutant/rangedmutant = 2)
 
