@@ -120,14 +120,13 @@
 	crate_name = "medical supplies crate"
 
 /datum/supply_pack/medical/adv_surgery_tools
-	name = "Med-Co Advanced Surgery Tools"
-	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of . Requires Surgery access to open."
+	name = "Med-Tek Advanced Surgery Tools"
+	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of sterilizine. Requires Surgery access to open."
 	cost = 5500
-	access = ACCESS_SURGERY
 	contains = list(/obj/item/storage/belt/medical/surgery_belt_adv,
 					/obj/item/reagent_containers/medspray/synthflesh,
 					/obj/item/reagent_containers/medspray/sterilizine)
-	crate_name = "medco surgery tools"
+	crate_name = "medtek surgery tools"
 	crate_type = /obj/structure/closet/crate/secure/medical
 
 /datum/supply_pack/medical/surgery
@@ -143,6 +142,7 @@
 ///////////////////////////// Medical Kits ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+/*
 /datum/supply_pack/medical/sprays
 	name = "Medical Sprays"
 	desc = "Contains two cans of Styptic Spray, Silver Sulfadiazine Spray, Synthflesh Spray and Sterilizer Compound Spray."
@@ -159,7 +159,7 @@
 
 /datum/supply_pack/medical/advrad
 	name = "Radiation Treatment Crate Deluxe"
-	desc = "A crate for when radiation is out of hand... Contains two rad-b-gone kits, one bottle of anti radiation deluxe pills, as well as a radiation treatment deluxe pill bottle!"
+	desc = "A crate for when radiation is out of hand... Contains two radaway pouches, one bottle of radx, as well as a radiation treatment deluxe pill bottle!"
 	cost = 3500
 	contains = list(/obj/item/storage/pill_bottle/antirad_plus,
 					/obj/item/storage/pill_bottle/mutarad,
@@ -169,6 +169,7 @@
 					/obj/item/geiger_counter)
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
+
 
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
@@ -184,3 +185,16 @@
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss)
 
 	crate_name = "medipen crate"
+*/
+
+/datum/supply_pack/medical/stimpak5
+	name = "Stimpak"
+	desc = "The humble stimpak, in a box of five."
+	cost = 250
+	contains = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+
+/datum/supply_pack/medical/radaway
+	name = "Radaway"
+	desc = "It burns like hell, but it flushes the rads out, for sure."
+	cost = 250
+	contains = /obj/item/reagent_containers/blood/radaway
