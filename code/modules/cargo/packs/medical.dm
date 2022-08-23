@@ -28,9 +28,7 @@
 	name = "Blood Pack Variety Crate"
 	desc = "Contains nine different blood packs for reintroducing blood to patients, plus two universal synthetic blood packs."
 	cost = 3000
-	contains = list(/obj/item/reagent_containers/blood/synthetics,
-					/obj/item/reagent_containers/blood/synthetics,
-					/obj/item/reagent_containers/blood/random,
+	contains = list(/obj/item/reagent_containers/blood/random,
 					/obj/item/reagent_containers/blood/APlus,
 					/obj/item/reagent_containers/blood/AMinus,
 					/obj/item/reagent_containers/blood/BPlus,
@@ -92,7 +90,7 @@
 */
 /datum/supply_pack/medical/supplies
 	name = "Medical Supplies Crate"
-	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze, as well as a bottle of stimulant pills for long, hard work days. German doctor not included."
+	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze."
 	cost = 2500
 	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/charcoal,
@@ -114,7 +112,6 @@
 					/obj/item/storage/box/medsprays,
 					/obj/item/storage/box/syringes,
 					/obj/item/storage/box/bodybags,
-					/obj/item/storage/pill_bottle/stimulant,
 					/obj/item/stack/medical/bone_gel,
 					/obj/item/stack/medical/bone_gel)
 	crate_name = "medical supplies crate"

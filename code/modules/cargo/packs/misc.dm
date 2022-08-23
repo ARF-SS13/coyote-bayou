@@ -16,8 +16,8 @@
 
 /datum/supply_pack/misc/anvil
 	name = "Anvil Crate"
-	desc = "An anvil in a crate, we had to dig this out of the old warehouse. It's got wheels on it so you can move it."
-	cost = 7500
+	desc = "An anvil in a crate. It's got wheels on it so you can move it."
+	cost = 2500
 	contains = list(/obj/structure/anvil/obtainable/basic)
 
 /datum/supply_pack/misc/artsupply
@@ -42,7 +42,7 @@
 
 /datum/supply_pack/misc/book_crate
 	name = "Book Crate"
-	desc = "Surplus from the Nanotrasen Archives, these five books are sure to be good reads."
+	desc = "Surplus from the Brotherhood Archives, these five books are sure to be good reads."
 	cost = 1500
 	contains = list(/obj/item/book/codex_gigas,
 					/obj/item/book/manual/random/,
@@ -76,6 +76,7 @@
 					/obj/item/storage/briefcase)
 	crate_name = "bureaucracy crate"
 
+/*
 /datum/supply_pack/misc/captain_pen
 	name = "Captain Pen"
 	desc = "A spare Captain fountain pen."
@@ -84,6 +85,7 @@
 	contains = list(/obj/item/pen/fountain/captain)
 	crate_name = "captain pen"
 	crate_type = /obj/structure/closet/crate/secure/weapon //It is a combat pen
+*/
 
 /datum/supply_pack/misc/fountainpens
 	name = "Calligraphy Crate"
