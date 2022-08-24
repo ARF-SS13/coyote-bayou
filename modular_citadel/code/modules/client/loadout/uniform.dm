@@ -152,47 +152,47 @@
 	name = "black suit"
 	path = /obj/item/clothing/under/suit/black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/green
 	name = "green suit"
 	path = /obj/item/clothing/under/suit/green
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/red
 	name = "red suit"
 	path = /obj/item/clothing/under/suit/red
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/charcoal
 	name = "charcoal Suit"
 	path = /obj/item/clothing/under/suit/charcoal
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/checkered_suit
 	name = "checkered Suit"
 	path = /obj/item/clothing/under/suit/checkered
-	cost = 3
+	cost = 1
 
 /datum/gear/uniform/suit/navy
 	name = "navy suit"
 	path = /obj/item/clothing/under/suit/navy
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/burgundy
 	name = "burgundy suit"
 	path = /obj/item/clothing/under/suit/burgundy
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/tan
 	name = "tan suit"
 	path = /obj/item/clothing/under/suit/tan
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/white
-	name = "white suit"
+	name = "white formal underclothes"
 	path = /obj/item/clothing/under/suit/white
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/mailmanuniform
 	name = "mailman's jumpsuit"
