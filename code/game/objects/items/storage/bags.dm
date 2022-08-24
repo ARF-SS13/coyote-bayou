@@ -509,6 +509,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "bag_cases"
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/spam_protection = FALSE
 	var/mob/listeningTo
 

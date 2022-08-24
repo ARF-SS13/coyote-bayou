@@ -533,7 +533,7 @@
 	for(var/i in 1 to 16)
 		new /obj/item/reagent_containers/syringe/dart/(src)
 
- /obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
+/obj/item/storage/belt/medolier/afterattack(obj/target, mob/user , proximity)
 	if(!(istype(target, /obj/item/reagent_containers/glass/beaker)))
 		return
 	if(!proximity)
