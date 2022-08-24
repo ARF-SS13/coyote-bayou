@@ -212,3 +212,12 @@
 	contains = list(/obj/item/circuitboard/computer/sat_control)
 	crate_name= "shield control board crate"
 */
+
+/datum/supply_pack/emergency/metalfoam
+	name = "Metal Foam Grenade Crate"
+	desc = "Seal up those pesky perimiter breaches with 14 Metal Foam Grenades. Or be a pain in someone's ass. We don't care."
+	cost = 1500
+	contains = list(/obj/item/storage/box/metalfoam,
+					/obj/item/storage/box/metalfoam)
+	crate_name = "metal foam grenade crate"
+

@@ -50,7 +50,7 @@
 	crate_name = "emitter crate"
 	crate_type = /obj/structure/closet/crate/secure/engineering
 	dangerous = TRUE
-*/
+
 /datum/supply_pack/engine/field_gen
 	name = "Field Generator Crate"
 	desc = "Typically the only thing standing between the station and a messy death. Powered by emitters. Contains two field generators."
@@ -69,7 +69,7 @@
 					/obj/machinery/power/grounding_rod)
 	crate_name = "grounding rod crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
-/*
+
 /datum/supply_pack/engine/mason
 	name = "M.A.S.O.N RIG Crate"
 	desc = "The rare M.A.S.O.N RIG. Requires CE access to open."
@@ -91,7 +91,7 @@
 					/obj/structure/particle_accelerator/power_box,
 					/obj/structure/particle_accelerator/end_cap)
 	crate_name = "particle accelerator crate"
-*/
+
 /datum/supply_pack/engine/collector
 	name = "Radiation Collector Crate"
 	desc = "Contains three radiation collectors. Useful for collecting energy off nearby Supermatter Crystals, Singularities or Teslas!"
@@ -100,7 +100,7 @@
 					/obj/machinery/power/rad_collector,
 					/obj/machinery/power/rad_collector)
 	crate_name = "collector crate"
-/*
+
 /datum/supply_pack/engine/sing_gen
 	name = "Singularity Generator Crate"
 	desc = "The key to unlocking the power of Lord Singuloth. Particle Accelerator not included."
@@ -108,6 +108,7 @@
 	contains = list(/obj/machinery/the_singularitygen)
 	crate_name = "singularity generator crate"
 */
+
 /datum/supply_pack/engine/solar
 	name = "Solar Panel Crate"
 	desc = "Go green with this DIY advanced solar array. Contains twenty one solar assemblies, a solar-control circuit board, and tracker. If you have any questions, please check out the enclosed instruction book."
@@ -160,7 +161,7 @@
 					/obj/machinery/power/tesla_coil)
 	crate_name = "tesla coil crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
-*/	
+*/
 /*
 /datum/supply_pack/engine/tesla_gen
 	name = "Tesla Generator Crate"
