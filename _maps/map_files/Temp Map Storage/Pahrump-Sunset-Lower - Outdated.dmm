@@ -1826,7 +1826,7 @@
 "bdp" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/item/clothing/under/syndicate/brotherhood,
-/obj/item/storage/belt/holster,
+/obj/item/storage/belt/shoulderholster,
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior,
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/senior,
 /obj/item/clothing/gloves/combat,
@@ -17392,10 +17392,10 @@
 /area/f13/tunnel)
 "kaj" = (
 /obj/structure/rack,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
 /obj/effect/decal/fakelattice{
 	pixel_y = -17
 	},
@@ -18869,11 +18869,11 @@
 /area/f13/brotherhood/leisure)
 "kVP" = (
 /obj/structure/rack,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/mask/gas/sechailer,
@@ -32035,7 +32035,7 @@
 	pixel_x = 26;
 	specialfunctions = 4
 	},
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /turf/open/floor/wood,
 /area/f13/bunker)
 "tev" = (
@@ -39208,7 +39208,7 @@
 "xFz" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor{
 	dir = 8;

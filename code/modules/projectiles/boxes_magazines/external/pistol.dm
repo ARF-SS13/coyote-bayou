@@ -19,6 +19,7 @@
 	caliber = list(CALIBER_22LR)
 	max_ammo = 16
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m22/empty
 	start_empty = 1
@@ -33,6 +34,7 @@
 	max_ammo = 5
 	multiple_sprites = 2
 	can_change_caliber = TRUE
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/zipgun/Initialize()
 	. = ..()
@@ -47,6 +49,7 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 10
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m9mm/empty
 	start_empty = 1
@@ -61,7 +64,6 @@
 	max_ammo = 15
 	multiple_sprites = 2
 
-
 /obj/item/ammo_box/magazine/m9mm/doublestack/empty
 	start_empty = 1
 
@@ -71,6 +73,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	desc = "A gun magazine."
 	caliber = list(CALIBER_10MM)
+	w_class = WEIGHT_CLASS_TINY
 
 //10mm small
 /obj/item/ammo_box/magazine/m10mm/adv
@@ -96,6 +99,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 24
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m10mm/adv/ext/empty
 	start_empty = 1
@@ -109,7 +113,7 @@
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 8
 	multiple_sprites = 1
-
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = 1
@@ -126,6 +130,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 12
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m45/socom/empty
 	start_empty = 1
@@ -143,6 +148,7 @@
 	caliber = list(CALIBER_44)
 	max_ammo = 8
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m44/empty
 	start_empty = 1
@@ -175,6 +181,7 @@
 	caliber = list(CALIBER_14MM)
 	max_ammo = 7
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m14mm/empty
 	start_empty = 1

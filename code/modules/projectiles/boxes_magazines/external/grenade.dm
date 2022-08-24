@@ -5,4 +5,4 @@
 	caliber = list(CALIBER_75)
 	multiple_sprites = 2
 	max_ammo = 8
-
+	w_class = WEIGHT_CLASS_TINY

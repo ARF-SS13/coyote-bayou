@@ -264,7 +264,7 @@
 	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
-	belt = 	/obj/item/storage/belt/military/assault
+	belt = 	/obj/item/storage/belt/army/assault
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 
@@ -304,7 +304,7 @@
 	suit = /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
-	belt = 	/obj/item/storage/belt/military/assault
+	belt = 	/obj/item/storage/belt/army/assault
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 
@@ -351,7 +351,7 @@
 	name = "NCR Trooper"
 	uniform = /obj/item/clothing/under/f13/ncr
 	suit = /obj/item/clothing/suit/armor/ncrarmor
-	belt = /obj/item/storage/belt/military/assault/ncr
+	belt = /obj/item/storage/belt/army/assault/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	head = /obj/item/clothing/head/f13/ncr
 

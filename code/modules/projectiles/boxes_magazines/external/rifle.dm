@@ -5,6 +5,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list(CALIBER_10MM)
 	max_ammo = 10
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m10mm/rifle/update_icon()
 	if(ammo_count())
@@ -19,6 +20,7 @@
 	caliber = list(CALIBER_556)
 	max_ammo = 30
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /*
 ---Fallout 13---
@@ -32,6 +34,7 @@
 	ammo_type = /obj/item/ammo_casing/a357
 	max_ammo = 18
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/autopipe/empty
 	start_empty = 1
@@ -46,6 +49,7 @@
 	caliber = list(CALIBER_556)
 	max_ammo = 20
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m556/rifle/empty
 	start_empty = 1
@@ -54,6 +58,7 @@
 	name = "small rifle magazine (5.56mm)"
 	icon_state = "r10"
 	max_ammo = 10
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/m556/rifle/small/empty
 	start_empty = 1
@@ -62,6 +67,7 @@
 	name = "rifle magazine (5.56mm)"
 	icon_state = "r30"
 	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m556/rifle/assault/empty
 	start_empty = 1
@@ -70,6 +76,7 @@
 	name = "extended rifle magazine (5.56mm)"
 	icon_state = "r50"
 	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m556/rifle/extended/empty
 	start_empty = 1
@@ -81,6 +88,7 @@
 	ammo_type = /obj/item/ammo_casing/m5mm
 	max_ammo = 30
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m5mm/empty
 	start_empty = 1
@@ -91,7 +99,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = list(CALIBER_762)
 	max_ammo = 8
-
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/garand308/update_icon()
 	..()
@@ -109,6 +117,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = list(CALIBER_762)
 	max_ammo = 10
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/sks/update_icon()
 	..()
@@ -127,6 +136,7 @@
 	caliber = list(CALIBER_762)
 	max_ammo = 10
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m762/empty
 	start_empty = 1
@@ -136,6 +146,7 @@
 	icon_state = "extmag308"
 	max_ammo = 20
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m762/ext/empty
 	start_empty = 1
@@ -147,6 +158,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/g11
 	max_ammo = 50
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m473/explosive
 	name = "g11 magazine (4.73mm explosive)"
@@ -162,6 +174,7 @@
 	name = "4.7mm carbine magazine"
 	icon_state = "46x30mmt"
 	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m473/small/empty
 	start_empty = 1
@@ -173,6 +186,7 @@
 	caliber = list(CALIBER_2MM)
 	max_ammo = 10
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m2mm/blender
 	name = "2mm \"Blender\" electromagnetic magazine"
