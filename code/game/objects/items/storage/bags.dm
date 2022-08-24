@@ -7,7 +7,7 @@
  *	Contains:
  *		Trash Bag
  *		Mining Satchel
- *		Plant Bag
+ *		Produce Bag
  *		Sheet Snatcher
  *		Book Bag
  *      Biowaste Bag
@@ -17,7 +17,11 @@
 
 //  Generic non-item
 /obj/item/storage/bag
+	name = "Generic bag thing"
+	desc = span_phobia("Shouldnt see this! Its probably a bug lol.")
 	slot_flags = ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_HUGE
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
 /obj/item/storage/bag/ComponentInitialize()
 	. = ..()
@@ -26,6 +30,11 @@
 	STR.allow_quick_empty = TRUE
 	STR.display_numerical_stacking = TRUE
 	STR.click_gather = TRUE
+
+	STR.max_items = STORAGE_BAG_MAX_ITEMS
+	STR.max_w_class = STORAGE_BAG_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BAG_MAX_TOTAL_SPACE
+
 
 // -----------------------------
 //          Trash bag
@@ -38,16 +47,12 @@
 	item_state = "trashbag"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
-
-	w_class = WEIGHT_CLASS_BULKY
 	var/insertable = TRUE
 
 /obj/item/storage/bag/trash/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.max_combined_w_class = 30
-	STR.max_items = 30
+	STR.max_items = STORAGE_TRASH_BAG_MAX_ITEMS
 	STR.can_hold_extra = typecacheof(list(/obj/item/organ/lungs, /obj/item/organ/liver, /obj/item/organ/stomach, /obj/item/clothing/shoes)) - typesof(/obj/item/clothing/shoes/magboots, /obj/item/clothing/shoes/jackboots, /obj/item/clothing/shoes/workboots)
 	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain))
 	STR.limited_random_access = TRUE
@@ -91,8 +96,7 @@
 /obj/item/storage/bag/trash/bluespace/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 60
-	STR.max_items = 60
+	STR.max_items = STORAGE_BIG_TRASH_BAG_MAX_ITEMS
 	STR.limited_random_access_stack_position = 5
 
 /obj/item/storage/bag/trash/bluespace/cyborg
@@ -226,7 +230,7 @@
 	name = "produce bag"
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "plantbag"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/plants/ComponentInitialize()
@@ -235,7 +239,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = 100
 	STR.max_items = 100
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/grown, /obj/item/seeds, /obj/item/grown, /obj/item/reagent_containers/honeycomb, /obj/item/reagent_containers/food/snacks/meat, /obj/item/reagent_containers/food/snacks/egg, /obj/item/fishy ))
+	STR.can_hold = GLOB.storage_produce_bag_can_hold
 
 ////////
 
@@ -266,9 +270,6 @@
 	desc = "A patented Nanotrasen storage system designed for any kind of mineral sheet."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "sheetsnatcher"
-
-	var/capacity = 300; //the number of sheets it can carry.
-	w_class = WEIGHT_CLASS_NORMAL
 	component_type = /datum/component/storage/concrete/stack
 
 /obj/item/storage/bag/sheetsnatcher/ComponentInitialize()
@@ -286,7 +287,6 @@
 /obj/item/storage/bag/sheetsnatcher/borg
 	name = "sheet snatcher 9000"
 	desc = ""
-	capacity = 500//Borgs get more because >specialization
 
 /obj/item/storage/bag/sheetsnatcher/borg/ComponentInitialize()
 	. = ..()
@@ -302,16 +302,11 @@
 	desc = "A bag for books."
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bookbag"
-	w_class = WEIGHT_CLASS_BULKY //Bigger than a book because physics
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/books/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 21
-	STR.max_items = 7
-	STR.display_numerical_stacking = FALSE
 	STR.can_hold = typecacheof(list(/obj/item/book, /obj/item/storage/book, /obj/item/spellbook))
 
 /*
@@ -326,7 +321,6 @@
 	throwforce = 10
 	throw_speed = 3
 	throw_range = 5
-	w_class = WEIGHT_CLASS_BULKY
 	flags_1 = CONDUCT_1
 	custom_materials = list(/datum/material/iron=3000)
 	var/max_items = 7
@@ -335,7 +329,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food, /obj/item/reagent_containers/glass, /datum/reagent/consumable, /obj/item/kitchen/knife, /obj/item/kitchen/rollingpin, /obj/item/kitchen/fork, /obj/item/storage/box)) //Should cover: Bottles, Beakers, Bowls, Booze, Glasses, Food, Kitchen Tools, and ingredient boxes.
+	STR.can_hold = GLOB.storage_tray_can_hold
 	STR.insert_preposition = "on"
 	STR.max_items = max_items
 
@@ -395,16 +389,13 @@
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bag"
 	desc = "A bag for holding a variety of medical supplies."
-	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/chemistry/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 30
-	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
+	STR.can_hold = GLOB.storage_chemistry_bag_can_hold
 
 /*	Now in tribal mode!*/
 
@@ -413,17 +404,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "tribal_chembag"
 	desc = "A bag for holding a variety of tribal medical supplies."
-	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/chemistry/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 30
-	STR.max_items = 14
-	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/syringe, /obj/item/reagent_containers/pill, /obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/syringe/dart, /obj/item/reagent_containers/chem_pack))
-
 
 /*
  *  Biowaste bag (mostly for xenobiologists)
@@ -434,18 +415,13 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "biobag"
 	desc = "A well-insulated bag for the safe carrying of organs, limbs and IV bags."
-	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_POCKET
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/bio/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL //Allows you to pick up Lungs, Liver, and Stomach
-	STR.max_combined_w_class = 30
-	STR.max_items = 14
 	STR.insert_preposition = "in"
-	STR.can_hold = typecacheof(list(/obj/item/slime_extract, /obj/item/reagent_containers/blood, /obj/item/reagent_containers/food/snacks/deadmouse, /obj/item/reagent_containers/food/snacks/cube, /obj/item/organ, /obj/item/reagent_containers/food/snacks/meat/slab, /obj/item/bodypart))
-	STR.cant_hold = typecacheof(list(/obj/item/organ/brain, /obj/item/organ/liver/cybernetic, /obj/item/organ/heart/cybernetic, /obj/item/organ/lungs/cybernetic, /obj/item/organ/tongue/cybernetic, /obj/item/organ/ears/cybernetic, /obj/item/organ/eyes/robotic, /obj/item/organ/cyberimp))
+	STR.can_hold = GLOB.storage_bio_bag_can_hold
 
 /obj/item/storage/bag/bio/holding
 	name = "bio bag of holding"
@@ -466,15 +442,11 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "ammopouch"
 	slot_flags = ITEM_SLOT_POCKET
-	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/ammo/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 30
-	STR.max_items = 3
 	STR.display_numerical_stacking = FALSE
 	STR.can_hold = typecacheof(list(/obj/item/ammo_box/magazine, /obj/item/ammo_casing))
 
@@ -484,7 +456,6 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "materialpouch"
 	slot_flags = ITEM_SLOT_POCKET
-	w_class = WEIGHT_CLASS_BULKY
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/material/ComponentInitialize()
@@ -504,7 +475,6 @@ obj/item/storage/bag/chemistry/tribal
 	item_state = "trashbag"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
-	w_class = WEIGHT_CLASS_HUGE
 	resistance_flags = FLAMMABLE
 
 /obj/item/storage/bag/salvage/ComponentInitialize()
@@ -524,7 +494,6 @@ obj/item/storage/bag/chemistry/tribal
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/storage/bag/salvagestorage/ComponentInitialize()
 	. = ..()
@@ -532,4 +501,154 @@ obj/item/storage/bag/chemistry/tribal
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
 	STR.max_items = 30
-	STR.can_hold = typecacheof(list(/obj/item/advanced_crafting_components, /obj/item/stack/crafting, /obj/item/crafting, /obj/item/multitool/advanced, /obj/item/crowbar/hightech, /obj/item/wrench/hightech, /obj/item/weldingtool/hightech, /obj/item/screwdriver/hightech, /obj/item/wirecutters/hightech, /obj/item/blueprint/research, /obj/item/multitool/advanced))
+	STR.can_hold = GLOB.storage_salvage_storage_bag_can_hold
+
+/obj/item/storage/bag/casings
+	name = "casing bag"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "bag_cases"
+	w_class = WEIGHT_CLASS_NORMAL
+	resistance_flags = FLAMMABLE
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
+	var/spam_protection = FALSE
+	var/mob/listeningTo
+
+/obj/item/storage/bag/casings/dropped(mob/user)
+	. = ..()
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	listeningTo = null
+
+/obj/item/storage/bag/casings/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.max_combined_w_class = 600
+	STR.max_items = 600
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
+	STR.cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+
+/obj/item/storage/bag/casings/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_casings)
+	listeningTo = user
+
+
+/obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
+	var/show_message = FALSE
+	var/turf/tile = user.loc
+	var/obj/item/ammo_casing/B
+	if (!isturf(tile))
+		return
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	if(STR)
+		for(var/A in tile)
+			if (is_type_in_typecache(A, STR.can_hold))
+				B = A
+				if(B.is_pickable)
+					if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
+						show_message = TRUE
+					else
+						if(!spam_protection)
+							to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+							spam_protection = TRUE
+							continue
+				else
+					continue
+			else
+				continue
+	if(show_message)
+		playsound(user, "rustle", 50, TRUE)
+		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \
+			span_notice("You scoop up the casings beneath you with your [name]."))
+	spam_protection = FALSE
+
+/obj/item/storage/bag/tribe_quiver
+	name = "tribal quiver"
+	desc = "A simple leather quiver designed for holding arrows."
+	icon = 'icons/obj/clothing/belts.dmi'
+	icon_state = "tribal_quiver"
+	item_state = "tribal_quiver"
+
+/obj/item/storage/bag/tribe_quiver/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 30
+	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
+	STR.max_w_class = 3
+	STR.max_combined_w_class = 100
+
+/obj/item/storage/bag/tribe_quiver/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+	new /obj/item/ammo_casing/caseless/arrow(src)
+
+/obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)
+	. = ..()
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
+		return
+	if(!length(user.get_empty_held_indexes()))
+		to_chat(user, span_warning("Your hands are full!"))
+		return
+	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
+	if(L)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
+		user.put_in_hands(L)
+		to_chat(user, span_notice("You take \a [L] out of the quiver."))
+		return TRUE
+	var/obj/item/ammo_casing/caseless/W = locate() in contents
+	if(W && contents.len > 0)
+		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
+		user.put_in_hands(W)
+		to_chat(user, span_notice("You take \a [W] out of the quiver."))
+	else
+		to_chat(user, span_notice("There is nothing left in the quiver."))
+	return TRUE
+
+//Bone Arrow Quiver
+/obj/item/storage/bag/tribe_quiver/bone
+	name = "hunters quiver"
+	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
+	
+
+/obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+//Archer Quiver so the Far-Lands Archer doesn't start with two quivers
+/obj/item/storage/bag/tribe_quiver/archer
+	name = "archers quiver"
+
+/obj/item/storage/bag/tribe_quiver/archer/PopulateContents()
+	. = ..()
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+	new /obj/item/ammo_casing/caseless/arrow/bone(src)
+
+/obj/item/storage/bag/trash/sack
+	name = "leather sack"
+	desc = "A sack made out of rough leathers. It's probably not filled with gifts."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "sack"
+	item_state = "sack"
+

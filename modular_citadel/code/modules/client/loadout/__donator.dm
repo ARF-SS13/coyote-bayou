@@ -3,7 +3,7 @@
 /datum/gear/donator
 	name = "IF YOU SEE THIS, PING A CODER RIGHT NOW!"
 	slot = SLOT_IN_BACKPACK
-	path = /obj/item/storage/belt/holster/ranger45
+	path = /obj/item/storage/belt/shoulderholster/ranger45
 	category = LOADOUT_CATEGORY_DONATOR
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
 	cost = 0
@@ -11,7 +11,7 @@
 /datum/gear/donator/donortestingbikehorn
 	name = "Donor item testing"
 	slot = SLOT_IN_BACKPACK
-	path = /obj/item/storage/belt/holster/ranger45
+	path = /obj/item/storage/belt/shoulderholster/ranger45
 	geargroupID = list("DONORTEST") //This is a list mainly for the sake of testing, but geargroupID works just fine with ordinary strings
 
 /datum/gear/donator/monke1818
@@ -69,7 +69,7 @@
 	ckeywhitelist = list("sugga")
 
 /obj/item/storage/box/large/custom_kit/klatue/PopulateContents()
-	new /obj/item/storage/belt/holster(src)
+	new /obj/item/storage/belt/shoulderholster(src)
 	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
 	new /obj/item/gun/ballistic/revolver/hunting/klatue(src)
 	new /obj/item/ammo_box/c4570(src)
@@ -154,7 +154,7 @@
 /obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
 	new /obj/item/modkit/kemblevest(src)
 	new /obj/item/modkit/kemblehat(src)
-	new /obj/item/storage/belt/holster/kemble(src)
+	new /obj/item/storage/belt/shoulderholster/kemble(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"

@@ -75,7 +75,7 @@
 
 /datum/gear/backpack/redbelt
 	name = "primitive belt"
-	path = /obj/item/storage/belt/mining/primitive
+	path = /obj/item/storage/belt/utility/mining/primitive
 	cost = 3
 
 /datum/gear/backpack/fannypack

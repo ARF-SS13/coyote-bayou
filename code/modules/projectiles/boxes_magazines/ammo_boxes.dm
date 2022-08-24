@@ -14,6 +14,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun
 	multiple_sprites = 1
 	caliber = list(CALIBER_SHOTGUN)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/shotgun/slug
 	name = "Slug shotgun ammo box"
@@ -98,6 +99,7 @@
 	caliber = list(CALIBER_9MM)
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 15000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c9mm/rubber
@@ -128,6 +130,7 @@
 	caliber = list(CALIBER_38)
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c38box/rubber
@@ -159,6 +162,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = list(CALIBER_10MM)
 	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c10mm/fire
@@ -251,6 +255,7 @@
 	icon_state = "45box"
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 30
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
 
 /obj/item/ammo_box/c45/rubber
@@ -312,6 +317,7 @@
 	desc = "Advanced 5mm bullets with electrostatic discharger tips."
 	ammo_type = /obj/item/ammo_casing/m5mm/shock
 	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500, /datum/material/glass = 8000)
+
 //5.56x45
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"
@@ -476,6 +482,7 @@
 	caliber = list(CALIBER_CASELESS)
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/g11
+	w_class = WEIGHT_CLASS_NORMAL
 	max_ammo = 50
 
 /obj/item/ammo_box/m473/rubber
@@ -518,7 +525,7 @@
 	caliber = list(CALIBER_MUSKET_LASER)
 	max_ammo = 18
 	custom_materials = list(MAT_METAL = 1000)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/plasmamusket
 	name = "Canister box (Plasma musket)"
@@ -529,7 +536,7 @@
 	max_ammo = 6
 	caliber = list(CALIBER_MUSKET_PLASMA)
 	custom_materials = list(MAT_METAL = 1000)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a40mm
 	name = "ammo box (40mm grenades)"
@@ -538,6 +545,7 @@
 	ammo_type = /obj/item/ammo_casing/a40mm
 	caliber = list(CALIBER_40MM)
 	max_ammo = 4
+	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
 
 
@@ -548,6 +556,7 @@
 /obj/item/ammo_box/tube
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	custom_materials = list(/datum/material/iron = 4000)
+	w_class = WEIGHT_CLASS_SMALL
 	multiple_sprites = 1
 
 //.38
@@ -559,6 +568,7 @@
 	ammo_type = /obj/item/ammo_casing/c38
 	max_ammo = 6
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/c38/empty
@@ -573,6 +583,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 12
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/l10mm/empty
@@ -588,6 +599,7 @@
 	caliber = list(CALIBER_357, CALIBER_38)
 	max_ammo = 6
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/a357/match
@@ -622,6 +634,7 @@
 	max_ammo = 6
 	caliber = list(CALIBER_44)
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/m44/empty
@@ -649,6 +662,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 7
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/c45rev/empty
@@ -662,6 +676,7 @@
 	ammo_type = /obj/item/ammo_casing/a45lc
 	max_ammo = 6
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/a45lcrev/empty
@@ -677,6 +692,7 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 10
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 	
 /obj/item/ammo_box/rev308/empty
@@ -691,6 +707,7 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	max_ammo = 6
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
 
 /obj/item/ammo_box/c4570/empty
@@ -757,7 +774,7 @@
 	caliber = list(CALIBER_MUSKET_BALL)
 	max_ammo = 15
 	custom_materials = list(/datum/material/iron = 3000)
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 //7.62x51, .308 Winchester
 /obj/item/ammo_box/a762
@@ -768,8 +785,8 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 5
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a308
 	name = "stripper clip (.308 Sport)"
@@ -779,8 +796,8 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 5
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 2000)
-	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/a762/doublestacked
 	name = "double stack stripper clip (.308 Sport)"
@@ -789,8 +806,8 @@
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 10
 	multiple_sprites = 1
-	custom_materials = list(/datum/material/iron = 2000)
 	w_class = WEIGHT_CLASS_SMALL
+	custom_materials = list(/datum/material/iron = 2000)
 
 //5.56x45mm
 /obj/item/ammo_box/a556/stripper
@@ -802,7 +819,7 @@
 	max_ammo = 5
 	multiple_sprites = 1
 	custom_materials = list(/datum/material/iron = 2000)
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 
 
 //Needler
@@ -814,6 +831,7 @@
 	caliber = list(CALIBER_NEEDLE)
 	max_ammo = 5
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_TINY
 	custom_materials = list(/datum/material/iron = 3000, /datum/material/glass = 5000)
 
 //.50 BMG
@@ -826,6 +844,7 @@
 	caliber = list(CALIBER_50MG)
 	max_ammo = 5
 	multiple_sprites = 1
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 20000)
 
 /obj/item/ammo_box/a50MG/incendiary
@@ -873,6 +892,7 @@
 	caliber = list(CALIBER_FUEL)
 	unloadable = TRUE
 	ammo_type = /obj/item/ammo_casing/caseless/flamethrower
+	w_class = WEIGHT_CLASS_SMALL
 	max_ammo = 6 // 3 bursts, you need 2 cans
 
 
@@ -940,6 +960,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	caliber = list(CALIBER_FOAM)
 	max_ammo = 40
+	w_class = WEIGHT_CLASS_SMALL
 	custom_materials = list(/datum/material/iron = 500)
 
 /obj/item/ammo_box/foambox/mag

@@ -33,6 +33,7 @@
 	caliber = list(CALIBER_762)
 	max_ammo = 7
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/w308/empty
 	start_empty = 1
@@ -43,6 +44,7 @@
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = list(CALIBER_556)
 	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL // suffer
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/lmg/empty
@@ -54,6 +56,7 @@
 	ammo_type = /obj/item/ammo_casing/m5mm
 	caliber = list(CALIBER_5MM)
 	max_ammo = 240
+	w_class = WEIGHT_CLASS_GIGANTIC // agony
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/cz53/empty
@@ -65,6 +68,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	caliber = list(CALIBER_762)
 	max_ammo = 60
+	w_class = WEIGHT_CLASS_NORMAL
 	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/mg34/empty
@@ -75,6 +79,7 @@
 	icon_state = "762belt"
 	ammo_type = /obj/item/ammo_casing/a762/sport
 	max_ammo = 80
+	w_class = WEIGHT_CLASS_NORMAL
 	caliber = list(CALIBER_762)
 
 /obj/item/ammo_box/magazine/mm762/empty
