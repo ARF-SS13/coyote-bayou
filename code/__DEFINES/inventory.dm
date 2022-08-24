@@ -733,14 +733,14 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 /// How many items total fit in a duster suit
 #define STORAGE_SUIT_DUSTER_MAX_ITEMS 4
 /// How big a thing can fit in a duster suit
-#define STORAGE_SUIT_DUSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
+#define STORAGE_SUIT_DUSTER_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a duster suit
 #define STORAGE_SUIT_DUSTER_MAX_TOTAL_SPACE STORAGE_SUIT_DUSTER_MAX_SIZE * STORAGE_SUIT_DUSTER_MAX_ITEMS
 
 /// How many items total fit in a duster armor
 #define STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS 2
 /// How big a thing can fit in a duster armor
-#define STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE WEIGHT_CLASS_NORMAL
+#define STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a duster armor
 #define STORAGE_SUIT_DUSTER_ARMOR_MAX_TOTAL_SPACE STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE * STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS
 
