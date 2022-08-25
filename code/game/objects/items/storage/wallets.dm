@@ -14,40 +14,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
 	STR.cant_hold = typecacheof(list(/obj/item/screwdriver/power))
-	STR.can_hold = typecacheof(list(
-		/obj/item/stack/spacecash,
-		/obj/item/holochip,
-		/obj/item/card,
-		/obj/item/clothing/mask/cigarette,
-		/obj/item/flashlight/pen,
-		/obj/item/seeds,
-		/obj/item/stack/medical,
-		/obj/item/toy/crayon,
-		/obj/item/coin,
-		/obj/item/dice,
-		/obj/item/disk,
-		/obj/item/implanter,
-		/obj/item/lighter,
-		/obj/item/lipstick,
-		/obj/item/match,
-		/obj/item/paper,
-		/obj/item/pen,
-		/obj/item/photo,
-		/obj/item/reagent_containers/dropper,
-		/obj/item/reagent_containers/syringe,
-		/obj/item/screwdriver,
-		/obj/item/valentine,
-		/obj/item/stamp,
-		/obj/item/key,
-		/obj/item/cartridge,
-		/obj/item/camera_film,
-		/obj/item/stack/ore/bluespace_crystal,
-		/obj/item/reagent_containers/food/snacks/grown/poppy,
-		/obj/item/instrument/harmonica,
-		/obj/item/mining_voucher,
-		/obj/item/suit_voucher,
-		/obj/item/reagent_containers/pill,
-		/obj/item/stack/f13Cash))
+	STR.can_hold = GLOB.storage_wallet_can_hold
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)
 	. = ..()
