@@ -32952,10 +32952,6 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
-"urv" = (
-/obj/structure/nest/molerat,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/caves)
 "usu" = (
 /obj/structure/flora/ausbushes/fernybush,
 /obj/structure/flora/rock/pile/largejungle{
@@ -35807,6 +35803,7 @@
 "wlG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/stack/rods/fifty,
+/obj/machinery/autolathe/ammo,
 /turf/open/floor/wood_common,
 /area/f13/village)
 "wlN" = (
@@ -84603,7 +84600,7 @@ qnn
 (178,1,1) = {"
 peY
 hfG
-urv
+hfG
 tRd
 nQW
 nQW
