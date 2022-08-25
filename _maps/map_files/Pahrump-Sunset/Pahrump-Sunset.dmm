@@ -40825,6 +40825,14 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building/mall)
+"lUx" = (
+/obj/structure/fence/cut/large{
+	dir = 4
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "lUy" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -43425,6 +43433,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13,
 /area/f13/building)
+"nhM" = (
+/obj/effect/decal/cleanable/oil/slippery{
+	pixel_y = 15
+	},
+/turf/open/indestructible/ground/outside/road{
+	dir = 8;
+	icon_state = "horizontaltopborderbottom2right"
+	},
+/area/f13/wasteland)
 "nhN" = (
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
@@ -50555,6 +50572,7 @@
 "rbE" = (
 /obj/structure/table,
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "rbI" = (
@@ -59094,6 +59112,14 @@
 "vJD" = (
 /turf/open/floor/carpet/red,
 /area/f13/building)
+"vJH" = (
+/obj/effect/decal/cleanable/oil/slippery{
+	pixel_y = 15
+	},
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "vJJ" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/bot/cleanbot,
@@ -91296,7 +91322,7 @@ dzB
 tJl
 aFI
 oHM
-aBf
+lUx
 aGl
 izF
 aGF
@@ -95760,7 +95786,7 @@ nvn
 nvn
 lSJ
 bun
-nvn
+vJH
 tRk
 kDp
 nvn
@@ -107232,7 +107258,7 @@ ijr
 ijr
 ijr
 tGu
-qEh
+cQC
 cQC
 aNf
 aFY
@@ -118823,7 +118849,7 @@ aLT
 hSo
 hEG
 aQZ
-ojS
+nhM
 kDp
 aTw
 aQt
