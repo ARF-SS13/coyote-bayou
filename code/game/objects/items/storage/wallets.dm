@@ -13,6 +13,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 4
+	STR.cant_hold = typecacheof(list(/obj/item/screwdriver/power))
 	STR.can_hold = GLOB.storage_wallet_can_hold
 
 /obj/item/storage/wallet/Exited(atom/movable/AM)

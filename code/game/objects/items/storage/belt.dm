@@ -392,7 +392,7 @@
 
 /obj/item/storage/belt/military
 	name = "chest rig"
-	desc = "A mean-looking chest accessory for holding lots of ammo."
+	desc = "A mean-looking belt sack for holding lots of ammo."
 	icon_state = "militarywebbing"
 	item_state = "militarywebbing"
 	slot_flags = ITEM_SLOT_BELT

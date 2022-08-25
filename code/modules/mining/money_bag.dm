@@ -48,6 +48,7 @@
 	STR.max_w_class = WEIGHT_CLASS_TINY
 	STR.max_items = 6
 	STR.max_combined_w_class = 6
+	STR.cant_hold = typecacheof(list(/obj/item/screwdriver/power))
 	STR.can_hold = GLOB.storage_wallet_can_hold
 
 // Legion reserves. Spawns with the Centurion.
