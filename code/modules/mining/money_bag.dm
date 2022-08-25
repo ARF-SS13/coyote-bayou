@@ -4,6 +4,7 @@
 /obj/item/storage/bag/money
 	name = "money bag"
 	icon_state = "moneybag"
+	desc = "This thing holds money!"
 	force = 10
 	throwforce = 0
 	resistance_flags = FLAMMABLE
@@ -16,7 +17,7 @@
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.max_items = 40
 	STR.max_combined_w_class = 40
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/holochip))
+	STR.can_hold = GLOB.storage_wallet_can_hold
 
 /obj/item/storage/bag/money/vault/PopulateContents()
 	new /obj/item/coin/silver(src)
@@ -44,9 +45,10 @@
 /obj/item/storage/bag/money/small/Initialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 20
-	STR.can_hold = typecacheof(list(/obj/item/coin, /obj/item/stack/spacecash, /obj/item/stack/f13Cash))
+	STR.max_w_class = WEIGHT_CLASS_TINY
+	STR.max_items = 6
+	STR.max_combined_w_class = 6
+	STR.can_hold = GLOB.storage_wallet_can_hold
 
 // Legion reserves. Spawns with the Centurion.
 /obj/item/storage/bag/money/small/legion/PopulateContents()

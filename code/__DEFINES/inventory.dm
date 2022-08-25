@@ -264,7 +264,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/flashlight,
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
-	/obj/item/melee/onehanded/knife/hunting,
+	/obj/item/melee/onehanded/knife,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
@@ -581,6 +581,43 @@ GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
 	/obj/item/melee/smith/dagger,
 	)))
 
+GLOBAL_LIST_INIT(storage_wallet_can_hold, typecacheof(list(
+	/obj/item/stack/spacecash,
+	/obj/item/holochip,
+	/obj/item/card,
+	/obj/item/clothing/mask/cigarette,
+	/obj/item/flashlight/pen,
+	/obj/item/seeds,
+	/obj/item/stack/medical,
+	/obj/item/toy/crayon,
+	/obj/item/coin,
+	/obj/item/dice,
+	/obj/item/disk,
+	/obj/item/implanter,
+	/obj/item/lighter,
+	/obj/item/lipstick,
+	/obj/item/match,
+	/obj/item/paper,
+	/obj/item/pen,
+	/obj/item/photo,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/reagent_containers/syringe,
+	/obj/item/screwdriver,
+	/obj/item/valentine,
+	/obj/item/stamp,
+	/obj/item/key,
+	/obj/item/cartridge,
+	/obj/item/camera_film,
+	/obj/item/stack/ore/bluespace_crystal,
+	/obj/item/reagent_containers/food/snacks/grown/poppy,
+	/obj/item/instrument/harmonica,
+	/obj/item/mining_voucher,
+	/obj/item/suit_voucher,
+	/obj/item/reagent_containers/pill,
+	/obj/item/coin,
+	/obj/item/stack/f13Cash
+)))
+
 GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/automatic/pistol/sig,
 	/obj/item/gun/ballistic/revolver/detective,
@@ -590,7 +627,7 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/colt357/lucky,
 	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/gun/ballistic/revolver/needler,
-	/obj/item/gun/energy/laser/wattz,
+	/obj/item/gun/energy/laser/wattz
 )))
 
 GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
@@ -738,7 +775,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_SUIT_DUSTER_MAX_TOTAL_SPACE STORAGE_SUIT_DUSTER_MAX_SIZE * STORAGE_SUIT_DUSTER_MAX_ITEMS
 
 /// How many items total fit in a duster armor
-#define STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS 2
+#define STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS 3
 /// How big a thing can fit in a duster armor
 #define STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a duster armor

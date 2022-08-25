@@ -387,6 +387,41 @@
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
+///////////////////
+/// Belt bandolier
+
+/obj/item/storage/belt/military
+	name = "chest rig"
+	desc = "A mean-looking chest accessory for holding lots of ammo."
+	icon_state = "militarywebbing"
+	item_state = "militarywebbing"
+	slot_flags = ITEM_SLOT_BELT
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.can_hold = GLOB.ammobelt_allowed
+
+/obj/item/storage/belt/military/alt
+	icon_state = "explorer2"
+	item_state = "explorer2"
+
+/obj/item/storage/belt/military/reconbandolier
+	name = "NCR recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
+/obj/item/storage/belt/military/NCR_Bandolier
+	name = "NCR bandolier"
+	desc = "A standard issue NCR bandolier."
+	icon_state = "ncr_bandolier"
+	item_state = "ncr_bandolier"
+
 /* * * * * * *
  * NECKPRONS
  * * * * * * */
@@ -417,38 +452,6 @@
 	slot_flags = ITEM_SLOT_NECK
 	resistance_flags = FIRE_PROOF
 
-/obj/item/storage/belt/military
-	name = "chest rig"
-	desc = "A mean-looking chest accessory for holding lots of ammo."
-	icon_state = "militarywebbing"
-	item_state = "militarywebbing"
-	slot_flags = ITEM_SLOT_NECK
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/belt/military/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.ammobelt_allowed
-
-/obj/item/storage/belt/military/alt
-	icon_state = "explorer2"
-	item_state = "explorer2"
-
-/obj/item/storage/belt/military/reconbandolier
-	name = "NCR recon ranger bandolier"
-	desc = "A belt with many pockets, now at an angle."
-	icon_state = "reconbandolier"
-	item_state = "reconbandolier"
-
-/obj/item/storage/belt/military/NCR_Bandolier
-	name = "NCR bandolier"
-	desc = "A standard issue NCR bandolier."
-	icon_state = "ncr_bandolier"
-	item_state = "ncr_bandolier"
-
 /////////////////
 /// Neck Gunbelt
 /obj/item/storage/belt/shoulderholster
@@ -464,9 +467,9 @@
 /obj/item/storage/belt/shoulderholster/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.max_items = STORAGE_NECKPRON_HOLSTER_MAX_ITEMS
+	STR.max_w_class = STORAGE_NECKPRON_HOLSTER_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE
 	STR.can_hold = GLOB.gunbelt_allowed
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
