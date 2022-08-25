@@ -704,7 +704,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_BELT_SPECIALIZED_MAX_SIZE * STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 
 /// How many items total fit in a generic belt
-#define STORAGE_BELT_GENERIC_MAX_ITEMS 4
+#define STORAGE_BELT_GENERIC_MAX_ITEMS 5
 /// How big a thing can fit in a generic belt
 #define STORAGE_BELT_GENERIC_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a generic belt
@@ -722,21 +722,21 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
  * * * * * * * * * * * * * * */
 
 /// How many items total fit in a specialized neckpron
-#define STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS 4
+#define STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS 5
 /// How big a thing can fit in a specialized neckpron
 #define STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a specialized neckpron
 #define STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE * STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
 
 /// How many items total fit in a generic neckpron
-#define STORAGE_NECKPRON_GENERIC_MAX_ITEMS 2
+#define STORAGE_NECKPRON_GENERIC_MAX_ITEMS 3
 /// How big a thing can fit in a generic neckpron
 #define STORAGE_NECKPRON_GENERIC_MAX_SIZE WEIGHT_CLASS_TINY
 /// How much volume fits in a generic neckpron
 #define STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE STORAGE_NECKPRON_GENERIC_MAX_SIZE * STORAGE_NECKPRON_GENERIC_MAX_ITEMS
 
 /// How many items total fit in a holster neckpron
-#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 3
+#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 4
 /// How big a thing can fit in a holster neckpron
 #define STORAGE_NECKPRON_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a holster neckpron
