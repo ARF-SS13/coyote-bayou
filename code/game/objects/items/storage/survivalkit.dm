@@ -2,7 +2,7 @@
 	name = "survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit/PopulateContents()
 	. = ..()
@@ -18,7 +18,7 @@
 	desc = "A robust leather pouch containing essentials a Khan might need in the wasteland."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_khan/PopulateContents()
 	. = ..()
@@ -33,7 +33,7 @@
 	name = "tribal survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_tribal/PopulateContents() //used by legion
 	. = ..()
@@ -48,7 +48,7 @@
 	name = "survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_outlaw/PopulateContents()
 	. = ..()
@@ -74,7 +74,7 @@
 	name = "survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_adv/PopulateContents()
 	. = ..()
@@ -91,7 +91,7 @@
 	name = "individual first aid kit"
 	desc = "A robust leather pouch containing the essentials for trauma care."
 	icon_state = "ifak"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_aid/ComponentInitialize()
 	. = ..()
@@ -111,7 +111,7 @@
 	name = "advanced-individual first aid kit"
 	desc = "A robust leather pouch containing the essentials for trauma care."
 	icon_state = "ifak"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_aid_adv/ComponentInitialize()
 	. = ..()
@@ -130,7 +130,7 @@
 	name = "survival kit"
 	desc = "A robust leather pouch containing the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit_triple_empty
 	name = "large survival kit"
