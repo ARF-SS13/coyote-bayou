@@ -513,7 +513,7 @@
 				to_chat(user, span_notice("You upgrade [src] to bypass the DRM. You'll still need to install a makeshift reloader to finish the process."))
 				constage = 2
 		if(constage == 2)
-			if(istype(O, /obj/item/crafting/reloader))
+			if(istype(O, /obj/item/circuitboard/machine/autolathe/ammo/improvised))
 				to_chat(user, span_notice("You upgrade [src] with a makeshift reloader, allowing it to finally produce ammunition again."))
 				constage = 3
 				DRM = 0
@@ -592,39 +592,16 @@
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
-	if(!busy && !stat && istype(O, /obj/item/storage/bag/casings))
-		var/obj/item/storage/bag/casings/casings_bag = O
-		var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
-		var/count = 0
-		if(INTERACTING_WITH(user, src))
+	if(!busy && !stat)
+		if(istype(O, /obj/item/storage/bag/casings))
+			insert_things_from_bag(O)
 			return
-		if(!length(casings_bag.contents))
-			to_chat(user, span_warning("There's nothing in \the [casings_bag] to load into \the [src]!"))
+		if(istype(O, /obj/item/ammo_box))
+			absorb_bullets_from_box(O)
 			return
-		to_chat(user, span_notice("You start dumping \the [casings_bag] into \the [src]."))
-		if(!do_after(user, 2 SECONDS, target = src))
-			to_chat(user, span_notice("You stop dumping \the [casings_bag] into \the [src]."))
+		if(istype(O, /obj/item/gun/ballistic))
+			absorb_magazine_from_gun(O)
 			return
-		for(var/obj/item/ammo_casing/casing in casings_bag.contents)
-			var/mat_amount = mats.get_item_material_amount(casing)
-			if(!mat_amount)
-				continue
-			if(!mats.has_space(mat_amount))
-				to_chat(user, span_warning("You can't fit any more in \the [src]!"))
-				return
-			if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
-				continue
-			// Forgive me for this.
-			if(mats.after_insert)
-				mats.after_insert.Invoke(casing, mats.last_inserted_id, mats.insert_item(casing))
-			// I blame whoever wrote material containers.
-			qdel(casing)
-			count++
-		if(count > 0)
-			to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
-		else
-			to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
-		return
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
@@ -647,6 +624,49 @@
 			qdel(O)
 			return
 	return ..()
+
+/obj/machinery/autolathe/ammo/proc/pre_insert_check(obj/item/O)
+	if(!istype(O))
+	var/obj/item/stuff_holder = O
+
+/obj/machinery/autolathe/ammo/proc/insert_things_from_container(obj/item/ammo_box/ammobox)
+	var/obj/item/storage/bag/casings/casings_bag = O
+	var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+	var/count = 0
+	if(INTERACTING_WITH(user, src))
+		return
+	if(!length(casings_bag.contents))
+		to_chat(user, span_warning("There's nothing in \the [casings_bag] to load into \the [src]!"))
+		return
+	to_chat(user, span_notice("You start dumping \the [casings_bag] into \the [src]."))
+	if(!do_after(user, 2 SECONDS, target = src))
+		to_chat(user, span_notice("You stop dumping \the [casings_bag] into \the [src]."))
+		return
+	for(var/obj/item/ammo_casing/casing in casings_bag.contents)
+		var/mat_amount = mats.get_item_material_amount(casing)
+		if(!mat_amount)
+			continue
+		if(!mats.has_space(mat_amount))
+			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+			return
+		if(!SEND_SIGNAL(casings_bag, COMSIG_TRY_STORAGE_TAKE, casing, src))
+			continue
+		// Forgive me for this.
+		if(mats.after_insert)
+			mats.after_insert.Invoke(casing, mats.last_inserted_id, mats.insert_item(casing))
+		// I blame whoever wrote material containers.
+		qdel(casing)
+		count++
+	if(count > 0)
+		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+	else
+		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
+
+
+/obj/machinery/autolathe/ammo/proc/absorb_bullets_from_box(obj/item/ammo_box/ammobox)
+	if(!istype(ammobox))
+		return
+	if(ammobox.)
 
 /// no discounts for sticky fingers!
 /obj/machinery/autolathe/ammo/get_design_cost(datum/design/D)

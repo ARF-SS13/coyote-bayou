@@ -2444,7 +2444,7 @@ datum/job/wasteland/f13dendoctor
 	backpack_contents = list(
 		/obj/item/clothing/suit/armor/light/duster/battlecoat = 1,
 		/obj/item/ammo_box/magazine/amr = 1,
-		/obj/item/crafting/reloader = 1,
+		/obj/item/circuitboard/machine/autolathe/ammo/improvised = 1,
 		/obj/item/gun/ballistic/rifle/mag/antimateriel = 1)
 
 //Sex

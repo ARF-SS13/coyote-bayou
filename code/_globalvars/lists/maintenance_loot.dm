@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(trash_chem, list(
 GLOBAL_LIST_INIT(trash_craft, list(
 	/obj/item/crafting/duct_tape = 5,
 	/obj/item/crafting/abraxo = 5,
-	/obj/item/crafting/reloader = 5,
+	/obj/item/circuitboard/machine/autolathe/ammo/improvised = 5,
 	/obj/item/crafting/lunchbox = 5,
 	/obj/item/stack/crafting/metalparts/three = 5,
 	/obj/item/stack/crafting/electronicparts/three = 5,

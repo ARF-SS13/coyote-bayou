@@ -22,7 +22,7 @@
 	/obj/item/crafting/turpentine = 5,
 	/obj/item/crafting/abraxo = 5,
 	/obj/item/assembly/igniter = 5,
-	/obj/item/crafting/reloader = 5,
+	/obj/item/circuitboard/machine/autolathe/ammo/improvised = 5,
 	/obj/item/assembly/timer = 5,
 	/obj/item/assembly/prox_sensor = 5)
 */

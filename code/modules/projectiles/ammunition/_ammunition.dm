@@ -84,10 +84,12 @@
 		if(BULLET_IS_GAUSS)
 			iron_to_deduct = MATS_GAUSS_BULLET
 			powder_to_deduct = MATS_GAUSS_POWDER // surprise its nothing
-	if(iron_to_deduct && custom_materials[/datum/material/iron])
-		custom_materials[/datum/material/iron] -= iron_to_deduct
-	if(powder_to_deduct && custom_materials[/datum/material/blackpowder])
-		custom_materials[/datum/material/blackpowder] -= powder_to_deduct
+	var/list/newmats = custom_materials
+	if(iron_to_deduct && newmats[/datum/material/iron])
+		newmats[/datum/material/iron] -= iron_to_deduct
+	if(powder_to_deduct && newmats[/datum/material/blackpowder])
+		newmats[/datum/material/blackpowder] -= powder_to_deduct
+	set_custom_materials(newmats)
 
 //proc to magically refill a casing with a new projectile
 /obj/item/ammo_casing/proc/newshot() //For energy weapons, syringe gun, shotgun shells and wands (!).

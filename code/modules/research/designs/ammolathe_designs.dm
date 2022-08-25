@@ -31,7 +31,9 @@
 /datum/design/ammolathe/proc/set_build_cost(list/material_list)
 	if(!LAZYLEN(material_list))
 		return
-	material_list = counterlist_scale(material_list, MATS_AMMO_COST_MULT)
+	for(var/mat in GLOB.ammo_material_multipliers)
+		if(mat in material_list)
+			material_list[mat] *= GLOB.ammo_material_multipliers[mat]
 	materials = material_list
 
 //materials

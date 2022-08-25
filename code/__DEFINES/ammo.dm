@@ -163,7 +163,13 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 
 /// Multiplier for ammolathes
 #define MATS_AMMO_GLOBAL_COST_MULT 1
-#define MATS_AMMO_COST_MULT (1.5 * MATS_AMMO_GLOBAL_COST_MULT)
+#define MATS_AMMO_METAL_COST_MULT (3 * MATS_AMMO_GLOBAL_COST_MULT)
+#define MATS_AMMO_POWDER_COST_MULT (1.1 * MATS_AMMO_GLOBAL_COST_MULT)
+
+GLOBAL_LIST_INIT(ammo_material_multipliers, list(
+	/datum/material/iron = MATS_AMMO_METAL_COST_MULT,
+	/datum/material/blackpowder = MATS_AMMO_POWDER_COST_MULT
+))
 
 /// Just so I dont have to do bespoke shit for deducting powder and bullet costs
 #define BULLET_IS_LIGHT_PISTOL "light_pistol"

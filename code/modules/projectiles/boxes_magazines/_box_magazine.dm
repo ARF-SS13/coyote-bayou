@@ -36,14 +36,14 @@
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
-	if (!bullet_cost)
+/* 	if (!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
 			LAZYSET(base_cost, material, (material_amount * 0.10))
 
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
-			LAZYSET(bullet_cost, material, material_amount)
+			LAZYSET(bullet_cost, material, material_amount) */
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
