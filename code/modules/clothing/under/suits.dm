@@ -92,8 +92,8 @@
 	item_state = "tan_suit"
 
 /obj/item/clothing/under/suit/white
-	name = "white suit"
-	desc = "A white suit and jacket with a blue shirt. You wanna play rough? OKAY!"
+	name = "white formal underclothes"
+	desc = "A neat set of black slacks and a white shirt, only slightly weathered from the nuclear apocalypse."
 	icon_state = "white_suit"
 	item_state = "white_suit"
 

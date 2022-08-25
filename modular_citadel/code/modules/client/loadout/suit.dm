@@ -138,6 +138,9 @@
 	name = "Vagabond's vest"
 	path = /obj/item/clothing/suit/armor/marlowsuit/masonsuit
 
+/datum/gear/suit/coat/marlow/blackformaljacket
+	name = "Black Formal Jacket"
+	path = /obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
 /// End of Coats/Armor section
 
 /datum/gear/suit/NCRutilityvest

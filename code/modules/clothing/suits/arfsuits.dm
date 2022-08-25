@@ -255,6 +255,12 @@
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 
+/obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
+	name = "black formal overcoat"
+	desc = "A neat black overcoat that's only slightly weathered from a nuclear apocalypse."
+	icon_state = "black_oversuit"
+	item_state = "banker"
+	
 /obj/item/clothing/suit/armor/outfit/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
@@ -281,6 +287,7 @@
 	icon_state = "police_chief"
 	item_state = "police_chief"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+
 
 // until togglesuits are made into normal suits, treat these as jackets
 
