@@ -154,6 +154,27 @@
 	icon_state = "reloader"
 	tool_behaviour = TOOL_MSRELOADER
 
+/obj/item/crafting/reloader/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(I.use_tool(src, user, volume=50))
+		to_chat(user, span_notice("You drill some holes in \the [src]'s base! Looks like it could be attached to a machine frame."))
+		make_it_a_board(user)
+	else
+		to_chat(user, span_alert("You can't seem to drill any holes in \the [src]'s base! Might need to stand still, or the drill might need some juice..."))
+
+/obj/item/crafting/reloader/proc/make_it_a_board(mob/living/user)
+	if(!user)
+		return
+	
+
+
 /obj/item/crafting/lunchbox
 	name = "lunch box"
 	desc = "This was a promotional item created by Vault-Tec before the Great War and used in the company's advertisements. With the right schematics, it can be used to make bottlecap mines."

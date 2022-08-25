@@ -7,12 +7,18 @@
 	icon_state = "50mg2"
 	projectile_type = /obj/item/projectile/bullet/a50MG
 
+/obj/item/ammo_casing/a50MG/improvised
+	name = "shoddy .50MG bullet casing"
+	desc = "A handmade .50MG bullet casing."
+	caliber = CALIBER_50MG
+	icon_state = "50mg2"
+	projectile_type = /obj/item/projectile/bullet/a50MG
+
 /obj/item/ammo_casing/a50MG/incendiary
 	name = ".50 MG incendiary bullet casing"
 	desc = "A .50 MG incendiary bullet casing."
 	icon_state = "50in2"
 	projectile_type = /obj/item/projectile/bullet/a50MG/incendiary
-
 
 /obj/item/ammo_casing/a50MG/explosive
 	name = ".50 MG explosive bullet casing"

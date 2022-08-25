@@ -112,13 +112,13 @@
 	desc = "A box of 9mm incendiary-tipped rounds. This'll burn."
 	ammo_type = /obj/item/ammo_casing/c9mm/incendiary
 
-/obj/item/ammo_box/c9mm/improv
+/obj/item/ammo_box/c9mm/improvised
 	name = "bag with reloaded 9mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 	custom_materials = list(/datum/material/iron = 10000, /datum/material/blackpowder = 1000)
-	ammo_type = /obj/item/ammo_casing/c9mm/improv
+	ammo_type = /obj/item/ammo_casing/c9mm/improvised
 
 /obj/item/ammo_box/c38box
 	name = "ammo box (.38)"
@@ -147,7 +147,7 @@
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
-	ammo_type = /obj/item/ammo_casing/c38/improv
+	ammo_type = /obj/item/ammo_casing/c38/improvised
 
 
 //10mm
@@ -175,6 +175,7 @@
 	name = "bag with reloaded 10mm bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	icon_state = "improvshotbag"
+	ammo_type = /obj/item/ammo_casing/c10mm/improvised
 	multiple_sprites = 3
 
 //.357 Magnum
@@ -203,7 +204,7 @@
 /obj/item/ammo_box/a357box/improvised
 	name = "bag with reloaded .357 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
-	ammo_type = /obj/item/ammo_casing/a357/improv
+	ammo_type = /obj/item/ammo_casing/a357/improvised
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 
@@ -225,6 +226,13 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	ammo_type = /obj/item/ammo_casing/m44/incendiary
 
+/obj/item/ammo_box/m44box/improvised
+	name = "bag with reloaded .44 bullets"
+	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	icon_state = "improvshotbag"
+	ammo_type = /obj/item/ammo_casing/m44/improvised
+	multiple_sprites = 3
+
 /obj/item/ammo_box/a45lcbox
 	name = "ammo box (.45 Long Colt)"
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
@@ -235,10 +243,10 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1500)
 
-/obj/item/ammo_box/m44box/improvised
-	name = "bag with reloaded .44 bullets"
-	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+/obj/item/ammo_box/a45lcbox/improvised
+	name = "bag with reloaded .45 Long Colt bullets"
 	icon_state = "improvshotbag"
+	ammo_type = /obj/item/ammo_casing/a45lc/improvised
 	multiple_sprites = 3
 
 
@@ -268,6 +276,7 @@
 /obj/item/ammo_box/c45/improvised
 	name = "bag with reloaded .45 ACP bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
+	ammo_type = /obj/item/ammo_casing/c45/improvised
 	icon_state = "improvshotbag"
 	multiple_sprites = 3
 
@@ -294,6 +303,14 @@
 	desc = ".45-70 Goverment rounds with heavy, blunt bullets. Sure to knock even an elephant off their footing."
 	ammo_type = /obj/item/ammo_casing/c4570/knockback
 
+/obj/item/ammo_box/c4570box/improvised
+	name = "bag with reloaded .45-70 bullets"
+	ammo_type = /obj/item/ammo_casing/c4570/improvised
+	icon_state = "improvshotbag"
+	max_ammo = 20
+	multiple_sprites = 3
+
+
 //5mm
 
 /obj/item/ammo_box/m5mmbox
@@ -312,6 +329,14 @@
 	desc = "Advanced 5mm bullets with electrostatic discharger tips."
 	ammo_type = /obj/item/ammo_casing/m5mm/shock
 	custom_materials = list(/datum/material/iron = 24000, /datum/material/blackpowder = 1500, /datum/material/glass = 8000)
+
+/obj/item/ammo_box/m5mmbox/improvised
+	name = "bag with reloaded 5mm bullets"
+	ammo_type = /obj/item/ammo_casing/m5mm/improvised
+	icon_state = "improvshotbag"
+	max_ammo = 30
+	multiple_sprites = 3
+
 //5.56x45
 /obj/item/ammo_box/a556
 	name = "ammo box (5.56 FMJ)"
@@ -363,7 +388,7 @@
 	name = "bag with reloaded .223 bullets"
 	desc = "The casings are worn, the gunpowder some homebrew mix of dubious quality. At least it goes bang."
 	multiple_sprites = 3
-	custom_materials = list(/datum/material/iron = 2000, /datum/material/blackpowder = 500)
+	max_ammo = 30
 	icon_state = "improvshotbag"
 
 
@@ -378,6 +403,13 @@
 	max_ammo = 30
 	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron = 14000, /datum/material/blackpowder = 1000)
+
+/obj/item/ammo_box/a308box/improvised
+	name = "bag with reloaded .308 bullets"
+	ammo_type = /obj/item/ammo_casing/a762/improvised
+	icon_state = "improvshotbag"
+	max_ammo = 20
+	multiple_sprites = 3
 
 /obj/item/ammo_box/a762box
 	name = "ammo box (7.62x51 FMJ Match)"
@@ -438,6 +470,13 @@
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/a50MG/rubber
 
+/obj/item/ammo_box/a50MGbox/improvised
+	name = "bag with reloaded .50MG slugs"
+	ammo_type = /obj/item/ammo_casing/a50MG/improvised
+	icon_state = "improvshotbag"
+	max_ammo = 10
+	multiple_sprites = 3
+
 /obj/item/ammo_box/a50MGbox/contam
 	name = "ammo box (12.7mm contaminated)"
 	max_ammo = 15
@@ -467,6 +506,11 @@
 	name = "ammo box (14mm contaminated)"
 	desc = "14mm bullets loaded with a gaseous hepatoxic payload, which reduces the effectiveness of medicine and toxins."
 	ammo_type = /obj/item/ammo_casing/p14mm/contam
+
+/obj/item/ammo_box/m14mm/improvised
+	name = "bag with reloaded 14mm bullets"
+	max_ammo = 20
+	ammo_type = /obj/item/ammo_casing/p14mm/improvised
 
 //Misc.
 /obj/item/ammo_box/m473

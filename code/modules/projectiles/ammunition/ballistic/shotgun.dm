@@ -23,8 +23,8 @@
 	icon_state = "improvshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
 	custom_materials = list(/datum/material/iron=250)
-	pellets = 10
-	variance = 25
+	pellets = 12
+	variance = 30
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"

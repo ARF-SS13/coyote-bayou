@@ -1186,6 +1186,12 @@
 		/obj/item/stock_parts/matter_bin = 3,
 		/obj/item/stock_parts/manipulator = 1)
 
+/obj/item/circuitboard/machine/autolathe/ammo/improvised
+	name = "Improvised Reloading Bench (Machine Board)"
+	build_path = /obj/machinery/autolathe/ammo/improvised
+	req_components = list(
+		/obj/item/stack/sheet/mineral/wood = 3)
+
 /obj/item/circuitboard/machine/pipedispenser
 	name = "Pipe Dispenser (Machine Board)"
 	build_path = /obj/machinery/pipedispenser

@@ -5,6 +5,12 @@
 	caliber = CALIBER_10MM
 	projectile_type = /obj/item/projectile/bullet/c10mm
 
+/obj/item/ammo_casing/c10mm/improvised
+	name = "shoddy 10mm bullet casing"
+	desc = "A homemade 10mm FMJ bullet casing."
+	caliber = CALIBER_10MM
+	projectile_type = /obj/item/projectile/bullet/c10mm/improvised
+
 /obj/item/ammo_casing/c10mm/rubber
 	name = "A 10mm rubber bullet casing."
 	projectile_type = /obj/item/projectile/bullet/c10mm/rubber
@@ -20,10 +26,10 @@
 	caliber = CALIBER_9MM
 	projectile_type = /obj/item/projectile/bullet/c9mm
 
-/obj/item/ammo_casing/c9mm/improv
+/obj/item/ammo_casing/c9mm/improvised
 	name = "homemade 9mm bullet casing"
 	desc = "A homemade 9mm bullet casing."
-	projectile_type = /obj/item/projectile/bullet/c9mm/improv
+	projectile_type = /obj/item/projectile/bullet/c9mm/improvised
 
 /obj/item/ammo_casing/c9mm/rubber
 	name = "9mm rubber bullet casing"
@@ -39,6 +45,12 @@
 /obj/item/ammo_casing/p14mm
 	name = "14mm FMJ bullet casing"
 	desc = "A 14mm FMJ bullet casing."
+	caliber = CALIBER_14MM
+	projectile_type = /obj/item/projectile/bullet/mm14
+
+/obj/item/ammo_casing/p14mm/improvised
+	name = "shoddy 14mm bullet casing"
+	desc = "A handloaded 14mm bullet casing."
 	caliber = CALIBER_14MM
 	projectile_type = /obj/item/projectile/bullet/mm14
 

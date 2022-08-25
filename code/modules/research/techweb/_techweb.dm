@@ -438,3 +438,6 @@
 
 /datum/techweb/specialized/autounlocking/autolathe/ammo
 	design_autounlock_buildtypes = AMMOLATHE
+
+/datum/techweb/specialized/autounlocking/autolathe/ammo/improvised
+	design_autounlock_buildtypes = AMMOLATHE_HOBO

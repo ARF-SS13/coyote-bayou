@@ -15,10 +15,10 @@
 	desc = "A .357 incendiary bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a357/incendiary
 
-/obj/item/ammo_casing/a357/improv
-	name = ".357 improvised bullet casing"
-	desc = "A .357 bullet casing, made by hand."
-	projectile_type = /obj/item/projectile/bullet/a357/improv
+/obj/item/ammo_casing/a357/improvised
+	name = "shoddy .357 bullet casing"
+	desc = "A handmade .357 magnum bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a357/improvised
 
 
 // .38 special
@@ -28,10 +28,10 @@
 	caliber = CALIBER_38
 	projectile_type = /obj/item/projectile/bullet/c38
 
-/obj/item/ammo_casing/c38/improv
-	name = "homemade .38 special bullet casing"
-	desc = "A .38 special bullet casing."
-	projectile_type = /obj/item/projectile/bullet/c38/improv
+/obj/item/ammo_casing/c38/improvised
+	name = "shoddy .38 special bullet casing"
+	desc = "A homemade .38 bullet casing."
+	projectile_type = /obj/item/projectile/bullet/c38/improvised
 
 /obj/item/ammo_casing/c38/rubber
 	name = ".38 special rubber bullet casing"
@@ -50,6 +50,12 @@
 	caliber = CALIBER_44
 	projectile_type = /obj/item/projectile/bullet/m44
 
+/obj/item/ammo_casing/m44/improvised
+	name = "shoddy .44 magnum bullet casing"
+	desc = "A homemade .44 magnum bullet casing."
+	caliber = CALIBER_44
+	projectile_type = /obj/item/projectile/bullet/m44/improvised
+
 /obj/item/ammo_casing/m44/incendiary
 	name = ".44 magnum incendiary bullet casing"
 	desc = "A .44 magnum incendiary bullet casing."
@@ -61,6 +67,12 @@
 	desc = "A .45-70 full metal jacket bullet casing."
 	caliber = CALIBER_4570
 	projectile_type = /obj/item/projectile/bullet/c4570
+
+/obj/item/ammo_casing/c4570/improvised
+	name = "shoddy .45-70 bullet casing"
+	desc = "A homemade .45-70 bullet casing."
+	caliber = CALIBER_4570
+	projectile_type = /obj/item/projectile/bullet/c4570/improvised
 
 /obj/item/ammo_casing/c4570/explosive
 	name = ".45-70 explosive bullet casing"
@@ -78,3 +90,9 @@
 	desc = "An archaic .45 long colt bullet casing."
 	caliber = CALIBER_45LC
 	projectile_type = /obj/item/projectile/bullet/a45lc
+
+/obj/item/ammo_casing/a45lc/improvised
+	name = "shoddy .45 LC bullet casing"
+	desc = "An archaic .45 long colt bullet casing. Now about 25% worse."
+	caliber = CALIBER_45LC
+	projectile_type = /obj/item/projectile/bullet/a45lc/improvised

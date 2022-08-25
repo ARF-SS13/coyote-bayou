@@ -585,6 +585,8 @@
 	var/basic = 0
 	var/intermediate = 0
 	var/advanced = 0
+	/// does this bench accept books?
+	var/accepts_books = TRUE
 	tooadvanced = TRUE //technophobes will still need to be able to make ammo	//not anymore they wont
 
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
@@ -621,7 +623,7 @@
 		else
 			to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
 		return
-	if(panel_open)
+	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
 			simple = TRUE
@@ -724,3 +726,30 @@
 	basic = 1
 	intermediate = 1
 	advanced = 1
+
+/obj/machinery/autolathe/ammo/improvised
+	name = "improvised handloader bench"
+	icon = 'icons/obj/machines/reloadingbench.dmi'
+	desc = "Literally just a handloader bolted to a crate. Takes in metal and blackpowder, and outputs some of the lowest quality ammunition known to mankind."
+	circuit = /obj/item/circuitboard/machine/autolathe/ammo/improvised
+	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo/improvised
+	categories = list(
+					"Handloaded Ammo",
+					"Handmade Magazines",
+					"Materials"
+					)
+	allowed_materials = list(
+		/datum/material/iron,
+		/datum/material/blackpowder)
+	accepts_books = FALSE
+	tooadvanced = FALSE // ezpz
+	/// this thing doesnt use matter bins, which makes this thing not actually have any storage
+	var/max_mats = 75000 * 3
+	/// Same thing with manipulators, and its lack thereof
+	var/default_workspeed = 1
+
+/obj/machinery/autolathe/ammo/improvised/RefreshParts()
+	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
+	materials.max_amount = max_mats
+	prod_coeff = STANDARD_PART_LEVEL_LATHE_COEFFICIENT(default_workspeed)
+

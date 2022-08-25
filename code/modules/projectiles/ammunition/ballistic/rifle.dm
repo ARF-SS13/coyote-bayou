@@ -6,6 +6,11 @@
 	caliber = CALIBER_762
 	projectile_type = /obj/item/projectile/bullet/a762
 
+/obj/item/ammo_casing/a762/improvised
+	name = "shoddy .308 bullet casing"
+	desc = "A handmade .308 bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a762/improvised
+
 /obj/item/ammo_casing/a762/sport
 	name = ".308 bullet casing"
 	desc = "A .308 sporting bullet casing."
@@ -57,6 +62,11 @@
 	desc = "A .223 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/a556/sport
 
+/obj/item/ammo_casing/a556/improvised
+	name = "shoddy .223 bullet casing"
+	desc = "A handmade .223 bullet casing."
+	projectile_type = /obj/item/projectile/bullet/a556/improvised
+
 //5mm
 
 /obj/item/ammo_casing/m5mm
@@ -64,6 +74,12 @@
 	desc = "A 5mm bullet casing."
 	caliber = CALIBER_5MM
 	projectile_type = /obj/item/projectile/bullet/m5mm
+
+/obj/item/ammo_casing/m5mm/improvised
+	name = "shoddy 5mm bullet casing"
+	desc = "A handmade 5mm bullet casing."
+	caliber = CALIBER_5MM
+	projectile_type = /obj/item/projectile/bullet/m5mm/improvised
 
 
 /obj/item/ammo_casing/m5mm/shock
