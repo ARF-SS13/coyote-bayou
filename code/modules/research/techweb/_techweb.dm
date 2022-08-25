@@ -406,7 +406,7 @@
 
 /datum/techweb/specialized/autounlocking/autolathe
 	design_autounlock_buildtypes = AUTOLATHE
-	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE
+	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE|AMMOLATHE_HOBO
 
 /datum/techweb/specialized/autounlocking/autolathe/public
 	design_autounlock_skip_types = NO_PUBLIC_LATHE
@@ -438,6 +438,3 @@
 
 /datum/techweb/specialized/autounlocking/autolathe/ammo
 	design_autounlock_buildtypes = AMMOLATHE
-
-/datum/techweb/specialized/autounlocking/autolathe/ammo/improvised
-	design_autounlock_buildtypes = AMMOLATHE_HOBO

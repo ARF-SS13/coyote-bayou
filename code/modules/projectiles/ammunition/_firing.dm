@@ -75,6 +75,7 @@
 		BB.preparePixelProjectile(target, user, params, spread)
 	BB.fire(null, direct_target)
 	BB = null
+	deduct_powder_and_bullet_mats()
 	return 1
 
 /obj/item/ammo_casing/proc/spread(turf/target, turf/current, distro)

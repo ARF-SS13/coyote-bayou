@@ -19,6 +19,7 @@
 	caliber = list(CALIBER_22LR)
 	max_ammo = 16
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m22/empty
 	start_empty = 1
@@ -33,6 +34,7 @@
 	max_ammo = 5
 	multiple_sprites = 2
 	can_change_caliber = TRUE
+	custom_materials = list(/datum/material/iron = MATS_PISTOL_SPEEDLOADER)
 
 /obj/item/ammo_box/magazine/zipgun/Initialize()
 	. = ..()
@@ -47,6 +49,7 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 10
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m9mm/empty
 	start_empty = 1
@@ -60,6 +63,7 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 15
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 
 /obj/item/ammo_box/magazine/m9mm/doublestack/empty
@@ -71,6 +75,7 @@
 	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	desc = "A gun magazine."
 	caliber = list(CALIBER_10MM)
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 //10mm small
 /obj/item/ammo_box/magazine/m10mm/adv
@@ -96,6 +101,7 @@
 	ammo_type = /obj/item/ammo_casing/c10mm
 	max_ammo = 24
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
 
 /obj/item/ammo_box/magazine/m10mm/adv/ext/empty
 	start_empty = 1
@@ -109,7 +115,7 @@
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 8
 	multiple_sprites = 1
-
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m45/empty
 	start_empty = 1
@@ -126,6 +132,7 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 12
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m45/socom/empty
 	start_empty = 1
@@ -143,6 +150,7 @@
 	caliber = list(CALIBER_44)
 	max_ammo = 8
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m44/empty
 	start_empty = 1
@@ -175,6 +183,7 @@
 	caliber = list(CALIBER_14MM)
 	max_ammo = 7
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_HEAVY_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/m14mm/empty
 	start_empty = 1

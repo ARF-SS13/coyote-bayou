@@ -5,6 +5,9 @@
 	icon_state = "srm-8"
 	projectile_type = /obj/item/projectile/bullet/a84mm_he
 	is_pickable = FALSE
+	custom_materials = list(
+		/datum/material/iron = MATS_ROCKET_CASING + MATS_ROCKET_BULLET,
+		/datum/material/blackpowder = MATS_ROCKET_POWDER) // great source of powder
 
 /obj/item/ammo_casing/caseless/rocket/hedp
 	name = "\improper PM-9HEDP"

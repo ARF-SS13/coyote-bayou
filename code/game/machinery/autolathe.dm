@@ -566,6 +566,8 @@
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo
 	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo
 	categories = list(
+					"Handloaded Ammo",
+					"Handmade Magazines",
 					"Simple Ammo",
 					"Simple Magazines",
 					"Basic Ammo",
@@ -645,6 +647,17 @@
 			qdel(O)
 			return
 	return ..()
+
+/// no discounts for sticky fingers!
+/obj/machinery/autolathe/ammo/get_design_cost(datum/design/D)
+	var/dat
+	for(var/i in D.materials)
+		if(istext(i)) //Category handling
+			dat += "[D.materials[i]] [i]"
+		else
+			var/datum/material/M = i
+			dat += "[D.materials[i]] [M.name] "
+	return dat
 
 /obj/machinery/autolathe/ammo/can_build(datum/design/D, amount = 1)
 	if("Simple Ammo" in D.category)
@@ -732,7 +745,7 @@
 	icon = 'icons/obj/machines/reloadingbench.dmi'
 	desc = "Literally just a handloader bolted to a crate. Takes in metal and blackpowder, and outputs some of the lowest quality ammunition known to mankind."
 	circuit = /obj/item/circuitboard/machine/autolathe/ammo/improvised
-	stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo/improvised
+	//stored_research = /datum/techweb/specialized/autounlocking/autolathe/ammo_improvised
 	categories = list(
 					"Handloaded Ammo",
 					"Handmade Magazines",
