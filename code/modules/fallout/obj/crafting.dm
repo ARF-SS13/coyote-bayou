@@ -148,11 +148,34 @@
 	desc = "A pre-War cleaning agent produced by Abraxodyne Chemical."
 	icon_state = "abraxo"
 
-/obj/item/crafting/reloader
+/obj/item/circuitboard/machine/autolathe/ammo/improvised
 	name = "makeshift reloader"
-	desc = "This device allows you to hand-craft your own gun rounds using certain raw materials."
+	desc = "This device allows you to hand-craft your own gun rounds using certain raw materials.<br>Use a screwdriver on it to make it fit inside a machine frame!"
 	icon_state = "reloader"
 	tool_behaviour = TOOL_MSRELOADER
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/screwdriver_act(mob/living/user, obj/item/I)
+	. = ..()
+
+	if(.)
+		return
+
+	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return
+
+	if(I.use_tool(src, user, volume=50))
+		to_chat(user, span_notice("You drill some holes in \the [src]'s base! Looks like it could be attached to a machine frame."))
+		make_it_a_board(user)
+	else
+		to_chat(user, span_alert("You can't seem to drill any holes in \the [src]'s base! Might need to stand still, or the drill might need some juice..."))
+
+/obj/item/circuitboard/machine/autolathe/ammo/improvised/proc/make_it_a_board(mob/living/user)
+	if(!user)
+		return
+	var/turf/this_turf = get_turf(src)
+	qdel(src)
+	var/obj/item/circuitboard/machine/autolathe/ammo/improvised/jank_board = new(this_turf)
+	user.put_in_hands(jank_board)
 
 /obj/item/crafting/lunchbox
 	name = "lunch box"

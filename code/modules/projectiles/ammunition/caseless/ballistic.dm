@@ -4,6 +4,9 @@
 	caliber = CALIBER_CASELESS
 	icon_state = "762-casing"
 	projectile_type = /obj/item/projectile/bullet/a473
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 
 /obj/item/ammo_casing/caseless/g11/rubber
 	name = "4.73mm polyurethane cartridge"

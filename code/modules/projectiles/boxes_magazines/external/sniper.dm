@@ -6,6 +6,7 @@
 	ammo_type = /obj/item/ammo_casing/a50MG
 	caliber = list(CALIBER_50MG)
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_STRIPPER)
 	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/amr/empty

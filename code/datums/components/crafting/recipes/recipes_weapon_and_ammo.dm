@@ -185,17 +185,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/shotgunammo
-	name = "12g handloaded ammo bag"
-	result = /obj/item/ammo_box/shotgun/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 /datum/crafting_recipe/shotgunammo3p
 	name = "12g 3p trainshot box"
 	result = /obj/item/ammo_box/shotgun/trainshot
@@ -205,18 +194,6 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-
-/datum/crafting_recipe/m22
-	name = ".22 Long Rifle ammo box"
-	result = /obj/item/ammo_box/m22
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -235,18 +212,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/c9mm
-	name = "9mm handloaded ammo bag"
-	result = /obj/item/ammo_box/c9mm/improv
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-
 /datum/crafting_recipe/c9mmincin
 	name = "9mm incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/c9mm/incendiary
@@ -260,8 +225,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-
-
 /datum/crafting_recipe/c38boxincin
 	name = ".38 incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/c38box/incendiary
@@ -271,17 +234,6 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c38box
-	name = ".38 handloaded ammo bag"
-	result = /obj/item/ammo_box/c38box/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -299,18 +251,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/c10mm
-	name = "10mm handloaded ammo bag"
-	result = /obj/item/ammo_box/c10mm/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-
 /datum/crafting_recipe/a357boxincin
 	name = ".357 incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/a357box/incendiary
@@ -320,17 +260,6 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/a357boximprov
-	name = ".357 handloaded ammo bag"
-	result = /obj/item/ammo_box/a357box/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -348,17 +277,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/m44box
-	name = ".44 handloaded ammo bag"
-	result = /obj/item/ammo_box/m44box/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 /datum/crafting_recipe/c45incin
 	name = ".45 ACP incendiary-tipped ammo box"
 	result = /obj/item/ammo_box/c45/incendiary
@@ -368,17 +286,6 @@
 	/obj/item/stack/ore/blackpowder = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
-/datum/crafting_recipe/c45
-	name = ".45 ACP handloaded ammo bag"
-	result = /obj/item/ammo_box/c45/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
@@ -451,18 +358,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 */
-
-/datum/crafting_recipe/a556
-	name = ".223  handloaded ammo bag"
-	result = /obj/item/ammo_box/a556/sport/improvised
-	reqs = list(/obj/item/stack/sheet/metal = 6,
-	/obj/item/stack/ore/blackpowder = 1
-	)
-	tools = list(TOOL_MSRELOADER)
-	time = 5
-	category = CAT_WEAPONRY
-	subcategory = CAT_AMMO
-
 /*
 /datum/crafting_recipe/a762boxirr
 	name = "7.62 U-235 ammo box"
@@ -538,8 +433,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-
-
 /datum/crafting_recipe/m2mmblender
 	name = "2mm \"Blender\" magazine"
 	result = /obj/item/ammo_box/magazine/m2mm/blender
@@ -552,8 +445,6 @@
 	time = 5
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
-
-
 
 /////////////////
 ///GUN CRAFTING//

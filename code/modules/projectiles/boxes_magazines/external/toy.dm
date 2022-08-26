@@ -2,6 +2,7 @@
 	name = "foam force META magazine"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	caliber = list(CALIBER_FOAM)
+	custom_materials = list(/datum/material/iron = MATS_SMALL_PISTOL_MAGAZINE)
 
 /obj/item/ammo_box/magazine/toy/smg
 	name = "foam force SMG magazine"
@@ -66,5 +67,4 @@
 	max_ammo = 24
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/mag
-	custom_materials = list(/datum/material/iron = 200)
 	w_class = WEIGHT_CLASS_SMALL

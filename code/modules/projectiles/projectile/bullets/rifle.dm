@@ -12,7 +12,7 @@
  * * * * * * * */
 
 /* 5.56 match
- * DAMAGE: 31.25
+ * DAMAGE: 37
  * STAMIN: 6.25
  * RECOIL: 1
  * WOUNDS: 6.5
@@ -32,28 +32,8 @@
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
 
-/* 5.56 match
- * DAMAGE: 31.25
- * STAMIN: 6.25
- * RECOIL: 1
- * WOUNDS: 6.5
- * WNAKED: 3.75
- */
-/obj/item/projectile/bullet/a556/match // used by mobs currently
-	name = "5.56 match bullet"
-	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_MATCH_MULT
-	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_MATCH_MULT
-	spread = BULLET_SPREAD_MATCH
-	recoil = BULLET_RECOIL_RIFLE_LIGHT
-
-	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_MATCH_MULT
-	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
-	
-	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
-
 /* 5.56 sport
- * DAMAGE: 25
+ * DAMAGE: 30
  * STAMIN: 5
  * RECOIL: 1
  * WOUNDS: 6.5
@@ -72,14 +52,14 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
 
-/* 5.56 improv
- * DAMAGE: 18
+/* 5.56 handload
+ * DAMAGE: 22
  * STAMIN: 3.75
  * RECOIL: 1
  * WOUNDS: 6.5
  * WNAKED: 3.75
  */
-/obj/item/projectile/bullet/a556/improv
+/obj/item/projectile/bullet/a556/improvised
 	name = "handloaded .223 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_HANDLOAD_MULT
 	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_HANDLOAD_MULT
@@ -94,7 +74,7 @@
 
 /* 5.56 rubber
  * DAMAGE: 2.5
- * STAMIN: 12.5
+ * STAMIN: 60
  * RECOIL: 1
  * WOUNDS: 7.5
  * WNAKED: 5.6
@@ -187,6 +167,27 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT
+
+/* 5.56 match
+ * DAMAGE: 37
+ * STAMIN: 6.25
+ * RECOIL: 1
+ * WOUNDS: 6.5
+ * WNAKED: 3.75
+ */
+/obj/item/projectile/bullet/a556/match // used by mobs currently
+	name = "5.56 match bullet"
+	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_MATCH_MULT
+	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_MATCH_MULT
+	spread = BULLET_SPREAD_MATCH
+	recoil = BULLET_RECOIL_RIFLE_LIGHT
+
+	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_MATCH_MULT
+	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
+
 /*
 /obj/item/projectile/bullet/a556/uraniumtipped
 	name = "5.56 uranium-tipped bullet"
@@ -406,10 +407,52 @@
 	name = "5mm bullet"
 	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_SURPLUS_MULT
 	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_SURPLUS_MULT
-	spread = BULLET_SPREAD_MATCH
+	spread = BULLET_SPREAD_SURPLUS
 	recoil = BULLET_RECOIL_RIFLE_LIGHT
 
 	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_SURPLUS_MULT
+	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
+
+/* 5mm fmj
+ * DAMAGE: 31.25
+ * STAMIN: 6.25
+ * RECOIL: 1
+ * WOUNDS: 6.5
+ * WNAKED: 3.75
+ */
+/obj/item/projectile/bullet/m5mm/match
+	name = "5mm bullet"
+	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_MATCH_MULT
+	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_MATCH_MULT
+	spread = BULLET_SPREAD_MATCH
+	recoil = BULLET_RECOIL_RIFLE_LIGHT
+
+	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_MATCH_MULT
+	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * 2
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
+
+/* 5mm fmj
+ * DAMAGE: 31.25
+ * STAMIN: 6.25
+ * RECOIL: 1
+ * WOUNDS: 6.5
+ * WNAKED: 3.75
+ */
+/obj/item/projectile/bullet/m5mm/improvised
+	name = "5mm bullet"
+	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_HANDLOAD_MULT
+	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_HANDLOAD_MULT
+	spread = BULLET_SPREAD_HANDLOAD
+	recoil = BULLET_RECOIL_RIFLE_LIGHT
+
+	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_HANDLOAD_MULT
 	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
@@ -542,14 +585,14 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
 
-/* 7.62mm surplus
- * DAMAGE: 34
- * STAMIN: 34
+/* 7.62mm handloaded
+ * DAMAGE: 33
+ * STAMIN: 33
  * RECOIL: 2
  * WOUNDS: 15
  * WNAKED: 15
  */
-/obj/item/projectile/bullet/a762/improv
+/obj/item/projectile/bullet/a762/improvised
 	name = "handloaded .308 bullet"
 	damage = BULLET_DAMAGE_RIFLE_MEDIUM * BULLET_HANDLOAD_MULT
 	stamina = BULLET_STAMINA_RIFLE_MEDIUM * BULLET_HANDLOAD_MULT
@@ -564,7 +607,7 @@
 
 /* 7.62mm rubber
  * DAMAGE: 4.5
- * STAMIN: 90
+ * STAMIN: 135
  * RECOIL: 2
  * WOUNDS: 40
  * WNAKED: 30
@@ -692,14 +735,14 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY
 
-/* .50MG improv
+/* .50MG handloaded
  * DAMAGE: 56
  * STAMIN: 84
  * RECOIL: 2
  * WOUNDS: 30
  * WNAKED: 30
  */
-/obj/item/projectile/bullet/a50MG/improv
+/obj/item/projectile/bullet/a50MG/improvised
 	name = "handloaded .50MG slug"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_HANDLOAD_MULT
 	stamina = BULLET_STAMINA_RIFLE_HEAVY * BULLET_HANDLOAD_MULT
@@ -916,14 +959,14 @@
 	
 	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_4570_SPEED_MULT
 
-/* .45-70 improv
+/* .45-70 handloaded
  * DAMAGE: 42 // cant kill a ghoul
  * STAMIN: 33
  * RECOIL: 1
  * WOUNDS: 15
  * WNAKED: 15
  */
-/obj/item/projectile/bullet/c4570/improv
+/obj/item/projectile/bullet/c4570/improvised
 	name = ".45-70 FMJ bullet"
 	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_HANDLOAD_MULT * BULLET_4570_DAMAGE_MULT
 	stamina = BULLET_STAMINA_RIFLE_HEAVY * BULLET_HANDLOAD_MULT * BULLET_4570_STAMINA_MULT
