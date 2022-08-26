@@ -29,7 +29,7 @@
 	},
 /area/f13/wasteland)
 "cd" = (
-/obj/machinery/autolathe,
+/obj/machinery/autolathe/constructionlathe,
 /turf/open/floor/f13/wood,
 /area/f13/village/tunnel_motel)
 "cv" = (
@@ -150,11 +150,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/village/overpass_village)
-"hM" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul,
-/turf/open/floor/f13/wood,
-/area/f13/building/firetower)
 "ia" = (
 /mob/living/simple_animal/hostile/raider/tribal,
 /obj/effect/decal/cleanable/dirt{
@@ -37380,7 +37375,7 @@ bW
 Ti
 un
 Wb
-hM
+wD
 Rj
 un
 Ti
