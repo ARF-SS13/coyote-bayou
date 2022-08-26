@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 
 /// Multiplier for ammolathes
 #define MATS_AMMO_GLOBAL_COST_MULT 1
-#define MATS_AMMO_METAL_COST_MULT (1.3 * MATS_AMMO_GLOBAL_COST_MULT)
+#define MATS_AMMO_METAL_COST_MULT (2 * MATS_AMMO_GLOBAL_COST_MULT)
 #define MATS_AMMO_POWDER_COST_MULT (1.1 * MATS_AMMO_GLOBAL_COST_MULT)
 
 GLOBAL_LIST_INIT(ammo_material_multipliers, list(
