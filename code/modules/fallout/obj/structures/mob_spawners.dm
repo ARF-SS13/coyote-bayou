@@ -24,7 +24,7 @@
 	var/overpopulation_range = 10
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
-	var/radius = 6
+	var/radius = 8
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
 	/// Needs a living, cliented player around to spawn stuff
@@ -95,7 +95,6 @@
 		var/atom/movable/previous_heavy_thing = covering_object?.resolve()
 		if(previous_heavy_thing)
 			if(get_turf(previous_heavy_thing) == our_turf)
-				COOLDOWN_START(src, spawner_cooldown, spawn_time)
 				return FALSE
 			else
 				covering_object = null // mustve wandered off
@@ -103,7 +102,6 @@
 		for(var/atom/movable/maybe_heavy_thing in our_turf.contents)
 			if(maybe_heavy_thing.density == TRUE)
 				covering_object = WEAKREF(maybe_heavy_thing)
-				COOLDOWN_START(src, spawner_cooldown, spawn_time)
 				return FALSE
 	var/mobs_in_range
 	for(var/mob/living/living_mob in range(overpopulation_range, get_turf(src)))
@@ -112,7 +110,7 @@
 			return FALSE
 	if(needs_player)
 		var/player_found = FALSE
-		for(var/mob/living/carbon/human/humie in view(radius, get_turf(src)))
+		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
 			if(humie?.client) // good enough
 				player_found = TRUE
 				break
