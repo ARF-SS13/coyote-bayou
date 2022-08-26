@@ -21,14 +21,14 @@
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	/// Range to check for other mobs to see if there's too many around
-	var/overpopulation_range = 10
+	var/overpopulation_range = 8
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
 	var/radius = 8
 	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
 	var/spawn_once
 	/// Needs a living, cliented player around to spawn stuff
-	var/needs_player = TRUE
+	//var/needs_player = TRUE
 	var/infinite = FALSE
 	var/mobs_to_spawn = 1 //number of mobs to spawn at once, for swarms
 	/// The ID of our randomizer, so all spawners with this ID will spawn from the same list. Leave null to skip global randomization for this thing
@@ -104,18 +104,19 @@
 				covering_object = WEAKREF(maybe_heavy_thing)
 				return FALSE
 	var/mobs_in_range
-	for(var/mob/living/living_mob in range(overpopulation_range, get_turf(src)))
-		if(mobs_in_range++ >= max_mobs)
-			COOLDOWN_START(src, spawner_cooldown, spawn_time)
-			return FALSE
-	if(needs_player)
+	for(var/mob/living/simple_animal/living_mob in view(overpopulation_range, get_turf(src)))
+		if(living_mob.type in mob_types)
+			mobs_in_range++
+			if(mobs_in_range > max_mobs)
+				return FALSE
+	/* if(needs_player)
 		var/player_found = FALSE
 		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
 			if(humie?.client) // good enough
 				player_found = TRUE
 				break
 		if(!player_found)
-			return FALSE
+			return FALSE */
 	return TRUE
 
 /obj/structure/nest/proc/spawn_mob()
