@@ -7,14 +7,14 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/security
-	group = "Security"
+	group = "Munitions"
 	access = ACCESS_SECURITY
-	crate_type = /obj/structure/closet/crate/secure/gear
+	crate_type = /obj/structure/closet/crate/footlocker
 	can_private_buy = FALSE
 
 /datum/supply_pack/security/ammo
 	name = "Ammo Crate - General Purpose"
-	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and special .38 speedloarders. Requires Security access to open."
+	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and special .38 speedloarders"
 	cost = 2500
 	contains = list(/obj/item/ammo_box/shotgun/buck,
 					/obj/item/ammo_box/shotgun/buck)
@@ -22,7 +22,7 @@
 
 /datum/supply_pack/security/armor
 	name = "Armor Crate"
-	desc = "Three vests of well-rounded, decently-protective armor. Requires Security access to open."
+	desc = "Three vests of well-rounded, decently-protective armor."
 	cost = 1200
 	contains = list(/obj/item/clothing/suit/armor/medium/vest,
 					/obj/item/clothing/suit/armor/medium/vest,
@@ -38,6 +38,7 @@
 					/obj/item/gun/energy/disabler)
 	crate_name = "disabler crate"
 
+/*
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
 	desc = "Stay hot on the criminal's heels with Nanotrasen's Detective Essentials(tm). Contains a forensics scanner, six evidence bags, camera, tape recorder, white crayon, and of course, a fedora. Requires Security access to open."
@@ -50,10 +51,11 @@
 					/obj/item/clothing/head/fedora/det_hat)
 	crate_name = "forensics crate"
 	can_private_buy = TRUE
+*/
 
 /datum/supply_pack/security/helmets
 	name = "Helmets Crate"
-	desc = "Contains three standard-issue brain buckets. Requires Security access to open."
+	desc = "Contains three standard-issue brain buckets. Keep that militia safe!"
 	cost = 1200
 	contains = list(/obj/item/clothing/head/helmet/sec,
 					/obj/item/clothing/head/helmet/sec,
@@ -62,7 +64,7 @@
 
 /datum/supply_pack/security/laser
 	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns. Requires Security access to open."
+	desc = "Contains three lethal, high-energy laser guns."
 	cost = 1750
 	contains = list(/obj/item/gun/energy/laser,
 					/obj/item/gun/energy/laser,
@@ -71,7 +73,7 @@
 
 /datum/supply_pack/security/russianclothing
 	name = "Russian Surplus Clothing"
-	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproff armor, a few union suits and some warm hats!"
+	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproff armor, a few union suits and some warm hats! The Hub is not liable for any friendly fire incidents."
 	contraband = TRUE
 	cost = 5750 // Its basicly sec suits, good boots/gloves
 	contains = list(/obj/item/clothing/suit/armor/outfit/jacket/navyblue/russian,
@@ -102,7 +104,7 @@
 */
 /datum/supply_pack/security/securitybarriers
 	name = "Security Barrier Grenades"
-	desc = "Stem the tide with four Security Barrier grenades. Requires Security access to open."
+	desc = "Stem the tide with four pre-war riot grenades."
 	contains = list(/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
 					/obj/item/grenade/barrier,
@@ -110,7 +112,7 @@
 	cost = 2000
 	crate_name = "security barriers crate"
 	can_private_buy = TRUE
-
+/*
 /datum/supply_pack/security/securityclothes
 	name = "Security Clothing Crate"
 	desc = "Contains appropriate outfits for the station's private security force. Contains outfits for the Warden, Head of Security, and two Security Officers. Each outfit comes with a rank-appropriate jumpsuit, suit, and beret. Requires Security access to open."
@@ -129,10 +131,11 @@
 					/obj/item/clothing/head/beret/sec/navyhos)
 	crate_name = "security clothing crate"
 	can_private_buy = TRUE
+*/
 
 /datum/supply_pack/security/supplies
 	name = "Security Supplies Crate"
-	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs. Requires Security access to open."
+	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs.."
 	cost = 1200
 	contains = list(/obj/item/storage/box/flashbangs,
 					/obj/item/storage/box/teargas,
@@ -140,6 +143,7 @@
 					/obj/item/storage/box/handcuffs)
 	crate_name = "security supply crate"
 
+/*
 /datum/supply_pack/security/firingpins
 	name = "Standard Firing Pins Crate"
 	desc = "Upgrade your arsenal with 10 standard firing pins. Requires Security access to open."
@@ -157,19 +161,20 @@
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
 	can_private_buy = TRUE
+*/
 
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
-	desc = "Arm the Civil Protection Forces with three stun batons. Batteries included. Requires Security access to open."
+	desc = "Arm the volunteer deputies with three stun batons. Batteries included."
 	cost = 1200
 	contains = list(/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded)
 	crate_name = "stun baton crate"
-
+/*
 /datum/supply_pack/security/taser
 	name = "Taser Crate"
-	desc = "From the depths of stunbased combat, this order rises above, supreme. Contains three hybrid tasers, capable of firing both electrodes and disabling shots. Requires Security access to open."
+	desc = "From the depths of stunbased combat, this order rises above, supreme. Contains three hybrid tasers, capable of firing both electrodes and disabling shots."
 	cost = 3500
 	contains = list(/obj/item/gun/energy/e_gun/advtaser,
 					/obj/item/gun/energy/e_gun/advtaser,
@@ -201,17 +206,22 @@
 	access = ACCESS_ARMORY
 	crate_name = "sporting crate"
 	crate_type = /obj/structure/closet/crate/secure // Would have liked a wooden crate but access >:(
+*/
 
 /datum/supply_pack/security/stingpack
 	name = "Stingbang Grenade Pack"
-	desc = "Contains five \"stingbang\" grenades, perfect for stopping riots and playing morally unthinkable pranks. Requires Security access to open."
+	desc = "Contains five \"stingbang\" grenades, perfect for stopping pre-War food riots and shutting down seditious agents."
 	cost = 2500
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
 
-/datum/supply_pack/security/stingpack/single
-	name = "Stingbang Single-Pack"
-	desc = "Contains one \"stingbang\" grenade, perfect for playing meanhearted pranks. Requires Security access to open."
-	cost = 1400
-	contains = list(/obj/item/grenade/stingbang)
+/datum/supply_pack/security/mosinpack
+	name = "Mosin-Nagant Pack"
+	desc = "Arm your militia. Five Mosin Rifles, preloaded, ready to kill. A solid weapon for any defense or guerilla force. Does not come with spare ammo, so you might wanna get that sorted out, pardner."
+	cost = 750
+	contains = list(/obj/item/gun/ballistic/rifle/mosin,
+					/obj/item/gun/ballistic/rifle/mosin,
+					/obj/item/gun/ballistic/rifle/mosin,
+					/obj/item/gun/ballistic/rifle/mosin,
+					/obj/item/gun/ballistic/rifle/mosin)
 
