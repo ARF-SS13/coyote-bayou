@@ -419,7 +419,7 @@ GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/soap,
 	/obj/item/holosign_creator,
 	/obj/item/forcefield_projector,
-	/obj/item/key/janitor,
+	/obj/item/key,
 	/obj/item/clothing/gloves,
 	/obj/item/melee/flyswatter,
 	/obj/item/broom,
@@ -460,6 +460,13 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/medspray,
 	/obj/item/reagent_containers/hypospray,
 	/obj/item/reagent_containers/chem_pack,
+	/obj/item/reagent_containers/blood,
+	/obj/item/reagent_containers/food/snacks/deadmouse,
+	/obj/item/reagent_containers/food/snacks/cube,
+	/obj/item/reagent_containers/food/snacks/meat,
+	/obj/item/slime_extract,
+	/obj/item/organ,
+	/obj/item/bodypart
 	/obj/item/lighter,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/storage/pill_bottle,
@@ -533,6 +540,8 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
+	/obj/item/melee/classic_baton
+	/obj/item/melee/onehanded/knife
 	/obj/item/toy)))
 
 /// Things allowed in a scabbard
@@ -659,24 +668,6 @@ GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
 	/obj/item/blueprint/research,
 	/obj/item/multitool/advanced
 )))
-
-GLOBAL_LIST_INIT(storage_bio_bag_can_hold, typecacheof(list(
-	/obj/item/slime_extract,
-	/obj/item/reagent_containers/blood,
-	/obj/item/reagent_containers/food/snacks/deadmouse,
-	/obj/item/reagent_containers/food/snacks/cube,
-	/obj/item/organ,
-	/obj/item/reagent_containers/food/snacks/meat/slab,
-	/obj/item/bodypart
-	)))
-
-GLOBAL_LIST_INIT(storage_chemistry_bag_can_hold, typecacheof(list(
-	/obj/item/reagent_containers/hypospray/medipen,
-	/obj/item/reagent_containers/syringe,
-	/obj/item/reagent_containers/pill,
-	/obj/item/reagent_containers/glass/beaker,
-	/obj/item/reagent_containers/glass/bottle,
-	/obj/item/reagent_containers/chem_pack)))
 
 GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/food,

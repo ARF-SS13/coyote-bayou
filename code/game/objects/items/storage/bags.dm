@@ -395,7 +395,7 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.insert_preposition = "in"
-	STR.can_hold = GLOB.storage_chemistry_bag_can_hold
+	STR.can_hold = GLOB.medibelt_allowed
 
 /*	Now in tribal mode!*/
 
@@ -421,7 +421,7 @@ obj/item/storage/bag/chemistry/tribal
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.insert_preposition = "in"
-	STR.can_hold = GLOB.storage_bio_bag_can_hold
+	STR.can_hold = GLOB.medibelt_allowed
 
 /obj/item/storage/bag/bio/holding
 	name = "bio bag of holding"

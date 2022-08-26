@@ -313,19 +313,54 @@
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
 
+///////////////////
+/// Belt bandolier
+
+/obj/item/storage/belt/military
+	name = "chest rig"
+	desc = "A mean-looking belt sack for holding lots of ammo."
+	icon_state = "militarywebbing"
+	item_state = "militarywebbing"
+	slot_flags = ITEM_SLOT_BELT
+	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
+
+/obj/item/storage/belt/military/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.can_hold = GLOB.ammobelt_allowed
+
+/obj/item/storage/belt/military/alt
+	icon_state = "explorer2"
+	item_state = "explorer2"
+
+/obj/item/storage/belt/military/reconbandolier
+	name = "NCR recon ranger bandolier"
+	desc = "A belt with many pockets, now at an angle."
+	icon_state = "reconbandolier"
+	item_state = "reconbandolier"
+
+/obj/item/storage/belt/military/NCR_Bandolier
+	name = "NCR bandolier"
+	desc = "A standard issue NCR bandolier."
+	icon_state = "ncr_bandolier"
+	item_state = "ncr_bandolier"
+
 /obj/item/storage/belt/army
 	name = "army belt"
-	desc = "A robust belt for holding things like guns."
+	desc = "A robust belt for holding things like ammo."
 	icon_state = "grenadebeltold"
 	item_state = "security"
 
 /obj/item/storage/belt/army/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.gunbelt_allowed
+	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	STR.can_hold = GLOB.ammobelt_allowed
 
 /obj/item/storage/belt/army/followers
 	name = "follower belt"
@@ -386,41 +421,6 @@
 	desc = "A standard issue robust duty belt for the NCR."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
-
-///////////////////
-/// Belt bandolier
-
-/obj/item/storage/belt/military
-	name = "chest rig"
-	desc = "A mean-looking belt sack for holding lots of ammo."
-	icon_state = "militarywebbing"
-	item_state = "militarywebbing"
-	slot_flags = ITEM_SLOT_BELT
-	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/belt/military/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.ammobelt_allowed
-
-/obj/item/storage/belt/military/alt
-	icon_state = "explorer2"
-	item_state = "explorer2"
-
-/obj/item/storage/belt/military/reconbandolier
-	name = "NCR recon ranger bandolier"
-	desc = "A belt with many pockets, now at an angle."
-	icon_state = "reconbandolier"
-	item_state = "reconbandolier"
-
-/obj/item/storage/belt/military/NCR_Bandolier
-	name = "NCR bandolier"
-	desc = "A standard issue NCR bandolier."
-	icon_state = "ncr_bandolier"
-	item_state = "ncr_bandolier"
 
 /* * * * * * *
  * NECKPRONS
