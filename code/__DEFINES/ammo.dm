@@ -76,9 +76,10 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MAGAZINE_CALIBER_CHANGE_STEP_3 3 // used a welder on it, ready for a new casing
 
 /// Material costs cus fuckin hell this shit's out of hand!
+#define MATS_AMMO_GLOBAL_MULT 5
 
 /// Bullet~
-#define MATS_AMMO_BULLET_BASE 10
+#define MATS_AMMO_BULLET_BASE (10 * MATS_AMMO_GLOBAL_MULT)
 
 #define MATS_PISTOL_SMALL_BULLET (MATS_AMMO_BULLET_BASE * 0.5)
 #define MATS_PISTOL_MEDIUM_BULLET (MATS_AMMO_BULLET_BASE * 1)
@@ -92,7 +93,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_GAUSS_BULLET (MATS_AMMO_BULLET_BASE * 100)
 
 /// Powder~
-#define MATS_AMMO_POWDER_BASE 10
+#define MATS_AMMO_POWDER_BASE (10 * MATS_AMMO_GLOBAL_MULT)
 #define MATS_AMMO_POWDER_HANDLOAD_MULT 0.5
 #define MATS_AMMO_POWDER_MATCH_MULT 3
 
@@ -108,7 +109,7 @@ GLOBAL_LIST_INIT(hobo_gun_mag_fluff, list(
 #define MATS_GAUSS_POWDER 0
 
 /// Casing~
-#define MATS_CASING_BASE 50
+#define MATS_CASING_BASE (30 * MATS_AMMO_GLOBAL_MULT)
 
 #define MATS_PISTOL_SMALL_CASING (MATS_CASING_BASE * 0.5)
 #define MATS_PISTOL_MEDIUM_CASING (MATS_CASING_BASE * 1)

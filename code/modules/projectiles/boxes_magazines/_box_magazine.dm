@@ -309,13 +309,13 @@
 
 /obj/item/ammo_box/update_icon()
 	. = ..()
-	if(length(bullet_cost))
+/* 	if(length(bullet_cost))
 		var/temp_materials = custom_materials.Copy()
 		for (var/material in bullet_cost)
 			var/material_amount = bullet_cost[material]
 			material_amount = (material_amount*stored_ammo.len) + base_cost[material]
 			temp_materials[material] = material_amount
-		set_custom_materials(temp_materials)
+		set_custom_materials(temp_materials) */
 
 /obj/item/ammo_box/examine(mob/user)
 	. = ..()

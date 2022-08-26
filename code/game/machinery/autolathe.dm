@@ -1,6 +1,9 @@
 #define AUTOLATHE_MAIN_MENU       1
 #define AUTOLATHE_CATEGORY_MENU   2
 #define AUTOLATHE_SEARCH_MENU     3
+#define AUTOLATHE_STOP_INSERTING "KILL"
+#define AUTOLATHE_SKIP_INSERTING FALSE
+#define AUTOLATHE_INSERT_OK TRUE
 
 /obj/machinery/autolathe
 	name = "autolathe"
@@ -594,14 +597,16 @@
 /obj/machinery/autolathe/ammo/attackby(obj/item/O, mob/user, params)
 	if(!busy && !stat)
 		if(istype(O, /obj/item/storage/bag/casings))
-			insert_things_from_bag(O)
+			insert_things_from_bag(user, O)
 			return
 		if(istype(O, /obj/item/ammo_box))
-			absorb_bullets_from_box(O)
-			return
+			if(pre_insert_check(user, O))
+				if(!insert_bullets_from_box(user, O))
+					return
 		if(istype(O, /obj/item/gun/ballistic))
-			absorb_magazine_from_gun(O)
-			return
+			if(pre_insert_check(user, O))
+				if(!insert_magazine_from_gun(user, O))
+					return
 	if(panel_open && accepts_books)
 		if(!simple && istype(O, /obj/item/book/granter/crafting_recipe/gunsmith_one))
 			to_chat(user, "<span class='notice'>You upgrade [src] with simple ammunition schematics.</span>")
@@ -625,11 +630,86 @@
 			return
 	return ..()
 
-/obj/machinery/autolathe/ammo/proc/pre_insert_check(obj/item/O)
-	if(!istype(O))
-	var/obj/item/stuff_holder = O
+/obj/machinery/autolathe/ammo/proc/insert_thing(obj/item/thing, obj/item/thing_bag, datum/component/material_container/mat_box)
+	var/mat_amount = mat_box.get_item_material_amount(thing)
+	if(!mat_amount)
+		return AUTOLATHE_SKIP_INSERTING
+	if(!mat_box.has_space(mat_amount))
+		return AUTOLATHE_STOP_INSERTING
+	if(thing_bag)
+		if(!SEND_SIGNAL(thing_bag, COMSIG_TRY_STORAGE_TAKE, thing, src))
+			return AUTOLATHE_SKIP_INSERTING
+	// Forgive me for this.
+	if(mat_box.after_insert)
+		mat_box.after_insert.Invoke(thing, mat_box.last_inserted_id, mat_box.insert_item(thing))
+	return AUTOLATHE_INSERT_OK
 
-/obj/machinery/autolathe/ammo/proc/insert_things_from_container(obj/item/ammo_box/ammobox)
+/obj/machinery/autolathe/ammo/proc/pre_insert_check(mob/user, obj/item/O)
+	if(!istype(O))
+		return FALSE
+	var/obj/item/stuff_holder = O
+	if(INTERACTING_WITH(user, src))
+		return FALSE
+	if(!length(stuff_holder.contents))
+		to_chat(user, span_warning("There's nothing in \the [stuff_holder] to load into \the [src]!"))
+		return FALSE
+	to_chat(user, span_notice("You start dumping \the [stuff_holder] into \the [src]."))
+	if(!do_after(user, 2 SECONDS, target = src))
+		to_chat(user, span_notice("You stop dumping \the [stuff_holder] into \the [src]."))
+		return FALSE
+	return TRUE
+
+/obj/machinery/autolathe/ammo/proc/insert_bullets_from_box(mob/user, obj/item/ammo_box/ammobox)
+	if(!user)
+		return FALSE
+	if(!istype(ammobox))
+		return FALSE
+	var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+	var/count = 0
+	for(var/obj/item/ammo_casing/casing in ammobox.stored_ammo)
+		switch(insert_thing(casing, null, mats))
+			if(AUTOLATHE_SKIP_INSERTING)
+				continue
+			if(AUTOLATHE_STOP_INSERTING)
+				to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+				return FALSE
+		ammobox.stored_ammo -= casing
+		qdel(casing)
+		count++
+	if(count > 0)
+		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
+	else
+		to_chat(user, span_warning("There aren't any casings in \the [ammobox] to recycle!"))
+	return TRUE
+
+/obj/machinery/autolathe/ammo/proc/insert_magazine_from_gun(mob/user, obj/item/gun/ballistic/gun_thing)
+	if(!user)
+		return FALSE
+	if(!istype(gun_thing))
+		return FALSE
+	var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
+	if(gun_thing.chambered)
+		insert_thing(gun_thing.chambered, null, mats)
+		QDEL_NULL(gun_thing.chambered)
+	if(!gun_thing.magazine)
+		return TRUE // just eat the gun
+	var/obj/item/ammo_box/mag = gun_thing.magazine
+	insert_bullets_from_box(user, mag)
+	if(istype(mag) && mag.fixed_mag)
+		return TRUE
+	mag.forceMove(get_turf(mag))
+	switch(insert_thing(mag, null, mats))
+		if(AUTOLATHE_SKIP_INSERTING)
+			to_chat(user, span_warning("You can't put that in \the [src]!"))
+			return FALSE
+		if(AUTOLATHE_STOP_INSERTING)
+			to_chat(user, span_warning("You can't fit any more in \the [src]!"))
+			return FALSE
+	to_chat(user, span_notice("You insert [mag] into \the [src]."))
+	QDEL_NULL(gun_thing.magazine)
+	return TRUE
+
+/obj/machinery/autolathe/ammo/proc/insert_things_from_bag(mob/user, obj/item/storage/bag/casings/O)
 	var/obj/item/storage/bag/casings/casings_bag = O
 	var/datum/component/material_container/mats = GetComponent(/datum/component/material_container)
 	var/count = 0
@@ -661,12 +741,6 @@
 		to_chat(user, span_notice("You insert [count] casing\s into \the [src]."))
 	else
 		to_chat(user, span_warning("There aren't any casings in \the [O] to recycle!"))
-
-
-/obj/machinery/autolathe/ammo/proc/absorb_bullets_from_box(obj/item/ammo_box/ammobox)
-	if(!istype(ammobox))
-		return
-	if(ammobox.)
 
 /// no discounts for sticky fingers!
 /obj/machinery/autolathe/ammo/get_design_cost(datum/design/D)
