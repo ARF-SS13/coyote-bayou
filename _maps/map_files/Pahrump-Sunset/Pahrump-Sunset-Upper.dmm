@@ -151,11 +151,7 @@
 "and" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 8
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
+	dir = 9
 	},
 /turf/open/transparent/openspace,
 /area/f13/building)
@@ -5181,8 +5177,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "tgl" = (
-/obj/machinery/shower,
 /obj/structure/curtain,
+/obj/machinery/shower{
+	pixel_y = 20
+	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "tik" = (
