@@ -20,10 +20,10 @@
 /datum/outfit/job/enclave/peacekeeper
 	id = /obj/item/card/id/dogtag/enclave/trooper
 	mask = /obj/item/clothing/mask/gas/enclave
-	l_pocket = /obj/item/storage/belt/holster/legholster
+	l_pocket = /obj/item/storage/belt/legholster
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
-	belt = /obj/item/storage/belt/military/assault/enclave
+	belt = /obj/item/storage/belt/army/assault/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
@@ -33,7 +33,7 @@
 	id = /obj/item/card/id/dogtag/enclave/noncombatant
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
-	belt = /obj/item/storage/belt/military/assault/enclave
+	belt = /obj/item/storage/belt/army/assault/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/science
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots

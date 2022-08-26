@@ -274,7 +274,7 @@ obj/effect/mob_spawn/human/corpse/raiderbossalt
 
 /obj/effect/mob_spawn/human/corpse/chineseremnant/pistol
 	name = "Chinese Remnant Pistoleer Corpse"
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 
 /obj/effect/mob_spawn/human/corpse/chineseremnant/assault
 	name = "Chinese Remnant Assault Corpse"

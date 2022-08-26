@@ -98,7 +98,7 @@
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/accessory/maidapron/Initialize()
 	. = ..()

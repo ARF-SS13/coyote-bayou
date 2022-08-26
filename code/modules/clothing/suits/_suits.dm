@@ -12,6 +12,7 @@
 	armor = ARMOR_VALUE_CLOTHES
 	limb_integrity = 0 // disabled for most exo-suits
 	mutantrace_variation = NONE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	var/obj/item/clothing/armoraccessory/attached_accessory
 	var/mutable_appearance/accessory_overlay
 	var/dummy_thick = FALSE // is able to hold accessories on its item

@@ -4,6 +4,7 @@
 	caliber = list(CALIBER_MAGNETIC)
 	max_ammo = 24
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/mmag/lethal
 	name = "magrifle magazine (lethal)"
@@ -27,6 +28,7 @@
 	desc = "A magazine for the Hyper-Burst Rifle. Loaded with a special slug that fragments into 6 smaller shards which can absolutely puncture anything, but has rather short effective range."
 	max_ammo = 4
 	multiple_sprites = 4
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/mhyper/inferno
 	name = "hyper-burst rifle magazine (inferno)"

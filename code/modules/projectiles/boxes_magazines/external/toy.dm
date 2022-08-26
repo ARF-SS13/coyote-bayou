@@ -9,6 +9,7 @@
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/toy/smg/update_icon()
 	..()
@@ -25,6 +26,7 @@
 	icon_state = "9x19p"
 	max_ammo = 8
 	multiple_sprites = 2
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/ammo_box/magazine/toy/pistol/riot
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/riot
@@ -34,6 +36,7 @@
 	icon_state = "c20r45-toy"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/toy/smgm45/update_icon()
 	..()
@@ -48,6 +51,7 @@
 	icon_state = "a762-toy"
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart
 	max_ammo = 50
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/toy/m762/update_icon()
 	..()
@@ -63,3 +67,4 @@
 	max_ammo = 24
 	multiple_sprites = 2
 	ammo_type = /obj/item/ammo_casing/caseless/foam_dart/mag
+	w_class = WEIGHT_CLASS_SMALL

@@ -52,7 +52,7 @@
 
 /datum/crafting_recipe/shoulderholster
 	name = "Shoulder Holster"
-	result = /obj/item/storage/belt/holster
+	result = /obj/item/storage/belt/shoulderholster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/cloth = 2,
@@ -64,7 +64,7 @@
 
 /datum/crafting_recipe/legholster
 	name = "Leg Holster"
-	result = /obj/item/storage/belt/holster/legholster
+	result = /obj/item/storage/belt/legholster
 	reqs = list(/obj/item/stack/sheet/leather = 2,
 				/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/cloth = 2,

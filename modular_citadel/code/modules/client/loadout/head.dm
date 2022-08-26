@@ -84,17 +84,17 @@
 /datum/gear/head/that
 	name = "top hat"
 	path = /obj/item/clothing/head/that
-	cost = 3
+	cost = 2
 
 /datum/gear/head/beaver
 	name = "beaverskin top hat"
 	path = /obj/item/clothing/head/f13/beaver
-	cost = 4
+	cost = 2
 
 /datum/gear/head/purpletophat
 	name = "purple tophat"
 	path = /obj/item/clothing/head/f13/purple
-	cost = 4
+	cost = 2
 
 /datum/gear/head/mailmanhat
 	name = "mailman's hat"
@@ -107,7 +107,7 @@
 /datum/gear/head/sombrerogreen
 	name = "green sombrero"
 	path = /obj/item/clothing/head/sombrero/green
-	cost = 3
+	cost = 2
 
 /datum/gear/head/wig
 	name = "black wig"
@@ -148,12 +148,12 @@
 /datum/gear/head/cowboy
 	name = "brahmin leather cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	cost = 5
+	cost = 2
 
 /datum/gear/head/cowboy_alt
 	name = "rusted cowboy hat"
 	path = /obj/item/clothing/head/helmet/f13/rustedcowboyhat
-	cost = 5
+	cost = 2
 
 /datum/gear/head/bountyhunter
 	name = "bounty hunter hat"
@@ -184,7 +184,7 @@
 /datum/gear/head/russobluecamohat
 	name = "Russian blue camo beret"
 	path = /obj/item/clothing/head/fluff/gambler
-	cost = 3
+	cost = 2
 
 /datum/gear/head/ranger_tan
 	name = "tan cowboy hat"
@@ -209,7 +209,7 @@
 /datum/gear/head/pot
 	name = "pot helmet"
 	path = /obj/item/clothing/head/f13/pot
-	cost = 4
+	cost = 2
 
 //POLICE
 
@@ -238,7 +238,7 @@
 /datum/gear/head/usarmy/officer
 	name = "US Army officer's cap"
 	path = /obj/item/clothing/head/f13/army/officer
-	cost = 3
+	cost = 2
 
 /datum/gear/head/usarmy/beret
 	name = "US Army beret"
@@ -248,7 +248,7 @@
 /datum/gear/head/usarmy/beretairborne
 	name = "US Army airborne beret"
 	path = /obj/item/clothing/head/f13/army/beret/airborne
-	cost = 3
+	cost = 2
 
 //CHINA
 
@@ -260,22 +260,22 @@
 /datum/gear/head/chinese/officer
 	name = "PLA officer's cap"
 	path = /obj/item/clothing/head/f13/chinese/officer
-	cost = 3
+	cost = 2
 
 /datum/gear/head/khan_horned
 	name = "horned helmet"
 	path = /obj/item/clothing/head/helmet/f13/khan
-	cost = 3
+	cost = 2
 
 /datum/gear/head/khan_furtrimmed
 	name = "horned fur-trimmed helmet"
 	path = /obj/item/clothing/head/helmet/f13/khan/pelt
-	cost = 3
+	cost = 2
 
 /datum/gear/head/khan_bandana
 	name = "outlaw bandana"
 	path = /obj/item/clothing/head/helmet/f13/khan/bandana
-	cost = 3
+	cost = 2
 
 //NCR
 
