@@ -36,9 +36,8 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/army/assault/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	l_pocket = /obj/item/book/manual/ncr/jobguide
-	backpack_contents = list(
-		/obj/item/storage/survivalkit_aid = 1,
-		)
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 
 /datum/outfit/job/ncr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -573,10 +572,11 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	neck = /obj/item/storage/belt/shoulderholster
 	ears = /obj/item/radio/headset/headset_ranger
 	mask = /obj/item/clothing/mask/gas/ranger
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 	r_pocket = /obj/item/binoculars
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bowie = 1,
-		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 2,
 		/obj/item/grenade/smokebomb = 1,
@@ -986,10 +986,10 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	accessory = /obj/item/clothing/accessory/armband/med/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/m1carbine/compact
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/simple = 2,
-		/obj/item/melee/onehanded/knife/survival = 1,
-		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/ncrenlisted = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
@@ -1293,11 +1293,12 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	belt = /obj/item/storage/belt/army/assault/ncr
 	r_hand = /obj/item/storage/backpack/duffelbag/med/surgery
 	mask = /obj/item/clothing/mask/surgical
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom = 1,
 		/obj/item/ammo_box/magazine/m45 = 2,
 		/obj/item/melee/classic_baton/telescopic = 1,
-		/obj/item/storage/survivalkit_aid_adv = 1,
 		/obj/item/storage/bag/money/small/ncrofficers = 1,
 		/obj/item/storage/firstaid/regular = 1,
 		/obj/item/stack/crafting/armor_plate = 5

@@ -31,9 +31,9 @@
 	uniform = /obj/item/clothing/under/f13/khan
 	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
-	l_pocket = /obj/item/storage/survivalkit_khan
+	box = /obj/item/storage/survivalkit/tribal/chief
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
-	box = null
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)
@@ -81,9 +81,9 @@
 	uniform = /obj/item/clothing/under/f13/khan
 	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
-	l_pocket = /obj/item/storage/survivalkit_khan
+	box = /obj/item/storage/survivalkit/tribal/chief
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
-	box = null
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)

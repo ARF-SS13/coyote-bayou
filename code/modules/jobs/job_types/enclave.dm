@@ -15,7 +15,6 @@
 	id = null
 	ears = /obj/item/radio/headset/headset_enclave
 	glasses = /obj/item/clothing/glasses/night/f13/enclave
-	box = /obj/item/storage/survivalkit_adv
 
 /datum/outfit/job/enclave/peacekeeper
 	id = /obj/item/card/id/dogtag/enclave/trooper
@@ -343,7 +342,7 @@
 	suit_store =  /obj/item/tank/internals/oxygen
 
 	backpack_contents = list(
-		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/survivalkit/medical = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,

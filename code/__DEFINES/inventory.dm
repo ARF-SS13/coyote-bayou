@@ -292,7 +292,7 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/storage/bag,
 	/obj/item/storage/box,
-	/obj/item/storage/survivalkit_triple_empty,
+	/obj/item/storage/survivalkit,
 	/obj/item/storage/belt,
 	/obj/item/storage/backpack/spearquiver,
 	/obj/item/storage/bag/tribe_quiver,
@@ -533,6 +533,10 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
+	/obj/item/grenade/flashbang,
+	/obj/item/assembly/flash,
+	/obj/item/melee/baton,
+	/obj/item/melee/onehanded/knife
 	/obj/item/toy)))
 
 /// Things allowed in a scabbard
@@ -687,11 +691,6 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/kitchen/fork,
 	/obj/item/storage/box)))
 
-/// How many items total fit in a large survival kit
-#define STORAGE_TRIPLEKIT_MAX_ITEMS 21
-/// How much volume fits in a belt
-#define STORAGE_TRIPLEKIT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_TRIPLEKIT_MAX_ITEMS
-
 /* * * * * * * * * * * * * * *
  * Belt slot inventory things
  * * * * * * * * * * * * * * */
@@ -806,6 +805,37 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 /// How much volume fits in a trash bag thing
 #define STORAGE_BIG_TRASH_BAG_MAX_TOTAL_SPACE STORAGE_TRASH_BAG_MAX_ITEMS * STORAGE_TRASH_BAG_MAX_SIZE
 
+/* * * * *
+ * Boxes
+ * * * * */
+
+/// How many items total fit in a box
+#define STORAGE_BOX_DEFAULT_MAX_ITEMS 7
+/// How big a thing can fit in a box
+#define STORAGE_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a box
+#define STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_BOX_DEFAULT_MAX_ITEMS * STORAGE_BOX_DEFAULT_MAX_SIZE
+
+/// How many items total fit in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_DEFAULT_MAX_ITEMS 3
+/// How big a thing can fit in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_GENERIC_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_GENERIC_MAX_SIZE
+
+/// How many items total fit in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS 4
+/// How big a thing can fit in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE
+
+/// How many items total fit in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS 21
+/// How big a thing can fit in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE
 
 //Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)
