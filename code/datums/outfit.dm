@@ -22,6 +22,7 @@
 	var/internals_slot = null //ID of slot containing a gas tank
 	var/list/backpack_contents = null // In the list(path=count,otherpath=count) format
 	var/box // Internals box. Will be inserted at the start of backpack_contents
+	var/box_two // Ditto, but for another box
 	var/list/implants = null
 	var/accessory = null
 	var/contains_randomisation = FALSE //Used to redo asset loading with randomised outfits
@@ -109,6 +110,12 @@
 			if(!backpack_contents)
 				backpack_contents = list()
 			backpack_contents.Insert(1, box)
+			backpack_contents[box] = 1
+
+		if(box_two)
+			if(!backpack_contents)
+				backpack_contents = list()
+			backpack_contents.Insert(1, box_two)
 			backpack_contents[box] = 1
 
 		if(backpack_contents)

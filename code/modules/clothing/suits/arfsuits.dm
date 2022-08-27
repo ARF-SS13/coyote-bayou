@@ -130,7 +130,7 @@
 
 /obj/item/clothing/suit/armor/outfit/overalls/farmer/Initialize()
 	. = ..()
-	allowed |= GLOB.farmer_apron_allowed
+	allowed |= GLOB.toolbelt_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid // best suit
 	name = "sexy maid outfit"
@@ -143,7 +143,7 @@
 
 /obj/item/clothing/suit/armor/outfit/overalls/sexymaid/Initialize()
 	. = ..()
-	allowed |= GLOB.sexymaid_apron_allowed
+	allowed |= GLOB.toolbelt_allowed
 
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith
 	name = "blacksmith apron"
@@ -159,7 +159,7 @@
 
 /obj/item/clothing/suit/armor/outfit/overalls/blacksmith/Initialize()
 	. = ..()
-	allowed |= GLOB.smith_apron_allowed
+	allowed |= GLOB.toolbelt_allowed
 
 //////////////
 //// VEST ////

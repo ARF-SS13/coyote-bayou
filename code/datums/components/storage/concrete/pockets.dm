@@ -178,7 +178,7 @@
 
 /datum/component/storage/concrete/pockets/service/Initialize()
 	. = ..()
-	can_hold = GLOB.servicebelt_allowed
+	can_hold = GLOB.toolbelt_allowed
 
 /// crafter apron
 /datum/component/storage/concrete/pockets/crafter
@@ -228,7 +228,7 @@
 
 /datum/component/storage/concrete/pockets/farmer/Initialize()
 	. = ..()
-	can_hold = GLOB.plantbelt_allowed
+	can_hold = GLOB.toolbelt_allowed
 
 /// Mini bandolier
 /datum/component/storage/concrete/pockets/bulletbelt

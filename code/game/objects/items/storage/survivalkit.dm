@@ -1,151 +1,127 @@
-/obj/item/storage/survivalkit
-	name = "survival kit"
-	desc = "A robust leather pouch containing the essentials for wasteland survival."
+/// Survival pouch
+/obj/item/storage/survivalkit // 3 slots, suffer
+	name = "pocket pouch"
+	desc = "A robust leather pocket pouch for all the essentials for wasteland survival."
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+	component_type = /datum/component/storage/concrete/box/survivalkit
+	slot_flags = ITEM_SLOT_POCKET | ITEM_SLOT_BELT
 
 /obj/item/storage/survivalkit/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
-	new /obj/item/stack/medical/gauze/improvised(src)
-	new /obj/item/stack/medical/mesh/aloe(src)
-	new /obj/item/flashlight/seclite(src)
-	new /obj/item/reagent_containers/pill/radx(src)
+	new /obj/item/flashlight(src)
+	new /obj/item/flashlight/glowstick(src)
+	new /obj/item/melee/onehanded/knife/hunting(src)
 
-/obj/item/storage/survivalkit_khan
+/// Empty kit!
+/obj/item/storage/survivalkit/empty/PopulateContents()
+	return
+
+/obj/item/storage/survivalkit/khan
 	name = "survival kit"
 	desc = "A robust leather pouch containing essentials a Khan might need in the wasteland."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/storage/survivalkit_khan/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+/obj/item/storage/survivalkit/khan/empty/PopulateContents()
+	return
+
+/// Tribal pouch!
+/obj/item/storage/survivalkit/tribal
+	name = "tribal pouch"
+	desc = "A robust leather pocket pouch for all the essentials for wasteland tribal survival."
+	icon_state = "survivalkit_tribal"
+
+/obj/item/storage/survivalkit/tribal/PopulateContents()
+	new /obj/item/flashlight/flare/torch(src)
+	new /obj/item/flashlight/flare/torch(src)
+	new /obj/item/melee/onehanded/knife/bone(src)
+
+/obj/item/storage/survivalkit/tribal/empty/PopulateContents()
+	return
+
+/// Chieftaint pouch!
+/obj/item/storage/survivalkit/tribal/chief
+	name = "chieftain pouch"
+	desc = "A robust leather pouch containing the essentials for wasteland survival."
+	icon_state = "survivalkit_tribal"
+
+/// Outlaw pouch!
+/obj/item/storage/survivalkit/outlaw
+	name = "rugged pouch"
+	desc = "A robust leather pouch containing the essentials for wasteland survival."
+	icon_state = "survivalkit_rugged"
+
+/obj/item/storage/survivalkit/outlaw/PopulateContents()
+	new /obj/item/flashlight(src)
+	new /obj/item/flashlight/glowstick(src)
+	new /obj/item/melee/onehanded/knife/bowie(src)
+	
+/obj/item/storage/survivalkit/outlaw/empty/PopulateContents()
+	return
+
+/// Combat Kit!
+/obj/item/storage/survivalkit/combat
+	name = "combat kit"
+	desc = "A robust leather kit for combat equipment."
+	icon_state = "survivalkit_bullet"
+	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/combat
+
+/obj/item/storage/survivalkit/combat/empty/PopulateContents()
+	return
+
+/// Medical pouch!
+/obj/item/storage/survivalkit/medical
+	name = "survival medkit"
+	desc = "A robust leather medipouch for quick-access medical equipment."
+	icon_state = "survivalkit_medical"
+	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/medical
+
+/obj/item/storage/survivalkit/medical/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/medx(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/reagent_containers/pill/radx(src)
-
-/obj/item/storage/survivalkit_tribal
-	name = "tribal survival kit"
-	desc = "A robust leather pouch containing the essentials for wasteland survival."
-	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/storage/survivalkit_tribal/PopulateContents() //used by legion
-	. = ..()
-	new /obj/item/reagent_containers/pill/healingpowder(src)
-	new /obj/item/stack/medical/gauze/improvised(src)
-	new /obj/item/stack/medical/mesh/aloe(src)
-	new /obj/item/stack/medical/suture/emergency(src)
-	new /obj/item/flashlight/flare/torch(src)
-	new /obj/item/flashlight/flare/torch(src)
-
-/obj/item/storage/survivalkit_outlaw
-	name = "survival kit"
-	desc = "A robust leather pouch containing the essentials for wasteland survival."
-	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/storage/survivalkit_outlaw/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
-	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/flashlight/flare(src)
-	new /obj/item/reagent_containers/pill/radx(src)
 
-/obj/item/storage/survivalkit_tribal/chief
+/obj/item/storage/survivalkit/medical/empty/PopulateContents()
+	return
 
-/obj/item/storage/survivalkit_tribal/chief/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/pill/healingpowder(src)
-	new /obj/item/reagent_containers/pill/healingpowder(src)
-	new /obj/item/reagent_containers/pill/patch/healpoultice(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/flashlight/flare/torch(src)
-
-/obj/item/storage/survivalkit_adv
-	name = "survival kit"
-	desc = "A robust leather pouch containing the essentials for wasteland survival."
-	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/storage/survivalkit_adv/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/flashlight/seclite(src)
-	new /obj/item/stack/medical/suture(src)
-	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/reagent_containers/pill/radx(src)
-
-/obj/item/storage/survivalkit_aid
-	name = "individual first aid kit"
+/// Follower pouch!
+/obj/item/storage/survivalkit/medical/follower
+	name = "pocket first-aid kit"
 	desc = "A robust leather pouch containing the essentials for trauma care."
-	icon_state = "ifak"
-	w_class = WEIGHT_CLASS_NORMAL
+	icon_state = "survivalkit_medical"
+	color = "#5dc9ff"
+	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/medical
 
-/obj/item/storage/survivalkit_aid/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-
-/obj/item/storage/survivalkit_aid/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/suture(src)
-	new /obj/item/stack/medical/ointment(src)
-	new /obj/item/tank/internals/emergency_oxygen(src)
-
-/obj/item/storage/survivalkit_aid_adv
-	name = "advanced-individual first aid kit"
-	desc = "A robust leather pouch containing the essentials for trauma care."
-	icon_state = "ifak"
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/storage/survivalkit_aid_adv/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-
-/obj/item/storage/survivalkit_aid_adv/PopulateContents()
-	. = ..()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak/super(src)
+/obj/item/storage/survivalkit/medical/follower/PopulateContents()
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak/epipak(src)
 	new /obj/item/stack/medical/gauze/adv(src)
 	new /obj/item/stack/medical/suture/medicated(src)
 	new /obj/item/stack/medical/mesh/advanced(src)
 
-/obj/item/storage/survivalkit_empty
-	name = "survival kit"
-	desc = "A robust leather pouch containing the essentials for wasteland survival."
-	icon_state = "survivalkit"
-	w_class = WEIGHT_CLASS_NORMAL
+/// Tribal med pouch!
+/obj/item/storage/survivalkit/medical/tribal
+	name = "pocket medicine bag"
+	desc = "A robust leather pouch containing the essentials for tribal trauma care."
+	icon_state = "survivalkit_tribal"
+	color = "#d1ffb3"
+	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/medical
 
-/obj/item/storage/survivalkit_triple_empty
+/obj/item/storage/survivalkit/medical/tribal/PopulateContents()
+	new /obj/item/reagent_containers/pill/healingpowder(src)
+	new /obj/item/reagent_containers/pill/healingpowder(src)
+	new /obj/item/stack/medical/gauze/improvised(src)
+	new /obj/item/stack/medical/mesh/aloe(src)
+
+/obj/item/storage/survivalkit/medical/tribal/empty/PopulateContents()
+	return
+
+/// Huge pouch!
+/obj/item/storage/survivalkit/triple
 	name = "large survival kit"
 	desc = "A large, robust set of leather pouches tailored to hold lots and lots of tiny things. This one won't fit in your pocket, but it comes with straps that'll attach to most armors. Kinda makes a mess of your stuff though."
-	icon_state = "survivalkit"
+	icon_state = "survivalkit_triple"
+	component_type = /datum/component/storage/concrete/box/survivalkit/triple
 	w_class = WEIGHT_CLASS_BULKY
 
-/obj/item/storage/survivalkit_triple_empty/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_TINY
-	STR.max_items = STORAGE_TRIPLEKIT_MAX_ITEMS
-	STR.max_combined_w_class = STORAGE_TRIPLEKIT_MAX_VOLUME
-	STR.limited_random_access = TRUE
-	STR.limited_random_access_stack_position = 3
-
-/obj/item/storage/survivalkit_empty/PopulateContents()
-	. = ..()
+/obj/item/storage/survivalkit/triple/PopulateContents()
+	return

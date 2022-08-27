@@ -499,36 +499,6 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
-/datum/crafting_recipe/cowboyhat
-	name = "Cowboy Hat"
-	result = /obj/item/clothing/head/f13/cowboy
-	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/cloth = 1)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/cowboyhatrustic
-	name = "Rustic Cowboy Hat"
-	result = /obj/item/clothing/head/helmet/f13/brahmincowboyhat
-	reqs = list(/obj/item/stack/sheet/leather = 2,
-				/obj/item/stack/sheet/cloth = 1)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/mantle
-	name = "Hide mantle"
-	result = /obj/item/clothing/suit/armor/outfit/jacket/mantle
-	reqs = list(/obj/item/stack/sheet/leather = 3,
-				/obj/item/stack/sheet/hay = 2)
-	tools = list(TOOL_WORKBENCH)
-	time = 15
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
 /datum/crafting_recipe/poncho
 	name = "Poncho"
 	result = /obj/item/clothing/neck/mantle/poncho
@@ -553,43 +523,6 @@ datum/crafting_recipe/steelbib/heavy
 	result = /obj/item/clothing/under/f13/rag
 	reqs = list(/obj/item/stack/sheet/cloth = 2)
 	time = 5
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/cloak
-	name = "Brown cloak"
-	result = /obj/item/clothing/suit/hooded/cloak/desert
-	reqs = list(/obj/item/stack/sheet/leather = 3)
-	tools = list(TOOL_WORKBENCH)
-	time = 25
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/survivalpouch
-	name = "empty survival pouch"
-	result = /obj/item/storage/survivalkit_empty
-	reqs = list(/obj/item/stack/sheet/leather = 3)
-	tools = list(TOOL_WORKBENCH)
-	time = 25
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/triplesurvivalpouch
-	name = "empty large survival pouch"
-	result = /obj/item/storage/survivalkit_triple_empty
-	reqs = list(/obj/item/stack/sheet/leather = 10)
-	tools = list(TOOL_WORKBENCH)
-	time = 25
-	category = CAT_CLOTHING
-	subcategory = CAT_WASTELAND
-
-/datum/crafting_recipe/leathersack
-	name = "leather sack"
-	result = /obj/item/storage/bag/trash/sack
-	reqs = list(/obj/item/stack/sheet/leather = 10,
-				/obj/item/stack/sheet/hay = 6)
-	tools = list(TOOL_WORKBENCH)
-	time = 30
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
 
