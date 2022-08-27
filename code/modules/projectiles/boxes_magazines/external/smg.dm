@@ -11,6 +11,8 @@
 	caliber = list(CALIBER_10MM)
 	max_ammo = 36
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/cg45/empty
 	start_empty = TRUE
@@ -23,6 +25,8 @@
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 30
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/greasegun/empty
 	start_empty = 1
@@ -33,6 +37,8 @@
 	icon_state = "uzi9mm"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 32
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/uzim9mm/update_icon()
 	..()
@@ -46,6 +52,8 @@
 	icon_state = "rock"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	max_ammo = 20
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/uzim9mm/rockwell/empty
 	start_empty = TRUE
@@ -58,6 +66,8 @@
 	caliber = list(CALIBER_9MM)
 	max_ammo = 71
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/pps9mm/empty
 	start_empty = 1
@@ -70,6 +80,8 @@
 	caliber = list(CALIBER_22LR)
 	max_ammo = 180
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m22smg/empty
 	start_empty = 1
@@ -81,6 +93,8 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	caliber = list(CALIBER_45ACP)
 	max_ammo = 50
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/tommygunm45/stick
 	name = "Thompson stick magazine (.45)"
@@ -89,6 +103,8 @@
 	ammo_type = /obj/item/ammo_casing/c45
 	max_ammo = 20
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/tommygunm45/empty
 	start_empty = 1
@@ -103,6 +119,8 @@
 	ammo_type = /obj/item/ammo_casing/p14mm
 	caliber = list(CALIBER_14MM)
 	max_ammo = 21
+	custom_materials = list(/datum/material/iron = MATS_SMG)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/smg14/empty
 	start_empty = 1
@@ -114,6 +132,7 @@
 	ammo_type = /obj/item/ammo_casing/p14mm
 	max_ammo = 27
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
 
 /obj/item/ammo_box/magazine/smg14/stacked/empty
 	start_empty = 1
@@ -126,6 +145,8 @@
 	caliber = list(CALIBER_10MM)
 	max_ammo = 50
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SMG_EXTENDED)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/m10mm_p90/empty
 	start_empty = 1

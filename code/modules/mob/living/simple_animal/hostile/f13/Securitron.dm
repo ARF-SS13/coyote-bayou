@@ -18,7 +18,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	move_to_delay = 5
-	stat_attack = SOFT_CRIT
 	robust_searching = TRUE
 	maxHealth = 120
 	health = 120
@@ -35,6 +34,8 @@
 	minimum_distance = 1
 	retreat_distance = 4
 	extra_projectiles = 2
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	ranged_ignores_vision = TRUE
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	a_intent = "harm"
@@ -59,12 +60,20 @@
 	if(!Proj)
 		CRASH("[src] securitron invoked bullet_act() without a projectile")
 	if(prob(5) && health > 1)
-		visible_message(span_danger("\The [src] releases a defensive flashbang!"))
 		var/flashbang_turf = get_turf(src)
 		if(!flashbang_turf)
 			return
-		var/obj/item/grenade/flashbang/sentry/S = new /obj/item/grenade/flashbang/sentry(flashbang_turf)
+		var/obj/item/grenade/S
+		switch(rand(1,10))
+			if(1)
+				S = new /obj/item/grenade/flashbang/sentry(flashbang_turf)
+			if(2)
+				S = new /obj/item/grenade/stingbang(flashbang_turf)
+			if(3 to 10)
+				S = new /obj/item/grenade/smokebomb(flashbang_turf)
+		visible_message(span_danger("\The [src] releases a defensive [S]!"))
 		S.preprime(user = null)
+
 	if(prob(75) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
 		return ..()
 	else

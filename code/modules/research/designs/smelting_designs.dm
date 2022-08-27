@@ -61,11 +61,11 @@
 	maxstack = 50
 
 /datum/design/alienalloy
-	name = "Polymer Alloy" //Fortuna edit: alien alloy -> polymer
-	desc = "A sheet of reverse-engineered polymer alloy."
+	name = "Saturnite Alloy" //Fortuna edit: alien alloy -> polymer, CB - Edit -> Saturnite
+	desc = "A sheet of reverse-engineered Saturnite alloy."
 	id = "alienalloy"
 	build_type = PROTOLATHE | SMELTER
-	materials = list(/datum/material/iron = 4000, /datum/material/plasma = 4000)
+	materials = list(/datum/material/titanium = 2000, /datum/material/plastic = 2000, /datum/material/plasma = 4000)
 	build_path = /obj/item/stack/sheet/mineral/abductor
 	category = list("Stock Parts")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO | DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

@@ -2,7 +2,7 @@
 	max_items = 2
 	max_w_class = WEIGHT_CLASS_SMALL
 	max_combined_w_class = 50
-	rustle_sound = FALSE
+	rustle_sound = TRUE
 
 /datum/component/storage/concrete/pockets/handle_item_insertion(obj/item/I, prevent_warning, mob/user)
 	. = ..()
@@ -62,52 +62,6 @@
 /datum/component/storage/concrete/pockets/treasurer/Initialize()
 	. = ..()
 	can_hold = GLOB.storage_treasurer_can_hold
-
-
-/datum/component/storage/concrete/pockets/service
-	max_items = 7
-
-/datum/component/storage/concrete/pockets/service/overalls
-	max_w_class = WEIGHT_CLASS_NORMAL
-	max_combined_w_class = 50
-	rustle_sound = TRUE
-
-/datum/component/storage/concrete/pockets/service/Initialize()
-	. = ..()
-	can_hold = GLOB.servicebelt_allowed
-
-
-/datum/component/storage/concrete/pockets/crafter
-	max_items = 7
-
-/datum/component/storage/concrete/pockets/crafter/overalls
-	max_w_class = WEIGHT_CLASS_NORMAL
-	max_combined_w_class = 50
-	rustle_sound = TRUE
-
-/datum/component/storage/concrete/pockets/crafter/Initialize()
-	. = ..()
-	can_hold = GLOB.toolbelt_allowed
-
-
-/datum/component/storage/concrete/pockets/medical
-	max_items = 7
-
-/datum/component/storage/concrete/pockets/medical/Initialize()
-	. = ..()
-	can_hold = GLOB.medibelt_allowed
-
-/datum/component/storage/concrete/pockets/farmer
-	max_items = 7
-
-/datum/component/storage/concrete/pockets/farmer/overalls
-	max_w_class = WEIGHT_CLASS_NORMAL
-	max_combined_w_class = 50
-	rustle_sound = TRUE
-
-/datum/component/storage/concrete/pockets/farmer/Initialize()
-	. = ..()
-	can_hold = GLOB.plantbelt_allowed
 
 /datum/component/storage/concrete/pockets/tiny
 	max_items = 1
@@ -174,8 +128,113 @@
 	. = ..()
 	can_hold = GLOB.storage_holdout_can_hold
 
+/// Unarmored dusters
+/datum/component/storage/concrete/pockets/duster
+	max_items = STORAGE_SUIT_DUSTER_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_DUSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_DUSTER_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/// Armored dusters
+/datum/component/storage/concrete/pockets/duster/armored
+	max_items = STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_DUSTER_ARMOR_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/// Jackets
+/datum/component/storage/concrete/pockets/jacket
+	max_items = STORAGE_SUIT_JACKET_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_JACKET_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_JACKET_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/// Generic armor slot
+/datum/component/storage/concrete/pockets/armor
+	max_items = STORAGE_SUIT_GENERIC_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_GENERIC_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_GENERIC_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/// scarf
+/datum/component/storage/concrete/pockets/scarf
+	max_items = STORAGE_NECKPRON_GENERIC_MAX_ITEMS
+	max_w_class = STORAGE_NECKPRON_GENERIC_MAX_SIZE
+	max_combined_w_class = STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/// service apron
+/datum/component/storage/concrete/pockets/service
+	max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/service/overalls
+	max_items = STORAGE_SUIT_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/service/Initialize()
+	. = ..()
+	can_hold = GLOB.servicebelt_allowed
+
+/// crafter apron
+/datum/component/storage/concrete/pockets/crafter
+	max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/crafter/overalls
+	max_items = STORAGE_SUIT_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/crafter/Initialize()
+	. = ..()
+	can_hold = GLOB.toolbelt_allowed
+
+/// medi-apron
+/datum/component/storage/concrete/pockets/medical
+	max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/medical/overalls
+	max_items = STORAGE_SUIT_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/medical/Initialize()
+	. = ..()
+	can_hold = GLOB.medibelt_allowed
+
+/// farmer apron
+/datum/component/storage/concrete/pockets/farmer
+	max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
+
+/datum/component/storage/concrete/pockets/farmer/overalls
+	max_items = STORAGE_SUIT_SPECIALIZED_MAX_ITEMS
+	max_w_class = STORAGE_SUIT_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_SUIT_SPECIALIZED_MAX_TOTAL_SPACE
+	rustle_sound = TRUE
+
+/datum/component/storage/concrete/pockets/farmer/Initialize()
+	. = ..()
+	can_hold = GLOB.plantbelt_allowed
+
+/// Mini bandolier
 /datum/component/storage/concrete/pockets/bulletbelt
-	max_items = 4
+	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
 
 /datum/component/storage/concrete/pockets/bulletbelt/Initialize()
 	. = ..()
@@ -183,9 +242,9 @@
 
 /// Combat armor bandolier / holster
 /datum/component/storage/concrete/pockets/magpouch
-	max_w_class = WEIGHT_CLASS_SMALL
-	max_items = STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
-	max_combined_w_class = STORAGE_SHOULDER_HOLSTER_MAX_VOLUME
+	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
 
 /datum/component/storage/concrete/pockets/magpouch/Initialize()
 	. = ..()

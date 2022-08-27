@@ -55,14 +55,14 @@
  * High mobility
  * Mild environmental resistances
  * Low defense 
- * Lowish DT
+ * Low DT
  * 
- * +25 effective HP
+ * +20 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_LIGHT list(\
-		"linemelee" = 25, \
-		"linebullet" = 25, \
-		"linelaser" = 25, \
+		"linemelee" = 20, \
+		"linebullet" = 20, \
+		"linelaser" = 20, \
 		"energy" = 0, \
 		"bomb" = 0, \
 		"bio" = 10, \
@@ -70,7 +70,7 @@
 		"fire" = 10, \
 		"acid" = 10, \
 		"wound" = 5, \
-		"damage_threshold" = 3)
+		"damage_threshold" = 1)
 
 /* Medium armor values
  * Decent mobility
@@ -78,12 +78,12 @@
  * Decent defense 
  * Decent DT
  * 
- * +50 effective HP
+ * +35 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_MEDIUM list(\
-		"linemelee" = 50, \
-		"linebullet" = 50, \
-		"linelaser" = 50, \
+		"linemelee" = 35, \
+		"linebullet" = 35, \
+		"linelaser" = 35, \
 		"energy" = 5, \
 		"bomb" = 10, \
 		"bio" = 25, \
@@ -91,7 +91,7 @@
 		"fire" = 25, \
 		"acid" = 25, \
 		"wound" = 10, \
-		"damage_threshold" = 5)
+		"damage_threshold" = 3)
 
 /* Heavy armor values
  * Low mobility
@@ -99,12 +99,12 @@
  * High defense 
  * Lot of DT
  * 
- * +75 effective HP
+ * +45 effective HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_HEAVY list(\
-		"linemelee" = 75, \
-		"linebullet" = 75, \
-		"linelaser" = 75, \
+		"linemelee" = 45, \
+		"linebullet" = 45, \
+		"linelaser" = 45, \
 		"energy" = 0, \
 		"bomb" = 25, \
 		"bio" = 25, \
@@ -112,7 +112,7 @@
 		"fire" = 35, \
 		"acid" = 35, \
 		"wound" = 25, \
-		"damage_threshold" = 10)
+		"damage_threshold" = 5)
 
 /* Salvaged PA values
  * Next to no mobility
@@ -120,13 +120,13 @@
  * Great defense
  * Lots of DT
  * 
- * +125 effective HP
- * +75 laser HP
+ * +80 effective HP
+ * +20 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_SALVAGE list(\
-		"linemelee" = 125, \
-		"linebullet" = 125, \
-		"linelaser" = 200, \
+		"linemelee" = 80, \
+		"linebullet" = 80, \
+		"linelaser" = 100, \
 		"energy" = 30, \
 		"bomb" = 60, \
 		"bio" = 80, \
@@ -134,20 +134,20 @@
 		"fire" = 80, \
 		"acid" = 80, \
 		"wound" = 45, \
-		"damage_threshold" = 20)
+		"damage_threshold" = 10)
 
 /* Power armor values
  * High mobility
  * Amazing environmental resistances
  * OP defense
  * 
- * +200 effective HP
- * +50 laser HP
+ * +125 effective HP
+ * +25 laser HP
  * * * * * * * * * * * */
 #define ARMOR_VALUE_PA list(\
-		"linemelee" = 200, \
-		"linebullet" = 200, \
-		"linelaser" = 250, \
+		"linemelee" = 125, \
+		"linebullet" = 125, \
+		"linelaser" = 150, \
 		"energy" = 40, \
 		"bomb" = 90, \
 		"bio" = 100, \
@@ -155,7 +155,7 @@
 		"fire" = 95, \
 		"acid" = 95, \
 		"wound" = 100, \
-		"damage_threshold" = 30)
+		"damage_threshold" = 12)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values
@@ -331,22 +331,22 @@
  * T3 - Dedicated armor reinforcements
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_DT_T1 list(\
-		"damage_threshold" = 1)
+		"damage_threshold" = 0.5)
 
 #define ARMOR_MODIFIER_UP_DT_T2 list(\
-		"damage_threshold" = 3)
+		"damage_threshold" = 1)
 
 #define ARMOR_MODIFIER_UP_DT_T3 list(\
-		"damage_threshold" = 5)
+		"damage_threshold" = 2)
 
 #define ARMOR_MODIFIER_DOWN_DT_T1 list(\
 		"damage_threshold" = -1)
 
 #define ARMOR_MODIFIER_DOWN_DT_T2 list(\
-		"damage_threshold" = -3)
+		"damage_threshold" = -2)
 
 #define ARMOR_MODIFIER_DOWN_DT_T3 list(\
-		"damage_threshold" = -5)
+		"damage_threshold" = -3)
 
 #define ARMOR_MODIFIER_DOWN_DT_T4 list(\
 		"damage_threshold" = -20)
@@ -413,7 +413,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
  * Power Armor
  * Basically driving a car
 */
-#define ARMOR_SLOWDOWN_PA 0.3
+#define ARMOR_SLOWDOWN_PA 1
 
 /* Armor slowdown modifiers
  * Multipliers to armor slowdown 

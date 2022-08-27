@@ -49,14 +49,14 @@
 	icon_state = "kembleup"
 	item_state = "kembleup"
 
-/obj/item/storage/belt/holster/kemble
+/obj/item/storage/belt/shoulderholster/kemble
 	name = "ranger overcoat"
 	desc = "An insulated coat taken from a set of riot gear. This one is apparently reversible (alt-click to toggle colours)."
 	icon_state = "kemblecoat_green"
 	item_state = "kemblecoat_green"
 	alternate_worn_layer = HAIR_LAYER-1
 
-/obj/item/storage/belt/holster/kemble/AltClick(mob/user)
+/obj/item/storage/belt/shoulderholster/kemble/AltClick(mob/user)
 	..()
 	if(icon_state == "kemblecoat_green")
 		icon_state = "kemblecoat_tan"

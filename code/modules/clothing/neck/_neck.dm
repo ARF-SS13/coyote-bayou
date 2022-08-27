@@ -89,6 +89,7 @@
 	icon_state = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	dog_fashion = /datum/dog_fashion/head
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"

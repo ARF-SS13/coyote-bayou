@@ -11,7 +11,7 @@
 	extra2 = FALSE
 	color_src = MATRIXED
 	gender_specific = 0
-	icon = 'modular_citadel/icons/mob/mam_markings.dmi'
+	icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	recommended_species = list("mammal", "xeno", "slimeperson", "podweak", "shadekin", "ghoul")
 	matrixed_sections = MATRIX_ALL // this value is used if there is no value in covered_limbs, don't rely on it, it's a backup value
 	var/list/covered_limbs = list("Head", "Chest", "Left Leg", "Right Leg", "Left Arm", "Right Arm")
@@ -20,7 +20,7 @@
 	name = "None"
 	icon_state = "none"
 	ckeys_allowed = list("yousshouldnteverbeseeingthisyoumeme")
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	relevant_layers = null
 	matrixed_sections = 0
 
@@ -37,19 +37,19 @@
 /datum/sprite_accessory/mam_body_markings/bee
 	name = "Bee"
 	icon_state = "bee"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/belly
 	name = "Belly"
 	icon_state = "belly"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/bellyslim
 	name = "Bellyslim"
 	icon_state = "bellyslim"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/cow
@@ -100,7 +100,7 @@
 /datum/sprite_accessory/mam_body_markings/frog
 	name = "Frog"
 	icon_state = "frog"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/goat
@@ -111,7 +111,7 @@
 /datum/sprite_accessory/mam_body_markings/handsfeet
 	name = "Handsfeet"
 	icon_state = "handsfeet"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/hawk
@@ -132,7 +132,7 @@
 /datum/sprite_accessory/mam_body_markings/insect
 	name = "Insect"
 	icon_state = "insect"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 
 /datum/sprite_accessory/mam_body_markings/lab
 	name = "Lab"
@@ -162,7 +162,7 @@
 /datum/sprite_accessory/mam_body_markings/plain
 	name = "Plain"
 	icon_state = "plain"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/possum
@@ -183,7 +183,7 @@
 /datum/sprite_accessory/mam_body_markings/pede
 	name = "Scolipede"
 	icon_state = "scolipede"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_GREEN, "Chest" = MATRIX_GREEN_BLUE, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/shark
@@ -214,7 +214,7 @@
 /datum/sprite_accessory/mam_body_markings/turian
 	name = "Turian"
 	icon_state = "turian"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/wolf
@@ -225,7 +225,7 @@
 /datum/sprite_accessory/mam_body_markings/xeno
 	name = "Xeno"
 	icon_state = "xeno"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_BLUE, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 // sticking old lizard markings here for now
@@ -237,7 +237,7 @@
 /datum/sprite_accessory/mam_body_markings/guilmon
 	name = "Guilmon"
 	icon_state = "guilmon"
-	icon = 'modular_citadel/icons/mob/markings_notmammals.dmi'
+	icon = 'icons/mob/mam/citadel/markings_notmammals.dmi'
 	covered_limbs = list("Head" = MATRIX_RED_BLUE, "Chest" = MATRIX_GREEN_BLUE, "Left Leg" = MATRIX_BLUE, "Right Leg" = MATRIX_BLUE, "Left Arm" = MATRIX_GREEN_BLUE, "Right Arm" = MATRIX_GREEN_BLUE)
 
 /datum/sprite_accessory/mam_body_markings/ltiger

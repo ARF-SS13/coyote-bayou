@@ -5,6 +5,8 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 8
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/m12g/update_icon()
 	..()
@@ -52,6 +54,8 @@
 	caliber = list(CALIBER_SHOTGUN)
 	max_ammo = 12
 	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
+	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/ammo_box/magazine/d12g/empty
 	start_empty = 1

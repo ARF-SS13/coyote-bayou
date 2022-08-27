@@ -3,7 +3,7 @@
 	result = /obj/machinery/workbench/bottler
 	reqs = list(/obj/item/stack/sheet/mineral/wood = 10,
 				/obj/item/stack/crafting/metalparts = 2,
-				/obj/item/crafting/reloader = 1)
+				/obj/item/circuitboard/machine/autolathe/ammo/improvised = 1)
 	tools = list(TOOL_WRENCH, TOOL_SCREWDRIVER)
 	time = 80
 	category = CAT_MISC

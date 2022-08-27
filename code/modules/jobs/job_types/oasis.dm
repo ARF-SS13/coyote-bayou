@@ -272,7 +272,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	uniform = /obj/item/clothing/under/f13/sheriff
-	belt = /obj/item/storage/belt/military/army
+	belt = /obj/item/storage/belt/army
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/storage/bag/money/small/den
@@ -289,7 +289,7 @@ Mayor
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
 	uniform = /obj/item/clothing/under/f13/police/formal
-	neck = /obj/item/storage/belt/holster/ranger45
+	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
@@ -302,7 +302,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/chief
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
-	neck = /obj/item/storage/belt/holster/ranger45
+	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	shoes = /obj/item/clothing/shoes/combat
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
 	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1, 
@@ -371,8 +371,8 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/military/assault
-	suit_store = /obj/item/storage/belt/holster/legholster/police
+	belt = /obj/item/storage/belt/army/assault
+	suit_store = /obj/item/storage/belt/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
@@ -387,7 +387,7 @@ Mayor
 	name = "Frontier Justice"
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
@@ -400,7 +400,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
-	belt = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -597,7 +597,7 @@ Mayor
 	suit = /obj/item/clothing/suit/armor/light/leather/rig
 	uniform = /obj/item/clothing/under/f13/lumberjack
 	head = /obj/item/clothing/head/hardhat
-	belt = /obj/item/storage/belt/mining/alt
+	belt = /obj/item/storage/belt/utility/mining/alt
 	shoes = /obj/item/clothing/shoes/f13/miner
 	backpack_contents = list(
 		/obj/item/t_scanner/adv_mining_scanner = 1,
@@ -685,7 +685,7 @@ Mayor
 		/obj/item/storage/medical/ancientfirstaid = 1,
 		/obj/item/circuitboard/machine/limbgrower = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/belt/holster/legholster/police = 1
+		/obj/item/storage/belt/legholster/police = 1
 		)
 	
 /datum/outfit/loadout/mixer
@@ -897,7 +897,7 @@ Mayor
 	suit = /obj/item/clothing/under/f13/mechanic
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/noslip
-	neck = /obj/item/storage/belt/holster/ranger44
+	neck = /obj/item/storage/belt/shoulderholster/ranger44
 	backpack_contents = list(/obj/item/storage/bag/trash = 1, 
 	/obj/item/reagent_containers/spray/cleaner = 1,
 	/obj/item/mop = 1,
@@ -911,14 +911,14 @@ Mayor
 /datum/outfit/loadout/artisan
 	name = "Artisan"
 	uniform = /obj/item/clothing/under/f13/cowboyg
-	belt = /obj/item/storage/belt/mining/alt
+	belt = /obj/item/storage/belt/utility/mining/alt
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	shoes = /obj/item/clothing/shoes/f13/military/leather
-	neck = /obj/item/storage/belt/holster/ranger357 
+	neck = /obj/item/storage/belt/shoulderholster/ranger357 
 	backpack_contents = list(/obj/item/twohanded/sledgehammer/simple = 1,
 	/obj/item/book/granter/crafting_recipe/ODF = 1,
 	/obj/item/clothing/glasses/welding = 1,
-	/obj/item/storage/belt/mining/alt = 1,
+	/obj/item/storage/belt/utility/mining/alt = 1,
 	/obj/item/melee/smith/hammer/premade = 1,
 	/obj/item/stack/sheet/mineral/titanium = 15,
 	/obj/item/pickaxe/mini = 1,
@@ -1104,7 +1104,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(/obj/item/cane=1,
-		/obj/item/storage/belt/holster/ranger45 =1,
+		/obj/item/storage/belt/shoulderholster/ranger45 =1,
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1,

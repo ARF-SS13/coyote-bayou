@@ -96,7 +96,7 @@
 	//mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny //fuck it everyone gets pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket //fuck it everyone gets pockets
 	cold_protection = CHEST|GROIN
 	heat_protection = CHEST|GROIN
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
@@ -170,7 +170,7 @@
 	desc = "It's a vest made of tanned leather."
 	icon_state = "tanleather"
 	item_state = "det_suit"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	body_parts_hidden = GROIN
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
@@ -184,7 +184,7 @@
 	desc = "A grey vest, adorned with bartenders arm cuffs, a classic western look."
 	icon_state = "westender"
 	item_state = "lb_suit"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy/grey
 	name = "grey vest"
@@ -202,7 +202,7 @@
 	desc = "its a jacket!!"
 	icon_state = "veteran"
 	item_state = "suit-command"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/armor/outfit/jacket/merc
@@ -255,6 +255,12 @@
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
 
+/obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
+	name = "black formal overcoat"
+	desc = "A neat black overcoat that's only slightly weathered from a nuclear apocalypse."
+	icon_state = "black_oversuit"
+	item_state = "banker"
+	
 /obj/item/clothing/suit/armor/outfit/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
@@ -282,6 +288,7 @@
 	item_state = "police_chief"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
+
 // until togglesuits are made into normal suits, treat these as jackets
 
 /obj/item/clothing/suit/toggle/labcoat
@@ -291,7 +298,7 @@
 	item_state = "labcoat"
 	blood_overlay_type = "coat"
 	// body_parts_covered = CHEST|ARMS
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	togglename = "buttons"
 	species_exception = list(/datum/species/golem)
 	armor = ARMOR_VALUE_CLOTHES
@@ -343,7 +350,6 @@
 	icon_state = "sci_dep_jacket"
 	item_state = "sci_dep_jacket"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 
 /obj/item/clothing/suit/toggle/labcoat/depjacket/med
 	name = "medical jacket"
@@ -398,7 +404,6 @@
 	desc = "A red leather jacket, with the word \"Warriors\" sewn above the white wings on the back."
 	icon_state = "warriors"
 	item_state = "owl"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/wanderer
@@ -406,7 +411,6 @@
 	desc = "A zipped-up hoodie made of tanned leather."
 	icon_state = "wanderer"
 	item_state = "owl"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/toggle/labcoat/followers
@@ -501,18 +505,11 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
 	armor_tier_desc = ARMOR_CLOTHING_LIGHT
 	stiffness = LIGHT_STIFFNESS
-
-
-/obj/item/clothing/suit/armor/light/Initialize()
-	/// make sure the parents work first for this, child lists take priority
-	. = ..()
-	/// adds the list to the allowed list
-	allowed |= GLOB.light_armor_allowed
 
 ////////////////////////
 // LIGHT TRIBAL ARMOR //
@@ -530,11 +527,6 @@
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
-
-/obj/item/clothing/suit/armor/light/tribal/Initialize()
-	. = ..()
-	/// allows more melee stuff, another slot for a quiver too
-	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/armor/light/tribal/wastetribe
 	name = "wasteland tribe armor"
@@ -644,7 +636,7 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 100
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	body_parts_hidden = 0
 	slowdown = ARMOR_SLOWDOWN_LIGHT * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_LIGHT
@@ -655,9 +647,6 @@
 	. = ..()
 	/// i hate my extended family
 	allowed = GLOB.default_all_armor_slot_allowed
-	allowed |= GLOB.light_armor_allowed
-	allowed -= GLOB.light_armor_disallowed
-	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/hooded/cloak/goliath
 	name = "deathclaw cloak"
@@ -900,14 +889,8 @@
 	strip_delay = 10
 	equip_delay_other = 10
 	max_integrity = 150
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
-
-/obj/item/clothing/suit/armor/light/raider/Initialize()
-	/// make sure the parents work first for this, child lists take priority
-	. = ..()
-	/// adds in melee, guns, raidery shit
-	allowed |= GLOB.raider_armor_allowed
 	
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
@@ -960,7 +943,7 @@
 	strip_delay = 20
 	equip_delay_other = 20
 	max_integrity = 150
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge // big pockets!
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 	// Nothing extra fancy for their storage, but they can carry an extra 2 normal-sized guns in their pockets
 
@@ -1189,17 +1172,9 @@
 	strip_delay = 20
 	equip_delay_other = 20
 	max_integrity = 150
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = ARMS | CHEST
-
-/obj/item/clothing/suit/armor/light/leather/Initialize()
-	/// make sure the parents work first for this, child lists take priority
-	. = ..()
-	/// Leather armor kinda sucks, so heck it, they can carry all guns and melee too
-	allowed |= GLOB.armor_allow_guns_and_melee
-	/// tribal shit too
-	allowed |= GLOB.tribal_armor_allowed
 
 // Recipe the above + 2 gecko hides
 /obj/item/clothing/suit/armor/light/leather/leathermk2
@@ -1207,7 +1182,7 @@
 	desc = "Armor in the motorcycle-football style, either with intact original polymer plating, or reinforced with gecko hide."
 	icon_state = "leather_armor_mk2"
 	item_state = "leather_armor_mk2"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/armor/light/leather/leathersuit
 	name = "leather suit"
@@ -1272,7 +1247,7 @@
 	icon_state = "r_gear_rig"
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	
 ////////////////
 // ARMOR KITS // 
@@ -1289,11 +1264,6 @@
 	siemens_coefficient = 1.1
 	body_parts_hidden = 0
 	armor_tokens = list(ARMOR_MODIFIER_UP_DT_T1)
-
-/obj/item/clothing/suit/armor/light/kit/Initialize()
-	/// make sure the parents work first for this, child lists take priority
-	. = ..()
-	allowed |= GLOB.raider_armor_allowed
 
 /obj/item/clothing/suit/armor/light/kit/punk
 	name = "punk armor kit"
@@ -1367,17 +1337,11 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tier_desc = ARMOR_CLOTHING_MEDIUM
 	stiffness = MEDIUM_STIFFNESS
-
-/obj/item/clothing/suit/armor/medium/Initialize()
-	/// make sure the parents work first for this, child lists take priority
-	. = ..()
-	/// adds the list to the allowed list
-	allowed |= GLOB.medium_armor_allowed
 
 ////////////////////////////
 /// MEDIUM TRIBAL ARMOR ////
@@ -1394,13 +1358,8 @@
 	strip_delay = 30
 	equip_delay_other = 50
 	max_integrity = 200
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT // lighter, cus melee focus
-
-/obj/item/clothing/suit/armor/medium/tribal/Initialize()
-	. = ..()
-	/// allows more melee stuff, another slot for a quiver too
-	allowed |= GLOB.tribal_armor_allowed
 
 /obj/item/clothing/suit/armor/medium/tribal/chitinarmor
 	name = "insect chitin armor"
@@ -1442,7 +1401,6 @@
 	desc = "A simple leather bandolier and gecko hide chest covering, with an engraved metal pauldron and a set of black leather straps, one holding a shinpad in place. Commonly worn by the members of the Dead Horses tribe."
 	icon_state = "dead_horses_armour"
 	item_state = "dead_horses_armour"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bulletbelt
 	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/medium/tribal/bone
@@ -1646,10 +1604,6 @@
 	resistance_flags = FLAMMABLE
 	dog_fashion = null
 
-/obj/item/clothing/suit/armor/medium/vest/det_suit/Initialize()
-	. = ..()
-	allowed |= GLOB.detective_vest_allowed
-
 /obj/item/clothing/suit/armor/medium/vest/infiltrator
 	name = "insidious combat vest"
 	desc = "An insidious combat vest designed using Syndicate nanofibers to absorb the supreme majority of kinetic blows. Although it doesn't look like it'll do too much for energy impacts."
@@ -1769,7 +1723,7 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	equip_delay_other = 50
 	max_integrity = 200
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1)
 
@@ -2068,7 +2022,7 @@
 	icon_state = "combatduster"
 	item_state = "combatduster"
 	permeability_coefficient = 0.9
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 
 ///brotherhood of steel
 /obj/item/clothing/suit/armor/medium/combat/brotherhood
@@ -2149,13 +2103,9 @@
 /obj/item/clothing/suit/armor/medium/raider
 	name = "base raider armor"
 	desc = "for testing"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1)
-
-/obj/item/clothing/suit/armor/medium/raider/Initialize()
-	. = ..()
-	allowed |= GLOB.raider_armor_allowed
 
 /obj/item/clothing/suit/armor/medium/raider/slam
 	name = "slammer raider armor"
@@ -2195,7 +2145,7 @@
 	desc = "An old military-grade pre-war combat armor under a weathered duster. It appears to be fitted with metal plates to replace the crumbling ceramic."
 	icon_state = "combatduster"
 	item_state = "combatduster"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
@@ -2283,18 +2233,11 @@
 	strip_delay = 50
 	equip_delay_other = 50
 	max_integrity = 300
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_HEAVY
 	armor_tier_desc = ARMOR_CLOTHING_HEAVY
 	stiffness = HEAVY_STIFFNESS
-
-
-/obj/item/clothing/suit/armor/heavy/Initialize()
-	. = ..()
-	allowed |= GLOB.light_armor_allowed
-	allowed |= GLOB.medium_armor_allowed
-	allowed |= GLOB.armor_allow_guns_and_melee
 
 /////////////////////
 //// BULLET VEST //// ...?
@@ -2322,6 +2265,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
 	icon_state = "tribal_heavy"
 	item_state = "tribal_heavy"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T1)
 
@@ -2567,7 +2511,7 @@
 	Now begone, report this to coders. NOW!"
 	icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_heavy.dmi'
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/huge
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_SALVAGE
 	armor_tier_desc = ARMOR_CLOTHING_SALVAGE
@@ -2656,7 +2600,7 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 20)
 	salvage_tool_behavior = TOOL_WELDER
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/massive
+	pocket_storage_component_path = null // quit ripping your power cell out ffs
 	/// Cell that is currently installed in the suit
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high
 	/// How much power the cell consumes each process tick
@@ -2684,9 +2628,6 @@
 
 /obj/item/clothing/suit/armor/power_armor/Initialize()
 	. = ..()
-	allowed |= GLOB.light_armor_allowed
-	allowed |= GLOB.medium_armor_allowed
-	allowed |= GLOB.armor_allow_guns_and_melee
 	if(ispath(cell))
 		cell = new cell(src)
 

@@ -17,7 +17,7 @@ SUBSYSTEM_DEF(research)
 	var/datum/techweb/enclave/enclave_tech //Could probably be used if enclave ever gets implemented as a faction
 	var/datum/techweb/unknown/unknown_tech //Global tech; all newly built consoles, departmental crafters, imprinters and servers will use this
 	var/datum/techweb/followers/followers_tech //Followers starting tech
-
+	var/datum/techweb/vault/vault_tech
 
 
 	//ERROR LOGGING
@@ -299,7 +299,7 @@ SUBSYSTEM_DEF(research)
 	var/list/point_types = list()				//typecache style type = TRUE list
 	//----------------------------------------------
 	var/list/BOSsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 7)	//citadel edit - techwebs nerf
-	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 35)
+	var/list/VAULTsingle_server_income = list(TECHWEB_POINT_TYPE_GENERIC = 20)
 	var/multiserver_calculation = FALSE
 	var/last_income
 	//^^^^^^^^ ALL OF THESE ARE PER SECOND! ^^^^^^^^
@@ -333,6 +333,7 @@ SUBSYSTEM_DEF(research)
 	enclave_tech = new /datum/techweb/enclave
 	unknown_tech = new /datum/techweb/unknown
 	followers_tech = new /datum/techweb/followers
+	vault_tech = new /datum/techweb/vault
 
 	for(var/A in subtypesof(/obj/item/seeds))
 		var/obj/item/seeds/S = A
@@ -368,10 +369,11 @@ SUBSYSTEM_DEF(research)
 				break	
 	var/income_time_difference = world.time - last_income
 		
-	science_tech.last_bitcoins = VAULTbitcoins  // Doesn't take tick drift into account
+	science_tech.last_bitcoins = bitcoins  // Doesn't take tick drift into account
 	bos_tech.last_bitcoins = BOSbitcoins
 	unknown_tech.last_bitcoins = bitcoins
 	followers_tech.last_bitcoins = bitcoins
+	vault_tech.last_bitcoins = VAULTbitcoins
 
 	for(var/i in bitcoins)
 		bitcoins[i] *= income_time_difference / 10
@@ -380,10 +382,11 @@ SUBSYSTEM_DEF(research)
 	for(var/i in VAULTbitcoins)
 		VAULTbitcoins[i] *= income_time_difference / 10
 
-	science_tech.add_point_list(VAULTbitcoins)
+	science_tech.add_point_list(bitcoins)
 	bos_tech.add_point_list(BOSbitcoins)
 	unknown_tech.add_point_list(bitcoins) //tbh these guys can get a fuckton of points, because it isn't even being used
 	followers_tech.add_point_list(bitcoins)
+	vault_tech.add_point_list(VAULTbitcoins)
 
 	last_income = world.time
 

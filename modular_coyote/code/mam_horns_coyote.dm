@@ -14,16 +14,22 @@
 	name = "Antlers"
 	icon_state = "antlers"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/horns/ramhorns
 	name = "ram horns"
 	icon_state = "ramhorns"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/horns/smallantlers
 	name = "Small Antlers"
 	icon_state = "smallantlers"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/horns/curledramhorns
 	name = "Curled Ram Horns"
@@ -124,3 +130,5 @@
 	name = "sheep horns"
 	icon_state = "sheephorn"
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED

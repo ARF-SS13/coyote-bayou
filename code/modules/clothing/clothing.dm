@@ -292,7 +292,7 @@
 	if(armor.energy)
 		armor_list += list("ENERGY" = armor.energy)
 	if(armor.damage_threshold)
-		armor_list += list("DT" = armor.damage_threshold)
+		armor_list += list("THRESHOLD" = armor.damage_threshold)
 	if(armor.wound)
 		environmental_list += list("WOUND" = armor.wound)
 
@@ -330,7 +330,7 @@
 				var/armor_amount = armor_list[dam_type]
 				readout += "\n[dam_type] [armor_amount]" //e.g. MELEE 27
 		if(LAZYLEN(environmental_list))
-			readout += "\n<b>ARMOR</b>"
+			readout += "\n<b>ENVIRONMENTAL</b>"
 			for(var/dam_type in environmental_list)
 				var/env_amount = environmental_list[dam_type]
 				readout += "\n[dam_type] [env_amount]" //e.g. MELEE 27

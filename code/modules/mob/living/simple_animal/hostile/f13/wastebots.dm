@@ -20,6 +20,7 @@
 	maxHealth = 104
 	healable = FALSE
 	stat_attack = CONSCIOUS
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
 	melee_damage_lower = 14
 	melee_damage_upper = 28
 	robust_searching = TRUE
@@ -89,8 +90,8 @@
 	projectiletype = /obj/item/projectile/f13plasma/scatter
 	extra_projectiles = 1
 	ranged = TRUE
-	retreat_distance = 2
-	minimum_distance = 2
+	retreat_distance = 4
+	minimum_distance = 4
 	check_friendly_fire = TRUE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/three, /obj/item/stock_parts/cell/ammo/mfc)
 

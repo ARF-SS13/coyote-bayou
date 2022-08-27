@@ -146,6 +146,4 @@
 /obj/item/grenade/flashbang/sentry
 	name = "defensive flashbang" //for sentrybots
 	desc = "Why are you staring at this?!"
-	flashbang_range = 7
-	det_time = 1 SECONDS
-
+	flashbang_range = 3
