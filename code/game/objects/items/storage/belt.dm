@@ -184,7 +184,7 @@
 	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.plantbelt_allowed
+	STR.can_hold = GLOB.toolbelt_allowed
 
 //////////////////
 /// Service belts
@@ -201,7 +201,7 @@
 	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.servicebelt_allowed
+	STR.can_hold = GLOB.toolbelt_allowed
 
 //////////////////
 /// Medical belts

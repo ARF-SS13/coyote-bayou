@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
 	/obj/item/ammo_box/a556/stripper,
 	/obj/item/ammo_box/needle,
 	/obj/item/ammo_box/foambox
-)))
+	)))
 
 GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -215,7 +215,8 @@ GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals
+	)))
 
 GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -226,7 +227,8 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals
+	)))
 
 GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/gun,
@@ -239,7 +241,8 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/throwing_star/spear,
-	/obj/item/restraints/legcuffs/bola)))
+	/obj/item/restraints/legcuffs/bola
+	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -256,7 +259,8 @@ GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/tank/internals/emergency_oxygen,
-	/obj/item/tank/internals/plasmaman)))
+	/obj/item/tank/internals/plasmaman
+	)))
 
 GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -270,7 +274,8 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
-	/obj/item/tank/internals/plasmaman)))
+	/obj/item/tank/internals/plasmaman
+	)))
 
 GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -286,7 +291,8 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
 	/obj/item/tank/internals/plasmaman,
-	/obj/item/toy)))
+	/obj/item/toy
+	)))
 
 ///things every armor can hold in their slot
 GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
@@ -306,55 +312,8 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen,
-	/obj/item/toy)))
-
-///extra things smith aprons can hold in their slot by default
-GLOBAL_LIST_INIT(smith_apron_allowed, typecacheof(list(
-	/obj/item/storage/belt/utility,
-	/obj/item/crowbar,
-	/obj/item/screwdriver,
-	/obj/item/weldingtool,
-	/obj/item/wirecutters,
-	/obj/item/wrench,
-	/obj/item/multitool,
-	/obj/item/flashlight,
-	/obj/item/stack/cable_coil,
-	/obj/item/t_scanner,
-	/obj/item/analyzer,
-	/obj/item/geiger_counter,
-	/obj/item/extinguisher/mini,
-	/obj/item/radio,
-	/obj/item/clothing/gloves,
-	/obj/item/holosign_creator,
-	/obj/item/assembly/signaler)))
-
-///extra things sexy maid aprons can hold in their slot by default
-GLOBAL_LIST_INIT(sexymaid_apron_allowed, typecacheof(list(
-	/obj/item/grenade/chem_grenade,
-	/obj/item/lightreplacer,
-	/obj/item/flashlight,
-	/obj/item/reagent_containers/glass/beaker,
-	/obj/item/reagent_containers/glass/bottle,
-	/obj/item/reagent_containers/spray,
-	/obj/item/soap,
-	/obj/item/holosign_creator,
-	/obj/item/forcefield_projector,
-	/obj/item/key/janitor,
-	/obj/item/clothing/gloves,
-	/obj/item/melee/flyswatter,
-	/obj/item/broom,
-	/obj/item/paint/paint_remover,
-	/obj/item/assembly/mousetrap,
-	/obj/item/screwdriver,
-	/obj/item/stack/cable_coil,
-	/obj/item/storage/belt/janitor)))
-
-///extra things farmer aprons can hold in their slot by default
-GLOBAL_LIST_INIT(farmer_apron_allowed, typecacheof(list(
-	/obj/item/hatchet, 
-	/obj/item/scythe, 
-	/obj/item/cultivator, 
-	/obj/item/shovel)))
+	/obj/item/toy
+	)))
 
 /// Things allowed in a toolbelt
 GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
@@ -396,8 +355,6 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/stack/marker_beacon,
 	/obj/item/reagent_containers/food/snacks/donut,
 	/obj/item/flashlight/seclite,
-	/obj/item/grenade/chem_grenade/metalfoam,
-	/obj/item/grenade/chem_grenade/smart_metal_foam,
 	/obj/item/construction,
 	/obj/item/circuitboard,
 	/obj/item/clothing/gloves,
@@ -406,12 +363,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/clothing/head/welding,
 	/obj/item/clothing/head/helmet/f13/raider/arclight,
 	/obj/item/holosign_creator,
-	/obj/item/assembly/signaler)))
-
-/// Things allowed in a jannibelt
-GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/grenade/chem_grenade,
-	/obj/item/lightreplacer,
 	/obj/item/flashlight,
 	/obj/item/reagent_containers/glass/beaker,
 	/obj/item/reagent_containers/glass/bottle,
@@ -430,22 +382,35 @@ GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/food,
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/revolver/m29/snub,
-	/obj/item/stack/cable_coil
-	)))
-
-/// Things allowed in a botanybelt
-GLOBAL_LIST_INIT(plantbelt_allowed, typecacheof(list(
-	/obj/item/shovel/spade,
+	/obj/item/shovel,
 	/obj/item/cultivator,
 	/obj/item/hatchet,
-	/obj/item/reagent_containers/spray,
 	/obj/item/book/manual/advice_farming,
 	/obj/item/reagent_containers/glass/bottle,
 	/obj/item/reagent_containers/glass/bucket,
 	/obj/item/reagent_containers/glass/beaker,
-	/obj/item/reagent_containers/food/drinks/flask,
+	/obj/item/reagent_containers/food/drinks,
 	/obj/item/storage/bag/plants,
-	/obj/item/plant_analyzer
+	/obj/item/plant_analyzer,
+	/obj/item/scythe, 
+	/obj/item/assembly/signaler,
+	/obj/item/grenade/chem_grenade,
+	/obj/item/lightreplacer,
+	/obj/item/flashlight,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
+	/obj/item/soap,
+	/obj/item/holosign_creator,
+	/obj/item/forcefield_projector,
+	/obj/item/key/janitor,
+	/obj/item/clothing/gloves,
+	/obj/item/melee/flyswatter,
+	/obj/item/broom,
+	/obj/item/paint/paint_remover,
+	/obj/item/assembly/mousetrap,
+	/obj/item/screwdriver,
+	/obj/item/stack/cable_coil,
 	)))
 
 /// Things allowed in a medibelt
@@ -502,7 +467,8 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/ammo_box/needle,
 	/obj/item/tele_iv,
 	/obj/item/stack/sticky_tape, //surgical tape
-	/obj/item/handsaw)))
+	/obj/item/handsaw
+	)))
 
 /// Things allowed in a holster (more of a secbelt)
 GLOBAL_LIST_INIT(gunbelt_allowed, GLOB.small_ammo_types + typecacheof(list(
@@ -520,7 +486,8 @@ GLOBAL_LIST_INIT(gunbelt_allowed, GLOB.small_ammo_types + typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/toy)))
+	/obj/item/toy
+	)))
 
 /// Things allowed in a bandolier
 GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
@@ -536,8 +503,9 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/grenade/flashbang,
 	/obj/item/assembly/flash,
 	/obj/item/melee/baton,
-	/obj/item/melee/onehanded/knife
-	/obj/item/toy)))
+	/obj/item/melee/onehanded/knife,
+	/obj/item/toy
+	)))
 
 /// Things allowed in a scabbard
 GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
@@ -547,7 +515,8 @@ GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/toy)))
+	/obj/item/toy
+	)))
 
 GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/syringe,
@@ -620,7 +589,7 @@ GLOBAL_LIST_INIT(storage_wallet_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/pill,
 	/obj/item/coin,
 	/obj/item/stack/f13Cash
-)))
+	)))
 
 GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/automatic/pistol/sig,
@@ -632,7 +601,7 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/gun/ballistic/revolver/needler,
 	/obj/item/gun/energy/laser/wattz
-)))
+	)))
 
 GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/food/snacks/grown,
@@ -648,7 +617,7 @@ GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
 	/obj/item/stack/sheet/sinew,
 	/obj/item/stack/sheet/bone,
 	/obj/item/fishy
-)))
+	)))
 
 GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
 	/obj/item/advanced_crafting_components,
@@ -662,7 +631,7 @@ GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
 	/obj/item/wirecutters/hightech,
 	/obj/item/blueprint/research,
 	/obj/item/multitool/advanced
-)))
+	)))
 
 GLOBAL_LIST_INIT(storage_bio_bag_can_hold, typecacheof(list(
 	/obj/item/slime_extract,
@@ -680,7 +649,8 @@ GLOBAL_LIST_INIT(storage_chemistry_bag_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/pill,
 	/obj/item/reagent_containers/glass/beaker,
 	/obj/item/reagent_containers/glass/bottle,
-	/obj/item/reagent_containers/chem_pack)))
+	/obj/item/reagent_containers/chem_pack
+	)))
 
 GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/food,
@@ -689,7 +659,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/kitchen/knife,
 	/obj/item/kitchen/rollingpin,
 	/obj/item/kitchen/fork,
-	/obj/item/storage/box)))
+	/obj/item/storage/box
+	)))
 
 /* * * * * * * * * * * * * * *
  * Belt slot inventory things
