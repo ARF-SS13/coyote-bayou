@@ -22,6 +22,7 @@ here's a tip, go search DEFINES/access.dm
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
@@ -89,6 +90,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/gentlesuit
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/citizenship_permits = 1, 
 		/obj/item/pen/fountain/captain = 1
 		)
@@ -188,6 +190,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/pda = 1
@@ -277,6 +280,7 @@ Mayor
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/storage/bag/money/small/den
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
@@ -378,6 +382,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1
@@ -653,6 +658,7 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/firstaid/regular,
 		/obj/item/clothing/accessory/armband/medblue
@@ -751,6 +757,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
@@ -839,6 +846,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
@@ -1051,6 +1059,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	suit_store = /obj/item/gun/ballistic/revolver/police
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda/detective=1,
 		/obj/item/camera/detective=1,
 		/obj/item/toy/crayon/white=1,
@@ -1093,6 +1102,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small = 1)
 
 /datum/outfit/loadout/classy
@@ -1175,7 +1185,9 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/den
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(/obj/item/storage/box/shopkeeper = 1)
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/box/shopkeeper = 1)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

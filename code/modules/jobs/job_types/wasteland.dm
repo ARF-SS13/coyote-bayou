@@ -988,7 +988,7 @@ Raider
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/reagent_containers/pill/radx,
+		/obj/item/storage/pill_bottle/chem_tin/radx
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
@@ -2379,6 +2379,7 @@ datum/job/wasteland/f13dendoctor
 	belt = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,
