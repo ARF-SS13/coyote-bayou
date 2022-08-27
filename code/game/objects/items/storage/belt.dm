@@ -167,9 +167,6 @@
 	icon_state = "ebelt"
 	item_state = "ebelt"
 
-//////////////////
-/// Plant belts
-
 // Gardener belt. Hold farming stuff thats small, also flasks (think hip flasks, not bottles as such)
 /obj/item/storage/belt/utility/gardener
 	name = "gardeners toolbelt"
@@ -185,9 +182,6 @@
 	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
 	STR.can_hold = GLOB.toolbelt_allowed
-
-//////////////////
-/// Service belts
 
 /obj/item/storage/belt/janitor
 	name = "janibelt"
