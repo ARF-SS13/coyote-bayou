@@ -66,8 +66,9 @@ Raider
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	belt = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/flare
+	box = /obj/item/storage/survivalkit/outlaw
+	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/melee/onehanded/club = 1,
@@ -333,8 +334,9 @@ Raider
 	suit_store = /obj/item/twohanded/spear/bonespear
 	shoes = /obj/item/clothing/shoes/sandal
 	belt = /obj/item/storage/backpack/spearquiver
-	box = /obj/item/storage/survivalkit_tribal
 	back = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit/tribal
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/book/granter/trait/tribaltraditions =1,
 		/obj/item/clothing/mask/cigarette/pipe = 1,
@@ -979,13 +981,14 @@ Raider
 	r_hand = /obj/item/book/granter/trait/selection
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
-	belt = /obj/item/melee/onehanded/knife/survival
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit/tribal
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
-		/obj/item/reagent_containers/pill/radx,
+		/obj/item/storage/pill_bottle/chem_tin/radx
 		)
 
 /datum/outfit/job/wasteland/f13wastelander/pre_equip(mob/living/carbon/human/H)
@@ -1929,13 +1932,14 @@ datum/job/wasteland/f13dendoctor
 	id = null
 	ears = null
 	belt = /obj/item/melee/onehanded/knife/bone
-	uniform =     /obj/item/clothing/under/f13/settler
-	box =         /obj/item/storage/survivalkit_tribal
-	shoes =     /obj/item/clothing/shoes/sandal
-	gloves =    /obj/item/clothing/gloves/f13/handwraps
+	uniform = /obj/item/clothing/under/f13/settler
+	shoes = /obj/item/clothing/shoes/sandal
+	gloves = /obj/item/clothing/gloves/f13/handwraps
 	r_hand = /obj/item/book/granter/trait/selection/tribal
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
+	box = /obj/item/storage/survivalkit/tribal
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder = 2,
 		/obj/item/flashlight/lantern = 1,
@@ -1969,6 +1973,8 @@ datum/job/wasteland/f13dendoctor
 /datum/outfit/loadout/shaman
 	name = "Far-Land Shaman"
 	suit = /obj/item/clothing/suit/hooded/cloak/desert
+	box = /obj/item/storage/survivalkit/tribal
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	backpack_contents = list(
 		/obj/item/storage/bag/plants=1,
 		/obj/item/cultivator=1,
@@ -2373,6 +2379,7 @@ datum/job/wasteland/f13dendoctor
 	belt = /obj/item/melee/onehanded/knife/hunting
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 2,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
 		/obj/item/storage/bag/money/small/raider = 1,

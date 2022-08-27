@@ -100,6 +100,7 @@ Administrator
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
 		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
@@ -128,7 +129,7 @@ Administrator
 		/obj/item/blueprint/research = 1,
 	)
 
-Professor
+//Professor
 
 /datum/job/followers/f13Professor
 	title = "Followers Scientist"
@@ -185,6 +186,7 @@ Professor
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/firstaid/ancient=1,)
 
 /datum/outfit/loadout/environmental_scientist
@@ -283,6 +285,7 @@ Practitioner
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -462,6 +465,7 @@ Follower Volunteer
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
