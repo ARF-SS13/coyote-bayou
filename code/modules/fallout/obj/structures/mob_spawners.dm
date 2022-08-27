@@ -21,7 +21,7 @@
 	/// Is something covering us?
 	var/datum/weakref/covering_object
 	/// Range to check for other mobs to see if there's too many around
-	var/overpopulation_range = 8
+	var/overpopulation_range = 7
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
 	var/radius = 8
@@ -104,11 +104,9 @@
 				covering_object = WEAKREF(maybe_heavy_thing)
 				return FALSE
 	var/mobs_in_range
-	for(var/mob/living/simple_animal/living_mob in view(overpopulation_range, get_turf(src)))
-		if(living_mob.type in mob_types)
-			mobs_in_range++
-			if(mobs_in_range > max_mobs)
-				return FALSE
+	for(var/mob/living/simple_animal/living_mob in range(overpopulation_range, get_turf(src)))
+		if(mobs_in_range++ >= max_mobs)
+			return FALSE
 	/* if(needs_player)
 		var/player_found = FALSE
 		for(var/mob/living/carbon/human/humie in range(radius, get_turf(src)))
