@@ -19,10 +19,10 @@
 	blood_overlay_type = "armor"
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tier_desc = ARMOR_CLOTHING_DESC
-	
+
 	/// which mutantrace variations are supported. leave at NONE to keep it snapped at plantigrade
-	//mutantrace_variation = NONE 
-	
+	//mutantrace_variation = NONE
+
 	/// These dont seem to do anything
 	var/list/protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/armor_block_chance = null //Chance for the armor to block a low penetration projectile
@@ -43,14 +43,14 @@
 	. += span_notice(armor_tier_desc)
 
 
-/* 
+/*
 
 * ARMOR TIERS
-* 
+*
 * Clothes (not armor)
 * - lightly armored at best, might be craftable into armor accessories later
 * - Pockets?
-* 
+*
 * Light
 * - High mobility (can run from most mobs easily)
 * - Common, cheap, usually
@@ -73,7 +73,7 @@
 // CLOTHES //
 /////////////
 
-/* 
+/*
  * Types:
  * Overalls (chest legs)
  * - utility suits for holding tools and stuff
@@ -260,7 +260,7 @@
 	desc = "A neat black overcoat that's only slightly weathered from a nuclear apocalypse."
 	icon_state = "black_oversuit"
 	item_state = "banker"
-	
+
 /obj/item/clothing/suit/armor/outfit/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
@@ -519,7 +519,7 @@
 	desc = "A set of armor made of gecko hides.<br>It's pretty good for makeshift armor."
 	icon_state = "tribal"
 	item_state = "tribal"
-	flags_inv = HIDEJUMPSUIT
+//	flags_inv = HIDEJUMPSUIT
 	//icon = 'icons/fallout/clothing/armored_light.dmi'
 	//mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	cold_protection = CHEST|GROIN|ARMS|LEGS // worm
@@ -586,7 +586,7 @@
 	icon_state = "rustwalkers_armour_light"
 	item_state = "rustwalkers_armour_light"
 	body_parts_hidden = ARMS
-	
+
 /obj/item/clothing/suit/armor/light/tribal/whitelegs
 	name = "White Legs light armour"
 	desc = "A series of tan and khaki armour plates, held in place with a considerable amount of strapping. Commonly worn by members of the White Legs tribe."
@@ -891,7 +891,7 @@
 	max_integrity = 150
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
-	
+
 /obj/item/clothing/suit/armor/light/raider/badlands
 	name = "badlands raider armor"
 	desc = "A leather top with a bandolier over it and a straps that cover the arms. Suited for warm climates, comes with storage space."
@@ -1248,9 +1248,9 @@
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
-	
+
 ////////////////
-// ARMOR KITS // 
+// ARMOR KITS //
 ////////////////
 
 /obj/item/clothing/suit/armor/light/kit
@@ -1307,7 +1307,7 @@
 // MEDIUM  //
 /////////////
 
-/* 
+/*
  * Stats
  * Some slowdown, decent protection
  * 25% DR for general armor - 134% effective HP
@@ -1624,7 +1624,7 @@
 //// MEDIUM BREASTPLATES ////
 /////////////////////////////
 
-// metal breastplates! 
+// metal breastplates!
 // ++Melee, -Bullet, +laser, bit slower
 /obj/item/clothing/suit/armor/medium/vest/breastplate
 	name = "steel breastplate"
@@ -2210,12 +2210,12 @@
 // HEAVY //
 ///////////
 
-/* 
+/*
  * Stats
  * Big slowdown, high protection
  * 40% DR for general armor - ???% effective HP
  * 50-60% for specialist armor (most everything else is butt)
- * 
+ *
  * Types:
  * Tribal Raider (basically the same at this point)
  * metal (-bullet , ++melee, ++laser)
@@ -2368,14 +2368,14 @@
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN)
 	mutantrace_variation = NONE
 	armor = list(
-		"melee" = 0, 
-		"bullet" = 0, 
-		"laser" = 90, 
-		"energy" = 30, 
-		"bomb" = 10, 
-		"bio" = 10, 
-		"rad" = 10, 
-		"fire" = 10, 
+		"melee" = 0,
+		"bullet" = 0,
+		"laser" = 90,
+		"energy" = 30,
+		"bomb" = 10,
+		"bio" = 10,
+		"rad" = 10,
+		"fire" = 10,
 		"acid" = 50)
 
 /obj/item/clothing/suit/armor/heavy/metal/polished/actually_laserproof/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
@@ -2397,14 +2397,14 @@
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	mutantrace_variation = NONE
 	armor = list(
-		"melee" = 5, 
-		"bullet" = 5, 
-		"laser" = 65, 
-		"energy" = 50, 
-		"bomb" = 0, 
-		"bio" = 0, 
-		"rad" = 0, 
-		"fire" = 0, 
+		"melee" = 5,
+		"bullet" = 5,
+		"laser" = 65,
+		"energy" = 50,
+		"bomb" = 0,
+		"bio" = 0,
+		"rad" = 0,
+		"fire" = 0,
 		"acid" = 0)
 
 /obj/item/clothing/suit/armor/heavy/metal/tesla/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
