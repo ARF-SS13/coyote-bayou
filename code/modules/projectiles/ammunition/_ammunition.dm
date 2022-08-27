@@ -88,7 +88,7 @@
 	if(iron_to_deduct && newmats[/datum/material/iron])
 		newmats[/datum/material/iron] -= iron_to_deduct
 	if(powder_to_deduct && newmats[/datum/material/blackpowder])
-		newmats[/datum/material/blackpowder] -= powder_to_deduct
+		newmats[/datum/material/blackpowder] -= (powder_to_deduct * MATS_AMMO_POWDER_BURN_MULT)
 	set_custom_materials(newmats)
 
 //proc to magically refill a casing with a new projectile
