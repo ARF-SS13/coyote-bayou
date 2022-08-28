@@ -3349,11 +3349,12 @@
 	pixel_y = 23;
 	pixel_x = -8
 	},
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32;
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/mirror{
+	dir = 8;
+	pixel_y = 28;
 	pixel_x = -8
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -11535,6 +11536,12 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"hfy" = (
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "hfG" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
@@ -33555,12 +33562,13 @@
 	pixel_y = 23;
 	pixel_x = -8
 	},
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32;
-	pixel_x = -8
-	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/mirror{
+	dir = 8;
+	pixel_y = 28;
+	pixel_x = -8
+	},
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -37318,7 +37326,8 @@
 	},
 /obj/structure/mirror{
 	dir = 8;
-	pixel_y = 28
+	pixel_y = 23;
+	pixel_x = -1
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
@@ -38618,10 +38627,6 @@
 /turf/closed/wall/f13/wood/house/broken,
 /area/f13/building)
 "xVI" = (
-/obj/effect/overlay/junk/mirror{
-	pixel_y = 32;
-	pixel_x = -8
-	},
 /obj/effect/overlay/junk/sink{
 	pixel_y = 23;
 	pixel_x = -8
@@ -38629,6 +38634,11 @@
 /obj/effect/overlay/junk/toilet{
 	pixel_y = 12;
 	pixel_x = 8
+	},
+/obj/structure/mirror{
+	dir = 8;
+	pixel_y = 28;
+	pixel_x = -8
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -42935,7 +42945,7 @@ eff
 eXq
 dKh
 bty
-ibq
+hfy
 ibq
 cTN
 ibq
