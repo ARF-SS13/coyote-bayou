@@ -883,7 +883,7 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
  * * * * * * */
 
 /// How many items total fit in a backpack
-#define STORAGE_BACKPACK_DEFAULT_MAX_ITEMS 7
+#define STORAGE_BACKPACK_DEFAULT_MAX_ITEMS 8
 /// How big a thing can fit in a backpack
 #define STORAGE_BACKPACK_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a backpack
