@@ -12,31 +12,33 @@
 	crate_type = /obj/structure/closet/crate/footlocker
 	can_private_buy = FALSE
 
-/datum/supply_pack/security/ammo
-	name = "Ammo Crate - General Purpose"
-	desc = "Contains two 20-round magazines for the WT-550 Auto Rifle, three boxes of buckshot ammo, three boxes of rubber ammo and special .38 speedloarders"
-	cost = 2500
-	contains = list(/obj/item/ammo_box/shotgun/buck,
-					/obj/item/ammo_box/shotgun/buck)
+/datum/supply_pack/security/ammosurplus
+	name = "Ammo Crate - Grab-Bag"
+	desc = "Contains a whole stuffing of bullets, magazines, casings. Probably overpriced."
+	cost = 2000
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3)
 	crate_name = "ammo crate"
 
-/datum/supply_pack/security/armor
-	name = "Armor Crate"
-	desc = "Three vests of well-rounded, decently-protective armor."
-	cost = 1200
-	contains = list(/obj/item/clothing/suit/armor/medium/vest,
-					/obj/item/clothing/suit/armor/medium/vest,
-					/obj/item/clothing/suit/armor/medium/vest)
-	crate_name = "armor crate"
+/datum/supply_pack/security/helmets
+	name = "Armor - Metal Helmets"
+	desc = "Contains three surplus, but solid!, metal helmets. Keep that militia safe!"
+	cost = 1500
+	contains = list(/obj/item/clothing/head/helmet/armyhelmet,
+					/obj/item/clothing/head/helmet/armyhelmet,
+					/obj/item/clothing/head/helmet/armyhelmet)
+	crate_name = "helmet crate"
 
-/datum/supply_pack/security/disabler
-	name = "Disabler Crate"
-	desc = "Three stamina-draining disabler weapons. Requires Security access to open."
-	cost = 1300
-	contains = list(/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler,
-					/obj/item/gun/energy/disabler)
-	crate_name = "disabler crate"
+/datum/supply_pack/security/armor //one tier 2 armor from the raider boss, as a treat...
+	name = "Armor - Raider Scraps"
+	desc = "Four sets of armor stripped off of raiders. Cheap, dirty, and quickly supplied. Some of it might even be worthwhile."
+	cost = 1500
+	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier1,
+					/obj/effect/spawner/lootdrop/f13/armor/tier1,
+					/obj/effect/spawner/lootdrop/f13/armor/tier1,
+					/obj/effect/spawner/lootdrop/f13/armor/tier2)
+	crate_name = "armor crate"
 
 /*
 /datum/supply_pack/security/forensics
@@ -52,24 +54,6 @@
 	crate_name = "forensics crate"
 	can_private_buy = TRUE
 */
-
-/datum/supply_pack/security/helmets
-	name = "Helmets Crate"
-	desc = "Contains three standard-issue brain buckets. Keep that militia safe!"
-	cost = 1200
-	contains = list(/obj/item/clothing/head/helmet/sec,
-					/obj/item/clothing/head/helmet/sec,
-					/obj/item/clothing/head/helmet/sec)
-	crate_name = "helmet crate"
-
-/datum/supply_pack/security/laser
-	name = "Lasers Crate"
-	desc = "Contains three lethal, high-energy laser guns."
-	cost = 1750
-	contains = list(/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser,
-					/obj/item/gun/energy/laser)
-	crate_name = "laser crate"
 
 /datum/supply_pack/security/russianclothing
 	name = "Russian Surplus Clothing"
@@ -134,7 +118,7 @@
 */
 
 /datum/supply_pack/security/supplies
-	name = "Security Supplies Crate"
+	name = "Lawman Supplies Crate"
 	desc = "Contains seven flashbangs, seven teargas grenades, six flashes, and seven handcuffs.."
 	cost = 1200
 	contains = list(/obj/item/storage/box/flashbangs,
@@ -216,7 +200,7 @@
 	crate_name = "stingbang grenade pack crate"
 
 /datum/supply_pack/security/mosinpack
-	name = "Mosin-Nagant Pack"
+	name = "Weapons - Mosin-Nagant Pack"
 	desc = "Arm your militia. Five Mosin Rifles, preloaded, ready to kill. A solid weapon for any defense or guerilla force. Does not come with spare ammo, so you might wanna get that sorted out, pardner."
 	cost = 750
 	contains = list(/obj/item/gun/ballistic/rifle/mosin,
@@ -225,3 +209,41 @@
 					/obj/item/gun/ballistic/rifle/mosin,
 					/obj/item/gun/ballistic/rifle/mosin)
 
+/datum/supply_pack/security/laserlowtier
+	name = "Weapons - Laser Grab-Bag"
+	desc = "Contains three low-powered laser guns, probably in need of some love. Batteries included in shocking excess! Don't want 'em? Sell 'em back! Seriously! We don't judge!"
+	cost = 2000
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low)
+	crate_name = "laser crate"
+
+/datum/supply_pack/security/disabler
+	name = "Weapons - Disabler Crate"
+	desc = "Three stamina-draining disabler weapons, for a more civilized place, where killing isn't the answer. In other words, probably not here. But it's nice you're trying!"
+	cost = 1300
+	contains = list(/obj/item/gun/energy/disabler,
+					/obj/item/gun/energy/disabler,
+					/obj/item/gun/energy/disabler)
+	crate_name = "disabler crate"
+
+/datum/supply_pack/security/minigun5mm
+	name = "Weapons - Minigun"
+	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
+	cost = 9000
+	contains = list(/obj/item/minigunpackbal5mm)
+	crate_name = "laser crate"
+
+/datum/supply_pack/security/ballisticstrash
+	name = "Weapons - Ballistics Grab-Bag"
+	desc = "Grab-bag is just a polite way of saying pile of junk. It's...a pile of junk. A mixture of around ten civillian and homemade firearms. Comes with an ABSURD amount of surplus ammo."
+	cost = 1350
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo)
+	crate_name = "laser crate"
