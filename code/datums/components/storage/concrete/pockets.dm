@@ -239,13 +239,15 @@
 /datum/component/storage/concrete/pockets/bulletbelt/Initialize()
 	. = ..()
 	can_hold = GLOB.ammobelt_allowed
+	can_hold |= GLOB.gunbelt_allowed
 
 /// Combat armor bandolier / holster
 /datum/component/storage/concrete/pockets/magpouch
-	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
+	max_w_class = WEIGHT_CLASS_NORMAL
+	max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
 
 /datum/component/storage/concrete/pockets/magpouch/Initialize()
 	. = ..()
-	can_hold = GLOB.gunbelt_allowed
+	can_hold = GLOB.ammobelt_allowed
+	can_hold |= GLOB.gunbelt_allowed

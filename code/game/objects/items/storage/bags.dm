@@ -22,19 +22,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/bag/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.allow_quick_gather = TRUE
-	STR.allow_quick_empty = TRUE
-	STR.display_numerical_stacking = TRUE
-	STR.click_gather = TRUE
-
-	STR.max_items = STORAGE_BAG_MAX_ITEMS
-	STR.max_w_class = STORAGE_BAG_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BAG_MAX_TOTAL_SPACE
-
+	component_type = /datum/component/storage/concrete/bag
 
 // -----------------------------
 //          Trash bag
@@ -48,15 +36,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	var/insertable = TRUE
-
-/obj/item/storage/bag/trash/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_TRASH_BAG_MAX_ITEMS
-	STR.can_hold_extra = typecacheof(list(/obj/item/organ/lungs, /obj/item/organ/liver, /obj/item/organ/stomach, /obj/item/clothing/shoes)) - typesof(/obj/item/clothing/shoes/magboots, /obj/item/clothing/shoes/jackboots, /obj/item/clothing/shoes/workboots)
-	STR.cant_hold = typecacheof(list(/obj/item/disk/nuclear, /obj/item/storage/wallet, /obj/item/organ/brain))
-	STR.limited_random_access = TRUE
-	STR.limited_random_access_stack_position = 3
+	component_type = /datum/component/storage/concrete/bag/trash
 
 /obj/item/storage/bag/trash/suicide_act(mob/user)
 	user.visible_message(span_suicide("[user] puts [src] over [user.p_their()] head and starts chomping at the insides! Disgusting!"))
@@ -92,12 +72,7 @@
 	icon_state = "bluetrashbag"
 	item_flags = NO_MAT_REDEMPTION
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/bag/trash/bluespace/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BIG_TRASH_BAG_MAX_ITEMS
-	STR.limited_random_access_stack_position = 5
+	component_type = /datum/component/storage/concrete/bag/trash/big
 
 /obj/item/storage/bag/trash/bluespace/cyborg
 	insertable = FALSE
@@ -232,14 +207,7 @@
 	icon_state = "plantbag"
 	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/plants/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 100
-	STR.max_items = 100
-	STR.can_hold = GLOB.storage_produce_bag_can_hold
+	component_type = /datum/component/storage/concrete/bag/produce
 
 ////////
 
@@ -303,11 +271,7 @@
 	icon = 'icons/obj/library.dmi'
 	icon_state = "bookbag"
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/books/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/book, /obj/item/storage/book, /obj/item/spellbook))
+	component_type = /datum/component/storage/concrete/bag/book
 
 /*
  * Trays - Agouri
@@ -390,12 +354,7 @@
 	icon_state = "bag"
 	desc = "A bag for holding a variety of medical supplies."
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/chemistry/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.insert_preposition = "in"
-	STR.can_hold = GLOB.storage_chemistry_bag_can_hold
+	component_type = /datum/component/storage/concrete/bag/chem_med_etc
 
 /*	Now in tribal mode!*/
 
@@ -416,12 +375,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon_state = "biobag"
 	desc = "A well-insulated bag for the safe carrying of organs, limbs and IV bags."
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/bio/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.insert_preposition = "in"
-	STR.can_hold = GLOB.storage_bio_bag_can_hold
+	component_type = /datum/component/storage/concrete/bag/chem_med_etc
 
 /obj/item/storage/bag/bio/holding
 	name = "bio bag of holding"
@@ -476,14 +430,7 @@ obj/item/storage/bag/chemistry/tribal
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/salvage/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = INFINITY
-	STR.max_items = 50
-	STR.can_hold = typecacheof(list(/obj/item/salvage))
+	component_type = /datum/component/storage/concrete/bag/salvage
 
 /obj/item/storage/bag/salvagestorage
 	name = "salvage storage sack"
@@ -494,14 +441,7 @@ obj/item/storage/bag/chemistry/tribal
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/custodial_righthand.dmi'
 	resistance_flags = FLAMMABLE
-
-/obj/item/storage/bag/salvagestorage/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = WEIGHT_CLASS_NORMAL * 30
-	STR.max_items = 30
-	STR.can_hold = GLOB.storage_salvage_storage_bag_can_hold
+	component_type = /datum/component/storage/concrete/bag/salvage/storage
 
 /obj/item/storage/bag/casings
 	name = "casing bag"
@@ -512,21 +452,13 @@ obj/item/storage/bag/chemistry/tribal
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_NECK
 	var/spam_protection = FALSE
 	var/mob/listeningTo
+	component_type = /datum/component/storage/concrete/bag/casing
 
 /obj/item/storage/bag/casings/dropped(mob/user)
 	. = ..()
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
 	listeningTo = null
-
-/obj/item/storage/bag/casings/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 600
-	STR.max_items = 600
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
-	STR.cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
 
 /obj/item/storage/bag/casings/equipped(mob/user)
 	. = ..()
@@ -573,14 +505,7 @@ obj/item/storage/bag/chemistry/tribal
 	icon = 'icons/obj/clothing/belts.dmi'
 	icon_state = "tribal_quiver"
 	item_state = "tribal_quiver"
-
-/obj/item/storage/bag/tribe_quiver/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 30
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
-	STR.max_w_class = 3
-	STR.max_combined_w_class = 100
+	component_type = /datum/component/storage/concrete/bag/quiver
 
 /obj/item/storage/bag/tribe_quiver/PopulateContents()
 	new /obj/item/ammo_casing/caseless/arrow(src)
