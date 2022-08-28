@@ -153,14 +153,17 @@
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 ///////////
 //COLLARS//

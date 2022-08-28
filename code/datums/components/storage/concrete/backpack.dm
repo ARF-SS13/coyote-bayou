@@ -2,7 +2,8 @@
 /datum/component/storage/concrete/backpack
 	max_items = STORAGE_BACKPACK_DEFAULT_MAX_ITEMS
 	max_w_class = STORAGE_BACKPACK_DEFAULT_MAX_SIZE
-	max_combined_w_class = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
+	max_combined_w_class = STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
 
 /// Spearquiver
@@ -15,6 +16,7 @@
 	max_items = STORAGE_DUFFEL_DEFAULT_MAX_ITEMS
 	max_w_class = STORAGE_DUFFEL_DEFAULT_MAX_SIZE
 	max_combined_w_class = STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
 
 /// Duffelscav
@@ -22,6 +24,7 @@
 	max_items = STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS
 	max_w_class = STORAGE_DUFFEL_SCAV_DEFAULT_MAX_SIZE
 	max_combined_w_class = STORAGE_DUFFEL_SCAV_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = STORAGE_DUFFEL_SCAV_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
 
 /// Syndiebag

@@ -3,12 +3,14 @@
 	max_items = STORAGE_BELT_GENERIC_MAX_ITEMS
 	max_w_class = STORAGE_BELT_GENERIC_MAX_SIZE
 	max_combined_w_class = STORAGE_BELT_GENERIC_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_GENERIC_MAX_TOTAL_SPACE
 
 /// Specialized belt
 /datum/component/storage/concrete/belt/specialized
 	max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 	max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
 	max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
 
 /// Utility Belt
 /datum/component/storage/concrete/belt/specialized/utility/Initialize()
@@ -30,6 +32,7 @@
 	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
 	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
 	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
 
 /datum/component/storage/concrete/belt/specialized/gun/Initialize()
 	. = ..()

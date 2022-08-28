@@ -665,6 +665,41 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/storage/box
 	)))
 
+
+
+/* * * * * * * * * * * * * * *
+ * The International Pocket
+ * * * * * * * * * * * * * * */
+
+/// How many items total fit in a pocket
+#define STORAGE_TINY_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_TINY_POCKET_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a pocket
+#define STORAGE_TINY_POCKET_MAX_TOTAL_SPACE STORAGE_TINY_POCKET_MAX_SIZE * STORAGE_TINY_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_SMALL_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_SMALL_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE STORAGE_SMALL_POCKET_MAX_SIZE * STORAGE_SMALL_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_TOTAL_SPACE STORAGE_NORMAL_POCKET_MAX_SIZE * STORAGE_NORMAL_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_BULKY_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_BULKY_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_BULKY_POCKET_MAX_TOTAL_SPACE STORAGE_BULKY_POCKET_MAX_SIZE * STORAGE_BULKY_POCKET_MAX_ITEMS
+
+
 /* * * * * * * * * * * * * * *
  * Belt slot inventory things
  * * * * * * * * * * * * * * */
@@ -848,25 +883,25 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
  * * * * * * */
 
 /// How many items total fit in a backpack
-#define STORAGE_BACKPACK_DEFAULT_MAX_ITEMS 21
+#define STORAGE_BACKPACK_DEFAULT_MAX_ITEMS 7
 /// How big a thing can fit in a backpack
 #define STORAGE_BACKPACK_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a backpack
-#define STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE STORAGE_BACKPACK_DEFAULT_MAX_ITEMS
+#define STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE STORAGE_BACKPACK_DEFAULT_MAX_ITEMS * STORAGE_BACKPACK_DEFAULT_MAX_SIZE
 
 /// Duffel slowdown
 #define DUFFELBAG_SLOWDOWN 0.75 // wear the fuckin bag
 #define DUFFELBAG_SCAV_SLOWDOWN 1
 
 /// How many items total fit in a duffel
-#define STORAGE_DUFFEL_DEFAULT_MAX_ITEMS STORAGE_BACKPACK_DEFAULT_MAX_ITEMS * 2
+#define STORAGE_DUFFEL_DEFAULT_MAX_ITEMS 13
 /// How big a thing can fit in a duffel
 #define STORAGE_DUFFEL_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel
-#define STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_DEFAULT_MAX_ITEMS
+#define STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
 
 /// How many items total fit in a duffel scav
-#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS STORAGE_DUFFEL_DEFAULT_MAX_ITEMS
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 15
 /// How big a thing can fit in a duffel scav
 #define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel scav
@@ -882,6 +917,17 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_WALLET_DEFAULT_MAX_SIZE WEIGHT_CLASS_TINY
 /// How much volume fits in a wallet
 #define STORAGE_WALLET_DEFAULT_MAX_TOTAL_SPACE STORAGE_WALLET_DEFAULT_MAX_ITEMS * STORAGE_WALLET_DEFAULT_MAX_SIZE
+
+/* * * * *
+ * Brahmin
+ * * * * */
+
+/// How many items total fit in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_ITEMS 5
+/// How big a thing can fit in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_SIZE WEIGHT_CLASS_HUGE
+/// How much volume fits in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_TOTAL_SPACE STORAGE_BRAHMIN_DEFAULT_MAX_ITEMS * STORAGE_BRAHMIN_DEFAULT_MAX_SIZE
 
 
 //Internals checker
