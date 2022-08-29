@@ -12101,6 +12101,10 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"izp" = (
+/obj/structure/obstacle/tanktrap,
+/turf/open/floor/plasteel/f13/vault_floor/neutral,
+/area/f13/tunnel)
 "izx" = (
 /obj/structure/nest/scorpion{
 	spawn_time = 100
@@ -19396,9 +19400,7 @@
 /area/f13/tunnel)
 "pEQ" = (
 /mob/living/simple_animal/hostile/megafauna/behemoth{
-	faction = list("hostile","supermutant");
-	health = 5000;
-	maxHealth = 5000
+	faction = list("hostile","supermutant")
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -39890,7 +39892,7 @@ aah
 aah
 pwE
 aah
-aah
+gyf
 aah
 aah
 aah
@@ -46837,7 +46839,7 @@ aah
 aah
 aah
 pwE
-hWj
+izp
 bld
 lIU
 lIU
@@ -49148,9 +49150,9 @@ hWj
 aah
 hWj
 apg
+bFx
 bGX
-bGX
-bHa
+bFx
 vIg
 fmK
 woN
@@ -49405,7 +49407,7 @@ hWj
 aah
 aah
 aah
-bGX
+bHb
 bGX
 cgA
 ikI
@@ -49663,7 +49665,7 @@ xNE
 hWj
 apg
 bHb
-bGX
+bFx
 bHa
 bHa
 bCd
@@ -49922,7 +49924,7 @@ apg
 hcj
 iOu
 bHa
-bHa
+bFx
 vyh
 svC
 apg
@@ -50436,7 +50438,7 @@ uTI
 apg
 apg
 hkJ
-bGX
+bFx
 apg
 apg
 bFF
@@ -51206,7 +51208,7 @@ wLE
 wLE
 wLE
 apg
-bGX
+bFx
 sia
 bFx
 bFF
@@ -51721,7 +51723,7 @@ apg
 apg
 apg
 kgP
-sia
+bFx
 apg
 jNY
 gnv
