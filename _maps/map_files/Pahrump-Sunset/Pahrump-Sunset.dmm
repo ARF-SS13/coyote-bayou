@@ -1981,6 +1981,10 @@
 /area/f13/building)
 "ahH" = (
 /obj/machinery/photocopier,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ahI" = (
@@ -14722,10 +14726,6 @@
 /obj/structure/curtain{
 	color = "#845f58"
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "aZl" = (
@@ -15299,7 +15299,8 @@
 	},
 /obj/structure/table/wood/settler,
 /obj/structure/railing{
-	color = "#A47449"
+	color = "#A47449";
+	dir = 2
 	},
 /turf/open/floor/carpet/purple,
 /area/f13/building)
@@ -18567,6 +18568,17 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building/museum)
+"bqy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
 "bqB" = (
 /obj/structure/chair/stool{
 	dir = 4;
@@ -18595,9 +18607,6 @@
 "bqN" = (
 /obj/structure/window/fulltile/wood{
 	layer = 3
-	},
-/obj/structure/curtain{
-	color = "#845f58"
 	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
@@ -18703,6 +18712,10 @@
 "brA" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = 32
+	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "brC" = (
@@ -19000,6 +19013,10 @@
 /area/f13/wasteland)
 "bui" = (
 /obj/item/kirbyplants/random,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32
+	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "buj" = (
@@ -19260,13 +19277,6 @@
 /area/f13/ncr)
 "bwi" = (
 /obj/structure/window/fulltile/house,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "bwr" = (
@@ -19511,9 +19521,6 @@
 	},
 /obj/structure/curtain{
 	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -21729,13 +21736,6 @@
 "cmP" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/spacevine,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/floor/wood_fancy/wood_fancy_light,
 /area/f13/building)
 "cmS" = (
@@ -22571,9 +22571,6 @@
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindowbrokenvertical"
 	},
-/obj/structure/curtain{
-	color = "#845f58"
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "csZ" = (
@@ -23063,6 +23060,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
+"cEy" = (
+/obj/structure/table/wood,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32
+	},
+/turf/open/floor/wood_wide,
+/area/f13/building)
 "cEF" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 30
@@ -24701,6 +24706,10 @@
 "dwN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /obj/structure/chair/wood{
 	dir = 8
 	},
@@ -24803,6 +24812,10 @@
 /obj/machinery/light/small{
 	dir = 8;
 	light_color = "#d8b1b1"
+	},
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -33
 	},
 /obj/structure/closet/crate/bin,
 /turf/open/floor/carpet/blue,
@@ -25174,16 +25187,12 @@
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/f13/building)
 "dJD" = (
-/obj/structure/window/fulltile/wood{
-	layer = 3
-	},
+/obj/structure/dresser,
 /obj/structure/curtain{
-	color = "#845f58"
+	color = "#845f58";
+	pixel_y = 32
 	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "dJE" = (
 /obj/effect/landmark/start/f13/followersdoctor,
@@ -28750,15 +28759,15 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "fBn" = (
-/obj/structure/window/fulltile/house,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
+/obj/structure/chair/wood{
 	dir = 8
 	},
-/turf/open/floor/wood_fancy/wood_fancy_light,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = 32
+	},
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "fCH" = (
 /obj/item/screwdriver{
@@ -29172,9 +29181,6 @@
 	layer = 3
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "fMN" = (
@@ -30336,6 +30342,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "gwD" = (
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /obj/item/storage/toolbox/mechanical,
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
@@ -30935,6 +30945,13 @@
 	},
 /turf/open/water,
 /area/f13/caves)
+"gJl" = (
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -33
+	},
+/turf/open/floor/carpet/blue,
+/area/f13/building)
 "gJs" = (
 /obj/structure/barricade/wooden,
 /obj/structure/barricade/wooden,
@@ -32087,13 +32104,6 @@
 "hpb" = (
 /obj/structure/spacevine,
 /obj/structure/window/fulltile/house,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
-	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "hpS" = (
@@ -33665,6 +33675,10 @@
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "igF" = (
@@ -36159,7 +36173,7 @@
 /area/f13/wasteland)
 "jvg" = (
 /obj/machinery/workbench,
-/obj/item/circuitboard/machine/autolathe/ammo/improvised,
+/obj/item/crafting/reloader,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -36898,15 +36912,14 @@
 	},
 /area/f13/radiation)
 "jQQ" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
+/obj/structure/chair/wood{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32
+	},
+/turf/open/floor/wood_common,
 /area/f13/building)
 "jRC" = (
 /obj/structure/simple_door/room{
@@ -37852,6 +37865,16 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
+"kso" = (
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/building)
 "ksw" = (
 /obj/structure/fence{
 	dir = 4
@@ -38837,12 +38860,6 @@
 "kUp" = (
 /obj/structure/window/fulltile/wood,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "kUw" = (
@@ -38951,9 +38968,6 @@
 "kWz" = (
 /obj/structure/window/fulltile/store{
 	icon_state = "ruinswindow"
-	},
-/obj/structure/curtain{
-	color = "#845f58"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -39352,6 +39366,11 @@
 /area/f13/wasteland)
 "lhQ" = (
 /obj/structure/table/wood,
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 2.85;
+	pixel_y = 32
+	},
 /obj/item/reagent_containers/food/drinks/bottle/brown/wine{
 	pixel_x = 5;
 	pixel_y = 11
@@ -40427,6 +40446,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/dirt,
 /area/f13/caves)
+"lJy" = (
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
+/turf/open/floor/wood_wide,
+/area/f13/building)
 "lJz" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -40842,14 +40868,12 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "lTt" = (
-/obj/structure/window/fulltile/house,
 /obj/structure/curtain{
-	color = "#845f58"
+	color = "#845f58";
+	pixel_x = -32
 	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/wood_common,
+/obj/structure/chair/wood,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "lTw" = (
 /obj/structure/barricade/bars,
@@ -43834,13 +43858,6 @@
 "npt" = (
 /obj/structure/window/fulltile/house,
 /obj/structure/spacevine,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building)
 "npv" = (
@@ -45309,6 +45326,10 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/wood_wide,
 /area/f13/building)
 "oev" = (
@@ -49953,12 +49974,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "qEJ" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449"
+/obj/structure/window/fulltile/wood{
+	layer = 3
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -50405,6 +50422,10 @@
 /area/f13/wasteland)
 "qQP" = (
 /obj/structure/table/wood/settler,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "qQY" = (
@@ -51280,6 +51301,10 @@
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "rrw" = (
@@ -51590,17 +51615,12 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "rCW" = (
-/obj/structure/window/fulltile/wood{
-	max_integrity = 140
-	},
-/obj/effect/decal/cleanable/dirt,
+/obj/machinery/microwave/stove,
 /obj/structure/curtain{
-	color = "#845f58"
+	color = "#845f58";
+	pixel_x = 32
 	},
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/wood_common,
+/turf/open/floor/wood_wide,
 /area/f13/building)
 "rDs" = (
 /obj/structure/car/rubbish3,
@@ -53880,10 +53900,6 @@
 /obj/structure/window/fulltile/wood{
 	max_integrity = 140
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 8
-	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "sSy" = (
@@ -54501,15 +54517,12 @@
 	},
 /area/f13/building/museum)
 "til" = (
-/obj/structure/window/fulltile/house,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/curtain{
-	color = "#845f58"
+	color = "#845f58";
+	pixel_y = -32
 	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
-	},
-/turf/open/floor/wood_common,
+/turf/open/floor/f13/wood,
 /area/f13/building)
 "tiw" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -54791,6 +54804,14 @@
 /obj/item/clothing/under/f13/raiderharness,
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13,
+/area/f13/building)
+"trD" = (
+/obj/structure/table,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = 33
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "trF" = (
 /obj/structure/flora/grass/jungle,
@@ -55774,6 +55795,14 @@
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
+/area/f13/building)
+"tOk" = (
+/obj/structure/dresser,
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = 33
+	},
+/turf/open/floor/carpet/blue,
 /area/f13/building)
 "tOJ" = (
 /obj/structure/flora/grass/wasteland{
@@ -59077,6 +59106,11 @@
 	},
 /area/f13/wasteland)
 "vBW" = (
+/obj/structure/curtain{
+	color = "#845f58";
+	layer = 2.85;
+	pixel_y = 32
+	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/holywater{
 	pixel_y = 6
@@ -62310,6 +62344,10 @@
 /obj/structure/mirror{
 	pixel_x = -32
 	},
+/obj/structure/curtain{
+	color = "#845f58";
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
 "xtI" = (
@@ -62859,13 +62897,11 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "xGe" = (
-/obj/structure/window/fulltile/wood,
-/obj/structure/railing{
-	color = "#A47449"
-	},
 /obj/structure/curtain{
-	color = "#845f58"
+	color = "#845f58";
+	pixel_y = -32
 	},
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xGl" = (
@@ -62885,13 +62921,6 @@
 /obj/structure/window/fulltile/wood{
 	layer = 2.8;
 	max_integrity = 140
-	},
-/obj/structure/curtain{
-	color = "#845f58"
-	},
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 1
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -65646,13 +65675,13 @@ aOk
 aOk
 abP
 abP
-fBn
+rgx
 cmP
 biV
 abP
 biV
 cmP
-fBn
+rgx
 abP
 abP
 abP
@@ -65903,18 +65932,18 @@ aOk
 aOk
 abP
 tfH
-ukR
-ukR
+bqy
+bqy
 ttz
 abP
 cnr
-ahj
-ahj
+kso
+kso
 oly
 abP
 vQJ
-ukR
-ukR
+bqy
+bqy
 bzw
 biV
 www
@@ -66687,7 +66716,7 @@ xyA
 bbp
 oql
 dAp
-lTt
+baZ
 www
 bbx
 clY
@@ -66930,7 +66959,7 @@ oNw
 aOk
 nHY
 hpb
-lPc
+trD
 bbp
 bbp
 ekI
@@ -66943,8 +66972,8 @@ abP
 lPc
 oql
 oql
-oql
-lTt
+gJl
+baZ
 www
 bbx
 clY
@@ -67186,8 +67215,8 @@ blg
 blg
 aOk
 xZb
-til
-bgV
+baZ
+tOk
 oql
 ivb
 aKI
@@ -68702,7 +68731,7 @@ baa
 hsj
 xyU
 qQP
-rCW
+kUK
 aOk
 oMN
 pfV
@@ -69198,7 +69227,7 @@ abP
 hlS
 ier
 igw
-qEJ
+bpW
 ctx
 oMN
 aOk
@@ -69455,7 +69484,7 @@ abP
 oTf
 uHO
 rre
-qEJ
+bpW
 cFK
 mFl
 aOk
@@ -69996,7 +70025,7 @@ oSH
 wow
 xUm
 ahH
-xGe
+bpW
 kWi
 hfd
 hEG
@@ -70252,8 +70281,8 @@ xaz
 beI
 meQ
 xyU
-kVQ
-xGe
+til
+bpW
 esE
 kDp
 vGN
@@ -70993,7 +71022,7 @@ fzM
 fzM
 xtI
 mHR
-mHR
+fBn
 xhv
 xyU
 xTd
@@ -71250,7 +71279,7 @@ fzM
 fzM
 abP
 xtI
-jQQ
+bpW
 abP
 cQa
 abP
@@ -73834,13 +73863,13 @@ oMN
 oNw
 aDP
 bui
-neN
+cEy
 acl
 lbN
 qVJ
 nim
 iwQ
-iwQ
+jQQ
 bwc
 acl
 abu
@@ -74107,7 +74136,7 @@ acl
 bfG
 kVQ
 gwD
-byt
+qEJ
 aOk
 huu
 www
@@ -74124,7 +74153,7 @@ jQm
 rMX
 vHB
 rMX
-iXi
+lJy
 bqN
 aOk
 abP
@@ -74378,7 +74407,7 @@ btL
 acl
 rNg
 brA
-byA
+rCW
 bqO
 eTA
 bjd
@@ -75134,8 +75163,8 @@ kVQ
 bcF
 xUm
 rOp
-pgO
-byt
+xGe
+qEJ
 aOk
 huu
 aOk
@@ -75392,7 +75421,7 @@ abu
 sjO
 kVQ
 dwN
-byt
+qEJ
 aOk
 huu
 aOk
@@ -77448,7 +77477,7 @@ kVQ
 wDf
 xyU
 xyU
-dJD
+aZk
 aOk
 huu
 etg
@@ -77705,7 +77734,7 @@ xyU
 xyU
 kVQ
 dus
-dJD
+aZk
 aOk
 huu
 etg
@@ -77962,7 +77991,7 @@ xyU
 kVQ
 mCB
 cDf
-dJD
+aZk
 aOk
 huu
 aOk
@@ -100347,11 +100376,11 @@ bdj
 tpP
 aQZ
 kWz
-aNS
+dJD
 xip
 asg
 iME
-rOp
+lTt
 bkP
 bgt
 abP

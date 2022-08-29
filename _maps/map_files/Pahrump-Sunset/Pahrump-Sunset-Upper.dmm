@@ -157,7 +157,11 @@
 "and" = (
 /obj/structure/railing{
 	color = "#A47449";
-	dir = 9
+	dir = 8
+	},
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
 	},
 /turf/open/transparent/openspace,
 /area/f13/building)
@@ -1058,13 +1062,6 @@
 	},
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/building)
-"dmX" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/floor/f13/wood,
-/area/f13/wasteland)
 "dnp" = (
 /obj/machinery/light,
 /turf/open/indestructible/ground/outside/roof,
@@ -5455,10 +5452,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "tgl" = (
+/obj/machinery/shower,
 /obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
 /turf/open/floor/plasteel/f13,
 /area/f13/building)
 "tik" = (
@@ -19240,7 +19235,7 @@ oez
 tXH
 dtb
 nkA
-dmX
+hqx
 dtb
 nkA
 hqx
