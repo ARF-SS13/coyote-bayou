@@ -23029,6 +23029,13 @@
 "cBX" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite/rarecyan,
 /area/f13/building)
+"cCO" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/closet/cabinet/anchored,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "cDe" = (
 /obj/machinery/button/door{
 	id = "followershutters";
@@ -42165,6 +42172,7 @@
 	dir = 8;
 	light_color = "#d8b1b1"
 	},
+/obj/structure/closet/cabinet/anchored,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "mzW" = (
@@ -62529,6 +62537,7 @@
 	light_color = "#d8b1b1"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/cabinet/anchored,
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "xyC" = (
@@ -75395,7 +75404,7 @@ abP
 awe
 aHz
 fjQ
-ayJ
+cCO
 bgk
 cex
 bcc
