@@ -1429,5 +1429,19 @@ list(/obj/item/stack/sheet/metal = 20,
 							)
 		new randomgun(src)
 	
+/obj/item/storage/box/debug/huge_volume_four_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/huge_volume_four_item
+
+/obj/item/storage/box/debug/huge_volume_two_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/huge_volume_two_item
+
+/obj/item/storage/box/debug/tiny_volume_four_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/tiny_volume_four_item
 
 

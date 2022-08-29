@@ -894,14 +894,14 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define DUFFELBAG_SCAV_SLOWDOWN 1
 
 /// How many items total fit in a duffel
-#define STORAGE_DUFFEL_DEFAULT_MAX_ITEMS 13
+#define STORAGE_DUFFEL_DEFAULT_MAX_ITEMS 12
 /// How big a thing can fit in a duffel
 #define STORAGE_DUFFEL_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel
 #define STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
 
 /// How many items total fit in a duffel scav
-#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 15
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 14
 /// How big a thing can fit in a duffel scav
 #define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel scav

@@ -107,3 +107,32 @@
 	. = ..()
 	can_hold = GLOB.ammobelt_allowed
 	can_hold |= GLOB.gunbelt_allowed
+
+/// debug shit
+/datum/component/storage/concrete/box/debug/huge_volume_two_item
+	max_items = 2
+	max_w_class = WEIGHT_CLASS_GIGANTIC
+	max_combined_w_class = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = WEIGHT_CLASS_GIGANTIC * 1000
+	rustle_sound = TRUE
+	storage_flags = STORAGE_FLAGS_VOLUME_AND_NUMBER
+
+/// debug shit
+/datum/component/storage/concrete/box/debug/huge_volume_four_item
+	max_items = 4
+	max_w_class = WEIGHT_CLASS_GIGANTIC
+	max_combined_w_class = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = WEIGHT_CLASS_GIGANTIC * 1000
+	rustle_sound = TRUE
+	storage_flags = STORAGE_FLAGS_VOLUME_AND_NUMBER
+
+/// debug shit
+/datum/component/storage/concrete/box/debug/tiny_volume_four_item
+	max_items = 4
+	max_w_class = WEIGHT_CLASS_GIGANTIC
+	max_combined_w_class = STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE
+	max_volume = WEIGHT_CLASS_SMALL * 2
+	rustle_sound = TRUE
+	storage_flags = STORAGE_FLAGS_VOLUME_AND_NUMBER
+
+

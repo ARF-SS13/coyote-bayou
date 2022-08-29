@@ -203,6 +203,7 @@
 
 /obj/item/storage/bag/plants
 	name = "produce bag"
+	desc = "A big, insulated bag for storing lots of animal products."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "plantbag"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -278,9 +279,9 @@
  */
 /obj/item/storage/bag/tray
 	name = "tray"
+	desc = "A metal tray to lay food on."
 	icon = 'icons/obj/food/containers.dmi'
 	icon_state = "tray"
-	desc = "A metal tray to lay food on."
 	force = 5
 	throwforce = 10
 	throw_speed = 3

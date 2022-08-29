@@ -1,5 +1,6 @@
 /// Backpack
 /datum/component/storage/concrete/backpack
+	storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT // space limited, only
 	max_items = STORAGE_BACKPACK_DEFAULT_MAX_ITEMS
 	max_w_class = STORAGE_BACKPACK_DEFAULT_MAX_SIZE
 	max_combined_w_class = STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE
