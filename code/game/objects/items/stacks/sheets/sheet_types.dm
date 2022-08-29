@@ -437,7 +437,6 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
 	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
 	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
-	new/datum/stack_recipe("salvage storage bag", /obj/item/storage/bag/salvagestorage, 4), \
 	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
