@@ -18437,12 +18437,6 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/ncr)
-"bpw" = (
-/obj/effect/landmark/start/f13/deputy,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
 "bpP" = (
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/indestructible/ground/outside/water,
@@ -20477,6 +20471,7 @@
 "bQv" = (
 /obj/structure/destructible/tribal_torch/lit,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/landmark/start/f13/deputy,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "bQx" = (
@@ -20752,10 +20747,6 @@
 	dir = 1
 	},
 /turf/open/indestructible/ground/outside/dirt,
-/area/f13/building)
-"bWv" = (
-/obj/effect/landmark/start/f13/deputy,
-/turf/open/floor/wood_common,
 /area/f13/building)
 "bXh" = (
 /obj/structure/table,
@@ -22716,14 +22707,9 @@
 	},
 /area/f13/wasteland)
 "cvl" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/effect/landmark/start/f13/deputy,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
-/area/f13/building)
+/obj/effect/landmark/start/f13/sheriff,
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/caves)
 "cvp" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
@@ -28947,7 +28933,6 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/obj/effect/landmark/start/f13/mayor,
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "fHr" = (
@@ -31553,6 +31538,7 @@
 /area/f13/wasteland)
 "gZA" = (
 /obj/effect/landmark/latejoin,
+/obj/effect/landmark/start/f13/deputy,
 /turf/open/indestructible/ground/outside/graveldirt,
 /area/f13/caves)
 "gZG" = (
@@ -39083,10 +39069,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "kZy" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/start/f13/deputy,
-/turf/open/floor/wood_common,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/caves)
 "kZE" = (
 /obj/effect/spawner/lootdrop/trash,
 /obj/machinery/light/small/broken{
@@ -48502,12 +48487,13 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "pMP" = (
-/obj/structure/chair/wood{
-	dir = 4
-	},
+/obj/effect/landmark/start/f13/farmer,
+/obj/effect/landmark/start/f13/prospector,
+/obj/effect/landmark/start/f13/dendoctor,
+/obj/effect/landmark/start/f13/settler,
 /obj/effect/landmark/start/f13/detective,
-/turf/open/floor/f13/wood,
-/area/f13/building)
+/turf/open/indestructible/ground/outside/graveldirt,
+/area/f13/caves)
 "pMY" = (
 /obj/effect/landmark/start/f13/farmer,
 /obj/effect/landmark/start/f13/prospector,
@@ -56280,6 +56266,7 @@
 /area/f13/wasteland)
 "ubt" = (
 /obj/effect/landmark/start/f13/settler,
+/obj/effect/landmark/start/f13/mayor,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "ubQ" = (
@@ -56472,7 +56459,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/start/f13/sheriff,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "ugJ" = (
@@ -64567,11 +64553,11 @@ aOk
 aOk
 aOk
 amC
-pMY
+pMP
 ceS
 pMY
 pMY
-iWi
+kZy
 aOk
 aOk
 aOk
@@ -64826,8 +64812,8 @@ cFK
 bQv
 ubt
 gZA
+cvl
 urA
-aJN
 xPS
 cFK
 cFK
@@ -67434,7 +67420,7 @@ aOk
 aOk
 diX
 phZ
-bpw
+afS
 nmV
 blg
 xFZ
@@ -67690,9 +67676,9 @@ aOk
 aOk
 aOk
 blg
-cvl
+lLA
 fFf
-bpw
+afS
 diX
 aOk
 vSO
@@ -69234,7 +69220,7 @@ cex
 fMX
 cex
 cex
-bWv
+cex
 baZ
 byY
 aOk
@@ -69491,7 +69477,7 @@ cex
 fMX
 cex
 nkd
-kZy
+fMX
 baZ
 aOk
 aOk
@@ -69732,7 +69718,7 @@ jDL
 aOk
 xtI
 fIh
-pMP
+uQs
 kVQ
 nnh
 pos
