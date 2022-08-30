@@ -253,25 +253,25 @@
  * T3 - Dedicated heavy bullet plates
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_BULLET_T1 list(\
-		"linebullet" = 10)
+		"linebullet" = 2)
 
 #define ARMOR_MODIFIER_UP_BULLET_T2 list(\
-		"linebullet" = 25)
+		"linebullet" = 3)
 
 #define ARMOR_MODIFIER_UP_BULLET_T3 list(\
-		"linebullet" = 50)
+		"linebullet" = 3.5)
 
 #define ARMOR_MODIFIER_DOWN_BULLET_T1 list(\
-		"linebullet" = -10)
+		"linebullet" = 0.80)
 
 #define ARMOR_MODIFIER_DOWN_BULLET_T2 list(\
-		"linebullet" = -25)
+		"linebullet" = 0.65)
 
 #define ARMOR_MODIFIER_DOWN_BULLET_T3 list(\
-		"linebullet" = -50)
+		"linebullet" = 0.5)
 
 #define ARMOR_MODIFIER_DOWN_BULLET_T4 list(\
-		"linebullet" = -200)
+		"linebullet" = 0.35)
 
 /* Melee armor
  * Adds on melee protection
@@ -280,22 +280,22 @@
  * T3 - Dedicated heavy plating
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_MELEE_T1 list(\
-		"linemelee" = 10)
+		"linemelee" = 2)
 
 #define ARMOR_MODIFIER_UP_MELEE_T2 list(\
-		"linemelee" = 25)
+		"linemelee" = 3)
 
 #define ARMOR_MODIFIER_UP_MELEE_T3 list(\
-		"linemelee" = 50)
+		"linemelee" = 4.5)
 
 #define ARMOR_MODIFIER_DOWN_MELEE_T1 list(\
-		"linemelee" = -10)
+		"linemelee" = 0.80)
 
 #define ARMOR_MODIFIER_DOWN_MELEE_T2 list(\
-		"linemelee" = -25)
+		"linemelee" = 0.65)
 
 #define ARMOR_MODIFIER_DOWN_MELEE_T3 list(\
-		"linemelee" = -50)
+		"linemelee" = 0.50)
 
 /* Laser armor
  * Adds on laser protection
@@ -304,25 +304,25 @@
  * T3 - Dedicated polished mirror finish
  * * * * * * * * * * * */
 #define ARMOR_MODIFIER_UP_LASER_T1 list(\
-		"linelaser" = 10)
+		"linelaser" = 2)
 
 #define ARMOR_MODIFIER_UP_LASER_T2 list(\
-		"linelaser" = 25)
+		"linelaser" = 3)
 
 #define ARMOR_MODIFIER_UP_LASER_T3 list(\
-		"linelaser" = 50)
+		"linelaser" = 3.5)
 
 #define ARMOR_MODIFIER_DOWN_LASER_T1 list(\
-		"linelaser" = -10)
+		"linelaser" = 0.80)
 
 #define ARMOR_MODIFIER_DOWN_LASER_T2 list(\
-		"linelaser" = -25)
+		"linelaser" = 0.65)
 
 #define ARMOR_MODIFIER_DOWN_LASER_T3 list(\
-		"linelaser" = -50)
+		"linelaser" = 0.50)
 
 #define ARMOR_MODIFIER_DOWN_LASER_T4 list(\
-		"linelaser" = -200)
+		"linelaser" = 0.35)
 
 /* DT tokens
  * Adds on damage threshold
@@ -356,9 +356,9 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 		"melee" = "MULT",
 		"bullet" = "MULT",
 		"laser" = "MULT",
-		"linemelee" = "ADD",
-		"linebullet" = "ADD",
-		"linelaser" = "ADD",
+		"linemelee" = "MULT",
+		"linebullet" = "MULT",
+		"linelaser" = "MULT",
 		"energy" = "MULT",
 		"bomb" = "MULT",
 		"bio" = "MULT",
@@ -475,7 +475,3 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 
 /// Damages DT is effective with
 GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
-
-
-
-
