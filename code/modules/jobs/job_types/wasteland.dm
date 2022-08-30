@@ -2327,7 +2327,7 @@ datum/job/wasteland/f13dendoctor
 	delete_after_roundstart = FALSE
 
 //Redwater Resident Spawn Point code
-/obj/effect/landmark/start/redwaterResident
+/obj/effect/landmark/start/redwateresident
 	name = "Redwater Resident"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE
