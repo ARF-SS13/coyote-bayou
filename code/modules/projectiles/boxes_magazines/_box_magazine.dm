@@ -232,7 +232,7 @@
 	switch(caliber_change_step)
 		if(MAGAZINE_CALIBER_CHANGE_STEP_0)
 			to_chat(user, span_notice("You start loosening the fasteners on \the [src]..."))
-			if(I.use_tool(src, user, 5 SECONDS, volume=50))
+			if(I.use_tool(src, user, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_1
 				to_chat(user, span_notice("You snap open the fasteners on \the [src]! Next, you'll need some metal parts..."))
 			else
@@ -287,7 +287,7 @@
 				to_chat(user, span_alert("You need at least 5 units of fuel in your welder!"))
 				return
 			to_chat(user, span_notice("You start heating up the parts on \the [src]..."))
-			if(I.use_tool(src, user, 5 SECONDS, amount=5, volume=50))
+			if(I.use_tool(src, user, amount=1, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_3
 				to_chat(user, span_notice("You heat up the parts nice and hot and weld them to \the [src]! It should hold a casing, as a mold..."))
 			else
