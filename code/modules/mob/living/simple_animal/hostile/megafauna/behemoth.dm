@@ -8,7 +8,8 @@
 
 	health = 3000
 	maxHealth = 3000
-	
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/card/id/dogtag/enclave/noncombatant = 1)
+
 	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 50
