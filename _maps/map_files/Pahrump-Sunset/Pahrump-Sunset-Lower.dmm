@@ -220,8 +220,9 @@
 	},
 /area/f13/caves)
 "agE" = (
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/obj/effect/spawner/lootdrop/f13/armor/random,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
 "agO" = (
@@ -6048,6 +6049,10 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"coR" = (
+/obj/effect/spawner/lootdrop/f13/armor/tier1,
+/turf/open/floor/plating/tunnel,
+/area/f13/tunnel)
 "cpb" = (
 /mob/living/simple_animal/hostile/supermutant/rangedmutant,
 /turf/open/floor/plasteel/neutral/side{
@@ -6525,8 +6530,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "cFH" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "cGl" = (
@@ -6740,6 +6746,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/tunnel)
 "cVw" = (
@@ -8765,6 +8772,13 @@
 	icon_state = "plating"
 	},
 /area/f13/caves)
+"eQF" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbear1"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "eQQ" = (
 /obj/structure/spider/stickyweb,
 /obj/structure/lattice{
@@ -9251,6 +9265,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
+"fuL" = (
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "fuQ" = (
 /obj/structure/timeddoor,
 /turf/closed/wall/r_wall/rust,
@@ -10060,8 +10079,8 @@
 "gqf" = (
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes seem to entirely pass over human prey.";
-	faction = list("neutral");
+	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	faction = list("Syndicate");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
@@ -10705,6 +10724,10 @@
 "haC" = (
 /obj/structure/decoration/rag,
 /turf/closed/wall/rust,
+/area/f13/tunnel)
+"haL" = (
+/obj/effect/decal/cleanable/blood/splats,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "haR" = (
 /obj/structure/spider/cocoon,
@@ -12872,8 +12895,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "jdD" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
-/obj/structure/rack/shelf_metal,
+/obj/effect/decal/remains/human,
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "jdR" = (
@@ -13028,8 +13051,8 @@
 /area/f13/caves)
 "jpT" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
-/obj/effect/spawner/lootdrop/f13/armor/tier4,
+/obj/effect/spawner/lootdrop/f13/armor/tier3,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_mid,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "jqi" = (
@@ -13098,8 +13121,8 @@
 	},
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes seem to entirely pass over human prey.";
-	faction = list("neutral");
+	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
@@ -14887,8 +14910,8 @@
 	dir = 1
 	},
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes seem to entirely pass over human prey.";
-	faction = list("neutral");
+	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	faction = list("Syndicate");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
@@ -15316,7 +15339,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
 "lDD" = (
-/obj/effect/spawner/lootdrop/f13/medical/random_fev,
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "lDF" = (
@@ -16126,6 +16150,13 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/water,
 /area/f13/tunnel)
+"mmS" = (
+/obj/structure/sign/yield{
+	pixel_x = 12;
+	pixel_y = 11
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mna" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/rust,
@@ -16309,8 +16340,8 @@
 "mwr" = (
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes seem to entirely pass over human prey.";
-	faction = list("neutral");
+	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	faction = list("Syndicate");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	name = "Containment Turret";
@@ -16467,6 +16498,22 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"mEU" = (
+/obj/structure/table,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	faction = list("Syndicate");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Containment Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
+/obj/machinery/light/fo13colored/Red,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mFv" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -16671,6 +16718,7 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_high,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "mQC" = (
@@ -17313,7 +17361,9 @@
 /area/f13/tunnel)
 "nzc" = (
 /mob/living/simple_animal/hostile/megafauna/behemoth{
-	faction = list("hostile","supermutant")
+	faction = list("hostile","supermutant");
+	health = 1500;
+	maxHealth = 1500
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -17547,7 +17597,8 @@
 /area/f13/radiation)
 "nLH" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/gun/ballistic/rifle/mosin,
+/obj/item/gun/ballistic/rifle/hunting/obrez,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
 "nMm" = (
@@ -18717,10 +18768,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "oTM" = (
-/obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/armor/random,
-/obj/effect/spawner/lootdrop/f13/attachments,
-/turf/open/floor/plasteel/f13/vault_floor/red,
+/obj/effect/spawner/lootdrop/f13/medical/random_fev,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "oUq" = (
 /obj/item/reagent_containers/food/snacks/deadmouse,
@@ -19113,6 +19162,9 @@
 /area/f13/building/massfusion)
 "pku" = (
 /obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/armor/clothes,
+/obj/item/clothing/under/f13/vault,
+/obj/item/clothing/under/f13/vault,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
 "pkF" = (
@@ -28097,19 +28149,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ygk" = (
-/obj/structure/table,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes seem to entirely pass over human prey.";
-	faction = list("neutral");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
-/obj/machinery/light/fo13colored/Red,
+/obj/effect/spawner/lootdrop/f13/attachments,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ygo" = (
@@ -35490,8 +35530,8 @@ pwE
 pwE
 pwE
 pwE
-aae
-aae
+pwE
+pwE
 aak
 aak
 aak
@@ -35728,7 +35768,7 @@ aaa
 aaa
 pwE
 jzi
-fLm
+jdD
 jzi
 aah
 aah
@@ -35746,9 +35786,9 @@ aah
 aah
 aah
 aah
+aah
+boU
 pwE
-aae
-aae
 aae
 aak
 aae
@@ -36003,9 +36043,9 @@ odG
 pwE
 aah
 boU
+aah
+boU
 pwE
-aae
-aae
 aae
 aae
 aae
@@ -36260,9 +36300,9 @@ juJ
 pwE
 aah
 aah
+aah
+boU
 pwE
-aae
-aae
 aae
 aae
 aae
@@ -36517,9 +36557,9 @@ odG
 pwE
 aah
 boU
+aah
+boU
 pwE
-aae
-aae
 aae
 aae
 aae
@@ -36774,9 +36814,9 @@ boU
 aah
 aah
 aah
+aah
+aah
 pwE
-aae
-aae
 aak
 aae
 aae
@@ -37030,10 +37070,10 @@ aah
 aah
 aah
 aah
+pwE
+aah
 aah
 pwE
-aae
-aak
 aak
 aak
 aae
@@ -37288,8 +37328,8 @@ aah
 aah
 aah
 aah
-pwE
-pwE
+aah
+aah
 pwE
 aak
 aae
@@ -37527,10 +37567,10 @@ aaa
 aaa
 pwE
 aah
-aah
-aah
-aah
-aah
+oPg
+dvg
+dvg
+dvg
 aah
 aah
 aah
@@ -37544,9 +37584,9 @@ aah
 aah
 aah
 aah
+boU
 aah
 aah
-pwE
 pwE
 aae
 aaa
@@ -37786,7 +37826,7 @@ pwE
 aah
 aah
 aah
-aah
+oPg
 pwE
 pwE
 pwE
@@ -38046,13 +38086,13 @@ aah
 aah
 pwE
 cFH
-cFH
-jdD
+lDD
+pgE
 lDD
 mQa
-cFH
-cFH
-aah
+lDD
+lDD
+pgE
 jpT
 rTf
 pwE
@@ -38060,7 +38100,7 @@ aah
 lIU
 jDW
 egX
-lIU
+aah
 pwE
 aae
 aae
@@ -38302,19 +38342,19 @@ aah
 aah
 aah
 pwE
+oTM
+ygk
+pgE
 aah
 aah
 aah
 aah
-aah
-aah
-aah
-aah
+pgE
 aah
 vrZ
 pwE
 aah
-aah
+lIU
 aah
 aah
 aah
@@ -38816,16 +38856,16 @@ fLm
 aah
 aah
 pwE
-aah
-aah
-aah
-aah
-aah
-aah
-aah
-aah
-aah
-aah
+pwE
+pwE
+pwE
+pgE
+pgE
+pgE
+pgE
+pwE
+pwE
+pwE
 pwE
 aah
 aah
@@ -39073,14 +39113,14 @@ aah
 aah
 aah
 cug
-aah
 pwE
 aah
 aah
 aah
 aah
 aah
-pwE
+aah
+aah
 aah
 aah
 cug
@@ -39333,7 +39373,7 @@ cug
 aah
 aah
 aah
-pwE
+dvg
 aah
 pwE
 aah
@@ -39347,10 +39387,10 @@ aah
 aah
 aah
 pwE
-aae
-aae
-aaa
-aaa
+pwE
+pwE
+pwE
+pwE
 aae
 aaa
 aae
@@ -39596,18 +39636,18 @@ aah
 aah
 aah
 aah
-aah
+pwE
 cug
 aah
 aah
 vdU
 pwE
 aah
+aah
+aah
+aah
+bFF
 pwE
-aae
-aae
-aae
-aae
 aae
 aaa
 aae
@@ -39853,18 +39893,18 @@ pwE
 aah
 aah
 aah
-aah
+bHk
 cug
 aah
 aah
 aah
 pwE
 vdU
+aah
+aah
+aah
+aah
 pwE
-aae
-aae
-aae
-aaa
 aaa
 aaa
 aae
@@ -40101,7 +40141,7 @@ aah
 aah
 aah
 pwE
-aah
+jeq
 gyf
 aah
 aah
@@ -40110,19 +40150,19 @@ aah
 aah
 aah
 pwE
-aah
+eQF
 pwE
 aah
 aah
 aah
 aah
 aah
+aah
+boU
+aah
+aah
 pwE
-aae
-aae
-aae
 aaa
-aae
 aae
 aae
 boU
@@ -40375,11 +40415,11 @@ aah
 vdU
 aah
 pwE
-skC
-aae
-aae
+aah
+aah
+aah
+pwE
 aaa
-aae
 bIj
 bxU
 boU
@@ -40632,11 +40672,11 @@ aah
 aah
 aah
 pwE
-skC
-aae
-aae
+aah
+aah
+aah
+pwE
 aaa
-aae
 bIj
 boU
 boU
@@ -40889,11 +40929,11 @@ bGZ
 aah
 aah
 pwE
-skC
-aae
-aae
+aah
+aah
+aah
+pwE
 aaa
-aae
 aae
 bzP
 boU
@@ -41142,14 +41182,14 @@ lIU
 aah
 pwE
 aah
-aah
+pwE
 aah
 aah
 pwE
-skC
-aae
-aae
-aaa
+aah
+boU
+aah
+pwE
 aaa
 aae
 boU
@@ -41403,10 +41443,10 @@ aah
 aah
 boU
 pwE
-skC
-aae
-aae
-aae
+aah
+aah
+aah
+pwE
 aaa
 aae
 aae
@@ -41660,10 +41700,10 @@ aah
 aah
 aah
 pwE
-skC
-aae
-aae
-aae
+aah
+aah
+aah
+pwE
 aaa
 aaa
 aaa
@@ -41917,10 +41957,10 @@ bBm
 bFS
 pwE
 pwE
-skC
-aae
-aae
-aae
+aah
+boU
+pwE
+pwE
 aae
 aae
 aaa
@@ -42173,12 +42213,12 @@ aah
 aah
 aah
 aah
+aah
+aah
+aah
 pwE
 pwE
 pwE
-pwE
-aae
-aae
 aae
 aae
 aaa
@@ -42430,12 +42470,12 @@ jzi
 aah
 bGZ
 aah
+aah
+aah
+aah
 cug
 otu
 pwE
-pwE
-aae
-aae
 aae
 aae
 aae
@@ -42682,17 +42722,17 @@ aah
 aah
 aah
 aah
-fLm
+fuL
+aah
+aah
+aah
 aah
 aah
 aah
 aah
 cug
-ygk
+mEU
 pwE
-pwE
-aae
-aae
 aae
 aae
 aae
@@ -42944,12 +42984,12 @@ aah
 aah
 aah
 aah
+aah
+aah
+aah
 cug
 otu
 pwE
-pwE
-aae
-aae
 aae
 aae
 aae
@@ -43201,12 +43241,12 @@ aah
 aah
 aah
 aah
+aah
+aah
+aah
 pwE
 pwE
 pwE
-pwE
-aae
-aae
 aae
 aae
 aae
@@ -43459,9 +43499,9 @@ pwE
 bBm
 bFS
 pwE
-skC
-aae
-aae
+bCG
+bCG
+bCG
 aae
 aae
 aae
@@ -43709,14 +43749,14 @@ aah
 ikD
 aah
 aah
-aah
+haL
 aah
 aah
 aah
 bAY
 aah
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -43964,7 +44004,7 @@ pwE
 aah
 aah
 jzi
-aah
+boU
 aah
 aah
 aah
@@ -43973,7 +44013,7 @@ aah
 bAY
 bAY
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -44230,7 +44270,7 @@ pwE
 aah
 bAY
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -44479,7 +44519,7 @@ aah
 aah
 aah
 pwE
-aah
+ygk
 aah
 bAY
 bAY
@@ -44487,7 +44527,7 @@ bAY
 bAY
 bAY
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -44744,7 +44784,7 @@ bAY
 bAY
 aah
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -44994,14 +45034,14 @@ aah
 aah
 pwE
 bHu
-bAY
+coR
 pwE
 aah
 bAY
 bAY
 aah
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -45258,7 +45298,7 @@ bAY
 aah
 aah
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -45503,7 +45543,7 @@ aah
 aah
 aah
 aah
-aah
+mmS
 aah
 aah
 pwE
@@ -45515,7 +45555,7 @@ jGa
 aah
 aah
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -45772,7 +45812,7 @@ pwE
 pwE
 pwE
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -46029,7 +46069,7 @@ bQR
 xcA
 bAY
 pwE
-skC
+aae
 aae
 aae
 aae
@@ -46286,11 +46326,11 @@ hAa
 xcA
 bAY
 pwE
-skC
-skC
-skC
-skC
-skC
+aae
+aae
+aae
+aae
+aae
 coH
 apj
 apj
@@ -50643,7 +50683,7 @@ dXk
 dXk
 apg
 agE
-oTM
+uTI
 uTI
 apg
 apg
