@@ -27,7 +27,7 @@
 /// A big axe
 #define WEAPON_FORCE_AXE_LARGE 20
 /// Two-handed axe multiplier
-#define WEAPON_AXE_TWOHAND_MULT 1.65
+#define WEAPON_AXE_TWOHAND_MULT 1.45
 
 /// A cutting thing designed as a tool (wirecutters)
 #define WEAPON_FORCE_SLASH_TOOL 5
