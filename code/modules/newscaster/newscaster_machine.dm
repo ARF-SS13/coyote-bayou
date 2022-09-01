@@ -4,7 +4,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 	name = "news terminal frame"
 	desc = "Used to build newscasters, just secure to the wall."
 	icon_state = "newscaster"
-	custom_materials = list(/datum/material/iron=14000, /datum/material/glass=8000)
+	custom_materials = list(/datum/material/iron=9700, /datum/material/glass=5500)
 	result_path = /obj/machinery/newscaster
 
 /obj/machinery/newscaster
