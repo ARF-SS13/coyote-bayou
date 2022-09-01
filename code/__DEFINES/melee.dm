@@ -14,7 +14,7 @@
 
 /// Melee item defines
 /// Base forces!
-#define FALLBACK_FORCE 1.15
+#define FALLBACK_MULT 1.15
 /// A small, generic tool
 #define WEAPON_FORCE_TOOL_SMALL 5
 /// A large, generic tool
