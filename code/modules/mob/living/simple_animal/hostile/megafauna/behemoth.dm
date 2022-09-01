@@ -20,6 +20,7 @@
 	rapid_melee = 16
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = TRUE
+	stat_attack = CONSCIOUS
 	pixel_x = -16
 	wander = FALSE
 	movement_type = GROUND
@@ -62,10 +63,18 @@
 
 /mob/living/simple_animal/hostile/megafauna/behemoth/OpenFire()
 	SetRecoveryTime(0, 100)
-	if(health <= maxHealth*0.5)
+	if(health <= maxHealth*0.25)
 		stomp_range = 2
 		speed = 2
 		move_to_delay = 2
+	if(health <= maxHealth*0.50)
+		stomp_range = 2
+		speed = 4
+		move_to_delay = 4
+	if(health <= maxHealth*0.75)
+		stomp_range = initial(stomp_range)
+		speed = 6
+		move_to_delay = 6
 	else
 		stomp_range = initial(stomp_range)
 		speed = initial(speed)
