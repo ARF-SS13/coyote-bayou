@@ -9248,6 +9248,10 @@
 /obj/structure/nest/supermutant,
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
+"fsC" = (
+/obj/structure/simple_door/tent,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "ftM" = (
 /obj/structure/table/wood/poker,
 /obj/item/dice,
@@ -10107,6 +10111,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
+"grK" = (
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/grey,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "grQ" = (
 /obj/machinery/vending/medical,
 /obj/effect/decal/cleanable/dirt{
@@ -10175,6 +10184,10 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
+"gwm" = (
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "gwH" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/dirt,
@@ -13942,6 +13955,11 @@
 /obj/item/clothing/under/f13/raiderharness,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"khl" = (
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/black,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "khs" = (
 /obj/structure/kitchenspike,
 /obj/effect/decal/cleanable/blood/old{
@@ -14172,6 +14190,11 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"kuJ" = (
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/purple,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "kuQ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -25557,6 +25580,11 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/caves)
+"vyC" = (
+/obj/structure/bed/wooden,
+/obj/item/bedsheet/orange,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "vyO" = (
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -27952,6 +27980,13 @@
 /obj/effect/mob_spawn/human/corpse/vault,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
+"xWh" = (
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 1;
+	pixel_y = 12
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "xWj" = (
 /obj/structure/fence{
 	dir = 8
@@ -35560,15 +35595,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aak
-aae
+eUb
+qFR
+qFR
+qFR
+eUb
+eUb
+qFR
+qFR
+eUb
 aae
 aae
 aak
@@ -35817,15 +35852,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aak
-aae
+qFR
+bPh
+alc
+qFR
+alc
+qFR
+alc
+bPh
+qFR
 aae
 aae
 aak
@@ -36074,15 +36109,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
+qFR
+xWh
+alc
+fsC
+alc
+fsC
+alc
+gwm
+qFR
 aae
 aae
 aak
@@ -36331,15 +36366,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+eUb
+vyC
+pgO
+qFR
+alc
+qFR
+pgO
+grK
+qFR
 aae
 aae
 aak
@@ -36588,15 +36623,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+qFR
+eUb
+qFR
+qFR
+xWh
+eUb
+qFR
+qFR
+qFR
 aae
 aae
 aak
@@ -36845,15 +36880,15 @@ aae
 aae
 aae
 aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
+qFR
+bPh
+alc
+qFR
+alc
+qFR
+alc
+bPh
+qFR
 aak
 aae
 aak
@@ -37102,15 +37137,15 @@ aak
 aak
 aae
 aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
+qFR
+xWh
+alc
+fsC
+alc
+fsC
+alc
+gwm
+eUb
 aak
 aae
 aak
@@ -37359,15 +37394,15 @@ aae
 aae
 aae
 aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+qFR
+kuJ
+pgO
+eUb
+alc
+qFR
+pgO
+khl
+qFR
 aae
 aae
 aak
@@ -37620,11 +37655,11 @@ qFR
 qFR
 eUb
 qFR
-qFR
+alc
 eUb
 eUb
 qFR
-aae
+qFR
 aae
 aae
 aak
