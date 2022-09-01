@@ -1182,7 +1182,7 @@ Raider
 	gloves = /obj/item/clothing/gloves/f13/military
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=2,
+		/obj/item/ammo_box/magazine/m9mm/doublestack=2,
 		/obj/item/storage/fancy/cigarettes/dromedaryco=1,)
 
 /datum/outfit/loadout/strandedbos
