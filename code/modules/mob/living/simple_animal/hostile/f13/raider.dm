@@ -25,8 +25,31 @@
 	check_friendly_fire = TRUE
 	status_flags = CANPUSH
 	del_on_death = FALSE
-	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
+	loot = list(
+	/obj/item/stack/f13Cash/random/low,
+	/obj/effect/decal/cleanable/blood,
+	)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	guaranteed_butcher_results = list(
+	/obj/item/reagent_containers/food/snacks/meat/slab/human = 3, 
+	/obj/item/stack/sheet/bone = 2
+	)
+	butcher_results = list(
+	/obj/item/bodypart/l_arm,
+	/obj/item/bodypart/r_arm,
+	/obj/item/bodypart/l_leg,
+	/obj/item/bodypart/r_leg,
+	/obj/item/organ/appendix,
+	/obj/item/organ/ears,
+	/obj/item/organ/eyes,
+	/obj/item/organ/heart,
+	/obj/item/organ/liver,
+	/obj/item/organ/lungs,
+	/obj/item/organ/tongue,
+	/obj/item/organ/stomach
+	)
+	butcher_difficulty = 1
+
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
