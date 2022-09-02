@@ -502,6 +502,10 @@
 /datum/gear/uniform/bathrobe
 	name = "bathrobe"
 	path = /obj/item/clothing/under/misc/bathrobe
+
+/datum/gear/uniform/gear_harness
+	name = "Gear Harness"
+	path = /obj/item/clothing/under/misc/gear_harness
 /*
 /datum/gear/uniform/kimono
 	name = "Kimono"
