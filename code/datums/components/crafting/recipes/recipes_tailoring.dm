@@ -132,7 +132,7 @@ datum/crafting_recipe/steelbib
 	subcategory = CAT_ARMOR
 
 datum/crafting_recipe/steelbib/heavy
-	name = "Reinforved Steel Breastplate"
+	name = "Reinforced Steel Breastplate"
 	result = /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced
 	reqs = list(/obj/item/clothing/suit/armor/medium/vest/breastplate = 1,
 				/obj/item/stack/crafting/goodparts = 1,
