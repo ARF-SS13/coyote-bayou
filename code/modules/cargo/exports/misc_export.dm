@@ -14,7 +14,7 @@
 
 /datum/export/item/superstimpak
 	cost = 80
-	unit_name = "stimpak"
+	unit_name = "super stimpak"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super)
 
 
@@ -26,7 +26,7 @@
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/n99)
 
 /datum/export/item/10mmpistolchinese
-	cost = 90
+	cost = 70
 	unit_name = "type 17 semiautomatic pistol"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/type17)
 
@@ -55,3 +55,29 @@
 	unit_name = "energy cell"
 	export_types =list(obj/item/stock_parts/cell/ammo/ec)
 
+/datum/export/item/traitbookslow
+	cost = 300
+	unit_name = "low-quality technical manual"
+	export_types =list(/obj/item/book/granter/trait/lowsurgery,
+				/obj/item/book/granter/trait/chemistry,
+				/obj/item/book/granter/crafting_recipe/scav_one,
+				/obj/item/book/granter/crafting_recipe/scav_two,
+				/obj/item/book/granter/trait/explosives,
+				/obj/item/book/granter/trait/techno,
+				/obj/item/book/granter/crafting_recipe/ODF,
+				/obj/item/book/granter/action/drink_fling,
+				/obj/item/book/granter/crafting_recipe/gunsmith_one)
+
+/datum/export/item/traitbooks
+	cost = 450
+	unit_name = "high-quality technical manual"
+	export_types =list(/obj/item/book/granter/trait/lowsurgery,
+				/obj/item/book/granter/trait/chemistry,
+				/obj/item/book/granter/trait/trekking,
+				/obj/item/book/granter/trait/pa_wear,
+				/obj/item/book/granter/trait/explosives,
+				/obj/item/book/granter/trait/explosives_advanced,
+				/obj/item/book/granter/trait/rifleman,
+				/obj/item/book/granter/crafting_recipe/gunsmith_two,
+				/obj/item/book/granter/crafting_recipe/gunsmith_three,
+				/obj/item/book/granter/crafting_recipe/gunsmith_four)
