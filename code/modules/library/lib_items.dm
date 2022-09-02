@@ -34,7 +34,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 200
 	var/state = 0
-	var/list/allowed_books = list(/obj/item/book, /obj/item/spellbook, /obj/item/storage/book, /obj/item/gun/magic/wand/book) //Things allowed in the bookcase
+	var/list/allowed_books = list(/obj/item/book, /obj/item/spellbook, /obj/item/storage/book, /obj/item/gun/magic/wand/book, /obj/item/book/granter) //Things allowed in the bookcase
 
 /obj/structure/bookcase/examine(mob/user)
 	. = ..()
