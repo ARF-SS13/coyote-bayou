@@ -214,9 +214,9 @@
 				to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
 			return
 
-		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
+/* 		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
 			alert(src, "This character name is already in use. Choose another.")
-			return
+			return */
 
 		LateChoices()
 
