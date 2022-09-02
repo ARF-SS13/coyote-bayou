@@ -738,9 +738,9 @@ obj/item/storage/box/stingbangs
 	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 
 // Clown survival box	Modified to fit with FO13~Tk
-/obj/item/storage/box/hug/survival/PopulateContents()
-	new /obj/item/reagent_containers/hypospray/medipen/stimpak
-	new /obj/item/reagent_containers/blood/radaway
+/obj/item/storage/box/hug/survival/PopulateContents(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/blood/radaway(src)
 
 /obj/item/storage/box/lethalslugs
 	name = "box of 12g shotgun slugs"
