@@ -276,7 +276,7 @@ datum/crafting_recipe/steelbib/heavy
 /datum/crafting_recipe/armyhelmetheavy
 	name = "Heavy Steel Helmet"
 	result = /obj/item/clothing/head/helmet/armyhelmet/heavy
-	reqs = list(/obj/item/clothing/head/helmet/armyhelmet,
+	reqs = list(/obj/item/clothing/head/helmet/armyhelmet = 1,
 				/obj/item/stack/crafting/goodparts = 1,
 				/obj/item/stack/sheet/prewar = 5)
 	tools = list(TOOL_WORKBENCH)
