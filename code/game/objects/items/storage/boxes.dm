@@ -720,7 +720,7 @@ obj/item/storage/box/stingbangs
 	foldable = null
 
 /obj/item/storage/box/hug/suicide_act(mob/user)
-	user.visible_message(span_suicide("[user] clamps the box of hugs on [user.p_their()] jugular! Guess it wasn't such a hugbox after all.."))
+	user.visible_message(span_suicide("[user] begins eating the box like an idiot-goat. They're probably going to choke to death.."))
 	return (BRUTELOSS)
 
 /obj/item/storage/box/hug/attack_self(mob/user)
@@ -735,17 +735,12 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/hug/medical/PopulateContents()
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 
-// Clown survival box
-/obj/item/storage/box/hug/survival/PopulateContents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
-		new /obj/item/tank/internals/plasmaman/belt(src)
+// Clown survival box	Modified to fit with FO13~Tk
+/obj/item/storage/box/hug/survival/PopulateContents(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/blood/radaway(src)
 
 /obj/item/storage/box/lethalslugs
 	name = "box of 12g shotgun slugs"
