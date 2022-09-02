@@ -4,6 +4,7 @@
 	desc = "A robust leather pocket pouch for all the essentials for wasteland survival."
 	icon_state = "survivalkit"
 	component_type = /datum/component/storage/concrete/box/survivalkit
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_POCKET | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 
@@ -83,6 +84,22 @@
 	new /obj/item/stack/medical/ointment(src)
 
 /obj/item/storage/survivalkit/medical/empty/PopulateContents()
+	return
+
+/// Synthmed pouch!
+/obj/item/storage/survivalkit/medical/synth
+	name = "survival repair kit"
+	desc = "A robust leather toolpouch for quick-access repair equipment."
+	icon_state = "survivalkit_toolkit"
+	component_type = /datum/component/storage/concrete/box/survivalkit/specialized/synthmed
+
+/obj/item/storage/survivalkit/medical/synth/PopulateContents()
+	new /obj/item/weldingtool/mini(src)
+	new /obj/item/reagent_containers/glass/bottle/welding_fuel/big(src)
+	new /obj/item/clothing/glasses/sunglasses/blindfold(src)
+	new /obj/item/stack/cable_coil/random(src)
+
+/obj/item/storage/survivalkit/medical/synth/empty/PopulateContents()
 	return
 
 /// Follower pouch!

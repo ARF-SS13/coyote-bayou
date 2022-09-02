@@ -49,3 +49,9 @@
 				/obj/item/gun/ballistic/revolver/hobo/knifegun,
 				/obj/item/gun/ballistic/revolver/hobo/knucklegun,
 				/obj/effect/spawner/bundle/f13/autopipe)
+
+/datum/export/item/energycell
+	cost = 250
+	unit_name = "energy cell"
+	export_types =list(obj/item/stock_parts/cell/ammo/ec)
+

@@ -1182,7 +1182,7 @@ Raider
 	gloves = /obj/item/clothing/gloves/f13/military
 	l_hand = /obj/item/gun/ballistic/automatic/pistol/ninemil
 	backpack_contents = list(
-		/obj/item/ammo_box/magazine/m9mm=2,
+		/obj/item/ammo_box/magazine/m9mm/doublestack=2,
 		/obj/item/storage/fancy/cigarettes/dromedaryco=1,)
 
 /datum/outfit/loadout/strandedbos
@@ -2327,7 +2327,7 @@ datum/job/wasteland/f13dendoctor
 	delete_after_roundstart = FALSE
 
 //Redwater Resident Spawn Point code
-/obj/effect/landmark/start/redwaterResident
+/obj/effect/landmark/start/redwateresident
 	name = "Redwater Resident"
 	icon_state = "Wastelander"
 	jobspawn_override = TRUE

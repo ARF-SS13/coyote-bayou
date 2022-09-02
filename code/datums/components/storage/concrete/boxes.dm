@@ -96,7 +96,18 @@
 	. = ..()
 	can_hold = GLOB.medibelt_allowed
 
-/// Combat kit
+/// Synthy kit
+/datum/component/storage/concrete/box/survivalkit/specialized/synthmed
+	max_items = STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS
+	max_w_class = STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE
+	max_combined_w_class = STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_TOTAL_SPACE
+
+/datum/component/storage/concrete/box/survivalkit/specialized/synthmed/Initialize()
+	. = ..()
+	can_hold = GLOB.toolbelt_allowed
+
+/// combat kit
 /datum/component/storage/concrete/box/survivalkit/specialized/combat
 	max_items = STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS
 	max_w_class = STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE
