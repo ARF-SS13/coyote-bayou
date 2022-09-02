@@ -17,10 +17,7 @@
 	unit_name = "super stimpak"
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super)
 
-
-// gun
-
-/datum/export/item/10mmpistol
+/datum/export/item/tenmmpistol
 	cost = 80
 	unit_name = "n99 semiautomatic pistol"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/n99)
