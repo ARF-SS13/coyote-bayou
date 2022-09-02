@@ -22,17 +22,17 @@
 	unit_name = "n99 semiautomatic pistol"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/n99)
 
-/datum/export/item/10mmpistolchinese
+/datum/export/item/tenmmpistolchinese
 	cost = 70
 	unit_name = "type 17 semiautomatic pistol"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/type17)
 
-/datum/export/item/9mmpistol
+/datum/export/item/ninemmpistol
 	cost = 80
 	unit_name = "browning hi-power"
 	export_types = list(/obj/item/gun/ballistic/automatic/pistol/ninemil)
 
-/datum/export/item/m1911
+/datum/export/item/browningmnineteen
 	cost = 50
 	unit_name = "m1911"
 	export_types = list(/obj/item/gun/ballistic/automatic/
