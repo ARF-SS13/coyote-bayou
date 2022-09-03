@@ -35,7 +35,7 @@
 /datum/export/item/browningmnineteen
 	cost = 50
 	unit_name = "m1911"
-	export_types = list(/obj/item/gun/ballistic/automatic/
+	export_types = list(/obj/item/gun/ballistic/automatic/)
 
 /datum/export/item/zipgunslist
 	cost = 30
