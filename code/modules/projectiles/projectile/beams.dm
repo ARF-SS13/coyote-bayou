@@ -350,11 +350,11 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
-/obj/item/projectile/beam/laser/pistol //AEP7
+/obj/item/projectile/beam/laser/pistol
 	name = "laser beam"
 	damage = 35
 
-/obj/item/projectile/beam/laser/pistol/hitscan //hitscan AEP7
+/obj/item/projectile/beam/laser/pistol/hitscan //Actual AEP7
 	name = "laser beam"
 	damage = 26
 	hitscan = TRUE
