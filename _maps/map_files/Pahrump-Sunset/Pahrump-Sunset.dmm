@@ -20524,6 +20524,14 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland)
+"bRG" = (
+/obj/structure/fluff/fokoff_sign{
+	pixel_x = 21
+	},
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "outermaincornerinner"
+	},
+/area/f13/wasteland)
 "bRI" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -24501,6 +24509,10 @@
 /area/f13/building)
 "dsi" = (
 /obj/structure/junk/machinery,
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "#ff0000"
+	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "dsl" = (
@@ -27830,10 +27842,8 @@
 /area/f13/building)
 "fdY" = (
 /obj/structure/debris/v1{
-	pixel_x = -16
-	},
-/obj/structure/debris/v1{
-	pixel_x = -16
+	pixel_x = -16;
+	density = 0
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
@@ -33342,6 +33352,12 @@
 	icon_state = "greenrustychess"
 	},
 /area/f13/building/massfusion)
+"hZg" = (
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "hZD" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -34536,6 +34552,13 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"iDb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/turf/open/indestructible/ground/outside/sidewalk{
+	icon_state = "horizontaloutermain1"
+	},
+/area/f13/wasteland)
 "iDe" = (
 /obj/structure/nest/ghoul{
 	max_mobs = 2;
@@ -36513,7 +36536,8 @@
 /area/f13/building)
 "jFZ" = (
 /obj/structure/debris/v1{
-	pixel_x = -16
+	pixel_x = -16;
+	density = 0
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -44045,8 +44069,10 @@
 /area/f13/wasteland)
 "nuM" = (
 /obj/structure/debris/v1{
-	pixel_x = -16
+	pixel_x = -16;
+	density = 0
 	},
+/obj/effect/mob_spawn/human/corpse,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaloutermain1"
 	},
@@ -58333,6 +58359,14 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "horizontaltopbordertop2"
 	},
+/area/f13/wasteland)
+"vjV" = (
+/obj/structure/ladder{
+	pixel_y = 13;
+	height = 1;
+	id = "renladder"
+	},
+/turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "vka" = (
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -91710,7 +91744,7 @@ oHM
 dzB
 tJl
 xYE
-dcy
+iDb
 ean
 ean
 xYE
@@ -92223,7 +92257,7 @@ aae
 xYE
 oHM
 oHM
-oHM
+azP
 xYE
 jSv
 jSv
@@ -92480,9 +92514,9 @@ aae
 aae
 xYE
 nuM
-nuM
-jFZ
-nuM
+xYE
+ean
+hZg
 xYE
 xYE
 xYE
@@ -92736,10 +92770,10 @@ aae
 aae
 aae
 jFZ
-nuM
-nuM
 fdY
-nuM
+fdY
+fdY
+fdY
 xYE
 dcy
 dcy
@@ -92994,10 +93028,10 @@ aae
 aae
 aae
 jFZ
-nuM
-nuM
 fdY
-ean
+fdY
+fdY
+sFb
 xYE
 ean
 xYE
@@ -93251,10 +93285,10 @@ aae
 aae
 aae
 aae
-nuM
-nuM
+fdY
 fdY
 nuM
+xYE
 xYE
 xYE
 xYE
@@ -93509,8 +93543,8 @@ aae
 aae
 aae
 aae
-nuM
-jFZ
+fdY
+ean
 ean
 xYE
 xYE
@@ -94032,9 +94066,9 @@ lLJ
 lLJ
 aaD
 aaD
-ean
+vjV
 xYE
-dzB
+bRG
 tJl
 xYE
 aiO
@@ -103544,7 +103578,7 @@ iXx
 aeB
 sjs
 aOk
-hyV
+fKM
 alR
 aus
 iAn

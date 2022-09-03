@@ -677,12 +677,6 @@
 	icon_state = "outerturn"
 	},
 /area/f13/wasteland)
-"axL" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalrightborderleft0"
-	},
-/area/f13/caves)
 "ayn" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood/interior,
@@ -2004,6 +1998,13 @@
 	},
 /turf/open/indestructible/ground/outside/savannah/topcenter,
 /area/f13/wasteland)
+"bvp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/nest/ghoul,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
+/area/f13/wasteland)
 "bvq" = (
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -2402,12 +2403,6 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
-"bIF" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop0"
-	},
-/area/f13/caves)
 "bJf" = (
 /obj/structure/barricade/tentclothedge{
 	dir = 4;
@@ -7101,12 +7096,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/raiders)
-"eTg" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/caves)
 "eTF" = (
 /obj/item/stack/ore/lead,
 /turf/open/water,
@@ -12626,12 +12615,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/city)
-"iQl" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
-	},
-/area/f13/caves)
 "iQr" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -27135,9 +27118,6 @@
 /obj/item/storage/book/bible{
 	pixel_x = -4
 	},
-/obj/item/book/granter/trait/techno{
-	pixel_x = 7
-	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "taE" = (
@@ -30890,12 +30870,6 @@
 	icon_state = "horizontalinnermain2right"
 	},
 /area/f13/wasteland)
-"vHO" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "verticalleftborderright0"
-	},
-/area/f13/caves)
 "vIk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -34751,10 +34725,10 @@ gMW
 gMW
 gMW
 gMW
-bIF
-eTg
-mUD
-iQl
+jwE
+sNX
+aFQ
+cxL
 gMW
 fBS
 fBS
@@ -42057,7 +42031,7 @@ pXw
 xtR
 wYK
 gmp
-geC
+pXw
 evw
 htm
 nTq
@@ -42543,8 +42517,8 @@ euo
 fRl
 gGs
 tTw
-ckd
-gZM
+wYK
+gGs
 gGs
 gGs
 gmp
@@ -43113,7 +43087,7 @@ dtH
 roR
 oFm
 lHJ
-nGx
+oMa
 pVV
 oMa
 pVV
@@ -43843,7 +43817,7 @@ oFm
 pVV
 qHL
 pVV
-pVV
+bvp
 pVV
 gUg
 oui
@@ -55725,7 +55699,7 @@ rYb
 (84,1,1) = {"
 rYb
 ucR
-vHO
+wbV
 wbV
 wbV
 oUn
@@ -55982,7 +55956,7 @@ rYb
 (85,1,1) = {"
 rYb
 ucR
-mUD
+aFQ
 aFQ
 aFQ
 glu
@@ -56239,7 +56213,7 @@ rYb
 (86,1,1) = {"
 rYb
 ucR
-mUD
+aFQ
 aFQ
 yeI
 lZf
@@ -56496,7 +56470,7 @@ rYb
 (87,1,1) = {"
 rYb
 ucR
-axL
+vKr
 vKr
 vKr
 csi
