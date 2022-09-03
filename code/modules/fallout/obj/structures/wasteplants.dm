@@ -53,7 +53,7 @@
 	if(LAZYLEN(contents))
 		var/turf/our_turf = get_turf(src)
 		if(isturf(our_turf))
-			for(var/atom/inside_thing in contents)
+			for(var/atom/movable/inside_thing in contents)
 				inside_thing.forceMove(our_turf)
 	. = ..()
 
