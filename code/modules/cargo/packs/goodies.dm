@@ -4,27 +4,37 @@
 	group = "Goodies"
 	goody = PACK_GOODY_PRIVATE
 
+/datum/supply_pack/goody/traitbooks
+	name = "Technical manuals"
+	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
+	cost = 1500
+	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
+					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
+
 /datum/supply_pack/goody/combatknives_single
 	name = "Combat Knife Single-Pack"
-	desc = "Contains one sharpened combat knive. Guaranteed to fit snugly inside any Nanotrasen-standard boot."
+	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-standard boot. You know what's better than one knife? Three of 'em!"
 	cost = 800
-	contains = list(/obj/item/melee/onehanded/knife/hunting)
+	contains = list(/obj/item/melee/onehanded/knife/hunting,
+					/obj/item/melee/onehanded/knife/hunting,
+					/obj/item/melee/onehanded/knife/hunting)
 
 /datum/supply_pack/goody/sologamermitts
 	name = "Insulated Gloves Single-Pack"
-	desc = "The backbone of modern society. Barely ever ordered for actual engineering."
+	desc = "The backbone of modern society. Oddly useful for...combat engineers, of all people."
 	cost = 800
 	contains = list(/obj/item/clothing/gloves/color/yellow)
 
 /datum/supply_pack/goody/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
-	desc = "A single brute first-aid kit, perfect for recovering from being crushed in an airlock. Did you know people get crushed in airlocks all the time? Interesting..."
+	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
 	cost = 330
 	contains = list(/obj/item/storage/firstaid/brute)
 
 /datum/supply_pack/goody/firstaidburns_single
 	name = "Burn Treatment Kit Single-Pack"
-	desc = "A single burn first-aid kit. The advertisement displays a winking atmospheric technician giving a thumbs up, saying \"Mistakes happen!\""
+	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
 	cost = 330
 	contains = list(/obj/item/storage/firstaid/fire)
 
@@ -76,8 +86,11 @@
 	cost = 200
 	contains = list(/obj/item/toy/beach_ball)
 
+/*
 /datum/supply_pack/goody/medipen_twopak
 	name = "Medipen Two-Pak"
 	desc = "Contains one standard epinephrine medipen and one standard emergency first-aid kit medipen. For when you want to prepare for the worst."
 	cost = 500
 	contains = list(/obj/item/reagent_containers/hypospray/medipen, /obj/item/reagent_containers/hypospray/medipen/ekit)
+*/
+

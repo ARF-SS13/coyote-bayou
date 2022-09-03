@@ -186,12 +186,18 @@
 
 /datum/supply_pack/medical/stimpak5
 	name = "Stimpak"
-	desc = "The humble stimpak, in a box of five."
+	desc = "The humble stimpak, about five."
 	cost = 250
-	contains = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	contains = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak)
 
 /datum/supply_pack/medical/radaway
 	name = "Radaway"
-	desc = "It burns like hell, but it flushes the rads out, for sure."
-	cost = 250
-	contains = /obj/item/reagent_containers/blood/radaway
+	desc = "It burns like hell, but it flushes the rads out, for sure. About three."
+	cost = 750
+	contains = list(/obj/item/reagent_containers/blood/radaway,
+					/obj/item/reagent_containers/blood/radaway,
+					/obj/item/reagent_containers/blood/radaway)
