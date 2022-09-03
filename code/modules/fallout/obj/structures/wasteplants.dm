@@ -49,6 +49,14 @@
 	var/produce
 	var/timer = 5000 //50 seconds
 
+/obj/structure/flora/wasteplant/Destroy()
+	if(LAZYLEN(contents))
+		var/turf/our_turf = get_turf(src)
+		if(isturf(our_turf))
+			for(var/atom/inside_thing in contents)
+				inside_thing.forceMove(our_turf)
+	. = ..()
+
 /obj/structure/flora/wasteplant/attack_hand(mob/user)
 	if(!ispath(produce))
 		return ..()
@@ -75,6 +83,11 @@
 		icon_state = "[initial(icon_state)]"
 	else
 		icon_state = "[initial(icon_state)]_no"
+
+/obj/structure/flora/wasteplant/Initialize()
+	. = ..()
+	if(ispath(produce))
+		new produce(src) // so it glows or whatever
 
 /obj/structure/flora/wasteplant/wild_broc
 	name = "wild broc flower"
@@ -175,6 +188,11 @@ obj/structure/flora/wasteplant/wild_punga
 	desc = "The juice of this fleshy plant soothes burns, but it also removes nutrients from the body."
 	produce = /obj/item/reagent_containers/food/snacks/grown/agave
 
+/obj/structure/flora/wasteplant/fever_blossom
+	name = "wild fever blossom"
+	icon_state = "wild_blossom"
+	desc = "The wild fever blossom grows on creeping tangles of vine-like bushes. The flowers that adorn the bushes glow with an iridescent purple, drawing attention to the intricate floral arrays, which appear to have mutated from some sort of passion flower. It is known for its use as an aphrodisiac and sleep aid."
+	produce = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 
 /////FALLOUT 13 TREES////
 /obj/structure/flora/tree/joshua

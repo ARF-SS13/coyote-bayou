@@ -68,8 +68,32 @@
 
 #define GRASS_SPONTANEOUS 		  2
 #define GRASS_WEIGHT			  4
-#define LUSH_PLANT_SPAWN_LIST     list(/obj/structure/flora/grass/wasteland = 10, /obj/structure/flora/wasteplant/wild_horsenettle = 5, /obj/structure/flora/wasteplant/wild_broc = 7, /obj/structure/flora/wasteplant/wild_mesquite = 4, /obj/structure/flora/wasteplant/wild_feracactus = 5, /obj/structure/flora/wasteplant/wild_punga = 5, /obj/structure/flora/wasteplant/wild_coyote = 5, /obj/structure/flora/wasteplant/wild_tato = 5, /obj/structure/flora/wasteplant/wild_yucca = 5, /obj/structure/flora/wasteplant/wild_mutfruit = 5, /obj/structure/flora/wasteplant/wild_prickly = 5, /obj/structure/flora/wasteplant/wild_datura = 5, /obj/structure/flora/wasteplant/wild_buffalogourd = 5, /obj/structure/flora/wasteplant/wild_pinyon = 3, /obj/structure/flora/wasteplant/wild_xander = 5, /obj/structure/flora/wasteplant/wild_agave = 5, /obj/structure/flora/tree/joshua = 3, /obj/structure/flora/tree/cactus = 2, /obj/structure/flora/tree/wasteland = 2)
-#define DESOLATE_PLANT_SPAWN_LIST list(/obj/structure/flora/grass/wasteland = 1)
+GLOBAL_LIST_INIT(lush_plant_spawn_list, list(
+	/obj/structure/flora/grass/wasteland = 10,
+	/obj/structure/flora/wasteplant/wild_horsenettle = 5,
+	/obj/structure/flora/wasteplant/fever_blossom = 7,
+	/obj/structure/flora/wasteplant/wild_broc = 7,
+	/obj/structure/flora/wasteplant/wild_mesquite = 4,
+	/obj/structure/flora/wasteplant/wild_feracactus = 5,
+	/obj/structure/flora/wasteplant/wild_punga = 5,
+	/obj/structure/flora/wasteplant/wild_coyote = 5,
+	/obj/structure/flora/wasteplant/wild_tato = 5,
+	/obj/structure/flora/wasteplant/wild_yucca = 5,
+	/obj/structure/flora/wasteplant/wild_mutfruit = 5,
+	/obj/structure/flora/wasteplant/wild_prickly = 5,
+	/obj/structure/flora/wasteplant/wild_datura = 5,
+	/obj/structure/flora/wasteplant/wild_buffalogourd = 5,
+	/obj/structure/flora/wasteplant/wild_pinyon = 3,
+	/obj/structure/flora/wasteplant/wild_xander = 5,
+	/obj/structure/flora/wasteplant/wild_agave = 5,
+	/obj/structure/flora/tree/joshua = 3,
+	/obj/structure/flora/tree/cactus = 2,
+	/obj/structure/flora/tree/wasteland = 2
+	))
+
+GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
+	/obj/structure/flora/grass/wasteland = 1
+	))
 
 /turf/open/indestructible/ground/outside/dirthole
 	name = "Dirt hole"
