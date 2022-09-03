@@ -40,7 +40,7 @@
 /datum/export/item/zipgunslist
 	cost = 30
 	unit_name = "improvised firearm"
-	export_types =list(/obj/effect/spawner/bundle/f13/pepperbox,
+	export_types = list(/obj/effect/spawner/bundle/f13/pepperbox,
 				/obj/effect/spawner/bundle/weapon/piperifle,
 				/obj/effect/spawner/bundle/f13/zipgun,
 				/obj/item/gun/ballistic/revolver/hobo/knifegun,
@@ -50,12 +50,12 @@
 /datum/export/item/energycell
 	cost = 250
 	unit_name = "energy cell"
-	export_types =list(obj/item/stock_parts/cell/ammo/ec)
+	export_types = list(/obj/item/stock_parts/cell/ammo/ec)
 
 /datum/export/item/traitbookslow
 	cost = 300
 	unit_name = "low-quality technical manual"
-	export_types =list(/obj/item/book/granter/trait/lowsurgery,
+	export_types = list(/obj/item/book/granter/trait/lowsurgery,
 				/obj/item/book/granter/trait/chemistry,
 				/obj/item/book/granter/crafting_recipe/scav_one,
 				/obj/item/book/granter/crafting_recipe/scav_two,
@@ -68,7 +68,7 @@
 /datum/export/item/traitbooks
 	cost = 450
 	unit_name = "high-quality technical manual"
-	export_types =list(/obj/item/book/granter/trait/lowsurgery,
+	export_types = list(/obj/item/book/granter/trait/lowsurgery,
 				/obj/item/book/granter/trait/chemistry,
 				/obj/item/book/granter/trait/trekking,
 				/obj/item/book/granter/trait/pa_wear,
