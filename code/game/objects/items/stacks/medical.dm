@@ -62,6 +62,10 @@
 	var/can_heal_critters = TRUE
 	/// How long this bandage should last on someone before falling apart
 	var/covering_lifespan = BANDAGE_OKAY_MAX_DURATION
+	/// How much this covering will heal over its healing time
+	var/heal_over_time_amount
+	/// How much of the healing should be applied per cycle
+	var/heal_over_time_per_tick
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -372,8 +376,10 @@
 	singular_name = "medical bandage"
 	gender = PLURAL
 	covering_hitpoints = 3
-	heal_brute = 5
-	heal_burn = 5
+	heal_brute = 0
+	heal_burn = 0
+	heal_over_time_amount = BANDAGE_NORMAL_HEAL_OVER_TIME
+	heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
 	self_delay = 30
 	other_delay = 10
 	amount = 10
@@ -419,8 +425,10 @@
 	singular_name = "improvised bandage"
 	desc = "A roll of cloth. Useful for staunching bleeding, healing bruises and burns, as well as reversing infection. Sort of."
 	covering_hitpoints = 1 // fragile!
-	heal_brute = 3
-	heal_burn = 3
+	heal_brute = 0
+	heal_burn = 0
+	heal_over_time_amount = BANDAGE_IMPROVISED_HEAL_OVER_TIME
+	heal_over_time_per_tick = BANDAGE_IMPROVISED_HEAL_RATE
 	self_delay = 30
 	other_delay = 10
 	//absorption_rate = 0.15
@@ -441,10 +449,12 @@
 	singular_name = "sterilized medical bandage"
 	desc = "A roll of durable elastic sterilized cloth that is extremely effective at stopping bleeding and covering burns. Somewhat awkward to use without training."
 	covering_hitpoints = 5
-	heal_brute = 10
-	heal_brute = 10
+	heal_brute = 0
+	heal_brute = 0
 	self_delay = 10
 	other_delay = 10
+	heal_over_time_amount = BANDAGE_MEDICAL_HEAL_OVER_TIME
+	heal_over_time_per_tick = BANDAGE_MEDICAL_HEAL_RATE
 	is_bandage = TRUE
 	needed_trait = TRAIT_SURGERY_LOW
 	//absorption_rate = 0.4
@@ -488,6 +498,8 @@
 	amount = 15
 	max_amount = 15
 	hurt_brute = -3
+	heal_over_time_amount = SUTURE_NORMAL_HEAL_OVER_TIME
+	heal_over_time_per_tick = SUTURE_NORMAL_HEAL_RATE
 	suture_power = SUTURE_GOOD_WOUND_CLOSURE
 	repeating = FALSE // One's enough
 	is_suture = TRUE
@@ -508,11 +520,13 @@
 	desc = "A set of improvised sutures consisting of clothing thread and a sewing needle. Liable to tear up your flesh, but will eventually close up minor bleeds. Medical training won't help you with this."
 	needed_trait = null
 	covering_hitpoints = 1
-	hurt_brute = -8
+	hurt_brute = -8 // Owie
 	self_delay = 100
 	other_delay = 80
 	amount = 5
 	max_amount = 15
+	heal_over_time_amount = SUTURE_IMPROVISED_HEAL_OVER_TIME
+	heal_over_time_per_tick = SUTURE_IMPROVISED_HEAL_RATE
 	suture_power = SUTURE_BASE_WOUND_CLOSURE
 	is_suture = TRUE
 	merge_type = /obj/item/stack/medical/suture/emergency
@@ -536,8 +550,10 @@
 	covering_hitpoints = 5
 	self_delay = 80
 	other_delay = 60
-	heal_brute = 10
-	heal_burn = 10
+	heal_brute = 3
+	heal_burn = 3
+	heal_over_time_amount = SUTURE_MEDICAL_HEAL_OVER_TIME
+	heal_over_time_per_tick = SUTURE_MEDICAL_HEAL_RATE
 	suture_power = SUTURE_GOOD_WOUND_CLOSURE
 	is_suture = TRUE
 	grind_results = list(/datum/reagent/medicine/polypyr = 2)

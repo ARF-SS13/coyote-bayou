@@ -14,22 +14,28 @@
 	var/initial_flow
 	/// When we have less than this amount of flow, either from treatment or clotting, we demote to a lower cut or are healed of the wound
 	var/minimum_flow
-	/// How fast our blood flow will naturally decrease per tick, not only do larger cuts bleed more faster, they clot slower
+	/// How much the wound's integrity drops per cycle on its own. Huge wounds bleed out faster
 	var/clot_rate
 	/// How much to scale the bleeding if the owner's blood is below low_blood_threshold
 	var/low_blood_multiplier = 1
 	/// If our owner's blood level is below this, we'll multiply blood loss by low_blood_multiplier
 	var/low_blood_threshold
-	/// Once the blood flow drops below minimum_flow, we demote it to this type of wound. If there's none, we're all better
+	/// Once wound integrity goes below 0, we demote it to this type of wound. If there's none, we're all better
 	var/demotes_to
-	/// The maximum flow we've had so far
-	var/highest_flow
+	/// If wound integrity goes above its max, we promote it to this type of wound. If there's none, just make it worse
+	var/promotes_to
 	/// A bad system I'm using to track the worst scar we earned (since we can demote, we want the biggest our wound has been, not what it was when it was cured (probably moderate))
 	var/datum/scar/highest_scar
 	/// When hit on this bodypart, we have this chance of losing some blood + the incoming damage
 	var/internal_bleeding_chance
 	/// If we let off blood when hit, the max blood lost is this * the incoming damage
 	var/internal_bleeding_coefficient
+	/// Do bandages fully stop this wound's bleeding?
+	var/stopped_by_bandage = FALSE
+	/// Wound size, basically the wound's hitpoints
+	var/wound_integrity
+	/// Required wound integrity to promote to the next
+	var/wound_integrity_max
 	COOLDOWN_DECLARE(bleed_heal_cooldown)
 
 /datum/wound/bleed/receive_damage(wounding_type, wounding_dmg, wound_bonus)
@@ -122,9 +128,6 @@
 	limb.check_suture_time()
 	
 	reduce_bloodflow()
-
-	if(blood_flow > highest_flow)
-		highest_flow = blood_flow
 
 	if(get_blood_flow(FALSE) < minimum_flow)
 		to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))

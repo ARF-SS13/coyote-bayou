@@ -23,6 +23,7 @@
 	threshold_penalty = 15
 	low_blood_threshold = WOUND_BLEED_MODERATE_BLOOD_LOSS_THRESHOLD
 	low_blood_multiplier = WOUND_BLEED_MODERATE_BLOOD_LOSS_MULTIPLIER
+	promotes_to = /datum/wound/bleed/pierce/severe
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
@@ -44,6 +45,7 @@
 	low_blood_threshold = WOUND_BLEED_SEVERE_BLOOD_LOSS_THRESHOLD
 	low_blood_multiplier = WOUND_BLEED_SEVERE_BLOOD_LOSS_MULTIPLIER
 	demotes_to = /datum/wound/bleed/pierce/moderate
+	promotes_to = /datum/wound/bleed/pierce/critical
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
 

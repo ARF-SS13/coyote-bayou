@@ -39,17 +39,49 @@
 /// set wound_bonus on an item or attack to this to disable checking wounding for the attack
 #define CANT_WOUND -100
 
-// list in order of highest severity to lowest
-GLOBAL_LIST_INIT(global_wound_types, list(WOUND_BLUNT = list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate),
-		WOUND_SLASH = list(/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate),
-		WOUND_PIERCE = list(/datum/wound/bleed/pierce/critical, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/moderate),
-		WOUND_BURN = list(/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate)
-		))
+/// Wound integrity needed to get to the next level of wound - basically (damage + wound_mod)
+#define WOUND_INTEGRITY_MAX_MODERATE 30
+#define WOUND_INTEGRITY_MAX_SEVERE 50
+#define WOUND_INTEGRITY_MAX_CRITICAL INFINITY // lol
 
-GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datum/wound/blunt/severe, /datum/wound/blunt/moderate,
-	/datum/wound/bleed/slash/critical, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/moderate,
-	/datum/wound/bleed/pierce/critical, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/moderate,
-	/datum/wound/burn/critical, /datum/wound/burn/severe, /datum/wound/burn/moderate))
+/// Wound damage to skip right to this wound - basically (damage + wound_mod)
+#define WOUND_DAMAGE_MODERATE BULLET_DAMAGE_PISTOL_LIGHT
+#define WOUND_DAMAGE_SEVERE BULLET_DAMAGE_RIFLE_MEDIUM
+#define WOUND_DAMAGE_CRITICAL BULLET_DAMAGE_RIFLE_HEAVY
+
+// list in order of highest severity to lowest
+GLOBAL_LIST_INIT(global_wound_types, list(
+	WOUND_BLUNT = list(
+		/datum/wound/blunt/critical,
+		/datum/wound/blunt/severe,
+		/datum/wound/blunt/moderate),
+	WOUND_SLASH = list(
+		/datum/wound/bleed/slash/critical,
+		/datum/wound/bleed/slash/severe,
+		/datum/wound/bleed/slash/moderate),
+	WOUND_PIERCE = list(
+		/datum/wound/bleed/pierce/critical,
+		/datum/wound/bleed/pierce/severe,
+		/datum/wound/bleed/pierce/moderate),
+	WOUND_BURN = list(
+		/datum/wound/burn/critical,
+		/datum/wound/burn/severe,
+		/datum/wound/burn/moderate)
+	))
+
+GLOBAL_LIST_INIT(global_all_wound_types, list(
+	/datum/wound/blunt/critical,
+	/datum/wound/blunt/severe,
+	/datum/wound/blunt/moderate,
+	/datum/wound/bleed/slash/critical,
+	/datum/wound/bleed/slash/severe,
+	/datum/wound/bleed/slash/moderate,
+	/datum/wound/bleed/pierce/critical,
+	/datum/wound/bleed/pierce/severe,
+	/datum/wound/bleed/pierce/moderate,
+	/datum/wound/burn/critical,
+	/datum/wound/burn/severe,
+	/datum/wound/burn/moderate))
 
 // Thresholds for infection for burn wounds, once infestation hits each threshold, things get steadily worse
 /// below this has no ill effects from infection
@@ -214,6 +246,44 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(/datum/wound/blunt/critical, /datu
 #define BANDAGE_DAMAGE_THRESHOLD_MAX 45
 /// How much burn damage is multiplied for bandage damage calcs
 #define BANDAGE_BURN_MULT 3 // its very flammable
+
+/// Bandage base heal over time
+#define BANDAGE_HEAL_OVER_TIME_BASE 30
+
+/// Bandage heal over time for improvised bandages
+#define BANDAGE_IMPROVISED_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 0.5)
+/// Bandage heal over time for normal bandages
+#define BANDAGE_NORMAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 1)
+/// Bandage heal over time for PRO bandages
+#define BANDAGE_MEDICAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 2.5)
+
+/// Bandage heal rate
+#define BANDAGE_HEAL_RATE_BASE 0.02
+/// Bandage heal rate for improvised bandages
+#define BANDAGE_IMPROVISED_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 0.5)
+/// Bandage heal rate for normal bandages
+#define BANDAGE_NORMAL_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 1)
+/// Bandage heal rate for PRO bandages
+#define BANDAGE_MEDICAL_HEAL_RATE (BANDAGE_MEDICAL_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 2)
+
+/// Suture base heal over time
+#define SUTURE_HEAL_OVER_TIME_BASE 20
+
+/// Suture heal over time for improvised sutures
+#define SUTURE_IMPROVISED_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 0.5)
+/// Suture heal over time for normal sutures
+#define SUTURE_NORMAL_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 1)
+/// Suture heal over time for PRO sutures
+#define SUTURE_MEDICAL_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 2)
+
+/// Suture heal rate
+#define SUTURE_HEAL_RATE_BASE 0.02
+/// Suture heal rate for improvised sutures
+#define SUTURE_IMPROVISED_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 0.5)
+/// Suture heal rate for normal sutures
+#define SUTURE_NORMAL_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 1)
+/// Suture heal rate for PRO sutures
+#define SUTURE_MEDICAL_HEAL_RATE (SUTURE_MEDICAL_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 2)
 
 /// Damage required to damage a suture by 1 point, enough to destroy improv sutures
 #define SUTURE_DAMAGE_THRESHOLD_LOW 1
