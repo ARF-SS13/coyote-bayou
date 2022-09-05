@@ -837,6 +837,33 @@
 				/obj/effect/spawner/bundle/f13/m1carbine
 				)
 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid
+	name = "burrow gun spawns"
+	loot = list(/obj/effect/spawner/bundle/f13/m1911 = 5,
+				/obj/effect/spawner/bundle/f13/thatgun = 4,
+				/obj/effect/spawner/bundle/f13/n99 = 4,
+				/obj/effect/spawner/bundle/f13/colt357 = 5,
+				/obj/effect/spawner/bundle/f13/huntingshotgun = 2,
+				/obj/effect/spawner/bundle/f13/police_pistol = 2,
+				/obj/effect/spawner/bundle/f13/guns/commando = 2,
+				/obj/effect/spawner/bundle/f13/m1carbine = 3,
+				/obj/effect/spawner/bundle/f13/wattz = 1,
+				/obj/item/gun/ballistic/rifle/mosin = 1,
+				/obj/item/gun/ballistic/rifle/hunting = 3,
+				/obj/item/gun/ballistic/automatic/pistol/type17 = 3,
+				/obj/effect/spawner/lootdrop/f13/junkspawners = 33,
+				/obj/item/stack/medical/gauze/improvised = 2,
+				/obj/item/stack/medical/ointment/five = 2,
+				/obj/item/stack/medical/suture/emergency/five = 1,
+				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
+				/obj/item/stack/f13Cash/random/low = 10,
+				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+				/obj/effect/spawner/bundle/f13/ninemil = 1,
+				/obj/effect/spawner/bundle/f13/widowmaker = 1,
+				/obj/effect/spawner/bundle/f13/sig = 4,
+				/obj/effect/spawner/bundle/f13/varmint = 2
+				)
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid
 	name = "low-mid tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/n99,
