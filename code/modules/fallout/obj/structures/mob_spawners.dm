@@ -63,7 +63,7 @@
 	if(!can_spawn_mob())
 		return FALSE
 	spawn_mob()
-	
+
 /// Do we have any mobs left?
 /obj/structure/nest/proc/has_mobs_left()
 	var/has_mobs_left
@@ -172,7 +172,7 @@
 		return
 	S.use(4)
 	if(!covered)
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
+		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
