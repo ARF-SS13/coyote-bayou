@@ -293,14 +293,14 @@
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/raider/junker/creator/death()
-	RemoveComponentByType(/datum/component/spawner/ranged)
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Destroy()
-	RemoveComponentByType(/datum/component/spawner/ranged)
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/raider/junker/creator/Aggro()

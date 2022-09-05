@@ -4,62 +4,67 @@
 	desc = "A horrible nest full of monsters."
 	icon = 'icons/mob/nest_new.dmi'
 	icon_state = "hole"
-	var/list/spawned_mobs = list()
-	var/can_fire = TRUE
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	anchored = TRUE
+	layer = BELOW_OBJ_LAYER
 	var/mob_types = list(/mob/living/simple_animal/hostile/carp)
-	//make spawn_time's multiples of 10. The SS runs on 10 seconds.
+	/// Time between spawns
 	var/spawn_time = 40 SECONDS
+	/// Can be boarded up
 	var/coverable = TRUE
 	/// spawner can be covered by dense things
 	var/coverable_by_dense_things = TRUE
+	/// Currently boarded up
 	var/covered = FALSE
+	/// Object boarding this thing up?
 	var/obj/covertype
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	/// Did this thing make loot? If so, dont drop more stuff
+	var/made_loot = FALSE
+	/// verb for when a mob comes out
 	var/spawn_text = "emerges from"
-	anchored = TRUE
-	layer = BELOW_OBJ_LAYER
-	/// Is something covering us?
-	var/datum/weakref/covering_object
 	/// Range to check for other mobs to see if there's too many around
-	var/overpopulation_range = 7
+	var/overpopulation_range = 6
 	/// max mobs that can be alive and nearby before it refuses to spawn more
 	var/max_mobs = 1
-	var/radius = 8
-	var/spawnsound //specify an audio file to play when a mob emerges from the spawner
-	var/spawn_once
-	/// Needs a living, cliented player around to spawn stuff
-	//var/needs_player = TRUE
+	/// A player must be within this range for it to actually spawn
+	var/radius = 10
+	/// Sound to play when a thing spawns
+	var/spawnsound
+	/// Its infinite!
 	var/infinite = FALSE
-	var/mobs_to_spawn = 1 //number of mobs to spawn at once, for swarms
+	/// Number of mobs to spawn per cycle, for swarms!
+	var/swarm_size = 1
 	/// The ID of our randomizer, so all spawners with this ID will spawn from the same list. Leave null to skip global randomization for this thing
 	var/randomizer_tag
 	/// Which spawner list to pick from
 	var/randomizer_kind
 	/// Which difficulties to pick from - its a bitfield!
 	var/randomizer_difficulty
-	COOLDOWN_DECLARE(spawner_cooldown)
 
 /obj/structure/nest/Initialize()
-	initialize_random_mob_spawners()
-	if(randomizer_tag)
-		setup_random_nest()
 	. = ..()
 	// null faction, so we don't overwrite it
-	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, list(), spawn_text, max_mobs, _spawn_sound = spawnsound, _infinite = infinite, _range = radius)
+	AddComponent(/datum/component/spawner,\
+		_mob_types = mob_types,\
+		_spawn_time = spawn_time,\
+		_faction = list(),\
+		_spawn_text = spawn_text,\
+		_max_mobs = max_mobs,\
+		_range = radius,\
+		_overpopulation_range = overpopulation_range,\
+		_spawn_sound = spawnsound,\
+		_infinite = infinite,\
+		_swarm_size = swarm_size,\
+		_coverable_by_dense_things = coverable_by_dense_things,\
+		_randomizer_tag = randomizer_tag,\
+		_randomizer_kind = randomizer_kind,\
+		_randomizer_difficulty = randomizer_difficulty\
+		)
 
 /obj/structure/nest/Destroy()
 	playsound(src, 'sound/effects/break_stone.ogg', 100, 1)
 	visible_message("[src] collapses!")
-	covering_object = null
-	for(var/mob/living/simple_animal/our_spawned_mob in spawned_mobs)
-		our_spawned_mob?.nest = null
-		spawned_mobs -= our_spawned_mob
 	. = ..()
-
-/obj/structure/nest/proc/cover_with(obj/item/stack/cover_stack, mob/user)
-	if(!istype(cover_stack))
-		return
-	COOLDOWN_START(src, spawner_cooldown, spawn_time)
 
 /obj/structure/nest/attackby(obj/item/I, mob/living/user, params)
 	if(I.tool_behaviour == TOOL_CROWBAR)
@@ -79,29 +84,33 @@
 
 /obj/structure/nest/proc/try_seal(mob/user, obj/item/stack/S, itempath, cover_state, timer)
 	if(!coverable)
-		to_chat(user, span_warning("The hole is unable to be covered!"))
+		to_chat(user, span_warning("\The [src] is unable to be covered!"))
 		return
 	if(covered)
-		to_chat(user, span_warning("The hole is already covered!"))
+		to_chat(user, span_warning("\The [src] is already covered!"))
 		return
 	if(!istype(S))
-		to_chat(user, span_warning("You cant cover this with that!"))
+		to_chat(user, span_warning("You cant cover \the [src] with that!"))
+		return
+	if(LAZYLEN(targeted_by)) // Don't let multiple people cover at the same time.
+		to_chat(user, span_warning("Someone's already covering \the [src]!"))
 		return
 	if(S.amount < 4)
-		to_chat(user, span_warning("You need four of [S.name] in order to cover the hole!"))
+		to_chat(user, span_warning("You need four of [S.name] in order to cover \The [src]!"))
 		return
 	if(!do_after(user, 5 SECONDS, FALSE, src))
 		to_chat(user, span_warning("You must stand still to build the cover!"))
 		return
 	S.use(4)
-	if(!covered)
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(src.loc)
+	if(!made_loot)
+		made_loot = TRUE
+		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(get_turf(src))
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
 
 /obj/structure/nest/proc/do_seal(itempath, cover_state, timer)
-	can_fire = FALSE
+	SEND_SIGNAL(src, COMSIG_SPAWNER_COVERED)
 	covered = TRUE
 	covertype = itempath
 	var/image/overlay_image = image(icon, icon_state = cover_state)
@@ -120,92 +129,10 @@
 	do_unseal()
 
 /obj/structure/nest/proc/do_unseal()
-	covered = initial(covered)
-	covertype = initial(covertype)
+	SEND_SIGNAL(src, COMSIG_SPAWNER_UNCOVERED)
+	covered = FALSE
+	covertype = null
 	cut_overlays()
-	can_fire = TRUE
-
-/obj/structure/nest/proc/setup_random_nest()
-	if(!randomizer_tag)
-		return FALSE
-	if(!randomizer_kind)
-		return FALSE
-	if(!randomizer_difficulty)
-		return FALSE
-	/// Is our tag not in the global mob spawner thing?
-	if(!(randomizer_tag in GLOB.mob_spawner_random_index))
-		add_nest_to_global_list()
-	apply_nest_from_global_list()
-	return
-
-//the nests themselves
-/*
-	var/list/cazadors 	= list(/mob/living/simple_animal/hostile/cazador = 5,
-					/mob/living/simple_animal/hostile/cazador/young = 3,)
-
-	var/list/ghouls 	= list(/mob/living/simple_animal/hostile/ghoul = 5,
-					/mob/living/simple_animal/hostile/ghoul/reaver = 3,
-					/mob/living/simple_animal/hostile/ghoul/glowing = 1)
-
-	var/list/deathclaw 	= list(/mob/living/simple_animal/hostile/deathclaw = 19,
-					/mob/living/simple_animal/hostile/deathclaw/mother = 1)
-
-	var/list/scorpion	= list(/mob/living/simple_animal/hostile/radscorpion = 1,
-					/mob/living/simple_animal/hostile/radscorpion/black = 1)
-
-	var/list/radroach	= list(/mob/living/simple_animal/hostile/radroach = 1)
-
-	var/list/fireant	= list(/mob/living/simple_animal/hostile/fireant = 1,
-					/mob/living/simple_animal/hostile/giantant = 1)
-
-	var/list/wanamingo 	= list(/mob/living/simple_animal/hostile/alien = 1)
-
-	var/list/molerat	= list(/mob/living/simple_animal/hostile/molerat = 1)
-
-	var/list/mirelurk	= list(/mob/living/simple_animal/hostile/mirelurk = 2,
-					/mob/living/simple_animal/hostile/mirelurk/hunter = 1,
-					/mob/living/simple_animal/hostile/mirelurk/baby = 5)
-
-	var/list/new_nest_thing = list(
-		MOB_SPAWNER_GLOBAL_LIST_KIND = mob_list_tag_to_use,
-		MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY = randomizer_difficulty
-		)
-	GLOB.mob_spawner_random_index[randomizer_tag] = new_nest_thing
-
-/// Takes an entry from our global list and uses it to make our fancy nest!
-/obj/structure/nest/proc/apply_nest_from_global_list()
-	mob_types = list()
-	var/list/our_randomizer_index = GLOB.mob_spawner_random_index[randomizer_tag]
-	var/datum/random_mob_spawner/our_spawner = GLOB.random_mob_nest_spawner_datums[our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_KIND]]
-	if(!istype(our_spawner))
-		message_admins(span_phobia("Hey! [src] was passed randomizer index [our_randomizer_index], which gave a null spawner datum! Tell Superlagg to fix his shit!"))
-		return
-	name = our_spawner.nest_name
-	desc = our_spawner.nest_desc
-	icon_state = our_spawner.nest_icon_state
-	spawnsound = our_spawner.sound_to_play
-	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_EASY)
-		counterlist_combine(mob_types, our_spawner.mob_list_easy)
-		max_mobs = our_spawner.num_mobs_to_spawn_easy
-		spawn_time = our_spawner.num_mobs_to_spawn_easy
-	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_MED)
-		counterlist_combine(mob_types, our_spawner.mob_list_medium)
-		max_mobs = our_spawner.num_mobs_to_spawn_medium
-		spawn_time = our_spawner.num_mobs_to_spawn_medium
-	if(our_randomizer_index[MOB_SPAWNER_GLOBAL_LIST_DIFFICULTY] & MOB_SPAWNER_DIFFICULTY_HARD)
-		counterlist_combine(mob_types, our_spawner.mob_list_hard)
-		max_mobs = our_spawner.num_mobs_to_spawn_hard
-		spawn_time = our_spawner.num_mobs_to_spawn_hard
-
-/obj/structure/nest/proc/initialize_random_mob_spawners()
-	if(!LAZYLEN(GLOB.random_mob_nest_spawner_datums))
-		for(var/r_spawn in subtypesof(/datum/random_mob_spawner))
-			var/datum/random_mob_spawner/r_spawn_datum = new r_spawn()
-			GLOB.random_mob_nest_spawner_datums[r_spawn_datum.nest_tag] = r_spawn_datum
-	if(!LAZYLEN(GLOB.random_mob_nest_spawner_groups))
-		for(var/r_group in subtypesof(/datum/random_mob_spawner_group))
-			var/datum/random_mob_spawner_group/r_group_datum = new r_group()
-			GLOB.random_mob_nest_spawner_groups[r_group_datum.group_tag] = r_group_datum
 
 /obj/structure/nest/ghoul
 	name = "ghoul nest"
@@ -217,7 +144,6 @@
 /obj/structure/nest/deathclaw
 	name = "deathclaw nest"
 	max_mobs = 1
-	spawn_once = TRUE
 	spawn_time = 60 SECONDS
 	mob_types = list(/mob/living/simple_animal/hostile/deathclaw = 1)
 
@@ -236,7 +162,7 @@
 /obj/structure/nest/radroach
 	name = "radroach nest"
 	max_mobs = 3
-	mobs_to_spawn = 3
+	swarm_size = 3
 	mob_types = list(/mob/living/simple_animal/hostile/radroach = 15)
 
 /obj/structure/nest/fireant
@@ -412,6 +338,13 @@
 	desc = "Shouldnt see this! probably a bug~"
 	randomizer_tag = "Pisscock 1"
 	randomizer_kind = MOB_SPAWNER_KIND_RAIDER_LOW
+	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
+
+/obj/structure/nest/randomized/test6
+	name = "Gross uninitialized carp spawner thing"
+	desc = "Shouldnt see this! probably a bug~"
+	randomizer_tag = "Pisscock 1"
+	randomizer_kind = MOB_SPAWNER_KIND_DEBUG
 	randomizer_difficulty = MOB_SPAWNER_DIFFICULTY_EASY
 
 

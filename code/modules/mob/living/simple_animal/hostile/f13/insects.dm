@@ -152,14 +152,14 @@
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner/ranged, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
-	RemoveComponentByType(/datum/component/spawner/ranged)
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Destroy()
-	RemoveComponentByType(/datum/component/spawner/ranged)
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Aggro()
