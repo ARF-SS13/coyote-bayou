@@ -162,7 +162,7 @@
 
 /mob/living/simple_animal/hostile/handy/robobrain
 	name = "robobrain"
-	desc = "A next-gen cybor developed by General Atomic International"
+	desc = "A next-gen cyborg developed by General Atomic International"
 	icon = 'icons/fallout/mobs/robots/wasterobots.dmi'
 	icon_state = "robobrain"
 	icon_living = "robobrain"
