@@ -104,7 +104,7 @@
 	S.use(4)
 	if(!made_loot)
 		made_loot = TRUE
-		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low(get_turf(src))
+		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
 	do_seal(itempath, cover_state, timer)
