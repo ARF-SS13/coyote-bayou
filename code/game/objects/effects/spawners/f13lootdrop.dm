@@ -850,14 +850,14 @@
 				/obj/effect/spawner/bundle/f13/wattz = 1,
 				/obj/item/gun/ballistic/rifle/mosin = 1,
 				/obj/item/gun/ballistic/rifle/hunting = 3,
-				/obj/item/gun/ballistic/automatic/pistol/type17 = 3, //33
-				/obj/effect/spawner/lootdrop/f13/junkspawners = 33, //66
+				/obj/item/gun/ballistic/automatic/pistol/type17 = 3,
+				/obj/effect/spawner/lootdrop/f13/junkspawners = 33,
 				/obj/item/stack/medical/gauze/improvised = 2,
 				/obj/item/stack/medical/ointment/five = 2,
 				/obj/item/stack/medical/suture/emergency/five = 1,
 				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
 				/obj/item/stack/f13Cash/random/low = 10,
-				/obj/item/gun/ballistic/automatic/smg/american180 = 1
+				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
 				/obj/effect/spawner/bundle/f13/ninemil = 1,
 				/obj/effect/spawner/bundle/f13/widowmaker = 1,
 				/obj/effect/spawner/bundle/f13/sig = 4,
