@@ -463,7 +463,7 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 1600
+	maxcharge = 1500
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder

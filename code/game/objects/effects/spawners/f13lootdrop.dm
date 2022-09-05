@@ -763,29 +763,32 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
 	name = "mid tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 26,
-				/obj/effect/spawner/bundle/f13/aer12 = 13,
-				/obj/effect/spawner/bundle/f13/wattz2k = 26,
-				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 15,
-				/obj/effect/spawner/bundle/f13/ionrifle = 5
+	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 35,
+				///obj/effect/spawner/bundle/f13/aer12 = 13, Now a high tier gun.
+				/obj/effect/spawner/bundle/f13/wattz2k = 30,
+				///obj/effect/spawner/bundle/f13/wattz2kext = 10, Now a high tier gun.
+				/obj/effect/spawner/bundle/f13/plasmapistol = 20,
+				/obj/effect/spawner/bundle/f13/ionrifle = 15
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh //overlaps with midtier
 	name = "mid-high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/aer12,
-				/obj/effect/spawner/bundle/f13/plasmapistol,
-				/obj/effect/spawner/bundle/f13/wattz2kext,
-				/obj/effect/spawner/bundle/f13/ionrifle,
-				/obj/effect/spawner/bundle/f13/aer14
+	loot = list(/obj/effect/spawner/bundle/f13/aer12 = 15,
+				/obj/item/gun/energy/laser/aer9/focused = 20,
+				/obj/effect/spawner/bundle/f13/plasmapistol = 25,
+				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
+				/obj/effect/spawner/bundle/f13/ionrifle = 25
+				///obj/effect/spawner/bundle/f13/aer14 //die
 				)
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high
 	name = "high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 25,
-				/obj/effect/spawner/bundle/f13/tribeam = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 20,
+				/obj/effect/spawner/bundle/f13/aer12 = 10,
+				/obj/effect/spawner/bundle/f13/tribeam = 20,
 				/obj/effect/spawner/bundle/f13/rcw = 20,
-				/obj/effect/spawner/bundle/f13/aer14 = 20,
-				/obj/effect/spawner/bundle/f13/plasmaglock = 25
+				/obj/effect/spawner/bundle/f13/wattz2kext = 10, //Now a high tier gun.
+				///obj/effect/spawner/bundle/f13/aer14, kill
+				/obj/effect/spawner/bundle/f13/plasmaglock = 20
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh
