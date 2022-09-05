@@ -104,7 +104,7 @@
 	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
 	var/gold_core_spawnable = NO_SPAWN
 
-	var/datum/component/spawner/nest
+	var/datum/weakref/nest
 
 	///Sentience type, for slime potions.
 	var/sentience_type = SENTIENCE_ORGANIC
@@ -176,9 +176,7 @@
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 
-	if(nest)
-		nest.spawned_mobs -= src
-		nest = null
+	sever_link_to_nest()
 
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
@@ -374,9 +372,9 @@
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
-	if(nest)
-		nest.spawned_mobs -= src
-		nest = null
+
+	sever_link_to_nest()
+
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
@@ -660,3 +658,12 @@
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
+
+/mob/living/simple_animal/proc/sever_link_to_nest()
+	if(nest)
+		var/datum/component/spawner/our_nest = nest.resolve()
+		if(istype(our_nest))
+			for(var/datum/weakref/maybe_us in our_nest.spawned_mobs)
+				if(nest.resolve(maybe_us) == src)
+					our_nest.spawned_mobs -= maybe_us
+	nest = null
