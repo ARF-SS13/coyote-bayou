@@ -329,7 +329,7 @@
 
 /obj/item/projectile/beam/laser/lasgun/hitscan //hitscan aer9 test
 	name = "laser beam"
-	damage = 33
+	damage = 32
 	armour_penetration = 0.02 //mostly just to allow scratch damage, so you arent SOL just mostly fucced
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -406,8 +406,8 @@
 	damage = 31
 
 /obj/item/projectile/beam/laser/pistol/wattz/hitscan //hitscan wattz
-	name = "weak laser beam"
-	damage = 20
+	name = "laser beam"
+	damage = 28 // Civilian gun hits harder but has less charge now.
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -420,7 +420,7 @@
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
 	name = "penetrating laser beam"
-	damage = 20
+	damage = 26 // Hits less than the W1K but has innate AP/DT reduction.
 	hitscan = TRUE
 	armour_penetration = 0.2 //rare laser to keep its AP, since base model is so bad
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -586,7 +586,7 @@
 
 /obj/item/projectile/beam/laser/aer12 //AER12
 	name = "laser beam"
-	damage = 34
+	damage = 36
 	armour_penetration = 0.55
 	icon_state = "xray"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
@@ -594,7 +594,7 @@
 
 /obj/item/projectile/beam/laser/aer12/hitscan
 	name = "laser beam"
-	damage = 28
+	damage = 36
 	hitscan = TRUE
 	armour_penetration = 0.02
 	tracer_type = /obj/effect/projectile/tracer/xray
@@ -617,10 +617,20 @@
 
 /obj/item/projectile/beam/laser/wattz2k/hitscan
 	name = "sniper laser bolt"
-	damage = 28
+	damage = 52
 	wound_bonus = 10
 	bare_wound_bonus = 20
 	armour_penetration = 0.2
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+	hitscan = TRUE
+/obj/item/projectile/beam/laser/wattz2k/hitscan/weak //Hits less than the main wattz2k with less AP but has more shots comparable to an aer9
+	name = "weak sniper laser bolt"
+	damage = 40
+	wound_bonus = 10
+	bare_wound_bonus = 20
+	armour_penetration = 0.1
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser

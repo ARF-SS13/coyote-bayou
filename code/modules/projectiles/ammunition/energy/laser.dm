@@ -90,9 +90,9 @@
 */
 
 /* here are the ammo sizes since nobody ever wrote these down
-electron chargepack = 2400, this is currently only used in the RCW
+electron chargepack = 2500, this is currently only used in the RCW Changed by ZNA because multiple of 2's is ass for math. It'll calm down the weird ass decimals.
 mfc = 2000
-ec = 1600
+ec = 1500 Changed by ZNA because multiple of 2's is ass for math. It'll calm down the weird ass decimals.
 
 each one goes up by 4,000 power. why? nobody fucking knows lmao
 
@@ -121,11 +121,12 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/hitscan //25 damage per, with 0 near 0 AP-4 shot crit on unarmored target, significantly less useful against armored
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan
-	e_cost = 53.33 //30 shots, as per FNV
+	e_cost = 50 //30 shots, as per FNV
+	damage_threshold_penetration = 4 // Doesn't pierce as much armor or hit as hard, but has more ammo capacity than the 1k
 
 /obj/item/ammo_casing/energy/laser/ultra_pistol
 	projectile_type = /obj/item/projectile/beam/laser/ultra_pistol
-	e_cost = 80 //20 shots
+	e_cost = 75 //20 shots
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/ultra_rifle
@@ -135,7 +136,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/recharger/hitscan
-	e_cost = 100 //20 shots
+	e_cost = 75 //20 shots
 	fire_sound = 'sound/f13weapons/aep7fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/stun  //compliance regulator
@@ -145,7 +146,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz
-	e_cost = 100 //16 shots
+	e_cost = 100 //15 shots Civilian gun hits harder but has less charge.
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto
@@ -153,15 +154,16 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/hitscan
-	e_cost = 53.33 //30 shots, as per FNV
+	e_cost = 100 //15 Shots. More than enough to kill anything that moves. The wattz 1k isn't even in FNV.
+	damage_threshold_penetration = 3 // Better against lightly armored targets. 
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
-	e_cost = 53.33 //30 shots, as per FNV
+	e_cost = 150 //10 Shots. That extra Armor pen has to come out of somewhere.
 
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
-	e_cost = 100 //20 shots
+	e_cost = 80 //25 shots
 	fire_sound = 'sound/f13weapons/aer9fire.ogg'
 
 /obj/item/ammo_casing/energy/laser/lasgun/hitscan
@@ -170,7 +172,8 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/lasgun/hitscan/focused
 	projectile_type = /obj/item/projectile/beam/laser/lasgun/hitscan/focused
-	e_cost = 400 //5 shots
+	e_cost = 400 //5 shots. Better hope you're accurate with this thing.
+	damage_threshold_penetration = 10 //Overcharged AF, lets at minimum 1/3rd of the damage it puts out burn through armor.
 
 /obj/item/ammo_casing/energy/laser/solar
 	projectile_type = /obj/item/projectile/beam/laser/solar
@@ -218,8 +221,9 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/aer12/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/aer12/hitscan
-	e_cost = 100 //20 shots
+	e_cost = 80 //25 shots
 	fire_sound = 'sound/f13weapons/aer9fire.ogg'
+	damage_threshold_penetration = 6 //Upgraded gun lets more damage through than a typical rifle.
 
 /obj/item/ammo_casing/energy/gammagun
 	projectile_type = /obj/item/projectile/beam/gamma
@@ -232,22 +236,23 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/wattz2k/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan
-	e_cost = 166.6 //12 shots
+	e_cost = 160 //12.5 shots, yes there'll be some charge left over. Intentional.
+	damage_threshold_penetration = 7 //You're a sniper laser, act like it.
 
 /obj/item/ammo_casing/energy/wattz2k/extended
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k
-	e_cost = 83.3 //24
+	e_cost = 80 //25
 
 /obj/item/ammo_casing/energy/wattz2k/extended/hitscan
-	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan
-
+	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan/weak
+	damage_threshold_penetration = 4 //The prices you pay for ammo efficiency.
 //musket
 
 /obj/item/ammo_casing/energy/laser/musket
 	projectile_type = /obj/item/projectile/beam/laser/musket
 	e_cost = 250
 	fire_sound = 'sound/weapons/laser3.ogg'
-	
+
 //autolasers
 
 /obj/item/ammo_casing/energy/laser/autolaser
