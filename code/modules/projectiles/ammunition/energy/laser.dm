@@ -155,11 +155,11 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/hitscan
 	e_cost = 100 //15 Shots. More than enough to kill anything that moves. The wattz 1k isn't even in FNV.
-	damage_threshold_penetration = 3 // Better against lightly armored targets. 
+	damage_threshold_penetration = 3 // Better against lightly armored targets.
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
-	e_cost = 150 //10 Shots. That extra Armor pen has to come out of somewhere.
+	e_cost = 100 //10 Shots. That extra Armor pen has to come out of somewhere.
 
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
