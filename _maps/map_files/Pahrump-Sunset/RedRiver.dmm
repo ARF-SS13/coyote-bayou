@@ -6576,15 +6576,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/city)
-"exI" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/railing{
-	dir = 5
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/city)
 "exK" = (
 /obj/structure/closet/crate/footchest,
 /obj/item/ammo_box/c10mm/improvised,
@@ -21211,11 +21202,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
-"oQS" = (
-/turf/open/floor/f13{
-	icon_state = "rampdowntop"
-	},
-/area/f13/city)
 "oQT" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/pet_carrier,
@@ -26596,7 +26582,6 @@
 	},
 /area/f13/city)
 "sJr" = (
-/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -33094,17 +33079,6 @@
 /obj/structure/flora/tallgrass7,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"xpV" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/railing/corner{
-	dir = 4
-	},
-/turf/open/floor/f13{
-	icon_state = "darkrusty"
-	},
-/area/f13/city)
 "xqo" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/savannah/topleft,
@@ -36038,8 +36012,8 @@ oMa
 cQC
 dDr
 jeP
-exI
-xpV
+wNA
+cUM
 gzm
 kqw
 lDH
@@ -36295,7 +36269,7 @@ oMa
 cQC
 rvt
 mBa
-oQS
+jeP
 cUM
 apX
 jvp
