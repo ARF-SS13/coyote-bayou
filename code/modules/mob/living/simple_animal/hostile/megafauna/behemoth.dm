@@ -6,8 +6,8 @@
 	icon_living = "behemoth_axe"
 	icon_dead = "behemoth_dead"
 
-	health = 3000
-	maxHealth = 3000
+	health = 2300 //used to be 3000
+	maxHealth = 2300 //used to be 3000
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/card/id/dogtag/enclave/noncombatant = 1)
 
 	armour_penetration = 0.7
@@ -63,18 +63,14 @@
 
 /mob/living/simple_animal/hostile/megafauna/behemoth/OpenFire()
 	SetRecoveryTime(0, 100)
-	if(health <= maxHealth*0.25)
+	if(health <= maxHealth*0.33)
 		stomp_range = 2
 		speed = 2
 		move_to_delay = 2
-	if(health <= maxHealth*0.50)
+	if(health <= maxHealth*0.66)
 		stomp_range = 2
 		speed = 4
 		move_to_delay = 4
-	if(health <= maxHealth*0.75)
-		stomp_range = initial(stomp_range)
-		speed = 6
-		move_to_delay = 6
 	else
 		stomp_range = initial(stomp_range)
 		speed = initial(speed)
