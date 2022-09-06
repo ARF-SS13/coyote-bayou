@@ -449,6 +449,17 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
+	
+/datum/crafting_recipe/tailor/chameleon_mask
+	name = "Chameleon Mask"
+	result = /obj/item/clothing/mask/chameleon
+	reqs = list(/obj/item/clothing/mask/breath,
+				/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/sheet/metal = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_WASTELAND
 
 /datum/crafting_recipe/tailor/ncruniform
 	name = "NCR Uniform"
