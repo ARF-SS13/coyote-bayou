@@ -6447,7 +6447,7 @@
 /area/f13/tunnel)
 "cAO" = (
 /obj/machinery/computer/security/telescreen,
-/turf/closed/indestructible/f13vaultrusted,
+/turf/closed/wall/rust,
 /area/f13/caves)
 "cAX" = (
 /obj/docking_port/stationary/bosaway/nine,
@@ -15349,7 +15349,8 @@
 /area/f13/caves)
 "lCE" = (
 /obj/item/mine/stun,
-/turf/open/floor/plating/tunnel,
+/obj/item/storage/fancy/donut_box,
+/turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lDl" = (
 /obj/machinery/door/airlock/security{
@@ -18116,8 +18117,8 @@
 /area/f13/caves)
 "okO" = (
 /obj/effect/mapping_helpers/airlock/locked,
-/obj/machinery/door/airlock/vault/derelict,
-/turf/open/indestructible/ground/outside/desert,
+/obj/structure/simple_door/metal,
+/turf/open/floor/plating/tunnel,
 /area/f13/caves)
 "olq" = (
 /obj/structure/cable{
@@ -23425,7 +23426,7 @@
 /obj/structure/sign/poster/contraband/communist_state{
 	desc = "All hail the Chinese Communist Party!"
 	},
-/turf/closed/indestructible/f13vaultrusted,
+/turf/closed/wall/rust,
 /area/f13/caves)
 "tmZ" = (
 /obj/structure/table/wood,
@@ -59939,8 +59940,8 @@ bsC
 bsC
 bsC
 bsC
-boU
-boU
+bFF
+bFF
 bsC
 bsC
 aae
@@ -60197,7 +60198,7 @@ aae
 aae
 aae
 aae
-aaB
+aae
 aae
 aae
 aae
@@ -61226,11 +61227,11 @@ aae
 aae
 aae
 aaa
-aaa
-aaa
+hlL
+hlL
 aaB
-aaa
-aaa
+hlL
+hlL
 aae
 aae
 aae
@@ -61485,7 +61486,7 @@ aae
 aaa
 ylF
 hlL
-aaB
+lCE
 hlL
 ylF
 aaa
@@ -61742,7 +61743,7 @@ xwF
 aaa
 ylF
 nYi
-lCE
+vDJ
 nYi
 vKF
 aaa
@@ -61996,12 +61997,12 @@ aae
 aae
 aae
 aaa
-bCG
+bOn
 cAO
 cAO
 okO
-bCG
-bCG
+bOn
+bOn
 aaa
 aak
 aak
@@ -62258,7 +62259,7 @@ oyK
 woM
 ajF
 djs
-bCG
+bOn
 aaa
 aae
 aae
@@ -62510,12 +62511,12 @@ aae
 aae
 aae
 aaa
-bCG
+bOn
 uJx
-xTs
+fvs
 xTs
 hTP
-bCG
+bOn
 aaa
 aae
 aae
@@ -62767,12 +62768,12 @@ aae
 aae
 aae
 aaa
-bCG
+bOn
 awC
 fvs
 xTs
 qit
-bCG
+bOn
 aaa
 aae
 aae
@@ -63029,7 +63030,7 @@ oeM
 lFw
 lFw
 qET
-bCG
+bOn
 aaa
 aae
 aae
@@ -63281,12 +63282,12 @@ aae
 aae
 aae
 aaa
-bCG
-bCG
-bCG
-bCG
-bCG
-bCG
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
 aaa
 aae
 aae
