@@ -16104,7 +16104,6 @@
 "mgL" = (
 /obj/structure/nest/supermutant/melee{
 	max_mobs = 3;
-	spawn_once = 1;
 	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
@@ -21700,7 +21699,6 @@
 /obj/effect/decal/waste,
 /obj/structure/nest/supermutant/melee{
 	max_mobs = 3;
-	spawn_once = 1;
 	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
@@ -24832,7 +24830,6 @@
 "uNC" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1;
-	spawn_once = null;
 	spawn_time = 400
 	},
 /turf/open/indestructible/ground/inside/mountain,
