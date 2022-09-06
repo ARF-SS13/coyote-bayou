@@ -868,14 +868,25 @@
 	..()
 
 /obj/item/card/id/selfassign/attack_self(mob/user)
+	var/input_name = null
+	var/target_occupation = null
 	if(isliving(user))
 		var/mob/living/living_user = user
-		if(alert(user, "Action", "Agent ID", "Show", "Forge") == "Forge")
-			registered_name = living_user.real_name
-			assignment = living_user.job
+		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
+			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
+			input_name = reject_bad_name(input_name)
+			if(!input_name)
+				input_name = living_user.real_name
+			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", MAX_MESSAGE_LEN)
+			if(!target_occupation)
+				target_occupation = "Wastelander"
+				return
+			registered_name = input_name
+			assignment = target_occupation
 			update_label()
 			to_chat(user, span_notice("You successfully forge the ID card."))
 			return
+		else
 	..()
 
 /obj/item/card/id/selfassign
@@ -1290,4 +1301,3 @@
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
-
