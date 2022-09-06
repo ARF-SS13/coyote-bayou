@@ -145,29 +145,34 @@
 
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[cached_icon]10", color = mix_color_from_reagents(reagents.reagent_list))
-
-		var/percent = round((reagents.total_volume / volume) * 100)
-		switch(percent)
-			if(0 to 9)
-				filling.icon_state = "[cached_icon]-10"
-			if(10 to 24)
-				filling.icon_state = "[cached_icon]10"
-			if(25 to 49)
-				filling.icon_state = "[cached_icon]25"
-			if(50 to 74)
-				filling.icon_state = "[cached_icon]50"
-			if(75 to 79)
-				filling.icon_state = "[cached_icon]75"
-			if(80 to 90)
-				filling.icon_state = "[cached_icon]80"
-			if(91 to INFINITY)
-				filling.icon_state = "[cached_icon]100"
+		if(!warped_glass)
+			var/percent = round((reagents.total_volume / volume) * 100)
+			switch(percent)
+				if(0 to 9)
+					filling.icon_state = "[cached_icon]-10"
+				if(10 to 24)
+					filling.icon_state = "[cached_icon]10"
+				if(25 to 49)
+					filling.icon_state = "[cached_icon]25"
+				if(50 to 74)
+					filling.icon_state = "[cached_icon]50"
+				if(75 to 79)
+					filling.icon_state = "[cached_icon]75"
+				if(80 to 90)
+					filling.icon_state = "[cached_icon]80"
+				if(91 to INFINITY)
+					filling.icon_state = "[cached_icon]100"
 		. += filling
 
 /obj/item/reagent_containers/glass/beaker/jar
 	name = "honey jar"
 	desc = "A jar for honey. It can hold up to 60 units of sweet delight. Unable to withstand reagents of an extreme pH."
 	icon_state = "honey"
+
+/obj/item/reagent_containers/glass/beaker/big_red
+	name = "Big Red bottle"
+	desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk. Unable to withstand extreme pH, its a soda bottle."
+	icon_state = "bigred"
 
 /obj/item/reagent_containers/glass/beaker/glass_dish
 	name = "glass dish"
@@ -281,6 +286,9 @@
 
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
+
+/obj/item/reagent_containers/glass/beaker/big_red/full
+	list_reagents = list(/datum/reagent/consumable/big_red = 60)
 
 /obj/item/reagent_containers/glass/beaker/waterbottle
 	name = "bottle of water"

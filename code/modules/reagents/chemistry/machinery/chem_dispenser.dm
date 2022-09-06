@@ -528,7 +528,8 @@
 		/datum/reagent/consumable/tea/green,
 		/datum/reagent/consumable/grey_bull,
 		/datum/reagent/consumable/sol_dry,
-		/datum/reagent/consumable/cream_soda
+		/datum/reagent/consumable/cream_soda,
+		/datum/reagent/consumable/big_red
 	)
 	upgrade_reagents = list(
 		/datum/reagent/consumable/banana,
