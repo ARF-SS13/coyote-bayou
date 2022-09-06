@@ -439,3 +439,22 @@
 		holder.remove_reagent(/datum/reagent/consumable/frostoil, 5)
 	..()
 	. = 1
+
+/datum/reagent/consumable/big_red
+	name = "Big Red"
+	description = "Nothing Bigger or Redder than Big Red!" // NOTICES BIG RED ROCKET KNOT OWO X3 ~MURR~ HE HE HE
+	color = "#ff0000"
+	taste_description = "bubblegum with a creamy aftertaste"
+	glass_icon_state = "bigred"
+	glass_name = "bottle of Big Red"
+	glass_desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk."
+
+/datum/reagent/consumable/big_red/on_mob_life(mob/living/carbon/M)
+	M.drowsyness = 0
+	M.AdjustSleeping(-40, FALSE)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
+		M.adjustBruteLoss(-0.05)
+		M.adjustFireLoss(-0.05)
+	..()
+	. = 1

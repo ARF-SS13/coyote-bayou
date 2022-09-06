@@ -26,6 +26,7 @@
 					/obj/item/reagent_containers/food/drinks/bottle/grenadine = 3,
 					/obj/item/reagent_containers/food/drinks/bottle/menthol = 3,
 					/obj/item/reagent_containers/food/drinks/bottle/cream = 3,
+					/obj/item/reagent_containers/glass/beaker/big_red/full = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/tonic = 4,
 					/obj/item/reagent_containers/food/drinks/soda_cans/cola = 8,
 					/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 15,
