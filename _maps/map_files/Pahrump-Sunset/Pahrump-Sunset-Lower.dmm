@@ -17384,9 +17384,7 @@
 /area/f13/tunnel)
 "nzc" = (
 /mob/living/simple_animal/hostile/megafauna/behemoth{
-	faction = list("hostile","supermutant");
-	health = 1500;
-	maxHealth = 1500
+	faction = list("hostile","supermutant")
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
