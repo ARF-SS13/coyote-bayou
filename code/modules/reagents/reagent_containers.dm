@@ -16,6 +16,7 @@
 	var/container_flags = APTFT_ALTCLICK|APTFT_VERB //the container item flags
 	var/container_HP = 2
 	var/cached_icon
+	var/warped_glass = FALSE
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
@@ -220,6 +221,7 @@
 	var/damage_percent = ((container_HP / initial(container_HP)*100))
 	switch(damage_percent)
 		if(-INFINITY to 0)
+			warped_glass = FALSE
 			visible_message(span_notice("[icon2html(src, viewers(DEFAULT_MESSAGE_RANGE, src))] [src]'s melts [cause]!"))
 			playsound(src, 'sound/FermiChem/acidmelt.ogg', 80, 1)
 			SSblackbox.record_feedback("tally", "fermi_chem", 1, "Times beakers have melted")
@@ -227,12 +229,15 @@
 			qdel(src)
 			return
 		if(0 to 35)
+			warped_glass = TRUE
 			icon_state = "[cached_icon]_m3"
 			desc = "[initial(desc)] It is severely deformed."
 		if(35 to 70)
+			warped_glass = TRUE
 			icon_state = "[cached_icon]_m2"
 			desc = "[initial(desc)] It is deformed."
 		if(70 to 85)
+			warped_glass = TRUE
 			desc = "[initial(desc)] It is mildly deformed."
 			icon_state = "[cached_icon]_m1"
 

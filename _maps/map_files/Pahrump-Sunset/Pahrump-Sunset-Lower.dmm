@@ -16083,7 +16083,6 @@
 /area/f13/caves)
 "mgL" = (
 /obj/structure/nest/supermutant/melee{
-	spawn_once = 1;
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -17361,9 +17360,7 @@
 /area/f13/tunnel)
 "nzc" = (
 /mob/living/simple_animal/hostile/megafauna/behemoth{
-	faction = list("hostile","supermutant");
-	health = 1500;
-	maxHealth = 1500
+	faction = list("hostile","supermutant")
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -21673,7 +21670,6 @@
 "rHb" = (
 /obj/effect/decal/waste,
 /obj/structure/nest/supermutant/melee{
-	spawn_once = 1;
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -24802,7 +24798,6 @@
 "uNC" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1;
-	spawn_once = null;
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)

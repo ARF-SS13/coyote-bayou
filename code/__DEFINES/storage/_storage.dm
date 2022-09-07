@@ -10,8 +10,9 @@
 /// Use max_w_class
 #define STORAGE_LIMIT_MAX_W_CLASS			(1<<3)
 
-#define STORAGE_FLAGS_LEGACY_DEFAULT		(STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
-#define STORAGE_FLAGS_VOLUME_DEFAULT		(STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_LEGACY_DEFAULT (STORAGE_LIMIT_MAX_ITEMS | STORAGE_LIMIT_COMBINED_W_CLASS | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_VOLUME_DEFAULT (STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS)
+#define STORAGE_FLAGS_VOLUME_AND_NUMBER (STORAGE_LIMIT_VOLUME | STORAGE_LIMIT_MAX_W_CLASS | STORAGE_LIMIT_MAX_ITEMS)
 
 // UI defines
 /// Size of volumetric box icon
@@ -19,11 +20,11 @@
 /// Size of EACH left/right border icon for volumetric boxes
 #define VOLUMETRIC_STORAGE_BOX_BORDER_SIZE 1
 /// Minimum pixels an item must have in volumetric scaled storage UI
-#define MINIMUM_PIXELS_PER_ITEM 16
+#define MINIMUM_PIXELS_PER_ITEM 8
 /// Maximum number of objects that will be allowed to be displayed using the volumetric display system. Arbitrary number to prevent server lockups.
 #define MAXIMUM_VOLUMETRIC_ITEMS 256
 /// How much padding to give between items
-#define VOLUMETRIC_STORAGE_ITEM_PADDING 4
+#define VOLUMETRIC_STORAGE_ITEM_PADDING 1
 /// How much padding to give to edges
 #define VOLUMETRIC_STORAGE_EDGE_PADDING 1
 

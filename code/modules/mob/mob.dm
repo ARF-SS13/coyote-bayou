@@ -349,9 +349,10 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 
 	if(!result)
 		return
-	else
-		to_chat(src, result.Join("\n"))
-		SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+	if(LAZYLEN(result) <= 0) // A robot tried to examine their health bar and it runtimed cus it returned an empty list. Darn robot.
+		return
+	to_chat(src, result.Join("\n"))
+	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 /mob/proc/clear_from_recent_examines(atom/A)
 	if(!client)

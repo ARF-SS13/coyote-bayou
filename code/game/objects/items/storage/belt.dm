@@ -53,14 +53,7 @@
 	content_overlays = TRUE
 	custom_premium_price = 300
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //because this is easier than trying to have showers wash all contents.
-
-/obj/item/storage/belt/utility/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.toolbelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/utility
 
 /obj/item/storage/belt/utility/chief
 	name = "\improper Chief Engineer's toolbelt" //"the Chief Engineer's toolbelt", because "Chief Engineer's toolbelt" is not a proper noun
@@ -175,27 +168,12 @@
 	icon_state = "gardener"
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 
-/obj/item/storage/belt/utility/gardener/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.toolbelt_allowed
-
 /obj/item/storage/belt/janitor
 	name = "janibelt"
 	desc = "A belt used to hold most janitorial supplies."
 	icon_state = "janibelt"
 	item_state = "janibelt"
-
-/obj/item/storage/belt/janitor/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.toolbelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/utility
 
 //////////////////
 /// Medical belts
@@ -206,14 +184,7 @@
 	icon_state = "medicalbelt"
 	item_state = "medical"
 	content_overlays = TRUE
-
-/obj/item/storage/belt/medical/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.medibelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/medical
 
 /obj/item/storage/belt/medical/surgery_belt_adv
 	name = "surgical supply belt"
@@ -259,13 +230,7 @@
 	item_state = "fannypack_leather"
 	dying_key = DYE_REGISTRY_FANNYPACK
 	custom_price = PRICE_ALMOST_CHEAP
-
-/obj/item/storage/belt/fannypack/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_GENERIC_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_GENERIC_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_GENERIC_MAX_TOTAL_SPACE
+	component_type = /datum/component/storage/concrete/belt
 
 /obj/item/storage/belt/fannypack/black
 	name = "black fannypack"
@@ -292,14 +257,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "holster_leg"
 	item_state = "holster_leg"
-
-/obj/item/storage/belt/legholster/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.gunbelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/gun
 
 /obj/item/storage/belt/legholster/police/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/police(src)
@@ -317,14 +275,7 @@
 	item_state = "militarywebbing"
 	slot_flags = ITEM_SLOT_BELT
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/belt/military/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.ammobelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/military/alt
 	icon_state = "explorer2"
@@ -347,14 +298,7 @@
 	desc = "A robust belt for holding things like guns."
 	icon_state = "grenadebeltold"
 	item_state = "security"
-
-/obj/item/storage/belt/army/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.ammobelt_allowed
+	component_type = /datum/component/storage/concrete/belt/specialized/bandolier
 
 /obj/item/storage/belt/army/followers
 	name = "follower belt"
@@ -416,6 +360,48 @@
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
 
+/// snackdolier
+/obj/item/storage/belt/military/snack
+	name = "tactical snack rig"
+
+/obj/item/storage/belt/military/snack/Initialize()
+	. = ..()
+	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
+	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
+
+/obj/item/storage/belt/military/snack/ComponentInitialize()
+	. = ..()
+	var/amount = 21
+	var/rig_snacks
+	while(contents.len <= amount)
+		rig_snacks = pick(list(
+		/obj/item/reagent_containers/food/snacks/candy,
+		/obj/item/reagent_containers/food/drinks/dry_ramen,
+		/obj/item/reagent_containers/food/snacks/chips,
+		/obj/item/reagent_containers/food/snacks/sosjerky,
+		/obj/item/reagent_containers/food/snacks/syndicake,
+		/obj/item/reagent_containers/food/snacks/spacetwinkie,
+		/obj/item/reagent_containers/food/snacks/cheesiehonkers,
+		/obj/item/reagent_containers/food/snacks/nachos,
+		/obj/item/reagent_containers/food/snacks/cheesynachos,
+		/obj/item/reagent_containers/food/snacks/cubannachos,
+		/obj/item/reagent_containers/food/snacks/nugget,
+		/obj/item/reagent_containers/food/snacks/pastatomato,
+		/obj/item/reagent_containers/food/snacks/rofflewaffles,
+		/obj/item/reagent_containers/food/snacks/donkpocket,
+		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind,
+		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb,
+		/obj/item/reagent_containers/food/drinks/soda_cans/starkist,
+		/obj/item/reagent_containers/food/drinks/soda_cans/space_up,
+		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
+		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
+		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
+		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
+		))
+		new rig_snacks(src)
+
+
 
 /* * * * * * *
  * NECKPRONS
@@ -430,14 +416,7 @@
 	item_state = "bandolier"
 	slot_flags = ITEM_SLOT_NECK
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/belt/bandolier/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.ammobelt_allowed
+	component_type = /datum/component/storage/concrete/neckpron/specialized/bandolier
 
 /obj/item/storage/belt/bandolier/durathread
 	name = "durathread bandolier"
@@ -458,14 +437,7 @@
 	item_state = "holster_shoulder"
 	alternate_worn_layer = UNDER_SUIT_LAYER
 	slot_flags = ITEM_SLOT_NECK
-
-/obj/item/storage/belt/shoulderholster/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_NECKPRON_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_NECKPRON_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.gunbelt_allowed
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
 /obj/item/storage/belt/shoulderholster/full/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/detective(src)
@@ -511,14 +483,7 @@
 	icon_state = "medolier"
 	item_state = "medolier"
 	slot_flags = ITEM_SLOT_NECK
-
-/obj/item/storage/belt/medolier/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
-	STR.max_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.medibelt_allowed
+	component_type = /datum/component/storage/concrete/neckpron/specialized/medical
 
 /*	STR.max_items = 15
 	STR.display_numerical_stacking = FALSE
@@ -570,54 +535,6 @@
 	STR.can_hold = list(
 		/obj/item/clothing/mask/luchador
 		)
-
-/// snackdolier
-/obj/item/storage/belt/military/snack
-	name = "tactical snack rig"
-
-/obj/item/storage/belt/military/snack/Initialize()
-	. = ..()
-	var/sponsor = pick("DonkCo", "Waffle Co.", "Roffle Co.", "Gorlax Marauders", "Tiger Cooperative")
-	desc = "A set of snack-tical webbing worn by athletes of the [sponsor] VR sports division."
-
-/obj/item/storage/belt/military/snack/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 21
-	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.can_hold = typecacheof(list(
-		/obj/item/reagent_containers/food
-		))
-
-	var/amount = 21
-	var/rig_snacks
-	while(contents.len <= amount)
-		rig_snacks = pick(list(
-		/obj/item/reagent_containers/food/snacks/candy,
-		/obj/item/reagent_containers/food/drinks/dry_ramen,
-		/obj/item/reagent_containers/food/snacks/chips,
-		/obj/item/reagent_containers/food/snacks/sosjerky,
-		/obj/item/reagent_containers/food/snacks/syndicake,
-		/obj/item/reagent_containers/food/snacks/spacetwinkie,
-		/obj/item/reagent_containers/food/snacks/cheesiehonkers,
-		/obj/item/reagent_containers/food/snacks/nachos,
-		/obj/item/reagent_containers/food/snacks/cheesynachos,
-		/obj/item/reagent_containers/food/snacks/cubannachos,
-		/obj/item/reagent_containers/food/snacks/nugget,
-		/obj/item/reagent_containers/food/snacks/pastatomato,
-		/obj/item/reagent_containers/food/snacks/rofflewaffles,
-		/obj/item/reagent_containers/food/snacks/donkpocket,
-		/obj/item/reagent_containers/food/drinks/soda_cans/cola,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_mountain_wind,
-		/obj/item/reagent_containers/food/drinks/soda_cans/dr_gibb,
-		/obj/item/reagent_containers/food/drinks/soda_cans/starkist,
-		/obj/item/reagent_containers/food/drinks/soda_cans/space_up,
-		/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game,
-		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/nuka_cola,
-		/obj/item/reagent_containers/food/drinks/drinkingglass/filled/syndicatebomb
-		))
-		new rig_snacks(src)
 
 ///grenade belt
 /obj/item/storage/belt/grenade

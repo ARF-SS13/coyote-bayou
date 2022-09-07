@@ -1,3 +1,8 @@
+/datum/component/storage/concrete/bluespace/bag_of_holding
+	allow_big_nesting = TRUE
+	max_w_class = WEIGHT_CLASS_GIGANTIC
+	max_combined_w_class = 35
+
 /datum/component/storage/concrete/bluespace/bag_of_holding/handle_item_insertion(obj/item/W, prevent_warning = FALSE, mob/living/user)
 	var/atom/A = parent
 	if(A == W)		//don't put yourself into yourself.
