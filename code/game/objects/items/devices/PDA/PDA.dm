@@ -277,6 +277,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 //	dat += emoji_s.css_tag()
 //Removed to fix a pda runtime ~TK
 
+
 	dat += "<a href='byond://?src=[REF(src)];choice=Refresh'>[PDAIMG(refresh)]Refresh</a>"
 
 	if ((!isnull(cartridge)) && (mode == 0))
