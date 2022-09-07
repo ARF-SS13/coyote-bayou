@@ -3305,7 +3305,6 @@
 /area/f13/wasteland)
 "coU" = (
 /obj/structure/nest/mirelurk{
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
 	dir = 4
@@ -3409,7 +3408,6 @@
 /area/f13/caves)
 "csc" = (
 /obj/structure/nest/protectron{
-	max_mobs = 2
 	},
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
@@ -11486,7 +11484,6 @@
 /area/f13/caves)
 "ifo" = (
 /obj/structure/nest/mirelurk{
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
@@ -14134,8 +14131,6 @@
 "jNj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/mirelurk{
-	max_mobs = 2;
-	spawn_time = 20
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
@@ -17194,7 +17189,6 @@
 /area/f13/wasteland)
 "lVn" = (
 /obj/structure/nest/protectron{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
@@ -20682,7 +20676,6 @@
 /area/f13/city)
 "oyV" = (
 /obj/structure/nest/mirelurk{
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -26761,7 +26754,6 @@
 /area/f13/city)
 "sQz" = (
 /obj/structure/nest/mirelurk{
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
@@ -29632,8 +29624,6 @@
 /area/f13/city)
 "uIi" = (
 /obj/structure/nest/mirelurk{
-	max_mobs = 2;
-	spawn_time = 20
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
