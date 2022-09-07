@@ -218,8 +218,6 @@
 	dir = 8
 	},
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -3854,8 +3852,6 @@
 	dir = 1
 	},
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -6727,8 +6723,6 @@
 "ays" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -11611,8 +11605,6 @@
 	icon_state = "tall_grass_2"
 	},
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -12004,7 +11996,6 @@
 	},
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -12934,8 +12925,6 @@
 	icon_state = "sS-casing"
 	},
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -20531,7 +20520,6 @@
 /area/f13/caves)
 "bQx" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -20697,8 +20685,6 @@
 /area/f13/wasteland)
 "bTm" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -22228,7 +22214,6 @@
 "cpy" = (
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	pixel_y = 20
 	},
 /turf/open/floor/f13{
@@ -22332,8 +22317,6 @@
 	pixel_x = -3
 	},
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
@@ -22619,7 +22602,6 @@
 "csG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
-	max_mobs = 1;
 	pixel_x = -1;
 	pixel_y = 29
 	},
@@ -23905,16 +23887,13 @@
 /area/f13/building)
 "cVU" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13,
 /area/f13/building)
 "cVV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
-	layer = 2.07;
-	max_mobs = 2
+	layer = 2.07
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -24391,9 +24370,7 @@
 "dhz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	max_mobs = 2;
 	pixel_y = 32;
-	spawn_time = 100
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26321,8 +26298,6 @@
 /area/f13/caves)
 "eda" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
@@ -26367,9 +26342,7 @@
 "eel" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	max_mobs = 3;
 	pixel_x = 32;
-	spawn_time = 40
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26485,7 +26458,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -27431,7 +27403,6 @@
 /area/f13/wasteland)
 "eIw" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -28877,8 +28848,6 @@
 /area/f13/wasteland)
 "fsY" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -30814,7 +30783,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
@@ -31875,8 +31843,6 @@
 /area/f13/building)
 "gQA" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -32373,7 +32339,6 @@
 "hel" = (
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -32721,7 +32686,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
@@ -35332,8 +35296,6 @@
 /area/f13/wasteland)
 "iDe" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -35884,8 +35846,6 @@
 	icon_state = "tall_grass_4"
 	},
 /obj/structure/nest/mirelurk{
-	max_mobs = 2;
-	spawn_time = 20
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
@@ -36447,7 +36407,6 @@
 "jcW" = (
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	pixel_y = 20
 	},
 /turf/open/floor/f13{
@@ -36506,7 +36465,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/ranged{
 	pixel_y = -32;
-	spawn_time = 50
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -37457,9 +37415,7 @@
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	max_mobs = 1;
 	pixel_y = 32;
-	spawn_time = 10
 	},
 /mob/living/simple_animal/hostile/raider/legendary,
 /turf/open/floor/f13/wood,
@@ -39137,10 +39093,8 @@
 "kCF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/raider{
-	max_mobs = 1;
 	pixel_x = -1;
 	pixel_y = 29;
-	radius = 5
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -39580,10 +39534,8 @@
 "kMm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
-	max_mobs = 1;
 	pixel_x = -1;
 	pixel_y = 29;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -42228,7 +42180,6 @@
 	},
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
@@ -42537,10 +42488,8 @@
 "mfl" = (
 /obj/structure/chair/wood,
 /obj/structure/nest/raider{
-	max_mobs = 1;
 	pixel_x = -1;
 	pixel_y = 29;
-	radius = 5
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -43987,7 +43936,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	pixel_y = 2
 	},
 /turf/open/floor/f13{
@@ -44945,7 +44893,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -45224,8 +45171,6 @@
 /area/f13/building/hospital)
 "nri" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -46906,8 +46851,6 @@
 	icon_state = "tall_grass_6"
 	},
 /obj/structure/nest/mirelurk{
-	max_mobs = 2;
-	spawn_time = 20
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -47530,7 +47473,6 @@
 /area/f13/building/massfusion)
 "ozl" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -47558,7 +47500,6 @@
 "ozU" = (
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain1"
@@ -50619,7 +50560,6 @@
 "qgl" = (
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 1;
 	name = "towel boy pod";
 	pixel_y = 20
 	},
@@ -51401,7 +51341,6 @@
 /area/f13/wasteland)
 "qAs" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -55006,7 +54945,6 @@
 /area/f13/caves)
 "svM" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
@@ -56561,7 +56499,6 @@
 /area/f13/building/mall)
 "toj" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
@@ -56765,7 +56702,6 @@
 /area/f13/wasteland)
 "tsU" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -57060,7 +56996,6 @@
 	},
 /obj/structure/nest/ghoul{
 	layer = 2.07;
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -57709,8 +57644,6 @@
 "tOd" = (
 /obj/structure/simple_door/room,
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/floor/f13{
 	icon_state = "bar"
@@ -59017,7 +58950,6 @@
 "uxG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/boss{
-	spawn_time = 10
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -60802,8 +60734,6 @@
 /area/f13/building)
 "vrV" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2;
-	radius = 5
 	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
@@ -63326,7 +63256,6 @@
 "wHw" = (
 /obj/structure/car,
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -63688,7 +63617,6 @@
 /area/f13/wasteland)
 "wRD" = (
 /obj/structure/nest/ghoul{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,

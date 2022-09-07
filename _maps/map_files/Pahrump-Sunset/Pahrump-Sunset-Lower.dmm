@@ -353,7 +353,6 @@
 /obj/structure/nest/assaultron{
 	infinite = 1;
 	pixel_y = 22;
-	spawn_time = 200
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -1229,7 +1228,6 @@
 	desc = "A cloning pod system's exit node. This one appears to have several specimen in the storage below.";
 	icon = 'icons/obj/machines/cloning.dmi';
 	icon_state = "pod_0";
-	max_mobs = 1;
 	name = "occupied cloning pod";
 	radius = 2
 	},
@@ -6449,10 +6447,6 @@
 /obj/machinery/computer/security/telescreen,
 /turf/closed/wall/rust,
 /area/f13/caves)
-"cAX" = (
-/obj/docking_port/stationary/bosaway/nine,
-/turf/closed/wall/rust,
-/area/f13/tunnel)
 "cBd" = (
 /obj/structure/wreck/trash/engine,
 /obj/structure/spider/stickyweb,
@@ -6642,7 +6636,6 @@
 "cOt" = (
 /obj/structure/nest/raider/ranged{
 	pixel_y = 32;
-	spawn_time = 50
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -7224,7 +7217,6 @@
 /area/f13/caves)
 "duJ" = (
 /obj/structure/nest/raider{
-	max_mobs = 3;
 	pixel_x = -1;
 	pixel_y = 29
 	},
@@ -7290,7 +7282,6 @@
 /area/f13/building/museum)
 "dyM" = (
 /obj/structure/nest/raider{
-	max_mobs = 4;
 	pixel_x = -1;
 	pixel_y = 29
 	},
@@ -7608,8 +7599,6 @@
 /area/f13/tunnel)
 "dNf" = (
 /obj/structure/nest/fireant{
-	max_mobs = 4;
-	spawn_time = 50
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -8289,8 +8278,6 @@
 /area/f13/caves)
 "evd" = (
 /obj/structure/nest/supermutant/melee{
-	max_mobs = 1;
-	spawn_time = 10
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
@@ -8479,8 +8466,6 @@
 "eDd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/supermutant/ranged{
-	max_mobs = 1;
-	spawn_time = 100
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/caves)
@@ -11722,8 +11707,6 @@
 /area/f13/caves)
 "idY" = (
 /obj/structure/nest/supermutant/ranged{
-	max_mobs = 1;
-	spawn_time = 100
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -12126,7 +12109,6 @@
 	desc = "A cloning pod system's exit node. This one appears to have several specimen in the storage below.";
 	icon = 'icons/obj/machines/cloning.dmi';
 	icon_state = "pod_0";
-	max_mobs = 1;
 	name = "occupied cloning pod"
 	},
 /turf/open/floor/plating/tunnel,
@@ -12193,7 +12175,6 @@
 /area/f13/tunnel)
 "izx" = (
 /obj/structure/nest/scorpion{
-	spawn_time = 100
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
@@ -14849,7 +14830,6 @@
 	},
 /obj/structure/nest/protectron{
 	layer = 3;
-	max_mobs = 2;
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -15813,7 +15793,6 @@
 /area/f13/caves)
 "lUo" = (
 /obj/structure/nest/scorpion{
-	spawn_time = 100
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -16104,8 +16083,6 @@
 /area/f13/caves)
 "mgL" = (
 /obj/structure/nest/supermutant/melee{
-	max_mobs = 3;
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -16277,7 +16254,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
 	alpha = 0;
-	max_mobs = 1;
 	radius = 2
 	},
 /turf/open/floor/f13{
@@ -18088,7 +18064,6 @@
 /area/f13/caves)
 "ojM" = (
 /obj/structure/nest/deathclaw{
-	max_mobs = 2
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -20529,7 +20504,6 @@
 /obj/item/geiger_counter,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
-	max_mobs = 3;
 	pixel_y = 25
 	},
 /turf/open/floor/f13{
@@ -20820,7 +20794,6 @@
 /obj/structure/chair/f13chair1,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
-	max_mobs = 3;
 	pixel_y = 25
 	},
 /turf/open/floor/f13{
@@ -21697,8 +21670,6 @@
 "rHb" = (
 /obj/effect/decal/waste,
 /obj/structure/nest/supermutant/melee{
-	max_mobs = 3;
-	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
@@ -21732,7 +21703,6 @@
 "rJf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
-	max_mobs = 3;
 	pixel_y = 25
 	},
 /turf/open/floor/f13{
@@ -23032,7 +23002,6 @@
 /area/f13/ncr)
 "sWu" = (
 /obj/structure/nest/supermutant{
-	max_mobs = 1
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -24829,7 +24798,6 @@
 "uNC" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1;
-	spawn_time = 400
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -25056,8 +25024,6 @@
 /area/f13/caves)
 "var" = (
 /obj/structure/nest/fireant{
-	max_mobs = 4;
-	spawn_time = 50
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -25637,7 +25603,6 @@
 /area/f13/caves)
 "vBA" = (
 /obj/structure/nest/deathclaw{
-	max_mobs = 2
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -64683,7 +64648,7 @@ bsC
 bsC
 bsC
 bsC
-cAX
+bsC
 bsC
 bsC
 bsC
