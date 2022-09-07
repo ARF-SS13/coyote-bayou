@@ -20,7 +20,7 @@
 	clothing_flags = NOSLIP
 	permeability_coefficient = 0.6
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/medical
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor = ARMOR_VALUE_CLOTHES
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T3)
 

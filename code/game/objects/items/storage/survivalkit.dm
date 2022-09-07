@@ -6,6 +6,7 @@
 	component_type = /datum/component/storage/concrete/box/survivalkit
 	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_POCKET | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/storage/survivalkit/PopulateContents()
 	new /obj/item/flashlight(src)

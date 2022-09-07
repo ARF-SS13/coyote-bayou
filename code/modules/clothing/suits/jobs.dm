@@ -9,11 +9,13 @@
 	icon_state = "captunic"
 	item_state = "bio_suit"
 	flags_inv = HIDEJUMPSUIT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 //Chaplain
 /obj/item/clothing/suit/chaplain
 	name = "chaplain suit"
 	desc = "A piece of clothing adorned by the gods of Coding. Should never exist in this mortal realm."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 /obj/item/clothing/suit/chaplain/nun
 	name = "nun robe"
@@ -64,6 +66,7 @@
 	allowed = list(/obj/item/kitchen)
 	togglename = "sleeves"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 //Detective
 /obj/item/clothing/suit/det_suit
@@ -76,6 +79,7 @@
 	cold_protection = CHEST|GROIN|LEGS|ARMS
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 /obj/item/clothing/suit/det_suit/Initialize()
 	. = ..()
@@ -118,7 +122,7 @@
 	resistance_flags = NONE
 	armor = ARMOR_VALUE_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer
@@ -130,6 +134,7 @@
 	body_parts_covered = CHEST|ARMS
 	togglename = "buttons"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 /obj/item/clothing/suit/toggle/lawyer/purple
 	name = "purple suit jacket"
@@ -165,6 +170,7 @@
 	cold_protection = CHEST|ARMS
 	heat_protection = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 
 //Robotocist
@@ -177,6 +183,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/techpriest
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 
 /obj/item/clothing/head/hooded/techpriest
 	name = "techpriest's hood"

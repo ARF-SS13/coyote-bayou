@@ -126,7 +126,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/farmer/overalls
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/suit/armor/outfit/overalls/farmer/Initialize()
 	. = ..()
@@ -152,7 +152,7 @@
 	icon_state = "forge"
 	item_state = "forge"
 	blood_overlay_type = "armor"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter/overalls
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 /* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it

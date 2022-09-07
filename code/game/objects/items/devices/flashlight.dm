@@ -349,7 +349,7 @@
 	name = "torch"
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	icon = 'icons/obj/lighting.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL // Sure stuff it in your pocket
 	light_range = 5
 	light_color = LIGHT_COLOR_ORANGE
 	icon_state = "torch"

@@ -15,6 +15,8 @@
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -432,7 +434,6 @@
 	desc = "It can hold a bottle of vodka."
 	icon_state = "rus_helmet"
 	item_state = "rus_helmet"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/helmet/rus_ushanka
 	name = "battle ushanka"
