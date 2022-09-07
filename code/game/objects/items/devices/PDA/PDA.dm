@@ -273,8 +273,8 @@ GLOBAL_LIST_EMPTY(PDAs)
 	user.set_machine(src)
 
 	var/dat = "<!DOCTYPE html><html><head><style>body {[font_mode] padding: 0; margin: 12px; background-color: #062113; color: #4aed92; line-height: 135%;} h2, h4 {color: #4aed92;} a, button, a:link, a:visited, a:active, .linkOn, .linkOff {color: #4aed92; text-decoration: none; background: #062113; border: none; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a:hover {color: #062113; background: #4aed92; border: 1px solid #4aed92} a.white, a.white:link, a.white:visited, a.white:active {color: #4aed92; text-decoration: none; background: #4aed92; border: 1px solid #161616; padding: 1px 4px 1px 4px; margin: 0 2px 0 0; cursor:default;} a.white:hover {color: #062113; background: #4aed92;} .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover {color: #4aed92; background: #062113; border-color: #062113;} .linkOff, a.linkOff:link, a.linkOff:visited, a.linkOff:active, a.linkOff:hover{color: #4aed92; background: #062113; border-color: #062113;}</style><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><title>Personal Information Processor</title><link href=\"https://fonts.googleapis.com/css?family=Orbitron|Share+Tech+Mono|VT323\" rel=\"stylesheet\"></head><body bgcolor=\"" + background_color + "\">"
-	dat += assets.css_tag()
-	dat += emoji_s.css_tag()
+//	dat += assets.css_tag()
+//	dat += emoji_s.css_tag()
 
 	dat += "<a href='byond://?src=[REF(src)];choice=Refresh'>[PDAIMG(refresh)]Refresh</a>"
 
