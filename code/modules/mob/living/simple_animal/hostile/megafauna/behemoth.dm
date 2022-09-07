@@ -63,14 +63,10 @@
 
 /mob/living/simple_animal/hostile/megafauna/behemoth/OpenFire()
 	SetRecoveryTime(0, 100)
-	if(health <= maxHealth*0.33)
+	if(health <= maxHealth*0.5)
 		stomp_range = 2
 		speed = 2
 		move_to_delay = 2
-	if(health <= maxHealth*0.66)
-		stomp_range = 2
-		speed = 4
-		move_to_delay = 4
 	else
 		stomp_range = initial(stomp_range)
 		speed = initial(speed)
