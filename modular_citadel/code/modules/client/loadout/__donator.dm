@@ -30,6 +30,22 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
+/// Fluff for fuzzy
+/datum/gear/donator/fuz_card
+	name = "Fuzzy License Card"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/card/fuzzy_license
+	ckeywhitelist = list("fuzlet", "superlagg")
+	cost = 0
+
+/// Also fluff for fuzzy
+/datum/gear/donator/fuz_pen
+	name = "Free Crayon Box"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/storage/crayons
+	ckeywhitelist = list("fuzlet", "superlagg")
+	cost = 0
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
