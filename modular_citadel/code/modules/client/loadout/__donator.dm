@@ -1,6 +1,6 @@
 //This is the file that handles donator loadout items.
 
-/datum/gear/donator
+/*/datum/gear/donator
 	name = "IF YOU SEE THIS, PING A CODER RIGHT NOW!"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/storage/belt/shoulderholster/ranger45
@@ -18,7 +18,7 @@
 	name = "CIA Badge"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/clothing/accessory/cia_badge
-	ckeywhitelist = list("monke1818")
+	ckeywhitelist = list("monke1818") */
 
 // SUNSET FLUFF ITEMS
 
@@ -43,7 +43,7 @@
 	ckeywhitelist = list("topbirb")
 */
 
-/obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
+/*/obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced(src)
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
@@ -154,7 +154,7 @@
 /obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
 	new /obj/item/modkit/kemblevest(src)
 	new /obj/item/modkit/kemblehat(src)
-	new /obj/item/storage/belt/shoulderholster/kemble(src)
+	new /obj/item/storage/belt/shoulderholster/kemble(src) */
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
