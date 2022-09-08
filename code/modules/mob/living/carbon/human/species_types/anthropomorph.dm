@@ -1,31 +1,13 @@
-/datum/species/mammal
-	name = "Anthropomorph"
-	id = SPECIES_MAMMAL
-	default_color = "4B4B4B"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,HAIR,HORNCOLOR,WINGCOLOR,HAS_FLESH,HAS_BONE)
-	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_BEAST
-	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
-						"mam_body_markings" = list(), "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
-	attack_verb = "claw"
-	attack_sound = 'sound/weapons/slash.ogg'
-	miss_sound = 'sound/weapons/slashmiss.ogg'
-	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/mammal
-	liked_food = MEAT | FRIED
-	disliked_food = TOXIC
-
-	tail_type = "mam_tail"
-	wagging_type = "mam_waggingtail"
-	species_category = SPECIES_CATEGORY_FURRY
-
-	allowed_limb_ids = list("mammal","aquatic","avian", "shadekin")
-
 /datum/species/mammal/synthetic
 	name = "Synthetic Anthropomorph"
 	id = SPECIES_MAMMAL_SYNTHETIC
 
 	species_traits = list(MUTCOLORS,NOTRANSSTING,EYECOLOR,LIPS,HAIR,ROBOTIC_LIMBS,HAS_FLESH,HAS_BONE,WINGCOLOR,HORNCOLOR)
-	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM)
+	inherent_traits = list(TRAIT_NODISMEMBER,TRAIT_NOLIMBDISABLE,TRAIT_NOHUNGER,TRAIT_NOBREATH)
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID|MOB_BEAST
+
+	mutant_bodyparts = list("mcolor" = "FFFFFF","mcolor2" = "FFFFFF","mcolor3" = "FFFFFF", "mam_snouts" = "Husky", "mam_tail" = "Husky", "mam_ears" = "Husky", "deco_wings" = "None",
+						"mam_body_markings" = "Husky", "taur" = "None", "horns" = "None", "legs" = "Plantigrade", "meat_type" = "Mammalian")
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
@@ -46,5 +28,9 @@
 	attack_verb = "claw"
 	attack_sound = 'sound/weapons/slash.ogg'
 	miss_sound = 'sound/weapons/slashmiss.ogg'
+
+	tail_type = "mam_tail"
+	wagging_type = "mam_waggingtail"
+	species_type = "furry"
 
 	allowed_limb_ids = list("mammal","aquatic","avian", "human", "shadekin")

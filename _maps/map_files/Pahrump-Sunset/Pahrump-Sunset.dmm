@@ -217,8 +217,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -3851,8 +3850,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "aoe" = (
@@ -6722,8 +6720,7 @@
 /area/f13/caves)
 "ays" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ayt" = (
@@ -11604,8 +11601,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_2"
 	},
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
 	},
@@ -12924,8 +12920,7 @@
 	dir = 10;
 	icon_state = "sS-casing"
 	},
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "aSf" = (
@@ -20519,8 +20514,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
 "bQx" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/village)
@@ -20684,8 +20678,7 @@
 	},
 /area/f13/wasteland)
 "bTm" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
 	},
@@ -22316,8 +22309,7 @@
 /obj/structure/flora/grass/wasteland{
 	pixel_x = -3
 	},
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "hole"
 	},
@@ -23886,8 +23878,7 @@
 	},
 /area/f13/building)
 "cVU" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13,
 /area/f13/building)
 "cVV" = (
@@ -24370,7 +24361,7 @@
 "dhz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	pixel_y = 32;
+	pixel_y = 32
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26297,8 +26288,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "eda" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -26342,7 +26332,7 @@
 "eel" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	pixel_x = 32;
+	pixel_x = 32
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -26457,7 +26447,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -27402,8 +27392,7 @@
 	},
 /area/f13/wasteland)
 "eIw" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -28847,8 +28836,7 @@
 	},
 /area/f13/wasteland)
 "fsY" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "ftl" = (
@@ -30782,7 +30770,7 @@
 "gud" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/building)
@@ -31842,11 +31830,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "gQA" = (
-/obj/structure/nest/ghoul{
+/obj/effect/overlay/junk/mirror{
+	pixel_y = -4;
+	pixel_x = -5
 	},
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/turf/closed/wall/f13/wood,
 /area/f13/building)
 "gRk" = (
 /obj/effect/decal/cleanable/dirt,
@@ -32338,7 +32326,7 @@
 /area/f13/wasteland)
 "hel" = (
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -32685,7 +32673,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building/mall)
@@ -35295,8 +35283,7 @@
 	},
 /area/f13/wasteland)
 "iDe" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "iDi" = (
@@ -35823,10 +35810,6 @@
 	dir = 4;
 	pixel_x = 12
 	},
-/obj/effect/overlay/junk/mirror{
-	pixel_x = 26;
-	pixel_y = -4
-	},
 /turf/closed/wall/f13/wood,
 /area/f13/building)
 "iQu" = (
@@ -35845,8 +35828,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
 	},
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "iQD" = (
@@ -36464,7 +36446,7 @@
 "jeS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/ranged{
-	pixel_y = -32;
+	pixel_y = -32
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -37415,7 +37397,7 @@
 /obj/structure/chair/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider/melee{
-	pixel_y = 32;
+	pixel_y = 32
 	},
 /mob/living/simple_animal/hostile/raider/legendary,
 /turf/open/floor/f13/wood,
@@ -39094,7 +39076,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/nest/raider{
 	pixel_x = -1;
-	pixel_y = 29;
+	pixel_y = 29
 	},
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
@@ -39535,7 +39517,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/raider{
 	pixel_x = -1;
-	pixel_y = 29;
+	pixel_y = 29
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -42489,7 +42471,7 @@
 /obj/structure/chair/wood,
 /obj/structure/nest/raider{
 	pixel_x = -1;
-	pixel_y = 29;
+	pixel_y = 29
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -44892,7 +44874,7 @@
 "nmk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
@@ -45170,8 +45152,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/building/hospital)
 "nri" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -46850,8 +46831,7 @@
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_6"
 	},
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ojt" = (
@@ -47472,8 +47452,7 @@
 	},
 /area/f13/building/massfusion)
 "ozl" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ozv" = (
@@ -47499,7 +47478,7 @@
 /area/f13/building)
 "ozU" = (
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain1"
@@ -51340,8 +51319,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "qAs" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -54944,8 +54922,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "svM" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
 "swn" = (
@@ -56498,8 +56475,7 @@
 	},
 /area/f13/building/mall)
 "toj" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/ncr)
@@ -56697,11 +56673,6 @@
 /obj/structure/flora/ausbushes/grassybush,
 /obj/structure/flora/tree/jungle{
 	color = "#d9b51c"
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"tsU" = (
-/obj/structure/nest/ghoul{
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -56995,7 +56966,7 @@
 	icon_state = "tall_grass_6"
 	},
 /obj/structure/nest/ghoul{
-	layer = 2.07;
+	layer = 2.07
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -57643,8 +57614,7 @@
 /area/f13/ncr)
 "tOd" = (
 /obj/structure/simple_door/room,
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -58949,8 +58919,7 @@
 /area/f13/building)
 "uxG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/raider/boss{
-	},
+/obj/structure/nest/raider/boss,
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "uxJ" = (
@@ -60733,8 +60702,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "vrV" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
 	},
@@ -63255,8 +63223,7 @@
 /area/f13/wasteland)
 "wHw" = (
 /obj/structure/car,
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
 	},
@@ -63616,8 +63583,7 @@
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
 "wRD" = (
-/obj/structure/nest/ghoul{
-	},
+/obj/structure/nest/ghoul,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -121297,7 +121263,7 @@ fFf
 bfd
 biX
 bLe
-gQA
+qAs
 bfB
 ean
 iLL
@@ -126744,7 +126710,7 @@ aOk
 acl
 acl
 acl
-acl
+gQA
 iQi
 acl
 aOk
@@ -128700,7 +128666,7 @@ bjb
 dkt
 aOk
 etg
-tsU
+iDe
 etg
 aOk
 rCm
@@ -129962,7 +129928,7 @@ aae
 aae
 aae
 aOk
-tsU
+iDe
 aae
 aae
 aae
