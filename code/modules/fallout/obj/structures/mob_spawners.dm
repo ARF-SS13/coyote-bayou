@@ -179,9 +179,9 @@
 
 /obj/structure/nest/molerat
 	name = "molerat nest"
-	max_mobs = 5
+	max_mobs = 3
 	mob_types = list(/mob/living/simple_animal/hostile/molerat = 20)
-	spawn_time = 10 SECONDS //They just love tunnelin'.. And are pretty soft
+	spawn_time = 20 SECONDS //They just love tunnelin'.. And are pretty soft
 
 /obj/structure/nest/mirelurk
 	name = "mirelurk nest"
