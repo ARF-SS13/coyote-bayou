@@ -6543,9 +6543,13 @@
 /area/f13/wasteland)
 "axM" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
+/turf/closed/indestructible/rock{
+	desc = "A pre-War supermart wall made of reinforced concrete.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "supermart wall";
+	smooth = 1
 	},
 /area/f13/building/mall)
 "axN" = (
@@ -21216,13 +21220,6 @@
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"cgn" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
-/area/f13/caves)
 "cgB" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -36800,17 +36797,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"jmR" = (
-/obj/structure/debris/v1,
-/turf/closed/indestructible/rock{
-	desc = "A pre-War supermart wall made of reinforced concrete.";
-	icon = 'icons/turf/walls/f13superstore.dmi';
-	icon_state = "supermart";
-	icon_type_smooth = "supermart";
-	name = "supermart wall";
-	smooth = 1
-	},
-/area/f13/building/mall)
 "jne" = (
 /obj/structure/window/fulltile/house{
 	dir = 2;
@@ -38502,11 +38488,7 @@
 "klm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/house,
-/obj/structure/barricade/wooden/planks/pregame,
-/turf/open/floor/plasteel/f13/vault_floor/blue/side{
-	dir = 1
-	},
+/turf/closed/wall/f13/store,
 /area/f13/building/hospital)
 "kls" = (
 /obj/effect/decal/cleanable/dirt,
@@ -116651,7 +116633,7 @@ xLC
 xLC
 nCn
 aae
-cgn
+asS
 aae
 aae
 aae
@@ -116907,7 +116889,7 @@ aEf
 aEf
 uSc
 uSc
-jmR
+uSc
 axM
 aEf
 aEf
