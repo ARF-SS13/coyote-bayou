@@ -3,6 +3,16 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	slot = SLOT_W_UNIFORM
 
+/datum/gear/uniform/recon
+	name = "BoS Recon Suit"
+	path = /obj/item/clothing/under/f13/recon
+	cost = 1
+
+/datum/gear/uniform/legskirt
+	name = "burgundy fatigues"
+	path = /obj/item/clothing/under/f13/legskirt
+	cost = 1
+
 /datum/gear/uniform/vault
 	name = "vault jumpsuit"
 	path = /obj/item/clothing/under/f13/vault
@@ -146,7 +156,7 @@
 	name = "torn rags"
 	path = /obj/item/clothing/under/f13/rag
 
-//suits 
+//suits
 
 /datum/gear/uniform/suit
 	name = "black suit"
@@ -678,21 +688,22 @@
 							"Barkeep",
 							)
 
-//Khans 
+//Khans
 
-/datum/gear/uniform/khans
-	name = "great khans jorts"
+/datum/gear/uniform/denimuniform
+	name = "denim uniform"
+	path = /obj/item/clothing/under/f13/khan
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
+
+/datum/gear/uniform/denim
+	name = "denim jorts"
 	path = /obj/item/clothing/under/f13/khan/shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
 
-/datum/gear/uniform/khans/booty
-	name = "great khans booty shorts"
+/datum/gear/uniform/denim/booty
+	name = "denim booty shorts"
 	path = /obj/item/clothing/under/f13/khan/booty
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
 
 //Skirts
 
