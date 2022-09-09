@@ -183,7 +183,7 @@
 /datum/gear/donator/kits/fenny
 	name = "Casey's 'Business' Bundle"
 	path = /obj/item/storage/box/large/custom_kit/risingstarslash
-	ckeywhitelist = list("Tk420634")
+	ckeywhitelist = list("tk420634")
 
 /obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
 	new /obj/item/clothing/head/beret/sec/navyofficer(src)
@@ -200,7 +200,7 @@
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
 	path = /obj/item/storage/box/large/custom_kit/risingstarslash2
-	ckeywhitelist = list("Brimcon")
+	ckeywhitelist = list("brimcon")
 
 /obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
