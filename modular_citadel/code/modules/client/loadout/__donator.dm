@@ -213,3 +213,16 @@
 /obj/item/storage/box/large/custom_kit/ferisramsay/PopulateContents()
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/bladeburstninja
+	name = "Split-Noggin's Box"
+	path = /obj/item/storage/box/large/custom_kit/bladeburstninja
+	ckeywhitelist = list("bladeburstninja")
+
+/obj/item/storage/box/large/custom_kit/bladeburstninja/PopulateContents()
+	new /obj/item/gun/ballistic/bow/silver(src)
+	new /obj/item/clothing/head/helmet/f13/metalmask(src)
+	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/clothing/accessory/talisman(src)
+	new /obj/item/stack/sheet/sinew(src)
+	new /obj/item/stack/sheet/sinew(src)
