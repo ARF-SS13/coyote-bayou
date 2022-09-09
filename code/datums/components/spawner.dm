@@ -15,7 +15,7 @@
 	/// Override the mob's faction with this!
 	var/list/faction = list("mining")
 	/// If not infinite, we delete our parent when we hit max_mobs.
-	var/infinite = TRUE
+	var/infinite = FALSE
 	/// Range to check for other mobs to see if there's too many around
 	var/overpopulation_range = 5
 	/// Number of mobs to spawn at once, for swarms
