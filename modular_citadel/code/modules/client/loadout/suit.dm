@@ -180,6 +180,12 @@
 */
 
 
+/datum/gear/suit/chestgearharness
+	name = "Chest gear harness"
+	path = /obj/item/clothing/suit/armor/light/leather/rig
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_FACTIONS
+	cost = 2
+
 /datum/gear/suit/fieldscribe
 	name = "Fieldscribe suit"
 	path = /obj/item/clothing/suit/toggle/labcoat/fieldscribe
