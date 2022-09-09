@@ -352,14 +352,13 @@
 
 	var/turf/open/miasma_turf = deceasedturf
 
-	var/datum/gas_mixture/stank = new
+	var/static/datum/gas_mixture/stank
+	if(!stank) // Use a static mixture to avoid gas mixture churn.
+		stank = new
+		stank.set_moles(GAS_MIASMA,0.1)
+		stank.set_temperature(BODYTEMP_NORMAL)
 
-	stank.set_moles(GAS_MIASMA,0.1)
-
-	stank.set_temperature(BODYTEMP_NORMAL)
-
-	miasma_turf.assume_air(stank)
-
+	miasma_turf.air.merge(stank)
 	miasma_turf.air_update_turf()
 
 /mob/living/carbon/proc/handle_blood()
