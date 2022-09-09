@@ -350,7 +350,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/f13/legskirt
-	name = "legionary fatigues"
+	name = "burgundy fatigues"
 	desc = "A black learthery skirt and a thick long sleeve cotton shirt."
 	icon_state = "legskirt"
 	item_state = "legskirt"
@@ -631,8 +631,8 @@
 	item_color = "raiderrags"
 
 /obj/item/clothing/under/f13/khan
-	name = "great khan uniform"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants."
+	name = "denim uniform"
+	desc = "Well designed denim pants."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_uniform"
@@ -641,15 +641,15 @@
 	var/uniformtoggled = FALSE
 
 /obj/item/clothing/under/f13/khan/shorts
-	name = "great khan jorts"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but jorts is a acceptable alternative."
+	name = "denim jorts"
+	desc = "Denim pants, but jorts!"
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_short"
 	item_state = "khan_short"
 
 /obj/item/clothing/under/f13/khan/booty
-	name = "khan booty shorts"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, But this pair doesn't seem to leave much to the imagination."
+	name = "denim shorts"
+	desc = "Denim pants, But this pair doesn't seem to leave much to the imagination."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_booty"
 	item_state = "khan_booty"

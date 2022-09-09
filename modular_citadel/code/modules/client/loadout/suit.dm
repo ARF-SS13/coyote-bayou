@@ -121,8 +121,20 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 2
 
+/datum/gear/suit/rustedcowboy
+	name = "Rusted Cowboy Outfit"
+	path = /obj/item/clothing/suit/armor/light/duster/rustedcowboy
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+	cost = 2
+
 /// 	Beginning of Coats/Armor section
 // 	Below are one points as they are cosmetics
+
+/datum/gear/suit/coat/leatherbattlecoat
+	name = "Leather battle coat"
+	path = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
+	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+	cost = 3
 
 /datum/gear/suit/coat/marlow
 	name = "Marlow gang overcoat"

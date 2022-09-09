@@ -1,6 +1,6 @@
 //This is the file that handles donator loadout items.
 
-/datum/gear/donator
+/*/datum/gear/donator
 	name = "IF YOU SEE THIS, PING A CODER RIGHT NOW!"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/storage/belt/shoulderholster/ranger45
@@ -18,7 +18,7 @@
 	name = "CIA Badge"
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/clothing/accessory/cia_badge
-	ckeywhitelist = list("monke1818")
+	ckeywhitelist = list("monke1818") */
 
 // SUNSET FLUFF ITEMS
 
@@ -43,7 +43,7 @@
 	ckeywhitelist = list("topbirb")
 */
 
-/obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
+/*/obj/item/storage/box/large/custom_kit/cayce/PopulateContents()
 	new /obj/item/clothing/suit/armor/medium/vest/breastplate/reinforced(src)
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
@@ -154,7 +154,7 @@
 /obj/item/storage/box/large/custom_kit/kemble/PopulateContents()
 	new /obj/item/modkit/kemblevest(src)
 	new /obj/item/modkit/kemblehat(src)
-	new /obj/item/storage/belt/shoulderholster/kemble(src)
+	new /obj/item/storage/belt/shoulderholster/kemble(src) */
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
@@ -163,3 +163,20 @@
 
 /obj/item/storage/box/large/custom_kit/exoticjazz/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
+
+/datum/gear/donator/kits/fenny
+	name = "Casey's 'Business' Bundle"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash
+	ckeywhitelist = list("Tk420634")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
+	new /obj/item/clothing/head/beret/sec/navyofficer(src)
+	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi(src)
+	new /obj/item/ammo_box/magazine/uzim9mm(src)
+	new /obj/item/ammo_box/magazine/uzim9mm(src)
+	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
+	new /obj/item/gun_upgrade/trigger/dangerzone(src)
+	new /obj/item/gun_upgrade/barrel/forged(src)
+	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
