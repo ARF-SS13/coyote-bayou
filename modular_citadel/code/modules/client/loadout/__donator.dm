@@ -196,3 +196,11 @@
 	new /obj/item/gun_upgrade/trigger/dangerzone(src)
 	new /obj/item/gun_upgrade/barrel/forged(src)
 	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+
+/datum/gear/donator/kits/brimcon
+	name = "Gift from Claws"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash2
+	ckeywhitelist = list("Brimcon")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
