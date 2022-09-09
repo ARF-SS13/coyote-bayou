@@ -265,7 +265,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/technophreak
 	name = "Technophreak"
 	desc = "You're skilled at breaking down old-war rubble more precisely. Gain more salvage from cars and piles than before."
-	value = 3 //It's a valuable trait. 3 is a good starting point for now. If this needs to be lowered, ping me in dev chatter - blue
+	value = 2 //2 might be a good starting point now that I thought on it. It doesn't give you extra health or other oddities that would warrant 3
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
