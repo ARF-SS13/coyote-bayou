@@ -182,10 +182,10 @@
 
 /datum/gear/donator/kits/fenny
 	name = "Casey's 'Business' Bundle"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash
+	path = /obj/item/storage/box/large/custom_kit/fenny
 	ckeywhitelist = list("tk420634")
 
-/obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
+/obj/item/storage/box/large/custom_kit/fenny/PopulateContents()
 	new /obj/item/clothing/head/beret/sec/navyofficer(src)
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
@@ -199,17 +199,17 @@
 
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash2
+	path = /obj/item/storage/box/large/custom_kit/brimcon
 	ckeywhitelist = list("brimcon")
 
-/obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
+/obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 
 /datum/gear/donator/kits/ferisramsay
 	name = "Feris' Box"
-	path = /obj/item/storage/box/large/custom_kit/risingstarslash3
+	path = /obj/item/storage/box/large/custom_kit/ferisramsay
 	ckeywhitelist = list("ferisramsay")
 
-/obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
+/obj/item/storage/box/large/custom_kit/ferisramsay/PopulateContents()
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
