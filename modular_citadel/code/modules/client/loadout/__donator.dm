@@ -204,3 +204,12 @@
 
 /obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
+
+/datum/gear/donator/kits/ferisramsay
+	name = "Feris' Box"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash3
+	ckeywhitelist = list("ferisramsay")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
