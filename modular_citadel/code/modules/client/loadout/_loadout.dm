@@ -84,4 +84,4 @@ GLOBAL_LIST_EMPTY(loadout_whitelist_ids)
 		for(var/needed_key in ckeywhitelist)
 			if(ckey(needed_key) == ckey(key))
 				return TRUE
-	return IS_CKEY_DONATOR_GROUP(key, donator_group_id)
+	//return IS_CKEY_DONATOR_GROUP(key, donator_group_id)
