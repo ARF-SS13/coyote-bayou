@@ -696,18 +696,20 @@ SUBSYSTEM_DEF(job)
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/datum/preferences/the_prefs = the_mob.client.prefs
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
 		for(var/i in chosen_gear)
 			var/datum/gear/G = istext(i[LOADOUT_ITEM]) ? text2path(i[LOADOUT_ITEM]) : i[LOADOUT_ITEM]
-			G = GLOB.loadout_items[initial(G.category)][initial(G.subcategory)][initial(G.name)]
-			if(!G)
+			if(!G) // aint there? ditch it
+				the_prefs.remove_gear_from_loadout(the_prefs.loadout_slot, i[LOADOUT_ITEM])
 				continue
+			G = GLOB.loadout_items[initial(G.category)][initial(G.subcategory)][initial(G.name)]
 			var/permitted = TRUE
 			if(!bypass_prereqs && G.restricted_roles && G.restricted_roles.len && !(M.mind.assigned_role in G.restricted_roles))
 				permitted = FALSE
-			if(G.donoritem && !G.donator_ckey_check(the_mob.client.ckey))
+			if(G.donoritem && !G.donator_ckey_check(ckey(the_mob.client.ckey)))
 				permitted = FALSE
 			if(!equipbackpackstuff && G.slot == SLOT_IN_BACKPACK)//snowflake check since plopping stuff in the backpack doesnt work for pre-job equip loadout stuffs
 				permitted = FALSE

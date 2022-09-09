@@ -960,7 +960,7 @@ Records disabled until a use for them is found
 					for(var/name in GLOB.loadout_items[gear_category][gear_subcategory])
 						var/datum/gear/gear = GLOB.loadout_items[gear_category][gear_subcategory][name]
 						var/donoritem = gear.donoritem
-						if(donoritem && !gear.donator_ckey_check(user.ckey))
+						if(donoritem && !gear.donator_ckey_check(ckey(user.ckey)))
 							continue
 						var/class_link = ""
 						var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
@@ -2886,7 +2886,7 @@ Records disabled until a use for them is found
 					to_chat(user, span_danger("You cannot take this loadout, as you've already chosen too many of the same category!"))
 					return
 				*/
-				if(G.donoritem && !G.donator_ckey_check(user.ckey))
+				if(G.donoritem && !G.donator_ckey_check(ckey(user.ckey)))
 					to_chat(user, span_danger("This is an item intended for donator use only. You are not authorized to use this item."))
 					return
 				if(gear_points >= initial(G.cost))
