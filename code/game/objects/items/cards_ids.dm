@@ -1301,3 +1301,51 @@
 	item_state = "card-id_leg"
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
+
+GLOBAL_LIST_INIT(fuzzy_license, list(
+	"hug",
+	"snuggle",
+	"cuddle",
+	"kiss",
+	"hold hands",
+	"num",
+	"flop",
+	"squeak",
+	"weh",
+	"cute",
+	"love",
+	"pat",
+	"sex",
+	"bottom",
+	"decorate",
+	"nerd",
+	"dork",
+	"gecker",
+	"gekker",
+	"Willow's butt",
+	"feed Willow",
+	"hoard Dennis",
+	"spoil friends",
+	"have this license",
+	"administer plushies",
+	"distribute cookies"
+	))
+
+/// Nerd reward for Fuzlet the nerd
+/obj/item/card/fuzzy_license
+	name = "license to hug"
+	desc = "The most official license known to (and recognized exclusively by) shirtless foxes."
+	icon_state = "retro"
+
+/obj/item/card/fuzzy_license/attack_self(mob/user)
+	if(Adjacent(user))
+		user.visible_message(
+			span_notice("[user] shows you: [icon2html(src, viewers(user))] [src.name]."),
+			span_notice("You show \the [src.name]."))
+		add_fingerprint(user)
+
+/obj/item/card/fuzzy_license/attackby(obj/item/used, mob/living/user, params)
+	if(istype(used, /obj/item/pen) || istype(used, /obj/item/toy/crayon))
+		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in GLOB.fuzzy_license
+		if(!isnull(choice))
+			name = "license to [choice]"
