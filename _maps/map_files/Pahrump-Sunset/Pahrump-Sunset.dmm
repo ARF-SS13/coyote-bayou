@@ -44373,6 +44373,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"mYa" = (
+/obj/machinery/light/small,
+/obj/structure/ladder/unbreakable{
+	height = 2s;
+	icon_state = "ladder10";
+	id = "rangerstation"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/ncr)
 "mYw" = (
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier1,
@@ -94294,10 +94303,10 @@ uXy
 uXy
 gkK
 uXy
-bxV
+mYa
 cpp
-mAk
 aOk
+mAk
 aOk
 aOk
 aOk
