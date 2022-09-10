@@ -466,7 +466,7 @@
 // Slightly increases firerate and massively lowers cell charge usage at the cost of lower damage
 /obj/item/gun_upgrade/mechanism/overdrive
 	name = "REPCONN overdrive chip"
-	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase the rate of fire at the cost of a reduced stopping power."
+	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of a reduced stopping power."
 	icon_state = "overdrive"
 
 /obj/item/gun_upgrade/mechanism/overdrive/New()
