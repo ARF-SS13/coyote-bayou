@@ -226,3 +226,27 @@
 	new /obj/item/clothing/accessory/talisman(src)
 	new /obj/item/stack/sheet/sinew(src)
 	new /obj/item/stack/sheet/sinew(src)
+
+/datum/gear/donator/kits/sloaff
+	name = "Leo's Kit"
+	path = /obj/item/storage/box/large/custom_kit/sloaff
+	ckeywhitelist = list("sloaff")
+
+/obj/item/storage/box/large/custom_kit/sloaff/PopulateContents()
+	new /obj/item/binoculars(src)
+	new /obj/item/gun/ballistic/revolver/thatgun(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+	new /obj/item/melee/onehanded/knife/bowie(src)
+	new /obj/item/clothing/head/helmet/f13/marlowhat(src)
+
+/datum/gear/donator/kits/lucine
+	name = "Earlong Travel Supplies"
+	path = /obj/item/storage/box/large/custom_kit/lucine
+	ckeywhitelist = list("lucine")
+
+/obj/item/storage/box/large/custom_kit/lucine/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz/magneto(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
