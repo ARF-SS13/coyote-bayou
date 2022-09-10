@@ -368,51 +368,6 @@
 	InsertAll("", 'icons/obj/mafia.dmi')
 	..()
 
-// Representative icons for each research design
-/datum/asset/spritesheet/research_designs
-	name = "design"
-
-/datum/asset/spritesheet/research_designs/register()
-	var/list/used_asset_paths = list()
-	for (var/id in SSresearch.techweb_designs)
-		var/datum/design/D = SSresearch.techweb_designs[id]
-		var/asset_path = D.get_asset_path()
-		if(asset_path in used_asset_paths)
-			continue
-		used_asset_paths += asset_path
-		// construct the icon and slap it into the resource cache
-		var/atom/item = initial(D.build_path)
-		if (!ispath(item, /atom))
-			// biogenerator outputs to beakers by default
-			if (initial(D.build_type) & BIOGENERATOR)
-				item = /obj/item/reagent_containers/glass/beaker/large
-			else
-				continue  // shouldn't happen, but just in case
-
-		// circuit boards become their resulting machines or computers
-		if (ispath(item, /obj/item/circuitboard))
-			var/obj/item/circuitboard/C = item
-			var/machine = initial(C.build_path)
-			if (machine)
-				item = machine
-		var/icon_file = initial(item.icon)
-		var/icon/I = icon(icon_file, initial(item.icon_state), SOUTH)
-
-		// computers (and snowflakes) get their screen and keyboard sprites
-		if (ispath(item, /obj/machinery/computer) || ispath(item, /obj/machinery/power/solar_control))
-			var/obj/machinery/computer/C = item
-			var/screen = initial(C.icon_screen)
-			var/keyboard = initial(C.icon_keyboard)
-			var/all_states = icon_states(icon_file)
-			if (screen && (screen in all_states))
-				I.Blend(icon(icon_file, screen, SOUTH), ICON_OVERLAY)
-			if (keyboard && (keyboard in all_states))
-				I.Blend(icon(icon_file, keyboard, SOUTH), ICON_OVERLAY)
-
-		Insert(asset_path, I)
-	return ..()
-
-
 /datum/asset/spritesheet/loadout
 	name = "loadout"
 
