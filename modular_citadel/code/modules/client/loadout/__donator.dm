@@ -137,3 +137,11 @@
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/mathiel
+	name = "Annastasia's Kit"
+	path = /obj/item/storage/box/large/custom_kit/mathiel
+	ckeywhitelist = list("mathiel")
+
+/obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/alt(src)
