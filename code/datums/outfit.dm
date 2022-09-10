@@ -254,12 +254,7 @@
 		var/list/subdata = list()
 		var/atom/I = item
 		subdata["name"] = initial(I.name)
-		var/iconfile = "[initial(I.icon)]" // doesn't work if you directly embed it
-		var/icon_string = "[sanitize_filename(replacetext(iconfile, ".dmi", ""))]-[initial(I.icon_state)]"
-		var/c = initial(I.color)
-		if(!isnull(c) && uppertext(c) != "#FFFFFF")
-			icon_string += "-[c]"
-		subdata["icon"] = loadout_sheet.icon_class_name(icon_string)
+		subdata["icon"] = loadout_sheet.icon_class_name(get_spritesheet_icon_key_from_type(item))
 		subdata["quantity"] = items[item]
 		data += list(subdata)
 	return data

@@ -116,7 +116,7 @@
 	.["product_records"] = list()
 	for(var/datum/data/mining_equipment/prize in prize_list)
 		var/list/product_data = list(
-			path = replacetext(replacetext("[prize.equipment_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(prize.equipment_path),
 			name = prize.equipment_name,
 			price = prize.cost,
 			ref = REF(prize)

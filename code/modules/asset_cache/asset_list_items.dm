@@ -311,27 +311,40 @@
 /datum/asset/spritesheet/vending
 	name = "vending"
 
-/datum/asset/spritesheet/vending/register()
-	for (var/k in GLOB.vending_products)
-		var/atom/item = k
-		if (!ispath(item, /atom))
-			continue
+/proc/get_spritesheet_icon_key(icon, state, color)
+	if(isnull(color) || uppertext(color) == "#FFFFFF" || uppertext(color) == "#FFFFFFFF")
+		return "[icon]-[state]"
+	return "[icon]-[state]-[color]"
 
+/proc/get_spritesheet_icon_key_from_type(atom/item_type)
+	var/icon_file = sanitize_filename(replacetext("[initial(item_type.icon)]", ".dmi", ""))
+	var/icon_state = initial(item_type.icon_state)
+	var/item_color = initial(item_type.color)
+	return get_spritesheet_icon_key(icon_file, icon_state, item_color)
+
+/datum/asset/spritesheet/vending/register()
+	var/list/list/icon_file_states = list() // cache iconstates for speed
+	var/icon_key
+	for (var/atom/item as anything in GLOB.vending_products)
+		icon_key = get_spritesheet_icon_key_from_type(item)
+		if(sprites[icon_key])
+			continue
 		var/icon_file = initial(item.icon)
 		var/icon_state = initial(item.icon_state)
+		var/item_color = uppertext(initial(item.color))
+		if(item_color == "#FFFFFF" || item_color == "#FFFFFFFF")
+			item_color = null
 		var/icon/I
-		var/icon_states_list = icon_states(icon_file)
-		if(icon_state in icon_states_list)
+		if(!icon_file_states[icon_file])
+			icon_file_states[icon_file] = icon_states(icon_file)
+		if(icon_state in icon_file_states[icon_file])
 			I = icon(icon_file, icon_state, SOUTH)
-			var/c = initial(item.color)
-			if (!isnull(c) && c != "#FFFFFF")
-				I.Blend(c, ICON_MULTIPLY)
+			if (!isnull(item_color))
+				I.Blend(item_color, ICON_MULTIPLY)
 		else
 			I = icon('icons/turf/floors.dmi', "", SOUTH)
 
-		var/imgid = replacetext(replacetext("[item]", "/obj/item/", ""), "/", "-")
-
-		Insert(imgid, I)
+		Insert(icon_key, I)
 	return ..()
 
 /datum/asset/simple/genetics
@@ -373,6 +386,7 @@
 
 /datum/asset/spritesheet/loadout/register()
 	var/list/outfits = list()
+	var/list/icon_states_cache = list()
 	for(var/j in subtypesof(/datum/job))
 		var/datum/job/J = new j
 		for (var/D in J.loadout_options)
@@ -390,21 +404,17 @@
 					world.log << "MISSING ICON FOR [initial(I.name)] IN [O.type] OF [j]"
 					continue
 				var/icon_state = initial(I.icon_state)
-				if(isnull(icon_state) || !(icon_state in icon_states(icon_file)))
+				if(!icon_states_cache[icon_file])
+					icon_states_cache[icon_file] = icon_states(icon_file)
+				if(isnull(icon_state) || !(icon_state in icon_states_cache[icon_file]))
 					world.log << "MISSING ICON STATE[isnull(icon_state) ? null : " "][icon_state] FOR [itemtype]"
 					continue
-				var/c = initial(I.color)
-				var/genColor = FALSE
-				var/icon_string = "[sanitize_filename(replacetext("[icon_file]", ".dmi", ""))]-[icon_state]"
-				if(icon_string in sprites) // save us some work generating the icon if we already have it
+				var/c = uppertext(initial(I.color))
+				var/icon_key = get_spritesheet_icon_key_from_type(I)
+				if(sprites[icon_key]) // save us some work generating the icon if we already have it
 					continue
-				if (!isnull(c) && uppertext(c) != "#FFFFFF" && uppertext(c) != "#FFFFFFFF")
-					if("[icon_string]-[c]" in sprites) // save us an expensive icon.Blend() operation
-						continue
-					genColor = TRUE
 				var/icon/Ic = icon(icon_file, icon_state, SOUTH)
-				if (genColor)
+				if (!isnull(c) && c != "#FFFFFF" && c != "#FFFFFFFF")
 					Ic.Blend(c, ICON_MULTIPLY)
-					icon_string += "-[c]"
-				Insert(icon_string, Ic)
+				Insert(icon_key, Ic)
 	return ..()
