@@ -203,7 +203,7 @@
 
 /obj/item/storage/bag/plants
 	name = "produce bag"
-	desc = "A big, insulated bag for storing lots of animal products."
+	desc = "A big, insulated bag for storing lots of plant and animal products."
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "plantbag"
 	w_class = WEIGHT_CLASS_NORMAL
