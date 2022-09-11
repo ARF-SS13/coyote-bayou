@@ -35,27 +35,27 @@ obj/dugpit/New(lnk)
 	return GM
 */
 
-/turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/usr)
+/turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/user)
 	if(!istype(W))
 		return
 
 
-	if(usr)
+	if(user)
 
-		add_fingerprint(usr)
+		add_fingerprint(user)
 
 		if(!istype(W, /obj/item/gun/energy/kinetic_accelerator) && !istype(W, /obj/item/stack/ore/glass ) )
 			if (storedindex>=NUMCONTENT)
-				to_chat(usr, span_notice("The pit is filled with items to the limit!"))
+				to_chat(user, span_notice("The pit is filled with items to the limit!"))
 				return
 
-			for(var/mob/M in viewers(usr, null))
-				if(M == usr)
-					usr.show_message(span_notice("You put [W] in the hole."), 1)
-				else if(in_range(M, usr)) //If someone is standing close enough, they can tell what it is...
-					M.show_message(span_notice("[usr] puts [W] in the hole."), 1)
+			for(var/mob/M in viewers(user, null))
+				if(M == user)
+					user.show_message(span_notice("You put [W] in the hole."), 1)
+				else if(in_range(M, user)) //If someone is standing close enough, they can tell what it is...
+					M.show_message(span_notice("[user] puts [W] in the hole."), 1)
 				else if(W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
-					M.show_message(span_notice("[usr] puts [W] in the hole."), 1)
+					M.show_message(span_notice("[user] puts [W] in the hole."), 1)
 
 			LAZYADD(pitcontents, W)
 			user.transferItemToLoc(W, mypit)
@@ -63,7 +63,7 @@ obj/dugpit/New(lnk)
 
 		if(istype(W, /obj/item/stack/ore/glass) && pit_sand < 1 )
 			var/obj/item/stack/ore/glass/sand_target = W
-			usr.show_message(span_notice("You fill the hole with sand"), 1)
+			user.show_message(span_notice("You fill the hole with sand"), 1)
 			if (pit_sand == 0)
 				if (sand_target.amount >= 1)
 					sand_target.amount = sand_target.amount - 1
@@ -122,7 +122,7 @@ obj/dugpit/New(lnk)
 
 	if (digging_speed)
 		if (pit_sand < 1)
-			usr.show_message(span_notice("You need to fill the hole with sand!"), 1)
+			user.show_message(span_notice("You need to fill the hole with sand!"), 1)
 			return
 		var/turf/T = get_turf(src)
 		if (!istype(T, /turf))
