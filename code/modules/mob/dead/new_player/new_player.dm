@@ -226,7 +226,7 @@
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
+		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN) //You should never be able to reach this code without having flavortext. May the lord help you (and may you be banned for HREF exploitation shortly after)
 			if(!SSticker || !SSticker.IsRoundInProgress())
 				var/msg = "[key_name(usr)] attempted to join the round using a href that shouldn't be available at this moment!"
 				log_admin(msg)
@@ -234,14 +234,14 @@
 				to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
 			return
 
-			if(!GLOB.enter_allowed)
-				to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
-				return
+		if(!GLOB.enter_allowed) //This'll runtime if you do this. Linter cope
+			to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
+			return
 
-			if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
-				if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-					to_chat(usr, span_warning("Server is full."))
-					return
+		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
+			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
+				to_chat(usr, span_warning("Server is full."))
+				return
 
 			AttemptLateSpawn(href_list["SelectedJob"])
 			return
@@ -266,7 +266,7 @@
 		else
 			to_chat(client.mob, span_danger("Your flavortext does not exceed our minimum of 130 characters."))
 			return
-						
+
 	else if(!href_list["late_join"])
 		new_player_panel()
 
