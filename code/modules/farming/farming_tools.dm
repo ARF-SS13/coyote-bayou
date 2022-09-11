@@ -226,6 +226,8 @@
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "basket"
 	resistance_flags = FLAMMABLE
+	material_drop = /obj/item/stack/sheet/hay
+	material_drop_amount = 15
 
 
 
