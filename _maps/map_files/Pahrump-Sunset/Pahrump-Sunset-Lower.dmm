@@ -352,7 +352,7 @@
 "anY" = (
 /obj/structure/nest/assaultron{
 	infinite = 1;
-	pixel_y = 22;
+	pixel_y = 22
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -6635,7 +6635,7 @@
 /area/f13/tunnel)
 "cOt" = (
 /obj/structure/nest/raider/ranged{
-	pixel_y = 32;
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -7598,8 +7598,7 @@
 	},
 /area/f13/tunnel)
 "dNf" = (
-/obj/structure/nest/fireant{
-	},
+/obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
 "dOn" = (
@@ -8277,8 +8276,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
 "evd" = (
-/obj/structure/nest/supermutant/melee{
-	},
+/obj/structure/nest/supermutant/melee,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -8465,8 +8463,7 @@
 /area/f13/caves)
 "eDd" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/supermutant/ranged{
-	},
+/obj/structure/nest/supermutant/ranged,
 /turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria,
 /area/f13/caves)
 "eDo" = (
@@ -9925,10 +9922,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
-"giT" = (
-/obj/structure/nest/supermutant/melee,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
 "gjs" = (
 /mob/living/simple_animal/hostile/deathclaw/legendary,
 /obj/effect/decal/cleanable/dirt,
@@ -10611,13 +10604,6 @@
 "gSd" = (
 /obj/machinery/workbench,
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
-"gSY" = (
-/obj/structure/nest/raider{
-	pixel_x = -1;
-	pixel_y = 29
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "gTg" = (
 /obj/machinery/conveyor/inverted{
@@ -11706,8 +11692,7 @@
 /turf/open/indestructible/ground/outside/ruins,
 /area/f13/caves)
 "idY" = (
-/obj/structure/nest/supermutant/ranged{
-	},
+/obj/structure/nest/supermutant/ranged,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "iej" = (
@@ -12174,8 +12159,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/tunnel)
 "izx" = (
-/obj/structure/nest/scorpion{
-	},
+/obj/structure/nest/scorpion,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
@@ -15792,8 +15776,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "lUo" = (
-/obj/structure/nest/scorpion{
-	},
+/obj/structure/nest/scorpion,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "lUs" = (
@@ -16082,8 +16065,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/caves)
 "mgL" = (
-/obj/structure/nest/supermutant/melee{
-	},
+/obj/structure/nest/supermutant/melee,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "mip" = (
@@ -17948,9 +17930,6 @@
 /area/f13/building/massfusion)
 "obE" = (
 /obj/structure/table/wood,
-/obj/item/documents{
-	desc = "Documents and maps concerning the local NCR presence."
-	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "obM" = (
@@ -18063,8 +18042,7 @@
 	},
 /area/f13/caves)
 "ojM" = (
-/obj/structure/nest/deathclaw{
-	},
+/obj/structure/nest/deathclaw,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway{
@@ -21669,8 +21647,7 @@
 /area/f13/tunnel)
 "rHb" = (
 /obj/effect/decal/waste,
-/obj/structure/nest/supermutant/melee{
-	},
+/obj/structure/nest/supermutant/melee,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "rIc" = (
@@ -22423,10 +22400,6 @@
 	},
 /turf/closed/indestructible/vaultdoor,
 /area/f13/caves)
-"svj" = (
-/obj/structure/nest/scorpion,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
 "svl" = (
 /obj/structure/simple_door/bunker,
 /obj/effect/decal/cleanable/dirt,
@@ -23001,8 +22974,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
 "sWu" = (
-/obj/structure/nest/supermutant{
-	},
+/obj/structure/nest/supermutant,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -24797,7 +24769,7 @@
 /area/f13/tunnel)
 "uNC" = (
 /obj/structure/nest/deathclaw/mother{
-	infinite = 1;
+	infinite = 1
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
@@ -25023,8 +24995,7 @@
 	},
 /area/f13/caves)
 "var" = (
-/obj/structure/nest/fireant{
-	},
+/obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "vaB" = (
@@ -25600,13 +25571,6 @@
 	},
 /mob/living/simple_animal/hostile/gecko,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
-"vBA" = (
-/obj/structure/nest/deathclaw{
-	},
-/turf/open/floor/f13{
-	icon_state = "greenrustyfull"
-	},
 /area/f13/caves)
 "vBM" = (
 /obj/structure/filingcabinet,
@@ -43931,7 +43895,7 @@ ajF
 etW
 ajF
 vBY
-vBA
+aUv
 cGl
 ajF
 vBY
@@ -59421,7 +59385,7 @@ boU
 aaa
 aak
 bCG
-gSY
+dyM
 idw
 mpk
 uEV
@@ -70776,7 +70740,7 @@ aaB
 aaB
 qcP
 aaB
-svj
+lUo
 tPy
 aak
 xwF
@@ -73087,7 +73051,7 @@ xwF
 xwF
 xwF
 xwF
-svj
+lUo
 aaB
 aaB
 bIg
@@ -77970,7 +77934,7 @@ aaB
 aaB
 aaB
 skM
-svj
+lUo
 rRE
 aaB
 aaB
@@ -81039,7 +81003,7 @@ xwF
 xwF
 aaB
 aaB
-svj
+lUo
 aaB
 aaB
 aaB
@@ -83087,7 +83051,7 @@ aak
 aae
 aae
 aaB
-svj
+lUo
 aaB
 jmO
 aaA
@@ -83617,7 +83581,7 @@ aak
 xwF
 xwF
 aaB
-svj
+lUo
 aaB
 xwF
 aak
@@ -85931,7 +85895,7 @@ aaB
 aaB
 aaB
 aaB
-svj
+lUo
 aaB
 aaB
 aaB
@@ -88586,7 +88550,7 @@ xWj
 adz
 rIc
 rIc
-giT
+mgL
 adz
 oHv
 adz
@@ -89108,7 +89072,7 @@ ygq
 adz
 adz
 adz
-giT
+mgL
 adz
 adz
 adz
