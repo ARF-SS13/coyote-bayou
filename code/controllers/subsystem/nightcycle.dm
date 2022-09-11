@@ -35,9 +35,9 @@ SUBSYSTEM_DEF(nightcycle)
 	var/morning_sun_color = "#fba52b"
 	var/morning_sun_power = 100
 	var/daytime_sun_color = "#faf7cb"
-	var/daytime_sun_power = 120
+	var/daytime_sun_power = 200
 	var/afternoon_sun_color = "#faf7cb"
-	var/afternoon_sun_power = 108
+	var/afternoon_sun_power = 135
 	var/sunset_sun_color = "#f5b151"
 	var/sunset_sun_power = 80
 	var/fullsunset_sun_color = "#f37588"
@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(nightcycle)
 
 /datum/controller/subsystem/nightcycle/fire(resumed = FALSE)
 	var/new_time
-	
+
 	if (!isnull(custom_cycle_wait))
 		if(last_custom_cycle + custom_cycle_wait >= world.time)
 			return
