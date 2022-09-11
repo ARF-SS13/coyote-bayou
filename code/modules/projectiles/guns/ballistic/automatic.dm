@@ -388,7 +388,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "Uzi"
+	name = "9mm Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
@@ -403,6 +403,49 @@
 	fire_delay = GUN_FIRE_DELAY_FAST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_600
+	)
+
+	automatic = 1
+	is_automatic = TRUE
+	can_suppress = TRUE
+	suppressor_state = "uzi_suppressor"
+	suppressor_x_offset = 29
+	suppressor_y_offset = 16
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
+
+/* * * * * * * * * * *
+ * Uzi .22 SMG
+ * Lighter .22 SMG
+ * .22
+ * Faster firing
+ * Less damage
+ * One-handed
+ * Akimbo!
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22
+	name = ".22 Uzi"
+	desc = "A very lightweight submachine gun, for when you really want to politely ask someone to be dead. Uses .22LR rounds."
+	icon_state = "uzi22"
+	item_state = "uzi"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/m22/extended
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FASTER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
@@ -919,6 +962,92 @@
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'
+
+/* * * * * * * * * * *
+ * 10/22ish carbine
+ * .22 LR
+ * Higher damage
+ * Found all over the place
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/sportcarbine
+	name = "sport carbine"
+	desc = "One of the many .22LC carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
+	icon_state = "surplus"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // its a weakass cartridge
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(0.5)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	max_upgrades = 5 // moddable to fuck and fack
+
+	automatic_burst_overlay = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonetstraight"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	can_scope = TRUE
+	scope_state = "leveraction_scope"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	semi_auto = TRUE
+	can_suppress = TRUE
+	suppressor_state = "suppressor"
+	suppressor_x_offset = 26
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/Gunshot2.ogg'
+
+/* * * * * * * * * * *
+ * M1-22 carbine
+ * .22 LR
+ * Higher damage
+ * One, owned by a fox
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/sportcarbine/m1_22
+	name = "M1-22 carbine"
+	desc = "One of the many .22LC carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
+	icon_state = "m1carbine"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_400
+	)
+
+	automatic = TRUE
+	automatic_burst_overlay = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	can_scope = TRUE
+	scope_state = "scope_medium"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	semi_auto = TRUE
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 26
+	suppressor_y_offset = 31
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 /* * * * * * * * * * *
  * Semi-auto Rifles  *

@@ -117,15 +117,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/city)
-"acD" = (
-/obj/structure/fence{
-	dir = 8;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2"
-	},
-/area/f13/wasteland)
 "acL" = (
 /obj/structure/car/rubbish2,
 /obj/effect/decal/waste{
@@ -3304,8 +3295,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "coU" = (
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
 	dir = 4
 	},
@@ -3407,8 +3397,7 @@
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "csc" = (
-/obj/structure/nest/protectron{
-	},
+/obj/structure/nest/protectron,
 /turf/open/floor/plasteel/dark,
 /area/f13/city)
 "csi" = (
@@ -10390,15 +10379,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road,
 /area/f13/city)
-"hoa" = (
-/obj/structure/fence{
-	dir = 8;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom2left"
-	},
-/area/f13/wasteland)
 "hoh" = (
 /obj/structure/debris/v3,
 /turf/open/indestructible/ground/outside/savannah/edgesnew{
@@ -11378,15 +11358,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/city)
-"ibO" = (
-/obj/structure/fence{
-	dir = 1
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 4;
-	icon_state = "outerborder"
-	},
-/area/f13/wasteland)
 "icp" = (
 /obj/structure/fence{
 	dir = 4
@@ -11483,8 +11454,7 @@
 	},
 /area/f13/caves)
 "ifo" = (
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/outside/savannah/cornersnew,
 /area/f13/wasteland)
 "ifA" = (
@@ -12671,11 +12641,10 @@
 "iRX" = (
 /obj/structure/fence{
 	dir = 8;
-	pixel_x = -2;
-	pixel_y = 20
+	pixel_y = -12
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontalbottomborderbottom0"
+/turf/open/indestructible/ground/outside/water/running{
+	color = " A6635D"
 	},
 /area/f13/wasteland)
 "iSn" = (
@@ -14130,8 +14099,7 @@
 /area/f13/city)
 "jNj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
 "jNr" = (
@@ -16830,16 +16798,6 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/f13/wood,
 /area/f13/city)
-"lIo" = (
-/obj/structure/fence/corner{
-	dir = 1;
-	pixel_y = 20
-	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	dir = 4;
-	icon_state = "outerbordercorner"
-	},
-/area/f13/wasteland)
 "lIA" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -17188,8 +17146,7 @@
 	},
 /area/f13/wasteland)
 "lVn" = (
-/obj/structure/nest/protectron{
-	},
+/obj/structure/nest/protectron,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet/red,
 /area/f13/city)
@@ -18245,11 +18202,6 @@
 /turf/closed/wall/f13/wood,
 /area/f13/city)
 "mLF" = (
-/obj/structure/fence{
-	dir = 8;
-	pixel_x = -2;
-	pixel_y = 20
-	},
 /obj/structure/closet/crate/trashcart,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier1,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -20675,9 +20627,13 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/city)
 "oyV" = (
-/obj/structure/nest/mirelurk{
+/obj/structure/fence{
+	dir = 1;
+	pixel_x = -32
 	},
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/water/running{
+	color = " A6635D"
+	},
 /area/f13/wasteland)
 "ozb" = (
 /obj/structure/spider/stickyweb,
@@ -22712,10 +22668,20 @@
 /area/f13/city)
 "pQV" = (
 /obj/structure/fence{
-	dir = 1
+	dir = 1;
+	pixel_x = -32
 	},
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft1"
+/obj/structure/fence{
+	dir = 8;
+	pixel_y = -12
+	},
+/obj/structure/fence/corner{
+	dir = 1;
+	pixel_y = -12;
+	pixel_x = -32
+	},
+/turf/open/indestructible/ground/outside/water/running{
+	color = " A6635D"
 	},
 /area/f13/wasteland)
 "pQX" = (
@@ -26753,8 +26719,7 @@
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/city)
 "sQz" = (
-/obj/structure/nest/mirelurk{
-	},
+/obj/structure/nest/mirelurk,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
 "sQB" = (
@@ -28027,7 +27992,11 @@
 /area/f13/wasteland)
 "tFH" = (
 /obj/structure/fence/corner{
-	pixel_x = 14;
+	pixel_x = 16;
+	pixel_y = -12
+	},
+/obj/structure/fence{
+	dir = 8;
 	pixel_y = -12
 	},
 /turf/open/indestructible/ground/outside/water/running{
@@ -29621,11 +29590,6 @@
 /obj/structure/bedsheetbin/towel,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
-/area/f13/city)
-"uIi" = (
-/obj/structure/nest/mirelurk{
-	},
-/turf/open/indestructible/ground/inside/mountain,
 /area/f13/city)
 "uIz" = (
 /obj/structure/fence{
@@ -35026,7 +34990,7 @@ vvX
 fDo
 xGc
 eUh
-uIi
+sQz
 cIj
 fMF
 mzQ
@@ -35308,8 +35272,8 @@ euo
 euo
 euo
 euo
-euo
-vbm
+iRX
+cQC
 dcm
 qqi
 fAO
@@ -36079,8 +36043,8 @@ euo
 euo
 euo
 euo
-euo
-vbm
+iRX
+cQC
 cjX
 eFz
 hBk
@@ -36336,8 +36300,8 @@ euo
 euo
 eWO
 euo
-euo
-vbm
+iRX
+cQC
 quO
 qqi
 uhE
@@ -36593,8 +36557,8 @@ euo
 eWO
 euo
 euo
-euo
-vbm
+iRX
+cQC
 quO
 qqi
 uhE
@@ -36850,8 +36814,8 @@ euo
 eWO
 euo
 euo
-euo
-vbm
+iRX
+cQC
 quO
 qqi
 hBk
@@ -37107,8 +37071,8 @@ euo
 euo
 euo
 euo
-euo
-hoa
+iRX
+xfw
 quO
 qqi
 eFz
@@ -37364,8 +37328,8 @@ euo
 eWO
 euo
 qEd
-euo
-acD
+iRX
+pEz
 quO
 quO
 eFz
@@ -37621,8 +37585,8 @@ euo
 euo
 euo
 euo
-euo
-iEY
+iRX
+noh
 quO
 cjX
 quO
@@ -37878,8 +37842,8 @@ euo
 euo
 eWO
 euo
-euo
-hoa
+iRX
+xfw
 aad
 quO
 quO
@@ -38135,8 +38099,8 @@ euo
 euo
 euo
 eWO
-euo
-acD
+iRX
+pEz
 tEb
 quO
 quO
@@ -38374,7 +38338,7 @@ dbe
 dbe
 aOB
 dbe
-uIi
+sQz
 uhE
 eTF
 ptd
@@ -38392,7 +38356,7 @@ euo
 euo
 eWO
 euo
-euo
+iRX
 iEY
 cyW
 fBS
@@ -38649,8 +38613,8 @@ euo
 euo
 euo
 euo
-euo
-vbm
+iRX
+cQC
 fBS
 fBS
 fBS
@@ -38907,11 +38871,11 @@ euo
 euo
 eWO
 nLJ
-ibO
-pQV
-pQV
-pQV
-lIo
+aMZ
+odx
+odx
+odx
+eGY
 rGl
 quO
 fBS
@@ -39164,11 +39128,11 @@ qEd
 euo
 eWO
 euo
-euo
-euo
-euo
-euo
-iRX
+oyV
+oyV
+oyV
+pQV
+cQC
 fBS
 fBS
 fBS
@@ -39424,8 +39388,8 @@ euo
 euo
 euo
 euo
-euo
 iRX
+cQC
 xSr
 lrX
 eFz
@@ -39681,8 +39645,8 @@ euo
 euo
 qEd
 euo
-euo
 iRX
+cQC
 cjX
 qqi
 jjC
@@ -39938,8 +39902,8 @@ euo
 euo
 euo
 euo
-euo
 iRX
+cQC
 quO
 qqi
 eFz
@@ -49418,7 +49382,7 @@ pVV
 azO
 aFw
 jHw
-oyV
+umo
 tiN
 fBe
 bvJ

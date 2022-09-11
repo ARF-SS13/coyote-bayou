@@ -259,10 +259,10 @@
 
 /// Combat armor bandolier / holster
 /datum/component/storage/concrete/pockets/magpouch
-	max_items = STORAGE_BELT_SPECIALIZED_MAX_ITEMS
-	max_w_class = WEIGHT_CLASS_NORMAL
-	max_combined_w_class = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
-	max_volume = STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE
+	max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	max_volume = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
 
 /datum/component/storage/concrete/pockets/magpouch/Initialize()
 	. = ..()
