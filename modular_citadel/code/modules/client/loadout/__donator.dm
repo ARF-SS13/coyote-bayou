@@ -137,3 +137,12 @@
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/kuba
+	name = "Earlong Travel Supplies"
+	path = /obj/item/storage/box/large/custom_kit/kuba
+	ckeywhitelist = list("pappavol")
+
+/obj/item/storage/box/large/custom_kit/kuba/PopulateContents()
+	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
+	new /obj/item/twohanded/sledgehammer/simple(src)
