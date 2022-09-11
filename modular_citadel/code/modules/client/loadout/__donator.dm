@@ -138,7 +138,7 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
-/datum/gear/donator/kits/shocome
+/datum/gear/donator/kits/soulwinter446
 	name = "Shocome's relic cross"
 	path = /obj/item/nullrod/rosary/keep_as_is
 	ckeywhitelist = list("soulwinter446")
