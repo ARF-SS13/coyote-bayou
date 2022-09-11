@@ -193,6 +193,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/magazine/zipgun = 3,
 	/obj/item/ammo_casing/shotgun/buckshot = 2,
 	/obj/item/ammo_box/c38 = 3,
+	/obj/item/ammo_box/m22 = 2,
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
@@ -528,7 +529,8 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/automatic/varmint,
 	/obj/item/ammo_box/magazine/m556/rifle/small,
 	/obj/item/gun/ballistic/automatic/sportcarbine,
-	/obj/item/ammo_box/magazine/m22/extended
+	/obj/item/ammo_box/magazine/m22/extended,
+	/obj/item/ammo_box/m22
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
