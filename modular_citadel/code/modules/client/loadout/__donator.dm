@@ -166,3 +166,14 @@
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+
+/datum/gear/donator/kits/aldrictalvalin
+	name = "Aldric's Supply Kit"
+	path = /obj/item/storage/box/large/custom_kit/aldrictalvalin
+	ckeywhitelist = list("aldrictalvalin")
+
+/obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
+	new /obj/item/clothing/head/beret/headband(src)
+	new /obj/item/clothing/under/f13/detectivealt(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
