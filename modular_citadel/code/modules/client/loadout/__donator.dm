@@ -138,6 +138,11 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/soulwinter446
+	name = "Shocome's relic cross"
+	path = /obj/item/nullrod/rosary/keep_as_is
+	ckeywhitelist = list("soulwinter446")
+ 
 /datum/gear/donator/kits/fuzz_rifle
 	name = "fuzzy supply box"
 	path = /obj/item/storage/box/large/custom_kit/fuzz_rifle
