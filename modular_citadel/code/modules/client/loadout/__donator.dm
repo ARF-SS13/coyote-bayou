@@ -145,3 +145,14 @@
 
 /obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+
+/datum/gear/donator/kits/dezuel
+	name = "Lunas Stash"
+	path = /obj/item/storage/box/large/custom_kit/dezuel
+	ckeywhitelist = list("dezuel")
+
+/obj/item/storage/box/large/custom_kit/dezuel/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/police(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
