@@ -1534,6 +1534,51 @@
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
+/datum/crafting_recipe/battshunt
+	name = "Poseidon Quantum Injection Electro-shunt"
+	result = /obj/item/gun_upgrade/mechanism/battery_shunt
+	reqs = list(
+				/obj/item/advanced_crafting_components/flux = 2,
+				/obj/item/stack/sheet/mineral/gold = 3,
+				/obj/item/tool_upgrade/productivity/booster = 1,
+				/obj/item/stock_parts/capacitor/adv = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/overdrivemod
+	name = "REPCONN overdrive chip"
+	result = /obj/item/gun_upgrade/mechanism/overdrive
+	reqs = list(
+				/obj/item/stack/sheet/mineral/uranium = 2,
+				/obj/item/stock_parts/capacitor/adv = 1,
+				/obj/item/stack/sheet/mineral/gold = 1,
+				/obj/item/tool_upgrade/productivity/booster = 1,
+				/obj/item/advanced_crafting_components/flux = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
+/datum/crafting_recipe/overshootermod
+	name = "Extended internal magazine kit"
+	result = /obj/item/gun_upgrade/mechanism/overshooter
+	reqs = list(
+				/obj/item/stack/sheet/mineral/titanium = 5,
+				/obj/item/advanced_crafting_components/alloys = 1,
+				/obj/item/stock_parts/matter_bin/super = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
 /datum/crafting_recipe/coolant
 	name = "Coolant Coil"
 	result = /obj/item/tool_upgrade/reinforcement/plasmablock

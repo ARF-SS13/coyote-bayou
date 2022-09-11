@@ -458,12 +458,12 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.5,
+	GUN_UPGRADE_DAMAGE_MULT = 1.35,
 	GUN_UPGRADE_CHARGECOST = 3)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
-// Slightly increases firerate and massively lowers cell charge usage at the cost of lower damage
+// Massively lowers cell charge usage at the cost of lower damage
 /obj/item/gun_upgrade/mechanism/overdrive
 	name = "REPCONN overdrive chip"
 	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of a reduced stopping power."
@@ -474,11 +474,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
-	GUN_UPGRADE_DAMAGE_MULT = 0.66,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 0.9,
+	GUN_UPGRADE_DAMAGE_MULT = 0.65,
 	GUN_UPGRADE_FULLAUTO = TRUE,
-	GUN_UPGRADE_CHARGECOST = 0.5,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 0.9)
+	GUN_UPGRADE_CHARGECOST = 0.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
