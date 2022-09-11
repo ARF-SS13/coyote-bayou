@@ -30,7 +30,7 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
-/// Fluff for fuzzy
+/* /// Fluff for fuzzy
 /datum/gear/donator/fuz_card
 	name = "Fuzzy License Card"
 	slot = SLOT_IN_BACKPACK
@@ -44,7 +44,7 @@
 	slot = SLOT_IN_BACKPACK
 	path = /obj/item/storage/crayons
 	ckeywhitelist = list("fuzlet", "superlagg")
-	cost = 0
+	cost = 0 */
 
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
@@ -137,3 +137,14 @@
 	new /obj/item/gun/energy/laser/wattz(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/fuzz_rifle
+	name = "fuzzy supply box"
+	path = /obj/item/storage/box/large/custom_kit/fuzz_rifle
+	ckeywhitelist = list("fuzlet", "superlagg")
+
+/obj/item/storage/box/large/custom_kit/fuzz_rifle/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sportcarbine/m1_22(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src)
+	new /obj/item/card/fuzzy_license(src)
+	new /obj/item/toy/crayon/orange(src)
