@@ -59,8 +59,11 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		var/unknown = L.get_visible_name() == "Unknown"
 		if(!unknown && iscarbon(target))
 			var/mob/living/carbon/C = L
-			unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE))
-		if(unknown)
+			if((C.wear_mask && (C.wear_mask.flags_inv & HIDEFACE)) || (C.head && (C.head.flags_inv & HIDEFACE)) && !isobserver(user))
+				unknown = TRUE
+			else
+				unknown = FALSE
+		if(unknown == TRUE) //This allows ALL Ghosts to see flavortexts through face-masks.
 			if(!("...?" in examine_list)) //can't think of anything better in case of multiple flavor texts.
 				examine_list += "...?"
 			return

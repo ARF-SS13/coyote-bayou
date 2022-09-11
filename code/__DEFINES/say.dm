@@ -85,6 +85,7 @@
 //Don't set this very much higher then 1024 unless you like inviting people in to dos your server with message spam
 #define MAX_MESSAGE_LEN			4096		//Citadel edit: What's the WORST that could happen?
 #define MAX_FLAVOR_LEN			4096
+#define MIN_FLAVOR_LEN			130 //Twitter level of minimum characters. Can be adjusted but honestly 130 is the bare minimum to describe basic things.
 #define MAX_TASTE_LEN			40
 #define MAX_NAME_LEN			42
 #define MAX_BROADCAST_LEN		512
