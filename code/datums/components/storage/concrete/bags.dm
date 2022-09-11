@@ -40,10 +40,10 @@
 
 /// Salvage bag
 /datum/component/storage/concrete/bag/salvage
-	max_items = STORAGE_BIG_TRASH_BAG_MAX_ITEMS
-	max_w_class = WEIGHT_CLASS_GIGANTIC
-	max_combined_w_class = STORAGE_BIG_TRASH_BAG_MAX_TOTAL_SPACE
-	max_volume = STORAGE_BIG_TRASH_BAG_MAX_TOTAL_SPACE
+	max_items = STORAGE_SALVAGE_BAG_MAX_ITEMS
+	max_w_class = STORAGE_SALVAGE_BAG_MAX_SIZE
+	max_combined_w_class = STORAGE_SALVAGE_BAG_MAX_TOTAL_SPACE
+	max_volume = STORAGE_SALVAGE_BAG_MAX_TOTAL_SPACE
 	display_numerical_stacking = TRUE
 	limited_random_access = FALSE
 

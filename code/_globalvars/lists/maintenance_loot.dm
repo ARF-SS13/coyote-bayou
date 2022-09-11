@@ -283,7 +283,11 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/productivity/red_paint = 2
+	/obj/item/tool_upgrade/productivity/red_paint = 2,
+	/obj/item/gun_upgrade/mechanism/overdrive = 1,
+	/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
+	/obj/item/gun_upgrade/mechanism/overshooter = 1,
+	/obj/item/gun_upgrade/barrel/excruciator = 1
 ))
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
