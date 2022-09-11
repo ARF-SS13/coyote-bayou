@@ -64,6 +64,7 @@
 	desc = "The silenced .22 pistol is a sporting handgun with an integrated silencer."
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
 	w_class = WEIGHT_CLASS_TINY
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
