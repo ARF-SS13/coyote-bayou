@@ -77,6 +77,9 @@
 	var/screen_start_y = 2
 	//End
 
+	/// How many rows of inventory are shown by default. Only useful for volumetric storage!
+	var/number_of_rows = STORAGE_ROWS_DEFAULT
+
 	var/limited_random_access = FALSE					//Quick if statement in accessible_items to determine if we care at all about what people can access at once.
 	var/limited_random_access_stack_position = 0					//If >0, can only access top <x> items
 	var/limited_random_access_stack_bottom_up = FALSE				//If TRUE, above becomes bottom <x> items

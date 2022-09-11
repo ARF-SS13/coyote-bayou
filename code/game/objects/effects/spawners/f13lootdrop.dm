@@ -823,6 +823,7 @@
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
 				/obj/item/gun/ballistic/rifle/hunting, //No. More. Mosin.
 				/obj/effect/spawner/bundle/f13/remington,
+				/obj/effect/spawner/bundle/f13/sportcarbine,
 				/obj/effect/spawner/bundle/f13/widowmaker,
 				/obj/effect/spawner/bundle/f13/varmint
 				)
@@ -861,6 +862,8 @@
 				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
 				/obj/item/stack/f13Cash/random/low = 10,
 				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+				/obj/effect/spawner/bundle/f13/mini22uzi = 1,
+				/obj/effect/spawner/bundle/f13/sportcarbine = 1,
 				/obj/effect/spawner/bundle/f13/ninemil = 1,
 				/obj/effect/spawner/bundle/f13/widowmaker = 1,
 				/obj/effect/spawner/bundle/f13/sig = 4,
@@ -873,6 +876,7 @@
 				/obj/effect/spawner/bundle/f13/cowboy,
 				/obj/effect/spawner/bundle/f13/mk23,
 				/obj/effect/spawner/bundle/f13/hunting,
+				/obj/effect/spawner/bundle/f13/mini22uzi,
 				/obj/effect/spawner/lootdrop/f13/weapon/revolver44variants,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
@@ -1181,7 +1185,21 @@
 	name = "mini uzi and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/mini_uzi,
-				/obj/item/ammo_box/magazine/uzim9mm/
+				/obj/item/ammo_box/magazine/uzim9mm
+				)
+
+/obj/effect/spawner/bundle/f13/mini22uzi
+	name = "mini 22 uzi and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
+				/obj/item/ammo_box/magazine/m22/extended
+				)
+
+/obj/effect/spawner/bundle/f13/sportcarbine
+	name = "sport carbine and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/sportcarbine,
+				/obj/item/ammo_box/magazine/m22/extended
 				)
 
 /obj/effect/spawner/bundle/f13/smg10mm

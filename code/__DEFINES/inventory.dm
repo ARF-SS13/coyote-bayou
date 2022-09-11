@@ -665,7 +665,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 	/obj/item/storage/box
 	)))
 
-
+/// Number of rows volume storage should have
+#define STORAGE_ROWS_DEFAULT 1
 
 /* * * * * * * * * * * * * * *
  * The International Pocket
@@ -852,6 +853,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BIG_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a bigbox
 #define STORAGE_BIG_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_BIG_BOX_DEFAULT_MAX_ITEMS * STORAGE_BIG_BOX_DEFAULT_MAX_SIZE
+/// How many rows in a bigbox
+#define STORAGE_ROWS_BIGBOX 2
 
 /// How many items total fit in a hugebox
 #define STORAGE_HUGE_BOX_DEFAULT_MAX_ITEMS STORAGE_BIG_BOX_DEFAULT_MAX_ITEMS * 2
@@ -859,6 +862,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_HUGE_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
 /// How much volume fits in a hugebox
 #define STORAGE_HUGE_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_HUGE_BOX_DEFAULT_MAX_ITEMS * STORAGE_HUGE_BOX_DEFAULT_MAX_SIZE
+/// How many rows in a hugebox
+#define STORAGE_ROWS_HUGEBOX 3
 
 /* * * * * * * * * *
  * Survival pouches
@@ -884,6 +889,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE WEIGHT_CLASS_TINY
 /// How much volume fits in a triple survival kit
 #define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE
+/// How many rows in a triple survival kit
+#define STORAGE_ROWS_SURVIVAL_TRIPLE 3 // triple after all~
 
 /* * * * * * *
  * Backpacks!
@@ -895,6 +902,8 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_BACKPACK_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a backpack
 #define STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE STORAGE_BACKPACK_DEFAULT_MAX_ITEMS * STORAGE_BACKPACK_DEFAULT_MAX_SIZE
+/// How many rows in a backpack
+#define STORAGE_ROWS_BACKPACK 2
 
 /// Duffel slowdown
 #define DUFFELBAG_SLOWDOWN 0.75 // wear the fuckin bag
@@ -906,13 +915,17 @@ GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
 #define STORAGE_DUFFEL_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel
 #define STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
+/// How many rows in a duffel
+#define STORAGE_ROWS_DUFFEL 3
 
 /// How many items total fit in a duffel scav
-#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 14
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 16
 /// How big a thing can fit in a duffel scav
 #define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
 /// How much volume fits in a duffel scav
 #define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
+/// How many rows in a duffel scav
+#define STORAGE_ROWS_DUFFEL_SCAV 4 // big bag!
 
 /* * * * *
  * Wallet

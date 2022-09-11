@@ -109,7 +109,7 @@
 	// after this point we are sure we can somehow fit all items into our max number of rows.
 
 	// determine rows
-	var/rows = clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
+	var/rows = number_of_rows // clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
 
 	var/overrun = FALSE
 	if(used > our_volume)

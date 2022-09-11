@@ -25,6 +25,21 @@
 /obj/item/ammo_box/magazine/m22/empty
 	start_empty = 1
 
+//.22 extended
+/obj/item/ammo_box/magazine/m22/extended
+	name = "carbine magazine (.22lr)"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
+	icon_state = "22carbine"
+	ammo_type = /obj/item/ammo_casing/a22
+	caliber = list(CALIBER_22LR)
+	max_ammo = 32
+	multiple_sprites = 2
+	custom_materials = list(/datum/material/iron = MATS_MEDIUM_PISTOL_MAGAZINE)
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/ammo_box/magazine/m22/extended/empty
+	start_empty = 1
+
 //9mm
 /obj/item/ammo_box/magazine/zipgun
 	name = "Zip gun clip (9mm)"
