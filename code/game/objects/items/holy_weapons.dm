@@ -783,7 +783,7 @@
 
 /obj/item/nullrod/rosary/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen) || istype(W, /obj/item/toy/crayon))
-		var/my_little_deity = stripped_input(user, "To which deity will you pray?", "Insert desity", "Giex", 64, FALSE)
+		var/my_little_deity = stripped_input(user, "Dedicate this to which deity?", "Insert deity", "Giex", 64, FALSE)
 		if(my_little_deity)
 			deity_name = my_little_deity
 			to_chat(user, span_revennotice("You re-dedicate [src] to [deity_name], praise be their name."))
