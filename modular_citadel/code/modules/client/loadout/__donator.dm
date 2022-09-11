@@ -147,6 +147,11 @@
 	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
+/datum/gear/donator/kits/soulwinter446
+	name = "Shocome's relic cross"
+	path = /obj/item/nullrod/rosary/keep_as_is
+	ckeywhitelist = list("soulwinter446")
+ 
 /datum/gear/donator/kits/fuzz_rifle
 	name = "fuzzy supply box"
 	path = /obj/item/storage/box/large/custom_kit/fuzz_rifle
