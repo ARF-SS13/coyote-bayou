@@ -618,7 +618,7 @@
 	icon_state = "gab3"
 	oneuse = TRUE
 	remarks = list("Always keep your gun well lubricated...", "Keep your barrel free of grime...", "Perfect fitment is the key to a good firearm...", "Maintain a proper trigger pull length...", "Keep your sights zeroed to proper range...")
-	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/ergonomic_grip, /datum/crafting_recipe/metal_guard, /datum/crafting_recipe/forged_barrel, /datum/crafting_recipe/booster, /datum/crafting_recipe/laserguide)
+	crafting_recipe_types = list(/datum/crafting_recipe/scope, /datum/crafting_recipe/suppressor, /datum/crafting_recipe/ergonomic_grip, /datum/crafting_recipe/metal_guard, /datum/crafting_recipe/forged_barrel, /datum/crafting_recipe/booster, /datum/crafting_recipe/laserguide, /datum/crafting_recipe/gigalens, /datum/crafting_recipe/battshunt, /datum/crafting_recipe/overdrivemod, /datum/crafting_recipe/overshootermod)
 
 /obj/item/book/granter/crafting_recipe/gunsmith_four
 	name = "Guns and Bullets, Part 4"
@@ -881,17 +881,17 @@
 	traitname = "chemistry"
 	remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 	crafting_recipe_types = list(
-		/datum/crafting_recipe/jet, 
-		/datum/crafting_recipe/turbo, 
-		/datum/crafting_recipe/psycho, 
-		/datum/crafting_recipe/medx, 
-		/datum/crafting_recipe/medx/chemistry, 
-		/datum/crafting_recipe/stimpak, 
-		/datum/crafting_recipe/stimpak/chemistry, 
-		/datum/crafting_recipe/stimpak5, 
-		/datum/crafting_recipe/stimpak5/chemistry, 
-		/datum/crafting_recipe/superstimpak, 
-		/datum/crafting_recipe/superstimpak5, 
+		/datum/crafting_recipe/jet,
+		/datum/crafting_recipe/turbo,
+		/datum/crafting_recipe/psycho,
+		/datum/crafting_recipe/medx,
+		/datum/crafting_recipe/medx/chemistry,
+		/datum/crafting_recipe/stimpak,
+		/datum/crafting_recipe/stimpak/chemistry,
+		/datum/crafting_recipe/stimpak5,
+		/datum/crafting_recipe/stimpak5/chemistry,
+		/datum/crafting_recipe/superstimpak,
+		/datum/crafting_recipe/superstimpak5,
 		/datum/crafting_recipe/buffout,
 		/datum/crafting_recipe/steady)
 
@@ -1133,10 +1133,10 @@
 	name = "Tribal traditions"
 	desc = "A book of traditions passed down through generations within the tribe."
 	crafting_recipe_types = list(
-		/datum/crafting_recipe/tribalwar/lighttribe, 
-		/datum/crafting_recipe/tribalwar/heavytribe, 
-		/datum/crafting_recipe/healpoultice, 
-		/datum/crafting_recipe/healpoultice5, 
+		/datum/crafting_recipe/tribalwar/lighttribe,
+		/datum/crafting_recipe/tribalwar/heavytribe,
+		/datum/crafting_recipe/healpoultice,
+		/datum/crafting_recipe/healpoultice5,
 		/datum/crafting_recipe/warmace)
 
 /obj/item/book/granter/trait/tribaltraditions
@@ -1232,7 +1232,7 @@
 	desc = "An old book written by a missionary studying the postwar tribes of the midwest."
 	remarks = list("Grind into a fine paste...", "Dilute in just enough water...", "Filter out the fibers...", "Do not boil for too long...")
 	crafting_recipe_types = list(
-		/datum/crafting_recipe/bitterdrink, 
-		/datum/crafting_recipe/bitterdrink5, 
-		/datum/crafting_recipe/healpoultice, 
+		/datum/crafting_recipe/bitterdrink,
+		/datum/crafting_recipe/bitterdrink5,
+		/datum/crafting_recipe/healpoultice,
 		/datum/crafting_recipe/healpoultice5)
