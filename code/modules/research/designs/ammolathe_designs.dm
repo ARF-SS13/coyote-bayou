@@ -94,6 +94,13 @@
 	build_path = /obj/item/ammo_box/magazine/m9mm/empty
 	category = list("initial", "Simple Magazines", "Handmade Magazines")
 
+/datum/design/ammolathe/m22carbine
+	name = "empty .22 LR carbine magazine (.22 LR)"
+	id = "m22carbine"
+	materials = list(/datum/material/iron = 2000)
+	build_path = /obj/item/ammo_box/magazine/m22/extended/empty
+	category = list("initial", "Simple Magazines", "Handmade Magazines")
+
 /datum/design/ammolathe/speedloader38
 	name = "empty speed loader (.38)"
 	id = "speedloader38"
