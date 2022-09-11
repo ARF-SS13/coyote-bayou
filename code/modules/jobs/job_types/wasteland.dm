@@ -983,8 +983,8 @@ Raider
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	box = /obj/item/storage/survivalkit/tribal
-	box_two = /obj/item/storage/survivalkit/medical/tribal
+	box = /obj/item/storage/survivalkit
+	box_two = /obj/item/storage/survivalkit/medical
 	backpack_contents = list(
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak,
