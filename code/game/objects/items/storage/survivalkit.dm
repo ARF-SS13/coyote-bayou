@@ -140,6 +140,7 @@
 	icon_state = "survivalkit_triple"
 	component_type = /datum/component/storage/concrete/box/survivalkit/triple
 	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_SUITSTORE
 
 /obj/item/storage/survivalkit/triple/PopulateContents()
 	return

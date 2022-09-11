@@ -29,6 +29,7 @@
 	max_combined_w_class = STORAGE_BIG_BOX_DEFAULT_MAX_TOTAL_SPACE
 	max_volume = STORAGE_BIG_BOX_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
+	number_of_rows = STORAGE_ROWS_BIGBOX
 
 /// snap pops!
 /datum/component/storage/concrete/box/big/snap_pop
@@ -53,6 +54,7 @@
 	max_combined_w_class = STORAGE_HUGE_BOX_DEFAULT_MAX_TOTAL_SPACE
 	max_volume = STORAGE_HUGE_BOX_DEFAULT_MAX_TOTAL_SPACE
 	rustle_sound = TRUE
+	number_of_rows = STORAGE_ROWS_HUGEBOX
 
 /// Lights!
 /datum/component/storage/concrete/box/huge/lights
@@ -75,8 +77,7 @@
 	max_w_class = STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE
 	max_combined_w_class = STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE
 	max_volume = STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE
-	limited_random_access = TRUE
-	limited_random_access_stack_position = 3
+	number_of_rows = STORAGE_ROWS_SURVIVAL_TRIPLE
 
 /// Specialized kit
 /datum/component/storage/concrete/box/survivalkit/specialized
