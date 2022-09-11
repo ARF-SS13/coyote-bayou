@@ -506,7 +506,7 @@ GLOBAL_LIST_INIT(gunbelt_allowed, GLOB.small_ammo_types + typecacheof(list(
 	/obj/item/multitool,
 	/obj/item/reagent_containers/food/drinks/bottle/molotov,
 	/obj/item/grenade/plastic/c4
-	)) - GLOB.holster_disallowed)
+	)) - GLOB.holster_disallowed) // woo
 
 /// Things allowed in a bandolier
 GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
