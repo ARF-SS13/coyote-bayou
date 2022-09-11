@@ -294,8 +294,8 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
-	//if(user.mind && (user.mind.isholy) && !reskinned)
-	reskin_holy_weapon(user)
+	if(user.mind && !reskinned)
+		reskin_holy_weapon(user)
 
 /**
  * reskin_holy_weapon: Shows a user a list of all available nullrod reskins and based on his choice replaces the nullrod with the reskinned version
@@ -533,6 +533,7 @@
 	attack_verb = list("chopped", "sliced", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	var/possessed = FALSE
+	reskinned = TRUE
 
 /obj/item/nullrod/scythe/talking/process()
 	for(var/mob/living/simple_animal/shade/S in contents)
