@@ -2555,6 +2555,15 @@
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT // zooom
 	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
 
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk
+	name = "salvaged weathered tribal T45-b power armor"
+	desc = "A set of salvaged tribal power armor, one that's seen better days. Proof that power armor doesn't age like wine, especially dragged through the swamp as much as this one has. All that weathered off armor plating's sure made it light, though!"
+	icon_state = "tribal_power_armor"
+	item_state = "tribal_power_armor"
+	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	armor = ARMOR_VALUE_HEAVY
+	slowdown = ARMOR_SLOWDOWN_HEAVY * ARMOR_SLOWDOWN_GLOBAL_MULT
+	color = "#b1a687"
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45d
 	name = "salvaged T-45d power armor"

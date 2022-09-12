@@ -138,6 +138,15 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/pappavol
+	name = "Earlong Travel Supplies"
+	path = /obj/item/storage/box/large/custom_kit/pappavol
+	ckeywhitelist = list("pappavol")
+
+/obj/item/storage/box/large/custom_kit/pappavol/PopulateContents()
+	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
+	new /obj/item/twohanded/sledgehammer/simple(src)
+
 /datum/gear/donator/kits/soulwinter446
 	name = "Shocome's relic cross"
 	path = /obj/item/nullrod/rosary/keep_as_is
@@ -182,3 +191,4 @@
 	new /obj/item/clothing/under/f13/detectivealt(src)
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
