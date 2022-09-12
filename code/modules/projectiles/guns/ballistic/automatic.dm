@@ -972,7 +972,7 @@
 
 /obj/item/gun/ballistic/automatic/sportcarbine
 	name = "sport carbine"
-	desc = "One of the many .22LC carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
+	desc = "One of the many .22 LR carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
 	icon_state = "surplus"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m22
@@ -1021,7 +1021,7 @@
 
 /obj/item/gun/ballistic/automatic/sportcarbine/m1_22
 	name = "M1-22 carbine"
-	desc = "One of the many .22LC carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
+	desc = "A one-of-a-kind M1 carbine chambered in .22 LR. Where it lacks in stopping power, it more than makes up for it with modularity and full auto support. Looks well cared for, if a bit fuzzy."
 	icon_state = "m1carbine"
 	item_state = "rifle"
 	mag_type = /obj/item/ammo_box/magazine/m22
