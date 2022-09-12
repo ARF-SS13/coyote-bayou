@@ -39,7 +39,7 @@ const VendingRow = (props, context) => {
           <span
             className={classes([
               'vending32x32',
-              product.path,
+              product.asset,
             ])}
             style={{
               'vertical-align': 'middle',

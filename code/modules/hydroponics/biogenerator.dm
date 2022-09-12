@@ -300,6 +300,7 @@
 			var/datum/design/D = item
 			cat["items"] += list(list(
 				"id" = D.id,
+				"asset" = D.get_asset_path(),
 				"name" = D.name,
 				"cost" = D.materials[SSmaterials.GetMaterialRef(/datum/material/biomass)]/efficiency,
 			))

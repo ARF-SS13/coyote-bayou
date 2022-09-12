@@ -71,10 +71,13 @@
 	if(istype(I, /obj/item/wirecutters))
 
 		to_chat(user, span_notice("You start cutting the [src]..."))
-		if(I.use_tool(src, user, 40, volume=50))
-			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-			deconstruct(TRUE)
-			return TRUE
+		if(!I.use_tool(src, user, 4 SECONDS, volume=50) && !QDELETED(src))
+			return ..()
+		if(QDELETED(src)) // if we were deconstructed while sleeping in use_tool
+			return STOP_ATTACK_PROC_CHAIN // don't do anything to a deleted atom
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
+		deconstruct(TRUE)
+		return STOP_ATTACK_PROC_CHAIN
 
 	return ..()
 

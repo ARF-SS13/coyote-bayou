@@ -177,14 +177,15 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	clawfootstep = FOOTSTEP_SAND
 	var/dug = FALSE				//FALSE = has not yet been dug, TRUE = has already been dug
 	var/pit_sand = 1
+	// TODO: REWRITE PITS ENTIRELY
 	var/storedindex = 0			//amount of stored items
 	var/mob/living/gravebody	//is there a body in the pit?
 	var/obj/structure/closet/crate/coffin/gravecoffin //or maybe a coffin?
 	var/obj/salvage //or salvage
-	var/pitcontents = list()
+	var/pitcontents // Lazylist of pit contents. TODO: Replace with mypit.contents?
 	var/obj/dugpit/mypit
 	var/unburylevel = 0
-	var/list/loots = list(
+	var/static/list/loots = list(
 						/obj/item/stack/crafting/metalparts/five = 30,
 						/obj/item/stack/crafting/goodparts/five = 30,
 						/obj/item/stack/ore/blackpowder/twenty = 10,
@@ -197,9 +198,6 @@ GLOBAL_LIST_INIT(desolate_plant_spawn_list, list(
 	icon = 'icons/fallout/turfs/wasteland.dmi'
 	icon_state = "desertsmooth"
 	slowdown = 0.3
-	list/loots = list(
-						/obj/item/stack/crafting/metalparts/five = 30,
-						)
 	footstep = FOOTSTEP_LOOSE_SAND
 	barefootstep = FOOTSTEP_LOOSE_SAND
 	clawfootstep = FOOTSTEP_LOOSE_SAND

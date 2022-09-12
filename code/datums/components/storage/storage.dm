@@ -621,12 +621,16 @@
 	return max(0, max_items - real_location.contents.len)
 
 /datum/component/storage/proc/signal_fill_type(datum/source, type, amount = 20, force = FALSE)
+	SIGNAL_HANDLER
+
 	var/atom/real_location = real_location()
 	if(!force)
 		amount = min(remaining_space_items(), amount)
 	for(var/i in 1 to amount)
-		handle_item_insertion(new type(real_location), TRUE)
-		CHECK_TICK
+		if(!handle_item_insertion(new type(real_location), TRUE))
+			return i > 1 //return TRUE only if at least one insertion has been successful.
+		if(QDELETED(src))
+			return TRUE
 	return TRUE
 
 /datum/component/storage/proc/on_attack_hand(datum/source, mob/user)
