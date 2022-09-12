@@ -658,7 +658,7 @@ GLOBAL_LIST_INIT(hex_muted3, list("0","2"))
 
 		accepted += buffer
 
-	var/log = file("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
+	var/log = wrap_file("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
 	var/list/oldjson = list()
 	var/list/oldentries = list()
 	if(fexists(log))

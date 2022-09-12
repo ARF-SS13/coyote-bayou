@@ -8,7 +8,7 @@
 	station_integrity = min(PERCENT(GLOB.start_state.score(end_state)), 100)
 	gather_antag_data()
 	record_nuke_disk_location()
-	var/json_file = file("[GLOB.log_directory]/round_end_data.json")
+	var/json_file = wrap_file("[GLOB.log_directory]/round_end_data.json")
 	var/list/file_data = list("escapees" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "abandoned" = list("humans" = list(), "silicons" = list(), "others" = list(), "npcs" = list()), "ghosts" = list(), "additional data" = list())
 	var/num_survivors = 0
 	var/num_escapees = 0
@@ -365,7 +365,7 @@
 		fdel(filename)
 		text2file(content, filename)
 	else
-		content = file2text(filename)
+		content = wrap_file2text(filename)
 	roundend_report.set_content(content)
 	roundend_report.stylesheets = list()
 	roundend_report.add_stylesheet("roundend", 'html/browser/roundend.css')
