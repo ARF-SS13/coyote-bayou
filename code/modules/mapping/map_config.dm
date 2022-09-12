@@ -72,7 +72,7 @@
 			log_world("map_config not found: [filename]")
 		return
 
-	var/json = file(filename)
+	var/json = wrap_file(filename)
 	if(!json)
 		log_world("Could not open map_config: [filename]")
 		return

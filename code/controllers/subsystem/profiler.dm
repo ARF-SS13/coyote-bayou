@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(profiler)
 	CHECK_TICK
 	if(!length(current_profile_data)) //Would be nice to have explicit proc to check this
 		stack_trace("Warning, profiling stopped manually before dump.")
-	var/json_file = file("[GLOB.log_directory]/[PROFILER_FILENAME]")
+	var/json_file = wrap_file("[GLOB.log_directory]/[PROFILER_FILENAME]")
 	if(fexists(json_file))
 		fdel(json_file)
 	timer = TICK_USAGE_REAL
