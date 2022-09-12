@@ -151,7 +151,7 @@
 	name = "Shocome's relic cross"
 	path = /obj/item/nullrod/rosary/keep_as_is
 	ckeywhitelist = list("soulwinter446")
- 
+
 /datum/gear/donator/kits/fuzz_rifle
 	name = "fuzzy supply box"
 	path = /obj/item/storage/box/large/custom_kit/fuzz_rifle
@@ -192,3 +192,20 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/greed2323
+	name = "Magnum Kit"
+	path = /obj/item/storage/box/large/custom_kit/greed2323
+	ckeywhitelist = list("greed2323")
+
+/obj/item/storage/box/large/custom_kit/greed2323/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+	new /obj/item/gun_upgrade/trigger/dangerzone(src)
+
+/datum/gear/donator/kits/aerodynamique
+	name = "Yee-Haw Sharpshooter Kit"
+	path = /obj/item/storage/box/large/custom_kit/aerodynamique
+	ckeywhitelist = list("aerodynamique")
+
+/obj/item/storage/box/large/custom_kit/aerodynamique/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
+	new /obj/item/gun_upgrade/scope/watchman(src)
