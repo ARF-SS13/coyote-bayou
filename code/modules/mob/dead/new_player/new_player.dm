@@ -174,17 +174,20 @@
 
 	if(href_list["ready"])
 		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
-			var/tready = text2num(href_list["ready"]) //Mandatory flavortext requirement for readyup/join - Yawet.
-			if(SSticker.current_state <= GAME_STATE_PREGAME)
-				ready = tready
-			//if it's post initialisation and they're trying to observe we do the needful
-			if(!SSticker.current_state < GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
-				ready = tready
-				make_me_an_observer()
-			return
-		else
 			to_chat(client.mob, span_danger("Your flavortext does not exceed our minimum of 130 characters."))
 			return
+		var/tready = text2num(href_list["ready"])
+		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
+		//This is likely not an actual issue but I don't have time to prove that this
+		//no longer is required
+		if(SSticker.current_state <= GAME_STATE_PREGAME)
+			ready = tready
+		//if it's post initialisation and they're trying to observe we do the needful
+		if(!SSticker.current_state < GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
+			ready = tready
+			make_me_an_observer()
+			return
+
 	if(href_list["refresh"])
 		src << browse(null, "window=playersetup") //closes the player setup window
 		new_player_panel()
@@ -194,47 +197,50 @@
 
 	if(href_list["late_join"])
 		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
-			if(!SSticker || !SSticker.IsRoundInProgress())
-				to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
-				return
-
-			if(href_list["late_join"] == "override")
-				LateChoices()
-				return
-
-			if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
-				to_chat(usr, span_danger("[CONFIG_GET(string/hard_popcap_message)]"))
-
-				var/queue_position = SSticker.queued_players.Find(usr)
-				if(queue_position == 1)
-					to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
-				else if(queue_position)
-					to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
-				else
-					SSticker.queued_players += usr
-					to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
-				return
-			LateChoices() //This seemed to be redundant but I'm keeping it in as to not break things.
-		else
 			to_chat(client.mob, span_danger("Your flavortext does not exceed our minimum of 130 characters."))
 			return
+		if(!SSticker || !SSticker.IsRoundInProgress())
+			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
+			return
+
+		if(href_list["late_join"] == "override")
+			LateChoices()
+			return
+
+		if(SSticker.queued_players.len || (relevant_cap && living_player_count() >= relevant_cap && !(ckey(key) in GLOB.admin_datums)))
+			to_chat(usr, span_danger("[CONFIG_GET(string/hard_popcap_message)]"))
+
+			var/queue_position = SSticker.queued_players.Find(usr)
+			if(queue_position == 1)
+				to_chat(usr, span_notice("You are next in line to join the game. You will be notified when a slot opens up."))
+			else if(queue_position)
+				to_chat(usr, span_notice("There are [queue_position-1] players in front of you in the queue to join the game."))
+			else
+				SSticker.queued_players += usr
+				to_chat(usr, span_notice("You have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len]."))
+			return
+
 /* 		if(GLOB.data_core.get_record_by_name(client.prefs.real_name))
 			alert(src, "This character name is already in use. Choose another.")
 			return */
+
+		LateChoices()
 
 	if(href_list["manifest"])
 		ViewManifest()
 
 	if(href_list["SelectedJob"])
-		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN) //You should never be able to reach this code without having flavortext. May the lord help you (and may you be banned for HREF exploitation shortly after)
-			if(!SSticker || !SSticker.IsRoundInProgress())
-				var/msg = "[key_name(usr)] attempted to join the round using a href that shouldn't be available at this moment!"
-				log_admin(msg)
-				message_admins(msg)
-				to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
+		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
+			to_chat(client.mob, span_danger("Your flavortext does not exceed our minimum of 130 characters."))
+			return
+		if(!SSticker || !SSticker.IsRoundInProgress())
+			var/msg = "[key_name(usr)] attempted to join the round using a href that shouldn't be available at this moment!"
+			log_admin(msg)
+			message_admins(msg)
+			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
 			return
 
-		if(!GLOB.enter_allowed) //This'll runtime if you do this. Linter cope
+		if(!GLOB.enter_allowed)
 			to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
 			return
 
@@ -243,31 +249,28 @@
 				to_chat(usr, span_warning("Server is full."))
 				return
 
-			AttemptLateSpawn(href_list["SelectedJob"])
-			return
-		else
-			return
+		AttemptLateSpawn(href_list["SelectedJob"])
+		return
 
 	if(href_list["JoinAsGhostRole"])
 		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
-			if(!GLOB.enter_allowed)
-				to_chat(usr, span_notice(" There is an administrative lock on entering the game!"))
-
-			if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
-				if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
-					to_chat(usr, span_warning("Server is full."))
-					return
-
-			var/obj/effect/mob_spawn/MS = pick(GLOB.mob_spawners[href_list["JoinAsGhostRole"]])
-			if(MS.attack_ghost(src, latejoinercalling = TRUE))
-				SSticker.queued_players -= src
-				SSticker.queue_delay = 4
-				qdel(src)
-		else
 			to_chat(client.mob, span_danger("Your flavortext does not exceed our minimum of 130 characters."))
 			return
+		if(!GLOB.enter_allowed)
+			to_chat(usr, span_notice(" There is an administrative lock on entering the game!"))
 
-	else if(!href_list["late_join"])
+		if(SSticker.queued_players.len && !(ckey(key) in GLOB.admin_datums))
+			if((living_player_count() >= relevant_cap) || (src != SSticker.queued_players[1]))
+				to_chat(usr, span_warning("Server is full."))
+				return
+
+		var/obj/effect/mob_spawn/MS = pick(GLOB.mob_spawners[href_list["JoinAsGhostRole"]])
+		if(MS.attack_ghost(src, latejoinercalling = TRUE))
+			SSticker.queued_players -= src
+			SSticker.queue_delay = 4
+			qdel(src)
+
+	else if(!href_list["late_join"]) //Why is this like this? TODO: Make this not a thing.
 		new_player_panel()
 
 	if(href_list["showpoll"])
@@ -458,6 +461,10 @@
 	if(error != JOB_AVAILABLE)
 		alert(src, get_job_unavailable_error_message(error, rank))
 		return FALSE
+
+		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
+			src << alert("Your flavortext does not exceed our minimum of 130 characters.")			
+			return
 
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
@@ -719,4 +726,3 @@
 
 	// Add verb for re-opening the interview panel, and re-init the verbs for the stat panel
 	add_verb(src, /mob/dead/new_player/proc/open_interview)
-
