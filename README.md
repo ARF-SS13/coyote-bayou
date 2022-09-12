@@ -55,7 +55,7 @@ BYOND installed. You can get it from https://www.byond.com/download. Once you've
 that, extract the game files to wherever you want to keep them. This is a
 sourcecode-only release, so the next step is to compile the server files.
 ~~Open fortune13.dme by double-clicking it, open the Build menu, and click
-compile.~~ Use the **BUILD.bat** file instead as the reglar DM compiler can't 
+compile.~~ Use the **BUILD.cmd** file instead as the reglar DM compiler can't 
 handle the codebase properly. This'll take a little while, and if everything's
 done right you'll get a message like this:
 
