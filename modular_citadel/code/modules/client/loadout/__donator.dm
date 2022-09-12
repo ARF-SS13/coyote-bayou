@@ -202,9 +202,10 @@
 	new /obj/item/gun_upgrade/trigger/dangerzone(src)
 
 /datum/gear/donator/kits/aerodynamique
-	name = "Sidera's Kit"
+	name = "Yee-Haw Sharpshooter Kit"
 	path = /obj/item/storage/box/large/custom_kit/aerodynamique
 	ckeywhitelist = list("aerodynamique")
 
 /obj/item/storage/box/large/custom_kit/aerodynamique/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
+	new /obj/item/gun_upgrade/scope/watchman(src)
