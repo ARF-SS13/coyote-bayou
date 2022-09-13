@@ -6,7 +6,6 @@
 	description = "The absolute cutting edge."
 	prereq_ids = list("biotech","engineering")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
-	hidden = TRUE
 	design_ids = list("alienalloy")
 
 /datum/techweb_node/alientech/New()
