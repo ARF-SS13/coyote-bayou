@@ -155,5 +155,6 @@
 	new /obj/item/gun/ballistic/revolver/police(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
 	new /obj/item/bedsheet/cult(src)
 
