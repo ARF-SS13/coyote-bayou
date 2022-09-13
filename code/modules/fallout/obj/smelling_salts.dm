@@ -1,7 +1,7 @@
 //smelling salts
 /obj/item/smelling_salts
 	name = "smelling salts"
-	desc = "A large glass phial of pungent smelling salts, used to revive those who have fainted.<br>It is bound in cord marking the colors of Caesars Legion,"
+	desc = "A large glass phial of pungent smelling salts, used to revive those who have fainted."
 	w_class = WEIGHT_CLASS_SMALL
 	icon = 'icons/fallout/objects/medicine/primitivedefib.dmi'
 	icon_state = "smelling_salts"

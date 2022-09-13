@@ -20,7 +20,7 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
-// SUNSET FLUFF ITEMS
+// COYOTE FLUFF ITEMS
 
 /datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
@@ -29,6 +29,15 @@
 	category = LOADOUT_CATEGORY_BACKPACK
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
+
+/obj/item/weldingtool/largetank/cylphie //Virtually the same as an industrial but slightly faster
+	name = "Cylphie's welding tool"
+	desc = "A heavily altered industrial welding tool stolen from the brotherhood."
+	icon = 'icons/obj/abductor.dmi'
+	icon_state = "welder"
+	toolspeed = 0.5
+	max_fuel = 40
+	custom_materials = list(/datum/material/glass=60)
 
 /* /// Fluff for fuzzy
 /datum/gear/donator/fuz_card
@@ -211,3 +220,44 @@
 /obj/item/storage/box/large/custom_kit/aerodynamique/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
 	new /obj/item/gun_upgrade/scope/watchman(src)
+
+/datum/gear/donator/kits/truedark
+	name = "Stolen Brotherhood Supplies"
+	path = /obj/item/storage/box/large/custom_kit/truedark
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stack/cable_coil/thirty(src)
+	new /obj/item/weldingtool/largetank/cylphie(src)
+
+/datum/gear/donator/kits/truedark2
+	name = "Alaskan Survival Kit"
+	path = /obj/item/storage/box/large/custom_kit/truedark2
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark2/PopulateContents()
+	new /obj/item/gun/ballistic/bow/xbow(src)
+	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/smelling_salts/wayfarer(src)
+
+/datum/gear/donator/kits/thingpony
+	name = "The Ultra Cutie Kit"
+	path = /obj/item/storage/box/large/custom_kit/thingpony
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
+	new /obj/item/clothing/suit/hooded/outcast(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+
+/datum/gear/donator/kits/baticon
+	name = "Laser Bat Kit"
+	path = /obj/item/storage/box/large/custom_kit/baticon
+	ckeywhitelist = list("baticon")
+
+/obj/item/storage/box/large/custom_kit/baticon/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
