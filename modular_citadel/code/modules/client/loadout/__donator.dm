@@ -231,3 +231,22 @@
 	new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
+
+/datum/gear/donator/kits/thingpony
+	name = "The Ultra Cutie Kit"
+	path = /obj/item/storage/box/large/custom_kit/thingpony
+	ckeywhitelist = list("thingpony")
+
+/obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
+	new /obj/item/clothing/suit/hooded/outcast(src)
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+
+/datum/gear/donator/kits/baticon
+	name = "Laser Bat Kit"
+	path = /obj/item/storage/box/large/custom_kit/baticon
+	ckeywhitelist = list("baticon")
+
+/obj/item/storage/box/large/custom_kit/baticon/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
