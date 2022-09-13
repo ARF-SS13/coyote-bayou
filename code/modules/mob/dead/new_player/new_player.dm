@@ -463,7 +463,7 @@
 		return FALSE
 
 		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
-			src << alert("Your flavortext does not exceed our minimum of 130 characters.")			
+			alert(src, "Your flavortext does not exceed our minimum of 130 characters.")			
 			return
 
 	if(SSticker.late_join_disabled)
