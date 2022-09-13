@@ -209,3 +209,25 @@
 /obj/item/storage/box/large/custom_kit/aerodynamique/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
 	new /obj/item/gun_upgrade/scope/watchman(src)
+
+/datum/gear/donator/kits/truedark
+	name = "Stolen Brotherhood Supplies"
+	path = /obj/item/storage/box/large/custom_kit/truedark
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stack/cable_coil/thirty(src)
+	new /obj/item/weldingtool/largetank/cylphie(src)
+
+/datum/gear/donator/kits/truedark2
+	name = "Alaskan Survival Kit"
+	path = /obj/item/storage/box/large/custom_kit/truedark2
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark2/PopulateContents()
+	new /obj/item/gun/ballistic/bow/xbow(src)
+	new /obj/item/storage/bag/tribe_quiver/archer(src)
+	new /obj/item/smelling_salts/wayfarer(src)
