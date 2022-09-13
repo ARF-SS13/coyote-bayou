@@ -806,7 +806,7 @@
 	always_available = FALSE
 
 /datum/crafting_recipe/combatrifle
-	name = "Combat Rifle"
+	name = "Combat Carbine"
 	result = /obj/item/gun/ballistic/automatic/combat
 	reqs = list(/obj/item/stack/sheet/metal = 10,
 				/obj/item/advanced_crafting_components/assembly = 1,
