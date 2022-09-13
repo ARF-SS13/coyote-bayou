@@ -306,15 +306,6 @@
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 
-/obj/item/weldingtool/largetank/cylphie
-	name = "Cylphie's welding tool"
-	desc = "A heavily altered industrial welding tool stolen from the brotherhood."
-	icon = 'icons/obj/abductor.dmi'
-	icon_state = "welder"
-	toolspeed = 0.5
-	max_fuel = 40
-	custom_materials = list(/datum/material/glass=60)
-
 /obj/item/weldingtool/largetank/cyborg
 	name = "integrated welding tool"
 	desc = "An advanced welder designed to be used in robotic systems."

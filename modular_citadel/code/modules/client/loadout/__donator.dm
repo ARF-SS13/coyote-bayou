@@ -20,7 +20,7 @@
 	path = /obj/item/clothing/accessory/cia_badge
 	ckeywhitelist = list("monke1818")
 
-// SUNSET FLUFF ITEMS
+// COYOTE FLUFF ITEMS
 
 /datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
@@ -29,6 +29,15 @@
 	category = LOADOUT_CATEGORY_BACKPACK
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
+
+/obj/item/weldingtool/largetank/cylphie //Virtually the same as an industrial but slightly faster
+	name = "Cylphie's welding tool"
+	desc = "A heavily altered industrial welding tool stolen from the brotherhood."
+	icon = 'icons/obj/abductor.dmi'
+	icon_state = "welder"
+	toolspeed = 0.5
+	max_fuel = 40
+	custom_materials = list(/datum/material/glass=60)
 
 /* /// Fluff for fuzzy
 /datum/gear/donator/fuz_card
