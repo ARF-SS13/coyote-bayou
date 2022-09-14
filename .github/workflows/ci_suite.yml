@@ -234,3 +234,24 @@ jobs:
         with:
           name: deploy
           path: deploy
+
+# If there's a [ci skip] in the commit, this lets the required Run Linters step to pass.
+name: CI Suite
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+env:
+  toolchain: stable
+  target: i686-unknown-linux-gnu
+jobs:
+  run_linters:
+    if: "contains(github.event.head_commit.message, '[ci skip]')"
+    name: Run Linters
+    runs-on: ubuntu-20.04
+    steps:
+      - run: |
+        echo "[ci skip] detected, passing" > ${GITHUB_WORKSPACE}/output-annotations.txt
