@@ -31,22 +31,6 @@
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 
-/* /// Fluff for fuzzy
-/datum/gear/donator/fuz_card
-	name = "Fuzzy License Card"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/card/fuzzy_license
-	ckeywhitelist = list("fuzlet", "superlagg")
-	cost = 0
-
-/// Also fluff for fuzzy
-/datum/gear/donator/fuz_pen
-	name = "Free Crayon Box"
-	slot = SLOT_IN_BACKPACK
-	path = /obj/item/storage/crayons
-	ckeywhitelist = list("fuzlet", "superlagg")
-	cost = 0 */
-
 /datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
 	slot = SLOT_IN_BACKPACK
