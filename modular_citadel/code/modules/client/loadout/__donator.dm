@@ -261,3 +261,20 @@
 /obj/item/storage/box/large/custom_kit/baticon/PopulateContents()
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/jackson1112
+	name = "Recon Kit"
+	path = /obj/item/storage/box/large/custom_kit/jackson1112
+	ckeywhitelist = list("jackson1112")
+
+/obj/item/storage/box/large/custom_kit/jackson1112/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/melee/onehanded/knife/bayonet(src)
+	new /obj/item/clothing/suit/armor/light/leather/rig(src)
+	new /obj/item/storage/box/ration/ranger_breakfast(src)
+	new /obj/item/clothing/head/helmet/f13/combat(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/radio(src)
+	new /obj/item/binoculars(src)
