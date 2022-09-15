@@ -462,9 +462,9 @@
 		alert(src, get_job_unavailable_error_message(error, rank))
 		return FALSE
 
-		if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
-			alert(src, "Your flavortext does not exceed our minimum of 130 characters.")			
-			return
+	if((length_char(client.prefs.features["flavor_text"])) >= MIN_FLAVOR_LEN)
+		alert(src, "Your flavortext does not exceed our minimum of 130 characters.")			
+		return
 
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
