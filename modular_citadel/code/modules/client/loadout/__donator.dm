@@ -136,7 +136,7 @@
 
 /datum/gear/donator/kits/fuzlet
 	name = "fuzzy supply box"
-	path = /obj/item/storage/box/large/custom_kit/fzzlet
+	path = /obj/item/storage/box/large/custom_kit/fuzlet
 	ckeywhitelist = list("fuzlet", "superlagg")
 
 /obj/item/storage/box/large/custom_kit/fuzlet/PopulateContents()
