@@ -166,17 +166,18 @@
 	ckeywhitelist = list("jackson1112")
 
 /obj/item/storage/box/large/custom_kit/jackson1112/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/m1carbine(src)
+	new /obj/item/gun/ballistic/automatic/m1carbine/compact(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv(src)
 	new /obj/item/melee/onehanded/knife/bayonet(src)
-	new /obj/item/clothing/suit/armor/light/leather/rig(src)
+	new /obj/item/storage/belt/military(src)
 	new /obj/item/storage/box/ration/ranger_breakfast(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/radio(src)
 	new /obj/item/binoculars(src)
-
+	new /obj/item/shovel/trench(src)
+	
 // K
 // L
 
@@ -242,6 +243,16 @@
 	name = "Shocome's relic cross"
 	path = /obj/item/nullrod/rosary/keep_as_is
 	ckeywhitelist = list("soulwinter446")
+
+/datum/gear/donator/kits/swirlby
+	name = "Tribal Kit"
+	path = /obj/item/storage/box/large/custom_kit/swirlby
+	ckeywhitelist = list("swirlby")
+
+/obj/item/storage/box/large/custom_kit/swirlby/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/clothing/suit/armor/light/tribal/rustwalkers(src)
+	new /obj/item/clothing/suit/armor/medium/tribal/deadhorses(src)
 
 // T
 
