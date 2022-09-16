@@ -177,7 +177,7 @@
 	new /obj/item/radio(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/shovel/trench(src)
-	
+
 // K
 // L
 
@@ -201,6 +201,9 @@
 
 /obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+	new /obj/item/clothing/suit/armor/medium/vest(src)
+	new /obj/item/clothing/head/helmet/f13/combat(src)
+
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
 	path = /obj/item/storage/box/large/custom_kit/exoticjazz
@@ -214,7 +217,7 @@
 // P
 
 /datum/gear/donator/kits/pappavol
-	name = "Earlong Travel Supplies"
+	name = "Tribal Power Kit"
 	path = /obj/item/storage/box/large/custom_kit/pappavol
 	ckeywhitelist = list("pappavol")
 
