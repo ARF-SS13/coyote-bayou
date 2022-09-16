@@ -1640,6 +1640,7 @@
 	name = "Leather battle coat" //NO PIT THIS GAME UNIVERSE AND THAT GAME UNIVERSE HAVE NOTHING TO DO WITH EACH OTHER!!! (Sorry but I'm not keeping the original name of a petfaction) - Blue
 	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside."
 	icon = 'icons/fallout/clothing/khans.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
