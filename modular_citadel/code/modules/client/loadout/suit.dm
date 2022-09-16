@@ -132,7 +132,7 @@
 
 /datum/gear/suit/coat/leatherbattlecoat
 	name = "Leather battle coat"
-	path = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
+	path = /obj/item/clothing/suit/armor/medium/vest/breastplate/khan
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
 	cost = 3
 
