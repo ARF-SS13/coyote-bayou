@@ -178,9 +178,12 @@
 		//This is likely not an actual issue but I don't have time to prove that this
 		//no longer is required
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
+			if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
+				to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
+				return
 			ready = tready
 		//if it's post initialisation and they're trying to observe we do the needful
-		if(!SSticker.current_state < GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
+		if(SSticker.current_state >= GAME_STATE_PREGAME && tready == PLAYER_READY_TO_OBSERVE)
 			ready = tready
 			make_me_an_observer()
 			return
@@ -195,6 +198,10 @@
 	if(href_list["late_join"])
 		if(!SSticker || !SSticker.IsRoundInProgress())
 			to_chat(usr, span_danger("The round is either not ready, or has already finished..."))
+			return
+
+		if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
+			to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 			return
 
 		if(href_list["late_join"] == "override")
@@ -452,6 +459,10 @@
 
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
+		return FALSE
+	
+	if((length_char(client.prefs.features["flavor_text"])) < MIN_FLAVOR_LEN)
+		to_chat(client.mob, span_danger("Your flavortext does not meet the minimum of [MIN_FLAVOR_LEN] characters."))
 		return FALSE
 
 	var/arrivals_docked = TRUE
