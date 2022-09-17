@@ -14,10 +14,10 @@
 	icon_dead = "raider_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
-	maxHealth = 112
-	health = 112
-	melee_damage_lower = 20
-	melee_damage_upper = 47
+	maxHealth = 80
+	health = 80
+	melee_damage_lower = 8
+	melee_damage_upper = 18
 	attack_verb_simple = "clobbers"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
@@ -27,6 +27,24 @@
 	del_on_death = FALSE
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 3
+	melee_queue_distance = 5
+	move_to_delay = 3.4 //faster than average, but not a lot.
+	// m2d 4 = standard, less is fast, more is slower.
+
+	retreat_distance = 1 //mob retreats 1 tile when in min distance
+	//how far they pull back
+	
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	//tiles within they start attacking
+
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	//tiles within they start making noise
+
+	//                  Fenny Block End                   //
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -39,7 +57,7 @@
 /mob/living/simple_animal/hostile/raider/Aggro()
 	..()
 	summon_backup(15)
-	say(pick("*insult", "HURRY, HURRY, HURRY!!", "Back off!!" , "Keep moving!!", "Times up, asshole!!", "Call a doctor, we got a bleeder!!", "Just stand still and die!!" ))
+	say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
 
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
