@@ -39,6 +39,14 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
+/datum/gear/donator/risingstarslash
+	name = "Slime Cookie Recipe Book"
+	slot = SLOT_IN_BACKPACK
+	path = /obj/item/book/granter/crafting_recipe/slimecookie
+	category = LOADOUT_CATEGORY_BACKPACK
+	ckeywhitelist = list("risingstarslash")
+	cost = 0
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -227,6 +235,27 @@
 
 // Q
 // R
+
+/datum/gear/donator/kits/risingstarslash
+	name = "Head Paladin Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
+	new /obj/item/clothing/neck/mantle/bos/paladin(src)
+	new /obj/item/clothing/accessory/bos/sentinel(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/storage/box/ration/menu_four(src)
+	new /obj/item/storage/box/ration/menu_seven(src)
+
+/datum/gear/donator/kits/risingstarslash2
+	name = "Slime Cookie Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash2
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
+	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
+
 // S
 
 /datum/gear/donator/kits/sloaff
