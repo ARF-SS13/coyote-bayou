@@ -131,6 +131,23 @@
 	new /obj/item/bedsheet/cult(src)
 
 // E
+
+/datum/gear/donator/kits/esperkin
+	name = "Alchemist's Kit"
+	path = /obj/item/storage/box/large/custom_kit/esperkin
+	ckeywhitelist = list("esperkin")
+
+/obj/item/storage/box/large/custom_kit/esperkin/PopulateContents()
+	new /obj/item/clothing/mask/gas/glass(src)
+	new /obj/item/melee/onehanded/knife/ritualdagger(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/smelling_salts(src)
+	new /obj/item/circuitboard/machine/chem_dispenser(src)
+
 // F
 
 /datum/gear/donator/kits/ferisramsay
