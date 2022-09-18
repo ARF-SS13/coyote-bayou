@@ -131,6 +131,23 @@
 	new /obj/item/bedsheet/cult(src)
 
 // E
+
+/datum/gear/donator/kits/esperkin
+	name = "Alchemist's Kit"
+	path = /obj/item/storage/box/large/custom_kit/esperkin
+	ckeywhitelist = list("esperkin")
+
+/obj/item/storage/box/large/custom_kit/esperkin/PopulateContents()
+	new /obj/item/clothing/mask/gas/glass(src)
+	new /obj/item/melee/onehanded/knife/ritualdagger(src)
+	new /obj/item/weldingtool/largetank(src)
+	new /obj/item/clothing/glasses/welding(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/smelling_salts(src)
+	new /obj/item/circuitboard/machine/chem_dispenser(src)
+
 // F
 
 /datum/gear/donator/kits/ferisramsay
@@ -139,6 +156,15 @@
 	ckeywhitelist = list("ferisramsay")
 
 /obj/item/storage/box/large/custom_kit/ferisramsay/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/ferisramsay2
+	name = "Rhetta's Kit"
+	path = /obj/item/storage/box/large/custom_kit/ferisramsay2
+	ckeywhitelist = list("ferisramsay")
+
+/obj/item/storage/box/large/custom_kit/ferisramsay2/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
