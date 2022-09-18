@@ -797,6 +797,15 @@
 		if(can_hit_target(L, permutated, (AM == original)))
 			Bump(AM)
 
+/obj/item/projectile/Move(atom/newloc, dir = NONE)
+	. = ..()
+	if(.)
+		if(temporary_unstoppable_movement)
+			temporary_unstoppable_movement = FALSE
+			DISABLE_BITFIELD(movement_type, UNSTOPPABLE)
+		if(fired && can_hit_target(original, permutated, TRUE))
+			Bump(original)
+
 /obj/item/projectile/Destroy()
 	STOP_PROCESSING(SSprojectiles, src)
 	if(hitscan)
