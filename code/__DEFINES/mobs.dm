@@ -349,3 +349,66 @@
 // / Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY		/datum/breathing_class/oxygen
 #define BREATH_PLASMA	/datum/breathing_class/plasma
+
+/// Mob variation defines
+/// Varied mob name
+#define MOB_VARIED_NAME_LIST "varied_names"
+/// Varied name
+#define MOB_NAME_LIST(x) MOB_VARIED_NAME_LIST = list(x)
+
+/// Use either the above or this one, not both!!! (this one takes priority if you do tho)
+/// Varied mob name, using global name lists!
+#define MOB_VARIED_NAME_GLOBAL_LIST "varied_global_names"
+/// Varied name, with global shit
+#define MOB_NAME_FROM_GLOBAL_LIST(x) MOB_VARIED_NAME_GLOBAL_LIST = list(x)
+
+/// Random name special keys
+#define MOB_NAME_RANDOM_MALE "some_male_name"
+#define MOB_NAME_RANDOM_FEMALE "some_female_name"
+#define MOB_NAME_RANDOM_LIZARD_MALE "some_male_liz_name"
+#define MOB_NAME_RANDOM_LIZARD_FEMALE "some_female_liz_name"
+#define MOB_NAME_RANDOM_PLASMAMAN "some_plasmeme_name"
+#define MOB_NAME_RANDOM_ETHERIAL "some_etherial_name"
+#define MOB_NAME_RANDOM_MOTH "some_moff_name"
+#define MOB_NAME_RANDOM_ALL_OF_THEM "please_dont_use_this"
+/// use this for random pool names, please. Multiples are usable!
+#define MOB_RANDOM_NAME(key, count) key = count
+
+/// Varied mob color holder
+#define MOB_VARIED_COLOR "varied_color"
+/// Varied mob color min
+#define MOB_VARIED_COLOR_MIN "colored_min"
+/// Varied mob color max
+#define MOB_VARIED_COLOR_MAX "colored_max"
+/// Varied mob color value setter upper - first 3 numbers are the LOWEST R, G, B values, second 3 numbers are the HIGHEST R, G, B values
+#define MOB_COLOR_VARIATION(R1, G1, B1, R2, B2, G2) MOB_VARIED_COLOR = list(MOB_VARIED_COLOR_MIN = list(R1 ? R1 : 255, G1 ? G1 : 255, B1 ? B1 : 255), MOB_VARIED_COLOR_MAX = list(R2 ? R2 : 255, G2 ? G2 : 255, B2 ? B2 : 255))
+
+/// Varied view range define
+#define MOB_VARIED_VIEW_RANGE "varied_view_range"
+/// Varied view ranges
+#define MOB_VIEW_RANGE_LIST(x) MOB_VARIED_VIEW_RANGE = list(x)
+
+/// Varied aggro range define
+#define MOB_VARIED_AGGRO_RANGE "varied_aggro_range"
+/// Varied aggro ranges
+#define MOB_AGGRO_RANGE_LIST(x) MOB_VARIED_AGGRO_RANGE = list(x)
+
+/// Varied speed define
+#define MOB_VARIED_SPEED "varied_speed"
+/// Varied speed list
+#define MOB_SPEED_LIST(x) MOB_VARIED_SPEED = list(x)
+
+/// Varied health define
+#define MOB_VARIED_HEALTH "varied_health"
+/// Varied health list
+#define MOB_HEALTH_LIST(x) MOB_VARIED_HEALTH = list(x)
+
+/// Varied retreat define
+#define MOB_RETREAT_DISTANCE "varied_retreat_distance"
+/// Varied retreat list
+#define MOB_RETREAT_DISTANCE_LIST(x) MOB_RETREAT_DISTANCE = list(x)
+
+/// Varied minimum define
+#define MOB_MINIMUM_DISTANCE "varied_minimum_distance"
+/// Varied minimum list
+#define MOB_MINIMUM_DISTANCE_LIST(x) MOB_MINIMUM_DISTANCE = list(x)
