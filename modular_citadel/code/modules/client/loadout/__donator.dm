@@ -366,6 +366,17 @@
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
 
+/datum/gear/donator/kits/truedark3
+	name = "Junker's Kit"
+	path = /obj/item/storage/box/large/custom_kit/truedark3
+	ckeywhitelist = list("truedark")
+
+/obj/item/storage/box/large/custom_kit/truedark3/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/leather/rig(src)
+	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
+	new /obj/item/ammo_box/a556(src)
+	new /obj/item/toy/plush/lampplushie(src)
+
 // U
 // V
 // W
