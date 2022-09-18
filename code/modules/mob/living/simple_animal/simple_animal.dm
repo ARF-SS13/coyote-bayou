@@ -238,38 +238,40 @@
 
 /mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
-	if(speak_chance)
-		if(prob(speak_chance) || override)
-			if(speak && speak.len)
-				if((emote_hear && emote_hear.len) || (emote_see && emote_see.len))
-					var/length = speak.len
-					if(emote_hear && emote_hear.len)
-						length += emote_hear.len
-					if(emote_see && emote_see.len)
-						length += emote_see.len
-					var/randomValue = rand(1,length)
-					if(randomValue <= speak.len)
-						say(pick(speak), forced = "poly")
-					else
-						randomValue -= speak.len
-						if(emote_see && randomValue <= emote_see.len)
-							emote("me [pick(emote_see)]", 1)
-						else
-							emote("me [pick(emote_hear)]", 2)
-				else
-					say(pick(speak), forced = "poly")
+	if(!speak_chance)
+		return
+	if(!prob(speak_chance) && !override)
+		return
+	if(speak && speak.len)
+		if((emote_hear && emote_hear.len) || (emote_see && emote_see.len))
+			var/length = speak.len
+			if(emote_hear && emote_hear.len)
+				length += emote_hear.len
+			if(emote_see && emote_see.len)
+				length += emote_see.len
+			var/randomValue = rand(1,length)
+			if(randomValue <= speak.len)
+				say(pick(speak), forced = "poly")
 			else
-				if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					emote("me", EMOTE_VISIBLE, pick(emote_see))
-				if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
-					emote("me", EMOTE_AUDIBLE, pick(emote_hear))
-				if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					var/length = emote_hear.len + emote_see.len
-					var/pick = rand(1,length)
-					if(pick <= emote_see.len)
-						emote("me", EMOTE_VISIBLE, pick(emote_see))
-					else
-						emote("me", EMOTE_AUDIBLE, pick(emote_hear))
+				randomValue -= speak.len
+				if(emote_see && randomValue <= emote_see.len)
+					emote("me [pick(emote_see)]", 1)
+				else
+					emote("me [pick(emote_hear)]", 2)
+		else
+			say(pick(speak), forced = "poly")
+	else
+		if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
+			emote("me", EMOTE_VISIBLE, pick(emote_see))
+		if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
+			emote("me", EMOTE_AUDIBLE, pick(emote_hear))
+		if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
+			var/length = emote_hear.len + emote_see.len
+			var/pick = rand(1,length)
+			if(pick <= emote_see.len)
+				emote("me", EMOTE_VISIBLE, pick(emote_see))
+			else
+				emote("me", EMOTE_AUDIBLE, pick(emote_hear))
 
 
 /mob/living/simple_animal/proc/environment_is_safe(datum/gas_mixture/environment, check_temp = FALSE)
@@ -700,7 +702,7 @@
 	var/our_new_name = ""
 	var/number_of_name_tokens_left = LAZYLEN(variation_list[MOB_VARIED_NAME_GLOBAL_LIST])
 	for(var/name_token in our_mob_random_name_list)
-		for(var/num_names in 1 to LAZYLEN(our_mob_random_name_list[name_token]) ? our_mob_random_name_list[name_token] : 1)
+		for(var/num_names in 1 to our_mob_random_name_list[name_token])
 			switch(name_token)
 				if(MOB_NAME_RANDOM_MALE)
 					our_new_name += capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
@@ -761,9 +763,8 @@
 		return list(num_1, num_2)
 	return list(num_2, num_1)
 
-
 /mob/living/simple_animal/proc/get_random_random_name()
-	switch(rand(1,27))
+	switch(rand(1,26))
 		if(1)
 			return pick(GLOB.ai_names)
 		if(2)
@@ -816,7 +817,3 @@
 			return pick(GLOB.adverbs)
 		if(26)
 			return pick(GLOB.adjectives)
-		if(27)
-			return pick(GLOB.dream_strings)
-
-

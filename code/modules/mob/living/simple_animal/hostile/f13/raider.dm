@@ -30,19 +30,14 @@
 	rapid_melee = 3
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot 
-	// m2d 3 = standard, less is fast, more is slower.
-
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	//how far they pull back
-	
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
-	// how close you can get before they try to pull back
-
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
-	//tiles within they start attacking
-
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
-	//tiles within they start making noise
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
+		))
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -99,23 +94,19 @@
 	rapid_melee = 3
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot 
-	// m2d 3 = standard, less is fast, more is slower.
-
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
-	//how far they pull back
-	
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
-	// how close you can get before they try to pull back
-
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
-	//tiles within they start attacking
-
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
-	//tiles within they start making noise
 	projectiletype = /obj/item/projectile/bullet/c9mm/op
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_FEMALE, 1)\
+		))
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
@@ -158,19 +149,10 @@
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/item/clothing/suit/armor/medium/combat/mk2/raider, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	move_to_delay = 4.0 //faster than average, but not a lot 
-	// m2d 3 = standard, less is fast, more is slower.
-
 	retreat_distance = 2 //mob retreats 1 tile when in min distance
-	//how far they pull back
-	
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
-	// how close you can get before they try to pull back
-
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
-	//tiles within they start attacking
-
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
-	//tiles within they start making noise
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
 	..()
@@ -178,23 +160,33 @@
 	say("KILL 'EM, FELLAS!")
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
-	name = "Mango Mathew"
+	name = "Mango Mathew and his Merry Meth Madlads"
 	icon_state = "mango_matt"
 	icon_living = "mango_matt"
 	icon_dead = "mango_matt_dead"
 	maxHealth = 137
 	health = 136
 	extra_projectiles = 2
-	speak_emote = list("growls", "murrs", "purrs", "mrowls", "yowls", "prowls")
-	emote_see = list("laughs", "nyas", "")
+	speak_emote = list(
+		"growls",
+		"murrs",
+		"purrs",
+		"mrowls",
+		"yowls",
+		"prowls"
+		)
+	emote_see = list(
+		"laughs",
+		"nyas",
+		""
+		)
 	attack_verb_simple = list("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps", "beats their greasegun against the face of")
+	variation_list = list() // so he keeps his stupid name
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt/Aggro()
 	..()
 	summon_backup(15)
 	say(pick("*nya", "*mrowl", "*lynx", "*cougar", "*growl", "*come", "Fuck em' up!"))
-
-
 
 // RANGED RAIDER WITH ARMOR
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
