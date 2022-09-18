@@ -21,13 +21,29 @@
 	taunt_chance = 30
 	speed = 1
 	maxHealth = 35
-	health = 35
+	health = list("30", "35", "40", "45")
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 5
 	melee_damage_upper = 15
-	attack_verb_simple = "claws"
-	speak_emote = list("hisses")
+	move_to_delay = list("1.5", "1.8", "2.0", "2.2", "2.6", "3.0", "3.3", "3.7")
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = list("0", "1", "3", "5", "7", "9")
+	//how far they pull back
+	
+	minimum_distance = list("0", "2", "4", "6")
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
+	speak_emote = list("squeaks", "cackles", "snickers", "shriek", "scream", "skrem", "scrambles", "warbles", "chirps", "cries", "kyaas", "chortles", "gecks")
+	emote_see = list("screeches", "licks its eyes", "twitches", "scratches its frills", "gonks", "honks", "scronks", "sniffs", "gecks")
+	attack_verb_simple = list ("bites", "claws", "tears at", "dabs", "scratches", "gnaws", "chews", "chomps", "lunges", "gecks")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("gecko")
 	a_intent = INTENT_HARM
@@ -70,6 +86,21 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+		move_to_delay = 2
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 8
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
 	butcher_difficulty = 3
@@ -79,12 +110,12 @@
 	emote_taunt = list("growls")
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 128
-	health = 128
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 8
-	melee_damage_upper = 20
+	melee_damage_lower = 6
+	melee_damage_upper = 15
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
 	speak_emote = list("growls")
@@ -111,7 +142,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -137,8 +168,8 @@
 	response_harm_simple = "kicks"
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 80
-	health = 80
+	maxHealth = 50
+	health = 50
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5

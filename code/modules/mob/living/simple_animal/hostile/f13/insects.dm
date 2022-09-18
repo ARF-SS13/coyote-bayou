@@ -15,6 +15,24 @@
 	icon_gib = "GiantAnt_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
+	move_to_delay = 3
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 4 //due to ants poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 5
+	//tiles within they start making noise, does count the mobs tile
+
+	speak_emote = list("clacks", "chitters", "snips", "snaps")
+	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
+	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
@@ -191,6 +209,21 @@
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 
+	move_to_delay = 3
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 4 //due to scorpions poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 5
+	//tiles within they start making noise, does count the mobs tile
+
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
@@ -278,6 +311,23 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	
+	move_to_delay = 2.0
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 3
+	//how far they pull back
+	
+	minimum_distance = 1
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7 //due to scorpions poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+	rapid_melee = 2
+
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
@@ -292,12 +342,12 @@
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = -0.5
-	maxHealth = 32
-	health = 32
+	maxHealth = 24
+	health = 24
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 5
+	melee_damage_upper = 12
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")

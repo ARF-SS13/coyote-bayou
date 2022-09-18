@@ -17,7 +17,6 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	move_to_delay = 5
 	robust_searching = TRUE
 	maxHealth = 120
 	health = 120
@@ -26,13 +25,26 @@
 	healable = FALSE
 	faction = list("wastebot")
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
+	move_to_delay = 5.0
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 2
+	//how far they pull back
+	
+	minimum_distance = 5
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
 	emote_hear = list("Beeps.")
 	speak = list("Stop Right There Criminal.")
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	minimum_distance = 1
-	retreat_distance = 4
 	extra_projectiles = 2
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
 	ranged_ignores_vision = TRUE
@@ -40,8 +52,6 @@
 	attack_sound = "punch"
 	a_intent = "harm"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	vision_range = 17
-	aggro_vision_range = 15
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	emote_taunt = list("readies its arm gun")
@@ -51,7 +61,6 @@
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
-	aggro_vision_range = 15
 	faction = list("raider")
 	obj_damage = 300
 	retreat_distance = 0 //perish, mortal
@@ -117,8 +126,8 @@
 	del_on_death = FALSE
 	melee_damage_lower = 28
 	melee_damage_upper = 65
-	extra_projectiles = 4 //5 projectiles
-	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
+	extra_projectiles = 2 //5 projectiles
+	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 2
 	minimum_distance = 2
 	attack_verb_simple = "pulverizes"
@@ -168,7 +177,6 @@
 //Raider friendly Sentry bot
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb
 	name = "sentry bot"
-	aggro_vision_range = 15
 	obj_damage = 300
 
 //Raider friendly Sentry bot with non-lethals

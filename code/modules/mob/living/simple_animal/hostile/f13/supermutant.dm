@@ -28,6 +28,10 @@
 	faction = list("hostile", "supermutant")
 	melee_damage_lower = 25
 	melee_damage_upper = 45
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
 	mob_size = MOB_SIZE_LARGE
 	move_resist = MOVE_FORCE_OVERPOWERING
 	attack_verb_simple = "smashes"

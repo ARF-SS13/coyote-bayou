@@ -24,8 +24,7 @@
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
-	//Fenny Block of Fucking With These Assholes Code Start//
-	move_to_delay = 4.3 //slower than average, but not a lot.
+	move_to_delay = 6 //slower than average, but not a lot.  //Needs to be slower than a protectron
 	// m2d 4 = standard, less is fast, more is slower.
 
 	retreat_distance = 0 // Mob doesn't retreat
@@ -39,8 +38,6 @@
 
 	vision_range = 7 //will start attacking within player sight, but like aggro gives wiggle room.  So they just don't see players outside of 7 tiles and start screeching.
 	//tiles within they start making noise
-
-	//                  Fenny Block End                   //
 	turns_per_move = 5
 	speak_emote = list("growls")
 	emote_see = list("screeches", "screams", "howls", "bellows", "flails", "fidgets", "festers")

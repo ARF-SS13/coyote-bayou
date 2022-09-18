@@ -13,17 +13,19 @@
 	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
+	move_to_delay = 2.5
 	turns_per_move = 5
-	speak_emote = list("growls")
-	emote_see = list("screeches")
+	speak_emote = list("growls", "murrs", "barks", "gurgles", "screeches", "hisses", "uwu's", "awoos", "borks", "pants", "wiggles its eyebrows", "churrs", "purrs", "trills", "waggles")
+	emote_see = list("wags its tail", "looks hungry", "sniffs the air", "growls", "foams at the mouth", "loses its shit", "busts it down", "goes full tilt")
 	a_intent = INTENT_HARM
 	maxHealth = 48
 	health = 48
 	speed = 3
+	rapid_melee = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 5
-	melee_damage_upper = 15
-	attack_verb_simple = "claw"
+	melee_damage_lower = 7
+	melee_damage_upper = 13
+	attack_verb_simple = list ("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps")
 	attack_sound = 'sound/hallucinations/growl1.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
