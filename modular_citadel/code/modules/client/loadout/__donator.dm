@@ -156,6 +156,15 @@
 	ckeywhitelist = list("ferisramsay")
 
 /obj/item/storage/box/large/custom_kit/ferisramsay/PopulateContents()
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/datum/gear/donator/kits/ferisramsay2
+	name = "Rhetta's Kit"
+	path = /obj/item/storage/box/large/custom_kit/ferisramsay2
+	ckeywhitelist = list("ferisramsay")
+
+/obj/item/storage/box/large/custom_kit/ferisramsay2/PopulateContents()
 	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
