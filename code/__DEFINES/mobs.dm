@@ -395,8 +395,12 @@
 
 /// Varied speed define
 #define MOB_VARIED_SPEED "varied_speed"
+/// Varied speed chance define
+#define MOB_VARIED_SPEED_CHANCE "varied_speed_chance"
 /// Varied speed list
 #define MOB_SPEED_LIST(x...) MOB_VARIED_SPEED = list(x)
+/// Varied speed list chance
+#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED = x
 
 /// Varied health define
 #define MOB_VARIED_HEALTH "varied_health"
@@ -405,10 +409,18 @@
 
 /// Varied retreat define
 #define MOB_RETREAT_DISTANCE "varied_retreat_distance"
+/// Varied retreat define chance
+#define MOB_RETREAT_DISTANCE_CHANCE "varied_retreat_distance_chance"
 /// Varied retreat list
 #define MOB_RETREAT_DISTANCE_LIST(x...) MOB_RETREAT_DISTANCE = list(x)
+/// Varied retreat list chance
+#define MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_RETREAT_DISTANCE_CHANCE = x
 
 /// Varied minimum define
 #define MOB_MINIMUM_DISTANCE "varied_minimum_distance"
+/// Varied minimum define chance
+#define MOB_MINIMUM_DISTANCE_CHANCE "varied_minimum_distance_chance"
 /// Varied minimum list
 #define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_MINIMUM_DISTANCE = list(x)
+/// Varied minimum list chance
+#define MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_MINIMUM_DISTANCE_CHANCE = x

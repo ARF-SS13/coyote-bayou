@@ -349,6 +349,9 @@
 				Goto(target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
 		else
 			Goto(target,move_to_delay,minimum_distance)
+		/// roll to randomize this thing... if its an option
+		if(variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
+			retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 		if(target)
 			if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from)) //If they're next to us, attack
 				MeleeAction()
@@ -379,6 +382,10 @@
 		approaching_target = FALSE
 	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 	walk_to(src, target, minimum_distance, delay)
+	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
+		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

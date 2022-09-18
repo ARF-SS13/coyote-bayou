@@ -722,6 +722,8 @@
 				our_new_name += " "
 		if(number_of_name_tokens_left-- > 0)
 			our_new_name += " "
+	if(our_new_name != "")
+		name = our_new_name
 
 /mob/living/simple_animal/proc/vary_mob_name_from_local_list()
 	name = pick(variation_list[MOB_VARIED_NAME_LIST])
