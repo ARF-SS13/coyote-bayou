@@ -14,10 +14,10 @@
 	icon_dead = "raider_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
-	maxHealth = 112
-	health = 112
-	melee_damage_lower = 20
-	melee_damage_upper = 47
+	maxHealth = 80
+	health = 80
+	melee_damage_lower = 8
+	melee_damage_upper = 18
 	attack_verb_simple = "clobbers"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
@@ -27,6 +27,17 @@
 	del_on_death = FALSE
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 3
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot 
+	retreat_distance = 1 //mob retreats 1 tile when in min distance
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 1)\
+		))
 
 /obj/effect/mob_spawn/human/corpse/raider
 	name = "Raider"
@@ -39,7 +50,7 @@
 /mob/living/simple_animal/hostile/raider/Aggro()
 	..()
 	summon_backup(15)
-	say(pick("*insult", "HURRY, HURRY, HURRY!!", "Back off!!" , "Keep moving!!", "Times up, asshole!!", "Call a doctor, we got a bleeder!!", "Just stand still and die!!" ))
+	say(pick("*insult", "Fuck off!!", "Back off!!" , "Keep moving!!", "Get lost, asshole!!", "Call a doctor, we got a bleeder!!", "Fuck around and find out!!" ))
 
 // THIEF RAIDER - nabs stuff and runs
 /mob/living/simple_animal/hostile/raider/thief
@@ -80,12 +91,22 @@
 	ranged = TRUE
 	maxHealth = 115
 	health = 115
-	retreat_distance = 4
-	minimum_distance = 6
+	rapid_melee = 3
+	melee_queue_distance = 5
+	move_to_delay = 2.8 //faster than average, but not a lot 
+	retreat_distance = 1 //mob retreats 1 tile when in min distance
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 	projectiletype = /obj/item/projectile/bullet/c9mm/op
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_FEMALE, 1)\
+		))
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
@@ -96,7 +117,6 @@
 	health = 450
 	speed = 1.2
 	obj_damage = 300
-	aggro_vision_range = 15
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -112,7 +132,6 @@
 	projectiletype = /obj/item/projectile/bullet/m44
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
-	aggro_vision_range = 15
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -125,15 +144,49 @@
 	icon_dead = "raiderboss_dead"
 	maxHealth = 137
 	health = 136
-	extra_projectiles = 3
+	extra_projectiles = 2
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/item/clothing/suit/armor/medium/combat/mk2/raider, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	move_to_delay = 4.0 //faster than average, but not a lot 
+	retreat_distance = 2 //mob retreats 1 tile when in min distance
+	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
+	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
+	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
 	..()
 	summon_backup(15)
 	say("KILL 'EM, FELLAS!")
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
+	name = "Mango Mathew and his Merry Meth Madlads"
+	icon_state = "mango_matt"
+	icon_living = "mango_matt"
+	icon_dead = "mango_matt_dead"
+	maxHealth = 137
+	health = 136
+	extra_projectiles = 2
+	speak_emote = list(
+		"growls",
+		"murrs",
+		"purrs",
+		"mrowls",
+		"yowls",
+		"prowls"
+		)
+	emote_see = list(
+		"laughs",
+		"nyas",
+		""
+		)
+	attack_verb_simple = list("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps", "beats their greasegun against the face of")
+	variation_list = list() // so he keeps his stupid name
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt/Aggro()
+	..()
+	summon_backup(15)
+	say(pick("*nya", "*mrowl", "*lynx", "*cougar", "*growl", "*come", "Fuck em' up!"))
 
 // RANGED RAIDER WITH ARMOR
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged

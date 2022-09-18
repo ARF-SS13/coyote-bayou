@@ -22,7 +22,8 @@
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
-	var/move_to_delay = 3 //delay for the automated movement.
+	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
+	var/move_to_delay = 3
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
@@ -37,8 +38,10 @@
 	var/ranged_cooldown_time = 30 //How long, in deciseconds, the cooldown of ranged attacks is
 	var/ranged_ignores_vision = FALSE //if it'll fire ranged attacks even if it lacks vision on its target, only works with environment smash
 	var/check_friendly_fire = 0 // Should the ranged mob check for friendlies when shooting
-	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
-	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
+	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
+	var/retreat_distance = null
+	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
+	var/minimum_distance = 1
 
 	var/decompose = TRUE //Does this mob decompose over time when dead?
 
@@ -75,7 +78,6 @@
 	wanted_objects = typecacheof(wanted_objects)
 	if((auto_fire_delay * extra_projectiles) < ranged_cooldown_time)
 		ranged_cooldown_time = (auto_fire_delay * (extra_projectiles + 1))
-
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
@@ -347,6 +349,9 @@
 				Goto(target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
 		else
 			Goto(target,move_to_delay,minimum_distance)
+		/// roll to randomize this thing... if its an option
+		if(variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
+			retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 		if(target)
 			if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from)) //If they're next to us, attack
 				MeleeAction()
@@ -377,6 +382,10 @@
 		approaching_target = FALSE
 	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 	walk_to(src, target, minimum_distance, delay)
+	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
+		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -653,3 +662,17 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	target = new_target
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+
+/mob/living/simple_animal/hostile/setup_variations()
+	if(!..())
+		return
+	if(LAZYLEN(variation_list[MOB_VARIED_VIEW_RANGE]))
+		vision_range = vary_from_list(variation_list[MOB_VARIED_VIEW_RANGE])
+	if(LAZYLEN(variation_list[MOB_VARIED_AGGRO_RANGE]))
+		aggro_vision_range = vary_from_list(variation_list[MOB_VARIED_AGGRO_RANGE])
+	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+	if(LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]))
+		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
+	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
+		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])

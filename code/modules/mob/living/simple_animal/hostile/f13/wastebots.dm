@@ -213,19 +213,31 @@
 	extra_projectiles = 0 //removed extra projectiles to make these easier to deal with on super lowpop
 	stat_attack = CONSCIOUS
 	ranged = TRUE
-	retreat_distance = 2
-	minimum_distance = 2
-	attack_verb_simple = "slaps"
+	move_to_delay = 9 //WAY slower than average, 
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0 // Mob doesn't retreat
+	//how far they pull back
+	
+	minimum_distance = 1
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+	
+	attack_verb_simple = list("baps", "bops", "boops", "smacks", "clamps", "pinches", "thumps", "fistos")
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
 	faction = list("wastebot")
 	check_friendly_fire = TRUE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five)
-
+	attack_phrase = list("Howdy pardner!", "Shoot out at the O.K. Corral!", "Go back to Oklahoma!", "Please assume the position.", "Protect and serve.", "Antisocial behavior detected.", "Criminal behavior willbe punished.", "Please step into the open and identify yourself, law abiding citizens have nothing to fear.")
 	emote_taunt_sound = list('sound/f13npc/protectron/taunt1.ogg', 'sound/f13npc/protectron/taunt2.ogg', 'sound/f13npc/protectron/taunt3.ogg')
-	emote_taunt = list("raises a laser")
-
+	emote_taunt = list("raises its arm laser", "gets ready to rumble", "assumes the position", "whirls up its servos", "takes aim", "holds its ground")
 	aggrosound = list('sound/f13npc/protectron/aggro1.ogg', 'sound/f13npc/protectron/aggro2.ogg', 'sound/f13npc/protectron/aggro3.ogg', 'sound/f13npc/protectron/aggro4.ogg')
 	idlesound = list('sound/f13npc/protectron/idle1.ogg', 'sound/f13npc/protectron/idle2.ogg', 'sound/f13npc/protectron/idle3.ogg', 'sound/f13npc/protectron/idle4.ogg',)
 

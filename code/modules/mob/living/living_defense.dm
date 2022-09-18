@@ -331,10 +331,14 @@
 	if(!M.CheckActionCooldown(CLICK_CD_MELEE))
 		return
 	M.DelayNextAction()
+	var/list/attack_phrases = list(
+		"continuous" = islist(M.attack_verb_continuous) ? pick(M.attack_verb_continuous) : M.attack_verb_continuous,
+		"simple" = islist(M.attack_verb_simple) ? pick(M.attack_verb_simple) : M.attack_verb_simple
+	)
 	if(M.melee_damage_upper == 0)
-		M.visible_message(span_notice("\The [M] [M.friendly_verb_continuous] [src]!"),
-			span_notice("You [M.friendly_verb_simple] [src]!"), target = src,
-			target_message = span_notice("\The [M] [M.friendly_verb_continuous] you!"))
+		M.visible_message(span_notice("\The [M] [attack_phrases["continuous"]] [src]!"),
+			span_notice("You [attack_phrases["simple"]] [src]!"), target = src,
+			target_message = span_notice("\The [M] [attack_phrases["continuous"]] you!"))
 		return 0
 	else
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
@@ -348,9 +352,9 @@
 		if(M.attack_sound)
 			playsound(src, M.attack_sound, 50, 1, 1)
 		M.do_attack_animation(src)
-		visible_message(span_danger("\The [M] [M.attack_verb_continuous] [src]!"), \
-						span_userdanger("\The [M] [M.attack_verb_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null,
-						M, span_danger("You [M.attack_verb_simple] [src]!"))
+		visible_message(span_danger("\The [M] [attack_phrases["continuous"]] [src]!"), \
+						span_userdanger("\The [M] [attack_phrases["continuous"]] you!"), null, COMBAT_MESSAGE_RANGE, null,
+						M, span_danger("You [attack_phrases["simple"]] [src]!"))
 		log_combat(M, src, "attacked")
 		return damage
 
