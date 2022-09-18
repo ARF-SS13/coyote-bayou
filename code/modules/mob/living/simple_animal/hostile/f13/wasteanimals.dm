@@ -46,7 +46,8 @@
 		"cries",
 		"kyaas",
 		"chortles",
-		"gecks")
+		"gecks"
+		)
 	emote_see = list(
 		"screeches",
 		"licks its eyes",
@@ -56,7 +57,8 @@
 		"honks",
 		"scronks",
 		"sniffs",
-		"gecks")
+		"gecks"
+		)
 	attack_verb_simple = list(
 		"bites",
 		"claws",
@@ -67,7 +69,8 @@
 		"chews",
 		"chomps",
 		"lunges",
-		"gecks")
+		"gecks"
+		)
 	atmos_requirements = list(
 		"min_oxy" = 5,
 		"max_oxy" = 0,
@@ -76,22 +79,27 @@
 		"min_co2" = 0,
 		"max_co2" = 5,
 		"min_n2" = 0,
-		"max_n2" = 0)
+		"max_n2" = 0
+		)
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 	emote_taunt = list("screeches")
-	emote_taunt_sound = list('sound/f13npc/gecko/gecko_charge1.ogg', 'sound/f13npc/gecko/gecko_charge2.ogg', 'sound/f13npc/gecko/gecko_charge3.ogg',)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg', )
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 
 	variation_list = list(
-		MOB_NAME_FROM_GLOBAL_LIST(
-			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),
-			MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1),
-			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 5)
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 5)\
 		),
 		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
@@ -115,10 +123,6 @@
 	melee_damage_upper = 45
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-/mob/living/simple_animal/hostile/gecko/Initialize()
-	. = ..()
-	
-
 //////////////////////////
 // NIGHTSTALKERS & PELT //
 //////////////////////////
@@ -134,7 +138,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-		move_to_delay = 2
+	move_to_delay = 2
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 8

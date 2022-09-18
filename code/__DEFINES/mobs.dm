@@ -354,13 +354,13 @@
 /// Varied mob name
 #define MOB_VARIED_NAME_LIST "varied_names"
 /// Varied name
-#define MOB_NAME_LIST(x) MOB_VARIED_NAME_LIST = list(x)
+#define MOB_NAME_LIST(x...) MOB_VARIED_NAME_LIST = list(x)
 
 /// Use either the above or this one, not both!!! (this one takes priority if you do tho)
 /// Varied mob name, using global name lists!
 #define MOB_VARIED_NAME_GLOBAL_LIST "varied_global_names"
 /// Varied name, with global shit
-#define MOB_NAME_FROM_GLOBAL_LIST(x) MOB_VARIED_NAME_GLOBAL_LIST = list(x)
+#define MOB_NAME_FROM_GLOBAL_LIST(x...) MOB_VARIED_NAME_GLOBAL_LIST = list(x)
 
 /// Random name special keys
 #define MOB_NAME_RANDOM_MALE "some_male_name"
@@ -386,29 +386,29 @@
 /// Varied view range define
 #define MOB_VARIED_VIEW_RANGE "varied_view_range"
 /// Varied view ranges
-#define MOB_VIEW_RANGE_LIST(x) MOB_VARIED_VIEW_RANGE = list(x)
+#define MOB_VIEW_RANGE_LIST(x...) MOB_VARIED_VIEW_RANGE = list(x)
 
 /// Varied aggro range define
 #define MOB_VARIED_AGGRO_RANGE "varied_aggro_range"
 /// Varied aggro ranges
-#define MOB_AGGRO_RANGE_LIST(x) MOB_VARIED_AGGRO_RANGE = list(x)
+#define MOB_AGGRO_RANGE_LIST(x...) MOB_VARIED_AGGRO_RANGE = list(x)
 
 /// Varied speed define
 #define MOB_VARIED_SPEED "varied_speed"
 /// Varied speed list
-#define MOB_SPEED_LIST(x) MOB_VARIED_SPEED = list(x)
+#define MOB_SPEED_LIST(x...) MOB_VARIED_SPEED = list(x)
 
 /// Varied health define
 #define MOB_VARIED_HEALTH "varied_health"
 /// Varied health list
-#define MOB_HEALTH_LIST(x) MOB_VARIED_HEALTH = list(x)
+#define MOB_HEALTH_LIST(x...) MOB_VARIED_HEALTH = list(x)
 
 /// Varied retreat define
 #define MOB_RETREAT_DISTANCE "varied_retreat_distance"
 /// Varied retreat list
-#define MOB_RETREAT_DISTANCE_LIST(x) MOB_RETREAT_DISTANCE = list(x)
+#define MOB_RETREAT_DISTANCE_LIST(x...) MOB_RETREAT_DISTANCE = list(x)
 
 /// Varied minimum define
 #define MOB_MINIMUM_DISTANCE "varied_minimum_distance"
 /// Varied minimum list
-#define MOB_MINIMUM_DISTANCE_LIST(x) MOB_MINIMUM_DISTANCE = list(x)
+#define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_MINIMUM_DISTANCE = list(x)

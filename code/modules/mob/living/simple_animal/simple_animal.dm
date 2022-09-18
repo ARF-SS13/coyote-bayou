@@ -683,7 +683,17 @@
 		vary_mob_name_from_local_list()
 	if(LAZYLEN(variation_list[MOB_VARIED_COLOR]))
 		vary_mob_color()
+	if(LAZYLEN(variation_list[MOB_VARIED_HEALTH]))
+		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
+		maxHealth = our_health
+		health = our_health
 	return TRUE
+
+/mob/living/simple_animal/proc/vary_from_list(which_list)
+	if(isnum(which_list))
+		return which_list
+	if(islist(which_list))
+		return(pick(which_list))
 
 /mob/living/simple_animal/proc/vary_mob_name_from_global_lists()
 	var/list/our_mob_random_name_list = variation_list[MOB_VARIED_NAME_GLOBAL_LIST]
@@ -713,7 +723,7 @@
 		if(number_of_name_tokens_left-- > 0)
 			our_new_name += " "
 
-/mob/living/simple_animal/proc/vary_mob_name_from_global_lists()
+/mob/living/simple_animal/proc/vary_mob_name_from_local_list()
 	name = pick(variation_list[MOB_VARIED_NAME_LIST])
 
 /mob/living/simple_animal/proc/vary_mob_color()

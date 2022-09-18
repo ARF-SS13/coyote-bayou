@@ -665,17 +665,7 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		aggro_vision_range = vary_from_list(variation_list[MOB_VARIED_AGGRO_RANGE])
 	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
 		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
-	if(LAZYLEN(variation_list[MOB_VARIED_HEALTH]))
-		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
-		maxhealth = our_health
-		health = our_health
 	if(LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]))
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
-
-/mob/living/simple_animal/hostile/proc/vary_from_list(which_list)
-	if(isnum(which_list))
-		return which_list
-	if(islist(which_list))
-		return(pick(which_list))

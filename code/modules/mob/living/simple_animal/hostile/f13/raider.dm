@@ -96,7 +96,7 @@
 	ranged = TRUE
 	maxHealth = 115
 	health = 115
-		rapid_melee = 3
+	rapid_melee = 3
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot 
 	// m2d 3 = standard, less is fast, more is slower.
@@ -157,7 +157,7 @@
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/item/clothing/suit/armor/medium/combat/mk2/raider, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
-		move_to_delay = 4.0 //faster than average, but not a lot 
+	move_to_delay = 4.0 //faster than average, but not a lot 
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 2 //mob retreats 1 tile when in min distance
@@ -186,8 +186,8 @@
 	health = 136
 	extra_projectiles = 2
 	speak_emote = list("growls", "murrs", "purrs", "mrowls", "yowls", "prowls")
-	emote_see = list("laughs", "nyas", ""
-	attack_verb_simple = list ("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps", "beats their greasegun against the face of")
+	emote_see = list("laughs", "nyas", "")
+	attack_verb_simple = list("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps", "beats their greasegun against the face of")
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt/Aggro()
 	..()
