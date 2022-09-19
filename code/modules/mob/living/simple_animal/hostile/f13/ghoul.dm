@@ -128,7 +128,7 @@
 	projectiletype = /obj/item/projectile/bullet/ghoul_rock
 	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
-	melee_damage_lower = 10
+	melee_damage_lower = 9
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT

@@ -144,8 +144,8 @@
 	icon_state = "turpentine"
 
 /obj/item/crafting/abraxo
-	name = "abraxo"
-	desc = "A pre-War cleaning agent produced by Abraxodyne Chemical."
+	name = "Abraxo"
+	desc = "A pre-War cleaning agent produced by Abraxodyne Chemical.<br>Its powdery flakes seem useful for dealing with toxic spills."
 	icon_state = "abraxo"
 
 /obj/item/circuitboard/machine/autolathe/ammo/improvised

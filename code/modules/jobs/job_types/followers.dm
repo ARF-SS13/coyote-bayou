@@ -110,16 +110,14 @@ Administrator
 	name =	"Surgical Specialist"
 	backpack_contents = list(
 		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
-		/obj/item/stack/medical/suture/medicated = 1,
-		/obj/item/stack/medical/gauze/adv = 1,
-		/obj/item/stack/medical/mesh/advanced = 1,
+		/obj/item/gun/medbeam,
 	)
 
 /datum/outfit/loadout/chemical_specialist
 	name =	"Chemical Specialist"
 	backpack_contents = list(
 		/obj/item/circuitboard/machine/chem_master/advanced = 1,
-		/obj/item/reagent_containers/glass/beaker/bluespace = 1,
+		/obj/item/storage/hypospraykit/cmo,
 	)
 
 /datum/outfit/loadout/research_specialist

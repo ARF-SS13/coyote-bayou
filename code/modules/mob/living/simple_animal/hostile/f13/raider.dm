@@ -16,8 +16,8 @@
 	turns_per_move = 5
 	maxHealth = 80
 	health = 80
-	melee_damage_lower = 8
-	melee_damage_upper = 18
+	melee_damage_lower = 5
+	melee_damage_upper = 14
 	attack_verb_simple = "clobbers"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	a_intent = INTENT_HARM
@@ -29,7 +29,7 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 2
 	melee_queue_distance = 5
-	move_to_delay = 2.8 //faster than average, but not a lot 
+	move_to_delay = 3.1
 	retreat_distance = 1 //mob retreats 1 tile when in min distance
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
