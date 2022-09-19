@@ -116,6 +116,20 @@
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 
 // C
+
+/datum/gear/donator/kits/caseapollo58143
+	name = "Missionary Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143
+	ckeywhitelist = list("caseapollo58143")
+
+/obj/item/storage/box/large/custom_kit/caseapollo58143/PopulateContents()
+	new /obj/item/nullrod/rosary(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/storage/belt/legholster(src)
+	new /obj/item/storage/book/bible(src)
+
 // D
 
 /datum/gear/donator/kits/dezuel
