@@ -507,7 +507,7 @@
 "bha" = (
 /obj/structure/chair/sofa/left,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "bhm" = (
 /turf/closed/indestructible/rock{
 	desc = "A pre-War wall made of solid concrete.";
@@ -712,7 +712,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "bNw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -858,7 +858,7 @@
 "cfo" = (
 /obj/structure/chair/sofa/right,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "chc" = (
 /obj/structure/closet,
 /obj/item/clothing/suit/radiation,
@@ -1547,7 +1547,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "eoY" = (
 /obj/machinery/vending/games,
 /turf/open/floor/f13/wood,
@@ -2604,7 +2604,7 @@
 	doc_title_1 = "Crime Report."
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "hEK" = (
 /obj/structure/barricade/wooden,
 /obj/structure/decoration/rag{
@@ -2646,11 +2646,9 @@
 	},
 /area/f13/building)
 "hKB" = (
-/obj/structure/chair/wood{
-	dir = 8
-	},
+/obj/structure/simple_door/room,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "hMq" = (
 /turf/closed/wall/f13/wood/house,
 /area/f13/building)
@@ -2731,6 +2729,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"iaT" = (
+/turf/closed/wall/f13/wood/interior,
+/area/f13/wasteland)
 "idL" = (
 /obj/machinery/autolathe/ammo/unlocked,
 /obj/item/book/granter/crafting_recipe/gunsmith_one,
@@ -3007,7 +3008,7 @@
 	color = "#845f58"
 	},
 /turf/closed/wall/f13/wood/house,
-/area/f13/building)
+/area/f13/wasteland)
 "iGi" = (
 /obj/structure/railing{
 	dir = 4
@@ -3102,6 +3103,10 @@
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"jbz" = (
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "jbP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -3684,7 +3689,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "kIJ" = (
 /obj/structure/chair/comfy/plywood{
 	dir = 1
@@ -4080,7 +4085,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "lPf" = (
 /obj/structure/barricade/bars,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -4206,7 +4211,7 @@
 	dir = 1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "mha" = (
 /obj/structure/table/booth,
 /obj/item/lighter{
@@ -5398,7 +5403,7 @@
 	color = "#845f58"
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "pHG" = (
 /obj/structure/table/optable,
 /obj/machinery/light{
@@ -5543,6 +5548,15 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"qiE" = (
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#d8b1b1"
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
+/area/f13/wasteland)
 "qiL" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5646,12 +5660,9 @@
 	},
 /area/f13/building/massfusion)
 "qEL" = (
-/obj/structure/railing{
-	color = "#A47449";
-	dir = 10
-	},
-/turf/open/transparent/openspace,
-/area/f13/building)
+/obj/structure/dresser,
+/turf/open/floor/f13/wood,
+/area/f13/wasteland)
 "qFA" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/structure/grille,
@@ -5771,7 +5782,7 @@
 "qWS" = (
 /obj/structure/bookshelf,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "qXi" = (
 /obj/structure/closet/crate/footlocker{
 	anchored = 1
@@ -5818,7 +5829,7 @@
 "rii" = (
 /obj/structure/closet/cabinet/anchored,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "rkG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -7069,7 +7080,7 @@
 "uHj" = (
 /obj/structure/chair/sofa,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "uJQ" = (
 /mob/living/simple_animal/hostile/raider/junker,
 /turf/open/indestructible/ground/outside/roof,
@@ -7183,7 +7194,7 @@
 /turf/open/floor/f13{
 	icon_state = "whitegreenrustychess"
 	},
-/area/f13/building)
+/area/f13/wasteland)
 "vdI" = (
 /obj/structure/bed/double,
 /obj/item/bedsheet/black{
@@ -7194,7 +7205,7 @@
 	pixel_x = -1
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "veV" = (
 /obj/machinery/light{
 	dir = 8
@@ -7880,9 +7891,9 @@
 	},
 /area/f13/building/hospital)
 "xAx" = (
-/obj/structure/chair/wood,
+/obj/structure/table/wood,
 /turf/open/floor/f13/wood,
-/area/f13/building)
+/area/f13/wasteland)
 "xAT" = (
 /obj/machinery/light{
 	dir = 1;
@@ -44246,17 +44257,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 iFJ
 iFJ
 iFJ
-hMq
-hMq
-hMq
-xdJ
+jKa
+jKa
+jKa
+hKB
 pHb
 pHb
-hMq
+jKa
 aKa
 aKa
 aKa
@@ -44503,17 +44514,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 cfo
-ega
-usR
-cdN
-aju
-vCZ
-ojc
+xAx
+bTS
+dtb
+jbz
+iaT
+sJX
 hDW
-ega
-hMq
+xAx
+jKa
 aKa
 aKa
 aKa
@@ -44760,17 +44771,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 uHj
-ega
+xAx
 kHU
-cdN
-cdN
-vCZ
-cdN
-hKB
+dtb
+dtb
+iaT
+dtb
+ina
 rii
-hMq
+jKa
 aKa
 aKa
 aKa
@@ -45017,17 +45028,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 bha
-cdN
-cdN
-cdN
-cdN
-xdJ
-cdN
-cdN
-cVV
-hMq
+dtb
+dtb
+dtb
+dtb
+hKB
+dtb
+dtb
+qEL
+jKa
 aKa
 aKa
 aKa
@@ -45274,17 +45285,17 @@ oez
 oez
 oez
 oez
-hMq
-qEL
-cdN
-cdN
-cdN
-cdN
-vCZ
-cdN
+jKa
+aXB
+dtb
+dtb
+dtb
+dtb
+iaT
+dtb
 vdI
-ega
-hMq
+xAx
+jKa
 aKa
 aKa
 aKa
@@ -45531,17 +45542,17 @@ oez
 oez
 oez
 oez
-hMq
-cdN
-cdN
-ega
-hMq
-hMq
-hMq
-xdJ
-hMq
-hMq
-hMq
+jKa
+dtb
+dtb
+xAx
+jKa
+jKa
+jKa
+hKB
+jKa
+jKa
+jKa
 aKa
 aKa
 aKa
@@ -45788,17 +45799,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 qWS
-cdN
-ega
-hMq
+dtb
+xAx
+jKa
 aKa
-hMq
-wtK
-rbh
+jKa
+btl
+qiE
 lOb
-hMq
+jKa
 aKa
 aKa
 aKa
@@ -46045,17 +46056,17 @@ oez
 oez
 oez
 oez
-hMq
+jKa
 mfS
+lcB
 xAx
-ega
-hMq
+jKa
 aKa
-hMq
+jKa
 bLW
 vdA
 eoQ
-hMq
+jKa
 aKa
 aKa
 aKa
@@ -46302,17 +46313,17 @@ oez
 oez
 oez
 oez
-hMq
-hMq
+jKa
+jKa
 pHb
 pHb
-hMq
+jKa
 aKa
-hMq
-hMq
-hMq
-hMq
-hMq
+jKa
+jKa
+jKa
+jKa
+jKa
 aKa
 aKa
 aKa
