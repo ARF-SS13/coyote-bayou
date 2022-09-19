@@ -246,7 +246,6 @@ obj/item/melee/onehanded/knife/switchblade
 	throwforce = 5
 	hitsound = 'sound/weapons/genhit.ogg'
 	attack_verb = list("stubbed", "poked")
-	attack_speed = 6.8
 	var/extended = 0
 	var/extended_force = 21
 	var/extended_throwforce = 23
@@ -835,7 +834,7 @@ obj/item/melee/unarmed/punchdagger/cyborg
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "torn", "ripped", "diced", "cut")
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_speed = 6
+	attack_speed = CLICK_CD_MELEE * 0.75 //6
 
 /obj/item/melee/unarmed/yaoguaigauntlet/attack(mob/living/target, mob/living/user)
 	. = ..()

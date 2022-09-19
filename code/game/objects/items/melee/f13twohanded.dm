@@ -50,7 +50,7 @@
 	wielded_icon = "legionaxe2"
 	force_unwielded = 30
 	force_wielded = 65
-	attack_speed = 10.5
+	attack_speed = CLICK_CD_MELEE * 1.3  //10.4
 
 /obj/item/twohanded/legionaxe/ComponentInitialize()
 	. = ..()
@@ -94,7 +94,7 @@
 	wielded_icon = "fireaxe2"
 	force_unwielded = 28
 	force_wielded = 55
-	attack_speed = 10
+	attack_speed = CLICK_CD_MELEE * 1.25 //10
 
 /obj/item/twohanded/fireaxe/ComponentInitialize()
 	. = ..()
@@ -132,7 +132,7 @@
 	wielded_icon = "boneaxe2"
 	force_unwielded = 25
 	force_wielded = 40
-	attack_speed = 8.8
+	attack_speed = CLICK_CD_MELEE * 1.1 //8.8
 
 /obj/item/twohanded/fireaxe/boneaxe/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
@@ -359,7 +359,7 @@
 	force = 20
 	force_unwielded = 25
 	force_wielded = 30
-	attack_speed = 7.2
+	attack_speed = CLICK_CD_MELEE * 0.85 // 6.8
 
 
 /////////////////
