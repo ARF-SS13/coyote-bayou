@@ -701,6 +701,8 @@
 				/obj/item/melee/unarmed/punchdagger,
 				/obj/item/twohanded/baseball/louisville,
 				/obj/item/shield/riot,
+				/obj/item/melee/onehanded/machete/gladius,
+				/obj/item/melee/onehanded/machete/spatha
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 //TIER 5 MELEE WEAPON
@@ -717,7 +719,8 @@
 				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
-				/obj/item/melee/powerfist/f13/moleminer
+				/obj/item/melee/powerfist/f13/moleminer,
+				/obj/item/twohanded/legionaxe
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random
