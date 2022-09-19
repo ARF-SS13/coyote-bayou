@@ -18270,10 +18270,9 @@
 	},
 /area/f13/wasteland)
 "bnZ" = (
-/obj/structure/railing{
-	color = "#A47449"
-	},
-/turf/open/transparent/openspace,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/wood/bar,
+/turf/open/floor/wood_common,
 /area/f13/building)
 "boc" = (
 /obj/structure/rack,
@@ -38203,6 +38202,10 @@
 /obj/machinery/light/small/broken,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
+"kcy" = (
+/obj/structure/table/wood/bar,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "kcz" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
@@ -48320,6 +48323,7 @@
 	},
 /area/f13/wasteland)
 "oSb" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/anvil/obtainable/basic,
 /turf/open/floor/plasteel,
 /area/f13/building)
@@ -51314,6 +51318,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/ncr)
 "qwd" = (
+/obj/effect/decal/cleanable/generic,
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel,
 /area/f13/building)
@@ -55053,8 +55058,8 @@
 	},
 /area/f13/building/museum)
 "stY" = (
+/obj/structure/table/wood/bar,
 /obj/machinery/reagentgrinder,
-/obj/structure/table/wood,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "sua" = (
@@ -76257,7 +76262,7 @@ hfd
 una
 hEG
 bzk
-bnZ
+bgk
 cex
 vmx
 uFN
@@ -77030,8 +77035,8 @@ hEG
 fMX
 tJO
 cex
-ifH
-ifH
+bnZ
+bnZ
 cdQ
 fMX
 axz
@@ -77287,7 +77292,7 @@ hEG
 bzk
 cex
 cex
-det
+kcy
 stY
 lHK
 fMX
@@ -77544,8 +77549,8 @@ hEG
 nXV
 cex
 fMX
-det
-det
+kcy
+kcy
 cex
 fMX
 hzm
@@ -78313,12 +78318,12 @@ kDp
 kxH
 cxq
 bzk
-ifH
-ifH
-det
+bnZ
+bnZ
+kcy
 lHK
-ifH
-det
+bnZ
+kcy
 bdH
 www
 oUy
