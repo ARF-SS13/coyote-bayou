@@ -73,13 +73,13 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
-		REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 

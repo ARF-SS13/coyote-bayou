@@ -116,6 +116,20 @@
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 
 // C
+
+/datum/gear/donator/kits/caseapollo58143
+	name = "Missionary Kit"
+	path = /obj/item/storage/box/large/custom_kit/caseapollo58143
+	ckeywhitelist = list("caseapollo58143")
+
+/obj/item/storage/box/large/custom_kit/caseapollo58143/PopulateContents()
+	new /obj/item/nullrod/rosary(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/storage/belt/legholster(src)
+	new /obj/item/storage/book/bible(src)
+
 // D
 
 /datum/gear/donator/kits/dezuel
@@ -241,6 +255,14 @@
 	new /obj/item/clothing/suit/armor/medium/vest(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
 
+/datum/gear/donator/kits/merek2
+	name = "Brotherhood Kit"
+	path = /obj/item/storage/box/large/custom_kit/merek2
+	ckeywhitelist = list("merek2")
+
+/obj/item/storage/box/large/custom_kit/merek2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
 	path = /obj/item/storage/box/large/custom_kit/exoticjazz
@@ -286,6 +308,17 @@
 	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
 
 // S
+
+/datum/gear/donator/kits/sage1990
+	name = "Follower's Starting Kit"
+	path = /obj/item/storage/box/large/custom_kit/sage1990
+	ckeywhitelist = list("sage1990")
+
+/obj/item/storage/box/large/custom_kit/sage1990/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"

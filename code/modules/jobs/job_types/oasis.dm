@@ -91,7 +91,7 @@ Mayor
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
 		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/box/citizenship_permits = 1, 
+		/obj/item/storage/box/citizenship_permits = 1,
 		/obj/item/pen/fountain/captain = 1
 		)
 
@@ -309,7 +309,7 @@ Mayor
 	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	shoes = /obj/item/clothing/shoes/combat
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
-	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1, 
+	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/shotgun/buck = 2
 		)
 /*
@@ -693,21 +693,21 @@ Mayor
 		/obj/item/healthanalyzer/advanced = 1,
 		/obj/item/storage/belt/legholster/police = 1
 		)
-	
+
 /datum/outfit/loadout/mixer
 	name = "Mixer"
 	backpack_contents = list(/obj/item/clothing/head/beret/chem = 1,
 		/obj/item/melee/classic_baton/police = 1,
 		/obj/item/pen/sleepy = 1,
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
-		/obj/item/reagent_containers/glass/beaker/meta = 1, 
+		/obj/item/reagent_containers/glass/beaker/meta = 1,
 		/obj/item/reagent_containers/hypospray = 1,
 		/obj/item/circuitboard/machine/bloodbankgen = 1
 		)
 
 /datum/outfit/loadout/holidaydoc
 	name = "Holiday Doc"
-	backpack_contents = list(/obj/item/vending_refill/medical = 1, 
+	backpack_contents = list(/obj/item/vending_refill/medical = 1,
 		/obj/item/pda/medical = 1,
 		/obj/item/clothing/suit/hooded/surgical = 1,
 		/obj/item/storage/medical/ancientfirstaid = 1,
@@ -906,7 +906,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/noslip
 	neck = /obj/item/storage/belt/shoulderholster/ranger44
-	backpack_contents = list(/obj/item/storage/bag/trash = 1, 
+	backpack_contents = list(/obj/item/storage/bag/trash = 1,
 	/obj/item/reagent_containers/spray/cleaner = 1,
 	/obj/item/mop = 1,
 	/obj/item/reagent_containers/glass/bucket/plastic = 1,
@@ -922,7 +922,7 @@ Mayor
 	belt = /obj/item/storage/belt/utility/mining/alt
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	shoes = /obj/item/clothing/shoes/f13/military/leather
-	neck = /obj/item/storage/belt/shoulderholster/ranger357 
+	neck = /obj/item/storage/belt/shoulderholster/ranger357
 	backpack_contents = list(/obj/item/twohanded/sledgehammer/simple = 1,
 	/obj/item/book/granter/crafting_recipe/ODF = 1,
 	/obj/item/clothing/glasses/welding = 1,
@@ -1012,7 +1012,7 @@ Mayor
 	/obj/item/clothing/glasses/welding = 1,
 	/obj/item/t_scanner/adv_mining_scanner = 1,
 	/obj/item/ammo_box/m44 = 2,
-	/obj/item/gun/ballistic/revolver/m29/snub 
+	/obj/item/gun/ballistic/revolver/m29/snub
 	)
 /*----------------------------------------------------------------
 --							Detective							--
@@ -1160,6 +1160,12 @@ Mayor
 	selection_color = "#dcba97"
 	exp_requirements = 300
 
+	loadout_options = list(
+	/datum/outfit/loadout/energy_specialist,
+	/datum/outfit/loadout/ballistic_specialist,
+	/datum/outfit/loadout/jackofall_specialist
+	)
+
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
 	minimal_access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
@@ -1186,8 +1192,28 @@ Mayor
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	backpack_contents = list(
-		/obj/item/storage/pill_bottle/chem_tin/radx,
-		/obj/item/storage/box/shopkeeper = 1)
+		/obj/item/storage/pill_bottle/chem_tin/radx)
+
+/datum/outfit/loadout/energy_specialist
+	name = "Energy Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
+		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol,
+	)
+
+/datum/outfit/loadout/ballistic_specialist
+	name = "Ballistic Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle,
+	)
+
+/datum/outfit/loadout/jackofall_specialist
+	name = "Jack-Of-All Trade"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi,
+	)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

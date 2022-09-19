@@ -117,7 +117,7 @@ Administrator
 	name =	"Chemical Specialist"
 	backpack_contents = list(
 		/obj/item/circuitboard/machine/chem_master/advanced = 1,
-		/obj/item/storage/hypospraykit/cmo,
+		/obj/item/hypospray/mkii/CMO,
 	)
 
 /datum/outfit/loadout/research_specialist
