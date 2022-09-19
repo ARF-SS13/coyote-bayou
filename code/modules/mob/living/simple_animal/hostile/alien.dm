@@ -13,7 +13,7 @@
 	obj_damage = 60
 	melee_damage_lower = 60
 	melee_damage_upper = 60
-
+	move_to_delay = 4 //placeholder
 	gender = FEMALE
 	response_help_continuous = "pokes"
 	response_help_simple = "poke"

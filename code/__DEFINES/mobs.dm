@@ -424,3 +424,10 @@
 #define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_MINIMUM_DISTANCE = list(x)
 /// Varied minimum list chance
 #define MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_MINIMUM_DISTANCE_CHANCE = x
+
+/// Varied projectile define
+#define MOB_PROJECTILE "varied_projectile"
+/// Varied projectile list
+#define MOB_PROJECTILE_LIST(x...) MOB_PROJECTILE = list(x)
+/// Varied projectiles they can shoot, weighted chance to do the thing too
+#define MOB_PROJECTILE_ENTRY(proj, chance) proj = chance

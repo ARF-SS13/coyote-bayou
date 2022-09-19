@@ -13,33 +13,78 @@
 	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
-	move_to_delay = 2.5
+	move_to_delay = 3.1
 	turns_per_move = 5
-	speak_emote = list("growls", "murrs", "barks", "gurgles", "screeches", "hisses", "uwu's", "awoos", "borks", "pants", "wiggles its eyebrows", "churrs", "purrs", "trills", "waggles")
-	emote_see = list("wags its tail", "looks hungry", "sniffs the air", "growls", "foams at the mouth", "loses its shit", "busts it down", "goes full tilt")
+	speak_emote = list(
+		"growls",
+		"murrs",
+		"barks",
+		"gurgles",
+		"screeches",
+		"hisses",
+		"uwu's",
+		"awoos",
+		"borks",
+		"pants",
+		"wiggles its eyebrows",
+		"churrs",
+		"purrs",
+		"trills",
+		"waggles"
+		)
+	emote_see = list(
+		"wags its tail",
+		"looks hungry",
+		"sniffs the air",
+		"growls",
+		"foams at the mouth",
+		"loses its shit",
+		"busts it down",
+		"goes full tilt"
+		)
 	a_intent = INTENT_HARM
-	maxHealth = 48
-	health = 48
+	maxHealth = 40
+	health = 40
 	speed = 3
-	rapid_melee = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 7
 	melee_damage_upper = 13
-	attack_verb_simple = list ("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps")
+	attack_verb_simple = list(
+		"claws",
+		"maims",
+		"bites",
+		"mauls",
+		"slashes",
+		"thrashes",
+		"bashes",
+		"glomps"
+		)
 	attack_sound = 'sound/hallucinations/growl1.ogg'
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = list(
+		"min_oxy" = 5,
+		"max_oxy" = 0,
+		"min_tox" = 0,
+		"max_tox" = 1,
+		"min_co2" = 0,
+		"max_co2" = 5,
+		"min_n2" = 0,
+		"max_n2" = 0
+		)
+		
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("hostile")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
-							/obj/item/stack/sheet/animalhide/human = 1,
-							/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+		/obj/item/stack/sheet/animalhide/human = 1,
+		/obj/item/stack/sheet/bone = 1
+		)
 
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
 	emote_taunt = list(
-		"gurgles", 
+		"gurgles",
 		"stares",
 		"foams at the mouth",
 		"groans",
@@ -47,7 +92,8 @@
 		"jibbers",
 		"howls madly",
 		"screeches",
-		"charges")
+		"charges"
+		)
 
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
@@ -72,13 +118,29 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	maxHealth = 96
-	health = 96
+	maxHealth = 80
+	health = 80
+	rapid_melee = 2
+	retreat_distance = 3
+	minimum_distance = 1
+	ranged = TRUE
+	ranged_message = "throws a rock"
+	projectiletype = /obj/item/projectile/bullet/ghoul_rock
+	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
 	melee_damage_lower = 9
 	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_PROJECTILE_LIST(\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/blunt_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/jagged_scrap, 1)\
+		)
+	)
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -166,6 +228,12 @@
 	maxHealth = 80
 	health = 80
 	speed = 2
+	retreat_distance = 4
+	minimum_distance = 4
+	ranged_message = "emits radiation"
+	ranged = TRUE
+	projectiletype = /obj/item/projectile/radiation_thing
+	projectilesound = 'sound/weapons/etherealhit.ogg'
 	harm_intent_damage = 8
 	melee_damage_lower = 12
 	melee_damage_upper = 25
@@ -180,6 +248,12 @@
 	// aka 40% of max life every tick, which is basically unkillable
 	// TODO: refactor this if simple_animals ever get damage types
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
+
+/obj/item/projectile/radiation_thing
+	name = "radiation"
+	damage = 0
+	irradiate = 20
+	icon_state = "declone"
 
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()

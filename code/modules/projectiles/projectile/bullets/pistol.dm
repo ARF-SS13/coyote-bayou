@@ -1162,6 +1162,64 @@
 	bare_wound_bonus = BULLET_WOUND_PISTOL_HEAVY * BULLET_NAKED_WOUND_MULT
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_HEAVY
 
+/* 69mm rock
+ * DAMAGE: 5
+ * STAMIN: 7.5
+ * RECOIL: 0
+ * WOUNDS: 1.25
+ * WNAKED: 5.6
+ */
+#define BULLET_GHOULROCK_DAMAGE_MULT 0.25
+#define BULLET_GHOULROCK_STAMINA_MULT 1.5
+#define BULLET_GHOULROCK_WOUND_MULT 0.25 // Any kind of armor's gonna block it
+#define BULLET_GHOULROCK_NAKED_WOUND_MULT 1.5 // Skin though? different story
+#define BULLET_GHOULROCK_SPEED_MULT 0.25 // yeet!
+#define BULLET_GHOULROCK_RECOIL_MULT 0.5 // Kicks like a wet noodle
+
+/// Sharp fuckin rock
+/obj/item/projectile/bullet/ghoul_rock
+	name = "sharp rock"
+	damage = BULLET_DAMAGE_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_GHOULROCK_DAMAGE_MULT
+	stamina = BULLET_STAMINA_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_GHOULROCK_STAMINA_MULT
+	spread = BULLET_SPREAD_SURPLUS
+	recoil = BULLET_RECOIL_PISTOL_LIGHT
+
+	wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_SURPLUS_MULT * BULLET_GHOULROCK_WOUND_MULT
+	bare_wound_bonus = BULLET_WOUND_PISTOL_LIGHT * BULLET_NAKED_WOUND_MULT * BULLET_GHOULROCK_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_PISTOL_LIGHT
+	
+	pixels_per_second = BULLET_SPEED_PISTOL_LIGHT * BULLET_GHOULROCK_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+
+/// Rock, but smoove
+/obj/item/projectile/bullet/ghoul_rock/blunt_rock
+	name = "heavy rock"
+	sharpness = SHARP_NONE
+
+/// Embeds, but they rarely throw them
+/obj/item/projectile/bullet/ghoul_rock/jagged_scrap
+	name = "jagged hunk of scrap"
+	embedding = list(
+		embed_chance = 75,
+		fall_chance = 25,
+		jostle_chance = 5,
+		jostle_pain_mult = 1,
+		pain_chance = 10,
+		ignore_throwspeed_threshold = TRUE,
+		pain_stam_pct = 0.5,
+		pain_mult = 5,
+		rip_time = 10,
+		embed_chance_turf_mod = 100,
+		projectile_payload = /obj/item/shrapnel
+		)
+
+#undef BULLET_GHOULROCK_DAMAGE_MULT
+#undef BULLET_GHOULROCK_STAMINA_MULT
+#undef BULLET_GHOULROCK_WOUND_MULT
+#undef BULLET_GHOULROCK_NAKED_WOUND_MULT
+#undef BULLET_GHOULROCK_SPEED_MULT
+#undef BULLET_GHOULROCK_RECOIL_MULT
+
 ////////////////
 //CODE ARCHIVE//
 ////////////////

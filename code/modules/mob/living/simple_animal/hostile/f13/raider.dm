@@ -117,6 +117,7 @@
 	health = 450
 	speed = 1.2
 	obj_damage = 300
+	rapid_melee = 1
 	loot = list(/obj/item/melee/onehanded/knife/survival, /obj/item/reagent_containers/food/snacks/kebab/human, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -129,6 +130,7 @@
 	health = 480
 	retreat_distance = 1
 	minimum_distance = 2
+	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/m44
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	extra_projectiles = 1
@@ -145,6 +147,7 @@
 	maxHealth = 137
 	health = 136
 	extra_projectiles = 2
+	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	loot = list(/obj/item/gun/ballistic/automatic/smg/greasegun, /obj/item/clothing/head/helmet/f13/combat/mk2/raider, /obj/item/clothing/suit/armor/medium/combat/mk2/raider, /obj/item/clothing/under/f13/ravenharness, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -195,6 +198,7 @@
 	icon_dead = "metal_raider_dead"
 	maxHealth = 144
 	health = 144
+	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2, /obj/item/stack/f13Cash/random/med)
@@ -207,6 +211,7 @@
 	icon_dead = "firefighter_raider_dead"
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 1
 
 // BIKER RAIDER
 /mob/living/simple_animal/hostile/raider/ranged/biker
@@ -217,6 +222,7 @@
 	melee_damage_upper = 20
 	maxHealth = 160
 	health = 160
+	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/a556/match
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
 	casingtype = /obj/item/ammo_casing/a556
@@ -231,7 +237,6 @@
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
 
-
 // YANKEE RAIDER
 
 /mob/living/simple_animal/hostile/raider/baseball
@@ -244,6 +249,7 @@
 	melee_damage_upper = 40
 	maxHealth = 160
 	health = 160
+	rapid_melee = 1
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
 
@@ -255,7 +261,6 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
 
-
 // TRIBAL RAIDER
 
 /mob/living/simple_animal/hostile/raider/tribal
@@ -266,6 +271,7 @@
 	melee_damage_upper = 47
 	loot = list(/obj/item/twohanded/spear)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	rapid_melee = 1
 
 /obj/effect/mob_spawn/human/corpse/raider/tribal
 	uniform = /obj/item/clothing/under/f13/raiderrags
@@ -273,7 +279,6 @@
 	shoes = /obj/item/clothing/shoes/f13/rag
 	mask = /obj/item/clothing/mask/facewrap
 	head = /obj/item/clothing/head/helmet/f13/fiend
-
 
 //////////////
 // SULPHITE //
@@ -287,6 +292,7 @@
 	icon_dead= "sulphite_dead"
 	maxHealth = 176
 	health = 176
+	rapid_melee = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 47
 	loot = list(/obj/item/stack/f13Cash/random/med)
@@ -305,6 +311,7 @@
 	icon_dead = "junker_dead"
 	maxHealth = 176
 	health = 176
+	rapid_melee = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -319,6 +326,7 @@
 	maxHealth = 196
 	health = 196
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
+	rapid_melee = 1
 	melee_damage_lower = 25
 	melee_damage_upper = 50
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -334,6 +342,7 @@
 	ranged = TRUE
 	retreat_distance = 6
 	minimum_distance = 8
+	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	var/list/spawned_mobs = list()
@@ -369,6 +378,7 @@
 	maxHealth = 360
 	health = 360
 	ranged = TRUE
+	rapid_melee = 1
 	retreat_distance = 4
 	minimum_distance = 6
 	extra_projectiles = 2
