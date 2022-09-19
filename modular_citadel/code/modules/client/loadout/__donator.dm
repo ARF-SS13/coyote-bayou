@@ -255,6 +255,14 @@
 	new /obj/item/clothing/suit/armor/medium/vest(src)
 	new /obj/item/clothing/head/helmet/f13/combat(src)
 
+/datum/gear/donator/kits/merek2
+	name = "Brotherhood Kit"
+	path = /obj/item/storage/box/large/custom_kit/merek2
+	ckeywhitelist = list("merek2")
+
+/obj/item/storage/box/large/custom_kit/merek2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
 	path = /obj/item/storage/box/large/custom_kit/exoticjazz
