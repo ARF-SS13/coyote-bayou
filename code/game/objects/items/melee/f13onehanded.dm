@@ -155,6 +155,7 @@
 	bare_wound_bonus = 5
 	custom_materials = list(/datum/material/iron=6000)
 	resistance_flags = FIRE_PROOF
+	attack_speed = CLICK_CD_MELEE * 0.85 //6.8
 
 /obj/item/melee/onehanded/knife/Initialize()
 	. = ..()
@@ -181,7 +182,6 @@
 	force = 23
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "cut")
-	attack_speed = 6.8
 
 /obj/item/melee/onehanded/knife/survival
 	name = "survival knife"
@@ -190,7 +190,6 @@
 	embedding = list("pain_mult" = 4, "embed_chance" = 35, "fall_chance" = 10)
 	force = 23
 	throwforce = 25
-	attack_speed = 6.8
 
 /obj/item/melee/onehanded/knife/bayonet
 	name = "bayonet knife"
@@ -198,7 +197,6 @@
 	desc = "This weapon is made for stabbing, not much use for other things."
 	force = 23
 	bayonet = TRUE
-	attack_speed = 6.8
 
 /obj/item/melee/onehanded/knife/bowie
 	name = "bowie knife"
@@ -208,7 +206,6 @@
 	force = 28
 	throwforce = 25
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-	attack_speed = 6.8
 
 /obj/item/melee/onehanded/knife/trench
 	name = "trench knife"
@@ -218,7 +215,6 @@
 	force = 30
 	custom_materials = list(/datum/material/iron=8000)
 	attack_verb = list("slashed", "stabbed", "sliced", "shanked", "ripped", "lacerated")
-	attack_speed = 6.8
 
 /obj/item/melee/onehanded/knife/bone
 	name = "bone dagger"
@@ -241,7 +237,6 @@
 	force = 25
 	armour_penetration = 0.1
 	custom_materials = null
-	attack_speed = 6.8
 
 obj/item/melee/onehanded/knife/switchblade
 	name = "switchblade"
@@ -294,7 +289,6 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 15
 	throwforce = 10
 	armour_penetration = 0.2
-	attack_speed = 6.8
 
 // Abraxo my beloved. Can now be used directly to clean the blade.
 /obj/item/melee/onehanded/knife/cosmicdirty/attackby(obj/item/C, mob/user, params)
@@ -319,7 +313,6 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 25
 	throwforce = 15
 	armour_penetration = 0.2
-	attack_speed = 6.8
 
 // Heat it with a welder
 /obj/item/melee/onehanded/knife/cosmic/welder_act(mob/living/user, obj/item/I)
@@ -341,7 +334,6 @@ obj/item/melee/onehanded/knife/switchblade
 	force = 35
 	throwforce = 20
 	armour_penetration = 0.4
-	attack_speed = 6.8
 	w_class = WEIGHT_CLASS_NORMAL // Its super hot, not comfy to put back in your pocket.
 
 /obj/item/melee/onehanded/knife/throwing
