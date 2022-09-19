@@ -124,18 +124,18 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	icon_state = "throw_spear"
 	item_state = "tribalspear"
-	force = 20
-	throwforce = 35
+	force = 15
+	throwforce = 40 //clears threshholds for trash mobs
 	armour_penetration = 0.10
 	max_reach = 2
-	embedding = list("pain_mult" = 2, "embed_chance" = 60, "fall_chance" = 20)
+	embedding = list("pain_mult" = 2, "embed_chance" = 40, "fall_chance" = 15)
 	w_class = WEIGHT_CLASS_NORMAL
 
 
 
 ////////////
 // KNIVES //
-////////////		-small AP bonus, 24-31 damage
+////////////		-small AP bonus, 23-31 damage. Attack fast.
 
 /obj/item/melee/onehanded/knife
 	name = "knife template"
