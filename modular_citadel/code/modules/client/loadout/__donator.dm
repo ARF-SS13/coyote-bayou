@@ -287,6 +287,17 @@
 
 // S
 
+/datum/gear/donator/kits/sage1990
+	name = "Follower's Starting Kit"
+	path = /obj/item/storage/box/large/custom_kit/sage1990
+	ckeywhitelist = list("sage1990")
+
+/obj/item/storage/box/large/custom_kit/sage1990/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/leather(src)
+	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
 	path = /obj/item/storage/box/large/custom_kit/sloaff
