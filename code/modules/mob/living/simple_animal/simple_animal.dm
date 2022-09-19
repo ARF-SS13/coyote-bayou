@@ -691,10 +691,12 @@
 		health = our_health
 	return TRUE
 
-/mob/living/simple_animal/proc/vary_from_list(which_list)
+/mob/living/simple_animal/proc/vary_from_list(which_list, weighted_list = FALSE)
 	if(isnum(which_list))
 		return which_list
 	if(islist(which_list))
+		if(weighted_list)
+			return(pickweight(which_list))
 		return(pick(which_list))
 
 /mob/living/simple_animal/proc/vary_mob_name_from_global_lists()

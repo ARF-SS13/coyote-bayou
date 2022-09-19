@@ -10,7 +10,7 @@
 	//this is the cooldown time
 	var/actual_cooldown = 5 SECONDS
 	//perhaps someone wants to make a healing effect smaller/larger(?)
-	var/heal_range = 3
+	var/heal_range = 4
 	//customization
 	var/revive_allowed = FALSE
 	//faction healing only

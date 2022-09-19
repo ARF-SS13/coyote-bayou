@@ -236,7 +236,6 @@
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raidercombathelmet
 	neck = /obj/item/clothing/neck/mantle/brown
-	rapid_melee = 1
 
 // YANKEE RAIDER
 
@@ -261,7 +260,6 @@
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	head = /obj/item/clothing/head/helmet/f13/raider/yankee
-	rapid_melee = 1
 
 // TRIBAL RAIDER
 
@@ -281,7 +279,6 @@
 	shoes = /obj/item/clothing/shoes/f13/rag
 	mask = /obj/item/clothing/mask/facewrap
 	head = /obj/item/clothing/head/helmet/f13/fiend
-	rapid_melee = 1
 
 //////////////
 // SULPHITE //
