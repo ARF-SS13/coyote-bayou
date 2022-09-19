@@ -13,15 +13,14 @@
 	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = 1
-	move_to_delay = 2.5
+	move_to_delay = 3.1
 	turns_per_move = 5
 	speak_emote = list("growls", "murrs", "barks", "gurgles", "screeches", "hisses", "uwu's", "awoos", "borks", "pants", "wiggles its eyebrows", "churrs", "purrs", "trills", "waggles")
 	emote_see = list("wags its tail", "looks hungry", "sniffs the air", "growls", "foams at the mouth", "loses its shit", "busts it down", "goes full tilt")
 	a_intent = INTENT_HARM
-	maxHealth = 48
-	health = 48
+	maxHealth = 40
+	health = 40
 	speed = 3
-	rapid_melee = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 7
 	melee_damage_upper = 13
@@ -72,11 +71,16 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	maxHealth = 96
-	health = 96
+	maxHealth = 80
+	health = 80
+	rapid_melee = 2
+		retreat_distance = 2
+	//how far they pull back
+	minimum_distance = 1
+	// how close you can get before they try to pull back
 	harm_intent_damage = 8
-	melee_damage_lower = 9
-	melee_damage_upper = 20
+	melee_damage_lower = 10
+	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 
@@ -166,6 +170,10 @@
 	maxHealth = 80
 	health = 80
 	speed = 2
+	retreat_distance = 4
+	//how far they pull back
+	minimum_distance = 3
+	// how close you can get before they try to pull back
 	harm_intent_damage = 8
 	melee_damage_lower = 12
 	melee_damage_upper = 25
