@@ -262,9 +262,9 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
-	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2 + itemqualitymax //Makes sure that better smiths can make better items, even with a worse anvil. Encourages actually levelling up, instead of meta-rushing top gear
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
-		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4))/1500 //Reduced from 2500 temporarily. Should help that percentage get above 1% on the RAND()
+		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
 		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
 
 	var/artifact = max(prob(artifactchance), debug) // If there is an artifact..?
@@ -290,7 +290,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		ResetAnvil() // Resets it to be default.
 
 		if(user.mind.skill_holder) // give them some experience
-			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 200, 500000, silent = FALSE)
+			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 50, 500000, silent = FALSE) //This shouldn't give you a full level until 3+
 
 		return SetBusy(FALSE, user) 
 	
@@ -328,10 +328,10 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 					finisheditem.desc +=  "\nIt looks to be better than average."
 			finisheditem.set_custom_materials(workpiece_material)
 			var/stepexperience = currentsteps + finisheditem.quality
-			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/5 //A total of 16x the amount of EXP at MAX, with a minimum gain of 150, Keep in mind that this is of course only possible with a max-tier anvil and an already insanely high level. Just makes earlier levels faster.
+			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/8 //Makes powerlevelling late-game harder as it gives more bonuses here
 			if(user.mind.skill_holder) // give them some experience!
 				if(currentquality <= 1)
-					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 400, 500000, silent = FALSE) //Incentivises not spamming Slag
+					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 250, 500000, silent = FALSE) //Fixes speedleveling by just making hammers, somewhat.
 				else
 					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, finalexperience, 500000, silent = FALSE) //Made more forgiving for lower levels and terrible anvils.
 
