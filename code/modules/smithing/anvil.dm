@@ -363,15 +363,15 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
 	desc = "Made from solid steel, you wont be moving this around any time soon."
-	anvilquality = 0
-	itemqualitymax = 6 
+	anvilquality = -1 //This was causing balance problems to where you could get high levels of blacksmithing in 1-2 items
+	itemqualitymax = 6  //Do not change this.
 
 // Don't make this craftable.
 /obj/structure/anvil/obtainable/legion
 	name = "anvil"
 	desc = "A solid steel anvil with a stamped bull on it."
 	icon_state = "legvil"
-	anvilquality = 1
+	anvilquality = 0 //DO NOT GIVE A +1 BONUS TO ANVILS WHEN THEY HAVE A MAXQAL OF 8, THIS ONLY ASKS FOR MAX TIER FORGED ITEMS
 	itemqualitymax = 8 //The legion and tribe rely mostly on melee weapons, so they should have the best anvil
 	anchored = TRUE
 
@@ -380,7 +380,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	name = "table anvil"
 	desc = "A reinforced table. Usable as an anvil, favored by mad wastelanders and the dregs of the wasteland. Can be loosened from its bolts and moved."
 	icon_state = "tablevil"
-	anvilquality = 0
+	anvilquality = -2 //WE SHOULD NOT HAVE CHANGED THIS.
 	itemqualitymax = 4
 
 /obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)
