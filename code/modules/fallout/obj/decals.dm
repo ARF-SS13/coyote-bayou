@@ -32,6 +32,9 @@
 	for(var/mob/living/carbon/human/victim in view(src,range))
 		if(istype(victim) && victim.stat != DEAD)
 			victim.rad_act(intensity)
+	for(var/obj/item/geiger_counter/geiger in view(src,range))
+		if(istype(geiger))
+			geiger.rad_act(intensity)
 			
 /obj/effect/decal/waste/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crafting/abraxo))

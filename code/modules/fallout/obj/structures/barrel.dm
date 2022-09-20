@@ -37,6 +37,9 @@
 	for(var/mob/living/carbon/human/victim in view(src,1))
 		if(istype(victim) && victim.stat != DEAD)
 			victim.rad_act(5)
+	for(var/obj/item/geiger_counter/geiger in view(src,1))
+		if(istype(geiger))
+			geiger.rad_act(5)
 
 /obj/structure/reagent_dispensers/barrel/boom()
 	visible_message(span_danger("\The [src] ruptures!"))
