@@ -185,7 +185,7 @@
 	name = "Lethal Dueling Pistols"
 	desc = "Settle your differences the true spaceman way."
 	cost = 3000
-	contraband = TRUE
+	/* contraband = TRUE */
 	contains = list(/obj/item/storage/lockbox/dueling/hugbox,
 	/obj/item/storage/lockbox/dueling/hugbox,
 	/obj/item/storage/lockbox/dueling/hugbox)

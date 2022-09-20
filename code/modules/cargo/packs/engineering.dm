@@ -98,15 +98,15 @@
 	crate_name = "inducer crate"
 	crate_type = /obj/structure/closet/crate/engineering/electrical
 
-/datum/supply_pack/engineering/pacman
+/* /datum/supply_pack/engineering/pacman
 	name = "P.A.C.M.A.N Generator Crate"
 	desc = "Engineers can't set up the engine? Not an issue for you, once you get your hands on this P.A.C.M.A.N. Generator! Takes in plasma and spits out sweet sweet energy."
 	cost = 2250
 	contains = list(/obj/machinery/power/port_gen/pacman)
 	crate_name = "PACMAN generator crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
+	crate_type = /obj/structure/closet/crate/engineering/electrical */
 
-/datum/supply_pack/engineering/airpump
+/* /datum/supply_pack/engineering/airpump
 	name = "Portable Air Pump Crate"
 	desc = "We all know you work in a high pressure workplace. Keep it that way with two additional air pumps!"
 	cost = 3000
@@ -120,7 +120,7 @@
 	cost = 3000
 	contains = list(/obj/machinery/portable_atmospherics/scrubber,
 					/obj/machinery/portable_atmospherics/scrubber)
-	crate_name = "portable scrubber crate"
+	crate_name = "portable scrubber crate" */
 
 /datum/supply_pack/engineering/power
 	name = "Power Cell Crate"
@@ -130,7 +130,7 @@
 					/obj/item/stock_parts/cell/high,
 					/obj/item/stock_parts/cell/high)
 	crate_name = "power cell crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
+	crate_type = /obj/structure/closet/crate/engineering/electrical 
 /*
 /datum/supply_pack/engineering/shuttle_engine
 	name = "Shuttle Engine Crate"
@@ -154,7 +154,7 @@
 	crate_name = "toolbox crate"
 	special = TRUE //Department resupply shuttle loan event.
 
-/datum/supply_pack/engineering/bsa
+/* /datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
 	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
 	cost = 45000
@@ -164,7 +164,7 @@
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate"
+	crate_name= "bluespace artillery parts crate" */
 /*
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"

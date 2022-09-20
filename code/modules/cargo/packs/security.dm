@@ -12,14 +12,14 @@
 	crate_type = /obj/structure/closet/crate/footlocker
 	can_private_buy = FALSE
 
-/datum/supply_pack/security/ammosurplus
+/* /datum/supply_pack/security/ammosurplus
 	name = "Ammo Crate - Grab-Bag"
 	desc = "Contains a whole stuffing of bullets, magazines, casings. Probably overpriced."
 	cost = 2000
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3)
-	crate_name = "ammo crate"
+	crate_name = "ammo crate" */
 
 /datum/supply_pack/security/helmets
 	name = "Armor - Metal Helmets"
@@ -55,7 +55,7 @@
 	can_private_buy = TRUE
 */
 
-/datum/supply_pack/security/russianclothing
+/* /datum/supply_pack/security/russianclothing
 	name = "Russian Surplus Clothing"
 	desc = "An old russian crate full of surplus armor that they used to use! Has two sets of bulletproff armor, a few union suits and some warm hats! The Hub is not liable for any friendly fire incidents."
 	contraband = TRUE
@@ -75,7 +75,7 @@
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas)
 	crate_name = "surplus russian clothing"
-	crate_type = /obj/structure/closet/crate/internals
+	crate_type = /obj/structure/closet/crate/internals */
 /*
 /datum/supply_pack/security/sechardsuit
 	name = "Sec Hardsuit"
@@ -200,14 +200,14 @@
 	crate_name = "stingbang grenade pack crate"
 
 /datum/supply_pack/security/mosinpack
-	name = "Weapons - Mosin-Nagant Pack"
-	desc = "Arm your militia. Five Mosin Rifles, preloaded, ready to kill. A solid weapon for any defense or guerilla force. Does not come with spare ammo, so you might wanna get that sorted out, pardner."
+	name = "Weapons - Hunting Rifle Pack"
+	desc = "Arm your militia. Five Hunting Rifles, preloaded, ready to kill. A solid weapon for any defense or guerilla force. Does not come with spare ammo, so you might wanna get that sorted out, pardner."
 	cost = 750
-	contains = list(/obj/item/gun/ballistic/rifle/mosin,
-					/obj/item/gun/ballistic/rifle/mosin,
-					/obj/item/gun/ballistic/rifle/mosin,
-					/obj/item/gun/ballistic/rifle/mosin,
-					/obj/item/gun/ballistic/rifle/mosin)
+	contains = list(/obj/item/gun/ballistic/rifle/hunting,
+					/obj/item/gun/ballistic/rifle/hunting,
+					/obj/item/gun/ballistic/rifle/hunting,
+					/obj/item/gun/ballistic/rifle/hunting,
+					/obj/item/gun/ballistic/rifle/hunting)
 
 /datum/supply_pack/security/laserlowtier
 	name = "Weapons - Laser Grab-Bag"
@@ -218,14 +218,14 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low)
 	crate_name = "laser crate"
 
-/datum/supply_pack/security/disabler
+/* /datum/supply_pack/security/disabler
 	name = "Weapons - Disabler Crate"
 	desc = "Three stamina-draining disabler weapons, for a more civilized place, where killing isn't the answer. In other words, probably not here. But it's nice you're trying!"
 	cost = 1300
 	contains = list(/obj/item/gun/energy/disabler,
 					/obj/item/gun/energy/disabler,
 					/obj/item/gun/energy/disabler)
-	crate_name = "disabler crate"
+	crate_name = "disabler crate" */
 
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"

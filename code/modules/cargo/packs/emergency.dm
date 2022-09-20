@@ -25,7 +25,7 @@
 	crate_name = "Biker Kit"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/emergency/bio
+/* /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"
 	desc = "This crate holds 2 full bio suits which will protect you from viruses, along with a bio bag and two penicillin syringes."
 	cost = 2000
@@ -38,7 +38,7 @@
 					/obj/item/reagent_containers/syringe/antiviral,
 					/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile)
-	crate_name = "bio suit crate"
+	crate_name = "bio suit crate" */
 
 /* //atmospherics ain't a thing, here. why was it even so expensive
 /datum/supply_pack/emergency/equipment
@@ -106,7 +106,7 @@
 	crate_name = "medical emergency crate (lite)"
 	crate_type = /obj/structure/closet/crate/medical
 
-/datum/supply_pack/emergency/radiatione_emergency
+/* /datum/supply_pack/emergency/radiatione_emergency
 	name = "Emergency Radiation Protection Crate"
 	desc = "Survive the harshest of nuclear wastelands! Each set contains a helmet, suit, and Geiger counter. Rad-X and Radaway not included."
 	cost = 2000
@@ -117,7 +117,7 @@
 					/obj/item/geiger_counter,
 					/obj/item/geiger_counter)
 	crate_name = "radiation protection crate"
-	crate_type = /obj/structure/closet/crate/radiation
+	crate_type = /obj/structure/closet/crate/radiation */
 
 /* //we need none of these.
 /datum/supply_pack/emergency/bomb
@@ -284,7 +284,7 @@
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
-/datum/supply_pack/emergency/weedcontrol
+/* /datum/supply_pack/emergency/weedcontrol
 	name = "Weed Control Crate"
 	desc = "Keep those invasive species OUT. Contains a scythe, gasmask, two sprays of Plant-B-Gone, and two anti-weed chemical grenades. Warranty void if used on ambrosia. Requires Hydroponics access to open."
 	cost = 1800
@@ -296,4 +296,4 @@
 					/obj/item/reagent_containers/spray/plantbgone,
 					/obj/item/reagent_containers/spray/plantbgone)
 	crate_name = "weed control crate"
-	crate_type = /obj/structure/closet/crate/secure/hydroponics
+	crate_type = /obj/structure/closet/crate/secure/hydroponics */

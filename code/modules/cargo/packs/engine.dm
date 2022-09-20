@@ -6,9 +6,9 @@
 //////////////////////// Engine Construction /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/engine
+/* /datum/supply_pack/engine
 	group = "Engine Construction"
-	crate_type = /obj/structure/closet/crate/engineering
+	crate_type = /obj/structure/closet/crate/engineering */
 /*
 /datum/supply_pack/engine/am_jar
 	name = "Antimatter Containment Jar Crate"
@@ -109,7 +109,7 @@
 	crate_name = "singularity generator crate"
 */
 
-/datum/supply_pack/engine/solar
+/* /datum/supply_pack/engine/solar
 	name = "Solar Panel Crate"
 	desc = "Go green with this DIY advanced solar array. Contains twenty one solar assemblies, a solar-control circuit board, and tracker. If you have any questions, please check out the enclosed instruction book."
 	cost = 2850
@@ -138,7 +138,7 @@
 					/obj/item/electronics/tracker,
 					/obj/item/paper/guides/jobs/engi/solars)
 	crate_name = "solar panel crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
+	crate_type = /obj/structure/closet/crate/engineering/electrical */
 /*
 /datum/supply_pack/engine/supermatter_shard
 	name = "Supermatter Shard Crate"
