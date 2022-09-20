@@ -477,8 +477,6 @@
 /obj/item/smithing/lancehead/startfinish()
 	var/obj/item/melee/smith/twohand/spear/lance/finalforreal = new /obj/item/melee/smith/twohand/spear/lance(src)
 	finalforreal.force += quality
-	finalforreal.force_unwielded = force
-	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalforreal.throwforce = finalforreal.force/10
 	finalitem = finalforreal
@@ -493,8 +491,6 @@
 /obj/item/smithing/axehead/startfinish()
 	var/obj/item/melee/smith/twohand/axe/finalforreal = new /obj/item/melee/smith/twohand/axe(src)
 	finalforreal.force += quality
-	finalforreal.force_unwielded = force
-	finalforreal.force_wielded = finalforreal.force*finalforreal.wielded_mult
 	finalforreal.wielded_icon = "[icon_state]2"
 	finalitem = finalforreal
 	..()
