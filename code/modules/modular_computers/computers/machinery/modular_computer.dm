@@ -85,7 +85,7 @@
 	if(cpu)
 		return cpu.interact(user) // CPU is an item, that's why we route attack_hand to attack_self
 	if(HAS_TRAIT(user,TRAIT_TECHNOPHOBE))
-		to_chat(user,span_warning("Grug no know how machine work... Grug sad."))
+		to_chat(user,span_warning("Your hands aren't small enough to use this!"))
 		return FALSE
 	else
 		return ..()
