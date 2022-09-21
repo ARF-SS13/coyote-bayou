@@ -30,6 +30,7 @@
 	var/last_tick_amount = 0
 	var/fail_to_receive = 0
 	var/current_warning = 1
+	var/mob/listeningTo
 
 /obj/item/geiger_counter/Initialize()
 	. = ..()
@@ -126,6 +127,35 @@
 	current_tick_amount += amount
 	update_icon()
 
+/obj/item/geiger_counter/equipped(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
+	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
+	listeningTo = user
+	to_chat(user,"equipped")
+
+/obj/item/geiger_counter/proc/redirect_rad_act(datum/source, amount)
+	rad_act(amount)
+
+/obj/item/geiger_counter/dropped(mob/user)
+	if(!ishuman(loc))
+		if(listeningTo)
+			UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
+		listeningTo = null
+	. = ..()
+
+/obj/item/geiger_counter/pickup(mob/user)
+	. = ..()
+	if(listeningTo == user)
+		return
+	if(listeningTo)
+		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
+	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
+	listeningTo = user
+
 /obj/item/geiger_counter/attack_self(mob/user)
 	scanning = !scanning
 	update_icon()
@@ -205,25 +235,6 @@
 	return TRUE
 
 /obj/item/geiger_counter/cyborg
-	var/mob/listeningTo
-
-/obj/item/geiger_counter/cyborg/equipped(mob/user)
-	. = ..()
-	if(listeningTo == user)
-		return
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	RegisterSignal(user, COMSIG_ATOM_RAD_ACT, .proc/redirect_rad_act)
-	listeningTo = user
-
-/obj/item/geiger_counter/cyborg/proc/redirect_rad_act(datum/source, amount)
-	rad_act(amount)
-
-/obj/item/geiger_counter/cyborg/dropped(mob/user)
-	. = ..()
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_ATOM_RAD_ACT)
-	listeningTo = null
 
 #undef RAD_LEVEL_NORMAL
 #undef RAD_LEVEL_MODERATE
