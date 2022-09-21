@@ -24,10 +24,8 @@
 	. = ..()
 
 /datum/species/human/spec_life(mob/living/carbon/human/H)
-	if(HAS_TRAIT(H,TRAIT_FEV)||HAS_TRAIT(H,TRAIT_RADIMMUNE))
-		return FALSE
 	
-	if (H.radiation>2500 && prob(10))
+	if (H.radiation>2500 && prob(10) && !(HAS_TRAIT(H,TRAIT_FEV)||HAS_TRAIT(H,TRAIT_RADIMMUNE)))
 		to_chat(H, span_danger("Your skin becomes to peel and fall off from radiation, also turning your voice into a rasp..."))
 		H.set_species(/datum/species/ghoul)
 		H.Stun(40)
