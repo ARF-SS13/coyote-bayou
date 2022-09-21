@@ -196,6 +196,18 @@
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
 
+/datum/gear/donator/kits/fuzlet2
+	name = "Smolfox Kit"
+	path = /obj/item/storage/box/large/custom_kit/fuzlet2
+	ckeywhitelist = list("fuzlet")
+
+/obj/item/storage/box/large/custom_kit/fuzlet2/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/c38box(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/toy/plush/mammal/fox(src)
+
+
 // G
 
 /datum/gear/donator/kits/greed2323
