@@ -33,7 +33,8 @@
 	mob_tar.dna.species.punchdamagelow = 8 //Their fists hurt more
 	mob_tar.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT) //:trollge:
-
+	mob_tar.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
+	mob_tar.health += 30
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"

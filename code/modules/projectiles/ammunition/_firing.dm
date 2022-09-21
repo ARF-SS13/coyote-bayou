@@ -6,6 +6,8 @@
 	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
 	if(pellets == 1)
 		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
+			if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
+				spread += 2.5 //YOU AINT HITTING SHIT BROTHA
 			if(randomspread)
 				spread *= distro
 			else //Smart spread
