@@ -19,6 +19,23 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
+/datum/quirk/fev
+	name = "FEV Exposure"
+	desc = "Be it accidental; the work of a mad scientist roaming the waste-land, or pre-war experiments that left an individual unable to die, this one has been exposed to an FEV Variation."
+	value = 4
+	gain_text = span_notice("You feel a burning pain as your DNA is ripped apart, and sewn back together.")
+	lose_text = span_notice("The dull metronome of pain that defined your existence has faded.")
+	medical_record_text = "Patient appears to have 'perfect' DNA."
+	mob_trait = TRAIT_FEV
+
+/datum/quirk/fev/add()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.dna.species.punchdamagelow = 8 //Their fists hurt more
+	mob_tar.dna.species.punchdamagehigh = 15 //But not that much more at peak. Until they put on spikes.
+	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT) //:trollge:
+	mob_tar.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
+	mob_tar.health += 30
+
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"
 	desc = "You find yourself greatly enjoying fruits of the ananas genus. You can't seem to ever get enough of their sweet goodness!"

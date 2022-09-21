@@ -1344,10 +1344,19 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	. = FALSE
 	var/radiation = H.radiation
-
-	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
+	if(HAS_TRAIT(H, TRAIT_RADIMMUNE)) //Runs before FEV check so you can make supermutants that AREN'T slowed by rads.
 		return TRUE
-
+	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls. 
+		switch(radiation)
+			if(600 to 1499)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 0.5)
+			if(1499 to 2499)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1)
+			if(2499 to INFINITY)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1.5)
+			else //This really shouldn't be occurring, and if it does; report this to a coder.
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)		
+		return TRUE
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
 		if(CHECK_MOBILITY(H, MOBILITY_STAND))
 			H.emote("collapse")

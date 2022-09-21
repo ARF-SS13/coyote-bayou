@@ -25,7 +25,7 @@
 	var/hack_wire
 	var/disable_wire
 	var/shock_wire
-	tooadvanced = TRUE //Prevents people with Technophobe from using the lathe unless set to false.
+	tooadvanced = FALSE //Used to prevent usage of things that are technophobes. Disabled because autolathes are simple button-presses
 	var/busy = FALSE
 	var/prod_coeff = 1
 
@@ -74,7 +74,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(tooadvanced == TRUE)
-			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE))
+			if(HAS_TRAIT(L, TRAIT_TECHNOPHOBE)) //can be done to make better autolathes, L
 				to_chat(user, span_warning("The array of simplistic button pressing confuses you. Besides, did you really want to spend all day staring at a screen?"))
 				return FALSE
 			else

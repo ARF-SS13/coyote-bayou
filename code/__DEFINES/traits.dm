@@ -204,6 +204,7 @@
 #define TRAIT_EMPATH			"empath"
 #define TRAIT_FRIENDLY			"friendly"
 #define TRAIT_BIG_LEAGUES		"big_leagues"
+#define TRAIT_FEV				"FEV_MUT" //OH BOY
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
 #define TRAIT_IRONFIST			"iron_fist"
@@ -253,7 +254,7 @@
 #define TRAIT_SPRINT_LOCKED				"sprint_locked"
 
 
-#define TRAIT_SMUTANT		"Super Mutant"	//boosts salvage return
+#define TRAIT_SMUTANT		"Super Mutant"	// This is a trait usually locked for admins due to how OP it is
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess

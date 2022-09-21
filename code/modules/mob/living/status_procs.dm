@@ -621,6 +621,9 @@
 		overlay_fullscreen("nearsighted", /obj/screen/fullscreen/impaired, 1)
 	ADD_TRAIT(src, TRAIT_NEARSIGHT, source)
 
+/mob/living/proc/become_mega_nearsighted(source)
+	overlay_fullscreen("nearsighted", /obj/screen/fullscreen/impaired, 2) //This is a nasty surprise to people who try and abuse nearsighted.
+
 /mob/living/proc/cure_husk(source)
 	REMOVE_TRAIT(src, TRAIT_HUSK, source)
 	if(!HAS_TRAIT(src, TRAIT_HUSK))
