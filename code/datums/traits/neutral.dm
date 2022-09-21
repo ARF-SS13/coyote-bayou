@@ -25,7 +25,7 @@
 	value = 4
 	gain_text = span_notice("You feel a burning pain as your DNA is ripped apart, and sewn back together.")
 	lose_text = span_notice("The dull metronome of pain that defined your existence has faded.")
-	medical_record_text = "Patient seems to be rather stuck up."
+	medical_record_text = "Patient appears to have 'perfect' DNA."
 	mob_trait = TRAIT_FEV
 
 /datum/quirk/fev/add()
