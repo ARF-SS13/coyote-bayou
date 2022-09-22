@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
-	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2.5 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
 		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
 		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
