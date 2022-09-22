@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
-		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/10 + 1
+		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
 
 	playsound(src, 'sound/effects/clang2.ogg',40, 2) // sounds. gotta have them..!
@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 					finisheditem.desc +=  "\nIt looks to be better than average."
 			finisheditem.set_custom_materials(workpiece_material)
 			var/stepexperience = currentsteps + finisheditem.quality
-			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/8 //Makes powerlevelling late-game harder as it gives more bonuses here
+			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/6 //Makes powerlevelling late-game harder as it gives more bonuses here
 			if(user.mind.skill_holder) // give them some experience!
 				if(currentquality <= 1)
 					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 250, 500000, silent = FALSE) //Fixes speedleveling by just making hammers, somewhat.
