@@ -1153,6 +1153,11 @@ Nothing else in the console has ID requirements.
 /obj/machinery/computer/rdconsole/core
 	name = "Core R&D Console"
 
+/obj/machinery/computer/rdconsole/core/interact(mob/user)
+	if(HAS_TRAIT(user,TRAIT_FEV))
+		to_chat(user,span_warning("Your hands aren't small enough to use this!"))
+		return FALSE
+
 /obj/machinery/computer/rdconsole/experiment
 	name = "E.X.P.E.R.I-MENTOR R&D Console"
 

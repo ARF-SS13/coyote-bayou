@@ -217,7 +217,7 @@ GENETICS SCANNER
 						temp_message += " <span class='alert'>Subject is blind.</span>"
 					if(HAS_TRAIT(C, TRAIT_NEARSIGHT))
 						temp_message += " <span class='alert'>Subject is nearsighted.</span>"
-					if(HAS_TRAIT(c,TRAIT_NEARSIGHT_MEGA))
+					if(HAS_TRAIT(C,TRAIT_NEARSIGHT_MEGA))
 						temp_message += " <span class='alert'>Subject suffers from massive focalpoint issues.</span>"
 					if(eyes.damage > 30)
 						damage_message += " <span class='alert'>Subject has severe eye damage.</span>"
