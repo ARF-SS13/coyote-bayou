@@ -52,6 +52,16 @@
 	unit_name = "energy cell"
 	export_types = list(/obj/item/stock_parts/cell/ammo/ec)
 
+/datum/export/item/mfc
+	cost = 350
+	unit_name = "microfusion cell"
+	export_types = list(/obj/item/stock_parts/cell/ammo/mfc)
+
+/datum/export/item/ecp
+	cost = 450
+	unit_name = "electron charge pack"
+	export_types = list(/obj/item/stock_parts/cell/ammo/ecp)
+
 /datum/export/item/traitbookslow
 	cost = 300
 	unit_name = "low-quality technical manual"
@@ -78,3 +88,5 @@
 				/obj/item/book/granter/crafting_recipe/gunsmith_two,
 				/obj/item/book/granter/crafting_recipe/gunsmith_three,
 				/obj/item/book/granter/crafting_recipe/gunsmith_four)
+
+

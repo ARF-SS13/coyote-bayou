@@ -61,7 +61,7 @@
 					/obj/item/clothing/mask/gas)
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
-*/
+
 
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
@@ -104,7 +104,7 @@
 					/obj/item/reagent_containers/hypospray/medipen,
 					/obj/item/reagent_containers/hypospray/medipen)
 	crate_name = "medical emergency crate (lite)"
-	crate_type = /obj/structure/closet/crate/medical
+	crate_type = /obj/structure/closet/crate/medical */
 
 /* /datum/supply_pack/emergency/radiatione_emergency
 	name = "Emergency Radiation Protection Crate"
@@ -178,7 +178,7 @@
 	crate_type = /obj/structure/closet/crate/internals
 */
 
-/datum/supply_pack/emergency/mre
+ /* /datum/supply_pack/emergency/mre
 	name = "MRE Packs (Emergency Rations)"
 	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
 	cost = 2000
@@ -190,7 +190,7 @@
 					/obj/item/storage/box/mre/menu4/safe)
 	crate_name = "MRE crate (emergency rations)"
 
-/*
+
 /datum/supply_pack/emergency/plasma_spacesuit
 	name = "Plasmaman Space Envirosuits"
 	desc = "Contains two space-worthy envirosuits for Plasmamen. Order now and we'll throw in two free helmets! Requires EVA access to open."

@@ -117,7 +117,7 @@
 					/obj/item/assembly/timer)
 	crate_name = "plasma assembly crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-*/
+
 /datum/supply_pack/science/relic
 	name = "Relic Crate"
 	desc = "Ever wanted to play with old discounted toys? Look no further. Contains two relics."
@@ -125,7 +125,7 @@
 	contraband = TRUE
 	contains = list(/obj/item/relic,
 					/obj/item/relic)
-	crate_name = "relic crate"
+	crate_name = "relic crate" */
 
 /* /datum/supply_pack/science/robotics
 	name = "Robotics Assembly Crate"

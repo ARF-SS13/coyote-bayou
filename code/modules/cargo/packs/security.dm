@@ -8,9 +8,8 @@
 
 /datum/supply_pack/security
 	group = "Munitions"
-	access = ACCESS_SECURITY
 	crate_type = /obj/structure/closet/crate/footlocker
-	can_private_buy = FALSE
+	can_private_buy = 1
 
 /* /datum/supply_pack/security/ammosurplus
 	name = "Ammo Crate - Grab-Bag"
@@ -30,7 +29,7 @@
 					/obj/item/clothing/head/helmet/armyhelmet)
 	crate_name = "helmet crate"
 
-/datum/supply_pack/security/armor //one tier 2 armor from the raider boss, as a treat...
+/datum/supply_pack/security/raiderarmor //one tier 2 armor from the raider boss, as a treat...
 	name = "Armor - Raider Scraps"
 	desc = "Four sets of armor stripped off of raiders. Cheap, dirty, and quickly supplied. Some of it might even be worthwhile."
 	cost = 1500
@@ -40,6 +39,70 @@
 					/obj/effect/spawner/lootdrop/f13/armor/tier2)
 	crate_name = "armor crate"
 
+/datum/supply_pack/security/armor
+	name = "Armor - Surplus"
+	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
+	cost = 3000
+	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier3,
+					/obj/effect/spawner/lootdrop/f13/armor/tier3,
+					/obj/effect/spawner/lootdrop/f13/armor/tier3)
+	crate_name = "armor crate"
+
+/datum/supply_pack/security/ec
+	name = "Ammo - Energy Cell"
+	desc = "Three fully charged energy cells."
+	cost = 900
+	contains = list(/obj/item/stock_parts/cell/ammo/ec,
+					/obj/item/stock_parts/cell/ammo/ec,
+					/obj/item/stock_parts/cell/ammo/ec)
+	crate_name = "cell crate"
+
+/datum/supply_pack/security/mfc
+	name = "Ammo - Microfusion Cell"
+	desc = "Three fully charged microfusion cells."
+	cost = 1300
+	contains = list(/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc,
+					/obj/item/stock_parts/cell/ammo/mfc)
+	crate_name = "microfusion crate"
+
+/datum/supply_pack/security/ecp
+	name = "Ammo - Electron Charge Pack"
+	desc = "Three fully charged electron charge packs."
+	cost = 2000
+	contains = list(/obj/item/stock_parts/cell/ammo/ecp,
+					/obj/item/stock_parts/cell/ammo/ecp,
+					/obj/item/stock_parts/cell/ammo/ecp)
+	crate_name = "electron charge crate"
+
+/datum/supply_pack/security/combatknives_single
+	name = "Combat Knife Single-Pack"
+	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-standard boot. You know what's better than one knife? Three of 'em!"
+	cost = 750
+	contains = list(/obj/item/melee/onehanded/knife/hunting,
+					/obj/item/melee/onehanded/knife/hunting,
+					/obj/item/melee/onehanded/knife/hunting)
+					
+/* /datum/supply_pack/security/dueling_stam
+	name = "Dueling Pistols"
+	desc = "Resolve all your quarrels with some nonlethal fun."
+	cost = 1500
+	contains = list(/obj/item/storage/lockbox/dueling/hugbox/stamina)
+	crate_name = "dueling pistols"
+
+/datum/supply_pack/security/dueling_stam/generate() 
+	. = ..()
+	for(var/i in 1 to 3)
+		new /obj/item/storage/lockbox/dueling/hugbox/stamina(.)
+
+/datum/supply_pack/misc/dueling_lethal
+	name = "Lethal Dueling Pistols"
+	desc = "Settle your differences the true cowboy way."
+	cost = 3000
+	contains = list(/obj/item/storage/lockbox/dueling/hugbox,
+	/obj/item/storage/lockbox/dueling/hugbox,
+	/obj/item/storage/lockbox/dueling/hugbox)
+	crate_name = "dueling pistols (lethal)" */
 /*
 /datum/supply_pack/security/forensics
 	name = "Forensics Crate"
@@ -145,7 +208,6 @@
 					/obj/item/clothing/mask/gas/sechailer)
 	crate_name = "security clothing crate"
 	can_private_buy = TRUE
-*/
 
 /datum/supply_pack/security/baton
 	name = "Stun Batons Crate"
@@ -154,7 +216,7 @@
 	contains = list(/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded,
 					/obj/item/melee/baton/loaded)
-	crate_name = "stun baton crate"
+	crate_name = "stun baton crate" */
 /*
 /datum/supply_pack/security/taser
 	name = "Taser Crate"
@@ -199,15 +261,14 @@
 	contains = list(/obj/item/storage/box/stingbangs)
 	crate_name = "stingbang grenade pack crate"
 
-/datum/supply_pack/security/mosinpack
-	name = "Weapons - Hunting Rifle Pack"
-	desc = "Arm your militia. Five Hunting Rifles, preloaded, ready to kill. A solid weapon for any defense or guerilla force. Does not come with spare ammo, so you might wanna get that sorted out, pardner."
-	cost = 750
-	contains = list(/obj/item/gun/ballistic/rifle/hunting,
-					/obj/item/gun/ballistic/rifle/hunting,
-					/obj/item/gun/ballistic/rifle/hunting,
-					/obj/item/gun/ballistic/rifle/hunting,
-					/obj/item/gun/ballistic/rifle/hunting)
+/datum/supply_pack/security/traitbooks
+	name = "Technical manuals"
+	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
+	cost = 2000
+	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
+					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
+
 
 /datum/supply_pack/security/laserlowtier
 	name = "Weapons - Laser Grab-Bag"
@@ -217,6 +278,24 @@
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low)
 	crate_name = "laser crate"
+
+/datum/supply_pack/security/lasermidtier
+	name = "Weapons - Energy Grab-Bag"
+	desc = "Contains two energy guns, probably in need of some love. Batteries included!"
+	cost = 4500
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
+	crate_name = "energy crate"
+
+/datum/supply_pack/security/mods
+	name = "Weapons - Gun Mods"
+	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
+	cost = 1200
+	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments,
+					/obj/effect/spawner/lootdrop/f13/attachments)
+	crate_name = "gun mods crate"
 
 /* /datum/supply_pack/security/disabler
 	name = "Weapons - Disabler Crate"
@@ -230,20 +309,35 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 9000
+	cost = 20000
 	contains = list(/obj/item/minigunpackbal5mm)
-	crate_name = "laser crate"
+	crate_name = "minigun crate"
+
+/datum/supply_pack/security/gunsuperhightier
+	name = "Weapons - Prewar Gun"
+	desc = "A sealed crate of a Prewar firearm, an exceptional weapon machined with lost technology."
+	cost = 8000
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh)
+	crate_name = "prewar gun crate"
+
+/datum/supply_pack/security/gunhightier
+	name = "Weapons - High-Tier Guns"
+	desc = "Two high-powered ballistics, perfect for taking down the meanest of muties."
+	cost = 4000
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high)
+	crate_name = "gun crate"
 
 /datum/supply_pack/security/ballisticstrash
 	name = "Weapons - Ballistics Grab-Bag"
 	desc = "Grab-bag is just a polite way of saying pile of junk. It's...a pile of junk. A mixture of around ten civillian and homemade firearms. Comes with an ABSURD amount of surplus ammo."
 	cost = 1350
-	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
-					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo,
-					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/hobo)
-	crate_name = "laser crate"
+					)
+	crate_name = "gun grab-bag crate"

@@ -35,7 +35,7 @@
 /datum/export/material/plasma
 	cost = 100
 	material_id = /datum/material/plasma
-	message = "cm3 of plasma"
+	message = "cm3 of ultracite"
 
 /datum/export/material/uranium
 	cost = 50
@@ -96,3 +96,33 @@
 	cost = 300
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
+
+/datum/export/material/leather
+	cost = 7
+	unit_name = "cm3 of leather"
+	material_id = /datum/material/leather
+	export_types = list(/obj/item/stack/sheet/leather)
+
+/datum/export/material/bone
+	cost = 3
+	unit_name = "cm3 of bones"
+	material_id = /datum/material/bone
+	export_types = list(/obj/item/stack/sheet/bone)
+
+/datum/export/material/sinew
+	cost = 3
+	unit_name = "cm3 of sinew"
+	material_id = /datum/material/sinew
+	export_types = list(/obj/item/stack/sheet/sinew)
+
+/datum/export/material/chitin
+	cost = 4
+	unit_name = "cm3 of chitin"
+	material_id = /datum/material/chitin
+	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
+
+/datum/export/material/f13cash
+	cost = 2
+	unit_name = "cm3 of caps"
+	material_id = /datum/material/f13cash
+	export_types = list(/obj/item/stack/f13Cash/caps)

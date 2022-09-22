@@ -10,13 +10,13 @@
 	group = "Engineering"
 	crate_type = /obj/structure/closet/crate/engineering
 
-/datum/supply_pack/engineering/shieldgen
+/* /datum/supply_pack/engineering/shieldgen
 	name = "Anti-breach Shield Projector Crate"
 	desc = "Hull breaches again? Say no more with the Nanotrasen Anti-Breach Shield Projector! Uses forcefield technology to keep the air in, and the space out. Contains two shield projectors."
 	cost = 2500
 	contains = list(/obj/machinery/shieldgen,
 					/obj/machinery/shieldgen)
-	crate_name = "anti-breach shield projector crate"
+	crate_name = "anti-breach shield projector crate" */
 
 /datum/supply_pack/engineering/conveyor
 	name = "Conveyor Assembly Crate"
@@ -80,7 +80,7 @@
 					/obj/item/clothing/head/helmet/space/rad)
 	crate_name = "radiation hardsuit"
 	crate_type = /obj/structure/closet/crate/secure/engineering
-*/
+
 /datum/supply_pack/engineering/industrialrcd
 	name = "Industrial RCD"
 	desc = "An industrial RCD in case the station has gone through more then one meteor storm and the CE needs to bring out the somthing a bit more reliable. Does not contain spare ammo for the industrial RCD or any other RCD models."
@@ -88,15 +88,15 @@
 	access = ACCESS_CE
 	contains = list(/obj/item/construction/rcd/industrial)
 	crate_name = "industrial rcd"
-	crate_type = /obj/structure/closet/crate/secure/engineering
+	crate_type = /obj/structure/closet/crate/secure/engineering */
 
-/datum/supply_pack/engineering/inducers
+/* /datum/supply_pack/engineering/inducers
 	name = "NT-75 Electromagnetic Power Inducers Crate"
 	desc = "No rechargers? No problem, with the NT-75 EPI, you can recharge any standard cell-based equipment anytime, anywhere. Contains two Inducers."
 	cost = 2300
 	contains = list(/obj/item/inducer/sci/supply, /obj/item/inducer/sci/supply)
 	crate_name = "inducer crate"
-	crate_type = /obj/structure/closet/crate/engineering/electrical
+	crate_type = /obj/structure/closet/crate/engineering/electrical */
 
 /* /datum/supply_pack/engineering/pacman
 	name = "P.A.C.M.A.N Generator Crate"
@@ -154,17 +154,17 @@
 	crate_name = "toolbox crate"
 	special = TRUE //Department resupply shuttle loan event.
 
-/* /datum/supply_pack/engineering/bsa
+/datum/supply_pack/engineering/bsa
 	name = "Bluespace Artillery Parts"
 	desc = "The pride of Nanotrasen Naval Command. The legendary Bluespace Artillery Cannon is a devastating feat of human engineering and testament to wartime determination. Highly advanced research is required for proper construction. "
-	cost = 45000
+	cost = 900000
 	special = TRUE
 	contains = list(/obj/item/circuitboard/machine/bsa/front,
 					/obj/item/circuitboard/machine/bsa/middle,
 					/obj/item/circuitboard/machine/bsa/back,
 					/obj/item/circuitboard/computer/bsa_control
 					)
-	crate_name= "bluespace artillery parts crate" */
+	crate_name= "bluespace artillery parts crate" 
 /*
 /datum/supply_pack/engineering/dna_vault
 	name = "DNA Vault Parts"

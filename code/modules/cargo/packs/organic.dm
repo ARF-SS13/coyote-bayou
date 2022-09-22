@@ -72,6 +72,18 @@
 					/obj/item/storage/fancy/donut_box)
 	crate_name = "candy crate"
 
+/datum/supply_pack/emergency/mre
+	name = "MRE Packs (Emergency Rations)"
+	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
+	cost = 2000
+	contains = list(/obj/item/storage/box/mre/menu1/safe,
+					/obj/item/storage/box/mre/menu1/safe,
+					/obj/item/storage/box/mre/menu2/safe,
+					/obj/item/storage/box/mre/menu2/safe,
+					/obj/item/storage/box/mre/menu3,
+					/obj/item/storage/box/mre/menu4/safe)
+	crate_name = "MRE crate (emergency rations)"
+
 /datum/supply_pack/organic/fiestatortilla
 	name = "Fiesta Crate"
 	desc = "Spice up the kitchen with this fiesta themed food order! Contains 8 tortilla based food items, as well as a sombrero, moustache, and cloak!"

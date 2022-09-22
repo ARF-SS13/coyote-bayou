@@ -70,6 +70,79 @@
 					/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
 
+/datum/supply_pack/medical/firstaidbruises_single
+	name = "Bruise Treatment Kit Single-Pack"
+	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/brute)
+
+/datum/supply_pack/medical/firstaidburns_single
+	name = "Burn Treatment Kit Single-Pack"
+	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/fire)
+
+/datum/supply_pack/medical/firstaid_single
+	name = "First Aid Kit Single-Pack"
+	desc = "A single first-aid kit, fit for healing most types of bodily harm."
+	cost = 250
+	contains = list(/obj/item/storage/firstaid/regular)
+
+/datum/supply_pack/medical/firstaidoxygen_single
+	name = "Oxygen Deprivation Kit Single-Pack"
+	desc = "A single oxygen deprivation first-aid kit, marketed heavily to those with crippling fears of asphyxiation."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/o2)
+
+/datum/supply_pack/medical/firstaidtoxins_single
+	name = "Toxin Treatment Kit Single-Pack"
+	desc = "A single first aid kit focused on healing damage dealt by heavy toxins."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/toxin)
+
+/datum/supply_pack/emergency/medicalemergency
+	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
+	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
+	cost = 10000
+	contains = list(/obj/item/storage/box/bodybags,
+					/obj/item/storage/box/bodybags,
+					/obj/item/clothing/glasses/hud/health,
+					/obj/item/defibrillator/loaded,
+					/obj/item/storage/belt/medical,
+					/obj/item/storage/firstaid/toxin,
+					/obj/item/storage/firstaid/o2,
+					/obj/item/storage/firstaid/brute,
+					/obj/item/storage/firstaid/fire,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/storage/box/medipens)
+	crate_name = "medical emergency crate"
+	crate_type = /obj/structure/closet/crate/medical
+
+/datum/supply_pack/emergency/medemergencylite
+	name = "Emergency Medical Supplies (Lite)"
+	desc = "A less than optimal, but still effective, set of tools for emergency care. Contains a box of bodybags, some normal (and advanced) health analyzers, healing sprays, a single first aid kit, charcoal, some gauze, a bottle of toxins, and some spare medipens."
+	cost = 2800
+	contains = list(/obj/item/storage/box/bodybags,
+					/obj/item/stack/medical/gauze,
+					/obj/item/stack/medical/gauze,
+					/obj/item/healthanalyzer,
+					/obj/item/healthanalyzer,
+					/obj/item/healthanalyzer/advanced,
+					/obj/item/storage/firstaid/regular,
+					/obj/item/reagent_containers/medspray/styptic,
+					/obj/item/reagent_containers/medspray/silver_sulf,
+					/obj/item/reagent_containers/medspray/synthflesh,
+					/obj/item/reagent_containers/glass/bottle/charcoal,
+					/obj/item/reagent_containers/glass/bottle/charcoal,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen)
+	crate_name = "medical emergency crate (lite)"
+	crate_type = /obj/structure/closet/crate/medical
+
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip stand for intravenous delivery."

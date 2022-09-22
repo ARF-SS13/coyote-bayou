@@ -62,6 +62,16 @@
 	cost = 400 // 6-7 planks shy from having equal import/export prices
 	contains = list(/obj/item/stack/sheet/mineral/wood/twenty)
 
+/datum/supply_pack/materials/weaponparts
+	goody = PACK_GOODY_PUBLIC
+	name = "Weapon Parts"
+	desc = "A random collection of recovered weapon parts. A gunsmith's wet dream."
+	cost = 3500
+	contains = list(/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting)
+					
 /* /datum/supply_pack/materials/rcdammo
 	goody = PACK_GOODY_PUBLIC
 	name = "Large RCD ammo Single-Pack"
