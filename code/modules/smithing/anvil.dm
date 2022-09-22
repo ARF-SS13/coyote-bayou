@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
-		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/10 + 1
+		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
 
 	playsound(src, 'sound/effects/clang2.ogg',40, 2) // sounds. gotta have them..!
@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
-	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2.5 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
 		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
 		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 					finisheditem.desc +=  "\nIt looks to be better than average."
 			finisheditem.set_custom_materials(workpiece_material)
 			var/stepexperience = currentsteps + finisheditem.quality
-			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/8 //Makes powerlevelling late-game harder as it gives more bonuses here
+			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/6 //Makes powerlevelling late-game harder as it gives more bonuses here
 			if(user.mind.skill_holder) // give them some experience!
 				if(currentquality <= 1)
 					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 250, 500000, silent = FALSE) //Fixes speedleveling by just making hammers, somewhat.
