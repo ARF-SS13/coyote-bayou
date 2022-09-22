@@ -84,7 +84,7 @@
 /obj/machinery/modular_computer/interact(mob/user)
 	if(cpu)
 		return cpu.interact(user) // CPU is an item, that's why we route attack_hand to attack_self
-	if(HAS_TRAIT(user,TRAIT_TECHNOPHOBE))
+	if(HAS_TRAIT(user,TRAIT_FEV))
 		to_chat(user,span_warning("Your hands aren't small enough to use this!"))
 		return FALSE
 	else
