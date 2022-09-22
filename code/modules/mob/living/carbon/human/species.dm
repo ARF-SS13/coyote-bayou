@@ -1348,12 +1348,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		return TRUE
 	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls. 
 		switch(radiation)
-			if(600 to 1499)
-				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 0.5)
-			if(1499 to 2499)
+			if(1000 to 2000)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1)
-			if(2499 to INFINITY)
+			if(2000 to 3000)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1.5)
+			if(3000 to INFINITY)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 2)
 			else //This really shouldn't be occurring, and if it does; report this to a coder.
 				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)		
 		return TRUE
