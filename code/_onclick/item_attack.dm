@@ -92,7 +92,7 @@
 		return
 
 	var/bigleagues = 10 //flat additive
-	var/FEVbonus = 20 //flat additive of 20. Makes a LOT of melee weapons better, AND hurts like a bitch
+	var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
 	var/buffout = force*0.25
 	var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
 	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
