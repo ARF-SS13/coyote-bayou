@@ -42,7 +42,7 @@
 /datum/supply_pack/security/armor
 	name = "Armor - Surplus"
 	desc = "Three sets of refurbished armor, straight from the Dallas Miltia's own armory."
-	cost = 3000
+	cost = 2500
 	contains = list(/obj/effect/spawner/lootdrop/f13/armor/tier3,
 					/obj/effect/spawner/lootdrop/f13/armor/tier3,
 					/obj/effect/spawner/lootdrop/f13/armor/tier3)
@@ -74,6 +74,25 @@
 					/obj/item/stock_parts/cell/ammo/ecp,
 					/obj/item/stock_parts/cell/ammo/ecp)
 	crate_name = "electron charge crate"
+
+/datum/supply_pack/security/blueprint
+	name = "Blueprints - Basic"
+	desc = "A set of three basic weapon blueprints, parts not included!"
+	cost = 2750
+	contains = list(/obj/effect/spawner/lootdrop/f13/blueprintMid,
+					/obj/effect/spawner/lootdrop/f13/blueprintMid,
+					/obj/effect/spawner/lootdrop/f13/blueprintMid
+					)
+	crate_name = "blueprint crate"
+
+/datum/supply_pack/security/blueprintadv
+	name = "Blueprints - Advanced"
+	desc = "A set of two advanced weapon blueprints, parts not included!"
+	cost = 4250
+	contains = list(/obj/effect/spawner/lootdrop/f13/blueprintHigh,
+					/obj/effect/spawner/lootdrop/f13/blueprintHigh
+					)
+	crate_name = "blueprint crate"
 
 /datum/supply_pack/security/combatknives_single
 	name = "Combat Knife Single-Pack"
@@ -282,7 +301,7 @@
 /datum/supply_pack/security/lasermidtier
 	name = "Weapons - Energy Grab-Bag"
 	desc = "Contains two energy guns, probably in need of some love. Batteries included!"
-	cost = 4500
+	cost = 4000
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
 	crate_name = "energy crate"
@@ -316,7 +335,7 @@
 /datum/supply_pack/security/gunsuperhightier
 	name = "Weapons - Prewar Gun"
 	desc = "A sealed crate of a Prewar firearm, an exceptional weapon machined with lost technology."
-	cost = 8000
+	cost = 6000
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh)
 	crate_name = "prewar gun crate"
 

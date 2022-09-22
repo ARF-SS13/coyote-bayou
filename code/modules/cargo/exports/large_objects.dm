@@ -17,7 +17,6 @@
 	cost = 100
 	unit_name = "large wooden crate"
 	export_types = list(/obj/structure/closet/crate/large)
-	exclude_types = list()
 
 /datum/export/large/crate/wooden/ore
 	unit_name = "ore box"
@@ -27,7 +26,6 @@
 	cost = 140
 	unit_name = "wooden crate"
 	export_types = list(/obj/structure/closet/crate/wooden)
-	exclude_types = list()
 
 /datum/export/large/barrel
 	cost = 300 //double the wooden cost of a coffin.
@@ -160,6 +158,50 @@
 	cost = 12
 	unit_name = "Padded Chair"
 	export_types = list(/obj/structure/chair/comfy)
+
+/datum/export/large/adv_chem_master
+	cost = 2500
+	unit_name = "old world refinery"
+	export_types = list(/obj/machinery/chem_master/advanced)
+
+/datum/export/large/chem_dispenser
+	cost = 3000
+	unit_name = "chem dispenser"
+	export_types = list(/obj/machinery/chem_dispenser)
+
+/datum/export/large/workbench
+	cost = 1000
+	unit_name = "workbench"
+	export_types = list(/obj/machinery/workbench)
+
+/datum/export/large/adv_workbench
+	cost = 4000
+	unit_name = "advanced workbench"
+	export_types = list(/obj/machinery/workbench/advanced)
+
+/datum/export/large/ammobench
+	cost = 3500
+	unit_name = "ammo bench"
+	export_types = list(obj/machinery/autolathe/ammo)
+
+/datum/export/large/forge
+	cost = 2000
+	unit_name = "metalworking bench"
+	export_types = list(/obj/machinery/workbench/forge)
+
+/datum/export/large/grinder
+	cost = 950
+	unit_name = "all-in-one grinder"
+	export_types = list(/obj/machinery/reagentgrinder/constructed)
+
+/datum/export/large/microwave
+	cost = 750
+	unit_name = "all-in-one grinder"
+	export_types = list(/obj/machinery/microwave)
+/datum/export/large/optable
+	cost = 1000
+	unit_name = "operating table"
+	export_types = list(/obj/structure/table/optable)
 
 /datum/export/large/gas_canister
 	cost = 10 //Base cost of canister. You get more for nice gases inside.

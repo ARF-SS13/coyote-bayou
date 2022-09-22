@@ -56,11 +56,13 @@
 	cost = 60
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
+	export_types = list(/obj/item/stack/sheet/mineral/titanium)
 
 /datum/export/material/plastic
 	cost = 5
 	material_id = /datum/material/plastic
 	message = "cm3 of plastic"
+	export_types = list(/obj/item/stack/sheet/plastic)
 
 /datum/export/material/metal
 	cost = 3
@@ -68,7 +70,8 @@
 	material_id = /datum/material/iron
 	export_types = list(
 		/obj/item/stack/sheet/metal, /obj/item/stack/tile/plasteel,
-		/obj/item/stack/rods, /obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet/plasteel, /obj/item/stack/rods, 
+		/obj/item/stack/ore, /obj/item/coin)
 
 /datum/export/material/glass
 	cost = 3
@@ -99,30 +102,30 @@
 
 /datum/export/material/leather
 	cost = 7
-	unit_name = "cm3 of leather"
+	unit_name = "sheets of leather"
 	material_id = /datum/material/leather
 	export_types = list(/obj/item/stack/sheet/leather)
 
 /datum/export/material/bone
 	cost = 3
-	unit_name = "cm3 of bones"
+	unit_name = "bones"
 	material_id = /datum/material/bone
 	export_types = list(/obj/item/stack/sheet/bone)
 
 /datum/export/material/sinew
 	cost = 3
-	unit_name = "cm3 of sinew"
+	unit_name = "pieces of sinew"
 	material_id = /datum/material/sinew
 	export_types = list(/obj/item/stack/sheet/sinew)
 
 /datum/export/material/chitin
 	cost = 4
-	unit_name = "cm3 of chitin"
+	unit_name = "pieces of chitin"
 	material_id = /datum/material/chitin
 	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
 
 /datum/export/material/f13cash
 	cost = 2
-	unit_name = "cm3 of caps"
+	unit_name = "caps"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)

@@ -257,20 +257,22 @@
 	crate_name = "medipen crate"
 */
 
-/datum/supply_pack/medical/stimpak5
-	name = "Stimpak"
-	desc = "The humble stimpak, about five."
-	cost = 250
-	contains = list(/obj/item/reagent_containers/hypospray/medipen/stimpak,
-					/obj/item/reagent_containers/hypospray/medipen/stimpak,
-					/obj/item/reagent_containers/hypospray/medipen/stimpak,
-					/obj/item/reagent_containers/hypospray/medipen/stimpak,
-					/obj/item/reagent_containers/hypospray/medipen/stimpak)
+/datum/supply_pack/medical/chems
+	name = "Mixed Chems"
+	desc = "A raiders dream, contains five random chems."
+	cost = 1300
+	contains = list(/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug)
+	crate_name = "chem crate"
 
 /datum/supply_pack/medical/radaway
 	name = "Radaway"
 	desc = "It burns like hell, but it flushes the rads out, for sure. About three."
-	cost = 750
+	cost = 900
 	contains = list(/obj/item/reagent_containers/blood/radaway,
 					/obj/item/reagent_containers/blood/radaway,
-					/obj/item/reagent_containers/blood/radaway)
+					/obj/item/reagent_containers/blood/radaway,
+					/obj/item/storage/pill_bottle/chem_tin/radx)

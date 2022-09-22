@@ -556,7 +556,7 @@
 	loot = list(
 				/obj/item/reagent_containers/pill/patch/jet,
 				/obj/item/reagent_containers/pill/patch/turbo,
-				/obj/item/reagent_containers/pill/healingpowder,
+				// /obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -2169,18 +2169,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	)
+	)		
 
-/obj/effect/spawner/lootdrop/f13/blueprintEnergyMid
-	name = "blueprint-energy-tier(Low) item spawner"
-	icon_state = "blueprint_loot"
-	lootcount = 1
-	loot = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
-		// /obj/item/book/granter/crafting_recipe/blueprint/wattz2k,
-		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
-		// /obj/item/book/granter/crafting_recipe/blueprint/ionrifle
-		)
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
 	name = "blueprint-tier(High) item spawner"
@@ -2197,16 +2187,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 	)
 
-/obj/effect/spawner/lootdrop/f13/blueprintEnergyHigh
-	name = "blueprint-energy-tier(High) item spawner"
-	icon_state = "blueprint_loot"
-	lootcount = 1
-	loot = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/plasmarifle,
-		// /obj/item/book/granter/crafting_recipe/blueprint/wattz2kext,
-		/obj/item/book/granter/crafting_recipe/blueprint/tribeam,
-		// /obj/item/book/granter/crafting_recipe/blueprint/rcw
-	)
+
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh
 	name = "blueprint-tier(VHigh) item spawner"
 	icon_state = "blueprint_loot"

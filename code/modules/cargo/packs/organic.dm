@@ -22,7 +22,7 @@
 //////////////////////////////// Meals ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/organic/combomeal2
+/* /datum/supply_pack/organic/combomeal2
 	name = "Burger Combo #2"
 	desc = "We value our customers at the Greasy Griddle, so much so that we're willing to deliver -just for you.- This combo meal contains two burgers, a soda, fries, a toy, and some chicken nuggets."
 	cost = 3200
@@ -37,7 +37,7 @@
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/effect/spawner/lootdrop/plush)
 	crate_name = "combo meal w/toy"
-	crate_type = /obj/structure/closet/crate/wooden
+	crate_type = /obj/structure/closet/crate/wooden */
 
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
@@ -84,7 +84,7 @@
 					/obj/item/storage/box/mre/menu4/safe)
 	crate_name = "MRE crate (emergency rations)"
 
-/datum/supply_pack/organic/fiestatortilla
+/* /datum/supply_pack/organic/fiestatortilla
 	name = "Fiesta Crate"
 	desc = "Spice up the kitchen with this fiesta themed food order! Contains 8 tortilla based food items, as well as a sombrero, moustache, and cloak!"
 	cost = 2750
@@ -100,12 +100,12 @@
 					/obj/item/reagent_containers/food/snacks/carneburrito,
 					/obj/item/reagent_containers/food/snacks/cheesyburrito,
 					/obj/item/reagent_containers/glass/bottle/capsaicin,
-					/obj/item/reagent_containers/glass/bottle/capsaicin)
+					/obj/item/reagent_containers/glass/bottle/capsaicin) */
 	crate_name = "fiesta crate"
 
 /datum/supply_pack/organic/pizza
 	name = "Pizza Crate"
-	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99% anomaly-free!"
+	desc = "Best prices on this side of the Alamo. All deliveries are guaranteed to be 99% rad-free!"
 	cost = 6000 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
@@ -186,7 +186,7 @@
 					/obj/item/reagent_containers/food/snacks/grown/strawberry)
 	crate_name = "fruit crate"
 
-/datum/supply_pack/organic/randomized
+/* /datum/supply_pack/organic/randomized
 	name = "Meat Crate (Exotic)"
 	desc = "The best cuts in the whole galaxy. Contains 15 assorted exotic meats."
 	cost = 2000
@@ -199,7 +199,7 @@
 					/obj/item/reagent_containers/food/snacks/meat/rawcrab,
 					/obj/item/reagent_containers/food/snacks/spiderleg,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-					/obj/item/reagent_containers/food/snacks/meat/slab/human)
+					/obj/item/reagent_containers/food/snacks/meat/slab/human) 
 	crate_name = "exotic meat crate"
 
 /datum/supply_pack/organic/monkeydripmeat
@@ -233,7 +233,7 @@
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation)
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation) 
 	crate_name = "meaty crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
@@ -246,7 +246,7 @@
 					/obj/item/storage/box/ingredients/wildcard,
 					/obj/item/storage/box/ingredients/wildcard)
 	crate_name = "wildcard food crate"
-	crate_type = /obj/structure/closet/crate/freezer
+	crate_type = /obj/structure/closet/crate/freezer */
 
 /datum/supply_pack/organic/randomized/vegetables
 	name = "Vegetable Crate"
@@ -561,7 +561,7 @@
 
 /datum/supply_pack/organic/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the station with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
+	desc = "Celebrate both life and death in the wastes! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
 	cost = 2000
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,
