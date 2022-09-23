@@ -175,9 +175,8 @@
 					/obj/item/tank/internals/air)
 	crate_name = "internals crate"
 	crate_type = /obj/structure/closet/crate/internals
-*/
 
- /* /datum/supply_pack/emergency/mre
+ /datum/supply_pack/emergency/mre
 	name = "MRE Packs (Emergency Rations)"
 	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
 	cost = 2000
