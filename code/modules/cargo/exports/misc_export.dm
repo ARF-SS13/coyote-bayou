@@ -49,13 +49,21 @@
 		)
 
 /datum/export/item/heavypistol
-	cost = 275
+	cost = 225
 	unit_name = "heavy pistol"
 	export_types = list(
 		/obj/item/gun/energy/laser/wattz/magneto,
 		/obj/item/gun/energy/laser/pistol,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
+		/obj/item/gun/ballistic/automatic/pistol/sig,
+		/obj/item/gun/ballistic/revolver/revolver44,
+		)
+
+/datum/export/item/advpistol
+	cost = 350
+	unit_name = "advanced pistol"
+	export_types = list(
 		/obj/item/gun/ballistic/automatic/pistol/deagle,
 		/obj/item/gun/ballistic/automatic/pistol/automag,
 		/obj/item/gun/ballistic/automatic/pistol/sig,
@@ -88,7 +96,6 @@
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/m1carbine,
 		/obj/item/gun/ballistic/automatic/delisle,
-		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/ballistic/automatic/sportcarbine,
 		/obj/item/gun/ballistic/automatic/varmint,
 		/obj/item/gun/ballistic/rifle/repeater/cowboy,
@@ -138,6 +145,7 @@
 	unit_name = "semi-automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/varmint/verminkiller,
+		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/energy/laser/plasma/glock,
 		/obj/item/gun/energy/laser/plasma,
 		/obj/item/gun/energy/laser/wattz2k,
