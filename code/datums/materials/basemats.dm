@@ -405,3 +405,13 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
 					A common unit of exchange, backed by water in the Hub."
 	sheet_type = /obj/item/stack/f13Cash/caps
+
+/datum/material/deathclawhide
+	name = "deathclaw leather"
+	desc = "A glorious hunting trophy."
+	sheet_type = /obj/item/stack/sheet/animalhide/deathclaw
+
+/* /datum/material/prewar
+	name = "prewar alloy"
+	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
+	sheet_type = /obj/item/stack/sheet/prewar */

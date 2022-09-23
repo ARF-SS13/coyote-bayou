@@ -81,9 +81,17 @@
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 300
+	cost = 100
 	material_id = /datum/material/adamantine
-	message = "cm3 of adamantine"
+	message = "cm3 of pre-war ingots"
+	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
+	/obj/item/ingot/adamantine)
+
+/* /datum/export/material/prewar
+	cost = 15
+	material_id = /datum/material/prewar
+	message = "cm3 of prewar alloy"
+	export_types = (/obj/item/stack/sheet/prewar) */
 
 /datum/export/material/mythril
 	cost = 1000
@@ -108,7 +116,7 @@
 
 /datum/export/material/bone
 	cost = 3
-	unit_name = "bones"
+	unit_name = "bone"
 	material_id = /datum/material/bone
 	export_types = list(/obj/item/stack/sheet/bone)
 
@@ -129,3 +137,9 @@
 	unit_name = "caps"
 	material_id = /datum/material/f13cash
 	export_types = list(/obj/item/stack/f13Cash/caps)
+
+/datum/export/material/deathclawhide
+	cost = 175
+	unit_name = "deathclaw hide"
+	material_id = /datum/material/deathclawhide
+	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)
