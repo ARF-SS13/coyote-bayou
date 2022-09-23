@@ -115,6 +115,25 @@
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
 
+/datum/gear/donator/kits/bwoincognito
+	name = "Tasald's Kit"
+	path = /obj/item/storage/box/large/custom_kit/bwoincognito
+	ckeywhitelist = list("bwoincognito")
+
+/obj/item/storage/box/large/custom_kit/bwoincognito/PopulateContents()
+	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
+	new /obj/item/clothing/under/f13/ranger/modif_ranger(src)
+	new /obj/item/clothing/accessory/kevlar(src)
+	new /obj/item/clothing/shoes/combat(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/shovel/trench(src)
+	new /obj/item/storage/belt/legholster(src)
+	new /obj/item/gun/ballistic/revolver/revolver45/gunslinger(src)
+	new /obj/item/tool_upgrade/refinement/ported_barrel(src)
+	new /obj/item/ammo_box/a45lcrev(src)
+	new /obj/item/ammo_box/a45lcrev(src)
+	new /obj/item/ammo_box/a45lcbox(src)
+
 // C
 
 /datum/gear/donator/kits/caseapollo58143
