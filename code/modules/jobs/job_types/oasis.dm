@@ -252,7 +252,8 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/thechief
+	/datum/outfit/loadout/thechief,
+	/datum/outfit/loadout/thedictator
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -312,6 +313,15 @@ Mayor
 	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/shotgun/buck = 2
 		)
+
+/datum/outfit/loadout/thedictator
+	name = "The Dictator"
+	uniform = /obj/item/clothing/under/f13/police/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
+	r_hand = /obj/item/gun/energy/laser/scatter
+	backpack_contents = list(/obj/item/stock_parts/cell/ammo/mfc = 1,
+		)
+
 /*
 /datum/outfit/loadout/pew
 	name = "Tactical"
@@ -354,7 +364,8 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
 	/datum/outfit/loadout/police,
-	/datum/outfit/loadout/swat,)
+	/datum/outfit/loadout/swat,
+	/datum/outfit/loadout/energy)
 
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -429,6 +440,16 @@ Mayor
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m5mm=1,
 		/obj/item/flashlight/seclite = 1
+		)
+
+/datum/outfit/loadout/energy
+	name = "High Tech Officer"
+	uniform = /obj/item/clothing/under/f13/police/officer
+	suit = /obj/item/clothing/suit/armor/heavy/metal/polished
+	gloves = /obj/item/clothing/gloves/f13/military
+	suit_store = /obj/item/gun/energy/laser/aer9
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/mfc = 1
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
