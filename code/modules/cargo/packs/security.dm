@@ -328,7 +328,7 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 25000
+	cost = 20000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
@@ -336,7 +336,7 @@
 	name = "Weapons - Prewar Gun"
 	desc = "A sealed crate of a Prewar firearm, an exceptional weapon machined with lost technology."
 	cost = 6250
-	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh)
+	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo)
 	crate_name = "prewar gun crate"
 
 /datum/supply_pack/security/gunhightier

@@ -927,6 +927,7 @@
 				/obj/item/gun/ballistic/automatic/bozar = 1
 				)
 
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh
 	name = "superhigh tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/riotshotgun = 5,
@@ -936,6 +937,16 @@
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10
+				)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prewar cargo crate
+	name = "superhigh tier ballistic gun (cargo)"
+	loot = list(/obj/effect/spawner/bundle/f13/amr = 5,
+				/obj/item/gun/ballistic/rocketlauncher = 10,
+				/obj/item/gun/ballistic/automatic/bozar = 7,
+				/obj/effect/spawner/bundle/f13/m1919 = 5,
+				/obj/effect/spawner/bundle/f13/guns/p90 = 7,
+				/obj/effect/spawner/bundle/f13/dks = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique
@@ -1563,8 +1574,17 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/gun/ballistic/revolver/grenadelauncher,
 				/obj/item/ammo_box/a40mm
 	)
+/obj/effect/spawner/bundle/f13/m1919
+	name = "browning m1919 and ammo spawner"
+	items = list(/obj/item/gun/ballistic/automatic/m1919,
+				/obj/item/ammo_box/magazine/mm762
+				)
 
-
+/obj/effect/spawner/bundle/f13/dks
+	name ="dks 501 and ammo spawner"
+	items = list(/obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger,
+	/obj/item/ammo_box/magazine/w308
+	)
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------

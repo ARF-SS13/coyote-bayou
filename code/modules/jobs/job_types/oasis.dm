@@ -1152,8 +1152,8 @@ Mayor
 	title = "Shopkeeper"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the free market and Nash's laws"
 	description = "The big trading caravan companies have often neglected humble Nash. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
 	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
@@ -1197,22 +1197,22 @@ Mayor
 /datum/outfit/loadout/energy_specialist
 	name = "Energy Specialist"
 	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aer9,
-		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol,
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1,
 	)
 
 /datum/outfit/loadout/ballistic_specialist
 	name = "Ballistic Specialist"
 	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle,
+		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
 	)
 
 /datum/outfit/loadout/jackofall_specialist
 	name = "Jack-Of-All Trade"
 	backpack_contents = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
-		/obj/item/book/granter/crafting_recipe/blueprint/uzi,
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
 	)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
