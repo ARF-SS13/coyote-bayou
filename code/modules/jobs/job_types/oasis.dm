@@ -1205,14 +1205,14 @@ Mayor
 	name = "Ballistic Specialist"
 	backpack_contents = list(
 		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1,
 	)
 
 /datum/outfit/loadout/jackofall_specialist
 	name = "Jack-Of-All Trade"
 	backpack_contents = list(
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
-		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1,
 	)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
