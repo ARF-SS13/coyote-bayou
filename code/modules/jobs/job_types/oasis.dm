@@ -1012,7 +1012,7 @@ Mayor
 	/obj/item/clothing/glasses/welding = 1,
 	/obj/item/t_scanner/adv_mining_scanner = 1,
 	/obj/item/ammo_box/m44 = 2,
-	/obj/item/gun/ballistic/revolver/m29/snub
+	/obj/item/gun/ballistic/revolver/m29/snub = 1
 	)
 /*----------------------------------------------------------------
 --							Detective							--
