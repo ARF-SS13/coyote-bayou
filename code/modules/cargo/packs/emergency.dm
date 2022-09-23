@@ -37,9 +37,9 @@
 					/obj/item/reagent_containers/syringe/antiviral,
 					/obj/item/clothing/gloves/color/latex/nitrile,
 					/obj/item/clothing/gloves/color/latex/nitrile)
-	crate_name = "bio suit crate" */
+	crate_name = "bio suit crate"
 
-/* //atmospherics ain't a thing, here. why was it even so expensive
+//atmospherics ain't a thing, here. why was it even so expensive
 /datum/supply_pack/emergency/equipment
 	name = "Emergency Bot/Internals Crate"
 	desc = "Explosions got you down? These supplies are guaranteed to patch up holes, in stations and people alike! Comes with two floorbots, two medbots, five oxygen masks and five small oxygen tanks."
@@ -59,8 +59,7 @@
 					/obj/item/clothing/mask/gas,
 					/obj/item/clothing/mask/gas)
 	crate_name = "emergency crate"
-	crate_type = /obj/structure/closet/crate/internals
-
+	crate_type = /obj/structure/closet/crate/internals */
 
 /datum/supply_pack/emergency/medicalemergency
 	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
@@ -103,7 +102,7 @@
 					/obj/item/reagent_containers/hypospray/medipen,
 					/obj/item/reagent_containers/hypospray/medipen)
 	crate_name = "medical emergency crate (lite)"
-	crate_type = /obj/structure/closet/crate/medical */
+	crate_type = /obj/structure/closet/crate/medical
 
 /* /datum/supply_pack/emergency/radiatione_emergency
 	name = "Emergency Radiation Protection Crate"
@@ -116,9 +115,9 @@
 					/obj/item/geiger_counter,
 					/obj/item/geiger_counter)
 	crate_name = "radiation protection crate"
-	crate_type = /obj/structure/closet/crate/radiation */
+	crate_type = /obj/structure/closet/crate/radiation
 
-/* //we need none of these.
+//we need none of these.
 /datum/supply_pack/emergency/bomb
 	name = "Explosive Emergency Crate"
 	desc = "Science gone bonkers? Beeping behind the airlock? Buy now and become the hero the station des... I mean needs! Time not included, but a full bomb suit and hood, as well as a mask and defusal kit are! Non-Nuclear ordnances only."
@@ -176,7 +175,7 @@
 	crate_name = "internals crate"
 	crate_type = /obj/structure/closet/crate/internals
 
- /datum/supply_pack/emergency/mre
+/datum/supply_pack/emergency/mre
 	name = "MRE Packs (Emergency Rations)"
 	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
 	cost = 2000
@@ -187,7 +186,6 @@
 					/obj/item/storage/box/mre/menu3,
 					/obj/item/storage/box/mre/menu4/safe)
 	crate_name = "MRE crate (emergency rations)"
-
 
 /datum/supply_pack/emergency/plasma_spacesuit
 	name = "Plasmaman Space Envirosuits"
@@ -267,7 +265,7 @@
 					/obj/item/tank/jetpack/carbondioxide/eva)
 	crate_name = "eva jetpacks crate"
 	crate_type = /obj/structure/closet/crate/secure
-*/
+
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
 	desc = "(*!&@#NCL4VE DEEP-COVER-OPERATIVE SUPPLIES. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXI#@*$"
@@ -282,7 +280,7 @@
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
-/* /datum/supply_pack/emergency/weedcontrol
+/datum/supply_pack/emergency/weedcontrol
 	name = "Weed Control Crate"
 	desc = "Keep those invasive species OUT. Contains a scythe, gasmask, two sprays of Plant-B-Gone, and two anti-weed chemical grenades. Warranty void if used on ambrosia. Requires Hydroponics access to open."
 	cost = 1800
