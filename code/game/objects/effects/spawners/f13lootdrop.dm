@@ -556,7 +556,7 @@
 	loot = list(
 				/obj/item/reagent_containers/pill/patch/jet,
 				/obj/item/reagent_containers/pill/patch/turbo,
-				/obj/item/reagent_containers/pill/healingpowder,
+				// /obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -2169,7 +2169,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	)
+	)		
+
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
 	name = "blueprint-tier(High) item spawner"
@@ -2185,6 +2186,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 	)
+
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh
 	name = "blueprint-tier(VHigh) item spawner"

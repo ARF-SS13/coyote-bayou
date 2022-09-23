@@ -4,57 +4,13 @@
 	group = "Goodies"
 	goody = PACK_GOODY_PRIVATE
 
-/datum/supply_pack/goody/traitbooks
-	name = "Technical manuals"
-	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
-	cost = 1500
-	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
-					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
-					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
 
-/datum/supply_pack/goody/combatknives_single
-	name = "Combat Knife Single-Pack"
-	desc = "Some good ol' sharp knives. Guaranteed to fit snugly inside any cowboy-standard boot. You know what's better than one knife? Three of 'em!"
-	cost = 800
-	contains = list(/obj/item/melee/onehanded/knife/hunting,
-					/obj/item/melee/onehanded/knife/hunting,
-					/obj/item/melee/onehanded/knife/hunting)
-
-/datum/supply_pack/goody/sologamermitts
+/* /datum/supply_pack/goody/sologamermitts
 	name = "Insulated Gloves Single-Pack"
 	desc = "The backbone of modern society. Oddly useful for...combat engineers, of all people."
 	cost = 800
-	contains = list(/obj/item/clothing/gloves/color/yellow)
+	contains = list(/obj/item/clothing/gloves/color/yellow) 
 
-/datum/supply_pack/goody/firstaidbruises_single
-	name = "Bruise Treatment Kit Single-Pack"
-	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
-	cost = 330
-	contains = list(/obj/item/storage/firstaid/brute)
-
-/datum/supply_pack/goody/firstaidburns_single
-	name = "Burn Treatment Kit Single-Pack"
-	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
-	cost = 330
-	contains = list(/obj/item/storage/firstaid/fire)
-
-/datum/supply_pack/goody/firstaid_single
-	name = "First Aid Kit Single-Pack"
-	desc = "A single first-aid kit, fit for healing most types of bodily harm."
-	cost = 250
-	contains = list(/obj/item/storage/firstaid/regular)
-
-/datum/supply_pack/goody/firstaidoxygen_single
-	name = "Oxygen Deprivation Kit Single-Pack"
-	desc = "A single oxygen deprivation first-aid kit, marketed heavily to those with crippling fears of asphyxiation."
-	cost = 330
-	contains = list(/obj/item/storage/firstaid/o2)
-
-/datum/supply_pack/goody/firstaidtoxins_single
-	name = "Toxin Treatment Kit Single-Pack"
-	desc = "A single first aid kit focused on healing damage dealt by heavy toxins."
-	cost = 330
-	contains = list(/obj/item/storage/firstaid/toxin)
 
 /datum/supply_pack/goody/toolbox // mostly just to water down coupon probability
 	name = "Mechanical Toolbox"
@@ -66,7 +22,7 @@
 	name = "Electrical Toolbox"
 	desc = "A fully stocked electrical toolbox, for when you're too lazy to just print them out."
 	cost = 300
-	contains = list(/obj/item/storage/toolbox/electrical)
+	contains = list(/obj/item/storage/toolbox/electrical) */
 
 /datum/supply_pack/goody/valentine
 	name = "Valentine Card"

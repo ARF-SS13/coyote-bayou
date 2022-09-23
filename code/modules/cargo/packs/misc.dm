@@ -169,33 +169,11 @@
 	for(var/i in 1 to 9)
 		new /obj/item/coin/silver(.)
 
-/datum/supply_pack/misc/dueling_stam
-	name = "Dueling Pistols"
-	desc = "Resolve all your quarrels with some nonlethal fun."
-	cost = 2000
-	contains = list(/obj/item/storage/lockbox/dueling/hugbox/stamina)
-	crate_name = "dueling pistols"
-
-/datum/supply_pack/misc/dueling_stam/generate()
-	. = ..()
-	for(var/i in 1 to 3)
-		new /obj/item/storage/lockbox/dueling/hugbox/stamina(.)
-
-/datum/supply_pack/misc/dueling_lethal
-	name = "Lethal Dueling Pistols"
-	desc = "Settle your differences the true spaceman way."
-	cost = 3000
-	contraband = TRUE
-	contains = list(/obj/item/storage/lockbox/dueling/hugbox,
-	/obj/item/storage/lockbox/dueling/hugbox,
-	/obj/item/storage/lockbox/dueling/hugbox)
-	crate_name = "dueling pistols (lethal)"
 
 /datum/supply_pack/misc/dueling_death
 	name = "Elimination Dueling Pistols"
 	desc = "It's high noon."
 	cost = 5000
-	hidden = TRUE
 	contains = list(/obj/item/storage/lockbox/dueling)
 	crate_name = "dueling pistols (elimination)"
 
@@ -273,7 +251,7 @@
 
 /datum/supply_pack/misc/jukebox
 	name = "Jukebox"
-	cost = 10000
+	cost = 5000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
 
@@ -302,7 +280,7 @@
 /datum/supply_pack/misc/religious_supplies
 	name = "Religious Supplies Crate"
 	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles, chaplain robes, and burial garmets."
-	cost = 4000	// it costs so much because the Space Church needs funding to build a cathedral
+	cost = 1250	// it costs so much because the Space Church needs funding to build a cathedral
 	contains = list(/obj/item/reagent_containers/food/drinks/bottle/holywater,
 					/obj/item/reagent_containers/food/drinks/bottle/holywater,
 					/obj/item/storage/book/bible/booze,
@@ -314,7 +292,7 @@
 /datum/supply_pack/misc/shower
 	name = "Shower Supplies"
 	desc = "Everyone needs a bit of R&R. Make sure you get can get yours by ordering this crate filled with towels, rubber duckies, and some soap!"
-	cost = 1000
+	cost = 900
 	contains = list(/obj/item/reagent_containers/rag/towel,
 					/obj/item/reagent_containers/rag/towel,
 					/obj/item/reagent_containers/rag/towel,

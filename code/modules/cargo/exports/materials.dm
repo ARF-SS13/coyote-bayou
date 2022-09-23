@@ -35,7 +35,7 @@
 /datum/export/material/plasma
 	cost = 100
 	material_id = /datum/material/plasma
-	message = "cm3 of plasma"
+	message = "cm3 of ultracite"
 
 /datum/export/material/uranium
 	cost = 50
@@ -56,11 +56,13 @@
 	cost = 60
 	material_id = /datum/material/titanium
 	message = "cm3 of titanium"
+	export_types = list(/obj/item/stack/sheet/mineral/titanium)
 
 /datum/export/material/plastic
 	cost = 5
 	material_id = /datum/material/plastic
 	message = "cm3 of plastic"
+	export_types = list(/obj/item/stack/sheet/plastic)
 
 /datum/export/material/metal
 	cost = 3
@@ -68,7 +70,8 @@
 	material_id = /datum/material/iron
 	export_types = list(
 		/obj/item/stack/sheet/metal, /obj/item/stack/tile/plasteel,
-		/obj/item/stack/rods, /obj/item/stack/ore, /obj/item/coin)
+		/obj/item/stack/sheet/plasteel, /obj/item/stack/rods, 
+		/obj/item/stack/ore, /obj/item/coin)
 
 /datum/export/material/glass
 	cost = 3
@@ -78,9 +81,17 @@
 		/obj/item/shard)
 
 /datum/export/material/adamantine
-	cost = 300
+	cost = 100
 	material_id = /datum/material/adamantine
-	message = "cm3 of adamantine"
+	message = "cm3 of pre-war ingots"
+	export_types = list(/obj/item/stack/sheet/mineral/adamantine,
+	/obj/item/ingot/adamantine)
+
+/* /datum/export/material/prewar
+	cost = 15
+	material_id = /datum/material/prewar
+	message = "cm3 of prewar alloy"
+	export_types = (/obj/item/stack/sheet/prewar) */
 
 /datum/export/material/mythril
 	cost = 1000
@@ -96,3 +107,39 @@
 	cost = 300
 	message = "cm3 of runite"
 	material_id = /datum/material/runite
+
+/datum/export/material/leather
+	cost = 7
+	unit_name = "sheets of leather"
+	material_id = /datum/material/leather
+	export_types = list(/obj/item/stack/sheet/leather)
+
+/datum/export/material/bone
+	cost = 3
+	unit_name = "bone"
+	material_id = /datum/material/bone
+	export_types = list(/obj/item/stack/sheet/bone)
+
+/datum/export/material/sinew
+	cost = 3
+	unit_name = "pieces of sinew"
+	material_id = /datum/material/sinew
+	export_types = list(/obj/item/stack/sheet/sinew)
+
+/datum/export/material/chitin
+	cost = 4
+	unit_name = "pieces of chitin"
+	material_id = /datum/material/chitin
+	export_types = list(/obj/item/stack/sheet/animalhide/chitin)
+
+/datum/export/material/f13cash
+	cost = 2
+	unit_name = "caps"
+	material_id = /datum/material/f13cash
+	export_types = list(/obj/item/stack/f13Cash/caps)
+
+/datum/export/material/deathclawhide
+	cost = 175
+	unit_name = "deathclaw hide"
+	material_id = /datum/material/deathclawhide
+	export_types = list(/obj/item/stack/sheet/animalhide/deathclaw)

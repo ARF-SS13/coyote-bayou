@@ -43,13 +43,13 @@
 					/obj/item/stack/packageWrap)
 	crate_name = "cargo supplies crate"
 
-/datum/supply_pack/service/mule
+/* /datum/supply_pack/service/mule
 	name = "MULEbot Crate"
 	desc = "Pink-haired Quartermaster not doing her job? Replace her with this tireless worker, today!"
 	cost = 2000
 	contains = list(/mob/living/simple_animal/bot/mulebot)
 	crate_name = "\improper MULEbot Crate"
-	crate_type = /obj/structure/closet/crate/large
+	crate_type = /obj/structure/closet/crate/large 
 
 /datum/supply_pack/service/minerkit
 	name = "Shaft Miner Starter Kit"
@@ -64,9 +64,9 @@
 			/obj/item/clothing/suit/hooded/explorer,
 			/obj/item/clothing/mask/gas/explorer)
 	crate_name = "shaft miner starter kit"
-	crate_type = /obj/structure/closet/crate/secure
+	crate_type = /obj/structure/closet/crate/secure */
 
-/datum/supply_pack/service/snowmobile
+/* /datum/supply_pack/service/snowmobile
 	name = "Snowmobile kit"
 	desc = "trapped on a frigid wasteland? need to get around fast? purchase a refurbished snowmobile, with a FREE 10 microsecond warranty!"
 	cost = 1500 // 1000 points cheaper than ATV
@@ -74,7 +74,7 @@
 			/obj/item/key = 1,
 			/obj/item/clothing/mask/gas/explorer = 1)
 	crate_name = "Snowmobile kit"
-	crate_type = /obj/structure/closet/crate/large
+	crate_type = /obj/structure/closet/crate/large */
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////// Chef, Botanist, Bartender ////////////////////////////
@@ -146,7 +146,7 @@
 /datum/supply_pack/service/cutlery
 	name = "Kitchen Cutlery Deluxe Set"
 	desc = "Need to slice and dice away those \"Tomatoes\"? Well we got what you need! From a nice set of knifes, forks, plates, glasses, and a whetstone for when you got some grizzle that is a bit harder to slice then normal."
-	cost = 10000
+	cost = 7750
 	contraband = TRUE
 	contains = list(/obj/item/sharpener, //Deluxe for a reason
 					/obj/item/trash/plate,
@@ -160,7 +160,7 @@
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass)
 	crate_name = "kitchen cutlery deluxe set"
 
-/datum/supply_pack/service/replacementdb
+/* /datum/supply_pack/service/replacementdb
 	name = "Replacement Defensive Bar"
 	desc = "Someone stole the Bartender's twin-barreled possession? Give them another one at a significant markup. Comes with one unused double-barrel shotgun, shells not included. Requires bartender access to open."
 	cost = 2200
@@ -168,7 +168,7 @@
 	contraband = TRUE
 	contains = list(/obj/item/kitchen/knife/butcher)
 	crate_name = "replacement double-barrel crate"
-	crate_type = /obj/structure/closet/crate/secure
+	crate_type = /obj/structure/closet/crate/secure */
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Janitor //////////////////////////////////////
@@ -177,7 +177,7 @@
 /datum/supply_pack/service/advlighting
 	name = "Advanced Lighting crate"
 	desc = "Thanks to advanced lighting tech we here at the Lamp Factory have be able to produce more lamps and lamp items! This crate has three lamps, a box of lights and a state of the art rapid-light-device!"
-	cost = 2750
+	cost = 1800
 	contains = list(/obj/item/construction/rld,
 					/obj/item/flashlight/lamp,
 					/obj/item/flashlight/lamp,
@@ -196,7 +196,7 @@
 					/obj/item/lightreplacer)
 	crate_name = "replacement lights"
 
-/datum/supply_pack/service/janitor/advanced
+/* /datum/supply_pack/service/janitor/advanced
 	name = "Advanced Sanitation Crate"
 	desc = "Contains all the essentials for an advanced spacefaring cleanup crew. This kit includes a trashbag, an advanced mop, a bottle of space cleaner, a floor buffer, and a holosign projector. Requires Janitorial Access to Open"
 	cost = 5700
@@ -208,7 +208,7 @@
 					/obj/item/janiupgrade,
 					/obj/item/holosign_creator)
 	crate_name = "advanced santation crate"
-	crate_type = /obj/structure/closet/crate/secure
+	crate_type = /obj/structure/closet/crate/secure 
 
 /datum/supply_pack/service/janitor/janpimp
 	name = "Custodial Cruiser"
@@ -271,5 +271,5 @@
 	contains = list(/obj/structure/janitorialcart,
 					/obj/item/clothing/shoes/galoshes)
 	crate_name = "janitorial cart crate"
-	crate_type = /obj/structure/closet/crate/large
+	crate_type = /obj/structure/closet/crate/large */
 

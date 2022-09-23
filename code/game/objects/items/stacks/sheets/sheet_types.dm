@@ -810,8 +810,8 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	throw_speed = 1
 	throw_range = 3
 	grind_results = list(/datum/reagent/carbon = 10)
-	merge_type = /obj/item/stack/sheet/bone
-	material_type = /datum/material/bone
+	//merge_type = /obj/item/stack/sheet/bone
+	//material_type = /datum/material/bone
 
 /obj/item/stack/sheet/bone/get_main_recipes()
 	. = ..()

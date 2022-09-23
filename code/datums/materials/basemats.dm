@@ -185,6 +185,7 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	strength_modifier = 0.8
 	value_per_unit = 0.025
 
+
 /datum/material/wood
 	name = "wood"
 	desc = "Flexible, durable, but flamable. Hard to come across in space."
@@ -364,12 +365,11 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	return ..()
 
 /datum/material/bone
-	name = "bone"
-	desc = "Man, building with this will make you the coolest caveman on the block."
+	name = "bones"
+	desc = "Someone's been drinking their milk."
 	color = "#e3dac9"
-	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	sheet_type = /obj/item/stack/sheet/bone
-	value_per_unit = 0.05
+	categories = list(MAT_CATEGORY_RIGID = TRUE, MAT_CATEGORY_BASE_RECIPES = TRUE)
 	armor_modifiers = list("melee" = 1.2, "bullet" = 0.75, "laser" = 0.75, "energy" = 1.2, "bomb" = 1, "bio" = 1, "rad" = 1.5, "fire" = 1.5, "acid" = 1.5)
 	beauty_modifier = -0.2
 
@@ -384,3 +384,34 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.2
 	turf_sound_override = FOOTSTEP_WOOD
 	texture_layer_icon_state = "bamboo"
+
+/datum/material/leather
+	name = "leather"
+	desc = "The by-product of mob grinding."
+	sheet_type = /obj/item/stack/sheet/leather
+
+/datum/material/sinew
+	name = "sinew"
+	desc = "Long stringy filaments, presumably from some kind of animal."
+	sheet_type = /obj/item/stack/sheet/sinew
+
+/datum/material/chitin
+	name = "chitin"
+	desc = "Thick insect chitin, tough but light."
+	sheet_type = /obj/item/stack/sheet/animalhide/chitin
+
+/datum/material/f13cash
+	name = "caps"
+	desc = "A standard Nuka-Cola bottle cap featuring 21 crimps and ridges,\
+					A common unit of exchange, backed by water in the Hub."
+	sheet_type = /obj/item/stack/f13Cash/caps
+
+/datum/material/deathclawhide
+	name = "deathclaw leather"
+	desc = "A glorious hunting trophy."
+	sheet_type = /obj/item/stack/sheet/animalhide/deathclaw
+
+/* /datum/material/prewar
+	name = "prewar alloy"
+	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
+	sheet_type = /obj/item/stack/sheet/prewar */
