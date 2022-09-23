@@ -443,7 +443,7 @@ Follower Volunteer
 	outfit = /datum/outfit/job/followers/f13followerguard
 
 	loadout_options = list(/datum/outfit/loadout/guard_ranged,
-	/datum/outfit/loadout/guard_close
+	/datum/outfit/loadout/guard_close, /datum/outfit/loadout/guard_energy
 	)
 	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
@@ -485,4 +485,11 @@ Follower Volunteer
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
+	)
+
+/datum/outfit/loadout/guard_energy
+	name = "Followers Energy Protection Guard"
+	suit_store = /obj/item/gun/energy/laser/scatter
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/mfc = 1,
 	)
