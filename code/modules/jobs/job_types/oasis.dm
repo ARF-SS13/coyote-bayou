@@ -125,7 +125,7 @@ Mayor
 		/obj/item/clothing/under/f13/vault = 1,
 		/obj/item/clothing/shoes/jackboots = 1,
 		/obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer = 1,
-		/obj/item/reagent_containers/food/drinks/flask/vault113,
+		/obj/item/reagent_containers/food/drinks/flask/vault113 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 1,
 		/obj/item/ammo_box/magazine/m9mm/doublestack = 1
 		)
@@ -1012,7 +1012,7 @@ Mayor
 	/obj/item/clothing/glasses/welding = 1,
 	/obj/item/t_scanner/adv_mining_scanner = 1,
 	/obj/item/ammo_box/m44 = 2,
-	/obj/item/gun/ballistic/revolver/m29/snub
+	/obj/item/gun/ballistic/revolver/m29/snub = 1
 	)
 /*----------------------------------------------------------------
 --							Detective							--

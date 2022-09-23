@@ -356,6 +356,7 @@
 	ckeywhitelist = list("swirlby")
 
 /obj/item/storage/box/large/custom_kit/swirlby/PopulateContents()
+	new /obj/item/clothing/under/f13/exile/vault(src)
 	new /obj/item/gun/ballistic/rifle/hunting(src)
 	new /obj/item/clothing/suit/armor/light/tribal/rustwalkers(src)
 	new /obj/item/clothing/suit/armor/medium/tribal/deadhorses(src)
@@ -427,4 +428,14 @@
 // W
 // X
 // Y
+
+/datum/gear/donator/kits/yawet
+	name = "Tribal Drip"
+	path = /obj/item/storage/box/large/custom_kit/yawet
+	ckeywhitelist = list("yawet330")
+
+/obj/item/storage/box/large/custom_kit/yawet/PopulateContents()
+	new /obj/item/clothing/suit/hooded/outcast(src)
+	new /obj/item/twohanded/sledgehammer/simple(src)
+
 // Z
