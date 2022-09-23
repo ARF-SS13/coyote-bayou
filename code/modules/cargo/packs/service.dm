@@ -146,7 +146,7 @@
 /datum/supply_pack/service/cutlery
 	name = "Kitchen Cutlery Deluxe Set"
 	desc = "Need to slice and dice away those \"Tomatoes\"? Well we got what you need! From a nice set of knifes, forks, plates, glasses, and a whetstone for when you got some grizzle that is a bit harder to slice then normal."
-	cost = 10000
+	cost = 7750
 	contraband = TRUE
 	contains = list(/obj/item/sharpener, //Deluxe for a reason
 					/obj/item/trash/plate,
@@ -177,7 +177,7 @@
 /datum/supply_pack/service/advlighting
 	name = "Advanced Lighting crate"
 	desc = "Thanks to advanced lighting tech we here at the Lamp Factory have be able to produce more lamps and lamp items! This crate has three lamps, a box of lights and a state of the art rapid-light-device!"
-	cost = 2750
+	cost = 1800
 	contains = list(/obj/item/construction/rld,
 					/obj/item/flashlight/lamp,
 					/obj/item/flashlight/lamp,

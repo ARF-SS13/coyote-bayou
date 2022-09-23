@@ -62,11 +62,21 @@
 	cost = 400 // 6-7 planks shy from having equal import/export prices
 	contains = list(/obj/item/stack/sheet/mineral/wood/twenty)
 
+/datum/supply_pack/materials/prewaralloyingot
+	goody = PACK_GOODY_PUBLIC
+	name = "4 Pre-War Ingots"
+	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
+	cost = 3775
+	contains = list(/obj/item/ingot/adamantine,
+					/obj/item/ingot/adamantine,
+					/obj/item/ingot/adamantine
+					)
+
 /datum/supply_pack/materials/weaponparts
 	goody = PACK_GOODY_PUBLIC
 	name = "Weapon Parts"
 	desc = "A random collection of recovered weapon parts. A gunsmith's wet dream."
-	cost = 3500
+	cost = 2500
 	contains = list(/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,
 					/obj/effect/spawner/lootdrop/f13/advcrafting,

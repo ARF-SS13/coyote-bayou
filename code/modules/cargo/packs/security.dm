@@ -283,7 +283,7 @@
 /datum/supply_pack/security/traitbooks
 	name = "Technical manuals"
 	desc = "A box crammed full of manuals, for reading. SCAV issues, Guns and Ammo, how to operate chem-machines, it's all here! Come in groups of three."
-	cost = 2000
+	cost = 2200
 	contains = list(/obj/effect/spawner/lootdrop/f13/traitbooks,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low,
 					/obj/effect/spawner/lootdrop/f13/traitbooks/low)
@@ -292,7 +292,7 @@
 /datum/supply_pack/security/laserlowtier
 	name = "Weapons - Laser Grab-Bag"
 	desc = "Contains three low-powered laser guns, probably in need of some love. Batteries included in shocking excess! Don't want 'em? Sell 'em back! Seriously! We don't judge!"
-	cost = 2000
+	cost = 1600
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low)
@@ -301,7 +301,7 @@
 /datum/supply_pack/security/lasermidtier
 	name = "Weapons - Energy Grab-Bag"
 	desc = "Contains two energy guns, probably in need of some love. Batteries included!"
-	cost = 4000
+	cost = 3750
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh)
 	crate_name = "energy crate"
@@ -309,7 +309,7 @@
 /datum/supply_pack/security/mods
 	name = "Weapons - Gun Mods"
 	desc = "Contains four random gun and energy weapon mods, fun for the whole family!"
-	cost = 1200
+	cost = 1000
 	contains = list(/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
 					/obj/effect/spawner/lootdrop/f13/attachments,
@@ -328,21 +328,21 @@
 /datum/supply_pack/security/minigun5mm
 	name = "Weapons - Minigun"
 	desc = "Holy moly, it's here. A refurbished minigun chambered in US five-aught. Heavy, impractical, expensive to buy, expensive to fire, expensive to maintain, and an absolute killer."
-	cost = 20000
+	cost = 25000
 	contains = list(/obj/item/minigunpackbal5mm)
 	crate_name = "minigun crate"
 
 /datum/supply_pack/security/gunsuperhightier
 	name = "Weapons - Prewar Gun"
 	desc = "A sealed crate of a Prewar firearm, an exceptional weapon machined with lost technology."
-	cost = 6000
+	cost = 6250
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh)
 	crate_name = "prewar gun crate"
 
 /datum/supply_pack/security/gunhightier
 	name = "Weapons - High-Tier Guns"
 	desc = "Two high-powered ballistics, perfect for taking down the meanest of muties."
-	cost = 4000
+	cost = 3500
 	contains = list(/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high,
 					/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high)
 	crate_name = "gun crate"
