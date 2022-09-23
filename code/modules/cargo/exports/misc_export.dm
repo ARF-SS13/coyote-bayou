@@ -31,8 +31,8 @@
 	export_types = list(/obj/item/reagent_containers/hypospray/medipen/stimpak/super) */
 
 /datum/export/item/lightpistol
-	cost = 75
-	unit_name = "light pistols"
+	cost = 100
+	unit_name = "light pistol"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99,
 		/obj/item/gun/ballistic/automatic/pistol/type17,
@@ -49,13 +49,21 @@
 		)
 
 /datum/export/item/heavypistol
-	cost = 150
-	unit_name = "heavy pistols"
+	cost = 225
+	unit_name = "heavy pistol"
 	export_types = list(
 		/obj/item/gun/energy/laser/wattz/magneto,
 		/obj/item/gun/energy/laser/pistol,
 		/obj/item/gun/ballistic/automatic/pistol/m1911/custom,
 		/obj/item/gun/ballistic/automatic/pistol/mk23,
+		/obj/item/gun/ballistic/automatic/pistol/sig,
+		/obj/item/gun/ballistic/revolver/revolver44,
+		)
+
+/datum/export/item/advpistol
+	cost = 350
+	unit_name = "advanced pistol"
+	export_types = list(
 		/obj/item/gun/ballistic/automatic/pistol/deagle,
 		/obj/item/gun/ballistic/automatic/pistol/automag,
 		/obj/item/gun/ballistic/automatic/pistol/sig,
@@ -67,8 +75,8 @@
 		)
 
 /datum/export/item/smg
-	cost = 175
-	unit_name = "submachine guns"
+	cost = 375
+	unit_name = "submachine gun"
 	export_types = list(
 		/obj/item/gun/energy/laser/plasma/pistol,
 		/obj/item/gun/ballistic/automatic/smg/american180,
@@ -84,11 +92,10 @@
 
 /datum/export/item/carbine
 	cost = 325
-	unit_name = "carbines"
+	unit_name = "carbine"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/m1carbine,
 		/obj/item/gun/ballistic/automatic/delisle,
-		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/ballistic/automatic/sportcarbine,
 		/obj/item/gun/ballistic/automatic/varmint,
 		/obj/item/gun/ballistic/rifle/repeater/cowboy,
@@ -98,15 +105,15 @@
 	)
 
 /datum/export/item/dbshotgun
-	cost = 325
-	unit_name = "double-barreled shotguns"
+	cost = 275
+	unit_name = "double-barreled shotgun"
 	export_types = list(/obj/item/gun/ballistic/revolver/caravan_shotgun,
 	/obj/item/gun/ballistic/revolver/widowmaker,
 	)
 
 /datum/export/item/pumpshotgun
-	cost = 400
-	unit_name = "pump-action shotguns"
+	cost = 350
+	unit_name = "pump-action shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/hunting,
 		/obj/item/gun/ballistic/shotgun/police,
@@ -114,23 +121,31 @@
 		)
 
 /datum/export/item/semishotgun
-	cost = 750
-	unit_name = "semi-auto shotguns"
+	cost = 475
+	unit_name = "semi-auto shotgun"
 	export_types = list(
 		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5,
 		/obj/item/gun/ballistic/shotgun/automatic/combat/shotgunlever,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
-		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
 		/obj/item/gun/ballistic/automatic/shotgun/riot,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/auto5
+	)
+
+/datum/export/item/advshotgun
+	cost = 650
+	unit_name = "advanced shotgun"
+	export_types = list(
+		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead,
 		/obj/item/gun/ballistic/automatic/shotgun/pancor,
+		/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller,
 		/obj/item/gun/ballistic/revolver/grenadelauncher,
 		)
 
 /datum/export/item/semirifle
 	cost = 550
-	unit_name = "semi-automatic rifles"
+	unit_name = "semi-automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/varmint/verminkiller,
+		/obj/item/gun/ballistic/automatic/combat,
 		/obj/item/gun/energy/laser/plasma/glock,
 		/obj/item/gun/energy/laser/plasma,
 		/obj/item/gun/energy/laser/wattz2k,
@@ -147,7 +162,7 @@
 
 /datum/export/item/autorifle
 	cost = 850
-	unit_name = "automatic rifles"
+	unit_name = "automatic rifle"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/service/r82,
 		/obj/item/gun/ballistic/automatic/assault_rifle,
@@ -166,7 +181,7 @@
 
 /datum/export/item/lmg
 	cost = 950
-	unit_name = "light machine guns"
+	unit_name = "light machine gun"
 	export_types = list(
 		/obj/item/gun/ballistic/automatic/r84,
 		/obj/item/gun/ballistic/automatic/lsw,
