@@ -485,7 +485,7 @@
 				else
 					input_name = "[pick(GLOB.first_names)] [pick(GLOB.last_names)]"
 
-			var/target_occupation = stripped_input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", assignment ? assignment : "Assistant", MAX_MESSAGE_LEN)
+			var/target_occupation = stripped_input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", assignment ? assignment : "Assistant", 60)
 			if(!target_occupation)
 				return
 			registered_name = input_name
@@ -877,7 +877,7 @@
 			input_name = reject_bad_name(input_name)
 			if(!input_name)
 				input_name = living_user.real_name
-			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", MAX_MESSAGE_LEN)
+			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
 			if(!target_occupation)
 				target_occupation = "Wastelander"
 				return

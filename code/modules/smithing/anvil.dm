@@ -191,7 +191,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
-		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/10 + 1
+		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
 
 	playsound(src, 'sound/effects/clang2.ogg',40, 2) // sounds. gotta have them..!
@@ -262,9 +262,9 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
-	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2 + itemqualitymax //Makes sure that better smiths can make better items, even with a worse anvil. Encourages actually levelling up, instead of meta-rushing top gear
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
-		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4))/1500 //Reduced from 2500 temporarily. Should help that percentage get above 1% on the RAND()
+		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
 		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
 
 	var/artifact = max(prob(artifactchance), debug) // If there is an artifact..?
@@ -290,7 +290,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 		ResetAnvil() // Resets it to be default.
 
 		if(user.mind.skill_holder) // give them some experience
-			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 200, 500000, silent = FALSE)
+			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 50, 500000, silent = FALSE) //This shouldn't give you a full level until 3+
 
 		return SetBusy(FALSE, user) 
 	
@@ -328,10 +328,10 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 					finisheditem.desc +=  "\nIt looks to be better than average."
 			finisheditem.set_custom_materials(workpiece_material)
 			var/stepexperience = currentsteps + finisheditem.quality
-			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/5 //A total of 16x the amount of EXP at MAX, with a minimum gain of 150, Keep in mind that this is of course only possible with a max-tier anvil and an already insanely high level. Just makes earlier levels faster.
+			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/6 //Makes powerlevelling late-game harder as it gives more bonuses here
 			if(user.mind.skill_holder) // give them some experience!
 				if(currentquality <= 1)
-					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 400, 500000, silent = FALSE) //Incentivises not spamming Slag
+					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 250, 500000, silent = FALSE) //Fixes speedleveling by just making hammers, somewhat.
 				else
 					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, finalexperience, 500000, silent = FALSE) //Made more forgiving for lower levels and terrible anvils.
 
@@ -363,15 +363,15 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
 	desc = "Made from solid steel, you wont be moving this around any time soon."
-	anvilquality = 0
-	itemqualitymax = 6 
+	anvilquality = -1 //This was causing balance problems to where you could get high levels of blacksmithing in 1-2 items
+	itemqualitymax = 6  //Do not change this.
 
 // Don't make this craftable.
 /obj/structure/anvil/obtainable/legion
 	name = "anvil"
 	desc = "A solid steel anvil with a stamped bull on it."
 	icon_state = "legvil"
-	anvilquality = 1
+	anvilquality = 0 //DO NOT GIVE A +1 BONUS TO ANVILS WHEN THEY HAVE A MAXQAL OF 8, THIS ONLY ASKS FOR MAX TIER FORGED ITEMS
 	itemqualitymax = 8 //The legion and tribe rely mostly on melee weapons, so they should have the best anvil
 	anchored = TRUE
 
@@ -380,7 +380,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	name = "table anvil"
 	desc = "A reinforced table. Usable as an anvil, favored by mad wastelanders and the dregs of the wasteland. Can be loosened from its bolts and moved."
 	icon_state = "tablevil"
-	anvilquality = 0
+	anvilquality = -2 //WE SHOULD NOT HAVE CHANGED THIS.
 	itemqualitymax = 4
 
 /obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)

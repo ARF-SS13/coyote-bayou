@@ -97,10 +97,10 @@
 	. = ..()
 	stored_move_dirs &= ~direct
 	if(!stored_move_dirs)
-		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1)
+		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1, FALSE)
 
 /// Slams the ground around the behemoth throwing back enemies caught nearby
-/mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay)
+/mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay, do_damage)
 	var/turf/orgin = get_turf(src)
 	var/list/all_turfs = RANGE_TURFS(range, orgin)
 	for(var/i = 0 to range)
@@ -115,7 +115,8 @@
 				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 8, 2, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
-				L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
+				if(do_damage)
+					L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
@@ -123,7 +124,7 @@
 /// Larger but slower ground stomp
 /mob/living/simple_animal/hostile/megafauna/behemoth/proc/heavy_stomp()
 	can_move = FALSE
-	ground_slam(5, 2)
+	ground_slam(5, 2, TRUE)
 	SetRecoveryTime(0, 0)
 	can_move = TRUE
 
