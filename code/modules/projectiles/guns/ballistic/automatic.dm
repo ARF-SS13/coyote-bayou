@@ -2379,7 +2379,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
-	desc = "This ancient machine gun has been dug up and put into working order by the Legion Forgemasters. It's loud, heavy and terrifying."
+	desc = "This ancient machine gun has been dug up and put into working order by the Dallas Militia. It's loud, heavy and terrifying."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
