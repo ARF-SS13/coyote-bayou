@@ -200,7 +200,9 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/storage/pill_bottle/chem_tin/radx = 5,
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
+	/obj/item/stock_parts/chem_cartridge/garbage = 10,
+	/obj/item/stock_parts/chem_cartridge/pristine = 1
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
