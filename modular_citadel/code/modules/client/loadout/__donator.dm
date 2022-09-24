@@ -107,6 +107,17 @@
 	new /obj/item/stack/sheet/sinew(src)
 	new /obj/item/stack/sheet/sinew(src)
 
+/datum/gear/donator/kits/bladeburstninja2
+	name = "William Buckley's Kit"
+	path = /obj/item/storage/box/large/custom_kit/bladeburstninja2
+	ckeywhitelist = list("bladeburstninja")
+
+/obj/item/storage/box/large/custom_kit/bladeburstninja2/PopulateContents()
+	new /obj/item/storage/belt/sabre/heavy(src)
+	new /obj/item/melee/unarmed/maceglove(src)
+	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
+	new /obj/item/stack/sheet/cardboard/fifty(src)
+
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
 	path = /obj/item/storage/box/large/custom_kit/brimcon
