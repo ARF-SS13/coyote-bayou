@@ -23,7 +23,9 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
 	var/obj/item/stock_parts/cell/cell
+	var/obj/item/stock_parts/chem_cartridge/cartridge
 	var/powerefficiency = 0.0666666
+	var/matefficiency = 0.0666666
 	var/amount = 30
 	var/recharge_amount = 10
 	var/recharge_counter = 0
@@ -108,6 +110,7 @@
 /obj/machinery/chem_dispenser/Destroy()
 	QDEL_NULL(beaker)
 	QDEL_NULL(cell)
+	QDEL_NULL(cartridge)
 	return ..()
 
 /obj/machinery/chem_dispenser/examine(mob/user)
@@ -205,6 +208,8 @@
 	data["amount"] = amount
 	data["energy"] = cell.charge ? cell.charge * powerefficiency : "0" //To prevent NaN in the UI.
 	data["maxEnergy"] = cell.maxcharge * powerefficiency
+	data["cartridgeCharge"] = cartridge.charge
+	data["maxCartridgeCharge"] = cartridge.maxCharge
 	data["isBeakerLoaded"] = beaker ? 1 : 0
 
 	var/beakerContents[0]
@@ -273,6 +278,9 @@
 					if(!cell.use(actual / powerefficiency))
 						say("Not enough energy to complete operation!")
 						return
+					if(!cartridge.takeMaterial(actual / matefficiency))
+						say("Not enough chemicals in storage to complete operation!")
+						return
 					R.add_reagent(reagent, actual)
 					log_reagent("DISPENSER: ([COORD(src)]) ([REF(src)]) [key_name(usr)] dispensed [actual] of [reagent] to [beaker] ([REF(beaker)]).")
 
@@ -314,6 +322,10 @@
 					if(actual)
 						if(!cell.use(actual / powerefficiency))
 							say("Not enough energy to complete operation!")
+							earlyabort = TRUE
+							break
+						if(!cartridge.takeMaterial(actual / matefficiency))
+							say("Not enough chemicals in storage to complete operation!")
 							earlyabort = TRUE
 							break
 						R.add_reagent(reagent, actual)
@@ -413,13 +425,17 @@
 /obj/machinery/chem_dispenser/RefreshParts()
 	recharge_amount = initial(recharge_amount)
 	var/newpowereff = initial(powerefficiency)
+	var/newmateff = initial(matefficiency)
 	for(var/obj/item/stock_parts/cell/P in component_parts)
 		cell = P
+	for(var/obj/item/stock_parts/chem_cartridge/C in component_parts)
+		cartridge = C
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
 		newpowereff += 0.0166666666*M.rating
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recharge_amount *= C.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		newmateff += 0.0166666666*M.rating
 		if(M.rating > 1)
 			dispensable_reagents |= upgrade_reagents
 		if(M.rating > 2)
@@ -427,6 +443,7 @@
 		if(M.rating > 3)
 			dispensable_reagents |= upgrade_reagents3
 	powerefficiency = round(newpowereff, 0.01)
+	matefficiency = round(newmateff, 0.01)
 
 /obj/machinery/chem_dispenser/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
 	if(beaker)
@@ -443,6 +460,9 @@
 
 /obj/machinery/chem_dispenser/on_deconstruction()
 	cell = null
+	if(cartridge)
+		cartridge.forceMove(drop_location())
+		cartridge = null
 	if(beaker)
 		beaker.forceMove(drop_location())
 		beaker = null
