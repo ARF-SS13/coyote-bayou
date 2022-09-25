@@ -23,6 +23,16 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 //BoS knight craftable plasma pistol
 /obj/item/gun/energy/laser/plasma/pistol/light

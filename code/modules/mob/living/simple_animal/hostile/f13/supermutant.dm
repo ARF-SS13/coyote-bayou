@@ -140,6 +140,16 @@
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	loot = list(/obj/item/ammo_box/a308, /obj/item/gun/ballistic/rifle/hunting)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -218,6 +228,16 @@
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/Aggro()
 	..()
@@ -252,6 +272,16 @@
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/Aggro()
 	..()

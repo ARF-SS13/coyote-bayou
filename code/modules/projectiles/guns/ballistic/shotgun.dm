@@ -44,6 +44,16 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 
 /obj/item/gun/ballistic/shotgun/process_chamber(mob/living/user, empty_chamber = 0)
@@ -149,7 +159,16 @@
 
 	sawn_desc = "Short and concealable, terribly uncomfortable to fire, but worse on the other end."
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 /obj/item/gun/ballistic/revolver/caravan_shotgun/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter) | istype(A, /obj/item/twohanded/chainsaw))
@@ -204,6 +223,16 @@
 
 	sawn_desc = "Someone took the time to chop the last few inches off the barrel and stock of this shotgun. Now, the wide spread of this hand-cannon's short-barreled shots makes it perfect for short-range crowd control."
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/revolver/widowmaker/attackby(obj/item/A, mob/user, params)
 	..()
@@ -377,6 +406,16 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_SHOTGUN_BASE
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/update_icon_state()
 	if(!magazine || !magazine.ammo_count(0))
@@ -574,6 +613,16 @@
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 
 /* * * * * * * * * * *
@@ -610,6 +659,16 @@
 
 	automatic = 1
 	w_class = WEIGHT_CLASS_BULKY
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/shotgun/shotttesting

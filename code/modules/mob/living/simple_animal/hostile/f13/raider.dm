@@ -102,11 +102,21 @@
 	projectilesound = 'sound/f13weapons/ninemil.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/f13/npc_raider, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
-
 	variation_list = list(
 		MOB_NAME_FROM_GLOBAL_LIST(\
 			MOB_RANDOM_NAME(MOB_NAME_RANDOM_FEMALE, 1)\
 		))
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
 
 // LEGENDARY MELEE RAIDER
 /mob/living/simple_animal/hostile/raider/legendary
@@ -137,6 +147,16 @@
 	obj_damage = 300
 	loot = list(/obj/item/gun/ballistic/revolver/m29, /obj/item/stack/f13Cash/random/high)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 // RAIDER BOSS
 /mob/living/simple_animal/hostile/raider/ranged/boss
@@ -156,6 +176,16 @@
 	minimum_distance = 1 //Mob pushes up to melee, then backs off to avoid player attack? 
 	aggro_vision_range = 6 //mob waits to attack if the player chooses to close distance, or if the player attacks first.
 	vision_range = 8 //will see the player at max view range, and communicate that they've been seen but won't aggro unless they get closer.
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/Aggro()
 	..()
@@ -164,6 +194,7 @@
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt
 	name = "Mango Mathew and his Merry Meth Madlads"
+	desc = "Hi, Mango Mathew and his Merry Meth Madlads."
 	icon_state = "mango_matt"
 	icon_living = "mango_matt"
 	icon_dead = "mango_matt_dead"
@@ -183,13 +214,31 @@
 		"nyas",
 		""
 		)
-	attack_verb_simple = list("claws", "maims", "bites", "mauls", "slashes", "thrashes", "bashes", "glomps", "beats their greasegun against the face of")
+	attack_verb_simple = list(
+		"claws",
+		"maims",
+		"bites",
+		"mauls",
+		"slashes",
+		"thrashes",
+		"bashes",
+		"glomps",
+		"beats their greasegun against the face of"
+		)
 	variation_list = list() // so he keeps his stupid name
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/mangomatt/Aggro()
 	..()
 	summon_backup(15)
-	say(pick("*nya", "*mrowl", "*lynx", "*cougar", "*growl", "*come", "Fuck em' up!"))
+	say(pick(\
+		"*nya",\
+		"*mrowl",\
+		"*lynx",\
+		"*cougar",\
+		"*growl",\
+		"*come",\
+		"Fuck em' up!"\
+		))
 
 // RANGED RAIDER WITH ARMOR
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
@@ -203,6 +252,16 @@
 	projectilesound = 'sound/weapons/gunshot.ogg'
 	loot = list(/obj/item/gun/ballistic/automatic/pistol/m1911/custom, /obj/item/clothing/suit/armor/heavy/metal/reinforced, /obj/item/clothing/head/helmet/f13/metalmask/mk2, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 // FIREFIGHTER RAIDER
 /mob/living/simple_animal/hostile/raider/firefighter
@@ -228,6 +287,16 @@
 	casingtype = /obj/item/ammo_casing/a556
 	loot = list(/obj/item/gun/ballistic/revolver/thatgun, /obj/item/clothing/suit/armor/medium/combat/rusted, /obj/item/clothing/head/helmet/f13/raidercombathelmet, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /obj/effect/mob_spawn/human/corpse/raider/ranged/biker
 	uniform = /obj/item/clothing/under/f13/ncrcf

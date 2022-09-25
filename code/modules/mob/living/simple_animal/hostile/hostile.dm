@@ -21,6 +21,17 @@
 	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	var/list/projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(null),
+		SP_DISTANT_RANGE(null)
+	)
+
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
 	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
 	var/move_to_delay = 3
@@ -478,7 +489,16 @@
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
-		playsound(src, projectilesound, 100, 1)
+		playsound(
+			src,
+			projectilesound,
+			projectile_sound_properties[SOUND_PROPERTY_VOLUME],
+			projectile_sound_properties[SOUND_PROPERTY_VARY],
+			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		P.starting = startloc
 		P.firer = src
 		P.fired_from = src

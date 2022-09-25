@@ -77,8 +77,21 @@
 	retreat_distance = 5
 	minimum_distance = 5
 	projectiletype = /obj/item/projectile/beam/laser
-	loot = list(/obj/effect/mob_spawn/human/corpse/pirate/ranged,
-			/obj/item/gun/energy/laser)
+	loot = list(
+		/obj/effect/mob_spawn/human/corpse/pirate/ranged,
+		/obj/item/gun/energy/laser
+		)
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
+
 
 /mob/living/simple_animal/hostile/pirate/ranged/space
 	name = "Space Pirate Gunner"

@@ -160,6 +160,14 @@ ATTACHMENTS
 	var/gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
 	/// What kind of traits should this gun be affected by
 	var/gun_skill_check
+	var/list/gun_sound_properties = list(
+		SP_VARY(TRUE),
+		SP_VOLUME(50),
+		SP_VOLUME_SILENCED(20),
+		SP_NORMAL_RANGE(SOUND_RANGE + 5),
+		SP_NORMAL_RANGE_SILENCED(SOUND_RANGE - 15),
+		SP_IGNORE_WALLS(TRUE)
+	)
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -285,9 +293,24 @@ ATTACHMENTS
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
 	if(silenced)
-		playsound(user, fire_sound_silenced, 10, 1)
+		playsound(
+			user,
+			fire_sound_silenced,
+			gun_sound_properties[SOUND_PROPERTY_VOLUME_SILENCED],
+			gun_sound_properties[SOUND_PROPERTY_VARY],
+			gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE_SILENCED]
+			)
 	else
-		playsound(user, fire_sound, 50, 1)
+		playsound(
+			user,
+			fire_sound,
+			gun_sound_properties[SOUND_PROPERTY_VOLUME],
+			gun_sound_properties[SOUND_PROPERTY_VARY],
+			gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = gun_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		if(message)
 			if(pointblank)
 				user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
