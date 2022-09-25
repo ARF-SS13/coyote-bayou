@@ -225,6 +225,11 @@
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/storage/belt/shoulderholster/ranger45(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/ammo_box/c45rev(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
@@ -236,7 +241,6 @@
 	new /obj/item/ammo_box/c38box(src)
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/toy/plush/mammal/fox(src)
-
 
 // G
 
@@ -270,6 +274,23 @@
 	new /obj/item/radio(src)
 	new /obj/item/binoculars(src)
 	new /obj/item/shovel/trench(src)
+
+/datum/gear/donator/kits/jackson1112_2
+	name = "SAS Kit"
+	path = /obj/item/storage/box/large/custom_kit/jackson1112_2
+	ckeywhitelist = list("jackson1112")
+
+/obj/item/storage/box/large/custom_kit/jackson1112_2/PopulateContents()
+	new /obj/item/storage/belt/army(src)
+	new /obj/item/gun/ballistic/rifle/enfield(src)
+	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a308(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/clothing/under/syndicate/camo(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/radio(src)
 
 // K
 // L
@@ -314,6 +335,20 @@
 	new /obj/item/book/granter/crafting_recipe/happysharky(src)
 
 // N
+
+/datum/gear/donator/kits/nirzak
+	name = "Vas Kit"
+	path = /obj/item/storage/box/large/custom_kit/nirzak
+	ckeywhitelist = list("nirzak")
+
+/obj/item/storage/box/large/custom_kit/nirzak/PopulateContents()
+	new /obj/item/clothing/suit/armor/harpercoat(src)
+	new /obj/item/clothing/neck/mantle/ranger(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/storage/belt/military(src)
+
 // O
 // P
 
