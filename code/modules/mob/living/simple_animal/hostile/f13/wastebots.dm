@@ -100,6 +100,16 @@
 
 	aggrosound = list('sound/f13npc/gutsy/aggro1.ogg', 'sound/f13npc/gutsy/aggro2.ogg', 'sound/f13npc/gutsy/aggro3.ogg', 'sound/f13npc/gutsy/aggro4.ogg', 'sound/f13npc/gutsy/aggro5.ogg', 'sound/f13npc/gutsy/aggro6.ogg')
 	idlesound = list('sound/f13npc/gutsy/idle1.ogg', 'sound/f13npc/gutsy/idle2.ogg', 'sound/f13npc/gutsy/idle3.ogg')
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
 	health = 340
@@ -152,6 +162,16 @@
 	idlesound = null
 	death_sound = null
 	attack_sound = null
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/handy/liberator/yellow
 	name = "liberator"
@@ -186,6 +206,16 @@
 	idlesound = null
 	death_sound = null
 	attack_sound = null
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/handy/robobrain/AttackingTarget()
 	. = ..()
@@ -228,18 +258,70 @@
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
 	
-	attack_verb_simple = list("baps", "bops", "boops", "smacks", "clamps", "pinches", "thumps", "fistos")
+	attack_verb_simple = list(
+		"baps",
+		"bops",
+		"boops",
+		"smacks",
+		"clamps",
+		"pinches",
+		"thumps",
+		"fistos"
+		)
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol
 	faction = list("wastebot")
 	check_friendly_fire = TRUE
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five)
-	attack_phrase = list("Howdy pardner!", "Shoot out at the O.K. Corral!", "Go back to Oklahoma!", "Please assume the position.", "Protect and serve.", "Antisocial behavior detected.", "Criminal behavior willbe punished.", "Please step into the open and identify yourself, law abiding citizens have nothing to fear.")
-	emote_taunt_sound = list('sound/f13npc/protectron/taunt1.ogg', 'sound/f13npc/protectron/taunt2.ogg', 'sound/f13npc/protectron/taunt3.ogg')
-	emote_taunt = list("raises its arm laser", "gets ready to rumble", "assumes the position", "whirls up its servos", "takes aim", "holds its ground")
-	aggrosound = list('sound/f13npc/protectron/aggro1.ogg', 'sound/f13npc/protectron/aggro2.ogg', 'sound/f13npc/protectron/aggro3.ogg', 'sound/f13npc/protectron/aggro4.ogg')
-	idlesound = list('sound/f13npc/protectron/idle1.ogg', 'sound/f13npc/protectron/idle2.ogg', 'sound/f13npc/protectron/idle3.ogg', 'sound/f13npc/protectron/idle4.ogg',)
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/item/stack/crafting/electronicparts/five
+		)
+	attack_phrase = list(
+		"Howdy pardner!", 
+		"Shoot out at the O.K. Corral!",
+		"Go back to Oklahoma!",
+		"Please assume the position.",
+		"Protect and serve.",
+		"Antisocial behavior detected.",
+		"Criminal behavior willbe punished.",
+		"Please step into the open and identify yourself, law abiding citizens have nothing to fear."
+		)
+	emote_taunt_sound = list(
+		'sound/f13npc/protectron/taunt1.ogg',
+		'sound/f13npc/protectron/taunt2.ogg',
+		'sound/f13npc/protectron/taunt3.ogg'
+		)
+	emote_taunt = list(
+		"raises its arm laser",
+		"gets ready to rumble",
+		"assumes the position",
+		"whirls up its servos",
+		"takes aim",
+		"holds its ground"
+		)
+	aggrosound = list(
+		'sound/f13npc/protectron/aggro1.ogg',
+		'sound/f13npc/protectron/aggro2.ogg',
+		'sound/f13npc/protectron/aggro3.ogg',
+		'sound/f13npc/protectron/aggro4.ogg'
+		)
+	idlesound = list(
+		'sound/f13npc/protectron/idle1.ogg',
+		'sound/f13npc/protectron/idle2.ogg',
+		'sound/f13npc/protectron/idle3.ogg',
+		'sound/f13npc/protectron/idle4.ogg',
+		)
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/handy/protectron/playable
 	ranged = FALSE
@@ -354,3 +436,13 @@
 	minimum_distance = 1
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/lasgun
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)

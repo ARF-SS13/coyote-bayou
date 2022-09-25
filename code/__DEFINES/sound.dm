@@ -140,3 +140,90 @@
 	'sound/f13ambience/music/invisible_ghosts_ambience.ogg',\
 	'sound/f13ambience/music/mole_miners_ambience.ogg',\
 	'sound/f13ambience/music/portaltothepast_ambience.ogg','sound/f13ambience/music/wind_and_the_reeds_ambience.ogg')
+
+/// Sound properties! bunch of defines~
+/// Mostly for gunfire~
+
+/// Coeff for when the distant sound should start playing, so it doesnt go right from BANG BANG to putter putter
+#define SOUND_NORMAL_TO_DISTANT_COEFF 0.75
+
+// Vary?
+#define SOUND_PROPERTY_VARY "vary"
+#define SP_VARY(x) SOUND_PROPERTY_VARY = x
+// Ignore walls?
+#define SOUND_PROPERTY_IGNORE_WALLS "ignore_walls"
+#define SP_IGNORE_WALLS(x) SOUND_PROPERTY_IGNORE_WALLS = x
+// Volume?
+#define SOUND_PROPERTY_VOLUME "volume"
+#define SP_VOLUME(x) SOUND_PROPERTY_VOLUME = x
+// Volume? silenced
+#define SOUND_PROPERTY_VOLUME_SILENCED "volume_silenced"
+#define SP_VOLUME_SILENCED(x) SOUND_PROPERTY_VOLUME_SILENCED = x
+// Normal distance
+#define SOUND_PROPERTY_NORMAL_RANGE "normal_distance"
+#define SP_NORMAL_RANGE(x) SOUND_PROPERTY_NORMAL_RANGE = (x - SOUND_RANGE)
+// Normal distance silenced
+#define SOUND_PROPERTY_NORMAL_RANGE_SILENCED "normal_distance_silenced"
+#define SP_NORMAL_RANGE_SILENCED(x) SOUND_PROPERTY_NORMAL_RANGE_SILENCED = (x - SOUND_RANGE)
+
+// Distant sound -- plays this past the normal distance
+#define SOUND_PROPERTY_DISTANT_SOUND "distant_sound"
+#define SP_DISTANT_SOUND(x) SOUND_PROPERTY_DISTANT_SOUND = x
+// Distant sound range -- furthest extent that the sound'll reach
+#define SOUND_PROPERTY_DISTANT_SOUND_RANGE "distant_range"
+#define SP_DISTANT_RANGE(x) SOUND_PROPERTY_DISTANT_SOUND_RANGE = x
+
+/// Typical sound property values
+/// Volumes
+#define PISTOL_LIGHT_VOLUME 50
+#define PISTOL_MEDIUM_VOLUME 50
+#define PISTOL_HEAVY_VOLUME 75
+#define RIFLE_LIGHT_VOLUME 50
+#define RIFLE_MEDIUM_VOLUME 50
+#define RIFLE_HEAVY_VOLUME 100
+#define SHOTGUN_VOLUME 75
+#define GAUSS_VOLUME 75
+#define LASER_VOLUME 30
+#define PLASMA_VOLUME 50
+
+/// Silenced volume multiplier
+#define SILENCED_VOLUME_MULTIPLIER 0.25
+
+/// Silenced range
+#define SILENCED_GUN_RANGE -12
+
+/// Normal distances
+#define PISTOL_LIGHT_RANGE (SOUND_RANGE + 5)
+#define PISTOL_MEDIUM_RANGE (SOUND_RANGE + 7)
+#define PISTOL_HEAVY_RANGE (SOUND_RANGE + 14)
+#define RIFLE_LIGHT_RANGE (SOUND_RANGE + 10)
+#define RIFLE_MEDIUM_RANGE (SOUND_RANGE + 12)
+#define RIFLE_HEAVY_RANGE (SOUND_RANGE + 18)
+#define SHOTGUN_RANGE (SOUND_RANGE + 10)
+#define GAUSS_RANGE (SOUND_RANGE + 10)
+#define LASER_RANGE (SOUND_RANGE + 5)
+#define PLASMA_RANGE (SOUND_RANGE + 5)
+
+/// distant distances
+#define PISTOL_LIGHT_RANGE_DISTANT (PISTOL_LIGHT_RANGE * 7)
+#define PISTOL_MEDIUM_RANGE_DISTANT (PISTOL_MEDIUM_RANGE * 8)
+#define PISTOL_HEAVY_RANGE_DISTANT (PISTOL_HEAVY_RANGE * 9)
+#define RIFLE_LIGHT_RANGE_DISTANT (RIFLE_LIGHT_RANGE * 8)
+#define RIFLE_MEDIUM_RANGE_DISTANT (RIFLE_MEDIUM_RANGE * 9)
+#define RIFLE_HEAVY_RANGE_DISTANT (RIFLE_HEAVY_RANGE * 10)
+#define SHOTGUN_RANGE_DISTANT (SHOTGUN_RANGE * 10)
+#define GAUSS_RANGE_DISTANT (GAUSS_RANGE * 10)
+#define LASER_RANGE_DISTANT (LASER_RANGE * 7)
+#define PLASMA_RANGE_DISTANT (PLASMA_RANGE * 7)
+
+/// distant sounds
+#define PISTOL_LIGHT_DISTANT_SOUND 'sound/f13weapons/distant_pistol_light.ogg'
+#define PISTOL_MEDIUM_DISTANT_SOUND 'sound/f13weapons/distant_pistol_medium.ogg'
+#define PISTOL_HEAVY_DISTANT_SOUND 'sound/f13weapons/distant_pistol_heavy.ogg'
+#define RIFLE_LIGHT_DISTANT_SOUND 'sound/f13weapons/distant_rifle_light.ogg'
+#define RIFLE_MEDIUM_DISTANT_SOUND 'sound/f13weapons/distant_rifle_medium.ogg'
+#define RIFLE_HEAVY_DISTANT_SOUND 'sound/f13weapons/distant_rifle_heavy.ogg'
+#define SHOTGUN_DISTANT_SOUND 'sound/f13weapons/distant_shotgun.ogg'
+#define GAUSS_DISTANT_SOUND 'sound/f13weapons/distant_gauss.ogg'
+#define LASER_DISTANT_SOUND 'sound/f13weapons/distant_laser.ogg'
+#define PLASMA_DISTANT_SOUND 'sound/f13weapons/distant_plasma.ogg'

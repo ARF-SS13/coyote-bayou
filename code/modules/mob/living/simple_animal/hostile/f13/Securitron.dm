@@ -58,6 +58,16 @@
 	check_friendly_fire = TRUE
 	ranged = TRUE
 	move_resist = MOVE_FORCE_OVERPOWERING
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
@@ -140,6 +150,16 @@
 	idlesound = list('sound/f13npc/sentry/idle1.ogg', 'sound/f13npc/sentry/idle2.ogg', 'sound/f13npc/sentry/idle3.ogg', 'sound/f13npc/sentry/idle4.ogg')
 	var/warned = FALSE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five, /obj/item/stock_parts/cell/ammo/mfc)
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/Life()
 	..()
@@ -187,7 +207,16 @@
 	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag
 	retreat_distance = 0
 	extra_projectiles = 0
-
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable
 	health = 750   //El Beef

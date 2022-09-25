@@ -43,6 +43,16 @@
 	var/pump_sound = 'sound/weapons/shotgunpump.ogg'
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	var/pump_stam_cost = 2
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/rifle/process_chamber(mob/living/user, empty_chamber = 0)
 	return ..() //changed argument value
@@ -138,7 +148,16 @@
 	scope_x_offset = 5
 	scope_y_offset = 13
 	pump_sound = 'sound/f13weapons/cowboyrepeaterreload.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Cowboy Repeater
  * Baseline Repeater
@@ -166,7 +185,16 @@
 	init_recoil = RIFLE_RECOIL(3)
 
 	fire_sound = 'sound/f13weapons/cowboyrepeaterfire.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Trail Repeater
  * Big Repeater
@@ -194,7 +222,16 @@
 	init_recoil = RIFLE_RECOIL(3.3)
 
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Brush Repeater
  * Bigger Repeater
@@ -223,7 +260,16 @@
 	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * * *
  * Bolt-Action Rifles  *
@@ -273,7 +319,16 @@
 	scope_y_offset = 12
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 /obj/item/gun/ballistic/rifle/hunting/attackby(obj/item/A, mob/user, params)
 	..()
 	if(istype(A, /obj/item/circular_saw) || istype(A, /obj/item/gun/energy/plasmacutter))
@@ -397,6 +452,16 @@
 	knife_y_offset = 21
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * SMLE Bolt-Action Rifle
@@ -439,6 +504,16 @@
 	pump_sound = 'sound/weapons/boltpump.ogg'
 	fire_sound = 'sound/f13weapons/boltfire.ogg'
 	pump_stam_cost = 15
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 
 /* * * * * * * * * * * * * * * * * *
@@ -538,6 +613,16 @@
 	zoom_out_amt = 13
 	fire_sound = 'sound/f13weapons/antimaterielfire.ogg'
 	pump_sound = 'sound/f13weapons/antimaterielreload.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+	)
 
 // BETA // Obsolete
 /obj/item/gun/ballistic/rifle/rifletesting
