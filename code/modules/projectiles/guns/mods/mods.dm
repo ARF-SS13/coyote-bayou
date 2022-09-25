@@ -473,8 +473,10 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
+	GUN_UPGRADE_RECOIL = 2,
 	GUN_UPGRADE_DAMAGE_MULT = 0.7,
-	GUN_UPGRADE_CHARGECOST = 0.5)
+	GUN_UPGRADE_CHARGECOST = 0.5,
+	GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
