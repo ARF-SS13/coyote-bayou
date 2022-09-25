@@ -23,7 +23,9 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_dispenser
 	var/obj/item/stock_parts/cell/cell
+	var/obj/item/stock_parts/chem_cartridge/cartridge
 	var/powerefficiency = 0.0666666
+	var/matefficiency = 0.0666666
 	var/amount = 30
 	var/recharge_amount = 10
 	var/recharge_counter = 0
@@ -108,6 +110,7 @@
 /obj/machinery/chem_dispenser/Destroy()
 	QDEL_NULL(beaker)
 	QDEL_NULL(cell)
+	QDEL_NULL(cartridge)
 	return ..()
 
 /obj/machinery/chem_dispenser/examine(mob/user)
@@ -205,6 +208,8 @@
 	data["amount"] = amount
 	data["energy"] = cell.charge ? cell.charge * powerefficiency : "0" //To prevent NaN in the UI.
 	data["maxEnergy"] = cell.maxcharge * powerefficiency
+	data["cartridgeCharge"] = cartridge.charge ? cartridge.charge * matefficiency : "0"
+	data["maxCartridgeCharge"] = cartridge.maxCharge * matefficiency
 	data["isBeakerLoaded"] = beaker ? 1 : 0
 
 	var/beakerContents[0]
@@ -273,6 +278,9 @@
 					if(!cell.use(actual / powerefficiency))
 						say("Not enough energy to complete operation!")
 						return
+					if(!cartridge.takeMaterial(actual / matefficiency))
+						say("Not enough chemicals in storage to complete operation!")
+						return
 					R.add_reagent(reagent, actual)
 					log_reagent("DISPENSER: ([COORD(src)]) ([REF(src)]) [key_name(usr)] dispensed [actual] of [reagent] to [beaker] ([REF(beaker)]).")
 
@@ -314,6 +322,10 @@
 					if(actual)
 						if(!cell.use(actual / powerefficiency))
 							say("Not enough energy to complete operation!")
+							earlyabort = TRUE
+							break
+						if(!cartridge.takeMaterial(actual / matefficiency))
+							say("Not enough chemicals in storage to complete operation!")
 							earlyabort = TRUE
 							break
 						R.add_reagent(reagent, actual)
@@ -381,6 +393,13 @@
 		replace_beaker(user, B)
 		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
+	else if(istype(I, /obj/item/stock_parts/chem_cartridge))
+		var/obj/item/stock_parts/chem_cartridge/C = I
+		. = TRUE //no afterattack
+		if(!user.transferItemToLoc(C, src))
+			return
+		replace_cartridge(user, C)
+		to_chat(user, span_notice("You replace [C] in [src]"))
 	else if(user.a_intent != INTENT_HARM && !istype(I, /obj/item/card/emag))
 		to_chat(user, span_warning("You can't load [I] into [src]!"))
 		return ..()
@@ -413,13 +432,17 @@
 /obj/machinery/chem_dispenser/RefreshParts()
 	recharge_amount = initial(recharge_amount)
 	var/newpowereff = initial(powerefficiency)
+	var/newmateff = initial(matefficiency)
 	for(var/obj/item/stock_parts/cell/P in component_parts)
 		cell = P
+	for(var/obj/item/stock_parts/chem_cartridge/C in component_parts)
+		cartridge = C
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
 		newpowereff += 0.0166666666*M.rating
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recharge_amount *= C.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		newmateff += 0.0166666666*M.rating
 		if(M.rating > 1)
 			dispensable_reagents |= upgrade_reagents
 		if(M.rating > 2)
@@ -427,6 +450,7 @@
 		if(M.rating > 3)
 			dispensable_reagents |= upgrade_reagents3
 	powerefficiency = round(newpowereff, 0.01)
+	matefficiency = round(newmateff, 0.01)
 
 /obj/machinery/chem_dispenser/proc/replace_beaker(mob/living/user, obj/item/reagent_containers/new_beaker)
 	if(beaker)
@@ -443,10 +467,26 @@
 
 /obj/machinery/chem_dispenser/on_deconstruction()
 	cell = null
+	if(cartridge)
+		cartridge.forceMove(drop_location())
+		cartridge = null
 	if(beaker)
 		beaker.forceMove(drop_location())
 		beaker = null
 	return ..()
+
+/obj/machinery/chem_dispenser/proc/replace_cartridge(mob/living/user, obj/item/stock_parts/chem_cartridge/new_cartridge)
+	if(cartridge)
+		var/obj/item/stock_parts/chem_cartridge/C = cartridge
+		C.forceMove(drop_location())
+		if(user && Adjacent(user) && user.can_hold_items())
+			user.put_in_hands(C)
+	if(new_cartridge)
+		cartridge = new_cartridge
+	else
+		cartridge = null
+	update_icon()
+	return TRUE
 
 /obj/machinery/chem_dispenser/AltClick(mob/living/user)
 	. = ..()
