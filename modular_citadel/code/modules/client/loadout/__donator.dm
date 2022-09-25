@@ -244,6 +244,21 @@
 
 // G
 
+/datum/gear/donator/kits/gozulio
+	name = "Jess' Kit"
+	path = /obj/item/storage/box/large/custom_kit/gozulio
+	ckeywhitelist = list("gozulio")
+
+/obj/item/storage/box/large/custom_kit/gozulio/PopulateContents()
+	new /obj/item/pda/medical(src)
+	new /obj/item/storage/medical/ancientfirstaid(src)
+	new /obj/item/storage/belt/shoulderholster(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/healthanalyzer/advanced(src)
+	new /obj/item/clothing/gloves/color/latex/nitrile(src)
+
 /datum/gear/donator/kits/greed2323
 	name = "Magnum Kit"
 	path = /obj/item/storage/box/large/custom_kit/greed2323

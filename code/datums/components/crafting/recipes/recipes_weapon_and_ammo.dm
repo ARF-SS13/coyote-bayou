@@ -1579,6 +1579,21 @@
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
+/datum/crafting_recipe/ai_tool
+	name = "Vault-Tec Integrated ZAX module"
+	result = /obj/item/tool_upgrade/augment/ai_tool
+	reqs = list (
+				/obj/item/gun_upgrade/mechanism/overdrive = 1,
+				/obj/item/stack/sheet/bluespace_crystal = 1,
+				/obj/item/stock_parts/scanning_module/triphasic = 1,
+				/obj/item/gun_upgrade/mechanism/overshooter = 1
+	)
+	tools = list(TOOL_AWORKBENCH)
+	time = 30
+	category = CAT_WEAPONRY
+	subcategory = CAT_PARTS
+	always_available = FALSE
+
 /datum/crafting_recipe/coolant
 	name = "Coolant Coil"
 	result = /obj/item/tool_upgrade/reinforcement/plasmablock
