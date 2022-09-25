@@ -134,25 +134,17 @@
 		qdel(src)
 
 /datum/wound/bleed/drag_bleed_amount()
-	// say we have 3 severe cuts with 3 blood flow each, pretty reasonable
-	// compare with being at 100 brute damage before, where you bled (brute/100 * 2), = 2 blood per tile
-	var/bleed_amt = min(blood_flow * 0.1, 1) // 3 * 3 * 0.1 = 0.9 blood total, less than before! the share here is .3 blood of course.
-
-	if(limb.current_gauze) // gauze stops all bleeding from dragging on this limb
-		limb.check_gauze_time()
-		return bleed_amt * WOUND_BLEED_BANDAGE_MULTIPLIER
-
-	return bleed_amt
+	return get_blood_flow(TRUE)
 
 /// calculates how much the wound should be ensmallening
 /datum/wound/bleed/proc/reduce_bloodflow()
 	if(!COOLDOWN_FINISHED(src, bleed_heal_cooldown))
 		return
 	COOLDOWN_START(src, bleed_heal_cooldown, BLEED_HEAL_COOLDOWN_TIME)
-	blood_flow -= rand(0,clot_rate)
+	blood_flow -= rand(clot_rate * 0.5, clot_rate)
 
-	if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
-		blood_flow -= clot_rate
+	if(victim.bodytemperature < (BODYTEMP_NORMAL - 10))
+		blood_flow -= rand(clot_rate * 0.5, clot_rate)
 		if(prob(5))
 			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
 
