@@ -365,7 +365,8 @@ Mayor
 	/datum/outfit/loadout/frontierjustice,
 	/datum/outfit/loadout/police,
 	/datum/outfit/loadout/swat,
-	/datum/outfit/loadout/energy)
+	/datum/outfit/loadout/energy,
+	)
 
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
