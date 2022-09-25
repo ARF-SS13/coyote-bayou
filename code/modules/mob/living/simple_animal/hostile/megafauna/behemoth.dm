@@ -6,9 +6,10 @@
 	icon_living = "behemoth_axe"
 	icon_dead = "behemoth_dead"
 
-	health = 3000
-	maxHealth = 3000
-	
+	health = 2300 //used to be 3000
+	maxHealth = 2300 //used to be 3000
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/card/id/dogtag/enclave/noncombatant = 1)
+
 	armour_penetration = 0.7
 	melee_damage_lower = 40
 	melee_damage_upper = 50
@@ -19,6 +20,7 @@
 	rapid_melee = 16
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = TRUE
+	stat_attack = CONSCIOUS
 	pixel_x = -16
 	wander = FALSE
 	movement_type = GROUND
@@ -95,10 +97,10 @@
 	. = ..()
 	stored_move_dirs &= ~direct
 	if(!stored_move_dirs)
-		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1)
+		INVOKE_ASYNC(src, .proc/ground_slam, stomp_range, 1, FALSE)
 
 /// Slams the ground around the behemoth throwing back enemies caught nearby
-/mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay)
+/mob/living/simple_animal/hostile/megafauna/behemoth/proc/ground_slam(range, delay, do_damage)
 	var/turf/orgin = get_turf(src)
 	var/list/all_turfs = RANGE_TURFS(range, orgin)
 	for(var/i = 0 to range)
@@ -113,7 +115,8 @@
 				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 8, 2, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
-				L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
+				if(do_damage)
+					L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
@@ -121,7 +124,7 @@
 /// Larger but slower ground stomp
 /mob/living/simple_animal/hostile/megafauna/behemoth/proc/heavy_stomp()
 	can_move = FALSE
-	ground_slam(5, 2)
+	ground_slam(5, 2, TRUE)
 	SetRecoveryTime(0, 0)
 	can_move = TRUE
 

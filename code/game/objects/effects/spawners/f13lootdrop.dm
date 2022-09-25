@@ -556,7 +556,7 @@
 	loot = list(
 				/obj/item/reagent_containers/pill/patch/jet,
 				/obj/item/reagent_containers/pill/patch/turbo,
-				/obj/item/reagent_containers/pill/healingpowder,
+				// /obj/item/reagent_containers/pill/healingpowder,
 				/obj/item/reagent_containers/pill/stimulant,
 				/obj/item/reagent_containers/hypospray/medipen/medx,
 				/obj/item/storage/pill_bottle/chem_tin/buffout,
@@ -701,6 +701,8 @@
 				/obj/item/melee/unarmed/punchdagger,
 				/obj/item/twohanded/baseball/louisville,
 				/obj/item/shield/riot,
+				/obj/item/melee/onehanded/machete/gladius,
+				/obj/item/melee/onehanded/machete/spatha
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier5 //TIER 5 MELEE WEAPON
@@ -717,7 +719,8 @@
 				/obj/item/twohanded/sledgehammer/supersledge,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
-				/obj/item/melee/powerfist/f13/moleminer
+				/obj/item/melee/powerfist/f13/moleminer,
+				/obj/item/twohanded/legionaxe
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random
@@ -763,29 +766,32 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
 	name = "mid tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 26,
-				/obj/effect/spawner/bundle/f13/aer12 = 13,
-				/obj/effect/spawner/bundle/f13/wattz2k = 26,
-				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
-				/obj/effect/spawner/bundle/f13/plasmapistol = 15,
-				/obj/effect/spawner/bundle/f13/ionrifle = 5
+	loot = list(/obj/effect/spawner/bundle/f13/aer9 = 35,
+				///obj/effect/spawner/bundle/f13/aer12 = 13, Now a high tier gun.
+				/obj/effect/spawner/bundle/f13/wattz2k = 30,
+				///obj/effect/spawner/bundle/f13/wattz2kext = 10, Now a high tier gun.
+				/obj/effect/spawner/bundle/f13/plasmapistol = 20,
+				/obj/effect/spawner/bundle/f13/ionrifle = 15
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh //overlaps with midtier
 	name = "mid-high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/aer12,
-				/obj/effect/spawner/bundle/f13/plasmapistol,
-				/obj/effect/spawner/bundle/f13/wattz2kext,
-				/obj/effect/spawner/bundle/f13/ionrifle,
-				/obj/effect/spawner/bundle/f13/aer14
+	loot = list(/obj/effect/spawner/bundle/f13/aer12 = 15,
+				/obj/item/gun/energy/laser/aer9/focused = 20,
+				/obj/effect/spawner/bundle/f13/plasmapistol = 25,
+				/obj/effect/spawner/bundle/f13/wattz2kext = 15,
+				/obj/effect/spawner/bundle/f13/ionrifle = 25
+				///obj/effect/spawner/bundle/f13/aer14 //die
 				)
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high
 	name = "high tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 25,
-				/obj/effect/spawner/bundle/f13/tribeam = 10,
+	loot = list(/obj/effect/spawner/bundle/f13/plasmarifle = 20,
+				/obj/effect/spawner/bundle/f13/aer12 = 10,
+				/obj/effect/spawner/bundle/f13/tribeam = 20,
 				/obj/effect/spawner/bundle/f13/rcw = 20,
-				/obj/effect/spawner/bundle/f13/aer14 = 20,
-				/obj/effect/spawner/bundle/f13/plasmaglock = 25
+				/obj/effect/spawner/bundle/f13/wattz2kext = 10, //Now a high tier gun.
+				///obj/effect/spawner/bundle/f13/aer14, kill
+				/obj/effect/spawner/bundle/f13/plasmaglock = 20
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh
@@ -818,8 +824,9 @@
 	name = "very low tier non-hobo ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/ninemil,
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
-				/obj/effect/spawner/bundle/f13/mosin,
+				/obj/item/gun/ballistic/rifle/hunting, //No. More. Mosin.
 				/obj/effect/spawner/bundle/f13/remington,
+				/obj/effect/spawner/bundle/f13/sportcarbine,
 				/obj/effect/spawner/bundle/f13/widowmaker,
 				/obj/effect/spawner/bundle/f13/varmint
 				)
@@ -837,12 +844,42 @@
 				/obj/effect/spawner/bundle/f13/m1carbine
 				)
 
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid
+	name = "burrow gun spawns"
+	loot = list(/obj/effect/spawner/bundle/f13/m1911 = 5,
+				/obj/effect/spawner/bundle/f13/thatgun = 4,
+				/obj/effect/spawner/bundle/f13/n99 = 4,
+				/obj/effect/spawner/bundle/f13/colt357 = 5,
+				/obj/effect/spawner/bundle/f13/huntingshotgun = 2,
+				/obj/effect/spawner/bundle/f13/police_pistol = 2,
+				/obj/effect/spawner/bundle/f13/guns/commando = 2,
+				/obj/effect/spawner/bundle/f13/m1carbine = 3,
+				/obj/effect/spawner/bundle/f13/wattz = 1,
+				/obj/item/gun/ballistic/rifle/mosin = 1,
+				/obj/item/gun/ballistic/rifle/hunting = 3,
+				/obj/item/gun/ballistic/automatic/pistol/type17 = 3,
+				/obj/effect/spawner/lootdrop/f13/junkspawners = 33,
+				/obj/item/stack/medical/gauze/improvised = 2,
+				/obj/item/stack/medical/ointment/five = 2,
+				/obj/item/stack/medical/suture/emergency/five = 1,
+				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
+				/obj/item/stack/f13Cash/random/low = 10,
+				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+				/obj/effect/spawner/bundle/f13/mini22uzi = 1,
+				/obj/effect/spawner/bundle/f13/sportcarbine = 1,
+				/obj/effect/spawner/bundle/f13/ninemil = 1,
+				/obj/effect/spawner/bundle/f13/widowmaker = 1,
+				/obj/effect/spawner/bundle/f13/sig = 4,
+				/obj/effect/spawner/bundle/f13/varmint = 2
+				)
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid
 	name = "low-mid tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/n99,
 				/obj/effect/spawner/bundle/f13/cowboy,
 				/obj/effect/spawner/bundle/f13/mk23,
 				/obj/effect/spawner/bundle/f13/hunting,
+				/obj/effect/spawner/bundle/f13/mini22uzi,
 				/obj/effect/spawner/lootdrop/f13/weapon/revolver44variants,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
@@ -890,6 +927,7 @@
 				/obj/item/gun/ballistic/automatic/bozar = 1
 				)
 
+
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh
 	name = "superhigh tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/riotshotgun = 5,
@@ -899,6 +937,16 @@
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
 				/obj/item/gun/ballistic/automatic/bozar = 10
+				)
+
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prewar cargo crate
+	name = "superhigh tier ballistic gun (cargo)"
+	loot = list(/obj/effect/spawner/bundle/f13/amr = 5,
+				/obj/item/gun/ballistic/rocketlauncher = 10,
+				/obj/item/gun/ballistic/automatic/bozar = 7,
+				/obj/effect/spawner/bundle/f13/m1919 = 5,
+				/obj/effect/spawner/bundle/f13/guns/p90 = 7,
+				/obj/effect/spawner/bundle/f13/dks = 10
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique
@@ -959,7 +1007,7 @@
 				)
 
 /obj/effect/spawner/bundle/f13/remington
-	name = "remington rifle and ammo spawner"
+	name = "hunting rifle and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/rifle/hunting,
 				/obj/item/ammo_box/a308
@@ -1151,7 +1199,21 @@
 	name = "mini uzi and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/mini_uzi,
-				/obj/item/ammo_box/magazine/uzim9mm/
+				/obj/item/ammo_box/magazine/uzim9mm
+				)
+
+/obj/effect/spawner/bundle/f13/mini22uzi
+	name = "mini 22 uzi and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
+				/obj/item/ammo_box/magazine/m22/extended
+				)
+
+/obj/effect/spawner/bundle/f13/sportcarbine
+	name = "sport carbine and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/sportcarbine,
+				/obj/item/ammo_box/magazine/m22/extended
 				)
 
 /obj/effect/spawner/bundle/f13/smg10mm
@@ -1512,8 +1574,17 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/gun/ballistic/revolver/grenadelauncher,
 				/obj/item/ammo_box/a40mm
 	)
+/obj/effect/spawner/bundle/f13/m1919
+	name = "browning m1919 and ammo spawner"
+	items = list(/obj/item/gun/ballistic/automatic/m1919,
+				/obj/item/ammo_box/magazine/mm762
+				)
 
-
+/obj/effect/spawner/bundle/f13/dks
+	name ="dks 501 and ammo spawner"
+	items = list(/obj/item/gun/ballistic/automatic/marksman/sniper/sniperranger,
+	/obj/item/ammo_box/magazine/w308
+	)
 
 /*	------------------------------------------------
 	------------WEAPON AMMO SPAWNERS----------------
@@ -2118,7 +2189,8 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	)
+	)		
+
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
 	name = "blueprint-tier(High) item spawner"
@@ -2134,6 +2206,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
 	)
+
 
 /obj/effect/spawner/lootdrop/f13/blueprintVHigh
 	name = "blueprint-tier(VHigh) item spawner"

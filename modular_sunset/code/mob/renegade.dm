@@ -17,7 +17,6 @@
 	health = 140
 	healable = 1
 	speed = 1.2
-	check_friendly_fire = 1
 	stat_attack = 1
 	obj_damage = 150
 	melee_damage_lower = 25
@@ -48,7 +47,6 @@
 	maxHealth = 200
 	health = 200
 	healable = 1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 2
@@ -61,6 +59,16 @@
 	speak = list("Come get some!", "Fuck off!", "Landon's going to promote me after this!", "Bullets for days!", "Renegades represent!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 // LIGHT SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/engie
@@ -87,6 +95,16 @@
 	speak = list("Come get some!", "Going to blow some shit to kingdom come!", "I got the goods!", "Nades for days!", "Renegades represent!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 // MEDIUM RANGED VARIANT
 /mob/living/simple_animal/hostile/renegade/soldier
@@ -100,7 +118,6 @@
 	health = 300
 	healable = 1
 	speed = 1.1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 7
 	minimum_distance = 3
@@ -113,6 +130,16 @@
 	speak = list("Come get some!", "I like my odds, c'mere!", "Gonna get a promotion after this!", "Bullets for days!", "Renegades represent!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 //MEDIUM MELEE VARIANT
 /mob/living/simple_animal/hostile/renegade/defender
@@ -151,7 +178,6 @@
 	health = 280
 	healable = 1
 	speed = 1.3
-	ranged = 1
 	vision_range = 12
 	aggro_vision_range = 15
 	check_friendly_fire = 1
@@ -165,6 +191,16 @@
 	speak = list("Come get some!", "I am the shadow!", "One shot, one kill.", "Adjusting my scope.", "Renegades represent!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 // HEAVY SHOTGUN VARIANT
 /mob/living/simple_animal/hostile/renegade/guardian
@@ -178,7 +214,6 @@
 	health = 420
 	healable = 1
 	speed = 0.9
-	ranged = 1
 	check_friendly_fire = 1
 	minimum_distance = 2
 	ranged_cooldown_time = 3
@@ -190,6 +225,16 @@
 	speak = list("Come get some!", "ON THE GROUND!", "GOING TO SHOVE THIS WHERE THE SUN DON'T SHINE!", "C'MERE, I GOT LEAD!", "RENEGADES REPRESENT!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 
 // POWER ARMOR VARIANT
 /mob/living/simple_animal/hostile/renegade/meister
@@ -209,7 +254,6 @@
 	attack_verb_simple = "power-fists"
 	attack_sound = 'sound/weapons/slam.ogg'
 	ranged_cooldown_time = 30
-	attack_verb_simple = "power-fists"
 	extra_projectiles = 5
 	projectiletype = /obj/item/projectile/bullet/m5mm/simple
 	projectilesound = 'sound/f13weapons/automaticrifle_BAR.ogg'
@@ -217,6 +261,16 @@
 	speak = list("POWER TO THE ARMOR!", "I AM GOING TO BREAK YOU IN HALF!", "YEAH I COMPENSATE WITH BIG FUCKIN' GUNS", "DODGE THIS!", "PEAK RENEGADE PERFORMANCE!")
 	speak_emote = list("says")
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/renegade/meister/movement_delay()
 	return 6
@@ -232,11 +286,9 @@
 	maxHealth = 250
 	health = 250
 	healable = 1
-	ranged = 1
 	check_friendly_fire = 1
 	retreat_distance = 6
 	minimum_distance = 8
-	ranged = 1
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	casingtype = /obj/item/ammo_casing/m44
@@ -245,6 +297,16 @@
 	speak_emote = list("says")
 	speak_chance = 1
 	loot = list(/obj/effect/spawner/lootdrop/f13/medical/vault/meds, /obj/effect/spawner/lootdrop/f13/weapon/revolver44variants, /obj/effect/spawner/lootdrop/f13/medical/surgical/blood)
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/renegade/doc/Initialize(mapload)
 	. = ..()

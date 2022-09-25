@@ -37,7 +37,7 @@ export const MiningVendor = (props, context) => {
                 <Table.Row key={product.name}>
                   <Table.Cell>
                     <span
-                      className={classes(['vending32x32', product.path])}
+                      className={classes(['vending32x32', product.asset])}
                       style={{
                         'vertical-align': 'middle',
                       }} />

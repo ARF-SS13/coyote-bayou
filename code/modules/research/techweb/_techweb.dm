@@ -79,6 +79,10 @@
 	id = "FOLLOWERS"
 	organization = "Followers of the Apocalypse"
 
+/datum/techweb/vault // Vault tech "channel"
+	id = "VT-08232077" //"VAULT" seemed to easy.
+	organization = "Vault Tec"
+
 /datum/techweb/bepis	//Should contain only 1 BEPIS tech selected at random.
 	id = "EXPERIMENTAL"
 	organization = "Nanotrasen R&D"
@@ -402,7 +406,7 @@
 
 /datum/techweb/specialized/autounlocking/autolathe
 	design_autounlock_buildtypes = AUTOLATHE
-	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE
+	allowed_buildtypes = AUTOLATHE|TOYLATHE|AMMOLATHE|AMMOLATHE_HOBO
 
 /datum/techweb/specialized/autounlocking/autolathe/public
 	design_autounlock_skip_types = NO_PUBLIC_LATHE

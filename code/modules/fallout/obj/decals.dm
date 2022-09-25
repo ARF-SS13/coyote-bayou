@@ -30,8 +30,22 @@
 		return PROCESS_KILL
 
 	for(var/mob/living/carbon/human/victim in view(src,range))
-		if(istype(victim) && victim.stat != DEAD)
+		if(victim.stat != DEAD)
 			victim.rad_act(intensity)
+	for(var/obj/item/geiger_counter/geiger in view(src,range))
+		geiger.rad_act(intensity)
+			
+/obj/effect/decal/waste/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/crafting/abraxo))
+		user.show_message(span_notice("You start sprinkling \the [I.name] onto the puddle of goo..."), MSG_VISUAL)
+		if(do_after(user, 30, target = src))
+			user.show_message(span_notice("You neutralize the radioactive goo!"), MSG_VISUAL)
+			new /obj/effect/decal/cleanable/chem_pile(src.loc) //Leave behind some cleanable chemical powder
+			STOP_PROCESSING(SSradiation,src)
+			qdel(src)
+			qdel(I)
+	else
+		return ..()
 
 /obj/effect/decal/marking
 	name = "road marking"

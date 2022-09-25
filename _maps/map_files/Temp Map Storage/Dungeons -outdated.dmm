@@ -29,7 +29,7 @@
 "aba" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /obj/item/clothing/suit/armor/medium/combat/swat,
 /obj/item/clothing/mask/gas/sechailer/swat,
 /obj/item/clothing/head/helmet/f13/combat/swat,
@@ -3202,7 +3202,7 @@
 /obj/item/crafting/fuse,
 /obj/item/crafting/fuse,
 /obj/item/crafting/fuse,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/item/crafting/resistor,
 /obj/item/crafting/resistor,
 /obj/item/crafting/resistor,
@@ -3212,7 +3212,7 @@
 /area/f13/bunker)
 "dpZ" = (
 /obj/structure/table/wood,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /turf/open/floor/f13{
 	icon_state = "darkdirty"
 	},
@@ -4250,7 +4250,7 @@
 /obj/structure/closet,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/army,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
@@ -5239,8 +5239,8 @@
 /area/f13/vault)
 "fsK" = (
 /obj/structure/rack,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
 /obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 /obj/item/clothing/suit/armor/heavy/vest/bulletproof,
 /obj/item/clothing/gloves/color/black,
@@ -6705,7 +6705,7 @@
 /turf/open/floor/plasteel/floorgrime,
 /area/f13/bunker)
 "gNI" = (
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/structure/table,
 /obj/item/pipe,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -7302,7 +7302,7 @@
 /obj/structure/closet/crate/bin{
 	name = "trash-point"
 	},
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "hrp" = (
@@ -8637,12 +8637,12 @@
 "iId" = (
 /obj/structure/rack,
 /obj/item/storage/backpack/security,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/head/f13/police,
 /obj/item/storage/backpack/security,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/clothing/glasses/sunglasses/big,
 /obj/item/clothing/gloves/color/black,
 /obj/item/clothing/head/f13/police,
@@ -9156,7 +9156,7 @@
 /obj/item/crafting/bulb,
 /obj/item/crafting/bulb,
 /obj/item/crafting/bulb,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /turf/open/floor/f13{
 	icon_state = "darkdirtysolid"
 	},
@@ -14153,7 +14153,7 @@
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -17669,7 +17669,7 @@
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -19816,7 +19816,7 @@
 /obj/item/clothing/mask/balaclava,
 /obj/item/clothing/gloves/f13/military,
 /obj/item/clothing/under/syndicate,
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /turf/open/floor/plating/tunnel,
 /area/f13/radiation)
 "uaa" = (
@@ -20168,7 +20168,7 @@
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,
@@ -20398,7 +20398,7 @@
 /obj/item/clothing/under/f13/vault,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/clothing/gloves/color/black,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
 /obj/item/assembly/flash/handheld,
 /obj/item/restraints/handcuffs,
 /obj/item/gun/ballistic/automatic/pistol/n99,

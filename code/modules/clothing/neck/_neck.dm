@@ -89,6 +89,7 @@
 	icon_state = "scarf"
 	desc = "A stylish scarf. The perfect winter accessory for those with a keen fashion sense, and those who just can't handle a cold breeze on their necks."
 	dog_fashion = /datum/dog_fashion/head
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/scarf/black
 	name = "black scarf"
@@ -152,14 +153,17 @@
 /obj/item/clothing/neck/stripedredscarf
 	name = "striped red scarf"
 	icon_state = "stripedredscarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/stripedgreenscarf
 	name = "striped green scarf"
 	icon_state = "stripedgreenscarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 /obj/item/clothing/neck/stripedbluescarf
 	name = "striped blue scarf"
 	icon_state = "stripedbluescarf"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
 
 ///////////
 //COLLARS//

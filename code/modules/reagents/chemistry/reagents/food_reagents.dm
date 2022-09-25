@@ -402,8 +402,8 @@
 	taste_description = "dirt"
 
 /datum/reagent/consumable/xanderjuice/on_mob_life(mob/living/carbon/M)
-	if(M.get_blood() < BLOOD_VOLUME_SYMPTOMS_WARN)
-		M.blood_volume += 1
+	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 1)
 	..()
 
 /datum/reagent/consumable/agavejuice
@@ -523,13 +523,11 @@
 			if(prob(10))
 				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
-			M.Jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
 			if(prob(20))
 				M.emote(pick("twitch","giggle"))
 		if (10 to INFINITY)
-			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
 			if(prob(30))
@@ -757,7 +755,6 @@
 	name = "Mayonnaise"
 	description = "An white and oily mixture of mixed egg yolks."
 	color = "#DFDFDF"
-	value = 5
 	taste_description = "mayonnaise"
 	value = REAGENT_VALUE_COMMON
 

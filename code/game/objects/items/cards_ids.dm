@@ -184,7 +184,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
 	slot_flags = ITEM_SLOT_ID
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/assignment_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
@@ -485,7 +485,7 @@
 				else
 					input_name = "[pick(GLOB.first_names)] [pick(GLOB.last_names)]"
 
-			var/target_occupation = stripped_input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", assignment ? assignment : "Assistant", MAX_MESSAGE_LEN)
+			var/target_occupation = stripped_input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", assignment ? assignment : "Assistant", 60)
 			if(!target_occupation)
 				return
 			registered_name = input_name
@@ -868,14 +868,25 @@
 	..()
 
 /obj/item/card/id/selfassign/attack_self(mob/user)
+	var/input_name = null
+	var/target_occupation = null
 	if(isliving(user))
 		var/mob/living/living_user = user
-		if(alert(user, "Action", "Agent ID", "Show", "Forge") == "Forge")
-			registered_name = living_user.real_name
-			assignment = living_user.job
+		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
+			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
+			input_name = reject_bad_name(input_name)
+			if(!input_name)
+				input_name = living_user.real_name
+			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
+			if(!target_occupation)
+				target_occupation = "Wastelander"
+				return
+			registered_name = input_name
+			assignment = target_occupation
 			update_label()
 			to_chat(user, span_notice("You successfully forge the ID card."))
 			return
+		else
 	..()
 
 /obj/item/card/id/selfassign
@@ -886,7 +897,6 @@
 /obj/item/card/id/dogtag/vigilante
 	name = "vigilante's badge"
 	desc = "An old silver badge."
-	assignment = "badge"
 	assignment = "Vigilante"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -895,7 +905,6 @@
 /obj/item/card/id/dogtag/deputy
 	name = "deputy's badge"
 	desc = "A silver badge which shows honour and dedication."
-	assignment = "badge"
 	assignment = "Deputy"
 	icon_state = "deputy"
 	item_state = "badge-deputy"
@@ -961,7 +970,6 @@
 	desc = "A permit identifying the holder as a citizen of a nearby town."
 	icon_state = "doctor"
 	item_state = "card-doctor"
-	assignment = "citizenship permit"
 	assignment = "Settler"
 	obj_flags = UNIQUE_RENAME
 	access = list(ACCESS_BAR)
@@ -1097,7 +1105,6 @@
 	desc = "A golden disc awarded to the elite hunters of the legion. If you are close enough to read the insignia you won't be alive much longer."
 	icon_state = "legionmedallioncent"
 	item_state = "card-id_leg2"
-	assignment = "venator medallion"
 	assignment = "Venator"
 
 
@@ -1295,3 +1302,50 @@
 	assignment = "US dogtags"
 	access = list(ACCESS_ENCLAVE)
 
+GLOBAL_LIST_INIT(fuzzy_license, list(
+	"hug",
+	"snuggle",
+	"cuddle",
+	"kiss",
+	"hold hands",
+	"num",
+	"flop",
+	"squeak",
+	"weh",
+	"cute",
+	"love",
+	"pat",
+	"sex",
+	"bottom",
+	"decorate",
+	"nerd",
+	"dork",
+	"gecker",
+	"gekker",
+	"Willow's butt",
+	"feed Willow",
+	"hoard Dennis",
+	"spoil friends",
+	"have this license",
+	"administer plushies",
+	"distribute cookies"
+	))
+
+/// Nerd reward for Fuzlet the nerd
+/obj/item/card/fuzzy_license
+	name = "license to hug"
+	desc = "The most official license known to (and recognized exclusively by) shirtless foxes."
+	icon_state = "retro"
+
+/obj/item/card/fuzzy_license/attack_self(mob/user)
+	if(Adjacent(user))
+		user.visible_message(
+			span_notice("[user] shows you: [icon2html(src, viewers(user))] [src.name]."),
+			span_notice("You show \the [src.name]."))
+		add_fingerprint(user)
+
+/obj/item/card/fuzzy_license/attackby(obj/item/used, mob/living/user, params)
+	if(istype(used, /obj/item/pen) || istype(used, /obj/item/toy/crayon))
+		var/choice = input(user, "Select the license type", "License Type Selection") as null|anything in GLOB.fuzzy_license
+		if(!isnull(choice))
+			name = "license to [choice]"

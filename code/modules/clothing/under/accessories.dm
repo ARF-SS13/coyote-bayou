@@ -98,7 +98,7 @@
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/accessory/maidapron/Initialize()
 	. = ..()
@@ -221,7 +221,6 @@
 /obj/item/clothing/accessory/medal/gold/captain/family
 	name = "old medal"
 	desc = "A rustic badge pure gold, has been through hell and back by the looks."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 10) //Pure gold
 	custom_materials = list(/datum/material/gold=2000)
 
 /obj/item/clothing/accessory/medal/gold/heroism
@@ -233,7 +232,6 @@
 	desc = "An eccentric medal made of unstable elements."
 	icon_state = "plasma"
 	medaltype = "medal-plasma"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = 0) //It's made of plasma. Of course it's flammable.
 	custom_materials = list(/datum/material/plasma=1000)
 
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
@@ -355,7 +353,6 @@
 	desc = "A plastic ornament, intended to protect the important things in life. It's not very good at it."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /////////////////////
 //Syndie Accessories//
@@ -379,7 +376,7 @@
 	name = "ablative padding"
 	desc = "A thin ultra-refractory composite padding meant to cushion the wearer from energy lasers harm."
 	icon_state = "plastics"
-	armor = list("melee" = 0, "bullet" = 0, "linelaser" = 40, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -40)
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T3)
 	flags_inv = HIDEACCESSORY
 
 //necklace

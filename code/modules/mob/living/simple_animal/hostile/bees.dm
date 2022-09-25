@@ -217,6 +217,10 @@
 	icon_base = "queen"
 	isqueen = TRUE
 
+/mob/living/simple_animal/hostile/poison/bees/queen/Destroy()
+	if (beehome && beehome.queen_bee == src)
+		beehome.queen_bee = null
+	return ..()
 
 //the Queen doesn't leave the box on her own, and she CERTAINLY doesn't pollinate by herself
 /mob/living/simple_animal/hostile/poison/bees/queen/Found(atom/A)

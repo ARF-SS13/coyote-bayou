@@ -17,10 +17,24 @@
 	var/sidestep_per_cycle = 1 //How many sidesteps per npcpool cycle when in melee
 
 	var/extra_projectiles = 0 //how many projectiles above 1?
+	/// How long to wait between shots?
+	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	var/list/projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(null),
+		SP_DISTANT_RANGE(null)
+	)
+
 	var/casingtype		//set ONLY it and NULLIFY projectiletype, if we have projectile IN CASING
-	var/move_to_delay = 3 //delay for the automated movement.
+	/// Deciseconds between moves for automated movement. m2d 3 = standard, less is fast, more is slower.
+	var/move_to_delay = 3
 	var/list/friends = list()
 	var/list/foes = list()
 	var/list/emote_taunt
@@ -35,8 +49,10 @@
 	var/ranged_cooldown_time = 30 //How long, in deciseconds, the cooldown of ranged attacks is
 	var/ranged_ignores_vision = FALSE //if it'll fire ranged attacks even if it lacks vision on its target, only works with environment smash
 	var/check_friendly_fire = 0 // Should the ranged mob check for friendlies when shooting
-	var/retreat_distance = null //If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
-	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
+	/// If our mob runs from players when they're too close, set in tile distance. By default, mobs do not retreat.
+	var/retreat_distance = null
+	/// Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles to the target, set higher to make mobs keep distance
+	var/minimum_distance = 1
 
 	var/decompose = TRUE //Does this mob decompose over time when dead?
 
@@ -71,7 +87,8 @@
 	if(!targets_from)
 		targets_from = src
 	wanted_objects = typecacheof(wanted_objects)
-
+	if((auto_fire_delay * extra_projectiles) < ranged_cooldown_time)
+		ranged_cooldown_time = (auto_fire_delay * (extra_projectiles + 1))
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
@@ -87,7 +104,6 @@
 			if(prob(1)) // 1% chance every cycle to decompose
 				visible_message(span_notice("\The dead body of the [src] decomposes!"))
 				gib(FALSE, FALSE, FALSE, TRUE)
-		CHECK_TICK
 		return
 
 /mob/living/simple_animal/hostile/handle_automated_action()
@@ -344,6 +360,9 @@
 				Goto(target,move_to_delay,minimum_distance) //Otherwise, get to our minimum distance so we chase them
 		else
 			Goto(target,move_to_delay,minimum_distance)
+		/// roll to randomize this thing... if its an option
+		if(variation_list[MOB_RETREAT_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]) && prob(variation_list[MOB_RETREAT_DISTANCE_CHANCE]))
+			retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 		if(target)
 			if(targets_from && isturf(targets_from.loc) && target.Adjacent(targets_from)) //If they're next to us, attack
 				MeleeAction()
@@ -374,6 +393,10 @@
 		approaching_target = FALSE
 	set_glide_size(DELAY_TO_GLIDE_SIZE(move_to_delay))
 	walk_to(src, target, minimum_distance, delay)
+	if(variation_list[MOB_MINIMUM_DISTANCE_CHANCE] && LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]) && prob(variation_list[MOB_MINIMUM_DISTANCE_CHANCE]))
+		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+	if(variation_list[MOB_VARIED_SPEED_CHANCE] && LAZYLEN(variation_list[MOB_VARIED_SPEED]) && prob(variation_list[MOB_VARIED_SPEED_CHANCE]))
+		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
 
 /mob/living/simple_animal/hostile/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
@@ -443,9 +466,7 @@
 /mob/living/simple_animal/hostile/proc/OpenFire(atom/A)
 	if(CheckFriendlyFire(A))
 		return
-	visible_message("<span class='danger'><b>[src]</b> [ranged_message] at [A]!</span>")
-
-
+	visible_message("<span class='danger'><b>[src]</b> [islist(ranged_message) ? pick(ranged_message) : ranged_message] at [A]!</span>")
 	if(rapid > 1)
 		var/datum/callback/cb = CALLBACK(src, .proc/Shoot, A)
 		for(var/i in 1 to rapid)
@@ -453,9 +474,10 @@
 	else
 		Shoot(A)
 		for(var/i in 1 to extra_projectiles)
-			addtimer(CALLBACK(src, .proc/Shoot, A), i * 2)
+			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
 	ranged_cooldown = world.time + ranged_cooldown_time
-
+	if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
+		projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
 
 /mob/living/simple_animal/hostile/proc/Shoot(atom/targeted_atom)
 	if( QDELETED(targeted_atom) || targeted_atom == targets_from.loc || targeted_atom == targets_from )
@@ -467,7 +489,16 @@
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
-		playsound(src, projectilesound, 100, 1)
+		playsound(
+			src,
+			projectilesound,
+			projectile_sound_properties[SOUND_PROPERTY_VOLUME],
+			projectile_sound_properties[SOUND_PROPERTY_VARY],
+			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		P.starting = startloc
 		P.firer = src
 		P.fired_from = src
@@ -650,3 +681,17 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 	target = new_target
 	if(target)
 		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/handle_target_del)
+
+/mob/living/simple_animal/hostile/setup_variations()
+	if(!..())
+		return
+	if(LAZYLEN(variation_list[MOB_VARIED_VIEW_RANGE]))
+		vision_range = vary_from_list(variation_list[MOB_VARIED_VIEW_RANGE])
+	if(LAZYLEN(variation_list[MOB_VARIED_AGGRO_RANGE]))
+		aggro_vision_range = vary_from_list(variation_list[MOB_VARIED_AGGRO_RANGE])
+	if(LAZYLEN(variation_list[MOB_VARIED_SPEED]))
+		move_to_delay = vary_from_list(variation_list[MOB_VARIED_SPEED])
+	if(LAZYLEN(variation_list[MOB_RETREAT_DISTANCE]))
+		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
+	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
+		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])

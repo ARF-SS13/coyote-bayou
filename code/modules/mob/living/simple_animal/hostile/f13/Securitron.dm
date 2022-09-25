@@ -17,8 +17,6 @@
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
-	move_to_delay = 5
-	stat_attack = SOFT_CRIT
 	robust_searching = TRUE
 	maxHealth = 120
 	health = 120
@@ -27,30 +25,52 @@
 	healable = FALSE
 	faction = list("wastebot")
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
+	move_to_delay = 5.0
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 2
+	//how far they pull back
+	
+	minimum_distance = 5
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
 	emote_hear = list("Beeps.")
 	speak = list("Stop Right There Criminal.")
 	harm_intent_damage = 8
 	melee_damage_lower = 5
 	melee_damage_upper = 10
-	minimum_distance = 1
-	retreat_distance = 4
 	extra_projectiles = 2
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOW
+	ranged_ignores_vision = TRUE
 	attack_verb_simple = "punches"
 	attack_sound = "punch"
 	a_intent = "harm"
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	vision_range = 17
-	aggro_vision_range = 15
 	projectiletype = /obj/item/projectile/bullet/c9mm/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	emote_taunt = list("readies its arm gun")
 	check_friendly_fire = TRUE
 	ranged = TRUE
 	move_resist = MOVE_FORCE_OVERPOWERING
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/securitron/nsb //NSB + Raider Bunker specific
 	name = "Securitron"
-	aggro_vision_range = 15
 	faction = list("raider")
 	obj_damage = 300
 	retreat_distance = 0 //perish, mortal
@@ -59,12 +79,20 @@
 	if(!Proj)
 		CRASH("[src] securitron invoked bullet_act() without a projectile")
 	if(prob(5) && health > 1)
-		visible_message(span_danger("\The [src] releases a defensive flashbang!"))
 		var/flashbang_turf = get_turf(src)
 		if(!flashbang_turf)
 			return
-		var/obj/item/grenade/flashbang/sentry/S = new /obj/item/grenade/flashbang/sentry(flashbang_turf)
+		var/obj/item/grenade/S
+		switch(rand(1,10))
+			if(1)
+				S = new /obj/item/grenade/flashbang/sentry(flashbang_turf)
+			if(2)
+				S = new /obj/item/grenade/stingbang(flashbang_turf)
+			if(3 to 10)
+				S = new /obj/item/grenade/smokebomb(flashbang_turf)
+		visible_message(span_danger("\The [src] releases a defensive [S]!"))
 		S.preprime(user = null)
+
 	if(prob(75) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
 		return ..()
 	else
@@ -108,8 +136,8 @@
 	del_on_death = FALSE
 	melee_damage_lower = 28
 	melee_damage_upper = 65
-	extra_projectiles = 4 //5 projectiles
-	ranged_cooldown_time = 12 //brrrrrrrrrrrrt
+	extra_projectiles = 2 //5 projectiles
+	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
 	retreat_distance = 2
 	minimum_distance = 2
 	attack_verb_simple = "pulverizes"
@@ -122,6 +150,16 @@
 	idlesound = list('sound/f13npc/sentry/idle1.ogg', 'sound/f13npc/sentry/idle2.ogg', 'sound/f13npc/sentry/idle3.ogg', 'sound/f13npc/sentry/idle4.ogg')
 	var/warned = FALSE
 	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five, /obj/item/stock_parts/cell/ammo/mfc)
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/securitron/sentrybot/Life()
 	..()
@@ -159,8 +197,6 @@
 //Raider friendly Sentry bot
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb
 	name = "sentry bot"
-	aggro_vision_range = 15
-	faction = list("raider")
 	obj_damage = 300
 
 //Raider friendly Sentry bot with non-lethals
@@ -170,8 +206,17 @@
 	projectilesound = 'sound/f13weapons/riot_shotgun.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun_beanbag
 	retreat_distance = 0
-	environment_smash = 2 //wall-busts
-
+	extra_projectiles = 0
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable
 	health = 750   //El Beef

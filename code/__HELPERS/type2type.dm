@@ -72,8 +72,8 @@
 //returns an empty list if the file doesn't exist
 /world/proc/file2list(filename, seperator="\n", trim = TRUE)
 	if (trim)
-		return splittext(trim(file2text(filename)),seperator)
-	return splittext(file2text(filename),seperator)
+		return splittext(trim(wrap_file2text(filename)),seperator)
+	return splittext(wrap_file2text(filename),seperator)
 
 //Turns a direction into text
 /proc/dir2text(direction)

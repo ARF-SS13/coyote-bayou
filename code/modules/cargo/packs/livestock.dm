@@ -6,7 +6,7 @@
 ////////////////////////////// Livestock /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/critter
+/* /datum/supply_pack/critter
 	group = "Livestock"
 	crate_type = /obj/structure/closet/crate/critter
 
@@ -180,3 +180,4 @@
 					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
 					/mob/living/simple_animal/hostile/retaliate/bat/secbat)
 	crate_name = "security bat crate"
+*/

@@ -52,7 +52,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	verb_exclaim = "beeps"
 	max_integrity = 300
 	integrity_failure = 0.33
-	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 70)
+	armor = ARMOR_VALUE_LIGHT
 	circuit = /obj/item/circuitboard/machine/vendor
 	payment_department = ACCOUNT_SRV
 	light_power = 0.5
@@ -691,7 +691,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_price || default_price,
 			max_amount = R.max_amount,
@@ -701,7 +701,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["coin_records"] = list()
 	for (var/datum/data/vending_product/R in coin_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_premium_price || extra_price,
 			max_amount = R.max_amount,
@@ -712,7 +712,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	.["hidden_records"] = list()
 	for (var/datum/data/vending_product/R in hidden_records)
 		var/list/data = list(
-			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),
+			asset = get_spritesheet_icon_key_from_type(R.product_path),
 			name = R.name,
 			price = R.custom_premium_price || extra_price, //may cause breakage. please note
 			max_amount = R.max_amount,

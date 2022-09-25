@@ -70,7 +70,7 @@
 	if(!circuit)
 		var/list/gameodds = list(/obj/item/circuitboard/computer/arcade/battle = 33,
 								/obj/item/circuitboard/computer/arcade/orion_trail = 33,
-								/obj/machinery/computer/arcade/amputation = 33)
+								/obj/item/circuitboard/computer/arcade/amputation = 33)
 		var/thegame = pickweight(gameodds)
 		var/obj/item/circuitboard/CB = new thegame()
 		var/obj/machinery/computer/arcade/A = new CB.build_path(loc, CB)

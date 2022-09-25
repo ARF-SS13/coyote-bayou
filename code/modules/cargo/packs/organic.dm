@@ -7,7 +7,7 @@
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/organic
-	group = "Food & Hydroponics"
+	group = "Agriculture and Food"
 	crate_type = /obj/structure/closet/crate/freezer
 
 /datum/supply_pack/organic/randomized
@@ -22,7 +22,7 @@
 //////////////////////////////// Meals ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/organic/combomeal2
+/* /datum/supply_pack/organic/combomeal2
 	name = "Burger Combo #2"
 	desc = "We value our customers at the Greasy Griddle, so much so that we're willing to deliver -just for you.- This combo meal contains two burgers, a soda, fries, a toy, and some chicken nuggets."
 	cost = 3200
@@ -37,7 +37,7 @@
 					/obj/item/reagent_containers/food/snacks/nugget,
 					/obj/effect/spawner/lootdrop/plush)
 	crate_name = "combo meal w/toy"
-	crate_type = /obj/structure/closet/crate/wooden
+	crate_type = /obj/structure/closet/crate/wooden */
 
 /datum/supply_pack/organic/randomized/candy
 	name = "Candy Crate"
@@ -72,7 +72,19 @@
 					/obj/item/storage/fancy/donut_box)
 	crate_name = "candy crate"
 
-/datum/supply_pack/organic/fiestatortilla
+/datum/supply_pack/emergency/mre
+	name = "MRE Packs (Emergency Rations)"
+	desc = "Bacteria, radioactive contamination, bugs and worms, who wants to deal with that? Order our NT branded MRE kits today! This pack contains 5 MRE packs with a randomized menu."
+	cost = 2000
+	contains = list(/obj/item/storage/box/mre/menu1/safe,
+					/obj/item/storage/box/mre/menu1/safe,
+					/obj/item/storage/box/mre/menu2/safe,
+					/obj/item/storage/box/mre/menu2/safe,
+					/obj/item/storage/box/mre/menu3,
+					/obj/item/storage/box/mre/menu4/safe)
+	crate_name = "MRE crate (emergency rations)"
+
+/* /datum/supply_pack/organic/fiestatortilla
 	name = "Fiesta Crate"
 	desc = "Spice up the kitchen with this fiesta themed food order! Contains 8 tortilla based food items, as well as a sombrero, moustache, and cloak!"
 	cost = 2750
@@ -88,12 +100,12 @@
 					/obj/item/reagent_containers/food/snacks/carneburrito,
 					/obj/item/reagent_containers/food/snacks/cheesyburrito,
 					/obj/item/reagent_containers/glass/bottle/capsaicin,
-					/obj/item/reagent_containers/glass/bottle/capsaicin)
+					/obj/item/reagent_containers/glass/bottle/capsaicin) */
 	crate_name = "fiesta crate"
 
 /datum/supply_pack/organic/pizza
 	name = "Pizza Crate"
-	desc = "Best prices on this side of the galaxy. All deliveries are guaranteed to be 99% anomaly-free!"
+	desc = "Best prices on this side of the Alamo. All deliveries are guaranteed to be 99% rad-free!"
 	cost = 6000 // Best prices this side of the galaxy.
 	contains = list(/obj/item/pizzabox/margherita,
 					/obj/item/pizzabox/mushroom,
@@ -174,7 +186,7 @@
 					/obj/item/reagent_containers/food/snacks/grown/strawberry)
 	crate_name = "fruit crate"
 
-/datum/supply_pack/organic/randomized
+/* /datum/supply_pack/organic/randomized
 	name = "Meat Crate (Exotic)"
 	desc = "The best cuts in the whole galaxy. Contains 15 assorted exotic meats."
 	cost = 2000
@@ -187,7 +199,7 @@
 					/obj/item/reagent_containers/food/snacks/meat/rawcrab,
 					/obj/item/reagent_containers/food/snacks/spiderleg,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp,
-					/obj/item/reagent_containers/food/snacks/meat/slab/human)
+					/obj/item/reagent_containers/food/snacks/meat/slab/human) 
 	crate_name = "exotic meat crate"
 
 /datum/supply_pack/organic/monkeydripmeat
@@ -221,7 +233,7 @@
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
 					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation,
-					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation)
+					/obj/item/reagent_containers/food/snacks/fishmeat/carp/imitation) 
 	crate_name = "meaty crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
@@ -234,7 +246,7 @@
 					/obj/item/storage/box/ingredients/wildcard,
 					/obj/item/storage/box/ingredients/wildcard)
 	crate_name = "wildcard food crate"
-	crate_type = /obj/structure/closet/crate/freezer
+	crate_type = /obj/structure/closet/crate/freezer */
 
 /datum/supply_pack/organic/randomized/vegetables
 	name = "Vegetable Crate"
@@ -289,7 +301,7 @@
 	crate_name = "hydroponics backpack crate"
 	crate_type = /obj/structure/closet/crate/secure
 
-/datum/supply_pack/organic/hydroponics/maintgarden
+/* /datum/supply_pack/organic/hydroponics/maintgarden
 	name = "Maintenance Garden Crate"
 	desc = "Set up your own tiny paradise with do-it-yourself botany kit. Contains sandstone for dirt plots, pest spray, ammonia, a portable seed generator, basic botanical tools, and some seeds to start off with."
 	cost = 2700
@@ -313,7 +325,7 @@
 					/obj/item/seeds/grass,
 					/obj/item/seeds/grass)
 	crate_name = "maint garden crate"
-	crate_type = /obj/structure/closet/crate/hydroponics
+	crate_type = /obj/structure/closet/crate/hydroponics */
 
 /datum/supply_pack/organic/seeds
 	name = "Seeds Crate"
@@ -353,13 +365,203 @@
 	crate_name = "exotic seeds crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
+/datum/supply_pack/organic/wastelandseeds
+	name = "Seeds Crate (Wasteland)"
+	desc = "A choice selection of the most medicinal herb seeds the wastes have to offer."
+	cost = 1500
+	contains = list(/obj/item/seeds/poppy/broc,
+					/obj/item/seeds/poppy/broc,
+					/obj/item/seeds/buffalogourd,
+					/obj/item/seeds/coyotetobacco,
+					/obj/item/seeds/mutfruit,
+					/obj/item/seeds/xander,
+					/obj/item/seeds/xander,
+					/obj/item/seeds/datura)
+	crate_name = "wasteland seeds crate"
+	crate_type = /obj/structure/closet/crate/hydroponics
+
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// Livestock ///////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+/datum/supply_pack/organic/animal_feed
+	name = "Animal Feed Crate"
+	desc = "Feed for livestock, like cows and hens. Contains fifty Wheat bundles and fifty Oat bundles."
+	cost = 1500
+	contains = list(/obj/item/reagent_containers/food/snacks/grown/wheat,
+					/obj/item/reagent_containers/food/snacks/grown/oat)
+	crate_name = "animal feed crate"
+	crate_type = /obj/structure/closet/crate/freezer
+
+/datum/supply_pack/organic/animal_feed/generate()
+	. = ..()
+	for(var/i in 1 to 49)
+		new /obj/item/reagent_containers/food/snacks/grown/wheat(.)
+
+
+/datum/supply_pack/organic/parrot
+	name = "Bird Crate"
+	desc = "Contains five expert telecommunication birds."
+	cost = 4000
+	contains = list(/mob/living/simple_animal/parrot)
+	crate_name = "parrot crate"
+
+/datum/supply_pack/organic/parrot/generate()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /mob/living/simple_animal/parrot(.)
+	if(prob(1))
+		new /mob/living/simple_animal/parrot/clock_hawk(.)
+
+/datum/supply_pack/organic/butterfly
+	name = "Butterflies Crate"
+	desc = "Not a very dangerous insect, but they do give off a better image than, say, flies or cockroaches."//is that a motherfucking worm reference
+	contraband = TRUE
+	cost = 5000
+	contains = list(/mob/living/simple_animal/butterfly)
+	crate_name = "entomology samples crate"
+
+/datum/supply_pack/organic/butterfly/generate()
+	. = ..()
+	for(var/i in 1 to 49)
+		new /mob/living/simple_animal/butterfly(.)
+
+/datum/supply_pack/organic/cat
+	name = "Cat Crate"
+	desc = "The cat goes meow! Comes with a collar and a nice cat toy! Cheeseburger not included."//i can't believe im making this reference
+	cost = 5000 //Cats are worth as much as corgis.
+	contains = list(/mob/living/simple_animal/pet/cat,
+					/obj/item/clothing/neck/petcollar,
+					/obj/item/toy/cattoy)
+	crate_name = "cat crate"
+
+/datum/supply_pack/organic/cat/generate()
+	. = ..()
+	if(prob(50))
+		var/mob/living/simple_animal/pet/cat/C = locate() in .
+		qdel(C)
+		new /mob/living/simple_animal/pet/cat/Proc(.)
+
+/datum/supply_pack/organic/chick
+	name = "Chicken Crate"
+	desc = "The chicken goes bwaak!"
+	cost = 2000
+	contains = list(/mob/living/simple_animal/chick)
+	crate_name = "chicken crate"
+
+/* /datum/supply_pack/organic/crab
+	name = "Crab Rocket"
+	desc = "CRAAAAAAB ROCKET. CRAB ROCKET. CRAB ROCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROCKET. CRAFT. ROCKET. BUY. CRAFT ROCKET. CRAB ROOOCKET. CRAB ROOOOCKET. CRAB CRAB CRAB CRAB CRAB CRAB CRAB CRAB ROOOOOOOOOOOOOOOOOOOOOOCK EEEEEEEEEEEEEEEEEEEEEEEEE EEEETTTTTTTTTTTTAAAAAAAAA AAAHHHHHHHHHHHHH. CRAB ROCKET. CRAAAB ROCKEEEEEEEEEGGGGHHHHTT CRAB CRAB CRAABROCKET CRAB ROCKEEEET."//fun fact: i actually spent like 10 minutes and transcribed the entire video.
+	cost = 5000
+	contains = list(/mob/living/simple_animal/crab)
+	crate_name = "look sir free crabs"
+	DropPodOnly = TRUE 
+
+/datum/supply_pack/organic/crab/generate()
+	. = ..()
+	for(var/i in 1 to 49)
+		new /mob/living/simple_animal/crab(.) */
+
+/datum/supply_pack/organic/corgi
+	name = "Corgi Crate"
+	desc = "Considered the optimal dog breed by thousands of research scientists, this Corgi is but one dog from the millions of Ian's noble bloodline. Comes with a cute collar!"
+	cost = 5000
+	contains = list(/mob/living/simple_animal/pet/dog/corgi,
+					/obj/item/clothing/neck/petcollar)
+	crate_name = "corgi crate"
+
+/datum/supply_pack/organic/corgi/generate()
+	. = ..()
+	if(prob(50))
+		var/mob/living/simple_animal/pet/dog/corgi/D = locate() in .
+		if(D.gender == FEMALE)
+			qdel(D)
+			new /mob/living/simple_animal/pet/dog/corgi/Lisa(.)
+
+/datum/supply_pack/organic/corgis/exotic
+	name = "Exotic Corgi Crate"
+	desc = "Corgis fit for a king, these corgis come in a unique color to signify their superiority. Comes with a cute collar!"
+	cost = 5500
+	contains = list(/mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+					/obj/item/clothing/neck/petcollar)
+	crate_name = "exotic corgi crate"
+
+/datum/supply_pack/organic/cow
+	name = "Cow Crate"
+	desc = "The cow goes moo!"
+	cost = 3000
+	contains = list(/mob/living/simple_animal/cow)
+	crate_name = "cow crate"
+
+/datum/supply_pack/organic/fox
+	name = "Fox Crate"
+	desc = "The fox goes...? Comes with a collar!"//what does the fox say
+	cost = 5000
+	contains = list(/mob/living/simple_animal/pet/fox,
+					/obj/item/clothing/neck/petcollar)
+	crate_name = "fox crate"
+
+/datum/supply_pack/organic/goat
+	name = "Goat Crate"
+	desc = "The goat goes baa! Warranty void if used as a replacement for Pete."
+	cost = 2500
+	contains = list(/mob/living/simple_animal/hostile/retaliate/goat)
+	crate_name = "goat crate"
+
+/datum/supply_pack/organic/goose
+	name = "Goose Crate"
+	desc = "Angry and violent birds. Evil, evil creatures."
+	cost = 2500
+	contains = list(/mob/living/simple_animal/hostile/retaliate/goose)
+	crate_name = "goose crate"
+
+/datum/supply_pack/organic/pug
+	name = "Pug Crate"
+	desc = "Like a normal dog, but... squished. Comes with a nice collar!"
+	cost = 5000
+	contains = list(/mob/living/simple_animal/pet/dog/pug,
+					/obj/item/clothing/neck/petcollar)
+	crate_name = "pug crate"
+
+/datum/supply_pack/organic/snake
+	name = "Snake Crate"
+	desc = "Tired of these MOTHER FUCKING snakes on this MOTHER FUCKING space station? Then this isn't the crate for you. Contains three poisonous snakes."
+	cost = 3000
+	contains = list(/mob/living/simple_animal/hostile/retaliate/poison/snake,
+					/mob/living/simple_animal/hostile/retaliate/poison/snake,
+					/mob/living/simple_animal/hostile/retaliate/poison/snake)
+	crate_name = "snake crate"
+
+/datum/supply_pack/organic/mouse
+	name = "Mouse Crate"
+	desc = "Good for snakes and lizards of all ages. Contains ~12 feeder mice."
+	cost = 2000
+	contains = list(/mob/living/simple_animal/mouse,)
+	crate_name = "mouse crate"
+
+/datum/supply_pack/organic/mouse/generate()
+	. = ..()
+	for(var/i in 1 to 11)
+		new /mob/living/simple_animal/mouse(.)
+
+/* /datum/supply_pack/organic/secbat
+	name = "Security Bat Crate"
+	desc = "Contains five security bats, perfect to Bat-up any security officer."
+	cost = 2500
+	contains = list(/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+					/mob/living/simple_animal/hostile/retaliate/bat/secbat,
+					/mob/living/simple_animal/hostile/retaliate/bat/secbat)
+	crate_name = "security bat crate" */
+
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////// Misc /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
 /datum/supply_pack/organic/party
 	name = "Party Equipment"
-	desc = "Celebrate both life and death on the station with Nanotrasen's Party Essentials(tm)! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
+	desc = "Celebrate both life and death in the wastes! Contains seven colored glowsticks, four beers, two ales, a drinking shaker, and a bottle of patron & goldschlager!"
 	cost = 2000
 	contains = list(/obj/item/storage/box/drinkingglasses,
 					/obj/item/reagent_containers/food/drinks/shaker,

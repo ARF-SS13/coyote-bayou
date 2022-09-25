@@ -98,6 +98,8 @@
 		used += volume
 		volume_by_item[I] = volume
 		percentage_by_item[I] = volume / get_max_volume()
+		if(storage_flags & STORAGE_LIMIT_MAX_ITEMS && max_items > 0)
+			percentage_by_item[I] = max(percentage_by_item[I], (1 / max_items))
 	var/padding_pixels = ((length(percentage_by_item) - 1) * VOLUMETRIC_STORAGE_ITEM_PADDING) + VOLUMETRIC_STORAGE_EDGE_PADDING * 2
 	var/min_pixels = (MINIMUM_PIXELS_PER_ITEM * length(percentage_by_item)) + padding_pixels
 	// do the check for fallback for when someone has too much gamer gear
@@ -107,7 +109,7 @@
 	// after this point we are sure we can somehow fit all items into our max number of rows.
 
 	// determine rows
-	var/rows = clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
+	var/rows = number_of_rows // clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
 
 	var/overrun = FALSE
 	if(used > our_volume)

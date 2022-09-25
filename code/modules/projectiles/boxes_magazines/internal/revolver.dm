@@ -127,3 +127,10 @@
 	ammo_type = /obj/item/ammo_casing/a45lc
 	caliber = list(CALIBER_45LC)
 	max_ammo = 6
+
+/obj/item/ammo_box/magazine/internal/cylinder/rev308
+	name = ".308 Sporting Revolver Cylinder"
+	ammo_type = /obj/item/ammo_casing/a762/sport
+	caliber = list(CALIBER_762)
+	max_ammo = 10
+

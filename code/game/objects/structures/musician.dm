@@ -58,7 +58,7 @@
 
 	// now generate name
 	var/soundfile = "sound/runtime/instruments/[instrumentDir]/[ascii2text(note+64)][acc][oct].[instrumentExt]"
-	soundfile = file(soundfile)
+	soundfile = wrap_file(soundfile)
 	// make sure the note exists
 	if(!fexists(soundfile))
 		return

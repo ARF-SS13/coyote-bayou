@@ -1,5 +1,4 @@
 /obj/item/clothing/under/f13
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) //Base type has no armor as well
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	fitted = FEMALE_UNIFORM_FULL
 	can_adjust = FALSE
@@ -65,7 +64,6 @@
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/vault13
 	name = "vault 113 jumpsuit"
@@ -77,53 +75,51 @@
 	has_sensor = LOCKED_SENSORS
 	sensor_mode = SENSOR_COORDS
 	random_sensor = FALSE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 
 //NCR
 
 /obj/item/clothing/under/f13/ncr
-	name = "NCR desert fatigues"
-	desc = "A set of standard issue New California Republic trooper fatigues."
+	name = "desert fatigues"
+	desc = "A set of standard issue trooper fatigues."
 	icon_state = "ncr_uniform"
 	can_adjust = TRUE
 	item_state = "ncr_uniform"
 	item_color = "ncr_uniform"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/ncr/ncr_officer
-	name = "NCR officer fatigues"
-	desc = "A standard service uniform for commissioned officers of the New California Republic."
+	name = "officer fatigues"
+	desc = "A standard service uniform for commissioned officers."
 	can_adjust = TRUE
 	icon_state = "ncr_officer"
 	item_state = "ncr_officer"
 	item_color = "ncr_officer"
 
 /obj/item/clothing/under/f13/ncr/conscript
-	name = "NCR conscript fatigues"
-	desc = "A standard duty uniform for conscripts of the New California Republic."
+	name = "conscript fatigues"
+	desc = "A standard duty uniform for conscripts."
 	can_adjust = FALSE
 	icon_state = "ncr_conscript"
 	item_state = "ncr_conscript"
 	item_color = "ncr_conscript"
 
 /obj/item/clothing/under/f13/ncr/scout
-	name = "NCR scout fatigues"
-	desc = "A standard duty uniform for scouts of the New California Republic."
+	name = "scout fatigues"
+	desc = "A standard duty uniform for scouts."
 	icon_state = "scoutclothes"
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
 
 /obj/item/clothing/under/f13/ncr/sniper
-	name = "NCR sniper fatigues"
-	desc = "A standard duty uniform for snipers of the New California Republic."
+	name = "sniper fatigues"
+	desc = "A standard duty uniform for snipers."
 	can_adjust = FALSE
 	icon_state = "ncr_snipermgs"
 	item_state = "ncr_snipermgs"
 	item_color = "ncr_snipermgs"
 
 /obj/item/clothing/under/f13/ncr/pants
-	name = "NCR fatigue pants"
+	name = "fatigue pants"
 	desc = "A set of standard issue fatigue pants without the upper overcoat. For when you really need to show off your guns."
 	can_adjust = FALSE
 	icon_state = "ncr_fatigue_pants"
@@ -131,23 +127,23 @@
 	item_color = "ncr_fatigue_pants"
 
 /obj/item/clothing/under/f13/ncr/ncr_shorts
-	name = "NCR fatigue shorts"
-	desc = "A set of uniform shorts and lightweight shirt for NCR troopers deployed in hot climates."
+	name = "fatigue shorts"
+	desc = "A set of uniform shorts and lightweight shirt for troopers deployed in hot climates."
 	can_adjust = TRUE
 	icon_state = "ncr_shorts"
 	item_state = "ncr_shorts"
 	item_color = "ncr_shorts"
 
 /obj/item/clothing/under/f13/ncrcaravan
-	name = "NCR caravaneer outfit"
-	desc = "A soft outfit commonly worn by NCR caravaneers."
+	name = "caravaneer outfit"
+	desc = "A soft outfit commonly worn by caravaneers."
 	icon_state = "caravaneer"
 	item_state = "caravaneer"
 	item_color = "caravaneer"
 
 /obj/item/clothing/under/f13/ncr/ncr_dress
-	name = "NCR dress uniform"
-	desc = "A crisp tan NCRA dress uniform, complete with tie."
+	name = "dress uniform"
+	desc = "A crisp tan dress uniform, complete with tie."
 	can_adjust = TRUE
 	icon_state = "ncr_dress"
 	item_state = "ncr_dress"
@@ -155,7 +151,7 @@
 
 /obj/item/clothing/under/f13/ncrcf
 	name = "caravaneer outfit"
-	desc = "A cheap blue shirt and slacks, the letters 'NCRCF' emblazened on the back. A meek reminder of who owns you."
+	desc = "A cheap blue shirt and slacks."
 	can_adjust = TRUE
 	icon_state = "ncrcf"
 	item_state = "ncrcf"
@@ -183,7 +179,6 @@
 	icon_state = "doctor_m"
 	item_state = "doctor_m"
 	item_color = "doctor_m"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/doctorf
 	name = "doctor fatigues"
@@ -191,7 +186,6 @@
 	icon_state = "doctor_f"
 	item_state = "doctor_f"
 	item_color = "doctor_f"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/caravan
 	name = "caravan pants"
@@ -216,7 +210,6 @@
 	icon_state = "ranger"
 	item_state = "ranger"
 	item_color = "ranger"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/ranger/trail
 	name = "ranger outfit"
@@ -293,7 +286,6 @@
 	icon_state = "vetranger"
 	item_state = "rustictown"
 	item_color = "rustictown"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/sheriff
 	name = "sheriff outfit"
@@ -301,7 +293,6 @@
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/sleazeball
 	name = "loanshark outfit"
@@ -309,7 +300,6 @@
 	icon_state = "vest_and_slacks"
 	item_state = "vest_and_slacks"
 	item_color = "vest_and_slacks"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/follower
 	name = "citzen outfit"
@@ -317,7 +307,6 @@
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 50, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/medic
 	name = "doctor outfit"
@@ -325,7 +314,6 @@
 	icon_state = "chef"
 	item_state = "chef"
 	item_color = "chef"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 //Brotherhood of Steel
 
@@ -335,7 +323,6 @@
 	icon_state = "recon"
 	item_state = "recon"
 	item_color = "recon"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 80)
 
 /obj/item/clothing/under/f13/recon/outcast
 	name = "recon bodysuit"
@@ -343,7 +330,6 @@
 	icon_state = "recon_outcast"
 	item_state = "recon_outcast"
 	item_color = "recon"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 40, "fire" = 30, "acid" = 80)
 
 //Legion
 
@@ -364,7 +350,7 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/f13/legskirt
-	name = "legionary fatigues"
+	name = "burgundy fatigues"
 	desc = "A black learthery skirt and a thick long sleeve cotton shirt."
 	icon_state = "legskirt"
 	item_state = "legskirt"
@@ -486,7 +472,6 @@
 	icon_state = "machinist"
 	item_state = "machinist"
 	item_color = "machinist"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/lumberjack
 	name = "lumberjack outfit"
@@ -508,7 +493,6 @@
 	icon_state = "merca"
 	item_state = "merca"
 	item_color = "merca"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/mercc
 	name = "merc outfit"
@@ -516,7 +500,6 @@
 	icon_state = "mercc"
 	item_state = "mercc"
 	item_color = "mercc"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyb
 	name = "cowboy outfit"
@@ -625,7 +608,6 @@
 	icon_state = "roving"
 	item_state = "roving"
 	item_color = "roving"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/follower
 	name = "follower volunteer uniform"
@@ -633,7 +615,6 @@
 	icon_state = "follower"
 	item_state = "follower"
 	item_color = "follower"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/raider_leather
 	name = "raider leathers"
@@ -650,31 +631,28 @@
 	item_color = "raiderrags"
 
 /obj/item/clothing/under/f13/khan
-	name = "great khan uniform"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants."
+	name = "denim uniform"
+	desc = "Well designed denim pants."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_uniform"
 	item_state = "khan_uniform"
 	item_color = "khan_uniform"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 	var/uniformtoggled = FALSE
 
 /obj/item/clothing/under/f13/khan/shorts
-	name = "great khan jorts"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, but jorts is a acceptable alternative."
+	name = "denim jorts"
+	desc = "Denim pants, but jorts!"
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_short"
 	item_state = "khan_short"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/under/f13/khan/booty
-	name = "khan booty shorts"
-	desc = "Clothing marking the wearer as one of the the Great Khans. Most common are denim pants, But this pair doesn't seem to leave much to the imagination."
+	name = "denim shorts"
+	desc = "Denim pants, But this pair doesn't seem to leave much to the imagination."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_booty"
 	item_state = "khan_booty"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/under/f13/khan/Goji
 	name = "Leather Pants"
@@ -683,7 +661,6 @@
 	icon_state = "Gojipants"
 	item_state = "Gojipants"
 	item_color = "Gojipants"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 // Testing fixed toggle uniform so icon updates properly
 /obj/item/clothing/under/f13/khan/AltClick(mob/user)
@@ -799,7 +776,6 @@
 	icon_state = "ncr_uniformexile"
 	item_state = "ncr_uniformexile"
 	item_color = "ncr_uniformexile"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/exile/legion
 	name = "disheveled Legion fatigues"
@@ -888,7 +864,6 @@
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
 	item_color = "enclave_o"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 //Old World Militaries
 //US Army
@@ -1010,7 +985,6 @@
 	icon_state = "machinist"
 	item_state = "lb_suit"
 	item_color = "machinist"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/lumberjack
 	name = "lumberjack outfit"
@@ -1026,7 +1000,6 @@
 	item_state = "b_suit"
 	item_color = "retro_police"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyt //Originally cowboy and mafia stuff by Nienhaus
 	name = "dusty prospector outfit"
@@ -1034,14 +1007,12 @@
 	icon_state = "cowboyt"
 	item_state = "det"
 	item_color = "cowboyt"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyb
 	name = "sleek prospector outfit"
 	desc = "A white shirt with brass buttons and a pair of brown trousers, commonly worn by prospectors."
 	icon_state = "cowboyb"
 	item_state = "det"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/cowboyg
 	name = "well-heeled prospector outfit"
@@ -1049,7 +1020,6 @@
 	icon_state = "cowboyg"
 	item_state = "sl_suit"
 	item_color = "cowboyg"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/flapper
 	name = "flapper dress"
@@ -1072,7 +1042,6 @@
 	icon_state = "dbdu"
 	item_state = "brownjsuit"
 	item_color = "dbdu"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 	can_adjust = TRUE
 
 /obj/item/clothing/under/f13/shiny //Firefly, yay!
@@ -1162,7 +1131,6 @@
 	icon_state = "settler"
 	item_state = "brownjsuit"
 	item_color = "settler"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/brahmin //Male version
 	name = "male brahmin-skin outfit"
@@ -1184,7 +1152,6 @@
 	icon_state = "doctor_m"
 	item_state = "brownjsuit"
 	item_color = "doctor_m"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/doctor //Female version
 	name = "female doctor fatigues"
@@ -1200,7 +1167,6 @@
 	icon_state = "merca_m"
 	item_state = "bl_suit"
 	item_color = "merca_m"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/female/mercadv //Female version
 	name = "female merc adventurer outfit"
@@ -1216,7 +1182,6 @@
 	icon_state = "mercc_m"
 	item_state = "mercc_f"
 	item_color = "mercc_m"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/mechanic
 	name = "worn blue jumpsuit"
@@ -1224,7 +1189,6 @@
 	icon_state = "mechanic"
 	item_state = "syndicate-blue"
 	item_color = "mechanic"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/petrochico
 	name = "worn green jumpsuit"
@@ -1232,7 +1196,6 @@
 	icon_state = "petrochico"
 	item_state = "centcom"
 	item_color = "petrochico"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/caravaneer
 	name = "caravaneer outift"
@@ -1240,7 +1203,6 @@
 	icon_state = "caravaneer"
 	item_state = "syndicate-blue"
 	item_color = "caravaneer"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 40)
 
 /obj/item/clothing/under/f13/merchant
 	name = "merchant outfit "
@@ -1248,7 +1210,6 @@
 	icon_state = "merchant"
 	item_state = "brownjsuit"
 	item_color = "merchant"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/worn
 	name = "worn outfit "
@@ -1264,7 +1225,6 @@
 	item_state = "b_suit"
 	item_color = "vault"
 	can_adjust = TRUE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 10, "rad" = 30, "fire" = 30, "acid" = 40)
 
 /obj/item/clothing/under/f13/vault/v13 //The Legend is here.
 	name = "Vault 13 jumpsuit"
@@ -1307,7 +1267,6 @@
 	icon_state = "followers"
 	item_state = "bar_suit"
 	item_color = "followers"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat
 	name = "combat uniform"
@@ -1315,7 +1274,6 @@
 	icon_state = "combat"
 	item_state = "bl_suit"
 	item_color = "combat"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/gunner
 	name = "gunner combat uniform"
@@ -1323,7 +1281,6 @@
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
 	item_color = "GunnerPlates"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/combat/militia
 	name = "NDF fatigues"
@@ -1335,7 +1292,6 @@
 	icon_state = "enclave_o"
 	item_state = "bl_suit"
 	item_color = "enclave_o"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/ncr/torn
 	name = "torn overcoat"
@@ -1351,7 +1307,6 @@
 	icon_state = "general"
 	item_state = "lb_suit"
 	item_color = "general"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 40, "acid" = 40)
 
 /obj/item/clothing/under/f13/general/oasis
 	name = "dictator's overcoat"
@@ -1364,7 +1319,6 @@
 	item_state = "rig_suit"
 	item_color = "recon"
 	flags_inv = HIDEHAIR
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 30, "acid" = 40)
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 
@@ -1584,7 +1538,6 @@
 	icon_state = "atomfaithful"
 	item_state = "atomfaithful"
 	item_color = "atomfaithful"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 20, "acid" = 40)
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
@@ -1595,7 +1548,6 @@
 	icon_state = "atomwitchunder"
 	item_state = "atomwitchunder"
 	item_color = "atomwitchunder"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 20, "acid" = 40)
 
 
 /obj/item/clothing/under/f13/atombeliever
@@ -1604,7 +1556,6 @@
 	icon_state = "atombeliever"
 	item_state = "atombeliever"
 	item_color = "atombeliever"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 100, "fire" = 20, "acid" = 40)
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
 
@@ -1653,14 +1604,12 @@
 	desc = "An ancient pre-war army combat uniform. In use by the locust mercenaries."
 	icon_state = "locust"
 	item_state = "locust"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/gunner
 	name = "gunner combat uniform"
 	desc = "An ancient combat uniform, that went out of use around the time of the Great War. it has scratch marks and a skull painted on it to symbolize that its part of the gunners"
 	icon_state = "GunnerPlates"
 	item_state = "GunnerPlates"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 20, "fire" = 20, "acid" = 40)
 
 /obj/item/clothing/under/f13/marlowduds
 	name = "Marlow gang attire"
@@ -1722,7 +1671,6 @@
 	can_adjust = FALSE
 	item_state = "scoutclothes"
 	item_color = "scoutclothes"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 30, "fire" = 20, "acid" = 50)
 
 /obj/item/clothing/under/f13/densuit
 	name = "the den outfit"

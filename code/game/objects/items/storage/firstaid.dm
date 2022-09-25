@@ -621,7 +621,7 @@
 	name = "Rad-X bottle"
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_radx"
-	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
+	desc = "Contains pills that prevent radiation buildup, totally shielding the user at high doses. Does not treat radiation sickness, best taken before exposure."
 
 /obj/item/storage/pill_bottle/chem_tin/radx/PopulateContents()
 	for(var/i in 1 to 5)

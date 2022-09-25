@@ -214,13 +214,13 @@
 		for(var/i in M.all_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(2)
-		. = 1
 	else
 		if(M.getBruteLoss() && prob(20))
 			M.heal_bodypart_damage(1,0, 0)
-			. = 1
 	if(holder.has_reagent(/datum/reagent/consumable/capsaicin))
 		holder.remove_reagent(/datum/reagent/consumable/capsaicin, 2)
+	M.radiation -= min(M.radiation, 2)
+	. = TRUE
 	..()
 
 /datum/reagent/consumable/soymilk
@@ -446,7 +446,6 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	M.Jitter(5)
 	..()
 	. = 1
 
@@ -485,27 +484,6 @@
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 
-/datum/reagent/consumable/nuka_cola
-	name = "Nuka Cola"
-	description = "Cola, cola never changes."
-	color = "#100800" // rgb: 16, 8, 0
-	quality = DRINK_VERYGOOD
-	taste_description = "the future"
-	glass_icon_state = "nuka_colaglass"
-	glass_name = "glass of Nuka Cola"
-	glass_desc = "Don't cry, Don't raise your eye, It's only nuclear wasteland."
-	value = REAGENT_VALUE_COMMON
-
-/datum/reagent/consumable/nuka_cola/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
-	//M.set_drugginess(30)
-	//M.dizziness +=1.5
-	M.drowsyness = 0
-	M.AdjustSleeping(-40, FALSE)
-	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	..()
-	. = 1
-
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	description = "Blows right through you like a space wind."
@@ -520,7 +498,6 @@
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-20, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	M.Jitter(5)
 	..()
 	. = 1
 
@@ -670,7 +647,6 @@
 	..()
 
 /datum/reagent/consumable/grey_bull/on_mob_life(mob/living/carbon/M)
-	M.Jitter(20)
 	M.dizziness +=1
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -750,7 +726,6 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0, FALSE)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	M.Jitter(5)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -772,7 +747,6 @@
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.SetSleeping(0, FALSE)
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
-	M.Jitter(5)
 	if(M.getBruteLoss() && prob(20))
 		M.heal_bodypart_damage(1,0, 0)
 	..()
@@ -1129,5 +1103,4 @@
 	reagent_state = SOLID
 	taste_description = "bitter powder"
 	glass_name = "glass of banana peel powder"
-	description = "You took a banana peel... pulped it... baked it... Where are you going with this?"
 	ghoulfriendly = TRUE

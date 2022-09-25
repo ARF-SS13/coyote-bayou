@@ -179,15 +179,14 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/stack/ore/glass/basalt
 	name = "volcanic ash"
 	icon_state = "volcanic_sand"
-	icon_state = "volcanic_sand"
 	singular_name = "volcanic ash pile"
 	merge_type = /obj/item/stack/ore/glass/basalt
 
 /obj/item/stack/ore/plasma
-	name = "carbon chunks"
-	icon_state = "slag"
-	item_state = "slag"
-	singular_name = "carbon chunk"
+	name = "Ultracite chunks"
+	icon_state = "ultracite"
+	item_state = "ultracite"
+	singular_name = "Ultracite chunk"
 	points = 15
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/mineral/plasma
@@ -209,7 +208,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 
 /obj/item/stack/ore/gold
 	name = "gold ore"
-	icon_state = "Gold ore"
 	icon_state = "Gold ore"
 	singular_name = "gold ore chunk"
 	points = 18

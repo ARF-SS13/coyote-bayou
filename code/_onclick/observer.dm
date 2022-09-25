@@ -70,5 +70,5 @@
 
 /obj/machinery/teleport/hub/attack_ghost(mob/user)
 	if(power_station && power_station.engaged && power_station.teleporter_console && power_station.teleporter_console.target)
-		user.forceMove(get_turf(power_station.teleporter_console.target))
+		user.abstract_move(get_turf(power_station.teleporter_console.target))
 	return ..()

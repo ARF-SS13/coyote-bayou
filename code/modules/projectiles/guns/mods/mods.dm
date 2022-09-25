@@ -84,7 +84,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 		GUN_UPGRADE_DAMAGE_MULT = 1.3,
-		GUN_UPGRADE_CHARGECOST = 2
+		GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
 	I.req_gun_tags = list(GUN_ENERGY)
@@ -102,7 +102,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_FIRE_DELAY_MULT = 0.8,
+		GUN_UPGRADE_FIRE_DELAY_MULT = 0.85,
 		GUN_UPGRADE_FORCESAFETY = FALSE
 		)
 	I.gun_loc_tag = GUN_TRIGGER
@@ -208,8 +208,8 @@
 /obj/item/gun_upgrade/scope
 
 /obj/item/gun_upgrade/scope/watchman
-	name = "ACOG scope"
-	desc = "A medium range scope, with a bit of heft to it."
+	name = "old scope"
+	desc = "A medium range scope, with a bit of heft to it.  Amazing that it's even still dialed in."
 	icon_state = "Watchman"
 
 /obj/item/gun_upgrade/scope/watchman/New()
@@ -458,15 +458,15 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.5,
-	GUN_UPGRADE_CHARGECOST = 3)
+	GUN_UPGRADE_DAMAGE_MULT = 1.35,
+	GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 
-// Greatly increase firerate at the cost of lower damage
+// Massively lowers cell charge usage at the cost of lower damage
 /obj/item/gun_upgrade/mechanism/overdrive
 	name = "REPCONN overdrive chip"
-	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase the rate of fire at the cost of a reduced stopping power."
+	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of lowering the power output of a weapon."
 	icon_state = "overdrive"
 
 /obj/item/gun_upgrade/mechanism/overdrive/New()
@@ -474,11 +474,9 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 2,
-	GUN_UPGRADE_DAMAGE_MULT = 0.66,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 0.33,
-	GUN_UPGRADE_FULLAUTO = TRUE,
+	GUN_UPGRADE_DAMAGE_MULT = 0.5,
 	GUN_UPGRADE_CHARGECOST = 0.5,
-	GUN_UPGRADE_FIRE_DELAY_MULT = 0.33)
+	GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
 

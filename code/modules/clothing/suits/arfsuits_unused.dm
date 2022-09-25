@@ -1,4 +1,4 @@
-/* 
+/*
  * Old armors we dont need or use or anything go here
  */
 
@@ -762,8 +762,8 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 //Battlecoat
 /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
-	name = "Great Khan battle coat"
-	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
+	name = "Leather battle coat"
+	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside."
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
 
@@ -880,7 +880,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /*
 // Heavy
-/obj/item/clothing/suit/armor/atomzealot 
+/obj/item/clothing/suit/armor/atomzealot
 	name = "zealot armor"
 	desc = "Praise be to Atom."
 	icon_state = "atomzealot"
@@ -948,7 +948,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	STOP_PROCESSING(SSobj, src)
 	return ..() */
 
-	
+
 /obj/item/clothing/suit/armor/medium/duster/khancoat
 	name = "khan battlecoat"
 	desc = "Affluent pushers can affort fancy coats with a lot of metal and ceramic plates stuffed inside."
@@ -967,7 +967,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	desc = "A suit of worn dated NCR armor, it seems to have seen better days."
 	icon_state = "ncr_tribal_armor"
 	item_state = "ncr_tribal_armor"
-	
+
 /obj/item/clothing/suit/armor/light/rangerrig
 	name = "chest gear harness"
 	desc = "A handmade tactical rig made of black cloth, attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt. Very cool to move about in."

@@ -179,7 +179,7 @@
 		/obj/item/gun/ballistic/rifle/hunting = 20,
 		/obj/item/gun/ballistic/revolver/widowmaker = 17,
 		/obj/item/gun/ballistic/shotgun/hunting = 10,
-		/obj/effect/spawner/bundle/f13/mosin = 8,
+		/obj/effect/spawner/bundle/f13/remington = 8,
 		/obj/effect/spawner/bundle/f13/varmint = 8,
 		/obj/effect/spawner/bundle/f13/cowboy = 5,
 		/obj/effect/spawner/bundle/f13/trail = 4,

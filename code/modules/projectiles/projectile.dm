@@ -58,7 +58,6 @@
 	var/nondirectional_sprite = FALSE //Set TRUE to prevent projectiles from having their sprites rotated based on firing angle
 	var/spread = 0			//amount (in degrees) of projectile spread
 	var/recoil = 0 // How much recoil does this bullet do when shot, factors into repeated-shot inaccuracy
-	animate_movement = 0	//Use SLIDE_STEPS in conjunction with legacy
 	/// how many times we've ricochet'd so far (instance variable, not a stat)
 	var/ricochets = 0
 	/// how many times we can ricochet max
@@ -128,9 +127,6 @@
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/is_reflectable = FALSE // Can it be reflected or not?
 
-	/// factor to multiply by for zone accuracy percent.
-	var/zone_accuracy_factor = 1
-
 		//Effects
 	var/stun = 0
 	var/knockdown = 0
@@ -163,13 +159,13 @@
 	var/embed_falloff_tile
 	/// For telling whether we want to roll for bone breaking or lacerations if we're bothering with wounds
 	sharpness = SHARP_NONE
+	/// Defines how much damage to lose per tile, and at what distance to start losing damage - currently unused
+	var/list/damage_falloff = BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT
+	/// bullet's general zone hit accuracy
+	var/zone_accuracy_type = ZONE_WEIGHT_GUNS_CHOICE
 
 /obj/item/projectile/Initialize()
 	. = ..()
-	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
-	)
-	AddElement(/datum/element/connect_loc, loc_connections)
 
 	permutated = list()
 	decayedRange = range
@@ -187,6 +183,9 @@
 		bare_wound_bonus = max(0, bare_wound_bonus + wound_falloff_tile)
 	if(LAZYLEN(embedding))
 		embedding["embed_chance"] += embed_falloff_tile
+	//if(LAZYLEN(damage_falloff))
+	//	if(initial(range) - range >= damage_falloff[BULLET_FALLOFF_START])
+	//		damage = max(BULLET_FALLOFF_MIN_DAMAGE, damage - damage_falloff[BULLET_FALLOFF])
 	if(range <= 0 && loc)
 		on_range()
 
@@ -247,7 +246,7 @@
 	var/mob/living/L = target
 
 	if(blocked != 100) // not completely blocked
-		if(damage && L.get_blood(TRUE) && damage_type == BRUTE)
+		if(damage && L.blood_volume && damage_type == BRUTE)
 			var/splatter_dir = dir
 			if(starting)
 				splatter_dir = get_dir(starting, target_loca)
@@ -350,8 +349,19 @@
 			return TRUE
 
 	var/distance = get_dist(T, starting) // Get the distance between the turf shot from and the mob we hit and use that for the calculations.
-	if(def_zone && check_zone(def_zone) != BODY_ZONE_CHEST)
-		def_zone = ran_zone(def_zone, max(100-(7*distance), 5) * zone_accuracy_factor) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+	if(distance > 1) // Point blank, you'll hit what you're aiming at
+		if(zone_accuracy_type == ZONE_WEIGHT_GUNS_CHOICE) // Someone didnt set our accuracy! Naughty!
+			zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
+		switch(zone_accuracy_type)
+			if(ZONE_WEIGHT_PRECISION) // guaranteed to hit the zone you aim for, unless its the head and they're more than 2 tiles away
+				if(def_zone && check_zone(def_zone) == BODY_ZONE_HEAD && distance > 2) // Aiming for the head more than 2 tiles away means a 20ish% chance to hit the head
+					def_zone = ran_zone(def_zone, 0, ZONE_WEIGHT_LIST_PRECISION) // Keeps good accuracy
+			if(ZONE_WEIGHT_SEMI_AUTO)
+				def_zone = ran_zone(def_zone, 100-(7*distance), ZONE_WEIGHT_LIST_DEFAULT) //Lower accurancy/longer range tradeoff. 7 is a balanced number to use.
+			if(ZONE_WEIGHT_AUTOMATIC)
+				def_zone = ran_zone(def_zone, 100-(20*distance), ZONE_WEIGHT_LIST_AUTOMATIC)
+			if(ZONE_WEIGHT_SHOTGUN)
+				def_zone = ran_zone(def_zone, 0, ZONE_WEIGHT_LIST_AUTOMATIC)
 
 	if(isturf(A) && hitsound_wall)
 		var/volume = clamp(vol_by_damage() + 20, 0, 100)
@@ -527,6 +537,10 @@
 		pixel_increment_amount = SSprojectiles.global_pixel_increment_amount
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, pixel_increment_amount)
 	fired = TRUE
+	var/static/list/loc_connections = list(
+		COMSIG_ATOM_ENTERED = .proc/on_entered,
+	)
+	AddElement(/datum/element/connect_loc, loc_connections)
 	if(hitscan)
 		process_hitscan()
 		return

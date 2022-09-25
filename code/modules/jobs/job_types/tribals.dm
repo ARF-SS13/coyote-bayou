@@ -58,7 +58,8 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	backpack = /obj/item/storage/backpack/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	id = null
-	box = /obj/item/storage/survivalkit_tribal
+	box = /obj/item/storage/survivalkit/tribal
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	ears = null
 
 /datum/outfit/job/tribal/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -246,7 +247,7 @@ Tribal Head Hunter
 	jobtype = /datum/job/tribal/f13Hhunter
 	uniform = /obj/item/clothing/under/f13/wayfarer/hunter
 	suit = /obj/item/clothing/suit/hooded/cloak/shunter
-	belt = /obj/item/melee/transforming/cleaving_saw
+	belt = /obj/item/twohanded/spearaxe
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,

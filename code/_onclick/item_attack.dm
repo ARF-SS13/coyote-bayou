@@ -92,8 +92,9 @@
 		return
 
 	var/bigleagues = 10 //flat additive
+	var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
 	var/buffout = force*0.25
-	var/smutant = force*0.25
+	var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
 	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
 
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
@@ -105,6 +106,9 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force += buffout
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
+		force += FEVbonus
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force += smutant
@@ -130,6 +134,9 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 		force -= bigleagues
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
+		force -= FEVbonus
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force -= buffout

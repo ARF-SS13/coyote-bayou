@@ -390,7 +390,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	always_available = FALSE
+	
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"

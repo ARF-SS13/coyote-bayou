@@ -274,6 +274,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 			adjust_nutrition(-nutrition_bonus)
 			blood_volume += (nutrition_bonus / BLOOD_UNIT_NUTRITION_COST)
 
+//Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)
 	if(blood_volume)
 		if(get_blood(FALSE) < BLOOD_VOLUME_LOSS_FLOOR)

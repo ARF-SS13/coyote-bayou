@@ -374,7 +374,7 @@
 	suit = /obj/item/clothing/suit/armor/medium/vest/blueshirt
 	head = /obj/item/clothing/head/helmet/blueshirt
 	back = /obj/item/storage/backpack/security
-	belt = /obj/item/storage/belt/security/full
+	belt = /obj/item/storage/belt/army/security/full
 
 /obj/effect/mob_spawn/human/hotel_staff/Destroy()
 	new/obj/structure/fluff/empty_sleeper/syndicate(get_turf(src))
@@ -470,7 +470,7 @@
 /datum/outfit/syndicate_empty/SBC
 	name = "Syndicate Battlecruiser Ship Operative"
 	l_pocket = /obj/item/gun/ballistic/automatic/pistol
-	belt = /obj/item/storage/belt/military/assault
+	belt = /obj/item/storage/belt/army/assault
 
 /obj/effect/mob_spawn/human/syndicate/battlecruiser/assault
 	short_desc = "You are an assault operative aboard the syndicate flagship: the SBC Starfury."
@@ -745,13 +745,14 @@
 	assignedrole = "NCR Ranger"
 	outfit = /datum/outfit/job/ncr/f13ranger
 	suit = /obj/item/clothing/suit/armor/medium/combat/desert_ranger/patrol
-	belt = /obj/item/storage/belt/military/assault/ncr
+	belt = /obj/item/storage/belt/army/assault/ncr
 	suit_store = /obj/item/gun/ballistic/automatic/service/carbine
 	head = /obj/item/clothing/head/f13/ranger
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/m556/rifle/assault = 1,
 		/obj/item/clothing/head/helmet/f13/combat/ncr_patrol = 1,
-		/obj/item/storage/survivalkit_aid = 1,
+		/obj/item/storage/survivalkit = 1,
+		/obj/item/storage/survivalkit/medical = 1,
 		/obj/item/gun_upgrade/scope/watchman = 1,
 		/obj/item/gun/ballistic/revolver/revolver44 = 1,
 		/obj/item/ammo_box/m44 = 2,
@@ -840,7 +841,7 @@
 	suit = /obj/item/clothing/suit/armor/medium/combat/mk2/raider
 	head = /obj/item/clothing/head/helmet/f13/combat/mk2/raider
 	ears = /obj/item/radio/headset
-	belt = /obj/item/storage/belt/military/assault
+	belt = /obj/item/storage/belt/army/assault
 	shoes = /obj/item/clothing/shoes/jackboots
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(

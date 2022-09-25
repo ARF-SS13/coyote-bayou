@@ -11,7 +11,6 @@
 		/datum/surgery_step/hepatectomy,
 		/datum/surgery_step/close
 		)
-	requires_trait = 2
 	requires_trait = "MEDICALGRADUATE"
 
 /datum/surgery/hepatectomy/can_start(mob/user, mob/living/carbon/target)

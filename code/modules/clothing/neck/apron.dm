@@ -38,13 +38,13 @@
 	icon_state = "labor"
 	heat_protection = CHEST|GROIN|LEGS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/neck/apron/labor/forge
 	name = "smith's apron"
 	desc = "A heavy leather apron designed for protecting the user when metalforging and help carry some minor tools."
 	icon_state = "forge"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/crafter
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
 
 /obj/item/clothing/neck/apron/housewife
 	name = "50s housewife apron"

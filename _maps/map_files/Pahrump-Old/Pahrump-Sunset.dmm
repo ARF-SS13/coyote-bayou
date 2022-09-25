@@ -21819,7 +21819,6 @@
 "iYf" = (
 /obj/structure/nest/securitron{
 	max_mobs = 1;
-	spawn_once = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
@@ -23542,7 +23541,7 @@
 /obj/structure/closet,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/army,
 /obj/item/clothing/under/f13/army,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -32336,7 +32335,7 @@
 /area/f13/building)
 "nwC" = (
 /obj/machinery/workbench,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -44353,7 +44352,7 @@
 "sRX" = (
 /obj/structure/closet,
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"

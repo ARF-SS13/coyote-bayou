@@ -278,7 +278,7 @@
 
 /obj/item/reagent_containers/pill/radx
 	name = "Rad-X pill"
-	desc = "A pill that stabilizes radiation levels and treats small amounts of toxin damage."
+	desc = "A pill that reduces radiation buildup, totally shielding the user at high doses. Does not treat radiation sickness, best taken before exposure."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_radx"
 	list_reagents = list(/datum/reagent/medicine/radx = 20)

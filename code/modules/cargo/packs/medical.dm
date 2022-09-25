@@ -28,9 +28,7 @@
 	name = "Blood Pack Variety Crate"
 	desc = "Contains nine different blood packs for reintroducing blood to patients, plus two universal synthetic blood packs."
 	cost = 3000
-	contains = list(/obj/item/reagent_containers/blood/synthetics,
-					/obj/item/reagent_containers/blood/synthetics,
-					/obj/item/reagent_containers/blood/random,
+	contains = list(/obj/item/reagent_containers/blood/random,
 					/obj/item/reagent_containers/blood/APlus,
 					/obj/item/reagent_containers/blood/AMinus,
 					/obj/item/reagent_containers/blood/BPlus,
@@ -72,6 +70,79 @@
 					/obj/item/defibrillator/loaded)
 	crate_name = "defibrillator crate"
 
+/datum/supply_pack/medical/firstaidbruises_single
+	name = "Bruise Treatment Kit Single-Pack"
+	desc = "A single brute first-aid kit, perfect for recovering from being crushed by a super-mutant. Did you know people get crushed by super-mutants all the time? Interesting..."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/brute)
+
+/datum/supply_pack/medical/firstaidburns_single
+	name = "Burn Treatment Kit Single-Pack"
+	desc = "A single burn first-aid kit. The advertisement displays a winking Brotherhood scribe giving a thumbs up, saying \"Mistakes happen!\""
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/fire)
+
+/datum/supply_pack/medical/firstaid_single
+	name = "First Aid Kit Single-Pack"
+	desc = "A single first-aid kit, fit for healing most types of bodily harm."
+	cost = 250
+	contains = list(/obj/item/storage/firstaid/regular)
+
+/datum/supply_pack/medical/firstaidoxygen_single
+	name = "Oxygen Deprivation Kit Single-Pack"
+	desc = "A single oxygen deprivation first-aid kit, marketed heavily to those with crippling fears of asphyxiation."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/o2)
+
+/datum/supply_pack/medical/firstaidtoxins_single
+	name = "Toxin Treatment Kit Single-Pack"
+	desc = "A single first aid kit focused on healing damage dealt by heavy toxins."
+	cost = 330
+	contains = list(/obj/item/storage/firstaid/toxin)
+
+/datum/supply_pack/emergency/medicalemergency
+	name = "Emergency Medical Supplies" //Almost all of this can be ordered seperatly for a much cheaper price, but the HUD increases it.
+	desc = "Emergency supplies for a front-line medic. Contains two boxes of body bags, a medical HUD, a defib unit, medical belt, toxin bottles, epipens, and several types of medical kits."
+	cost = 10000
+	contains = list(/obj/item/storage/box/bodybags,
+					/obj/item/storage/box/bodybags,
+					/obj/item/clothing/glasses/hud/health,
+					/obj/item/defibrillator/loaded,
+					/obj/item/storage/belt/medical,
+					/obj/item/storage/firstaid/toxin,
+					/obj/item/storage/firstaid/o2,
+					/obj/item/storage/firstaid/brute,
+					/obj/item/storage/firstaid/fire,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/storage/box/medipens)
+	crate_name = "medical emergency crate"
+	crate_type = /obj/structure/closet/crate/medical
+
+/datum/supply_pack/emergency/medemergencylite
+	name = "Emergency Medical Supplies (Lite)"
+	desc = "A less than optimal, but still effective, set of tools for emergency care. Contains a box of bodybags, some normal (and advanced) health analyzers, healing sprays, a single first aid kit, charcoal, some gauze, a bottle of toxins, and some spare medipens."
+	cost = 2800
+	contains = list(/obj/item/storage/box/bodybags,
+					/obj/item/stack/medical/gauze,
+					/obj/item/stack/medical/gauze,
+					/obj/item/healthanalyzer,
+					/obj/item/healthanalyzer,
+					/obj/item/healthanalyzer/advanced,
+					/obj/item/storage/firstaid/regular,
+					/obj/item/reagent_containers/medspray/styptic,
+					/obj/item/reagent_containers/medspray/silver_sulf,
+					/obj/item/reagent_containers/medspray/synthflesh,
+					/obj/item/reagent_containers/glass/bottle/charcoal,
+					/obj/item/reagent_containers/glass/bottle/charcoal,
+					/obj/item/reagent_containers/glass/bottle/toxin,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen)
+	crate_name = "medical emergency crate (lite)"
+	crate_type = /obj/structure/closet/crate/medical
+
 /datum/supply_pack/medical/iv_drip
 	name = "IV Drip Crate"
 	desc = "Contains a single IV drip stand for intravenous delivery."
@@ -92,7 +163,7 @@
 */
 /datum/supply_pack/medical/supplies
 	name = "Medical Supplies Crate"
-	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze, as well as a bottle of stimulant pills for long, hard work days. German doctor not included."
+	desc = "Contains seven beakers, syringes, and bodybags. Three morphine bottles, four insulin pills. Two charcoal bottles, epinephrine bottles, antitoxin bottles, and large beakers. Finally, a single roll of medical gauze."
 	cost = 2500
 	contains = list(/obj/item/reagent_containers/glass/bottle/charcoal,
 					/obj/item/reagent_containers/glass/bottle/charcoal,
@@ -114,20 +185,18 @@
 					/obj/item/storage/box/medsprays,
 					/obj/item/storage/box/syringes,
 					/obj/item/storage/box/bodybags,
-					/obj/item/storage/pill_bottle/stimulant,
 					/obj/item/stack/medical/bone_gel,
 					/obj/item/stack/medical/bone_gel)
 	crate_name = "medical supplies crate"
 
 /datum/supply_pack/medical/adv_surgery_tools
-	name = "Med-Co Advanced Surgery Tools"
-	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of . Requires Surgery access to open."
+	name = "Med-Tek Advanced Surgery Tools"
+	desc = "A full set of Med-Co advanced surgery tools, this crate also comes with a spay of synth flesh as well as a can of sterilizine. Requires Surgery access to open."
 	cost = 5500
-	access = ACCESS_SURGERY
 	contains = list(/obj/item/storage/belt/medical/surgery_belt_adv,
 					/obj/item/reagent_containers/medspray/synthflesh,
 					/obj/item/reagent_containers/medspray/sterilizine)
-	crate_name = "medco surgery tools"
+	crate_name = "medtek surgery tools"
 	crate_type = /obj/structure/closet/crate/secure/medical
 
 /datum/supply_pack/medical/surgery
@@ -143,6 +212,7 @@
 ///////////////////////////// Medical Kits ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
+/*
 /datum/supply_pack/medical/sprays
 	name = "Medical Sprays"
 	desc = "Contains two cans of Styptic Spray, Silver Sulfadiazine Spray, Synthflesh Spray and Sterilizer Compound Spray."
@@ -159,7 +229,7 @@
 
 /datum/supply_pack/medical/advrad
 	name = "Radiation Treatment Crate Deluxe"
-	desc = "A crate for when radiation is out of hand... Contains two rad-b-gone kits, one bottle of anti radiation deluxe pills, as well as a radiation treatment deluxe pill bottle!"
+	desc = "A crate for when radiation is out of hand... Contains two radaway pouches, one bottle of radx, as well as a radiation treatment deluxe pill bottle!"
 	cost = 3500
 	contains = list(/obj/item/storage/pill_bottle/antirad_plus,
 					/obj/item/storage/pill_bottle/mutarad,
@@ -169,6 +239,7 @@
 					/obj/item/geiger_counter)
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
+
 
 /datum/supply_pack/medical/medipen_variety
 	name = "Medipen Variety-Pak"
@@ -184,3 +255,24 @@
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss)
 
 	crate_name = "medipen crate"
+*/
+
+/datum/supply_pack/medical/chems
+	name = "Mixed Chems"
+	desc = "A raiders dream, contains five random chems."
+	cost = 1300
+	contains = list(/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug,
+					/obj/effect/spawner/lootdrop/f13/medical/wasteland/meds/drug)
+	crate_name = "chem crate"
+
+/datum/supply_pack/medical/radaway
+	name = "Radaway"
+	desc = "It burns like hell, but it flushes the rads out, for sure. About three."
+	cost = 900
+	contains = list(/obj/item/reagent_containers/blood/radaway,
+					/obj/item/reagent_containers/blood/radaway,
+					/obj/item/reagent_containers/blood/radaway,
+					/obj/item/storage/pill_bottle/chem_tin/radx)

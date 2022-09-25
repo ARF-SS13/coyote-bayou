@@ -274,7 +274,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	light_system = MOVABLE_LIGHT
 	light_range = 7 // Pretty bright.
-	light_color = "#FA421A"
+	light_color = LIGHT_COLOR_FLARE
 	total_mass = 0.8
 	icon_state = "flare"
 	item_state = "flare"
@@ -284,7 +284,6 @@
 	var/on_damage = 9
 	var/produce_heat = 1500
 	heat = 1000
-	light_color = LIGHT_COLOR_FLARE
 	grind_results = list(/datum/reagent/sulfur = 15)
 
 /obj/item/flashlight/flare/New()
@@ -350,7 +349,7 @@
 	name = "torch"
 	desc = "A self-lighting handheld torch fashioned from some cloth wrapped around a wooden handle. It could probably fit in a backpack while it isn't burning."
 	icon = 'icons/obj/lighting.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL // Sure stuff it in your pocket
 	light_range = 5
 	light_color = LIGHT_COLOR_ORANGE
 	icon_state = "torch"

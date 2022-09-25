@@ -16,7 +16,6 @@
 	/datum/surgery_step/close
 	)
 	requires_trait = 2
-	requires_trait = TRAIT_SURGERY_MID
 
 //repair organs
 /datum/surgery_step/graft_synthtissue

@@ -10,14 +10,14 @@
 	group = "Science"
 	crate_type = /obj/structure/closet/crate/science
 
-/datum/supply_pack/science/ape  //Ape out!
+/* /datum/supply_pack/science/ape  //Ape out!
 	name = "Ape Cube Crate"
 	desc = "Pss what a new test subject with supper strangth, speed, and love for bananas all at the same time? Say no more... Contains a single ape cube. Dont add water!"
 	contraband = TRUE
 	cost = 2500
 	contains = list (/obj/item/reagent_containers/food/snacks/cube/ape)
 	crate_name = "ape cube crate"
-	can_private_buy = FALSE
+	can_private_buy = FALSE */
 
 /datum/supply_pack/science/beakers
 	name = "Chemistry Beakers Crate"
@@ -41,7 +41,7 @@
 					/obj/item/clothing/gloves/color/latex)
 	crate_name = "chemistry beaker crate"
 
-/datum/supply_pack/science/robotics/mecha_odysseus
+/* /datum/supply_pack/science/robotics/mecha_odysseus
 	name = "Circuit Crate (Odysseus)"
 	desc = "Ever wanted to build your own giant medical robot? Well, now you can! Contains the Odysseus main control board and Odysseus peripherals board. Requires Robotics access to open."
 	cost = 1500
@@ -49,9 +49,9 @@
 	contains = list(/obj/item/circuitboard/mecha/odysseus/peripherals,
 					/obj/item/circuitboard/mecha/odysseus/main)
 	crate_name = "\improper Odysseus circuit crate"
-	crate_type = /obj/structure/closet/crate/secure/science
+	crate_type = /obj/structure/closet/crate/secure/science */
 
-/datum/supply_pack/science/robotics/mecha_ripley
+/* /datum/supply_pack/science/robotics/mecha_ripley
 	name = "Circuit Crate (Ripley APLU)"
 	desc = "Rip apart rocks and xenomorphs alike with the Ripley APLU. Contains the Main Ripley control board, as well as the Ripley Peripherals board. Requires Robotics access to open."
 	cost = 1200
@@ -60,7 +60,7 @@
 					/obj/item/circuitboard/mecha/ripley/main,
 					/obj/item/circuitboard/mecha/ripley/peripherals)
 	crate_name = "\improper APLU Ripley circuit crate"
-	crate_type = /obj/structure/closet/crate/secure/science
+	crate_type = /obj/structure/closet/crate/secure/science */
 
 /datum/supply_pack/science/circuitry
 	name = "Circuitry Starter Pack Crate"
@@ -82,12 +82,12 @@
 					/obj/item/glasswork/blowing_rod)
 	crate_name = "glassblower gear crate"
 
-/datum/supply_pack/science/monkey
+/* /datum/supply_pack/science/monkey
 	name = "Monkey Cube Crate"
 	desc = "Stop monkeying around! Contains seven monkey cubes. Just add water!"
 	cost = 1500
 	contains = list (/obj/item/storage/box/monkeycubes)
-	crate_name = "monkey cube crate"
+	crate_name = "monkey cube crate" */
 
 /datum/supply_pack/science/nitrilegloves
 	name = "Nitrile Gloves Crate"
@@ -117,7 +117,7 @@
 					/obj/item/assembly/timer)
 	crate_name = "plasma assembly crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
-*/
+
 /datum/supply_pack/science/relic
 	name = "Relic Crate"
 	desc = "Ever wanted to play with old discounted toys? Look no further. Contains two relics."
@@ -125,9 +125,9 @@
 	contraband = TRUE
 	contains = list(/obj/item/relic,
 					/obj/item/relic)
-	crate_name = "relic crate"
+	crate_name = "relic crate" */
 
-/datum/supply_pack/science/robotics
+/* /datum/supply_pack/science/robotics
 	name = "Robotics Assembly Crate"
 	desc = "The tools you need to replace those finicky humans with a loyal robot army! Contains three proximity sensors, two high-powered cells, six flashes, and an electrical toolbox. Requires Robotics access to open."
 	cost = 1500
@@ -190,7 +190,7 @@
 					/obj/item/transfer_valve)
 	crate_name = "tank transfer valves crate"
 	crate_type = /obj/structure/closet/crate/secure/science
-	dangerous = TRUE
+	dangerous = TRUE */
 
 //////// RAW ANOMALY CORES
 /*

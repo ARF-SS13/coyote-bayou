@@ -7,7 +7,9 @@
 	icon_state = "bbshell"
 	caliber = CALIBER_SHOTGUN
 	projectile_type = /obj/item/projectile/bullet/shotgun_slug
-	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER)
 
 /obj/item/ammo_casing/shotgun/buckshot
 	name = "buckshot shell"
@@ -22,16 +24,20 @@
 	desc = "An extremely weak shotgun shell with multiple small pellets made out of metal shards."
 	icon_state = "improvshell"
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_improvised
-	custom_materials = list(/datum/material/iron=250)
-	pellets = 10
-	variance = 25
+	pellets = 12
+	variance = 30
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 
 /obj/item/ammo_casing/shotgun/beanbag
 	name = "beanbag slug"
 	desc = "A weak beanbag slug for riot control."
 	icon_state = "bshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_beanbag
-	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=70)
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 
 obj/item/ammo_casing/shotgun/executioner
 	name = "executioner slug"
@@ -64,7 +70,9 @@ obj/item/ammo_casing/shotgun/executioner
 	desc = "A stunning taser slug."
 	icon_state = "stunshell"
 	projectile_type = /obj/item/projectile/bullet/shotgun_stunslug
-	custom_materials = list(/datum/material/iron=250, /datum/material/blackpowder=75)
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 
 /obj/item/ammo_casing/shotgun/meteorslug
 	name = "meteorslug shell"
@@ -93,7 +101,9 @@ obj/item/ammo_casing/shotgun/executioner
 	projectile_type = /obj/item/projectile/bullet/pellet/shotgun_rubbershot
 	pellets = 6
 	variance = 25
-	custom_materials = list(/datum/material/iron=500, /datum/material/blackpowder = 70)
+	custom_materials = list(
+		/datum/material/iron = MATS_SHOTGUN_CASING + MATS_SHOTGUN_BULLET,
+		/datum/material/blackpowder = MATS_SHOTGUN_POWDER * MATS_AMMO_POWDER_HANDLOAD_MULT)
 
 /obj/item/ammo_casing/shotgun/ion
 	name = "ion shell"

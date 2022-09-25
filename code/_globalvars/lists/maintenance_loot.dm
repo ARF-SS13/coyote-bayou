@@ -193,6 +193,7 @@ GLOBAL_LIST_INIT(trash_ammo, list(
 	/obj/item/ammo_box/magazine/zipgun = 3,
 	/obj/item/ammo_casing/shotgun/buckshot = 2,
 	/obj/item/ammo_box/c38 = 3,
+	/obj/item/ammo_box/m22 = 2,
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
@@ -205,7 +206,7 @@ GLOBAL_LIST_INIT(trash_chem, list(
 GLOBAL_LIST_INIT(trash_craft, list(
 	/obj/item/crafting/duct_tape = 5,
 	/obj/item/crafting/abraxo = 5,
-	/obj/item/crafting/reloader = 5,
+	/obj/item/circuitboard/machine/autolathe/ammo/improvised = 5,
 	/obj/item/crafting/lunchbox = 5,
 	/obj/item/stack/crafting/metalparts/three = 5,
 	/obj/item/stack/crafting/electronicparts/three = 5,
@@ -215,7 +216,8 @@ GLOBAL_LIST_INIT(trash_craft, list(
 GLOBAL_LIST_INIT(trash_gun, list(
 	/obj/item/gun/ballistic/automatic/hobo/zipgun = 2,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 2,
-	/obj/item/gun/ballistic/rifle/mosin = 1,
+	/obj/item/gun/ballistic/automatic/varmint = 1,
+	/obj/item/gun/ballistic/automatic/sportcarbine = 1,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1
@@ -525,12 +527,17 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/automatic/pistol/n99,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/varmint,
-	/obj/item/ammo_box/magazine/m556/rifle/small
+	/obj/item/ammo_box/magazine/m556/rifle/small,
+	/obj/item/gun/ballistic/automatic/sportcarbine,
+	/obj/item/ammo_box/magazine/m22/extended,
+	/obj/item/ammo_box/m22
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/shotgun/hunting,
 	/obj/item/ammo_box/shotgun/buck,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
+	/obj/item/ammo_box/magazine/m22/extended,
 	/obj/item/gun/ballistic/revolver/m29,
 	/obj/item/ammo_box/m44,
 	/obj/item/ammo_box/a308,
@@ -567,6 +574,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/trail,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/energy/gammagun
@@ -593,6 +601,8 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/gun/ballistic/rifle/mag/antimateriel,
 	/obj/item/ammo_box/magazine/amr,
+	/obj/item/gun/ballistic/revolver/m2405,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/ballistic/automatic/rangemaster,
 	/obj/item/ammo_box/magazine/m762,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
@@ -904,11 +914,7 @@ GLOBAL_LIST_INIT(loot_attachment_advanced, list(
 	/obj/item/tool_upgrade/reinforcement/plasmablock = 2,
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 2,
 	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
-	/obj/item/tool_upgrade/productivity/motor = 1,
-	/obj/item/gun_upgrade/mechanism/overdrive = 1,
-	/obj/item/gun_upgrade/mechanism/battery_shunt = 1,
-	/obj/item/gun_upgrade/mechanism/weintraub = 1,
-	/obj/item/gun_upgrade/barrel/excruciator = 1
+	/obj/item/tool_upgrade/productivity/motor = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

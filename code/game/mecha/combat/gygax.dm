@@ -10,7 +10,7 @@
 	step_in = 3
 	dir_in = 1 //Facing North.
 	max_integrity = 450
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 30, "energy" = 25, "bomb" = 15, "bio" = 0, "rad" = 75, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 25000
 	infra_luminosity = 6
 	wreckage = /obj/structure/mecha_wreckage/gygax
@@ -25,7 +25,7 @@
 	desc = "A lightweight exosuit, painted in a dark scheme. This model appears to have some modifications."
 	icon_state = "darkgygax"
 	max_integrity = 500
-	armor = list("melee" = 45, "bullet" = 45, "laser" = 60, "energy" = 40, "bomb" = 35, "bio" = 0, "rad" = 100, "fire" = 100, "acid" = 100)
+	armor = ARMOR_VALUE_HEAVY
 	max_temperature = 35000
 	leg_overload_coeff = 100
 	wreckage = /obj/structure/mecha_wreckage/gygax/dark

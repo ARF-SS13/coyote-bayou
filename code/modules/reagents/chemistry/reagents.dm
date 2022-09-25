@@ -34,12 +34,6 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/metabolization_rate = REAGENTS_METABOLISM //how fast the reagent is metabolized by the mob
 	var/ghoulfriendly = FALSE //can ghouls metabolize this chemical
 	var/overrides_metab = 0
-	/// When present in a mob, how much should each unit count as effective blood
-	var/effective_blood_multiplier = 0
-	/// The maximum effective blood to be added from this reagent
-	var/effective_blood_max = 0
-	/// How much this reagent slows bleeding to by while in you
-	var/bleed_mult = 1
 	var/overdose_threshold = 0
 	var/addiction_threshold = 0
 	var/addiction_stage = 0

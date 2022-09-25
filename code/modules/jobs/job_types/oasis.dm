@@ -22,6 +22,7 @@ here's a tip, go search DEFINES/access.dm
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
@@ -89,7 +90,8 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/gentlesuit
 	head = /obj/item/clothing/head/f13/town/big
 	backpack_contents = list(
-		/obj/item/storage/box/citizenship_permits = 1, 
+		/obj/item/storage/pill_bottle/chem_tin/radx,
+		/obj/item/storage/box/citizenship_permits = 1,
 		/obj/item/pen/fountain/captain = 1
 		)
 
@@ -123,7 +125,7 @@ Mayor
 		/obj/item/clothing/under/f13/vault = 1,
 		/obj/item/clothing/shoes/jackboots = 1,
 		/obj/item/clothing/suit/armor/light/duster/battlecoat/vault/overseer = 1,
-		/obj/item/reagent_containers/food/drinks/flask/vault113,
+		/obj/item/reagent_containers/food/drinks/flask/vault113 = 1,
 		/obj/item/gun/ballistic/automatic/pistol/beretta/automatic = 1,
 		/obj/item/ammo_box/magazine/m9mm/doublestack = 1
 		)
@@ -188,6 +190,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/f13/fancy
 	uniform = /obj/item/clothing/under/suit/black
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/ammo_box/magazine/m9mm = 1,
 		/obj/item/melee/onehanded/knife/switchblade = 1,
 		/obj/item/pda = 1
@@ -249,7 +252,8 @@ Mayor
 
 	loadout_options = list(
 	/datum/outfit/loadout/thelaw,
-	/datum/outfit/loadout/thechief
+	/datum/outfit/loadout/thechief,
+	/datum/outfit/loadout/thedictator
 	)
 
 	access = list(ACCESS_BAR, ACCESS_CLONING, ACCESS_GATEWAY, ACCESS_CARGO_BOT, ACCESS_MINT_VAULT, ACCESS_KITCHEN, ACCESS_MINING, ACCESS_FORENSICS_LOCKERS)
@@ -272,11 +276,12 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	uniform = /obj/item/clothing/under/f13/sheriff
-	belt = /obj/item/storage/belt/military/army
+	belt = /obj/item/storage/belt/army
 	shoes = /obj/item/clothing/shoes/f13/cowboy
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/storage/bag/money/small/den
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/box/deputy_badges = 1,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/classic_baton = 1,
@@ -289,7 +294,7 @@ Mayor
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
 	head = /obj/item/clothing/head/f13/town/sheriff
 	uniform = /obj/item/clothing/under/f13/police/formal
-	neck = /obj/item/storage/belt/holster/ranger45
+	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/brush
 	shoes = /obj/item/clothing/shoes/f13/military/plated
 	backpack_contents = list(
@@ -302,12 +307,21 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/chief
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/chief
 	head = /obj/item/clothing/head/f13/town/chief
-	neck = /obj/item/storage/belt/holster/ranger45
+	neck = /obj/item/storage/belt/shoulderholster/ranger45
 	shoes = /obj/item/clothing/shoes/combat
 	r_hand = /obj/item/gun/ballistic/shotgun/automatic/combat/citykiller
-	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1, 
+	backpack_contents = list(/obj/item/ammo_box/shotgun/slug = 1,
 		/obj/item/ammo_box/shotgun/buck = 2
 		)
+
+/datum/outfit/loadout/thedictator
+	name = "The Dictator"
+	uniform = /obj/item/clothing/under/f13/police/chief
+	suit = /obj/item/clothing/suit/armor/medium/duster/town/sheriff
+	r_hand = /obj/item/gun/energy/laser/scatter
+	backpack_contents = list(/obj/item/stock_parts/cell/ammo/mfc = 1,
+		)
+
 /*
 /datum/outfit/loadout/pew
 	name = "Tactical"
@@ -350,7 +364,9 @@ Mayor
 	loadout_options = list(
 	/datum/outfit/loadout/frontierjustice,
 	/datum/outfit/loadout/police,
-	/datum/outfit/loadout/swat,)
+	/datum/outfit/loadout/swat,
+	/datum/outfit/loadout/energy,
+	)
 
 	outfit = /datum/outfit/job/den/f13deputy
 	access = list(ACCESS_BAR, ACCESS_GATEWAY)
@@ -371,13 +387,14 @@ Mayor
 	ears = /obj/item/radio/headset/headset_town/lawman
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
-	belt = /obj/item/storage/belt/military/assault
-	suit_store = /obj/item/storage/belt/holster/legholster/police
+	belt = /obj/item/storage/belt/army/assault
+	suit_store = /obj/item/storage/belt/legholster/police
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	shoes = /obj/item/clothing/shoes/f13/explorer
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/restraints/handcuffs = 1,
 		/obj/item/melee/onehanded/knife/bowie = 1,
 		/obj/item/grenade/flashbang = 1
@@ -387,7 +404,7 @@ Mayor
 	name = "Frontier Justice"
 	suit = /obj/item/clothing/suit/armor/medium/duster/town/deputy
 	head = /obj/item/clothing/head/f13/town/deputy
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 	r_hand = /obj/item/gun/ballistic/rifle/repeater/trail
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/m44 = 2,
@@ -400,7 +417,7 @@ Mayor
 	uniform = /obj/item/clothing/under/f13/police/officer
 	suit = /obj/item/clothing/suit/armor/heavy/vest/bulletproof
 	head = /obj/item/clothing/head/f13/town/officer
-	belt = /obj/item/storage/belt/holster/legholster
+	belt = /obj/item/storage/belt/legholster
 	r_hand = /obj/item/gun/ballistic/shotgun/police
 	shoes = /obj/item/clothing/shoes/jackboots
 	backpack_contents = list(
@@ -424,6 +441,16 @@ Mayor
 		/obj/item/gun/ballistic/automatic/pistol/mk23=1,
 		/obj/item/ammo_box/magazine/m5mm=1,
 		/obj/item/flashlight/seclite = 1
+		)
+
+/datum/outfit/loadout/energy
+	name = "High Tech Officer"
+	uniform = /obj/item/clothing/under/f13/police/officer
+	suit = /obj/item/clothing/suit/armor/heavy/metal/polished
+	gloves = /obj/item/clothing/gloves/f13/military
+	suit_store = /obj/item/gun/energy/laser/aer9
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/mfc = 1
 		)
 
 /datum/outfit/job/den/f13deputy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -597,7 +624,7 @@ Mayor
 	suit = /obj/item/clothing/suit/armor/light/leather/rig
 	uniform = /obj/item/clothing/under/f13/lumberjack
 	head = /obj/item/clothing/head/hardhat
-	belt = /obj/item/storage/belt/mining/alt
+	belt = /obj/item/storage/belt/utility/mining/alt
 	shoes = /obj/item/clothing/shoes/f13/miner
 	backpack_contents = list(
 		/obj/item/t_scanner/adv_mining_scanner = 1,
@@ -653,6 +680,7 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/settler
 	r_pocket = /obj/item/flashlight/flare
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak=2,
 		/obj/item/storage/firstaid/regular,
 		/obj/item/clothing/accessory/armband/medblue
@@ -685,23 +713,23 @@ Mayor
 		/obj/item/storage/medical/ancientfirstaid = 1,
 		/obj/item/circuitboard/machine/limbgrower = 1,
 		/obj/item/healthanalyzer/advanced = 1,
-		/obj/item/storage/belt/holster/legholster/police = 1
+		/obj/item/storage/belt/legholster/police = 1
 		)
-	
+
 /datum/outfit/loadout/mixer
 	name = "Mixer"
 	backpack_contents = list(/obj/item/clothing/head/beret/chem = 1,
 		/obj/item/melee/classic_baton/police = 1,
 		/obj/item/pen/sleepy = 1,
 		/obj/item/reagent_containers/glass/beaker/plastic = 1,
-		/obj/item/reagent_containers/glass/beaker/meta = 1, 
+		/obj/item/reagent_containers/glass/beaker/meta = 1,
 		/obj/item/reagent_containers/hypospray = 1,
 		/obj/item/circuitboard/machine/bloodbankgen = 1
 		)
 
 /datum/outfit/loadout/holidaydoc
 	name = "Holiday Doc"
-	backpack_contents = list(/obj/item/vending_refill/medical = 1, 
+	backpack_contents = list(/obj/item/vending_refill/medical = 1,
 		/obj/item/pda/medical = 1,
 		/obj/item/clothing/suit/hooded/surgical = 1,
 		/obj/item/storage/medical/ancientfirstaid = 1,
@@ -751,6 +779,7 @@ Mayor
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	backpack = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/ammo_box/shotgun/bean = 2,
 		/obj/item/book/manual/nuka_recipes = 1,
@@ -839,6 +868,7 @@ Mayor
 	r_pocket = /obj/item/flashlight/flare
 	r_hand = /obj/item/book/granter/trait/selection
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small/settler = 1,
 		/obj/item/melee/onehanded/knife/hunting = 1
 		)
@@ -897,8 +927,8 @@ Mayor
 	suit = /obj/item/clothing/under/f13/mechanic
 	gloves = /obj/item/clothing/gloves/color/black
 	shoes = /obj/item/clothing/shoes/sneakers/noslip
-	neck = /obj/item/storage/belt/holster/ranger44
-	backpack_contents = list(/obj/item/storage/bag/trash = 1, 
+	neck = /obj/item/storage/belt/shoulderholster/ranger44
+	backpack_contents = list(/obj/item/storage/bag/trash = 1,
 	/obj/item/reagent_containers/spray/cleaner = 1,
 	/obj/item/mop = 1,
 	/obj/item/reagent_containers/glass/bucket/plastic = 1,
@@ -911,14 +941,14 @@ Mayor
 /datum/outfit/loadout/artisan
 	name = "Artisan"
 	uniform = /obj/item/clothing/under/f13/cowboyg
-	belt = /obj/item/storage/belt/mining/alt
+	belt = /obj/item/storage/belt/utility/mining/alt
 	gloves = /obj/item/clothing/gloves/f13/blacksmith
 	shoes = /obj/item/clothing/shoes/f13/military/leather
-	neck = /obj/item/storage/belt/holster/ranger357 
+	neck = /obj/item/storage/belt/shoulderholster/ranger357
 	backpack_contents = list(/obj/item/twohanded/sledgehammer/simple = 1,
 	/obj/item/book/granter/crafting_recipe/ODF = 1,
 	/obj/item/clothing/glasses/welding = 1,
-	/obj/item/storage/belt/mining/alt = 1,
+	/obj/item/storage/belt/utility/mining/alt = 1,
 	/obj/item/melee/smith/hammer/premade = 1,
 	/obj/item/stack/sheet/mineral/titanium = 15,
 	/obj/item/pickaxe/mini = 1,
@@ -1004,7 +1034,7 @@ Mayor
 	/obj/item/clothing/glasses/welding = 1,
 	/obj/item/t_scanner/adv_mining_scanner = 1,
 	/obj/item/ammo_box/m44 = 2,
-	/obj/item/gun/ballistic/revolver/m29/snub 
+	/obj/item/gun/ballistic/revolver/m29/snub = 1
 	)
 /*----------------------------------------------------------------
 --							Detective							--
@@ -1051,6 +1081,7 @@ Mayor
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	suit_store = /obj/item/gun/ballistic/revolver/police
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/pda/detective=1,
 		/obj/item/camera/detective=1,
 		/obj/item/toy/crayon/white=1,
@@ -1093,6 +1124,7 @@ Mayor
 	backpack = /obj/item/storage/backpack/satchel/leather
 	satchel = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx,
 		/obj/item/storage/bag/money/small = 1)
 
 /datum/outfit/loadout/classy
@@ -1104,7 +1136,7 @@ Mayor
 	gloves = /obj/item/clothing/gloves/color/white
 	shoes = /obj/item/clothing/shoes/laceup
 	backpack_contents = list(/obj/item/cane=1,
-		/obj/item/storage/belt/holster/ranger45 =1,
+		/obj/item/storage/belt/shoulderholster/ranger45 =1,
 		/obj/item/storage/fancy/cigarettes/cigpack_bigboss=1,
 		/obj/item/reagent_containers/food/drinks/bottle/whiskey=1,
 		/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass=1,
@@ -1142,13 +1174,19 @@ Mayor
 	title = "Shopkeeper"
 	flag = F13SHOPKEEPER
 	department_flag = DEP_OASIS
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 1
+	spawn_positions = 1
 	supervisors = "the free market and Nash's laws"
 	description = "The big trading caravan companies have often neglected humble Nash. This leaves one thing for certain - opportunities for local business! Your store allows you to sell all kinds of merchandise, from dandy boy apples to laser rifles. Ensure you make a profit and retain enough capital for your day-to-day operations."
 	enforces = "Your store is a private business and you can decide who is welcome there. However, you are still subject to the overarching laws of Nash."
 	selection_color = "#dcba97"
 	exp_requirements = 300
+
+	loadout_options = list(
+	/datum/outfit/loadout/energy_specialist,
+	/datum/outfit/loadout/ballistic_specialist,
+	/datum/outfit/loadout/jackofall_specialist
+	)
 
 	outfit = /datum/outfit/job/den/f13shopkeeper
 	access = list(ACCESS_BAR, ACCESS_CARGO_BOT)
@@ -1175,7 +1213,29 @@ Mayor
 	l_pocket = /obj/item/storage/bag/money/small/den
 	r_pocket = /obj/item/flashlight/glowstick
 	shoes = /obj/item/clothing/shoes/f13/explorer
-	backpack_contents = list(/obj/item/storage/box/shopkeeper = 1)
+	backpack_contents = list(
+		/obj/item/storage/pill_bottle/chem_tin/radx)
+
+/datum/outfit/loadout/energy_specialist
+	name = "Energy Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aer9=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/lightplasmapistol=1
+	)
+
+/datum/outfit/loadout/ballistic_specialist
+	name = "Ballistic Specialist"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/riotshotgun=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/deagle=1
+	)
+
+/datum/outfit/loadout/jackofall_specialist
+	name = "Jack-Of-All Trade"
+	backpack_contents = list(
+		/obj/item/book/granter/crafting_recipe/blueprint/aep7=1,
+		/obj/item/book/granter/crafting_recipe/blueprint/uzi=1
+	)
 
 /datum/outfit/job/den/f13shopkeeper/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

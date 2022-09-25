@@ -52,7 +52,7 @@
 	if(tox_amount > 10)
 		replace_blood()
 		return
-	if(owner.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
+	if(owner.blood_volume < BLOOD_VOLUME_OKAY)
 		owner.blood_volume = BLOOD_VOLUME_NORMAL
 		to_chat(owner, span_warning("You feel your blood pulsing within you."))
 		return

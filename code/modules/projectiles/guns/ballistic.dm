@@ -18,6 +18,16 @@
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
 	var/en_bloc = 0
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/Initialize()
 	. = ..()
@@ -31,11 +41,12 @@
 				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
 	allowed_mags |= typecacheof(mag_type)
-	if(length(extra_mag_types))
+	if(LAZYLEN(extra_mag_types))
 		for(var/obj/item/ammo_box/ammo_type in extra_mag_types)
-			extra_mag_types |= typecacheof(ammo_type)
-	if(length(disallowed_mags))
-		allowed_mags -= disallowed_mags
+			allowed_mags |= ammo_type
+	if(LAZYLEN(disallowed_mags))
+		for(var/obj/item/ammo_box/un_ammo_type in disallowed_mags)
+			allowed_mags -= un_ammo_type
 	chamber_round()
 	update_icon()
 
@@ -270,16 +281,20 @@
 		name = "sawn-off [src.name]"
 		desc = sawn_desc
 		w_class = WEIGHT_CLASS_NORMAL
-		weapon_weight = GUN_ONE_HAND_AKIMBO // years of ERP gave me wrists of steel
+		weapon_weight = GUN_ONE_HAND_ONLY // years of ERP made me realize wrists of steel isnt a good thing
 		item_state = "gun"
 		slot_flags |= ITEM_SLOT_BELT //but you can wear it on your belt (poorly concealed under a trenchcoat, ideally)
-		recoil_dat.modifyAllRatings(1.2)
+		recoil_dat.modifyAllRatings(2)
 		cock_delay = GUN_COCK_SHOTGUN_FAST
-		if(istype(src, /obj/item/gun/ballistic/shotgun) || istype(src, /obj/item/gun/ballistic/revolver))
-			damage_multiplier *= GUN_EXTRA_DAMAGE_T2 // +15% damage
-		else
-			damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
+		damage_multiplier *= GUN_LESS_DAMAGE_T2 // -15% damage
 		sawn_off = TRUE
+		gun_accuracy_zone_type = ZONE_WEIGHT_SHOTGUN
+		init_firemodes = list(
+			list(mode_name="Single-fire", mode_desc="Send Vagabonds flying back several paces", burst_size=1, icon="semi"),
+		)
+		initialize_firemodes()
+		if(firemodes.len)
+			set_firemode(sel_mode)
 		update_icon()
 		return 1
 

@@ -20,7 +20,6 @@
 	flags_inv = HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD
 	resistance_flags = NONE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
 		SLOT_BACK, SLOT_WEAR_ID,\
 		SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
@@ -227,6 +226,8 @@
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "basket"
 	resistance_flags = FLAMMABLE
+	material_drop = /obj/item/stack/sheet/hay
+	material_drop_amount = 15
 
 
 

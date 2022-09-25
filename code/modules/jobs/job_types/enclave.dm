@@ -15,15 +15,14 @@
 	id = null
 	ears = /obj/item/radio/headset/headset_enclave
 	glasses = /obj/item/clothing/glasses/night/f13/enclave
-	box = /obj/item/storage/survivalkit_adv
 
 /datum/outfit/job/enclave/peacekeeper
 	id = /obj/item/card/id/dogtag/enclave/trooper
 	mask = /obj/item/clothing/mask/gas/enclave
-	l_pocket = /obj/item/storage/belt/holster/legholster
+	l_pocket = /obj/item/storage/belt/legholster
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
-	belt = /obj/item/storage/belt/military/assault/enclave
+	belt = /obj/item/storage/belt/army/assault/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/peacekeeper
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
@@ -33,7 +32,7 @@
 	id = /obj/item/card/id/dogtag/enclave/noncombatant
 	backpack = /obj/item/storage/backpack/enclave
 	satchel = /obj/item/storage/backpack/satchel/enclave
-	belt = /obj/item/storage/belt/military/assault/enclave
+	belt = /obj/item/storage/belt/army/assault/enclave
 	uniform = /obj/item/clothing/under/f13/enclave/science
 	r_pocket = /obj/item/flashlight/seclite
 	shoes = /obj/item/clothing/shoes/f13/enclave/serviceboots
@@ -343,7 +342,7 @@
 	suit_store =  /obj/item/tank/internals/oxygen
 
 	backpack_contents = list(
-		/obj/item/storage/survivalkit_aid_adv = 1,
+		/obj/item/storage/survivalkit/medical = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/pda = 1,

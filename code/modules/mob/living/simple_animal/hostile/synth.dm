@@ -13,7 +13,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	move_to_delay = 3
-	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 150
 	health = 150
@@ -39,6 +38,16 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/f13weapons/laser_pistol.ogg'
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/synth/playable
 	emote_taunt_sound = null
@@ -59,6 +68,16 @@
 	icon_gib = "synthmk2_d"
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/f13weapons/laser_rifle.ogg'
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/synth/mk2/playable
 	emote_taunt_sound = null

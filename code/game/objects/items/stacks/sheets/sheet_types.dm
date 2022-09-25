@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/plasteel
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/wood=MINERAL_MATERIAL_AMOUNT)
 	sheettype = "wood"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/wood
 	novariants = FALSE
@@ -406,7 +406,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/bamboo = MINERAL_MATERIAL_AMOUNT)
 	throwforce = 15
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/bamboo
 	grind_results = list(/datum/reagent/cellulose = 10)
@@ -432,12 +432,11 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
 	null, \
-	new/datum/stack_recipe("plant bag", /obj/item/storage/bag/plants, 4), \
+	new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4), \
 	new/datum/stack_recipe("mining satchel", /obj/item/storage/bag/ore, 4), \
 	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
 	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
 	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
-	new/datum/stack_recipe("salvage storage bag", /obj/item/storage/bag/salvagestorage, 4), \
 	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
@@ -451,6 +450,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12), \
 	null, \
 	new/datum/stack_recipe_list("bedsheet", list( \
 			new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
@@ -810,8 +810,8 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	throw_speed = 1
 	throw_range = 3
 	grind_results = list(/datum/reagent/carbon = 10)
-	merge_type = /obj/item/stack/sheet/bone
-	material_type = /datum/material/bone
+	//merge_type = /obj/item/stack/sheet/bone
+	//material_type = /datum/material/bone
 
 /obj/item/stack/sheet/bone/get_main_recipes()
 	. = ..()
@@ -868,7 +868,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	custom_materials = list(/datum/material/paper = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/paperframes
 	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/sheet/paperframes
 	material_type = /datum/material/paper
 
 /obj/item/stack/sheet/paperframes/get_main_recipes()
@@ -982,15 +981,15 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throw_speed = 1
 	throw_range = 2
 	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	merge_type = /obj/item/stack/sheet/hay
 
-/obj/item/stack/sheet/hay/Initialize(mapload, new_amount, merge = TRUE)
-	recipes = GLOB.hay_recipes
-	return ..()
+/obj/item/stack/sheet/hay/get_main_recipes()
+	. = ..()
+	. += GLOB.hay_recipes
 
 /obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
 	user.visible_message(span_suicide("[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!"))
@@ -1027,7 +1026,7 @@ GLOBAL_LIST_INIT(prewar_recipes, list ( \
 	custom_materials = list()
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/prewar
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)

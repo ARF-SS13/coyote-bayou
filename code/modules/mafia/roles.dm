@@ -642,8 +642,6 @@
 
 	// winner_award = /datum/award/achievement/mafia/obsessed
 
-	revealed_outfit = /datum/outfit/mafia/obsessed // /mafia <- outfit must be readded (just make a new mafia outfits file for all of these)
-	solo_counts_as_town = TRUE //after winning or whatever, can side with whoever. they've already done their objective!
 	var/datum/mafia_role/obsession
 	var/lynched_target = FALSE
 

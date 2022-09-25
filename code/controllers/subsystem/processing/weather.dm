@@ -12,6 +12,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/list/eligible_zlevels = list()
 	var/list/next_hit_by_zlevel = list() //Used by barometers to know when the next storm is coming
 	var/weather_on_start = FALSE
+	can_fire = FALSE // trying to see if this is breaking shit, temporary
 
 /datum/controller/subsystem/processing/weather/fire()
 	. = ..()		//Active weather is handled by . = ..() processing subsystem base fire().

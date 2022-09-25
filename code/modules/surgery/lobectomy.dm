@@ -4,7 +4,6 @@
 				/datum/surgery_step/lobectomy, /datum/surgery_step/close)
 	possible_locs = list(BODY_ZONE_CHEST)
 	requires_bodypart_type = BODYPART_ORGANIC
-	requires_trait = 2
 	requires_trait = "MEDICALGRADUATE"
 
 /datum/surgery/lobectomy/can_start(mob/user, mob/living/carbon/target, obj/item/tool)

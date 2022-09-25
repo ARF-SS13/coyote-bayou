@@ -73,13 +73,13 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 
 /datum/quirk/tribal/add()
 	var/mob/living/carbon/human/H = quirk_holder
-	ADD_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+	ADD_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 	ADD_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 /datum/quirk/tribal/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
-		REMOVE_TRAIT(H, TRAIT_TECHNOPHOBE, "Former Tribal")
+		REMOVE_TRAIT(H, TRAIT_MACHINE_SPIRITS, "Former Tribal")
 		REMOVE_TRAIT(H, TRAIT_TRIBAL, "Former Tribal")
 
 
@@ -262,6 +262,14 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	H.equip_to_slot(spraycan, SLOT_IN_BACKPACK)
 	H.regenerate_icons()
 
+/datum/quirk/technophreak
+	name = "Technophreak"
+	desc = "You're skilled at breaking down old-war rubble more precisely. Gain more salvage from cars and piles than before."
+	value = 2 //2 might be a good starting point now that I thought on it. It doesn't give you extra health or other oddities that would warrant 3
+	mob_trait = TRAIT_TECHNOPHREAK
+	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
+	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+
 /datum/quirk/voracious
 	name = "Voracious"
 	desc = "Nothing gets between you and your food. You eat twice as fast as everyone else!"
@@ -318,7 +326,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
 	lose_text = span_danger("What's the big deal about nuka-cola?")
 	medical_record_text = "Patient has an addiction to the soft drink Nuka-Cola. Somehow, their metabolism has adapted to the sugars and artifical flavorings."
-	
+
 /datum/quirk/nukalover/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/species/species = H.dna.species

@@ -1,4 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate
+	///A list of weakrefs pointing at things that we consider targets
 	var/list/enemies = list()
 
 /mob/living/simple_animal/hostile/retaliate/Found(atom/A)
@@ -7,7 +8,7 @@
 		if(!L.stat)
 			return L
 		else
-			enemies -= L
+			enemies -= WEAKREF(L)
 	else if(ismecha(A))
 		var/obj/mecha/M = A
 		if(M.occupant)
@@ -17,7 +18,15 @@
 	if(!enemies.len)
 		return list()
 	var/list/see = ..()
-	see &= enemies // Remove all entries that aren't in enemies
+	var/list/actual_enemies = list()
+	for(var/datum/weakref/enemy as anything in enemies)
+		var/mob/flesh_and_blood = enemy.resolve()
+		if(!flesh_and_blood)
+			enemies -= enemy
+			continue
+		actual_enemies += flesh_and_blood
+
+	see &= actual_enemies // Remove all entries that aren't in enemies
 	return see
 
 /mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
@@ -29,12 +38,12 @@
 		if(isliving(A))
 			var/mob/living/M = A
 			if(faction_check_mob(M) && attack_same || !faction_check_mob(M))
-				enemies |= M
+				enemies |= WEAKREF(M)
 		else if(ismecha(A))
 			var/obj/mecha/M = A
 			if(M.occupant)
-				enemies |= M
-				enemies |= M.occupant
+				enemies |= WEAKREF(M)
+				enemies |= WEAKREF(M.occupant)
 
 	for(var/mob/living/simple_animal/hostile/retaliate/H in around)
 		if(faction_check_mob(H) && !attack_same && !H.attack_same)

@@ -158,7 +158,7 @@ const ItemList = (props, context) => {
     <Table.Row key={item.id}>
       <Table.Cell>
         <span
-          className={classes(['design32x32', item.id])}
+          className={classes(['design32x32', item.asset])}
           style={{
             'vertical-align': 'middle',
           }} />

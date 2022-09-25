@@ -6,7 +6,7 @@
 	slowdown = ARMOR_SLOWDOWN_NONE * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
 	armor_tokens = list()
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS | HIDEHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -14,8 +14,9 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
 	var/list/protected_zones = list(BODY_ZONE_HEAD)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
+
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -433,7 +434,6 @@
 	desc = "It can hold a bottle of vodka."
 	icon_state = "rus_helmet"
 	item_state = "rus_helmet"
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/helmet/rus_ushanka
 	name = "battle ushanka"

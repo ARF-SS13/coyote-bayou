@@ -3,6 +3,16 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_GENERAL
 	slot = SLOT_W_UNIFORM
 
+/datum/gear/uniform/recon
+	name = "BoS Recon Suit"
+	path = /obj/item/clothing/under/f13/recon
+	cost = 1
+
+/datum/gear/uniform/legskirt
+	name = "burgundy fatigues"
+	path = /obj/item/clothing/under/f13/legskirt
+	cost = 1
+
 /datum/gear/uniform/vault
 	name = "vault jumpsuit"
 	path = /obj/item/clothing/under/f13/vault
@@ -146,53 +156,53 @@
 	name = "torn rags"
 	path = /obj/item/clothing/under/f13/rag
 
-//suits 
+//suits
 
 /datum/gear/uniform/suit
 	name = "black suit"
 	path = /obj/item/clothing/under/suit/black
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/green
 	name = "green suit"
 	path = /obj/item/clothing/under/suit/green
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/red
 	name = "red suit"
 	path = /obj/item/clothing/under/suit/red
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/charcoal
 	name = "charcoal Suit"
 	path = /obj/item/clothing/under/suit/charcoal
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/checkered_suit
 	name = "checkered Suit"
 	path = /obj/item/clothing/under/suit/checkered
-	cost = 3
+	cost = 1
 
 /datum/gear/uniform/suit/navy
 	name = "navy suit"
 	path = /obj/item/clothing/under/suit/navy
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/burgundy
 	name = "burgundy suit"
 	path = /obj/item/clothing/under/suit/burgundy
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/tan
 	name = "tan suit"
 	path = /obj/item/clothing/under/suit/tan
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/suit/white
-	name = "white suit"
+	name = "white formal underclothes"
 	path = /obj/item/clothing/under/suit/white
-	cost = 2
+	cost = 1
 
 /datum/gear/uniform/mailmanuniform
 	name = "mailman's jumpsuit"
@@ -577,73 +587,26 @@
 	name = "NCR fatigue pants"
 	path = /obj/item/clothing/under/f13/ncr/pants
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "NCR"
-	restricted_roles = list("NCR Captain",
-							"NCR Lieutenant",
-							"NCR Medical Officer",
-							"NCR Veteran Ranger",
-							"NCR Lieutenant",
-							"NCR Heavy Trooper",
-							"NCR Sergeant First Class",
-							"NCR Sergeant",
-							"NCR Corporal",
-							"NCR Combat Engineer",
-							"NCR Combat Medic",
-							"NCR Trooper",
-							"NCR Rear Echelon",
-							"NCR Off-Duty",
-							"NCR Ranger"
-						)
 
 /datum/gear/uniform/ncr_shorts
-	name = "NCR Rhodesian shorts"
+	name = "NCR fatigue shorts"
 	path = /obj/item/clothing/under/f13/ncr/ncr_shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "NCR"
-	restricted_roles = list("NCR Captain",
-							"NCR Lieutenant",
-							"NCR Medical Officer",
-							"NCR Veteran Ranger",
-							"NCR Lieutenant",
-							"NCR Heavy Trooper",
-							"NCR Sergeant First Class",
-							"NCR Sergeant",
-							"NCR Corporal",
-							"NCR Combat Engineer",
-							"NCR Combat Medic",
-							"NCR Trooper",
-							"NCR Rear Echelon",
-							"NCR Off-Duty",
-							"NCR Ranger"
-						)
 
 /datum/gear/uniform/ncr_officer_dress
 	name = "NCR Officer Dress"
 	path = /obj/item/clothing/under/f13/ncr_female_officer
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "NCR"
-	restricted_roles = list("NCR Captain",
-							"NCR Lieutenant",
-							"NCR Medical Officer",
-							"NCR Senior Enlisted Advisor",
-							"NCR Representative"
-						)
 
 /datum/gear/uniform/sniper
 	name = "NCR sniper outfit"
 	path = /obj/item/clothing/under/f13/ncr/sniper
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "Sergeants, Corporals"
-	restricted_roles = list("NCR Corporal",
-							"NCR Sergeant"
-						)
 
 /datum/gear/uniform/ranger
 	name = "ranger outfit"
 	path = /obj/item/clothing/under/f13/ranger
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "Rangers"
-	restricted_roles = list("NCR Veteran Ranger", "NCR Ranger")
 
 /datum/gear/uniform/ranger/trail
 	name = "trail ranger outfit"
@@ -678,21 +641,22 @@
 							"Barkeep",
 							)
 
-//Khans 
+//Khans
 
-/datum/gear/uniform/khans
-	name = "great khans jorts"
+/datum/gear/uniform/denimuniform
+	name = "denim uniform"
+	path = /obj/item/clothing/under/f13/khan
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
+
+/datum/gear/uniform/denim
+	name = "denim jorts"
 	path = /obj/item/clothing/under/f13/khan/shorts
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
 
-/datum/gear/uniform/khans/booty
-	name = "great khans booty shorts"
+/datum/gear/uniform/denim/booty
+	name = "denim booty shorts"
 	path = /obj/item/clothing/under/f13/khan/booty
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_FACTIONS
-	restricted_desc = "KHAN"
-	restricted_roles = list("Great Khan")
 
 //Skirts
 

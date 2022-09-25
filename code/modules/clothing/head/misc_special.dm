@@ -22,7 +22,6 @@
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = 2
 	tint = 2
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 60)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	actions_types = list(/datum/action/item_action/toggle)
 	visor_flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
@@ -49,6 +48,7 @@
 	light_range = 2 //luminosity when on
 	flags_cover = HEADCOVERSEYES
 	heat = 1000
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	beepsky_fashion = /datum/beepsky_fashion/cake
 
@@ -93,6 +93,7 @@
 	var/earflaps = 1
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/ushanka
 
@@ -121,6 +122,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 2
 	flags_cover = HEADCOVERSEYES
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/hardhat/pumpkinhead/blumpkin
 	name = "carved blumpkin"
@@ -167,6 +169,7 @@
 	light_system = MOVABLE_LIGHT
 	light_range = 1
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/reindeer
 
@@ -178,6 +181,7 @@
 	flags_cover = HEADCOVERSEYES
 	alternate_screams = list('modular_citadel/sound/voice/scream_silicon.ogg')
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/cardborg
 
@@ -210,6 +214,7 @@
 	flags_inv = HIDEHAIR
 	color = "#000"
 	var/hair_style = "Very Long Hair"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/wig/Initialize(mapload)
 	. = ..()
@@ -247,14 +252,13 @@
 	icon = 'icons/obj/clothing/clockwork_garb.dmi'
 	icon_state = "clockwork_helmet_old"
 	flags_inv = HIDEEARS|HIDEHAIR
-	armor = list("melee" = 15, "bullet" = 0, "laser" = 5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/foilhat
 	name = "tinfoil hat"
 	desc = "Thought control rays, psychotronic scanning. Don't mind that, I'm protected cause I made this hat."
 	icon_state = "foilhat"
 	item_state = "foilhat"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = -5,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = -5, "fire" = 0, "acid" = 0)
 	equip_delay_other = 140
 	var/datum/brain_trauma/mild/phobia/conspiracies/paranoia
 	var/warped = FALSE
@@ -323,10 +327,4 @@
 	desc = "A dilapidated helmet, obsolete even by pre-war standards. An ace of spades is tucked into the band around the outer shell."
 	icon_state = "m1helm"
 	item_state = "helmet"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "bomb" = 5, "bio" = 0, "rad" = 0, "acid" = -15)
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/tiny/spacenam	//So you can stuff other things in the elastic band instead of it simply being a fluff thing.
-
-//The "pocket" for the M1 helmet so you can tuck things into the elastic band
-
-/datum/component/storage/concrete/pockets/tiny/spacenam
-	attack_hand_interact = TRUE		//So you can actually see what you stuff in there
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet

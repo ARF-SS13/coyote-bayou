@@ -55,13 +55,26 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	mob.log_talk(raw_msg, LOG_OOC, tag="(OOC)")
 
-	var/keyname = key
+//	var/keyname = key // commented it out for people to be aware how to revert it. Just delete the edit below <3
+
+	// main edit here - Changes it to IC name instead of key in OOC messages.
+	var/keyname = GetOOCName()
+
+	if(!keyname)
+		return
+	// edit end here
+
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
+			if(check_rights_for(C, R_ADMIN))
+				keyname = "[key]/[GetOOCName()]"
+			else
+				keyname = GetOOCName()
+			
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
@@ -211,13 +224,14 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc ="Ignore a player's messages on the OOC channel"
 
 
-	var/see_ghost_names = isobserver(mob)
+	// var/see_ghost_names = isobserver(mob)
 	var/list/choices = list()
 	for(var/client/C in GLOB.clients)
-		if(isobserver(C.mob) && see_ghost_names)
-			choices["[C.mob]([C])"] = C
-		else
-			choices[C] = C
+		choices[GetOOCName()] = C // This is to keep the ckey anonymity.
+		// if(isobserver(C.mob) && see_ghost_names)
+		// 	choices["[C.mob]([C])"] = C
+		// else
+		// 	choices[C] = C
 	choices = sortList(choices)
 	var/selection = input("Please, select a player!", "Ignore", null, null) as null|anything in choices
 	if(!selection || !(selection in choices))
@@ -286,3 +300,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set hidden = TRUE
 
 	init_verbs()
+
+/client/proc/GetOOCName()
+	if(iscarbon(mob)) // If mob is null I'll be very surprised, worse case, add a sanity check if this becomes an issue in the future.
+		return mob.real_name
+	else
+		return prefs.real_name

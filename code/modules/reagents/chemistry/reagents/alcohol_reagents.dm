@@ -140,8 +140,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.dizziness = max(0,M.dizziness-5)
 	M.drowsyness = max(0,M.drowsyness-3)
 	M.AdjustSleeping(-40, FALSE)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.Jitter(5)
 	..()
 	. = 1
 
@@ -175,8 +173,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.drowsyness = max(0,M.drowsyness-7)
 	M.AdjustSleeping(-40)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
-	if(!HAS_TRAIT(M, TRAIT_ALCOHOL_TOLERANCE))
-		M.Jitter(5)
 	return ..()
 
 /datum/reagent/consumable/ethanol/thirteenloko/overdose_start(mob/living/M)
@@ -559,14 +555,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "bloodymaryglass"
 	glass_name = "Bloody Mary"
 	glass_desc = "Tomato juice, mixed with Vodka and a lil' bit of lime. Tastes like liquid murder."
-	effective_blood_multiplier = 2.5
-	effective_blood_max = 250 // If you drink 100 units of liquor, you deserve something (other than liver failure)
 
 /datum/reagent/consumable/ethanol/bloody_mary/on_mob_life(mob/living/carbon/C)
 	if(AmBloodsucker(C))
 		disgust_bloodsucker(FALSE, 1) //Bloodsuckers get SOME blood from it, for style reasons.
-	if(C.get_blood(TRUE) < (BLOOD_VOLUME_SYMPTOMS_DEBILITATING*C.blood_ratio))
-		C.blood_volume += 1 //Bloody Mary quickly restores blood loss.
+	if(C.blood_volume < (BLOOD_VOLUME_NORMAL*C.blood_ratio))
+		C.blood_volume = min((BLOOD_VOLUME_NORMAL*C.blood_ratio), C.blood_volume + 3) //Bloody Mary quickly restores blood loss.
 	..()
 
 /datum/reagent/consumable/ethanol/brave_bull
@@ -658,7 +652,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	..()
 
 /datum/reagent/consumable/ethanol/beepsky_smash/on_mob_life(mob/living/carbon/M)
-	M.Jitter(2)
 	if(HAS_TRAIT(M, TRAIT_LAW_ENFORCEMENT_METABOLISM))
 		M.adjustStaminaLoss(-10, 0)
 		if(prob(20))
@@ -1375,19 +1368,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(prob(10))
 				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
-			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(45)
 			if(prob(20))
 				M.emote(pick("twitch","giggle"))
 		if (10 to 200)
-			M.Jitter(40)
 			M.Dizzy(40)
 			M.set_drugginess(60)
 			if(prob(30))
 				M.emote(pick("twitch","giggle"))
 		if(200 to INFINITY)
-			M.Jitter(60)
 			M.Dizzy(60)
 			M.set_drugginess(75)
 			if(prob(40))

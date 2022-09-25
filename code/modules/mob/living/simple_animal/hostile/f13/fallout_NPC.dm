@@ -9,7 +9,6 @@
 	icon_state = "vault_dweller"
 	icon_living = "vault_dweller"
 	icon_dead = "vault_dweller"
-	speak_chance = 0
 	turns_per_move = 5
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	response_help_simple = "pokes"
@@ -93,6 +92,16 @@
 	projectiletype = /obj/item/projectile/beam
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
 	speak_chance = 1
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 
 /mob/living/simple_animal/hostile/vault/security/Aggro()
@@ -152,10 +161,18 @@
 	faction = list("enclave")
 	check_friendly_fire = 1
 	status_flags = CANPUSH
-	del_on_death = 1
 	speak = list("For the Enclave!", "Stars and Stripes!", "Liberty or death!")
 	speak_emote = list("pulls out a weapon", "shouts")
-	speak_chance = 0
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 // Enclave Scientist
 /mob/living/simple_animal/hostile/enclave/scientist
@@ -177,6 +194,16 @@
 	projectilesound = 'sound/weapons/wave.ogg'
 	extra_projectiles = null
 	attack_verb_simple = "thrusts"
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 // Enclave Armored Infantry
 /mob/living/simple_animal/hostile/enclave/soldier
@@ -197,6 +224,16 @@
 	attack_verb_simple = "power-fists"
 	projectiletype = /obj/item/projectile/f13plasma/repeater
 	projectilesound = 'sound/f13weapons/plasmarifle.ogg'
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 // Enclave corpses
 /obj/effect/mob_spawn/human/corpse/enclavescientist
@@ -234,7 +271,6 @@
 	icon_state = "bs_knight"
 	icon_living = "bs_knight"
 	icon_dead = "bs_knight"
-	speak_chance = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	faction = list("BOS")
 	turns_per_move = 5
@@ -268,7 +304,7 @@
 	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
-	belt = 	/obj/item/storage/belt/military/assault
+	belt = 	/obj/item/storage/belt/army/assault
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/f13/combat/brotherhood
 
@@ -285,6 +321,16 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/hitscan
 	projectilesound = 'sound/f13weapons/aep7fire.ogg'
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/bs/paladin
 	name = "Brotherhood Paladin"
@@ -301,6 +347,16 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/lasgun/hitscan
 	projectilesound = 'sound/f13weapons/aer9fire.ogg'
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /obj/effect/mob_spawn/human/corpse/bs/paladin
 	name = "Brotherhood Paladin"
@@ -308,7 +364,7 @@
 	suit = /obj/item/clothing/suit/armor/power_armor/t51b/bos
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
-	belt = 	/obj/item/storage/belt/military/assault
+	belt = 	/obj/item/storage/belt/army/assault
 	mask = /obj/item/clothing/mask/gas/sechailer
 	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b/bos
 
@@ -326,7 +382,6 @@
 	icon_dead = "ncr_trooper"
 	faction = list("NCR")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -356,7 +411,7 @@
 	name = "NCR Trooper"
 	uniform = /obj/item/clothing/under/f13/ncr
 	suit = /obj/item/clothing/suit/armor/ncrarmor
-	belt = /obj/item/storage/belt/military/assault/ncr
+	belt = /obj/item/storage/belt/army/assault/ncr
 	shoes = /obj/item/clothing/shoes/f13/military/ncr
 	head = /obj/item/clothing/head/f13/ncr
 
@@ -374,6 +429,16 @@
 	projectiletype = /obj/item/projectile/bullet/a556/simple
 	projectilesound = 'sound/f13weapons/varmint_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a556
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/ncr/ranger
 	name = "NCR Ranger"
@@ -391,7 +456,16 @@
 	projectiletype = /obj/item/projectile/bullet/m44/simple
 	projectilesound = 'sound/f13weapons/44mag.ogg'
 	casingtype = /obj/item/ammo_casing/m44
-
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 /obj/effect/mob_spawn/human/corpse/ncr/ranger
 	name = "NCR Ranger"
 	uniform = /obj/item/clothing/under/f13/ranger/patrol
@@ -413,7 +487,6 @@
 	icon_dead = "legion_prime"
 	faction = list("Legion")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"
@@ -461,6 +534,16 @@
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a762/sport
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/legion/decan
 	name = "Legion Decanus"
@@ -479,6 +562,18 @@
 	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	casingtype = /obj/item/ammo_casing/a762/sport
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/legion/decan
 
 /obj/effect/mob_spawn/human/corpse/legion/decan
 	name = "Legion Decanus"
@@ -501,7 +596,6 @@
 	icon_dead = "tribal_raider_dead"
 	faction = list("Tribe")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	speak_chance = 0
 	turns_per_move = 5
 	response_help_simple = "pokes"
 	response_disarm_simple = "shoves"

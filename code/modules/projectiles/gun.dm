@@ -156,6 +156,18 @@ ATTACHMENTS
 	var/rigged = FALSE
 	var/vision_flags = 0
 	var/projectile_speed_multiplier = 1
+	/// How should this gun prefer to weight what limbs they hit
+	var/gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+	/// What kind of traits should this gun be affected by
+	var/gun_skill_check
+	var/list/gun_sound_properties = list(
+		SP_VARY(TRUE),
+		SP_VOLUME(50),
+		SP_VOLUME_SILENCED(20),
+		SP_NORMAL_RANGE(SOUND_RANGE + 5),
+		SP_NORMAL_RANGE_SILENCED(SOUND_RANGE - 15),
+		SP_IGNORE_WALLS(TRUE)
+	)
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -281,9 +293,24 @@ ATTACHMENTS
 		user.adjustStaminaLossBuffered(safe_cost) //CIT CHANGE - ditto
 
 	if(silenced)
-		playsound(user, fire_sound_silenced, 10, 1)
+		playsound(
+			user,
+			fire_sound_silenced,
+			gun_sound_properties[SOUND_PROPERTY_VOLUME_SILENCED],
+			gun_sound_properties[SOUND_PROPERTY_VARY],
+			gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE_SILENCED]
+			)
 	else
-		playsound(user, fire_sound, 50, 1)
+		playsound(
+			user,
+			fire_sound,
+			gun_sound_properties[SOUND_PROPERTY_VOLUME],
+			gun_sound_properties[SOUND_PROPERTY_VARY],
+			gun_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = gun_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		if(message)
 			if(pointblank)
 				user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
@@ -304,18 +331,18 @@ ATTACHMENTS
 			O.emp_act(severity)
 
 /obj/item/gun/attack(mob/living/M, mob/user)
-	. = ..()
 	if(bayonet && user.a_intent == INTENT_HARM)
 		M.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
 /obj/item/gun/attack_obj(obj/O, mob/user)
-	. = ..()
-	if(bayonet && user.a_intent == INTENT_HARM)
+	if(bayonet && user.a_intent == INTENT_HARM) // Must run BEFORE parent call, so we don't smack them with the gun body too.
 		O.attackby(bayonet, user) // handles cooldown
 		return
+	. = ..()
 	if(!(. & DISCARD_LAST_ACTION))
 		user.DelayNextAction(attack_speed)
 
@@ -385,7 +412,7 @@ ATTACHMENTS
 		return
 
 	if (automatic == 0)
-		user.DelayNextAction(fire_delay)
+		user.DelayNextAction(1)
 	if (automatic == 1)
 		user.DelayNextAction(autofire_shot_delay)
 
@@ -417,17 +444,18 @@ ATTACHMENTS
 		return FALSE
 
 /obj/item/gun/CheckAttackCooldown(mob/user, atom/target)
-	if((user.a_intent == INTENT_HARM || INTENT_HELP) && user.Adjacent(target))		//melee
+	if(user.Adjacent(target)) //melee
 		return user.CheckActionCooldown(CLICK_CD_MELEE)
 	return user.CheckActionCooldown(get_clickcd())
 
 /obj/item/gun/proc/get_clickcd()
 	if (automatic == 0)
-		return isnull(chambered?.click_cooldown_override)? fire_delay : chambered.click_cooldown_override
+		return 1
+		//return isnull(chambered?.click_cooldown_override)? get_fire_delay(user) : chambered.click_cooldown_override
 	if (automatic == 1)
 		return isnull(chambered?.click_cooldown_override)? autofire_shot_delay : chambered.click_cooldown_override
 
-/obj/item/gun/GetEstimatedAttackSpeed()
+/obj/item/gun/GetEstimatedAttackSpeed(mob/user)
 	return get_clickcd()
 
 /obj/item/gun/proc/handle_pins(mob/living/user)
@@ -446,16 +474,16 @@ ATTACHMENTS
 /obj/item/gun/proc/recharge_newshot()
 	return
 
-/obj/item/gun/proc/on_cooldown()
+/obj/item/gun/proc/on_cooldown(mob/user)
 	if (automatic == 0)
-		return busy_action || firing || ((last_fire + fire_delay) > world.time)
+		return busy_action || firing || ((last_fire + get_fire_delay(user)) > world.time)
 	if (automatic == 1)
 		return busy_action || firing
 
 /obj/item/gun/proc/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", stam_cost = 0)
 	add_fingerprint(user)
 
-	if(on_cooldown())
+	if(on_cooldown(user))
 		return
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
@@ -679,7 +707,7 @@ ATTACHMENTS
 	if(!ishuman(user) || !ishuman(target))
 		return
 
-	if(on_cooldown())
+	if(on_cooldown(user))
 		return
 
 	if(user == target)
@@ -1201,6 +1229,21 @@ ATTACHMENTS
 
 	update_icon()
 	//then update any UIs with the new stats
+
+/obj/item/gun/proc/get_zone_accuracy_type()
+	if(automatic == TRUE)
+		return ZONE_WEIGHT_AUTOMATIC
+	if(burst_size > 1)
+		return ZONE_WEIGHT_AUTOMATIC
+	if(gun_accuracy_zone_type)
+		return gun_accuracy_zone_type
+	return ZONE_WEIGHT_SEMI_AUTO
+
+/obj/item/gun/proc/get_fire_delay(mob/user)
+	. = fire_delay
+	if(gun_skill_check & AFFECTED_BY_FAST_PUMP)
+		if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
+			. *= GUN_RIFLEMAN_REFIRE_DELAY_MULT
 
 ///////////////////
 //GUNCODE ARCHIVE//

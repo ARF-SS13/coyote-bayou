@@ -1,4 +1,4 @@
-/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = FALSE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = FALSE)
+/proc/playsound(atom/source, soundin, vol as num, vary, extrarange as num, falloff_exponent = SOUND_FALLOFF_EXPONENT, frequency = null, channel = 0, pressure_affected = TRUE, ignore_walls = FALSE, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, use_reverb = FALSE, distant_sound, distant_range)
 	if(isarea(source))
 		CRASH("playsound(): source is an area")
 
@@ -12,6 +12,7 @@
 
 	// Looping through the player list has the added bonus of working for mobs inside containers
 	var/sound/S = sound(get_sfx(soundin))
+	var/sound/S_distant = distant_sound ? sound(get_sfx(distant_sound)) : null
 	var/maxdistance = SOUND_RANGE + extrarange
 	var/source_z = turf_source.z
 	var/list/listeners = SSmobs.clients_by_zlevel[source_z].Copy()
@@ -35,12 +36,15 @@
 		if(below_turf && istransparentturf(turf_source))
 			listeners += SSmobs.clients_by_zlevel[below_turf.z]
 
-	for(var/mob/listening_mob as anything in listeners)
-		if(get_dist(listening_mob, turf_source) <= maxdistance)
+	for(var/mob/listening_mob as anything in listeners + SSmobs.dead_players_by_zlevel[source_z])
+		var/listener_distance = get_dist(listening_mob, turf_source)
+		if(listener_distance <= maxdistance)
 			listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb)
-	for(var/mob/listening_mob as anything in SSmobs.dead_players_by_zlevel[source_z])
+		if(distant_sound && distant_range && ignore_walls && listener_distance >= (maxdistance * SOUND_NORMAL_TO_DISTANT_COEFF) && listener_distance <= distant_range)
+			listening_mob.playsound_local(turf_source, distant_sound, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S_distant, distant_range, maxdistance, 1, use_reverb)
+/* 	for(var/mob/listening_mob as anything in SSmobs.dead_players_by_zlevel[source_z])
 		if(get_dist(listening_mob, turf_source) <= maxdistance)
-			listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb)
+			listening_mob.playsound_local(turf_source, soundin, vol, vary, frequency, falloff_exponent, channel, pressure_affected, S, maxdistance, falloff_distance, 1, use_reverb) */
 
 
 /mob/proc/playsound_local(turf/turf_source, soundin, vol as num, vary, frequency, falloff_exponent = SOUND_FALLOFF_EXPONENT, channel = 0, pressure_affected = TRUE, sound/S, max_distance, falloff_distance = SOUND_DEFAULT_FALLOFF_DISTANCE, distance_multiplier = 1, use_reverb = FALSE)

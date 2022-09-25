@@ -53,12 +53,11 @@
 	plane = ABOVE_WALL_PLANE
 	icon_state = "apc0"
 	use_power = NO_POWER_USE
-	req_access = null
 	max_integrity = 300
 	integrity_failure = 0.17
 	var/damage_deflection = 10
 	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 100, "bomb" = 30, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50)
+	armor = ARMOR_VALUE_MEDIUM
 	req_access = list(ACCESS_ENGINE_EQUIP)
 	interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON
 

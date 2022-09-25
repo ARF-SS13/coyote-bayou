@@ -82,6 +82,7 @@
 #define TRAIT_AOOC_MUTE			"aooc_mute" //Same as above but for AOOC.
 #define TRAIT_DEAF				"deaf"
 #define TRAIT_NEARSIGHT			"nearsighted"
+#define TRAIT_NEARSIGHT_MEGA	"nearsighted_suffering"
 #define TRAIT_FAT				"fat"
 #define TRAIT_HUSK				"husk"
 #define TRAIT_NOCLONE			"noclone"
@@ -112,6 +113,8 @@
 #define TRAIT_RESISTLOWPRESSURE	"resist_low_pressure"
 #define TRAIT_BOMBIMMUNE		"bomb_immunity"
 #define TRAIT_RADIMMUNE			"rad_immunity"
+#define TRAIT_75_RAD_RESIST		"big_rad_resist"
+#define TRAIT_50_RAD_RESIST		"some_rad_resist"
 #define TRAIT_GENELESS			"geneless"
 #define TRAIT_VIRUSIMMUNE		"virus_immunity"
 #define TRAIT_PIERCEIMMUNE		"pierce_immunity"
@@ -202,6 +205,7 @@
 #define TRAIT_EMPATH			"empath"
 #define TRAIT_FRIENDLY			"friendly"
 #define TRAIT_BIG_LEAGUES		"big_leagues"
+#define TRAIT_FEV				"FEV_MUT" //OH BOY
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
 #define TRAIT_IRONFIST			"iron_fist"
@@ -251,7 +255,7 @@
 #define TRAIT_SPRINT_LOCKED				"sprint_locked"
 
 
-#define TRAIT_SMUTANT		"Super Mutant"	//boosts salvage return
+#define TRAIT_SMUTANT		"Super Mutant"	// This is a trait usually locked for admins due to how OP it is
 #define	TRAIT_CHEMWHIZ			"chemwhiz"
 #define TRAIT_TECHNOPHOBE		"luddite" //Cannot use autolathes/biogens
 #define TRAIT_LONGPORKLOVER		"Cannibal" //guess
@@ -376,6 +380,7 @@
 #define ACTIVE_PARRY_TRAIT				"active_parry"
 #define STICKY_NODROP "sticky-nodrop" //sticky nodrop sounds like a bad soundcloud rapper's name
 #define TRAIT_SPACEWALK "spacewalk"
+#define RADX_TRAIT "trait_from_rad-x"
 
 //important_recursive_contents traits
 /*

@@ -16,7 +16,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	move_to_delay = 3
-	stat_attack = 1
 	robust_searching = 1
 	maxHealth = 56
 	health = 56
@@ -44,6 +43,16 @@
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
@@ -119,7 +128,6 @@
 /mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)
-	AddElement(/datum/element/mob_holder, held_icon)
 
 /mob/living/simple_animal/pet/dog/eyebot/emp_act(severity)
 	. = ..()
@@ -153,6 +161,7 @@
 	health = 100
 	faction = list("raider", "wastebot")
 	extra_projectiles = 1
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	minimum_distance = 4

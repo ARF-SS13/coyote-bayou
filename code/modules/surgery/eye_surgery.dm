@@ -4,7 +4,6 @@
 	target_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/monkey)
 	possible_locs = list(BODY_ZONE_PRECISE_EYES)
 	requires_bodypart_type = BODYPART_ORGANIC
-	requires_trait = 2
 	requires_trait = "MEDICALGRADUATE"
 
 //fix eyes

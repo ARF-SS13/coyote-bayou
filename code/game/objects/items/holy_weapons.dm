@@ -14,7 +14,7 @@
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	block_chance = 15
 	max_integrity = 200
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
 // CHAPLAIN CUSTOM ARMORS //
@@ -24,7 +24,8 @@
 	desc = "Deus Vult."
 	icon_state = "knight_templar"
 	item_state = "knight_templar"
-	armor = list("melee" = 41, "bullet" = 15, "laser" = 5,"energy" = 5, "bomb" = 5, "bio" = 2, "rad" = 0, "fire" = 0, "acid" = 50)
+	armor = ARMOR_VALUE_HEAVY
+	armor_tokens = (ARMOR_MODIFIER_DOWN_BULLET_T3)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	strip_delay = 80
@@ -38,7 +39,7 @@
 	item_state = "radio"
 
 /obj/item/holybeacon/attack_self(mob/user)
-	if(user.mind && (user.mind.isholy))
+	if(user.mind) // && (user.mind.isholy))
 		beacon_armor(user)
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, 1)
@@ -111,7 +112,7 @@
 	desc = "Contains a set of armaments for the chaplain."
 
 /obj/item/choice_beacon/holy/canUseBeacon(mob/living/user)
-	if(user.mind && user.mind.isholy)
+	if(user.mind) // && user.mind.isholy)
 		return ..()
 	else
 		playsound(src, 'sound/machines/buzz-sigh.ogg', 40, 1)
@@ -128,11 +129,11 @@
 	return holy_item_list
 
 /obj/item/choice_beacon/holy/spawn_option(obj/choice,mob/living/M)
-	if(!GLOB.holy_armor_type)
+	if(choice) //!GLOB.holy_armor_type)
 		..()
 		playsound(src, 'sound/effects/pray_chaplain.ogg', 40, 1)
 		SSblackbox.record_feedback("tally", "chaplain_armor", 1, "[choice]")
-		GLOB.holy_armor_type = choice
+		//GLOB.holy_armor_type = choice
 	else
 		to_chat(M, span_warning("A selection has already been made. Self-Destructing..."))
 		return
@@ -282,7 +283,7 @@
 	obj_flags = UNIQUE_RENAME
 	wound_bonus = -10
 	var/chaplain_spawnable = TRUE
-	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+	//total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
 /obj/item/nullrod/Initialize()
 	. = ..()
@@ -293,7 +294,7 @@
 	return (BRUTELOSS|FIRELOSS)
 
 /obj/item/nullrod/attack_self(mob/user)
-	if(user.mind && (user.mind.isholy) && !reskinned)
+	if(user.mind && !reskinned)
 		reskin_holy_weapon(user)
 
 /**
@@ -303,10 +304,10 @@
  * * M The mob choosing a nullrod reskin
  */
 /obj/item/nullrod/proc/reskin_holy_weapon(mob/living/L)
-	if(GLOB.holy_weapon_type)
-		return
+	/* if(GLOB.holy_weapon_type)
+		return */
 	var/obj/item/holy_weapon
-	var/list/holy_weapons_list = subtypesof(/obj/item/nullrod) + list(HOLY_WEAPONS)
+	var/list/holy_weapons_list = typecacheof(/obj/item/nullrod) + list(HOLY_WEAPONS)
 	var/list/display_names = list()
 	var/list/nullrod_icons = list()
 	for(var/V in holy_weapons_list)
@@ -324,12 +325,12 @@
 	var/A = display_names[choice] // This needs to be on a separate var as list member access is not allowed for new
 	holy_weapon = new A
 
-	GLOB.holy_weapon_type = holy_weapon.type
+	//GLOB.holy_weapon_type = holy_weapon.type
 
 	SSblackbox.record_feedback("tally", "chaplain_weapon", 1, "[choice]")
 
 	if(holy_weapon)
-		holy_weapon.reskinned = TRUE
+		//holy_weapon.reskinned = TRUE
 		qdel(src)
 		L.put_in_active_hand(holy_weapon)
 
@@ -532,6 +533,7 @@
 	attack_verb = list("chopped", "sliced", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	var/possessed = FALSE
+	reskinned = TRUE
 
 /obj/item/nullrod/scythe/talking/process()
 	for(var/mob/living/simple_animal/shade/S in contents)
@@ -664,14 +666,11 @@
 	force = 15
 	attack_verb = list("bitten", "eaten", "fin slapped")
 	hitsound = 'sound/weapons/bite.ogg'
-	var/used_blessing = FALSE
 
 /obj/item/nullrod/carp/attack_self(mob/living/user)
-	if(used_blessing)
-	else if(user.mind && (user.mind.isholy))
+	if(!user.faction.Find("carp"))
 		to_chat(user, "You are blessed by Carp-Sie. Wild space carp will no longer attack you.")
 		user.faction |= "carp"
-		used_blessing = TRUE
 
 /obj/item/nullrod/claymore/bostaff //May as well make it a "claymore" and inherit the blocking
 	name = "monk's staff"
@@ -770,21 +769,39 @@
 	force = 4
 	throwforce = 0
 	attack_verb = list("whipped", "repented", "lashed", "flagellated")
+	slot_flags = ITEM_SLOT_NECK | ITEM_SLOT_BELT // its a necklace lol
 	var/praying = FALSE
-	var/deity_name = "Coderbus" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
+	var/deity_name = "Giex" //This is the default, hopefully won't actually appear if the religion subsystem is running properly
+
+/obj/item/nullrod/rosary/keep_as_is
+	reskinned = TRUE
 
 /obj/item/nullrod/rosary/Initialize()
 	.=..()
 	if(GLOB.deity)
 		deity_name = GLOB.deity
 
+/obj/item/nullrod/rosary/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/pen) || istype(W, /obj/item/toy/crayon))
+		var/my_little_deity = stripped_input(user, "Dedicate this to which deity?", "Insert deity", "Giex", 64, FALSE)
+		if(my_little_deity)
+			deity_name = my_little_deity
+			to_chat(user, span_revennotice("You re-dedicate [src] to [deity_name], praise be their name."))
+		else if(deity_name)
+			to_chat(user, span_revennotice("You keep [src] dedicated to [deity_name], praise be their name."))
+		else
+			deity_name = "Giex"
+			to_chat(user, span_phobia("Something went wrong, now [src] is dedicated to [deity_name], praise be their name."))
+	else
+		. = ..()
+
 /obj/item/nullrod/rosary/attack(mob/living/M, mob/living/user)
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 
-	if(!user.mind || user.mind.assigned_role != "Chaplain")
+	/* if(!user.mind || user.mind.assigned_role != "Chaplain")
 		to_chat(user, span_notice("You are not close enough with [deity_name] to use [src]."))
-		return
+		return */
 
 	if(praying)
 		to_chat(user, span_notice("You are already using [src]."))

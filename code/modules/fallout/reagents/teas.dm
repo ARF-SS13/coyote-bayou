@@ -157,3 +157,24 @@
 	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	..()
 	. = TRUE
+
+/datum/reagent/consumable/tea/fever_blossom_tea
+	name = "Passion Tea"
+	description = "A pleasant tea steeped from fever blossom petals. It yields an earthy, subtle flavor while relaxing the senses."
+	color = "#e380ff" //a light purple
+	nutriment_factor = 0
+	taste_description = "subtle warmth"
+	glass_icon_state = "blossomtea"
+	glass_name = "Passion Tea"
+	glass_desc = "A pleasant tea steeped from fever blossom petals. It yields an earthy, subtle flavor while relaxing the senses."
+
+/datum/reagent/consumable/tea/fever_blossom_tea/on_mob_life(mob/living/carbon/M)
+	if(prob(10))
+		var/blossom_message = pick("You feel relaxed.", "You feel calmed.","You feel sensual.","You feel warm.")
+		to_chat(M, span_notice("[blossom_message]"))
+	M.dizziness = max(0,M.dizziness-2)
+	M.jitteriness = max(0,M.jitteriness-2)
+	M.drowsyness += 1
+	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+	..()
+	. = TRUE

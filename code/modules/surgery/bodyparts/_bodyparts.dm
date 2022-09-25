@@ -1,3 +1,4 @@
+
 /obj/item/bodypart
 	name = "limb"
 	desc = "Why is it detached..."
@@ -49,7 +50,7 @@
 	var/body_markings = ""	//for bodypart markings, deprecated
 	var/list/body_markings_list // stores body markings as lists, with the first value being the name of the bodypart, the second value being the name of the marking, and the third being the colour
 	var/marking_value // combination of old aux_marking and body_marking variables as they were always set together to the same value
-	var/static/default_body_markings_icon = 'modular_citadel/icons/mob/mam_markings.dmi'
+	var/static/default_body_markings_icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	var/list/markings_color = list()
 	var/digitigrade_type
 
@@ -442,10 +443,10 @@
 			var/obj/item/clothing/C = c
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
-			if(wounding_type == WOUND_SLASH)
+/*			if(wounding_type == WOUND_SLASH)
 				C.take_damage_zone(body_zone, damage, BRUTE, armour_penetration)
 			else if(wounding_type == WOUND_BURN && damage >= 10) // lazy way to block freezing from shredding clothes without adding another var onto apply_damage()
-				C.take_damage_zone(body_zone, damage, BURN, armour_penetration)
+				C.take_damage_zone(body_zone, damage, BURN, armour_penetration) */
 
 		if(!armor_ablation)
 			injury_mod += bare_wound_bonus
@@ -786,9 +787,9 @@
 		// Body markings
 		if(length(body_markings_list))
 			if(species_id == "husk")
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
@@ -812,7 +813,7 @@
 				var/aux_layer = aux_icons[I]
 				aux += image(limb.icon, "[species_id]_[I]", -aux_layer, image_dir)
 				if(species_id == "husk")
-					auxmarking += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
+					auxmarking += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
 				else
 					for(var/marking_list in body_markings_list)
 						var/image/aux_marking_image = image(marking_list[1], "[marking_list[2]]_[I]", -aux_layer, image_dir)
@@ -834,7 +835,7 @@
 				var/aux_layer = aux_icons[I]
 				aux += image(limb.icon, "[I]", -aux_layer, image_dir)
 				if(species_id == "husk")
-					auxmarking += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
+					auxmarking += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
 				else
 					for(var/marking_list in body_markings_list)
 						var/image/aux_marking_image = image(marking_list[1], "[marking_list[2]]_[I]", -aux_layer, image_dir)
@@ -846,9 +847,9 @@
 
 		if(length(body_markings))
 			if(species_id == "husk")
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart

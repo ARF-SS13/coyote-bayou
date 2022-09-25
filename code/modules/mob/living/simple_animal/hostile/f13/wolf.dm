@@ -14,8 +14,8 @@
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
-	maxHealth = 60
-	health = 60
+	maxHealth = 50
+	health = 50
 	faction = list("hostile", "wolf")
 	environment_smash = 0
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 1, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 1,/obj/item/stack/sheet/bone = 1)
@@ -27,8 +27,6 @@
 	attack_sound = 'sound/weapons/bite.ogg'
 	move_to_delay = 2
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
-	sharpness = SHARP_EDGED // nom
-
 
 	emote_taunt_sound = list('sound/f13npc/dog/dog_charge1.ogg', 'sound/f13npc/dog/dog_charge2.ogg', 'sound/f13npc/dog/dog_charge3.ogg', 'sound/f13npc/dog/dog_charge4.ogg', 'sound/f13npc/dog/dog_charge5.ogg', 'sound/f13npc/dog/dog_charge6.ogg', 'sound/f13npc/dog/dog_charge7.ogg',)
 	emote_taunt = list("growls", "barks", "snarls")
@@ -58,8 +56,8 @@
 	icon_living = "dog_alpha"
 	icon_dead = "dog_alpha_dead"
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/animalhide/wolf = 2, /obj/item/reagent_containers/food/snacks/meat/slab/wolf = 3,/obj/item/stack/sheet/bone = 2)
-	maxHealth = 100
-	health = 100
+	maxHealth = 70
+	health = 70
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	footstep_type = FOOTSTEP_MOB_BAREFOOT

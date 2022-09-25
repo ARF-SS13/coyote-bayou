@@ -178,3 +178,7 @@
 
 	/// D&D-like reach: how far in tiles is considered adjacent to this mob. Euclidean distance.
 	var/reach = 1
+
+	/// How much DT does the mob ignore?
+	var/damage_threshold_penetration_mob = 0
+

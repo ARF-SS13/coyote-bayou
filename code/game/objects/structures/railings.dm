@@ -8,7 +8,7 @@
 	anchored = TRUE
 	pass_flags_self = LETPASSTHROW
 	/// armor more or less consistent with grille. max_integrity about one time and a half that of a grille.
-	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 
 	max_integrity = 75
 

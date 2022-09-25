@@ -44,6 +44,7 @@
 			. = TRUE
 
 // This should probably start using move force sometime in the future but I'm lazy.
+/*
 /obj/machinery/pool/drain/process()
 	if(!filling)
 		for(var/obj/item/I in range(min(item_suction_range, 10), src))
@@ -106,6 +107,7 @@
 				controller.mist_off()
 				active = FALSE
 				filling = TRUE
+*/
 
 /// dangerous proc don't fuck with, admins
 /obj/machinery/pool/drain/proc/whirl_mob(mob/living/L, duration = 8, delay = 1)

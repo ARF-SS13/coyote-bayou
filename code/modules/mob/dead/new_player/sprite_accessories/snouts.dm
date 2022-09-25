@@ -28,26 +28,26 @@
 /datum/sprite_accessory/snouts/bird
 	name = "Beak"
 	icon_state = "bird"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/bigbeak
 	name = "Big Beak"
 	icon_state = "bigbeak"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/bug
 	name = "Bug"
 	icon_state = "bug"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	extra2 = TRUE
 	extra2_color_src = MUTCOLORS3
 
 /datum/sprite_accessory/snouts/elephant
 	name = "Elephant"
 	icon_state = "elephant"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 	extra = TRUE
 	extra_color_src = MUTCOLORS3
@@ -55,93 +55,93 @@
 /datum/sprite_accessory/snouts/lcanid
 	name = "Mammal, Long"
 	icon_state = "lcanid"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/lcanidalt
 	name = "Mammal, Long ALT"
 	icon_state = "lcanidalt"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/scanid
 	name = "Mammal, Short"
 	icon_state = "scanid"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/scanidalt
 	name = "Mammal, Short ALT"
 	icon_state = "scanidalt"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/wolf
 	name = "Mammal, Thick"
 	icon_state = "wolf"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/wolfalt
 	name = "Mammal, Thick ALT"
 	icon_state = "wolfalt"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/redpanda
 	name = "WahCoon"
 	icon_state = "wah"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/rhino
 	name = "Horn"
 	icon_state = "rhino"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 	extra = TRUE
-	extra = MUTCOLORS3
+	extra_color_src = MUTCOLORS3
 
 /datum/sprite_accessory/snouts/rodent
 	name = "Rodent"
 	icon_state = "rodent"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/husky
 	name = "Husky"
 	icon_state = "husky"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/otie
 	name = "Otie"
 	icon_state = "otie"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/pede
 	name = "Scolipede"
 	icon_state = "pede"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/sergal
 	name = "Sergal"
 	icon_state = "sergal"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 
 /datum/sprite_accessory/snouts/shark
 	name = "Shark"
 	icon_state = "shark"
 	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 
 /datum/sprite_accessory/snouts/toucan
 	name = "Toucan"
 	icon_state = "toucan"
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	color_src = MATRIXED
 */
 
@@ -151,7 +151,7 @@
 
 /datum/sprite_accessory/snouts/mam_snouts
 	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_snouts.dmi'
+	icon = 'icons/mob/mam/citadel/mam_snouts.dmi'
 	recommended_species = list("mammal", "slimeperson", "insect", "podweak", "lizard","shadekin")
 	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 
@@ -345,7 +345,7 @@
 	name = "Horn (Top)"
 	icon_state = "frhino"
 	extra = TRUE
-	extra = MUTCOLORS3
+	extra_color_src = MUTCOLORS3
 	matrixed_sections = MATRIX_ALL
 
 /datum/sprite_accessory/snouts/mam_snouts/fhusky

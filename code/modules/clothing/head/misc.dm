@@ -6,7 +6,7 @@
 	desc = "It's good to be emperor."
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 80, "bullet" = 80, "laser" = 50, "energy" = 50, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100, "wound" = 30)
+	armor = ARMOR_VALUE_HEAVY
 	strip_delay = 80
 
 /obj/item/clothing/head/powdered_wig
@@ -14,6 +14,7 @@
 	desc = "A powdered wig."
 	icon_state = "pwig"
 	item_state = "pwig"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/that
 	name = "top-hat"
@@ -23,30 +24,36 @@
 	throwforce = 1
 	dog_fashion = /datum/dog_fashion/head
 	beepsky_fashion = /datum/beepsky_fashion/tophat
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/canada
 	name = "striped red tophat"
 	desc = "It smells like fresh donut holes. / <i>Il sent comme des trous de beignets frais.</i>"
 	icon_state = "canada"
 	item_state = "canada"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 /obj/item/clothing/head/redcoat
 	name = "redcoat's hat"
 	icon_state = "redcoat"
 	desc = "<i>'I guess it's a redhead.'</i>"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/mailman
 	name = "mailman's hat"
 	icon_state = "mailman"
 	desc = "<i>'Right-on-time'</i> mail service head wear."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/plaguedoctorhat
 	name = "plague doctor's hat"
 	desc = "These were once used by plague doctors. They're pretty much useless."
 	icon_state = "plaguedoctor"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 25, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T3)
 	permeability_coefficient = 0.01
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 
 /obj/item/clothing/head/hasturhood
@@ -55,14 +62,17 @@
 	icon_state = "hasturhood"
 	flags_inv = HIDEHAIR
 	flags_cover = HEADCOVERSEYES
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/nursehat
 	name = "nurse's hat"
 	desc = "It allows quick identification of trained medical personnel."
 	icon_state = "nursehat"
 	dynamic_hair_suffix = ""
-
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 	dog_fashion = /datum/dog_fashion/head/nurse
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/syndicatefake
 	name = "black space-helmet replica"
@@ -71,6 +81,7 @@
 	desc = "A plastic replica of a Syndicate agent's space helmet. You'll look just like a real murderous Syndicate agent in this! This is a toy, it is not made for use in space!"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 	mutantrace_variation = STYLE_MUZZLE
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/cueball
 	name = "cueball helmet"
@@ -79,6 +90,7 @@
 	item_state="cueball"
 	flags_cover = HEADCOVERSEYES|HEADCOVERSMOUTH
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/snowman
 	name = "Snowman Head"
@@ -87,6 +99,7 @@
 	item_state = "snowman_h"
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/justice
 	name = "justice hat"
@@ -95,6 +108,7 @@
 	item_state = "justicered"
 	flags_inv = HIDEHAIR|HIDEEARS|HIDEEYES|HIDEFACE|HIDEFACIALHAIR|HIDESNOUT
 	flags_cover = HEADCOVERSEYES
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/justice/blue
 	icon_state = "justiceblue"
@@ -118,18 +132,21 @@
 	icon_state = "bunny"
 	dynamic_hair_suffix = ""
 	dog_fashion = /datum/dog_fashion/head/rabbit
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/flatcap
 	name = "flat cap"
 	desc = "A working man's cap."
 	icon_state = "flat_cap"
 	item_state = "detective"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/pirate
 	name = "pirate hat"
 	desc = "Yarr."
 	icon_state = "pirate"
 	item_state = "pirate"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/pirate
 	beepsky_fashion = /datum/beepsky_fashion/pirate
@@ -152,6 +169,7 @@
 	icon_state = "bowler"
 	item_state = "bowler"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/witchwig
 	name = "witch costume wig"
@@ -159,6 +177,7 @@
 	icon_state = "witch"
 	item_state = "witch"
 	flags_inv = HIDEHAIR
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/chicken
 	name = "chicken suit head"
@@ -166,6 +185,7 @@
 	icon_state = "chickenhead"
 	item_state = "chickensuit"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/griffin
 	name = "griffon head"
@@ -173,12 +193,14 @@
 	icon_state = "griffinhat"
 	item_state = "griffinhat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/bearpelt
 	name = "bear pelt hat"
 	desc = "Fuzzy."
 	icon_state = "bearpelt"
 	item_state = "bearpelt"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/xenos
 	name = "xenos helmet"
@@ -187,13 +209,14 @@
 	desc = "A helmet made out of chitinous alien hide."
 	alternate_screams = list('sound/voice/hiss6.ogg')
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/fedora
 	name = "fedora"
 	icon_state = "fedora"
 	item_state = "fedora"
 	desc = "A really cool hat if you're a mobster. A really lame hat if you're not."
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	beepsky_fashion = /datum/beepsky_fashion/fedora
 
@@ -213,6 +236,7 @@
 	item_state = "sombrero"
 	desc = "Bury me con mi sombrero."
 	flags_inv = HIDEHAIR
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/sombrero
 	beepsky_fashion = /datum/beepsky_fashion/sombrero
@@ -252,6 +276,7 @@
 	attack_verb = list("warned", "cautioned", "smashed")
 	resistance_flags = NONE
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/santa
 	name = "santa hat"
@@ -260,6 +285,7 @@
 	item_state = "that"
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	dog_fashion = /datum/dog_fashion/head/santa
 	beepsky_fashion = /datum/beepsky_fashion/santa
@@ -269,22 +295,26 @@
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/rice_hat
 	name = "rice hat"
 	desc = "Welcome to the rice fields, motherfucker."
 	icon_state = "rice_hat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/lizard
 	name = "lizardskin cloche hat"
 	desc = "How many lizards died to make this hat? Not enough."
 	icon_state = "lizard"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/papersack
 	name = "paper sack hat"
 	desc = "A paper sack with crude holes cut out for eyes. Useful for hiding one's identity or ugliness."
 	icon_state = "papersack"
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/papersack/smiley
 	name = "paper sack hat"
@@ -296,7 +326,7 @@
 	name = "crown"
 	desc = "A crown fit for a king, a petty king maybe."
 	icon_state = "crown"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 15, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_LIGHT
 	resistance_flags = FIRE_PROOF
 	dynamic_hair_suffix = ""
 	beepsky_fashion = /datum/beepsky_fashion/king
@@ -310,42 +340,47 @@
 	name = "scarecrow hat"
 	desc = "A simple straw hat."
 	icon_state = "scarecrow_hat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/lobsterhat
 	name = "foam lobster head"
 	desc = "When everything's going to crab, protecting your head is the best choice."
 	icon_state = "lobster_hat"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/drfreezehat
 	name = "doctor freeze's wig"
 	desc = "A cool wig for cool people."
 	icon_state = "drfreeze_hat"
 	flags_inv = HIDEHAIR
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/pharaoh
 	name = "pharaoh hat"
 	desc = "Walk like an Egyptian."
 	icon_state = "pharaoh_hat"
-	icon_state = "pharaoh_hat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/jester/alt
 	name = "jester hat"
 	desc = "A hat with bells, to add some merriness to the suit."
 	icon_state = "jester_hat2"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/nemes
 	name = "headdress of Nemes"
 	desc = "Lavish space tomb not included."
 	icon_state = "nemes_headdress"
-	icon_state = "nemes_headdress"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/frenchberet
 	name = "french beret"
 	desc = "A quality beret, infused with the aroma of chain-smoking, wine-swilling Parisians. You feel less inclined to engage military conflict, for some reason."
 	icon_state = "beretblack"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
@@ -383,30 +418,35 @@
 	item_state = "assu_helmet"
 	desc = "A cheap replica of old riot helmet without visor. It has \"D.A.B.\" written on the front."
 	flags_inv = HIDEHAIR
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/hotel
 	name = "Telegram cap"
 	desc = "A bright red cap warn by hotel staff. Or people who want to be a singing telegram"
 	icon_state = "telegram"
 	dog_fashion = /datum/dog_fashion/head/telegram
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/christmashat
 	name = "red santa hat"
 	desc = "A red Christmas Hat! How festive!"
 	icon_state = "christmashat"
 	item_state = "christmashat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/christmashatg
 	name = "green santa hat"
 	desc = "A green Christmas Hat! How festive!"
 	icon_state = "christmashatg"
 	item_state = "christmashatg"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/cowboyhat
 	name = "cowboy hat"
 	desc = "A standard brown cowboy hat, yeehaw."
 	icon_state = "cowboyhat"
 	item_state = "cowboyhat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 	beepsky_fashion = /datum/beepsky_fashion/cowboy
 
@@ -439,6 +479,7 @@
 	icon_state = "squatter_hat"
 	item_state = "squatter_hat"
 	desc = "Cyka blyat."
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/russobluecamohat
 	name = "russian blue camo beret"
@@ -446,20 +487,23 @@
 	icon_state = "russobluecamohat"
 	item_state = "russobluecamohat"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/hunter
 	name = "bounty hunting hat"
 	desc = "Ain't nobody gonna cheat the hangman in my town."
 	icon_state = "hunter"
 	item_state = "hunter"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/kepi
 	name = "kepi"
 	desc = "A white cap with visor. Oui oui, mon capitane!"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 10, "bomb" = 15, "bio" = 5, "rad" = 5, "fire" = 30, "acid" = 5)
+	armor = ARMOR_VALUE_LIGHT
 	icon_state = "kepi"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/kepi/old
 	icon_state = "kepi_old"
@@ -471,12 +515,14 @@
 	icon_state = "maid"
 	item_state = "maid"
 	dynamic_hair_suffix = ""
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/widered
 	name = "Wide red hat"
 	desc = "It is both wide, and red. Stylish!"
 	icon_state = "widehat_red"
 	item_state = "widehat_red"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/kabuto
 	name = "Kabuto helmet"
@@ -484,19 +530,21 @@
 	icon_state = "kabuto"
 	item_state = "kabuto"
 	flags_inv = HIDEHAIR|HIDEEARS
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 0, "rad" = 0, "fire" = 30, "acid" = 0)
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/fluff/bandit
 	name = "bandit hat"
 	desc = "A black cowboy hat with a large brim, curved to the sides, and a silver eagle pinned to the front."
 	icon_state = "bandit"
 	item_state = "fedora"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/fluff/gambler
 	name = "gambler hat"
 	desc = "Perfect for a ramblin' gamblin' man." //But I got to ramble (ramblin' man) //Oh I got to gamble (gamblin' man) //Got to got to ramble (ramblin' man) //I was born a ramblin' gamblin' man
 	icon_state = "gambler"
 	item_state = "dethat"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/fluff/Bikerhelmet
 	name = "Future Helmet"
@@ -505,12 +553,14 @@
 	item_state = "biker_helmet"
 	resistance_flags = FIRE_PROOF
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/rainbowbunchcrown
 	name = "rainbow flower crown"
 	desc = "A flower crown made out of the flowers of the rainbow bunch plant."
 	dynamic_hair_suffix = ""
 	attack_verb = list("crowned")
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/rainbowbunchcrown/Initialize()
 	. = ..()
@@ -535,6 +585,7 @@
 	icon_state = "sunflower_crown"
 	dynamic_hair_suffix = ""
 	attack_verb = list("crowned")
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 
 /obj/item/clothing/head/poppycrown
 	name = "poppy crown"
@@ -549,4 +600,5 @@
 	icon_state = "lily_crown"
 	dynamic_hair_suffix = ""
 	attack_verb = list("crowned")
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/rushelmet
 

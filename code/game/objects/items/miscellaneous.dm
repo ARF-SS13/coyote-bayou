@@ -163,7 +163,14 @@
 	desc = "Straight from the outerspace pet shop to your feet."
 	var/static/list/pets = list(
 "Brahmin" = /mob/living/simple_animal/cow/brahmin,
-"Chicken" = /mob/living/simple_animal/chicken)
+"Chicken" = /mob/living/simple_animal/chicken,
+"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+"Pug" = /mob/living/simple_animal/pet/dog/pug,
+"Fox" = /mob/living/simple_animal/pet/fox,
+"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+"Mouse" = /mob/living/simple_animal/mouse,
+"Cat" = /mob/living/simple_animal/pet/cat
+)
 	var/pet_name
 
 /obj/item/choice_beacon/pet/generate_display_names()

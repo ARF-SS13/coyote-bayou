@@ -56,6 +56,7 @@
 	var/coinflip
 	var/list/sideslist = list("heads","tails")
 	merge_type = /obj/item/stack/f13Cash
+	custom_materials = list(/datum/material/f13cash=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)

@@ -13,7 +13,7 @@
 	icon_state = "vest_stealth"
 	item_state = "armor"
 	blood_overlay_type = "armor"
-	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 15, "bio" = 15, "rad" = 15, "fire" = 70, "acid" = 70)
+	armor = ARMOR_VALUE_LIGHT
 	actions_types = list(/datum/action/item_action/hands_free/activate)
 	allowed = list(
 		/obj/item/abductor,
@@ -27,8 +27,8 @@
 	var/stealth_active = 0
 	var/combat_cooldown = 10
 	var/datum/icon_snapshot/disguise
-	var/stealth_armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 15, "bio" = 15, "rad" = 15, "fire" = 70, "acid" = 70)
-	var/combat_armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 50, "rad" = 50, "fire" = 90, "acid" = 90)
+	var/stealth_armor = ARMOR_VALUE_LIGHT
+	var/combat_armor = ARMOR_VALUE_HEAVY
 
 /obj/item/clothing/suit/armor/abductor/vest/Initialize()
 	. = ..()
@@ -730,15 +730,15 @@
 // Operating Table / Beds / Lockers
 
 /obj/structure/bed/abductor
-	name = "polymer bed"
+	name = "Saturnite bed"
 	desc = "This looks harder than a rock. Can people really sleep on this thing?"
 	icon = 'icons/obj/abductor.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/abductor
 	icon_state = "bed"
 
 /obj/structure/table_frame/abductor
-	name = "polymer table frame"
-	desc = "A sturdy table frame made from an experimental polymer alloy."
+	name = "Saturnite table frame"
+	desc = "A sturdy table frame made from Saturnite alloy."
 	icon_state = "alien_frame"
 	framestack = /obj/item/stack/sheet/mineral/abductor
 	framestackamount = 1
@@ -776,7 +776,7 @@
 			qdel(src)
 
 /obj/structure/table/abductor
-	name = "polymer table"
+	name = "Saturnite table"
 	desc = "Advanced flat surface technology at work!"
 	icon = 'icons/obj/smooth_structures/alien_table.dmi'
 	icon_state = "alien_table"
@@ -788,7 +788,7 @@
 	frame = /obj/structure/table_frame/abductor
 
 /obj/structure/table/optable/abductor
-	name = "poylmer operating table"
+	name = "Saturnite operating table"
 	desc = "Used for advanced medical procedures. The surface is covered in tiny spines."
 	frame = /obj/structure/table_frame/abductor
 	buildstack = /obj/item/stack/sheet/mineral/silver
@@ -829,7 +829,7 @@
 	. = ..()
 
 /obj/structure/closet/abductor
-	name = "polymer locker"
+	name = "Saturnite locker"
 	desc = "Contains secrets of the universe."
 	icon_state = "abductor"
 	icon_door = "abductor"
@@ -837,9 +837,9 @@
 	material_drop = /obj/item/stack/sheet/mineral/abductor
 
 /obj/structure/door_assembly/door_assembly_abductor
-	name = "polymer airlock assembly"
+	name = "Saturnite airlock assembly"
 	icon = 'icons/obj/doors/airlocks/abductor/abductor_airlock.dmi'
-	base_name = "experimental polymer airlock"
+	base_name = "Saturnite airlock"
 	overlays_file = 'icons/obj/doors/airlocks/abductor/overlays.dmi'
 	airlock_type = /obj/machinery/door/airlock/abductor
 	material_type = /obj/item/stack/sheet/mineral/abductor
@@ -847,7 +847,7 @@
 
 /obj/item/clothing/under/abductor
 	desc = "The most advanced form of jumpsuit known to reality, looks uncomfortable."
-	name = "polymer jumpsuit" //End Fortuna edit
+	name = "Saturnite jumpsuit" //End Fortuna edit
 	icon_state = "abductor"
 	item_state = "bl_suit"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0, fire = 0, acid = 0)

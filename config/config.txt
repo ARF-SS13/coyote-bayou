@@ -21,10 +21,10 @@ $include policy.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-# SERVERNAME Coyote Bayou
+@SERVERNAME Coyote Bayou
 
 ## Server tagline: This will appear right below the server's title.
-SERVERTAGLINE [18+] Furry Friend Fallout, set between FO1 & FO2, with East Texas flair!
+SERVERTAGLINE [18+] Fallout 1/Wasteland Inspired HRP Furry PVE/PVP experience with high amounts of replayability and systems for anonymity in game.  Join our discord to get whitelisted at, https://discord.gg/YV9JjUAvJS
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME fo13sql
@@ -36,10 +36,10 @@ STATIONNAME Coyote Bayou
 HUB
 
 ## Lobby time: This is the amount of time between rounds that players have to setup their characters and be ready.
-LOBBY_COUNTDOWN 160
+LOBBY_COUNTDOWN 5
 
 ## Round End Time: This is the amount of time after the round ends that players have to murder death kill each other.
-ROUND_END_COUNTDOWN 60
+ROUND_END_COUNTDOWN 30
 
 ## Comment this out if you want to use the SQL based admin system, the legacy system uses admins.txt.
 ## You need to set up your database to use the SQL based system.
@@ -183,7 +183,7 @@ ALLOW_ADMIN_OOCCOLOR
 ID_CONSOLE_JOBSLOT_DELAY 30
 
 ## allow players to initiate a restart vote
-# ALLOW_VOTE_RESTART
+#ALLOW_VOTE_RESTART
 
 ## allow players to initiate a crew transfer vote
 ALLOW_VOTE_TRANSFER
@@ -192,7 +192,7 @@ ALLOW_VOTE_TRANSFER
 #ALLOW_VOTE_MODE
 
 ## min delay (deciseconds) between voting sessions (default 10 minutes)
-VOTE_DELAY 18000
+VOTE_DELAY 9000
 
 ## time period (deciseconds) which voting session will last (default 1 minute)
 VOTE_PERIOD 600
@@ -207,7 +207,7 @@ VOTE_AUTOTRANSFER_INTERVAL 0
 ## autovote maximum votes until automatic transfer call. (default 4)
 ## Set to 0 to force automatic crew transfer after the 'vote_autotransfer_initial' elapsed.
 ## Set to -1 to disable the maximum votes cap.
-VOTE_AUTOTRANSFER_MAXIMUM -1
+VOTE_AUTOTRANSFER_MAXIMUM 2
 
 ## prevents dead players from voting or starting votes
 # NO_DEAD_VOTE
@@ -263,7 +263,7 @@ CHECK_RANDOMIZER
 # SERVER ss13.example.com:2506
 
 ## forum address
-# FORUMURL https://citadel-station.net/forum/
+# FORUMURL https://coyotebayou.freeforums.net/
 
 ## Wiki address
 # WIKIURL https://f13wiki.herma.moe/index.php/Main_Page
@@ -291,7 +291,7 @@ GITHUBURL https://github.com/ARF-SS13/coyote-bayou
 # GITHUBREPOID 62485194
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.
-# BANAPPEALS https://citadel-station.net/forum/viewforum.php?f=8&sid=a0ce5331d5594ef6d49661609c6f4ff9
+# BANAPPEALS https://coyotebayou.freeforums.net/thread/2/appeal-format
 
 ## System command that invokes youtube-dl, used by Play Internet Sound.
 ## You can install youtube-dl with
@@ -540,7 +540,7 @@ FAIL2TOPIC_MAX_FAILS 5
 FAIL2TOPIC_RULE_NAME _dd_fail2topic
 
 ## Enable automatic profiling - Byond 513.1506 and newer only.
-#AUTO_PROFILE
+#AUTO_PROFILE
 
 ## Uncomment to enable global ban DB using the provided URL. The API should expect to receive a ckey at the end of the URL.
 ## More API details can be found here: https://centcom.melonmesa.com

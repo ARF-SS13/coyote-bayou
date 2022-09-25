@@ -97,10 +97,11 @@
 				update_icon()
 			return TRUE
 
-		if(istype(O, /obj/item/storage/bag))
-			var/obj/item/storage/P = O
+		if(SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
+			var/list/storage_contents = list()
+			SEND_SIGNAL(O, COMSIG_TRY_STORAGE_RETURN_INVENTORY, storage_contents) // list mutation, ew
 			var/loaded = 0
-			for(var/obj/G in P.contents)
+			for(var/obj/G in storage_contents)
 				if(contents.len >= max_n_of_items)
 					break
 				if(accept_check(G))
@@ -670,10 +671,9 @@
 	proj_pass_rate = 70
 	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
-	var/climbable = TRUE
 
 /obj/machinery/smartfridge/bottlerack/grownbin/accept_check(obj/item/O)
-	if(istype(O, /obj/item/reagent_containers/food/snacks/grown))
+	if(istype(O, /obj/item/reagent_containers/food/snacks/grown) || istype(O, /obj/item/grown))
 		return TRUE
 	return FALSE
 
@@ -688,7 +688,13 @@
 	max_n_of_items = 100
 
 /obj/machinery/smartfridge/bottlerack/alchemy_rack/accept_check(obj/item/O)
-	if(istype(O, /obj/item/reagent_containers/pill/patch) || istype(O, /obj/item/reagent_containers/glass/bottle/primitive) || istype(O, /obj/item/stack/medical/poultice) || istype(O, /obj/item/smelling_salts))
+	var/static/list/alchemyrack_typecache = typecacheof(list(
+		/obj/item/reagent_containers/pill/patch,
+		/obj/item/reagent_containers/glass/bottle/primitive,
+		/obj/item/stack/medical/poultice,
+		/obj/item/smelling_salts
+	))
+	if(is_type_in_typecache(O, alchemyrack_typecache))
 		return TRUE
 	return FALSE
 
@@ -732,6 +738,7 @@
 		/obj/item/reagent_containers/food/drinks/soda_cans/sodawater = 2,
 		/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/f13nukacola = 4,
+		/obj/item/reagent_containers/glass/beaker/big_red/full = 4,
 		/obj/item/reagent_containers/food/drinks/bottle/bawls = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/vim = 3,
 		/obj/item/reagent_containers/food/drinks/bottle/sunset = 3)
