@@ -20,7 +20,7 @@
 					/obj/item/multitool = 2)
 	premium = list(/obj/item/clothing/gloves/color/yellow = 2,
 					/obj/item/weldingtool/hugetank = 1)
-	armor = ARMOR_VALUE_HEAVY
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	refill_canister = /obj/item/vending_refill/tool
 	resistance_flags = FIRE_PROOF
 	default_price = PRICE_REALLY_CHEAP

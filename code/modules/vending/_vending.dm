@@ -52,7 +52,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	verb_exclaim = "beeps"
 	max_integrity = 300
 	integrity_failure = 0.33
-	armor = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_LIGHT
 	circuit = /obj/item/circuitboard/machine/vendor
 	payment_department = ACCOUNT_SRV
 	light_power = 0.5
@@ -64,7 +64,6 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Next world time to send a purchase message
 	var/purchase_message_cooldown
 	///Last mob to shop with us
-	var/stored_caps = 0
 
 	/**
 	  * List of products this machine sells
@@ -211,7 +210,7 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 /obj/machinery/vending/can_speak()
 	return !shut_up
 
-/obj/machinery/vending/RefreshParts()		 //Better would be to make constructable child
+/obj/machinery/vending/RefreshParts()         //Better would be to make constructable child
 	if(!component_parts)
 		return
 
@@ -306,7 +305,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 			R.amount = amount
 		R.max_amount = amount
 		R.custom_price = initial(temp.custom_price)
-		R.custom_premium_price = initial(temp.custom_price)
+		R.custom_premium_price = initial(temp.custom_premium_price)
 		recordlist += R
 /**
  * Refill a vending machine from a refill canister
@@ -417,10 +416,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 				else
 					to_chat(user, span_warning("There's nothing to restock!"))
 			return
-	if(istype(I, /obj/item/stack/f13Cash))
-		add_caps(I)
-	else
-		attack_hand(user)
 
 	if(compartmentLoadAccessCheck(user) && user.a_intent != INTENT_HARM)
 		if(canLoadItem(I))
@@ -747,7 +742,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 	for (var/datum/data/vending_product/R in product_records + coin_records + hidden_records)
 		.["stock"][R.name] = R.amount
 	.["extended_inventory"] = extended_inventory
-	.["insertedCaps"] = stored_caps ? stored_caps : "0"
 
 /obj/machinery/vending/ui_act(action, params)
 	. = ..()
@@ -785,7 +779,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
-			/* We're not using the econemy subsystem to track money.
 			if(onstation && ishuman(usr))
 				var/mob/living/carbon/human/H = usr
 				var/obj/item/card/id/C = H.get_idcard(TRUE)
@@ -824,17 +817,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 					D.adjust_money(price_to_use)
 					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
 					//log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
-				*/
 			if(last_shopper != usr || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
 				last_shopper = usr
-			if(price_to_use > stored_caps)
-				to_chat(usr, span_alert("Not enough caps to pay for [R.name]!"))
-				vend_ready = TRUE
-				return
-			else
-				stored_caps = stored_caps - price_to_use
 			use_power(5)
 			if(icon_vend) //Show the vending animation if needed
 				flick(icon_vend,src)
@@ -847,8 +833,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 				to_chat(usr, span_warning("[capitalize(R.name)] falls onto the floor!"))
 			SSblackbox.record_feedback("nested tally", "vending_machine_usage", 1, list("[type]", "[R.product_path]"))
 			vend_ready = TRUE
-		if("ejectCaps")
-			remove_all_caps()
 
 /obj/machinery/vending/process()
 	if(stat & (BROKEN|NOPOWER))
@@ -979,61 +963,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 /obj/machinery/vending/onTransitZ()
 	return
-
-
-/* Adding a caps to caps storage and release vending item. */
-/obj/machinery/vending/proc/add_caps(obj/item/I)
-	if(istype(I, /obj/item/stack/f13Cash/caps))
-		var/obj/item/stack/f13Cash/currency = I
-		var/inserted_value = FLOOR(currency.amount * 1, 1)
-		stored_caps += inserted_value
-		I.use(currency.amount)
-		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
-		src.ui_interact(usr)
-	else if(istype(I, /obj/item/stack/f13Cash/ncr))
-		var/obj/item/stack/f13Cash/ncr/currency = I
-		var/inserted_value = FLOOR(currency.amount * 0.4, 1)
-		stored_caps += inserted_value
-		I.use(currency.amount)
-		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
-		src.ui_interact(usr)
-	else if(istype(I, /obj/item/stack/f13Cash/denarius))
-		var/obj/item/stack/f13Cash/denarius/currency = I
-		var/inserted_value = FLOOR(currency.amount * 4, 1)
-		stored_caps += inserted_value
-		I.use(currency.amount)
-		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
-		src.ui_interact(usr)
-	else if(istype(I, /obj/item/stack/f13Cash/aureus))
-		var/obj/item/stack/f13Cash/aureus/currency = I
-		var/inserted_value = FLOOR(currency.amount * 100, 1)
-		stored_caps += inserted_value
-		I.use(currency.amount)
-		playsound(src, 'sound/items/change_jaws.ogg', 60, 1)
-		to_chat(usr, "You put [inserted_value] bottle caps value to a vending machine.")
-		src.ui_interact(usr)
-	else
-		to_chat(usr, "Invalid currency!")
-		return
-
-/* Spawn all caps on world and clear caps storage */
-/obj/machinery/vending/proc/remove_all_caps()
-	if(stored_caps <= 0)
-		return
-	var/obj/item/stack/f13Cash/C = new /obj/item/stack/f13Cash/caps
-	if(stored_caps > C.max_amount)
-		C.add(C.max_amount - 1)
-		C.forceMove(src.loc)
-		stored_caps -= C.max_amount
-	else
-		C.add(stored_caps - 1)
-		C.forceMove(src.loc)
-		stored_caps = 0
-	playsound(src, 'sound/items/coinflip.ogg', 60, 1)
-	src.ui_interact(usr)
 
 /obj/machinery/vending/custom
 	name = "Custom Vendor"

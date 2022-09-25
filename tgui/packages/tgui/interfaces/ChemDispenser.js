@@ -46,12 +46,6 @@ export const ChemDispenser = (props, context) => {
                 {toFixed(data.energy) + ' units'}
               </ProgressBar>
             </LabeledList.Item>
-            <LabeledList.Item label="Chemical Storage">
-              <ProgressBar
-                value={data.cartridgeCharge / data.maxCartridgeCharge}>
-                {toFixed(data.cartridgeCharge) + ' units'}
-              </ProgressBar>
-            </LabeledList.Item>
           </LabeledList>
         </Section>
         <Section

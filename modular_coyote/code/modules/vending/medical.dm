@@ -26,8 +26,7 @@
 					/obj/item/stack/sticky_tape/surgical = 3,
 					/obj/item/stack/medical/ointment = 3,
 					/obj/item/stack/medical/suture = 3,
-					/obj/item/stack/medical/bone_gel = 4,
-					/obj/item/stock_parts/chem_cartridge/simple = 4)
+					/obj/item/stack/medical/bone_gel = 4)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 					/obj/item/reagent_containers/pill/morphine = 4,
 					/obj/item/reagent_containers/pill/charcoal = 6)
@@ -37,5 +36,4 @@
 					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
-					/obj/item/storage/belt/medolier = 2,
-					/obj/item/stock_parts/chem_cartridge/pristine = 1)
+					/obj/item/storage/belt/medolier = 2)
