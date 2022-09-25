@@ -208,8 +208,8 @@
 	data["amount"] = amount
 	data["energy"] = cell.charge ? cell.charge * powerefficiency : "0" //To prevent NaN in the UI.
 	data["maxEnergy"] = cell.maxcharge * powerefficiency
-	data["cartridgeCharge"] = cartridge.charge
-	data["maxCartridgeCharge"] = cartridge.maxCharge
+	data["cartridgeCharge"] = cartridge.charge ? cartridge.charge * matefficiency : "0"
+	data["maxCartridgeCharge"] = cartridge.maxCharge * matefficiency
 	data["isBeakerLoaded"] = beaker ? 1 : 0
 
 	var/beakerContents[0]
@@ -393,6 +393,13 @@
 		replace_beaker(user, B)
 		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
+	else if(istype(I, /obj/item/stock_parts/chem_cartridge))
+		var/obj/item/stock_parts/chem_cartridge/C = I
+		. = TRUE //no afterattack
+		if(!user.transferItemToLoc(C, src))
+			return
+		replace_cartridge(user, C)
+		to_chat(user, span_notice("You replace [C] in [src]"))
 	else if(user.a_intent != INTENT_HARM && !istype(I, /obj/item/card/emag))
 		to_chat(user, span_warning("You can't load [I] into [src]!"))
 		return ..()
@@ -467,6 +474,19 @@
 		beaker.forceMove(drop_location())
 		beaker = null
 	return ..()
+
+/obj/machinery/chem_dispenser/proc/replace_cartridge(mob/living/user, obj/item/stock_parts/chem_cartridge/new_cartridge)
+	if(cartridge)
+		var/obj/item/stock_parts/chem_cartridge/C = cartridge
+		C.forceMove(drop_location())
+		if(user && Adjacent(user) && user.can_hold_items())
+			user.put_in_hands(C)
+	if(new_cartridge)
+		cartridge = new_cartridge
+	else
+		cartridge = null
+	update_icon()
+	return TRUE
 
 /obj/machinery/chem_dispenser/AltClick(mob/living/user)
 	. = ..()
