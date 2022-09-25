@@ -56,6 +56,12 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 	var/chemical_flags // See fermi/readme.dm REAGENT_DEAD_PROCESS, REAGENT_DONOTSPLIT, REAGENT_ONLYINVERSE, REAGENT_ONMOBMERGE, REAGENT_INVISIBLE, REAGENT_FORCEONNEW, REAGENT_SNEAKYNAME
 	var/value = REAGENT_VALUE_NONE //How much does it sell for in cargo?
 	var/datum/material/material //are we made of material?
+	/// When present in a mob, how much should each unit count as effective blood
+	var/effective_blood_multiplier = 0
+	/// The maximum effective blood to be added from this reagent
+	var/effective_blood_max = 0
+	/// How much this reagent slows bleeding to by while in you
+	var/bleed_mult = 1
 
 /datum/reagent/New()
 	. = ..()
