@@ -301,6 +301,7 @@
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	icon_prefix = "shotgunpolice"
@@ -590,6 +591,7 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
