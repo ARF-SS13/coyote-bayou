@@ -6461,6 +6461,15 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"cAy" = (
+/obj/machinery/button/door{
+	id = "supermutantbehemothexit";
+	name = "Exit Chute Control";
+	pixel_x = -28;
+	req_one_access_txt = "134"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "cAO" = (
 /obj/machinery/computer/security/telescreen,
 /turf/closed/wall/rust,
@@ -7390,12 +7399,6 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/indestructible/ground/inside/mountain,
-/area/f13/tunnel)
-"dBM" = (
-/obj/effect/decal/cleanable/blood/old{
-	icon_state = "floor7-old"
-	},
-/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "dCS" = (
 /obj/effect/decal/cleanable/dirt,
@@ -10282,6 +10285,7 @@
 	pixel_x = 31;
 	req_one_access_txt = "134"
 	},
+/obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "gyt" = (
@@ -11452,6 +11456,12 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
+"hLQ" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "hMJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
@@ -15239,6 +15249,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"lva" = (
+/obj/structure/obstacle/barbedwire{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "lvs" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -16267,10 +16283,6 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
-"mnr" = (
-/obj/structure/obstacle/jammed_door,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "mnX" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -16779,12 +16791,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
-"mNa" = (
-/obj/structure/obstacle/barbedwire/end{
-	dir = 4
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "mNK" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -17240,6 +17246,12 @@
 "nmK" = (
 /obj/machinery/light/small,
 /turf/open/water,
+/area/f13/tunnel)
+"nnK" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "nnL" = (
 /obj/structure/simple_door/metal/barred,
@@ -24074,12 +24086,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
-"tOl" = (
-/obj/structure/obstacle/barbedwire{
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "tOJ" = (
 /obj/structure/barricade/bars,
 /obj/structure/table/wood/junk,
@@ -24635,6 +24641,10 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/tunnel)
+"uwL" = (
+/obj/structure/obstacle/jammed_door,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "uwX" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -25094,12 +25104,6 @@
 	name = "stone floor"
 	},
 /area/f13/caves)
-"uSR" = (
-/obj/structure/obstacle/barbedwire/end{
-	dir = 8
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "uTw" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -27371,6 +27375,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
+/area/f13/tunnel)
+"xhX" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor7-old"
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xih" = (
 /obj/structure/table/reinforced,
@@ -36816,7 +36826,7 @@ fLm
 aah
 aah
 lIU
-mNa
+hLQ
 aah
 aah
 aah
@@ -37073,7 +37083,7 @@ boU
 aah
 gDe
 lIU
-tOl
+lva
 aah
 aah
 boU
@@ -37330,7 +37340,7 @@ aah
 aah
 aah
 efb
-uSR
+nnK
 aah
 jGc
 aah
@@ -39383,7 +39393,7 @@ aah
 aah
 cug
 pwE
-aah
+cAy
 aah
 aah
 aah
@@ -39394,7 +39404,7 @@ aah
 aah
 cug
 aah
-dBM
+xhX
 boU
 aah
 aah
@@ -41705,7 +41715,7 @@ aah
 pwE
 pwE
 pwE
-mnr
+uwL
 pwE
 aah
 aah
