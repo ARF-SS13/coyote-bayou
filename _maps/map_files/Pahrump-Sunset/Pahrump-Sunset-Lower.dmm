@@ -1705,6 +1705,13 @@
 "bEi" = (
 /turf/closed/wall/mineral/concrete,
 /area/f13/building/museum)
+"bEl" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "bEo" = (
 /obj/structure/decoration/vent{
 	pixel_x = 16;
@@ -6194,7 +6201,8 @@
 /area/f13/building/museum)
 "cug" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "supermutantbehemoth"
+	id = "supermutantbehemoth";
+	max_integrity = 2000
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -6452,6 +6460,15 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
+/area/f13/tunnel)
+"cAy" = (
+/obj/machinery/button/door{
+	id = "supermutantbehemothexit";
+	name = "Exit Chute Control";
+	pixel_x = -28;
+	req_one_access_txt = "134"
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "cAO" = (
 /obj/machinery/computer/security/telescreen,
@@ -7075,6 +7092,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
+"dlp" = (
+/obj/effect/spawner/lootdrop/f13/weapon/melee/random_mid,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "dlA" = (
 /obj/structure/rack,
 /obj/item/export_scanner,
@@ -8014,10 +8035,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
 "egX" = (
-/obj/structure/obstacle/barbedwire/end{
-	dir = 1;
-	pixel_x = 6
-	},
+/obj/structure/obstacle/barbedwire,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ehh" = (
@@ -8183,6 +8201,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/red{
 	icon_state = "redrustyfull"
 	},
+/area/f13/tunnel)
+"epo" = (
+/mob/living/simple_animal/hostile/supermutant,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "ept" = (
 /obj/machinery/shower{
@@ -10099,19 +10121,19 @@
 /area/f13/tunnel)
 "gqf" = (
 /obj/structure/table,
+/obj/machinery/light/fo13colored/Red{
+	dir = 8
+	},
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
-	},
-/obj/machinery/light/fo13colored/Red{
-	dir = 8
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -10263,6 +10285,7 @@
 	pixel_x = 31;
 	req_one_access_txt = "134"
 	},
+/obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "gyt" = (
@@ -10946,7 +10969,8 @@
 "hlo" = (
 /obj/structure/simple_door/bunker,
 /obj/machinery/door/poddoor/shutters{
-	id = "supermutantbehemoth"
+	id = "supermutantbehemoth";
+	max_integrity = 2000
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -11038,6 +11062,10 @@
 /obj/item/stack/sheet/sinew,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"hoV" = (
+/obj/effect/spawner/lootdrop/f13/traitbooks/low,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "hpn" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/structure/spider/stickyweb,
@@ -11428,6 +11456,12 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/caves)
+"hLQ" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "hMJ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/freezer,
@@ -11468,6 +11502,13 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"hOM" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib6-old";
+	pixel_x = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "hOV" = (
 /obj/structure/closet/crate/freezer/blood/anchored,
 /turf/open/floor/plasteel/f13{
@@ -12206,7 +12247,8 @@
 /area/f13/caves)
 "izp" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "supermutantbehemothexit"
+	id = "supermutantbehemothexit";
+	max_integrity = 200000
 	},
 /turf/open/floor/plasteel/f13/vault_floor/neutral,
 /area/f13/tunnel)
@@ -12993,6 +13035,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"jja" = (
+/obj/machinery/door/poddoor/shutters{
+	id = "supermutantbehemothexit";
+	max_integrity = 200000
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "jkg" = (
 /obj/machinery/door/airlock/medical/glass{
 	id_tag = "MedbayFoyer";
@@ -13154,11 +13203,11 @@
 	},
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
@@ -13566,6 +13615,10 @@
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
+/area/f13/tunnel)
+"jNb" = (
+/obj/item/wrench/basic,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "jNq" = (
 /mob/living/simple_animal/hostile/deathclaw,
@@ -14898,6 +14951,10 @@
 /obj/structure/wreck/trash/two_barrels,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"lfV" = (
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "lgf" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -15191,6 +15248,12 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
+/area/f13/tunnel)
+"lva" = (
+/obj/structure/obstacle/barbedwire{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "lvs" = (
 /obj/structure/chair/wood{
@@ -15527,20 +15590,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
-"lGX" = (
-/obj/structure/table,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Reprogrammed Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "lHm" = (
 /obj/structure/wreck/trash/five_tires,
 /obj/structure/spider/stickyweb,
@@ -15822,6 +15871,10 @@
 /obj/item/bedsheet/blue,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"lUc" = (
+/obj/structure/sign/waysign,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "lUh" = (
 /obj/structure/simple_door/metal/barred,
 /obj/structure/decoration/rag,
@@ -16065,6 +16118,10 @@
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
+"mdE" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mdN" = (
 /obj/structure/table/wood,
 /obj/structure/decoration/clock/active{
@@ -16399,11 +16456,11 @@
 "mwr" = (
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
@@ -16558,18 +16615,18 @@
 /area/f13/caves)
 "mEU" = (
 /obj/structure/table,
+/obj/machinery/light/fo13colored/Red,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
-/obj/machinery/light/fo13colored/Red,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "mFv" = (
@@ -17190,6 +17247,12 @@
 /obj/machinery/light/small,
 /turf/open/water,
 /area/f13/tunnel)
+"nnK" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "nnL" = (
 /obj/structure/simple_door/metal/barred,
 /obj/structure/decoration/rag{
@@ -17733,6 +17796,10 @@
 	icon_state = "tunnelchess2"
 	},
 /area/f13/caves)
+"nOH" = (
+/obj/structure/bed/oldalt,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "nOW" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/tunnel,
@@ -18025,7 +18092,8 @@
 /area/f13/tunnel)
 "odG" = (
 /obj/machinery/door/poddoor/shutters{
-	id = "supermutantbehemoth"
+	id = "supermutantbehemoth";
+	max_integrity = 2000
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
@@ -19672,6 +19740,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"pEA" = (
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "pEP" = (
 /obj/item/trash,
 /obj/effect/decal/cleanable/dirt,
@@ -21106,6 +21178,10 @@
 /obj/structure/spider/stickyweb,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
+"qRv" = (
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "qSG" = (
 /obj/machinery/light/small{
 	dir = 8;
@@ -21211,6 +21287,12 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"qWB" = (
+/obj/effect/decal/cleanable/blood{
+	icon_state = "floor2"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "qWP" = (
 /obj/machinery/light/small,
 /turf/open/indestructible/ground/inside/subway,
@@ -22427,6 +22509,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
 	icon_state = "yellowdirtyfull"
 	},
+/area/f13/tunnel)
+"sph" = (
+/obj/effect/decal/remains/human,
+/obj/structure/flora/wasteplant/wild_fungus,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "spC" = (
 /obj/effect/decal/cleanable/dirt,
@@ -24554,6 +24641,10 @@
 	},
 /turf/closed/wall/r_wall/rust,
 /area/f13/tunnel)
+"uwL" = (
+/obj/structure/obstacle/jammed_door,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "uwX" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
@@ -24624,6 +24715,12 @@
 	icon_state = "bluerustychess2"
 	},
 /area/f13/caves)
+"uAw" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "uBh" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress3"
@@ -24909,6 +25006,11 @@
 	icon_state = "purplefull"
 	},
 /area/f13/caves)
+"uLX" = (
+/obj/effect/decal/remains/human,
+/obj/effect/gibspawner/human,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/tunnel)
 "uMN" = (
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
 /obj/effect/decal/cleanable/dirt,
@@ -26948,6 +27050,13 @@
 /obj/structure/table/wood/settler,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
+"wRJ" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 1;
+	pixel_x = 6
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "wSA" = (
 /obj/structure/spider/stickyweb{
 	icon_state = "stickyweb2"
@@ -27000,6 +27109,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"wVn" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/supermutant/rangedmutant,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "wVq" = (
 /obj/structure/dresser,
 /turf/open/floor/plating/tunnel,
@@ -27259,6 +27375,12 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkdirtysolid"
 	},
+/area/f13/tunnel)
+"xhX" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor7-old"
+	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xih" = (
 /obj/structure/table/reinforced,
@@ -35941,8 +36063,8 @@ aah
 aah
 aah
 aah
-aah
-aah
+mdE
+dlp
 aah
 boU
 pwE
@@ -36198,8 +36320,8 @@ pwE
 odG
 odG
 pwE
-aah
-boU
+qRv
+uLX
 aah
 boU
 pwE
@@ -36449,13 +36571,13 @@ efb
 pwE
 pwE
 aah
-aah
+jGc
 aah
 pwE
 lhW
 juJ
 pwE
-aah
+jzi
 aah
 aah
 boU
@@ -36704,7 +36826,7 @@ fLm
 aah
 aah
 lIU
-aah
+hLQ
 aah
 aah
 aah
@@ -36961,7 +37083,7 @@ boU
 aah
 gDe
 lIU
-aah
+lva
 aah
 aah
 boU
@@ -37218,13 +37340,13 @@ aah
 aah
 aah
 efb
-aah
+nnK
 aah
 jGc
 aah
 aah
 aah
-aah
+xNE
 aah
 aah
 pwE
@@ -37232,7 +37354,7 @@ aah
 aah
 pwE
 aak
-aak
+aae
 aae
 aae
 aae
@@ -37489,10 +37611,10 @@ aah
 aah
 pwE
 aak
-aae
-aae
-aae
-aae
+bCG
+bCG
+bCG
+bCG
 aae
 aae
 aae
@@ -37728,7 +37850,7 @@ oPg
 dvg
 dvg
 dvg
-aah
+jeq
 aah
 aah
 pwE
@@ -37745,11 +37867,11 @@ boU
 aah
 aah
 pwE
-aae
-aaa
-aaa
-aaa
-aae
+pwE
+pwE
+uAw
+nOH
+bCG
 aae
 aae
 aaa
@@ -38001,12 +38123,12 @@ aah
 aah
 jzi
 fLm
-pwE
-aae
-aaa
-aaa
-aaa
-aae
+aah
+aah
+cug
+epo
+epo
+bCG
 aae
 aae
 aaa
@@ -38244,12 +38366,12 @@ aah
 pwE
 cFH
 lDD
-pgE
+jja
 lDD
 mQa
 lDD
 lDD
-pgE
+jja
 jpT
 rTf
 pwE
@@ -38257,13 +38379,13 @@ aah
 lIU
 jDW
 egX
+wRJ
+aah
 aah
 pwE
-aae
-aae
-aae
-aae
-aae
+cug
+pwE
+bCG
 aae
 aae
 aae
@@ -38501,25 +38623,25 @@ aah
 pwE
 oTM
 ygk
-pgE
+jja
 aah
 aah
 aah
 aah
-pgE
+jja
 aah
 vrZ
 pwE
 aah
 lIU
+ikD
 aah
+aah
+boU
+bHD
 aah
 aah
 pwE
-aae
-aae
-aae
-aaa
 aaa
 aae
 aaa
@@ -38759,10 +38881,10 @@ pwE
 pwE
 pwE
 pwE
-pgE
-pgE
-pgE
-pgE
+jja
+jja
+jja
+jja
 pwE
 pwE
 pwE
@@ -38770,13 +38892,13 @@ pwE
 aah
 aah
 aah
+lIU
 aah
 aah
+aah
+aah
+vdU
 pwE
-aae
-aae
-aae
-aaa
 aaa
 aaa
 aaa
@@ -39016,10 +39138,10 @@ pwE
 pwE
 pwE
 pwE
-pgE
-pgE
-pgE
-pgE
+jja
+jja
+jja
+jja
 pwE
 pwE
 pwE
@@ -39030,10 +39152,10 @@ aah
 aah
 aah
 pwE
-aaa
-aae
-aae
-aae
+pwE
+boU
+aah
+pwE
 aae
 aae
 aaa
@@ -39271,7 +39393,7 @@ aah
 aah
 cug
 pwE
-aah
+cAy
 aah
 aah
 aah
@@ -39282,15 +39404,15 @@ aah
 aah
 cug
 aah
+xhX
+boU
+aah
+aah
 aah
 aah
 aah
 aah
 pwE
-aaa
-aae
-aaa
-aaa
 aae
 aaa
 aaa
@@ -39543,10 +39665,10 @@ aah
 aah
 aah
 aah
-pwE
-pwE
-pwE
-pwE
+aah
+aah
+aah
+aah
 pwE
 aae
 aaa
@@ -39796,14 +39918,14 @@ aah
 pwE
 cug
 aah
-aah
+boU
 vdU
 pwE
 aah
+hOM
+boU
 aah
 aah
-aah
-bFF
 pwE
 aae
 aaa
@@ -40037,7 +40159,7 @@ aaa
 aaa
 pwE
 aah
-aah
+boU
 aah
 aah
 cug
@@ -40053,7 +40175,7 @@ aah
 bHk
 cug
 aah
-aah
+boU
 aah
 pwE
 vdU
@@ -40294,7 +40416,7 @@ aaa
 aaa
 pwE
 aah
-aah
+boU
 aah
 aah
 pwE
@@ -40310,14 +40432,14 @@ pwE
 eQF
 pwE
 aah
+ikD
 aah
 aah
 aah
-aah
-aah
+lUc
 boU
 aah
-aah
+nFt
 pwE
 aaa
 aae
@@ -40572,8 +40694,8 @@ aah
 vdU
 aah
 pwE
-aah
-aah
+bHg
+qWB
 aah
 pwE
 aaa
@@ -40824,12 +40946,12 @@ pwE
 qkS
 aah
 pwE
-aah
+bHg
 aah
 aah
 aah
 pwE
-aah
+ikD
 aah
 aah
 pwE
@@ -41086,8 +41208,8 @@ bGZ
 aah
 aah
 pwE
-aah
-aah
+sph
+hoV
 aah
 pwE
 aaa
@@ -41345,7 +41467,7 @@ aah
 pwE
 aah
 boU
-aah
+jGc
 pwE
 aaa
 aae
@@ -41593,7 +41715,7 @@ aah
 pwE
 pwE
 pwE
-bFS
+uwL
 pwE
 aah
 aah
@@ -41601,7 +41723,7 @@ aah
 boU
 pwE
 aah
-aah
+pEA
 aah
 pwE
 aaa
@@ -41858,7 +41980,7 @@ aah
 aah
 pwE
 aah
-aah
+oPg
 aah
 pwE
 aaa
@@ -42092,7 +42214,7 @@ aaa
 (54,1,1) = {"
 aaa
 pwE
-aah
+epo
 aah
 aah
 pwE
@@ -42105,7 +42227,7 @@ hlo
 hlo
 pwE
 pwE
-aah
+qWB
 aah
 aah
 pwE
@@ -42364,7 +42486,7 @@ aah
 aah
 aah
 aah
-aah
+jNb
 aah
 aah
 aah
@@ -42631,7 +42753,7 @@ aah
 aah
 aah
 cug
-otu
+lfV
 pwE
 aae
 aae
@@ -43145,7 +43267,7 @@ aah
 aah
 aah
 cug
-otu
+lfV
 pwE
 aae
 aae
@@ -43389,9 +43511,9 @@ aah
 bHu
 aah
 pwE
-otu
+lfV
 gqf
-otu
+lfV
 pwE
 jeq
 aah
@@ -43898,8 +44020,8 @@ pwE
 aah
 nFt
 pwE
-aah
-aah
+epo
+epo
 pwE
 aah
 aah
@@ -45437,9 +45559,9 @@ aah
 aah
 pwE
 aah
-aah
-aah
-aah
+boU
+boU
+boU
 aah
 aah
 aah
@@ -46211,9 +46333,9 @@ aah
 aah
 aah
 cug
-jeq
-lGX
-jeq
+wVn
+mwr
+bEl
 cug
 aah
 aah
@@ -46983,7 +47105,7 @@ aah
 pwE
 dvg
 dvg
-aah
+jNb
 bHd
 aah
 aah
