@@ -41,7 +41,7 @@
 	build_path = /obj/item/pickaxe/drill/diamonddrill
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
+/*
 /datum/design/plasmacutter
 	name = "Plasma Cutter"
 	desc = "You could use it to cut limbs off of xenos! Or, you know, mine stuff."
@@ -61,7 +61,7 @@
 	build_path = /obj/item/gun/energy/plasmacutter/adv
 	category = list("Mining Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_CARGO
-
+*/
 /datum/design/plasteel_pick
 	name = "plasteel-tipped pickaxe"
 	desc = "A pickaxe with a plasteel pick head. Less robust at cracking rock walls and digging up dirt than the titanium pickaxe, but better at cracking open skulls."
