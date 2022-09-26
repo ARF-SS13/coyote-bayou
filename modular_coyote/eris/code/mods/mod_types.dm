@@ -319,7 +319,7 @@
 	UPGRADE_FUELCOST_MULT = 1.25
 	)*/
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.25,
+		GUN_UPGRADE_DAMAGE_MULT = 1.20,
 		GUN_UPGRADE_CHARGECOST = 1.35
 	)
 	I.prefix = "boosted"
