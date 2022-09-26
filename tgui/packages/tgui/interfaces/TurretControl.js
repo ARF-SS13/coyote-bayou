@@ -35,14 +35,6 @@ export const TurretControl = (props, context) => {
                 disabled={locked}
                 onClick={() => act('mode')} />
             </LabeledList.Item>
-            <LabeledList.Item label="Target Cyborgs">
-              <Button
-                icon={shootCyborgs ? 'check' : 'times'}
-                content={shootCyborgs ? 'Yes' : 'No'}
-                selected={shootCyborgs}
-                disabled={locked}
-                onClick={() => act('shoot_silicons')} />
-            </LabeledList.Item>
           </LabeledList>
         </Section>
       </Window.Content>
