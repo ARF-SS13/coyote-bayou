@@ -83,7 +83,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_MULT = 1.3,
+		GUN_UPGRADE_DAMAGE_MULT = 1.25,
 		GUN_UPGRADE_CHARGECOST = 1.4
 		)
 	I.gun_loc_tag = GUN_BARREL
@@ -458,7 +458,7 @@
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
 	GUN_UPGRADE_RECOIL = 1.2,
-	GUN_UPGRADE_DAMAGE_MULT = 1.35,
+	GUN_UPGRADE_DAMAGE_MULT = 1.30,
 	GUN_UPGRADE_CHARGECOST = 1.5)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
@@ -466,16 +466,15 @@
 // Massively lowers cell charge usage at the cost of lower damage
 /obj/item/gun_upgrade/mechanism/overdrive
 	name = "REPCONN overdrive chip"
-	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of lowering the power output of a weapon."
+	desc = "This experimental chip is a cutting edge tool attachment which bypasses power management protocols to dramatically increase battery cell potential at the cost of lowering the power output of a weapon tremendously."
 	icon_state = "overdrive"
 
 /obj/item/gun_upgrade/mechanism/overdrive/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_RECOIL = 2,
-	GUN_UPGRADE_DAMAGE_MULT = 0.5,
-	GUN_UPGRADE_CHARGECOST = 0.75,
+	GUN_UPGRADE_DAMAGE_MULT = 0.25, // Quite possibly a good trade off to full auto, methinks - Risingstarslash
+	GUN_UPGRADE_CHARGECOST = 0.4, // Lower cost by 60% but every shot will tickle practically on its own.
 	GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
