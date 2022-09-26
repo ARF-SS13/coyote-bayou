@@ -7391,6 +7391,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier3,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"dBM" = (
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor7-old"
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "dCS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/bars,
@@ -10112,19 +10118,19 @@
 /area/f13/tunnel)
 "gqf" = (
 /obj/structure/table,
+/obj/machinery/light/fo13colored/Red{
+	dir = 8
+	},
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
-	},
-/obj/machinery/light/fo13colored/Red{
-	dir = 8
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
@@ -13187,11 +13193,11 @@
 	},
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
 	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
@@ -15568,20 +15574,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/f13/caves)
-"lGX" = (
-/obj/structure/table,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Reprogrammed Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
 "lHm" = (
 /obj/structure/wreck/trash/five_tires,
 /obj/structure/spider/stickyweb,
@@ -16275,6 +16267,10 @@
 /obj/structure/table,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/ncr)
+"mnr" = (
+/obj/structure/obstacle/jammed_door,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mnX" = (
 /obj/machinery/light/broken{
 	dir = 1
@@ -16448,11 +16444,11 @@
 "mwr" = (
 /obj/structure/table,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
@@ -16607,18 +16603,18 @@
 /area/f13/caves)
 "mEU" = (
 /obj/structure/table,
+/obj/machinery/light/fo13colored/Red,
 /obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "A Rob-Co turret, pristene and sleek. Its robotic eyes pass over authorized individuals...onto you.";
-	faction = list("Syndicate");
+	desc = "A reprogrammed Rob-Co turret. It still works. Its targetting also seems to have been overriden to target anything not between eight and ten feet and green.";
+	faction = list("hostile","supermutant");
 	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Containment Turret";
+	name = "Reprogrammed Turret";
 	scan_range = 9;
 	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
 	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
 	throw_range = 9
 	},
-/obj/machinery/light/fo13colored/Red,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "mFv" = (
@@ -16783,6 +16779,12 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"mNa" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 4
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "mNK" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -24072,6 +24074,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
+"tOl" = (
+/obj/structure/obstacle/barbedwire{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "tOJ" = (
 /obj/structure/barricade/bars,
 /obj/structure/table/wood/junk,
@@ -25086,6 +25094,12 @@
 	name = "stone floor"
 	},
 /area/f13/caves)
+"uSR" = (
+/obj/structure/obstacle/barbedwire/end{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "uTw" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
@@ -36802,7 +36816,7 @@ fLm
 aah
 aah
 lIU
-aah
+mNa
 aah
 aah
 aah
@@ -37059,7 +37073,7 @@ boU
 aah
 gDe
 lIU
-aah
+tOl
 aah
 aah
 boU
@@ -37316,7 +37330,7 @@ aah
 aah
 aah
 efb
-aah
+uSR
 aah
 jGc
 aah
@@ -39380,7 +39394,7 @@ aah
 aah
 cug
 aah
-aah
+dBM
 boU
 aah
 aah
@@ -41691,7 +41705,7 @@ aah
 pwE
 pwE
 pwE
-bFS
+mnr
 pwE
 aah
 aah
@@ -46310,7 +46324,7 @@ aah
 aah
 cug
 wVn
-lGX
+mwr
 bEl
 cug
 aah
