@@ -473,8 +473,9 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-	GUN_UPGRADE_DAMAGE_MULT = 0.25, // Quite possibly a good trade off to full auto, methinks - Risingstarslash
-	GUN_UPGRADE_CHARGECOST = 0.4, // Lower cost by 60% but every shot will tickle practically on its own.
+	GUN_UPGRADE_RECOIL = 0.9, // lowering the power output of the weapon should realistically lower the recoil - risingstarslash
+	GUN_UPGRADE_DAMAGE_MULT = 0.5,
+	GUN_UPGRADE_CHARGECOST = 0.65,
 	GUN_UPGRADE_FULLAUTO = TRUE)
 	I.req_fuel_cell = REQ_CELL
 	I.gun_loc_tag = GUN_MECHANISM
