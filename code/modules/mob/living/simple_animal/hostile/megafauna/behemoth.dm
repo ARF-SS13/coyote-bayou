@@ -11,8 +11,8 @@
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6)
 	loot = list(/obj/item/card/id/dogtag/enclave/noncombatant, /obj/item/stack/f13Cash/random/med) //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
 	armour_penetration = 0.7
-	melee_damage_lower = 40
-	melee_damage_upper = 50
+	melee_damage_lower = 50
+	melee_damage_upper = 70
 	vision_range = 9
 	aggro_vision_range = 18
 	speed = 8
