@@ -351,6 +351,21 @@
 
 // N
 
+/datum/gear/donator/kits/nightmare6669
+	name = "Chadsune"
+	path = /obj/item/storage/box/large/custom_kit/nightmare6669
+	ckeywhitelist = list("nightmare6669")
+
+/obj/item/storage/box/large/custom_kit/nightmare6669/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/storage/belt/shoulderholster(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/clothing/head/helmet/f13/combat/swat(src)
+	new /obj/item/clothing/suit/armor/medium/combat/swat(src)
+	new /obj/item/melee/onehanded/machete/spatha(src)
+
 /datum/gear/donator/kits/nirzak
 	name = "Vas Kit"
 	path = /obj/item/storage/box/large/custom_kit/nirzak
