@@ -76,7 +76,7 @@
 		switch(chosen_attack)
 			if(1)
 				if(world.time >= stomp_cooldown)
-					stomp_cooldown = world.time + 300 //Ashdrake swoop timer +50 ticks
+					stomp_cooldown = world.time + 170 // 170 ticks between each stomp
 					heavy_stomp()
 				else
 					return
@@ -88,7 +88,7 @@
 	switch(chosen_attack)
 		if(1)
 			if(world.time >= stomp_cooldown)
-				stomp_cooldown = world.time + 300 //Ashdrake swoop timer +50 ticks
+				stomp_cooldown = world.time + 170 // 170 ticks between each stomp
 				heavy_stomp()
 			else
 				return
