@@ -41,7 +41,7 @@
 	var/stored_move_dirs = 0
 	/// If the behemoth is allowed to move
 	var/can_move = TRUE
-	var/stomp_cooldown = 150 // WOW WHO WOULD HAVE THOUGHT?
+	COOLDOWN_DECLARE(stomp_cooldown)
 
 /datum/action/innate/megafauna_attack/heavy_stomp
 	name = "Heavy Stomp"
@@ -75,9 +75,10 @@
 	if(client)
 		switch(chosen_attack)
 			if(1)
-				if(world.time >= stomp_cooldown)
-					stomp_cooldown = world.time + 170 // 170 ticks between each stomp
+				if(COOLDOWN_FINISHED(src, stomp_cooldown))
+					COOLDOWN_START(src, stomp_cooldown, 15 SECONDS)
 					heavy_stomp()
+					return
 				else
 					return
 			if(2)
@@ -87,9 +88,10 @@
 	chosen_attack = rand(1, 2)
 	switch(chosen_attack)
 		if(1)
-			if(world.time >= stomp_cooldown)
-				stomp_cooldown = world.time + 170 // 170 ticks between each stomp
+			if(COOLDOWN_FINISHED(src, stomp_cooldown))
+				COOLDOWN_START(src, stomp_cooldown, 15 SECONDS)
 				heavy_stomp()
+				return
 			else
 				return
 		if(2)
@@ -126,7 +128,7 @@
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 4, 1, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				if(do_damage)
-					L.apply_damage(30, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //If you're going to stealthbuff something, remove my code comment from it. Thank you. Do NOT raise this above 30 without reducing its attack damage, or normal players will get 1 shot.
+					L.apply_damage(30, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //Please do not stealth-buff things. Keep this at 30 or lower.
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
