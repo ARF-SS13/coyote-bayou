@@ -6,28 +6,40 @@
 
 #define TURRET_LASER_COOLDOWN_TIME 1 SECONDS
 #define TURRET_SHOOT_DELAY_BASE 1 SECONDS
-#define TURRET_BWEEP_COOLDOWN 2 SECONDS
+#define TURRET_BWEEP_COOLDOWN 1 SECONDS
 #define TURRET_SCAN_RATE 3 SECONDS
-#define TURRET_INTEREST_TIME 10 SECONDS
+#define TURRET_INTEREST_TIME 6 SECONDS
 
 /// The turret becomes angy at whoever shoots it, regardless of other settings
-#define TURRET_FLAG_SHOOT_REACTION (1<<0)
-/// The turret only shoots people with unauthorized weapons (basically everyone)
-#define TURRET_FLAG_SHOOT_WEAPONS (1<<1)
-/// The turret shoots everything that can be broken. Seriously.
-#define TURRET_FLAG_SHOOT_EVERYTHING (1<<2)
+#define TF_SHOOT_REACTION (1<<0)
+/// The turret only shoots people with unauthorized weapons (basically everyone) (currently unused)
+#define TF_SHOOT_WEAPONS (1<<1)
+/// The turret shoots everything that can be broken. Seriously. (currently unused)
+#define TF_SHOOT_EVERYTHING (1<<2)
 /// The turret shoots at players
-#define TURRET_FLAG_SHOOT_PLAYERS (1<<3)
+#define TF_SHOOT_PLAYERS (1<<3)
 /// The turret shoots at wildlife (ghouls, geckos, etc)
-#define TURRET_FLAG_SHOOT_WILDLIFE (1<<4)
+#define TF_SHOOT_WILDLIFE (1<<4)
 /// The turret shoots raiders
-#define TURRET_FLAG_SHOOT_RAIDERS (1<<6)
+#define TF_SHOOT_RAIDERS (1<<6)
 /// The turret shoots robots (gutsies, handies)
-#define TURRET_FLAG_SHOOT_ROBOTS (1<<7)
+#define TF_SHOOT_ROBOTS (1<<7)
 /// Turret ignores faction checks and treats everything is allowed to shoot as hostile
-#define TURRET_FLAG_IGNORE_FACTION (1<<8)
+#define TF_IGNORE_FACTION (1<<8)
 /// Turret shines a laser at its target
-#define TURRET_FLAG_USE_LASER_POINTER (1<<9)
+#define TF_USE_LASER_POINTER (1<<9)
+/// Turret stays quiet
+#define TF_BE_REALLY_LOUD (1<<10)
+/// Default utility flags
+#define TURRET_DEFAULT_UTILITY TF_USE_LASER_POINTER | TF_BE_REALLY_LOUD | TF_SHOOT_REACTION
+/// Default turret targets
+#define TURRET_DEFAULT_TARGET_FLAGS TF_SHOOT_PLAYERS | TF_SHOOT_WILDLIFE | TF_SHOOT_RAIDERS | TF_SHOOT_ROBOTS
+/// Default turret targets - raider owned turret
+#define TURRET_RAIDER_OWNED_FLAGS TF_SHOOT_PLAYERS | TF_SHOOT_WILDLIFE | TF_SHOOT_ROBOTS
+/// Default turret targets - robot owned turret
+#define TURRET_ROBOT_OWNED_FLAGS TF_SHOOT_PLAYERS | TF_SHOOT_WILDLIFE | TF_SHOOT_RAIDERS
+/// Default turret targets - player-domestic turret
+#define TURRET_PLAYER_OWNED_FLAGS TF_SHOOT_WILDLIFE | TF_SHOOT_RAIDERS | TF_SHOOT_ROBOTS
 
 /obj/machinery/porta_turret
 	name = "turret"
@@ -37,12 +49,12 @@
 	invisibility = INVISIBILITY_OBSERVER	//the turret is invisible if it's inside its cover
 	density = TRUE
 	desc = "A covered turret that shoots at its enemies."
-	use_power = IDLE_POWER_USE				//this turret uses and requires power
-	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
-	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
+	use_power = FALSE //this turret uses and requires power -- no it doesnt~
+	idle_power_usage = 50 //when inactive, this turret takes up constant 50 Equipment power
+	active_power_usage = 300 //when active, this turret takes up constant 300 Equipment power
 	req_access = list(ACCESS_SECURITY) /// Only people with Security access
-	power_channel = EQUIP	//drains power from the EQUIPMENT channel
-	max_integrity = 160		//the turret's health
+	power_channel = EQUIP //drains power from the EQUIPMENT channel
+	max_integrity = 160 //the turret's health
 	integrity_failure = 0.5
 	armor = ARMOR_VALUE_HEAVY
 	/// Base turret icon state
@@ -84,7 +96,7 @@
 	/// The cover that is covering this turret
 	var/obj/machinery/porta_turret_cover/cover = null
 	/// Turret flags about who is turret allowed to shoot
-	var/turret_flags = TURRET_FLAG_SHOOT_WILDLIFE | TURRET_FLAG_SHOOT_PLAYERS
+	var/turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY
 	/// Determines if the turret is on
 	var/on = TRUE
 	/// Same faction mobs will never be shot at, no matter the other settings
@@ -121,6 +133,12 @@
 	var/scan_ping_max = 3
 	/// Number of "I scanned" beeps left to make
 	var/scan_pings_left = 0
+	/// Rate the turret will scan for targets
+	var/scan_rate = TURRET_SCAN_RATE
+	/// We're in caution mode and beeping every time we scan for something
+	var/active_scanning = FALSE
+	/// Time between scanning for targets
+	COOLDOWN_DECLARE(turret_scan_cooldown)
 	/// Noise it makes when it sees someone it doesnt like
 	var/target_sound = 'sound/machines/terminal_alert.ogg'
 	/// Noise it makes when it scans for targets while interested
@@ -137,14 +155,14 @@
 	var/datum/weakref/last_target_turf
 	/// Time that a turret can be interested in something
 	COOLDOWN_DECLARE(turret_interest_time)
-	/// Time between scanning for targets
-	COOLDOWN_DECLARE(turret_scan_cooldown)
 	/// Number of shots in a burst
 	var/burst_count = 1
 	/// Delay between burst shots
 	var/burst_delay = GUN_BURSTFIRE_DELAY_BASE
 	/// Inaccuracy in degrees
 	var/shot_spread = 15
+	/// The bullet we'll use when we try to shoot. This will override the stun and lethal projectile!
+	var/obj/item/ammo_casing/casing_type
 	/// Are we shooting?
 	var/am_currently_shooting
 	var/list/stun_sound_properties = list(
@@ -226,6 +244,8 @@
 			icon_state = "[base_icon_state]_unpowered"
 
 /obj/machinery/porta_turret/proc/setup(obj/item/gun/turret_gun)
+	if(!stored_gun)
+		return
 	if(stored_gun)
 		qdel(stored_gun)
 		stored_gun = null
@@ -275,14 +295,15 @@
 	var/list/data = list(
 		"locked" = locked,
 		"on" = on,
-		"turret_shoot_weapons" = turret_flags & TURRET_FLAG_SHOOT_WEAPONS,
-		"turret_shoot_wildlife" = turret_flags & TURRET_FLAG_SHOOT_WILDLIFE,
-		"turret_shoot_all" = turret_flags & TURRET_FLAG_SHOOT_EVERYTHING,
-		"turret_shoot_players" = turret_flags & TURRET_FLAG_SHOOT_PLAYERS,
-		"turret_shoot_raiders" = turret_flags & TURRET_FLAG_SHOOT_RAIDERS,
-		"turret_shoot_robots" = turret_flags & TURRET_FLAG_SHOOT_ROBOTS,
-		"turret_shoot_ignore_faction" = turret_flags & TURRET_FLAG_IGNORE_FACTION,
-		"turret_use_laser_pointer" = turret_flags & TURRET_FLAG_USE_LASER_POINTER,
+		"turret_shoot_weapons" = turret_flags & TF_SHOOT_WEAPONS,
+		"turret_shoot_wildlife" = turret_flags & TF_SHOOT_WILDLIFE,
+		"turret_shoot_all" = turret_flags & TF_SHOOT_EVERYTHING,
+		"turret_shoot_players" = turret_flags & TF_SHOOT_PLAYERS,
+		"turret_shoot_raiders" = turret_flags & TF_SHOOT_RAIDERS,
+		"turret_shoot_robots" = turret_flags & TF_SHOOT_ROBOTS,
+		"turret_shoot_ignore_faction" = turret_flags & TF_IGNORE_FACTION,
+		"turret_use_laser_pointer" = turret_flags & TF_USE_LASER_POINTER,
+		"turret_make_noise" = turret_flags & TF_BE_REALLY_LOUD,
 		"manual_control" = manual_control,
 		"silicon_user" = FALSE,
 		"allow_manual_control" = FALSE,
@@ -305,35 +326,33 @@
 		if("power")
 			if(anchored)
 				toggle_on()
-				return TRUE
 			else
 				to_chat(usr, span_warning("It has to be secured first!"))
+				return TRUE
 		if("turret_return_shoot_weapons")
-			turret_flags ^= TURRET_FLAG_SHOOT_WEAPONS
-			return TRUE
+			turret_flags ^= TF_SHOOT_WEAPONS
 		if("turret_return_shoot_wildlife")
-			turret_flags ^= TURRET_FLAG_SHOOT_WILDLIFE
-			return TRUE
+			turret_flags ^= TF_SHOOT_WILDLIFE
 		if("turret_return_shoot_everything")
-			turret_flags ^= TURRET_FLAG_SHOOT_EVERYTHING
-			return TRUE
+			turret_flags ^= TF_SHOOT_EVERYTHING
 		if("turret_return_shoot_players")
-			turret_flags ^= TURRET_FLAG_SHOOT_PLAYERS
-			return TRUE
+			turret_flags ^= TF_SHOOT_PLAYERS
 		if("turret_return_shoot_raiders")
-			turret_flags ^= TURRET_FLAG_SHOOT_RAIDERS
-			return TRUE
+			turret_flags ^= TF_SHOOT_RAIDERS
 		if("turret_return_shoot_robots")
-			turret_flags ^= TURRET_FLAG_SHOOT_ROBOTS
-			return TRUE
+			turret_flags ^= TF_SHOOT_ROBOTS
 		if("turret_return_ignore_faction")
-			turret_flags ^= TURRET_FLAG_IGNORE_FACTION
-			return TRUE
+			turret_flags ^= TF_IGNORE_FACTION
+		if("turret_return_use_laser_pointer")
+			turret_flags ^= TF_USE_LASER_POINTER
+		if("turret_return_make_noise")
+			turret_flags ^= TF_BE_REALLY_LOUD
 		if("manual")
 			if(!issilicon(usr))
 				return
 			give_control(usr)
-			return TRUE
+	if(turret_flags & TF_BE_REALLY_LOUD)
+		playsound(get_turf(src), 'sound/machines/terminal_prompt_confirm.ogg', 100, FALSE, 0, ignore_walls = TRUE)
 
 /obj/machinery/porta_turret/ui_host(mob/user)
 	if(has_cover && cover)
@@ -356,12 +375,23 @@
 			//try and salvage its components
 			to_chat(user, span_notice("You begin prying the metal coverings off..."))
 			if(I.use_tool(src, user, 20))
-				if(stored_gun)
-					stored_gun.forceMove(loc)
-					stored_gun = null
-				to_chat(user, span_notice("You remove the turret and salvage some components."))
-				new /obj/item/stack/sheet/metal(loc, rand(1,4))
-				new /obj/item/assembly/prox_sensor(loc)
+				var/turf/right_here = get_turf(src)
+				if(isturf(right_here))
+					if(stored_gun)
+						stored_gun.forceMove(right_here)
+						stored_gun = null
+					new /obj/item/stack/sheet/metal(right_here, rand(1,4))
+					new /obj/item/assembly/prox_sensor(right_here)
+					var/num_salvage_to_make = HAS_TRAIT(user, TRAIT_TECHNOPHREAK) ? rand(1,2) : 1
+					for(var/loots in 1 to num_salvage_to_make)
+						switch(rand(1,10))
+							if(1 to 6)
+								new /obj/item/salvage/low(right_here)
+							if(7 to 8)
+								new /obj/item/salvage/tool(right_here)
+							if(9 to 10)
+								new /obj/item/salvage/high(right_here)
+					to_chat(user, span_notice("You remove the turret and salvage some components."))
 				qdel(src)
 				return
 
@@ -422,11 +452,11 @@
 		//if the turret is on, the EMP no matter how severe disables the turret for a while
 		//and scrambles its settings, with a slight chance of having an emag effect
 		if(prob(50))
-			turret_flags |= TURRET_FLAG_SHOOT_WILDLIFE
+			turret_flags |= TF_SHOOT_WILDLIFE
 		if(prob(50))
-			turret_flags |= TURRET_FLAG_SHOOT_WEAPONS
+			turret_flags |= TF_SHOOT_WEAPONS
 		if(prob(20))
-			turret_flags |= TURRET_FLAG_SHOOT_EVERYTHING
+			turret_flags |= TF_SHOOT_EVERYTHING
 
 		toggle_on(FALSE)
 		remove_control()
@@ -437,12 +467,12 @@
 	. = ..()
 	if(. && obj_integrity > 0) //damage received
 		spark_system.start()
-		if(on && (turret_flags & TURRET_FLAG_SHOOT_REACTION) && prob(35))
+		if(on && (turret_flags & TF_SHOOT_REACTION) && prob(35))
 			interest_check(lose_interest = TRUE) // Something more interesting's happening!
 			COOLDOWN_RESET(src, turret_scan_cooldown) // Quick, look for them!
 
 /obj/machinery/porta_turret/proc/reset_attacked()
-	turret_flags &= ~TURRET_FLAG_SHOOT_REACTION
+	turret_flags &= ~TF_SHOOT_REACTION
 
 /obj/machinery/porta_turret/deconstruct(disassembled = TRUE)
 	qdel(src)
@@ -476,7 +506,7 @@
 
 	if(COOLDOWN_TIMELEFT(src, turret_scan_cooldown))
 		return
-	COOLDOWN_START(src, turret_scan_cooldown, TURRET_SCAN_RATE)
+	COOLDOWN_START(src, turret_scan_cooldown, scan_rate)
 	scan_check()
 	for(var/mob/potential_target in oview(scan_range, base))
 		if(potential_target.invisibility > SEE_INVISIBLE_LIVING)
@@ -486,30 +516,30 @@
 			continue
 
 		/// If it cares about faction, and the thing's your faction, skip it
-		if(!(turret_flags & TURRET_FLAG_IGNORE_FACTION))
+		if(!(turret_flags & TF_IGNORE_FACTION))
 			if(in_faction(potential_target))
 				continue
 
 		/// If its got a mind and is human, add it
-		if(turret_flags & TURRET_FLAG_SHOOT_PLAYERS)
+		if(turret_flags & TF_SHOOT_PLAYERS)
 			if(potential_target.client)
 				acquire_target(potential_target)
 				return
 
 		/// If if its an animal (or ghoul), add it
-		if(turret_flags & TURRET_FLAG_SHOOT_WILDLIFE)//if it's set to check for simple animals
+		if(turret_flags & TF_SHOOT_WILDLIFE)//if it's set to check for simple animals
 			if(issimplewildlife(potential_target))
 				acquire_target(potential_target)
 				return
 
 		/// If if its a raider, or some kind of vaguely intelligent humanlike, add it
-		if(turret_flags & TURRET_FLAG_SHOOT_RAIDERS)
+		if(turret_flags & TF_SHOOT_RAIDERS)
 			if(issimplehumanlike(potential_target))
 				acquire_target(potential_target)
 				return
 
 		/// If if its a robot, add it
-		if(turret_flags & TURRET_FLAG_SHOOT_ROBOTS)
+		if(turret_flags & TF_SHOOT_ROBOTS)
 			if(issimplerobot(potential_target))
 				acquire_target(potential_target)
 				return
@@ -528,6 +558,7 @@
 		else if(!(our_mob_target in oview(scan_range, src)))
 			last_target = null // we cant see them!
 		else // we can see them? shoot them!
+			interest_check(TRUE) // seeing our target is very interesting!
 			target(our_mob_target)
 			return
 	if(last_target_turf)
@@ -542,15 +573,17 @@
 /obj/machinery/porta_turret/proc/point_laser_at(atom/target)
 	if(!istype(target))
 		return
+	if(!(turret_flags & TF_USE_LASER_POINTER))
+		return
 	if(COOLDOWN_TIMELEFT(src, turret_laser_pointer_antispam))
 		return
 	var/turf/where_to_shine = get_turf(target)
-	if(!isturf(target))
+	if(!isturf(where_to_shine))
 		return
 	var/image/I = image(turret_pointer_icon, where_to_shine, turret_pointer_state, -10)
 	I.pixel_x = rand(-5,5)
 	I.pixel_y = rand(-5,5)
-	flick_overlay_view(I, where_to_shine, 2 SECONDS)
+	flick_overlay_view(I, where_to_shine, 1 SECONDS)
 	COOLDOWN_START(src, turret_laser_pointer_antispam, TURRET_LASER_COOLDOWN_TIME)
 
 /obj/machinery/porta_turret/proc/popUp()	//pops the turret up
@@ -594,7 +627,7 @@
 	if(obj_flags & EMAGGED)
 		return 10	//if emagged, always return 10.
 
-	if((turret_flags & (TURRET_FLAG_SHOOT_EVERYTHING | TURRET_FLAG_SHOOT_REACTION)) && !allowed(perp))
+	if((turret_flags & (TF_SHOOT_EVERYTHING | TF_SHOOT_REACTION)) && !allowed(perp))
 		//if the turret has been attacked or is angry, target all non-sec people
 		return 10
 
@@ -619,10 +652,12 @@
 /obj/machinery/porta_turret/proc/wake_up()
 	if(awake)
 		return
+	awake = TRUE
 	popUp()
 	speed_up_processing()
 	scan_check(TRUE)
-	playsound(get_turf(src), wakeup_sound, 100, FALSE, 5, ignore_walls = TRUE)
+	if(turret_flags & TF_BE_REALLY_LOUD)
+		playsound(get_turf(src), wakeup_sound, 100, FALSE, 5, ignore_walls = TRUE)
 	visible_message(span_alert("[src] deploys its active sensors!"))
 
 /// Nothing interesting, go back to sleep
@@ -630,10 +665,11 @@
 /obj/machinery/porta_turret/proc/go_to_sleep()
 	if(!awake)
 		return
+	awake = FALSE
 	popDown()
 	slow_down_processing()
-	scan_pings_left = 0
-	playsound(get_turf(src), sleep_sound, 100, FALSE, 5, ignore_walls = TRUE)
+	if(turret_flags & TF_BE_REALLY_LOUD)
+		playsound(get_turf(src), sleep_sound, 100, FALSE, 5, ignore_walls = TRUE)
 	visible_message(span_notice("[src] retracts its active sensors!"))
 
 /// Just a wrapper for making it stop fast processing
@@ -655,7 +691,8 @@
 		last_target_turf = WEAKREF(target_turf)
 	interest_check(TRUE)
 	wake_up()
-	playsound(get_turf(src), target_sound, 100, FALSE, 17, ignore_walls = TRUE) // angry bweep
+	if(turret_flags & TF_BE_REALLY_LOUD)
+		playsound(get_turf(src), target_sound, 100, FALSE, 17, ignore_walls = TRUE) // angry bweep
 	point_laser_at(new_target)
 	new_target.visible_message(
 		span_alert("[src] swivels its gun around to face [new_target]!"),
@@ -682,14 +719,18 @@
 /// Mostly just makes noise and puts the turret to sleep after a while
 /obj/machinery/porta_turret/proc/scan_check(start_scanning = FALSE)
 	if(start_scanning)
+		active_scanning = TRUE
 		scan_pings_left = scan_ping_max
 		return
-	if(!scan_pings_left)
+	if(!active_scanning)
 		return
-	if(scan_pings_left-- < 1)
+	if(scan_pings_left < 1)
+		active_scanning = FALSE
 		go_to_sleep()
 		return
-	playsound(get_turf(src), scan_ping_sound, 100, FALSE, 17, ignore_walls = TRUE)
+	if(turret_flags & TF_BE_REALLY_LOUD)
+		playsound(get_turf(src), scan_ping_sound, 100, FALSE, 17, ignore_walls = TRUE)
+	scan_pings_left -= 1
 
 /// Take in a target, and start the process of shooting at them, if possible
 /// Also beep, point itself at it, and give someone crotchdot
@@ -749,12 +790,8 @@
 		var/mob/are_they_okay = target
 		if(are_they_okay.stat > maximum_valid_stat)
 			return FALSE // Stop stop he's already dead (or in crit)
-
-	var/obj/item/projectile/turret_projectile
-	//any emagged turrets drains 2x power and uses a different projectile?
 	if(mode == TURRET_STUN)
 		//use_power(reqpower)
-		turret_projectile = new stun_projectile(our_turf)
 		playsound(
 			src,
 			stun_projectile_sound,
@@ -767,7 +804,6 @@
 			)
 	else
 		//use_power(reqpower * 2)
-		turret_projectile = new lethal_projectile(our_turf)
 		playsound(
 			src,
 			lethal_projectile_sound,
@@ -778,18 +814,41 @@
 			distant_sound = lethal_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
 			distant_range = lethal_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
 			)
-	//Shooting Code:
-	turret_projectile.preparePixelProjectile(target, our_turf, spread = rand(-shot_spread, shot_spread))
-	turret_projectile.firer = src
-	turret_projectile.fired_from = src
-	turret_projectile.fire()
-	return turret_projectile
+
+	var/the_spread = rand(-shot_spread, shot_spread)
+	if(casing_type)
+		var/obj/item/ammo_casing/casing = new casing_type(our_turf)
+		casing.fire_casing(
+			target = target,
+			user = src,
+			params = null,
+			distro = shot_spread,
+			quiet = null,
+			zone_override = ran_zone(),
+			spread = the_spread,
+			damage_multiplier = null,
+			penetration_multiplier = null,
+			projectile_speed_multiplier = null,
+			fired_from = src
+			)
+		qdel(casing)
+	else
+		var/obj/item/projectile/turret_projectile
+		if(mode == TURRET_STUN)
+			turret_projectile = new stun_projectile(our_turf)
+		else
+			turret_projectile = new lethal_projectile(our_turf)
+		turret_projectile.preparePixelProjectile(target, our_turf, spread = the_spread)
+		turret_projectile.firer = src
+		turret_projectile.fired_from = src
+		turret_projectile.fire()
+	return TRUE
 
 /obj/machinery/porta_turret/proc/setState(on, mode)
 	if(controllock)
 		return
 
-	//shoot_cyborgs ? (turret_flags |= TURRET_FLAG_SHOOT_ROBOTS) : (turret_flags &= ~TURRET_FLAG_SHOOT_ROBOTS)
+	//shoot_cyborgs ? (turret_flags |= TF_SHOOT_ROBOTS) : (turret_flags &= ~TF_SHOOT_ROBOTS)
 	toggle_on(on)
 	src.mode = mode
 	power_change()
@@ -906,7 +965,6 @@
 /obj/machinery/porta_turret/syndicate/energy/pirate
 	max_integrity = 260
 	integrity_failure = 0.08
-	armor = ARMOR_VALUE_HEAVY
 
 /obj/machinery/porta_turret/syndicate/energy/raven
 	stun_projectile =  /obj/item/projectile/beam/laser
@@ -926,7 +984,6 @@
 	lethal_projectile = /obj/item/projectile/plasma/turret
 	lethal_projectile_sound = 'sound/weapons/gunshot_smg.ogg'
 	stun_projectile_sound = 'sound/weapons/gunshot_smg.ogg'
-	armor = ARMOR_VALUE_HEAVY
 
 /obj/machinery/porta_turret/syndicate/shuttle/target(atom/movable/target)
 	if(target)
@@ -939,7 +996,7 @@
 
 /obj/machinery/porta_turret/ai
 	faction = list("silicon")
-	turret_flags = TURRET_FLAG_SHOOT_WILDLIFE | TURRET_FLAG_SHOOT_PLAYERS | TURRET_FLAG_IGNORE_FACTION
+	turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY | TF_IGNORE_FACTION
 
 /obj/machinery/porta_turret/ai/assess_perp(mob/living/carbon/human/perp)
 	return 10 //AI turrets shoot at everything not in their faction
@@ -1276,7 +1333,7 @@
 
 /obj/machinery/porta_turret/lasertag
 	req_access = list(ACCESS_MAINT_TUNNELS, ACCESS_THEATRE)
-	turret_flags = TURRET_FLAG_SHOOT_WEAPONS
+	turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY
 	var/team_color
 
 /obj/machinery/porta_turret/lasertag/assess_perp(mob/living/carbon/human/perp)
@@ -1333,6 +1390,7 @@
 			if(istype(P, /obj/item/projectile/beam/lasertag/bluetag))
 				toggle_on(FALSE)
 				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
+
 /* * * * * * * * * * * *
  * Fallout 13 turrets  *
  * * * * * * * * * * * */
@@ -1348,18 +1406,66 @@
 	use_power = FALSE
 	max_integrity = 160
 	integrity_failure = 0.5
-	armor = ARMOR_VALUE_MEDIUM
+	armor = ARMOR_VALUE_HEAVY
 	always_up = TRUE
 	has_cover = FALSE
 	scan_range = 9
 	req_access = list(ACCESS_SYNDICATE)
 	mode = TURRET_LETHAL
 	installation = null
+	turret_flags = TURRET_DEFAULT_TARGET_FLAGS | TURRET_DEFAULT_UTILITY
 	stun_projectile = /obj/item/projectile/bullet/c9mm/rubber
 	lethal_projectile = /obj/item/projectile/bullet/c9mm/simple
 	lethal_projectile_sound = 'sound/f13weapons/9mm.ogg'
 	stun_projectile_sound = 'sound/f13weapons/9mm.ogg'
 	faction = null
+
+/// .22LR turret
+/obj/machinery/porta_turret/f13/turret_22lr
+	name = "salvaged mini-plink turret"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		More of a 'polite' model, designed to kindly request intruders to leave with its itty bitty twenty-two. \
+		This one is chambered in .22LR and maintained by raccoons, apparently."
+	stun_projectile = /obj/item/projectile/bullet/c22
+	lethal_projectile = /obj/item/projectile/bullet/c22/rubber
+	lethal_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
+	stun_projectile_sound = 'sound/f13weapons/servicerifle.ogg'
+	shot_spread = 5
+
+/// .22LR turret - raider
+/obj/machinery/porta_turret/f13/turret_22lr/raider
+	name = "raider mini-plink turret"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		About as 'polite' as a raider gets, designed to kindly request intruders to leave with its itty bitty twenty-two. \
+		This one is chambered in .22LR and manaces with bitchin' spikes."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("raider")
+
+/// .22LR burst turret
+/obj/machinery/porta_turret/f13/turret_22lr/burstfire
+	name = "salvaged mini-SMG turret"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
+		This one is chambered in .22LR and maintained by raccoons, apparently."
+	burst_count = 6
+	burst_delay = GUN_BURSTFIRE_DELAY_FASTER
+	shot_spread = 10
+
+/// .22LR burst turret - raider
+/obj/machinery/porta_turret/f13/turret_22lr/burstfire/raider
+	name = "raider mini-SMG turret"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		A favorite of the <span class='swarmer'>STEELHIVE</span> clan as they claim it contains a swarm of angry metal bees. \
+		This one, however, is chambered in .22LR and manaces with one huge spike on the back."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("raider")
 
 /// 9mm turret
 /obj/machinery/porta_turret/f13/turret_9mm
@@ -1369,11 +1475,12 @@
 	base_icon_state = "syndie"
 	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
-		This one is chambered in 9mm and maintained by raccoons, apprently."
+		This one is chambered in 9mm and maintained by raccoons, apparently."
 	stun_projectile = /obj/item/projectile/bullet/c9mm/rubber
 	lethal_projectile = /obj/item/projectile/bullet/c9mm/simple
 	lethal_projectile_sound = 'sound/f13weapons/9mm.ogg'
 	stun_projectile_sound = 'sound/f13weapons/9mm.ogg'
+	shot_spread = 10
 
 /// 9mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_9mm/raider
@@ -1381,6 +1488,7 @@
 	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		This one is chambered in 9mm and menaces with spikes. Really sells that badguy chic."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
 /// Burstfire 9mm turret
@@ -1392,9 +1500,10 @@
 	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
-		That seems to be the case with this one. It is chambered in 9mm and maintained by raccoons, apprently."
+		That seems to be the case with this one. It is chambered in 9mm and maintained by raccoons, apparently."
 	burst_count = 3
 	burst_delay = GUN_BURSTFIRE_DELAY_FAST
+	shot_spread = 15
 
 /// 9mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire/raider
@@ -1403,6 +1512,7 @@
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		That seems to be the case with this one. It is chambered in 9mm and menaces with rusty metal spikes."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
 /// 5.56mm turret
@@ -1414,11 +1524,12 @@
 	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
-		This one is chambered in 5.56mm and maintained by raccoons, apprently."
+		This one is chambered in 5.56mm and maintained by raccoons, apparently."
 	stun_projectile = /obj/item/projectile/bullet/a556/rubber
 	lethal_projectile = /obj/item/projectile/bullet/a556/simple
 	lethal_projectile_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	stun_projectile_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	shot_spread = 3
 
 /// 5.56mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_556/raider
@@ -1427,6 +1538,7 @@
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		This one is chambered in 5.56mm and has a sweet painting of a flaming skull on the side."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
 /// Burstfire 5.56mm turret
@@ -1442,6 +1554,7 @@
 		That seems to be the case with this one. It is chambered in 5.56mm and maintained by raccoons, apparently."
 	burst_count = 4
 	burst_delay = GUN_BURSTFIRE_DELAY_SLOW
+	shot_spread = 7
 
 /// burstfire 5.56mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider
@@ -1451,4 +1564,55 @@
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
 		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
 		This one is chambered in 5.56mm and has a sweet painting of a flaming skull on the side."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("raider")
+
+/// shotgun turret
+/obj/machinery/porta_turret/f13/turret_shotgun
+	name = "hunting autoshotgun"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		This one is chambered in 12 gauge shotgun shells and maintained by raccoons, apparently."
+	stun_projectile = null
+	lethal_projectile = null
+	lethal_projectile_sound = 'sound/f13weapons/shotgun.ogg'
+	stun_projectile_sound = 'sound/f13weapons/shotgun.ogg'
+	casing_type = /obj/item/ammo_casing/shotgun/buckshot
+
+/obj/machinery/porta_turret/f13/turret_shotgun/raider
+	name = "raider autoshotgun"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		This one is chambered in 12 gauge shotgun shells and menaces with evil looking spikes."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("raider")
+
+/// burst shotgun turret
+/obj/machinery/porta_turret/f13/turret_shotgun/burstfire
+	name = "\"hunting\" fully-autoshotgun"
+	icon = 'icons/obj/turrets.dmi'
+	icon_state = "syndie_off"
+	base_icon_state = "syndie"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		Geez, was there really <i>THAT</i> much wildlife before the war? Talk about a moose mulcher... \
+		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and maintained by raccoons, apparently."
+	burst_count = 3
+	burst_delay = GUN_BURSTFIRE_DELAY_SLOWER
+
+/obj/machinery/porta_turret/f13/turret_shotgun/burstfire/raider
+	name = "raider auto-streetsweeper"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		The mounted shotgun seems to have been swapped out for some kind of makeshift gatling gun connected to a hopper of shotgun shells. \
+		A clever design, leveraging the bump-roller cam's motion to operate the action, truly a marvel of modern suffering. \
+		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and menaces with rusty spikes."
+	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")

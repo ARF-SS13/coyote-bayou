@@ -16,6 +16,7 @@ export const PortableTurret = (props, context) => {
     turret_shoot_raiders,
     turret_shoot_robots,
     turret_shoot_ignore_faction,
+    turret_make_noise,
     turret_use_laser_pointer,
     manual_control,
     allow_manual_control,
@@ -94,6 +95,12 @@ export const PortableTurret = (props, context) => {
                 content="Use Targetting Laser"
                 disabled={locked}
                 onClick={() => act('turret_return_use_laser_pointer')} />
+              <Button.Checkbox
+                fluid
+                checked={turret_make_noise}
+                content="Use Internal Speakers"
+                disabled={locked}
+                onClick={() => act('turret_return_make_noise')} />
             </Section>
           )}
         </Fragment>
