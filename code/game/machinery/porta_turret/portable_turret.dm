@@ -9,6 +9,7 @@
 #define TURRET_BWEEP_COOLDOWN 1 SECONDS
 #define TURRET_SCAN_RATE 3 SECONDS
 #define TURRET_INTEREST_TIME 6 SECONDS
+#define TURRET_PREFIRE_DELAY 1 SECONDS
 
 /// The turret becomes angy at whoever shoots it, regardless of other settings
 #define TF_SHOOT_REACTION (1<<0)
@@ -129,6 +130,10 @@
 	var/shot_delay = TURRET_SHOOT_DELAY_BASE
 	/// Cooldown for shooting
 	COOLDOWN_DECLARE(turret_refire_delay)
+	/// Minimum time between shots
+	var/prefire_delay = TURRET_PREFIRE_DELAY
+	/// Cooldown for shooting
+	COOLDOWN_DECLARE(turret_prefire_delay)
 	/// Number of "I scanned" beeps to make
 	var/scan_ping_max = 3
 	/// Number of "I scanned" beeps left to make
@@ -694,6 +699,7 @@
 	if(turret_flags & TF_BE_REALLY_LOUD)
 		playsound(get_turf(src), target_sound, 100, FALSE, 17, ignore_walls = TRUE) // angry bweep
 	point_laser_at(new_target)
+	COOLDOWN_START(src, turret_prefire_delay, prefire_delay)
 	new_target.visible_message(
 		span_alert("[src] swivels its gun around to face [new_target]!"),
 		span_alert("[src] suddenly swivels its gun in your direction!"),
@@ -748,6 +754,8 @@
 /// Initiates firing procedure
 /obj/machinery/porta_turret/proc/start_shooting(atom/target, stagger_enabled = FALSE)
 	if(!raised) //the turret has to be raised in order to fire - makes sense, right?
+		return
+	if(COOLDOWN_TIMELEFT(src, turret_prefire_delay))
 		return
 	if(COOLDOWN_TIMELEFT(src, turret_refire_delay))
 		return
