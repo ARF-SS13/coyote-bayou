@@ -18,6 +18,8 @@
 	var/casing_ejector = TRUE //whether the gun ejects the chambered casing
 	var/magazine_wording = "magazine"
 	var/en_bloc = 0
+	/// Which direction do the casings fly out?
+	var/handedness = GUN_EJECTOR_RIGHT
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -61,12 +63,11 @@
 	if(istype(AC)) //there's a chambered round
 		if(casing_ejector)
 			AC.forceMove(drop_location()) //Eject casing onto ground.
-			AC.bounce_away(TRUE)
+			AC.bounce_away(TRUE, toss_direction = get_ejector_direction(user))
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
 	chamber_round()
-
 
 /obj/item/gun/ballistic/proc/chamber_round()
 	if (chambered || !magazine)
@@ -340,3 +341,14 @@
 	if(istype(magazine,/obj/item/ammo_box/magazine/internal))
 		magazine?.max_ammo = initial(magazine?.max_ammo)
 	..()
+
+/obj/item/gun/ballistic/proc/get_ejector_direction(mob/user)
+	if(user?.dir)
+		switch(handedness)
+			if(GUN_EJECTOR_RIGHT)
+				return turn(user.dir, -90)
+			if(GUN_EJECTOR_LEFT)
+				return turn(user.dir, -90)
+			if(GUN_EJECTOR_ANY)
+				return turn(user.dir, pick(-90, 90))
+	return angle2dir_cardinal(rand(0,360)) // something fucked up, just send a direction
