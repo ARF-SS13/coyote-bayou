@@ -10,7 +10,7 @@
 	maxHealth = 2000 //used to be 3000
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6)
 	loot = list(/obj/item/card/id/dogtag/enclave/noncombatant, /obj/item/stack/f13Cash/random/med) //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
-	armour_penetration = 0.7
+	armour_penetration = 0.5 //0.7 was too high in testing, since if it managed to zerg speed you into a wall; this would immediately kill you afterwards. Regardless.
 	melee_damage_lower = 50
 	melee_damage_upper = 70
 	vision_range = 9
@@ -36,11 +36,12 @@
 	/// Saves the turf the megafauna was created at (spawns exit portal here)
 	var/turf/starting
 	/// Range for behemoth stomping when it moves
-	var/stomp_range = 1
+	var/stomp_range = 0 //ALLOW THEM TO APPROACH BEFORE PHASE 2 FFS OMAIGAWD
 	/// Stores directions the mob is moving, then calls that a move has fully ended when these directions are removed in moved
 	var/stored_move_dirs = 0
 	/// If the behemoth is allowed to move
 	var/can_move = TRUE
+	var/stomp_cooldown = 150 // WOW WHO WOULD HAVE THOUGHT?
 
 /datum/action/innate/megafauna_attack/heavy_stomp
 	name = "Heavy Stomp"
@@ -63,7 +64,7 @@
 /mob/living/simple_animal/hostile/megafauna/behemoth/OpenFire()
 	SetRecoveryTime(0, 100)
 	if(health <= maxHealth*0.5)
-		stomp_range = 2
+		stomp_range = 1 //Please do not make a 4x4 death zone that goes through walls whenever it walks... Which it does... Very quickly.
 		speed = 2
 		move_to_delay = 2
 	else
@@ -74,7 +75,11 @@
 	if(client)
 		switch(chosen_attack)
 			if(1)
-				heavy_stomp()
+				if(world.time >= stomp_cooldown)
+					stomp_cooldown = world.time + 300 //Ashdrake swoop timer +50 ticks
+					heavy_stomp()
+				else
+					return
 			if(2)
 				disorienting_scream()
 		return
@@ -82,7 +87,11 @@
 	chosen_attack = rand(1, 2)
 	switch(chosen_attack)
 		if(1)
-			heavy_stomp()
+			if(world.time >= stomp_cooldown)
+				stomp_cooldown = world.time + 300 //Ashdrake swoop timer +50 ticks
+				heavy_stomp()
+			else
+				return
 		if(2)
 			disorienting_scream()
 
