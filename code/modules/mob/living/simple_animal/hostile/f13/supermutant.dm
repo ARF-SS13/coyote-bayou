@@ -125,6 +125,22 @@
 	anchored = FALSE
 	..()
 
+//RANGED SUPERMUTANT\\
+
+/obj/item/projectile/bullet/a762/improvised/supermutant
+	name = "handloaded .308 bullet"
+	damage = BULLET_DAMAGE_RIFLE_MEDIUM * 0.6 //Half damage + 10%. These guys shouldn't be using hyper-lethal PVP rounds, especially in the quantities they are spawned.
+	stamina = BULLET_STAMINA_RIFLE_MEDIUM * 0.2 //Getting stamcrit because you were shot by four of them off-screen is not good.
+	spread = BULLET_SPREAD_HANDLOAD
+	recoil = BULLET_RECOIL_RIFLE_MEDIUM
+
+	wound_bonus = BULLET_WOUND_RIFLE_MEDIUM * 0.2 //No. Just hellno. These bullets should still wound but nowhere near as often as PVP rounds.
+	bare_wound_bonus = BULLET_WOUND_RIFLE_MEDIUM * 0.2 //^Above
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_MEDIUM * 1.5 //^Above
+	
+	pixels_per_second = BULLET_SPEED_RIFLE_MEDIUM
+
+
 /mob/living/simple_animal/hostile/supermutant/rangedmutant
 	desc = "A huge and ugly mutant humanoid.  This one is armed with a poorly maintained hunting rifle."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
@@ -134,9 +150,9 @@
 	ranged = 1
 	maxHealth = 144 //9 shots of 9mm, more room for error to account for dodges
 	health = 144
-	retreat_distance = 4
-	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
+	retreat_distance = 2 //Ditto.
+	minimum_distance = 5 //These guys really shouldn't sit at max-range.
+	projectiletype = /obj/item/projectile/bullet/a762/improvised/supermutant
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	loot = list(/obj/item/ammo_box/a308, /obj/item/gun/ballistic/rifle/hunting)
 	footstep_type = FOOTSTEP_MOB_HEAVY
