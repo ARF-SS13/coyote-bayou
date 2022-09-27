@@ -126,7 +126,7 @@
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 4, 1, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				if(do_damage)
-					L.apply_damage(40, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //This takes into count armor now. Also makes it damage the chest first, so he can't break your legs instantly.
+					L.apply_damage(30, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //If you're going to stealthbuff something, remove my code comment from it. Thank you. Do NOT raise this above 30 without reducing its attack damage, or normal players will get 1 shot.
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
