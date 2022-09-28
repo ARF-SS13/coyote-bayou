@@ -1281,6 +1281,19 @@
 	)
 
 /* * * * * * * * * * *
+ * Varmint Rifle w/ 20rd mag
+ * Light semi-auto rifle
+ * .223 / 5.56mm
+ * Slow to fire
+ * Literally the above, but it spawns with a bigger magazine
+ *
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/extended
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+
+/* * * * * * * * * * *
  * Verminkiller Rifle
  * Tricked out semi-auto rifle
  * .223 / 5.56mm
