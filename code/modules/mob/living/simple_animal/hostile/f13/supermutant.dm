@@ -152,7 +152,7 @@
 	health = 144
 	retreat_distance = 2 //Ditto.
 	minimum_distance = 5 //These guys really shouldn't sit at max-range.
-	projectiletype = /obj/item/projectile/bullet/a762/improvised/supermutant
+	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
 	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
 	loot = list(/obj/item/ammo_box/a308, /obj/item/gun/ballistic/rifle/hunting)
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -172,6 +172,9 @@
 	icon_state = icon_dead
 	anchored = FALSE
 	..()
+	
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/weak
+	projectiletype = /obj/item/projectile/bullet/a762/improvised/supermutant
 
 /mob/living/simple_animal/hostile/supermutant/legendary
 	name = "legendary super mutant"
