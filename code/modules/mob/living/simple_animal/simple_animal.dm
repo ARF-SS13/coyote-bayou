@@ -47,8 +47,14 @@
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
 	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
-	///Minimum force required to deal any damage.
+	/// Mob damage threshold, subtracted from incoming damage
 	var/force_threshold = 0
+	/// mob's inherent armor
+	var/datum/armor/mob_armor = ARMOR_VALUE_LIGHT
+	/// Additional armor modifiers that are applied to the actual armor value
+	var/mob_armor_tokens = list()
+	/// Description line for their armor, cached nice and sweet
+	var/mob_armor_description = span_phobia("Oh deary me all my armor fell off uwu") // dear god dont let this show up
 
 	///Temperature effect.
 	var/minbodytemp = 250
@@ -174,6 +180,16 @@
 		AddComponent(/datum/component/footstep, footstep_type)
 	pixel_x = rand(-randpixel, randpixel)
 	pixel_y = rand(-randpixel, randpixel)
+	/// WARNING: DUPLICATED CODE, MAKE BETTER
+	setup_mob_armor_values()
+	if (islist(mob_armor))
+		mob_armor = getArmor(arglist(mob_armor))
+	else if (!mob_armor)
+		mob_armor = getArmor()
+	else if (!istype(mob_armor, /datum/armor))
+		stack_trace("Invalid type [mob_armor.type] found in .armor during /mob/living/simple_animal Initialize()")
+	/// End duplicated code
+	setup_mob_armor_description()
 	setup_variations()
 
 
@@ -191,6 +207,12 @@
 	QDEL_NULL(access_card)
 
 	return ..()
+
+/mob/living/simple_animal/examine(mob/user)
+	. = ..()
+	. += mob_armor_description
+	
+
 
 /mob/living/simple_animal/updatehealth()
 	..()
@@ -819,3 +841,105 @@
 			return pick(GLOB.adverbs)
 		if(26)
 			return pick(GLOB.adjectives)
+
+/// AAA DUPLICATED CODE FROM OBJ.DM
+/mob/living/simple_animal/proc/setup_mob_armor_values()
+	if(!mob_armor)
+		return
+	if(!islist(mob_armor))
+		return
+	if(length(mob_armor_tokens) < 1)
+		return // all done!
+	
+	for(var/list/token in mob_armor_tokens)
+		for(var/modifier in token)
+			switch(GLOB.armor_token_operation_legend[modifier])
+				if("MULT")
+					mob_armor[modifier] = round(mob_armor[modifier] * token[modifier], 1)
+				if("ADD")
+					mob_armor[modifier] = max(mob_armor[modifier] + token[modifier], 0)
+				else
+					continue
+
+/// compiles the mob's armor description
+/mob/living/simple_animal/proc/setup_mob_armor_description()
+	if(!mob_armor)
+		mob_armor_description = null
+
+	var/list/descriptors = list("\n" + span_notice("You consider [src]'s resistances...") + "\n")
+	///Melee
+	var/melee_armor = mob_armor.getRating("melee")
+	descriptors += span_notice("[p_they(TRUE)] look[p_s()] like [p_they()]")
+	switch(melee_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice("'d bruise like a mutfruit.")
+		if(20 to 40)
+			descriptors += span_notice(" could take a punch, maybe two if [p_they()] had to.")
+		if(40 to 60)
+			descriptors += span_alert(" could take a slap from [istype(src, /mob/living/simple_animal/hostile/supermutant) ? "another" : "a"] supermutant and get right back up.")
+		if(60 to 80)
+			descriptors += span_alert(" could play chicken with a car and win.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/deathclaw) ? "another" : "a"] deathclaw and win.")
+	descriptors += "\n"
+	///Bullet
+	var/bullet_armor = mob_armor.getRating("bullet")
+	descriptors += span_notice("You feel like")
+	switch(bullet_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a bullet would smash right through [p_they()].")
+		if(20 to 40)
+			descriptors += span_notice(" a bullet would hurt them good, with heavy enough ammo.")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of ammo to take down.")
+		if(60 to 80)
+			descriptors += span_alert(" gunfire would just annoy [src.p_them()].")
+		if(80 to INFINITY)
+			descriptors += span_warning(" you'd have better luck blowing up a tank with a BB gun.")
+	descriptors += "\n"
+	///Laser
+	var/laser_armor = mob_armor.getRating("laser")
+	descriptors += span_notice("You figure")
+	switch(laser_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a laser would slice through [src.p_them()] like brahminbutter.")
+		if(20 to 40)
+			descriptors += span_notice(" a laser would singe the everliving daylights out of [src.p_them()].")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of juice to take down.")
+		if(60 to 80)
+			descriptors += span_alert(" laserfire would just make [src.p_them()] uncomfortably warm.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" you may as well be waving a torch at [src.p_them()].")
+	descriptors += "\n"
+	///plasma
+	var/plasma_armor = mob_armor.getRating("energy")
+	descriptors += span_notice("You imagine that")
+	switch(plasma_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a burst of intense heat would simply burn [src.p_them()] to a crisp.")
+		if(20 to 40)
+			descriptors += span_notice(" a burst of intense heat would sear [src.p_them()] medium-well.")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of agonizing plasma to put them out of their misery.")
+		if(60 to 80)
+			descriptors += span_alert(", for whatever reason, [p_they()] wouldn't be too bothered by intense heat.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" this is some kind of super creature drinks plasma for breakfast.")
+	descriptors += "\n"
+	///dt
+	var/damage_threshold = mob_armor.getRating("damage_threshold")
+	switch(damage_threshold)
+		if(-INFINITY to 1)
+			descriptors += span_notice("[src.p_they(TRUE)] look[p_s()] like a reasonably safe opponent.")
+		if(2 to 4)
+			descriptors += span_notice("[src.p_they(TRUE)] look[p_s()] like an even fight.")
+		if(5 to 6)
+			descriptors += span_alert("[src.p_they(TRUE)] look[p_s()] like quite a gamble!")
+		if(7 to 9)
+			descriptors += span_alert("[src.p_they(TRUE)] look[p_s()] like it would wipe the floor with you!")
+		if(9 to INFINITY)
+			descriptors += span_warning("What would you like your tombstone to say?")
+	descriptors += "\n"
+	if(LAZYLEN(descriptors))
+		mob_armor_description = jointext(descriptors, "")

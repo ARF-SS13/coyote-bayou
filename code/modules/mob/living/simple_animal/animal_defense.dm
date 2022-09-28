@@ -113,20 +113,33 @@
 		temp_damage = 0
 	else
 		temp_damage *= damage_coeff[damagetype]
-
-	if(temp_damage >= 0 && temp_damage <= force_threshold)
+	if(temp_damage <= 0)
 		visible_message(span_warning("[src] looks unharmed!"))
 		return FALSE
-	else
-		apply_damage(damage, damagetype, null, getarmor(null, armorcheck))
-		return TRUE
 
-/mob/living/simple_animal/bullet_act(obj/item/projectile/Proj)
-	if(!Proj)
+	var/armor = run_armor_check(null, damagetype, null, null, 0, null)
+	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null), 0)
+	apply_damage(temp_damage, damagetype, null, armor, null, null, null, damage_threshold = dt)
+	return TRUE
+
+/mob/living/simple_animal/bullet_act(obj/item/projectile/P)
+	var/totaldamage = P.damage
+	var/final_percent = 0
+	var/armor = run_armor_check(null, P.flag, null, null, P.armour_penetration, null)
+	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null) - P.damage_threshold_penetration, 0)
+	if(!P.nodamage)
+		apply_damage(totaldamage, P.damage_type, null, armor, null, null, null, damage_threshold = dt)
+	var/missing = 100 - final_percent
+	var/armor_ratio = armor * 0.01
+	if(missing > 0)
+		final_percent += missing * armor_ratio
+	return P.on_hit(src, final_percent, null) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
+
+/* 	if(!Proj)
 		return
 	apply_damage(Proj.damage, Proj.damage_type)
 	Proj.on_hit(src)
-	return BULLET_ACT_HIT
+	return BULLET_ACT_HIT */
 
 /mob/living/simple_animal/ex_act(severity, target, origin)
 	if(origin && istype(origin, /datum/spacevine_mutation) && isvineimmune(src))
@@ -163,3 +176,6 @@
 		else
 			visual_effect_icon = ATTACK_EFFECT_SMASH
 	..()
+
+/mob/living/simple_animal/getarmor(def_zone = null, type)
+	return mob_armor.getRating(type)

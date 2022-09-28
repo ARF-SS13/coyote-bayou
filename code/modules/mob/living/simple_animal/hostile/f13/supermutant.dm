@@ -2,20 +2,40 @@
 
 /mob/living/simple_animal/hostile/supermutant
 	name = "super mutant"
-	desc = "A huge and ugly mutant humanoid."
+	desc = "A gigantic, green, angry-looking humanoid wrapped in a jumpsuit that may have fit him... her? at some point. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. Have fun!"
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_LIGHT
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T1,
+		ARMOR_MODIFIER_UP_DT_T1
+		)
 	speak_chance = 10
-	speak = list("GRRRRRR!", "ARGH!", "NNNNNGH!", "HMPH!", "ARRRRR!")
-	speak_emote = list("shouts", "yells")
+	speak = list(
+		"GRRRRRR!",
+		"ARGH!",
+		"NNNNNGH!",
+		"HMPH!",
+		"ARRRRR!"
+		)
+	speak_emote = list(
+		"shouts",
+		"yells"
+		)
 	move_to_delay = 5
 	stat_attack = CONSCIOUS
 	robust_searching = 1
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	emote_taunt_sound = list('sound/f13npc/supermutant/attack1.ogg', 'sound/f13npc/supermutant/attack2.ogg', 'sound/f13npc/supermutant/attack3.ogg')
+	emote_taunt_sound = list(
+		'sound/f13npc/supermutant/attack1.ogg',
+		'sound/f13npc/supermutant/attack2.ogg',
+		'sound/f13npc/supermutant/attack3.ogg'
+		)
 	emote_taunt = list("yells")
 	taunt_chance = 30
 	turns_per_move = 5
@@ -25,7 +45,10 @@
 	maxHealth = 160 
 	health = 160
 	force_threshold = 14
-	faction = list("hostile", "supermutant")
+	faction = list(
+		"hostile",
+		"supermutant"
+		)
 	melee_damage_lower = 25
 	melee_damage_upper = 45
 	aggro_vision_range = 7
@@ -37,9 +60,22 @@
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	a_intent = INTENT_GRAB
-	idlesound = list('sound/f13npc/supermutant/idle1.ogg', 'sound/f13npc/supermutant/idle2.ogg', 'sound/f13npc/supermutant/idle3.ogg', 'sound/f13npc/supermutant/idle4.ogg' )
-	death_sound = list('sound/f13npc/supermutant/death1.ogg', 'sound/f13npc/supermutant/death2.ogg')
-	aggrosound = list('sound/f13npc/supermutant/alert1.ogg', 'sound/f13npc/supermutant/alert2.ogg', 'sound/f13npc/supermutant/alert3.ogg', 'sound/f13npc/supermutant/alert4.ogg')
+	idlesound = list(
+		'sound/f13npc/supermutant/idle1.ogg',
+		'sound/f13npc/supermutant/idle2.ogg',
+		'sound/f13npc/supermutant/idle3.ogg',
+		'sound/f13npc/supermutant/idle4.ogg'
+		)
+	death_sound = list(
+		'sound/f13npc/supermutant/death1.ogg',
+		'sound/f13npc/supermutant/death2.ogg'
+		)
+	aggrosound = list(
+		'sound/f13npc/supermutant/alert1.ogg',
+		'sound/f13npc/supermutant/alert2.ogg',
+		'sound/f13npc/supermutant/alert3.ogg',
+		'sound/f13npc/supermutant/alert4.ogg'
+		)
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -57,19 +93,9 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 
-
 /mob/living/simple_animal/hostile/supermutant/Aggro()
 	..()
 	summon_backup(15)
-
-/mob/living/simple_animal/hostile/supermutant/bullet_act(obj/item/projectile/Proj)
-	if(!Proj)
-		return
-	if(prob(85) || Proj.damage > 26)
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] is deflected harmlessly by \the [src]'s thick skin!"))
-		return FALSE
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -92,9 +118,9 @@
 	speak_emote = list("shouts", "yells")
 	emote_hear = list("yawns", "mumbles","sighs")
 	emote_see = list("raises his shovel", "shovels some dirt away", "waves his shovel above his head angrily")
-	response_help_simple  = "touches"
+	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
-	response_harm_simple   = "punches"
+	response_harm_simple = "punches"
 //	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
@@ -106,14 +132,22 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant
-	desc = "A huge and ugly mutant humanoid.  This one is brandishing a sledgehammer."
+	name = "sledgehammer supermutant"
+	desc = "An enormous, green tank of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding a sledgehammer. Lovely."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_melee_s"
 	icon_living = "hulk_melee_s"
 	icon_dead = "hulk_melee_s"
+	mob_armor = ARMOR_VALUE_MEDIUM
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
 	maxHealth = 160
 	health = 160
-	force_threshold = 14
 	melee_damage_lower = 20
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
@@ -126,30 +160,62 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant
-	desc = "A huge and ugly mutant humanoid.  This one is armed with a poorly maintained hunting rifle."
+	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding a crude shotgun. Lovely."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
+	mob_armor = ARMOR_VALUE_MEDIUM
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
 	ranged = 1
 	maxHealth = 144 //9 shots of 9mm, more room for error to account for dodges
 	health = 144
 	retreat_distance = 4
 	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
-	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
-	loot = list(/obj/item/ammo_box/a308, /obj/item/gun/ballistic/rifle/hunting)
+	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	projectiletype = null
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	sound_after_shooting_delay = 1 SECONDS
+	extra_projectiles = 1
+	auto_fire_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	ranged_cooldown_time = 4 SECONDS
+	loot = list(
+		/obj/item/ammo_box/shotgun/improvised,
+		/obj/item/gun/ballistic/revolver/widowmaker
+		)
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
-		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
-		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
-		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
 		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
 		SP_IGNORE_WALLS(TRUE),
-		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
-		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
 	)
+
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/varmint
+	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding some kind of rifle. Lovely."
+	casingtype = null
+	projectiletype = /obj/item/projectile/bullet/a556/simple
+	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	sound_after_shooting = null
+	sound_after_shooting_delay = 1 SECONDS
+	extra_projectiles = 0
+	ranged_cooldown_time = 2 SECONDS
+	loot = list(
+		/obj/item/gun/ballistic/automatic/varmint
+		)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -161,6 +227,12 @@
 	name = "legendary super mutant"
 	desc = "A huge and ugly mutant humanoid.He has a faint yellow glow to him, scars adorn his body. This super mutant is a grizzled vetern of combat. Look out!"
 	color = "#FFFF00"
+	mob_armor = ARMOR_VALUE_HEAVY
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T2,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
@@ -186,6 +258,12 @@
 	icon_dead = "night_s"
 	maxHealth = 240
 	health = 240
+	mob_armor = ARMOR_VALUE_MEDIUM
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
 	alpha = 80
 	force_threshold = 15
 	melee_damage_lower = 35

@@ -1191,7 +1191,7 @@
 
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_400
+		FULL_AUTO_200
 	)
 
 	automatic = TRUE

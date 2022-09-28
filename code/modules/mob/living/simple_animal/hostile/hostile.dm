@@ -21,6 +21,10 @@
 	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	/// Play a sound after they shoot?
+	var/sound_after_shooting
+	/// How long after shooting should it play?
+	var/sound_after_shooting_delay = 1 SECONDS
 	var/list/projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PLASMA_VOLUME),
@@ -267,7 +271,11 @@
 			if(robust_searching)
 				if(faction_check && !attack_same)
 					return FALSE
-				if(L.stat > stat_attack || (L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA)))
+				if(L.stat > stat_attack)
+					return FALSE
+				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
+					return FALSE
+				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
 					return FALSE
 				if(friends[L] > 0 && foes[L] < 1)
 					return FALSE
@@ -476,6 +484,8 @@
 		for(var/i in 1 to extra_projectiles)
 			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
 	ranged_cooldown = world.time + ranged_cooldown_time
+	if(sound_after_shooting)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
 	if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
 		projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
 
@@ -485,8 +495,18 @@
 	var/turf/startloc = get_turf(targets_from)
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
-		playsound(src, projectilesound, 100, 1)
+		playsound(
+			src,
+			projectilesound,
+			projectile_sound_properties[SOUND_PROPERTY_VOLUME],
+			projectile_sound_properties[SOUND_PROPERTY_VARY],
+			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
 		playsound(
@@ -510,7 +530,6 @@
 		P.preparePixelProjectile(targeted_atom, src)
 		P.fire()
 		return P
-
 
 /mob/living/simple_animal/hostile/proc/CanSmashTurfs(turf/T)
 	return iswallturf(T) || ismineralturf(T)

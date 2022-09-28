@@ -475,3 +475,53 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 
 /// Damages DT is effective with
 GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
+
+/* DEBUG ARMOR VALUES, DONT ACTUALLY USE
+ * 50 armor across the board
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEBUG_50ARMOR_0DT list(\
+		"melee" = 50, \
+		"bullet" = 50, \
+		"laser" = 50, \
+		"energy" = 50, \
+		"bomb" = 50, \
+		"bio" = 50, \
+		"rad" = 50, \
+		"fire" = 50, \
+		"acid" = 50, \
+		"wound" = 50, \
+		"damage_threshold" = 0)
+
+/* DEBUG ARMOR VALUES, DONT ACTUALLY USE
+ * 50 armor across the board
+ * 10 DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEBUG_50ARMOR_10DT list(\
+		"melee" = 50, \
+		"bullet" = 50, \
+		"laser" = 50, \
+		"energy" = 50, \
+		"bomb" = 50, \
+		"bio" = 50, \
+		"rad" = 50, \
+		"fire" = 50, \
+		"acid" = 50, \
+		"wound" = 50, \
+		"damage_threshold" = 10)
+
+/* DEBUG ARMOR VALUES, DONT ACTUALLY USE
+ * 0 armor across the board
+ * 10 DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEBUG_0ARMOR_10DT list(\
+		"melee" = 0, \
+		"bullet" = 0, \
+		"laser" = 0, \
+		"energy" = 0, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 10)
