@@ -237,10 +237,12 @@
 	ckeywhitelist = list("fuzlet")
 
 /obj/item/storage/box/large/custom_kit/fuzlet2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sportcarbine(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/gun/ballistic/revolver/detective(src)
 	new /obj/item/ammo_box/c38box(src)
 	new /obj/item/melee/onehanded/knife/switchblade(src)
-	new /obj/item/toy/plush/mammal/fox(src)
+	new /obj/item/toy/plush/mammal/fox/fuzzy(src)
 
 // G
 
@@ -444,6 +446,20 @@
 	name = "Shocome's relic cross"
 	path = /obj/item/nullrod/rosary/keep_as_is
 	ckeywhitelist = list("soulwinter446")
+
+/datum/gear/donator/kits/superlagg
+	name = "Bigfox Kit"
+	path = /obj/item/storage/box/large/custom_kit/superlagg
+	ckeywhitelist = list("superlagg")
+
+/obj/item/storage/box/large/custom_kit/superlagg/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/varmint/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/gun/ballistic/revolver/revolver44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/toy/plush/mammal/fox/squishfox(src)
 
 /datum/gear/donator/kits/swirlby
 	name = "Tribal Kit"

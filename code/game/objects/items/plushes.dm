@@ -688,10 +688,6 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	attack_verb = list("hacked", "detonated", "overloaded")
 	squeak_override = list('sound/machines/beep.ogg' = 9, 'sound/machines/buzz-two.ogg' = 1)
 
-/obj/item/toy/plush/mammal/fox
-	icon_state = "fox"
-	item_state = "fox"
-
 /obj/item/toy/plush/snakeplushie
 	name = "snake plushie"
 	desc = "An adorable stuffed toy that resembles a snake. Not to be mistaken for the real thing."
@@ -704,6 +700,41 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	name = "mammal plushie"
 	desc = "An adorable stuffed toy resembling some sort of crew member."
 	can_random_spawn = FALSE
+
+/obj/item/toy/plush/mammal/fox
+	name = "fox plushie"
+	desc = "An adorable stuffed toy resembling a fox."
+	icon_state = "fox"
+	item_state = "fox"
+
+/obj/item/toy/plush/mammal/fox/fuzzy
+	name = "cute fox plushie"
+	desc = "A smol, adorable stuffed toy resembling a fox. Looks like it could use a good lap."
+	icon_state = "fox"
+	item_state = "fox"
+	attack_verb = list("squeaked", "nibbled", "snuggled", "went A at")
+	squeak_override = list('sound/effects/mousesqueek.ogg' = 1)
+	gender = FEMALE
+
+/obj/item/toy/plush/mammal/fox/squishfox
+	name = "snuggly fox plushie"
+	desc = "A massive, adorable, bottom-heavy beanbag chair resembling a fox. Seems to have a lap that just keeps on going.\n\nIt might not look that big, but trust me, that toy is massive!"
+	icon_state = "fox"
+	item_state = "fox"
+	attack_verb = list("squished", "floofed", "wobbled", "jiggled")
+	squeak_override = list('modular_coyote/sound/typing/arfs1sounds/fennec2.ogg' = 1)
+	gender = FEMALE
+	w_class = WEIGHT_CLASS_GIGANTIC // bigfox
+
+/obj/item/toy/plush/mammal/fox/squishfox/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete/box/huge/foxpocket)
+
+/datum/component/storage/concrete/box/huge/foxpocket // big fuckin foxxo
+
+/datum/component/storage/concrete/box/huge/foxpocket/Initialize()
+	. = ..()
+	can_hold = /obj/item/toy/plush/mammal/fox/squishfox
 
 /obj/item/toy/plush/catgirl/fermis
 	name = "medcat plushie"
