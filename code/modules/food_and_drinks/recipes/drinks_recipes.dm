@@ -1412,7 +1412,7 @@
 	id = "feratea"
 	results = list(/datum/reagent/consumable/tea/feratea = 3)
 	required_reagents = list(/datum/reagent/consumable/ferajuice = 1, /datum/reagent/water = 2)
-	required_temp = 315315
+	required_temp = 315
 
 /datum/chemical_reaction/daturatea
 	name = "Datura Tea"
