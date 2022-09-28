@@ -1348,6 +1348,74 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
+ * Bushmaster Arm Gun
+ * Light semi-auto rifle... pistol thing
+ * .223 / 5.56mm
+ * Slow to fire
+ * Inaccurate
+ * Kicks all over the place
+ * Suuuuuucks
+ * But it makes a click!
+ * Unique (thankfully)
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun
+	name = ".223 arm pistol"
+	desc = "A"
+	icon_state = "varmint"
+	item_state = "varmintrifle"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	var/turnt = FALSE
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+
+	gun_tags = list(GUN_SCOPE)
+
+	can_bayonet = FALSE
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+
+	can_scope = TRUE
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 12
+
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 27
+	suppressor_y_offset = 31
+
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 21
+	flight_y_offset = 21
+	actions_types = list(/datum/action/item_action/toggle_armgun)
+	fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun/proc/rotate_the_stupid_gun(mob/user)
+	if(turnt)
+		if(user)
+			user.show_message("You click the gun back into place")
+			return
+	if(user)
+		user.show_message("You click the gun back into place")
+
+
+/* * * * * * * * * * *
  * Service Rifle
  * Baseline semi-auto rifle
  * .223 / 5.56mm
