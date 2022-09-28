@@ -12019,17 +12019,6 @@
 /area/f13/city)
 "ilV" = (
 /obj/structure/table,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An ancient ballistic turret - it looks rusted, yet stil functional. Safe to assume it's still operational, given the fact it's shooting at you.";
-	faction = list("wastebot");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "ancient turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticalrightborderright2bottom"
 	},
@@ -13185,9 +13174,19 @@
 	},
 /area/f13/city)
 "iXB" = (
-/mob/living/simple_animal/hostile/securitron,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An ancient ballistic turret - it looks rusted, yet stil functional. Safe to assume it's still operational, given the fact it's shooting at you.";
+	faction = list("wastebot");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "ancient turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
 /turf/open/floor/f13{
-	icon_state = "yellowrustyfull"
+	icon_state = "yellowrustychess"
 	},
 /area/f13/city)
 "iXT" = (
@@ -15846,13 +15845,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/city)
-"kIk" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/securitron,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "horizontaltopbordertop2right"
-	},
-/area/f13/wasteland)
 "kIq" = (
 /obj/structure/nest/securitron,
 /obj/effect/decal/cleanable/dirt,
@@ -28217,17 +28209,6 @@
 "tkJ" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An ancient ballistic turret - it looks rusted, yet stil functional. Safe to assume it's still operational, given the fact it's shooting at you.";
-	faction = list("wastebot");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "ancient turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 8;
 	icon_state = "outerbordercorner"
@@ -28907,17 +28888,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/raiders)
-"tJZ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/obj/structure/nest/securitron,
-/turf/open/floor/f13{
-	color = "#d9c4b9";
-	icon_state = "darkrusty";
-	name = "dirty floor"
-	},
-/area/f13/city)
 "tKf" = (
 /obj/structure/wreck/bus/rusted,
 /turf/open/indestructible/ground/outside/dirt,
@@ -32072,12 +32042,6 @@
 	color = " A6635D"
 	},
 /area/f13/wasteland)
-"vZB" = (
-/mob/living/simple_animal/hostile/securitron,
-/turf/open/floor/f13{
-	icon_state = "floordirty"
-	},
-/area/f13/city)
 "vZH" = (
 /obj/machinery/light/small,
 /obj/item/clothing/mask/cigarette/rollie/cannabis,
@@ -62993,7 +62957,7 @@ dqB
 qPo
 xdy
 hyW
-kIk
+iob
 sHl
 bKK
 nSj
@@ -66337,12 +66301,12 @@ sfD
 wiD
 qCb
 qCb
-qCb
+iXB
 qCb
 qCb
 bQq
 sqH
-vZB
+sqH
 jXq
 sfD
 sfD
@@ -66849,7 +66813,7 @@ tfn
 tiN
 sfD
 cBW
-iXB
+wxt
 umi
 wxt
 wxt
@@ -67365,7 +67329,7 @@ sfD
 ogK
 jEu
 ogK
-tJZ
+nVc
 oiL
 nVc
 kye

@@ -51,17 +51,7 @@
 /area/f13/tunnel)
 "aaM" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
-	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Repaired Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
+/mob/living/simple_animal/hostile/securitron/sentrybot,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "aaW" = (
@@ -10348,7 +10338,6 @@
 /obj/structure/rack/shelf_metal,
 /obj/effect/spawner/lootdrop/f13/advcrafting,
 /obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/breeder,
 /obj/effect/spawner/lootdrop/ammo/military,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -17965,6 +17954,21 @@
 /obj/structure/junk/small/bed,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"odv" = (
+/obj/structure/table/reinforced,
+/obj/machinery/porta_turret/syndicate/vehicle_turret{
+	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
+	faction = list("raider");
+	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	name = "Repaired Turret";
+	scan_range = 9;
+	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
+	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
+	throw_range = 9
+	},
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "odG" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "supermutantbehemoth"
@@ -24224,7 +24228,6 @@
 	},
 /obj/structure/rack/shelf_metal,
 /obj/item/stock_parts/cell/ammo/mfc,
-/obj/item/stock_parts/cell/ammo/ec,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -24596,7 +24599,6 @@
 	},
 /area/f13/caves)
 "uDF" = (
-/mob/living/simple_animal/hostile/securitron/sentrybot,
 /obj/effect/turf_decal/bot_red,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
@@ -64630,7 +64632,7 @@ aae
 aae
 aaa
 bCt
-xPV
+odv
 wMj
 vLv
 wMj
@@ -65146,7 +65148,7 @@ aaa
 bCt
 lEE
 fOG
-aaM
+jdR
 jdR
 jdR
 owp
@@ -65404,7 +65406,7 @@ nPC
 wMj
 kTc
 uDF
-jdR
+aaM
 afx
 owp
 fgb
