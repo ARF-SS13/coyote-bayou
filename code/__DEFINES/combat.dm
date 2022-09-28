@@ -752,3 +752,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Gun skill flags
 /// Gun is affected by rifleman skill
 #define AFFECTED_BY_FAST_PUMP (1<<0)
+
+/// Gun handedness defines -- for picking which direction to toss casings
+#define GUN_EJECTOR_RIGHT 1
+#define GUN_EJECTOR_LEFT 2
+#define GUN_EJECTOR_ANY 3

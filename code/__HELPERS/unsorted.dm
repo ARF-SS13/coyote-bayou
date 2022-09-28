@@ -401,18 +401,26 @@ Turf and target are separate in case you want to teleport some distance from a t
 // result is bounded to map size
 // note range is non-pythagorean
 // used for disposal system
-/proc/get_ranged_target_turf(atom/A, direction, range)
+/proc/get_ranged_target_turf(atom/A, direction, range, spread)
 
 	var/x = A.x
 	var/y = A.y
 	if(direction & NORTH)
 		y = min(world.maxy, y + range)
+		if(spread)
+			x = clamp(x + rand(-spread, spread), 1, world.maxx)
 	else if(direction & SOUTH)
 		y = max(1, y - range)
+		if(spread)
+			x = clamp(x + rand(-spread, spread), 1, world.maxx)
 	if(direction & EAST)
 		x = min(world.maxx, x + range)
+		if(spread)
+			y = clamp(y + rand(-spread, spread), 1, world.maxy)
 	else if(direction & WEST) //if you have both EAST and WEST in the provided direction, then you're gonna have issues
 		x = max(1, x - range)
+		if(spread)
+			y = clamp(y + rand(-spread, spread), 1, world.maxy)
 
 	return locate(x,y,A.z)
 
