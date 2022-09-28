@@ -9,13 +9,15 @@ export const PortableTurret = (props, context) => {
     silicon_user,
     locked,
     on,
-    check_weapons,
-    neutralize_criminals,
-    neutralize_all,
-    neutralize_unidentified,
-    neutralize_nonmindshielded,
-    neutralize_cyborgs,
-    neutralize_heads,
+    turret_shoot_weapons,
+    turret_shoot_wildlife,
+    turret_shoot_all,
+    turret_shoot_players,
+    turret_shoot_raiders,
+    turret_shoot_robots,
+    turret_shoot_ignore_faction,
+    turret_make_noise,
+    turret_use_laser_pointer,
     manual_control,
     allow_manual_control,
     lasertag_turret,
@@ -58,47 +60,47 @@ export const PortableTurret = (props, context) => {
               title="Target Settings"
               buttons={(
                 <Button.Checkbox
-                  checked={!neutralize_heads}
-                  content="Ignore Command"
+                  checked={!turret_shoot_ignore_faction}
+                  content="Disable IFF"
                   disabled={locked}
-                  onClick={() => act('shootheads')} />
+                  onClick={() => act('turret_return_ignore_faction')} />
               )}>
               <Button.Checkbox
                 fluid
-                checked={neutralize_all}
-                content="Non-Security and Non-Command"
+                checked={turret_shoot_players}
+                content="Target Civilians"
                 disabled={locked}
-                onClick={() => act('shootall')} />
+                onClick={() => act('turret_return_shoot_players')} />
               <Button.Checkbox
                 fluid
-                checked={check_weapons}
-                content="Unauthorized Weapons"
+                checked={turret_shoot_raiders}
+                content="Target Possible Criminals"
                 disabled={locked}
-                onClick={() => act('authweapon')} />
+                onClick={() => act('turret_return_shoot_raiders')} />
               <Button.Checkbox
                 fluid
-                checked={neutralize_unidentified}
-                content="Unidentified Life Signs"
+                checked={turret_shoot_wildlife}
+                content="Target Pests"
                 disabled={locked}
-                onClick={() => act('checkxenos')} />
+                onClick={() => act('turret_return_shoot_wildlife')} />
               <Button.Checkbox
                 fluid
-                checked={neutralize_nonmindshielded}
-                content="Non-Mindshielded"
+                checked={turret_shoot_robots}
+                content="Target Robots"
                 disabled={locked}
-                onClick={() => act('checkloyal')} />
+                onClick={() => act('turret_return_shoot_robots')} />
               <Button.Checkbox
                 fluid
-                checked={neutralize_criminals}
-                content="Wanted Criminals"
+                checked={turret_use_laser_pointer}
+                content="Use Targetting Laser"
                 disabled={locked}
-                onClick={() => act('shootcriminals')} />
+                onClick={() => act('turret_return_use_laser_pointer')} />
               <Button.Checkbox
                 fluid
-                checked={neutralize_cyborgs}
-                content="Cyborgs"
+                checked={turret_make_noise}
+                content="Use Internal Speakers"
                 disabled={locked}
-                onClick={() => act('shootborgs')} />
+                onClick={() => act('turret_return_make_noise')} />
             </Section>
           )}
         </Fragment>
