@@ -11,11 +11,14 @@
 	icon_state = "securitron"
 	icon_living = "securitron"
 	icon_dead = "securitron_dead"
-	mob_armor = ARMOR_VALUE_LIGHT
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T1
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 100 
+	health = 100
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_BERSERK,
+		MOB_EMP_DAMAGE,
+		MOB_EMP_SCRAMBLE
 		)
 	speak_chance = 1
 	turns_per_move = 5
@@ -24,8 +27,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	robust_searching = TRUE
-	maxHealth = 120
-	health = 120
 	blood_volume = 0
 	del_on_death = TRUE
 	healable = FALSE
@@ -100,13 +101,6 @@
 		S.preprime(user = null)
 	..()
 
-/mob/living/simple_animal/hostile/securitron/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
-	adjustBruteLoss(emp_damage)
-
 /mob/living/simple_animal/hostile/securitron/proc/do_death_beep()
 	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
 	visible_message(span_warning("You hear an ominous beep coming from [src]!"), span_warning("You hear an ominous beep!"))
@@ -132,14 +126,9 @@
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot_dead"
-	mob_armor = ARMOR_VALUE_HEAVY
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T2
-		)
-	health = 168
-	maxHealth = 168
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 150 
+	health = 150
 	del_on_death = FALSE
 	melee_damage_lower = 28
 	melee_damage_upper = 65

@@ -9,12 +9,9 @@
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	mob_armor = ARMOR_VALUE_LIGHT
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T1,
-		ARMOR_MODIFIER_UP_DT_T1
-		)
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
+	maxHealth = 130 
+	health = 130
 	speak_chance = 10
 	speak = list(
 		"GRRRRRR!",
@@ -42,9 +39,6 @@
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "hits"
-	maxHealth = 160 
-	health = 160
-	force_threshold = 14
 	faction = list(
 		"hostile",
 		"supermutant"
@@ -81,8 +75,9 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/playable
-	health = 500
-	maxHealth = 500
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
+	maxHealth = 300 
+	health = 300
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -140,14 +135,14 @@
 	icon_state = "hulk_melee_s"
 	icon_living = "hulk_melee_s"
 	icon_dead = "hulk_melee_s"
-	mob_armor = ARMOR_VALUE_MEDIUM
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_MELEE
+	maxHealth = 130 
+	health = 130
 	mob_armor_tokens = list(
 		ARMOR_MODIFIER_UP_MELEE_T1,
 		ARMOR_MODIFIER_DOWN_LASER_T2,
 		ARMOR_MODIFIER_UP_DT_T2
 		)
-	maxHealth = 160
-	health = 160
 	melee_damage_lower = 20
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
@@ -174,8 +169,9 @@
 		ARMOR_MODIFIER_UP_DT_T2
 		)
 	ranged = 1
-	maxHealth = 144 //9 shots of 9mm, more room for error to account for dodges
-	health = 144
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
+	maxHealth = 130 
+	health = 130
 	retreat_distance = 4
 	minimum_distance = 6
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
@@ -227,19 +223,14 @@
 	name = "legendary super mutant"
 	desc = "A huge and ugly mutant humanoid.He has a faint yellow glow to him, scars adorn his body. This super mutant is a grizzled vetern of combat. Look out!"
 	color = "#FFFF00"
-	mob_armor = ARMOR_VALUE_HEAVY
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T2,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T2
-		)
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_LEGEND
+	maxHealth = 150 
+	health = 150
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
 	melee_damage_lower = 35
 	melee_damage_upper = 70
-	maxHealth = 560
-	health = 560
 	mob_size = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -256,14 +247,9 @@
 	icon_state = "night_s"
 	icon_living = "night_s"
 	icon_dead = "night_s"
-	maxHealth = 240
-	health = 240
-	mob_armor = ARMOR_VALUE_MEDIUM
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T2
-		)
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_MELEE
+	maxHealth = 140 
+	health = 140
 	alpha = 80
 	force_threshold = 15
 	melee_damage_lower = 35
@@ -290,8 +276,9 @@
 	icon_state = "night_ranged_s"
 	icon_living = "night_ranged_s"
 	icon_dead = "night_ranged_s"
-	maxHealth = 240
-	health = 240
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
+	maxHealth = 140 
+	health = 140
 	ranged = 1
 	alpha = 80
 	force_threshold = 15
@@ -336,8 +323,9 @@
 	icon_living = "night_boss_s"
 	icon_dead = "night_boss_s"
 	ranged = 1
-	maxHealth = 400
-	health = 400
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_LEGEND
+	maxHealth = 130 
+	health = 130
 	alpha = 80
 	force_threshold = 15
 	melee_damage_lower = 25

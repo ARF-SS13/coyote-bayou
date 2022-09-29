@@ -156,6 +156,490 @@
 		"acid" = 95, \
 		"wound" = 100, \
 		"damage_threshold" = 12)
+/* * * * * * * * * * * * * * *
+ * MOB SPECIFIC ARMOR VALUES *
+ * * * * * * * * * * * * * * */
+
+/* Naked ghoul armor
+ * Basically nothing
+ * Resists laser and plasma
+ * Weak to melee
+ * No DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_NAKED list(\
+		"melee" = 0, \
+		"bullet" = 0, \
+		"laser" = 30, \
+		"energy" = 20, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 0)
+
+/* Reaver ghoul armor
+ * Bullet resistant vest
+ * Resists laser and plasma
+ * Very weak to melee
+ * Low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_REAVER list(\
+		"melee" = -50, \
+		"bullet" = 35, \
+		"laser" = 35, \
+		"energy" = 25, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 2)
+
+/* Glowy ghoul armor
+ * trades resistance for sick colors (and DT)
+ * Very resistant to laser and plasma
+ * Very weak to melee
+ * Low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_GLOWING list(\
+		"melee" = -50, \
+		"bullet" = -10, \
+		"laser" = 50, \
+		"energy" = 40, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Legendary ghoul armor
+ * Tough and glowy!
+ * Very resistant to laser and plasma
+ * Very weak to melee
+ * Low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_GHOUL_LEGEND list(\
+		"melee" = 25, \
+		"bullet" = 25, \
+		"laser" = 95, \
+		"energy" = 95, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 11)
+
+/* Supermutant jumpsuit
+ * Thicc skin resists melee
+ * Green skin weak to lasers and plasma
+ * Jumpsuit does nothing
+ * Decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SUPERMUTANT_BASE list(\
+		"melee" = 30, \
+		"bullet" = 10, \
+		"laser" = -20, \
+		"energy" = -20, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Supermutant melee guy
+ * Thicc skin resists melee
+ * Heavy armor resists bullet too
+ * Green skin weak to lasers and plasma, leather burns too
+ * Decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SUPERMUTANT_MELEE list(\
+		"melee" = 45, \
+		"bullet" = 35, \
+		"laser" = -30, \
+		"energy" = -30, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Supermutant ranger
+ * Thicc skin resists melee
+ * Medium-ish armor resists bullet too
+ * Green skin weak to lasers and plasma, leather burns too
+ * Low DT (cus they're the weak ones, gotta use a gun lol)
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SUPERMUTANT_RANGER list(\
+		"melee" = 35, \
+		"bullet" = 20, \
+		"laser" = -30, \
+		"energy" = -30, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 0)
+
+/* Supermutant legendary
+ * Thicc skin resists melee super hard
+ * Legendary status armor resists bullet too, a lot
+ * Green skin weak to lasers and plasma, leather burns too
+ * High DT (cus legends never die)
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_SUPERMUTANT_LEGEND list(\
+		"melee" = 40, \
+		"bullet" = 40, \
+		"laser" = -25, \
+		"energy" = -25, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 11)
+
+/* Robot Civvy
+ * Low DR across the board
+ * Kinda weak to lasers (sensors and shit)
+ * Resistant to bullets, kinda (metal)
+ * Higher DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_ROBOT_CIVILIAN list(\
+		"melee" = 5, \
+		"bullet" = 20, \
+		"laser" = -5, \
+		"energy" = -5, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 5)
+
+/* Robot Seccie
+ * Lowish DR across the board
+ * Kinda weak to lasers (sensors and shit)
+ * Resistant to bullets, kinda (metal)
+ * Higher DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_ROBOT_SECURITY list(\
+		"melee" = 10, \
+		"bullet" = 25, \
+		"laser" = -5, \
+		"energy" = -5, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 7)
+
+/* Robot Milbot
+ * Decent DR across the board
+ * Fairly weak to lasers (sensors and shit)
+ * Resistant to bullets, kinda (metal)
+ * Lot of DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_ROBOT_MILITARY list(\
+		"melee" = 15, \
+		"bullet" = 30, \
+		"laser" = -20, \
+		"energy" = -20, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 11)
+
+/* Deathclaw Commonboy
+ * Just about impervious to bullets
+ * Melee is... okay ish
+ * Lasers also kinda pathetic
+ * Plasma fucks em to death
+ * Lot of DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEATHCLAW_COMMON list(\
+		"melee" = 45, \
+		"bullet" = 75, \
+		"laser" = 10, \
+		"energy" = -30, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 8)
+
+/* Deathclaw Mommy
+ * Just about impervious to bullets
+ * Melee is... okay ish
+ * Lasers also kinda pathetic
+ * Plasma fucks em to death
+ * Lot of DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
+		"melee" = 55, \
+		"bullet" = 80, \
+		"laser" = 15, \
+		"energy" = -25, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 11)
+
+/* Deathclaw Legend - basically a suer boss fight
+ * Just about impervious to bullets
+ * Melee is also a bad idea
+ * Lasers? Also resistant
+ * Plasma fucks em to death
+ * Lot of DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEATHCLAW_LEGEND list(\
+		"melee" = 65, \
+		"bullet" = 85, \
+		"laser" = 25, \
+		"energy" = -45, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 15)
+
+/* Deathclaw power armor - basically a suer boss fight
+ * Power armor + deathclaw = yeah youre not killing this
+ * Lot of DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_DEATHCLAW_PA list(\
+		"melee" = 85, \
+		"bullet" = 85, \
+		"laser" = 95, \
+		"energy" = -5, \
+		"bomb" = 0, \
+		"bio" = 100, \
+		"rad" = 100, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 25)
+
+/* Raider leather jacket
+ * Basically a leather jacket
+ * Melee resistant
+ * Laser weak (damn everything is laser weak)
+ * Low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RAIDER_LEATHER_JACKET list(\
+		"melee" = 20, \
+		"bullet" = 5, \
+		"laser" = -10, \
+		"energy" = -10, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 1)
+
+/* Raider combat armor (rusty)
+ * Resistant to bullet and laser
+ * Less resistant to melee
+ * 
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY list(\
+		"melee" = 15, \
+		"bullet" = 35, \
+		"laser" = 35, \
+		"energy" = -10, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Raider combat armor (good stuff)
+ * Rusty combat armor, but better
+ * For mango~
+ * 
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS list(\
+		"melee" = 25, \
+		"bullet" = 45, \
+		"laser" = 45, \
+		"energy" = -15, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 4)
+
+/* Raider metal armor
+ * Reinforced metal armor
+ * Heavy melee and laser resist
+ * less good bullet resist
+ * 
+ * high DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RAIDER_METAL_ARMOR list(\
+		"melee" = 55, \
+		"bullet" = 15, \
+		"laser" = 75, \
+		"energy" = -40, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 7)
+
+/* Raider raider armor
+ * raider armor
+ * leather armor, but less laser weak
+ * 
+ * Lowish DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RAIDER_ARMOR list(\
+		"melee" = 25, \
+		"bullet" = 5, \
+		"laser" = 25, \
+		"energy" = -5, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Renegade combat armor
+ * Resistant to bullet and laser
+ * Less resistant to melee
+ * Pretty good, in general
+ * 
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR list(\
+		"melee" = 20, \
+		"bullet" = 35, \
+		"laser" = 35, \
+		"energy" = -10, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 3)
+
+/* Renegade reinforced combat armor
+ * Resistant to bullet and laser
+ * Less resistant to melee
+ * Better in general
+ * 
+ * decent DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_REINFORCED list(\
+		"melee" = 25, \
+		"bullet" = 40, \
+		"laser" = 40, \
+		"energy" = -10, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 4)
+
+/* Renegade super combat armor
+ * HEAVY melee / bullet resistance
+ * less heavy laser resistance
+ * Plasma melts thru
+ * 
+ * heavy DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RENEGADE_COMBAT_ARMOR_SUPER list(\
+		"melee" = 55, \
+		"bullet" = 45, \
+		"laser" = 40, \
+		"energy" = -25, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 10)
+
+/* Renegade sniper armor
+ * Generally low resistances
+ * High laser / plasma resist tho
+ * 
+ * low DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RENEGADE_SNIPER_ARMOR list(\
+		"melee" = 15, \
+		"bullet" = 20, \
+		"laser" = 55, \
+		"energy" = 25, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 2)
+
+/* Renegade power armor
+ * Its power armor. Heavy. Fuckin. Power armor
+ * Good luck
+ * Plasma melts thru a little
+ * 
+ * heavy DT
+ * * * * * * * * * * * */
+#define ARMOR_VALUE_RENEGADE_POWER_ARMOR list(\
+		"melee" = 85, \
+		"bullet" = 85, \
+		"laser" = 90, \
+		"energy" = 35, \
+		"bomb" = 0, \
+		"bio" = 0, \
+		"rad" = 0, \
+		"fire" = 0, \
+		"acid" = 0, \
+		"wound" = 0, \
+		"damage_threshold" = 15)
 
 /* Armor Subclass multipliers
  * Modifies base armor slots by these values

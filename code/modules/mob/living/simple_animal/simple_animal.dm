@@ -50,7 +50,7 @@
 	/// Mob damage threshold, subtracted from incoming damage
 	var/force_threshold = 0
 	/// mob's inherent armor
-	var/datum/armor/mob_armor = ARMOR_VALUE_LIGHT
+	var/datum/armor/mob_armor = ARMOR_VALUE_ZERO
 	/// Additional armor modifiers that are applied to the actual armor value
 	var/mob_armor_tokens = list()
 	/// Description line for their armor, cached nice and sweet

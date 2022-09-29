@@ -45,6 +45,13 @@
 	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
 
+	/// What happens when this mob is EMP'd?
+	var/list/emp_flags = list()
+	/// What emp effects are active?
+	var/list/active_emp_flags = list()
+	/// Smoke!
+	var/datum/effect_system/smoke_spread/bad/smoke
+
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
 
@@ -93,12 +100,17 @@
 	wanted_objects = typecacheof(wanted_objects)
 	if((auto_fire_delay * extra_projectiles) < ranged_cooldown_time)
 		ranged_cooldown_time = (auto_fire_delay * (extra_projectiles + 1))
+	if(MOB_EMP_DAMAGE in emp_flags)
+		smoke = new /datum/effect_system/smoke_spread/bad
+		smoke.attach(src)
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(smoke)
+		QDEL_NULL(smoke)
 	return ..()
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
@@ -714,3 +726,82 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+
+/mob/living/simple_animal/hostile/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	emp_effect(severity)
+
+/// EMP intensity tends to be 20-40
+/mob/living/simple_animal/hostile/proc/emp_effect(intensity)
+	if(!LAZYLEN(emp_flags))
+		return FALSE
+	if(!islist(emp_flags))
+		return FALSE
+
+	switch(pick(emp_flags))
+		if(MOB_EMP_STUN)
+			do_emp_stun(intensity)
+		if(MOB_EMP_BERSERK)
+			do_emp_berserk(intensity)
+		if(MOB_EMP_DAMAGE)
+			do_emp_damage(intensity)
+		if(MOB_EMP_SCRAMBLE)
+			do_emp_scramble(intensity)
+	do_sparks(3, FALSE, src)
+	return TRUE
+
+/mob/living/simple_animal/hostile/proc/do_emp_stun(intensity)
+	if(!intensity)
+		return FALSE
+	if(MOB_EMP_STUN in active_emp_flags)
+		return FALSE
+	active_emp_flags |= MOB_EMP_STUN
+	visible_message(span_green("[src] shudders as the EMP overloads its servos!"))
+	LoseTarget()
+	toggle_ai(AI_OFF)
+	addtimer(CALLBACK(src, .proc/un_emp_stun), min(intensity, 3 SECONDS))
+
+/mob/living/simple_animal/hostile/proc/un_emp_stun()
+	active_emp_flags -= MOB_EMP_STUN
+	LoseTarget()
+	toggle_ai(AI_OFF)
+
+/mob/living/simple_animal/hostile/proc/do_emp_berserk(intensity)
+	if(!intensity)
+		return FALSE
+	if(MOB_EMP_BERSERK in active_emp_flags)
+		return FALSE
+	active_emp_flags |= MOB_EMP_BERSERK
+	LoseTarget()
+	visible_message(span_green("[src] lets out a burst of static and whips its gun around wildly!"))
+	var/list/old_faction = faction
+	faction = null
+	addtimer(CALLBACK(src, .proc/un_emp_berserk, old_faction), intensity SECONDS * 0.5)
+
+/mob/living/simple_animal/hostile/proc/un_emp_berserk(list/unberserk)
+	active_emp_flags -= MOB_EMP_BERSERK
+	faction = unberserk
+	LoseTarget()
+
+/mob/living/simple_animal/hostile/proc/do_emp_damage(intensity)
+	if(!intensity)
+		return FALSE
+	smoke.set_up(round(clamp(intensity*0.5, 1, 3), 1), src)
+	smoke.start()
+	visible_message(span_green("[src] shoots out a plume of acrid smoke!"))
+	adjustBruteLoss(maxHealth * 0.01 * intensity)
+	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/proc/do_emp_scramble(intensity)
+	if(!intensity)
+		return FALSE
+	move_to_delay = rand(move_to_delay * 0.5, move_to_delay * 2)
+	auto_fire_delay = rand(auto_fire_delay * 0.8, auto_fire_delay * 1.5)
+	extra_projectiles = rand(extra_projectiles - 1, extra_projectiles + 1)
+	ranged_cooldown_time = rand(ranged_cooldown_time * 0.5, ranged_cooldown_time * 2)
+	retreat_distance = rand(0, 10)
+	minimum_distance = rand(0, 10)
+	LoseTarget()
+	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))

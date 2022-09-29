@@ -16,14 +16,15 @@
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	move_resist = MOVE_FORCE_OVERPOWERING // Can't be pulled
-	mob_armor = ARMOR_VALUE_LIGHT
-	mob_armor_tokens = list(
-		ARMOR_MODIFIER_UP_MELEE_T1,
-		ARMOR_MODIFIER_DOWN_LASER_T2,
-		ARMOR_MODIFIER_UP_DT_T1
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 100 
+	health = 100
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_BERSERK,
+		MOB_EMP_DAMAGE,
+		MOB_EMP_SCRAMBLE
 		)
-	health = 130 //7 shots of 9mm
-	maxHealth = 104
 	healable = FALSE
 	stat_attack = CONSCIOUS
 	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
@@ -67,8 +68,9 @@
 		)
 
 /mob/living/simple_animal/hostile/handy/playable
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 300 
 	health = 300
-	maxHealth = 300
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
 	emote_taunt = null
@@ -99,8 +101,9 @@
 	icon_state = "gutsy"
 	icon_living = "gutsy"
 	icon_dead = "robot_dead"
-	health = 140
-	maxHealth = 140
+	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
+	maxHealth = 100 
+	health = 100
 	melee_damage_lower = 20
 	melee_damage_upper = 72
 	attack_sound = 'sound/items/welder.ogg'
@@ -151,8 +154,9 @@
 	)
 
 /mob/living/simple_animal/hostile/handy/gutsy/playable
-	health = 340
-	maxHealth = 340
+	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
+	maxHealth = 300 
+	health = 300
 	speed = 1
 	attack_verb_simple = "shoots a burst of flame at"
 	emote_taunt_sound = null
@@ -182,8 +186,9 @@
 	icon_living = "leberator"
 	icon_dead = "liberator_d"
 	icon_gib = "liberator_g"
-	health = 64
-	maxHealth = 64
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 50 
+	health = 50
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	attack_verb_simple = "slaps"
@@ -230,8 +235,9 @@
 	icon_state = "robobrain"
 	icon_living = "robobrain"
 	icon_dead = "robobrain_d"
-	health = 144
-	maxHealth = 144
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 110 
+	health = 110
 	melee_damage_lower = 20
 	melee_damage_upper = 45
 	attack_verb_simple = "slaps"
@@ -282,8 +288,9 @@
 	icon_state = "protectron"
 	icon_living = "protectron"
 	icon_dead = "protectron_dead"
-	health = 104
-	maxHealth = 104
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 100 
+	health = 100
 	speed = 4
 	melee_damage_lower = 5 //severely reduced melee damage here because its silly to have a ranged mob also be a cqc master
 	melee_damage_upper = 10
@@ -454,9 +461,10 @@
 	icon_living = "assaultron"
 	gender = FEMALE //Pffffffffffffffffffffff
 	icon_dead = "gib7"
-	health = 160
+	mob_armor = ARMOR_VALUE_ROBOT_MILITARY
+	maxHealth = 100 
+	health = 100
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
-	maxHealth = 160
 	speed = 0
 	melee_damage_lower = 25
 	melee_damage_upper = 60
