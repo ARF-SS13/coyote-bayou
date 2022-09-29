@@ -167,7 +167,9 @@
 	/// Inaccuracy in degrees
 	var/shot_spread = 15
 	/// The bullet we'll use when we try to shoot. This will override the stun and lethal projectile!
-	var/obj/item/ammo_casing/casing_type
+	var/obj/item/ammo_casing/casing_type_lethal
+	/// The bullet we'll use when we try to shoot. This will override the stun and lethal projectile!
+	var/obj/item/ammo_casing/casing_type_stun
 	/// Are we shooting?
 	var/am_currently_shooting
 	var/list/stun_sound_properties = list(
@@ -513,11 +515,14 @@
 		return
 	COOLDOWN_START(src, turret_scan_cooldown, scan_rate)
 	scan_check()
-	for(var/mob/potential_target in oview(scan_range, base))
+	for(var/mob/living/potential_target in oview(scan_range, base))
 		if(potential_target.invisibility > SEE_INVISIBLE_LIVING)
 			continue
 
 		if(potential_target.stat > maximum_valid_stat)
+			continue
+
+		if(maximum_valid_stat == CONSCIOUS && IS_STAMCRIT(potential_target))
 			continue
 
 		/// If it cares about faction, and the thing's your faction, skip it
@@ -794,10 +799,12 @@
 /obj/machinery/porta_turret/proc/shoot_at_target(atom/movable/target, turf/our_turf)
 	if(!target || !our_turf)
 		return FALSE
-	if(ismob(target))
-		var/mob/are_they_okay = target
+	if(isliving(target))
+		var/mob/living/are_they_okay = target
 		if(are_they_okay.stat > maximum_valid_stat)
 			return FALSE // Stop stop he's already dead (or in crit)
+		if(maximum_valid_stat == CONSCIOUS && IS_STAMCRIT(are_they_okay))
+			return FALSE // Stop stop he's... mangled by rubbers
 	if(mode == TURRET_STUN)
 		//use_power(reqpower)
 		playsound(
@@ -824,8 +831,14 @@
 			)
 
 	var/the_spread = rand(-shot_spread, shot_spread)
-	if(casing_type)
-		var/obj/item/ammo_casing/casing = new casing_type(our_turf)
+	if(casing_type_lethal)
+		var/obj/item/ammo_casing/casing
+		if(mode == TURRET_STUN)
+			casing = new casing_type_stun(our_turf)
+		else
+			casing = new casing_type_lethal(our_turf)
+		if(!casing)
+			return FALSE
 		casing.fire_casing(
 			target = target,
 			user = src,
@@ -1454,6 +1467,16 @@
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
+/// .22LR turret - robot
+/obj/machinery/porta_turret/f13/turret_22lr/robot
+	name = "autonomous mini-plink turret"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		More of a 'polite' model, designed to kindly request intruders to leave with its itty bitty twenty-two. \
+		This one is chambered in .22LR and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
+
 /// .22LR burst turret
 /obj/machinery/porta_turret/f13/turret_22lr/burstfire
 	name = "salvaged mini-SMG turret"
@@ -1474,6 +1497,16 @@
 		This one, however, is chambered in .22LR and manaces with one huge spike on the back."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
+
+/// .22LR burst turret - robot
+/obj/machinery/porta_turret/f13/turret_22lr/burstfire/robot
+	name = "autonomous mini-SMG turret"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
+		This one is chambered in .22LR and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
 
 /// 9mm turret
 /obj/machinery/porta_turret/f13/turret_9mm
@@ -1499,6 +1532,15 @@
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
+/// 9mm turret that loves robots
+/obj/machinery/porta_turret/f13/turret_9mm/robot
+	name = "autonomous autogun"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one is chambered in 9mm and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
+
 /// Burstfire 9mm turret
 /obj/machinery/porta_turret/f13/turret_9mm/burstfire
 	name = "salvaged fully-autogun"
@@ -1522,6 +1564,16 @@
 		That seems to be the case with this one. It is chambered in 9mm and menaces with rusty metal spikes."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
+
+/// 9mm turret that loves robots
+/obj/machinery/porta_turret/f13/turret_9mm/burstfire/robot
+	name = "autonomous fully-autogun"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
+		That seems to be the case with this one. It is chambered in 9mm and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
 
 /// 5.56mm turret
 /obj/machinery/porta_turret/f13/turret_556
@@ -1549,6 +1601,16 @@
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
 
+/// 556 turret that loves robots
+/obj/machinery/porta_turret/f13/turret_556/robot
+	name = "autonomous autorifle"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
+		This one is chambered in 5.56mm and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
+
 /// Burstfire 5.56mm turret
 /obj/machinery/porta_turret/f13/turret_556/burstfire
 	name = "military fully-autorifle"
@@ -1566,7 +1628,7 @@
 
 /// burstfire 5.56mm turret that loves raiders
 /obj/machinery/porta_turret/f13/turret_556/burstfire/raider
-	name = "raider autorifle"
+	name = "raider fully-autorifle"
 	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
 		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
 		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
@@ -1574,6 +1636,17 @@
 		This one is chambered in 5.56mm and has a sweet painting of a flaming skull on the side."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
+
+/// 556 turret that loves robots
+/obj/machinery/porta_turret/f13/turret_556/burstfire/robot
+	name = "autonomous fully-autorifle"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		Though the stock models tend to come in 9mm, a few simple tweaks and it can fire just about anything, such as, say, 5.56mm. \
+		Enthusiasts could drop-in a bump-roller cam that would both boost its rate of fire and make the feds <i>very</i> interested in your location. \
+		That seems to be the case with this one. It is chambered in 5.56mm and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
 
 /// shotgun turret
 /obj/machinery/porta_turret/f13/turret_shotgun
@@ -1589,7 +1662,8 @@
 	lethal_projectile = null
 	lethal_projectile_sound = 'sound/f13weapons/shotgun.ogg'
 	stun_projectile_sound = 'sound/f13weapons/shotgun.ogg'
-	casing_type = /obj/item/ammo_casing/shotgun/buckshot
+	casing_type_stun = /obj/item/ammo_casing/shotgun/rubbershot
+	casing_type_lethal = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/machinery/porta_turret/f13/turret_shotgun/raider
 	name = "raider autoshotgun"
@@ -1599,6 +1673,16 @@
 		This one is chambered in 12 gauge shotgun shells and menaces with evil looking spikes."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
+
+/// 556 turret that loves robots
+/obj/machinery/porta_turret/f13/turret_shotgun/robot
+	name = "autonomous autoshotgun"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		This one is chambered in 12 gauge shotgun shells and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
 
 /// burst shotgun turret
 /obj/machinery/porta_turret/f13/turret_shotgun/burstfire
@@ -1624,3 +1708,14 @@
 		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and menaces with rusty spikes."
 	turret_flags = TURRET_RAIDER_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
 	faction = list("raider")
+
+/// 556 turret that loves robots
+/obj/machinery/porta_turret/f13/turret_shotgun/burstfire/robot
+	name = "autonomous fully-autoshotgun"
+	desc = "A juryrigged autonomous weapon system based off various pre-war Uncle ShootBang2000 designs. \
+		Countless sentry guns like these were in use before the war, valued for their ease of setup and surprising ammo efficiency. \
+		This one seems to be based more on the Woodland King Moosemulcher line, designed for even the most passive hunting enthusiasts. \
+		Geez, was there really <i>THAT</i> much wildlife before the war? Talk about a moose mulcher... \
+		At any rate, this fully automatic sentry-shotgun is chambered in 12 gauge and maintained by robots."
+	turret_flags = TURRET_ROBOT_OWNED_FLAGS | TURRET_DEFAULT_UTILITY
+	faction = list("wastebot")
