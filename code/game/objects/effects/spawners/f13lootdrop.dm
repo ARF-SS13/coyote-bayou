@@ -330,6 +330,7 @@
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
 				/obj/effect/spawner/bundle/f13/armor/vault,
+				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
 				)
 
 /obj/effect/spawner/bundle/f13/armor/metal/reinforced
@@ -2189,7 +2190,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	)		
+	)
 
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
