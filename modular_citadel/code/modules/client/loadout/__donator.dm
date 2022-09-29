@@ -134,7 +134,6 @@
 /obj/item/storage/box/large/custom_kit/bwoincognito/PopulateContents()
 	new /obj/item/clothing/head/helmet/f13/brahmincowboyhat(src)
 	new /obj/item/clothing/under/f13/ranger/modif_ranger(src)
-	new /obj/item/clothing/accessory/kevlar(src)
 	new /obj/item/clothing/shoes/combat(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/shovel/trench(src)
