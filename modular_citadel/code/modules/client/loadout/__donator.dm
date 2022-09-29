@@ -342,6 +342,8 @@
 
 /obj/item/storage/box/large/custom_kit/merek2/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
+	new /obj/item/lighter/fusion(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
