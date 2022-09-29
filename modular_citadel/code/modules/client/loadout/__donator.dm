@@ -379,6 +379,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
 	new /obj/item/storage/belt/military(src)
+	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 
 // O
 // P
