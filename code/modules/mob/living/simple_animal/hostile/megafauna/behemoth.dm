@@ -6,11 +6,11 @@
 	icon_living = "behemoth_axe"
 	icon_dead = "behemoth_dead"
 
-	health = 2000 //used to be 3000
-	maxHealth = 2000 //used to be 3000
+	health = 2300 //used to be 3000
+	maxHealth = 2300 //I actually see why this needs to be higher. I almost killed it with a Bozar in under 20 seconds via just holding LMB at PB range
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6)
 	loot = list(/obj/item/card/id/dogtag/enclave/noncombatant, /obj/item/stack/f13Cash/random/med) //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
-	armour_penetration = 0.5 //0.7 was too high in testing, since if it managed to zerg speed you into a wall; this would immediately kill you afterwards. Regardless.
+	armour_penetration = 0.6 //0.7 was too high in testing, since if it managed to zerg speed you into a wall; this would immediately kill you afterwards. Regardless.
 	melee_damage_lower = 50
 	melee_damage_upper = 70
 	vision_range = 9
@@ -36,7 +36,7 @@
 	/// Saves the turf the megafauna was created at (spawns exit portal here)
 	var/turf/starting
 	/// Range for behemoth stomping when it moves
-	var/stomp_range = 0 //ALLOW THEM TO APPROACH BEFORE PHASE 2 FFS OMAIGAWD
+	var/stomp_range = 1 //ALLOW THEM TO APPROACH BEFORE PHASE 2 FFS OMAIGAWD
 	/// Stores directions the mob is moving, then calls that a move has fully ended when these directions are removed in moved
 	var/stored_move_dirs = 0
 	/// If the behemoth is allowed to move
@@ -64,7 +64,7 @@
 /mob/living/simple_animal/hostile/megafauna/behemoth/OpenFire()
 	SetRecoveryTime(0, 100)
 	if(health <= maxHealth*0.5)
-		stomp_range = 1 //Please do not make a 4x4 death zone that goes through walls whenever it walks... Which it does... Very quickly.
+		stomp_range = 2 //Please do not make a 4x4 death zone that goes through walls whenever it walks... Which it does... Very quickly.
 		speed = 2
 		move_to_delay = 2
 	else
@@ -76,7 +76,7 @@
 		switch(chosen_attack)
 			if(1)
 				if(COOLDOWN_FINISHED(src, stomp_cooldown))
-					COOLDOWN_START(src, stomp_cooldown, 15 SECONDS)
+					COOLDOWN_START(src, stomp_cooldown, 15 SECONDS) //This is a fair and balanced thing
 					heavy_stomp()
 					return
 				else
@@ -128,7 +128,7 @@
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
 				L.throw_at(thrownat, 4, 1, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				if(do_damage)
-					L.apply_damage(30, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //Please do not stealth-buff things. Keep this at 30 or lower.
+					L.apply_damage(40, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //This actually isn't that threatening in testing anymore because I changed it to be gentle
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
