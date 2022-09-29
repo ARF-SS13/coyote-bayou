@@ -863,8 +863,7 @@
 	id = /datum/reagent/celugel
 	required_catalysts = list(/datum/reagent/lithium = 5, /datum/reagent/chlorine = 5)
 	results = list(/datum/reagent/celugel = 4)
-	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical - Fixed this. Shouldn't have to play 'Chemical musical chairs' to get a niche chemical mixed ~risingstar
-	OptimalTempMin 		= 430
+	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical
 	OptimalTempMax		= 520
 	ExplodeTemp			= 9999
 	OptimalpHMin		= 3
