@@ -246,6 +246,19 @@
 
 // G
 
+/datum/gear/donator/kits/generalpantsu
+	name = "Appropriated Brotherhood Supplies"
+	path = /obj/item/storage/box/large/custom_kit/generalpantsu
+	ckeywhitelist = list("generalpantsu")
+
+/obj/item/storage/box/large/custom_kit/generalpantsu/PopulateContents()
+	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
+	new /obj/item/storage/belt/shoulderholster/kemble(src)
+	new /obj/item/storage/belt/army/assault(src)
+	new /obj/item/gun/ballistic/revolver/m2405(src)
+	new /obj/item/melee/unarmed/tigerclaw(src)
+	new /obj/item/lighter/fusion(src)
+
 /datum/gear/donator/kits/gozulio
 	name = "Jess' Kit"
 	path = /obj/item/storage/box/large/custom_kit/gozulio
@@ -423,6 +436,14 @@
 /obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
 	new /obj/item/lighter/slime(src)
+
+/datum/gear/donator/kits/roachwitharoach
+	name = "Desert Kit"
+	path = /obj/item/storage/box/large/custom_kit/roachwitharoach
+	ckeywhitelist = list("roachwitharoach")
+
+/obj/item/storage/box/large/custom_kit/roachwitharoach/PopulateContents()
+	new /obj/item/clothing/under/f13/ncr(src)
 
 // S
 
