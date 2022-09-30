@@ -332,8 +332,11 @@
 
 /obj/item/storage/box/large/custom_kit/mathiel/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/m29/alt(src)
-	new /obj/item/clothing/suit/armor/medium/vest(src)
-	new /obj/item/clothing/head/helmet/f13/combat(src)
+	new /obj/item/clothing/head/helmet/f13/combat/swat(src)
+	new /obj/item/clothing/suit/armor/medium/combat/swat(src)
+	new /obj/item/clothing/shoes/combat/swat(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/under/rank/medical/doctor(src)
 
 /datum/gear/donator/kits/merek2
 	name = "Brotherhood Kit"
