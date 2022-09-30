@@ -75,7 +75,7 @@
 	icon_state = "silenced22"
 	mag_type = /obj/item/ammo_box/magazine/m22
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 	
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -146,36 +146,6 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
-/* * * * * * * * * * *
- * Sig P220
- * Another Light pistol
- * 9mm
- * Common
- * * * * * * * * * * */
-
-/obj/item/gun/ballistic/automatic/pistol/sig
-	name = "Sig P220"
-	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
-	icon_state = "sig"
-	w_class = WEIGHT_CLASS_SMALL
-	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
-	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
-
-	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
-	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	weapon_weight = GUN_ONE_HAND_AKIMBO
-	draw_time = GUN_DRAW_QUICK
-	fire_delay = GUN_FIRE_DELAY_FAST
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-
-	suppressor_state = "pistol_suppressor"
-	suppressor_x_offset = 30
-	suppressor_y_offset = 20
-	fire_sound = 'sound/f13weapons/9mm.ogg'
-
 
 /* * * * * * * * * * *
  * Beretta M9FS Semi-Auto
@@ -373,6 +343,39 @@
 	)
 
 /* * * * * * * * * * *
+ * Sig P220
+ * Light Mediumer pistol
+ * .45
+ * Less recoil
+ * faster shooting
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/sig //wiggles
+	name = "Sig P220"
+	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol."
+	icon_state = "sig"
+	w_class = WEIGHT_CLASS_SMALL
+	init_mag_type = /obj/item/ammo_box/magazine/m45
+	mag_type = /obj/item/ammo_box/magazine/m45
+	disallowed_mags = /obj/item/ammo_box/magazine/m45/socom
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_FASTER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	init_recoil = HANDGUN_RECOIL(0.7)
+
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 30
+	suppressor_y_offset = 20
+	fire_sound = 'sound/f13weapons/45revolver.ogg'
+
+/* * * * * * * * * * *
  * M1911 Semi-Auto
  * Light Medium pistol
  * .45ACP
@@ -386,9 +389,10 @@
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
-	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m45
+	disallowed_mags = /obj/item/ammo_box/magazine/m45/socom
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -683,7 +687,7 @@
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY

@@ -11,13 +11,16 @@
 #define STAMINA 	"stamina"
 #define BRAIN		"brain"
 
-//bitflag damage defines used for suicide_act
+//bitflag damage defines used for suicide_act -- also useful for bitflags, not just suicide!!!
 #define BRUTELOSS 		(1<<0)
 #define FIRELOSS 		(1<<1)
 #define TOXLOSS 		(1<<2)
 #define OXYLOSS 		(1<<3)
 #define SHAME 			(1<<4)
 #define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
+#define RADIATIONLOSS	(1<<6)
+#define CLONELOSS		(1<<7)
+#define EMPLOSS			(1<<8)
 
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
@@ -757,3 +760,41 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_EJECTOR_RIGHT 1
 #define GUN_EJECTOR_LEFT 2
 #define GUN_EJECTOR_ANY 3
+
+/// Gun misfire actions
+#define GUN_MF_CHANCE "misfire_chance"
+
+/// Gun does damage when it misfires
+/// Gun hurts you define
+#define GUN_MF_HURTS_YOU "pow_ow"
+/// Gun hurts you low damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_LOW "low_end_damage_it_hurts_you_you_when_it_pows"
+/// Gun hurts you high damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_HIGH "high_end_damage_it_hurts_you_you_when_it_pows"
+/// Gun hurts you with this type of damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_TYPE "damage_type_it_hurts_you_you_when_it_pows"
+/// Varied minimum list
+#define GUN_MISFIRE_HURTS_USER(chance, dmg_low, dmg_high, dmg_type) GUN_MF_HURTS_YOU = list(\
+	GUN_MF_CHANCE = chance,\
+	GUN_MF_HURTS_YOU_DAMAGE_LOW = dmg_low,\
+	GUN_MF_HURTS_YOU_DAMAGE_HIGH = dmg_high,\
+	GUN_MF_HURTS_YOU_DAMAGE_TYPE = dmg_type)
+
+/// Gun yeets itself out of your hand when it misfires
+/// Gun yeets define
+#define GUN_MF_YEET "pow_yeet"
+/// Gun yeets the gun entry
+#define GUN_MISFIRE_THROWS_GUN(chance) GUN_MF_YEET = list(\
+	GUN_MF_CHANCE = chance)
+
+/// Gun dumps out its ammo
+/// Gun dump define
+#define GUN_MF_DUMP "pow_dump"
+/// Gun dump throw it define
+#define GUN_MF_DUMP_THROW "dump_yeet_chance"
+/// Gun dump the gun entry
+#define GUN_MISFIRE_UNLOADS_GUN(chance, throw_chance) GUN_MF_DUMP = list(\
+	GUN_MF_CHANCE = chance,\
+	GUN_MF_DUMP_THROW = throw_chance)
+
+

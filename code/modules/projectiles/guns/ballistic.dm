@@ -58,12 +58,12 @@
 	else
 		icon_state = "[initial(icon_state)][sawn_off ? "-sawn" : ""]"
 
-/obj/item/gun/ballistic/process_chamber(mob/living/user, empty_chamber = 1)
+/obj/item/gun/ballistic/process_chamber(mob/living/user, empty_chamber = 1, soft_eject = FALSE)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
 		if(casing_ejector)
 			AC.forceMove(drop_location()) //Eject casing onto ground.
-			AC.bounce_away(TRUE, toss_direction = get_ejector_direction(user))
+			AC.bounce_away(TRUE, toss_direction = (soft_eject ? null : get_ejector_direction(user)))
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
@@ -179,36 +179,40 @@
 			return FALSE
 
 /obj/item/gun/ballistic/attack_self(mob/living/user)
-	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(magazine)
-		if(en_bloc)
-			magazine.forceMove(drop_location())
-			user.dropItemToGround(magazine)
-			magazine.update_icon()
-			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
-			magazine = null
-			to_chat(user, span_notice("You eject the enbloc clip out of \the [src]."))
-		else
-			magazine.forceMove(drop_location())
-			user.put_in_hands(magazine)
-			magazine.update_icon()
-			if(magazine.ammo_count())
-				playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, 1)
-			else
-				playsound(src, "gun_remove_empty_magazine", 70, 1)
-			magazine = null
-			to_chat(user, span_notice("You pull the magazine out of \the [src]."))
+		eject_magazine(user, en_bloc, !en_bloc, TRUE)
 	else if(chambered)
-		AC.forceMove(drop_location())
-		AC.bounce_away()
-		chambered = null
-		to_chat(user, span_notice("You unload the round from \the [src]'s chamber."))
-		playsound(src, "gun_slide_lock", 70, 1)
+		eject_chambered_round(user, TRUE)
 	else
 		to_chat(user, span_notice("There's no magazine in \the [src]."))
 	update_icon()
 	return
 
+/obj/item/gun/ballistic/proc/eject_magazine(mob/living/user, is_enbloc, put_it_in_their_hand, sounds_and_words)
+	if(magazine.fixed_mag)
+		return
+	magazine.forceMove(drop_location())
+	if(put_it_in_their_hand)
+		user.put_in_hands(magazine)
+	else
+		user.dropItemToGround(magazine)
+	magazine.update_icon()
+	update_icon()
+	if(sounds_and_words)
+		if(en_bloc)
+			playsound(src, "sound/f13weapons/garand_ping.ogg", 70, 1)
+		else if(magazine.ammo_count())
+			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, 1)
+		else
+			playsound(src, "gun_remove_empty_magazine", 70, 1)
+		to_chat(user, span_notice("You eject \the [magazine] from \the [src]."))
+	magazine = null
+
+/obj/item/gun/ballistic/proc/eject_chambered_round(mob/living/user, sounds_and_words)
+	if(sounds_and_words)
+		to_chat(user, span_notice("You eject \a [chambered] from \the [src]'s chamber."))
+		playsound(src, "gun_slide_lock", 70, 1)
+	process_chamber(user, FALSE, FALSE)
 
 /obj/item/gun/ballistic/examine(mob/user)
 	. = ..()
