@@ -347,6 +347,8 @@
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
 	new /obj/item/lighter/fusion(src)
+	new /obj/item/clothing/under/syndicate/brotherhood(src)
+	new /obj/item/gun/energy/laser/pistol(src)
 
 /datum/gear/donator/kits/mrsanderp
 	name = "Happy Sharky Co. Business Bundle"
