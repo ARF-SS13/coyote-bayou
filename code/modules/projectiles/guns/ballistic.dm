@@ -63,7 +63,7 @@
 	if(istype(AC)) //there's a chambered round
 		if(casing_ejector)
 			AC.forceMove(drop_location()) //Eject casing onto ground.
-			AC.bounce_away(TRUE, soft_eject ? null : toss_direction = get_ejector_direction(user))
+			AC.bounce_away(TRUE, toss_direction = (soft_eject ? null : get_ejector_direction(user)))
 			chambered = null
 		else if(empty_chamber)
 			chambered = null
