@@ -483,6 +483,16 @@
 	config_entry_value = 10
 	min_val = 0
 
+/datum/config_entry/number/butt_min_size_prefs
+	config_entry_value = 1
+	min_val = 0
+	max_val = BUTT_SIZE_MAX
+
+/datum/config_entry/number/butt_max_size_prefs
+	config_entry_value = BUTT_SIZE_MAX
+	min_val = 0
+	max_val = BUTT_SIZE_MAX
+
 /datum/config_entry/keyed_list/safe_visibility_toggles
 	key_mode = KEY_MODE_TEXT
 	value_mode = VALUE_MODE_FLAG

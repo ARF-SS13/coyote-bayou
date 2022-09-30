@@ -11,6 +11,7 @@
 	size = BREASTS_SIZE_DEF // "c". Refer to the breast_values static list below for the cups associated number values
 	fluid_id = /datum/reagent/consumable/milk
 	fluid_rate = MILK_RATE
+	layer_index = BREAST_LAYER_INDEX
 	shape = DEF_BREASTS_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
 	masturbation_verb = "massage"
