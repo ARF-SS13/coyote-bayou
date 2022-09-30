@@ -1652,8 +1652,8 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_DOWN_DT_T1)
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"

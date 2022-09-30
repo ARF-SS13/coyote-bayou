@@ -336,7 +336,7 @@
 	new /obj/item/clothing/suit/armor/medium/combat/swat(src)
 	new /obj/item/clothing/shoes/combat/swat(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
-	new /obj/item/clothing/under/rank/medical/doctor(src)
+	new /obj/item/clothing/under/rank/medical/doctor/skirt(src)
 
 /datum/gear/donator/kits/merek2
 	name = "Brotherhood Kit"
@@ -347,7 +347,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/reagent_containers/food/drinks/flask/vault113(src)
 	new /obj/item/lighter/fusion(src)
-	new /obj/item/clothing/under/syndicate/brotherhood(src)
+	new /obj/item/clothing/under/f13/bos/fatigues(src)
 	new /obj/item/gun/energy/laser/pistol(src)
 
 /datum/gear/donator/kits/mrsanderp
