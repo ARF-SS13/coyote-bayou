@@ -171,6 +171,7 @@
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle. Top loaded drum magazine."
 	icon_state = "smg22"
 	item_state = "shotgun"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	init_mag_type = /obj/item/ammo_box/magazine/m22smg
@@ -222,6 +223,7 @@
 	desc = "A heavy-duty SMG designed to tear through most forms of armor."
 	icon_state = "14smg"
 	item_state = "14toploader"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	init_mag_type = /obj/item/ammo_box/magazine/smg14
@@ -273,6 +275,7 @@
 	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
@@ -357,6 +360,7 @@
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
 	icon_prefix = "smg10mm"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
@@ -442,6 +446,7 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
@@ -537,6 +542,7 @@
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	init_mag_type = /obj/item/ammo_box/magazine/cg45
@@ -660,6 +666,7 @@
 	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
 	icon_state = "p90"
 	item_state = "m90"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
@@ -745,6 +752,7 @@
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	icon_state = "mp5"
 	item_state = "fnfal"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
@@ -856,6 +864,7 @@
 	desc = "The M1 Carbine was mass produced during some old war, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
 	icon_state = "m1carbine"
 	item_state = "rifle"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 
@@ -990,6 +999,7 @@
 	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. Chambered in 9mm."
 	icon_state = "delisle"
 	item_state = "varmintrifle"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 
@@ -1081,6 +1091,7 @@
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
@@ -1126,6 +1137,7 @@
 	desc = "One of the many .22 LR carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
 	icon_state = "surplus"
 	item_state = "rifle"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m22
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
 
@@ -1237,6 +1249,7 @@
 	desc = "A simple bolt action rifle in 5.56mm calibre. Easy to use and maintain."
 	icon_state = "varmint"
 	item_state = "varmintrifle"
+	slot_flags = SLOT_BACK | SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 

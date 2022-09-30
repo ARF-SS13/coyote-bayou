@@ -101,43 +101,6 @@
 	. = ..()
 	. += "[get_ammo(0,0)] of those are live rounds."
 
-/obj/item/gun/ballistic/revolver/detective/Initialize()
-	. = ..()
-	safe_calibers = magazine.caliber
-
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
-	if("38" in magazine.caliber)
-		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//you know the drill
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return TRUE
-			magazine.caliber = "357"
-			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
-	else
-		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//and again
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return
-			magazine.caliber = "38"
-			desc = initial(desc)
-			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
-	return TRUE
-
-
-
 /* * * * * * * * * *
  * LIGHT REVOLVERS *
  * * * * * * * * * */
@@ -172,6 +135,21 @@
 
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
+
+/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+	if(..())
+		return TRUE
+	if(!(CALIBER_357 in magazine.caliber))
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
+		if(magazine.ammo_count())
+			afterattack(user, user)	//you know the drill
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
+			return TRUE
+		if(I.use_tool(src, user, 30))
+			magazine.caliber |= CALIBER_357
+			desc = "The barrel and chamber assembly seems to have been modified."
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
+	return TRUE
 
 /* * * * * * * * * * *
  * .45 ACP Revolver

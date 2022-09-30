@@ -386,7 +386,7 @@
 	desc = "A classic .45 handgun with a small magazine capacity."
 	icon_state = "m1911"
 	item_state = "pistolchrome"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos	
 
@@ -683,7 +683,7 @@
 	name= "Little Devil 14mm pistol"
 	desc = "A Swiss SIG-Sauer 14mm handgun, this one is a finely tuned custom firearm from the Gunrunners."
 	icon_state = "lildev"
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY

@@ -1,3 +1,58 @@
+//Fallout
+
+
+/obj/item/gun/energy/laser
+	name = "energy weapon template"
+	desc = "Should not exists. Bugreport."
+	icon_state = "laser"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_BULKY
+	custom_materials = list(/datum/material/iron=2000)
+	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
+	ammo_x_offset = 1
+	shaded_charge = 1
+	slot_flags = SLOT_BACK
+	var/select = 1
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+
+/obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
+	. = ..()
+	if(.)
+		return
+	if(istype(A, /obj/item/stock_parts/cell/ammo))
+		var/obj/item/stock_parts/cell/ammo/AM = A
+		if(istype(AM, cell_type))
+			var/obj/item/stock_parts/cell/ammo/oldcell = cell
+			if(user.transferItemToLoc(AM, src))
+				cell = AM
+				if(oldcell)
+					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
+					oldcell.dropped()
+					oldcell.forceMove(get_turf(src.loc))
+					oldcell.update_icon()
+				//else
+				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
+
+				//playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
+				//chamber_round()
+				A.update_icon()
+				update_icon()
+				return 1
+			else
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
+
+
 /obj/item/gun/energy/laser/practice
 	name = "practice laser gun"
 	icon_state = "laser-p"
@@ -219,58 +274,6 @@
 
 
 
-//Fallout
-
-
-/obj/item/gun/energy/laser
-	name = "energy weapon template"
-	desc = "Should not exists. Bugreport."
-	icon_state = "laser"
-	item_state = "laser"
-	w_class = WEIGHT_CLASS_BULKY
-	custom_materials = list(/datum/material/iron=2000)
-	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
-	ammo_x_offset = 1
-	shaded_charge = 1
-	var/select = 1
-
-	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
-	force = GUN_MELEE_FORCE_RIFLE_LIGHT
-	weapon_weight = GUN_TWO_HAND_ONLY
-	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_SLOW
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
-	burst_size = 1
-	init_firemodes = list(
-		SEMI_AUTO_NODELAY
-	)
-
-/obj/item/gun/energy/laser/attackby(obj/item/A, mob/user, params)
-	. = ..()
-	if(.)
-		return
-	if(istype(A, /obj/item/stock_parts/cell/ammo))
-		var/obj/item/stock_parts/cell/ammo/AM = A
-		if(istype(AM, cell_type))
-			var/obj/item/stock_parts/cell/ammo/oldcell = cell
-			if(user.transferItemToLoc(AM, src))
-				cell = AM
-				if(oldcell)
-					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the cell."))
-					oldcell.dropped()
-					oldcell.forceMove(get_turf(src.loc))
-					oldcell.update_icon()
-				//else
-				//	to_chat(user, span_notice("You insert the cell into \the [src]."))
-
-				//playsound(src, 'sound/weapons/autoguninsert.ogg', 60, TRUE)
-				//chamber_round()
-				A.update_icon()
-				update_icon()
-				return 1
-			else
-				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 
 /////////////////
 //LASER PISTOLS//
@@ -286,7 +289,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "wattz1000"
 	item_state = "laser-pistol"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ec
@@ -308,7 +311,6 @@
 	icon_state = "magnetowattz"
 	item_state = "laser-pistol"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattz/magneto/hitscan)
-	w_class = WEIGHT_CLASS_SMALL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -326,8 +328,6 @@
 	can_charge = 0
 	selfcharge = 1
 	icon_state = "rechargerpistol"
-	w_class = WEIGHT_CLASS_SMALL
-	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/breeder
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
@@ -523,6 +523,7 @@
 	item_state = "sniper_rifle"
 	ammo_type = list(/obj/item/ammo_casing/energy/wattz2k/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	slot_flags = SLOT_BACK
 	can_scope = FALSE
 	zoom_factor = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
@@ -569,6 +570,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "laser"
 	item_state = "laser-rifle9"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	fire_delay = 1
@@ -609,6 +611,7 @@
 	desc = "A sturdy and advanced military grade pre-war service laser rifle, now enhanced with ultracite"
 	icon_state = "ultra_rifle"
 	item_state = "laser-rifle9"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/lasgun)
 	cell_type = /obj/item/stock_parts/cell/ammo/ultracite
 	can_scope = FALSE
@@ -631,6 +634,7 @@
 	desc = "A modified AER9 equipped with a refraction kit that divides the laser shot into three separate beams. While powerful, it has a reputation for friendly fire."
 	icon_state = "tribeam"
 	item_state = "laser-rifle9"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
@@ -672,6 +676,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "aer12new"
 	item_state = "aer12new"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer12/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
@@ -697,6 +702,7 @@
 	desc = "A bleeding-edge, pre-war laser rifle. Extremely powerful, but eats MFCs like nothing else."
 	icon_state = "aer14"
 	item_state = "laser-rifle9"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/aer14/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	scope_state = "AEP7_scope"
@@ -722,6 +728,7 @@
 	desc = "The Laser Assister Energy Rifle is a powerful pre-war weapon developed just before the turn of the Great War. Due to its incredible rarity and unprecedented firepower, the weapon is coveted and nearly solely possesed by the Brotherhood of Steel; typically held by an Elder as a status symbol."
 	icon_state = "laer"
 	item_state = "laer"
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/laer/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	equipsound = 'sound/f13weapons/equipsounds/laerequip.ogg'
@@ -743,6 +750,7 @@
 	icon_state = "lasercw"
 	item_state = "rcw"
 	automatic = 1
+	slot_flags = SLOT_BACK
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
 	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'

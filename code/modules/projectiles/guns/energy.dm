@@ -363,21 +363,27 @@
 	if (!ishuman(user))
 		return
 	if (get_dist(src, user)<2)
-		if(cell)
-			if(can_charge == 0 && can_remove == 0)
-				to_chat(user, span_notice("You can't remove the cell from \the [src]."))
-				return
-			cell.forceMove(drop_location())
-			user.put_in_hands(cell)
-			cell.update_icon()
-			cell = null
-			to_chat(user, span_notice("You pull the cell out of \the [src]."))
-			playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
-		else
-			to_chat(user, span_notice("There's no cell in \the [src]."))
-		return
+		eject_cell(user, TRUE, TRUE)
 	else
 		return
+
+/obj/item/gun/energy/proc/eject_cell(mob/user, put_it_in_their_hand, sounds_and_words)
+	if(!cell)
+		if(sounds_and_words)
+			to_chat(user, span_notice("There's no cell in \the [src]."))
+		return
+	if(can_charge == 0 && can_remove == 0)
+		if(sounds_and_words)
+			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
+		return
+	cell.forceMove(drop_location())
+	if(put_it_in_their_hand)
+		user.put_in_hands(cell)
+	cell.update_icon()
+	if(sounds_and_words)
+		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
+		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
+	cell = null
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
