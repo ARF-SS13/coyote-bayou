@@ -45,15 +45,15 @@
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/crafted
-	name = "imitation chemical cartridge"
+	name = "Improvised chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. This one is a crudely fabricated imitation."
 	icon_state = "crafted" //placeholder
 	item_state = "crafted" //placeholder
-	maxCharge = 1500
+	maxCharge = 15000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/simple
-	name = "salvaged chemical cartridge"
+	name = "Knock-off chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. It looks like a mass produced knock-off."
 	maxCharge = 10000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500, /datum/material/plasma = 100)
