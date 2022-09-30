@@ -724,10 +724,10 @@
 		/obj/item/stock_parts/capacitor = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/cell = 1,
+		///obj/item/stock_parts/cell = 1,
 		/obj/item/stock_parts/chem_cartridge = 1)
 	def_components = list(
-		/obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high,
+		///obj/item/stock_parts/cell = /obj/item/stock_parts/cell/high,
 		/obj/item/stock_parts/chem_cartridge = /obj/item/stock_parts/chem_cartridge/simple)
 	needs_anchored = FALSE
 /obj/item/circuitboard/machine/chem_dispenser/apothecary
