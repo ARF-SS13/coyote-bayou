@@ -1059,7 +1059,7 @@
 	name = " p220 pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/sig,
-				/obj/item/ammo_box/magazine/m9mm/
+				/obj/item/ammo_box/magazine/m45
 				)
 
 /obj/effect/spawner/bundle/f13/pepperbox
