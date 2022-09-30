@@ -336,7 +336,7 @@
 	new /obj/item/clothing/suit/armor/medium/combat/swat(src)
 	new /obj/item/clothing/shoes/combat/swat(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
-	new /obj/item/clothing/under/rank/medical/doctor(src)
+	new /obj/item/clothing/under/rank/medical/doctor/skirt(src)
 
 /datum/gear/donator/kits/merek2
 	name = "Brotherhood Kit"
