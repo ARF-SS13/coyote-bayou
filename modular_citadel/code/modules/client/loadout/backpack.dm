@@ -101,6 +101,32 @@
 	name = "Grey Tortoise Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
 
+/datum/gear/backpack/cigarettes/carp_classic
+	name = "Carp Classic Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_carp
+
+/datum/gear/backpack/cigarettes/robust_gold
+	name = "Robust Gold Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+
+/datum/gear/backpack/cigarettes/uplift_smooth
+	name = "Uplift Smooth Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+
+/datum/gear/backpack/cigarettes/freak_brothers
+	name = "Freak Brothers' Special Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_cannabis
+
+/datum/gear/backpack/cigarettes/shady_jims
+	name = "Shady Jim's Super Slims Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_shadyjims
+	cost = 2
+
+/datum/gear/backpack/cigarettes/xeno_filtered
+	name = "Xeno Filtered Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_xeno
+	cost = 3 //It has Regen Jelly in each cigarette, that's the reason for the cost -Risingstarslash
+
 /datum/gear/backpack/cigarettes/cigars
 	name = "Premium cigar case"
 	path = /obj/item/storage/fancy/cigarettes/cigars
@@ -198,7 +224,7 @@
 
 /datum/gear/backpack/vaultguns/aep7
 	name = "AEP7"
-	path = /obj/item/gun/energy/laser/pistol 
+	path = /obj/item/gun/energy/laser/pistol
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS
 	cost = 3
 	restricted_desc = "Vault 113"

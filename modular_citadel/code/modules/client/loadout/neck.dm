@@ -23,12 +23,19 @@
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged
 
+/datum/gear/neck/silver_necklace
+	name = "Silver Necklace"
+	path = /obj/item/clothing/accessory/necklace
+
+/datum/gear/neck/gold_necklace
+	name = "Gold Necklace"
+	path = /obj/item/clothing/neck/necklace/dope
 
 /datum/gear/neck/apron
 	name = "simple apron"
 	path = /obj/item/clothing/neck/apron/labor
 
-/datum/gear/neck/apron
+/datum/gear/neck/stethe
 	name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 
