@@ -8,6 +8,8 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
+	/// If the limb should have a different layer. Used for huge butts. seriously
+	var/onmob_layer = BODYPARTS_LAYER
 	var/mob/living/carbon/owner = null
 	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
@@ -731,7 +733,7 @@
 				else
 					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
 
-	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
 	var/list/aux = list()
 	var/list/auxmarking = list()

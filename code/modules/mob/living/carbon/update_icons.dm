@@ -202,6 +202,7 @@
 		return
 
 	remove_overlay(BODYPARTS_LAYER)
+	remove_overlay(ARMS_PART_LAYER)
 
 	var/is_taur = FALSE
 	if(dna?.species.mutant_bodyparts["taur"])
@@ -221,15 +222,21 @@
 	//GENERATE NEW LIMBS
 	var/static/list/leg_day = typecacheof(list(/obj/item/bodypart/r_leg, /obj/item/bodypart/l_leg))
 	var/list/new_limbs = list()
+	var/list/new_arms = list()
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
 		if(is_taur && leg_day[BP.type])
 			continue
-		new_limbs += BP.get_limb_icon()
+		if(BP.onmob_layer == ARMS_PART_LAYER)
+			new_arms += BP.get_limb_icon()
+		else
+			new_limbs += BP.get_limb_icon()
 	if(new_limbs.len)
 		overlays_standing[BODYPARTS_LAYER] = new_limbs
-		limb_icon_cache[icon_render_key] = new_limbs
+		overlays_standing[ARMS_PART_LAYER] = new_arms
+		limb_icon_cache[icon_render_key] = new_limbs + new_arms
 
+	apply_overlay(ARMS_PART_LAYER)
 	apply_overlay(BODYPARTS_LAYER)
 	update_damage_overlays()
 
