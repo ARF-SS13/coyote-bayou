@@ -893,8 +893,7 @@
 		/datum/crafting_recipe/superstimpak,
 		/datum/crafting_recipe/superstimpak5,
 		/datum/crafting_recipe/buffout,
-		/datum/crafting_recipe/steady,
-		/datum/crafting_recipe/crafted_adv_chem_cartridge)
+		/datum/crafting_recipe/steady)
 
 /obj/item/book/granter/trait/bigleagues
 	name = "Grognak the Barbarian"

@@ -306,4 +306,3 @@
 	time = 100
 	tools = list(TOOL_AWORKBENCH, TOOL_HEMOSTAT, TOOL_ANALYZER)
 	category = CAT_MEDICAL
-	always_available = FALSE
