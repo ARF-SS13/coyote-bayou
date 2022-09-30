@@ -49,7 +49,7 @@
 	desc = "A casing holding a mix of raw material for use in chem dispensors. This one is a crudely fabricated imitation."
 	icon_state = "crafted" //placeholder
 	item_state = "crafted" //placeholder
-	maxCharge = 5000
+	maxCharge = 1500
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/simple

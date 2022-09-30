@@ -283,29 +283,25 @@
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/crafted_chem_cartridge
-	name = "Improvised chemical Cartridge"
-	result = /obj/item/stock_parts/chem_cartridge/crafted
+	name = "Refill chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/garbage
 	reqs = list(
-	/obj/item/stack/sheet/metal = 5,
-	/obj/item/stack/sheet/glass = 2,
-	/obj/item/stack/crafting/electronicparts = 1,
-	/obj/item/crafting/duct_tape = 1,
-	/datum/reagent/consumable/nutriment = 60
+	/obj/item/stock_parts/chem_cartridge/garbage = 1,
+	/datum/reagent/consumable/nutriment = 30
 	)
 	time = 100
 	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL
 
 /datum/crafting_recipe/crafted_adv_chem_cartridge
-	name = "pristine chemical Cartridge"
-	result = /obj/item/stock_parts/chem_cartridge/pristine
+	name = "Crafted chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/crafted
 	reqs = list(
 	/obj/item/stack/sheet/metal = 5,
 	/obj/item/stack/sheet/glass = 5,
 	/obj/item/stack/sheet/mineral/plasma = 5,
 	/obj/item/stack/crafting/electronicparts = 5,
-	/obj/item/crafting/duct_tape = 1,
-	/datum/reagent/consumable/nutriment = 120
+	/datum/reagent/consumable/nutriment = 60
 	)
 	time = 100
 	tools = list(TOOL_AWORKBENCH, TOOL_HEMOSTAT, TOOL_ANALYZER)
