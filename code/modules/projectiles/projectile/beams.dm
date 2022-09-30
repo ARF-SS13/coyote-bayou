@@ -363,6 +363,24 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	name = "debug 10 damage 0 DT pierce"
+	damage = 10
+	hitscan = TRUE
+	armour_penetration = 0
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
+/obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	name = "debug 10 damage 0 DT pierce"
+	damage = 10
+	hitscan = TRUE
+	armour_penetration = 0.5
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/beam/laser/pistol/hitscan/stun //compliance regulator beam
 	name = "compliance beam"
 	damage = 33

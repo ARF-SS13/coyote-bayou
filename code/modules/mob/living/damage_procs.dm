@@ -11,6 +11,7 @@
  * * blocked - armor value applied
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
+ * * damage_threshold - subtracts damage
  *
  * Returns TRUE if damage applied
  */

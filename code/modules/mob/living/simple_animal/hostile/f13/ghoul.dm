@@ -12,6 +12,9 @@
 	icon_dead = "feralghoul_dead"
 	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 40 
+	health = 40
 	robust_searching = 1
 	move_to_delay = 3.1
 	turns_per_move = 5
@@ -43,8 +46,6 @@
 		"goes full tilt"
 		)
 	a_intent = INTENT_HARM
-	maxHealth = 40
-	health = 40
 	speed = 3
 	harm_intent_damage = 8
 	melee_damage_lower = 7
@@ -118,8 +119,9 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	maxHealth = 80
-	health = 80
+	mob_armor = ARMOR_VALUE_GHOUL_REAVER
+	maxHealth = 50 
+	health = 50
 	rapid_melee = 2
 	retreat_distance = 3
 	minimum_distance = 1
@@ -152,17 +154,17 @@
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr
 	name = "feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 128
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
 	name = "plated feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 144
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
 	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 150
+	maxHealth = 60
 	speed = 3
 
 //Cold Feral Ghoul
@@ -173,8 +175,8 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
-	maxHealth = 160
-	health = 160
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -189,8 +191,8 @@
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
 	speed = 1.5
-	maxHealth = 160
-	health = 160
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -205,8 +207,9 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 240
-	health = 240
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
+	maxHealth = 200
+	health = 200
 	speed = 2.5
 	harm_intent_damage = 8
 	melee_damage_lower = 25
@@ -225,8 +228,9 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	rare_icon = "glowinghoul_h"
-	maxHealth = 80
-	health = 80
+	mob_armor = ARMOR_VALUE_GHOUL_GLOWING
+	maxHealth = 40 
+	health = 40
 	speed = 2
 	retreat_distance = 4
 	minimum_distance = 4
@@ -281,8 +285,9 @@
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 72
-	health = 72
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 60 
+	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
@@ -294,7 +299,8 @@
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 80
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 80 
 	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	

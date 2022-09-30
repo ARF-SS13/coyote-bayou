@@ -109,7 +109,7 @@
 	user << browse(dat, "window=mob[REF(src)];size=325x500")
 	onclose(user, "mob[REF(src)]")
 
-/mob/living/simple_animal/pet/dog/corgi/getarmor(def_zone, type)
+/* /mob/living/simple_animal/pet/dog/corgi/getarmor(def_zone, type)
 	var/armorval = 0
 
 	if(def_zone)
@@ -125,7 +125,7 @@
 			armorval += inventory_head.armor.getRating(type)
 		if(inventory_back)
 			armorval += inventory_back.armor.getRating(type)
-	return armorval*0.5
+	return armorval*0.5 */
 
 /mob/living/simple_animal/pet/dog/corgi/attackby(obj/item/O, mob/user, params)
 	if (istype(O, /obj/item/razor))
@@ -628,3 +628,34 @@
 				for(var/i in list(1,2,4,8,4,2,1,2,4,8,4,2,1,2,4,8,4,2))
 					setDir(i)
 					sleep(1)
+
+/mob/living/simple_animal/pet/dog/corgi/debug
+	name = "Cody the Debug Dog"
+	real_name = "Cody the Debug Dog"
+	gender = FEMALE
+	desc = "She's a dog!"
+	gold_core_spawnable = NO_SPAWN
+	icon_state = "lisa"
+	icon_living = "lisa"
+	icon_dead = "lisa_dead"
+	held_icon = "lisa"
+	health = 1000
+	maxHealth = 1000
+
+/mob/living/simple_animal/pet/dog/corgi/debug/armor_50_DT_10
+	name = "Cindy the Debug Dog"
+	real_name = "Cindy the Debug Dog"
+	desc = "Cindy has 50 armor and 10 DT. Cindy wants you to shoot her!"
+	mob_armor = ARMOR_VALUE_DEBUG_50ARMOR_10DT
+
+/mob/living/simple_animal/pet/dog/corgi/debug/armor_50_DT_0
+	name = "Catty the Debug Dog"
+	real_name = "Catty the Debug Dog"
+	desc = "Catty has 50 armor and 0 DT. Catty wants you to shoot her!"
+	mob_armor = ARMOR_VALUE_DEBUG_50ARMOR_0DT
+
+/mob/living/simple_animal/pet/dog/corgi/debug/armor_0_DT_10
+	name = "Crud the Debug Dog"
+	real_name = "Crud the Debug Dog"
+	desc = "Crud has 0 armor and 10 DT. Crud wants you to shoot her!"
+	mob_armor = ARMOR_VALUE_DEBUG_0ARMOR_10DT

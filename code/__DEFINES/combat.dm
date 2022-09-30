@@ -664,7 +664,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
 
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
-#define RECOIL_REDUCTION_TIME 1 SECOND
+#define RECOIL_REDUCTION_TIME 1 SECONDS
 
 #define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
 #define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )

@@ -11,6 +11,15 @@
 	icon_state = "securitron"
 	icon_living = "securitron"
 	icon_dead = "securitron_dead"
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 100 
+	health = 100
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_BERSERK,
+		MOB_EMP_DAMAGE,
+		MOB_EMP_SCRAMBLE
+		)
 	speak_chance = 1
 	turns_per_move = 5
 	environment_smash = 0
@@ -18,8 +27,6 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	robust_searching = TRUE
-	maxHealth = 120
-	health = 120
 	blood_volume = 0
 	del_on_death = TRUE
 	healable = FALSE
@@ -92,19 +99,7 @@
 				S = new /obj/item/grenade/smokebomb(flashbang_turf)
 		visible_message(span_danger("\The [src] releases a defensive [S]!"))
 		S.preprime(user = null)
-
-	if(prob(75) || Proj.damage > 26) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] bounces off \the [src]'s armor plating!"))
-		return FALSE
-
-/mob/living/simple_animal/hostile/securitron/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
-	adjustBruteLoss(emp_damage)
+	..()
 
 /mob/living/simple_animal/hostile/securitron/proc/do_death_beep()
 	playsound(src, 'sound/machines/triple_beep.ogg', 75, TRUE)
@@ -131,25 +126,48 @@
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
 	icon_dead = "sentrybot_dead"
-	health = 168
-	maxHealth = 168
+	mob_armor = ARMOR_VALUE_ROBOT_SECURITY
+	maxHealth = 150 
+	health = 150
 	del_on_death = FALSE
 	melee_damage_lower = 28
 	melee_damage_upper = 65
 	extra_projectiles = 2 //5 projectiles
 	ranged_cooldown_time = 40 //brrrrrrrrrrrrt
-	retreat_distance = 2
-	minimum_distance = 2
+	retreat_distance = 5
+	minimum_distance = 5 // SENTRY bot, not run up to your face and magdump you bot
 	attack_verb_simple = "pulverizes"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	projectilesound = 'sound/weapons/laser.ogg'
 	projectiletype = /obj/item/projectile/beam/laser/pistol/ultraweak
-	emote_taunt_sound = list('sound/f13npc/sentry/taunt1.ogg', 'sound/f13npc/sentry/taunt2.ogg', 'sound/f13npc/sentry/taunt3.ogg', 'sound/f13npc/sentry/taunt4.ogg', 'sound/f13npc/sentry/taunt5.ogg', 'sound/f13npc/sentry/taunt6.ogg')
+	emote_taunt_sound = list(
+		'sound/f13npc/sentry/taunt1.ogg',
+		'sound/f13npc/sentry/taunt2.ogg',
+		'sound/f13npc/sentry/taunt3.ogg',
+		'sound/f13npc/sentry/taunt4.ogg',
+		'sound/f13npc/sentry/taunt5.ogg',
+		'sound/f13npc/sentry/taunt6.ogg'
+		)
 	emote_taunt = list("spins its barrels")
-	aggrosound = list('sound/f13npc/sentry/aggro1.ogg', 'sound/f13npc/sentry/aggro2.ogg', 'sound/f13npc/sentry/aggro3.ogg', 'sound/f13npc/sentry/aggro4.ogg', 'sound/f13npc/sentry/aggro5.ogg')
-	idlesound = list('sound/f13npc/sentry/idle1.ogg', 'sound/f13npc/sentry/idle2.ogg', 'sound/f13npc/sentry/idle3.ogg', 'sound/f13npc/sentry/idle4.ogg')
+	aggrosound = list(
+		'sound/f13npc/sentry/aggro1.ogg',
+		'sound/f13npc/sentry/aggro2.ogg',
+		'sound/f13npc/sentry/aggro3.ogg',
+		'sound/f13npc/sentry/aggro4.ogg',
+		'sound/f13npc/sentry/aggro5.ogg'
+		)
+	idlesound = list(
+		'sound/f13npc/sentry/idle1.ogg',
+		'sound/f13npc/sentry/idle2.ogg',
+		'sound/f13npc/sentry/idle3.ogg',
+		'sound/f13npc/sentry/idle4.ogg'
+		)
 	var/warned = FALSE
-	loot = list(/obj/effect/decal/cleanable/robot_debris, /obj/item/stack/crafting/electronicparts/five, /obj/item/stock_parts/cell/ammo/mfc)
+	loot = list(
+		/obj/effect/decal/cleanable/robot_debris,
+		/obj/item/stack/crafting/electronicparts/five,
+		/obj/item/stock_parts/cell/ammo/mfc
+		)
 	projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(LASER_VOLUME),
@@ -188,11 +206,7 @@
 	if(prob(10) && health > 1)
 		visible_message(span_danger("\The [src] releases a defensive explosive!"))
 		explosion(get_turf(src),-1,-1,2, flame_range = 4) //perish, mortal - explosion size identical to craftable IED
-	if(prob(75) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want sentrybots to be
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] bounces off \the [src]'s armor plating!"))
-		return FALSE
+	..()
 
 //Raider friendly Sentry bot
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb
@@ -217,6 +231,7 @@
 		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
 		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
 	)
+
 //Playable Sentrybot
 /mob/living/simple_animal/hostile/securitron/sentrybot/playable
 	health = 750   //El Beef

@@ -132,6 +132,26 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 50 //30 shots, as per FNV
 	damage_threshold_penetration = 4 // Doesn't pierce as much armor or hit as hard, but has more ammo capacity than the 1k
 
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	e_cost = 1
+	damage_threshold_penetration = 0
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	e_cost = 1
+	damage_threshold_penetration = 10
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	e_cost = 1
+	damage_threshold_penetration = 0
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce_50_ap
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	e_cost = 1
+	damage_threshold_penetration = 10
+
 /obj/item/ammo_casing/energy/laser/ultra_pistol
 	projectile_type = /obj/item/projectile/beam/laser/ultra_pistol
 	e_cost = 75 //20 shots

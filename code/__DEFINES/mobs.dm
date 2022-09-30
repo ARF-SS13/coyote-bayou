@@ -431,3 +431,15 @@
 #define MOB_PROJECTILE_LIST(x...) MOB_PROJECTILE = list(x)
 /// Varied projectiles they can shoot, weighted chance to do the thing too
 #define MOB_PROJECTILE_ENTRY(proj, chance) proj = chance
+
+/// Mob EMP reaction flags
+/// For mobs that react to EMP to do something other than take a little damage
+
+/// Mob gets stunned for a moment
+#define MOB_EMP_STUN "mob_gets_stunned"
+/// Mob goes berserk for a moment
+#define MOB_EMP_BERSERK "mob_goes_nuts"
+/// Mob takes damage
+#define MOB_EMP_DAMAGE "mob_gets_hurt"
+/// Mob gets their combat setting scrambled
+#define MOB_EMP_SCRAMBLE "mob_gets_geckoed"

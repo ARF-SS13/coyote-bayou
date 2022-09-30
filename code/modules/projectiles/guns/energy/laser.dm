@@ -367,6 +367,34 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
+// Debug laser pistol that does 10 damage and 0 DT piercing
+/obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce
+	name = "\improper Debug laser pistol that does 10 damage and 0 DT piercing"
+	desc = "im testing mobs lol"
+	w_class = WEIGHT_CLASS_TINY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce)
+
+// Debug laser pistol that does 10 damage and 10 DT piercing
+/obj/item/gun/energy/laser/pistol/debug_10_damage_10_dt_pierce
+	name = "\improper Debug laser pistol that does 10 damage and 10 DT piercing"
+	desc = "im testing mobs lol"
+	w_class = WEIGHT_CLASS_TINY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce)
+
+// Debug laser pistol that does 10 damage and 0 DT piercing an d 50 AP
+/obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce_50_ap
+	name = "\improper Debug laser pistol that does 10 damage and 0 DT piercing and 50 AP (its a laser btw)"
+	desc = "im testing mobs lol"
+	w_class = WEIGHT_CLASS_TINY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap)
+
+// Debug laser pistol that does 10 damage and 10 DT piercing an d 50 AP
+/obj/item/gun/energy/laser/pistol/debug_10_damage_0_dt_pierce_50_ap
+	name = "\improper Debug laser pistol that does 10 damage and 10 DT piercing and 50 AP (its a laser btw)"
+	desc = "im testing mobs lol"
+	w_class = WEIGHT_CLASS_TINY
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce_50_ap)
+
 /obj/item/gun/energy/laser/pistol/cyborg
 	name = "\improper assaultron AEP7 laser eye"
 	desc = "A basic energy-based laser projector that fires concentrated beams of light from your eye! It draws power from your cell so try not to go crazy."
