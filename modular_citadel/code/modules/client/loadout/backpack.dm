@@ -189,7 +189,94 @@
 /////////////////////
 //Coyote Additions//
 ////////////////////
-//Suck on my fucking balls this shit suuuuuucks
+
+//// Rations and snacks!
+
+/datum/gear/backpack/snack
+	name = "hiking backpack"
+	path = /obj/item/reagent_containers/food/snacks/lollipop
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_1
+	name = "Ration - Brahmin BBQ"
+	path = /obj/item/storage/box/ration/menu_one
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_2
+	name = "Ration - Glazed Sausage"
+	path = /obj/item/storage/box/ration/menu_two
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_3
+	name = "Ration - Chocoguana"
+	path = /obj/item/storage/box/ration/menu_three
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_4
+	name = "Ration - Stagsteak"
+	path = /obj/item/storage/box/ration/menu_four
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_5
+	name = "Ration - Squeakpie"
+	path = /obj/item/storage/box/ration/menu_five
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_6
+	name = "Ration - Hillhogger"
+	path = /obj/item/storage/box/ration/menu_six
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_7
+	name = "Ration - Burger"
+	path = /obj/item/storage/box/ration/menu_seven
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_8
+	name = "Ration - Veggie"
+	path = /obj/item/storage/box/ration/menu_eight
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_9
+	name = "Ration - Fillet"
+	path = /obj/item/storage/box/ration/menu_nine
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_10
+	name = "Ration - Bearballs"
+	path = /obj/item/storage/box/ration/menu_ten
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_breakfast
+	name = "Ration - Breakfast"
+	path = /obj/item/storage/box/ration/ranger_breakfast
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_lunch
+	name = "Ration - Lunch"
+	path = /obj/item/storage/box/ration/ranger_lunch
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_dinner
+	name = "Ration - Lunch"
+	path = /obj/item/storage/box/ration/ranger_dinner
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!)
 
 //Vault Guns
 /datum/gear/backpack/vaultguns/n99
