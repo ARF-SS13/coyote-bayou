@@ -76,7 +76,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m22
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m22/extended)
 	w_class = WEIGHT_CLASS_SMALL
-	
+
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -105,8 +105,8 @@
 	icon_state = "ninemil"
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
-	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
-	
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
+
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -136,7 +136,7 @@
 	name = "Maria"
 	desc = "An ornately-decorated pre-war Browning Hi-power 9mm pistol with pearl grips and a polished nickel finish. The firing mechanism has been upgraded, so for anyone on the receiving end, it must seem like an eighteen-karat run of bad luck."
 	icon_state = "maria"
-	
+
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -160,7 +160,7 @@
 	icon_state = "beretta"
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
-	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -190,7 +190,7 @@
 	icon_state = "m93r"
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
-	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m9mm // load any 9mm pistol ammos
 	extra_mag_types = list(/obj/item/ammo_box/magazine/greasegun) // let it take smg mags
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
@@ -229,10 +229,10 @@
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
 	disallowed_mags = list(
-		/obj/item/ammo_box/magazine/m10mm/adv/ext, 
+		/obj/item/ammo_box/magazine/m10mm/adv/ext,
 		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
 		/obj/item/ammo_box/magazine/m10mm/rifle)
-	
+
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -375,6 +375,43 @@
 	suppressor_y_offset = 20
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
 
+
+/* * * * * * * * * * *
+ * Schmeisser
+ * Mid-tier auto pistol
+ * 10mm
+ * No accuracy
+ * Less damage
+ * Mid rarity
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/pistol/bergman
+	name = "Schmeisser Classic"
+	desc = "Definitely one of the guns of all time. A pistol that fits a 10mm magazine and fires in two modes: semi-automatic, and fuller automatic. Technically fires from an open bolt."
+	icon_state = "bornheim"
+	item_state = "pistolchrome"
+	icon_prefix = "bornheim"
+	w_class = WEIGHT_CLASS_SMALL
+	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
+	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
+	disallowed_mags = list(
+		/obj/item/ammo_box/magazine/m10mm/adv/ext,
+		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
+		/obj/item/ammo_box/magazine/m10mm/rifle)
+
+	fire_delay = GUN_FIRE_DELAY_FASTER
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+
+	init_firemodes = list(
+		FULL_AUTO_600,
+		SEMI_AUTO_NODELAY
+	)
+
+
+
+
 /* * * * * * * * * * *
  * M1911 Semi-Auto
  * Light Medium pistol
@@ -456,7 +493,7 @@
 	desc = "A very tactical pistol chambered in .45 ACP with a built in laser sight and attachment point for a seclite."
 	icon_state = "mk23"
 	init_mag_type = /obj/item/ammo_box/magazine/m45/socom
-	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m45 // load any .45 pistol ammos
 	w_class = WEIGHT_CLASS_NORMAL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
@@ -507,7 +544,7 @@
 	icon_state = "deagle"
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44
-	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	w_class = WEIGHT_CLASS_NORMAL
 
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
@@ -578,9 +615,9 @@
 	icon_state = "automag"
 	item_state = "deagle"
 	init_mag_type = /obj/item/ammo_box/magazine/m44/automag
-	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos	
+	mag_type = /obj/item/ammo_box/magazine/m44 // load any .44 pistol ammos
 	w_class = WEIGHT_CLASS_NORMAL
-	
+
 	slowdown = GUN_SLOWDOWN_PISTOL_HEAVY
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
 	weapon_weight = GUN_ONE_HAND_ONLY
@@ -594,7 +631,7 @@
 	can_suppress = FALSE
 	automatic_burst_overlay = FALSE
 	fire_sound = 'sound/f13weapons/44mag.ogg'
-	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION 
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_HEAVY_VOLUME),
