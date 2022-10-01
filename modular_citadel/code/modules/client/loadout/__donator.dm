@@ -331,8 +331,8 @@
 	ckeywhitelist = list("lucine")
 
 /obj/item/storage/box/large/custom_kit/lucine/PopulateContents()
-	new /obj/item/gun/energy/laser/wattz/magneto(src)
-	new /obj/item/gun/energy/laser/wattz(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
@@ -425,8 +425,6 @@
 	new /obj/item/clothing/neck/mantle/bos/paladin(src)
 	new /obj/item/clothing/accessory/bos/sentinel(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/storage/box/ration/menu_four(src)
-	new /obj/item/storage/box/ration/menu_seven(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
@@ -529,6 +527,24 @@
 	new /obj/item/gun_upgrade/trigger/dangerzone(src)
 	new /obj/item/gun_upgrade/barrel/forged(src)
 	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+
+/datum/gear/donator/kits/tk420634_2
+	name = "Catgirl Kit"
+	path = /obj/item/storage/box/large/custom_kit/tk420634_2
+	ckeywhitelist = list("tk420634")
+
+/obj/item/storage/box/large/custom_kit/tk420634_2/PopulateContents()
+	new /obj/item/melee/onehanded/club/fryingpan(src)
+	new /obj/item/reagent_containers/glass/bowl(src)
+	new /obj/item/reagent_containers/food/condiment/milk(src)
+	new /obj/item/reagent_containers/food/snacks/deadmouse(src)
+	new /obj/item/laser_pointer/blue/handmade(src)
+	new /obj/item/clothing/gloves/bracer(src)
+	new /obj/item/clothing/suit/armor/light/kit/shoulder(src)
+	new /obj/item/warpaint_bowl(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
 
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"

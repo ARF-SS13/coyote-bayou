@@ -819,6 +819,21 @@
 	icon_state = "blueprint2"
 	crafting_recipe_types = list(/datum/crafting_recipe/commando)
 
+/obj/item/book/granter/crafting_recipe/blueprint/armalite
+	name = "armalite blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/armalite)
+
+/obj/item/book/granter/crafting_recipe/blueprint/rangerrepeater
+	name = "ranger repeater carbine"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/rangerlever)
+
+/obj/item/book/granter/crafting_recipe/blueprint/schmeisser
+	name = "schmeisser blueprint"
+	icon_state = "blueprint2"
+	crafting_recipe_types = list(/datum/crafting_recipe/schmeisser)
+
 /obj/item/book/granter/crafting_recipe/blueprint/trapper
 	name = "guide to minelaying"
 	icon_state = "blueprint2"

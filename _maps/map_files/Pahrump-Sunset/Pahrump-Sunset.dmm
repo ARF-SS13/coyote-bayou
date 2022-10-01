@@ -18299,8 +18299,10 @@
 	},
 /area/f13/wasteland)
 "bnZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/wood/bar,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "boc" = (
@@ -18503,7 +18505,8 @@
 "bpV" = (
 /obj/structure/table/reinforced,
 /obj/structure/railing/corner{
-	dir = 1
+	dir = 1;
+	color = "#A47449"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -27259,6 +27262,14 @@
 /obj/item/clothing/shoes/jackboots,
 /turf/open/floor/plasteel/f13,
 /area/f13/building/museum)
+"ezg" = (
+/obj/effect/decal/cleanable/generic,
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "ezA" = (
 /obj/structure/chair/f13foldupchair{
 	dir = 1
@@ -38606,7 +38617,8 @@
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
 "kcy" = (
-/obj/structure/table/wood/bar,
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "kcz" = (
@@ -55797,8 +55809,11 @@
 	},
 /area/f13/building/museum)
 "stY" = (
-/obj/structure/table/wood/bar,
-/obj/machinery/reagentgrinder,
+/obj/effect/decal/cleanable/generic,
+/obj/structure/railing/corner{
+	dir = 1;
+	color = "#A47449"
+	},
 /turf/open/floor/wood_common,
 /area/f13/building)
 "sua" = (
@@ -77200,7 +77215,7 @@ una
 hEG
 cex
 bgk
-cex
+bnZ
 vmx
 uFN
 xuZ
@@ -77456,8 +77471,8 @@ hfd
 kxH
 hEG
 cex
-lHK
-lHK
+ezg
+stY
 cex
 cex
 cex
@@ -77972,8 +77987,8 @@ hEG
 axz
 rBz
 cex
-bnZ
-bnZ
+fMX
+fMX
 cdQ
 fMX
 axz
@@ -78229,8 +78244,8 @@ hEG
 bzk
 cex
 cex
-kcy
-stY
+cex
+cex
 lHK
 fMX
 fdU
@@ -78486,8 +78501,8 @@ hEG
 nXV
 cex
 fMX
-kcy
-kcy
+cex
+cex
 cex
 fMX
 hzm
@@ -79255,11 +79270,11 @@ kDp
 kxH
 cxq
 bzk
-bnZ
-bnZ
-kcy
+ifH
+ifH
+det
 lHK
-bnZ
+ifH
 kcy
 bdH
 www

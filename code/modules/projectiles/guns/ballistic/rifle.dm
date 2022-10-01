@@ -271,6 +271,56 @@
 		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
 	)
 
+/* * * * * * * * * * *
+ * Ranger repeater
+ * Biggest repeater
+ * .308
+ * Medium rarity
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/repeater/ranger
+	name = "long ranger repeater"
+	desc = "A lever action chambered in .308. Shares lots of characteristics with lever actions, but also the clunkiness of bolt actions, Best of both worlds, or master of none?"
+	icon_state = "308-lever"
+	item_state = "308-lever"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
+
+	slowdown = GUN_SLOWDOWN_REPEATER
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_BASE
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(2.4)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	fire_sound = 'sound/f13weapons/brushgunfire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_HEAVY_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * Three oh hate
+ * unique repeater
+ * .308
+ * unique
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/rifle/repeater/ranger/threeohate
+	name = "Three Oh Hate"
+	desc = "placeholder"
+
 /* * * * * * * * * * * *
  * Bolt-Action Rifles  *
  * * * * * * * * * * * */
