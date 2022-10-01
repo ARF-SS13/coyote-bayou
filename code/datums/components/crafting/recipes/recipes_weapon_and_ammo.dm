@@ -1767,8 +1767,8 @@ Not implemented due to balance at the moment
 
 /datum/crafting_recipe/schmeisser
 	name = "Schmeisser Classic"
-	result = /obj/item/gun/ballistic/automatic/pistol/schmeisser,
-	reqs = list/obj/item/stack/crafting/metalparts = 2,
+	result = /obj/item/gun/ballistic/automatic/pistol/schmeisser
+	reqs = list(/obj/item/stack/crafting/metalparts = 2,
 				/obj/item/stack/sheet/metal = 3,
 				/obj/item/stack/crafting/goodparts = 3,
 				)
