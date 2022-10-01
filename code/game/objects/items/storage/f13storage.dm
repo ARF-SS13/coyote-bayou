@@ -75,7 +75,8 @@
 
 /obj/item/storage/box/ration
 	name = "c-ration box"
-	desc = "A box containing canned rations."
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		So delicious that someone already ate the contents. Drat!"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "c-ration"
 	illustration = null
@@ -88,7 +89,9 @@
 		icon_state = initial(icon_state)
 
 /obj/item/storage/box/ration/menu_one
-	name = "c-ration box - 'Menu 1'"
+	name = "c-ration box - 'BRAWNY BRAHMIN BBQ BURNOUT'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: DISCOUNT DAN'S BRAWNY BRAHMIN BBQ BURNOUT -- DEEEELICOUS BRAHMIN BBQ CHILI AND JERKY FRESH FROM THE GIRL, CHASE IT DOWN WITH SOME POP AND SMOKES!"
 
 /obj/item/storage/box/ration/menu_one/PopulateContents()
 	. = ..()
@@ -103,10 +106,11 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_two
-	name = "c-ration box - 'Menu 2'"
+	name = "c-ration box - 'Sausage Party'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Salacious Dan's Sausage Party -- The BIGGEST of bighorner sausage with the FRUITEST of mutfruit glaze team up for a party your mouth won't forget!"
 
 /obj/item/storage/box/ration/menu_two/PopulateContents()
-	name = "c-ration box - 'Menu 2'"
 	. = ..()
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(src)
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
@@ -119,7 +123,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_three
-	name = "c-ration box - 'Menu 3'"
+	name = "c-ration box - 'Lipsmackin Sweetguana Stew'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Lipsmackin' Sweetguana Stew -- Still drippin' lowestland iguana fixins marinaded in Viscount Varney's Select Choco-Tastic!"
 
 /obj/item/storage/box/ration/menu_three/PopulateContents()
 	. = ..()
@@ -134,7 +140,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_four
-	name = "c-ration box - 'Menu 4'"
+	name = "c-ration box - 'Woodman Wildberry Bash'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Woodman Wildberry Bash -- Charbroiled firetail radstag steak, well-done, with a side of CRAN-berry cobbler for the manliest of hunters!"
 
 /obj/item/storage/box/ration/menu_four/PopulateContents()
 	. = ..()
@@ -149,7 +157,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_five
-	name = "c-ration box - 'Menu 5'"
+	name = "c-ration box - 'Squeakiepie Snacktime'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Squeakiepie Snacktime -- Sweet'n'sour squeaker stew, now with our patented FlavorMax Swizzlestick!"
 
 /obj/item/storage/box/ration/menu_five/PopulateContents()
 	. = ..()
@@ -164,7 +174,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_six
-	name = "c-ration box - 'Menu 6'"
+	name = "c-ration box - 'Hunnyglazed Hillhogger'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Hunnyglazed Hillhogger -- The tightest cuts of the 'hog so tender they're dripping off her eggs!"
 
 /obj/item/storage/box/ration/menu_six/PopulateContents()
 	. = ..()
@@ -179,7 +191,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_seven
-	name = "c-ration box - 'Menu 7'"
+	name = "c-ration box - 'Deluxe Dan w/ Cheez'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Deluxe Dan w/ Cheez -- Charbroiled 100%* Grade-A* Prime* Brahmin* cheeseburger* with all* the fix'ns!"
 
 /obj/item/storage/box/ration/menu_seven/PopulateContents()
 	. = ..()
@@ -194,7 +208,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_eight
-	name = "c-ration box - 'Menu 8'"
+	name = "c-ration box - 'Responsible Risotto'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Vegan Dan's Responsible Risotto -- All natural guilt-free soup with a side of free-range mountain-fresh CRAN-berry cobbler!"
 
 /obj/item/storage/box/ration/menu_eight/PopulateContents()
 	. = ..()
@@ -209,11 +225,13 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_nine
-	name = "c-ration box - 'Menu 9'"
+	name = "c-ration box - 'Fillet o' Fillette'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Fisherman Dan's Fillet o' Fillette -- Fresh mirelurk Fillette, brined in all-natural Squeeze!"
 
 /obj/item/storage/box/ration/menu_nine/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets(src)
 	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
 	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
@@ -224,7 +242,10 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_ten
-	name = "c-ration box - 'Menu 10'"
+	name = "c-ration box - 'Bearballs'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Bearballs -- FRESH BEAR BALLS TIGHT PACKED BEAR BALLS HARD AND MEATY BEAR BALLS DELICIOUS AND TASTY"
+
 /obj/item/storage/box/ration/menu_ten/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/yaoguai_meatballs(src)
@@ -238,7 +259,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_eleven
-	name = "c-ration box - 'Menu 11'"
+	name = "c-ration box - 'Hotdawg Cookout'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Hotdawg Cookout -- Dignified foot+ brahminlongs just looking for a campfire!"
 
 /obj/item/storage/box/ration/menu_eleven/PopulateContents()
 	. = ..()
@@ -255,6 +278,8 @@
 /obj/item/storage/box/ration/ranger_breakfast
 	name = "k-ration breakfast"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's Intercontinental Brahminfast Mealtime -- Start your march off right with spicy brahmin eggy tripe!"
 
 /obj/item/storage/box/ration/ranger_breakfast/PopulateContents()
 	. = ..()
@@ -273,10 +298,12 @@
 /obj/item/storage/box/ration/ranger_lunch
 	name = "k-ration lunch"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's Lunch Rush Assault-Dining -- AlwaysHot shredded brahmin enchiladas!"
 
 /obj/item/storage/box/ration/ranger_lunch/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/lunch(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
@@ -290,6 +317,8 @@
 /obj/item/storage/box/ration/ranger_dinner
 	name = "k-ration dinner"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's March On To Dinner -- PROtien packed brahlogna loaf, perfect to wind down an operation!"
 
 /obj/item/storage/box/ration/ranger_dinner/PopulateContents()
 	. = ..()
