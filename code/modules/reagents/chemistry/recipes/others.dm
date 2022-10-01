@@ -863,7 +863,7 @@
 	id = /datum/reagent/celugel
 	required_catalysts = list(/datum/reagent/lithium = 5, /datum/reagent/chlorine = 5)
 	results = list(/datum/reagent/celugel = 4)
-	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical
+	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/fermi/acidic_buffer = 0.5, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical
 	OptimalTempMax		= 520
 	ExplodeTemp			= 9999
 	OptimalpHMin		= 3
