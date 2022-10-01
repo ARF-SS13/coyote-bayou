@@ -2503,6 +2503,35 @@
 	)
 
 /* * * * * * * * * * *
+ * AR-10 Armalite
+ * .308 semi-auto rifle
+ * .308 / 7.62
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/armalite
+	name = "AR-10 Armalite"
+	desc = "A blast from the past as a ruggled, reliable rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
+	icon_state = "armalite"
+	item_state = "fnfal"
+	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/m762
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_FIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2 // still a medium-rarity item. can't be better than the snipers.
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+
+/* * * * * * * * * * *
  * Browning Automatic BAR Rifle
  * Baseline 7.62 autorifle
  * .308 / 7.62

@@ -404,15 +404,12 @@
 	fire_delay = GUN_FIRE_DELAY_FASTER
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
-	burst_size = 1
+	burst_size = 3
 
 	init_firemodes = list(
 		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
-
-
-
 
 /* * * * * * * * * * *
  * M1911 Semi-Auto

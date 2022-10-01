@@ -898,6 +898,8 @@
 				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/automag,
+				/obj/item/gun/ballistic/automatic/pistol/schmeisser,
+				/obj/item/gun/ballistic/rifle/repeater/ranger,
 				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
@@ -909,8 +911,9 @@
 				/obj/effect/spawner/bundle/f13/marksman,
 				/obj/effect/spawner/bundle/f13/guns/tommygun,
 				/obj/effect/spawner/bundle/f13/shotgunlever,
-				/obj/effect/spawner/bundle/f13/infiltrator,
 				/obj/effect/spawner/bundle/f13/brushgun,
+				/obj/item/gun/ballistic/automatic/armalite,
+				/obj/item/gun/ballistic/rifle/repeater/ranger
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high
@@ -925,7 +928,8 @@
 				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
 				/obj/effect/spawner/bundle/f13/guns/p90 = 1,
 				/obj/effect/spawner/bundle/f13/fnfal = 1,
-				/obj/item/gun/ballistic/automatic/bozar = 1
+				/obj/item/gun/ballistic/automatic/bozar = 1,
+				/obj/effect/spawner/bundle/f13/infiltrator = 5
 				)
 
 
