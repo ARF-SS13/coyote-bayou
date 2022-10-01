@@ -85,6 +85,13 @@
 	max_ammo = 10
 	multiload = 1
 
+/obj/item/ammo_box/magazine/internal/shot/tube380
+	name = "308 internal tube magazine" //long ranger
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = list(CALIBER_762)
+	max_ammo = 7
+	multiload = 1
+
 /obj/item/ammo_box/magazine/internal/shot/lasmusket
 	name = "lasmusket magazine"
 	desc = "Oh god, this shouldn't be here"
