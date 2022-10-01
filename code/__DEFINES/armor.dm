@@ -960,6 +960,21 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 /// Damages DT is effective with
 GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
 
+/// All armor types
+GLOBAL_LIST_INIT(all_armor_types, list(
+		"melee",
+		"bullet",
+		"laser",
+		"energy",
+		"bomb",
+		"bio",
+		"rad",
+		"fire",
+		"acid",
+		"wound",
+		"damage_threshold"
+))
+
 /* DEBUG ARMOR VALUES, DONT ACTUALLY USE
  * 50 armor across the board
  * * * * * * * * * * * */

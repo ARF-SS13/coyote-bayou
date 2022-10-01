@@ -32,7 +32,7 @@
 							span_userdanger("[M] [response_harm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, null, \
 							M, span_danger("You [response_harm_simple] [src]!"))
 			playsound(loc, attacked_sound, 25, 1, -1)
-			attack_threshold_check(M.dna?.species.punchdamagehigh)
+			attack_threshold_check(M.dna?.species.punchdamagehigh, M.dna?.species.attack_type, "melee")
 			log_combat(M, src, "attacked")
 			updatehealth()
 			return TRUE
@@ -53,7 +53,7 @@
 	. = ..()
 	if(.) //successful larva bite
 		var/damage = rand(1, 3)
-		attack_threshold_check(damage)
+		attack_threshold_check(damage, BRUTE, "melee")
 		return 1
 	if (M.a_intent == INTENT_HELP)
 		if (health > 0)
@@ -77,14 +77,14 @@
 				span_userdanger("[M] has slashed at [src]!"), null, COMBAT_MESSAGE_RANGE, null, \
 				M, span_danger("[M] has slashed at [src]!"))
 		playsound(loc, 'sound/weapons/slice.ogg', 25, 1, -1)
-		attack_threshold_check(M.meleeSlashSAPower)
+		attack_threshold_check(M.meleeSlashSAPower, BRUTE, "melee")
 		log_combat(M, src, "attacked")
 
 /mob/living/simple_animal/attack_larva(mob/living/carbon/alien/larva/L)
 	. = ..()
 	if(. && stat != DEAD) //successful larva bite
 		var/damage = rand(5, 10)
-		. = attack_threshold_check(damage)
+		. = attack_threshold_check(damage, BRUTE, "melee")
 		if(.)
 			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
 
@@ -92,7 +92,7 @@
 	. = ..()
 	if(.)
 		var/damage = .
-		return attack_threshold_check(damage, M.melee_damage_type)
+		return attack_threshold_check(damage, M.melee_damage_type, "melee")
 
 /mob/living/simple_animal/attack_slime(mob/living/simple_animal/slime/M)
 	. = ..()
@@ -100,7 +100,7 @@
 		var/damage = rand(15, 25)
 		if(M.is_adult)
 			damage = rand(20, 35)
-		return attack_threshold_check(damage)
+		return attack_threshold_check(damage, BRUTE, "melee")
 
 /mob/living/simple_animal/attack_drone(mob/living/simple_animal/drone/M)
 	if(M.a_intent == INTENT_HARM) //No kicking dogs even as a rogue drone. Use a weapon.
@@ -116,8 +116,8 @@
 	if(temp_damage <= 0)
 		visible_message(span_warning("[src] looks unharmed!"))
 		return FALSE
-
-	var/armor = run_armor_check(null, damagetype, null, null, 0, null)
+	
+	var/armor = run_armor_check(null, armorcheck, null, null, 0, null)
 	var/dt = max(run_armor_check(null, "damage_threshold", null, null, 0, null), 0)
 	apply_damage(temp_damage, damagetype, null, armor, null, null, null, damage_threshold = dt)
 	return TRUE
