@@ -75,7 +75,7 @@
 
 /obj/item/storage/box/ration
 	name = "c-ration box"
-	desc = "A box containing canned rations, issued to New California Republic Army personnel."
+	desc = "A box containing canned rations."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "c-ration"
 	illustration = null
@@ -316,7 +316,7 @@
 // -----------------------------------
 // STIMPAK BOX
 
-/obj/item/storage/box/medicine/stimpaks/stimpaks5 
+/obj/item/storage/box/medicine/stimpaks/stimpaks5
 	name = "box of stimpaks"
 	desc = "A box full of stimpaks."
 
