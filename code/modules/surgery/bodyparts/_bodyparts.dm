@@ -10,6 +10,8 @@
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
 	/// If the limb should have a different layer. Used for huge butts. seriously
 	var/onmob_layer = BODYPARTS_LAYER
+	/// If the limb should have a different layer for markings. Used to have arm markings be over huge butts. seriously
+	var/onmob_markings_layer = MARKING_LAYER
 	var/mob/living/carbon/owner = null
 	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
@@ -727,11 +729,11 @@
 				// marking stores icon and value for the specific bodypart
 				if(!use_digitigrade)
 					if(body_zone == BODY_ZONE_CHEST)
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 				else
-					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 
 	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
@@ -776,19 +778,19 @@
 		// Body markings
 		if(length(body_markings_list))
 			if(species_id == "husk")
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir))
+							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir))
 						else
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir))
+							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir))
 					else
-						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir))
+						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir))
 
 					if(color_src && length(marking_list) == 3)
 						var/image/I = markings_list[length(markings_list)]
@@ -836,19 +838,19 @@
 
 		if(length(body_markings))
 			if(species_id == "husk")
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 						else
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 		return
 
 	if(color_src) //TODO - add color matrix support for base species limbs (or dont because color matrixes suck)
