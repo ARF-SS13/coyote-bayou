@@ -385,15 +385,17 @@
  * Mid rarity
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/pistol/bergman
+/obj/item/gun/ballistic/automatic/pistol/schmeisser
 	name = "Schmeisser Classic"
-	desc = "Definitely one of the guns of all time. A pistol that fits a 10mm magazine and fires in two modes: semi-automatic, and fuller automatic. Technically fires from an open bolt."
+	desc = "An obscure pistol that fits a 10mm magazine and is capable of full auto. Fires from an open bolt. Innacurate on the first shot, but it doesn't get much worse. Or better."
 	icon_state = "bornheim"
 	item_state = "pistolchrome"
 	icon_prefix = "bornheim"
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/simple
 	mag_type = /obj/item/ammo_box/magazine/m10mm // load any 10mm pistol ammos
+	init_recoil = HANDGUN_RECOIL(2.3)
 	disallowed_mags = list(
 		/obj/item/ammo_box/magazine/m10mm/adv/ext,
 		/obj/item/ammo_box/magazine/m10mm/adv/ext/empty,
@@ -405,7 +407,7 @@
 	burst_size = 1
 
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
 
