@@ -2513,7 +2513,7 @@
 	name = "AR-10 Armalite"
 	desc = "A blast from the past as a ruggled, reliable rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
 	icon_state = "armalite"
-	item_state = "fnfal"
+	item_state = "assault_carbine"
 	mag_type = /obj/item/ammo_box/magazine/m762
 	init_mag_type = /obj/item/ammo_box/magazine/m762
 
