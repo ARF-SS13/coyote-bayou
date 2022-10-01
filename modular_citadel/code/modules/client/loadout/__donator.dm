@@ -425,8 +425,6 @@
 	new /obj/item/clothing/neck/mantle/bos/paladin(src)
 	new /obj/item/clothing/accessory/bos/sentinel(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/storage/box/ration/menu_four(src)
-	new /obj/item/storage/box/ration/menu_seven(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
