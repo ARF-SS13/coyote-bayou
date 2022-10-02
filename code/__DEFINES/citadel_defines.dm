@@ -28,6 +28,7 @@
 #define GENITAL_UNDIES_HIDDEN    (1<<9)
 #define UPDATE_OWNER_APPEARANCE  (1<<10)
 #define GENITAL_CAN_TAUR         (1<<11)
+#define GENITAL_OVER_CLOTHES     (1<<12) // Display the genitals over clothes, if the clothing doesnt cover it
 
 
 #define DEF_VAGINA_SHAPE	"Human"
@@ -70,10 +71,11 @@
 #define BUTT_SIZE_MAX		8  //butt genitals are special in that they have caps. if there's the event there's even bigger butt sprites, raise this number.
 
 //visibility toggles defines to avoid errors typos code errors.
-#define GEN_VISIBLE_ALWAYS "Always visible"
-#define GEN_VISIBLE_NO_CLOTHES "Hidden by clothes"
+#define GEN_VISIBLE_ALWAYS "Always exposed"
+#define GEN_VISIBLE_OVERCLOTHES "Layered over clothes if visible"
+#define GEN_VISIBLE_NO_CLOTHES "Layered under clothes if visible"
 #define GEN_VISIBLE_NO_UNDIES "Hidden by underwear"
-#define GEN_VISIBLE_NEVER "Always hidden"
+#define GEN_VISIBLE_NEVER "Never exposed"
 
 //Individual logging define
 #define INDIVIDUAL_LOOC_LOG "LOOC log"

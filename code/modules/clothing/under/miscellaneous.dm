@@ -319,6 +319,7 @@
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_hidden = 0
 
 /obj/item/clothing/under/misc/stripper/green
 	name = "green stripper outfit"

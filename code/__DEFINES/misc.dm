@@ -37,21 +37,21 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define MARKING_LAYER			32		//Matrixed body markings because clashing with snouts?
 #define GENITALS_MIDDLE_LAYER	31		//Genitals that need to be above the body, but below the hands. like the butt
 #define ARMS_PART_LAYER			30		//the arms themselves
-#define HANDS_PART_LAYER		29		//the hands themselves
-#define MARKING_LAYER_OVERBUTT	28		//Markings that should show up over a butt, like arms
-#define BODY_ADJ_LAYER			27		//certain mutantrace features (snout, body markings) that must appear above the body parts
-#define GENITALS_FRONT_LAYER	26		//Draws some genitalia above clothes and the TAUR body if need be.
-#define BODY_LAYER				25		//underwear, undershirts, socks, eyes, lips(makeup)
-#define BODY_ADJ_UPPER_LAYER	24
-#define FRONT_MUTATIONS_LAYER	23		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define DAMAGE_LAYER			22		//damage indicators (cuts and burns)
-#define UNIFORM_LAYER			21
+#define MARKING_LAYER_ARMS		29		//Markings that should show up over a butt, like arms
+#define BODY_ADJ_LAYER			28		//certain mutantrace features (snout, body markings) that must appear above the body parts
+#define BODY_LAYER				27		//underwear, undershirts, socks, eyes, lips(makeup)
+#define BODY_ADJ_UPPER_LAYER	26
+#define FRONT_MUTATIONS_LAYER	25		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define DAMAGE_LAYER			24		//damage indicators (cuts and burns)
+#define GENITALS_FRONT_LAYER	23		//Genitals that go over the body, but under the hands and arms
+#define UNIFORM_LAYER			22
+#define HANDS_PART_LAYER		21		//the hands themselves
 #define ID_LAYER				20
 #define SHOES_LAYER				19
 #define GLOVES_LAYER			18
 #define EARS_LAYER				17
 #define SUIT_LAYER				16
-#define GENITALS_EXPOSED_LAYER	15
+#define GENITALS_EXPOSED_LAYER	15		// Genitals set to be exposed always
 #define GLASSES_LAYER			14
 #define BELT_LAYER				13		//Possible make this an overlay of somethign required to wear a belt?
 #define SUIT_STORE_LAYER		12
