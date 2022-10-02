@@ -38,8 +38,82 @@
 					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
-					/obj/item/storage/belt/medolier = 2,
-					/obj/item/stock_parts/chem_cartridge/pristine = 1)
+					/obj/item/storage/belt/medolier = 2)
 
 /obj/machinery/vending/medical/free
+	force_free = TRUE
+
+/obj/machinery/vending/medical/follower
+	products = list(/obj/item/reagent_containers/syringe = 12,
+					/obj/item/reagent_containers/dropper = 3,
+					/obj/item/healthanalyzer = 6,
+					/obj/item/reagent_containers/medspray/sterilizine = 1,
+					/obj/item/stack/medical/gauze = 8,
+					/obj/item/reagent_containers/medspray/styptic = 2,
+					/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+					/obj/item/reagent_containers/medspray/silver_sulf = 2,
+					/obj/item/reagent_containers/pill/salbutamol = 2,
+					/obj/item/reagent_containers/glass/bottle/charcoal = 4,
+					/obj/item/reagent_containers/glass/bottle/epinephrine = 4,
+					/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
+					/obj/item/reagent_containers/glass/bottle/morphine = 4,
+					/obj/item/reagent_containers/glass/bottle/toxin = 3,
+					/obj/item/reagent_containers/syringe/antiviral = 6,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak = 6,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
+					/obj/item/reagent_containers/glass/bottle/vial/small = 5,
+					/obj/item/storage/briefcase/medical = 2,
+					/obj/item/stack/sticky_tape/surgical = 3,
+					/obj/item/stack/medical/ointment = 3,
+					/obj/item/stack/medical/suture = 3,
+					/obj/item/stack/medical/bone_gel = 4,
+					/obj/item/stock_parts/chem_cartridge/simple = 4,
+					/obj/item/stock_parts/chem_cartridge/pristine = 1)
+	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
+					/obj/item/reagent_containers/pill/morphine = 4,
+					/obj/item/reagent_containers/pill/charcoal = 6)
+	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
+					/obj/item/storage/box/hug/medical = 1,
+					/obj/item/storage/pill_bottle/chem_tin/radx = 2,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
+					/obj/item/storage/belt/medical = 3,
+					/obj/item/wrench/medical = 1,
+					/obj/item/storage/belt/medolier = 2)
+	force_free = TRUE
+
+/obj/machinery/vending/medical/nash
+	products = list(/obj/item/reagent_containers/syringe = 12,
+					/obj/item/reagent_containers/dropper = 3,
+					/obj/item/healthanalyzer = 6,
+					/obj/item/reagent_containers/medspray/sterilizine = 1,
+					/obj/item/stack/medical/gauze = 8,
+					/obj/item/reagent_containers/medspray/styptic = 2,
+					/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
+					/obj/item/reagent_containers/medspray/silver_sulf = 2,
+					/obj/item/reagent_containers/pill/salbutamol = 2,
+					/obj/item/reagent_containers/glass/bottle/charcoal = 4,
+					/obj/item/reagent_containers/glass/bottle/epinephrine = 4,
+					/obj/item/reagent_containers/glass/bottle/salglu_solution = 3,
+					/obj/item/reagent_containers/glass/bottle/morphine = 4,
+					/obj/item/reagent_containers/glass/bottle/toxin = 3,
+					/obj/item/reagent_containers/syringe/antiviral = 6,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak = 6,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/super = 1,
+					/obj/item/reagent_containers/glass/bottle/vial/small = 5,
+					/obj/item/storage/briefcase/medical = 2,
+					/obj/item/stack/sticky_tape/surgical = 3,
+					/obj/item/stack/medical/ointment = 3,
+					/obj/item/stack/medical/suture = 3,
+					/obj/item/stack/medical/bone_gel = 4,
+					/obj/item/stock_parts/chem_cartridge/simple = 2)
+	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
+					/obj/item/reagent_containers/pill/morphine = 4,
+					/obj/item/reagent_containers/pill/charcoal = 6)
+	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
+					/obj/item/storage/box/hug/medical = 1,
+					/obj/item/storage/pill_bottle/chem_tin/radx = 2,
+					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
+					/obj/item/storage/belt/medical = 3,
+					/obj/item/wrench/medical = 1,
+					/obj/item/storage/belt/medolier = 2)
 	force_free = TRUE
