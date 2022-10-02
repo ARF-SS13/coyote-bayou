@@ -282,7 +282,7 @@
 	name = "long ranger repeater"
 	desc = "A lever action chambered in .308. Shares lots of characteristics with lever actions, but also the clunkiness of bolt actions, Best of both worlds, or master of none?"
 	icon_state = "308-lever"
-	item_state = "308-lever"
+	item_state = "brushgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/tube380
 
 	slowdown = GUN_SLOWDOWN_REPEATER
