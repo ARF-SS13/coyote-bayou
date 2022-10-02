@@ -47,9 +47,10 @@
 					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier = 2,
 					///obj/item/gun/syringe/dart = 2,
-					/obj/item/plunger/reinforced = 2)
+					/obj/item/plunger/reinforced = 2,
+					/obj/item/stock_parts/chem_cartridge/pristine = 1)
 
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 50)
+	armor = ARMOR_VALUE_HEAVY
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical
 	default_price = PRICE_ALMOST_CHEAP
