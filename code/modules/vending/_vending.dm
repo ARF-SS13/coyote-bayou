@@ -163,6 +163,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	///Name of lighting mask for the vending machine
 	var/light_mask
 
+	var/force_free = FALSE
+
 /obj/item/circuitboard
 	///determines if the circuit board originated from a vendor off station or not.
 	var/onstation = FALSE
@@ -748,6 +750,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 		.["stock"][R.name] = R.amount
 	.["extended_inventory"] = extended_inventory
 	.["insertedCaps"] = stored_caps ? stored_caps : "0"
+	.["forceFree"] = force_free
 
 /obj/machinery/vending/ui_act(action, params)
 	. = ..()
@@ -829,11 +832,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
 				last_shopper = usr
-			if(price_to_use > stored_caps)
+			if(price_to_use > stored_caps && !force_free)
 				to_chat(usr, span_alert("Not enough caps to pay for [R.name]!"))
 				vend_ready = TRUE
 				return
-			else
+			if(!force_free)
 				stored_caps = stored_caps - price_to_use
 			use_power(5)
 			if(icon_vend) //Show the vending animation if needed

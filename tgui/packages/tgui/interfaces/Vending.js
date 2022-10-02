@@ -65,7 +65,7 @@ const VendingRow = (props, context) => {
         {custom && (
           <Button
             fluid
-            content={product.price ? product.price + ' caps' : 'FREE'}
+            content={data.forceFree ? 'FREE' : product.price + ' caps'}
             onClick={() => act('dispense', {
               'item': product.name,
             })} />
@@ -79,7 +79,7 @@ const VendingRow = (props, context) => {
                 || product.price > data.user.cash
               )
             )}
-            content={product.price ? product.price + ' caps' : 'FREE'}
+            content={data.forceFree ? 'FREE' : product.price + ' caps'}
             onClick={() => act('vend', {
               'ref': product.ref,
             })} />
