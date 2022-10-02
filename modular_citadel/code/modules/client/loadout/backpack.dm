@@ -259,6 +259,12 @@
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
 
+/datum/gear/backpack/snack/ration_11
+	name = "Ration - Hotdawg"
+	path = /obj/item/storage/box/ration/menu_eleven
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
 /datum/gear/backpack/snack/ration_breakfast
 	name = "Ration - Breakfast"
 	path = /obj/item/storage/box/ration/ranger_breakfast
