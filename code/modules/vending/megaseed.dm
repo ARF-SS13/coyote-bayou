@@ -64,8 +64,8 @@
 	armor = ARMOR_VALUE_HEAVY
 	refill_canister = /obj/item/vending_refill/hydroseeds
 	resistance_flags = FIRE_PROOF
-	default_price = PRICE_ALMOST_CHEAP
-	extra_price = PRICE_NORMAL
+	default_price = PRICE_REALLY_CHEAP
+	extra_price = PRICE_CHEAP
 	payment_department = ACCOUNT_SRV
 	cost_multiplier_per_dept = list(ACCOUNT_SRV = 0)
 

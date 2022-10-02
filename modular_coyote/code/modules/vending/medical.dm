@@ -41,5 +41,5 @@
 					/obj/item/storage/belt/medolier = 2,
 					/obj/item/stock_parts/chem_cartridge/pristine = 1)
 
-/obj/machinery/vending/medical/follower
+/obj/machinery/vending/medical/free
 	force_free = TRUE
