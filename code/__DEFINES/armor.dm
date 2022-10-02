@@ -245,8 +245,8 @@
 #define ARMOR_VALUE_SUPERMUTANT_BASE list(\
 		"melee" = 30, \
 		"bullet" = 10, \
-		"laser" = -20, \
-		"energy" = -20, \
+		"laser" = -5, \
+		"energy" = -10, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -264,7 +264,7 @@
 #define ARMOR_VALUE_SUPERMUTANT_MELEE list(\
 		"melee" = 45, \
 		"bullet" = 35, \
-		"laser" = -30, \
+		"laser" = -5, \
 		"energy" = -30, \
 		"bomb" = 0, \
 		"bio" = 100, \
@@ -283,8 +283,8 @@
 #define ARMOR_VALUE_SUPERMUTANT_RANGER list(\
 		"melee" = 35, \
 		"bullet" = 20, \
-		"laser" = -30, \
-		"energy" = -30, \
+		"laser" = -5, \
+		"energy" = -10, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -302,8 +302,8 @@
 #define ARMOR_VALUE_SUPERMUTANT_LEGEND list(\
 		"melee" = 40, \
 		"bullet" = 40, \
-		"laser" = -25, \
-		"energy" = -25, \
+		"laser" = -5, \
+		"energy" = -5, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -379,8 +379,8 @@
 #define ARMOR_VALUE_DEATHCLAW_COMMON list(\
 		"melee" = 45, \
 		"bullet" = 75, \
-		"laser" = 10, \
-		"energy" = -30, \
+		"laser" = 35, \
+		"energy" = 10, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -392,15 +392,15 @@
 /* Deathclaw Mommy
  * Just about impervious to bullets
  * Melee is... okay ish
- * Lasers also kinda pathetic
+ * Lasers are a bit better
  * Plasma fucks em to death
  * Lot of DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_DEATHCLAW_MOTHER list(\
 		"melee" = 55, \
 		"bullet" = 80, \
-		"laser" = 15, \
-		"energy" = -25, \
+		"laser" = 45, \
+		"energy" = 15, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -420,7 +420,7 @@
 		"melee" = 65, \
 		"bullet" = 85, \
 		"laser" = 25, \
-		"energy" = -45, \
+		"energy" = 15, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -437,7 +437,7 @@
 		"melee" = 85, \
 		"bullet" = 85, \
 		"laser" = 95, \
-		"energy" = -5, \
+		"energy" = 10, \
 		"bomb" = 0, \
 		"bio" = 100, \
 		"rad" = 100, \
@@ -472,10 +472,10 @@
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY list(\
-		"melee" = 15, \
+		"melee" = 25, \
 		"bullet" = 35, \
 		"laser" = 35, \
-		"energy" = -10, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -491,10 +491,10 @@
  * decent DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS list(\
-		"melee" = 25, \
+		"melee" = 35, \
 		"bullet" = 45, \
 		"laser" = 45, \
-		"energy" = -15, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -512,7 +512,7 @@
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_METAL_ARMOR list(\
 		"melee" = 55, \
-		"bullet" = 15, \
+		"bullet" = 35, \
 		"laser" = 75, \
 		"energy" = -40, \
 		"bomb" = 0, \
@@ -526,14 +526,15 @@
 /* Raider raider armor
  * raider armor
  * leather armor, but less laser weak
+ * Also resists plasma
  * 
  * Lowish DT
  * * * * * * * * * * * */
 #define ARMOR_VALUE_RAIDER_ARMOR list(\
 		"melee" = 25, \
 		"bullet" = 5, \
-		"laser" = 25, \
-		"energy" = -5, \
+		"laser" = 35, \
+		"energy" = 35, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -553,7 +554,7 @@
 		"melee" = 20, \
 		"bullet" = 35, \
 		"laser" = 35, \
-		"energy" = -10, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -573,7 +574,7 @@
 		"melee" = 25, \
 		"bullet" = 40, \
 		"laser" = 40, \
-		"energy" = -10, \
+		"energy" = 5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
@@ -593,7 +594,7 @@
 		"melee" = 55, \
 		"bullet" = 45, \
 		"laser" = 40, \
-		"energy" = -25, \
+		"energy" = -5, \
 		"bomb" = 0, \
 		"bio" = 0, \
 		"rad" = 0, \
