@@ -71,64 +71,6 @@
 	name = "Fountain Pen"
 	path = /obj/item/pen/fountain/captain
 
-//// Rations - not catagorized
-
-/datum/gear/backpack/ration/menu_one
-	name = "Menu 1 - Brahmin Meatchunks"
-	path = /obj/item/storage/box/ration/menu_one
-
-/datum/gear/backpack/ration/menu_two
-	name = "Menu 2 - Bighorner Franks"
-	path = /obj/item/storage/box/ration/menu_two
-
-/datum/gear/backpack/ration/menu_three
-	name = "Menu 3 - Iquana Tacos'"
-	path = /obj/item/storage/box/ration/menu_three
-
-/datum/gear/backpack/ration/menu_four
-	name = "Menu 4 - Grilled Radstag"
-	path = /obj/item/storage/box/ration/menu_four
-
-/datum/gear/backpack/ration/menu_five
-	name = "Menu 5 - Molerat Stew"
-	path = /obj/item/storage/box/ration/menu_five
-
-/datum/gear/backpack/ration/menu_six
-	name = "Menu 6 - Brahmin Ham"
-	path = /obj/item/storage/box/ration/menu_six
-
-/datum/gear/backpack/ration/menu_seven
-	name = "Menu 7 - Brahmin Burger"
-	path = /obj/item/storage/box/ration/menu_seven
-
-/datum/gear/backpack/ration/menu_eight
-	name = "Menu 8 - Vegetable Soup"
-	path = /obj/item/storage/box/ration/menu_eight
-
-/datum/gear/backpack/ration/menu_nine
-	name = "Menu 9 - Chocolate Ration"
-	path = /obj/item/storage/box/ration/menu_nine
-
-/datum/gear/backpack/ration/menu_ten
-	name = "Menu 10 - Yao Guai Meatballs"
-	path = /obj/item/storage/box/ration/menu_ten
-
-/datum/gear/backpack/ration/menu_eleven
-	name = "Menu 11 - Brahmin Dogs"
-	path = /obj/item/storage/box/ration/menu_eleven
-
-/datum/gear/backpack/ration/menu_breakfast
-	name = "k-ration breakfast"
-	path = /obj/item/storage/box/ration/ranger_breakfast
-
-/datum/gear/backpack/ration/menu_lunch
-	name = "k-ration lunch"
-	path = /obj/item/storage/box/ration/ranger_lunch
-
-/datum/gear/backpack/ration/menu_dinner
-	name = "k-ration dinner"
-	path = /obj/item/storage/box/ration/ranger_dinner
-
 
 //// Belts, not alot of belts in the catagory to make there own.
 
@@ -184,7 +126,7 @@
 /datum/gear/backpack/cigarettes/xeno_filtered
 	name = "Xeno Filtered Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_xeno
-	cost = 3 //It has Regen Jelly in each cigarette, that's the reason for the cost -Risingstarslash
+	cost = 4 //It has Regen Jelly in each cigarette, that's the reason for the cost -Risingstarslash
 
 /datum/gear/backpack/cigarettes/cigars
 	name = "Premium cigar case"
@@ -251,8 +193,8 @@
 
 //// Rations and snacks!
 
-/datum/gear/backpack/snack
-	name = "hiking backpack"
+/datum/gear/backpack/snack/lollipop
+	name = "Lollipop"
 	path = /obj/item/reagent_containers/food/snacks/lollipop
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
@@ -330,7 +272,7 @@
 	cost = 1
 
 /datum/gear/backpack/snack/ration_dinner
-	name = "Ration - Lunch"
+	name = "Ration - Dinner"
 	path = /obj/item/storage/box/ration/ranger_dinner
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
 	cost = 1
