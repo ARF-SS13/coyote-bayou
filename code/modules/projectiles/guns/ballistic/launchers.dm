@@ -9,7 +9,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	pin = /obj/item/firing_pin
@@ -45,7 +45,7 @@
 	desc = "A prototype pistol designed to fire self propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m75
 	init_mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
@@ -61,7 +61,7 @@
 	desc = "A weapon favored by carp hunters. Fires specialized spears using kinetic energy."
 	icon_state = "speargun"
 	item_state = "speargun"
-	slot_flags = SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	can_suppress = FALSE
