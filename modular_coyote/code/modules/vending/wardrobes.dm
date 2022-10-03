@@ -16,6 +16,9 @@
 /obj/machinery/vending/wardrobe/sec_wardrobe/free
 	force_free = TRUE
 
+/obj/machinery/vending/wardrobe/law_wardrobe/free
+	force_free = TRUE
+
 /obj/machinery/vending/wardrobe/engi_wardrobe/free
 	force_free = TRUE
 

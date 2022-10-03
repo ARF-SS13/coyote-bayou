@@ -104,8 +104,7 @@
 					/obj/item/stack/sticky_tape/surgical = 3,
 					/obj/item/stack/medical/ointment = 3,
 					/obj/item/stack/medical/suture = 3,
-					/obj/item/stack/medical/bone_gel = 4,
-					/obj/item/stock_parts/chem_cartridge/simple = 2)
+					/obj/item/stack/medical/bone_gel = 4)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
 					/obj/item/reagent_containers/pill/morphine = 4,
 					/obj/item/reagent_containers/pill/charcoal = 6)
