@@ -75,7 +75,7 @@
 			return owner.is_groin_exposed()
 
 /obj/item/organ/genital/proc/toggle_visibility(visibility, update = TRUE)
-	genital_flags &= ~(GENITAL_THROUGH_CLOTHES|GENITAL_HIDDEN|GENITAL_UNDIES_HIDDEN)
+	genital_flags &= ~(GENITAL_THROUGH_CLOTHES|GENITAL_OVER_CLOTHES|GENITAL_HIDDEN|GENITAL_UNDIES_HIDDEN)
 	if(owner)
 		owner.exposed_genitals -= src
 	switch(visibility)
@@ -83,6 +83,8 @@
 			genital_flags |= GENITAL_THROUGH_CLOTHES
 			if(owner)
 				owner.exposed_genitals += src
+		if(GEN_VISIBLE_OVERCLOTHES)
+			genital_flags |= GENITAL_OVER_CLOTHES
 		if(GEN_VISIBLE_NO_UNDIES)
 			genital_flags |= GENITAL_UNDIES_HIDDEN
 		if(GEN_VISIBLE_NEVER)
@@ -317,7 +319,7 @@
 
 			genital_overlay.icon_state = "[G.slot]_[S.icon_state]_[size][(dna.species.use_skintones && !dna.skin_tone_override) ? "_s" : ""]_[aroused_state]_[layertext]"
 
-			if(layers_num[layer] == GENITALS_FRONT_LAYER && G.genital_flags & GENITAL_THROUGH_CLOTHES)
+			if(layers_num[layer] == GENITALS_FRONT_LAYER && ((G.genital_flags & GENITAL_THROUGH_CLOTHES) || (G.genital_flags & GENITAL_OVER_CLOTHES)))
 				genital_overlay.layer = -GENITALS_EXPOSED_LAYER
 				LAZYADD(fully_exposed, genital_overlay)
 			else

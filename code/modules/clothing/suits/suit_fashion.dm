@@ -61,6 +61,7 @@
 	desc = "A rather impractical, long coat."
 	icon_state = "tailcoat"
 	item_state = "tailcoat"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/vickyblack
 	name = "black victorian coat"
@@ -73,6 +74,7 @@
 	desc = "An overbearing red coat, it looks far older than you are."
 	icon_state = "vickyred"
 	item_state = "vickyred"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/apron/overalls
 	name = "coveralls"
@@ -86,6 +88,7 @@
 	icon_state = "purplebartenderapron"
 	item_state = "purplebartenderapron"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_hidden = CHEST
 
 /*
  * Misc
@@ -99,25 +102,31 @@
 	item_state = "brownjsuit"
 	cold_protection = CHEST|GROIN|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	armor = ARMOR_VALUE_CLOTHES
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/flannel/red
 	name = "red flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_red"
 	item_state = "flannel_red"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/flannel/aqua
 	name = "aqua flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_aqua"
 	item_state = "flannel_aqua"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/flannel/brown
 	name = "brown flannel jacket"
 	desc = "Comfy and supposedly flammable."
 	icon_state = "flannel_brown"
 	item_state = "flannel_brown"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/leather
 	name = "leather jacket"
@@ -125,6 +134,7 @@
 	icon_state = "leatherjacket"
 	item_state = "hostrench"
 	resistance_flags = NONE
+	body_parts_hidden = ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 
 /obj/item/clothing/suit/jacket/leather/overcoat
@@ -139,25 +149,28 @@
 	icon_state = "puffervest"
 	item_state = "armor"
 	cold_protection = CHEST|GROIN
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/miljacket
 	name = "military jacket"
 	desc = "A canvas jacket styled after classical American military garb. Very durable, yet comfortable."
 	icon_state = "militaryjacket"
 	item_state = "militaryjacket"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/jacket/letterman
 	name = "letterman jacket"
 	desc = "A classic brown letterman jacket. Looks pretty hot and heavy."
 	icon_state = "letterman"
 	item_state = "letterman"
+	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/jacket/letterman_red
 	name = "red letterman jacket"
 	desc = "A letterman jacket in a sick red color. Radical."
 	icon_state = "letterman_red"
 	item_state = "letterman_red"
-
+	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/dracula
 	name = "dracula coat"
@@ -180,8 +193,6 @@
 	item_state = "gothcoat"
 	body_parts_covered = CHEST|ARMS|HAND_LEFT //peculiar
 
-
-
 /obj/item/clothing/suit/bronze
 	name = "bronze suit"
 	desc = "A big and clanky suit made of bronze that offers no protection and looks very unfashionable. Nice."
@@ -197,14 +208,6 @@
 
 /obj/item/clothing/head/hooded/winterhood/christmashoodr
 	icon_state = "christmashoodr"
-
-/obj/item/clothing/suit/slavelabor
-	name = "old leather strips"
-	desc = "Worn leather strips, used as makeshift protection from chafing and sharp stones by labor slaves."
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	icon_state = "legion_slaveleather"
-	item_state = "legion_slaveleather"
 
 /obj/item/clothing/suit/bomber
 	name = "old bomber jacket"

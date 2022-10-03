@@ -84,7 +84,7 @@
 /obj/item/modkit/digger_helm
 	name = "salvaged riot armor modkit"
 	target_items = list(/obj/item/clothing/suit/armor/medium/raider)
-	result_item = /obj/item/clothing/suit/armor/herbertranger
+	result_item = /obj/item/clothing/suit/armor/light/duster/herbertranger
 
 /obj/item/modkit/digger_vest
 	name = "salvaged riot helmet modkit"

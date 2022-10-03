@@ -376,18 +376,6 @@
 	item_state = "vapeshirt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/suit/jacket
-	name = "bomber jacket"
-	desc = "Aviators not included."
-	icon_state = "bomberjacket"
-	item_state = "brownjsuit"
-	cold_protection = CHEST|GROIN|ARMS
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	armor = ARMOR_VALUE_CLOTHES
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
-
-
 /obj/item/clothing/suit/jacket/flannel
 	name = "black flannel jacket"
 	desc = "Comfy and supposedly flammable."
@@ -949,17 +937,6 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
 	alternate_worn_layer = UNDER_HEAD_LAYER
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/suit/flakjack
-	name = "flak jacket"
-	desc = "A dilapidated jacket made of ballistic nylon. Smells faintly of napalm."
-	icon_state = "flakjack"
-	item_state = "redtag"
-	blood_overlay_type = "armor"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
-	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/assu_suit
