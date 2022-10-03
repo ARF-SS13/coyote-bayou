@@ -419,7 +419,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				else
 					to_chat(user, span_warning("There's nothing to restock!"))
 			return
-	if(istype(I, /obj/item/stack/f13Cash))
+	if(istype(I, /obj/item/stack/f13Cash) && !force_free)
 		add_caps(I)
 	else
 		attack_hand(user)

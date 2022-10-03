@@ -145,14 +145,16 @@ export const Vending = (props, context) => {
             )}
           </Section>
         )}
-        <section title="Welcome User!">
-          <box>
-            Caps inserted: {insertedCaps} <Button
-              fluid={false}
-              content={"Eject"}
-              onClick={() => act('ejectCaps')} />
-          </box>
-        </section>
+        {!data.forceFree && (
+          <section title="Welcome User!">
+            <box>
+              Caps inserted: {insertedCaps} <Button
+                fluid={false}
+                content={"Eject"}
+                onClick={() => act('ejectCaps')} />
+            </box>
+          </section>
+        )}
         <Section title="Products">
           <Table>
             {inventory.map(product => (
