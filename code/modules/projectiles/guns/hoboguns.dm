@@ -71,7 +71,7 @@
 		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
 		casing in there. Be sure to unload it first!"
 	item_state = "gun"
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 
@@ -119,7 +119,7 @@
 		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
 	item_state = "pepperbox"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 
@@ -163,7 +163,7 @@
 		get it to fire all four shots at once! Or explode!"
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 
@@ -211,7 +211,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunbat"
 	item_state = "shotgunbat"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
@@ -259,7 +259,7 @@
 		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
 	item_state = "knifegun"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
@@ -485,7 +485,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 
@@ -521,7 +521,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "winchesterbore"
 	item_state = "shotgundouble"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
 

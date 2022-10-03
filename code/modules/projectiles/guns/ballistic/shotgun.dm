@@ -140,7 +140,7 @@
 	icon_state = "caravan"
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 
@@ -204,7 +204,7 @@
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -341,12 +341,12 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
-		slot_flags = SLOT_BACK
+		slot_flags = ITEM_SLOT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
 		recoil_dat = getRecoil(RIFLE_RECOIL(2.2)[1],RIFLE_RECOIL(2.2)[2],RIFLE_RECOIL(2.2)[3])
 	else
-		slot_flags = SLOT_BACK | SLOT_BELT
+		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
 		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
