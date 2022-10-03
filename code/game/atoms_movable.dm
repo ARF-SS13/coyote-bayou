@@ -441,7 +441,8 @@
 	. = FALSE
 
 	if(QDELETED(src))
-		CRASH("Qdeleted thing being thrown around.")
+		log_qdel("[thrower] attempted to throw [src], but it's being deleted!.")
+		return
 
 	if (!target || speed <= 0)
 		return
