@@ -67,8 +67,8 @@
 	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
 		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
 		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. <br><br> \
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	item_state = "gun"
 	slot_flags = SLOT_BELT
@@ -114,8 +114,8 @@
 	desc = "A wasteland staple, an unrifled pipe welded to a break-action... thing and bolted to a nicely-carved plank of wood. \
 		Despite its crudeness, and pipebombedness, the humble pipe rifle has served many a waster well against the horrors of the wilds, \
 		often the one thing that stands between life and death. Fingers not withstanding. <br><br> \
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
 	item_state = "pepperbox"
@@ -513,8 +513,8 @@
 	desc = "An old, weathered, battered hunk of junk of a double-barrelled coach gun restored into a somewhat decent hunting rifle. \
 		Despite the bore being smoother than a gecko's butt, the accuracy on this thing isn't half bad, and its .308 chambering \
 		can pack a real punch. While its shotgunning days are over, it sure ain't done putting holes in things. <br><br>\
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
