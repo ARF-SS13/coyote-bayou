@@ -160,6 +160,16 @@
 	new /obj/item/storage/belt/legholster(src)
 	new /obj/item/storage/book/bible(src)
 
+/datum/gear/donator/kits/cavusogluzevk
+	name = "Raider Kit"
+	path = /obj/item/storage/box/large/custom_kit/cavusogluzevk
+	ckeywhitelist = list("cavusogluzevk")
+
+/obj/item/storage/box/large/custom_kit/cavusogluzevk/PopulateContents()
+	new /obj/item/storage/belt/military/alt(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
+	new /obj/item/melee/unarmed/brass/spiked(src)
+
 // D
 
 /datum/gear/donator/kits/dezuel
