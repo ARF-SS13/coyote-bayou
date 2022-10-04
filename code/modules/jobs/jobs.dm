@@ -138,6 +138,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Vault-tec Engineer",
 ))
 
+/* //commented for book-keeping reasons. actual positions are below this
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Paladin",
 	"Head Knight",
@@ -148,6 +149,12 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Knight",
 	"Senior Scribe",
 	"Scribe",
+	"Initiate",
+)) */
+
+
+GLOBAL_LIST_INIT(brotherhood_positions, list(
+	"Head Knight",
 	"Initiate",
 ))
 
@@ -299,7 +306,7 @@ GLOBAL_LIST_INIT(position_categories, list(
 	//	EXP_TYPE_NCR = list("jobs" = ncr_positions, "color" = "#ffeeaa"),
 	EXP_TYPE_VAULT = list("jobs" = vault_positions, "color" = "##fdee00"),
 	EXP_TYPE_FOLLOWERS = list("jobs" = followers_positions, "color" = "#ffeeaa"),
-	// EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
+	EXP_TYPE_BROTHERHOOD = list("jobs" = brotherhood_positions, "color" = "#95a5a6"),
 	// EXP_TYPE_LEGION = list("jobs" = legion_positions, "color" = "#f81717"),
 	EXP_TYPE_WASTELAND = list("jobs" = wasteland_positions, "color" = "#5a5a5a"),
 	// EXP_TYPE_ENCLAVE = list("jobs" = enclave_positions, "color" = "#323232"),
