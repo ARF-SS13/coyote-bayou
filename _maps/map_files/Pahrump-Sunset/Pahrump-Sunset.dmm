@@ -27530,14 +27530,8 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/structure/table,
-/obj/structure/junk/small/tv{
-	desc = "Advertisements would've played on this tv before the bombs dropped.";
-	icon = 'icons/fallout/objects/decorations.dmi';
-	icon_state = "television";
-	name = "pre-war advertising television"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/wall/f13/supermart,
 /area/f13/building/mall)
 "eIb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -27671,13 +27665,6 @@
 /obj/structure/curtain,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
-"eLP" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_south"
-	},
-/obj/item/reagent_containers/food/drinks/bottle/f13nukacola,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
-/area/f13/building/mall)
 "eLZ" = (
 /obj/effect/decal/cleanable/oil/slippery{
 	pixel_x = -10
@@ -34581,9 +34568,9 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
-	icon_state = "floorrustysolid"
+/obj/structure/stairs/north,
+/turf/open/floor/plasteel/f13{
+	icon_state = "bluedirtychess"
 	},
 /area/f13/building/mall)
 "idT" = (
@@ -39318,14 +39305,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
 "kwf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light{
-	dir = 4;
-	pixel_y = -16
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
 	},
-/obj/structure/barricade/wooden/planks/pregame,
-/obj/structure/barricade/wooden,
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/turf/closed/wall/f13/supermart,
 /area/f13/building/mall)
 "kwk" = (
 /obj/structure/flora/rock/pile/largejungle,
@@ -43173,8 +43156,9 @@
 	},
 /area/f13/building)
 "mky" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_north"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/railing{
+	dir = 4
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
@@ -63085,11 +63069,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/ncr)
 "waH" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_east_north"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 8
 	},
-/obj/item/newspaper,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building/mall)
 "waJ" = (
@@ -65954,10 +65937,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/caves)
 "xyH" = (
-/obj/structure/chair/booth{
-	icon_state = "booth_west_south"
-	},
-/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/turf/open/floor/plasteel/stairs,
 /area/f13/building/mall)
 "xyU" = (
 /turf/open/floor/f13/wood,
@@ -121556,12 +121536,12 @@ nbb
 uRJ
 cpm
 aID
-kzL
+wDH
 nna
 sgQ
-aNL
 mky
-xyH
+mky
+aNL
 aNL
 aEQ
 sYJ
@@ -121813,12 +121793,12 @@ nbb
 xLC
 liO
 wnX
-vjb
 eHZ
+eHZ
+eHZ
+idH
+xyH
 cEs
-cEs
-jef
-aAj
 kWX
 xrK
 daO
@@ -122070,12 +122050,12 @@ nbb
 xLC
 sox
 wnX
-vjb
 eHZ
-kWX
+eHZ
+kwf
 idH
-aAj
-sAO
+xyH
+cEs
 rtG
 mnd
 arS
@@ -122327,12 +122307,12 @@ nbb
 xLC
 vEm
 wnX
-vjb
-vjb
+eHZ
+cEs
 rtG
-aNL
 waH
-eLP
+waH
+aNL
 aNL
 ixu
 oYG
@@ -122584,8 +122564,8 @@ nbb
 xLC
 uRJ
 lHS
-vjb
-kwf
+eHZ
+cEs
 aGN
 aGN
 vxR
