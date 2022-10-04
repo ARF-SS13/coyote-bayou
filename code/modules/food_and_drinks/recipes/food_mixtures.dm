@@ -211,3 +211,12 @@
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= multiplier, i++)
 		new /obj/item/reagent_containers/food/snacks/mozzarella(location)
+
+/datum/chemical_reaction/food/quality_oil_upconvert
+	required_reagents = list(/datum/reagent/consumable/quality_oil = 1, /datum/reagent/consumable/cooking_oil = 2)
+	results = list(/datum/reagent/consumable/quality_oil = 2)
+	mix_message = "The cooking oil dilutes the quality oil- how delightfully devilish..."
+
+/datum/chemical_reaction/food/quality_oil
+	results = list(/datum/reagent/consumable/quality_oil = 2)
+	required_reagents = list(/datum/reagent/consumable/olivepaste = 4, /datum/reagent/water = 1)

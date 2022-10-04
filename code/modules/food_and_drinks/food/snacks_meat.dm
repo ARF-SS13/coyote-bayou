@@ -125,16 +125,13 @@
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
 
-/obj/item/reagent_containers/food/snacks/sushi_basic
-	name = "funa hosomaki"
-	desc = "A small cylindrical seaweed wrap, filled with rice and fish."
-	icon_state = "sushie_basic"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	bitesize = 10
-	filling_color = "#F2EEEA" //rgb(242, 238, 234)
-	tastes = list("fish" = 1, "rice" = 2, "salt" = 1)
-	foodtype = MEAT | VEGETABLES
+/obj/item/reagent_containers/food/snacks/fishtaco
+	name = "fish taco"
+	desc = "A taco with fish, cheese, and cabbage."
+	icon_state = "fishtaco"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2, "cabbage" = 1)
+	foodtype = MEAT | DAIRY | GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/rawantbrain
 	name = "Raw Ant Brain"

@@ -235,6 +235,28 @@
 	result = /obj/item/reagent_containers/food/snacks/mozzarella_sticks
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/pierogi
+	name = "Pierogi"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/doughslice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/potato = 1,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pierogi
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/stuffed_cabbage
+	name = "Stuffed cabbage"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 2,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/grown/tomato = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/stuffed_cabbage
+	subcategory = CAT_MISCFOOD
+
+
 /*
 /datum/crafting_recipe/food/melonkeg
 	name ="Melon keg"
