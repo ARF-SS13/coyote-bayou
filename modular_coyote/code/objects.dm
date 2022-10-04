@@ -108,6 +108,12 @@
 	icon_state = "flag_arkansas"
 	icon = 'modular_coyote/icons/objects/signs_small.dmi'
 
+/obj/structure/sign/brotherhoodcardboard
+	name = "Brotherhood Of Steal?"
+	desc = "A cardobard sign with the Brotherhood logo and name scribbled onto it."
+	icon_state = "cardboardsteal"
+	icon = 'modular_coyote/icons/objects/sign.dmi'
+
 //Gas Pumps
 
 /obj/structure/gas_pump/oilpump1X
