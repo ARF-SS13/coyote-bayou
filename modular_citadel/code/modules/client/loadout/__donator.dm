@@ -540,6 +540,7 @@
 	new /obj/item/melee/onehanded/knife/throwing(src)
 	new /obj/item/melee/onehanded/knife/throwing(src)
 	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/reagent_containers/food/snacks/kebab/rat/double(src)
 
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"
