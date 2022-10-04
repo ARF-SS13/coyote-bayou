@@ -9,10 +9,6 @@
 	tag = "icon-housewood2"
 	},
 /area/survivalpod)
-"d" = (
-/obj/structure/simple_door/tent,
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
 "f" = (
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2";
@@ -21,21 +17,33 @@
 /area/survivalpod)
 "g" = (
 /obj/structure/table/wood,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "i" = (
 /obj/structure/chair/f13foldupchair,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "j" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "k" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "l" = (
 /obj/structure/closet/crate/wooden,
@@ -62,7 +70,10 @@
 /obj/machinery/chem_dispenser/drinks{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "q" = (
 /obj/machinery/light/small{
@@ -73,12 +84,12 @@
 	tag = "icon-housewood2"
 	},
 /area/survivalpod)
-"B" = (
-/turf/open/floor/f13/wood,
-/area/survivalpod)
 "K" = (
 /obj/machinery/light/small,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "L" = (
 /turf/closed/wall/f13/tentwall,
@@ -106,7 +117,10 @@
 /obj/structure/chair/f13foldupchair{
 	dir = 8
 	},
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2";
+	tag = "icon-housewood2"
+	},
 /area/survivalpod)
 "Q" = (
 /obj/structure/bed,
@@ -139,9 +153,9 @@ a
 (2,1,1) = {"
 L
 Q
-B
+f
 k
-B
+f
 q
 i
 g
@@ -153,9 +167,9 @@ L
 R
 K
 L
-B
-B
-B
+f
+f
+f
 P
 L
 a
@@ -163,7 +177,7 @@ a
 (4,1,1) = {"
 L
 Q
-B
+f
 L
 N
 f
@@ -182,12 +196,12 @@ f
 f
 f
 f
-d
+k
 "}
 (6,1,1) = {"
 L
 Q
-B
+f
 L
 l
 f
@@ -211,9 +225,9 @@ a
 (8,1,1) = {"
 L
 Q
-B
+f
 k
-B
+f
 j
 i
 n
