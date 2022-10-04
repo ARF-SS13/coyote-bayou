@@ -3,11 +3,8 @@
 /obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"f" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
-"h" = (
-/obj/structure/flora/tallgrass2,
+"g" = (
+/obj/structure/flora/grass/wasteland,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "i" = (
@@ -29,6 +26,7 @@
 /obj/structure/curtain{
 	color = "red"
 	},
+/turf/open/floor/carpet,
 /area/survivalpod)
 "s" = (
 /obj/structure/chair/wood/fancy{
@@ -53,14 +51,20 @@
 	},
 /obj/item/toy/dummy,
 /obj/item/toy/talking/codex_gigas,
+/obj/effect/holodeck_effect/cards{
+	name = "Tarot Deck"
+	},
 /obj/item/storage/fancy/candle_box,
 /obj/structure/curtain{
 	color = "red"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/floor/carpet,
 /area/survivalpod)
-"y" = (
-/obj/structure/flora/grass/wasteland,
+"B" = (
+/obj/structure/flora/tallgrass2,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"C" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "D" = (
@@ -101,6 +105,7 @@
 /obj/item/stack/tile/fakespace,
 /obj/item/clothing/mask/bandana/red,
 /obj/item/storage/crayons,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "N" = (
 /obj/structure/curtain{
@@ -115,6 +120,7 @@
 /obj/structure/curtain{
 	color = "red"
 	},
+/turf/open/floor/carpet,
 /area/survivalpod)
 "W" = (
 /obj/structure/spirit_board,
@@ -130,13 +136,13 @@
 /area/survivalpod)
 
 (1,1,1) = {"
-f
+C
 J
 J
 N
 J
 J
-f
+C
 "}
 (2,1,1) = {"
 J
@@ -196,17 +202,17 @@ i
 i
 a
 F
-f
+C
 F
-f
+C
 i
 "}
 (9,1,1) = {"
 i
 F
-f
-h
-y
+C
+B
+g
 F
 i
 "}

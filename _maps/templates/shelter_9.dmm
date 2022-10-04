@@ -44,6 +44,9 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/dark,
 /area/survivalpod)
+"G" = (
+/turf/open/indestructible/ground/outside/dirt/dark,
+/area/survivalpod)
 "H" = (
 /obj/structure/simple_door/tent,
 /turf/open/floor/f13/wood,
@@ -81,9 +84,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt/dark,
 /area/survivalpod)
-"S" = (
-/turf/open/indestructible/ground/outside/dirt/dark,
-/area/survivalpod)
 "W" = (
 /turf/open/floor/f13/wood,
 /area/survivalpod)
@@ -108,7 +108,7 @@ w
 N
 N
 b
-S
+G
 R
 "}
 (3,1,1) = {"
@@ -116,7 +116,7 @@ f
 N
 N
 N
-S
+G
 o
 c
 "}
@@ -126,7 +126,7 @@ Y
 N
 N
 K
-S
+G
 F
 "}
 (5,1,1) = {"
@@ -135,7 +135,7 @@ h
 N
 N
 x
-S
+G
 a
 "}
 (6,1,1) = {"
@@ -143,8 +143,8 @@ f
 u
 N
 N
-S
-S
+G
+G
 a
 "}
 (7,1,1) = {"

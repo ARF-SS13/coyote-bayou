@@ -87,10 +87,6 @@
 /obj/structure/campfire/stove,
 /turf/open/floor/f13/wood,
 /area/survivalpod)
-"I" = (
-/obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood,
-/area/survivalpod)
 "J" = (
 /obj/structure/table/wood/fancy/black,
 /obj/item/storage/box/ingredients/american,
@@ -110,6 +106,7 @@
 /area/survivalpod)
 "P" = (
 /obj/structure/simple_door/tent,
+/turf/open/floor/f13/wood,
 /area/survivalpod)
 "Q" = (
 /obj/structure/rack,
@@ -127,6 +124,9 @@
 /obj/item/stack/crafting/goodparts/five,
 /obj/item/stack/crafting/metalparts/five,
 /turf/open/floor/f13/wood,
+/area/survivalpod)
+"W" = (
+/obj/structure/simple_door/tent,
 /area/survivalpod)
 "X" = (
 /obj/structure/closet/cabinet,
@@ -252,7 +252,7 @@ h
 h
 h
 l
-I
+P
 "}
 (10,1,1) = {"
 w
@@ -310,7 +310,7 @@ a
 w
 w
 w
-P
+W
 w
 w
 w

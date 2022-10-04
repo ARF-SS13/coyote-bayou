@@ -1,8 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/obj/structure/table/wood,
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
 "c" = (
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
@@ -11,23 +7,35 @@
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "g" = (
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "s" = (
 /obj/structure/campfire/stove,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "x" = (
 /obj/structure/rack,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
+"y" = (
+/obj/structure/table/wood,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
 "z" = (
 /obj/structure/table/wood,
 /obj/machinery/microwave,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "G" = (
 /obj/structure/barricade/bars,
@@ -39,8 +47,7 @@
 "J" = (
 /obj/structure/simple_door/tent,
 /turf/open/floor/f13/wood{
-	icon_state = "housewood2";
-	tag = "icon-housewood2"
+	icon_state = "housewood2"
 	},
 /area/survivalpod)
 "L" = (
@@ -62,7 +69,9 @@
 /area/survivalpod)
 "O" = (
 /obj/structure/dresser,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "P" = (
 /obj/machinery/workbench,
@@ -74,11 +83,16 @@
 "R" = (
 /obj/item/bedsheet/cult,
 /obj/structure/bed,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "S" = (
 /obj/structure/simple_door/tent,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/dirt{
+	dir = 4;
+	icon_state = "dirt"
+	},
 /area/survivalpod)
 "V" = (
 /turf/open/indestructible/ground/outside/dirt,
@@ -95,8 +109,8 @@ S
 c
 c
 c
-a
-a
+y
+y
 "}
 (2,1,1) = {"
 c
@@ -106,7 +120,7 @@ c
 x
 V
 V
-a
+y
 "}
 (3,1,1) = {"
 c
@@ -116,7 +130,7 @@ G
 V
 V
 V
-a
+y
 "}
 (4,1,1) = {"
 c
@@ -126,7 +140,7 @@ N
 V
 V
 V
-a
+y
 "}
 (5,1,1) = {"
 c
@@ -136,7 +150,7 @@ c
 x
 V
 V
-a
+y
 "}
 (6,1,1) = {"
 c
@@ -145,8 +159,8 @@ J
 c
 c
 c
-a
-a
+y
+y
 "}
 (7,1,1) = {"
 c

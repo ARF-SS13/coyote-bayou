@@ -2,9 +2,6 @@
 "a" = (
 /turf/closed/wall/f13/tentwall,
 /area/survivalpod)
-"b" = (
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
 "c" = (
 /obj/item/reagent_containers/food/snacks/f13/molejerky,
 /obj/item/reagent_containers/food/snacks/f13/molejerky,
@@ -14,17 +11,23 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "d" = (
-/obj/structure/chair/stool,
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"e" = (
 /obj/structure/bed/mattress{
 	icon_state = "mattress1";
 	name = "sleeping mat"
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
-"f" = (
+"g" = (
+/obj/structure/chair/stool,
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"h" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/survivalpod)
+"j" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"k" = (
 /obj/structure/table/wood/settler{
 	name = "tourist table"
 	},
@@ -32,13 +35,7 @@
 /obj/item/candle,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
-"g" = (
-/obj/structure/destructible/tribal_torch{
-	pixel_x = 15
-	},
-/turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"h" = (
+"n" = (
 /obj/structure/simple_door/tent,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
@@ -53,16 +50,16 @@ a
 (2,1,1) = {"
 a
 c
-d
-f
+g
+k
 a
 "}
 (3,1,1) = {"
 a
-e
-g
-b
+d
 h
+h
+n
 "}
 (4,1,1) = {"
 a
@@ -70,4 +67,11 @@ a
 a
 a
 a
+"}
+(5,1,1) = {"
+j
+j
+j
+j
+j
 "}

@@ -5,10 +5,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"c" = (
-/obj/structure/flora/tallgrass1,
-/turf/open/indestructible/ground/outside/dirt,
-/area/f13/wasteland)
 "e" = (
 /obj/item/shovel,
 /turf/open/indestructible/ground/outside/dirt,
@@ -38,13 +34,11 @@
 /turf/open/floor/f13/wood,
 /area/survivalpod)
 "m" = (
-/obj/structure/flora/grass/wasteland,
+/obj/structure/flora/tallgrass1,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "n" = (
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
+/obj/structure/flora/grass/wasteland,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "p" = (
@@ -110,14 +104,16 @@
 /area/survivalpod)
 "J" = (
 /obj/structure/simple_door/tent,
-/turf/open/floor/f13/wood,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2"
+	},
 /area/survivalpod)
 "K" = (
-/obj/structure/flora/tallgrass2,
-/turf/open/indestructible/ground/outside/dirt,
+/turf/open/indestructible/ground/outside/dirt/dark,
 /area/f13/wasteland)
 "M" = (
-/turf/open/indestructible/ground/outside/dirt/dark,
+/obj/structure/flora/tallgrass2,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "O" = (
 /turf/open/floor/f13/wood,
@@ -138,9 +134,6 @@
 /turf/open/floor/f13/wood,
 /area/survivalpod)
 "T" = (
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
 /obj/structure/fence/wooden{
 	pixel_y = 2
 	},
@@ -167,13 +160,13 @@
 
 (1,1,1) = {"
 a
-n
-n
-n
-n
-n
 T
-n
+T
+T
+T
+T
+T
+T
 E
 a
 "}
@@ -232,10 +225,10 @@ O
 O
 y
 y
-M
-M
-M
-M
+K
+K
+K
+K
 "}
 (7,1,1) = {"
 y
@@ -244,10 +237,10 @@ O
 O
 O
 J
-M
-M
-M
-M
+K
+K
+K
+K
 "}
 (8,1,1) = {"
 y
@@ -256,10 +249,10 @@ O
 S
 y
 y
-M
-M
-M
-M
+K
+K
+K
+K
 "}
 (9,1,1) = {"
 y
@@ -268,7 +261,7 @@ O
 i
 y
 a
-n
+T
 Y
 B
 a
@@ -281,7 +274,7 @@ y
 y
 D
 v
-c
+m
 V
 D
 "}
@@ -294,7 +287,7 @@ v
 D
 V
 v
-m
+n
 D
 "}
 (12,1,1) = {"
@@ -304,8 +297,8 @@ v
 v
 v
 D
-m
-K
+n
+M
 V
 D
 "}
