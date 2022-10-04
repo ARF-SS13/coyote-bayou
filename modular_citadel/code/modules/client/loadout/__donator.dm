@@ -225,11 +225,7 @@
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
-	new /obj/item/gun/ballistic/revolver/revolver45(src)
-	new /obj/item/ammo_box/c45rev(src)
 	new /obj/item/storage/belt/shoulderholster/ranger45(src)
-	new /obj/item/ammo_box/c45rev(src)
-	new /obj/item/ammo_box/c45rev(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
@@ -539,7 +535,6 @@
 	new /obj/item/reagent_containers/food/condiment/milk(src)
 	new /obj/item/reagent_containers/food/snacks/deadmouse(src)
 	new /obj/item/laser_pointer/blue/handmade(src)
-	new /obj/item/clothing/gloves/bracer(src)
 	new /obj/item/clothing/suit/armor/light/kit/shoulder(src)
 	new /obj/item/warpaint_bowl(src)
 	new /obj/item/melee/onehanded/knife/throwing(src)
