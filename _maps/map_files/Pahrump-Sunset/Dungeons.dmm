@@ -316,9 +316,9 @@
 	icon_state = "warn_end"
 	},
 /obj/effect/turf_decal/vg_decals/numbers/one{
+	icon_state = "2";
 	pixel_x = 5;
-	pixel_y = 31;
-	icon_state = "2"
+	pixel_y = 31
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
@@ -4051,11 +4051,6 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/enclave)
-"dDn" = (
-/obj/effect/landmark/start/f13/scribe,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood/rnd)
 "dDv" = (
 /obj/structure/necropolis_gate{
 	desc = "A massive stone gateway with a very heavy stone door.";
@@ -6449,7 +6444,6 @@
 /area/f13/brotherhood/rnd)
 "fxA" = (
 /obj/effect/landmark/start/f13/Knight,
-/obj/effect/landmark/start/f13/initiate,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -11374,7 +11368,6 @@
 /area/f13/vault)
 "jMQ" = (
 /obj/effect/landmark/start/f13/Knight,
-/obj/effect/landmark/start/f13/initiate,
 /obj/structure/chair/f13foldupchair{
 	dir = 4
 	},
@@ -11981,7 +11974,6 @@
 /area/f13/brotherhood/operations)
 "krp" = (
 /obj/effect/landmark/start/f13/Knight,
-/obj/effect/landmark/start/f13/initiate,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -14438,10 +14430,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/offices1st)
-"mya" = (
-/obj/effect/landmark/start/f13/scribe,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/brotherhood/rnd)
 "mys" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "casino"
@@ -14988,7 +14976,6 @@
 	layer = 2.7;
 	name = "prewar lounge chair"
 	},
-/obj/effect/landmark/start/f13/knightcap,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
 "mRS" = (
@@ -21513,7 +21500,6 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/vault)
 "smd" = (
-/obj/effect/landmark/start/f13/initiate,
 /obj/structure/chair/f13foldupchair{
 	dir = 4
 	},
@@ -26494,7 +26480,6 @@
 /area/f13/bunker)
 "wvL" = (
 /obj/effect/landmark/start/f13/Knight,
-/obj/effect/landmark/start/f13/initiate,
 /obj/structure/chair/f13foldupchair{
 	dir = 4
 	},
@@ -86360,7 +86345,7 @@ fbg
 gLf
 nSe
 pwG
-mya
+thi
 vzb
 nbc
 crX
@@ -86617,7 +86602,7 @@ hpH
 brn
 oqm
 cCK
-dDn
+nnp
 vfQ
 fcd
 fcd
@@ -86874,7 +86859,7 @@ nnp
 oqm
 iEA
 xHx
-dDn
+nnp
 cyA
 bNh
 bNh
@@ -87131,7 +87116,7 @@ hpH
 oCW
 mLt
 kGB
-dDn
+nnp
 vfQ
 tHt
 tHt
@@ -87388,7 +87373,7 @@ fbg
 hHG
 uLV
 pwG
-dDn
+nnp
 uuZ
 vxU
 gJA

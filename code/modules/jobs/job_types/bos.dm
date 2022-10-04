@@ -316,8 +316,8 @@ Head Knight
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the Head Knight, leader of your respective division in the Chapter. Your knowledge of pre-war materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of the Chapter's engineering Corps, and your Knights. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
-	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
+	description = "You are the Head Knight, leader of your respective division in the Chapter. Your knowledge of pre-war materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of establishing a working foothold, and your Knights and initiates. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
+	forbids = "The Brotherhood of Steel Forbids: violence beyond what is needed."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
@@ -339,26 +339,8 @@ Head Knight
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
 	ADD_TRAIT(H, TRAIT_PA_WEAR, src)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightplasmapistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AER9)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/AEP7)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/dks)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/R93)
+
 
 
 /datum/outfit/job/bos/f13knightcap
@@ -377,17 +359,13 @@ Head Knight
 	mask =			/obj/item/clothing/mask/gas/sechailer
 	head =			/obj/item/clothing/head/helmet/f13/combat/brotherhood/captain
 	id =			/obj/item/card/id/dogtag
-	backpack_contents = list(
-		/obj/item/gun/ballistic/automatic/pistol/pistol14 = 1,
-		/obj/item/ammo_box/magazine/m14mm = 2,
+	backpack_contents = list(= 1,
 		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
-		/obj/item/book/granter/crafting_recipe/gunsmith_one=1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_two=1
+		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2
 		)
 
 /datum/outfit/loadout/capstand
-	name = "Standard"
+	name = "Scout Leader"
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/wattz2k = 1,
 		/obj/item/stock_parts/cell/ammo/mfc = 2,
@@ -396,15 +374,15 @@ Head Knight
 /datum/outfit/loadout/capsap
 	name = "Close Support"
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/rcw = 1,
+		/obj/item/gun/energy/laser/wattz/recharger = 1,
 		/obj/item/stock_parts/cell/ammo/ecp = 2,
 	)
 
 /datum/outfit/loadout/capalt
 	name = "Warden-Defender"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/shotgun/automatic/combat/neostead = 1,
-		/obj/item/ammo_box/shotgun/buck = 2,
+		/obj/item/gun/ballistic/shotgun/hunting = 1,
+		/obj/item/ammo_box/shotgun/buck = 3,
 	)
 
 /*
@@ -689,15 +667,15 @@ Scribe
 /datum/job/bos/f13scribe
 	title = "Scribe"
 	flag = F13SCRIBE
-	total_positions = 3
-	spawn_positions = 3
-	description = "You answer directly to the Senior Scribe, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
-	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals, and cruel torture or experiments on the minds or bodies of prisoners."
+	total_positions = 0
+	spawn_positions = 0
+	description = "You answer to senior members, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
+	forbids = "The Brotherhood of Steel Forbids: violence beyond what is necessary."
 	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
 	supervisors = "the Senior Scribe and Head Scribe"
 	selection_color = "#95a5a6"
 
-	exp_requirements = 300
+	exp_requirements = 30
 
 	loadout_options = list(
 	/datum/outfit/loadout/scribea,
@@ -744,22 +722,8 @@ Scribe
 	..()
 	if(visualsOnly)
 		return
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/jet)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
-	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
-	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
-	ADD_TRAIT(H, TRAIT_CHEMWHIZ, src)
+
 
 /datum/outfit/loadout/scribea
 	name = "Junior Scribe"

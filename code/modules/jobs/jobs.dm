@@ -156,6 +156,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Knight",
 	"Initiate",
+	"Scribe",
 ))
 
 GLOBAL_LIST_INIT(oasis_positions, list(
