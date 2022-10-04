@@ -1931,6 +1931,12 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building)
+"bhN" = (
+/obj/structure/glowshroom,
+/turf/closed/indestructible/f13vaultrusted{
+	name = "rusty reinforced wall"
+	},
+/area/f13/caves)
 "bhO" = (
 /obj/structure/simple_door/metal/barred,
 /obj/effect/decal/cleanable/dirt,
@@ -4417,15 +4423,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"csX" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "000000"
-	},
-/obj/structure/glowshroom{
-	pixel_x = 31
-	},
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
 "csZ" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/foodspawner,
@@ -6017,10 +6014,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
-"dmN" = (
-/obj/structure/glowshroom,
-/turf/open/floor/plating/tunnel,
-/area/f13/caves)
 "dnn" = (
 /obj/effect/turf_decal/stripes/white/line,
 /obj/effect/decal/cleanable/dirt{
@@ -7636,13 +7629,6 @@
 "ehW" = (
 /obj/effect/landmark/start/f13/raider,
 /turf/open/indestructible/ground/outside/gravel,
-/area/f13/caves)
-"eiv" = (
-/obj/item/gun/ballistic/automatic/sportcarbine,
-/obj/item/gun/ballistic/automatic/sportcarbine,
-/obj/item/gun/ballistic/automatic/sportcarbine,
-/obj/structure/shelf_wood,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "eiC" = (
 /turf/open/indestructible/ground/outside/road{
@@ -12707,10 +12693,6 @@
 	icon_state = "bar"
 	},
 /area/f13/building)
-"gTs" = (
-/obj/structure/shelf_wood,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/caves)
 "gTy" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -14448,12 +14430,6 @@
 /obj/structure/flora/tree/jungle/small,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"hNo" = (
-/obj/structure/glowshroom,
-/turf/closed/indestructible/f13vaultrusted{
-	name = "rusty reinforced wall"
-	},
-/area/f13/caves)
 "hNw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -16705,6 +16681,13 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
+"iSM" = (
+/obj/item/gun/ballistic/automatic/sportcarbine,
+/obj/item/gun/ballistic/automatic/sportcarbine,
+/obj/item/gun/ballistic/automatic/sportcarbine,
+/obj/structure/shelf_wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "iSN" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
@@ -21778,12 +21761,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/village)
-"lKs" = (
-/obj/structure/lattice{
-	layer = 3
-	},
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/caves)
 "lKD" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/indestructible/ground/outside/road,
@@ -23439,6 +23416,12 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/f13/building)
+"mEr" = (
+/obj/structure/lattice{
+	layer = 3
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/caves)
 "mEz" = (
 /obj/structure/flora/tree/jungle,
 /turf/open/indestructible/ground/outside/dirt,
@@ -25315,13 +25298,6 @@
 	color = "#897F7F"
 	},
 /area/f13/village)
-"nKD" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/lattice{
-	layer = 3
-	},
-/turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/caves)
 "nKS" = (
 /obj/structure/closet/crate/large,
 /obj/effect/spawner/lootdrop/f13/alcoholspawner,
@@ -26159,6 +26135,10 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"oeX" = (
+/obj/structure/shelf_wood,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "oeZ" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontal"
@@ -30433,6 +30413,13 @@
 /obj/structure/flora/ausbushes/grassybush,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qEq" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/lattice{
+	layer = 3
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/caves)
 "qEs" = (
 /obj/structure/window/fulltile/ruins{
 	icon_state = "ruinswindowbrokenvertical"
@@ -30703,6 +30690,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"qLO" = (
+/obj/structure/glowshroom,
+/turf/open/floor/plating/tunnel,
+/area/f13/caves)
 "qLQ" = (
 /obj/structure/noticeboard{
 	dir = 8;
@@ -33164,10 +33155,7 @@
 /obj/structure/table/wood/junk,
 /obj/machinery/computer/terminal{
 	dir = 1;
-	doc_content_1 = "UNKNOWN ERROR: CONTACT MASTER SERVER AND TRY AGAIN.";
-	doc_title_1 = "AD 3  3D F ! @@@";
-	pixel_y = 6;
-	termtag = "BR3#THE3rH00D"
+	termtag = "Business"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
@@ -42574,6 +42562,15 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"xmh" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "000000"
+	},
+/obj/structure/glowshroom{
+	pixel_x = 31
+	},
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/caves)
 "xmi" = (
 /obj/effect/turf_decal/stripes/white/line,
 /obj/effect/decal/cleanable/dirt{
@@ -107876,7 +107873,7 @@ gXx
 aXS
 qCl
 lSX
-lKs
+mEr
 pDw
 jKZ
 jKZ
@@ -108135,7 +108132,7 @@ lSX
 aXS
 aXS
 egU
-nKD
+qEq
 bNm
 eRp
 lSX
@@ -108390,7 +108387,7 @@ lSX
 qLQ
 aXS
 oCh
-lKs
+mEr
 tRd
 tRd
 bNm
@@ -108398,7 +108395,7 @@ lSX
 bNm
 bNm
 mRk
-csX
+xmh
 lSX
 lSX
 nni
@@ -109170,7 +109167,7 @@ lSX
 lSX
 asP
 vkb
-dmN
+qLO
 gGb
 pUG
 lSX
@@ -109678,9 +109675,9 @@ mCc
 mCc
 pDw
 pDw
-eiv
-gTs
-gTs
+iSM
+oeX
+oeX
 lSX
 vkb
 vkb
@@ -109690,7 +109687,7 @@ jRN
 vSc
 gla
 vkb
-hNo
+bhN
 pDw
 pDw
 tRd
