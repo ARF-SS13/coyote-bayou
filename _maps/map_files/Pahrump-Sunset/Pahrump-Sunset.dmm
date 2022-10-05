@@ -9013,6 +9013,7 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/pda/heads/cmo,
 /turf/open/floor/f13/wood,
 /area/f13/building/hospital)
 "aFC" = (
@@ -49648,6 +49649,7 @@
 /area/f13/wasteland)
 "pln" = (
 /obj/machinery/photocopier,
+/obj/item/pda/heads/hop,
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "plE" = (
@@ -52326,6 +52328,13 @@
 /obj/structure/barricade/wooden,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
+	},
+/area/f13/building)
+"qFn" = (
+/obj/structure/table/wood,
+/obj/item/pda/heads/hos,
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
 	},
 /area/f13/building)
 "qFw" = (
@@ -55904,6 +55913,8 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/pda/medical,
+/obj/item/pda/medical,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "syJ" = (
@@ -70985,7 +70996,7 @@ cex
 cex
 diX
 phZ
-afS
+qFn
 nmV
 blg
 hkV
