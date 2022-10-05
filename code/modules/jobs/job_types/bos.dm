@@ -14,9 +14,10 @@ Main doors: ACCESS_CAPTAIN 20
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	objectivesList = list(
-		"Leadership recommends the following goal for this week: enlighten the blinded.",
+		"Leadership recommends the following goal for this week: enlighten the blinded. Attempt to show them your ways.",
 		"Leadership recommends the following goal for this week: seek and destroy those who follow the old brotherhood's foolish ways.",
 		"Leadership recommends the following goal for this week: collect artifacts and blueprints from before the annihilation of the Old World."
+		"Leadership recommends the following goal for this week: remember the sacrifice of Elder Wossner. Hold fesitivies or ceremonies in his honor."
 		)
 
 /datum/outfit/job/bos
