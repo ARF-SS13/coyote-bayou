@@ -1007,6 +1007,17 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/city)
+"aHi" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "aHn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -19947,6 +19958,16 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
+"mWB" = (
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "mWL" = (
 /obj/structure/chair/bench,
 /obj/machinery/light,
@@ -21801,6 +21822,17 @@
 	},
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"oiB" = (
+/obj/structure/table/booth,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "oiL" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans,
 /turf/open/floor/f13{
@@ -23589,17 +23621,6 @@
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
-/area/f13/city)
-"prZ" = (
-/obj/structure/table/wood,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/food/condiment/mustard{
-	pixel_x = 5
-	},
-/turf/open/floor/f13/wood,
 /area/f13/city)
 "psf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -29250,16 +29271,6 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"tcF" = (
-/obj/structure/table/booth,
-/obj/item/reagent_containers/food/condiment/mustard{
-	pixel_x = 5
-	},
-/obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_x = -5
-	},
-/turf/open/floor/f13/wood,
-/area/f13/city)
 "tcQ" = (
 /obj/structure/simple_door/wood,
 /obj/structure/barricade/wooden/planks,
@@ -33600,17 +33611,6 @@
 	color = "#d7d7d7"
 	},
 /area/f13/building)
-"wcw" = (
-/obj/structure/table/booth,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/food/condiment/ketchup{
-	pixel_x = -5
-	},
-/obj/item/reagent_containers/food/condiment/mustard{
-	pixel_x = 5
-	},
-/turf/open/floor/f13/wood,
-/area/f13/city)
 "wcF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/neutral,
@@ -43915,7 +43915,7 @@ hVs
 fRl
 vQf
 jJW
-wcw
+oiB
 cVO
 eFz
 rSh
@@ -45200,7 +45200,7 @@ euo
 fRl
 nFg
 xvY
-tcF
+mWB
 gGs
 gFC
 gYk
@@ -45465,7 +45465,7 @@ kSg
 wYK
 gGs
 lED
-prZ
+aHi
 ptQ
 roR
 nhN
