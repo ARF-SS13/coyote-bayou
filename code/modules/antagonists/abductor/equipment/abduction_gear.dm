@@ -730,15 +730,15 @@
 // Operating Table / Beds / Lockers
 
 /obj/structure/bed/abductor
-	name = "Saturnite bed"
+	name = "polymer bed"
 	desc = "This looks harder than a rock. Can people really sleep on this thing?"
 	icon = 'icons/obj/abductor.dmi'
 	buildstacktype = /obj/item/stack/sheet/mineral/abductor
 	icon_state = "bed"
 
 /obj/structure/table_frame/abductor
-	name = "Saturnite table frame"
-	desc = "A sturdy table frame made from Saturnite alloy."
+	name = "polymer table frame"
+	desc = "A sturdy table frame made from an experimental polymer alloy."
 	icon_state = "alien_frame"
 	framestack = /obj/item/stack/sheet/mineral/abductor
 	framestackamount = 1
@@ -776,7 +776,7 @@
 			qdel(src)
 
 /obj/structure/table/abductor
-	name = "Saturnite table"
+	name = "polymer table"
 	desc = "Advanced flat surface technology at work!"
 	icon = 'icons/obj/smooth_structures/alien_table.dmi'
 	icon_state = "alien_table"
@@ -788,7 +788,7 @@
 	frame = /obj/structure/table_frame/abductor
 
 /obj/structure/table/optable/abductor
-	name = "Saturnite operating table"
+	name = "poylmer operating table"
 	desc = "Used for advanced medical procedures. The surface is covered in tiny spines."
 	frame = /obj/structure/table_frame/abductor
 	buildstack = /obj/item/stack/sheet/mineral/silver
@@ -829,7 +829,7 @@
 	. = ..()
 
 /obj/structure/closet/abductor
-	name = "Saturnite locker"
+	name = "polymer locker"
 	desc = "Contains secrets of the universe."
 	icon_state = "abductor"
 	icon_door = "abductor"
@@ -837,9 +837,9 @@
 	material_drop = /obj/item/stack/sheet/mineral/abductor
 
 /obj/structure/door_assembly/door_assembly_abductor
-	name = "Saturnite airlock assembly"
+	name = "polymer airlock assembly"
 	icon = 'icons/obj/doors/airlocks/abductor/abductor_airlock.dmi'
-	base_name = "Saturnite airlock"
+	base_name = "experimental polymer airlock"
 	overlays_file = 'icons/obj/doors/airlocks/abductor/overlays.dmi'
 	airlock_type = /obj/machinery/door/airlock/abductor
 	material_type = /obj/item/stack/sheet/mineral/abductor
@@ -847,7 +847,7 @@
 
 /obj/item/clothing/under/abductor
 	desc = "The most advanced form of jumpsuit known to reality, looks uncomfortable."
-	name = "Saturnite jumpsuit" //End Fortuna edit
+	name = "polymer jumpsuit" //End Fortuna edit
 	icon_state = "abductor"
 	item_state = "bl_suit"
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 10, bio = 10, rad = 0, fire = 0, acid = 0)

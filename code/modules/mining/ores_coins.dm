@@ -183,10 +183,10 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	merge_type = /obj/item/stack/ore/glass/basalt
 
 /obj/item/stack/ore/plasma
-	name = "Ultracite chunks"
-	icon_state = "ultracite"
-	item_state = "ultracite"
-	singular_name = "Ultracite chunk"
+	name = "carbon chunks"
+	icon_state = "slag"
+	item_state = "slag"
+	singular_name = "carbon chunk"
 	points = 15
 	custom_materials = list(/datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	refined_type = /obj/item/stack/sheet/mineral/plasma
