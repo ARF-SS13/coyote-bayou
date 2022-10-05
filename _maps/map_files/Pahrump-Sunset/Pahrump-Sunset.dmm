@@ -569,8 +569,8 @@
 /area/f13/building)
 "acj" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
 /obj/item/stack/sheet/metal/five,
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -1031,10 +1031,10 @@
 /area/f13/building)
 "adU" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
 /obj/machinery/light/broken{
 	dir = 1
 	},
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -7863,7 +7863,7 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
-/turf/open/floor/plasteel/neutral,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "aCg" = (
 /obj/structure/simple_door/metal/dirtystore,
@@ -10561,11 +10561,15 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/barricade/wooden,
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
 	},
-/area/f13/building/hospital)
+/turf/open/floor/plasteel/f13/vault_floor/red/white/side{
+	dir = 8
+	},
+/area/f13/building/mall)
 "aKZ" = (
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
@@ -11517,14 +11521,12 @@
 	},
 /area/f13/wasteland)
 "aNA" = (
-/obj/structure/barricade/wooden,
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
 	},
-/turf/open/indestructible/ground/outside/ruins{
-	icon_state = "rubblepillar"
-	},
-/area/f13/building/hospital)
+/area/f13/village)
 "aNB" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
@@ -11760,9 +11762,12 @@
 	},
 /area/f13/building/firestation)
 "aOj" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/neutral,
-/area/f13/building/hospital)
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/building)
 "aOk" = (
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -28049,10 +28054,13 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/building)
 "eVi" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/turf/open/floor/plasteel/neutral,
+/obj/item/storage/part_replacer,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/structure/table,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "eVj" = (
 /obj/effect/turf_decal/weather/dirt{
@@ -29917,8 +29925,8 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/bed/old,
-/turf/open/floor/plasteel/neutral,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "fNY" = (
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
@@ -35026,9 +35034,9 @@
 "ioy" = (
 /obj/structure/table,
 /obj/item/circuitboard/machine/smartfridge,
-/obj/item/circuitboard/machine/biogenerator,
-/obj/item/circuitboard/machine/seed_extractor,
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/circuitboard/machine/chem_dispenser/drinks,
+/obj/item/circuitboard/machine/plantgenes,
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/building/mall)
 "ioK" = (
@@ -47339,8 +47347,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "ofD" = (
-/obj/structure/bed/old,
-/turf/open/floor/plasteel/neutral,
+/obj/structure/rack/shelf_metal,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "ofH" = (
 /obj/structure/closet/crate/large,
@@ -51530,8 +51538,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/bed/old,
-/turf/open/floor/plasteel/neutral,
+/obj/structure/table,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "qlr" = (
 /obj/structure/dresser,
@@ -52654,12 +52662,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/table,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/storage/part_replacer,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid,
 /area/f13/building/hospital)
 "qNC" = (
@@ -55743,10 +55745,6 @@
 	icon_state = "horizontaloutermain1"
 	},
 /area/f13/wasteland)
-"ssV" = (
-/obj/structure/simple_door/house,
-/turf/open/floor/plasteel/neutral,
-/area/f13/building/hospital)
 "stD" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_3"
@@ -55881,8 +55879,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "sxK" = (
-/obj/machinery/iv_drip,
-/turf/open/floor/plasteel/neutral,
+/obj/structure/table,
+/turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
 "sxW" = (
 /obj/structure/fence/corner{
@@ -57080,8 +57078,16 @@
 	},
 /area/f13/wasteland)
 "tdC" = (
-/turf/open/floor/plasteel/neutral,
-/area/f13/building/hospital)
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/white,
+/area/f13/building/mall)
 "teg" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/f13/outside/road{
@@ -59456,14 +59462,16 @@
 	},
 /area/f13/wasteland)
 "ukQ" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/structure/chair/office/dark{
-	dir = 8
-	},
-/turf/open/floor/plasteel/neutral,
-/area/f13/building/hospital)
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/condiment/mustard,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/obj/item/reagent_containers/food/condiment/honey,
+/obj/item/reagent_containers/food/condiment/cherryjelly,
+/obj/item/reagent_containers/food/condiment/peanut_butter,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/condiment/ketchup,
+/turf/open/floor/wood_common,
+/area/f13/building)
 "ukR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -66062,11 +66070,6 @@
 	icon_state = "rubblecorner"
 	},
 /area/f13/wasteland)
-"xBG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/simple_door/house,
-/turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building/hospital)
 "xBJ" = (
 /obj/item/reagent_containers/pill/patch/jet,
 /obj/effect/decal/cleanable/dirt,
@@ -81003,7 +81006,7 @@ aOk
 abP
 cex
 cex
-det
+ukQ
 abP
 yju
 ayJ
@@ -88126,7 +88129,7 @@ oHM
 bZf
 cFK
 paD
-adR
+aNA
 agv
 ahV
 aim
@@ -111640,7 +111643,7 @@ acR
 acR
 fTL
 fTL
-xFk
+aOj
 fTL
 aoU
 agk
@@ -111896,9 +111899,9 @@ lQx
 acR
 anI
 xFk
+aOj
 xFk
-xFk
-xFk
+aOj
 acR
 agk
 egp
@@ -113180,7 +113183,7 @@ akK
 agk
 bZS
 acR
-xFk
+aOj
 xFk
 fTL
 ajI
@@ -116405,16 +116408,16 @@ lSw
 oHV
 ijr
 aEt
-jkY
-gps
+aGq
+tFm
 pFw
 nAu
 rKl
-ijr
+sxK
 aCf
 fNV
 ofD
-ijr
+ofD
 aEt
 aGq
 ijr
@@ -116663,16 +116666,16 @@ tHJ
 ijr
 aEs
 aGq
-xBG
+tZi
 tZi
 aFD
 bqb
-aKY
-ukQ
-eVi
-eVi
-ekB
-qtn
+aFD
+aFD
+aFD
+aFD
+tZi
+aEt
 aGq
 ijr
 aHS
@@ -116920,15 +116923,15 @@ gCf
 ijr
 aEt
 aKA
-wPu
+tFm
 tFm
 tFm
 qNw
-aNA
-tdC
-aOj
-aOj
-ssV
+aFD
+tFm
+tZi
+tZi
+tFm
 aEs
 aGq
 xXG
@@ -117177,15 +117180,15 @@ uUU
 aMy
 aJp
 bfz
-ijr
+tFm
 aDb
 jaC
 tEH
-ijr
+eVi
 sxK
 qle
-ofD
-ijr
+sxK
+sxK
 hLg
 aIE
 ijr
@@ -117434,7 +117437,7 @@ ijr
 ijr
 ijr
 klm
-ijr
+gps
 ijr
 ijr
 ijr
@@ -119749,7 +119752,7 @@ dhi
 mOh
 uSc
 mai
-aGs
+tdC
 lpY
 aOT
 bRg
@@ -120529,7 +120532,7 @@ tso
 aPi
 aPi
 xUX
-xUX
+aKY
 uSc
 sfF
 pDa

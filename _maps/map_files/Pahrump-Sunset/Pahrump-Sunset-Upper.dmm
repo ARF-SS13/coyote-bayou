@@ -4862,6 +4862,9 @@
 /area/f13/building/hospital)
 "iQS" = (
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/corner{
+	dir = 1
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrustysolid"
 	},
@@ -7504,9 +7507,10 @@
 	color = "#363636"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/nest/ghoul{
-	layer = 2.07;
-	max_mobs = 2
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "mid level mobs";
+	randomizer_tag = "Mall Desperados"
 	},
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
@@ -8012,6 +8016,15 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/massfusion)
+"onJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building/mall)
 "onK" = (
 /obj/structure/chair/booth,
 /obj/effect/decal/cleanable/dirt,
@@ -10931,6 +10944,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/massfusion)
+"uiM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/plasteel/f13/vault_floor/plating,
+/area/f13/building/mall)
 "uiW" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -72284,8 +72304,8 @@ oez
 oez
 azb
 xJu
-iQS
-hiU
+onJ
+uiM
 iQS
 aFS
 oZc
