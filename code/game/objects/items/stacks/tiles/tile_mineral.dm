@@ -1,5 +1,5 @@
 /obj/item/stack/tile/mineral/plasma
-	name = "plasma tile"
+	name = "Ultracite tile"
 	singular_name = "plasma floor tile"
 	desc = "A tile made out of highly flammable plasma. This can only end well."
 	icon_state = "tile_plasma"
