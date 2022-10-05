@@ -172,8 +172,8 @@
 	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
 	maxHealth = 130 
 	health = 130
-	retreat_distance = 4
-	minimum_distance = 6
+	retreat_distance = 1
+	minimum_distance = 1
 	casingtype = /obj/item/ammo_casing/shotgun/improvised
 	projectiletype = null
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
