@@ -14,9 +14,9 @@ Main doors: ACCESS_CAPTAIN 20
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	objectivesList = list(
-		"Leadership recommends the following goal for this week: Establish an outpost at the radio tower",
-		"Leadership recommends the following goal for this week: Acquire blueprints for research and preservation",
-		"Leadership recommends the following goal for this week: Acquire or confiscate dangerous tech by any means necessary."
+		"Leadership recommends the following goal for this week: enlighten the blinded.",
+		"Leadership recommends the following goal for this week: seek and destroy those who follow the old brotherhood's foolish ways.",
+		"Leadership recommends the following goal for this week: collect artifacts and blueprints from before the annihilation of the Old World."
 		)
 
 /datum/outfit/job/bos
