@@ -1,4 +1,3 @@
-
 ///////////////////////////////////////////////Condiments
 //Notes by Darem: The condiments food-subtype is for stuff you don't actually eat but you use to modify existing food. They all
 //	leave empty containers when used up and can be filled/re-filled with other items. Formatting for first section is identical
@@ -227,7 +226,61 @@
 	list_reagents = list(/datum/reagent/consumable/mayonnaise = 50)
 	possible_states = list()
 
+/obj/item/reagent_containers/food/condiment/bbqsauce
+	name = "barbecue sauce"
+	desc = "Ahm I gehtin ah moar.. Sweet tangy, Byte?"
+	icon_state = "bbqsauce"
+	list_reagents = list(/datum/reagent/consumable/bbqsauce = 50)
+	possible_states = list()
 
+/obj/item/reagent_containers/food/condiment/peanut_butter
+	name = "peanut butter"
+	desc = "Tasty, fattening processed peanuts in a jar."
+	icon_state = "peanut_butter"
+	list_reagents = list(/datum/reagent/consumable/peanut_butter = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/cherryjelly
+	name = "cherry jelly"
+	desc = "A jar of super-sweet cherry jelly."
+	icon_state = "cherryjelly"
+	list_reagents = list(/datum/reagent/consumable/cherryjelly = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/ketchup
+	name = "ketchup"
+	desc = "A classic American Sauce."
+	icon_state = "ketchup"
+	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/mustard
+	name = "mustard"
+	desc = "A bottle of mustard."
+	icon_state = "mustard"
+	list_reagents = list(/datum/reagent/consumable/mustard = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/honey
+	name = "honey bear"
+	desc = "A jar of honey shaped in a bear."
+	icon_state = "honey"
+	list_reagents = list(/datum/reagent/consumable/honey = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/vinegar
+	name = "vinegar"
+	desc = "Perfect for chips."
+	icon_state = "vinegar"
+	list_reagents = list(/datum/reagent/consumable/vinegar = 50)
+	possible_states = list()
+
+/obj/item/reagent_containers/food/condiment/quality_oil
+	name = "quality oil"
+	desc = "For the fancy chef inside everyone."
+	icon_state = "oliveoil"
+	list_reagents = list(/datum/reagent/consumable/quality_oil = 50)
+	possible_states = list()
 
 //Food packs. To easily apply deadly toxi... delicious sauces to your food!
 
@@ -320,13 +373,6 @@
 	name = "soy sauce pack"
 	originalname = "soy sauce"
 	list_reagents = list(/datum/reagent/consumable/soysauce = 10)
-
-/obj/item/reagent_containers/food/condiment/ketchup
-	name = "Ketchup"
-	desc = "A classic American Sauce."
-	icon_state = "ketchup"
-	list_reagents = list(/datum/reagent/consumable/ketchup = 50)
-	possible_states = list()
 
 /obj/item/reagent_containers/food/condiment/yeast
 	name = "yeast"

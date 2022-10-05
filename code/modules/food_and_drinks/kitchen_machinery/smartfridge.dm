@@ -778,7 +778,8 @@
 		/obj/item/reagent_containers/food/drinks/bottle/hcider = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/grappa = 1,
 		/obj/item/reagent_containers/food/drinks/bottle/sake = 1,
-		/obj/item/reagent_containers/food/drinks/bottle/fernet = 1,)
+		/obj/item/reagent_containers/food/drinks/bottle/fernet = 1,
+		/obj/item/reagent_containers/food/drinks/bottle/hooch = 1)
 
 //diy
 
@@ -829,7 +830,10 @@
 		/obj/item/reagent_containers/food/condiment/yeast = 1,
 		/obj/item/reagent_containers/food/condiment/saltshaker = 1,
 		/obj/item/reagent_containers/food/condiment/peppermill = 1,
-		/obj/item/reagent_containers/food/condiment/soysauce = 1)
+		/obj/item/reagent_containers/food/condiment/soysauce = 1,
+		/obj/item/reagent_containers/food/condiment/soysauce = 1,
+		/obj/item/reagent_containers/food/condiment/vinegar = 1,
+		/obj/item/reagent_containers/food/condiment/quality_oil = 1)
 
 /obj/machinery/smartfridge/bottlerack/lootshelf/books
 	desc = "A rusted pre-war shelf, this one has a faded label about magazines. "
@@ -841,4 +845,17 @@
 		/obj/item/book/granter/trait/trekking = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_one = 1,
 		/obj/item/book/granter/crafting_recipe/gunsmith_two = 1,
-		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1,)
+		/obj/item/book/granter/crafting_recipe/gunsmith_three = 1)
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment
+	desc = "A rusted pre-war shelf, this one has a faded label about condiments. "
+
+/obj/machinery/smartfridge/bottlerack/lootshelf/condiment
+	chance_initial_contents = list(
+		/obj/item/reagent_containers/food/condiment/ketchup = 1,
+		/obj/item/reagent_containers/food/condiment/mustard = 1,
+		/obj/item/reagent_containers/food/condiment/bbqsauce = 1,
+		/obj/item/reagent_containers/food/condiment/honey = 1,
+		/obj/item/reagent_containers/food/condiment/cherryjelly = 1,
+		/obj/item/reagent_containers/food/condiment/peanut_butter = 1,
+		/obj/item/reagent_containers/food/condiment/mayonnaise = 1)

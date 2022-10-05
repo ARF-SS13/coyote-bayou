@@ -233,6 +233,12 @@
 	icon = 'icons/obj/food/soupsalad.dmi'
 	icon_state = "bowl"
 
+/obj/item/reagent_containers/food/snacks/customizable/sushi
+	name = "sushi"
+	foodtype = NONE
+	slice_path = /obj/item/reagent_containers/food/snacks/sushislice/custom
+	icon_state = "vegetariansushiroll"
+	desc = "A roll of customized sushi."
 
 /obj/item/reagent_containers/food/snacks/customizable/sandwich
 	name = "toast"
