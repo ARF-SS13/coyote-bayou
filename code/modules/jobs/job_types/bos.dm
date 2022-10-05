@@ -14,9 +14,10 @@ Main doors: ACCESS_CAPTAIN 20
 	exp_type = EXP_TYPE_BROTHERHOOD
 
 	objectivesList = list(
-		"Leadership recommends the following goal for this week: Establish an outpost at the radio tower",
-		"Leadership recommends the following goal for this week: Acquire blueprints for research and preservation",
-		"Leadership recommends the following goal for this week: Acquire or confiscate dangerous tech by any means necessary."
+		"Leadership recommends the following goal for this week: enlighten the blinded. Attempt to show them your ways.",
+		"Leadership recommends the following goal for this week: seek and destroy those who follow the old brotherhood's foolish ways.",
+		"Leadership recommends the following goal for this week: collect artifacts and blueprints from before the annihilation of the Old World.",
+		"Leadership recommends the following goal for this week: remember the sacrifice of Elder Wossner. Hold fesitivies or ceremonies in his honor."
 		)
 
 /datum/outfit/job/bos
@@ -49,6 +50,7 @@ Main doors: ACCESS_CAPTAIN 20
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/boscombathelmetmk2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/bos)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/gate_bos)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/bosoutcastlight)
 
 /*
 Elder
@@ -316,9 +318,9 @@ Head Knight
 	head_announce = list("Security")
 	total_positions = 1
 	spawn_positions = 1
-	description = "You are the Head Knight, leader of your outcasts. After your attempted coup, you have been wandering the wastes, looking for a new home, and have now found a barely-acceptable place to construct your new chapters' bunker. Your knowledge of pre-war materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of establishing a working foothold, and your Knights and initiates. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
+	description = "You are the Head Knight, one of the leaders of your group of outcasts. After the attempted coup by the late Head Paladin Wossner, you have been wandering the wastes, looking for a new home, and have now found a barely-acceptable place to construct your new chapters' bunker. Your knowledge of pre-war materials and engineering is almost unparalleled, and you have basic combat training and experience. You are in charge of establishing a working foothold, and your Knights and initiates. Delegate to them as necessary. As Chief Armorer, you are also in charge of the armory."
 	forbids = "The Brotherhood of Steel Forbids: violence beyond what is needed."
-	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
+	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the hands of the blind. Experimentation and research."
 	supervisors = "the elder"
 	selection_color = "#7f8c8d"
 
@@ -669,9 +671,9 @@ Scribe
 	flag = F13SCRIBE
 	total_positions = 0
 	spawn_positions = 0
-	description = "You answer to senior members, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
+	description = "After the attempted coup by the late Head Paladin Wossner, you were outcast along with the rest of your brothers. Even though the location is different, the job is the same. You answer to senior members, tasked with researching and reverse-engineering recovered technologies from the old world, while maintaining the brotherhoods scientific archives. You may also be given a trainee to assign duties to."
 	forbids = "The Brotherhood of Steel Forbids: violence beyond what is necessary."
-	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
+	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the blind. Experimentation and research."
 	supervisors = "the Senior Scribe and Head Scribe"
 	selection_color = "#95a5a6"
 
@@ -982,9 +984,9 @@ Initiate
 	flag = F13INITIATE
 	total_positions = 2
 	spawn_positions = 2
-	description = "You are one of the initiates that either attempted to participate in the failed coup your group was exiled for, or a new recruit inducted after their arrival to Redwater. You are to assist your superiors and receive training how they deem fit. You are allowed a looser chain than a 'normal' iniate, able to leave the bunker as you see fit."
-	forbids = "The Brotherhood of Steel Forbids: Unethical human experimentation. Violence beyond what is needed to accomplish Brotherhood goals."
-	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the wasteland. Experimentation and research."
+	description = "You are one of the initiates that either attempted to participate in the failed coup by Head Paladin Wossner, or a new recruit inducted after their arrival to Redwater. You are to assist your superiors and receive training how they deem fit. You are allowed a looser chain than a 'normal' iniate, able to leave the bunker as you see fit."
+	forbids = "The Brotherhood of Steel Forbids: violence beyond what is needed."
+	enforces = "The Brotherhood of Steel Expects: Obeying the Chain That - Binds your direct superior. Collection and safeguarding of technology from the hands of the blind. Experimentation and research."
 	supervisors = "the scribes, knights, or Paladins"
 	selection_color = "#95a5a6"
 
@@ -1035,7 +1037,7 @@ Initiate
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
 	belt = 			/obj/item/storage/belt/utility
-	suit = 			/obj/effect/spawner/lootdrop/f13/armor/tier1
+	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood/light
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/wattz=1,
