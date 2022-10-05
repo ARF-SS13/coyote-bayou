@@ -1038,7 +1038,7 @@ Initiate
 	suit = 			/obj/effect/spawner/lootdrop/f13/armor/tier1
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/pistol/wattz=1,
+		/obj/item/gun/energy/laser/wattz=1,
 		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/initiateK=1,
 		)
