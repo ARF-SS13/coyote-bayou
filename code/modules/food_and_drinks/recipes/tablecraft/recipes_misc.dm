@@ -17,7 +17,8 @@
 /datum/crafting_recipe/food/khachapuri
 	name = "Khachapuri"
 	reqs = list(
-		/datum/reagent/consumable/eggyolk = 5,
+		/datum/reagent/consumable/eggyolk = 2,
+		/datum/reagent/consumable/eggwhite = 4,
 		/obj/item/reagent_containers/food/snacks/cheesewedge = 1,
 		/obj/item/reagent_containers/food/snacks/store/bread/plain = 1
 	)
@@ -200,6 +201,7 @@
 		/datum/reagent/consumable/sodiumchloride = 5,
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 2,
 		/obj/item/reagent_containers/food/snacks/grown/garlic = 1,
+		/datum/reagent/consumable/quality_oil = 5,
 		/obj/item/reagent_containers/food/snacks/grown/pinyon = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/pesto
@@ -210,6 +212,7 @@
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/tomato = 1,
 		/datum/reagent/consumable/sodiumchloride = 2,
+		/datum/reagent/consumable/quality_oil = 5,
 		/obj/item/reagent_containers/food/snacks/grown/herbs = 1
 	)
 	result = /obj/item/reagent_containers/food/snacks/tomato_sauce
@@ -256,6 +259,16 @@
 	result = /obj/item/reagent_containers/food/snacks/stuffed_cabbage
 	subcategory = CAT_MISCFOOD
 
+/datum/crafting_recipe/food/pickles_jar
+	name = "Jar of pickles"
+	reqs = list(
+		/obj/item/reagent_containers/glass/beaker/large = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cucumber = 10,
+		/datum/reagent/water = 10,
+		/datum/reagent/consumable/sodiumchloride = 10,
+	)
+	result = /obj/item/storage/fancy/pickles_jar
+	subcategory = CAT_MISCFOOD
 
 /*
 /datum/crafting_recipe/food/melonkeg

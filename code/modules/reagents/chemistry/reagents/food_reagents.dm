@@ -593,6 +593,7 @@
 /datum/reagent/consumable/peanut_butter
 	name = "Peanut Butter"
 	description = "A popular food paste made from ground dry-roasted peanuts."
+	reagent_state = SOLID
 	color = "#C29261"
 	value = REAGENT_VALUE_UNCOMMON
 	nutriment_factor = 10 * REAGENTS_METABOLISM
@@ -670,6 +671,7 @@
 /datum/reagent/consumable/cherryjelly
 	name = "Cherry Jelly"
 	description = "Totally the best. Only to be spread on foods with excellent lateral symmetry."
+	nutriment_factor = 10 * REAGENTS_METABOLISM
 	color = "#801E28" // rgb: 128, 30, 40
 	value = REAGENT_VALUE_COMMON
 	taste_description = "cherry"
@@ -677,6 +679,7 @@
 /datum/reagent/consumable/bluecherryjelly
 	name = "Blue Cherry Jelly"
 	description = "Blue and tastier kind of cherry jelly."
+	nutriment_factor = 10 * REAGENTS_METABOLISM
 	color = "#00F0FF"
 	value = REAGENT_VALUE_UNCOMMON
 	taste_description = "blue cherry"
@@ -701,9 +704,16 @@
 /datum/reagent/consumable/eggyolk
 	name = "Egg Yolk"
 	description = "It's full of protein."
-	nutriment_factor = 3 * REAGENTS_METABOLISM
+	nutriment_factor = 4 * REAGENTS_METABOLISM
 	color = "#FFB500"
 	taste_description = "egg"
+
+/datum/reagent/consumable/eggwhite
+	name = "Egg White"
+	description = "It's full of even more protein."
+	nutriment_factor = 1.5 * REAGENTS_METABOLISM
+	color = "#fffdf7"
+	taste_description = "bland egg"
 
 /datum/reagent/consumable/corn_starch
 	name = "Corn Starch"
@@ -987,3 +997,16 @@
 	description = "A high quality oil, suitable for dishes where the oil is a key flavour."
 	taste_description = "olive oil"
 	color = "#DBCF5C"
+
+/datum/reagent/consumable/vinegar
+	name = "Vinegar"
+	description = "Useful for pickling, or putting on chips."
+	taste_description = "acid"
+	color = "#661F1E"
+
+/datum/reagent/consumable/whipped_cream
+	name = "Whipped Cream"
+	description = "A white fluffy cream made from whipping cream at intense speed."
+	color = "#efeff0"
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "fluffy sweet cream"

@@ -404,6 +404,15 @@
 /obj/item/reagent_containers/food/drinks/bottle/tequila/empty
 	list_reagents = null
 
+/obj/item/reagent_containers/food/drinks/bottle/hooch
+	name = "hooch bottle"
+	desc = "A bottle of rotgut. Its owner has applied some street wisdom to cleverly disguise it as a brown paper bag."
+	icon_state = "hoochbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/hooch/empty
+	list_reagents = null
+
 //////////////////////////JUICES AND STUFF ///////////////////////
 
 /obj/item/reagent_containers/food/drinks/bottle/orangejuice

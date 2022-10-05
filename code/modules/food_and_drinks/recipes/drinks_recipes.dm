@@ -476,13 +476,13 @@
 	name = "Chocolate Pudding"
 	id = /datum/reagent/consumable/chocolatepudding
 	results = list(/datum/reagent/consumable/chocolatepudding = 20)
-	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 10, /datum/reagent/consumable/eggyolk = 5)
+	required_reagents = list(/datum/reagent/consumable/cream = 5, /datum/reagent/consumable/coco = 5, /datum/reagent/consumable/eggyolk = 2)
 
 /datum/chemical_reaction/vanillapudding
 	name = "Vanilla Pudding"
 	id = /datum/reagent/consumable/vanillapudding
 	results = list(/datum/reagent/consumable/vanillapudding = 20)
-	required_reagents = list(/datum/reagent/consumable/vanilla = 5, /datum/reagent/consumable/milk = 5, /datum/reagent/consumable/eggyolk = 5)
+	required_reagents = list(/datum/reagent/consumable/vanilla = 5, /datum/reagent/consumable/cream = 5, /datum/reagent/consumable/eggyolk = 2)
 
 /datum/chemical_reaction/drunkenblumpkin
 	name = "Drunken Blumpkin"
@@ -872,6 +872,14 @@
 	id = /datum/reagent/consumable/bluecherryshake
 	results = list(/datum/reagent/consumable/bluecherryshake = 3)
 	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/cucumberlemonade
+	results = list(/datum/reagent/consumable/cucumberlemonade = 5)
+	required_reagents = list(/datum/reagent/consumable/lemon_lime = 3, /datum/reagent/consumable/cucumberjuice = 2, /datum/reagent/consumable/ice = 1)
+
+/datum/chemical_reaction/drink/gin_garden
+	results = list(/datum/reagent/consumable/ethanol/gin_garden = 15)
+	required_reagents = list(/datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/sugar = 1, /datum/reagent/consumable/ethanol/gin = 3, /datum/reagent/consumable/cucumberjuice = 3, /datum/reagent/consumable/sol_dry = 5, /datum/reagent/consumable/ice = 2)
 
 ////////////////////////////////////////// Tea  Base Drinks //////////////////////////////////////
 

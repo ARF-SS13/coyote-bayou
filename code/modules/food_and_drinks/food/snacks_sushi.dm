@@ -161,6 +161,16 @@
 	tastes = list("rice" = 4, "fish" = 2, "spicyness" = 2)
 	foodtype = MEAT | VEGETABLES
 
+/obj/item/reagent_containers/food/snacks/springroll
+	name = "spring roll"
+	desc = "A plate of translucent rice wrappers filled with fresh vegetables, served with sweet chili sauce. You either love them or hate them."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "springroll"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 2)
+	tastes = list("rice wrappers" = 1, "spice" = 1, "crunchy veggies" = 1)
+	foodtype = GRAIN | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
 // customizationable sushi slice
 
 /obj/item/reagent_containers/food/snacks/sushislice/custom

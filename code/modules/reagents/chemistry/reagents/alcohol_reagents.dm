@@ -2207,7 +2207,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.set_drugginess(50)
 	M.adjustStaminaLoss(-2)
 	return ..()
-	
+
 /datum/reagent/consumable/ethanol/rotgut
 	name = "Rotgut"
 	description = "The folks out west started outfitting their vehicles with rot gut engines to get around. A waste of a tasty drink if you ask me"
@@ -2218,6 +2218,15 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "glass of Rotgut"
 	glass_desc = "cleaning fluid or tasty drink, you decide."
 	value = REAGENT_VALUE_UNCOMMON
+
+/datum/reagent/consumable/ethanol/gin_garden
+	name = "Gin Garden"
+	description = "Excellent cooling alcoholic drink with not so ordinary taste."
+	color = "#6cd87a"
+	taste_description = "light gin with sweet ginger and cucumber"
+	glass_icon_state = "gin_garden"
+	glass_name = "gin garden"
+	glass_desc = "Hey, someone forgot the herb and... the cucumber in my cocktail!"
 
 ////////////////////
 //Race-Base-Drinks//

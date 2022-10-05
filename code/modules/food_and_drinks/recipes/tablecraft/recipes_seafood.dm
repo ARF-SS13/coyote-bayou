@@ -266,3 +266,41 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
 	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/springroll
+	name = "Spring roll"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/grown/carrot = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cucumber = 1,
+		/obj/item/reagent_containers/food/snacks/grown/chili = 1,
+		/datum/reagent/consumable/rice = 10,
+		/datum/reagent/water = 10,
+	)
+	result = /obj/item/reagent_containers/food/snacks/springroll
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/meat_poke
+	name ="Meat poke"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/sea_weed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 3,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/tofu = 1,
+		/datum/reagent/consumable/soysauce = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/meat_poke
+	subcategory = CAT_MISCFOOD
+
+/datum/crafting_recipe/food/fish_poke
+	name ="Fish poke"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/sea_weed = 1,
+		/obj/item/reagent_containers/food/snacks/salad/boiledrice = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 1,
+		/obj/item/reagent_containers/food/snacks/grown/cabbage = 1,
+		/obj/item/reagent_containers/food/snacks/tofu = 1,
+		/datum/reagent/consumable/soysauce = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/fish_poke
+	subcategory = CAT_MISCFOOD

@@ -149,7 +149,7 @@
 /datum/chemical_reaction/cakebatter
 	name = "Cake Batter"
 	id = "cakebatter"
-	required_reagents = list(/datum/reagent/consumable/eggyolk = 15, /datum/reagent/consumable/flour = 15, /datum/reagent/consumable/sugar = 5)
+	required_reagents = list(/datum/reagent/consumable/eggyolk = 6, /datum/reagent/consumable/eggwhite = 12, /datum/reagent/consumable/flour = 15, /datum/reagent/consumable/sugar = 5)
 	mix_message = "The ingredients form a cake batter."
 
 /datum/chemical_reaction/cakebatter/on_reaction(datum/reagents/holder, multiplier)
