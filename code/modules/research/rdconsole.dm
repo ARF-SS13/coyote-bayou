@@ -1186,7 +1186,7 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/core/vault/Initialize()
 	. = ..()
-	stored_research = SSresearch.science_tech //lettern, note about this
+	stored_research = SSresearch.vault_tech //CB Edit: Fix console rebuild exploit
 	stored_research.consoles_accessing[src] = TRUE
 	matching_design_ids = list()
 	SyncRDevices()
