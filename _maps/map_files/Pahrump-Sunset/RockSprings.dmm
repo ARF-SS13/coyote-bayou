@@ -8604,6 +8604,18 @@
 /obj/structure/barricade/wooden,
 /turf/open/indestructible/ground/outside/desert/harsh,
 /area/f13/village/overpass_lower)
+"eIT" = (
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/village/tunnel_diner)
 "eJq" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -8768,6 +8780,7 @@
 /area/f13/building)
 "eMP" = (
 /obj/structure/table,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -24898,8 +24911,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "nuO" = (
-/obj/structure/rack,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/smartfridge/bottlerack/lootshelf/cooking,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "nvg" = (
@@ -25798,6 +25811,18 @@
 	name = "Water Basin";
 	pixel_x = 13;
 	pixel_y = -1
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
+"nUU" = (
+/obj/structure/table/booth{
+	color = "#C59B9B"
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
@@ -30947,6 +30972,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood_common,
 /area/f13/village)
+"qOQ" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/turf/open/floor/f13{
+	icon_state = "bluedirtychess2"
+	},
+/area/f13/village/tunnel_diner)
 "qPd" = (
 /obj/effect/turf_decal/weather/dirt,
 /obj/structure/barricade/tentclothcorner{
@@ -33172,6 +33204,20 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"rXJ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/table/booth{
+	color = "#C59B9B"
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/wood_common,
+/area/f13/building)
 "rXS" = (
 /mob/living/simple_animal/hostile/cazador,
 /turf/open/indestructible/ground/outside/dirt,
@@ -33312,6 +33358,12 @@
 	color = "#363636"
 	},
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/condiment/honey,
+/obj/item/reagent_containers/food/condiment/bbqsauce,
+/obj/item/reagent_containers/food/condiment/cherryjelly,
+/obj/item/reagent_containers/food/condiment/ketchup,
+/obj/item/reagent_containers/food/condiment/mayonnaise,
+/obj/item/reagent_containers/food/condiment/mustard,
 /turf/open/floor/f13{
 	icon_state = "bar"
 	},
@@ -72970,14 +73022,14 @@ iIF
 iIF
 kDz
 mwr
-bcY
+eIT
 oxW
 xNa
 mwr
-bcY
+eIT
 oxW
 mwr
-bcY
+eIT
 oxW
 vNM
 dvc
@@ -74005,7 +74057,7 @@ vqj
 vMT
 emu
 cXU
-eMP
+qOQ
 eMP
 vNM
 ilY
@@ -93702,7 +93754,7 @@ jFW
 jFW
 kFi
 kFi
-kFi
+rXJ
 jFW
 oca
 nDp
@@ -96272,7 +96324,7 @@ suA
 kYA
 kUQ
 bCj
-bCj
+nUU
 mLa
 xuh
 kUQ

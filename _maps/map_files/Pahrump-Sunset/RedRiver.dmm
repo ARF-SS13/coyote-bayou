@@ -1007,6 +1007,17 @@
 	icon_state = "whitebluerustychess"
 	},
 /area/f13/city)
+"aHi" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "aHn" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/road{
@@ -16853,7 +16864,12 @@
 /area/f13/wasteland)
 "kSg" = (
 /obj/structure/table/wood,
-/obj/item/stack/sheet/plasteel/five,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "kSt" = (
@@ -19942,6 +19958,16 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/wasteland)
+"mWB" = (
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "mWL" = (
 /obj/structure/chair/bench,
 /obj/machinery/light,
@@ -21796,6 +21822,17 @@
 	},
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"oiB" = (
+/obj/structure/table/booth,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "oiL" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans,
 /turf/open/floor/f13{
@@ -25833,9 +25870,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/storage/fancy/cigarettes/cigars/havana{
-	pixel_y = 10
-	},
+/obj/item/reagent_containers/food/condiment/bbqsauce,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/city)
 "qRx" = (
@@ -43880,7 +43915,7 @@ hVs
 fRl
 vQf
 jJW
-cRC
+oiB
 cVO
 eFz
 rSh
@@ -45165,7 +45200,7 @@ euo
 fRl
 nFg
 xvY
-xvY
+mWB
 gGs
 gFC
 gYk
@@ -45430,7 +45465,7 @@ kSg
 wYK
 gGs
 lED
-jkv
+aHi
 ptQ
 roR
 nhN
