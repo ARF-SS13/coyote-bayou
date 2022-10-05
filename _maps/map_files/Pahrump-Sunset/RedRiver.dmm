@@ -16853,7 +16853,12 @@
 /area/f13/wasteland)
 "kSg" = (
 /obj/structure/table/wood,
-/obj/item/stack/sheet/plasteel/five,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
 /turf/open/floor/f13/wood,
 /area/f13/city)
 "kSt" = (
@@ -23585,6 +23590,17 @@
 	icon_state = "bluerustysolid"
 	},
 /area/f13/city)
+"prZ" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "psf" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/store{
@@ -25833,9 +25849,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/storage/fancy/cigarettes/cigars/havana{
-	pixel_y = 10
-	},
+/obj/item/reagent_containers/food/condiment/bbqsauce,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
 /area/f13/city)
 "qRx" = (
@@ -29236,6 +29250,16 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"tcF" = (
+/obj/structure/table/booth,
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "tcQ" = (
 /obj/structure/simple_door/wood,
 /obj/structure/barricade/wooden/planks,
@@ -33576,6 +33600,17 @@
 	color = "#d7d7d7"
 	},
 /area/f13/building)
+"wcw" = (
+/obj/structure/table/booth,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/reagent_containers/food/condiment/ketchup{
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/food/condiment/mustard{
+	pixel_x = 5
+	},
+/turf/open/floor/f13/wood,
+/area/f13/city)
 "wcF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/neutral,
@@ -43880,7 +43915,7 @@ hVs
 fRl
 vQf
 jJW
-cRC
+wcw
 cVO
 eFz
 rSh
@@ -45165,7 +45200,7 @@ euo
 fRl
 nFg
 xvY
-xvY
+tcF
 gGs
 gFC
 gYk
@@ -45430,7 +45465,7 @@ kSg
 wYK
 gGs
 lED
-jkv
+prZ
 ptQ
 roR
 nhN
