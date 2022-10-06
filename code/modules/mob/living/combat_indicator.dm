@@ -32,8 +32,8 @@
 
 /mob/living/proc/change_combat_indicator(state)
 	if(world.time >= combatmessagecooldown) //If combat mode didn't make a message
-		combatmessagecooldown = world.time + 15 SECONDS
-		nextcombatpopup = world.time + 15 SECONDS
+		combatmessagecooldown = world.time + 10 SECONDS
+		nextcombatpopup = world.time + 10 SECONDS
 		if(state)
 			if (prob(50))
 				playsound(src, 'modular_coyote/sound/combatintent/waawaa2.ogg', 50)
