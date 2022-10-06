@@ -168,7 +168,7 @@
 	desc = "Do red tools really work faster or is the effect purely psychological? Needless to say, you can't strip it off once applied. Ye'z boyz kin' put in on ya shootahz too!"
 	icon_state = "paint_red"
 
-/obj/item/tool_upgrade/productivity/red_paint/New()
+/*/obj/item/tool_upgrade/productivity/red_paint/New()
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	/*I.tool_upgrades = list(
@@ -186,7 +186,7 @@
 	I.prefix = "red"
 	I.removable = FALSE
 	//I.required_qualities = list(QUALITY_BOLT_TURNING, QUALITY_PULSING, QUALITY_PRYING, QUALITY_WELDING, QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING, QUALITY_SHOVELING, QUALITY_DIGGING, QUALITY_EXCAVATION, QUALITY_CLAMPING, QUALITY_CAUTERIZING, QUALITY_RETRACTING, QUALITY_DRILLING, QUALITY_HAMMERING, QUALITY_SAWING, QUALITY_CUTTING, QUALITY_WEAVING)
-/*
+
 /obj/item/tool_upgrade/productivity/whetstone
 	name = "sharpening block"
 	desc = "A rough single-use block to sharpen a blade or a rifle bayonet. The honed edge cuts smoothly, and can never be dulled."
