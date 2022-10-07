@@ -19293,6 +19293,15 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/building)
+"bvS" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bvX" = (
 /obj/machinery/vending/cola,
 /obj/effect/decal/cleanable/dirt,
@@ -20080,6 +20089,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"bEo" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/obj/structure/obstacle/tanktrap,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "bEq" = (
 /obj/item/storage/secure/safe{
 	pixel_x = 32;
@@ -20672,7 +20688,7 @@
 	color = "#363636"
 	},
 /obj/structure/ladder/unbreakable{
-	height = 1;
+	height = 2;
 	id = "tunnelertemple";
 	name = "ancient ladder"
 	},
@@ -52707,6 +52723,15 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
+"qFv" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/effect/turf_decal/weather/dirt{
+	dir = 8
+	},
+/turf/open/indestructible/ground/outside/water,
+/area/f13/caves)
 "qFw" = (
 /obj/structure/spacevine,
 /obj/structure/spacevine,
@@ -58118,6 +58143,9 @@
 /area/f13/building)
 "tuk" = (
 /obj/effect/turf_decal/weather/dirt,
+/obj/effect/turf_decal/weather/dirt{
+	dir = 4
+	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
 "tuA" = (
@@ -59945,6 +59973,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/structure/destructible/tribal_torch/wall/lit{
+	dir = 8;
+	light_color = "#f4e3b0"
+	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "umH" = (
@@ -61674,6 +61706,10 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"vdY" = (
+/obj/structure/obstacle/tanktrap,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "veo" = (
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
@@ -116241,9 +116277,9 @@ aae
 aae
 aae
 sls
-lTe
-lTe
-pJm
+oEp
+oEp
+qFv
 umE
 aaB
 bRT
@@ -116503,7 +116539,7 @@ tuk
 vhj
 aaB
 aaB
-aae
+aaB
 aaa
 "}
 (190,1,1) = {"
@@ -116756,10 +116792,10 @@ iXo
 iXo
 iXo
 pJm
-aae
-aae
-aae
-aae
+bvS
+aaB
+aaB
+aaB
 aae
 aaa
 "}
@@ -117010,12 +117046,12 @@ iXo
 iXo
 pJm
 aae
+bEo
+bEo
 bxP
-bxP
-bxP
-aae
-aae
-aae
+aaB
+aaB
+aaB
 aae
 aae
 aaa
@@ -117268,10 +117304,10 @@ aak
 aae
 aae
 aae
+vdY
 aaB
 aaB
-aae
-aae
+aaB
 aae
 aae
 aae
@@ -117527,7 +117563,7 @@ aae
 aae
 aaB
 aaB
-aae
+aaB
 aae
 aae
 aae
@@ -117784,7 +117820,7 @@ aHF
 aae
 aaB
 aaB
-aae
+aaB
 aae
 aae
 aae
