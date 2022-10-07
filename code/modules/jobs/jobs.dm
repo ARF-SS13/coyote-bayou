@@ -137,8 +137,8 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Vault-tec Security",
 "Vault-tec Engineer",
 ))
-
-/* //commented for book-keeping reasons. actual positions are below this
+//Please do not do what you did before and remove entire positions from this list. It breaks things for admins and may cause future issues.
+//Please instead limit their slots.
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Paladin",
 	"Head Knight",
@@ -150,13 +150,6 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Senior Scribe",
 	"Scribe",
 	"Initiate",
-)) */
-
-
-GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Head Knight",
-	"Initiate",
-	"Scribe",
 ))
 
 GLOBAL_LIST_INIT(oasis_positions, list(
