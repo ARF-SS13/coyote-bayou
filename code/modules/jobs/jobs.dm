@@ -137,8 +137,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Vault-tec Security",
 "Vault-tec Engineer",
 ))
-//Please do not do what you did before and remove entire positions from this list. It breaks things for admins and may cause future issues.
-//Please instead limit their slots.
+//Brotherhood
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Paladin",
 	"Head Knight",
@@ -151,7 +150,7 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Scribe",
 	"Initiate",
 ))
-
+//Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Mayor",
 	"Secretary",
@@ -196,7 +195,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
 	"NCR Veteran Ranger",
 ))
-
+//NCR
 GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Captain",
 	"NCR Lieutenant",
@@ -276,7 +275,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 GLOBAL_LIST_INIT(silicon_positions, list(
 	"Mr. Handy",
 ))
-
+//Tribls
 GLOBAL_LIST_INIT(tribal_positions, list(
 	"Chief",
 	"Shaman",
@@ -287,6 +286,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Spirit-Pledged",
 	"Guardian",
 ))
+//Followers
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator",
 	"Followers Doctor",
