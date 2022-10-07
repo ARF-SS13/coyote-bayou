@@ -27,11 +27,13 @@
 ////////////		-block, 34-39 damage
 
 
-/obj/item/melee/onehanded/dragonfire
+/obj/item/melee/onehanded/dragonfire //unique
 	name = "Dragonfire Katana"
-	desc = "The sky above the clouds, a rainbow that fate has devoured...I gave up hope!"
-	icon_state = "DFkatana"
-	item_state = "DFkatana"
+	desc = "The sky above the clouds, a rainbow that fate has devoured- I gave up hope!"
+//	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
+//	item_state = "DFkatana"
+	icon_state = "temporalkatana"
+/	item_state = "temporalkatana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -46,6 +48,12 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+
+/obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user)
+	. = ..()
+	if(!istype(M))
+		return
+	M.apply_damage(20, BURN, "chest", M.run_armor_check("chest", "melee"))
 
 
 
@@ -697,7 +705,7 @@ obj/item/melee/onehanded/knife/switchblade
 			H.dna.species.punchdamagelow = 4
 		if(HAS_TRAIT(user, TRAIT_FEV)) //Holy shit that Supermutant had a powerfist!
 			H.dna.species.punchdamagehigh = 16
-			H.dna.species.punchdamagelow = 10		
+			H.dna.species.punchdamagelow = 10
 		H.dna.species.attack_sound = 'sound/weapons/punch1.ogg'
 		H.dna.species.attack_verb = "punch"
 
