@@ -76,6 +76,34 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"abt" = (
+/obj/structure/chair/f13chair1,
+/mob/living/simple_animal/hostile/raider/junker/boss{
+	name = "Comrade Fengwupong";
+	desc = "An absolute beast of an old-war man."
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
+"abB" = (
+/obj/structure/simple_door/metal,
+/obj/structure/barricade/wooden/planks,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
+"abD" = (
+/obj/structure/bonfire/prelit,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"abE" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "khanmines"
+	},
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "abF" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/barber{
@@ -904,6 +932,14 @@
 "aTZ" = (
 /turf/open/floor/carpet/black,
 /area/f13/building)
+"aUd" = (
+/obj/structure/chair/middle{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "aUl" = (
 /obj/item/pickaxe,
 /turf/open/indestructible/ground/inside/mountain,
@@ -1005,6 +1041,13 @@
 /obj/item/ammo_box/magazine/m10mm/adv/simple,
 /turf/open/floor/plasteel/darkred/side{
 	dir = 10
+	},
+/area/f13/caves)
+"aZZ" = (
+/obj/structure/table,
+/obj/item/circuitboard/machine/ore_silo,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
 /area/f13/caves)
 "bao" = (
@@ -6597,6 +6640,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/indestructible/rock,
 /area/f13/caves)
+"cJt" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_seven,
+/obj/item/storage/box/ration/menu_seven,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "cKd" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/deathclaw,
@@ -7664,6 +7715,14 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"dOu" = (
+/obj/structure/showcase/horrific_experiment{
+	icon_state = "pod_1"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "dOG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/old{
@@ -8173,6 +8232,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
 /area/f13/clinic)
+"eou" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "eoB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -8858,6 +8924,16 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"eRo" = (
+/mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
+	name = "Terminator Prime";
+	health = 600;
+	desc = "A horrid creation capable of ultimate destruction."
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "eRG" = (
 /obj/structure/bed/old,
 /obj/structure/sign/poster/contraband/tools{
@@ -9433,6 +9509,12 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/caves)
+"fAq" = (
+/obj/machinery/nanite_chamber,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "fAx" = (
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 /turf/open/floor/f13{
@@ -9469,6 +9551,12 @@
 "fBw" = (
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /turf/open/water,
+/area/f13/caves)
+"fBV" = (
+/obj/machinery/rnd/destructive_analyzer,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "fCu" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9528,6 +9616,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
+	},
+/area/f13/caves)
+"fHa" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/gun/ballistic/rifle/mosin,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
 /area/f13/caves)
 "fHe" = (
@@ -9952,6 +10047,15 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"ggr" = (
+/obj/structure/toilet/secret/high_loot{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ggy" = (
 /obj/structure/obstacle/old_locked_door,
 /turf/open/floor/grass,
@@ -10122,6 +10226,12 @@
 /obj/structure/table,
 /obj/item/storage/box/pillbottles,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
+/area/f13/caves)
+"goo" = (
+/obj/machinery/rnd/experimentor,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "goS" = (
 /obj/structure/simple_door/metal/barred,
@@ -10307,6 +10417,15 @@
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
 	},
 /area/f13/caves)
+"gxy" = (
+/obj/structure/showcase/horrific_experiment{
+	desc = "Some sort of pod. Seems this one's maintanance panel is open, someone was working on this.";
+	icon_state = "pod_0_maintenance"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "gxz" = (
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/decal/cleanable/greenglow,
@@ -10403,6 +10522,15 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"gBm" = (
+/obj/structure/chair/right{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "gBY" = (
 /obj/structure/lattice{
 	layer = 3
@@ -10677,6 +10805,14 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/bunker)
+"gQr" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_three,
+/obj/item/storage/box/ration/menu_three,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "gQX" = (
 /obj/machinery/door/airlock/abandoned{
 	req_one_access_txt = null
@@ -10983,6 +11119,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/tunnel)
+"hiR" = (
+/obj/structure/chair/f13chair1,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "hjo" = (
 /obj/structure/closet,
 /obj/effect/spawner/lootdrop/f13/cash_random_low,
@@ -11746,6 +11888,12 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"hYF" = (
+/obj/machinery/nanite_programmer,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "hZd" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
@@ -11944,6 +12092,12 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"iiv" = (
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "iiO" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/hypospray/medipen/psycho,
@@ -11992,6 +12146,13 @@
 "ikT" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/wood_common,
+/area/f13/caves)
+"ikX" = (
+/obj/structure/nest/securitron,
+/mob/living/simple_animal/hostile/securitron,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "ild" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12440,6 +12601,13 @@
 "iCD" = (
 /turf/closed/mineral/ash_rock,
 /area/f13/caves)
+"iCH" = (
+/obj/structure/table,
+/obj/item/nanite_scanner,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "iCK" = (
 /obj/structure/sign/warning,
 /turf/closed/indestructible/vaultdoor,
@@ -12779,6 +12947,11 @@
 /obj/structure/flora/rock/pile/largejungle,
 /turf/open/water,
 /area/f13/tunnel)
+"iRl" = (
+/obj/structure/simple_door/metal,
+/obj/machinery/door/poddoor/shutters,
+/turf/open/indestructible/ground/outside/desert,
+/area/f13/caves)
 "iRN" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -13113,6 +13286,14 @@
 	icon_state = "reddirtyfull"
 	},
 /area/f13/caves)
+"jhP" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_six,
+/obj/item/storage/box/ration/menu_six,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "jiZ" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13143,6 +13324,12 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
+/area/f13/caves)
+"jkz" = (
+/obj/structure/nest/protectron,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "jkW" = (
 /obj/effect/turf_decal/box,
@@ -13375,6 +13562,14 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
+"jwm" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_eight,
+/obj/item/storage/box/ration/menu_eight,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "jxX" = (
 /obj/structure/chair{
 	dir = 1
@@ -13434,6 +13629,12 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"jAR" = (
+/obj/structure/simple_door/metal,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "jBq" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/tunnel,
@@ -13531,6 +13732,15 @@
 /obj/structure/obstacle/barbedwire/end,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"jDX" = (
+/obj/structure/chair/middle{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "jFh" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/structure/barricade/wooden,
@@ -13680,6 +13890,15 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
+"jLS" = (
+/obj/structure/table,
+/obj/item/disk/nanite_program/fake_death,
+/obj/item/disk/nanite_program/viral,
+/obj/item/disk/nanite_program/sleepy,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "jLV" = (
 /obj/machinery/door/airlock/vault{
 	autoclose = "TRUE";
@@ -14285,6 +14504,15 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/tunnel)
+"kpv" = (
+/obj/structure/chair/middle{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "kqr" = (
 /obj/structure/closet/fridge,
 /obj/item/trash/f13/rotten,
@@ -14322,6 +14550,13 @@
 /obj/structure/barricade/wooden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/caves)
+"ksQ" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/large/custom_kit/mrmannstealthsuit,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "ktc" = (
 /obj/structure/bonfire/prelit,
@@ -14523,6 +14758,14 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"kAP" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_five,
+/obj/item/storage/box/ration/menu_five,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "kBh" = (
 /turf/open/floor/f13{
 	icon_state = "neutralrustyfull"
@@ -14672,6 +14915,12 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"kKN" = (
+/obj/machinery/rnd/production/techfab/department/science,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "kLx" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 9
@@ -14959,6 +15208,13 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"kZL" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/gun/ballistic/automatic/m1garand/sks,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "laM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15224,6 +15480,15 @@
 	icon_state = "darkdirtysolid"
 	},
 /area/f13/tunnel)
+"loh" = (
+/obj/structure/toilet/secret/high_loot{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "loD" = (
 /obj/effect/decal/cleanable/ash,
 /obj/effect/decal/cleanable/generic,
@@ -15720,6 +15985,14 @@
 	icon_state = "redrustyfull"
 	},
 /area/f13/caves)
+"lIF" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_nine,
+/obj/item/storage/box/ration/menu_nine,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "lIU" = (
 /obj/structure/obstacle/tanktrap,
 /turf/open/indestructible/ground/inside/subway,
@@ -16087,6 +16360,14 @@
 /obj/item/reagent_containers/glass/rag,
 /turf/open/floor/mineral/plastitanium,
 /area/f13/caves)
+"lVY" = (
+/obj/structure/chair/left{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "lWg" = (
 /obj/effect/decal/waste{
 	icon_state = "goo5"
@@ -16184,6 +16465,14 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"maf" = (
+/obj/structure/toilet/secret/high_loot{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "mag" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can,
@@ -16749,6 +17038,13 @@
 /obj/structure/closet/crate/medical/anchored,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
+"mEa" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/unique,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "mEb" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/f13/crafting,
@@ -16944,6 +17240,16 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/caves)
+"mNn" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/mre/menu1/safe,
+/obj/item/storage/box/mre/menu2/safe,
+/obj/item/storage/box/mre/menu3,
+/obj/item/storage/box/mre/menu4,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "mNK" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -17078,6 +17384,12 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"mWc" = (
+/obj/structure/bed/double,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "mWn" = (
 /obj/structure/timeddoor/sixtyminute,
 /turf/closed/indestructible/f13vaultrusted,
@@ -17178,6 +17490,12 @@
 	color = "#363636"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
+/area/f13/caves)
+"mZw" = (
+/obj/structure/showcase/horrific_experiment,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "mZV" = (
 /obj/structure/table/wood,
@@ -17311,6 +17629,12 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"ngs" = (
+/obj/machinery/computer/nanite_chamber_control,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ngw" = (
 /obj/structure/fluff/rails,
 /obj/structure/handrail/g_central{
@@ -17321,6 +17645,12 @@
 	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
+"ngI" = (
+/obj/machinery/nanite_program_hub,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "nhc" = (
 /obj/structure/table/optable/abductor,
@@ -17400,6 +17730,15 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/floor/f13/wood,
 /area/f13/caves)
+"nmE" = (
+/obj/structure/chair/f13chair1{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "nmK" = (
 /obj/machinery/light/small,
 /turf/open/water,
@@ -17426,6 +17765,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
+"noG" = (
+/obj/structure/chair/middle{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "noI" = (
 /obj/machinery/door/poddoor/shutters{
@@ -17681,6 +18028,13 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"nBC" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/clothing/suit/armor/reactive/tesla,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "nBE" = (
 /obj/effect/turf_decal/box,
 /obj/effect/decal/cleanable/dirt{
@@ -17877,6 +18231,14 @@
 /obj/item/gun/ballistic/rifle/hunting/obrez,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
+"nLW" = (
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "nMm" = (
 /obj/structure/simple_door/metal/dirtystore,
 /obj/structure/barricade/wooden,
@@ -18026,6 +18388,14 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"nSk" = (
+/obj/machinery/modular_computer/console/preset/command{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "nSF" = (
 /obj/structure/chair/sofa/left,
 /mob/living/simple_animal/hostile/centaur,
@@ -18569,6 +18939,15 @@
 	icon_state = "purplefull"
 	},
 /area/f13/caves)
+"osM" = (
+/obj/structure/chair/right{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "oto" = (
 /obj/structure/curtain{
 	color = "#845f58"
@@ -18584,6 +18963,14 @@
 "otS" = (
 /obj/machinery/autolathe/ammo,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
+"oud" = (
+/obj/structure/toilet/secret/high_loot{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "oux" = (
 /obj/effect/decal/cleanable/dirt,
@@ -18610,6 +18997,13 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/tunnel)
+"ovB" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ovD" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -18911,6 +19305,10 @@
 "oKm" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/mineral/plastitanium,
+/area/f13/caves)
+"oLb" = (
+/obj/structure/simple_door/metal,
+/turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
 "oLq" = (
 /obj/effect/spawner/lootdrop/trash,
@@ -19414,6 +19812,15 @@
 /obj/structure/table/wood,
 /turf/open/floor/f13/wood,
 /area/f13/building)
+"pgV" = (
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "chinesedungeon"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "php" = (
 /obj/structure/bed/old,
 /obj/item/trash/f13/dandyapples,
@@ -19912,6 +20319,15 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/caves)
+"pBz" = (
+/obj/structure/ladder/unbreakable{
+	height = 1;
+	id = "toredlick"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "pBQ" = (
 /obj/structure/table/wood/settler,
 /obj/item/storage/toolbox/mechanical/old,
@@ -20339,6 +20755,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
+"pUY" = (
+/obj/structure/rack/shelf_metal,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/high,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "pVm" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -20508,6 +20931,19 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"qcS" = (
+/obj/structure/chair/f13chair1{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged/assault{
+	health = 300;
+	name = "Comrade Yudaisoon";
+	desc = "A high ranking chinese soldier."
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "qcZ" = (
 /obj/structure/sign/departments/engineering,
 /turf/closed/wall/r_wall/f13vault{
@@ -20518,6 +20954,14 @@
 /obj/machinery/workbench/forge,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
+"qdI" = (
+/obj/structure/chair/right{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "qeh" = (
 /mob/living/simple_animal/hostile/eyebot,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -21215,6 +21659,15 @@
 /obj/structure/rack,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"qIq" = (
+/obj/structure/showcase/horrific_experiment{
+	desc = "Some sort of pod. You wonder what could have been in that.";
+	icon_state = "pod_0"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "qIu" = (
 /obj/structure/falsewall/rust,
 /turf/open/floor/plating/tunnel,
@@ -21609,6 +22062,10 @@
 /obj/structure/simple_door/metal/store,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
+"raI" = (
+/obj/structure/ore_box,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "raS" = (
 /obj/machinery/button/door{
 	id = "hell";
@@ -21753,6 +22210,13 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/tunnel)
+"riY" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/gun/ballistic/automatic/smg/ppsh/high,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rje" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -21836,6 +22300,13 @@
 /mob/living/simple_animal/hostile/poison/giant_spider/hunter,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"rlP" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rlY" = (
 /obj/structure/barricade/wooden/planks/pregame,
 /turf/closed/wall/r_wall/rust,
@@ -21909,6 +22380,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"rqJ" = (
+/obj/machinery/modular_computer/console/preset/engineering{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rqS" = (
 /obj/machinery/vending/cigarette,
 /turf/open/floor/f13/wood,
@@ -21981,6 +22460,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/ruins,
+/area/f13/caves)
+"rwA" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/clothing/suit/armor/reactive/repulse,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "rwL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -22253,6 +22739,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/tunnel)
+"rLQ" = (
+/mob/living/simple_animal/hostile/abomination,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rLV" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -22384,6 +22876,14 @@
 /mob/living/simple_animal/hostile/radscorpion/blue,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"rRL" = (
+/obj/structure/chair/right{
+	dir = 4
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rRS" = (
 /obj/item/storage/fancy/rollingpapers,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
@@ -22510,6 +23010,14 @@
 	},
 /turf/open/water,
 /area/f13/tunnel)
+"rZn" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_two,
+/obj/item/storage/box/ration/menu_two,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rZz" = (
 /turf/open/floor/plasteel/f13/vault_floor/floor{
 	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
@@ -22749,6 +23257,16 @@
 	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
+	},
+/area/f13/caves)
+"sku" = (
+/obj/structure/chair/f13chair1,
+/mob/living/simple_animal/hostile/raider/junker{
+	desc = "A pre-war chinese soldier.";
+	name = "Chinese Officer"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
 /area/f13/caves)
 "sky" = (
@@ -24138,6 +24656,15 @@
 /obj/effect/spawner/lootdrop/f13/traitbooks,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"txO" = (
+/obj/structure/chair/middle{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/chinese,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "tyo" = (
 /obj/structure/chair,
 /obj/structure/cable{
@@ -24337,6 +24864,10 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"tGR" = (
+/obj/structure/simple_door/metal,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "tHm" = (
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt{
@@ -24434,6 +24965,13 @@
 /obj/structure/barricade/sandbags,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
+/area/f13/caves)
+"tOH" = (
+/obj/structure/table,
+/obj/item/storage/box/disks_nanite,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "tOJ" = (
 /obj/structure/barricade/bars,
@@ -24772,6 +25310,15 @@
 /obj/effect/decal/remains/human,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"uhZ" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder{
+	pixel_y = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "uiK" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt{
@@ -24820,6 +25367,16 @@
 /obj/effect/decal/fakelattice,
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plating/tunnel,
+/area/f13/caves)
+"umM" = (
+/obj/structure/table,
+/obj/machinery/computer/terminal{
+	dir = 1;
+	termtag = "Secret"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "umW" = (
 /obj/structure/rack/shelf_metal,
@@ -24948,6 +25505,12 @@
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
 	icon_state = "bluerustychess2"
+	},
+/area/f13/caves)
+"uuv" = (
+/obj/structure/barricade/wooden/strong,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
 /area/f13/caves)
 "uuK" = (
@@ -26068,6 +26631,14 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"vsR" = (
+/obj/machinery/computer/rdconsole/experiment{
+	dir = 1
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "vsZ" = (
 /obj/structure/table/wood,
 /obj/item/clothing/neck/mantle/gecko,
@@ -26376,6 +26947,14 @@
 	faction = list("china")
 	},
 /turf/open/floor/plating/tunnel,
+/area/f13/caves)
+"vKK" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_ten,
+/obj/item/storage/box/ration/menu_ten,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "vKY" = (
 /obj/effect/decal/cleanable/generic,
@@ -26738,6 +27317,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"wew" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_four,
+/obj/item/storage/box/ration/menu_four,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "weR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/spider/stickyweb,
@@ -26896,6 +27483,14 @@
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ammo/tier2,
 /turf/open/water,
 /area/f13/tunnel)
+"wni" = (
+/obj/structure/rack/shelf_metal,
+/obj/item/storage/box/ration/menu_one,
+/obj/item/storage/box/ration/menu_one,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "woc" = (
 /mob/living/simple_animal/hostile/raider/ranged/biker{
 	name = "Texarkana Timothy"
@@ -27886,6 +28481,14 @@
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"xnJ" = (
+/obj/structure/chair/left{
+	dir = 8
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "xof" = (
 /obj/structure/ladder/unbreakable{
 	height = 2;
@@ -28590,6 +29193,12 @@
 	},
 /obj/structure/flora/wasteplant/wild_prickly,
 /turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
+"xUK" = (
+/obj/structure/table,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "xUW" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -29457,18 +30066,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -29714,18 +30323,18 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
+aaa
+bOn
+djs
+djs
+djs
+bOn
+bOn
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aaa
@@ -29971,18 +30580,18 @@ aae
 aae
 aae
 aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+mWc
+eou
+djs
+bOn
+bOn
+djs
+eou
+mWc
+bOn
+aaa
 aae
 aae
 aae
@@ -30221,25 +30830,25 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+aaa
 aae
 aak
 aak
@@ -30466,37 +31075,37 @@ aae
 aae
 aae
 aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+aaa
+bOn
+bOn
+bOn
+aaa
+aaa
+bOn
+djs
+djs
+djs
+djs
+bOn
+aaa
+aaa
+aaa
 aae
 aak
 aak
@@ -30723,35 +31332,35 @@ aae
 aae
 aae
 aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+ggr
+bOn
+aaa
+bOn
+maf
+bOn
+aaa
+aaa
+bOn
+djs
+djs
+djs
+rlP
+bOn
+aaa
 aae
 aak
 aaa
@@ -30980,35 +31589,35 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
-aak
-aak
-aak
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+wew
+djs
+mNn
+djs
+jwm
+bOn
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+bOn
+djs
+iiv
+djs
+uhZ
+bOn
+aaa
 aae
 aae
 aaa
@@ -31237,35 +31846,35 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aak
-aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+gQr
+djs
+vKK
+djs
+cJt
+bOn
+aaa
+bOn
+djs
+djs
+jAR
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+jAR
+djs
+djs
+djs
+djs
+xUK
+bOn
+aaa
 aae
 aae
 aae
@@ -31494,35 +32103,35 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+rZn
+djs
+lIF
+djs
+jhP
+bOn
+aaa
+bOn
+djs
+bOn
+bOn
+bOn
+jAR
+bOn
+jAR
+bOn
+jAR
+bOn
+bOn
+bOn
+bOn
+iiv
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aaa
@@ -31751,35 +32360,35 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+wni
+djs
+djs
+djs
+kAP
+bOn
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+oud
+bOn
+djs
+bOn
+loh
+bOn
+aaa
+aaa
+bOn
+djs
+djs
+xUK
+nmE
+bOn
+aaa
 aae
 aaa
 aae
@@ -32008,38 +32617,38 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
 aaa
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+bOn
+bOn
+djs
+bOn
+bOn
+bOn
+aaa
+aaa
+bOn
+djs
+djs
+qcS
+djs
+bOn
+aaa
+aae
+aae
+aae
 aae
 aaa
 aaa
@@ -32265,36 +32874,36 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
 aaa
 aaa
 aae
@@ -32523,36 +33132,36 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aak
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
 aaa
 aae
 aae
@@ -32780,38 +33389,38 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
 aaa
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+bOn
+bOn
+djs
+djs
+djs
+djs
+djs
+jAR
+djs
+djs
+djs
+aZZ
+bOn
+aaa
+aae
 aaa
 aae
 aae
@@ -33037,37 +33646,37 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+jAR
+djs
+jAR
+djs
+djs
+djs
+bOn
+bOn
+bOn
+hiR
+umM
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -33294,37 +33903,37 @@ aak
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+bOn
+bOn
+djs
+djs
+umM
+bOn
+djs
+djs
+sku
+umM
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -33551,37 +34160,37 @@ aak
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+lVY
+txO
+rRL
+djs
+lVY
+noG
+gBm
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+umM
+bOn
+djs
+djs
+hiR
+umM
+djs
+nLW
+bOn
+aaa
 aae
 aae
 aae
@@ -33808,38 +34417,38 @@ aak
 aak
 aae
 aae
+aaa
+bOn
+djs
+xUK
+xUK
+xUK
+djs
+xUK
+xUK
+xUK
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+hiR
+umM
+bOn
+abt
+umM
+djs
+djs
+djs
+nSk
+bOn
+aaa
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
 aae
 aae
 aae
@@ -34065,38 +34674,38 @@ aak
 aak
 aae
 aae
+aaa
+bOn
+djs
+qdI
+jDX
+xnJ
+djs
+qdI
+aUd
+xnJ
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+umM
+bOn
+djs
+djs
+hiR
+umM
+djs
+rqJ
+bOn
+aaa
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
 aae
 aae
 aae
@@ -34322,37 +34931,37 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+lVY
+noG
+rRL
+djs
+lVY
+kpv
+rRL
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+umM
+bOn
+djs
+djs
+sku
+umM
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -34579,37 +35188,37 @@ aae
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
+aaa
+bOn
+djs
+xUK
+xUK
+xUK
+djs
+xUK
+xUK
+xUK
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+djs
+bOn
+bOn
+bOn
+hiR
+umM
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -34836,38 +35445,38 @@ aae
 aae
 aae
 aae
+aaa
+bOn
+djs
+osM
+aUd
+xnJ
+djs
+qdI
+aUd
+xnJ
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+djs
+djs
+djs
+jAR
+djs
+djs
+djs
+xUK
+bOn
+aaa
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aak
 aae
 aae
 aae
@@ -35093,37 +35702,37 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
+aaa
+bOn
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -35350,37 +35959,37 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+jAR
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -35607,24 +36216,24 @@ aae
 aae
 aae
 aak
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aak
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -35860,28 +36469,28 @@ aae
 aae
 aae
 aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aae
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -36117,35 +36726,35 @@ aae
 aae
 aae
 aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -36374,43 +36983,43 @@ aae
 aae
 aae
 aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+djs
+djs
+bOn
+bOn
+bOn
+bOn
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aaa
@@ -36631,43 +37240,43 @@ aae
 aae
 aae
 aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+pgV
+djs
+djs
+jAR
+djs
+djs
+jAR
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+ikX
+djs
+djs
+fHa
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aaa
@@ -36888,43 +37497,43 @@ aae
 aae
 aae
 aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
+aaa
+bOn
+djs
+djs
+djs
+bOn
+bOn
+bOn
+bOn
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+djs
+kZL
+bOn
+aaa
+aaa
+bOn
+bOn
+bOn
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aaa
@@ -37145,43 +37754,43 @@ aae
 aae
 aae
 aae
-aak
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+aaa
+bOn
+djs
+djs
+djs
+riY
+bOn
+aaa
+aaa
+bOn
+jkz
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aaa
@@ -37402,43 +38011,43 @@ aae
 aae
 aae
 aak
-aak
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aae
+aaa
+bOn
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+bOn
+bOn
+bOn
+djs
+djs
+djs
+djs
+bOn
+bOn
+bOn
+bOn
+djs
+djs
+djs
+nBC
+bOn
+aaa
 aae
 aae
 xwF
@@ -37663,39 +38272,39 @@ abP
 abP
 abP
 aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+uuv
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+djs
+djs
+djs
+jAR
+djs
+djs
+djs
+djs
+jAR
+djs
+djs
+tGR
+djs
+djs
+eRo
+ksQ
+bOn
+aaa
 aae
 aae
 xwF
@@ -37920,39 +38529,39 @@ bOL
 xeT
 abP
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+iRl
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+djs
+djs
+djs
+djs
+bOn
+bOn
+bOn
+bOn
+djs
+djs
+djs
+rwA
+bOn
+aaa
 aae
 aae
 xwF
@@ -38177,39 +38786,39 @@ wXe
 bZf
 abP
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+rLQ
+jLS
+bOn
+uuv
+bOn
+rLQ
+djs
+goo
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+djs
+djs
+djs
+pUY
+bOn
+aaa
+aaa
+bOn
+jkz
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 xwF
@@ -38434,39 +39043,39 @@ wXe
 bZf
 abP
 aae
+aaa
+bOn
+fAq
+djs
+tOH
+bOn
+djs
+bOn
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+djs
+djs
+djs
+ovB
+bOn
+aaa
+aaa
+bOn
+bOn
+bOn
+bOn
+djs
+bOn
+aaa
 aae
 aae
 xwF
@@ -38691,39 +39300,39 @@ bLL
 aoI
 abP
 aae
+aaa
+bOn
+ngs
+djs
+iCH
+bOn
+djs
+bOn
+djs
+djs
+fBV
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+ikX
+djs
+djs
+mEa
+bOn
+aaa
+aaa
+aaa
+aaa
+aaa
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 xwF
@@ -38948,39 +39557,39 @@ bLL
 fwe
 abP
 aae
+aaa
+bOn
+hYF
+djs
+djs
+bOn
+djs
+bOn
+djs
+djs
+vsR
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aaa
@@ -39205,31 +39814,31 @@ bOA
 bLL
 abP
 aae
+aaa
+bOn
+ngI
+djs
+djs
+abB
+djs
+abB
+djs
+djs
+kKN
+bOn
+aaa
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -39462,19 +40071,19 @@ qkN
 bOA
 abP
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+uuv
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -39719,21 +40328,21 @@ wXe
 bOA
 abP
 aae
+aaa
+bOn
+mZw
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+gxy
+bOn
+aaa
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
 aae
 aae
 aae
@@ -39976,19 +40585,19 @@ blc
 qbG
 abP
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+qIq
+djs
+djs
+djs
+djs
+djs
+djs
+djs
+dOu
+bOn
+aaa
 aae
 aae
 aae
@@ -40233,6 +40842,19 @@ abP
 abP
 abP
 aae
+aaa
+bOn
+dOu
+djs
+rLQ
+djs
+djs
+djs
+rLQ
+djs
+dOu
+bOn
+aaa
 aae
 aae
 aae
@@ -40240,23 +40862,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
+aak
+aak
 aae
 aae
 aae
@@ -40490,6 +41099,19 @@ aae
 aae
 aae
 aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -40497,23 +41119,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
+aak
+aak
 aae
 aae
 aae
@@ -40747,6 +41356,19 @@ aae
 aae
 aae
 aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -40754,23 +41376,10 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
+aak
+aak
 aae
 aae
 aae
@@ -41793,7 +42402,7 @@ aae
 aae
 aae
 aae
-aae
+aak
 aae
 aae
 aae
@@ -42044,7 +42653,7 @@ aae
 aae
 aae
 aae
-aae
+aak
 aae
 aae
 aae
@@ -63682,7 +64291,7 @@ aaa
 tmV
 oeM
 lFw
-lFw
+djs
 qET
 bOn
 aaa
@@ -63939,7 +64548,7 @@ aaa
 bOn
 bOn
 bOn
-bOn
+oLb
 bOn
 bOn
 aaa
@@ -64195,9 +64804,9 @@ aae
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
+bOn
+djs
+bOn
 aaa
 aaa
 aae
@@ -64450,13 +65059,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
+aaa
+bOn
+bOn
+djs
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -64707,13 +65316,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
+aaa
+bOn
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -64964,13 +65573,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aae
+aaa
+bOn
+djs
+pBz
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -65221,13 +65830,13 @@ aae
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
+aaa
+bOn
+djs
+djs
+djs
+bOn
+aaa
 aae
 aae
 aae
@@ -65478,13 +66087,13 @@ aak
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -65735,13 +66344,13 @@ aak
 aae
 aae
 aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -88921,10 +89530,10 @@ aae
 aae
 aae
 aae
-aak
 aae
 aae
-aak
+aae
+aae
 aae
 aae
 aae
@@ -89177,8 +89786,6 @@ aae
 aae
 aae
 aae
-aak
-aak
 aae
 aae
 aae
@@ -89189,6 +89796,8 @@ aae
 aae
 aae
 aae
+aae
+aaB
 aae
 aae
 aae
@@ -89398,25 +90007,11 @@ aaa
 "}
 (236,1,1) = {"
 aaa
+aae
+aae
+aae
+aae
 aak
-aak
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
 aae
 aae
@@ -89425,14 +90020,8 @@ aae
 aae
 aae
 aae
-aak
-aae
-aak
-aak
 aae
 aae
-aae
-aak
 aae
 aae
 aae
@@ -89446,7 +90035,27 @@ aae
 aae
 aae
 aak
+aae
 aak
+aak
+aae
+aae
+aae
+aae
+aak
+aak
+aak
+aak
+aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aaB
+aaB
 aae
 aae
 aae
@@ -89655,23 +90264,11 @@ aaa
 "}
 (237,1,1) = {"
 aaa
+aae
+aae
+aae
+aae
 aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aae
 aak
@@ -89682,7 +90279,6 @@ aae
 aae
 aae
 aae
-aak
 aae
 aak
 aae
@@ -89695,8 +90291,9 @@ aae
 aae
 aae
 aae
+aak
 aae
-aae
+aak
 aae
 aae
 aae
@@ -89704,6 +90301,18 @@ aae
 aae
 aak
 aak
+aak
+aak
+aak
+aae
+aak
+aak
+aak
+aak
+aak
+aae
+aaB
+aaB
 aae
 aak
 aak
@@ -89912,38 +90521,6 @@ aaa
 "}
 (238,1,1) = {"
 aaa
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
 aae
 aae
 aak
@@ -89951,16 +90528,48 @@ aae
 aae
 aak
 aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aak
+aae
+aae
+aae
+abD
+aaB
+aaB
+aaB
+aaB
+aaB
+aae
 aak
 aak
-aae
-aae
+aak
+aak
 aak
 aae
-aae
-aae
-aae
-aak
+abV
+aaB
 aae
 aae
 aae
@@ -90171,52 +90780,52 @@ aaa
 aaa
 aae
 aae
-aae
 aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
-aae
-aae
 aak
 aak
 aak
 aae
 aae
-aak
 aae
 aae
 aae
 aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+abV
+aaB
+abE
+aaB
+aaB
+aaB
+abD
+aaB
+aaB
+aaB
+aaB
+aaB
+abV
+aaB
 aae
 aae
 aae
@@ -90428,6 +91037,10 @@ aaa
 aaa
 aae
 aae
+aak
+aak
+aae
+aae
 aae
 aak
 aae
@@ -90445,18 +91058,6 @@ aae
 aae
 aae
 aae
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
 aae
 aae
 aae
@@ -90464,16 +91065,24 @@ aae
 aae
 aak
 aae
-aak
-aak
 aae
 aae
 aae
 aae
+raI
+aaB
+aaB
+aaB
+aaB
 aae
-aae
-aae
-aae
+abV
+aaB
+abE
+aaB
+aaB
+aaB
+aaB
+abV
 aae
 aae
 aae
@@ -90638,24 +91247,24 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aae
 aae
 aak
 aak
 aak
+aak
+aak
+aak
+aak
+aak
+aak
+aae
 aae
 aak
-aak
-aak
+aae
+aae
 aae
 aae
 aae
@@ -90683,18 +91292,8 @@ aaa
 "}
 (241,1,1) = {"
 aaa
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aak
 aak
 aae
@@ -90703,12 +91302,6 @@ aae
 aae
 aae
 aae
-aak
-aak
-aae
-aae
-aae
-aak
 aae
 aae
 aae
@@ -90728,6 +91321,22 @@ aae
 aae
 aae
 aae
+aae
+aae
+aae
+aae
+aae
+aaa
+aaa
+aaa
+aae
+aaa
+aae
+raI
+aaB
+aaB
+aaB
+aaB
 aae
 aak
 aak
@@ -90893,26 +91502,26 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
 aae
 aae
 aak
-aae
 aak
 aae
 aak
 aak
 aak
+aak
+aak
+aak
+aak
+aak
+aak
+aae
+aae
+aak
+aae
+aae
 aae
 aae
 aae
@@ -90940,50 +91549,50 @@ aaa
 "}
 (242,1,1) = {"
 aaa
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
 aak
 aae
 aae
 aae
 aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aaa
+aaa
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aak
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aae
 aak
@@ -91153,23 +91762,23 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
-aae
-aae
+aak
 aae
 aak
 aak
 aak
+aak
+aak
+aak
+aak
+aak
+aak
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -91197,15 +91806,11 @@ aaa
 "}
 (243,1,1) = {"
 aaa
+aak
+aak
+aak
+aak
 aae
-aae
-aae
-aae
-aak
-aak
-aak
-aak
-aak
 aak
 aae
 aae
@@ -91215,24 +91820,28 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aak
-aak
-aae
-aae
-aae
-aae
-aae
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aak
-aae
 aae
 aae
 aae
@@ -91410,12 +92019,8 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -91427,6 +92032,10 @@ aae
 aae
 aae
 aak
+aak
+aak
+aae
+aae
 aae
 aae
 aae
@@ -91464,20 +92073,6 @@ aae
 aae
 aae
 aae
-aak
-aak
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
 aae
 aae
 aae
@@ -91488,7 +92083,21 @@ aae
 aae
 aae
 aae
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -91679,11 +92288,11 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
 aak
 aak
+aak
+aae
+aae
 aae
 aae
 aae
@@ -91714,34 +92323,6 @@ aaa
 aae
 aae
 aae
-aak
-aak
-aae
-aae
-aae
-aae
-aak
-aak
-aak
-aae
-aak
-aak
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aae
 aae
@@ -91759,9 +92340,37 @@ aae
 aae
 aae
 aae
-aak
 aae
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -91922,18 +92531,8 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -91941,6 +92540,16 @@ aae
 aae
 aak
 aak
+aae
+aae
+aae
+aae
+aae
+aak
+aak
+aak
+aae
+aae
 aae
 aae
 aae
@@ -91971,42 +92580,6 @@ aaa
 aae
 aae
 aae
-aak
-aak
-aae
-aae
-aak
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aae
 aae
@@ -92016,6 +92589,42 @@ aae
 aae
 aae
 aak
+aae
+aak
+aae
+aae
+aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92179,16 +92788,8 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -92196,8 +92797,16 @@ aae
 aae
 aak
 aak
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92228,39 +92837,6 @@ aaa
 aae
 aae
 aae
-aak
-aae
-aak
-aak
-aae
-aak
-aak
-aak
-aae
-aak
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aae
 aae
@@ -92272,10 +92848,43 @@ aae
 aae
 aae
 aak
-aak
-aak
 aae
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92439,22 +93048,22 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
 aak
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92484,11 +93093,6 @@ aaa
 aaa
 aae
 aae
-aak
-aae
-aak
-aak
-aae
 aae
 aae
 aae
@@ -92497,43 +93101,48 @@ aak
 aae
 aak
 aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aak
 aak
-aak
 aae
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92693,25 +93302,25 @@ aak
 aae
 aae
 aae
-aak
-aae
 aae
 aae
 aak
 aak
-aae
+aak
 aae
 aae
 aae
 aae
 aak
 aae
-aak
-aak
-aak
-aak
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92741,33 +93350,14 @@ aaa
 aaa
 aae
 aae
-aak
-aak
-aak
-aak
-aak
-aak
+aae
+aae
 aae
 aak
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -92785,12 +93375,31 @@ aae
 aae
 aae
 aae
-aak
-aak
-aak
-aak
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -92952,16 +93561,16 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
+aak
+aak
+aak
 aae
 aae
 aae
 aae
 aak
 aak
-aae
+aak
 aak
 aak
 aak
@@ -92996,31 +93605,23 @@ aaa
 "}
 (250,1,1) = {"
 aaa
+aae
+aae
+aae
+aae
+aae
+aak
+aak
+aae
+aak
+aak
+aae
 aak
 aak
 aak
+aae
+aae
 aak
-aak
-aak
-aak
-aak
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aae
 aak
 aae
@@ -93030,24 +93631,32 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
 aak
-aak
-aak
-aak
-aak
-aak
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
+aae
 aae
 aae
 aae
@@ -93211,7 +93820,7 @@ aae
 aae
 aae
 aak
-aae
+aak
 aae
 aae
 aae
@@ -93253,26 +93862,26 @@ aaa
 "}
 (251,1,1) = {"
 aaa
-aak
 aae
-aak
 aae
-aak
-aak
 aae
-aak
+aae
 aae
 aae
 aak
 aae
 aae
 aae
+aak
+aak
 aae
 aae
 aae
+aak
 aae
 aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -93467,8 +94076,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aak
+aak
 aae
 aae
 aae
@@ -93510,13 +94119,18 @@ aaa
 "}
 (252,1,1) = {"
 aaa
+aae
+aae
+aae
+aae
+aae
+aae
+aak
+aak
 aak
 aae
 aae
 aak
-aak
-aak
-aae
 aae
 aak
 aae
@@ -93524,12 +94138,7 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
 aae
 aae
 aae
@@ -93769,8 +94378,6 @@ aaa
 aaa
 aae
 aae
-aak
-aak
 aae
 aae
 aae
@@ -93778,18 +94385,20 @@ aae
 aae
 aae
 aak
+aak
+aak
+aae
+aae
+aae
+aae
+aak
 aae
 aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
 aak
 aak
 aae
@@ -94024,24 +94633,24 @@ aaa
 "}
 (254,1,1) = {"
 aaa
-aae
-aae
 aak
 aak
 aae
 aae
 aae
 aae
-aae
+aak
+aak
+aak
+aak
 aae
 aak
 aae
-aae
-aae
-aae
-aae
-aae
-aae
+aak
+aak
+aak
+aak
+aak
 aae
 aae
 aae
