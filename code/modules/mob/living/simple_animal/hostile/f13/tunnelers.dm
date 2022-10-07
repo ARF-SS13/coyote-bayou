@@ -93,7 +93,8 @@
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
 	gender = FEMALE
 	resize = 1.3
-	speed = -1
+	alpha = 150
+	speed = -2
 	maxHealth = 150
 	health = 150
 	has_field_of_vision = FALSE
@@ -104,11 +105,11 @@
 	aggro_vision_range = 18
 	retreat_distance = 6
 	turns_per_move = 5
-	speak_emote = list("growls")
+	speak_emote = list("mumbles incoherently")
 	emote_see = list("screeches")
 	a_intent = INTENT_HARM
 	attack_verb_simple = "lunges at"
-	attack_sound = 'sound/hallucinations/growl1.ogg'
+	attack_sound = 'sound/hallucinations/veryfar_noise.ogg'
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	stat_attack = CONSCIOUS
@@ -127,5 +128,6 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin, 1)
-		H.reagents.add_reagent(/datum/reagent/toxin/spore, 2)
-		H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/formaldehyde, 3)
+		H.reagents.add_reagent(/datum/reagent/toxin/venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
