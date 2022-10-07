@@ -61,11 +61,22 @@
 	layer = BELOW_OBJ_LAYER
 	anchored = TRUE
 	machine_tool_behaviour = TOOL_WORKBENCH
-	var/wrenchable = 1
+	var/wrenchable = TRUE
 
+/obj/machinery/workbench/examine(mob/user)
+	. = ..()
+	if(anchored)
+		if(wrenchable)
+			. += span_notice("The bolts holding it to the floor look loose enough to be removed with a wrench.")
+		else
+			. += span_notice("It looks to be so securely fastened to the floor that not even a wrench could loosen it.")
+	else if(wrenchable)
+		. += span_notice("It has a set of bolts at the base that could be wrenched to secure it to the floor.")
 
 /obj/machinery/workbench/can_be_unfasten_wrench(mob/user, silent)
 	if (!wrenchable)  // case also covered by NODECONSTRUCT checks in default_unfasten_wrench
+		if(user && !silent)
+			to_chat(user, span_alert("[src] is too securely fastened in place to be moved! Looks like it isn't going anywhere."))
 		return CANT_UNFASTEN
 
 	return ..()
@@ -110,6 +121,7 @@
 	icon_state = "advanced_bench"
 	desc = "A large and advanced pre-war workbench to tackle any project!"
 	machine_tool_behaviour = list(TOOL_AWORKBENCH, TOOL_WORKBENCH)
+	wrenchable = FALSE
 
 /obj/machinery/workbench/mbench
 	name = "machine workbench"
