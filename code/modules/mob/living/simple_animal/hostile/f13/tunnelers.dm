@@ -131,3 +131,4 @@
 		H.reagents.add_reagent(/datum/reagent/toxin/formaldehyde, 3)
 		H.reagents.add_reagent(/datum/reagent/toxin/venom, 6)
 		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+
