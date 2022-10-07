@@ -606,6 +606,13 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
+"axo" = (
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
+	},
+/obj/structure/stone_tile/center/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "axy" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating/f13/inside,
@@ -3797,6 +3804,13 @@
 /obj/structure/pondlily_small,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"dnR" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "doa" = (
 /obj/structure/chair/booth{
 	dir = 8
@@ -3841,8 +3855,11 @@
 	},
 /area/f13/vault)
 "dpj" = (
-/obj/item/mayhem,
-/turf/open/floor/plasteel/cult,
+/obj/structure/stone_tile/slab,
+/obj/structure/nest/tunneler,
+/turf/open/indestructible/ground/outside/ruins{
+	color = "#4c4c4c"
+	},
 /area/f13/underground/cave)
 "dpk" = (
 /obj/machinery/computer/med_data{
@@ -5775,6 +5792,18 @@
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
+"eNA" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/slab/cracked{
+	dir = 9;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "eNB" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -10598,6 +10627,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
+"iQj" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "iQl" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 4
@@ -11846,6 +11882,13 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
+"jYO" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/stack/medical/poultice/ten,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "jZd" = (
 /obj/structure/closet/toolcloset,
 /obj/structure/cable{
@@ -15110,6 +15153,16 @@
 /obj/item/storage/fancy/rollingpapers,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
+"mFi" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/clothing/suit/armor/medium/combat/mk2/tribal,
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk,
+/obj/item/clothing/head/helmet/f13/combat/tribal,
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "mGp" = (
 /obj/machinery/door/airlock{
 	name = "Restrooms"
@@ -16369,6 +16422,14 @@
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
+/area/f13/underground/cave)
+"nJV" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
+/obj/item/clothing/head/helmet/f13/combat/mk2/tribal,
+/turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "nKd" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -22234,6 +22295,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"soz" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "soI" = (
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
@@ -23762,6 +23829,9 @@
 "tCT" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
+"tCZ" = (
+/turf/open/floor/carpet/royalblack,
+/area/f13/underground/cave)
 "tDc" = (
 /obj/effect/turf_decal/big{
 	dir = 1;
@@ -26781,6 +26851,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
+"vXX" = (
+/obj/structure/stone_tile/center/burnt,
+/obj/structure/stone_tile/surrounding/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "vYb" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -26966,8 +27041,9 @@
 "weW" = (
 /obj/structure/statue_fal{
 	color = "#3e3e3e";
-	desc = "A statue of a man, stretching to the ceiling. How is this possible...?";
+	desc = "A statue of a man, stretching a hand to the ceiling. His frame is bigger than the doorway. How is this possible...?";
 	icon_state = "statue2";
+	name = "Ancient Statue";
 	pixel_x = 10
 	},
 /turf/open/indestructible/ground/outside/ruins{
@@ -27552,6 +27628,13 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
+"wEm" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "wEI" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -28070,11 +28153,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "xde" = (
-/obj/structure/stone_tile/surrounding,
-/obj/structure/nest/tunneler,
-/turf/open/indestructible/ground/inside/subway{
-	name = "cave"
+/obj/item/mayhem{
+	desc = "Some kind of mutated FEV strain that sends everything around it into a killing frenzy. It's sealed up tight- so if you open it up, you REALLY deserve what's coming to you."
 	},
+/turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "xdq" = (
 /obj/structure/toilet{
@@ -60019,17 +60101,17 @@ smz
 smz
 smz
 smz
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
 shC
 shC
 shC
@@ -60279,14 +60361,14 @@ smz
 cHz
 cHz
 cHz
+smz
+lRK
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+lRK
+smz
+smz
+smz
 shC
 shC
 shC
@@ -60536,14 +60618,14 @@ smz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
+qoT
+qoT
+qoT
+qoT
+smz
+smz
+smz
 shC
 shC
 shC
@@ -60793,14 +60875,14 @@ smz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
+tCZ
+tCZ
+tCZ
+tCZ
+qoT
+mFi
+smz
 shC
 shC
 shC
@@ -61051,13 +61133,13 @@ cHz
 cHz
 smz
 smz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+tCZ
+tCZ
+tCZ
+tCZ
+qoT
+nJV
+smz
 shC
 shC
 shC
@@ -61308,13 +61390,13 @@ cHz
 cHz
 xmO
 smz
+smz
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
+smz
+smz
+smz
 shC
 shC
 shC
@@ -61555,23 +61637,23 @@ shC
 shC
 shC
 smz
+gfI
 smz
+tIZ
 smz
-cHz
-smz
-smz
-smz
-cHz
-cHz
 smz
 smz
 cHz
 cHz
+smz
+smz
 cHz
 cHz
 cHz
 cHz
-shC
+cHz
+cHz
+smz
 shC
 shC
 shC
@@ -61812,6 +61894,7 @@ shC
 shC
 shC
 smz
+tIZ
 cHz
 cHz
 cHz
@@ -61819,6 +61902,7 @@ cHz
 cHz
 cHz
 cHz
+tIZ
 cHz
 cHz
 cHz
@@ -61826,9 +61910,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -62070,22 +62152,22 @@ shC
 shC
 smz
 cHz
+tIZ
 cHz
-cHz
-cHz
+smz
 dsN
 cHz
+smz
+cHz
+cHz
+cHz
+aAs
 cHz
 cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -62303,9 +62385,9 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
+smz
+smz
+smz
 shC
 shC
 shC
@@ -62327,14 +62409,13 @@ shC
 smz
 smz
 cHz
-cHz
+tIZ
 dsN
 cHz
 dsN
 cHz
 cHz
 cHz
-aAs
 cHz
 cHz
 cHz
@@ -62342,7 +62423,8 @@ cHz
 cHz
 cHz
 cHz
-shC
+cHz
+smz
 shC
 shC
 shC
@@ -62560,9 +62642,9 @@ shC
 shC
 shC
 shC
-shC
+smz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -62588,7 +62670,7 @@ cHz
 cHz
 cHz
 qpS
-dsN
+iJT
 cHz
 cHz
 cHz
@@ -62599,7 +62681,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -62817,9 +62899,9 @@ shC
 shC
 shC
 shC
-shC
+smz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -62840,23 +62922,23 @@ shC
 shC
 smz
 smz
+smz
 cHz
 cHz
-cHz
-dsN
+iJT
 qpS
 dsN
 cHz
 cHz
+smz
+smz
+smz
+smz
 cHz
 cHz
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -63074,7 +63156,7 @@ shC
 shC
 shC
 shC
-shC
+smz
 cHz
 smz
 smz
@@ -63096,13 +63178,13 @@ smz
 smz
 shC
 shC
-smz
+gfI
+xmO
 cHz
-cHz
-cHz
+tIZ
+iJT
 dsN
 dsN
-dsN
 cHz
 cHz
 cHz
@@ -63113,7 +63195,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -63353,9 +63435,9 @@ cHz
 smz
 shC
 shC
-smz
+gfI
 cHz
-cHz
+tIZ
 cHz
 cHz
 dsN
@@ -63370,7 +63452,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -63611,6 +63693,7 @@ smz
 shC
 shC
 smz
+aAs
 cHz
 cHz
 cHz
@@ -63626,8 +63709,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -63860,14 +63942,14 @@ smz
 smz
 cHz
 smz
-cHz
+axo
 cHz
 cHz
 cHz
 smz
 shC
 shC
-smz
+gfI
 cHz
 cHz
 tIZ
@@ -63884,7 +63966,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -64131,7 +64213,7 @@ cHz
 smz
 smz
 cHz
-cHz
+tIZ
 smz
 smz
 cHz
@@ -64139,9 +64221,9 @@ cHz
 cHz
 cHz
 cHz
+xmO
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -64389,26 +64471,26 @@ gfI
 smz
 cHz
 cHz
-xmO
+cHz
 smz
 cHz
 cHz
 cHz
 cHz
 cHz
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -64643,6 +64725,7 @@ tIZ
 cHz
 cHz
 cHz
+nnO
 tIZ
 cHz
 cHz
@@ -64654,22 +64737,21 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -64892,9 +64974,9 @@ smz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
+nTp
+vXX
+eNA
 nnO
 jdP
 dUM
@@ -64912,24 +64994,24 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -65154,41 +65236,41 @@ gfI
 gfI
 gfI
 cHz
-cHz
-cHz
+tIZ
+tIZ
 cHz
 tIZ
 qpS
 cHz
+xmO
+smz
 cHz
-cHz
-cHz
-cHz
+smz
 cHz
 cHz
 aAs
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -65406,11 +65488,11 @@ smz
 tIZ
 cHz
 tIZ
-cHz
-cHz
-cHz
+ufY
+nTp
+ufY
 tIZ
-cHz
+tIZ
 cHz
 cHz
 cHz
@@ -65426,26 +65508,26 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -65667,7 +65749,7 @@ smz
 smz
 smz
 smz
-cHz
+tIZ
 cHz
 cHz
 cHz
@@ -65683,24 +65765,24 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -65923,7 +66005,7 @@ cHz
 smz
 shC
 shC
-smz
+gfI
 cHz
 cHz
 cHz
@@ -65938,23 +66020,23 @@ cHz
 cHz
 cHz
 cHz
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -66170,7 +66252,7 @@ smz
 smz
 gfI
 smz
-cHz
+tIZ
 smz
 cHz
 smz
@@ -66181,8 +66263,8 @@ smz
 shC
 shC
 smz
-cHz
-cHz
+tIZ
+tIZ
 tIZ
 smz
 smz
@@ -66195,19 +66277,19 @@ cHz
 cHz
 cHz
 cHz
+xmO
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
+smz
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
+shC
 shC
 shC
 shC
@@ -66454,7 +66536,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -66703,6 +66785,7 @@ cHz
 tIZ
 tIZ
 cHz
+tIZ
 cHz
 cHz
 cHz
@@ -66710,8 +66793,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -66935,7 +67017,7 @@ gfI
 tIZ
 sOZ
 bAL
-xde
+gfM
 pVq
 qXj
 smz
@@ -66960,15 +67042,15 @@ tIZ
 cHz
 cHz
 cHz
+tIZ
+cHz
+cHz
+tIZ
 cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -67217,15 +67299,15 @@ tIZ
 cHz
 cHz
 cHz
+tIZ
+cHz
+tIZ
 cHz
 cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -67467,22 +67549,22 @@ shC
 shC
 smz
 cHz
+tIZ
 cHz
 cHz
 cHz
 cHz
 cHz
 cHz
+smz
+gfI
+smz
+smz
 cHz
 cHz
+smz
 cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -67724,6 +67806,7 @@ shC
 shC
 smz
 cHz
+tIZ
 cHz
 cHz
 cHz
@@ -67738,8 +67821,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -67981,22 +68063,22 @@ shC
 shC
 smz
 cHz
+tIZ
+smz
 cHz
 cHz
 cHz
 cHz
-cHz
-cHz
-cHz
+aAs
 cHz
 cHz
 cHz
 dsN
 cHz
+aAs
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -68220,7 +68302,7 @@ smz
 rNp
 vBw
 qXj
-qXj
+dpj
 qXj
 qXj
 smz
@@ -68237,7 +68319,7 @@ smz
 shC
 shC
 smz
-cHz
+tIZ
 peA
 cHz
 cHz
@@ -68253,7 +68335,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -68494,7 +68576,7 @@ smz
 shC
 shC
 smz
-eaC
+iQj
 urQ
 nIu
 cHz
@@ -68510,7 +68592,7 @@ qpS
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -68750,7 +68832,7 @@ smz
 smz
 shC
 shC
-smz
+gfI
 vMz
 ptZ
 nIu
@@ -68767,7 +68849,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -69016,6 +69098,7 @@ cHz
 cHz
 cHz
 cHz
+xmO
 cHz
 cHz
 cHz
@@ -69023,8 +69106,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -69250,8 +69332,8 @@ xkL
 kWz
 smz
 knc
-dpj
 cHz
+xde
 smz
 smz
 smz
@@ -69281,7 +69363,7 @@ cHz
 dsN
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -69538,7 +69620,7 @@ cHz
 dsN
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -69782,6 +69864,7 @@ oTw
 ptZ
 nIu
 cHz
+xmO
 cHz
 cHz
 cHz
@@ -69794,8 +69877,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
-shC
+smz
 shC
 shC
 shC
@@ -70052,7 +70134,7 @@ cHz
 cHz
 cHz
 cHz
-shC
+smz
 shC
 shC
 shC
@@ -70297,19 +70379,19 @@ smz
 smz
 smz
 smz
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+smz
+cHz
+smz
+smz
+smz
+smz
 shC
 shC
 shC
@@ -70559,13 +70641,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+skv
+sBH
+cHz
+skv
+sBH
+smz
 shC
 shC
 shC
@@ -70816,13 +70898,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+aAs
+cHz
+cHz
+cHz
+aAs
+smz
 shC
 shC
 shC
@@ -71073,13 +71155,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+skv
+sBH
+cHz
+skv
+sBH
+smz
 shC
 shC
 shC
@@ -71330,13 +71412,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+cHz
+cHz
+cHz
+cHz
+cHz
+smz
 shC
 shC
 shC
@@ -71587,13 +71669,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+jYO
+wEm
+cHz
+dnR
+soz
+smz
 shC
 shC
 shC
@@ -71844,13 +71926,13 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
-shC
-shC
+smz
+smz
+smz
+smz
+smz
+smz
+smz
 shC
 shC
 shC

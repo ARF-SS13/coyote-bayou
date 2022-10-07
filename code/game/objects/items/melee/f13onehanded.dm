@@ -29,16 +29,16 @@
 
 /obj/item/melee/onehanded/dragonfire //unique
 	name = "Dragonfire Katana"
-	desc = "The sky above the clouds, a rainbow that fate has devoured- I gave up hope!"
+	desc = "<span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"
-/	item_state = "temporalkatana"
+	item_state = "temporalkatana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 30
+	force = 50
 	throwforce = 10
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -49,11 +49,11 @@
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
 
-/obj/item/melee/onehanded/machete/training/attack(mob/living/M, mob/living/user)
+/obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(!istype(M))
 		return
-	M.apply_damage(20, BURN, "chest", M.run_armor_check("chest", "melee"))
+	M.apply_damage(20, BURN, "chest", M.run_armor_check("chest", "energy"))
 
 
 
