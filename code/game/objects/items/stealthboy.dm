@@ -1,8 +1,8 @@
 /obj/item/stealthboy
 	name = "Stealth Boy"
 	desc = "The RobCo Stealth Boy 3001 is a personal stealth device worn on one's wrist. It generates a modulating field that transmits the reflected light from one side of an object to the other, making a person much harder to notice (but not completely invisible)."
-	icon = 'icons/obj/clockwork_objects.dmi' //placeholder
-	icon_state = "rare_pepe" //placeholder
+	icon = 'icons/obj/pda.dmi' //Placeholder till ones sprited
+	icon_state = "pda" //Placeholder till ones sprited
 	item_flags = NOBLUDGEON
 	slot_flags = ITEM_SLOT_BELT
 	throwforce = 5
