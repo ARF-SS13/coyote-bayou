@@ -67,11 +67,11 @@
 	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
 		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
 		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. <br><br> \
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	item_state = "gun"
-	slot_flags = SLOT_BELT
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 
@@ -114,12 +114,12 @@
 	desc = "A wasteland staple, an unrifled pipe welded to a break-action... thing and bolted to a nicely-carved plank of wood. \
 		Despite its crudeness, and pipebombedness, the humble pipe rifle has served many a waster well against the horrors of the wilds, \
 		often the one thing that stands between life and death. Fingers not withstanding. <br><br> \
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
 	item_state = "pepperbox"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 
@@ -163,7 +163,7 @@
 		get it to fire all four shots at once! Or explode!"
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 
@@ -211,7 +211,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunbat"
 	item_state = "shotgunbat"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
@@ -259,7 +259,7 @@
 		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
 	item_state = "knifegun"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
@@ -485,7 +485,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 
@@ -513,15 +513,15 @@
 	desc = "An old, weathered, battered hunk of junk of a double-barrelled coach gun restored into a somewhat decent hunting rifle. \
 		Despite the bore being smoother than a gecko's butt, the accuracy on this thing isn't half bad, and its .308 chambering \
 		can pack a real punch. While its shotgunning days are over, it sure ain't done putting holes in things. <br><br>\
-		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + "the bolts, " + span_notice("insert") + " \
-		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + "a new \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
 		casing in there. Be sure to unload it first!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "winchesterbore"
 	item_state = "shotgundouble"
-	slot_flags = SLOT_BACK | SLOT_BELT
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
 

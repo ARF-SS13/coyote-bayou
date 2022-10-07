@@ -153,6 +153,12 @@
 	results = list(/datum/reagent/consumable/mustard = 5)
 	required_reagents = list(/datum/reagent/mustardgrind = 1, /datum/reagent/water  = 10, /datum/reagent/consumable/enzyme= 1)
 
+/datum/chemical_reaction/gravy
+	name = "Gravy"
+	id = /datum/reagent/consumable/gravy
+	results = list(/datum/reagent/consumable/gravy = 3)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
+
 /datum/chemical_reaction/soapification/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= multiplier, i++)

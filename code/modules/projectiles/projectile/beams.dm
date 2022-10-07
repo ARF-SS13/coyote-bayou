@@ -356,7 +356,7 @@
 
 /obj/item/projectile/beam/laser/pistol/hitscan //Actual AEP7
 	name = "laser beam"
-	damage = 26
+	damage = 24
 	hitscan = TRUE
 	armour_penetration = 0.02
 	tracer_type = /obj/effect/projectile/tracer/laser
@@ -425,7 +425,7 @@
 
 /obj/item/projectile/beam/laser/pistol/wattz/hitscan //hitscan wattz
 	name = "laser beam"
-	damage = 28 // Civilian gun hits harder but has less charge now.
+	damage = 26 // Civilian gun hits harder but has less charge now.
 	hitscan = TRUE
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
@@ -433,7 +433,7 @@
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto //upgraded Wattz
 	name = "penetrating laser beam"
-	damage = 33
+	damage = 31
 	armour_penetration = 0.20
 
 /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan

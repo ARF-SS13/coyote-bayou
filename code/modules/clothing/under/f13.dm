@@ -595,6 +595,7 @@
 	item_state = "blackdress"
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/under/f13/xenon	//Currently broken when worn
 	name = "flashy jumpsuit"
@@ -639,6 +640,7 @@
 	item_state = "khan_uniform"
 	item_color = "khan_uniform"
 	var/uniformtoggled = FALSE
+	body_parts_hidden = GROIN|LEGS
 
 /obj/item/clothing/under/f13/khan/shorts
 	name = "denim jorts"
@@ -646,6 +648,7 @@
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_short"
 	item_state = "khan_short"
+	body_parts_hidden = GROIN|LEGS
 
 /obj/item/clothing/under/f13/khan/booty
 	name = "denim shorts"
@@ -653,6 +656,7 @@
 	icon = 'icons/fallout/clothing/khans.dmi'
 	icon_state = "khan_booty"
 	item_state = "khan_booty"
+	body_parts_hidden = GROIN|LEGS
 
 /obj/item/clothing/under/f13/khan/Goji
 	name = "Leather Pants"
@@ -661,6 +665,7 @@
 	icon_state = "Gojipants"
 	item_state = "Gojipants"
 	item_color = "Gojipants"
+	body_parts_hidden = GROIN|LEGS
 
 // Testing fixed toggle uniform so icon updates properly
 /obj/item/clothing/under/f13/khan/AltClick(mob/user)

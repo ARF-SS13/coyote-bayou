@@ -340,3 +340,21 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 6, /datum/reagent/consumable/peachjuice = 15)
 	tastes = list("peach" = 1, "pie" = 1)
 	foodtype = GRAIN | FRUIT
+
+/obj/item/reagent_containers/food/snacks/pie/shepherds_pie
+	name = "shepherds pie"
+	desc = "A dish of minced meat and mixed vegetables baked under a layer of creamy mashed potatoes. Sliceable."
+	icon_state = "shepherds_pie"
+	slice_path = /obj/item/reagent_containers/food/snacks/pie/pieslice/shepherds_pie
+	slices_num = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 40, /datum/reagent/consumable/nutriment/vitamin = 12)
+	tastes = list("juicy meat" = 2, "mashed potatoes" = 2, "baked veggies" = 2)
+	foodtype = MEAT | DAIRY | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/pie/pieslice/shepherds_pie
+	name = "shepherds pie slice"
+	desc = "A messy slice of shepherds pie, made of minced meat and mixed vegetables baked under a layer of creamy mashed potatoes. Dangerously tasty."
+	icon_state = "shepherds_pie_slice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 10, /datum/reagent/consumable/nutriment/vitamin = 3)
+	tastes = list("juicy meat" = 1, "mashed potatoes" = 1, "baked veggies" = 1)
+	foodtype = MEAT | DAIRY | VEGETABLES

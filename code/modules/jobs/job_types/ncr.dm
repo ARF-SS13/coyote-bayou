@@ -1380,7 +1380,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 	accessory = /obj/item/clothing/accessory/ncr/LT2
 	head = /obj/item/clothing/head/beret/ncr/ncr_sapper
 	l_pocket = /obj/item/storage/belt/legholster
-	suit = /obj/item/clothing/suit/armor/utilityvest/logisticsofficer
+	suit = /obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer
 	glasses	= /obj/item/clothing/glasses/welding
 	belt = /obj/item/storage/belt/army/assault/ncr/engineer
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -1444,7 +1444,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 // Logistics soldier
 /datum/outfit/loadout/rearlog
 	name = "Logistics"
-	suit = /obj/item/clothing/suit/armor/utilityvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/utility
 	belt = /obj/item/storage/belt/military/NCR_Bandolier
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/varmint = 1,
@@ -1456,12 +1456,12 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 // Technician	Salvaging
 /datum/outfit/loadout/reartech
 	name = "Technician"
-	suit = /obj/item/clothing/suit/armor/utilityvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/utility
 	belt = /obj/item/storage/belt/utility/full
 	gloves = /obj/item/clothing/gloves/color/yellow
 	backpack_contents = list(
 		/obj/item/book/granter/trait/techno = 1,
-		/obj/item/clothing/suit/armor/utilityvest = 1,
+		/obj/item/clothing/suit/armor/outfit/vest/utility = 1,
 		/obj/item/gun/ballistic/shotgun/hunting = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/melee/onehanded/knife/survival = 1,
@@ -1473,7 +1473,7 @@ Weapons		Service Rifle, Grease Gun, 9mm pistol, all good.
 // Corpsman		Chemistry, simple medical
 /datum/outfit/loadout/rearcorps
 	name = "Corpsman"
-	suit = /obj/item/clothing/suit/armor/utilityvest
+	suit = /obj/item/clothing/suit/armor/outfit/vest/utility
 	belt = /obj/item/storage/belt/medical
 	gloves = /obj/item/clothing/gloves/f13/leather/fingerless
 	belt = /obj/item/storage/belt/legholster

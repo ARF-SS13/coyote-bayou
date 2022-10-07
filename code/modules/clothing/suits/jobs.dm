@@ -123,6 +123,7 @@
 	armor = ARMOR_VALUE_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	body_parts_hidden = CHEST
 
 //Lawyer
 /obj/item/clothing/suit/toggle/lawyer

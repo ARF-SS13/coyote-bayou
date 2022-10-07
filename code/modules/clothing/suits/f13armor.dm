@@ -993,7 +993,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 
 
-/obj/item/clothing/suit/armor/herbertranger //Armor wise, it's reskinned raider armor.
+/obj/item/clothing/suit/armor/light/duster/herbertranger //Armor wise, it's reskinned raider armor.
 	name = "weathered desert ranger armor"
 	desc = "A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -1002,11 +1002,11 @@ obj/item/clothing/suit/armor/exile/cust0m
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 15, "bio" = 60, "rad" = 15, "fire" = 60, "acid" = 30)
 	strip_delay = 40
 
-/obj/item/clothing/suit/armor/herbertranger/Initialize() //HQ parts reinforcement, just like raider gear
+/obj/item/clothing/suit/armor/light/duster/herbertranger/Initialize() //HQ parts reinforcement, just like raider gear
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/marlowsuit //Raider armour reskin.
+/obj/item/clothing/suit/armor/light/duster/marlowsuit //Raider armour reskin.
 	name = "Marlow gang overcoat"
 	desc = "A heavy raw buckskin overcoat littered with aged bullet holes and frays from regular wear-and-tear."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
@@ -1015,11 +1015,11 @@ obj/item/clothing/suit/armor/exile/cust0m
 	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	strip_delay = 40
 
-/obj/item/clothing/suit/armor/marlowsuit/Initialize()
+/obj/item/clothing/suit/armor/light/duster/marlowsuit/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/marlowsuit/ikesuit
+/obj/item/clothing/suit/armor/light/duster/marlowsuit/ikesuit
 	name = "gunfighter's overcoat"
 	desc = "A thick double-breasted red leather overcoat worn through with scattered tears and bullet holes."
 	icon_state = "ikesuit"
@@ -1029,7 +1029,7 @@ obj/item/clothing/suit/armor/exile/cust0m
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/marlowsuit/masonsuit
+/obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
 	name = "vagabond's vest"
 	desc = "A padded thick red leather vest, coated in stitched pockets and other mends."
 	icon_state = "masonsuit"

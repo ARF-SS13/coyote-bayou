@@ -72,7 +72,7 @@
 //f13 stuff
 #define EXP_TYPE_FALLOUT		"Fallout"
 #define EXP_TYPE_VAULT			"Vault"
-#define EXP_TYPE_BROTHERHOOD	"Bos"
+#define EXP_TYPE_BROTHERHOOD	"Southern BoS Outcasts"
 #define EXP_TYPE_NCR			"Ncr"
 #define EXP_TYPE_OASIS "Oasis"
 #define EXP_TYPE_LEGION			"Legion"

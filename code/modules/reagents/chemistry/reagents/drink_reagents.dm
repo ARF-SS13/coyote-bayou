@@ -1099,3 +1099,21 @@
 	taste_description = "bitter powder"
 	glass_name = "glass of banana peel powder"
 	ghoulfriendly = TRUE
+
+/datum/reagent/consumable/cucumberjuice
+	name = "Cucumber Juice"
+	description = "Ordinary cucumber juice, nothing from the fantasy world."
+	color = "#6cd87a"
+	taste_description = "light cucumber"
+	glass_icon_state = "glass_cucumber"
+	glass_name = "glass of cucumber juice"
+	glass_desc = "A glass of cucumber juice."
+
+/datum/reagent/consumable/cucumberlemonade
+	name = "Cucumber Lemonade"
+	description = "Cucumber juice, sugar and soda, what else is needed for happiness?"
+	color = "#6cd87a"
+	taste_description = "citrus soda with cucumber"
+	glass_icon_state = "cucumber_lemonade"
+	glass_name = "cucumber lemonade"
+	glass_desc = "The smell of cucumber from lemonade, I'm sure I won't get poisoned?."

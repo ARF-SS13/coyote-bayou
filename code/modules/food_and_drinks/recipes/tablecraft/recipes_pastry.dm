@@ -184,3 +184,24 @@
 	)
 	result = /obj/item/reagent_containers/food/snacks/cannoli
 	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/peanut_butter_cookie
+	name = "Peanut butter cookie"
+	reqs = list(
+		/datum/reagent/consumable/peanut_butter = 5,
+		/obj/item/reagent_containers/food/snacks/pastrybase = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/peanut_butter
+	subcategory = CAT_PASTRY
+
+/datum/crafting_recipe/food/raw_brownie_batter
+	name = "Raw brownie batter"
+	reqs = list(
+		/datum/reagent/consumable/flour = 5,
+		/datum/reagent/consumable/sugar = 5,
+		/obj/item/reagent_containers/food/snacks/egg = 2,
+		/datum/reagent/consumable/coco = 5,
+		/obj/item/reagent_containers/food/snacks/butter = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/raw_brownie_batter
+	subcategory = CAT_PASTRY

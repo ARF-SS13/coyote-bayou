@@ -382,7 +382,7 @@
 */
 
 //NCR
-/obj/item/clothing/suit/armor/utilityvest
+/obj/item/clothing/suit/armor/outfit/vest/utility
 	name = "utility vest"
 	desc = "A practical vest with pockets for tools and such."
 	icon_state = "vest_utility"
@@ -396,16 +396,16 @@
 /datum/component/storage/concrete/pockets/utility
 	max_items = 4
 
-/obj/item/clothing/suit/armor/utilityvest/Initialize()
+/obj/item/clothing/suit/armor/outfit/vest/utility/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/utilityvest/logisticsofficer //same as his beret
+/obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
 	name = "logistics officer utility vest"
 	desc = "A practical and armored vest with pockets for tools and such."
 	armor = list("melee" = 15, "bullet" = 50, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0, "wound" = 55)
 
-/obj/item/clothing/suit/armor/utilityvest/logisticsofficer/Initialize()
+/obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer/Initialize()
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
@@ -606,7 +606,7 @@
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
 
-/obj/item/clothing/suit/armor/ncrcfjacket
+/obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket
 	name = "NCRCF jacket"
 	icon_state = "ncrcfjacket"
 	item_state = "ncrcfjacket"
@@ -844,7 +844,7 @@
 //Old World Law Enforcement
 //Police
 
-/obj/item/clothing/suit/armor/outfit/police
+/obj/item/clothing/suit/armor/outfit/jacket/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -853,7 +853,7 @@
 	item_state = "police_officer"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
 
-/obj/item/clothing/suit/armor/outfit/police/lieutenant
+/obj/item/clothing/suit/armor/outfit/jacket/police/lieutenant
 	name = "police lieutenant's jacket"
 	desc = " A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -862,7 +862,7 @@
 	item_state = "police_lieutenant"
 	armor = list("melee" = 15, "bullet" = 15, "laser" = 15, "energy" = 15, "bomb" = 20, "bio" = 5, "rad" = 0, "fire" = 15, "acid" = 5, "wound" = 30)
 
-/obj/item/clothing/suit/armor/outfit/police/chief
+/obj/item/clothing/suit/armor/outfit/jacket/police/chief
 	name = "police chief's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
