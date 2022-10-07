@@ -606,13 +606,6 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
-"axo" = (
-/obj/structure/stone_tile/slab/cracked{
-	dir = 5
-	},
-/obj/structure/stone_tile/center/burnt,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "axy" = (
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating/f13/inside,
@@ -2981,6 +2974,13 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/brotherhood/operations)
+"cGL" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/glowshroom,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "cHc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -3804,13 +3804,6 @@
 /obj/structure/pondlily_small,
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"dnR" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/obj/effect/spawner/lootdrop/f13/armor/random,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "doa" = (
 /obj/structure/chair/booth{
 	dir = 8
@@ -4959,6 +4952,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
+"eeu" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "eeG" = (
 /obj/structure/bed,
 /obj/item/bedsheet/hos,
@@ -5526,6 +5526,14 @@
 	icon_state = "rampdowntop"
 	},
 /area/f13/brotherhood/operations)
+"eAm" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
+/obj/item/clothing/head/helmet/f13/combat/mk2/tribal,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "eAI" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 4;
@@ -5733,6 +5741,16 @@
 	icon_state = "housewood4-broken"
 	},
 /area/f13/bunker)
+"eJH" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/clothing/suit/armor/medium/combat/mk2/tribal,
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk,
+/obj/item/clothing/head/helmet/f13/combat/tribal,
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "eJN" = (
 /obj/structure/toilet{
 	dir = 4
@@ -5792,18 +5810,6 @@
 /mob/living/simple_animal/hostile/deathclaw,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/bunker)
-"eNA" = (
-/obj/structure/stone_tile/surrounding_tile,
-/obj/structure/stone_tile/surrounding_tile{
-	dir = 1
-	},
-/obj/structure/stone_tile/surrounding/cracked,
-/obj/structure/stone_tile/slab/cracked{
-	dir = 9;
-	pixel_y = 9
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "eNB" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -7124,6 +7130,13 @@
 /obj/machinery/recharger,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"fOh" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/structure/spacevine,
+/turf/open/water,
+/area/f13/underground/cave)
 "fOr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/marking{
@@ -8166,6 +8179,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
+"gFk" = (
+/obj/structure/bed/old,
+/turf/open/floor/carpet/royalblack,
+/area/f13/underground/cave)
 "gFx" = (
 /obj/machinery/computer/crew{
 	dir = 8
@@ -10329,6 +10346,13 @@
 /obj/effect/turf_decal/stripes/red/line,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/enclave)
+"izq" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 6
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "iAV" = (
 /obj/effect/turf_decal/big{
 	dir = 10
@@ -10500,12 +10524,10 @@
 	},
 /area/f13/bunker)
 "iJT" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
+/obj/item/mayhem{
+	desc = "Some kind of mutated FEV strain that sends everything around it into a killing frenzy. It's sealed up tight- so if you open it up, you REALLY deserve what's coming to you."
 	},
-/turf/closed/indestructible/riveted/boss{
-	name = "temple wall"
-	},
+/turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "iKf" = (
 /obj/structure/toilet{
@@ -10627,13 +10649,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
-"iQj" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 6
-	},
-/obj/structure/spacevine,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "iQl" = (
 /obj/structure/chair/stool/retro/backed{
 	dir = 4
@@ -11882,13 +11897,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/rnd)
-"jYO" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/obj/item/stack/medical/poultice/ten,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "jZd" = (
 /obj/structure/closet/toolcloset,
 /obj/structure/cable{
@@ -12390,6 +12398,14 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/operations)
+"kto" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/closed/indestructible/riveted/boss{
+	name = "temple wall"
+	},
+/area/f13/underground/cave)
 "ktq" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/window/reinforced{
@@ -14600,6 +14616,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/turf_decal/weather/dirt,
 /turf/open/water,
 /area/f13/underground/cave)
 "mll" = (
@@ -15153,16 +15170,6 @@
 /obj/item/storage/fancy/rollingpapers,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/vault)
-"mFi" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/obj/item/clothing/suit/armor/medium/combat/mk2/tribal,
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk,
-/obj/item/clothing/head/helmet/f13/combat/tribal,
-/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "mGp" = (
 /obj/machinery/door/airlock{
 	name = "Restrooms"
@@ -15913,6 +15920,13 @@
 /obj/structure/grille/broken,
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operations)
+"nkb" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/effect/spawner/lootdrop/f13/armor/random,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "nkQ" = (
 /obj/structure/chair{
 	dir = 1
@@ -16422,14 +16436,6 @@
 /turf/open/indestructible/ground/inside/subway{
 	name = "cave"
 	},
-/area/f13/underground/cave)
-"nJV" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
-/obj/item/clothing/head/helmet/f13/combat/mk2/tribal,
-/turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "nKd" = (
 /obj/structure/simple_door/metal/ventilation,
@@ -17424,6 +17430,10 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/offices1st)
+"oBf" = (
+/mob/living/simple_animal/hostile/trog/tunneler/blindone,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "oBt" = (
 /obj/machinery/light,
 /obj/structure/table,
@@ -17594,6 +17604,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/offices1st)
+"oFd" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 9
+	},
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "oFl" = (
 /obj/structure/table{
 	layer = 2.9
@@ -19306,6 +19323,14 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
+"pTV" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/obj/item/stack/medical/poultice/ten,
+/obj/structure/spacevine,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "pUh" = (
 /obj/structure/simple_door/bunker{
 	name = "Ceremony Room";
@@ -20773,6 +20798,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/yellow/yellowchess/yellowchess2,
 /area/f13/vault)
+"qVM" = (
+/obj/structure/stone_tile/center/burnt,
+/obj/structure/stone_tile/surrounding/burnt,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "qWv" = (
 /obj/structure/closet/secure_closet/freezer/meat{
 	anchored = 1
@@ -22295,12 +22325,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
-"soz" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "soI" = (
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/dorms)
@@ -23829,9 +23853,6 @@
 "tCT" = (
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
-"tCZ" = (
-/turf/open/floor/carpet/royalblack,
-/area/f13/underground/cave)
 "tDc" = (
 /obj/effect/turf_decal/big{
 	dir = 1;
@@ -23994,6 +24015,12 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/rnd)
+"tIV" = (
+/obj/structure/table/reinforced{
+	color = "#3c2c21"
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "tIZ" = (
 /obj/structure/spacevine,
 /turf/open/floor/plasteel/cult,
@@ -25880,6 +25907,9 @@
 	icon_state = "darkyellowfull"
 	},
 /area/f13/brotherhood/offices1st)
+"vgM" = (
+/turf/open/floor/carpet/royalblack,
+/area/f13/underground/cave)
 "vhF" = (
 /obj/structure/table/reinforced,
 /obj/item/key/vertibird{
@@ -26851,11 +26881,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/operations)
-"vXX" = (
-/obj/structure/stone_tile/center/burnt,
-/obj/structure/stone_tile/surrounding/burnt,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "vYb" = (
 /obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
@@ -27628,13 +27653,6 @@
 	},
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/operating)
-"wEm" = (
-/obj/structure/table/reinforced{
-	color = "#3c2c21"
-	},
-/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
 "wEI" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -28153,9 +28171,10 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "xde" = (
-/obj/item/mayhem{
-	desc = "Some kind of mutated FEV strain that sends everything around it into a killing frenzy. It's sealed up tight- so if you open it up, you REALLY deserve what's coming to you."
+/obj/structure/stone_tile/slab/cracked{
+	dir = 5
 	},
+/obj/structure/stone_tile/center/burnt,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "xdq" = (
@@ -28737,6 +28756,18 @@
 /obj/machinery/icecream_vat,
 /turf/open/floor/plasteel/showroomfloor,
 /area/f13/vault)
+"xEb" = (
+/obj/structure/stone_tile/surrounding_tile,
+/obj/structure/stone_tile/surrounding_tile{
+	dir = 1
+	},
+/obj/structure/stone_tile/surrounding/cracked,
+/obj/structure/stone_tile/slab/cracked{
+	dir = 9;
+	pixel_y = 9
+	},
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "xER" = (
 /obj/structure/chair/comfy/black,
 /turf/open/floor/f13/wood,
@@ -60358,9 +60389,9 @@ nqo
 lRK
 smz
 smz
-cHz
-cHz
-cHz
+vgM
+gFk
+vgM
 smz
 lRK
 cHz
@@ -60615,9 +60646,9 @@ qoT
 qoT
 smz
 smz
-cHz
-cHz
-cHz
+vgM
+vgM
+vgM
 smz
 qoT
 qoT
@@ -60872,16 +60903,16 @@ cHz
 eaC
 urQ
 smz
-cHz
-cHz
-cHz
+vgM
+vgM
+vgM
 smz
-tCZ
-tCZ
-tCZ
-tCZ
+vgM
+vgM
+vgM
+vgM
 qoT
-mFi
+eJH
 smz
 shC
 shC
@@ -61131,14 +61162,14 @@ ptZ
 smz
 cHz
 cHz
+cHz
 smz
-smz
-tCZ
-tCZ
-tCZ
-tCZ
+vgM
+vgM
+vgM
+vgM
 qoT
-nJV
+eAm
 smz
 shC
 shC
@@ -61386,7 +61417,7 @@ bRa
 gSv
 wbK
 smz
-cHz
+xmO
 cHz
 xmO
 smz
@@ -61643,7 +61674,7 @@ tIZ
 smz
 smz
 smz
-cHz
+smz
 cHz
 smz
 smz
@@ -61651,7 +61682,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
+xGQ
 cHz
 smz
 shC
@@ -62387,7 +62418,7 @@ shC
 shC
 smz
 smz
-smz
+gfI
 shC
 shC
 shC
@@ -62643,8 +62674,8 @@ shC
 shC
 shC
 smz
-cHz
-smz
+tIZ
+gfI
 shC
 shC
 shC
@@ -62670,7 +62701,7 @@ cHz
 cHz
 cHz
 qpS
-iJT
+kto
 cHz
 cHz
 cHz
@@ -62899,9 +62930,9 @@ shC
 shC
 shC
 shC
-smz
+gfI
 cHz
-smz
+gfI
 shC
 shC
 shC
@@ -62925,7 +62956,7 @@ smz
 smz
 cHz
 cHz
-iJT
+kto
 qpS
 dsN
 cHz
@@ -63182,14 +63213,14 @@ gfI
 xmO
 cHz
 tIZ
-iJT
+kto
+cGL
 dsN
-dsN
 cHz
 cHz
 cHz
 cHz
-cHz
+xGQ
 cHz
 cHz
 cHz
@@ -63414,9 +63445,9 @@ smz
 smz
 smz
 smz
-cHz
+peA
 smz
-cHz
+dsN
 tIZ
 xmO
 gfI
@@ -63673,8 +63704,8 @@ cHz
 nsC
 mkC
 pkn
-cHz
-cHz
+dsN
+dsN
 cHz
 tIZ
 xGQ
@@ -63942,7 +63973,7 @@ smz
 smz
 cHz
 smz
-axo
+xde
 cHz
 cHz
 cHz
@@ -64193,7 +64224,7 @@ smz
 smz
 aAs
 cHz
-cHz
+dsN
 cMn
 qyw
 cHz
@@ -64441,17 +64472,17 @@ shC
 smz
 tIZ
 smz
-cHz
+dsN
 tIZ
 tIZ
 tIZ
-cHz
+dsN
 smz
 smz
 smz
 smz
 cHz
-cHz
+dsN
 cHz
 cHz
 cHz
@@ -64975,8 +65006,8 @@ cHz
 cHz
 cHz
 nTp
-vXX
-eNA
+qVM
+xEb
 nnO
 jdP
 dUM
@@ -64984,7 +65015,7 @@ dsN
 cHz
 cHz
 tIZ
-cHz
+oBf
 cHz
 cHz
 cHz
@@ -66013,7 +66044,7 @@ gfI
 gfI
 cHz
 dUM
-iJT
+dsN
 smz
 cHz
 cHz
@@ -67559,7 +67590,7 @@ cHz
 smz
 gfI
 smz
-smz
+gfI
 cHz
 cHz
 smz
@@ -67817,7 +67848,7 @@ cHz
 cHz
 cHz
 cHz
-cHz
+tIZ
 cHz
 cHz
 cHz
@@ -68576,7 +68607,7 @@ smz
 shC
 shC
 smz
-iQj
+izq
 urQ
 nIu
 cHz
@@ -69333,7 +69364,7 @@ kWz
 smz
 knc
 cHz
-xde
+iJT
 smz
 smz
 smz
@@ -69603,7 +69634,7 @@ smz
 smz
 ghS
 ghS
-smz
+gfI
 adl
 nIu
 cHz
@@ -69861,7 +69892,7 @@ smz
 ghS
 vMz
 oTw
-ptZ
+fOh
 nIu
 cHz
 xmO
@@ -70118,8 +70149,8 @@ smz
 ghS
 dMX
 ptZ
-wbK
-cHz
+oFd
+tIZ
 cHz
 cHz
 cHz
@@ -70375,6 +70406,9 @@ ghS
 ghS
 dMX
 ghS
+gfI
+smz
+gfI
 smz
 smz
 smz
@@ -70382,14 +70416,11 @@ smz
 smz
 smz
 smz
-smz
-smz
-smz
-smz
+gfI
 smz
 cHz
-smz
-smz
+gfI
+gfI
 smz
 smz
 shC
@@ -70904,7 +70935,7 @@ cHz
 cHz
 cHz
 aAs
-smz
+gfI
 shC
 shC
 shC
@@ -71412,7 +71443,7 @@ shC
 shC
 shC
 shC
-smz
+gfI
 cHz
 cHz
 cHz
@@ -71669,12 +71700,12 @@ shC
 shC
 shC
 shC
-smz
-jYO
-wEm
+gfI
+pTV
+eeu
 cHz
-dnR
-soz
+nkb
+tIV
 smz
 shC
 shC
@@ -71926,10 +71957,10 @@ shC
 shC
 shC
 shC
-smz
-smz
-smz
-smz
+gfI
+gfI
+gfI
+gfI
 smz
 smz
 smz

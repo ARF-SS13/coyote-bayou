@@ -92,6 +92,7 @@
 	icon_dead = "trog_dead"
 	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
 	gender = FEMALE
+	resize = 1.3
 	speed = -1
 	maxHealth = 150
 	health = 150
