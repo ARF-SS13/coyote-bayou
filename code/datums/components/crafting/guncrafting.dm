@@ -127,20 +127,20 @@
 	name = "machine workbench"
 	//icon_state = "advanced_bench"
 	desc = "A machining bench, useful for producing complex machined parts."
-	machine_tool_behaviour = list(TOOL_MWORKBENCH)
+	machine_tool_behaviour = list(TOOL_WORKBENCH, TOOL_MWORKBENCH)
 
 /obj/machinery/workbench/assbench
 	name = "assembly workbench"
 	//icon_state = "advanced_bench"
 	desc = "An assembly bench, useful for assembling complex parts into semi-finished products."
-	machine_tool_behaviour = list(TOOL_ASSWORKBENCH)
+	machine_tool_behaviour = list(TOOL_WORKBENCH, TOOL_ASSWORKBENCH)
 
 /obj/machinery/workbench/fbench
 	var/obj/item/prefabs/mould
 	name = "moulding workbench"
 	icon_state = "moulding"
 	desc = "A moulding bench, used for superheating metal into its molten form and moulding it."
-	machine_tool_behaviour = list(TOOL_FWORKBENCH)
+	machine_tool_behaviour = list(TOOL_WORKBENCH, TOOL_FWORKBENCH)
 	wrenchable = FALSE
 
 /obj/machinery/workbench/bottler
@@ -155,7 +155,7 @@
 	icon = 'icons/fallout/machines/64x32.dmi'
 	icon_state = "bench_metal"
 	bound_width = 64
-	machine_tool_behaviour = list(TOOL_FORGE)
+	machine_tool_behaviour = list(TOOL_WORKBENCH, TOOL_FORGE)
 
 /obj/item/weaponcrafting/receiver
 	name = "modular receiver"
