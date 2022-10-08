@@ -1,11 +1,11 @@
 /obj/item/stock_parts/chem_cartridge
 	name = "Chemical Cartridge"
 	desc = "A propriatary casing holding a mix of raw material for use in chem dispensors."
-	icon = 'modular_coyote/icons/objects/chem_cartridge.dmi' //placeholder
-	icon_state = "simple" //placeholder
-	item_state = "simple" //placeholder
-	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi' //placeholder
-	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi' //placeholder
+	icon = 'modular_coyote/icons/objects/chem_cartridge.dmi' //these are coder sprites.
+	icon_state = "simple"
+	item_state = "simple"
+	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/misc/devices_righthand.dmi'
 	
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500, /datum/material/plasma=100)
 	force = 5
@@ -39,17 +39,17 @@
 /obj/item/stock_parts/chem_cartridge/garbage
 	name = "ancient chemical cartridge"
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one is very worn and mostly used up."
-	icon_state = "salvaged" //placeholder
-	item_state = "salvaged" //placeholder
-	custom_price = PRICE_ABOVE_NORMAL
+	icon_state = "salvaged"
+	item_state = "salvaged"
+	custom_price = PRICE_ALMOST_EXPENSIVE
 	maxCharge = 2500
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
 
 /obj/item/stock_parts/chem_cartridge/crafted
 	name = "Improvised chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. This one is a crudely fabricated imitation."
-	icon_state = "crafted" //placeholder
-	item_state = "crafted" //placeholder
+	icon_state = "crafted"
+	item_state = "crafted"
 	custom_price = PRICE_ABOVE_EXPENSIVE
 	maxCharge = 15000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
@@ -64,8 +64,8 @@
 /obj/item/stock_parts/chem_cartridge/pristine
 	name = "Pristine chemical cartridge"
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one looks good as new"
-	icon_state = "pristine" //placeholder
-	item_state = "pristine" //placeholder
-	custom_price = PRICE_ULTRA_EXPENSIVE
+	icon_state = "pristine"
+	item_state = "pristine"
+	custom_price = PRICE_REALLY_EXPENSIVE
 	maxCharge = 20000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1000, /datum/material/plasma = 500)
