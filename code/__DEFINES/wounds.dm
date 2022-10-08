@@ -2,15 +2,15 @@
 #define WOUND_DAMAGE_EXPONENT 1.2
 
 /// an attack must do this much damage after armor in order to roll for being a wound (incremental pressure damage need not apply)
-#define WOUND_MINIMUM_DAMAGE 5
+#define WOUND_MINIMUM_DAMAGE 2
 /// an attack must do this much damage after armor in order to be eliigible to dismember a suitably mushed bodypart
 #define DISMEMBER_MINIMUM_DAMAGE 10
 /// any damage dealt over this is ignored for damage rolls unless the target has the frail quirk (35^1.4=145)
-#define WOUND_MAX_CONSIDERED_DAMAGE	50
+#define WOUND_MAX_CONSIDERED_DAMAGE	100
 /// when rolling for wounds, this is the lowest it'll be multiplied by
-#define WOUND_DAMAGE_RANDOM_FLOOR_MULT 0.5
+#define WOUND_DAMAGE_RANDOM_FLOOR_MULT 1
 /// when rolling for wounds, this is the highest it'll be multiplied by
-#define WOUND_DAMAGE_RANDOM_MAX_MULT 1.1
+#define WOUND_DAMAGE_RANDOM_MAX_MULT 1.5
 
 #define WOUND_SEVERITY_TRIVIAL	0 // for jokey/meme wounds like stubbed toe, no standard messages/sounds or second winds
 #define WOUND_SEVERITY_MODERATE	1
@@ -33,21 +33,29 @@
 #define WOUND_DETERMINATION_CRITICAL 10
 #define WOUND_DETERMINATION_LOSS 15
 
+// If limb's bleed damage is above this, cause this level of severity
+#define WOUND_BLEED_MODERATE_THRESHOLD BULLET_DAMAGE_PISTOL_LIGHT
+#define WOUND_BLEED_SEVERE_THRESHOLD BULLET_DAMAGE_RIFLE_MEDIUM
+#define WOUND_BLEED_CRITICAL_THRESHOLD (WOUND_BLEED_SEVERE_THRESHOLD + BULLET_DAMAGE_RIFLE_MEDIUM)
+
+/// Below this amount of bleed damage on a limb, remove all bleeding wounds
+#define WOUND_BLEED_CLOSE_THRESHOLD (WOUND_BLEED_MODERATE_THRESHOLD * 0.5)
+
+/// How high can wounding on a limb go
+#define WOUND_BLEED_CAP 100
+
+// handle_damage check returns
+#define WOUND_PROMOTE "promote_wound"
+#define WOUND_DEMOTE "demote_wound"
+#define WOUND_RENEW "renew_wound"
+#define WOUND_DELETE "delete_wound"
+#define WOUND_DO_NOTHING "its_fine"
+
 /// the max amount of determination you can have
 #define WOUND_DETERMINATION_MAX 20
 
 /// set wound_bonus on an item or attack to this to disable checking wounding for the attack
 #define CANT_WOUND -100
-
-/// Wound integrity needed to get to the next level of wound - basically (damage + wound_mod)
-#define WOUND_INTEGRITY_MAX_MODERATE 30
-#define WOUND_INTEGRITY_MAX_SEVERE 50
-#define WOUND_INTEGRITY_MAX_CRITICAL INFINITY // lol
-
-/// Wound damage to skip right to this wound - basically (damage + wound_mod)
-#define WOUND_DAMAGE_MODERATE BULLET_DAMAGE_PISTOL_LIGHT
-#define WOUND_DAMAGE_SEVERE BULLET_DAMAGE_RIFLE_MEDIUM
-#define WOUND_DAMAGE_CRITICAL BULLET_DAMAGE_RIFLE_HEAVY
 
 // list in order of highest severity to lowest
 GLOBAL_LIST_INIT(global_wound_types, list(
@@ -56,17 +64,27 @@ GLOBAL_LIST_INIT(global_wound_types, list(
 		/datum/wound/blunt/severe,
 		/datum/wound/blunt/moderate),
 	WOUND_SLASH = list(
-		/datum/wound/bleed/slash/critical,
-		/datum/wound/bleed/slash/severe,
-		/datum/wound/bleed/slash/moderate),
+		/datum/wound/bleed/slash),
 	WOUND_PIERCE = list(
-		/datum/wound/bleed/pierce/critical,
-		/datum/wound/bleed/pierce/severe,
-		/datum/wound/bleed/pierce/moderate),
+		/datum/wound/bleed/pierce),
 	WOUND_BURN = list(
 		/datum/wound/burn/critical,
 		/datum/wound/burn/severe,
 		/datum/wound/burn/moderate)
+	))
+
+// List of slash wounds by severity
+GLOBAL_LIST_INIT(global_slash_wound_severities, list(
+	WOUND_SEVERITY_MODERATE = /datum/wound/bleed/slash/moderate,
+	WOUND_SEVERITY_SEVERE = /datum/wound/bleed/slash/severe,
+	WOUND_SEVERITY_CRITICAL = /datum/wound/bleed/slash/critical
+	))
+
+// List of pierce wounds by severity
+GLOBAL_LIST_INIT(global_pierce_wound_severities, list(
+	WOUND_SEVERITY_MODERATE = /datum/wound/bleed/pierce/moderate,
+	WOUND_SEVERITY_SEVERE = /datum/wound/bleed/pierce/severe,
+	WOUND_SEVERITY_CRITICAL = /datum/wound/bleed/pierce/critical
 	))
 
 GLOBAL_LIST_INIT(global_all_wound_types, list(
@@ -96,13 +114,13 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 
 
 /// how quickly sanitization removes infestation and decays per tick
-#define WOUND_BURN_SANITIZATION_RATE 	0.4
+#define WOUND_BURN_SANITIZATION_RATE 0.4
 /// how much blood you can lose per tick per slash max. 8 is a LOT of blood for one cut so don't worry about hitting it easily
-#define WOUND_MAX_BLOODFLOW		2
+#define WOUND_MAX_BLOODFLOW 14
 /// dead people don't bleed, but they can clot! this is the minimum amount of clotting per tick on dead people, so even critical cuts will slowly clot in dead people
-#define WOUND_SLASH_DEAD_CLOT_MIN		0.05
+#define WOUND_SLASH_DEAD_CLOT_MIN 0.05
 /// if we suffer a bone wound to the head that creates brain traumas, the timer for the trauma cycle is +/- by this percent (0-100)
-#define WOUND_BONE_HEAD_TIME_VARIANCE 	20
+#define WOUND_BONE_HEAD_TIME_VARIANCE 20
 
 /// Threshold for moderate wounds to slow down bleeding if the mob has less than this blood volume
 #define WOUND_BLEED_MODERATE_BLOOD_LOSS_THRESHOLD BLOOD_VOLUME_SYMPTOMS_ANNOYING + 50
@@ -139,6 +157,12 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_OKAY_MAX_DURATION 20 MINUTES
 /// Max time a sterilized suture will stay on someone before falling off
 #define SUTURE_GOOD_MAX_DURATION 1 HOURS
+/// Suture is just barely through its life at this point
+#define SUTURE_GOODLIFE_DURATION 0.70
+/// Suture is at half its life at this point
+#define SUTURE_MIDLIFE_DURATION 0.30
+/// Suture is gonna fall off soon
+#define SUTURE_ENDLIFE_DURATION 0.1
 
 /// ID for the bandage timer
 #define BANDAGE_COOLDOWN_ID "bandage_cooldown_id"
@@ -258,7 +282,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_MEDICAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 2.5)
 
 /// Bandage heal rate
-#define BANDAGE_HEAL_RATE_BASE 0.02
+#define BANDAGE_HEAL_RATE_BASE 0.01
 /// Bandage heal rate for improvised bandages
 #define BANDAGE_IMPROVISED_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 0.5)
 /// Bandage heal rate for normal bandages
@@ -277,7 +301,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_MEDICAL_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 2)
 
 /// Suture heal rate
-#define SUTURE_HEAL_RATE_BASE 0.02
+#define SUTURE_HEAL_RATE_BASE 0.01
 /// Suture heal rate for improvised sutures
 #define SUTURE_IMPROVISED_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 0.5)
 /// Suture heal rate for normal sutures
@@ -295,23 +319,37 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_BURN_MULT 5 // its very flammable
 
 /// Base amount sutures assist wound closure
-#define SUTURE_BASE_WOUND_CLOSURE 0.01
+#define SUTURE_BASE_WOUND_CLOSURE 0.80
 /// Amount normal sutures close wounds
 #define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier sutures close wounds
 #define SUTURE_BEST_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 3)
 
+/// Base amount bandages assist wound closure
+#define BANDAGE_BASE_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 0.5)
+/// Amount normal bandages close wounds
+#define BANDAGE_GOOD_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 1.5)
+/// Amount top tier bandages close wounds
+#define BANDAGE_BEST_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 3)
+
+/// max amount of bleed_dam that bandages are able to fix
+#define BANDAGE_BASE_WOUND_MAX (WOUND_BLEED_MODERATE_THRESHOLD)
+/// Amount normal bandages close wounds
+#define BANDAGE_GOOD_WOUND_MAX (WOUND_BLEED_SEVERE_THRESHOLD)
+/// Amount top tier bandages close wounds
+#define BANDAGE_BEST_WOUND_MAX (WOUND_BLEED_SEVERE_THRESHOLD)
+
 /// Extra wound healing done if we have both sutures and a bandage
 #define SUTURE_AND_BANDAGE_BONUS 1.2
 
 /// Nutrition cost for one unit of wound healing
-#define WOUND_HEAL_NUTRITION_COST 30 // 30 nutrition = 1 less bleed (6 bleed = 180 nutrition, bring a snack)
+#define WOUND_HEAL_NUTRITION_COST 4 // 4 nutrition = 1 less bleed_dam, 400 nutrition = 100 wound heal
 /// Nutrition spent for being well fed
-#define WOUND_HEAL_FULL 10 // Eat a lot for quicker wound regen!
+#define WOUND_HEAL_FULL 5 // Eat a lot for quicker wound regen!
 /// Nutrition spent for being not hungry
 #define WOUND_HEAL_FED 1
 /// Nutrition spent for being hungie
-#define WOUND_HEAL_HUNGRY 0.25
+#define WOUND_HEAL_HUNGRY 1
 
 /// looking for a suture
 #define COVERING_SUTURE "suture"

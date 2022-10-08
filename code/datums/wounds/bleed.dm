@@ -10,11 +10,12 @@
 	treatable_tool = TOOL_CAUTERY
 	base_treat_time = 3 SECONDS
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | ACCEPTS_SUTURE)
+	renew_text = "rips back open"
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
-	/// When we have less than this amount of flow, either from treatment or clotting, we demote to a lower cut or are healed of the wound
+	/// The lowest that this wound will naturally bleed, before multipliers
 	var/minimum_flow
-	/// How much the wound's integrity drops per cycle on its own. Huge wounds bleed out faster
+	/// How much the wound stops bleeding per tick. Typically slow, but can be sped up with sutures and such
 	var/clot_rate
 	/// How much to scale the bleeding if the owner's blood is below low_blood_threshold
 	var/low_blood_multiplier = 1
@@ -32,11 +33,170 @@
 	var/internal_bleeding_coefficient
 	/// Do bandages fully stop this wound's bleeding?
 	var/stopped_by_bandage = FALSE
-	/// Wound size, basically the wound's hitpoints
-	var/wound_integrity
-	/// Required wound integrity to promote to the next
-	var/wound_integrity_max
 	COOLDOWN_DECLARE(bleed_heal_cooldown)
+
+/**
+ * apply_wound() is used once a wound type is instantiated to assign it to a bodypart, and actually come into play.
+ * Somewhat different for bleed wounds. First makes a generic wound based on either slash or pierce
+ * Then runs Handle Damage to set the actual wounding values and do all the loud splortch stuff
+ * 
+ * if there's already a wound of this type, nothing happens and this instance of the wound is deleted
+ *
+ *
+ * Arguments:
+ * * L: The bodypart we're wounding, we don't care about the person, we can get them through the limb
+ * * silent: Not actually necessary I don't think, was originally used for demoting wounds so they wouldn't make new messages, but I believe old_wound took over that, I may remove this shortly
+ * * old_wound: unused
+ * * smited: unused
+ */
+/datum/wound/bleed/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE)
+	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || isalien(L.owner) || !(L.is_organic_limb() || L.render_like_organic))
+		qdel(src)
+		return
+
+	if(ishuman(L.owner))
+		var/mob/living/carbon/human/H = L.owner
+		if(((wound_flags & BONE_WOUND) && !(HAS_BONE in H.dna.species.species_traits)) || ((wound_flags & FLESH_WOUND) && !(HAS_FLESH in H.dna.species.species_traits)))
+			qdel(src)
+			return
+
+	// we accept promotions and demotions, but no point in redundancy. This should have already been checked wherever the wound was rolled and applied for (see: bodypart damage code), but we do an extra check
+	// in case we ever directly add wounds
+	for(var/datum/wound/bleed/preexisting_wound in L.wounds)
+		if(preexisting_wound.type == type) // already have this wound, please call handle_damage to update the wound, ty~<3
+			qdel(src)
+			return
+
+	victim = L.owner
+	limb = L
+	LAZYADD(victim.all_wounds, src)
+	LAZYADD(limb.wounds, src)
+	limb.update_wounds()
+	if(status_effect_type)
+		linked_status_effect = victim.apply_status_effect(status_effect_type, src)
+	SEND_SIGNAL(victim, COMSIG_CARBON_GAIN_WOUND, src, limb)
+	if(!victim.alerts["wound"]) // only one alert is shared between all of the wounds
+		victim.throw_alert("wound", /obj/screen/alert/status_effect/wound)
+
+	handle_damage(FALSE, TRUE, TRUE, FALSE)
+
+/// Update the wound's stats to the apropriate values
+/datum/wound/bleed/proc/handle_damage(silent = FALSE, can_promote = TRUE, force_wound, can_reopen = FALSE, healing = FALSE)
+	var/target_severity = get_limb_bleed_severity()
+	switch(target_severity)
+		if(WOUND_DO_NOTHING)
+			return
+		if(WOUND_DELETE)
+			remove_wound(FALSE, FALSE)
+			return
+	if(healing) // fun fact, using sutures on people with multiple wounds would make them keep shooting out blood
+		return
+	var/what_do = check_damage(target_severity)
+	update_wound(what_do, silent, can_promote, force_wound ? target_severity : FALSE, can_reopen)
+
+/// Returns the limb's target wound severity
+/datum/wound/bleed/proc/get_limb_bleed_severity()
+	switch(limb.bleed_dam)
+		if(-INFINITY to WOUND_BLEED_CLOSE_THRESHOLD)
+			. = WOUND_DELETE // wound's healed
+		if(WOUND_BLEED_CLOSE_THRESHOLD to WOUND_BLEED_MODERATE_THRESHOLD)
+			. = WOUND_DO_NOTHING // under the threshold, its too minor to do anything useful
+		if(WOUND_BLEED_MODERATE_THRESHOLD to WOUND_BLEED_SEVERE_THRESHOLD)
+			. = WOUND_SEVERITY_MODERATE
+		if(WOUND_BLEED_SEVERE_THRESHOLD to WOUND_BLEED_CRITICAL_THRESHOLD)
+			. = WOUND_SEVERITY_SEVERE
+		if(WOUND_BLEED_CRITICAL_THRESHOLD to INFINITY)
+			. = WOUND_SEVERITY_CRITICAL
+
+/// Compares an input limb severity to our current severity, and outputs
+/datum/wound/bleed/proc/check_damage(limb_severity)
+	if(severity == limb_severity)
+		return WOUND_RENEW // refresh the wound if needed
+	if(severity < limb_severity)
+		return WOUND_PROMOTE // our severity is less than the limb's injury severity, increase ours to match
+	if(severity > limb_severity)
+		return WOUND_DEMOTE // our severity is more than the limb's injury severity, decrease ours to match
+
+/datum/wound/bleed/update_wound(which_way, silent = FALSE, can_promote, force_severity, can_reopen)
+	var/datum/wound/bleed/new_wound
+	var/splortch = FALSE
+	var/splortch_reopen = FALSE
+	var/second_wind = FALSE
+	if(force_severity >= WOUND_SEVERITY_MODERATE)
+		if(istype(src, /datum/wound/bleed/pierce))
+			new_wound = GLOB.global_pierce_wound_severities[force_severity]
+		else if(istype(src, /datum/wound/bleed/slash))
+			new_wound = GLOB.global_slash_wound_severities[force_severity]
+		else // getting something
+			new_wound = GLOB.global_slash_wound_severities[force_severity]
+		splortch = TRUE
+		splortch_reopen = FALSE
+		second_wind = TRUE
+	else
+		if(!can_promote && which_way == WOUND_PROMOTE)
+			which_way = WOUND_RENEW
+		switch(which_way)
+			if(WOUND_RENEW)
+				if(!can_reopen)
+					return
+				new_wound = GLOB.global_pierce_wound_severities[severity]
+				second_wind = TRUE
+				splortch = TRUE
+				splortch_reopen = TRUE
+			if(WOUND_PROMOTE)
+				second_wind = TRUE
+				splortch = TRUE
+				splortch_reopen = FALSE
+				if(promotes_to)
+					new_wound = promotes_to
+				else
+					new_wound = GLOB.global_pierce_wound_severities[severity] // reopen it!
+					splortch_reopen = TRUE
+			if(WOUND_DEMOTE)
+				if(demotes_to)
+					new_wound = demotes_to
+				else
+					remove_wound(FALSE, FALSE)
+					return //shrug
+	if(new_wound)
+		name = initial(new_wound.name)
+		desc = initial(new_wound.desc)
+		treat_text = initial(new_wound.treat_text)
+		examine_desc = initial(new_wound.examine_desc)
+		occur_text = initial(new_wound.occur_text)
+		renew_text = initial(new_wound.renew_text)
+		sound_effect = initial(new_wound.sound_effect)
+		severity = initial(new_wound.severity)
+		initial_flow = initial(new_wound.initial_flow)
+		minimum_flow = initial(new_wound.minimum_flow)
+		clot_rate = initial(new_wound.clot_rate)
+		internal_bleeding_chance = initial(new_wound.internal_bleeding_chance)
+		internal_bleeding_coefficient = initial(new_wound.internal_bleeding_coefficient)
+		threshold_minimum = initial(new_wound.threshold_minimum)
+		threshold_penalty = initial(new_wound.threshold_penalty)
+		low_blood_threshold = initial(new_wound.low_blood_threshold)
+		low_blood_multiplier = initial(new_wound.low_blood_multiplier)
+		promotes_to = initial(new_wound.promotes_to)
+		status_effect_type = initial(new_wound.status_effect_type)
+		scar_keyword = initial(new_wound.scar_keyword)
+		stopped_by_bandage = initial(new_wound.stopped_by_bandage)
+	if(splortch)
+		do_splortch(splortch_reopen)
+	if(second_wind)
+		second_wind()
+
+/datum/wound/bleed/proc/do_splortch(renewing = FALSE)
+	var/verbiage = renewing ? "[renew_text]" : "[occur_text]"
+	var/msg = span_userdanger("[victim]'s [limb.name] [verbiage]!") /// CHANGE BACK TO SPAN+DANGER BEFORE RELASEEJIMFISMFISIMI
+	var/vis_dist = COMBAT_MESSAGE_RANGE
+
+	if(severity != WOUND_SEVERITY_MODERATE)
+		msg = "<b>[msg]</b>"
+		vis_dist = DEFAULT_MESSAGE_RANGE
+
+	victim.visible_message(msg, span_userdanger("Your [limb.name] [verbiage]!"), vision_distance = vis_dist)
+	if(sound_effect)
+		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE)
 
 /datum/wound/bleed/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat != DEAD && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
@@ -80,6 +240,7 @@
 	return ..()
 
 /datum/wound/bleed/get_examine_description(mob/user)
+	var/had_something_to_say
 	if(istype(limb.current_gauze, /obj/item/stack/medical/gauze))
 		var/list/msg = list("The bleeding wounds on [victim.p_their()] [limb.name] are wrapped with ")
 		var/bandaid_max_time = initial(limb.current_gauze.covering_lifespan)
@@ -95,7 +256,8 @@
 			if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
 				msg += "nearly ruined "
 		msg += "[limb.current_gauze.name]!"
-		. += "<B>[msg.Join()]</B>\n"
+		. += "[msg.Join()]\n"
+		had_something_to_say = TRUE
 
 	if(istype(limb.current_suture, /obj/item/stack/medical/suture))
 		var/list/msg = list("The bleeding wounds on [victim.p_their()] [limb.name] are stitched up with ")
@@ -103,35 +265,38 @@
 		var/bandaid_time = limb.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
 		// how much life we have left in these bandages
 		switch(bandaid_time)
-			if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
+			if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
 				msg += "sturdy "
-			if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
+			if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
 				msg += "slightly frayed "
-			if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
+			if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
 				msg += "badly frayed "
-			if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
+			if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
 				msg += "nearly popped "
-		msg += "[limb.current_suture.name]s!"
-		. += "<B>[msg.Join()]</B>\n"
+		msg += "[limb.current_suture.name]!"
+		. += "[msg.Join()]\n"
+		had_something_to_say = TRUE
+	if(!had_something_to_say)
+		..()
 
 /datum/wound/bleed/handle_process()
-	if(victim.stat == DEAD)
+	/* if(victim.stat == DEAD)
 		blood_flow -= max(clot_rate, WOUND_SLASH_DEAD_CLOT_MIN)
 		if(blood_flow < minimum_flow)
 			if(demotes_to)
 				replace_wound(demotes_to)
 				return
 			qdel(src)
-			return
+			return */
 
 	limb.check_gauze_time()
 	limb.check_suture_time()
 	
 	reduce_bloodflow()
 
-	if(get_blood_flow(FALSE) < minimum_flow)
+/* 	if(get_blood_flow(FALSE) < minimum_flow)
 		to_chat(victim, span_green("The cut on your [limb.name] has stopped bleeding!"))
-		qdel(src)
+		qdel(src) */
 
 /datum/wound/bleed/drag_bleed_amount()
 	return get_blood_flow(TRUE)
@@ -148,31 +313,7 @@
 		if(prob(5))
 			to_chat(victim, span_notice("You feel the [lowertext(name)] in your [limb.name] firming up from the cold!"))
 
-	if(istype(limb.current_suture))
-		suture_healing()
-
-/// calculates how much our suturejob should ensmallen the wound
-/datum/wound/bleed/proc/suture_healing()
-	if(!istype(limb.current_suture))
-		return FALSE
-	var/obj/item/stack/medical/suture/our_suture = limb.current_suture
-	blood_flow -= our_suture.suture_power * (istype(limb.current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
-	// Food based wound healing, spends nutrition to regen blood
-	// Wound healing has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(!HAS_TRAIT(victim, TRAIT_NOHUNGER))
-		var/nutrition_bonus = 0
-		switch(victim.nutrition)
-			if(0 to NUTRITION_LEVEL_FED)
-				nutrition_bonus = WOUND_HEAL_FULL
-			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_FULL)
-				nutrition_bonus = WOUND_HEAL_FED
-			if(NUTRITION_LEVEL_FULL to INFINITY)
-				nutrition_bonus = WOUND_HEAL_HUNGRY
-
-		if(victim.satiety > 80)
-			nutrition_bonus *= 1.25
-		victim.adjust_nutrition(-nutrition_bonus)
-		blood_flow -= nutrition_bonus / WOUND_HEAL_NUTRITION_COST
+	blood_flow = max(blood_flow, minimum_flow)
 
 /datum/wound/bleed/get_blood_flow(include_reductions = FALSE)
 	. = blood_flow
@@ -180,6 +321,9 @@
 	if(!include_reductions)
 		return
 
+	if(victim.stat == DEAD)
+		return 0
+		
 	if(victim.bodytemperature < (BODYTEMP_NORMAL - 10))
 		. *= 0.5
 
@@ -201,12 +345,7 @@
 		. *= low_blood_multiplier
 	
 /datum/wound/bleed/on_stasis()
-	if(blood_flow >= minimum_flow)
-		return
-	if(demotes_to)
-		replace_wound(demotes_to)
-		return
-	qdel(src)
+	return
 
 /datum/wound/bleed/slash/check_grab_treatments(obj/item/I, mob/user)
 	if(istype(I, /obj/item/gun/energy/laser))
@@ -227,8 +366,8 @@
 	//	suture(I, user)
 	if(I.tool_behaviour == TOOL_CAUTERY || I.get_temperature() > 300)
 		tool_cauterize(I, user)
-	else if(istype(I, /obj/item/gun/energy/laser))
-		las_cauterize(I, user)
+	//else if(istype(I, /obj/item/gun/energy/laser))
+	//	las_cauterize(I, user)
 
 /datum/wound/bleed/on_xadone(power)
 	. = ..()
@@ -238,7 +377,7 @@
 	. = ..()
 	//blood_flow -= 0.075 * power // 20u * 0.075 = -1.5 blood flow, pretty good for how little effort it is
 
-/// Someone is trying to cauterize a wound with a fucking lasergun
+/// Someone is trying to cauterize a wound with a fucking lasergun - unused for now, doesnt work
 /datum/wound/bleed/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
 	user.visible_message(span_warning("[user] begins aiming [lasgun] directly at [victim]'s [limb.name]..."), span_userdanger("You begin aiming [lasgun] directly at [user == victim ? "your" : "[victim]'s"] [limb.name]..."))
@@ -253,7 +392,7 @@
 	blood_flow -= damage / (5 * self_penalty_mult) // 20 / 5 = 4 bloodflow removed, p good
 	victim.visible_message(span_warning("The cuts on [victim]'s [limb.name] scar over!"))
 
-/// If someone is using a suture to close this cut
+/// If someone is using a suture to close this cut - unused for now, handled by various other mechanics
 /datum/wound/bleed/proc/suture(obj/item/stack/medical/suture/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.2 : 1)
 	user.visible_message(span_notice("[user] begins stitching [victim]'s [limb.name] with [I]..."), span_notice("You begin stitching [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
@@ -265,14 +404,17 @@
 	blood_flow -= blood_sutured
 	limb.heal_damage(I.heal_brute, I.heal_burn)
 
-	if(blood_flow > minimum_flow)
-		try_treating(I, user)
-	else if(demotes_to)
-		to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+	//if(blood_flow > minimum_flow)
+	//	try_treating(I, user)
+	//else if(demotes_to)
+	//	to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
 
 
 /// If someone is using either a cautery tool or something with heat to cauterize this cut
 /datum/wound/bleed/proc/tool_cauterize(obj/item/I, mob/user)
+	if(blood_flow <= minimum_flow)
+		to_chat(user, span_danger("You can't cauterize [limb.name] any further, use a bandage and/or a suture!"))
+		return
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
 	user.visible_message(span_danger("[user] begins cauterizing [victim]'s [limb.name] with [I]..."), span_danger("You begin cauterizing [user == victim ? "your" : "[victim]'s"] [limb.name] with [I]..."))
 	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
@@ -283,12 +425,12 @@
 	if(prob(30))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / self_penalty_mult)
-	blood_flow -= blood_cauterized
+	blood_flow = max(blood_flow - blood_cauterized, minimum_flow)
 
-	if(blood_flow > minimum_flow)
-		try_treating(I, user)
-	else if(demotes_to)
-		to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
+	//if(blood_flow > minimum_flow)
+	//	try_treating(I, user)
+	//else if(demotes_to)
+	//	to_chat(user, span_green("You successfully lower the severity of [user == victim ? "your" : "[victim]'s"] cuts."))
 
 /// If someone is licking at their wounds cus they're a cat and that works
 /datum/wound/bleed/proc/lick_wounds(mob/living/carbon/human/user)
@@ -322,7 +464,7 @@
 	else if(ishumanbasic(victim) || isflyperson(victim) || islizard(victim) || isdullahan(victim))
 		user.reagents.add_reagent(/datum/reagent/hairball, 1)
 
-	if(blood_flow > minimum_flow)
-		try_handling(user)
-	else if(demotes_to)
-		to_chat(user, span_green("You successfully lower the severity of [victim]'s cuts."))
+	//if(blood_flow > minimum_flow)
+	//	try_handling(user)
+	//else if(demotes_to)
+	//	to_chat(user, span_green("You successfully lower the severity of [victim]'s cuts."))

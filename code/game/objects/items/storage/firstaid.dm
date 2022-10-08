@@ -222,6 +222,35 @@
 	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
+/obj/item/storage/firstaid/debug_bleedtest
+	name = span_phobia("Debug Testkit For Testing Bleedstuff quickly (illegal)")
+	icon_state = "firstaid"
+	desc = span_love("I got tired of spawning in the same stuff, so I made a kit.")
+	component_type = /datum/component/storage/concrete/box/huge
+
+/obj/item/storage/firstaid/debug_bleedtest/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze/adv(src)
+	new /obj/item/stack/medical/gauze/improvised(src)
+	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/suture/medicated(src)
+	new /obj/item/stack/medical/suture/emergency(src)
+	new /obj/item/healthanalyzer/advanced(src)
+	new /obj/item/melee/onehanded/knife/survival(src)
+	new /obj/item/melee/onehanded/machete/scrapsabre(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/gun/ballistic/automatic/rangemaster(src)
+	new /obj/item/gun/ballistic/automatic/r84(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+
 /*
  * Pill Bottles
  */

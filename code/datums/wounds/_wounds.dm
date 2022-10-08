@@ -28,6 +28,8 @@
 	var/a_or_from = "a"
 	/// The visible message when this happens
 	var/occur_text = ""
+	/// The visible message when this is renewed
+	var/renew_text = ""
 	/// This sound will be played upon the wound being applied
 	var/sound_effect
 
@@ -201,15 +203,19 @@
 
 /// Additional beneficial effects when the wound is gained, in case you want to give a temporary boost to allow the victim to try an escape or last stand
 /datum/wound/proc/second_wind()
+	var/add_determ
 	switch(severity)
 		if(WOUND_SEVERITY_MODERATE)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_MODERATE)
+			add_determ = WOUND_DETERMINATION_MODERATE
 		if(WOUND_SEVERITY_SEVERE)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_SEVERE)
+			add_determ = WOUND_DETERMINATION_SEVERE
 		if(WOUND_SEVERITY_CRITICAL)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_CRITICAL)
+			add_determ = WOUND_DETERMINATION_CRITICAL
 		if(WOUND_SEVERITY_LOSS)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_LOSS)
+			add_determ = WOUND_DETERMINATION_LOSS
+	if(victim.has_reagent(/datum/reagent/determination))
+		add_determ *= 0.25 // already determined? kinda demoralizing to keep getting FUCKED
+	victim.reagents.add_reagent(/datum/reagent/determination, add_determ)
 
 /**
  * try_treating() is an intercept run from [/mob/living/carbon/proc/attackby] right after surgeries but before anything else. Return TRUE here if the item is something that is relevant to treatment to take over the interaction.
@@ -311,12 +317,16 @@
 /datum/wound/proc/crush()
 	return
 
+/// Called when we want to update our wounds, only matters on bleeds right now
+/datum/wound/proc/update_wound()
+	return
+
 /// Used when we're being dragged while bleeding, the value we return is how much bloodloss this wound causes from being dragged. Since it's a proc, you can let bandages soak some of the blood
 /datum/wound/proc/drag_bleed_amount()
 	return
 
 /// Returns how much the wound should be bleeding given an amount of blood, so we can scale bleeding for minor wounds
-/datum/wound/proc/get_blood_flow()
+/datum/wound/proc/get_blood_flow(include_reductions = FALSE)
 	return blood_flow
 
 /**
