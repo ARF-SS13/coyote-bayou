@@ -862,13 +862,13 @@
 				/obj/effect/spawner/lootdrop/f13/junkspawners = 33,
 				/obj/item/stack/medical/gauze/improvised = 2,
 				/obj/item/stack/medical/ointment/five = 2,
-				/obj/item/stack/medical/suture/emergency/five = 3,
+				/obj/item/stack/medical/suture/emergency/five = 2,
 				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
 				/obj/item/stack/f13Cash/random/low = 10,
-				/obj/item/gun/ballistic/automatic/smg/american180 = 2,
-				/obj/effect/spawner/bundle/f13/mini22uzi = 2,
-				/obj/effect/spawner/bundle/f13/sportcarbine = 2,
-				/obj/effect/spawner/bundle/f13/ninemil = 2,
+				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
+				/obj/effect/spawner/bundle/f13/mini22uzi = 1,
+				/obj/effect/spawner/bundle/f13/sportcarbine = 1,
+				/obj/effect/spawner/bundle/f13/ninemil = 1,
 				/obj/effect/spawner/bundle/f13/widowmaker = 2,
 				/obj/effect/spawner/bundle/f13/sig = 4,
 				/obj/effect/spawner/bundle/f13/varmint = 2
@@ -912,7 +912,6 @@
 				/obj/effect/spawner/bundle/f13/guns/tommygun,
 				/obj/effect/spawner/bundle/f13/shotgunlever,
 				/obj/effect/spawner/bundle/f13/brushgun,
-				/obj/item/gun/ballistic/automatic/type93,
 				/obj/item/gun/ballistic/automatic/armalite,
 				/obj/item/gun/ballistic/rifle/repeater/ranger
 				)
