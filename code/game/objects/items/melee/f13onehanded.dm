@@ -29,7 +29,7 @@
 
 /obj/item/melee/onehanded/dragonfire //unique
 	name = "Dragonfire Katana"
-	desc = "<span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
+	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"
@@ -40,6 +40,7 @@
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	force = 50
 	throwforce = 10
+	armour_penetration = 0.40
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")

@@ -2203,14 +2203,14 @@
 
 /* * * * * * * * * * *
  * Type 93 assault rifle
- * Chinese 5.56mm autorifle
+ * Chinese 5.56mm AN-94-like rifle
  * .223 / 5.56mm
  * Uncommon
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/type93
 	name = "type 93 assault rifle"
-	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
+	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars. Has a unique burst-fire mechanism, where it fires two bullets very quickly, staying accurate, but leading to an increased pause between follow-up shots. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
 	icon_prefix = "handmade_rifle"
@@ -2220,7 +2220,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_BASE
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
@@ -2228,9 +2228,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_400,
-		BURST_3_ROUND,
-		SEMI_AUTO_NODELAY
+		BURST_2_ROUND,
 	)
 
 	is_automatic = TRUE
@@ -2264,7 +2262,7 @@
 
 /obj/item/gun/ballistic/automatic/type93/worn //24dmg
 	name = "\improper Worn Type 93"
-	desc = "This Type 93 Chinese assault rifle looks like it has been made in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
+	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "type93"
 	item_state = "handmade_rifle"
@@ -2278,9 +2276,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(3.4)
 	init_firemodes = list(
-		BURST_8_ROUND
+		BURST_5_ROUND
 	)
 
 	can_suppress = FALSE
