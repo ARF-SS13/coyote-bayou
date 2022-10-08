@@ -41,6 +41,7 @@
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one is very worn and mostly used up."
 	icon_state = "salvaged" //placeholder
 	item_state = "salvaged" //placeholder
+	custom_price = PRICE_ABOVE_NORMAL
 	maxCharge = 2500
 	custom_materials = list(/datum/material/iron=500, /datum/material/glass=500)
 
@@ -49,6 +50,7 @@
 	desc = "A casing holding a mix of raw material for use in chem dispensors. This one is a crudely fabricated imitation."
 	icon_state = "crafted" //placeholder
 	item_state = "crafted" //placeholder
+	custom_price = PRICE_ABOVE_EXPENSIVE
 	maxCharge = 15000
 	custom_materials = list(/datum/material/iron=1000, /datum/material/glass=500)
 
@@ -56,6 +58,7 @@
 	name = "Knock-off chemical cartridge"
 	desc = "A casing holding a mix of raw material for use in chem dispensors. It looks like a mass produced knock-off."
 	maxCharge = 10000
+	custom_price = PRICE_ABOVE_EXPENSIVE
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=500, /datum/material/plasma = 100)
 
 /obj/item/stock_parts/chem_cartridge/pristine
@@ -63,5 +66,6 @@
 	desc = "A propriatary single use casing holding a mix of raw material for use in chem dispensors. This one looks good as new"
 	icon_state = "pristine" //placeholder
 	item_state = "pristine" //placeholder
+	custom_price = PRICE_ULTRA_EXPENSIVE
 	maxCharge = 20000
 	custom_materials = list(/datum/material/iron=2000, /datum/material/glass=1000, /datum/material/plasma = 500)
