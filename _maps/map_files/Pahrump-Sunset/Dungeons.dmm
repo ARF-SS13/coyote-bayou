@@ -444,6 +444,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/vault)
+"arD" = (
+/obj/machinery/processor,
+/obj/structure/lattice{
+	layer = 3
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/caves)
 "arE" = (
 /obj/structure/closet/crate,
 /obj/machinery/light/broken{
@@ -1341,6 +1348,11 @@
 "bfM" = (
 /turf/closed/wall/f13/wood,
 /area/f13/underground/cave)
+"bfR" = (
+/turf/open/floor/plasteel/f13/vault_floor/plating{
+	name = "plating"
+	},
+/area/f13/caves)
 "bga" = (
 /obj/structure/lattice{
 	density = 1
@@ -2105,6 +2117,11 @@
 	icon_state = "floordirty"
 	},
 /area/f13/brotherhood/reactor)
+"bQt" = (
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/caves)
 "bQH" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -2685,6 +2702,12 @@
 	icon_state = "whitebluechess"
 	},
 /area/f13/vault)
+"cpj" = (
+/obj/effect/overlay/junk/curtain,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "cpt" = (
 /obj/structure/table,
 /obj/item/clothing/head/chefhat,
@@ -2854,6 +2877,12 @@
 /obj/structure/sign/departments/engineering,
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
+"cyR" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plasteel/f13/vault_floor/plating{
+	name = "plating"
+	},
+/area/f13/caves)
 "czy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small{
@@ -2911,6 +2940,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
+"cCq" = (
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria{
+	icon_state = "tealwhrusty_chess2"
+	},
+/area/f13/caves)
 "cCt" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
@@ -4621,8 +4655,9 @@
 /turf/open/floor/plasteel/dark,
 /area/f13/vault)
 "dLC" = (
-/turf/open/floor/plating/tunnel,
-/area/f13/caves)
+/mob/living/simple_animal/hostile/trog/tunneler/blindone,
+/turf/open/floor/plasteel/cult,
+/area/f13/underground/cave)
 "dLJ" = (
 /obj/effect/decal/remains/robot,
 /turf/open/floor/plating/tunnel{
@@ -7235,9 +7270,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/shower{
-	dir = 8
-	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -8244,6 +8276,14 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
+"gzh" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "gzO" = (
 /obj/effect/decal/cleanable/blood/gibs{
 	icon_state = "gibup1"
@@ -8966,9 +9006,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/brotherhood/rnd)
 "hcq" = (
-/mob/living/simple_animal/hostile/trog/tunneler/blindone,
-/turf/open/floor/plasteel/cult,
-/area/f13/underground/cave)
+/turf/closed/wall/r_wall/rust,
+/area/f13/caves)
 "hdi" = (
 /obj/structure/table,
 /obj/item/stack/sheet/metal{
@@ -10174,6 +10213,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"ieq" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/f13/vault_floor/misc/cafeteria{
+	icon_state = "tealwhrusty_chess2"
+	},
+/area/f13/caves)
 "iew" = (
 /obj/structure/chair/comfy/beige{
 	dir = 1
@@ -10972,9 +11017,7 @@
 /area/f13/vault)
 "iNY" = (
 /obj/item/reagent_containers/glass/bucket,
-/turf/closed/indestructible/f13vaultrusted{
-	name = "rusty reinforced wall"
-	},
+/turf/closed/wall/r_wall/rust,
 /area/f13/caves)
 "iOY" = (
 /obj/item/flag/bos,
@@ -14061,6 +14104,18 @@
 	},
 /turf/open/floor/carpet/black,
 /area/f13/enclave)
+"ltx" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/structure/decoration/vent{
+	color = "#808080";
+	layer = 2
+	},
+/turf/open/floor/plating/tunnel{
+	icon_state = "tunnelchess2"
+	},
+/area/f13/caves)
 "ltH" = (
 /obj/structure/stone_tile/surrounding_tile,
 /turf/open/indestructible/ground/inside/subway{
@@ -15600,6 +15655,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
 /area/f13/enclave)
 "mEp" = (
+/obj/structure/lattice{
+	layer = 3
+	},
 /turf/open/floor/plating/tunnel{
 	icon_state = "tunnelchess2"
 	},
@@ -19512,6 +19570,11 @@
 /obj/structure/barricade/wooden/crude,
 /turf/open/floor/plating/f13/inside,
 /area/f13/brotherhood/rnd)
+"pFz" = (
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "pFX" = (
 /obj/structure/necropolis_gate{
 	desc = "A massive stone gateway with a very heavy stone door.";
@@ -22743,9 +22806,7 @@
 /area/f13/bunker)
 "shf" = (
 /obj/structure/decoration/vent/rusty,
-/turf/closed/indestructible/f13vaultrusted{
-	name = "rusty reinforced wall"
-	},
+/turf/closed/wall/r_wall/rust,
 /area/f13/caves)
 "shy" = (
 /obj/machinery/light/broken,
@@ -25861,6 +25922,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/brotherhood/leisure)
+"uBN" = (
+/obj/structure/table_frame,
+/turf/open/indestructible/ground/inside/subway{
+	name = "cave"
+	},
+/area/f13/caves)
 "uBQ" = (
 /obj/structure/rack,
 /obj/item/clothing/under/f13/vault,
@@ -28334,9 +28401,7 @@
 /obj/structure/table/reinforced{
 	color = "#3c2c21"
 	},
-/obj/item/drone_shell{
-	desc = "A shell of a maintenance drone, an expendable robot built to perform repairs. This one seems to have a RobCo logo stamped on it."
-	},
+/obj/item/drone_shell/ancient,
 /turf/open/floor/plasteel/cult,
 /area/f13/underground/cave)
 "wzG" = (
@@ -28985,9 +29050,11 @@
 /turf/open/floor/f13/wood,
 /area/f13/bunker)
 "xde" = (
-/mob/living/simple_animal/hostile/trog/tunneler,
-/turf/open/indestructible/ground/outside/desert,
-/area/f13/underground/cave)
+/obj/structure/firelock_frame,
+/turf/open/floor/plasteel/f13/vault_floor/plating{
+	name = "plating"
+	},
+/area/f13/caves)
 "xdq" = (
 /obj/structure/toilet{
 	dir = 1
@@ -29206,8 +29273,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/vault)
 "xov" = (
-/turf/open/floor/plating/tunnel{
-	icon_state = "tunnelrusty"
+/obj/machinery/suit_storage_unit/radsuit,
+/turf/open/floor/plasteel/f13/vault_floor/plating{
+	name = "plating"
 	},
 /area/f13/caves)
 "xoy" = (
@@ -29711,6 +29779,13 @@
 /obj/item/clothing/suit/armor/light/duster/robe_hubologist,
 /turf/open/floor/holofloor/carpet,
 /area/f13/bunker)
+"xKO" = (
+/obj/machinery/deepfryer,
+/obj/structure/lattice{
+	layer = 3
+	},
+/turf/open/floor/plating/tunnel,
+/area/f13/caves)
 "xLo" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -63800,12 +63875,12 @@ dsN
 cHz
 cHz
 smz
-smz
+cHz
 smz
 smz
 cHz
-cHz
 smz
+cHz
 cHz
 smz
 shC
@@ -65321,8 +65396,8 @@ smz
 smz
 cHz
 dsN
-cHz
-cHz
+dsN
+dsN
 cHz
 cHz
 cHz
@@ -66110,8 +66185,8 @@ tIZ
 cHz
 tIZ
 qpS
-hcq
 cHz
+dLC
 smz
 cHz
 smz
@@ -66362,9 +66437,9 @@ nTp
 ufY
 tIZ
 tIZ
+dsN
 cHz
-cHz
-cHz
+dsN
 cHz
 dUM
 qpS
@@ -66620,7 +66695,7 @@ smz
 smz
 tIZ
 cHz
-cHz
+dsN
 cHz
 nnO
 cHz
@@ -70482,12 +70557,12 @@ cHz
 cHz
 cHz
 cHz
-cHz
-cHz
+smz
+smz
 cHz
 cHz
 dsN
-cHz
+smz
 cHz
 smz
 shC
@@ -78166,7 +78241,7 @@ cHz
 cHz
 cHz
 cHz
-xde
+cHz
 cHz
 cHz
 maW
@@ -86324,21 +86399,21 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
+hcq
 hrZ
 jFJ
-sUE
-sUE
+hcq
+hcq
 hrZ
 hrZ
 vUU
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+hqd
+hqd
+hqd
+hcq
+hqd
+hcq
+hqd
 hrZ
 hrZ
 hrZ
@@ -86581,25 +86656,25 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
+hcq
 wUc
 sKj
 sKj
-sUE
+hcq
 hrZ
 hrZ
 hrZ
+hqd
+xde
+bfR
+bfR
 hrZ
 hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+hqd
+hcq
+hqd
+hcq
+hqd
 shC
 shC
 shC
@@ -86838,25 +86913,25 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
+hcq
 leT
 dDb
 yeA
-sUE
+hcq
 hrZ
 hrZ
 hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-iba
-hrZ
+hqd
+xov
+bfR
+bfR
+bfR
+bfR
+hcq
+pFz
+gzh
+pFz
+hqd
 shC
 shC
 shC
@@ -87089,31 +87164,31 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
-sUE
-sUE
-sUE
+hcq
+hcq
+hcq
+hcq
 oiZ
 hqd
-sUE
-sUE
-sUE
+hcq
+hcq
+hcq
 ayk
-sUE
+hcq
 hqd
-sUE
+hcq
 hqd
 aRB
-sUE
+hcq
 hqd
-sUE
+hcq
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-iba
-hrZ
+bfR
+hqd
+arD
+pFz
+pFz
+hcq
 shC
 shC
 shC
@@ -87346,7 +87421,7 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
+hcq
 bcK
 cSb
 nRr
@@ -87357,7 +87432,7 @@ hqd
 gPJ
 sKj
 niM
-sUE
+hcq
 hlD
 rAX
 cjk
@@ -87365,12 +87440,12 @@ wfM
 rAX
 tHR
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-iba
+bfR
+hcq
+xKO
+bpv
+pFz
+hqd
 shC
 shC
 shC
@@ -87622,12 +87697,12 @@ did
 jiX
 gFD
 hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+bfR
+hcq
+pFz
+pFz
+cCq
+hqd
 shC
 shC
 shC
@@ -87857,8 +87932,8 @@ shC
 vUU
 hqd
 hqd
-sUE
-sUE
+hcq
+hcq
 hqd
 hqd
 bcK
@@ -87879,11 +87954,11 @@ cjk
 sKj
 bqd
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+bfR
+hqd
+pFz
+cCq
+pFz
 hrZ
 shC
 shC
@@ -88119,16 +88194,16 @@ sKj
 pkt
 hqd
 hqd
-sUE
+hcq
 hqd
 gYO
 hqd
 hqd
 hqd
-sUE
+hcq
 qCB
 hqd
-sUE
+hcq
 muS
 qez
 qez
@@ -88136,11 +88211,11 @@ tLc
 cjk
 sKj
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+bfR
+hcq
+ieq
+ieq
+uBN
 hrZ
 shC
 shC
@@ -88369,7 +88444,7 @@ shC
 shC
 shC
 vUU
-sUE
+hcq
 bpv
 sKj
 bpv
@@ -88385,20 +88460,20 @@ jzU
 jzU
 sKj
 shf
-sUE
-sUE
-sUE
+hcq
+hcq
+hcq
 jiX
 jiX
-sUE
+hcq
 jzU
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+hcq
+cyR
+hqd
+bQt
+bQt
+bQt
+hqd
 shC
 shC
 shC
@@ -88642,20 +88717,20 @@ jzU
 xFj
 sEP
 sKj
-sUE
+hcq
 cHV
 nab
-sUE
+hcq
 fiN
 qfj
-hrZ
+sKj
+hcq
+sKj
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+bQt
+bQt
+bQt
+hqd
 shC
 shC
 shC
@@ -88883,7 +88958,7 @@ shC
 shC
 shC
 vUU
-sUE
+hcq
 bpv
 sKj
 rcu
@@ -88905,14 +88980,14 @@ fiN
 sKj
 sKj
 hVs
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
-hrZ
+sKj
+bpv
+bpv
+sKj
+bQt
+bQt
+hcq
+hqd
 shC
 shC
 shC
@@ -89140,7 +89215,7 @@ shC
 shC
 shC
 vUU
-sUE
+hcq
 qmB
 cjk
 kkr
@@ -89149,7 +89224,7 @@ hqd
 shf
 iNY
 tzZ
-sUE
+hcq
 hrZ
 hrZ
 hqd
@@ -89165,11 +89240,11 @@ hqd
 hqd
 hqd
 hqd
-hrZ
-hrZ
-hrZ
-hrZ
-vUU
+bpv
+sKj
+bQt
+hcq
+hqd
 shC
 shC
 shC
@@ -89398,18 +89473,18 @@ shC
 shC
 vUU
 hqd
-sUE
+hcq
 rpx
 eCp
 eCp
 hqd
-sUE
+hcq
 sKl
 dhu
 gwo
 hrZ
-sUE
-sUE
+hcq
+hcq
 uWa
 uWa
 cQj
@@ -89417,16 +89492,16 @@ bfx
 qmz
 hqd
 mEp
-xov
+jiX
 mEp
-dLC
+bpv
 rzz
 hqd
-sUE
+hcq
 shf
-sUE
-hrZ
-vUU
+hqd
+hqd
+hcq
 shC
 shC
 shC
@@ -89660,12 +89735,12 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
+hcq
 tGN
 cGH
 dLj
-sUE
-sUE
+hcq
+hcq
 jpe
 uWa
 bfx
@@ -89673,15 +89748,15 @@ vOO
 uWa
 tRi
 hqd
-dLC
+bpv
 fiN
-dLC
+bpv
 cjk
 cjk
 gYO
 nOe
 hlU
-sUE
+hcq
 hrZ
 vUU
 shC
@@ -89917,12 +89992,12 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
-sUE
-sUE
-sUE
-sUE
-sUE
+hcq
+hcq
+hcq
+hcq
+hcq
+hcq
 hXH
 bfx
 uWa
@@ -89938,7 +90013,7 @@ cjk
 hqd
 fLC
 iZu
-sUE
+hcq
 hrZ
 vUU
 shC
@@ -90179,8 +90254,8 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
-sUE
+hcq
+hcq
 cQw
 cYI
 cYI
@@ -90193,9 +90268,9 @@ daP
 taD
 ceO
 hqd
-sUE
-sUE
-sUE
+cpj
+hcq
+hcq
 hrZ
 vUU
 shC
@@ -90438,11 +90513,11 @@ hrZ
 hrZ
 hrZ
 hrZ
-sUE
-sUE
-sUE
-sUE
-sUE
+hcq
+hcq
+hcq
+hcq
+hcq
 hqd
 hqd
 hqd
@@ -90450,9 +90525,9 @@ hqd
 hqd
 hqd
 hqd
-hrZ
-hrZ
-hrZ
+ltx
+pFz
+hcq
 hrZ
 hrZ
 shC
@@ -90706,11 +90781,11 @@ shC
 shC
 shC
 shC
-shC
-shC
-shC
-shC
-shC
+hrZ
+hrZ
+hrZ
+hrZ
+hrZ
 shC
 shC
 shC
