@@ -138,7 +138,7 @@
 
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = PRICE_ALMOST_CHEAP
-	extra_price = PRICE_ALMOST_EXPENSIVE
+	extra_price = PRICE_NORMAL
 	payment_department = ACCOUNT_SRV
 
 /obj/machinery/vending/autodrobe/Initialize()

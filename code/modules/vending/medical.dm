@@ -49,8 +49,7 @@
 					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier = 2,
 					///obj/item/gun/syringe/dart = 2,
-					/obj/item/plunger/reinforced = 2,
-					/obj/item/stock_parts/chem_cartridge/pristine = 1)
+					/obj/item/plunger/reinforced = 2)
 
 	armor = ARMOR_VALUE_HEAVY
 	resistance_flags = FIRE_PROOF
@@ -126,7 +125,8 @@
 					/obj/item/stack/sticky_tape/surgical = 3,
 					/obj/item/stack/medical/ointment = 2,
 					/obj/item/stack/medical/suture = 2,
-					/obj/item/stack/medical/bone_gel = 4)
+					/obj/item/stack/medical/bone_gel = 4,
+					/obj/item/stock_parts/chem_cartridge/simple = 2)
 	contraband = list(/obj/item/reagent_containers/pill/charcoal = 6)
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
 					/obj/item/storage/box/hug/medical = 1,

@@ -13,7 +13,9 @@
 					/obj/item/reagent_containers/medspray/sterilizine = 1,
 					/obj/item/healthanalyzer/wound = 2,
 					/obj/item/stack/medical/bone_gel = 2,
-					/obj/item/reagent_containers/syringe/dart = 10)
+					/obj/item/reagent_containers/syringe/dart = 10,
+					/obj/item/stock_parts/chem_cartridge/simple = 4,
+					/obj/item/stock_parts/chem_cartridge/pristine = 1)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 2,
 					/obj/item/reagent_containers/pill/morphine = 2)
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2)
