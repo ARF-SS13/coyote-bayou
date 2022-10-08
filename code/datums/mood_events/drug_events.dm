@@ -19,7 +19,7 @@
 
 /datum/mood_event/jet_euphoria
 	description = span_nicegreen("I feel like i'm flying...")
-	mood_change = 25 //god DAMN does jet feel good
+	mood_change = 25
 	timeout = 15 MINUTES
 
 /datum/mood_event/overdose
