@@ -137,8 +137,7 @@ GLOBAL_LIST_INIT(faction_whitelist_positions, list(
 "Vault-tec Security",
 "Vault-tec Engineer",
 ))
-
-/* //commented for book-keeping reasons. actual positions are below this
+//Brotherhood
 GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Head Paladin",
 	"Head Knight",
@@ -150,15 +149,8 @@ GLOBAL_LIST_INIT(brotherhood_positions, list(
 	"Senior Scribe",
 	"Scribe",
 	"Initiate",
-)) */
-
-
-GLOBAL_LIST_INIT(brotherhood_positions, list(
-	"Head Knight",
-	"Initiate",
-	"Scribe",
 ))
-
+//Nash/Oasis
 GLOBAL_LIST_INIT(oasis_positions, list(
 	"Mayor",
 	"Secretary",
@@ -203,7 +195,7 @@ GLOBAL_LIST_INIT(legion_positions, list(
 GLOBAL_LIST_INIT(ncr_rangervet_positions, list(
 	"NCR Veteran Ranger",
 ))
-
+//NCR
 GLOBAL_LIST_INIT(ncr_positions, list(
 	"NCR Captain",
 	"NCR Lieutenant",
@@ -283,7 +275,7 @@ GLOBAL_LIST_INIT(security_positions, list(
 GLOBAL_LIST_INIT(silicon_positions, list(
 	"Mr. Handy",
 ))
-
+//Tribls
 GLOBAL_LIST_INIT(tribal_positions, list(
 	"Chief",
 	"Shaman",
@@ -294,6 +286,7 @@ GLOBAL_LIST_INIT(tribal_positions, list(
 	"Spirit-Pledged",
 	"Guardian",
 ))
+//Followers
 GLOBAL_LIST_INIT(followers_positions, list(
 	"Followers Administrator",
 	"Followers Doctor",
