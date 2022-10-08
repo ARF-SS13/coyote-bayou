@@ -39,7 +39,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	
+
 /datum/crafting_recipe/gate_khanate
 	name = "Khans steel-reinforced wood door"
 	result = /obj/machinery/door/unpowered/securedoor/khandoor
@@ -258,7 +258,7 @@
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
-	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials. 
+	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials.
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/electronics/airlock = 1
 				)
@@ -390,7 +390,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	
+
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"
@@ -446,5 +446,14 @@
 	reqs = list(/obj/item/paper/natural = 10,
 				/obj/item/stack/sheet/cardboard = 1)
 	time = 80
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/well
+	name = "Water Well"
+	result = /obj/structure/sink/well
+	reqs = list(/obj/item/stack/sheet/metal = 10, /obj/item/stack/sheet/mineral/wood = 10, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 2, /obj/item/reagent_containers/glass/bucket =1)
+	tools = list(TOOL_SHOVEL)
+	time = 50
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
