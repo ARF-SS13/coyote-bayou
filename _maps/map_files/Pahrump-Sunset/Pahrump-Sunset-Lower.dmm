@@ -15110,7 +15110,8 @@
 "kDX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ladder/unbreakable{
-	id = "chinesedungeon"
+	id = "chinesedungeon";
+	height = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -20813,13 +20814,13 @@
 	},
 /area/f13/caves)
 "pBz" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "toredlick"
-	},
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/chinese{
 	name = "Comrade Xiaojian"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "chinesedungeon"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -37142,7 +37143,7 @@ uhZ
 jAR
 djs
 djs
-pUY
+djs
 uhZ
 ovB
 aaa
