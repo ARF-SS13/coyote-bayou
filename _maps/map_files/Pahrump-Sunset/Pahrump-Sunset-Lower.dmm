@@ -5637,6 +5637,13 @@
 /obj/machinery/telecomms/server/presets/ncr,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"ciT" = (
+/obj/structure/table,
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ciX" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
@@ -7139,7 +7146,7 @@
 /area/f13/caves)
 "dhj" = (
 /obj/structure/chair/f13chair1,
-/mob/living/simple_animal/hostile/chinese/ranged,
+/mob/living/simple_animal/hostile/chinese/ranged/assault,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -9780,6 +9787,10 @@
 "fHa" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/gun/ballistic/rifle/mosin,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -12109,12 +12120,6 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hYF" = (
-/obj/machinery/nanite_programmer,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
-/area/f13/caves)
 "hZd" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
@@ -12825,6 +12830,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
 /area/f13/tunnel)
+"iBp" = (
+/obj/item/trash,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "iBz" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
@@ -12848,7 +12863,7 @@
 /area/f13/caves)
 "iCH" = (
 /obj/structure/table,
-/obj/item/nanite_scanner,
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -12915,8 +12930,8 @@
 	},
 /area/f13/bunker)
 "iEg" = (
-/obj/machinery/nanite_chamber,
 /obj/effect/mob_spawn/human/corpse,
+/obj/machinery/implantchair/brainwash,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -14176,9 +14191,8 @@
 /area/f13/clinic)
 "jLS" = (
 /obj/structure/table,
-/obj/item/disk/nanite_program/fake_death,
-/obj/item/disk/nanite_program/viral,
-/obj/item/disk/nanite_program/sleepy,
+/obj/item/reagent_containers/syringe/bioterror,
+/obj/item/reagent_containers/syringe/lethal/execution,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -15110,7 +15124,8 @@
 "kDX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ladder/unbreakable{
-	id = "chinesedungeon"
+	id = "chinesedungeon";
+	height = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -18030,12 +18045,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"ngs" = (
-/obj/machinery/computer/nanite_chamber_control,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
-/area/f13/caves)
 "ngw" = (
 /obj/structure/fluff/rails,
 /obj/structure/handrail/g_central{
@@ -18046,12 +18055,6 @@
 	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
-"ngI" = (
-/obj/machinery/nanite_program_hub,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
 /area/f13/caves)
 "nhc" = (
 /obj/structure/table/optable/abductor,
@@ -18166,6 +18169,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
+/area/f13/caves)
+"nnQ" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
 /area/f13/caves)
 "noG" = (
 /obj/structure/chair/middle{
@@ -18716,11 +18726,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "nNN" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#880000"
+/obj/structure/table,
+/obj/item/ammo_box/c10mm/fire,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
-/turf/closed/wall/rust,
 /area/f13/caves)
 "nNP" = (
 /obj/item/storage/trash_stack,
@@ -19548,9 +19558,10 @@
 	},
 /area/f13/caves)
 "oAN" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/box/large/custom_kit/mrmannstealthsuit,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/clothing/under/f13/chinasuitcosmetic,
+/obj/item/clothing/head/f13/chinahelmetcosmetic,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -20141,8 +20152,8 @@
 /area/f13/radiation)
 "paQ" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
-	name = "Terminator Prime";
-	health = 600;
+	name = "The People's Liberator";
+	health = 1300;
 	desc = "A horrid creation capable of ultimate destruction."
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -20813,13 +20824,13 @@
 	},
 /area/f13/caves)
 "pBz" = (
-/obj/structure/ladder/unbreakable{
-	height = 1;
-	id = "toredlick"
-	},
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/chinese{
 	name = "Comrade Xiaojian"
+	},
+/obj/structure/ladder/unbreakable{
+	height = 2;
+	id = "chinesedungeon"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -22958,6 +22969,15 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"rrR" = (
+/obj/structure/chair/middle{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged/assault,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rsu" = (
 /obj/structure/decoration/vent/rusty,
 /obj/machinery/shower{
@@ -25210,8 +25230,8 @@
 /obj/structure/chair/middle{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/chinese,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/chinese,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -25519,7 +25539,9 @@
 /area/f13/caves)
 "tOH" = (
 /obj/structure/table,
-/obj/item/storage/box/disks_nanite,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -25939,8 +25961,10 @@
 /area/f13/building/massfusion)
 "unP" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/rocketlauncher,
+/obj/item/ammo_casing/caseless/rocket/chem,
+/obj/item/ammo_casing/caseless/rocket/incendiary,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -31225,15 +31249,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -31482,15 +31506,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -31740,13 +31764,13 @@ aae
 aae
 aae
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+bOn
+nNN
+djs
+nnQ
+djs
+ciT
+bOn
 aaa
 aae
 aae
@@ -31998,11 +32022,11 @@ aae
 aae
 aaa
 bOn
-bOn
-bOn
-bOn
-bOn
-bOn
+djs
+djs
+djs
+djs
+djs
 bOn
 aaa
 aae
@@ -32778,7 +32802,7 @@ bOn
 aaa
 bOn
 djs
-djs
+kPf
 jAR
 djs
 uhZ
@@ -36117,7 +36141,7 @@ vaS
 xnJ
 uhZ
 qdI
-aUd
+rrR
 xnJ
 djs
 bOn
@@ -36634,7 +36658,7 @@ bOn
 pUY
 bOn
 bOn
-aaa
+bOn
 aaa
 aaa
 pUY
@@ -36880,7 +36904,7 @@ aaa
 bOn
 bOn
 ovB
-nNN
+bOn
 ovB
 bOn
 bOn
@@ -37137,12 +37161,12 @@ aaa
 bOn
 kDX
 djs
-fBV
+iBp
 uhZ
 jAR
 djs
 djs
-pUY
+djs
 uhZ
 ovB
 aaa
@@ -38424,7 +38448,7 @@ aae
 aae
 aaa
 bOn
-ngs
+djs
 ksQ
 iCH
 bOn
@@ -38681,7 +38705,7 @@ aae
 aae
 aaa
 bOn
-hYF
+hiR
 rwA
 fBV
 bOn
@@ -38938,7 +38962,7 @@ abP
 aae
 aaa
 bOn
-ngI
+djs
 uhZ
 aFo
 abB
