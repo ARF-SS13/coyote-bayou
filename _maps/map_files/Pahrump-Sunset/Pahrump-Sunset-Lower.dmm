@@ -5637,6 +5637,13 @@
 /obj/machinery/telecomms/server/presets/ncr,
 /turf/open/floor/plasteel/dark/telecomms/mainframe,
 /area/f13/tcoms)
+"ciT" = (
+/obj/structure/table,
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ciX" = (
 /obj/structure/closet/fridge,
 /obj/item/reagent_containers/food/snacks/soylentgreen,
@@ -7139,7 +7146,7 @@
 /area/f13/caves)
 "dhj" = (
 /obj/structure/chair/f13chair1,
-/mob/living/simple_animal/hostile/chinese/ranged,
+/mob/living/simple_animal/hostile/chinese/ranged/assault,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -9780,6 +9787,10 @@
 "fHa" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/gun/ballistic/rifle/mosin,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -12825,6 +12836,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/water,
 /area/f13/tunnel)
+"iBp" = (
+/obj/item/trash,
+/obj/machinery/light/small{
+	dir = 8;
+	light_color = "#880000"
+	},
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "iBz" = (
 /obj/structure/spider/cocoon,
 /obj/structure/spider/stickyweb,
@@ -18168,6 +18189,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"nnQ" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "noG" = (
 /obj/structure/chair/middle{
 	dir = 4
@@ -18717,11 +18745,11 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "nNN" = (
-/obj/machinery/light/small{
-	dir = 8;
-	light_color = "#880000"
+/obj/structure/table,
+/obj/item/ammo_box/c10mm/fire,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
 	},
-/turf/closed/wall/rust,
 /area/f13/caves)
 "nNP" = (
 /obj/item/storage/trash_stack,
@@ -19549,9 +19577,10 @@
 	},
 /area/f13/caves)
 "oAN" = (
-/obj/structure/rack/shelf_metal,
-/obj/item/storage/box/large/custom_kit/mrmannstealthsuit,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/clothing/under/f13/chinasuitcosmetic,
+/obj/item/clothing/head/f13/chinahelmetcosmetic,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -20142,8 +20171,8 @@
 /area/f13/radiation)
 "paQ" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
-	name = "Terminator Prime";
-	health = 600;
+	name = "The People's Liberator";
+	health = 1300;
 	desc = "A horrid creation capable of ultimate destruction."
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -22959,6 +22988,15 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/tunnel)
+"rrR" = (
+/obj/structure/chair/middle{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/chinese/ranged/assault,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "rsu" = (
 /obj/structure/decoration/vent/rusty,
 /obj/machinery/shower{
@@ -25211,8 +25249,8 @@
 /obj/structure/chair/middle{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/chinese,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/chinese,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -25940,8 +25978,10 @@
 /area/f13/building/massfusion)
 "unP" = (
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/superhigh,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/gun/ballistic/rocketlauncher,
+/obj/item/ammo_casing/caseless/rocket/chem,
+/obj/item/ammo_casing/caseless/rocket/incendiary,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -31226,15 +31266,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -31483,15 +31523,15 @@ aae
 aae
 aae
 aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+bOn
+aaa
 aae
 aae
 aae
@@ -31741,13 +31781,13 @@ aae
 aae
 aae
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+bOn
+nNN
+djs
+nnQ
+djs
+ciT
+bOn
 aaa
 aae
 aae
@@ -31999,11 +32039,11 @@ aae
 aae
 aaa
 bOn
-bOn
-bOn
-bOn
-bOn
-bOn
+djs
+djs
+djs
+djs
+djs
 bOn
 aaa
 aae
@@ -32779,7 +32819,7 @@ bOn
 aaa
 bOn
 djs
-djs
+kPf
 jAR
 djs
 uhZ
@@ -36118,7 +36158,7 @@ vaS
 xnJ
 uhZ
 qdI
-aUd
+rrR
 xnJ
 djs
 bOn
@@ -36635,7 +36675,7 @@ bOn
 pUY
 bOn
 bOn
-aaa
+bOn
 aaa
 aaa
 pUY
@@ -36881,7 +36921,7 @@ aaa
 bOn
 bOn
 ovB
-nNN
+bOn
 ovB
 bOn
 bOn
@@ -37138,7 +37178,7 @@ aaa
 bOn
 kDX
 djs
-fBV
+iBp
 uhZ
 jAR
 djs
