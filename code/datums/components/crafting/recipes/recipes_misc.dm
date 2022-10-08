@@ -452,8 +452,8 @@
 /datum/crafting_recipe/well
 	name = "Water Well"
 	result = /obj/structure/sink/well
-	reqs = list(/obj/item/stack/sheet/metal = 10, /obj/item/stack/sheet/mineral/wood = 10, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 2, /obj/item/reagent_containers/glass/bucket =1)
+	reqs = list(/obj/item/stack/sheet/metal = 20, /obj/item/stack/sheet/mineral/wood = 20, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 5, /obj/item/reagent_containers/glass/bucket =1)
 	tools = list(TOOL_SHOVEL)
-	time = 50
+	time = 100
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
