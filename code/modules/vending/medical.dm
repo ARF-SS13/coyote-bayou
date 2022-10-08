@@ -104,6 +104,10 @@
 					/obj/item/storage/belt/medolier = 2)
 	force_free = TRUE
 
+/obj/machinery/vending/medical/follower/wallmount
+	density = 0
+	pixel_x = 30
+
 /obj/machinery/vending/medical/nash
 	products = list(/obj/item/reagent_containers/syringe = 12,
 					/obj/item/reagent_containers/dropper = 3,
