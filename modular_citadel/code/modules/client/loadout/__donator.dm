@@ -79,7 +79,8 @@
 
 /obj/item/storage/box/large/custom_kit/aldrictalvalin/PopulateContents()
 	new /obj/item/clothing/head/beret/headband(src)
-	new /obj/item/clothing/under/f13/detectivealt(src)
+	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
+	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
