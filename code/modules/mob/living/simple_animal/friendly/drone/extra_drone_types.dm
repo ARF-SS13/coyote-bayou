@@ -209,3 +209,13 @@
 /mob/living/simple_animal/drone/cogscarab/update_mobility()
 	. = ..()
 	update_icons()
+
+/obj/item/drone_shell/ancient //snowflake meme drone type for dungeon rewards
+	name = "ancient drone shell"
+	desc = "A shell of a maintenance drone, an expendable robot built to perform repairs. This one seems to have a RobCo logo stamped on it."
+	drone_type = /mob/living/simple_animal/drone/ancient
+
+/mob/living/simple_animal/drone/ancient
+	name = "RobCo Drone"
+	default_hatmask = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
+
