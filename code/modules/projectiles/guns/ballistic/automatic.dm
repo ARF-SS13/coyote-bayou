@@ -2220,7 +2220,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = 1 //delay_slow and delay_normal aren't good here. 1.5 was too slow, 0.6 was too fast. sorry. equivalent is like, normal_delay * 1.66 repeating
+	fire_delay = GUN_FIRE_DELAY_BASE
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
