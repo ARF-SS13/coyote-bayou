@@ -12120,12 +12120,6 @@
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
 /turf/open/floor/f13/wood,
 /area/f13/building)
-"hYF" = (
-/obj/machinery/nanite_programmer,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
-/area/f13/caves)
 "hZd" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt{
@@ -12869,7 +12863,7 @@
 /area/f13/caves)
 "iCH" = (
 /obj/structure/table,
-/obj/item/nanite_scanner,
+/obj/item/melee/onehanded/slavewhip,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -12936,8 +12930,8 @@
 	},
 /area/f13/bunker)
 "iEg" = (
-/obj/machinery/nanite_chamber,
 /obj/effect/mob_spawn/human/corpse,
+/obj/machinery/implantchair/brainwash,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -14197,9 +14191,8 @@
 /area/f13/clinic)
 "jLS" = (
 /obj/structure/table,
-/obj/item/disk/nanite_program/fake_death,
-/obj/item/disk/nanite_program/viral,
-/obj/item/disk/nanite_program/sleepy,
+/obj/item/reagent_containers/syringe/bioterror,
+/obj/item/reagent_containers/syringe/lethal/execution,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -18052,12 +18045,6 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"ngs" = (
-/obj/machinery/computer/nanite_chamber_control,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
-/area/f13/caves)
 "ngw" = (
 /obj/structure/fluff/rails,
 /obj/structure/handrail/g_central{
@@ -18068,12 +18055,6 @@
 	icon_state = "goo10"
 	},
 /turf/open/indestructible/ground/inside/subway,
-/area/f13/caves)
-"ngI" = (
-/obj/machinery/nanite_program_hub,
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
 /area/f13/caves)
 "nhc" = (
 /obj/structure/table/optable/abductor,
@@ -25558,7 +25539,9 @@
 /area/f13/caves)
 "tOH" = (
 /obj/structure/table,
-/obj/item/storage/box/disks_nanite,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
+/obj/item/restraints/handcuffs,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -38465,7 +38448,7 @@ aae
 aae
 aaa
 bOn
-ngs
+djs
 ksQ
 iCH
 bOn
@@ -38722,7 +38705,7 @@ aae
 aae
 aaa
 bOn
-hYF
+hiR
 rwA
 fBV
 bOn
@@ -38979,7 +38962,7 @@ abP
 aae
 aaa
 bOn
-ngI
+djs
 uhZ
 aFo
 abB
