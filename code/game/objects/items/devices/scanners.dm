@@ -455,8 +455,7 @@ GENETICS SCANNER
 			if(ishuman(C))
 				if(H.is_bleeding())
 					msg += "\n"
-					msg += span_danger("<u>Subject is bleeding!</u>\n")
-					var/total_bleeding = 0
+					msg += span_danger("<u>Open wounds detected!</u>\n")
 					var/modified_bleeding = 0
 					var/add_msg
 					for(var/obj/item/bodypart/BP in C.bodyparts)
@@ -464,14 +463,13 @@ GENETICS SCANNER
 						add_msg = null
 						for(var/datum/wound/bleed/bloody_wound in BP.wounds)
 							wounded = TRUE
-							var/true_bleeding = round(bloody_wound.get_blood_flow(FALSE),0.1)
-							total_bleeding += true_bleeding
-							modified_bleeding += round(bloody_wound.get_blood_flow(TRUE),0.1)
+							var/actual_bleeding = round(bloody_wound.get_blood_flow(TRUE),0.1)
+							modified_bleeding += actual_bleeding
 							add_msg += span_notice("[capitalize(bloody_wound.name)] - ")
 							add_msg += span_notice("Size: ")
-							add_msg += span_warning("[true_bleeding]u - ")
+							add_msg += span_warning("[round(bloody_wound.get_blood_flow(FALSE),0.1)]u - ")
 							add_msg += span_notice("Loss: ")
-							add_msg += span_warning("[modified_bleeding]u\n")
+							add_msg += span_warning("[actual_bleeding]u\n")
 						if(wounded)
 							msg += span_notice("<u>[capitalize(BP.name)]</u>\n")
 							msg += add_msg
