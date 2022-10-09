@@ -10,7 +10,7 @@
 //Survival Capsule
 /obj/item/survivalcapsule
 	name = "bluespace shelter capsule"
-	desc = "An emergency shelter stored within a pocket of bluespace."
+	desc = "A basic C.A.M.P. packed and designed by Vault-tec.  Shake it and throw it!"
 	icon_state = "capsule"
 	icon = 'icons/obj/mining.dmi'
 	w_class = WEIGHT_CLASS_TINY
