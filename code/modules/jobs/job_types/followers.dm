@@ -25,7 +25,6 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/followers)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 //	..()
@@ -81,6 +80,8 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribeam_stun)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -170,6 +171,7 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -468,6 +470,7 @@ Follower Volunteer
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
+		/obj/item/book/granter/crafting_recipe/blueprint/tribeam_stun = 1,
 	)
 
 /datum/outfit/loadout/guard_ranged
@@ -489,7 +492,7 @@ Follower Volunteer
 
 /datum/outfit/loadout/guard_energy
 	name = "Followers Energy Protection Guard"
-	suit_store = /obj/item/gun/energy/laser/scatter/nonlethal
+	suit_store = /obj/item/gun/energy/laser/pistol
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 1,
 	)
