@@ -187,7 +187,7 @@
 
 /datum/wound/bleed/proc/do_splortch(renewing = FALSE)
 	var/verbiage = renewing ? "[renew_text]" : "[occur_text]"
-	var/msg = span_userdanger("[victim]'s [limb.name] [verbiage]!") /// CHANGE BACK TO SPAN+DANGER BEFORE RELASEEJIMFISMFISIMI
+	var/msg = span_danger("[victim]'s [limb.name] [verbiage]!")
 	var/vis_dist = COMBAT_MESSAGE_RANGE
 
 	if(severity != WOUND_SEVERITY_MODERATE)
@@ -238,46 +238,6 @@
 		already_scarred = TRUE
 		highest_scar.lazy_attach(limb)
 	return ..()
-
-/datum/wound/bleed/get_examine_description(mob/user)
-	var/had_something_to_say
-	if(istype(limb.current_gauze, /obj/item/stack/medical/gauze))
-		var/list/msg = list("The bleeding wounds on [victim.p_their()] [limb.name] are wrapped with ")
-		var/bandaid_max_time = initial(limb.current_gauze.covering_lifespan)
-		var/bandaid_time = limb.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
-		// how much life we have left in these bandages
-		switch(bandaid_time)
-			if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
-				msg += "fresh "
-			if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
-				msg += "slightly worn "
-			if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
-				msg += "badly worn "
-			if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
-				msg += "nearly ruined "
-		msg += "[limb.current_gauze.name]!"
-		. += "[msg.Join()]\n"
-		had_something_to_say = TRUE
-
-	if(istype(limb.current_suture, /obj/item/stack/medical/suture))
-		var/list/msg = list("The bleeding wounds on [victim.p_their()] [limb.name] are stitched up with ")
-		var/bandaid_max_time = initial(limb.current_suture.covering_lifespan)
-		var/bandaid_time = limb.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
-		// how much life we have left in these bandages
-		switch(bandaid_time)
-			if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
-				msg += "sturdy "
-			if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
-				msg += "slightly frayed "
-			if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
-				msg += "badly frayed "
-			if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
-				msg += "nearly popped "
-		msg += "[limb.current_suture.name]!"
-		. += "[msg.Join()]\n"
-		had_something_to_say = TRUE
-	if(!had_something_to_say)
-		..()
 
 /datum/wound/bleed/handle_process()
 	/* if(victim.stat == DEAD)

@@ -654,19 +654,20 @@
 				var/list/obj/item/bodypart/bleeding_limbs = list()
 				for(var/i in bodyparts)
 					var/obj/item/bodypart/BP = i
-					if(BP.get_bleed_rate())
-						bleeding_limbs += BP
+					if(BP.get_bleed_rate(FALSE))
+						bleeding_limbs += "[BP.name]"
 
-				var/num_bleeds = LAZYLEN(bleeding_limbs)
-				var/bleed_text = "<span class='danger'>You are bleeding from your"
-				switch(num_bleeds)
+				//var/num_bleeds = LAZYLEN(bleeding_limbs)
+				var/bleed_text = "<span class='danger'>You are bleeding from your "
+				bleed_text += english_list(bleeding_limbs)
+				/* switch(num_bleeds)
 					if(1 to 2)
 						bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
 					if(3 to INFINITY)
 						for(var/i in 1 to (num_bleeds - 1))
 							var/obj/item/bodypart/BP = bleeding_limbs[i]
 							bleed_text += " [BP.name],"
-						bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+						bleed_text += " and [bleeding_limbs[num_bleeds].name]" */
 				bleed_text += "!</span>"
 				to_chat(src, bleed_text)
 			if(getStaminaLoss())
