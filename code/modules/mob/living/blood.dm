@@ -53,23 +53,18 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood()
-
 	if(NOBLOOD in dna.species.species_traits || bleedsuppress || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
-
 	if(HAS_TRAIT(src, TRAIT_NOMARROW)) //Bloodsuckers don't need to be here.
 		return
-
 	if(bodytemperature >= TCRYO && !(HAS_TRAIT(src, TRAIT_HUSK))) //cryosleep or husked people do not pump the blood.
-
 		regenerate_blood()
-
 		//Effects of bloodloss
 		var/current_blood = get_blood(FALSE)
 		switch(current_blood)
 			// Blood loss detected, start warning that its getting low
 			if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
-				if(prob(5))
+				if(prob(0.5))
 					switch(rand(1,3))
 						if(1)
 							emote("shiver")
@@ -80,7 +75,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 			// Blood loss progressed, start applying minor effects, not lethal, but kinda inconvenient
 			if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_MINOR)
-				if(prob(15))
+				if(prob(5))
 					switch(rand(1,3))
 						if(1)
 							emote("shiver")
@@ -248,31 +243,34 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
+	if(get_blood(FALSE) > BLOOD_REFILL_NUTRITION_MAX)
+		return
+	var/blood_refill = BLOOD_REFILL_PER_TICK // guaranteed refill
 	// Food based blood replenishment, spends nutrition to regen blood
 	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(get_blood(FALSE) < BLOOD_REFILL_NUTRITION_MAX)
-		if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
-			var/nutrition_bonus = 0
-			switch(nutrition)
-				if(0 to NUTRITION_LEVEL_HUNGRY)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_STARVING
-				if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_HUNGRY
-				if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_FED
-				if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_WELL_FED
-				if(NUTRITION_LEVEL_FULL to NUTRITION_LEVEL_FAT)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_FULL
-				if(NUTRITION_LEVEL_FAT to INFINITY)
-					nutrition_bonus = BLOOD_REFILL_NUTRITION_FAT
+	if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
+		var/nutrition_bonus = 0
+		switch(nutrition)
+			if(0 to NUTRITION_LEVEL_HUNGRY)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_STARVING
+			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_HUNGRY
+			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_FED
+			if(NUTRITION_LEVEL_WELL_FED to NUTRITION_LEVEL_FULL)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_WELL_FED
+			if(NUTRITION_LEVEL_FULL to NUTRITION_LEVEL_FAT)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_FULL
+			if(NUTRITION_LEVEL_FAT to INFINITY)
+				nutrition_bonus = BLOOD_REFILL_NUTRITION_FAT
 
-			if(satiety > 80)
-				nutrition_bonus *= 1.25
-			if(HAS_TRAIT(src, TRAIT_HIGH_BLOOD))
-				nutrition_bonus *= 2 // you just convert more nutrition to blood
-			adjust_nutrition(-nutrition_bonus)
-			blood_volume += (nutrition_bonus / BLOOD_UNIT_NUTRITION_COST)
+		if(satiety > 80)
+			nutrition_bonus *= 1.25
+		if(HAS_TRAIT(src, TRAIT_HIGH_BLOOD))
+			nutrition_bonus *= 2 // you just convert more nutrition to blood
+		blood_refill += (BLOOD_REFILL_PER_TICK * nutrition_bonus)
+		adjust_nutrition(-nutrition_bonus * BLOOD_UNIT_NUTRITION_COST)
+	blood_volume += blood_refill
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt)

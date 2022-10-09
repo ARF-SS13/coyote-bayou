@@ -37,21 +37,24 @@
 #define BLOOD_VOLUME_EXPANDER_MAX BLOOD_VOLUME_SYMPTOMS_MINOR + 10
 
 /// Max level blood will regenerate naturally with nutrition
-#define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_SYMPTOMS_MINOR - 10
+#define BLOOD_REFILL_PER_TICK 1
+
+/// Max level blood will regenerate naturally with nutrition
+#define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_SYMPTOMS_WARN + 10
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat
 #define BLOOD_REFILL_NUTRITION_FAT 5 // Eat a lot for quicker blood regen!
 /// Nutrition spent for being full
-#define BLOOD_REFILL_NUTRITION_FULL 4
+#define BLOOD_REFILL_NUTRITION_FULL 3
 /// Nutrition spent for being well fed
-#define BLOOD_REFILL_NUTRITION_WELL_FED 3
+#define BLOOD_REFILL_NUTRITION_WELL_FED 2
 /// Nutrition spent for being fed
-#define BLOOD_REFILL_NUTRITION_FED 2
+#define BLOOD_REFILL_NUTRITION_FED 1
 /// Nutrition spent for being hungie
-#define BLOOD_REFILL_NUTRITION_HUNGRY 1
+#define BLOOD_REFILL_NUTRITION_HUNGRY 0
 /// Nutrition spent for being starving
-#define BLOOD_REFILL_NUTRITION_STARVING 0.5
+#define BLOOD_REFILL_NUTRITION_STARVING 0
 
 /// Lowest amount normal bleeding can take you
 #define BLOOD_VOLUME_LOSS_FLOOR (BLOOD_VOLUME_NORMAL * 0.05)
