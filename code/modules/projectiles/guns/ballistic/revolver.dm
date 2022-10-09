@@ -638,8 +638,8 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/sequoia
-	name = "ranger sequoia"
-	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	name = "desert sequoia"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip is oddly comfortable in your hand  The entire weapon is suited for quick-drawing."
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -670,13 +670,13 @@
 
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
-	desc = "This heavy revolver is a trademark weapon of the New California Republic Rangers. This one has a blade attached to the handle for a painful pistolwhip."
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip has a blade attached to the bottom. You know, for stabbin'."
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
 	fire_delay = GUN_FIRE_DELAY_SLOW
@@ -688,6 +688,8 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
 /obj/item/gun/ballistic/revolver/sequoia/death
+	name = "Desert Hemlock"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears slight singe-marks..."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
