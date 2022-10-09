@@ -601,7 +601,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(HD && !(HAS_TRAIT(H, TRAIT_HUSK)))
 		// lipstick
 		if(H.lip_style && (LIPS in species_traits))
-			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/lips.dmi', "lips_[H.lip_style]", -BODY_LAYER)
+			var/mutable_appearance/lip_overlay = mutable_appearance('modular_atom/fashion/icons/face_overlays.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
 
 			if(OFFSET_LIPS in H.dna.species.offset_features)
@@ -1346,7 +1346,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/radiation = H.radiation
 	if(HAS_TRAIT(H, TRAIT_RADIMMUNE)) //Runs before FEV check so you can make supermutants that AREN'T slowed by rads.
 		return TRUE
-	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls. 
+	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls.
 		switch(radiation)
 			if(1000 to 2000)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1)
@@ -1355,7 +1355,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(3000 to INFINITY)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 2)
 			else //This really shouldn't be occurring, and if it does; report this to a coder.
-				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)		
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)
 		return TRUE
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
 		if(CHECK_MOBILITY(H, MOBILITY_STAND))
@@ -1382,7 +1382,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(QDELETED(H))	//may be called from a timer
 		return
 	H.facial_hair_style = "Shaved"
-	H.hair_style = "Bald"
+	H.hair_style = "Wild (Radiated)"
 	H.update_hair()
 
 //////////////////
@@ -1947,7 +1947,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SHARP_EDGED)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod 
+			sharp_mod = sharp_pointy_mod
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))
