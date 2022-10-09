@@ -81,7 +81,6 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/tribeam_stun)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -470,7 +469,6 @@ Follower Volunteer
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
 		/obj/item/stock_parts/cell/ammo/ec = 2,
-		/obj/item/book/granter/crafting_recipe/blueprint/tribeam_stun = 1,
 	)
 
 /datum/outfit/loadout/guard_ranged
