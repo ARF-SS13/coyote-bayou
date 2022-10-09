@@ -210,7 +210,7 @@
 					msg += "badly frayed "
 				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
 					msg += "nearly popped "
-			msg += "[BP.current_suture.name]!\n"
+			msg += "[BP.current_suture.name]"
 			if(has_bleed_wounds)
 				msg += span_warning(" covering a bleeding wound!\n")
 			else
