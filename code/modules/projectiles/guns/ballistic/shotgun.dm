@@ -591,7 +591,7 @@
 
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "Riot shotgun"
-	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."
+	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed for sustained fire at medium distances. A barrel designed for less-lethal ammo dulls its punch slightly, but you can't argue with the capacity."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -609,10 +609,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
 
