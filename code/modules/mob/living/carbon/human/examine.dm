@@ -177,7 +177,7 @@
 
 		var/has_bleed_wounds = is_bleeding()
 		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))
-			msg += list("[t_His] [BP.name] is wrapped with ")
+			msg += "[t_His] [BP.name] is wrapped with "
 			var/bandaid_max_time = initial(BP.current_gauze.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
@@ -197,7 +197,7 @@
 				msg += "!\n"
 
 		if(istype(BP.current_suture, /obj/item/stack/medical/suture))
-			msg += list("[t_His] [BP.name] is stitched up with ")
+			msg += "[t_His] [BP.name] is stitched up with "
 			var/bandaid_max_time = initial(BP.current_suture.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages
