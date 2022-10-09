@@ -127,8 +127,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin, 1)
-		H.reagents.add_reagent(/datum/reagent/toxin/formaldehyde, 3)
-		H.reagents.add_reagent(/datum/reagent/toxin/venom, 6)
+		H.reagents.add_reagent(/datum/reagent/toxin, 3)
+		H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
 		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
 
