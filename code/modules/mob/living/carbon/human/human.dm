@@ -832,7 +832,7 @@
 	for(var/datum/mutation/human/HM in dna.mutations)
 		if(HM.quality != POSITIVE)
 			dna.remove_mutation(HM.name)
-	if(blood_volume < (BLOOD_VOLUME_NORMAL*blood_ratio))
+	if(get_blood(FALSE) < (BLOOD_VOLUME_NORMAL*blood_ratio))
 		blood_volume = (BLOOD_VOLUME_NORMAL*blood_ratio)
 	..()
 

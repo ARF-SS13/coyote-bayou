@@ -147,6 +147,9 @@
 /mob/living/proc/getBruteLoss()
 	return bruteloss
 
+/mob/living/proc/getBleedLoss()
+	return 0
+
 /mob/living/proc/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
 	if(!forced && (status_flags & GODMODE))
 		return FALSE
