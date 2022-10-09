@@ -13,7 +13,7 @@
 	socks_color = random_clothing_dye()
 	use_custom_skin_tone = FALSE
 	skin_tone = pick("latino", "mediterranean")
-	hair_style = pick("Trimmed", "Fade (Low)")
+	hair_style = pick("Trimmed (Flat)", "Shave (Marine)")
 	facial_hair_style = pick("Beard (5 o\'Clock)", "Beard (3 o\'Clock)")
 	hair_color = random_hair_shade()
 	facial_hair_color = random_hair_shade()

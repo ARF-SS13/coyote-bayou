@@ -529,7 +529,7 @@
 		/obj/item/pen,
 		/obj/item/toy/crayon/spraycan/borg,
 		/obj/item/hand_labeler/borg,
-		/obj/item/razor,
+		/obj/item/cosmetics/razor,
 		/obj/item/rsf/cyborg,
 		/obj/item/instrument/piano_synth,
 		/obj/item/reagent_containers/dropper,

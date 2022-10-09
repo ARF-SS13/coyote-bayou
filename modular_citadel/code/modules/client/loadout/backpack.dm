@@ -18,7 +18,7 @@
 
 /datum/gear/backpack/razor
 	name = "electric razor"
-	path = /obj/item/razor
+	path = /obj/item/cosmetics/razor
 	cost = 2
 
 /datum/gear/backpack/donuts

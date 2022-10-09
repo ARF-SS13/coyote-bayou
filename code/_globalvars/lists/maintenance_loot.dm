@@ -692,7 +692,7 @@ GLOBAL_LIST_INIT(loot_garbage, list(
 	/obj/item/poster/random_official,
 	/obj/item/multitool,
 	/obj/item/cigbutt/cigarbutt,
-	/obj/item/razor,
+	/obj/item/cosmetics/razor,
 	/obj/item/candle,
 	/obj/item/rollingpaper,
 	/obj/item/trash/coal,

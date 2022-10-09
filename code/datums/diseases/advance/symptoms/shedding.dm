@@ -38,7 +38,7 @@ BONUS
 		var/mob/living/carbon/human/H = M
 		switch(A.stage)
 			if(3, 4)
-				if(!(H.hair_style == "Bald") && !(H.hair_style == "Balding Hair"))
+				if(!(H.hair_style == "Bald") && !(H.hair_style == "Wild (Radiated)"))
 					to_chat(H, span_warning("Your hair starts to fall out in clumps..."))
 					addtimer(CALLBACK(src, .proc/Shed, H, FALSE), 50)
 			if(5)
