@@ -199,7 +199,7 @@
 	new /obj/item/bonesetter(src)
 	new /obj/item/clothing/mask/surgical(src)
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/cosmetics/razor(src)
+	new /obj/item/razor(src)
 	new /obj/item/stack/sticky_tape/surgical(src)
 	new /obj/item/stack/sticky_tape/surgical(src)
 	new /obj/item/stack/medical/bone_gel(src)

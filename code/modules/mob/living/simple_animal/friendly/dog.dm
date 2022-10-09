@@ -128,7 +128,7 @@
 	return armorval*0.5 */
 
 /mob/living/simple_animal/pet/dog/corgi/attackby(obj/item/O, mob/user, params)
-	if (istype(O, /obj/item/cosmetics/razor))
+	if (istype(O, /obj/item/razor))
 		if (shaved)
 			to_chat(user, span_warning("You can't shave this corgi, it's already been shaved!"))
 			return

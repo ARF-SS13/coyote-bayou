@@ -1755,7 +1755,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 				/obj/item/poster/random_official,
 				/obj/item/multitool,
 				/obj/item/cigbutt/cigarbutt,
-				/obj/item/cosmetics/razor,
+				/obj/item/razor,
 				/obj/item/candle,
 				/obj/item/rollingpaper,
 				/obj/item/trash/coal,

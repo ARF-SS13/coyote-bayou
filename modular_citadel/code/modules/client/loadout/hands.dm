@@ -79,19 +79,19 @@
 
 /datum/gear/hands/lipstick
 	name = "red lipstick"
-	path = "/obj/item/cosmetics/lipstick"
+	path = "/obj/item/lipstick"
 
 /datum/gear/hands/lipstickpurple
 	name = "purple lipstick"
-	path = /obj/item/cosmetics/lipstick/purple
+	path = /obj/item/lipstick/purple
 
 /datum/gear/hands/lipstickjade
 	name = "jade lipstick"
-	path = /obj/item/cosmetics/lipstick/jade
+	path = /obj/item/lipstick/jade
 
 /datum/gear/hands/lipstickblack
 	name = "black lipstick"
-	path = /obj/item/cosmetics/lipstick/black
+	path = /obj/item/lipstick/black
 
 /datum/gear/hands/livestockdelivery
 	name = "Pet Delivery Service"

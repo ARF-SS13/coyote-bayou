@@ -87,7 +87,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/datum/picture/picture //Scanned photo
 
-	var/list/contained_item = list(/obj/item/pen, /obj/item/toy/crayon, /obj/item/cosmetics/lipstick, /obj/item/flashlight/pen, /obj/item/clothing/mask/cigarette)
+	var/list/contained_item = list(/obj/item/pen, /obj/item/toy/crayon, /obj/item/lipstick, /obj/item/flashlight/pen, /obj/item/clothing/mask/cigarette)
 	var/obj/item/inserted_item //Used for pen, crayon, and lipstick insertion or removal. Same as above.
 	var/list/overlays_offsets // offsets to use for certain overlays
 	var/overlays_x_offset = 0
@@ -467,7 +467,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 				dat += "<a href='?src=[REF(src)];rfreq=2'>+</a>"
 				dat += "<a href='?src=[REF(src)];rfreq=10'>+</a>"
 				dat += " | <a href='?src=[REF(src)];rsavefreq=[radio.frequency]'>Save Frequency</a><br><br>"
-
+				
 				if(saved_frequencies)
 					dat += "<b>Saved Frequencies</b>"
 					dat += "<ul>"
@@ -503,7 +503,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	if(usr.canUseTopic(src, BE_CLOSE, FALSE, NO_TK, FALSE) && !href_list["close"])
 		add_fingerprint(U)
 		U.set_machine(src)
-
+		
 		if(href_list["choice"])
 
 			switch(href_list["choice"])
@@ -785,7 +785,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			loaded_frequency = sanitize_frequency(text2num(loaded_frequency))
 			radio.set_frequency(loaded_frequency)
 			Boop()
-
+		
 		if (href_list["rrenfreq"])
 			var/renamed_frequency = href_list["rrenfreq"]
 			renamed_frequency = text2num(renamed_frequency)
