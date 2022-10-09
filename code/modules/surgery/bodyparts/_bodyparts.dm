@@ -959,6 +959,17 @@
 		if(istype(i, checking_type))
 			return i
 
+/// Returns if the wound is in some way hurt
+/obj/item/bodypart/proc/is_damaged(stam_too = FALSE)
+	if(brute_dam)
+		return TRUE
+	if(burn_dam)
+		return TRUE
+	if(stam_too && stamina_dam)
+		return TRUE
+	if(bleed_dam)
+		return TRUE
+
 /**
  * update_wounds() is called whenever a wound is gained or lost on this bodypart, as well as if there's a change of some kind on a bone wound possibly changing disabled status
  *
@@ -976,8 +987,8 @@
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 	
 	//if we truly dont need our bandages anymore, dump em
-	if(!LAZYLEN(wounds) && !replaced && !bleed_dam && !burn_dam && !brute_dam)
-		destroy_coverings()
+	//if(!LAZYLEN(wounds) && !replaced && !bleed_dam && !burn_dam && !brute_dam)
+	//	destroy_coverings()
 
 	wound_damage_multiplier = dam_mul
 	update_disabled()
@@ -1035,52 +1046,44 @@
  *
  * Arguments:
  * * gauze- Just the gauze stack we're taking a sheet from to apply here
+ * * skill_mult- The time multiplier used for the covering's duration
+ * * just_check- Just return if a bandage would be applied
  */
 /obj/item/bodypart/proc/apply_gauze(obj/item/stack/medical/gauze/gauze, skill_mult = 1, just_check = FALSE)
 	if(!istype(gauze) || !gauze)
 		return BANDAGE_NOT_APPLIED
-	var/apply_new_gauze = FALSE
 	if(!istype(current_gauze)) // No bandage, put one on
-		apply_new_gauze = TRUE
-	else if(gauze?.covering_lifespan > current_gauze?.covering_lifespan) // Bandage has more base duration, put it on
-		apply_new_gauze = TRUE
-	else if(initial(gauze?.covering_hitpoints) > initial(current_gauze?.covering_hitpoints)) // Bandage is more durable, put it on
-		apply_new_gauze = TRUE
-	else if((gauze.bandage_power * skill_mult) > current_gauze.bandage_power) // bandage is more better
-		apply_new_gauze = TRUE
-	else if((gauze.heal_over_time_amount * 0.5) > current_gauze.heal_over_time_amount) // bandage more healing
-		apply_new_gauze = TRUE
-
-	if(apply_new_gauze) // Either no bandage was on, or we're getting a better one
-		if(just_check)
-			return TRUE
-		QDEL_NULL(current_gauze)
-		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
-		current_gauze = new gauze.type(src, 1)
-		S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
-		needs_processing = TRUE
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
 		return BANDAGE_NEW_APPLIED
-	
-	// from here, a new bandage isnt required, lets see if we can freshen it up
-	if(istype(current_gauze)) // just to be sure its still there
-		needs_processing = TRUE
-		var/current_bandage_max_hp = initial(current_gauze.covering_hitpoints)
-		if(current_gauze.covering_hitpoints < current_bandage_max_hp) // repair that bandage
-			if(just_check)
-				return TRUE
-			current_gauze.covering_hitpoints = min(current_gauze.covering_hitpoints + gauze.covering_hitpoints, current_bandage_max_hp)
-			current_gauze.heal_over_time_amount = initial(current_gauze.heal_over_time_amount)
-			if(current_gauze.covering_hitpoints >= current_bandage_max_hp)
-				return BANDAGE_WAS_REPAIRED_TO_FULL
-			else
-				return BANDAGE_WAS_REPAIRED
-		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID) < (current_gauze.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
-			if(just_check)
-				return TRUE
-			S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
-			S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
-			return BANDAGE_TIMER_REFILLED
+	if(gauze.covering_lifespan > current_gauze.covering_lifespan) // Bandage has more base duration, put it on
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if(gauze.covering_hitpoints > current_gauze?.covering_hitpoints) // Bandage is more durable, put it on
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if((gauze.bandage_power * skill_mult) > current_gauze.bandage_power) // bandage is more better
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if((gauze.heal_over_time_amount * 0.5) > current_gauze.heal_over_time_amount) // bandage more healing
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID) < (current_gauze.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+
+/obj/item/bodypart/proc/apply_gauze_to_limb(obj/item/stack/medical/gauze/gauze, skill_mult = 1)
+	QDEL_NULL(current_gauze)
+	S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
+	current_gauze = new gauze.type(src, 1)
+	S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
+	needs_processing = TRUE
+	return BANDAGE_NEW_APPLIED
 
 /**
  * check_gauze_time() checks if the gauze has time left to be on the wound
@@ -1106,12 +1109,15 @@
 		return
 	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
 		return
-	if(current_gauze.heal_over_time_amount <= 0)
+	if(current_gauze.heal_over_time_amount > 0)
 		var/heal_amt = current_gauze.heal_over_time_amount < current_gauze.heal_over_time_per_tick ? current_gauze.heal_over_time_amount : current_gauze.heal_over_time_per_tick
 		heal_damage(heal_amt, heal_amt, heal_amt, FALSE, TRUE, TRUE)
 		current_gauze.heal_over_time_amount -= heal_amt
+	else if(!current_gauze.told_owner_its_out_of_juice)
+		to_chat(owner, span_warning("You feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
+		current_gauze.told_owner_its_out_of_juice = TRUE
 
-	if(bleed_dam > current_gauze.max_bandage_healing && !current_suture) // Always help the suture if one's there
+	/* if(bleed_dam > current_gauze.max_bandage_healing && !current_suture) // Always help the suture if one's there
 		if(COOLDOWN_TIMELEFT(src, bandage_isnt_good_enough))
 			return
 		COOLDOWN_START(src, bandage_isnt_good_enough, BAD_BANDAGE_ANTISPAM_TIME)
@@ -1120,7 +1126,7 @@
 			span_danger("Blood is soaking through the [current_gauze] on your [src.name]! You need either better bandages, or someone to sew up that gruesome wound!"),
 			span_notice("You hear a faint drip.")
 		)
-		return
+		return */ // to be reworked
 	var/bleed_healing = current_gauze.bandage_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
 	bleed_heal_nutrition(bleed_healing)
 
@@ -1152,15 +1158,15 @@
 			return FALSE
 
 	current_gauze.covering_hitpoints -= damage_to_do
-	if(current_gauze.covering_hitpoints > 0)
+	/* if(current_gauze.covering_hitpoints > 0)
 		owner.visible_message(
 			span_warning("\The [current_gauze] on [owner]'s [name] tear from the blow!"), 
 			span_warning("\The [current_gauze] on your [name] tear from the blow!"), 
-			vision_distance=COMBAT_MESSAGE_RANGE)
-	else
+			vision_distance=COMBAT_MESSAGE_RANGE) */
+	if(current_gauze.covering_hitpoints <= 0)
 		owner.visible_message(
 			span_warning("\The [current_gauze] on [owner]'s [name] rip to shreds from the impact, falling away in a heap!"), 
-			span_userdanger("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"), 
+			span_danger("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"), 
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
 		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
@@ -1168,63 +1174,53 @@
 	return TRUE
 
 /**
- * apply_suture() is used put a suture on a bodypart
+ * apply_suture() is used to- well, apply suture to a bodypart
  *
- * Sutures fully close up the wound and prevent bleeding from happening
- * They also passively heal the wound under it while applied
- * They are also delicate and are prone to just ripping the fuck open if damaged
+ * suture (sutures) wraps the limb in sutures
+ * sutures reduce bloodflow to a low fraction, to give them time to heal or get treatment
+ * sutures are also fragile, and damaging them'll make them rip
+ * sutures also don't directly help healing, unless the limb is also stitched up
  *
  * Arguments:
- * * suture - The suture item getting put on
- * * skill_mult - How much to multiply the effects by, used for unskilled application
+ * * suture- Just the suture stack we're taking a sheet from to apply here
+ * * skill_mult- The time multiplier used for the covering's duration
+ * * just_check- Just return if a suture would be applied
  */
-
 /obj/item/bodypart/proc/apply_suture(obj/item/stack/medical/suture/suture, skill_mult = 1, just_check = FALSE)
 	if(!istype(suture) || !suture)
 		return SUTURE_NOT_APPLIED
-	var/apply_new_suture = FALSE
-	if(!istype(current_suture, /obj/item/stack/medical/suture)) // No suture, put one on
-		apply_new_suture = TRUE
-	else if(suture?.covering_lifespan > current_suture?.covering_lifespan) // suture has more base duration, put it on
-		apply_new_suture = TRUE
-	else if(initial(suture?.covering_hitpoints) > initial(current_suture?.covering_hitpoints)) // suture is more durable, put it on
-		apply_new_suture = TRUE
-	else if((suture.suture_power * skill_mult) > current_suture.suture_power) // suture is more better
-		apply_new_suture = TRUE
-	else if((suture.heal_over_time_amount * 0.5) > current_suture.heal_over_time_amount) // suture more healing
-		apply_new_suture = TRUE
-
-	if(apply_new_suture) // Either no suture was on, or we're getting a better one
-		if(just_check)
-			return TRUE
-		QDEL_NULL(current_suture)
-		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
-		current_suture = new suture.type(src, 1)
-		current_suture.suture_power = (suture.suture_power * skill_mult)
-		S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
-		needs_processing = TRUE
+	if(!istype(current_suture)) // No suture, put one on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
 		return SUTURE_NEW_APPLIED
-	
-	// from here, a new suture isnt required, lets see if we can freshen it up
-	if(istype(current_suture)) // just to be sure its still there
-		needs_processing = TRUE
-		var/current_bandage_max_hp = initial(current_suture.covering_hitpoints)
-		if(current_suture.covering_hitpoints < current_bandage_max_hp) // repair that suture
-			if(just_check)
-				return TRUE
-			current_suture.covering_hitpoints = min(current_suture.covering_hitpoints + suture.covering_hitpoints, current_bandage_max_hp)
-			current_suture.heal_over_time_amount = initial(current_suture.heal_over_time_amount)
-			if(current_suture.covering_hitpoints >= current_bandage_max_hp)
-				return SUTURE_WAS_REPAIRED_TO_FULL
-			else
-				return SUTURE_WAS_REPAIRED
-		
-		if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID) < (current_suture.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
-			if(just_check)
-				return TRUE
-			S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
-			S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
-			return SUTURE_TIMER_REFILLED
+	if(suture.covering_lifespan > current_suture.covering_lifespan) // Suture has more base duration, put it on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if(suture.covering_hitpoints > current_suture?.covering_hitpoints) // Suture is more durable, put it on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if((suture.suture_power * skill_mult) > current_suture.suture_power) // suture is more better
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if((suture.heal_over_time_amount * 0.5) > current_suture.heal_over_time_amount) // suture more healing
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID) < (current_suture.covering_lifespan * SUTURE_MIDLIFE_DURATION)) // restore its length
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+
+/obj/item/bodypart/proc/apply_suture_to_limb(obj/item/stack/medical/suture/suture, skill_mult = 1)
+	QDEL_NULL(current_suture)
+	S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
+	current_suture = new suture.type(src, 1)
+	S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
+	needs_processing = TRUE
+	return SUTURE_NEW_APPLIED
 
 
 /**
@@ -1238,7 +1234,7 @@
 		return SUTURE_STILL_INTACT
 	owner.visible_message(
 		span_warning("\The [current_suture] on [owner]'s [name] fray to the point of breaking!"), 
-		span_userdanger("\The [current_suture] on your [name] fray to the point of breaking!"), 
+		span_danger("\The [current_suture] on your [name] fray to the point of breaking!"), 
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	QDEL_NULL(current_suture)
 	return SUTURE_TIMED_OUT
@@ -1255,6 +1251,9 @@
 		var/heal_amt = current_suture.heal_over_time_amount < current_suture.heal_over_time_per_tick ? current_suture.heal_over_time_amount : current_suture.heal_over_time_per_tick
 		heal_damage(heal_amt, heal_amt, heal_amt, FALSE, TRUE, TRUE)
 		current_suture.heal_over_time_amount -= heal_amt
+	else if(!current_suture.told_owner_its_out_of_juice)
+		to_chat(owner, span_warning("You feel the [current_suture.name] on your [src.name] become stale and no longer heal you."))
+		current_suture.told_owner_its_out_of_juice = TRUE
 
 	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
 	bleed_heal_nutrition(bleed_healing)
@@ -1287,15 +1286,16 @@
 			return FALSE
 
 	current_suture.covering_hitpoints -= damage_to_do
-	if(current_suture.covering_hitpoints > 0)
+	/* if(current_suture.covering_hitpoints > 0)
 		owner.visible_message(
 			span_warning("\The [current_suture] on [owner]'s [name] tears from the blow!"), 
 			span_warning("\The [current_suture] on your [name] tear from the blow!"), 
 			vision_distance=COMBAT_MESSAGE_RANGE)
-	else
+	else */
+	if(current_suture.covering_hitpoints <= 0)
 		owner.visible_message(
 			span_warning("\The [current_suture] on [owner]'s [name] pops wide open, shredded to bloody fragments!"), 
-			span_userdanger("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"), 
+			span_danger("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"), 
 			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_suture)
 		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
@@ -1316,11 +1316,9 @@
 		return FALSE // no damage, so dont spend any nutrition
 	// Food based wound healing, spends nutrition to regen blood
 	// Wound healing has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(!HAS_TRAIT(owner, TRAIT_NOHUNGER))
+	if(!HAS_TRAIT(owner, TRAIT_NOHUNGER) && owner.nutrition > NUTRITION_LEVEL_HUNGRY)
 		var/nutrition_bonus = 0
 		switch(owner.nutrition)
-			if(0 to NUTRITION_LEVEL_HUNGRY)
-				nutrition_bonus = WOUND_HEAL_HUNGRY
 			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_WELL_FED)
 				nutrition_bonus = WOUND_HEAL_FED
 			if(NUTRITION_LEVEL_WELL_FED to INFINITY)

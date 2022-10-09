@@ -248,11 +248,9 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 	var/blood_refill = BLOOD_REFILL_PER_TICK // guaranteed refill
 	// Food based blood replenishment, spends nutrition to regen blood
 	// Blood has a fixed nutrition cost, but being more well fed speeds it up a bit
-	if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
+	if(!HAS_TRAIT(src, TRAIT_NOHUNGER) && nutrition > BLOOD_REFILL_NUTRITION_HUNGRY)
 		var/nutrition_bonus = 0
 		switch(nutrition)
-			if(0 to NUTRITION_LEVEL_HUNGRY)
-				nutrition_bonus = BLOOD_REFILL_NUTRITION_STARVING
 			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FED)
 				nutrition_bonus = BLOOD_REFILL_NUTRITION_HUNGRY
 			if(NUTRITION_LEVEL_FED to NUTRITION_LEVEL_WELL_FED)

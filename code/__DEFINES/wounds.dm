@@ -272,7 +272,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_BURN_MULT 3 // its very flammable
 
 /// Bandage base heal over time
-#define BANDAGE_HEAL_OVER_TIME_BASE 30
+#define BANDAGE_HEAL_OVER_TIME_BASE 60
 
 /// Bandage heal over time for improvised bandages
 #define BANDAGE_IMPROVISED_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 0.5)
@@ -282,7 +282,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_MEDICAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 2.5)
 
 /// Bandage heal rate
-#define BANDAGE_HEAL_RATE_BASE 0.01
+#define BANDAGE_HEAL_RATE_BASE 0.005 // 0.3 brute/tick
 /// Bandage heal rate for improvised bandages
 #define BANDAGE_IMPROVISED_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 0.5)
 /// Bandage heal rate for normal bandages
@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_MEDICAL_HEAL_RATE (BANDAGE_MEDICAL_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 2)
 
 /// Suture base heal over time
-#define SUTURE_HEAL_OVER_TIME_BASE 20
+#define SUTURE_HEAL_OVER_TIME_BASE 40
 
 /// Suture heal over time for improvised sutures
 #define SUTURE_IMPROVISED_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 0.5)
@@ -301,7 +301,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_MEDICAL_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 2)
 
 /// Suture heal rate
-#define SUTURE_HEAL_RATE_BASE 0.01
+#define SUTURE_HEAL_RATE_BASE 0.01 // 0.4 brute/tick
 /// Suture heal rate for improvised sutures
 #define SUTURE_IMPROVISED_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 0.5)
 /// Suture heal rate for normal sutures
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_BEST_WOUND_MAX (WOUND_BLEED_SEVERE_THRESHOLD)
 
 /// Extra wound healing done if we have both sutures and a bandage
-#define SUTURE_AND_BANDAGE_BONUS 1.2
+#define SUTURE_AND_BANDAGE_BONUS 2
 
 /// Nutrition cost for one unit of wound healing
 #define WOUND_HEAL_NUTRITION_COST 4 // 4 nutrition = 1 less bleed_dam, 400 nutrition = 100 wound heal

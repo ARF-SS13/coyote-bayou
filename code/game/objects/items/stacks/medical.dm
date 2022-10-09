@@ -70,6 +70,8 @@
 	var/heal_over_time_amount
 	/// How much of the healing should be applied per cycle
 	var/heal_over_time_per_tick
+	/// Told our wearer that we're out of healstuffs
+	var/told_owner_its_out_of_juice = FALSE
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -138,26 +140,24 @@
 		return output_message ? BODYPART_INORGANIC : UNABLE_TO_HEAL
 	/// Okay we can reasonably assume this limb is okay to try and treat
 	. = BODYPART_FINE
-	if(heal_brute && target_bodypart.brute_dam || heal_burn && target_bodypart.burn_dam)
+	if((heal_brute && target_bodypart.brute_dam) || (heal_burn && target_bodypart.burn_dam))
 		. |= DO_HEAL_DAMAGE
-	var/has_skills = is_skilled_enough(user, C)
 	if(is_bandage)
-		var/precheck = target_bodypart.apply_gauze(src, has_skills ? 1 : unskilled_effectiveness_mult, TRUE)
-		if((target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam) && precheck)
-			. |= DO_APPLY_BANDAGE
-		else
-			for(var/datum/wound/blunt/brokedies in target_bodypart.wounds)
-				if((brokedies.wound_flags & ACCEPTS_GAUZE) && precheck) // limp limp
-					. |= DO_APPLY_BANDAGE
+		if(target_bodypart.is_damaged() && target_bodypart.apply_gauze(src, 1, TRUE)) // always apply the stuff if they dont have it
+			ENABLE_BITFIELD(., DO_APPLY_BANDAGE)
+		/* else if(target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam)
+			. |= DO_APPLY_BANDAGE */
 	if(is_suture)
-		if((target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam) && target_bodypart.apply_suture(src, has_skills ? 1 : unskilled_effectiveness_mult, TRUE))
-			. |= DO_APPLY_SUTURE
-			if(hurt_brute)
-				. |= DO_HURT_DAMAGE
+		if(target_bodypart.is_damaged() && target_bodypart.apply_suture(src, 1, TRUE)) // always apply the stuff if they dont have it
+			ENABLE_BITFIELD(., DO_APPLY_SUTURE)
+	if(CHECK_BITFIELD(., DO_APPLY_SUTURE) && hurt_brute)
+		ENABLE_BITFIELD(., DO_HURT_DAMAGE)
+		/* else if(target_bodypart.bleed_dam || target_bodypart.burn_dam || target_bodypart.burn_dam)
+			. |= DO_APPLY_SUTURE */
 	for(var/datum/wound/burn/burndies in target_bodypart.wounds)
 		if(sanitization || flesh_regeneration)
 			if(burndies.flesh_damage || burndies.infestation)
-				. |= DO_UNBURN_WOUND
+				ENABLE_BITFIELD(., DO_UNBURN_WOUND)
 
 /obj/item/stack/medical/proc/heal_critter(mob/living/M, mob/user)
 	if(!isanimal(M))
@@ -185,36 +185,37 @@
 	if(!user.can_inject(C, TRUE))
 		return
 	
-	var/list/heal_operations = pick_a_bodypart(C, user)
-	if(!islist(heal_operations))
+	var/list/output_list = pick_a_bodypart(C, user)
+	if(!islist(output_list))
 		to_chat(user, span_phobia("Uh oh! [src] didnt return a list! This is a bug, probably! Report this pls~ =3"))
 		return FALSE
-	if(!istype(heal_operations["bodypart"], /obj/item/bodypart))
-		if(heal_operations["bodypart"] == UNABLE_TO_HEAL)
+	if(!istype(output_list["bodypart"], /obj/item/bodypart))
+		if(output_list["bodypart"] == UNABLE_TO_HEAL)
 			to_chat(user, span_warning("[C] wouldn't really benefit from \the [src]!"))
 			return FALSE
 		else
 			to_chat(user, span_phobia("Uh oh! [src] somehow returned something that wasnt a bodypart! This is a bug, probably! Report this pls~ =3"))
 			return FALSE
 
-	var/obj/item/bodypart/affected_bodypart = heal_operations["bodypart"]
+	var/obj/item/bodypart/affected_bodypart = output_list["bodypart"]
+	var/heal_operations = output_list["operations"]
 	do_medical_message(user, C, affected_bodypart, "start")
 	is_healing = TRUE
 	var/covering_output = null
-	var/is_skilled = is_skilled_enough(user, C)
-	if(!do_mob(user, C, get_delay_time(user, C, is_skilled), progress = TRUE))
+	//var/is_skilled = 1
+	if(!do_mob(user, C, get_delay_time(user, C, 1), progress = TRUE))
 		to_chat(user, span_warning("You were interrupted!"))
 		is_healing = FALSE
 		return
 	is_healing = FALSE
 	/// now we start doing 'healy' things!
 	if(heal_operations & DO_HURT_DAMAGE) // Needle pierce flesh, ow ow ow
-		if(affected_bodypart.receive_damage(hurt_brute * (is_skilled ? 1 : 2), sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
+		if(affected_bodypart.receive_damage(hurt_brute * 1, sharpness = SHARP_NONE, wound_bonus = CANT_WOUND, damage_coverings = FALSE)) // as funny as it is to wound people with a suture, its buggy as fuck and breaks everything
 			if(prob(50))
 				C.emote("scream") // a
 			C.update_damage_overlays()
 	if(heal_operations & DO_HEAL_DAMAGE)
-		if(affected_bodypart.heal_damage(heal_brute * is_skilled ? 1 : unskilled_effectiveness_mult, heal_burn * is_skilled ? 1 : unskilled_effectiveness_mult))
+		if(affected_bodypart.heal_damage(heal_brute, heal_burn, (heal_brute + heal_burn), updating_health = TRUE))
 			C.update_damage_overlays()
 	/* if(heal_operations & DO_UNBLEED_WOUND)
 		for(var/datum/wound/wounds_to_unbleed in affected_bodypart.wounds)
@@ -227,16 +228,17 @@
 				wounds_to_unburn.treat_burn(src, user, (user == C))
 				break
 	if(heal_operations & DO_APPLY_BANDAGE)
-		covering_output = affected_bodypart.apply_gauze(src, is_skilled ? 1 : unskilled_effectiveness_mult)
+		covering_output = affected_bodypart.apply_gauze(src, 1)
 	if(heal_operations & DO_APPLY_SUTURE)
-		covering_output = affected_bodypart.apply_suture(src, is_skilled ? 1 : unskilled_effectiveness_mult)
+		covering_output = affected_bodypart.apply_suture(src, 1)
 
-	do_medical_message(user, C, affected_bodypart, "end", is_skilled, covering_output)
+	do_medical_message(user, C, affected_bodypart, "end", 1, covering_output)
 	return TRUE
 
 /// Returns if the user is skilled enough to use this thing effectively
 /obj/item/stack/medical/proc/is_skilled_enough(mob/user, mob/target)
-	if(!needed_trait)
+	return NO_SKILLS_REQUIRED
+/* 	if(!needed_trait)
 		return NO_SKILLS_REQUIRED
 	if(HAS_TRAIT(user, needed_trait))
 		return USER_HAS_THE_SKILLS
@@ -258,7 +260,7 @@
 			if(HAS_TRAIT(user, TRAIT_SURGERY_HIGH))
 				return USER_HAS_THE_SKILLS
 			if(HAS_TRAIT(target, TRAIT_SURGERY_HIGH))
-				return VICTIM_HAS_THE_SKILLS
+				return VICTIM_HAS_THE_SKILLS */
 
 
 /// returns how long it should take to use this thing
@@ -278,7 +280,7 @@
 			user.visible_message(
 				span_warning("[user] begins applying \a [src] to [target]'s [target_part]..."), 
 				span_warning("You begin applying \a [src] to [user == target ? "your" : "[target]'s"] [target_part]..."))
-			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
+/*			if(is_skilled && is_skilled != NO_SKILLS_REQUIRED)
 				switch(needed_trait)
 					if(TRAIT_SURGERY_LOW)
 						if(is_skilled == USER_HAS_THE_SKILLS)
@@ -294,7 +296,7 @@
 						if(is_skilled == USER_HAS_THE_SKILLS)
 							user.show_message(span_green("It's an advanced procedure, but well within your skillset!"))
 						else
-							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!"))
+							user.show_message(span_green("[target] is a well versed surgeon, and that fact steadies your hand!")) */
 
 		if("end")
 			if(isnull(bandage_code))
@@ -350,7 +352,7 @@
 	icon_state = "brutepack"
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	needed_trait = TRAIT_SURGERY_LOW
+	//needed_trait = TRAIT_SURGERY_LOW
 	heal_brute = 30
 	heal_burn = 30
 	self_delay = 40
@@ -471,7 +473,7 @@
 	bandage_power = BANDAGE_BEST_WOUND_CLOSURE
 	max_bandage_healing = BANDAGE_BEST_WOUND_MAX
 	is_bandage = TRUE
-	needed_trait = TRAIT_SURGERY_LOW
+	//needed_trait = TRAIT_SURGERY_LOW
 	//absorption_rate = 0.4
 	//absorption_capacity = 15
 	covering_lifespan = BANDAGE_GOOD_MAX_DURATION
@@ -506,7 +508,7 @@
 	gender = PLURAL
 	singular_name = "suture"
 	icon_state = "suture"
-	needed_trait = TRAIT_SURGERY_MID
+	//needed_trait = TRAIT_SURGERY_MID
 	covering_hitpoints = 3
 	self_delay = 80
 	other_delay = 60
@@ -534,7 +536,7 @@
 	name = "improvised sutures"
 	icon_state = "suture_imp"
 	desc = "A set of improvised sutures consisting of clothing thread and a sewing needle. Liable to tear up your flesh, but will eventually close up minor bleeds. Medical training won't help you with this."
-	needed_trait = null
+	//needed_trait = null
 	covering_hitpoints = 1
 	hurt_brute = 8 // Owie
 	self_delay = 100
@@ -563,7 +565,7 @@
 	name = "advanced medicated sutures"
 	icon_state = "suture_purp"
 	desc = "An advanced suture and ultra-sharp needle, both infused with specialized coagulants and painkillers that make for a quick and painless wound treatment. It's very delicate and requires extensive medical training to use effectively."
-	needed_trait = TRAIT_SURGERY_HIGH
+	//needed_trait = TRAIT_SURGERY_HIGH
 	covering_hitpoints = 5
 	self_delay = 80
 	other_delay = 60

@@ -52,7 +52,7 @@
 /// Nutrition spent for being fed
 #define BLOOD_REFILL_NUTRITION_FED 1
 /// Nutrition spent for being hungie
-#define BLOOD_REFILL_NUTRITION_HUNGRY 0
+#define BLOOD_REFILL_NUTRITION_HUNGRY 0.5
 /// Nutrition spent for being starving
 #define BLOOD_REFILL_NUTRITION_STARVING 0
 
