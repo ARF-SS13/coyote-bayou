@@ -19010,13 +19010,10 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "btO" = (
-/obj/machinery/vending/medical{
-	density = 0;
-	pixel_x = 28
-	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/machinery/vending/medical/follower/wallmount,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "btQ" = (
@@ -27817,9 +27814,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/village)
 "eMn" = (
-/obj/machinery/vending/medical{
-	pixel_y = -1
-	},
+/obj/machinery/vending/medical/nash,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vault1,
 /area/f13/building)
 "eMw" = (
@@ -34623,7 +34618,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "ibk" = (
-/obj/machinery/vending/wardrobe/medi_wardrobe,
+/obj/machinery/vending/wardrobe/medi_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "ibr" = (
@@ -40388,7 +40383,7 @@
 	},
 /area/f13/wasteland)
 "kRO" = (
-/obj/machinery/vending/wardrobe/science_wardrobe,
+/obj/machinery/vending/wardrobe/science_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "kRU" = (
@@ -49462,7 +49457,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/village)
 "oWd" = (
-/obj/machinery/vending/wardrobe/chem_wardrobe,
+/obj/machinery/vending/wardrobe/chem_wardrobe/free,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "oWv" = (
@@ -63015,6 +63010,7 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "vMv" = (
+/obj/item/stock_parts/chem_cartridge/pristine,
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "verticalleftborderright0"
 	},

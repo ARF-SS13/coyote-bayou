@@ -35,17 +35,24 @@
 #define ID_LOCKED_BANK_ACCOUNT	2
 
 //Some price defines to help standarize the intended vending value of items. Do not bother adding too many examples.
-#define PRICE_FREE				0 // Sustainance/soviet vendor stuff.
-#define PRICE_CHEAP_AS_FREE		10 // Cheap lighters, syringes, soft drinks etc.
-#define PRICE_REALLY_CHEAP		20 // Snacks, hot drinks, tools.
-#define PRICE_PRETTY_CHEAP		30 // Some snacks, beer.
-#define PRICE_CHEAP				40 // Clothings. some electronics
-#define PRICE_ALMOST_CHEAP		60 // Fancy clothing, cig packs, booze-o-mat, seeds, medical.
-#define PRICE_BELOW_NORMAL		80 // Clothesmate and kinkmate premium stuff.
-#define PRICE_NORMAL			100 // Kitchen knife, other stuff.
-#define PRICE_ABOVE_NORMAL		150 // Liberation (capitalism ahoy) and donksoft vendors.
-#define PRICE_ALMOST_EXPENSIVE	200 // Butcher knife, cartridges, some premium stuff.
-#define PRICE_EXPENSIVE			325 // Premium stuff.
-#define PRICE_ABOVE_EXPENSIVE	500 // RCD, Crew pinpointer/monitor, galoshes
-#define PRICE_REALLY_EXPENSIVE	700 // More premium stuff.
-#define PRICE_ALMOST_ONE_GRAND	900 // $$$ Insulated gloves, backpack water-tank spray $$$
+//CB Change - Pull back cost range for items
+#define PRICE_FREE				0    // Free items. like job vendors.
+#define PRICE_CHEAP_AS_FREE		2    // -
+#define PRICE_REALLY_CHEAP		5    // low end ammo.
+#define PRICE_PRETTY_CHEAP		8    // -
+#define PRICE_CHEAP				10   //  Normal ammo?
+#define PRICE_ALMOST_CHEAP		15   // cosmetic clothing
+#define PRICE_BELOW_NORMAL		17   // -
+#define PRICE_NORMAL			20   // Useful clothing.
+#define PRICE_ABOVE_NORMAL		25   // low end healing items
+#define PRICE_ALMOST_EXPENSIVE	50   // Stimpaks, t3 machine parts.
+#define PRICE_EXPENSIVE			80   // -
+#define PRICE_ABOVE_EXPENSIVE	120  // Super Stimpaks, higher end weapons
+#define PRICE_REALLY_EXPENSIVE	240  // -
+#define PRICE_ULTRA_EXPENSIVE   500  // Better weapons.
+#define PRICE_ALMOST_ONE_GRAND	1000 // PA, Super high end equipment.
+
+//Specific items for specific price weighting.
+//i.e. if such and such should be as expensive as a stimpak.
+#define PRICE_STIMPAK          50  // Normal craftable Stimpak
+#define PRICE_SUPER_STIM       120 // Super Stimpak

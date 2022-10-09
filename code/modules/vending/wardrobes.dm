@@ -582,3 +582,36 @@
 /obj/item/vending_refill/wardrobe/cap_wardrobe
 	machine_name = "Captain's Wardrobe"
 	icon_state = "refill_caps"
+
+/obj/machinery/vending/wardrobe/chem_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/science_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/medi_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/sec_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/cargo_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/sec_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/law_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/engi_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/jani_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/bar_wardrobe/free
+	force_free = TRUE
+
+/obj/machinery/vending/wardrobe/hydro_wardrobe/free
+	force_free = TRUE
