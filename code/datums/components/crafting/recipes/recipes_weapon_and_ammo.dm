@@ -1215,23 +1215,6 @@
 	subcategory = CAT_WEAPON
 	always_available = FALSE
 
-//tribeam Stun
-/datum/crafting_recipe/tribeam_stun
-	name = "Tribeam Stun Rifle"
-	result = /obj/item/gun/energy/laser/scatter/nonlethal
-	reqs = list(/obj/item/stack/sheet/metal = 15,
-				/obj/item/advanced_crafting_components/conductors = 1,
-				/obj/item/advanced_crafting_components/alloys = 1,
-				/obj/item/advanced_crafting_components/lenses = 1,
-				/obj/item/stack/crafting/goodparts = 3,
-				/obj/item/stack/crafting/electronicparts = 3
-				)
-	tools = list(TOOL_WORKBENCH)
-	time = 120
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-	always_available = FALSE
-
 //rcw
 /datum/crafting_recipe/rcw
 	name = "Laser RCW"

@@ -129,7 +129,7 @@
 	can_hold = typecacheof(list( //Same items as a PDA
 		/obj/item/pen,
 		/obj/item/toy/crayon,
-		/obj/item/cosmetics/lipstick,
+		/obj/item/lipstick,
 		/obj/item/flashlight/pen,
 		/obj/item/clothing/mask/cigarette))
 	can_hold |= GLOB.storage_wallet_can_hold
