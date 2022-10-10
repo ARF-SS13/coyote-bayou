@@ -4,8 +4,16 @@ plan is to ultimately have it pull from cargo export datum for how valuable stuf
 
 /obj/structure/fence/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/wirecutters))
+if(do_after(user, 20, target = src))
 
+https://discord.com/channels/986779026205073408/999170698029305946/1028944558928703488
 */
+
+
+GLOBAL_LIST_INIT(sacredwellitems_low, list(typecacheof(/obj/item/gun/energy/laser)))
+
+GLOBAL_LIST_INIT(sacredwellitems_mid, list(typecacheof(
+														/obj/item/gun/energy/laser/scatter)))
 
 /obj/structure/sacredwell
 	name = "sacredwell"
@@ -17,11 +25,18 @@ plan is to ultimately have it pull from cargo export datum for how valuable stuf
 /obj/structure/sacredwell/attackby(obj/item/W, mob/user)
 	while(src.cooling == 0)
 
-		if(istype(W, /obj/item/gun/energy/laser/))
+		if(W.type in GLOB.sacredwellitems_mid)
 			sacredmeter += 200
 			update_meter()
 			qdel(W)
 			return
+
+		else if(W.type in GLOB.sacredwellitems_low)
+			sacredmeter += 100
+			update_meter()
+			qdel(W)
+			return
+
 		else
 			to_chat(user, span_danger("This item is not advanced enough for the sacred well. It rejects you."))
 			return
@@ -29,6 +44,8 @@ plan is to ultimately have it pull from cargo export datum for how valuable stuf
 		while(src.cooling == 1)
 			to_chat(user, span_danger("The well is recharging. Give it a minute, you greedy lil' shit."))
 			return
+
+
 
 /obj/structure/sacredwell/proc/update_meter()
 
