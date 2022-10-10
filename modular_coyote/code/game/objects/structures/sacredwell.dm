@@ -9,11 +9,12 @@ GLOBAL_LIST_INIT(sacredwellitems_low, typecacheof(/obj/item/gun/energy/laser))
 GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/scatter))
 
 /obj/structure/sacredwell
-	name = "sacredwell"
-	desc = "Toss yo shit in here, young'n."
+	name = "sacred well"
+	density = 1
 	var/sacredmeter = 0
-	var/sacredmeter_max = 800 //how much charge it needs before it does the thing
+	var/sacredmeter_max = 1000 //how much charge it needs before it does the thing
 	var/cooling = 0
+	desc = "Toss yo shit in here, young'n."
 
 
 /obj/structure/sacredwell/attackby(obj/item/W, mob/user)
@@ -41,18 +42,18 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/sc
 
 
 
-/obj/structure/sacredwell/proc/update_meter()
+/obj/structure/sacredwell/proc/update_meter() //checks if sacredmeter is above max, if it is, minuses sacredmeter_max from current amnt to simulate 'overflow'
 
 	if(src.sacredmeter < src.sacredmeter_max)
 		visible_message(span_notice("The well flares!"))
 		playsound(src, 'sound/mecha/mech_shield_drop.ogg', 80, 0, -1)
-		desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of 800 charge."
+		desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge."
 		return
 
 
 	else if(src.sacredmeter >= src.sacredmeter_max)
 		visible_message(span_notice("The well thrums with energy!"))
-		sacredmeter -= src.sacredmetermax
+		sacredmeter -= src.sacredmeter_max
 		playsound(src, 'sound/mecha/mech_shield_raise.ogg', 80, 0, -1)
 		dontspam()
 		return
@@ -60,11 +61,11 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/sc
 	return
 
 
-/obj/structure/sacredwell/proc/dontspam()
+/obj/structure/sacredwell/proc/dontspam() //might need to fiddle w/ this......
 
 	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge.<br><span class='notice'>It is currently cooling down.</span>"
 	cooling = 1
 	sleep(1000)
 	cooling = 0
-	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge.<br>"
+	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge."
 	return
