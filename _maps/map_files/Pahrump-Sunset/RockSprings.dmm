@@ -2305,7 +2305,9 @@
 "bow" = (
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Secret"
+	termtag = "Secret";
+	doc_title_1 = "Poseidon Energy and you!";
+	doc_content_1 = "Begin your Odyssey with us!  The rest of this document seems to be training material on how to run the gas station, and how you should be careful around the pumps.  Probably not very useful anymore."
 	},
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt,
@@ -3387,7 +3389,9 @@
 "bMM" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
-	dir = 8
+	dir = 8;
+	doc_content_1 = "The only file on this computer seems to be a corrupted text document.  The letters have become bungled all to hell, and it's quite literally impossible to read.";
+	doc_title_1 = "Damaged File"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
@@ -11385,7 +11389,9 @@
 /obj/structure/table/wood/settler,
 /obj/machinery/computer/terminal{
 	desc = "A RobCo Industries terminal, widely available for commercial and private use before the war. This ones screen seems to have the faint image of some sort of game involving theme parks burned into it.";
-	pixel_y = 3
+	pixel_y = 3;
+	doc_title_1 = "The locked up screen, that's burnt itself onto the monitor.";
+	doc_content_1 = "This screen seems to have burnt itself onto the monitor a long time ago, even restarting it wouldn't likely fix the defect with its vacuum tubes.  It's very odd though, the image burnt into place seems to be of a very large, very long, roller coaster and somehow the terminals speaker beeps out the occasional sound of spooky laughter."
 	},
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -17636,10 +17642,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/closet/cardboard,
-/obj/item/stack/sheet/plastic/twenty,
-/obj/item/stack/rods/ten,
-/obj/effect/spawner/lootdrop/toolsbasic,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -19193,10 +19195,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/closet/cardboard,
-/obj/item/stack/sheet/metal/twenty,
-/obj/item/stack/sheet/glass/ten,
-/obj/effect/spawner/lootdrop/toolsbasic,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -20845,6 +20843,14 @@
 	name = "rocky dirt"
 	},
 /area/f13/wasteland)
+"klx" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/accessory/necklace{
+	name = "Raspberry Locket";
+	desc = "That's a locket with a charm that looks like a raspberry.  It ssmells nice for something that has been burried for a while with a corpse."
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "klZ" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
@@ -21768,8 +21774,11 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	dir = 4;
-	doc_content_1 = "I'd like to report a crime happening at your house, Officer Mack. Your house is about to burn for the crimes you committed against the People's Republic of China! I hope your sleeping family wakes up in time.. GLORY TO CHINA.";
-	doc_title_1 = "Crime Report."
+	doc_content_1 = "This document seems to be trying to tell you how you should format slave documentation.  It mentions to include their name and collar number/id, and if you sell one write out a proper 'writ of sale' to the new owner.  Or maybe you can't read, and this is just a pretty screen.  I'm not your dad.";
+	doc_title_1 = "Slave Capture Blank Doc";
+	pixel_y = 5;
+	pixel_x = 4;
+	doc_content_2 = "
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
@@ -26503,6 +26512,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland)
+"niV" = (
+/obj/machinery/computer/terminal{
+	dir = 4;
+	doc_content_1 = "I got a phone call last night from a friend of mine in the ";
+	doc_title_1 = "Wardens Diary - 22nd, October 2077"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "njb" = (
 /obj/machinery/door/unpowered/celldoor,
 /turf/open/indestructible/ground/outside/sidewalk,
@@ -28772,6 +28789,11 @@
 	},
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/car/rubbish1{
+	pixel_y = -8;
+	pixel_x = -8;
+	name = "most of an exploded corvega"
+	},
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -34747,6 +34769,14 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
+"rsf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/head/peaceflower{
+	pixel_x = 32;
+	name = "radlily"
+	},
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "rsl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/fence/wooden{
@@ -35878,9 +35908,6 @@
 /area/f13/building)
 "rUN" = (
 /obj/structure/table/reinforced,
-/obj/machinery/computer/terminal{
-	dir = 8
-	},
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/building)
 "rVj" = (
@@ -36062,6 +36089,25 @@
 	},
 /turf/open/indestructible/ground/outside/water/running,
 /area/f13/wasteland)
+"rYU" = (
+/obj/effect/turf_decal/stripes/white/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human{
+	pixel_x = 22
+	},
+/obj/item/clothing/under/f13/mechanic{
+	pixel_x = 13;
+	pixel_y = -2
+	},
+/turf/open/floor/f13{
+	icon_state = "floorrusty"
+	},
+/area/f13/building)
 "rYW" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -37823,7 +37869,17 @@
 "sWa" = (
 /obj/structure/table/wood/junk,
 /obj/machinery/computer/terminal{
-	pixel_y = 5
+	pixel_y = 5;
+	doc_content_1 = "THoSE FucKInG IDIots iN NAhs, ifuCKN cAn'T STaNd THem.  mAYOr CROwLY DemanDeD I PaY My fuCKIn BiLls tO ThE bAr BUT thAt SOn of a BItCH KNows That i HaVE to SAvE HtmE for kEEpinG my siSter ALiV.  We decIdeD to LEav anD HeaDto rEDwAter, mAYbE SoMeOne Will HIRe Me as a gUard AnD i can AFForD hEr medicieNCEs.";
+	doc_title_1 = "mango mad";
+	doc_title_2 = "mango rly mad";
+	doc_content_2 = "i talk to overbos and they say maybe i work as guard, but they trid to put a collar on becca while iw asn't looking.  I killed four of them getting her out of town but i mad a friend in the bar, his name is Sam and he told me he bring frends.  we goin to make redwater pay";
+	doc_title_3 = "mango plan";
+	doc_content_3 = "sam bring many frends n we buy chems from the new guys out west, they friendly enough.  becca not looking good and mango scared, going to go out to pick her flowers later, but for now me clean gun.  already kill thre more redwater asholes";
+	doc_content_4 = "becca didnt make it  redwatr and nash will burn";
+	doc_title_4 = "mango sad";
+	doc_title_5 = "mango leave maybe";
+	doc_content_5 = "mango thinking about leaving, sister dead and hav no reasn 2 stay here.  think go down to coast and take up fishing, revenge not worth it, becca not want more blood"
 	},
 /turf/open/indestructible/ground/outside/road{
 	icon_state = "horizontalinnermain0"
@@ -45220,6 +45276,15 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
+/obj/machinery/computer/terminal{
+	dir = 4;
+	doc_title_1 = "Take me to snurch";
+	doc_content_1 = "Take me to Snurch.  I'll worship like a snail in the shrine of your light.  I'll tell you my snins.  So you can snarpen your snife";
+	doc_content_2 = "I hate redwater, that town was so nice when I was a kid, but then again I guess everything was nice when I was a kid.  At least for a while the place was run by decent folk, but ever since that snake Johnny rolled into town and killed the sheriff things have been going down hill.  Good folk left for Nash, but I'm going to stay here and work on my armor.  One day I'll go up there and avenge my friends death.";
+	doc_content_3 = "armr a92-24 done 294hda bran no fu9aw think well.  worry01 fe ra l  help";
+	doc_title_2 = "Garys Memoirs";
+	doc_title_3 = "new text document"
+	},
 /turf/open/floor/carpet,
 /area/f13/building)
 "wFH" = (
@@ -45866,7 +45931,17 @@
 "wXR" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
-	dir = 4
+	dir = 4;
+	doc_content_1 = "I got a phone call last night from a friend of mine in the Air Force, he said some very dark things about what he thinks is about to happen and how maybe I should return home to be with my family.  I've decided he's off his rocker, probably spent too much time huffing jet fuel and drinking.  Besides, the prisoners in here aren't going to watch themselves. ";
+	doc_title_1 = "Wardens Diary - 22nd, October 2077";
+	doc_content_2 = "I should have gone home.  He was right.  I watched as a guard looked into the light in the parking lot, a bomb went off in Texarkana.  I got lucky, the building and our distance shaded me from the blast but I watched as his eyes boiled in their sockets.  I shot him.  I shot Jerry in the head to stop his screaming.  The prisoners are rebelling again, most of the powers gone out.  If we don't get help soon we're probably going to have to do something drastic.  God help us all.";
+	doc_title_2 = "Wardens Diary - 25th, October 2077";
+	doc_title_3 = "Wardens Diary - 15th, November 2077";
+	doc_content_3 = "It's clear at this point that help isn't coming, and that we're all going to die out here if we stay put.  We've ordered the guards to create an exit for the prisoners to funnel out of, I can't believe it but we're releasing them.  We're releasing murders and madmen back into the world because I don't have the heart to just shoot them.  For those that come after us I to am leaving this place, after the guards have made sure all the prisoners are gone we're going to wait a few days and then try and return to our homes.  If we even have any to return to.";
+	doc_title_4 = "Wardens Diary - 27th, June 2152";
+	doc_content_4 = "hi i gues, me n mi pals fund thiz old comouter   we thnk u smel lik shjt;
+	doc_title_5 = "Wardens Diary - 10th, October 2022";
+	doc_content_5 = "nya bitches ~Mango Mathew an' pals"
 	},
 /turf/open/floor/carpet,
 /area/f13/building)
@@ -46346,6 +46421,16 @@
 /area/f13/wasteland)
 "xlc" = (
 /obj/structure/table/glass,
+/obj/machinery/computer/terminal{
+	dir = 4;
+	termtag = "Business";
+	pixel_y = 3;
+	pixel_x = 8;
+	doc_title_1 = "Docs Log #1";
+	doc_content_1 = "Holy fuck I hate this swamp.  I had to treat two guys for nightstalker bites, and to be frank I don't think either are going to make it.  We've sent a team up to the north to look for a better base.  I hope we can move out soon, but we have to avoid these miserable townies.";
+	doc_title_2 = "Docs Log #2";
+	doc_content_2 = "It's been two weeks... I think the guys who went up north aren't fucking coming back.  They've left us out here to fucking die in the swamp.  Or maybe they all died... who knows.  Fuck me."
+	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "xli" = (
@@ -46565,7 +46650,11 @@
 /obj/structure/table,
 /obj/machinery/computer/terminal{
 	dir = 1;
-	termtag = "Business"
+	termtag = "Business";
+	pixel_x = 1;
+	pixel_y = 4;
+	name = "Easy Inn - Easy Out, your friendly Hotel on the road!";
+	doc_title_1 = "Unit 3 Exterminator Request"
 	},
 /obj/effect/decal/cleanable/glass,
 /obj/effect/decal/cleanable/dirt,
@@ -47607,6 +47696,17 @@
 	icon_state = "tube-burned";
 	light_color = "#e8eaff"
 	},
+/obj/machinery/computer/terminal{
+	dir = 4;
+	pixel_x = 5;
+	pixel_y = 4;
+	doc_title_1 = "Notes To Staff - not dying juice";
+	doc_content_1 = "So listen here,  you miserable shits.  We keep forgetting how to make the fucking not-dying juice and i'm fucking tired of it.  So this is what you do: first get yourself about a slurps worth of bicar, kelo, stippy and silver sulfy and warm that bitch up to about what your mom used to bake molerat at then stuff it into an empty stim and stop these idiots from fucking needing to be buried";
+	doc_title_2 = "Notes To Staff - go-harder";
+	doc_content_2 = "alright puke, this shit will keep you from falling over from a hangnail like the miserable shit you are:  take a slurp of epi and morpy and stick it in something you can poke yourself with.  Put it together at the fucking pipe covered monstrosity chemmachine.  oh and FUCKING CLEAN UP AFTER YOURSELF";
+	doc_title_3 = "stop rolling around in the goop downtown holy shit";
+	doc_content_3 = "oh my fucking god i swear you people are TRYING to kill yourselves, Jeffy came in here the other day with FUCKING RAD GOOP IN HIS HAIR.  I had to -drench- him in brahmin milk and he still grew THREE MORE EARS.  Remember to DRINK SOME MILK if you've been in that hellscape for a while, or if you find some radaway slurp that shit down now and then or so help me god i'll use your hide as parchment"
+	},
 /turf/open/floor/f13{
 	color = "#d9c4b9";
 	icon_state = "darkrusty";
@@ -48226,7 +48326,8 @@
 "yih" = (
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Secret"
+	termtag = "Secret";
+	doc_title_1 = "Driving paradise... right into a fucking wall."
 	},
 /obj/structure/table,
 /turf/open/floor/f13{
@@ -71572,7 +71673,7 @@ jqS
 kZn
 szN
 uIi
-jZi
+rYU
 saM
 oLK
 wFM
@@ -83387,7 +83488,7 @@ nQW
 nQW
 nQW
 nQW
-fHN
+rsf
 nQW
 nQW
 nQW
@@ -83644,7 +83745,7 @@ nQW
 nQW
 nQW
 nQW
-nQW
+klx
 jHu
 nQW
 nQW
@@ -88975,7 +89076,7 @@ nQW
 oDB
 nQW
 nqq
-nQW
+niV
 nQW
 nQW
 nQW
@@ -107684,7 +107785,7 @@ tRd
 tRd
 tRd
 tRd
-eWw
+tRd
 tRd
 tRd
 tRd
@@ -107931,14 +108032,14 @@ eWw
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
 tRd
 tRd
 eWw
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -108190,24 +108291,24 @@ tRd
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
 tRd
 tRd
 eWw
 tRd
-tRd
-tRd
-tRd
+eWw
 eWw
 eWw
 tRd
-eWw
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 eWw
@@ -108451,11 +108552,9 @@ tRd
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
 eWw
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -108465,6 +108564,8 @@ tRd
 eWw
 eWw
 eWw
+eWw
+tRd
 tRd
 tRd
 eWw
@@ -108709,19 +108810,19 @@ tRd
 tRd
 tRd
 tRd
-eWw
 tRd
 tRd
 tRd
 tRd
 tRd
 tRd
-eWw
 tRd
 eWw
 tRd
-eWw
 tRd
+tRd
+tRd
+eWw
 tRd
 tRd
 tRd
@@ -108961,24 +109062,24 @@ tRd
 tRd
 tRd
 tRd
+eWw
 tRd
 tRd
 tRd
 tRd
+eWw
+eWw
+tRd
+tRd
+eWw
+tRd
+tRd
+eWw
 tRd
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
 tRd
 tRd
 tRd
@@ -109222,20 +109323,20 @@ tRd
 eWw
 tRd
 tRd
+tRd
+eWw
+tRd
 eWw
 tRd
 eWw
 tRd
 tRd
+eWw
+eWw
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
 tRd
 tRd
 tRd
@@ -109479,19 +109580,19 @@ eWw
 tRd
 tRd
 tRd
+eWw
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
+eWw
 eWw
 tRd
 tRd
 tRd
 tRd
 tRd
-tRd
+eWw
+eWw
+eWw
 tRd
 tRd
 tRd
@@ -109735,20 +109836,20 @@ tRd
 tRd
 tRd
 tRd
-eWw
 tRd
 tRd
 tRd
 tRd
 tRd
-eWw
-eWw
 tRd
-eWw
 tRd
-eWw
-eWw
-eWw
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -109987,7 +110088,7 @@ eWw
 tRd
 tRd
 tRd
-tRd
+eWw
 tRd
 tRd
 tRd
@@ -109996,12 +110097,12 @@ tRd
 tRd
 tRd
 tRd
-eWw
-eWw
 tRd
 tRd
-eWw
-eWw
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -110244,19 +110345,11 @@ tRd
 eWw
 tRd
 tRd
-tRd
-tRd
 eWw
 tRd
 tRd
 eWw
 eWw
-tRd
-eWw
-eWw
-eWw
-tRd
-tRd
 tRd
 tRd
 tRd
@@ -110265,8 +110358,16 @@ tRd
 tRd
 tRd
 eWw
+tRd
+tRd
+tRd
 eWw
 eWw
+eWw
+eWw
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -110501,18 +110602,10 @@ tRd
 eWw
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
 tRd
 eWw
 tRd
-tRd
-tRd
-eWw
 eWw
 tRd
 tRd
@@ -110520,10 +110613,18 @@ tRd
 tRd
 tRd
 eWw
-tRd
+eWw
+eWw
 tRd
 tRd
 eWw
+eWw
+tRd
+tRd
+eWw
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -110758,28 +110859,28 @@ eWw
 tRd
 tRd
 tRd
+eWw
+eWw
+tRd
+tRd
+eWw
+tRd
+tRd
+eWw
+eWw
+eWw
+eWw
+tRd
 tRd
 tRd
 tRd
 eWw
 eWw
 eWw
-tRd
-tRd
 eWw
 eWw
 tRd
 tRd
-tRd
-tRd
-eWw
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-eWw
 tRd
 tRd
 tRd
@@ -111022,21 +111123,21 @@ tRd
 tRd
 tRd
 eWw
-tRd
-eWw
-tRd
-eWw
-eWw
-tRd
-tRd
-tRd
-eWw
-eWw
 eWw
 tRd
 tRd
 eWw
-eWw
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -111278,20 +111379,20 @@ tRd
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
+eWw
 eWw
 tRd
 tRd
-eWw
-tRd
-eWw
 tRd
 tRd
-eWw
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 tRd
 tRd
 tRd
@@ -111534,19 +111635,19 @@ tRd
 tRd
 tRd
 tRd
-eWw
-tRd
-tRd
-tRd
-tRd
-tRd
-eWw
 tRd
 tRd
 tRd
 tRd
 eWw
+eWw
+eWw
+eWw
 tRd
+tRd
+tRd
+eWw
+eWw
 eWw
 tRd
 tRd
@@ -111785,24 +111886,24 @@ tRd
 tRd
 tRd
 tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 eWw
 tRd
-tRd
-tRd
-tRd
-tRd
 eWw
 eWw
-tRd
 eWw
-eWw
-tRd
-tRd
-eWw
-tRd
-tRd
-tRd
-tRd
 tRd
 tRd
 tRd
@@ -112041,23 +112142,23 @@ tRd
 tRd
 tRd
 tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 eWw
-eWw
-tRd
-tRd
-tRd
-eWw
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-eWw
-tRd
-tRd
 tRd
 tRd
 tRd
@@ -112298,23 +112399,23 @@ tRd
 tRd
 tRd
 tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 eWw
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-eWw
-tRd
 tRd
 tRd
 tRd
@@ -112564,7 +112665,7 @@ tRd
 tRd
 tRd
 tRd
-eWw
+tRd
 tRd
 tRd
 tRd
@@ -112825,8 +112926,8 @@ tRd
 tRd
 tRd
 tRd
-tRd
-tRd
+eWw
+eWw
 tRd
 tRd
 tRd
@@ -113077,19 +113178,19 @@ tRd
 tRd
 tRd
 tRd
+tRd
+tRd
+tRd
+tRd
+tRd
+tRd
 eWw
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
+eWw
+eWw
+eWw
+eWw
 tRd
 tRd
 tRd
@@ -113341,10 +113442,10 @@ tRd
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
+eWw
+eWw
 tRd
 tRd
 tRd
@@ -113596,13 +113697,13 @@ tRd
 tRd
 tRd
 tRd
+eWw
+eWw
 tRd
 tRd
 tRd
-tRd
-tRd
-tRd
-tRd
+eWw
+eWw
 tRd
 tRd
 tRd
