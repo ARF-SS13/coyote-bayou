@@ -60,10 +60,6 @@
 	name = "Beehive 2"
 	icon_state = "hair_beehive2"
 
-/datum/sprite_accessory/hair/belle
-	name = "Belle"
-	icon_state = "hair_belle"
-
 /datum/sprite_accessory/hair/bigflattop
 	name = "Big Flat Top"
 	icon_state = "hair_bigflattop"
@@ -112,10 +108,6 @@
 /datum/sprite_accessory/hair/front_braid
 	name = "Braided Front"
 	icon_state = "hair_braidfront"
-
-/datum/sprite_accessory/hair/grandebraid
-	name = "Braid (Grande)"
-	icon_state = "hair_grande"
 
 /datum/sprite_accessory/hair/lowbraid
 	name = "Braid (Low)"
@@ -185,10 +177,6 @@
 /datum/sprite_accessory/hair/coffeehouse
 	name = "Coffee House"
 	icon_state = "hair_coffeehouse"
-
-/datum/sprite_accessory/hair/combover
-	name = "Combover"
-	icon_state = "hair_combover"
 
 /datum/sprite_accessory/hair/cornrows1
 	name = "Cornrows"
@@ -342,6 +330,10 @@
 	name = "Gentle (Alt)"
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "gentle21"
+
+/datum/sprite_accessory/hair/gentlecomb
+	name = "Gentle Comb"
+	icon_state = "hair_gentcomb"
 
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-banged"
@@ -558,6 +550,14 @@
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_pigtails3"
 
+/datum/sprite_accessory/hair/pigtail_cotton
+	name = "Pigtails Cotton"
+	icon_state = "hair_pigtcotton"
+
+/datum/sprite_accessory/hair/pigtail_belle
+	name = "Pigtails Belle"
+	icon_state = "hair_pigtbelle"
+
 /datum/sprite_accessory/hair/pixie
 	name = "Pixie Cut"
 	icon_state = "hair_pixie"
@@ -603,8 +603,16 @@
 	name = "Ponytail Fox"
 	icon_state = "hair_pfox"
 
+/datum/sprite_accessory/hair/ponytail_neat
+	name = "Ponytail Neat"
+	icon_state = "hair_pneat"
+
+/datum/sprite_accessory/hair/ponytail_winter
+	name = "Ponytail Winter"
+	icon_state = "hair_pwinter"
+
 /datum/sprite_accessory/hair/grandeponytail
-	name = "Ponytail (Grande)"
+	name = "Ponytail Grande"
 	icon_state = "hair_grande"
 
 /datum/sprite_accessory/hair/sidetail
@@ -743,6 +751,10 @@
 /datum/sprite_accessory/hair/swept2
 	name = "Swept Back 2"
 	icon_state = "hair_swept2"
+
+/datum/sprite_accessory/hair/tailinari
+	name = "Tail Inari"
+	icon_state = "hair_tailinari"
 
 /datum/sprite_accessory/hair/thinning
 	name = "Thinning"
