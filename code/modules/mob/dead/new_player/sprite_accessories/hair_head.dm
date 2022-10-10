@@ -469,6 +469,10 @@
 	name = "Messy"
 	icon_state = "hair_messy"
 
+/datum/sprite_accessory/hair/messy_skank
+	name = "Messy Skank"
+	icon_state = "hair_mskank"
+
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
 	icon_state = "hair_modern"
@@ -484,6 +488,10 @@
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Mohawk Shave"
 	icon_state = "hair_shavedmohawk"
+
+/datum/sprite_accessory/hair/mohawk_mullet
+	name = "Mohawk-Mullet"
+	icon_state = "hair_mmullet"
 
 /datum/sprite_accessory/hair/mohawk_unshaven
 	name = "Mohawk Tall"
@@ -591,9 +599,13 @@
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_ponytail8"
 
-/datum/sprite_accessory/hair/highponytail
-	name = "Ponytail (High)"
-	icon_state = "hair_highponytail"
+/datum/sprite_accessory/hair/ponytail_fox
+	name = "Ponytail Fox"
+	icon_state = "hair_pfox"
+
+/datum/sprite_accessory/hair/grandeponytail
+	name = "Ponytail (Grande)"
+	icon_state = "hair_grande"
 
 /datum/sprite_accessory/hair/sidetail
 	name = "Ponytail Side"
