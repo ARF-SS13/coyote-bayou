@@ -25,11 +25,6 @@
 					/obj/item/reagent_containers/glass/bottle/morphine = 4,
 					/obj/item/reagent_containers/glass/bottle/toxin = 3,
 					/obj/item/reagent_containers/syringe/antiviral = 6,
-					/obj/item/storage/hypospraykit/fire = 2,
-					/obj/item/storage/hypospraykit/toxin = 2,
-					/obj/item/storage/hypospraykit/o2 = 2,
-					/obj/item/storage/hypospraykit/brute = 2,
-					/obj/item/reagent_containers/glass/bottle/vial/small = 5,
 					/obj/item/storage/briefcase/medical = 2,
 					/obj/item/stack/sticky_tape/surgical = 3,
 					/obj/item/healthanalyzer/wound = 4,
@@ -54,7 +49,7 @@
 	armor = ARMOR_VALUE_HEAVY
 	resistance_flags = FIRE_PROOF
 	refill_canister = /obj/item/vending_refill/medical
-	default_price = PRICE_ALMOST_CHEAP
+	default_price = PRICE_ABOVE_NORMAL
 	extra_price = PRICE_ABOVE_NORMAL
 	payment_department = ACCOUNT_MED
 	cost_multiplier_per_dept = list(ACCOUNT_MED = 0)
@@ -100,7 +95,6 @@
 					/obj/item/storage/pill_bottle/chem_tin/radx = 2,
 					/obj/item/reagent_containers/hypospray/medipen/stimpak/epipak = 3,
 					/obj/item/storage/belt/medical = 3,
-					/obj/item/wrench/medical = 1,
 					/obj/item/storage/belt/medolier = 2)
 	force_free = TRUE
 
@@ -170,5 +164,5 @@
 					/obj/item/reagent_containers/glass/bottle/toxin = 3,
 					/obj/item/reagent_containers/glass/bottle/methamphetamine = 1,
 					/obj/item/reagent_containers/glass/bottle/crank = 1)
-	default_price = PRICE_FREE
-	custom_premium_price = PRICE_ALMOST_EXPENSIVE
+	default_price = PRICE_ALMOST_CHEAP
+	extra_price = PRICE_ALMOST_EXPENSIVE

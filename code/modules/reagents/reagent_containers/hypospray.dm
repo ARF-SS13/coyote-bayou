@@ -13,6 +13,7 @@
 	resistance_flags = ACID_PROOF
 	reagent_flags = OPENCONTAINER
 	slot_flags = ITEM_SLOT_BELT
+	custom_price = PRICE_ABOVE_EXPENSIVE
 	var/ignore_flags = 0
 	var/infinite = FALSE
 
