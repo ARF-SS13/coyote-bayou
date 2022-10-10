@@ -2,18 +2,13 @@
 technically mad shitcode for rn
 plan is to ultimately have it pull from cargo export datum for how valuable stuff is
 
-/obj/structure/fence/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/wirecutters))
-if(do_after(user, 20, target = src))
-
 https://discord.com/channels/986779026205073408/999170698029305946/1028944558928703488
 */
 
 
-GLOBAL_LIST_INIT(sacredwellitems_low, list(typecacheof(/obj/item/gun/energy/laser)))
+GLOBAL_LIST_INIT(sacredwellitems_low, typecacheof(/obj/item/gun/energy/laser))
 
-GLOBAL_LIST_INIT(sacredwellitems_mid, list(typecacheof(
-														/obj/item/gun/energy/laser/scatter)))
+GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/scatter))
 
 /obj/structure/sacredwell
 	name = "sacredwell"
