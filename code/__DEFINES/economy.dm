@@ -41,7 +41,7 @@
 #define PRICE_REALLY_CHEAP		5    // low end ammo.
 #define PRICE_PRETTY_CHEAP		8    // -
 #define PRICE_CHEAP				10   //  Normal ammo?
-#define PRICE_ALMOST_CHEAP		15   // cosmetic clothing
+#define PRICE_ALMOST_CHEAP		15   // cosmetic clothing, discounted healing items.
 #define PRICE_BELOW_NORMAL		17   // -
 #define PRICE_NORMAL			20   // Useful clothing.
 #define PRICE_ABOVE_NORMAL		25   // low end healing items
