@@ -271,27 +271,27 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 /// How much burn damage is multiplied for bandage damage calcs
 #define BANDAGE_BURN_MULT 3 // its very flammable
 
-/// Bandage base heal over time
-#define BANDAGE_HEAL_OVER_TIME_BASE 60
+/// Bandage base heal per tick
+#define BANDAGE_HEAL_OVER_TIME_BASE 0.1
 
 /// Bandage heal over time for improvised bandages
 #define BANDAGE_IMPROVISED_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 0.5)
 /// Bandage heal over time for normal bandages
 #define BANDAGE_NORMAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 1)
 /// Bandage heal over time for PRO bandages
-#define BANDAGE_MEDICAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 2.5)
+#define BANDAGE_MEDICAL_HEAL_OVER_TIME (BANDAGE_HEAL_OVER_TIME_BASE * 2)
 
 /// Bandage heal rate
-#define BANDAGE_HEAL_RATE_BASE 0.005 // 0.3 brute/tick
+//#define BANDAGE_HEAL_RATE_BASE 0.005 // 0.3 brute/tick
 /// Bandage heal rate for improvised bandages
-#define BANDAGE_IMPROVISED_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 0.5)
+//#define BANDAGE_IMPROVISED_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 0.5)
 /// Bandage heal rate for normal bandages
-#define BANDAGE_NORMAL_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 1)
+//#define BANDAGE_NORMAL_HEAL_RATE (BANDAGE_IMPROVISED_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 1)
 /// Bandage heal rate for PRO bandages
-#define BANDAGE_MEDICAL_HEAL_RATE (BANDAGE_MEDICAL_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 2)
+//#define BANDAGE_MEDICAL_HEAL_RATE (BANDAGE_MEDICAL_HEAL_OVER_TIME * BANDAGE_HEAL_RATE_BASE * 2)
 
 /// Suture base heal over time
-#define SUTURE_HEAL_OVER_TIME_BASE 40
+#define SUTURE_HEAL_OVER_TIME_BASE 0.2
 
 /// Suture heal over time for improvised sutures
 #define SUTURE_IMPROVISED_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 0.5)
@@ -301,13 +301,13 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_MEDICAL_HEAL_OVER_TIME (SUTURE_HEAL_OVER_TIME_BASE * 2)
 
 /// Suture heal rate
-#define SUTURE_HEAL_RATE_BASE 0.01 // 0.4 brute/tick
+//#define SUTURE_HEAL_RATE_BASE 0.01 // 0.4 brute/tick
 /// Suture heal rate for improvised sutures
-#define SUTURE_IMPROVISED_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 0.5)
+//#define SUTURE_IMPROVISED_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 0.5)
 /// Suture heal rate for normal sutures
-#define SUTURE_NORMAL_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 1)
+//#define SUTURE_NORMAL_HEAL_RATE (SUTURE_IMPROVISED_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 1)
 /// Suture heal rate for PRO sutures
-#define SUTURE_MEDICAL_HEAL_RATE (SUTURE_MEDICAL_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 2)
+//#define SUTURE_MEDICAL_HEAL_RATE (SUTURE_MEDICAL_HEAL_OVER_TIME * SUTURE_HEAL_RATE_BASE * 2)
 
 /// Damage required to damage a suture by 1 point, enough to destroy improv sutures
 #define SUTURE_DAMAGE_THRESHOLD_LOW 1
@@ -350,6 +350,15 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define WOUND_HEAL_FED 1
 /// Nutrition spent for being hungie
 #define WOUND_HEAL_HUNGRY 1
+
+/// Nutrition cost for one unit of wound healing
+#define DAMAGE_HEAL_NUTRITION_COST 2 // 2 nutrition = 1 burn+brute heal, 200 nutrition = 100 damage heal
+/// Nutrition spent for being well fed
+#define DAMAGE_HEAL_FULL 3 // Eat a lot for quicker health regen!
+/// Nutrition spent for being not hungry
+#define DAMAGE_HEAL_FED 2
+/// Nutrition spent for being hungie
+#define DAMAGE_HEAL_HUNGRY 1
 
 /// looking for a suture
 #define COVERING_SUTURE "suture"

@@ -182,14 +182,6 @@
 		if(check_zone(organ_check.zone) == body_zone)
 			. += organ_check
 
-/obj/item/bodypart/proc/consider_processing()
-	if(stamina_dam > DAMAGE_PRECISION)
-		. = TRUE
-	//else if.. else if.. so on.
-	else
-		. = FALSE
-	needs_processing = .
-
 //Return TRUE to get whatever mob this is in to update health.
 /obj/item/bodypart/proc/on_life()
 	if(current_gauze)
@@ -316,7 +308,6 @@
 		owner.updatehealth()
 		if(stamina > DAMAGE_PRECISION)
 			owner.update_stamina()
-	consider_processing()
 	update_disabled()
 	return update_bodypart_damage_state()
 
@@ -531,7 +522,6 @@
 			bloody.handle_damage(FALSE, FALSE, healing = TRUE)
 	if(owner && updating_health)
 		owner.updatehealth()
-	consider_processing()
 	update_disabled()
 	return update_bodypart_damage_state()
 
@@ -1008,6 +998,7 @@
 			span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."), 
 			span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
 		QDEL_NULL(current_suture)
+	needs_processing = FALSE
 
 /obj/item/bodypart/proc/get_bleed_rate(include_reductions = TRUE)
 	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
@@ -1068,7 +1059,7 @@
 		if(!just_check)
 			apply_gauze_to_limb(gauze, skill_mult)
 		return BANDAGE_NEW_APPLIED
-	if((gauze.heal_over_time_amount * 0.5) > current_gauze.heal_over_time_amount) // bandage more healing
+	if((gauze.heal_per_tick) > current_gauze.heal_per_tick) // bandage more healing
 		if(!just_check)
 			apply_gauze_to_limb(gauze, skill_mult)
 		return BANDAGE_NEW_APPLIED
@@ -1099,6 +1090,8 @@
 		span_warning("\The [current_gauze] on your [name] become totally soaked, and fall off in a bloody heap."), 
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	QDEL_NULL(current_gauze)
+	if(!current_suture)
+		needs_processing = FALSE
 	return BANDAGE_TIMED_OUT
 
 /**
@@ -1109,13 +1102,13 @@
 		return
 	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
 		return
-	if(current_gauze.heal_over_time_amount > 0)
-		var/heal_amt = current_gauze.heal_over_time_amount < current_gauze.heal_over_time_per_tick ? current_gauze.heal_over_time_amount : current_gauze.heal_over_time_per_tick
-		heal_damage(heal_amt, heal_amt, heal_amt, FALSE, TRUE, TRUE)
-		current_gauze.heal_over_time_amount -= heal_amt
-	else if(!current_gauze.told_owner_its_out_of_juice)
+	var/heal_amt = current_gauze.heal_per_tick
+	var/bleed_healing = current_gauze.bandage_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt)
+
+	/* else if(!current_gauze.told_owner_its_out_of_juice)
 		to_chat(owner, span_warning("You feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
-		current_gauze.told_owner_its_out_of_juice = TRUE
+		current_gauze.told_owner_its_out_of_juice = TRUE */
 
 	/* if(bleed_dam > current_gauze.max_bandage_healing && !current_suture) // Always help the suture if one's there
 		if(COOLDOWN_TIMELEFT(src, bandage_isnt_good_enough))
@@ -1127,8 +1120,6 @@
 			span_notice("You hear a faint drip.")
 		)
 		return */ // to be reworked
-	var/bleed_healing = current_gauze.bandage_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
-	bleed_heal_nutrition(bleed_healing)
 
 /**
  * damage_gauze() simply damages the gauze on the limb, reducing its HP
@@ -1205,7 +1196,7 @@
 		if(!just_check)
 			apply_suture_to_limb(suture, skill_mult)
 		return SUTURE_NEW_APPLIED
-	if((suture.heal_over_time_amount * 0.5) > current_suture.heal_over_time_amount) // suture more healing
+	if((suture.heal_per_tick) > current_suture.heal_per_tick) // suture more healing
 		if(!just_check)
 			apply_suture_to_limb(suture, skill_mult)
 		return SUTURE_NEW_APPLIED
@@ -1237,6 +1228,8 @@
 		span_danger("\The [current_suture] on your [name] fray to the point of breaking!"), 
 		vision_distance=COMBAT_MESSAGE_RANGE)
 	QDEL_NULL(current_suture)
+	if(!current_gauze)
+		needs_processing = FALSE
 	return SUTURE_TIMED_OUT
 
 /**
@@ -1247,16 +1240,9 @@
 		return
 	if(!istype(current_suture, /obj/item/stack/medical/suture))
 		return
-	if(current_suture.heal_over_time_amount > 0)
-		var/heal_amt = current_suture.heal_over_time_amount < current_suture.heal_over_time_per_tick ? current_suture.heal_over_time_amount : current_suture.heal_over_time_per_tick
-		heal_damage(heal_amt, heal_amt, heal_amt, FALSE, TRUE, TRUE)
-		current_suture.heal_over_time_amount -= heal_amt
-	else if(!current_suture.told_owner_its_out_of_juice)
-		to_chat(owner, span_warning("You feel the [current_suture.name] on your [src.name] become stale and no longer heal you."))
-		current_suture.told_owner_its_out_of_juice = TRUE
-
+	var/heal_amt = current_suture.heal_per_tick
 	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
-	bleed_heal_nutrition(bleed_healing)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt)
 
 /**
  * damage_suture() simply damages the suture on the limb, reducing its HP
@@ -1303,33 +1289,44 @@
 	return TRUE
 
 /**
- * bleed_heal_nutrition() takes in an amount of bleed healing to do, 
+ * covering_heal_nutrition_mod() takes in an amount of bleed healing to do, 
  * multiplies it by some nutrition-based numbers,
  * deducts an amount of nutrition
  * and heals an amount of bleed_dam
  *
  * Arguments:
- * * heal_amount - amount to heal bleed_dam, before nutrition modifiers
+ * * bleed_heal - amount to heal bleed_dam, before nutrition modifiers
  */
-/obj/item/bodypart/proc/bleed_heal_nutrition(heal_amount)
-	if(bleed_dam <= 0)
+/obj/item/bodypart/proc/covering_heal_nutrition_mod(bleed_heal, damage_heal)
+	if(!is_damaged())
 		return FALSE // no damage, so dont spend any nutrition
-	// Food based wound healing, spends nutrition to regen blood
-	// Wound healing has a fixed nutrition cost, but being more well fed speeds it up a bit
+	
 	if(!HAS_TRAIT(owner, TRAIT_NOHUNGER) && owner.nutrition > NUTRITION_LEVEL_HUNGRY)
-		var/nutrition_bonus = 0
+		var/bleed_nutrition_bonus = 0
+		var/damage_nutrition_bonus = 0
 		switch(owner.nutrition)
 			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_WELL_FED)
-				nutrition_bonus = WOUND_HEAL_FED
+				bleed_nutrition_bonus = WOUND_HEAL_FED
+				damage_nutrition_bonus = DAMAGE_HEAL_FED
 			if(NUTRITION_LEVEL_WELL_FED to INFINITY)
-				nutrition_bonus = WOUND_HEAL_FULL
+				bleed_nutrition_bonus = WOUND_HEAL_FULL
+				damage_nutrition_bonus = DAMAGE_HEAL_FULL
+		
 		if(owner.satiety > 40) // idk how satiety works, it might not come to think of it
-			nutrition_bonus *= 1.25
-		/// Eat well for much faster wound healing, starving makes it a lot slower
-		heal_amount *= nutrition_bonus
-		owner.adjust_nutrition(-(nutrition_bonus * WOUND_HEAL_NUTRITION_COST))
-	heal_amount = round(max(heal_amount, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
-	heal_damage(0, 0, 0, FALSE, TRUE, TRUE, heal_amount)
+			bleed_nutrition_bonus *= 1.25
+			damage_nutrition_bonus *= 1.25
+		
+		if(bleed_heal && bleed_nutrition_bonus && bleed_dam)
+			bleed_heal *= bleed_nutrition_bonus
+			owner.adjust_nutrition(-(bleed_heal * WOUND_HEAL_NUTRITION_COST)) // Only charge for the extra
+			bleed_heal = round(max(bleed_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
+		
+		if(damage_heal && damage_nutrition_bonus && (brute_dam || burn_dam))
+			damage_heal *= damage_nutrition_bonus
+			owner.adjust_nutrition(-(damage_heal * DAMAGE_HEAL_NUTRITION_COST))
+			damage_heal = round(max(damage_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
+	
+	heal_damage(damage_heal, damage_heal, damage_heal, FALSE, TRUE, TRUE, bleed_heal)
 
 /**
  * get_covering_timeleft() returns how much time's left in the bandage/suture

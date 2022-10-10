@@ -67,9 +67,9 @@
 	/// How long this bandage should last on someone before falling apart
 	var/covering_lifespan = BANDAGE_OKAY_MAX_DURATION
 	/// How much this covering will heal over its healing time
-	var/heal_over_time_amount
+	var/heal_per_tick
 	/// How much of the healing should be applied per cycle
-	var/heal_over_time_per_tick
+	//var/heal_over_time_per_tick // unused, pending rework
 	/// Told our wearer that we're out of healstuffs
 	var/told_owner_its_out_of_juice = FALSE
 
@@ -390,8 +390,8 @@
 	covering_hitpoints = 3
 	heal_brute = 0
 	heal_burn = 0
-	heal_over_time_amount = BANDAGE_NORMAL_HEAL_OVER_TIME
-	heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
+	heal_per_tick = BANDAGE_NORMAL_HEAL_OVER_TIME
+	//heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
 	bandage_power = BANDAGE_GOOD_WOUND_CLOSURE
 	max_bandage_healing = BANDAGE_GOOD_WOUND_MAX
 	self_delay = 30
@@ -400,7 +400,6 @@
 	max_amount = 10
 	is_bandage = TRUE
 	covering_lifespan = BANDAGE_OKAY_MAX_DURATION
-	repeating = FALSE // typically need one bandage
 	//absorption_rate = 0.45
 	//absorption_capacity = 10
 	//is_bandage = 3
@@ -442,8 +441,8 @@
 	covering_hitpoints = 1 // fragile!
 	heal_brute = 0
 	heal_burn = 0
-	heal_over_time_amount = BANDAGE_IMPROVISED_HEAL_OVER_TIME
-	heal_over_time_per_tick = BANDAGE_IMPROVISED_HEAL_RATE
+	heal_per_tick = BANDAGE_IMPROVISED_HEAL_OVER_TIME
+	//heal_over_time_per_tick = BANDAGE_IMPROVISED_HEAL_RATE
 	self_delay = 30
 	other_delay = 10
 	bandage_power = BANDAGE_BASE_WOUND_CLOSURE
@@ -468,8 +467,8 @@
 	heal_brute = 0
 	self_delay = 10
 	other_delay = 10
-	heal_over_time_amount = BANDAGE_MEDICAL_HEAL_OVER_TIME
-	heal_over_time_per_tick = BANDAGE_MEDICAL_HEAL_RATE
+	heal_per_tick = BANDAGE_MEDICAL_HEAL_OVER_TIME
+	//heal_over_time_per_tick = BANDAGE_MEDICAL_HEAL_RATE
 	bandage_power = BANDAGE_BEST_WOUND_CLOSURE
 	max_bandage_healing = BANDAGE_BEST_WOUND_MAX
 	is_bandage = TRUE
@@ -515,11 +514,10 @@
 	amount = 15
 	max_amount = 15
 	hurt_brute = 3
-	heal_over_time_amount = SUTURE_NORMAL_HEAL_OVER_TIME
-	heal_over_time_per_tick = SUTURE_NORMAL_HEAL_RATE
+	heal_per_tick = SUTURE_NORMAL_HEAL_OVER_TIME
+	//heal_over_time_per_tick = SUTURE_NORMAL_HEAL_RATE
 	suture_power = SUTURE_GOOD_WOUND_CLOSURE
 	covering_lifespan = SUTURE_OKAY_MAX_DURATION
-	repeating = FALSE // One's enough
 	is_suture = TRUE
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
 	merge_type = /obj/item/stack/medical/suture
@@ -543,8 +541,8 @@
 	other_delay = 80
 	amount = 5
 	max_amount = 15
-	heal_over_time_amount = SUTURE_IMPROVISED_HEAL_OVER_TIME
-	heal_over_time_per_tick = SUTURE_IMPROVISED_HEAL_RATE
+	heal_per_tick = SUTURE_IMPROVISED_HEAL_OVER_TIME
+	//heal_over_time_per_tick = SUTURE_IMPROVISED_HEAL_RATE
 	covering_lifespan = SUTURE_POOR_MAX_DURATION
 	suture_power = SUTURE_BASE_WOUND_CLOSURE
 	is_suture = TRUE
@@ -571,8 +569,8 @@
 	other_delay = 60
 	heal_brute = 3
 	heal_burn = 3
-	heal_over_time_amount = SUTURE_MEDICAL_HEAL_OVER_TIME
-	heal_over_time_per_tick = SUTURE_MEDICAL_HEAL_RATE
+	heal_per_tick = SUTURE_MEDICAL_HEAL_OVER_TIME
+	//heal_over_time_per_tick = SUTURE_MEDICAL_HEAL_RATE
 	covering_lifespan = SUTURE_GOOD_MAX_DURATION
 	suture_power = SUTURE_GOOD_WOUND_CLOSURE
 	is_suture = TRUE
