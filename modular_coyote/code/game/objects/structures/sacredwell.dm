@@ -12,7 +12,7 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/sc
 	name = "sacredwell"
 	desc = "Toss yo shit in here, young'n."
 	var/sacredmeter = 0
-	var/sacredmeter_max = 800
+	var/sacredmeter_max = 800 //how much charge it needs before it does the thing
 	var/cooling = 0
 
 
@@ -43,23 +43,16 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/sc
 
 /obj/structure/sacredwell/proc/update_meter()
 
-	if(src.sacredmeter <= 800)
+	if(src.sacredmeter < src.sacredmeter_max)
 		visible_message(span_notice("The well flares!"))
 		playsound(src, 'sound/mecha/mech_shield_drop.ogg', 80, 0, -1)
 		desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of 800 charge."
 		return
 
-	else if(src.sacredmeter == 800) //for some reason hitting just on the number needs an if statement, NO idea why lm,ao.
-		visible_message(span_notice("The well thrums with energy!"))
-		sacredmeter = 0
-		playsound(src, 'sound/mecha/mech_shield_raise.ogg', 80, 0, -1)
-		dontspam()
-		return
 
-
-	else if(src.sacredmeter >= 800)
+	else if(src.sacredmeter >= src.sacredmeter_max)
 		visible_message(span_notice("The well thrums with energy!"))
-		sacredmeter = 0
+		sacredmeter -= src.sacredmetermax
 		playsound(src, 'sound/mecha/mech_shield_raise.ogg', 80, 0, -1)
 		dontspam()
 		return
@@ -69,9 +62,9 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser/sc
 
 /obj/structure/sacredwell/proc/dontspam()
 
-	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of 800 charge.<br><span class='notice'>It is currently cooling down.</span>"
+	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge.<br><span class='notice'>It is currently cooling down.</span>"
 	cooling = 1
 	sleep(1000)
 	cooling = 0
-	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of 800 charge.<br>"
+	desc = "Toss yo shit in here, young'n. Has [sacredmeter] out of [sacredmeter_max] charge.<br>"
 	return
