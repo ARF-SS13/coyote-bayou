@@ -32,25 +32,37 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 /obj/effect/spawner/lootdrop/f13/sacredwell
 	lootcount = 1
 	lootdoubles = FALSE
-	loot = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
-
+	loot = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
+				/obj/item/gun/energy/laser/pistol/sacred,
+				/obj/item/gun/energy/laser/wattz/sacred,
+				/obj/item/gun/energy/laser/wattz2k/extended/blessed)
 
 // sacred items
 
 /obj/item/gun/energy/laser/pistol/sacred
 	name = "Blessed AEP7"
-	desc = "Scorch the darkness of the Old World away. It is wrapped in ropes and braids, and has beads attached to it. A broken multicolored crystal at the front sends two weak beams skewing outwards to scorch."
-	icon_state = "bAEP7"
+	desc = "Scorch the darkness of the Old World away. It is wrapped in ropes and braids, and has beads attached to it. A broken multicolored crystal at the front sends two weak beams skewing outwards. A rainbow matched in its beauty only by its terror."
+	icon_state = "bleAEP7"
+	fire_delay = GUN_FIRE_DELAY_FAST
 
-	burst_size = 2
+// normal but fancy sprite
+/obj/item/gun/energy/laser/wattz/sacred
+	name = "Blessed Wattz 1000"
+	desc = "A hilt long worn-off made of bone, molded for the hand of those who respect the weapon it carries. A complex tapestry of peoples used this weapon, carving their stories into the grip. Life is written on death. And so the cycle goes."
+	icon_state = "bwattz1000"
 
 
-
-
-
-
-
-
+// sniper, infinite ammo, slow firing, lower dmg than usual
+/obj/item/gun/energy/laser/wattz2k/extended/blessed
+	name = "Blessed Wattz 2000e"
+	desc = "What an ancient weapon, decorated in the highest and greatest honors one can give. Skulls, rags, cloth- and yet the purpose does not change. The act of killing is changed by its implements, not appearance. And implements this weapon has aplenty. The well never seems to run dry."
+	selfcharge = 1
+	can_remove = 0
+	can_charge = 0
+	can_scope = FALSE
+	icon_state = "bwattz2k_ext"
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	charge_cost_multiplier = 1.5
 
 
 
@@ -73,7 +85,7 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 	icon_state = "wellwheel-filling"
 
 /obj/structure/sacredwell/attackby(obj/item/W, mob/user)
-	icon_state = "wellwheel-filling" //this makes the animation play. this is technically the most elegant way to do this. lmao
+
 	if(src.cooling <= 0)
 
 		if(W.type in GLOB.sacredwellitems_high)
