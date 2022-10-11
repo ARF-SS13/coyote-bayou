@@ -871,7 +871,8 @@
 				/obj/effect/spawner/bundle/f13/ninemil = 1,
 				/obj/effect/spawner/bundle/f13/widowmaker = 2,
 				/obj/effect/spawner/bundle/f13/sig = 4,
-				/obj/effect/spawner/bundle/f13/varmint = 2
+				/obj/effect/spawner/bundle/f13/varmint = 2,
+				/obj/item/stealthboy = 1
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid
