@@ -898,6 +898,7 @@ Raider
 		/obj/item/clothing/mask/balaclava = 1,
 		/obj/item/clothing/shoes/f13/diesel = 1,
 		/obj/item/clothing/gloves/thief = 1,
+		/obj/item/stealthboy = 1,
 		)
 /datum/outfit/loadout/trafficker // https://youtu.be/9jROV2H9Sw0
 	name = "Trafficker"
