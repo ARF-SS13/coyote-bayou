@@ -590,6 +590,17 @@
 // U
 // V
 // W
+
+/datum/gear/donator/kits/wrongendoftherainbow
+	name = "Slave Equipment"
+	path = /obj/item/storage/box/large/custom_kit/wrongendoftherainbow
+	ckeywhitelist = list("wrongendoftherainbow")
+
+/obj/item/storage/box/large/custom_kit/wrongendoftherainbow/PopulateContents()
+	new /obj/item/electropack/shockcollar/shimsusa_shackles(src)
+	new /obj/item/clothing/under/f13/exile/tribal/shimsusa_loincloth(src)
+	new /obj/item/storage/bag/plants(src)
+
 // X
 // Y
 
