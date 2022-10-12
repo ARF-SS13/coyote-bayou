@@ -605,10 +605,10 @@
 /obj/item/storage/belt/sabre/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.knifebelt_allowed
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = 4
+	STR.can_hold = typecacheof(fitting_swords)
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -685,6 +685,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
+	STR.max_volume = 7
 	STR.can_hold = typecacheof(fitting_swords)
 	STR.quickdraw = TRUE
 
