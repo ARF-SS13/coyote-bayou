@@ -20,9 +20,11 @@ GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/stock_pa
 
 GLOBAL_LIST_INIT(sacredwellitems_low, typecacheof(list(/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo,
+	/obj/item/gun/ballistic
 	)))
 
-GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(	/obj/item/gun/energy/laser))
+GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(list(/obj/item/gun/energy/laser,
+	/obj/item/advanced_crafting_components)))
 
 GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/plasma))
 
@@ -33,17 +35,28 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 	lootcount = 1
 	lootdoubles = FALSE
 	loot = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
-				/obj/item/gun/energy/laser/pistol/sacred,
+				/obj/item/gun/energy/laser/wattz/sacredpistol,
 				/obj/item/gun/energy/laser/wattz/sacred,
 				/obj/item/gun/energy/laser/wattz2k/extended/blessed)
 
 // sacred items
 
-/obj/item/gun/energy/laser/pistol/sacred
-	name = "Blessed AEP7"
+/obj/item/gun/energy/laser/wattz/sacredpistol
+	name = "Blessed AEP"
 	desc = "Scorch the darkness of the Old World away. It is wrapped in ropes and braids, and has beads attached to it. A broken multicolored crystal at the front sends two weak beams skewing outwards. A rainbow matched in its beauty only by its terror."
 	icon_state = "bleAEP7"
-	fire_delay = GUN_FIRE_DELAY_FAST
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan)
+	damage_multiplier = GUN_LESS_DAMAGE_T4 //still ends up doing more at pb
+	charge_cost_multiplier = 1.5
+	burst_size = 1
 
 // normal but fancy sprite
 /obj/item/gun/energy/laser/wattz/sacred
@@ -64,7 +77,11 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	charge_cost_multiplier = 1.5
 
-
+/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/sacred
+	name = "Blessed Auto 5"
+	desc = "A foregrip hides an internal tube beneath a sawed chrome barrel. Every shot screams an ode of violence and carbonized powder to the wind. The spread is wide, but harsh."
+	icon_state = "sacredshotty"
+	slowdown = GUN_SLOWDOWN_SHOTGUN_FIXED
 
 
 
@@ -108,7 +125,7 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 
 		else if(W.type in GLOB.sacredwellitems_components)
 			qdel(W)
-			sacredmeter += 100
+			sacredmeter += 25
 			update_meter()
 			return
 
