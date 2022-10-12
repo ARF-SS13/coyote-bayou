@@ -66,3 +66,22 @@
 		icon_state = "kemblecoat_green"
 		item_state = "kemblecoat_green"
 		to_chat(user, "You reverse the coat to show the green side.")
+
+// Shimsusa's gear.
+/obj/item/electropack/shockcollar/shimsusa_shackles
+	name = "slave collar with shackles"
+	desc = "A reinforced metal slave collar, with shock prongs on the inside. Reinforced metal shackles are linked to the collar with heavy chains, limiting movement."
+	icon = 'icons/fallout/clothing/custom/custom.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
+	icon_state = "shimsusa_slavecollar"
+	item_state = "shimsusa_slavecollar"
+	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_GLOBAL_MULT
+	strip_delay = 180
+
+/obj/item/clothing/under/f13/exile/tribal/shimsusa_loincloth
+	name = "skimpy disheveled loincloth"
+	desc = "A patchy and disheveled leather loincloth that seems to have suffered some ripping. Multiple portions are missing, making it overall far skimpier than usual."
+	icon = 'icons/fallout/clothing/custom/custom.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/custom/custom.dmi'
+	icon_state = "shimsusa_loincloth"
+	item_state = "shimsusa_loincloth"
