@@ -197,7 +197,7 @@ datum/crafting_recipe/steelbib/heavy
 
 /datum/crafting_recipe/bosoutcastlight
 	name = "knight armor"
-	result = /obj/item/clothing/suit/armor/medium/combat/brotherhood/light
+	result = /obj/item/clothing/suit/armor/light/duster/bos/outcast
 	reqs = list(/obj/item/stack/sheet/leather = 3,
 				/obj/item/weaponcrafting/string = 2,
 				/obj/item/stack/crafting/metalparts = 5)

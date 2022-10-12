@@ -1037,7 +1037,7 @@ Initiate
 /datum/outfit/loadout/initiatek
 	name = "Knight-Aspirant"
 	belt = 			/obj/item/storage/belt/utility
-	suit = 			/obj/item/clothing/suit/armor/medium/combat/brotherhood/light
+	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/outcast
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
 		/obj/item/gun/energy/laser/wattz=1,
