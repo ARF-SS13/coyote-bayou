@@ -123,7 +123,9 @@ Administrator
 /datum/outfit/loadout/research_specialist
 	name =	"Research Specialist"
 	backpack_contents = list(
-		/obj/item/circuitboard/machine/ore_redemption = 1,
+		/obj/item/disk/medical/defib_heal = 1,
+		/obj/item/disk/medical/defib_shock = 1,
+		/obj/item/disk/medical/defib_speed = 1,
 		/obj/item/blueprint/research = 1,
 	)
 
