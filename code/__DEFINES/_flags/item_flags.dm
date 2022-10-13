@@ -28,6 +28,8 @@
 #define ITEM_CAN_PARRY						(1<<13)
 /// This item can be used in the directional blocking system. Only a basic check used to determine if we should proceed with directional block handling at all.
 #define ITEM_CAN_BLOCK						(1<<14)
+/// Thing is just your hand, and shouldnt block anything
+#define HAND_ITEM							(1<<15)
 
 // Flags for the clothing_flags var on /obj/item/clothing
 

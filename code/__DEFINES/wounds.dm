@@ -138,6 +138,8 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 /// Multiplier for all wounds to slow down bleeding by if they're lying down
 #define WOUND_BLEED_LYING_DOWN_MULTIPLIER 0.50
 
+/// Max time cat spit will stay on someone before falling off
+#define LICK_MAX_DURATION 5 MINUTES
 /// Max time an improvised bandage will stay on someone before falling off
 #define BANDAGE_POOR_MAX_DURATION 10 MINUTES
 /// Max time a normal bandage will stay on someone before falling off
@@ -173,6 +175,9 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 
 /// Multiplier for bleeding if the wound has enough bandaging on it
 #define WOUND_BLEED_BANDAGE_MULTIPLIER 0.05
+
+/// Multiplier for bleeding if the wound has a lick on it
+#define WOUND_BLEED_LICK_MULTIPLIER 0.35
 
 /// Multiplier for bleeding if the wound has enough sutures on it
 #define WOUND_BLEED_SUTURE_MULTIPLIER 0 // no blood!
@@ -319,7 +324,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_BURN_MULT 5 // its very flammable
 
 /// Base amount sutures assist wound closure
-#define SUTURE_BASE_WOUND_CLOSURE 0.80
+#define SUTURE_BASE_WOUND_CLOSURE 0.40
 /// Amount normal sutures close wounds
 #define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier sutures close wounds
@@ -331,6 +336,9 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_GOOD_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier bandages close wounds
 #define BANDAGE_BEST_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 3)
+
+/// Base amount cat spit assist wound closure
+#define LICK_BASE_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 0.20)
 
 /// max amount of bleed_dam that bandages are able to fix
 #define BANDAGE_BASE_WOUND_MAX (WOUND_BLEED_MODERATE_THRESHOLD)

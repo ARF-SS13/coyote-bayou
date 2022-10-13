@@ -1103,7 +1103,7 @@
 	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
 		return
 	var/heal_amt = current_gauze.heal_per_tick
-	var/bleed_healing = current_gauze.bandage_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	var/bleed_healing = current_gauze.bandage_power * (istype(current_suture) ? SUTURE_AND_BANDAGE_BONUS : 1)
 	covering_heal_nutrition_mod(bleed_healing, heal_amt)
 
 	/* else if(!current_gauze.told_owner_its_out_of_juice)

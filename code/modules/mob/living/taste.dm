@@ -15,11 +15,11 @@
 		. = 101 // can't taste anything without a tongue
 
 // non destructively tastes a reagent container
-/mob/living/proc/taste(datum/reagents/from)
+/mob/living/proc/taste(datum/reagents/from, atom/thing_licked)
 	if(last_taste_time + 50 > world.time)
 		return FALSE
 	var/taste_sensitivity = get_taste_sensitivity()
-	var/text_output = from.generate_taste_message(taste_sensitivity)
+	var/text_output = generate_taste_message(taste_sensitivity, thing_licked, from)
 	// We dont want to spam the same message over and over again at the
 	// person. Give it a bit of a buffer.
 	if(hallucination > 50 && prob(25))
@@ -44,12 +44,14 @@
 	.=..()
 	if(!.)
 		return
+	if(!istype(from))
+		return
 	if ((from.pH > 12.5) || (from.pH < 1.5))
 		T.applyOrganDamage(5)
 		to_chat(src, span_warning("You taste chemical burns!"))
 	if(istype(T, /obj/item/organ/tongue/cybernetic))
 		to_chat(src, span_notice("Your tongue moves on it's own in response to the liquid."))
-		say("The pH is appropriately [round(from.pH, 1)].")
+		say("The pH is approximately [round(from.pH, 1)].")
 		return
 	if (!HAS_TRAIT(src, TRAIT_AGEUSIA)) //I'll let you get away with not having 1 damage.
 		switch(from.pH)
@@ -61,5 +63,58 @@
 				to_chat(src, span_notice("You taste a sort of acid tone in the mixture."))
 			if(1.5 to 2.5)
 				to_chat(src, span_warning("You taste a strong acidic flavour!"))
+
+/proc/generate_taste_message(minimum_percent=15, atom/thing_tasted, datum/reagents/reagent_thing)
+	// the lower the minimum percent, the more sensitive the message is.
+	var/list/out = list()
+	var/list/flavors = list() //descriptor = strength
+	if(thing_tasted)
+		if(!islist(thing_tasted.tastes))
+			flavors = list("[thing_tasted.tastes]" = 1)
+		else
+			flavors = thing_tasted.tastes
+	var/datum/reagents/reagents_in = reagent_thing
+	if(minimum_percent <= 100)
+		if(reagents_in)
+			for(var/datum/reagent/R in reagents_in.reagent_list)
+				if(!R.taste_mult)
+					continue
+
+				if(istype(R, /datum/reagent/consumable/nutriment))
+					var/list/taste_data = R.data
+					for(var/taste in taste_data)
+						var/ratio = taste_data[taste]
+						var/amount = ratio * R.taste_mult * R.volume
+						if(taste in flavors)
+							flavors[taste] += amount
+						else
+							flavors[taste] = amount
+				else
+					var/taste_desc = R.taste_description
+					var/taste_amount = R.volume * R.taste_mult
+					if(taste_desc in flavors)
+						flavors[taste_desc] += taste_amount
+					else
+						flavors[taste_desc] = taste_amount
+		//deal with percentages
+		// TODO it would be great if we could sort these from strong to weak
+		var/total_taste = counterlist_sum(flavors)
+		if(total_taste > 0)
+			for(var/taste_desc in flavors)
+				var/percent = flavors[taste_desc]/total_taste * 100
+				if(percent < minimum_percent)
+					continue
+				var/intensity_desc = "a hint of"
+				if(ISINRANGE(percent, minimum_percent * 2, minimum_percent * 3)|| percent == 100)
+					intensity_desc = ""
+				else if(percent > minimum_percent * 3)
+					intensity_desc = "the strong flavor of"
+				if(intensity_desc != "")
+					out += "[intensity_desc] [taste_desc]"
+				else
+					out += "[taste_desc]"
+
+	return english_list(out, "something indescribable")
+
 
 #undef DEFAULT_TASTE_SENSITIVITY

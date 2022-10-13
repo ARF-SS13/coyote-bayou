@@ -56,6 +56,8 @@
 	var/suture_power
 	/// How much of an effect does the bandage have on wound healing?
 	var/bandage_power
+	/// How much of an effect does the bandage have on slowing bloodloss?
+	var/bandage_staunch
 	/// Bandages will only help with wounds under this amount of bleed_dam on a limb
 	var/max_bandage_healing
 	/// How much sanitization to apply to burns on application
@@ -393,6 +395,7 @@
 	heal_per_tick = BANDAGE_NORMAL_HEAL_OVER_TIME
 	//heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
 	bandage_power = BANDAGE_GOOD_WOUND_CLOSURE
+	bandage_staunch = WOUND_BLEED_BANDAGE_MULTIPLIER
 	max_bandage_healing = BANDAGE_GOOD_WOUND_MAX
 	self_delay = 30
 	other_delay = 10
@@ -486,6 +489,31 @@
 	is_cyborg = 1
 	cost = 250
 	merge_type = /obj/item/stack/medical/gauze/cyborg
+
+/// ...
+/obj/item/stack/medical/gauze/lick
+	name = "coagulating saliva"
+	desc = "A fresh coating of somehow medicinal saliva, good for slowing the blood flow on a wound. Not the best of treatments, but somehow better than nothing."
+	icon_state = "gauze"
+	singular_name = "coagulating saliva"
+	gender = PLURAL
+	covering_hitpoints = 1
+	heal_brute = 0
+	heal_burn = 0
+	heal_per_tick = 0
+	//heal_over_time_per_tick = BANDAGE_NORMAL_HEAL_RATE
+	bandage_power = BANDAGE_GOOD_WOUND_CLOSURE
+	bandage_staunch = WOUND_BLEED_LICK_MULTIPLIER
+	self_delay = 50
+	other_delay = 20
+	amount = 1
+	max_amount = 1
+	is_bandage = TRUE
+	covering_lifespan = LICK_MAX_DURATION
+	splint_factor = 0.35
+	custom_price = PRICE_REALLY_CHEAP
+	grind_results = null
+	merge_type = /obj/item/stack/medical/gauze/lick
 
 /* * * * * *
  * SUTURES

@@ -172,6 +172,12 @@
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
+///Called when you lick an object
+#define COMSIG_ATOM_LICKED "atom_licked"
+///Called by something licked to return a signal to the thing licking to let the thing lick it even if it shouldnt be licked
+#define COMSIG_LICK_RETURN "lick_return"
+
+
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
 

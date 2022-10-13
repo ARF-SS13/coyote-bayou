@@ -95,7 +95,8 @@
 	/// If false makes [CanPass][/atom/proc/CanPass] call [CanPassThrough][/atom/movable/proc/CanPassThrough] on this type instead of using default behaviour
 	var/generic_canpass = TRUE
 
-
+	/// What does this creature taste like?
+	var/list/tastes = list("something" = 1) // for example list("crisps" = 2, "salt" = 1)
 
 /atom/New(loc, ...)
 	//atom creation method that preloads variables at creation

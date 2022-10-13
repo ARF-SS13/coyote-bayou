@@ -23,6 +23,8 @@
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
 	rad_flags = RAD_NO_CONTAMINATE // Prevent the same cheese as with the stock parts
+	obj_flags = CAN_BE_HIT // so you can LICK it
+	tastes = list("tangy metal" = 1)
 
 /obj/item/stock_parts/cell/get_cell()
 	return src
@@ -38,9 +40,11 @@
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_icon()
+	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_battery)
 
 /obj/item/stock_parts/cell/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	UnregisterSignal(src, COMSIG_ATOM_LICKED)
 	return ..()
 
 /obj/item/stock_parts/cell/vv_edit_var(var_name, var_value)
@@ -182,6 +186,23 @@
 		return clamp(round(charge/10000), 10, 90) + rand(-5,5)
 	else
 		return 0
+
+/obj/item/stock_parts/cell/proc/lick_battery(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!iscarbon(licker) || !istype(tongue))
+		return FALSE
+	var/mob/living/carbon/battery_licker = licker
+	var/damage = get_electrocute_damage()
+	if(damage > 2)
+		playsound(licker, 'sound/magic/lightningshock.ogg', 100, TRUE)
+		licker.visible_message(
+			span_warning("[licker] licks \the [src], discharging it right into their body!"),
+			span_userdanger("You lick \the [src], and it shocks the everloving daylights out of you!"),
+			span_warning("You hear a meaty ZAP!")
+		)
+		battery_licker.electrocute_act(damage, src, tongue.siemens_coefficient)
+		use(maxcharge*0.5)
+		return TRUE
+	return FALSE
 
 /obj/item/stock_parts/cell/get_part_rating()
 	return rating * maxcharge

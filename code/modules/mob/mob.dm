@@ -1050,6 +1050,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
 
+/mob/verb/set_taste()
+	set name = "Set how you taste"
+	set category = "IC"
+
+	var/message = stripped_input(usr, "", "How do you taste?", "", 100, FALSE)
+	if(message)
+		tastes = list("[message]" = 1)
+		to_chat(usr, span_notice("You now taste like [message]"))
+
 ///Adjust the nutrition of a mob
 /mob/proc/adjust_nutrition(change, max = INFINITY) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	nutrition = clamp(nutrition + change, 0, max)

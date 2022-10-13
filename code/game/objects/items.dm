@@ -53,6 +53,8 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 	var/item_color = null //this needs deprecating, soonish
 
 	var/hitsound = null
+	/// Sound it makes when it does 0 damage to a target
+	var/pokesound = 'sound/weapons/tap.ogg'
 	var/usesound = null
 	var/throwhitsound = null
 
