@@ -11,22 +11,32 @@ GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/advanced
 
 // global lists
 
-GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/stock_parts/capacitor/simple,
-				/obj/item/stock_parts/scanning_module/simple,
-				/obj/item/stock_parts/manipulator/simple,
-				/obj/item/stock_parts/micro_laser/simple,
-				/obj/item/stock_parts/matter_bin/simple,
-				/obj/item/stock_parts/cell)))
+GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/stock_parts,
+			/obj/item/gun_upgrade/scope/watchman,
+			/obj/item/gun_upgrade/trigger/dangerzone,
+			/obj/item/tool_upgrade/productivity/ergonomic_grip,
+			/obj/item/tool_upgrade/refinement/ported_barrel,
+			/obj/item/tool_upgrade/refinement/stabilized_grip,
+			/obj/item/tool_upgrade/refinement/laserguide,
+			/obj/item/tool_upgrade/productivity/booster,
+			/obj/item/tool_upgrade/productivity/red_paint)))
+
+GLOBAL_LIST_INIT(sacredwellitems_misc, typecacheof(list(/obj/item/stock_parts/chem_cartridge/,
+			/obj/item/stock_parts/cell/ammo)))
 
 GLOBAL_LIST_INIT(sacredwellitems_low, typecacheof(list(/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo,
-	/obj/item/gun/ballistic
+	/obj/item/gun/ballistic,
+	/obj/item/stock_parts/cell/ammo/mfc
 	)))
 
 GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(list(/obj/item/gun/energy/laser,
-	/obj/item/advanced_crafting_components)))
+	/obj/item/advanced_crafting_components,
+	/obj/item/gun/ballistic/automatic/service)))
 
-GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/plasma))
+GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(list(/obj/item/gun/energy/laser/plasma,
+/obj/item/clothing/suit/armor/power_armor,
+/obj/item/clothing/head/helmet/f13/power_armor)))
 
 
 // objects
@@ -37,7 +47,8 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 	loot = list(/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal,
 				/obj/item/gun/energy/laser/wattz/sacredpistol,
 				/obj/item/gun/energy/laser/wattz/sacred,
-				/obj/item/gun/energy/laser/wattz2k/extended/blessed)
+				/obj/item/gun/energy/laser/wattz2k/extended/blessed,
+				/obj/item/gun/ballistic/shotgun/automatic/combat/auto5/sacred)
 
 // sacred items
 
@@ -123,6 +134,12 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 			update_meter()
 			return
 
+		else if(W.type in GLOB.sacredwellitems_misc)
+			qdel(W)
+			sacredmeter += 50
+			update_meter()
+			return
+
 		else if(W.type in GLOB.sacredwellitems_components)
 			qdel(W)
 			sacredmeter += 25
@@ -143,7 +160,7 @@ GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(	/obj/item/gun/energy/laser/p
 
 	if(src.sacredmeter < src.sacredmeter_max)
 
-		visible_message(span_notice("The well creaks as it delivers its material!"))
+		visible_message(span_notice("The well thrums with power!"))
 		playsound(src, 'sound/mecha/mech_shield_drop.ogg', 80, 0, -1)
 		desc = "A deep well that hums and thrums with power and unknown energies. Despite the fact it is hot to the touch, the geiger counter stays quiet. This is where the mistakes of the old world go to be cleansed. And with enough sacrifice comes gifts.<br><span class='notice'> The well has [sacredmeter] out of [sacredmeter_max] charge.</span>"
 		return
