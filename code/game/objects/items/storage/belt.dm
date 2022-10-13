@@ -605,10 +605,10 @@
 /obj/item/storage/belt/sabre/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
-	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
-	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
-	STR.can_hold = GLOB.knifebelt_allowed
+	STR.max_items = 1
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = 4
+	STR.can_hold = typecacheof(fitting_swords)
 	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/examine(mob/user)
@@ -628,7 +628,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_BELT
 	fitting_swords = list(/obj/item/melee/smith/machete,
 	/obj/item/melee/smith/machete/reforged,
 	/obj/item/melee/smith/wakizashi,
@@ -645,6 +645,26 @@
 	/obj/item/melee/transforming/energy/axe/protonaxe,
 	/obj/item/melee/powered/ripper)
 	starting_sword = null
+
+/obj/item/storage/belt/sabre/knife
+	name = "knife bandolier"
+	desc = "A bandolier lined with loops, perfect for slipping in a few small blades."
+	icon_state = "bandolier"
+	item_state = "bandolier"
+	w_class = WEIGHT_CLASS_BULKY
+	content_overlays = TRUE
+	onmob_overlays = TRUE
+	slot_flags = ITEM_SLOT_NECK
+	starting_sword = null
+
+/obj/item/storage/belt/sabre/knife/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = STORAGE_BELT_HOLSTER_MAX_ITEMS
+	STR.max_w_class = STORAGE_BELT_HOLSTER_MAX_SIZE
+	STR.max_combined_w_class = STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE
+	STR.can_hold = GLOB.knifebelt_allowed
+	STR.quickdraw = TRUE
 
 /obj/item/storage/belt/sabre/rapier
 	name = "rapier sheath"
@@ -669,7 +689,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 	content_overlays = TRUE
 	onmob_overlays = TRUE
-	slot_flags = ITEM_SLOT_NECK
+	slot_flags = ITEM_SLOT_BELT
 	var/list/fitting_swords = list(/obj/item/melee/smith/sword, /obj/item/melee/baton/stunsword)
 
 // Instead of half-assed broken weaboo stuff lets have something that works.
@@ -685,6 +705,7 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_items = 2
 	STR.max_w_class = WEIGHT_CLASS_BULKY + WEIGHT_CLASS_NORMAL //katana and waki.
+	STR.max_volume = 7
 	STR.can_hold = typecacheof(fitting_swords)
 	STR.quickdraw = TRUE
 

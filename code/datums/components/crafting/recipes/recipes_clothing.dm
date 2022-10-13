@@ -126,6 +126,17 @@
 	category = CAT_CLOTHING
 	subcategory = CAT_BELTS
 
+/datum/crafting_recipe/bandolierknife
+	name = "Knife Bandolier"
+	result = /obj/item/storage/belt/sabre/knife
+	reqs = list(/obj/item/stack/sheet/metal = 1,
+				/obj/item/stack/sheet/leather = 3,
+				/obj/item/stack/crafting/metalparts = 2)
+	tools = list(TOOL_WORKBENCH)
+	time = 15
+	category = CAT_CLOTHING
+	subcategory = CAT_BELTS
+
 /datum/crafting_recipe/twinsheath
 	name = "Twin Sheath"
 	result = /obj/item/storage/belt/sword/twin
