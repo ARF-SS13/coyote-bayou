@@ -1,6 +1,8 @@
 #define LICK_LOCATION "lick_location"
 #define LICK_INTENT "lick_intent"
 #define LICK_CANCEL "dont_lick"
+/// Sounds and text for licking have this range
+#define LICK_SOUND_TEXT_RANGE 2
 
 /// For all of the items that are really just the user's hand used in different ways, mostly (all, really) from emotes
 /obj/item/hand_item
@@ -73,12 +75,16 @@
 	if(isliving(licked))
 		user.visible_message(
 			span_notice("[user] [lick_words[LICK_INTENT]] licks [user == licked ? "[user.p_their()]" : "[licked]'s"] [lick_words[LICK_LOCATION]]."),
-			span_notice("You [lick_words[LICK_INTENT]] lick [user == licked ? "your" : "[licked]'s"] [lick_words[LICK_LOCATION]].")
+			span_notice("You [lick_words[LICK_INTENT]] lick [user == licked ? "your" : "[licked]'s"] [lick_words[LICK_LOCATION]]."),
+			span_notice("You hear licking."),
+			LICK_SOUND_TEXT_RANGE
 		)
 	else
 		user.visible_message(
 			span_notice("[user] [lick_words[LICK_INTENT]] licks [user == licked ? "[user.p_them()]self" : "[licked]"]."),
-			span_notice("You [lick_words[LICK_INTENT]] lick [user == licked ? "yourself" : "[licked]"].")
+			span_notice("You [lick_words[LICK_INTENT]] lick [user == licked ? "yourself" : "[licked]"]."),
+			span_notice("You hear licking."),
+			LICK_SOUND_TEXT_RANGE
 		)
 	lick_flavor(atom_licked = licked, licker = user)
 
@@ -92,7 +98,7 @@
 		licker = maybe_licker
 		
 	licker.taste(null, atom_licked)
-	playsound(get_turf(src), pokesound, 25, 1, -4)
+	playsound(get_turf(src), pokesound, 25, 1, SOUND_DISTANCE(LICK_SOUND_TEXT_RANGE))
 
 /obj/item/hand_item/licker/proc/lick_wound(mob/living/licked, mob/living/carbon/user)
 	if(!iscarbon(licked))
@@ -121,7 +127,10 @@
 	licking = TRUE
 	user.visible_message(
 		span_notice("[user] starts carefully lapping at the wounds on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart]..."), 
-		span_notice("You start running your tongue across [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]..."))
+		span_notice("You start running your tongue across [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]..."),
+		span_notice("You hear licking."),
+		LICK_SOUND_TEXT_RANGE
+		)
 	lick_flavor(atom_licked = licked, licker = user)
 	if(!do_mob(user, mlemmed, tongue_bandage.get_delay_time(user, mlemmed, 1), progress = TRUE))
 		user.visible_message(span_alert("[user] was interrupted!"))
@@ -134,7 +143,10 @@
 	if(target_bodypart.apply_gauze(tongue_bandage, 1, FALSE))
 		user.visible_message(
 			span_green("[user] applies a fresh coat of coagulating saliva on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart]!"), 
-			span_green("You apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]!"))
+			span_green("You apply a fresh coat of coagulating saliva to [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]!"),
+			span_notice("You hear licking."),
+			LICK_SOUND_TEXT_RANGE
+			)
 		lick_flavor(atom_licked = licked, licker = user)
 		return LICK_CANCEL
 	user.visible_message(span_alert("[user] was interrupted!"))
@@ -157,7 +169,10 @@
 	licking = TRUE
 	user.visible_message(
 		span_notice("[user] starts tenderly licking [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart]..."), 
-		span_notice("You start tenderly licking at [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]..."))
+		span_notice("You start tenderly licking at [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]..."),
+		span_notice("You hear licking."),
+		LICK_SOUND_TEXT_RANGE
+		)
 	lick_flavor(atom_licked = licked, licker = user)
 	if(!do_mob(user, mlemmed, (user == mlemmed ? 7 SECONDS : 3 SECONDS), progress = TRUE))
 		user.visible_message(span_alert("[user] was interrupted!"))
@@ -170,7 +185,9 @@
 	target_bodypart.heal_damage(our_tongue.lick_heal_brute, our_tongue.lick_heal_burn, our_tongue.lick_heal_brute + our_tongue.lick_heal_burn, FALSE, TRUE, TRUE, 0)
 	user.visible_message(
 		span_green("[user] licks the injuries on [user == mlemmed ? "[mlemmed.p_their()]" : "[mlemmed]'s"] [target_bodypart]!"), 
-		span_green("You lick the injuries on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]!"))
+		span_green("You lick the injuries on [user == mlemmed ? "your" : "[mlemmed]'s"] [target_bodypart]!"),
+		span_notice("You hear licking."),
+		LICK_SOUND_TEXT_RANGE)
 	lick_flavor(atom_licked = licked, licker = user)
 	return TRUE
 

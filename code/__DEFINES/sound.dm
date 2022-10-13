@@ -21,6 +21,8 @@
 #define SOUND_DEFAULT_FALLOFF_DISTANCE 1 //For a normal sound this would be 1 tile of no falloff
 ///The default exponent of sound falloff
 #define SOUND_FALLOFF_EXPONENT 6
+///A simple define that'll set the max range of a sound to a number, without any funky minus stuff -- 0 means the originator's tile, 1 means adjacent, etc
+#define SOUND_DISTANCE(x) (-SOUND_RANGE + x)
 
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
