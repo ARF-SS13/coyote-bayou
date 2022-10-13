@@ -4,7 +4,13 @@
 
 #ifndef LOWMEMORYMODE
 	#ifdef ALL_MAPS
-
+		#include "map_files/Pahrump-Sunset/Dungeons.dmm"
+		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Lower.dmm"
+		#include "map_files/Pahrump-Sunset/Pahrump-Sunset.dmm"
+		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Upper.dmm"
+		#include "map_files/Pahrump-Sunset/Pahrump-Sunset-Upper-2.dmm"
+		#include "map_files/Pahrump-Sunset/RockSprings.dmm"
+		#include "map_files/Pahrump-Sunset/RedRiver.dmm"
 		#ifdef TRAVISBUILDING
 			#include "templates.dm"
 		#endif
