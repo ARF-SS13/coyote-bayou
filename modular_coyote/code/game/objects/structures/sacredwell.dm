@@ -22,7 +22,7 @@ GLOBAL_LIST_INIT(sacredwellitems_components, typecacheof(list(/obj/item/stock_pa
 			/obj/item/tool_upgrade/productivity/red_paint)))
 
 GLOBAL_LIST_INIT(sacredwellitems_misc, typecacheof(list(/obj/item/stock_parts/chem_cartridge/,
-			/obj/item/stock_parts/cell/ammo
+			/obj/item/stock_parts/cell/ammo)))
 
 GLOBAL_LIST_INIT(sacredwellitems_low, typecacheof(list(/obj/item/gun/energy/laser/pistol,
 	/obj/item/stock_parts/cell/ammo,
@@ -35,8 +35,8 @@ GLOBAL_LIST_INIT(sacredwellitems_mid, typecacheof(list(/obj/item/gun/energy/lase
 	/obj/item/gun/ballistic/automatic/service)))
 
 GLOBAL_LIST_INIT(sacredwellitems_high, typecacheof(list(/obj/item/gun/energy/laser/plasma,
-/obj/item/clothing/suit/armor/power_armour,
-/obj/item/clothing/head/helmet/f13/power_armour)))
+/obj/item/clothing/suit/armor/power_armor,
+/obj/item/clothing/head/helmet/f13/power_armor)))
 
 
 // objects
