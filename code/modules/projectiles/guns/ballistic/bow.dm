@@ -130,6 +130,7 @@
 /obj/item/gun/ballistic/bow/sturdy
 	name = "sturdy bow"
 	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra stopping power in the shot speed of the arrows."
+	icon_state = "bow_unloaded"
 	icon_prefix = "bow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/sturdy
@@ -150,6 +151,7 @@
 /obj/item/gun/ballistic/bow/crossbow
 	name = "crossbow"
 	desc = "A crossbow."
+	icon_state = "crossbow_unloaded"
 	icon_prefix = "crossbow"
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross
