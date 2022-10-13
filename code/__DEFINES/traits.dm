@@ -302,7 +302,9 @@
 #define TRAIT_KEEP_TOGETHER 	"keep-together"
 
 // item traits
-#define TRAIT_NODROP            "nodrop"
+#define TRAIT_NODROP "nodrop"
+/// Dont put it in storage things, simple as
+#define TRAIT_NO_STORAGE_INSERT "no_storage_insert"
 
 // common trait sources
 #define TRAIT_GENERIC "generic"

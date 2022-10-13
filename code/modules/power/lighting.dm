@@ -189,6 +189,7 @@
 	idle_power_usage = 6
 	active_power_usage = 60
 	power_channel = LIGHT //Lights are calc'd via area so they dont need to be in the machine list
+	tastes = list("lighting" = 1, "brightness" = 1)
 	var/on = FALSE					// 1 if on, 0 if off
 	var/on_gs = FALSE
 	var/static_power_used = 0
@@ -288,12 +289,74 @@
 			update(0)
 	if(flicker_chance)
 		START_PROCESSING(SSmachines, src)
+	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_light)
+
+/obj/machinery/light/proc/lick_light(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!iscarbon(licker) || !tongue)
+		return FALSE
+	if(status == LIGHT_BROKEN) //  broken light, might be powered, might not be
+		slice_their_mouth(licker, tongue)
+		if(has_power())
+			return zap_their_mouth(licker, tongue)
+		return FALSE
+	if(status == LIGHT_OK) // on, powered, and bulb intact
+		if(on && has_power())
+			return burn_their_mouth(licker, tongue)
+
+/obj/machinery/light/proc/burn_their_mouth(mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!licker || !tongue)
+		return FALSE
+	if(HAS_TRAIT(licker, TRAIT_RESISTHEAT))
+		return FALSE
+
+	var/obj/item/bodypart/ur_mouth = licker.get_bodypart(BODY_ZONE_HEAD)
+	if(ur_mouth && ur_mouth.receive_damage(0, 25, wound_bonus = 50)) // git fukt
+		licker.update_damage_overlays()
+	playsound(licker, 'sound/items/welder.ogg', 100, TRUE)
+	licker.emote("scream")
+	licker.visible_message(
+		span_warning("[licker] burns their tongue on \the [src]!"),
+		span_danger("You lick \the [src], and it, of course, burns your tongue!"),
+		span_warning("You hear a sizzle!")
+	)
+
+/obj/machinery/light/proc/slice_their_mouth(mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!licker || !tongue)
+		return FALSE
+
+	var/obj/item/bodypart/ur_mouth = licker.get_bodypart(BODY_ZONE_HEAD)
+	if(ur_mouth && ur_mouth.receive_damage(25, 0, wound_bonus = 50)) // git fukt
+		licker.update_damage_overlays()
+	playsound(licker, 'sound/weapons/bladeslice.ogg', 100, TRUE)
+	licker.emote("scream")
+	licker.visible_message(
+		span_warning("[licker] slices their tongue on \the [src]!"),
+		span_danger("You lick \the [src], the broken light slices right through your tongue!"),
+		span_warning("You hear a slice!")
+	)
+
+/obj/machinery/light/proc/zap_their_mouth(mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!licker || !tongue)
+		return FALSE
+
+	var/obj/item/bodypart/ur_mouth = licker.get_bodypart(BODY_ZONE_HEAD)
+	if(ur_mouth && ur_mouth.receive_damage(0, 30, wound_bonus = 30)) // git fukt
+		licker.update_damage_overlays()
+	licker.electrocute_act(5, src, tongue.siemens_coefficient)
+	playsound(licker, 'sound/magic/lightningshock.ogg', 100, TRUE)
+	licker.emote("scream")
+	licker.visible_message(
+		span_warning("[licker] sticks [licker.p_their()] tongue into the \the [src]'s open socket! ZAP!"),
+		span_danger("You jam your tongue into \the [src], and you feel Mass Fusion's might flow through your body! IT BURNS!"),
+		span_warning("You hear a ZAP!")
+	)
 
 /obj/machinery/light/Destroy()
 	var/area/A = get_area(src)
 	if(A)
 		on = FALSE
 //		A.update_lights()
+	UnregisterSignal(src, COMSIG_ATOM_LICKED)
 	QDEL_NULL(cell)
 	return ..()
 

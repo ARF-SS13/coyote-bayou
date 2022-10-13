@@ -210,6 +210,7 @@
 		"flavor_text"		= "",
 		"silicon_flavor_text"		= "",
 		"meat_type"			= "Mammalian",
+		"taste"				= "taste",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE
 		))

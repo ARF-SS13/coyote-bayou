@@ -177,7 +177,7 @@
 
 		var/has_bleed_wounds = is_bleeding()
 		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))
-			msg += "[t_His] [BP.name] is wrapped with "
+			msg += "[t_His] [BP.name] is coated with "
 			var/bandaid_max_time = initial(BP.current_gauze.covering_lifespan)
 			var/bandaid_time = BP.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
 			// how much life we have left in these bandages

@@ -16,5 +16,5 @@
 		return
 
 	if(O.reagents)
-		var/message = O.reagents.generate_taste_message(taste_sensitivity)
+		var/message = generate_taste_message(taste_sensitivity, O ? O : null, O.reagents ? O.reagents : null)
 		to_chat(user, "<span class='notice'>[src] tastes <span class='italics'>[message]</span> in [O].</span>")
