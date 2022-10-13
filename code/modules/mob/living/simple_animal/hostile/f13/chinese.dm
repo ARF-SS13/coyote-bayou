@@ -31,7 +31,7 @@
 /mob/living/simple_animal/hostile/chinese/ranged
 	icon_state = "chinesepistol"
 	icon_living = "chinesepistol"
-	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/pistol, /obj/item/gun/ballistic/automatic/pistol/type17, /obj/item/ammo_box/magazine/m9mm)
+	loot = list(/obj/effect/mob_spawn/human/corpse/chineseremnant/pistol, /obj/item/gun/ballistic/automatic/pistol/type17)
 	ranged = 1
 	maxHealth = 110
 	health = 110
