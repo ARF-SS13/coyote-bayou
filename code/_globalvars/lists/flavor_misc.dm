@@ -274,8 +274,8 @@ GLOBAL_LIST_INIT(roundstart_tongues, list(
 	"default",
 	"human tongue" = /obj/item/organ/tongue,
 	"lizard tongue" = /obj/item/organ/tongue/lizard,
-	"cat tongue" = /obj/item/organ/tongue/healing/cat,
-	"dog tongue" = /obj/item/organ/tongue/healing/dog,
+	"cat tongue" = /obj/item/organ/tongue/cat,
+	"dog tongue" = /obj/item/organ/tongue/dog,
 	//"skeleton tongue" = /obj/item/organ/tongue/bone, 
 	//"fly tongue" = /obj/item/organ/tongue/fly, 
 	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc

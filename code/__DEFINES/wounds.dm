@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define SUTURE_BURN_MULT 5 // its very flammable
 
 /// Base amount sutures assist wound closure
-#define SUTURE_BASE_WOUND_CLOSURE 0.80
+#define SUTURE_BASE_WOUND_CLOSURE 0.40
 /// Amount normal sutures close wounds
 #define SUTURE_GOOD_WOUND_CLOSURE (SUTURE_BASE_WOUND_CLOSURE * 1.5)
 /// Amount top tier sutures close wounds
@@ -338,7 +338,7 @@ GLOBAL_LIST_INIT(global_all_wound_types, list(
 #define BANDAGE_BEST_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 3)
 
 /// Base amount cat spit assist wound closure
-#define LICK_BASE_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 0.25)
+#define LICK_BASE_WOUND_CLOSURE (BANDAGE_BASE_WOUND_CLOSURE * 0.20)
 
 /// max amount of bleed_dam that bandages are able to fix
 #define BANDAGE_BASE_WOUND_MAX (WOUND_BLEED_MODERATE_THRESHOLD)
