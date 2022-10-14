@@ -17,6 +17,9 @@
 	return ..()
 
 /datum/unit_test/on_mob_end_metabolize/Run()
+	// Same purpose as previous test.
+	SSmobs.pause()
+	
 	var/mob/living/carbon/human/user = allocate(/mob/living/carbon/human)
 	var/obj/item/reagent_containers/pill/pill = allocate(/obj/item/reagent_containers/pill)
 	var/datum/reagent/medicine/stimulants/stim = /datum/reagent/medicine/stimulants
@@ -34,3 +37,7 @@
 
 	TEST_ASSERT(!user.reagents.has_reagent(stim), "User still has meth in their system when it should've finished metabolizing")
 	TEST_ASSERT(!user.has_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants), "User still has movespeed modifier despite not containing any more meth")
+	
+/datum/unit_test/on_mob_end_metabolize/Destroy()
+	SSmobs.ignite()
+	return ..()

@@ -1106,6 +1106,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/bong/coconut
 	name = "coconut bong"
+	icon_state = "coconut_bong"
 	icon_off = "coconut_bong"
 	icon_on = "coconut_bong_lit"
 	desc = "A water bong used for smoking dried plants. This one's made out of a coconut and some bamboo."

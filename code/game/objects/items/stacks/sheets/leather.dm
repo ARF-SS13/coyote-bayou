@@ -162,7 +162,7 @@ GLOBAL_LIST_INIT(xeno_recipes, list (
 	icon_state = "sheet-leather"
 	item_state = "sheet-leather"
 	custom_materials = list(/datum/material/leather=MINERAL_MATERIAL_AMOUNT) //mineral_material_amount is used for cargo compatability
-	//merge_type = /obj/item/stack/sheet/leather
+	merge_type = /obj/item/stack/sheet/leather
 
 GLOBAL_LIST_INIT(leather_recipes, list (
 	new/datum/stack_recipe("farmers gloves", /obj/item/clothing/gloves/botanic_leather, 3),
@@ -215,7 +215,7 @@ GLOBAL_LIST_INIT(leather_recipes, list (
 	icon_state = "sinew"
 	custom_materials = list(/datum/material/sinew=MINERAL_MATERIAL_AMOUNT)
 	novariants = TRUE
-	// merge_type = /obj/item/stack/sheet/sinew
+	merge_type = /obj/item/stack/sheet/sinew
 
 GLOBAL_LIST_INIT(sinew_recipes, list (
 	new/datum/stack_recipe("sinew restraints", /obj/item/restraints/handcuffs/sinew, 1),
@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 	icon_state = "sheet-chitin"
 	custom_materials = list(/datum/material/chitin=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/sodium = 3, /datum/reagent/chlorine = 3)
-	// merge_type = /obj/item/stack/sheet/animalhide/chitin
+	merge_type = /obj/item/stack/sheet/animalhide/chitin
 
 /obj/item/stack/sheet/animalhide/ashdrake
 	name = "ash drake hide"

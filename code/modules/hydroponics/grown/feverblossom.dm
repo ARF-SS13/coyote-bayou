@@ -9,11 +9,11 @@
 	maturation = 8
 	yield = 6
 	potency = 20
-	growthstages = 5
+	growthstages = 4
 	genes = list(/datum/plant_gene/trait/repeated_harvest, /datum/plant_gene/trait/glow/purple)
 	growing_icon = 'icons/obj/hydroponics/growing_flowers.dmi'
-	icon_grow = "feverblossom"
-	icon_dead = "feverblossom"
+	icon_grow = "feverblossom-grow"
+	icon_dead = "feverblossom-dead"
 	mutatelist = list()
 	reagents_add = list(/datum/reagent/drug/aphrodisiac = 0.2, /datum/reagent/consumable/nutriment = 0.05)
 
