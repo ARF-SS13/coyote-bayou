@@ -339,6 +339,16 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
+/datum/crafting_recipe/tribalwar/arrowemp
+	name = "Ion-Spirit Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/bone
+	time = 30
+	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/rods = 2)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
+
 
 /datum/crafting_recipe/tribalwar/cheaparrow
 	name = "Lightweight Wooden Arrow"

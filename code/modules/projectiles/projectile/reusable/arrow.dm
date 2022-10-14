@@ -100,8 +100,11 @@
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
 
+// Special Arrows
+
 /obj/item/projectile/ion/arrow //im sorry but this is TECHNICALLY an arrow SOOO
-	name = "ion bolt"
+	name = "ion arrow"
+	desc = "An arrow that created an EMP where it lands."
 	icon_state = "arrow"
 	damage = 28
 	armour_penetration = 0.75
