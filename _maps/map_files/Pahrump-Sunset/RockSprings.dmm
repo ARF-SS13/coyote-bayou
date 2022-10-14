@@ -6827,16 +6827,6 @@
 	},
 /turf/open/floor/wood_common,
 /area/f13/village)
-"dun" = (
-/obj/structure/sacredwell{
-	pixel_x = 12
-	},
-/turf/open/indestructible/ground/outside/gravel{
-	color = "#B7ABAB";
-	footstep = "dirt";
-	name = "rocky dirt"
-	},
-/area/f13/wasteland)
 "dvc" = (
 /obj/machinery/vending/cola/random,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -20856,7 +20846,7 @@
 "klx" = (
 /obj/structure/closet/crate/grave,
 /obj/item/clothing/accessory/necklace{
-	desc = "That's a locket with a charm that looks like a raspberry.  It ssmells nice for something that has been burried for a while with a corpse.";
+	desc = "That's a locket with a charm that looks like a raspberry.  It smells nice for something that has been buried for a while with a corpse.";
 	name = "Raspberry Locket"
 	},
 /turf/open/indestructible/ground/outside/dirt,
@@ -21782,15 +21772,14 @@
 /area/f13/building)
 "kNL" = (
 /obj/structure/table,
+/obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/computer/terminal{
 	dir = 4;
 	doc_content_1 = "This document seems to be trying to tell you how you should format slave documentation.  It mentions to include their name and collar number/id, and if you sell one write out a proper 'writ of sale' to the new owner.  Or maybe you can't read, and this is just a pretty screen.  I'm not your dad.";
-	doc_content_2 = ";
 	doc_title_1 = "Slave Capture Blank Doc";
 	pixel_x = 4;
 	pixel_y = 5
 	},
-/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -26753,6 +26742,16 @@
 	name = "rusty reinforced wall"
 	},
 /area/f13/building)
+"npl" = (
+/obj/structure/sacredwell{
+	pixel_x = 12
+	},
+/turf/open/indestructible/ground/outside/gravel{
+	color = "#B7ABAB";
+	footstep = "dirt";
+	name = "rocky dirt"
+	},
+/area/f13/wasteland)
 "npn" = (
 /obj/machinery/vending/nukacolavend,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -45945,7 +45944,7 @@
 	doc_content_1 = "I got a phone call last night from a friend of mine in the Air Force, he said some very dark things about what he thinks is about to happen and how maybe I should return home to be with my family.  I've decided he's off his rocker, probably spent too much time huffing jet fuel and drinking.  Besides, the prisoners in here aren't going to watch themselves. ";
 	doc_content_2 = "I should have gone home.  He was right.  I watched as a guard looked into the light in the parking lot, a bomb went off in Texarkana.  I got lucky, the building and our distance shaded me from the blast but I watched as his eyes boiled in their sockets.  I shot him.  I shot Jerry in the head to stop his screaming.  The prisoners are rebelling again, most of the powers gone out.  If we don't get help soon we're probably going to have to do something drastic.  God help us all.";
 	doc_content_3 = "It's clear at this point that help isn't coming, and that we're all going to die out here if we stay put.  We've ordered the guards to create an exit for the prisoners to funnel out of, I can't believe it but we're releasing them.  We're releasing murders and madmen back into the world because I don't have the heart to just shoot them.  For those that come after us I to am leaving this place, after the guards have made sure all the prisoners are gone we're going to wait a few days and then try and return to our homes.  If we even have any to return to.";
-	doc_content_4 = "hi i gues, me n mi pals fund thiz old comouter   we thnk u smel lik shjt;
+	doc_content_4 = "hi i gues, me n mi pals fund thiz old comouter   we thnk u smel lik shjt";
 	doc_content_5 = "nya bitches ~Mango Mathew an' pals";
 	doc_title_1 = "Wardens Diary - 22nd, October 2077";
 	doc_title_2 = "Wardens Diary - 25th, October 2077";
@@ -63911,7 +63910,7 @@ tuP
 pCJ
 kDD
 kDD
-dun
+npl
 knu
 kDD
 rii
