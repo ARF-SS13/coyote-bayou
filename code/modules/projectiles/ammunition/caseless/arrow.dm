@@ -74,3 +74,9 @@
 	desc = "An arrow made of wood, tipped with bronze. The tip is dense enough to provide some armor penetration."
 	icon_state = "bronzearrow"
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bronze
+
+/obj/item/ammo_casing/caseless/arrow/ion
+	name = "ion arrow"
+	desc = "A heavy synthetic shaft, a payload full of spirits and dazzling light. Send payment to the Old World ghosts. Slower than other arrows due to its weight."
+	icon_state = "arrow_emp"
+	projectile_type = /obj/item/projectile/ion/arrow

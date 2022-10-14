@@ -99,3 +99,22 @@
 	armour_penetration = 0.05
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
+
+/obj/item/projectile/ion/arrow //im sorry but this is TECHNICALLY an arrow SOOO
+	name = "ion bolt"
+	icon_state = "arrow"
+	damage = 28
+	armour_penetration = 0.75
+	damage_type = BURN
+	flag = "energy"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion
+
+/obj/item/projectile/ion/arrow/on_hit(atom/target, blocked = FALSE)
+	..()
+	empulse_using_range(target, emp_radius)
+	return BULLET_ACT_HIT
+
+/obj/item/projectile/ion/arrow/weak
+	emp_radius = 1
+	damage = 20
+	armour_penetration = 0.5
