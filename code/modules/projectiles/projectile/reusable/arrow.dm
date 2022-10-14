@@ -100,6 +100,17 @@
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
 
+/obj/item/projectile/bullet/reusable/arrow/blunt
+	name = "knockout arrow
+	desc = "An arrow with a thick cloth sack at the end, filled with rocks."
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	armour_penetration = 0.10
+	damage = 15
+	stamina = 65
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
+
 // Special Arrows
 
 /obj/item/projectile/ion/arrow //im sorry but this is TECHNICALLY an arrow SOOO
