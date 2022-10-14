@@ -19767,6 +19767,13 @@
 	icon_state = "purplefull"
 	},
 /area/f13/caves)
+"oLA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "oLG" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plating/tunnel{
@@ -22146,6 +22153,7 @@
 /area/f13/tunnel)
 "qET" = (
 /obj/structure/junk/small/bed2,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -26070,6 +26078,13 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"ush" = (
+/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "ust" = (
 /obj/structure/rack,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
@@ -26933,6 +26948,12 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"vet" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "veU" = (
 /obj/structure/toilet{
 	dir = 8
@@ -27245,6 +27266,7 @@
 	dir = 8;
 	light_color = "red"
 	},
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -65497,7 +65519,7 @@ aaa
 aaa
 aaa
 bOn
-djs
+ush
 bOn
 aaa
 aaa
@@ -65754,7 +65776,7 @@ aae
 aaa
 bOn
 bOn
-uhZ
+oLA
 bOn
 bOn
 aaa
@@ -66011,7 +66033,7 @@ aae
 aaa
 bOn
 vsR
-uhZ
+oLA
 qET
 bOn
 aaa
@@ -66267,9 +66289,9 @@ aae
 aae
 aaa
 bOn
-djs
+vet
 pBz
-djs
+vet
 bOn
 aaa
 aae
@@ -66524,8 +66546,8 @@ aae
 aae
 aaa
 bOn
-uhZ
-uhZ
+oLA
+oLA
 qET
 bOn
 aaa
