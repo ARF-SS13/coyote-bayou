@@ -49,11 +49,6 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"aaM" = (
-/obj/effect/turf_decal/delivery,
-/mob/living/simple_animal/hostile/securitron/sentrybot,
-/turf/open/floor/plasteel/f13,
-/area/f13/tunnel)
 "aaW" = (
 /obj/structure/chair/comfy/beige{
 	dir = 1
@@ -7299,6 +7294,11 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"dpg" = (
+/obj/effect/turf_decal/delivery,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "dpx" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
@@ -18381,6 +18381,13 @@
 "nws" = (
 /turf/closed/wall/f13/tunnel,
 /area/f13/building/massfusion)
+"nxG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "nxU" = (
 /obj/effect/decal/waste{
 	icon_state = "goo10"
@@ -19063,17 +19070,7 @@
 /area/f13/tunnel)
 "odv" = (
 /obj/structure/table/reinforced,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
-	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Repaired Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
+/obj/machinery/porta_turret/f13/turret_9mm/burstfire/robot,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "odG" = (
@@ -21559,6 +21556,10 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"qgc" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "qgq" = (
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/caves)
@@ -22146,6 +22147,7 @@
 /area/f13/tunnel)
 "qET" = (
 /obj/structure/junk/small/bed2,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -27245,6 +27247,7 @@
 	dir = 8;
 	light_color = "red"
 	},
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -29756,6 +29759,12 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"xOT" = (
+/obj/structure/timeddoor/sixtyminute,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "xPa" = (
 /obj/structure/chair/office/light,
 /turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite,
@@ -29770,10 +29779,6 @@
 /obj/item/reagent_containers/food/snacks/meatsalted,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"xPV" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/plasteel/f13,
-/area/f13/tunnel)
 "xPZ" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /obj/effect/decal/cleanable/glass{
@@ -65497,7 +65502,7 @@ aaa
 aaa
 aaa
 bOn
-djs
+xOT
 bOn
 aaa
 aaa
@@ -65754,7 +65759,7 @@ aae
 aaa
 bOn
 bOn
-uhZ
+nxG
 bOn
 bOn
 aaa
@@ -66011,7 +66016,7 @@ aae
 aaa
 bOn
 vsR
-uhZ
+nxG
 qET
 bOn
 aaa
@@ -66267,9 +66272,9 @@ aae
 aae
 aaa
 bOn
-djs
+xOT
 pBz
-djs
+xOT
 bOn
 aaa
 aae
@@ -66524,8 +66529,8 @@ aae
 aae
 aaa
 bOn
-uhZ
-uhZ
+nxG
+nxG
 qET
 bOn
 aaa
@@ -67375,7 +67380,7 @@ nPC
 wMj
 kTc
 uDF
-aaM
+dpg
 afx
 owp
 fgb
@@ -68143,7 +68148,7 @@ aae
 aak
 aaa
 bCt
-xPV
+qgc
 fOG
 uzY
 wMj
