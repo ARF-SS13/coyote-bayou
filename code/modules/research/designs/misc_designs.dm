@@ -280,7 +280,7 @@
 	desc = "A roasting stick for cooking sausages in exotic ovens."
 	id = "roastingstick"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron=1000, /datum/material/glass=500, /datum/material/prewarpolymer = 250)
+	materials = list(/datum/material/iron=1000, /datum/material/glass=500, /datum/material/bluespace = 250)
 	build_path = /obj/item/melee/roastingstick
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
@@ -521,7 +521,7 @@
 	desc = "Allows for the construction of a quantum keycard."
 	id = "quantum_keycard"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/glass = 500, /datum/material/iron = 500, /datum/material/silver = 500, /datum/material/prewarpolymer = 1000)
+	materials = list(/datum/material/glass = 500, /datum/material/iron = 500, /datum/material/silver = 500, /datum/material/bluespace = 1000)
 	build_path = /obj/item/quantum_keycard
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

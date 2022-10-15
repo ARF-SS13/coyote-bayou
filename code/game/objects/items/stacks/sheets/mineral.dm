@@ -160,10 +160,10 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  * Plasma
  */
 /obj/item/stack/sheet/mineral/plasma
-	name = "Ultracite"
+	name = "solid plasma"
 	icon_state = "sheet-plasma"
 	item_state = "sheet-plasma"
-	singular_name = "Ultracite sheet"
+	singular_name = "plasma sheet"
 	sheettype = "plasma"
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
@@ -179,8 +179,8 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	return TOXLOSS//dont you kids know that stuff is toxic?
 
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
-	new/datum/stack_recipe("Ultracite door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Ultracite tile", /obj/item/stack/tile/mineral/plasma, 1, 4, 20), \
+	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("plasma tile", /obj/item/stack/tile/mineral/plasma, 1, 4, 20), \
 	new/datum/stack_recipe("Scientist Statue", /obj/structure/statue/plasma/scientist, 5, one_per_turf = 1, on_floor = 1), \
 //	new/datum/stack_recipe("plasma ingot", /obj/item/ingot/plasma, 6, time = 100), \ no
 	))
@@ -409,28 +409,27 @@ GLOBAL_LIST_INIT(snow_recipes, list ( \
  * Alien Alloy
  */
 /obj/item/stack/sheet/mineral/abductor //Start Fortuna edit: alien alloy -> polymer alloy
-	name = "Saturnite alloy"
+	name = "experimental polymer alloy"
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "sheet-abductor"
 	item_state = "sheet-abductor"
-	singular_name = "Saturnite alloy sheet"
+	singular_name = "experimental polymer alloy sheet"
 	sheettype = "abductor"
 	merge_type = /obj/item/stack/sheet/mineral/abductor
 	walltype = /turf/closed/wall/mineral/abductor
-	custom_materials = list(/datum/material/prewarpolymer=MINERAL_MATERIAL_AMOUNT) //CB-Edit. Needed to make go brr in lathes
 
 /obj/item/stack/sheet/mineral/abductor/ten
 	amount = 10
 
 GLOBAL_LIST_INIT(abductor_recipes, list ( \
-	new/datum/stack_recipe("Saturnite bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Saturnite locker", /obj/structure/closet/abductor, 2, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Saturnite table frame", /obj/structure/table_frame/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Saturnite bar stool", /obj/item/chair/stool/bar/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Saturnite stool", /obj/item/chair/stool/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Saturnite airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("poylmer bed", /obj/structure/bed/abductor, 2, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer locker", /obj/structure/closet/abductor, 2, time = 15, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer table frame", /obj/structure/table_frame/abductor, 1, time = 15, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer bar stool", /obj/item/chair/stool/bar/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("polymer stool", /obj/item/chair/stool/alien, 1, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("poylmer airlock assembly", /obj/structure/door_assembly/door_assembly_abductor, 4, time = 20, one_per_turf = 1, on_floor = 1), \
 	null, \
-	new/datum/stack_recipe("Saturnite floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
+	new/datum/stack_recipe("polymer floor tile", /obj/item/stack/tile/mineral/abductor, 1, 4, 20), \
 	)) //End Fortuna edit
 
 /obj/item/stack/sheet/mineral/abductor/get_main_recipes()
