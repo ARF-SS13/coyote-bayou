@@ -101,7 +101,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
 
 /obj/item/projectile/bullet/reusable/arrow/blunt
-	name = "knockout arrow
+	name = "knockout arrow"
 	desc = "An arrow with a thick cloth sack at the end, filled with rocks."
 	wound_bonus = 0
 	bare_wound_bonus = 0

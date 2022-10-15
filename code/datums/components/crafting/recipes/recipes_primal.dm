@@ -392,6 +392,17 @@
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
 
+/datum/crafting_recipe/tribalwar/arrowblunt
+	name = "Blunt Arrow (Nonlethal)"
+	result = /obj/item/projectile/bullet/reusable/arrow/flashpowder
+	time = 10
+	reqs = list(
+		/obj/item/stack/rods = 1,
+		/obj/item/stack/ore/blackpowder = 3
+		)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
 //MELEE
 
 /datum/crafting_recipe/tribalwar/bonespear

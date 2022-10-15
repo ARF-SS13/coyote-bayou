@@ -40,7 +40,7 @@ GLOBAL_LIST_INIT(tribal_job_recipes, list(
 	/datum/crafting_recipe/tribalwar/warclub,
 	/datum/crafting_recipe/tribalwar/silverbow,
 	/datum/crafting_recipe/tribalwar/arrowbone,
-	/datum/crafting_rcipe/tribalwar/arrowemp,
+	/datum/crafting_recipe/tribalwar/arrowemp,
 	/datum/crafting_recipe/tribalwar/bonespear,
 	/datum/crafting_recipe/tribalwar/bonecodpiece,
 	/datum/crafting_recipe/tribalwar/bracers,

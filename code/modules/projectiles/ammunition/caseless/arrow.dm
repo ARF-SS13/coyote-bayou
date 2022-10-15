@@ -79,6 +79,7 @@
 	name = "spirit arrow"
 	desc = "A heavy synthetic shaft, a payload full of spirits and dazzling light. Send payment to the Old World metallic ghosts. Slower than other arrows due to its weight."
 	icon_state = "arrow_emp"
+	icon = 'icons/fallout/objects/guns/ammo.dmi'
 	projectile_type = /obj/item/projectile/ion/arrow
 
 /obj/item/ammo_casing/caseless/arrow/blunt
