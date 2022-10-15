@@ -108,7 +108,7 @@
 	wound_falloff_tile = 0
 	armour_penetration = 0.10
 	damage = 15
-	stamina = 65
+	stamina = 70
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
 
 // Special Arrows
