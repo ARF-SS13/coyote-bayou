@@ -424,14 +424,14 @@
 // R
 
 /datum/gear/donator/kits/risingstarslash
-	name = "Head Paladin Kit"
+	name = "Blue's Kit"
 	path = /obj/item/storage/box/large/custom_kit/risingstarslash
 	ckeywhitelist = list("risingstarslash")
 
 /obj/item/storage/box/large/custom_kit/risingstarslash/PopulateContents()
-	new /obj/item/clothing/neck/mantle/bos/paladin(src)
-	new /obj/item/clothing/accessory/bos/sentinel(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/reagent_containers/food/snacks/grown/poppy/geranium/forgetmenot(src)
+	new /obj/item/lighter/fusion(src)
+	new /obj/item/melee/onehanded/knife/trench(src)
 
 /datum/gear/donator/kits/risingstarslash2
 	name = "Slime Cookie Kit"
