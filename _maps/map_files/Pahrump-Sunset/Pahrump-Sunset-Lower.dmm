@@ -7294,6 +7294,11 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/massfusion)
+"dpg" = (
+/obj/effect/turf_decal/delivery,
+/mob/living/simple_animal/hostile/securitron/sentrybot,
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "dpx" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "floor5-old"
@@ -19065,17 +19070,7 @@
 /area/f13/tunnel)
 "odv" = (
 /obj/structure/table/reinforced,
-/obj/machinery/porta_turret/syndicate/vehicle_turret{
-	desc = "An improvised ballistic turret - it looks exceptionally shoddy, yet stil functional. Safe to assume it's a repaired security system from whatever this place once was";
-	faction = list("raider");
-	lethal_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	lethal_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	name = "Repaired Turret";
-	scan_range = 9;
-	stun_projectile = /obj/item/projectile/bullet/a762/sport/simple;
-	stun_projectile_sound = 'sound/f13weapons/auto5.ogg';
-	throw_range = 9
-	},
+/obj/machinery/porta_turret/f13/turret_9mm/burstfire/robot,
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
 "odG" = (
@@ -21561,6 +21556,10 @@
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"qgc" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/f13,
+/area/f13/tunnel)
 "qgq" = (
 /turf/open/floor/plasteel/f13/vault_floor/yellow/whiteyellowfull,
 /area/f13/caves)
@@ -67381,7 +67380,7 @@ nPC
 wMj
 kTc
 uDF
-jdR
+dpg
 afx
 owp
 fgb
@@ -68149,7 +68148,7 @@ aae
 aak
 aaa
 bCt
-odv
+qgc
 fOG
 uzY
 wMj
