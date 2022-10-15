@@ -331,6 +331,7 @@ GLOBAL_LIST_INIT(sinew_recipes, list (
 	merge_type = /obj/item/stack/sheet/leatherstrips
 
 GLOBAL_LIST_INIT(leatherstrips_recipes, list (
+	new/datum/stack_recipe("gear harness", /obj/item/clothing/under/misc/gear_harness, 2, time = 40),
 	new/datum/stack_recipe("slave labor outfit", /obj/item/clothing/suit/armor/outfit/slavelabor, 2, time = 50), 
 	new/datum/stack_recipe("jabroni outfit", /obj/item/clothing/under/jabroni, 4, time = 80),
 	new/datum/stack_recipe("muzzle", /obj/item/clothing/mask/muzzle, 2, time = 40), 
