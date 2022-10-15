@@ -29,7 +29,7 @@
 
 /obj/item/melee/onehanded/dragonfire //unique. big damage. can parry.
 	name = "Dragonfire Katana"
-	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. Seems to be well suited for parrying. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
+	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"
@@ -50,10 +50,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
-	item_flags = ITEM_CAN_PARRY
-	parry_time_active = 15 //decent window
-	parry_time_spindown = 0
-	parry_time_perfect = 2
+//	item_flags = ITEM_CAN_PARRY does nothing from what i can tell arghhhggh todo: fix
 
 /obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user)
 	. = ..()
