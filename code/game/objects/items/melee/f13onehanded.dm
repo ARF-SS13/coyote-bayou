@@ -27,9 +27,9 @@
 ////////////		-block, 34-39 damage
 
 
-/obj/item/melee/onehanded/dragonfire //unique
+/obj/item/melee/onehanded/dragonfire //unique. big damage. can parry.
 	name = "Dragonfire Katana"
-	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
+	desc = "A sword that crackles with an unknown power source. It's warm in your hands, cutting and cauterizing flesh like butter- and yet, the geiger counter remains silent. The blade seems to guide you to block, twist, and dodge.. <br> <span class='phobia'>The sky above the clouds, a rainbow that fate has devoured- I gave up hope!</span>"
 //	icon_state = "DFkatana" HAHA THE INHAND SPRITES DON'T EXIST
 //	item_state = "DFkatana"
 	icon_state = "temporalkatana"
@@ -38,8 +38,9 @@
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
 	flags_1 = CONDUCT_1
 	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
-	force = 50
+	force = 55
 	throwforce = 10
+	block_chance = 20
 	armour_penetration = 0.40
 	w_class = WEIGHT_CLASS_BULKY
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -49,6 +50,7 @@
 	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	total_mass = TOTAL_MASS_MEDIEVAL_WEAPON
+//	item_flags = ITEM_CAN_PARRY does nothing from what i can tell arghhhggh todo: fix
 
 /obj/item/melee/onehanded/dragonfire/attack(mob/living/M, mob/living/user)
 	. = ..()
