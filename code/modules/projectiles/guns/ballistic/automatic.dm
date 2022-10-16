@@ -1374,6 +1374,91 @@
 	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
+ * Bushmaster Arm Gun
+ * Light semi-auto rifle... pistol thing
+ * .223 / 5.56mm
+ * Slow to fire
+ * Inaccurate
+ * Kicks all over the place
+ * Suuuuuucks
+ * But it makes a click!
+ * And is tactical!
+ * Unique (thankfully)
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun
+	name = ".223 arm pistol"
+	desc = "Be the envy of your platoon with comfortable firepower in a compact form factor, \
+		the Operator's Choice Arm Pistol tactically molds its bullpup feed system to the user's physique, \
+		able to swivel the patented Twistical Receivest to accommodate being held with its recommended \
+		Point'N'Clik SwampWarrior stance. Arm yourself with the Arm Pistol!"
+	icon_state = "arm_rifle"
+	item_state = "m90"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	/// sets if the gun is turnt
+	var/turnt = FALSE
+	max_upgrades = 6
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+
+	gun_tags = list(GUN_SCOPE)
+
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 18
+	knife_y_offset = 17
+
+	can_scope = TRUE
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 12
+
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 22
+	suppressor_y_offset = 24
+
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 12
+	flight_y_offset = 16
+	actions_types = list(/datum/action/item_action/toggle_armgun)
+	fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+
+/// Silly proc that makes a click
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun/proc/rotate_the_stupid_gun(mob/user)
+	if(user)
+		if(turnt)
+			user.visible_message(
+				"[user] snaps [user.p_their()] [src.name] back into place.",
+				span_notice("With a quick, professional slap of the base of your palm, you deliver a precise karate-chop to the rear of your Arm Gun and snap that sucker back into place!")
+			)
+		else
+			user.visible_message(
+				"[user] clicks [user.p_their()] [src.name] to the side.",
+				span_notice("With a tactical flourish, you grip the rear assembly of your Arm Gun and wrench that sucker to the side, snapping the receiver into comfortable operator mode!")
+			)
+	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
+	turnt = !turnt
+
+/* * * * * * * * * * *
  * Service Rifle
  * Baseline semi-auto rifle
  * .223 / 5.56mm
