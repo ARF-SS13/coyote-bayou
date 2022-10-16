@@ -1395,9 +1395,10 @@
 	icon_state = "arm_rifle"
 	item_state = "m90"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
-	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	/// sets if the gun is turnt
 	var/turnt = FALSE
+	max_upgrades = 6
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_RIFLE_LIGHT
