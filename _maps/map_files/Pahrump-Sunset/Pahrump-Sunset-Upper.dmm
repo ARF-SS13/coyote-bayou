@@ -263,8 +263,8 @@
 /area/f13/building)
 "ash" = (
 /obj/structure/chair/wood{
-	pixel_y = 3;
-	pixel_x = 2
+	pixel_x = 2;
+	pixel_y = 3
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -675,8 +675,8 @@
 "bgs" = (
 /obj/item/cigbutt/cigarbutt,
 /obj/structure/sign/poster/contraband/smoke{
-	pixel_y = 1;
-	pixel_x = 28
+	pixel_x = 28;
+	pixel_y = 1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -1722,8 +1722,8 @@
 	},
 /obj/effect/decal/remains/human,
 /obj/item/ammo_casing/c10mm{
-	pixel_y = 7;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 7
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -2534,8 +2534,8 @@
 /obj/machinery/light/small{
 	dir = 1;
 	light_color = "#ff0000";
-	pixel_y = 0;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
@@ -3042,12 +3042,12 @@
 	},
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/grown/poppy{
-	pixel_y = 5;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = 5
 	},
 /obj/item/trash/f13/rotten{
-	pixel_y = -4;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = -4
 	},
 /obj/item/trash/f13/rotten{
 	pixel_x = -5;
@@ -3847,8 +3847,8 @@
 /area/f13/building/hospital)
 "hdV" = (
 /obj/effect/overlay/junk/telescreen{
-	pixel_y = -4;
-	pixel_x = -23
+	pixel_x = -23;
+	pixel_y = -4
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -4463,15 +4463,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building)
-"imL" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
-	},
-/area/f13/wasteland/ncr)
 "ina" = (
 /obj/structure/chair/wood{
 	dir = 8
@@ -4657,8 +4648,8 @@
 /obj/machinery/light/small{
 	dir = 1;
 	light_color = "#ff0000";
-	pixel_y = 0;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = 0
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
@@ -4903,8 +4894,8 @@
 /obj/structure/shelf_wood,
 /obj/item/organ/liver,
 /obj/item/trash/f13/k_ration{
-	pixel_y = 13;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = 13
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
@@ -5362,8 +5353,8 @@
 /obj/structure/shelf_wood,
 /obj/item/organ/liver,
 /obj/item/custom/leechjar{
-	pixel_y = 19;
-	pixel_x = 4
+	pixel_x = 4;
+	pixel_y = 19
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
@@ -5397,24 +5388,24 @@
 /area/f13/ncr)
 "jQu" = (
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -2;
-	density = 0
+	density = 0;
+	pixel_y = -2
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -7;
-	density = 0
+	density = 0;
+	pixel_y = -7
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = 3;
-	density = 0
+	density = 0;
+	pixel_y = 3
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -12;
-	density = 0
+	density = 0;
+	pixel_y = -12
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = 9;
-	density = 0
+	density = 0;
+	pixel_y = 9
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -7096,8 +7087,8 @@
 /area/f13/building/hospital)
 "mNn" = (
 /obj/structure/bed/mattress{
-	pixel_y = -1;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = -1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -7142,8 +7133,8 @@
 	},
 /obj/effect/decal/remains/human,
 /obj/effect/decal/remains/human{
-	pixel_y = -8;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = -8
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
@@ -7407,8 +7398,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/mattress{
-	pixel_y = -1;
-	pixel_x = 1
+	pixel_x = 1;
+	pixel_y = -1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -8427,8 +8418,8 @@
 "plq" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/pinup_vixen{
-	pixel_y = -1;
-	pixel_x = -30
+	pixel_x = -30;
+	pixel_y = -1
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -10163,9 +10154,12 @@
 	},
 /area/f13/ncr)
 "sSu" = (
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
 	},
 /area/f13/wasteland)
 "sTp" = (
@@ -11366,8 +11360,8 @@
 	pixel_x = -1
 	},
 /obj/item/bedsheet/black{
-	pixel_y = 13;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 13
 	},
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
@@ -11558,8 +11552,8 @@
 	pixel_y = 3
 	},
 /obj/item/custom/leechjar{
-	pixel_y = 23;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 23
 	},
 /obj/item/organ/heart{
 	pixel_x = 7;
@@ -12095,24 +12089,24 @@
 /area/f13/building/massfusion)
 "wNe" = (
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -2;
-	density = 0
+	density = 0;
+	pixel_y = -2
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -7;
-	density = 0
+	density = 0;
+	pixel_y = -7
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = 3;
-	density = 0
+	density = 0;
+	pixel_y = 3
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = -12;
-	density = 0
+	density = 0;
+	pixel_y = -12
 	},
 /obj/structure/barricade/wooden/planks{
-	pixel_y = 9;
-	density = 0
+	density = 0;
+	pixel_y = 9
 	},
 /obj/effect/decal/cleanable/blood/gibs/down{
 	icon_state = "gib6-old"
@@ -12611,9 +12605,12 @@
 	},
 /area/f13/radiation)
 "xSN" = (
-/turf/closed/wall/f13/store{
-	desc = "A pre-War wall made of solid concrete.";
-	name = "concrete wall"
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
 	},
 /area/f13/wasteland/ncr)
 "xTy" = (
@@ -12807,8 +12804,8 @@
 "ykR" = (
 /obj/machinery/door/unpowered/securedoor{
 	name = "Mayor's Quarters";
-	req_one_access_txt = "62";
-	req_access_txt = null
+	req_access_txt = null;
+	req_one_access_txt = "62"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/building)
@@ -13163,7 +13160,7 @@ vje
 vje
 vje
 vje
-oez
+sSu
 oez
 oez
 oez
@@ -13420,7 +13417,7 @@ vje
 vje
 vje
 vje
-oez
+sSu
 oez
 oez
 oez
@@ -13677,7 +13674,7 @@ vje
 vje
 vje
 vje
-oez
+sSu
 oez
 oez
 oez
@@ -13928,13 +13925,13 @@ ejB
 ozn
 jbP
 kur
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-oez
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+sSu
 oez
 oez
 oez
@@ -14185,7 +14182,7 @@ ejB
 jbP
 kur
 gkT
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -14442,7 +14439,7 @@ ngm
 kur
 gkT
 gkT
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -14699,7 +14696,7 @@ gkT
 kur
 kur
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -14956,7 +14953,7 @@ gPM
 ujK
 ujK
 gkT
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -15213,7 +15210,7 @@ pvV
 pvV
 pvV
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -15470,7 +15467,7 @@ kur
 gkT
 gkT
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -15727,7 +15724,7 @@ cqK
 ujK
 cqK
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -15984,7 +15981,7 @@ bGT
 bGT
 bGT
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -16241,7 +16238,7 @@ kur
 gkT
 uYs
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -16498,7 +16495,7 @@ ujK
 cqK
 cqK
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -16755,7 +16752,7 @@ fVt
 fVt
 fVt
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -17012,7 +17009,7 @@ gkT
 gkT
 kur
 kur
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -17269,7 +17266,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -17526,7 +17523,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -17783,7 +17780,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -18040,7 +18037,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -18297,7 +18294,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -18554,7 +18551,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -18811,7 +18808,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -19068,7 +19065,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -19325,7 +19322,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -19582,7 +19579,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -19839,7 +19836,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -20096,7 +20093,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -20353,7 +20350,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -20610,7 +20607,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -20867,7 +20864,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -21124,7 +21121,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -21381,7 +21378,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -21638,7 +21635,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -21895,7 +21892,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -22152,7 +22149,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -22409,7 +22406,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -22647,7 +22644,7 @@ rLB
 ggY
 ntT
 ntT
-imL
+ntT
 ntT
 ntT
 ntT
@@ -22666,7 +22663,7 @@ rLB
 rLB
 rLB
 rLB
-rLB
+xSN
 rLB
 rLB
 rLB
@@ -22905,25 +22902,25 @@ rLB
 rLB
 rLB
 xSN
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
-rLB
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
+xSN
 rLB
 rLB
 rLB

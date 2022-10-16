@@ -203,6 +203,15 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"oj" = (
+/turf/closed/indestructible/riveted{
+	desc = "A heavily reinforced prison wall. You doubt anything short of a nuke would break it.";
+	icon = 'icons/turf/walls/f13superstore.dmi';
+	icon_state = "supermart";
+	icon_type_smooth = "supermart";
+	name = "Reinforced prison wall"
+	},
+/area/f13/wasteland)
 "oy" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -1041,7 +1050,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -1298,7 +1307,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -1555,7 +1564,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -1812,7 +1821,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -2069,7 +2078,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -2326,7 +2335,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -2583,7 +2592,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -2840,7 +2849,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -3097,7 +3106,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -3354,7 +3363,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -3611,7 +3620,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -3868,7 +3877,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -4125,7 +4134,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -4382,7 +4391,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -4639,7 +4648,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -4896,7 +4905,7 @@ SK
 SK
 SK
 hm
-hm
+oj
 hm
 hm
 hm
@@ -5153,7 +5162,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -5410,7 +5419,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -5667,7 +5676,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -5924,7 +5933,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -6181,7 +6190,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -6438,7 +6447,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -6695,7 +6704,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -6952,7 +6961,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -7209,7 +7218,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -7466,7 +7475,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -7723,7 +7732,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -7980,7 +7989,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -8237,7 +8246,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -8494,7 +8503,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -8751,7 +8760,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -9008,7 +9017,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -9265,7 +9274,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -9522,7 +9531,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -9779,7 +9788,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -10036,7 +10045,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -10293,7 +10302,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -10531,26 +10540,26 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
 hm
 hm
 hm
@@ -10788,7 +10797,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -11045,7 +11054,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -11302,7 +11311,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -11559,7 +11568,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -11816,7 +11825,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -12073,7 +12082,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -12330,7 +12339,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -12587,7 +12596,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -12844,7 +12853,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -13101,7 +13110,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -13358,7 +13367,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -13615,7 +13624,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -13872,7 +13881,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -14129,7 +14138,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -14386,7 +14395,7 @@ hm
 hm
 hm
 hm
-hm
+oj
 hm
 hm
 hm
@@ -14594,56 +14603,56 @@ RF
 "}
 (55,1,1) = {"
 RF
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
+oj
 hm
 hm
 hm
