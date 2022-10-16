@@ -430,6 +430,7 @@
 	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
 	new /obj/item/clothing/suit/armor/harpercoat(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/toy/plush/mammal/fox(src)
 
 // Q
 // R
