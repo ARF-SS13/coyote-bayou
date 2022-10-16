@@ -420,6 +420,18 @@
 	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
+/datum/gear/donator/kits/planetary
+	name = "Collector"
+	path = /obj/item/storage/box/large/custom_kit/planetary
+	ckeywhitelist = list("planetary")
+
+/obj/item/storage/box/large/custom_kit/planetary/PopulateContents()
+	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
+	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
+	new /obj/item/clothing/suit/armor/harpercoat(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/toy/plush/mammal/fox(src)
+
 // Q
 // R
 
