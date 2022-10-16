@@ -79,6 +79,7 @@
 					/obj/item/reagent_containers/pill/patch/silver_sulf = 5,
 					/obj/item/reagent_containers/medspray/silver_sulf = 2,
 					/obj/item/reagent_containers/pill/salbutamol = 2,
+					/obj/item/reagent_containers/glass/bottle/epinephrine = 4,
 					/obj/item/reagent_containers/glass/bottle/charcoal = 4,
 					/obj/item/reagent_containers/syringe/antiviral = 6,
 					/obj/item/reagent_containers/glass/bottle/vial/small = 5,
