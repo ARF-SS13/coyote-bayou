@@ -1356,16 +1356,18 @@
  * Kicks all over the place
  * Suuuuuucks
  * But it makes a click!
+ * And is tactical!
  * Unique (thankfully)
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun
 	name = ".223 arm pistol"
-	desc = "A"
+	desc = ""
 	icon_state = "varmint"
 	item_state = "varmintrifle"
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
+	/// sets if the gun is turnt
 	var/turnt = FALSE
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
@@ -1385,9 +1387,13 @@
 
 	gun_tags = list(GUN_SCOPE)
 
-	can_bayonet = FALSE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
+
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
 
 	can_scope = TRUE
 	scope_state = "scope_long"
@@ -1406,14 +1412,21 @@
 	actions_types = list(/datum/action/item_action/toggle_armgun)
 	fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
 
+/// Silly proc that makes a click
 /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun/proc/rotate_the_stupid_gun(mob/user)
-	if(turnt)
-		if(user)
-			user.show_message("You click the gun back into place")
-			return
 	if(user)
-		user.show_message("You click the gun back into place")
-
+		if(turnt)
+			user.visible_message(
+				span_notice("With a quick, professional slap of the base of your palm, you deliver a precise karate-chop to the rear of your Arm Gun and snap that sucker back into place!"),
+				"[user] snaps [user.p_their()] [src.name] back into place."
+			)
+		else
+			user.visible_message(
+				span_notice("With a tactical flourish, you grip the rear assembly of your Arm Gun and wrench that sucker to the side, snapping the receiver into comfortable operator mode!"),
+				"[user] clicks [user.p_their()] [src.name] to the side."
+			)
+	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
+	turnt = !turnt
 
 /* * * * * * * * * * *
  * Service Rifle
