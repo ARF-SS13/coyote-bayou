@@ -4,8 +4,10 @@
 /datum/job/khan/config_check()
 	return FALSE
 
+/*
 /datum/job/bos/config_check()
 	return FALSE
+*/
 
 /datum/job/ncr/config_check()
 	return FALSE

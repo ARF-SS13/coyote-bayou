@@ -21,6 +21,10 @@
 	var/auto_fire_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	var/projectiletype	//set ONLY it and NULLIFY casingtype var, if we have ONLY projectile
 	var/projectilesound
+	/// Play a sound after they shoot?
+	var/sound_after_shooting
+	/// How long after shooting should it play?
+	var/sound_after_shooting_delay = 1 SECONDS
 	var/list/projectile_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PLASMA_VOLUME),
@@ -40,6 +44,13 @@
 	var/list/emote_taunt
 	var/emote_taunt_sound = FALSE // Does it have a sound associated with the emote? Defaults to false.
 	var/taunt_chance = 0
+
+	/// What happens when this mob is EMP'd?
+	var/list/emp_flags = list()
+	/// What emp effects are active?
+	var/list/active_emp_flags = list()
+	/// Smoke!
+	var/datum/effect_system/smoke_spread/bad/smoke
 
 	var/rapid_melee = 1			 //Number of melee attacks between each npc pool tick. Spread evenly.
 	var/melee_queue_distance = 4 //If target is close enough start preparing to hit them if we have rapid_melee enabled
@@ -89,12 +100,17 @@
 	wanted_objects = typecacheof(wanted_objects)
 	if((auto_fire_delay * extra_projectiles) < ranged_cooldown_time)
 		ranged_cooldown_time = (auto_fire_delay * (extra_projectiles + 1))
+	if(MOB_EMP_DAMAGE in emp_flags)
+		smoke = new /datum/effect_system/smoke_spread/bad
+		smoke.attach(src)
 
 /mob/living/simple_animal/hostile/Destroy()
 	targets_from = null
 	friends = null
 	foes = null
 	GiveTarget(null)
+	if(smoke)
+		QDEL_NULL(smoke)
 	return ..()
 
 /mob/living/simple_animal/hostile/BiologicalLife(seconds, times_fired)
@@ -267,7 +283,11 @@
 			if(robust_searching)
 				if(faction_check && !attack_same)
 					return FALSE
-				if(L.stat > stat_attack || (L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA)))
+				if(L.stat > stat_attack)
+					return FALSE
+				if(stat_attack == CONSCIOUS && IS_STAMCRIT(L))
+					return FALSE
+				if(L.stat == UNCONSCIOUS && stat_attack == UNCONSCIOUS && HAS_TRAIT(L, TRAIT_DEATHCOMA))
 					return FALSE
 				if(friends[L] > 0 && foes[L] < 1)
 					return FALSE
@@ -476,6 +496,8 @@
 		for(var/i in 1 to extra_projectiles)
 			addtimer(CALLBACK(src, .proc/Shoot, A), i * auto_fire_delay)
 	ranged_cooldown = world.time + ranged_cooldown_time
+	if(sound_after_shooting)
+		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, sound_after_shooting, 100, 0, 0), sound_after_shooting_delay, TIMER_STOPPABLE)
 	if(LAZYLEN(variation_list[MOB_PROJECTILE]) >= 2) // Gotta have multiple different projectiles to cycle through
 		projectiletype = vary_from_list(variation_list[MOB_PROJECTILE], TRUE)
 
@@ -485,8 +507,18 @@
 	var/turf/startloc = get_turf(targets_from)
 	if(casingtype)
 		var/obj/item/ammo_casing/casing = new casingtype(startloc)
-		playsound(src, projectilesound, 100, 1)
+		playsound(
+			src,
+			projectilesound,
+			projectile_sound_properties[SOUND_PROPERTY_VOLUME],
+			projectile_sound_properties[SOUND_PROPERTY_VARY],
+			projectile_sound_properties[SOUND_PROPERTY_NORMAL_RANGE],
+			ignore_walls = projectile_sound_properties[SOUND_PROPERTY_IGNORE_WALLS],
+			distant_sound = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
+			distant_range = projectile_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
+			)
 		casing.fire_casing(targeted_atom, src, null, null, null, ran_zone(), 0, null, null, null, src)
+		qdel(casing)
 	else if(projectiletype)
 		var/obj/item/projectile/P = new projectiletype(startloc)
 		playsound(
@@ -510,7 +542,6 @@
 		P.preparePixelProjectile(targeted_atom, src)
 		P.fire()
 		return P
-
 
 /mob/living/simple_animal/hostile/proc/CanSmashTurfs(turf/T)
 	return iswallturf(T) || ismineralturf(T)
@@ -695,3 +726,82 @@ mob/living/simple_animal/hostile/proc/DestroySurroundings() // for use with mega
 		retreat_distance = vary_from_list(variation_list[MOB_RETREAT_DISTANCE])
 	if(LAZYLEN(variation_list[MOB_MINIMUM_DISTANCE]))
 		minimum_distance = vary_from_list(variation_list[MOB_MINIMUM_DISTANCE])
+
+/mob/living/simple_animal/hostile/emp_act(severity)
+	. = ..()
+	if(. & EMP_PROTECT_SELF)
+		return
+	emp_effect(severity)
+
+/// EMP intensity tends to be 20-40
+/mob/living/simple_animal/hostile/proc/emp_effect(intensity)
+	if(!LAZYLEN(emp_flags))
+		return FALSE
+	if(!islist(emp_flags))
+		return FALSE
+
+	switch(pick(emp_flags))
+		if(MOB_EMP_STUN)
+			do_emp_stun(intensity)
+		if(MOB_EMP_BERSERK)
+			do_emp_berserk(intensity)
+		if(MOB_EMP_DAMAGE)
+			do_emp_damage(intensity)
+		if(MOB_EMP_SCRAMBLE)
+			do_emp_scramble(intensity)
+	do_sparks(3, FALSE, src)
+	return TRUE
+
+/mob/living/simple_animal/hostile/proc/do_emp_stun(intensity)
+	if(!intensity)
+		return FALSE
+	if(MOB_EMP_STUN in active_emp_flags)
+		return FALSE
+	active_emp_flags |= MOB_EMP_STUN
+	visible_message(span_green("[src] shudders as the EMP overloads its servos!"))
+	LoseTarget()
+	toggle_ai(AI_OFF)
+	addtimer(CALLBACK(src, .proc/un_emp_stun), min(intensity, 3 SECONDS))
+
+/mob/living/simple_animal/hostile/proc/un_emp_stun()
+	active_emp_flags -= MOB_EMP_STUN
+	LoseTarget()
+	toggle_ai(AI_OFF)
+
+/mob/living/simple_animal/hostile/proc/do_emp_berserk(intensity)
+	if(!intensity)
+		return FALSE
+	if(MOB_EMP_BERSERK in active_emp_flags)
+		return FALSE
+	active_emp_flags |= MOB_EMP_BERSERK
+	LoseTarget()
+	visible_message(span_green("[src] lets out a burst of static and whips its gun around wildly!"))
+	var/list/old_faction = faction
+	faction = null
+	addtimer(CALLBACK(src, .proc/un_emp_berserk, old_faction), intensity SECONDS * 0.5)
+
+/mob/living/simple_animal/hostile/proc/un_emp_berserk(list/unberserk)
+	active_emp_flags -= MOB_EMP_BERSERK
+	faction = unberserk
+	LoseTarget()
+
+/mob/living/simple_animal/hostile/proc/do_emp_damage(intensity)
+	if(!intensity)
+		return FALSE
+	smoke.set_up(round(clamp(intensity*0.5, 1, 3), 1), src)
+	smoke.start()
+	visible_message(span_green("[src] shoots out a plume of acrid smoke!"))
+	adjustBruteLoss(maxHealth * 0.01 * intensity)
+	playsound(src.loc, 'sound/effects/smoke.ogg', 50, 1, -3)
+
+/mob/living/simple_animal/hostile/proc/do_emp_scramble(intensity)
+	if(!intensity)
+		return FALSE
+	move_to_delay = rand(move_to_delay * 0.5, move_to_delay * 2)
+	auto_fire_delay = rand(auto_fire_delay * 0.8, auto_fire_delay * 1.5)
+	extra_projectiles = rand(extra_projectiles - 1, extra_projectiles + 1)
+	ranged_cooldown_time = rand(ranged_cooldown_time * 0.5, ranged_cooldown_time * 2)
+	retreat_distance = rand(0, 10)
+	minimum_distance = rand(0, 10)
+	LoseTarget()
+	visible_message(span_notice("[src] jerks around wildly and starts acting strange!"))

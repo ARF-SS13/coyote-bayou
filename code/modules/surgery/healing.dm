@@ -48,7 +48,7 @@
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(..())
-		while((brutehealing && target.getBruteLoss()) || (burnhealing && target.getFireLoss()))
+		while((brutehealing && target.getBruteLoss()) || (burnhealing && target.getFireLoss()) || ((burnhealing || brutehealing) && target.getBleedLoss()))
 			if(!..())
 				break
 
@@ -57,19 +57,23 @@
 	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
 	var/urhealedamt_brute = brutehealing
 	var/urhealedamt_burn = burnhealing
+	var/urhealedamt_bleed = (brutehealing > burnhealing ? brutehealing : burnhealing)
 	if(missinghpbonus)
 		if(target.stat != DEAD)
 			urhealedamt_brute += round((target.getBruteLoss()/ missinghpbonus),0.1)
 			urhealedamt_burn += round((target.getFireLoss()/ missinghpbonus),0.1)
+			urhealedamt_bleed += round((target.getBleedLoss()/ missinghpbonus),0.1)
 		else //less healing bonus for the dead since they're expected to have lots of damage to begin with (to make TW into defib not TOO simple)
 			urhealedamt_brute += round((target.getBruteLoss()/ (missinghpbonus*5)),0.1)
 			urhealedamt_burn += round((target.getFireLoss()/ (missinghpbonus*5)),0.1)
+			urhealedamt_bleed += round((target.getBleedLoss()/ (missinghpbonus*5)),0.1)
 	if(!get_location_accessible(target, target_zone))
 		urhealedamt_brute *= 0.55
 		urhealedamt_burn *= 0.55
+		urhealedamt_bleed *= 0.55
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
-	target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)
+	target.heal_bodypart_damage(urhealedamt_brute, urhealedamt_burn, bleed = urhealedamt_bleed)
 	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")

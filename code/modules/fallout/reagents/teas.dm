@@ -141,10 +141,12 @@
 	glass_icon_state = "coffee"
 	glass_name = "Xander Tea"
 	glass_desc = "A engaging herbal rememedy steeped from blitzed Xander root. Detoxifies and replenishes the bodies blood supply."
+	effective_blood_max = 400
+	effective_blood_multiplier = 10
 
 /datum/reagent/consumable/tea/xandertea/on_mob_life(mob/living/carbon/M)
-	if(M.blood_volume < BLOOD_VOLUME_NORMAL)
-		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 3)
+	if(M.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
+		M.blood_volume = min(BLOOD_VOLUME_NORMAL, M.blood_volume + 1)
 	M.adjustToxLoss(-4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.dizziness = max(0,M.dizziness-2)
 	M.drowsyness = max(0,M.drowsyness-1)

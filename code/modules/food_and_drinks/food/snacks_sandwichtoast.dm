@@ -154,3 +154,14 @@
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/nutriment/vitamin = 3)
 	tastes = list("meat" = 2, "toasted bread" = 1)
 	foodtype = GRAIN | MEAT
+
+/obj/item/reagent_containers/food/snacks/danish_hotdog
+	name = "danish hotdog"
+	desc = "Appetizing bun, with a sausage in the middle, covered with sauce, fried onion and pickles rings"
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "danish_hotdog"
+	bitesize = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/ketchup = 3, /datum/reagent/consumable/nutriment/vitamin = 7)
+	tastes = list("bun" = 3, "meat" = 2, "fried onion" = 1, "pickles" = 1)
+	foodtype = GRAIN | MEAT | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL

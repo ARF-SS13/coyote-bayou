@@ -898,6 +898,7 @@ Raider
 		/obj/item/clothing/mask/balaclava = 1,
 		/obj/item/clothing/shoes/f13/diesel = 1,
 		/obj/item/clothing/gloves/thief = 1,
+		/obj/item/stealthboy = 1,
 		)
 /datum/outfit/loadout/trafficker // https://youtu.be/9jROV2H9Sw0
 	name = "Trafficker"
@@ -1174,7 +1175,7 @@ Raider
 
 /datum/outfit/loadout/exmil
 	name = "Ex-Military"
-	suit = /obj/item/clothing/suit/flakjack
+	suit = /obj/item/clothing/suit/armor/outfit/vest/flakjack
 	uniform = /obj/item/clothing/under/f13/bdu
 	shoes = /obj/item/clothing/shoes/f13/military
 	head = /obj/item/clothing/head/flakhelm

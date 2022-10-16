@@ -6,18 +6,17 @@
 	icon_living = "behemoth_axe"
 	icon_dead = "behemoth_dead"
 
-	health = 2300 //used to be 3000
-	maxHealth = 2300 //used to be 3000
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6, /obj/item/card/id/dogtag/enclave/noncombatant = 1)
-
+	health = 2000 //used to be 3000
+	maxHealth = 2000 //used to be 3000
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 10, /obj/item/stack/sheet/bone = 6)
+	loot = list(/obj/item/card/id/dogtag/enclave/noncombatant, /obj/item/stack/f13Cash/random/med) //THIS IS FOR DUNGEON ACCESS STUFF: CHANGE IF NEEDED
 	armour_penetration = 0.7
-	melee_damage_lower = 40
-	melee_damage_upper = 50
+	melee_damage_lower = 50
+	melee_damage_upper = 70
 	vision_range = 9
 	aggro_vision_range = 18
 	speed = 8
 	move_to_delay = 8
-	rapid_melee = 16
 	melee_queue_distance = 20 // as far as possible really, need this because of charging
 	ranged = TRUE
 	stat_attack = CONSCIOUS
@@ -110,16 +109,19 @@
 			playsound(T,'sound/effects/bamf.ogg', 600, TRUE, 10)
 			new /obj/effect/temp_visual/small_smoke/halfsecond(T)
 			for(var/mob/living/L in T)
+				var/obj/item/bodypart/affecting = L.get_bodypart(BODY_ZONE_CHEST)
+				var/armor_block = L.run_armor_check(affecting, "melee")
 				if(L == src || L.throwing)
 					continue
 				to_chat(L, span_userdanger("[src]'s ground slam shockwave sends you flying!"))
 				var/turf/thrownat = get_ranged_target_turf_direct(src, L, 8, rand(-10, 10))
-				L.throw_at(thrownat, 8, 2, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
+				L.throw_at(thrownat, 4, 1, src, TRUE)		//, force = MOVE_FORCE_OVERPOWERING, gentle = TRUE)
 				if(do_damage)
-					L.apply_damage(20, BRUTE, wound_bonus=CANT_WOUND)
+					L.apply_damage(40, BRUTE, BODY_ZONE_CHEST, armor_block, wound_bonus = CANT_WOUND) //This takes into count armor now. Also makes it damage the chest first, so he can't break your legs instantly.
 				shake_camera(L, 2, 1)
 			all_turfs -= T
 		sleep(delay)
+
 
 /// Larger but slower ground stomp
 /mob/living/simple_animal/hostile/megafauna/behemoth/proc/heavy_stomp()

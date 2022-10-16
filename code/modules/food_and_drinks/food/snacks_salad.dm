@@ -149,3 +149,51 @@
 	list_reagents = list(/datum/reagent/consumable/capsaicin = 2, /datum/reagent/consumable/nutriment/vitamin = 3, /datum/reagent/consumable/nutriment = 5)
 	tastes = list("tender meat" = 1, "acidic cactus" = 3, "crunchy nuts" = 1)
 	foodtype = VEGETABLES | FRUIT | MEAT
+
+/obj/item/reagent_containers/food/snacks/salad/kale_salad
+	name = "kale salad"
+	desc = "A healthy kale salad drizzled in oil, perfect for warm summer months."
+	icon_state = "kale_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("healthy greens" = 2, "olive dressing" = 1)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/salad/greek_salad
+	name = "Greek salad"
+	desc = "A popular salad made of tomatoes, onions, feta cheese, and olives all drizzled in olive oil. Though it feels like it's missing something..."
+	icon_state = "greek_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("healthy greens" = 2, "olive dressing" = 1, "feta cheese" = 1)
+	foodtype = VEGETABLES | DAIRY
+
+/obj/item/reagent_containers/food/snacks/salad/spring_salad
+	name = "spring salad"
+	desc = "A simple salad of carrots, lettuce and peas drizzled in oil with a pinch of salt."
+	icon_state = "spring_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("crisp greens" = 2, "olive dressing" = 2, "salt" = 1)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/salad/potato_salad
+	name = "potato salad"
+	desc = "A dish of boiled potatoes mixed with boiled eggs, onions, and mayonnaise. A staple of every self-respecting barbeque."
+	icon_state = "potato_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("creamy potatoes" = 2, "eggs" = 2, "mayonnaise" = 1, "onions" = 1)
+	foodtype = VEGETABLES | BREAKFAST
+
+/obj/item/reagent_containers/food/snacks/salad/spinach_fruit_salad
+	name = "spinach fruit salad"
+	desc = "A vibrant fruit salad made of spinach, berries, and pineapple chunks all drizzled in oil. Yummy!"
+	icon_state = "spinach_fruit_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("spinach" = 2, "berries" = 2, "pineapple" = 2, "dressing" = 1)
+	foodtype = VEGETABLES | FRUIT
+
+/obj/item/reagent_containers/food/snacks/salad/antipasto_salad
+	name = "antipasto salad"
+	desc = "A traditional Italian salad made of salami, mozzarella cheese, olives, and tomatoes. Often served as a first course meal."
+	icon_state = "antipasto_salad"
+	list_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 12, /datum/reagent/consumable/nutriment = 12)
+	tastes = list("lettuce" = 2, "salami" = 2, "mozzarella cheese" = 2, "tomatoes" = 2, "dressing" = 1)
+	foodtype = VEGETABLES | DAIRY | MEAT

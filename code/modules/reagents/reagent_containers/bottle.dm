@@ -487,3 +487,16 @@
 		cached_icon = icon_state
 	if(reagents.total_volume)
 		return
+
+//f13 - Coyote
+/obj/item/reagent_containers/glass/bottle/nicotine 
+	name = "nicotine bottle"
+	list_reagents = list(/datum/reagent/drug/nicotine = 30)
+
+/obj/item/reagent_containers/glass/bottle/methamphetamine
+	name = "methamphetamine bottle"
+	list_reagents = list(/datum/reagent/drug/methamphetamine = 30)
+
+/obj/item/reagent_containers/glass/bottle/crank
+	name = "crank bottle"
+	list_reagents = list(/datum/reagent/drug/crank = 30)

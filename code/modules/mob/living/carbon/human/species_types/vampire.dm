@@ -48,7 +48,7 @@
 		C.adjustCloneLoss(-4)
 		return
 	C.blood_volume -= 0.75 //Will take roughly 19.5 minutes to die from standard blood volume, roughly 83 minutes to die from max blood volume.
-	if(C.blood_volume <= (BLOOD_VOLUME_SURVIVE*C.blood_ratio))
+	if(C.get_blood(FALSE) <= (BLOOD_VOLUME_SURVIVE*C.blood_ratio))
 		to_chat(C, span_danger("You ran out of blood!"))
 		C.dust()
 	var/area/A = get_area(C)
@@ -80,7 +80,7 @@
 			return
 		if(H.pulling && iscarbon(H.pulling))
 			var/mob/living/carbon/victim = H.pulling
-			if(H.blood_volume >= BLOOD_VOLUME_MAXIMUM)
+			if(H.get_blood(FALSE) >= BLOOD_VOLUME_MAXIMUM)
 				to_chat(H, span_notice("You're already full!"))
 				return
 			//This checks whether or not they are wearing a garlic clove on their neck
@@ -157,7 +157,7 @@
 	H = new(shape,src,caster)
 	if(istype(H, /mob/living/simple_animal))
 		var/mob/living/simple_animal/SA = H
-		if((caster.blood_volume >= (BLOOD_VOLUME_BAD*caster.blood_ratio)) || (ventcrawl_nude_only && length(caster.get_equipped_items(include_pockets = TRUE))))
+		if((caster.get_blood(FALSE) >= (BLOOD_VOLUME_SYMPTOMS_DEBILITATING*caster.blood_ratio)) || (ventcrawl_nude_only && length(caster.get_equipped_items(include_pockets = TRUE))))
 			SA.ventcrawler = FALSE
 	if(transfer_name)
 		H.name = caster.name

@@ -1076,75 +1076,89 @@
 /////////////////////////
 
 /* * * * * * * *
- * Ultra Deadly Super Death Pellet
- * Overkill
- * Extremely Overkill
+ * Super duper fast hitscan penetrator knockback painbeam
+ * Wall piercing
+ * Bouncy (and player piercing)
  * * * * * * * */
 
-#define BULLET_GAUSS_DAMAGE_MULT 2
-#define BULLET_GAUSS_STAMINA_MULT 2
-#define BULLET_GAUSS_WOUND_MULT 5 // gonna feel that blender
-#define BULLET_GAUSS_NAKED_WOUND_MULT 10 // lol
 #define BULLET_GAUSS_SPEED_MULT 10 // lol
 
 /* 2mmEC match
- * DAMAGE: 150
- * STAMIN: 225
- * RECOIL: 1
- * WOUNDS: 250
- * WNAKED: 150
+ * DAMAGE: 37
+ * STAMIN: 7
+ * RECOIL: 4.5
+ * WOUNDS: 6
+ * WNAKED: 3
+ * Does 93 extra damage to mobs. rip~
  */
+
 /obj/item/projectile/bullet/c2mm
 	name = "2mm gauss projectile"
-	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_DAMAGE_MULT
-	stamina = BULLET_STAMINA_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_STAMINA_MULT
+	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_MATCH_MULT
+	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_MATCH_MULT
 	spread = BULLET_SPREAD_MATCH
-	recoil = BULLET_RECOIL_RIFLE_HEAVY
+	recoil = BULLET_RECOIL_RIFLE_LIGHT
 
-	wound_bonus = BULLET_WOUND_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_WOUND_MULT
-	bare_wound_bonus = BULLET_WOUND_RIFLE_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_GAUSS_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
+	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_MATCH_MULT
+	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_GAUSS_SPEED_MULT
-	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY
+	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * BULLET_GAUSS_SPEED_MULT
+	damage_falloff = BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT
+	movement_type = FLYING | UNSTOPPABLE
+	hitscan = TRUE
+	armour_penetration = 0.5
+	tracer_type = /obj/effect/projectile/tracer/laser/blue
+	muzzle_type = /obj/effect/projectile/muzzle/laser/blue
+	impact_type = /obj/effect/projectile/impact/laser/blue
+	supereffective_damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_MATCH_MULT
+	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
+	/// Reduces damage by this much when it hits a thing
+	var/per_wall_mult = 0.9
+
+/obj/item/projectile/bullet/c2mm/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
+	if(isliving(target))
+		var/atom/movable/M = target
+		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
+		M.safe_throw_at(throw_target, 2, 3)
+	if(ismovable(target))
+		damage = max(damage * per_wall_mult, 0.5)
+	..()
 
 /* 2mmEC blender
- * DAMAGE: 150
- * STAMIN: 225
- * RECOIL: 1
- * WOUNDS: 250
- * WNAKED: 150
+ * DAMAGE: 37
+ * STAMIN: 7
+ * RECOIL: 4.5
+ * WOUNDS: 6
+ * WNAKED: 3
+ * Does 93 extra damage to mobs. rip~
+ * Also guaranteed to kill you and your friends
  */
 /obj/item/projectile/bullet/c2mm/blender //welcome to pain town
 	name = "2mm blender projectile"
-	damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_DAMAGE_MULT
-	stamina = BULLET_STAMINA_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_STAMINA_MULT
+	damage = BULLET_DAMAGE_RIFLE_LIGHT * BULLET_MATCH_MULT
+	stamina = BULLET_STAMINA_RIFLE_LIGHT * BULLET_MATCH_MULT
 	spread = BULLET_SPREAD_MATCH
-	recoil = BULLET_RECOIL_RIFLE_HEAVY
+	recoil = BULLET_RECOIL_RIFLE_LIGHT
 
-	wound_bonus = BULLET_WOUND_RIFLE_HEAVY * BULLET_MATCH_MULT * BULLET_GAUSS_WOUND_MULT
-	bare_wound_bonus = BULLET_WOUND_RIFLE_HEAVY * BULLET_NAKED_WOUND_MULT * BULLET_GAUSS_NAKED_WOUND_MULT
-	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_HEAVY
+	wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_MATCH_MULT
+	bare_wound_bonus = BULLET_WOUND_RIFLE_LIGHT * BULLET_NAKED_WOUND_MULT
+	wound_falloff_tile = BULLET_WOUND_FALLOFF_RIFLE_LIGHT
 	
-	pixels_per_second = BULLET_SPEED_RIFLE_HEAVY * BULLET_GAUSS_SPEED_MULT
+	pixels_per_second = BULLET_SPEED_RIFLE_LIGHT * BULLET_GAUSS_SPEED_MULT
+	movement_type = FLYING
 
 	pass_flags = PASSTABLE
 	ricochets_max = 9 //ain't called the 'blender' for nothin'
-	ricochet_incidence_leeway = 130
+	ricochet_incidence_leeway = 0
 	ricochet_decay_damage = 1
 	ricochet_decay_chance = 11
 	ricochet_chance = 100
-	var/collats = 3
 
 /obj/item/projectile/bullet/c2mm/blender/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
-	if(isliving(target) && collats)
-		collats--
+	if(ismovable(target))
 		temporary_unstoppable_movement = TRUE
 		ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
 	..()
 
-#undef BULLET_GAUSS_DAMAGE_MULT
-#undef BULLET_GAUSS_STAMINA_MULT
-#undef BULLET_GAUSS_WOUND_MULT
-#undef BULLET_GAUSS_NAKED_WOUND_MULT
 #undef BULLET_GAUSS_SPEED_MULT

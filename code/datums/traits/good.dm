@@ -467,7 +467,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	value = 1
 	mob_trait = TRAIT_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You feel like you can make a bomb out of anything.")
-	lose_text = "<span class='danger'You feel okay with the advancement of technology.</span>"
+	lose_text = span_danger("You feel okay with the advancement of technology.")
 	locked = FALSE
 
 /datum/quirk/explosive_crafting/add()
@@ -481,6 +481,54 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		H.mind.learned_recipes -= GLOB.basic_explosive_recipes
+
+/datum/quirk/lick_heal
+	name = "Soothing Saliva"
+	desc = "Your saliva has a mild healing effect on burns and bruises. Use *lick to lick your injuries."
+	value = 2
+	mob_trait = TRAIT_HEAL_TONGUE
+	gain_text = span_notice("You feel a slight tingle in your mouth.")
+	lose_text = span_danger("The tingle in your mouth fades.")
+	locked = FALSE
+
+/datum/quirk/lick_heal/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	if(!our_tongue)
+		return //welp
+	our_tongue.lick_heal_brute = 1
+	our_tongue.lick_heal_burn = 1
+
+/datum/quirk/lick_heal/remove()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	if(!our_tongue)
+		return //welp
+	our_tongue.lick_heal_brute = 0
+	our_tongue.lick_heal_burn = 0
+
+/datum/quirk/lick_bandage
+	name = "Sanguine Saliva"
+	desc = "Your saliva has a mild coagulating effect on open bleeding wounds. Use *lick to lick your lacerations."
+	value = 2
+	mob_trait = TRAIT_BANDAGE_TONGUE
+	gain_text = span_notice("Your mouth feels a bit gummy.")
+	lose_text = span_danger("The gumminess in your mouth fades.")
+	locked = FALSE
+
+/datum/quirk/lick_bandage/on_spawn()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	if(!our_tongue)
+		return //welp
+	our_tongue.initialize_bandage(/obj/item/stack/medical/gauze/lick)
+
+/datum/quirk/lick_bandage/remove()
+	var/mob/living/carbon/human/human_holder = quirk_holder
+	var/obj/item/organ/tongue/our_tongue = human_holder.getorganslot(ORGAN_SLOT_TONGUE)
+	if(!our_tongue)
+		return //welp
+	QDEL_NULL(our_tongue.lick_bandage)
 
 /datum/quirk/advanced_explosive_crafting
 	name = "Advanced Explosive Crafting"

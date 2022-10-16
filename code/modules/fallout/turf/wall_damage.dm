@@ -42,6 +42,8 @@
 		user.do_attack_animation(src)
 		if(istype(W, /obj/item/pickaxe)) //stops pickaxes from running needless attack checks on our baseturf
 			return	
+		if(SEND_SIGNAL(W, COMSIG_LICK_RETURN, src, user)) // so I can lick walls like a frickin frick
+			return
 		if(W.force > holdHardness/3 && !holdUnbreakable)
 			take_damage(W.force/10)
 			to_chat(user, span_warning("You smash the wall with [W]."))

@@ -101,43 +101,6 @@
 	. = ..()
 	. += "[get_ammo(0,0)] of those are live rounds."
 
-/obj/item/gun/ballistic/revolver/detective/Initialize()
-	. = ..()
-	safe_calibers = magazine.caliber
-
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
-	if("38" in magazine.caliber)
-		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//you know the drill
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return TRUE
-			magazine.caliber = "357"
-			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
-	else
-		to_chat(user, span_notice("You begin to revert the modifications to [src]..."))
-		if(magazine.ammo_count())
-			afterattack(user, user)	//and again
-			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, span_warning("You can't modify it!"))
-				return
-			magazine.caliber = "38"
-			desc = initial(desc)
-			to_chat(user, span_notice("You remove the modifications on [src]. Now it will fire .38 rounds."))
-	return TRUE
-
-
-
 /* * * * * * * * * *
  * LIGHT REVOLVERS *
  * * * * * * * * * */
@@ -172,6 +135,21 @@
 
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
+
+/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+	if(..())
+		return TRUE
+	if(!(CALIBER_357 in magazine.caliber))
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
+		if(magazine.ammo_count())
+			afterattack(user, user)	//you know the drill
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
+			return TRUE
+		if(I.use_tool(src, user, 30))
+			magazine.caliber |= CALIBER_357
+			desc = "The barrel and chamber assembly seems to have been modified."
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
+	return TRUE
 
 /* * * * * * * * * * *
  * .45 ACP Revolver
@@ -660,8 +638,8 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/sequoia
-	name = "ranger sequoia"
-	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	name = "desert sequoia"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip is oddly comfortable in your hand  The entire weapon is suited for quick-drawing."
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -692,13 +670,13 @@
 
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
-	desc = "This heavy revolver is a trademark weapon of the New California Republic Rangers. This one has a blade attached to the handle for a painful pistolwhip."
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip has a blade attached to the bottom. You know, for stabbin'."
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
 	fire_delay = GUN_FIRE_DELAY_SLOW
@@ -710,6 +688,8 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
 /obj/item/gun/ballistic/revolver/sequoia/death
+	name = "Desert Hemlock"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears slight singe-marks..."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 

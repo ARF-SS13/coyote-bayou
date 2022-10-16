@@ -2696,7 +2696,7 @@ datum/reagent/eldritch
 		M.adjustOxyLoss(-3, FALSE)
 		M.adjustBruteLoss(-3, FALSE)
 		M.adjustFireLoss(-3, FALSE)
-		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
+		if(ishuman(M) && M.get_blood(FALSE) < BLOOD_VOLUME_NORMAL)
 			M.blood_volume += 3
 	else
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
@@ -3024,3 +3024,85 @@ datum/reagent/eldritch
 
 	P.modify_size(-0.1)
 	..()
+
+///Ass enhancer
+/datum/reagent/butt_enlarger
+	name = "Denbu Tincture"
+	description = "A mixture of natural vitamins and valentines plant extract, causing butt enlargement in humanoids."
+	color = "#e8ff1b"
+	taste_description = "butter with a sweet aftertaste"
+	overdose_threshold = 100
+	can_synth = FALSE
+
+/datum/reagent/butt_enlarger/on_mob_metabolize(mob/living/carbon/M)
+	. = ..()
+	if(!ishuman(M)) //leaving the monkey feature for those desperate for goon level comedy.
+		if(volume >= 15) //to prevent monkey butt farms
+			var/turf/T = get_turf(M)
+			var/obj/item/organ/genital/butt/B = new /obj/item/organ/genital/butt(T)
+			M.visible_message("<span class='warning'>An ass suddenly flies out of [M]!</b></span>")
+			var/T2 = get_random_station_turf()
+			M.adjustBruteLoss(25)
+			M.DefaultCombatKnockdown(50)
+			M.Stun(50)
+			B.throw_at(T2, 8, 1)
+		M.reagents.del_reagent(type)
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BUTT) && H.emergent_genital_call())
+		H.genital_override = TRUE
+
+/datum/reagent/butt_enlarger/on_mob_life(mob/living/carbon/M) //Increases butt size
+	if(!ishuman(M))
+		return ..()
+	var/mob/living/carbon/human/H = M
+	if(!(H.client?.prefs.cit_toggles & BUTT_ENLARGEMENT))
+		return ..()
+	var/obj/item/organ/genital/butt/B = M.getorganslot(ORGAN_SLOT_BUTT)
+	if(!B) //If they don't have a butt. Give them one!
+		var/obj/item/organ/genital/butt/nB = new
+		nB.Insert(M)
+		if(nB)
+			if(M.dna.species.use_skintones && M.dna.features["genitals_use_skintone"])
+				nB.color = SKINTONE2HEX(H.skin_tone)
+			else if(M.dna.features["butt_color"])
+				nB.color = "#[M.dna.features["butt_color"]]"
+			else
+				nB.color = SKINTONE2HEX(H.skin_tone)
+			nB.size = 1
+			to_chat(M, span_alert("You feel your rear pad itself out into a more prominent form!"))
+			M.reagents.remove_reagent(type, 5)
+			B = nB
+	//If they have, increase size.
+	if(B.cached_size < BUTT_SIZE_MAX) //just in case
+		B.modify_size(0.05)
+	..()
+
+/datum/reagent/butt_shrinker
+	name = "Rectify tincture"
+	color = "#faffd5"
+	taste_description = "the skimmest of milk" // What's the opposite of butter?
+	description = "A medicine used to treat organomegaly in a patient's ass."
+	metabolization_rate = 0.5
+	can_synth = TRUE
+
+/datum/reagent/butt_shrinker/on_mob_metabolize(mob/living/M)
+	. = ..()
+	if(!ishuman(M))
+		return
+	var/mob/living/carbon/human/H = M
+	if(!H.getorganslot(ORGAN_SLOT_BUTT) && H.dna.features["has_butt"])
+		H.give_genital(/obj/item/organ/genital/butt)
+
+/datum/reagent/butt_shrinker/on_mob_life(mob/living/carbon/M)
+	var/obj/item/organ/genital/butt/B = M.getorganslot(ORGAN_SLOT_BUTT)
+	if(!B)
+		return ..()
+	var/optimal_size = M.dna.features["butt_size"]
+	if(!optimal_size)//Fast fix for those who don't want it.
+		B.modify_size(-0.2)
+	else if(B.size > optimal_size)
+		B.modify_size(-0.1, optimal_size)
+	else if(B.size < optimal_size)
+		B.modify_size(0.1, 0, optimal_size)
+	return ..()

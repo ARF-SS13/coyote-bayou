@@ -497,7 +497,7 @@
 			if(!stop_messages)
 				to_chat(M, span_warning("[host] cannot hold [I]!"))
 			return FALSE
-		if(is_type_in_typecache(I, cant_hold)) //Check for specific items which this container can't hold.
+		if(is_type_in_typecache(I, cant_hold) || HAS_TRAIT(I, TRAIT_NO_STORAGE_INSERT)) //Check for specific items which this container can't hold.
 			if(!stop_messages)
 				to_chat(M, span_warning("[host] cannot hold [I]!"))
 			return FALSE

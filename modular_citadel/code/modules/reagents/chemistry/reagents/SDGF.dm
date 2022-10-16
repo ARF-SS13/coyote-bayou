@@ -308,7 +308,7 @@ IMPORTANT FACTORS TO CONSIDER WHILE BALANCING
 	can_synth = FALSE
 
 /datum/reagent/fermi/SDGFheal/on_mob_life(mob/living/carbon/M)//Used to heal the clone after splitting, the clone spawns damaged. (i.e. insentivies players to make more than required, so their clone doesn't have to be treated)
-	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
+	if(M.get_blood(FALSE) < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
 		M.blood_volume += 10
 	M.adjustCloneLoss(-2, 0)
 	M.setOrganLoss(ORGAN_SLOT_BRAIN, -1)

@@ -32,6 +32,14 @@
 	name = "matchbox"
 	path = /obj/item/storage/box/matches
 
+/datum/gear/hands/silver_ring
+	name = "Silver Ring"
+	path = /obj/item/clothing/gloves/ring/silver
+
+/datum/gear/hands/gold_ring
+	name = "Gold Ring"
+	path = /obj/item/clothing/gloves/ring
+
 /datum/gear/hands/cheaplighter
 	name = "cheap lighter"
 	path = /obj/item/lighter/greyscale

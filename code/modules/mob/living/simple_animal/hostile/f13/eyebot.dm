@@ -17,12 +17,27 @@
 	response_harm_simple = "hits"
 	move_to_delay = 3
 	robust_searching = 1
-	maxHealth = 56
-	health = 56
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 40 
+	health = 40
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_BERSERK,
+		MOB_EMP_DAMAGE,
+		MOB_EMP_SCRAMBLE
+		)
 	healable = 0
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	blood_volume = 0
-	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
+	faction = list(
+		"hostile",
+		"enclave",
+		"wastebot",
+		"ghoul",
+		"cazador",
+		"supermutant",
+		"bighorner"
+		)
 	harm_intent_damage = 8
 	melee_damage_lower = 2
 	melee_damage_upper = 3
@@ -39,7 +54,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
-	aggrosound = list('sound/f13npc/eyebot/aggro.ogg', )
+	aggrosound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
@@ -57,13 +72,6 @@
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
 	name = "ED-[rand(1,99)]"
-
-/mob/living/simple_animal/hostile/eyebot/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
-	adjustBruteLoss(emp_damage)
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
@@ -157,6 +165,7 @@
 	name = "reinforced eyebot"
 	desc = "An eyebot with beefier protection, and extra electronic aggression."
 	color = "#B85C00"
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
 	maxHealth = 100
 	health = 100
 	faction = list("raider", "wastebot")

@@ -61,7 +61,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
 /obj/item/clothing/neck/mantle/ranger
-	name = "NCR ranger cape"
+	name = "ranger cape"
 	desc = "Ranger cape made from what looks like old poncho fitted with star, stripes and a bear. Most likely has a holster hidden underneath."
 	icon_state = "rangercape"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin

@@ -1146,14 +1146,14 @@
 
 /obj/item/card/id/rusted
 	name = "rusted tags"
-	desc = "Decrepit uncared for NCR dogtags, kept as a reminder to something."
+	desc = "Decrepit uncared for dogtags, kept as a reminder to something."
 	icon_state = "rustedncrtag"
 	item_state = "rustedncrtag"
 	uses_overlays = FALSE
 
 /obj/item/card/id/rusted/rustedmedallion
 	name = "rusted medallion"
-	desc = "A battered and unkempt legion medallion, kept as a reminder to something."
+	desc = "A battered and unkempt medallion, kept as a reminder to something."
 	icon_state = "rustedmedallion"
 	item_state = "rustedmedallion"
 	uses_overlays = FALSE

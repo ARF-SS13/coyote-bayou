@@ -7,25 +7,15 @@
 /obj/machinery/chem_dispenser/drinks{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "c" = (
 /obj/structure/table,
 /turf/open/floor/f13/wood,
 /area/survivalpod)
-"d" = (
-/obj/structure/chair/f13chair2,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 1;
-	icon_state = "dirt"
-	},
-/area/survivalpod)
 "e" = (
 /obj/structure/table,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "g" = (
 /obj/structure/campfire/stove,
@@ -117,10 +107,7 @@
 /obj/structure/table,
 /obj/item/storage/box/drinkingglasses,
 /obj/item/storage/box/drinkingglasses,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 9;
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "s" = (
 /obj/structure/sink{
@@ -152,27 +139,12 @@
 /obj/item/storage/box/ingredients/wildcard,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
-"y" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 1;
-	icon_state = "dirt"
-	},
-/area/survivalpod)
 "z" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/condiment/yeast,
 /obj/item/reagent_containers/food/condiment/ketchup,
 /obj/item/reagent_containers/food/condiment/ketchup,
 /turf/open/indestructible/ground/outside/dirt,
-/area/survivalpod)
-"B" = (
-/obj/structure/chair/f13chair2{
-	dir = 1;
-	icon_state = "f13chair2"
-	},
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt"
-	},
 /area/survivalpod)
 "C" = (
 /obj/structure/table,
@@ -193,9 +165,6 @@
 /obj/item/reagent_containers/food/snacks/store/cheesewheel,
 /turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
-"E" = (
-/turf/open/indestructible/ground/outside/desert,
-/area/survivalpod)
 "H" = (
 /obj/structure/simple_door/tent,
 /turf/open/floor/f13/wood,
@@ -205,7 +174,7 @@
 	dir = 1;
 	icon_state = "f13chair2"
 	},
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "J" = (
 /obj/structure/table,
@@ -214,14 +183,11 @@
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
 /obj/item/reagent_containers/glass/beaker/large,
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 10;
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "O" = (
 /obj/item/candle/tribal_torch,
-/turf/open/indestructible/ground/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "P" = (
 /obj/structure/bed/mattress,
@@ -398,19 +364,11 @@
 /obj/machinery/chem_dispenser/drinks/beer{
 	dir = 4
 	},
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 "X" = (
 /obj/structure/chair/f13chair2,
-/turf/open/indestructible/ground/outside/desert,
-/area/survivalpod)
-"Y" = (
-/turf/open/indestructible/ground/outside/dirt{
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt,
 /area/survivalpod)
 
 (1,1,1) = {"
@@ -482,68 +440,68 @@ a
 (7,1,1) = {"
 a
 O
-E
-Y
 w
-y
-E
-O
+w
+w
+w
+w
+w
 a
 "}
 (8,1,1) = {"
 a
-E
-E
-Y
 w
-y
-E
-E
+w
+w
+w
+w
+w
+w
 a
 "}
 (9,1,1) = {"
-E
+w
 X
 e
-B
+I
 w
-d
+X
 e
 I
-E
+w
 "}
 (10,1,1) = {"
-E
+w
 X
 e
-B
+I
 w
-d
+X
 e
 I
-E
+w
 "}
 (11,1,1) = {"
-E
+w
 X
 e
-B
+I
 w
-d
+X
 e
 I
-E
+w
 "}
 (12,1,1) = {"
-E
-E
-E
-Y
 w
-y
-E
-E
-E
+w
+w
+w
+w
+w
+w
+w
+w
 "}
 (13,1,1) = {"
 a

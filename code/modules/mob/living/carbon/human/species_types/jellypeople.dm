@@ -71,19 +71,20 @@
 /datum/species/jelly/spec_life(mob/living/carbon/human/H)
 	if(H.stat == DEAD || HAS_TRAIT(H, TRAIT_NOMARROW)) //can't farm slime jelly from a dead slime/jelly person indefinitely, and no regeneration for blooduskers
 		return
-	if(!H.blood_volume)
+	var/our_blood = H.get_blood(FALSE)
+	if(!our_blood)
 		H.blood_volume += 5
 		H.adjustBruteLoss(5)
 		to_chat(H, span_danger("You feel empty!"))
 
-	if(H.blood_volume < (BLOOD_VOLUME_NORMAL * H.blood_ratio))
+	if(our_blood < (BLOOD_VOLUME_NORMAL * H.blood_ratio))
 		if(H.nutrition >= NUTRITION_LEVEL_STARVING)
 			H.blood_volume += 3
 			H.nutrition -= 2.5
-	if(H.blood_volume < (BLOOD_VOLUME_OKAY*H.blood_ratio))
+	if(our_blood < (BLOOD_VOLUME_OKAY*H.blood_ratio))
 		if(prob(5))
 			to_chat(H, span_danger("You feel drained!"))
-	if(H.blood_volume < (BLOOD_VOLUME_BAD*H.blood_ratio))
+	if(our_blood < (BLOOD_VOLUME_SYMPTOMS_DEBILITATING*H.blood_ratio))
 		Cannibalize_Body(H)
 	if(regenerate_limbs)
 		regenerate_limbs.UpdateButtonIcon()
@@ -116,7 +117,7 @@
 		var/list/limbs_to_heal = H.get_missing_limbs()
 		if(limbs_to_heal.len < 1)
 			return 0
-		if(H.blood_volume >= (BLOOD_VOLUME_OKAY*H.blood_ratio)+40)
+		if(H.get_blood(FALSE) >= (BLOOD_VOLUME_OKAY*H.blood_ratio)+40)
 			return 1
 		return 0
 
@@ -127,13 +128,13 @@
 		to_chat(H, span_notice("You feel intact enough as it is."))
 		return
 	to_chat(H, span_notice("You focus intently on your missing [limbs_to_heal.len >= 2 ? "limbs" : "limb"]..."))
-	if(H.blood_volume >= 40*limbs_to_heal.len+(BLOOD_VOLUME_OKAY*H.blood_ratio))
+	if(H.get_blood(FALSE) >= 40*limbs_to_heal.len+(BLOOD_VOLUME_OKAY*H.blood_ratio))
 		H.regenerate_limbs()
 		H.blood_volume -= 40*limbs_to_heal.len
 		to_chat(H, span_notice("...and after a moment you finish reforming!"))
 		return
-	else if(H.blood_volume >= 40)//We can partially heal some limbs
-		while(H.blood_volume >= (BLOOD_VOLUME_OKAY*H.blood_ratio)+40)
+	else if(H.get_blood(FALSE) >= 40)//We can partially heal some limbs
+		while(H.get_blood(FALSE) >= (BLOOD_VOLUME_OKAY*H.blood_ratio)+40)
 			var/healed_limb = pick(limbs_to_heal)
 			H.regenerate_limb(healed_limb)
 			limbs_to_heal -= healed_limb
@@ -206,7 +207,7 @@
 /datum/species/jelly/slime/spec_life(mob/living/carbon/human/H)
 	if((HAS_TRAIT(H, TRAIT_NOMARROW)))
 		return
-	if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
+	if(H.get_blood(FALSE) >= BLOOD_VOLUME_SLIME_SPLIT)
 		if(prob(5))
 			to_chat(H, span_notice("You feel very bloated!"))
 	else if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
@@ -225,7 +226,7 @@
 /datum/action/innate/split_body/IsAvailable(silent = FALSE)
 	if(..())
 		var/mob/living/carbon/human/H = owner
-		if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
+		if(H.get_blood(FALSE) >= BLOOD_VOLUME_SLIME_SPLIT)
 			return 1
 		return 0
 
@@ -242,7 +243,7 @@
 	H.mob_transforming = TRUE
 
 	if(do_after(owner, delay=60, needhand=FALSE, target=owner, progress=TRUE))
-		if(H.blood_volume >= BLOOD_VOLUME_SLIME_SPLIT)
+		if(H.get_blood(FALSE) >= BLOOD_VOLUME_SLIME_SPLIT)
 			make_dupe()
 		else
 			to_chat(H, span_warning("...but there is not enough of you to go around! You must attain more mass to split!"))
@@ -494,7 +495,7 @@
 
 /datum/action/innate/slime_change/proc/change_form()
 	var/mob/living/carbon/human/H = owner
-	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color","Hair Style", "Genitals", "Tail", "Snout", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Cancel")
+	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color","Hair Style", "Genitals", "Tail", "Snout", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Cancel")
 
 	if(select_alteration == "Body Color")
 		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
@@ -675,6 +676,18 @@
 		H.update_genitals()
 		H.apply_overlay()
 		H.give_genital(/obj/item/organ/genital/breasts)
+
+	else if (select_alteration == "Butt Size")
+		for(var/obj/item/organ/genital/butt/X in H.internal_organs)
+			qdel(X)
+		var/min_B = CONFIG_GET(number/butt_min_size_prefs)
+		var/max_B = CONFIG_GET(number/butt_max_size_prefs)
+		var/new_length = input(owner, "Butt size:\n([min_B]-[max_B])", "Genital Alteration") as num|null
+		if(new_length)
+			H.dna.features["butt_size"] = clamp(round(new_length), min_B, max_B)
+		H.update_genitals()
+		H.apply_overlay()
+		H.give_genital(/obj/item/organ/genital/butt)
 
 	else
 		return

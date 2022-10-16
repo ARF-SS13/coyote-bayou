@@ -11,6 +11,7 @@
  * * blocked - armor value applied
  * * forced - bypass hit percentage
  * * spread_damage - used in overrides
+ * * damage_threshold - subtracts damage
  *
  * Returns TRUE if damage applied
  */
@@ -145,6 +146,9 @@
 
 /mob/living/proc/getBruteLoss()
 	return bruteloss
+
+/mob/living/proc/getBleedLoss()
+	return 0
 
 /mob/living/proc/adjustBruteLoss(amount, updating_health = TRUE, forced = FALSE)
 	if(!forced && (status_flags & GODMODE))

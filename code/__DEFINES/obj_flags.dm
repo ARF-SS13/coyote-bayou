@@ -1,5 +1,5 @@
 // Flags for the obj_flags var on /obj
-
+///// NOTE THIS FILE SHOULD REMAIN UNTICKED
 
 #define EMAGGED					(1<<0)
 #define IN_USE					(1<<1) // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
@@ -15,17 +15,28 @@
 
 // Flags for the item_flags var on /obj/item
 
+/// Thing is being removed, probably
 #define BEING_REMOVED			(1<<0)
-#define IN_INVENTORY			(1<<1) //is this item equipped into an inventory slot or hand of a mob? used for tooltips
-#define FORCE_STRING_OVERRIDE	(1<<2) // used for tooltips
-#define NEEDS_PERMIT			(1<<3) //Used by security bots to determine if this item is safe for public use.
+/// Thing is in an inventory, presumedly
+#define IN_INVENTORY			(1<<1)
+/// is this item equipped into an inventory slot or hand of a mob? used for tooltips
+#define FORCE_STRING_OVERRIDE	(1<<2)
+/// used for tooltips
+#define NEEDS_PERMIT			(1<<3)
+/// Used by security bots to determine if this item is safe for public use.
 #define SLOWS_WHILE_IN_HAND		(1<<4)
-#define NO_MAT_REDEMPTION		(1<<5) // Stops you from putting things like an RCD or other items into an ORM or protolathe for materials.
-#define DROPDEL					(1<<6) // When dropped, it calls qdel on itself
-#define NOBLUDGEON				(1<<7)		// when an item has this it produces no "X has been hit by Y with Z" message in the default attackby()
-#define NODROP					(1<<8)		// This flag makes it so that an item literally cannot be removed at all, or at least that's how it should be. Only deleted.
-#define ABSTRACT				(1<<9) 	// for all things that are technically items but used for various different stuff
-#define NO_UNIFORM_REQUIRED		(1<<10) ///Can be worn on certain slots (currently belt and id) that would otherwise require an uniform.
+/// Stops you from putting things like an RCD or other items into an ORM or protolathe for materials.
+#define NO_MAT_REDEMPTION		(1<<5)
+/// When dropped, it calls qdel on itself
+#define DROPDEL					(1<<6)
+/// when an item has this it produces no "X has been hit by Y with Z" message in the default attackby()
+#define NOBLUDGEON				(1<<7)
+/// This flag makes it so that an item literally cannot be removed at all, or at least that's how it should be. Only deleted.
+#define NODROP					(1<<8)
+/// for all things that are technically items but used for various different stuff
+#define ABSTRACT				(1<<9)
+/// Can be worn on certain slots (currently belt and id) that would otherwise require an uniform.
+#define NO_UNIFORM_REQUIRED		(1<<10)
 
 // Flags for the clothing_flags var on /obj/item/clothing
 

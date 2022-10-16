@@ -330,6 +330,7 @@
 				/obj/effect/spawner/bundle/f13/armor/bulletproof,
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
 				/obj/effect/spawner/bundle/f13/armor/vault,
+				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
 				)
 
 /obj/effect/spawner/bundle/f13/armor/metal/reinforced
@@ -861,16 +862,17 @@
 				/obj/effect/spawner/lootdrop/f13/junkspawners = 33,
 				/obj/item/stack/medical/gauze/improvised = 2,
 				/obj/item/stack/medical/ointment/five = 2,
-				/obj/item/stack/medical/suture/emergency/five = 1,
+				/obj/item/stack/medical/suture/emergency/five = 2,
 				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 10,
 				/obj/item/stack/f13Cash/random/low = 10,
 				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
 				/obj/effect/spawner/bundle/f13/mini22uzi = 1,
 				/obj/effect/spawner/bundle/f13/sportcarbine = 1,
 				/obj/effect/spawner/bundle/f13/ninemil = 1,
-				/obj/effect/spawner/bundle/f13/widowmaker = 1,
+				/obj/effect/spawner/bundle/f13/widowmaker = 2,
 				/obj/effect/spawner/bundle/f13/sig = 4,
-				/obj/effect/spawner/bundle/f13/varmint = 2
+				/obj/effect/spawner/bundle/f13/varmint = 2,
+				/obj/item/stealthboy = 1
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid
@@ -897,34 +899,35 @@
 				/obj/effect/spawner/bundle/f13/m1garand,
 				/obj/effect/spawner/bundle/f13/deagle,
 				/obj/effect/spawner/bundle/f13/automag,
+				/obj/item/gun/ballistic/automatic/pistol/schmeisser,
+				/obj/item/gun/ballistic/rifle/repeater/ranger,
 				/obj/item/gun/ballistic/automatic/smg/american180
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid
 	name = "high-mid tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/mp5,
+				/obj/effect/spawner/bundle/f13/combat_rifle,
 				/obj/effect/spawner/bundle/f13/smg10mm,
 				/obj/effect/spawner/bundle/f13/needler,
 				/obj/effect/spawner/bundle/f13/marksman,
 				/obj/effect/spawner/bundle/f13/guns/tommygun,
 				/obj/effect/spawner/bundle/f13/shotgunlever,
-				/obj/effect/spawner/bundle/f13/infiltrator,
 				/obj/effect/spawner/bundle/f13/brushgun,
+				/obj/item/gun/ballistic/automatic/armalite,
+				/obj/item/gun/ballistic/rifle/repeater/ranger
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/high
 	name = "high tier ballistic gun"
-	loot = list(/obj/effect/spawner/bundle/f13/assault_rifle = 20,
-				/obj/effect/spawner/bundle/f13/r84 = 10,
+	loot = list(/obj/item/gun/ballistic/automatic/type93 = 15,
 				/obj/effect/spawner/bundle/f13/dkssniper = 15,
 				/obj/effect/spawner/bundle/f13/pistol14 = 15,
 				/obj/item/gun/ballistic/revolver/grenadelauncher = 5,
 				/obj/item/gun/ballistic/rocketlauncher = 5,
 				/obj/effect/spawner/bundle/f13/riotshotgun = 10,
 				/obj/item/gun/ballistic/shotgun/automatic/combat/citykiller = 10,
-				/obj/effect/spawner/bundle/f13/guns/p90 = 1,
-				/obj/effect/spawner/bundle/f13/fnfal = 1,
-				/obj/item/gun/ballistic/automatic/bozar = 1
+				/obj/effect/spawner/bundle/f13/guns/p90 = 2,
 				)
 
 
@@ -932,11 +935,14 @@
 	name = "superhigh tier ballistic gun"
 	loot = list(/obj/effect/spawner/bundle/f13/riotshotgun = 5,
 				/obj/effect/spawner/bundle/f13/amr = 10,
+				/obj/effect/spawner/bundle/f13/assault_rifle = 15,
+				/obj/effect/spawner/bundle/f13/r84 = 10,
 				/obj/effect/spawner/bundle/f13/brushgun = 15,
 				/obj/effect/spawner/bundle/f13/rangemaster = 15,
 				/obj/effect/spawner/bundle/f13/fnfal = 10,
 				/obj/item/gun/ballistic/rocketlauncher = 10,
-				/obj/item/gun/ballistic/automatic/bozar = 10
+				/obj/item/gun/ballistic/automatic/bozar = 10,
+				/obj/effect/spawner/bundle/f13/infiltrator = 15
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhighcargo //this loot table is for the prewar cargo crate
@@ -955,6 +961,7 @@
 
 	loot = list(
 				/obj/item/gun/ballistic/automatic/pistol/ninemil/maria,
+				/obj/item/gun/ballistic/revolver/sequoia/death,
 				/obj/item/gun/ballistic/rifle/hunting/paciencia,
 				/obj/item/gun/ballistic/automatic/varmint/ratslayer,
 				/obj/item/gun/ballistic/automatic/assault_rifle/infiltrator,
@@ -1059,7 +1066,7 @@
 	name = " p220 pistol and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/pistol/sig,
-				/obj/item/ammo_box/magazine/m9mm/
+				/obj/item/ammo_box/magazine/m45
 				)
 
 /obj/effect/spawner/bundle/f13/pepperbox
@@ -2176,20 +2183,21 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/greasegun,
 		/obj/item/book/granter/crafting_recipe/blueprint/commando,
 		/obj/item/book/granter/crafting_recipe/blueprint/m1carbine,
+		/obj/item/book/granter/crafting_recipe/blueprint/schmeisser,
 	)
 /obj/effect/spawner/lootdrop/f13/blueprintMid
 	name = "blueprint-tier(Mid) item spawner"
 	icon_state = "blueprint_loot"
 	lootcount = 1
 	loot = list(
-		/obj/item/book/granter/crafting_recipe/blueprint/r82,
 		/obj/item/book/granter/crafting_recipe/blueprint/service,
 		/obj/item/book/granter/crafting_recipe/blueprint/trailcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/smg10mm,
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7,
 		/obj/item/book/granter/crafting_recipe/blueprint/scoutcarbine,
 		/obj/item/book/granter/crafting_recipe/blueprint/sniper,
-	)		
+		/obj/item/book/granter/crafting_recipe/blueprint/armalite,
+	)
 
 
 /obj/effect/spawner/lootdrop/f13/blueprintHigh
@@ -2205,6 +2213,7 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/book/granter/crafting_recipe/blueprint/combatrifle,
 		/obj/item/book/granter/crafting_recipe/blueprint/plasmapistol,
 		/obj/item/book/granter/crafting_recipe/blueprint/brushgun,
+		/obj/item/book/granter/crafting_recipe/blueprint/r82
 	)
 
 

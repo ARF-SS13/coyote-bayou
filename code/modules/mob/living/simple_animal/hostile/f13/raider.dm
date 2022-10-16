@@ -14,8 +14,9 @@
 	icon_dead = "raider_dead"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	turns_per_move = 5
-	maxHealth = 80
-	health = 80
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 100
+	health = 100
 	melee_damage_lower = 5
 	melee_damage_upper = 14
 	attack_verb_simple = "clobbers"
@@ -89,8 +90,9 @@
 	icon_state = "raider_ranged"
 	icon_living = "raider_ranged"
 	ranged = TRUE
-	maxHealth = 115
-	health = 115
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 85 
+	health = 85
 	rapid_melee = 2
 	melee_queue_distance = 5
 	move_to_delay = 2.8 //faster than average, but not a lot 
@@ -123,8 +125,9 @@
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes - this one seems a bit faster than the average..."
 	color = "#FFFF00"
-	maxHealth = 450
-	health = 450
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 300 
+	health = 300
 	speed = 1.2
 	obj_damage = 300
 	rapid_melee = 1
@@ -136,8 +139,9 @@
 	name = "Legendary Raider"
 	desc = "Another murderer churned out by the wastes, wielding a decent pistol and looking very strong"
 	color = "#FFFF00"
-	maxHealth = 480
-	health = 480
+	mob_armor = ARMOR_VALUE_RAIDER_LEATHER_JACKET
+	maxHealth = 240 
+	health = 240
 	retreat_distance = 1
 	minimum_distance = 2
 	rapid_melee = 1
@@ -164,8 +168,9 @@
 	icon_state = "raiderboss"
 	icon_living = "raiderboss"
 	icon_dead = "raiderboss_dead"
-	maxHealth = 137
-	health = 136
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	maxHealth = 150
+	health = 150
 	extra_projectiles = 2
 	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
@@ -198,8 +203,9 @@
 	icon_state = "mango_matt"
 	icon_living = "mango_matt"
 	icon_dead = "mango_matt_dead"
-	maxHealth = 137
-	health = 136
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	maxHealth = 165
+	health = 165
 	extra_projectiles = 2
 	speak_emote = list(
 		"growls",
@@ -245,8 +251,9 @@
 	icon_state = "metal_raider"
 	icon_living = "metal_raider"
 	icon_dead = "metal_raider_dead"
-	maxHealth = 144
-	health = 144
+	mob_armor = ARMOR_VALUE_RAIDER_METAL_ARMOR
+	maxHealth = 60
+	health = 60
 	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/c45/op
 	projectilesound = 'sound/weapons/gunshot.ogg'
@@ -268,6 +275,9 @@
 	icon_state = "firefighter_raider"
 	icon_living = "firefighter_raider"
 	icon_dead = "firefighter_raider_dead"
+	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
+	maxHealth = 100
+	health = 100
 	loot = list(/obj/item/twohanded/fireaxe, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
 	rapid_melee = 1
@@ -279,8 +289,9 @@
 	icon_dead = "biker_raider_dead"
 	melee_damage_lower = 10
 	melee_damage_upper = 20
-	maxHealth = 160
-	health = 160
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
+	maxHealth = 125
+	health = 125
 	rapid_melee = 1
 	projectiletype = /obj/item/projectile/bullet/a556/match
 	projectilesound = 'sound/f13weapons/magnum_fire.ogg'
@@ -316,8 +327,9 @@
 	minimum_distance = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 40
-	maxHealth = 160
-	health = 160
+	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
+	maxHealth = 125
+	health = 125
 	rapid_melee = 1
 	loot = list(/obj/item/twohanded/baseball, /obj/item/stack/f13Cash/random/med)
 	footstep_type = FOOTSTEP_MOB_SHOE
@@ -336,6 +348,9 @@
 	icon_state = "tribal_raider"
 	icon_living = "tribal_raider"
 	icon_dead = "tribal_raider_dead"
+	mob_armor = ARMOR_VALUE_RAIDER_ARMOR
+	maxHealth = 125
+	health = 125
 	melee_damage_lower = 15
 	melee_damage_upper = 47
 	loot = list(/obj/item/twohanded/spear)
@@ -359,8 +374,9 @@
 	icon_state = "sulphite"
 	icon_living = "sulphite"
 	icon_dead= "sulphite_dead"
-	maxHealth = 176
-	health = 176
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
+	maxHealth = 135
+	health = 135
 	rapid_melee = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 47
@@ -378,8 +394,9 @@
 	icon_state = "junker_hijacker"
 	icon_living = "junker_hijacker"
 	icon_dead = "junker_dead"
-	maxHealth = 176
-	health = 176
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
+	maxHealth = 150
+	health = 150
 	rapid_melee = 1
 	melee_damage_lower = 20
 	melee_damage_upper = 55
@@ -392,8 +409,9 @@
 	icon_living = "junker_scrapper"
 	icon_dead = "junker_dead"
 	faction = list("raider", "wastebot")
-	maxHealth = 196
-	health = 196
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	maxHealth = 165
+	health = 165
 	damage_coeff = list(BRUTE = 1, BURN = 0.75, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	rapid_melee = 1
 	melee_damage_lower = 25
@@ -406,8 +424,9 @@
 	icon_state = "junker"
 	icon_living = "junker"
 	icon_dead = "junker_dead"
-	maxHealth = 144
-	health = 144
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_RUSTY
+	maxHealth = 150
+	health = 150
 	ranged = TRUE
 	retreat_distance = 6
 	minimum_distance = 8
@@ -444,8 +463,9 @@
 	icon_state = "junker_boss"
 	icon_living = "junker_boss"
 	icon_dead = "junker_dead"
-	maxHealth = 360
-	health = 360
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	maxHealth = 165
+	health = 165
 	ranged = TRUE
 	rapid_melee = 1
 	retreat_distance = 4

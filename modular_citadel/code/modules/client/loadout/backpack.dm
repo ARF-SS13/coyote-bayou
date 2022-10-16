@@ -71,6 +71,7 @@
 	name = "Fountain Pen"
 	path = /obj/item/pen/fountain/captain
 
+
 //// Belts, not alot of belts in the catagory to make there own.
 
 /datum/gear/backpack/redbelt
@@ -100,6 +101,32 @@
 /datum/gear/backpack/cigarettes/cigpack_greytort
 	name = "Grey Tortoise Smokes"
 	path = /obj/item/storage/fancy/cigarettes/cigpack_greytort
+
+/datum/gear/backpack/cigarettes/carp_classic
+	name = "Carp Classic Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_carp
+
+/datum/gear/backpack/cigarettes/robust_gold
+	name = "Robust Gold Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_robustgold
+
+/datum/gear/backpack/cigarettes/uplift_smooth
+	name = "Uplift Smooth Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_uplift
+
+/datum/gear/backpack/cigarettes/freak_brothers
+	name = "Freak Brothers' Special Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_cannabis
+
+/datum/gear/backpack/cigarettes/shady_jims
+	name = "Shady Jim's Super Slims Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_shadyjims
+	cost = 2
+
+/datum/gear/backpack/cigarettes/xeno_filtered
+	name = "Xeno Filtered Smokes"
+	path = /obj/item/storage/fancy/cigarettes/cigpack_xeno
+	cost = 4 //It has Regen Jelly in each cigarette, that's the reason for the cost -Risingstarslash
 
 /datum/gear/backpack/cigarettes/cigars
 	name = "Premium cigar case"
@@ -163,7 +190,100 @@
 /////////////////////
 //Coyote Additions//
 ////////////////////
-//Suck on my fucking balls this shit suuuuuucks
+
+//// Rations and snacks!
+
+/datum/gear/backpack/snack/lollipop
+	name = "Lollipop"
+	path = /obj/item/reagent_containers/food/snacks/lollipop
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_1
+	name = "Ration - Brahmin BBQ"
+	path = /obj/item/storage/box/ration/menu_one
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_2
+	name = "Ration - Glazed Sausage"
+	path = /obj/item/storage/box/ration/menu_two
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_3
+	name = "Ration - Chocoguana"
+	path = /obj/item/storage/box/ration/menu_three
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_4
+	name = "Ration - Stagsteak"
+	path = /obj/item/storage/box/ration/menu_four
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_5
+	name = "Ration - Squeakpie"
+	path = /obj/item/storage/box/ration/menu_five
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_6
+	name = "Ration - Hillhogger"
+	path = /obj/item/storage/box/ration/menu_six
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_7
+	name = "Ration - Burger"
+	path = /obj/item/storage/box/ration/menu_seven
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_8
+	name = "Ration - Veggie"
+	path = /obj/item/storage/box/ration/menu_eight
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_9
+	name = "Ration - Fillet"
+	path = /obj/item/storage/box/ration/menu_nine
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_10
+	name = "Ration - Bearballs"
+	path = /obj/item/storage/box/ration/menu_ten
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_11
+	name = "Ration - Hotdawg"
+	path = /obj/item/storage/box/ration/menu_eleven
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_breakfast
+	name = "Ration - Breakfast"
+	path = /obj/item/storage/box/ration/ranger_breakfast
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_lunch
+	name = "Ration - Lunch"
+	path = /obj/item/storage/box/ration/ranger_lunch
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+/datum/gear/backpack/snack/ration_dinner
+	name = "Ration - Dinner"
+	path = /obj/item/storage/box/ration/ranger_dinner
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_RATIONS
+	cost = 1
+
+//Suck on my fucking balls this shit suuuuuucks (aww dont beat yourself up, it works fine!)
 
 //Vault Guns
 /datum/gear/backpack/vaultguns/n99
@@ -198,7 +318,7 @@
 
 /datum/gear/backpack/vaultguns/aep7
 	name = "AEP7"
-	path = /obj/item/gun/energy/laser/pistol 
+	path = /obj/item/gun/energy/laser/pistol
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_VAULTGUNS
 	cost = 3
 	restricted_desc = "Vault 113"

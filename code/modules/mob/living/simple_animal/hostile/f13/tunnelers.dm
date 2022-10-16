@@ -56,7 +56,7 @@
 	icon_dead = "tunneler_dead"
 	robust_searching = TRUE
 	stat_attack = CONSCIOUS
-	health = 144 
+	health = 144
 	maxHealth = 144
 	speed = -1
 	melee_damage_lower = 25
@@ -81,3 +81,53 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin, 5)
+
+
+/mob/living/simple_animal/hostile/trog/tunneler/blindone
+	name = "Blind One"
+	desc = "A...tunneler? Her scales reflect the light oddly, almost making her transparent, but her eyes are solid. She moves blindingly quickly, darting in and out of view despite her size. Overfilled, swelling venom-sacs line her throat."
+	icon = 'icons/fallout/mobs/monsters/tunnelers.dmi'
+	icon_state = "blindone"
+	icon_living = "blindone"
+	icon_dead = "trog_dead"
+	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
+	gender = FEMALE
+	resize = 1.3
+	alpha = 150
+	speed = -2
+	maxHealth = 150
+	health = 150
+	has_field_of_vision = FALSE
+	obj_damage = 30
+	melee_damage_lower = 25
+	melee_damage_upper = 50
+	vision_range = 9
+	aggro_vision_range = 18
+	retreat_distance = 6
+	turns_per_move = 5
+	speak_emote = list("mumbles incoherently")
+	emote_see = list("screeches")
+	a_intent = INTENT_HARM
+	attack_verb_simple = "lunges at"
+	attack_sound = 'sound/hallucinations/veryfar_noise.ogg'
+	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	unsuitable_atmos_damage = 20
+	stat_attack = CONSCIOUS
+	gold_core_spawnable = HOSTILE_SPAWN
+	faction = list("tunneler")
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human = 2,
+							/obj/item/stack/sheet/animalhide/human = 1,
+							/obj/item/stack/sheet/bone = 1)
+
+/mob/living/simple_animal/hostile/trog/tunneler/blindone/Aggro()
+	..()
+	summon_backup(15)
+
+/mob/living/simple_animal/hostile/trog/tunneler/blindone/AttackingTarget()
+	. = ..()
+	if(. && ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.reagents.add_reagent(/datum/reagent/toxin, 3)
+		H.reagents.add_reagent(/datum/reagent/toxin/venom, 5)
+		H.reagents.add_reagent(/datum/reagent/toxin/mindbreaker, 3)
+

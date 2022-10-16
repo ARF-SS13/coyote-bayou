@@ -139,6 +139,7 @@ GENETICS SCANNER
 	var/tox_loss = M.getToxLoss()
 	var/fire_loss = M.getFireLoss()
 	var/brute_loss = M.getBruteLoss()
+	var/bleed_loss = M.getBleedLoss()
 	var/mob_status = (M.stat == DEAD ? "<span class='alert'><b>Deceased</b></span>" : "<b>[round(M.health/M.maxHealth,0.01)*100] % healthy</b>")
 
 	if(HAS_TRAIT(M, TRAIT_FAKEDEATH) && !advanced)
@@ -153,9 +154,11 @@ GENETICS SCANNER
 	if(fire_loss > 10)
 		msg += "\n\t<span class='alert'>[fire_loss > 50 ? "Severe" : "Minor"] burn damage detected.</span>"
 	if(oxy_loss > 10)
-		msg += "\n\t<span class='info'><span class='alert'>[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.</span>"
+		msg += "\n\t<span class='alert'>[oxy_loss > 50 ? "Severe" : "Minor"] oxygen deprivation detected.</span>"
 	if(tox_loss > 10)
 		msg += "\n\t<span class='alert'>[tox_loss > 50 ? "Severe" : "Minor"] amount of toxin damage detected.</span>"
+	if(bleed_loss > 10)
+		msg += "\n\t<span class='alert'>[bleed_loss > 50 ? "Severe" : "Minor"] lacerations detected.</span>"
 	if(M.getStaminaLoss())
 		msg += "\n\t<span class='alert'>Subject appears to be suffering from fatigue.</span>"
 		if(advanced)
@@ -183,18 +186,23 @@ GENETICS SCANNER
 							<td style='width: 55px;'><font color='red'><b>Brute</b></font></td>\
 							<td style='width: 45px;'><font color='orange'><b>Burn</b></font></td>\
 							<td style='width: 45px;'><font color='green'><b>Toxin</b></font></td>\
-							<td style='width: 90px;'><font color='purple'><b>Suffocation</b></font></td></tr>\
+							<td style='width: 40px;'><font color='purple'><b>Oxy</b></font></td>\
+							<td style='width: 60px;'><font color='red'><b>Wound</b></font></td></tr>\
 							<tr><td><font color='#0000CC'>Overall:</font></td>\
 							<td><font color='red'>[brute_loss]</font></td>\
 							<td><font color='orange'>[fire_loss]</font></td>\
 							<td><font color='green'>[tox_loss]</font></td>\
-							<td><font color='purple'>[oxy_loss]</font></td></tr>"
+							<td><font color='purple'>[oxy_loss]</font></td>\
+							<td></td></tr>"
 
 			for(var/o in damaged)
 				var/obj/item/bodypart/org = o //head, left arm, right arm, etc.
 				dmgreport += "<tr><td><font color='#0000CC'>[capitalize(org.name)]:</font></td>\
 								<td><font color='red'>[(org.brute_dam > 0) ? "[org.brute_dam]" : "0"]</font></td>\
-								<td><font color='orange'>[(org.burn_dam > 0) ? "[org.burn_dam]" : "0"]</font></td></tr>"
+								<td><font color='orange'>[(org.burn_dam > 0) ? "[org.burn_dam]" : "0"]</font></td>\
+								<td></td>\
+								<td></td>\
+								<td><font color='red'>[(org.bleed_dam > 0) ? "[org.bleed_dam]" : "0"]</font></td></tr>"
 			dmgreport += "</table>"
 			to_chat(user, dmgreport.Join())
 
@@ -437,21 +445,55 @@ GENETICS SCANNER
 		var/mob/living/carbon/C = M
 		var/blood_typepath = C.get_blood_id()
 		if(blood_typepath)
-			if(ishuman(C))
-				if(H.is_bleeding())
-					msg += span_danger("Subject is bleeding!")
 			var/blood_percent =  round((C.scan_blood_volume() / (BLOOD_VOLUME_NORMAL * C.blood_ratio))*100)
 			var/blood_type = C.dna.blood_type
 			if(!(blood_typepath in GLOB.blood_reagent_types))
 				var/datum/reagent/R = GLOB.chemical_reagents_list[blood_typepath]
 				if(R)
 					blood_type = R.name
-			if(C.scan_blood_volume() <= (BLOOD_VOLUME_SAFE*C.blood_ratio) && C.scan_blood_volume() > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>LOW blood level [blood_percent] %, [C.scan_blood_volume()] cl,</span> <span class='info'>type: [blood_type]</span>\n"
-			else if(C.scan_blood_volume() <= (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>CRITICAL blood level [blood_percent] %, [C.scan_blood_volume()] cl,</span> <span class='info'>type: [blood_type]</span>\n"
-			else
-				msg += span_info("Blood level [blood_percent] %, [C.scan_blood_volume()] cl, type: [blood_type]")
+			var/scanned_blood_volume = C.scan_blood_volume()
+			if(ishuman(C))
+				if(H.is_bleeding())
+					msg += "\n"
+					msg += span_danger("<u>Open wounds detected!</u>\n")
+					var/modified_bleeding = 0
+					var/add_msg
+					for(var/obj/item/bodypart/BP in C.bodyparts)
+						var/wounded = FALSE
+						add_msg = null
+						for(var/datum/wound/bleed/bloody_wound in BP.wounds)
+							wounded = TRUE
+							var/actual_bleeding = round(bloody_wound.get_blood_flow(TRUE),0.1)
+							modified_bleeding += actual_bleeding
+							add_msg += span_notice("[capitalize(bloody_wound.name)] - ")
+							add_msg += span_notice("Size: ")
+							add_msg += span_warning("[round(bloody_wound.get_blood_flow(FALSE),0.1)]u - ")
+							add_msg += span_notice("Loss: ")
+							add_msg += span_warning("[actual_bleeding]u\n")
+						if(wounded)
+							msg += span_notice("<u>[capitalize(BP.name)]</u>\n")
+							msg += add_msg
+							msg += "\n"
+					msg += span_warning("Total blood loss: [modified_bleeding]u\n")
+					msg += "\n"
+			switch(scanned_blood_volume)
+				if(BLOOD_VOLUME_SAFE to INFINITY)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+				if(BLOOD_VOLUME_SYMPTOMS_WARN to BLOOD_VOLUME_SAFE)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+					msg += span_info("Minor blood loss detected. No action necessary.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_MINOR to BLOOD_VOLUME_SYMPTOMS_WARN)
+					msg += span_info("Blood level [blood_percent] %, type: [blood_type]\n")
+					msg += span_warning("Blood loss detected. Rest and nutrition recommended.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_MINOR)
+					msg += span_warning("LOW Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_warning("Significant anemia detected. Blood transfusion recommended.\n")
+				if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
+					msg += span_danger("VERY LOW Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_warning("Severe anemia detected. Immediate blood transfusion recommended.\n")
+				if(-INFINITY to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
+					msg += span_danger("CRITICAL Blood level [blood_percent] %,") + span_notice(" type: [blood_type]\n")
+					msg += span_warning("Hypovolemic shock detected. Immediate blood transfusion, epinephrine, and blood volume expanders recommended.\n")
 
 		var/cyberimp_detect
 		for(var/obj/item/organ/cyberimp/CI in C.internal_organs)

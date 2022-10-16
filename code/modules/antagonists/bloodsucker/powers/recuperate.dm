@@ -36,4 +36,4 @@
 	//DeactivatePower(owner)
 
 /datum/action/bloodsucker/vassal/recuperate/ContinueActive(mob/living/user, mob/living/target)
-	return ..() && user.stat <= DEAD && user.blood_volume > 500
+	return ..() && user.stat <= DEAD && user.get_blood(FALSE) > 500

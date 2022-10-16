@@ -99,3 +99,36 @@
 	armour_penetration = 0.05
 	damage = 30
 	ammo_type = /obj/item/ammo_casing/caseless/arrow/serrated
+
+/obj/item/projectile/bullet/reusable/arrow/blunt
+	name = "knockout arrow"
+	desc = "An arrow with a thick cloth sack at the end, filled with rocks."
+	wound_bonus = 0
+	bare_wound_bonus = 0
+	wound_falloff_tile = 0
+	armour_penetration = 0.10
+	damage = 15
+	stamina = 70
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/blunt
+
+// Special Arrows
+
+/obj/item/projectile/ion/arrow //im sorry but this is TECHNICALLY an arrow SOOO
+	name = "ion arrow"
+	desc = "An arrow that created an EMP where it lands."
+	icon_state = "arrow"
+	damage = 28
+	armour_penetration = 0.75
+	damage_type = BURN
+	flag = "energy"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/ion
+
+/obj/item/projectile/ion/arrow/on_hit(atom/target, blocked = FALSE)
+	..()
+	empulse_using_range(target, emp_radius)
+	return BULLET_ACT_HIT
+
+/obj/item/projectile/ion/arrow/weak
+	emp_radius = 1
+	damage = 20
+	armour_penetration = 0.5

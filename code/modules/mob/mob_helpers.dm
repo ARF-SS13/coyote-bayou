@@ -413,6 +413,8 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	return TRUE
 
 /atom/proc/hasSiliconAccessInArea(mob/user, flags = PRIVILEDGES_SILICON)
+	if(!istype(user, /mob))
+		return
 	return user.silicon_privileges & (flags) || (user.siliconaccesstoggle && (get_area(src) in user.siliconaccessareas))
 
 /mob/proc/toggleSiliconAccessArea(area/area)

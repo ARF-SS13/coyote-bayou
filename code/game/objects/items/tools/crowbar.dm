@@ -15,7 +15,7 @@
 					"Bronze" = "crowbar_brass",
 					"Large" = "crowbar_large"
 					)
-	custom_materials = list(/datum/material/iron=1000)
+	custom_materials = list(/datum/material/iron=450)
 
 	attack_verb = list("attacked", "bashed", "battered", "bludgeoned", "whacked")
 	tool_behaviour = TOOL_CROWBAR

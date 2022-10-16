@@ -84,6 +84,8 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/vagina, GLOB.vagina_shapes_list)
 	if(!GLOB.breasts_shapes_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/breasts, GLOB.breasts_shapes_list)
+	if(!GLOB.butt_shapes_list.len)
+		init_sprite_accessory_subtypes(/datum/sprite_accessory/butt, GLOB.butt_shapes_list)
 	if(!GLOB.ipc_screens_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/screen, GLOB.ipc_screens_list)
 	if(!GLOB.ipc_antennas_list.len)
@@ -180,6 +182,9 @@
 		"cock_diameter_ratio"	= COCK_DIAMETER_RATIO_DEF,
 		"cock_color"		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"cock_taur"			= FALSE,
+		"has_butt"			= FALSE,
+		"butt_color"		= "ffffff",
+		"butt_size" 		= BUTT_SIZE_DEF,
 		"has_balls" 		= FALSE,
 		"balls_color" 		= pick("FFFFFF","7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"balls_size"		= BALLS_SIZE_DEF,
@@ -205,6 +210,7 @@
 		"flavor_text"		= "",
 		"silicon_flavor_text"		= "",
 		"meat_type"			= "Mammalian",
+		"taste"				= "taste",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE
 		))

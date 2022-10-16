@@ -110,6 +110,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating
 	icon_state = "plating"
 
+/turf/open/floor/plasteel/f13/vault_floor/plating/miasma //for areas with dead folk
+	icon_state = "plating"
+	initial_gas_mix = "n2=82;miasma=44;TEMP=293.15"
+
 /turf/open/floor/plasteel/f13/vault_floor/floor
 	icon_state = "floor"
 

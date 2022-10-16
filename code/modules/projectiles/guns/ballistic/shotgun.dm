@@ -140,6 +140,7 @@
 	icon_state = "caravan"
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual/simple
 
@@ -203,6 +204,7 @@
 	icon_state = "widowmaker"
 	item_state = "shotgundouble"
 	icon_prefix = "shotgundouble"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/dual
 	w_class = WEIGHT_CLASS_BULKY
 
@@ -301,6 +303,7 @@
 /obj/item/gun/ballistic/shotgun/police
 	name = "police shotgun"
 	desc = "A pre-war shotgun with large magazine and folding stock, made from steel and polymers. Flashlight attachment rail."
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunpolice"
 	item_state = "shotgunpolice"
 	icon_prefix = "shotgunpolice"
@@ -338,10 +341,12 @@
 /obj/item/gun/ballistic/shotgun/police/proc/toggle_stock(mob/living/user)
 	stock = !stock
 	if(stock)
+		slot_flags = ITEM_SLOT_BACK
 		w_class = WEIGHT_CLASS_BULKY
 		to_chat(user, "You unfold the stock.")
 		recoil_dat = getRecoil(RIFLE_RECOIL(2.2)[1],RIFLE_RECOIL(2.2)[2],RIFLE_RECOIL(2.2)[3])
 	else
+		slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 		w_class = WEIGHT_CLASS_NORMAL
 		to_chat(user, "You fold the stock.")
 		recoil_dat = getRecoil(init_recoil[1],init_recoil[2],init_recoil[3])
@@ -586,10 +591,11 @@
 
 /obj/item/gun/ballistic/automatic/shotgun/riot
 	name = "Riot shotgun"
-	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed to fight in close quarters."
+	desc = "A compact riot shotgun with a large ammo drum and semi-automatic fire, designed for sustained fire at medium distances. A barrel designed for less-lethal ammo dulls its punch slightly, but you can't argue with the capacity."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
 	icon_state = "shotgunriot"
 	item_state = "shotgunriot"
 	w_class = WEIGHT_CLASS_BULKY
@@ -603,10 +609,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T1
 	cock_delay = GUN_COCK_SHOTGUN_BASE
 	init_firemodes = list(
-		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
 

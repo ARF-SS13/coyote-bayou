@@ -13,6 +13,7 @@
 	resistance_flags = ACID_PROOF
 	reagent_flags = OPENCONTAINER
 	slot_flags = ITEM_SLOT_BELT
+	custom_price = PRICE_ABOVE_EXPENSIVE
 	var/ignore_flags = 0
 	var/infinite = FALSE
 
@@ -156,6 +157,7 @@
 	desc = "A handheld delivery system for medicine, used to rapidly heal physical damage to the body."
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "hypo_stimpak"
+	custom_price = PRICE_STIMPAK
 	volume = 26
 	amount_per_transfer_from_this = 26
 	reagent_flags = DRAWABLE
@@ -190,6 +192,7 @@
 	name = "super stimpak"
 	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
 	icon_state = "hypo_superstimpak"
+	custom_price = PRICE_SUPER_STIM
 	volume = 62
 	amount_per_transfer_from_this = 62
 	list_reagents = list(/datum/reagent/medicine/super_stimpak = 30, /datum/reagent/medicine/stimpak = 20, /datum/reagent/medicine/healing_powder = 4, /datum/reagent/medicine/bicaridine = 4, /datum/reagent/medicine/kelotane = 4)

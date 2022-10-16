@@ -200,7 +200,9 @@ GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/storage/pill_bottle/chem_tin/radx = 5,
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
+	/obj/item/stock_parts/chem_cartridge/garbage = 10,
+	/obj/item/stock_parts/chem_cartridge/simple = 1
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
@@ -283,7 +285,7 @@ GLOBAL_LIST_INIT(trash_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/productivity/red_paint = 2
+//	/obj/item/tool_upgrade/productivity/red_paint = 2
 ))
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
@@ -905,7 +907,7 @@ GLOBAL_LIST_INIT(loot_attachment, list(
 	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
 	/obj/item/tool_upgrade/refinement/laserguide = 1,
 	/obj/item/tool_upgrade/productivity/booster = 1,
-	/obj/item/tool_upgrade/productivity/red_paint = 1
+//	/obj/item/tool_upgrade/productivity/red_paint = 1
 ))
 
 GLOBAL_LIST_INIT(loot_attachment_advanced, list(

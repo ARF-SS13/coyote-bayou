@@ -25,7 +25,6 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/followers)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 //	..()
@@ -81,6 +80,7 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -123,7 +123,9 @@ Administrator
 /datum/outfit/loadout/research_specialist
 	name =	"Research Specialist"
 	backpack_contents = list(
-		/obj/item/circuitboard/machine/ore_redemption = 1,
+		/obj/item/disk/medical/defib_heal = 1,
+		/obj/item/disk/medical/defib_shock = 1,
+		/obj/item/disk/medical/defib_speed = 1,
 		/obj/item/blueprint/research = 1,
 	)
 
@@ -170,6 +172,7 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -432,8 +435,8 @@ Follower Volunteer
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Followers Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the hospital."
 	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
@@ -489,7 +492,7 @@ Follower Volunteer
 
 /datum/outfit/loadout/guard_energy
 	name = "Followers Energy Protection Guard"
-	suit_store = /obj/item/gun/energy/laser/scatter/nonlethal
+	suit_store = /obj/item/gun/energy/laser/pistol
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/mfc = 1,
 	)

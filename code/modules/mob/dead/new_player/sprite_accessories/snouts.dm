@@ -256,6 +256,16 @@
 	icon_state = "roundlight"
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/snouts/mam_snouts/roundclassic
+	name = "Round (Classic)"
+	icon_state = "roundclassic"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/roundlightclassic
+	name = "Round + Light (Classic)"
+	icon_state = "roundlightclassic"
+	color_src = MUTCOLORS
+
 /datum/sprite_accessory/snouts/mam_snouts/pede
 	name = "Scolipede"
 	icon_state = "pede"
@@ -284,6 +294,16 @@
 /datum/sprite_accessory/snouts/mam_snouts/sharplight
 	name = "Sharp + Light"
 	icon_state = "sharplight"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/sharpclassic
+	name = "Sharp (Classic)"
+	icon_state = "sharpclassic"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/sharplightclassic
+	name = "Sharp + Light (Classic)"
+	icon_state = "sharplightclassic"
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/snouts/mam_snouts/skulldog
@@ -408,6 +428,16 @@
 	icon_state = "froundlight"
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/snouts/mam_snouts/froundclassic
+	name = "Round (Top, Classic)"
+	icon_state = "froundclassic"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/froundlightclassic
+	name = "Round + Light (Top, Classic)"
+	icon_state = "froundlightclassic"
+	color_src = MUTCOLORS
+
 /datum/sprite_accessory/snouts/mam_snouts/fpede
 	name = "Scolipede (Top)"
 	icon_state = "fpede"
@@ -431,6 +461,16 @@
 /datum/sprite_accessory/snouts/mam_snouts/fsharplight
 	name = "Sharp + Light (Top)"
 	icon_state = "fsharplight"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/fsharpclassic
+	name = "Sharp (Top, Classic)"
+	icon_state = "fsharpclassic"
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/snouts/mam_snouts/fsharplightclassic
+	name = "Sharp + Light (Top, Classic)"
+	icon_state = "fsharplightclassic"
 	color_src = MUTCOLORS
 
 /datum/sprite_accessory/snouts/mam_snouts/ftoucan

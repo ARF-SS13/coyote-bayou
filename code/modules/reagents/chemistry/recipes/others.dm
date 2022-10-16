@@ -153,6 +153,12 @@
 	results = list(/datum/reagent/consumable/mustard = 5)
 	required_reagents = list(/datum/reagent/mustardgrind = 1, /datum/reagent/water  = 10, /datum/reagent/consumable/enzyme= 1)
 
+/datum/chemical_reaction/gravy
+	name = "Gravy"
+	id = /datum/reagent/consumable/gravy
+	results = list(/datum/reagent/consumable/gravy = 3)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/nutriment = 1, /datum/reagent/consumable/flour = 1)
+
 /datum/chemical_reaction/soapification/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
 	for(var/i = 1, i <= multiplier, i++)
@@ -864,7 +870,6 @@
 	required_catalysts = list(/datum/reagent/lithium = 5, /datum/reagent/chlorine = 5)
 	results = list(/datum/reagent/celugel = 4)
 	required_reagents = list(/datum/reagent/cellulose = 1, /datum/reagent/diethylamine = 1, /datum/reagent/fermi/acidic_buffer = 0.5, /datum/reagent/acetone = 1, /datum/reagent/carbondioxide = 1) //not a super easy recipe as it replaces a hard-to-get chemical
-	OptimalTempMin 		= 430
 	OptimalTempMax		= 520
 	ExplodeTemp			= 9999
 	OptimalpHMin		= 3
@@ -898,21 +903,21 @@
 	results = list(/datum/reagent/breast_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/aphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/BEsmaller
 	name = "Modesty Milk"
 	id = "/datum/reagent/BEsmaller"
 	results = list(/datum/reagent/BEsmaller = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/consumable/milk = 1, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/silicon = 3, /datum/reagent/drug/anaphrodisiac = 3)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/penis_enlarger
 	name = "Incubus Draft"
 	id = "/datum/reagent/penis_enlarger"
 	results = list(/datum/reagent/penis_enlarger = 2)
 	required_reagents = list(/datum/reagent/medicine/salglu_solution = 2, /datum/reagent/blood = 5, /datum/reagent/medicine/synthflesh = 2, /datum/reagent/carbon = 2, /datum/reagent/drug/aphrodisiac = 2)
 	required_temp = 200
-	
+
 /datum/chemical_reaction/PEsmaller
 	name = "Chastity Draft"
 	id = "/datum/reagent/PEsmaller"

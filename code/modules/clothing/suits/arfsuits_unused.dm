@@ -226,20 +226,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "legion-explorercustom"
 	item_state = "legion-explorercustom"
 
-//NCR
-/obj/item/clothing/suit/armor/utilityvest
-	name = "utility vest"
-	desc = "A practical vest with pockets for tools and such."
-	icon_state = "vest_utility"
-	item_state = "vest_utility"
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
-
-/obj/item/clothing/suit/armor/utilityvest/logisticsofficer //same as his beret
-	name = "logistics officer utility vest"
-	desc = "A practical and armored vest with pockets for tools and such."
-
 /obj/item/clothing/suit/armor/ncrarmor
 	name = "NCR patrol vest"
 	desc = "A standard issue NCR Infantry vest."
@@ -356,13 +342,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "ranger"
 	item_state = "ranger"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
-
-/obj/item/clothing/suit/armor/ncrcfjacket
-	name = "NCRCF jacket"
-	icon_state = "ncrcfjacket"
-	item_state = "ncrcfjacket"
-	desc = "A cheap, standard issue teal canvas jacket issued to poor suckers who find themselves at the butt-end of the NCR's judiciary system."
-
 
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket
@@ -548,32 +527,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "ranger_cloak"
 	item_state = "ranger_cloak"
 
-/obj/item/clothing/suit/armor/herbertranger //Armor wise, it's reskinned raider armor.
-	name = "weathered desert ranger armor"
-	desc = "A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	icon_state = "usmc_riot_gear"
-	item_state = "usmc_riot_gear"
 
-/obj/item/clothing/suit/armor/marlowsuit //Raider armour reskin.
-	name = "Marlow gang overcoat"
-	desc = "A heavy raw buckskin overcoat littered with aged bullet holes and frays from regular wear-and-tear."
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	icon_state = "marlowsuit"
-	item_state = "marlowsuit"
-	strip_delay = 40
-
-/obj/item/clothing/suit/armor/marlowsuit/ikesuit
-	name = "gunfighter's overcoat"
-	desc = "A thick double-breasted red leather overcoat worn through with scattered tears and bullet holes."
-	icon_state = "ikesuit"
-	item_state = "ikesuit"
-
-/obj/item/clothing/suit/armor/marlowsuit/masonsuit
-	name = "vagabond's vest"
-	desc = "A padded thick red leather vest, coated in stitched pockets and other mends."
-	icon_state = "masonsuit"
-	item_state = "masonsuit"
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING

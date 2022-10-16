@@ -308,3 +308,12 @@
 	tastes = list("cornmeal" = 1, "cheese" = 1, "eggplant" = 1, "tomato sauce" = 1)
 	foodtype = DAIRY | GRAIN
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/soup/cullen_skink
+	name = "cullen skink"
+	desc = "A thick Scottish soup made of smoked fish, potatoes and onions."
+	icon_state = "cullen_skink"
+	list_reagents = list (/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 6)
+	tastes = list("creamy broth"= 1, "fish" = 1, "vegetables" = 1)
+	foodtype = VEGETABLES | MEAT | DAIRY
+	w_class = WEIGHT_CLASS_SMALL

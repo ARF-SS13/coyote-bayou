@@ -118,6 +118,7 @@
 	icon_state = "overalls_farmer"
 	item_state = "overalls_farmer"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets // big pockets!
+	body_parts_hidden = CHEST|GROIN|LEGS
 
 /obj/item/clothing/suit/armor/outfit/overalls/farmer
 	name = "farmer overalls"
@@ -153,6 +154,8 @@
 	item_state = "forge"
 	blood_overlay_type = "armor"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
+	body_parts_hidden = CHEST
+
 /* 	icon = 'icons/obj/clothing/suits.dmi'
 	icon_state = "opifex_apron"
 	item_state = "opifex_apron" */ // cus this darn sprite is hidden so well I cant find it
@@ -171,7 +174,7 @@
 	icon_state = "tanleather"
 	item_state = "det_suit"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/armor
-	body_parts_hidden = GROIN
+	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/outfit/vest/cowboy //Originally cowboy stuff by Nienhaus
 	name = "brown vest"
@@ -192,6 +195,33 @@
 	icon_state = "cowboygvest"
 	item_state = "gy_suit"
 
+/obj/item/clothing/suit/armor/outfit/vest/utility
+	name = "utility vest"
+	desc = "A practical vest with pockets for tools and such."
+	icon_state = "vest_utility"
+	item_state = "vest_utility"
+	icon = 'icons/fallout/clothing/suits_utility.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
+	body_parts_hidden = 0 // has a bit of upper window stuff
+
+/obj/item/clothing/suit/armor/outfit/vest/utility/logisticsofficer //same as his beret
+	name = "logistics officer utility vest"
+	desc = "A practical and armored vest with pockets for tools and such."
+
+/obj/item/clothing/suit/armor/outfit/vest/flakjack
+	name = "flak jacket"
+	desc = "A dilapidated jacket made of ballistic nylon. Smells faintly of napalm."
+	icon_state = "flakjack"
+	item_state = "redtag"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
+	resistance_flags = NONE
+	armor = ARMOR_VALUE_LIGHT
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	armor_tokens = list()
+
+
 
 ////////////////
 //// JACKET ////
@@ -204,12 +234,14 @@
 	item_state = "suit-command"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
+	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/merc
 	name = "merc veteran coat"
 	desc = " A blue leather coat adorned with war medals.<br>This type of outfit is common for professional mercenaries and bounty hunters."
 	icon_state = "veteran"
 	item_state = "suit-command"
+	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/outfit/jacket/battlecruiser //Do we have Star Craft here as well?!
 	name = "captain's coat"
@@ -222,6 +254,7 @@
 	desc = " A rather grisly selection of cured hides and skin, sewn together to form a ragged mantle."
 	icon_state = "mantle_liz"
 	item_state = "det_suit"
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/outfit/jacket/mfp //Mad Max 1 1979 babe!
 	name = "MFP jacket"
@@ -233,6 +266,7 @@
 	name = "offbeat jacket"
 	desc = "A black leather jacket with a single metal shoulder pad on the right side.<br>The right sleeve was obviously ripped or cut away.<br>It looks like it was originally a piece of a Main Force Patrol uniform."
 	icon_state = "mfp_raider"
+	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/navyblue
 	name = "security officer's jacket"
@@ -241,6 +275,7 @@
 	item_state = "officerbluejacket"
 	// body_parts_covered = CHEST|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_hidden = CHEST|ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/banker
 	name = "bankers tailcoat"
@@ -248,20 +283,23 @@
 	icon_state = "banker"
 	item_state = "banker"
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/jamrock
 	name = "disco-ass blazer"
 	desc = "Looks like someone skinned this blazer off some long extinct disco-animal. It has an enigmatic white rectangle on the back and the right sleeve."
 	icon_state = "jamrock_blazer"
 	item_state = "jamrock_blazer"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
 	name = "black formal overcoat"
 	desc = "A neat black overcoat that's only slightly weathered from a nuclear apocalypse."
 	icon_state = "black_oversuit"
 	item_state = "banker"
+	body_parts_hidden = ARMS
 
-/obj/item/clothing/suit/armor/outfit/police
+/obj/item/clothing/suit/armor/outfit/jacket/police
 	name = "police officer's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -270,7 +308,7 @@
 	item_state = "police_officer"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
-/obj/item/clothing/suit/armor/outfit/police/lieutenant
+/obj/item/clothing/suit/armor/outfit/jacket/police/lieutenant
 	name = "police lieutenant's jacket"
 	desc = " A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -279,7 +317,7 @@
 	item_state = "police_lieutenant"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
-/obj/item/clothing/suit/armor/outfit/police/chief
+/obj/item/clothing/suit/armor/outfit/jacket/police/chief
 	name = "police chief's jacket"
 	desc = "A simple dark navy jacket, worn by police."
 	icon = 'icons/fallout/clothing/suits_cosmetic.dmi'
@@ -288,6 +326,12 @@
 	item_state = "police_chief"
 	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket
+	name = "blue denim jacket"
+	desc = "A simple breezy denim jacket."
+	icon_state = "ncrcfjacket"
+	item_state = "ncrcfjacket"
+	body_parts_hidden = ARMS
 
 // until togglesuits are made into normal suits, treat these as jackets
 
@@ -946,6 +990,16 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 	// Nothing extra fancy for their storage, but they can carry an extra 2 normal-sized guns in their pockets
+	body_parts_hidden = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/harpercoat
+	name = "outlaw coat"
+	desc = "An ugly looking combat duster"
+	icon_state = "harperduster"
+	item_state = "combatduster"
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/duster/armored
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/duster/lonesome
 	name = "lonesome duster"
@@ -954,6 +1008,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_courier"
 	item_state = "duster_courier"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/duster/autumn //Based of Colonel Autumn's uniform.
 	name = "tan trenchcoat"
@@ -970,6 +1025,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
 	icon_state = "duster_vet"
 	item_state = "duster_vet"
+	body_parts_hidden = CHEST
 
 /obj/item/clothing/suit/armor/light/duster/brahmin
 	name = "brahmin leather duster"
@@ -977,6 +1033,7 @@
 	icon_state = "duster"
 	item_state = "duster"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	body_parts_hidden = ARMS
 
 /* 	icon = 'icons/fallout/clothing/armored_light.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/armor_light.dmi'
@@ -991,12 +1048,14 @@
 	icon_state = "duster_lawman"
 	item_state = "duster_lawman"
 	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T1)
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/duster/town
 	name = "town trenchcoat"
 	desc = "A non-descript black trenchcoat."
 	icon_state = "towntrench"
 	item_state = "hostrench"
+	body_parts_hidden = ARMS
 
 /obj/item/clothing/suit/armor/light/duster/town/mayor
 	name = "mayor trenchcoat"
@@ -1045,6 +1104,36 @@
 	desc = "A heavy pre-war bomber coat, dyed blue with the insignia of the Vault-Tec City Coalition embroidered on the back. This one is worn by the Marshals of the Coalition."
 	icon_state = "maxson_battlecoat"
 	item_state = "maxson_battlecoat"
+
+/obj/item/clothing/suit/armor/light/duster/herbertranger //Armor wise, it's reskinned raider armor.
+	name = "weathered desert ranger armor"
+	desc = "A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "usmc_riot_gear"
+	item_state = "usmc_riot_gear"
+	body_parts_hidden = CHEST|ARMS
+
+/obj/item/clothing/suit/armor/light/duster/marlowsuit //Raider armour reskin.
+	name = "Marlow gang overcoat"
+	desc = "A heavy raw buckskin overcoat littered with aged bullet holes and frays from regular wear-and-tear."
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	icon_state = "marlowsuit"
+	item_state = "marlowsuit"
+	strip_delay = 40
+	body_parts_hidden = ARMS
+
+/obj/item/clothing/suit/armor/light/duster/marlowsuit/ikesuit
+	name = "gunfighter's overcoat"
+	desc = "A thick double-breasted red leather overcoat worn through with scattered tears and bullet holes."
+	icon_state = "ikesuit"
+	item_state = "ikesuit"
+
+/obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
+	name = "vagabond's vest"
+	desc = "A padded thick red leather vest, coated in stitched pockets and other mends."
+	icon_state = "masonsuit"
+	item_state = "masonsuit"
+	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/duster/rustedcowboy
 	name = "rusted cowboy outfit"
@@ -1147,6 +1236,14 @@
 	item_state = "elder"
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
 
+/obj/item/clothing/suit/armor/light/duster/bos/outcast
+	name = "outcast's breastplate"
+	desc = "A generic light piece of armor for the Southern Brotherhood Outcasts. In their hasty retreat, there was little time to delegate supplies; and so, a frock of kevlar, polypropylene, and alloy was woven. Obviously, does not protect your arms or legs- but it does its job fine, otherwise."
+	icon_state = "brotherhood_armor_light"
+	item_state = "brotherhood_armor_light"
+	body_parts_covered = CHEST|GROIN
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
+
 /obj/item/clothing/suit/armor/light/duster/town
 	name = "town trenchcoat"
 	desc = "A non-descript black trenchcoat."
@@ -1206,17 +1303,17 @@
 	desc = "This heavily padded leather jacket is unusual in that it has two sleeves. You'll definitely make a fashion statement whenever, and wherever, you rumble."
 	icon_state = "leather_jacket_thick"
 	item_state = "leather_jacket_thick"
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
 	body_parts_hidden = ARMS | CHEST | LEGS
 
-// Recipe : one of the above + a suit_fashion leather coat
+// Recipe : Thick Leather Jacket + Deathclaw Skin
 /obj/item/clothing/suit/armor/light/leather/leathercoat
 	name = "thick leather coat"
 	desc = "Reinforced leather jacket with a overcoat. Well insulated, creaks a lot while moving."
 	icon_state = "leather_coat_fighter"
 	item_state = "leather_coat_fighter"
 	siemens_coefficient = 0.8
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T2)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_FIRE_T2, ARMOR_MODIFIER_UP_DT_T3)
 	body_parts_hidden = ARMS | CHEST
 
 /obj/item/clothing/suit/armor/light/leather/tanvest
@@ -1638,13 +1735,13 @@
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/khan
 	name = "Leather battle coat" //NO PIT THIS GAME UNIVERSE AND THAT GAME UNIVERSE HAVE NOTHING TO DO WITH EACH OTHER!!! (Sorry but I'm not keeping the original name of a petfaction) - Blue
-	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside."
+	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. The plates lining it appear to be just the right metal quality to deflect most physical blunt trauma as well as laser weaponry slightly, but terrible at defending against bullets."
 	icon = 'icons/fallout/clothing/khans.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
-	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T1 * ARMOR_SLOWDOWN_GLOBAL_MULT
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 /obj/item/clothing/suit/armor/medium/vest/breastplate/light
 	name = "light armor plates"
@@ -2042,7 +2139,6 @@
 	item_state = "brotherhood_armor_knight"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
-
 
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/senior
 	name = "brotherhood senior knight armor"
@@ -2554,7 +2650,7 @@
 	item_state = "tribal_power_armor"
 	// body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	slowdown = ARMOR_SLOWDOWN_SALVAGE * ARMOR_SLOWDOWN_LESS_T3 * ARMOR_SLOWDOWN_GLOBAL_MULT // zooom
-	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_LASER_T2)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T2)
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk
 	name = "salvaged weathered tribal T45-b power armor"

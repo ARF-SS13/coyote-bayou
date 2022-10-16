@@ -10,9 +10,36 @@
 	light_range = 0
 	break_sound = 'sound/hallucinations/veryfar_noise.ogg'
 	debris = list(/obj/item/candle/tribal_torch = 1)
+	tastes = list("wood" = 1, "fuel" = 1)
 	var/burning = FALSE
 	var/flickering = FALSE
 	var/flicker_chance = 1 // percent
+
+/obj/structure/destructible/tribal_torch/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/smooch_fire)
+
+/obj/structure/destructible/tribal_torch/Destroy()
+	. = ..()
+	UnregisterSignal(src, COMSIG_ATOM_LICKED)
+
+/obj/structure/destructible/tribal_torch/proc/smooch_fire(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!iscarbon(licker) || !tongue || !burning || HAS_TRAIT(licker, TRAIT_RESISTHEAT))
+		return FALSE
+
+	var/obj/item/bodypart/ur_mouth = licker.get_bodypart(BODY_ZONE_HEAD)
+	if(ur_mouth && ur_mouth.receive_damage(0, 25, wound_bonus = 10)) // burn idiot
+		playsound(licker, 'sound/items/welder.ogg', 100, TRUE)
+		licker.emote("scream")
+		licker.adjust_fire_stacks(5)
+		licker.IgniteMob()
+		licker.visible_message(
+			span_warning("[licker] burns their tongue on \the [src]!"),
+			span_danger("You lick \the [src], and it, of course, burns your tongue!"),
+			span_warning("You hear a sizzle!")
+		)
+		return TRUE
+	return FALSE
 
 /obj/structure/destructible/tribal_torch/update_icon()
 	icon_state = "torch_[burning ? null : "un"]lit"

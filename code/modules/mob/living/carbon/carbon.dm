@@ -1199,6 +1199,8 @@
 		var/obj/item/bodypart/BP = i
 		if(BP.get_bleed_rate())
 			return TRUE
+		if(BP.has_bleed_wounds())
+			return TRUE
 
 // get our total bleedrate
 /mob/living/carbon/proc/get_total_bleed_rate()

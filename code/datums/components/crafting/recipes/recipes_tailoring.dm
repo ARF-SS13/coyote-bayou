@@ -195,6 +195,17 @@ datum/crafting_recipe/steelbib/heavy
 	subcategory = CAT_ARMOR
 	always_available = FALSE
 
+/datum/crafting_recipe/bosoutcastlight
+	name = "knight armor"
+	result = /obj/item/clothing/suit/armor/light/duster/bos/outcast
+	reqs = list(/obj/item/stack/sheet/leather = 3,
+				/obj/item/weaponcrafting/string = 2,
+				/obj/item/stack/crafting/metalparts = 5)
+	time = 30
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+	always_available = FALSE
+
 /datum/crafting_recipe/boscombathelmet
 	name = "knight helmet"
 	result = /obj/item/clothing/head/helmet/f13/combat/brotherhood
@@ -449,7 +460,7 @@ datum/crafting_recipe/steelbib/heavy
 	time = 15
 	category = CAT_CLOTHING
 	subcategory = CAT_WASTELAND
-	
+
 /datum/crafting_recipe/tailor/chameleon_mask
 	name = "Chameleon Mask"
 	result = /obj/item/clothing/mask/chameleon

@@ -28,6 +28,8 @@
 	var/a_or_from = "a"
 	/// The visible message when this happens
 	var/occur_text = ""
+	/// The visible message when this is renewed
+	var/renew_text = ""
 	/// This sound will be played upon the wound being applied
 	var/sound_effect
 
@@ -61,7 +63,7 @@
 	/// How much we're contributing to this limb's bleed_rate
 	var/blood_flow
 
-	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding] to begin suffering this wound, see check_wounding_mods() for more
+	/// The minimum we need to roll on [/obj/item/bodypart/proc/check_wounding()] to begin suffering this wound, see check_wounding_mods() for more
 	var/threshold_minimum
 	/// How much having this wound will add to all future check_wounding() rolls on this limb, to allow progression to worse injuries with repeated damage
 	var/threshold_penalty
@@ -184,7 +186,7 @@
  * This proc actually instantiates the new wound based off the specific type path passed, then returns the new instantiated wound datum.
  *
  * Arguments:
- * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/slash/severe
+ * * new_type- The TYPE PATH of the wound you want to replace this, like /datum/wound/bleed/slash/severe
  * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
  */
 /datum/wound/proc/replace_wound(new_type, smited = FALSE)
@@ -201,15 +203,19 @@
 
 /// Additional beneficial effects when the wound is gained, in case you want to give a temporary boost to allow the victim to try an escape or last stand
 /datum/wound/proc/second_wind()
+	var/add_determ
 	switch(severity)
 		if(WOUND_SEVERITY_MODERATE)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_MODERATE)
+			add_determ = WOUND_DETERMINATION_MODERATE
 		if(WOUND_SEVERITY_SEVERE)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_SEVERE)
+			add_determ = WOUND_DETERMINATION_SEVERE
 		if(WOUND_SEVERITY_CRITICAL)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_CRITICAL)
+			add_determ = WOUND_DETERMINATION_CRITICAL
 		if(WOUND_SEVERITY_LOSS)
-			victim.reagents.add_reagent(/datum/reagent/determination, WOUND_DETERMINATION_LOSS)
+			add_determ = WOUND_DETERMINATION_LOSS
+	if(victim.has_reagent(/datum/reagent/determination))
+		add_determ *= 0.25 // already determined? kinda demoralizing to keep getting FUCKED
+	victim.reagents.add_reagent(/datum/reagent/determination, add_determ)
 
 /**
  * try_treating() is an intercept run from [/mob/living/carbon/proc/attackby] right after surgeries but before anything else. Return TRUE here if the item is something that is relevant to treatment to take over the interaction.
@@ -256,10 +262,13 @@
 
 /// Generic bleed wound treatment from whatever'll allow it
 /// No messages, damage healing, or thing usage, they'll be handled on the item doing the healing
-/datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0)
-	var/blood_sutured = I.stop_bleeding * (I.self_penalty_effectiveness * self_applied) * 0.5
+/// Currently unused
+/datum/wound/proc/treat_bleed(obj/item/stack/medical/I, mob/user, self_applied = 0, effectiveness)
+	if(!I.is_suture)
+		return
+	var/blood_sutured = I.is_suture * (I.self_penalty_effectiveness * self_applied * effectiveness)
 	blood_flow -= blood_sutured
-	limb.heal_damage(I.heal_brute, I.heal_burn)
+	//limb.heal_damage(I.heal_brute, I.heal_burn)
 
 	if(blood_flow <= 0)
 		to_chat(user, span_green("You successfully stop the bleeding in [self_applied ? "your" : "[victim]'s"] [limb.name]."))
@@ -308,9 +317,17 @@
 /datum/wound/proc/crush()
 	return
 
+/// Called when we want to update our wounds, only matters on bleeds right now
+/datum/wound/proc/update_wound()
+	return
+
 /// Used when we're being dragged while bleeding, the value we return is how much bloodloss this wound causes from being dragged. Since it's a proc, you can let bandages soak some of the blood
 /datum/wound/proc/drag_bleed_amount()
 	return
+
+/// Returns how much the wound should be bleeding given an amount of blood, so we can scale bleeding for minor wounds
+/datum/wound/proc/get_blood_flow(include_reductions = FALSE)
+	return blood_flow
 
 /**
  * get_examine_description() is used in carbon/examine and human/examine to show the status of this wound. Useful if you need to show some status like the wound being splinted or bandaged.

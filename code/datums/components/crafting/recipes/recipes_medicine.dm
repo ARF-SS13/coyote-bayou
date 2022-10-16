@@ -281,3 +281,29 @@
 	time = 100
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
+
+/datum/crafting_recipe/refill_chem_cartridge
+	name = "Refill chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/crafted
+	reqs = list(
+	/obj/item/stock_parts/chem_cartridge/crafted = 1,
+	/datum/reagent/consumable/nutriment = 60
+	)
+	time = 100
+	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/crafted_chem_cartridge
+	name = "Crafted chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/crafted
+	reqs = list(
+	/obj/item/stack/sheet/metal = 10,
+	/obj/item/stack/sheet/leather = 10,
+	/obj/item/stack/sheet/cloth = 20,
+	/obj/item/stack/sheet/mineral/titanium = 5,
+	/obj/item/stack/crafting/electronicparts = 5,
+	/datum/reagent/consumable/nutriment = 60
+	)
+	time = 100
+	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
+	category = CAT_MEDICAL

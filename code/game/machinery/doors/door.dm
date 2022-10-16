@@ -211,6 +211,8 @@
 	return max_moles - min_moles > 20
 
 /obj/machinery/door/attackby(obj/item/I, mob/user, params)
+	if(SEND_SIGNAL(I, COMSIG_LICK_RETURN, src, user)) // so I can lick walls like a frickin frick
+		return
 	if(user.a_intent != INTENT_HARM && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/twohanded/fireaxe)))
 		try_to_crowbar(I, user)
 		return 1

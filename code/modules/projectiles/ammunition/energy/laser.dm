@@ -132,6 +132,26 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	e_cost = 50 //30 shots, as per FNV
 	damage_threshold_penetration = 4 // Doesn't pierce as much armor or hit as hard, but has more ammo capacity than the 1k
 
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	e_cost = 1
+	damage_threshold_penetration = 0
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce
+	e_cost = 1
+	damage_threshold_penetration = 10
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	e_cost = 1
+	damage_threshold_penetration = 0
+
+/obj/item/ammo_casing/energy/laser/pistol/hitscan/debug_10_damage_10_dt_pierce_50_ap
+	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/debug_10_damage_0_dt_pierce_50_ap
+	e_cost = 1
+	damage_threshold_penetration = 10
+
 /obj/item/ammo_casing/energy/laser/ultra_pistol
 	projectile_type = /obj/item/projectile/beam/laser/ultra_pistol
 	e_cost = 75 //20 shots
@@ -145,7 +165,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/recharger/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/recharger/hitscan
 	e_cost = 75 //20 shots
-	fire_sound = 'sound/f13weapons/aep7fire.ogg'
+	fire_sound = 'sound/f13weapons/RechargerFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/stun  //compliance regulator
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/stun
@@ -155,6 +175,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/pistol/wattz
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz
 	e_cost = 100 //15 shots Civilian gun hits harder but has less charge.
+	fire_sound = 'sound/f13weapons/WattzPistolFire.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/wattz/magneto
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto
@@ -241,6 +262,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/wattz2k
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k
 	e_cost = 125
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
 
 /obj/item/ammo_casing/energy/wattz2k/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan

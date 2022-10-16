@@ -13,6 +13,11 @@
 	path = /obj/item/clothing/suit/toggle/labcoat
 	cost = 2
 
+/datum/gear/suit/rangercape
+	name = "Ranger cape"
+	path = /obj/item/clothing/neck/mantle/ranger
+	cost = 1
+
 /datum/gear/suit/bomber
 	name = "Bomber jacket"
 	path = /obj/item/clothing/suit/jacket
@@ -87,7 +92,7 @@
 
 /datum/gear/suit/flakjack
 	name = "Flak Jacket"
-	path = /obj/item/clothing/suit/flakjack
+	path = /obj/item/clothing/suit/armor/outfit/vest/flakjack
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 2
 
@@ -111,7 +116,7 @@
 
 /datum/gear/suit/ncrcfjacket
 	name = "NCRCF jacket"
-	path = /obj/item/clothing/suit/armor/ncrcfjacket
+	path = /obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	cost = 1
 
@@ -138,17 +143,17 @@
 
 /datum/gear/suit/coat/marlow
 	name = "Marlow gang overcoat"
-	path = /obj/item/clothing/suit/armor/marlowsuit
+	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
 	cost = 1
 
 /datum/gear/suit/coat/marlow/ikesuit
 	name = "Gunfighter's overcoat"
-	path = /obj/item/clothing/suit/armor/marlowsuit/ikesuit
+	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit/ikesuit
 
 /datum/gear/suit/coat/marlow/masonsuit
 	name = "Vagabond's vest"
-	path = /obj/item/clothing/suit/armor/marlowsuit/masonsuit
+	path = /obj/item/clothing/suit/armor/light/duster/marlowsuit/masonsuit
 
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"
@@ -157,7 +162,7 @@
 
 /datum/gear/suit/NCRutilityvest
 	name = "Utility Vest"
-	path = /obj/item/clothing/suit/armor/utilityvest
+	path = /obj/item/clothing/suit/armor/outfit/vest/utility
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_GENERAL
 	cost = 1  /// Has no armor so its cosmetic as heck.
 /*	restricted_desc = "NCR"

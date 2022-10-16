@@ -158,7 +158,7 @@
 	icon_prefix = "bumper"
 	icon_state = "bumper"
 	wound_bonus = null
-	sharpness = SHARP_NONE
+	sharpness = SHARP_EDGED
 	resistance_flags = null
 	wielded_icon = "bumper2"
 
