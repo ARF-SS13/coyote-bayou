@@ -74,8 +74,8 @@
 "abt" = (
 /obj/structure/chair/f13chair1,
 /mob/living/simple_animal/hostile/raider/junker/boss{
-	name = "Comrade Fengwupong";
-	desc = "An absolute beast of an old-war man."
+	desc = "An absolute beast of an old-war man.";
+	name = "Comrade Fengwupong"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -971,9 +971,9 @@
 "aUk" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
-	name = "Comrade Wheel-Xing";
+	desc = "A horrid creation capable of ultimate destruction.";
 	health = 600;
-	desc = "A horrid creation capable of ultimate destruction."
+	name = "Comrade Wheel-Xing"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -15124,8 +15124,8 @@
 "kDX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/ladder/unbreakable{
-	id = "chinesedungeon";
-	height = 1
+	height = 1;
+	id = "chinesedungeon"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -20149,9 +20149,9 @@
 /area/f13/radiation)
 "paQ" = (
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
-	name = "The People's Liberator";
+	desc = "A horrid creation capable of ultimate destruction.";
 	health = 1300;
-	desc = "A horrid creation capable of ultimate destruction."
+	name = "The People's Liberator"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -21479,9 +21479,9 @@
 	dir = 8
 	},
 /mob/living/simple_animal/hostile/chinese/ranged/assault{
+	desc = "A high ranking chinese soldier.";
 	health = 300;
-	name = "Comrade Yudaisoon";
-	desc = "A high ranking chinese soldier."
+	name = "Comrade Yudaisoon"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -28689,8 +28689,8 @@
 /area/f13/tunnel)
 "wRg" = (
 /obj/structure/ladder/unbreakable{
-	id = "mango2";
-	height = 1
+	height = 1;
+	id = "mango2"
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -37248,30 +37248,30 @@ aaa
 "}
 (28,1,1) = {"
 aaa
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aak
-aae
-aak
-aae
-aae
-aae
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
 aak
 aak
 aae
@@ -37528,7 +37528,7 @@ pwE
 pwE
 pwE
 pwE
-aak
+aaa
 aak
 aak
 aae
@@ -37785,7 +37785,7 @@ dlp
 aah
 boU
 pwE
-aae
+aaa
 aak
 aae
 aae
@@ -38042,7 +38042,7 @@ uLX
 aah
 boU
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -38299,7 +38299,7 @@ aah
 aah
 boU
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -38556,7 +38556,7 @@ boU
 aah
 boU
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -38813,7 +38813,7 @@ aah
 aah
 aah
 pwE
-aak
+aaa
 aae
 aae
 aae
@@ -39070,11 +39070,11 @@ pwE
 aah
 aah
 pwE
-aak
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aaa
 aae
 aae
@@ -39332,7 +39332,7 @@ bCG
 bCG
 bCG
 bCG
-aae
+aaa
 aae
 aae
 aaa
@@ -39589,7 +39589,7 @@ pwE
 uAw
 nOH
 bCG
-aae
+aaa
 aae
 aaa
 aaa
@@ -39846,7 +39846,7 @@ cug
 epo
 epo
 bCG
-aae
+aaa
 aae
 aaa
 aaa
@@ -40103,7 +40103,7 @@ pwE
 cug
 pwE
 bCG
-aae
+aaa
 aae
 aae
 aae
@@ -40360,7 +40360,7 @@ aah
 aah
 pwE
 aaa
-aae
+aaa
 aaa
 aae
 aaa
@@ -43957,8 +43957,8 @@ aah
 boU
 pwE
 pwE
-aae
-aae
+aaa
+aaa
 aaa
 aaa
 aae
@@ -44215,7 +44215,7 @@ aah
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aaa
 aaa
@@ -44472,7 +44472,7 @@ aah
 cug
 lfV
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -44729,7 +44729,7 @@ aah
 cug
 mEU
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -44986,7 +44986,7 @@ aah
 cug
 lfV
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -45243,7 +45243,7 @@ aah
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -45498,9 +45498,9 @@ pwE
 bCG
 bCG
 bCG
-aae
-aae
-aae
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -45752,10 +45752,10 @@ aah
 bAY
 aah
 pwE
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -46009,7 +46009,7 @@ aah
 bAY
 bAY
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -46266,7 +46266,7 @@ pwE
 aah
 bAY
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -46523,7 +46523,7 @@ bAY
 bAY
 bAY
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -46780,7 +46780,7 @@ bAY
 bAY
 aah
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -47037,7 +47037,7 @@ bAY
 bAY
 aah
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -47294,7 +47294,7 @@ bAY
 aah
 aah
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -47551,7 +47551,7 @@ jGa
 aah
 aah
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -47808,7 +47808,7 @@ pwE
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -48065,7 +48065,7 @@ bQR
 xcA
 bAY
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -48322,7 +48322,7 @@ hAa
 xcA
 bAY
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -48579,7 +48579,7 @@ rnh
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -48836,8 +48836,8 @@ bFF
 bFF
 bFF
 pwE
-aae
-aae
+aaa
+aaa
 aae
 aae
 aae
@@ -49094,7 +49094,7 @@ seV
 bFF
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -49351,7 +49351,7 @@ pwE
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -49608,7 +49608,7 @@ pwE
 pwE
 pwE
 pwE
-aae
+aaa
 aae
 aae
 aae
@@ -49861,11 +49861,11 @@ hWj
 apg
 apg
 rnh
-aae
-aae
-aae
-aae
-aae
+aaa
+aaa
+aaa
+aaa
+aaa
 aae
 aae
 aae
@@ -50118,7 +50118,7 @@ hWj
 hWj
 apg
 rnh
-aae
+aaa
 aae
 aae
 aae
@@ -50375,7 +50375,7 @@ gLi
 rhC
 apg
 rnh
-aae
+aaa
 aae
 aae
 aae
@@ -50632,7 +50632,7 @@ hWj
 apg
 apg
 rnh
-aae
+aaa
 aae
 aae
 aae
@@ -50889,7 +50889,7 @@ bGX
 bGX
 apg
 rnh
-aae
+aaa
 aae
 aae
 aae
