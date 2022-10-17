@@ -10,10 +10,11 @@
 	layer = LATTICE_LAYER //under pipes
 	plane = FLOOR_PLANE
 	var/number_of_rods = 1
-	canSmoothWith = list(/obj/structure/lattice,
-	/turf/open/floor,
-	/turf/closed/wall,
-	/obj/structure/falsewall)
+	canSmoothWith = list(
+		/obj/structure/lattice,
+		/turf/open/floor,
+		/turf/closed/wall,
+		/obj/structure/falsewall)
 	smooth = SMOOTH_MORE
 	//	flags = CONDUCT_1
 
