@@ -139,8 +139,8 @@
 	user.show_message(span_notice("You start weaving \the [W.name] through the loom.."), MSG_VISUAL)
 	if(W.use_tool(src, user, W.pull_effort))
 		if(W.amount >= FABRIC_PER_SHEET)
-			new W.loom_result(drop_location())
-			W.use(FABRIC_PER_SHEET)
+			new W.loom_result(drop_location(), round(W.amount / FABRIC_PER_SHEET))
+			W.use(W.amount - W.amount % FABRIC_PER_SHEET)
 			user.show_message(span_notice("You weave \the [W.name] into a workable fabric."), MSG_VISUAL)
 	return TRUE
 
