@@ -10,11 +10,14 @@
 	layer = LATTICE_LAYER //under pipes
 	plane = FLOOR_PLANE
 	var/number_of_rods = 1
-	canSmoothWith = list(/obj/structure/lattice,
-	/turf/open/floor,
-	/turf/closed/wall,
-	/obj/structure/falsewall)
+	canSmoothWith = list(
+		/obj/structure/lattice,
+		/turf/open/floor,
+		/turf/closed/wall,
+		/obj/structure/falsewall)
 	smooth = SMOOTH_MORE
+	/// Can this lattice support other lattices?
+	var/is_supportive = FALSE
 	//	flags = CONDUCT_1
 
 /obj/structure/lattice/examine(mob/user)
