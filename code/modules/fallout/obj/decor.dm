@@ -10,6 +10,7 @@
 	icon = 'icons/fallout/objects/decals.dmi'
 	icon_state = "rag" //skulls, skin
 	layer = 3.2
+	max_integrity = 25
 
 /obj/structure/decoration/sign //Signs.
 	name = "sign"
