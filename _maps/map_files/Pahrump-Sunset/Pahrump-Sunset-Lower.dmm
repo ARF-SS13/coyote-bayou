@@ -333,7 +333,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "amC" = (
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/twohours,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "amQ" = (
@@ -416,7 +416,7 @@
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/tunnel)
 "apj" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/fourhours,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/tunnel)
 "apk" = (
@@ -578,7 +578,7 @@
 /area/f13/radiation)
 "axw" = (
 /obj/structure/simple_door/bunker,
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/fourhours,
 /turf/open/water,
 /area/f13/tunnel)
 "axC" = (
@@ -1509,9 +1509,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "bvY" = (
-/obj/structure/timeddoor,
-/turf/open/indestructible/ground/inside/subway,
-/area/f13/tunnel)
+/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/r_wall/rust,
+/area/f13/clinic)
 "bwd" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -1541,7 +1542,7 @@
 	},
 /area/f13/building/massfusion)
 "bxo" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/sixtyminute,
 /turf/closed/wall/r_wall/rust,
 /area/f13/clinic)
 "bxs" = (
@@ -1937,8 +1938,8 @@
 	},
 /area/f13/tunnel)
 "bHc" = (
-/obj/structure/timeddoor,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -2299,7 +2300,7 @@
 /area/f13/clinic)
 "bIP" = (
 /obj/item/reagent_containers/hypospray/medipen/stimpak,
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "reddirtyfull"
 	},
@@ -2448,7 +2449,7 @@
 	},
 /area/f13/tunnel)
 "bJn" = (
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/twohours,
 /turf/closed/mineral/random/high_chance,
 /area/f13/caves)
 "bJo" = (
@@ -2482,8 +2483,8 @@
 /area/f13/clinic)
 "bJu" = (
 /obj/structure/simple_door/bunker,
-/obj/structure/timeddoor,
 /obj/item/mine/stun,
+/obj/structure/timeddoor/sixtyminute,
 /turf/open/floor/f13{
 	icon_state = "yellowdirtyfull"
 	},
@@ -6182,9 +6183,10 @@
 /turf/open/floor/plasteel/grimy,
 /area/f13/tunnel)
 "coH" = (
-/obj/structure/timeddoor,
-/turf/closed/indestructible/rock,
-/area/f13/caves)
+/obj/structure/timeddoor/fourhours,
+/obj/structure/timeddoor/fourhours,
+/turf/closed/wall/r_wall/f13/vault,
+/area/f13/tunnel)
 "coI" = (
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /turf/open/floor/plating/tunnel,
@@ -8027,7 +8029,7 @@
 /turf/open/floor/wood_common/wood_common_dark,
 /area/f13/tunnel)
 "dXk" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/fourhours,
 /turf/closed/indestructible/rock,
 /area/f13/tunnel)
 "dXt" = (
@@ -8135,8 +8137,8 @@
 /turf/open/floor/f13/wood,
 /area/f13/sewer)
 "ebG" = (
-/obj/structure/timeddoor,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/sixtyminute,
 /turf/closed/wall/r_wall/rust,
 /area/f13/clinic)
 "ebV" = (
@@ -13142,10 +13144,11 @@
 	},
 /area/f13/clinic)
 "iNF" = (
-/obj/structure/timeddoor,
-/obj/structure/timeddoor,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/sixtyminute,
+/turf/closed/wall/r_wall/rust,
+/area/f13/clinic)
 "iNG" = (
 /obj/structure/barricade/bars,
 /turf/closed/wall/f13/tunnel,
@@ -17795,7 +17798,7 @@
 	},
 /area/f13/caves)
 "mWn" = (
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/twohours,
 /turf/closed/indestructible/f13vaultrusted,
 /area/f13/caves)
 "mWL" = (
@@ -18383,7 +18386,7 @@
 /area/f13/building/massfusion)
 "nxG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/threehours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -22147,7 +22150,7 @@
 /area/f13/tunnel)
 "qET" = (
 /obj/structure/junk/small/bed2,
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/threehours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -23838,7 +23841,7 @@
 	},
 /area/f13/building)
 "skC" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/fourhours,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "skM" = (
@@ -24223,7 +24226,7 @@
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "sCY" = (
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/twohours,
 /turf/closed/mineral/random/low_chance/underground,
 /area/f13/caves)
 "sDe" = (
@@ -27247,7 +27250,7 @@
 	dir = 8;
 	light_color = "red"
 	},
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/threehours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -27623,7 +27626,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/hospital)
 "vLT" = (
-/obj/structure/timeddoor,
+/obj/structure/timeddoor/fourhours,
 /turf/closed/wall/r_wall/f13/vault,
 /area/f13/caves)
 "vNt" = (
@@ -29555,6 +29558,7 @@
 "xHy" = (
 /obj/structure/barricade/sandbags,
 /obj/structure/barricade/bars,
+/obj/structure/timeddoor/fourhours,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xHG" = (
@@ -29760,7 +29764,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "xOT" = (
-/obj/structure/timeddoor/sixtyminute,
+/obj/structure/timeddoor/threehours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -35796,7 +35800,7 @@ aaa
 bxo
 bxo
 bxo
-bxo
+bvY
 bxo
 bJG
 bJJ
@@ -35808,7 +35812,7 @@ bJJ
 bJG
 bxo
 bxo
-bxo
+bvY
 bxo
 bxo
 bIC
@@ -37116,7 +37120,7 @@ bLa
 bOi
 bLa
 bLa
-bxo
+bvY
 aaa
 aae
 aae
@@ -38380,7 +38384,7 @@ ebG
 cJr
 aaa
 aaa
-ebG
+iNF
 bLF
 bLW
 bLa
@@ -48327,7 +48331,7 @@ aae
 aae
 aae
 aae
-coH
+aaa
 apj
 apj
 apj
@@ -51126,7 +51130,7 @@ aaa
 "}
 (82,1,1) = {"
 aaa
-iNF
+skC
 skC
 skC
 skC
@@ -52932,7 +52936,7 @@ aae
 aae
 aae
 aak
-dXk
+rnh
 dXk
 apg
 rKP
@@ -53705,7 +53709,7 @@ aak
 aak
 aak
 dXk
-apg
+coH
 nLH
 mEn
 pku
@@ -53961,7 +53965,7 @@ aak
 aae
 aae
 aak
-coH
+aaa
 vLT
 apj
 apg
@@ -54000,7 +54004,7 @@ apj
 apj
 apj
 apj
-apj
+apg
 bFx
 bFx
 bFx
@@ -54221,7 +54225,7 @@ aak
 aaa
 aaa
 apj
-apj
+apg
 wdn
 bGX
 bHx
@@ -54257,7 +54261,7 @@ apg
 apg
 aah
 xHy
-bvY
+aah
 aah
 aah
 aah
@@ -54478,7 +54482,7 @@ aae
 aaa
 aaa
 apj
-apj
+apg
 rfw
 cod
 bHa
@@ -54514,7 +54518,7 @@ bGZ
 bFS
 bKT
 xHy
-bvY
+aah
 aah
 aah
 aah
@@ -54735,7 +54739,7 @@ aae
 aaa
 aaa
 apj
-apj
+apg
 apg
 apg
 jUE
@@ -54771,7 +54775,7 @@ apg
 apg
 aah
 xHy
-bvY
+aah
 aah
 aah
 aah
@@ -55028,7 +55032,7 @@ apj
 apj
 apj
 apj
-apj
+apg
 bFx
 bFx
 bFx

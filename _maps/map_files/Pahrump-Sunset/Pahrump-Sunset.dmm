@@ -20695,6 +20695,7 @@
 	id = "tunnelertemple";
 	name = "ancient ladder"
 	},
+/obj/structure/timeddoor/threehours,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bSb" = (
@@ -61899,6 +61900,10 @@
 	icon_state = "horizontaltopbordertop2"
 	},
 /area/f13/wasteland)
+"vjN" = (
+/obj/structure/timeddoor/threehours,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "vjV" = (
 /obj/structure/stairs/north{
 	color = "#A47449"
@@ -63598,6 +63603,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/structure/timeddoor/threehours,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "wbw" = (
@@ -63658,6 +63664,10 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/building)
+"wec" = (
+/obj/structure/timeddoor/threehours,
+/turf/closed/mineral/random/low_chance,
+/area/f13/caves)
 "weA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -116053,8 +116063,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+wec
+wec
 wbm
 aaa
 "}
@@ -116311,7 +116321,7 @@ oEp
 oEp
 qFv
 umE
-aaB
+vjN
 bRT
 aaa
 "}
@@ -116568,8 +116578,8 @@ lTe
 tuk
 vhj
 aaB
-aaB
-aaB
+vjN
+vjN
 aaa
 "}
 (190,1,1) = {"
@@ -116826,7 +116836,7 @@ bvS
 aaB
 aaB
 aaB
-aae
+wec
 aaa
 "}
 (191,1,1) = {"

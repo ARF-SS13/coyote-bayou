@@ -1962,6 +1962,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall,
 /area/f13/brotherhood/armory)
+"bIR" = (
+/obj/structure/timeddoor/threehours,
+/turf/closed/mineral/random/low_chance,
+/area/f13/underground/cave)
 "bJa" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3004,6 +3008,7 @@
 /obj/structure/destructible/tribal_torch/wall{
 	dir = 8
 	},
+/obj/structure/timeddoor/threehours,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/underground/cave)
 "cDS" = (
@@ -10782,6 +10787,10 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/brotherhood/rnd)
+"iEC" = (
+/obj/structure/timeddoor/threehours,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/underground/cave)
 "iEG" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -23728,6 +23737,10 @@
 /obj/structure/table/wood/poker,
 /turf/open/floor/wood_common,
 /area/f13/brotherhood/leisure)
+"sOL" = (
+/obj/structure/timeddoor/threehours,
+/turf/closed/wall/f13/wood,
+/area/f13/underground/cave)
 "sOW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
@@ -68454,8 +68467,8 @@ shC
 "}
 (149,1,1) = {"
 shC
-ghS
-bfM
+bIR
+sOL
 cDQ
 dMm
 cKR
@@ -68711,9 +68724,9 @@ shC
 "}
 (150,1,1) = {"
 shC
-ghS
+bIR
 bqf
-cKR
+iEC
 cKR
 cKR
 fww
@@ -68968,9 +68981,9 @@ shC
 "}
 (151,1,1) = {"
 shC
-ghS
-ghS
-bfM
+bIR
+bIR
+sOL
 cKR
 cKR
 cKR
