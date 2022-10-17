@@ -147,3 +147,6 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 
 /obj/item/stack/rods/scaffold/ten
 	amount = 10
+
+/obj/item/stack/rods/scaffold/get_main_recipes()
+	return list()
