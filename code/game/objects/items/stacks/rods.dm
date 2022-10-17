@@ -120,3 +120,30 @@ GLOBAL_LIST_INIT(rod_recipes, list ( \
 
 /obj/item/stack/rods/lava/thirty
 	amount = 30
+
+/obj/item/stack/rods/scaffold // fortnite bars
+	name = "pre-war aerial foundation"
+	desc = "A set of extra-light, ultra-sturdy DIY structural supports, able to connect to just about anything and support an entire \
+		floor of a house, with a bit of work. Based on schematics looted from various ancient architectural companies and 'refined' down \
+		into a simple recipe that anyone can put together, given the right materials. Also able to withstand lava, if you feel like living \
+		in a volcano."
+	singular_name = "pre-war aerial foundation"
+	icon_state = "rods"
+	item_state = "rods"
+	color = "#f44a4aff"
+	flags_1 = CONDUCT_1
+	w_class = WEIGHT_CLASS_NORMAL
+	custom_materials = list(
+		/datum/material/iron = (MINERAL_MATERIAL_AMOUNT * 5),
+		/datum/material/plastic = (MINERAL_MATERIAL_AMOUNT * 1),
+		/datum/material/bronze = (MINERAL_MATERIAL_AMOUNT * 1),
+		/datum/material/plasma = (MINERAL_MATERIAL_AMOUNT * 0.5),
+		/datum/material/titanium = (MINERAL_MATERIAL_AMOUNT * 0.5),
+		/datum/material/lead = (MINERAL_MATERIAL_AMOUNT * 0.5)
+		)
+	max_amount = 50
+	resistance_flags = FIRE_PROOF | LAVA_PROOF
+	merge_type = /obj/item/stack/rods/scaffold
+
+/obj/item/stack/rods/scaffold/ten
+	amount = 10

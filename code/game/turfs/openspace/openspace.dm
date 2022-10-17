@@ -83,26 +83,31 @@ Prevents players on higher Zs from seeing into buildings they arent meant to.
 	if(!CanBuildHere())
 		return
 	if(istype(C, /obj/item/stack/rods))
-		var/obj/item/stack/rods/R = C
-		var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-		var/obj/structure/lattice/catwalk/W = locate(/obj/structure/lattice/catwalk, src)
-		if(W)
+		if(locate(/obj/structure/lattice/catwalk, src))
 			to_chat(user, span_warning("There is already a catwalk here!"))
 			return
-		if(L)
-			if(R.use(1))
-				to_chat(user, span_notice("You construct a catwalk."))
-				playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
-				new/obj/structure/lattice/catwalk(src)
-			else
-				to_chat(user, span_warning("You need two rods to build a catwalk!"))
+		var/obj/item/stack/rods/our_rods = C
+		var/structural_rods = istype(our_rods, /obj/item/stack/rods/scaffold)
+		if(locate(/obj/structure/lattice, src))
+			if(structural_rods)
+				to_chat(user, span_warning("These scaffolding rods can't fit together tight enough to create a catwalk! Try some iron rods."))
+				return
+			if(!our_rods.use(2))
+				to_chat(user, span_warning("You need two iron rods to build a catwalk!"))
+				return
+			to_chat(user, span_notice("You construct a catwalk."))
+			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
+			new/obj/structure/lattice/catwalk(src)
 			return
-		if(R.use(1))
+		if(!structural_rods)
+			to_chat(user, span_warning("These rods are too weak to support a whole upper floor! Try some aerial support girders."))
+			return
+		if(our_rods.use(1))
 			to_chat(user, span_notice("You construct a lattice."))
 			playsound(src, 'sound/weapons/genhit.ogg', 50, TRUE)
 			ReplaceWithLattice()
-		else
-			to_chat(user, span_warning("You need some support under this space to make a lattice."))
+			return
+		to_chat(user, span_warning("You can't find anywhere to install the supports!"))
 		return
 	if(istype(C, /obj/item/stack/tile/plasteel))
 		if(!CanCoverUp())

@@ -1023,7 +1023,11 @@ GLOBAL_LIST_INIT(prewar_recipes, list ( \
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
-	custom_materials = list()
+	custom_materials = list(
+		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		)
 	throwforce = 10
 	flags_1 = CONDUCT_1
 	armor = ARMOR_VALUE_GENERIC_ITEM

@@ -16,8 +16,6 @@
 		/turf/closed/wall,
 		/obj/structure/falsewall)
 	smooth = SMOOTH_MORE
-	/// Can this lattice support other lattices?
-	var/is_supportive = FALSE
 	//	flags = CONDUCT_1
 
 /obj/structure/lattice/examine(mob/user)
