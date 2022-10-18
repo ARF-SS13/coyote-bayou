@@ -775,9 +775,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 			
 			//debug
 			if(product_records.Find(R) && hidden_records.Find(R))
-				log_runtime("WARN - vendor [src] has Duplicate [R] accross normal and hidden product tables!")
+				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and hidden product tables!")
 			if(product_records.Find(R) && coin_records.Find(R))
-				log_runtime("WARN - vendor [src] has Duplicate [R] accross normal and premium product tables!")
+				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and premium product tables!")
 			
 			//Set price for the item we're using.
 			var/price_to_use = default_price
