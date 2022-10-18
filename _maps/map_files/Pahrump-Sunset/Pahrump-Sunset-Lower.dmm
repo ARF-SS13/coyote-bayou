@@ -9780,6 +9780,13 @@
 /obj/effect/decal/cleanable/generic,
 /turf/open/floor/plating,
 /area/f13/building/museum)
+"fFZ" = (
+/obj/structure/junk/small/bed2,
+/obj/structure/timeddoor/twohours,
+/turf/open/floor/f13{
+	icon_state = "greendirtyfull"
+	},
+/area/f13/caves)
 "fGm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/tunnel{
@@ -18386,7 +18393,7 @@
 /area/f13/building/massfusion)
 "nxG" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/timeddoor/threehours,
+/obj/structure/timeddoor/twohours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -22150,7 +22157,8 @@
 /area/f13/tunnel)
 "qET" = (
 /obj/structure/junk/small/bed2,
-/obj/structure/timeddoor/threehours,
+/obj/structure/timeddoor/twohours,
+/obj/structure/timeddoor/twohours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -22934,6 +22942,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"rpF" = (
+/obj/machinery/workbench/advanced,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "rqJ" = (
 /obj/machinery/modular_computer/console/preset/engineering{
 	dir = 1
@@ -27250,7 +27262,7 @@
 	dir = 8;
 	light_color = "red"
 	},
-/obj/structure/timeddoor/threehours,
+/obj/structure/timeddoor/twohours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -29764,7 +29776,7 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "xOT" = (
-/obj/structure/timeddoor/threehours,
+/obj/structure/timeddoor/twohours,
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
 	},
@@ -39216,7 +39228,7 @@ bLL
 bLL
 bLL
 bLL
-bLL
+rpF
 owS
 rLV
 fEI
@@ -66021,7 +66033,7 @@ aaa
 bOn
 vsR
 nxG
-qET
+fFZ
 bOn
 aaa
 aae
