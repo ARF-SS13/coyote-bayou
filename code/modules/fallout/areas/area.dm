@@ -31,6 +31,11 @@
 	environment = 19
 	grow_chance = 45
 
+/area/f13/wasteland/swamp
+	name = "Swamplands"
+	icon_state = "away"
+	ambientsounds = list('sound/ambience/ambiswamp1.ogg','sound/ambience/ambiswamp2.ogg','sound/ambience/ambiswamp3.ogg')
+
 /area/f13/wasteland/event
 	name = "Wasteland (Event)"
 
@@ -142,9 +147,9 @@
 	name = "Building"
 	icon_state = "building"
 //	ambience_area =  list('sound/f13ambience/building.ogg')
-//	ambientmusic = list('sound/f13music/fo2_tunnels.ogg','sound/f13music/fo2_ruins.ogg','sound/misc/null.ogg')
+	ambientmusic = list('sound/ambience/ambibuilding1.ogg','sound/ambience/ambibuilding2.ogg')
 	ambientsounds = list('sound/f13ambience/ambigen_3.ogg','sound/f13ambience/ambigen_4.ogg','sound/f13ambience/ambigen_5.ogg', \
-	'sound/f13ambience/ambigen_6.ogg','sound/f13ambience/ambigen_7.ogg','sound/f13ambience/ambigen_8.ogg','sound/f13ambience/ambigen_9.ogg')
+	'sound/f13ambience/ambigen_6.ogg','sound/f13ambience/ambigen_7.ogg','sound/f13ambience/ambigen_8.ogg','sound/f13ambience/ambigen_15.ogg','sound/f13ambience/ambigen_16.ogg')
 	environment = 2
 	grow_chance = 5
 
