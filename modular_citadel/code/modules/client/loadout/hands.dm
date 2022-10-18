@@ -93,6 +93,25 @@
 	name = "black lipstick"
 	path = /obj/item/lipstick/black
 
+/datum/gear/hands/carpetdelivery
+	name = "Carpet Delivery Service"
+	path = /obj/item/choice_beacon/box/carpet
+	cost = 2
+
 /datum/gear/hands/livestockdelivery
 	name = "Pet Delivery Service"
 	path = /obj/item/choice_beacon/pet
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+	cost = 2
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+	cost = 3

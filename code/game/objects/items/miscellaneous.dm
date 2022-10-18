@@ -145,8 +145,9 @@
 		var/list/templist = list(
 		/obj/item/organ/cyberimp/brain/anti_drop,
 		/obj/item/organ/cyberimp/arm/toolset,
+		/obj/item/organ/cyberimp/chest/nutriment/plus,
+		/obj/item/organ/cyberimp/arm/esword, //adding for a possible dungeon loot choice
 		/obj/item/organ/cyberimp/arm/surgery,
-		/obj/item/organ/cyberimp/chest/thrusters,
 		/obj/item/organ/lungs/cybernetic,
 		/obj/item/organ/liver/cybernetic) //cyberimplants range from a nice bonus to fucking broken bullshit so no subtypesof
 		for(var/V in templist)
