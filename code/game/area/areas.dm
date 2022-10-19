@@ -1,5 +1,8 @@
 // Areas.dm
 
+/// so we dont have to initialize a sound loop datum for every fucking area in the game
+/// might have the sound effect that everyone hears the same sound at once, hopefully
+GLOBAL_LIST_EMPTY(area_sound_loops)
 
 /area
 	level = null
@@ -82,7 +85,29 @@
 
 	var/parallax_movedir = 0
 
-	var/list/ambientsounds = GENERIC
+	var/open_space = 0
+
+	/// List of music to play. FORMAT: AREA_MUSIC('sound/file.ogg, sound length)
+	// var/list/ambientmusic = list(
+	//	AREA_MUSIC('sound/misc/sadtrombone.ogg', 3.9 SECONDS)
+	//	)
+	var/list/ambientmusic
+
+	/// List of sounds to play. FORMAT: list(AREA_SOUND('sound/misc/sadtrombone.ogg', 3.9 SECONDS), AREA_MUSIC('sound/misc/sadtrombone.ogg', 3.9 SECONDS)) has a cooldown of 3 seconds between each play, but you can have sounds play for longer if you want
+	//var/list/ambientsounds = list(
+	//	AREA_SOUND('sound/misc/server-ready.ogg', 1 SECONDS),
+	//	AREA_SOUND('sound/misc/splort.ogg', 0.5 SECONDS)	
+	//	)
+	var/list/ambientsounds
+
+	/// Sound loop datums full of ambient sounds to play, refer to code\datums\looping_sounds\ambient_sounds.dm!
+	//var/list/ambience_area = list(
+	//	/datum/looping_sound/ambient/debug,
+	//	/datum/looping_sound/ambient/debug2
+	//)
+	var/list/ambience_area
+	var/environment = -1
+	var/grow_chance = 100
 	flags_1 = CAN_BE_DIRTY_1
 
 	var/list/firedoors
@@ -176,6 +201,8 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 	reg_in_areas_in_z()
 
+	initialize_soundloop(ambience_area)
+
 	//so far I'm only implementing it on mapped unique areas, it's easier this way.
 	if(unique && sub_areas)
 		if(type in sub_areas)
@@ -242,7 +269,20 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				A.power_environ = FALSE
 			INVOKE_ASYNC(A, .proc/power_change)
 	STOP_PROCESSING(SSobj, src)
+	QDEL_NULL(ambience_area)
 	return ..()
+
+/area/proc/initialize_soundloop()
+	if(!islist(ambience_area))
+		ambience_area = null
+		return FALSE
+	for(var/loopy in ambience_area)
+		if(!ispath(loopy, /datum/looping_sound))
+			ambience_area -= loopy
+			continue
+		/// First one to use a sound loop initializes it
+		if(!(loopy in GLOB.area_sound_loops))
+			GLOB.area_sound_loops[loopy] = new loopy(list(), FALSE)
 
 /area/proc/poweralert(state, obj/source)
 	if (state != poweralm)
@@ -542,23 +582,47 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return
 
 	// Ambience goes down here -- make sure to list each area separately for ease of adding things in later, thanks! Note: areas adjacent to each other should have the same sounds to prevent cutoff when possible.- LastyScratch
-	if(L.client && !L.client.ambience_playing && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
-		L.client.ambience_playing = 1
-		SEND_SOUND(L, sound('sound/f13ambience/wasteland.ogg', repeat = 1, wait = 0, volume = 35, channel = CHANNEL_BUZZ))
+	if(L.client && L.client.prefs.toggles & SOUND_SHIP_AMBIENCE)
+		if(islist(ambience_area))
+			addremove_to_soundloop(L, TRUE)
 
-	if(!(L.client && (L.client.prefs.toggles & SOUND_AMBIENCE)))
-		return //General ambience check is below the ship ambience so one can play without the other
-	var/sound //fortuna edit. lets make this its own variable for convenience
-	if(prob(35))
-		sound = pick(ambientsounds)
+		if(LAZYLEN(ambientsounds) && !COOLDOWN_TIMELEFT(L.client, area_sound_effect_cooldown) && prob(35))
+			var/sounds_to_play = pick(ambientsounds)
+			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
+			var/sound/S = sound(sounds_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
+			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
+			COOLDOWN_START(L.client, area_sound_effect_cooldown, sounds_to_play[SL_FILE_LENGTH] + sound_delay)
 
-	if(prob(35)) //fortuna add. re-implements ambient music
-		sound = pick(ambientmusic)
+		if(LAZYLEN(ambientmusic) && !COOLDOWN_TIMELEFT(L.client, area_music_cooldown) && prob(35)) //fortuna add. re-implements ambient music
+			var/music_to_play = pick(ambientmusic)
+			var/sound_delay = rand(1 SECONDS, 15 SECONDS)
+			var/sound/S = sound(music_to_play[SL_FILE_PATH], repeat = 0, wait = 0, volume = 25, channel = SSsounds.random_available_channel())
+			addtimer(CALLBACK(src, .proc/play_ambient_sound_delayed, S, L), sound_delay, TIMER_STOPPABLE)
+			COOLDOWN_START(L.client, area_music_cooldown, music_to_play[SL_FILE_LENGTH] + sound_delay)
 
-		if(!L.client.played)
-			SEND_SOUND(L, sound(sound, repeat = 0, wait = 0, volume = 25, channel = CHANNEL_AMBIENCE))
-			L.client.played = TRUE
-			addtimer(CALLBACK(L.client, /client/proc/ResetAmbiencePlayed), 600)
+/area/proc/play_ambient_sound_delayed(sound/to_play, mob/living/play_to)
+	SEND_SOUND(play_to, to_play)
+
+/area/proc/addremove_to_soundloop(mob/living/player, add = TRUE)
+	if(!ambience_area)
+		return
+	if(!islist(ambience_area))
+		ambience_area = null
+		return
+	if(!isliving(player))
+		return
+	for(var/loopy in ambience_area)
+		var/datum/looping_sound/our_loop = GLOB.area_sound_loops[loopy]
+		if(!istype(our_loop))
+			initialize_soundloop()
+			our_loop = GLOB.area_sound_loops[loopy]
+			if(!istype(our_loop)) // STILL??
+				ambience_area -= loopy // prevent this from happening ever again!!
+				continue
+		if(add)
+			our_loop.start(player)
+		else
+			our_loop.stop(player)
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()
@@ -573,9 +637,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 /area/Exited(atom/movable/M)
 	SEND_SIGNAL(src, COMSIG_AREA_EXITED, M)
 	SEND_SIGNAL(M, COMSIG_EXIT_AREA, src) //The atom that exits the area
-
-/client/proc/ResetAmbiencePlayed()
-	played = FALSE
+	addremove_to_soundloop(M, FALSE)
 
 /area/proc/setup(a_name)
 	name = a_name

@@ -43,8 +43,10 @@
 		///////////////
 		//SOUND STUFF//
 		///////////////
-	var/ambience_playing= null
-	var/played			= 0
+	/// minimum time between an area will play its on-enter sound, if it plays at all
+	COOLDOWN_DECLARE(area_sound_effect_cooldown)
+	/// minimum time between an area will play its on-enter music
+	COOLDOWN_DECLARE(area_music_cooldown)
 		////////////
 		//SECURITY//
 		////////////

@@ -654,6 +654,30 @@ SUBSYSTEM_DEF(timer)
 		return null
 	return timer.timeToRun - (timer.flags & TIMER_CLIENT_TIME ? REALTIMEOFDAY : world.time)
 
+/**
+ * Set the wait time on a timer, mostly just useful for 
+ *
+ * Arguments:
+ * * id a timerid or a /datum/timedevent
+ * * wait a new time to set the timer
+ */
+/proc/set_timer_wait(id, wait = 0, datum/controller/subsystem/timer/timer_subsystem)
+	if (!id)
+		return null
+	if (id == TIMER_ID_NULL)
+		CRASH("Tried to get timeleft of a null timerid. Use TIMER_STOPPABLE flag")
+	if (istype(id, /datum/timedevent))
+		var/datum/timedevent/timer = id
+		timer.wait = wait
+		return timer.wait
+	timer_subsystem = timer_subsystem || SStimer
+	//id is string
+	var/datum/timedevent/timer = timer_subsystem.timer_id_dict[id]
+	if(!timer)
+		return null
+	timer.wait = wait
+	return timer.wait
+
 #undef BUCKET_LEN
 #undef BUCKET_POS
 #undef TIMER_MAX
