@@ -5,6 +5,18 @@
 	slot_flags = ITEM_SLOT_NECK
 	strip_delay = 40
 	equip_delay_other = 40
+	var/mood_event_on_equip = /datum/mood_event/equipped_necklace/any
+
+/obj/item/clothing/neck/equipped(mob/user, slot)
+	. = ..()
+	if (slot == SLOT_NECK && istype(user))
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "necklacebuff", mood_event_on_equip)
+	else
+		SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "necklacebuff")
+
+/obj/item/clothing/neck/dropped(mob/user)
+	. = ..()
+	SEND_SIGNAL(user, COMSIG_CLEAR_MOOD_EVENT, "necklacebuff")
 
 /obj/item/clothing/neck/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
@@ -343,3 +355,26 @@ obj/item/clothing/neck/neckerchief
 	item_color = "eldritch_tie"
 	item_state = "eldritch_tie"
 	w_class = WEIGHT_CLASS_SMALL
+
+// Necklace and Collars!
+
+/obj/item/clothing/neck/cursednecklace
+	name = "cursed necklace"
+	desc = "A necklace with a spooky aura about it."
+	icon_state = "cursed_necklace"
+	item_state = "cursed_necklace"
+	mood_event_on_equip = /datum/mood_event/equipped_necklace/cursed_necklace
+
+/obj/item/clothing/neck/sapphirecollar
+	name = "Sapphire Collar"
+	desc = "A gold and platinum collar, with a embedded sapphire gem."
+	icon_state = "sapphirecollar"
+	item_state = "sapphirecollar"
+	mood_event_on_equip = /datum/mood_event/equipped_necklace/sapphire
+
+/obj/item/clothing/neck/rubycollar
+	name = "Ruby Collar"
+	desc = "A gold and platinum collar, with a embedded ruby gem."
+	icon_state = "rubycollar"
+	item_state = "rubycollar"
+	mood_event_on_equip = /datum/mood_event/equipped_necklace/ruby

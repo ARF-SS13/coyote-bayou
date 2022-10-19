@@ -211,7 +211,7 @@
 	description = span_nicegreen("Feels nice to get that out of the way!")
 	mood_change = 3
 
-//SILVER RING
+// RINGS
 /datum/mood_event/equipped_ring
 	description = span_nicegreen("You feel like you have a new purpose in life with your newly equipped silver ring.")
 	mood_change = 0.3 //Just enough to cross a mood threshold
@@ -227,3 +227,17 @@
 /datum/mood_event/equipped_ring/plasma
 	description = span_nicegreen("The swirling colors of the plasma ring seem to set your mind at ease.")
 	mood_change = 2
+
+// NECKLACE
+
+/datum/mood_event/equipped_necklace/any
+	description = span_nicegreen("Fashion!")
+	mood_change = 0.5
+
+/datum/mood_event/equipped_necklace/sapphire
+	description = span_nicegreen("The blue glow of the sapphire gem calms your mind.")
+	mood_change = 1
+
+/datum/mood_event/equipped_necklace/ruby
+	description = span_nicegreen("The red glow of the ruby gem motivates your mind.")
+	mood_change = 1

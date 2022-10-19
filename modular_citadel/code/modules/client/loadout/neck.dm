@@ -31,6 +31,20 @@
 	name = "Gold Necklace"
 	path = /obj/item/clothing/neck/necklace/dope
 
+/datum/gear/neck/cursed_necklace
+	name = "Cursed Necklace"
+	path = /obj/item/clothing/neck/cursednecklace
+
+/datum/gear/neck/sapphirecollar
+	name = "Sapphire Collar"
+	path = /obj/item/clothing/neck/sapphirecollar
+	cost = 2
+
+/datum/gear/neck/rubycollar
+	name = "Ruby Collar"
+	path = /obj/item/clothing/neck/rubycollar
+	cost = 2
+
 /datum/gear/neck/apron
 	name = "simple apron"
 	path = /obj/item/clothing/neck/apron/labor
