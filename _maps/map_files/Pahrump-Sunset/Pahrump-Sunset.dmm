@@ -26830,6 +26830,10 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
+"emd" = (
+/obj/structure/timeddoor,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "emh" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -27661,11 +27665,6 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
-"eIe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/stairs/east,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "eIp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42237,11 +42236,6 @@
 	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland)
-"lJJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/turf/open/floor/f13/wood,
-/area/f13/village)
 "lJM" = (
 /obj/structure/bed/mattress/pregame,
 /turf/open/indestructible/ground/outside/dirt{
@@ -59224,6 +59218,11 @@
 	icon_state = "horizontalbottombordertop2"
 	},
 /area/f13/wasteland)
+"tSe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/east,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "tSw" = (
 /obj/machinery/computer/terminal{
 	dir = 8;
@@ -64811,6 +64810,11 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland)
+"wHo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "wHr" = (
 /obj/structure/table,
 /obj/item/reagent_containers/rag/towel,
@@ -109533,7 +109537,7 @@ oUj
 oUj
 oUj
 aCN
-lJJ
+wHo
 aaQ
 aOk
 dfQ
@@ -110047,7 +110051,7 @@ oJz
 aVv
 aVM
 aaQ
-eIe
+tSe
 aaQ
 aWX
 fRF
@@ -116325,7 +116329,7 @@ oEp
 oEp
 qFv
 umE
-aaB
+emd
 bRT
 aaa
 "}
@@ -116582,8 +116586,8 @@ lTe
 tuk
 vhj
 aaB
-aaB
-aaB
+emd
+emd
 aaa
 "}
 (190,1,1) = {"

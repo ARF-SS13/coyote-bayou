@@ -6152,12 +6152,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/plating/miasma,
 /area/f13/caves)
 "cov" = (
-/obj/structure/table/wood,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/plasteel/f13/vault_floor/floor{
-	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
-	},
-/area/f13/caves)
+/obj/structure/timeddoor,
+/turf/open/indestructible/ground/inside/subway,
+/area/f13/tunnel)
 "cow" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -20522,6 +20519,13 @@
 	},
 /turf/open/floor/f13/wood,
 /area/f13/ncr)
+"ppq" = (
+/obj/structure/table/wood,
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plasteel/f13/vault_floor/floor{
+	initial_gas_mix = "o2=22;n2=82;miasma=44;TEMP=293.15"
+	},
+/area/f13/caves)
 "pqj" = (
 /obj/structure/barricade/wooden/strong,
 /turf/open/floor/plasteel/f13/vault_floor/plating/miasma,
@@ -54290,7 +54294,7 @@ apg
 apg
 aah
 xHy
-aah
+cov
 aah
 aah
 aah
@@ -54547,7 +54551,7 @@ bGZ
 bFS
 bKT
 xHy
-aah
+cov
 aah
 aah
 aah
@@ -54804,7 +54808,7 @@ apg
 apg
 aah
 xHy
-aah
+cov
 aah
 aah
 aah
@@ -87224,7 +87228,7 @@ rZz
 aGw
 dHT
 rnV
-cov
+ppq
 okD
 rnV
 eAl
@@ -87481,8 +87485,8 @@ opU
 ime
 aQa
 rZz
-cov
-cov
+ppq
+ppq
 dRl
 eAl
 rHk
