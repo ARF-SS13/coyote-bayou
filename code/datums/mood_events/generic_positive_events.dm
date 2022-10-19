@@ -223,3 +223,7 @@
 /datum/mood_event/equipped_ring/diamond
 	description = span_nicegreen("Wherever or however you gotten this diamond ring, it took a good amount of work trying to get this.")
 	mood_change = 1
+
+/datum/mood_event/equipped_ring/plasma
+	description = span_nicegreen("The swirling colors of the plasma ring seem to set your mind at ease.")
+	mood_change = 2
