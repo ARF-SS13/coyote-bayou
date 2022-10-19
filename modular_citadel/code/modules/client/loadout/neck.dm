@@ -50,10 +50,12 @@
 	cost = 2
 
 /datum/gear/neck/heartcollar
+	name = "Heart Collar"
 	path = /obj/item/clothing/neck/heartcollar
 	cost = 2
 
 /datum/gear/neck/wolfpendant
+	name = "Wolf Pendant"
 	path = /obj/item/clothing/neck/wolfpendant
 	cost = 2
 
