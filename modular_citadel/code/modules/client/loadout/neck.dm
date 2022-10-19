@@ -36,8 +36,8 @@
 	path = /obj/item/clothing/neck/cursednecklace
 
 /datum/gear/neck/spikecollar
+	name = "Spiked Collar"
 	path = /obj/item/clothing/neck/spikecollar
-	cost = 1
 
 /datum/gear/neck/sapphirecollar
 	name = "Sapphire Collar"
