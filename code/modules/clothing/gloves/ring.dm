@@ -44,3 +44,10 @@
 	icon_state = "ringsilver"
 	item_state = "sring"
 	mood_event_on_equip = /datum/mood_event/equipped_ring
+
+/obj/item/clothing/gloves/ring/plasma
+	name = "plasma ring"
+	desc = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside."
+	icon_state = "ringplasma"
+	item_state = "pring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/plasma

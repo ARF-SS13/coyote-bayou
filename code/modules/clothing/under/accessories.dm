@@ -380,6 +380,7 @@
 	flags_inv = HIDEACCESSORY
 
 //necklace
+
 /obj/item/clothing/accessory/necklace
 	name = "necklace"
 	desc = "A necklace."

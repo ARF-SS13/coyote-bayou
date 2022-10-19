@@ -291,3 +291,9 @@
 	description = span_boldwarning("I hate when my shoes come untied!")
 	mood_change = -3
 	timeout = 1 MINUTES
+
+//Necklace
+
+/datum/mood_event/equipped_necklace/cursed_necklace
+	description = span_boldwarning("This necklace gives me a bad feeling...")
+	mood_change = -2

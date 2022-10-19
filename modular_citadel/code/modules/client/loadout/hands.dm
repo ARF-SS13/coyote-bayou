@@ -40,6 +40,16 @@
 	name = "Gold Ring"
 	path = /obj/item/clothing/gloves/ring
 
+/datum/gear/hands/diamond_ring
+	name = "Diamond Ring"
+	path = /obj/item/clothing/gloves/ring/diamond
+	cost = 2
+
+/datum/gear/hands/plasma_ring
+	name = "Plasma Ring"
+	path = /obj/item/clothing/gloves/ring/plasma
+	cost = 3 //high cost due to its sheer effect on mood. Akin to a headpat.
+
 /datum/gear/hands/cheaplighter
 	name = "cheap lighter"
 	path = /obj/item/lighter/greyscale
