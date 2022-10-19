@@ -378,3 +378,10 @@ obj/item/clothing/neck/neckerchief
 	icon_state = "rubycollar"
 	item_state = "rubycollar"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/ruby
+
+/obj/item/clothing/neck/heartcollar
+	name = "Heart Collar"
+	desc = "This collar appears to have a heart shaped pin on the front."
+	icon_state = "heartcollar"
+	item_state = "heartcollar"
+	mood_event_on_equip = /datum/mood_event/equipped_necklace/heart
