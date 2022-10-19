@@ -849,8 +849,11 @@
 	},
 /area/f13/building/mall)
 "bqT" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/carpet/red,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gib5-old"
+	},
+/turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "brR" = (
 /obj/structure/dresser,
@@ -1451,6 +1454,7 @@
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
+/obj/structure/bookcase/random,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "cwL" = (
@@ -3435,6 +3439,7 @@
 /area/f13/building/mall)
 "fTw" = (
 /obj/structure/flora/twig,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood1-broken"
 	},
@@ -3614,6 +3619,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
+/obj/structure/bookcase/random,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "gfV" = (
@@ -5244,8 +5250,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/wasteland/ncr)
 "iZN" = (
-/obj/machinery/libraryscanner,
-/turf/open/floor/f13/wood,
+/obj/structure/bookcase/random,
+/turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "iZV" = (
 /obj/machinery/light/small{
@@ -7206,7 +7212,6 @@
 /obj/structure/sign/plaques/kiddie/library{
 	pixel_x = -32
 	},
-/obj/structure/bookcase/random,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "mrM" = (
@@ -7295,7 +7300,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
 /area/f13/building/mall)
 "myv" = (
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/structure/bookcase/random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -7474,7 +7479,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building)
 "mPZ" = (
-/obj/machinery/computer/libraryconsole,
+/obj/machinery/computer/libraryconsole/bookmanagement,
 /turf/open/floor/f13/wood,
 /area/f13/wasteland)
 "mQC" = (
@@ -8934,6 +8939,7 @@
 /area/f13/wasteland)
 "pyJ" = (
 /obj/structure/flora/twig2,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -8976,6 +8982,7 @@
 /obj/machinery/light/small/broken{
 	dir = 8
 	},
+/obj/structure/bookcase/random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood4-broken"
 	},
@@ -9263,6 +9270,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall,
 /area/f13/building)
+"qeF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/libraryscanner,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood2-broken"
+	},
+/area/f13/wasteland)
 "qeV" = (
 /obj/structure/table/reinforced/brass,
 /obj/item/book/manual/nuka_recipes,
@@ -9457,6 +9471,13 @@
 /obj/item/storage/bag/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building/mall)
+"quA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/bookcase/random,
+/turf/open/floor/f13/wood{
+	icon_state = "housewood4-broken"
+	},
+/area/f13/wasteland)
 "quJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste{
@@ -9764,6 +9785,11 @@
 /obj/structure/table,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building)
+"rgp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/twig,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "rhv" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/fence/handrail{
@@ -10489,7 +10515,6 @@
 /area/f13/building)
 "ssg" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bookcase/random,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "ssH" = (
@@ -10655,6 +10680,8 @@
 /area/f13/building/mall)
 "sQT" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/photocopier,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -10780,11 +10807,11 @@
 	},
 /area/f13/building/hospital)
 "tcP" = (
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/machinery/light{
+/obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/f13/wood,
+/obj/structure/bookcase/random,
+/turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "tdS" = (
 /obj/effect/decal/cleanable/dirt{
@@ -11929,7 +11956,6 @@
 "vaQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bookcase/random,
 /turf/open/floor/carpet/red,
 /area/f13/wasteland)
 "vbL" = (
@@ -12616,6 +12642,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"wAt" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/machinery/bookbinder,
+/turf/open/floor/carpet/red,
+/area/f13/wasteland)
 "wAV" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -13454,7 +13487,6 @@
 /area/f13/ncr)
 "yks" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/bookcase/random,
 /turf/open/floor/f13/wood{
 	icon_state = "housewood2-broken"
 	},
@@ -51158,7 +51190,7 @@ jKa
 pCZ
 mqI
 myv
-bqT
+pGP
 cwE
 nAT
 oez
@@ -51412,11 +51444,11 @@ jKa
 dtb
 dtb
 jKa
+iZN
 pGP
-bqT
-pGP
-bqT
-pGP
+iZN
+bhZ
+iZN
 nAT
 oez
 dtb
@@ -51670,10 +51702,10 @@ rzk
 dtb
 jKa
 gfF
-bqT
-drs
-bqT
 pGP
+quA
+pGP
+iZN
 mTc
 oez
 dtb
@@ -51929,7 +51961,7 @@ rZF
 bhZ
 pGP
 pGP
-pGP
+ssg
 bhZ
 tgJ
 oez
@@ -52186,7 +52218,7 @@ rZF
 pGP
 ssg
 pGP
-bqT
+pGP
 pGP
 tgJ
 oez
@@ -52442,8 +52474,8 @@ dtb
 mTc
 gfF
 yks
-pGP
-ssg
+qeF
+rgp
 pyJ
 fPF
 oez
@@ -52697,10 +52729,10 @@ jKa
 dtb
 dtb
 dRn
-pGP
+iZN
 vaQ
 sQT
-bqT
+pGP
 fTw
 fPF
 oez
@@ -52951,12 +52983,12 @@ fkT
 fkT
 xBy
 jKa
-dtb
+bqT
 dtb
 mTc
-eGJ
+tcP
 pGP
-pGP
+wAt
 pGP
 eGJ
 fPF
@@ -53213,8 +53245,8 @@ dtb
 jKa
 jKa
 mPZ
-tcP
-iZN
+jKa
+bTh
 jKa
 jKa
 oez
