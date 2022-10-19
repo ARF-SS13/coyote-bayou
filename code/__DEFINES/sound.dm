@@ -245,12 +245,12 @@
 
 //fortuna addition. wasteland ambient music goes here.
 #define WASTELAND_AMBIENCE list(\
-	AREA_SOUND('sound/f13ambience/music/ccc_doesntworkforfree_ambience.ogg', 10 SECONDS),\
-	AREA_SOUND('sound/f13ambience/music/hailcaesar_ambience.ogg', 10 SECONDS),\
-	AREA_SOUND('sound/f13ambience/music/invisible_ghosts_ambience.ogg', 10 SECONDS),\
-	AREA_SOUND('sound/f13ambience/music/mole_miners_ambience.ogg', 10 SECONDS),\
-	AREA_SOUND('sound/f13ambience/music/portaltothepast_ambience.ogg', 10 SECONDS),\
-	AREA_SOUND('sound/f13ambience/music/wind_and_the_reeds_ambience.ogg', 10 SECONDS))
+	AREA_SOUND('sound/f13ambience/music/ccc_doesntworkforfree_ambience.ogg', 94 SECONDS),\
+	AREA_SOUND('sound/f13ambience/music/hailcaesar_ambience.ogg', 103 SECONDS),\
+	AREA_SOUND('sound/f13ambience/music/invisible_ghosts_ambience.ogg', 122 SECONDS),\
+	AREA_SOUND('sound/f13ambience/music/mole_miners_ambience.ogg', 74 SECONDS),\
+	AREA_SOUND('sound/f13ambience/music/portaltothepast_ambience.ogg', 100 SECONDS),\
+	AREA_SOUND('sound/f13ambience/music/wind_and_the_reeds_ambience.ogg', 72 SECONDS))
 
 /// Sound properties! bunch of defines~
 /// Mostly for gunfire~
