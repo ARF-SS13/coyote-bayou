@@ -110,7 +110,7 @@ Administrator
 	name =	"Surgical Specialist"
 	backpack_contents = list(
 		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
-		/obj/item/gun/medbeam = 1,
+		/obj/item/organ/cyberimp/arm/medibeam = 1,
 	)
 
 /datum/outfit/loadout/chemical_specialist
