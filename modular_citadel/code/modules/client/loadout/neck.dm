@@ -35,6 +35,10 @@
 	name = "Cursed Necklace"
 	path = /obj/item/clothing/neck/cursednecklace
 
+/datum/gear/neck/spikecollar
+	path = /obj/item/clothing/neck/spikecollar
+	cost = 1
+
 /datum/gear/neck/sapphirecollar
 	name = "Sapphire Collar"
 	path = /obj/item/clothing/neck/sapphirecollar
@@ -43,6 +47,14 @@
 /datum/gear/neck/rubycollar
 	name = "Ruby Collar"
 	path = /obj/item/clothing/neck/rubycollar
+	cost = 2
+
+/datum/gear/neck/heartcollar
+	path = /obj/item/clothing/neck/heartcollar
+	cost = 2
+
+/datum/gear/neck/wolfpendant
+	path = /obj/item/clothing/neck/wolfpendant
 	cost = 2
 
 /datum/gear/neck/apron

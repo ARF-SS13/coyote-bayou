@@ -245,3 +245,7 @@
 /datum/mood_event/equipped_necklace/heart
 	description = span_nicegreen("Something about the heart shape of the necklace brings you hope.")
 	mood_change = 1
+
+/datum/mood_event/equipped_necklace/wolf
+	description = span_nicegreen("The spirit of a wolf dwells within you.")
+	mood_change = 1

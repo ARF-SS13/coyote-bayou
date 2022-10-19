@@ -385,3 +385,16 @@ obj/item/clothing/neck/neckerchief
 	icon_state = "heartcollar"
 	item_state = "heartcollar"
 	mood_event_on_equip = /datum/mood_event/equipped_necklace/heart
+
+/obj/item/clothing/neck/wolfpendant
+	name = "Wolf Pendant"
+	desc = "It is a black pendant with what looks like a wolf head with tentacles coming out from the sides."
+	icon_state = "wolfpendant"
+	item_state = "wolfpendant"
+	mood_event_on_equip = /datum/mood_event/equipped_necklace/wolf
+
+/obj/item/clothing/neck/spikecollar
+	name = "Spiked Collar"
+	desc = "A black synthleather collar with spikey studs."
+	icon_state = "spikecollar"
+	item_state = "spikecollar"
