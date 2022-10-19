@@ -16,9 +16,9 @@
 	var/list/mid_sounds
 	var/mid_length
 	var/loop_delay = 0
-	var/start_sound
+	var/list/start_sound
 	var/start_length
-	var/end_sound
+	var/list/end_sound
 	var/chance
 	var/volume = 100
 	var/vary = FALSE
@@ -58,7 +58,12 @@
 		return
 	on_start()
 
-/datum/looping_sound/proc/stop(atom/remove_thing, kill = FALSE)
+/// *Kill kills the timer, even if things are still in the output atoms list
+/// This is crucial for things like microwaves and weather, as they'll always have something in their list, and otherwise it'll NEVER stop playing
+/// Areas use output_atoms differently, as a list of players to play the sound to. If we stop it as normal and kill it, itll stop playing to all mobs who were listening!
+/// To sum up: If the output_atoms are *playing* the sound, kill should = true
+/// If the output_atoms are *listening* to the sound, kill should = false
+/datum/looping_sound/proc/stop(atom/remove_thing, kill = TRUE)
 	on_stop()
 	if(remove_thing)
 		output_atoms -= remove_thing
@@ -127,17 +132,19 @@
 		sound_list = mid_sounds
 	if(sound_list)
 		if(!islist(sound_list))
-			sound_list = list(SOUND_LOOP_ENTRY(sound_list, mid_length, 10))
+			sound_list = list(SOUND_LOOP_ENTRY(sound_list, mid_length, 1))
 	if(LAZYLEN(sound_list))
 		return pickweight(sound_list)
 
 /datum/looping_sound/proc/on_start()
 	var/start_wait = 0
 	if(start_sound)
-		play(start_sound)
-		start_wait = start_length
+		var/list/sound_start = pickweight(start_sound)
+		play(sound_start)
+		start_wait = sound_start[SL_FILE_LENGTH]
 	init_timerid = addtimer(CALLBACK(src, .proc/sound_loop), start_wait, TIMER_CLIENT_TIME | TIMER_STOPPABLE)
 
 /datum/looping_sound/proc/on_stop()
 	if(end_sound)
-		play(end_sound)
+		var/list/sound_end = pickweight(end_sound)
+		play(sound_end)

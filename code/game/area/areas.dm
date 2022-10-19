@@ -622,7 +622,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		if(add)
 			our_loop.start(player)
 		else
-			our_loop.stop(player)
+			our_loop.stop(player, kill = FALSE)
 
 ///Divides total beauty in the room by roomsize to allow us to get an average beauty per tile.
 /area/proc/update_beauty()
