@@ -20695,7 +20695,6 @@
 	id = "tunnelertemple";
 	name = "ancient ladder"
 	},
-/obj/structure/timeddoor/threehours,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "bSb" = (
@@ -27662,6 +27661,11 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/building/hospital)
+"eIe" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/stairs/east,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "eIp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -42233,6 +42237,11 @@
 	icon_state = "horizontalbottombordertop3"
 	},
 /area/f13/wasteland)
+"lJJ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/open/floor/f13/wood,
+/area/f13/village)
 "lJM" = (
 /obj/structure/bed/mattress/pregame,
 /turf/open/indestructible/ground/outside/dirt{
@@ -46446,8 +46455,8 @@
 /obj/structure/table/wood,
 /obj/machinery/computer/terminal{
 	dir = 1;
-	doc_title_1 = "Atomic Command";
-	doc_content_1 = "You sit for a bit, poking at this old video game.  Trying desperately to stop the nuclear bombs from the funny green Chinese bombers from landing on your town.  The thing is, you always seem to fail..."
+	doc_content_1 = "You sit for a bit, poking at this old video game.  Trying desperately to stop the nuclear bombs from the funny green Chinese bombers from landing on your town.  The thing is, you always seem to fail...";
+	doc_title_1 = "Atomic Command"
 	},
 /turf/open/floor/f13/wood,
 /area/f13/village)
@@ -51638,13 +51647,13 @@
 "qdR" = (
 /obj/machinery/computer/terminal{
 	dir = 8;
-	termtag = "Secret";
-	doc_title_1 = "Dawsons Note: #1";
 	doc_content_1 = "The Chryslus in stall two is leaking its miserable green coolant all over my pristine dock.  I'm going to be here all night, going to send the boys home and ring up my wife.  ~October 22nd, 2077";
 	doc_content_2 = "Alright, I got the mess cleaned up, going to give my key to Joe and go home.  I cant wait to-  The message seems to end there.";
+	doc_content_3 = "I managed to tear the battery out of that fuckn old car the sorry son of a bitch whose bones I'm stepping on right now was trying to fix.  I might be able to find a use for it if I can only not fucking fry myself. Here's hoping, right?";
+	doc_title_1 = "Dawsons Note: #1";
 	doc_title_2 = "Dawsons Note: #2";
 	doc_title_3 = "Robinson wuz here";
-	doc_content_3 = "I managed to tear the battery out of that fuckn old car the sorry son of a bitch whose bones I'm stepping on right now was trying to fix.  I might be able to find a use for it if I can only not fucking fry myself. Here's hoping, right?"
+	termtag = "Secret"
 	},
 /obj/structure/table,
 /turf/open/floor/f13/wood,
@@ -53006,10 +53015,10 @@
 /area/f13/caves)
 "qLZ" = (
 /obj/machinery/computer/terminal{
-	termtag = "Secret";
-	doc_title_1 = "Welcome to our newest exhibit in the Texarkana metro area!";
 	doc_content_1 = "We're proud to deliver all the possible upcoming technological developments coming down our assembly lines here at the Vault-Tec Exhibit of Technology!  Come on down today and experience the glory of tosmorrow, today!";
-	name = "Texarkana Display of Corporate Technology Terminal"
+	doc_title_1 = "Welcome to our newest exhibit in the Texarkana metro area!";
+	name = "Texarkana Display of Corporate Technology Terminal";
+	termtag = "Secret"
 	},
 /obj/structure/table,
 /turf/open/floor/f13/wood,
@@ -61669,11 +61678,11 @@
 	},
 /obj/machinery/computer/terminal{
 	dir = 4;
-	termtag = "Business";
-	doc_title_1 = "Tips on stopping shoplifters";
 	doc_content_1 = "So, I'm leaving this note for the other shift managers but I really think we just can't try to stop these people anymore.  I watched a woman stab someone for some salt pork yesterday and I think we should just let them take it.  I don't really want to die working retail. ~Francis";
+	doc_content_2 = "The bombs fell this morning while we were opening up the store and we burned.  I felt my muzzle slough off, but I didn't die.  All my boys and miss belle have changed.  We've decided we're going to board up our windows and just live off of the stuff inside until help comes.  I just want to cry.  If you find this and we are dead then remember our names.";
+	doc_title_1 = "Tips on stopping shoplifters";
 	doc_title_2 = "For those that come after.";
-	doc_content_2 = "The bombs fell this morning while we were opening up the store and we burned.  I felt my muzzle slough off, but I didn't die.  All my boys and miss belle have changed.  We've decided we're going to board up our windows and just live off of the stuff inside until help comes.  I just want to cry.  If you find this and we are dead then remember our names."
+	termtag = "Business"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13{
@@ -61901,9 +61910,9 @@
 	},
 /area/f13/wasteland)
 "vjN" = (
-/obj/structure/timeddoor/threehours,
-/turf/open/indestructible/ground/inside/mountain,
-/area/f13/caves)
+/obj/structure/flora/grass/coyote/ten,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "vjV" = (
 /obj/structure/stairs/north{
 	color = "#A47449"
@@ -63603,7 +63612,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/structure/timeddoor/threehours,
 /turf/closed/mineral/random/low_chance,
 /area/f13/caves)
 "wbw" = (
@@ -63664,10 +63672,6 @@
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/neutral/neutralsolid,
 /area/f13/building)
-"wec" = (
-/obj/structure/timeddoor/threehours,
-/turf/closed/mineral/random/low_chance,
-/area/f13/caves)
 "weA" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "000000"
@@ -108756,7 +108760,7 @@ oJz
 oUj
 oUj
 abZ
-aCC
+aDe
 oJz
 oJz
 aaQ
@@ -109272,7 +109276,7 @@ aaQ
 aaQ
 aaQ
 aaQ
-fVO
+oJz
 aaQ
 kri
 vRd
@@ -109529,7 +109533,7 @@ oUj
 oUj
 oUj
 aCN
-oJz
+lJJ
 aaQ
 aOk
 dfQ
@@ -110043,7 +110047,7 @@ oJz
 aVv
 aVM
 aaQ
-oJz
+eIe
 aaQ
 aWX
 fRF
@@ -110300,7 +110304,7 @@ oUj
 cmY
 oJz
 aaQ
-oUj
+aaQ
 aaQ
 aWX
 fjw
@@ -110557,7 +110561,7 @@ oUj
 oUj
 oJz
 aaQ
-oUj
+aaQ
 aaQ
 fOB
 ahP
@@ -110814,7 +110818,7 @@ aaQ
 aaQ
 aaQ
 ixn
-aHy
+aaQ
 aaQ
 hzp
 bRL
@@ -116063,8 +116067,8 @@ aae
 aae
 aae
 aae
-wec
-wec
+aae
+aae
 wbm
 aaa
 "}
@@ -116321,7 +116325,7 @@ oEp
 oEp
 qFv
 umE
-vjN
+aaB
 bRT
 aaa
 "}
@@ -116578,8 +116582,8 @@ lTe
 tuk
 vhj
 aaB
-vjN
-vjN
+aaB
+aaB
 aaa
 "}
 (190,1,1) = {"
@@ -116836,7 +116840,7 @@ bvS
 aaB
 aaB
 aaB
-wec
+aae
 aaa
 "}
 (191,1,1) = {"
@@ -129296,11 +129300,11 @@ tnZ
 pPz
 pPz
 tnZ
-tnZ
-hax
-hax
-tnZ
-pPz
+khV
+aPy
+nvn
+aer
+jIk
 pPz
 tnZ
 tnZ
@@ -129552,13 +129556,13 @@ xJp
 xJp
 xJp
 xJp
-xJp
-pRE
-xJp
-pRE
-xJp
-hua
-hua
+tRd
+koC
+tws
+kDp
+aer
+hEG
+hXb
 xJp
 xJp
 xJp
@@ -129806,16 +129810,16 @@ aOk
 aOk
 aOk
 aOk
+biO
+kMg
+vjN
 aOk
-cFK
-aOk
-aOk
-bjb
-aOk
-rCm
-rCm
-mkA
-vIk
+txf
+mHp
+nvn
+tRk
+eWr
+etg
 nHY
 aOk
 mkA
@@ -130064,20 +130068,20 @@ aOk
 vIk
 aOk
 cFK
-egu
-fXS
+aOk
+biO
 kMg
-aOk
-aOk
-etg
-aOk
-fXS
+trw
+tws
+tRk
+wDX
+gdZ
 biO
 etg
+etg
 aOk
 aOk
-aOk
-aOk
+mkA
 etg
 bjb
 aOk
@@ -130320,20 +130324,20 @@ aOk
 aOk
 aGg
 aGg
-cFK
-etg
+knR
+aOk
 bjb
 aOk
-mkA
-vIk
-aOk
-aOk
-aOk
+eoi
+tws
+bAA
+aer
+ksk
 bjb
 dkt
 aOk
 etg
-iDe
+aOk
 etg
 aOk
 rCm
@@ -130840,8 +130844,8 @@ aae
 aOk
 aOk
 aOk
-mAk
-mAk
+aOk
+aOk
 nHY
 nHY
 aOk
