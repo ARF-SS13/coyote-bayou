@@ -30,7 +30,7 @@
 
 /datum/gear/shoes/pelt
 	name = "pelt boots"
-	path = /obj/item/clothing/shoes/f13/peltboots 
+	path = /obj/item/clothing/shoes/f13/peltboots
 
 /datum/gear/shoes/footcloths
 	name = "footcloths"
@@ -42,7 +42,7 @@
 
 /datum/gear/shoes/wraps
 	name = "golden leg wraps"
-	path = /obj/item/clothing/shoes/wraps 
+	path = /obj/item/clothing/shoes/wraps
 	cost = 1
 
 /datum/gear/shoes/wrapssilver
@@ -52,12 +52,12 @@
 
 /datum/gear/shoes/wrapsblue
 	name = "blue leg wraps"
-	path = /obj/item/clothing/shoes/wraps/blue 
+	path = /obj/item/clothing/shoes/wraps/blue
 	cost = 1
 
 /datum/gear/shoes/wrapsred
 	name = "red leg wraps"
-	path = /obj/item/clothing/shoes/wraps/red 
+	path = /obj/item/clothing/shoes/wraps/red
 	cost = 1
 
 /datum/gear/shoes/wornboots
@@ -72,9 +72,9 @@
 	name = "cowboy boots"
 	path = /obj/item/clothing/shoes/f13/cowboy
 
-/datum/gear/shoes/cowboy/obj/item/clothing/shoes/cowboyboots/black 
+/datum/gear/shoes/cowboy/obj/item/clothing/shoes/cowboyboots/black
 	name = "black cowboy boots"
-	path = /obj/item/clothing/shoes/cowboyboots/black 
+	path = /obj/item/clothing/shoes/cowboyboots/black
 
 /datum/gear/shoes/diesel
 	name = "male diesel boots"
@@ -94,15 +94,11 @@
 
 /datum/gear/shoes/military/leather
 	name = "leather combat boots"
-	path = /obj/item/clothing/shoes/f13/military/leather 
+	path = /obj/item/clothing/shoes/f13/military/leather
 
 /datum/gear/shoes/military/desert
 	name = "desert combat boots"
-	path = /obj/item/clothing/shoes/f13/military/desert 
-
-/datum/gear/shoes/military/plated
-	name = "plated war boots"
-	path = /obj/item/clothing/shoes/f13/military/plated
+	path = /obj/item/clothing/shoes/f13/military/desert
 
 /datum/gear/shoes/military/steeltipped
 	name = "steel tipped boots"
@@ -134,7 +130,7 @@
 	restricted_desc = "NCR"
 	restricted_roles = list("NCR Captain",
 							"NCR Lieutenant",
-							"NCR Veteran Ranger", 
+							"NCR Veteran Ranger",
 							"NCR Ranger",
 							"NCR Medical Officer",
 							"NCR Sergeant First Class",
