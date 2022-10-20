@@ -373,7 +373,7 @@
 
 /datum/crafting_recipe/tribalwar/arrowemp
 	name = "Ion-Spirit Arrow"
-	result = /obj/item/ammo_casing/caseless/arrow/bone
+	result = /obj/item/ammo_casing/caseless/arrow/ion
 	time = 30
 	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
 				/obj/item/stack/rods = 2)
