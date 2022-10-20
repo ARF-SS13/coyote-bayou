@@ -51,3 +51,10 @@
 	icon_state = "ringplasma"
 	item_state = "pring"
 	mood_event_on_equip = /datum/mood_event/equipped_ring/plasma
+
+/obj/item/clothing/gloves/ring/bluespace
+	name = "bluespace ring"
+	desc = "This ring is stylized to have an ornate sun, with a small sample of a bluespace crystal shining inside."
+	icon_state = "ringbluespace"
+	item_state = "bring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/bluespace
