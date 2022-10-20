@@ -78,7 +78,7 @@
 	item_state = "military"
 	permeability_coefficient = 0.05
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1)
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_DOWN_LASER_T1)
 	strip_delay = 40
 	resistance_flags = NONE
 	can_be_tied = FALSE
@@ -134,6 +134,8 @@
 	desc = "These boots are made from tanned hide and lined with soft long horner wool. A fashion from wealthy tribes that has spread. "
 	icon = 'icons/fallout/clothing/shoes.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_BULLET_T3)
 	icon_state = "legion_pelt"
 	item_state = "legion_pelt"
 	cold_protection = FEET
@@ -143,6 +145,8 @@
 	name = "rough leather boots"
 	desc = "A pair of crudely made leather boots, followng the standardized pattern laid down according to the wisdom of Caesar."
 	icon = 'icons/fallout/clothing/shoes.dmi'
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_BULLET_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_leather"
 	item_state = "legion_leather"
@@ -155,15 +159,17 @@
 	icon_state = "legion_war"
 	item_state = "legion_war"
 	armor = ARMOR_VALUE_LIGHT
-	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T1)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
-	desc = "A pair of heavy leather boots with bronzed metal leg guards added. These belong to a Legate of Caesar's Legion."
+	desc = "A pair of heavy leather boots with bronzed metal leg guards added. Heavy, and uncomfy.."
 	icon = 'icons/fallout/clothing/shoes.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_legate"
 	item_state = "legion_legate"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T3 )
 
 // ---------------------------------------------------------
 // Great Khan boots

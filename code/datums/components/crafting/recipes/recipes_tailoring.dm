@@ -377,6 +377,16 @@ datum/crafting_recipe/steelbib/heavy
 	category = CAT_CLOTHING
 	subcategory = CAT_ARMOR
 
+/datum/crafting_recipe/platebootadv
+	name = "Heavy Plate Boots"
+	result = /obj/item/clothing/shoes/f13/military/legate
+	time = 100
+	reqs = list(/obj/item/stack/sheet/prewar = 3,
+				/obj/item/stack/sheet/cloth = 6)
+	tools = list(TOOL_FORGE)
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
 //Gauntlets
 
 /datum/crafting_recipe/plateglove
@@ -384,6 +394,16 @@ datum/crafting_recipe/steelbib/heavy
 	result = /obj/item/clothing/gloves/legion/plated
 	time = 100
 	reqs = list(/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/cloth = 5)
+	tools = list(TOOL_FORGE)
+	category = CAT_CLOTHING
+	subcategory = CAT_ARMOR
+
+/datum/crafting_recipe/plategloveadv
+	name = "Heavy Plate Gloves"
+	result = /obj/item/clothing/gloves/legion/legate
+	time = 100
+	reqs = list(/obj/item/stack/sheet/prewar = 5,
 				/obj/item/stack/sheet/cloth = 5)
 	tools = list(TOOL_FORGE)
 	category = CAT_CLOTHING
