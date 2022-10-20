@@ -772,9 +772,21 @@ GLOBAL_LIST_EMPTY(vending_products)
 			if(!R || !istype(R) || !R.product_path)
 				vend_ready = TRUE
 				return
+			
+			//debug
+			if(product_records.Find(R) && hidden_records.Find(R))
+				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and hidden product tables!")
+			if(product_records.Find(R) && coin_records.Find(R))
+				log_runtime("WARN - vendor [src] @ [loc] has Duplicate [R] accross normal and premium product tables!")
+			
+			//Set price for the item we're using.
 			var/price_to_use = default_price
 			if(R.custom_price)
 				price_to_use = R.custom_price
+			if(coin_records.Find(R) || hidden_records.Find(R))
+				price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
+			
+			//Make sure we actually have the item.
 			if(R in hidden_records)
 				if(!extended_inventory)
 					vend_ready = TRUE
@@ -788,60 +800,30 @@ GLOBAL_LIST_EMPTY(vending_products)
 				flick(icon_deny,src)
 				vend_ready = TRUE
 				return
-			/* We're not using the econemy subsystem to track money.
-			if(onstation && ishuman(usr))
-				var/mob/living/carbon/human/H = usr
-				var/obj/item/card/id/C = H.get_idcard(TRUE)
-
-				if(!C)
-					say("No card found.")
-					flick(icon_deny,src)
-					vend_ready = TRUE
-					return
-				else if (!C.registered_account)
-					say("No account found.")
-					flick(icon_deny,src)
-					vend_ready = TRUE
-					return
-				// else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
-				// 	say("You are not of legal age to purchase [R.name].")
-				// 	if(!(usr in GLOB.narcd_underages))
-				// 		Radio.set_frequency(FREQ_SECURITY)
-				// 		Radio.talk_into(src, "SECURITY ALERT: Underaged crewmember [H] recorded attempting to purchase [R.name] in [get_area(src)]. Please watch for substance abuse.", FREQ_SECURITY)
-				// 		GLOB.narcd_underages += H
-				// 	flick(icon_deny,src)
-				// 	vend_ready = TRUE
-				// 	return
-				var/datum/bank_account/account = C.registered_account
-				if(account.account_job && account.account_job.paycheck_department == payment_department)
-					price_to_use = 0
-				if(coin_records.Find(R) || hidden_records.Find(R))
-					price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
-				if(price_to_use && !account.adjust_money(-price_to_use))
-					say("You do not possess the funds to purchase [R.name].")
-					flick(icon_deny,src)
-					vend_ready = TRUE
-					return
-				var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
-				if(D)
-					D.adjust_money(price_to_use)
-					SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
-					//log_econ("[price_to_use] credits were inserted into [src] by [D.account_holder] to buy [R].")
-				*/
+			
+			//Thank them like any megaglobal corp should.
 			if(last_shopper != usr || purchase_message_cooldown < world.time)
 				say("Thank you for shopping with [src]!")
 				purchase_message_cooldown = world.time + 5 SECONDS
 				last_shopper = usr
+
+			//Do we have the money inserted to buy this item?
 			if(price_to_use > stored_caps && !force_free)
 				to_chat(usr, span_alert("Not enough caps to pay for [R.name]!"))
 				vend_ready = TRUE
 				return
+			
+			//Deduct that price if we're not overridden to be free.
 			if(!force_free)
 				stored_caps = stored_caps - price_to_use
+			
+			//use power, play animations and sounds.
 			use_power(5)
 			if(icon_vend) //Show the vending animation if needed
 				flick(icon_vend,src)
 			playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+
+			//Set up what we're vending and actually vend it to the person buying it.
 			var/obj/item/vended = new R.product_path(get_turf(src))
 			R.amount--
 			if(usr.can_reach(src) && usr.put_in_hands(vended))
