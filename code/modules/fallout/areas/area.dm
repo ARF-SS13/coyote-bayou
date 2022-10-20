@@ -17,12 +17,22 @@
 //15-19 : caves
 //These were defined a long time ago, but we may still consider using them with our new ambient sound system ~TK
 
+///////////////
+//C O Y O T E//
+//B A Y O U  //
+//  AMBIENT  //
+//   AREAS   //
+///////////////
 /area/f13/wasteland
 	name = "Wasteland"
 	icon_state = "wasteland"
 	ambience_area = list(
 		/datum/looping_sound/ambient/critters,
-		/datum/looping_sound/ambient/swamp
+		/datum/looping_sound/ambient/swamp,
+		/datum/looping_sound/ambient/critters/birds,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		/datum/looping_sound/ambient/critters/frogs,
+		/datum/looping_sound/ambient/forest,
 	)
 	outdoors = 1
 	open_space = 1
@@ -37,6 +47,9 @@
 		/datum/looping_sound/ambient/city,
 		/datum/looping_sound/ambient/critters,
 		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/swamp/quiet,
+		/datum/looping_sound/ambient/critters/birds,
+		/datum/looping_sound/ambient/critters/birds/crow,
 		)
 	ambientmusic = null
 	grow_chance = 5
@@ -47,10 +60,21 @@
 	ambience_area = list(
 		/datum/looping_sound/ambient/town,
 		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/swamp/quiet,
+		/datum/looping_sound/ambient/critters/birds,
+		/datum/looping_sound/ambient/critters/birds/crow,
 		)
 	ambientmusic = null
 	grow_chance = 5
 
+
+/area/f13/building
+	name = "Building"
+	icon_state = "building"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		)
 /area/f13/building/sewers
 	name = "Sewers"
 	icon_state = "blue"
@@ -61,6 +85,26 @@
 		)
 	ambientmusic = null
 	grow_chance = 5
+
+/area/f13/bar
+	name = "Bar"
+	icon_state = "bar"
+	ambience_area = list(
+		/datum/looping_sound/ambient/radiomusic,
+		/datum/looping_sound/ambient/radiostatic,
+		/datum/looping_sound/ambient/djswampass,
+		/datum/looping_sound/ambient/town,
+		/datum/looping_sound/ambient/woodcreak,
+	)
+
+///////////////
+//C O Y O T E//
+//B A Y O U  //
+//  AMBIENT  //
+//   AREAS   //
+//   END     //
+///////////////
+
 
 /area/f13/wasteland/event
 	name = "Wasteland (Event)"
@@ -190,9 +234,6 @@
 	environment = 2
 	grow_chance = 5
 
-/area/f13/building
-	name = "Building"
-	icon_state = "building"
 
 //	ambientmusic = list('sound/f13music/fo2_tunnels.ogg','sound/f13music/fo2_ruins.ogg','sound/misc/null.ogg')
 	ambientsounds = list(
@@ -392,14 +433,13 @@
 	environment = 5
 	grow_chance = 5
 
-/area/f13/bar
-	name = "Bar"
-	icon_state = "bar"
+
 
 //	ambientmusic = list('sound/f13music/fo2_bar.ogg','sound/f13music/fo2_outpost.ogg','sound/misc/null.ogg')
 	ambientsounds = list(
 		AREA_SOUND('sound/f13ambience/ambigen_1.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/ambigen_2.ogg', 10 SECONDS))
+
 	environment = 2
 	grow_chance = 5
 
