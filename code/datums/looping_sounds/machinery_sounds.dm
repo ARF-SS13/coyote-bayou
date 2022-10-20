@@ -53,12 +53,12 @@
 
 /datum/looping_sound/microwave
 	start_sound = list(SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-start.ogg', 1 SECONDS, 1))
-	start_length = 10
+	start_length = 5
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-mid1.ogg', 2 SECONDS, 10), 
-		SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-mid2.ogg', 2 SECONDS, 1)
+		SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-mid1.ogg', 1 SECONDS, 10), 
+		SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-mid2.ogg', 1 SECONDS, 1)
 		)
-	mid_length = 10
+	mid_length = 5
 	end_sound = list(SOUND_LOOP_ENTRY('sound/machines/microwave/microwave-end.ogg', 1 SECONDS, 1))
 	volume = 90
 
