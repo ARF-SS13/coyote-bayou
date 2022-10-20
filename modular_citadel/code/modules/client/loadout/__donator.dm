@@ -72,6 +72,17 @@
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
 	new /obj/item/gun_upgrade/scope/watchman(src)
 
+/datum/gear/donator/kits/aerodynamique
+	name = "Ancient Huntress' Bounty"
+	path = /obj/item/storage/box/large/custom_kit/aerodynamique2
+	ckeywhitelist = list("aerodynamique")
+
+/obj/item/storage/box/large/custom_kit/aerodynamique2/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/tribal/geckocloak(src)
+	new /obj/item/twohanded/sledgehammer/simple(src)
+	new /obj/item/throwing_star/spear(src)
+	new /obj/item/throwing_star/spear(src)
+
 /datum/gear/donator/kits/aldrictalvalin
 	name = "Aldric's Supply Kit"
 	path = /obj/item/storage/box/large/custom_kit/aldrictalvalin
