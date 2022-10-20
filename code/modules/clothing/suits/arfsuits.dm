@@ -1289,6 +1289,7 @@
 	icon_state = "leather_suit"
 	item_state = "leather_suit"
 	flags_inv = HIDEJUMPSUIT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 	cold_protection = CHEST | GROIN | LEGS| ARMS | HEAD
 	siemens_coefficient = 0.9
 	body_parts_hidden = ARMS | CHEST | GROIN | LEGS
@@ -1323,6 +1324,7 @@
 	icon_state = "tanleather"
 	item_state = "tanleather"
 	desc = "Layers of leather glued together to make a stiff vest, crude but gives some protection against wild beasts and knife stabs to the liver."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T2, ARMOR_MODIFIER_DOWN_DT_T1)
 	body_parts_hidden = 0
 
 /obj/item/clothing/suit/armor/light/leather/cowboyvest
@@ -1330,6 +1332,7 @@
 	icon_state = "cowboybvest"
 	item_state = "cowboybvest"
 	desc = "Stylish and has discrete lead plates inserted, just in case someone brings a laser to a fistfight."
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_DT_T1, ARMOR_MODIFIER_UP_LASER_T1)
 
 /obj/item/clothing/suit/armor/light/leather/durathread
 	name = "makeshift vest"
@@ -1347,6 +1350,7 @@
 	item_state = "r_gear_rig"
 	body_parts_hidden = 0
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/jacket
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_DOWN_MELEE_T1, ARMOR_MODIFIER_DOWN_DT_T1)
 
 ////////////////
 // ARMOR KITS //
