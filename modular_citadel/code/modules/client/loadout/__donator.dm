@@ -486,6 +486,14 @@
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
+/datum/gear/donator/kits/seermankhajiit00
+	name = "Warmonger"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit00
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
+	new /obj/item/claymore(src)
+
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
 	path = /obj/item/storage/box/large/custom_kit/sloaff
