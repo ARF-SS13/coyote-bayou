@@ -658,6 +658,7 @@
 	icon_state = "lightcloak"
 	item_state = "lightcloak"
 	body_parts_hidden = ARMS
+	armor_tokens = list(RMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/suit/armor/light/tribal/strips
 	name = "light tribal armor"
@@ -665,6 +666,7 @@
 	icon_state = "tribal_armor"
 	item_state = "tribal_armor"
 	body_parts_hidden = CHEST
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /// to be refactored to work with the New Tier System (tm)
 /obj/item/clothing/suit/hooded/cloak
@@ -700,7 +702,7 @@
 	// body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "deathclaw cloak hood"
@@ -709,7 +711,7 @@
 	flags_inv = HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2, ARMOR_MODIFIER_UP_DT_T2)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/suit/hooded/cloak/goliath/tatteredred
 	name = "tattered red cloak"
@@ -727,7 +729,7 @@
 	icon_state = "golhood"
 	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_GLOBAL_MULT
 	armor = ARMOR_VALUE_MEDIUM
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_BULLET_T2)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
 
 /obj/item/clothing/suit/hooded/cloak/drake //SS13 item, obviously
 	name = "drake armour"
