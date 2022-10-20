@@ -72,7 +72,7 @@
 	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
 	new /obj/item/gun_upgrade/scope/watchman(src)
 
-/datum/gear/donator/kits/aerodynamique
+/datum/gear/donator/kits/aerodynamique2
 	name = "Ancient Huntress' Bounty"
 	path = /obj/item/storage/box/large/custom_kit/aerodynamique2
 	ckeywhitelist = list("aerodynamique")
