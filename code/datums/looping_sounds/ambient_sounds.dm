@@ -44,7 +44,7 @@
 	chance = 25
 	vary = FALSE
 	vary_direction = TRUE
-	volume = SOUND_LOOP_VOL_RANGE(5, 45)
+	volume = SOUND_LOOP_VOL_RANGE(30, 65)
 	direct = TRUE
 	loop_delay = 3 MINUTES
 	mid_sounds = list(
@@ -82,12 +82,59 @@
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 10 SECONDS, 1)
 	)
 
+//Small Critters//
+/datum/looping_sound/ambient/critters/frogs
+	chance = 70
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(40, 65)
+	direct = TRUE
+	loop_delay = 1 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/frog_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/frog_2.ogg', 10 SECONDS, 1),
+	)
+
+//End Small Critters//
+
+//Birds//
+/datum/looping_sound/ambient/critters/birds
+	chance = 40
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(40, 65)
+	direct = TRUE
+	loop_delay = 2 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_3.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_4.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_5.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_6.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_7.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/bird_8.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/critters/birds/crow
+	chance = 40
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(65, 75)
+	direct = TRUE
+	loop_delay = 2 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/crow_1.ogg', 17 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/crow_2.ogg', 25 SECONDS, 1),
+	)
+
+//End Birds//
 /datum/looping_sound/ambient/city
 	chance = 100
 	vary = FALSE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
 	direct = TRUE
-	loop_delay = 30 SECONDS
+	loop_delay = 1 SECONDS
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambicity1.ogg', 151 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambicity2.ogg', 62 SECONDS, 1),
@@ -97,10 +144,33 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambicity6.ogg', 82 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/forest
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 1 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiforest1.ogg', 24 SECONDS, 1),
+	)
+
 /datum/looping_sound/ambient/swamp
 	chance = 100
 	vary = FALSE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp1.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp2.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp3.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp4.ogg', 130 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/swamp/quiet
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(69, 69)
 	direct = TRUE
 	loop_delay = 0
 	mid_sounds = list(
@@ -121,10 +191,39 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 130 SECONDS, 1),
 	)
 
-/datum/looping_sound/ambient/general
-	chance = 25
+/datum/looping_sound/ambient/woodcreak
+	chance = 50
 	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(20, 80)
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 20 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak1.ogg', 17 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak2.ogg', 16 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak3.ogg', 23 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building
+	chance = 80
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 60 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 71 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding3.ogg', 24 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding4.ogg', 47 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/shack.ogg', 7 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/warehouse.ogg', 9 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/general
+	chance = 40
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(60, 80)
 	direct = TRUE
 	loop_delay = 0
 	mid_sounds = list(
@@ -147,11 +246,11 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_17.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_18.ogg', 10 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambigen_19.ogg', 10 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/ambience/ambigen5.ogg', 15 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/ambience/ambigen6.ogg', 33 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/ambience/ambigen9.ogg', 9 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/ambience/ambigen10.ogg', 20 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/ambience/ambigen15.ogg', 12 SECONDS, 1),
+		//SOUND_LOOP_ENTRY('sound/ambience/ambigen5.ogg', 15 SECONDS, 1), //Might Opt back into these later ~TK
+		//SOUND_LOOP_ENTRY('sound/ambience/ambigen6.ogg', 33 SECONDS, 1),
+		//SOUND_LOOP_ENTRY('sound/ambience/ambigen9.ogg', 9 SECONDS, 1),
+		//SOUND_LOOP_ENTRY('sound/ambience/ambigen10.ogg', 20 SECONDS, 1),
+		//SOUND_LOOP_ENTRY('sound/ambience/ambigen15.ogg', 12 SECONDS, 1),
 	)
 
 /datum/looping_sound/ambient/sewers
@@ -180,3 +279,56 @@
 		SOUND_LOOP_ENTRY('sound/ambience/ambimaint7.ogg', 6 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/ambience/ambimaint9.ogg', 6 SECONDS, 1),
 	)
+
+//Radio Texarkana//
+
+/datum/looping_sound/ambient/djswampass
+	chance = 10
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 10 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiRT1.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiRT2.ogg', 10 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiRT3.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/radiostatic
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(80, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwhitenoise1.ogg', 18 SECONDS, 99),
+	)
+
+/datum/looping_sound/ambient/radiomusic
+	chance = 70
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(90, 90)
+	direct = TRUE
+	loop_delay = 1 MINUTES
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/music/rocketridersprayer.ogg', 370 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/hanging_me.ogg', 185 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/rainmustfall.ogg', 208 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/masters_call.ogg', 121 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/meetagain.ogg', 119 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/sixteentons.ogg', 135 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/orangesky.ogg', 114 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/rockinrobin.ogg', 121 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/waybackhome.ogg', 114 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/ragtime_cowboyjoe.ogg', 144 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/mightyman.ogg', 109 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/cottonfields.ogg', 110 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/bingobango.ogg', 103 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/sixtyminute.ogg', 97 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/kickinthehead.ogg', 120 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/anythinggoes.ogg', 97 SECONDS, 10),
+		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
+	)
+//End Radio Texarkana//
+
