@@ -1078,12 +1078,10 @@
 			if("Big Book of Science")
 				granted_trait = TRAIT_CHEMWHIZ
 				traitname = "chemistry"
-				crafting_recipe_types = list(/datum/crafting_recipe/jet, /datum/crafting_recipe/turbo, /datum/crafting_recipe/psycho, /datum/crafting_recipe/medx, /datum/crafting_recipe/medx/chemistry, /datum/crafting_recipe/buffout, /datum/crafting_recipe/steady)
 				remarks = list("Always ensure a safe working environment, promptly clean any chemical mess.", "Improperly stored chemicals can quickly lead to safety hazards.", "Do not abuse chemicals for recreational use in the laboratory!", "Labcoats and goggles not only protect you from burns, but give an aura of authority.", "Keep your laboratory clean and organized, utilize cabinets and shelves.", "Potassium and water should not be mixed, or they will react violently.")
 			if("Dean's Electronics")
 				granted_trait = TRAIT_TECHNOPHREAK
 				traitname = "craftsmanship"
-				crafting_recipe_types = list(/datum/crafting_recipe/tribalradio)
 				remarks = list("Troubleshooting is a systematic approach to problem solving, do not skip any steps in the process.", "Ensure you have all the required parts before you begin.", "Always wear personal protective equipment, electric shock can be fatal.", "Combustibles and sparks do not mix, store welding fuel in a safe location.", "Don't lose track of your tools, or you have a new problem to deal with.")
 			if("Grognak the Barbarian")
 				granted_trait = TRAIT_BIG_LEAGUES
@@ -1121,7 +1119,6 @@
 			if("Technophilia")
 				granted_trait = TRAIT_TECHNOPHREAK
 				traitname = "technology and crafting"
-				crafting_recipe_types = list(/datum/crafting_recipe/ninemil, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/n99, /datum/crafting_recipe/huntingrifle, /datum/crafting_recipe/m1911, /datum/crafting_recipe/varmintrifle, /datum/crafting_recipe/autoaxe, /datum/crafting_recipe/steelsaw, /datum/crafting_recipe/tools/forged/entrenching_tool, /datum/crafting_recipe/chainsaw, /datum/crafting_recipe/steeltower, /datum/crafting_recipe/durathread_vest)
 			if("Pugilist")
 				granted_trait = TRAIT_IRONFIST
 				traitname = "using your fists"

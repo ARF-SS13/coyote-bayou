@@ -29,7 +29,6 @@
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan
-	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
 	box = /obj/item/storage/survivalkit/tribal/chief
 	box_two = /obj/item/storage/survivalkit/medical/tribal
@@ -79,7 +78,6 @@
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan
-	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
 	box = /obj/item/storage/survivalkit/tribal/chief
 	box_two = /obj/item/storage/survivalkit/medical/tribal

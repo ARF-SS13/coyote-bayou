@@ -786,7 +786,6 @@ Raider
 	neck = /obj/item/clothing/neck/mantle/ragged
 	backpack_contents = list(
 	/obj/item/book/granter/trait/tribaltraditions = 1,
-	/obj/item/book/granter/trait/selection/tribal = 1,
 	/obj/item/shovel/serrated = 1,)
 
 /datum/outfit/loadout/fish_wrangler
@@ -979,7 +978,6 @@ Raider
 	id = null
 	ears = null
 	belt = null
-	r_hand = /obj/item/book/granter/trait/selection
 	l_pocket = /obj/item/storage/bag/money/small/wastelander
 	r_pocket = /obj/item/flashlight/flare
 	backpack = /obj/item/storage/backpack/satchel/explorer
@@ -1936,7 +1934,6 @@ datum/job/wasteland/f13dendoctor
 	uniform = /obj/item/clothing/under/f13/settler
 	shoes = /obj/item/clothing/shoes/sandal
 	gloves = /obj/item/clothing/gloves/f13/handwraps
-	r_hand = /obj/item/book/granter/trait/selection/tribal
 	backpack = /obj/item/storage/backpack/satchel/explorer
 	satchel = /obj/item/storage/backpack/satchel/explorer
 	box = /obj/item/storage/survivalkit/tribal

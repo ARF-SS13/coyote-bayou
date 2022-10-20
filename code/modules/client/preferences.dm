@@ -1493,7 +1493,7 @@ Records disabled until a use for them is found
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = 0
+	var/bal = CONFIG_GET(number/quirk_points)
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
@@ -3279,6 +3279,11 @@ Records disabled until a use for them is found
 	var/find_gear = has_loadout_gear(save_slot, gear_type)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
+
+/datum/preferences/proc/reset_quirks()
+	all_quirks = list()
+	if(istype(parent))
+		to_chat(parent, span_warning("Your quirk balance was invalid, and has been reset! You'll need to set up your quirks again."))
 
 #undef DEFAULT_SLOT_AMT
 #undef HANDS_SLOT_AMT

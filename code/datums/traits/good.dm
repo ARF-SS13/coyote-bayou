@@ -29,6 +29,20 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	/datum/crafting_recipe/incendiaryrocket,
 	/datum/crafting_recipe/strongrocket))
 
+GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
+	/datum/crafting_recipe/ninemil, 
+	/datum/crafting_recipe/huntingrifle, 
+	/datum/crafting_recipe/n99, 
+	/datum/crafting_recipe/huntingrifle, 
+	/datum/crafting_recipe/m1911, 
+	/datum/crafting_recipe/varmintrifle, 
+	/datum/crafting_recipe/autoaxe, 
+	/datum/crafting_recipe/steelsaw, 
+	/datum/crafting_recipe/tools/forged/entrenching_tool, 
+	/datum/crafting_recipe/chainsaw, 
+	/datum/crafting_recipe/steeltower, 
+	/datum/crafting_recipe/durathread_vest))
+
 
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
@@ -265,10 +279,29 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/technophreak
 	name = "Technophreak"
 	desc = "You're skilled at breaking down old-war rubble more precisely. Gain more salvage from cars and piles than before."
-	value = 2 //2 might be a good starting point now that I thought on it. It doesn't give you extra health or other oddities that would warrant 3
+	value = 3
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
 	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+
+/datum/quirk/gunsmith
+	name = "Gunsmithing"
+	desc = "You know how to make various weapons and protective vests."
+	value = 2
+	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
+	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+
+/datum/quirk/gunsmith/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	// I made the quirks add the same recipes as the trait books. Feel free to nerf this
+	if(!H.mind.learned_recipes)
+		H.mind.learned_recipes = list()
+	H.mind.learned_recipes |= GLOB.weaponcrafting_gun_recipes
+
+/datum/quirk/gunsmith/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
 /datum/quirk/voracious
 	name = "Voracious"
@@ -352,7 +385,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/bigleagues
 	name = "Big Leagues"
 	desc = "Swing for the fences! You deal additional damage with melee weapons."
-	value = 2
+	value = 3
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = span_notice("You feel like swinging for the fences!")
 	lose_text = span_danger("You feel like bunting.")
@@ -361,7 +394,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/chemwhiz
 	name = "Chem Whiz"
 	desc = "You've been playing around with chemicals all your life. You know how to use chemistry machinery."
-	value = 2
+	value = 3
 	mob_trait = TRAIT_CHEMWHIZ
 	gain_text = span_notice("The mysteries of chemistry are revealed to you.")
 	lose_text = span_danger("You forget how the periodic table works.")
@@ -415,7 +448,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/iron_fist
 	name = "Iron Fist"
 	desc = "You have fists of kung-fury! Increases unarmed damage."
-	value = 2
+	value = 3
 	mob_trait = TRAIT_IRONFIST
 	gain_text = span_notice("Your fists feel furious!")
 	lose_text = span_danger("Your fists feel calm again.")
@@ -437,7 +470,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
 	desc = "You are a somewhat adequate medical practicioner, capable of performing minor surgery."
-	value = 1
+	value = 2
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
 	lose_text = span_danger("You forget how to perform even the simplest surgery.")
@@ -446,7 +479,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/surgerymid
 	name = "Intermediate Surgery"
 	desc = "You are a skilled medical practicioner, capable of performing most surgery."
-	value = 1
+	value = 2
 	mob_trait = TRAIT_SURGERY_MID
 	gain_text = span_notice("You feel yourself discovering most of the details of the human body.")
 	lose_text = span_danger("You forget how to perform surgery.")
@@ -455,7 +488,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 /datum/quirk/surgeryhigh
 	name = "Complex Surgery"
 	desc = "You are an expert practicioner, capable of performing almost all surgery."
-	value = 1
+	value = 2
 	mob_trait = TRAIT_SURGERY_HIGH
 	gain_text = span_notice("You feel yourself discovering the most intricate secrets of the human body.")
 	lose_text = span_danger("You forget your advanced surgical knowledge.")
@@ -536,7 +569,7 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	value = 1
 	mob_trait = TRAIT_ADVANCED_EXPLOSIVE_CRAFTING
 	gain_text = span_notice("You're on the no-fly list.'")
-	lose_text = "<span class='danger'You feel like you're allowed to fly on planes again.</span>"
+	lose_text = "<span class='danger'>You feel like you're allowed to fly on planes again.</span>"
 	locked = TRUE
 
 /datum/quirk/advanced_explosive_crafting/add()
