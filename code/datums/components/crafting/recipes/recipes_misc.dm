@@ -474,7 +474,7 @@
 
 /datum/crafting_recipe/skyfort_girder_ten
 	name = "Aerial Support Girder (x10)"
-	result = /obj/item/stack/rods/scaffold
+	result = /obj/item/stack/rods/scaffold/ten
 	reqs = list(
 		/obj/item/stack/sheet/metal = 50,
 		/obj/item/stack/sheet/plastic = 10,
