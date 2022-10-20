@@ -10,30 +10,57 @@
 
 //Wasteland generic areas
 
-//Ambigen sound tips for ambientsounds: 1 - 2 : outside the ruined buildings, 3 - 9 : inside the wasteland buildings, 10 - 14 : vaults and bunkers specific, 15-19 : caves
-
+//Ambigen sound tips for ambientsounds: 
+//1 - 2 : outside the ruined buildings, 
+//3 - 9 : inside the wasteland buildings,
+// 10 - 14 : vaults and bunkers specific, 
+//15-19 : caves
+//These were defined a long time ago, but we may still consider using them with our new ambient sound system ~TK
 
 /area/f13/wasteland
 	name = "Wasteland"
 	icon_state = "wasteland"
-	ambientmusic = WASTELAND_AMBIENCE
-	ambientsounds = list(
-		AREA_SOUND('sound/f13ambience/swampsounds.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/battle_1.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/battle_2.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/battle_3.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/rattlesnake_1.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/rattlesnake_2.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/rattlesnake_3.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/bird_1.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/bird_2.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/bird_3.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/bird_4.ogg', 10 SECONDS))
+	ambience_area = list(
+		/datum/looping_sound/ambient/critters,
+		/datum/looping_sound/ambient/swamp
+	)
 	outdoors = 1
 	open_space = 1
 	blob_allowed = 0
 	environment = 19
 	grow_chance = 45
+
+/area/f13/wasteland/city
+	name = "City"
+	icon_state = "yellow"
+	ambience_area = list(
+		/datum/looping_sound/ambient/city,
+		/datum/looping_sound/ambient/critters,
+		/datum/looping_sound/ambient/general,
+		)
+	ambientmusic = null
+	grow_chance = 5
+
+/area/f13/wasteland/town
+	name = "Town"
+	icon_state = "green"
+	ambience_area = list(
+		/datum/looping_sound/ambient/town,
+		/datum/looping_sound/ambient/general,
+		)
+	ambientmusic = null
+	grow_chance = 5
+
+/area/f13/building/sewers
+	name = "Sewers"
+	icon_state = "blue"
+	ambience_area = list(
+		/datum/looping_sound/ambient/sewers,
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/steam,
+		)
+	ambientmusic = null
+	grow_chance = 5
 
 /area/f13/wasteland/event
 	name = "Wasteland (Event)"
@@ -549,6 +576,7 @@
 /area/f13/caves
 	name = "Caves"
 	icon_state = "caves"
+
 
 //	ambientmusic = list('sound/f13music/fo2_caves.ogg','sound/f13music/fo2_desert.ogg','sound/f13music/fo2_necropolis.ogg','sound/misc/null.ogg')
 	ambientsounds = list(

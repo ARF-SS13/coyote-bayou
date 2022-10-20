@@ -1650,7 +1650,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	lightswitch = FALSE //no. just no
 	ambientsounds = list(
 		AREA_SOUND('sound/f13ambience/wasteland.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/sewer.ogg', 10 SECONDS))
+		AREA_SOUND('sound/f13ambience/sewers.ogg', 10 SECONDS))
 	flags_1 = NONE //>desert >>has destroyed robo dirt on it
 
 /area/f13/sunny_dale
