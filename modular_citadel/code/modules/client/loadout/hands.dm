@@ -50,6 +50,11 @@
 	path = /obj/item/clothing/gloves/ring/plasma
 	cost = 3 //high cost due to its sheer effect on mood. Akin to a headpat.
 
+/datum/gear/hands/bluespace_ring
+	name = "Bluespace Ring"
+	path = /obj/item/clothing/gloves/ring/bluespace
+	cost = 4 //as with the plasma ring, but larger. Hence the higher cost comparitavely.
+
 /datum/gear/hands/cheaplighter
 	name = "cheap lighter"
 	path = /obj/item/lighter/greyscale

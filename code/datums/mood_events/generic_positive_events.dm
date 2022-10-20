@@ -228,6 +228,10 @@
 	description = span_nicegreen("The swirling colors of the plasma ring seem to set your mind at ease.")
 	mood_change = 2
 
+/datum/mood_event/equipped_ring/bluespace
+	description = span_nicegreen("The mystic nature of the bluespace crystal affects your mood.")
+	mood_change = 3
+
 // NECKLACE
 
 /datum/mood_event/equipped_necklace/any
