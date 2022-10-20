@@ -698,3 +698,6 @@ BODY_SIZE_SLOWDOWN_MULTIPLIER 0.25
 ## Enables the FoV component, which hides objects and mobs behind the parent from their sight, unless they turn around, duh.
 ## Camera mobs, AIs, ghosts and some other are of course exempt from this. This also doesn't influence simplemob AI, for the best.
 #USE_FIELD_OF_VISION
+
+## Sets how many quirk points you get at the start
+QUIRK_POINTS 3

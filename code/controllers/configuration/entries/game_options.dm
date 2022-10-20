@@ -562,3 +562,8 @@
 /datum/config_entry/number/eorg_period
 	config_entry_value = 3 MINUTES
 	min_val = 1
+
+/// Sets the amount of quirk points players get by default
+/datum/config_entry/number/quirk_points
+	config_entry_value = 3
+	min_val = 0

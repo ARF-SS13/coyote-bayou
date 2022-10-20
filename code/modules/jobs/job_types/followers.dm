@@ -456,7 +456,6 @@ Follower Volunteer
 	jobtype =	/datum/job/followers/f13followerguard
 	belt =	/obj/item/storage/belt/army/followers
 	id =	/obj/item/card/id/silver
-	r_hand = /obj/item/book/granter/trait/selection
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec

@@ -894,6 +894,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	all_quirks = SANITIZE_LIST(all_quirks)
 
+	if(GetQuirkBalance() < 0)
+		reset_quirks()
+
 	matchmaking_prefs = sanitize_matchmaking_prefs(matchmaking_prefs)
 
 	cit_character_pref_load(S)
@@ -907,6 +910,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(istype(parent))
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
+	if(GetQuirkBalance() < 0)
+		reset_quirks()
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)
