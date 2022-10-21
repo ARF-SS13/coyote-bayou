@@ -112,19 +112,23 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 1575,737
+		pos = 281,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'icons\\CoyoteBayouServerBanner.png'
+		outer-size = 656x538
+		inner-size = 640x499
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -135,6 +139,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 34,0
 		anchor2 = 50,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "TG Wiki"
 		command = "tgwiki"
@@ -144,6 +149,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 50,0
 		anchor2 = 66,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "Changelog"
@@ -153,6 +159,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 66,0
 		anchor2 = 81,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -162,6 +169,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 81,0
 		anchor2 = 97,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Discord/Rules"
 		command = "discord"
@@ -222,10 +230,13 @@ window "popupwindow"
 		size = 549x549
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		can-resize = false
+		outer-size = 565x588
+		inner-size = 549x549
 
 window "preferences_window"
 	elem "preferences_window"
@@ -251,7 +262,7 @@ window "preferences_window"
 		saved-params = "is-checked"
 		text = ""
 		image = 'icons\\Chargenbutton.png'
-		command = ""
+		command = "Powerbutton"
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 112,82
@@ -276,19 +287,15 @@ window "statwindow"
 		size = 1121x827
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'icons\\pipscreen.png'
-		outer-size = 1137x885
-		inner-size = 1121x846
 	elem "statbrowser"
 		type = BROWSER
 		pos = 36,26
 		size = 1066x732
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		is-visible = false
 		saved-params = ""
 
