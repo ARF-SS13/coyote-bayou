@@ -86,6 +86,26 @@
 	ambientmusic = null
 	grow_chance = 5
 
+/area/f13/caves
+	name = "Caves"
+	icon_state = "caves"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/cave,
+		/datum/looping_sound/ambient/tunnel,
+	)
+
+/area/f13/tunnel
+	name = "Tunnel"
+	icon_state = "tunnel"
+	environment = 21
+	grow_chance = 25
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/building,
+		/datum/looping_sound/ambient/cave,
+		/datum/looping_sound/ambient/tunnel,
+	)
 /area/f13/bar
 	name = "Bar"
 	icon_state = "bar"
@@ -539,20 +559,7 @@
 	name = "Bighorn Bunker"
 	icon_state = "bighornbunker2"
 
-/area/f13/tunnel
-	name = "Tunnel"
-	icon_state = "tunnel"
 
-//	ambientmusic = list('sound/f13music/fo2_tunnels.ogg','sound/f13music/fo2_caves.ogg','sound/f13music/fo2_vats.ogg','sound/misc/null.ogg')
-	ambientsounds = list(
-		AREA_SOUND('sound/f13ambience/ambigen_9.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_12.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_15.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13ambience/ambigen_16.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13effects/steam_short.ogg', 10 SECONDS),
-		AREA_SOUND('sound/f13effects/steam_long.ogg', 10 SECONDS))
-	environment = 21
-	grow_chance = 25
 
 /area/f13/tunnel/northeast
 	name = "North-Eastern Tunnel"
