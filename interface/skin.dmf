@@ -116,19 +116,15 @@ window "infowindow"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'icons\\CoyoteBayouServerBanner.png'
-		outer-size = 656x538
-		inner-size = 640x499
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -139,7 +135,6 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 34,0
 		anchor2 = 50,0
-		background-color = none
 		saved-params = "is-checked"
 		text = "TG Wiki"
 		command = "tgwiki"
@@ -149,7 +144,6 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 50,0
 		anchor2 = 66,0
-		background-color = none
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "Changelog"
@@ -159,7 +153,6 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 66,0
 		anchor2 = 81,0
-		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -169,7 +162,6 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 81,0
 		anchor2 = 97,0
-		background-color = none
 		saved-params = "is-checked"
 		text = "Discord/Rules"
 		command = "discord"
@@ -181,11 +173,8 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
-		outer-size = 656x538
-		inner-size = 640x499
 	elem "input"
 		type = INPUT
 		pos = 2,460
@@ -202,7 +191,6 @@ window "outputwindow"
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"saybutton.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
@@ -234,13 +222,10 @@ window "popupwindow"
 		size = 549x549
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		can-resize = false
-		outer-size = 565x588
-		inner-size = 549x549
 
 window "preferences_window"
 	elem "preferences_window"
@@ -249,20 +234,16 @@ window "preferences_window"
 		size = 1280x1001
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		image = 'icons\\CharacterCreator.png'
-		outer-size = 1296x1040
-		inner-size = 1280x1001
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 112,82
 		size = 772x725
 		anchor1 = 0,0
 		anchor2 = 75,100
-		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
@@ -276,7 +257,7 @@ window "preferences_window"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 1618,495
+		pos = 1303,367
 		size = 1121x827
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -288,8 +269,8 @@ window "statwindow"
 		inner-size = 1121x846
 	elem "statbrowser"
 		type = BROWSER
-		pos = 137,71
-		size = 839x657
+		pos = 92,26
+		size = 937x732
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = none
