@@ -31,6 +31,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list(ROLE_ALIEN)
+	footstep_type = FOOTSTEP_MOB_CLAW
 	status_flags = CANPUSH
 	minbodytemp = 0
 	see_in_dark = 8
@@ -39,10 +40,6 @@
 	gold_core_spawnable = NO_SPAWN
 	death_sound = 'sound/voice/hiss6.ogg'
 	deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw..."
-
-/mob/living/simple_animal/hostile/alien/Initialize()
-	. = ..()
-	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_CLAW)
 
 /mob/living/simple_animal/hostile/alien/drone
 	name = "alien drone"

@@ -177,7 +177,7 @@
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
-		AddComponent(/datum/component/footstep, footstep_type)
+		AddComponent(/datum/component/footstep, footstep_type, 1, 3)
 	pixel_x = rand(-randpixel, randpixel)
 	pixel_y = rand(-randpixel, randpixel)
 	/// WARNING: DUPLICATED CODE, MAKE BETTER

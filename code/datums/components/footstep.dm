@@ -87,7 +87,7 @@
 	if(!T)
 		return
 	if(isfile(footstep_sounds) || istext(footstep_sounds))
-		playsound(T, footstep_sounds, volume)
+		playsound(T, footstep_sounds, volume, ignore_walls = TRUE)
 		return
 	var/turf_footstep
 	switch(footstep_type)
@@ -101,7 +101,12 @@
 			turf_footstep = T.footstep
 	if(!turf_footstep)
 		return
-	playsound(T, pick(footstep_sounds[turf_footstep][1]), footstep_sounds[turf_footstep][2] * volume, TRUE, footstep_sounds[turf_footstep][3] + e_range)
+	playsound(T, 
+		pick(footstep_sounds[turf_footstep][1]), 
+		footstep_sounds[turf_footstep][2] * volume, 
+		TRUE, 
+		footstep_sounds[turf_footstep][3] + e_range, 
+		ignore_walls = TRUE)
 
 /datum/component/footstep/proc/play_humanstep()
 	var/turf/open/T = prepare_step()
@@ -127,7 +132,7 @@
 				turf_footstep = T.footstep
 				L = GLOB.footstep
 			if(FOOTSTEP_MOB_SLIME)
-				playsound(T, 'sound/effects/footstep/slime1.ogg', 50 * volume)
+				playsound(T, 'sound/effects/footstep/slime1.ogg', 50 * volume, ignore_walls = TRUE)
 				return
 			if(FOOTSTEP_MOB_CRAWL)
 				playsound(T, 'sound/effects/footstep/crawl1.ogg', 50 * volume)
@@ -139,16 +144,18 @@
 			playsound(T, pick(GLOB.footstep[T.footstep][1]),
 				GLOB.footstep[T.footstep][2] * volume,
 				TRUE,
-				GLOB.footstep[T.footstep][3] + e_range)
+				GLOB.footstep[T.footstep][3] + e_range,
+				ignore_walls = TRUE)
 			return
 
 	if(!special && H.dna.species.special_step_sounds)
-		playsound(T, pick(H.dna.species.special_step_sounds), 50, TRUE)
+		playsound(T, pick(H.dna.species.special_step_sounds), 50, TRUE,ignore_walls = TRUE)
 	else
 		playsound(T, pick(L[turf_footstep][1]),
 			L[turf_footstep][2] * volume,
 			TRUE,
-			L[turf_footstep][3] + e_range)
+			L[turf_footstep][3] + e_range,
+			ignore_walls = TRUE)
 //fortuna edit. power armor sound check proc
 /datum/component/footstep/proc/powerarmorcheck()
 	var/mob/living/carbon/human/P = parent
@@ -157,7 +164,7 @@
 	if(powerArmor)
 		if(P.m_intent == MOVE_INTENT_WALK)
 			if(prob(25))
-				playsound(T, pick(powerArmorSounds), 25, TRUE)
+				playsound(T, pick(powerArmorSounds), 25, TRUE, ignore_walls = TRUE)
 				return
 		else
-			playsound(T, pick(powerArmorSounds), 50, TRUE)
+			playsound(T, pick(powerArmorSounds), 50, TRUE, ignore_walls = TRUE)

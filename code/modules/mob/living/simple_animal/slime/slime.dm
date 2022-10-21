@@ -104,7 +104,7 @@
 	create_reagents(100, NONE, NO_REAGENTS_VALUE)
 	set_colour(new_colour)
 	. = ..()
-	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_SLIME, 7.5)
+	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_SLIME, 1, 7)
 	set_nutrition(rand(650, 800))
 
 /mob/living/simple_animal/slime/Destroy()
