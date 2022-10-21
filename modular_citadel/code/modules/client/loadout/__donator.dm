@@ -47,7 +47,7 @@
 	ckeywhitelist = list("risingstarslash")
 	cost = 0
 
-/obj/item/clothing/mask/surgical/sloaf
+/obj/item/clothing/mask/surgical/sloaff
 	name = "rusty muzzle"
 	desc = "A rusted steel muzzle. It’s covered in scratches."
 	icon = 'icons/obj/clothing/masks.dmi'
@@ -525,7 +525,7 @@
 	ckeywhitelist = list("sloaff")
 
 /obj/item/storage/box/large/custom_kit/sloaff2/PopulateContents()
-	new /obj/item/clothing/mask/surgical/sloaf(src)
+	new /obj/item/clothing/mask/surgical/sloaff(src)
 	new /obj/item/clothing/neck/mantle/peltfur(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
