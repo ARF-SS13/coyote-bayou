@@ -251,7 +251,7 @@ window "preferences_window"
 		saved-params = "is-checked"
 		text = ""
 		image = 'icons\\Chargenbutton.png'
-		command = "sound(sound/machines/button4.ogg,repeat=0,512,100"
+		command = ""
 	elem "preferences_browser"
 		type = BROWSER
 		pos = 112,82
