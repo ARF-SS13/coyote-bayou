@@ -112,7 +112,7 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 1575,737
+		pos = 281,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -251,19 +251,19 @@ window "preferences_window"
 		saved-params = "is-checked"
 		text = ""
 		image = 'icons\\Chargenbutton.png'
-		command = ""
+		command = "Powerbutton"
 	elem "preferences_browser"
 		type = BROWSER
-		pos = 112,82
-		size = 772x725
+		pos = 31,19
+		size = 830x837
 		anchor1 = 0,0
 		anchor2 = 75,100
 		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
-		pos = 884,81
-		size = 294x727
+		pos = 861,10
+		size = 393x847
 		anchor1 = 75,0
 		anchor2 = 100,100
 		right-click = true
@@ -272,7 +272,7 @@ window "preferences_window"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 1389,270
+		pos = 281,0
 		size = 1121x827
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -284,8 +284,8 @@ window "statwindow"
 		inner-size = 1121x846
 	elem "statbrowser"
 		type = BROWSER
-		pos = 36,26
-		size = 1066x732
+		pos = 18,14
+		size = 1077x792
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = none
