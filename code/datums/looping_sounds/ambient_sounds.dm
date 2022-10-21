@@ -189,6 +189,7 @@
 	mid_sounds = list(
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 130 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/building.ogg', 4 SECONDS, 1),
 	)
 
 /datum/looping_sound/ambient/woodcreak
@@ -202,6 +203,28 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak1.ogg', 17 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak2.ogg', 16 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak3.ogg', 23 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/tunnel
+	chance = 50
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 20 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/drops.ogg', 10 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/cave
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/cave.ogg', 12 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/enclave_vault.ogg', 12 SECONDS, 1),
 	)
 
 /datum/looping_sound/ambient/building
