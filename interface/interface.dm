@@ -85,6 +85,6 @@
 	set desc = "Closes the char gen window"
 	set hidden = 1// This hides the actual verb from the verb menu so you can just trigger this when you click a button)
 	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
-	sleep(5) // Wait 5 deciseconds (half a second?)
-	winset(src, "preferences_window", "parent=none")
+	sleep(1)
+	src << browse(null, "window=preferences_window")
 
