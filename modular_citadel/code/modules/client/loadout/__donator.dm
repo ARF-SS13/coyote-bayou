@@ -47,6 +47,18 @@
 	ckeywhitelist = list("risingstarslash")
 	cost = 0
 
+/obj/item/clothing/mask/surgical/sloaff
+	name = "rusty muzzle"
+	desc = "A rusted steel muzzle. It’s covered in scratches."
+	icon = 'icons/obj/clothing/masks.dmi'
+	icon_state = "muzzle"
+	item_state = "blindfold"
+	flags_cover = MASKCOVERSMOUTH
+	w_class = WEIGHT_CLASS_SMALL
+	gas_transfer_coefficient = 0.9
+	equip_delay_other = 20
+	mutantrace_variation = STYLE_MUZZLE
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -506,6 +518,16 @@
 	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
 	new /obj/item/melee/onehanded/knife/bowie(src)
 	new /obj/item/clothing/head/helmet/f13/marlowhat(src)
+
+/datum/gear/donator/kits/sloaff2
+	name = "Danger Doggo Kit"
+	path = /obj/item/storage/box/large/custom_kit/sloaff2
+	ckeywhitelist = list("sloaff")
+
+/obj/item/storage/box/large/custom_kit/sloaff2/PopulateContents()
+	new /obj/item/clothing/mask/surgical/sloaff(src)
+	new /obj/item/clothing/neck/mantle/peltfur(src)
+	new /obj/item/reagent_containers/pill/patch/jet(src)
 
 /datum/gear/donator/kits/soulwinter446
 	name = "Shocome's relic cross"
