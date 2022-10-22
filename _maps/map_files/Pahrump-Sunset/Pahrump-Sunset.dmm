@@ -14690,13 +14690,13 @@
 /turf/open/floor/carpet/blue,
 /area/f13/building)
 "baH" = (
-/obj/structure/rack,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/reagent_containers/glass/bucket,
 /obj/item/shovel/spade,
 /obj/item/reagent_containers/spray/pestspray,
 /obj/item/cultivator,
 /obj/item/cultivator,
+/obj/machinery/smartfridge/bottlerack/gardentool,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland/town)
 "baI" = (
@@ -48788,18 +48788,6 @@
 /mob/living/simple_animal/hostile/bloatfly,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"nOz" = (
-/obj/structure/bed/roller,
-/obj/machinery/iv_drip,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/turf/open/floor/plasteel/f13/vault_floor/misc/rarewhite{
-	icon_state = "showroomfloor";
-	name = "tile"
-	},
-/area/f13/building)
 "nOG" = (
 /obj/effect/decal/remains/deadeyebot,
 /obj/effect/decal/cleanable/dirt,
@@ -88460,7 +88448,7 @@ abP
 abP
 abP
 eZr
-nOz
+eZr
 jRC
 abP
 hoQ
