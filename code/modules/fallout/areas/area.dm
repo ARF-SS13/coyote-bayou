@@ -75,8 +75,62 @@
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/woodcreak,
 		)
+
+/area/f13/building/abandoned
+	name = "Abandoned Building"
+	icon_state = "black"
+	requires_power = TRUE
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/lightbulb,
+		)
+
+/area/f13/building/hospital
+	name = "Hospital Building"
+	icon_state = "hospital"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/building/hospital,
+		)
+
+/area/f13/building/church
+	name = "Church Building"
+	icon_state = "green"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/building/church,
+		)
+
+/area/f13/building/tribal
+	name = "Tribal Building"
+	icon_state = "orange"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/torch,
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		)
+
+/area/f13/building/tribal/cave
+	name = "Tribal Cave"
+	icon_state = "purple"
+	ambience_area = list(
+		/datum/looping_sound/ambient/general,
+		/datum/looping_sound/ambient/woodcreak,
+		/datum/looping_sound/ambient/torch,
+		/datum/looping_sound/ambient/building/sulphurtribe,
+		/datum/looping_sound/ambient/cave,
+		/datum/looping_sound/ambient/swamp/quiet,
+		/datum/looping_sound/ambient/critters/birds,
+		/datum/looping_sound/ambient/critters/birds/crow,
+		)
+
 /area/f13/building/sewers
 	name = "Sewers"
+	requires_power = TRUE
 	icon_state = "blue"
 	ambience_area = list(
 		/datum/looping_sound/ambient/sewers,
@@ -89,6 +143,7 @@
 /area/f13/caves
 	name = "Caves"
 	icon_state = "caves"
+	requires_power = TRUE
 	ambience_area = list(
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/cave,
@@ -271,9 +326,9 @@
 	name = "Mass Fusion Plant"
 	icon_state = "massfusionin"
 
-/area/f13/building/hospital
-	name = "Christus Saint Michaels Hospital"
-	icon_state = "hospital"
+///area/f13/building/hospital
+//	name = "Christus Saint Michaels Hospital"
+//	icon_state = "hospital"
 
 /area/f13/building/mall
 	name = "Yuma Mall"
