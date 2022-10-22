@@ -82,7 +82,11 @@
 		SOUND_LOOP_ENTRY('sound/f13effects/sunsetsounds/coyoteawoo5.ogg', 10 SECONDS, 1)
 	)
 
+//ANIMALS//
+///////////////////
 //Small Critters//
+/////////////////
+
 /datum/looping_sound/ambient/critters/frogs
 	chance = 70
 	vary = FALSE
@@ -97,7 +101,9 @@
 
 //End Small Critters//
 
-//Birds//
+///////////
+///Birds///
+//////////
 /datum/looping_sound/ambient/critters/birds
 	chance = 40
 	vary = FALSE
@@ -127,8 +133,16 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_1.ogg', 17 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/f13ambience/crow_2.ogg', 25 SECONDS, 1),
 	)
-
+//////////////
 //End Birds//
+/////////////
+
+//ANIMALS END//
+
+
+//PLACES//
+
+//Civilization//
 /datum/looping_sound/ambient/city
 	chance = 100
 	vary = FALSE
@@ -144,6 +158,75 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambicity6.ogg', 82 SECONDS, 1),
 	)
 
+
+/datum/looping_sound/ambient/town
+	chance = 100
+	vary = FALSE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 0
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 130 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/building.ogg', 4 SECONDS, 1),
+	)
+
+	//Buildings//
+/datum/looping_sound/ambient/building
+	chance = 80
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 60 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 71 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding3.ogg', 24 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding4.ogg', 47 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/shack.ogg', 7 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/warehouse.ogg', 9 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/church
+	chance = 50
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/ambience/ambiholy.ogg', 12 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/ambience/ambiholy3.ogg', 24 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/hospital
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambihospital1.ogg', 19 SECONDS, 1),
+	)
+
+/datum/looping_sound/ambient/building/sulphurtribe
+	chance = 50
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 30 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambitribe1.ogg', 40 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambitribe2.ogg', 24 SECONDS, 1),
+	)
+
+//Civilzation End//
+
+
+//Wilderness//
 /datum/looping_sound/ambient/forest
 	chance = 100
 	vary = FALSE
@@ -180,17 +263,7 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiswamp4.ogg', 130 SECONDS, 1),
 	)
 
-/datum/looping_sound/ambient/town
-	chance = 100
-	vary = FALSE
-	volume = SOUND_LOOP_VOL_RANGE(100, 100)
-	direct = TRUE
-	loop_delay = 0
-	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 130 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 130 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/building.ogg', 4 SECONDS, 1),
-	)
+//Wildeness End
 
 /datum/looping_sound/ambient/woodcreak
 	chance = 50
@@ -205,6 +278,8 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/ambiwoodcreak3.ogg', 23 SECONDS, 1),
 	)
 
+
+//Underground//
 /datum/looping_sound/ambient/tunnel
 	chance = 50
 	vary = FALSE
@@ -227,22 +302,19 @@
 		SOUND_LOOP_ENTRY('sound/f13ambience/enclave_vault.ogg', 12 SECONDS, 1),
 	)
 
-/datum/looping_sound/ambient/building
-	chance = 80
+/datum/looping_sound/ambient/sewers
+	chance = 100
 	vary = FALSE
-	vary_direction = TRUE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
 	direct = TRUE
-	loop_delay = 30 SECONDS
+	loop_delay = 0
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding1.ogg', 60 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding2.ogg', 71 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding3.ogg', 24 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/ambibuilding4.ogg', 47 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/shack.ogg', 7 SECONDS, 1),
-		SOUND_LOOP_ENTRY('sound/f13ambience/warehouse.ogg', 9 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/sewers.ogg', 7 SECONDS, 1),
 	)
 
+//Underground End//
+
+//Generic Ambience//
 /datum/looping_sound/ambient/general
 	chance = 40
 	vary = FALSE
@@ -276,16 +348,27 @@
 		//SOUND_LOOP_ENTRY('sound/ambience/ambigen15.ogg', 12 SECONDS, 1),
 	)
 
-/datum/looping_sound/ambient/sewers
+/datum/looping_sound/ambient/lightbulb
 	chance = 100
 	vary = FALSE
+	vary_direction = TRUE
 	volume = SOUND_LOOP_VOL_RANGE(100, 100)
 	direct = TRUE
-	loop_delay = 0
+	loop_delay = 0 SECONDS
 	mid_sounds = list(
-		SOUND_LOOP_ENTRY('sound/f13ambience/sewers.ogg', 7 SECONDS, 1),
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambiflouriscentlight_1.ogg', 5 SECONDS, 1),
 	)
 
+/datum/looping_sound/ambient/torch
+	chance = 100
+	vary = FALSE
+	vary_direction = TRUE
+	volume = SOUND_LOOP_VOL_RANGE(100, 100)
+	direct = TRUE
+	loop_delay = 0 SECONDS
+	mid_sounds = list(
+		SOUND_LOOP_ENTRY('sound/f13ambience/ambitorch_1.ogg', 6 SECONDS, 1),
+	)
 
 /datum/looping_sound/ambient/steam
 	chance = 100
@@ -302,6 +385,8 @@
 		SOUND_LOOP_ENTRY('sound/ambience/ambimaint7.ogg', 6 SECONDS, 1),
 		SOUND_LOOP_ENTRY('sound/ambience/ambimaint9.ogg', 6 SECONDS, 1),
 	)
+
+//Generic Ambience End//
 
 //Radio Texarkana//
 
@@ -353,5 +438,5 @@
 		SOUND_LOOP_ENTRY('sound/f13/anythinggoes.ogg', 97 SECONDS, 10),
 		SOUND_LOOP_ENTRY('sound/f13/thats_life.ogg', 124 SECONDS, 10),
 	)
-//End Radio Texarkana//
+// Radio Texarkana End//
 
