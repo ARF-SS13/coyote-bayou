@@ -7901,6 +7901,7 @@
 	req_access_txt = "150";
 	req_one_access_txt = "150"
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
 	},
@@ -14272,6 +14273,19 @@
 /obj/item/wrench/basic,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
+"jNl" = (
+/obj/structure/closet/secure_closet/goodies{
+	anchorable = 0;
+	anchored = 1;
+	name = "loot locker";
+	req_access_txt = "150";
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/unique,
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "jNq" = (
 /mob/living/simple_animal/hostile/deathclaw,
 /obj/effect/decal/cleanable/dirt,
@@ -15486,6 +15500,17 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
+"kTq" = (
+/mob/living/simple_animal/hostile/handy/gutsy{
+	name = "mr. vaporizer";
+	maxHealth = 250;
+	desc = "A Mr. Gutsy model designed with endurance in mind. The inner shells are adjusted to take more physical damage to crack into.";
+	health = 250
+	},
+/turf/open/floor/f13{
+	icon_state = "greenrustyfull"
+	},
+/area/f13/clinic)
 "kTX" = (
 /mob/living/simple_animal/hostile/radroach,
 /turf/open/floor/plasteel/f13/vault_floor/yellow{
@@ -20232,7 +20257,8 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
 	desc = "A horrid creation capable of ultimate destruction.";
 	health = 1300;
-	name = "The People's Liberator"
+	name = "The People's Liberator";
+	maxHealth = 1300
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -37055,7 +37081,7 @@ xfk
 bLu
 bLa
 bLa
-bOk
+kTq
 bLa
 bxo
 aaa
@@ -37827,7 +37853,7 @@ bHS
 bLa
 bOk
 bLa
-dSY
+jNl
 bxo
 aaa
 aae
