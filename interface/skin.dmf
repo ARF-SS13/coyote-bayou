@@ -116,15 +116,29 @@ window "infowindow"
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'icons\\CoyoteBayouServerBanner.png'
+		outer-size = 656x538
+		inner-size = 640x499
+	elem "setoocstatus"
+		type = BUTTON
+		pos = 10,5
+		size = 160x20
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		background-color = none
+		saved-params = "is-checked"
+		text = "Set OOC Status"
+		command = "setoocstatus"
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -135,8 +149,9 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 34,0
 		anchor2 = 50,0
+		background-color = none
 		saved-params = "is-checked"
-		text = "TG Wiki"
+		text = "Coyote Wiki"
 		command = "tgwiki"
 	elem "changelog"
 		type = BUTTON
@@ -144,6 +159,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 50,0
 		anchor2 = 66,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Changelog"
 		command = "Changelog"
@@ -153,6 +169,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 66,0
 		anchor2 = 81,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -162,6 +179,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 81,0
 		anchor2 = 97,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Discord/Rules"
 		command = "discord"
@@ -234,20 +252,16 @@ window "preferences_window"
 		size = 1280x1001
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
 		image = 'icons\\CharacterCreator.png'
-		outer-size = 1296x1040
-		inner-size = 1280x1001
 	elem "Powerbutton"
 		type = BUTTON
 		pos = 922,891
 		size = 39x46
 		anchor1 = 72,89
 		anchor2 = 75,94
-		background-color = none
 		saved-params = "is-checked"
 		text = ""
 		image = 'icons\\Chargenbutton.png'
@@ -258,7 +272,6 @@ window "preferences_window"
 		size = 830x837
 		anchor1 = 0,0
 		anchor2 = 75,100
-		background-color = none
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
@@ -276,19 +289,15 @@ window "statwindow"
 		size = 1121x827
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 		image = 'icons\\pipscreen.png'
-		outer-size = 1137x885
-		inner-size = 1121x846
 	elem "statbrowser"
 		type = BROWSER
 		pos = 18,14
 		size = 1077x792
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		is-visible = false
 		saved-params = ""
 

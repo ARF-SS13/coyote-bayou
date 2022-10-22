@@ -3,6 +3,7 @@
 	set name = "tgwiki"
 	set desc = "Type what you want to know about.  This will open the wiki in your web browser. Type nothing to go to the main page."
 	set hidden = 1
+	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
 	var/wikiurltg = CONFIG_GET(string/wikiurltg)
 	if(wikiurltg)
 		if(query)
@@ -20,6 +21,7 @@
 	set name = "discord"
 	set desc = "Visit the Discord."
 	set hidden = 1
+	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
 	var/discordurl = CONFIG_GET(string/discordurl)
 	if(discordurl)
 		if(alert("This will open the Discord in your browser. Are you sure?",,"Yes","No")!="Yes")
@@ -33,6 +35,7 @@
 	set name = "github"
 	set desc = "Visit Github"
 	set hidden = 1
+	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
 		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")!="Yes")
@@ -46,6 +49,7 @@
 	set name = "report-issue"
 	set desc = "Report an issue"
 	set hidden = 1
+	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
 	var/githuburl = CONFIG_GET(string/githuburl)
 	if(githuburl)
 		var/message = "This will open the Github issue reporter in your browser. Are you sure?"
@@ -88,3 +92,13 @@
 	sleep(1)
 	src << browse(null, "window=preferences_window")
 
+/client/verb/setoocstatus()
+	set name = "setoocstatus"
+	set desc = "Closes the char gen window"
+	set hidden = 1// This hides the actual verb from the verb menu so you can just trigger this when you click a button)
+	SEND_SOUND(usr, sound('sound/machines/button4.ogg', repeat = 0, wait = 0, volume = 100, channel = 512))
+	var/client/C = src
+	var/mob/M = C.mob
+	if(!M) // if they aren't a mob, stop the function, before shit breaks.
+		return
+	M.SetStatusMsg() // Call the verb for them <3
