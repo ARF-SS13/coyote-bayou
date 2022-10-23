@@ -155,3 +155,12 @@
 	name = "Gas Pump"
 	icon_state = "oilpump4"
 	icon = 'modular_coyote/icons/objects/items.dmi'
+
+//Plushies
+/obj/item/toy/plush/deer
+	name = "deer plushie"
+	desc = "An adorable stuffed toy that resembles a deer."
+	icon = 'modular_coyote/icons/objects/items.dmi'
+	icon_state = "deer"
+	attack_verb = list("headbutt", "booped", "bapped", "bumped")
+	squeak_override = list('sound/items/deerplush.ogg' = 1)
