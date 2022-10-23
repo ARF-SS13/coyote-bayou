@@ -108,7 +108,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	fire_sound = 'sound/f13weapons/tribeamfire.ogg'
 
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan
-	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/tribeam/hitscan
 	pellets = 3
 	variance = 38
 	select_name = "tribeam"
