@@ -123,3 +123,17 @@
 	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/human/miqote
+	name = "Miqo'te"
+	icon_state = "miqote"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/ears/man_ears/miqote
+	name = "Miqo'te"
+	icon_state = "miqote"
+	icon = 'icons/mob/mam/coyote/mam_ears.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
