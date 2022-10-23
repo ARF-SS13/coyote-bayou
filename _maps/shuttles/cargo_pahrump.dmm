@@ -10,7 +10,6 @@
 /area/shuttle/supply)
 "d" = (
 /obj/structure/simple_door/bunker,
-/obj/effect/overlay/junk/curtain,
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "e" = (
@@ -50,13 +49,12 @@
 	width = 12
 	},
 /obj/structure/simple_door/bunker,
-/obj/effect/overlay/junk/curtain,
 /turf/open/floor/plating,
 /area/shuttle/supply)
 "k" = (
 /turf/closed/indestructible/f13vaultrusted,
 /area/shuttle/supply)
-"q" = (
+"S" = (
 /obj/machinery/conveyor{
 	dir = 8;
 	id = "QMLoad"
@@ -67,7 +65,7 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/supply)
-"P" = (
+"Z" = (
 /obj/machinery/button/door{
 	id = "QMLoaddoor";
 	name = "Loading Doors";
@@ -158,7 +156,7 @@ b
 b
 b
 g
-P
+Z
 b
 b
 b
@@ -174,7 +172,7 @@ d
 k
 k
 j
-q
+S
 k
 k
 k
