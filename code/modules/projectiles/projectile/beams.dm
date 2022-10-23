@@ -462,6 +462,8 @@
 	name = "badland's special beam"
 	damage = 26
 	armour_penetration = 0.15
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
 
 /obj/item/projectile/beam/laser/pistol/badlands/hitscan
 	name = "badland's special beam"
