@@ -7345,7 +7345,6 @@
 	},
 /area/f13/building/sewers)
 "dte" = (
-/obj/machinery/workbench,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
 /obj/effect/spawner/lootdrop/f13/resourcespawner,
@@ -7356,6 +7355,7 @@
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
 /obj/item/reagent_containers/glass/bottle/blackpowder,
+/obj/machinery/workbench/advanced,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "dtE" = (
@@ -15502,10 +15502,10 @@
 /area/f13/tunnel)
 "kTq" = (
 /mob/living/simple_animal/hostile/handy/gutsy{
-	name = "mr. vaporizer";
-	maxHealth = 250;
 	desc = "A Mr. Gutsy model designed with endurance in mind. The inner shells are adjusted to take more physical damage to crack into.";
-	health = 250
+	health = 250;
+	maxHealth = 250;
+	name = "mr. vaporizer"
 	},
 /turf/open/floor/f13{
 	icon_state = "greenrustyfull"
@@ -20257,8 +20257,8 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb/riot{
 	desc = "A horrid creation capable of ultimate destruction.";
 	health = 1300;
-	name = "The People's Liberator";
-	maxHealth = 1300
+	maxHealth = 1300;
+	name = "The People's Liberator"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -23042,10 +23042,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
-"rpF" = (
-/obj/machinery/workbench/advanced,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "rqJ" = (
 /obj/machinery/modular_computer/console/preset/engineering{
 	dir = 1
@@ -39436,7 +39432,7 @@ bLL
 bLL
 bLL
 bLL
-rpF
+bLL
 owS
 rLV
 fEI

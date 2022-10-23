@@ -71,7 +71,8 @@
 		/obj/item/gun/ballistic/revolver/revolver45,
 		/obj/item/gun/ballistic/revolver/m29,
 		/obj/item/gun/ballistic/revolver/revolver44,
-		/obj/item/gun/ballistic/revolver/hunting
+		/obj/item/gun/ballistic/revolver/hunting,
+		/obj/item/gun/ballistic/automatic/pistol/schmeisser
 		)
 
 /datum/export/item/smg
@@ -102,6 +103,7 @@
 		/obj/item/gun/ballistic/rifle/repeater/trail,
 		/obj/item/gun/ballistic/rifle/hunting,
 		/obj/item/gun/ballistic/rifle/enfield,
+		/obj/item/gun/ballistic/rifle/repeater/ranger
 	)
 
 /datum/export/item/dbshotgun
@@ -157,7 +159,8 @@
 		/obj/item/gun/ballistic/automatic/m1garand,
 		/obj/item/gun/ballistic/rifle/repeater/brush,
 		/obj/item/gun/ballistic/automatic/marksman/sniper,
-		/obj/item/gun/ballistic/rifle/mag/antimateriel
+		/obj/item/gun/ballistic/rifle/mag/antimateriel,
+		/obj/item/gun/ballistic/automatic/armalite,
 	)
 
 /datum/export/item/autorifle
