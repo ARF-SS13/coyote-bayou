@@ -479,7 +479,7 @@
 	desc = "A jury-rigged AEP7, this pistol carves out every safety feature and shortens the lenses length to cram a second emitter inside."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "bspecial"
-	item_state = "bspecial"
+	item_state = "laser-pistol"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/badlands)
