@@ -125,7 +125,7 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
 	pellets = 15
-	variance = 45
+	variance = 60
 	select_name = "tribeam"
 	e_cost = 1500 //1 shot
 
