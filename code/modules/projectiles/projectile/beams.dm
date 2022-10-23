@@ -486,6 +486,19 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/tribeam/laserbuss //Tribeam laser, fires 3 shots, will melt you
+	name = "tribeam laser"
+	damage = 21
+
+/obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
+	name = "tribeam laser"
+	damage = 20
+	hitscan = TRUE
+	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/f13plasma //Plasma rifle
 	name = "plasma bolt"
 	icon_state = "plasma_clot"
