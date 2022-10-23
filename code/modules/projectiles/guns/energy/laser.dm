@@ -496,6 +496,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
+	init_firemodes = list(
+		BURST_2_BEAM
+	)
 
 //autolaser, recycled from SS13
 
