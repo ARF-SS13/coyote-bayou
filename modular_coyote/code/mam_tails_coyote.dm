@@ -201,14 +201,14 @@
 	extra = TRUE
 	extra_color_src = MUTCOLORS2
 
-/datum/sprite_accessory/mam_tails/raptor
+/datum/sprite_accessory/tails/mam_tails/raptor
 	name = "Raptor"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	icon_state = "raptor"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
 
-/datum/sprite_accessory/mam_tails_animated/raptor
+/datum/sprite_accessory/tails/human/raptor
 	name = "Raptor"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
 	icon_state = "raptor"
