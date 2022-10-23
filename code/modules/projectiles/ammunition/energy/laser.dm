@@ -213,6 +213,15 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/solar/hitscan
 	e_cost = 125 //16 shots, self charges. selfchargng adds 100 each time it fires off, so 2 ticks per laser recharge.
 
+/obj/item/ammo_casing/energy/laser/pistol/badlands
+	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands
+	e_cost = 60
+	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
+
+/obj/item/ammo_casing/energy/laser/pistol/badlands/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands/hitscan
+	e_cost = 50
+
 /obj/item/ammo_casing/energy/laser/rcw
 	projectile_type = /obj/item/projectile/beam/laser/rcw
 	e_cost = 100 //11 shots

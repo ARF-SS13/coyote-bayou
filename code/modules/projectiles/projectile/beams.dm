@@ -448,7 +448,7 @@
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
-	armour_penetration = 0.42
+	armour_penetration = 0.35
 
 /obj/item/projectile/beam/laser/solar/hitscan
 	name = "solar scorcher beam"
@@ -457,6 +457,19 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
+
+/obj/item/projectile/beam/laser/pistol/badlands //Badland's Special
+	name = "badland's special beam"
+	damage = 26
+	armour_penetration = 0.15
+
+/obj/item/projectile/beam/laser/pistol/badlands/hitscan
+	name = "badland's special beam"
+	damage = 24
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/badlands
+	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
+	impact_type = /obj/effect/projectile/impact/laser/badlands
 
 /obj/item/projectile/beam/laser/tribeam //Tribeam laser, fires 3 shots, will melt you
 	name = "tribeam laser"

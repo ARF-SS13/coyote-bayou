@@ -10,6 +10,10 @@
 	name = "laser impact"
 	icon_state = "impact_blue"
 
+/obj/effect/projectile/impact/laser/badlands
+	name = "laser impact"
+	icon_state = "impact_badlands"
+
 /obj/effect/projectile/impact/disabler
 	name = "disabler impact"
 	icon_state = "impact_omni"
