@@ -8,6 +8,9 @@
 /obj/effect/projectile/muzzle/laser/blue
 	icon_state = "muzzle_laser_blue"
 
+/obj/effect/projectile/muzzle/laser/badlands
+	icon_state = "muzzle_laser_badlands"
+
 /obj/effect/projectile/muzzle/disabler
 	icon_state = "muzzle_omni"
 

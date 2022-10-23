@@ -472,6 +472,31 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
+//Badland's Special
+/obj/item/gun/energy/laser/badlands
+	name = "\improper Badland's Special"
+	slowdown = 0.2
+	desc = "A jury-rigged AEP7, this pistol carves out every safety feature and shortens the lenses length to cram a second emitter inside."
+	icon_state = "bspecial"
+	item_state = "bspecial"
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/badlands)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+	init_firemodes = list(
+		BURST_2_BEAM
+	)
+
 //autolaser, recycled from SS13
 
 /obj/item/gun/energy/laser/auto
@@ -694,6 +719,24 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
+/obj/item/gun/energy/laser/scatter/laserbuss
+	name = "Laserbuss"
+	desc = "A questionably-designed tribeam laser rifle that has been modified to feature a dense array of emitters and scatter lenses."
+	icon_state = "tribeam"
+	item_state = "laser-rifle9"
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	equipsound = 'sound/f13weapons/equipsounds/tribeamequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOWER * 0.9 //too slow.
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
 
 
 //AER12 Laser rifle

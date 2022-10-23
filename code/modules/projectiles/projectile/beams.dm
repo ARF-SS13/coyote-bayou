@@ -448,7 +448,7 @@
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
-	armour_penetration = 0.42
+	armour_penetration = 0.35
 
 /obj/item/projectile/beam/laser/solar/hitscan
 	name = "solar scorcher beam"
@@ -458,6 +458,21 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/badlands //Badland's Special
+	name = "badland's special beam"
+	damage = 26
+	armour_penetration = 0.15
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
+	light_color = LIGHT_COLOR_BLUE
+
+/obj/item/projectile/beam/laser/pistol/badlands/hitscan
+	name = "badland's special beam"
+	damage = 24
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser/badlands
+	muzzle_type = /obj/effect/projectile/muzzle/laser/badlands
+	impact_type = /obj/effect/projectile/impact/laser/badlands
+
 /obj/item/projectile/beam/laser/tribeam //Tribeam laser, fires 3 shots, will melt you
 	name = "tribeam laser"
 	damage = 21
@@ -465,6 +480,19 @@
 /obj/item/projectile/beam/laser/tribeam/hitscan
 	name = "tribeam laser"
 	damage = 25 //if all bullets connect, this will do 75.
+	hitscan = TRUE
+	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
+/obj/item/projectile/beam/laser/tribeam/laserbuss //Tribeam laser, fires 3 shots, will melt you
+	name = "tribeam laser"
+	damage = 21
+
+/obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
+	name = "tribeam laser"
+	damage = 20
 	hitscan = TRUE
 	bare_wound_bonus = -30 //tribeam is bad at wounding, as basically its only real downside
 	tracer_type = /obj/effect/projectile/tracer/laser

@@ -114,6 +114,21 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	select_name = "tribeam"
 	e_cost = 200 //10 shots
 
+/obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss
+	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss
+	pellets = 15
+	variance = 14
+	select_name = "scatter"
+	e_cost = 180 //11 shots
+	fire_sound = 'sound/f13weapons/tribeamfire.ogg'
+
+/obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
+	pellets = 15
+	variance = 60
+	select_name = "tribeam"
+	e_cost = 1500 //1 shot
+
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan/nonlethal
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/stun
 	pellets = 3
@@ -212,6 +227,15 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/laser/solar/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/solar/hitscan
 	e_cost = 125 //16 shots, self charges. selfchargng adds 100 each time it fires off, so 2 ticks per laser recharge.
+
+/obj/item/ammo_casing/energy/laser/pistol/badlands
+	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands
+	e_cost = 60
+	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
+
+/obj/item/ammo_casing/energy/laser/pistol/badlands/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands/hitscan
+	e_cost = 50
 
 /obj/item/ammo_casing/energy/laser/rcw
 	projectile_type = /obj/item/projectile/beam/laser/rcw
