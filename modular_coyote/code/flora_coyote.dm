@@ -509,3 +509,9 @@
 	icon = 'modular_coyote/icons/objects/flora.dmi'
 	icon_state = "tall_grass_5"
 	anchored = TRUE
+
+/obj/structure/groundcovering/snow
+	name = "snow"
+	icon = 'icons/turf/walls/mountain_wall.dmi'
+	icon_state = "snow"
+	anchored = TRUE
