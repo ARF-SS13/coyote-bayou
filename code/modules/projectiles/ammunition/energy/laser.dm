@@ -240,7 +240,9 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/badlands
 	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands
-	e_cost = 60
+	pellets = 2
+	variance = 30
+	e_cost = 150 //10 shots
 	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/badlands/hitscan
