@@ -640,6 +640,34 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
+//Wattz 2000s Laser rifle
+/obj/item/gun/energy/laser/wattz2ks
+	name = "wattz 2000s"
+	desc = "The Postwar Unicorn of laser rifles, The Wattz 2000 Sports Edition was designed for professional hunting - featuring a state-of-the-art lever-charging system that has still endured two hundred years later."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "wattz2ks"
+	item_state = "sniper_rifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/wattz2ks/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	slot_flags = ITEM_SLOT_BACK
+	can_scope = FALSE
+	zoom_factor = 1
+	can_charge = 0
+	selfcharge = 1
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
 
 
 //AER9 Laser rifle

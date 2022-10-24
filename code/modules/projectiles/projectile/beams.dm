@@ -698,6 +698,22 @@
 	impact_type = /obj/effect/projectile/impact/heavy_laser
 	hitscan = TRUE
 
+/obj/item/projectile/beam/laser/wattz2ks
+	name = "laser bolt"
+	damage = 35
+	armour_penetration = 0.5
+
+/obj/item/projectile/beam/laser/wattz2ks/hitscan
+	name = "sniper laser bolt"
+	damage = 45
+	wound_bonus = 5
+	bare_wound_bonus = 15
+	armour_penetration = 0.15
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+	hitscan = TRUE
+
 /obj/item/projectile/beam/laser/musket //musket
 	name = "laser bolt"
 	damage = 40

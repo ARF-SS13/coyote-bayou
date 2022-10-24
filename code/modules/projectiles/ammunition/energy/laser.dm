@@ -310,6 +310,17 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/wattz2k/extended/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan/weak
 	damage_threshold_penetration = 4 //The prices you pay for ammo efficiency.
+
+/obj/item/ammo_casing/energy/wattz2ks
+	projectile_type = /obj/item/projectile/beam/laser/wattz2ks
+	e_cost = 125
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+/obj/item/ammo_casing/energy/wattz2ks/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/wattz2ks/hitscan
+	e_cost = 160 //12.5 shots, yes there'll be some charge left over. Intentional.
+	damage_threshold_penetration = 7 //You're a sniper laser, act like it.
+
 //musket
 
 /obj/item/ammo_casing/energy/laser/musket
