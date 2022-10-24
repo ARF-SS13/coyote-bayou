@@ -643,7 +643,7 @@
 //Wattz 2000s Laser rifle
 /obj/item/gun/energy/laser/wattz2ks
 	name = "wattz 2000s"
-	desc = "The Postwar Unicorn of laser rifles, The Wattz 2000 Sports Edition was designed for professional hunting - featuring a state-of-the-art lever-charging system that has still endured two hundred years later."
+	desc = "The Postwar Unicorn of laser rifles, The Wattz 2000 Sports Edition was designed for professional hunting - featuring a state-of-the-art self-charging system that has still endured two hundred years later."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
