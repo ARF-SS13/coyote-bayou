@@ -34,7 +34,7 @@
 		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
 	)
 
-//Eve
+//Plasma pistol: Eve
 /obj/item/gun/energy/laser/plasma/pistol/eve
 	name ="eve"
 	icon = 'icons/fallout/objects/guns/energy.dmi'
