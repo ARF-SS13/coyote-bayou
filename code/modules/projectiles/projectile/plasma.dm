@@ -13,6 +13,21 @@ obj/item/projectile/energy/plasmabolt
 	if(isturf(target) || istype(target, /obj/structure/))
 		target.ex_act(EXPLODE_LIGHT)
 
+obj/item/projectile/energy/evebolt
+	name = "eve bolt"
+	icon_state = "eve"
+	flag = "energy"
+	damage_type = BURN
+	hitsound = 'sound/weapons/sear.ogg'
+	hitsound_wall = 'sound/weapons/effects/searwall.ogg'
+	light_range = 5
+	light_color = LIGHT_COLOR_PINK
+
+/obj/item/projectile/energy/plasmabolt/eve/on_hit(atom/target, blocked = FALSE)
+	. = ..()
+	if(isturf(target) || istype(target, /obj/structure/))
+		target.ex_act(EXPLODE_LIGHT)
+
 
 /obj/item/projectile/energy/plasmabolt/light
 	damage = 30
