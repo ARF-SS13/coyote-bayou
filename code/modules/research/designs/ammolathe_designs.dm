@@ -298,7 +298,7 @@
 	id = "Thompsonstick"
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/tommygunm45/stick/empty
-	category = list("initial", "Basic Magazines")	
+	category = list("initial", "Basic Magazines")
 
 //Tier 2 Ammo
 
@@ -499,13 +499,13 @@
 	materials = list(/datum/material/iron = 4000)
 	build_path = /obj/item/ammo_box/magazine/sks/empty
 	category = list("initial", "Intermediate Magazines")
-	
+
 /datum/design/ammolathe/rev308
 	name = "Empty 7.62mm/.308 Speedloader"
-	id = "rev308"	
+	id = "rev308"
 	materials = list(/datum/material/iron = 6000)
 	build_path = /obj/item/ammo_box/rev308/empty
-	category = list("initial", "Intermediate Magazines", "Handmade Magazines")	
+	category = list("initial", "Intermediate Magazines", "Handmade Magazines")
 
 /datum/design/ammolathe/amrmag
 	name = "empty anti-materiel rifle magazine (.50)"
@@ -566,19 +566,23 @@
 	build_path = /obj/item/ammo_box/magazine/smg14/stacked/empty
 	category = list("initial", "Advanced Magazines")
 
+
 /datum/design/ammolathe/rifleassault556
 	name = "empty 30rd rifle magazine (5.56mm)"
 	id = "rifleassault556"
-	materials = list(/datum/material/iron = 8000)
+	materials = list(/datum/material/iron = 8000,
+	/datum/material/titanium = 8000)
 	build_path = /obj/item/ammo_box/magazine/m556/rifle/assault/empty
 	category = list("initial", "Advanced Magazines")
 
 /datum/design/ammolathe/rifleassault5mm
 	name = "empty 30rd rifle magazine (5mm)"
 	id = "rifleassault5mm"
-	materials = list(/datum/material/iron = 8000)
+	materials = list(/datum/material/iron = 8000,
+		/datum/material/titanium = 8000)
 	build_path = /obj/item/ammo_box/magazine/m5mm/empty
 	category = list("initial", "Advanced Magazines")
+
 
 /datum/design/ammolathe/cz535mm
 	name = "empty 240rd cz53 pack (5mm)"
