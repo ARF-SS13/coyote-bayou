@@ -156,9 +156,9 @@
 	log_talk(message, LOG_SAY, tag="DEAD")
 	deadchat_broadcast(rendered, follow_target = src, speaker_key = key)
 
-/mob/proc/check_emote(message)
+/mob/proc/check_emote(message, just_runechat = FALSE)
 	if(message[1] == "*")
-		emote(copytext(message, length(message[1]) + 1), intentional = TRUE)
+		emote(copytext(message, length(message[1]) + 1), intentional = TRUE, only_overhead = just_runechat)
 		return TRUE
 
 /mob/proc/hivecheck()

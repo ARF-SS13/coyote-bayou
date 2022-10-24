@@ -49,7 +49,7 @@
 	mob_type_blacklist_typecache = typecacheof(mob_type_blacklist_typecache)
 	mob_type_ignore_stat_typecache = typecacheof(mob_type_ignore_stat_typecache)
 
-/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE)
+/datum/emote/proc/run_emote(mob/user, params, type_override, intentional = FALSE, only_overhead)
 	. = TRUE
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
@@ -70,17 +70,19 @@
 	user.log_message(msg, LOG_EMOTE)
 
 	var/tmp_sound = get_sound(user)
-	if(tmp_sound && should_play_sound(user, intentional) && !TIMER_COOLDOWN_CHECK(user, type))
-		TIMER_COOLDOWN_START(user, type, audio_cooldown)
+	if(tmp_sound && should_play_sound(user, intentional) &&	(!intentional || !(TIMER_COOLDOWN_CHECK(user, type))))
 		playsound(user, tmp_sound, sound_volume, sound_vary)
+		TIMER_COOLDOWN_START(user, type, audio_cooldown)
 
-	if(user.ckey)
+	if(user.ckey && !only_overhead)
 		user.emote_for_ghost_sight("<b>[user]</b> [msg]")
 
+	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
+
 	if(emote_type == EMOTE_AUDIBLE)
-		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = EMOTE_MESSAGE)
+		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = message_flags)
 	else
-		user.visible_message(msg, blind_message = intentional ? "<b>[user]</b> [msg]" : "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = EMOTE_MESSAGE)
+		user.visible_message(msg, blind_message = intentional ? "<b>[user]</b> [msg]" : "<span class='emote'>You hear how <b>[user]</b> [msg]</span>", visible_message_flags = message_flags)
 
 
 /// Sends the given emote message for all ghosts with ghost sight enabled, excluding close enough to listen normally.
