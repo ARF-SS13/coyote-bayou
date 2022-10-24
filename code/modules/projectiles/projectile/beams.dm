@@ -551,6 +551,10 @@
 	damage = 35
 	wound_bonus = 70 //being hit with plasma is horrific
 
+/obj/item/projectile/f13plasma/pistol/eve //Plasma pistol
+	damage = 45
+	wound_bonus = 75 //being hit with plasma is horrific
+
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30
 

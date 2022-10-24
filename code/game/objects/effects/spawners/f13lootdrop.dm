@@ -807,7 +807,8 @@
 
 	loot = list(/obj/item/gun/energy/laser/solar,
 				/obj/item/gun/energy/laser/badlands,
-				/obj/item/gun/energy/laser/scatter/laserbuss
+				/obj/item/gun/energy/laser/scatter/laserbuss,
+				/obj/item/gun/energy/laser/plasma/pistol/eve
 				)
 
 //Ballistic Weapon Spawners
