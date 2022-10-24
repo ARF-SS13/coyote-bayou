@@ -966,7 +966,8 @@ Raider
 	/datum/outfit/loadout/eidolon,
 	/datum/outfit/loadout/aviator,
 	/datum/outfit/loadout/trapper,
-	/datum/outfit/loadout/trouper)
+	/datum/outfit/loadout/trouper,
+	/datum/outfit/loadout/monk)
 //	/datum/outfit/loadout/ncrcitizen,
 //	/datum/outfit/loadout/legioncivilian,
 //	/datum/outfit/loadout/wastelander_desert_ranger)
@@ -1251,6 +1252,14 @@ Raider
 		/obj/item/reagent_containers/food/drinks/bottle/trappist=1,
 		/obj/item/reagent_containers/food/drinks/bottle/applejack=1,
 		/obj/item/reagent_containers/food/drinks/bottle/goldschlager=1,)
+
+/datum/outfit/loadout/monk
+	name = "Monk"
+	suit = /obj/item/clothing/suit/armor/light/kit/punk
+	shoes = /obj/item/clothing/shoes/wraps
+	head = /obj/item/clothing/head/helmet/f13/khan/bandana 
+	gloves = /obj/item/clothing/gloves/fingerless/pugilist/rapid
+
 // end dr wasteland loadout port
 /*
 /datum/outfit/loadout/legioncivilian

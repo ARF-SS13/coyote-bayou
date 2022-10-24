@@ -95,13 +95,14 @@
 	secondary_trait = TRAIT_STRONG_GRABBER
 
 /obj/item/clothing/gloves/fingerless/pugilist/rapid
-	name = "Bands of the North Star"
-	desc = "The armbands of a deadly martial artist. Makes you pretty keen to put an end to evil in an extremely violent manner."
+	name = "Bands of the Swamp Star"
+	desc = "The armbands of a deadly martial artist, putting them on means accepting a way of life. Once worn, they cannot be removed!"
 	icon_state = "rapid"
 	item_state = "rapid"
 	enhancement = 10 //omae wa mou shindeiru
-	var/warcry = "AT"
-	secondary_trait = TRAIT_NOSOFTCRIT //basically extra health
+	var/warcry = ""
+	secondary_trait = TRAIT_NOGUNS //No pew pew
+
 
 /obj/item/clothing/gloves/fingerless/pugilist/rapid/Initialize()
 	. = ..()
@@ -114,7 +115,7 @@
 	var/mob/living/M = loc
 	M.SetNextAction(CLICK_CD_RAPID)
 	if(warcry)
-		M.say("[warcry]", ignore_spam = TRUE, forced = TRUE)
+		M.say("[warcry]", ignore_spam = TRUE, forced = TRUE, just_chat = TRUE) // ONLY in the overhead text thing!
 
 	return NO_AUTO_CLICKDELAY_HANDLING | ATTACK_IGNORE_ACTION
 
