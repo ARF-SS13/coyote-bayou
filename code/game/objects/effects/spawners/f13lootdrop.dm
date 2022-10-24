@@ -762,7 +762,8 @@
 	name = "low tier energy gun"
 	loot = list(/obj/effect/spawner/bundle/f13/wattz = 40,
 				/obj/effect/spawner/bundle/f13/wattzm = 25,
-				/obj/effect/spawner/bundle/f13/laserpistol = 35
+				/obj/item/gun/energy/laser/wattzs = 15,
+				/obj/effect/spawner/bundle/f13/laserpistol = 20
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid
@@ -772,7 +773,7 @@
 				/obj/effect/spawner/bundle/f13/wattz2k = 30,
 				///obj/effect/spawner/bundle/f13/wattz2kext = 10, Now a high tier gun.
 				/obj/effect/spawner/bundle/f13/plasmapistol = 20,
-				/obj/effect/spawner/bundle/f13/ionrifle = 15
+				/obj/effect/spawner/bundle/f13/ionrifle = 5
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh //overlaps with midtier

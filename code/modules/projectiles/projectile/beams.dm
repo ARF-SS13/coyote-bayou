@@ -445,6 +445,17 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/wattzs //Wattz 1000s pistol
+	damage = 31
+
+/obj/item/projectile/beam/laser/pistol/wattzs/hitscan //hitscan wattz
+	name = "laser beam"
+	damage = 20 //Less damage but more charge
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
