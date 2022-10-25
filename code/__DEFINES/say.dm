@@ -100,3 +100,5 @@
 
 //Used in visible_message_flags, audible_message_flags and runechat_flags
 #define EMOTE_MESSAGE (1<<0)
+// Only show the overhead thing
+#define ONLY_OVERHEAD (1<<1)

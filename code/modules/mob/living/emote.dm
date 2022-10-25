@@ -444,7 +444,7 @@
 		return TRUE
 	return FALSE
 
-/datum/emote/living/custom/run_emote(mob/user, params, type_override = null)
+/datum/emote/living/custom/run_emote(mob/user, params, type_override = null, only_overhead)
 	if(jobban_isbanned(user, "emote"))
 		to_chat(user, "You cannot send custom emotes (banned).")
 		return FALSE
