@@ -75,7 +75,21 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails_animated/mam_tails/raccoon
+	name = "raccoon"
+	icon_state = "raccoon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/raccoon
+	name = "raccoon"
+	icon_state = "raccoon"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/raccoon
 	name = "raccoon"
 	icon_state = "raccoon"
 	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
