@@ -574,10 +574,24 @@
 	icon_state = "witchwing3"
 
 // Coyote markings, from arfs
+/*
 
 /datum/sprite_accessory/mam_body_markings/paw_socks
 	name = "Paw Socks"
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "pawsocks"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+*/
+/datum/sprite_accessory/mam_body_markings/pawsocks
+	name = "Paw Socks"
+	icon_state = "pawsocks"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/patches
+	name = "Patches"
+	icon_state = "patches"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
 
