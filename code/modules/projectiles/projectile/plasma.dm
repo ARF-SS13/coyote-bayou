@@ -15,6 +15,7 @@ obj/item/projectile/energy/plasmabolt
 
 obj/item/projectile/energy/evebolt
 	name = "eve bolt"
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
 	icon_state = "eve"
 	flag = "energy"
 	damage_type = BURN

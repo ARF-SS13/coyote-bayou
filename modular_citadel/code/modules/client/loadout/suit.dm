@@ -158,6 +158,26 @@
 /datum/gear/suit/coat/marlow/blackformaljacket
 	name = "Black Formal Jacket"
 	path = /obj/item/clothing/suit/armor/outfit/jacket/blackformaljacket
+
+/datum/gear/suit/coat/marlow/peacefulcoat
+	name = "Peacetakers Jacket"
+	path = /obj/item/clothing/suit/armor/light/duster/peacefulcoat
+	cost = 3
+
+/datum/gear/suit/coat/marlow/poachercoat
+	name = "Poachers Coat"
+	path = /obj/item/clothing/suit/armor/light/duster/poachercoat
+	cost = 3
+
+/datum/gear/suit/coat/marlow/poachervest
+	name = "Poachers Vest"
+	path = /obj/item/clothing/suit/armor/light/duster/poachervest
+	cost = 3
+
+/datum/gear/suit/coat/marlow/dantecoat
+	name = "Mercenary Trenchcoat"
+	path = /obj/item/clothing/suit/armor/light/duster/dantecoat
+	cost = 3
 /// End of Coats/Armor section
 
 /datum/gear/suit/NCRutilityvest

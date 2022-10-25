@@ -7,6 +7,11 @@
 	name = "poncho"
 	path = /obj/item/clothing/neck/mantle/poncho
 
+/datum/gear/neck/outlawscloak
+	name = "Outlaw's Cloak"
+	path = /obj/item/storage/belt/outlawscloak
+	cost = 2
+
 /datum/gear/neck/pelt
 	name = "bighorner pelt"
 	path = /obj/item/clothing/neck/mantle/peltfur
