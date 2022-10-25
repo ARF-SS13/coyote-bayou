@@ -562,9 +562,11 @@
 	damage = 35
 	wound_bonus = 70 //being hit with plasma is horrific
 
-/obj/item/projectile/f13plasma/pistol/eve //Plasma pistol
+/obj/item/projectile/f13plasma/pistol/eve //Eve
+	icon_state = "eve"
 	damage = 45
 	wound_bonus = 75 //being hit with plasma is horrific
+	light_color = LIGHT_COLOR_PINK
 
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30
