@@ -586,3 +586,9 @@
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "patches"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/man_body_markings/bands
+	name = "Bands"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "bands"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
