@@ -304,7 +304,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
-//Watss 1000 Magneto-laser pistol
+//Wattz 1000 Magneto-laser pistol
 /obj/item/gun/energy/laser/wattz/magneto
 	name = "Wattz 1000 magneto-laser pistol"
 	desc = "This Wattz 1000 laser pistol has been upgraded with a magnetic field targeting system that tightens the laser emission, giving this pistol extra penetrating power."
@@ -321,6 +321,31 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 
+//Wattz 1000s Laser pistol
+/obj/item/gun/energy/laser/wattzs
+	name = "Wattz 1000s laser pistol"
+	desc = "The Wattz 1000 Sports Edition was designed as a direct competitor to the AEP7, boasting an optimized emitter that greatly increases cell efficiency."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "wattz1000s"
+	item_state = "laser-pistol"
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BELT
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol/wattzs/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/ec
+	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
+//Recharger Pistol
 /obj/item/gun/energy/laser/wattz/recharger
 	name = "Recharger Pistol"
 	desc = "A recharger pistol manufactured by the Followers of the Apocalpyse. As the name implied, it charges its capacitor banks over time using radioactive decay."
@@ -604,6 +629,34 @@
 	cell_type = /obj/item/stock_parts/cell/ammo/mfc
 	can_scope = FALSE
 	zoom_factor = 1
+	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	burst_size = 1
+
+//Wattz 2000s Laser rifle
+/obj/item/gun/energy/laser/wattz2ks
+	name = "wattz 2000s"
+	desc = "The Postwar Unicorn of laser rifles, The Wattz 2000 Sports Edition was designed for professional hunting - featuring a state-of-the-art self-charging system that has still endured two hundred years later."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/backslot_weapon.dmi'
+	icon_state = "wattz2ks"
+	item_state = "sniper_rifle"
+	ammo_type = list(/obj/item/ammo_casing/energy/wattz2ks/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/mfc
+	slot_flags = ITEM_SLOT_BACK
+	can_scope = FALSE
+	zoom_factor = 1
+	can_charge = 0
+	selfcharge = 1
 	equipsound = 'sound/f13weapons/equipsounds/aer14equip.ogg'
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI

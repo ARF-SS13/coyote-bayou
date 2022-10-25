@@ -445,6 +445,17 @@
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
 
+/obj/item/projectile/beam/laser/pistol/wattzs //Wattz 1000s pistol
+	damage = 31
+
+/obj/item/projectile/beam/laser/pistol/wattzs/hitscan //hitscan wattz
+	name = "laser beam"
+	damage = 20 //Less damage but more charge
+	hitscan = TRUE
+	tracer_type = /obj/effect/projectile/tracer/laser
+	muzzle_type = /obj/effect/projectile/muzzle/laser
+	impact_type = /obj/effect/projectile/impact/laser
+
 /obj/item/projectile/beam/laser/solar //Solar Scorcher
 	name = "solar scorcher beam"
 	damage = 28
@@ -460,8 +471,8 @@
 
 /obj/item/projectile/beam/laser/pistol/badlands //Badland's Special
 	name = "badland's special beam"
-	damage = 26
-	armour_penetration = 0.15
+	damage = 15
+	armour_penetration = 0.3
 	icon_state = "bluelaser"
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/blue_laser
 	light_color = LIGHT_COLOR_BLUE
@@ -682,6 +693,22 @@
 	wound_bonus = 10
 	bare_wound_bonus = 20
 	armour_penetration = 0.1
+	tracer_type = /obj/effect/projectile/tracer/heavy_laser
+	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
+	impact_type = /obj/effect/projectile/impact/heavy_laser
+	hitscan = TRUE
+
+/obj/item/projectile/beam/laser/wattz2ks
+	name = "laser bolt"
+	damage = 35
+	armour_penetration = 0.5
+
+/obj/item/projectile/beam/laser/wattz2ks/hitscan
+	name = "sniper laser bolt"
+	damage = 45
+	wound_bonus = 5
+	bare_wound_bonus = 15
+	armour_penetration = 0.15
 	tracer_type = /obj/effect/projectile/tracer/heavy_laser
 	muzzle_type = /obj/effect/projectile/muzzle/heavy_laser
 	impact_type = /obj/effect/projectile/impact/heavy_laser

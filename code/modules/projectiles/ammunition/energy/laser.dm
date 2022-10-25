@@ -116,18 +116,18 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss
 	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss
-	pellets = 15
+	pellets = 8
 	variance = 14
 	select_name = "scatter"
-	e_cost = 180 //11 shots
+	e_cost = 187.5 //8 shots
 	fire_sound = 'sound/f13weapons/tribeamfire.ogg'
 
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/laserbuss/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/tribeam/laserbuss/hitscan
-	pellets = 15
-	variance = 60
+	pellets = 8
+	variance = 50
 	select_name = "tribeam"
-	e_cost = 1500 //1 shot
+	e_cost = 750 //2 shots
 
 /obj/item/ammo_casing/energy/laser/scatter/tribeam/hitscan/nonlethal
 	projectile_type = /obj/item/projectile/beam/laser/pistol/hitscan/stun
@@ -205,6 +205,16 @@ also: most hitscan weapons have more charge than their normal projectile counter
 	projectile_type = /obj/item/projectile/beam/laser/pistol/wattz/magneto/hitscan
 	e_cost = 100 //10 Shots. That extra Armor pen has to come out of somewhere.
 
+/obj/item/ammo_casing/energy/laser/pistol/wattzs
+	projectile_type = /obj/item/projectile/beam/laser/pistol/wattzs
+	e_cost = 37.5 //40 shots
+	fire_sound = 'sound/f13weapons/WattzPistolFire.ogg'
+
+/obj/item/ammo_casing/energy/laser/pistol/wattzs/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/pistol/wattzs/hitscan
+	e_cost = 37.5 //40 Shots
+	damage_threshold_penetration = 4 // Better against slightly more armored targets
+
 /obj/item/ammo_casing/energy/laser/lasgun
 	projectile_type = /obj/item/projectile/beam/laser/lasgun
 	e_cost = 80 //25 shots
@@ -230,7 +240,9 @@ also: most hitscan weapons have more charge than their normal projectile counter
 
 /obj/item/ammo_casing/energy/laser/pistol/badlands
 	projectile_type = /obj/item/projectile/beam/laser/pistol/badlands
-	e_cost = 60
+	pellets = 2
+	variance = 20
+	e_cost = 150 //10 shots
 	fire_sound = 'sound/f13weapons/laser_pistol.ogg'
 
 /obj/item/ammo_casing/energy/laser/pistol/badlands/hitscan
@@ -300,6 +312,17 @@ also: most hitscan weapons have more charge than their normal projectile counter
 /obj/item/ammo_casing/energy/wattz2k/extended/hitscan
 	projectile_type = /obj/item/projectile/beam/laser/wattz2k/hitscan/weak
 	damage_threshold_penetration = 4 //The prices you pay for ammo efficiency.
+
+/obj/item/ammo_casing/energy/wattz2ks
+	projectile_type = /obj/item/projectile/beam/laser/wattz2ks
+	e_cost = 125
+	fire_sound = 'sound/f13weapons/WattzRifleFire.ogg'
+
+/obj/item/ammo_casing/energy/wattz2ks/hitscan
+	projectile_type = /obj/item/projectile/beam/laser/wattz2ks/hitscan
+	e_cost = 160 //12.5 shots, yes there'll be some charge left over. Intentional.
+	damage_threshold_penetration = 7 //You're a sniper laser, act like it.
+
 //musket
 
 /obj/item/ammo_casing/energy/laser/musket
