@@ -579,5 +579,5 @@
 	name = "Paw Socks"
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "pawsocks"
-	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
