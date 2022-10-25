@@ -474,6 +474,17 @@
 	new /obj/item/ammo_box/c4570(src)
 	new /obj/item/ammo_box/c4570(src)
 
+/obj/item/storage/belt/outlawscloak
+	name = "outlaws cloak"
+	desc = "A sturdy, thick poncho made from burlap. Comes with a salvaged shoulderpad and a hidden armpit holster."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "outlaws_cloak"
+	item_state = "outlaws_cloak"
+	alternate_worn_layer = UNDER_SUIT_LAYER
+	slot_flags = ITEM_SLOT_NECK
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+
 //////////////////
 /// Neck medibelt
 
