@@ -572,3 +572,12 @@
 /datum/sprite_accessory/insect_fluff/witchwing_nofur
 	name = "Witch Wing No Fur"
 	icon_state = "witchwing3"
+
+// Coyote markings, from arfs
+
+/datum/sprite_accessory/mam_body_markings/paw_socks
+	name = "Paw Socks"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "pawsocks"
+	covered_limbs = list("Head" = MATRIX_RED, "Chest" = MATRIX_RED, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
