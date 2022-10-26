@@ -563,6 +563,7 @@
 	wound_bonus = 70 //being hit with plasma is horrific
 
 /obj/item/projectile/f13plasma/pistol/eve //Eve
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
 	icon_state = "eve"
 	damage = 45
 	wound_bonus = 75 //being hit with plasma is horrific
