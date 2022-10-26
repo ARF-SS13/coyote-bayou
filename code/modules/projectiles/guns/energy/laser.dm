@@ -340,7 +340,7 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
+	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
@@ -519,14 +519,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	init_firemodes = list(
-		BURST_2_BEAM
-	)
 
 //autolaser, recycled from SS13
 
 /obj/item/gun/energy/laser/auto
-	name = "compact autolaser"
+	name = "compact rcw"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
@@ -545,6 +542,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
+	init_firemodes = list(
+		BURST_2_BEAM
+	)
 
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
