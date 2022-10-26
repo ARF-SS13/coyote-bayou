@@ -487,3 +487,12 @@
 	name = "WahCoon ALT (Top)"
 	icon_state = "fwahalt"
 	matrixed_sections = MATRIX_RED_GREEN
+
+//ARFS SPRITES
+
+
+/datum/sprite_accessory/snouts/mam_snouts/rodentalt
+	name = "Rodent Head"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "rodent"
+	matrixed_sections = MATRIX_ALL
