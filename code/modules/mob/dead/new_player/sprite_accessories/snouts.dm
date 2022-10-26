@@ -493,6 +493,6 @@
 
 /datum/sprite_accessory/snouts/mam_snouts/rodentalt
 	name = "Rodent Head"
-	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon = 'icons/mob/mam/coyote/mam_snouts.dmi'
 	icon_state = "rodent"
 	matrixed_sections = MATRIX_ALL
