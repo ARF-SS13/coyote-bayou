@@ -760,10 +760,11 @@
 //Energy Weapon Spawners
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low
 	name = "low tier energy gun"
-	loot = list(/obj/effect/spawner/bundle/f13/wattz = 40,
+	loot = list(/obj/effect/spawner/bundle/f13/wattz = 35,
 				/obj/effect/spawner/bundle/f13/wattzm = 25,
-				/obj/item/gun/energy/laser/wattzs = 15,
-				/obj/effect/spawner/bundle/f13/laserpistol = 20
+				/obj/item/gun/energy/laser/wattzs = 10,
+				/obj/effect/spawner/bundle/f13/laserpistol = 20,
+				/obj/item/gun/energy/laser/auto = 20
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid

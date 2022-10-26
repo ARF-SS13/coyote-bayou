@@ -570,6 +570,18 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/gun/autoshock
+	name = "Autoshock tesla pistol"
+	result = /obj/item/gun/energy/laser/auto/oasis
+	reqs = list(/obj/item/gun/energy/laser/auto = 1,
+				/obj/item/stock_parts/capacitor/adv = 1,
+				/obj/item/stack/crafting/electronicparts = 10,
+				/obj/item/stack/cable_coil = 3)
+	tools = list(TOOL_WORKBENCH, TOOL_MULTITOOL)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 
 //browning hi-power
 /datum/crafting_recipe/ninemil
