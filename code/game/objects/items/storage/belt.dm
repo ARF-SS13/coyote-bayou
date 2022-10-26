@@ -485,6 +485,50 @@
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
+/obj/item/storage/belt/peacefulcoat
+	name = "peacetakers jacket"
+	desc = "A mangy bomber jacket haphazardly patched up and reinforced with old bits of armor and metal plates. Someone spraypainted a peace-sign on its back... Comes with a holster."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "peacefulcoat"
+	item_state = "peacefulcoat"
+	alternate_worn_layer = UNDER_SUIT_LAYER
+	slot_flags = ITEM_SLOT_NECK
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+
+/obj/item/storage/belt/poachercoat
+	name = "poachers coat"
+	desc = "A makeshift coat made out of salvaged vault-suits haphazardly stitched together. Comes with a pelt collar, salvaged armor parts and a hidden holster."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "poachercoat"
+	item_state = "poachercoat"
+	alternate_worn_layer = UNDER_SUIT_LAYER
+	slot_flags = ITEM_SLOT_NECK
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+
+/obj/item/storage/belt/poachervest
+	name = "poachers vest"
+	desc = "A makeshift vest made out of salvaged vault-suits haphazardly stitched together. Comes with a pelt collar, leather bits and a shoulder holster hidden underneath."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "poachervest"
+	item_state = "poachervest"
+	alternate_worn_layer = UNDER_SUIT_LAYER
+	slot_flags = ITEM_SLOT_NECK
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+
+/obj/item/storage/belt/dantecoat
+	name = "mercenary trenchcoat"
+	desc = "A flashy red trenchcoat with rolled back sleeves, brass details and a zipper. Has a twin-holster integrated on the outside. For when there is a storm approaching and you gotta pull your devil trigger."
+	icon = 'icons/fallout/clothing/belts.dmi'
+	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
+	icon_state = "dantecoat"
+	item_state = "dantecoat"
+	alternate_worn_layer = UNDER_SUIT_LAYER
+	slot_flags = ITEM_SLOT_NECK
+	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
+
 //////////////////
 /// Neck medibelt
 
