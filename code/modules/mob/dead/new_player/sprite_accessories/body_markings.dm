@@ -574,6 +574,7 @@
 	icon_state = "witchwing3"
 
 // Coyote markings, from arfs
+// Full Body Markings
 
 /datum/sprite_accessory/mam_body_markings/paw_socks
 	name = "Paw Socks"
@@ -599,6 +600,8 @@
 	icon_state = "tiger"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
 
+//Chest and Back markings
+
 /datum/sprite_accessory/mam_body_markings/backstripe
 	name = "Back Stripe"
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
@@ -622,3 +625,41 @@
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "scutesbelly"
 	covered_limbs = list("Chest" = MATRIX_RED)
+
+// Tattoos
+
+/datum/sprite_accessory/mam_body_markings/tatnightling
+	name = "Tattoo Nightling"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatnightling"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatcampbell
+	name = "Tattoo Campbell"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatcampbell"
+	covered_limbs = list("Right Arm" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Leg" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tattiger
+	name = "Tiger Tattoos"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tattiger"
+	covered_limbs = list("Right Arm" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatsilverburgh
+	name = "Tattoo Silverburgh"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatsilverburgh"
+	covered_limbs = list("Right Leg" = MATRIX_RED, "Left Leg" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatlips
+	name = "Lip Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "lips"
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatblush
+	name = "Blush Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "blush"
+	covered_limbs = list("Head" = MATRIX_RED)
