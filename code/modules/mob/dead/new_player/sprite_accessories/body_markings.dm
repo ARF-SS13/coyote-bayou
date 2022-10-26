@@ -663,3 +663,9 @@
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "blush"
 	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatblush
+	name = "Blush Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "blush"
+	covered_limbs = list("Head" = MATRIX_RED)
