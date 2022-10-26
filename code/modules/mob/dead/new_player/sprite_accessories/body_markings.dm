@@ -579,7 +579,7 @@
 	name = "Paw Socks"
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "pawsocks"
-	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/patches
 	name = "Patches"
@@ -592,3 +592,33 @@
 	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
 	icon_state = "bands"
 	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tigerstripes
+	name = "Tiger Stripes"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tiger"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/backstripe
+	name = "Back Stripe"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "backstripe"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tajbelly
+	name = "Tajaran Belly"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tajbelly"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tajbellyfull
+	name = "Tajaran Belly, full"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tajbellyfull"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/scutesbelly
+	name = "Scutes Belly"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "scutesbelly"
+	covered_limbs = list("Chest" = MATRIX_RED)
