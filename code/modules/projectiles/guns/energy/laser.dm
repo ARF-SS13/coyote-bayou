@@ -340,7 +340,7 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_FAST
+	fire_delay = GUN_FIRE_DELAY_NORMAL
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
@@ -519,21 +519,18 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
-	init_firemodes = list(
-		BURST_2_BEAM
-	)
 
-//autolaser, recycled from SS13
+//Compact RCW
 
 /obj/item/gun/energy/laser/auto
-	name = "compact autolaser"
+	name = "compact rcw"
 	desc = "A beefed-up laser pistol manufactured by West Tek, reinforced to allow it to withstand the thermal load of sustained fire."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
 	icon_state = "protolaser"
 	item_state = "laser"
 	w_class = WEIGHT_CLASS_NORMAL
 	cell_type = /obj/item/stock_parts/cell/ammo/ecp
-	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //7dmg, 0 AP, but essentially fires a pinpoint beam
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser) //5dmg, 0.4 AP, good for fast firings.
 	automatic = 1
 	can_scope = FALSE
 
@@ -541,22 +538,50 @@
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
+	init_firemodes = list(
+		BURST_2_BEAM
+	)
+
+//Worn compact RCW
+/obj/item/gun/energy/laser/auto
+	name = "worn compact rcw"
+	desc = "A much more compact version of the RCW. Attuned to pierce through most armor with ease, while also being more streamlined."
+	icon = 'icons/fallout/objects/guns/energy.dmi'
+	icon_state = "protolaser"
+	item_state = "laser"
+	w_class = WEIGHT_CLASS_NORMAL
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/worn) //5dmg, 0.4 AP, good for fast firings.
+	automatic = 1
+	can_scope = FALSE
+
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FASTEST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
+	burst_size = 1
+	init_firemodes = list(
+		BURST_2_BEAM
+	)
 
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis
 	name = "autoshock tesla pistol"
-	desc = "This pistol has been unwisely modified by the OPD to fire bolts of electricty. And they beheld Satan as he fell from heaven like lightning."
+	desc = " An upgraded version of the Compact RCW. Boasts a higher cell efficiency at the cost of the burstfire and armor melting power."
 	ammo_type =  list(/obj/item/ammo_casing/energy/laser/autolaser/shock) //8dmg + 10 Stamina, flagged as "energy" so very few armors can reduce it below 5-6 dmg, has a very high bare wound bonus, so anyone with no armor on will be crippled
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_NORMAL
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_FASTEST
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1

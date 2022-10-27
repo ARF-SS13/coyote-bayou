@@ -481,7 +481,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "outlaws_cloak"
 	item_state = "outlaws_cloak"
-	alternate_worn_layer = UNDER_SUIT_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
@@ -492,7 +492,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "peacefulcoat"
 	item_state = "peacefulcoat"
-	alternate_worn_layer = UNDER_SUIT_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
@@ -503,7 +503,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "poachercoat"
 	item_state = "poachercoat"
-	alternate_worn_layer = UNDER_SUIT_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
@@ -514,7 +514,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "poachervest"
 	item_state = "poachervest"
-	alternate_worn_layer = UNDER_SUIT_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
@@ -525,7 +525,7 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/belt.dmi'
 	icon_state = "dantecoat"
 	item_state = "dantecoat"
-	alternate_worn_layer = UNDER_SUIT_LAYER
+	body_parts_covered = CHEST|GROIN|ARMS
 	slot_flags = ITEM_SLOT_NECK
 	component_type = /datum/component/storage/concrete/neckpron/specialized/gun
 
