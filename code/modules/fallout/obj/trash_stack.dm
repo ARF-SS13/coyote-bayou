@@ -30,37 +30,34 @@
 
 /obj/item/storage/trash_stack/attack_hand(mob/user)
 	var/turf/ST = get_turf(src)
-	if(user?.a_intent != INTENT_HARM)
-		if(user in loot_players)
-			to_chat(user, span_notice("You already have looted [src]."))
-			return
-		for(var/i=0, i<rand(1,4), i++)
-			var/itemtype= pickweight(lootable_trash)
-			//var/itemtypebonus= pickweight(lootable_trash)
-			if(itemtype)
-				to_chat(user, span_notice("You scavenge through [src]."))
-				var/obj/item/item = new itemtype(ST)
-				//if (prob(10+(user.special_l*3.5)))//SPECIAL Integration
-				//	to_chat(user, span_notice("You get lucky and find even more loot!"))
-				//	var/obj/item/bonusitem = new itemtypebonus(ST)				
-				//	if(istype(bonusitem))
-				//		bonusitem.from_trash = TRUE
-				if(istype(item))
-					item.from_trash = TRUE
-				if(isgun(item))
-					var/obj/item/gun/trash_gun = item
-					var/prob_trash = 80
-					while(prob_trash > 0)
-						if(prob(prob_trash))
-							var/trash_mod_path = pick(GLOB.trash_gunmods)
-							var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
-							if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
-								break
-							QDEL_NULL(trash_mod)
-						prob_trash -= 40
-		loot_players += user
-	else
-		return ..()
+	if(user in loot_players)
+		to_chat(user, span_notice("You already have looted [src]."))
+		return
+	for(var/i=0, i<rand(1,4), i++)
+		var/itemtype= pickweight(lootable_trash)
+		//var/itemtypebonus= pickweight(lootable_trash)
+		if(itemtype)
+			to_chat(user, span_notice("You scavenge through [src]."))
+			var/obj/item/item = new itemtype(ST)
+			//if (prob(10+(user.special_l*3.5)))//SPECIAL Integration
+			//	to_chat(user, span_notice("You get lucky and find even more loot!"))
+			//	var/obj/item/bonusitem = new itemtypebonus(ST)
+			//	if(istype(bonusitem))
+			//		bonusitem.from_trash = TRUE
+			if(istype(item))
+				item.from_trash = TRUE
+			if(isgun(item))
+				var/obj/item/gun/trash_gun = item
+				var/prob_trash = 80
+				while(prob_trash > 0)
+					if(prob(prob_trash))
+						var/trash_mod_path = pick(GLOB.trash_gunmods)
+						var/obj/item/gun_upgrade/trash_mod = new trash_mod_path
+						if(SEND_SIGNAL(trash_mod, COMSIG_ITEM_ATTACK_OBJ_NOHIT, trash_gun, null))
+							break
+						QDEL_NULL(trash_mod)
+					prob_trash -= 40
+	loot_players += user
 
 
 
