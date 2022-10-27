@@ -292,12 +292,6 @@
 	icon_state = "knight_yellow"
 	item_state = "knight_yellow"
 
-/obj/item/clothing/head/helmet/knight/red
-	name = "red medieval helmet"
-	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era.<br>This one is painted red."
-	icon_state = "knight_red"
-	item_state = "knight_red"
-
 /obj/item/clothing/head/helmet/knight/templar
 	name = "crusader helmet"
 	desc = "Deus Vult."

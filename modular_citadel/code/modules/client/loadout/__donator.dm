@@ -196,6 +196,16 @@
 
 // D
 
+/datum/gear/donator/kits/dameonowen
+	name = "Dragon Stash"
+	path = /obj/item/storage/box/large/custom_kit/dameonowen
+	ckeywhitelist = list("dameonowen")
+
+/obj/item/storage/box/large/custom_kit/dameonowen/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
 	path = /obj/item/storage/box/large/custom_kit/dezuel
@@ -443,6 +453,16 @@
 	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
+/datum/gear/donator/kits/pixelexip
+	name = "Bruiser's Kit"
+	path = /obj/item/storage/box/large/custom_kit/pixelexip
+	ckeywhitelist = list("pixelexip")
+
+/obj/item/storage/box/large/custom_kit/pixelexip/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/poachervest(src)
+	new /obj/item/reagent_containers/food/drinks/flask/gold(src)
+	new /obj/item/clothing/gloves/fingerless/pugilist/rapid(src)
+
 /datum/gear/donator/kits/planetary
 	name = "Collector"
 	path = /obj/item/storage/box/large/custom_kit/planetary
@@ -505,6 +525,8 @@
 
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/claymore(src)
+	new /obj/item/clothing/suit/armor/light/knight(src)
+	new /obj/item/clothing/suit/armor/light/knighthelmet(src)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"

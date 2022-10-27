@@ -542,12 +542,9 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	init_firemodes = list(
-		BURST_2_BEAM
-	)
 
 //Worn compact RCW
-/obj/item/gun/energy/laser/auto
+/obj/item/gun/energy/laser/auto/worn
 	name = "worn compact rcw"
 	desc = "A much more compact version of the RCW. Attuned to pierce through most armor with ease, while also being more streamlined."
 	icon = 'icons/fallout/objects/guns/energy.dmi'
@@ -567,9 +564,6 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	init_firemodes = list(
-		BURST_2_BEAM
-	)
 
 // OASIS autolaser
 /obj/item/gun/energy/laser/auto/oasis

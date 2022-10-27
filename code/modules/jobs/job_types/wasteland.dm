@@ -1257,7 +1257,7 @@ Raider
 	name = "Monk"
 	suit = /obj/item/clothing/suit/armor/light/kit/punk
 	shoes = /obj/item/clothing/shoes/wraps
-	head = /obj/item/clothing/head/helmet/f13/khan/bandana 
+	head = /obj/item/clothing/head/helmet/f13/khan/bandana
 	gloves = /obj/item/clothing/gloves/fingerless/pugilist/rapid
 
 // end dr wasteland loadout port
@@ -1371,8 +1371,8 @@ Raider
 /datum/outfit/loadout/crusader
 	name = "Crusader"
 	backpack_contents = list(
-		/obj/item/clothing/suit/armor/knight = 1,
-		/obj/item/clothing/head/helmet/knight/red = 1,
+		/obj/item/clothing/suit/armor/light/knight = 1,
+		/obj/item/clothing/suit/armor/light/knighthelmet = 1,
 		/obj/item/melee/onehanded/machete = 1,
 	)
 
