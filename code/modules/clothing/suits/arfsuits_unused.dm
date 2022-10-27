@@ -417,12 +417,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
-/obj/item/clothing/suit/armor/knight
-	name = "preacher plate armour"
-	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
-	icon_state = "knight_red"
-	item_state = "knight_red"
-
 /obj/item/clothing/suit/armor/heavy/riot/knight/tabard
 	name = "tabard plate armor"
 	desc = "A set of plate armor with tabard for the user's high-visibility during combat."
