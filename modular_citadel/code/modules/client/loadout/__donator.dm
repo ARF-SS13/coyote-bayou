@@ -196,6 +196,16 @@
 
 // D
 
+/datum/gear/donator/kits/dameonowen
+	name = "Dragon Stash"
+	path = /obj/item/storage/box/large/custom_kit/dameonowen
+	ckeywhitelist = list("dameonowen")
+
+/obj/item/storage/box/large/custom_kit/dameonowen/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
 	path = /obj/item/storage/box/large/custom_kit/dezuel
