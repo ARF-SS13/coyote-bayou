@@ -358,7 +358,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
-	disallowed_mags = /obj/item/ammo_box/magazine/m45/socom
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -382,7 +382,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
-	disallowed_mags = /obj/item/ammo_box/magazine/m45/socom
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
 	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -452,7 +452,7 @@
 	w_class = WEIGHT_CLASS_SMALL
 	init_mag_type = /obj/item/ammo_box/magazine/m45
 	mag_type = /obj/item/ammo_box/magazine/m45
-	disallowed_mags = /obj/item/ammo_box/magazine/m45/socom
+	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
 	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT

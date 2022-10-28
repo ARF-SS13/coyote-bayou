@@ -48,7 +48,7 @@
 		"ferry" = "ferry_fancy",
 		"emergency" = "emergency_pahrump")
 
-	var/year_offset = 540 //The offset of ingame year from the actual IRL year. You know you want to make a map that takes place in the 90's. Don't lie.
+	var/year_offset = 200 //The offset of ingame year from the actual IRL year. You know you want to make a map that takes place in the 90's. Don't lie.
 
 	// "fun things"
 	/// Orientation to load in by default.

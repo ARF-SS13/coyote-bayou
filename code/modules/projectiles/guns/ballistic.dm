@@ -42,13 +42,11 @@
 			if(magazine.fixed_mag)
 				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
-	allowed_mags |= typecacheof(mag_type)
+	allowed_mags |= subtypesof(mag_type)
 	if(LAZYLEN(extra_mag_types))
-		for(var/obj/item/ammo_box/ammo_type in extra_mag_types)
-			allowed_mags |= ammo_type
+		allowed_mags |= extra_mag_types
 	if(LAZYLEN(disallowed_mags))
-		for(var/obj/item/ammo_box/un_ammo_type in disallowed_mags)
-			allowed_mags -= un_ammo_type
+		allowed_mags -= disallowed_mags
 	chamber_round()
 	update_icon()
 

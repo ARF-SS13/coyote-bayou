@@ -205,6 +205,7 @@
 	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/storage/belt/legholster(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
