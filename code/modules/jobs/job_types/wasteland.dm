@@ -1372,7 +1372,7 @@ Raider
 	name = "Crusader"
 	backpack_contents = list(
 		/obj/item/clothing/suit/armor/light/knight = 1,
-		/obj/item/clothing/suit/armor/light/knighthelmet = 1,
+		/obj/item/clothing/head/helmet/f13/knighthelmet = 1,
 		/obj/item/melee/onehanded/machete = 1,
 	)
 
