@@ -526,7 +526,7 @@
 /obj/item/storage/box/large/custom_kit/seermankhajiit00/PopulateContents()
 	new /obj/item/claymore(src)
 	new /obj/item/clothing/suit/armor/light/knight(src)
-	new /obj/item/clothing/suit/armor/light/knighthelmet(src)
+	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"
