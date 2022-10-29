@@ -70,7 +70,7 @@
 /datum/sprite_accessory/mam_body_markings/dalmation
 	name = "Dalmation"
 	icon_state = "dalmation"
-	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
+	covered_limbs = list("Head" = MATRIX_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/deer
 	name = "Deer"
@@ -157,7 +157,7 @@
 /datum/sprite_accessory/mam_body_markings/panther
 	name = "Panther"
 	icon_state = "panther"
-	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
+	covered_limbs = list("Head" = MATRIX_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/plain
 	name = "Plain"
@@ -204,12 +204,12 @@
 /datum/sprite_accessory/mam_body_markings/tajaran
 	name = "Tajaran"
 	icon_state = "tajaran"
-	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
 
 /datum/sprite_accessory/mam_body_markings/tiger
 	name = "Tiger"
 	icon_state = "tiger"
-	covered_limbs = list("Head" = MATRIX_ALL, "Chest" = MATRIX_ALL, "Left Leg" = MATRIX_ALL, "Right Leg" = MATRIX_ALL, "Left Arm" = MATRIX_RED_BLUE, "Right Arm" = MATRIX_RED_BLUE)
+	covered_limbs = list("Head" = MATRIX_BLUE, "Chest" = MATRIX_BLUE, "Left Leg" = MATRIX_BLUE, "Right Leg" = MATRIX_BLUE, "Left Arm" = MATRIX_BLUE, "Right Arm" = MATRIX_BLUE)
 
 /datum/sprite_accessory/mam_body_markings/turian
 	name = "Turian"
@@ -572,3 +572,101 @@
 /datum/sprite_accessory/insect_fluff/witchwing_nofur
 	name = "Witch Wing No Fur"
 	icon_state = "witchwing3"
+
+
+// Coyote markings, from arfs
+// Full Body Markings
+
+/datum/sprite_accessory/mam_body_markings/paw_socks
+	name = "Paw Socks"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "pawsocks"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/patches
+	name = "Patches"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "patches"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/bands
+	name = "Bands"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "bands"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tigerstripes
+	name = "Tiger Stripes"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tiger"
+	covered_limbs = list("Left Leg" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+//Chest and Back markings
+
+/datum/sprite_accessory/mam_body_markings/backstripe
+	name = "Back Stripe"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "backstripe"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tajbelly
+	name = "Tajaran Belly"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tajbelly"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tajbellyfull
+	name = "Tajaran Belly, full"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tajbellyfull"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/scutesbelly
+	name = "Scutes Belly"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "scutesbelly"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+// Tattoos
+
+/datum/sprite_accessory/mam_body_markings/tatnightling
+	name = "Tattoo Nightling"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatnightling"
+	covered_limbs = list("Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatcampbell
+	name = "Tattoo Campbell"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatcampbell"
+	covered_limbs = list("Right Arm" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Right Leg" = MATRIX_RED, "Left Leg" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tattiger
+	name = "Tiger Tattoos"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tattiger"
+	covered_limbs = list("Right Arm" = MATRIX_RED, "Left Arm" = MATRIX_RED, "Chest" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatsilverburgh
+	name = "Tattoo Silverburgh"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "tatsilverburgh"
+	covered_limbs = list("Right Leg" = MATRIX_RED, "Left Leg" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatlips
+	name = "Lip Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "lips"
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatblush
+	name = "Blush Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "blush"
+	covered_limbs = list("Head" = MATRIX_RED)
+
+/datum/sprite_accessory/mam_body_markings/tatblush
+	name = "Blush Tattoo"
+	icon = 'icons/mob/mam/coyote/mam_markings.dmi'
+	icon_state = "blush"
+	covered_limbs = list("Head" = MATRIX_RED)
