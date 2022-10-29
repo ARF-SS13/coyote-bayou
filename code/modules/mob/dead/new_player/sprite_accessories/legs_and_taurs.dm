@@ -146,3 +146,10 @@
 	taur_mode = STYLE_SNEK_TAURIC
 	color_src = MUTCOLORS
 	hide_legs = USE_SNEK_CLIP_MASK
+
+/datum/sprite_accessory/taur/frog
+	name = "Frog"
+	icon_state = "frog"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
