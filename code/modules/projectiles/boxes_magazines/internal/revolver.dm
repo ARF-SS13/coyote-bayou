@@ -107,8 +107,8 @@
 /obj/item/ammo_box/magazine/internal/cylinder/rev44
 	name = "44 magnum cylinder"
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = "44"
 	caliber = list(CALIBER_44)
+	max_ammo = 6
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev357
 	name = "357 magnum cylinder"
