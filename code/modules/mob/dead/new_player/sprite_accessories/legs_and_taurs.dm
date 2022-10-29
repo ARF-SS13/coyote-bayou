@@ -156,7 +156,7 @@
 
 /datum/sprite_accessory/taur/wasp
 	name = "Wasp"
-	icon_state = "Wasp"
+	icon_state = "wasp"
 	taur_mode = STYLE_PAW_TAURIC
 	color_src = MUTCOLORS
 	extra = FALSE
