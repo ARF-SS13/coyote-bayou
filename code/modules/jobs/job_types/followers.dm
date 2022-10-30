@@ -491,7 +491,7 @@ Follower Volunteer
 
 /datum/outfit/loadout/guard_energy
 	name = "Followers Energy Protection Guard"
-	suit_store = /obj/item/gun/energy/laser/pistol
+	suit_store = /obj/item/gun/energy/laser/auto
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 1,
+		/obj/item/stock_parts/cell/ammo/ecp = 1,
 	)
