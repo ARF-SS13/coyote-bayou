@@ -270,7 +270,18 @@
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
-	new /obj/item/storage/belt/shoulderholster/ranger45(src)
+	new /obj/item/analyzer(src)
+	new /obj/item/reagent_containers/syringe(src)
+	new /obj/item/storage/box/evidence(src)
+	new /obj/item/storage/box/beakers(src)
+	new /obj/item/clipboard(src)
+	new /obj/item/flashlight/pen(src)
+	new /obj/item/geiger_counter(src)
+	new /obj/item/t_scanner(src)
+	new /obj/item/plant_analyzer(src)
+	new /obj/item/binoculars(src)
+	new /obj/item/multitool(src)
+	new /obj/item/storage/belt/bandolier(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
