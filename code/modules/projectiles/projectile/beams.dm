@@ -597,14 +597,14 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser //Compact RCW
-	damage = 5 //Good for piercing armor, terrible damage
+	damage = 7 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
-	armour_penetration = 0.4
+	armour_penetration = 0.6
 
 /obj/item/projectile/beam/laser/rcw/hitscan/autolaser/worn //Compact RCW
-	damage = 5 //Good for piercing armor, terrible damage
+	damage = 7 //Good for piercing armor, terrible damage
 	bare_wound_bonus = -20 //The intensity of the beams are no where near enough to cause lasting prolonged trauma.
-	armour_penetration = 0.2
+	armour_penetration = 0.3
 
 /obj/item/projectile/f13plasma/pistol/alien
 	name = "alien projectile"
