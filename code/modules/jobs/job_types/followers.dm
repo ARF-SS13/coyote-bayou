@@ -379,7 +379,6 @@ Follower Volunteer
 	id = 		/obj/item/card/id/silver
 	uniform = 	/obj/item/clothing/under/f13/followers
 	shoes = 	/obj/item/clothing/shoes/f13/explorer
-	r_hand =	/obj/item/book/granter/trait/medical
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
