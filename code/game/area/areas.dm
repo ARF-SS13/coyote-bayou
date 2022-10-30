@@ -4,6 +4,9 @@
 /// might have the sound effect that everyone hears the same sound at once, hopefully
 GLOBAL_LIST_EMPTY(area_sound_loops)
 
+/// List of weather tags and their respective areas
+GLOBAL_LIST_INIT(area_weather_list, list(WEATHER_ALL))
+
 /area
 	level = null
 	name = "Space"
@@ -56,6 +59,9 @@ GLOBAL_LIST_EMPTY(area_sound_loops)
 
 	/// For space, the asteroid, lavaland, etc. Used with blueprints to determine if we are adding a new area (vs editing a station room)
 	var/outdoors = FALSE
+
+	/// What weathers affect this area? If null, no weathers happen here, shrimple as
+	var/list/weather_tags = list()
 
 	/// Size of the area in open turfs, only calculated for indoors areas.
 	var/areasize = 0
@@ -201,7 +207,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 
 	reg_in_areas_in_z()
 
-	initialize_soundloop(ambience_area)
+	initialize_soundloop()
+
+	initialize_weather_list()
 
 	//so far I'm only implementing it on mapped unique areas, it's easier this way.
 	if(unique && sub_areas)
@@ -270,6 +278,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 			INVOKE_ASYNC(A, .proc/power_change)
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(ambience_area)
+	remove_from_weather_list()
 	return ..()
 
 /area/proc/initialize_soundloop()
@@ -283,6 +292,22 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		/// First one to use a sound loop initializes it
 		if(!(loopy in GLOB.area_sound_loops))
 			GLOB.area_sound_loops[loopy] = new loopy(list(), FALSE)
+
+/// Adds the area to a list for weather to read when picking areas for weather
+/area/proc/initialize_weather_list()
+	if(!weather_tags || !LAZYLEN(weather_tags) || isnull(weather_tags))
+		return FALSE
+	for(var/wethertag in weather_tags)
+		if(!islist(GLOB.area_weather_list[wethertag]))
+			GLOB.area_weather_list[wethertag] = list()
+		GLOB.area_weather_list[wethertag] |= src
+
+/// unAdds the area to a list for weather to read when picking areas for weather
+/area/proc/remove_from_weather_list()
+	if(!weather_tags || !LAZYLEN(weather_tags) || isnull(weather_tags))
+		return FALSE
+	for(var/unweather in weather_tags)
+		GLOB.area_weather_list[unweather] -= src
 
 /area/proc/poweralert(state, obj/source)
 	if (state != poweralm)

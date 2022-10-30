@@ -14,6 +14,7 @@
 	end_message = span_danger("The ground cools and returns to its usual form.")
 	end_duration = 0
 
+	tag_weather = WEATHER_ALL_AREAS
 	area_types = list(/area)
 	protected_areas = list(/area/space)
 	target_trait = ZTRAIT_STATION

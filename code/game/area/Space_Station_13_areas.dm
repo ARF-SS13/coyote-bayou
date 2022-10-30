@@ -1652,11 +1652,13 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 		AREA_SOUND('sound/f13ambience/wasteland.ogg', 10 SECONDS),
 		AREA_SOUND('sound/f13ambience/sewers.ogg', 10 SECONDS))
 	flags_1 = NONE //>desert >>has destroyed robo dirt on it
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/sunny_dale
 	name = "Sunny Dale"
 	icon_state = "sunny_dale"
 	requires_power = TRUE
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/ncr_main
 	name = "NCR Mainbase"
