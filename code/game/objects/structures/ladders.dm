@@ -1,3 +1,8 @@
+/// The weather on the upper ladder is dangerous
+#define UP_LADDER_WEATHER_IS_DANGEROUS (1<<0)
+/// The weather on the lower ladder is dangerous
+#define DOWN_LADDER_WEATHER_IS_DANGEROUS (1<<1)
+
 // Basic ladder. By default links to the z-level above/below.
 /obj/structure/ladder
 	name = "ladder"
@@ -192,31 +197,55 @@
 	if (!is_ghost && !in_range(src, user))
 		return
 
-	var/list/tool_list = list(
-		"Up" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = NORTH),
-		"Down" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = SOUTH)
-		)
-
-	if (up && down)
-		var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
-		if (!is_ghost && !in_range(src, user))
-			return  // nice try
-		switch(result)
-			if("Up")
-				travel(TRUE, user, is_ghost, up)
-			if("Down")
-				travel(FALSE, user, is_ghost, down)
-			if("Cancel")
-				return
-	else if(up)
-		travel(TRUE, user, is_ghost, up)
-	else if(down)
-		travel(FALSE, user, is_ghost, down)
-	else
+	if(!up && !down)
 		to_chat(user, span_warning("[src] doesn't seem to lead anywhere!"))
+		return
 
 	if(!is_ghost)
 		add_fingerprint(user)
+
+	var/uhoh_weather = is_other_side_dangerous()
+	var/both_ways = (up && down)
+
+	if(!uhoh_weather && !both_ways)
+		if(up)
+			travel(TRUE, user, is_ghost, up)
+		if(down)
+			travel(FALSE, user, is_ghost, down)
+		return
+
+	var/list/tool_list = list()
+	if(up)
+		tool_list["Up"] = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = NORTH)
+		if(CHECK_BITFIELD(uhoh_weather, UP_LADDER_WEATHER_IS_DANGEROUS))
+			user.show_message(span_danger("The weather looks really dangerous up there!"))
+	if(down)
+		tool_list["Down"] = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = SOUTH)
+		if(CHECK_BITFIELD(uhoh_weather, DOWN_LADDER_WEATHER_IS_DANGEROUS))
+			user.show_message(span_danger("The weather looks really dangerous down there!"))
+	if(!LAZYLEN(tool_list))
+		to_chat(user, span_warning("Well that's awkward, [src] couldn't generate a menu! This is probably a bug, please call 1-800-IMCODER"))
+		return
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	if (!is_ghost && !in_range(src, user))
+		return  // nice try
+	switch(result)
+		if("Up")
+			travel(TRUE, user, is_ghost, up)
+		if("Down")
+			travel(FALSE, user, is_ghost, down)
+		if("Cancel")
+			return
+
+/obj/structure/ladder/proc/is_other_side_dangerous()
+	if(up)
+		var/datum/weather/up_weather = SSweather.get_weather(get_area(up))
+		if(up_weather.is_dangerous)
+			. |= UP_LADDER_WEATHER_IS_DANGEROUS
+	if(down)
+		var/datum/weather/down_weather = SSweather.get_weather(get_area(down))
+		if(down_weather.is_dangerous)
+			. |= DOWN_LADDER_WEATHER_IS_DANGEROUS
 
 /obj/structure/ladder/proc/check_menu(mob/user)
 	if(user.incapacitated() || !user.Adjacent(src))

@@ -14,6 +14,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 	var/next_hit_by_zlevel //Used by barometers to know when the next storm is coming
 	/// Was a random weather queued?
 	var/weather_queued = FALSE
+	var/timerid
 	/// What weather is currently running?
 	var/datum/weather/current_weather
 
@@ -25,7 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		return FALSE
 	var/datum/weather/W = pickweight(weather_rolls)
 	var/randTime = rand(WEATHER_WAIT_MIN, WEATHER_WAIT_MAX)
-	addtimer(CALLBACK(src, .proc/run_weather, W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE) //Around 25-30 minutes between weathers
+	timerid = addtimer(CALLBACK(src, .proc/run_weather, W), randTime + initial(W.weather_duration_upper), TIMER_UNIQUE | TIMER_STOPPABLE) //Around 25-30 minutes between weathers
 	next_hit_by_zlevel = world.time + randTime + initial(W.telegraph_duration)
 	weather_queued = TRUE // weather'll set this to FALSE when it ends
 
@@ -55,18 +56,29 @@ PROCESSING_SUBSYSTEM_DEF(weather)
 		CRASH("run_weather called with invalid z_levels: [z_levels || "null"]")
 	if(duration && !isnum(duration))
 		CRASH("run_weather called with invalid duration: [duration || "null"]") */
+	end_weather(FALSE, FALSE, TRUE)
 	current_weather = new weather_datum_type(eligible_zlevels, duration)
 
-/datum/controller/subsystem/processing/weather/proc/end_weather(z, possible_weather)
-	next_hit_by_zlevel = null
-	weather_queued = FALSE
-	current_weather = null
+/datum/controller/subsystem/processing/weather/proc/end_weather(clear_fluff = TRUE, reset_queue = TRUE, delete_weather = TRUE)
+	if(clear_fluff)
+		next_hit_by_zlevel = null
+	if(reset_queue)
+		weather_queued = FALSE
+	if(delete_weather)
+		if(current_weather)
+			current_weather.end(TRUE)
+			QDEL_NULL(current_weather)
+		if(timerid)
+			deltimer(timerid)
 
 /datum/controller/subsystem/processing/weather/proc/get_weather(area/active_area)
-	var/datum/weather/A
-	for(var/V in processing)
-		var/datum/weather/W = V
-		if((W.tag_weather in active_area.weather_tags))
-			A = W
-			break
-	return A
+	if(!current_weather) // No weather, no problems
+		return
+	if(!isarea(active_area))
+		active_area = get_area(active_area)
+		if(!isarea(active_area)) // still??
+			return
+	if(!LAZYLEN(active_area.weather_tags) || !active_area.weather_tags || isnull(active_area.weather_tags))
+		return // area cant have weather (or it wasnt set up right), so it doesnt have weather
+	if(current_weather.tag_weather in active_area.weather_tags) // weather affects all affectable areas at once, so if we have a weather, and that area can support it, it'll have that weather
+		return current_weather

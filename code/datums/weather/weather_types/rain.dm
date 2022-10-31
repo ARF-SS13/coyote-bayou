@@ -22,6 +22,7 @@
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE
 	immunity_type = "water"
+	is_dangerous = FALSE // thankfully our slimes dont mind water
 
 	barometer_predictable = TRUE
 

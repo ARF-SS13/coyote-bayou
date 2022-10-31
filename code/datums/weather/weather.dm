@@ -54,6 +54,8 @@
 	var/protect_indoors = TRUE
 	/// Areas to be affected by the weather, calculated when the weather begins
 	var/list/impacted_areas = list()
+	/// Is the weather particularly dangerous?
+	var/is_dangerous = TRUE // most are tbh
 
 	/// Areas that are protected and excluded from the affected areas.
 	var/list/protected_areas = list()
@@ -181,13 +183,15 @@
  * Removes weather from processing completely
  *
  */
-/datum/weather/proc/end()
+/datum/weather/proc/end(forced)
 	if(stage == END_STAGE)
 		return 1
 	stage = END_STAGE
-	SSweather.end_weather()
 	STOP_PROCESSING(SSweather, src)
 	update_areas()
+	SSweather.end_weather(TRUE, TRUE, FALSE)
+	if(forced)
+		alert_players(end_message, end_sound)
 	qdel(src)
 
 /datum/weather/process()
@@ -251,8 +255,8 @@
 			if(WIND_DOWN_STAGE)
 				N.icon_state = end_overlay
 			if(END_STAGE)
-				N.color = initial(N.color)
-				N.icon_state = initial(N.icon_state)
-				N.icon = initial(N.icon)
+				N.color = null
+				N.icon_state = ""
+				N.icon = 'icons/turf/areas.dmi'
 				N.layer = AREA_LAYER //Just default back to normal area stuff since I assume setting a var is faster than initial
 				N.set_opacity(FALSE)
