@@ -63,7 +63,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		return
 	if(client)
 		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-		var/offset = round(calculate_offset(G.init_offset) * 0.8)
+		var/offset = round(calculate_offset(G.added_spread) * 0.8)
 		var/icon/base = find_cursor_icon('modular_coyote/eris/icons/standard.dmi', offset)
 		ASSERT(isicon(base))
 		client.mouse_pointer_icon = base

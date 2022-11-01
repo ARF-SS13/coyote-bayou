@@ -848,7 +848,8 @@
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/police_pistol,
 				/obj/effect/spawner/bundle/f13/guns/commando,
-				/obj/effect/spawner/bundle/f13/m1carbine
+				/obj/effect/spawner/bundle/f13/m1carbine,
+				/obj/effect/spawner/bundle/f13/sidewinder
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid
@@ -891,6 +892,7 @@
 				/obj/effect/spawner/lootdrop/f13/weapon/revolver44variants,
 				/obj/effect/spawner/bundle/f13/trenchshotgun,
 				/obj/effect/spawner/bundle/f13/m1carbine,
+				/obj/effect/spawner/bundle/f13/sidewinder,
 				/obj/effect/spawner/bundle/f13/huntingshotgun,
 				/obj/effect/spawner/bundle/f13/revolver45
 		)
@@ -1172,6 +1174,13 @@
 	items = list(
 				/obj/item/gun/ballistic/automatic/m1carbine,
 				/obj/item/ammo_box/magazine/m10mm/adv/simple
+	)
+
+/obj/effect/spawner/bundle/f13/sidewinder
+	name = "sidewinder and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/automatic/smg/sidewinder,
+				/obj/item/ammo_box/magazine/uzim9mm
 	)
 
 /obj/effect/spawner/bundle/f13/guns/commando

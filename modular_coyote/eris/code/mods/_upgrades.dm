@@ -284,7 +284,7 @@
 	if(weapon_upgrades[GUN_UPGRADE_SILENCER])
 		G.silenced = weapon_upgrades[GUN_UPGRADE_SILENCER]
 	if(weapon_upgrades[GUN_UPGRADE_OFFSET])
-		G.init_offset = max(0, G.init_offset+weapon_upgrades[GUN_UPGRADE_OFFSET])
+		G.added_spread = max(0, G.added_spread+weapon_upgrades[GUN_UPGRADE_OFFSET])
 	//if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE])
 	//	G.proj_damage_adjust[BRUTE] += weapon_upgrades[GUN_UPGRADE_DAMAGE_BRUTE]
 	//if(weapon_upgrades[GUN_UPGRADE_DAMAGE_BURN])
