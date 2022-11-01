@@ -39,6 +39,7 @@
 	blob_allowed = 0
 	environment = 19
 	grow_chance = 45
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/wasteland/city
 	name = "City"
@@ -75,6 +76,8 @@
 		/datum/looping_sound/ambient/general,
 		/datum/looping_sound/ambient/woodcreak,
 		)
+	weather_tags = null
+	outdoors = FALSE
 
 /area/f13/building/abandoned
 	name = "Abandoned Building"
@@ -94,6 +97,7 @@
 		/datum/looping_sound/ambient/woodcreak,
 		/datum/looping_sound/ambient/building/hospital,
 		)
+	weather_tags = null
 
 /area/f13/building/church
 	name = "Church Building"
@@ -139,6 +143,7 @@
 		)
 	ambientmusic = null
 	grow_chance = 5
+	weather_tags = null
 
 /area/f13/caves
 	name = "Caves"
@@ -149,6 +154,7 @@
 		/datum/looping_sound/ambient/cave,
 		/datum/looping_sound/ambient/tunnel,
 	)
+	weather_tags = null
 
 /area/f13/tunnel
 	name = "Tunnel"
@@ -161,6 +167,8 @@
 		/datum/looping_sound/ambient/cave,
 		/datum/looping_sound/ambient/tunnel,
 	)
+	weather_tags = null
+
 /area/f13/bar
 	name = "Bar"
 	icon_state = "bar"
@@ -171,6 +179,7 @@
 		/datum/looping_sound/ambient/town,
 		/datum/looping_sound/ambient/woodcreak,
 	)
+	weather_tags = null
 
 ///////////////
 //C O Y O T E//
@@ -273,6 +282,7 @@
 	blob_allowed = 0
 	environment = 15
 	grow_chance = 75
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/ruins
 	name = "Ruins"
@@ -292,6 +302,7 @@
 	blob_allowed = 0
 	environment = 5
 	grow_chance = 5
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/shack
 	name = "Shack"
@@ -380,6 +391,7 @@
 	blob_allowed = 0
 	environment = 15
 	grow_chance = 50
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/tribe
 	name = "Tribe"
@@ -403,6 +415,7 @@
 	blob_allowed = 0
 	environment = 15
 	grow_chance = 5
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/village
 	name = "Village"
@@ -420,6 +433,7 @@
 	blob_allowed = 0
 	environment = 15
 	grow_chance = 5
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/outpost
 	name = "Outpost"
@@ -750,6 +764,7 @@
 	blob_allowed = 0
 	environment = 6
 	grow_chance = 5
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/vault
 	name = "Vault"
@@ -1004,6 +1019,7 @@
 	blob_allowed = 0
 	environment = 4
 	grow_chance = 5
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/followers
 	name = "Followers of the Apocalypse Clinic"
@@ -1023,3 +1039,4 @@
 /area/f13/wasteland/khans
 	name = "Great Khan Encampment"
 	icon_state = "tribe"
+	weather_tags = list(WEATHER_ALL)

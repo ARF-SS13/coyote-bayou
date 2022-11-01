@@ -18,6 +18,7 @@
 	end_message = span_userdanger("The downpour gradually slows to a light shower. It should be safe outside now.")
 	end_sound = 'sound/ambience/acidrain_end.ogg'
 
+	tag_weather = WEATHER_ACID
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	target_trait = ZTRAIT_STATION
 	protect_indoors = TRUE

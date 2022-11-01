@@ -1,7 +1,7 @@
 /datum/weather/heat_wave
 	name = "heat wave"
 	desc = "Harsh heat wave will grip an entire area."
-	probability = 7
+	probability = 0
 
 	telegraph_message = span_notice("The temperature outside starts to rise unfavorably.")
 	telegraph_duration = 300
@@ -16,6 +16,7 @@
 	end_duration = 100
 	end_message = span_notice("The heat outside seems to wane to a more bearable degree. You feel as though the outdoors may be viable once more.")
 
+	tag_weather = WEATHER_HEAT
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION

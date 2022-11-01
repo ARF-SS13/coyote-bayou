@@ -1,7 +1,7 @@
 /datum/weather/cold_wave
 	name = "cold wave"
 	desc = "Harsh cold wave will grip an entire area."
-	probability = 7
+	probability = 20
 
 	telegraph_message = span_notice("A chilling and unfamiliar breeze sweeps over the valley.")
 	telegraph_duration = 300
@@ -19,6 +19,7 @@
 	area_types = list(/area/f13/wasteland, /area/f13/desert, /area/f13/farm, /area/f13/forest, /area/f13/ruins)
 	protected_areas = list(/area/shuttle)
 	target_trait = ZTRAIT_STATION
+	tag_weather = WEATHER_COLD
 
 	immunity_type = "snow"
 

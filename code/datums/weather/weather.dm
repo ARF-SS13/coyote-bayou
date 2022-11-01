@@ -48,15 +48,19 @@
 
 	/// Types of area(s) to affect
 	var/area_types = list(/area/space)
+	/// Pulls a list of areas that are set as valid to have this weather, and uses that! see [code\__DEFINES\weather.dm] for details~
+	var/tag_weather
 	/// TRUE value protects areas with outdoors marked as false, regardless of area type
-	var/protect_indoors = FALSE
+	var/protect_indoors = TRUE
 	/// Areas to be affected by the weather, calculated when the weather begins
 	var/list/impacted_areas = list()
+	/// Is the weather particularly dangerous?
+	var/is_dangerous = TRUE // most are tbh
 
 	/// Areas that are protected and excluded from the affected areas.
 	var/list/protected_areas = list()
-	/// The list of z-levels that this weather is actively affecting
-	var/impacted_z_levels
+	/// The list of z-levels that can reasonably see the weather coming and get messages about it
+	var/list/impacted_z_levels = ABOVE_GROUND_Z_LEVELS
 
 	/// Since it's above everything else, this is the layer used by default. TURF_LAYER is below mobs and walls if you need to use that. 
 	var/overlay_layer = AREA_LAYER 
@@ -87,6 +91,12 @@
 /datum/weather/New(z_levels)
 	..()
 	impacted_z_levels = z_levels
+	telegraph()
+
+/datum/weather/Destroy(force, ...)
+	. = ..()
+	if(SSweather.current_weather == src)
+		SSweather.end_weather()
 
 /**
  * Telegraphs the beginning of the weather on the impacted z levels
@@ -96,34 +106,34 @@
  *
  */
 /datum/weather/proc/telegraph()
-	if(stage == STARTUP_STAGE)
+	if(stage == STARTUP_STAGE || !tag_weather)
+		end()
 		return
-	stage = STARTUP_STAGE
-	var/list/affectareas = list()
-	for(var/area_type in area_types)
-		for(var/V in get_areas(area_type))
+	if(tag_weather == WEATHER_ALL_AREAS) // pretty much just for the floor is lava, which works in theory
+		var/list/affectareas = list()
+		for(var/V in get_areas(/area))
 			var/area/A = V
 			affectareas |= A
 			if(A.sub_areas)
 				affectareas |= A.sub_areas
-	for(var/V in protected_areas)
-		affectareas -= get_areas(V)
-	for(var/V in affectareas)
-		var/area/A = V
-		if(protect_indoors && !A.outdoors)
-			continue
-		if(A.z in impacted_z_levels)
-			impacted_areas |= A
+		for(var/V in protected_areas)
+			affectareas -= get_areas(V)
+		for(var/V in affectareas)
+			var/area/A = V
+			if(protect_indoors && !A.outdoors)
+				continue
+			if(A.z in impacted_z_levels)
+				impacted_areas |= A
+	else if(LAZYLEN(GLOB.area_weather_list[tag_weather]))
+		impacted_areas |= GLOB.area_weather_list[tag_weather]
+	if(!LAZYLEN(impacted_areas))
+		end()
+		return
+	stage = STARTUP_STAGE
 	weather_duration = rand(weather_duration_lower, weather_duration_upper)
-	START_PROCESSING(SSweather, src)			//The reason this doesn't start and stop at main stage is because processing list is also used to see active running weathers (for example, you wouldn't want two ash storms starting at once.)
+	START_PROCESSING(SSweather, src) //The reason this doesn't start and stop at main stage is because processing list is also used to see active running weathers (for example, you wouldn't want two ash storms starting at once.)
 	update_areas()
-	for(var/M in GLOB.player_list)
-		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
-			if(telegraph_message)
-				to_chat(M, telegraph_message)
-			if(telegraph_sound)
-				SEND_SOUND(M, sound(telegraph_sound))
+	alert_players(telegraph_message, telegraph_sound)
 	addtimer(CALLBACK(src, .proc/start), telegraph_duration)
 
 /**
@@ -138,13 +148,7 @@
 		return
 	stage = MAIN_STAGE
 	update_areas()
-	for(var/M in GLOB.player_list)
-		var/turf/mob_turf = get_turf(M)
-		if(mob_turf && (mob_turf.z in impacted_z_levels))
-			if(weather_message)
-				to_chat(M, weather_message)
-			if(weather_sound)
-				SEND_SOUND(M, sound(weather_sound))
+	alert_players(weather_message, weather_sound)
 	addtimer(CALLBACK(src, .proc/wind_down), weather_duration)
 
 /**
@@ -159,15 +163,19 @@
 		return
 	stage = WIND_DOWN_STAGE
 	update_areas()
+	alert_players(end_message, end_sound)
+	addtimer(CALLBACK(src, .proc/end), end_duration)
+
+/datum/weather/proc/alert_players(message, sound_play)
+	if(!message && !sound_play)
+		return FALSE
 	for(var/M in GLOB.player_list)
 		var/turf/mob_turf = get_turf(M)
 		if(mob_turf && (mob_turf.z in impacted_z_levels))
-			if(end_message)
-				to_chat(M, end_message)
+			if(message)
+				to_chat(M, message)
 			if(end_sound)
-				SEND_SOUND(M, sound(end_sound))
-	addtimer(CALLBACK(src, .proc/end), end_duration)
-
+				SEND_SOUND(M, sound(sound_play))
 /**
  * Fully ends the weather
  *
@@ -175,12 +183,16 @@
  * Removes weather from processing completely
  *
  */
-/datum/weather/proc/end()
+/datum/weather/proc/end(forced)
 	if(stage == END_STAGE)
 		return 1
 	stage = END_STAGE
 	STOP_PROCESSING(SSweather, src)
 	update_areas()
+	SSweather.end_weather(TRUE, TRUE, FALSE)
+	if(forced)
+		alert_players(end_message, end_sound)
+	qdel(src)
 
 /datum/weather/process()
 	if(aesthetic || (stage != MAIN_STAGE))
@@ -201,9 +213,9 @@
  *
  */
 /datum/weather/proc/can_weather_act(mob/living/L)
-	var/turf/mob_turf = get_turf(L)
+/* 	var/turf/mob_turf = get_turf(L)
 	if(mob_turf && !(mob_turf.z in impacted_z_levels))
-		return
+		return */
 	if(immunity_type in L.weather_immunities)
 		return
 	if(!(get_area(L) in impacted_areas))
