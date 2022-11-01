@@ -134,7 +134,8 @@ ATTACHMENTS
 
 	var/automatic = 0 // Does the gun fire when the clicker's held down?
 
-	var/init_offset = 0
+	/// Gun's inherent inaccuracy, basically the minimum spread
+	var/added_spread = GUN_SPREAD_NONE
 	var/datum/recoil/recoil_dat // Reference to the recoil datum in datum/recoil.dm
 	var/list/init_recoil = list(0, 0, 0) // For updating weapon mods
 	var/braced = FALSE
@@ -508,7 +509,7 @@ ATTACHMENTS
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset(init_offset)
+			sprd = user.calculate_offset(added_spread)
 			sprd = roll(2, sprd) - (sprd + 1)
 			before_firing(target,user)
 			var/BB = chambered.BB
@@ -1203,7 +1204,7 @@ ATTACHMENTS
 	//muzzle_flash = initial(muzzle_flash)
 	silenced = initial(silenced)
 	restrict_safety = initial(restrict_safety)
-	init_offset = initial(init_offset)
+	added_spread = initial(added_spread)
 	//proj_damage_adjust = list()
 	//fire_sound = initial(fire_sound)
 	restrict_safety = initial(restrict_safety)
@@ -1418,6 +1419,41 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 		)
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
+
+/obj/item/storage/backpack/debug_gun_kit
+	name = "Bag of Gunstuff"
+	desc = "Cool shit for testing various guns!"
+
+/obj/item/storage/backpack/debug_gun_kit/PopulateContents()
+	. = ..()
+	new /obj/item/screwdriver/abductor(src)
+	new /obj/item/crowbar/abductor(src)
+	new /obj/item/weldingtool/advanced(src)
+	new /obj/item/gun_upgrade/scope/watchman(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
+	new /obj/item/melee/onehanded/knife/bayonet(src)
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder(src)
+	new /obj/item/ammo_box/magazine/uzim9mm(src)
+	new /obj/item/ammo_box/magazine/uzim9mm(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/ext(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+	new /obj/item/ammo_box/magazine/m10mm_p90(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+	new /obj/item/ammo_box/magazine/tommygunm45(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/stick(src)
+	new /obj/item/ammo_box/magazine/greasegun(src)
+	new /obj/item/ammo_box/magazine/greasegun(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+
 
 ///////////////////
 //GUNCODE ARCHIVE//

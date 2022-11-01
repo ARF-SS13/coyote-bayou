@@ -325,7 +325,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/greasegun/worn
-	name = "beat up 9mm submachine gun"
+	name = "beat up .45ACP submachine gun"
 	desc = "What was once an inexpensive, but reliable submachine gun is now an inexpensive piece of shit. It's impressive this thing still fires at all."
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
@@ -838,6 +838,174 @@
 		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
+
+/* * * * * * * * * * *
+ * Sidewinder SMG
+ * Multiammo SMG
+ * 9mm / 10mm / .45 / .22
+ * Click a button while its empty to change what mags it accepts!
+ * Low damage
+ * Two-handed
+ * Slow firing
+ * Inaccurate
+ * Uncommon?
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder
+	name = "multi-caliber smg"
+	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor SMMG (sub-machine multi-gun) integrates \
+			rotation-reactive metalmers in the upper assembly to change what ammunition it accepts, from .22LR to .45ACP with a \
+			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
+			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
+			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
+			available out here."
+	icon_state = "sidewinder"
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	var/current_caliber = "9mm"
+
+	added_spread = GUN_SPREAD_POOR
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+	)
+
+	is_automatic = TRUE
+	automatic = 1
+
+	gun_tags = list(GUN_SCOPE, GUN_SILENCABLE)
+	can_scope = TRUE
+	scope_state = "AEP7_scope"
+	scope_x_offset = 10
+	scope_y_offset = 22
+	can_flashlight = TRUE
+
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 16
+	flight_y_offset = 18
+
+	can_suppress = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 31
+	suppressor_y_offset = 17
+
+	actions_types = list(/datum/action/item_action/toggle_sidewinder)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/update_icon_state()
+	icon_state = "[initial(icon_state)][magazine ? "-[current_caliber]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/proc/change_ammo(mob/user)
+	if(user)
+		if(magazine)
+			user.show_message(span_alert("[src] needs to be completely unloaded before working the TwistForm mechanism!"))
+			return
+		if(chambered)
+			user.show_message(span_alert("[src] needs to be <u>completely</u> unloaded before working the TwistForm mechanism!"))
+			return
+
+	var/message2self = "You wrench the upper receiver of [src] out of its socket and it one full turn. "
+	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
+	allowed_mags = list()
+	switch(current_caliber)
+		if("22LR")
+			current_caliber = "9mm"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m9mm, /obj/item/ammo_box/magazine/uzim9mm)
+			fire_sound = 'sound/f13weapons/9mm.ogg'
+			message2self += "The panel on the side now reads: \"9mm Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_LIGHT_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+			)
+		if("9mm")
+			current_caliber = "10mm"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m10mm, /obj/item/ammo_box/magazine/cg45)
+			fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+			message2self += "The panel on the side now reads: \"10mm Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+			)
+		if("10mm")
+			current_caliber = "45ACP"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/greasegun, /obj/item/ammo_box/magazine/m45, /obj/item/ammo_box/magazine/tommygunm45/stick)
+			fire_sound = 'sound/weapons/gunshot_smg.ogg'
+			message2self += "The panel on the side now reads: \".45ACP Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+			)
+		if("45ACP")
+			current_caliber = "22LR"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m22)
+			fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+			message2self += "The panel on the side now reads: \".22LR Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_LIGHT_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+			)
+	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
+	if(user)
+		user.visible_message(message2everyone,span_notice(message2self))
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/examine(mob/user)
+	. = ..()
+	switch(current_caliber)
+		if("22LR")
+			. += "<br><span class='notice'>The readout displays \".22LR Mode\", indicating it'll accept most .22 SMG and pistol mags.</span>"
+		if("9mm")
+			. += "<br><span class='notice'>The readout displays \"9mm Mode\", indicating it'll accept most 9mm SMG and pistol mags.</span>"
+		if("10mm")
+			. += "<br><span class='notice'>The readout displays \"10mm Mode\", indicating it'll accept most 10mm SMG and pistol mags.</span>"
+		if("45ACP")
+			. += "<br><span class='notice'>The readout displays \".45ACP Mode\", indicating it'll accept most .45 SMG and pistol mags.</span>"
+	. += "<br><span class='notice'>Unload the gun and use it in hand to change the caliber.</span>"
 
 /* * * * * * *
  * Carbines  *

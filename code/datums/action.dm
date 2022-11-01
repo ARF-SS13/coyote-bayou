@@ -224,6 +224,15 @@
 		bag.rotate_the_stupid_gun(owner)
 		return
 
+/datum/action/item_action/toggle_sidewinder
+	name = "Spin Gun"
+
+/datum/action/item_action/toggle_sidewinder/Trigger()
+	var/obj/item/gun/ballistic/automatic/smg/sidewinder/smmg = target
+	if(istype(smmg))
+		smmg.change_ammo(owner)
+		return
+
 /datum/action/item_action/rcl_col
 	name = "Change Cable Color"
 	icon_icon = 'icons/mob/actions/actions_items.dmi'

@@ -43,8 +43,11 @@
 				gun_tags |= GUN_INTERNAL_MAG
 	allowed_mags |= mag_type
 	allowed_mags |= subtypesof(mag_type)
-	if(LAZYLEN(extra_mag_types))
-		allowed_mags |= extra_mag_types
+	if(extra_mag_types)
+		if(islist(extra_mag_types) && LAZYLEN(extra_mag_types))
+			allowed_mags |= extra_mag_types
+		else if (ispath(extra_mag_types))
+			allowed_mags |= typesof(extra_mag_types)
 	if(LAZYLEN(disallowed_mags))
 		allowed_mags -= disallowed_mags
 	chamber_round()
