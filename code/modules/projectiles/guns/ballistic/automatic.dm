@@ -866,7 +866,6 @@
 	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	var/current_caliber = "9mm"
-
 	added_spread = GUN_SPREAD_POOR
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
