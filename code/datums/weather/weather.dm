@@ -56,6 +56,8 @@
 	var/list/impacted_areas = list()
 	/// Is the weather particularly dangerous?
 	var/is_dangerous = TRUE // most are tbh
+	/// Does this make the area impossible to see through? Like walking through smoke
+	var/obscures_sight = FALSE
 
 	/// Areas that are protected and excluded from the affected areas.
 	var/list/protected_areas = list()
@@ -252,11 +254,17 @@
 				N.icon_state = telegraph_overlay
 			if(MAIN_STAGE)
 				N.icon_state = weather_overlay
+				if(obscures_sight)
+					N.set_opacity(TRUE)
 			if(WIND_DOWN_STAGE)
 				N.icon_state = end_overlay
+				if(obscures_sight)
+					N.set_opacity(FALSE)
 			if(END_STAGE)
 				N.color = null
 				N.icon_state = ""
 				N.icon = 'icons/turf/areas.dmi'
 				N.layer = AREA_LAYER //Just default back to normal area stuff since I assume setting a var is faster than initial
-				N.set_opacity(FALSE)
+				if(obscures_sight) // just in case
+					N.set_opacity(FALSE)
+

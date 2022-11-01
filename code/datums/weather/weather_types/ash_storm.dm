@@ -29,7 +29,7 @@
 
 	immunity_type = "ash"
 
-	probability = 10
+	probability = 0
 
 	barometer_predictable = TRUE
 
@@ -124,6 +124,7 @@
 	end_sound = null
 
 	aesthetic = TRUE
+	obscures_sight = TRUE // try seeing stuff now! YOU CANT!
 
 	target_trait = ZTRAIT_STATION
 
