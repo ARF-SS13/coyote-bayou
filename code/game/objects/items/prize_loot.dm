@@ -3,6 +3,27 @@
 	desc = "A set of tools dedicated to lockpicking, intended for the novice to the master."
 	icon = 'icons/obj/fallout/lockbox.dmi'
 	icon_state = "basic_lockpick"
+	var/in_use = FALSE
+	w_class = WEIGHT_CLASS_TINY
+	var/uses_left = 6 //15% chance to success, might need more.  Needs Playtesting.
+
+/obj/item/lockpick_set/Initialize()
+	. = ..()
+	uses_left = rand(2, initial(src.uses_left))
+
+/obj/item/lockpick_set/proc/use_pick(mob/user)
+	uses_left--
+	switch(uses_left)
+		if(1)
+			if(user)
+				user.show_message("Your lockpick almost snaps!")
+			playsound(get_turf(src),'sound/items/Wirecutter.ogg',75, 1, ignore_walls = FALSE)
+		if(-INFINITY to 0)
+			if(user)
+				user.show_message("Your lockpick broke!!!")
+			playsound(get_turf(src),'sound/items/Wirecutter.ogg',100, 1, ignore_walls = FALSE)
+			qdel(src)
+			return
 
 /obj/item/locked_box
 	name = "locked box"
