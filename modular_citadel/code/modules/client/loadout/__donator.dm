@@ -142,6 +142,17 @@
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
 	new /obj/item/stack/sheet/cardboard/fifty(src)
 
+/datum/gear/donator/kits/bladeburstninja3
+	name = "Bone Zone Kit"
+	path = /obj/item/storage/box/large/custom_kit/bladeburstninja3
+	ckeywhitelist = list("bladeburstninja")
+
+/obj/item/storage/box/large/custom_kit/bladeburstninja3/PopulateContents()
+	new /obj/item/clothing/head/helmet/knight/yellow(src)
+	new /obj/item/clothing/glasses/sunglasses/reagent(src)
+	new /obj/item/clothing/suit/armor/light/poachervest(src)
+	new /obj/item/clothing/gloves/bracer(src)
+
 /datum/gear/donator/kits/brimcon
 	name = "Gift from Claws"
 	path = /obj/item/storage/box/large/custom_kit/brimcon
