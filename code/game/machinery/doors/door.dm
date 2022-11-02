@@ -199,6 +199,13 @@
 		pick(pick_messages["mepicking"]),
 		pick(pick_messages["blindpicking"])
 		)
+	playsound(
+		get_turf(src),
+		pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+		25,
+		1,
+		ignore_walls = FALSE
+		)
 
 	if(!do_after(user, 4 SECONDS, target = src))
 		user.show_message(span_alert(pick(pick_messages["failmessages"])))
