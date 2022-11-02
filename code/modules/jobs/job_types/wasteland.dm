@@ -291,8 +291,8 @@ Raider
 	suit = /obj/item/clothing/suit/armor/medium/combat/brotherhood/exile
 	id = /obj/item/card/id/rusted/brokenholodog
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/auto = 1,
-		/obj/item/stock_parts/cell/ammo/ecp = 1,
+		/obj/item/gun/energy/laser/wattzs = 1,
+		/obj/item/stock_parts/cell/ammo/ec = 1,
 		/obj/item/book/granter/crafting_recipe/blueprint/aep7 = 1,
 		/obj/item/grenade/f13/frag = 2,
 		)
