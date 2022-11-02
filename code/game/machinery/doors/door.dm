@@ -154,13 +154,96 @@
 		return
 	..()
 
-/obj/machinery/door/proc/try_to_activate_door(mob/user)
+/obj/machinery/door/proc/try_to_lockpick(obj/item/lockpick_set/picking, mob/user)
+	if(!istype(picking))
+		return FALSE
+
+	picking.in_use = TRUE
+
+	var/list/pick_messages = list(
+		"otherpicking" = list(
+			"[user] starts to pick a lock!",
+			"[user] begins picking a lock!",
+			"[user] begins to jimmy a lock!",
+			"[user] begins to try and open a lock!"
+		),
+		"mepicking" = list(
+			"You slide your tools into the lock...",
+			"You begin trying to jimmy the lock...",
+			"You begin raking the tumblers...",
+			"This lock shouldn't take much longer..."
+		),
+		"blindpicking" = list(
+			"Is that metal clicking?",
+			"Is someone tapping metal together?",
+			"You hear an odd mechanical picking and scraping sound.",
+			"That's an odd metal noise..."
+		),
+		"failmessages" = list(
+			"Wrist slipped... try again...",
+			"Almost got it...",
+			"One more tumbler...",
+			"Come on...",
+			"Anytime now..."
+		),
+		"successmessages" = list(
+			"Got it!",
+			"Phew!",
+			"Easy!",
+			"Done!"
+		)
+	)
+
+	user.visible_message(
+		pick(pick_messages["otherpicking"]),
+		pick(pick_messages["mepicking"]),
+		pick(pick_messages["blindpicking"])
+		)
+	playsound(
+		get_turf(src),
+		pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+		25,
+		1,
+		ignore_walls = FALSE
+		)
+
+	if(!do_after(user, 4 SECONDS, target = src))
+		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+		playsound(
+			get_turf(src),
+			pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+			25,
+			1,
+			ignore_walls = FALSE
+			)
+		picking.in_use = FALSE
+		picking.use_pick(user)
+		return
+
+	playsound(
+		get_turf(src),
+		pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+		25,
+		1,
+		ignore_walls = FALSE
+		)
+	
+	if(prob(15))
+		user.show_message(span_green(pick(pick_messages["successmessages"])))
+		try_to_activate_door(user, TRUE)
+		. = TRUE
+	else
+		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+	picking.in_use = FALSE
+	picking.use_pick(user)
+
+/obj/machinery/door/proc/try_to_activate_door(mob/user, force_open)
 	add_fingerprint(user)
 	if(operating || (obj_flags & EMAGGED))
 		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
-	if(allowed(user))
+	if(allowed(user) || force_open)
 		if(density)
 			open()
 		else
@@ -220,8 +303,11 @@
 		try_to_weld(I, user)
 		return 1
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
-		try_to_activate_door(user)
-		return 1
+		if(try_to_activate_door(user))
+			return TRUE
+		else if(density && istype(I, /obj/item/lockpick_set))
+			if(try_to_lockpick(I, user))
+				return TRUE
 	return ..()
 
 /obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
