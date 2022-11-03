@@ -593,6 +593,19 @@
 	new /obj/item/melee/onehanded/knife/switchblade(src)
 	new /obj/item/toy/plush/mammal/fox/squishfox(src)
 
+/datum/gear/donator/kits/superlagg2
+	name = "Danny Kit"
+	path = /obj/item/storage/box/large/custom_kit/superlagg2
+	ckeywhitelist = list("superlagg")
+
+/obj/item/storage/box/large/custom_kit/superlagg2/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder(src)
+	new /obj/item/ammo_box/magazine/uzim9mm/rockwell/empty(src)
+	new /obj/item/ammo_box/magazine/cg45/empty(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/stick/empty(src)
+	new /obj/item/melee/onehanded/knife/switchblade(src)
+	new /obj/item/toy/plush/mammal/fox/squishfox(src)
+
 /datum/gear/donator/kits/swirlby
 	name = "Tribal Kit"
 	path = /obj/item/storage/box/large/custom_kit/swirlby

@@ -1182,7 +1182,7 @@
 	name = "sidewinder and ammo spawner"
 	items = list(
 				/obj/item/gun/ballistic/automatic/smg/sidewinder,
-				/obj/item/ammo_box/magazine/uzim9mm
+				/obj/item/ammo_box/magazine/m9mm/doublestack
 	)
 
 /obj/effect/spawner/bundle/f13/guns/commando
