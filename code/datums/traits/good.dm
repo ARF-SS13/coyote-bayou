@@ -30,17 +30,17 @@ GLOBAL_LIST_INIT(adv_explosive_recipes, list(
 	/datum/crafting_recipe/strongrocket))
 
 GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
-	/datum/crafting_recipe/ninemil, 
-	/datum/crafting_recipe/huntingrifle, 
-	/datum/crafting_recipe/n99, 
-	/datum/crafting_recipe/huntingrifle, 
-	/datum/crafting_recipe/m1911, 
-	/datum/crafting_recipe/varmintrifle, 
-	/datum/crafting_recipe/autoaxe, 
-	/datum/crafting_recipe/steelsaw, 
-	/datum/crafting_recipe/tools/forged/entrenching_tool, 
-	/datum/crafting_recipe/chainsaw, 
-	/datum/crafting_recipe/steeltower, 
+	/datum/crafting_recipe/ninemil,
+	/datum/crafting_recipe/huntingrifle,
+	/datum/crafting_recipe/n99,
+	/datum/crafting_recipe/huntingrifle,
+	/datum/crafting_recipe/m1911,
+	/datum/crafting_recipe/varmintrifle,
+	/datum/crafting_recipe/autoaxe,
+	/datum/crafting_recipe/steelsaw,
+	/datum/crafting_recipe/tools/forged/entrenching_tool,
+	/datum/crafting_recipe/chainsaw,
+	/datum/crafting_recipe/steeltower,
 	/datum/crafting_recipe/durathread_vest))
 
 
@@ -288,8 +288,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	name = "Gunsmithing"
 	desc = "You know how to make various weapons and protective vests."
 	value = 2
-	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
-	lose_text = span_danger("Old-War rubble suddenly seems less generous to you.")
+	gain_text = span_notice("Drill bits and lathes, carbon steel and alloys. You know how to make certain guns, now.")
+	lose_text = span_danger("You forget how to make gunsmithing recipes.")
 
 /datum/quirk/gunsmith/add()
 	var/mob/living/carbon/human/H = quirk_holder
