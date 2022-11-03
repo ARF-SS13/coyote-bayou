@@ -6,7 +6,8 @@
 	telegraph_message = span_notice("The temperature outside starts to rise unfavorably.")
 	telegraph_duration = 300
 	telegraph_overlay = "light_ash"
-	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
+	telegraph_sound = 'sound/f13effects/heatwave.ogg'
+	weather_sound = 'sound/f13effects/heatwave.ogg'
 
 	weather_message = span_notice("Without much warning, the outside air grows hazy as an especially intense desert heat sets in. You feel as though you are better off indoors.")
 	weather_overlay = "light_ash"

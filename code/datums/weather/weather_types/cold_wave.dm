@@ -6,7 +6,8 @@
 	telegraph_message = span_notice("A chilling and unfamiliar breeze sweeps over the valley.")
 	telegraph_duration = 300
 	telegraph_overlay = "snow_storm"
-	telegraph_sound = 'sound/f13effects/sandstorm_warning.ogg'
+	telegraph_sound = 'sound/f13effects/coldwave.ogg'
+	weather_sound = 'sound/f13effects/coldwave.ogg'
 
 	weather_message = span_notice("The once only chilling breeze outside rapidly falls to an unbearable cold overtime with no signs of stopping. You feel as though you are better off indoors.")
 	weather_overlay = "snow_storm"
