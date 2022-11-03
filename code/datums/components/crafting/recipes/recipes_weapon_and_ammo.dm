@@ -1793,6 +1793,7 @@ Not implemented due to balance at the moment
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	always_available = FALSE
 
 /datum/crafting_recipe/schmeisser
 	name = "Schmeisser Classic"
@@ -1805,3 +1806,4 @@ Not implemented due to balance at the moment
 	time = 120
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
+	always_available = FALSE
