@@ -53,8 +53,9 @@
 /obj/structure/chair/f13chair2,
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/junker/boss{
-	health = 300;
-	maxHealth = 350
+	health = 400;
+	maxHealth = 400;
+	armour_penetration = 0.2
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "greenrustychess"
@@ -3741,7 +3742,7 @@
 /area/f13/building/massfusion)
 "gqo" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -7893,7 +7894,7 @@
 /area/f13/building/massfusion)
 "nvo" = (
 /obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -8102,8 +8103,10 @@
 "nKk" = (
 /obj/effect/decal/cleanable/dirt,
 /mob/living/simple_animal/hostile/raider/junker/boss{
-	health = 300;
-	maxHealth = 350
+	health = 450;
+	maxHealth = 450;
+	melee_damage_lower = 25;
+	damage_threshold_penetration_mob = 0.2
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
@@ -8792,7 +8795,7 @@
 	},
 /obj/effect/spawner/lootdrop/ammo/military,
 /obj/effect/spawner/lootdrop/f13/bomb/tier2,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9680,7 +9683,11 @@
 "qII" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/waste,
-/mob/living/simple_animal/hostile/raider/ranged/boss,
+/mob/living/simple_animal/hostile/raider/ranged/boss{
+	health = 250;
+	maxHealth = 250;
+	armour_penetration = 0.2
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
