@@ -23,7 +23,7 @@
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "tonguenormal"
 	attack_verb = list("licked", "lapped", "mlemmed")
-	pokesound = 'sound/effects/gib_step.ogg'
+	pokesound = 'sound/effects/lick.ogg'
 	siemens_coefficient = 5 // hewwo mistow ewectwic fence mlem mlem
 	/// are we licking something?
 	var/licking = FALSE
