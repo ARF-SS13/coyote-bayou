@@ -4532,6 +4532,11 @@
 	icon_state = "yellowrustychess"
 	},
 /area/f13/building)
+"cFs" = (
+/obj/structure/rack,
+/obj/item/locked_box/weapon/melee/tier1_3,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "cFH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/rack,
@@ -5934,6 +5939,11 @@
 	color = "#d7d7d7"
 	},
 /area/f13/building/abandoned)
+"dtG" = (
+/obj/structure/table/wood,
+/obj/item/locked_box/weapon/melee/any_random,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "dtH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -7107,7 +7117,7 @@
 /area/f13/building/abandoned)
 "dYn" = (
 /obj/structure/closet/cabinet/anchored,
-/obj/item/clothing/neck/necklace/memento_mori,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "dYo" = (
@@ -10048,6 +10058,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
+"fKe" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/weapon/melee/tier1_3,
+/turf/open/floor/f13{
+	color = "#818181";
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building/abandoned)
 "fKt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/ghoul/legendary,
@@ -11465,8 +11486,8 @@
 /area/f13/building/abandoned)
 "gCR" = (
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/machinery/light,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -23153,6 +23174,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -33932,7 +33954,7 @@
 	},
 /area/f13/building)
 "tUR" = (
-/obj/structure/mirror/magic{
+/obj/structure/mirror{
 	pixel_x = -5
 	},
 /turf/closed/indestructible/wood,
@@ -43146,7 +43168,7 @@ qbG
 fee
 jhB
 fZB
-mvF
+fKe
 wnm
 ryY
 ukM
@@ -43729,7 +43751,7 @@ siL
 uwd
 tOw
 uwd
-vaQ
+cFs
 ebw
 pnq
 nNp
@@ -54257,7 +54279,7 @@ dcp
 pnx
 aCf
 oEd
-pch
+dtG
 uxM
 mxP
 bPU

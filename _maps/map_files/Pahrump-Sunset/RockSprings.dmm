@@ -5010,6 +5010,7 @@
 "cuH" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/table/reinforced,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
 /area/f13/building)
 "cuN" = (
@@ -7951,6 +7952,7 @@
 /area/f13/wasteland)
 "dSx" = (
 /obj/structure/table/wood,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -24098,6 +24100,7 @@
 "lDS" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -32216,6 +32219,11 @@
 	},
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/tribal/cave)
+"pJq" = (
+/obj/structure/table/wood,
+/obj/item/locked_box/weapon/range/tier3_5,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "pJx" = (
 /obj/structure/table/snooker{
 	dir = 10
@@ -34107,6 +34115,11 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
+"qJS" = (
+/obj/structure/table/wood,
+/obj/item/locked_box/weapon/melee/tier3_5,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
+/area/f13/building/abandoned)
 "qJW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/weather/dirt{
@@ -38401,6 +38414,7 @@
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/misc/food,
 /turf/open/floor/f13{
 	icon_state = "redrustyfull"
 	},
@@ -42094,6 +42108,11 @@
 /obj/structure/destructible/tribal_torch,
 /turf/open/indestructible/ground/outside/dirt/harsh,
 /area/f13/building/abandoned)
+"uAg" = (
+/obj/structure/bookcase,
+/obj/item/locked_box/armor/tier3_5,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "uAh" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/trash,
@@ -46377,6 +46396,12 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/floor/plasteel/cult,
 /area/f13/building/tribal)
+"wDI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/item/locked_box/armor/tier3_5,
+/turf/open/floor/plasteel/f13/vault_floor/floor/floorsolid,
+/area/f13/building)
 "wDO" = (
 /obj/structure/car/rubbish3{
 	icon_state = "car_rubish2"
@@ -52911,7 +52936,7 @@ ntj
 ntj
 lDS
 pmu
-kPP
+pJq
 oDR
 pmu
 fiQ
@@ -56769,7 +56794,7 @@ ska
 oDR
 riI
 oDR
-kPP
+qJS
 evN
 kDz
 eVe
@@ -106032,7 +106057,7 @@ xYs
 cmZ
 cCj
 jjh
-cCj
+uAg
 vDh
 huo
 xYs
@@ -114257,7 +114282,7 @@ oSy
 huo
 bMz
 bMM
-vKU
+wDI
 huo
 xYs
 kzG

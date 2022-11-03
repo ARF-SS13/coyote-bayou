@@ -678,7 +678,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustysolid"
 	},
@@ -2494,7 +2494,10 @@
 /area/f13/caves)
 "ajs" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker{
+	health = 205;
+	maxHealth = 205
+	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustysolid"
@@ -21301,7 +21304,7 @@
 /area/f13/wasteland)
 "cku" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -24375,6 +24378,7 @@
 /obj/item/reagent_containers/blood/radaway,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pill_bottle/chem_tin/radx,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dii" = (
@@ -28571,6 +28575,7 @@
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "eZr" = (
@@ -43201,6 +43206,7 @@
 	dir = 1;
 	light_color = "#e8eaff"
 	},
+/obj/item/locked_box/armor/tier4,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -49337,6 +49343,11 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
+"obQ" = (
+/obj/structure/rack,
+/obj/item/locked_box/armor/tier3_5,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "ocf" = (
 /obj/structure/fence{
 	dir = 4
@@ -50074,6 +50085,11 @@
 	},
 /area/f13/wasteland/city)
 "org" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "high level mobs";
+	randomizer_tag = "Museum Musketeers"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "orp" = (
@@ -54351,6 +54367,7 @@
 /area/f13/wasteland/town)
 "qqf" = (
 /obj/structure/shelf_wood,
+/obj/item/locked_box/armor/prewar_clothes,
 /turf/open/floor/wood_fancy,
 /area/f13/building)
 "qqo" = (
@@ -54901,7 +54918,10 @@
 /area/f13/wasteland/town)
 "qBw" = (
 /obj/machinery/light,
-/mob/living/simple_animal/hostile/raider/junker,
+/mob/living/simple_animal/hostile/raider/junker{
+	health = 200;
+	maxHealth = 200
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustychess"
 	},
@@ -58864,7 +58884,7 @@
 /area/f13/wasteland)
 "stH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/tier1_3,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -66674,6 +66694,16 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city)
+"vWp" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "high level mobs";
+	randomizer_tag = "Museum Musketeers"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building)
 "vWT" = (
 /obj/item/toy/beach_ball/holoball,
 /obj/effect/turf_decal/trimline/neutral/line{
@@ -67318,6 +67348,7 @@
 /area/f13/wasteland/city)
 "woi" = (
 /obj/structure/table,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "woj" = (
@@ -75197,7 +75228,7 @@ kGV
 kGV
 bqq
 wSI
-wSI
+obQ
 bwM
 kGV
 kGV
@@ -107014,7 +107045,7 @@ xDl
 aER
 wFX
 bgS
-puK
+vWp
 agk
 fit
 dUB
