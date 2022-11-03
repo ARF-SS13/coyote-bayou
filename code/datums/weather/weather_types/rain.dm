@@ -164,13 +164,14 @@
 	telegraph_duration = 300
 	telegraph_overlay = "fog"
 	telegraph_message = "<span class='notice'><font size=2>You see the fog rolling in.</font></span>"
-//	telegraph_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	telegraph_sound = 'sound/weather/fog.ogg' 
+	weather_sound = 'sound/weather/fog.ogg'
 
-//	weather_message = "<span class='notice'><i>You hear the crack of thunder as the rainstorm grows.</i></span>"
+	weather_message = "<span class='notice'><i>You can feel and see the moisture from the fog as it starts to roll in.</i></span>"
 	weather_overlay = "fog"
 	weather_duration_lower = 2400
 	weather_duration_upper = 7200
-//	end_sound = 'sound/weather/thunder.ogg' //credit: boomlibrary
+	end_sound = 'sound/weather/fog.ogg' 
 	end_duration = 250
 	end_message = "<span class='notice'><font size=2>The blanket of fog finally lifts up.</font></span>"
 	end_overlay = "fog"
