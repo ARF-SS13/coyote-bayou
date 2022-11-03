@@ -1277,10 +1277,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/caves)
 "biU" = (
-/mob/living/simple_animal/hostile/ghoul,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -5182,7 +5182,12 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bWq" = (
-/mob/living/simple_animal/hostile/ghoul/legendary,
+/mob/living/simple_animal/hostile/ghoul/legendary{
+	armour_penetration = 0.5;
+	melee_damage_lower = 30;
+	health = 300;
+	maxHealth = 300
+	},
 /turf/open/water,
 /area/f13/radiation)
 "bWr" = (
@@ -6239,7 +6244,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
 "cqO" = (
-/mob/living/simple_animal/hostile/ghoul,
+/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/water,
 /area/f13/radiation)
 "crj" = (
@@ -8002,10 +8007,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 4
 	},
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/unique,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/radiation)
 "dWX" = (
@@ -20104,8 +20109,8 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/mid,
 /obj/effect/spawner/lootdrop/f13/attachments,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -29955,11 +29960,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "xNR" = (
-/mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},

@@ -373,9 +373,6 @@
 /obj/structure/chair/sofa/left{
 	dir = 1
 	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "aju" = (
@@ -416,10 +413,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah/edgesnew,
 /area/f13/wasteland)
-"akI" = (
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "akU" = (
 /obj/effect/decal/cleanable/glass{
 	pixel_x = 12
@@ -569,7 +562,7 @@
 	},
 /area/f13/wasteland/city)
 "apT" = (
-/mob/living/simple_animal/hostile/ghoul/zombie,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/plasteel,
 /area/f13/building/abandoned)
 "apX" = (
@@ -1131,12 +1124,6 @@
 "aGk" = (
 /turf/open/indestructible/ground/outside/savannah/topleftcorner,
 /area/f13/wasteland)
-"aGm" = (
-/obj/machinery/door/unpowered/securedoor,
-/obj/structure/barricade/wooden/crude,
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "aGn" = (
 /obj/structure/flora/tree/oak_five,
 /turf/open/indestructible/ground/outside/dirt,
@@ -1934,7 +1921,6 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "bfG" = (
-/obj/effect/gluttony,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
@@ -2419,10 +2405,6 @@
 	icon_state = "horizontalinnermainleft"
 	},
 /area/f13/wasteland)
-"bui" = (
-/obj/effect/decal/cleanable/blood/gibs/human/limb,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "bun" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt,
@@ -3134,10 +3116,6 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
-"bQe" = (
-/obj/effect/decal/cleanable/blood/gibs/human/down,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "bQq" = (
 /obj/structure/table,
 /obj/structure/fluff/paper/stack{
@@ -3433,10 +3411,6 @@
 /obj/structure/decoration/rag,
 /turf/closed/wall/rust,
 /area/f13/building)
-"bYP" = (
-/obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "bYS" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
@@ -3469,10 +3443,6 @@
 /obj/structure/closet/crate/radiation,
 /turf/open/floor/plating/rust,
 /area/f13/building)
-"bZF" = (
-/obj/effect/gluttony,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "bZJ" = (
 /obj/structure/fence{
 	max_integrity = 500;
@@ -4225,13 +4195,6 @@
 	},
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"cuH" = (
-/mob/living/simple_animal/hostile/blob/blobbernaut/independent{
-	name = "Mutated Ballroom Behemoth";
-	resize = 2
-	},
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "cuS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5939,7 +5902,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dtu" = (
-/obj/effect/decal/cleanable/blood/gibs/human/up,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "dty" = (
@@ -6329,7 +6292,6 @@
 /turf/open/floor/plating/rust,
 /area/f13/building)
 "dEW" = (
-/obj/effect/gluttony,
 /obj/structure/destructible/tribal_torch/wall/lit,
 /turf/open/floor/plasteel,
 /area/f13/building/abandoned)
@@ -6808,8 +6770,9 @@
 	},
 /area/f13/wasteland/city)
 "dPL" = (
-/obj/effect/decal/cleanable/blood/gibs/human/torso,
-/turf/open/floor/carpet/red,
+/obj/structure/table/wood/fancy/monochrome,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "dPV" = (
 /obj/structure/closet/crate/large,
@@ -8032,9 +7995,6 @@
 /obj/structure/chair/pew{
 	dir = 1
 	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "ezc" = (
@@ -8400,16 +8360,11 @@
 /obj/effect/turf_decal/weather/dirt,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/wasteland)
-"eLP" = (
-/obj/effect/decal/cleanable/blood/gibs/human/body,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "eLV" = (
 /obj/structure/car/rubbish1,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "eLY" = (
-/obj/effect/gluttony,
 /turf/open/floor/plating/ice,
 /area/f13/building/abandoned)
 "eMb" = (
@@ -9933,10 +9888,7 @@
 	},
 /area/f13/building)
 "fFt" = (
-/mob/living/simple_animal/hostile/illusion{
-	name = "Lost Soul";
-	desc = "And if they die, they shall wonder for all eternity!"
-	},
+/mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "fFL" = (
@@ -10094,7 +10046,6 @@
 	pixel_y = 12
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/human/body,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "fKt" = (
@@ -11307,10 +11258,6 @@
 	icon_state = "redsolid"
 	},
 /area/f13/building/abandoned)
-"gwY" = (
-/obj/effect/gluttony,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "gxj" = (
 /obj/effect/decal/marking{
 	icon_state = "doublehorizontalcorroded"
@@ -11692,7 +11639,6 @@
 "gHT" = (
 /obj/machinery/door/unpowered/securedoor,
 /obj/machinery/door/unpowered/securedoor,
-/obj/structure/barricade/wooden/crude,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "gIi" = (
@@ -12006,10 +11952,6 @@
 	icon_state = "yellowdirtyfull"
 	},
 /area/f13/building)
-"gQY" = (
-/obj/effect/decal/cleanable/blood/gibs/human/up,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "gRb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -12130,7 +12072,6 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 4
 	},
-/obj/effect/decal/cleanable/blood/innards,
 /turf/open/floor/plasteel,
 /area/f13/building/abandoned)
 "gTG" = (
@@ -12210,10 +12151,6 @@
 "gVU" = (
 /turf/open/indestructible/ground/outside/dirthole,
 /area/f13/wasteland)
-"gVW" = (
-/obj/effect/decal/cleanable/blood/gibs/human/down,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "gWt" = (
 /mob/living/simple_animal/hostile/renegade,
 /turf/open/floor/f13{
@@ -13804,10 +13741,6 @@
 	icon_state = "darkrustysolid"
 	},
 /area/f13/building/abandoned)
-"ibE" = (
-/obj/effect/decal/cleanable/blood/gibs/human/limb,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "ibS" = (
 /turf/open/indestructible/ground/outside/sidewalk{
 	dir = 4;
@@ -14084,7 +14017,7 @@
 	},
 /area/f13/building)
 "ijT" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/mob/living/simple_animal/hostile/raider/firefighter,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "iku" = (
@@ -16281,11 +16214,6 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building/abandoned)
-"jvK" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "jvP" = (
 /mob/living/simple_animal/hostile/ghoul/scorched,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -17642,10 +17570,6 @@
 /obj/item/reagent_containers/pill/salicyclic,
 /turf/open/floor/f13,
 /area/f13/building)
-"kji" = (
-/obj/effect/decal/cleanable/blood/splatter,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "kjq" = (
 /obj/structure/destructible/tribal_torch/lit{
 	pixel_x = 3
@@ -18078,7 +18002,7 @@
 /area/f13/building)
 "kwQ" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/snacks/cakeslice/holy_cake_slice,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "kwY" = (
@@ -18633,13 +18557,6 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/bar,
-/area/f13/building/abandoned)
-"kOC" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
-	},
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "kOF" = (
 /obj/structure/decoration/vent{
@@ -19916,28 +19833,16 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"lBo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/gluttony,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "lBq" = (
 /mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"lBB" = (
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "lBV" = (
-/mob/living/simple_animal/hostile/abomhorror{
-	name = "The Great Child";
-	desc = "A terrible fate to befall anyone. The screams are genuine."
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
+/turf/open/floor/carpet/royalblack,
+/area/f13/building/abandoned)
 "lCg" = (
 /obj/structure/curtain{
 	color = "#ffc0cb"
@@ -20109,12 +20014,6 @@
 	icon_state = "dark"
 	},
 /area/f13/building)
-"lGK" = (
-/obj/machinery/door/unpowered/securedoor,
-/obj/effect/gluttony,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "lHJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -20850,15 +20749,6 @@
 	icon_state = "floorrusty"
 	},
 /area/f13/building)
-"mcg" = (
-/obj/structure/chair/pew/left{
-	dir = 1
-	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "mct" = (
 /obj/structure/chair/bench{
 	dir = 8
@@ -21155,8 +21045,10 @@
 	},
 /area/f13/wasteland/city)
 "mls" = (
-/obj/effect/decal/cleanable/blood/gibs/human/core,
-/turf/open/floor/plasteel,
+/obj/structure/table/wood/fancy/royalblack,
+/obj/item/candle/infinite,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/midhigh,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "mlw" = (
 /obj/structure/obstacle/old_locked_door,
@@ -21180,9 +21072,8 @@
 	},
 /area/f13/wasteland/city)
 "mlR" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/human/lizard/limb,
-/turf/open/floor/plasteel,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "mlZ" = (
 /obj/structure/safe,
@@ -21577,7 +21468,7 @@
 /area/f13/wasteland/city)
 "myE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/human/limb,
+/mob/living/simple_animal/hostile/raider/ranged/sulphiteranged,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "myH" = (
@@ -22937,10 +22828,6 @@
 /obj/structure/simple_door/interior,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"npu" = (
-/mob/living/simple_animal/hostile/ghoul/zombie,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "npF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -23125,15 +23012,6 @@
 /obj/structure/railing/wood,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/savannah,
-/area/f13/building/abandoned)
-"nvM" = (
-/obj/structure/chair/pew/right{
-	dir = 1
-	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "nvX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -24072,10 +23950,6 @@
 	icon_state = "floordirty"
 	},
 /area/f13/building/abandoned)
-"obI" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "obY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -24636,10 +24510,6 @@
 /turf/open/indestructible/ground/outside/sidewalk{
 	icon_state = "verticaloutermain2"
 	},
-/area/f13/building/abandoned)
-"orz" = (
-/obj/structure/statue/petrified,
-/turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "orA" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -25984,10 +25854,6 @@
 /obj/structure/closet/crate/large,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
-"pfG" = (
-/obj/effect/decal/cleanable/blood/gibs/human/core,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "pfJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -26189,7 +26055,7 @@
 	},
 /area/f13/city)
 "pls" = (
-/obj/effect/decal/cleanable/blood/gibs/human/torso,
+/mob/living/simple_animal/hostile/raider/junker/creator,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "plG" = (
@@ -26495,6 +26361,7 @@
 "puU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/unique,
 /turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "pvi" = (
@@ -27319,7 +27186,7 @@
 /area/f13/wasteland)
 "pRA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/viper,
+/mob/living/simple_animal/hostile/raider/ranged/biker,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "pRD" = (
@@ -27535,11 +27402,6 @@
 /obj/effect/spawner/lootdrop/f13/blueprintLowMid,
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/building/abandoned)
-"pZa" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/human/core,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "pZj" = (
 /obj/item/reagent_containers/glass/bucket,
 /turf/open/indestructible/ground/outside/dirt,
@@ -27676,9 +27538,6 @@
 /area/f13/caves)
 "qbe" = (
 /obj/structure/chair/sofa{
-	dir = 1
-	},
-/obj/structure/statue/petrified{
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
@@ -27819,11 +27678,6 @@
 	icon_state = "verticalinnermain0"
 	},
 /area/f13/wasteland)
-"qgl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/human/limb,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "qgq" = (
 /turf/open/indestructible/ground/outside/roaddirt{
 	dir = 9;
@@ -28013,11 +27867,6 @@
 	icon_state = "outerborder"
 	},
 /area/f13/wasteland/city)
-"qoo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/gluttony,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "qoP" = (
 /mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/f13/wood,
@@ -29053,12 +28902,6 @@
 /obj/effect/decal/fakelattice,
 /turf/open/floor/plating/rust,
 /area/f13/building/abandoned)
-"qXL" = (
-/mob/living/simple_animal/hostile/blob/blobbernaut/independent{
-	name = "Mutated Ballroom Guest"
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "qXZ" = (
 /obj/machinery/smartfridge/bottlerack/lootshelf/cans,
 /turf/open/floor/f13{
@@ -29117,11 +28960,6 @@
 	dir = 1
 	},
 /area/f13/wasteland)
-"qZF" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "qZX" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
@@ -29548,15 +29386,6 @@
 /obj/structure/flora/grass/coyote/four,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
-"rnh" = (
-/obj/structure/chair/pew{
-	dir = 1
-	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "rnw" = (
 /obj/machinery/door/unpowered/securedoor,
 /obj/structure/barricade/wooden/crude,
@@ -29954,13 +29783,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/indestructible/ground/outside/sidewalk,
 /area/f13/wasteland)
-"rzR" = (
-/mob/living/simple_animal/hostile/illusion{
-	name = "Lost Soul";
-	desc = "And if they die, they shall wonder for all eternity!"
-	},
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "rAz" = (
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random_mid,
 /obj/effect/decal/remains/human,
@@ -30479,10 +30301,7 @@
 /turf/open/indestructible/ground/outside/savannah/bottomleft,
 /area/f13/wasteland)
 "rQf" = (
-/mob/living/simple_animal/hostile/abomination/weak{
-	name = "The Dire Mother";
-	desc = "A fate not wished upon anyone. This ones frail body still packs a dangerous punch."
-	},
+/mob/living/simple_animal/hostile/raider/junker/boss,
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "rQm" = (
@@ -31831,9 +31650,9 @@
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/ghoul/zombie/legendary{
-	name = "Gluttony's Prophet";
-	desc = "Spouting, Splashing, Soaking. Innards, Ingest, Invoking. Never stop the devouring."
+/mob/living/simple_animal/hostile/asteroid/ice_demon{
+	melee_damage_lower = 5;
+	melee_damage_type = "burn"
 	},
 /turf/open/floor/plating/ice,
 /area/f13/building/abandoned)
@@ -32147,10 +31966,6 @@
 	icon_state = "rubbleplate"
 	},
 /area/f13/wasteland/city)
-"sPn" = (
-/obj/effect/decal/cleanable/blood/gibs/human/limb,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "sPp" = (
 /obj/structure/table/wood,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -32694,10 +32509,6 @@
 	icon_state = "innermaincornerinner"
 	},
 /area/f13/wasteland)
-"tdA" = (
-/obj/effect/decal/cleanable/blood/gibs/human/torso,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "tdH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/f13/vault_floor/red/redchess,
@@ -33195,8 +33006,6 @@
 /area/f13/building/abandoned)
 "tsZ" = (
 /obj/structure/closet/crate/bin/trashbin,
-/obj/item/bodypart/head,
-/obj/effect/decal/cleanable/blood/gibs/human/up,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "tth" = (
@@ -33309,10 +33118,6 @@
 /turf/open/floor/plasteel{
 	icon_state = "asteroidfloor"
 	},
-/area/f13/building/abandoned)
-"twQ" = (
-/obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/plasteel,
 /area/f13/building/abandoned)
 "txx" = (
 /obj/effect/decal/cleanable/dirt,
@@ -33600,10 +33405,6 @@
 /obj/structure/barricade/wooden/planks,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"tDY" = (
-/mob/living/simple_animal/hostile/poison/giant_spider/hunter/ice,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "tEb" = (
 /obj/structure/bonfire/prelit,
 /turf/open/floor/plating/f13/outside/road{
@@ -34081,10 +33882,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/mineral/brick,
 /area/f13/building/abandoned)
-"tTK" = (
-/obj/effect/decal/cleanable/blood/splats,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "tTT" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain2left"
@@ -34298,10 +34095,6 @@
 	icon_state = "horizontalbottomborderbottom0"
 	},
 /area/f13/wasteland)
-"uae" = (
-/obj/effect/decal/cleanable/blood/gibs/limb,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "ual" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/barricade/sandbags,
@@ -34826,10 +34619,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"umA" = (
-/obj/effect/decal/cleanable/blood/gibs/human/body,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "umO" = (
 /obj/item/storage/trash_stack,
 /turf/open/indestructible/ground/outside/road{
@@ -34837,13 +34626,8 @@
 	},
 /area/f13/wasteland)
 "umW" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 1;
-	light_color = "#f4e3b0";
-	pixel_y = 12
-	},
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
+/mob/living/simple_animal/hostile/raider/ranged,
+/turf/open/floor/carpet/royalblack,
 /area/f13/building/abandoned)
 "unG" = (
 /obj/structure/fence{
@@ -35943,8 +35727,9 @@
 /turf/open/indestructible/ground/outside/savannah/edgesnew,
 /area/f13/wasteland)
 "uWw" = (
-/obj/effect/decal/cleanable/blood/innards,
-/turf/open/floor/carpet/red,
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/plasteel,
 /area/f13/building/abandoned)
 "uXa" = (
 /obj/structure/barricade/sandbags,
@@ -36101,9 +35886,8 @@
 	},
 /area/f13/wasteland)
 "vba" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/splats,
-/turf/open/floor/carpet/red,
+/mob/living/simple_animal/hostile/raider/ranged/boss,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "vbm" = (
 /obj/structure/fence{
@@ -36941,9 +36725,9 @@
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "vGF" = (
-/obj/effect/decal/cleanable/blood/gibs/human/torso,
-/obj/effect/gluttony,
-/turf/open/floor/plasteel,
+/obj/structure/table/wood/fancy/monochrome,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "vGP" = (
 /obj/structure/railing/wood{
@@ -37334,7 +37118,6 @@
 /area/f13/building/abandoned)
 "vTe" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/gluttony,
 /obj/structure/destructible/tribal_torch/wall/lit{
 	dir = 8
 	},
@@ -37401,11 +37184,6 @@
 	pixel_x = -6
 	},
 /turf/open/floor/f13/wood,
-/area/f13/building/abandoned)
-"vVJ" = (
-/obj/machinery/door/unpowered/securedoor,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "vVY" = (
 /obj/structure/barricade/sandbags,
@@ -37700,9 +37478,6 @@
 /obj/structure/chair/sofa/right{
 	dir = 1
 	},
-/obj/structure/statue/petrified{
-	dir = 1
-	},
 /turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "wfk" = (
@@ -37815,6 +37590,7 @@
 "whq" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/item/candle/infinite,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/superhigh,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "whL" = (
@@ -38050,11 +37826,6 @@
 	icon_state = "verticalrightborderright0"
 	},
 /area/f13/caves)
-"wpB" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/ghoul/zombie,
-/turf/open/floor/carpet/royalblack,
-/area/f13/building/abandoned)
 "wpP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spacevine,
@@ -38700,20 +38471,11 @@
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
-"wKe" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/carpet/red,
-/area/f13/building/abandoned)
 "wKx" = (
 /obj/structure/decoration/rag,
 /obj/structure/barricade/wooden/planks,
 /turf/closed/wall/rust,
 /area/f13/building)
-"wKC" = (
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building/abandoned)
 "wLf" = (
 /mob/living/simple_animal/hostile/poison/giant_spider/tarantula,
 /turf/open/floor/f13{
@@ -38825,11 +38587,8 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "wNI" = (
-/mob/living/simple_animal/hostile/illusion{
-	name = "Lost Soul";
-	desc = "And if they die, they shall wonder for all eternity!"
-	},
-/turf/open/water,
+/mob/living/simple_animal/hostile/raider/baseball,
+/turf/open/floor/carpet/red,
 /area/f13/building/abandoned)
 "wOb" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39351,10 +39110,6 @@
 	icon_state = "horizontaloutermain0"
 	},
 /area/f13/wasteland)
-"xgs" = (
-/obj/effect/decal/cleanable/blood/gibs,
-/turf/open/floor/plasteel,
-/area/f13/building/abandoned)
 "xgy" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/flashlight/lamp,
@@ -40318,7 +40073,6 @@
 /area/f13/wasteland)
 "xKg" = (
 /obj/machinery/door/unpowered/securedoor,
-/obj/effect/gluttony,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building/abandoned)
 "xKp" = (
@@ -83884,8 +83638,8 @@ oph
 ieU
 ina
 cmA
-nJg
-mcg
+myE
+dht
 jTL
 dht
 jTL
@@ -84401,7 +84155,7 @@ esF
 jTL
 tNz
 jTL
-rnh
+hyx
 jTL
 hyx
 qYF
@@ -84411,7 +84165,7 @@ ieU
 ina
 qYF
 qYF
-qYF
+vba
 qYF
 qYF
 qYF
@@ -84666,11 +84420,11 @@ ieU
 jTL
 ieU
 qYF
-qXL
 qYF
 qYF
 qYF
-qXL
+qYF
+qYF
 qYF
 ieU
 oph
@@ -84913,7 +84667,7 @@ ieU
 nJg
 cEj
 jTL
-nvM
+pZx
 jTL
 pZx
 jTL
@@ -84923,7 +84677,7 @@ ieU
 jTL
 ieU
 qYF
-whq
+mls
 qYF
 qYF
 qYF
@@ -85167,7 +84921,7 @@ oph
 oph
 oph
 ieU
-orz
+jTL
 gvf
 nJg
 jTL
@@ -85441,7 +85195,7 @@ rvJ
 rvJ
 rvJ
 rvJ
-rvJ
+umW
 tlv
 ieU
 oph
@@ -85686,15 +85440,15 @@ tQF
 nJg
 hyx
 jTL
-rnh
+hyx
 jTL
-rnh
+hyx
 qYF
 ieU
 jTL
 ieU
 qYF
-rvJ
+lBV
 rvJ
 rvJ
 rvJ
@@ -85943,7 +85697,7 @@ cmA
 jTL
 hyx
 jTL
-rnh
+hyx
 jTL
 hyx
 qYF
@@ -86197,8 +85951,8 @@ oph
 ieU
 qYF
 esF
-jTL
-rnh
+mlR
+hyx
 jTL
 hyx
 jTL
@@ -86210,7 +85964,7 @@ ieU
 qYF
 rvJ
 rvJ
-cuH
+rvJ
 rvJ
 rvJ
 qYF
@@ -87486,18 +87240,18 @@ eIw
 jTL
 qYF
 jTL
-jTL
+wNI
 jTL
 qYF
 ieU
 jTL
 ieU
 qYF
-mtM
+dPL
 mtM
 qYF
 mtM
-mtM
+vGF
 qYF
 ieU
 oph
@@ -88521,7 +88275,7 @@ ieU
 jTL
 ieU
 qYF
-mtM
+vGF
 mtM
 qYF
 mtM
@@ -88781,7 +88535,7 @@ qYF
 nNX
 mtM
 qYF
-mtM
+vGF
 mtM
 qYF
 ieU
@@ -89284,8 +89038,8 @@ qYF
 ieU
 fjw
 rba
+pls
 qYF
-lBV
 qYF
 qYF
 ieU
@@ -89540,10 +89294,10 @@ dYn
 ina
 rVm
 qYF
-bYP
 qYF
-bui
-qZF
+qYF
+qYF
+ina
 qYF
 ieU
 jTL
@@ -89809,8 +89563,8 @@ ieU
 ieU
 ieU
 ieU
-rnw
-rnw
+feN
+feN
 ieU
 ieU
 sUk
@@ -90309,7 +90063,7 @@ oph
 ieU
 ina
 ina
-jvK
+qYF
 ina
 ina
 ina
@@ -90323,7 +90077,7 @@ rGM
 ieU
 ieU
 ina
-kji
+jTL
 jTL
 qYF
 ieU
@@ -90568,10 +90322,10 @@ qYF
 jTL
 jTL
 jTL
-pfG
 jTL
 jTL
-wKe
+jTL
+nJg
 qYF
 ieU
 feN
@@ -90822,14 +90576,14 @@ afz
 oph
 ieU
 tVa
-dPL
 jTL
 jTL
 jTL
 jTL
 jTL
 jTL
-bQe
+jTL
+qYF
 rGM
 jTL
 ieU
@@ -90838,7 +90592,7 @@ qYF
 oZn
 ijT
 jTL
-pfG
+jTL
 qYF
 ieU
 hJG
@@ -91337,13 +91091,13 @@ oph
 ieU
 tVa
 jTL
-lBB
 jTL
 jTL
-lBB
 jTL
-uWw
-wKC
+jTL
+jTL
+jTL
+qYF
 ieU
 fpD
 ieU
@@ -91352,7 +91106,7 @@ ina
 hTj
 tth
 jTL
-kji
+jTL
 tlv
 ieU
 vLC
@@ -91598,7 +91352,7 @@ jTL
 jTL
 jTL
 jTL
-gQY
+jTL
 nJg
 qYF
 ieU
@@ -91854,19 +91608,19 @@ vmv
 gir
 qYF
 qYF
-wKC
+qYF
 qYF
 qYF
 qYF
 ieU
 jTL
 feN
-tDY
+qYF
 qYF
 pSd
 pSd
 jTL
-uWw
+jTL
 qYF
 rnw
 kmq
@@ -92114,7 +91868,7 @@ lKY
 ieU
 ieU
 nNn
-bui
+qYF
 ieU
 vBB
 ieU
@@ -92378,8 +92132,8 @@ sHD
 qYF
 qYF
 njM
-pZa
-myE
+nJg
+nJg
 jTL
 qYF
 ieU
@@ -92620,7 +92374,7 @@ oph
 oph
 oph
 ieU
-wNI
+cfu
 cfu
 pSd
 ifi
@@ -92635,7 +92389,7 @@ rGM
 sJJ
 qYF
 oZn
-bYP
+qYF
 jTL
 jTL
 qYF
@@ -92881,7 +92635,7 @@ cfu
 cfu
 pSd
 ifi
-rzR
+ifi
 ifi
 ieU
 qYF
@@ -93152,7 +92906,7 @@ ieU
 ina
 jTL
 jTL
-bui
+qYF
 ieU
 hJG
 hJG
@@ -93648,24 +93402,24 @@ oph
 oph
 oph
 ieU
-eLP
 jTL
 jTL
 jTL
 jTL
-rnw
 jTL
-dtq
+feN
 jTL
 dtq
 jTL
+dtq
+jTL
 ieU
 ieU
 ieU
 ieU
 ieU
-aGm
-vVJ
+rVm
+rVm
 ieU
 ieU
 wDr
@@ -93913,15 +93667,15 @@ ieU
 ieU
 ieU
 rGM
-lGK
+feN
 rGM
 ieU
 ieU
 kDa
 qYF
 qYF
-kOC
-akI
+vAX
+qYF
 qYF
 vAX
 ieU
@@ -94166,19 +93920,19 @@ jTL
 jTL
 jTL
 jTL
-fFt
+jTL
 ieU
 ifi
 bfG
-bZF
+ifi
 vTe
-qoo
+iRN
 ieU
 qYF
 qYF
 ina
 jth
-akI
+qYF
 qYF
 qYF
 ieU
@@ -94421,22 +94175,22 @@ oph
 ieU
 rGM
 ieU
-myE
+nJg
 ieU
 ieU
 ieU
 xxl
-mls
-bZF
-xgs
-vGF
+ifi
+ifi
+ifi
+ifi
 ieU
-bYP
+qYF
 tkd
 rvJ
 qjE
 rvJ
-gwY
+rvJ
 qYF
 ieU
 oph
@@ -94683,13 +94437,13 @@ jTL
 jTL
 ieU
 icw
-iRN
-apT
+uWw
+ifi
 ifi
 ifi
 ieU
 qYF
-lBo
+lFj
 rvJ
 xbp
 tkd
@@ -94935,18 +94689,18 @@ oph
 ieU
 jTL
 jTL
-lBB
+jTL
 ieU
-uWw
+jTL
 ieU
 nxP
-xgs
-ibE
+ifi
+ifi
 xXP
 cxA
 ieU
 rko
-wpB
+lFj
 rvJ
 xnk
 rvJ
@@ -95197,7 +94951,7 @@ ieU
 nJg
 ieU
 vEo
-bZF
+ifi
 ifi
 sOL
 wPK
@@ -95207,8 +94961,8 @@ rvJ
 rvJ
 sxN
 rvJ
-uae
-qgl
+rvJ
+ina
 ieU
 oph
 oph
@@ -95447,7 +95201,7 @@ oph
 oph
 oph
 ieU
-fFt
+jTL
 jTL
 jTL
 ieU
@@ -95455,7 +95209,7 @@ jTL
 ieU
 jSm
 ifi
-twQ
+ifi
 xXP
 cxA
 ieU
@@ -95706,13 +95460,13 @@ oph
 ieU
 jTL
 ieU
-lBB
 jTL
-kji
+jTL
+jTL
 ieU
 oHj
-umA
-bZF
+ifi
+ifi
 ifi
 ifi
 ieU
@@ -95721,8 +95475,8 @@ lFj
 rvJ
 sxN
 rvJ
-tdA
-obI
+rvJ
+qYF
 ieU
 oph
 oph
@@ -95961,7 +95715,7 @@ oph
 oph
 ruh
 ieU
-tTK
+jTL
 ieU
 ieU
 ieU
@@ -95970,8 +95724,8 @@ ieU
 jSm
 ifi
 iRN
-ibE
-bZF
+ifi
+ifi
 rGM
 rko
 tkd
@@ -95979,7 +95733,7 @@ rvJ
 vch
 rvJ
 rvJ
-akI
+qYF
 ieU
 oph
 oph
@@ -96220,19 +95974,19 @@ oph
 ieU
 jTL
 jTL
-tTK
 jTL
-fFt
+jTL
+jTL
 ieU
 xQg
 gTF
-mlR
+iRN
 apT
-xgs
+ifi
 ieU
 qYF
+dtu
 rvJ
-gwY
 xbp
 rvJ
 tkd
@@ -96485,14 +96239,14 @@ ieU
 ieU
 ieU
 iRN
-xgs
+ifi
 ieU
 qYF
 rvJ
 rvJ
 qjE
 rvJ
-gwY
+rvJ
 qYF
 ieU
 oph
@@ -96732,24 +96486,24 @@ oph
 oph
 oph
 ieU
-fFt
+jTL
 ieU
 jTL
 jTL
-jTL
+fFt
 ieU
 cXs
 sEb
 ieU
-bZF
+ifi
 dEW
 ieU
-umW
-akI
+uhB
+qYF
 qYF
 xpD
 qYF
-npu
+qYF
 qYF
 ieU
 oph
@@ -96998,14 +96752,14 @@ ieU
 tAZ
 eLY
 lKY
-bZF
-bZF
+ifi
+ifi
 xKg
-akI
-akI
-akI
 qYF
-bYP
+qYF
+qYF
+qYF
+qYF
 qYF
 bZU
 ieU
@@ -97246,10 +97000,10 @@ oph
 oph
 oph
 ieU
-uWw
-sPn
 jTL
-vba
+jTL
+jTL
+nJg
 ieU
 ieU
 ieU
@@ -97760,11 +97514,11 @@ oph
 afz
 oph
 ieU
-gVW
+jTL
 ieU
-fFt
+jTL
 nJg
-sPn
+jTL
 ieU
 uGd
 fxr
@@ -98019,10 +97773,10 @@ oph
 ieU
 jTL
 ieU
-jTL
+fFt
 ieU
 jTL
-rnw
+feN
 kmq
 pbk
 pbk
@@ -98788,9 +98542,9 @@ oph
 oph
 oph
 ieU
-pfG
 jTL
-pfG
+jTL
+jTL
 jTL
 fBP
 ieU

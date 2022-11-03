@@ -1908,9 +1908,10 @@
 /turf/open/floor/plasteel/f13/vault_floor/purple,
 /area/f13/enclave)
 "bDR" = (
-/obj/effect/gluttony,
-/turf/open/floor/plasteel/cult,
-/area/f13/building)
+/obj/structure/flora/ausbushes/brflowers,
+/mob/living/simple_animal/hostile/raider/junker,
+/turf/open/floor/grass,
+/area/f13/caves)
 "bEj" = (
 /turf/open/floor/circuit/f13_blue,
 /area/f13/brotherhood/dorms)
@@ -9594,7 +9595,7 @@
 /area/f13/brotherhood/operations)
 "hvB" = (
 /obj/structure/bookcase,
-/obj/item/gun/magic/wand/book/healing,
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "hvH" = (
@@ -19989,6 +19990,7 @@
 /area/f13/vault)
 "pQu" = (
 /obj/structure/flora/tallgrass5,
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/grass,
 /area/f13/caves)
 "pRp" = (
@@ -20804,10 +20806,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
-"qtT" = (
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
 "quc" = (
 /obj/item/flag/bos,
 /obj/machinery/light/small{
@@ -21963,7 +21961,7 @@
 /area/f13/brotherhood/leisure)
 "rip" = (
 /obj/structure/bookcase,
-/obj/item/gun/magic/wand/book/shock,
+/obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building)
 "rjb" = (
@@ -22048,15 +22046,7 @@
 /turf/open/floor/f13/wood,
 /area/f13/vault)
 "rns" = (
-/mob/living/simple_animal/hostile/illusion{
-	name = "Lost Soul";
-	desc = "And if they die, they shall wonder for all eternity!";
-	melee_damage_type = "burn";
-	melee_damage_lower = 10;
-	melee_damage_upper = 20;
-	health = 200;
-	maxHealth = 200
-	},
+/mob/living/simple_animal/hostile/raider/junker,
 /turf/open/floor/grass,
 /area/f13/caves)
 "roa" = (
@@ -22211,7 +22201,8 @@
 /area/f13/vault)
 "rxf" = (
 /obj/structure/table/wood,
-/obj/item/melee/ghost_sword,
+/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/hotrod,
+/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/hotrod,
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
 "rxL" = (
@@ -23886,12 +23877,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/red/white,
 /area/f13/brotherhood/reactor)
 "sMJ" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 4
-	},
-/obj/effect/gluttony,
-/turf/open/floor/wood_fancy/wood_fancy_dark,
-/area/f13/building)
+/mob/living/simple_animal/hostile/raider/legendary,
+/turf/open/floor/grass,
+/area/f13/caves)
 "sMP" = (
 /obj/machinery/light{
 	dir = 4
@@ -24520,7 +24508,11 @@
 "tmk" = (
 /mob/living/simple_animal/hostile/megafauna/bubblegum{
 	name = "Amalgamation";
-	desc = "A combination of many bodies put together into a vessel and given sentience."
+	desc = "A combination of many bodies put together into a vessel and given sentience.";
+	melee_damage_lower = 15;
+	melee_damage_upper = 30;
+	health = 1500;
+	stat_attack = 0
 	},
 /turf/open/floor/plasteel/cult,
 /area/f13/building)
@@ -29291,11 +29283,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/vault)
 "xbr" = (
-/obj/machinery/door/unpowered/securedoor,
-/obj/effect/gluttony,
-/turf/open/floor/f13{
-	icon_state = "floorrusty"
-	},
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/plasteel/cult,
 /area/f13/building)
 "xbU" = (
 /obj/structure/cable{
@@ -37216,7 +37205,7 @@ alt
 rjb
 rjb
 rjb
-rjb
+rns
 qxy
 rjb
 rjb
@@ -38255,7 +38244,7 @@ qxy
 rjb
 rjb
 qxy
-rjb
+rns
 rjb
 rjb
 qxy
@@ -38757,7 +38746,7 @@ rjb
 qxy
 rjb
 qxy
-rns
+rjb
 rjb
 qxy
 rjb
@@ -38769,7 +38758,7 @@ rjb
 rjb
 tGr
 qxy
-rns
+rjb
 qxy
 rjb
 qxy
@@ -39015,7 +39004,7 @@ qxy
 rjb
 qxy
 qxy
-rjb
+rns
 rjb
 rjb
 rjb
@@ -39791,7 +39780,7 @@ qxy
 rjb
 qxy
 qxy
-rns
+rjb
 qxy
 qxy
 qxy
@@ -40054,7 +40043,7 @@ alt
 rjb
 rjb
 rjb
-rjb
+rns
 qxy
 rjb
 qxy
@@ -41851,7 +41840,7 @@ emu
 qxy
 rjb
 rXY
-rns
+sMJ
 qxy
 rjb
 rjb
@@ -42361,7 +42350,7 @@ rjb
 rjb
 rjb
 tEK
-rns
+rjb
 qxy
 rjb
 rjb
@@ -42611,7 +42600,7 @@ qxy
 rjb
 qxy
 qxy
-rjb
+rns
 qxy
 rjb
 qxy
@@ -42870,8 +42859,8 @@ rjb
 qxy
 rjb
 qxy
-vtv
-rns
+bDR
+rjb
 qxy
 rjb
 rjb
@@ -43898,22 +43887,22 @@ rXY
 qxy
 rjb
 rjb
+rjb
+qxy
+rjb
+qxy
+rjb
+rjb
+rjb
+rjb
+rjb
+rjb
+qxy
+rjb
+qxy
 rns
 qxy
 rjb
-qxy
-rjb
-rjb
-rjb
-rjb
-rjb
-rjb
-qxy
-rjb
-qxy
-rns
-qxy
-rns
 hHS
 shC
 shC
@@ -44935,7 +44924,7 @@ qxy
 vtv
 rjb
 rjb
-rns
+rjb
 qxy
 rjb
 qxy
@@ -46735,10 +46724,10 @@ rLB
 rLB
 rLB
 rLB
-shC
-shC
-shC
-shC
+rLB
+rLB
+rLB
+rLB
 shC
 shC
 shC
@@ -46981,6 +46970,10 @@ nLk
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+tvD
 rLB
 bqN
 mMZ
@@ -46992,10 +46985,6 @@ qOj
 mMZ
 wuY
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -47238,8 +47227,12 @@ nLk
 cFU
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
-rip
+hvB
 pEe
 bqN
 pEe
@@ -47249,10 +47242,6 @@ bqN
 pEe
 bqN
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -47495,6 +47484,10 @@ nLk
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 bqN
 pEe
@@ -47506,10 +47499,6 @@ bqN
 pEe
 wfo
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -47752,6 +47741,10 @@ rLB
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 bqN
 pEe
@@ -47761,12 +47754,8 @@ bqN
 pEe
 wuY
 pEe
-hvB
+rip
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -48009,6 +47998,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 bqN
 pEe
@@ -48020,10 +48013,6 @@ bqN
 pEe
 gVD
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -48266,6 +48255,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 bqN
 pEe
@@ -48277,10 +48270,6 @@ pEe
 pEe
 bqN
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -48523,21 +48512,21 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 cdT
 pEe
-sMJ
-qtT
-sMJ
+jMj
+pEe
+jMj
 pEe
 pEe
 pEe
 bqN
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -48780,21 +48769,21 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 rLB
 rLB
 rLB
-xbr
+vXE
 rLB
 rLB
 rLB
 rLB
 rLB
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -49036,22 +49025,22 @@ nLk
 nLk
 nLk
 nLk
-bDR
+nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 lAC
 pEe
-qtT
-qtT
+pEe
+pEe
 pEe
 pEe
 pxd
 rLB
 mMZ
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -49293,22 +49282,22 @@ tmk
 nLk
 nLk
 nLk
-bDR
-bDR
-qtT
+nLk
+nLk
+nLk
+nLk
+nLk
+xbr
 pEe
 pEe
 pEe
 pEe
-qtT
+pEe
+pEe
 pEe
 pVI
 cRT
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -49550,22 +49539,22 @@ nLk
 nLk
 nLk
 nLk
-bDR
+nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 lAC
 pEe
-qtT
 pEe
 pEe
-qtT
+pEe
+pEe
 pxd
 rLB
 jMj
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -49808,6 +49797,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 rLB
 rLB
@@ -49819,10 +49812,6 @@ rLB
 rLB
 rLB
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -50065,6 +50054,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -50076,10 +50069,6 @@ pEe
 pEe
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -50322,6 +50311,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -50333,10 +50326,6 @@ auq
 pEe
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -50579,6 +50568,10 @@ nLk
 nLk
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -50590,10 +50583,6 @@ auq
 pEe
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -50836,6 +50825,10 @@ rLB
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -50847,10 +50840,6 @@ auq
 pEe
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -51093,6 +51082,10 @@ nLk
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -51104,10 +51097,6 @@ auq
 pEe
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -51350,6 +51339,10 @@ nLk
 cFU
 nLk
 nLk
+nLk
+nLk
+nLk
+nLk
 rLB
 auq
 pEe
@@ -51361,10 +51354,6 @@ auq
 pEe
 fEN
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -51607,6 +51596,10 @@ nLk
 rLB
 nLk
 nLk
+nLk
+nLk
+nLk
+tvD
 rLB
 jHz
 jMj
@@ -51618,10 +51611,6 @@ auq
 jMj
 auq
 rLB
-shC
-shC
-shC
-shC
 shC
 shC
 shC
@@ -51875,10 +51864,10 @@ rLB
 rLB
 rLB
 rLB
-shC
-shC
-shC
-shC
+rLB
+rLB
+rLB
+rLB
 shC
 shC
 shC
