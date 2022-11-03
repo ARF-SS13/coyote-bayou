@@ -187,13 +187,19 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 ))
 
 GLOBAL_LIST_INIT(trash_ammo, list(
-	/obj/item/ammo_box/a308box = 3,
-	/obj/item/ammo_box/a556/sport = 3,
+	/obj/item/ammo_box/a308box/improvised = 2,
+	/obj/item/ammo_box/m5mmbox/improvised = 1,
+	/obj/item/ammo_box/a556/sport/improvised = 3,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
-	/obj/item/ammo_box/magazine/zipgun = 3,
-	/obj/item/ammo_casing/shotgun/buckshot = 2,
-	/obj/item/ammo_box/c38 = 3,
-	/obj/item/ammo_box/m22 = 2,
+	/obj/item/ammo_box/c10mm/improvised = 5,
+	/obj/item/ammo_box/c9mm/improvised = 5,
+	/obj/item/ammo_casing/shotgun/improvised = 1,
+	/obj/item/ammo_box/c38box/improvised = 3,
+	/obj/item/ammo_box/m44box/improvised = 1,
+	/obj/item/ammo_box/c45/improvised = 5,
+	/obj/item/ammo_box/m14mm/improvised = 1,
+	/obj/item/ammo_box/c4570box/improvised = 1,
+	/obj/item/ammo_box/m22 = 3,
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(

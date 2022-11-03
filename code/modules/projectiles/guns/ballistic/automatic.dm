@@ -503,21 +503,26 @@
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22/extended
 	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+	weapon_weight = GUN_ONE_HAND_AKIMBO
 
+	added_spread = GUN_SPREAD_POOR
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
-	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_FASTER
-	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
-	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.75)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY,
-		FULL_AUTO_800
+		FULL_AUTO_200
 	)
+
+	automatic = TRUE
+	automatic_burst_overlay = FALSE
 
 	automatic = 1
 	is_automatic = TRUE
@@ -1004,7 +1009,7 @@
 			. += "<br><span class='notice'>The readout displays \"10mm Mode\", indicating it'll accept most 10mm SMG and pistol mags.</span>"
 		if("45ACP")
 			. += "<br><span class='notice'>The readout displays \".45ACP Mode\", indicating it'll accept most .45 SMG and pistol mags.</span>"
-	. += "<br><span class='notice'>Unload the gun and use it in hand to change the caliber.</span>"
+	. += "<br><span class='notice'>Unload the gun and click the action button to change the caliber.</span>"
 
 /* * * * * * *
  * Carbines  *
@@ -1382,6 +1387,8 @@
 		SEMI_AUTO_NODELAY,
 		FULL_AUTO_200
 	)
+
+	max_upgrades = 3
 
 	automatic = TRUE
 	automatic_burst_overlay = FALSE

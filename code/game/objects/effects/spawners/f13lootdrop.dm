@@ -841,15 +841,16 @@
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low
 	name = "low tier ballistic gun"
-	loot = list(/obj/effect/spawner/bundle/f13/m1911,
-				/obj/effect/spawner/bundle/f13/thatgun,
-				/obj/effect/spawner/bundle/f13/n99,
-				/obj/effect/spawner/bundle/f13/colt357,
-				/obj/effect/spawner/bundle/f13/huntingshotgun,
-				/obj/effect/spawner/bundle/f13/police_pistol,
-				/obj/effect/spawner/bundle/f13/guns/commando,
-				/obj/effect/spawner/bundle/f13/m1carbine,
-				/obj/effect/spawner/bundle/f13/sidewinder
+	loot = list(/obj/effect/spawner/bundle/f13/m1911 = 5,
+				/obj/effect/spawner/bundle/f13/thatgun = 5,
+				/obj/effect/spawner/bundle/f13/n99 = 5,
+				/obj/effect/spawner/bundle/f13/colt357 = 5,
+				/obj/effect/spawner/bundle/f13/huntingshotgun = 4,
+				/obj/effect/spawner/bundle/f13/police_pistol = 5,
+				/obj/effect/spawner/bundle/f13/guns/commando = 5,
+				/obj/effect/spawner/bundle/f13/m1carbine = 5,
+				/obj/effect/spawner/bundle/f13/sidewinder = 1,
+				/obj/effect/spawner/bundle/f13/mini22uzi = 2
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid
@@ -875,7 +876,6 @@
 				/obj/effect/spawner/lootdrop/f13/armor/tier1 = 8,
 				/obj/item/stack/f13Cash/random/low = 10,
 				/obj/item/gun/ballistic/automatic/smg/american180 = 1,
-				/obj/effect/spawner/bundle/f13/mini22uzi = 1,
 				/obj/effect/spawner/bundle/f13/sportcarbine = 1,
 				/obj/effect/spawner/bundle/f13/ninemil = 1,
 				/obj/effect/spawner/bundle/f13/widowmaker = 2,
