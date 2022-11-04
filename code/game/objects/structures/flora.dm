@@ -12,6 +12,15 @@
 	layer = FLY_LAYER
 	var/log_amount = 10
 
+/obj/structure/flora/tree/Bumped(atom/movable/AM)
+	. = ..()
+	if(ishuman(AM))
+		var/mob/living/carbon/human/humanAM = AM
+		if(humanAM.combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
+			humanAM.disable_sprint_mode()
+			humanAM.AdjustKnockdown(25)
+			visible_message(span_warning("[humanAM] runs straight into [src]!"))
+
 /obj/structure/flora/tree/attackby(obj/item/W, mob/user, params)
 	if(log_amount && (!(flags_1 & NODECONSTRUCT_1)))
 		if(W.sharpness && W.force > 0)

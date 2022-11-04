@@ -267,11 +267,17 @@
 		if(isinsect(human_user))
 			return 'sound/voice/moth/mothchitter.ogg'
 
+/*
 /datum/emote/living/look
 	key = "look"
 	key_third_person = "looks"
 	message = "looks."
-	message_param = "looks at %t."
+	key_third_person = "seems to be looking around for something."
+	message = "seems to be looking around for something."
+	if(ckey = "tk420634")
+		key_third_person = "tries to look look around, but can't look up because they're a dog."
+		message = "tries to look look around, but can't look up because they're a dog."
+*/
 
 /datum/emote/living/nod
 	key = "nod"
@@ -859,6 +865,10 @@
 	message = "squeaks!"
 	sound = 'sound/f13effects/sunsetsounds/squeak_moth.ogg'
 
+/datum/emote/look
+	key = "look"
+	key_third_person = "makes a fennec-y bark"
+	message = "makes a fennec-y bark!"
 
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"
