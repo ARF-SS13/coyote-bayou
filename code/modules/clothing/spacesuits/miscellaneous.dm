@@ -419,14 +419,18 @@ Contains:
 	item_state = "hardsuit0-inq"
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/old
-	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats. Alas, this one looks pretty worn out and rusted."
-	slowdown = 0.8
+	desc = "Who you going to call? Definitely not vault-tec! Protects against abnormal oddities. Or so it says...such things don't really exist!"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old
 	charges = 12
+	slowdown = ARMOR_SLOWDOWN_MEDIUM * ARMOR_SLOWDOWN_LESS_T2 * ARMOR_SLOWDOWN_GLOBAL_MULT
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old
-	desc = "A helmet worn by those who deal with paranormal threats for a living. Alas, this one looks pretty worn out and rusted."
+	desc = "The helmet plating of the inquisitor suit. Vault-tec has no time for 'ghosts'!"
 	charges = 12
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_UP_LASER_T3, ARMOR_MODIFIER_UP_DT_T3)
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/beserker
 	name = "champion's hardsuit"
