@@ -57,8 +57,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	medical_record_text = "Patient demonstrates a high tolerance for alcohol."
 
 /datum/quirk/horrifying_tastes
-	name = "Horrifying Tastes"
-	desc = "You enjoy a fine sort of meal not often appreciated by your peers. To serve man, in all it's forms is your life's work. Put bluntly - you are a cannibal. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you."
+	name = "Cannibal"
+	desc = "You eat people. Consuming human flesh doesn't bother you, and dishes such as longpork stew will heal you. Probably don't tell your neighbor."
 	mob_trait = TRAIT_LONGPORKLOVER
 	value = 1
 	gain_text = span_notice("You have an insatiable hunger for the flesh of your fellow man.")
@@ -153,7 +153,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/jolly
 	name = "Jolly"
-	desc = "You sometimes just feel happy, for no reason at all."
+	desc = "You sometimes just feel happy, for no reason at all. Gives mood buffs, occasionally."
 	value = 1
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
@@ -174,8 +174,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 
 /datum/quirk/quick_step
-	name = "Quick Step"
-	desc = "You walk with determined strides, and out-pace most people when walking."
+	name = "Speed Walker"
+	desc = "You walk with determined strides, and out-pace most people, at least, when walking."
 	value = 1
 	mob_trait = TRAIT_SPEEDY_STEP
 	gain_text = span_notice("You feel determined. No time to lose.")
@@ -185,7 +185,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/musician
 	name = "Musician"
-	desc = "You can tune handheld musical instruments to play melodies that clear certain negative effects and soothe the soul."
+	desc = "You can tune instruments to play melodies that clear certain negative effects and soothe the soul and even get one of your choice for free!"
 	value = 1
 	mob_trait = TRAIT_MUSICIAN
 	gain_text = span_notice("You know everything about musical instruments.")
@@ -205,7 +205,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 /datum/quirk/photographer
 	name = "Photographer"
 	desc = "You know how to handle a camera, shortening the delay between each shot."
-	value = 1
+	value = 0
 	mob_trait = TRAIT_PHOTOGRAPHER
 	gain_text = span_notice("You know everything about photography.")
 	lose_text = span_danger("You forget how photo cameras work.")
@@ -244,7 +244,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 /datum/quirk/tagger
 	name = "Tagger"
 	desc = "You're an experienced artist. While drawing graffiti, you can get twice as many uses out of drawing supplies."
-	value = 1
+	value = 0
 	mob_trait = TRAIT_TAGGER
 	gain_text = span_notice("You know how to tag walls efficiently.")
 	lose_text = span_danger("You forget how to tag walls properly.")
@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 		H.mind.learned_recipes -= GLOB.weaponcrafting_gun_recipes
 
 /datum/quirk/voracious
-	name = "Voracious"
+	name = "Bottomless Stomach"
 	desc = "Nothing gets between you and your food. You eat twice as fast as everyone else!"
 	value = 1
 	mob_trait = TRAIT_VORACIOUS
@@ -294,7 +294,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	medical_record_text = "Patient demonstrates a disturbing capacity for eating."
 
 /datum/quirk/bloodpressure
-	name = "Polycythemia vera"
+	name = "Extra Blood"
 	desc = "You've a treated form of Polycythemia vera that increases the total blood volume inside of you as well as the rate of replenishment!"
 	value = 2 //I honeslty dunno if this is a good trait? I just means you use more of medbays blood and make janitors madder, but you also regen blood a lil faster.
 	mob_trait = TRAIT_HIGH_BLOOD
@@ -321,7 +321,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/night_vision
 	name = "Night Vision"
-	desc = "You can see slightly more clearly in full darkness than most people."
+	desc = "You can see slightly more clearly in full darkness than most people by one more whole tile."
 	value = 1
 	mob_trait = TRAIT_NIGHT_VISION
 	gain_text = span_notice("The shadows seem a little less dark.")
@@ -334,7 +334,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/nukalover
 	name = "Nuka Fiend"
-	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives."
+	desc = "You are a fan of America's most popular pre-war soft drink. Your body simply loves the sugary drink so much, it rejects healthier alternatives. Nuka Cola heals you, sort of."
 	value = 1
 	mob_trait = TRAIT_NUKA_LOVER
 	gain_text = span_notice("You want to buy the whole world a nuka-cola!")
@@ -395,8 +395,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 
 /datum/quirk/pa_wear
-	name = "PA Wear"
-	desc = "You've being around the wastes and have learned the importance of defense."
+	name = "Power Armor Training"
+	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere."
 	value = 2
 	mob_trait = TRAIT_PA_WEAR
 	gain_text = span_notice("You realize how to use Power Armor.")
@@ -404,8 +404,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	locked = FALSE
 
 /datum/quirk/hard_yards
-	name = "Hard Yards"
-	desc = "You've put them in, now reap the rewards."
+	name = "Wasteland Trekker"
+	desc = "You've spent a lot of time wandering the wastes, and for your pace across them is much higher than average for it."
 	value = 3
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = span_notice("Rain or shine, nothing slows you down.")
@@ -414,7 +414,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/lifegiver
 	name = "Lifegiver"
-	desc = "You embody wellness! Instantly gain +10 maximum Health"
+	desc = "You embody wellness! Instantly gain +10 maximum Health."
 	value = 1
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = span_notice("You feel more healthy than usual.")
@@ -441,8 +441,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	mob_tar.dna.species.punchdamagehigh = 11
 
 /datum/quirk/light_step
-	name = "Light Step"
-	desc = "You walk with a gentle step, making stepping on sharp objects quieter and less painful."
+	name = "Glass Walker"
+	desc = "When it comes to stepping on glass, you're pretty die hard.  You'll make less noise when you do so, but it'd still suck without shoes."
 	value = 1
 	mob_trait = TRAIT_LIGHT_STEP
 	gain_text = span_notice("You walk with a little more litheness.")
