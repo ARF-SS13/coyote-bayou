@@ -47,8 +47,9 @@ SUBSYSTEM_DEF(ticker)
 
 	/// Deciseconds to add to world.time for station time.
 	var/gametime_offset = 216000
-	var/station_time_rate_multiplier = 1		//factor of station time progressal vs real time.
-	var/timezone_offset = 36000                 //add 2 hours for a realtime timezone offset (ET vs CT)
+	var/station_time_rate_multiplier = 6		//factor of station time progressal vs real time.
+	var/timezone_offset_positive = 0            //add time for a timezone offset
+	var/timezone_offset_negative = 216000       //remove time for a timezone offset (UTC to CT)
 
 	var/totalPlayers = 0					//used for pregame stats on statpanel
 	var/totalPlayersReady = 0				//used for pregame stats on statpanel
@@ -153,7 +154,7 @@ SUBSYSTEM_DEF(ticker)
 	if(CONFIG_GET(flag/randomize_shift_time))
 		gametime_offset = rand(0, 23) HOURS
 	else if(CONFIG_GET(flag/shift_time_realtime))
-		gametime_offset = world.timeofday + timezone_offset
+		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	return ..()
 
 /datum/controller/subsystem/ticker/fire()
@@ -315,7 +316,7 @@ SUBSYSTEM_DEF(ticker)
 	round_start_time = world.time
 	// Time sync
 	if(CONFIG_GET(flag/shift_time_realtime) && !CONFIG_GET(flag/randomize_shift_time))
-		gametime_offset = world.timeofday + timezone_offset
+		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
