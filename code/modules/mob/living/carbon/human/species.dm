@@ -1597,7 +1597,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
 				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
 				"You hear a slap."
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
+		playsound(target.loc 'sound/weapons/slap.ogg', 50, 1, -1)
 
 		return FALSE
 
