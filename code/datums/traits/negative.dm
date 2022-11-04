@@ -492,16 +492,27 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	value = -1
 	mood_quirk = TRUE
 	medical_record_text = "Patient feels more secure when wearing a gas mask."
-	processing_quirk = TRUE
 	var/mood_category = "masked_mook"
 
 /datum/quirk/masked_mook/on_process()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/obj/item/clothing/mask/gas/gasmask = H.get_item_by_slot(ITEM_SLOT_MASK)
 	if(istype(gasmask))
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 	else
+		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook)
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, mood_category, /datum/mood_event/masked_mook_incomplete)
+
+/datum/mood_event/masked_mook
+	description = span_nicegreen("I'm safe in my protective mask.")
+	mood_change = 3
+	timeout = 0
+
+/datum/mood_event/masked_mook_incomplete
+	description = span_warning("I'm forced to breathe the horrors of the wastes!")
+	mood_change = -3
+	timeout = 0
 
 /datum/quirk/masked_mook/on_spawn()
 	. = ..()
