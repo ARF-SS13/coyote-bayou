@@ -142,7 +142,7 @@
 		species.disliked_food &= ~ALCOHOL
 
 /datum/quirk/longtimer
-	name = "Longtimer"
+	name = "Scarred" //Renamed to be more clear what it is, u ugly af ~TK
 	desc = "You've been around for a long time and seen more than your fair share of action, suffering some pretty nasty scars along the way. For whatever reason, you've declined to get them removed or augmented."
 	value = 0
 	gain_text = span_notice("Your body has seen better days.")
@@ -214,10 +214,10 @@
 
 /datum/quirk/vegetarian
 	name = "Vegetarian"
-	desc = "You find the idea of eating meat morally and physically repulsive."
+	desc = "You find the idea of eating meat morally and/or physically repulsive."
 	value = 0
 	gain_text = "<span class='notice'>You feel repulsion at the idea of eating meat.</span>"
-	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.</span>"
+	lose_text = "<span class='notice'>You feel like eating meat isn't that bad.  Might could even go for a cheeseburger.</span>"
 	medical_record_text = "Patient reports a vegetarian diet."
 
 /datum/quirk/vegetarian/add()
