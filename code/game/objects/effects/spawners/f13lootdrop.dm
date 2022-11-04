@@ -297,6 +297,8 @@
 				/obj/item/clothing/suit/armor/light/leather/leathercoat,
 				/obj/item/clothing/suit/armor/medium/vest,
 				/obj/item/clothing/suit/armor/medium/vest/alt,
+				/obj/item/clothing/suit/armor/medium/raider/slam,
+				/obj/item/clothing/suit/armor/medium/raider/scrapcombat
 				)
 
 /obj/effect/spawner/bundle/f13/armor/knight
@@ -331,6 +333,25 @@
 				/obj/effect/spawner/bundle/f13/armor/sulphite,
 				/obj/effect/spawner/bundle/f13/armor/vault,
 				/obj/item/clothing/suit/armor/medium/vest/breastplate/khan
+				)
+
+/obj/effect/spawner/lootdrop/f13/armor/randomraiderchest //random raider armor
+	name = "raider boss armor drop"
+	loot = list(
+				/obj/item/clothing/suit/armor/medium/raider/scrapcombat,
+				/obj/item/clothing/suit/armor/medium/raider/slam,
+				/obj/item/clothing/suit/armor/medium/raider/rebel,
+				/obj/item/clothing/suit/armor/medium/raider/scrapcombat,
+				/obj/item/clothing/suit/armor/medium/raider/slam,
+				/obj/item/clothing/suit/armor/medium/raider/wastewar,
+				/obj/item/clothing/suit/armor/medium/combat/mk2/raider) // da grail
+
+/obj/effect/spawner/lootdrop/f13/armor/randomraiderhead //random raider armor
+	name = "raider boss armor drop"
+	loot = list(
+				/obj/item/clothing/head/helmet/f13/raider/wastehound,
+				/obj/item/clothing/head/helmet/f13/raidermetal,
+				/obj/item/clothing/head/helmet/f13/combat/mk2/raider
 				)
 
 /obj/effect/spawner/bundle/f13/armor/metal/reinforced
@@ -380,7 +401,8 @@
 				/obj/effect/spawner/bundle/f13/armor/t45b_salvaged,
 				/obj/effect/spawner/bundle/f13/armor/riot,
 				/obj/effect/spawner/bundle/f13/armor/combat/mk2,
-				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark
+				/obj/effect/spawner/bundle/f13/armor/combat/mk2/dark,
+				/obj/item/clothing/suit/armor/medium/raider/reptiliatenebris
 				)
 
 /obj/effect/spawner/bundle/f13/armor/t45b_salvaged
