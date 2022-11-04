@@ -29594,6 +29594,16 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"fwf" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "high level mobs";
+	randomizer_tag = "Museum Musketeers"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building)
 "fwl" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticalcorroded"
@@ -29943,10 +29953,10 @@
 	},
 /area/f13/wasteland/city)
 "fEb" = (
-/obj/structure/simple_door/interior,
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
+/obj/structure/obstacle/old_locked_door,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "fEc" = (
@@ -49343,11 +49353,6 @@
 	icon_state = "bar"
 	},
 /area/f13/building/abandoned)
-"obQ" = (
-/obj/structure/rack,
-/obj/item/locked_box/armor/tier3_5,
-/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
-/area/f13/building)
 "ocf" = (
 /obj/structure/fence{
 	dir = 4
@@ -66417,6 +66422,11 @@
 /obj/structure/flora/tallgrass9,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"vPd" = (
+/obj/structure/rack,
+/obj/item/locked_box/armor/tier3_5,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "vPC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -66694,16 +66704,6 @@
 	},
 /turf/open/indestructible/ground/outside/road,
 /area/f13/wasteland/city)
-"vWp" = (
-/obj/structure/nest/randomized{
-	randomizer_difficulty = 1;
-	randomizer_kind = "high level mobs";
-	randomizer_tag = "Museum Musketeers"
-	},
-/turf/open/floor/f13{
-	icon_state = "bluerustysolid"
-	},
-/area/f13/building)
 "vWT" = (
 /obj/item/toy/beach_ball/holoball,
 /obj/effect/turf_decal/trimline/neutral/line{
@@ -71115,6 +71115,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"yaB" = (
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "yaO" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -74510,7 +74514,7 @@ hCc
 vKX
 hCc
 hCc
-qdo
+yaB
 hCc
 vKX
 vKX
@@ -75228,7 +75232,7 @@ kGV
 kGV
 bqq
 wSI
-obQ
+vPd
 bwM
 kGV
 kGV
@@ -94574,7 +94578,7 @@ fit
 hCc
 bdZ
 vKX
-qdo
+yaB
 hCc
 bdZ
 vKX
@@ -94894,14 +94898,14 @@ aEZ
 uqJ
 uqJ
 oBz
-qdo
+yaB
 aQZ
 mHp
 una
 igF
 hEG
 anR
-qdo
+yaB
 uqJ
 oBz
 oBz
@@ -96866,8 +96870,8 @@ hCc
 lqs
 fjS
 vKX
-qdo
-qdo
+yaB
+yaB
 hCc
 hCc
 hCc
@@ -97207,7 +97211,7 @@ nGI
 oBz
 uqJ
 uqJ
-qdo
+yaB
 aQZ
 rFj
 lau
@@ -98383,8 +98387,8 @@ iDt
 vKX
 atd
 hCc
-qdo
-qdo
+yaB
+yaB
 hCc
 lqs
 hCc
@@ -98676,7 +98680,7 @@ lpx
 lpx
 hCc
 hCc
-qdo
+yaB
 hCc
 lqs
 lqs
@@ -99921,7 +99925,7 @@ wjb
 hCc
 lqs
 vKX
-qdo
+yaB
 hCc
 lqs
 hCc
@@ -100043,7 +100047,7 @@ hEG
 anR
 aOk
 aOk
-aEZ
+yaB
 oxC
 uqJ
 gTC
@@ -101312,8 +101316,8 @@ baS
 hCc
 vKX
 hCc
-qdo
-qdo
+yaB
+yaB
 hCc
 hCc
 gCs
@@ -103063,7 +103067,7 @@ lqs
 hCc
 vKX
 hCc
-qdo
+yaB
 hCc
 hCc
 kbi
@@ -103076,8 +103080,8 @@ dVg
 vKX
 hCc
 ntE
-qdo
-qdo
+yaB
+yaB
 hCc
 muX
 hCc
@@ -104874,11 +104878,11 @@ wKU
 aQF
 vKX
 hCc
-aEZ
+yaB
 hCc
 hCc
 hCc
-aEZ
+yaB
 muX
 aTB
 fit
@@ -107045,7 +107049,7 @@ xDl
 aER
 wFX
 bgS
-vWp
+fwf
 agk
 fit
 dUB
@@ -107948,7 +107952,7 @@ oBz
 cLB
 uqJ
 oBz
-qdo
+yaB
 rgG
 ndf
 dZD
@@ -108003,7 +108007,7 @@ bgt
 bkP
 pEz
 hCc
-aEZ
+yaB
 hCc
 cpo
 uvR
