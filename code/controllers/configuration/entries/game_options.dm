@@ -565,5 +565,5 @@
 
 /// Sets the amount of quirk points players get by default
 /datum/config_entry/number/quirk_points
-	config_entry_value = 3
+	config_entry_value = 5
 	min_val = 0
