@@ -687,6 +687,11 @@
 		C.cpr_time = world.time
 		log_combat(src, C, "CPRed")
 
+/mob/living/carbon/human/is_literate()
+	if(HAS_TRAIT(src, TRAIT_ILLITERATE))
+		return FALSE
+	return TRUE
+
 		if(they_breathe && they_lung)
 			var/suff = min(C.getOxyLoss(), 7)
 			C.adjustOxyLoss(-suff)
