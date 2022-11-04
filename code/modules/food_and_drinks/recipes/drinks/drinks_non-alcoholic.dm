@@ -148,7 +148,7 @@
 	name = "chocolate milk"
 	id = /datum/reagent/consumable/milk/chocolate_milk
 	results = list(/datum/reagent/consumable/milk/chocolate_milk = 2)
-	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/coco = 1)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/coco = 1, /datum/reagent/consumable/cream = 1)
 	mix_message = "The color changes as the mixture blends smoothly."
 
 /datum/chemical_reaction/pwrgame
@@ -161,7 +161,7 @@
 	name = "Strawberry Milk"
 	id = /datum/reagent/consumable/pinkmilk
 	results = list(/datum/reagent/consumable/pinkmilk = 2)
-	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1)
+	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/cream = 1)
 
 /datum/chemical_reaction/drink/cucumberlemonade
 	name = "Cucumber Lemonade"
@@ -205,7 +205,7 @@
 	name = "Strawberry Banana Smoothie"
 	id = /datum/reagent/consumable/strawberry_banana
 	results = list(/datum/reagent/consumable/strawberry_banana = 3)
-	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/banana = 1)
+	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/banana = 1, /datum/reagent/consumable/milk = 1)
 
 /datum/chemical_reaction/drink/berry_blast
 	name = "Berry Blast Smoothie"
@@ -217,7 +217,7 @@
 	name = "Funky Monkey Smoothie"
 	id = /datum/reagent/consumable/funky_monkey
 	results = list(/datum/reagent/consumable/funky_monkey = 3)
-	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/banana = 1)
+	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/banana = 1, /datum/reagent/consumable/milk = 1)
 
 /datum/chemical_reaction/drink/green_giant
 	name = "Green Giant Smoothie"
