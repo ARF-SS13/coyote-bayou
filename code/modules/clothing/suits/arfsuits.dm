@@ -2676,7 +2676,7 @@
 	mob_overlay_icon = 'icons/fallout/clothing/armored_heavy.dmi'
 	icon_state = "t45hotrod"
 	item_state = "t45hotrod"
-	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3)
+	armor_tokens = list(ARMOR_MODIFIER_UP_FIRE_T3, ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_UP_LASER_T2, ARMOR_MODIFIER_DOWN_DT_T1)
 
 
 /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal
