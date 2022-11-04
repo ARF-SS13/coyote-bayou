@@ -355,7 +355,7 @@
 	time = 180
 	reqs = list(
 		/obj/item/stack/sheet/cloth = 3,
-		/obj/item/stack/sheet/lead = 2,
+		/obj/item/stack/sheet/metal = 2,
 		)
 	tools = list(TOOL_FORGE)
 	category = CAT_WEAPONRY
