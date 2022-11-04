@@ -76,6 +76,15 @@
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
 		return FALSE
 
+/datum/emote/living/cough/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_cough.ogg'
+		else
+			sound = 'sound/effects/male_cough.ogg'
+		return 
+
 /datum/emote/living/dance
 	key = "dance"
 	key_third_person = "dances"
@@ -172,6 +181,15 @@
 	message = "gasps!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+
+/datum/emote/living/gasp/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_gasp.ogg'
+		else
+			sound = 'sound/effects/male_gasp.ogg'
+		return 
 
 /datum/emote/living/giggle
 	key = "giggle"
@@ -337,6 +355,16 @@
 	key_third_person = "sneezes"
 	message = "sneezes."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/sneeze/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_sneeze.ogg'
+		else
+			sound = 'sound/effects/male_sneeze.ogg'
+		return 
+
 
 /datum/emote/living/smug
 	key = "smug"
