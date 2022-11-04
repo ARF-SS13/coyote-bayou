@@ -378,7 +378,7 @@
 		eject()
 	else
 		mortar_mode = !mortar_mode
-		to_chat(user, span_notice("You decide to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"]."))
+		to_chat(user, span_notice("You decide to [mortar_mode == MORTAR_JUICE ? "juice the contents of the mortar" : "grind the contents of the mortar"]."))
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	if(is_type_in_list(I, blacklistchems))
@@ -390,10 +390,10 @@
 				return
 			user.adjustStaminaLoss(2 * holdingitems.len) //max 40
 			if(mortar_mode== MORTAR_JUICE)
-				juice()
+				juice(user)
 				return
 			else
-				grind()
+				grind(user)
 				return
 		else
 			to_chat(user, span_warning("There is nothing to grind!"))
@@ -431,13 +431,34 @@
 	holdingitems -= O
 	qdel(O)
 
-/obj/item/reagent_containers/glass/mortar/proc/juice()
+/obj/item/reagent_containers/glass/mortar/proc/juice(mob/user)
+	playsound(get_turf(user),'sound/f13effects/mortarandpestle.ogg')
+	if(user)
+		user.visible_message(
+			span_notice("[user] starts squeezing the juice out of the mortars contents..."),
+			span_notice("You start squeezing the juice out of the contents of the mortar..."),
+			span_notice("Something is squishing something nearby.")
+			)
+	if(!do_after(user, 4 SECONDS, target = src))
+		if(user)
+			user.visible_message(
+				span_alert("[user] messes up!"),
+				span_alert("You mess up and have to start over!"),
+				span_alert("Something stops grinding rocks together.")
+				)
+			return
 	for(var/obj/item/i in holdingitems)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			break
 		var/obj/item/I = i
 		if(I.juice_results)
 			juice_item(I)
+	if(user)
+		user.visible_message(
+			span_notice("[user] finishes squeezing the juice out of the mortars contents..."),
+			span_notice("You finish squeezing the juice out of the contents within the mortar..."),
+			span_notice("Something stops grinding rocks together.")
+			)
 
 /obj/item/reagent_containers/glass/mortar/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
@@ -446,13 +467,33 @@
 	reagents.add_reagent_list(I.juice_results)
 	remove_object(I)
 
-/obj/item/reagent_containers/glass/mortar/proc/grind()
+/obj/item/reagent_containers/glass/mortar/proc/grind(mob/user)
+	if(user)
+		user.visible_message(
+			span_notice("[user] starts grinding the mortars contents..."),
+			span_notice("You start grinding the contents of the mortar..."),
+			span_notice("Something is grinding something nearby.")
+			)
+	if(!do_after(user, 4 SECONDS, target = src))
+		if(user)
+			user.visible_message(
+				span_alert("[user] messes up!"),
+				span_alert("You mess up and have to start over!"),
+				span_alert("Something stops grinding rocks together."),
+				)
+			return
 	for(var/i in holdingitems)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			break
 		var/obj/item/I = i
 		if(I.grind_results)
 			grind_item(i)
+	if(user)
+		user.visible_message(
+			span_notice("[user] finishes grinding the mortars contents..."),
+			span_notice("You finish grinding the contents within the mortar..."),
+			span_notice("Something stops grinding rocks together.")
+			)
 
 /obj/item/reagent_containers/glass/mortar/proc/grind_item(obj/item/I) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
