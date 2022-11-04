@@ -236,7 +236,7 @@
 			species.disliked_food &= ~MEAT
 /datum/quirk/hydra
 	name = "Hydra Heads"
-	desc = "You are a tri-headed creature. To use, format your name like (Rucks-Sucks-Ducks)."
+	desc = "You are a tri-headed creature. To use, format your name like (Rucks-Sucks-Ducks) and use the action button in the top left."
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
 	gain_text = "<span class='notice'>You hear two other voices inside of your head(s).</span>"
