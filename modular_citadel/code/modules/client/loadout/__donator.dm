@@ -252,6 +252,9 @@
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/selfassign/darknova(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
