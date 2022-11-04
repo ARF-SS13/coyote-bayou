@@ -42,16 +42,16 @@
 	message = "chuckles."
 	emote_type = EMOTE_AUDIBLE
 
-/* Sunset Attempt - I tried bro ~TK  This lets females have a chuckle, but males don't.  idk man, I'm dumb.
-/datum/emote/living/chuckle/get_sound(mob/living/user) //Sunset Edit -TK
+
+/datum/emote/living/chuckle/get_sound(mob/living/M) 
 	. = ..()
-	if(ishuman(user))
-		if(user.gender == FEMALE)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
 			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 		else
 			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
-		return sound
-*/
+		return 
+
 
 /datum/emote/living/collapse
 	key = "collapse"
