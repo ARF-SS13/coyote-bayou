@@ -802,8 +802,8 @@
 	description = "A cherry flavored milkshake."
 	color = "#FFB6C1"
 	quality = DRINK_VERYGOOD
-	nutriment_factor = 2 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "creamy tart cherry"
 	glass_icon_state = "cherryshake"
 	glass_name = "cherry shake"
 	glass_desc = "A cherry flavored milkshake."
@@ -814,7 +814,7 @@
 	description = "An exotic milkshake."
 	color = "#00F1FF"
 	quality = DRINK_VERYGOOD
-	nutriment_factor = 2 * REAGENTS_METABOLISM
+	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "creamy blue cherry"
 	glass_icon_state = "bluecherryshake"
 	glass_name = "blue cherry shake"
@@ -1118,6 +1118,7 @@
 	name = "Cucumber Lemonade"
 	description = "Cucumber juice, sugar and soda, what else is needed for happiness?"
 	color = "#6cd87a"
+	quality = DRINK_GOOD
 	taste_description = "citrus soda with cucumber"
 	glass_icon_state = "cucumber_lemonade"
 	glass_name = "cucumber lemonade"
