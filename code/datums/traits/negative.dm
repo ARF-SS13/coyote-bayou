@@ -18,7 +18,7 @@
 
 /datum/quirk/depression
 	name = "Depression"
-	desc = "You sometimes just hate life."
+	desc = "You sometimes just hate life, and get a mood debuff for it."
 	mob_trait = TRAIT_DEPRESSION
 	value = 0
 	gain_text = span_danger("You start feeling depressed.")
@@ -126,7 +126,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	heirloom = data
 
 /datum/quirk/heavy_sleeper
-	name = "Heavy Sleeper"
+	name = "Heavy Sleeper" //hard consider redesigning, since this is a flat update. ~TK
 	desc = "You sleep like a rock! Whenever you're put to sleep, you sleep for a little bit longer."
 	value = 0
 	mob_trait = TRAIT_HEAVY_SLEEPER
