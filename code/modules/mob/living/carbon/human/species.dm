@@ -1346,7 +1346,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/radiation = H.radiation
 	if(HAS_TRAIT(H, TRAIT_RADIMMUNE)) //Runs before FEV check so you can make supermutants that AREN'T slowed by rads.
 		return TRUE
-	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls. 
+	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls.
 		switch(radiation)
 			if(1000 to 2000)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1)
@@ -1355,7 +1355,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(3000 to INFINITY)
 				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 2)
 			else //This really shouldn't be occurring, and if it does; report this to a coder.
-				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)		
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)
 		return TRUE
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
 		if(CHECK_MOBILITY(H, MOBILITY_STAND))
@@ -1587,6 +1587,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			span_danger("\The [user] slaps [user == target ? "[user.p_their()] own" : "\the [target]'s"] ass!"),\
 			span_notice("[user] slaps your ass! "),\
 			"You hear a slap.", target = user, target_message = span_notice("You slap [user == target ? "your own" : "\the [target]'s"] ass! "))
+
+		return FALSE
+
+		user.do_attack_animation(target, ATTACK_EFFECT_ASS_SLAP)
+		if(HAS_TRAIT(target, TRAIT_STEEL_ASS))
+			user.adjustStaminaLoss(50)
+			user.visible_message(\
+				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
+				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
+				"You hear a slap."
+		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 
 		return FALSE
 
@@ -1947,7 +1958,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SHARP_EDGED)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod 
+			sharp_mod = sharp_pointy_mod
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))
