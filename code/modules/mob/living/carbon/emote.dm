@@ -1,12 +1,14 @@
 /datum/emote/living/carbon/airguitar
 	key = "airguitar"
-	message = "is strumming the air and headbanging like a safari chimp."
+	message = "is strumming the air and headbanging like a lunatic."
 	restraint_check = TRUE
+	sound = 'sound/effects/airguitar.ogg'
 
 /datum/emote/living/carbon/blink
 	key = "blink"
 	key_third_person = "blinks"
 	message = "blinks."
+	sound = 'sound/effects/blink.ogg'
 
 /datum/emote/living/carbon/blink_r
 	key = "blink_r"
@@ -34,7 +36,7 @@
 /datum/emote/living/carbon/gnarl
 	key = "gnarl"
 	key_third_person = "gnarls"
-	message = "gnarls and shows its teeth..."
+	message = "gnarls and shows thier teeth..."
 
 /datum/emote/living/carbon/moan
 	key = "moan"
@@ -42,7 +44,25 @@
 	message = "moans!"
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = SOFT_CRIT
-
+	
+/*
+/datum/emote/living/carbon/moan/get_sound(mob/living/M) //need better, ie. more pleasured (because these are mostly when doing drugs) moans
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = list(
+				'sound/effects/female_moan1.ogg',
+				'sound/effects/female_moan2.ogg',
+				'sound/effects/female_moan3.ogg'
+			)
+		else
+			sound = list(
+				'sound/effects/male_moan1.ogg',
+				'sound/effects/male_moan2.ogg',
+				'sound/effects/male_moan3.ogg'
+			)
+		return 
+*/
 /datum/emote/living/carbon/roll
 	key = "roll"
 	key_third_person = "rolls"
