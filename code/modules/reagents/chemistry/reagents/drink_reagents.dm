@@ -298,6 +298,21 @@
 	..()
 	. = 1
 
+/datum/reagent/consumable/italian_coco
+	name = "Italian Hot Chocolate"
+	description = "Made with love! You can just imagine a happy Nonna from the smell."
+	nutriment_factor = 8 * REAGENTS_METABOLISM
+	color = "#57372A"
+	quality = DRINK_VERYGOOD
+	taste_description = "thick creamy chocolate"
+	glass_icon_state = "italiancoco"
+	glass_name = "glass of italian coco"
+	glass_desc = "A spin on a winter favourite, made to please."
+
+/datum/reagent/consumable/italian_coco/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.adjust_bodytemperature(20 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
+	return ..()
+
 /datum/reagent/consumable/tea
 	name = "Tea"
 	description = "Tasty black tea, it has antioxidants, it's good for you!"
@@ -309,7 +324,6 @@
 	glass_desc = "Drinking it from here would not seem right."
 	effective_blood_max = 200
 	effective_blood_multiplier = 10
-
 
 /datum/reagent/consumable/tea/on_mob_life(mob/living/carbon/M)
 	M.dizziness = max(0,M.dizziness-2)
@@ -802,8 +816,8 @@
 	description = "A cherry flavored milkshake."
 	color = "#FFB6C1"
 	quality = DRINK_VERYGOOD
-	nutriment_factor = 2 * REAGENTS_METABOLISM
-	taste_description = "creamy cherry"
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "creamy tart cherry"
 	glass_icon_state = "cherryshake"
 	glass_name = "cherry shake"
 	glass_desc = "A cherry flavored milkshake."
@@ -814,12 +828,51 @@
 	description = "An exotic milkshake."
 	color = "#00F1FF"
 	quality = DRINK_VERYGOOD
-	nutriment_factor = 2 * REAGENTS_METABOLISM
+	nutriment_factor = 4 * REAGENTS_METABOLISM
 	taste_description = "creamy blue cherry"
 	glass_icon_state = "bluecherryshake"
 	glass_name = "blue cherry shake"
 	glass_desc = "An exotic blue milkshake."
 	value = REAGENT_VALUE_UNCOMMON
+
+/datum/reagent/consumable/vanillashake
+	name = "Vanilla Shake"
+	description = "A vanilla flavored milkshake. The basics are still good."
+	color = "#E9D2B2"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8 * REAGENTS_METABOLISM
+	taste_description = "sweet creamy vanilla"
+	glass_icon_state = "vanillashake"
+	glass_name = "vanilla shake"
+	glass_desc = "A vanilla flavored milkshake."
+	value = REAGENT_VALUE_COMMON
+
+
+/datum/reagent/consumable/caramelshake
+	name = "Caramel Shake"
+	description = "A aramel flavored milkshake. Your teeth hurt looking at it."
+	color = "#E17C00"
+	quality = DRINK_GOOD
+	nutriment_factor = 10 * REAGENTS_METABOLISM
+	taste_description = "sweet rich creamy caramel"
+	glass_icon_state = "caramelshake"
+	glass_name = "caramel shake"
+	glass_desc = "A caramel flavored milkshake."
+	value = REAGENT_VALUE_COMMON
+
+
+/datum/reagent/consumable/choccyshake
+	name = "Chocolate Shake"
+	description = "A frosty chocolate milkshake."
+	color = "#541B00"
+	quality = DRINK_VERYGOOD
+	nutriment_factor = 8 * REAGENTS_METABOLISM
+	taste_description = "sweet creamy chocolate"
+	glass_icon_state = "choccyshake"
+	glass_name = "chocolate shake"
+	glass_desc = "A chocolate flavored milkshake."
+	value = REAGENT_VALUE_COMMON
+
 
 /datum/reagent/consumable/pumpkin_latte
 	name = "Pumpkin Latte"
@@ -973,7 +1026,6 @@
 	glass_desc = "DRINK ME."
 	value = REAGENT_VALUE_COMMON //growth serum.
 	var/current_size = RESIZE_DEFAULT_SIZE
-
 /datum/reagent/consumable/red_queen/on_mob_life(mob/living/carbon/H)
 	if(prob(75))
 		return ..()
@@ -985,7 +1037,6 @@
 	if(prob(40))
 		H.emote("sneeze")
 	..()
-
 /datum/reagent/consumable/red_queen/on_mob_end_metabolize(mob/living/M)
 	M.resize = RESIZE_DEFAULT_SIZE/current_size
 	current_size = RESIZE_DEFAULT_SIZE
@@ -1118,7 +1169,128 @@
 	name = "Cucumber Lemonade"
 	description = "Cucumber juice, sugar and soda, what else is needed for happiness?"
 	color = "#6cd87a"
+	quality = DRINK_GOOD
 	taste_description = "citrus soda with cucumber"
 	glass_icon_state = "cucumber_lemonade"
 	glass_name = "cucumber lemonade"
 	glass_desc = "The smell of cucumber from lemonade, I'm sure I won't get poisoned?."
+
+/datum/reagent/consumable/strawberry_banana
+	name = "strawberry banana smoothie"
+	description = "A classic smoothie made from strawberries and bananas."
+	color = "#FF9999"
+	nutriment_factor = 0
+	taste_description = "strawberry and banana"
+	glass_icon_state = "strawberry_banana"
+	glass_name = "strawberry banana smoothie"
+	glass_desc = "A classic drink which countless souls have bonded over..."
+
+/datum/reagent/consumable/berry_blast
+	name = "berry blast smoothie"
+	description = "A classic smoothie made from mixed berries."
+	color = "#A76DC5"
+	nutriment_factor = 0
+	taste_description = "mixed berry"
+	glass_icon_state = "berry_blast"
+	glass_name = "berry blast smoothie"
+	glass_desc = "A classic drink, freshly made with hand picked berries. Or, maybe not."
+
+/datum/reagent/consumable/funky_monkey
+	name = "funky monkey smoothie"
+	description = "A classic smoothie made from chocolate and bananas."
+	color = "#663300"
+	nutriment_factor = 0
+	taste_description = "chocolate and banana"
+	glass_icon_state = "funky_monkey"
+	glass_name = "funky monkey smoothie"
+	glass_desc = "A classic drink made with chocolate and banana. No monkeys were harmed, officially."
+
+/datum/reagent/consumable/green_giant
+	name = "green giant smoothie"
+	description = "A green vegetable smoothie, made without vegetables."
+	color = "#003300"
+	nutriment_factor = 0
+	taste_description = "green, just green"
+	glass_icon_state = "green_giant"
+	glass_name = "green giant smoothie"
+	glass_desc = "A classic drink, if you enjoy juiced wheatgrass and chia seeds."
+
+/datum/reagent/consumable/melon_baller
+	name = "melon baller smoothie"
+	description = "A classic smoothie made from melons."
+	color = "#D22F55"
+	nutriment_factor = 0
+	taste_description = "fresh melon"
+	glass_icon_state = "melon_baller"
+	glass_name = "melon baller smoothie"
+	glass_desc = "A wonderfully fresh melon smoothie. Guaranteed to brighten your day."
+
+/datum/reagent/consumable/vanilla_dream
+	name = "vanilla dream smoothie"
+	description = "A classic smoothie made from vanilla and fresh cream."
+	color = "#FFF3DD"
+	nutriment_factor = 0
+	taste_description = "creamy vanilla"
+	glass_icon_state = "vanilla_dream"
+	glass_name = "vanilla dream smoothie"
+	glass_desc = "A classic drink made with vanilla and fresh cream."
+
+/datum/reagent/consumable/roy_rogers
+	name = "Roy Rogers"
+	description = "A sweet fizzy drink."
+	color = "#53090B"
+	quality = DRINK_GOOD
+	taste_description = "fruity overlysweet cola"
+	glass_icon_state = "royrogers"
+	glass_name = "Roy Rogers"
+	glass_desc = "90% sugar in a glass."
+
+/datum/reagent/consumable/roy_roger/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.Jitter(6 * REM * delta_time) //not as strong as coffe, still this is a lot of sugar
+	M.drowsyness = max(0,M.drowsyness-5)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	return ..()
+
+/datum/reagent/consumable/cinderella
+	name = "Cinderella"
+	description = "Most definitely a fruity alcohol cocktail to have while partying with your friends."
+	color = "#FF6A50"
+	quality = DRINK_VERYGOOD
+	taste_description = "sweet tangy fruit"
+	glass_icon_state = "cinderella"
+	glass_name = "Cinderlla"
+	glass_desc = "There is not a single drop of alcohol in this thing."
+
+/datum/reagent/consumable/cinderella/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.adjust_disgust(-5 * REM * delta_time)
+	return ..()
+
+/datum/reagent/consumable/shirley_temple
+	name = "Shirley Temple"
+	description = "Here you go, now you can drink like the californians."
+	color = "#F43724"
+	quality = DRINK_GOOD
+	taste_description = "sweet cherry syrup and ginger spice"
+	glass_icon_state = "shirleytemple"
+	glass_name = "Shirley Temple"
+	glass_desc = "Ginger ale with processed grenadine. "
+
+/datum/reagent/consumable/shirley_temple/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.adjust_disgust(-3 * REM * delta_time)
+	return ..()
+
+/datum/reagent/consumable/agua_fresca
+	name = "Agua Fresca"
+	description = "A refreshing watermelon agua fresca. Perfect on a day at the beach."
+	color = "#D25B66"
+	quality = DRINK_VERYGOOD
+	taste_description = "cool refreshing watermelon"
+	glass_icon_state = "aguafresca"
+	glass_name = "Agua Fresca"
+	glass_desc = "90% water, but still refreshing."
+
+/datum/reagent/consumable/agua_fresca/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	M.adjust_bodytemperature(-8 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	if(M.getToxLoss() && DT_PROB(10, delta_time))
+		M.adjustToxLoss(-0.5, 0)
+	return ..()

@@ -105,7 +105,7 @@
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "piedough"
 	slice_path = /obj/item/reagent_containers/food/snacks/rawpastrybase
-	slices_num = 3
+	slices_num = 6
 	cooked_type = /obj/item/reagent_containers/food/snacks/pie/plain
 	list_reagents = list(/datum/reagent/consumable/nutriment = 9)
 	w_class = WEIGHT_CLASS_NORMAL
