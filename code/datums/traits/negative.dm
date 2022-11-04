@@ -489,7 +489,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	desc = "For some reason you don't feel... right without wearing some kind of gas mask."
 	gain_text = "<span class='danger'>You start feeling unwell without any gas mask on.</span>"
 	lose_text = "<span class='notice'>You no longer have a need to wear some gas mask.</span>"
-	value = -1
+	value = 0
 	mood_quirk = TRUE
 	medical_record_text = "Patient feels more secure when wearing a gas mask."
 	var/mood_category = "masked_mook"
