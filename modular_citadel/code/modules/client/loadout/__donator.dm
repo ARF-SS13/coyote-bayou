@@ -59,6 +59,32 @@
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_MUZZLE
 
+/obj/item/card/id/selfassign/darknova
+	icon_state = "holodogtag"
+	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Nikolatz, J. S  with a rank of Knight. The sex is listed as male, the blood type is listed as O positive, A serial number is written of 242-355-179-22. The last line then reads: WCBOS CB-04 along with an insignia depicting wings, cogwheels and a sword."
+
+/obj/item/card/id/selfassign/darknova/attack_self(mob/user)
+	var/input_name = null
+	var/target_occupation = null
+	if(isliving(user))
+		var/mob/living/living_user = user
+		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
+			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
+			input_name = reject_bad_name(input_name)
+			if(!input_name)
+				input_name = living_user.real_name
+			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
+			if(!target_occupation)
+				target_occupation = "Wastelander"
+				return
+			registered_name = input_name
+			assignment = target_occupation
+			update_label()
+			to_chat(user, span_notice("You successfully forge the ID card."))
+			return
+		else
+	..()
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -217,6 +243,15 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/storage/belt/legholster(src)
+
+/datum/gear/donator/kits/darknova92
+	name = "Nikolatz BoS"
+	path = /obj/item/storage/box/large/custom_kit/darknova92
+	ckeywhitelist = list("darknova92")
+
+/obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
+	new /obj/item/card/id/selfassign/darknova(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
 
 /datum/gear/donator/kits/dezuel
 	name = "Lunas Stash"
