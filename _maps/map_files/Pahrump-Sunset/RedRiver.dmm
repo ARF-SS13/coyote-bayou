@@ -7107,7 +7107,7 @@
 /area/f13/building/abandoned)
 "dYn" = (
 /obj/structure/closet/cabinet/anchored,
-/obj/item/clothing/neck/necklace/memento_mori,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/wood_fancy/wood_fancy_dark,
 /area/f13/building/abandoned)
 "dYo" = (
@@ -11465,8 +11465,8 @@
 /area/f13/building/abandoned)
 "gCR" = (
 /obj/structure/table,
-/obj/item/reagent_containers/hypospray/medipen/stimpak,
 /obj/machinery/light,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust{
 	icon_state = "floorrustysolid"
 	},
@@ -12942,6 +12942,11 @@
 /obj/structure/simple_door/metal/fence/wooden,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
+"hCV" = (
+/obj/structure/spacevine,
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "hDn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/destructible/tribal_torch/wall/lit{
@@ -19627,6 +19632,11 @@
 /obj/structure/flora/burnedtree5,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/caves)
+"lsj" = (
+/obj/structure/rack,
+/obj/item/locked_box/weapon/melee/tier1_3,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "lsy" = (
 /obj/structure/fence/wooden{
 	pixel_x = -18
@@ -21828,6 +21838,17 @@
 	},
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
+"mKi" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/weapon/melee/tier1_3,
+/turf/open/floor/f13{
+	color = "#818181";
+	icon_state = "floorrustysolid"
+	},
+/area/f13/building/abandoned)
 "mKu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/r_wall/rust,
@@ -23153,6 +23174,7 @@
 /obj/structure/table/reinforced{
 	color = "#c1b6a5"
 	},
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "darkrusty"
 	},
@@ -26922,6 +26944,10 @@
 /obj/structure/flora/junglebush/large,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"pKE" = (
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "pKL" = (
 /obj/effect/decal/waste{
 	icon_state = "goo12"
@@ -32458,9 +32484,9 @@
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "tcQ" = (
-/obj/structure/simple_door/wood,
 /obj/structure/barricade/wooden/planks,
 /obj/structure/spacevine,
+/obj/structure/obstacle/old_locked_door,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "tcR" = (
@@ -33358,9 +33384,9 @@
 	},
 /area/f13/wasteland)
 "tCQ" = (
-/obj/structure/simple_door/wood,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/obstacle/old_locked_door,
 /turf/open/indestructible/ground/outside/desert,
 /area/f13/building/abandoned)
 "tCU" = (
@@ -33932,7 +33958,7 @@
 	},
 /area/f13/building)
 "tUR" = (
-/obj/structure/mirror/magic{
+/obj/structure/mirror{
 	pixel_x = -5
 	},
 /turf/closed/indestructible/wood,
@@ -34324,6 +34350,11 @@
 /obj/structure/chair/booth{
 	dir = 4
 	},
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
+"ufe" = (
+/obj/structure/table/wood,
+/obj/item/locked_box/weapon/melee/any_random,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "ufi" = (
@@ -43146,7 +43177,7 @@ qbG
 fee
 jhB
 fZB
-mvF
+mKi
 wnm
 ryY
 ukM
@@ -43729,7 +43760,7 @@ siL
 uwd
 tOw
 uwd
-vaQ
+lsj
 ebw
 pnq
 nNp
@@ -44496,7 +44527,7 @@ oFm
 qHL
 wMJ
 cQC
-gCi
+pKE
 ebw
 ebw
 uxM
@@ -46552,7 +46583,7 @@ nhN
 oMa
 kRp
 aFw
-wxn
+hCV
 ebw
 geC
 uxM
@@ -54257,7 +54288,7 @@ dcp
 pnx
 aCf
 oEd
-pch
+ufe
 uxM
 mxP
 bPU
@@ -65014,7 +65045,7 @@ kiu
 mvE
 hBU
 hZR
-wxn
+hCV
 ebw
 ebw
 xKP
@@ -65271,7 +65302,7 @@ kiu
 ahd
 mXC
 mXC
-wxn
+hCV
 ebw
 ebw
 uxM
@@ -84799,7 +84830,7 @@ vsM
 gvq
 vsM
 vsM
-dqi
+pKE
 vsM
 gvq
 gvq
@@ -85299,7 +85330,7 @@ oph
 oph
 eFz
 eFz
-bZc
+xOQ
 eFz
 eFz
 oph

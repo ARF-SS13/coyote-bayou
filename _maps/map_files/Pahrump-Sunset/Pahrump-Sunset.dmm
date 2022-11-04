@@ -678,7 +678,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustysolid"
 	},
@@ -2494,7 +2494,10 @@
 /area/f13/caves)
 "ajs" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/ranged/boss/junker,
+/mob/living/simple_animal/hostile/raider/ranged/boss/junker{
+	health = 205;
+	maxHealth = 205
+	},
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustysolid"
@@ -21301,7 +21304,7 @@
 /area/f13/wasteland)
 "cku" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/tier3_5,
 /turf/open/floor/f13{
 	icon_state = "bluerustysolid"
 	},
@@ -24375,6 +24378,7 @@
 /obj/item/reagent_containers/blood/radaway,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/storage/pill_bottle/chem_tin/radx,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "dii" = (
@@ -28571,6 +28575,7 @@
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/item/storage/pill_bottle/chem_tin/radx,
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random,
+/obj/item/locked_box/medical/drugs,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "eZr" = (
@@ -29589,6 +29594,16 @@
 /obj/structure/filingcabinet,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
+"fwf" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "high level mobs";
+	randomizer_tag = "Museum Musketeers"
+	},
+/turf/open/floor/f13{
+	icon_state = "bluerustysolid"
+	},
+/area/f13/building)
 "fwl" = (
 /obj/effect/decal/marking{
 	icon_state = "dottedverticalcorroded"
@@ -29938,10 +29953,10 @@
 	},
 /area/f13/wasteland/city)
 "fEb" = (
-/obj/structure/simple_door/interior,
 /obj/structure/decoration/rag{
 	icon_state = "skulls"
 	},
+/obj/structure/obstacle/old_locked_door,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
 "fEc" = (
@@ -43201,6 +43216,7 @@
 	dir = 1;
 	light_color = "#e8eaff"
 	},
+/obj/item/locked_box/armor/tier4,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
 	},
@@ -50074,6 +50090,11 @@
 	},
 /area/f13/wasteland/city)
 "org" = (
+/obj/structure/nest/randomized{
+	randomizer_difficulty = 1;
+	randomizer_kind = "high level mobs";
+	randomizer_tag = "Museum Musketeers"
+	},
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building)
 "orp" = (
@@ -54351,6 +54372,7 @@
 /area/f13/wasteland/town)
 "qqf" = (
 /obj/structure/shelf_wood,
+/obj/item/locked_box/armor/prewar_clothes,
 /turf/open/floor/wood_fancy,
 /area/f13/building)
 "qqo" = (
@@ -54901,7 +54923,10 @@
 /area/f13/wasteland/town)
 "qBw" = (
 /obj/machinery/light,
-/mob/living/simple_animal/hostile/raider/junker,
+/mob/living/simple_animal/hostile/raider/junker{
+	health = 200;
+	maxHealth = 200
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowrustychess"
 	},
@@ -58864,7 +58889,7 @@
 /area/f13/wasteland)
 "stH" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/armor/random,
+/obj/item/locked_box/armor/tier1_3,
 /turf/open/floor/f13{
 	icon_state = "bluedirtychess2"
 	},
@@ -66397,6 +66422,11 @@
 /obj/structure/flora/tallgrass9,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/caves)
+"vPd" = (
+/obj/structure/rack,
+/obj/item/locked_box/armor/tier3_5,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "vPC" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
@@ -67318,6 +67348,7 @@
 /area/f13/wasteland/city)
 "woi" = (
 /obj/structure/table,
+/obj/item/locked_box/medical/medicine,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "woj" = (
@@ -71084,6 +71115,10 @@
 	icon_state = "dirt"
 	},
 /area/f13/wasteland)
+"yaB" = (
+/obj/structure/obstacle/old_locked_door,
+/turf/open/floor/f13/wood,
+/area/f13/building/abandoned)
 "yaO" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -74479,7 +74514,7 @@ hCc
 vKX
 hCc
 hCc
-qdo
+yaB
 hCc
 vKX
 vKX
@@ -75197,7 +75232,7 @@ kGV
 kGV
 bqq
 wSI
-wSI
+vPd
 bwM
 kGV
 kGV
@@ -94543,7 +94578,7 @@ fit
 hCc
 bdZ
 vKX
-qdo
+yaB
 hCc
 bdZ
 vKX
@@ -94863,14 +94898,14 @@ aEZ
 uqJ
 uqJ
 oBz
-qdo
+yaB
 aQZ
 mHp
 una
 igF
 hEG
 anR
-qdo
+yaB
 uqJ
 oBz
 oBz
@@ -96835,8 +96870,8 @@ hCc
 lqs
 fjS
 vKX
-qdo
-qdo
+yaB
+yaB
 hCc
 hCc
 hCc
@@ -97176,7 +97211,7 @@ nGI
 oBz
 uqJ
 uqJ
-qdo
+yaB
 aQZ
 rFj
 lau
@@ -98352,8 +98387,8 @@ iDt
 vKX
 atd
 hCc
-qdo
-qdo
+yaB
+yaB
 hCc
 lqs
 hCc
@@ -98645,7 +98680,7 @@ lpx
 lpx
 hCc
 hCc
-qdo
+yaB
 hCc
 lqs
 lqs
@@ -99890,7 +99925,7 @@ wjb
 hCc
 lqs
 vKX
-qdo
+yaB
 hCc
 lqs
 hCc
@@ -100012,7 +100047,7 @@ hEG
 anR
 aOk
 aOk
-aEZ
+yaB
 oxC
 uqJ
 gTC
@@ -101281,8 +101316,8 @@ baS
 hCc
 vKX
 hCc
-qdo
-qdo
+yaB
+yaB
 hCc
 hCc
 gCs
@@ -103032,7 +103067,7 @@ lqs
 hCc
 vKX
 hCc
-qdo
+yaB
 hCc
 hCc
 kbi
@@ -103045,8 +103080,8 @@ dVg
 vKX
 hCc
 ntE
-qdo
-qdo
+yaB
+yaB
 hCc
 muX
 hCc
@@ -104843,11 +104878,11 @@ wKU
 aQF
 vKX
 hCc
-aEZ
+yaB
 hCc
 hCc
 hCc
-aEZ
+yaB
 muX
 aTB
 fit
@@ -107014,7 +107049,7 @@ xDl
 aER
 wFX
 bgS
-puK
+fwf
 agk
 fit
 dUB
@@ -107917,7 +107952,7 @@ oBz
 cLB
 uqJ
 oBz
-qdo
+yaB
 rgG
 ndf
 dZD
@@ -107972,7 +108007,7 @@ bgt
 bkP
 pEz
 hCc
-aEZ
+yaB
 hCc
 cpo
 uvR

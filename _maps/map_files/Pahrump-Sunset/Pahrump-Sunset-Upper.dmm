@@ -1654,9 +1654,7 @@
 /area/f13/building/hospital)
 "cKc" = (
 /obj/structure/table/reinforced,
-/obj/item/clipboard{
-	pixel_y = 5
-	},
+/obj/item/ingot/adamantine,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -4867,7 +4865,35 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/item/ingot/adamantine,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/structure/window/reinforced/spawner{
+	dir = 0;
+	max_integrity = 5000;
+	name = "ultra-reinforced window"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 0;
+	max_integrity = 5000;
+	name = "ultra-reinforced window"
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -7893,8 +7919,11 @@
 	},
 /area/f13/building/massfusion)
 "nvo" = (
-/obj/effect/decal/cleanable/generic,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/mob/living/simple_animal/hostile/ghoul/legendary{
+	maxHealth = 350;
+	health = 350;
+	armour_penetration = 0.5
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
@@ -64301,7 +64330,7 @@ lDT
 lDT
 oDo
 ipv
-dsy
+nvo
 fXj
 cKc
 qFA
@@ -64815,7 +64844,7 @@ lDT
 lDT
 oDo
 pGF
-nvo
+cUD
 uoi
 onr
 qFA
