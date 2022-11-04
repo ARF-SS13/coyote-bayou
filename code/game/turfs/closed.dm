@@ -45,6 +45,7 @@
 			humanAM.disable_sprint_mode()
 			humanAM.AdjustKnockdown(25)
 			visible_message(span_warning("[humanAM] runs straight into [src]!"))
+			playsound = 'sounds/effects/wallsmack.ogg'
 
 /turf/closed/indestructible
 	name = "wall"
