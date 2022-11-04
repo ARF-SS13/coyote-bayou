@@ -1110,16 +1110,16 @@
 	name = "bubblegum chest"
 
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
-	new /obj/item/clothing/suit/space/hostile_environment(src)
-	new /obj/item/clothing/head/helmet/space/hostile_environment(src)
+	new /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/old(src)
+	new /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/inquisitor/old(src)
 	var/loot = rand(1,3)
 	switch(loot)
 		if(1)
-			new /obj/item/mayhem(src)
+			new /obj/item/reagent_containers/food/drinks/bottle/holywater(src)
 		if(2)
-			new /obj/item/guardiancreator(src)
+			new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
 		if(3)
-			new /obj/item/guardiancreator(src)
+			new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
 
 /obj/structure/closet/crate/necropolis/bubblegum/crusher
 	name = "bloody bubblegum chest"

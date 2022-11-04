@@ -85,6 +85,32 @@
 		else
 	..()
 
+/obj/item/card/id/selfassign/blue
+	icon_state = "holodogtag"
+	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 253-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+
+/obj/item/card/id/selfassign/blue/attack_self(mob/user)
+	var/input_name = null
+	var/target_occupation = null
+	if(isliving(user))
+		var/mob/living/living_user = user
+		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
+			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
+			input_name = reject_bad_name(input_name)
+			if(!input_name)
+				input_name = living_user.real_name
+			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
+			if(!target_occupation)
+				target_occupation = "Wastelander"
+				return
+			registered_name = input_name
+			assignment = target_occupation
+			update_label()
+			to_chat(user, span_notice("You successfully forge the ID card."))
+			return
+		else
+	..()
+
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
 /////////////////////
@@ -426,6 +452,16 @@
 // K
 // L
 
+/datum/gear/donator/kits/lifelessghoul
+	name = "Ancient Memories"
+	path = /obj/item/storage/box/large/custom_kit/lifelessghoul
+	ckeywhitelist = list("lifelessghoul")
+
+/obj/item/storage/box/large/custom_kit/lifelessghoul/PopulateContents()
+	new /obj/item/melee/smith/hammer(src)
+	new /obj/item/clothing/head/helmet/f13/legion/orator(src)
+	new /obj/item/flashlight/lantern(src)
+
 /datum/gear/donator/kits/lucine
 	name = "Earlong Travel Supplies"
 	path = /obj/item/storage/box/large/custom_kit/lucine
@@ -557,6 +593,16 @@
 /obj/item/storage/box/large/custom_kit/risingstarslash2/PopulateContents()
 	new /obj/item/book/granter/crafting_recipe/slimecookie(src)
 	new /obj/item/lighter/slime(src)
+
+/datum/gear/donator/kits/risingstarslash3
+	name = "Brotherhood Kit"
+	path = /obj/item/storage/box/large/custom_kit/risingstarslash3
+	ckeywhitelist = list("risingstarslash")
+
+/obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
+	new /obj/item/lighter/gold (src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/card/id/selfassign/blue(src)
 
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
