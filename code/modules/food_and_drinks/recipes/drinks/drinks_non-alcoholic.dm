@@ -3,52 +3,62 @@
 	id = /datum/reagent/consumable/icetea
 	results = list(/datum/reagent/consumable/icetea = 4)
 	required_reagents = list(/datum/reagent/consumable/ice = 1, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/pinktea
 	name = "Strawberry Tea"
 	id = /datum/reagent/consumable/pinktea
 	results = list(/datum/reagent/consumable/pinktea = 5)
 	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/tea/arnold_palmer = 1, /datum/reagent/consumable/sugar = 1)
+
 /datum/chemical_reaction/arnold_palmer
 	name = "Arnold Palmer"
 	id = /datum/reagent/consumable/tea/arnold_palmer
 	results = list(/datum/reagent/consumable/tea/arnold_palmer = 2)
 	required_reagents = list(/datum/reagent/consumable/tea = 1, /datum/reagent/consumable/lemonade = 1)
 	mix_message = "The smells of fresh green grass and sand traps waft through the air as the mixture turns a friendly yellow-orange."
+
 /datum/chemical_reaction/mush
 	name = "Mush Tea"
 	id = /datum/reagent/consumable/tea/mush
 	results = list(/datum/reagent/consumable/tea/mush = 3)
 	required_reagents = list(/datum/reagent/drug/mushroomhallucinogen = 3, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/foresttea1
 	name = "Forest Tea"
 	id = /datum/reagent/consumable/tea/forest
 	results = list(/datum/reagent/consumable/tea/forest = 3)
 	required_reagents = list(/datum/reagent/consumable/buzz_fuzz= 3, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/foresttea2
 	name = "Forest Tea"
 	id = /datum/reagent/consumable/tea/forest
 	results = list(/datum/reagent/consumable/tea/forest = 3)
 	required_reagents = list(/datum/reagent/consumable/honey = 1, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/redtea1
 	name = "Red Tea"
 	id = /datum/reagent/consumable/tea/red
 	results = list(/datum/reagent/consumable/tea/red = 3)
 	required_reagents = list(/datum/reagent/colorful_reagent/crayonpowder/red = 1, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/greentea1
 	name = "Green Tea"
 	id = /datum/reagent/consumable/tea/green
 	results = list(/datum/reagent/consumable/tea/green = 3)
 	required_reagents = list(/datum/reagent/colorful_reagent/crayonpowder/green = 1, /datum/reagent/consumable/tea = 3)
+
 /datum/chemical_reaction/redtea2
 	name = "Red Tea"
 	id = /datum/reagent/consumable/tea/red
 	results = list(/datum/reagent/consumable/tea/red = 3)
 	required_reagents = list(/datum/reagent/toxin/teapowder/red = 1, /datum/reagent/water = 3)
+
 /datum/chemical_reaction/greentea2
 	name = "Green Tea"
 	id = /datum/reagent/consumable/tea/green
 	results = list(/datum/reagent/consumable/tea/green = 3)
 	required_reagents = list(/datum/reagent/toxin/teapowder/green = 1, /datum/reagent/water = 3)
+
 /datum/chemical_reaction/cream_soda
 	name = "Cream Soda"
 	id = /datum/reagent/consumable/cream_soda
@@ -153,11 +163,81 @@
 	results = list(/datum/reagent/consumable/pinkmilk = 2)
 	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1)
 
-/datum/chemical_reaction/cream_soda
-	name = "Cream Soda"
-	id = /datum/reagent/consumable/cream_soda
-	results = list(/datum/reagent/consumable/cream_soda = 4)
-	required_reagents = list(/datum/reagent/consumable/sugar = 2, /datum/reagent/consumable/sodawater = 2, /datum/reagent/consumable/vanilla = 1)
+/datum/chemical_reaction/drink/cucumberlemonade
+	name = "Cucumber Lemonade"
+	id = /datum/reagent/consumable/cucumberlemonade
+	results = list(/datum/reagent/consumable/cucumberlemonade = 5)
+	required_reagents = list(/datum/reagent/consumable/lemon_lime = 3, /datum/reagent/consumable/cucumberjuice = 2, /datum/reagent/consumable/ice = 1)
+
+/datum/chemical_reaction/drink/roy_rogers
+	name = "Roy Rogers"
+	id = /datum/reagent/consumable/roy_rogers
+	results = list(/datum/reagent/consumable/roy_rogers = 3)
+	required_reagents = list(/datum/reagent/consumable/space_cola = 2, /datum/reagent/consumable/grenadine = 1)
+
+/datum/chemical_reaction/drink/shirley_temple
+	name = "Shirley Temple"
+	id = /datum/reagent/consumable/shirley_temple
+	results = list(/datum/reagent/consumable/shirley_temple = 3)
+	required_reagents = list(/datum/reagent/consumable/sol_dry = 2, /datum/reagent/consumable/grenadine = 1)
+
+/datum/chemical_reaction/drink/agua_fresca
+	name = "Aqua Fresca"
+	id = /datum/reagent/consumable/agua_fresca
+	results = list(/datum/reagent/consumable/agua_fresca = 3)
+	required_reagents = list(/datum/reagent/consumable/watermelonjuice = 4, /datum/reagent/consumable/ice = 1, /datum/reagent/water = 2, /datum/reagent/consumable/limejuice = 2, /datum/reagent/consumable/menthol = 1)
+
+/datum/chemical_reaction/drink/cinderella
+	name = "Cinderella"
+	id = /datum/reagent/consumable/cinderella
+	results = list(/datum/reagent/consumable/cinderella = 50)
+	required_reagents = list(/datum/reagent/consumable/pineapplejuice = 10, /datum/reagent/consumable/orangejuice = 10, /datum/reagent/consumable/lemonjuice = 5, /datum/reagent/consumable/ice = 5, /datum/reagent/consumable/sol_dry = 20)
+
+/datum/chemical_reaction/drink/italian_coco
+	name = "Italian Hot Chocolate"
+	id = /datum/reagent/consumable/italian_coco
+	results = list(/datum/reagent/consumable/italian_coco = 10)
+	required_reagents = list(/datum/reagent/consumable/hot_coco  = 5, /datum/reagent/consumable/corn_starch = 1, /datum/reagent/consumable/whipped_cream = 4)
+
+/// Smoothies
+
+/datum/chemical_reaction/drink/strawberry_banana
+	name = "Strawberry Banana Smoothie"
+	id = /datum/reagent/consumable/strawberry_banana
+	results = list(/datum/reagent/consumable/strawberry_banana = 3)
+	required_reagents = list(/datum/reagent/consumable/strawberryjuice = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/banana = 1)
+
+/datum/chemical_reaction/drink/berry_blast
+	name = "Berry Blast Smoothie"
+	id = /datum/reagent/consumable/berry_blast
+	results = list(/datum/reagent/consumable/berry_blast = 3)
+	required_reagents = list(/datum/reagent/consumable/berryjuice = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/cream = 1)
+
+/datum/chemical_reaction/drink/funky_monkey
+	name = "Funky Monkey Smoothie"
+	id = /datum/reagent/consumable/funky_monkey
+	results = list(/datum/reagent/consumable/funky_monkey = 3)
+	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/banana = 1)
+
+/datum/chemical_reaction/drink/green_giant
+	name = "Green Giant Smoothie"
+	id = /datum/reagent/consumable/green_giant
+	results = list(/datum/reagent/consumable/green_giant = 3)
+	required_reagents = list(/datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/limejuice = 1)
+
+/datum/chemical_reaction/drink/melon_baller
+	name = "Melon Baller Smoothie"
+	id = /datum/reagent/consumable/melon_baller
+	results = list(/datum/reagent/consumable/melon_baller = 3)
+	required_reagents = list(/datum/reagent/consumable/watermelonjuice = 1, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/milk = 1)
+
+/datum/chemical_reaction/drink/vanilla_dream
+	name = "Vanilla Dream Smoothie"
+	id = /datum/reagent/consumable/vanilla_dream
+	results = list(/datum/reagent/consumable/vanilla_dream = 3)
+	required_reagents = list(/datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/milk = 1, /datum/reagent/consumable/cream = 1)
+
+/// Milkshakes/Shakes
 
 /datum/chemical_reaction/cherryshake
 	name = "Cherry Shake"
@@ -171,22 +251,20 @@
 	results = list(/datum/reagent/consumable/bluecherryshake = 3)
 	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
 
-/datum/chemical_reaction/drink/cucumberlemonade
-	results = list(/datum/reagent/consumable/cucumberlemonade = 5)
-	required_reagents = list(/datum/reagent/consumable/lemon_lime = 3, /datum/reagent/consumable/cucumberjuice = 2, /datum/reagent/consumable/ice = 1)
+/datum/chemical_reaction/drink/vanillashake
+	name = "Vanilla Shake"
+	id = /datum/reagent/consumable/vanillashake
+	results = list(/datum/reagent/consumable/vanillashake = 3)
+	required_reagents = list(/datum/reagent/consumable/vanilla = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
 
-/datum/chemical_reaction/cherryshake
-	name = "Cherry Shake"
-	id = /datum/reagent/consumable/cherryshake
-	results = list(/datum/reagent/consumable/cherryshake = 3)
-	required_reagents = list(/datum/reagent/consumable/cherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
+/datum/chemical_reaction/drink/caramelshake
+	name = "Caramel Shake"
+	id = /datum/reagent/consumable/caramelshake
+	results = list(/datum/reagent/consumable/caramelshake = 3)
+	required_reagents = list(/datum/reagent/consumable/caramel = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
 
-/datum/chemical_reaction/bluecherryshake
-	name = "Blue Cherry Shake"
-	id = /datum/reagent/consumable/bluecherryshake
-	results = list(/datum/reagent/consumable/bluecherryshake = 3)
-	required_reagents = list(/datum/reagent/consumable/bluecherryjelly = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
-
-/datum/chemical_reaction/drink/cucumberlemonade
-	results = list(/datum/reagent/consumable/cucumberlemonade = 5)
-	required_reagents = list(/datum/reagent/consumable/lemon_lime = 3, /datum/reagent/consumable/cucumberjuice = 2, /datum/reagent/consumable/ice = 1)
+/datum/chemical_reaction/drink/choccyshake
+	name = "Chocolate Shake"
+	id = /datum/reagent/consumable/choccyshake
+	results = list(/datum/reagent/consumable/choccyshake = 3)
+	required_reagents = list(/datum/reagent/consumable/coco = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/cream = 1)
