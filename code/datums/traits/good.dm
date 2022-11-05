@@ -422,18 +422,34 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	locked = FALSE
 
 /datum/quirk/lifegiver
-	name = "Lifegiver"
+	name = "Health - Tough"
 	desc = "You embody wellness! Instantly gain +10 maximum Health."
 	value = 1
 	mob_trait = TRAIT_LIFEGIVER
 	gain_text = span_notice("You feel more healthy than usual.")
 	lose_text = span_danger("You feel less healthy than usual.")
+	medical_record_text = "Patient has higher capacity for injury."
 	locked = FALSE
 
 /datum/quirk/lifegiver/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
 	mob_tar.maxHealth += 10
 	mob_tar.health += 10
+
+/datum/quirk/lifegiverplus
+	name = "Health - Tougher"
+	desc = "You embody wellness to the MAX! Instantly gain +20 maximum Health."
+	value = 3
+	mob_trait = TRAIT_LIFEGIVERPLUS
+	gain_text = span_notice("You feel much more healthy than usual.")
+	lose_text = span_danger("You feel much less healthy than usual.")
+	medical_record_text = "Patient has much higher capacity for injury."
+	locked = FALSE
+
+/datum/quirk/lifegiver/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth += 20
+	mob_tar.health += 20
 
 /datum/quirk/iron_fist
 	name = "Fists of Iron"
