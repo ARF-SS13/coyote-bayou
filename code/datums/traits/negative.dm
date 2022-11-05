@@ -233,7 +233,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/paraplegic
 	name = "Paraplegic"
 	desc = "Your legs do not function. Nothing will ever fix this. Luckily you found a wheelchair."
-	value = -1
+	value = -3
 	mob_trait = TRAIT_PARA
 	human_only = TRUE
 	gain_text = null // Handled by trauma.
@@ -401,7 +401,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/mute
 	name = "Mute"
 	desc = "Due to some accident, medical condition, or simply by choice, you are completely unable to speak."
-	value = -1 //HALP MAINTS
+	value = 0 //HALP MAINTS
 	gain_text = span_danger("You find yourself unable to speak!")
 	lose_text = span_notice("You feel a growing strength in your vocal chords.")
 	medical_record_text = "Functionally mute, patient is unable to use their voice in any capacity."
@@ -429,7 +429,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/blindness
 	name = "Blind"
 	desc = "You are completely blind, nothing can counteract this."
-	value = -1
+	value = -4
 	gain_text = span_danger("You can't see anything.")
 	lose_text = span_notice("You miraculously gain back your vision.")
 	medical_record_text = "Patient has permanent blindness."
@@ -492,20 +492,33 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
 
 /datum/quirk/flimsy
-	name = "Flimsy"
-	desc = "Your body is a little more fragile then most, decreasing total health by 20%."
+	name = "Health - Flimsy"
+	desc = "Your body is a little more fragile then most, decreasing total health some."
 	value = -1
+	mob_trait = TRAIT_FLIMSY
+	medical_record_text = "Patient has low capacity for injury."
+	gain_text = "<span class='notice'>You feel like you could break with a single hit."
+	lose_text = "<span class='notice'>You feel more durable."
+
+/datum/quirk/flimsy/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth -= 10
+	mob_tar.health -= 10
+
+/datum/quirk/veryflimsy
+	name = "Health - Very Flimsy"
+	desc = "Your body is a lot more fragile then most, decreasing total health."
+	value = -3
+	mob_trait = TRAIT_VERYFLIMSY
 	medical_record_text = "Patient has abnormally low capacity for injury."
 	gain_text = "<span class='notice'>You feel like you could break with a single hit."
 	lose_text = "<span class='notice'>You feel more durable."
 
-/datum/quirk/flimsy/add()
-	quirk_holder.maxHealth *= 0.8
+/datum/quirk/veryflimsy/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.maxHealth -= 20
+	mob_tar.health -= 20
 
-/datum/quirk/flimsy/remove() //how do admins even remove traits?
-	if(!quirk_holder)
-		return
-	quirk_holder.maxHealth *= 1.25
 
 /datum/quirk/masked_mook
 	name = "Masked Mook"
