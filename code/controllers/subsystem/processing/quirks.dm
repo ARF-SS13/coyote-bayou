@@ -25,7 +25,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Alcohol Tolerance","Alcohol Intolerance"),
 			list("Alcohol Intolerance","Drunken Resilience"),
 			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
-			list("Fists Of Steel","Fists of Iron","Fists of Noodle")
+			list("Fists of Steel","Fists of Iron","Fists of Noodle")
 			)
 	return ..()
 
