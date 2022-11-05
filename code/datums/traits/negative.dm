@@ -146,7 +146,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	quirk_holder.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.2)
 
 /datum/quirk/nearsighted //t. errorage
-	name = "Nearsighted"
+	name = "Nearsighted - Corrected"
 	desc = "You are nearsighted without prescription glasses, but spawn with a pair."
 	value = -1
 	gain_text = span_danger("Things far away from you start looking blurry.")
@@ -161,6 +161,28 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
 	if(!H.equip_to_slot_if_possible(glasses, SLOT_GLASSES))
 		H.put_in_hands(glasses)
+
+/datum/quirk/noglasses 
+	name = "Nearsighted - No Glasses"
+	desc = "You are nearsighted without prescription glasses, sadly you don't have a pair."
+	value = -2
+	gain_text = span_danger("Things far away from you start looking blurry.")
+	lose_text = span_notice("You start seeing faraway things normally again.")
+	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
+
+/datum/quirk/noglasses/add()
+	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
+
+/datum/quirk/badeyes 
+	name = "Nearsighted - Trashed Vision"
+	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
+	value = -3
+	gain_text = span_danger("Things far away from you start looking VERY blurry.")
+	lose_text = span_notice("You start seeing faraway things normally again.")
+	medical_record_text = "Patient requires prescription glasses in order to counteract sort of ridiculous levels of nearsightedness."
+
+/datum/quirk/badeyes/add()
+	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
