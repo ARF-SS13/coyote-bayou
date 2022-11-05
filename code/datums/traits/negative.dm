@@ -27,7 +27,7 @@
 	mood_quirk = TRUE
 
 /datum/quirk/depression/on_process()
-	if(prob(0.05))
+	if(prob(0.15))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "depression", /datum/mood_event/depression)
 
 /datum/quirk/family_heirloom

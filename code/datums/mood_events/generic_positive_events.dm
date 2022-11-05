@@ -52,8 +52,8 @@
 
 /datum/mood_event/jolly
 	description = span_nicegreen("I feel happy for no particular reason.")
-	mood_change = 6
-	timeout = 2 MINUTES
+	mood_change = 15
+	timeout = 60 MINUTES
 
 /datum/mood_event/focused
 	description = span_nicegreen("I have a goal, and I will reach it, whatever it takes!") //Used for syndies, nukeops etc so they can focus on their goals
