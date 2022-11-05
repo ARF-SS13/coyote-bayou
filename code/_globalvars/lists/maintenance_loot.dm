@@ -357,6 +357,10 @@ GLOBAL_LIST_INIT(loot_prewar_costume, list(
 GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/suit/armor/light/leather/leather_jacket,
 	/obj/item/clothing/suit/armor/light/kit,
+	/obj/item/clothing/suit/armor/light/duster
+))
+
+GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/suit/armor/light/raider/sadist,
@@ -370,11 +374,10 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/head/helmet/f13/raider/psychotic,
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
-	/obj/item/clothing/suit/armor/light/duster,
 	/obj/item/clothing/suit/armor/medium/raider/iconoclast
 ))
 
-GLOBAL_LIST_INIT(loot_t2_armor, list(
+GLOBAL_LIST_INIT(loot_t3_armor, list(
 	/obj/item/clothing/suit/armor/heavy/metal,
 	/obj/item/clothing/head/helmet/knight/f13/metal,
 	/obj/item/clothing/suit/armor/heavy/metal,
@@ -384,7 +387,7 @@ GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/light/leather/leathercoat
 ))
 
-GLOBAL_LIST_INIT(loot_t3_armor, list(
+GLOBAL_LIST_INIT(loot_t4_armor, list(
 	/obj/item/clothing/suit/armor/heavy/metal/reinforced,
 	/obj/item/clothing/head/helmet/f13/metalmask/mk2,
 	/obj/item/clothing/suit/armor/light/leather/leathercoat,
@@ -402,20 +405,13 @@ GLOBAL_LIST_INIT(loot_t3_armor, list(
 	/obj/item/clothing/head/helmet/f13/sulphitehelm
 ))
 
-GLOBAL_LIST_INIT(loot_t4_armor, list(
+GLOBAL_LIST_INIT(loot_t5_armor, list(
 	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
 	/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
 	/obj/item/clothing/suit/armor/heavy/riot/combat,
 	/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
 	/obj/item/clothing/suit/armor/medium/combat/mk2,
 	/obj/item/clothing/head/helmet/f13/combat/mk2
-))
-
-GLOBAL_LIST_INIT(loot_t5_armor, list(
-	/obj/item/clothing/suit/armor/power_armor/t45d,
-	/obj/item/clothing/head/helmet/f13/power_armor/t45d,
-	/obj/item/clothing/suit/armor/power_armor/t51b,
-	/obj/item/clothing/head/helmet/f13/power_armor/t51b
 ))
 
 GLOBAL_LIST_INIT(loot_medical_tool, list(
@@ -486,6 +482,7 @@ GLOBAL_LIST_INIT(loot_t3_melee, list(
 	/obj/item/kitchen/knife/butcher,
 	/obj/item/melee/onehanded/machete,
 	/obj/item/melee/onehanded/machete/forgedmachete,
+	/obj/item/melee/transforming/energy/axe/protonaxe,
 	/obj/item/shield/riot/buckler,
 	/obj/item/melee/unarmed/tigerclaw,
 	/obj/item/melee/unarmed/sappers
@@ -504,7 +501,6 @@ GLOBAL_LIST_INIT(loot_t4_melee, list(
 GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/thermic_lance,
 	/obj/item/twohanded/chainsaw,
-	/obj/item/melee/transforming/energy/axe/protonaxe,
 	/obj/item/melee/powered/ripper,
 	/obj/item/melee/powerfist/f13,
 	/obj/item/twohanded/sledgehammer/rockethammer,

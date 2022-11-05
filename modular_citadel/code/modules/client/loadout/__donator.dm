@@ -595,7 +595,7 @@
 	new /obj/item/lighter/slime(src)
 
 /datum/gear/donator/kits/risingstarslash3
-	name = "Brotherhood Kit"
+	name = "Head Paladin Kit"
 	path = /obj/item/storage/box/large/custom_kit/risingstarslash3
 	ckeywhitelist = list("risingstarslash")
 
