@@ -912,7 +912,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		return 0
 	if(GetQuirkBalance() < 0)
 		reset_quirks("balance")
-	if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+	if(GetPositiveQuirkCount() > MAX_QUIRKS)
 		reset_quirks("max")
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
