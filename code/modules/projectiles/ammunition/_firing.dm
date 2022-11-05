@@ -12,6 +12,8 @@
 				spread += rand(-0.2,0.2) //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
 			if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
 				spread += rand(-1.5,1.5)//This is cripplingly bad. Trust me.
+			//if(HAS_TRAIT(user,TRAIT_GOOD_AIM))//Try me, cowpoke..
+			//	spread += rand(#,#)
 			if(randomspread)
 				spread *= distro
 			else //Smart spread

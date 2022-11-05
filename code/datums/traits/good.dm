@@ -635,3 +635,13 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	gain_text = span_notice("The mysteries of your ancestors are revealed to you.")
 	lose_text = span_danger("You forget how your ancestors have created their garments.")
 	locked =  FALSE
+
+/*
+/datum/quirk/good_aim
+	name = "Good Aim"
+	desc = "You're pretty damn good with guns."
+	value = 4
+	mob_trait = TRAIT_GOOD_AIM
+	medical_record_text = "Patient possesses fascinatingly steady hands."
+*/
+
