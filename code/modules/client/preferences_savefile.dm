@@ -911,7 +911,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			to_chat(parent, span_warning("You're attempting to save your character a little too fast. Wait half a second, then try again."))
 		return 0
 	if(GetQuirkBalance() < 0)
-		reset_quirks()
+		reset_quirks("balance")
+	if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+		reset_quirks("max")
 	savecharcooldown = world.time + PREF_SAVELOAD_COOLDOWN
 	var/savefile/S = new /savefile(path)
 	if(!S)
