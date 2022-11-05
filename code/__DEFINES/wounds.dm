@@ -27,6 +27,9 @@
 /// any concentrated burn attack (lasers really). rolls for burning wounds
 #define WOUND_BURN 4
 
+/// Wounds considered for paper skin
+#define PAPER_SKIN_WOUNDS list(WOUND_SLASH, WOUND_PIERCE, WOUND_BURN)
+
 // How much determination reagent to add each time someone gains a new wound in [/datum/wound/proc/second_wind()]
 #define WOUND_DETERMINATION_MODERATE 5
 #define WOUND_DETERMINATION_SEVERE 8
