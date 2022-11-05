@@ -575,3 +575,22 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/mob_tar = quirk_holder
 	mob_tar.dna.species.punchdamagelow = 0
 	mob_tar.dna.species.punchdamagehigh = 0
+
+/datum/quirk/gentle
+	name = "Melee - Gentle"
+	desc = "Something about your strikes in melee is just... below average. You deal slightly less damage with melee weapons."
+	value = -1
+	mob_trait = TRAIT_GENTLE
+	gain_text = span_notice("You feel like you don't really like smacking stuff.")
+	lose_text = span_danger("You feel like slapping the mess out of a gecko.")
+	locked = FALSE
+
+/datum/quirk/wimpy
+	name = "Melee - Wimpy"
+	desc = "For some reason you're just really bad at hitting things agianst things. Your melee damage is much lower than average."
+	value = -3
+	mob_trait = TRAIT_WIMPY
+	gain_text = span_notice("You feel like smacking things is just a waste of time.")
+	lose_text = span_danger("You feel like slapping the mess out of a Deathclaw!")
+	locked = FALSE
+

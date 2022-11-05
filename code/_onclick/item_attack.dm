@@ -93,8 +93,8 @@
 
 	var/bigleagues = 10 //flat additive
 	var/littleleagues = 5
-	// var/gentle = -5
-	// var/wimpy = -10
+	var/gentle = -5
+	var/wimpy = -10
 	var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
 	var/buffout = force*0.25
 	var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
@@ -110,7 +110,11 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
 		force += littleleagues
 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_GENTLE))
+		force += gentle
 
+	if (force >= 10 && HAS_TRAIT(user, TRAIT_WIMPY))
+		force += wimpy
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force += buffout
