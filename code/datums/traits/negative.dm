@@ -492,7 +492,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = "<span class='notice'>Written words suddenly make sense again."
 
 /datum/quirk/flimsy
-	name = "Flimsy"
+	name = "Health - Flimsy"
 	desc = "Your body is a little more fragile then most, decreasing total health some."
 	value = -1
 	mob_trait = TRAIT_FLIMSY
@@ -506,7 +506,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mob_tar.health -= 10
 
 /datum/quirk/veryflimsy
-	name = "Very Flimsy"
+	name = "Health - Very Flimsy"
 	desc = "Your body is a lot more fragile then most, decreasing total health."
 	value = -3
 	mob_trait = TRAIT_VERYFLIMSY
