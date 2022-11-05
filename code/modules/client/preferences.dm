@@ -1504,7 +1504,7 @@ Records disabled until a use for them is found
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = CONFIG_GET(number/quirk_points)
+	var/bal = 5
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
