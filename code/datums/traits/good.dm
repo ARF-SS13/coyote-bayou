@@ -364,12 +364,21 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	locked = FALSE
 
 /datum/quirk/bigleagues
-	name = "Big Leagues"
-	desc = "Swing for the fences! You deal additional damage with melee weapons."
+	name = "Melee - Big Leagues"
+	desc = "Swing for the fences! You deal even more additional damage with melee weapons."
 	value = 3
 	mob_trait = TRAIT_BIG_LEAGUES
 	gain_text = span_notice("You feel like swinging for the fences!")
 	lose_text = span_danger("You feel like bunting.")
+	locked = FALSE
+
+/datum/quirk/littleleagues
+	name = "Melee - Little Leagues"
+	desc = "Swing for the outfield! You deal additional damage with melee weapons."
+	value = 1
+	mob_trait = TRAIT_LITTLE_LEAGUES
+	gain_text = span_notice("You feel like swinging for the outfield!")
+	lose_text = span_danger("You feel like skipping practice.")
 	locked = FALSE
 
 /datum/quirk/chemwhiz

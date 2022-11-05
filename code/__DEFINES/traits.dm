@@ -205,6 +205,9 @@
 #define TRAIT_EMPATH			"empath"
 #define TRAIT_FRIENDLY			"friendly"
 #define TRAIT_BIG_LEAGUES		"big_leagues"
+#define TRAIT_LITTLE_LEAGUES	"little_leagues"
+#define TRAIT_GENTLE			"gentle"
+#define TRAIT_WIMPY				"wimpy"
 #define TRAIT_FEV				"FEV_MUT" //OH BOY
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
