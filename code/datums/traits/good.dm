@@ -436,7 +436,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	mob_tar.health += 10
 
 /datum/quirk/iron_fist
-	name = "Iron Fist"
+	name = "Fists of Iron"
 	desc = "You have fists of kung-fury! Increases unarmed damage."
 	value = 1
 	mob_trait = TRAIT_IRONFIST
@@ -446,8 +446,22 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/iron_fist/on_spawn()
 	var/mob/living/carbon/human/mob_tar = quirk_holder
-	mob_tar.dna.species.punchdamagelow = 4
-	mob_tar.dna.species.punchdamagehigh = 11
+	mob_tar.dna.species.punchdamagelow = 6
+	mob_tar.dna.species.punchdamagehigh = 12
+
+/datum/quirk/steel_fist
+	name = "Fists of Steel"
+	desc = "You have MASSIVE fists of kung-fury! Even MORE increases unarmed damage."
+	value = 2
+	mob_trait = TRAIT_STEELFIST
+	gain_text = span_notice("Your fists feel MASSIVELY furious!")
+	lose_text = span_danger("Your fists feel calm again, what a relief.")
+	locked = FALSE
+
+/datum/quirk/steel_fist/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.dna.species.punchdamagelow = 10
+	mob_tar.dna.species.punchdamagehigh = 16
 
 /datum/quirk/light_step
 	name = "Glass Walker"

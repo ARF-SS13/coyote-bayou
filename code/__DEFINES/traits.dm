@@ -212,6 +212,8 @@
 #define TRAIT_GHOULMELEE		"ghoulmelee"
 #define TRAIT_TRAPPER			"trapper"
 #define TRAIT_IRONFIST			"iron_fist"
+#define TRAIT_STEELFIST			"steel_fist"
+#define TRAIT_NOODLEFIST			"noodle_fist"
 #define TRAIT_POWER_ARMOR		"power_armor"
 #define TRAIT_SNOB				"snob"
 #define TRAIT_CULT_EYES 		"cult_eyes"
