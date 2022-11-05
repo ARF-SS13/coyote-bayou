@@ -79,8 +79,8 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 		species.disliked_food |= LONGPORK
 
 /datum/quirk/tribal
-	name = "Former Tribal"
-	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
+	name = "Tribal Knowledge"
+	desc = "You used to be or are still part part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, allowing you to make some tribal supplies and use alchemy tables."
 	value = 1
 	gain_text = span_notice("You remember the old ways of your tribe..")
 	lose_text = span_notice("You've forgotten the ways of your ancestors..")
