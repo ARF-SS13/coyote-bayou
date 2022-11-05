@@ -113,7 +113,7 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_GENTLE))
 		force += gentle
 
-	if (force >= 5 && HAS_TRAIT(user, TRAIT_WIMPY))
+	if (force >= 10 && HAS_TRAIT(user, TRAIT_WIMPY))
 		force += wimpy
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
