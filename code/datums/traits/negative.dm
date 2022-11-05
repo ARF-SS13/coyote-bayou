@@ -561,3 +561,17 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = "<span class='notice'>Your bones feels weak!</span>"
 	lose_text = "<span class='notice'>Your bones feels more durable!</span>"
 	medical_record_text = "Patient suffers from brittle bones, resulting in them receiving breakages far more easily."
+
+/datum/quirk/noodle_fist
+	name = "Fists of Noodle"
+	desc = "Your punching is legendary. Legendarily bad at doing anything to anyone."
+	value = -1
+	mob_trait = TRAIT_NOODLEFIST
+	gain_text = span_notice("Your fists feel weak and worthless!")
+	lose_text = span_danger("Your fists strong again.")
+	locked = FALSE
+
+/datum/quirk/noodle_fist/on_spawn()
+	var/mob/living/carbon/human/mob_tar = quirk_holder
+	mob_tar.dna.species.punchdamagelow = 0
+	mob_tar.dna.species.punchdamagehigh = 0
