@@ -3280,10 +3280,17 @@ Records disabled until a use for them is found
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
 
-/datum/preferences/proc/reset_quirks()
+/datum/preferences/proc/reset_quirks(why)
 	all_quirks = list()
 	if(istype(parent))
-		to_chat(parent, span_warning("Your quirk balance was invalid, and has been reset! You'll need to set up your quirks again."))
+		switch(why)
+			if("balance")
+				to_chat(parent, span_userdanger("Your quirk balance was invalid! Your quirks have been reset, and you'll need to set up your quirks again."))
+			if("max")
+				to_chat(parent, span_userdanger("Your character had too many positive quirks, likely due to a bug! Your quirks have been reset, and you'll need to set up your quirks again."))
+			else
+				to_chat(parent, span_userdanger("Something went wrong! Your quirks have been reset, and you'll need to set up your quirks again."))
+
 
 #undef DEFAULT_SLOT_AMT
 #undef HANDS_SLOT_AMT
