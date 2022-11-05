@@ -19,9 +19,10 @@
 	medical_record_text = "Patient seems to be rather stuck up."
 	mob_trait = TRAIT_SNOB
 
-/datum/quirk/fev
+/* Temporarily removed for reworking, god this thing is WAY too busy. ~TK
+/quirk/fev
 	name = "FEV Exposure"
-	desc = "Be it accidental; the work of a mad scientist roaming the waste-land, or pre-war experiments that left an individual unable to die, this one has been exposed to an FEV Variation."
+	desc = " "
 	value = 4
 	gain_text = span_notice("You feel a burning pain as your DNA is ripped apart, and sewn back together.")
 	lose_text = span_notice("The dull metronome of pain that defined your existence has faded.")
@@ -35,6 +36,7 @@
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT) //:trollge:
 	mob_tar.maxHealth += 30 //These guys are tanky. But almost blind, slow in most instances, and unable to use most ranged weapons.
 	mob_tar.health += 30
+*/
 
 /datum/quirk/pineapple_liker
 	name = "Ananas Affinity"

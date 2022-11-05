@@ -80,7 +80,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/tribal
 	name = "Former Tribal"
-	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result, though advanced tech still confuses you."
+	desc = "You used to be part of one of the tribes scattered throughout the wasteland. You may have some additional skills as a result. Allowing you to make some tribal medical supplies. Advanced tech still confuses you though."
 	value = 1
 	gain_text = span_notice("You remember the old ways of your tribe..")
 	lose_text = span_notice("You've forgotten the ways of your ancestors..")
@@ -116,7 +116,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/drunkhealing
 	name = "Drunken Resilience"
-	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from injuries."
+	desc = "Nothing like a good drink to make you feel on top of the world. Whenever you're drunk, you slowly recover from damage. Not wounds or bloodloss though."
 	value = 1
 	mob_trait = TRAIT_DRUNK_HEALING
 	gain_text = span_notice("You feel like a drink would do you good.")
@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/empath
 	name = "Empath"
-	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel."
+	desc = "Whether it's a sixth sense or careful study of body language, it only takes you a quick glance at someone to understand how they feel. This lets you see their mood, damage, and intent. As well as seeing if they're experience oxyloss/toxloss and if they're in a high or low mood."
 	value = 1
 	mob_trait = TRAIT_EMPATH
 	gain_text = span_notice("You feel in tune with those around you.")
@@ -134,7 +134,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/freerunning
 	name = "Freerunning"
-	desc = "You're great at quick moves! You can climb tables more quickly."
+	desc = "You're great at quick moves! You climb tables more quickly. Still trying to figure out how to jump off buildings safely tho..."
 	value = 1
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = span_notice("You feel lithe on your feet!")
@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/friendly
 	name = "Friendly"
-	desc = "You give the best hugs, especially when you're in the right mood."
+	desc = "You give the best hugs. When you're in the right mood your squeezes can cheer up those around you. Unless they don't, but that's okay. :)"
 	value = 1
 	mob_trait = TRAIT_FRIENDLY
 	gain_text = span_notice("You want to hug someone.")
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/quick_step
 	name = "Speed Walker"
-	desc = "You walk with determined strides, and out-pace most people, at least, when walking."
+	desc = "You walk with determined strides, and out-pace most people, at least, if you're both walking."
 	value = 1
 	mob_trait = TRAIT_SPEEDY_STEP
 	gain_text = span_notice("You feel determined. No time to lose.")
@@ -220,7 +220,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/selfaware
 	name = "Self-Aware"
-	desc = "You know your body well, and can accurately assess the extent of your wounds."
+	desc = "You know your body well, and can accurately assess the extent of your wounds. Sort of like being a medical scanner for yourself."
 	value = 1
 	mob_trait = TRAIT_SELF_AWARE
 	medical_record_text = "Patient demonstrates an uncanny knack for self-diagnosis."
@@ -259,7 +259,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/technophreak
 	name = "Technophreak"
-	desc = "You're skilled at breaking down old-war rubble more precisely. Gain more salvage from cars and piles than before."
+	desc = "You're skilled at breaking down old-war rubble more precisely and therefor you gain more salvage from cars and piles than before."
 	value = 2
 	mob_trait = TRAIT_TECHNOPHREAK
 	gain_text = span_notice("Old-War rubble seems considerably more generous to you.")
@@ -267,7 +267,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/gunsmith
 	name = "Weaponsmith"
-	desc = "You know how to make various weapons and protective vests."
+	desc = "You know how to make various weapons and protective vests. The list is too large to try and put here."
 	value = 2
 	gain_text = span_notice("You are adept at crafting makeshift weapons.")
 	lose_text = span_danger("You seem less adept at crafting makeshift weapons.")
@@ -396,7 +396,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/pa_wear
 	name = "Power Armor Training"
-	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere."
+	desc = "You've been around the wastes and have learned the wonders of wearing high tech armor from somewhere or something."
 	value = 2
 	mob_trait = TRAIT_PA_WEAR
 	gain_text = span_notice("You realize how to use Power Armor.")
@@ -405,7 +405,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/hard_yards
 	name = "Wasteland Trekker"
-	desc = "You've spent a lot of time wandering the wastes, and for your pace across them is much higher than average for it."
+	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
 	value = 3
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = span_notice("Rain or shine, nothing slows you down.")
@@ -450,7 +450,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/surgerylow
 	name = "Minor Surgery"
-	desc = "You are a somewhat adequate medical practicioner, capable of performing minor surgery."
+	desc = "You are a somewhat adequate medical practicioner, capable of performing minor surgery in a pinch."
 	value = 3
 	mob_trait = TRAIT_SURGERY_LOW
 	gain_text = span_notice("You feel yourself discovering the basics of the human body.")
