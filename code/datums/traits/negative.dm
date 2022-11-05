@@ -441,6 +441,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_danger("You feel really lonely...")
 	lose_text = span_notice("You feel like you could be safe on your own.")
 	medical_record_text = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."
+	locked = TRUE
 
 /datum/quirk/monophobia/post_add()
 	. = ..()
