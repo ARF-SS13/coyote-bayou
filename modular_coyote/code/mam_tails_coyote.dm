@@ -228,3 +228,125 @@
 	icon_state = "raptor"
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/tails/mam_tails/snep
+	name = "Snep"
+	icon_state = "snep"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails/snep
+	name = "Snep"
+	icon_state = "snep"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/human/snep
+	name = "Snep"
+	icon_state = "snep"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/snep
+	name = "Snep"
+	icon_state = "snep"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/malepeacock
+	name = "Male Peacock"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "peacockmale"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/human/malepeacock
+	name = "male peacock"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "peacockmale"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/femalepeacock
+	name = "female Peacock"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "peacockfemale"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/human/femalepeacock
+	name = "female peacock"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "peacockfemale"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/mam_tails/deathclaw
+	name = "Deathclaw"
+	icon_state = "deathclaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails/deathclaw
+	name = "Deathclaw"
+	icon_state = "deathclaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/human/deathclaw
+	name = "Deathclaw"
+	icon_state = "deathclaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/human/deathclaw
+	name = "Deathclaw"
+	icon_state = "deathclaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails/mam_tails/tailmaw
+	name = "Tail Maw"
+	icon_state = "tailmaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails_animated/mam_tails/tailmaw
+	name = "Tail Maw"
+	icon_state = "tailmaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/human/tailmaw
+	name = "Tail Maw"
+	icon_state = "tailmaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails_animated/human/tailmaw
+	name = "Tail Maw"
+	icon_state = "tailmaw"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	color_src = MUTCOLORS
+
+/datum/sprite_accessory/tails/mam_tails/feathertail
+	name = "Feather Tail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "feathertail"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/tails/human/feathertail
+	name = "Feather Tail"
+	icon = 'icons/mob/mam/coyote/mam_tails.dmi'
+	icon_state = "feathertail"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
