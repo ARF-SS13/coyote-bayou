@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 
 /datum/quirk/noglasses 
 	name = "Nearsighted - No Glasses"
-	desc = "You are nearsighted without prescription glasses, sadly you don't have a pair."
+	desc = "You are nearsighted and without prescription glasses, you might could find a pair."
 	value = -2
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("You start seeing faraway things normally again.")
