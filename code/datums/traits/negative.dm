@@ -459,7 +459,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/monophobia
 	name = "Monophobia"
 	desc = "You will become increasingly stressed when not in company of others, triggering panic reactions ranging from sickness to heart attacks."
-	value = -1 // Might change it to 4.
+	value = -2 //Removed Heart attack, should be good now. :)
 	gain_text = span_danger("You feel really lonely...")
 	lose_text = span_notice("You feel like you could be safe on your own.")
 	medical_record_text = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."

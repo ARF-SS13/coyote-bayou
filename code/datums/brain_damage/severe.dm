@@ -213,15 +213,6 @@
 			if(!high_stress)
 				to_chat(owner, span_warning("Your heart skips a beat."))
 				owner.adjustOxyLoss(8)
-			else
-				if(prob(15) && ishuman(owner))
-					var/mob/living/carbon/human/H = owner
-					H.set_heartattack(TRUE)
-					to_chat(H, span_userdanger("You feel a stabbing pain in your heart!"))
-				else
-					to_chat(owner, span_userdanger("You feel your heart lurching in your chest..."))
-					owner.adjustOxyLoss(8)
-		else
 
 /datum/brain_trauma/severe/discoordination
 	name = "Discoordination"
