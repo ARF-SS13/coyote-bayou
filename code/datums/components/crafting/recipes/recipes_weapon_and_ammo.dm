@@ -477,6 +477,16 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
+/datum/crafting_recipe/gun/shotpistol
+	name = "Shotpistol"
+	result = /obj/item/gun/ballistic/revolver/shotpistol
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/crafting/metalparts = 1)
+	tools = list(TOOL_WORKBENCH)
+	time = 120
+	category = CAT_WEAPONRY
+	subcategory = CAT_WEAPON
+
 /datum/crafting_recipe/gun/pepperbox
 	name = "Pepperbox gun (10mm)"
 	result = /obj/item/gun/ballistic/revolver/hobo/pepperbox
