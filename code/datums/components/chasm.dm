@@ -96,6 +96,7 @@
 			L.adjustBruteLoss(30)
 		falling_atoms -= AM
 
+
 	else
 		// send to oblivion
 		AM.visible_message(span_boldwarning("[AM] falls into [parent]!"), span_userdanger("[oblivion_message]"))
