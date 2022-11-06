@@ -1118,3 +1118,28 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
  */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
+
+
+//Pixel Tilting, ported from splurt and modified. Props to whoever made it.
+var/is_tilted
+
+/mob/verb/tilt_leftward()
+	set hidden = FALSE
+	tilt_left()
+
+/mob/proc/tilt_left()
+	if(!canface() || is_tilted < -50)
+		return FALSE
+	transform = transform.Turn(-1)
+	is_tilted--
+
+/mob/verb/tilt_rightward()
+	set hidden = FALSE
+	tilt_right()
+
+/mob/proc/tilt_right()
+	if(!canface() || is_tilted > 50)
+		return FALSE
+	transform = transform.Turn(1)
+	is_tilted++
+
