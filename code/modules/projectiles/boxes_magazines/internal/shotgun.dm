@@ -41,6 +41,10 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 12
 
+/obj/item/ammo_box/magazine/internal/shot/single
+	name = "single-barrel shotgun internal magazine"
+	max_ammo = 1
+
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2

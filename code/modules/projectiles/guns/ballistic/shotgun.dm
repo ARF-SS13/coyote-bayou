@@ -253,6 +253,61 @@
 	else
 		icon_state = "[initial(icon_state)]"
 
+/* * * * * * * * * * *
+ * Singleshot shotgun
+ * Baseline "DB" shotgun
+ * 12g
+ * fits in a pocket
+ * One shot
+ * Squeak
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/shotpistol
+	name = "shotpistol"
+	desc = "Exactly one half of a sawed off double barrel shotgun, stripped down and streamlined to fit snugly in someone's pocket. \
+			The rubberized grip helps absorb just enough of the recoil to be fired with one hand, and a sturdy latch locks the breech \
+			open after unloading for easy access. Despite claims to the contrary, this is <i>not</i> just flare gun with extra parts."
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
+	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
+	icon_state = "shotpistol"
+	item_state = "357colt"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/single
+
+	slowdown = GUN_SLOWDOWN_PISTOL_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_QUICK
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_firemodes = list(
+		list(mode_name="Single-fire", mode_desc="Punch a hole in something", burst_size=1, icon="semi")
+	)
+
+	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
+
+/obj/item/gun/ballistic/revolver/shotpistol/update_icon_state()
+	if(!magazine || !magazine.ammo_count(TRUE))
+		icon_state = "[initial(icon_state)]-e"
+	else
+		icon_state = "[initial(icon_state)]"
+
 /* * * * * * * * *
  * Pump shotguns *
  * * * * * * * * */

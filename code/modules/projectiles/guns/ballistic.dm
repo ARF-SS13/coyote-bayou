@@ -95,16 +95,16 @@
 				return TRUE
 			if(magazine.fixed_mag) // fixed mag, just load bullets in
 				magazine.load_from_casing(A, user, FALSE)
-				update_icon()
 				chamber_round(0)
+				update_icon()
 				return TRUE
 
 	if(istype(A, /obj/item/ammo_box))
 		var/obj/item/ammo_box/new_mag = A
 		if(magazine?.fixed_mag) // fixed mag, just load bullets in
 			magazine.load_from_box(A, user, FALSE)
-			update_icon()
 			chamber_round(0)
+			update_icon()
 			return TRUE
 		// removable mag, eject the mag
 		if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit

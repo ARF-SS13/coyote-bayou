@@ -855,6 +855,7 @@
 				/obj/effect/spawner/bundle/f13/caravan_shotgun,
 				/obj/item/gun/ballistic/rifle/hunting, //No. More. Mosin.
 				/obj/effect/spawner/bundle/f13/remington,
+				/obj/effect/spawner/bundle/f13/shotpistol,
 				/obj/effect/spawner/bundle/f13/sportcarbine,
 				/obj/effect/spawner/bundle/f13/widowmaker,
 				/obj/effect/spawner/bundle/f13/varmint
@@ -1050,6 +1051,13 @@
 	items = list(
 				/obj/item/gun/ballistic/rifle/hunting,
 				/obj/item/ammo_box/a308
+				)
+
+/obj/effect/spawner/bundle/f13/shotpistol
+	name = "shotpistol and ammo spawner"
+	items = list(
+				/obj/item/gun/ballistic/revolver/shotpistol,
+				/obj/item/ammo_box/shotgun/buck
 				)
 
 /obj/effect/spawner/bundle/f13/n99
