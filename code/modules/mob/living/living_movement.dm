@@ -16,6 +16,10 @@
 			is_shifted = FALSE
 			pixel_x = get_standard_pixel_x_offset(lying)
 			pixel_y = get_standard_pixel_y_offset(lying)
+		if(is_tilted)
+			transform = transform.Turn(-is_tilted)
+			is_tilted = 0
+
 
 /mob/living/CanAllowThrough(atom/movable/mover, border_dir)
 	..()
