@@ -197,7 +197,7 @@
 	return TRUE
 
 /datum/keybinding/mob/tilt_right
-	hotkey_keys = list("AltCtrlShiftEast", "AltCtrlShiftD")
+	hotkey_keys = list("AltCtrlEast", "AltCtrlShiftD")
 	name = "pixel_tilt_east"
 	full_name = "Pixel Tilt Right"
 	description = ""
@@ -209,7 +209,7 @@
 	return TRUE
 
 /datum/keybinding/mob/tilt_left
-	hotkey_keys = list("AltCtrlShiftWest", "AltCtrlShiftA")
+	hotkey_keys = list("AltCtrlWest", "AltCtrlShiftA")
 	name = "pixel_tilt_west"
 	full_name = "Pixel Tilt Left"
 	description = ""
