@@ -1120,9 +1120,6 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	return
 
 
-//Pixel Tilting, ported from splurt and modified. Props to whoever made it.
-var/is_tilted
-
 /mob/verb/tilt_leftward()
 	set hidden = FALSE
 	tilt_left()
