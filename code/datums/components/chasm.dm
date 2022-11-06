@@ -92,10 +92,12 @@
 		AM.forceMove(T)
 		if(isliving(AM))
 			var/mob/living/L = AM
-			L.DefaultCombatKnockdown(100)
-			L.adjustBruteLoss(30)
+			if(HAS_TRAIT(user, TRAIT_FREERUNNING))
+				L.adjustBruteLoss(10)
+			else
+				L.DefaultCombatKnockdown(100)
+				L.adjustBruteLoss(40)
 		falling_atoms -= AM
-
 
 	else
 		// send to oblivion
