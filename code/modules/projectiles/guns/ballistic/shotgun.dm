@@ -260,14 +260,16 @@
  * fits in a pocket
  * One shot
  * Squeak
+ * tulyak
  * Common
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/shotpistol
-	name = "shotpistol"
+	name = "hand shotgun"
 	desc = "Exactly one half of a sawed off double barrel shotgun, stripped down and streamlined to fit snugly in someone's pocket. \
 			The rubberized grip helps absorb just enough of the recoil to be fired with one hand, and a sturdy latch locks the breech \
-			open after unloading for easy access. Despite claims to the contrary, this is <i>not</i> just flare gun with extra parts."
+			open after unloading for easy access. Despite claims to the contrary, this is <i>not</i> just flare gun with extra parts. \
+			Allegedly based on old schematics for the 'tulyak' single-shot pistol shotgun, albeit rechambered to 12-gauge due to availability."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
