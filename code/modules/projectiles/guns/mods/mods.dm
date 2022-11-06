@@ -126,7 +126,7 @@
 /obj/item/gun_upgrade/mechanism
 
 //Adds +3 to the internal magazine of a weapon. Acquired through loot spawns.
-/obj/item/gun_upgrade/mechanism/overshooter
+/*/obj/item/gun_upgrade/mechanism/overshooter
 	name = "Extended internal magazine kit"
 	desc = "A method of overloading a weapon's internal magazine, fitting more ammunition within the weapon."
 	icon_state = "Overshooter"
@@ -138,7 +138,7 @@
 		GUN_UPGRADE_MAGUP = 3
 		)
 	I.req_gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
-	I.gun_loc_tag = GUN_MECHANISM
+	I.gun_loc_tag = GUN_MECHANISM*/
 
 //Adds radiation damage to .35 rounds. Acquired through telecrystal uplink
 /*/obj/item/gun_upgrade/mechanism/glass_widow

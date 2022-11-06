@@ -1594,7 +1594,7 @@
 	subcategory = CAT_PARTS
 	always_available = FALSE
 
-/datum/crafting_recipe/overshootermod
+/*/datum/crafting_recipe/overshootermod
 	name = "Extended internal magazine kit"
 	result = /obj/item/gun_upgrade/mechanism/overshooter
 	reqs = list(
@@ -1606,7 +1606,7 @@
 	time = 30
 	category = CAT_WEAPONRY
 	subcategory = CAT_PARTS
-	always_available = FALSE
+	always_available = FALSE*/
 
 /datum/crafting_recipe/ai_tool
 	name = "Vault-Tec Integrated ZAX module"
@@ -1615,7 +1615,6 @@
 				/obj/item/gun_upgrade/mechanism/overdrive = 1,
 				/obj/item/stack/sheet/bluespace_crystal = 1,
 				/obj/item/stock_parts/scanning_module/triphasic = 1,
-				/obj/item/gun_upgrade/mechanism/overshooter = 1
 	)
 	tools = list(TOOL_AWORKBENCH)
 	time = 30

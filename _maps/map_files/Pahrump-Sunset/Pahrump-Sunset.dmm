@@ -3804,6 +3804,7 @@
 "aog" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/table,
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
 /turf/open/floor/plasteel/vault,
 /area/f13/building)
 "aoh" = (
@@ -18958,6 +18959,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/effect/spawner/lootdrop/f13/blueprintVHigh,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "bwA" = (
@@ -41263,6 +41265,12 @@
 	icon_state = "floorrustysolid"
 	},
 /area/f13/building)
+"kHh" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintVHighBallistics,
+/turf/open/floor/plasteel/vault,
+/area/f13/building)
 "kHH" = (
 /obj/structure/barricade/sandbags,
 /turf/open/indestructible/ground/outside/dirt{
@@ -60097,6 +60105,7 @@
 /area/f13/building/abandoned)
 "sWN" = (
 /obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "sWV" = (
@@ -61089,6 +61098,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/spawner/lootdrop/f13/blueprintHigh,
 /turf/open/floor/wood_common,
 /area/f13/building/abandoned)
 "tuP" = (
@@ -77001,7 +77011,7 @@ aae
 blg
 abE
 iMa
-avy
+kHh
 fbu
 aoC
 rSW
