@@ -17,10 +17,10 @@
 		quirk_holder.blood_volume -= 0.2
 
 /datum/quirk/depression
-	name = "Depression"
+	name = "Mood - Depressive"
 	desc = "You sometimes just hate life, and get a mood debuff for it."
 	mob_trait = TRAIT_DEPRESSION
-	value = -1
+	value = -2
 	gain_text = span_danger("You start feeling depressed.")
 	lose_text = span_notice("You no longer feel depressed.") //if only it were that easy!
 	medical_record_text = "Patient has a severe mood disorder, causing them to experience acute episodes of depression."
@@ -29,6 +29,21 @@
 /datum/quirk/depression/on_process()
 	if(prob(0.15))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "depression", /datum/mood_event/depression)
+
+/datum/quirk/pessimist
+	name = "Mood - Pessimist"
+	desc = "You sometimes just sort of hate life, and get a mood debuff for it."
+	mob_trait = TRAIT_PESSIMIST
+	value = -1
+	gain_text = span_danger("You start feeling depressed.")
+	lose_text = span_notice("You no longer feel depressed.") //if only it were that easy!
+	medical_record_text = "Patient has a mood disorder, causing them to experience episodes of depression like symptoms."
+	mood_quirk = TRUE
+
+/datum/quirk/pessimist/on_process()
+	if(prob(0.15))
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "pessimist", /datum/mood_event/pessimism)
+
 
 /datum/quirk/family_heirloom
 	name = "Family Heirloom"

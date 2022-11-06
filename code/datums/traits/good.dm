@@ -152,9 +152,9 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	medical_record_text = "Patient demonstrates low-inhibitions for physical contact and well-developed arms. Requesting another doctor take over this case."
 
 /datum/quirk/jolly
-	name = "Jolly"
+	name = "Mood - Sanguine"
 	desc = "You sometimes just feel happy, for no reason at all. Gives mood buffs, occasionally."
-	value = 1
+	value = 2
 	mob_trait = TRAIT_JOLLY
 	mood_quirk = TRUE
 	medical_record_text = "Patient demonstrates constant euthymia irregular for environment. It's a bit much, to be honest."
@@ -162,6 +162,19 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 /datum/quirk/jolly/on_process()
 	if(prob(0.05))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "jolly", /datum/mood_event/jolly)
+
+/datum/quirk/optimist
+	name = "Mood - Optimist"
+	desc = "You sometimes just feel kind of happy, for no reason at all. Gives small mood buffs, occasionally."
+	value = 1
+	mob_trait = TRAIT_OPTIMIST
+	mood_quirk = TRUE
+	medical_record_text = "Patient demonstrates occasional euthymia irregular for environment. Lucky them."
+
+/datum/quirk/optimist/on_process()
+	if(prob(0.05))
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "optimist", /datum/mood_event/optimism)
+
 
 /datum/quirk/light_step
 	name = "Light Step"

@@ -19,7 +19,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		SetupQuirks()
 		quirk_blacklist = list(
 			list("Blind","Nearsighted"),
-			list("Jolly","Depression","Apathetic"),
+			list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
 			list("Ageusia","Deviant Tastes"),
 			list("Ananas Affinity","Ananas Aversion"),
 			list("Alcohol Tolerance","Alcohol Intolerance"),

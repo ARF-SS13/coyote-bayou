@@ -55,6 +55,11 @@
 	mood_change = 15
 	timeout = 60 MINUTES
 
+/datum/mood_event/optimism
+	description = span_nicegreen("I feel kind of happy for no particular reason.")
+	mood_change = 8
+	timeout = 60 MINUTES
+
 /datum/mood_event/focused
 	description = span_nicegreen("I have a goal, and I will reach it, whatever it takes!") //Used for syndies, nukeops etc so they can focus on their goals
 	mood_change = 12
