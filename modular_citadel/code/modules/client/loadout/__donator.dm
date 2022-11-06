@@ -277,7 +277,7 @@
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
 	new /obj/item/card/id/selfassign/darknova(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
@@ -655,7 +655,7 @@
 
 /obj/item/storage/box/large/custom_kit/sloaff2/PopulateContents()
 	new /obj/item/clothing/mask/surgical/sloaff(src)
-	new /obj/item/clothing/neck/mantle/peltfur(src)
+	new /obj/item/lighter/fusion(src)
 	new /obj/item/reagent_containers/pill/patch/jet(src)
 
 /datum/gear/donator/kits/soulwinter446
@@ -807,3 +807,18 @@
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
 // Z
+
+/datum/gear/donator/kits/zeronetalpha
+	name = "DocBot115"
+	path = /obj/item/storage/box/large/custom_kit/zeronetalpha
+	ckeywhitelist = list("zeronetalpha")
+
+/obj/item/storage/box/large/custom_kit/zeronetalpha/PopulateContents()
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/storage/belt/shoulderholster(src)
+	new /obj/item/clothing/head/beret/med(src)
+	new /obj/item/clothing/suit/toggle/labcoat/emt/highvis(src)
+	new /obj/item/clothing/under/pants/black(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/stealthboy(src)
+
