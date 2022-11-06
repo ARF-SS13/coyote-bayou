@@ -213,7 +213,6 @@
 			if(!high_stress)
 				to_chat(owner, span_warning("Your heart skips a beat."))
 				owner.adjustOxyLoss(8)
-		else
 
 /datum/brain_trauma/severe/discoordination
 	name = "Discoordination"
