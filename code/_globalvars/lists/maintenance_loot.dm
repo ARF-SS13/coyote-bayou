@@ -430,12 +430,11 @@ GLOBAL_LIST_INIT(loot_medical_tool, list(
 
 GLOBAL_LIST_INIT(loot_medical_medicine, list(
 	/obj/item/reagent_containers/pill/healingpowder,
-	/obj/item/storage/pill_bottle/chem_tin/radx,
 	/obj/item/reagent_containers/blood/radaway,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak,
-	/obj/item/reagent_containers/medspray/styptic,
-	/obj/item/reagent_containers/medspray/silver_sulf,
-	/obj/item/reagent_containers/medspray/sterilizine
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/mesh/advanced,
+	/obj/item/stack/medical/suture/medicated
 ))
 
 GLOBAL_LIST_INIT(loot_medical_drug, list(

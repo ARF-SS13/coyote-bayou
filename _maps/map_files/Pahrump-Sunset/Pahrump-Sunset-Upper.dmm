@@ -4867,9 +4867,13 @@
 	},
 /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
 /obj/structure/window/reinforced/spawner{
-	dir = 0;
-	max_integrity = 5000;
-	name = "ultra-reinforced window"
+	dir = 8
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
 	},
 /obj/structure/window/reinforced/spawner{
 	dir = 8
@@ -4880,20 +4884,8 @@
 /obj/structure/window/reinforced/spawner{
 	dir = 1
 	},
-/obj/structure/window/reinforced/spawner{
-	dir = 0;
-	max_integrity = 5000;
-	name = "ultra-reinforced window"
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 8
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 4
-	},
-/obj/structure/window/reinforced/spawner{
-	dir = 1
-	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrusty"
 	},
