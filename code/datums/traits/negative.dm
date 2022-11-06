@@ -607,3 +607,20 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	lose_text = span_danger("You feel like slapping the mess out of a Deathclaw!")
 	locked = FALSE
 
+/datum/quirk/slow
+	name = "Mobility - Wasteland Slug"
+	desc = "You've spent some time in the wastes, you don't get around great."
+	value = -1
+	mob_trait = TRAIT_SLUG
+	gain_text = span_notice("Rain or shine, you might get there eventually.")
+	lose_text = span_danger("Your gait feels a little more sure!")
+	locked = FALSE
+
+/datum/quirk/slower
+	name = "Mobility - Wasteland Molasses"
+	desc = "You don't get around well off road. Like. At all."
+	value = -2
+	mob_trait = TRAIT_SLOWAF
+	gain_text = span_notice("You feel like staying at home.")
+	lose_text = span_danger("Wow! You feel like you could run around the whole WORLD!")
+	locked = FALSE

@@ -79,7 +79,7 @@
 	if(isalien(user))
 		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
-		adjusted_climb_time *= 0.8
+		adjusted_climb_time *= 0.25
 	structureclimber = user
 	if(do_mob(user, user, adjusted_climb_time))
 		if(src.loc) //Checking if structure has been destroyed
@@ -87,7 +87,7 @@
 				user.visible_message(span_warning("[user] climbs onto [src]."), \
 									span_notice("You climb onto [src]."))
 				log_combat(user, src, "climbed onto")
-				if(climb_stun)
+				if(climb_stun && !HAS_TRAIT(user, TRAIT_FREERUNNING))
 					user.Stun(climb_stun)
 				. = 1
 			else
