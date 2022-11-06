@@ -453,6 +453,10 @@
 	if (!isnull(trait_exam))
 		. += trait_exam
 
+	if(HAS_TRAIT(src, TRAIT_IN_HEAT) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>[t_He] [t_is] looking for [gender == MALE ? "a good time, you should check their OOC Notes" : "a good time, you should check their OOC Notes"].</span>"
+
 	var/traitstring = get_trait_string()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
