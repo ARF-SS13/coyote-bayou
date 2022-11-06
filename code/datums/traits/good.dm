@@ -426,11 +426,20 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	locked = FALSE
 
 /datum/quirk/hard_yards
-	name = "Wasteland Trekker"
+	name = "Mobility - Wasteland Trekker"
 	desc = "You've spent a lot of time wandering the wastes, and for your hard work you out pace most folks when travelling across them."
 	value = 3
 	mob_trait = TRAIT_HARD_YARDS
 	gain_text = span_notice("Rain or shine, nothing slows you down.")
+	lose_text = span_danger("You walk with a less sure gait, the ground seeming less firm somehow.")
+	locked = FALSE
+
+/datum/quirk/soft_yards
+	name = "Mobility - Wasteland Wanderer"
+	desc = "You've spent some time in the wastes, and can move a bit better around them for it."
+	value = 2
+	mob_trait = TRAIT_SOFT_YARDS
+	gain_text = span_notice("Rain or shine only slow you down a little.")
 	lose_text = span_danger("You walk with a less sure gait, the ground seeming less firm somehow.")
 	locked = FALSE
 

@@ -53,11 +53,15 @@
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
-	visible_message(span_danger("[src] crashes into [T] with a sickening noise!"), \
-					span_userdanger("You crash into [T] with a sickening noise!"))
-	adjustBruteLoss((levels * 5) ** 1.5)
-	DefaultCombatKnockdown(levels * 50)
-
+	if(levels <= 1 && HAS_TRAIT(src, TRAIT_FREERUNNING))
+		visible_message(span_danger("[src] slams into [T], rolling as they land and keeping their pace!"),
+						span_userdanger("You slam into [T], rolling and keeping your momentum!"))
+		adjustBruteLoss((levels * 5))
+	else
+		visible_message(span_danger("[src] crashes into [T] with a sickening noise!"),
+						span_userdanger("You crash into [T] with a sickening noise!"))
+		adjustBruteLoss((levels * 5) ** 1.5)
+		DefaultCombatKnockdown(levels * 50)
 
 /mob/living/proc/OpenCraftingMenu()
 	return

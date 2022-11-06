@@ -27,7 +27,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
 			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
 			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
-			list("Lifegiver", "Life Giver Plus", "Flimsy", "Very Flimsy")
+			list("Lifegiver", "Life Giver Plus", "Flimsy", "Very Flimsy"),
+			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses")
 			)
 	return ..()
 
