@@ -132,6 +132,8 @@
 #define TRAIT_HOLY				"holy"
 #define TRAIT_DEPRESSION		"depression"
 #define TRAIT_JOLLY				"jolly"
+#define TRAIT_IN_HEAT			"ERP Receptive"
+#define TRAIT_HEAT_DETECT		"ERP Seeking"
 #define TRAIT_NOCRITDAMAGE		"no_crit"
 #define TRAIT_NOSLIPWATER		"noslip_water"
 #define TRAIT_NOSLIPALL			"noslip_all"

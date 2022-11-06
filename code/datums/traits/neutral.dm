@@ -316,3 +316,17 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!QDELETED(H))
 		H.remove_language(/datum/language/tribal)
+
+/datum/quirk/in_heat
+	name = "ERP Receptive"
+	desc = "Your character, for whatever reason, is PASSIVELY seeking out attention from those who match your OOC Prefences."
+	value = 0
+	mob_trait = TRAIT_IN_HEAT
+
+
+/datum/quirk/heat
+	name = "ERP Seeking"
+	desc = "Your character, for whatever reason, is ACTIVELY seeking out attention from those who match your OOC Preferences."
+	value = 0
+	mob_trait = TRAIT_HEAT_DETECT
+
