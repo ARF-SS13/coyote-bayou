@@ -509,8 +509,10 @@
 
 /obj/item/ammo_box/m14mm/improvised
 	name = "bag with reloaded 14mm bullets"
+	icon_state = "improvshotbag"
 	max_ammo = 20
 	ammo_type = /obj/item/ammo_casing/p14mm/improvised
+	multiple_sprites = 3
 
 //Misc.
 /obj/item/ammo_box/m473
