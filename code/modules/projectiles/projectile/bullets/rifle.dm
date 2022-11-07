@@ -1114,14 +1114,14 @@
 	supereffective_damage = BULLET_DAMAGE_RIFLE_HEAVY * BULLET_MATCH_MULT
 	supereffective_faction = list("hostile", "ant", "supermutant", "deathclaw", "cazador", "raider", "china", "gecko", "wastebot", "yaoguai")
 	/// Reduces damage by this much when it hits a thing
-	var/per_wall_mult = 0.9
+	var/per_wall_mult = 0.8
 
 /obj/item/projectile/bullet/c2mm/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
-	if(isliving(target))
+	if(isliving(target) && damage >= (initial(damage) * 0.5))
 		var/atom/movable/M = target
 		var/atom/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, src)))
 		M.safe_throw_at(throw_target, 2, 3)
-	if(ismovable(target))
+	if(isclosedturf(T) || ismovable(target))
 		damage = max(damage * per_wall_mult, 0.5)
 	..()
 
@@ -1156,7 +1156,7 @@
 	ricochet_chance = 100
 
 /obj/item/projectile/bullet/c2mm/blender/process_hit(turf/T, atom/target, qdel_self, hit_something = FALSE)
-	if(ismovable(target))
+	if(ismovable(target) || ismovable(T))
 		temporary_unstoppable_movement = TRUE
 		ENABLE_BITFIELD(movement_type, UNSTOPPABLE)
 	..()
