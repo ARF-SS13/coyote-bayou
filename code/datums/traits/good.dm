@@ -729,7 +729,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	locked =  FALSE
 
 /datum/quirk/nohunger
-	name = "Doesn't Eat"
+	name = "Does not Eat"
 	desc = "You don't need to eat to live, lucky you."
 	value = 4
 	mob_trait = TRAIT_NOHUNGER
