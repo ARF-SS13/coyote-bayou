@@ -46,7 +46,7 @@
 	pixel_y = 5
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "ed" = (
 /turf/closed/mineral/random/low_chance,
 /area/f13/wasteland)
@@ -55,7 +55,7 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "eQ" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/wasteland)
@@ -83,7 +83,7 @@
 	pixel_y = 20
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "fR" = (
 /obj/structure/railing{
 	color = "#A47449"
@@ -131,7 +131,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "in" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -160,18 +160,21 @@
 "jL" = (
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "jX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"kd" = (
+/turf/open/transparent/openspace,
+/area/f13/building/hospital)
 "kY" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/red/insulated,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "lk" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -191,7 +194,7 @@
 /obj/structure/table/reinforced,
 /obj/item/blueprint/research,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "mU" = (
 /obj/machinery/atmospherics/pipe/simple/general/hidden,
 /obj/structure/wreck/trash/machinepiletwo,
@@ -291,7 +294,7 @@
 	},
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "uw" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -328,7 +331,7 @@
 "ve" = (
 /obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "vI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -341,7 +344,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "wD" = (
 /obj/structure/cable,
 /obj/machinery/power/tracker,
@@ -356,11 +359,11 @@
 	name = "Concrete wall";
 	smooth = 1
 	},
-/area/f13/building)
+/area/f13/building/hospital)
 "yd" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "yC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -403,7 +406,7 @@
 	},
 /obj/structure/simple_door/house,
 /turf/open/indestructible/ground/outside/roof,
-/area/f13/building)
+/area/f13/building/hospital)
 "AZ" = (
 /obj/structure/railing{
 	dir = 1
@@ -423,16 +426,16 @@
 /obj/structure/cable,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Do" = (
 /obj/structure/rack/shelf_metal,
 /obj/structure/rack/shelf_metal,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "DS" = (
 /obj/item/circuitboard/machine/smes,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Ef" = (
 /obj/item/stock_parts/cell/super/empty,
 /turf/open/indestructible/ground/outside/roof,
@@ -440,10 +443,10 @@
 "Er" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Ey" = (
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "ED" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 8
@@ -520,7 +523,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "KV" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -529,7 +532,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Ln" = (
 /obj/item/stock_parts/capacitor,
 /turf/open/indestructible/ground/outside/roof,
@@ -537,7 +540,7 @@
 "LT" = (
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
-/area/f13/building)
+/area/f13/building/hospital)
 "Nw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -545,7 +548,7 @@
 	termtag = "Business"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "NT" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -555,21 +558,21 @@
 "Oi" = (
 /obj/structure/chair/f13chair2,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "OQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Pg" = (
 /obj/structure/reagent_dispensers/barrel/two,
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "PZ" = (
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
-/area/f13/building)
+/area/f13/building/hospital)
 "Rs" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Razzleberry Ramona"
@@ -597,7 +600,7 @@
 	dir = 1
 	},
 /turf/open/transparent/openspace,
-/area/f13/building)
+/area/f13/building/hospital)
 "Sn" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	pixel_y = 6
@@ -618,7 +621,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/light,
 /turf/open/transparent/openspace,
-/area/f13/building)
+/area/f13/building/hospital)
 "Tq" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -648,7 +651,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Vn" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
 /obj/machinery/power/terminal{
@@ -656,7 +659,7 @@
 	},
 /obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Vp" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/electrical{
@@ -672,11 +675,11 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Wa" = (
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "Wt" = (
 /obj/item/reagent_containers/food/snacks/pie/berrytart,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -693,7 +696,7 @@
 "XC" = (
 /obj/structure/wreck/trash/four_barrels,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "XU" = (
 /obj/structure/railing/corner{
 	dir = 4
@@ -718,7 +721,7 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/f13/vault_floor/white,
-/area/f13/building)
+/area/f13/building/hospital)
 "ZO" = (
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 1
@@ -50152,7 +50155,7 @@ hm
 hm
 hm
 xs
-WH
+kd
 Ey
 uu
 xs

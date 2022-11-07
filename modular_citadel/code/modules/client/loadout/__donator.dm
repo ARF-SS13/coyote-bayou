@@ -156,7 +156,7 @@
 	new /obj/item/clothing/head/beret/headband(src)
 	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
 	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
-	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/gun/energy/laser/plasma/pistol/eve/worn(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 // B
@@ -231,6 +231,7 @@
 	new /obj/item/ammo_box/a45lcrev(src)
 	new /obj/item/ammo_box/a45lcbox(src)
 	new /obj/item/lighter/fusion(src)
+	new /obj/item/book/granter/crafting_recipe/poultice(src)
 
 // C
 
