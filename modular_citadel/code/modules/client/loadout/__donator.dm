@@ -156,7 +156,7 @@
 	new /obj/item/clothing/head/beret/headband(src)
 	new /obj/item/clothing/under/f13/chinasuitcosmetic(src)
 	new /obj/item/clothing/head/f13/chinahelmetcosmetic(src)
-	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/gun/energy/laser/plasma/pistol/eve/worn(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 
 // B
@@ -231,6 +231,7 @@
 	new /obj/item/ammo_box/a45lcrev(src)
 	new /obj/item/ammo_box/a45lcbox(src)
 	new /obj/item/lighter/fusion(src)
+	new /obj/item/book/granter/crafting_recipe/poultice(src)
 
 // C
 
@@ -345,18 +346,8 @@
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/card/fuzzy_license(src)
 	new /obj/item/toy/crayon/orange(src)
-	new /obj/item/analyzer(src)
-	new /obj/item/reagent_containers/syringe(src)
-	new /obj/item/storage/box/evidence(src)
-	new /obj/item/storage/box/beakers(src)
-	new /obj/item/clipboard(src)
-	new /obj/item/flashlight/pen(src)
 	new /obj/item/geiger_counter(src)
-	new /obj/item/t_scanner(src)
-	new /obj/item/plant_analyzer(src)
-	new /obj/item/binoculars(src)
-	new /obj/item/multitool(src)
-	new /obj/item/storage/belt/bandolier(src)
+	new /obj/item/toy/plush/mammal/wolf/blue(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"

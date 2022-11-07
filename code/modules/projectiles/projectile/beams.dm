@@ -569,6 +569,13 @@
 	wound_bonus = 75 //being hit with plasma is horrific
 	light_color = LIGHT_COLOR_PINK
 
+/obj/item/projectile/f13plasma/pistol/eve/worn //Eve worn
+	icon = 'icons/fallout/objects/guns/projectiles.dmi'
+	icon_state = "eve"
+	damage = 35
+	wound_bonus = 65 //being hit with plasma is horrific
+	light_color = LIGHT_COLOR_PINK
+
 /obj/item/projectile/f13plasma/pistol/worn
 	damage = 30
 

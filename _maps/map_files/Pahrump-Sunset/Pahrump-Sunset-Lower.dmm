@@ -1347,6 +1347,13 @@
 	},
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"bnE" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/structure/rack,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "boM" = (
 /obj/machinery/light{
 	dir = 1;
@@ -20928,6 +20935,15 @@
 	icon_state = "tunnelrusty"
 	},
 /area/f13/caves)
+"pBs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack/shelf_metal,
+/obj/item/stack/sheet/mineral/plastitanium/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/stack/sheet/sandblock/fifty,
+/turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
 "pBw" = (
 /obj/structure/table,
 /obj/item/reagent_containers/hypospray/medipen/medx,
@@ -39705,7 +39721,7 @@ aae
 abP
 wEA
 wXe
-bZf
+pBs
 abP
 aae
 aaa
@@ -62125,8 +62141,8 @@ jGk
 jGk
 jGk
 jGk
-rHB
-rHB
+taG
+taG
 jGk
 jGk
 aae
@@ -62383,8 +62399,8 @@ aae
 aae
 aae
 aae
-aae
-aae
+aaB
+aaB
 aae
 aae
 aae
@@ -76633,7 +76649,7 @@ dEX
 gYI
 gYI
 dEX
-kDe
+kuo
 kuo
 dEX
 lmd
@@ -77661,7 +77677,7 @@ xHk
 kDe
 gYI
 dEX
-gYI
+bnE
 kuo
 dEX
 eSA
