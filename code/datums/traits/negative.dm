@@ -697,7 +697,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/luddite
 	name = "Luddite"
 	desc = "You forgo some technology, "
-	value = 2
+	value = -2
 	mob_trait = TRAIT_AUTO_DRAW
 	gain_text = span_notice("You feel like all that training with bows has paying off.")
 	lose_text = span_danger("Guns were always better...")
