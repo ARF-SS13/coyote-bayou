@@ -7856,6 +7856,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/am_containment/loot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "dQn" = (
@@ -16227,14 +16228,13 @@
 	},
 /area/f13/building/sewers)
 "lAG" = (
-/obj/structure/rack,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/item/am_containment/loot,
+/obj/machinery/vending/matvend,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "lAI" = (
@@ -19730,10 +19730,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
 "oEP" = (
-/obj/effect/decal/cleanable/dirt{
-	color = "#363636"
-	},
-/obj/machinery/vending/matvend,
+/obj/structure/window/fulltile/store,
+/obj/structure/barricade/wooden/planks,
+/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "oFe" = (
@@ -77414,7 +77413,7 @@ dEX
 gYI
 kuo
 dEX
-oEP
+gYI
 gYI
 gYI
 kDe
@@ -78949,7 +78948,7 @@ whm
 iqw
 dAT
 sGc
-dEX
+oEP
 gYI
 gYI
 dEX
@@ -79463,7 +79462,7 @@ whm
 lkl
 sGc
 awR
-dEX
+oEP
 kDe
 gYI
 dEX
