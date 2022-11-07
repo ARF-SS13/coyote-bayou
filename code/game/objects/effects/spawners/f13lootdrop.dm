@@ -740,10 +740,10 @@
 				/obj/item/melee/transforming/energy/axe/protonaxe,
 				/obj/item/gun/ballistic/revolver/ballisticfist,
 				/obj/item/twohanded/sledgehammer/supersledge,
+				/obj/item/melee/powerfist/f13/goliath,
 				/obj/item/shishkebabpack,
 				/obj/item/melee/unarmed/deathclawgauntlet,
-				/obj/item/melee/powerfist/f13/moleminer,
-				/obj/item/twohanded/legionaxe
+				/obj/item/melee/powerfist/f13/moleminer
 				)
 
 /obj/effect/spawner/lootdrop/f13/weapon/melee/random
