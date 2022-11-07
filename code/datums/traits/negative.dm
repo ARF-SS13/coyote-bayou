@@ -668,7 +668,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/nosleep
-	name = "Can't Sleep"
+	name = "Can Not Sleep"
 	desc = "For whatever reason you literally lack the ability to sleep."
 	value = -1
 	mob_trait = TRAIT_SLEEPIMMUNE
@@ -677,7 +677,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/garbledspeach
-	name = "Unintelligible Speach"
+	name = "Unintelligible Speech"
 	desc = "You are so far beyond tongue tied."
 	value = -2
 	mob_trait = TRAIT_UNINTELLIGIBLE_SPEECH
@@ -686,7 +686,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	locked = FALSE
 
 /datum/quirk/cantrun
-	name = "Mobility - Can't Run"
+	name = "Mobility - Can not Run"
 	desc = "For whatever reason you just can't muster up the go to run."
 	value = -3
 	mob_trait = TRAIT_NORUNNING
