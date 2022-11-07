@@ -1095,7 +1095,7 @@ Raider
 	uniform = /obj/item/clothing/under/f13/vault
 	shoes = /obj/item/clothing/shoes/jackboots
 	gloves = /obj/item/clothing/gloves/fingerless
-	id = /obj/item/card/id/dogtag/vaultiecard
+	id = /obj/item/card/id/selfassign
 	suit = /obj/item/clothing/suit/suspenders
 	backpack_contents = list(
 		/obj/item/gun/ballistic/automatic/pistol/n99=1,
