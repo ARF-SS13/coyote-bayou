@@ -825,6 +825,19 @@
 	key_third_person = "aflapas"
 	message = "flaps their arms ANGRILY!!"
 
+/datum/emote/wah
+	key = "wah"
+	key_third_person = "squeaks like a wah!"
+	message = "squeaks like a wah!"
+
+
+/datum/emote/wah/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // the glyph of power
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/wah1.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah2.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah3.ogg', 34, 1),)
+
 /datum/emote/weh
 	key = "weh"
 	key_third_person = "wehs"
