@@ -661,6 +661,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Refire speed multiplier for manual action guns, cus we no longer care about your cock length
 #define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
 
+/// Refire speed multiplier for manual action guns if you're not a pr0 and click-to-cycle it
+#define GUN_AUTOPUMP_REFIRE_DELAY_MULT 1.8
+
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
 #define RECOIL_REDUCTION_TIME 1 SECONDS
 
@@ -750,6 +753,12 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Gun skill flags
 /// Gun is affected by rifleman skill
 #define AFFECTED_BY_FAST_PUMP (1<<0)
+/// If you autopump this gun, it'll have a debuff to its refire rate till you fire again
+#define AFFECTED_BY_AUTO_PUMP (1<<1)
+
+/// Gun cooldown mod flags
+/// Gun is slower to refire if you autopump it (without fast pump)
+#define GUN_AUTO_PUMPED (1<<0)
 
 /// Gun handedness defines -- for picking which direction to toss casings
 #define GUN_EJECTOR_RIGHT 1

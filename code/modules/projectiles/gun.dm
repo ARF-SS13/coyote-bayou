@@ -161,6 +161,8 @@ ATTACHMENTS
 	var/gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
 	/// What kind of traits should this gun be affected by
 	var/gun_skill_check
+	/// What kind of temporary refire delay modifiers do we have?
+	var/cooldown_delay_mods
 	var/list/misfire_possibilities = list()
 	var/list/gun_sound_properties = list(
 		SP_VARY(TRUE),
@@ -487,6 +489,7 @@ ATTACHMENTS
 
 	if(on_cooldown(user))
 		return
+	clear_cooldown_mods()
 	if(safety)
 		to_chat(user, span_danger("The gun's safety is on!"))
 		shoot_with_empty_chamber(user)
@@ -1246,9 +1249,18 @@ ATTACHMENTS
 
 /obj/item/gun/proc/get_fire_delay(mob/user)
 	. = fire_delay
-	if(gun_skill_check & AFFECTED_BY_FAST_PUMP)
+	if(CHECK_BITFIELD(gun_skill_check, AFFECTED_BY_FAST_PUMP))
 		if(HAS_TRAIT(user, TRAIT_FAST_PUMP))
 			. *= GUN_RIFLEMAN_REFIRE_DELAY_MULT
+	if(CHECK_BITFIELD(cooldown_delay_mods, GUN_AUTO_PUMPED))
+		if(!HAS_TRAIT(user, TRAIT_FAST_PUMP))
+			. *= GUN_AUTOPUMP_REFIRE_DELAY_MULT
+
+/obj/item/gun/proc/apply_cooldown_modifier(new_mod)
+	ENABLE_BITFIELD(cooldown_delay_mods, new_mod)
+
+/obj/item/gun/proc/clear_cooldown_mods()
+	cooldown_delay_mods = null
 
 /// your stupid gun shits itself
 /obj/item/gun/proc/misfire_act(mob/user)

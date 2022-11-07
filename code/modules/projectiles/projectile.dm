@@ -299,7 +299,8 @@
 	else
 		L.log_message("has been shot by [firer] with [src]", LOG_ATTACK, color="orange")
 
-	return L.apply_effects(stun, knockdown, unconscious, irradiate, slur, stutter, eyeblur, drowsy, blocked, stamina, jitter, knockdown_stamoverride, knockdown_stam_max)
+	// stamina is handled elsewhere, no more armor piercing rubbers!
+	return L.apply_effects(stun, knockdown, unconscious, irradiate, slur, stutter, eyeblur, drowsy, blocked, 0, jitter, knockdown_stamoverride, knockdown_stam_max)
 
 /obj/item/projectile/proc/vol_by_damage()
 	if(src.damage)

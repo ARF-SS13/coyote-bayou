@@ -6,7 +6,7 @@
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	casing_ejector = FALSE
 	spawnwithmagazine = TRUE
@@ -295,7 +295,7 @@
 	desc = "Pre-war double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -428,7 +428,7 @@
  * More recoil
  * Less damage
  * Faster shot
- * Small
+ * TINY
  * Common
  * * * * * * * * * * */
 
@@ -436,7 +436,7 @@
 	name = "snubnose .44 magnum revolver"
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
 	icon_state = "m29_snub"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -537,6 +537,7 @@
 	icon = 'icons/fallout/objects/guns/longguns.dmi'
 	item_state = "m2405"
 	icon_state = "m2405"
+	w_class = WEIGHT_CLASS_NORMAL
 
 	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
