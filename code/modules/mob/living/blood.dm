@@ -200,16 +200,17 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
  * knockdown_time = time they're knocked down for
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 /mob/living/carbon/proc/apply_bloodloss_effects(oxy_loss_cap, stam_cap, dizzy, confusion, blurry, sprint_max, sprint_regen, sprint_cost, knockdown_chance, knockdown_time, slowdown)
-	if(getOxyLoss() < oxy_loss_cap)
+	if(oxy_loss_cap && getOxyLoss() < oxy_loss_cap)
 		adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-	if(getStaminaLoss() < stam_cap)
+	if(stam_cap && getStaminaLoss() < stam_cap)
 		adjustStaminaLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
-	Dizzy(dizzy)
-	if(confused < confusion)
+	if(dizzy)
+		Dizzy(dizzy)
+	if(confusion && confused < confusion)
 		confused = confusion
-	if(prob(35))
+	if(blurry && prob(35))
 		blur_eyes(blurry)
-	if(prob(knockdown_chance))
+	if(knockdown_chance && prob(knockdown_chance))
 		to_chat(src, span_warning("You stumble over, dazed by your blood loss!"))
 		AdjustKnockdown(knockdown_time, TRUE)
 	apply_bloodloss_sprint_effects(sprint_max, sprint_regen, sprint_cost, reset = FALSE)
@@ -239,7 +240,7 @@ GLOBAL_LIST_INIT(blood_loss_messages, list(
 		. = min(. + extra_blood, BLOOD_VOLUME_EXPANDER_MAX)
 
 		if(has_reagent(/datum/reagent/medicine/epinephrine))
-			. = max(., BLOOD_VOLUME_SYMPTOMS_WORST - 10) // Vasopressors~
+			. = max(., BLOOD_VOLUME_SYMPTOMS_WORST + 10) // Vasopressors~
 
 // Passive blood regeneration
 /mob/living/carbon/proc/regenerate_blood()
