@@ -28,7 +28,17 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
 			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
 			list("Lifegiver", "Life Giver Plus", "Flimsy", "Very Flimsy"),
-			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses")
+			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
+			list("Cold Resistant", "Cold-Blooded"),
+			list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
+			list("Vegetarian","Does not Eat"),
+			list("Cannibal","Does not Eat"),
+			list("Deviant Tastes","Does not Eat"),
+			list("Vegetarian","Cannibal"),
+			list("Unintelligible Speech","Mute"),
+			list("Quicker Carry","Quick Carry"),
+			list("Master Martial Artist", "Fists of Noodle"),
+			list("Master Martial Artist", "Sure Strike")
 			)
 	return ..()
 
