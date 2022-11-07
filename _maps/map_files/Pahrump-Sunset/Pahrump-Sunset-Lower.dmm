@@ -5184,9 +5184,9 @@
 "bWq" = (
 /mob/living/simple_animal/hostile/ghoul/legendary{
 	armour_penetration = 0.5;
-	melee_damage_lower = 30;
 	health = 300;
-	maxHealth = 300
+	maxHealth = 300;
+	melee_damage_lower = 30
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -19728,6 +19728,13 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
+"oEP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/vending/matvend,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "oFe" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -77407,7 +77414,7 @@ dEX
 gYI
 kuo
 dEX
-gYI
+oEP
 gYI
 gYI
 kDe
