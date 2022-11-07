@@ -109,11 +109,16 @@
 		// removable mag, eject the mag
 		if(!is_magazine_allowed(new_mag, user)) // But only if the new mag would fit
 			return FALSE
+		var/obj/item/ammo_box/oldmag
 		if(istype(magazine))
-			attack_self(user) //stop ejecting perfectly good shells!
+			oldmag = magazine
+			eject_magazine(user, en_bloc, !en_bloc, TRUE) //stop ejecting perfectly good shells!
 		if(user.transferItemToLoc(new_mag, src))
 			magazine = new_mag
-			to_chat(user, span_notice("You load a new magazine into \the [src]."))
+			if(oldmag && user.put_in_hands(oldmag))
+				to_chat(user, span_notice("You load a new magazine into \the [src], keeping hold of the old one."))
+			else
+				to_chat(user, span_notice("You load a new magazine into \the [src]."))
 		else
 			to_chat(user, span_warning("You cannot seem to get \the [new_mag] out of your hands!"))
 			return FALSE

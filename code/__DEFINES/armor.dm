@@ -959,7 +959,7 @@ GLOBAL_LIST_INIT(armor_token_operation_legend, list(
 #define HEAVY_STIFFNESS 2
 
 /// Damages DT is effective with
-GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire"))
+GLOBAL_LIST_INIT(damage_threshold_valid_types, list("brute", "fire", "oxy", "stamina"))
 
 /// All armor types
 GLOBAL_LIST_INIT(all_armor_types, list(
