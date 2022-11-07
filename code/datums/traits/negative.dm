@@ -200,7 +200,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	quirk_holder.become_mega_nearsighted(ROUNDSTART_TRAIT)
 
 /datum/quirk/nyctophobia
-	name = "Nyctophobia"
+	name = "Phobia - The Dark"
 	desc = "As far as you can remember, you've always been afraid of the dark. While in the dark without a light source, you instinctually act careful, and constantly feel a sense of dread."
 	value = -1
 	medical_record_text = "Patient demonstrates a fear of the dark."
@@ -220,7 +220,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 		SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, "nyctophobia")
 
 /datum/quirk/lightless
-	name = "Light Sensitivity"
+	name = "Phobia - Bright Light"
 	desc = "Bright lights irritate you. Your eyes start to water, your skin feels itchy against the photon radiation, and your hair gets dry and frizzy. Maybe it's a medical condition."
 	value = -1
 	gain_text = span_danger("The safety of light feels off...")
@@ -394,24 +394,126 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	mood_change = -5
 	timeout = 3 MINUTES
 
-/datum/quirk/phobia
-	name = "Phobia"
-	desc = "You've had a traumatic past, one that has scarred you for life, and cripples you when dealing with your greatest fears."
-	value = -1 // It can hardstun you. You can be a job that your phobia targets...
-	gain_text = span_danger("You begin to tremble as an immeasurable fear grips your mind.")
+/datum/quirk/spiderphobia
+	name = "Phobia - Spiders"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
+	value = -2 
+	mob_trait = TRAIT_SPIDERPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of eight legged monsters grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
 	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
-	var/datum/brain_trauma/mild/phobia/phobia
-	locked = TRUE
+	locked = FALSE
 
-/datum/quirk/phobia/post_add()
+/datum/quirk/spiderphobia/post_add()
+	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	phobia = new
-	H.gain_trauma(phobia, TRAUMA_RESILIENCE_ABSOLUTE)
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/spiders, TRAUMA_RESILIENCE_ABSOLUTE)
 
-/datum/quirk/phobia/remove()
+/datum/quirk/spiderphobia/remove()
+	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
-	H?.cure_trauma_type(phobia, TRAUMA_RESILIENCE_ABSOLUTE)
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/spiders, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/skelephobia
+	name = "Phobia - Skeletons"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
+	value = -1 
+	mob_trait = TRAIT_BONERPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of bones grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/skelephobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/skeletons, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/skelephobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/skeletons, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/maskphobia
+	name = "Phobia - Masked People"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask."
+	value = -2 
+	mob_trait = TRAIT_MASKPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of the unknown stranger grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/maskphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/maskphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/strangers, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/doctorphobia
+	name = "Phobia - Doctors"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
+	value = -3 
+	mob_trait = TRAIT_DOCTORPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of the doctors grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/doctorphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/doctors, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/maskphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/doctors, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/catphobia
+	name = "Phobia - Cats"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with cats."
+	value = -1
+	mob_trait = TRAIT_CATPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of the feline menace grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/catphobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/catphobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/cats, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/eyephobia
+	name = "Phobia - Eyes"
+	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with eyes."
+	value = -1
+	mob_trait = TRAIT_EYEPHOBIA
+	gain_text = span_danger("You begin to tremble as an immeasurable fear of your eyes being stabbed grips your mind.")
+	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
+	medical_record_text = "Patient has an extreme or irrational fear and aversion to an undefined stimuli."
+	locked = FALSE
+
+/datum/quirk/eyephobia/post_add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.gain_trauma(/datum/brain_trauma/mild/phobia/eye, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/quirk/eyephobia/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/eye, TRAUMA_RESILIENCE_ABSOLUTE)
+	
 
 /datum/quirk/mute
 	name = "Mute"
