@@ -40,7 +40,7 @@
 #define BLOOD_REFILL_PER_TICK 1
 
 /// Max level blood will regenerate naturally with nutrition
-#define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_SYMPTOMS_WARN + 10
+#define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_NORMAL
 /// Nutrition cost for one unit of blood
 #define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
 /// Nutrition spent for being stuffed/fat

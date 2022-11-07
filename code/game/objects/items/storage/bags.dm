@@ -18,7 +18,7 @@
 //  Generic non-item
 /obj/item/storage/bag
 	name = "Generic bag thing"
-	desc = span_phobia("Shouldnt see this! Its probably a bug lol.")
+	desc = "Some sort of bag!"
 	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_HUGE
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
@@ -474,26 +474,25 @@ obj/item/storage/bag/chemistry/tribal
 /obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
 	var/show_message = FALSE
 	var/turf/tile = user.loc
-	var/obj/item/ammo_casing/B
 	if (!isturf(tile))
 		return
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	if(STR)
-		for(var/A in tile)
-			if (is_type_in_typecache(A, STR.can_hold))
-				B = A
-				if(B.is_pickable)
-					if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
-						show_message = TRUE
-					else
-						if(!spam_protection)
-							to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
-							spam_protection = TRUE
-							continue
-				else
-					continue
-			else
+		for(var/obj/item/ammo_casing/loosie in tile)
+			if(!is_type_in_typecache(loosie, STR.can_hold))
 				continue
+			if(!loosie.is_pickable)
+				continue
+			if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, loosie, user, TRUE))
+				loosie.transform = initial(loosie.transform)
+				loosie.dir = initial(loosie.dir)
+				show_message = TRUE
+				continue
+			if(!spam_protection)
+				to_chat(user, span_warning("Your [name] is full and can't hold any more!"))
+				spam_protection = TRUE
+				break
+
 	if(show_message)
 		playsound(user, "rustle", 50, TRUE)
 		user.visible_message(span_notice("[user] scoops up the casings beneath [user.p_them()]."), \

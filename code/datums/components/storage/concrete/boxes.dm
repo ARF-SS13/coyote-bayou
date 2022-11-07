@@ -14,6 +14,14 @@
 	. = ..()
 	can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks))
 
+/// Cigpacks
+/datum/component/storage/concrete/box/cigarette
+	quickdraw = TRUE
+
+/datum/component/storage/concrete/box/cigarette/Initialize()
+	. = ..()
+	can_hold = typecacheof(list(/obj/item/clothing/mask/cigarette, /obj/item/lighter))
+
 /// monkey
 /datum/component/storage/concrete/box/monkey
 	quickdraw = TRUE
