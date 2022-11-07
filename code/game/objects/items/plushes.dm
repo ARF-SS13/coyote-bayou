@@ -701,6 +701,12 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	desc = "An adorable stuffed toy resembling some sort of crew member."
 	can_random_spawn = FALSE
 
+/obj/item/toy/plush/mammal/wolf/blue
+	name = "blue wolf plushie"
+	desc = "This plushie looks familiar...."
+	icon_state = "bluewolf"
+	item_state = "bluewolf"
+
 /obj/item/toy/plush/mammal/fox
 	name = "fox plushie"
 	desc = "An adorable stuffed toy resembling a fox."
