@@ -148,6 +148,12 @@
 #define TRAIT_SIXTHSENSE		"sixthsense"
 #define TRAIT_DISSECTED			"dissected"
 #define TRAIT_FEARLESS			"fearless"
+#define TRAIT_SPIDERPHOBIA		"spiderphobia"
+#define TRAIT_BONERPHOBIA		"skelephobia"
+#define TRAIT_MASKPHOBIA		"maskphobia"
+#define TRAIT_DOCTORPHOBIA		"doctorphobia"
+#define TRAIT_EYEPHOBIA			"eyephobia"
+#define TRAIT_CATPHOBIA			"catphobia"
 #define TRAIT_UNSTABLE			"unstable"
 #define TRAIT_PARALYSIS_L_ARM	"para-l-arm" //These are used for brain-based paralysis, where replacing the limb won't fix it
 #define TRAIT_PARALYSIS_R_ARM	"para-r-arm"
