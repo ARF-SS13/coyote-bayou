@@ -5191,9 +5191,9 @@
 "bWq" = (
 /mob/living/simple_animal/hostile/ghoul/legendary{
 	armour_penetration = 0.5;
-	melee_damage_lower = 30;
 	health = 300;
-	maxHealth = 300
+	maxHealth = 300;
+	melee_damage_lower = 30
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -7863,6 +7863,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/item/am_containment/loot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "dQn" = (
@@ -16234,14 +16235,13 @@
 	},
 /area/f13/building/sewers)
 "lAG" = (
-/obj/structure/rack,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/item/am_containment/loot,
+/obj/machinery/vending/matvend,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "lAI" = (
@@ -19735,6 +19735,12 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
+/area/f13/building)
+"oEP" = (
+/obj/structure/window/fulltile/store,
+/obj/structure/barricade/wooden/planks,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "oFe" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -78958,7 +78964,7 @@ whm
 iqw
 dAT
 sGc
-dEX
+oEP
 gYI
 gYI
 dEX
@@ -79472,7 +79478,7 @@ whm
 lkl
 sGc
 awR
-dEX
+oEP
 kDe
 gYI
 dEX
