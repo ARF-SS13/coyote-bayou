@@ -639,3 +639,66 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	gain_text = span_notice("You feel like staying at home.")
 	lose_text = span_danger("Wow! You feel like you could run around the whole WORLD!")
 	locked = FALSE
+
+/datum/quirk/clumsy
+	name = "Clumsy"
+	desc = "You're very clumsy, it's kind of a miracle you're alive at all really."
+	value = -3
+	mob_trait = TRAIT_CLUMSY
+	gain_text = span_notice("You feel really... awkward?")
+	lose_text = span_danger("Your composure seems to return to you.")
+	locked = FALSE
+
+/datum/quirk/dumb
+	name = "Dumb"
+	desc = "You're, well.  Just kind of stupid."
+	value = -2
+	mob_trait = TRAIT_DUMB
+	gain_text = span_notice("You brain just about shuts off, and for the first time in your life you feel truly free.")
+	lose_text = span_danger("Your brain turns back on, and you remember that Taxes are a thing.")
+	locked = FALSE
+
+/datum/quirk/primitive
+	name = "Primitive"
+	desc = "Unga Bunga"
+	value = -2
+	mob_trait = TRAIT_MONKEYLIKE
+	gain_text = span_notice("yOu reTurN tO MonKE")
+	lose_text = span_danger("I think, there for... I am?")
+	locked = FALSE
+
+/datum/quirk/nosleep
+	name = "Can't Sleep"
+	desc = "For whatever reason you literally lack the ability to sleep."
+	value = -1
+	mob_trait = TRAIT_SLEEPIMMUNE
+	gain_text = span_notice("You feel like you'll never need to sleep again, for real!")
+	lose_text = span_danger("You could kind of go for a nap.")
+	locked = FALSE
+
+/datum/quirk/garbledspeach
+	name = "Unintelligible Speach"
+	desc = "You are so far beyond tongue tied."
+	value = -2
+	mob_trait = TRAIT_UNINTELLIGIBLE_SPEECH
+	gain_text = span_notice("Your tongue just sort of stops working!")
+	lose_text = span_danger("You can find your words again.")
+	locked = FALSE
+
+/datum/quirk/cantrun
+	name = "Mobility - Can't Run"
+	desc = "For whatever reason you just can't muster up the go to run."
+	value = -3
+	mob_trait = TRAIT_NORUNNING
+	gain_text = span_notice("Running just isnt' worth the effort!")
+	lose_text = span_danger("You really feel like running all of a sudden!")
+	locked = FALSE
+
+/datum/quirk/luddite
+	name = "Luddite"
+	desc = "You forgo some technology, "
+	value = 2
+	mob_trait = TRAIT_AUTO_DRAW
+	gain_text = span_notice("You feel like all that training with bows has paying off.")
+	lose_text = span_danger("Guns were always better...")
+	locked =  FALSE
