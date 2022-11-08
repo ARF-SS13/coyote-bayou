@@ -738,6 +738,24 @@
 	new /obj/item/reagent_containers/food/snacks/kebab/rat/double(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/instacocoa(src)
 
+/datum/gear/donator/kits/tk420634_3
+	name = "Pandagirl kit"
+	path = /obj/item/storage/box/large/custom_kit/tk420634_3
+	ckeywhitelist = list("tk420634")
+
+/obj/item/storage/box/large/custom_kit/tk420634_3/PopulateContents()
+	new /obj/item/clothing/suit/armor/light/kit/shoulder(src)
+	new /obj/item/melee/baton/boomerang/loaded(src)
+	new /obj/item/radio/tribal(src)
+	new /obj/item/clothing/shoes/combat/sneakboots(src)
+	new /obj/item/clothing/glasses/phantomthief(src)
+	new /obj/item/storage/backpack/satchel/sec(src)
+	new /obj/item/clothing/gloves/thief(src)
+	new /obj/item/stealthboy(src)
+	new /obj/item/lockpick_set(src)
+	new /obj/item/lockpick_set(src)
+	new /obj/item/lockpick_set(src)
+
 /datum/gear/donator/kits/truedark
 	name = "Stolen Brotherhood Supplies"
 	path = /obj/item/storage/box/large/custom_kit/truedark
@@ -813,3 +831,17 @@
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/stealthboy(src)
 
+/datum/gear/donator/kits/zeronetalpha2
+	name = "EIEIO"
+	path = /obj/item/storage/box/large/custom_kit/zeronetalpha2
+	ckeywhitelist = list("zeronetalpha")
+
+/obj/item/storage/box/large/custom_kit/zeronetalpha2/PopulateContents()
+	new /obj/item/clothing/gloves/evening/black(src)
+	new /obj/item/clothing/shoes/wraps(src)
+	new /obj/item/clothing/suit/jacket/leather/overcoat(src)
+	new /obj/item/clothing/under/dress/blacktango(src)
+	new /obj/item/clothing/head/beret(src)
+	new /obj/item/gun/energy/laser/pistol(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
