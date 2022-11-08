@@ -27,7 +27,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
 			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
 			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
-			list("Lifegiver", "Life Giver Plus", "Flimsy", "Very Flimsy"),
+			list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
 			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
 			list("Cold Resistant", "Cold-Blooded"),
 			list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
@@ -39,7 +39,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Quicker Carry","Quick Carry"),
 			list("Master Martial Artist", "Fists of Noodle"),
 			list("Master Martial Artist", "Sure Strike"),
-			list("Heavy Sleeper","Can Not Sleep")
+			list("Heavy Sleeper","Can Not Sleep"),
+			list("Dead Eye", "Straight Shooter", "Poor Aim")
 			)
 	return ..()
 
