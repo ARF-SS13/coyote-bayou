@@ -8,11 +8,6 @@
 
 	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!")
 
-	. += "<img class='icon icon-misc' src='https://cdn.discordapp.com/attachments/788074719257690112/1039621192308498542\/SPOILER_unknown.png' width='100' height='100'>"
-
-//	if (profilePicture)
-//		. += "<img class='icon icon-misc' src='[DiscordLink(profilePicture)]' width='100' height='100'>"
-
 	if (handcuffed)
 		. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!")
 	if (head)
