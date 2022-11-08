@@ -24,6 +24,7 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	handedness = GUN_EJECTOR_ANY
 
 
 	var/select = 0
@@ -49,20 +50,36 @@
 	chamber_round(1)
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
-	var/num_unloaded = 0
-	chambered = null
-	while (get_ammo() > 0)
-		var/obj/item/ammo_casing/CB
-		CB = magazine.get_round(0)
-		if(CB)
-			CB.forceMove(drop_location())
-			CB.bounce_away(FALSE, NONE)
-			num_unloaded++
-	if (num_unloaded)
-		to_chat(user, span_notice("You unload [num_unloaded] shell\s from [src]."))
-	else
-		to_chat(user, span_warning("[src] is empty!"))
+	if(!eject_shells(user, TRUE))
+		to_chat(user, span_alert("[src] is empty!"))
 	update_icon()
+
+/obj/item/gun/ballistic/revolver/proc/eject_shells(mob/living/user, just_empties = TRUE)
+	if(!magazine)
+		return FALSE
+	var/num_unloaded = 0
+	var/obj/item/ammo_box/magazine/ammo_mag = magazine.stored_ammo
+	for(var/index in 1 to LAZYLEN(ammo_mag))
+		if(!istype(ammo_mag[index], /obj/item/ammo_casing))
+			continue
+		var/obj/item/ammo_casing/bluuet = ammo_mag[index]
+		if(just_empties && bluuet.BB)
+			continue
+		bluuet.forceMove(drop_location())
+		bluuet.bounce_away(FALSE, NONE)
+		if(chambered == bluuet)
+			chambered = null
+		ammo_mag[index] = null // eject a shell, it leaves a gap
+		num_unloaded++
+	if (num_unloaded)
+		if(just_empties)
+			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
+			return TRUE
+		else
+			to_chat(user, span_notice("You unload [num_unloaded] live round\s from [src]."))
+			return TRUE
+	else if(just_empties)
+		return eject_shells(user, FALSE) // try again!
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
