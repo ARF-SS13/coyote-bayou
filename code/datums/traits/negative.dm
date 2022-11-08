@@ -490,6 +490,15 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/severe/monophobia, TRAUMA_RESILIENCE_ABSOLUTE)
 
+/datum/quirk/no_smell
+	name = "Anosmia"
+	desc = "You can't smell anything! You won't be able to detect certain colorless gases."
+	value = -1
+	mob_trait = TRAIT_ANOSMIA
+	gain_text = "<span class='notice'>You can't smell anything!</span>"
+	lose_text = "<span class='notice'>You can smell again!</span>"
+	medical_record_text = "Patient suffers from anosmia and is incapable of smelling gases or particulates."
+
 /datum/quirk/no_guns
 	name = "Fat-Fingered"
 	desc = "Due to the shape of your hands, width of your fingers or just not having fingers at all, you're unable to fire guns without accommodation."
