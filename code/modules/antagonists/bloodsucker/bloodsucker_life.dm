@@ -16,8 +16,8 @@
 	if(owner.current.stat == CONSCIOUS && !poweron_feed && !HAS_TRAIT(owner.current, TRAIT_FAKEDEATH)) // Deduct Blood
 		AddBloodVolume(passive_blood_drain) // -.1 currently
 	if(HandleHealing(1)) 		// Heal
-		if(!notice_healing && owner.current.blood_volume > 0)
-			to_chat(owner, "<span class='notice'>The power of your blood begins knitting your wounds...</span>")
+		if(!notice_healing && owner.current.get_blood(TRUE) > 0)
+			to_chat(owner, span_notice("The power of your blood begins knitting your wounds..."))
 			notice_healing = TRUE
 	else if(notice_healing)
 		notice_healing = FALSE 	// Apply Low Blood Effects
@@ -36,23 +36,23 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/antagonist/bloodsucker/proc/AddBloodVolume(value)
-	owner.current.blood_volume = clamp(owner.current.blood_volume + value, 0, max_blood_volume)
+	owner.current.blood_volume = clamp(owner.current.get_blood(TRUE) + value, 0, max_blood_volume)
 	update_hud()
 
 /datum/antagonist/bloodsucker/proc/HandleFeeding(mob/living/carbon/target, mult=1)
 	// mult: SILENT feed is 1/3 the amount
-	var/blood_taken = min(feed_amount, target.blood_volume) * mult	// Starts at 15 (now 8 since we doubled the Feed time)
+	var/blood_taken = min(feed_amount, target.get_blood(TRUE)) * mult	// Starts at 15 (now 8 since we doubled the Feed time)
 	target.blood_volume -= blood_taken
 	// Simple Animals lose a LOT of blood, and take damage. This is to keep cats, cows, and so forth from giving you insane amounts of blood.
 	if(!ishuman(target))
 		target.blood_volume -= (blood_taken / max(target.mob_size, 0.1)) * 3.5 // max() to prevent divide-by-zero
 		target.apply_damage_type(blood_taken / 3.5) // Don't do too much damage, or else they die and provide no blood nourishment.
-		if(target.blood_volume <= 0)
+		if(target.get_blood(FALSE) <= 0)
 			target.blood_volume = 0
 			target.death(0)
 	///////////
 	// Shift Body Temp (toward Target's temp, by volume taken)
-	owner.current.bodytemperature = ((owner.current.blood_volume * owner.current.bodytemperature) + (blood_taken * target.bodytemperature)) / (owner.current.blood_volume + blood_taken)
+	owner.current.bodytemperature = ((owner.current.get_blood(TRUE) * owner.current.bodytemperature) + (blood_taken * target.bodytemperature)) / (owner.current.get_blood(TRUE) + blood_taken)
 	// our volume * temp, + their volume * temp, / total volume
 	///////////
 	// Reduce Value Quantity
@@ -134,14 +134,14 @@
 	var/limb_regen_cost = 50 * costMult
 	var/mob/living/carbon/C = owner.current
 	var/list/missing = C.get_missing_limbs()
-	if(missing.len && C.blood_volume < limb_regen_cost + 5)
+	if(missing.len && C.get_blood(TRUE) < limb_regen_cost + 5)
 		return FALSE
 	for(var/targetLimbZone in missing) 			// 1) Find ONE Limb and regenerate it.
 		C.regenerate_limb(targetLimbZone, FALSE)		// regenerate_limbs() <--- If you want to EXCLUDE certain parts, do it like this ----> regenerate_limbs(0, list("head"))
 		AddBloodVolume(50)
 		var/obj/item/bodypart/L = C.get_bodypart(targetLimbZone) // 2) Limb returns Damaged
 		L.brute_dam = 60
-		to_chat(C, "<span class='notice'>Your flesh knits as it regrows your [L]!</span>")
+		to_chat(C, span_notice("Your flesh knits as it regrows your [L]!"))
 		playsound(C, 'sound/magic/demon_consume.ogg', 50, TRUE)
 		return TRUE
 
@@ -168,21 +168,21 @@
 	// EMPTY:	Frenzy!
 	// BLOOD_VOLUME_GOOD: [336]  Pale (handled in bloodsucker_integration.dm
 	// BLOOD_VOLUME_BAD: [224]  Jitter
-	if(owner.current.blood_volume < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
 		owner.current.Jitter(3)
 	// BLOOD_VOLUME_SURVIVE: [122]  Blur Vision
-	if(owner.current.blood_volume < BLOOD_VOLUME_BAD / 2)
-		owner.current.blur_eyes(8 - 8 * (owner.current.blood_volume / BLOOD_VOLUME_BAD))
+	if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING / 2)
+		owner.current.blur_eyes(8 - 8 * (owner.current.get_blood(TRUE) / BLOOD_VOLUME_SYMPTOMS_DEBILITATING))
 	// Nutrition
-	owner.current.set_nutrition(min(owner.current.blood_volume, NUTRITION_LEVEL_FED)) //The amount of blood is how full we are.
+	owner.current.set_nutrition(min(owner.current.get_blood(TRUE), NUTRITION_LEVEL_FED)) //The amount of blood is how full we are.
 	//A bit higher regeneration based on blood volume
-	if(owner.current.blood_volume < 700)
+	if(owner.current.get_blood(TRUE) < 700)
 		additional_regen = 0.4
-	else if(owner.current.blood_volume < BLOOD_VOLUME_NORMAL)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_NORMAL)
 		additional_regen = 0.3
-	else if(owner.current.blood_volume < BLOOD_VOLUME_OKAY)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 		additional_regen = 0.2
-	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
+	else if(owner.current.get_blood(TRUE) < BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 		additional_regen  = 0.1
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -220,7 +220,7 @@
 	// Died? Convert to Torpor (fake death)
 	if(owner.current.stat >= DEAD)
 		Torpor_Begin()
-		to_chat(owner, "<span class='danger'>Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor.</span>")
+		to_chat(owner, span_danger("Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor."))
 		sleep(30) //To avoid spam
 		if(poweron_masquerade)
 			to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
@@ -250,7 +250,7 @@
 			power.DeactivatePower()
 	if(owner.current.suiciding)
 		owner.current.suiciding = FALSE //Youll die but not for long.
-		to_chat(owner.current, "<span class='warning'>Your body keeps you going, even as you try to end yourself.</span>")
+		to_chat(owner.current, span_warning("Your body keeps you going, even as you try to end yourself."))
 
 /datum/antagonist/bloodsucker/proc/Torpor_End()
 	owner.current.stat = SOFT_CRIT
@@ -259,7 +259,7 @@
 	REMOVE_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTHIGHPRESSURE, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTLOWPRESSURE, "bloodsucker")
-	to_chat(owner, "<span class='warning'>You have recovered from Torpor.</span>")
+	to_chat(owner, span_warning("You have recovered from Torpor."))
 
 
 /datum/antagonist/proc/AmFinalDeath()
@@ -291,16 +291,16 @@
 	FreeAllVassals()
 	// Elders get Dusted
 	if(bloodsucker_level >= 4) // (bloodsucker_title)
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains.</span>", \
-			"<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			"<span class='italics'>You hear a dry, crackling sound.</span>")
+		owner.current.visible_message(span_warning("[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains."), \
+			span_userdanger("Your soul escapes your withering body as the abyss welcomes you to your Final Death."), \
+			span_italic("You hear a dry, crackling sound."))
 		sleep(50)
 		owner.current.dust()
 	// Fledglings get Gibbed
 	else
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat.</span>", \
-			"<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			"<span class='italics'>You hear a wet, bursting sound.</span>")
+		owner.current.visible_message(span_warning("[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat."), \
+			span_userdanger("Your soul escapes your withering body as the abyss welcomes you to your Final Death."), \
+			span_italic("You hear a wet, bursting sound."))
 		owner.current.gib(TRUE, FALSE, FALSE) //Brain cloning is wierd and allows hellbounds. Lets destroy the brain for safety.
 	playsound(owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE)
 
@@ -337,7 +337,7 @@
 		return
 	// Haven't eaten, but I'm in a Human Disguise.
 	else if(poweron_masquerade && !masquerade_override)
-		to_chat(C, "<span class='notice'>Your stomach turns, but your \"human disguise\" keeps the food down...for now.</span>")
+		to_chat(C, span_notice("Your stomach turns, but your \"human disguise\" keeps the food down...for now."))
 	// Keep looping until we purge. If we have activated our Human Disguise, we ignore the food. But it'll come up eventually...
 	var/sickphase = 0
 	while(foodInGut)
@@ -351,22 +351,22 @@
 		// Put up disguise? Then hold off the vomit.
 		if(poweron_masquerade && !masquerade_override)
 			if(sickphase > 0)
-				to_chat(C, "<span class='notice'>Your stomach settles temporarily. You regain your composure...for now.</span>")
+				to_chat(C, span_notice("Your stomach settles temporarily. You regain your composure...for now."))
 			sickphase = 0
 			continue
 		switch(sickphase)
 			if(1)
-				to_chat(C, "<span class='warning'>You feel unwell. You can taste ash on your tongue.</span>")
+				to_chat(C, span_warning("You feel unwell. You can taste ash on your tongue."))
 				C.Stun(10)
 			if(2)
-				to_chat(C, "<span class='warning'>Your stomach turns. Whatever you ate tastes of grave dirt and brimstone.</span>")
+				to_chat(C, span_warning("Your stomach turns. Whatever you ate tastes of grave dirt and brimstone."))
 				C.Dizzy(15)
 				C.Stun(13)
 			if(3)
-				to_chat(C, "<span class='warning'>You purge the food of the living from your viscera! You've never felt worse.</span>")
+				to_chat(C, span_warning("You purge the food of the living from your viscera! You've never felt worse."))
 				//Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
-					C.blood_volume = max(0, C.blood_volume - foodInGut * 2)
+					C.blood_volume = max(0, C.get_blood(TRUE) - foodInGut * 2)
 					C.vomit(foodInGut * 4, foodInGut * 2, 0)
 				else
 					C.vomit(foodInGut * 4, FALSE, 0)

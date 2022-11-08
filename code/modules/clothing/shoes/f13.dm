@@ -47,7 +47,7 @@
 	name = "worn boots"
 	desc = "A pair of slightly worn, steel-toed work boots.<br>Good at keeping toes safe from falling junk you find amid the ruins."
 	icon_state = "explorer"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/shoes/f13/raidertreads
 	name = "raider treads"
@@ -60,7 +60,8 @@
 	desc = "Fancy mens' steel-toed boots."
 	icon_state = "diesel_m"
 	item_state = "diesel_m"
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -76,7 +77,8 @@
 	icon_state = "military"
 	item_state = "military"
 	permeability_coefficient = 0.05
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_DOWN_LASER_T1)
 	strip_delay = 40
 	resistance_flags = NONE
 	can_be_tied = FALSE
@@ -89,12 +91,16 @@
 	desc = "A pair of laced, heavy-duty leather boots designed for hard combat."
 	icon_state = "laced"
 	item_state = "laced"
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2)
 
 /obj/item/clothing/shoes/f13/military/desert
 	name = "desert combat boots"
 	desc = "An old pair of desert combat boots. This one seems to have a tighter fit, and a padded interior."
-	icon_state = "erin_boot"
+	icon_state = "laced"
 	item_state = "erin_boot"
+
+///// "NCR" boots below
 
 /obj/item/clothing/shoes/f13/military/ncr
 	name = "patrol boots"
@@ -108,6 +114,8 @@
 	icon_state = "ncr_officer_boots"
 	item_state = "ncr_officer_boots"
 
+
+//// "Legion" Stuff below
 
 /obj/item/clothing/shoes/roman
 	name = "roman sandals"
@@ -126,6 +134,8 @@
 	desc = "These boots are made from tanned hide and lined with soft long horner wool. A fashion from wealthy tribes that has spread. "
 	icon = 'icons/fallout/clothing/shoes.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_BULLET_T3)
 	icon_state = "legion_pelt"
 	item_state = "legion_pelt"
 	cold_protection = FEET
@@ -135,6 +145,8 @@
 	name = "rough leather boots"
 	desc = "A pair of crudely made leather boots, followng the standardized pattern laid down according to the wisdom of Caesar."
 	icon = 'icons/fallout/clothing/shoes.dmi'
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T2, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_BULLET_T3)
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_leather"
 	item_state = "legion_leather"
@@ -146,16 +158,18 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_war"
 	item_state = "legion_war"
-	armor = list("melee" = 20, "bullet" = 20, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 
 /obj/item/clothing/shoes/f13/military/legate
 	name = "heavy metal boots"
-	desc = "A pair of heavy leather boots with bronzed metal leg guards added. These belong to a Legate of Caesar's Legion."
+	desc = "A pair of heavy leather boots with bronzed metal leg guards added. Heavy, and uncomfy.."
 	icon = 'icons/fallout/clothing/shoes.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/shoe.dmi'
 	icon_state = "legion_legate"
 	item_state = "legion_legate"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 30, "bio" = 0, "rad" = 10, "fire" = 30, "acid" = 10)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T3 )
 
 // ---------------------------------------------------------
 // Great Khan boots
@@ -167,7 +181,6 @@
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/khaans.dmi'
 	icon_state = "khan_boots"
 	item_state = "khan_boots"
-	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0, fire = 20, acid = 0)
 	var/boottoggled = FALSE
 
 /obj/item/clothing/shoes/f13/military/khan/Goji
@@ -193,7 +206,7 @@
 	if(!can_use(usr))
 		return 0
 
-	to_chat(usr, "<span class='notice'>You mess around with the shin guards.</span>")
+	to_chat(usr, span_notice("You mess around with the shin guards."))
 	if(src.boottoggled)
 		src.icon_state = "[initial(icon_state)]"
 		src.item_state = "[initial(icon_state)]"
@@ -216,7 +229,24 @@
 	icon_state = "khan_peltboots"
 	item_state = "khan_peltboots"
 
+///// End of "khans"
 
+/obj/item/clothing/shoes/f13/military/duty
+	name = "duty boots"
+	desc = "A pair of laced old combat boots used by pre-war riot police. These have a very shining front as if they were made from rubber. (can be reskinned by alt clicking once)"
+	icon_state = "duty"
+	item_state = "duty"
+	unique_reskin = list(
+						"Standard" = "duty",
+						"Alternative" = "duty_alt",
+						"Tall" = "duty_long"
+						)
+
+/obj/item/clothing/shoes/f13/military/patrol
+	name = "patrol boots"
+	desc = "A pair of hardened leather boots made for combat."
+	icon_state = "patrol"
+	item_state = "patrol"
 
 //Fluff
 
@@ -232,7 +262,6 @@
 	desc = "These boots are constructed with a thin rubber exterior and cellular rubber midsole covered by colorful nylon fabrics and using polyurethane foams.<br>To the Moon!"
 	icon_state = "moon"
 	item_state = "moon"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 10, "rad" = 50, "fire" = 0, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET
@@ -244,7 +273,6 @@
 	desc = "These boots are constructed with a titanium alloy. There are some runes engraved on the side.<br>To Mars!"
 	icon_state = "mars"
 	item_state = "mars"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET
@@ -256,7 +284,8 @@
 	desc = "Heavy-duty work boots with steel-reinforced toes and some fluffy wool for extra warmth."
 	icon_state = "miner"
 	item_state = "miner"
-	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -265,7 +294,6 @@
 	desc = "They may have lost some of their lustre over the years, but these green crocodile leather shoes fit you perfectly."
 	icon_state = "jamrock_skins"
 	item_state = "jamrock_skins"
-	armor = list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 20, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 
@@ -273,14 +301,13 @@
 	name = "super mutant sandals"
 	desc = "A pair of oversized sandals, likely designed for super mutants."
 	icon_state = "mutie_sandals"
-	icon_state = "mutie_sandals"
 
 /obj/item/clothing/shoes/f13/mutie/boots
 	name = "super mutant boots"
 	desc = "A pair of oversized boots."
 	icon_state = "mutie_boots"
-	icon_state = "mutie_boots"
-	armor = list("melee" = 40, "bullet" = 20, "laser" = 20, "energy" = 20, "bomb" = 20, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1)
 	cold_protection = FEET
 
 /obj/item/clothing/shoes/f13/mutie/boots/dark

@@ -28,11 +28,14 @@
 	return zone
 
 
-/proc/ran_zone(zone, probability = 80)
+/proc/ran_zone(zone, probability = 80, list/list_type = ZONE_WEIGHT_LIST_DEFAULT)
 	if(prob(probability))
 		zone = check_zone(zone)
 	else
-		zone = pickweight(list(BODY_ZONE_HEAD = 6, BODY_ZONE_CHEST = 6, BODY_ZONE_L_ARM = 22, BODY_ZONE_R_ARM = 22, BODY_ZONE_L_LEG = 22, BODY_ZONE_R_LEG = 22))
+		if(islist(list_type))
+			zone = pickweight(list_type)
+		else
+			zone = pickweight(ZONE_WEIGHT_LIST_DEFAULT)
 	return zone
 
 /proc/above_neck(zone)
@@ -357,7 +360,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 		if(O.client)
 			if ((ignore_key && (O.ckey in GLOB.poll_ignore[ignore_key])) || (ignore_dnr_observers && !O.can_reenter_round(TRUE)))
 				continue
-			to_chat(O, "<span class='ghostalert'>[message][(enter_link) ? " [enter_link]" : ""]</span>")
+			to_chat(O, span_ghostalert("[message][(enter_link) ? " [enter_link]" : ""]"))
 			if(ghost_sound)
 				SEND_SOUND(O, sound(ghost_sound))
 			if(flashwindow)
@@ -390,10 +393,10 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 			if(affecting.heal_damage(brute_heal, burn_heal, 0, TRUE, FALSE))
 				H.update_damage_overlays()
 			user.visible_message("[user] has fixed some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name].", \
-			"<span class='notice'>You fix some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name].</span>")
+			span_notice("You fix some of the [dam ? "dents on" : "burnt wires in"] [H]'s [affecting.name]."))
 			return 1 //successful heal
 		else
-			to_chat(user, "<span class='warning'>[affecting] is already in good condition!</span>")
+			to_chat(user, span_warning("[affecting] is already in good condition!"))
 
 
 /proc/IsAdminGhost(mob/user)
@@ -410,19 +413,21 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	return TRUE
 
 /atom/proc/hasSiliconAccessInArea(mob/user, flags = PRIVILEDGES_SILICON)
+	if(!istype(user, /mob))
+		return
 	return user.silicon_privileges & (flags) || (user.siliconaccesstoggle && (get_area(src) in user.siliconaccessareas))
 
 /mob/proc/toggleSiliconAccessArea(area/area)
 	if (area in siliconaccessareas)
 		siliconaccessareas -= area
-		to_chat(src,"<span class='warning'>You lost control of [area]!</span>")
+		to_chat(src,span_warning("You lost control of [area]!"))
 		return FALSE
 	else
 		if (LAZYLEN(siliconaccessareas) < HIJACK_APC_MAX_AMOUNT)
 			siliconaccessareas += area
-			to_chat(src,"<span class='notice'>You successfully took control of [area].</span>")
+			to_chat(src,span_notice("You successfully took control of [area]."))
 		else
-			to_chat(src,"<span class='warning'>You are connected to too many APCs! Too many more will fry your brain.</span>")
+			to_chat(src,span_warning("You are connected to too many APCs! Too many more will fry your brain."))
 			return FALSE
 		return TRUE
 
@@ -576,10 +581,10 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 
 /mob/proc/can_read(obj/O)
 	if(is_blind())
-		to_chat(src, "<span class='warning'>As you are trying to read [O], you suddenly feel very stupid!</span>")
+		to_chat(src, span_warning("As you are trying to read [O], you suddenly feel very stupid!"))
 		return
 	if(!is_literate())
-		to_chat(src, "<span class='notice'>You try to read [O], but can't comprehend any of it.</span>")
+		to_chat(src, span_notice("You try to read [O], but can't comprehend any of it."))
 		return
 	return TRUE
 

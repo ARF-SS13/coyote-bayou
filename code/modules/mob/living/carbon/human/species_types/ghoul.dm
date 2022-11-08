@@ -85,11 +85,11 @@
 		H.adjustBruteLoss(2)
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 		if(prob(5))
-			to_chat(H, "<span class='warning'>You feel like taking radaway wasn't the best idea.</span>")
+			to_chat(H, span_warning("You feel like taking radaway wasn't the best idea."))
 	if(chem.type == /datum/reagent/medicine/radx)
 		H.adjustBruteLoss(2)
 		if(prob(5))
-			to_chat(H, "<span class='warning'>You feel sick...</span>")
+			to_chat(H, span_warning("You feel sick..."))
 		H.reagents.remove_reagent(chem.type, REAGENTS_METABOLISM)
 	if(chem.type == /datum/reagent/medicine/stimpak)
 		H.adjustBruteLoss(1.5) //this is a very shitty way of making it so that they heal at a reduced rate for the emergency fix, i'll make the code cleaner tomorrow

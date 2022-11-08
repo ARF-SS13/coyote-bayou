@@ -212,3 +212,16 @@
 			)
 	result = /obj/item/reagent_containers/food/snacks/pie/cocolavatart
 	subcategory = CAT_PIE
+
+/datum/crafting_recipe/food/shepherds_pie
+	name = "Shepherds pie"
+	reqs = list(
+		/obj/item/reagent_containers/food/snacks/mashedpotato = 1,
+		/obj/item/reagent_containers/food/snacks/meat/cutlet = 3,
+		/obj/item/reagent_containers/food/snacks/grown/onion = 1,
+		/obj/item/reagent_containers/food/snacks/grown/peas = 1,
+		/obj/item/reagent_containers/food/snacks/grown/corn = 1,
+		/obj/item/reagent_containers/food/snacks/grown/garlic = 1
+	)
+	result = /obj/item/reagent_containers/food/snacks/pie/shepherds_pie
+	subcategory = CAT_PIE

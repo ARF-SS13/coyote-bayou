@@ -172,6 +172,12 @@
 ///from base of atom/set_opacity(): (new_opacity)
 #define COMSIG_ATOM_SET_OPACITY "atom_set_opacity"
 
+///Called when you lick an object
+#define COMSIG_ATOM_LICKED "atom_licked"
+///Called by something licked to return a signal to the thing licking to let the thing lick it even if it shouldnt be licked
+#define COMSIG_LICK_RETURN "lick_return"
+
+
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
 
@@ -364,6 +370,7 @@
 	#define COMPONENT_NO_INTERACT 1
 #define COMSIG_ITEM_ATTACK_OBJ "item_attack_obj"				//from base of obj/item/attack_obj(): (/obj, /mob)
 	#define COMPONENT_NO_ATTACK_OBJ 1
+#define COMSIG_ITEM_ATTACK_OBJ_NOHIT "item_attack_obj_nohit"
 #define COMSIG_ITEM_PRE_ATTACK "item_pre_attack"				//from base of obj/item/pre_attack(): (atom/target, mob/user, params)
 	#define COMPONENT_NO_ATTACK 1
 #define COMSIG_ITEM_AFTERATTACK "item_afterattack"				//from base of obj/item/afterattack(): (atom/target, mob/user, params)
@@ -384,6 +391,10 @@
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
 	#define COMPONENT_BLOCK_SHARPEN_ALREADY 4
 	#define COMPONENT_BLOCK_SHARPEN_MAXED 8
+#define COMSIG_UPGRADE_APPVAL "apply_values"					//from /atom/refresh_upgrades(): (/src) Called to upgrade specific values
+#define COMSIG_UPGRADE_ADDVAL "add_values" 						//from /atom/refresh_upgrades(): (/src) Called to add specific things to the /src, called before COMSIG_APPVAL
+
+#define COMSIG_UPGRADE_REMOVE "uninstall"
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"                //called on item when microwaved (): (obj/machinery/microwave/M)
 #define COMSIG_ITEM_WORN_OVERLAYS "item_worn_overlays"			//from base of obj/item/worn_overlays(): (isinhands, icon_file, used_state, style_flags, list/overlays)
 // THE FOLLOWING TWO BLOCKS SHOULD RETURN BLOCK FLAGS AS DEFINED IN __DEFINES/combat.dm!
@@ -540,3 +551,7 @@
 #define COMSIG_XENO_TURF_CLICK_SHIFT "xeno_turf_click_shift"				//from turf ShiftClickOn(): (/mob)
 #define COMSIG_XENO_TURF_CLICK_CTRL "xeno_turf_click_alt"					//from turf AltClickOn(): (/mob)
 #define COMSIG_XENO_MONKEY_CLICK_CTRL "xeno_monkey_click_ctrl"				//from monkey CtrlClickOn(): (/mob)
+
+//mob spawner signals
+#define COMSIG_SPAWNER_COVERED "spawner_covered" // Mob spawner got covered by a covering
+#define COMSIG_SPAWNER_UNCOVERED "spawner_uncovered" // Mob spawner got uncovered by a covering

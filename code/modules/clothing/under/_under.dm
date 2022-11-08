@@ -5,7 +5,7 @@
 	permeability_coefficient = 0.9
 	block_priority = BLOCK_PRIORITY_UNIFORM
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 5)
+	armor = ARMOR_VALUE_CLOTHES
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
 	limb_integrity = 30
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
@@ -35,17 +35,17 @@
 		var/obj/item/stack/cable_coil/C = I
 		I.use_tool(src, user, 0, 1)
 		has_sensor = HAS_SENSORS
-		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
+		to_chat(user,span_notice("You repair the suit sensors on [src] with [C]."))
 		return TRUE
 	if(!(flags_1 & HOLOGRAM_1) && ((I.tool_behaviour == TOOL_WIRECUTTER) || I.get_sharpness()))
 		user.visible_message("[user] begins cutting the [src] apart.", \
-				"<span class='notice'>You begin cutting the [src] into strips.</span>", \
-				"<span class='italics'>You hear faint sounds of ripping cloth.</span>")
+				span_notice("You begin cutting the [src] into strips."), \
+				span_italic("You hear faint sounds of ripping cloth."))
 		playsound(get_turf(src), 'sound/items/poster_ripped.ogg', 50, TRUE)
 		if(!do_after(user, 60, TRUE, src))
 			return
 		new /obj/item/stack/sheet/cloth (drop_location(), 2)
-		to_chat(user, "<span class='notice'>You cut [src] into useful pieces of cloth.</span>")
+		to_chat(user, span_notice("You cut [src] into useful pieces of cloth."))
 		qdel(src)
 		return TRUE
 	if(!attach_accessory(I, user))
@@ -95,11 +95,11 @@
 		var/obj/item/clothing/accessory/A = I
 		if(attached_accessory)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] already has an accessory.</span>")
+				to_chat(user, span_warning("[src] already has an accessory."))
 			return
 		if(dummy_thick)
 			if(user)
-				to_chat(user, "<span class='warning'>[src] is too bulky and cannot have accessories attached to it!</span>")
+				to_chat(user, span_warning("[src] is too bulky and cannot have accessories attached to it!"))
 			return
 		else
 			if(user && !user.temporarilyRemoveItemFromInventory(I))
@@ -108,7 +108,7 @@
 				return
 
 			if(user && notifyAttach)
-				to_chat(user, "<span class='notice'>You attach [I] to [src].</span>")
+				to_chat(user, span_notice("You attach [I] to [src]."))
 
 			if((flags_inv & HIDEACCESSORY) || (A.flags_inv & HIDEACCESSORY))
 				return TRUE
@@ -137,9 +137,9 @@
 		var/obj/item/clothing/accessory/A = attached_accessory
 		attached_accessory.detach(src, user)
 		if(user.put_in_hands(A))
-			to_chat(user, "<span class='notice'>You detach [A] from [src].</span>")
+			to_chat(user, span_notice("You detach [A] from [src]."))
 		else
-			to_chat(user, "<span class='notice'>You detach [A] from [src] and it falls on the floor.</span>")
+			to_chat(user, span_notice("You detach [A] from [src] and it falls on the floor."))
 
 		if(ishuman(loc))
 			var/mob/living/carbon/human/H = loc
@@ -191,20 +191,20 @@
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
 	if(get_dist(usr, src) > 1)
-		to_chat(usr, "<span class='warning'>You have moved too far away!</span>")
+		to_chat(usr, span_warning("You have moved too far away!"))
 		return
 	sensor_mode = modes.Find(switchMode) - 1
 
 	if (src.loc == usr)
 		switch(sensor_mode)
 			if(0)
-				to_chat(usr, "<span class='notice'>You disable your suit's remote sensing equipment.</span>")
+				to_chat(usr, span_notice("You disable your suit's remote sensing equipment."))
 			if(1)
-				to_chat(usr, "<span class='notice'>Your suit will now only report whether you are alive or dead.</span>")
+				to_chat(usr, span_notice("Your suit will now only report whether you are alive or dead."))
 			if(2)
-				to_chat(usr, "<span class='notice'>Your suit will now only report your exact vital lifesigns.</span>")
+				to_chat(usr, span_notice("Your suit will now only report your exact vital lifesigns."))
 			if(3)
-				to_chat(usr, "<span class='notice'>Your suit will now report your exact vital lifesigns as well as your coordinate position.</span>")
+				to_chat(usr, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position."))
 
 	if(ishuman(loc))
 		var/mob/living/carbon/human/H = loc
@@ -233,7 +233,7 @@
 
 	sensor_mode = SENSOR_COORDS
 
-	to_chat(user, "<span class='notice'>Your suit will now report your exact vital lifesigns as well as your coordinate position.</span>")
+	to_chat(user, span_notice("Your suit will now report your exact vital lifesigns as well as your coordinate position."))
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
@@ -259,12 +259,12 @@
 	if(!can_use(usr))
 		return
 	if(!can_adjust)
-		to_chat(usr, "<span class='warning'>You cannot wear this suit any differently!</span>")
+		to_chat(usr, span_warning("You cannot wear this suit any differently!"))
 		return
 	if(toggle_jumpsuit_adjust())
-		to_chat(usr, "<span class='notice'>You adjust the suit to wear it more casually.</span>")
+		to_chat(usr, span_notice("You adjust the suit to wear it more casually."))
 	else
-		to_chat(usr, "<span class='notice'>You adjust the suit back to normal.</span>")
+		to_chat(usr, span_notice("You adjust the suit back to normal."))
 	if(ishuman(usr))
 		var/mob/living/carbon/human/H = usr
 		H.update_inv_w_uniform()

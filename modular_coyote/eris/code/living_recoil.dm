@@ -12,6 +12,8 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 /mob/living/proc/add_recoil(var/recoil_buildup)
 	if(recoil_buildup)
+		if(HAS_TRAIT(src, SPREAD_CONTROL))
+			recoil_buildup *= 0.5
 		recoil += recoil_buildup
 		update_recoil()
 
@@ -19,6 +21,9 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 
 	var/base = 0.4
 	var/scale = 0.9
+
+	if(HAS_TRAIT(src, SPREAD_CONTROL))
+		scale = 0.5
 
 	if(recoil <= base)
 		recoil = 0
@@ -58,7 +63,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		return
 	if(client)
 		client.mouse_pointer_icon = initial(client.mouse_pointer_icon)
-		var/offset = round(calculate_offset(G.init_offset) * 0.8)
+		var/offset = round(calculate_offset(G.added_spread) * 0.8)
 		var/icon/base = find_cursor_icon('modular_coyote/eris/icons/standard.dmi', offset)
 		ASSERT(isicon(base))
 		client.mouse_pointer_icon = base

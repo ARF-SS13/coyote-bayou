@@ -347,7 +347,7 @@
 	update_total()
 
 /datum/reagents/proc/remove_addiction(datum/reagent/R)
-	to_chat(my_atom, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
+	to_chat(my_atom, span_notice("You feel like you've gotten over your need for [R.name]."))
 	SEND_SIGNAL(my_atom, COMSIG_CLEAR_MOOD_EVENT, "[R.type]_overdose")
 	if(ismob(my_atom))
 		var/turf/T = get_turf(my_atom)
@@ -536,14 +536,14 @@
 							playsound(get_turf(cached_my_atom), selected_reaction.mix_sound, 80, 1)
 
 						for(var/mob/M in seen)
-							to_chat(M, "<span class='notice'>[iconhtml] [selected_reaction.mix_message]</span>")
+							to_chat(M, span_notice("[iconhtml] [selected_reaction.mix_message]"))
 
 					if(istype(cached_my_atom, /obj/item/slime_extract))//if there's an extract and it's used up.
 						var/obj/item/slime_extract/ME2 = my_atom
 						ME2.Uses--
 						if(ME2.Uses <= 0) // give the notification that the slime core is dead
 							for(var/mob/M in seen)
-								to_chat(M, "<span class='notice'>[iconhtml] \The [my_atom]'s power is consumed in the reaction.</span>")
+								to_chat(M, span_notice("[iconhtml] \The [my_atom]'s power is consumed in the reaction."))
 								ME2.name = "used slime extract"
 								ME2.desc = "This extract has been used up."
 
@@ -610,7 +610,7 @@
 	handle_reactions()
 	update_total()
 	//Reaction sounds and words
-	my_atom.visible_message("<span class='notice'>[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [C.mix_message]</span>")
+	my_atom.visible_message(span_notice("[icon2html(my_atom, viewers(DEFAULT_MESSAGE_RANGE, src))] [C.mix_message]"))
 
 /datum/reagents/proc/fermiReact(selected_reaction, cached_temp, cached_pH, reactedVol, targetVol, cached_required_reagents, cached_results, multiplier)
 	var/datum/chemical_reaction/C = selected_reaction
@@ -1094,51 +1094,6 @@
 /datum/reagents/proc/get_reagent(type)
 	var/list/cached_reagents = reagent_list
 	. = locate(type) in cached_reagents
-
-/datum/reagents/proc/generate_taste_message(minimum_percent=15)
-	// the lower the minimum percent, the more sensitive the message is.
-	var/list/out = list()
-	var/list/tastes = list() //descriptor = strength
-	if(minimum_percent <= 100)
-		for(var/datum/reagent/R in reagent_list)
-			if(!R.taste_mult)
-				continue
-
-			if(istype(R, /datum/reagent/consumable/nutriment))
-				var/list/taste_data = R.data
-				for(var/taste in taste_data)
-					var/ratio = taste_data[taste]
-					var/amount = ratio * R.taste_mult * R.volume
-					if(taste in tastes)
-						tastes[taste] += amount
-					else
-						tastes[taste] = amount
-			else
-				var/taste_desc = R.taste_description
-				var/taste_amount = R.volume * R.taste_mult
-				if(taste_desc in tastes)
-					tastes[taste_desc] += taste_amount
-				else
-					tastes[taste_desc] = taste_amount
-		//deal with percentages
-		// TODO it would be great if we could sort these from strong to weak
-		var/total_taste = counterlist_sum(tastes)
-		if(total_taste > 0)
-			for(var/taste_desc in tastes)
-				var/percent = tastes[taste_desc]/total_taste * 100
-				if(percent < minimum_percent)
-					continue
-				var/intensity_desc = "a hint of"
-				if(ISINRANGE(percent, minimum_percent * 2, minimum_percent * 3)|| percent == 100)
-					intensity_desc = ""
-				else if(percent > minimum_percent * 3)
-					intensity_desc = "the strong flavor of"
-				if(intensity_desc != "")
-					out += "[intensity_desc] [taste_desc]"
-				else
-					out += "[taste_desc]"
-
-	return english_list(out, "something indescribable")
 
 /datum/reagents/proc/expose_temperature(temperature, coeff=0.02)
 	var/temp_delta = (temperature - chem_temp) * coeff

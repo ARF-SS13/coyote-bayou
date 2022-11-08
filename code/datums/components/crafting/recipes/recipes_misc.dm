@@ -39,7 +39,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	
+
 /datum/crafting_recipe/gate_khanate
 	name = "Khans steel-reinforced wood door"
 	result = /obj/machinery/door/unpowered/securedoor/khandoor
@@ -246,7 +246,7 @@
 
 /datum/crafting_recipe/shutters/old
 	name = "Shutters"
-	reqs = list(/obj/item/stack/sheet/plasteel = 10, //5x as expensive as a reinforced wall, can be destroyed by mid-tier guns or high-tier melee. More useful to townies/comfy roles then for NCR/Legion.
+	reqs = list(/obj/item/stack/sheet/prewar = 10, //Changed to use more readily available Pre-War Alloys for CB. Maybe we'll see more use out of them this way.
 				/obj/item/stack/cable_coil = 10,
 				/obj/item/electronics/airlock = 1
 				)
@@ -258,7 +258,7 @@
 
 /datum/crafting_recipe/blast_doors
 	name = "Blast Door"
-	reqs = list(/obj/item/stack/sheet/plasteel = 20, // 10x as expensive as a reinforced wall, but will block anything save for top-tier melee weapons or explosives
+	reqs = list(/obj/item/stack/sheet/prewar = 20, //Again, changed to use more readily available materials.
 				/obj/item/stack/cable_coil = 15,
 				/obj/item/electronics/airlock = 1
 				)
@@ -390,7 +390,7 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC
 	always_available = FALSE
-	always_available = FALSE
+
 
 /datum/crafting_recipe/plunger
 	name = "Plunger"
@@ -446,5 +446,42 @@
 	reqs = list(/obj/item/paper/natural = 10,
 				/obj/item/stack/sheet/cardboard = 1)
 	time = 80
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/well
+	name = "Water Well"
+	result = /obj/structure/sink/well
+	reqs = list(/obj/item/stack/sheet/metal = 20, /obj/item/stack/sheet/mineral/wood = 20, /obj/item/stack/sheet/mineral/sandstone = 5, /obj/item/weaponcrafting/string = 5, /obj/item/reagent_containers/glass/bucket =1)
+	tools = list(TOOL_SHOVEL)
+	time = 100
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/skyfort_girder
+	name = "Aerial Support Girder"
+	result = /obj/item/stack/rods/scaffold
+	reqs = list(
+		/obj/item/stack/sheet/metal = 5,
+		/obj/item/stack/sheet/plastic = 1,
+		/obj/item/stack/sheet/prewar = 5,
+		/obj/item/stack/sheet/bronze = 1
+		)
+	tools = list(TOOL_WORKBENCH)
+	time = 10
+	subcategory = CAT_MISCELLANEOUS
+	category = CAT_MISC
+
+/datum/crafting_recipe/skyfort_girder_ten
+	name = "Aerial Support Girder (x10)"
+	result = /obj/item/stack/rods/scaffold/ten
+	reqs = list(
+		/obj/item/stack/sheet/metal = 50,
+		/obj/item/stack/sheet/plastic = 10,
+		/obj/item/stack/sheet/prewar = 50,
+		/obj/item/stack/sheet/bronze = 10
+		)
+	tools = list(TOOL_WORKBENCH)
+	time = 20
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISC

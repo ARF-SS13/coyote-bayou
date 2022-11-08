@@ -58,9 +58,11 @@
 	name = "Red Glasses"
 	path = /obj/item/clothing/glasses/red
 
+/*  You have em or ya' don't, welcome to the post apocalypse. ~TK
 /datum/gear/glasses/prescription
 	name = "Prescription glasses"
 	path = /obj/item/clothing/glasses/regular
+*/
 
 /datum/gear/glasses/cold
 	name = "cold-resistant goggles"

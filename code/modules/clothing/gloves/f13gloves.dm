@@ -1,5 +1,5 @@
 /obj/item/clothing/gloves/f13
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 10, "rad" = 10, "fire" = 10, "acid" = 10)
+	armor = ARMOR_VALUE_CLOTHES
 
 /obj/item/clothing/gloves/f13/baseball
 	name = "baseball glove"
@@ -19,6 +19,8 @@
 	icon_state = "leather"
 	item_state = "leather"
 	item_color = null
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_ENV_T3)
 	transfer_prints = FALSE
 	strip_delay = 20
 	cold_protection = HANDS
@@ -41,6 +43,8 @@
 	icon_state = "military"
 	item_state = "military"
 	item_color = null
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_MELEE_T3, ARMOR_MODIFIER_DOWN_LASER_T2, ARMOR_MODIFIER_DOWN_ENV_T2)
 	transfer_prints = TRUE
 	strip_delay = 20
 	cold_protection = HANDS
@@ -60,7 +64,6 @@
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
-	armor = list("melee" = 10, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 50)
 
 /obj/item/clothing/gloves/f13/handwraps
 	name = "handwraps"
@@ -94,6 +97,8 @@
 	icon_state = "opifex_gloves"
 	item_state = "opifex_gloves"
 	item_color = null
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_DOWN_ENV_T3)
 	transfer_prints = FALSE
 	strip_delay = 10
 	cold_protection = HANDS
@@ -114,7 +119,8 @@
 	desc = "A pair of metal tubes with rope on the inside."
 	icon_state = "mutie_bracer"
 	item_state = "mutie_bracer"
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
+	armor_tokens = list(ARMOR_MODIFIER_UP_BULLET_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)
 
 /obj/item/clothing/gloves/f13/mutant/mk2
 	name = "mutant bracers"
@@ -141,7 +147,6 @@
 	heat_protection = HANDS
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 30)
 	strip_mod = 0.9
 
 
@@ -151,7 +156,7 @@
 
 /obj/item/clothing/gloves/legion
 	name = "leather gloves"
-	desc = "Fingerless leather gloves to improve grip worn by legionaires."
+	desc = "Fingerless leather gloves to improve grip."
 	icon = 'icons/fallout/clothing/gloves.dmi'
 	mob_overlay_icon = 'icons/fallout/onmob/clothes/hand.dmi'
 	icon_state = "legion_fingerless"
@@ -162,10 +167,11 @@
 	equip_delay_other = 20
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/item/clothing/gloves/legion/forgemaster
 	name = "forgemaster gloves"
-	desc = "A pair of heavy duty leather gloves designed to help the Forgemaster do his work."
+	desc = "A pair of heavy duty leather gloves designed to help a forgemaster do their work."
 	icon_state = "legion_forge"
 	item_state = "legion_forge"
 	item_color = null
@@ -180,7 +186,7 @@
 	icon_state = "legion_plated"
 	item_state = "legion_plated"
 	transfer_prints = FALSE
-	armor = list("melee" = 20, "bullet" = 15, "laser" = 10, "energy" = 10, "bomb" = 10, "bio" = 0, "rad" = 10, "fire" = 10, "acid" = 10)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/gloves/legion/legate
 	name = "brass gauntlets"
@@ -188,4 +194,4 @@
 	icon_state = "legion_legate"
 	item_state = "legion_legate"
 	transfer_prints = FALSE
-	armor = list("melee" = 25, "bullet" = 25, "laser" = 35, "energy" = 20, "bomb" = 35, "bio" = 35, "rad" = 35, "fire" = 0, "acid" = 0)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_UP_LASER_T1, ARMOR_MODIFIER_UP_ENV_T1, ARMOR_MODIFIER_UP_DT_T2)

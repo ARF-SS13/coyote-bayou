@@ -17,19 +17,18 @@
 
 /datum/surgery_step/bionecrosis
 	name = "start bionecrosis"
-	implements = list(TOOL_HEMOSTAT = 100, TOOL_SCREWDRIVER = 35, /obj/item/pen = 15)
 	implements = list(/obj/item/reagent_containers/syringe = 100, /obj/item/pen = 30)
 	time = 50
 	chems_needed = list(/datum/reagent/toxin/zombiepowder, /datum/reagent/medicine/rezadone)
 	require_all_chems = FALSE
 
 /datum/surgery_step/bionecrosis/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to grow a romerol tumor on [target]'s brain...</span>",
+	display_results(user, target, span_notice("You begin to grow a romerol tumor on [target]'s brain..."),
 		"[user] begins to tinker with [target]'s brain...",
 		"[user] begins to perform surgery on [target]'s brain.")
 
 /datum/surgery_step/bionecrosis/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You succeed in growing a romerol tumor on [target]'s brain.</span>",
+	display_results(user, target, span_notice("You succeed in growing a romerol tumor on [target]'s brain."),
 		"[user] successfully grows a romerol tumor on [target]'s brain!",
 		"[user] completes the surgery on [target]'s brain.")
 	if(!target.getorganslot(ORGAN_SLOT_ZOMBIE))

@@ -24,7 +24,7 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	slot_flags = SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK
 	force = 15
 	burst_size = 1
 	burst_shot_delay = 3
@@ -44,6 +44,16 @@
 		SEMI_AUTO_NODELAY,
 		BURST_3_ROUND,
 		BURST_5_ROUND
+	)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
 
 /obj/item/gun/ballistic/automatic/update_overlays()
@@ -68,11 +78,11 @@
 			if(user.transferItemToLoc(new_mag, src))
 				magazine = new_mag
 				if(oldmag)
-					to_chat(user, "<span class='notice'>You perform a tactical reload on \the [src], replacing the magazine.</span>")
+					to_chat(user, span_notice("You perform a tactical reload on \the [src], replacing the magazine."))
 					oldmag.forceMove(get_turf(src.loc))
 					oldmag.update_icon()
 				else
-					to_chat(user, "<span class='notice'>You insert the magazine into \the [src].</span>")
+					to_chat(user, span_notice("You insert the magazine into \the [src]."))
 
 				playsound(user, 'sound/weapons/autoguninsert.ogg', 60, 1)
 				chamber_round()
@@ -80,7 +90,7 @@
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>") */
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!")) */
 
 /obj/item/gun/ballistic/automatic/can_shoot()
 	return get_ammo()
@@ -98,7 +108,7 @@
 		magazine.dropped()
 		user.visible_message(
 			"[magazine] falls out and clatters on the floor!",
-			"<span class='notice'>[magazine] falls out and clatters on the floor!</span>"
+			span_notice("[magazine] falls out and clatters on the floor!")
 		)
 		if(auto_eject_sound)
 			playsound(user, auto_eject_sound, 40, 1)
@@ -131,7 +141,7 @@
 	icon_prefix = "uzi"
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_BULKY
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_HEAVY
@@ -161,6 +171,7 @@
 	desc = "An integrally suppressed submachinegun chambered in the common .22 long rifle. Top loaded drum magazine."
 	icon_state = "smg22"
 	item_state = "shotgun"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m22smg
 	init_mag_type = /obj/item/ammo_box/magazine/m22smg
@@ -173,19 +184,28 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2 // -15%
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.7)
 	init_firemodes = list(
-		FULL_AUTO_400
+		FULL_AUTO_1200
 	)
 
-	can_unsuppress = FALSE
 	is_automatic = TRUE
 	automatic = TRUE
-	suppressed = 1
+	silenced = TRUE
 	actions_types = null
-	fire_sound = 'sound/f13weapons/american180.ogg'
+	fire_sound_silenced = 'sound/f13weapons/american180.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * 14mm SMG
@@ -203,6 +223,7 @@
 	desc = "A heavy-duty SMG designed to tear through most forms of armor."
 	icon_state = "14smg"
 	item_state = "14toploader"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/smg14
 	init_mag_type = /obj/item/ammo_box/magazine/smg14
@@ -225,10 +246,19 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_suppress = FALSE
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Greasegun SMG
@@ -245,7 +275,8 @@
 	desc = "This submachine gun filled National Guard arsenals after the Army replaced it with newer weapons."
 	icon_state = "grease_gun"
 	item_state = "smg9mm"
-	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/greasegun
 	init_mag_type = /obj/item/ammo_box/magazine/greasegun
 
@@ -266,12 +297,21 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 19
 	//actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/greasegun.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Worn greasegun SMG
@@ -285,7 +325,7 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/greasegun/worn
-	name = "beat up 9mm submachine gun"
+	name = "beat up .45ACP submachine gun"
 	desc = "What was once an inexpensive, but reliable submachine gun is now an inexpensive piece of shit. It's impressive this thing still fires at all."
 
 	slowdown = GUN_SLOWDOWN_SMG_LIGHT
@@ -302,8 +342,6 @@
 	init_firemodes = list(
 		FULL_AUTO_300
 	)
-
-	can_attachments = FALSE
 
 /* * * * * * * * * * *
  * 10mm SMG
@@ -322,6 +360,8 @@
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
 	icon_prefix = "smg10mm"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv/ext
 
@@ -342,12 +382,21 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	suppressor_state = "10mm_suppressor" //activate if sprited
 	suppressor_x_offset = 30
 	suppressor_y_offset = 16
 	//actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Worn 10mm SMG
@@ -393,10 +442,12 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi
-	name = "Uzi"
+	name = "9mm Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "uzi"
 	item_state = "uzi"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
@@ -408,16 +459,74 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_firemodes = list(
-		BURST_5_ROUND
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_600
 	)
 
 	automatic = 1
 	is_automatic = TRUE
 	can_suppress = TRUE
-	can_attachments = TRUE
+	suppressor_state = "uzi_suppressor"
+	suppressor_x_offset = 29
+	suppressor_y_offset = 16
+	//actions_types = list(/datum/action/item_action/toggle_firemode)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * Uzi .22 SMG
+ * Lighter .22 SMG
+ * .22
+ * Faster firing
+ * Less damage
+ * One-handed
+ * Akimbo!
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22
+	name = ".22 Uzi"
+	desc = "A very lightweight submachine gun, for when you really want to politely ask someone to be dead. Uses .22LR rounds."
+	icon_state = "uzi22"
+	item_state = "uzi"
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/m22/extended
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+
+	added_spread = GUN_SPREAD_POOR
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = SMG_RECOIL(0.75)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_200
+	)
+
+	automatic = TRUE
+	automatic_burst_overlay = FALSE
+
+	automatic = 1
+	is_automatic = TRUE
+	can_suppress = TRUE
 	suppressor_state = "uzi_suppressor"
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
@@ -429,7 +538,6 @@
  * 10mm
  * Slower firing
  * Less damage
- * One-handed
  * No akimbo
  * Common? ive never seen one
  * * * * * * * * * * */
@@ -439,6 +547,8 @@
 	desc = "Post-war submachine gun made in workshops in Phoenix, a copy of a simple old foreign design."
 	icon_state = "cg45"
 	item_state = "cg45"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/cg45
 	init_mag_type = /obj/item/ammo_box/magazine/cg45
 
@@ -460,8 +570,17 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Thompson SMG
@@ -499,6 +618,16 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	is_automatic = TRUE
 	automatic = 1
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Whitelegs Thompson SMG
@@ -542,7 +671,8 @@
 	desc = "The Fabrique Nationale P90c was just coming into use at the time of the war. The weapon's bullpup layout, and compact design, make it easy to control. The durable P90c is prized for its reliability, and high firepower in a ruggedly-compact package. Chambered in 10mm."
 	icon_state = "p90"
 	item_state = "m90"
-	w_class = WEIGHT_CLASS_NORMAL
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm_p90
 
@@ -554,7 +684,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_LESS_DAMAGE_T2
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = SMG_RECOIL(0.8)
 	init_firemodes = list(
@@ -570,6 +700,16 @@
 	suppressor_x_offset = 29
 	suppressor_y_offset = 16
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Worn P90c SMG
@@ -617,6 +757,8 @@
 	desc = "An integrally suppressed submachinegun chambered in 9mm."
 	icon_state = "mp5"
 	item_state = "fnfal"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	init_mag_type = /obj/item/ammo_box/magazine/uzim9mm
 
@@ -630,6 +772,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // Accurate semiauto fire
 	init_firemodes = list(
 		FULL_AUTO_600,
 		SEMI_AUTO_NODELAY
@@ -637,10 +780,19 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
-	can_suppress = FALSE
-	can_unsuppress = FALSE
+	silenced = TRUE
 	fire_sound = 'sound/weapons/Gunshot_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_silenced.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * PPSh SMG
@@ -676,11 +828,188 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "AEP7_scope"
 	scope_x_offset = 9
 	scope_y_offset = 21
+	gun_tags = list(GUN_SCOPE)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * Sidewinder SMG
+ * Multiammo SMG
+ * 9mm / 10mm / .45 / .22
+ * Click a button while its empty to change what mags it accepts!
+ * Low damage
+ * Two-handed
+ * Slow firing
+ * Inaccurate
+ * Uncommon?
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder
+	name = "multi-caliber smg"
+	desc = "The answer to all your ammo-scrounging problems! The TwisTactical Spindoctor SMMG (sub-machine multi-gun) integrates \
+			rotation-reactive metalmers in the upper assembly to change what ammunition it accepts, from .22LR to .45ACP with a \
+			simple twist of the mechanism. Surprisingly easy to maintain and assemble, given the right high-tech Rotosteel parts, \
+			making it a common sight for Boxcar Vixens in the Heap, where the short sightlines more than make up for the gun's \
+			inherently poor accuracy. Doesn't accept awkwardly shaped magazines, though. That's for the PRO model, which isn't \
+			available out here."
+	icon_state = "sidewinder"
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	w_class = WEIGHT_CLASS_BULKY
+	mag_type = /obj/item/ammo_box/magazine/uzim9mm
+	extra_mag_types = /obj/item/ammo_box/magazine/m9mm
+	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
+	var/current_caliber = "9mm"
+	added_spread = GUN_SPREAD_POOR
+	slowdown = GUN_SLOWDOWN_SMG_LIGHT
+	force = GUN_MELEE_FORCE_PISTOL_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		BURST_3_ROUND
+	)
+
+	is_automatic = TRUE
+	automatic = 1
+
+	gun_tags = list(GUN_SCOPE, GUN_SILENCABLE)
+	can_scope = TRUE
+	scope_state = "AEP7_scope"
+	scope_x_offset = 10
+	scope_y_offset = 22
+	can_flashlight = TRUE
+
+	can_flashlight = TRUE
+	scope_state = "flight"
+	flight_x_offset = 16
+	flight_y_offset = 18
+
+	can_suppress = TRUE
+	suppressor_state = "pistol_suppressor"
+	suppressor_x_offset = 31
+	suppressor_y_offset = 17
+
+	actions_types = list(/datum/action/item_action/toggle_sidewinder)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/update_icon_state()
+	icon_state = "[initial(icon_state)][magazine ? "-[current_caliber]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/proc/change_ammo(mob/user)
+	if(user)
+		if(magazine)
+			user.show_message(span_alert("[src] needs to be completely unloaded before working the TwistForm mechanism!"))
+			return
+		if(chambered)
+			user.show_message(span_alert("[src] needs to be <u>completely</u> unloaded before working the TwistForm mechanism!"))
+			return
+
+	var/message2self = "You wrench the upper receiver of [src] out of its socket and it one full turn. "
+	var/message2everyone = "[user] spins [user.p_their()] their gun around. It makes a wierd click."
+	allowed_mags = list()
+	switch(current_caliber)
+		if("22LR")
+			current_caliber = "9mm"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m9mm, /obj/item/ammo_box/magazine/uzim9mm)
+			fire_sound = 'sound/f13weapons/9mm.ogg'
+			message2self += "The panel on the side now reads: \"9mm Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_LIGHT_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+			)
+		if("9mm")
+			current_caliber = "10mm"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m10mm, /obj/item/ammo_box/magazine/cg45)
+			fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
+			message2self += "The panel on the side now reads: \"10mm Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+			)
+		if("10mm")
+			current_caliber = "45ACP"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/greasegun, /obj/item/ammo_box/magazine/m45, /obj/item/ammo_box/magazine/tommygunm45/stick)
+			fire_sound = 'sound/weapons/gunshot_smg.ogg'
+			message2self += "The panel on the side now reads: \".45ACP Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+			)
+		if("45ACP")
+			current_caliber = "22LR"
+			allowed_mags |= typesof(/obj/item/ammo_box/magazine/m22)
+			fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+			message2self += "The panel on the side now reads: \".22LR Mode\""
+			gun_sound_properties = list(
+				SP_VARY(FALSE),
+				SP_VOLUME(PISTOL_LIGHT_VOLUME),
+				SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+				SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+				SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+				SP_IGNORE_WALLS(TRUE),
+				SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+				SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+			)
+	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
+	if(user)
+		user.visible_message(message2everyone,span_notice(message2self))
+
+/obj/item/gun/ballistic/automatic/smg/sidewinder/examine(mob/user)
+	. = ..()
+	switch(current_caliber)
+		if("22LR")
+			. += "<br><span class='notice'>The readout displays \".22LR Mode\", indicating it'll accept most .22 SMG and pistol mags.</span>"
+		if("9mm")
+			. += "<br><span class='notice'>The readout displays \"9mm Mode\", indicating it'll accept most 9mm SMG and pistol mags.</span>"
+		if("10mm")
+			. += "<br><span class='notice'>The readout displays \"10mm Mode\", indicating it'll accept most 10mm SMG and pistol mags.</span>"
+		if("45ACP")
+			. += "<br><span class='notice'>The readout displays \".45ACP Mode\", indicating it'll accept most .45 SMG and pistol mags.</span>"
+	. += "<br><span class='notice'>Unload the gun and click the action button to change the caliber.</span>"
 
 /* * * * * * *
  * Carbines  *
@@ -707,6 +1036,7 @@
 	desc = "The M1 Carbine was mass produced during some old war, and at some point NCR found stockpiles and rechambered them to 10mm to make up for the fact their service rifle production can't keep up with demand."
 	icon_state = "m1carbine"
 	item_state = "rifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m10mm
 	init_mag_type = /obj/item/ammo_box/magazine/m10mm/adv
 
@@ -717,12 +1047,14 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(0.8)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	can_bayonet = TRUE
@@ -733,14 +1065,22 @@
 	scope_state = "scope_medium"
 	scope_x_offset = 5
 	scope_y_offset = 14
-	can_attachments = TRUE
-	can_automatic = TRUE
 	semi_auto = TRUE
 	can_suppress = TRUE
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 26
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * M1/N Carbine
@@ -751,7 +1091,7 @@
 
 /obj/item/gun/ballistic/automatic/m1carbine/m1n
 	name = "M1/N carbine"
-	desc = "An M1 Carbine with markings identifying it as issued to the NCR Mojave Expedtionary Force. Looks beat up but functional."
+	desc = "An M1 Carbine with faded military markings. Looks beat up but functional."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "ncr-m1carbine"
 	item_state = "rifle"
@@ -787,7 +1127,7 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1.2)
 	init_firemodes = list(
@@ -831,6 +1171,7 @@
 	desc = "A integrally suppressed carbine, known for being one of the quietest firearms ever made. Chambered in 9mm."
 	icon_state = "delisle"
 	item_state = "varmintrifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m9mm
 	init_mag_type = /obj/item/ammo_box/magazine/m9mm/doublestack
 
@@ -841,23 +1182,34 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1.1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // tacticool
 
 	can_scope = TRUE
-	can_unsuppress = FALSE
-	suppressed = 1
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	silenced = TRUE
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Commando Carbine
  * Silent .45 carbine
  * Silent!
- * Common
+ * Common?
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/delisle/commando
@@ -875,21 +1227,29 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
-	suppressed = 1
+	silenced = TRUE
 	can_scope = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	scope_state = "scope_medium"
 	scope_x_offset = 6
 	scope_y_offset = 14
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Combat Carbine
@@ -903,6 +1263,7 @@
 	icon_state = "combat_rifle"
 	item_state = "combatrifle"
 	icon_prefix = "combatrifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
 	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
 
@@ -914,17 +1275,137 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/combatrifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * 10/22ish carbine
+ * .22 LR
+ * Higher damage
+ * Found all over the place
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/sportcarbine
+	name = "sport carbine"
+	desc = "One of the many .22 LR carbines that were all the rage before the war. While lacking in firepower, it more than makes up for it with its modularity and cheapness to fire."
+	icon_state = "surplus"
+	item_state = "rifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_FAST
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T3 // its a weakass cartridge
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(0.5)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	max_upgrades = 5 // moddable to fuck and fack
+
+	automatic_burst_overlay = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonetstraight"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	can_scope = TRUE
+	scope_state = "leveraction_scope"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	semi_auto = TRUE
+	can_suppress = TRUE
+	suppressor_state = "suppressor"
+	suppressor_x_offset = 26
+	suppressor_y_offset = 31
+	fire_sound = 'sound/weapons/Gunshot2.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
+	)
+
+
+/* * * * * * * * * * *
+ * M1-22 carbine
+ * .22 LR
+ * Higher damage
+ * One, owned by a fox
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/sportcarbine/m1_22
+	name = "M1-22 carbine"
+	desc = "A one-of-a-kind M1 carbine chambered in .22 LR. Where it lacks in stopping power, it more than makes up for it with modularity and full auto support. Looks well cared for, if a bit fuzzy."
+	icon_state = "m1carbine"
+	item_state = "rifle"
+	mag_type = /obj/item/ammo_box/magazine/m22
+	init_mag_type = /obj/item/ammo_box/magazine/m22/extended
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOW
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1 // its a weakass cartridge
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = CARBINE_RECOIL(1.2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY,
+		FULL_AUTO_200
+	)
+
+	max_upgrades = 3
+
+	automatic = TRUE
+	automatic_burst_overlay = FALSE
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 22
+	knife_y_offset = 21
+	can_scope = TRUE
+	scope_state = "scope_medium"
+	scope_x_offset = 5
+	scope_y_offset = 14
+	semi_auto = TRUE
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 26
+	suppressor_y_offset = 31
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 /* * * * * * * * * * *
  * Semi-auto Rifles  *
@@ -943,7 +1424,7 @@
  * Light semi-auto rifle
  * .223 / 5.56mm
  * Slow to fire
- * 
+ *
  * Common
  * * * * * * * * * * */
 
@@ -952,6 +1433,7 @@
 	desc = "A simple bolt action rifle in 5.56mm calibre. Easy to use and maintain."
 	icon_state = "varmint"
 	item_state = "varmintrifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle/small
 
@@ -968,6 +1450,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
 
 	can_bayonet = FALSE
 	semi_auto = TRUE
@@ -981,6 +1466,29 @@
 	suppressor_y_offset = 31
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	can_scope = TRUE
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * Varmint Rifle w/ 20rd mag
+ * Light semi-auto rifle
+ * .223 / 5.56mm
+ * Slow to fire
+ * Literally the above, but it spawns with a bigger magazine
+ *
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/extended
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
 /* * * * * * * * * * *
  * Verminkiller Rifle
@@ -988,7 +1496,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1008,13 +1516,13 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_unsuppress = FALSE
+	gun_tags = list()
+
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
 	suppressor_state = "none"
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
 
 /* * * * * * * * * * *
  * Ratslayer Rifle
@@ -1022,7 +1530,7 @@
  * .223 / 5.56mm
  * Scoped
  * Silent
- * More damage 
+ * More damage
  * Unique
  * * * * * * * * * * */
 
@@ -1042,11 +1550,97 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	suppressed = 1
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	gun_tags = list()
+
+	silenced = TRUE
+	can_scope = FALSE
+	zoom_factor = 1.5
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+/* * * * * * * * * * *
+ * Bushmaster Arm Gun
+ * Light semi-auto rifle... pistol thing
+ * .223 / 5.56mm
+ * Slow to fire
+ * Inaccurate
+ * Kicks all over the place
+ * Suuuuuucks
+ * But it makes a click!
+ * And is tactical!
+ * Unique (thankfully)
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun
+	name = ".223 arm pistol"
+	desc = "Be the envy of your platoon with comfortable firepower in a compact form factor, \
+		the Operator's Choice Arm Pistol tactically molds its bullpup feed system to the user's physique, \
+		able to swivel the patented Twistical Receivest to accommodate being held with its recommended \
+		Point'N'Clik SwampWarrior stance. Arm yourself with the Arm Pistol!"
+	icon_state = "arm_rifle"
+	item_state = "m90"
+	mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
+	/// sets if the gun is turnt
+	var/turnt = FALSE
+	max_upgrades = 6
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOWER
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(3)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_SEMI_AUTO
+
+	gun_tags = list(GUN_SCOPE)
+
+	semi_auto = TRUE
+	automatic_burst_overlay = FALSE
+
+	can_bayonet = TRUE
+	bayonet_state = "bayonet"
+	knife_x_offset = 18
+	knife_y_offset = 17
+
+	can_scope = TRUE
+	scope_state = "scope_long"
+	scope_x_offset = 4
+	scope_y_offset = 12
+
+	can_suppress = TRUE
+	suppressor_state = "rifle_suppressor"
+	suppressor_x_offset = 22
+	suppressor_y_offset = 24
+
+	can_flashlight = TRUE
+	gunlight_state = "flightangle"
+	flight_x_offset = 12
+	flight_y_offset = 16
+	actions_types = list(/datum/action/item_action/toggle_armgun)
+	fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+
+/// Silly proc that makes a click
+/obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun/proc/rotate_the_stupid_gun(mob/user)
+	if(user)
+		if(turnt)
+			user.visible_message(
+				"[user] snaps [user.p_their()] [src.name] back into place.",
+				span_notice("With a quick, professional slap of the base of your palm, you deliver a precise karate-chop to the rear of your Arm Gun and snap that sucker back into place!")
+			)
+		else
+			user.visible_message(
+				"[user] clicks [user.p_their()] [src.name] to the side.",
+				span_notice("With a tactical flourish, you grip the rear assembly of your Arm Gun and wrench that sucker to the side, snapping the receiver into comfortable operator mode!")
+			)
+	playsound(get_turf(src), 'sound/f13weapons/equipsounds/riflequip.ogg', 60, 1)
+	turnt = !turnt
 
 /* * * * * * * * * * *
  * Service Rifle
@@ -1077,8 +1671,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
 
-	can_attachments = TRUE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1086,6 +1680,16 @@
 	knife_x_offset = 22
 	knife_y_offset = 21
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * ALR15 Rifle
@@ -1110,7 +1714,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
 	can_bayonet = TRUE
@@ -1143,6 +1746,8 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
+
+	gun_tags = list(GUN_SCOPE)
 
 	can_scope = TRUE
 	scope_state = "scope_short"
@@ -1180,14 +1785,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
-	can_attachments = TRUE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
+	zoom_factor = 1
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 22
@@ -1197,6 +1801,16 @@
 	suppressor_x_offset = 31
 	suppressor_y_offset = 15
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Police Rifle
@@ -1226,6 +1840,8 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
+
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 
 	can_suppress = FALSE
 	can_scope = TRUE
@@ -1263,10 +1879,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1276,6 +1893,16 @@
 	scope_x_offset = 4
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Enfield SLR Rifle
@@ -1310,10 +1937,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic_burst_overlay = FALSE
 	semi_auto = TRUE
-	can_attachments = TRUE
 	can_scope = TRUE
 	can_bayonet = TRUE
 	bayonet_state = "bayonet"
@@ -1323,6 +1951,16 @@
 	scope_x_offset = 4
 	scope_y_offset = 11
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * M1 Garand Rifle
@@ -1356,6 +1994,9 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+
+	gun_tags = list(GUN_SCOPE)
 
 	en_bloc = 1
 	auto_eject = 1
@@ -1370,6 +2011,16 @@
 	scope_y_offset = 14
 	auto_eject_sound = 'sound/f13weapons/garand_ping.ogg'
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/automatic/m1garand/update_icon()
 	..()
@@ -1435,9 +2086,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	fire_delay = 0.5
 	can_scope = FALSE
 
@@ -1512,13 +2161,23 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T4
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
-	zoom_amt = 10
-	zoom_out_amt = 13
 	semi_auto = TRUE
-	can_automatic = FALSE
 	can_bayonet = FALSE
+	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	zoom_factor = 2
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Gold Sniper Rifle
@@ -1578,9 +2237,6 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	cock_delay = GUN_COCK_RIFLE_BASE
-
-	zoom_amt = 8
-	zoom_out_amt = 8
 
 /* * * * * * * * * * *
  * Compact Sniper Rifle
@@ -1643,11 +2299,11 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(0.8)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
@@ -1657,6 +2313,16 @@
 	suppressor_state = "rifle_suppressor"
 	suppressor_x_offset = 27
 	suppressor_y_offset = 28
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * R91 assault rifle
@@ -1680,17 +2346,16 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600,
+		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_bayonet = FALSE
 	bayonet_state = "rifles"
 	knife_x_offset = 23
@@ -1701,6 +2366,16 @@
 	suppressor_state = "ar_suppressor"
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Infiltrator service rifle
@@ -1711,7 +2386,7 @@
 
 /obj/item/gun/ballistic/automatic/assault_rifle/infiltrator
 	name = "infiltrator"
-	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture."
+	desc = "A customized R91 assault rifle, with an integrated suppressor, small scope, cut down stock and polymer furniture. The supressor takes away stopping-power, but a cleaner action allows it to fire faster."
 	icon_state = "infiltrator"
 	item_state = "fnfal"
 
@@ -1722,26 +2397,33 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T3
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
 
 	is_automatic = TRUE
 	automatic = 1
 	can_suppress = FALSE
-	can_unsuppress = FALSE
-	suppressed = 1
+	silenced = TRUE
 	can_bayonet = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	actions_types = list(/datum/action/item_action/toggle_firemode)
-	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/Gunshot_large_silenced.ogg'
+	zoom_factor = 0.8
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * R93 PDW rifle
@@ -1765,33 +2447,39 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_600
+		FULL_AUTO_300
 	)
 
-	can_attachments = FALSE
 	semi_auto = TRUE
 	automatic_burst_overlay = FALSE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 6
-	zoom_out_amt = 9
 	can_bayonet = FALSE
 	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Type 93 assault rifle
- * Chinese 5.56mm autorifle
+ * Chinese 5.56mm AN-94-like rifle
  * .223 / 5.56mm
  * Uncommon
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/automatic/type93
 	name = "type 93 assault rifle"
-	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars, for the purpose of equipping the Chinese infiltrators and American fifth-columnists. Chambered in 5.56x45."
+	desc = "The Type 93 Chinese assault rifle was designed and manufactured by a Chinese industrial conglomerate for the People's Liberation Army during the Resource Wars. Has a unique burst-fire mechanism, where it fires two bullets very quickly, staying accurate, but leading to an increased pause between follow-up shots. Chambered in 5.56x45."
 	icon_state = "type93"
 	item_state = "handmade_rifle"
 	icon_prefix = "handmade_rifle"
@@ -1801,7 +2489,7 @@
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	draw_time = GUN_DRAW_LONG
-	fire_delay = GUN_FIRE_DELAY_NORMAL
+	fire_delay = GUN_FIRE_DELAY_BASE
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
@@ -1809,9 +2497,7 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_400,
-		BURST_3_ROUND,
-		SEMI_AUTO_NODELAY
+		BURST_2_ROUND,
 	)
 
 	is_automatic = TRUE
@@ -1822,6 +2508,16 @@
 	suppressor_y_offset = 27
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Worn Type 93 assault rifle
@@ -1835,7 +2531,7 @@
 
 /obj/item/gun/ballistic/automatic/type93/worn //24dmg
 	name = "\improper Worn Type 93"
-	desc = "This Type 93 Chinese assault rifle looks like it has been made in a garage. The bore is shot to hell, the threading is destroyed, but atleast it works."
+	desc = "This Type 93 Chinese assault rifle looks like it has been restored in a garage. The bore is shot to hell, the threading is destroyed, and so is the burst fire mechanism- it seems to fire unevenly, spraying more bullets than before."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	icon_state = "type93"
 	item_state = "handmade_rifle"
@@ -1849,9 +2545,9 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
-	init_recoil = RIFLE_RECOIL(1.2)
+	init_recoil = RIFLE_RECOIL(3.4)
 	init_firemodes = list(
-		BURST_8_ROUND
+		BURST_5_ROUND
 	)
 
 	can_suppress = FALSE
@@ -1872,7 +2568,7 @@
 	desc = "The ultimate refinement of the sniper's art, the Bozar is a scoped, accurate, light machine gun that will make nice big holes in your enemy. Uses 5.56."
 	icon_state = "bozar"
 	item_state = "sniper"
-	slot_flags = SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m556/rifle
 	init_mag_type = /obj/item/ammo_box/magazine/m556/rifle
 
@@ -1894,12 +2590,19 @@
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_scope = FALSE
 	fire_sound = 'sound/f13weapons/bozar_fire.ogg'
+	zoom_factor = 1.2
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Assault Carbine Rifle
@@ -1925,17 +2628,16 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = CARBINE_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_800,
+		FULL_AUTO_300,
 		BURST_3_ROUND
 	)
-
+	gun_tags = list(GUN_FA_MODDABLE, GUN_SCOPE)
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	can_scope = TRUE
 	scope_state = "scope_short"
 	scope_x_offset = 4
@@ -1950,6 +2652,16 @@
 	flight_y_offset = 21
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assault_carbine.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Police Assault Rifle
@@ -1973,14 +2685,14 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FASTER
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FASTER
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1)
 	init_firemodes = list(
 		FULL_AUTO_400,
 		SEMI_AUTO_NODELAY
 	)
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 /* * * * * * * * * * *
@@ -2026,8 +2738,7 @@
 	icon_state = "fnfal"
 	item_state = "fnfal"
 	mag_type = /obj/item/ammo_box/magazine/m762
-	init_mag_type = /obj/item/ammo_box/magazine/
-	extra_mag_types = list(/obj/item/ammo_box/magazine/w308)
+	init_mag_type = /obj/item/ammo_box/magazine/m762
 
 	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_AUTO
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
@@ -2036,17 +2747,56 @@
 	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
 	burst_size = 1
-	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	damage_multiplier = GUN_LESS_DAMAGE_T4 // 57 damage per shot, full auto, great grouping? not on my watch!
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = RIFLE_RECOIL(1.2)
 	init_firemodes = list(
-		FULL_AUTO_400,
+		FULL_AUTO_200,
 		SEMI_AUTO_NODELAY
 	)
 
 	is_automatic = TRUE
 	automatic = 1
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
+
+/* * * * * * * * * * *
+ * AR-10 Armalite
+ * .308 semi-auto rifle
+ * .308 / 7.62
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/armalite
+	name = "AR-10 Armalite"
+	desc = "A blast from the past as a ruggled, reliable rifle. Accurate and packs a punch, but recoil picks up quick, and it's heavy. Makes it suitable for bashing skulls, at least..."
+	icon_state = "armalite"
+	item_state = "assault_carbine"
+	mag_type = /obj/item/ammo_box/magazine/m762
+	init_mag_type = /obj/item/ammo_box/magazine/m762
+
+	slowdown = GUN_SLOWDOWN_RIFLE_LMG
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_FIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	damage_multiplier = GUN_LESS_DAMAGE_T2 // still a medium-rarity item. can't be better than the snipers.
+	cock_delay = GUN_COCK_RIFLE_BASE
+	init_recoil = RIFLE_RECOIL(1.2)
+	init_firemodes = list(
+		SEMI_AUTO_NODELAY
+	)
 
 /* * * * * * * * * * *
  * Browning Automatic BAR Rifle
@@ -2080,9 +2830,20 @@ obj/item/gun/ballistic/automatic/bar
 		FULL_AUTO_300,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	automatic = 1
 	fire_sound = 'sound/f13weapons/automaticrifle_BAR.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * G11 Rifle
@@ -2114,17 +2875,25 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_5_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = TRUE
 	semi_auto = TRUE
 	can_scope = FALSE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1
 	actions_types = list(/datum/action/item_action/toggle_firemode)
 	select = 0
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * WT-550 Carbine
@@ -2162,6 +2931,16 @@ obj/item/gun/ballistic/automatic/bar
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * *
  * LMGs  *
@@ -2187,7 +2966,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/r84
 	name = "R84 LMG"
-	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs NCR has produced."
+	desc = "A light machinegun using 60 round belts fed from an ammobox, its one of the few heavy weapons designs still commonly found."
 	icon_state = "R84"
 	item_state = "R84"
 	mag_type = /obj/item/ammo_box/magazine/lmg
@@ -2204,14 +2983,23 @@ obj/item/gun/ballistic/automatic/bar
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = LMG_RECOIL(1)
 	init_firemodes = list(
-		FULL_AUTO_600
+		FULL_AUTO_400
 	)
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * LSW LMG
@@ -2249,13 +3037,19 @@ obj/item/gun/ballistic/automatic/bar
 	is_automatic = TRUE
 	automatic = 1
 	spawnwithmagazine = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
-	can_attachments = TRUE
+	zoom_factor = 1
 	can_scope = FALSE
-	actions_types = list(/datum/action/item_action/toggle_firemode)
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Browning M1919 MMG
@@ -2269,7 +3063,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919
 	name = "Browning M1919"
-	desc = "This ancient machine gun has been dug up and put into working order by the Legion Forgemasters. It's loud, heavy and terrifying."
+	desc = "This ancient machine gun has been dug up and put into working order by the Dallas Militia. It's loud, heavy and terrifying."
 	icon_state = "M38"
 	item_state = "M38"
 	slot_flags = 0
@@ -2293,11 +3087,20 @@ obj/item/gun/ballistic/automatic/bar
 
 	is_automatic = TRUE
 	automatic = 1
-	can_attachments = FALSE
 	var/cover_open = FALSE
 	var/require_twohands = FALSE
 	actions_types = null
 	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_MEDIUM_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/automatic/m1919/update_icon()
 	icon_state = "M38[cover_open ? "open" : "closed"][magazine ? CEILING(get_ammo(0)/20, 1)*20 : "-empty"]"
@@ -2310,7 +3113,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/attack_self(mob/user)
 	cover_open = !cover_open
-	to_chat(user, "<span class='notice'>You [cover_open ? "open" : "close"] [src]'s cover.</span>")
+	to_chat(user, span_notice("You [cover_open ? "open" : "close"] [src]'s cover."))
 	if(cover_open)
 		playsound(user, 'sound/weapons/sawopen.ogg', 60, 1)
 	else
@@ -2319,7 +3122,7 @@ obj/item/gun/ballistic/automatic/bar
 
 /obj/item/gun/ballistic/automatic/m1919/afterattack(atom/target as mob|obj|turf, mob/living/user as mob|obj, flag, params) //what I tried to do here is just add a check to see if the cover is open or not and add an icon_state change because I can't figure out how c-20rs do it with overlays
 	if(cover_open)
-		to_chat(user, "<span class='warning'>[src]'s cover is open! Close it before firing!</span>")
+		to_chat(user, span_warning("[src]'s cover is open! Close it before firing!"))
 	else
 		. = ..()
 		update_icon()
@@ -2337,12 +3140,12 @@ obj/item/gun/ballistic/automatic/bar
 		user.put_in_hands(magazine)
 		magazine = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You remove the magazine from [src].</span>")
+		to_chat(user, span_notice("You remove the magazine from [src]."))
 		playsound(user, 'sound/weapons/magout.ogg', 60, 1)
 
 /obj/item/gun/ballistic/automatic/m1919/attackby(obj/item/A, mob/user, params)
 	if(!cover_open && istype(A, mag_type))
-		to_chat(user, "<span class='warning'>[src]'s cover is closed! You can't insert a new mag.</span>")
+		to_chat(user, span_warning("[src]'s cover is closed! You can't insert a new mag."))
 		return
 	..()
 
@@ -2364,7 +3167,7 @@ obj/item/gun/ballistic/automatic/bar
 	desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
 	icon_state = "m72"
 	item_state = "sniper"
-	slot_flags = SLOT_BACK
+	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/m2mm
 	init_mag_type = /obj/item/ammo_box/magazine/m2mm
 
@@ -2381,12 +3184,22 @@ obj/item/gun/ballistic/automatic/bar
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION // obviously
 
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	can_scope = FALSE
+	zoom_factor = 1.2
 	semi_auto = TRUE
 	fire_sound = 'sound/f13weapons/gauss_rifle.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(GAUSS_VOLUME),
+		SP_VOLUME_SILENCED(GAUSS_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(GAUSS_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(GAUSS_DISTANT_SOUND),
+		SP_DISTANT_RANGE(GAUSS_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * xl70e3
@@ -2418,11 +3231,19 @@ obj/item/gun/ballistic/automatic/bar
 		BURST_3_ROUND,
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	is_automatic = TRUE
 	spawnwithmagazine = TRUE
-	can_attachments = TRUE
-	zoomable = TRUE
-	zoom_amt = 10
-	zoom_out_amt = 13
+	zoom_factor = 1.2
 	can_scope = FALSE
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)

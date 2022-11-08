@@ -77,11 +77,11 @@
 
 /obj/item/seeds/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Use a pen on it to rename it or change its description.</span>"
+	. += span_notice("Use a pen on it to rename it or change its description.")
 	if(reagents_add && user.can_see_reagents())
-		. += "<span class='notice'>- Plant Reagents -</span>"
+		. += span_notice("- Plant Reagents -")
 		for(var/datum/plant_gene/reagent/G in genes)
-			. += "<span class='notice'>- [G.get_name()] -</span>"
+			. += span_notice("- [G.get_name()] -")
 
 /obj/item/seeds/proc/Copy()
 	var/obj/item/seeds/S = new type(null, 1)
@@ -431,13 +431,13 @@ obj/item/seeds/proc/is_gene_forbidden(typepath)
 		if(P_analyzer.scan_mode == PLANT_SCANMODE_STATS)
 			text = get_analyzer_text()
 			if(text)
-				to_chat(user, "<span class='notice'>[text]</span>")
+				to_chat(user, span_notice("[text]"))
 		if(reagents_add && P_analyzer.scan_mode == PLANT_SCANMODE_CHEMICALS)
-			to_chat(user, "<span class='notice'>- Plant Reagents -</span>")
-			to_chat(user, "<span class='notice'>*---------*</span>")
+			to_chat(user, span_notice("- Plant Reagents -"))
+			to_chat(user, span_notice("*---------*"))
 			for(var/datum/plant_gene/reagent/G in genes)
-				to_chat(user, "<span class='notice'>- [G.get_name()] -</span>")
-			to_chat(user, "<span class='notice'>*---------*</span>")
+				to_chat(user, span_notice("- [G.get_name()] -"))
+			to_chat(user, span_notice("*---------*"))
 
 
 		return

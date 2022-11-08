@@ -34,15 +34,15 @@
 		src.flipped = !src.flipped
 		if(src.flipped)
 			icon_state = "[soft_type]soft_flipped"
-			to_chat(user, "<span class='notice'>You flip the hat backwards.</span>")
+			to_chat(user, span_notice("You flip the hat backwards."))
 		else
 			icon_state = "[soft_type]soft"
-			to_chat(user, "<span class='notice'>You flip the hat back in normal position.</span>")
+			to_chat(user, span_notice("You flip the hat back in normal position."))
 		usr.update_inv_head()	//so our mob-overlays update
 
 /obj/item/clothing/head/soft/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click the cap to flip it [flipped ? "forwards" : "backwards"].</span>"
+	. += span_notice("Alt-click the cap to flip it [flipped ? "forwards" : "backwards"].")
 
 /obj/item/clothing/head/soft/red
 	name = "red cap"
@@ -119,7 +119,6 @@
 	desc = "It's a robust baseball hat in tasteful red colour."
 	icon_state = "secsoft"
 	soft_type = "sec"
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 50)
 	strip_delay = 60
 	dog_fashion = null
 
@@ -137,6 +136,5 @@
 	soft_type = "baseball"
 	item_state = "baseballsoft"
 	flags_inv = HIDEEYES|HIDEFACE
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = 90)
 	strip_delay = 90 //You dont take a Major Leage cap
 	dog_fashion = null

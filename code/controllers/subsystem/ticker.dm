@@ -47,7 +47,9 @@ SUBSYSTEM_DEF(ticker)
 
 	/// Deciseconds to add to world.time for station time.
 	var/gametime_offset = 216000
-	var/station_time_rate_multiplier = 12		//factor of station time progressal vs real time.
+	var/station_time_rate_multiplier = 6		//factor of station time progressal vs real time.
+	var/timezone_offset_positive = 0            //add time for a timezone offset
+	var/timezone_offset_negative = 216000       //remove time for a timezone offset (UTC to CT)
 
 	var/totalPlayers = 0					//used for pregame stats on statpanel
 	var/totalPlayersReady = 0				//used for pregame stats on statpanel
@@ -152,7 +154,7 @@ SUBSYSTEM_DEF(ticker)
 	if(CONFIG_GET(flag/randomize_shift_time))
 		gametime_offset = rand(0, 23) HOURS
 	else if(CONFIG_GET(flag/shift_time_realtime))
-		gametime_offset = world.timeofday
+		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	return ..()
 
 /datum/controller/subsystem/ticker/fire()
@@ -162,7 +164,7 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
+			to_chat(world, span_boldnotice("Welcome to [station_name()]!"))
 			send2chat("New round starting on [SSmapping.config.map_name]!", CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//Everyone who wants to be an observer is now spawned
@@ -229,7 +231,7 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/setup()
-	to_chat(world, "<span class='boldannounce'>Starting game...</span>")
+	to_chat(world, span_boldannounce("Starting game..."))
 	var/init_start = world.timeofday
 		//Create and announce mode
 	var/list/datum/game_mode/runnable_modes
@@ -241,7 +243,7 @@ SUBSYSTEM_DEF(ticker)
 			if(GLOB.secret_force_mode != "secret")
 				var/datum/game_mode/smode = config.pick_mode(GLOB.secret_force_mode)
 				if(!smode.can_start())
-					message_admins("<span class='notice'>Unable to force secret [GLOB.secret_force_mode]. [smode.required_players] players and [smode.required_enemies] eligible antagonists needed.</span>")
+					message_admins(span_notice("Unable to force secret [GLOB.secret_force_mode]. [smode.required_players] players and [smode.required_enemies] eligible antagonists needed."))
 				else
 					mode = smode
 
@@ -274,13 +276,13 @@ SUBSYSTEM_DEF(ticker)
 		if(!can_continue)
 			log_game("[mode.name] failed pre_setup, cause: [mode.setup_error]")
 			send2irc("SSticker", "[mode.name] failed pre_setup, cause: [mode.setup_error]")
-			message_admins("<span class='notice'>[mode.name] failed pre_setup, cause: [mode.setup_error]</span>")
+			message_admins(span_notice("[mode.name] failed pre_setup, cause: [mode.setup_error]"))
 			QDEL_NULL(mode)
 			to_chat(world, "<B>Error setting up [GLOB.master_mode].</B> Reverting to pre-game lobby.")
 			SSjob.ResetOccupations()
 			return 0
 	else
-		message_admins("<span class='notice'>DEBUG: Bypassing prestart checks...</span>")
+		message_admins(span_notice("DEBUG: Bypassing prestart checks..."))
 
 	CHECK_TICK
 	/*if(hide_mode) CIT CHANGE - comments this section out to obfuscate gamemodes. Quit self-antagging during extended just because "hurrrrr no antaggs!!!!!! i giv sec thing 2 do!!!!!!!!!" it's bullshit and everyone hates it
@@ -312,6 +314,9 @@ SUBSYSTEM_DEF(ticker)
 
 	log_world("Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
+	// Time sync
+	if(CONFIG_GET(flag/shift_time_realtime) && !CONFIG_GET(flag/randomize_shift_time))
+		gametime_offset = world.timeofday + timezone_offset_positive - timezone_offset_negative
 	SSdbcore.SetRoundStart()
 
 	to_chat(world, "<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
@@ -321,7 +326,7 @@ SUBSYSTEM_DEF(ticker)
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
 	if(SSevents.holidays)
-		to_chat(world, "<span class='notice'>and...</span>")
+		to_chat(world, span_notice("and..."))
 		for(var/holidayname in SSevents.holidays)
 			var/datum/holiday/holiday = SSevents.holidays[holidayname]
 			to_chat(world, "<h4>[holiday.greet()]</h4>")
@@ -467,7 +472,7 @@ SUBSYSTEM_DEF(ticker)
 				queued_players -= next_in_line //Client disconnected, remove he
 			queue_delay = 0 //No vacancy: restart timer
 		if(25 to INFINITY)  //No response from the next in line when a vacancy exists, remove he
-			to_chat(next_in_line, "<span class='danger'>No response received. You have been removed from the line.</span>")
+			to_chat(next_in_line, span_danger("No response received. You have been removed from the line."))
 			queued_players -= next_in_line
 			queue_delay = 0
 
@@ -684,17 +689,17 @@ SUBSYSTEM_DEF(ticker)
 
 	var/skip_delay = check_rights()
 	if(delay_end && !skip_delay)
-		to_chat(world, "<span class='boldannounce'>An admin has delayed the round end.</span>")
+		to_chat(world, span_boldannounce("An admin has delayed the round end."))
 		return
 
-	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)]. [reason]</span>")
+	to_chat(world, span_boldannounce("Rebooting World in [DisplayTimeText(delay)]. [reason]"))
 
 	var/start_wait = world.time
 	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2))	//don't wait forever
 	sleep(delay - (world.time - start_wait))
 
 	if(delay_end && !skip_delay)
-		to_chat(world, "<span class='boldannounce'>Reboot was cancelled by an admin.</span>")
+		to_chat(world, span_boldannounce("Reboot was cancelled by an admin."))
 		return
 	if(end_string)
 		end_state = end_string
@@ -706,7 +711,7 @@ SUBSYSTEM_DEF(ticker)
 	else if(gamelogloc)
 		to_chat(world, "<span class='info'>Round logs can be located <a href=\"[gamelogloc]\">at this website!</a></span>")
 
-	log_game("<span class='boldannounce'>Rebooting World. [reason]</span>")
+	log_game(span_boldannounce("Rebooting World. [reason]"))
 
 	world.Reboot()
 

@@ -7,7 +7,7 @@
 	display_typing_indicator()
 	var/message = input(usr, "", "say") as text|null
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
 	if(!length(message))
 		return
 	return say_verb(message)
@@ -17,10 +17,10 @@
 	set category = "IC"
 	if(!length(message))
 		return
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+	if(GLOB.say_disabled)
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
 	say(message)
 
 /mob/verb/me_typing_indicator()
@@ -28,25 +28,28 @@
 	set hidden = TRUE
 	set category = "IC"
 	display_typing_indicator()
-	var/message = input(usr, "", "me") as message|null
+	var/message = stripped_multiline_input_or_reflect(usr, "", "me")
 	// If they don't type anything just drop the message.
-	clear_typing_indicator()		// clear it immediately!
+	clear_typing_indicator()
+	if(GLOB.say_disabled)
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
+		return
 	if(!length(message))
 		return
-	return me_verb(message)
+	usr.emote("me",1,message,TRUE)
 
 /mob/verb/me_verb(message as message)
 	set name = "me"
 	set category = "IC"
 	if(!length(message))
 		return
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+	if(GLOB.say_disabled)
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	
 	if(length(message) > MAX_MESSAGE_LEN)
 		to_chat(usr, message)
-		to_chat(usr, "<span class='danger'>^^^----- The preceeding message has been DISCARDED for being over the maximum length of [MAX_MESSAGE_LEN]. It has NOT been sent! -----^^^</span>")
+		to_chat(usr, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [MAX_MESSAGE_LEN]. It has NOT been sent! -----^^^"))
 		return
 
 	message = trim(copytext_char(sanitize(message), 1, MAX_MESSAGE_LEN))
@@ -103,7 +106,7 @@
 	if(!length(message))
 		return
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 	whisper(message)
 
@@ -115,7 +118,7 @@
 	var/alt_name = ""
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	var/jb = jobban_isbanned(src, "OOC")
@@ -123,14 +126,14 @@
 		return
 
 	if(jb)
-		to_chat(src, "<span class='danger'>You have been banned from deadchat.</span>")
+		to_chat(src, span_danger("You have been banned from deadchat."))
 		return
 
 
 
 	if (src.client)
 		if(src.client.prefs.muted & MUTE_DEADCHAT)
-			to_chat(src, "<span class='danger'>You cannot talk in deadchat (muted).</span>")
+			to_chat(src, span_danger("You cannot talk in deadchat (muted)."))
 			return
 
 		if(src.client.handle_spam_prevention(message,MUTE_DEADCHAT))
@@ -153,9 +156,9 @@
 	log_talk(message, LOG_SAY, tag="DEAD")
 	deadchat_broadcast(rendered, follow_target = src, speaker_key = key)
 
-/mob/proc/check_emote(message)
+/mob/proc/check_emote(message, just_runechat = FALSE)
 	if(message[1] == "*")
-		emote(copytext(message, length(message[1]) + 1), intentional = TRUE)
+		emote(copytext(message, length(message[1]) + 1), intentional = TRUE, only_overhead = just_runechat)
 		return TRUE
 
 /mob/proc/hivecheck()

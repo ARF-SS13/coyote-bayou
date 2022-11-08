@@ -1,4 +1,4 @@
-/* 
+/*
  * Old armors we dont need or use or anything go here
  */
 
@@ -226,20 +226,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "legion-explorercustom"
 	item_state = "legion-explorercustom"
 
-//NCR
-/obj/item/clothing/suit/armor/utilityvest
-	name = "utility vest"
-	desc = "A practical vest with pockets for tools and such."
-	icon_state = "vest_utility"
-	item_state = "vest_utility"
-	icon = 'icons/fallout/clothing/suits_utility.dmi'
-	mob_overlay_icon = 'icons/fallout/onmob/clothes/suit_utility.dmi'
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/four
-
-/obj/item/clothing/suit/armor/utilityvest/logisticsofficer //same as his beret
-	name = "logistics officer utility vest"
-	desc = "A practical and armored vest with pockets for tools and such."
-
 /obj/item/clothing/suit/armor/ncrarmor
 	name = "NCR patrol vest"
 	desc = "A standard issue NCR Infantry vest."
@@ -357,13 +343,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	item_state = "ranger"
 	salvage_loot = list(/obj/item/stack/crafting/armor_plate = 8)
 
-/obj/item/clothing/suit/armor/ncrcfjacket
-	name = "NCRCF jacket"
-	icon_state = "ncrcfjacket"
-	item_state = "ncrcfjacket"
-	desc = "A cheap, standard issue teal canvas jacket issued to poor suckers who find themselves at the butt-end of the NCR's judiciary system."
-
-
 //Great Khan
 /obj/item/clothing/suit/armor/khan_jacket
 	name = "khan armored jacket"
@@ -435,12 +414,6 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	item_state = "knight_blue"
 
 /obj/item/clothing/suit/armor/heavy/riot/knight/red
-	icon_state = "knight_red"
-	item_state = "knight_red"
-
-/obj/item/clothing/suit/armor/knight
-	name = "preacher plate armour"
-	desc = "A classic suit of plate armour, highly effective at stopping melee attacks."
 	icon_state = "knight_red"
 	item_state = "knight_red"
 
@@ -548,32 +521,7 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 	icon_state = "ranger_cloak"
 	item_state = "ranger_cloak"
 
-/obj/item/clothing/suit/armor/herbertranger //Armor wise, it's reskinned raider armor.
-	name = "weathered desert ranger armor"
-	desc = "A set of pre-unification desert ranger armor, made using parts of what was once USMC riot armor. It looks as if it has been worn for decades; the coat has become discoloured from years under the Mojave sun and has multiple tears and bullet holes in its leather. The armor plating itself seems to be in relatively good shape, though it could do with some maintenance."
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	icon_state = "usmc_riot_gear"
-	item_state = "usmc_riot_gear"
 
-/obj/item/clothing/suit/armor/marlowsuit //Raider armour reskin.
-	name = "Marlow gang overcoat"
-	desc = "A heavy raw buckskin overcoat littered with aged bullet holes and frays from regular wear-and-tear."
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	icon_state = "marlowsuit"
-	item_state = "marlowsuit"
-	strip_delay = 40
-
-/obj/item/clothing/suit/armor/marlowsuit/ikesuit
-	name = "gunfighter's overcoat"
-	desc = "A thick double-breasted red leather overcoat worn through with scattered tears and bullet holes."
-	icon_state = "ikesuit"
-	item_state = "ikesuit"
-
-/obj/item/clothing/suit/armor/marlowsuit/masonsuit
-	name = "vagabond's vest"
-	desc = "A padded thick red leather vest, coated in stitched pockets and other mends."
-	icon_state = "masonsuit"
-	item_state = "masonsuit"
 
 //THE GRAVEYARD
 //UNUSED or LEGACY - RETAINED IN CASE DESIRED FOR ADMIN SPAWN OR REIMPLEMENATION. MAY NOT BE EVERYTHING THAT'S UNUSED. TEST BEFORE USING
@@ -762,8 +710,8 @@ Suits. 0-10 in its primary value, slowdown 0, various utility
 
 //Battlecoat
 /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
-	name = "Great Khan battle coat"
-	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside. On the back the symbol of the Great Khans is displayed proudly."
+	name = "Leather battle coat"
+	desc = "Heavy leather coat lined with a patchwork of metal plates on the inside."
 	icon_state = "khan_heavy"
 	item_state = "khan_heavy"
 
@@ -880,7 +828,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 
 /*
 // Heavy
-/obj/item/clothing/suit/armor/atomzealot 
+/obj/item/clothing/suit/armor/atomzealot
 	name = "zealot armor"
 	desc = "Praise be to Atom."
 	icon_state = "atomzealot"
@@ -948,7 +896,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	STOP_PROCESSING(SSobj, src)
 	return ..() */
 
-	
+
 /obj/item/clothing/suit/armor/medium/duster/khancoat
 	name = "khan battlecoat"
 	desc = "Affluent pushers can affort fancy coats with a lot of metal and ceramic plates stuffed inside."
@@ -967,7 +915,7 @@ Just leaving this here for quick copy-pasting, for future contributors.
 	desc = "A suit of worn dated NCR armor, it seems to have seen better days."
 	icon_state = "ncr_tribal_armor"
 	item_state = "ncr_tribal_armor"
-	
+
 /obj/item/clothing/suit/armor/light/rangerrig
 	name = "chest gear harness"
 	desc = "A handmade tactical rig made of black cloth, attached to a dusty desert-colored belt. A flask and two ammo pouches hang from the belt. Very cool to move about in."

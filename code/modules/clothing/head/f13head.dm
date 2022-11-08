@@ -31,7 +31,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 20, "bomb" = 50, "bio" = 60, "rad" = 10, "fire" = 60, "acid" = 20)
-	flags_inv = HIDEEARS
+	flags_inv = HIDEEARS | HIDEHAIR
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -39,7 +39,6 @@
 	strip_delay = 60
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
 
 	dog_fashion = /datum/dog_fashion/head/helmet
 
@@ -198,7 +197,6 @@
 	desc = "A prewar armor design by Nikola Tesla before being confiscated by the U.S. government. Provides high energy weapons resistance."
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
-	armor = list("melee" = 25, "bullet" = 25,"laser" = 80, "energy" = 60, "bomb" = 40, "bio" = 30, "rad" = 20, "fire" = 60, "acid" = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	var/hit_reflect_chance = 20
 	protected_zones = list(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_GROIN, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -216,9 +214,7 @@
 
 /obj/item/clothing/head/helmet/f13/power_armor
 	cold_protection = HEAD
-	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
-	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	ispowerarmor = 1 //TRUE
 	strip_delay = 200
 	equip_delay_self = 20
@@ -232,7 +228,6 @@
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
 	speechspan = SPAN_ROBOT //makes you sound like a robot
-	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_HELM_MAX_TEMP_PROTECT
 	cold_protection = HEAD
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
@@ -270,7 +265,7 @@
 	if(src == H.head) //Suit is already equipped
 		return ..()
 	if (!HAS_TRAIT(H, TRAIT_PA_WEAR) && slot == SLOT_HEAD && requires_training)
-		to_chat(user, "<span class='warning'>You don't have the proper training to operate the power armor!</span>")
+		to_chat(user, span_warning("You don't have the proper training to operate the power armor!"))
 		return 0
 	if(slot == SLOT_HEAD)
 		return ..()
@@ -290,43 +285,43 @@
 				// Salvage
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You begin unsecuring the cover...</span>")
+					to_chat(user, span_notice("You begin unsecuring the cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 1
-						to_chat(user, "<span class='notice'>You unsecure the cover.</span>")
+						to_chat(user, span_notice("You unsecure the cover."))
 					return
 			if(1)
 				// Salvage
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You begin disconnecting the connection ports...</span>")
+					to_chat(user, span_notice("You begin disconnecting the connection ports..."))
 					if(I.use_tool(src, user, 80, volume=50))
 						salvage_step = 2
-						to_chat(user, "<span class='notice'>You disconnect the connection ports.</span>")
+						to_chat(user, span_notice("You disconnect the connection ports."))
 					return
 				// Fix
 				if(istype(I, /obj/item/screwdriver))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the helmet before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the helmet before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You begin securing the cover...</span>")
+					to_chat(user, span_notice("You begin securing the cover..."))
 					if(I.use_tool(src, user, 60, volume=50))
 						salvage_step = 0
-						to_chat(user, "<span class='notice'>You secure the cover.</span>")
+						to_chat(user, span_notice("You secure the cover."))
 					return
 			if(2)
 				// Salvage
 				if(istype(I, /obj/item/wirecutters))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the helmet before salvaging it.</span>")
+						to_chat(user, span_warning("You have to take off the helmet before salvaging it."))
 						return
-					to_chat(user, "<span class='notice'>You begin disconnecting wires...</span>")
+					to_chat(user, span_notice("You begin disconnecting wires..."))
 					if(I.use_tool(src, user, 60, volume=70))
-						to_chat(user, "<span class='notice'>You finish salvaging the helmet.</span>")
+						to_chat(user, span_notice("You finish salvaging the helmet."))
 						var/obj/item/ST = new salvaged_type(src)
 						user.put_in_hands(ST)
 						qdel(src)
@@ -334,12 +329,12 @@
 				// Fix
 				if(istype(I, /obj/item/wrench))
 					if(ishuman(user) && user.wear_suit == src)
-						to_chat(user, "<span class='warning'>You have to take off the helmet before fixing it.</span>")
+						to_chat(user, span_warning("You have to take off the helmet before fixing it."))
 						return
-					to_chat(user, "<span class='notice'>You try to anchor connection ports to the frame...</span>")
+					to_chat(user, span_notice("You try to anchor connection ports to the frame..."))
 					if(I.use_tool(src, user, 80, volume=60))
 						salvage_step = 1
-						to_chat(user, "<span class='notice'>You re-connect connection ports.</span>")
+						to_chat(user, span_notice("You re-connect connection ports."))
 					return
 	return ..()
 
@@ -445,7 +440,7 @@
 	desc = "The helmet of the excavator power armor suit."
 	icon_state = "excavator"
 	item_state = "excavator"
-	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T1, ARMOR_MODIFIER_DOWN_BULLET_T4, ARMOR_MODIFIER_DOWN_LASER_T4)
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T2, ARMOR_MODIFIER_DOWN_BULLET_T3, ARMOR_MODIFIER_DOWN_LASER_T3, ARMOR_MODIFIER_UP_ENV_T3, ARMOR_MODIFIER_UP_DT_T1)
 
 /obj/item/clothing/head/helmet/f13/power_armor/advanced
 	name = "advanced power helmet"
@@ -794,8 +789,8 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/f13/flatranger
-	name = "NCR gambler ranger hat"
-	desc = "A rustic, homely style gambler hat adorning an NCR Ranger patch. Yeehaw!"
+	name = "gambler ranger hat"
+	desc = "A rustic, homely style gambler hat adorning an Texas Ranger patch. Yeehaw!"
 	icon_state = "gamblerrang"
 	item_state = "gamblerrang"
 
@@ -871,3 +866,14 @@
 	icon_state = "bone_dancer_helmet"
 	item_state = "bone_dancer_helmet"
 	strip_delay = 100
+
+/obj/item/clothing/head/helmet/f13/knighthelmet
+	name = "red medieval helmet"
+	desc = "A classic metal helmet worn by all ranks of knights and horsemen of the Old Era.<br>This one is painted red."
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "knight_red"
+	item_state = "knight_red"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEHAIR|HIDEFACIALHAIR|HIDEFACE
+	armor = ARMOR_VALUE_LIGHT
+	armor_tokens = list(ARMOR_MODIFIER_UP_MELEE_T3, ARMOR_MODIFIER_DOWN_BULLET_T1, ARMOR_MODIFIER_DOWN_LASER_T1, ARMOR_MODIFIER_UP_ENV_T2, ARMOR_MODIFIER_UP_DT_T1)
+

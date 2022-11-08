@@ -32,8 +32,8 @@
 	coffin = claimed
 	lair = get_area(claimed)
 	// DONE
-	to_chat(owner, "<span class='userdanger'>You have claimed the [claimed] as your place of immortal rest! Your lair is now [lair].</span>")
-	to_chat(owner, "<span class='danger'>You have learned new construction recipes to improve your lair.</span>")
+	to_chat(owner, span_userdanger("You have claimed the [claimed] as your place of immortal rest! Your lair is now [lair]."))
+	to_chat(owner, span_danger("You have learned new construction recipes to improve your lair."))
 	to_chat(owner, "<span class='announce'>Bloodsucker Tip: Find new lair recipes in the misc tab of the <i>Crafting Menu</i> at the bottom of the screen, including the <i>Persuasion Rack</i> for converting crew into Vassals.</span><br><br>")
 	RunLair() // Start
 	return TRUE
@@ -54,7 +54,7 @@
 	resistance_flags = NONE
 	max_integrity = 100
 	integrity_failure = 0.5
-	armor = list("melee" = 50, "bullet" = 20, "laser" = 30, "energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60)
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/structure/closet/crate/coffin/meatcoffin
 	name = "meat coffin"
@@ -69,7 +69,7 @@
 	material_drop = /obj/item/reagent_containers/food/snacks/meat/slab
 	material_drop_amount = 3
 	integrity_failure = 0.57
-	armor = list("melee" = 70, "bullet" = 10, "laser" = 10, "energy" = 0, "bomb" = 70, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 100)
+	armor = ARMOR_VALUE_LIGHT
 
 /obj/structure/closet/crate/coffin/metalcoffin
 	name = "metal coffin"
@@ -85,7 +85,7 @@
 	material_drop_amount = 5
 	max_integrity = 200
 	integrity_failure = 0.25
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 50, "energy" = 0, "bomb" = 10, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60)
+	armor = ARMOR_VALUE_LIGHT
 
 //////////////////////////////////////////////
 
@@ -120,12 +120,12 @@
 			if (welded)
 				welded = FALSE
 				update_icon()
-			//to_chat(user, "<span class='notice'>You flip a secret latch and unlock [src].</span>") // Don't bother. We know it's unlocked.
+			//to_chat(user, span_notice("You flip a secret latch and unlock [src].")) // Don't bother. We know it's unlocked.
 			locked = FALSE
 			return 1
 		else
 			playsound(get_turf(src), 'sound/machines/door_locked.ogg', 20, 1)
-			to_chat(user, "<span class='notice'>[src] is locked tight from the inside.</span>")
+			to_chat(user, span_notice("[src] is locked tight from the inside."))
 	return ..()
 
 /obj/structure/closet/crate/coffin/close(mob/living/user)
@@ -147,11 +147,11 @@
 					if("Yes")
 						ClaimCoffin(user)
 			if (user.AmStaked()) // Stake? No Heal!
-				to_chat(bloodsuckerdatum.owner.current, "<span class='userdanger'>You are staked! Remove the offending weapon from your heart before sleeping.</span>")
+				to_chat(bloodsuckerdatum.owner.current, span_userdanger("You are staked! Remove the offending weapon from your heart before sleeping."))
 				return
 			// Heal
 			if(bloodsuckerdatum.HandleHealing(0)) // Healing Mult 0 <--- We only want to check if healing is valid!
-				to_chat(bloodsuckerdatum.owner.current, "<span class='notice'>You enter the horrible slumber of deathless Torpor. You will heal until you are renewed.</span>")
+				to_chat(bloodsuckerdatum.owner.current, span_notice("You enter the horrible slumber of deathless Torpor. You will heal until you are renewed."))
 				bloodsuckerdatum.Torpor_Begin()
 			// Level Up?
 			bloodsuckerdatum.SpendRank() // Auto-Fails if not appropriate
@@ -162,21 +162,21 @@
 	if (resident != null && user != resident) // Owner can destroy their own coffin.
 		if(opened)
 			if(istype(W, cutting_tool))
-				to_chat(user, "<span class='notice'>This is a much more complex mechanical structure than you thought. You don't know where to begin cutting [src].</span>")
+				to_chat(user, span_notice("This is a much more complex mechanical structure than you thought. You don't know where to begin cutting [src]."))
 				return
 		else if(anchored && istype(W, /obj/item/wrench)) // Can't unanchor unless owner.
-			to_chat(user, "<span class='danger'>The coffin won't come unanchored from the floor.</span>")
+			to_chat(user, span_danger("The coffin won't come unanchored from the floor."))
 			return
 
 	if(locked && istype(W, /obj/item/crowbar))
 		var/pry_time = pryLidTimer * W.toolspeed // Pry speed must be affected by the speed of the tool.
-		user.visible_message("<span class='notice'>[user] tries to pry the lid off of [src] with [W].</span>", \
-							  "<span class='notice'>You begin prying the lid off of [src] with [W]. This should take about [DisplayTimeText(pry_time)].</span>")
+		user.visible_message(span_notice("[user] tries to pry the lid off of [src] with [W]."), \
+							  span_notice("You begin prying the lid off of [src] with [W]. This should take about [DisplayTimeText(pry_time)]."))
 		if (!do_mob(user,src,pry_time))
 			return
 		bust_open()
-		user.visible_message("<span class='notice'>[user] snaps the door of [src] wide open.</span>", \
-							  "<span class='notice'>The door of [src] snaps open.</span>")
+		user.visible_message(span_notice("[user] snaps the door of [src] wide open."), \
+							  span_notice("The door of [src] snaps open."))
 		return
 	..()
 
@@ -192,11 +192,11 @@
 	if (user == resident)
 		if (!broken)
 			locked = inLocked
-			to_chat(user, "<span class='notice'>You flip a secret latch and [locked?"":"un"]lock yourself inside [src].</span>")
+			to_chat(user, span_notice("You flip a secret latch and [locked?"":"un"]lock yourself inside [src]."))
 		else
-			to_chat(resident, "<span class='notice'>The secret latch to lock [src] from the inside is broken. You set it back into place...</span>")
+			to_chat(resident, span_notice("The secret latch to lock [src] from the inside is broken. You set it back into place..."))
 			if (do_mob(resident, src, 50))//sleep(10)
 				if (broken) // Spam Safety
-					to_chat(resident, "<span class='notice'>You fix the mechanism and lock it.</span>")
+					to_chat(resident, span_notice("You fix the mechanism and lock it."))
 					broken = FALSE
 					locked = TRUE

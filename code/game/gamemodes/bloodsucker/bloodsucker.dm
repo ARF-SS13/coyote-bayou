@@ -4,7 +4,7 @@
 	AddElement(/datum/element/sword_point)
 
 /obj/item/claymore/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is falling on [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return(BRUTELOSS)
 
 
@@ -28,7 +28,7 @@
 /obj/item/claymore/highlander/Destroy()
 	if(nuke_disk)
 		nuke_disk.forceMove(get_turf(src))
-		nuke_disk.visible_message("<span class='warning'>The nuke disk is vulnerable!</span>")
+		nuke_disk.visible_message(span_warning("The nuke disk is vulnerable!"))
 		nuke_disk = null
 	STOP_PROCESSING(SSobj, src)
 	return ..()
@@ -46,7 +46,7 @@
 
 /obj/item/claymore/highlander/pickup(mob/living/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>The power of Scotland protects you! You are shielded from all stuns and knockdowns.</span>")
+	to_chat(user, span_notice("The power of Scotland protects you! You are shielded from all stuns and knockdowns."))
 	user.add_stun_absorption("highlander", INFINITY, 1, " is protected by the power of Scotland!", "The power of Scotland absorbs the stun!", " is protected by the power of Scotland!")
 	user.ignore_slowdown(HIGHLANDER)
 
@@ -60,14 +60,14 @@
 	. = ..()
 	. += "It has [!notches ? "nothing" : "[notches] notches"] scratched into the blade."
 	if(nuke_disk)
-		. += "<span class='boldwarning'>It's holding the nuke disk!</span>"
+		. += span_boldwarning("It's holding the nuke disk!")
 
 /obj/item/claymore/highlander/attack(mob/living/target, mob/living/user)
 	. = ..()
 	if(!QDELETED(target) && iscarbon(target) && target.stat == DEAD && target.mind && target.mind.special_role == "highlander")
 		user.fully_heal() //STEAL THE LIFE OF OUR FALLEN FOES
 		add_notch(user)
-		target.visible_message("<span class='warning'>[target] crumbles to dust beneath [user]'s blows!</span>", "<span class='userdanger'>As you fall, your body crumbles to dust!</span>")
+		target.visible_message(span_warning("[target] crumbles to dust beneath [user]'s blows!"), span_userdanger("As you fall, your body crumbles to dust!"))
 		target.dust()
 
 /obj/item/claymore/highlander/attack_self(mob/living/user)
@@ -77,9 +77,9 @@
 		if(H.client && H.mind.special_role == "highlander" && (!closest_victim || get_dist(user, closest_victim) < closest_distance))
 			closest_victim = H
 	if(!closest_victim)
-		to_chat(user, "<span class='warning'>[src] thrums for a moment and falls dark. Perhaps there's nobody nearby.</span>")
+		to_chat(user, span_warning("[src] thrums for a moment and falls dark. Perhaps there's nobody nearby."))
 		return
-	to_chat(user, "<span class='danger'>[src] thrums and points to the [dir2text(get_dir(user, closest_victim))].</span>")
+	to_chat(user, span_danger("[src] thrums and points to the [dir2text(get_dir(user, closest_victim))]."))
 
 /obj/item/claymore/highlander/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if((attack_type & ATTACK_TYPE_PROJECTILE) && is_energy_reflectable_projectile(object))
@@ -92,11 +92,11 @@
 	var/new_name = name
 	switch(notches)
 		if(1)
-			to_chat(user, "<span class='notice'>Your first kill - hopefully one of many. You scratch a notch into [src]'s blade.</span>")
-			to_chat(user, "<span class='warning'>You feel your fallen foe's soul entering your blade, restoring your wounds!</span>")
+			to_chat(user, span_notice("Your first kill - hopefully one of many. You scratch a notch into [src]'s blade."))
+			to_chat(user, span_warning("You feel your fallen foe's soul entering your blade, restoring your wounds!"))
 			new_name = "notched claymore"
 		if(2)
-			to_chat(user, "<span class='notice'>Another falls before you. Another soul fuses with your own. Another notch in the blade.</span>")
+			to_chat(user, span_notice("Another falls before you. Another soul fuses with your own. Another notch in the blade."))
 			new_name = "double-notched claymore"
 			add_atom_colour(rgb(255, 235, 235), ADMIN_COLOUR_PRIORITY)
 		if(3)
@@ -108,11 +108,11 @@
 			new_name = "many-notched claymore"
 			add_atom_colour(rgb(255, 195, 195), ADMIN_COLOUR_PRIORITY)
 		if(5)
-			to_chat(user, "<span class='boldannounce'>Five voices now echo in your mind, cheering the slaughter.</span>")
+			to_chat(user, span_boldannounce("Five voices now echo in your mind, cheering the slaughter."))
 			new_name = "battle-tested claymore"
 			add_atom_colour(rgb(255, 175, 175), ADMIN_COLOUR_PRIORITY)
 		if(6)
-			to_chat(user, "<span class='boldannounce'>Is this what the vikings felt like? Visions of glory fill your head as you slay your sixth foe.</span>")
+			to_chat(user, span_boldannounce("Is this what the vikings felt like? Visions of glory fill your head as you slay your sixth foe."))
 			new_name = "battle-scarred claymore"
 			add_atom_colour(rgb(255, 155, 155), ADMIN_COLOUR_PRIORITY)
 		if(7)
@@ -124,11 +124,11 @@
 			new_name = "bloodthirsty claymore"
 			add_atom_colour(rgb(255, 115, 115), ADMIN_COLOUR_PRIORITY)
 		if(9)
-			to_chat(user, "<span class='userdanger'>ANOTHER ONE FALLS TO YOUR BLOWS. ANOTHER WEAKLING UNFIT TO LIVE.</span>")
+			to_chat(user, span_userdanger("ANOTHER ONE FALLS TO YOUR BLOWS. ANOTHER WEAKLING UNFIT TO LIVE."))
 			new_name = "gore-stained claymore"
 			add_atom_colour(rgb(255, 95, 95), ADMIN_COLOUR_PRIORITY)
 		if(10)
-			user.visible_message("<span class='warning'>[user]'s eyes light up with a vengeful fire!</span>", \
+			user.visible_message(span_warning("[user]'s eyes light up with a vengeful fire!"), \
 			"<span class='userdanger'>YOU FEEL THE POWER OF VALHALLA FLOWING THROUGH YOU! <i>THERE CAN BE ONLY ONE!!!</i></span>")
 			user.update_icons()
 			new_name = "GORE-DRENCHED CLAYMORE OF [pick("THE WHIMSICAL SLAUGHTER", "A THOUSAND SLAUGHTERED CATTLE", "GLORY AND VALHALLA", "ANNIHILATION", "OBLITERATION")]"
@@ -253,18 +253,18 @@
 	// No Mind
 	if(!bloodsucker || !bloodsucker.key) // KEY is client login?
 		//if(creator) // REMOVED. You wouldn't see their name if there is no mind, so why say anything?
-		//	to_chat(creator, "<span class='danger'>[bloodsucker] isn't self-aware enough to be raised as a Bloodsucker!</span>")
+		//	to_chat(creator, span_danger("[bloodsucker] isn't self-aware enough to be raised as a Bloodsucker!"))
 		return FALSE
 	// Current body is invalid
 	if(!ishuman(bloodsucker.current))// && !ismonkey(bloodsucker.current))
 		if(display_warning && creator)
-			to_chat(creator, "<span class='danger'>[bloodsucker] isn't evolved enough to be raised as a Bloodsucker!</span>")
+			to_chat(creator, span_danger("[bloodsucker] isn't evolved enough to be raised as a Bloodsucker!"))
 		return FALSE
 	// Species Must have a HEART (Sorry Plasmabois)
 	var/mob/living/carbon/human/H = bloodsucker.current
 	if(NOBLOOD in H.dna.species.species_traits)
 		if(display_warning && creator)
-			to_chat(creator, "<span class='danger'>[bloodsucker]'s DNA isn't compatible!</span>")
+			to_chat(creator, span_danger("[bloodsucker]'s DNA isn't compatible!"))
 		return FALSE
 	// Already a Non-Human Antag
 	if(bloodsucker.has_antag_datum(/datum/antagonist/abductor) || bloodsucker.has_antag_datum(/datum/antagonist/devil) || bloodsucker.has_antag_datum(/datum/antagonist/changeling))
@@ -272,13 +272,13 @@
 	// Already a vamp
 	if(bloodsucker.has_antag_datum(ANTAG_DATUM_BLOODSUCKER))
 		if(display_warning && creator)
-			to_chat(creator, "<span class='danger'>[bloodsucker] is already a Bloodsucker!</span>")
+			to_chat(creator, span_danger("[bloodsucker] is already a Bloodsucker!"))
 		return FALSE
 	// Not High Enough
 	if(creator)
 		var/datum/antagonist/bloodsucker/creator_bloodsucker = creator.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 		if(!istype(creator_bloodsucker) || creator_bloodsucker.bloodsucker_level < BLOODSUCKER_LEVEL_TO_EMBRACE)
-			to_chat(creator, "<span class='danger'>Your blood is too thin to turn this corpse!</span>")
+			to_chat(creator, span_danger("Your blood is too thin to turn this corpse!"))
 			return FALSE
 	return TRUE
 
@@ -356,22 +356,22 @@
 	// No Mind!
 	if(!target.mind || !target.mind.key)
 		if(display_warning)
-			to_chat(creator, "<span class='danger'>[target] isn't self-aware enough to be made into a Vassal.</span>")
+			to_chat(creator, span_danger("[target] isn't self-aware enough to be made into a Vassal."))
 		return FALSE
 	// Already MY Vassal
 	var/datum/antagonist/vassal/V = target.mind.has_antag_datum(ANTAG_DATUM_VASSAL)
 	if(istype(V) && V.master)
 		if(V.master.owner == creator)
 			if(display_warning)
-				to_chat(creator, "<span class='danger'>[target] is already your loyal Vassal!</span>")
+				to_chat(creator, span_danger("[target] is already your loyal Vassal!"))
 		else
 			if(display_warning)
-				to_chat(creator, "<span class='danger'>[target] is the loyal Vassal of another Bloodsucker!</span>")
+				to_chat(creator, span_danger("[target] is the loyal Vassal of another Bloodsucker!"))
 		return FALSE
 	// Already Antag or Loyal (Vamp Hunters count as antags)
 	if(target.mind.enslaved_to || AmInvalidAntag(target.mind)) //!VassalCheckAntagValid(target.mind, check_antag_or_loyal)) // HAS_TRAIT(target, TRAIT_MINDSHIELD, "implant") ||
 		if(display_warning)
-			to_chat(creator, "<span class='danger'>[target] resists the power of your blood to dominate their mind!</span>")
+			to_chat(creator, span_danger("[target] resists the power of your blood to dominate their mind!"))
 		return FALSE
 	return TRUE
 

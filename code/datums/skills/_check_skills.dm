@@ -6,10 +6,10 @@
 	set desc = "Check your skills (if you have any..)"
 
 	if(!mind)
-		to_chat(usr, "<span class='warning'>How do you check the skills of [(usr == src)? "yourself when you are" : "something"] without a mind?</span>")
+		to_chat(usr, span_warning("How do you check the skills of [(usr == src)? "yourself when you are" : "something"] without a mind?"))
 		return
 	if(!mind.skill_holder)
-		to_chat(usr, "<span class='warning'>How do you check the skills of [(usr == src)? "yourself when you are" : "something"] without the capability for skills? (PROBABLY A BUG, PRESS F1.)</span>")
+		to_chat(usr, span_warning("How do you check the skills of [(usr == src)? "yourself when you are" : "something"] without the capability for skills? (PROBABLY A BUG, PRESS F1.)"))
 		return
 
 	mind.skill_holder.ui_interact(src)

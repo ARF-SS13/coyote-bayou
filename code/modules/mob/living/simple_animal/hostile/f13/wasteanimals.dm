@@ -12,7 +12,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2, /obj/item/stack/sheet/animalhide/gecko = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/gecko = 2,
+		/obj/item/stack/sheet/animalhide/gecko = 1)
 	butcher_results = list(/obj/item/stack/sheet/bone = 1)
 	butcher_difficulty = 1
 	response_help_simple = "pets"
@@ -20,24 +22,89 @@
 	response_harm_simple = "hits"
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 40
-	health = 40
+	maxHealth = 35
+	health = 35
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
+	melee_damage_lower = 5
 	melee_damage_upper = 15
-	attack_verb_simple = "claws"
-	speak_emote = list("hisses")
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	move_to_delay = 1.5
+	retreat_distance = 0
+	minimum_distance = 0
+	aggro_vision_range = 7
+	vision_range = 8
+	speak_emote = list(
+		"squeaks",
+		"cackles",
+		"snickers",
+		"shriek",
+		"scream",
+		"skrem",
+		"scrambles",
+		"warbles",
+		"chirps",
+		"cries",
+		"kyaas",
+		"chortles",
+		"gecks"
+		)
+	emote_see = list(
+		"screeches",
+		"licks its eyes",
+		"twitches",
+		"scratches its frills",
+		"gonks",
+		"honks",
+		"scronks",
+		"sniffs",
+		"gecks"
+		)
+	attack_verb_simple = list(
+		"bites",
+		"claws",
+		"tears at",
+		"dabs",
+		"scratches",
+		"gnaws",
+		"chews",
+		"chomps",
+		"lunges",
+		"gecks"
+		)
+	atmos_requirements = list(
+		"min_oxy" = 5,
+		"max_oxy" = 0,
+		"min_tox" = 0,
+		"max_tox" = 1,
+		"min_co2" = 0,
+		"max_co2" = 5,
+		"min_n2" = 0,
+		"max_n2" = 0
+		)
 	faction = list("gecko")
 	a_intent = INTENT_HARM
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 	emote_taunt = list("screeches")
-	emote_taunt_sound = list('sound/f13npc/gecko/gecko_charge1.ogg', 'sound/f13npc/gecko/gecko_charge2.ogg', 'sound/f13npc/gecko/gecko_charge3.ogg',)
-	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg', )
+	emote_taunt_sound = list(
+		'sound/f13npc/gecko/gecko_charge1.ogg',
+		'sound/f13npc/gecko/gecko_charge2.ogg',
+		'sound/f13npc/gecko/gecko_charge3.ogg'
+		)
+	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(50),
+		MOB_HEALTH_LIST(30, 35, 40, 45),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
 
 /mob/living/simple_animal/hostile/gecko/playable
 	health = 200
@@ -53,6 +120,24 @@
 	melee_damage_lower = 20
 	melee_damage_upper = 45
 	footstep_type = FOOTSTEP_MOB_CLAW
+
+/// Testing its randomness
+/mob/living/simple_animal/hostile/gecko/debug
+	variation_list = list(
+		MOB_NAME_FROM_GLOBAL_LIST(\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_MALE, 2),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_LIZARD_FEMALE, 1),\
+			MOB_RANDOM_NAME(MOB_NAME_RANDOM_ALL_OF_THEM, 5)\
+		),
+		MOB_COLOR_VARIATION(20, 190, 0, 255, 2, 0),
+		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
+		MOB_SPEED_CHANGE_PER_TURN_CHANCE(100),
+		MOB_HEALTH_LIST(2, 3, 5, 7, 30, 35, 37, 38, 40, 45, 48, 49, 49, 49, 49, 2000),
+		MOB_RETREAT_DISTANCE_LIST(0, 1, 3, 5, 7, 9),
+		MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
+		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
+	)
 
 
 //////////////////////////
@@ -70,6 +155,21 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	move_to_delay = 2
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 8
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
 	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
 	butcher_difficulty = 3
@@ -79,12 +179,12 @@
 	emote_taunt = list("growls")
 	taunt_chance = 30
 	speed = -1
-	maxHealth = 160 
-	health = 160
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 6
+	melee_damage_upper = 15
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/nightstalker_bite.ogg'
 	speak_emote = list("growls")
@@ -111,12 +211,7 @@
 	. = ..()
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 4)
-
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 16)
-		M.adjustToxLoss(5, 0)
-	..()
+		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 6)
 
 /mob/living/simple_animal/hostile/stalker/playable/legion				
 	name = "legionstalker"
@@ -143,7 +238,7 @@
 	taunt_chance = 30
 	speed = -1
 	maxHealth = 50
-	health = 100
+	health = 50
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
@@ -182,11 +277,6 @@
 	if(. && ishuman(target))
 		var/mob/living/carbon/human/H = target
 		H.reagents.add_reagent(/datum/reagent/toxin/cazador_venom, 2)
-
-/datum/reagent/toxin/cazador_venom/on_mob_life(mob/living/M)
-	if(volume >= 20)
-		M.adjustToxLoss(5, 0)
-	..()
 
 /obj/item/clothing/head/f13/stalkerpelt
 	name = "nightstalker pelt"
@@ -229,8 +319,8 @@
 	health = 25
 	harm_intent_damage = 8
 	obj_damage = 15
-	melee_damage_lower = 7
-	melee_damage_upper = 14
+	melee_damage_lower = 4
+	melee_damage_upper = 12
 	attack_verb_simple = "bites"
 	attack_sound = 'sound/creatures/molerat_attack.ogg'
 	speak_emote = list("chitters")
@@ -241,7 +331,6 @@
 
 	emote_taunt_sound = list('sound/f13npc/molerat/taunt.ogg')
 	emote_taunt = list("hisses")
-	taunt_chance = 30
 	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'

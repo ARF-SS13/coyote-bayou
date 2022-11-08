@@ -16,14 +16,28 @@
 	response_disarm_simple = "shoves"
 	response_harm_simple = "hits"
 	move_to_delay = 3
-	stat_attack = 1
 	robust_searching = 1
-	maxHealth = 70
-	health = 70
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 40 
+	health = 40
+	emp_flags = list(
+		MOB_EMP_STUN,
+		MOB_EMP_BERSERK,
+		MOB_EMP_DAMAGE,
+		MOB_EMP_SCRAMBLE
+		)
 	healable = 0
 	mob_biotypes = MOB_ROBOTIC|MOB_INORGANIC
 	blood_volume = 0
-	faction = list("hostile", "enclave", "wastebot", "ghoul", "cazador", "supermutant", "bighorner")
+	faction = list(
+		"hostile",
+		"enclave",
+		"wastebot",
+		"ghoul",
+		"cazador",
+		"supermutant",
+		"bighorner"
+		)
 	harm_intent_damage = 8
 	melee_damage_lower = 2
 	melee_damage_upper = 3
@@ -40,21 +54,24 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/beam/laser/pistol/wattz
 	projectilesound = 'sound/weapons/resonator_fire.ogg'
-	aggrosound = list('sound/f13npc/eyebot/aggro.ogg', )
+	aggrosound = list('sound/f13npc/eyebot/aggro.ogg')
 	idlesound = list('sound/f13npc/eyebot/idle1.ogg', 'sound/f13npc/eyebot/idle2.ogg')
 	death_sound = 'sound/f13npc/eyebot/robo_death.ogg'
 	speak_emote = list("states")
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/eyebot/New()
 	..()
 	name = "ED-[rand(1,99)]"
-
-/mob/living/simple_animal/hostile/eyebot/emp_act(severity)
-	. = ..()
-	if(. & EMP_PROTECT_SELF)
-		return
-	var/emp_damage = round((maxHealth * 0.1) * (severity * 0.1)) // 10% of max HP * 10% of severity(Usually around 20-40)
-	adjustBruteLoss(emp_damage)
 
 /mob/living/simple_animal/hostile/eyebot/playable
 	ranged = FALSE
@@ -119,7 +136,6 @@
 /mob/living/simple_animal/pet/dog/eyebot/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/wuv, "beeps happily!", EMOTE_AUDIBLE)
-	AddElement(/datum/element/mob_holder, held_icon)
 
 /mob/living/simple_animal/pet/dog/eyebot/emp_act(severity)
 	. = ..()
@@ -149,11 +165,13 @@
 	name = "reinforced eyebot"
 	desc = "An eyebot with beefier protection, and extra electronic aggression."
 	color = "#B85C00"
-	maxHealth = 150
-	health = 150
+	mob_armor = ARMOR_VALUE_ROBOT_CIVILIAN
+	maxHealth = 100
+	health = 100
 	faction = list("raider", "wastebot")
 	extra_projectiles = 1
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	auto_fire_delay = GUN_AUTOFIRE_DELAY_SLOWER
+	melee_damage_lower = 5
+	melee_damage_upper = 10
 	minimum_distance = 4
 	retreat_distance = 6

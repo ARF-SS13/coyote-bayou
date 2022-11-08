@@ -85,6 +85,7 @@
 //Don't set this very much higher then 1024 unless you like inviting people in to dos your server with message spam
 #define MAX_MESSAGE_LEN			4096		//Citadel edit: What's the WORST that could happen?
 #define MAX_FLAVOR_LEN			4096
+#define MIN_FLAVOR_LEN			100
 #define MAX_TASTE_LEN			40
 #define MAX_NAME_LEN			42
 #define MAX_BROADCAST_LEN		512
@@ -99,3 +100,5 @@
 
 //Used in visible_message_flags, audible_message_flags and runechat_flags
 #define EMOTE_MESSAGE (1<<0)
+// Only show the overhead thing
+#define ONLY_OVERHEAD (1<<1)

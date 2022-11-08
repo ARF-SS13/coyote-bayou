@@ -47,68 +47,6 @@
 	STR.max_items = 14
 	STR.clickopen = TRUE
 
-/obj/item/storage/belt/waistsheath
-	name = "sword sheath"
-	desc = "A utility belt that allows a sword to be held at the hip at the cost of storage space."
-	icon_state = "sheathwaist"
-	item_state = "sheathwaist"
-	w_class = WEIGHT_CLASS_BULKY
-
-/obj/item/storage/belt/waistsheath/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 2
-	STR.rustle_sound = FALSE
-	STR.max_w_class = WEIGHT_CLASS_BULKY
-	STR.can_hold = typecacheof(list(
-		/obj/item/storage/belt/waistsheathstorage,
-		/obj/item/melee/onehanded/machete,
-		))
-
-/obj/item/storage/belt/waistsheath/examine(mob/user)
-	..()
-	if(length(contents))
-		to_chat(user, "<span class='notice'>Alt-click it to quickly draw the blade.</span>")
-
-/obj/item/storage/belt/waistsheath/AltClick(mob/user)
-	if(!iscarbon(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(length(contents))
-		var/obj/item/I = contents[2]
-		user.visible_message("[user] takes [I] out of [src].", "<span class='notice'>You take [I] out of [src].</span>")
-		user.put_in_hands(I)
-		update_icon()
-	else
-		to_chat(user, "[src] is empty.")
-
-/obj/item/storage/belt/waistsheath/update_icon()
-	icon_state = "sheathwaist"
-	item_state = "sheathwaist"
-	if(contents.len == 2)
-		icon_state += "-full"
-		item_state += "-full"
-	if(loc && isliving(loc))
-		var/mob/living/L = loc
-		L.regenerate_icons()
-	..()
-
-/obj/item/storage/belt/waistsheath/PopulateContents()
-	new /obj/item/storage/belt/waistsheathstorage(src)
-	update_icon()
-
-/obj/item/storage/belt/waistsheathstorage
-	name = "open inventory"
-	desc = "Open your belt's inventory"
-	icon_state = "open"
-	anchored = 1
-
-/obj/item/storage/belt/waistsheathstorage/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_GIGANTIC
-	STR.max_items = 5
-	STR.clickopen = TRUE
-
 /obj/item/storage/medical/ancientfirstaid
 	name = "ancient first aid box"
 	icon_state = "ancientfirstaid"
@@ -130,153 +68,6 @@
 	new /obj/item/stack/medical/ointment(src)
 	new /obj/item/stack/medical/ointment(src)
 
-/obj/item/storage/bag/casings
-	name = "casing bag"
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "bag_cases"
-	w_class = WEIGHT_CLASS_TINY
-	resistance_flags = FLAMMABLE
-	var/spam_protection = FALSE
-	var/mob/listeningTo
-
-/obj/item/storage/bag/casings/dropped(mob/user)
-	. = ..()
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	listeningTo = null
-
-/obj/item/storage/bag/casings/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 600
-	STR.max_items = 600
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing))
-	STR.cant_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
-
-/obj/item/storage/bag/casings/equipped(mob/user)
-	. = ..()
-	if(listeningTo == user)
-		return
-	if(listeningTo)
-		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/Pickup_casings)
-	listeningTo = user
-
-
-/obj/item/storage/bag/casings/proc/Pickup_casings(mob/living/user)
-	var/show_message = FALSE
-	var/turf/tile = user.loc
-	var/obj/item/ammo_casing/B
-	if (!isturf(tile))
-		return
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		for(var/A in tile)
-			if (is_type_in_typecache(A, STR.can_hold))
-				B = A
-				if(B.is_pickable)
-					if(SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, A, user, TRUE))
-						show_message = TRUE
-					else
-						if(!spam_protection)
-							to_chat(user, "<span class='warning'>Your [name] is full and can't hold any more!</span>")
-							spam_protection = TRUE
-							continue
-				else
-					continue
-			else
-				continue
-	if(show_message)
-		playsound(user, "rustle", 50, TRUE)
-		user.visible_message("<span class='notice'>[user] scoops up the casings beneath [user.p_them()].</span>", \
-			"<span class='notice'>You scoop up the casings beneath you with your [name].</span>")
-	spam_protection = FALSE
-
-/obj/item/storage/bag/tribe_quiver
-	name = "tribal quiver"
-	desc = "A simple leather quiver designed for holding arrows."
-	icon = 'icons/obj/clothing/belts.dmi'
-	icon_state = "tribal_quiver"
-	item_state = "tribal_quiver"
-
-/obj/item/storage/bag/tribe_quiver/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 30
-	STR.can_hold = typecacheof(list(/obj/item/ammo_casing/caseless/arrow))
-	STR.max_w_class = 3
-	STR.max_combined_w_class = 100
-
-/obj/item/storage/bag/tribe_quiver/PopulateContents()
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-	new /obj/item/ammo_casing/caseless/arrow(src)
-
-/obj/item/storage/bag/tribe_quiver/AltClick(mob/living/carbon/user)
-	. = ..()
-	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
-		return
-	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
-		return
-	var/obj/item/ammo_casing/caseless/arrow/L = locate() in contents
-	if(L)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
-		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take \a [L] out of the quiver.</span>")
-		return TRUE
-	var/obj/item/ammo_casing/caseless/W = locate() in contents
-	if(W && contents.len > 0)
-		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
-		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take \a [W] out of the quiver.</span>")
-	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
-	return TRUE
-
-//Bone Arrow Quiver
-/obj/item/storage/bag/tribe_quiver/bone
-	name = "hunters quiver"
-	desc = "A simple leather quiver designed for holding arrows, this one seems to hold deadlier arrows for hunting."
-	
-
-/obj/item/storage/bag/tribe_quiver/bone/PopulateContents()
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-
-//Archer Quiver so the Far-Lands Archer doesn't start with two quivers
-/obj/item/storage/bag/tribe_quiver/archer
-	name = "archers quiver"
-
-/obj/item/storage/bag/tribe_quiver/archer/PopulateContents()
-	. = ..()
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-	new /obj/item/ammo_casing/caseless/arrow/bone(src)
-
-/obj/item/storage/bag/trash/sack
-	name = "leather sack"
-	desc = "A sack made out of rough leathers. It's probably not filled with gifts."
-	icon = 'icons/obj/storage.dmi'
-	icon_state = "sack"
-	item_state = "sack"
 
 /*
  * Ration boxes
@@ -284,7 +75,8 @@
 
 /obj/item/storage/box/ration
 	name = "c-ration box"
-	desc = "A box containing canned rations, issued to New California Republic Army personnel."
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		So delicious that someone already ate the contents. Drat!"
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "c-ration"
 	illustration = null
@@ -297,7 +89,9 @@
 		icon_state = initial(icon_state)
 
 /obj/item/storage/box/ration/menu_one
-	name = "c-ration box - 'Menu 1'"
+	name = "c-ration box - 'BRAWNY BRAHMIN BBQ BURNOUT'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: DISCOUNT DAN'S BRAWNY BRAHMIN BBQ BURNOUT -- DEEEELICOUS BRAHMIN BBQ CHILI AND JERKY FRESH FROM THE GIRL, CHASE IT DOWN WITH SOME POP AND SMOKES!"
 
 /obj/item/storage/box/ration/menu_one/PopulateContents()
 	. = ..()
@@ -312,10 +106,11 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_two
-	name = "c-ration box - 'Menu 2'"
+	name = "c-ration box - 'Sausage Party'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Salacious Dan's Sausage Party -- The BIGGEST of bighorner sausage with the FRUITEST of mutfruit glaze team up for a party your mouth won't forget!"
 
 /obj/item/storage/box/ration/menu_two/PopulateContents()
-	name = "c-ration box - 'Menu 2'"
 	. = ..()
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/bighorner_sausage(src)
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/candied_mutfruit(src)
@@ -328,7 +123,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_three
-	name = "c-ration box - 'Menu 3'"
+	name = "c-ration box - 'Lipsmackin Sweetguana Stew'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Lipsmackin' Sweetguana Stew -- Still drippin' lowestland iguana fixins marinaded in Viscount Varney's Select Choco-Tastic!"
 
 /obj/item/storage/box/ration/menu_three/PopulateContents()
 	. = ..()
@@ -343,7 +140,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_four
-	name = "c-ration box - 'Menu 4'"
+	name = "c-ration box - 'Woodman Wildberry Bash'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Woodman Wildberry Bash -- Charbroiled firetail radstag steak, well-done, with a side of CRAN-berry cobbler for the manliest of hunters!"
 
 /obj/item/storage/box/ration/menu_four/PopulateContents()
 	. = ..()
@@ -358,7 +157,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_five
-	name = "c-ration box - 'Menu 5'"
+	name = "c-ration box - 'Squeakiepie Snacktime'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Squeakiepie Snacktime -- Sweet'n'sour squeaker stew, now with our patented FlavorMax Swizzlestick!"
 
 /obj/item/storage/box/ration/menu_five/PopulateContents()
 	. = ..()
@@ -373,7 +174,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_six
-	name = "c-ration box - 'Menu 6'"
+	name = "c-ration box - 'Hunnyglazed Hillhogger'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Hunnyglazed Hillhogger -- The tightest cuts of the 'hog so tender they're dripping off her eggs!"
 
 /obj/item/storage/box/ration/menu_six/PopulateContents()
 	. = ..()
@@ -388,7 +191,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_seven
-	name = "c-ration box - 'Menu 7'"
+	name = "c-ration box - 'Deluxe Dan w/ Cheez'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Discount Dan's Deluxe Dan w/ Cheez -- Charbroiled 100%* Grade-A* Prime* Brahmin* cheeseburger* with all* the fix'ns!"
 
 /obj/item/storage/box/ration/menu_seven/PopulateContents()
 	. = ..()
@@ -403,7 +208,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_eight
-	name = "c-ration box - 'Menu 8'"
+	name = "c-ration box - 'Responsible Risotto'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Vegan Dan's Responsible Risotto -- All natural guilt-free soup with a side of free-range mountain-fresh CRAN-berry cobbler!"
 
 /obj/item/storage/box/ration/menu_eight/PopulateContents()
 	. = ..()
@@ -418,11 +225,13 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_nine
-	name = "c-ration box - 'Menu 9'"
+	name = "c-ration box - 'Fillet o' Fillette'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Fisherman Dan's Fillet o' Fillette -- Fresh mirelurk Fillette, brined in all-natural Squeeze!"
 
 /obj/item/storage/box/ration/menu_nine/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/mirelurk_filets(src)
 	new /obj/item/reagent_containers/food/snacks/chocolatebar(src)
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/crackers(src)
 	new /obj/item/reagent_containers/food/snacks/sosjerky/ration(src)
@@ -433,7 +242,10 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_ten
-	name = "c-ration box - 'Menu 10'"
+	name = "c-ration box - 'Bearballs'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Bearballs -- FRESH BEAR BALLS TIGHT PACKED BEAR BALLS HARD AND MEATY BEAR BALLS DELICIOUS AND TASTY"
+
 /obj/item/storage/box/ration/menu_ten/PopulateContents()
 	. = ..()
 	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/yaoguai_meatballs(src)
@@ -447,7 +259,9 @@
 	new /obj/item/reagent_containers/food/condiment/pack/bbqsauce(src)
 
 /obj/item/storage/box/ration/menu_eleven
-	name = "c-ration box - 'Menu 11'"
+	name = "c-ration box - 'Hotdawg Cookout'"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Forrester Dan's Hotdawg Cookout -- Dignified foot+ brahminlongs just looking for a campfire!"
 
 /obj/item/storage/box/ration/menu_eleven/PopulateContents()
 	. = ..()
@@ -464,6 +278,8 @@
 /obj/item/storage/box/ration/ranger_breakfast
 	name = "k-ration breakfast"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's Intercontinental Brahminfast Mealtime -- Start your march off right with spicy brahmin eggy tripe!"
 
 /obj/item/storage/box/ration/ranger_breakfast/PopulateContents()
 	. = ..()
@@ -482,10 +298,12 @@
 /obj/item/storage/box/ration/ranger_lunch
 	name = "k-ration lunch"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's Lunch Rush Assault-Dining -- AlwaysHot shredded brahmin enchiladas!"
 
 /obj/item/storage/box/ration/ranger_lunch/PopulateContents()
 	. = ..()
-	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/breakfast(src)
+	new /obj/item/reagent_containers/food/snacks/f13/canned/ncr/lunch(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
 	new /obj/item/reagent_containers/food/snacks/cracker/k_ration(src)
@@ -499,6 +317,8 @@
 /obj/item/storage/box/ration/ranger_dinner
 	name = "k-ration dinner"
 	icon_state = "k-ration"
+	desc = "A box containing canned rations, guaranteed to stay technically edible for the next 4.1 quadrillion years. \
+		The side reads: Ranger Dan's March On To Dinner -- PROtien packed brahlogna loaf, perfect to wind down an operation!"
 
 /obj/item/storage/box/ration/ranger_dinner/PopulateContents()
 	. = ..()
@@ -525,7 +345,7 @@
 // -----------------------------------
 // STIMPAK BOX
 
-/obj/item/storage/box/medicine/stimpaks/stimpaks5 
+/obj/item/storage/box/medicine/stimpaks/stimpaks5
 	name = "box of stimpaks"
 	desc = "A box full of stimpaks."
 

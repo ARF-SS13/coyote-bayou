@@ -39,7 +39,7 @@
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			if(M.mind && HAS_TRAIT(M.mind, TRAIT_LAW_ENFORCEMENT_METABOLISM) && !HAS_TRAIT(H, TRAIT_AGEUSIA))
-				to_chat(H,"<span class='notice'>I love this taste!</span>")
+				to_chat(H,span_notice("I love this taste!"))
 				H.adjust_disgust(-5 + -2.5 * fraction)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food)
 				last_check_time = world.time
@@ -774,11 +774,11 @@
 	if(istype(I, /obj/item/reagent_containers/food/snacks/pancakes/))
 		var/obj/item/reagent_containers/food/snacks/pancakes/P = I
 		if((contents.len >= PANCAKE_MAX_STACK) || ((P.contents.len + contents.len) > PANCAKE_MAX_STACK) || (reagents.total_volume >= volume))
-			to_chat(user, "<span class='warning'>You can't add that many pancakes to [src]!</span>")
+			to_chat(user, span_warning("You can't add that many pancakes to [src]!"))
 		else
 			if(!user.transferItemToLoc(I, src))
 				return
-			to_chat(user, "<span class='notice'>You add the [I] to the [name].</span>")
+			to_chat(user, span_notice("You add the [I] to the [name]."))
 			P.name = initial(P.name)
 			contents += P
 			update_snack_overlays(P)
@@ -811,3 +811,43 @@
 	update_icon()
 
 #undef PANCAKE_MAX_STACK
+
+/obj/item/reagent_containers/food/snacks/peanut_butter
+	name = "peanut butter cookie"
+	desc = "A tasty, chewy peanut butter cookie."
+	icon_state = "peanut_butter_cookie"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/peanut_butter = 5)
+	tastes = list("peanut butter" = 2, "cookie" = 1)
+	foodtype = GRAIN | JUNKFOOD
+
+/obj/item/reagent_containers/food/snacks/raw_brownie_batter
+	name = "raw brownie batter"
+	desc = "A sticky mixture of raw brownie batter, cook it in the oven!"
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "raw_brownie_batter"
+	cooked_type = /obj/item/reagent_containers/food/snacks/brownie_sheet
+	list_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("raw brownie batter" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR | BREAKFAST
+
+/obj/item/reagent_containers/food/snacks/brownie_sheet
+	name = "brownie sheet"
+	desc = "An uncut sheet of cooked brownie, use a knife to cut it!."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "brownie_sheet"
+	slice_path = /obj/item/reagent_containers/food/snacks/brownie
+	slices_num = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 20, /datum/reagent/consumable/sugar = 12)
+	tastes = list("brownie" = 1, "chocolatey goodness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/brownie
+	name = "brownie"
+	desc = "A square slice of delicious, chewy brownie. Often the target of potheads."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "brownie"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sugar = 3)
+	tastes = list("brownie" = 1, "chocolatey goodness" = 1)
+	foodtype = GRAIN | JUNKFOOD | SUGAR
+	w_class = WEIGHT_CLASS_SMALL

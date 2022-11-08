@@ -28,12 +28,12 @@
 				armed = 1
 				if(!user.put_in_hands(gun))
 					armed = 0
-					to_chat(user, "<span class='warning'>You need a free hand to hold the gun!</span>")
+					to_chat(user, span_warning("You need a free hand to hold the gun!"))
 					return
 				update_icon()
 				user.update_inv_back()
 		else
-			to_chat(user, "<span class='warning'>You are already holding the gun!</span>")
+			to_chat(user, span_warning("You are already holding the gun!"))
 	else
 		..()
 
@@ -77,9 +77,9 @@
 	gun.forceMove(src)
 	armed = 0
 	if(user)
-		to_chat(user, "<span class='notice'>You attach the [gun.name] to the [name].</span>")
+		to_chat(user, span_notice("You attach the [gun.name] to the [name]."))
 	else
-		src.visible_message("<span class='warning'>The [gun.name] snaps back onto the [name]!</span>")
+		src.visible_message(span_warning("The [gun.name] snaps back onto the [name]!"))
 	update_icon()
 	user.update_inv_back()
 
@@ -116,6 +116,16 @@
 	casing_ejector = TRUE
 	item_flags = SLOWS_WHILE_IN_HAND
 	var/obj/item/minigunpackbal5mm/ammo_pack
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/minigunbal5mm/Initialize()
 	if(istype(loc, /obj/item/minigunpackbal5mm)) //We should spawn inside an ammo pack so let's use that one.

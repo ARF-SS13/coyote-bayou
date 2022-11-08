@@ -2,51 +2,6 @@
 	category = LOADOUT_CATEGORY_HANDS
 	slot = SLOT_HANDS
 
-/datum/gear/hands/backpack
-	name = "hiking backpack"
-	path = /obj/item/storage/backpack/old
-	cost = 3
-
-/datum/gear/hands/backpack/duffel
-	name = "duffelbag"
-	path = /obj/item/storage/backpack/duffelbag
-
-/datum/gear/hands/backpack/explorer
-	name = "explorer backpack"
-	path = /obj/item/storage/backpack/explorer
-
-/datum/gear/hands/backpack/explorer/satchel
-	name = "explorer satchel"
-	path = /obj/item/storage/backpack/satchel/explorer
-
-/datum/gear/hands/backpack/trekker
-	name = "trekker backpack"
-	path = /obj/item/storage/backpack/trekker
-
-
-/datum/gear/hands/backpack/trekker/satchel
-	name = "trekker satchel"
-	path = /obj/item/storage/backpack/satchel/trekker
-
-/datum/gear/hands/backpack/sec
-	name = "security backpack"
-	path = /obj/item/storage/backpack/security
-	cost = 4
-
-/datum/gear/hands/backpack/sec/satchel
-	name = "security satchel"
-	path = /obj/item/storage/backpack/satchel/sec
-
-/datum/gear/hands/backpack/trophy
-	name = "trophy rack"
-	path = /obj/item/storage/backpack/cultpack
-	cost = 3
-
-/datum/gear/hands/backpack/old
-	name = "old satchel"
-	path = /obj/item/storage/backpack/satchel/old
-	cost = 3 
-
 /datum/gear/hands/briefcase/crafted
 	name = "briefcase"
 	path = /obj/item/storage/briefcase/crafted
@@ -56,34 +11,6 @@
 	name = "rusty blue toolbox"
 	path = /obj/item/storage/toolbox/mechanical/old
 	cost = 2
-
-/datum/gear/hands/backpack/legionr
-	name = "legion red cape backpack"
-	path = /obj/item/storage/backpack/legionr
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
-
-/datum/gear/hands/backpack/legionb
-	name = "legion black cape backpack"
-	path = /obj/item/storage/backpack/legionb
-	cost = 2
-	restricted_desc = "Legion Veteran+"
-	restricted_roles = list("Legion Orator",
-							"Legion Centurion",
-							"Legion Veteran Decanus",
-							"Legion Prime Decanus",
-							"Legion Recruit Decanus",
-							"Legion Vexillarius",
-							"Veteran Legionnaire"
-						)
 
 /datum/gear/hands/cane
 	name = "cane"
@@ -104,6 +31,29 @@
 /datum/gear/hands/matches
 	name = "matchbox"
 	path = /obj/item/storage/box/matches
+
+/datum/gear/hands/silver_ring
+	name = "Silver Ring"
+	path = /obj/item/clothing/gloves/ring/silver
+
+/datum/gear/hands/gold_ring
+	name = "Gold Ring"
+	path = /obj/item/clothing/gloves/ring
+
+/datum/gear/hands/plasma_ring
+	name = "Plasma Ring"
+	path = /obj/item/clothing/gloves/ring/plasma
+	cost = 2
+
+/datum/gear/hands/diamond_ring
+	name = "Diamond Ring"
+	path = /obj/item/clothing/gloves/ring/diamond
+	cost = 3 //swapped the plasma/diamond ring around. Should go Plasma > Diamond > bluespace anyhow.
+
+/datum/gear/hands/bluespace_ring
+	name = "Bluespace Ring"
+	path = /obj/item/clothing/gloves/ring/bluespace
+	cost = 4 //as with the diamond ring, but larger. Hence the higher cost comparitavely.
 
 /datum/gear/hands/cheaplighter
 	name = "cheap lighter"
@@ -158,6 +108,25 @@
 	name = "black lipstick"
 	path = /obj/item/lipstick/black
 
+/datum/gear/hands/carpetdelivery
+	name = "Carpet Delivery Service"
+	path = /obj/item/choice_beacon/box/carpet
+	cost = 2
+
 /datum/gear/hands/livestockdelivery
-	name = "Livestock Delivery Service"
+	name = "Pet Delivery Service"
 	path = /obj/item/choice_beacon/pet
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+	cost = 2
+
+/datum/gear/hands/plushiedelivery
+	name = "Plushie Delivery Service"
+	path = /obj/item/choice_beacon/box/plushie
+	cost = 3

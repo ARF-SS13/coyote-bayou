@@ -904,7 +904,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/detectives_office
 	name = "Detective's Office"
 	icon_state = "detective"
-	ambientsounds = list('sound/ambience/ambidet1.ogg','sound/ambience/ambidet2.ogg')
+	ambientsounds = list(
+		AREA_SOUND('sound/ambience/ambidet1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambidet2.ogg', 10 SECONDS))
 
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"
@@ -1292,7 +1294,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	//Turret_protected
 
 /area/ai_monitored/turret_protected
-	ambientsounds = list('sound/ambience/ambimalf.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg')
+	ambientsounds = list(
+		AREA_SOUND('sound/ambience/ambimalf.ogg', 10 SECONDS), 
+		AREA_SOUND('sound/ambience/ambitech.ogg', 10 SECONDS), 
+		AREA_SOUND('sound/ambience/ambitech2.ogg', 10 SECONDS), 
+		AREA_SOUND('sound/ambience/ambiatmos.ogg', 10 SECONDS), 
+		AREA_SOUND('sound/ambience/ambiatmos2.ogg', 10 SECONDS))
 
 /area/ai_monitored/turret_protected/ai_upload
 	name = "AI Upload Chamber"
@@ -1356,8 +1363,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/tcommsat
 	clockwork_warp_allowed = FALSE
 	clockwork_warp_fail = "For safety reasons, warping here is disallowed; the radio and bluespace noise could cause catastrophic results."
-	ambientsounds = list('sound/ambience/ambisin2.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/signal.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambitech.ogg',\
-											'sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg', 'sound/ambience/ambimystery.ogg')
+	ambientsounds = list(
+		AREA_SOUND('sound/ambience/ambisin2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/signal.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/signal.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambigen10.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambitech.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambitech2.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambitech3.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambimystery.ogg', 10 SECONDS))
 
 /area/tcommsat/entrance
 	name = "Telecomms Teleporter"
@@ -1412,7 +1426,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/crew_quarters/lounge/jazz
 	name = "Jazz Lounge"
 	icon_state = "yellow"
-	ambientsounds = list('sound/ambience/ambidet1.ogg','sound/ambience/ambidet2.ogg')
+	ambientsounds = list(
+		AREA_SOUND('sound/ambience/ambidet1.ogg', 10 SECONDS),
+		AREA_SOUND('sound/ambience/ambidet2.ogg', 10 SECONDS))
 	nightshift_public_area = NIGHTSHIFT_AREA_RECREATION
 
 
@@ -1632,13 +1648,17 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	power_equip = FALSE
 	outdoors = TRUE
 	lightswitch = FALSE //no. just no
-	ambientsounds = list('sound/f13ambience/wasteland.ogg', 'sound/f13ambience/sewer.ogg')
+	ambientsounds = list(
+		AREA_SOUND('sound/f13ambience/wasteland.ogg', 10 SECONDS),
+		AREA_SOUND('sound/f13ambience/sewers.ogg', 10 SECONDS))
 	flags_1 = NONE //>desert >>has destroyed robo dirt on it
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/sunny_dale
 	name = "Sunny Dale"
 	icon_state = "sunny_dale"
 	requires_power = TRUE
+	weather_tags = list(WEATHER_ALL)
 
 /area/f13/ncr_main
 	name = "NCR Mainbase"
@@ -1698,7 +1718,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/f13/underground/enclave_base
 	name = "Enclave Base"
 	icon_state = "enclave_base"
-	ambientsounds = list('sound/f13ambience/enclave_vault.ogg')
+	ambientsounds = list(AREA_SOUND('sound/f13ambience/enclave_vault.ogg', 10 SECONDS))
 
 /area/f13/den
 	name = "Den"
@@ -1708,19 +1728,19 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Overseer's Office"
 	icon_state = "overseer_office"
 	requires_power = TRUE
-	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+	ambientsounds = list(AREA_SOUND('sound/f13ambience/vaulttec_vault.ogg', 10 SECONDS))
 
 /area/f13/underground/vault_atrium_upper
 	name = "Vault Atrium Upper"
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
-	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+	ambientsounds = list(AREA_SOUND('sound/f13ambience/vaulttec_vault.ogg', 10 SECONDS))
 
 /area/f13/underground/vault_atrium_Lower
 	name = "Vault Atrium Lower"
 	icon_state = "vault_atrium_upper"
 	requires_power = TRUE
-	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+	ambientsounds = list(AREA_SOUND('sound/f13ambience/vaulttec_vault.ogg', 10 SECONDS))
 
 /area/shuttle/vault_elevator
 	name = "Vault Elevator"
@@ -1753,7 +1773,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/shuttle/vault113_elevator
 	name = "Vault 113 Elevator"
 
-	ambientsounds = list('sound/f13ambience/vaulttec_vault.ogg')
+	ambientsounds = list(AREA_SOUND('sound/f13ambience/vaulttec_vault.ogg', 10 SECONDS))
 
 /area/shuttle/mining_elevator
 	name = "Mining Elevator"

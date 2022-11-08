@@ -1,7 +1,5 @@
 // In this document: Fermenting barrels, compost bin, loom, seed extractor
 
-#define SPAN_WARNING
-#define SPAN_NOTICE
 #define FABRIC_PER_SHEET 4
 
 ///////////////////////
@@ -31,41 +29,55 @@
 
 /obj/structure/fermenting_barrel/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]</span>"
+	. += span_notice("It is currently [open?"open, letting you pour liquids in.":"closed, letting you draw liquids from the tap."]")
 
-/obj/structure/fermenting_barrel/proc/makeWine(obj/item/reagent_containers/food/snacks/grown/fruit)
-	var/amount = fruit.seed.potency / 4
-	if(fruit.distill_reagent)
-		reagents.add_reagent(fruit.distill_reagent, amount)
-	else
-		var/data = list()
-		data["names"] = list("[initial(fruit.name)]" = 1)
-		data["color"] = fruit.filling_color
-		data["boozepwr"] = fruit.wine_power
-		if(fruit.wine_flavor)
-			data["tastes"] = list(fruit.wine_flavor = 1)
+/obj/structure/fermenting_barrel/proc/makeWine(list/obj/item/reagent_containers/food/snacks/grown/fruits)
+	for(var/obj/item/reagent_containers/food/snacks/grown/fruit in fruits)
+		var/amount = fruit.seed.potency / 4
+		if(fruit.distill_reagent)
+			reagents.add_reagent(fruit.distill_reagent, amount)
 		else
-			data["tastes"] = list(fruit.tastes[1] = 1)
-		reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
-	qdel(fruit)
+			var/data = list()
+			data["names"] = list("[initial(fruit.name)]" = 1)
+			data["color"] = fruit.filling_color
+			data["boozepwr"] = fruit.wine_power
+			if(fruit.wine_flavor)
+				data["tastes"] = list(fruit.wine_flavor = 1)
+			else
+				data["tastes"] = list(fruit.tastes[1] = 1)
+			reagents.add_reagent(/datum/reagent/consumable/ethanol/fruit_wine, amount, data)
+		qdel(fruit)
 	playsound(src, 'sound/effects/bubbles.ogg', 50, TRUE)
 
 /obj/structure/fermenting_barrel/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/food/snacks/grown/fruit = I
 	if(istype(fruit))
 		if(!fruit.can_distill)
-			to_chat(user, "<span class='warning'>You can't distill this into anything...</span>")
+			to_chat(user, span_warning("You can't ferment this into anything..."))
 			return TRUE
 		else if(!user.transferItemToLoc(I,src))
-			to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+			to_chat(user, span_warning("[I] is stuck to your hand!"))
 			return TRUE
-		to_chat(user, "<span class='notice'>You place [I] into [src] to start the fermentation process.</span>")
-		addtimer(CALLBACK(src, .proc/makeWine, fruit), rand(80, 120) * speed_multiplier)
+		to_chat(user, span_notice("You place [I] into [src] to start the fermentation process."))
+		addtimer(CALLBACK(src, .proc/makeWine, list(fruit)), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
 		return TRUE
-	var/obj/item/W = I
-	if(W)
-		if(W.is_refillable())
-			return FALSE //so we can refill them via their afterattack.
+	else if(SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && do_after(user, 2 SECONDS, target = src))
+		var/list/storage_contents = list()
+		SEND_SIGNAL(I, COMSIG_TRY_STORAGE_RETURN_INVENTORY, storage_contents)
+		var/list/fruits = list()
+		for(var/obj/item in storage_contents)
+			fruit = item
+			if(!istype(fruit) || !fruit.can_distill || !SEND_SIGNAL(I, COMSIG_TRY_STORAGE_TAKE, fruit, src))
+				continue
+			fruits += fruit
+		if (length(fruits))
+			addtimer(CALLBACK(src, .proc/makeWine, fruits), rand(8 SECONDS, 12 SECONDS) * speed_multiplier)
+			to_chat(user, span_notice("You fill \the [src] from \the [I] and start the fermentation process."))
+		else
+			to_chat(user, span_warning("There's nothing in \the [I] that you can ferment!"))
+		return TRUE
+	if(I?.is_refillable())
+		return FALSE //so we can refill them via their afterattack.
 	else
 		return ..()
 
@@ -74,11 +86,11 @@
 	if(open)
 		DISABLE_BITFIELD(reagents.reagents_holder_flags, DRAINABLE)
 		ENABLE_BITFIELD(reagents.reagents_holder_flags, REFILLABLE)
-		to_chat(user, "<span class='notice'>You open [src], letting you fill it.</span>")
+		to_chat(user, span_notice("You open [src], letting you fill it."))
 	else
 		DISABLE_BITFIELD(reagents.reagents_holder_flags, REFILLABLE)
 		ENABLE_BITFIELD(reagents.reagents_holder_flags, DRAINABLE)
-		to_chat(user, "<span class='notice'>You close [src], letting you draw from its tap.</span>")
+		to_chat(user, span_notice("You close [src], letting you draw from its tap."))
 	update_icon()
 
 /obj/structure/fermenting_barrel/update_icon_state()
@@ -119,17 +131,17 @@
 	if(!istype(W))
 		return FALSE
 	if(!anchored)
-		user.show_message(SPAN_NOTICE("The loom needs to be wrenched down."), MSG_VISUAL)
+		user.show_message(span_notice("The loom needs to be wrenched down."), MSG_VISUAL)
 		return FALSE
 	if(W.amount < FABRIC_PER_SHEET)
-		user.show_message(SPAN_NOTICE("You need at least [FABRIC_PER_SHEET] units of fabric before using this."), MSG_VISUAL)
+		user.show_message(span_notice("You need at least [FABRIC_PER_SHEET] units of fabric before using this."), MSG_VISUAL)
 		return FALSE
-	user.show_message(SPAN_NOTICE("You start weaving \the [W.name] through the loom.."), MSG_VISUAL)
+	user.show_message(span_notice("You start weaving \the [W.name] through the loom.."), MSG_VISUAL)
 	if(W.use_tool(src, user, W.pull_effort))
 		if(W.amount >= FABRIC_PER_SHEET)
-			new W.loom_result(drop_location())
-			W.use(FABRIC_PER_SHEET)
-			user.show_message(SPAN_NOTICE("You weave \the [W.name] into a workable fabric."), MSG_VISUAL)
+			new W.loom_result(drop_location(), round(W.amount / FABRIC_PER_SHEET))
+			W.use(W.amount - W.amount % FABRIC_PER_SHEET)
+			user.show_message(span_notice("You weave \the [W.name] into a workable fabric."), MSG_VISUAL)
 	return TRUE
 
 
@@ -165,20 +177,20 @@
 	if(W.is_refillable())
 		return 0 //so we can refill them via their afterattack.
 	if(reagents.total_volume == tank_volume)
-		to_chat(user,"<span class='warning'>The [src] is filled to capacity!</span>")
+		to_chat(user,span_warning("The [src] is filled to capacity!"))
 		return
 	if(istype(W, /obj/item/seeds) || istype(W, /obj/item/reagent_containers/food/snacks/grown))
 		if(user.transferItemToLoc(W, src))
-			to_chat(user, "<span class='notice'>You load the [W] into the [src].</span>")
+			to_chat(user, span_notice("You load the [W] into the [src]."))
 			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 			process_compost()
 		else
-			to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
+			to_chat(user, span_warning("That's not compostable! Try organic foods instead."))
 	else if(istype(W, /obj/item/storage/bag/plants))
 		var/obj/item/storage/bag/plants/PB = W
 		for(var/obj/item/G in PB.contents)// This check can be less than thorough because the bag has already authenticated the contents, hopefully
 			if(SEND_SIGNAL(PB, COMSIG_TRY_STORAGE_TAKE, G, src))
-				to_chat(user, "<span class='info'>You empty the [PB] into the [src].</span>")
+				to_chat(user, span_info("You empty the [PB] into the [src]."))
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
 	else if(istype(W, /obj/item/reagent_containers/food))
@@ -186,13 +198,13 @@
 		// Check if the food is good for compost
 		if(CHECK_BITFIELD(F.foodtype, (GRAIN | FRUIT | VEGETABLES | PINEAPPLE)) && !CHECK_BITFIELD(F.foodtype, (MEAT | DAIRY | TOXIC)))
 			if(user.transferItemToLoc(W, src))
-				to_chat(user, "<span class='notice'>You load the [W] into the [src].</span>")
+				to_chat(user, span_notice("You load the [W] into the [src]."))
 				playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
 				process_compost()
 			else
-				to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
+				to_chat(user, span_warning("That's not compostable! Try organic foods instead."))
 		else
-			to_chat(user, "<span class='warning'>That's not compostable! Try organic foods instead.</span>")
+			to_chat(user, span_warning("That's not compostable! Try organic foods instead."))
 
 /obj/structure/reagent_dispensers/compostbin/proc/process_compost()
 	for(var/obj/item/C in contents)
@@ -239,53 +251,64 @@
 	pass_flags = LETPASSTHROW
 	pass_flags_self = PASSTABLE | LETPASSTHROW
 
-/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, obj/structure/legion_extractor/extractor, mob/living/user)
+/obj/structure/legion_extractor/proc/seedify(obj/item/O, t_max, mob/living/user)
 	var/t_amount = 0
-	var/list/seeds = list()
 	if(t_max == -1)
 		t_max = rand(1,2) //Slightly worse than the actual thing
 
-	var/seedloc = O.loc
-	if(extractor)
-		seedloc = extractor.loc
+	var/atom/seedloc = src.drop_location()
 
 	if(istype(O, /obj/item/reagent_containers/food/snacks/grown/))
 		var/obj/item/reagent_containers/food/snacks/grown/F = O
 		if(F.seed)
 			if(user && !user.temporarilyRemoveItemFromInventory(O)) //couldn't drop the item
 				return
-			while(t_amount < t_max)
-				var/obj/item/seeds/t_prod = F.seed.Copy()
-				seeds.Add(t_prod)
-				t_prod.forceMove(seedloc)
-				t_amount++
-			qdel(O)
-			return seeds
-
-	else if(istype(O, /obj/item/grown))
-		var/obj/item/grown/F = O
-		if(F.seed)
-			if(user && !user.temporarilyRemoveItemFromInventory(O))
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null)) // couldn't remove from storage
 				return
 			while(t_amount < t_max)
 				var/obj/item/seeds/t_prod = F.seed.Copy()
 				t_prod.forceMove(seedloc)
 				t_amount++
 			qdel(O)
-		return 1
-
-	return 0
+	else if(istype(O, /obj/item/grown))
+		var/obj/item/grown/F = O
+		if(F.seed)
+			if(user && !user.temporarilyRemoveItemFromInventory(O))
+				return
+			if (SEND_SIGNAL(O.loc, COMSIG_CONTAINS_STORAGE) && !SEND_SIGNAL(O.loc, COMSIG_TRY_STORAGE_TAKE, O, null))
+				return
+			while(t_amount < t_max)
+				var/obj/item/seeds/t_prod = F.seed.Copy()
+				t_prod.forceMove(seedloc)
+				t_amount++
+			qdel(O)
+	return t_amount
 
 /obj/structure/legion_extractor/attackby(obj/item/O, mob/user, params)
-
 	if(default_unfasten_wrench(user, O)) //So we can move them around
 		return
-
-	else if(seedify(O,-1, src, user))
-		to_chat(user, SPAN_NOTICE("You extract some seeds."))
+	else if(istype(O, /obj/item/storage/bag/plants))
+		var/obj/item/storage/bag/plants/PB = O
+		if(!PB.contents.len)
+			to_chat(user, span_warning("There's nothing in \the [PB]!"))
+			return
+		to_chat(user, span_info("You start to empty \the [PB] into \the [src]."))
+		var/count = 0
+		if(!do_after(user, 2 SECONDS, target = src))
+			return
+		for(var/obj/item/G in PB.contents)
+			count += seedify(G, -1, user) // seedify handles removing applicable items from storage
+		if(count > 0)
+			to_chat(user, span_info("You empty \the [PB] into \the [src]."))
+			playsound(loc, 'sound/effects/blobattack.ogg', 25, 1, -1)
+		else
+			to_chat(user, span_warning("You can't extract seeds from anything in \the [PB]!"))
+		return
+	else if(seedify(O, -1, user))
+		to_chat(user, span_notice("You extract some seeds."))
 		return
 	else if(user.a_intent != INTENT_HARM)
-		to_chat(user, SPAN_WARNING("You can't extract any seeds from \the [O.name]!"))
+		to_chat(user, span_warning("You can't extract any seeds from \the [O]!"))
 	else
 		return ..()
 
@@ -328,8 +351,3 @@
 		return TRUE
 	to_chat(user, span_warning("You have to stand still to churn butter!"))
 	return TRUE
-	
-
-#undef FABRIC_PER_SHEET
-#undef SPAN_WARNING
-#undef SPAN_NOTICE

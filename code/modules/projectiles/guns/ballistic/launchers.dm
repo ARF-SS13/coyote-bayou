@@ -9,9 +9,20 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	init_mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	weapon_weight = GUN_ONE_HAND_ONLY
 	pin = /obj/item/firing_pin
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(null),
+		SP_DISTANT_RANGE(null)
+	)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/attackby(obj/item/A, mob/user, params)
 	..()
@@ -34,6 +45,7 @@
 	desc = "A prototype pistol designed to fire self propelled rockets."
 	icon_state = "gyropistol"
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+	slot_flags = ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/m75
 	init_mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
@@ -49,6 +61,7 @@
 	desc = "A weapon favored by carp hunters. Fires specialized spears using kinetic energy."
 	icon_state = "speargun"
 	item_state = "speargun"
+	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	can_suppress = FALSE
@@ -71,7 +84,7 @@
 /obj/item/gun/ballistic/automatic/speargun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
-		to_chat(user, "<span class='notice'>You load [num_loaded] spear\s into \the [src].</span>")
+		to_chat(user, span_notice("You load [num_loaded] spear\s into \the [src]."))
 		update_icon()
 		chamber_round()
 
@@ -114,20 +127,20 @@
 		if(AC)
 			if(!user.put_in_hands(AC))
 				AC.bounce_away(FALSE, NONE)
-			to_chat(user, "<span class='notice'>You remove \the [AC] from \the [src]!</span>")
+			to_chat(user, span_notice("You remove \the [AC] from \the [src]!"))
 			playsound(src, 'sound/weapons/gun_magazine_remove_full.ogg', 70, TRUE)
 			chambered = null
 		else
-			to_chat(user, "<span class='notice'>There's no [magazine_wording] in [src].</span>")
+			to_chat(user, span_notice("There's no [magazine_wording] in [src]."))
 	update_icon()
 
 /obj/item/gun/ballistic/rocketlauncher/attackby(obj/item/A, mob/user, params)
 	if(magazine && istype(A, /obj/item/ammo_casing))
 		if(chambered)
-			to_chat(user, "<span class='notice'>[src] already has a [magazine_wording] chambered.</span>")
+			to_chat(user, span_notice("[src] already has a [magazine_wording] chambered."))
 			return
 		if(magazine.attackby(A, user, silent = TRUE))
-			to_chat(user, "<span class='notice'>You load a new [A] into \the [src].</span>")
+			to_chat(user, span_notice("You load a new [A] into \the [src]."))
 			playsound(src, "gun_insert_full_magazine", 70, 1)
 			chamber_round()
 			update_icon()
@@ -136,8 +149,8 @@
 	icon_state = "[initial(icon_state)]-[chambered ? "1" : "0"]"
 
 /obj/item/gun/ballistic/rocketlauncher/suicide_act(mob/living/user)
-	user.visible_message("<span class='warning'>[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!</span>", \
-		"<span class='userdanger'>You aim [src] at the ground to perform a bisnasty rocket jump...</span>")
+	user.visible_message(span_warning("[user] aims [src] at the ground! It looks like [user.p_theyre()] performing a sick rocket jump!"), \
+		span_userdanger("You aim [src] at the ground to perform a bisnasty rocket jump..."))
 	if(can_shoot())
 		user.mob_transforming = TRUE
 		playsound(src, 'sound/vehicles/rocketlaunch.ogg', 80, 1, 5)
@@ -154,7 +167,7 @@
 		sleep(5)
 		shoot_with_empty_chamber(user)
 		sleep(20)
-		user.visible_message("<span class='warning'>[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!</span>", \
-			"<span class='userdanger'>You look around after realizing you're still here, then proceed to choke yourself to death with [src]!</span>")
+		user.visible_message(span_warning("[user] looks about the room realizing [user.p_theyre()] still there. [user.p_they(TRUE)] proceed to shove [src] down their throat and choke [user.p_them()]self with it!"), \
+			span_userdanger("You look around after realizing you're still here, then proceed to choke yourself to death with [src]!"))
 		sleep(20)
 		return OXYLOSS

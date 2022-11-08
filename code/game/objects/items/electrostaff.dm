@@ -100,23 +100,23 @@
 	item_flags |= (ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(!cell)
 		if(user)
-			to_chat(user, "<span class='warning'>[src] has no cell.</span>")
+			to_chat(user, span_warning("[src] has no cell."))
 		return
 	if(cell.charge < min_hitcost())
 		if(user)
-			to_chat(user, "<span class='warning'>[src] is out of charge.</span>")
+			to_chat(user, span_warning("[src] is out of charge."))
 		return
 	on = TRUE
 	START_PROCESSING(SSobj, src)
 	set_light_on(TRUE)
 	if(user)
-		to_chat(user, "<span class='warning'>You turn [src] on.</span>")
+		to_chat(user, span_warning("You turn [src] on."))
 
 /obj/item/electrostaff/proc/turn_off(obj/item/source, mob/user)
 	wielded = FALSE
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
 	if(user)
-		to_chat(user, "<span class='warning'>You turn [src] off.</span>")
+		to_chat(user, span_warning("You turn [src] off."))
 	on = FALSE
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
@@ -130,30 +130,30 @@
 /obj/item/electrostaff/examine(mob/living/user)
 	. = ..()
 	if(cell)
-		. += "<span class='notice'>The cell charge is [round(cell.percent())]%.</span>"
+		. += span_notice("The cell charge is [round(cell.percent())]%.")
 	else
-		. += "<span class='warning'>There is no cell installed!</span>"
+		. += span_warning("There is no cell installed!")
 
 /obj/item/electrostaff/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell))
 		var/obj/item/stock_parts/cell/C = W
 		if(cell)
-			to_chat(user, "<span class='warning'>[src] already has a cell!</span>")
+			to_chat(user, span_warning("[src] already has a cell!"))
 		else
 			if(C.maxcharge < min_hit_cost())
-				to_chat(user, "<span class='notice'>[src] requires a higher capacity cell.</span>")
+				to_chat(user, span_notice("[src] requires a higher capacity cell."))
 				return
 			if(!user.transferItemToLoc(W, src))
 				return
 			cell = C
-			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
+			to_chat(user, span_notice("You install a cell in [src]."))
 
 	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
 		if(cell)
 			cell.update_icon()
 			cell.forceMove(get_turf(src))
 			cell = null
-			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
+			to_chat(user, span_notice("You remove the cell from [src]."))
 			turn_off(user, TRUE)
 	else
 		return ..()
@@ -177,7 +177,7 @@
 
 /obj/item/electrostaff/attack(mob/living/target, mob/living/user)
 	if(IS_STAMCRIT(user))//CIT CHANGE - makes it impossible to baton in stamina softcrit
-		to_chat(user, "<span class='danger'>You're too exhausted to use [src] properly.</span>")//CIT CHANGE - ditto
+		to_chat(user, span_danger("You're too exhausted to use [src] properly."))//CIT CHANGE - ditto
 		return //CIT CHANGE - ditto
 	if(on && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
 		clowning_around(user)			//ouch!
@@ -203,8 +203,8 @@
 	var/stunforce = block_calculate_resultant_damage(stun_stamdmg, block_return)
 	if(!no_charge_and_force)
 		if(!on)
-			target.visible_message("<span class='warning'>[user] has bapped [target] with [src]. Luckily it was off.</span>", \
-							"<span class='warning'>[user] has bapped you with [src]. Luckily it was off</span>")
+			target.visible_message(span_warning("[user] has bapped [target] with [src]. Luckily it was off."), \
+							span_warning("[user] has bapped you with [src]. Luckily it was off"))
 			turn_off()			//if it wasn't already off
 			return FALSE
 		var/obj/item/stock_parts/cell/C = get_cell()
@@ -220,8 +220,8 @@
 	if(user)
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
-		target.visible_message("<span class='danger'>[user] has shocked [target] with [src]!</span>", \
-								"<span class='userdanger'>[user] has shocked you with [src]!</span>")
+		target.visible_message(span_danger("[user] has shocked [target] with [src]!"), \
+								span_userdanger("[user] has shocked you with [src]!"))
 		log_combat(user, target, "stunned with an electrostaff")
 	playsound(src, 'sound/weapons/staff.ogg', 50, 1, -1)
 	target.apply_status_effect(stun_status_effect, stun_status_duration)
@@ -247,15 +247,15 @@
 	if(user)
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
-		target.visible_message("<span class='danger'>[user] has seared [target] with [src]!</span>", \
-								"<span class='userdanger'>[user] has seared you with [src]!</span>")
+		target.visible_message(span_danger("[user] has seared [target] with [src]!"), \
+								span_userdanger("[user] has seared you with [src]!"))
 		log_combat(user, target, "burned with an electrostaff")
 	playsound(src, 'sound/weapons/sear.ogg', 50, 1, -1)
 	return TRUE
 
 /obj/item/electrostaff/proc/clowning_around(mob/living/user)
-	user.visible_message("<span class='danger'>[user] accidentally hits [user.p_them()]self with [src]!</span>", \
-						"<span class='userdanger'>You accidentally hit yourself with [src]!</span>")
+	user.visible_message(span_danger("[user] accidentally hits [user.p_them()]self with [src]!"), \
+						span_userdanger("You accidentally hit yourself with [src]!"))
 	SEND_SIGNAL(user, COMSIG_LIVING_MINOR_SHOCK)
 	harm_act(user, user, TRUE)
 	stun_act(user, user, TRUE)

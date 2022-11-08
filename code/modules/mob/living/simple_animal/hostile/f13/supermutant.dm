@@ -2,47 +2,82 @@
 
 /mob/living/simple_animal/hostile/supermutant
 	name = "super mutant"
-	desc = "A huge and ugly mutant humanoid."
+	desc = "A gigantic, green, angry-looking humanoid wrapped in a jumpsuit that may have fit him... her? at some point. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. Have fun!"
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
+	maxHealth = 130 
+	health = 130
 	speak_chance = 10
-	speak = list("GRRRRRR!", "ARGH!", "NNNNNGH!", "HMPH!", "ARRRRR!")
-	speak_emote = list("shouts", "yells")
+	speak = list(
+		"GRRRRRR!",
+		"ARGH!",
+		"NNNNNGH!",
+		"HMPH!",
+		"ARRRRR!"
+		)
+	speak_emote = list(
+		"shouts",
+		"yells"
+		)
 	move_to_delay = 5
 	stat_attack = CONSCIOUS
 	robust_searching = 1
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	emote_taunt_sound = list('sound/f13npc/supermutant/attack1.ogg', 'sound/f13npc/supermutant/attack2.ogg', 'sound/f13npc/supermutant/attack3.ogg')
+	emote_taunt_sound = list(
+		'sound/f13npc/supermutant/attack1.ogg',
+		'sound/f13npc/supermutant/attack2.ogg',
+		'sound/f13npc/supermutant/attack3.ogg'
+		)
 	emote_taunt = list("yells")
 	taunt_chance = 30
 	turns_per_move = 5
 	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
 	response_harm_simple = "hits"
-	maxHealth = 200 //20 x 10, 1 full mag of 9mm with no misses
-	health = 200
-	force_threshold = 14
-	faction = list("hostile", "supermutant")
-	melee_damage_lower = 35
+	faction = list(
+		"hostile",
+		"supermutant"
+		)
+	melee_damage_lower = 25
 	melee_damage_upper = 45
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
 	mob_size = MOB_SIZE_LARGE
 	move_resist = MOVE_FORCE_OVERPOWERING
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
 	a_intent = INTENT_GRAB
-	idlesound = list('sound/f13npc/supermutant/idle1.ogg', 'sound/f13npc/supermutant/idle2.ogg', 'sound/f13npc/supermutant/idle3.ogg', 'sound/f13npc/supermutant/idle4.ogg' )
-	death_sound = list('sound/f13npc/supermutant/death1.ogg', 'sound/f13npc/supermutant/death2.ogg')
-	aggrosound = list('sound/f13npc/supermutant/alert1.ogg', 'sound/f13npc/supermutant/alert2.ogg', 'sound/f13npc/supermutant/alert3.ogg', 'sound/f13npc/supermutant/alert4.ogg')
+	idlesound = list(
+		'sound/f13npc/supermutant/idle1.ogg',
+		'sound/f13npc/supermutant/idle2.ogg',
+		'sound/f13npc/supermutant/idle3.ogg',
+		'sound/f13npc/supermutant/idle4.ogg'
+		)
+	death_sound = list(
+		'sound/f13npc/supermutant/death1.ogg',
+		'sound/f13npc/supermutant/death2.ogg'
+		)
+	aggrosound = list(
+		'sound/f13npc/supermutant/alert1.ogg',
+		'sound/f13npc/supermutant/alert2.ogg',
+		'sound/f13npc/supermutant/alert3.ogg',
+		'sound/f13npc/supermutant/alert4.ogg'
+		)
 	wound_bonus = 0
 	bare_wound_bonus = 0
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/playable
-	health = 500
-	maxHealth = 500
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_BASE
+	maxHealth = 300 
+	health = 300
 	emote_taunt_sound = null
 	emote_taunt = null
 	aggrosound = null
@@ -53,19 +88,9 @@
 	dextrous = TRUE
 	possible_a_intents = list(INTENT_HELP, INTENT_HARM)
 
-
 /mob/living/simple_animal/hostile/supermutant/Aggro()
 	..()
 	summon_backup(15)
-
-/mob/living/simple_animal/hostile/supermutant/bullet_act(obj/item/projectile/Proj)
-	if(!Proj)
-		return
-	if(prob(85) || Proj.damage > 26)
-		return ..()
-	else
-		visible_message("<span class='danger'>\The [Proj] is deflected harmlessly by \the [src]'s thick skin!</span>")
-		return FALSE
 
 /mob/living/simple_animal/hostile/supermutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -79,8 +104,8 @@
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_brahmin_s"
 	icon_dead = "hulk_brahmin_s"
-	maxHealth = 300
-	health = 300
+	maxHealth = 240
+	health = 240
 	speak_chance = 7 //30 //Oh my god he never shuts up.
 	move_resist = MOVE_FORCE_OVERPOWERING
 	mob_size = MOB_SIZE_LARGE
@@ -88,9 +113,9 @@
 	speak_emote = list("shouts", "yells")
 	emote_hear = list("yawns", "mumbles","sighs")
 	emote_see = list("raises his shovel", "shovels some dirt away", "waves his shovel above his head angrily")
-	response_help_simple  = "touches"
+	response_help_simple = "touches"
 	response_disarm_simple = "pushes"
-	response_harm_simple   = "punches"
+	response_harm_simple = "punches"
 //	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/bearsteak = 3)
 
 /mob/living/simple_animal/pet/dog/mutant/death(gibbed)
@@ -98,19 +123,27 @@
 	icon_state = icon_dead
 	anchored = FALSE
 	if(!gibbed)
-		visible_message("<span class='danger'>\the [src] shouts something incoherent about brahmins for the last time and stops moving...</span>")
+		visible_message(span_danger("\the [src] shouts something incoherent about brahmins for the last time and stops moving..."))
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/meleemutant
-	desc = "A huge and ugly mutant humanoid.  This one is brandishing a sledgehammer."
+	name = "sledgehammer supermutant"
+	desc = "An enormous, green tank of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding a sledgehammer. Lovely."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_melee_s"
 	icon_living = "hulk_melee_s"
 	icon_dead = "hulk_melee_s"
-	maxHealth = 200
-	health = 200
-	force_threshold = 14
-	melee_damage_lower = 40
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_MELEE
+	maxHealth = 130 
+	health = 130
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
+	melee_damage_lower = 20
 	melee_damage_upper = 60
 	attack_sound = "hit_swing"
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -122,20 +155,63 @@
 	..()
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant
-	desc = "A huge and ugly mutant humanoid.  This one is armed with a poorly maintained hunting rifle."
+	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding a crude shotgun. Lovely."
 	icon = 'icons/fallout/mobs/supermutant.dmi'
 	icon_state = "hulk_ranged_s"
 	icon_living = "hulk_ranged_s"
 	icon_dead = "hulk_ranged_s"
+	mob_armor = ARMOR_VALUE_MEDIUM
+	mob_armor_tokens = list(
+		ARMOR_MODIFIER_UP_MELEE_T1,
+		ARMOR_MODIFIER_DOWN_LASER_T2,
+		ARMOR_MODIFIER_UP_DT_T2
+		)
 	ranged = 1
-	maxHealth = 180 //9 shots of 9mm, more room for error to account for dodges
-	health = 180
-	retreat_distance = 4
-	minimum_distance = 6
-	projectiletype = /obj/item/projectile/bullet/a762/sport/simple
-	projectilesound = 'sound/f13weapons/hunting_rifle.ogg'
-	loot = list(/obj/item/ammo_box/a308, /obj/item/gun/ballistic/rifle/hunting)
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
+	maxHealth = 130 
+	health = 130
+	retreat_distance = 1
+	minimum_distance = 1
+	casingtype = /obj/item/ammo_casing/shotgun/improvised
+	projectiletype = null
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	sound_after_shooting = 'sound/weapons/shotguninsert.ogg'
+	sound_after_shooting_delay = 1 SECONDS
+	extra_projectiles = 1
+	auto_fire_delay = GUN_BURSTFIRE_DELAY_FASTEST
+	ranged_cooldown_time = 4 SECONDS
+	loot = list(
+		/obj/item/ammo_box/shotgun/improvised,
+		/obj/item/gun/ballistic/revolver/widowmaker
+		)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(SHOTGUN_VOLUME),
+		SP_VOLUME_SILENCED(SHOTGUN_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(SHOTGUN_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(SHOTGUN_DISTANT_SOUND),
+		SP_DISTANT_RANGE(SHOTGUN_RANGE_DISTANT)
+	)
+
+/mob/living/simple_animal/hostile/supermutant/rangedmutant/varmint
+	desc = "An enormous green mass of a humanoid wrapped in thick sheets of metal and boiled leather from hopefully a brahmin or two. \
+		They're a mountain of furry muscle, and their fists look like they could punch through solid steel. \
+		If that wasn't bad enough, this monstrous critter is wielding some kind of rifle. Lovely."
+	casingtype = null
+	projectiletype = /obj/item/projectile/bullet/a556/simple
+	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	sound_after_shooting = null
+	sound_after_shooting_delay = 1 SECONDS
+	extra_projectiles = 0
+	ranged_cooldown_time = 2 SECONDS
+	loot = list(
+		/obj/item/gun/ballistic/automatic/varmint
+		)
 
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/death(gibbed)
 	icon = 'icons/fallout/mobs/supermutant_dead.dmi'
@@ -147,13 +223,14 @@
 	name = "legendary super mutant"
 	desc = "A huge and ugly mutant humanoid.He has a faint yellow glow to him, scars adorn his body. This super mutant is a grizzled vetern of combat. Look out!"
 	color = "#FFFF00"
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_LEGEND
+	maxHealth = 150 
+	health = 150
 	icon_state = "hulk_113_s"
 	icon_living = "hulk_113_s"
 	icon_dead = "hulk_113_s"
-	melee_damage_lower = 55
+	melee_damage_lower = 35
 	melee_damage_upper = 70
-	maxHealth = 700 //30 shots of 5.56, bring an extended mag
-	health = 700
 	mob_size = 5
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -170,11 +247,12 @@
 	icon_state = "night_s"
 	icon_living = "night_s"
 	icon_dead = "night_s"
-	maxHealth = 300
-	health = 300
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_MELEE
+	maxHealth = 140 
+	health = 140
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 50
+	melee_damage_lower = 35
 	melee_damage_upper = 60
 	attack_verb_simple = "slashes"
 	attack_sound = "sound/weapons/bladeslice.ogg"
@@ -198,8 +276,9 @@
 	icon_state = "night_ranged_s"
 	icon_living = "night_ranged_s"
 	icon_dead = "night_ranged_s"
-	maxHealth = 300
-	health = 300
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_RANGER
+	maxHealth = 140 
+	health = 140
 	ranged = 1
 	alpha = 80
 	force_threshold = 15
@@ -214,6 +293,16 @@
 	projectilesound = 'sound/f13weapons/assaultrifle_fire.ogg'
 	loot = list(/obj/item/ammo_box/magazine/m556/rifle)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(RIFLE_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(RIFLE_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(RIFLE_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(RIFLE_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(RIFLE_LIGHT_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/Aggro()
 	..()
@@ -234,11 +323,12 @@
 	icon_living = "night_boss_s"
 	icon_dead = "night_boss_s"
 	ranged = 1
-	maxHealth = 500
-	health = 500
+	mob_armor = ARMOR_VALUE_SUPERMUTANT_LEGEND
+	maxHealth = 130 
+	health = 130
 	alpha = 80
 	force_threshold = 15
-	melee_damage_lower = 45
+	melee_damage_lower = 25
 	melee_damage_upper = 55
 	attack_verb_simple = "smashes"
 	attack_sound = "punch"
@@ -248,6 +338,16 @@
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
 	loot = list(/obj/item/stock_parts/cell/ammo/mfc)
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	projectile_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PLASMA_VOLUME),
+		SP_VOLUME_SILENCED(PLASMA_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PLASMA_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PLASMA_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PLASMA_RANGE_DISTANT)
+	)
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/elitemutant/Aggro()
 	..()
@@ -267,11 +367,11 @@
 	color = "#6B87C0"
 	speak_chance = 10
 	speak = list("The rain cleanses!", "Sacrifices for the rain gods!", "The thunder guides my fury!", "I am become the storm, destroyer of all heretics!", "The priests will be pleased with my sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 50
-	melee_damage_upper = 70
+	melee_damage_lower = 25
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	
 /mob/living/simple_animal/hostile/supermutant/rangedmutant/rain
@@ -280,11 +380,11 @@
 	color = "#6B87C0"
 	speak_chance = 10
 	speak = list("The rain cleanses!", "Sacrifices for the rain gods!", "The thunder guides my fury!", "I am become the storm, destroyer of all heretics!", "The priests will be pleased with my sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = 1, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 50
-	melee_damage_upper = 70
+	melee_damage_lower = 25
+	melee_damage_upper = 60
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
 /mob/living/simple_animal/hostile/supermutant/nightkin/rain
@@ -293,11 +393,11 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 360
+	health = 360
 	damage_coeff = list(BRUTE = -0.1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
-	melee_damage_upper = 70
+	melee_damage_lower = 30
+	melee_damage_upper = 65
 	var/charging = FALSE
 	footstep_type = FOOTSTEP_MOB_HEAVY
 
@@ -385,10 +485,10 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The rain speaks through me!", "Witness the gifts of rain!", "The great flood will come upon us! Do not fear it!", "My life for the rain gods!", "The rain gods can always use more sacrifices!")
-	maxHealth = 450
-	health = 450
+	maxHealth = 380
+	health = 380
 	damage_coeff = list(BRUTE = 1, BURN = -0.25, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
+	melee_damage_lower = 40
 	melee_damage_upper = 70
 	extra_projectiles = 2
 	retreat_distance = 2
@@ -431,7 +531,7 @@
 			if(istype(L, /mob/living/simple_animal/hostile/supermutant/nightkin/rangedmutant/rain))
 				continue
 			L.adjustFireLoss(20)
-			to_chat(L, "<span class='userdanger'>You're hit by the nightkin's release of energy!</span>")
+			to_chat(L, span_userdanger("You're hit by the nightkin's release of energy!"))
 			hit_things += L
 		previousturf = J
 		addtimer(1)
@@ -442,10 +542,10 @@
 	color = "#6666FF"
 	speak_chance = 10
 	speak = list("The great flood will come, I will make sure of it!", "Rain god Odile, I call upon you for wrath!", "Rain god Hyacinth, I call upon you for a tranquil mind!", "Rain god Ignacio, I call upon you for protection!", "The storm rages within!")
-	maxHealth = 550
-	health = 550
+	maxHealth = 440
+	health = 440
 	damage_coeff = list(BRUTE = 0.5, BURN = 0.5, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
-	melee_damage_lower = 60
+	melee_damage_lower = 35
 	melee_damage_upper = 70
 	extra_projectiles = 1
 

@@ -30,3 +30,17 @@
 	glass_icon_state = "glass_brown"
 	glass_name = "glass of tato juice"
 	glass_desc = "Juice of the tato. Smells like bad eggs."
+
+/datum/reagent/consumable/fever_blossom_juice
+	name = "Fever Blossom Juice"
+	description = "The concentrated juice and nectar of a fever blossom. It has soothing, relaxing effects."
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	color = "#000000" //same purple
+	taste_description = "pleasant flowers"
+
+/datum/reagent/consumable/fever_blossom_juice/on_mob_life(mob/living/carbon/M)
+	M.jitteriness = max(0,M.jitteriness - 5)
+	M.dizziness = max(0,M.dizziness - 5)
+	M.drowsyness += 3
+	. = TRUE
+	..()

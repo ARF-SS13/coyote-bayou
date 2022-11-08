@@ -187,25 +187,34 @@ GLOBAL_LIST_INIT(trash_clothing, list(
 ))
 
 GLOBAL_LIST_INIT(trash_ammo, list(
-	/obj/item/ammo_box/a308box = 3,
-	/obj/item/ammo_box/a556/sport = 3,
+	/obj/item/ammo_box/a308box/improvised = 2,
+	/obj/item/ammo_box/m5mmbox/improvised = 1,
+	/obj/item/ammo_box/a556/sport/improvised = 3,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple = 1,
-	/obj/item/ammo_box/magazine/zipgun = 3,
-	/obj/item/ammo_casing/shotgun/buckshot = 2,
-	/obj/item/ammo_box/c38 = 3,
+	/obj/item/ammo_box/c10mm/improvised = 5,
+	/obj/item/ammo_box/c9mm/improvised = 5,
+	/obj/item/ammo_casing/shotgun/improvised = 1,
+	/obj/item/ammo_box/c38box/improvised = 3,
+	/obj/item/ammo_box/m44box/improvised = 1,
+	/obj/item/ammo_box/c45/improvised = 5,
+	/obj/item/ammo_box/m14mm/improvised = 1,
+	/obj/item/ammo_box/c4570box/improvised = 1,
+	/obj/item/ammo_box/m22 = 3,
 ))
 
 GLOBAL_LIST_INIT(trash_chem, list(
 	/obj/item/storage/pill_bottle/chem_tin/radx = 5,
 	/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
 	/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
-	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10
+	/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
+	/obj/item/stock_parts/chem_cartridge/garbage = 10,
+	/obj/item/stock_parts/chem_cartridge/simple = 1
 ))
 
 GLOBAL_LIST_INIT(trash_craft, list(
 	/obj/item/crafting/duct_tape = 5,
 	/obj/item/crafting/abraxo = 5,
-	/obj/item/crafting/reloader = 5,
+	/obj/item/circuitboard/machine/autolathe/ammo/improvised = 5,
 	/obj/item/crafting/lunchbox = 5,
 	/obj/item/stack/crafting/metalparts/three = 5,
 	/obj/item/stack/crafting/electronicparts/three = 5,
@@ -214,8 +223,10 @@ GLOBAL_LIST_INIT(trash_craft, list(
 
 GLOBAL_LIST_INIT(trash_gun, list(
 	/obj/item/gun/ballistic/automatic/hobo/zipgun = 2,
+	/obj/item/gun/ballistic/revolver/shotpistol = 1,
 	/obj/item/gun/ballistic/revolver/hobo/pepperbox = 2,
-	/obj/item/gun/ballistic/rifle/mosin = 1,
+	/obj/item/gun/ballistic/automatic/varmint = 1,
+	/obj/item/gun/ballistic/automatic/sportcarbine = 1,
 	/obj/item/gun/ballistic/automatic/pistol/ninemil = 1,
 	/obj/item/gun/ballistic/automatic/pistol/pistol22 = 1,
 	/obj/item/gun/ballistic/revolver/widowmaker = 1
@@ -269,7 +280,19 @@ GLOBAL_LIST_INIT(trash_misc, list(
 	/obj/item/light/bulb = 5,
 	/obj/item/reagent_containers/syringe = 5,
 	/obj/item/restraints/handcuffs = 5,
-	/obj/item/toy/crayon/spraycan = 5
+	/obj/item/toy/crayon/spraycan = 5,
+	/obj/item/laser_pointer = 5
+))
+
+GLOBAL_LIST_INIT(trash_attachment, list(
+	/obj/item/gun_upgrade/scope/watchman = 1,
+	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
+	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
+	/obj/item/tool_upgrade/refinement/laserguide = 1,
+	/obj/item/tool_upgrade/productivity/booster = 1,
+//	/obj/item/tool_upgrade/productivity/red_paint = 2
 ))
 
 GLOBAL_LIST_INIT(loot_prewar_clothing, list(
@@ -335,6 +358,10 @@ GLOBAL_LIST_INIT(loot_prewar_costume, list(
 GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/suit/armor/light/leather/leather_jacket,
 	/obj/item/clothing/suit/armor/light/kit,
+	/obj/item/clothing/suit/armor/light/duster
+))
+
+GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
 	/obj/item/clothing/suit/armor/light/raider/sadist,
@@ -348,11 +375,10 @@ GLOBAL_LIST_INIT(loot_t1_armor, list(
 	/obj/item/clothing/head/helmet/f13/raider/psychotic,
 	/obj/item/clothing/suit/armor/light/raider/supafly,
 	/obj/item/clothing/head/helmet/f13/raider,
-	/obj/item/clothing/suit/armor/light/duster,
 	/obj/item/clothing/suit/armor/medium/raider/iconoclast
 ))
 
-GLOBAL_LIST_INIT(loot_t2_armor, list(
+GLOBAL_LIST_INIT(loot_t3_armor, list(
 	/obj/item/clothing/suit/armor/heavy/metal,
 	/obj/item/clothing/head/helmet/knight/f13/metal,
 	/obj/item/clothing/suit/armor/heavy/metal,
@@ -362,7 +388,7 @@ GLOBAL_LIST_INIT(loot_t2_armor, list(
 	/obj/item/clothing/suit/armor/light/leather/leathercoat
 ))
 
-GLOBAL_LIST_INIT(loot_t3_armor, list(
+GLOBAL_LIST_INIT(loot_t4_armor, list(
 	/obj/item/clothing/suit/armor/heavy/metal/reinforced,
 	/obj/item/clothing/head/helmet/f13/metalmask/mk2,
 	/obj/item/clothing/suit/armor/light/leather/leathercoat,
@@ -380,20 +406,13 @@ GLOBAL_LIST_INIT(loot_t3_armor, list(
 	/obj/item/clothing/head/helmet/f13/sulphitehelm
 ))
 
-GLOBAL_LIST_INIT(loot_t4_armor, list(
+GLOBAL_LIST_INIT(loot_t5_armor, list(
 	/obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b,
 	/obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b,
 	/obj/item/clothing/suit/armor/heavy/riot/combat,
 	/obj/item/clothing/head/helmet/f13/combat/rangerbroken,
 	/obj/item/clothing/suit/armor/medium/combat/mk2,
 	/obj/item/clothing/head/helmet/f13/combat/mk2
-))
-
-GLOBAL_LIST_INIT(loot_t5_armor, list(
-	/obj/item/clothing/suit/armor/power_armor/t45d,
-	/obj/item/clothing/head/helmet/f13/power_armor/t45d,
-	/obj/item/clothing/suit/armor/power_armor/t51b,
-	/obj/item/clothing/head/helmet/f13/power_armor/t51b
 ))
 
 GLOBAL_LIST_INIT(loot_medical_tool, list(
@@ -411,12 +430,11 @@ GLOBAL_LIST_INIT(loot_medical_tool, list(
 
 GLOBAL_LIST_INIT(loot_medical_medicine, list(
 	/obj/item/reagent_containers/pill/healingpowder,
-	/obj/item/storage/pill_bottle/chem_tin/radx,
 	/obj/item/reagent_containers/blood/radaway,
 	/obj/item/reagent_containers/hypospray/medipen/stimpak,
-	/obj/item/reagent_containers/medspray/styptic,
-	/obj/item/reagent_containers/medspray/silver_sulf,
-	/obj/item/reagent_containers/medspray/sterilizine
+	/obj/item/stack/medical/gauze/adv,
+	/obj/item/stack/medical/mesh/advanced,
+	/obj/item/stack/medical/suture/medicated
 ))
 
 GLOBAL_LIST_INIT(loot_medical_drug, list(
@@ -424,7 +442,8 @@ GLOBAL_LIST_INIT(loot_medical_drug, list(
 	/obj/item/reagent_containers/pill/patch/turbo,
 	/obj/item/reagent_containers/pill/healingpowder,
 	/obj/item/reagent_containers/pill/stimulant,
-	/obj/item/reagent_containers/hypospray/medipen/medx
+	/obj/item/reagent_containers/hypospray/medipen/medx,
+	/obj/item/reagent_containers/hypospray/medipen/steady
 ))
 
 GLOBAL_LIST_INIT(loot_t1_melee, list(
@@ -463,6 +482,7 @@ GLOBAL_LIST_INIT(loot_t3_melee, list(
 	/obj/item/kitchen/knife/butcher,
 	/obj/item/melee/onehanded/machete,
 	/obj/item/melee/onehanded/machete/forgedmachete,
+	/obj/item/melee/transforming/energy/axe/protonaxe,
 	/obj/item/shield/riot/buckler,
 	/obj/item/melee/unarmed/tigerclaw,
 	/obj/item/melee/unarmed/sappers
@@ -475,19 +495,19 @@ GLOBAL_LIST_INIT(loot_t4_melee, list(
 	/obj/item/melee/unarmed/lacerator,
 	/obj/item/melee/unarmed/maceglove,
 	/obj/item/melee/unarmed/punchdagger,
+	/obj/item/melee/powerfist/f13,
 	/obj/item/shield/riot
 ))
 
 GLOBAL_LIST_INIT(loot_t5_melee, list(
 	/obj/item/twohanded/thermic_lance,
 	/obj/item/twohanded/chainsaw,
-	/obj/item/melee/transforming/energy/axe/protonaxe,
 	/obj/item/melee/powered/ripper,
-	/obj/item/melee/powerfist/f13,
 	/obj/item/twohanded/sledgehammer/rockethammer,
 	/obj/item/gun/ballistic/revolver/ballisticfist,
 	/obj/item/twohanded/sledgehammer/supersledge,
 	/obj/item/shishkebabpack,
+	/obj/item/melee/powerfist/f13/goliath,
 	/obj/item/melee/unarmed/deathclawgauntlet,
 	/obj/item/melee/powerfist/f13/moleminer
 ))
@@ -512,12 +532,17 @@ GLOBAL_LIST_INIT(loot_t1_range, list(
 	/obj/item/gun/ballistic/automatic/pistol/n99,
 	/obj/item/ammo_box/magazine/m10mm/adv/simple,
 	/obj/item/gun/ballistic/automatic/varmint,
-	/obj/item/ammo_box/magazine/m556/rifle/small
+	/obj/item/ammo_box/magazine/m556/rifle/small,
+	/obj/item/gun/ballistic/automatic/sportcarbine,
+	/obj/item/ammo_box/magazine/m22/extended,
+	/obj/item/ammo_box/m22
 ))
 
 GLOBAL_LIST_INIT(loot_t2_range, list(
 	/obj/item/gun/ballistic/shotgun/hunting,
 	/obj/item/ammo_box/shotgun/buck,
+	/obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22,
+	/obj/item/ammo_box/magazine/m22/extended,
 	/obj/item/gun/ballistic/revolver/m29,
 	/obj/item/ammo_box/m44,
 	/obj/item/ammo_box/a308,
@@ -554,6 +579,7 @@ GLOBAL_LIST_INIT(loot_t3_range, list(
 	/obj/item/gun/ballistic/rifle/repeater/trail,
 	/obj/item/ammo_box/tube/m44,
 	/obj/item/ammo_box/tube/m44,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/energy/laser/aer9,
 	/obj/item/stock_parts/cell/ammo/mfc,
 	/obj/item/gun/energy/gammagun
@@ -580,6 +606,8 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 	/obj/item/ammo_box/tube/c4570,
 	/obj/item/gun/ballistic/rifle/mag/antimateriel,
 	/obj/item/ammo_box/magazine/amr,
+	/obj/item/gun/ballistic/revolver/m2405,
+	/obj/item/ammo_box/rev308,
 	/obj/item/gun/ballistic/automatic/rangemaster,
 	/obj/item/ammo_box/magazine/m762,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
@@ -875,10 +903,23 @@ GLOBAL_LIST_INIT(loot_craft_advanced, list(
 ))
 
 GLOBAL_LIST_INIT(loot_attachment, list(
-	/obj/item/attachments/scope,
-	/obj/item/attachments/burst_improvement,
-	/obj/item/attachments/recoil_decrease,
-	/obj/item/attachments/auto_sear
+	/obj/item/gun_upgrade/scope/watchman = 1,
+	/obj/item/gun_upgrade/trigger/dangerzone = 1,
+	/obj/item/tool_upgrade/productivity/ergonomic_grip = 1,
+	/obj/item/tool_upgrade/refinement/ported_barrel = 1,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 1,
+	/obj/item/tool_upgrade/refinement/laserguide = 1,
+	/obj/item/tool_upgrade/productivity/booster = 1,
+//	/obj/item/tool_upgrade/productivity/red_paint = 1
+))
+
+GLOBAL_LIST_INIT(loot_attachment_advanced, list(
+	/obj/item/gun_upgrade/scope/killer = 2,
+	/obj/item/gun_upgrade/barrel/mag_accel = 2,
+	/obj/item/tool_upgrade/reinforcement/plasmablock = 2,
+	/obj/item/tool_upgrade/refinement/stabilized_grip = 2,
+	/obj/item/tool_upgrade/refinement/vibcompensator = 1,
+	/obj/item/tool_upgrade/productivity/motor = 1
 ))
 
 GLOBAL_LIST_INIT(loot_t1_blueprint, list(

@@ -12,32 +12,80 @@
 	icon_dead = "feralghoul_dead"
 	var/rare_icon = "feralghoul_h"
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 40 
+	health = 40
 	robust_searching = 1
+	move_to_delay = 3.1
 	turns_per_move = 5
-	speak_emote = list("growls")
-	emote_see = list("screeches")
+	speak_emote = list(
+		"growls",
+		"murrs",
+		"barks",
+		"gurgles",
+		"screeches",
+		"hisses",
+		"uwu's",
+		"awoos",
+		"borks",
+		"pants",
+		"wiggles its eyebrows",
+		"churrs",
+		"purrs",
+		"trills",
+		"waggles"
+		)
+	emote_see = list(
+		"wags its tail",
+		"looks hungry",
+		"sniffs the air",
+		"growls",
+		"foams at the mouth",
+		"loses its shit",
+		"busts it down",
+		"goes full tilt"
+		)
 	a_intent = INTENT_HARM
-	maxHealth = 60
-	health = 60
 	speed = 3
 	harm_intent_damage = 8
-	melee_damage_lower = 5
-	melee_damage_upper = 15
-	attack_verb_simple = "claw"
+	melee_damage_lower = 7
+	melee_damage_upper = 13
+	attack_verb_simple = list(
+		"claws",
+		"maims",
+		"bites",
+		"mauls",
+		"slashes",
+		"thrashes",
+		"bashes",
+		"glomps"
+		)
 	attack_sound = 'sound/hallucinations/growl1.ogg'
-	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = list(
+		"min_oxy" = 5,
+		"max_oxy" = 0,
+		"min_tox" = 0,
+		"max_tox" = 1,
+		"min_co2" = 0,
+		"max_co2" = 5,
+		"min_n2" = 0,
+		"max_n2" = 0
+		)
+		
 	unsuitable_atmos_damage = 20
 	gold_core_spawnable = HOSTILE_SPAWN
 	faction = list("hostile")
 	decompose = TRUE
 	sharpness = SHARP_EDGED //They need to cut their finger nails
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
-							/obj/item/stack/sheet/animalhide/human = 1,
-							/obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(
+		/obj/item/reagent_containers/food/snacks/meat/slab/human/ghoul = 2,
+		/obj/item/stack/sheet/animalhide/human = 1,
+		/obj/item/stack/sheet/bone = 1
+		)
 
 	emote_taunt_sound = list('sound/f13npc/ghoul/taunt.ogg')
 	emote_taunt = list(
-		"gurgles", 
+		"gurgles",
 		"stares",
 		"foams at the mouth",
 		"groans",
@@ -45,7 +93,8 @@
 		"jibbers",
 		"howls madly",
 		"screeches",
-		"charges")
+		"charges"
+		)
 
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/ghoul/aggro1.ogg', 'sound/f13npc/ghoul/aggro2.ogg')
@@ -70,13 +119,30 @@
 	icon_dead = "ghoulreaver_dead"
 	rare_icon = "ghoulreaver_h"
 	speed = 2
-	maxHealth = 120
-	health = 120
+	mob_armor = ARMOR_VALUE_GHOUL_REAVER
+	maxHealth = 50 
+	health = 50
+	rapid_melee = 2
+	retreat_distance = 3
+	minimum_distance = 1
+	ranged = TRUE
+	ranged_message = "throws a rock"
+	projectiletype = /obj/item/projectile/bullet/ghoul_rock
+	projectilesound = 'sound/weapons/punchmiss.ogg'
 	harm_intent_damage = 8
-	melee_damage_lower = 10
-	melee_damage_upper = 25
+	melee_damage_lower = 9
+	melee_damage_upper = 15
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
+
+	variation_list = list(
+		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
+		MOB_PROJECTILE_LIST(\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/blunt_rock, 10),\
+			MOB_PROJECTILE_ENTRY(/obj/item/projectile/bullet/ghoul_rock/jagged_scrap, 1)\
+		)
+	)
 
 /mob/living/simple_animal/hostile/ghoul/reaver/Initialize()
 	. = ..()
@@ -88,17 +154,17 @@
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr
 	name = "feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 160
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_helmet
-	name = "feral ghoul soldier"
+	name = "plated feral ghoul soldier"
 	desc = "A former US Army combatant, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 180
+	maxHealth = 60
 
 /mob/living/simple_animal/hostile/ghoul/reaver/ncr_officer
 	name = "feral ghoul officer"
 	desc = "A former US Army officer, now ghoulified and insane. The armor that failed it in life still packs some good defense."
-	maxHealth = 250
+	maxHealth = 60
 	speed = 3
 
 //Cold Feral Ghoul
@@ -109,8 +175,8 @@
 	icon_living = "cold_feral"
 	icon_dead = "cold_feral_dead"
 	speed = 1.5
-	maxHealth = 200
-	health = 200
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -125,8 +191,8 @@
 	icon_living = "frozen_reaver"
 	icon_dead = "frozen_reaver_dead"
 	speed = 1.5
-	maxHealth = 200
-	health = 200
+	maxHealth = 80
+	health = 80
 	harm_intent_damage = 8
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -141,11 +207,12 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 300
-	health = 300
+	mob_armor = ARMOR_VALUE_GHOUL_LEGEND
+	maxHealth = 200
+	health = 200
 	speed = 2.5
 	harm_intent_damage = 8
-	melee_damage_lower = 30
+	melee_damage_lower = 25
 	melee_damage_upper = 35
 	mob_size = 5
 	wound_bonus = 0
@@ -161,11 +228,18 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	rare_icon = "glowinghoul_h"
-	maxHealth = 100
-	health = 100
+	mob_armor = ARMOR_VALUE_GHOUL_GLOWING
+	maxHealth = 40 
+	health = 40
 	speed = 2
+	retreat_distance = 4
+	minimum_distance = 4
+	ranged_message = "emits radiation"
+	ranged = TRUE
+	projectiletype = /obj/item/projectile/radiation_thing
+	projectilesound = 'sound/weapons/etherealhit.ogg'
 	harm_intent_damage = 8
-	melee_damage_lower = 15
+	melee_damage_lower = 12
 	melee_damage_upper = 25
 	light_system = MOVABLE_LIGHT
 	light_range = 2
@@ -179,6 +253,12 @@
 	// TODO: refactor this if simple_animals ever get damage types
 	AddComponent(/datum/component/glow_heal, chosen_targets = /mob/living/simple_animal/hostile/ghoul, allow_revival = FALSE, restrict_faction = null, type_healing = BRUTELOSS)
 
+/obj/item/projectile/radiation_thing
+	name = "radiation"
+	damage = 0
+	irradiate = 20
+	icon_state = "declone"
+
 /mob/living/simple_animal/hostile/ghoul/glowing/Aggro()
 	..()
 	summon_backup(10)
@@ -190,8 +270,8 @@
 		H.apply_effect(20, EFFECT_IRRADIATE, 0)
 
 /mob/living/simple_animal/hostile/ghoul/glowing/strong // FEV mutation
-	maxHealth = 320
-	health = 320
+	maxHealth = 256
+	health = 256
 	speed = 1.4 // Nyooom
 	melee_damage_lower = 35
 	melee_damage_upper = 35
@@ -205,8 +285,9 @@
 	icon_living = "soldier_ghoul"
 	icon_dead = "soldier_ghoul_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 90
-	health = 90
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 60 
+	health = 60
 	loot = list(/obj/item/stack/f13Cash/random/low/medchance)
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
@@ -218,8 +299,9 @@
 	icon_living = "soldier_ghoul_a"
 	icon_dead = "soldier_ghoul_a_d"
 	icon_gib = "syndicate_gib"
-	maxHealth = 100
-	health = 100
+	mob_armor = ARMOR_VALUE_GHOUL_NAKED
+	maxHealth = 80 
+	health = 80
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	
 //Alive Ghoul
@@ -323,8 +405,8 @@
 	icon_living = "ghoulreaver"
 	icon_dead = "ghoulreaver_dead"
 	speed = 2
-	maxHealth = 270
-	health = 270
+	maxHealth = 216
+	health = 216
 	harm_intent_damage = 8
 	melee_damage_lower = 30
 	melee_damage_upper = 30
@@ -336,8 +418,8 @@
 	icon_state = "glowinghoul"
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
-	maxHealth = 240
-	health = 240
+	maxHealth = 192
+	health = 192
 	speed = 2
 	harm_intent_damage = 8
 	melee_damage_lower = 30
@@ -371,8 +453,8 @@
 	icon_living = "glowinghoul"
 	icon_dead = "glowinghoul_dead"
 	color = "#FFFF00"
-	maxHealth = 650
-	health = 650
+	maxHealth = 520
+	health = 520
 	speed = 2.5
 	harm_intent_damage = 8
 	melee_damage_lower = 30

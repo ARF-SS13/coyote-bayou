@@ -25,7 +25,6 @@
 	if(visualsOnly)
 		return
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/set_vrboard/followers)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 
 //datum/outfit/job/followers/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 //	..()
@@ -52,6 +51,11 @@ Administrator
 	exp_requirements = 750
 
 	outfit = /datum/outfit/job/followers/f13leadpractitioner
+	loadout_options = list(
+	/datum/outfit/loadout/surgical_specialist,
+	/datum/outfit/loadout/chemical_specialist,
+	/datum/outfit/loadout/research_specialist
+	)
 
 	access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_COMMAND, ACCESS_MILITARY, ACCESS_ENGINE, ACCESS_ENGINE_EQUIP, ACCESS_ATMOSPHERICS)
@@ -67,11 +71,16 @@ Administrator
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_MEDICALEXPERT, src)
@@ -82,24 +91,45 @@ Administrator
 	jobtype =	/datum/job/followers/f13leadpractitioner
 	id =	/obj/item/card/id/silver
 	chemwhiz =	TRUE
-	backpack =	/obj/item/storage/backpack/explorer
 	uniform =	/obj/item/clothing/under/f13/followers
-	suit=	/obj/item/clothing/suit/toggle/labcoat/cmo
+	suit=	/obj/item/clothing/suit/toggle/labcoat/followers
 	shoes =	/obj/item/clothing/shoes/f13/brownie
 	belt =	/obj/item/healthanalyzer/advanced
 	backpack =	/obj/item/storage/backpack/medic
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
-		/obj/item/reagent_containers/glass/beaker/bluespace = 1,
 		/obj/item/storage/firstaid/ancient = 1,
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/medspray/synthflesh = 2,
-		/obj/item/reagent_containers/hypospray/combat = 1,
 		/obj/item/clothing/glasses/hud/health = 1,
 		/obj/item/book/granter/trait/techno = 1,
 	)
 
-Professor
+/datum/outfit/loadout/surgical_specialist
+	name =	"Surgical Specialist"
+	backpack_contents = list(
+		/obj/item/storage/belt/medical/surgery_belt_adv = 1,
+		/obj/item/organ/cyberimp/arm/medibeam = 1,
+	)
+
+/datum/outfit/loadout/chemical_specialist
+	name =	"Chemical Specialist"
+	backpack_contents = list(
+		/obj/item/circuitboard/machine/chem_master/advanced = 1,
+		/obj/item/hypospray/mkii/CMO = 1,
+	)
+
+/datum/outfit/loadout/research_specialist
+	name =	"Research Specialist"
+	backpack_contents = list(
+		/obj/item/disk/medical/defib_heal = 1,
+		/obj/item/disk/medical/defib_shock = 1,
+		/obj/item/disk/medical/defib_speed = 1,
+		/obj/item/blueprint/research = 1,
+	)
+
+//Professor
 
 /datum/job/followers/f13Professor
 	title = "Followers Scientist"
@@ -133,11 +163,16 @@ Professor
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/rechargerpistol)
 	ADD_TRAIT(H, TRAIT_TECHNOPHREAK, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 
@@ -152,6 +187,7 @@ Professor
 	glasses = /obj/item/clothing/glasses/science
 	chemwhiz = TRUE
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/storage/firstaid/ancient=1,)
 
 /datum/outfit/loadout/environmental_scientist
@@ -221,11 +257,15 @@ Practitioner
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/turbo)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/psycho)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/medx/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/stimpak5/chemistry)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/superstimpak5)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/buffout)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/steady)
 	ADD_TRAIT(H, TRAIT_MEDICALGRADUATE, src)
 	ADD_TRAIT(H, TRAIT_GENERIC, src)
 	ADD_TRAIT(H, TRAIT_SURGERY_MID, src)
@@ -246,6 +286,7 @@ Practitioner
 	satchel =	/obj/item/storage/backpack/satchel/med
 	duffelbag =	/obj/item/storage/backpack/duffelbag/med
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2,
 		/obj/item/reagent_containers/medspray/synthflesh = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -338,7 +379,6 @@ Follower Volunteer
 	id = 		/obj/item/card/id/silver
 	uniform = 	/obj/item/clothing/under/f13/followers
 	shoes = 	/obj/item/clothing/shoes/f13/explorer
-	r_hand =	/obj/item/book/granter/trait/medical
 	backpack = 	/obj/item/storage/backpack/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents =  list(
@@ -394,8 +434,8 @@ Follower Volunteer
 	flag = F13FOLLOWERGUARD
 	department_flag = FOLLOWERS
 	faction = "Followers"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 4
+	spawn_positions = 4
 	supervisors = "Followers having no strict command structure, don't report to anyone- though they will look to the Administrator for guidance and the other Doctors as well."
 	description = "You are a Followers Guard. As a Guard for the Followers of Apocalypse, you are responsible for the safety and the maintenance of order in the hospital and among your peers. Your reason for being here is to make sure the other staff can provide education and medical services to those in need, furthering research in non-military matters, as well as helping their communities get access to basic necessities. You may also be responsible as an escort to the various non-combat staff at the hospital."
 	forbids = "Causing harm to others except in times of self-defense. Leaving the hospital without a plan or notifying non-combat personnel. Treating or otherwise aiding raiders or slavers without a good reason."
@@ -405,7 +445,7 @@ Follower Volunteer
 	outfit = /datum/outfit/job/followers/f13followerguard
 
 	loadout_options = list(/datum/outfit/loadout/guard_ranged,
-	/datum/outfit/loadout/guard_close
+	/datum/outfit/loadout/guard_close, /datum/outfit/loadout/guard_energy
 	)
 	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
@@ -413,18 +453,18 @@ Follower Volunteer
 /datum/outfit/job/followers/f13followerguard
 	name =	"Followers Guard"
 	jobtype =	/datum/job/followers/f13followerguard
-	belt =	/obj/item/storage/belt/military/army/military/followers
+	belt =	/obj/item/storage/belt/army/followers
 	id =	/obj/item/card/id/silver
-	r_hand = /obj/item/book/granter/trait/selection
 	uniform =	/obj/item/clothing/under/f13/bodyguard
 	suit =	/obj/item/clothing/suit/armor/medium/vest/bulletproof/big
 	head =	/obj/item/clothing/head/helmet/riot/vaultsec
 	glasses =	/obj/item/clothing/glasses/sunglasses
 	shoes =	/obj/item/clothing/shoes/combat
-	l_pocket =	/obj/item/storage/belt/holster
+	l_pocket =	/obj/item/storage/belt/shoulderholster
 	backpack =	/obj/item/storage/backpack/explorer
 	satchel =	/obj/item/storage/backpack/satchel/explorer
 	backpack_contents = list(
+		/obj/item/storage/survivalkit/medical/follower = 1,
 		/obj/item/gun/energy/laser/complianceregulator = 1,
 		/obj/item/flashlight/seclite = 1,
 		/obj/item/storage/firstaid/ancient = 1,
@@ -436,7 +476,7 @@ Follower Volunteer
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
 	backpack_contents = list(
 		/obj/item/ammo_box/tube/a357 = 2,
-		/obj/item/attachments/scope = 1,
+		/obj/item/gun_upgrade/scope/watchman = 1,
 	)
 
 /datum/outfit/loadout/guard_close
@@ -446,4 +486,11 @@ Follower Volunteer
 		/obj/item/ammo_box/shotgun/bean = 1,
 		/obj/item/ammo_box/shotgun/buck = 1,
 		/obj/item/ammo_box/shotgun/slug = 1,
+	)
+
+/datum/outfit/loadout/guard_energy
+	name = "Followers Energy Protection Guard"
+	suit_store = /obj/item/gun/energy/laser/wattzs
+	backpack_contents = list(
+		/obj/item/stock_parts/cell/ammo/ec = 1,
 	)

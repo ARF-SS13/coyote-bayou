@@ -78,7 +78,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 #define ismush(A) (is_species(A, /datum/species/mush))
 #define isshadow(A) (is_species(A, /datum/species/shadow))	
 #define isskeleton(A) (is_species(A, /datum/species/skeleton))
-#define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz))
+#define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz) || is_species(/datum/species/synth) || is_species(/datum/species/android))
 #define isethereal(A) (is_species(A, /datum/species/ethereal))
 
 // Citadel specific species
@@ -256,3 +256,50 @@ GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
 #define islock(A) istype(A, /obj/item/lock_construct)
 
 #define isnottriggermine(A) istype(A, /obj/effect/abstract)	// Affects obj/effect/mine, add anything needed
+
+GLOBAL_LIST_INIT(simplemobs_wildlife, typecacheof(list(
+	/mob/living/simple_animal/hostile/gecko,
+	/mob/living/simple_animal/hostile/stalker,
+	/mob/living/simple_animal/hostile/stalkeryoung,
+	/mob/living/simple_animal/hostile/molerat,
+	/mob/living/simple_animal/hostile/centaur,
+	/mob/living/simple_animal/hostile/abomination,
+	/mob/living/simple_animal/hostile/deathclaw,
+	/mob/living/simple_animal/hostile/ghoul,
+	/mob/living/simple_animal/hostile/giantant,
+	/mob/living/simple_animal/hostile/fireant,
+	/mob/living/simple_animal/hostile/giantantqueen,
+	/mob/living/simple_animal/hostile/radscorpion,
+	/mob/living/simple_animal/hostile/cazador,
+	/mob/living/simple_animal/hostile/bloatfly,
+	/mob/living/simple_animal/hostile/radroach,
+	/mob/living/simple_animal/hostile/mirelurk,
+	/mob/living/simple_animal/hostile/trog,
+	/mob/living/simple_animal/hostile/wolf
+	)))
+
+GLOBAL_LIST_INIT(simplemobs_humanlike, typecacheof(list(
+	/mob/living/simple_animal/hostile/chinese,
+	/mob/living/simple_animal/hostile/vault,
+	/mob/living/simple_animal/hostile/enclave,
+	/mob/living/simple_animal/hostile/bs,
+	/mob/living/simple_animal/hostile/ncr,
+	/mob/living/simple_animal/hostile/legion,
+	/mob/living/simple_animal/hostile/tribe,
+	/mob/living/simple_animal/hostile/raider,
+	/mob/living/simple_animal/hostile/supermutant,
+	/mob/living/simple_animal/hostile/renegade
+	)))
+
+GLOBAL_LIST_INIT(simplemobs_robots, typecacheof(list(
+	/mob/living/simple_animal/hostile/eyebot,
+	/mob/living/simple_animal/hostile/securitron,
+	/mob/living/simple_animal/hostile/handy,
+	/mob/living/simple_animal/bot
+	)))
+
+#define issimplewildlife(A) (A.type in GLOB.simplemobs_wildlife)
+
+#define issimplehumanlike(A) (A.type in GLOB.simplemobs_humanlike)
+
+#define issimplerobot(A) (A.type in GLOB.simplemobs_robots)

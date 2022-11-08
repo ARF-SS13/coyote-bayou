@@ -11,7 +11,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!CHECK_MOBILITY(L, MOBILITY_USE) && !(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
-			to_chat(L, "<span class='warning'>You are unable to swing [src] right now!</span>")
+			to_chat(L, span_warning("You are unable to swing [src] right now!"))
 			return
 		if(min_reach && GET_DIST_EUCLIDEAN(user, target) < min_reach)
 			return
@@ -31,7 +31,7 @@
 	if(isliving(user))
 		var/mob/living/L = user
 		if(!CHECK_MOBILITY(L, MOBILITY_USE))
-			to_chat(L, "<span class='warning'>You are unable to raise [src] right now!</span>")
+			to_chat(L, span_warning("You are unable to raise [src] right now!"))
 			return
 		if(max_reach >= 2 && has_range_for_melee_attack(target, user))
 			return ranged_melee_attack(target, user, params)
@@ -59,6 +59,8 @@
 		return
 	if(obj_flags & CAN_BE_HIT)
 		. |= I.attack_obj(src, user)
+	else
+		. |= I.attack_obj_nohit(src, user)
 
 /mob/living/attackby(obj/item/I, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
@@ -86,12 +88,16 @@
 	if(item_flags & NOBLUDGEON)
 		return
 	if(force && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("You don't want to harm other living beings!"))
 		return
 
 	var/bigleagues = 10 //flat additive
+	var/littleleagues = 5
+	var/gentle = -5
+	var/wimpy = -10
+	var/FEVbonus = force*0.35 //used to be a flat additive of 20. changed after someone beat someone to death with a book. TODO: balance this further, possibly with a switch statement depending on force value
 	var/buffout = force*0.25
-	var/smutant = force*0.25
+	var/smutant = force*0.25 //Not using this for FEV mutated as this could let you do a lot of trolling.
 	var/ghoulmelee = force*0.25 //negative trait, this will cut 25% of the damage done by melee
 
 	//var/regular = force*(user.special_s/100)//SPECIAL integration
@@ -101,8 +107,20 @@
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 		force += bigleagues
 
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_LITTLE_LEAGUES))
+		force += littleleagues
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_GENTLE))
+		force += gentle
+
+	if (force >= 10 && HAS_TRAIT(user, TRAIT_WIMPY))
+		force += wimpy
+
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force += buffout
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
+		force += FEVbonus
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_SMUTANT))
 		force += smutant
@@ -111,7 +129,7 @@
 		force -= ghoulmelee
 
 	if(!force)
-		playsound(loc, 'sound/weapons/tap.ogg', get_clamped_volume(), 1, -1)
+		playsound(loc, pokesound, get_clamped_volume(), 1, -1)
 	else if(hitsound)
 		playsound(loc, hitsound, get_clamped_volume(), 1, -1)
 
@@ -128,6 +146,9 @@
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BIG_LEAGUES))
 		force -= bigleagues
+
+	if (force >= 5 && HAS_TRAIT(user, TRAIT_FEV))
+		force -= FEVbonus
 
 	if (force >= 5 && HAS_TRAIT(user, TRAIT_BUFFOUT_BUFF))
 		force -= buffout
@@ -146,6 +167,10 @@
 		return
 	user.do_attack_animation(O)
 	O.attacked_by(src, user)
+
+/obj/item/proc/attack_obj_nohit(obj/O, mob/living/user)
+	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK_OBJ_NOHIT, O, user) & COMPONENT_NO_ATTACK_OBJ)
+		return
 
 /atom/movable/proc/attacked_by()
 	return
@@ -172,7 +197,7 @@
 	if(!(attackchain_flags & NO_AUTO_CLICKDELAY_HANDLING))
 		I.ApplyAttackCooldown(user, src, attackchain_flags)
 	if(totitemdamage)
-		visible_message("<span class='danger'>[user] has hit [src] with [I]!</span>", null, null, COMBAT_MESSAGE_RANGE)
+		visible_message(span_danger("[user] has hit [src] with [I]!"), null, null, COMBAT_MESSAGE_RANGE)
 		//only witnesses close by and the victim see a hit message.
 		log_combat(user, src, "attacked", I)
 	take_damage(totitemdamage, I.damtype, "melee", 1)
@@ -288,8 +313,8 @@
 		attack_message_local = "[user] [message_verb] you[message_hit_area] with [I]!"
 	if(user == src)
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
-	visible_message("<span class='danger'>[attack_message]</span>",\
-		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
+	visible_message(span_danger("[attack_message]"),\
+		span_userdanger("[attack_message_local]"), null, COMBAT_MESSAGE_RANGE)
 	return 1
 
 /// How much stamina this takes to swing this is not for realism purposes hecc off.

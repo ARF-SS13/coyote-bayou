@@ -1034,7 +1034,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(clothing_check && (slot in H.check_obscured_slots()))
 		if(return_warning)
-			return_warning[1] = "<span class='warning'>You are unable to equip that with your current garments in the way!</span>"
+			return_warning[1] = span_warning("You are unable to equip that with your current garments in the way!")
 		return FALSE
 
 	var/num_arms = H.get_num_arms(FALSE)
@@ -1099,7 +1099,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
 				if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
 					if(return_warning)
-						return_warning[1] = "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>"
+						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
 			if(!(I.slot_flags & ITEM_SLOT_BELT))
 				return
@@ -1141,7 +1141,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				var/obj/item/bodypart/O = H.get_bodypart(BODY_ZONE_CHEST)
 				if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
 					if(return_warning)
-						return_warning[1] = "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>"
+						return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 					return FALSE
 			if( !(I.slot_flags & ITEM_SLOT_ID) )
 				return FALSE
@@ -1156,7 +1156,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
 				if(return_warning)
-					return_warning[1] = "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>"
+					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
 			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
 				return FALSE
@@ -1172,7 +1172,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 			if(!H.w_uniform && !nojumpsuit && (!O || O.status != BODYPART_ROBOTIC))
 				if(return_warning)
-					return_warning[1] = "<span class='warning'>You need a jumpsuit before you can attach this [I.name]!</span>"
+					return_warning[1] = span_warning("You need a jumpsuit before you can attach this [I.name]!")
 				return FALSE
 			if(I.slot_flags & ITEM_SLOT_DENYPOCKET)
 				return FALSE
@@ -1186,7 +1186,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				return FALSE
 			if(!H.wear_suit)
 				if(return_warning)
-					return_warning[1] = "<span class='warning'>You need a suit before you can attach this [I.name]!</span>"
+					return_warning[1] = span_warning("You need a suit before you can attach this [I.name]!")
 				return FALSE
 			if(!H.wear_suit.allowed)
 				if(return_warning)
@@ -1225,7 +1225,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/equip_delay_self_check(obj/item/I, mob/living/carbon/human/H, bypass_equip_delay_self)
 	if(!I.equip_delay_self || bypass_equip_delay_self)
 		return TRUE
-	H.visible_message("<span class='notice'>[H] start putting on [I]...</span>", "<span class='notice'>You start putting on [I]...</span>")
+	H.visible_message(span_notice("[H] start putting on [I]..."), span_notice("You start putting on [I]..."))
 	return do_after(H, I.equip_delay_self, target = H)
 
 /datum/species/proc/before_equip_job(datum/job/J, mob/living/carbon/human/H)
@@ -1255,14 +1255,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
 		if(H.overeatduration < 100)
-			to_chat(H, "<span class='notice'>You guts relax!</span>")
+			to_chat(H, span_notice("Your guts relax!"))
 			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
 			H.update_inv_w_uniform()
 			H.update_inv_wear_suit()
 	else
 		if(H.overeatduration >= 100)
-			to_chat(H, "<span class='danger'>You feel really full!</span>")
+			to_chat(H, span_danger("You feel really full!"))
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
 			H.update_inv_w_uniform()
@@ -1304,15 +1304,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		H.metabolism_efficiency = 1
 	else if(H.nutrition > NUTRITION_LEVEL_FED && H.satiety > 80)
 		if(H.metabolism_efficiency != 1.25 && !HAS_TRAIT(H, TRAIT_NOHUNGER))
-			to_chat(H, "<span class='notice'>You feel vigorous.</span>")
+			to_chat(H, span_notice("You feel vigorous."))
 			H.metabolism_efficiency = 1.25
 	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
 		if(H.metabolism_efficiency != 0.8)
-			to_chat(H, "<span class='notice'>You feel sluggish.</span>")
+			to_chat(H, span_notice("You feel sluggish."))
 		H.metabolism_efficiency = 0.8
 	else
 		if(H.metabolism_efficiency == 1.25)
-			to_chat(H, "<span class='notice'>You no longer feel vigorous.</span>")
+			to_chat(H, span_notice("You no longer feel vigorous."))
 		H.metabolism_efficiency = 1
 
 	//Hunger slowdown for if mood isn't enabled
@@ -1344,29 +1344,38 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	. = FALSE
 	var/radiation = H.radiation
-
-	if(HAS_TRAIT(H, TRAIT_RADIMMUNE))
+	if(HAS_TRAIT(H, TRAIT_RADIMMUNE)) //Runs before FEV check so you can make supermutants that AREN'T slowed by rads.
 		return TRUE
-
+	if(HAS_TRAIT(H, TRAIT_FEV)) //Makes rads slow FEV mutants down. This can also be applied to other races, e.g ghouls.
+		switch(radiation)
+			if(1000 to 2000)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1)
+			if(2000 to 3000)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 1.5)
+			if(3000 to INFINITY)
+				H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/damage_slowdown, TRUE, multiplicative_slowdown = 2)
+			else //This really shouldn't be occurring, and if it does; report this to a coder.
+				H.remove_movespeed_modifier(/datum/movespeed_modifier/radiation)
+		return TRUE
 	if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
 		if(CHECK_MOBILITY(H, MOBILITY_STAND))
 			H.emote("collapse")
 		H.DefaultCombatKnockdown(RAD_MOB_KNOCKDOWN_AMOUNT)
-		to_chat(H, "<span class='danger'>You feel weak.</span>")
+		to_chat(H, span_danger("You feel weak."))
 
 	if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
 		H.vomit(10, TRUE)
 
 	if(radiation > RAD_MOB_MUTATE)
 		if(prob(1))
-			to_chat(H, "<span class='danger'>You mutate!</span>")
+			to_chat(H, span_danger("You mutate!"))
 			H.easy_randmut(NEGATIVE+MINOR_NEGATIVE)
 			H.emote("gasp")
 			H.domutcheck()
 
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
-			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
+			to_chat(H, span_danger("Your hair starts to fall out in clumps..."))
 			addtimer(CALLBACK(src, .proc/go_bald, H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
@@ -1399,14 +1408,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(we_breathe && we_lung)
 			user.do_cpr(target)
 		else if(we_breathe && !we_lung)
-			to_chat(user, "<span class='warning'>You have no lungs to breathe with, so you cannot peform CPR.</span>")
+			to_chat(user, span_warning("You have no lungs to breathe with, so you cannot peform CPR."))
 		else
-			to_chat(user, "<span class='notice'>You do not breathe, so you cannot perform CPR.</span>")
+			to_chat(user, span_notice("You do not breathe, so you cannot perform CPR."))
 
 /datum/species/proc/grab(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(target.check_martial_melee_block())
-		target.visible_message("<span class='warning'>[target] blocks [user]'s grab attempt!</span>", target = user, \
-			target_message = "<span class='warning'>[target] blocks your grab attempt!</span>")
+		target.visible_message(span_warning("[target] blocks [user]'s grab attempt!"), target = user, \
+			target_message = span_warning("[target] blocks your grab attempt!"))
 		return 0
 	if(attacker_style && attacker_style.grab_act(user,target))
 		return 1
@@ -1416,14 +1425,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style, attackchain_flags = NONE)
 	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
+		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return FALSE
 	if(IS_STAMCRIT(user)) //CITADEL CHANGE - makes it impossible to punch while in stamina softcrit
-		to_chat(user, "<span class='warning'>You're too exhausted.</span>") //CITADEL CHANGE - ditto
+		to_chat(user, span_warning("You're too exhausted.")) //CITADEL CHANGE - ditto
 		return FALSE //CITADEL CHANGE - ditto
 	if(target.check_martial_melee_block())
-		target.visible_message("<span class='warning'>[target] blocks [user]'s attack!</span>", target = user, \
-			target_message = "<span class='warning'>[target] blocks your attack!</span>")
+		target.visible_message(span_warning("[target] blocks [user]'s attack!"), target = user, \
+			target_message = span_warning("[target] blocks your attack!"))
 		return FALSE
 
 	if(!(attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK))
@@ -1472,9 +1481,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 		if(!damage || !affecting)//future-proofing for species that have 0 damage/weird cases where no zone is targeted
 			playsound(target.loc, user.dna.species.miss_sound, 25, TRUE, -1)
-			target.visible_message("<span class='danger'>[user]'s [atk_verb] misses [target]!</span>", \
-							"<span class='danger'>You avoid [user]'s [atk_verb]!</span>", "<span class='hear'>You hear a swoosh!</span>", null, COMBAT_MESSAGE_RANGE, null, \
-							user, "<span class='warning'>Your [atk_verb] misses [target]!</span>")
+			target.visible_message(span_danger("[user]'s [atk_verb] misses [target]!"), \
+							span_danger("You avoid [user]'s [atk_verb]!"), span_hear("You hear a swoosh!"), null, COMBAT_MESSAGE_RANGE, null, \
+							user, span_warning("Your [atk_verb] misses [target]!"))
 			log_combat(user, target, "attempted to punch")
 			return FALSE
 
@@ -1483,9 +1492,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 		playsound(target.loc, user.dna.species.attack_sound, 25, 1, -1)
 
-		target.visible_message("<span class='danger'>[user] [atk_verb]s [target]!</span>", \
-					"<span class='userdanger'>[user] [atk_verb]s you!</span>", null, COMBAT_MESSAGE_RANGE, null, \
-					user, "<span class='danger'>You [atk_verb] [target]!</span>")
+		target.visible_message(span_danger("[user] [atk_verb]s [target]!"), \
+					span_userdanger("[user] [atk_verb]s you!"), null, COMBAT_MESSAGE_RANGE, null, \
+					user, span_danger("You [atk_verb] [target]!"))
 
 		target.lastattacker = user.real_name
 		target.lastattackerckey = user.ckey
@@ -1506,10 +1515,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if((target.stat != DEAD) && damage >= user.dna.species.punchstunthreshold)
 			if((punchedstam > 50) && prob(punchedstam*0.5)) //If our punch victim has been hit above the threshold, and they have more than 50 stamina damage, roll for stun, probability of 1% per 2 stamina damage
 
-				target.visible_message("<span class='danger'>[user] knocks [target] down!</span>", \
-								"<span class='userdanger'>You're knocked down by [user]!</span>",
-								"<span class='hear'>You hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, null,
-								user, "<span class='danger'>You knock [target] down!</span>")
+				target.visible_message(span_danger("[user] knocks [target] down!"), \
+								span_userdanger("You're knocked down by [user]!"),
+								span_hear("You hear aggressive shuffling followed by a loud thud!"), COMBAT_MESSAGE_RANGE, null,
+								user, span_danger("You knock [target] down!"))
 
 				var/knockdown_duration = 40 + (punchedstam + (punchedbrute*0.5))*0.8 - armor_block
 				target.DefaultCombatKnockdown(knockdown_duration)
@@ -1543,20 +1552,20 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/target_aiming_for_head = target.zone_selected == "head"
 
 	if(target.check_martial_melee_block()) //END EDIT
-		target.visible_message("<span class='warning'>[target] blocks [user]'s disarm attempt!</span>", target = user, \
-			target_message = "<span class='warning'>[target] blocks your disarm attempt!</span>")
+		target.visible_message(span_warning("[target] blocks [user]'s disarm attempt!"), target = user, \
+			target_message = span_warning("[target] blocks your disarm attempt!"))
 		return FALSE
 	if(IS_STAMCRIT(user))
-		to_chat(user, "<span class='warning'>You're too exhausted!</span>")
+		to_chat(user, span_warning("You're too exhausted!"))
 		return FALSE
 
 	else if(aim_for_mouth && ( target_on_help || target_restrained || target_aiming_for_mouth))
 		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 
 		target.visible_message(\
-			"<span class='danger'>\The [user] slaps [user == target ? "[user.p_them()]self" : "\the [target]"] in the face!</span>",\
-			"<span class='notice'>[user] slaps you in the face! </span>",\
-			"You hear a slap.", target = user, target_message = "<span class='notice'>You slap [user == target ? "yourself" : "\the [target]"] in the face! </span>")
+			span_danger("\The [user] slaps [user == target ? "[user.p_them()]self" : "\the [target]"] in the face!"),\
+			span_notice("[user] slaps you in the face! "),\
+			"You hear a slap.", target = user, target_message = span_notice("You slap [user == target ? "yourself" : "\the [target]"] in the face! "))
 		user.do_attack_animation(target, ATTACK_EFFECT_FACE_SLAP)
 		user.adjustStaminaLossBuffered(3)
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
@@ -1567,28 +1576,33 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
 			return FALSE
 		user.do_attack_animation(target, ATTACK_EFFECT_ASS_SLAP)
+		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
+		if(HAS_TRAIT(target, TRAIT_STEEL_ASS))
+			user.adjustStaminaLoss(50)
+			user.visible_message(\
+				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
+				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
+				"You hear a slap.")
+			return FALSE
 		user.adjustStaminaLossBuffered(3)
 		target.adjust_arousal(20,maso = TRUE)
 		if (ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(10))
 			target.mob_climax(forced_climax=TRUE)
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
 			stop_wagging_tail(target)
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 		target.visible_message(\
-			"<span class='danger'>\The [user] slaps [user == target ? "[user.p_their()] own" : "\the [target]'s"] ass!</span>",\
-			"<span class='notice'>[user] slaps your ass! </span>",\
-			"You hear a slap.", target = user, target_message = "<span class='notice'>You slap [user == target ? "your own" : "\the [target]'s"] ass! </span>")
-
-		return FALSE
+			span_danger("\The [user] slaps [user == target ? "[user.p_their()] own" : "\the [target]'s"] ass!"),\
+			span_notice("[user] slaps your ass! "),\
+			"You hear a slap.", target = user, target_message = span_notice("You slap [user == target ? "your own" : "\the [target]'s"] ass! "))
 
 //BONK chucklehead!
 	else if(aim_for_head && ( target_on_help || target_restrained || target_aiming_for_head))
 		playsound(target.loc, 'sound/weapons/klonk.ogg', 50, 1, -1)
 
 		target.visible_message(\
-			"<span class='danger'>\The [user] bonks [user == target ? "[user.p_them()]self" : "\the [target]"] on the head!</span>",\
-			"<span class='notice'>[user] bonks you on the head! </span>",\
-			"You hear a bonk.", target = user, target_message = "<span class='notice'>You bonk [user == target ? "yourself" : "\the [target]"] on the head! </span>")
+			span_danger("\The [user] bonks [user == target ? "[user.p_them()]self" : "\the [target]"] on the head!"),\
+			span_notice("[user] bonks you on the head! "),\
+			"You hear a bonk.", target = user, target_message = span_notice("You bonk [user == target ? "yourself" : "\the [target]"] on the head! "))
 		user.do_attack_animation(target, ATTACK_EFFECT_FACE_SLAP)
 		user.adjustStaminaLossBuffered(3)
 		return FALSE
@@ -1609,9 +1623,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		//var/randomized_zone = ran_zone(user.zone_selected) CIT CHANGE - comments out to prevent compiling errors
 		SEND_SIGNAL(target, COMSIG_HUMAN_DISARM_HIT, user, user.zone_selected)
 		if(target.pulling == user)
-			target.visible_message("<span class='warning'>[user] wrestles out of [target]'s grip!</span>", \
-				"<span class='warning'>[user] wrestles out of your grip!</span>", target = user, \
-				target_message = "<span class='warning'>You wrestle out of [target]'s grip!</span>")
+			target.visible_message(span_warning("[user] wrestles out of [target]'s grip!"), \
+				span_warning("[user] wrestles out of your grip!"), target = user, \
+				target_message = span_warning("You wrestle out of [target]'s grip!"))
 			target.stop_pulling()
 			playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 			log_combat(user, target, "disarmed out of grab from")
@@ -1633,16 +1647,16 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(randn <= 35)//CIT CHANGE - changes this back to a 35% chance to accomodate for the above being commented out in favor of right-click pushing
 			var/obj/item/I = null
 			if(target.pulling)
-				target.visible_message("<span class='warning'>[user] has broken [target]'s grip on [target.pulling]!</span>", \
-					"<span class='warning'>[user] has broken your grip on [target.pulling]!</span>", target = user, \
-					target_message = "<span class='warning'>You have broken [target]'s grip on [target.pulling]!</span>")
+				target.visible_message(span_warning("[user] has broken [target]'s grip on [target.pulling]!"), \
+					span_warning("[user] has broken your grip on [target.pulling]!"), target = user, \
+					target_message = span_warning("You have broken [target]'s grip on [target.pulling]!"))
 				target.stop_pulling()
 			else
 				I = target.get_active_held_item()
 				if(target.dropItemToGround(I))
-					target.visible_message("<span class='danger'>[user] has disarmed [target]!</span>", \
-						"<span class='userdanger'>[user] has disarmed you!</span>", null, COMBAT_MESSAGE_RANGE, null, \
-						user, "<span class='danger'>You have disarmed [target]!</span>")
+					target.visible_message(span_danger("[user] has disarmed [target]!"), \
+						span_userdanger("[user] has disarmed you!"), null, COMBAT_MESSAGE_RANGE, null, \
+						user, span_danger("You have disarmed [target]!"))
 				else
 					I = null
 			playsound(target, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
@@ -1651,9 +1665,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 
 		playsound(target, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-		target.visible_message("<span class='danger'>[user] attempted to disarm [target]!</span>", \
-						"<span class='userdanger'>[user] attemped to disarm [target]!</span>", null, COMBAT_MESSAGE_RANGE, null, \
-						user, "<span class='danger'>You attempted to disarm [target]!</span>")
+		target.visible_message(span_danger("[user] attempted to disarm [target]!"), \
+						span_userdanger("[user] attemped to disarm [target]!"), null, COMBAT_MESSAGE_RANGE, null, \
+						user, span_danger("You attempted to disarm [target]!"))
 		log_combat(user, target, "attempted to disarm")
 
 
@@ -1698,7 +1712,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			return 0
 		totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
 	if(H.check_martial_melee_block())
-		H.visible_message("<span class='warning'>[H] blocks [I]!</span>")
+		H.visible_message(span_warning("[H] blocks [I]!"))
 		return 0
 
 	var/hit_area
@@ -1706,8 +1720,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	hit_area = affecting.name
 	var/def_zone = affecting.body_zone
 
-	var/armor_block = H.run_armor_check(affecting, "melee", "<span class='notice'>Your armor has protected your [hit_area].</span>", "<span class='notice'>Your armor has softened a hit to your [hit_area].</span>",I.armour_penetration)
+	var/armor_block = H.run_armor_check(affecting, "melee", span_notice("Your armor has protected your [hit_area]."), span_notice("Your armor has softened a hit to your [hit_area]."),I.armour_penetration)
 	armor_block = min(90,armor_block) //cap damage reduction at 90%
+	var/dt = max(H.run_armor_check(def_zone, "damage_threshold") - I.damage_threshold_penetration, 0)
 	var/Iforce = I.force //to avoid runtimes on the forcesay checks at the bottom. Some items might delete themselves if you drop them. (stunning yourself, ninja swords)
 	var/Iwound_bonus = I.wound_bonus
 
@@ -1716,7 +1731,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		Iwound_bonus = CANT_WOUND
 
 	var/weakness = H.check_weakness(I, user)
-	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness())
+	apply_damage(totitemdamage * weakness, I.damtype, def_zone, armor_block, H, wound_bonus = Iwound_bonus, bare_wound_bonus = I.bare_wound_bonus, sharpness = I.get_sharpness(), damage_threshold = dt)
 
 
 	H.send_item_attack_message(I, user, hit_area, affecting, totitemdamage)
@@ -1744,8 +1759,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					if(prob(I.force))
 						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 						if(H.stat == CONSCIOUS)
-							H.visible_message("<span class='danger'>[H] has been knocked senseless!</span>", \
-											"<span class='userdanger'>You have been knocked senseless!</span>")
+							H.visible_message(span_danger("[H] has been knocked senseless!"), \
+											span_userdanger("You have been knocked senseless!"))
 							H.confused = max(H.confused, 20)
 							H.adjust_blurriness(10)
 						if(prob(10))
@@ -1772,8 +1787,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if(BODY_ZONE_CHEST)
 				if(H.stat == CONSCIOUS && !I.get_sharpness() && armor_block < 50)
 					if(prob(I.force))
-						H.visible_message("<span class='danger'>[H] has been knocked down!</span>", \
-									"<span class='userdanger'>[H] has been knocked down!</span>")
+						H.visible_message(span_danger("[H] has been knocked down!"), \
+									span_userdanger("[H] has been knocked down!"))
 						H.apply_effect(60, EFFECT_KNOCKDOWN, armor_block)
 
 				if(bloody)
@@ -1803,9 +1818,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		attacker_style = M.mind.martial_art
 	if((M != H) && M.a_intent != INTENT_HELP && (H.mob_run_block(M, 0, "[M]", ATTACK_TYPE_UNARMED, 0, M, M.zone_selected, null) & BLOCK_SUCCESS))
 		log_combat(M, H, "attempted to touch")
-		H.visible_message("<span class='warning'>[M] attempted to touch [H]!</span>", \
-			"<span class='warning'>[M] attempted to touch you!</span>", target = M, \
-			target_message = "<span class='warning'>You attempted to touch [H]!</span>")
+		H.visible_message(span_warning("[M] attempted to touch [H]!"), \
+			span_warning("[M] attempted to touch you!"), target = M, \
+			target_message = span_warning("You attempted to touch [H]!"))
 		return TRUE
 	if(M == H)
 		althelp(M, H, attacker_style)
@@ -1819,30 +1834,30 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 /datum/species/proc/althelp(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(user == target && istype(user))
 		if(IS_STAMCRIT(user))
-			to_chat(user, "<span class='warning'>You're too exhausted for that.</span>")
+			to_chat(user, span_warning("You're too exhausted for that."))
 			return
 		if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-			to_chat(user, "<span class='warning'>You need combat mode to be active to that!</span>")
+			to_chat(user, span_warning("You need combat mode to be active to that!"))
 			return
 		if(user.IsKnockdown() || user.IsParalyzed() || user.IsStun())
-			to_chat(user, "<span class='warning'>You can't seem to force yourself up right now!</span>")
+			to_chat(user, span_warning("You can't seem to force yourself up right now!"))
 			return
 		if(CHECK_MOBILITY(user, MOBILITY_STAND))
-			to_chat(user, "<span class='notice'>You can only force yourself up if you're on the ground.</span>")
+			to_chat(user, span_notice("You can only force yourself up if you're on the ground."))
 			return
-		user.visible_message("<span class='notice'>[user] forces [p_them()]self up to [p_their()] feet!</span>", "<span class='notice'>You force yourself up to your feet!</span>")
+		user.visible_message(span_notice("[user] forces [p_them()]self up to [p_their()] feet!"), span_notice("You force yourself up to your feet!"))
 		user.set_resting(FALSE, TRUE)
 		user.adjustStaminaLossBuffered(user.stambuffer) //Rewards good stamina management by making it easier to instantly get up from resting
 		playsound(user, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 
 /datum/species/proc/altdisarm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	if(IS_STAMCRIT(user))
-		to_chat(user, "<span class='warning'>You're too exhausted.</span>")
+		to_chat(user, span_warning("You're too exhausted."))
 		return FALSE
 	if(target.check_martial_melee_block())
-		target.visible_message("<span class='warning'>[target] blocks [user]'s shoving attempt!</span>", \
-			"<span class='warning'>You block [user]'s shoving attempt!</span>", target = user, \
-			target_message = "<span class='warning'>[target] blocks your shoving attempt!</span>")
+		target.visible_message(span_warning("[target] blocks [user]'s shoving attempt!"), \
+			span_warning("You block [user]'s shoving attempt!"), target = user, \
+			target_message = span_warning("[target] blocks your shoving attempt!"))
 		return FALSE
 	if(attacker_style && attacker_style.disarm_act(user,target))
 		return TRUE
@@ -1887,22 +1902,22 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/targetatrest = !CHECK_MOBILITY(target, MOBILITY_STAND)
 			if((directional_blocked || !(target_collateral_human || target_shove_turf.shove_act(target, user))) && !targetatrest)
 				target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_SOLID)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name], knocking them down!</span>",
-					"<span class='danger'>[user.name] shoves you, knocking you down!</span>", null, COMBAT_MESSAGE_RANGE, null,
-					user, "<span class='danger'>You shove [target.name], knocking them down!</span>")
+				target.visible_message(span_danger("[user.name] shoves [target.name], knocking them down!"),
+					span_danger("[user.name] shoves you, knocking you down!"), null, COMBAT_MESSAGE_RANGE, null,
+					user, span_danger("You shove [target.name], knocking them down!"))
 				log_combat(user, target, "shoved", "knocking them down")
 			else if(target_collateral_human && !targetatrest)
 				target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_HUMAN)
 				target_collateral_human.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_COLLATERAL)
-				target.visible_message("<span class='danger'>[user.name] shoves [target.name] into [target_collateral_human.name]!</span>",
-					"<span class='danger'>[user.name] shoves you into [target_collateral_human.name]!</span>", null, COMBAT_MESSAGE_RANGE, null,
-					user, "<span class='danger'>You shove [target.name] into [target_collateral_human.name]!</span>")
+				target.visible_message(span_danger("[user.name] shoves [target.name] into [target_collateral_human.name]!"),
+					span_danger("[user.name] shoves you into [target_collateral_human.name]!"), null, COMBAT_MESSAGE_RANGE, null,
+					user, span_danger("You shove [target.name] into [target_collateral_human.name]!"))
 				append_message += ", into [target_collateral_human.name]"
 
 		else
-			target.visible_message("<span class='danger'>[user.name] shoves [target.name]!</span>",
-				"<span class='danger'>[user.name] shoves you!</span>", null, COMBAT_MESSAGE_RANGE, null,
-				user, "<span class='danger'>You shove [target.name]!</span>")
+			target.visible_message(span_danger("[user.name] shoves [target.name]!"),
+				span_danger("[user.name] shoves you!"), null, COMBAT_MESSAGE_RANGE, null,
+				user, span_danger("You shove [target.name]!"))
 		target.Stagger(SHOVE_STAGGER_DURATION)
 		var/obj/item/target_held_item = target.get_active_held_item()
 		if(!is_type_in_typecache(target_held_item, GLOB.shove_disarming_types))
@@ -1910,20 +1925,20 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(!target.has_status_effect(STATUS_EFFECT_OFF_BALANCE))
 			if(target_held_item)
 				if(!HAS_TRAIT(target_held_item, TRAIT_NODROP))
-					target.visible_message("<span class='danger'>[target.name]'s grip on \the [target_held_item] loosens!</span>",
-						"<span class='danger'>Your grip on \the [target_held_item] loosens!</span>", null, COMBAT_MESSAGE_RANGE)
+					target.visible_message(span_danger("[target.name]'s grip on \the [target_held_item] loosens!"),
+						span_danger("Your grip on \the [target_held_item] loosens!"), null, COMBAT_MESSAGE_RANGE)
 					append_message += ", loosening their grip on [target_held_item]"
 				else
 					append_message += ", but couldn't loose their grip on [target_held_item]"
 		else if(target_held_item)
 			if(target.dropItemToGround(target_held_item))
-				target.visible_message("<span class='danger'>[target.name] drops \the [target_held_item]!!</span>",
-					"<span class='danger'>You drop \the [target_held_item]!!</span>", null, COMBAT_MESSAGE_RANGE)
+				target.visible_message(span_danger("[target.name] drops \the [target_held_item]!!"),
+					span_danger("You drop \the [target_held_item]!!"), null, COMBAT_MESSAGE_RANGE)
 				append_message += ", causing them to drop [target_held_item]"
 		target.ShoveOffBalance(SHOVE_OFFBALANCE_DURATION)
 		log_combat(user, target, "shoved", append_message)
 
-/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
+/datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_threshold = 0)
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMGE, damage, damagetype, def_zone, wound_bonus, bare_wound_bonus, sharpness) // make sure putting wound_bonus here doesn't screw up other signals or uses for this signal
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
@@ -1937,7 +1952,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(SHARP_EDGED)
 			sharp_mod = sharp_edged_mod
 		if(SHARP_POINTY)
-			sharp_mod = sharp_pointy_mod 
+			sharp_mod = sharp_pointy_mod
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
 		if(isbodypart(def_zone))
@@ -1953,6 +1968,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			BP = H.get_bodypart(check_zone(def_zone))
 		if(!BP)
 			BP = H.bodyparts[1]
+
+	if(!forced && damage_threshold && (damagetype in GLOB.damage_threshold_valid_types))
+		damage = max(damage - min(damage_threshold, ARMOR_CAP_DT), 1)
 
 	switch(damagetype)
 		if(BRUTE)
@@ -1999,9 +2017,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	// called when hit by a projectile
 	switch(P.type)
 		if(/obj/item/projectile/energy/floramut) // overwritten by plants/pods
-			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through your body."))
 		if(/obj/item/projectile/energy/florayield)
-			H.show_message("<span class='notice'>The radiation beam dissipates harmlessly through your body.</span>")
+			H.show_message(span_notice("The radiation beam dissipates harmlessly through your body."))
 
 /datum/species/proc/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
 	// called before a projectile hit

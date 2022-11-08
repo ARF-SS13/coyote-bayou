@@ -86,7 +86,7 @@
 		if(iscarbon(target))
 			var/mob/living/carbon/carbon_target = target
 			var/obj/item/bodypart/bodypart = pick(carbon_target.bodyparts)
-			var/datum/wound/slash/severe/crit_wound = new
+			var/datum/wound/bleed/slash/severe/crit_wound = new
 			crit_wound.apply_wound(bodypart)
 
 	if(QDELETED(human_target) || human_target.stat != DEAD)
@@ -95,15 +95,15 @@
 	human_target.grab_ghost()
 
 	if(!human_target.mind || !human_target.client)
-		to_chat(user, "<span class='warning'>There is no soul connected to this body...</span>")
+		to_chat(user, span_warning("There is no soul connected to this body..."))
 		return
 
 	if(HAS_TRAIT(human_target, TRAIT_HUSK))
-		to_chat(user, "<span class='warning'>You cannot revive a dead ghoul!</span>")
+		to_chat(user, span_warning("You cannot revive a dead ghoul!"))
 		return
 
 	if(LAZYLEN(spooky_scaries) >= ghoul_amt)
-		to_chat(user, "<span class='warning'>Your patron cannot support more ghouls on this plane!</span>")
+		to_chat(user, span_warning("Your patron cannot support more ghouls on this plane!"))
 		return
 
 	LAZYADD(spooky_scaries, human_target)
@@ -157,7 +157,7 @@
 	if(iscarbon(target))
 		var/mob/living/carbon/carbon_target = target
 		var/obj/item/bodypart/bodypart = pick(carbon_target.bodyparts)
-		var/datum/wound/slash/severe/crit_wound = new
+		var/datum/wound/bleed/slash/severe/crit_wound = new
 		crit_wound.apply_wound(bodypart)
 
 /datum/eldritch_knowledge/summon/raw_prophet
@@ -224,7 +224,7 @@
 			var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a [summoned.real_name]", ROLE_HERETIC, null, ROLE_HERETIC, 100,summoned)
 			user.SetImmobilized(0)
 			if(LAZYLEN(candidates) == 0)
-				to_chat(user,"<span class='warning'>No ghost could be found...</span>")
+				to_chat(user,span_warning("No ghost could be found..."))
 				qdel(summoned)
 				return FALSE
 			var/mob/dead/observer/ghost_candidate = pick(candidates)

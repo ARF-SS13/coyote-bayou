@@ -61,7 +61,7 @@
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
 
 /obj/item/clothing/neck/mantle/ranger
-	name = "NCR ranger cape"
+	name = "ranger cape"
 	desc = "Ranger cape made from what looks like old poncho fitted with star, stripes and a bear. Most likely has a holster hidden underneath."
 	icon_state = "rangercape"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/bos/paladin
@@ -100,14 +100,14 @@
 	desc = "A pelt made from longhorner fur."
 	icon_state = "peltfur"
 	cold_protection = CHEST|GROIN|ARMS
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/neck/mantle/peltmountain
 	name = "fur pelt"
 	desc = "A pelt made from a mountain bear, brought in from Colorado."
 	icon_state = "peltmountain"
 	cold_protection = CHEST|GROIN|ARMS
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T2)
 
 /obj/item/clothing/neck/mantle/ragged
 	name = "ragged mantle"

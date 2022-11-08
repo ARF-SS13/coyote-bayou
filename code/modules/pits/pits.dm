@@ -17,16 +17,16 @@ obj/dugpit/New(lnk)
 
 /obj/dugpit/container_resist(mob/living/user)
 	//try to unbury self
-	to_chat(user, "<span class='danger'>You start digging from inside, trying to unbury self!</span>")
+	to_chat(user, span_danger("You start digging from inside, trying to unbury self!"))
 	if(do_after(user, (50), target = src))
 		if (prob(25))
-			to_chat(user, "<span class='danger'>You have managed to move some of the ground!</span>")
+			to_chat(user, span_danger("You have managed to move some of the ground!"))
 			parent.unburylevel++
 			if (parent.unburylevel>=NUMBURYTIMES)
-				to_chat(user, "<span class='danger'>You have undug yourself!</span>")
+				to_chat(user, span_danger("You have undug yourself!"))
 				parent.gets_dug(null)
 		else
-			to_chat(user, "<span class='danger'>The ground is too heavy!</span>")
+			to_chat(user, span_danger("The ground is too heavy!"))
 
 /*
 /obj/dugpit/return_air()
@@ -35,35 +35,35 @@ obj/dugpit/New(lnk)
 	return GM
 */
 
-/turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/usr)
+/turf/open/indestructible/ground/outside/desert/proc/handle_item_insertion(obj/item/W, mob/user)
 	if(!istype(W))
 		return
 
 
-	if(usr)
+	if(user)
 
-		add_fingerprint(usr)
+		add_fingerprint(user)
 
 		if(!istype(W, /obj/item/gun/energy/kinetic_accelerator) && !istype(W, /obj/item/stack/ore/glass ) )
 			if (storedindex>=NUMCONTENT)
-				to_chat(usr, "<span class='notice'>The pit is filled with items to the limit!</span>")
+				to_chat(user, span_notice("The pit is filled with items to the limit!"))
 				return
 
-			for(var/mob/M in viewers(usr, null))
-				if(M == usr)
-					usr.show_message("<span class='notice'>You put [W] in the hole.</span>", 1)
-				else if(in_range(M, usr)) //If someone is standing close enough, they can tell what it is...
-					M.show_message("<span class='notice'>[usr] puts [W] in the hole.</span>", 1)
+			for(var/mob/M in viewers(user, null))
+				if(M == user)
+					user.show_message(span_notice("You put [W] in the hole."), 1)
+				else if(in_range(M, user)) //If someone is standing close enough, they can tell what it is...
+					M.show_message(span_notice("[user] puts [W] in the hole."), 1)
 				else if(W && W.w_class >= 3) //Otherwise they can only see large or normal items from a distance...
-					M.show_message("<span class='notice'>[usr] puts [W] in the hole.</span>", 1)
+					M.show_message(span_notice("[user] puts [W] in the hole."), 1)
 
-			pitcontents += W
-			usr.transferItemToLoc(W, mypit)
+			LAZYADD(pitcontents, W)
+			user.transferItemToLoc(W, mypit)
 			storedindex = storedindex+1
 
 		if(istype(W, /obj/item/stack/ore/glass) && pit_sand < 1 )
 			var/obj/item/stack/ore/glass/sand_target = W
-			usr.show_message("<span class='notice'>You fill the hole with sand</span>", 1)
+			user.show_message(span_notice("You fill the hole with sand"), 1)
 			if (pit_sand == 0)
 				if (sand_target.amount >= 1)
 					sand_target.amount = sand_target.amount - 1
@@ -75,18 +75,18 @@ obj/dugpit/New(lnk)
 /turf/open/indestructible/ground/outside/desert/attack_hand(mob/living/carbon/human/M)
 	if (dug)
 		if (storedindex==0)
-			M.show_message("<span class='notice'>There is nothing in the pit!</span>", 1)
+			M.show_message(span_notice("There is nothing in the pit!"), 1)
 			return
 		else
-			var/obj/item/I = pitcontents[storedindex]
-			storedindex = storedindex - 1
-			I.loc = M.loc
-			pitcontents-=I
+			var/obj/item/I = LAZYACCESS(pitcontents, storedindex)
+			LAZYREMOVE(pitcontents, I)
+			storedindex--
+			I.forceMove(get_turf(M))
 
 /turf/open/indestructible/ground/outside/desert/proc/finishBury(mob/user)
 	if(!(gravebody in src.loc))
 		gravebody = null
-	user.show_message("<span class='notice'>You cover the hole with dirt.</span>", 1)
+	user.show_message(span_notice("You cover the hole with dirt."), 1)
 	dug = 0
 	if((storedindex >= 4) || ((gravebody || gravecoffin) != null))
 		mypit.icon_state = "mound"
@@ -122,7 +122,7 @@ obj/dugpit/New(lnk)
 
 	if (digging_speed)
 		if (pit_sand < 1)
-			usr.show_message("<span class='notice'>You need to fill the hole with sand!</span>", 1)
+			user.show_message(span_notice("You need to fill the hole with sand!"), 1)
 			return
 		var/turf/T = get_turf(src)
 		if (!istype(T, /turf))
@@ -142,7 +142,7 @@ obj/dugpit/New(lnk)
 			if(!(gravecoffin in loc)) // just sanity checking
 				gravecoffin = null
 			if (gravebody!=null)
-				user.show_message("<span class='notice'>You start covering the body in the hole with dirt...</span>", 1)
+				user.show_message(span_notice("You start covering the body in the hole with dirt..."), 1)
 				if (do_after(user, (120 * digging_speed), target=gravebody))
 					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
@@ -156,27 +156,27 @@ obj/dugpit/New(lnk)
 								if(LAZYLEN(H.faction_deaths) < 3)
 									SEND_SIGNAL(H, COMSIG_CLEAR_MOOD_EVENT, "saw_many_unburied_faction")*/
 			else if (gravecoffin != null)
-				user.show_message("<span class='notice'>You start burying the coffin...</span>", 1)
+				user.show_message(span_notice("You start burying the coffin..."), 1)
 				if (do_after(user, (120 * digging_speed), target=gravebody))
 					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 						finishCoffin()
 			else
-				user.show_message("<span class='notice'>You start covering the hole with dirt...</span>", 1)
+				user.show_message(span_notice("You start covering the hole with dirt..."), 1)
 				if(do_after(user, (120 * digging_speed), target = src))
 					if(istype(src, /turf/open/indestructible/ground/outside/desert))
 						finishBury(user)
 
 
 		else
-			user.show_message("<span class='notice'>You start digging...</span>", 1)
+			user.show_message(span_notice("You start digging..."), 1)
 			playsound(src, 'sound/effects/shovel_dig.ogg', 50, 1) //FUCK YO RUSTLE I GOT'S THE DIGS SOUND HERE
 			if(do_after(user, (50 * digging_speed), target = src))
 				if(istype(src, /turf/open/indestructible/ground/outside/desert))
 					if(pit_sand < 1)
-						user.show_message("<span class='notice'>The ground has been already dug up!</span>", 1)
+						user.show_message(span_notice("The ground has been already dug up!"), 1)
 						return
-					user.show_message("<span class='notice'>You dig a hole.</span>", 1)
+					user.show_message(span_notice("You dig a hole."), 1)
 					gets_dug(user)
 					new /obj/item/stack/ore/glass(src)
 					new /obj/item/stack/ore/glass(src)
@@ -221,19 +221,19 @@ obj/dugpit/New(lnk)
 	mypit.invisibility = 0
 	storedindex = 0
 	pitcontents = list()
-	dug = 1
+	dug = TRUE
 	slowdown = 0
 	if (gravebody!=null)
 		if (user!=null)
-			to_chat(user, "<span class='danger'>You have found a body in the pit!</span>")
+			to_chat(user, span_danger("You have found a body in the pit!"))
 		gravebody.loc = mypit.loc
 	if (gravecoffin!=null)
 		if (user!=null)
-			to_chat(user, "<span class='notice'>You have uncovered a coffin from the grave.</span>")
+			to_chat(user, span_notice("You have uncovered a coffin from the grave."))
 		gravecoffin.loc = mypit.loc
 	if (salvage!=null)
 		if (user!=null)
-			to_chat(user, "<span class='notice'>You have uncovered some salvage.</span>")
+			to_chat(user, span_notice("You have uncovered some salvage."))
 		salvage.loc = mypit.loc
 		if(istype(salvage,/obj/effect/spawner/lootdrop))
 			salvage.Initialize()

@@ -74,15 +74,17 @@
 
 /datum/reagent/consumable/ethanol/brocbrew
 	name = "Broc Brew"
-	description = "A potent healing beverage brewed from the Broc flower."
+	description = "A potent healing beverage brewed from the Broc flower. Known to promote blood flow."
 	color = "#DFA866"
 	boozepwr = 50
 	taste_description = "dirt and roses"
 	glass_icon_state = "cognacglass"
 	glass_name = "broc brew"
 	glass_desc = "A potent healing beverage brewed from the Broc flower."
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
+	effective_blood_multiplier = 10 // Mostly water, also the healy stuff
+	effective_blood_max = 400
+	//var/last_added = 0
+	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 
 /datum/reagent/consumable/ethanol/brocbrew/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -90,14 +92,14 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/brocbrew/on_mob_life(mob/living/carbon/M)
-	if(last_added)
+/* 	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
-	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
+	if(M.get_blood(FALSE) < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level
+		M.blood_volume = new_blood_level */
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -113,8 +115,10 @@
 	glass_icon_state = "cognacglass"
 	glass_name = "yellow pulque"
 	glass_desc = "An awful smelling yellow, thick pulque."
-	var/last_added = 0
-	var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
+	effective_blood_max = 400
+	effective_blood_multiplier = 10
+	//var/last_added = 0
+	//var/maximum_reachable = BLOOD_VOLUME_NORMAL - 10
 
 /datum/reagent/consumable/ethanol/yellowpulque/on_mob_life(mob/living/carbon/M)
 	M.adjustOxyLoss(-5*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -122,18 +126,18 @@
 	. = TRUE
 
 /datum/reagent/consumable/ethanol/yellowpulque/on_mob_life(mob/living/carbon/M)
-	if(last_added)
+/* 	if(last_added)
 		M.blood_volume -= last_added
 		last_added = 0
-	if(M.blood_volume < maximum_reachable)	//Can only up to double your effective blood level.
+	if(M.get_blood(FALSE) < maximum_reachable)	//Can only up to double your effective blood level.
 		var/amount_to_add = min(M.blood_volume, volume*5)
 		var/new_blood_level = min(M.blood_volume + amount_to_add, maximum_reachable)
 		last_added = new_blood_level - M.blood_volume
-		M.blood_volume = new_blood_level
+		M.blood_volume = new_blood_level */
 	if(prob(33))
 		M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 		M.adjustFireLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
-		. = TRUE
+	. = TRUE
 	..()
 
 /datum/reagent/consumable/ethanol/deathroach
@@ -149,7 +153,7 @@
 /datum/reagent/consumable/ethanol/deathroach/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		var/drink_message = pick("You feel rugged.", "You feel manly.","You feel western.","You feel like a madman.")
-		to_chat(M, "<span class='notice'>[drink_message]</span>")
+		to_chat(M, span_notice("[drink_message]"))
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
@@ -192,7 +196,6 @@
 /datum/reagent/consumable/ethanol/pinkpulque/on_mob_life(mob/living/carbon/M)
 	if(prob(33))
 		M.Dizzy(2)
-		M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/yellowpulque
@@ -294,7 +297,7 @@
 /datum/reagent/consumable/ethanol/nukabomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustBruteLoss(-6*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -339,7 +342,7 @@
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
 	if(prob(20))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.adjustBruteLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -431,7 +434,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	if(HAS_TRAIT(M, TRAIT_NUKA_LOVER))
 		M.adjustBruteLoss(-0.1)
 		M.adjustFireLoss(-0.1)
@@ -470,7 +472,7 @@
 /datum/reagent/consumable/ethanol/nukaxtreme/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>EXTREME</b></font>", "<br><font color='#FF0000'><b>RAAAAR!</b></font>", "<br><font color='#FF0000'><b>BRING IT!</b></font>")
 	if(prob(100))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
@@ -607,9 +609,8 @@
 		M.playsound_local(M, 'sound/f13effects/explosion_2.ogg', 100, 0)
 	var/high_message = pick("<br><font color='#FF0000'><b><BIG>FUCKING KILL!<BIG></b></font>", "<br><font color='#FF0000'><b><BIG>RAAAAR!<BIG></b></font>", "<br><font color='#FF0000'><b><BIG>BRING IT!<BIG></b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.hallucination += 40
-	M.Jitter(2)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		rage = new()
@@ -639,7 +640,7 @@
 /datum/reagent/consumable/ethanol/bbrew/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>WAR</b></font>", "<br><font color='#FF0000'><b>GLORY</b></font>", "<br><font color='#FF0000'><b>OOORAH</b></font>")
 	if(prob(10))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustKnockdown(-40, 0)
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
@@ -719,7 +720,7 @@
 	M.adjust_bodytemperature(heating)
 	M.adjustBruteLoss(-1*REAGENTS_EFFECT_MULTIPLIER, 0)
 	if(prob(50))
-		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+		M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
 
 /datum/reagent/consumable/ethanol/firecracker
@@ -755,7 +756,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/jakejuice
@@ -774,7 +774,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/wastetequila
@@ -793,7 +792,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/nukashine
@@ -835,13 +833,12 @@
 /datum/reagent/consumable/ethanol/oldpossum/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>eat the possum</b></font>")
 	if(prob(0.1))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	M.AdjustStun(-20, 0)
 	M.AdjustKnockdown(-20, 0)
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-0.3, 0)
 	M.hallucination += 20
-	M.Jitter(2)
 	..()
 
 /datum/reagent/consumable/ethanol/species_drink/sludge
@@ -930,12 +927,11 @@
 /datum/reagent/consumable/ethanol/atombomb/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#FF0000'><b>You hear the /SIRENS BLAZING/</b></font>, <br><font color='#FF0000'><b>You feel the /RADIOACTIVE HELLFIRE/</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
+		to_chat(M, span_notice("[high_message]"))
 	if(prob(50))
 		M.playsound_local(M, 'sound/f13effects/explosion_fire.ogg', 100, 0)
 	if(prob(50))
 		M.playsound_local(M, 'sound/f13effects/alarm.ogg', 100, 0)
-	M.Jitter(100)
 	M.adjustBruteLoss(-3*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.dizziness +=1.5
 	M.drowsyness = 0
@@ -955,7 +951,6 @@
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 
 /datum/reagent/consumable/ethanol/henessey/on_mob_life(mob/living/carbon/M)
-	M.Jitter(40)
 	M.dizziness +=1.5
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -967,7 +962,6 @@
 	M.AdjustUnconscious(-20, 0)
 	M.adjustStaminaLoss(-3, 0)
 	M.hallucination += 100
-	M.Jitter(2)
 	switch(current_cycle)
 		if(1 to 10)
 			M.adjustToxLoss(1*REAGENTS_EFFECT_MULTIPLIER, 0)
@@ -989,7 +983,7 @@
 /datum/reagent/consumable/ethanol/henessey/on_mob_delete(mob/living/M)
 	REMOVE_TRAIT(M, TRAIT_SLEEPIMMUNE, "[type]")
 	REMOVE_TRAIT(M, TRAIT_IRONFIST, "[type]")
-	to_chat(M, "<span class='danger'>You feel light-headed as you start to return to your senses.</span>")
+	to_chat(M, span_danger("You feel light-headed as you start to return to your senses."))
 	M.Dizzy(5)
 	M.blur_eyes(5)
 	if(rage)
@@ -1130,8 +1124,7 @@
 /datum/reagent/consumable/ethanol/corporate/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br><font color='#006600'><b>Business!</b></font>, <br><font color='#006600'><b>Sales!</b></font>, <br><font color='#006600'><b>Profit!</b></font>")
 	if(prob(50))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.Jitter(100)
+		to_chat(M, span_notice("[high_message]"))
 	M.dizziness +=5
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
@@ -1152,7 +1145,7 @@
 /datum/reagent/consumable/ethanol/ranchwhiskey/on_mob_life(mob/living/carbon/M)
 	if(prob(50))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	M.adjustBruteLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjustFireLoss(-0.4*REAGENTS_EFFECT_MULTIPLIER, 0)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)

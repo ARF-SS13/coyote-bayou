@@ -19429,7 +19429,7 @@
 /obj/item/clothing/under/f13/ncrcf{
 	name = "NCR Correctional Facility Uniform"
 	},
-/obj/item/clothing/suit/armor/ncrcfjacket,
+/obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
@@ -22169,7 +22169,6 @@
 "iYf" = (
 /obj/structure/nest/securitron{
 	max_mobs = 1;
-	spawn_once = 1
 	},
 /turf/open/floor/f13{
 	icon_state = "yellowrustyfull"
@@ -23916,7 +23915,7 @@
 /obj/structure/closet,
 /obj/item/clothing/gloves/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/army,
 /obj/item/clothing/under/f13/army,
 /turf/open/floor/plasteel/barber{
 	icon = 'icons/turf/f13floors2.dmi';
@@ -32762,7 +32761,7 @@
 /area/f13/building)
 "nwC" = (
 /obj/machinery/workbench,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
@@ -35719,7 +35718,7 @@
 	pixel_x = 16
 	},
 /obj/item/gun/ballistic/rifle/hunting,
-/obj/item/attachments/scope,
+/obj/item/gun_upgrade/scope/killer,
 /obj/item/ammo_box/a308,
 /obj/item/ammo_box/a308,
 /turf/open/floor/f13/wood,
@@ -44964,7 +44963,7 @@
 "sRX" = (
 /obj/structure/closet,
 /obj/item/storage/backpack/satchel/leather,
-/obj/item/crafting/reloader,
+/obj/item/circuitboard/machine/autolathe/ammo/improvised,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/f13{
 	icon_state = "floorrusty"
@@ -47768,7 +47767,7 @@
 /obj/item/clothing/under/f13/ncrcf{
 	name = "NCR Correctional Facility Uniform"
 	},
-/obj/item/clothing/suit/armor/ncrcfjacket,
+/obj/item/clothing/suit/armor/outfit/jacket/ncrcfjacket,
 /obj/item/clothing/shoes/sneakers/black,
 /obj/item/clothing/shoes/sneakers/black,
 /turf/open/floor/f13{

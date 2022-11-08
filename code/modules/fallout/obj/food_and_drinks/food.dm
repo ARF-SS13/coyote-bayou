@@ -661,14 +661,14 @@
 /obj/item/reagent_containers/food/snacks/f13/canned/attack_self(mob/user)
 	if(!is_open)
 		is_open = TRUE
-		to_chat(user, "<span class='notice'>You open the lid of the can.</span>")
+		to_chat(user, span_notice("You open the lid of the can."))
 		update_icon()
 		return
 	. = ..()
 
 /obj/item/reagent_containers/food/snacks/f13/canned/attack(mob/living/M, mob/living/user)
 	if(!is_open)
-		to_chat(user, "<span class='warning'>You need to open [src] first.</span>")
+		to_chat(user, span_warning("You need to open [src] first."))
 		return
 	. = ..()
 

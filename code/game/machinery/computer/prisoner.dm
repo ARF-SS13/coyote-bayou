@@ -94,7 +94,7 @@
 						return
 					inserted_id = I
 				else
-					to_chat(usr, "<span class='danger'>No valid ID.</span>")
+					to_chat(usr, span_danger("No valid ID."))
 			else if(inserted_id)
 				switch(href_list["id"])
 					if("eject")
@@ -135,7 +135,7 @@
 			var/obj/item/implant/I = locate(href_list["warn"]) in GLOB.tracked_implants
 			if(I && istype(I) && I.imp_in)
 				var/mob/living/R = I.imp_in
-				to_chat(R, "<span class='italics'>You hear a voice in your head saying: '[warning]'</span>")
+				to_chat(R, span_italic("You hear a voice in your head saying: '[warning]'"))
 				log_talk(usr,"[key_name(usr)] sent an implant message to [R]/[R.ckey]: '[warning]'",LOGSAY)
 
 		src.add_fingerprint(usr)

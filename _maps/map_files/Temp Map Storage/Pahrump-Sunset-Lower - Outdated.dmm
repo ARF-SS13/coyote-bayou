@@ -861,7 +861,6 @@
 "aBP" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1;
-	spawn_once = null;
 	spawn_time = 400
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -1826,7 +1825,7 @@
 "bdp" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/item/clothing/under/syndicate/brotherhood,
-/obj/item/storage/belt/holster,
+/obj/item/storage/belt/shoulderholster,
 /obj/item/clothing/head/helmet/f13/combat/brotherhood/senior,
 /obj/item/clothing/suit/armor/medium/combat/brotherhood/senior,
 /obj/item/clothing/gloves/combat,
@@ -6344,7 +6343,6 @@
 	},
 /obj/structure/nest/supermutant/melee{
 	max_mobs = 3;
-	spawn_once = 1;
 	spawn_time = 10
 	},
 /turf/open/floor/plasteel/barber{
@@ -11389,7 +11387,6 @@
 "gjC" = (
 /obj/structure/nest/deathclaw/mother{
 	infinite = 1;
-	spawn_once = null;
 	spawn_time = 400
 	},
 /turf/open/indestructible/ground/inside/mountain,
@@ -17007,7 +17004,6 @@
 "jPz" = (
 /obj/structure/nest/supermutant/melee{
 	max_mobs = 3;
-	spawn_once = 1;
 	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,
@@ -17392,10 +17388,10 @@
 /area/f13/tunnel)
 "kaj" = (
 /obj/structure/rack,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
-/obj/item/storage/belt/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
+/obj/item/storage/belt/army/security,
 /obj/effect/decal/fakelattice{
 	pixel_y = -17
 	},
@@ -18869,11 +18865,11 @@
 /area/f13/brotherhood/leisure)
 "kVP" = (
 /obj/structure/rack,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
-/obj/item/storage/belt/military/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
+/obj/item/storage/belt/army,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/mask/gas/sechailer,
 /obj/item/clothing/mask/gas/sechailer,
@@ -32035,7 +32031,7 @@
 	pixel_x = 26;
 	specialfunctions = 4
 	},
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /turf/open/floor/wood,
 /area/f13/bunker)
 "tev" = (
@@ -39208,7 +39204,7 @@
 "xFz" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
-/obj/item/storage/belt/military/assault,
+/obj/item/storage/belt/army/assault,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/brigdoor{
 	dir = 8;
@@ -39380,7 +39376,6 @@
 /obj/effect/decal/waste,
 /obj/structure/nest/supermutant/melee{
 	max_mobs = 3;
-	spawn_once = 1;
 	spawn_time = 10
 	},
 /turf/open/indestructible/ground/inside/subway,

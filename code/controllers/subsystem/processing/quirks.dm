@@ -17,7 +17,30 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
 		SetupQuirks()
-		quirk_blacklist = list(list("Blind","Nearsighted"),list("Jolly","Depression","Apathetic"),list("Ageusia","Deviant Tastes"),list("Ananas Affinity","Ananas Aversion"),list("Alcohol Tolerance","Alcohol Intolerance"),list("Alcohol Intolerance","Drunken Resilience"))
+		quirk_blacklist = list(
+			list("Blind","Nearsighted"),
+			list("Mood - Sanguine","Mood - Optimist","Apathetic","Mood - Pessimist", "Mood - Depressive"),
+			list("Ageusia","Deviant Tastes"),
+			list("Ananas Affinity","Ananas Aversion"),
+			list("Alcohol Tolerance","Alcohol Intolerance"),
+			list("Alcohol Intolerance","Drunken Resilience"),
+			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
+			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
+			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
+			list("Lifegiver", "Life Giver Plus", "Flimsy", "Very Flimsy"),
+			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
+			list("Cold Resistant", "Cold-Blooded"),
+			list("Radiation - Immune","Radiation - Mostly Immune","Radiation - Sorta Immune"),
+			list("Vegetarian","Does not Eat"),
+			list("Cannibal","Does not Eat"),
+			list("Deviant Tastes","Does not Eat"),
+			list("Vegetarian","Cannibal"),
+			list("Unintelligible Speech","Mute"),
+			list("Quicker Carry","Quick Carry"),
+			list("Master Martial Artist", "Fists of Noodle"),
+			list("Master Martial Artist", "Sure Strike"),
+			list("Heavy Sleeper","Can Not Sleep")
+			)
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
@@ -47,7 +70,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	if(badquirk)
 		cli.prefs.save_character()
 	if (!silent && LAZYLEN(cut))
-		to_chat(to_chat_target || user, "<span class='boldwarning'>Some quirks have been cut from your character because of these quirks conflicting with your job assignment: [english_list(cut)].</span>")
+		to_chat(to_chat_target || user, span_boldwarning("Some quirks have been cut from your character because of these quirks conflicting with your job assignment: [english_list(cut)]."))
 
 /datum/controller/subsystem/processing/quirks/proc/quirk_path_by_name(name)
 	return quirks[name]

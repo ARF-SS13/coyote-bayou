@@ -38,7 +38,7 @@
 
 /mob/living/simple_animal/drone/syndrone/Login()
 	..()
-	to_chat(src, "<span class='notice'>You can kill and eat other drones to increase your health!</span>" )
+	to_chat(src, span_notice("You can kill and eat other drones to increase your health!") )
 
 /mob/living/simple_animal/drone/syndrone/badass
 	name = "Badass Syndrone"
@@ -143,8 +143,7 @@
 
 /mob/living/simple_animal/drone/cogscarab/Initialize()
 	. = ..()
-	qdel(access_card) //we don't have free access
-	access_card = null
+	QDEL_NULL(access_card) //we don't have free access
 	remove_verb(src, /mob/living/simple_animal/drone/verb/check_laws)
 	remove_verb(src, /mob/living/simple_animal/drone/verb/drone_ping)
 
@@ -171,7 +170,7 @@
 
 /mob/living/simple_animal/drone/cogscarab/try_reactivate(mob/living/user)
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, "<span class='warning'>You fiddle around with [src] to no avail.</span>")
+		to_chat(user, span_warning("You fiddle around with [src] to no avail."))
 	else
 		..()
 
@@ -210,3 +209,13 @@
 /mob/living/simple_animal/drone/cogscarab/update_mobility()
 	. = ..()
 	update_icons()
+
+/obj/item/drone_shell/ancient //snowflake meme drone type for dungeon rewards
+	name = "ancient drone shell"
+	desc = "A shell of a maintenance drone, an expendable robot built to perform repairs. This one seems to have a RobCo logo stamped on it."
+	drone_type = /mob/living/simple_animal/drone/ancient
+
+/mob/living/simple_animal/drone/ancient
+	name = "RobCo Drone"
+	default_hatmask = /obj/item/clothing/head/helmet/f13/heavy/salvaged_pa/t45b/tribal
+

@@ -20,7 +20,7 @@
 *******************************************/
 
 /datum/sprite_accessory/taur
-	icon = 'modular_citadel/icons/mob/mam_taur.dmi'
+	icon = 'icons/mob/mam/citadel/mam_taur.dmi'
 	center = TRUE
 	dimension_x = 64
 	color_src = MATRIXED
@@ -146,3 +146,45 @@
 	taur_mode = STYLE_SNEK_TAURIC
 	color_src = MUTCOLORS
 	hide_legs = USE_SNEK_CLIP_MASK
+
+/datum/sprite_accessory/taur/frog
+	name = "Frog"
+	icon_state = "frog"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+
+/datum/sprite_accessory/taur/wasp
+	name = "Wasp"
+	icon_state = "wasp"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+
+/datum/sprite_accessory/taur/mermaid
+	name = "Mermaid"
+	icon_state = "mermaid"
+	taur_mode = STYLE_SNEK_TAURIC
+	color_src = MUTCOLORS
+	extra = FALSE
+
+/datum/sprite_accessory/taur/skunk
+	name = "Skunk"
+	icon_state = "skunk"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL
+
+/datum/sprite_accessory/taur/rat
+	name = "Rat"
+	icon_state = "rat"
+	taur_mode = STYLE_PAW_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/taur/noodle
+	name = "Noodle"
+	icon_state = "noodle"
+	taur_mode = STYLE_SNEK_TAURIC
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_ALL

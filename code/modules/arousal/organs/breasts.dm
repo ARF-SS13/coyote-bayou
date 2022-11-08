@@ -11,6 +11,7 @@
 	size = BREASTS_SIZE_DEF // "c". Refer to the breast_values static list below for the cups associated number values
 	fluid_id = /datum/reagent/consumable/milk
 	fluid_rate = MILK_RATE
+	layer_index = BREAST_LAYER_INDEX
 	shape = DEF_BREASTS_SHAPE
 	genital_flags = CAN_MASTURBATE_WITH|CAN_CLIMAX_WITH|GENITAL_FLUID_PRODUCTION|GENITAL_CAN_AROUSE|UPDATE_OWNER_APPEARANCE|GENITAL_UNDIES_HIDDEN
 	masturbation_verb = "massage"
@@ -18,13 +19,49 @@
 	unarousal_verb = "Your breasts no longer feel sensitive"
 	orgasm_verb = "leaking"
 	fluid_transfer_factor = 0.5
-	var/static/list/breast_values = list("a" =  1, "b" = 2, "c" = 3, "d" = 4, "e" = 5, "f" = 6, "g" = 7, "h" = 8, "i" = 9, "j" = 10, "k" = 11, "l" = 12, "m" = 13, "n" = 14, "o" = 15, "huge" = 16, "flat" = 0)
 	var/cached_size //these two vars pertain size modifications and so should be expressed in NUMBERS.
 	var/prev_size //former cached_size value, to allow update_size() to early return should be there no significant changes.
 
+GLOBAL_LIST_INIT(breast_values, list(
+	"a" = 1,
+	"b" = 2,
+	"c" = 3,
+	"d" = 4,
+	"e" = 5,
+	"f" = 6,
+	"g" = 7,
+	"h" = 8,
+	"i" = 9,
+	"j" = 10,
+	"k" = 11,
+	"l" = 12,
+	"m" = 13,
+	"n" = 14,
+	"o" = 15,
+	"huge" = 16,
+	"flat" = 0))
+
+GLOBAL_LIST_INIT(massive_breast_descriptors, list(
+	"some serious honkers",
+	"a real set of badonkers",
+	"some dobonhonkeros",
+	"massive dohoonkabhankoloos",
+	"two big old tonhongerekoogers",
+	"a couple of giant bonkhonagahoogs",
+	"a pair of humongous hungolomghnonoloughonamogus",
+	"a bosomy mountain range",
+	"some jiggly cascading sacks of boob",
+	"some frontloaded anvils",
+	"a rack you could hide someone between",
+	"a vast expanse of mammary meat",
+	"more boob than person",
+	"some comfy-looking beanbags growing out of a person",
+	"boobs, just boobs, just nothing but boobs"
+	))
+
 /obj/item/organ/genital/breasts/Initialize(mapload, do_update = TRUE)
 	if(do_update)
-		cached_size = breast_values[size]
+		cached_size = GLOB.breast_values[size]
 		prev_size = cached_size
 	return ..()
 
@@ -41,7 +78,7 @@
 		else
 			desc = "You see some breasts, they seem to be quite exotic."
 	if(size == "huge")
-		desc = "You see [pick("some serious honkers", "a real set of badonkers", "some dobonhonkeros", "massive dohoonkabhankoloos", "two big old tonhongerekoogers", "a couple of giant bonkhonagahoogs", "a pair of humongous hungolomghnonoloughongous")]. Their volume is way beyond cupsize now, measuring in about [round(cached_size)]cm in diameter."
+		desc = "You see [pick(GLOB.massive_breast_descriptors)]. Their volume is way beyond cupsize now, measuring in about [round(cached_size * 2)]cm in diameter."
 	else
 		if (size == "flat")
 			desc += " They're very small and flatchested, however."
@@ -54,7 +91,7 @@
 			desc += " They're leaking [lowertext(R.name)]."
 	var/datum/sprite_accessory/S = GLOB.breasts_shapes_list[shape]
 	var/icon_shape = S ? S.icon_state : "pair"
-	var/icon_size = clamp(breast_values[size], BREASTS_ICON_MIN_SIZE, BREASTS_ICON_MAX_SIZE)
+	var/icon_size = clamp(GLOB.breast_values[size], BREASTS_ICON_MIN_SIZE, BREASTS_ICON_MAX_SIZE)
 	icon_state = "breasts_[icon_shape]_[icon_size]"
 	if(owner)
 		if(owner.dna.species.use_skintones)
@@ -85,26 +122,24 @@
 	var/rounded_cached = round(cached_size)
 	if(cached_size < 0)//I don't actually know what round() does to negative numbers, so to be safe!!fixed
 		if(owner)
-			to_chat(owner, "<span class='warning'>You feel your breasts shrinking away from your body as your chest flattens out.</span>")
+			to_chat(owner, span_warning("You feel your breasts shrinking away from your body as your chest flattens out."))
 		QDEL_IN(src, 1)
 		return
 	switch(rounded_cached)
 		if(0) //flatchested
 			size = "flat"
-		if(1 to 8) //modest
-			size = breast_values[rounded_cached]
-		if(9 to 15) //massive
-			size = breast_values[rounded_cached]
-		if(16 to INFINITY) //rediculous
+		if(1 to 15) //on the charts
+			size = GLOB.breast_values[rounded_cached]
+		if(16 to INFINITY) //off the charts
 			size = "huge"
 
 	if(rounded_cached < 16 && owner)//Because byond doesn't count from 0, I have to do this.
 		var/mob/living/carbon/human/H = owner
 		var/r_prev_size = round(prev_size)
 		if (rounded_cached > r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size)]-cup.</span>")
+			to_chat(H, span_warning("Your breasts [pick("swell up to", "flourish into", "expand into", "burst forth into", "grow eagerly into", "amplify into")] a [uppertext(size)]-cup."))
 		else if (rounded_cached < r_prev_size)
-			to_chat(H, "<span class='warning'>Your breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size)]-cup.</span>")
+			to_chat(H, span_warning("Your breasts [pick("shrink down to", "decrease into", "diminish into", "deflate into", "shrivel regretfully into", "contracts into")] a [uppertext(size)]-cup."))
 
 /obj/item/organ/genital/breasts/get_features(mob/living/carbon/human/H)
 	var/datum/dna/D = H.dna
@@ -117,10 +152,10 @@
 	if(!D.features["breasts_producing"])
 		DISABLE_BITFIELD(genital_flags, GENITAL_FLUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
 	if(!isnum(size))
-		cached_size = breast_values[size]
+		cached_size = GLOB.breast_values[size]
 	else
 		cached_size = size
-		size = breast_values[size]
+		size = GLOB.breast_values[size]
 	prev_size = cached_size
 	toggle_visibility(D.features["breasts_visibility"], FALSE)
 

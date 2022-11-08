@@ -17,6 +17,8 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_SHOTGUN_PELLET
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /* rubber pellet
  * DAMAGE: 1
@@ -39,6 +41,8 @@
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	sharpness = SHARP_NONE
 	embedding = null
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION
 
 /* handload pellet
  * DAMAGE: 8
@@ -58,6 +62,8 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_SHOTGUN_PELLET
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /obj/item/projectile/bullet/pellet/shotgun_improvised/Initialize()
 	. = ..()
@@ -91,6 +97,8 @@
 	wound_falloff_tile = BULLET_WOUND_FALLOFF_SHOTGUN_SLUG
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /* 12g slug
  * DAMAGE: 50
@@ -112,6 +120,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_EDGED
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /* 12g slug
  * DAMAGE: 50
@@ -133,7 +143,9 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
-	
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
+
 /* 12g beanbag
  * DAMAGE: 5
  * STAMIN: 100
@@ -154,6 +166,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION
 
 #define BULLET_TRAINSLUG_DAMAGE_MULT 0.4 // 3 shots, 1.2x damage? sure
 #define BULLET_TRAINSLUG_STAMINA_MULT 0.4
@@ -180,6 +194,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG * BULLET_TRAINSLUG_SPEED_MULT
 	sharpness = SHARP_NONE //crunch
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /obj/item/projectile/bullet/pellet/trainshot/on_hit(atom/target)
 	. = ..()
@@ -214,6 +230,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /* 12g pellet fire
  * DAMAGE: 5
@@ -236,6 +254,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	sharpness = SHARP_NONE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /* 12g pellet fire
  * DAMAGE: 5
@@ -262,6 +282,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_PELLET
 	sharpness = SHARP_NONE
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET
+	zone_accuracy_type = ZONE_WEIGHT_SHOTGUN
 
 /obj/item/projectile/incendiary/flamethrower/on_hit(atom/target)
 	. = ..()
@@ -290,6 +312,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	sharpness = SHARP_NONE
+	zone_accuracy_type = ZONE_WEIGHT_PRECISION
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
 
 	stutter = 5
 	jitter = 20
@@ -343,6 +367,8 @@
 	sharpness = SHARP_NONE
 	knockdown = 80
 	hitsound = 'sound/effects/meteorimpact.ogg'
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /obj/item/projectile/bullet/shotgun_meteorslug/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -381,6 +407,8 @@
 	
 	pixels_per_second = BULLET_SPEED_SHOTGUN_SLUG
 	knockdown = 50
+	damage_falloff = BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG
+	zone_accuracy_type = ZONE_WEIGHT_SEMI_AUTO
 
 /obj/item/projectile/bullet/shotgun_frag12/on_hit(atom/target, blocked = FALSE)
 	..()

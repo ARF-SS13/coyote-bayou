@@ -16,6 +16,8 @@
 	var/max_nutrition = INFINITY
 	var/quality = 0	//affects mood, typically higher for mixed drinks with more complex recipes
 	ghoulfriendly = TRUE
+	effective_blood_max = 200
+	effective_blood_multiplier = 5
 
 /datum/reagent/consumable/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M, TRAIT_NO_PROCESS_FOOD))
@@ -119,7 +121,7 @@
 /datum/reagent/consumable/cooking_oil/reaction_obj(obj/O, reac_volume)
 	if(holder && holder.chem_temp >= fry_temperature)
 		if(isitem(O) && !O.GetComponent(/datum/component/fried) && !(O.resistance_flags & (FIRE_PROOF|INDESTRUCTIBLE)) && (!O.reagents || isfood(O))) //don't fry stuff we shouldn't
-			O.loc.visible_message("<span class='warning'>[O] rapidly fries as it's splashed with hot oil! Somehow.</span>")
+			O.loc.visible_message(span_warning("[O] rapidly fries as it's splashed with hot oil! Somehow."))
 			O.fry(volume)
 			if(O.reagents)
 				O.reagents.add_reagent(/datum/reagent/consumable/cooking_oil, reac_volume)
@@ -131,8 +133,8 @@
 		boiling = TRUE
 	if(method == VAPOR || method == TOUCH) //Directly coats the mob, and doesn't go into their bloodstream
 		if(boiling)
-			M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
-			"<span class='userdanger'>You're covered in boiling oil!</span>")
+			M.visible_message(span_warning("The boiling oil sizzles as it covers [M]!"), \
+			span_userdanger("You're covered in boiling oil!"))
 			M.emote("scream")
 			playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 			var/oil_damage = min((holder.chem_temp / fry_temperature) * 0.33,1) //Damage taken per unit
@@ -168,7 +170,7 @@
 		mytray.adjustPests(rand(1,2))
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
-	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
+	to_chat(M, span_userdanger("You go into hyperglycaemic shock! Lay off the twinkies!"))
 	M.AdjustSleeping(600, FALSE)
 	. = 1
 
@@ -358,7 +360,7 @@
 
 /datum/reagent/consumable/condensedcapsaicin/on_mob_life(mob/living/carbon/M)
 	if(prob(5))
-		M.visible_message("<span class='warning'>[M] [pick("dry heaves!","coughs!","splutters!")]</span>")
+		M.visible_message(span_warning("[M] [pick("dry heaves!","coughs!","splutters!")]"))
 	..()
 
 /datum/reagent/consumable/sodiumchloride
@@ -449,7 +451,7 @@
 /datum/reagent/consumable/coyotejuice/on_mob_life(mob/living/carbon/M)
 	if(prob(10))
 		var/smoke_message = pick("You feel relaxed.", "You feel calmed.","You feel alert.","You feel rugged.")
-		to_chat(M, "<span class='notice'>[smoke_message]</span>")
+		to_chat(M, span_notice("[smoke_message]"))
 	M.AdjustStun(-4, 0)
 	M.AdjustKnockdown(-4, 0)
 	M.AdjustUnconscious(-4, 0)
@@ -521,13 +523,11 @@
 			if(prob(10))
 				M.emote(pick("twitch","giggle"))
 		if(5 to 10)
-			M.Jitter(10)
 			M.Dizzy(10)
 			M.set_drugginess(35)
 			if(prob(20))
 				M.emote(pick("twitch","giggle"))
 		if (10 to INFINITY)
-			M.Jitter(20)
 			M.Dizzy(20)
 			M.set_drugginess(40)
 			if(prob(30))
@@ -546,7 +546,7 @@
 /datum/reagent/consumable/garlic/on_mob_life(mob/living/carbon/M)
 	if(isvampire(M)) //incapacitating but not lethal. Unfortunately, vampires cannot vomit.
 		if(prob(min(25, current_cycle)))
-			to_chat(M, "<span class='danger'>You can't get the scent of garlic out of your nose! You can barely think...</span>")
+			to_chat(M, span_danger("You can't get the scent of garlic out of your nose! You can barely think..."))
 			M.Stun(10)
 			M.Jitter(10)
 			return
@@ -564,10 +564,10 @@
 		switch(method)
 			if(INGEST)
 				if(prob(min(30, current_cycle)))
-					to_chat(M, "<span class='warning'>You cant get the smell of garlic out of your nose! You cant think straight because of it!</span>")
+					to_chat(M, span_warning("You cant get the smell of garlic out of your nose! You cant think straight because of it!"))
 					M.Jitter(15)
 				if(prob(min(15, current_cycle)))
-					M.visible_message("<span class='danger'>Something you ate is burning your stomach!</span>", "<span class='warning'>[M] clutches their stomach and falls to the ground!</span>")
+					M.visible_message(span_danger("Something you ate is burning your stomach!"), span_warning("[M] clutches their stomach and falls to the ground!"))
 					M.Knockdown(20)
 					M.emote("scream")
 				if(prob(min(5, current_cycle)) && iscarbon(M))
@@ -575,7 +575,7 @@
 					C.vomit()
 			if(INJECT)
 				if(prob(min(20, current_cycle)))
-					to_chat(M, "<span class='warning'>You feel like your veins are boiling!</span>")
+					to_chat(M, span_warning("You feel like your veins are boiling!"))
 					M.emote("scream")
 					M.adjustFireLoss(5)
 	..()
@@ -595,6 +595,7 @@
 /datum/reagent/consumable/peanut_butter
 	name = "Peanut Butter"
 	description = "A popular food paste made from ground dry-roasted peanuts."
+	reagent_state = SOLID
 	color = "#C29261"
 	value = REAGENT_VALUE_UNCOMMON
 	nutriment_factor = 10 * REAGENTS_METABOLISM
@@ -672,6 +673,7 @@
 /datum/reagent/consumable/cherryjelly
 	name = "Cherry Jelly"
 	description = "Totally the best. Only to be spread on foods with excellent lateral symmetry."
+	nutriment_factor = 10 * REAGENTS_METABOLISM
 	color = "#801E28" // rgb: 128, 30, 40
 	value = REAGENT_VALUE_COMMON
 	taste_description = "cherry"
@@ -679,6 +681,7 @@
 /datum/reagent/consumable/bluecherryjelly
 	name = "Blue Cherry Jelly"
 	description = "Blue and tastier kind of cherry jelly."
+	nutriment_factor = 10 * REAGENTS_METABOLISM
 	color = "#00F0FF"
 	value = REAGENT_VALUE_UNCOMMON
 	taste_description = "blue cherry"
@@ -703,9 +706,16 @@
 /datum/reagent/consumable/eggyolk
 	name = "Egg Yolk"
 	description = "It's full of protein."
-	nutriment_factor = 3 * REAGENTS_METABOLISM
+	nutriment_factor = 4 * REAGENTS_METABOLISM
 	color = "#FFB500"
 	taste_description = "egg"
+
+/datum/reagent/consumable/eggwhite
+	name = "Egg White"
+	description = "It's full of even more protein."
+	nutriment_factor = 1.5 * REAGENTS_METABOLISM
+	color = "#fffdf7"
+	taste_description = "bland egg"
 
 /datum/reagent/consumable/corn_starch
 	name = "Corn Starch"
@@ -755,7 +765,6 @@
 	name = "Mayonnaise"
 	description = "An white and oily mixture of mixed egg yolks."
 	color = "#DFDFDF"
-	value = 5
 	taste_description = "mayonnaise"
 	value = REAGENT_VALUE_COMMON
 
@@ -970,3 +979,36 @@
 	taste_mult = 2
 	taste_description = "fizzy sweetness"
 	value = REAGENT_VALUE_COMMON
+
+/datum/reagent/consumable/gravy
+	name = "Gravy"
+	description = "A mixture of flour, water, and the juices of cooked meat."
+	taste_description = "gravy"
+	color = "#623301"
+	taste_mult = 1.2
+
+/datum/reagent/consumable/olivepaste
+	name = "Olive Paste"
+	description = "A mushy pile of finely ground olives."
+	taste_description = "mushy olives"
+	color = "#adcf77"
+
+//A better oil, representing choices like olive oil, argan oil, avocado oil, etc.
+/datum/reagent/consumable/quality_oil
+	name = "Quality Oil"
+	description = "A high quality oil, suitable for dishes where the oil is a key flavour."
+	taste_description = "olive oil"
+	color = "#DBCF5C"
+
+/datum/reagent/consumable/vinegar
+	name = "Vinegar"
+	description = "Useful for pickling, or putting on chips."
+	taste_description = "acid"
+	color = "#661F1E"
+
+/datum/reagent/consumable/whipped_cream
+	name = "Whipped Cream"
+	description = "A white fluffy cream made from whipping cream at intense speed."
+	color = "#efeff0"
+	nutriment_factor = 4 * REAGENTS_METABOLISM
+	taste_description = "fluffy sweet cream"

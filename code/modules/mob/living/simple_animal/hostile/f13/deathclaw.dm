@@ -11,15 +11,16 @@
 	icon_living = "deathclaw"
 	icon_dead = "deathclaw_dead"
 	icon_gib = "deathclaw_gib"
-	maxHealth = 750
+	mob_armor = ARMOR_VALUE_DEATHCLAW_COMMON
+	maxHealth = 250 
+	health = 250
 	reach = 2
 	speed = -1
-	health = 600
 	obj_damage = 200
-	melee_damage_lower = 20
+	melee_damage_lower = 15
 	melee_damage_upper = 40
 	footstep_type = FOOTSTEP_MOB_HEAVY
-
+	move_to_delay = 2.4 //hahahahahahahaaaaa
 	gender = MALE
 	a_intent = INTENT_HARM //So we can not move past them.
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
@@ -67,10 +68,11 @@
 	name = "mother deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is an angry mother."
 	gender = FEMALE
-	maxHealth = 800
-	health = 800
+	mob_armor = ARMOR_VALUE_DEATHCLAW_MOTHER
+	maxHealth = 300 
+	health = 300
 	stat_attack = CONSCIOUS
-	melee_damage_lower = 50
+	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	color = rgb(95,104,94)
@@ -81,14 +83,14 @@
 /mob/living/simple_animal/hostile/deathclaw/legendary
 	name = "legendary deathclaw"
 	desc = "A massive, reptilian creature with powerful muscles, razor-sharp claws, and aggression to match. This one is a legendary enemy."
-	maxHealth = 1200
-	health = 1200
+	mob_armor = ARMOR_VALUE_DEATHCLAW_LEGEND
+	maxHealth = 400 
+	health = 400
 	color = "#FFFF00"
 	stat_attack = CONSCIOUS
-	melee_damage_lower = 55
+	melee_damage_lower = 25
 	melee_damage_upper = 55
 	footstep_type = FOOTSTEP_MOB_HEAVY
-
 
 /mob/living/simple_animal/hostile/deathclaw/legendary/death(gibbed)
 	var/turf/T = get_turf(src)
@@ -103,10 +105,11 @@
 	icon_state = "combatclaw"
 	icon_living = "combatclaw"
 	icon_dead = "combatclaw_dead"
-	maxHealth = 2500
-	health = 2500
+	mob_armor = ARMOR_VALUE_DEATHCLAW_PA // ha get fucked
+	maxHealth = 1000 // ha get turbofucked
+	health = 1000
 	stat_attack = CONSCIOUS
-	melee_damage_lower = 70
+	melee_damage_lower = 40
 	melee_damage_upper = 80
 	footstep_type = FOOTSTEP_MOB_HEAVY
 

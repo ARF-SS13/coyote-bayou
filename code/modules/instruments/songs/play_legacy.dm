@@ -71,7 +71,7 @@
 
 	// now generate name
 	var/soundfile = "sound/runtime/instruments/[cached_legacy_dir]/[ascii2text(note+64)][acc][oct].[cached_legacy_ext]"
-	soundfile = file(soundfile)
+	soundfile = wrap_file(soundfile)
 	// make sure the note exists
 	if(!fexists(soundfile))
 		return

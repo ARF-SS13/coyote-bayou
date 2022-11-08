@@ -21,13 +21,13 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_BOS]" = "bosradio",
 	"[FREQ_ENCLAVE]" = "enclaveradio",
 	"[FREQ_TOWN]" = "townradio",
-	"[FREQ_LEGION]" = "legionradio",
-	"[FREQ_DEN]" = "denradio",
-	"[FREQ_RANGER]" = "rangerradio",
-	"[FREQ_KHANS]" = "khansradio"
+	"[FREQ_TOWN_COMMERCE]" = "servradio",
+	"[FREQ_TOWN_PD]" = "secradio",
+	"[FREQ_TOWN_MAYOR]" = "comradio",
+	"[FREQ_RANGER]" = "rangerradio"
 	))
 
-/atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/atom/movable/proc/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
 	if(!can_speak())
 		return
 	if(message == "" || !message)
@@ -35,7 +35,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	spans |= speech_span
 	if(!language)
 		language = get_selected_language()
-	send_speech(message, 7, src, , spans, message_language=language)
+	send_speech(message, 7, src, , spans, message_language=language, just_chat = just_chat)
 
 /atom/movable/proc/Hear(message, atom/movable/speaker, message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 /atom/movable/proc/can_speak()
 	return 1
 
-/atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode)
+/atom/movable/proc/send_speech(message, range = 7, atom/movable/source = src, bubble_type, list/spans, datum/language/message_language = null, message_mode, just_chat)
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode, source)
 	for(var/_AM in get_hearers_in_view(range, source))
 		var/atom/movable/AM = _AM

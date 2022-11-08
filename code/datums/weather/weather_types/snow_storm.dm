@@ -1,9 +1,9 @@
 /datum/weather/snow_storm
 	name = "snow storm"
 	desc = "Harsh snowstorms roam the topside of this arctic planet, burying any area unfortunate enough to be in its path."
-	probability = 90
+	probability = 0
 
-	telegraph_message = "<span class='warning'>Drifting particles of snow begin to dust the surrounding area..</span>"
+	telegraph_message = span_warning("Drifting particles of snow begin to dust the surrounding area..")
 	telegraph_duration = 300
 	telegraph_overlay = "light_snow"
 
@@ -13,8 +13,9 @@
 	weather_duration_upper = 1500
 
 	end_duration = 100
-	end_message = "<span class='boldannounce'>The snowfall dies down, it should be safe to go outside again.</span>"
+	end_message = span_boldannounce("The snowfall dies down, it should be safe to go outside again.")
 
+	tag_weather = WEATHER_SNOW
 	area_types = list(/area)
 	protect_indoors = TRUE
 	target_trait = ZTRAIT_SNOWSTORM

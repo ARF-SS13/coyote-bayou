@@ -180,6 +180,38 @@
 
 //Allowed equipment lists for security vests and hardsuits.
 
+/// Little bitty ammo thingies
+GLOBAL_LIST_INIT(small_ammo_types, typecacheof(list(
+	/obj/item/ammo_box/magazine/m22,
+	/obj/item/ammo_box/magazine/zipgun,
+	/obj/item/ammo_box/magazine/m9mm,
+	/obj/item/ammo_box/magazine/m10mm,
+	/obj/item/ammo_box/magazine/m45,
+	/obj/item/ammo_box/magazine/m44,
+	/obj/item/ammo_box/magazine/m14mm,
+	/obj/item/ammo_box/magazine/m10mm/rifle,
+	/obj/item/ammo_box/magazine/autopipe,
+	/obj/item/ammo_box/magazine/m556/rifle/small,
+	/obj/item/ammo_box/c38,
+	/obj/item/ammo_box/l10mm,
+	/obj/item/ammo_box/a357,
+	/obj/item/ammo_box/m44,
+	/obj/item/ammo_box/c45rev,
+	/obj/item/ammo_box/a45lcrev,
+	/obj/item/ammo_box/rev308,
+	/obj/item/ammo_box/c4570,
+	/obj/item/ammo_box/a762,
+	/obj/item/ammo_box/a308,
+	/obj/item/ammo_box/a556/stripper,
+	/obj/item/ammo_box/needle,
+	/obj/item/ammo_box/foambox
+	)))
+
+/// Not so little bitty ammo thingies
+GLOBAL_LIST_INIT(holster_disallowed, typecacheof(list(
+	/obj/item/ammo_box/magazine/m22/extended
+	)))
+
 GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
 	/obj/item/ammo_casing,
@@ -188,7 +220,8 @@ GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals
+	)))
 
 GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -199,7 +232,8 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
-	/obj/item/tank/internals)))
+	/obj/item/tank/internals
+	)))
 
 GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/gun,
@@ -212,7 +246,8 @@ GLOBAL_LIST_INIT(f13_coat_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/throwing_star/spear,
-	/obj/item/restraints/legcuffs/bola)))
+	/obj/item/restraints/legcuffs/bola
+	)))
 
 GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -229,7 +264,8 @@ GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/tank/internals/emergency_oxygen,
-	/obj/item/tank/internals/plasmaman)))
+	/obj/item/tank/internals/plasmaman
+	)))
 
 GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -237,13 +273,14 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/flashlight,
 	/obj/item/gun/ballistic,
 	/obj/item/gun/energy,
-	/obj/item/melee/onehanded/knife/hunting,
+	/obj/item/melee/onehanded/knife,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
-	/obj/item/tank/internals/plasmaman)))
+	/obj/item/tank/internals/plasmaman
+	)))
 
 GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/ammo_box,
@@ -259,17 +296,17 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals/emergency_oxygen,
 	/obj/item/tank/internals/plasmaman,
-	/obj/item/toy)))
+	/obj/item/toy
+	)))
 
 ///things every armor can hold in their slot
 GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
-	/obj/item/ammo_box,
-	/obj/item/ammo_casing,
 	/obj/item/storage/bag,
 	/obj/item/storage/box,
-	/obj/item/storage/survivalkit_triple_empty,
+	/obj/item/storage/survivalkit,
 	/obj/item/storage/belt,
-	/obj/item/storage/fancy/cigarettes,
+	/obj/item/storage/backpack/spearquiver,
+	/obj/item/storage/bag/tribe_quiver,
 	/obj/item/flashlight,
 	/obj/item/gun,
 	/obj/item/melee,
@@ -280,101 +317,8 @@ GLOBAL_LIST_INIT(default_all_armor_slot_allowed, typecacheof(list(
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
 	/obj/item/kitchen,
-	/obj/item/toy)))
-
-///extra things light armor can hold in their slot by default
-GLOBAL_LIST_INIT(light_armor_allowed, typecacheof(list(
-	/obj/item/storage/box,
-	/obj/item/storage/wallet,
-	/obj/item/melee/smith)))
-
-///things light armor can *not* hold in their slot by default
-GLOBAL_LIST_INIT(light_armor_disallowed, typecacheof(list(
-	/obj/item/gun/ballistic/revolver/grenadelauncher,
-	/obj/item/gun/ballistic/rifle/mag,
-	/obj/item/melee/smith/twohand)))
-
-///extra things tribal armor can hold in their slot by default
-GLOBAL_LIST_INIT(tribal_armor_allowed, typecacheof(list(
-	/obj/item/gun/ballistic/bow,
-	/obj/item/storage/backpack/spearquiver,
-	/obj/item/storage/bag/tribe_quiver,
-	/obj/item/melee)))
-
-///extra things raider armor can hold in their slot by default
-GLOBAL_LIST_INIT(raider_armor_allowed, typecacheof(list(
-	/obj/item/gun/ballistic,
-	/obj/item/melee)))
-
-///extra things smith aprons can hold in their slot by default
-GLOBAL_LIST_INIT(smith_apron_allowed, typecacheof(list(
-	/obj/item/storage/belt/utility,
-	/obj/item/crowbar,
-	/obj/item/screwdriver,
-	/obj/item/weldingtool,
-	/obj/item/wirecutters,
-	/obj/item/wrench,
-	/obj/item/multitool,
-	/obj/item/flashlight,
-	/obj/item/stack/cable_coil,
-	/obj/item/t_scanner,
-	/obj/item/analyzer,
-	/obj/item/geiger_counter,
-	/obj/item/extinguisher/mini,
-	/obj/item/radio,
-	/obj/item/clothing/gloves,
-	/obj/item/holosign_creator,
-	/obj/item/assembly/signaler)))
-
-///extra things sexy maid aprons can hold in their slot by default
-GLOBAL_LIST_INIT(sexymaid_apron_allowed, typecacheof(list(
-	/obj/item/grenade/chem_grenade,
-	/obj/item/lightreplacer,
-	/obj/item/flashlight,
-	/obj/item/reagent_containers/glass/beaker,
-	/obj/item/reagent_containers/glass/bottle,
-	/obj/item/reagent_containers/spray,
-	/obj/item/soap,
-	/obj/item/holosign_creator,
-	/obj/item/forcefield_projector,
-	/obj/item/key/janitor,
-	/obj/item/clothing/gloves,
-	/obj/item/melee/flyswatter,
-	/obj/item/broom,
-	/obj/item/paint/paint_remover,
-	/obj/item/assembly/mousetrap,
-	/obj/item/screwdriver,
-	/obj/item/stack/cable_coil,
-	/obj/item/storage/belt/janitor)))
-
-///extra things farmer aprons can hold in their slot by default
-GLOBAL_LIST_INIT(farmer_apron_allowed, typecacheof(list(
-	/obj/item/hatchet, 
-	/obj/item/scythe, 
-	/obj/item/cultivator, 
-	/obj/item/shovel)))
-
-///just a list that allows guns and melee in an armor slot
-GLOBAL_LIST_INIT(armor_allow_guns_and_melee, typecacheof(list(
-	/obj/item/melee,
-	/obj/item/gun)))
-
-///extra things medium armor can hold in their slot by default
-///Basically most items, plus a box/belt
-GLOBAL_LIST_INIT(medium_armor_allowed, typecacheof(list(
-	/obj/item/storage/wallet,
-	/obj/item/melee,
-	/obj/item/gun,
-	/obj/item/kitchen,
-	/obj/item/twohanded,
-	/obj/item/twohanded/spear,
-	/obj/item/reagent_containers/food,
-	/obj/item/melee,
-	/obj/item/flashlight,
-	/obj/item/tank/internals,
-	/obj/item/storage/fancy/cigarettes,
-	/obj/item/throwing_star/spear,
-	/obj/item/restraints/legcuffs/bola)))
+	/obj/item/toy
+	)))
 
 /// Things allowed in a toolbelt
 GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
@@ -416,8 +360,6 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/stack/marker_beacon,
 	/obj/item/reagent_containers/food/snacks/donut,
 	/obj/item/flashlight/seclite,
-	/obj/item/grenade/chem_grenade/metalfoam,
-	/obj/item/grenade/chem_grenade/smart_metal_foam,
 	/obj/item/construction,
 	/obj/item/circuitboard,
 	/obj/item/clothing/gloves,
@@ -426,12 +368,7 @@ GLOBAL_LIST_INIT(toolbelt_allowed, typecacheof(list(
 	/obj/item/clothing/head/welding,
 	/obj/item/clothing/head/helmet/f13/raider/arclight,
 	/obj/item/holosign_creator,
-	/obj/item/assembly/signaler)))
-
-/// Things allowed in a jannibelt
-GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/grenade/chem_grenade,
-	/obj/item/lightreplacer,
 	/obj/item/flashlight,
 	/obj/item/reagent_containers/glass/beaker,
 	/obj/item/reagent_containers/glass/bottle,
@@ -450,22 +387,36 @@ GLOBAL_LIST_INIT(servicebelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/food,
 	/obj/item/gun/ballistic/revolver/detective,
 	/obj/item/gun/ballistic/revolver/m29/snub,
-	/obj/item/stack/cable_coil
-	)))
-
-/// Things allowed in a botanybelt
-GLOBAL_LIST_INIT(plantbelt_allowed, typecacheof(list(
-	/obj/item/shovel/spade,
+	/obj/item/shovel,
 	/obj/item/cultivator,
 	/obj/item/hatchet,
-	/obj/item/reagent_containers/spray,
 	/obj/item/book/manual/advice_farming,
 	/obj/item/reagent_containers/glass/bottle,
 	/obj/item/reagent_containers/glass/bucket,
 	/obj/item/reagent_containers/glass/beaker,
-	/obj/item/reagent_containers/food/drinks/flask,
-	/obj/item/storage/bag/plants, // remove if it gets abused to breaking somehow
-	/obj/item/plant_analyzer, // out of place but mechanically useful for the foreseeable future, so included for QoL
+	/obj/item/reagent_containers/food/drinks,
+	/obj/item/storage/bag/plants,
+	/obj/item/plant_analyzer,
+	/obj/item/scythe, 
+	/obj/item/assembly/signaler,
+	/obj/item/grenade/chem_grenade,
+	/obj/item/lightreplacer,
+	/obj/item/flashlight,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
+	/obj/item/soap,
+	/obj/item/holosign_creator,
+	/obj/item/forcefield_projector,
+	/obj/item/key/janitor,
+	/obj/item/clothing/gloves,
+	/obj/item/melee/flyswatter,
+	/obj/item/broom,
+	/obj/item/paint/paint_remover,
+	/obj/item/assembly/mousetrap,
+	/obj/item/screwdriver,
+	/obj/item/stack/cable_coil,
+	/obj/item/reagent_containers/food
 	)))
 
 /// Things allowed in a medibelt
@@ -480,6 +431,7 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/reagent_containers/medspray,
 	/obj/item/reagent_containers/hypospray,
 	/obj/item/reagent_containers/chem_pack,
+	/obj/item/reagent_containers/hypospray/medipen,
 	/obj/item/lighter,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/storage/pill_bottle,
@@ -522,23 +474,39 @@ GLOBAL_LIST_INIT(medibelt_allowed, typecacheof(list(
 	/obj/item/ammo_box/needle,
 	/obj/item/tele_iv,
 	/obj/item/stack/sticky_tape, //surgical tape
-	/obj/item/handsaw)))
+	/obj/item/handsaw,
+	/obj/item/reagent_containers/food,
+	/obj/item/slime_extract,
+	/obj/item/reagent_containers/blood,
+	/obj/item/organ,
+	/obj/item/bodypart
+	)))
 
 /// Things allowed in a holster (more of a secbelt)
-GLOBAL_LIST_INIT(gunbelt_allowed, typecacheof(list(
+GLOBAL_LIST_INIT(gunbelt_allowed, GLOB.small_ammo_types + typecacheof(list(
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/gun,
-	/obj/item/ammo_box,
 	/obj/item/stock_parts/cell/ammo,
 	/obj/item/ammo_casing,
 	/obj/item/reagent_containers/spray/pepper,
-	/obj/item/melee/onehanded/knife/hunting,
+	/obj/item/reagent_containers/glass/beaker,
+	/obj/item/reagent_containers/glass/bottle,
+	/obj/item/reagent_containers/spray,
+	/obj/item/melee/onehanded/knife,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/toy)))
+	/obj/item/toy,
+	/obj/item/reagent_containers/food,
+	/obj/item/grenade,
+	/obj/item/screwdriver,
+	/obj/item/lighter,
+	/obj/item/multitool,
+	/obj/item/reagent_containers/food/drinks/bottle/molotov,
+	/obj/item/grenade/plastic/c4
+	)) - GLOB.holster_disallowed) // woo
 
 /// Things allowed in a bandolier
 GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
@@ -551,7 +519,19 @@ GLOBAL_LIST_INIT(ammobelt_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/toy)))
+	/obj/item/grenade/flashbang,
+	/obj/item/assembly/flash,
+	/obj/item/melee/baton,
+	/obj/item/melee/onehanded/knife,
+	/obj/item/toy,
+	/obj/item/reagent_containers/food,
+	/obj/item/grenade,
+	/obj/item/screwdriver,
+	/obj/item/lighter,
+	/obj/item/multitool,
+	/obj/item/reagent_containers/food/drinks/bottle/molotov,
+	/obj/item/grenade/plastic/c4
+	)))
 
 /// Things allowed in a scabbard
 GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
@@ -561,7 +541,9 @@ GLOBAL_LIST_INIT(knifebelt_allowed, typecacheof(list(
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals,
 	/obj/item/restraints/legcuffs/bola,
-	/obj/item/toy)))
+	/obj/item/toy,
+	/obj/item/reagent_containers/food
+	)))
 
 GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/reagent_containers/syringe,
@@ -574,39 +556,6 @@ GLOBAL_LIST_INIT(storage_shoes_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/hobo/knifegun,
 	/obj/item/melee/onehanded/knife,
 	/obj/item/scalpel,
-	)))
-
-GLOBAL_LIST_INIT(storage_holster_can_hold, typecacheof(list(
-	/obj/item/gun/ballistic/automatic/pistol,
-	/obj/item/gun/ballistic/revolver,
-	/obj/item/ammo_box/magazine,
-	/obj/item/ammo_box/tube,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/l10mm,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/shotgun,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/a556/stripper,
-	/obj/item/ammo_box/needle,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a50MG,
-	/obj/item/ammo_box/c45rev,
-	/obj/item/gun/energy/laser/solar,
-	/obj/item/gun/energy/laser/pistol,
-	/obj/item/gun/energy/laser/plasma/pistol,
-	/obj/item/gun/energy/laser/plasma/glock,
-	/obj/item/gun/energy/laser/plasma/glock/extended,
-	/obj/item/gun/energy/laser/wattz,
-	/obj/item/gun/energy/laser/wattz/magneto,
-	/obj/item/gun/energy/laser/plasma/pistol/alien,
-	/obj/item/stock_parts/cell/ammo/ec,
-	)))
-
-GLOBAL_LIST_INIT(storage_magpouch_cant_hold, typecacheof(list(
-	/obj/item/gun
 	)))
 
 GLOBAL_LIST_INIT(storage_hat_can_hold, typecacheof(list(
@@ -632,6 +581,43 @@ GLOBAL_LIST_INIT(storage_treasurer_can_hold, typecacheof(list(
 	/obj/item/melee/smith/dagger,
 	)))
 
+GLOBAL_LIST_INIT(storage_wallet_can_hold, typecacheof(list(
+	/obj/item/stack/spacecash,
+	/obj/item/holochip,
+	/obj/item/card,
+	/obj/item/clothing/mask/cigarette,
+	/obj/item/flashlight/pen,
+	/obj/item/seeds,
+	/obj/item/stack/medical,
+	/obj/item/toy/crayon,
+	/obj/item/coin,
+	/obj/item/dice,
+	/obj/item/disk,
+	/obj/item/implanter,
+	/obj/item/lighter,
+	/obj/item/lipstick,
+	/obj/item/match,
+	/obj/item/paper,
+	/obj/item/pen,
+	/obj/item/photo,
+	/obj/item/reagent_containers/dropper,
+	/obj/item/reagent_containers/syringe,
+	/obj/item/screwdriver,
+	/obj/item/valentine,
+	/obj/item/stamp,
+	/obj/item/key,
+	/obj/item/cartridge,
+	/obj/item/camera_film,
+	/obj/item/stack/ore/bluespace_crystal,
+	/obj/item/reagent_containers/food/snacks/grown/poppy,
+	/obj/item/instrument/harmonica,
+	/obj/item/mining_voucher,
+	/obj/item/suit_voucher,
+	/obj/item/reagent_containers/pill,
+	/obj/item/coin,
+	/obj/item/stack/f13Cash
+	)))
+
 GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/automatic/pistol/sig,
 	/obj/item/gun/ballistic/revolver/detective,
@@ -641,60 +627,333 @@ GLOBAL_LIST_INIT(storage_holdout_can_hold, typecacheof(list(
 	/obj/item/gun/ballistic/revolver/colt357/lucky,
 	/obj/item/gun/ballistic/revolver/m29/snub,
 	/obj/item/gun/ballistic/revolver/needler,
-	/obj/item/gun/energy/laser/wattz,
-)))
+	/obj/item/gun/energy/laser/wattz
+	)))
 
-GLOBAL_LIST_INIT(storage_bulletbelt_can_hold, typecacheof(list(
-	/obj/item/ammo_box/magazine,
-	/obj/item/ammo_box/tube,
-	/obj/item/ammo_box/a357,
-	/obj/item/ammo_box/c38,
-	/obj/item/ammo_box/l10mm,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/shotgun,
-	/obj/item/ammo_box/m44,
-	/obj/item/ammo_box/a762,
-	/obj/item/ammo_box/a556/stripper,
-	/obj/item/ammo_box/needle,
-	/obj/item/ammo_box/a308,
-	/obj/item/ammo_box/c4570,
-	/obj/item/ammo_box/a50MG,
-	/obj/item/gun/energy/laser/solar,
-	/obj/item/gun/energy/laser/pistol,
-	/obj/item/gun/energy/laser/plasma/pistol,
-	/obj/item/gun/energy/laser/plasma/glock,
-	/obj/item/gun/energy/laser/plasma/glock/extended,
-	/obj/item/gun/energy/laser/wattz,
-	/obj/item/gun/energy/laser/wattz/magneto,
-	/obj/item/gun/energy/laser/plasma/pistol/alien,
-	/obj/item/stock_parts/cell/ammo/ec,
-)))
+GLOBAL_LIST_INIT(storage_produce_bag_can_hold, typecacheof(list(
+	/obj/item/reagent_containers/food/snacks/grown,
+	/obj/item/seeds,
+	/obj/item/grown,
+	/obj/item/reagent_containers/honeycomb,
+	/obj/item/reagent_containers/food/snacks,
+	/obj/item/stack/sheet/wetleather,
+	/obj/item/stack/sheet/hairlesshide,
+	/obj/item/stack/sheet/animalhide,
+	/obj/item/stack/sheet/leatherstrips,
+	/obj/item/stack/sheet/leather,
+	/obj/item/stack/sheet/sinew,
+	/obj/item/stack/sheet/bone,
+	/obj/item/fishy
+	)))
+
+GLOBAL_LIST_INIT(storage_salvage_storage_bag_can_hold, typecacheof(list(
+	/obj/item/advanced_crafting_components,
+	/obj/item/stack/crafting,
+	/obj/item/crafting,
+	/obj/item/multitool/advanced,
+	/obj/item/crowbar/hightech,
+	/obj/item/wrench/hightech,
+	/obj/item/weldingtool/hightech,
+	/obj/item/screwdriver/hightech,
+	/obj/item/wirecutters/hightech,
+	/obj/item/blueprint/research,
+	/obj/item/multitool/advanced
+	)))
+
+GLOBAL_LIST_INIT(storage_tray_can_hold, typecacheof(list(
+	/obj/item/reagent_containers/food,
+	/obj/item/reagent_containers/glass,
+	/datum/reagent/consumable,
+	/obj/item/kitchen/knife,
+	/obj/item/kitchen/rollingpin,
+	/obj/item/kitchen/fork,
+	/obj/item/storage/box
+	)))
+
+/// Number of rows volume storage should have
+#define STORAGE_ROWS_DEFAULT 1
+
+/* * * * * * * * * * * * * * *
+ * The International Pocket
+ * * * * * * * * * * * * * * */
+
+/// How many items total fit in a pocket
+#define STORAGE_TINY_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_TINY_POCKET_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a pocket
+#define STORAGE_TINY_POCKET_MAX_TOTAL_SPACE STORAGE_TINY_POCKET_MAX_SIZE * STORAGE_TINY_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_SMALL_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_SMALL_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_SMALL_POCKET_MAX_TOTAL_SPACE STORAGE_SMALL_POCKET_MAX_SIZE * STORAGE_SMALL_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_NORMAL_POCKET_MAX_TOTAL_SPACE STORAGE_NORMAL_POCKET_MAX_SIZE * STORAGE_NORMAL_POCKET_MAX_ITEMS
+
+/// How many items total fit in a pocket
+#define STORAGE_BULKY_POCKET_MAX_ITEMS 1
+/// How big a thing can fit in a pocket
+#define STORAGE_BULKY_POCKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a pocket
+#define STORAGE_BULKY_POCKET_MAX_TOTAL_SPACE STORAGE_BULKY_POCKET_MAX_SIZE * STORAGE_BULKY_POCKET_MAX_ITEMS
 
 
-/// How many items total fit in a holster
-#define STORAGE_HOLSTER_MAX_ITEMS 7
-/// How much volume fits in a holster
-#define STORAGE_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_HOLSTER_MAX_ITEMS
+/* * * * * * * * * * * * * * *
+ * Belt slot inventory things
+ * * * * * * * * * * * * * * */
 
-/// How many items total fit in a shoulder holster
-#define STORAGE_SHOULDER_HOLSTER_MAX_ITEMS 4
-/// How much volume fits in a holster
-#define STORAGE_SHOULDER_HOLSTER_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_SHOULDER_HOLSTER_MAX_ITEMS
+/// How many items total fit in a specialized belt
+#define STORAGE_BELT_SPECIALIZED_MAX_ITEMS 7
+/// How big a thing can fit in a specialized belt
+#define STORAGE_BELT_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a specialized belt
+#define STORAGE_BELT_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_BELT_SPECIALIZED_MAX_SIZE * STORAGE_BELT_SPECIALIZED_MAX_ITEMS
 
-/// How many items total fit in a belt
-#define STORAGE_BELT_MAX_ITEMS 14
-/// How much volume fits in a belt
-#define STORAGE_BELT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_BELT_MAX_ITEMS
+/// How many items total fit in a generic belt
+#define STORAGE_BELT_GENERIC_MAX_ITEMS 6
+/// How big a thing can fit in a generic belt
+#define STORAGE_BELT_GENERIC_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a generic belt
+#define STORAGE_BELT_GENERIC_MAX_TOTAL_SPACE STORAGE_BELT_GENERIC_MAX_SIZE * STORAGE_BELT_GENERIC_MAX_ITEMS
 
-/// How many items total fit in a belt
-#define STORAGE_FANNYPACK_MAX_ITEMS 7
-/// How much volume fits in a belt
-#define STORAGE_FANNYPACK_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
+/// How many items total fit in a holster belt
+#define STORAGE_BELT_HOLSTER_MAX_ITEMS 7
+/// How big a thing can fit in a holster belt
+#define STORAGE_BELT_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a holster belt
+#define STORAGE_BELT_HOLSTER_MAX_TOTAL_SPACE WEIGHT_CLASS_NORMAL * 3
 
-/// How many items total fit in a large survival kit
-#define STORAGE_TRIPLEKIT_MAX_ITEMS 21
-/// How much volume fits in a belt
-#define STORAGE_TRIPLEKIT_MAX_VOLUME WEIGHT_CLASS_TINY * STORAGE_FANNYPACK_MAX_ITEMS
+/* * * * * * * * * * * * * * *
+ * Neck slot inventory things
+ * * * * * * * * * * * * * * */
+
+/// How many items total fit in a specialized neckpron
+#define STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS 4
+/// How big a thing can fit in a specialized neckpron
+#define STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a specialized neckpron
+#define STORAGE_NECKPRON_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_NECKPRON_SPECIALIZED_MAX_SIZE * STORAGE_NECKPRON_SPECIALIZED_MAX_ITEMS
+
+/// How many items total fit in a generic neckpron
+#define STORAGE_NECKPRON_GENERIC_MAX_ITEMS 3
+/// How big a thing can fit in a generic neckpron
+#define STORAGE_NECKPRON_GENERIC_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a generic neckpron
+#define STORAGE_NECKPRON_GENERIC_MAX_TOTAL_SPACE STORAGE_NECKPRON_GENERIC_MAX_SIZE * STORAGE_NECKPRON_GENERIC_MAX_ITEMS
+
+/// How many items total fit in a holster neckpron
+#define STORAGE_NECKPRON_HOLSTER_MAX_ITEMS 7
+/// How big a thing can fit in a holster neckpron
+#define STORAGE_NECKPRON_HOLSTER_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a holster neckpron
+#define STORAGE_NECKPRON_HOLSTER_MAX_TOTAL_SPACE STORAGE_NECKPRON_HOLSTER_MAX_ITEMS * STORAGE_NECKPRON_HOLSTER_MAX_SIZE
+
+/* * * * * * * * * * * * * * *
+ * Suit slot inventory things
+ * * * * * * * * * * * * * * */
+
+/// How many items total fit in a specialized suit
+#define STORAGE_SUIT_SPECIALIZED_MAX_ITEMS 7
+/// How big a thing can fit in a specialized suit
+#define STORAGE_SUIT_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a specialized suit
+#define STORAGE_SUIT_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_SUIT_SPECIALIZED_MAX_SIZE * STORAGE_SUIT_SPECIALIZED_MAX_ITEMS
+
+/// How many items total fit in a generic suit
+#define STORAGE_SUIT_GENERIC_MAX_ITEMS 2
+/// How big a thing can fit in a generic suit
+#define STORAGE_SUIT_GENERIC_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a generic suit
+#define STORAGE_SUIT_GENERIC_MAX_TOTAL_SPACE STORAGE_SUIT_GENERIC_MAX_SIZE * STORAGE_SUIT_GENERIC_MAX_ITEMS
+
+/// How many items total fit in a jacket suit
+#define STORAGE_SUIT_JACKET_MAX_ITEMS 4
+/// How big a thing can fit in a jacket suit
+#define STORAGE_SUIT_JACKET_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a jacket suit
+#define STORAGE_SUIT_JACKET_MAX_TOTAL_SPACE STORAGE_SUIT_JACKET_MAX_SIZE * STORAGE_SUIT_JACKET_MAX_ITEMS
+
+/// How many items total fit in a duster suit
+#define STORAGE_SUIT_DUSTER_MAX_ITEMS 4
+/// How big a thing can fit in a duster suit
+#define STORAGE_SUIT_DUSTER_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a duster suit
+#define STORAGE_SUIT_DUSTER_MAX_TOTAL_SPACE STORAGE_SUIT_DUSTER_MAX_SIZE * STORAGE_SUIT_DUSTER_MAX_ITEMS
+
+/// How many items total fit in a duster armor
+#define STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS 3
+/// How big a thing can fit in a duster armor
+#define STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a duster armor
+#define STORAGE_SUIT_DUSTER_ARMOR_MAX_TOTAL_SPACE STORAGE_SUIT_DUSTER_ARMOR_MAX_SIZE * STORAGE_SUIT_DUSTER_ARMOR_MAX_ITEMS
+
+/* * * *
+ * Bags
+ * * * */
+
+/// How many items total fit in a bag thing
+#define STORAGE_BAG_MAX_ITEMS STORAGE_BELT_SPECIALIZED_MAX_ITEMS * 2 //14
+/// How big a thing can fit in a bag thing
+#define STORAGE_BAG_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a bag thing
+#define STORAGE_BAG_MAX_TOTAL_SPACE STORAGE_BAG_MAX_ITEMS * STORAGE_BAG_MAX_SIZE
+
+/// How many items fit in a salvage bag
+#define STORAGE_SALVAGE_BAG_MAX_ITEMS 32
+/// How big a thing can fit in a bag thing
+#define STORAGE_SALVAGE_BAG_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a bag thing
+#define STORAGE_SALVAGE_BAG_MAX_TOTAL_SPACE STORAGE_SALVAGE_BAG_MAX_ITEMS * STORAGE_SALVAGE_BAG_MAX_ITEMS
+
+/// How many items total fit in a trash bag thing
+#define STORAGE_TRASH_BAG_MAX_ITEMS STORAGE_BAG_MAX_ITEMS * 2 //28
+/// How big a thing can fit in a trash bag thing
+#define STORAGE_TRASH_BAG_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a trash bag thing
+#define STORAGE_TRASH_BAG_MAX_TOTAL_SPACE STORAGE_TRASH_BAG_MAX_ITEMS * STORAGE_TRASH_BAG_MAX_SIZE
+
+/// How many items total fit in a big trash bag thing
+#define STORAGE_BIG_TRASH_BAG_MAX_ITEMS STORAGE_BAG_MAX_ITEMS * 2 //52
+/// How big a thing can fit in a trash bag thing
+#define STORAGE_BIG_TRASH_BAG_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a trash bag thing
+#define STORAGE_BIG_TRASH_BAG_MAX_TOTAL_SPACE STORAGE_BIG_TRASH_BAG_MAX_ITEMS * STORAGE_BIG_TRASH_BAG_MAX_SIZE
+
+/// How many items total fit in a casing bag
+#define STORAGE_CASING_BAG_MAX_ITEMS 600
+/// How big a thing can fit in a casing bag
+#define STORAGE_CASING_BAG_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a casing bag
+#define STORAGE_CASING_BAG_MAX_TOTAL_SPACE STORAGE_CASING_BAG_MAX_ITEMS * STORAGE_CASING_BAG_MAX_SIZE
+
+/// How many items total fit in a casing quiver
+#define STORAGE_CASING_QUIVER_MAX_ITEMS 30
+/// How big a thing can fit in a casing quiver
+#define STORAGE_CASING_QUIVER_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a casing quiver
+#define STORAGE_CASING_QUIVER_MAX_TOTAL_SPACE STORAGE_CASING_QUIVER_MAX_ITEMS * STORAGE_CASING_QUIVER_MAX_SIZE
+
+/* * * *
+ * Boxes
+ * * * */
+
+/// How many items total fit in a box
+#define STORAGE_BOX_DEFAULT_MAX_ITEMS 7
+/// How big a thing can fit in a box
+#define STORAGE_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a box
+#define STORAGE_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_BOX_DEFAULT_MAX_ITEMS * STORAGE_BOX_DEFAULT_MAX_SIZE
+
+/// How many items total fit in a bigbox
+#define STORAGE_BIG_BOX_DEFAULT_MAX_ITEMS STORAGE_BOX_DEFAULT_MAX_ITEMS * 2
+/// How big a thing can fit in a bigbox
+#define STORAGE_BIG_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a bigbox
+#define STORAGE_BIG_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_BIG_BOX_DEFAULT_MAX_ITEMS * STORAGE_BIG_BOX_DEFAULT_MAX_SIZE
+/// How many rows in a bigbox
+#define STORAGE_ROWS_BIGBOX 2
+
+/// How many items total fit in a hugebox
+#define STORAGE_HUGE_BOX_DEFAULT_MAX_ITEMS STORAGE_BIG_BOX_DEFAULT_MAX_ITEMS * 2
+/// How big a thing can fit in a hugebox
+#define STORAGE_HUGE_BOX_DEFAULT_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a hugebox
+#define STORAGE_HUGE_BOX_DEFAULT_MAX_TOTAL_SPACE STORAGE_HUGE_BOX_DEFAULT_MAX_ITEMS * STORAGE_HUGE_BOX_DEFAULT_MAX_SIZE
+/// How many rows in a hugebox
+#define STORAGE_ROWS_HUGEBOX 3
+
+/* * * * * * * * * *
+ * Survival pouches
+ * * * * * * * * * */
+
+/// How many items total fit in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_DEFAULT_MAX_ITEMS 4
+/// How big a thing can fit in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a generic survival kit
+#define STORAGE_BOX_SURVIVAL_GENERIC_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_GENERIC_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_GENERIC_MAX_SIZE
+
+/// How many items total fit in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS 5
+/// How big a thing can fit in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE WEIGHT_CLASS_SMALL
+/// How much volume fits in a specialized survival kit
+#define STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_SPECIALIZED_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_SPECIALIZED_MAX_SIZE
+
+/// How many items total fit in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS 21
+/// How big a thing can fit in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a triple survival kit
+#define STORAGE_BOX_SURVIVAL_TRIPLE_MAX_TOTAL_SPACE STORAGE_BOX_SURVIVAL_TRIPLE_DEFAULT_MAX_ITEMS * STORAGE_BOX_SURVIVAL_TRIPLE_MAX_SIZE
+/// How many rows in a triple survival kit
+#define STORAGE_ROWS_SURVIVAL_TRIPLE 3 // triple after all~
+
+/* * * * * * *
+ * Backpacks!
+ * * * * * * */
+
+/// How many items total fit in a backpack
+#define STORAGE_BACKPACK_DEFAULT_MAX_ITEMS 8
+/// How big a thing can fit in a backpack
+#define STORAGE_BACKPACK_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a backpack
+#define STORAGE_BACKPACK_DEFAULT_MAX_TOTAL_SPACE STORAGE_BACKPACK_DEFAULT_MAX_ITEMS * STORAGE_BACKPACK_DEFAULT_MAX_SIZE
+/// How many rows in a backpack
+#define STORAGE_ROWS_BACKPACK 2
+
+/// Duffel slowdown
+#define DUFFELBAG_SLOWDOWN 0.75 // wear the fuckin bag
+#define DUFFELBAG_SCAV_SLOWDOWN 1
+
+/// How many items total fit in a duffel
+#define STORAGE_DUFFEL_DEFAULT_MAX_ITEMS 12
+/// How big a thing can fit in a duffel
+#define STORAGE_DUFFEL_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a duffel
+#define STORAGE_DUFFEL_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
+/// How many rows in a duffel
+#define STORAGE_ROWS_DUFFEL 3
+
+/// How many items total fit in a duffel scav
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS 16
+/// How big a thing can fit in a duffel scav
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_SIZE WEIGHT_CLASS_NORMAL
+/// How much volume fits in a duffel scav
+#define STORAGE_DUFFEL_SCAV_DEFAULT_MAX_TOTAL_SPACE STORAGE_DUFFEL_SCAV_DEFAULT_MAX_ITEMS * WEIGHT_CLASS_NORMAL
+/// How many rows in a duffel scav
+#define STORAGE_ROWS_DUFFEL_SCAV 4 // big bag!
+
+/* * * * *
+ * Wallet
+ * * * * */
+
+/// How many items total fit in a box
+#define STORAGE_WALLET_DEFAULT_MAX_ITEMS 7
+/// How big a thing can fit in a wallet
+#define STORAGE_WALLET_DEFAULT_MAX_SIZE WEIGHT_CLASS_TINY
+/// How much volume fits in a wallet
+#define STORAGE_WALLET_DEFAULT_MAX_TOTAL_SPACE STORAGE_WALLET_DEFAULT_MAX_ITEMS * STORAGE_WALLET_DEFAULT_MAX_SIZE
+
+/* * * * *
+ * Brahmin
+ * * * * */
+
+/// How many items total fit in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_ITEMS 5
+/// How big a thing can fit in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_SIZE WEIGHT_CLASS_HUGE
+/// How much volume fits in a brahmin
+#define STORAGE_BRAHMIN_DEFAULT_MAX_TOTAL_SPACE STORAGE_BRAHMIN_DEFAULT_MAX_ITEMS * STORAGE_BRAHMIN_DEFAULT_MAX_SIZE
+
 
 //Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

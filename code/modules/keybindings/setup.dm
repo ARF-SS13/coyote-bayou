@@ -13,12 +13,12 @@
 	set desc = "Re-assert all your macros/keybindings."
 	set category = "OOC"
 	if(last_macro_fix > (world.time - 10 SECONDS))
-		to_chat(src, "<span class='warning'>It's been too long since the last reset. Wait a while.</span>")
+		to_chat(src, span_warning("It's been too long since the last reset. Wait a while."))
 		return
 	if(!SSinput.initialized)
-		to_chat(src, "<span class='warning'>Input hasn't been initialized yet. Wait a while.</span>")
+		to_chat(src, span_warning("Input hasn't been initialized yet. Wait a while."))
 		return
-	to_chat(src, "<span class='danger'>Force-reasserting all macros.</span>")
+	to_chat(src, span_danger("Force-reasserting all macros."))
 	last_macro_fix = world.time
 	full_macro_assert()
 

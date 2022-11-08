@@ -19,6 +19,10 @@
 	icon_state = "human"
 	name = "Human"
 
+/datum/sprite_accessory/penis/nondescript
+	icon_state = "nondescript"
+	name = "Nondescript"
+
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
 	name = "Knotted"
@@ -62,7 +66,11 @@
 
 /datum/sprite_accessory/testicles/single
 	icon_state = "single"
-	name = "Single" //Single as "single pair", for clarity.
+	name = "Pair of testicles" //Clarifies it for something else
+
+/datum/sprite_accessory/testicles/sheath
+	icon_state = "single"
+	name = "Sheath"
 
 //Vaginas
 /datum/sprite_accessory/vagina
@@ -119,3 +127,14 @@
 /datum/sprite_accessory/breasts/sextuple
 	icon_state = "sextuple"
 	name = "Sextuple"
+
+//BUTT BE HERE
+/datum/sprite_accessory/butt
+	icon = 'icons/obj/genitals/butt_onmob.dmi'
+	icon_state = "butt"
+	name = "butt"
+	color_src = "butt_color"
+
+/datum/sprite_accessory/butt/pair
+	icon_state = "pair"
+	name = "Pair"

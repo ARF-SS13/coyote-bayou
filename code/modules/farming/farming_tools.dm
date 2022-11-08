@@ -20,7 +20,6 @@
 	flags_inv = HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD
 	resistance_flags = NONE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 75, "acid" = 50) //Weak melee protection, because you can wear it on your head
 	slot_equipment_priority = list( \
 		SLOT_BACK, SLOT_WEAR_ID,\
 		SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
@@ -37,13 +36,13 @@
 /obj/item/reagent_containers/glass/bucket/attackby(obj/O, mob/user, params)
 	if(istype(O, /obj/item/mop))
 		if(reagents.total_volume < 1)
-			to_chat(user, "<span class='warning'>[src] is out of water!</span>")
+			to_chat(user, span_warning("[src] is out of water!"))
 		else
 			reagents.trans_to(O, 5, log = "reagentcontainer-bucket fill mop")
-			to_chat(user, "<span class='notice'>You wet [O] in [src].</span>")
+			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
 	else if(isprox(O))
-		to_chat(user, "<span class='notice'>You add [O] to [src].</span>")
+		to_chat(user, span_notice("You add [O] to [src]."))
 		qdel(O)
 		qdel(src)
 		user.put_in_hands(new /obj/item/bot_assembly/cleanbot)
@@ -54,7 +53,7 @@
 	..()
 	if (slot == SLOT_HEAD)
 		if(reagents.total_volume)
-			to_chat(user, "<span class='userdanger'>[src]'s contents spill all over you!</span>")
+			to_chat(user, span_userdanger("[src]'s contents spill all over you!"))
 			var/R = reagents.log_list()
 			log_reagent("SPLASH: [user] splashed [src] on their head via bucket/equipped(self, SLOT_HEAD) - [R]")
 			reagents.reaction(user, TOUCH)
@@ -161,7 +160,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
 /obj/item/cultivator/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is scratching [user.p_their()] back as hard as [user.p_they()] can with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (BRUTELOSS)
 
 
@@ -212,7 +211,7 @@
 	AddComponent(/datum/component/butchering, 70, 100)
 
 /obj/item/hatchet/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is chopping at [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
 	return (BRUTELOSS)
 
@@ -227,6 +226,8 @@
 	icon = 'icons/fallout/farming/farming_tools.dmi'
 	icon_state = "basket"
 	resistance_flags = FLAMMABLE
+	material_drop = /obj/item/stack/sheet/hay
+	material_drop_amount = 15
 
 
 
@@ -259,7 +260,7 @@
 	AddComponent(/datum/component/butchering, 90, 105)
 
 /obj/item/scythe/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is beheading [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is beheading [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		var/obj/item/bodypart/BP = C.get_bodypart(BODY_ZONE_HEAD)

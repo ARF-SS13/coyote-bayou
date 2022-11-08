@@ -11,13 +11,162 @@
 #define MOVE_INTENT_WALK "walk"
 #define MOVE_INTENT_RUN  "run"
 
+/// Normal baseline blood volume
+#define BLOOD_VOLUME_NORMAL 1000
+/// The amount blood typically regenerates to on its own
+#define BLOOD_VOLUME_SAFE (BLOOD_VOLUME_NORMAL * 0.95)
+/// First stage of bloodloss, mostly warnings
+#define BLOOD_VOLUME_SYMPTOMS_WARN (BLOOD_VOLUME_NORMAL * 0.70)
+/// Second stage of bloodloss, minor harmless symptoms
+#define BLOOD_VOLUME_SYMPTOMS_MINOR (BLOOD_VOLUME_NORMAL * 0.60)
+/// Third stage of bloodloss, annoying, but not particularly disabling, symptoms
+#define BLOOD_VOLUME_SYMPTOMS_ANNOYING (BLOOD_VOLUME_NORMAL * 0.40)
+/// Fourth stage of bloodloss, worst symptoms begin, combat sucks
+#define BLOOD_VOLUME_SYMPTOMS_DEBILITATING (BLOOD_VOLUME_NORMAL * 0.30)
+/// Fifth stage of bloodloss, absolutely disabling, combat is impossible, rip~
+#define BLOOD_VOLUME_SYMPTOMS_WORST (BLOOD_VOLUME_NORMAL * 0.20)
+/// Okay die now
+#define BLOOD_VOLUME_DEATH 1
 //Blood levels
-#define BLOOD_VOLUME_MAX_LETHAL		2150
-#define BLOOD_VOLUME_EXCESS			2100
-#define BLOOD_VOLUME_MAXIMUM		2000
-#define BLOOD_VOLUME_SLIME_SPLIT	1120
-#define BLOOD_VOLUME_NORMAL			560
-#define BLOOD_VOLUME_SAFE			475
+#define BLOOD_VOLUME_MAX_LETHAL (BLOOD_VOLUME_NORMAL * 2.50)
+#define BLOOD_VOLUME_EXCESS (BLOOD_VOLUME_NORMAL * 2.25)
+#define BLOOD_VOLUME_MAXIMUM (BLOOD_VOLUME_NORMAL * 2)
+#define BLOOD_VOLUME_SLIME_SPLIT (BLOOD_VOLUME_NORMAL * 1.25)
+
+/// Max level blood stretchers can bring your blood up to
+#define BLOOD_VOLUME_EXPANDER_MAX BLOOD_VOLUME_SYMPTOMS_MINOR + 10
+
+/// Max level blood will regenerate naturally with nutrition
+#define BLOOD_REFILL_PER_TICK 1
+
+/// Max level blood will regenerate naturally with nutrition
+#define BLOOD_REFILL_NUTRITION_MAX BLOOD_VOLUME_NORMAL
+/// Nutrition cost for one unit of blood
+#define BLOOD_UNIT_NUTRITION_COST 1.25 // 600 nutrition = 400 blood
+/// Nutrition spent for being stuffed/fat
+#define BLOOD_REFILL_NUTRITION_FAT 5 // Eat a lot for quicker blood regen!
+/// Nutrition spent for being full
+#define BLOOD_REFILL_NUTRITION_FULL 3
+/// Nutrition spent for being well fed
+#define BLOOD_REFILL_NUTRITION_WELL_FED 2
+/// Nutrition spent for being fed
+#define BLOOD_REFILL_NUTRITION_FED 1
+/// Nutrition spent for being hungie
+#define BLOOD_REFILL_NUTRITION_HUNGRY 0.5
+/// Nutrition spent for being starving
+#define BLOOD_REFILL_NUTRITION_STARVING 0
+
+/// Lowest amount normal bleeding can take you
+#define BLOOD_VOLUME_LOSS_FLOOR (BLOOD_VOLUME_NORMAL * 0.05)
+
+/// Cap for oxyloss in minor blood loss
+#define BLOOD_LOSS_OXYLOSS_CAP_MINOR 10
+/// Cap for dizziness in minor blood loss
+#define BLOOD_LOSS_DIZZINESS_CAP_MINOR 0
+/// Cap for confusion in minor blood loss
+#define BLOOD_LOSS_CONFUSION_CAP_MINOR 1
+/// Cap for blurriness in minor blood loss
+#define BLOOD_LOSS_BLUR_CAP_MINOR 1
+/// Cap for stamloss in minor blood loss
+#define BLOOD_LOSS_STAMLOSS_CAP_MINOR 25
+/// Multiplier sprint buffer in minor blood loss
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_MINOR 1
+/// How fast the sprint buffer regens in minor blood loss
+#define BLOOD_LOSS_SPRINT_REGEN_MULT_MINOR 0.75
+/// How much sprinting a tile costs in minor blood loss
+#define BLOOD_LOSS_SPRINT_COST_MULT_MINOR 1.25
+/// Chance for a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_MINOR 1
+/// Length of a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_MINOR 1 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_MINOR 1
+
+/// Cap for oxyloss in annoying blood loss
+#define BLOOD_LOSS_OXYLOSS_CAP_ANNOYING 30
+/// Cap for dizziness in annoying blood loss
+#define BLOOD_LOSS_DIZZINESS_CAP_ANNOYING 3
+/// Cap for confusion in annoying blood loss
+#define BLOOD_LOSS_CONFUSION_CAP_ANNOYING 2
+/// Cap for blurriness in annoying blood loss
+#define BLOOD_LOSS_BLUR_CAP_ANNOYING 3
+/// Cap for stamloss in annoying blood loss
+#define BLOOD_LOSS_STAMLOSS_CAP_ANNOYING 50
+/// Multiplier sprint buffer in annoying blood loss
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_ANNOYING 1
+/// How fast the sprint buffer regens in annoying blood loss
+#define BLOOD_LOSS_SPRINT_REGEN_MULT_ANNOYING 0.5
+/// How much sprinting a tile costs in annoying blood loss
+#define BLOOD_LOSS_SPRINT_COST_MULT_ANNOYING 2
+/// Chance for a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_ANNOYING 2
+/// Length of a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_ANNOYING 2 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_ANNOYING 1.5
+
+/// Cap for oxyloss in worst blood loss
+#define BLOOD_LOSS_OXYLOSS_CAP_DEBILITATING 50
+/// Cap for dizziness in worst blood loss
+#define BLOOD_LOSS_DIZZINESS_CAP_DEBILITATING 5
+/// Cap for confusion in worst blood loss
+#define BLOOD_LOSS_CONFUSION_CAP_DEBILITATING 5
+/// Cap for blurriness in worst blood loss
+#define BLOOD_LOSS_BLUR_CAP_DEBILITATING 5
+/// Cap for stamloss in worst blood loss
+#define BLOOD_LOSS_STAMLOSS_CAP_DEBILITATING 75
+/// Multiplier sprint buffer in worst blood loss
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_DEBILITATING 1
+/// How fast the sprint buffer regens in worst blood loss
+#define BLOOD_LOSS_SPRINT_REGEN_MULT_DEBILITATING 0.25
+/// How much sprinting a tile costs in worst blood loss
+#define BLOOD_LOSS_SPRINT_COST_MULT_DEBILITATING 4
+/// Chance for a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_DEBILITATING 3
+/// Length of a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_DEBILITATING 2 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_DEBILITATING 2
+
+/// Cap for oxyloss in worst blood loss
+#define BLOOD_LOSS_OXYLOSS_CAP_WORST 87 // constant random passouts
+/// Cap for dizziness in worst blood loss
+#define BLOOD_LOSS_DIZZINESS_CAP_WORST 30
+/// Cap for confusion in worst blood loss
+#define BLOOD_LOSS_CONFUSION_CAP_WORST 30
+/// Cap for blurriness in worst blood loss
+#define BLOOD_LOSS_BLUR_CAP_WORST 30
+/// Cap for stamloss in worst blood loss
+#define BLOOD_LOSS_STAMLOSS_CAP_WORST 105
+/// Multiplier sprint buffer in worst blood loss
+#define BLOOD_LOSS_SPRINT_BUFFER_MULT_WORST 1
+/// How fast the sprint buffer regens in worst blood loss
+#define BLOOD_LOSS_SPRINT_REGEN_MULT_WORST 0.10
+/// How much sprinting a tile costs in worst blood loss
+#define BLOOD_LOSS_SPRINT_COST_MULT_WORST 10 // basically you cant sprint
+/// Chance for a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_CHANCE_WORST 10
+/// Length of a random knockdown
+#define BLOOD_LOSS_KNOCKDOWN_LENGTH_WORST 5 SECONDS
+/// Slowdown applied in this level of bloodloss
+#define BLOOD_LOSS_SLOWDOWN_WORST 3
+
+/// Oxyloss when you actually go unconscious
+#define BLOOD_LOSS_OXYLOSS_UNCONSCIOUS 90
+
+/// Defines for getting the right anemia message
+/// Warning message
+#define BLOOD_ANEMIA_MESSAGE_WARN "warning"
+/// Minor. Blood loss. Detected.
+#define BLOOD_ANEMIA_MESSAGE_MINOR "minor"
+/// Annoying anemia level message
+#define BLOOD_ANEMIA_MESSAGE_ANNOYING "annoying"
+/// Minor. Blood loss. Detected.
+#define BLOOD_ANEMIA_MESSAGE_DEBILITATING "debilitating"
+/// Annoying anemia level message
+#define BLOOD_ANEMIA_MESSAGE_WORST "worst"
+
+//#define BLOOD_VOLUME_SAFE			475
 #define BLOOD_VOLUME_OKAY			336
 #define BLOOD_VOLUME_BAD			224
 #define BLOOD_VOLUME_SURVIVE		122
@@ -341,7 +490,7 @@
 #define HIDE_OFFLINE_INDICATOR (1<<0)
 
 //Respawn timer
-#define RESPAWN_TIMER 12000
+#define RESPAWN_TIMER 1
 
 ///Define for spawning megafauna instead of a mob for cave gen
 #define SPAWN_MEGAFAUNA "bluh bluh huge boss"
@@ -349,3 +498,97 @@
 // / Breathing types. Lungs can access either by these or by a string, which will be considered a gas ID.
 #define BREATH_OXY		/datum/breathing_class/oxygen
 #define BREATH_PLASMA	/datum/breathing_class/plasma
+
+/// Mob variation defines
+/// Varied mob name
+#define MOB_VARIED_NAME_LIST "varied_names"
+/// Varied name
+#define MOB_NAME_LIST(x...) MOB_VARIED_NAME_LIST = list(x)
+
+/// Use either the above or this one, not both!!! (this one takes priority if you do tho)
+/// Varied mob name, using global name lists!
+#define MOB_VARIED_NAME_GLOBAL_LIST "varied_global_names"
+/// Varied name, with global shit
+#define MOB_NAME_FROM_GLOBAL_LIST(x...) MOB_VARIED_NAME_GLOBAL_LIST = list(x)
+
+/// Random name special keys
+#define MOB_NAME_RANDOM_MALE "some_male_name"
+#define MOB_NAME_RANDOM_FEMALE "some_female_name"
+#define MOB_NAME_RANDOM_LIZARD_MALE "some_male_liz_name"
+#define MOB_NAME_RANDOM_LIZARD_FEMALE "some_female_liz_name"
+#define MOB_NAME_RANDOM_PLASMAMAN "some_plasmeme_name"
+#define MOB_NAME_RANDOM_ETHERIAL "some_etherial_name"
+#define MOB_NAME_RANDOM_MOTH "some_moff_name"
+#define MOB_NAME_RANDOM_ALL_OF_THEM "please_dont_use_this"
+/// use this for random pool names, please. Multiples are usable!
+#define MOB_RANDOM_NAME(key, count) key = count
+
+/// Varied mob color holder
+#define MOB_VARIED_COLOR "varied_color"
+/// Varied mob color min
+#define MOB_VARIED_COLOR_MIN "colored_min"
+/// Varied mob color max
+#define MOB_VARIED_COLOR_MAX "colored_max"
+/// Varied mob color value setter upper - first 3 numbers are the LOWEST R, G, B values, second 3 numbers are the HIGHEST R, G, B values
+#define MOB_COLOR_VARIATION(R1, G1, B1, R2, B2, G2) MOB_VARIED_COLOR = list(MOB_VARIED_COLOR_MIN = list(R1 ? R1 : 255, G1 ? G1 : 255, B1 ? B1 : 255), MOB_VARIED_COLOR_MAX = list(R2 ? R2 : 255, G2 ? G2 : 255, B2 ? B2 : 255))
+
+/// Varied view range define
+#define MOB_VARIED_VIEW_RANGE "varied_view_range"
+/// Varied view ranges
+#define MOB_VIEW_RANGE_LIST(x...) MOB_VARIED_VIEW_RANGE = list(x)
+
+/// Varied aggro range define
+#define MOB_VARIED_AGGRO_RANGE "varied_aggro_range"
+/// Varied aggro ranges
+#define MOB_AGGRO_RANGE_LIST(x...) MOB_VARIED_AGGRO_RANGE = list(x)
+
+/// Varied speed define
+#define MOB_VARIED_SPEED "varied_speed"
+/// Varied speed chance define
+#define MOB_VARIED_SPEED_CHANCE "varied_speed_chance"
+/// Varied speed list
+#define MOB_SPEED_LIST(x...) MOB_VARIED_SPEED = list(x)
+/// Varied speed list chance
+#define MOB_SPEED_CHANGE_PER_TURN_CHANCE(x) MOB_VARIED_SPEED = x
+
+/// Varied health define
+#define MOB_VARIED_HEALTH "varied_health"
+/// Varied health list
+#define MOB_HEALTH_LIST(x...) MOB_VARIED_HEALTH = list(x)
+
+/// Varied retreat define
+#define MOB_RETREAT_DISTANCE "varied_retreat_distance"
+/// Varied retreat define chance
+#define MOB_RETREAT_DISTANCE_CHANCE "varied_retreat_distance_chance"
+/// Varied retreat list
+#define MOB_RETREAT_DISTANCE_LIST(x...) MOB_RETREAT_DISTANCE = list(x)
+/// Varied retreat list chance
+#define MOB_RETREAT_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_RETREAT_DISTANCE_CHANCE = x
+
+/// Varied minimum define
+#define MOB_MINIMUM_DISTANCE "varied_minimum_distance"
+/// Varied minimum define chance
+#define MOB_MINIMUM_DISTANCE_CHANCE "varied_minimum_distance_chance"
+/// Varied minimum list
+#define MOB_MINIMUM_DISTANCE_LIST(x...) MOB_MINIMUM_DISTANCE = list(x)
+/// Varied minimum list chance
+#define MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(x) MOB_MINIMUM_DISTANCE_CHANCE = x
+
+/// Varied projectile define
+#define MOB_PROJECTILE "varied_projectile"
+/// Varied projectile list
+#define MOB_PROJECTILE_LIST(x...) MOB_PROJECTILE = list(x)
+/// Varied projectiles they can shoot, weighted chance to do the thing too
+#define MOB_PROJECTILE_ENTRY(proj, chance) proj = chance
+
+/// Mob EMP reaction flags
+/// For mobs that react to EMP to do something other than take a little damage
+
+/// Mob gets stunned for a moment
+#define MOB_EMP_STUN "mob_gets_stunned"
+/// Mob goes berserk for a moment
+#define MOB_EMP_BERSERK "mob_goes_nuts"
+/// Mob takes damage
+#define MOB_EMP_DAMAGE "mob_gets_hurt"
+/// Mob gets their combat setting scrambled
+#define MOB_EMP_SCRAMBLE "mob_gets_geckoed"

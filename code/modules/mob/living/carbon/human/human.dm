@@ -27,7 +27,7 @@
 	physiology = new()
 
 	AddComponent(/datum/component/personal_crafting)
-	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
+	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 0.3, 5)
 	. = ..()
 
 	if(CONFIG_GET(flag/disable_stambuffer))
@@ -686,7 +686,6 @@
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "perform_cpr", /datum/mood_event/perform_cpr)
 		C.cpr_time = world.time
 		log_combat(src, C, "CPRed")
-
 		if(they_breathe && they_lung)
 			var/suff = min(C.getOxyLoss(), 7)
 			C.adjustOxyLoss(-suff)
@@ -696,6 +695,11 @@
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... but you don't feel any better...</span>")
 		else
 			to_chat(C, "<span class='unconscious'>You feel a breath of fresh air... which is a sensation you don't recognise...</span>")
+
+/mob/living/carbon/human/is_literate()
+	if(HAS_TRAIT(src, TRAIT_ILLITERATE))
+		return FALSE
+	return TRUE
 
 /mob/living/carbon/human/cuff_resist(obj/item/I)
 	if(dna && dna.check_mutation(HULK))
@@ -832,7 +836,7 @@
 	for(var/datum/mutation/human/HM in dna.mutations)
 		if(HM.quality != POSITIVE)
 			dna.remove_mutation(HM.name)
-	if(blood_volume < (BLOOD_VOLUME_NORMAL*blood_ratio))
+	if(get_blood(FALSE) < (BLOOD_VOLUME_NORMAL*blood_ratio))
 		blood_volume = (BLOOD_VOLUME_NORMAL*blood_ratio)
 	..()
 

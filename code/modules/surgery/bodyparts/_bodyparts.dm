@@ -1,4 +1,6 @@
 
+#define BAD_BANDAGE_ANTISPAM_TIME (30 SECONDS)
+
 /obj/item/bodypart
 	name = "limb"
 	desc = "Why is it detached..."
@@ -8,6 +10,10 @@
 	w_class = WEIGHT_CLASS_SMALL
 	icon_state = ""
 	layer = BELOW_MOB_LAYER //so it isn't hidden behind objects when on the floor
+	/// If the limb should have a different layer. Used for huge butts. seriously
+	var/onmob_layer = BODYPARTS_LAYER
+	/// If the limb should have a different layer for markings. Used to have arm markings be over huge butts. seriously
+	var/onmob_markings_layer = MARKING_LAYER
 	var/mob/living/carbon/owner = null
 	var/mob/living/carbon/original_owner = null
 	var/status = BODYPART_ORGANIC
@@ -29,6 +35,8 @@
 	var/brute_dam = 0
 	var/burn_dam = 0
 	var/stamina_dam = 0
+	/// Skin/meat damage, relating to bleedable damage
+	var/bleed_dam = 0
 	var/max_stamina_damage = 0
 	var/incoming_stam_mult = 1 //Multiplier for incoming staminaloss, decreases when taking staminaloss when the limb is disabled, resets back to 1 when limb is no longer disabled.
 	var/max_damage = 0
@@ -50,7 +58,7 @@
 	var/body_markings = ""	//for bodypart markings, deprecated
 	var/list/body_markings_list // stores body markings as lists, with the first value being the name of the bodypart, the second value being the name of the marking, and the third being the colour
 	var/marking_value // combination of old aux_marking and body_marking variables as they were always set together to the same value
-	var/static/default_body_markings_icon = 'modular_citadel/icons/mob/mam_markings.dmi'
+	var/static/default_body_markings_icon = 'icons/mob/mam/citadel/mam_markings.dmi'
 	var/list/markings_color = list()
 	var/digitigrade_type
 
@@ -94,14 +102,19 @@
 	/// How much generic bleedstacks we have on this bodypart
 	var/generic_bleedstacks
 	/// If we have a gauze wrapping currently applied (not including splints)
-	var/obj/item/stack/current_gauze
+	var/obj/item/stack/medical/current_gauze
+	/// If we have a suture stitching our wounds closed
+	var/obj/item/stack/medical/current_suture
+	COOLDOWN_DECLARE(bandage_isnt_good_enough)
 
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.</span>"
+		. += span_warning("This limb has [brute_dam > 30 ? "severe" : "minor"] bruising.")
 	if(burn_dam > DAMAGE_PRECISION)
-		. += "<span class='warning'>This limb has [burn_dam > 30 ? "severe" : "minor"] burns.</span>"
+		. += span_warning("This limb has [burn_dam > 30 ? "severe" : "minor"] burns.")
+	if(bleed_dam > DAMAGE_PRECISION)
+		. += span_warning("This limb has [bleed_dam > WOUND_BLEED_SEVERE_THRESHOLD ? "severe" : "minor"] cuts.")
 
 /obj/item/bodypart/blob_act()
 	take_damage(max_damage)
@@ -118,11 +131,11 @@
 		if(HAS_TRAIT(C, TRAIT_LIMBATTACHMENT))
 			if(!H.get_bodypart(body_zone) && !animal_origin)
 				if(H == user)
-					H.visible_message("<span class='warning'>[H] jams [src] into [H.p_their()] empty socket!</span>",\
-					"<span class='notice'>You force [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[H] jams [src] into [H.p_their()] empty socket!"),\
+					span_notice("You force [src] into your empty socket, and it locks into place!"))
 				else
-					H.visible_message("<span class='warning'>[user] jams [src] into [H]'s empty socket!</span>",\
-					"<span class='notice'>[user] forces [src] into your empty socket, and it locks into place!</span>")
+					H.visible_message(span_warning("[user] jams [src] into [H]'s empty socket!"),\
+					span_notice("[user] forces [src] into your empty socket, and it locks into place!"))
 				user.temporarilyRemoveItemFromInventory(src, TRUE)
 				attach_limb(C)
 				return
@@ -132,11 +145,11 @@
 	if(W.sharpness)
 		add_fingerprint(user)
 		if(!contents.len)
-			to_chat(user, "<span class='warning'>There is nothing left inside [src]!</span>")
+			to_chat(user, span_warning("There is nothing left inside [src]!"))
 			return
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("<span class='warning'>[user] begins to cut open [src].</span>",\
-			"<span class='notice'>You begin to cut open [src]...</span>")
+		user.visible_message(span_warning("[user] begins to cut open [src]."),\
+			span_notice("You begin to cut open [src]..."))
 		if(do_after(user, 54, target = src))
 			drop_organs(user)
 	else
@@ -169,24 +182,24 @@
 		if(check_zone(organ_check.zone) == body_zone)
 			. += organ_check
 
-/obj/item/bodypart/proc/consider_processing()
-	if(stamina_dam > DAMAGE_PRECISION)
-		. = TRUE
-	//else if.. else if.. so on.
-	else
-		. = FALSE
-	needs_processing = .
-
 //Return TRUE to get whatever mob this is in to update health.
 /obj/item/bodypart/proc/on_life()
-	if(stam_heal_tick && stamina_dam > DAMAGE_PRECISION)					//DO NOT update health here, it'll be done in the carbon's life.
+	if(current_gauze)
+		bandage_heal()
+		needs_processing = TRUE
+	if(current_suture)
+		suture_heal()
+		needs_processing = TRUE
+	if(status == BODYPART_ROBOTIC)
+		bleed_dam = 0
+	if(stam_heal_tick && stamina_dam > DAMAGE_PRECISION) //DO NOT update health here, it'll be done in the carbon's life.
 		if(heal_damage(brute = 0, burn = 0, stamina = (stam_heal_tick * (disabled ? 2 : 1)), only_robotic = FALSE, only_organic = FALSE, updating_health = FALSE))
 			. |= BODYPART_LIFE_UPDATE_HEALTH
 
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE) // maybe separate BRUTE_SHARP and BRUTE_OTHER eventually somehow hmm
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE, damage_coverings = TRUE) // maybe separate BRUTE_SHARP and BRUTE_OTHER eventually somehow hmm
 	if(owner && (owner.status_flags & GODMODE))
 		return FALSE	//godmode
 	var/dmg_mlt = CONFIG_GET(number/damage_multiplier)
@@ -206,6 +219,14 @@
 	switch(animal_origin)
 		if(ALIEN_BODYPART,LARVA_BODYPART) //aliens take some additional burn //nothing can burn with so much snowflake code around
 			burn *= 1.2
+
+	// Sutures take damage if you get hurt at all. Slow down, man!
+	if(damage_coverings)
+		for(var/obj/item/bodypart/every_limb in owner.bodyparts)
+			every_limb.damage_suture(brute, burn)
+			if(every_limb != src && prob(50)) // every limb that isnt this one has a 50% chance of their bandage getting hurt
+				continue
+			every_limb.damage_gauze(brute, burn) // but if the limb with the bandage gets hit? it gets hurt
 
 	/*
 	// START WOUND HANDLING
@@ -255,10 +276,6 @@
 	if(owner && wounding_dmg >= WOUND_MINIMUM_DAMAGE && wound_bonus != CANT_WOUND)
 		check_wounding(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
 
-	for(var/i in wounds)
-		var/datum/wound/iter_wound = i
-		iter_wound.receive_damage(wounding_type, wounding_dmg, wound_bonus)
-
 	/*
 	// END WOUND HANDLING
 	*/
@@ -291,7 +308,6 @@
 		owner.updatehealth()
 		if(stamina > DAMAGE_PRECISION)
 			owner.update_stamina()
-	consider_processing()
 	update_disabled()
 	return update_bodypart_damage_state()
 
@@ -353,15 +369,31 @@
  */
 /obj/item/bodypart/proc/check_wounding(woundtype, damage, wound_bonus, bare_wound_bonus)
 	// actually roll wounds if applicable
+
+	damage = min(damage * CONFIG_GET(number/wound_damage_multiplier), WOUND_MAX_CONSIDERED_DAMAGE)
+	
 	if(HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE))
 		damage *= 1.5
-	else
-		damage = min(damage, WOUND_MAX_CONSIDERED_DAMAGE)
-
-	var/base_roll = rand(max(damage/1.5,25), round(damage ** CONFIG_GET(number/wound_exponent))) + (get_damage()*CONFIG_GET(number/wound_damage_multiplier))
+	if(woundtype == WOUND_BLUNT && HAS_TRAIT(owner, TRAIT_GLASS_BONES))
+		damage *= 1.5
+	if((woundtype in PAPER_SKIN_WOUNDS) && HAS_TRAIT(owner, TRAIT_PAPER_SKIN))
+		damage *= 1.5
+	
+	var/base_roll = rand(
+		min(damage * WOUND_DAMAGE_RANDOM_FLOOR_MULT, WOUND_MAX_CONSIDERED_DAMAGE),
+		min(damage * WOUND_DAMAGE_RANDOM_MAX_MULT, WOUND_MAX_CONSIDERED_DAMAGE)
+		)
 	var/injury_roll = base_roll
 	injury_roll += check_woundings_mods(woundtype, damage, wound_bonus, bare_wound_bonus)
-	var/list/wounds_checking = GLOB.global_wound_types[woundtype]
+
+	if(injury_roll < WOUND_MINIMUM_DAMAGE)
+		return FALSE // not enough to wound
+
+	bleed_dam = min(bleed_dam + injury_roll, WOUND_BLEED_CAP)
+
+	for(var/i in wounds)
+		var/datum/wound/iter_wound = i
+		iter_wound.receive_damage(woundtype, injury_roll, wound_bonus)
 
 	// quick re-check to see if bare_wound_bonus applies, for the benefit of log_wound(), see about getting the check from check_woundings_mods() somehow
 	if(ishuman(owner))
@@ -374,8 +406,14 @@
 				bare_wound_bonus = 0
 				break
 
+	var/list/wounds_checking = GLOB.global_wound_types[woundtype]
+	/// Temporary wound handling for bleeds
+	if(woundtype == WOUND_SLASH || woundtype == WOUND_PIERCE)
+		if(apply_bleed_wound(woundtype, wounds_checking))
+			return
+
 	//cycle through the wounds of the relevant category from the most severe down
-	for(var/PW in wounds_checking)
+	for(var/datum/wound/PW in wounds_checking)
 		var/datum/wound/possible_wound = PW
 		var/datum/wound/replaced_wound
 		for(var/i in wounds)
@@ -395,6 +433,22 @@
 				new_wound.apply_wound(src)
 				log_wound(owner, new_wound, damage, wound_bonus, bare_wound_bonus, base_roll) // dismembering wounds are logged in the apply_wound() for loss wounds since they delete themselves immediately, these will be immediately returned
 			return new_wound
+
+/obj/item/bodypart/proc/apply_bleed_wound(woundtype, wounds_checking)
+	var/datum/wound/bleed/this_wound
+	for(var/datum/wound/bleed/bloody in wounds)
+		if(bloody.type in wounds_checking)
+			this_wound = bloody
+	if(this_wound)
+		this_wound.handle_damage(FALSE, TRUE, FALSE, TRUE)
+	else if (bleed_dam >= WOUND_BLEED_MODERATE_THRESHOLD) // injured enough to cause a wound? wound em!
+		switch(woundtype)
+			if(WOUND_SLASH)
+				this_wound = new /datum/wound/bleed/slash
+			if(WOUND_PIERCE)
+				this_wound = new /datum/wound/bleed/pierce
+		this_wound.apply_wound(src)
+	return this_wound
 
 // try forcing a specific wound, but only if there isn't already a wound of that severity or greater for that type on this bodypart
 /obj/item/bodypart/proc/force_wound_upwards(specific_woundtype, smited = FALSE)
@@ -430,10 +484,10 @@
 			var/obj/item/clothing/C = c
 			// unlike normal armor checks, we tabluate these piece-by-piece manually so we can also pass on appropriate damage the clothing's limbs if necessary
 			armor_ablation += C.armor.getRating("wound")
-			if(wounding_type == WOUND_SLASH)
+/*			if(wounding_type == WOUND_SLASH)
 				C.take_damage_zone(body_zone, damage, BRUTE, armour_penetration)
 			else if(wounding_type == WOUND_BURN && damage >= 10) // lazy way to block freezing from shredding clothes without adding another var onto apply_damage()
-				C.take_damage_zone(body_zone, damage, BURN, armour_penetration)
+				C.take_damage_zone(body_zone, damage, BURN, armour_penetration) */
 
 		if(!armor_ablation)
 			injury_mod += bare_wound_bonus
@@ -456,7 +510,7 @@
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
-/obj/item/bodypart/proc/heal_damage(brute, burn, stamina, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE)
+/obj/item/bodypart/proc/heal_damage(brute, burn, stamina, only_robotic = FALSE, only_organic = TRUE, updating_health = TRUE, bleed)
 
 	if(only_robotic && status != BODYPART_ROBOTIC) //This makes organic limbs not heal when the proc is in Robotic mode.
 		return
@@ -467,9 +521,12 @@
 	brute_dam	= round(max(brute_dam - brute, 0), DAMAGE_PRECISION)
 	burn_dam	= round(max(burn_dam - burn, 0), DAMAGE_PRECISION)
 	stamina_dam = round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION)
+	if(bleed)
+		bleed_dam = round(max(bleed_dam - bleed, 0), DAMAGE_PRECISION)
+		for(var/datum/wound/bleed/bloody in wounds)
+			bloody.handle_damage(FALSE, FALSE, healing = TRUE)
 	if(owner && updating_health)
 		owner.updatehealth()
-	consider_processing()
 	update_disabled()
 	return update_bodypart_damage_state()
 
@@ -550,6 +607,7 @@
 	if(heal_limb)
 		burn_dam = 0
 		brute_dam = 0
+		bleed_dam = 0
 		brutestate = 0
 		burnstate = 0
 
@@ -725,13 +783,13 @@
 				// marking stores icon and value for the specific bodypart
 				if(!use_digitigrade)
 					if(body_zone == BODY_ZONE_CHEST)
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 				else
-					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+					. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 
-	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+	var/image/limb = image(layer = -onmob_layer, dir = image_dir)
 	var/image/second_limb
 	var/list/aux = list()
 	var/list/auxmarking = list()
@@ -774,19 +832,19 @@
 		// Body markings
 		if(length(body_markings_list))
 			if(species_id == "husk")
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir))
+							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir))
 						else
-							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir))
+							markings_list.Add(image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir))
 					else
-						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir))
+						markings_list.Add(image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir))
 
 					if(color_src && length(marking_list) == 3)
 						var/image/I = markings_list[length(markings_list)]
@@ -800,7 +858,7 @@
 				var/aux_layer = aux_icons[I]
 				aux += image(limb.icon, "[species_id]_[I]", -aux_layer, image_dir)
 				if(species_id == "husk")
-					auxmarking += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
+					auxmarking += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
 				else
 					for(var/marking_list in body_markings_list)
 						var/image/aux_marking_image = image(marking_list[1], "[marking_list[2]]_[I]", -aux_layer, image_dir)
@@ -822,7 +880,7 @@
 				var/aux_layer = aux_icons[I]
 				aux += image(limb.icon, "[I]", -aux_layer, image_dir)
 				if(species_id == "husk")
-					auxmarking += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
+					auxmarking += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[I]", -aux_layer, image_dir)
 				else
 					for(var/marking_list in body_markings_list)
 						var/image/aux_marking_image = image(marking_list[1], "[marking_list[2]]_[I]", -aux_layer, image_dir)
@@ -834,19 +892,19 @@
 
 		if(length(body_markings))
 			if(species_id == "husk")
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_[body_zone]", -onmob_markings_layer, image_dir)
 			else if(species_id == "husk" && use_digitigrade)
-				. += image('modular_citadel/icons/mob/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+				. += image('icons/mob/mam/citadel/markings_notmammals.dmi', "husk_digitigrade_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 			else
 				for(var/list/marking_list in body_markings_list)
 					// marking stores icon and value for the specific bodypart
 					if(!use_digitigrade)
 						if(body_zone == BODY_ZONE_CHEST)
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -MARKING_LAYER, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[body_zone]_[icon_gender]", -onmob_markings_layer, image_dir)
 						else
-							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -MARKING_LAYER, image_dir)
+							. += image(marking_list[1], "[marking_list[2]]_[body_zone]", -onmob_markings_layer, image_dir)
 					else
-						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -MARKING_LAYER, image_dir)
+						. += image(marking_list[1], "[marking_list[2]]_[digitigrade_type]_[use_digitigrade]_[body_zone]", -onmob_markings_layer, image_dir)
 		return
 
 	if(color_src) //TODO - add color matrix support for base species limbs (or dont because color matrixes suck)
@@ -896,6 +954,17 @@
 		if(istype(i, checking_type))
 			return i
 
+/// Returns if the wound is in some way hurt
+/obj/item/bodypart/proc/is_damaged(stam_too = FALSE)
+	if(brute_dam)
+		return TRUE
+	if(burn_dam)
+		return TRUE
+	if(stam_too && stamina_dam)
+		return TRUE
+	if(bleed_dam)
+		return TRUE
+
 /**
  * update_wounds() is called whenever a wound is gained or lost on this bodypart, as well as if there's a change of some kind on a bone wound possibly changing disabled status
  *
@@ -912,13 +981,31 @@
 		var/datum/wound/iter_wound = i
 		dam_mul *= iter_wound.damage_mulitplier_penalty
 
-	if(!LAZYLEN(wounds) && current_gauze && !replaced)
-		owner.visible_message("<span class='notice'>\The [current_gauze] on [owner]'s [name] fall away.</span>", "<span class='notice'>The [current_gauze] on your [name] fall away.</span>")
-		QDEL_NULL(current_gauze)
+	//if we truly dont need our bandages anymore, dump em
+	//if(!LAZYLEN(wounds) && !replaced && !bleed_dam && !burn_dam && !brute_dam)
+	//	destroy_coverings()
+
 	wound_damage_multiplier = dam_mul
 	update_disabled()
 
-/obj/item/bodypart/proc/get_bleed_rate()
+/**
+ * destroy_coverings() destroys coverings, not much else to say
+ *
+ */
+/obj/item/bodypart/proc/destroy_coverings()
+	if(current_gauze)
+		owner.visible_message(
+			span_notice("\The [current_gauze] on [owner]'s [name] fall away, no longer needed."),
+			span_notice("\The [current_gauze] on your [name] fall away, no longer needed."))
+		QDEL_NULL(current_gauze)
+	if(current_suture)
+		owner.visible_message(
+			span_notice("\The [current_suture] on [owner]'s [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."),
+			span_notice("\The [current_suture] on your [name] absorb into [owner.p_their()] skin as [owner.p_their()] wounds close."))
+		QDEL_NULL(current_suture)
+	needs_processing = FALSE
+
+/obj/item/bodypart/proc/get_bleed_rate(include_reductions = TRUE)
 	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
 		return
 	var/bleed_rate = 0
@@ -933,41 +1020,344 @@
 
 	for(var/thing in wounds)
 		var/datum/wound/W = thing
-		bleed_rate += W.blood_flow
-	if(owner.mobility_flags & ~MOBILITY_STAND)
-		bleed_rate *= 0.75
+		bleed_rate += min(W.get_blood_flow(include_reductions), WOUND_MAX_BLOODFLOW)
+	//if(owner.mobility_flags & ~MOBILITY_STAND) // handled by the wound
+	//	bleed_rate *= 0.75
 	return bleed_rate
+
+/obj/item/bodypart/proc/has_bleed_wounds()
+	if(status != BODYPART_ORGANIC) // maybe in the future we can bleed oil from aug parts, but not now
+		return FALSE
+	for(var/datum/wound/woundie in wounds)
+		if(woundie.get_blood_flow(FALSE))
+			return TRUE
 
 /**
  * apply_gauze() is used to- well, apply gauze to a bodypart
  *
- * As of the Wounds 2 PR, all bleeding is now bodypart based rather than the old bleedstacks system, and 90% of standard bleeding comes from flesh wounds (the exception is embedded weapons).
- * The same way bleeding is totaled up by bodyparts, gauze now applies to all wounds on the same part. Thus, having a slash wound, a pierce wound, and a broken bone wound would have the gauze
- * applying blood staunching to the first two wounds, while also acting as a sling for the third one. Once enough blood has been absorbed or all wounds with the ACCEPTS_GAUZE flag have been cleared,
- * the gauze falls off.
+ * Gauze (bandages) wraps the limb in bandages
+ * Bandages reduce bloodflow to a low fraction, to give them time to heal or get treatment
+ * Bandages are also fragile, and damaging them'll make them rip
+ * Bandages also don't directly help healing, unless the limb is also stitched up
  *
  * Arguments:
  * * gauze- Just the gauze stack we're taking a sheet from to apply here
+ * * skill_mult- The time multiplier used for the covering's duration
+ * * just_check- Just return if a bandage would be applied
  */
-/obj/item/bodypart/proc/apply_gauze(obj/item/stack/gauze)
-	if(!istype(gauze) || !gauze.absorption_capacity)
-		return
+/obj/item/bodypart/proc/apply_gauze(obj/item/stack/medical/gauze/gauze, skill_mult = 1, just_check = FALSE)
+	if(!istype(gauze) || !gauze)
+		return BANDAGE_NOT_APPLIED
+	if(!istype(current_gauze)) // No bandage, put one on
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if(gauze.covering_lifespan > current_gauze.covering_lifespan) // Bandage has more base duration, put it on
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if(gauze.covering_hitpoints > current_gauze?.covering_hitpoints) // Bandage is more durable, put it on
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if((gauze.bandage_power * skill_mult) > current_gauze.bandage_power) // bandage is more better
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if((gauze.heal_per_tick) > current_gauze.heal_per_tick) // bandage more healing
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID) < (current_gauze.covering_lifespan * BANDAGE_MIDLIFE_DURATION)) // restore its length
+		if(!just_check)
+			apply_gauze_to_limb(gauze, skill_mult)
+		return BANDAGE_NEW_APPLIED
+
+/obj/item/bodypart/proc/apply_gauze_to_limb(obj/item/stack/medical/gauze/gauze, skill_mult = 1)
 	QDEL_NULL(current_gauze)
+	S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
 	current_gauze = new gauze.type(src, 1)
-	//gauze.use(1) // handle it on the item, will be changed later
+	S_TIMER_COOLDOWN_START(src, BANDAGE_COOLDOWN_ID, current_gauze.covering_lifespan * skill_mult)
+	needs_processing = TRUE
+	return BANDAGE_NEW_APPLIED
 
 /**
- * seep_gauze() is for when a gauze wrapping absorbs blood or pus from wounds, lowering its absorption capacity.
- *
- * The passed amount of seepage is deducted from the bandage's absorption capacity, and if we reach a negative absorption capacity, the bandages fall off and we're left with nothing.
- *
- * Arguments:
- * * seep_amt - How much absorption capacity we're removing from our current bandages (think, how much blood or pus are we soaking up this tick?)
+ * check_gauze_time() checks if the gauze has time left to be on the wound
  */
-/obj/item/bodypart/proc/seep_gauze(seep_amt = 0)
+/obj/item/bodypart/proc/check_gauze_time()
+	if(!current_gauze || !istype(current_gauze, /obj/item/stack/medical/gauze))
+		return BANDAGE_NOT_FOUND
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)) // Bandage has some time left in it
+		needs_processing = TRUE
+		return BANDAGE_STILL_INTACT
+	owner.visible_message(
+		span_warning("\The [current_gauze] on [owner]'s [name] become totally soaked, and fall off in a bloody heap."),
+		span_warning("\The [current_gauze] on your [name] become totally soaked, and fall off in a bloody heap."),
+		vision_distance=COMBAT_MESSAGE_RANGE)
+	QDEL_NULL(current_gauze)
+	if(!current_suture)
+		needs_processing = FALSE
+	return BANDAGE_TIMED_OUT
+
+/**
+ * bandage_heal() applies some healing to the limb based on the bandage applied there
+ */
+/obj/item/bodypart/proc/bandage_heal()
 	if(!current_gauze)
 		return
-	current_gauze.absorption_capacity -= seep_amt
-	if(current_gauze.absorption_capacity < 0)
-		owner.visible_message("<span class='danger'>\The [current_gauze] on [owner]'s [name] fall away in rags.</span>", "<span class='warning'>\The [current_gauze] on your [name] fall away in rags.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+	if(!istype(current_gauze, /obj/item/stack/medical/gauze))
+		return
+	var/heal_amt = current_gauze.heal_per_tick
+	var/bleed_healing = current_gauze.bandage_power * (istype(current_suture) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt)
+
+	/* else if(!current_gauze.told_owner_its_out_of_juice)
+		to_chat(owner, span_warning("You feel the [current_gauze.name] on your [src.name] become stale and no longer heal you."))
+		current_gauze.told_owner_its_out_of_juice = TRUE */
+
+	/* if(bleed_dam > current_gauze.max_bandage_healing && !current_suture) // Always help the suture if one's there
+		if(COOLDOWN_TIMELEFT(src, bandage_isnt_good_enough))
+			return
+		COOLDOWN_START(src, bandage_isnt_good_enough, BAD_BANDAGE_ANTISPAM_TIME)
+		owner.visible_message(
+			span_warning("Blood soaks through the [current_gauze] on [owner]'s [src.name]!"),
+			span_danger("Blood is soaking through the [current_gauze] on your [src.name]! You need either better bandages, or someone to sew up that gruesome wound!"),
+			span_notice("You hear a faint drip.")
+		)
+		return */ // to be reworked
+
+/**
+ * damage_gauze() simply damages the gauze on the limb, reducing its HP
+ *
+ * The passed amount of damage deducts hitspoints from the bandage
+ *
+ * Arguments:
+ * * brute - How much brute is being calculated for bandage damage
+ * * burn - How much burn is being calculated for bandage damage - usually multiplied
+ */
+/obj/item/bodypart/proc/damage_gauze(brute = 0, burn = 0)
+	if(!istype(current_gauze))
+		return FALSE
+	if(brute < 1 && burn < 1)
+		return FALSE
+
+	var/damage_raw = brute + (burn * BANDAGE_BURN_MULT)
+	var/damage_to_do = 0
+	switch(damage_raw)
+		if(BANDAGE_DAMAGE_THRESHOLD_LOW to BANDAGE_DAMAGE_THRESHOLD_MED)
+			damage_to_do = 1
+		if(BANDAGE_DAMAGE_THRESHOLD_MED to BANDAGE_DAMAGE_THRESHOLD_MAX)
+			damage_to_do = 3
+		if(BANDAGE_DAMAGE_THRESHOLD_MAX to INFINITY)
+			damage_to_do = INFINITY // fucker's coming off
+		else
+			return FALSE
+
+	current_gauze.covering_hitpoints -= damage_to_do
+	/* if(current_gauze.covering_hitpoints > 0)
+		owner.visible_message(
+			span_warning("\The [current_gauze] on [owner]'s [name] tear from the blow!"),
+			span_warning("\The [current_gauze] on your [name] tear from the blow!"),
+			vision_distance=COMBAT_MESSAGE_RANGE) */
+	if(current_gauze.covering_hitpoints <= 0)
+		owner.visible_message(
+			span_warning("\The [current_gauze] on [owner]'s [name] rip to shreds from the impact, falling away in a heap!"),
+			span_danger("\The [current_gauze] on your [name] rip to shreds from the impact, falling away in a heap!"),
+			vision_distance=COMBAT_MESSAGE_RANGE)
 		QDEL_NULL(current_gauze)
+		S_TIMER_COOLDOWN_RESET(src, BANDAGE_COOLDOWN_ID)
+	needs_processing = TRUE
+	return TRUE
+
+/**
+ * apply_suture() is used to- well, apply suture to a bodypart
+ *
+ * suture (sutures) wraps the limb in sutures
+ * sutures reduce bloodflow to a low fraction, to give them time to heal or get treatment
+ * sutures are also fragile, and damaging them'll make them rip
+ * sutures also don't directly help healing, unless the limb is also stitched up
+ *
+ * Arguments:
+ * * suture- Just the suture stack we're taking a sheet from to apply here
+ * * skill_mult- The time multiplier used for the covering's duration
+ * * just_check- Just return if a suture would be applied
+ */
+/obj/item/bodypart/proc/apply_suture(obj/item/stack/medical/suture/suture, skill_mult = 1, just_check = FALSE)
+	if(!istype(suture) || !suture)
+		return SUTURE_NOT_APPLIED
+	if(!istype(current_suture)) // No suture, put one on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if(suture.covering_lifespan > current_suture.covering_lifespan) // Suture has more base duration, put it on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if(suture.covering_hitpoints > current_suture?.covering_hitpoints) // Suture is more durable, put it on
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if((suture.suture_power * skill_mult) > current_suture.suture_power) // suture is more better
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if((suture.heal_per_tick) > current_suture.heal_per_tick) // suture more healing
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID) < (current_suture.covering_lifespan * SUTURE_MIDLIFE_DURATION)) // restore its length
+		if(!just_check)
+			apply_suture_to_limb(suture, skill_mult)
+		return SUTURE_NEW_APPLIED
+
+/obj/item/bodypart/proc/apply_suture_to_limb(obj/item/stack/medical/suture/suture, skill_mult = 1)
+	QDEL_NULL(current_suture)
+	S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
+	current_suture = new suture.type(src, 1)
+	S_TIMER_COOLDOWN_START(src, SUTURE_COOLDOWN_ID, current_suture.covering_lifespan * skill_mult)
+	needs_processing = TRUE
+	return SUTURE_NEW_APPLIED
+
+
+/**
+ * check_suture_time() checks if the suture has time left to be on the wound
+ */
+/obj/item/bodypart/proc/check_suture_time(seep_amt = 0)
+	if(!current_suture || !istype(current_suture, /obj/item/stack/medical/suture))
+		return SUTURE_NOT_FOUND
+	if(S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)) // Bandage has some time left in it
+		needs_processing = TRUE
+		return SUTURE_STILL_INTACT
+	owner.visible_message(
+		span_warning("\The [current_suture] on [owner]'s [name] fray to the point of breaking!"),
+		span_danger("\The [current_suture] on your [name] fray to the point of breaking!"),
+		vision_distance=COMBAT_MESSAGE_RANGE)
+	QDEL_NULL(current_suture)
+	if(!current_gauze)
+		needs_processing = FALSE
+	return SUTURE_TIMED_OUT
+
+/**
+ * suture_heal() applies some healing to the limb based on the suture applied there
+ */
+/obj/item/bodypart/proc/suture_heal()
+	if(!current_suture)
+		return
+	if(!istype(current_suture, /obj/item/stack/medical/suture))
+		return
+	var/heal_amt = current_suture.heal_per_tick
+	var/bleed_healing = current_suture.suture_power * (istype(current_gauze) ? SUTURE_AND_BANDAGE_BONUS : 1)
+	covering_heal_nutrition_mod(bleed_healing, heal_amt)
+
+/**
+ * damage_suture() simply damages the suture on the limb, reducing its HP
+ *
+ * The passed amount of damage deducts hitspoints from the bandage
+ *
+ * Arguments:
+ * * brute - How much brute is being calculated for bandage damage
+ * * burn - How much burn is being calculated for bandage damage - usually multiplied
+ */
+/obj/item/bodypart/proc/damage_suture(brute = 0, burn = 0)
+	if(!istype(current_suture))
+		return FALSE
+	if((brute + burn) < 1)
+		return FALSE
+
+	var/damage_raw = brute + (burn * SUTURE_BURN_MULT)
+	var/damage_to_do = 0
+	switch(damage_raw)
+		if(SUTURE_DAMAGE_THRESHOLD_LOW to SUTURE_DAMAGE_THRESHOLD_MED)
+			damage_to_do = 1
+		if(SUTURE_DAMAGE_THRESHOLD_MED to SUTURE_DAMAGE_THRESHOLD_MAX)
+			damage_to_do = 3
+		if(SUTURE_DAMAGE_THRESHOLD_MAX to INFINITY)
+			damage_to_do = INFINITY // fucker's coming off
+		else
+			return FALSE
+
+	current_suture.covering_hitpoints -= damage_to_do
+	/* if(current_suture.covering_hitpoints > 0)
+		owner.visible_message(
+			span_warning("\The [current_suture] on [owner]'s [name] tears from the blow!"),
+			span_warning("\The [current_suture] on your [name] tear from the blow!"),
+			vision_distance=COMBAT_MESSAGE_RANGE)
+	else */
+	if(current_suture.covering_hitpoints <= 0)
+		owner.visible_message(
+			span_warning("\The [current_suture] on [owner]'s [name] pops wide open, shredded to bloody fragments!"),
+			span_danger("\The [current_suture] on your [name] pops wide open, shredded to bloody fragments!"),
+			vision_distance=COMBAT_MESSAGE_RANGE)
+		QDEL_NULL(current_suture)
+		S_TIMER_COOLDOWN_RESET(src, SUTURE_COOLDOWN_ID)
+	needs_processing = TRUE
+	return TRUE
+
+/**
+ * covering_heal_nutrition_mod() takes in an amount of bleed healing to do,
+ * multiplies it by some nutrition-based numbers,
+ * deducts an amount of nutrition
+ * and heals an amount of bleed_dam
+ *
+ * Arguments:
+ * * bleed_heal - amount to heal bleed_dam, before nutrition modifiers
+ */
+/obj/item/bodypart/proc/covering_heal_nutrition_mod(bleed_heal, damage_heal)
+	if(!is_damaged())
+		return FALSE // no damage, so dont spend any nutrition
+
+	if(!HAS_TRAIT(owner, TRAIT_NOHUNGER) && owner.nutrition > NUTRITION_LEVEL_HUNGRY)
+		var/bleed_nutrition_bonus = 0
+		var/damage_nutrition_bonus = 0
+		switch(owner.nutrition)
+			if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_WELL_FED)
+				bleed_nutrition_bonus = WOUND_HEAL_FED
+				damage_nutrition_bonus = DAMAGE_HEAL_FED
+			if(NUTRITION_LEVEL_WELL_FED to INFINITY)
+				bleed_nutrition_bonus = WOUND_HEAL_FULL
+				damage_nutrition_bonus = DAMAGE_HEAL_FULL
+
+		if(owner.satiety > 40) // idk how satiety works, it might not come to think of it
+			bleed_nutrition_bonus *= 1.25
+			damage_nutrition_bonus *= 1.25
+
+		if(bleed_heal && bleed_nutrition_bonus && bleed_dam)
+			bleed_heal *= bleed_nutrition_bonus
+			owner.adjust_nutrition(-(bleed_heal * WOUND_HEAL_NUTRITION_COST)) // Only charge for the extra
+			bleed_heal = round(max(bleed_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
+
+		if(damage_heal && damage_nutrition_bonus && (brute_dam || burn_dam))
+			damage_heal *= damage_nutrition_bonus
+			owner.adjust_nutrition(-(damage_heal * DAMAGE_HEAL_NUTRITION_COST))
+			damage_heal = round(max(damage_heal, DAMAGE_PRECISION), DAMAGE_PRECISION) // To ensure it actually *heals*, too little and it does nothing!
+
+	heal_damage(damage_heal, damage_heal, damage_heal, FALSE, TRUE, TRUE, bleed_heal)
+
+/**
+ * get_covering_timeleft() returns how much time's left in the bandage/suture
+ *
+ * Can return the actual amount, a precise minute amount, or an imprecise minute amount
+ *
+ * Arguments:
+ * * covering - either COVERING_SUTURE or COVERING_BANDAGE, picks which to check
+ * * format_out - either COVERING_TIME_TRUE, COVERING_TIME_MINUTE, COVERING_TIME_MINUTE_FUZZY
+ */
+/obj/item/bodypart/proc/get_covering_timeleft(covering, format_out = COVERING_TIME_MINUTE)
+	if(!istype(current_gauze) && !istype(current_suture))
+		return FALSE
+	if(!covering)
+		return FALSE
+
+	switch(covering)
+		if(COVERING_SUTURE)
+			. = S_TIMER_COOLDOWN_TIMELEFT(src, SUTURE_COOLDOWN_ID)
+		else
+			. = S_TIMER_COOLDOWN_TIMELEFT(src, BANDAGE_COOLDOWN_ID)
+
+	switch(format_out)
+		if(COVERING_TIME_TRUE)
+			return
+		if(COVERING_TIME_MINUTE, COVERING_TIME_MINUTE_FUZZY)
+			. = round(. / 600, 1)
+			if(covering == COVERING_TIME_MINUTE_FUZZY)
+				. = round(., 5)

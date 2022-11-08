@@ -29,11 +29,10 @@
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan
-	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
-	l_pocket = /obj/item/storage/survivalkit_khan
+	box = /obj/item/storage/survivalkit/tribal/chief
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
-	box = null
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)
@@ -79,11 +78,10 @@
 	backpack =	/obj/item/storage/backpack/satchel/explorer
 	satchel = 	/obj/item/storage/backpack/satchel/old
 	uniform = /obj/item/clothing/under/f13/khan
-	r_hand = /obj/item/book/granter/trait/selection
 	r_pocket = /obj/item/flashlight/flare
-	l_pocket = /obj/item/storage/survivalkit_khan
+	box = /obj/item/storage/survivalkit/tribal/chief
+	box_two = /obj/item/storage/survivalkit/medical/tribal
 	gloves = /obj/item/melee/unarmed/brass/spiked
-	box = null
 	backpack_contents = list(
 		/obj/item/storage/bag/money/small/khan = 1
 		)
@@ -169,7 +167,7 @@
 	backpack_contents = list(
 		/obj/item/ammo_box/magazine/uzim9mm = 3,
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 1,
-		/obj/item/storage/belt/holster = 1)
+		/obj/item/storage/belt/shoulderholster = 1)
 
 /datum/outfit/loadout/khandrug
 	name = "Drug Pusher"
@@ -257,7 +255,7 @@
 	head = /obj/item/clothing/head/collectable/petehat/gang
 	r_hand = /obj/item/gun/ballistic/revolver/colt357/lucky
 	l_hand = /obj/item/twohanded/baseball/louisville
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 	backpack_contents = list(
 		/obj/item/ammo_box/a357 = 3,
 		/obj/item/clipboard = 1,
@@ -268,7 +266,7 @@
 	name = "Tax Collector"
 	glasses = /obj/item/clothing/glasses/sunglasses
 	r_hand = /obj/item/gun/ballistic/revolver/hunting
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 	backpack_contents = list(
 		/obj/item/ammo_box/c4570 = 3,
 		/obj/item/twohanded/baseball = 1,
@@ -309,7 +307,7 @@
 	head = /obj/item/clothing/head/helmet/f13/khan/fullhelm
 	suit = /obj/item/clothing/suit/toggle/labcoat/khan_jacket/coat
 	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/storage/belt/holster
+	neck = /obj/item/storage/belt/shoulderholster
 	backpack_contents = list(
 		/obj/item/ammo_box/c45rev = 3,
 		/obj/item/restraints/legcuffs/bola/tactical = 1,

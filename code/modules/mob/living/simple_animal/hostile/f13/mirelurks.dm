@@ -14,9 +14,27 @@
 	icon_living = "mirelurk"
 	icon_dead = "mirelurk_d"
 	speed = 1
+	move_to_delay = 3
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 2, /obj/item/stack/sheet/sinew = 1)
-	maxHealth = 150
-	health = 150
+	speak_emote = list("foams", "clacks", "chitters", "snips", "snaps")
+	emote_see = list("clack its claws", "foam at the mouth", "woobs", "extends its eyestalks")
+	attack_verb_simple = list ("pinches", "rends", "snips", "snaps", "snibbity-snaps", "clonks", "disects")
+	maxHealth = 120
+	health = 120
 	melee_damage_lower = 5
 	melee_damage_upper = 20
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -33,8 +51,8 @@
 	icon_dead = "mirelurkhunter_d"
 	icon_gib = "gib"
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 4, /obj/item/stack/sheet/sinew = 2)
-	maxHealth = 250
-	health = 250
+	maxHealth = 200
+	health = 200
 	melee_damage_lower = 15
 	melee_damage_upper = 35
 	gold_core_spawnable = HOSTILE_SPAWN
@@ -50,8 +68,8 @@
 	icon_gib = "gib"
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/mirelurk = 1)
 	speed = 1
-	maxHealth = 50
-	health = 50
+	maxHealth = 40
+	health = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	gold_core_spawnable = HOSTILE_SPAWN

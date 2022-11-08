@@ -2,8 +2,11 @@
 	desc = "A caseless bullet casing."
 	firing_effect_type = null
 	heavy_metal = FALSE
+	custom_materials = list(
+		/datum/material/iron = MATS_PISTOL_MEDIUM_CASING + MATS_PISTOL_MEDIUM_BULLET,
+		/datum/material/blackpowder = MATS_PISTOL_MEDIUM_POWDER)
 
-/obj/item/ammo_casing/caseless/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, atom/fired_from)
+/obj/item/ammo_casing/caseless/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, atom/fired_from)
 	if (..()) //successfully firing
 		moveToNullspace()
 		QDEL_NULL(src)

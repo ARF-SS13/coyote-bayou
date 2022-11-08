@@ -2,9 +2,9 @@
 /mob/living/simple_animal/hostile/guardian/bomb
 	damage_coeff = list(BRUTE = 0.6, BURN = 0.6, TOX = 0.6, CLONE = 0.6, STAMINA = 0, OXY = 0.6)
 	playstyle_string = "<span class='holoparasite'>As an <b>explosive</b> type, you have moderate close combat abilities, take half damage, may explosively teleport targets on attack, and are capable of converting nearby items and objects into disguised bombs via alt click.</span>"
-	magic_fluff_string = "<span class='holoparasite'>..And draw the Scientist, master of explosive death.</span>"
-	tech_fluff_string = "<span class='holoparasite'>Boot sequence complete. Explosive modules active. Holoparasite swarm online.</span>"
-	carp_fluff_string = "<span class='holoparasite'>CARP CARP CARP! Caught one! It's an explosive carp! Boom goes the fishy.</span>"
+	magic_fluff_string = span_holoparasite("..And draw the Scientist, master of explosive death.")
+	tech_fluff_string = span_holoparasite("Boot sequence complete. Explosive modules active. Holoparasite swarm online.")
+	carp_fluff_string = span_holoparasite("CARP CARP CARP! Caught one! It's an explosive carp! Boom goes the fishy.")
 	var/bomb_cooldown = 0
 
 /mob/living/simple_animal/hostile/guardian/bomb/get_status_tab_items()
@@ -47,8 +47,8 @@
 	if((victim == src) || (victim == summoner) || (hasmatchingsummoner(victim)))
 		to_chat(victim, "<span class='holoparasite'>[src] glows with a strange <font color=\"[guardiancolor]\">light</font>, and you don't touch it.</span>")
 		return FALSE
-	to_chat(src, "<span class='danger'>One of your explosive traps caught [victim]!</span>")
-	to_chat(victim, "<span class='danger'>[bomb] was boobytrapped!</span>")
+	to_chat(src, span_danger("One of your explosive traps caught [victim]!"))
+	to_chat(victim, span_danger("[bomb] was boobytrapped!"))
 	return TRUE
 
 /mob/living/simple_animal/hostile/guardian/bomb/proc/on_failure(atom/bomb)

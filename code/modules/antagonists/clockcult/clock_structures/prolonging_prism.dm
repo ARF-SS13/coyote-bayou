@@ -9,7 +9,7 @@
 	unanchored_icon = "prolonging_prism_unwrenched"
 	construction_value = 20
 	max_integrity = 125
-	break_message = "<span class='warning'>The prism falls to the ground with a heavy thud!</span>"
+	break_message = span_warning("The prism falls to the ground with a heavy thud!")
 	debris = list(/obj/item/clockwork/alloy_shards/small = 3, \
 	/obj/item/clockwork/alloy_shards/medium = 1, \
 	/obj/item/clockwork/alloy_shards/large = 1, \
@@ -23,7 +23,7 @@
 	. = ..()
 	if(is_servant_of_ratvar(user) || isobserver(user))
 		if(SSshuttle.emergency.mode == SHUTTLE_DOCKED || SSshuttle.emergency.mode == SHUTTLE_IGNITING || SSshuttle.emergency.mode == SHUTTLE_STRANDED || SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
-			. += "<span class='inathneq'>An emergency shuttle has arrived and this prism is no longer useful; attempt to activate it to gain a partial refund of components used.</span>"
+			. += span_inathneq("An emergency shuttle has arrived and this prism is no longer useful; attempt to activate it to gain a partial refund of components used.")
 		else
 			var/efficiency = get_efficiency_mod(TRUE)
 			. += "<span class='inathneq_small'>It requires at least <b>[DisplayPower(get_delay_cost())]</b> of power to attempt to delay the arrival of an emergency shuttle by <b>[2 * efficiency]</b> minutes.</span>"
@@ -33,14 +33,14 @@
 	if(active)
 		if(bad_effects)
 			try_use_power(MIN_CLOCKCULT_POWER*4)
-		visible_message("<span class='warning'>[src] emits an airy chuckling sound and falls dark!</span>")
+		visible_message(span_warning("[src] emits an airy chuckling sound and falls dark!"))
 		toggle()
 		return TRUE
 
 /obj/structure/destructible/clockwork/powered/prolonging_prism/on_attack_hand(mob/living/user)
 	if(user.canUseTopic(src, !issilicon(user), NO_DEXTERY) && is_servant_of_ratvar(user))
 		if(SSshuttle.emergency.mode == SHUTTLE_DOCKED || SSshuttle.emergency.mode == SHUTTLE_IGNITING || SSshuttle.emergency.mode == SHUTTLE_STRANDED || SSshuttle.emergency.mode == SHUTTLE_ESCAPE)
-			to_chat(user, "<span class='brass'>You break [src] apart, refunding some of the power used.</span>")
+			to_chat(user, span_brass("You break [src] apart, refunding some of the power used."))
 			adjust_clockwork_power(power_refund)
 			take_damage(max_integrity)
 			return 0
@@ -48,13 +48,13 @@
 			return 0
 		var/turf/T = get_turf(src)
 		if(!T || !is_station_level(T.z))
-			to_chat(user, "<span class='warning'>[src] must be on the station to function!</span>")
+			to_chat(user, span_warning("[src] must be on the station to function!"))
 			return 0
 		if(SSshuttle.emergency.mode != SHUTTLE_CALL)
-			to_chat(user, "<span class='warning'>No emergency shuttles are attempting to arrive at the station!</span>")
+			to_chat(user, span_warning("No emergency shuttles are attempting to arrive at the station!"))
 			return 0
 		if(!try_use_power(get_delay_cost()))
-			to_chat(user, "<span class='warning'>[src] needs more power to function!</span>")
+			to_chat(user, span_warning("[src] needs more power to function!"))
 			return 0
 		delay_cost += delay_cost_increase
 		delay_remaining += PRISM_DELAY_DURATION

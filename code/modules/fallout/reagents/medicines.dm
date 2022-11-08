@@ -61,7 +61,7 @@
 	metabolization_rate = 3 * REAGENTS_METABOLISM	// 50 seconds, same as poultice
 	overdose_threshold = 40	// you can risk a second dose
 	ghoulfriendly = TRUE
-	var/clot_rate = 0.25
+	var/clot_rate = 0.10
 	var/clot_coeff_per_wound = 0.7
 
 /datum/reagent/medicine/super_stimpak/reaction_mob(mob/living/M, method=INJECT, reac_volume)
@@ -77,16 +77,16 @@
 	..()
 
 /// Slows you down and tells you that your heart's gonna get wrecked if you keep taking more
-/datum/reagent/medicine/super_stimpak/on_mob_metabolize(mob/living/L) // Stim Sickness
+/datum/reagent/medicine/super_stimpak/on_mob_metabolize(mob/living/carbon/M) // Stim Sickness
 	. = ..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
-	to_chat(L, span_alert("You feel a sudden violent <i>lurch</i> in your chest, followed shortly by your heart racing at an agonizing pace and your muscles burning like you've run one too many marathons."))
+	M.add_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
+	to_chat(M, span_alert("You feel a sudden violent <i>lurch</i> in your chest, followed shortly by your heart racing at an agonizing pace and your muscles burning like you've run one too many marathons."))
 
 /// Removes the slowdown and lets you know its safe to take another dose
-/datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/super_stimpak/on_mob_end_metabolize(mob/living/carbon/M)
 	. = ..()
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
-	to_chat(L, span_notice("Your heart slows to a more reasonable pace, and your aching muscular fatigue fades.")) // tells you when it's safe to take another dose
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/super_stimpak_slowdown)
+	to_chat(M, span_notice("Your heart slows to a more reasonable pace, and your aching muscular fatigue fades.")) // tells you when it's safe to take another dose
 
 /// Seals up bleeds like a weaker sanguirite, doesnt do any passive heals though
 /datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/carbon/M) // Heals fleshwounds like a weak sanguirite
@@ -186,18 +186,18 @@
 	description = "Potent, stinging herbs that swiftly aid in the recovery of grevious wounds."
 	color = "#C8A5DC"
 	overdose_threshold = 12
-	var/clot_rate = 0.25
+	var/clot_rate = 0.10
 	var/clot_coeff_per_wound = 0.7
 
-/datum/reagent/medicine/healing_powder/poultice/on_mob_metabolize(mob/living/L) // a painful remedy!
+/datum/reagent/medicine/healing_powder/poultice/on_mob_metabolize(mob/living/carbon/M) // a painful remedy!
 	. = ..()
-	L.add_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
-	to_chat(L, span_alert("You feel a burning pain spread through your skin, concentrating around your wounds."))
+	M.add_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
+	to_chat(M, span_alert("You feel a burning pain spread through your skin, concentrating around your wounds."))
 
-/datum/reagent/medicine/healing_powder/poultice/on_mob_end_metabolize(mob/living/L)
+/datum/reagent/medicine/healing_powder/poultice/on_mob_end_metabolize(mob/living/carbon/M)
 	. = ..()
-	L.remove_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
-	to_chat(L, span_notice("The poultice's burning subsides."))
+	M.remove_movespeed_modifier(/datum/movespeed_modifier/healing_poultice_slowdown)
+	to_chat(M, span_notice("The poultice's burning subsides."))
 
 /datum/reagent/medicine/healing_powder/poultice/on_mob_life(mob/living/carbon/M)
 	. = ..()
@@ -222,23 +222,60 @@
 
 // ---------------------------
 // RAD-X REAGENT
+#define RADX_FULL_IMMUNITY_THRESHOLD 30
 
 /datum/reagent/medicine/radx
 	name = "Rad-X"
-
-	description = "Reduces massive amounts of radiation and some toxin damage."
+	description = "Insulates the user against radiation. Best used before exposure, does not actually treat radiation."
 	reagent_state = LIQUID
 	color = "#ff6100"
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	ghoulfriendly = TRUE
 
+/datum/reagent/medicine/radx/reaction_mob(mob/living/M, method=INJECT, reac_volume)
+	. = ..()
+	add_the_traits(M)
+
+/datum/reagent/medicine/radx/on_mob_metabolize(mob/living/carbon/M)
+	. = ..()
+	add_the_traits(M)
+
+/datum/reagent/medicine/radx/on_mob_delete(mob/living/L)
+	. = ..()
+	remove_the_traits(L)
+
+/datum/reagent/medicine/radx/on_mob_end_metabolize(mob/living/carbon/M)
+	. = ..()
+	remove_the_traits(M)
+
 /datum/reagent/medicine/radx/on_mob_life(mob/living/carbon/M)
-	if(M.radiation > 0)
-		M.radiation -= min(M.radiation, 8)
-	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER)
+	if(M.reagents.get_reagent_amount(/datum/reagent/medicine/radx) < RADX_FULL_IMMUNITY_THRESHOLD && HAS_TRAIT_FROM(M, TRAIT_75_RAD_RESIST, RADX_TRAIT))
+		to_chat(M, span_alert("The insulating tingle dulls considerably."))
+		REMOVE_TRAIT(M, TRAIT_75_RAD_RESIST, RADX_TRAIT)
+		if (!HAS_TRAIT_FROM(M, TRAIT_50_RAD_RESIST, RADX_TRAIT))
+			ADD_TRAIT(M, TRAIT_50_RAD_RESIST, RADX_TRAIT) // just in case
 	. = TRUE
 	..()
 
+/datum/reagent/medicine/radx/proc/remove_the_traits(mob/living/L)
+	if(HAS_TRAIT_FROM(L, TRAIT_75_RAD_RESIST, RADX_TRAIT))
+		to_chat(L, span_alert("The insulating tingle fades."))
+	else if (HAS_TRAIT_FROM(L, TRAIT_50_RAD_RESIST, RADX_TRAIT))
+		to_chat(L, span_alert("The tingling fades."))
+	// just remove them both
+	REMOVE_TRAIT(L, TRAIT_50_RAD_RESIST, RADX_TRAIT)
+	REMOVE_TRAIT(L, TRAIT_75_RAD_RESIST, RADX_TRAIT)
+
+/datum/reagent/medicine/radx/proc/add_the_traits(mob/living/L)
+	if(L.reagents.get_reagent_amount(/datum/reagent/medicine/radx) >= RADX_FULL_IMMUNITY_THRESHOLD && !HAS_TRAIT_FROM(L, TRAIT_75_RAD_RESIST, RADX_TRAIT))
+		to_chat(L, span_notice("You feel a deep, insulating tingle."))
+		ADD_TRAIT(L, TRAIT_75_RAD_RESIST, RADX_TRAIT)
+	else if (!HAS_TRAIT_FROM(L, TRAIT_50_RAD_RESIST, RADX_TRAIT))
+		to_chat(L, span_notice("You feel a slight tingle in your flesh."))
+		ADD_TRAIT(L, TRAIT_50_RAD_RESIST, RADX_TRAIT)
+
+
+#undef RADX_FULL_IMMUNITY_THRESHOLD
 
 // ---------------------------
 // RADAWAY REAGENT
@@ -435,22 +472,22 @@
 		M.cure_all_traumas(TRAUMA_RESILIENCE_SURGERY)
 /*	if(HAS_TRAIT(M, TRAIT_BLIND, TRAIT_GENERIC))
 		if(prob(20))
-			to_chat(M, "<span class='warning'>Your vision slowly returns...</span>")
+			to_chat(M, span_warning("Your vision slowly returns..."))
 			M.cure_blind(EYE_DAMAGE)
 			M.cure_nearsighted(EYE_DAMAGE)
 			M.blur_eyes(35)
 	else if(HAS_TRAIT(M, TRAIT_NEARSIGHT, TRAIT_GENERIC))
-		to_chat(M, "<span class='warning'>The blackness in your peripheral vision fades.</span>")
+		to_chat(M, span_warning("The blackness in your peripheral vision fades."))
 		M.cure_nearsighted(EYE_DAMAGE)
 		M.blur_eyes(10)*/
 	if(M.eye_blind || M.eye_blurry)
 		M.set_blindness(0)
 		M.set_blurriness(0)
-		to_chat(M, "<span class='warning'>Your vision slowly returns to normal...</span>")
+		to_chat(M, span_warning("Your vision slowly returns to normal..."))
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, -1)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1)
 	if (prob(5))
-		to_chat(M, "<span class='notice'>You feel a strange mental fortitude!</span>")
+		to_chat(M, span_notice("You feel a strange mental fortitude!"))
 	..()
 	. = TRUE
 
@@ -509,7 +546,7 @@
 //			M.reagents.remove_reagent(R.id,2)
 	for(var/datum/reagent/R in M.reagents.addiction_list)
 		M.reagents.addiction_list.Remove(R)
-		to_chat(M, "<span class='notice'>You feel like you've gotten over your need for [R.name].</span>")
+		to_chat(M, span_notice("You feel like you've gotten over your need for [R.name]."))
 	M.confused = max(M.confused, 4)
 	if(ishuman(M) && prob(5))
 		var/mob/living/carbon/human/H = M

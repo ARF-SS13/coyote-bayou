@@ -13,7 +13,7 @@
 	if(W.sharpness && W.force > 0 && !(NODECONSTRUCT_1 in flags_1))
 		to_chat(user, "You begin to harvest [src]...")
 		if(do_after(user, 100/W.force, target = user))
-			to_chat(user, "<span class='notice'>You've collected [src]</span>")
+			to_chat(user, span_notice("You've collected [src]"))
 			var/obj/item/stack/sheet/hay/H = user.get_inactive_held_item()
 			if(istype(H))
 				H.add(1)
@@ -49,6 +49,14 @@
 	var/produce
 	var/timer = 5000 //50 seconds
 
+/obj/structure/flora/wasteplant/Destroy()
+	if(LAZYLEN(contents))
+		var/turf/our_turf = get_turf(src)
+		if(isturf(our_turf))
+			for(var/atom/movable/inside_thing in contents)
+				inside_thing.forceMove(our_turf)
+	. = ..()
+
 /obj/structure/flora/wasteplant/attack_hand(mob/user)
 	if(!ispath(produce))
 		return ..()
@@ -58,7 +66,7 @@
 		if(!istype(product))
 			return //Something fucked up here or it's a weird product
 		user.put_in_hands(product)
-		to_chat(user, "<span class='notice'>You pluck [product] from [src].</span>")
+		to_chat(user, span_notice("You pluck [product] from [src]."))
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
 		timer = initial(timer) + rand(-100,100) //add some variability
@@ -75,6 +83,11 @@
 		icon_state = "[initial(icon_state)]"
 	else
 		icon_state = "[initial(icon_state)]_no"
+
+/obj/structure/flora/wasteplant/Initialize()
+	. = ..()
+	if(ispath(produce))
+		new produce(src) // so it glows or whatever
 
 /obj/structure/flora/wasteplant/wild_broc
 	name = "wild broc flower"
@@ -175,6 +188,11 @@ obj/structure/flora/wasteplant/wild_punga
 	desc = "The juice of this fleshy plant soothes burns, but it also removes nutrients from the body."
 	produce = /obj/item/reagent_containers/food/snacks/grown/agave
 
+/obj/structure/flora/wasteplant/fever_blossom
+	name = "wild fever blossom"
+	icon_state = "wild_blossom"
+	desc = "The wild fever blossom grows on creeping tangles of vine-like bushes. The flowers that adorn the bushes glow with an iridescent purple, drawing attention to the intricate floral arrays, which appear to have mutated from some sort of passion flower. It is known for its use as an aphrodisiac and sleep aid."
+	produce = /obj/item/reagent_containers/food/snacks/grown/fever_blossom
 
 /////FALLOUT 13 TREES////
 /obj/structure/flora/tree/joshua

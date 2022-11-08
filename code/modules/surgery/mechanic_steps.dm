@@ -9,7 +9,7 @@
 	time = 24
 
 /datum/surgery_step/mechanic_open/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to unscrew the shell of [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to unscrew the shell of [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)].",
 			"[user] begins to unscrew the shell of [target]'s [parse_zone(target_zone)].")
 
@@ -28,7 +28,7 @@
 	time = 24
 
 /datum/surgery_step/mechanic_close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to screw the shell of [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to screw the shell of [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to screw the shell of [target]'s [parse_zone(target_zone)].",
 			"[user] begins to screw the shell of [target]'s [parse_zone(target_zone)].")
 
@@ -45,7 +45,7 @@
 	time = 24
 
 /datum/surgery_step/prepare_electronics/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to prepare electronics in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to prepare electronics in [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to prepare electronics in [target]'s [parse_zone(target_zone)].",
 			"[user] begins to prepare electronics in [target]'s [parse_zone(target_zone)].")
 
@@ -58,7 +58,7 @@
 	time = 24
 
 /datum/surgery_step/mechanic_unwrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to unwrench some bolts in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to unwrench some bolts in [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to unwrench some bolts in [target]'s [parse_zone(target_zone)].",
 			"[user] begins to unwrench some bolts in [target]'s [parse_zone(target_zone)].")
 
@@ -71,7 +71,7 @@
 	time = 24
 
 /datum/surgery_step/mechanic_wrench/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to wrench some bolts in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to wrench some bolts in [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to wrench some bolts in [target]'s [parse_zone(target_zone)].",
 			"[user] begins to wrench some bolts in [target]'s [parse_zone(target_zone)].")
 
@@ -82,7 +82,7 @@
 	time = 10
 
 /datum/surgery_step/open_hatch/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to open the hatch holders in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to open the hatch holders in [target]'s [parse_zone(target_zone)]..."),
 		"[user] begins to open the hatch holders in [target]'s [parse_zone(target_zone)].",
 		"[user] begins to open the hatch holders in [target]'s [parse_zone(target_zone)].")
 
@@ -97,7 +97,7 @@
 	time = 24
 
 /datum/surgery_step/cut_wires/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to cut loose wires in [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to cut loose wires in [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to cut loose wires in [target]'s [parse_zone(target_zone)].",
 			"[user] begins to cut loose wires in [target]'s [parse_zone(target_zone)].")
 
@@ -119,7 +119,7 @@
 	return TRUE
 
 /datum/surgery_step/pry_off_plating/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to pry off [target]'s [parse_zone(target_zone)] plating...</span>",
+	display_results(user, target, span_notice("You begin to pry off [target]'s [parse_zone(target_zone)] plating..."),
 			"[user] begins to pry off [target]'s [parse_zone(target_zone)] plating.",
 			"[user] begins to pry off [target]'s [parse_zone(target_zone)] plating.")
 
@@ -136,7 +136,7 @@
 	return TRUE
 
 /datum/surgery_step/weld_plating/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to weld [target]'s [parse_zone(target_zone)] plating...</span>",
+	display_results(user, target, span_notice("You begin to weld [target]'s [parse_zone(target_zone)] plating..."),
 			"[user] begins to weld [target]'s [parse_zone(target_zone)] plating.",
 			"[user] begins to weld [target]'s [parse_zone(target_zone)] plating.")
 
@@ -150,7 +150,7 @@
 /datum/surgery_step/replace_wires/tool_check(mob/user, obj/item/tool)
 	var/obj/item/stack/cable_coil/coil = tool
 	if(coil.get_amount() < cableamount)
-		to_chat(user, "<span class='warning'>Not enough cable!</span>")
+		to_chat(user, span_warning("Not enough cable!"))
 		return FALSE
 	return TRUE
 
@@ -161,7 +161,7 @@
 	return TRUE
 
 /datum/surgery_step/replace_wires/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to replace [target]'s [parse_zone(target_zone)] wiring...</span>",
+	display_results(user, target, span_notice("You begin to replace [target]'s [parse_zone(target_zone)] wiring..."),
 			"[user] begins to replace [target]'s [parse_zone(target_zone)] wiring.",
 			"[user] begins to replace [target]'s [parse_zone(target_zone)] wiring.")
 
@@ -175,7 +175,7 @@
 /datum/surgery_step/add_plating/tool_check(mob/user, obj/item/tool)
 	var/obj/item/stack/sheet/metal/plat = tool
 	if(plat.get_amount() < metalamount)
-		to_chat(user, "<span class='warning'>Not enough metal!</span>")
+		to_chat(user, span_warning("Not enough metal!"))
 		return FALSE
 	return TRUE
 
@@ -186,6 +186,6 @@
 	return TRUE
 
 /datum/surgery_step/add_plating/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='notice'>You begin to add plating to [target]'s [parse_zone(target_zone)]...</span>",
+	display_results(user, target, span_notice("You begin to add plating to [target]'s [parse_zone(target_zone)]..."),
 			"[user] begins to add plating to [target]'s [parse_zone(target_zone)].",
 			"[user] begins to add plating to [target]'s [parse_zone(target_zone)].")

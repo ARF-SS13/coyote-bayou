@@ -71,10 +71,13 @@
 	if(istype(I, /obj/item/wirecutters))
 
 		to_chat(user, span_notice("You start cutting the [src]..."))
-		if(I.use_tool(src, user, 40, volume=50))
-			playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
-			deconstruct(TRUE)
-			return TRUE
+		if(!I.use_tool(src, user, 4 SECONDS, volume=50) && !QDELETED(src))
+			return ..()
+		if(QDELETED(src)) // if we were deconstructed while sleeping in use_tool
+			return STOP_ATTACK_PROC_CHAIN // don't do anything to a deleted atom
+		playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
+		deconstruct(TRUE)
+		return STOP_ATTACK_PROC_CHAIN
 
 	return ..()
 
@@ -306,28 +309,28 @@
 						return
 					switch(chosen_wall)
 						if("Wooden Wall")
-							to_chat(user, "<span class='notice'>You start building a wooden wall...</span>")
+							to_chat(user, span_notice("You start building a wooden wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood)
 								qdel(src)
 								return TRUE
 						if("Interior Wall")
-							to_chat(user, "<span class='notice'>You start building an interior wall...</span>")
+							to_chat(user, span_notice("You start building an interior wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood/interior)
 								qdel(src)
 								return TRUE
 						if("House Wall")
-							to_chat(user, "<span class='notice'>You start building a house wall...</span>")
+							to_chat(user, span_notice("You start building a house wall..."))
 							if(do_after(user, 100, target = src) && W.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/wood/house)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, "<span class='warning'>You need atleast 3 wood to build a structure!</span>")
+					to_chat(user, span_warning("You need atleast 3 wood to build a structure!"))
 			else if(istype(I, /obj/item/stack/sheet/glass))
 				var/obj/item/stack/sheet/glass/G = I
 				if(G.amount >= 3)
@@ -340,21 +343,21 @@
 						return
 					switch(chosen_window)
 						if("House Window")
-							to_chat(user, "<span class='notice'>You start building a house window...</span>")
+							to_chat(user, span_notice("You start building a house window..."))
 							if(do_after(user, 100, target = src) && G.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/window/fulltile/house(T)
 								qdel(src)
 								return TRUE
 						if("Wood Framed Window")
-							to_chat(user, "<span class='notice'>You start building a wood framed window...</span>")
+							to_chat(user, span_notice("You start building a wood framed window..."))
 							if(do_after(user, 100, target = src) && G.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/window/fulltile/wood(T)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, "<span class='warning'>You need at least 3 glass to build a structure!</span>")
+					to_chat(user, span_warning("You need at least 3 glass to build a structure!"))
 			else if(istype(I, /obj/item/stack/sheet/cloth))
 				var/obj/item/stack/sheet/cloth/C = I
 				if(C.amount >= 3)
@@ -367,23 +370,23 @@
 						return
 					switch(chosen_tent)
 						if("Tent Wall")
-							to_chat(user, "<span class='notice'>You start building a tent wall...</span>")
+							to_chat(user, span_notice("You start building a tent wall..."))
 							if(do_after(user, 100, target = src) && C.use(3))
 								var/turf/open/T = loc
 								T.ChangeTurf(/turf/closed/wall/f13/tentwall)
 								qdel(src)
 								return TRUE
 						if("Tent Flaps")
-							to_chat(user, "<span class='notice'>You start building tent flaps...</span>")
+							to_chat(user, span_notice("You start building tent flaps..."))
 							if(do_after(user, 100, target = src) && C.use(3))
 								var/turf/open/T = loc
 								new /obj/structure/simple_door/tent(T)
 								qdel(src)
 								return TRUE
 				else
-					to_chat(user, "<span class='warning'>You need at least 3 cloth to build a structure!</span>")
+					to_chat(user, span_warning("You need at least 3 cloth to build a structure!"))
 		else
-			to_chat(user, "<span class='warning'>You can only build the structure on a solid floor!</span>")
+			to_chat(user, span_warning("You can only build the structure on a solid floor!"))
 	else
 		return ..()
 

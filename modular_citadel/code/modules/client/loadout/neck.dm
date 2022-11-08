@@ -7,6 +7,31 @@
 	name = "poncho"
 	path = /obj/item/clothing/neck/mantle/poncho
 
+/datum/gear/neck/outlawscloak
+	name = "Outlaw's Cloak"
+	path = /obj/item/storage/belt/outlawscloak
+	cost = 3
+
+/datum/gear/neck/peacefulcoat
+	name = "Peacetakers Jacket"
+	path = /obj/item/storage/belt/peacefulcoat
+	cost = 3
+
+/datum/gear/neck/poachercoat
+	name = "Poachers Coat"
+	path = /obj/item/storage/belt/poachercoat
+	cost = 3
+
+/datum/gear/neck/poachervest
+	name = "Poachers Vest"
+	path = /obj/item/storage/belt/poachervest
+	cost = 3
+
+/datum/gear/neck/dantecoat
+	name = "Mercenary Trenchcoat"
+	path = /obj/item/storage/belt/dantecoat
+	cost = 3
+
 /datum/gear/neck/pelt
 	name = "bighorner pelt"
 	path = /obj/item/clothing/neck/mantle/peltfur
@@ -23,12 +48,47 @@
 	name = "ragged mantle"
 	path = /obj/item/clothing/neck/mantle/ragged
 
+/datum/gear/neck/silver_necklace
+	name = "Silver Necklace"
+	path = /obj/item/clothing/accessory/necklace
+
+/datum/gear/neck/gold_necklace
+	name = "Gold Necklace"
+	path = /obj/item/clothing/neck/necklace/dope
+
+/datum/gear/neck/cursed_necklace
+	name = "Cursed Necklace"
+	path = /obj/item/clothing/neck/cursednecklace
+
+/datum/gear/neck/spikecollar
+	name = "Spiked Collar"
+	path = /obj/item/clothing/neck/spikecollar
+
+/datum/gear/neck/sapphirecollar
+	name = "Sapphire Collar"
+	path = /obj/item/clothing/neck/sapphirecollar
+	cost = 2
+
+/datum/gear/neck/rubycollar
+	name = "Ruby Collar"
+	path = /obj/item/clothing/neck/rubycollar
+	cost = 2
+
+/datum/gear/neck/heartcollar
+	name = "Heart Collar"
+	path = /obj/item/clothing/neck/heartcollar
+	cost = 2
+
+/datum/gear/neck/wolfpendant
+	name = "Wolf Pendant"
+	path = /obj/item/clothing/neck/wolfpendant
+	cost = 2
 
 /datum/gear/neck/apron
 	name = "simple apron"
 	path = /obj/item/clothing/neck/apron/labor
 
-/datum/gear/neck/apron
+/datum/gear/neck/stethe
 	name = "stethoscope"
 	path = /obj/item/clothing/neck/stethoscope
 

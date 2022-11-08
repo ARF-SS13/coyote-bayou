@@ -47,8 +47,14 @@
 	///Harm-intent verb in present simple tense.
 	var/response_harm_simple = "hit"
 	var/harm_intent_damage = 8 //Damage taken by punches, setting slightly higher than average punch damage as if you're punching a deathclaw then you're desperate enough to need it
-	///Minimum force required to deal any damage.
+	/// Mob damage threshold, subtracted from incoming damage
 	var/force_threshold = 0
+	/// mob's inherent armor
+	var/datum/armor/mob_armor = ARMOR_VALUE_ZERO
+	/// Additional armor modifiers that are applied to the actual armor value
+	var/mob_armor_tokens = list()
+	/// Description line for their armor, cached nice and sweet
+	var/mob_armor_description = span_phobia("Oh deary me all my armor fell off uwu") // dear god dont let this show up
 
 	///Temperature effect.
 	var/minbodytemp = 250
@@ -86,6 +92,7 @@
 	var/environment_smash = ENVIRONMENT_SMASH_NONE
 
 	///LETS SEE IF I CAN SET SPEEDS FOR SIMPLE MOBS WITHOUT DESTROYING EVERYTHING. Higher speed is slower, negative speed is faster.
+	/// Breaks everything, makes player controlled mobs wayyyyy tooo slow
 	var/speed = 1
 
 	var/idlesound = null //What to play when idling, if anything.
@@ -104,7 +111,7 @@
 	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
 	var/gold_core_spawnable = NO_SPAWN
 
-	var/datum/component/spawner/nest
+	var/datum/weakref/nest
 
 	///Sentience type, for slime potions.
 	var/sentience_type = SENTIENCE_ORGANIC
@@ -144,7 +151,7 @@
 	var/footstep_type
 
 	//How much wounding power it has
-	var/wound_bonus = CANT_WOUND
+	var/wound_bonus = 0
 	//How much bare wounding power it has
 	var/bare_wound_bonus = 0
 	//If the attacks from this are sharp
@@ -153,6 +160,9 @@
 	var/simple_mob_flags = NONE
 	//Mob may be offset randomly on both axes by this much
 	var/randpixel = 0
+
+	/// Sets up mob diversity
+	var/list/variation_list = list()
 
 /mob/living/simple_animal/Initialize()
 	. = ..()
@@ -167,24 +177,42 @@
 	if(dextrous)
 		AddComponent(/datum/component/personal_crafting)
 	if(footstep_type)
-		AddComponent(/datum/component/footstep, footstep_type)
+		AddComponent(/datum/component/footstep, footstep_type, 1, 3)
 	pixel_x = rand(-randpixel, randpixel)
 	pixel_y = rand(-randpixel, randpixel)
+	/// WARNING: DUPLICATED CODE, MAKE BETTER
+	setup_mob_armor_values()
+	if (islist(mob_armor))
+		mob_armor = getArmor(arglist(mob_armor))
+	else if (!mob_armor)
+		mob_armor = getArmor()
+	else if (!istype(mob_armor, /datum/armor))
+		stack_trace("Invalid type [mob_armor.type] found in .armor during /mob/living/simple_animal Initialize()")
+	/// End duplicated code
+	setup_mob_armor_description()
+	setup_variations()
+
 
 /mob/living/simple_animal/Destroy()
 	GLOB.simple_animals[AIStatus] -= src
 	if (SSnpcpool.state == SS_PAUSED && LAZYLEN(SSnpcpool.currentrun))
 		SSnpcpool.currentrun -= src
 
-	if(nest)
-		nest.spawned_mobs -= src
-		nest = null
+	sever_link_to_nest()
 
 	var/turf/T = get_turf(src)
 	if (T && AIStatus == AI_Z_OFF)
 		SSidlenpcpool.idle_mobs_by_zlevel[T.z] -= src
+	
+	QDEL_NULL(access_card)
 
 	return ..()
+
+/mob/living/simple_animal/examine(mob/user)
+	. = ..()
+	. += mob_armor_description
+	
+
 
 /mob/living/simple_animal/updatehealth()
 	..()
@@ -232,38 +260,40 @@
 
 /mob/living/simple_animal/proc/handle_automated_speech(override)
 	set waitfor = FALSE
-	if(speak_chance)
-		if(prob(speak_chance) || override)
-			if(speak && speak.len)
-				if((emote_hear && emote_hear.len) || (emote_see && emote_see.len))
-					var/length = speak.len
-					if(emote_hear && emote_hear.len)
-						length += emote_hear.len
-					if(emote_see && emote_see.len)
-						length += emote_see.len
-					var/randomValue = rand(1,length)
-					if(randomValue <= speak.len)
-						say(pick(speak), forced = "poly")
-					else
-						randomValue -= speak.len
-						if(emote_see && randomValue <= emote_see.len)
-							emote("me [pick(emote_see)]", 1)
-						else
-							emote("me [pick(emote_hear)]", 2)
-				else
-					say(pick(speak), forced = "poly")
+	if(!speak_chance)
+		return
+	if(!prob(speak_chance) && !override)
+		return
+	if(speak && speak.len)
+		if((emote_hear && emote_hear.len) || (emote_see && emote_see.len))
+			var/length = speak.len
+			if(emote_hear && emote_hear.len)
+				length += emote_hear.len
+			if(emote_see && emote_see.len)
+				length += emote_see.len
+			var/randomValue = rand(1,length)
+			if(randomValue <= speak.len)
+				say(pick(speak), forced = "poly")
 			else
-				if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					emote("me", EMOTE_VISIBLE, pick(emote_see))
-				if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
-					emote("me", EMOTE_AUDIBLE, pick(emote_hear))
-				if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
-					var/length = emote_hear.len + emote_see.len
-					var/pick = rand(1,length)
-					if(pick <= emote_see.len)
-						emote("me", EMOTE_VISIBLE, pick(emote_see))
-					else
-						emote("me", EMOTE_AUDIBLE, pick(emote_hear))
+				randomValue -= speak.len
+				if(emote_see && randomValue <= emote_see.len)
+					emote("me [pick(emote_see)]", 1)
+				else
+					emote("me [pick(emote_hear)]", 2)
+		else
+			say(pick(speak), forced = "poly")
+	else
+		if(!(emote_hear && emote_hear.len) && (emote_see && emote_see.len))
+			emote("me", EMOTE_VISIBLE, pick(emote_see))
+		if((emote_hear && emote_hear.len) && !(emote_see && emote_see.len))
+			emote("me", EMOTE_AUDIBLE, pick(emote_hear))
+		if((emote_hear && emote_hear.len) && (emote_see && emote_see.len))
+			var/length = emote_hear.len + emote_see.len
+			var/pick = rand(1,length)
+			if(pick <= emote_see.len)
+				emote("me", EMOTE_VISIBLE, pick(emote_see))
+			else
+				emote("me", EMOTE_AUDIBLE, pick(emote_hear))
 
 
 /mob/living/simple_animal/proc/environment_is_safe(datum/gas_mixture/environment, check_temp = FALSE)
@@ -342,7 +372,7 @@
 		verb_say = pick(speak_emote)
 	. = ..()
 
-/mob/living/simple_animal/emote(act, m_type=1, message = null, intentional = FALSE)
+/mob/living/simple_animal/emote(act, m_type=1, message = null, intentional = FALSE, only_overhead)
 	if(stat)
 		return
 	if(act == "scream")
@@ -366,17 +396,15 @@
 
 
 /mob/living/simple_animal/proc/drop_loot()
-	if(!loot.len)
-		return
 	for(var/drop in loot)
 		for(var/i in 1 to max(1, loot[drop]))
-			new drop(loc)
+			new drop(drop_location())
 
 /mob/living/simple_animal/death(gibbed)
 	movement_type &= ~FLYING
-	if(nest)
-		nest.spawned_mobs -= src
-		nest = null
+
+	sever_link_to_nest()
+
 	drop_loot()
 	if(dextrous)
 		drop_all_held_items()
@@ -462,13 +490,13 @@
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
 	if(incapacitated())
-		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
 	if(be_close && !in_range(M, src))
-		to_chat(src, "<span class='warning'>You are too far away!</span>")
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
 	if(!(no_dextery || dextrous))
-		to_chat(src, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		to_chat(src, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
 	return TRUE
 
@@ -660,3 +688,258 @@
 		if (prob(5))
 			var/chosen_sound = pick(idlesound)
 			playsound(src, chosen_sound, 60, FALSE, ignore_walls = FALSE)
+
+/mob/living/simple_animal/proc/sever_link_to_nest()
+	if(nest)
+		var/datum/component/spawner/our_nest = nest.resolve()
+		if(istype(our_nest))
+			for(var/datum/weakref/maybe_us in our_nest.spawned_mobs)
+				if(nest.resolve(maybe_us) == src)
+					our_nest.spawned_mobs -= maybe_us
+	nest = null
+
+/mob/living/simple_animal/proc/setup_variations()
+	if(!LAZYLEN(variation_list))
+		return FALSE // we're good here
+	if(LAZYLEN(variation_list[MOB_VARIED_NAME_GLOBAL_LIST]))
+		vary_mob_name_from_global_lists()
+	else if(LAZYLEN(variation_list[MOB_VARIED_NAME_LIST]))
+		vary_mob_name_from_local_list()
+	if(LAZYLEN(variation_list[MOB_VARIED_COLOR]))
+		vary_mob_color()
+	if(LAZYLEN(variation_list[MOB_VARIED_HEALTH]))
+		var/our_health = vary_from_list(variation_list[MOB_VARIED_HEALTH])
+		maxHealth = our_health
+		health = our_health
+	return TRUE
+
+/mob/living/simple_animal/proc/vary_from_list(which_list, weighted_list = FALSE)
+	if(isnum(which_list))
+		return which_list
+	if(islist(which_list))
+		if(weighted_list)
+			return(pickweight(which_list))
+		return(pick(which_list))
+
+/mob/living/simple_animal/proc/vary_mob_name_from_global_lists()
+	var/list/our_mob_random_name_list = variation_list[MOB_VARIED_NAME_GLOBAL_LIST]
+	var/our_new_name = ""
+	var/number_of_name_tokens_left = LAZYLEN(variation_list[MOB_VARIED_NAME_GLOBAL_LIST])
+	for(var/name_token in our_mob_random_name_list)
+		for(var/num_names in 1 to our_mob_random_name_list[name_token])
+			switch(name_token)
+				if(MOB_NAME_RANDOM_MALE)
+					our_new_name += capitalize(pick(GLOB.first_names_male)) + " " + capitalize(pick(GLOB.last_names))
+				if(MOB_NAME_RANDOM_FEMALE)
+					our_new_name += capitalize(pick(GLOB.first_names_female)) + " " + capitalize(pick(GLOB.last_names))
+				if(MOB_NAME_RANDOM_LIZARD_MALE)
+					our_new_name += capitalize(lizard_name(MALE))
+				if(MOB_NAME_RANDOM_LIZARD_FEMALE)
+					our_new_name += capitalize(lizard_name(FEMALE))
+				if(MOB_NAME_RANDOM_PLASMAMAN)
+					our_new_name += capitalize(plasmaman_name())
+				if(MOB_NAME_RANDOM_ETHERIAL)
+					our_new_name += capitalize(ethereal_name())
+				if(MOB_NAME_RANDOM_MOTH)
+					our_new_name += capitalize(pick(GLOB.moth_first)) + " " + capitalize(pick(GLOB.moth_last))
+				if(MOB_NAME_RANDOM_ALL_OF_THEM)
+					our_new_name += get_random_random_name()
+			if(num_names < our_mob_random_name_list[name_token])
+				our_new_name += " "
+		if(number_of_name_tokens_left-- > 0)
+			our_new_name += " "
+	if(our_new_name != "")
+		name = our_new_name
+
+/mob/living/simple_animal/proc/vary_mob_name_from_local_list()
+	name = pick(variation_list[MOB_VARIED_NAME_LIST])
+
+/mob/living/simple_animal/proc/vary_mob_color()
+	if(LAZYLEN(variation_list[MOB_VARIED_COLOR][MOB_VARIED_COLOR_MIN]) != 3)
+		return
+	if(LAZYLEN(variation_list[MOB_VARIED_COLOR][MOB_VARIED_COLOR_MAX]) != 3)
+		return
+
+	var/list/our_mob_random_color_list = variation_list[MOB_VARIED_COLOR]
+	var/list/colors = list()
+
+	if(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][1] < 1 && our_mob_random_color_list[MOB_VARIED_COLOR_MAX][1] < 1)
+		colors["red"] = 255
+	else
+		var/list/red_numbers = put_numbers_in_order(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][1], our_mob_random_color_list[MOB_VARIED_COLOR_MAX][1])
+		colors["red"] = rand(red_numbers[1], red_numbers[2])
+
+	if(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][2] < 1 && our_mob_random_color_list[MOB_VARIED_COLOR_MAX][2] < 1)
+		colors["green"] = 255
+	else
+		var/list/green_numbers = put_numbers_in_order(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][2], our_mob_random_color_list[MOB_VARIED_COLOR_MAX][2])
+		colors["green"] = rand(green_numbers[1], green_numbers[2])
+
+	if(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][3] < 1 && our_mob_random_color_list[MOB_VARIED_COLOR_MAX][3] < 1)
+		colors["blue"] = 255
+	else
+		var/list/blue_numbers = put_numbers_in_order(our_mob_random_color_list[MOB_VARIED_COLOR_MIN][3], our_mob_random_color_list[MOB_VARIED_COLOR_MAX][3])
+		colors["blue"] = rand(blue_numbers[1], blue_numbers[2])
+	color = rgb(clamp(colors["red"], 0, 255), clamp(colors["green"], 0, 255), clamp(colors["blue"], 0, 255))
+
+/mob/living/simple_animal/proc/put_numbers_in_order(num_1, num_2)
+	if(num_1 < num_2)
+		return list(num_1, num_2)
+	return list(num_2, num_1)
+
+/mob/living/simple_animal/proc/get_random_random_name()
+	switch(rand(1,26))
+		if(1)
+			return pick(GLOB.ai_names)
+		if(2)
+			return pick(GLOB.wizard_first)
+		if(3)
+			return pick(GLOB.wizard_second)
+		if(4)
+			return pick(GLOB.ninja_titles)
+		if(5)
+			return pick(GLOB.ninja_names)
+		if(6)
+			return pick(GLOB.commando_names)
+		if(7)
+			return pick(GLOB.first_names)
+		if(8)
+			return pick(GLOB.first_names_male)
+		if(9)
+			return pick(GLOB.first_names_female)
+		if(10)
+			return pick(GLOB.last_names)
+		if(11)
+			return pick(GLOB.lizard_names_male)
+		if(12)
+			return pick(GLOB.lizard_names_female)
+		if(13)
+			return pick(GLOB.carp_names)
+		if(14)
+			return pick(GLOB.golem_names)
+		if(15)
+			return pick(GLOB.moth_first)
+		if(16)
+			return pick(GLOB.moth_last)
+		if(17)
+			return pick(GLOB.plasmaman_names)
+		if(18)
+			return pick(GLOB.ethereal_names)
+		if(19)
+			return pick(GLOB.posibrain_names)
+		if(20)
+			return pick(GLOB.nightmare_names)
+		if(21)
+			return pick(GLOB.megacarp_first_names)
+		if(22)
+			return pick(GLOB.megacarp_last_names)
+		if(23)
+			return pick(GLOB.verbs)
+		if(24)
+			return pick(GLOB.ing_verbs)
+		if(25)
+			return pick(GLOB.adverbs)
+		if(26)
+			return pick(GLOB.adjectives)
+
+/// AAA DUPLICATED CODE FROM OBJ.DM
+/mob/living/simple_animal/proc/setup_mob_armor_values()
+	if(!mob_armor)
+		return
+	if(!islist(mob_armor))
+		return
+	if(length(mob_armor_tokens) < 1)
+		return // all done!
+	
+	for(var/list/token in mob_armor_tokens)
+		for(var/modifier in token)
+			switch(GLOB.armor_token_operation_legend[modifier])
+				if("MULT")
+					mob_armor[modifier] = round(mob_armor[modifier] * token[modifier], 1)
+				if("ADD")
+					mob_armor[modifier] = max(mob_armor[modifier] + token[modifier], 0)
+				else
+					continue
+
+/// compiles the mob's armor description
+/mob/living/simple_animal/proc/setup_mob_armor_description()
+	if(!mob_armor)
+		mob_armor_description = null
+
+	var/list/descriptors = list("\n" + span_notice("You consider [src]'s resistances...") + "\n")
+	///Melee
+	var/melee_armor = mob_armor.getRating("melee")
+	descriptors += span_notice("[p_they(TRUE)] look[p_s()] like [p_they()]")
+	switch(melee_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice("'d bruise like a mutfruit.")
+		if(20 to 40)
+			descriptors += span_notice(" could take a punch, maybe two if [p_they()] had to.")
+		if(40 to 60)
+			descriptors += span_alert(" could take a slap from [istype(src, /mob/living/simple_animal/hostile/supermutant) ? "another" : "a"] supermutant and get right back up.")
+		if(60 to 80)
+			descriptors += span_alert(" could play chicken with a car and win.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" could play pattycake with [istype(src, /mob/living/simple_animal/hostile/deathclaw) ? "another" : "a"] deathclaw and win.")
+	descriptors += "\n"
+	///Bullet
+	var/bullet_armor = mob_armor.getRating("bullet")
+	descriptors += span_notice("You feel like")
+	switch(bullet_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a bullet would smash right through [p_them()].")
+		if(20 to 40)
+			descriptors += span_notice(" a bullet would hurt them good, with heavy enough ammo.")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of ammo to take down.")
+		if(60 to 80)
+			descriptors += span_alert(" gunfire would just annoy [p_them()].")
+		if(80 to INFINITY)
+			descriptors += span_warning(" you'd have better luck blowing up a tank with a BB gun.")
+	descriptors += "\n"
+	///Laser
+	var/laser_armor = mob_armor.getRating("laser")
+	descriptors += span_notice("You figure")
+	switch(laser_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a laser would slice through [p_them()] like brahminbutter.")
+		if(20 to 40)
+			descriptors += span_notice(" a laser would singe the everliving daylights out of [p_them()].")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of juice to take down.")
+		if(60 to 80)
+			descriptors += span_alert(" laserfire would just make [p_them()] uncomfortably warm.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" you may as well be waving a torch at [p_them()].")
+	descriptors += "\n"
+	///plasma
+	var/plasma_armor = mob_armor.getRating("energy")
+	descriptors += span_notice("You imagine that")
+	switch(plasma_armor)
+		if(-INFINITY to 20)
+			descriptors += span_notice(" a burst of intense heat would simply burn [p_them()] to a crisp.")
+		if(20 to 40)
+			descriptors += span_notice(" a burst of intense heat would sear [p_them()] medium-well.")
+		if(40 to 60)
+			descriptors += span_alert(" [p_they()] would need a lot of agonizing plasma to put them out of their misery.")
+		if(60 to 80)
+			descriptors += span_alert(", for whatever reason, [p_they()] wouldn't be too bothered by intense heat.")
+		if(80 to INFINITY)
+			descriptors += span_warning(" this is some kind of super creature drinks plasma for breakfast.")
+	descriptors += "\n"
+	///dt
+	var/damage_threshold = mob_armor.getRating("damage_threshold")
+	switch(damage_threshold)
+		if(-INFINITY to 1)
+			descriptors += span_greenteamradio("[p_they(TRUE)] look[p_s()] like a reasonably safe opponent.")
+		if(2 to 4)
+			descriptors += span_info("[p_they(TRUE)] look[p_s()] like an even fight.")
+		if(5 to 6)
+			descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like quite a gamble!")
+		if(7 to 9)
+			descriptors += span_yellowteamradio("[p_they(TRUE)] look[p_s()] like it would wipe the floor with you!")
+		if(9 to INFINITY)
+			descriptors += span_warning("What would you like your tombstone to say?")
+	descriptors += "\n"
+	if(LAZYLEN(descriptors))
+		mob_armor_description = jointext(descriptors, "")

@@ -64,6 +64,8 @@
 	max_stamina_damage = 50
 	body_zone = BODY_ZONE_L_ARM
 	body_part = ARM_LEFT
+	onmob_layer = ARMS_PART_LAYER
+	onmob_markings_layer = MARKING_LAYER_ARMS
 	aux_icons = list(BODY_ZONE_PRECISE_L_HAND = HANDS_PART_LAYER, "l_hand_behind" = BODY_BEHIND_LAYER)
 	body_damage_coeff = 0.75
 	held_index = 1
@@ -84,9 +86,9 @@
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
 				owner.emote("scream")
-				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+				to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
 			if(BODYPART_DISABLED_PARALYSIS)
-				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+				to_chat(owner, span_userdanger("You can't feel your [name]!"))
 	if(held_index)
 		owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -124,6 +126,8 @@
 	max_damage = 50
 	body_zone = BODY_ZONE_R_ARM
 	body_part = ARM_RIGHT
+	onmob_layer = ARMS_PART_LAYER
+	onmob_markings_layer = MARKING_LAYER_ARMS
 	aux_icons = list(BODY_ZONE_PRECISE_R_HAND = HANDS_PART_LAYER, "r_hand_behind" = BODY_BEHIND_LAYER)
 	body_damage_coeff = 0.75
 	held_index = 2
@@ -145,9 +149,9 @@
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
 				owner.emote("scream")
-				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+				to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
 			if(BODYPART_DISABLED_PARALYSIS)
-				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+				to_chat(owner, span_userdanger("You can't feel your [name]!"))
 	if(held_index)
 		owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -204,9 +208,9 @@
 	switch(disabled)
 		if(BODYPART_DISABLED_DAMAGE)
 			owner.emote("scream")
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
 		if(BODYPART_DISABLED_PARALYSIS)
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, span_userdanger("You can't feel your [name]!"))
 
 /obj/item/bodypart/l_leg/digitigrade
 	name = "left digitigrade leg"
@@ -261,9 +265,9 @@
 	switch(disabled)
 		if(BODYPART_DISABLED_DAMAGE)
 			owner.emote("scream")
-			to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
+			to_chat(owner, span_userdanger("Your [name] is too damaged to function!"))
 		if(BODYPART_DISABLED_PARALYSIS)
-			to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
+			to_chat(owner, span_userdanger("You can't feel your [name]!"))
 
 /obj/item/bodypart/r_leg/digitigrade
 	name = "right digitigrade leg"
@@ -296,9 +300,9 @@ Cannibal Butchering
 /obj/item/bodypart/l_arm/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			to_chat(user, span_notice("You cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -311,9 +315,9 @@ Cannibal Butchering
 /obj/item/bodypart/r_arm/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			to_chat(user, span_notice("You cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -326,9 +330,9 @@ Cannibal Butchering
 /obj/item/bodypart/r_leg/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			to_chat(user, span_notice("You cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)
@@ -341,9 +345,9 @@ Cannibal Butchering
 /obj/item/bodypart/l_leg/attackby(obj/item/W, mob/user, params)
 	if(W.get_sharpness())
 		playsound(loc, 'sound/weapons/slice.ogg', 50, 1, -1)
-		user.visible_message("[user] starts cutting meat from \the [src].", "<span class='notice'>You start cutting meat from \the [src]...</span>", "<span class='italics'>You hear the sound of a knife rubbing against flesh.</span>")
+		user.visible_message("[user] starts cutting meat from \the [src].", span_notice("You start cutting meat from \the [src]..."), span_italic("You hear the sound of a knife rubbing against flesh."))
 		if(do_after(user, 50, target = src))
-			to_chat(user, "<span class='notice'>You cut the meat from this limb.</span>")
+			to_chat(user, span_notice("You cut the meat from this limb."))
 			new /obj/item/reagent_containers/food/snacks/meat/slab/human(user.drop_location(), 1)
 			new /obj/item/stack/sheet/bone(user.drop_location(), 2)
 			new /obj/item/stack/sheet/sinew(user.drop_location(), 1)

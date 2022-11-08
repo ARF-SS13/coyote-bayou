@@ -54,7 +54,6 @@ window "mainwindow"
 		size = 640x440
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Coyote Bayou"
@@ -67,7 +66,6 @@ window "mainwindow"
 		size = 637x440
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
 		saved-params = "splitter"
 		left = "mapwindow"
 		right = "infowindow"
@@ -78,7 +76,6 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
@@ -87,7 +84,6 @@ window "mainwindow"
 		size = 999x999
 		anchor1 = -1,-1
 		anchor2 = -1,-1
-		background-color = none
 		is-visible = false
 		saved-params = ""
 
@@ -116,18 +112,33 @@ window "mapwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 0,0
+		pos = 281,0
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		image = 'icons\\CoyoteBayouServerBanner.png'
+		outer-size = 656x538
+		inner-size = 640x499
+	elem "setoocstatus"
+		type = BUTTON
+		pos = 10,5
+		size = 160x20
+		anchor1 = -1,-1
+		anchor2 = -1,-1
+		background-color = none
+		saved-params = "is-checked"
+		text = "Set OOC Status"
+		command = "setoocstatus"
 	elem "info"
 		type = CHILD
 		pos = 0,30
 		size = 640x445
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "statwindow"
 		right = "outputwindow"
@@ -138,15 +149,27 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 34,0
 		anchor2 = 50,0
+		background-color = none
 		saved-params = "is-checked"
-		text = "TG Wiki"
+		text = "Coyote Wiki"
 		command = "tgwiki"
+	elem "changelog"
+		type = BUTTON
+		pos = 320,5
+		size = 100x20
+		anchor1 = 50,0
+		anchor2 = 66,0
+		background-color = none
+		saved-params = "is-checked"
+		text = "Changelog"
+		command = "Changelog"
 	elem "github"
 		type = BUTTON
 		pos = 420,5
 		size = 100x20
 		anchor1 = 66,0
 		anchor2 = 81,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Github"
 		command = "github"
@@ -156,6 +179,7 @@ window "infowindow"
 		size = 100x20
 		anchor1 = 81,0
 		anchor2 = 97,0
+		background-color = none
 		saved-params = "is-checked"
 		text = "Discord/Rules"
 		command = "discord"
@@ -163,7 +187,7 @@ window "infowindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 0,0
+		pos = 1423,709
 		size = 640x480
 		anchor1 = -1,-1
 		anchor2 = -1,-1
@@ -175,7 +199,7 @@ window "outputwindow"
 		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
-		background-color = #d3b5b5
+		font-style = "bold"
 		is-default = true
 		border = sunken
 		saved-params = "command"
@@ -213,7 +237,7 @@ window "popupwindow"
 	elem "popupwindow"
 		type = MAIN
 		pos = 281,0
-		size = 120x120
+		size = 549x549
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-visible = false
@@ -225,23 +249,34 @@ window "preferences_window"
 	elem "preferences_window"
 		type = MAIN
 		pos = 281,0
-		size = 1280x1000
+		size = 1280x1001
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		is-visible = false
 		saved-params = "pos;size;is-minimized;is-maximized"
 		statusbar = false
+		image = 'icons\\CharacterCreator.png'
+	elem "Powerbutton"
+		type = BUTTON
+		pos = 922,891
+		size = 39x46
+		anchor1 = 72,89
+		anchor2 = 75,94
+		saved-params = "is-checked"
+		text = ""
+		image = 'icons\\Chargenbutton.png'
+		command = "Powerbutton"
 	elem "preferences_browser"
 		type = BROWSER
-		pos = 0,0
-		size = 960x1000
+		pos = 31,19
+		size = 830x837
 		anchor1 = 0,0
 		anchor2 = 75,100
 		saved-params = ""
 	elem "character_preview_map"
 		type = MAP
-		pos = 960,0
-		size = 320x1000
+		pos = 861,10
+		size = 393x847
 		anchor1 = 75,0
 		anchor2 = 100,100
 		right-click = true
@@ -250,16 +285,17 @@ window "preferences_window"
 window "statwindow"
 	elem "statwindow"
 		type = MAIN
-		pos = 372,0
-		size = 640x480
+		pos = 281,0
+		size = 1121x827
 		anchor1 = -1,-1
 		anchor2 = -1,-1
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
+		image = 'icons\\pipscreen.png'
 	elem "statbrowser"
 		type = BROWSER
-		pos = 0,0
-		size = 640x480
+		pos = 18,14
+		size = 1077x792
 		anchor1 = 0,0
 		anchor2 = 100,100
 		is-visible = false

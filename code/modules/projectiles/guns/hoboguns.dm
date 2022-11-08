@@ -7,54 +7,33 @@
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-
-/obj/item/gun/ballistic/automatic/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
-		user.take_bodypart_damage(0,20)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+	)
 
 /obj/item/gun/ballistic/revolver/hobo
 	slowdown = 0.2
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
-
-/obj/item/gun/ballistic/revolver/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
-		user.take_bodypart_damage(0,22)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
-
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+	)
 
 /obj/item/gun/ballistic/rifle/hobo
 	slowdown = 0.4
 	icon = 'icons/fallout/objects/guns/energy.dmi'
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
-
-/obj/item/gun/ballistic/rifle/hobo/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] overheats and blasts you with superheated air!</span>")
-		user.take_bodypart_damage(0,20)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
-
-/obj/item/gun/ballistic/automatic/autopipe/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
-		user.take_bodypart_damage(0,20)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+	)
 
 /* * * * *
  * Hobo! *
@@ -85,8 +64,14 @@
 /obj/item/gun/ballistic/automatic/hobo/zipgun
 	name = "Zip gun (9mm)"
 	icon_state = "zipgun"
-	desc = "A crudely handcrafted zip gun that uses 9mm ammo."
+	desc = "A clever little makeshift pistol, one of the few easily-constructed firearms that accept more rounds than it has barrels. \
+		Light, compact, and packing a surprising punch, the zip gun serves as a waster's insurance policy when doing business, \
+		small enough to whip out of a coat when someone doesn't feel like paying for your raccoon pelts. <br><br> \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
+		casing in there. Be sure to unload it first!"
 	item_state = "gun"
+	slot_flags = ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/zipgun
 
@@ -104,11 +89,15 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 5, 15, BRUTELOSS),
+		GUN_MISFIRE_THROWS_GUN(2),
+		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+	)
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/hobo/zipgun/update_icon_state()
-	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "zipgun[magazine ? "-[CEILING(get_ammo(0)/1, 1)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 /* * * * * * * * * * *
  * Pipe Gun
@@ -122,9 +111,15 @@
 
 /obj/item/gun/ballistic/revolver/hobo/piperifle
 	name = "pipe rifle"
-	desc = "A rusty piece of pipe used to fire .223 and 5,56mm ammo."
+	desc = "A wasteland staple, an unrifled pipe welded to a break-action... thing and bolted to a nicely-carved plank of wood. \
+		Despite its crudeness, and pipebombedness, the humble pipe rifle has served many a waster well against the horrors of the wilds, \
+		often the one thing that stands between life and death. Fingers not withstanding. <br><br> \
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
+		casing in there. Be sure to unload it first!"
 	icon_state = "piperifle"
 	item_state = "pepperbox"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvisedpipe
 
@@ -142,17 +137,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(5, 50)
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
-
-/obj/item/gun/ballistic/revolver/hobo/piperifle/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
-		user.take_bodypart_damage(0,20)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
 
 /* * * * * * * * * * *
  * Pepperbox Gun
@@ -166,9 +157,13 @@
 
 /obj/item/gun/ballistic/revolver/hobo/pepperbox
 	name = "pepperbox gun (10mm)"
-	desc = "Take four pipes. Tie them together. Add planks, 10mm ammo and prayers."
+	desc = "Four unrifled pipes bolted to a splintering wooden plank (might have been a bat?), with an awkward spring-loaded \
+		mechanism on the end you assume should be pointed <i>at</i> you. It's essentially four slam(?)-fire pipe-\"rifles\" in one, \
+		each connected to a separate trigger that'll fire a 10mm pistol round. If you grip it <i>just right</i>, you might just \
+		get it to fire all four shots at once! Or explode!"
 	icon_state = "pepperbox"
 	item_state = "pepperbox"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised10mm
 
@@ -187,17 +182,13 @@
 		SEMI_AUTO_NODELAY,
 		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
 	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(0.5),
+		GUN_MISFIRE_UNLOADS_GUN(2, 50)
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
-
-/obj/item/gun/ballistic/revolver/hobo/pepperbox/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
-	if(prob(1))
-		playsound(user, fire_sound, 50, 1)
-		to_chat(user, "<span class='userdanger'>[src] misfires, detonating the round in the barrel prematurely!</span>")
-		user.take_bodypart_damage(0,20)
-		user.dropItemToGround(src)
-		return FALSE
-	..()
 
 /* * * * * * * * * * *
  * SHOTGUN BAT
@@ -209,15 +200,19 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/revolver/single_shotgun
+/obj/item/gun/ballistic/revolver/hobo/single_shotgun
 	name = "shotgun bat"
-	desc = "A baseball bat, a piece of pipe and a screwdriver is all you need to fire a shotgun shell apparantly. Good for whacking things once fired too."
+	desc = "A heavy home-run worthy baseball bat bolted onto the side of a sturdy slam-fire shotgun barrel thing. \
+		While the bat itself would make for a poor, painful stock, the trigger plate on the other side of the bat \
+		would suggest that, yes, it'll likely shoot someone if you hit them with it. Hopefully that someone isn't you. \
+		Also doubles as a pipebomb when you least expect it."
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "shotgunbat"
 	item_state = "shotgunbat"
-	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
@@ -234,8 +229,13 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
-
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 15, 25, BRUTELOSS | FIRELOSS | OXYLOSS),
+		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_UNLOADS_GUN(5, 50)
+	)
+
 
 /obj/item/gun/ballistic/revolver/single_shotgun/update_icon_state()
 	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
@@ -252,9 +252,14 @@
 
 /obj/item/gun/ballistic/revolver/hobo/knifegun
 	name = "knife gun (.44)"
-	desc = "Someone thought, whats better than a knife? A knife that can shoot a bullet from its handle, that's what. It's doubtful if its true but it´s here so might as well use it."
+	desc = "It's a gun! It's a knife! It's... a knife taped to a slamfire bullet shooter thingy. \
+		The lack of a barrel rules out any advanced marksmanry with this thing, but judging by the \
+		thrust-activated trigger extension plunger... thing running down the fuller, a good solid \
+		stab should point-blank the everliving daylights out of someone. Or blast one of your fingers into them. \
+		Either way, someone's in for a bad time."
 	icon_state = "knifegun"
 	item_state = "knifegun"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_SMALL
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised44
@@ -273,6 +278,11 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(5, 5, 10, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(10),
+		GUN_MISFIRE_UNLOADS_GUN(0.5, 50)
+	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
@@ -288,7 +298,9 @@
 
 /obj/item/gun/ballistic/revolver/hobo/knucklegun
 	name = "knucklegun (.45)"
-	desc = "An attempt to combine a knuckleduster and four short gun barrels. Totally works as a ballistic fist, if you take them off first."
+	desc = "When your knuckles don't cut it, put some brass on them. When that doesnt work? Weld on four slamfire barrels \"chambered\" \
+		in .45 ACP, connect all those to a pressure plate on the strikeface, and try not to think about all the explosives you have \
+		less than an inch from your fingers. Fires all four round at once, and if your hand still exists, delivers a solid punch too."
 	icon_state = "knucklegun"
 	item_state = "knucklegun"
 	w_class = WEIGHT_CLASS_SMALL
@@ -307,7 +319,12 @@
 	cock_delay = GUN_COCK_RIFLE_BASE
 	init_recoil = HANDGUN_RECOIL(1.6)
 	init_firemodes = list(
-		SEMI_AUTO_NODELAY
+		list(mode_name="Fire all barrels", mode_desc = "Fire all four barrels at once", automatic = 0, burst_size=4, fire_delay=15, icon="burst", burst_shot_delay = 0.1)
+	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 10, 25, BRUTELOSS | FIRELOSS),
+		GUN_MISFIRE_THROWS_GUN(5),
+		GUN_MISFIRE_UNLOADS_GUN(5, 50)
 	)
 
 	fire_sound = 'sound/weapons/Gunshot.ogg'
@@ -325,7 +342,10 @@
 
 /obj/item/gun/ballistic/automatic/autopipe
 	name = "Auto-pipe rifle"
-	desc = "A belt fed pipe rifle held together with duct tape. Highly inaccurate. What could go wrong."
+	desc = "The pride of wasteland engineering, a fully automatic, belt fed pipe machine gun. Despite looking like the scrap heap it was \
+		made from, and its eagerness to fire before fully chambering, many wasters swear by its overwhelming firepower, capable of delivering \
+		24 or so .357 magnum bullets into some unlucky beast before needing to reload. Not only does its loose receiver accept 9mm, .38 special, \
+		and .357 magnum with ease, but it also can survive dozens of premature detonations without a scratch!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
@@ -333,7 +353,7 @@
 	item_state = "autopipe"
 	w_class = WEIGHT_CLASS_BULKY
 	mag_type = /obj/item/ammo_box/magazine/autopipe
-	
+
 	slowdown = GUN_SLOWDOWN_RIFLE_LIGHT_SEMI
 	force = GUN_MELEE_FORCE_RIFLE_HEAVY
 	weapon_weight = GUN_ONE_HAND_AKIMBO
@@ -354,7 +374,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 
 /obj/item/gun/ballistic/automatic/autopipe/update_icon_state()
-	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][suppressed ? "-suppressed" : ""]"
+	icon_state = "autopipe[magazine ? "-[CEILING(get_ammo(0)/1, 6)*1]" : ""][chambered ? "" : "-e"][silenced ? "-suppressed" : ""]"
 
 
 
@@ -366,7 +386,9 @@
 //Laser musket
 /obj/item/gun/ballistic/rifle/hobo/lasmusket
 	name = "Laser Musket"
-	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. Made from metal scraps, electronic parts. an old rifle stock and a bottle full of dreams, the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
+	desc = "In the wasteland, one must make do. And making do is what the creator of this weapon does. \
+		Made from metal scraps, electronic parts. an old rifle stock and a bottle full of dreams, \
+		the Laser Musket is sure to stop anything in their tracks and make those raiders think twice."
 	icon_state = "lasmusket"
 	item_state = "lasmusket"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/lasmusket
@@ -386,6 +408,9 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
 		WEAPON_NORMAL
+	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(2, 5, 10, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
 	)
 
 
@@ -408,6 +433,9 @@
 	equipsound = 'sound/f13weapons/equipsounds/aep7equip.ogg'
 	init_firemodes = list(
 		WEAPON_NORMAL
+	)
+	misfire_possibilities = list(
+		GUN_MISFIRE_HURTS_USER(1, 30, 35, FIRELOSS | TOXLOSS | RADIATIONLOSS | EMPLOSS)
 	)
 
 /* * * * * * * * * * *
@@ -436,8 +464,6 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	cock_delay = GUN_COCK_RIFLE_BASE
 
-	can_attachments = FALSE
-	can_automatic = FALSE
 	automatic_burst_overlay = TRUE
 	can_scope = FALSE
 	scope_state = "scope_medium"
@@ -459,6 +485,7 @@
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "308-sawn"
 	item_state = "308-sawn"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/hunting
 
@@ -483,12 +510,18 @@
 //Winchester rebore. 									Keywords: .308, 2 round internal, saw-off
 /obj/item/gun/ballistic/revolver/winchesterrebored
 	name = "rebored Winchester"
-	desc = "A Winchester double-barreled shotgun rebored to fire .308 ammunition."
+	desc = "An old, weathered, battered hunk of junk of a double-barrelled coach gun restored into a somewhat decent hunting rifle. \
+		Despite the bore being smoother than a gecko's butt, the accuracy on this thing isn't half bad, and its .308 chambering \
+		can pack a real punch. While its shotgunning days are over, it sure ain't done putting holes in things. <br><br>\
+		A brave, enterprising waster can change what this gun fires! Simply " + span_notice("unscrew") + " the bolts, " + span_notice("insert") + " \
+		some metal parts into the breech block, " + span_notice("weld") + " it until its good and soft, and then " + span_notice("insert") + " a new \
+		casing in there. Be sure to unload it first!"
 	icon = 'icons/fallout/objects/guns/ballistic.dmi'
 	lefthand_file = 'icons/fallout/onmob/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/fallout/onmob/weapons/guns_righthand.dmi'
 	icon_state = "winchesterbore"
 	item_state = "shotgundouble"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/improvised762
 	w_class = WEIGHT_CLASS_BULKY
 

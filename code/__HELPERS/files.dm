@@ -1,3 +1,24 @@
+// Security helpers to ensure you cant arbitrarily load stuff from disk
+/proc/wrap_file(filepath)
+	if(IsAdminAdvancedProcCall())
+		// Admins shouldnt fuck with this
+		to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
+		message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
+		log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
+		return
+
+	return file(filepath)
+
+/proc/wrap_file2text(filepath)
+	if(IsAdminAdvancedProcCall())
+		// Admins shouldnt fuck with this
+		to_chat(usr, span_boldannounce("File load blocked: Advanced ProcCall detected."))
+		message_admins("[key_name(usr)] attempted to load files via advanced proc-call")
+		log_admin("[key_name(usr)] attempted to load files via advanced proc-call")
+		return
+
+	return file2text(filepath)
+
 //Sends resource files to client cache
 /client/proc/getFiles()
 	for(var/file in args)
@@ -8,6 +29,7 @@
 
 	for(var/i=0, i<max_iterations, i++)
 		var/list/choices = flist(path)
+		choices = sortList(choices, /proc/cmp_text_dsc)
 		if(path != root)
 			choices.Insert(1,"/")
 

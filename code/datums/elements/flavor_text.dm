@@ -54,7 +54,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			remove_verb(M, /mob/proc/manage_flavor_tests)
 
 /datum/element/flavor_text/proc/show_flavor(atom/target, mob/user, list/examine_list)
-	if(!always_show && isliving(target))
+	if(!always_show && isliving(target) && !isobserver(user))
 		var/mob/living/L = target
 		var/unknown = L.get_visible_name() == "Unknown"
 		if(!unknown && iscarbon(target))
@@ -72,7 +72,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		return
 	var/msg = replacetext(text, "\n", " ")
 	if(length_char(msg) <= 40)
-		examine_list += "<span class='notice'>[msg]</span>"
+		examine_list += span_notice("[msg]")
 	else
 		examine_list += "<span class='notice'>[copytext_char(msg, 1, 37)]... <a href='?src=[REF(src)];show_flavor=[REF(target)]'>More...</span></a>"
 

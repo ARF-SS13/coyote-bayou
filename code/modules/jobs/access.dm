@@ -13,8 +13,24 @@
 	else if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		//if they are holding or wearing a card that has access, that works
-		if(check_access(H.get_active_held_item()) || src.check_access(H.wear_id))
+		if(check_access(H.get_active_held_item()))
 			return TRUE
+		if(LAZYLEN(H.contents))
+			for(var/obj/item/key_try in H.contents)
+				if(check_access(key_try))
+					return TRUE
+/* 		if(H.wear_id && check_access(H.wear_id))
+			return TRUE
+		if(H.gloves && check_access(H.gloves))
+			return TRUE
+		if(H.belt && check_access(H.belt))
+			return TRUE
+		if(H.wear_neck && check_access(H.wear_neck))
+			return TRUE
+		if(H.wear_suit && check_access(H.wear_suit))
+			return TRUE
+		if(H.r_store && check_access(H.r_store))
+			return TRUE */
 	else if(ismonkey(M) || isalienadult(M))
 		var/mob/living/carbon/george = M
 		//they can only hold things :(
@@ -62,7 +78,12 @@
 
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/I)
-	return check_access_list(I ? I.GetAccess() : null)
+	if(check_access_list(I ? I.GetAccess() : null))
+		return TRUE
+	if(I && LAZYLEN(I.contents))
+		for(var/obj/item/thing_key in I.contents)
+			if(check_access_list(thing_key.GetAccess()))
+				return TRUE
 
 /obj/proc/check_access_list(list/access_list)
 	gen_access()

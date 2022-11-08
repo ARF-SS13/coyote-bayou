@@ -6,7 +6,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set category = "OOC"
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	if(!mob)
@@ -14,16 +14,16 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 	if(!holder)
 		if(!GLOB.ooc_allowed)
-			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
+			to_chat(src, span_danger("OOC is globally muted."))
 			return
 		if(!GLOB.dooc_allowed && (mob.stat == DEAD))
-			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
 			return
 		if(prefs.muted & MUTE_OOC)
-			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
+			to_chat(src, span_danger("You cannot use OOC (muted)."))
 			return
 	if(jobban_isbanned(src.mob, "OOC"))
-		to_chat(src, "<span class='danger'>You have been banned from OOC.</span>")
+		to_chat(src, span_danger("You have been banned from OOC."))
 		return
 	if(QDELETED(src))
 		return
@@ -50,18 +50,31 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 			return
 
 	if(!(prefs.chat_toggles & CHAT_OOC))
-		to_chat(src, "<span class='danger'>You have OOC muted.</span>")
+		to_chat(src, span_danger("You have OOC muted."))
 		return
 
 	mob.log_talk(raw_msg, LOG_OOC, tag="(OOC)")
 
-	var/keyname = key
+//	var/keyname = key // commented it out for people to be aware how to revert it. Just delete the edit below <3
+
+	// main edit here - Changes it to IC name instead of key in OOC messages.
+	var/keyname = GetOOCName()
+
+	if(!keyname)
+		return
+	// edit end here
+
 	if(prefs.unlock_content)
 		if(prefs.toggles & MEMBER_PUBLIC)
 			keyname = "<font color='[prefs.ooccolor ? prefs.ooccolor : GLOB.normal_ooc_colour]'>[icon2html('icons/member_content.dmi', world, "blag")][keyname]</font>"
 	//The linkify span classes and linkify=TRUE below make ooc text get clickable chat href links if you pass in something resembling a url
 	for(var/client/C in GLOB.clients)
 		if(C.prefs.chat_toggles & CHAT_OOC)
+			if(check_rights_for(C, R_ADMIN))
+				keyname = "[key]/[GetOOCName()]"
+			else
+				keyname = GetOOCName()
+			
 			if(holder)
 				if(!holder.fakekey || C.holder)
 					if(check_rights_for(src, R_ADMIN))
@@ -156,7 +169,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(GLOB.admin_notice)
 		to_chat(src, "<span class='boldnotice'>Admin Notice:</span>\n \t [GLOB.admin_notice]")
 	else
-		to_chat(src, "<span class='notice'>There are no admin notices at the moment.</span>")
+		to_chat(src, span_notice("There are no admin notices at the moment."))
 
 
 /client/verb/motd()
@@ -168,7 +181,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	if(motd)
 		to_chat(src, "<div class=\"motd\">[motd]</div>", handle_whitespace=FALSE)
 	else
-		to_chat(src, "<span class='notice'>The Message of the Day has not been set.</span>")
+		to_chat(src, span_notice("The Message of the Day has not been set."))
 
 /client/proc/self_notes()
 	set name = "View Admin Remarks"
@@ -176,7 +189,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc = "View the notes that admins have written about you"
 
 	if(!CONFIG_GET(flag/see_own_notes))
-		to_chat(usr, "<span class='notice'>Sorry, that function is not enabled on this server.</span>")
+		to_chat(usr, span_notice("Sorry, that function is not enabled on this server."))
 		return
 
 	browse_messages(null, usr.ckey, null, TRUE)
@@ -187,7 +200,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc = "View the amount of playtime for roles the server has tracked."
 
 	if(!CONFIG_GET(flag/use_exp_tracking))
-		to_chat(usr, "<span class='notice'>Sorry, tracking is currently disabled.</span>")
+		to_chat(usr, span_notice("Sorry, tracking is currently disabled."))
 		return
 
 	var/list/body = list()
@@ -211,13 +224,14 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set desc ="Ignore a player's messages on the OOC channel"
 
 
-	var/see_ghost_names = isobserver(mob)
+	// var/see_ghost_names = isobserver(mob)
 	var/list/choices = list()
 	for(var/client/C in GLOB.clients)
-		if(isobserver(C.mob) && see_ghost_names)
-			choices["[C.mob]([C])"] = C
-		else
-			choices[C] = C
+		choices[GetOOCName()] = C // This is to keep the ckey anonymity.
+		// if(isobserver(C.mob) && see_ghost_names)
+		// 	choices["[C.mob]([C])"] = C
+		// else
+		// 	choices[C] = C
 	choices = sortList(choices)
 	var/selection = input("Please, select a player!", "Ignore", null, null) as null|anything in choices
 	if(!selection || !(selection in choices))
@@ -286,3 +300,9 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 	set hidden = TRUE
 
 	init_verbs()
+
+/client/proc/GetOOCName()
+	if(iscarbon(mob)) // If mob is null I'll be very surprised, worse case, add a sanity check if this becomes an issue in the future.
+		return mob.real_name
+	else
+		return prefs.real_name

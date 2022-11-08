@@ -51,7 +51,7 @@ SUBSYSTEM_DEF(persistence)
 	var/placed_satchel = 0
 	var/path
 
-	var/json_file = file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
+	var/json_file = wrap_file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
 	var/list/json = list()
 	if(fexists(json_file))
 		json = json_decode(file2text(json_file))
@@ -98,7 +98,7 @@ SUBSYSTEM_DEF(persistence)
 		saved_messages = json_decode(saved_json)
 		fdel("data/npc_saves/ChiselMessages.sav")
 	else
-		var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
+		var/json_file = wrap_file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
 		if(!fexists(json_file))
 			return
 		var/list/json = json_decode(file2text(json_file))
@@ -201,7 +201,7 @@ SUBSYSTEM_DEF(persistence)
 	antag_rep = json_decode(json)
 
 /datum/controller/subsystem/persistence/proc/LoadSavedVote(ckey)
-	var/json_file = file("data/player_saves/[copytext(ckey,1,2)]/[ckey]/SavedVotes.json")
+	var/json_file = wrap_file("data/player_saves/[copytext(ckey,1,2)]/[ckey]/SavedVotes.json")
 	if(!fexists(json_file))
 		return
 	var/list/json = json_decode(file2text(json_file))
@@ -354,14 +354,14 @@ SUBSYSTEM_DEF(persistence)
 		data["saved_obj"] = pick(savable_obj)
 		satchels_to_add += list(data)
 
-	var/json_file = file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
+	var/json_file = wrap_file("data/npc_saves/SecretSatchels[SSmapping.config.map_name].json")
 	var/list/file_data = list()
 	fdel(json_file)
 	file_data["data"] = old_secret_satchels + satchels_to_add
 	WRITE_FILE(json_file, json_encode(file_data))
 
 /datum/controller/subsystem/persistence/proc/CollectChiselMessages()
-	var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
+	var/json_file = wrap_file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")
 
 	for(var/obj/structure/chisel_message/M in chisel_messages)
 		saved_messages += list(M.pack())
@@ -510,7 +510,7 @@ SUBSYSTEM_DEF(persistence)
 
 /datum/controller/subsystem/persistence/proc/SaveSavedVotes()
 	for(var/ckey in saved_votes)
-		var/json_file = file("data/player_saves/[copytext(ckey,1,2)]/[ckey]/SavedVotes.json")
+		var/json_file = wrap_file("data/player_saves/[copytext(ckey,1,2)]/[ckey]/SavedVotes.json")
 		var/list/file_data = list()
 		file_data["data"] = saved_votes[ckey]
 		fdel(json_file)

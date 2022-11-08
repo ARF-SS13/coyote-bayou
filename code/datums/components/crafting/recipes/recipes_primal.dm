@@ -27,6 +27,24 @@
 	result = /obj/structure/bonfire
 	category = CAT_PRIMAL
 
+/datum/crafting_recipe/campfire //Adding a campfire; it takes less expertise, and less ingredients than the bonfire available to primals, but it's also less grand and takes more time.
+	name = "Campfire"
+	time = 75
+	reqs = list(/obj/item/stack/sheet/mineral/wood = 20)
+	result = /obj/structure/campfire
+	category = CAT_TRIBAL
+	always_available = TRUE
+
+/datum/crafting_recipe/spearfisher
+	name = "Spearfisher"
+	time = 60
+	reqs = list(/obj/item/grown/log = 2,
+				/obj/item/weaponcrafting/string = 1,
+				/obj/item/stack/crafting/metalparts = 2,
+				/obj/item/stack/sheet/leather = 3)
+	result = /obj/item/fishingrod/spearfisher
+	category = CAT_PRIMAL
+
 /datum/crafting_recipe/wonderglue
 	name = "Animal Glue"
 	time = 60
@@ -300,14 +318,6 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 
-/datum/crafting_recipe/campfire //Adding a campfire; it takes less expertise, and less ingredients than the bonfire available to primals, but it's also less grand and takes more time.
-	name = "Campfire"
-	time = 75
-	reqs = list(/obj/item/stack/sheet/mineral/wood = 20)
-	result = /obj/structure/campfire
-	category = CAT_TRIBAL
-	always_available = TRUE
-
 /datum/crafting_recipe/tribalwar/arrowpoison
 	name = "Poison Arrow"
 	result = /obj/item/ammo_casing/caseless/arrow/poison
@@ -328,7 +338,6 @@
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
 	always_available = TRUE
-
 
 /datum/crafting_recipe/tribalwar/cheaparrow
 	name = "Lightweight Wooden Arrow"
@@ -361,6 +370,27 @@
 		)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/arrowemp
+	name = "Ion-Spirit Arrow"
+	result = /obj/item/ammo_casing/caseless/arrow/ion
+	time = 30
+	reqs = list(/obj/item/stack/crafting/electronicparts = 3,
+				/obj/item/stack/rods = 2)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+
+/datum/crafting_recipe/tribalwar/arrowblunt
+	name = "Blunt Arrow (Nonlethal)"
+	result = /obj/item/projectile/bullet/reusable/arrow/blunt
+	time = 10
+	reqs = list(
+		/obj/item/stack/sheet/mineral/wood = 1,
+		/obj/item/stack/sheet/cloth = 1
+		)
+	category = CAT_TRIBAL
+	tools = list(TOOL_WORKBENCH)
+	always_available = TRUE
 
 //MELEE
 
@@ -497,7 +527,6 @@
 				/obj/item/stack/cable_coil = 1)
 	category = CAT_TRIBAL
 	tools = list(TOOL_WORKBENCH)
-	always_available = FALSE
 
 /* tdo
 /datum/crafting_recipe/beartrap

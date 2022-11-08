@@ -8,7 +8,7 @@
 	flags_1 = CONDUCT_1
 	pressure_resistance = 5*ONE_ATMOSPHERE
 	layer = BELOW_OBJ_LAYER
-	armor = list("melee" = 50, "bullet" = 70, "laser" = 70, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_MEDIUM
 	max_integrity = 50
 	attack_hand_is_action = TRUE
 	attack_hand_speed = 8
@@ -59,13 +59,13 @@
 /obj/structure/grille/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
 	switch(passed_mode)
 		if(RCD_DECONSTRUCT)
-			to_chat(user, "<span class='notice'>You deconstruct the grille.</span>")
+			to_chat(user, span_notice("You deconstruct the grille."))
 			qdel(src)
 			return TRUE
 		if(RCD_WINDOWGRILLE)
 			if(locate(/obj/structure/window) in loc)
 				return FALSE
-			to_chat(user, "<span class='notice'>You construct the window.</span>")
+			to_chat(user, span_notice("You construct the window."))
 			var/obj/structure/window/WD = new the_rcd.window_type(drop_location())
 			WD.setAnchored(TRUE)
 			return TRUE
@@ -110,7 +110,7 @@
 	if(.)
 		return
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
-	user.visible_message("<span class='warning'>[user] hits [src].</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_warning("[user] hits [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	log_combat(user, src, "hit")
 	if(!shock(user, 70))
 		take_damage(rand(5,10), BRUTE, "melee", 1)
@@ -120,7 +120,7 @@
 		return
 	user.DelayNextAction(flush = TRUE)
 	user.do_attack_animation(src)
-	user.visible_message("<span class='warning'>[user] mangles [src].</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_warning("[user] mangles [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	if(!shock(user, 70))
 		take_damage(20, BRUTE, "melee", 1)
 
@@ -151,14 +151,14 @@
 		if(!shock(user, 90))
 			W.play_tool_sound(src, 100)
 			setAnchored(!anchored)
-			user.visible_message("<span class='notice'>[user] [anchored ? "fastens" : "unfastens"] [src].</span>", \
-								"<span class='notice'>You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor.</span>")
+			user.visible_message(span_notice("[user] [anchored ? "fastens" : "unfastens"] [src]."), \
+								span_notice("You [anchored ? "fasten [src] to" : "unfasten [src] from"] the floor."))
 			return
 	else if(istype(W, /obj/item/stack/rods) && broken)
 		var/obj/item/stack/rods/R = W
 		if(!shock(user, 90))
-			user.visible_message("<span class='notice'>[user] rebuilds the broken grille.</span>", \
-								"<span class='notice'>You rebuild the broken grille.</span>")
+			user.visible_message(span_notice("[user] rebuilds the broken grille."), \
+								span_notice("You rebuild the broken grille."))
 			new grille_type(src.loc)
 			R.use(1)
 			qdel(src)
@@ -169,16 +169,16 @@
 		if (!broken)
 			var/obj/item/stack/ST = W
 			if (ST.get_amount() < 2)
-				to_chat(user, "<span class='warning'>You need at least two sheets of glass for that!</span>")
+				to_chat(user, span_warning("You need at least two sheets of glass for that!"))
 				return
 			var/dir_to_set = SOUTHWEST
 			if(!anchored)
-				to_chat(user, "<span class='warning'>[src] needs to be fastened to the floor first!</span>")
+				to_chat(user, span_warning("[src] needs to be fastened to the floor first!"))
 				return
 			for(var/obj/structure/window/WINDOW in loc)
-				to_chat(user, "<span class='warning'>There is already a window there!</span>")
+				to_chat(user, span_warning("There is already a window there!"))
 				return
-			to_chat(user, "<span class='notice'>You start placing the window...</span>")
+			to_chat(user, span_notice("You start placing the window..."))
 			if(do_after(user,20, target = src))
 				if(!src.loc || !anchored) //Grille broken or unanchored while waiting
 					return
@@ -202,7 +202,7 @@
 				WD.setAnchored(FALSE)
 				WD.state = 0
 				ST.use(2)
-				to_chat(user, "<span class='notice'>You place [WD] on [src].</span>")
+				to_chat(user, span_notice("You place [WD] on [src]."))
 			return
 //window placing end
 

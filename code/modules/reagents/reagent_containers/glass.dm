@@ -21,13 +21,13 @@
 		return
 
 	if(!reagents || !reagents.total_volume)
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 		return
 
 	if(istype(M))
 		if(user.a_intent == INTENT_HARM)
-			M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
-							"<span class='userdanger'>[user] splashes the contents of [src] onto [M]!</span>")
+			M.visible_message(span_danger("[user] splashes the contents of [src] onto [M]!"), \
+							span_userdanger("[user] splashes the contents of [src] onto [M]!"))
 			var/R = reagents?.log_list()
 			if(isturf(target) && reagents.reagent_list.len && thrownby)
 				log_combat(thrownby, target, "splashed (thrown) [english_list(reagents.reagent_list)]")
@@ -42,8 +42,8 @@
 		else
 			var/self_fed = M == user
 			if(!self_fed)
-				M.visible_message("<span class='danger'>[user] attempts to feed something to [M].</span>", \
-							"<span class='userdanger'>[user] attempts to feed something to you.</span>")
+				M.visible_message(span_danger("[user] attempts to feed something to [M]."), \
+							span_userdanger("[user] attempts to feed something to you."))
 				log_combat(user, M, "is attempting to feed", reagents.log_list())
 				if(!do_mob(user, M))
 					return
@@ -51,12 +51,12 @@
 					return // The drink might be empty after the delay, such as by spam-feeding
 				var/turf/UT = get_turf(user)		// telekenesis memes
 				var/turf/MT = get_turf(M)
-				M.visible_message("<span class='danger'>[user] feeds something to [M].</span>", "<span class='userdanger'>[user] feeds something to you.</span>")
+				M.visible_message(span_danger("[user] feeds something to [M]."), span_userdanger("[user] feeds something to you."))
 				log_combat(user, M, "fed", reagents.log_list())
 				log_reagent("INGESTION: FED BY: [key_name(user)] (loc [user.loc] at [AREACOORD(UT)]) -> [key_name(M)] (loc [M.loc] at [AREACOORD(MT)]) - [reagents.log_list()]")
 			else
 				var/turf/T = get_turf(user)
-				to_chat(user, "<span class='notice'>You swallow a gulp of [src].</span>")
+				to_chat(user, span_notice("You swallow a gulp of [src]."))
 				log_reagent("INGESTION: SELF: [key_name(user)] (loc [user.loc] at [AREACOORD(T)]) - [reagents.log_list()]")
 			var/fraction = min(5/reagents.total_volume, 1)
 			reagents.reaction(M, INGEST, fraction)
@@ -70,32 +70,32 @@
 
 	if(target.is_refillable()) //Something like a glass. Player probably wants to transfer TO it.
 		if(!reagents.total_volume)
-			to_chat(user, "<span class='warning'>[src] is empty!</span>")
+			to_chat(user, span_warning("[src] is empty!"))
 			return
 
 		if(target.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[target] is full.</span>")
+			to_chat(user, span_warning("[target] is full."))
 			return
 
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this, log = "reagentcontainer-glass afterattack transfer to")
-		to_chat(user, "<span class='notice'>You transfer [trans] unit\s of the solution to [target].</span>")
+		to_chat(user, span_notice("You transfer [trans] unit\s of the solution to [target]."))
 
 	else if(target.is_drainable()) //A dispenser. Transfer FROM it TO us.
 		if(!target.reagents.total_volume)
-			to_chat(user, "<span class='warning'>[target] is empty and might not be refillabe.</span>")
+			to_chat(user, span_warning("[target] is empty and might not be refillabe."))
 			return
 
 		if(reagents.holder_full())
-			to_chat(user, "<span class='warning'>[src] is full.</span>")
+			to_chat(user, span_warning("[src] is full."))
 			return
 
 		var/trans = target.reagents.trans_to(src, amount_per_transfer_from_this, log = "reagentcontainer-glass afterattack fill from")
-		to_chat(user, "<span class='notice'>You fill [src] with [trans] unit\s of the contents of [target].</span>")
+		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 	else if(reagents.total_volume)
 		if(user.a_intent == INTENT_HARM)
-			user.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [target]!</span>", \
-								"<span class='notice'>You splash the contents of [src] onto [target].</span>")
+			user.visible_message(span_danger("[user] splashes the contents of [src] onto [target]!"), \
+								span_notice("You splash the contents of [src] onto [target]."))
 			reagents.reaction(target, TOUCH)
 			reagents.clear_reagents()
 
@@ -103,15 +103,15 @@
 	var/hotness = I.get_temperature()
 	if(hotness && reagents)
 		reagents.expose_temperature(hotness)
-		to_chat(user, "<span class='notice'>You heat [name] with [I]!</span>")
+		to_chat(user, span_notice("You heat [name] with [I]!"))
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/egg)) //breaking eggs
 		var/obj/item/reagent_containers/food/snacks/egg/E = I
 		if(reagents)
 			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, span_notice("[src] is full."))
 			else
-				to_chat(user, "<span class='notice'>You break [E] in [src].</span>")
+				to_chat(user, span_notice("You break [E] in [src]."))
 				E.reagents.trans_to(src, E.reagents.total_volume, log = "reagentcontainer-glass break egg in")
 				qdel(E)
 			return
@@ -145,29 +145,34 @@
 
 	if(reagents.total_volume)
 		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[cached_icon]10", color = mix_color_from_reagents(reagents.reagent_list))
-
-		var/percent = round((reagents.total_volume / volume) * 100)
-		switch(percent)
-			if(0 to 9)
-				filling.icon_state = "[cached_icon]-10"
-			if(10 to 24)
-				filling.icon_state = "[cached_icon]10"
-			if(25 to 49)
-				filling.icon_state = "[cached_icon]25"
-			if(50 to 74)
-				filling.icon_state = "[cached_icon]50"
-			if(75 to 79)
-				filling.icon_state = "[cached_icon]75"
-			if(80 to 90)
-				filling.icon_state = "[cached_icon]80"
-			if(91 to INFINITY)
-				filling.icon_state = "[cached_icon]100"
+		if(!warped_glass)
+			var/percent = round((reagents.total_volume / volume) * 100)
+			switch(percent)
+				if(0 to 9)
+					filling.icon_state = "[cached_icon]-10"
+				if(10 to 24)
+					filling.icon_state = "[cached_icon]10"
+				if(25 to 49)
+					filling.icon_state = "[cached_icon]25"
+				if(50 to 74)
+					filling.icon_state = "[cached_icon]50"
+				if(75 to 79)
+					filling.icon_state = "[cached_icon]75"
+				if(80 to 90)
+					filling.icon_state = "[cached_icon]80"
+				if(91 to INFINITY)
+					filling.icon_state = "[cached_icon]100"
 		. += filling
 
 /obj/item/reagent_containers/glass/beaker/jar
 	name = "honey jar"
 	desc = "A jar for honey. It can hold up to 60 units of sweet delight. Unable to withstand reagents of an extreme pH."
 	icon_state = "honey"
+
+/obj/item/reagent_containers/glass/beaker/big_red
+	name = "Big Red bottle"
+	desc = "A bottle of an old southern classic soda, still mixed to this day. A creamy blend of bubblegum-esque orange-lemon, topped off with vanilla for a uniquely pleasant flavor. A favorite of otterlike folk. Unable to withstand extreme pH, its a soda bottle."
+	icon_state = "bigred"
 
 /obj/item/reagent_containers/glass/beaker/glass_dish
 	name = "glass dish"
@@ -282,6 +287,9 @@
 /obj/item/reagent_containers/glass/beaker/synthflesh
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 50)
 
+/obj/item/reagent_containers/glass/beaker/big_red/full
+	list_reagents = list(/datum/reagent/consumable/big_red = 60)
+
 /obj/item/reagent_containers/glass/beaker/waterbottle
 	name = "bottle of water"
 	desc = "A bottle of water filled at an old Earth bottling facility."
@@ -362,15 +370,15 @@
 	holdingitems = list()
 /obj/item/reagent_containers/glass/mortar/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to eject any item put inside.</span>"
-	. += "<span class='notice'>Alt-click while the mortar is empty to change between grind/juice mode.</span>"
+	. += span_notice("Alt-click to eject any item put inside.")
+	. += span_notice("Alt-click while the mortar is empty to change between grind/juice mode.")
 
 /obj/item/reagent_containers/glass/mortar/AltClick(mob/user)
 	if(LAZYLEN(holdingitems))
 		eject()
 	else
 		mortar_mode = !mortar_mode
-		to_chat(user, "<span class='notice'>You decide to [mortar_mode == MORTAR_JUICE ? "juice the harvest" : "grind the harvest"].</span>")
+		to_chat(user, span_notice("You decide to [mortar_mode == MORTAR_JUICE ? "juice the contents of the mortar" : "grind the contents of the mortar"]."))
 
 /obj/item/reagent_containers/glass/mortar/attackby(obj/item/I, mob/living/carbon/human/user)
 	if(is_type_in_list(I, blacklistchems))
@@ -378,20 +386,20 @@
 	if(istype(I,/obj/item/pestle))
 		if(LAZYLEN(holdingitems))
 			if(IS_STAMCRIT(user))
-				to_chat(user, "<span class='warning'>You are too tired to work!</span>")
+				to_chat(user, span_warning("You are too tired to work!"))
 				return
 			user.adjustStaminaLoss(2 * holdingitems.len) //max 40
 			if(mortar_mode== MORTAR_JUICE)
-				juice()
+				juice(user)
 				return
 			else
-				grind()
+				grind(user)
 				return
 		else
-			to_chat(user, "<span class='warning'>There is nothing to grind!</span>")
+			to_chat(user, span_warning("There is nothing to grind!"))
 			return
 	if(holdingitems.len >= 10)
-		to_chat(user, "<span class='warning'>The [src] is full!</span>")
+		to_chat(user, span_warning("The [src] is full!"))
 		return
 	if(istype(I, /obj/item/storage/bag))
 		var/list/inserted = list()
@@ -399,18 +407,18 @@
 			for(var/i in inserted)
 				holdingitems[i] = TRUE
 			if(!I.contents.len)
-				to_chat(user, "<span class='notice'>You empty [I] into [src].</span>")
+				to_chat(user, span_notice("You empty [I] into [src]."))
 			else
-				to_chat(user, "<span class='notice'>You fill [src] to the brim.</span>")
+				to_chat(user, span_notice("You fill [src] to the brim."))
 		return TRUE
 	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
 	if(I.juice_results || I.grind_results)
 		if(user.transferItemToLoc(I, src))
-			to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
+			to_chat(user, span_notice("You add [I] to [src]."))
 			holdingitems[I] = TRUE
 			return FALSE
-	to_chat(user, "<span class='warning'>You can't put this in the mortar!</span>")
+	to_chat(user, span_warning("You can't put this in the mortar!"))
 	..()
 
 /obj/item/reagent_containers/glass/mortar/proc/eject(mob/user)
@@ -423,32 +431,73 @@
 	holdingitems -= O
 	qdel(O)
 
-/obj/item/reagent_containers/glass/mortar/proc/juice()
+/obj/item/reagent_containers/glass/mortar/proc/juice(mob/user)
+	playsound(get_turf(user),'sound/f13effects/mortarandpestle.ogg')
+	if(user)
+		user.visible_message(
+			span_notice("[user] starts squeezing the juice out of the mortars contents..."),
+			span_notice("You start squeezing the juice out of the contents of the mortar..."),
+			span_notice("Something is squishing something nearby.")
+			)
+	if(!do_after(user, 4 SECONDS, target = src))
+		if(user)
+			user.visible_message(
+				span_alert("[user] messes up!"),
+				span_alert("You mess up and have to start over!"),
+				span_alert("Something stops grinding rocks together.")
+				)
+			return
 	for(var/obj/item/i in holdingitems)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			break
 		var/obj/item/I = i
 		if(I.juice_results)
 			juice_item(I)
+	if(user)
+		user.visible_message(
+			span_notice("[user] finishes squeezing the juice out of the mortars contents..."),
+			span_notice("You finish squeezing the juice out of the contents within the mortar..."),
+			span_notice("Something stops grinding rocks together.")
+			)
 
 /obj/item/reagent_containers/glass/mortar/proc/juice_item(obj/item/I) //Juicing results can be found in respective object definitions
 	if(I.on_juice(src) == -1)
-		to_chat(usr, "<span class='danger'>[src] cannot juice [I].</span>")
+		to_chat(usr, span_danger("[src] cannot juice [I]."))
 		return
 	reagents.add_reagent_list(I.juice_results)
 	remove_object(I)
 
-/obj/item/reagent_containers/glass/mortar/proc/grind()
+/obj/item/reagent_containers/glass/mortar/proc/grind(mob/user)
+	if(user)
+		user.visible_message(
+			span_notice("[user] starts grinding the mortars contents..."),
+			span_notice("You start grinding the contents of the mortar..."),
+			span_notice("Something is grinding something nearby.")
+			)
+	if(!do_after(user, 4 SECONDS, target = src))
+		if(user)
+			user.visible_message(
+				span_alert("[user] messes up!"),
+				span_alert("You mess up and have to start over!"),
+				span_alert("Something stops grinding rocks together."),
+				)
+			return
 	for(var/i in holdingitems)
 		if(reagents.total_volume >= reagents.maximum_volume)
 			break
 		var/obj/item/I = i
 		if(I.grind_results)
 			grind_item(i)
+	if(user)
+		user.visible_message(
+			span_notice("[user] finishes grinding the mortars contents..."),
+			span_notice("You finish grinding the contents within the mortar..."),
+			span_notice("Something stops grinding rocks together.")
+			)
 
 /obj/item/reagent_containers/glass/mortar/proc/grind_item(obj/item/I) //Grind results can be found in respective object definitions
 	if(I.on_grind(src) == -1) //Call on_grind() to change amount as needed, and stop grinding the item if it returns -1
-		to_chat(usr, "<span class='danger'>[src] cannot grind [I].</span>")
+		to_chat(usr, span_danger("[src] cannot grind [I]."))
 		return
 	reagents.add_reagent_list(I.grind_results)
 	if(I.reagents)

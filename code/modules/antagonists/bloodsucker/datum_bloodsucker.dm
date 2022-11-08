@@ -294,21 +294,21 @@
 		if(bloodsucker_level_unspent <= 0) // Already spent all your points, and tried opening/closing your coffin, pal.
 			return
 		if(!istype(owner.current.loc, /obj/structure/closet/crate/coffin))
-			to_chat(owner.current, "<span class='warning'>Return to your coffin to advance your Rank.</span>")
+			to_chat(owner.current, span_warning("Return to your coffin to advance your Rank."))
 			return
 		if(!choice || !options[choice] || (locate(options[choice]) in powers)) // ADDED: Check to see if you already have this power, due to window stacking.
-			to_chat(owner.current, "<span class='notice'>You prevent your blood from thickening just yet, but you may try again later.</span>")
+			to_chat(owner.current, span_notice("You prevent your blood from thickening just yet, but you may try again later."))
 			return
 		if(L.blood_volume < level_bloodcost)
-			to_chat(owner.current, "<span class='warning'>You dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!</span>")
+			to_chat(owner.current, span_warning("You dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!"))
 			return
 		// Buy New Powers
 		var/datum/action/bloodsucker/P = options[choice]
 		AddBloodVolume(-level_bloodcost)
 		BuyPower(new P)
-		to_chat(owner.current, "<span class='notice'>You have used [level_bloodcost] units of blood and learned [initial(P.name)]!</span>")
+		to_chat(owner.current, span_notice("You have used [level_bloodcost] units of blood and learned [initial(P.name)]!"))
 	else
-		to_chat(owner.current, "<span class='notice'>You grow more ancient by the night!</span>")
+		to_chat(owner.current, span_notice("You grow more ancient by the night!"))
 	/////////
 	// Advance Powers (including new)
 	LevelUpPowers()
@@ -332,8 +332,8 @@
 	// Assign True Reputation
 	if(bloodsucker_level == 4)
 		SelectReputation(am_fledgling = FALSE, forced = TRUE)
-	to_chat(owner.current, "<span class='notice'>You are now a rank [bloodsucker_level] Bloodsucker. Your strength, health, feed rate, regen rate, can have up to [bloodsucker_level - count_vassals(owner.current.mind)] vassals, and maximum blood have all increased!</span>")
-	to_chat(owner.current, "<span class='notice'>Your existing powers have all ranked up as well!</span>")
+	to_chat(owner.current, span_notice("You are now a rank [bloodsucker_level] Bloodsucker. Your strength, health, feed rate, regen rate, can have up to [bloodsucker_level - count_vassals(owner.current.mind)] vassals, and maximum blood have all increased!"))
+	to_chat(owner.current, span_notice("Your existing powers have all ranked up as well!"))
 	update_hud(TRUE)
 	owner.current.playsound_local(null, 'sound/effects/pope_entry.ogg', 25, TRUE, pressure_affected = FALSE)
 
@@ -439,7 +439,7 @@
 
 	// Now list their vassals
 	if (vassals.len > 0)
-		report += "<span class='header'>Their Vassals were...</span>"
+		report += span_header("Their Vassals were...")
 		for (var/datum/antagonist/vassal/V in vassals)
 			if (V.owner)
 				var/jobname = V.owner.assigned_role ? "the [V.owner.assigned_role]" : ""
@@ -565,7 +565,7 @@
 //			* ADD: TRAIT_COLDBLOODED <-- add to carbon/life.dm /natural_bodytemperature_stabilization()
 //
 // MASQUERADE	Appear as human!
-//				** examine.dm /examine() <-- Change "blood_volume < BLOOD_VOLUME_SAFE" to a new examine
+//				** examine.dm /examine() <-- Change "get_blood(FALSE) < BLOOD_VOLUME_SAFE" to a new examine
 //
 // NOSFERATU ** ADD_TRAIT(human, TRAIT_DISFIGURED, "insert_vamp_datum_here") <-- Makes you UNKNOWN unless your ID says otherwise.
 // STEALTH   ** human_helpers.dm /get_visible_name()     ** shadowpeople.dm has rules for Light.
@@ -694,11 +694,11 @@
 	// Update Blood Counter
 	if (owner.current.hud_used.blood_display)
 		var/valuecolor = "#FF6666"
-		if(owner.current.blood_volume > BLOOD_VOLUME_SAFE)
+		if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_SAFE)
 			valuecolor =  "#FFDDDD"
-		else if(owner.current.blood_volume > BLOOD_VOLUME_BAD)
+		else if(owner.current.get_blood(TRUE) > BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 			valuecolor =  "#FFAAAA"
-		owner.current.hud_used.blood_display.update_counter(owner.current.blood_volume, valuecolor)
+		owner.current.hud_used.blood_display.update_counter(owner.current.get_blood(TRUE), valuecolor)
 
 	// Update Rank Counter
 	if(owner.current.hud_used.vamprank_display)

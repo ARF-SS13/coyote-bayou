@@ -5,6 +5,7 @@
 	ammo_type = /obj/item/ammo_casing/caseless/laser
 	caliber = list(CALIBER_LASER)
 	max_ammo = 20
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_box/magazine/recharge/update_icon()
 	desc = "[initial(desc)] It has [stored_ammo.len] shot\s left."
@@ -24,6 +25,7 @@
 	ammo_type = /obj/item/ammo_casing/mws_batt
 	start_empty = TRUE
 	max_ammo = 3
+	w_class = WEIGHT_CLASS_SMALL
 
 	var/list/modes = list()
 
@@ -63,6 +65,7 @@
 
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell{charge = 600; maxcharge = 600}
+	w_class = WEIGHT_CLASS_SMALL
 
 	var/e_cost = 100
 	projectile_type = /obj/item/projectile/beam
@@ -96,21 +99,25 @@
 	type_color = "#bf3d3d"
 	type_name = "<span class='lethal'>LETHAL</span>"
 	projectile_type = /obj/item/projectile/beam
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_casing/mws_batt/stun
 	name = "'MWS' microbattery - STUN"
 	type_color = "#0f81bc"
 	type_name = "<span class='stun'>STUN</span>"
 	projectile_type = /obj/item/projectile/beam/disabler
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_casing/mws_batt/xray
 	name = "'MWS' microbattery - XRAY"
 	type_color = "#32c025"
 	type_name = "<span class='xray'>XRAY</span>"
 	projectile_type = /obj/item/projectile/beam/xray
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/ammo_casing/mws_batt/ion
 	name = "'MWS' microbattery - ION"
 	type_color = "#d084d6"
 	type_name = "<span class='ion'>ION</span>"
 	projectile_type = /obj/item/projectile/ion
+	w_class = WEIGHT_CLASS_SMALL

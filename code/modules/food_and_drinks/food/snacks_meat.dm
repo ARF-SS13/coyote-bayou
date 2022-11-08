@@ -125,16 +125,13 @@
 	tastes = list("fish" = 1, "pan seared vegtables" = 1)
 	foodtype = MEAT | VEGETABLES | FRIED
 
-/obj/item/reagent_containers/food/snacks/sushi_basic
-	name = "funa hosomaki"
-	desc = "A small cylindrical seaweed wrap, filled with rice and fish."
-	icon_state = "sushie_basic"
-	bonus_reagents = list(/datum/reagent/consumable/nutriment/vitamin = 2)
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	bitesize = 10
-	filling_color = "#F2EEEA" //rgb(242, 238, 234)
-	tastes = list("fish" = 1, "rice" = 2, "salt" = 1)
-	foodtype = MEAT | VEGETABLES
+/obj/item/reagent_containers/food/snacks/fishtaco
+	name = "fish taco"
+	desc = "A taco with fish, cheese, and cabbage."
+	icon_state = "fishtaco"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 2)
+	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2, "cabbage" = 1)
+	foodtype = MEAT | DAIRY | GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/rawantbrain
 	name = "Raw Ant Brain"
@@ -483,6 +480,26 @@
 	tastes = list("meat" = 3, "pasta" = 3, "tomato" = 2, "cheese" = 2)
 	foodtype = MEAT | DAIRY | GRAIN
 
+/obj/item/reagent_containers/food/snacks/meat_poke
+	name = "meat poke"
+	desc = "Simple poke, rice on the bottom, vegetables and meat on top. Should be mixed before eating."
+	icon = 'icons/obj/food/soupsalad.dmi'
+	icon_state = "pokemeat"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("rice and meat" = 4, "lettuce" = 2, "soy sauce" = 2)
+	foodtype =  MEAT | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/reagent_containers/food/snacks/fish_poke
+	name = "fish poke"
+	desc = "Simple poke, rice on the bottom, vegetables and fish on top. Should be mixed before eating."
+	icon = 'icons/obj/food/soupsalad.dmi'
+	icon_state = "pokefish"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("rice and fish" = 4, "lettuce" = 2, "soy sauce" = 2)
+	foodtype = MEAT | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
 ////////////// Cubes //////////
 
 /obj/item/reagent_containers/food/snacks/cube
@@ -510,10 +527,10 @@
 	var/mob/spammer = get_mob_by_key(fingerprintslast)
 	var/mob/living/water = new dried_being(drop_location(), TRUE, spammer)
 	if (!QDELETED(water))
-		visible_message("<span class='notice'>[src] expands!</span>")
+		visible_message(span_notice("[src] expands!"))
 		water.log_message("Spawned via [src] at [AREACOORD(src)], Last attached mob: [key_name(spammer)].", LOG_ATTACK)
 	else if (!spammer) // Visible message in case there are no fingerprints
-		visible_message("<span class='notice'>[src] fails to expand!</span>")
+		visible_message(span_notice("[src] fails to expand!"))
 	qdel(src)
 
 /obj/item/reagent_containers/food/snacks/cube/monkey

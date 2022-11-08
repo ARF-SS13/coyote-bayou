@@ -96,7 +96,7 @@
 	if(istype(target, /mob/living/simple_animal/hostile/bear) && proximity_flag)
 		var/mob/living/simple_animal/hostile/bear/A = target
 		if(A.armored)
-			to_chat(user, "<span class='warning'>[A] has already been armored up!</span>")
+			to_chat(user, span_warning("[A] has already been armored up!"))
 			return
 		A.armored = TRUE
 		A.maxHealth += 60
@@ -106,7 +106,7 @@
 		A.melee_damage_upper += 5
 		A.wound_bonus += 5
 		A.update_icons()
-		to_chat(user, "<span class='info'>You strap the armor plating to [A] and sharpen [A.p_their()] claws with the nail filer. This was a great idea.</span>")
+		to_chat(user, span_info("You strap the armor plating to [A] and sharpen [A.p_their()] claws with the nail filer. This was a great idea."))
 		qdel(src)
 
 mob/living/simple_animal/hostile/bear/butter //The mighty companion to Cak. Several functions used from it.
@@ -161,12 +161,12 @@ mob/living/simple_animal/hostile/bear/butter/AttackingTarget() //Makes some atta
 		if((L.mobility_flags & MOBILITY_STAND))
 			L.Knockdown(20)
 			playsound(loc, 'sound/misc/slip.ogg', 15)
-			L.visible_message("<span class='danger'>[L] slips on butter!</span>")
+			L.visible_message(span_danger("[L] slips on butter!"))
 
 /mob/living/simple_animal/hostile/bear/yaoguai
 	name = "yao guai"
 	desc = "A mutated American black bear, sporting razor sharp teeth, claws, and a nasty temper."
-	icon = 'icons/fallout/mobs/animals/yaoguai_2.dmi'
+	icon = 'icons/fallout/mobs/animals/yaoguai.dmi'
 	icon_state = "yaoguai"
 	icon_living = "yaoguai"
 	icon_dead = "yaoguai_dead"

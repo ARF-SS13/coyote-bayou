@@ -65,11 +65,11 @@
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
-	var/t =	"<span class='notice'>Coordinates: [x],[y] \n</span>"
-	t +=	"<span class='danger'>Temperature: [environment.return_temperature()] \n</span>"
+	var/t =	span_notice("Coordinates: [x],[y] \n")
+	t +=	span_danger("Temperature: [environment.return_temperature()] \n")
 	for(var/id in environment.get_gases())
 		if(environment.get_moles(id))
-			t+="<span class='notice'>[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n</span>"
+			t+=span_notice("[GLOB.gas_data.names[id]]: [environment.get_moles(id)] \n")
 
 	to_chat(usr, t)
 
@@ -145,7 +145,7 @@
 		//the light object is dark and not invisible to us, darkness does not matter if you're directly next to the target
 		else if(T.lighting_object && T.lighting_object.invisibility <= target.see_invisible && T.is_softly_lit() && !in_range(T,target))
 			msg = blind_message
-		if(msg)
+		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
 			target.show_message(msg, MSG_VISUAL,blind_message, MSG_AUDIBLE)
 	if(self_message)
 		hearers -= src
@@ -165,7 +165,8 @@
 		if(visible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, visible_message_flags) && !M.is_blind())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = visible_message_flags)
 
-		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		if(msg && !CHECK_BITFIELD(visible_message_flags, ONLY_OVERHEAD))
+			M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
 
 ///Adds the functionality to self_message.
 mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, mob/target, target_message, visible_message_flags = NONE)
@@ -200,7 +201,8 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	for(var/mob/M in hearers)
 		if(audible_message_flags & EMOTE_MESSAGE && runechat_prefs_check(M, audible_message_flags) && M.can_hear())
 			M.create_chat_message(src, raw_message = raw_msg, runechat_flags = audible_message_flags)
-		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		if(!CHECK_BITFIELD(audible_message_flags, ONLY_OVERHEAD))
+			M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
 
 /**
  * Show a message to all mobs in earshot of this one
@@ -260,7 +262,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		var/obj/item/I = get_item_by_slot(slot)
 		if(istype(I))
 			if(slot in check_obscured_slots())
-				to_chat(src, "<span class='warning'>You are unable to unequip that while wearing other garments over it!</span>")
+				to_chat(src, span_warning("You are unable to unequip that while wearing other garments over it!"))
 				return FALSE
 			I.attack_hand(src)
 
@@ -329,7 +331,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		return
 
 	if(is_blind())
-		to_chat(src, "<span class='warning'>Something is there but you can't see it!</span>")
+		to_chat(src, span_warning("Something is there but you can't see it!"))
 		return
 
 	face_atom(A)
@@ -349,9 +351,10 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 
 	if(!result)
 		return
-	else
-		to_chat(src, result.Join("\n"))
-		SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
+	if(LAZYLEN(result) <= 0) // A robot tried to examine their health bar and it runtimed cus it returned an empty list. Darn robot.
+		return
+	to_chat(src, result.Join("\n"))
+	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 /mob/proc/clear_from_recent_examines(atom/A)
 	if(!client)
@@ -380,13 +383,13 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	// check to see if their face is blocked (or if they're not a carbon, in which case they can't block their face anyway)
 	if(!istype(examined_carbon) || (!(examined_carbon.wear_mask && examined_carbon.wear_mask.flags_inv & HIDEFACE) && !(examined_carbon.head && examined_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
-			var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
+			var/msg = span_smallnotice("You make eye contact with [examined_mob].")
 			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	var/mob/living/carbon/us_as_carbon = src // i know >casting as subtype, but this isn't really an inheritable check
 	if(!istype(us_as_carbon) || (!(us_as_carbon.wear_mask && us_as_carbon.wear_mask.flags_inv & HIDEFACE) && !(us_as_carbon.head && us_as_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
-			var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
+			var/msg = span_smallnotice("[src] makes eye contact with you.")
 			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
 
 //same as above
@@ -484,7 +487,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 		return
 	/* check player is actually dead */
 	if((stat != DEAD || !( SSticker )))
-		to_chat(usr, "<span class='boldnotice'>You must be dead to use this!</span>")
+		to_chat(usr, span_boldnotice("You must be dead to use this!"))
 		return
 
 	var/is_admin = check_rights_for(src.client, R_ADMIN)
@@ -502,7 +505,7 @@ mob/visible_message(message, self_message, blind_message, vision_distance = DEFA
 	/*end src.mind.current - we survived the various checks, so perform the actual respawn */
 	log_game("[key_name(usr)] used abandon mob.")
 
-	to_chat(usr, "<span class='boldnotice'>Please roleplay correctly!</span>")
+	to_chat(usr, span_boldnotice("Please roleplay correctly!"))
 
 	if(!client)
 		log_game("[key_name(usr)] AM failed due to disconnect.")
@@ -753,9 +756,10 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/proc/swap_hand()
 	var/obj/item/held_item = get_active_held_item()
 	var/obj/item/new_item = get_inactive_held_item()
-	if((SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP) || istype(new_item,/obj/item/twohanded/offhand))
-		to_chat(src, "<span class='warning'>Your other hand is too busy holding [held_item].</span>")
+	if((SEND_SIGNAL(src, COMSIG_MOB_SWAP_HANDS, held_item) & COMPONENT_BLOCK_SWAP))
 		return FALSE
+	if(istype(new_item,/obj/item/twohanded/offhand))
+		held_item.attempt_wield(src)
 	return TRUE
 
 /mob/proc/activate_hand(selhand)
@@ -1048,6 +1052,15 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	var/datum/language_holder/H = get_language_holder()
 	H.open_language_menu(usr)
 
+/mob/verb/set_taste()
+	set name = "Set how you taste"
+	set category = "IC"
+
+	var/message = stripped_input(usr, "", "How do you taste?", "", 100, FALSE)
+	if(message)
+		tastes = list("[message]" = 1)
+		to_chat(usr, span_notice("You now taste like [message]"))
+
 ///Adjust the nutrition of a mob
 /mob/proc/adjust_nutrition(change, max = INFINITY) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	nutrition = clamp(nutrition + change, 0, max)
@@ -1105,3 +1118,25 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
  */
 /mob/proc/on_item_dropped(obj/item/I)
 	return
+
+
+/mob/verb/tilt_leftward()
+	set hidden = FALSE
+	tilt_left()
+
+/mob/proc/tilt_left()
+	if(!canface() || is_tilted < -50)
+		return FALSE
+	transform = transform.Turn(-1)
+	is_tilted--
+
+/mob/verb/tilt_rightward()
+	set hidden = FALSE
+	tilt_right()
+
+/mob/proc/tilt_right()
+	if(!canface() || is_tilted > 50)
+		return FALSE
+	transform = transform.Turn(1)
+	is_tilted++
+

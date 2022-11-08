@@ -69,17 +69,17 @@
 #define RADIO_KEY_TOWN "f"
 #define RADIO_TOKEN_TOWN ":f"
 
-#define RADIO_CHANNEL_LEGION "Legion"
-#define RADIO_KEY_LEGION "l"
-#define RADIO_TOKEN_LEGION ":l"
+#define RADIO_CHANNEL_TOWN_PD "Sheriff"
+#define RADIO_KEY_TOWN_PD "l"
+#define RADIO_TOKEN_TOWN_PD ":l"
 
-#define RADIO_CHANNEL_KHANS "Khans"
-#define RADIO_KEY_KHANS "a"
-#define RADIO_TOKEN_KHANS ":a"
+#define RADIO_CHANNEL_TOWN_COMMERCE "Commerce"
+#define RADIO_KEY_TOWN_COMMERCE "j"
+#define RADIO_TOKEN_TOWN_COMMERCE ":j"
 
-#define RADIO_CHANNEL_DEN "Den"
-#define RADIO_KEY_DEN "j"
-#define RADIO_TOKEN_DEN ":j"
+#define RADIO_CHANNEL_TOWN_MAYOR "Mayor"
+#define RADIO_KEY_TOWN_MAYOR "y"
+#define RADIO_TOKEN_TOWN_MAYOR ":y"
 
 #define RADIO_CHANNEL_REDWATER "Redwater"
 #define RADIO_KEY_REDWATER "d"
@@ -107,10 +107,10 @@
 #define FREQ_BOS 1365 //BOS
 #define FREQ_ENCLAVE 1367 //ENCLAVE
 #define FREQ_TOWN 1369 //TOWN
-#define FREQ_LEGION 1371 //LEGION
+#define FREQ_TOWN_PD 1371 //Town Police
 #define FREQ_RANGER 1373 //Ranger
-#define FREQ_DEN 1375 //Den
-#define FREQ_KHANS 1376 //Khans
+#define FREQ_TOWN_MAYOR 1375 //Den
+#define FREQ_TOWN_COMMERCE 1376 //Khans
 
 #define FREQ_HOLOGRID_SOLUTION 1433
 #define FREQ_STATUS_DISPLAYS 1435

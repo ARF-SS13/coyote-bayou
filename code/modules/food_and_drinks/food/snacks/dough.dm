@@ -19,10 +19,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/flatdough(loc)
-			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			to_chat(user, span_notice("You flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
 	else
 		..()
 
@@ -92,10 +92,10 @@
 	if(istype(I, /obj/item/kitchen/rollingpin))
 		if(isturf(loc))
 			new /obj/item/reagent_containers/food/snacks/piedough(loc)
-			to_chat(user, "<span class='notice'>You flatten [src].</span>")
+			to_chat(user, span_notice("You flatten [src]."))
 			qdel(src)
 		else
-			to_chat(user, "<span class='warning'>You need to put [src] on a surface to roll it out!</span>")
+			to_chat(user, span_warning("You need to put [src] on a surface to roll it out!"))
 	else
 		..()
 
@@ -105,7 +105,7 @@
 	icon = 'icons/obj/food/food_ingredients.dmi'
 	icon_state = "piedough"
 	slice_path = /obj/item/reagent_containers/food/snacks/rawpastrybase
-	slices_num = 3
+	slices_num = 6
 	cooked_type = /obj/item/reagent_containers/food/snacks/pie/plain
 	list_reagents = list(/datum/reagent/consumable/nutriment = 9)
 	w_class = WEIGHT_CLASS_NORMAL

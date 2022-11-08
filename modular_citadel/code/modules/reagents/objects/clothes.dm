@@ -6,14 +6,14 @@
 	icon = 'icons/obj/clothing/hats.dmi'
 	icon_state = "cowboy"
 	desc = "A synthesized hat. You feel compelled to keep it on all times."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_VALUE_LIGHT
 	//item_flags = NODROP //Tips their hat!
 
 /obj/item/clothing/head/hattip/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(is_ninja(C))
-			to_chat(C, "<span class='notice'>Using your superior ninja reflexes, you take the hat off before tipping.</span>")
+			to_chat(C, span_notice("Using your superior ninja reflexes, you take the hat off before tipping."))
 			return ..()
 
 		if(src == C.head)
@@ -28,7 +28,7 @@
 	if(usr)
 		var/mob/living/carbon/C = usr
 		if(is_ninja(C))
-			to_chat(C, "<span class='notice'>Using your superior ninja reflexes, you take the hat off before tipping.</span>")
+			to_chat(C, span_notice("Using your superior ninja reflexes, you take the hat off before tipping."))
 			return ..()
 
 		if(src == C.head)

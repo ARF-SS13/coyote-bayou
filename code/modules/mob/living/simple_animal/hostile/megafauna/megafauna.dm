@@ -64,13 +64,15 @@
 	. = ..()
 
 /mob/living/simple_animal/hostile/megafauna/Moved()
-	if(nest && nest.parent && get_dist(nest.parent, src) > nest_range)
-		var/turf/closest = get_turf(nest.parent)
-		for(var/i = 1 to nest_range)
-			closest = get_step(closest, get_dir(closest, src))
-		forceMove(closest) // someone teleported out probably and the megafauna kept chasing them
-		target = null
-		return
+	if(istype(nest, /datum/component/spawner))
+		var/datum/component/spawner/this_nest = nest.resolve()
+		if(this_nest && this_nest.parent && get_dist(this_nest.parent, src) > nest_range)
+			var/turf/closest = get_turf(this_nest.parent)
+			for(var/i = 1 to nest_range)
+				closest = get_step(closest, get_dir(closest, src))
+			forceMove(closest) // someone teleported out probably and the megafauna kept chasing them
+			LoseTarget()
+			return
 	return ..()
 
 /mob/living/simple_animal/hostile/megafauna/death(gibbed)
@@ -122,8 +124,8 @@
 	if(!L)
 		return
 	visible_message(
-		"<span class='danger'>[src] devours [L]!</span>",
-		"<span class='userdanger'>You feast on [L], restoring your health!</span>")
+		span_danger("[src] devours [L]!"),
+		span_userdanger("You feast on [L], restoring your health!"))
 	if(!is_station_level(z) || client) //NPC monsters won't heal while on station
 		adjustBruteLoss(-L.maxHealth/2)
 	L.gib()

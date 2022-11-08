@@ -14,7 +14,7 @@
 		return
 	do_sparks(rand(5, 9), FALSE, src)
 	playsound(flashbang_turf, 'sound/weapons/flashbang.ogg', 100, TRUE, 8, 0.9)
-	new /obj/effect/dummy/lighting_obj (flashbang_turf, (flashbang_range + 2), LIGHT_COLOR_WHITE, 4, 2)
+	new /obj/effect/dummy/lighting_obj (flashbang_turf, (flashbang_range + 2), 4, LIGHT_COLOR_WHITE, 2)
 	flashbang_mobs(flashbang_turf, flashbang_range)
 	qdel(src)
 
@@ -29,7 +29,7 @@
 /obj/item/grenade/flashbang/proc/bang(mob/living/M, turf/source)
 	if(M.stat == DEAD)	//They're dead!
 		return
-	M.show_message("<span class='warning'>BANG</span>", MSG_AUDIBLE)
+	M.show_message(span_warning("BANG"), MSG_AUDIBLE)
 	var/distance = get_dist(get_turf(M), source)
 	if(!distance || loc == M || loc == M.loc)	//Stop allahu akbarring rooms with this.
 		M.DefaultCombatKnockdown(200)
@@ -73,7 +73,7 @@
 		var/mob/living/carbon/C = loc
 		var/obj/item/bodypart/B = C.get_holding_bodypart_of_item(src)
 		if(B)
-			C.visible_message("<b><span class='danger'>[src] goes off in [C]'s hand, blowing [C.p_their()] [B.name] to bloody shreds!</span></b>", "<span class='userdanger'>[src] goes off in your hand, blowing your [B.name] to bloody shreds!</span>")
+			C.visible_message("<b><span class='danger'>[src] goes off in [C]'s hand, blowing [C.p_their()] [B.name] to bloody shreds!</span></b>", span_userdanger("[src] goes off in your hand, blowing your [B.name] to bloody shreds!"))
 			B.dismember()
 
 	. = ..()
@@ -83,7 +83,7 @@
 		return
 	do_sparks(rand(5, 9), FALSE, src)
 	playsound(flashbang_turf, 'sound/weapons/flashbang.ogg', 50, TRUE, 8, 0.9)
-	new /obj/effect/dummy/lighting_obj (flashbang_turf, (flashbang_range + 2), LIGHT_COLOR_WHITE, 2, 1)
+	new /obj/effect/dummy/lighting_obj (flashbang_turf, (flashbang_range + 2), 2, LIGHT_COLOR_WHITE, 1)
 	for(var/mob/living/M in get_hearers_in_view(flashbang_range, flashbang_turf))
 		pop(get_turf(M), M)
 	qdel(src)
@@ -91,7 +91,7 @@
 /obj/item/grenade/stingbang/proc/pop(turf/T , mob/living/M)
 	if(M.stat == DEAD)	//They're dead!
 		return
-	M.show_message("<span class='warning'>POP</span>", MSG_AUDIBLE)
+	M.show_message(span_warning("POP"), MSG_AUDIBLE)
 	var/distance = max(0,get_dist(get_turf(src),T))
 
 //Flash
@@ -105,7 +105,7 @@
 		M.Knockdown(200)
 		M.soundbang_act(1, 200, 10, 15)
 		if(M.apply_damages(10, 10))
-			to_chat(M, "<span class='userdanger'>The blast from \the [src] bruises and burns you!</span>")
+			to_chat(M, span_userdanger("The blast from \the [src] bruises and burns you!"))
 
 	// only checking if they're on top of the tile, cause being one tile over will be its own punishment
 
@@ -146,6 +146,4 @@
 /obj/item/grenade/flashbang/sentry
 	name = "defensive flashbang" //for sentrybots
 	desc = "Why are you staring at this?!"
-	flashbang_range = 7
-	det_time = 1 SECONDS
-
+	flashbang_range = 3

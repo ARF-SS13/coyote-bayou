@@ -36,14 +36,14 @@
 
 /obj/item/ammo_box/Initialize()
 	. = ..()
-	if (!bullet_cost)
+/* 	if (!bullet_cost)
 		for (var/material in custom_materials)
 			var/material_amount = custom_materials[material]
 			LAZYSET(base_cost, material, (material_amount * 0.10))
 
 			material_amount *= 0.90 // 10% for the container
 			material_amount /= max_ammo
-			LAZYSET(bullet_cost, material, material_amount)
+			LAZYSET(bullet_cost, material, material_amount) */
 	if(!start_empty)
 		for(var/i = 1, i <= max_ammo, i++)
 			stored_ammo += new ammo_type(src)
@@ -80,16 +80,25 @@
 		insert_round(other_casing)
 		return TRUE
 
-	if(replace_spent_rounds)
+	for(var/i in 1 to length(stored_ammo)) // revolvers are tricky, try and stuff in a shell in an empty slot
+		var/obj/item/ammo_casing/bullet = stored_ammo[i]
+		if(!bullet || isnull(bullet))
+			insert_round(other_casing, i) // pop it in
+			return TRUE
+
+	if(replace_spent)
 		for(var/i in 1 to length(stored_ammo)) // mag is full, check for empties
 			var/obj/item/ammo_casing/bullet = stored_ammo[i]
-			if(isnull(bullet) || !bullet.BB || isnull(bullet.BB)) // Found a bullet, but its empty!)
-				eject_round(bullet, i) // pop it out
-				insert_round(other_casing, i) // pop it in
-				return TRUE
+			if(bullet.BB) // Found a bullet, but its empty!)
+				continue
+			eject_round(bullet, i) // pop it out
+			insert_round(other_casing, i) // pop it in
+			return TRUE
 	return FALSE
 
 /obj/item/ammo_box/proc/eject_round(obj/item/ammo_casing/casing_to_eject, index)
+	if(!istype(casing_to_eject, /obj/item/ammo_casing))
+		return
 	if(index)
 		stored_ammo[index] = null
 	casing_to_eject.forceMove(get_turf(src.loc))
@@ -158,7 +167,7 @@
 			break
 	if(.)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [.] shell\s into \the [src]!</span>")
+			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_ammobox.update_icon()
 		update_icon()
@@ -174,7 +183,7 @@
 		.++
 	if(.)
 		if(!silent)
-			to_chat(user, "<span class='notice'>You load [.] shell\s into \the [src]!</span>")
+			to_chat(user, span_notice("You load [.] shell\s into \the [src]!"))
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
 		other_casing.update_icon()
 		update_icon()
@@ -230,7 +239,7 @@
 	switch(caliber_change_step)
 		if(MAGAZINE_CALIBER_CHANGE_STEP_0)
 			to_chat(user, span_notice("You start loosening the fasteners on \the [src]..."))
-			if(I.use_tool(src, user, 5 SECONDS, volume=50))
+			if(I.use_tool(src, user, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_1
 				to_chat(user, span_notice("You snap open the fasteners on \the [src]! Next, you'll need some metal parts..."))
 			else
@@ -285,7 +294,7 @@
 				to_chat(user, span_alert("You need at least 5 units of fuel in your welder!"))
 				return
 			to_chat(user, span_notice("You start heating up the parts on \the [src]..."))
-			if(I.use_tool(src, user, 5 SECONDS, amount=5, volume=50))
+			if(I.use_tool(src, user, amount=1, volume=50))
 				caliber_change_step = MAGAZINE_CALIBER_CHANGE_STEP_3
 				to_chat(user, span_notice("You heat up the parts nice and hot and weld them to \the [src]! It should hold a casing, as a mold..."))
 			else
@@ -296,24 +305,24 @@
 /obj/item/ammo_box/attack_self(mob/user)
 	var/obj/item/ammo_casing/A = get_round()
 	if (unloadable == TRUE)
-		to_chat(user, "<span class='notice'>You can't remove ammo from \the [src]!</span>")
+		to_chat(user, span_notice("You can't remove ammo from \the [src]!"))
 	else
 		if(A)
 			if(!user.put_in_hands(A))
 				A.bounce_away(FALSE, NONE)
 			playsound(src, 'sound/weapons/bulletinsert.ogg', 60, 1)
-			to_chat(user, "<span class='notice'>You remove a round from \the [src]!</span>")
+			to_chat(user, span_notice("You remove a round from \the [src]!"))
 			update_icon()
 
 /obj/item/ammo_box/update_icon()
 	. = ..()
-	if(length(bullet_cost))
+/* 	if(length(bullet_cost))
 		var/temp_materials = custom_materials.Copy()
 		for (var/material in bullet_cost)
 			var/material_amount = bullet_cost[material]
 			material_amount = (material_amount*stored_ammo.len) + base_cost[material]
 			temp_materials[material] = material_amount
-		set_custom_materials(temp_materials)
+		set_custom_materials(temp_materials) */
 
 /obj/item/ammo_box/examine(mob/user)
 	. = ..()

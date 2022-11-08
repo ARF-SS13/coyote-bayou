@@ -17,7 +17,7 @@
 		if(!istype(product))
 			return //Something fucked up here or it's a weird product
 		user.put_in_hands(product)
-		to_chat(user, "<span class='notice'>You pluck [product] from [src].</span>")
+		to_chat(user, span_notice("You pluck [product] from [src]."))
 		has_plod = FALSE
 		update_icon() //Won't update due to proc otherwise
 		timer = initial(timer) + rand(-100,100) //add some variability
@@ -133,3 +133,9 @@ obj/structure/flora/wasteplant/wild_punga
 	icon_state = "wild_agave"
 	desc = "The juice of this fleshy plant soothes burns, but it also removes nutrients from the body."
 	produce = /obj/item/reagent_containers/food/snacks/grown/agave
+
+/obj/structure/flora/wasteplant/fever_blossom
+	name = "wild fever blossom"
+	icon_state = "wild_blossom"
+	desc = "The wild fever blossom grows on creeping tangles of vine-like bushes. The flowers that adorn the bushes glow with an iridescent purple, drawing attention to the intricate floral arrays, which appear to have mutated from some sort of passion flower. It is known for its use as an aphrodisiac and sleep aid."
+	produce = /obj/item/reagent_containers/food/snacks/grown/fever_blossom

@@ -34,6 +34,7 @@
 	var/foldable = /obj/item/stack/sheet/cardboard
 	var/illustration = "writing"
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE //exploits ahoy
+	component_type = /datum/component/storage/concrete/box
 
 /obj/item/storage/box/Initialize(mapload)
 	. = ..()
@@ -42,12 +43,12 @@
 /obj/item/storage/box/suicide_act(mob/living/carbon/user)
 	var/obj/item/bodypart/head/myhead = user.get_bodypart(BODY_ZONE_HEAD)
 	if(myhead)
-		user.visible_message("<span class='suicide'>[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] puts [user.p_their()] head into \the [src], and begins closing it! It looks like [user.p_theyre()] trying to commit suicide!"))
 		myhead.dismember()
 		myhead.forceMove(src)//force your enemies to kill themselves with your head collection box!
 		playsound(user,pick('sound/misc/desceration-01.ogg','sound/misc/desceration-02.ogg','sound/misc/desceration-01.ogg') ,50, 1, -1)
 		return BRUTELOSS
-	user.visible_message("<span class='suicide'>[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] beating [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/storage/box/update_overlays()
@@ -61,12 +62,12 @@
 	if(!foldable)
 		return
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't fold this box with items still inside!</span>")
+		to_chat(user, span_warning("You can't fold this box with items still inside!"))
 		return
 	if(!ispath(foldable))
 		return
 
-	to_chat(user, "<span class='notice'>You fold [src] flat.</span>")
+	to_chat(user, span_notice("You fold [src] flat."))
 	var/obj/item/I = new foldable
 	qdel(src)
 	user.put_in_hands(I)
@@ -443,11 +444,7 @@ obj/item/storage/box/stingbangs
 	icon_state = "donkpocketbox"
 	illustration=null
 	custom_premium_price = PRICE_ABOVE_NORMAL // git gud
-
-/obj/item/storage/box/donkpockets/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/donkpocket))
+	component_type = /datum/component/storage/concrete/box/donk
 
 /obj/item/storage/box/donkpockets/PopulateContents()
 	for(var/i in 1 to 6)
@@ -458,12 +455,7 @@ obj/item/storage/box/stingbangs
 	desc = "Drymate brand monkey cubes. Just add water!"
 	icon_state = "monkeycubebox"
 	illustration = null
-
-/obj/item/storage/box/monkeycubes/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/reagent_containers/food/snacks/cube/monkey))
+	component_type = /datum/component/storage/concrete/box/monkey
 
 /obj/item/storage/box/monkeycubes/PopulateContents()
 	for(var/i in 1 to 5)
@@ -592,7 +584,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/storage/box/mousetraps
 	name = "box of Pest-B-Gon mousetraps"
-	desc = "<span class='alert'>Keep out of reach of children.</span>"
+	desc = span_alert("Keep out of reach of children.")
 	illustration = "mousetraps"
 
 /obj/item/storage/box/mousetraps/PopulateContents()
@@ -613,12 +605,7 @@ obj/item/storage/box/stingbangs
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "spbox"
-
-/obj/item/storage/box/snappops/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.can_hold = typecacheof(list(/obj/item/toy/snappop))
-	STR.max_items = 8
+	component_type = /datum/component/storage/concrete/box/big/snap_pop
 
 /obj/item/storage/box/snappops/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/toy/snappop)
@@ -632,12 +619,7 @@ obj/item/storage/box/stingbangs
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_BELT
 	custom_price = PRICE_REALLY_CHEAP
-
-/obj/item/storage/box/matches/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 10
-	STR.can_hold = typecacheof(list(/obj/item/match))
+	component_type = /datum/component/storage/concrete/box/big/match
 
 /obj/item/storage/box/matches/PopulateContents()
 	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, /obj/item/match)
@@ -655,14 +637,7 @@ obj/item/storage/box/stingbangs
 	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
 	foldable = /obj/item/stack/sheet/cardboard //BubbleWrap
-
-/obj/item/storage/box/lights/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 21
-	STR.can_hold = typecacheof(list(/obj/item/light/tube, /obj/item/light/bulb))
-	STR.max_combined_w_class = 21
-	STR.click_gather = TRUE
+	component_type = /datum/component/storage/concrete/box/huge/lights
 
 /obj/item/storage/box/lights/bulbs/PopulateContents()
 	for(var/i in 1 to 21)
@@ -720,14 +695,14 @@ obj/item/storage/box/stingbangs
 	foldable = null
 
 /obj/item/storage/box/hug/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] clamps the box of hugs on [user.p_their()] jugular! Guess it wasn't such a hugbox after all..</span>")
+	user.visible_message(span_suicide("[user] begins eating the box like an idiot-goat. They're probably going to choke to death.."))
 	return (BRUTELOSS)
 
 /obj/item/storage/box/hug/attack_self(mob/user)
 	. = ..()
 	user.DelayNextAction(CLICK_CD_MELEE)
 	playsound(src, "rustle", 50, 1, -5)
-	user.visible_message("<span class='notice'>[user] hugs \the [src].</span>","<span class='notice'>You hug \the [src].</span>")
+	user.visible_message(span_notice("[user] hugs \the [src]."),span_notice("You hug \the [src]."))
 	SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT,"hugbox", /datum/mood_event/hugbox)
 
 
@@ -735,17 +710,12 @@ obj/item/storage/box/stingbangs
 /obj/item/storage/box/hug/medical/PopulateContents()
 	new /obj/item/stack/medical/suture(src)
 	new /obj/item/stack/medical/mesh(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
 
-// Clown survival box
-/obj/item/storage/box/hug/survival/PopulateContents()
-	new /obj/item/clothing/mask/breath(src)
-	new /obj/item/reagent_containers/hypospray/medipen(src)
-
-	if(!isplasmaman(loc))
-		new /obj/item/tank/internals/emergency_oxygen(src)
-	else
-		new /obj/item/tank/internals/plasmaman/belt(src)
+// Clown survival box	Modified to fit with FO13~Tk
+/obj/item/storage/box/hug/survival/PopulateContents(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimpak(src)
+	new /obj/item/reagent_containers/blood/radaway(src)
 
 /obj/item/storage/box/lethalslugs
 	name = "box of 12g shotgun slugs"
@@ -857,19 +827,19 @@ obj/item/storage/box/stingbangs
 				desc = "A paper sack with a crude smile etched onto the side."
 			else
 				return FALSE
-		to_chat(user, "<span class='notice'>You make some modifications to [src] using your pen.</span>")
+		to_chat(user, span_notice("You make some modifications to [src] using your pen."))
 		icon_state = "paperbag_[choice]"
 		item_state = "paperbag_[choice]"
 		return FALSE
 	else if(W.get_sharpness())
 		if(!contents.len)
 			if(item_state == "paperbag_None")
-				user.show_message("<span class='notice'>You cut eyeholes into [src].</span>", MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src]."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack(user.loc)
 				qdel(src)
 				return FALSE
 			else if(item_state == "paperbag_SmileyFace")
-				user.show_message("<span class='notice'>You cut eyeholes into [src] and modify the design.</span>", MSG_VISUAL)
+				user.show_message(span_notice("You cut eyeholes into [src] and modify the design."), MSG_VISUAL)
 				new /obj/item/clothing/head/papersack/smiley(user.loc)
 				qdel(src)
 				return FALSE
@@ -888,10 +858,10 @@ obj/item/storage/box/stingbangs
 	if(user.incapacitated())
 		return FALSE
 	if(contents.len)
-		to_chat(user, "<span class='warning'>You can't modify [src] with items still inside!</span>")
+		to_chat(user, span_warning("You can't modify [src] with items still inside!"))
 		return FALSE
 	if(!P || !user.is_holding(P))
-		to_chat(user, "<span class='warning'>You need a pen to modify [src]!</span>")
+		to_chat(user, span_warning("You need a pen to modify [src]!"))
 		return FALSE
 	return TRUE
 
@@ -1305,7 +1275,7 @@ obj/item/storage/box/stingbangs
 
 /obj/item/secbat/attack_self(mob/user)
 	new /mob/living/simple_animal/hostile/retaliate/bat/secbat(user.loc)
-	to_chat(user, "<span class='notice'>You open the box, releasing the secbat!</span>")
+	to_chat(user, span_notice("You open the box, releasing the secbat!"))
 	var/obj/item/stack/sheet/cardboard/I = new(user.drop_location())
 	qdel(src)
 	user.put_in_hands(I)
@@ -1454,5 +1424,19 @@ list(/obj/item/stack/sheet/metal = 20,
 							)
 		new randomgun(src)
 	
+/obj/item/storage/box/debug/huge_volume_four_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/huge_volume_four_item
+
+/obj/item/storage/box/debug/huge_volume_two_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/huge_volume_two_item
+
+/obj/item/storage/box/debug/tiny_volume_four_item
+	name = "debug box"
+	desc = "a box!"
+	component_type = /datum/component/storage/concrete/box/debug/tiny_volume_four_item
 
 

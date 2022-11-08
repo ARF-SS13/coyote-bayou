@@ -80,11 +80,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
 	if(lit && cig && user.a_intent == INTENT_HELP)
 		if(cig.lit)
-			to_chat(user, "<span class='notice'>[cig] is already lit.</span>")
+			to_chat(user, span_notice("[cig] is already lit."))
 		if(M == user)
 			cig.attackby(src, user)
 		else
-			cig.light("<span class='notice'>[user] holds [src] out for [M], and lights [cig].</span>")
+			cig.light(span_notice("[user] holds [src] out for [M], and lights [cig]."))
 	else
 		..()
 
@@ -120,7 +120,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	heat = 1000
 
 /obj/item/clothing/mask/cigarette/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer.</span>")
+	user.visible_message(span_suicide("[user] is huffing [src] as quickly as [user.p_they()] can! It looks like [user.p_theyre()] trying to give [user.p_them()]self cancer."))
 	return (TOXLOSS|OXYLOSS)
 
 /obj/item/clothing/mask/cigarette/Initialize()
@@ -150,12 +150,12 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	if(istype(glass))	//you can dip cigarettes into beakers
 		if(glass.reagents.trans_to(src, chem_volume, log = "cigar fill: dip cigarette"))	//if reagents were transfered, show the message
-			to_chat(user, "<span class='notice'>You dip \the [src] into \the [glass].</span>")
+			to_chat(user, span_notice("You dip \the [src] into \the [glass]."))
 		else			//if not, either the beaker was empty, or the cigarette was full
 			if(!glass.reagents.total_volume)
-				to_chat(user, "<span class='notice'>[glass] is empty.</span>")
+				to_chat(user, span_notice("[glass] is empty."))
 			else
-				to_chat(user, "<span class='notice'>[src] is full.</span>")
+				to_chat(user, span_notice("[src] is full."))
 
 /obj/item/clothing/mask/cigarette/proc/light(flavor_text = null)
 	if(lit)
@@ -222,7 +222,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(smoketime < 1)
 		new type_butt(location)
 		if(ismob(loc))
-			to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
+			to_chat(M, span_notice("Your [name] goes out."))
 		qdel(src)
 		return
 	open_flame()
@@ -231,7 +231,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/attack_self(mob/user)
 	if(lit)
-		user.visible_message("<span class='notice'>[user] calmly drops and treads on \the [src], putting it out instantly.</span>")
+		user.visible_message(span_notice("[user] calmly drops and treads on \the [src], putting it out instantly."))
 		new type_butt(user.loc)
 		new /obj/effect/decal/cleanable/ash(user.loc)
 		qdel(src)
@@ -241,16 +241,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(!istype(M))
 		return ..()
 	if(M.on_fire && !lit)
-		light("<span class='notice'>[user] lights [src] with [M]'s burning body. What a cold-blooded badass.</span>")
+		light(span_notice("[user] lights [src] with [M]'s burning body. What a cold-blooded badass."))
 		return
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
 	if(lit && cig && user.a_intent == INTENT_HELP)
 		if(cig.lit)
-			to_chat(user, "<span class='notice'>The [cig.name] is already lit.</span>")
+			to_chat(user, span_notice("The [cig.name] is already lit."))
 		if(M == user)
 			cig.attackby(src, user)
 		else
-			cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+			cig.light(span_notice("[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name]."))
 	else
 		return ..()
 
@@ -439,7 +439,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		new /obj/effect/decal/cleanable/ash(location)
 		if(ismob(loc))
 			var/mob/living/M = loc
-			to_chat(M, "<span class='notice'>Your [name] goes out.</span>")
+			to_chat(M, span_notice("Your [name] goes out."))
 			lit = 0
 			icon_state = icon_off
 			item_state = icon_off
@@ -458,7 +458,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		var/obj/item/reagent_containers/food/snacks/grown/G = O
 		if(!packeditem)
 			if(G.dry == 1)
-				to_chat(user, "<span class='notice'>You stuff [O] into [src].</span>")
+				to_chat(user, span_notice("You stuff [O] into [src]."))
 				smoketime = 400
 				packeditem = 1
 				name = "[O.name]-packed [initial(name)]"
@@ -466,30 +466,30 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 					O.reagents.trans_to(src, O.reagents.total_volume, log = "cigar fill: pipe pack")
 				qdel(O)
 			else
-				to_chat(user, "<span class='warning'>It has to be dried first!</span>")
+				to_chat(user, span_warning("It has to be dried first!"))
 		else
-			to_chat(user, "<span class='warning'>It is already packed!</span>")
+			to_chat(user, span_warning("It is already packed!"))
 	else
 		var/lighting_text = O.ignition_effect(src,user)
 		if(lighting_text)
 			if(smoketime > 0)
 				light(lighting_text)
 			else
-				to_chat(user, "<span class='warning'>There is nothing to smoke!</span>")
+				to_chat(user, span_warning("There is nothing to smoke!"))
 		else
 			return ..()
 
 /obj/item/clothing/mask/cigarette/pipe/attack_self(mob/user)
 	var/turf/location = get_turf(user)
 	if(lit)
-		user.visible_message("<span class='notice'>[user] puts out [src].</span>", "<span class='notice'>You put out [src].</span>")
+		user.visible_message(span_notice("[user] puts out [src]."), span_notice("You put out [src]."))
 		lit = 0
 		icon_state = icon_off
 		item_state = icon_off
 		STOP_PROCESSING(SSobj, src)
 		return
 	if(!lit && smoketime > 0)
-		to_chat(user, "<span class='notice'>You empty [src] onto [location].</span>")
+		to_chat(user, span_notice("You empty [src] onto [location]."))
 		new /obj/effect/decal/cleanable/ash(location)
 		packeditem = 0
 		smoketime = 0
@@ -546,11 +546,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/suicide_act(mob/living/carbon/user)
 	if (lit)
-		user.visible_message("<span class='suicide'>[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] begins holding \the [src]'s flame up to [user.p_their()] face! It looks like [user.p_theyre()] trying to commit suicide!"))
 		playsound(src, 'sound/items/welder.ogg', 50, 1)
 		return FIRELOSS
 	else
-		user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 		return BRUTELOSS
 
 /obj/item/lighter/update_icon_state()
@@ -563,7 +563,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>With a single flick of [user.p_their()] wrist, [user] smoothly lights [A] with [src]. Damn [user.p_theyre()] cool.</span>"
+		. = span_rose("With a single flick of [user.p_their()] wrist, [user] smoothly lights [A] with [src]. Damn [user.p_theyre()] cool.")
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
@@ -586,7 +586,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(!lit)
 			set_lit(TRUE)
 			if(fancy)
-				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", "<span class='notice'>Without even breaking stride, you flip open and light [src] in one smooth movement.</span>")
+				user.visible_message("Without even breaking stride, [user] flips open and lights [src] in one smooth movement.", span_notice("Without even breaking stride, you flip open and light [src] in one smooth movement."))
 			else
 				var/prot = FALSE
 				var/mob/living/carbon/human/H = user
@@ -599,19 +599,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 					prot = TRUE
 
 				if(prot || prob(75))
-					user.visible_message("After a few attempts, [user] manages to light [src].", "<span class='notice'>After a few attempts, you manage to light [src].</span>")
+					user.visible_message("After a few attempts, [user] manages to light [src].", span_notice("After a few attempts, you manage to light [src]."))
 				else
 					var/hitzone = user.held_index_to_dir(user.active_hand_index) == "r" ? BODY_ZONE_PRECISE_R_HAND : BODY_ZONE_PRECISE_L_HAND
 					user.apply_damage(5, BURN, hitzone)
-					user.visible_message("<span class='warning'>After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process.</span>", "<span class='warning'>You burn yourself while lighting the lighter!</span>")
+					user.visible_message(span_warning("After a few attempts, [user] manages to light [src] - however, [user.p_they()] burn [user.p_their()] finger in the process."), span_warning("You burn yourself while lighting the lighter!"))
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "burnt_thumb", /datum/mood_event/burnt_thumb)
 
 		else
 			set_lit(FALSE)
 			if(fancy)
-				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", "<span class='notice'>You quietly shut off [src] without even looking at what you're doing. Wow.</span>")
+				user.visible_message("You hear a quiet click, as [user] shuts off [src] without even looking at what [user.p_theyre()] doing. Wow.", span_notice("You quietly shut off [src] without even looking at what you're doing. Wow."))
 			else
-				user.visible_message("[user] quietly shuts off [src].", "<span class='notice'>You quietly shut off [src].</span>")
+				user.visible_message("[user] quietly shuts off [src].", span_notice("You quietly shut off [src]."))
 	else
 		. = ..()
 
@@ -622,14 +622,14 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/obj/item/clothing/mask/cigarette/cig = help_light_cig(M)
 	if(lit && cig && user.a_intent == INTENT_HELP)
 		if(cig.lit)
-			to_chat(user, "<span class='notice'>The [cig.name] is already lit.</span>")
+			to_chat(user, span_notice("The [cig.name] is already lit."))
 		if(M == user)
 			cig.attackby(src, user)
 		else
 			if(fancy)
-				cig.light("<span class='rose'>[user] whips the [name] out and holds it for [M]. [user.p_their(TRUE)] arm is as steady as the unflickering flame [user.p_they()] light[user.p_s()] \the [cig] with.</span>")
+				cig.light(span_rose("[user] whips the [name] out and holds it for [M]. [user.p_their(TRUE)] arm is as steady as the unflickering flame [user.p_they()] light[user.p_s()] \the [cig] with."))
 			else
-				cig.light("<span class='notice'>[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name].</span>")
+				cig.light(span_notice("[user] holds the [name] out for [M], and lights [M.p_their()] [cig.name]."))
 	else
 		..()
 
@@ -689,7 +689,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/greyscale/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='notice'>After some fiddling, [user] manages to light [A] with [src].</span>"
+		. = span_notice("After some fiddling, [user] manages to light [A] with [src].")
 
 
 /obj/item/lighter/slime
@@ -732,10 +732,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			qdel(target)
 			qdel(src)
 			user.put_in_active_hand(R)
-			to_chat(user, "<span class='notice'>You roll the [target.name] into a rolling paper.</span>")
+			to_chat(user, span_notice("You roll the [target.name] into a rolling paper."))
 			R.desc = "Dried [target.name] rolled up in a thin piece of paper."
 		else
-			to_chat(user, "<span class='warning'>You need to dry this first!</span>")
+			to_chat(user, span_warning("You need to dry this first!"))
 
 ///////////////
 //VAPE NATION//
@@ -753,7 +753,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	var/super = FALSE //for the fattest vapes dude.
 
 /obj/item/clothing/mask/vape/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!</span>")//it doesn't give you cancer, it is cancer
+	user.visible_message(span_suicide("[user] is puffin hard on dat vape, [user.p_they()] trying to join the vape life on a whole notha plane!"))//it doesn't give you cancer, it is cancer
 	return (TOXLOSS|OXYLOSS)
 
 
@@ -770,7 +770,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(O.tool_behaviour == TOOL_SCREWDRIVER)
 		if(!screw)
 			screw = TRUE
-			to_chat(user, "<span class='notice'>You open the cap on [src].</span>")
+			to_chat(user, span_notice("You open the cap on [src]."))
 			ENABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 			if(obj_flags & EMAGGED)
 				add_overlay("vapeopen_high")
@@ -780,7 +780,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				add_overlay("vapeopen_low")
 		else
 			screw = FALSE
-			to_chat(user, "<span class='notice'>You close the cap on [src].</span>")
+			to_chat(user, span_notice("You close the cap on [src]."))
 			DISABLE_BITFIELD(reagents.reagents_holder_flags, OPENCONTAINER)
 			cut_overlays()
 
@@ -789,16 +789,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			if(!super)
 				cut_overlays()
 				super = TRUE
-				to_chat(user, "<span class='notice'>You increase the voltage of [src].</span>")
+				to_chat(user, span_notice("You increase the voltage of [src]."))
 				add_overlay("vapeopen_med")
 			else
 				cut_overlays()
 				super = FALSE
-				to_chat(user, "<span class='notice'>You decrease the voltage of [src].</span>")
+				to_chat(user, span_notice("You decrease the voltage of [src]."))
 				add_overlay("vapeopen_low")
 
 		if(screw && (obj_flags & EMAGGED))
-			to_chat(user, "<span class='notice'>[src] can't be modified!</span>")
+			to_chat(user, span_notice("[src] can't be modified!"))
 
 		else
 			..()
@@ -806,15 +806,15 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/clothing/mask/vape/emag_act(mob/user)// I WON'T REGRET WRITTING THIS, SURLY.
 	. = ..()
 	if(!screw)
-		to_chat(user, "<span class='notice'>You need to open the cap to do that.</span>")
+		to_chat(user, span_notice("You need to open the cap to do that."))
 		return
 	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>[src] is already emagged!</span>")
+		to_chat(user, span_warning("[src] is already emagged!"))
 		return
 	cut_overlays()
 	obj_flags |= EMAGGED
 	super = FALSE
-	to_chat(user, "<span class='warning'>You maximize the voltage of [src].</span>")
+	to_chat(user, span_warning("You maximize the voltage of [src]."))
 	add_overlay("vapeopen_high")
 	var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread //for effect
 	sp.set_up(5, 1, src)
@@ -823,18 +823,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/vape/attack_self(mob/user)
 	if(reagents.total_volume > 0)
-		to_chat(user, "<span class='notice'>You empty [src] of all reagents.</span>")
+		to_chat(user, span_notice("You empty [src] of all reagents."))
 		reagents.clear_reagents()
 
 /obj/item/clothing/mask/vape/equipped(mob/user, slot)
 	. = ..()
 	if(slot == SLOT_WEAR_MASK)
 		if(!screw)
-			to_chat(user, "<span class='notice'>You start puffing on the vape.</span>")
+			to_chat(user, span_notice("You start puffing on the vape."))
 			DISABLE_BITFIELD(reagents.reagents_holder_flags, NO_REACT)
 			START_PROCESSING(SSobj, src)
 		else //it will not start if the vape is opened.
-			to_chat(user, "<span class='warning'>You need to close the cap first!</span>")
+			to_chat(user, span_warning("You need to close the cap first!"))
 
 /obj/item/clothing/mask/vape/dropped(mob/user)
 	. = ..()
@@ -875,7 +875,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 	if(!reagents.total_volume)
 		if(ismob(loc))
-			to_chat(M, "<span class='notice'>[src] is empty!</span>")
+			to_chat(M, span_notice("[src] is empty!"))
 			STOP_PROCESSING(SSobj, src)
 			//it's reusable so it won't unequip when empty
 		return
@@ -899,7 +899,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			var/datum/effect_system/spark_spread/sp = new /datum/effect_system/spark_spread
 			sp.set_up(5, 1, src)
 			sp.start()
-			to_chat(M, "<span class='userdanger'>[src] suddenly explodes in your mouth!</span>")
+			to_chat(M, span_userdanger("[src] suddenly explodes in your mouth!"))
 			qdel(src)
 			return
 
@@ -944,16 +944,16 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if (DP.dry)
 			//Nothing if our bong is full
 			if (reagents.holder_full())
-				user.show_message("<span class='notice'>The bowl is full!</span>", MSG_VISUAL)
+				user.show_message(span_notice("The bowl is full!"), MSG_VISUAL)
 				return
 
 			//Transfer reagents and remove the plant
-			user.show_message("<span class='notice'>You stuff the [DP] into the [src]'s bowl.</span>", MSG_VISUAL)
+			user.show_message(span_notice("You stuff the [DP] into the [src]'s bowl."), MSG_VISUAL)
 			DP.reagents.trans_to(src, 100, log = "cigar fill: bong")
 			qdel(DP)
 			return
 		else
-			user.show_message("<span class='warning'>[DP] must be dried first!</span>", MSG_VISUAL)
+			user.show_message(span_warning("[DP] must be dried first!"), MSG_VISUAL)
 			return
 
 	if (O.get_temperature() <= 500)
@@ -963,10 +963,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		if(lighting_text)
 			//Logic regarding igniting it on
 			if (firecharges == 0)
-				user.show_message("<span class='notice'>You light the [src] with the [O]!</span>", MSG_VISUAL)
+				user.show_message(span_notice("You light the [src] with the [O]!"), MSG_VISUAL)
 				bongturnon()
 			else
-				user.show_message("<span class='notice'>You rekindle [src]'s flame with the [O]!</span>", MSG_VISUAL)
+				user.show_message(span_notice("You rekindle [src]'s flame with the [O]!"), MSG_VISUAL)
 
 			firecharges = 1
 			return
@@ -980,13 +980,13 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 
 	if (reagents && reagents.total_volume)
-		user.show_message("<span class='notice'>You empty the [src].</span>", MSG_VISUAL)
+		user.show_message(span_notice("You empty the [src]."), MSG_VISUAL)
 		reagents.clear_reagents()
 		if(firecharges)
 			firecharges = 0
 			bongturnoff()
 	else
-		user.show_message("<span class='notice'>The [src] is already empty.</span>", MSG_VISUAL)
+		user.show_message(span_notice("The [src] is already empty."), MSG_VISUAL)
 
 /obj/item/bong/AltClick(mob/user)
 	..()
@@ -996,26 +996,26 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	if(firecharges)
 		firecharges = 0
 		bongturnoff()
-		user.show_message("<span class='notice'>You quench the flame.</span>", MSG_VISUAL)
+		user.show_message(span_notice("You quench the flame."), MSG_VISUAL)
 		return TRUE
 
 /obj/item/bong/examine(mob/user)
 	. = ..()
 	if(!reagents.total_volume)
-		. += "<span class='notice'>The bowl is empty.</span>"
+		. += span_notice("The bowl is empty.")
 	else if (reagents.total_volume > 80)
-		. += "<span class='notice'>The bowl is filled to the brim.</span>"
+		. += span_notice("The bowl is filled to the brim.")
 	else if (reagents.total_volume > 40)
-		. += "<span class='notice'>The bowl has plenty weed in it.</span>"
+		. += span_notice("The bowl has plenty weed in it.")
 	else
-		. += "<span class='notice'>The bowl has some weed in it.</span>"
+		. += span_notice("The bowl has some weed in it.")
 
-	. += "<span class='notice'>Ctrl+Shift-click to empty.</span>"
-	. += "<span class='notice'>Alt-click to extinguish.</span>"
+	. += span_notice("Ctrl+Shift-click to empty.")
+	. += span_notice("Alt-click to extinguish.")
 
 /obj/item/bong/ignition_effect(atom/A, mob/user)
 	if(firecharges)
-		. = "<span class='notice'>[user] lights [A] off of the [src].</span>"
+		. = span_notice("[user] lights [A] off of the [src].")
 	else
 		. = ""
 
@@ -1026,19 +1026,19 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return ..()
 
 	if(user.is_mouth_covered(head_only = 1))
-		to_chat(user, "<span class='warning'>Remove your headgear first.</span>")
+		to_chat(user, span_warning("Remove your headgear first."))
 		return ..()
 
 	if(user.is_mouth_covered(mask_only = 1))
-		to_chat(user, "<span class='warning'>Remove your mask first.</span>")
+		to_chat(user, span_warning("Remove your mask first."))
 		return ..()
 
 	if (!reagents.total_volume)
-		to_chat(user, "<span class='warning'>There's nothing in the bowl.</span>")
+		to_chat(user, span_warning("There's nothing in the bowl."))
 		return ..()
 
 	if (!firecharges)
-		to_chat(user, "<span class='warning'>You have to light it up first.</span>")
+		to_chat(user, span_warning("You have to light it up first."))
 		return ..()
 
 	if (last_used_time + 30 >= world.time)
@@ -1061,8 +1061,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	last_used_time = world.time
 
 	//message
-	user.visible_message("<span class='notice'>[user] begins to take a [hittext] from the [src]!</span>", \
-								"<span class='notice'>You begin to take a [hittext] from [src].</span>")
+	user.visible_message(span_notice("[user] begins to take a [hittext] from the [src]!"), \
+								span_notice("You begin to take a [hittext] from [src]."))
 
 	//we take a hit here, after an uninterrupted delay
 	if(!do_after(user, 25, target = user))
@@ -1084,8 +1084,8 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		user.emote("cough")
 		user.adjustOxyLoss(15)
 
-	user.visible_message("<span class='notice'>[user] takes a [hittext] from the [src]!</span>", \
-							"<span class='notice'>You take a [hittext] from [src].</span>")
+	user.visible_message(span_notice("[user] takes a [hittext] from the [src]!"), \
+							span_notice("You take a [hittext] from [src]."))
 
 	firecharges = firecharges - 1
 	if (!firecharges)
@@ -1106,6 +1106,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/bong/coconut
 	name = "coconut bong"
+	icon_state = "coconut_bong"
 	icon_off = "coconut_bong"
 	icon_on = "coconut_bong_lit"
 	desc = "A water bong used for smoking dried plants. This one's made out of a coconut and some bamboo."

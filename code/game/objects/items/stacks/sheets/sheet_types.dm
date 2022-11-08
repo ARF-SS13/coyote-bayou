@@ -213,7 +213,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	. += GLOB.metal_recipes
 
 /obj/item/stack/sheet/metal/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins whacking [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 
@@ -252,7 +252,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 	custom_materials = list(/datum/material/iron=MINERAL_MATERIAL_AMOUNT, /datum/material/plasma=MINERAL_MATERIAL_AMOUNT)
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/plasteel
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/wood=MINERAL_MATERIAL_AMOUNT)
 	sheettype = "wood"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/wood
 	novariants = FALSE
@@ -352,15 +352,15 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	// Taken from /obj/item/stack/rods/attackby in [rods.dm]
 	if(W.get_sharpness())
 		user.visible_message("[user] begins whittling [src] into a rod.", \
-				"<span class='notice'>You begin whittling [src] into a rod, suitable as a weapon shaft.</span>", \
-				"<span class='italics'>You hear wood carving.</span>")
+				span_notice("You begin whittling [src] into a rod, suitable as a weapon shaft."), \
+				span_italic("You hear wood carving."))
 		// 7 Second Timer
 		if(!do_after(user, 70, TRUE, src))
 			return
 		// Make stick
 		var/obj/item/blacksmith/woodrod/new_item = new(user.loc)
 		user.visible_message("[user] finishes carving a rod from the [src].", \
-				"<span class='notice'>You finish carving a rod from the [src].</span>")
+				span_notice("You finish carving a rod from the [src]."))
 		// Prepare to Put in Hands (if holding wood)
 		var/obj/item/stack/sheet/mineral/wood/N = src
 		var/replace = (user.get_inactive_held_item() == N)
@@ -372,7 +372,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	if(istype(W, merge_type))
 		var/obj/item/stack/S = W
 		if(merge(S))
-			to_chat(user, "<span class='notice'>Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s.</span>")
+			to_chat(user, span_notice("Your [S.name] stack now contains [S.get_amount()] [S.singular_name]\s."))
 	else
 		. = ..()
 
@@ -406,7 +406,7 @@ GLOBAL_LIST_INIT(bamboo_recipes, list ( \
 	icon = 'icons/obj/stack_objects.dmi'
 	custom_materials = list(/datum/material/bamboo = MINERAL_MATERIAL_AMOUNT)
 	throwforce = 15
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/bamboo
 	grind_results = list(/datum/reagent/cellulose = 10)
@@ -432,12 +432,11 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	new/datum/stack_recipe("backpack", /obj/item/storage/backpack, 4), \
 	new/datum/stack_recipe("duffel bag", /obj/item/storage/backpack/duffelbag, 6), \
 	null, \
-	new/datum/stack_recipe("plant bag", /obj/item/storage/bag/plants, 4), \
+	new/datum/stack_recipe("produce bag", /obj/item/storage/bag/plants, 4), \
 	new/datum/stack_recipe("mining satchel", /obj/item/storage/bag/ore, 4), \
 	new/datum/stack_recipe("medical bag", /obj/item/storage/bag/chemistry, 4), \
 	new/datum/stack_recipe("bio bag", /obj/item/storage/bag/bio, 4), \
 	new/datum/stack_recipe("casings bag", /obj/item/storage/bag/casings, 4), \
-	new/datum/stack_recipe("salvage storage bag", /obj/item/storage/bag/salvagestorage, 4), \
 	new/datum/stack_recipe("salvage bag", /obj/item/storage/bag/salvage, 4), \
 	null, \
 	new/datum/stack_recipe("string", /obj/item/weaponcrafting/string, 1, time = 10), \
@@ -451,6 +450,7 @@ GLOBAL_LIST_INIT(cloth_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("blindfold", /obj/item/clothing/glasses/sunglasses/blindfold, 2), \
 	new/datum/stack_recipe("money pouch", /obj/item/storage/bag/money/small, 5), \
+	new/datum/stack_recipe("9mm ammo belt", /obj/item/ammo_box/magazine/autopipe/empty, 12), \
 	null, \
 	new/datum/stack_recipe_list("bedsheet", list( \
 			new/datum/stack_recipe("bedsheet", /obj/item/bedsheet, 3), \
@@ -614,12 +614,12 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 
 /obj/item/stack/sheet/runed_metal/attack_self(mob/living/user)
 	if(!iscultist(user))
-		to_chat(user, "<span class='warning'>Only one with forbidden knowledge could hope to work this metal...</span>")
+		to_chat(user, span_warning("Only one with forbidden knowledge could hope to work this metal..."))
 		return
 	var/turf/T = get_turf(user) //we may have moved. adjust as needed...
 	var/area/A = get_area(user)
 	if((!is_station_level(T.z) && !is_mining_level(T.z)) || (A && !A.blob_allowed))
-		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
+		to_chat(user, span_warning("The veil is not weak enough here."))
 		return FALSE
 	return ..()
 
@@ -695,7 +695,7 @@ GLOBAL_LIST_INIT(brass_recipes, list ( \
 
 /obj/item/stack/tile/brass/attack_self(mob/living/user)
 	if(!is_servant_of_ratvar(user))
-		to_chat(user, "<span class='danger'>[src] seems far too fragile and rigid to build with.</span>") //haha that's because it's actually replicant alloy you DUMMY
+		to_chat(user, span_danger("[src] seems far too fragile and rigid to build with.")) //haha that's because it's actually replicant alloy you DUMMY
 		return
 	..()
 
@@ -747,7 +747,7 @@ GLOBAL_LIST_INIT(bronze_recipes, list ( \
 
 /obj/item/stack/sheet/bronze/attack_self(mob/living/user)
 	if(is_servant_of_ratvar(user)) //still lets them build with it, just gives a message
-		to_chat(user, "<span class='danger'>Wha... what is this cheap imitation crap? This isn't brass at all!</span>")
+		to_chat(user, span_danger("Wha... what is this cheap imitation crap? This isn't brass at all!"))
 	..()
 
 /obj/item/stack/sheet/bronze/get_main_recipes()
@@ -811,7 +811,7 @@ GLOBAL_LIST_INIT(bone_recipes, list(
 	throw_range = 3
 	grind_results = list(/datum/reagent/carbon = 10)
 	merge_type = /obj/item/stack/sheet/bone
-	material_type = /datum/material/bone
+	//material_type = /datum/material/bone
 
 /obj/item/stack/sheet/bone/get_main_recipes()
 	. = ..()
@@ -868,7 +868,6 @@ new /datum/stack_recipe("paper frame door", /obj/structure/mineral_door/paperfra
 	custom_materials = list(/datum/material/paper = MINERAL_MATERIAL_AMOUNT)
 	merge_type = /obj/item/stack/sheet/paperframes
 	resistance_flags = FLAMMABLE
-	merge_type = /obj/item/stack/sheet/paperframes
 	material_type = /datum/material/paper
 
 /obj/item/stack/sheet/paperframes/get_main_recipes()
@@ -982,18 +981,18 @@ GLOBAL_LIST_INIT(hay_recipes, list ( \
 	throw_speed = 1
 	throw_range = 2
 	max_amount = 50 //reduced from 500, made stacks sprites irrelevant due to scaling.
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 0)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FLAMMABLE
 	attack_verb = list("tickled", "poked", "whipped")
 	hitsound = 'sound/weapons/grenadelaunch.ogg'
 	merge_type = /obj/item/stack/sheet/hay
 
-/obj/item/stack/sheet/hay/Initialize(mapload, new_amount, merge = TRUE)
-	recipes = GLOB.hay_recipes
-	return ..()
+/obj/item/stack/sheet/hay/get_main_recipes()
+	. = ..()
+	. += GLOB.hay_recipes
 
 /obj/item/stack/sheet/hay/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins shoving hay up [user.p_their()] arse! It looks like [user.p_theyre()] trying to commit suicide!"))
 	addtimer(CALLBACK(user, /mob/proc/gib), 30)
 	return BRUTELOSS
 
@@ -1024,10 +1023,14 @@ GLOBAL_LIST_INIT(prewar_recipes, list ( \
 	desc = "This sheet was manufactured by using advanced smelting techniques before the war."
 	icon_state = "sheet-prewar"
 	item_state = "sheet-metal"
-	custom_materials = list()
+	custom_materials = list(
+		/datum/material/plasma = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/titanium = MINERAL_MATERIAL_AMOUNT * 0.5,
+		/datum/material/lead = MINERAL_MATERIAL_AMOUNT * 0.5
+		)
 	throwforce = 10
 	flags_1 = CONDUCT_1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 80)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	resistance_flags = FIRE_PROOF
 	merge_type = /obj/item/stack/sheet/prewar
 	grind_results = list(/datum/reagent/iron = 20, /datum/reagent/toxin/plasma = 20)

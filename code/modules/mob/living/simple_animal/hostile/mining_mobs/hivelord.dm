@@ -149,7 +149,7 @@
 	brood_type = /mob/living/simple_animal/hostile/poison/bees/toxin
 
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion/death(gibbed)
-	visible_message("<span class='warning'>The skulls on [src] wail in anger as they flee from their dying host!</span>")
+	visible_message(span_warning("The skulls on [src] wail in anger as they flee from their dying host!"))
 	var/turf/T = get_turf(src)
 	if(T)
 		if(stored_mob)
@@ -204,13 +204,13 @@
 				infest(H)
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
-	visible_message("<span class='warning'>[name] burrows into the flesh of [H]!</span>")
+	visible_message(span_warning("[name] burrows into the flesh of [H]!"))
 	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
 	if(HAS_TRAIT(H, TRAIT_DWARF)) //dwarf legions aren't just fluff!
 		L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
 	else
 		L = new(H.loc)
-	visible_message("<span class='warning'>[L] staggers to [L.p_their()] feet!</span>")
+	visible_message(span_warning("[L] staggers to [L.p_their()] feet!"))
 	H.death()
 	H.adjustBruteLoss(1000)
 	L.stored_mob = H
@@ -297,7 +297,7 @@
 			else
 				uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
 				if (prob(4))
-					belt = pickweight(list(/obj/item/storage/belt/mining = 2, /obj/item/storage/belt/mining/alt = 2))
+					belt = pickweight(list(/obj/item/storage/belt/utility/mining = 2, /obj/item/storage/belt/utility/mining/alt = 2))
 				else if(prob(10))
 					belt = pickweight(list(/obj/item/pickaxe = 8, /obj/item/pickaxe/mini = 4, /obj/item/pickaxe/silver = 2, /obj/item/pickaxe/diamond = 1))
 				else
@@ -324,7 +324,7 @@
 			if(prob(5))
 				back = pickweight(list(/obj/item/twohanded/spear/bonespear = 3, /obj/item/twohanded/fireaxe/boneaxe = 2))
 			if(prob(10))
-				belt = /obj/item/storage/belt/mining/primitive
+				belt = /obj/item/storage/belt/utility/mining/primitive
 			if(prob(30))
 				r_pocket = /obj/item/melee/onehanded/knife/bone
 			if(prob(30))

@@ -15,6 +15,24 @@
 	icon_gib = "GiantAnt_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
+	move_to_delay = 3
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 4 //due to ants poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 5
+	//tiles within they start making noise, does count the mobs tile
+
+	speak_emote = list("clacks", "chitters", "snips", "snaps")
+	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
+	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
@@ -26,8 +44,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 160
-	health = 160
+	maxHealth = 128
+	health = 128
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 8
@@ -71,8 +89,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 140
-	health = 140
+	maxHealth = 112
+	health = 112
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 10
@@ -123,8 +141,8 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
-	maxHealth = 700
-	health = 700
+	maxHealth = 560
+	health = 560
 	ranged = 1
 	harm_intent_damage = 8
 	obj_damage = 20
@@ -141,12 +159,10 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
-	decompose = TRUE
+	decompose = FALSE
 	a_intent = INTENT_HARM
-	var/list/spawned_mobs = list()
 	var/max_mobs = 2
 	var/mob_types = list(/mob/living/simple_animal/hostile/giantant)
-	var/spawn_delay = 0
 	var/spawn_time = 30 SECONDS
 	var/spawn_text = "hatches from"
 	blood_volume = 0
@@ -154,14 +170,14 @@
 
 /mob/living/simple_animal/hostile/giantantqueen/Initialize()
 	. = ..()
-	GLOB.mob_nests += src
+	AddComponent(/datum/component/spawner, mob_types, spawn_time, faction, spawn_text, max_mobs, _range = 7)
 
 /mob/living/simple_animal/hostile/giantantqueen/death()
-	GLOB.mob_nests -= src
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Destroy()
-	GLOB.mob_nests -= src
+	RemoveComponentByType(/datum/component/spawner)
 	. = ..()
 
 /mob/living/simple_animal/hostile/giantantqueen/Aggro()
@@ -172,20 +188,6 @@
 	name = "spit"
 	damage = 20
 	icon_state = "toxin"
-
-/mob/living/simple_animal/hostile/giantantqueen/proc/spawn_mob()
-	if(world.time < spawn_delay)
-		return 0
-	spawn_delay = world.time + spawn_time
-	if(spawned_mobs.len >= max_mobs)
-		return FALSE
-	var/chosen_mob_type = pickweight(mob_types)
-	var/mob/living/simple_animal/L = new chosen_mob_type(get_turf(src))
-	L.flags_1 |= (flags_1 & ADMIN_SPAWNED_1)	//If we were admin spawned, lets have our children count as that as well.
-	spawned_mobs += L
-	L.nest = src
-	visible_message("<span class='danger'>[L] [spawn_text] [src].</span>")
-
 
 /////////////////
 // RADSCORPION //
@@ -200,12 +202,27 @@
 	icon_dead = "radscorpion_dead"
 
 	speed = 1.25
-	maxHealth = 150
-	health = 150
+	maxHealth = 120
+	health = 120
 	harm_intent_damage = 8
 	obj_damage = 20
 	melee_damage_lower = 15
 	melee_damage_upper = 35
+
+	move_to_delay = 3
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 0
+	//how far they pull back
+	
+	minimum_distance = 0
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 4 //due to scorpions poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 5
+	//tiles within they start making noise, does count the mobs tile
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -275,8 +292,8 @@
 	icon_dead = "radscorpion_blue_d"
 	icon_gib = "radscorpion_blue_gib"
 	speed = 1.35
-	maxHealth = 140
-	health = 140
+	maxHealth = 110
+	health = 110
 	move_to_delay = 4
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -294,6 +311,23 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	
+	move_to_delay = 2.0
+	// m2d 3 = standard, less is fast, more is slower.
+
+	retreat_distance = 3
+	//how far they pull back
+	
+	minimum_distance = 1
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7 //due to scorpions poor eyesight
+	//tiles within they start attacking, doesn't count the mobs tile
+
+	vision_range = 8
+	//tiles within they start making noise, does count the mobs tile
+	rapid_melee = 2
+
 	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/cazador_meat = 1, /obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
@@ -308,12 +342,12 @@
 	robust_searching = TRUE
 	taunt_chance = 30
 	speed = -0.5
-	maxHealth = 40
-	health = 40
+	maxHealth = 24
+	health = 24
 	harm_intent_damage = 8
 	obj_damage = 20
-	melee_damage_lower = 10
-	melee_damage_upper = 20
+	melee_damage_lower = 5
+	melee_damage_upper = 12
 	attack_verb_simple = "stings"
 	attack_sound = 'sound/creatures/cazador_attack.ogg'
 	speak_emote = list("buzzes")
@@ -341,15 +375,15 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
+		visible_message(span_danger("[src] dodges [Proj]!"))
 		return 0
 
 
 /mob/living/simple_animal/hostile/cazador/young
 	name = "young cazador"
 	desc = "A mutated insect known for its fast speed, deadly sting, and being huge bastards. This one's little."
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	speed = 1
 	melee_damage_lower = 5
 	melee_damage_upper = 10
@@ -390,8 +424,8 @@
 	icon_gib = null
 
 	speed = -1
-	maxHealth = 40
-	health = 40
+	maxHealth = 20
+	health = 20
 	harm_intent_damage = 8
 	obj_damage = 15
 	melee_damage_lower = 5
@@ -423,7 +457,7 @@
 	if(prob(50))
 		return ..()
 	else
-		visible_message("<span class='danger'>[src] dodges [Proj]!</span>")
+		visible_message(span_danger("[src] dodges [Proj]!"))
 		return 0
 
 //////////////

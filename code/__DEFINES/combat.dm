@@ -11,13 +11,16 @@
 #define STAMINA 	"stamina"
 #define BRAIN		"brain"
 
-//bitflag damage defines used for suicide_act
+//bitflag damage defines used for suicide_act -- also useful for bitflags, not just suicide!!!
 #define BRUTELOSS 		(1<<0)
 #define FIRELOSS 		(1<<1)
 #define TOXLOSS 		(1<<2)
 #define OXYLOSS 		(1<<3)
 #define SHAME 			(1<<4)
 #define MANUAL_SUICIDE	(1<<5)	//suicide_act will do the actual killing.
+#define RADIATIONLOSS	(1<<6)
+#define CLONELOSS		(1<<7)
+#define EMPLOSS			(1<<8)
 
 #define EFFECT_STUN		"stun"
 #define EFFECT_KNOCKDOWN		"knockdown"
@@ -303,13 +306,48 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Bullet damage defines
 #define BULLET_DAMAGE_PISTOL_LIGHT 20
-#define BULLET_DAMAGE_PISTOL_MEDIUM 25
+#define BULLET_DAMAGE_PISTOL_MEDIUM 30
 #define BULLET_DAMAGE_PISTOL_HEAVY 40
-#define BULLET_DAMAGE_RIFLE_LIGHT 25
+#define BULLET_DAMAGE_RIFLE_LIGHT 30
 #define BULLET_DAMAGE_RIFLE_MEDIUM 45
-#define BULLET_DAMAGE_RIFLE_HEAVY 60
+#define BULLET_DAMAGE_RIFLE_HEAVY 75
 #define BULLET_DAMAGE_SHOTGUN_PELLET 11
 #define BULLET_DAMAGE_SHOTGUN_SLUG 50
+
+/// Bullet damage falloff per tile defines
+#define BULLET_FALLOFF "bullet falloff per tile"
+#define BULLET_FALLOFF_PISTOL_LIGHT 3
+#define BULLET_FALLOFF_PISTOL_MEDIUM 5
+#define BULLET_FALLOFF_PISTOL_HEAVY 6
+#define BULLET_FALLOFF_RIFLE_LIGHT 5
+#define BULLET_FALLOFF_RIFLE_MEDIUM 10
+#define BULLET_FALLOFF_RIFLE_HEAVY 10
+#define BULLET_FALLOFF_SHOTGUN_PELLET 4
+#define BULLET_FALLOFF_SHOTGUN_SLUG 2
+
+/// Bullet damage falloff starting distance defines
+#define BULLET_FALLOFF_START "bullet falloff start distance"
+#define BULLET_FALLOFF_START_PISTOL_LIGHT 2
+#define BULLET_FALLOFF_START_PISTOL_MEDIUM 4
+#define BULLET_FALLOFF_START_PISTOL_HEAVY 5
+#define BULLET_FALLOFF_START_RIFLE_LIGHT 3
+#define BULLET_FALLOFF_START_RIFLE_MEDIUM 10
+#define BULLET_FALLOFF_START_RIFLE_HEAVY 20
+#define BULLET_FALLOFF_START_SHOTGUN_PELLET 0
+#define BULLET_FALLOFF_START_SHOTGUN_SLUG 5
+
+/// Bullet damage falloff default defines
+#define BULLET_FALLOFF_DEFAULT_PISTOL_LIGHT list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_LIGHT)
+#define BULLET_FALLOFF_DEFAULT_PISTOL_MEDIUM list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_MEDIUM, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_MEDIUM)
+#define BULLET_FALLOFF_DEFAULT_PISTOL_HEAVY list(BULLET_FALLOFF = BULLET_FALLOFF_PISTOL_HEAVY, BULLET_FALLOFF_START = BULLET_FALLOFF_START_PISTOL_HEAVY)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_LIGHT list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_LIGHT)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_MEDIUM list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_MEDIUM, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_MEDIUM)
+#define BULLET_FALLOFF_DEFAULT_RIFLE_HEAVY list(BULLET_FALLOFF = BULLET_FALLOFF_RIFLE_HEAVY, BULLET_FALLOFF_START = BULLET_FALLOFF_START_RIFLE_HEAVY)
+#define BULLET_FALLOFF_DEFAULT_SHOTGUN_PELLET list(BULLET_FALLOFF = BULLET_FALLOFF_START_PISTOL_LIGHT, BULLET_FALLOFF_START = BULLET_FALLOFF_START_SHOTGUN_PELLET)
+#define BULLET_FALLOFF_DEFAULT_SHOTGUN_SLUG list(BULLET_FALLOFF = BULLET_FALLOFF_SHOTGUN_PELLET, BULLET_FALLOFF_START = BULLET_FALLOFF_START_SHOTGUN_SLUG)
+
+/// Minimum bullet damage that falloff can take it to
+#define BULLET_FALLOFF_MIN_DAMAGE 3
 
 /// Bullet recoil defines
 #define BULLET_RECOIL_PISTOL_LIGHT 3
@@ -336,13 +374,13 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Rubber/beanbag stamloss defines
 #define RUBBERY_STAMINA_PISTOL_LIGHT (BULLET_DAMAGE_PISTOL_LIGHT * 2)
-#define RUBBERY_STAMINA_PISTOL_MEDIUM (BULLET_DAMAGE_PISTOL_MEDIUM * 2)
-#define RUBBERY_STAMINA_PISTOL_HEAVY (BULLET_DAMAGE_PISTOL_HEAVY * 2)
-#define RUBBERY_STAMINA_RIFLE_LIGHT (BULLET_DAMAGE_RIFLE_LIGHT * 0.5)
-#define RUBBERY_STAMINA_RIFLE_MEDIUM (BULLET_DAMAGE_RIFLE_MEDIUM * 2)
-#define RUBBERY_STAMINA_RIFLE_HEAVY (BULLET_DAMAGE_RIFLE_HEAVY * 3)
-#define RUBBERY_STAMINA_SHOTGUN_PELLET (BULLET_DAMAGE_SHOTGUN_PELLET)
-#define RUBBERY_STAMINA_SHOTGUN_SLUG (BULLET_DAMAGE_SHOTGUN_SLUG * 2)
+#define RUBBERY_STAMINA_PISTOL_MEDIUM (BULLET_DAMAGE_PISTOL_MEDIUM * 3)
+#define RUBBERY_STAMINA_PISTOL_HEAVY (BULLET_DAMAGE_PISTOL_HEAVY * 4)
+#define RUBBERY_STAMINA_RIFLE_LIGHT (BULLET_DAMAGE_RIFLE_LIGHT * 2)
+#define RUBBERY_STAMINA_RIFLE_MEDIUM (BULLET_DAMAGE_RIFLE_MEDIUM * 3)
+#define RUBBERY_STAMINA_RIFLE_HEAVY (BULLET_DAMAGE_RIFLE_HEAVY * 4)
+#define RUBBERY_STAMINA_SHOTGUN_PELLET (BULLET_DAMAGE_SHOTGUN_PELLET * 2)
+#define RUBBERY_STAMINA_SHOTGUN_SLUG (BULLET_DAMAGE_SHOTGUN_SLUG * 3)
 
 /// Shotgun pellet count defines
 #define SHOTGUN_PELLET_BASE 5
@@ -509,15 +547,10 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_RECOIL_TIMEOUT_LONG (GUN_RECOIL_TIMEOUT_BASE * 1.5)
 #define GUN_RECOIL_TIMEOUT_LONGER (GUN_RECOIL_TIMEOUT_BASE * 2)
 
-/// Gun spread Base
-#define GUN_SPREAD_BASE 1
-
 /// Gun spread modifiers
-#define GUN_SPREAD_NONE (GUN_SPREAD_BASE * 0.1)
-#define GUN_SPREAD_ACCURATE (GUN_SPREAD_BASE * 0.5)
-#define GUN_SPREAD_NORMAL (GUN_SPREAD_BASE * 1)
-#define GUN_SPREAD_POOR (GUN_SPREAD_BASE * 3)
-#define GUN_SPREAD_AWFUL (GUN_SPREAD_BASE * 6)
+#define GUN_SPREAD_NONE 0
+#define GUN_SPREAD_POOR 1
+#define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
 
 /// Gun fire delay Base
 #define GUN_FIRE_DELAY_BASE (1 SECONDS)
@@ -619,14 +652,20 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 #define GUN_COCK_INSTANT 0.1
 #define GUN_COCK_SHOTGUN_BASE (GUN_COCK_BASE)
-#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.75)
+#define GUN_COCK_SHOTGUN_FAST (GUN_COCK_BASE * 0.4)
 #define GUN_COCK_SHOTGUN_LIGHTNING (GUN_COCK_BASE * 0.1)
 #define GUN_COCK_RIFLE_BASE (GUN_COCK_BASE)
 #define GUN_COCK_RIFLE_FAST (GUN_COCK_BASE * 0.75)
-#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.1)
+#define GUN_COCK_RIFLE_LIGHTNING (GUN_COCK_BASE * 0.5)
+
+/// Refire speed multiplier for manual action guns, cus we no longer care about your cock length
+#define GUN_RIFLEMAN_REFIRE_DELAY_MULT 0.8
+
+/// Refire speed multiplier for manual action guns if you're not a pr0 and click-to-cycle it
+#define GUN_AUTOPUMP_REFIRE_DELAY_MULT 1.8
 
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
-#define RECOIL_REDUCTION_TIME 1 SECOND
+#define RECOIL_REDUCTION_TIME 1 SECONDS
 
 #define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
 #define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
@@ -637,6 +676,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define HMG_RECOIL(x)          list(0.4 *x, 0.6*x, 3.6*x )
 
 //Quick defines for fire modes
+#define FULL_AUTO_200		list(mode_name = "full auto",  mode_desc = "200 rounds per minute",   automatic = 1, autofire_shot_delay = 3, burst_size = 1, icon="auto")
 #define FULL_AUTO_300		list(mode_name = "full auto",  mode_desc = "300 rounds per minute",   automatic = 1, autofire_shot_delay = 2, burst_size = 1, icon="auto")
 #define FULL_AUTO_400		list(mode_name = "full auto",  mode_desc = "400 rounds per minute",   automatic = 1, autofire_shot_delay = 1.5, burst_size = 1, icon="auto")
 #define FULL_AUTO_600		list(mode_name = "full auto",  mode_desc = "600 rounds per minute",   automatic = 1, autofire_shot_delay = 1, burst_size = 1, icon="auto")
@@ -657,3 +697,108 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define BURST_10_ROUND		list(mode_name="10-round bursts", mode_desc = "Short, uncontrolled bursts", automatic = 0, burst_size=10, fire_delay=null, icon="burst")
 
 #define WEAPON_NORMAL		list(mode_name="standard", burst_size=1, icon="semi")
+
+/// Bullet zone favoring defines
+/// High accuracy, generally goes where you mean to put it, for precision rifles and such
+#define ZONE_WEIGHT_PRECISION "precision_aim"
+/// Typical accuracy, based a bit on range
+#define ZONE_WEIGHT_SEMI_AUTO "semiauto_aim"
+/// Heavily weights limbs after its effective distance
+#define ZONE_WEIGHT_AUTOMATIC "automatic_aim"
+/// Always weights limbs heavily
+#define ZONE_WEIGHT_SHOTGUN "shotgun_aim"
+/// Always defers to the gun's setting, defaults to semi-auto if not defined
+#define ZONE_WEIGHT_GUNS_CHOICE "gun's_choice"
+
+/// Typical accuracy falloff
+#define ZONE_WEIGHT_FALLOFF_SEMI_AUTO 7
+/// Zone accuracy falls off quickly
+#define ZONE_WEIGHT_FALLOFF_AUTOMATIC 20
+/// You're hitting limbs most of the time
+#define ZONE_WEIGHT_FALLOFF_SHOTGUN 100
+
+/// Default zone weight list
+#define ZONE_WEIGHT_LIST_DEFAULT list(\
+	BODY_ZONE_HEAD = 6,\
+	BODY_ZONE_CHEST = 6,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+/// Precision zone weight list
+#define ZONE_WEIGHT_LIST_PRECISION list(\
+	BODY_ZONE_HEAD = 20,\
+	BODY_ZONE_CHEST = 40,\
+	BODY_ZONE_L_ARM = 5,\
+	BODY_ZONE_R_ARM = 5,\
+	BODY_ZONE_L_LEG = 5,\
+	BODY_ZONE_R_LEG = 5)
+/// Autofire zone weight list
+#define ZONE_WEIGHT_LIST_AUTOMATIC list(\
+	BODY_ZONE_HEAD = 1,\
+	BODY_ZONE_CHEST = 3,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+/// Pellet zone weight list
+#define ZONE_WEIGHT_LIST_SHOTGUN list(\
+	BODY_ZONE_HEAD = 1,\
+	BODY_ZONE_CHEST = 1,\
+	BODY_ZONE_L_ARM = 22,\
+	BODY_ZONE_R_ARM = 22,\
+	BODY_ZONE_L_LEG = 22,\
+	BODY_ZONE_R_LEG = 22)
+
+/// Gun skill flags
+/// Gun is affected by rifleman skill
+#define AFFECTED_BY_FAST_PUMP (1<<0)
+/// If you autopump this gun, it'll have a debuff to its refire rate till you fire again
+#define AFFECTED_BY_AUTO_PUMP (1<<1)
+
+/// Gun cooldown mod flags
+/// Gun is slower to refire if you autopump it (without fast pump)
+#define GUN_AUTO_PUMPED (1<<0)
+
+/// Gun handedness defines -- for picking which direction to toss casings
+#define GUN_EJECTOR_RIGHT 1
+#define GUN_EJECTOR_LEFT 2
+#define GUN_EJECTOR_ANY 3
+
+/// Gun misfire actions
+#define GUN_MF_CHANCE "misfire_chance"
+
+/// Gun does damage when it misfires
+/// Gun hurts you define
+#define GUN_MF_HURTS_YOU "pow_ow"
+/// Gun hurts you low damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_LOW "low_end_damage_it_hurts_you_you_when_it_pows"
+/// Gun hurts you high damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_HIGH "high_end_damage_it_hurts_you_you_when_it_pows"
+/// Gun hurts you with this type of damage define
+#define GUN_MF_HURTS_YOU_DAMAGE_TYPE "damage_type_it_hurts_you_you_when_it_pows"
+/// Varied minimum list
+#define GUN_MISFIRE_HURTS_USER(chance, dmg_low, dmg_high, dmg_type) GUN_MF_HURTS_YOU = list(\
+	GUN_MF_CHANCE = chance,\
+	GUN_MF_HURTS_YOU_DAMAGE_LOW = dmg_low,\
+	GUN_MF_HURTS_YOU_DAMAGE_HIGH = dmg_high,\
+	GUN_MF_HURTS_YOU_DAMAGE_TYPE = dmg_type)
+
+/// Gun yeets itself out of your hand when it misfires
+/// Gun yeets define
+#define GUN_MF_YEET "pow_yeet"
+/// Gun yeets the gun entry
+#define GUN_MISFIRE_THROWS_GUN(chance) GUN_MF_YEET = list(\
+	GUN_MF_CHANCE = chance)
+
+/// Gun dumps out its ammo
+/// Gun dump define
+#define GUN_MF_DUMP "pow_dump"
+/// Gun dump throw it define
+#define GUN_MF_DUMP_THROW "dump_yeet_chance"
+/// Gun dump the gun entry
+#define GUN_MISFIRE_UNLOADS_GUN(chance, throw_chance) GUN_MF_DUMP = list(\
+	GUN_MF_CHANCE = chance,\
+	GUN_MF_DUMP_THROW = throw_chance)
+
+

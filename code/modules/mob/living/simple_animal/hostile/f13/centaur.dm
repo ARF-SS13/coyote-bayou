@@ -12,26 +12,37 @@
 	icon_dead = "centaur_dead"
 	icon_gib = "centaur_g"
 
-	maxHealth = 100
-	health = 100
+	maxHealth = 80
+	health = 80
 	speed = 2
 	harm_intent_damage = 8
-	melee_damage_lower = 15
-	melee_damage_upper = 15
+	melee_damage_lower = 5 // damage range is punch min, average is 15 when in melee
+	melee_damage_upper = 25 
 	ranged = TRUE
 	wound_bonus = 0
-	retreat_distance = 5
-	minimum_distance = 5
 	footstep_type = FOOTSTEP_MOB_CRAWL
 
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	robust_searching = TRUE
+	move_to_delay = 6 //slower than average, but not a lot.  //Needs to be slower than a protectron
+	// m2d 4 = standard, less is fast, more is slower.
+
+	retreat_distance = 0 // Mob doesn't retreat
+	//how far they pull back
+	
+	minimum_distance = 0 //Mob pushes up to melee, leading with its ranged attacks to soften up player.
+	// how close you can get before they try to pull back
+
+	aggro_vision_range = 7 //Will start attacking within player sight, but gives wiggle room to avoid if moving slow and carefully
+	//tiles within they start attacking
+
+	vision_range = 7 //will start attacking within player sight, but like aggro gives wiggle room.  So they just don't see players outside of 7 tiles and start screeching.
+	//tiles within they start making noise
 	turns_per_move = 5
 	speak_emote = list("growls")
-	emote_see = list("screeches")
+	emote_see = list("screeches", "screams", "howls", "bellows", "flails", "fidgets", "festers")
 	a_intent = INTENT_HARM
-	attack_verb_simple = "whipped"
-	attack_sound = 'sound/hallucinations/growl1.ogg'
+	attack_verb_simple = list("whipped", "whacked", "whomped", "wailed on", "smacked", "smashed", "bapped")
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 20
 	stat_attack = CONSCIOUS
@@ -43,7 +54,7 @@
 	projectiletype = /obj/item/projectile/neurotox
 	projectilesound = 'sound/f13npc/centaur/spit.ogg'
 	emote_taunt_sound = list('sound/f13npc/centaur/taunt.ogg')
-	emote_taunt = list("grunts")
+	emote_taunt = list("grunts", "gurgles", "wheezes", "flops", "scrabbles")
 	taunt_chance = 30
 	aggrosound = list('sound/f13npc/centaur/aggro1.ogg', )
 	idlesound = list('sound/f13npc/centaur/idle1.ogg', 'sound/f13npc/centaur/idle2.ogg')
@@ -51,7 +62,7 @@
 	attack_sound = 'sound/f13npc/centaur/lash.ogg'
 
 /obj/item/projectile/neurotox
-	name = "spit"
+	name = "spitball"
 	damage = 25
 	icon_state = "toxin"
 
@@ -103,7 +114,7 @@
 	. = ..()
 	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')
 
-/mob/living/simple_animal/hostile/abomination/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null)
+/mob/living/simple_animal/hostile/abomination/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null, just_chat)
 	..()
 	if(stat)
 		return
@@ -172,7 +183,7 @@
 	. = ..()
 	abom_sounds = list('sound/voice/abomination1.ogg', 'sound/voice/abomscream.ogg', 'sound/voice/abommoan.ogg', 'sound/voice/abomscream2.ogg', 'sound/voice/abomscream3.ogg')
 
-/mob/living/simple_animal/hostile/abomhorror/nsb/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null)
+/mob/living/simple_animal/hostile/abomhorror/nsb/say(message, datum/language/language = null, list/spans = list(), language, sanitize, ignore_spam, forced = null, just_chat)
 	..()
 	if(stat)
 		return

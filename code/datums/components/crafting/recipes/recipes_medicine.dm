@@ -111,7 +111,17 @@
 				/obj/item/reagent_containers/syringe = 1)
 	tools = list(TOOL_WORKBENCH)
 	time = 10
-	category = CAT_MEDICAL	
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/stimpak/chemistry // Purely chemistry recipe
+	name = "Stimpak (from chems)"
+	result = /obj/item/reagent_containers/hypospray/medipen/stimpak
+	reqs = list(/datum/reagent/medicine/stimpak = 20,
+				/obj/item/reagent_containers/syringe = 1)
+	tools = list(TOOL_CHEMMASTER)
+	time = 10
+	category = CAT_MEDICAL
 	always_available = FALSE
 
 /datum/crafting_recipe/stimpak5
@@ -121,6 +131,16 @@
 				/obj/item/reagent_containers/food/snacks/grown/xander = 5,
 				/obj/item/reagent_containers/syringe = 5)
 	tools = list(TOOL_WORKBENCH)
+	time = 20
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/stimpak5/chemistry // Purely chemistry recipe
+	name = "Stimpak x5 (from chems)"
+	result = /obj/item/storage/box/medicine/stimpaks/stimpaks5
+	reqs = list(/datum/reagent/medicine/stimpak = 100,
+				/obj/item/reagent_containers/syringe = 5)
+	tools = list(TOOL_CHEMMASTER)
 	time = 20
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -204,6 +224,17 @@
 	category = CAT_MEDICAL
 	always_available = FALSE
 
+/datum/crafting_recipe/medx/chemistry
+	name = "Med-X (from chems)"
+	result = /obj/item/reagent_containers/hypospray/medipen/medx
+	reqs = list(/obj/item/reagent_containers/syringe = 1,
+				/datum/reagent/medicine/epinephrine = 5,
+				/datum/reagent/medicine/morphine = 5)
+	time = 10
+	tools = list(TOOL_CHEMMASTER)
+	category = CAT_MEDICAL
+	always_available = FALSE
+
 /datum/crafting_recipe/buffout
 	name = "Buffout"
 	result = /obj/item/storage/pill_bottle/chem_tin/buffout
@@ -213,6 +244,18 @@
 				/obj/item/reagent_containers/food/snacks/grown/mutfruit = 5,
 				/datum/reagent/consumable/nuka_cola = 60)
 	time = 50
+	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+	always_available = FALSE
+
+/datum/crafting_recipe/steady
+	name = "Steady"
+	result = /obj/item/reagent_containers/hypospray/medipen/steady
+	reqs = list(/datum/reagent/consumable/sunset = 15,
+				/obj/item/reagent_containers/food/drinks/bottle = 1,
+				/obj/item/reagent_containers/food/snacks/grown/horsenettle = 1,
+				/obj/item/reagent_containers/food/snacks/grown/coyotetobacco = 1)
+	time = 35
 	tools = list(TOOL_WORKBENCH)
 	category = CAT_MEDICAL
 	always_available = FALSE
@@ -237,4 +280,30 @@
 	)
 	time = 100
 	tools = list(TOOL_WORKBENCH)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/refill_chem_cartridge
+	name = "Refill chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/crafted
+	reqs = list(
+	/obj/item/stock_parts/chem_cartridge/crafted = 1,
+	/datum/reagent/consumable/nutriment = 60
+	)
+	time = 100
+	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
+	category = CAT_MEDICAL
+
+/datum/crafting_recipe/crafted_chem_cartridge
+	name = "Crafted chemical Cartridge"
+	result = /obj/item/stock_parts/chem_cartridge/crafted
+	reqs = list(
+	/obj/item/stack/sheet/metal = 10,
+	/obj/item/stack/sheet/leather = 10,
+	/obj/item/stack/sheet/cloth = 20,
+	/obj/item/stack/sheet/mineral/titanium = 5,
+	/obj/item/stack/crafting/electronicparts = 5,
+	/datum/reagent/consumable/nutriment = 60
+	)
+	time = 100
+	tools = list(TOOL_WORKBENCH, TOOL_SCREWDRIVER, TOOL_CROWBAR)
 	category = CAT_MEDICAL

@@ -223,7 +223,6 @@
 	name = "brown hood"
 	desc = "Perfect for concealing your identity."
 	icon_state = "eldritch"
-	icon_state = "eldritch"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	flash_protect = 2
@@ -376,18 +375,6 @@
 	icon_state = "vapeshirt"
 	item_state = "vapeshirt"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/suit/jacket
-	name = "bomber jacket"
-	desc = "Aviators not included."
-	icon_state = "bomberjacket"
-	item_state = "brownjsuit"
-	cold_protection = CHEST|GROIN|ARMS
-	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	armor = ARMOR_VALUE_CLOTHES
-	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T1)
-
 
 /obj/item/clothing/suit/jacket/flannel
 	name = "black flannel jacket"
@@ -863,8 +850,8 @@
 		return
 	else
 		user.dropItemToGround(src)
-		to_chat(user,"<span class='large_brass'>\"Amusing that you think you are fit to wear this.\"</span>")
-		to_chat(user,"<span class='userdanger'>Your skin burns where the coat touched your skin!</span>")
+		to_chat(user,span_large_brass("\"Amusing that you think you are fit to wear this.\""))
+		to_chat(user,span_userdanger("Your skin burns where the coat touched your skin!"))
 		user.adjustFireLoss(rand(10,16))
 
 /obj/item/clothing/suit/hooded/wintercoat/narsie
@@ -883,8 +870,8 @@
 		return
 	else
 		user.dropItemToGround(src)
-		to_chat(user,"<span class='cultlarge'>\"You are not fit to wear my follower's coat!\"</span>")
-		to_chat(user,"<span class='userdanger'>Sharp spines jab you from within the coat!</span>")
+		to_chat(user,span_cultlarge("\"You are not fit to wear my follower's coat!\""))
+		to_chat(user,span_userdanger("Sharp spines jab you from within the coat!"))
 		user.adjustBruteLoss(rand(10,16))
 
 /obj/item/clothing/head/hooded/winterhood/narsie
@@ -950,17 +937,6 @@
 	flags_inv = HIDEGLOVES|HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
 	alternate_worn_layer = UNDER_HEAD_LAYER
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/suit/flakjack
-	name = "flak jacket"
-	desc = "A dilapidated jacket made of ballistic nylon. Smells faintly of napalm."
-	icon_state = "flakjack"
-	item_state = "redtag"
-	blood_overlay_type = "armor"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HANDS|HEAD
-	resistance_flags = NONE
-	armor = ARMOR_VALUE_LIGHT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/assu_suit

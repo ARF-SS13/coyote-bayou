@@ -113,7 +113,7 @@
 		return null
 	if(length(name) > max_length)
 		to_chat(user, name)
-		to_chat(user, "<span class='danger'>^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^</span>")
+		to_chat(user, span_danger("^^^----- The preceeding message has been DISCARDED for being over the maximum length of [max_length]. It has NOT been sent! -----^^^"))
 		return null
 	if(no_trim)
 		return copytext(html_encode(name), 1, max_length)
@@ -658,7 +658,7 @@ GLOBAL_LIST_INIT(hex_muted3, list("0","2"))
 
 		accepted += buffer
 
-	var/log = file("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
+	var/log = wrap_file("data/npc_saves/[filename].json") //If this line ever shows up as changed in a PR be very careful you aren't being memed on
 	var/list/oldjson = list()
 	var/list/oldentries = list()
 	if(fexists(log))

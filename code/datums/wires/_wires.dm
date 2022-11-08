@@ -145,12 +145,12 @@
 		var/level_diff = req_skill - user.mind.get_skill_level(/datum/skill/level/job/wiring, round = TRUE)
 		if(level_diff > 0)
 			LAZYSET(current_users, user, TRUE)
-			to_chat(user, "<span class='notice'>You begin cutting [holder]'s [color] wire...</span>")
+			to_chat(user, span_notice("You begin cutting [holder]'s [color] wire..."))
 			if(!do_after(user, 0.75 SECONDS * level_diff, target = holder) || !interactable(user))
 				LAZYREMOVE(current_users, user)
 				return FALSE
 			LAZYREMOVE(current_users, user)
-	to_chat(user, "<span class='notice'>You cut [holder]'s [color] wire.</span>")
+	to_chat(user, span_notice("You cut [holder]'s [color] wire."))
 	cut(get_wire(color))
 	return TRUE
 
@@ -174,12 +174,12 @@
 		var/level_diff = req_skill - user.mind.get_skill_level(/datum/skill/level/job/wiring, round = TRUE)
 		if(level_diff > 0)
 			LAZYSET(current_users, user, TRUE)
-			to_chat(user, "<span class='notice'>You begin pulsing [holder]'s [color] wire...</span>")
+			to_chat(user, span_notice("You begin pulsing [holder]'s [color] wire..."))
 			if(!do_after(user, 1.5 SECONDS * level_diff, target = holder) || !interactable(user))
 				LAZYREMOVE(current_users, user)
 				return FALSE
 			LAZYREMOVE(current_users, user)
-	to_chat(user, "<span class='notice'>You pulse [holder]'s [color] wire.</span>")
+	to_chat(user, span_notice("You pulse [holder]'s [color] wire."))
 	pulse(get_wire(color), user)
 	return TRUE
 
@@ -301,7 +301,7 @@
 					I.play_tool_sound(holder, 20)
 				. = TRUE
 			else
-				to_chat(L, "<span class='warning'>You need wirecutters!</span>")
+				to_chat(L, span_warning("You need wirecutters!"))
 		if("pulse")
 			I = L.is_holding_tool_quality(TOOL_MULTITOOL)
 			if(I || IsAdminGhost(usr))
@@ -309,7 +309,7 @@
 					I.play_tool_sound(holder, 20)
 				. = TRUE
 			else
-				to_chat(L, "<span class='warning'>You need a multitool!</span>")
+				to_chat(L, span_warning("You need a multitool!"))
 		if("attach")
 			if(is_attached(target_wire))
 				I = detach_assembly(target_wire)
@@ -327,6 +327,6 @@
 							A.forceMove(L.drop_location())
 						. = TRUE
 					else
-						to_chat(L, "<span class='warning'>You need an attachable assembly!</span>")
+						to_chat(L, span_warning("You need an attachable assembly!"))
 
 #undef MAXIMUM_EMP_WIRES

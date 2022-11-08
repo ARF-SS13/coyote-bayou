@@ -10,6 +10,7 @@
 	idle_power_usage = 20
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	circuit = /obj/item/circuitboard/machine/chem_master
+	machine_tool_behaviour = TOOL_CHEMMASTER
 
 	var/basereagents = 100
 	var/obj/item/reagent_containers/beaker = null
@@ -97,24 +98,24 @@
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		. = TRUE // no afterattack
 		if(panel_open)
-			to_chat(user, "<span class='warning'>You can't use the [src.name] while its panel is opened!</span>")
+			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
 			return
 		var/obj/item/reagent_containers/B = I
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
 		update_icon()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
 		. = TRUE // no afterattack
 		if(panel_open)
-			to_chat(user, "<span class='warning'>You can't use the [src.name] while its panel is opened!</span>")
+			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 		replace_pillbottle(user, I)
-		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+		to_chat(user, span_notice("You add [I] into the dispenser slot."))
 		updateUsrDialog()
 	else
 		return ..()
@@ -169,10 +170,10 @@
 			ui.open()
 	else
 		if(!user.IsAdvancedToolUser() && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, "<span class='warning'>The legion has no use for drugs! Better to destroy it.</span>")
+			to_chat(user, span_warning("You stare at a machine you'll never understand."))
 			return
 		if(!HAS_TRAIT(user, TRAIT_CHEMWHIZ) && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
 			return
 		if(!ui)
 			ui = new(user, src, "ChemMaster", name)
@@ -547,7 +548,7 @@
 		if(!user.transferItemToLoc(B, src))
 			return
 		replace_beaker(user, B)
-		to_chat(user, "<span class='notice'>You add [B] to [src].</span>")
+		to_chat(user, span_notice("You add [B] to [src]."))
 		updateUsrDialog()
 		update_icon()
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
@@ -555,7 +556,7 @@
 		if(!user.transferItemToLoc(I, src))
 			return
 		replace_pillbottle(user, I)
-		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+		to_chat(user, span_notice("You add [I] into the dispenser slot."))
 		updateUsrDialog()
 	else
 		return ..()
@@ -568,7 +569,7 @@
 			ui.open()
 	else
 		if(!HAS_TRAIT(user, TRAIT_MACHINE_SPIRITS) && !HAS_TRAIT(user, TRAIT_MARS_TEACH) && !istype(src, /obj/machinery/chem_master/condimaster))
-			to_chat(user, "<span class='warning'>Try as you might, you have no clue how to work this thing.</span>")
+			to_chat(user, span_warning("Try as you might, you have no clue how to work this thing."))
 			return
 		if(!ui)
 			ui = new(user, src, "ChemMaster", name)
@@ -603,28 +604,28 @@
 	if(istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		. = 1 // no afterattack
 		if(panel_open)
-			to_chat(user, "<span class='warning'>You can't use the [src.name] while its panel is opened!</span>")
+			to_chat(user, span_warning("You can't use the [src.name] while its panel is opened!"))
 			return
 		if(beaker)
-			to_chat(user, "<span class='warning'>A container is already loaded into [src]!</span>")
+			to_chat(user, span_warning("A container is already loaded into [src]!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 
 		beaker = I
-		to_chat(user, "<span class='notice'>You add [I] to [src].</span>")
+		to_chat(user, span_notice("You add [I] to [src]."))
 		src.updateUsrDialog()
 		update_icon()
 
 	else if(!condi && istype(I, /obj/item/storage/pill_bottle))
 		if(bottle)
-			to_chat(user, "<span class='warning'>A pill bottle is already loaded into [src]!</span>")
+			to_chat(user, span_warning("A pill bottle is already loaded into [src]!"))
 			return
 		if(!user.transferItemToLoc(I, src))
 			return
 
 		bottle = I
-		to_chat(user, "<span class='notice'>You add [I] into the dispenser slot.</span>")
+		to_chat(user, span_notice("You add [I] into the dispenser slot."))
 		src.updateUsrDialog()
 	else
 		return ..()

@@ -209,7 +209,7 @@ GLOBAL_LIST(topic_status_cache)
 		if(PRcounts[id] > PR_ANNOUNCEMENTS_PER_ROUND)
 			return
 
-	var/final_composed = "<span class='announce'>PR: [announcement]</span>"
+	var/final_composed = span_announce("PR: [announcement]")
 	for(var/client/C in GLOB.clients)
 		C.AnnouncePR(final_composed)
 
@@ -239,9 +239,9 @@ GLOBAL_LIST(topic_status_cache)
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request.</span>")
+		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
 	else
-		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
+		to_chat(world, span_boldannounce("Rebooting world..."))
 		Master.Shutdown()	//run SS shutdowns
 
 	TgsReboot()
@@ -310,7 +310,7 @@ GLOBAL_LIST(topic_status_cache)
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=\"https://discord.gg/xCgEwJTppx\">" //Change this to wherever you want the hub to link to.
+	s += "<a href=\"https://discord.gg/Xmg7Sb3kSD\">" //Change this to wherever you want the hub to link to.
 	s += "Discord"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")\]" //CIT CHANGE - encloses the server title in brackets to make the hub entry fancier
@@ -321,8 +321,8 @@ GLOBAL_LIST(topic_status_cache)
 	if(SSmapping.config) // this just stops the runtime, honk.
 		features += "[SSmapping.config.map_name]"	//CIT CHANGE - makes the hub entry display the current map
 
-	if(NUM2SECLEVEL(GLOB.security_level))//CIT CHANGE - makes the hub entry show the security level
-		features += "[NUM2SECLEVEL(GLOB.security_level)] alert"
+	//if(NUM2SECLEVEL(GLOB.security_level)) // Coyote Bayou - We don't use alert levels.
+	//	features += "[NUM2SECLEVEL(GLOB.security_level)] alert"
 
 	var/popcaptext = ""
 	var/popcap = max(CONFIG_GET(number/extreme_popcap), CONFIG_GET(number/hard_popcap), CONFIG_GET(number/soft_popcap))

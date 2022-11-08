@@ -60,10 +60,6 @@
 	name = "Beehive 2"
 	icon_state = "hair_beehive2"
 
-/datum/sprite_accessory/hair/belle
-	name = "Belle"
-	icon_state = "hair_belle"
-
 /datum/sprite_accessory/hair/bigflattop
 	name = "Big Flat Top"
 	icon_state = "hair_bigflattop"
@@ -112,10 +108,6 @@
 /datum/sprite_accessory/hair/front_braid
 	name = "Braided Front"
 	icon_state = "hair_braidfront"
-
-/datum/sprite_accessory/hair/grandebraid
-	name = "Braid (Grande)"
-	icon_state = "hair_grande"
 
 /datum/sprite_accessory/hair/lowbraid
 	name = "Braid (Low)"
@@ -185,10 +177,6 @@
 /datum/sprite_accessory/hair/coffeehouse
 	name = "Coffee House"
 	icon_state = "hair_coffeehouse"
-
-/datum/sprite_accessory/hair/combover
-	name = "Combover"
-	icon_state = "hair_combover"
 
 /datum/sprite_accessory/hair/cornrows1
 	name = "Cornrows"
@@ -343,6 +331,10 @@
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "gentle21"
 
+/datum/sprite_accessory/hair/gentlecomb
+	name = "Gentle Comb"
+	icon_state = "hair_gentcomb"
+
 /datum/sprite_accessory/hair/halfbang
 	name = "Half-banged"
 	icon_state = "hair_halfbang"
@@ -469,6 +461,10 @@
 	name = "Messy"
 	icon_state = "hair_messy"
 
+/datum/sprite_accessory/hair/messy_skank
+	name = "Messy Skank"
+	icon_state = "hair_mskank"
+
 /datum/sprite_accessory/hair/modern
 	name = "Modern"
 	icon_state = "hair_modern"
@@ -484,6 +480,10 @@
 /datum/sprite_accessory/hair/shavedmohawk
 	name = "Mohawk Shave"
 	icon_state = "hair_shavedmohawk"
+
+/datum/sprite_accessory/hair/mohawk_mullet
+	name = "Mohawk-Mullet"
+	icon_state = "hair_mmullet"
 
 /datum/sprite_accessory/hair/mohawk_unshaven
 	name = "Mohawk Tall"
@@ -550,6 +550,14 @@
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_pigtails3"
 
+/datum/sprite_accessory/hair/pigtail_cotton
+	name = "Pigtails Cotton"
+	icon_state = "hair_pigtcotton"
+
+/datum/sprite_accessory/hair/pigtail_belle
+	name = "Pigtails Belle"
+	icon_state = "hair_pigtbelle"
+
 /datum/sprite_accessory/hair/pixie
 	name = "Pixie Cut"
 	icon_state = "hair_pixie"
@@ -591,9 +599,21 @@
 	icon = 'icons/mob/human_face.dmi'
 	icon_state = "hair_ponytail8"
 
-/datum/sprite_accessory/hair/highponytail
-	name = "Ponytail (High)"
-	icon_state = "hair_highponytail"
+/datum/sprite_accessory/hair/ponytail_fox
+	name = "Ponytail Fox"
+	icon_state = "hair_pfox"
+
+/datum/sprite_accessory/hair/ponytail_neat
+	name = "Ponytail Neat"
+	icon_state = "hair_pneat"
+
+/datum/sprite_accessory/hair/ponytail_winter
+	name = "Ponytail Winter"
+	icon_state = "hair_pwinter"
+
+/datum/sprite_accessory/hair/grandeponytail
+	name = "Ponytail Grande"
+	icon_state = "hair_grande"
 
 /datum/sprite_accessory/hair/sidetail
 	name = "Ponytail Side"
@@ -731,6 +751,10 @@
 /datum/sprite_accessory/hair/swept2
 	name = "Swept Back 2"
 	icon_state = "hair_swept2"
+
+/datum/sprite_accessory/hair/tailinari
+	name = "Tail Inari"
+	icon_state = "hair_tailinari"
 
 /datum/sprite_accessory/hair/thinning
 	name = "Thinning"

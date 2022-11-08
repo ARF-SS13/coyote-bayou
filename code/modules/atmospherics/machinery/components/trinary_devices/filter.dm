@@ -36,7 +36,7 @@
 	var/turf/T = get_turf(src)
 	if(user.canUseTopic(src, BE_CLOSE, FALSE,))
 		transfer_rate = MAX_TRANSFER_RATE
-		to_chat(user,"<span class='notice'>You maximize the flow rate on the [src].</span>")
+		to_chat(user,span_notice("You maximize the flow rate on the [src]."))
 		investigate_log("Filter, [src.name], was maximized by [key_name(usr)] at [x], [y], [z], [A]", INVESTIGATE_ATMOS)
 		message_admins("Filter, [src.name], was maximized by [ADMIN_LOOKUPFLW(usr)] at [ADMIN_COORDJMP(T)], [A]")
 		return TRUE
@@ -167,7 +167,7 @@
 /obj/machinery/atmospherics/components/trinary/filter/can_unwrench(mob/user)
 	. = ..()
 	if(. && on && is_operational())
-		to_chat(user, "<span class='warning'>You cannot unwrench [src], turn it off first!</span>")
+		to_chat(user, span_warning("You cannot unwrench [src], turn it off first!"))
 		return FALSE
 
 // Mapping

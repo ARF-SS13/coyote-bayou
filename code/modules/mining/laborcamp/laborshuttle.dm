@@ -15,17 +15,17 @@
 
 /obj/machinery/computer/shuttle/labor/one_way/ui_act(action, params)
 	if(!allowed(usr))
-		to_chat(usr, "<span class='danger'>Access denied.</span>")
+		to_chat(usr, span_danger("Access denied."))
 		return
 
 	switch(action)
 		if("move")
 			var/obj/docking_port/mobile/M = SSshuttle.getShuttle("laborcamp")
 			if(!M)
-				to_chat(usr, "<span class='warning'>Cannot locate shuttle!</span>")
+				to_chat(usr, span_warning("Cannot locate shuttle!"))
 				return
 			var/obj/docking_port/stationary/S = M.get_docked()
 			if(S?.name == "laborcamp_away")
-				to_chat(usr, "<span class='warning'>Shuttle is already at the outpost!</span>")
+				to_chat(usr, span_warning("Shuttle is already at the outpost!"))
 				return
 	return ..()

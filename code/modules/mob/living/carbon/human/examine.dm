@@ -64,14 +64,14 @@
 	else if(length(blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
-			. += "<span class='warning'>[t_He] [t_has] [hand_number > 1 ? "" : "a"] blood-stained hand[hand_number > 1 ? "s" : ""]!</span>"
+			. += span_warning("[t_He] [t_has] [hand_number > 1 ? "" : "a"] blood-stained hand[hand_number > 1 ? "s" : ""]!")
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!</span>"
+			. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!")
 		else
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
+			. += span_warning("[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!")
 
 	//belt
 	if(belt)
@@ -126,17 +126,17 @@
 		if(300 to INFINITY)
 			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
 		if(200 to 300)
-			. += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>"
+			. += span_warning("[t_He] [t_is] extremely jittery.")
 		if(100 to 200)
-			. += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>"
+			. += span_warning("[t_He] [t_is] twitching ever so slightly.")
 
 	var/appears_dead = 0
 	if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		appears_dead = 1
 		if(suiciding)
-			. += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>"
+			. += span_warning("[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.")
 		if(hellbound)
-			. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.</span>"
+			. += span_warning("[t_His] soul seems to have been ripped out of [t_his] body.  Revival is impossible.")
 		var/mob/dead/observer/ghost = get_ghost(TRUE, TRUE)
 		if(key || !getorgan(/obj/item/organ/brain) || ghost?.can_reenter_corpse)
 			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life...")
@@ -144,7 +144,7 @@
 			. += span_deadsay("[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...")
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+		. += span_deadsay("It appears that [t_his] brain is missing...")
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
@@ -165,6 +165,56 @@
 		for(var/i in BP.wounds)
 			var/datum/wound/iter_wound = i
 			msg += "[iter_wound.get_examine_description(user)]\n"
+		switch(BP.bleed_dam)
+			if(WOUND_BLEED_CLOSE_THRESHOLD to WOUND_BLEED_MODERATE_THRESHOLD)
+				msg += "[t_His] [BP.name] looks a bit cut up!\n"
+			if(WOUND_BLEED_MODERATE_THRESHOLD to WOUND_BLEED_SEVERE_THRESHOLD)
+				msg += "<B>[t_His] [BP.name] looks torn up!</B>\n"
+			if(WOUND_BLEED_SEVERE_THRESHOLD to WOUND_BLEED_CRITICAL_THRESHOLD)
+				msg += "<B>[t_His] [BP.name] looks absolutely mangled!</B>\n"
+			if(WOUND_BLEED_CRITICAL_THRESHOLD to INFINITY)
+				msg += "<B>[t_His] [BP.name] looks like it'd been chewed on by a deathclaw!</B>\n"
+
+		var/has_bleed_wounds = is_bleeding()
+		if(istype(BP.current_gauze, /obj/item/stack/medical/gauze))
+			msg += "[t_His] [BP.name] is coated with "
+			var/bandaid_max_time = initial(BP.current_gauze.covering_lifespan)
+			var/bandaid_time = BP.get_covering_timeleft(COVERING_BANDAGE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * BANDAGE_GOODLIFE_DURATION) to INFINITY)
+					msg += "fresh "
+				if((bandaid_max_time * BANDAGE_MIDLIFE_DURATION) to (bandaid_max_time * BANDAGE_GOODLIFE_DURATION))
+					msg += "slightly worn "
+				if((bandaid_max_time * BANDAGE_ENDLIFE_DURATION) to (bandaid_max_time * BANDAGE_MIDLIFE_DURATION))
+					msg += "badly worn "
+				if(-INFINITY to (bandaid_max_time * BANDAGE_ENDLIFE_DURATION))
+					msg += "nearly ruined "
+			msg += "[BP.current_gauze.name]"
+			if(has_bleed_wounds)
+				msg += span_warning(" covering a bleeding wound!\n")
+			else
+				msg += "!\n"
+
+		if(istype(BP.current_suture, /obj/item/stack/medical/suture))
+			msg += "[t_His] [BP.name] is stitched up with "
+			var/bandaid_max_time = initial(BP.current_suture.covering_lifespan)
+			var/bandaid_time = BP.get_covering_timeleft(COVERING_SUTURE, COVERING_TIME_TRUE)
+			// how much life we have left in these bandages
+			switch(bandaid_time)
+				if((bandaid_max_time * SUTURE_GOODLIFE_DURATION) to INFINITY)
+					msg += "sturdy "
+				if((bandaid_max_time * SUTURE_MIDLIFE_DURATION) to (bandaid_max_time * SUTURE_GOODLIFE_DURATION))
+					msg += "slightly frayed "
+				if((bandaid_max_time * SUTURE_ENDLIFE_DURATION) to (bandaid_max_time * SUTURE_MIDLIFE_DURATION))
+					msg += "badly frayed "
+				if(-INFINITY to (bandaid_max_time * SUTURE_ENDLIFE_DURATION))
+					msg += "nearly popped "
+			msg += "[BP.current_suture.name]"
+			if(has_bleed_wounds)
+				msg += span_warning(" covering a bleeding wound!\n")
+			else
+				msg += "!\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/BP = X
@@ -257,13 +307,13 @@
 
 	var/apparent_blood_volume = blood_volume
 	if(dna.species.use_skintones && skin_tone == "albino")
-		apparent_blood_volume -= 150 // enough to knock you down one tier
+		apparent_blood_volume -= 300 // enough to knock you down one tier
 	switch(apparent_blood_volume)
-		if(BLOOD_VOLUME_OKAY to BLOOD_VOLUME_SAFE)
+		if(BLOOD_VOLUME_SYMPTOMS_ANNOYING to BLOOD_VOLUME_SYMPTOMS_WARN)
 			msg += "[t_He] [t_has] pale skin.\n"
-		if(BLOOD_VOLUME_BAD to BLOOD_VOLUME_OKAY)
+		if(BLOOD_VOLUME_SYMPTOMS_DEBILITATING to BLOOD_VOLUME_SYMPTOMS_ANNOYING)
 			msg += "<b>[t_He] look[p_s()] like pale death.</b>\n"
-		if(-INFINITY to BLOOD_VOLUME_BAD)
+		if(-INFINITY to BLOOD_VOLUME_SYMPTOMS_DEBILITATING)
 			msg += "<span class='deadsay'><b>[t_He] resemble[p_s()] a crushed, empty juice pouch.</b></span>\n"
 
 	if(bleedsuppress)
@@ -273,24 +323,24 @@
 
 		for(var/i in bodyparts)
 			var/obj/item/bodypart/BP = i
-			if(BP.get_bleed_rate())
-				bleeding_limbs += BP
+			if(BP.get_bleed_rate(FALSE))
+				bleeding_limbs += "[BP.name]"
 
-		var/num_bleeds = LAZYLEN(bleeding_limbs)
+		//var/num_bleeds = LAZYLEN(bleeding_limbs)
 		var/list/bleed_text
 		if(appears_dead)
-			bleed_text = list("<span class='deadsay'><B>Blood is visible in [t_his] open")
+			bleed_text = list("<span class='deadsay'><B>Blood is visible in [t_his] open ")
 		else
-			bleed_text = list("<B>[t_He] [t_is] bleeding from [t_his]")
-
-		switch(num_bleeds)
+			bleed_text = list("<B>[t_He] [t_is] bleeding from [t_his] ")
+		bleed_text += english_list(bleeding_limbs)
+		/* switch(num_bleeds)
 			if(1 to 2)
 				bleed_text += " [bleeding_limbs[1].name][num_bleeds == 2 ? " and [bleeding_limbs[2].name]" : ""]"
 			if(3 to INFINITY)
 				for(var/i in 1 to (num_bleeds - 1))
 					var/obj/item/bodypart/BP = bleeding_limbs[i]
 					bleed_text += " [BP.name],"
-				bleed_text += " and [bleeding_limbs[num_bleeds].name]"
+				bleed_text += " and [bleeding_limbs[num_bleeds].name]" */
 
 
 		if(appears_dead)
@@ -369,7 +419,7 @@
 				msg += "[t_He] [t_is] barely conscious.\n"
 		if(getorgan(/obj/item/organ/brain) && !(living_flags & HIDE_OFFLINE_INDICATOR))
 			if(!key)
-				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
+				msg += span_deadsay("[t_He] [t_is] totally catatonic. The stresses of the Wasteland must have been too much for [t_him]. Any recovery is unlikely.")
 			else if(!client)
 				msg += "[t_He] [t_has] a blank, absent-minded stare and appears completely unresponsive to anything. [t_He] may snap out of it soon.\n"
 			else if(client && ((client.inactivity / 10) / 60 > 10)) //10 Minutes
@@ -388,7 +438,7 @@
 
 	switch(scar_severity)
 		if(1 to 2)
-			msg += "<span class='smallnoticeital'>[t_He] [t_has] visible scarring, you can look again to take a closer look...</span>\n"
+			msg += span_smallnoticeital("[t_He] [t_has] visible scarring, you can look again to take a closer look...")
 		if(3 to 4)
 			msg += "<span class='notice'><i>[t_He] [t_has] several bad scars, you can look again to take a closer look...</i></span>\n"
 		if(5 to 6)
@@ -397,11 +447,15 @@
 			msg += "<span class='notice'><b><i>[t_He] [t_is] just absolutely fucked up, you can look again to take a closer look...</i></b></span>\n"
 
 	if (length(msg))
-		. += "<span class='warning'>[msg.Join("")]</span>"
+		. += span_warning("[msg.Join("")]")
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
 		. += trait_exam
+
+	if(HAS_TRAIT(src, TRAIT_IN_HEAT) && (HAS_TRAIT(user, TRAIT_HEAT_DETECT) || src == user))
+		. += ""
+		. += "<span class='love'>[t_He] [t_is] looking for [gender == MALE ? "a good time, you should check their OOC Notes" : "a good time, you should check their OOC Notes"].</span>"
 
 	var/traitstring = get_trait_string()
 	if(ishuman(user))

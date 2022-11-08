@@ -129,7 +129,6 @@ to produce smoke or slow down victims? Stuff like that added to a couple would b
 	emote_hear = list("chitters")
 	speak_chance = 5
 	turns_per_move = 5
-	see_in_dark = 10
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/reagent_containers/food/snacks/spiderleg = 8)
 	response_help_continuous = "pets"
 	response_help_simple = "pet"

@@ -13,7 +13,7 @@
 	obj_damage = 60
 	melee_damage_lower = 60
 	melee_damage_upper = 60
-
+	move_to_delay = 4 //placeholder
 	gender = FEMALE
 	response_help_continuous = "pokes"
 	response_help_simple = "poke"
@@ -31,6 +31,7 @@
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
 	faction = list(ROLE_ALIEN)
+	footstep_type = FOOTSTEP_MOB_CLAW
 	status_flags = CANPUSH
 	minbodytemp = 0
 	see_in_dark = 8
@@ -39,10 +40,6 @@
 	gold_core_spawnable = NO_SPAWN
 	death_sound = 'sound/voice/hiss6.ogg'
 	deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw..."
-
-/mob/living/simple_animal/hostile/alien/Initialize()
-	. = ..()
-	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_CLAW)
 
 /mob/living/simple_animal/hostile/alien/drone
 	name = "alien drone"
@@ -122,7 +119,7 @@
 		return
 	if(locate(/obj/structure/alien/weeds/node) in get_turf(src))
 		return
-	visible_message("<span class='alertalien'>[src] has planted some alien weeds!</span>")
+	visible_message(span_alertalien("[src] has planted some alien weeds!"))
 	new /obj/structure/alien/weeds/node(loc)
 
 /mob/living/simple_animal/hostile/alien/proc/LayEggs()
@@ -130,7 +127,7 @@
 		return
 	if(locate(/obj/structure/alien/egg) in get_turf(src))
 		return
-	visible_message("<span class='alertalien'>[src] has laid an egg!</span>")
+	visible_message(span_alertalien("[src] has laid an egg!"))
 	new /obj/structure/alien/egg(loc)
 
 /mob/living/simple_animal/hostile/alien/queen/large

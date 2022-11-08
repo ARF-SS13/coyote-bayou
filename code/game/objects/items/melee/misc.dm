@@ -1,7 +1,7 @@
 /obj/item/melee/proc/check_martial_counter(mob/living/carbon/human/target, mob/living/carbon/human/user)
 	if(target.check_martial_melee_block())
-		target.visible_message("<span class='danger'>[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!</span>",
-					"<span class='userdanger'>You block the attack!</span>")
+		target.visible_message(span_danger("[target.name] blocks [src] and twists [user]'s arm behind [user.p_their()] back!"),
+					span_userdanger("You block the attack!"))
 		user.Stun(40)
 		return TRUE
 
@@ -25,7 +25,7 @@
 	custom_materials = list(/datum/material/iron = 1000)
 
 /obj/item/melee/chainofcommand/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is strangling [user.p_them()]self with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (OXYLOSS)
 
 /obj/item/melee/chainofcommand/fake
@@ -117,7 +117,7 @@
 	return mutable_appearance(icon_file, "-sabre")
 
 /obj/item/melee/sabre/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is trying to cut off all [user.p_their()] limbs with [src]! it looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is trying to cut off all [user.p_their()] limbs with [src]! it looks like [user.p_theyre()] trying to commit suicide!"))
 	var/i = 0
 	ADD_TRAIT(src, TRAIT_NODROP, SABRE_SUICIDE_TRAIT)
 	if(iscarbon(user))
@@ -240,7 +240,7 @@
 	. = ..()
 	if(iscarbon(target))
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))
-			visible_message("<span class='warning'>[user] gently taps [target] with [src].</span>",null,null,COMBAT_MESSAGE_RANGE)
+			visible_message(span_warning("[user] gently taps [target] with [src]."),null,null,COMBAT_MESSAGE_RANGE)
 		log_combat(user, target, "slept", src)
 		var/mob/living/carbon/H = target
 		H.Dizzy(10)
@@ -277,7 +277,7 @@
 	weight_class_on = WEIGHT_CLASS_NORMAL
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/get_wait_description()
-	return "<span class='danger'>The baton is still charging!</span>"
+	return span_danger("The baton is still charging!")
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/additional_effects_carbon(mob/living/target, mob/living/user)
 	target.Jitter(20)
@@ -306,7 +306,7 @@
 	qdel(shard.countdown)
 	shard.countdown = null
 	START_PROCESSING(SSobj, src)
-	visible_message("<span class='warning'>[src] appears, balanced ever so perfectly on its hilt. This isn't ominous at all.</span>")
+	visible_message(span_warning("[src] appears, balanced ever so perfectly on its hilt. This isn't ominous at all."))
 
 /obj/item/melee/supermatter_sword/process()
 	if(balanced || throwing || ismob(src.loc) || isnull(src.loc))
@@ -340,23 +340,23 @@
 	balanced = 0
 
 /obj/item/melee/supermatter_sword/ex_act(severity, target)
-	visible_message("<span class='danger'>The blast wave smacks into [src] and rapidly flashes to ash.</span>",\
-	"<span class='italics'>You hear a loud crack as you are washed with a wave of heat.</span>")
+	visible_message(span_danger("The blast wave smacks into [src] and rapidly flashes to ash."),\
+	span_italic("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/supermatter_sword/acid_act()
-	visible_message("<span class='danger'>The acid smacks into [src] and rapidly flashes to ash.</span>",\
-	"<span class='italics'>You hear a loud crack as you are washed with a wave of heat.</span>")
+	visible_message(span_danger("The acid smacks into [src] and rapidly flashes to ash."),\
+	span_italic("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything()
 
 /obj/item/melee/supermatter_sword/bullet_act(obj/item/projectile/P)
-	visible_message("<span class='danger'>[P] smacks into [src] and rapidly flashes to ash.</span>",\
-	"<span class='italics'>You hear a loud crack as you are washed with a wave of heat.</span>")
+	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash."),\
+	span_italic("You hear a loud crack as you are washed with a wave of heat."))
 	consume_everything(P)
 	return BULLET_ACT_HIT
 
 /obj/item/melee/supermatter_sword/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!</span>")
+	user.visible_message(span_suicide("[user] touches [src]'s blade. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!"))
 	user.dropItemToGround(src, TRUE)
 	shard.Bumped(user)
 
@@ -398,7 +398,7 @@
 		extend(user)
 	else
 		if (held_sausage)
-			to_chat(user, "<span class='warning'>You can't retract [src] while [held_sausage] is attached!</span>")
+			to_chat(user, span_warning("You can't retract [src] while [held_sausage] is attached!"))
 			return
 		retract(user)
 
@@ -409,15 +409,15 @@
 	..()
 	if (istype(target, /obj/item/reagent_containers/food/snacks/sausage))
 		if (!on)
-			to_chat(user, "<span class='warning'>You must extend [src] to attach anything to it!</span>")
+			to_chat(user, span_warning("You must extend [src] to attach anything to it!"))
 			return
 		if (held_sausage)
-			to_chat(user, "<span class='warning'>[held_sausage] is already attached to [src]!</span>")
+			to_chat(user, span_warning("[held_sausage] is already attached to [src]!"))
 			return
 		if (user.transferItemToLoc(target, src))
 			held_sausage = target
 		else
-			to_chat(user, "<span class='warning'>[target] doesn't seem to want to get on [src]!</span>")
+			to_chat(user, span_warning("[target] doesn't seem to want to get on [src]!"))
 	update_icon()
 
 /obj/item/melee/roastingstick/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -455,7 +455,7 @@
 		return
 	if (is_type_in_typecache(target, ovens))
 		if (held_sausage && held_sausage.roasted)
-			to_chat("Your [held_sausage] has already been cooked.")
+			to_chat(user, "Your [held_sausage] has already been cooked.")
 			return
 		if (istype(target, /obj/singularity) && get_dist(user, target) < 10)
 			to_chat(user, "You send [held_sausage] towards [target].")

@@ -50,7 +50,7 @@
 /obj/machinery/modular_computer/emag_act(mob/user)
 	. = ..()
 	if(!cpu)
-		to_chat(user, "<span class='warning'>You'd need to turn the [src] on first.</span>")
+		to_chat(user, span_warning("You'd need to turn the [src] on first."))
 		return FALSE
 	return (cpu.emag_act(user))
 
@@ -84,6 +84,9 @@
 /obj/machinery/modular_computer/interact(mob/user)
 	if(cpu)
 		return cpu.interact(user) // CPU is an item, that's why we route attack_hand to attack_self
+	if(HAS_TRAIT(user,TRAIT_FEV))
+		to_chat(user,span_warning("Your hands aren't small enough to use this!"))
+		return FALSE
 	else
 		return ..()
 
@@ -98,7 +101,7 @@
 /obj/machinery/modular_computer/proc/power_failure(malfunction = 0)
 	var/obj/item/computer_hardware/battery/battery_module = cpu.all_components[MC_CELL]
 	if(cpu && cpu.enabled) // Shut down the computer
-		visible_message("<span class='danger'>\The [src]'s screen flickers [battery_module ? "\"BATTERY [malfunction ? "MALFUNCTION" : "CRITICAL"]\"" : "\"EXTERNAL POWER LOSS\""] warning as it shuts down unexpectedly.</span>")
+		visible_message(span_danger("\The [src]'s screen flickers [battery_module ? "\"BATTERY [malfunction ? "MALFUNCTION" : "CRITICAL"]\"" : "\"EXTERNAL POWER LOSS\""] warning as it shuts down unexpectedly."))
 		if(cpu)
 			cpu.shutdown_computer(0)
 	stat |= NOPOWER

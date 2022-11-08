@@ -47,7 +47,7 @@
 /obj/structure/chopping_block/attackby(obj/item/I, mob/living/user, params)
 	if(build_stage == 1)
 		if(!istype(I, /obj/item/reagent_containers/glass/bowl))
-			to_chat(user, "<span class='warning'>You require a bowl!</span>")
+			to_chat(user, span_warning("You require a bowl!"))
 			return
 		bowl = I
 		qdel(I)
@@ -56,7 +56,7 @@
 		return
 	if(build_stage == 2)
 		if(!istype(I, /obj/item/kitchen/knife/butcher))
-			to_chat(user, "<span class='warning'>You require a butcher's knife!</span>")
+			to_chat(user, span_warning("You require a butcher's knife!"))
 			return
 		var/turf/T = get_turf(src)
 		if(!T)
@@ -89,7 +89,7 @@
 
 /obj/machinery/processor/chopping_block/attackby(obj/item/O, mob/user, params)
 	if(processing)
-		to_chat(user, "<span class='warning'>[src] is in the process of processing!</span>")
+		to_chat(user, span_warning("[src] is in the process of processing!"))
 		return TRUE
 
 	if(istype(O, /obj/item/wrench) || istype(O, /obj/item/screwdriver))
@@ -105,7 +105,7 @@
 					loaded++
 
 		if(loaded)
-			to_chat(user, "<span class='notice'>You insert [loaded] items into [src].</span>")
+			to_chat(user, span_notice("You insert [loaded] items into [src]."))
 		return
 
 	var/datum/food_processor_process/P = select_recipe(O)
@@ -116,7 +116,7 @@
 		return 1
 	else
 		if(user.a_intent != INTENT_HARM)
-			to_chat(user, "<span class='warning'>That probably won't blend!</span>")
+			to_chat(user, span_warning("That probably won't blend!"))
 			return 1
 		else
 			return ..()

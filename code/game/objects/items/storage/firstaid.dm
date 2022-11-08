@@ -30,7 +30,7 @@
 	desc = "A first aid kit with the ability to heal common types of injuries."
 
 /obj/item/storage/firstaid/regular/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins giving [user.p_them()]self aids with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/regular/PopulateContents()
@@ -83,7 +83,7 @@
 	possible_icons = list("burn","burn2","burn3","burn4")
 
 /obj/item/storage/firstaid/fire/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!</span>")
+	user.visible_message(span_suicide("[user] begins rubbing \the [src] against [user.p_them()]self! It looks like [user.p_theyre()] trying to start a fire!"))
 	return FIRELOSS
 
 /obj/item/storage/firstaid/fire/PopulateContents()
@@ -104,7 +104,7 @@
 	possible_icons = list("toxin","toxin2","toxin3","toxin4")
 
 /obj/item/storage/firstaid/toxin/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return TOXLOSS
 
 /obj/item/storage/firstaid/toxin/PopulateContents()
@@ -124,7 +124,7 @@
 	possible_icons = list("rad","rad2","rad3")
 
 /obj/item/storage/firstaid/radbgone/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins licking the lead paint off \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return TOXLOSS
 
 /obj/item/storage/firstaid/radbgone/PopulateContents()
@@ -150,7 +150,7 @@
 	possible_icons = list("oxy", "oxy2", "oxy3", "oxy4")
 
 /obj/item/storage/firstaid/o2/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins hitting [user.p_their()] neck with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return OXYLOSS
 
 /obj/item/storage/firstaid/o2/PopulateContents()
@@ -170,7 +170,7 @@
 	possible_icons = list("brute", "brute2", "brute3", "brute4")
 
 /obj/item/storage/firstaid/brute/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] begins beating [user.p_them()]self over the head with \the [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return BRUTELOSS
 
 /obj/item/storage/firstaid/brute/PopulateContents()
@@ -222,6 +222,35 @@
 	new /obj/item/reagent_containers/syringe/lethal/choral(src) // what the fuck does anyone use this piece of shit for
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
+/obj/item/storage/firstaid/debug_bleedtest
+	name = span_phobia("Debug Testkit For Testing Bleedstuff quickly (illegal)")
+	icon_state = "firstaid"
+	desc = span_love("I got tired of spawning in the same stuff, so I made a kit.")
+	component_type = /datum/component/storage/concrete/box/huge
+
+/obj/item/storage/firstaid/debug_bleedtest/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze/adv(src)
+	new /obj/item/stack/medical/gauze/improvised(src)
+	new /obj/item/stack/medical/suture(src)
+	new /obj/item/stack/medical/suture/medicated(src)
+	new /obj/item/stack/medical/suture/emergency(src)
+	new /obj/item/healthanalyzer/advanced(src)
+	new /obj/item/melee/onehanded/knife/survival(src)
+	new /obj/item/melee/onehanded/machete/scrapsabre(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/gun/ballistic/automatic/rangemaster(src)
+	new /obj/item/gun/ballistic/automatic/r84(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+	new /obj/item/gun/ballistic/shotgun/trench(src)
+
 /*
  * Pill Bottles
  */
@@ -255,23 +284,23 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/reagent_containers/pill/P = locate() in contents
 	if(P)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, P, user)
 		if(!user.put_in_hands(P))
 			P.forceMove(user.drop_location())	// make sure it's not stuck in the user if the put in hands somehow fails
-			to_chat(user, "<span class='warning'>[P] drops to the floor!</span>")
+			to_chat(user, span_warning("[P] drops to the floor!"))
 		else
-			to_chat(user, "<span class='notice'>You take \a [P] out of [src].</span>")
+			to_chat(user, span_notice("You take \a [P] out of [src]."))
 	else
-		to_chat(user, "<span class='notice'>There are no pills left in the bottle.</span>")
+		to_chat(user, span_notice("There are no pills left in the bottle."))
 	return TRUE
 
 
 /obj/item/storage/pill_bottle/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is trying to get the cap off [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (TOXLOSS)
 
 /obj/item/storage/pill_bottle/charcoal
@@ -467,8 +496,8 @@
 	throw_range = 7
 	var/empty = FALSE
 	item_state = "firstaid"
-	custom_price = PRICE_ABOVE_NORMAL
-	custom_premium_price = PRICE_EXPENSIVE
+	custom_price = PRICE_REALLY_EXPENSIVE
+	custom_premium_price = PRICE_REALLY_EXPENSIVE
 
 /obj/item/storage/hypospraykit/ComponentInitialize()
 	. = ..()
@@ -621,7 +650,7 @@
 	name = "Rad-X bottle"
 	icon = 'icons/fallout/objects/medicine/drugs.dmi'
 	icon_state = "pill_canister_radx"
-	desc = "Contains pills used to treat and prevent radiation and minor toxin damage."
+	desc = "Contains pills that prevent radiation buildup, totally shielding the user at high doses. Does not treat radiation sickness, best taken before exposure."
 
 /obj/item/storage/pill_bottle/chem_tin/radx/PopulateContents()
 	for(var/i in 1 to 5)

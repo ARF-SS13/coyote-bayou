@@ -43,8 +43,8 @@
 	var/mob/living/user = owner
 	var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 
-	to_chat(user, "<span class='notice'>Your heart beats falsely within your lifeless chest. You may yet pass for a mortal.</span>")
-	to_chat(user, "<span class='warning'>Your vampiric healing is halted while imitating life.</span>")
+	to_chat(user, span_notice("Your heart beats falsely within your lifeless chest. You may yet pass for a mortal."))
+	to_chat(user, span_warning("Your vampiric healing is halted while imitating life."))
 
 
 	// Remove ColdBlooded & Hard/SoftCrit
@@ -79,7 +79,7 @@
 
 /datum/action/bloodsucker/masquerade/ContinueActive(mob/living/user)
 	// Disable if unable to use power anymore.
-	//if (user.stat == DEAD || user.blood_volume <= 0) // not conscious or soft critor uncon, just dead
+	//if (user.stat == DEAD || user.get_blood(FALSE) <= 0) // not conscious or soft critor uncon, just dead
 	//	return FALSE
 	return ..() // Active, and still Antag
 
@@ -103,4 +103,4 @@
 
 	E.flash_protect = 2
 
-	to_chat(user, "<span class='notice'>Your heart beats one final time, while your skin dries out and your icy pallor returns.</span>")
+	to_chat(user, span_notice("Your heart beats one final time, while your skin dries out and your icy pallor returns."))

@@ -62,12 +62,32 @@
 	cost = 400 // 6-7 planks shy from having equal import/export prices
 	contains = list(/obj/item/stack/sheet/mineral/wood/twenty)
 
-/datum/supply_pack/materials/rcdammo
+/datum/supply_pack/materials/prewaralloyingot
+	goody = PACK_GOODY_PUBLIC
+	name = "4 Pre-War Ingots"
+	desc = "Ingots salvaged from a Pre-War factory, valuable in the right hands."
+	cost = 2775
+	contains = list(/obj/item/ingot/adamantine,
+					/obj/item/ingot/adamantine,
+					/obj/item/ingot/adamantine
+					)
+
+/datum/supply_pack/materials/weaponparts
+	goody = PACK_GOODY_PUBLIC
+	name = "Weapon Parts"
+	desc = "A random collection of recovered weapon parts. A gunsmith's wet dream."
+	cost = 2500
+	contains = list(/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting,
+					/obj/effect/spawner/lootdrop/f13/advcrafting)
+					
+/* /datum/supply_pack/materials/rcdammo
 	goody = PACK_GOODY_PUBLIC
 	name = "Large RCD ammo Single-Pack"
 	desc = "A single large compressed RCD matter pack, to help with any holes or projects people might be working on."
 	cost = 600
-	contains = list(/obj/item/rcd_ammo/large)
+	contains = list(/obj/item/rcd_ammo/large) */
 
 //datum/supply_pack/materials/rawlumber
 //	name = "50 Towercap Logs"
@@ -85,7 +105,7 @@
 ///////////////////////////// Canisters //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
 
-/datum/supply_pack/materials/bz
+/* /datum/supply_pack/materials/bz
 	name = "BZ Canister Crate"
 	desc = "Contains a canister of BZ. Requires Toxins access to open."
 	cost = 7500 // Costs 3 credits more than what you can get for selling it.
@@ -133,7 +153,7 @@
 	cost = 2500
 	contains = list(/obj/machinery/portable_atmospherics/canister/water_vapor)
 	crate_name = "water vapor canister crate"
-	crate_type = /obj/structure/closet/crate/large
+	crate_type = /obj/structure/closet/crate/large */
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// Tanks ////////////////////////////////////////
@@ -155,13 +175,13 @@
 	crate_name = "water tank crate"
 	crate_type = /obj/structure/closet/crate/large
 
-/datum/supply_pack/materials/foamtank
+/* /datum/supply_pack/materials/foamtank
 	name = "Firefighting Foam Tank Crate"
 	desc = "Contains a tank of firefighting foam. Also known as \"plasmaman's bane\"."
 	cost = 1500
 	contains = list(/obj/structure/reagent_dispensers/foamtank)
 	crate_name = "foam tank crate"
-	crate_type = /obj/structure/closet/crate/large
+	crate_type = /obj/structure/closet/crate/large */
 
 /datum/supply_pack/materials/hightank
 	name = "Large Water Tank Crate"

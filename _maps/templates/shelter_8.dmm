@@ -1,12 +1,17 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/open/floor/plating/f13/outside/desert,
+/obj/structure/flora/tallgrass1,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"g" = (
+/obj/structure/flora/grass/wasteland,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "i" = (
 /obj/structure/fence/wooden{
 	dir = 4
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "n" = (
 /obj/structure/chair/wood/fancy{
@@ -21,7 +26,7 @@
 /obj/structure/curtain{
 	color = "red"
 	},
-/turf/open/floor/wood_common/f13/old,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "s" = (
 /obj/structure/chair/wood/fancy{
@@ -33,11 +38,11 @@
 /obj/structure/fence/corner/wooden{
 	dir = 4
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "w" = (
 /obj/structure/fence/corner/wooden,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "x" = (
 /obj/structure/table/wood,
@@ -47,25 +52,32 @@
 /obj/item/toy/dummy,
 /obj/item/toy/talking/codex_gigas,
 /obj/effect/holodeck_effect/cards{
-	name = Tarot Deck
+	name = "Tarot Deck"
 	},
 /obj/item/storage/fancy/candle_box,
 /obj/structure/curtain{
 	color = "red"
 	},
-/turf/open/floor/wood_common/f13/old,
+/turf/open/floor/carpet,
 /area/survivalpod)
+"B" = (
+/obj/structure/flora/tallgrass2,
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
+"C" = (
+/turf/open/indestructible/ground/outside/dirt,
+/area/f13/wasteland)
 "D" = (
 /obj/structure/mirror,
 /turf/closed/wall/f13/wood,
 /area/survivalpod)
 "F" = (
 /mob/living/simple_animal/cow/brahmin,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "H" = (
 /obj/structure/fence/wooden,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "J" = (
 /turf/closed/wall/f13/wood,
@@ -93,13 +105,13 @@
 /obj/item/stack/tile/fakespace,
 /obj/item/clothing/mask/bandana/red,
 /obj/item/storage/crayons,
-/turf/open/floor/wood_common/f13/old,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "N" = (
 /obj/structure/curtain{
 	color = "red"
 	},
-/turf/open/floor/wood_common/f13/old,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "P" = (
 /obj/structure/table/wood,
@@ -108,7 +120,7 @@
 /obj/structure/curtain{
 	color = "red"
 	},
-/turf/open/floor/wood_common/f13/old,
+/turf/open/floor/carpet,
 /area/survivalpod)
 "W" = (
 /obj/structure/spirit_board,
@@ -124,13 +136,13 @@
 /area/survivalpod)
 
 (1,1,1) = {"
-a
+C
 J
 J
 N
 J
 J
-a
+C
 "}
 (2,1,1) = {"
 J
@@ -190,17 +202,17 @@ i
 i
 a
 F
-a
+C
 F
-a
+C
 i
 "}
 (9,1,1) = {"
 i
 F
-a
-a
-a
+C
+B
+g
 F
 i
 "}

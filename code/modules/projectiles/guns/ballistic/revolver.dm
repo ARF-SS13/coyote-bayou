@@ -6,7 +6,7 @@
 	desc = "should not exist."
 	icon_state = "revolver"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder
-	w_class = WEIGHT_CLASS_NORMAL
+	w_class = WEIGHT_CLASS_SMALL
 	slot_flags = ITEM_SLOT_BELT
 	casing_ejector = FALSE
 	spawnwithmagazine = TRUE
@@ -24,6 +24,8 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	handedness = GUN_EJECTOR_ANY
+
 
 	var/select = 0
 	equipsound = 'sound/f13weapons/equipsounds/pistolequip.ogg'
@@ -32,6 +34,10 @@
 	. = ..()
 	if(!istype(magazine, /obj/item/ammo_box/magazine/internal/cylinder))
 		verbs += /obj/item/gun/ballistic/revolver/verb/spin
+
+/obj/item/gun/ballistic/revolver/generate_guntags()
+	..()
+	gun_tags |= GUN_REVOLVER
 
 /obj/item/gun/ballistic/revolver/chamber_round(spin = 1)
 	if(spin)
@@ -44,19 +50,36 @@
 	chamber_round(1)
 
 /obj/item/gun/ballistic/revolver/attack_self(mob/living/user)
+	if(!eject_shells(user, TRUE))
+		to_chat(user, span_alert("[src] is empty!"))
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/proc/eject_shells(mob/living/user, just_empties = TRUE)
+	if(!magazine)
+		return FALSE
 	var/num_unloaded = 0
-	chambered = null
-	while (get_ammo() > 0)
-		var/obj/item/ammo_casing/CB
-		CB = magazine.get_round(0)
-		if(CB)
-			CB.forceMove(drop_location())
-			CB.bounce_away(FALSE, NONE)
-			num_unloaded++
+	var/obj/item/ammo_box/magazine/ammo_mag = magazine.stored_ammo
+	for(var/index in 1 to LAZYLEN(ammo_mag))
+		if(!istype(ammo_mag[index], /obj/item/ammo_casing))
+			continue
+		var/obj/item/ammo_casing/bluuet = ammo_mag[index]
+		if(just_empties && bluuet.BB)
+			continue
+		bluuet.forceMove(drop_location())
+		bluuet.bounce_away(FALSE, NONE)
+		if(chambered == bluuet)
+			chambered = null
+		ammo_mag[index] = null // eject a shell, it leaves a gap
+		num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You unload [num_unloaded] shell\s from [src].</span>")
-	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		if(just_empties)
+			to_chat(user, span_notice("You unload [num_unloaded] empty shell\s from [src]."))
+			return TRUE
+		else
+			to_chat(user, span_notice("You unload [num_unloaded] live round\s from [src]."))
+			return TRUE
+	else if(just_empties)
+		return eject_shells(user, FALSE) // try again!
 
 /obj/item/gun/ballistic/revolver/verb/spin()
 	set name = "Spin Chamber"
@@ -69,7 +92,8 @@
 		return
 
 	if(do_spin())
-		usr.visible_message("[usr] spins [src]'s chamber.", "<span class='notice'>You spin [src]'s chamber.</span>")
+		usr.visible_message("[usr] spins [src]'s chamber.", span_notice("You spin [src]'s chamber."))
+		playsound(src, 'sound/f13weapons/revolverspin.ogg', 30, 1)
 	else
 		verbs -= /obj/item/gun/ballistic/revolver/verb/spin
 
@@ -95,43 +119,6 @@
 	. = ..()
 	. += "[get_ammo(0,0)] of those are live rounds."
 
-/obj/item/gun/ballistic/revolver/detective/Initialize()
-	. = ..()
-	safe_calibers = magazine.caliber
-
-/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
-	if(..())
-		return TRUE
-	if("38" in magazine.caliber)
-		to_chat(user, "<span class='notice'>You begin to reinforce the barrel of [src]...</span>")
-		if(magazine.ammo_count())
-			afterattack(user, user)	//you know the drill
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
-				return TRUE
-			magazine.caliber = "357"
-			desc = "The barrel and chamber assembly seems to have been modified."
-			to_chat(user, "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>")
-	else
-		to_chat(user, "<span class='notice'>You begin to revert the modifications to [src]...</span>")
-		if(magazine.ammo_count())
-			afterattack(user, user)	//and again
-			user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-			return TRUE
-		if(I.use_tool(src, user, 30))
-			if(magazine.ammo_count())
-				to_chat(user, "<span class='warning'>You can't modify it!</span>")
-				return
-			magazine.caliber = "38"
-			desc = initial(desc)
-			to_chat(user, "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>")
-	return TRUE
-
-
-
 /* * * * * * * * * *
  * LIGHT REVOLVERS *
  * * * * * * * * * */
@@ -150,7 +137,7 @@
 	name = ".38 Detective Special"
 	desc = "A small revolver thats easily concealable."
 	icon_state = "detective"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
@@ -166,6 +153,21 @@
 
 	obj_flags = UNIQUE_RENAME
 	var/list/safe_calibers
+
+/obj/item/gun/ballistic/revolver/detective/screwdriver_act(mob/living/user, obj/item/I)
+	if(..())
+		return TRUE
+	if(!(CALIBER_357 in magazine.caliber))
+		to_chat(user, span_notice("You begin to reinforce the barrel of [src]..."))
+		if(magazine.ammo_count())
+			afterattack(user, user)	//you know the drill
+			user.visible_message(span_danger("[src] goes off!"), span_userdanger("[src] goes off in your face!"))
+			return TRUE
+		if(I.use_tool(src, user, 30))
+			magazine.caliber |= CALIBER_357
+			desc = "The barrel and chamber assembly seems to have been modified."
+			to_chat(user, span_notice("You reinforce the barrel of [src]. Now it will fire .357 rounds."))
+	return TRUE
 
 /* * * * * * * * * * *
  * .45 ACP Revolver
@@ -192,7 +194,16 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 /* * * * * * * * * *
  * HEAVY REVOLVERS *
  * * * * * * * * * */
@@ -222,7 +233,16 @@
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 
 	fire_sound = 'sound/f13weapons/357magnum.ogg'
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * Mateba revolver
  * Cool? heavy revolver
@@ -293,7 +313,7 @@
 	desc = "Pre-war double action police revolver chambered in .357 magnum."
 	icon_state = "police"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev357
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -307,9 +327,17 @@
 	init_recoil = HANDGUN_RECOIL(1)
 
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
-
-
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC // limbfucker2000
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 /* * * * * * * * * * *
  * .44 magnum revolver
  * Heavier revolver
@@ -334,12 +362,22 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 6
 	scope_y_offset = 24
 	fire_sound = 'sound/f13weapons/44mag.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Pearly .44 magnum revolver
@@ -363,7 +401,7 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
-
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 
@@ -408,7 +446,7 @@
  * More recoil
  * Less damage
  * Faster shot
- * Small
+ * TINY
  * Common
  * * * * * * * * * * */
 
@@ -416,7 +454,7 @@
 	name = "snubnose .44 magnum revolver"
 	desc = "A snubnose variant of the commonplace .44 magnum. An excellent holdout weapon for self defense."
 	icon_state = "m29_snub"
-	w_class = WEIGHT_CLASS_SMALL
+	w_class = WEIGHT_CLASS_TINY
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_LIGHT
 	force = GUN_MELEE_FORCE_PISTOL_LIGHT
@@ -428,6 +466,7 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 /* * * * * * * * * * *
  * .44 single-action revolver
@@ -457,10 +496,21 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(0.8)
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 
 	fire_sound = 'sound/f13weapons/44revolver.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Desert ranger revolver
@@ -486,14 +536,56 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
+
+/* * * * * * * * * * *
+ * M2045 Magnum Revolver Rifle
+ * Heavy revolver rifle
+ * Scoped
+ * .308
+ * Uncommon
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/revolver/m2405
+	name = "M2045 Magnum Revolver Rifle"
+	desc = "A relic from before the Great War returns to the wasteland. This rifle uses .308 ammunition and has considerable recoil."
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev308
+	icon = 'icons/fallout/objects/guns/longguns.dmi'
+	item_state = "m2405"
+	icon_state = "m2405"
+	w_class = WEIGHT_CLASS_NORMAL
+
+	slowdown = GUN_SLOWDOWN_RIFLE_BOLT
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_SLOW
+	burst_size = 1
+	damage_multiplier = GUN_EXTRA_DAMAGE_T1
+	init_recoil = RIFLE_RECOIL(2.2)
+
+	zoomable = TRUE
+	zoom_amt = 10
+	zoom_out_amt = 13
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Hunting revolver
  * Super heavy revolver
  * .45-70
- * Less damage
  * Uncommon
  * * * * * * * * * * */
 
@@ -513,12 +605,23 @@
 	burst_size = 1
 	damage_multiplier = GUN_LESS_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
-
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_tags = list(GUN_SCOPE)
 	can_scope = TRUE
 	scope_state = "revolver_scope"
 	scope_x_offset = 9
 	scope_y_offset = 20
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Degraded hunting revolver
@@ -554,8 +657,8 @@
  * * * * * * * * * * */
 
 /obj/item/gun/ballistic/revolver/sequoia
-	name = "ranger sequoia"
-	desc = "This large, double-action revolver is a trademark weapon of the New California Republic Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	name = "desert sequoia"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip is oddly comfortable in your hand  The entire weapon is suited for quick-drawing."
 	icon_state = "sequoia"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
@@ -570,18 +673,29 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_T1
 	init_recoil = HANDGUN_RECOIL(1.2)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_HEAVY_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_HEAVY_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_HEAVY_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_HEAVY_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_HEAVY_RANGE_DISTANT)
+	)
 
 /obj/item/gun/ballistic/revolver/sequoia/bayonet
 	name = "bladed ranger sequoia"
-	desc = "This heavy revolver is a trademark weapon of the New California Republic Rangers. This one has a blade attached to the handle for a painful pistolwhip."
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip has a blade attached to the bottom. You know, for stabbin'."
 	icon_state = "sequoia_b"
 	item_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 
 	slowdown = GUN_SLOWDOWN_REVOLVER_HEAVY
-	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY * 1.5
 	weapon_weight = GUN_ONE_HAND_AKIMBO
 	draw_time = GUN_DRAW_QUICK
 	fire_delay = GUN_FIRE_DELAY_SLOW
@@ -593,6 +707,8 @@
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
 /obj/item/gun/ballistic/revolver/sequoia/death
+	name = "Desert Hemlock"
+	desc = "This large, double-action revolver is a trademark weapon of the Desert Rangers. It features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears slight singe-marks..."
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570/death
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
 
@@ -630,8 +746,19 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
 	fire_sound = 'sound/f13weapons/45revolver.ogg'
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * .223 revolver
@@ -660,10 +787,19 @@
 	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	gun_accuracy_zone_type = ZONE_WEIGHT_AUTOMATIC
 
 	fire_sound = 'sound/f13weapons/magnum_fire.ogg'
-
-
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_MEDIUM_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_MEDIUM_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_MEDIUM_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
+	)
 
 /* * * * * * * * * * *
  * Needler 'revolver'
@@ -688,8 +824,11 @@
 	burst_size = 1
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
 	init_recoil = HANDGUN_RECOIL(0.8)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
 
+	silenced = TRUE
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
+	fire_sound_silenced = 'sound/weapons/gunshot_silenced.ogg'
 
 /obj/item/gun/ballistic/revolver/needler/ultra
 	name = "Ultracite needler"
@@ -760,13 +899,13 @@
 			return
 	if(target != user)
 		if(ismob(target))
-			to_chat(user, "<span class='warning'>A mechanism prevents you from shooting anyone but yourself!</span>")
+			to_chat(user, span_warning("A mechanism prevents you from shooting anyone but yourself!"))
 		return
 
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(!spun)
-			to_chat(user, "<span class='warning'>You need to spin \the [src]'s chamber first!</span>")
+			to_chat(user, span_warning("You need to spin \the [src]'s chamber first!"))
 			return
 
 		spun = FALSE
@@ -780,21 +919,21 @@
 				if(zone == BODY_ZONE_HEAD || zone == BODY_ZONE_PRECISE_EYES || zone == BODY_ZONE_PRECISE_MOUTH)
 					shoot_self(user, affecting)
 				else
-					user.visible_message("<span class='danger'>[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!</span>", "<span class='userdanger'>You cowardly fire [src] at your [affecting.name]!</span>", "<span class='italics'>You hear a gunshot!</span>")
+					user.visible_message(span_danger("[user.name] cowardly fires [src] at [user.p_their()] [affecting.name]!"), span_userdanger("You cowardly fire [src] at your [affecting.name]!"), span_italic("You hear a gunshot!"))
 				chambered = null
 				return
 
-		user.visible_message("<span class='danger'>*click*</span>")
+		user.visible_message(span_danger("*click*"))
 		playsound(src, "gun_dry_fire", 30, 1)
 
 /obj/item/gun/ballistic/revolver/russian/process_fire(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	add_fingerprint(user)
 	playsound(src, "gun_dry_fire", 30, TRUE)
-	user.visible_message("<span class='danger'>[user.name] tries to fire \the [src] at the same time, but only succeeds at looking like an idiot.</span>", "<span class='danger'>\The [src]'s anti-combat mechanism prevents you from firing it at the same time!</span>")
+	user.visible_message(span_danger("[user.name] tries to fire \the [src] at the same time, but only succeeds at looking like an idiot."), span_danger("\The [src]'s anti-combat mechanism prevents you from firing it at the same time!"))
 
 /obj/item/gun/ballistic/revolver/russian/proc/shoot_self(mob/living/carbon/human/user, affecting = BODY_ZONE_HEAD)
 	user.apply_damage(300, BRUTE, affecting)
-	user.visible_message("<span class='danger'>[user.name] fires [src] at [user.p_their()] head!</span>", "<span class='userdanger'>You fire [src] at your head!</span>", "<span class='italics'>You hear a gunshot!</span>")
+	user.visible_message(span_danger("[user.name] fires [src] at [user.p_their()] head!"), span_userdanger("You fire [src] at your head!"), span_italic("You hear a gunshot!"))
 
 /obj/item/gun/ballistic/revolver/russian/soul
 	name = "cursed Russian revolver"
@@ -806,7 +945,7 @@
 	if(!SS.transfer_soul("FORCE", user)) //Something went wrong
 		qdel(SS)
 		return
-	user.visible_message("<span class='danger'>[user.name]'s soul is captured by \the [src]!</span>", "<span class='userdanger'>You've lost the gamble! Your soul is forfeit!</span>")
+	user.visible_message(span_danger("[user.name]'s soul is captured by \the [src]!"), span_userdanger("You've lost the gamble! Your soul is forfeit!"))
 
 
 //////////////////
@@ -819,11 +958,11 @@
 	if(istype(A, /obj/item/stack/cable_coil) && !sawn_off)
 		if(A.use_tool(src, user, 0, 10, skill_gain_mult = EASY_USE_TOOL_MULT))
 			slot_flags = ITEM_SLOT_BACK
-			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
+			to_chat(user, span_notice("You tie the lengths of cable to the shotgun, making a sling."))
 			slung = TRUE
 			update_icon()
 		else
-			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
+			to_chat(user, span_warning("You need at least ten lengths of cable if you want to make a sling!"))
 
 /obj/item/gun/ballistic/revolver/doublebarrel/improvised/update_overlays()
 	. = ..()
@@ -848,15 +987,15 @@
 		CB.update_icon()
 		num_unloaded++
 	if (num_unloaded)
-		to_chat(user, "<span class='notice'>You break open \the [src] and unload [num_unloaded] shell\s.</span>")
+		to_chat(user, span_notice("You break open \the [src] and unload [num_unloaded] shell\s."))
 	else
-		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+		to_chat(user, span_warning("[src] is empty!"))
 
 //DODGE CODE
 /obj/item/gun/ballistic/revolver/colt357/lucky/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(attack_type == PROJECTILE_ATTACK)
 		if(prob(block_chance))
-			owner.visible_message("<span class='danger'>[owner] seems to dodge [attack_text] entirely thanks to [src]!</span>")
+			owner.visible_message(span_danger("[owner] seems to dodge [attack_text] entirely thanks to [src]!"))
 			playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 			return 1
 	return 0
@@ -882,12 +1021,12 @@
 
 /obj/item/gun/ballistic/revolver/mws/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to remove the magazine.</span>"
+	. += span_notice("Alt-click to remove the magazine.")
 
 /obj/item/gun/ballistic/revolver/mws/shoot_with_empty_chamber(mob/living/user as mob|obj)
 	process_chamber(user)
 	if(!chambered || !chambered.BB)
-		to_chat(user, "<span class='danger'>*click*</span>")
+		to_chat(user, span_danger("*click*"))
 		playsound(src, "gun_dry_fire", 30, 1)
 
 
@@ -907,9 +1046,9 @@
 /obj/item/gun/ballistic/revolver/mws/proc/switch_to(obj/item/ammo_casing/mws_batt/new_batt, mob/living/user)
 	if(ishuman(user))
 		if(chambered && new_batt.type == chambered.type)
-			to_chat(user,"<span class='warning'>[src] is now using the next [new_batt.type_name] power cell.</span>")
+			to_chat(user,span_warning("[src] is now using the next [new_batt.type_name] power cell."))
 		else
-			to_chat(user,"<span class='warning'>[src] is now firing [new_batt.type_name].</span>")
+			to_chat(user,span_warning("[src] is now firing [new_batt.type_name]."))
 
 	chambered = new_batt
 	update_icon()
@@ -943,7 +1082,7 @@
 		else
 			playsound(src, "gun_remove_empty_magazine", 70, 1)
 		magazine = null
-		to_chat(user, "<span class='notice'>You pull the magazine out of [src].</span>")
+		to_chat(user, span_notice("You pull the magazine out of [src]."))
 		if(chambered)
 			chambered = null
 		update_icon()
@@ -979,7 +1118,7 @@
 	if((HAS_TRAIT(user, TRAIT_CLUMSY)) || (user.mind && HAS_TRAIT(user.mind, TRAIT_CLOWN_MENTALITY)))
 		return ..()
 	if(process_fire(user, user, FALSE, null, BODY_ZONE_HEAD))
-		user.visible_message("<span class='warning'>[user] somehow manages to shoot [user.p_them()]self in the face!</span>", "<span class='userdanger'>You somehow shoot yourself in the face! How the hell?!</span>")
+		user.visible_message(span_warning("[user] somehow manages to shoot [user.p_them()]self in the face!"), span_userdanger("You somehow shoot yourself in the face! How the hell?!"))
 		user.emote("scream")
 		user.drop_all_held_items()
 		user.DefaultCombatKnockdown(80)

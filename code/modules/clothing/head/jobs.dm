@@ -18,10 +18,10 @@
 	beepsky_fashion = /datum/beepsky_fashion/chef
 
 /obj/item/clothing/head/chefhat/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef.</span>")
+	user.visible_message(span_suicide("[user] is donning [src]! It looks like [user.p_theyre()] trying to become a chef."))
 	user.say("Bork Bork Bork!", forced = "chef hat suicide")
 	sleep(20)
-	user.visible_message("<span class='suicide'>[user] climbs into an imaginary oven!</span>")
+	user.visible_message(span_suicide("[user] climbs into an imaginary oven!"))
 	user.say("BOOORK!", forced = "chef hat suicide")
 	playsound(user, 'sound/machines/ding.ogg', 50, 1)
 	return(FIRELOSS)
@@ -33,7 +33,6 @@
 	icon_state = "captain"
 	item_state = "that"
 	flags_inv = 0
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 
 	dog_fashion = /datum/dog_fashion/head/captain
@@ -65,7 +64,6 @@
 	name = "head of personnel's cap"
 	icon_state = "hopcap"
 	desc = "The symbol of true bureaucratic micromanagement."
-	armor = list("melee" = 30, "bullet" = 25, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	dog_fashion = /datum/dog_fashion/head/hop
 
 /obj/item/clothing/head/hopcap/beret
@@ -104,7 +102,7 @@
 
 /obj/item/clothing/head/fedora/det_hat/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Alt-click to take a candy corn.</span>"
+	. += span_notice("Alt-click to take a candy corn.")
 
 /obj/item/clothing/head/fedora/det_hat/AltClick(mob/user)
 	. = ..()
@@ -165,7 +163,6 @@
 	name = "head of security cap"
 	desc = "The robust standard-issue cap of the Head of Security. For showing the officers who's in charge."
 	icon_state = "hoscap"
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 80
 	dynamic_hair_suffix = ""
 
@@ -191,7 +188,6 @@
 	name = "warden's police hat"
 	desc = "It's a special armored hat issued to the Warden of a security force. Protects the head from impacts."
 	icon_state = "policehelm"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 	dog_fashion = /datum/dog_fashion/head/warden
 
@@ -208,21 +204,21 @@
 		return TRUE
 	switch(mode)
 		if(DRILL_DEFAULT)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the middle position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the middle position."))
 			mode = DRILL_SHOUTING
 		if(DRILL_SHOUTING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the last position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the last position."))
 			mode = DRILL_YELLING
 		if(DRILL_YELLING)
-			to_chat(user, "<span class='notice'>You set the voice circuit to the first position.</span>")
+			to_chat(user, span_notice("You set the voice circuit to the first position."))
 			mode = DRILL_DEFAULT
 		if(DRILL_CANADIAN)
-			to_chat(user, "<span class='danger'>You adjust voice circuit but nothing happens, probably because it's broken.</span>")
+			to_chat(user, span_danger("You adjust voice circuit but nothing happens, probably because it's broken."))
 	return TRUE
 
 /obj/item/clothing/head/warden/drill/wirecutter_act(mob/living/user, obj/item/I)
 	if(mode != DRILL_CANADIAN)
-		to_chat(user, "<span class='danger'>You broke the voice circuit!</span>")
+		to_chat(user, span_danger("You broke the voice circuit!"))
 		mode = DRILL_CANADIAN
 	return TRUE
 
@@ -266,7 +262,6 @@
 	name = "security beret"
 	desc = "A robust beret with the security insignia emblazoned on it. Uses reinforced fabric to offer sufficient protection."
 	icon_state = "beret_badge"
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 5, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 	strip_delay = 60
 	dog_fashion = null
 
@@ -376,7 +371,6 @@
 	name = "durathread beret"
 	desc =  "A beret made from durathread, its resilient fibres provide some protection to the wearer."
 	icon_state = "beretdurathread"
-	armor = list("melee" = 25, "bullet" = 10, "laser" = 10, "energy" = 15, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 10, "acid" = 0, "wound" = 30)
 
 #undef DRILL_DEFAULT
 #undef DRILL_SHOUTING

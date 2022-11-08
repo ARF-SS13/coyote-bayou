@@ -56,6 +56,7 @@
 	var/coinflip
 	var/list/sideslist = list("heads","tails")
 	merge_type = /obj/item/stack/f13Cash
+	custom_materials = list(/datum/material/f13cash=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/f13Cash/attack_self(mob/user)
 	if (flippable)
@@ -69,8 +70,8 @@
 			sleep(15)
 			if(loc == oldloc && user && !user.incapacitated())
 				user.visible_message("[user] has flipped [src]. It lands on [coinflip].", \
-									"<span class='notice'>You flip [src]. It lands on [coinflip].</span>", \
-									"<span class='italics'>You hear the clattering of loose change.</span>")
+									span_notice("You flip [src]. It lands on [coinflip]."), \
+									span_italic("You hear the clattering of loose change."))
 		return TRUE//did the coin flip? useful for suicide_act
 
 /obj/item/stack/f13Cash/caps

@@ -25,7 +25,7 @@
 
 
 /obj/item/clothing/gloves/ring/suicide_act(mob/living/carbon/user)
-	user.visible_message("<span class='suicide'>\[user] is putting the [src] in [user.p_their()] mouth! It looks like [user] is trying to choke on the [src]!</span>")
+	user.visible_message(span_suicide("\[user] is putting the [src] in [user.p_their()] mouth! It looks like [user] is trying to choke on the [src]!"))
 	return OXYLOSS
 
 /obj/item/clothing/gloves/ring/diamond
@@ -36,7 +36,7 @@
 	mood_event_on_equip = /datum/mood_event/equipped_ring/diamond
 
 /obj/item/clothing/gloves/ring/diamond/attack_self(mob/user)
-	user.visible_message("<span class='warning'>\The [user] gets down on one knee, presenting \the [src].</span>","<span class='warning'>You get down on one knee, presenting \the [src].</span>")
+	user.visible_message(span_warning("\The [user] gets down on one knee, presenting \the [src]."),span_warning("You get down on one knee, presenting \the [src]."))
 
 /obj/item/clothing/gloves/ring/silver
 	name = "silver ring"
@@ -44,3 +44,17 @@
 	icon_state = "ringsilver"
 	item_state = "sring"
 	mood_event_on_equip = /datum/mood_event/equipped_ring
+
+/obj/item/clothing/gloves/ring/plasma
+	name = "plasma ring"
+	desc = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside."
+	icon_state = "ringplasma"
+	item_state = "pring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/plasma
+
+/obj/item/clothing/gloves/ring/bluespace
+	name = "bluespace ring"
+	desc = "This ring is stylized to have an ornate sun, with a small sample of a bluespace crystal shining inside."
+	icon_state = "ringbluespace"
+	item_state = "bring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/bluespace

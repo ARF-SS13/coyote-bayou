@@ -20,15 +20,7 @@
 	slot_flags = ITEM_SLOT_BACK	//ERROOOOO
 	resistance_flags = NONE
 	max_integrity = 300
-
-/obj/item/storage/backpack/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	//STR.storage_flags = STORAGE_FLAGS_VOLUME_DEFAULT
-	STR.max_combined_w_class = 21
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_items = 21
-
+	component_type = /datum/component/storage/concrete/backpack
 
 /*
  * Backpack Types
@@ -46,7 +38,7 @@
 	item_state = "holdingpack"
 	resistance_flags = FIRE_PROOF
 	item_flags = NO_MAT_REDEMPTION
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 60, "acid" = 50)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	component_type = /datum/component/storage/concrete/bluespace/bag_of_holding
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
@@ -65,14 +57,7 @@
 	icon_state = "spearquiver"
 	item_state = "spearquiver"
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
-
-/obj/item/storage/backpack/spearquiver/empty
-
-/obj/item/storage/backpack/spearquiver/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 7
-	STR.can_hold = typecacheof(list(/obj/item/throwing_star/spear, /obj/item/restraints/legcuffs/bola))
+	component_type = /datum/component/storage/concrete/backpack/spear_quiver
 
 /obj/item/storage/backpack/spearquiver/PopulateContents()
 	new /obj/item/throwing_star/spear(src)
@@ -89,21 +74,21 @@
 	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)))
 		return
 	if(!length(user.get_empty_held_indexes()))
-		to_chat(user, "<span class='warning'>Your hands are full!</span>")
+		to_chat(user, span_warning("Your hands are full!"))
 		return
 	var/obj/item/throwing_star/L = locate() in contents
 	if(L)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, L, user)
 		user.put_in_hands(L)
-		to_chat(user, "<span class='notice'>You take a spear out of the quiver.</span>")
+		to_chat(user, span_notice("You take a spear out of the quiver."))
 		return TRUE
 	var/obj/item/restraints/legcuffs/W = locate() in contents
 	if(W && contents.len > 0)
 		SEND_SIGNAL(src, COMSIG_TRY_STORAGE_TAKE, W, user)
 		user.put_in_hands(W)
-		to_chat(user, "<span class='notice'>You take a bola out of the quiver.</span>")
+		to_chat(user, span_notice("You take a bola out of the quiver."))
 	else
-		to_chat(user, "<span class='notice'>There is nothing left in the quiver.</span>")
+		to_chat(user, span_notice("There is nothing left in the quiver."))
 	return TRUE
 
 /obj/item/storage/backpack/holding/satchel
@@ -120,7 +105,7 @@
 	item_state = "holdingduffel"
 
 /obj/item/storage/backpack/holding/suicide_act(mob/living/user)
-	user.visible_message("<span class='suicide'>[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide.</span>")
+	user.visible_message(span_suicide("[user] is jumping into [src]! It looks like [user.p_theyre()] trying to commit suicide."))
 	user.dropItemToGround(src, TRUE)
 	user.Stun(100, ignore_canstun = TRUE)
 	sleep(20)
@@ -140,15 +125,10 @@
 	item_state = "giftbag"
 	w_class = WEIGHT_CLASS_BULKY
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/backpack/santabag/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.max_combined_w_class = 60
+	component_type = /datum/component/storage/concrete/backpack/duffelbag/scav
 
 /obj/item/storage/backpack/santabag/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit...</span>")
+	user.visible_message(span_suicide("[user] places [src] over [user.p_their()] head and pulls it tight! It looks like [user.p_they()] [user.p_are()]n't in the Christmas spirit..."))
 	return (OXYLOSS)
 
 /obj/item/storage/backpack/cultpack
@@ -304,12 +284,6 @@
 	icon_state = "goliath_saddle"
 	slot_flags = ITEM_SLOT_BACK
 
-/obj/item/storage/backpack/satchel/bone/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 20
-	STR.max_items = 15
-
 /obj/item/storage/backpack/satchel/cap
 	name = "captain's satchel"
 	desc = "An exclusive satchel for Nanotrasen officers."
@@ -380,7 +354,8 @@
 	desc = "A large duffel bag for holding extra things."
 	icon_state = "duffel"
 	item_state = "duffel"
-	slowdown = 1
+	slowdown = DUFFELBAG_SLOWDOWN
+	component_type = /datum/component/storage/concrete/backpack/duffelbag
 
 /obj/item/storage/backpack/duffelbag/equipment/update_icon_state()
 	if(contents.len == 0)
@@ -389,17 +364,8 @@
 /obj/item/storage/backpack/duffelbag/scavengers
 	name = "scavenger's duffel bag"
 	desc = "An extra large duffel bag for holding extra things."
-	slowdown = 1.2
-
-/obj/item/storage/backpack/duffelbag/scavengers/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 40
-
-/obj/item/storage/backpack/duffelbag/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 30
+	slowdown = DUFFELBAG_SCAV_SLOWDOWN
+	component_type = /datum/component/storage/concrete/backpack/duffelbag/scav
 
 /obj/item/storage/backpack/duffelbag/captain
 	name = "captain's duffel bag"
@@ -496,11 +462,7 @@
 	item_state = "duffel-syndieammo"
 	slowdown = 0
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
-
-/obj/item/storage/backpack/duffelbag/syndie/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.silent = TRUE
+	component_type = /datum/component/storage/concrete/backpack/duffelbag/syndie
 
 /obj/item/storage/backpack/duffelbag/syndie/hitman
 	desc = "A large duffel bag for holding extra things. There is a Nanotrasen logo on the back."
@@ -614,14 +576,14 @@
 
 /obj/item/storage/backpack/duffelbag/syndie/c20rbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
-	new /obj/item/suppressor/specialoffer(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle
 	desc = "A large duffel bag containing a Bulldog, some drums, and a pair of thermal imaging glasses."
 
 /obj/item/storage/backpack/duffelbag/syndie/bulldogbundle/PopulateContents()
 	new /obj/item/ammo_box/magazine/tommygunm45/empty(src)
-	new /obj/item/suppressor/specialoffer(src)
+	new /obj/item/gun_upgrade/muzzle/silencer(src)
 
 /obj/item/storage/backpack/duffelbag/syndie/med/medicalbundle
 	desc = "A large duffel bag containing a tactical medkit, a Donksoft machine gun, a big jumbo box of riot darts, and a knock-off pair of magboots."

@@ -3,7 +3,7 @@
 /obj/structure/fence/corner/wooden{
 	dir = 8
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "e" = (
 /obj/item/shovel,
@@ -17,7 +17,7 @@
 /area/survivalpod)
 "g" = (
 /obj/structure/fence/corner/wooden,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "i" = (
 /obj/structure/fermenting_barrel,
@@ -34,17 +34,16 @@
 /turf/open/floor/f13/wood,
 /area/survivalpod)
 "m" = (
-/turf/open/floor/plating/f13/outside/desert,
+/obj/structure/flora/tallgrass1,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "n" = (
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
-/turf/open/floor/plating/f13/outside/desert,
+/obj/structure/flora/grass/wasteland,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "p" = (
 /obj/structure/legion_extractor,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "r" = (
 /obj/structure/bed,
@@ -53,7 +52,7 @@
 /area/survivalpod)
 "s" = (
 /obj/structure/sink/puddle,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "u" = (
 /obj/structure/table/wood,
@@ -68,19 +67,19 @@
 /area/survivalpod)
 "A" = (
 /obj/machinery/biogenerator,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "B" = (
 /obj/structure/fence/wooden{
 	pixel_y = -8
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "D" = (
 /obj/structure/fence/wooden{
 	dir = 4
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "E" = (
 /obj/structure/fence/wooden{
@@ -89,15 +88,15 @@
 /obj/structure/fence/wooden{
 	pixel_y = 2
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "F" = (
 /obj/structure/reagent_dispensers/compostbin,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "G" = (
 /obj/machinery/hydroponics/soil,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "H" = (
 /obj/machinery/vending/hydronutrients,
@@ -110,16 +109,11 @@
 	},
 /area/survivalpod)
 "K" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 4;
-	icon_state = "dirt"
-	},
+/turf/open/indestructible/ground/outside/dirt/dark,
 /area/f13/wasteland)
 "M" = (
-/turf/open/indestructible/ground/outside/dirt{
-	dir = 8;
-	icon_state = "dirt"
-	},
+/obj/structure/flora/tallgrass2,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "O" = (
 /turf/open/floor/f13/wood,
@@ -128,7 +122,7 @@
 /obj/structure/fence/corner/wooden{
 	dir = 4
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "S" = (
 /obj/item/reagent_containers/food/snacks/grown/wheat,
@@ -143,14 +137,11 @@
 /obj/structure/fence/wooden{
 	pixel_y = 2
 	},
-/obj/structure/fence/wooden{
-	pixel_y = 2
-	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "V" = (
 /mob/living/simple_animal/cow/brahmin,
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "X" = (
 /obj/machinery/smartfridge/bottlerack/seedbin,
@@ -160,7 +151,7 @@
 /obj/structure/simple_door/metal/fence{
 	dir = 8
 	},
-/turf/open/floor/plating/f13/outside/desert,
+/turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
 "Z" = (
 /obj/machinery/vending/hydroseeds,
@@ -169,13 +160,13 @@
 
 (1,1,1) = {"
 a
-n
-n
-n
-n
-n
 T
-n
+T
+T
+T
+T
+T
+T
 E
 a
 "}
@@ -223,8 +214,8 @@ Z
 y
 v
 v
-m
-m
+v
+v
 g
 "}
 (6,1,1) = {"
@@ -234,7 +225,7 @@ O
 O
 y
 y
-v
+K
 K
 K
 K
@@ -246,10 +237,10 @@ O
 O
 O
 J
-v
-v
-v
-v
+K
+K
+K
+K
 "}
 (8,1,1) = {"
 y
@@ -258,10 +249,10 @@ O
 S
 y
 y
-M
-M
-M
-M
+K
+K
+K
+K
 "}
 (9,1,1) = {"
 y
@@ -270,7 +261,7 @@ O
 i
 y
 a
-n
+T
 Y
 B
 a
@@ -282,41 +273,41 @@ y
 y
 y
 D
-m
+v
 m
 V
 D
 "}
 (11,1,1) = {"
-m
-m
-m
-m
-m
+v
+v
+v
+v
+v
 D
 V
-m
-m
+v
+n
 D
 "}
 (12,1,1) = {"
-m
-m
-m
-m
-m
+v
+v
+v
+v
+v
 D
-m
-m
+n
+M
 V
 D
 "}
 (13,1,1) = {"
-m
-m
-m
-m
-m
+v
+v
+v
+v
+v
 Q
 E
 B

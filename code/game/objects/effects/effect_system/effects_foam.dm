@@ -288,7 +288,7 @@
 
 /obj/structure/foamedmetal/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
-	to_chat(user, "<span class='warning'>You hit [src] but bounce off it!</span>")
+	to_chat(user, span_warning("You hit [src] but bounce off it!"))
 	playsound(src.loc, 'sound/weapons/tap.ogg', 100, 1)
 
 /obj/structure/foamedmetal/CanAllowThrough(atom/movable/mover, border_dir)
@@ -328,7 +328,7 @@
 			if(!U.welded)
 				U.welded = TRUE
 				U.update_icon()
-				U.visible_message("<span class='danger'>[U] sealed shut!</span>")
+				U.visible_message(span_danger("[U] sealed shut!"))
 		for(var/mob/living/L in O)
 			L.ExtinguishMob()
 		for(var/obj/item/Item in O)

@@ -75,9 +75,9 @@
 
 /obj/item/clothing/accessory/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>\The [src] can be attached to a uniform. Alt-click to remove it once attached.</span>"
+	. += span_notice("\The [src] can be attached to a uniform. Alt-click to remove it once attached.")
 	if(initial(above_suit))
-		. += "<span class='notice'>\The [src] can be worn above or below your suit. Alt-click to toggle.</span>"
+		. += span_notice("\The [src] can be worn above or below your suit. Alt-click to toggle.")
 
 /obj/item/clothing/accessory/waistcoat
 	name = "waistcoat"
@@ -98,7 +98,7 @@
 	icon_state = "maidapron"
 	item_state = "maidapron"
 	minimize_when_attached = FALSE
-	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service
+	pocket_storage_component_path = /datum/component/storage/concrete/pockets/service/overalls
 
 /obj/item/clothing/accessory/maidapron/Initialize()
 	. = ..()
@@ -124,7 +124,7 @@
 
 		if(M.wear_suit)
 			if((M.wear_suit.flags_inv & HIDEJUMPSUIT)) //Check if the jumpsuit is covered
-				to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits.</span>")
+				to_chat(user, span_warning("Medals can only be pinned on jumpsuits."))
 				return
 
 		if(M.w_uniform)
@@ -134,17 +134,17 @@
 				delay = 0
 			else
 				user.visible_message("[user] is trying to pin [src] on [M]'s chest.", \
-									"<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
+									span_notice("You try to pin [src] on [M]'s chest."))
 			var/input
 			if(!commended && user != M)
 				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
 			if(do_after(user, delay, target = M))
 				if(U.attach_accessory(src, user, 0)) //Attach it, do not notify the user of the attachment
 					if(user == M)
-						to_chat(user, "<span class='notice'>You attach [src] to [U].</span>")
+						to_chat(user, span_notice("You attach [src] to [U]."))
 					else
 						user.visible_message("[user] pins \the [src] on [M]'s chest.", \
-											"<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+											span_notice("You pin \the [src] on [M]'s chest."))
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -154,7 +154,7 @@
 							message_admins("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 
 		else
-			to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits!</span>")
+			to_chat(user, span_warning("Medals can only be pinned on jumpsuits!"))
 	else
 		..()
 
@@ -221,7 +221,6 @@
 /obj/item/clothing/accessory/medal/gold/captain/family
 	name = "old medal"
 	desc = "A rustic badge pure gold, has been through hell and back by the looks."
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 10) //Pure gold
 	custom_materials = list(/datum/material/gold=2000)
 
 /obj/item/clothing/accessory/medal/gold/heroism
@@ -233,13 +232,12 @@
 	desc = "An eccentric medal made of unstable elements."
 	icon_state = "plasma"
 	medaltype = "medal-plasma"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = -10, "acid" = 0) //It's made of plasma. Of course it's flammable.
 	custom_materials = list(/datum/material/plasma=1000)
 
 /obj/item/clothing/accessory/medal/plasma/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
 	if(exposed_temperature > 300)
 		atmos_spawn_air("plasma=20;TEMP=[exposed_temperature]")
-		visible_message("<span class='danger'> \The [src] bursts into flame!</span>","<span class='userdanger'>Your [src] bursts into flame!</span>")
+		visible_message(span_danger(" \The [src] bursts into flame!"),span_userdanger("Your [src] bursts into flame!"))
 		qdel(src)
 
 /obj/item/clothing/accessory/medal/plasma/nobel_science
@@ -301,7 +299,7 @@
 /obj/item/clothing/accessory/lawyers_badge/attack_self(mob/user)
 	if(prob(1))
 		user.say("The testimony contradicts the evidence!", forced = "attorney's badge")
-	user.visible_message("[user] shows [user.p_their()] attorney's badge.", "<span class='notice'>You show your attorney's badge.</span>")
+	user.visible_message("[user] shows [user.p_their()] attorney's badge.", span_notice("You show your attorney's badge."))
 
 /obj/item/clothing/accessory/lawyers_badge/on_uniform_equip(obj/item/clothing/under/U, user)
 	var/mob/living/L = user
@@ -355,7 +353,6 @@
 	desc = "A plastic ornament, intended to protect the important things in life. It's not very good at it."
 	icon_state = "skull"
 	above_suit = TRUE
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /////////////////////
 //Syndie Accessories//
@@ -379,10 +376,11 @@
 	name = "ablative padding"
 	desc = "A thin ultra-refractory composite padding meant to cushion the wearer from energy lasers harm."
 	icon_state = "plastics"
-	armor = list("melee" = 0, "bullet" = 0, "linelaser" = 40, "energy" = 10, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 20, "acid" = -40)
+	armor_tokens = list(ARMOR_MODIFIER_UP_LASER_T3)
 	flags_inv = HIDEACCESSORY
 
 //necklace
+
 /obj/item/clothing/accessory/necklace
 	name = "necklace"
 	desc = "A necklace."

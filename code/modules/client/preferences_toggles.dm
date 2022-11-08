@@ -176,8 +176,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, Toggle_Soundscape)()
 		to_chat(usr, "You will now hear ambient sounds.")
 	else
 		to_chat(usr, "You will no longer hear ambient sounds.")
-		usr.stop_sound_channel(CHANNEL_AMBIENCE)
-		usr.stop_sound_channel(CHANNEL_BUZZ)
+		SEND_SOUND(usr, sound(null))
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ambience", "[usr.client.prefs.toggles & SOUND_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 /datum/verbs/menu/Settings/Sound/Toggle_Soundscape/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_AMBIENCE
@@ -193,8 +192,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_ship_ambience)()
 		to_chat(usr, "You will now hear wasteland ambience.")
 	else
 		to_chat(usr, "You will no longer hear wasteland ambience.")
-		usr.stop_sound_channel(CHANNEL_BUZZ)
-		usr.client.ambience_playing = 0
+		SEND_SOUND(usr, sound(null))
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Wasteland Ambience", "[usr.client.prefs.toggles & SOUND_SHIP_AMBIENCE ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, I bet you read this comment expecting to see the same thing :^)
 /datum/verbs/menu/Settings/Sound/toggle_ship_ambience/Get_checked(client/C)
 	return C.prefs.toggles & SOUND_SHIP_AMBIENCE
@@ -378,9 +376,9 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.inquisitive_ghost = !prefs.inquisitive_ghost
 	prefs.save_preferences()
 	if(prefs.inquisitive_ghost)
-		to_chat(src, "<span class='notice'>You will now examine everything you click on.</span>")
+		to_chat(src, span_notice("You will now examine everything you click on."))
 	else
-		to_chat(src, "<span class='notice'>You will no longer examine things you click on.</span>")
+		to_chat(src, span_notice("You will no longer examine things you click on."))
 	SSblackbox.record_feedback("nested tally", "preferences_verb", 1, list("Toggle Ghost Inquisitiveness", "[prefs.inquisitive_ghost ? "Enabled" : "Disabled"]"))
 
 //Admin Preferences
@@ -425,7 +423,7 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 		return
 	prefs.toggles ^= SPLIT_ADMIN_TABS
 	prefs.save_preferences()
-	to_chat(src, "<span class='infoplain'>Admin tabs will now [(prefs.toggles & SPLIT_ADMIN_TABS) ? "be" : "not be"] split.</span>")
+	to_chat(src, span_infoplain("Admin tabs will now [(prefs.toggles & SPLIT_ADMIN_TABS) ? "be" : "not be"] split."))
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Split Admin Tabs", "[prefs.toggles & SPLIT_ADMIN_TABS ? "Enabled" : "Disabled"]"))
 
 /client/proc/deadchat()
@@ -445,3 +443,12 @@ GLOBAL_LIST_INIT(ghost_orbits, list(GHOST_ORBIT_CIRCLE,GHOST_ORBIT_TRIANGLE,GHOS
 	prefs.save_preferences()
 	to_chat(src, "You will [(prefs.chat_toggles & CHAT_PRAYER) ? "now" : "no longer"] see prayerchat.")
 	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Prayer Visibility", "[prefs.chat_toggles & CHAT_PRAYER ? "Enabled" : "Disabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/RemoteLOOC()
+	set name = "Show/Hide Remote LOOC"
+	set category = "Preferences.Admin"
+	set desc ="Toggles seeing (R)LOOC messages."
+	prefs.chat_toggles ^= CHAT_REMOTE_LOOC
+	prefs.save_preferences()
+	to_chat(src, "You will [(prefs.chat_toggles & CHAT_REMOTE_LOOC) ? "no longer" : "now"] see (R) LOOC messages.")
+	SSblackbox.record_feedback("nested tally", "admin_toggle", 1, list("Toggle Remote LOOC Visibility", "[prefs.chat_toggles & CHAT_REMOTE_LOOC ? "Disabled" : "Enabled"]")) //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc! | Haha, funny. no. I refuse to not look like the others.

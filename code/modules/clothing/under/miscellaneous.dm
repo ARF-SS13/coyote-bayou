@@ -217,7 +217,7 @@
 	desc = "A special containment suit that allows lifeforms to exist safely in an oxygenated environment, and automatically extinguishes them in a crisis. Despite being airtight, it's not spaceworthy."
 	icon_state = "plasmaman"
 	item_state = "plasmaman"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 100, "rad" = 0, "fire" = 95, "acid" = 95)
+	armor_tokens = list(ARMOR_MODIFIER_UP_ENV_T3)
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	mutantrace_variation = USE_TAUR_CLIP_MASK
 	can_adjust = FALSE
@@ -228,7 +228,7 @@
 
 /obj/item/clothing/under/plasmaman/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>There are [extinguishes_left] extinguisher charges left in this suit.</span>"
+	. += span_notice("There are [extinguishes_left] extinguisher charges left in this suit.")
 
 /obj/item/clothing/under/plasmaman/proc/Extinguish(mob/living/carbon/human/H)
 	if(!istype(H))
@@ -239,7 +239,7 @@
 				return
 			next_extinguish = world.time + extinguish_cooldown
 			extinguishes_left--
-			H.visible_message("<span class='warning'>[H]'s suit automatically extinguishes [H.p_them()]!</span>","<span class='warning'>Your suit automatically extinguishes you.</span>")
+			H.visible_message(span_warning("[H]'s suit automatically extinguishes [H.p_them()]!"),span_warning("Your suit automatically extinguishes you."))
 			H.ExtinguishMob()
 			new /obj/effect/particle_effect/water(get_turf(H))
 	return 0
@@ -248,11 +248,11 @@
 	..()
 	if (istype(E, /obj/item/extinguisher_refill))
 		if (extinguishes_left == 5)
-			to_chat(user, "<span class='notice'>The inbuilt extinguisher is full.</span>")
+			to_chat(user, span_notice("The inbuilt extinguisher is full."))
 			return
 		else
 			extinguishes_left = 5
-			to_chat(user, "<span class='notice'>You refill the suit's built-in extinguisher, using up the cartridge.</span>")
+			to_chat(user, span_notice("You refill the suit's built-in extinguisher, using up the cartridge."))
 			qdel(E)
 			return
 	return
@@ -278,7 +278,6 @@
 	icon_state = "durathread"
 	item_state = "durathread"
 	can_adjust = TRUE
-	armor = list("melee" = 10, "laser" = 10, "fire" = 40, "acid" = 10, "bomb" = 5)
 
 /obj/item/clothing/under/misc/durathread/skirt
 	name = "durathread jumpskirt"
@@ -320,6 +319,7 @@
 	body_parts_covered = CHEST|GROIN
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_hidden = 0
 
 /obj/item/clothing/under/misc/stripper/green
 	name = "green stripper outfit"

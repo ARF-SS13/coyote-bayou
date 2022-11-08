@@ -114,7 +114,7 @@ Head of Security
 	shoes = 		/obj/item/clothing/shoes/jackboots
 	suit = 			/obj/item/clothing/suit/armor/medium/vest/alt
 	head = 			/obj/item/clothing/head/collectable/police/cos
-	belt = 			/obj/item/storage/belt/security
+	belt = 			/obj/item/storage/belt/army/security
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	r_hand =		/obj/item/gun/ballistic/automatic/pistol/n99
 	r_pocket = 		/obj/item/assembly/flash/handheld
@@ -251,7 +251,7 @@ Security Officer
 	suit =			/obj/item/clothing/suit/armor/medium/vest
 	glasses = 		/obj/item/clothing/glasses/sunglasses
 	shoes = 		/obj/item/clothing/shoes/jackboots
-	belt = 			/obj/item/storage/belt/security
+	belt = 			/obj/item/storage/belt/army/security
 	r_hand =		/obj/item/gun/ballistic/automatic/pistol/n99
 	l_pocket = 		/obj/item/restraints/handcuffs
 	r_pocket = 		/obj/item/assembly/flash/handheld

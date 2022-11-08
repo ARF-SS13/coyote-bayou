@@ -26,10 +26,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_BOS = RADIO_CHANNEL_BOS,
 	RADIO_KEY_ENCLAVE = RADIO_CHANNEL_ENCLAVE,
 	RADIO_KEY_TOWN = RADIO_CHANNEL_TOWN,
-	RADIO_KEY_LEGION = RADIO_CHANNEL_LEGION,
+	RADIO_KEY_TOWN_PD = RADIO_CHANNEL_TOWN_PD,
 	RADIO_KEY_RANGER = RADIO_CHANNEL_RANGER,
-	RADIO_KEY_DEN = RADIO_CHANNEL_DEN,
-	RADIO_KEY_KHANS = RADIO_CHANNEL_KHANS,
+	RADIO_KEY_TOWN_MAYOR = RADIO_CHANNEL_TOWN_MAYOR,
+	RADIO_KEY_TOWN_COMMERCE = RADIO_CHANNEL_TOWN_COMMERCE,
 
 	// Admin
 	MODE_KEY_ADMIN = MODE_ADMIN,
@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return new_msg
 
-/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, just_chat)
 	var/static/list/crit_allowed_modes = list(MODE_WHISPER = TRUE, MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		say_dead(original_message)
 		return
 
-	if(check_emote(original_message) || !can_speak_basic(original_message, ignore_spam))
+	if(check_emote(original_message, just_runechat = just_chat) || !can_speak_basic(original_message, ignore_spam))
 		return
 
 	if(in_critical)
@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		return
 
 	if(!can_speak_vocal(message))
-		to_chat(src, "<span class='warning'>You find yourself unable to speak!</span>")
+		to_chat(src, span_warning("You find yourself unable to speak!"))
 		return
 
 	var/message_range = 7
@@ -235,7 +235,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
 		spans |= SPAN_ITALICS
 */
-	send_speech(message, message_range, src, bubble_type, spans, language, message_mode)
+	send_speech(message, message_range, src, bubble_type, spans, language, message_mode, just_chat)
 
 	if(succumbed)
 		succumb()
@@ -249,9 +249,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		var/turf/sourceturf = get_turf(source)
 		var/turf/T = get_turf(src)
 		if(sourceturf && T && !(sourceturf in get_hear(5, T)))
-			. = "<span class='small'>[.]</span>"
+			. = span_small("[.]")
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source)
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, atom/movable/source, just_chat = FALSE)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args) //parent calls can't overwrite the current proc args.
 	if(!client)
 		return
@@ -262,20 +262,22 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			deaf_message = "<span class='name'>[speaker]</span> [speaker.verb_say] something but you cannot hear [speaker.p_them()]."
 			deaf_type = 1
 	else
-		deaf_message = "<span class='notice'>You can't hear yourself!</span>"
+		deaf_message = span_notice("You can't hear yourself!")
 		deaf_type = 2 // Since you should be able to hear yourself without looking
 
 	// Create map text prior to modifying message for goonchat
 	if (client?.prefs?.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
 		create_chat_message(speaker, message_language, raw_message, spans)
 
+	if(just_chat)
+		return
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode, FALSE, source)
 
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	return message
 
-/mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode)
+/mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, just_chat)
 	//var/stutter_chance = max(0, 40-special_c*10)//SPECIAL Integration
 	//if(prob(stutter_chance))
 	//	stuttering += 5
@@ -314,9 +316,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
 		if(eavesdrop_range && get_dist(source, AM) > message_range && !(the_dead[AM]))
-			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, source)
+			AM.Hear(eavesrendered, src, message_language, eavesdropping, null, spans, message_mode, source, just_chat)
 		else
-			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, source)
+			AM.Hear(rendered, src, message_language, message, null, spans, message_mode, source, just_chat)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble
@@ -338,7 +340,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/proc/can_speak_basic(message, ignore_spam = FALSE) //Check BEFORE handling of xeno and ling channels
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
-			to_chat(src, "<span class='danger'>You cannot speak in IC (muted).</span>")
+			to_chat(src, span_danger("You cannot speak in IC (muted)."))
 			return 0
 		if(!ignore_spam && client.handle_spam_prevention(message,MUTE_IC))
 			return 0

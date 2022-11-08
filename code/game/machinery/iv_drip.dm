@@ -76,36 +76,36 @@
 		return
 
 	if(attached)
-		visible_message("<span class='warning'>[attached] is detached from [src].</span>")
+		visible_message(span_warning("[attached] is detached from [src]."))
 		attached = null
 		update_icon()
 		return
 
 	if(!target.has_dna())
-		to_chat(usr, "<span class='danger'>The drip beeps: Warning, incompatible creature!</span>")
+		to_chat(usr, span_danger("The drip beeps: Warning, incompatible creature!"))
 		return
 
 	if(Adjacent(target) && usr.Adjacent(target))
 		if(beaker)
-			usr.visible_message("<span class='warning'>[usr] attaches [src] to [target].</span>", "<span class='notice'>You attach [src] to [target].</span>")
+			usr.visible_message(span_warning("[usr] attaches [src] to [target]."), span_notice("You attach [src] to [target]."))
 			log_combat(usr, target, "attached", src, "containing: [beaker.name] - ([beaker.reagents.log_list()])")
 			add_fingerprint(usr)
 			attached = target
 			START_PROCESSING(SSmachines, src)
 			update_icon()
 		else
-			to_chat(usr, "<span class='warning'>There's nothing attached to the IV drip!</span>")
+			to_chat(usr, span_warning("There's nothing attached to the IV drip!"))
 
 
 /obj/machinery/iv_drip/attackby(obj/item/W, mob/user, params)
 	if(is_type_in_typecache(W, drip_containers))
 		if(beaker)
-			to_chat(user, "<span class='warning'>There is already a reagent container loaded!</span>")
+			to_chat(user, span_warning("There is already a reagent container loaded!"))
 			return
 		if(!user.transferItemToLoc(W, src))
 			return
 		beaker = W
-		to_chat(user, "<span class='notice'>You attach [W] to [src].</span>")
+		to_chat(user, span_notice("You attach [W] to [src]."))
 		user.log_message("attached a [W] to [src] at [AREACOORD(src)] containing ([beaker.reagents.log_list()])", LOG_ATTACK)
 		add_fingerprint(user)
 		update_icon()
@@ -123,7 +123,7 @@
 		return PROCESS_KILL
 
 	if(!(get_dist(src, attached) <= 1 && isturf(attached.loc)))
-		to_chat(attached, "<span class='userdanger'>The IV drip needle is ripped out of you!</span>")
+		to_chat(attached, span_userdanger("The IV drip needle is ripped out of you!"))
 		attached.apply_damage(3, BRUTE, pick(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM))
 		attached = null
 		update_icon()
@@ -156,7 +156,7 @@
 				return
 
 			// If the human is losing too much blood, beep.
-			if(attached.blood_volume < ((BLOOD_VOLUME_SAFE*attached.blood_ratio) && prob(5) && ishuman(attached))) //really couldn't care less about monkeys
+			if(attached.get_blood(FALSE) < ((BLOOD_VOLUME_SAFE*attached.blood_ratio) && prob(5) && ishuman(attached))) //really couldn't care less about monkeys
 				visible_message("[src] beeps loudly.")
 				playsound(loc, 'sound/machines/twobeep.ogg', 50, 1)
 			attached.transfer_blood_to(beaker, amount)
@@ -178,10 +178,10 @@
 		return
 	if(dripfeed)
 		dripfeed = FALSE
-		to_chat(usr, "<span class='notice'>You loosen the valve to speed up the [src].</span>")
+		to_chat(usr, span_notice("You loosen the valve to speed up the [src]."))
 	else
 		dripfeed = TRUE
-		to_chat(usr, "<span class='notice'>You tighten the valve to slowly drip-feed the contents of [src].</span>")
+		to_chat(usr, span_notice("You tighten the valve to slowly drip-feed the contents of [src]."))
 
 /obj/machinery/iv_drip/attack_robot(mob/user)
 	if(Adjacent(user))
@@ -193,7 +193,7 @@
 	set src in view(1)
 
 	if(!isliving(usr))
-		to_chat(usr, "<span class='warning'>You can't do that!</span>")
+		to_chat(usr, span_warning("You can't do that!"))
 		return
 
 	if(usr.incapacitated())
@@ -213,7 +213,7 @@
 	set src in view(1)
 
 	if(!isliving(usr))
-		to_chat(usr, "<span class='warning'>You can't do that!</span>")
+		to_chat(usr, span_warning("You can't do that!"))
 		return
 
 	if(usr.incapacitated())

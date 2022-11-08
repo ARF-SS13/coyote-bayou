@@ -23,6 +23,8 @@
 	var/ratingdesc = TRUE
 	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
 	rad_flags = RAD_NO_CONTAMINATE // Prevent the same cheese as with the stock parts
+	obj_flags = CAN_BE_HIT // so you can LICK it
+	tastes = list("tangy metal" = 1)
 
 /obj/item/stock_parts/cell/get_cell()
 	return src
@@ -38,9 +40,11 @@
 	if(ratingdesc)
 		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
 	update_icon()
+	RegisterSignal(src, COMSIG_ATOM_LICKED, .proc/lick_battery)
 
 /obj/item/stock_parts/cell/Destroy()
 	STOP_PROCESSING(SSobj, src)
+	UnregisterSignal(src, COMSIG_ATOM_LICKED)
 	return ..()
 
 /obj/item/stock_parts/cell/vv_edit_var(var_name, var_value)
@@ -99,12 +103,12 @@
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
 	if(rigged)
-		to_chat(user, "<span class='danger'>This power cell seems to be faulty!</span>")
+		to_chat(user, span_danger("This power cell seems to be faulty!"))
 	else
 		to_chat(user, "The charge meter reads [round(src.percent() )]%.")
 
 /obj/item/stock_parts/cell/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is licking the electrodes of [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return (FIRELOSS)
 
 /obj/item/stock_parts/cell/on_reagent_change(changetype)
@@ -156,22 +160,22 @@
 	if(isethereal(user))
 		var/mob/living/carbon/human/H = user
 		if(charge < 100)
-			to_chat(H, "<span class='warning'>The [src] doesn't have enough power!</span>")
+			to_chat(H, span_warning("The [src] doesn't have enough power!"))
 			return
 		var/obj/item/organ/stomach/ethereal/stomach = H.getorganslot(ORGAN_SLOT_STOMACH)
 		if(stomach.crystal_charge > 146)
-			to_chat(H, "<span class='warning'>Your charge is full!</span>")
+			to_chat(H, span_warning("Your charge is full!"))
 			return
-		to_chat(H, "<span class='notice'>You clumsily channel power through the [src] and into your body, wasting some in the process.</span>")
+		to_chat(H, span_notice("You clumsily channel power through the [src] and into your body, wasting some in the process."))
 		if(do_after(user, 5, target = src))
 			if((charge < 100) || (stomach.crystal_charge > 146))
 				return
 			if(istype(stomach))
-				to_chat(H, "<span class='notice'>You receive some charge from the [src].</span>")
+				to_chat(H, span_notice("You receive some charge from the [src]."))
 				stomach.adjust_charge(3)
 				charge -= 100 //you waste way more than you receive, so that ethereals cant just steal one cell and forget about hunger
 			else
-				to_chat(H, "<span class='warning'>You can't receive charge from the [src]!</span>")
+				to_chat(H, span_warning("You can't receive charge from the [src]!"))
 		return
 
 /obj/item/stock_parts/cell/blob_act(obj/structure/blob/B)
@@ -182,6 +186,23 @@
 		return clamp(round(charge/10000), 10, 90) + rand(-5,5)
 	else
 		return 0
+
+/obj/item/stock_parts/cell/proc/lick_battery(atom/A, mob/living/carbon/licker, obj/item/hand_item/tongue)
+	if(!iscarbon(licker) || !istype(tongue))
+		return FALSE
+	var/mob/living/carbon/battery_licker = licker
+	var/damage = get_electrocute_damage()
+	if(damage > 2)
+		playsound(licker, 'sound/magic/lightningshock.ogg', 100, TRUE)
+		licker.visible_message(
+			span_warning("[licker] licks \the [src], discharging it right into their body!"),
+			span_userdanger("You lick \the [src], and it shocks the everloving daylights out of you!"),
+			span_warning("You hear a meaty ZAP!")
+		)
+		battery_licker.electrocute_act(damage, src, tongue.siemens_coefficient)
+		use(maxcharge*0.5)
+		return TRUE
+	return FALSE
 
 /obj/item/stock_parts/cell/get_part_rating()
 	return rating * maxcharge
@@ -463,7 +484,7 @@
 	desc = "An energy cell, typically used as ammunition for small-arms energy weapons."
 	icon = 'icons/fallout/objects/powercells.dmi'
 	icon_state = "ec-full"
-	maxcharge = 1600
+	maxcharge = 1500
 
 // Microfusion breeder? Okay, sure.
 /obj/item/stock_parts/cell/ammo/breeder

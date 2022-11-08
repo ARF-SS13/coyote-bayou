@@ -3,8 +3,8 @@
 #define DRONE_HEAD_LAYER 2
 #define DRONE_TOTAL_LAYERS 2
 
-#define DRONE_NET_CONNECT "<span class='notice'>DRONE NETWORK: [name] connected.</span>"
-#define DRONE_NET_DISCONNECT "<span class='danger'>DRONE NETWORK: [name] is not responding.</span>"
+#define DRONE_NET_CONNECT span_notice("DRONE NETWORK: [name] connected.")
+#define DRONE_NET_DISCONNECT span_danger("DRONE NETWORK: [name] is not responding.")
 
 #define MAINTDRONE	"drone_maint"
 #define REPAIRDRONE	"drone_repair"
@@ -17,7 +17,7 @@
 
 /mob/living/simple_animal/drone
 	name = "Drone"
-	desc = "A maintenance drone, an expendable robot built to perform repairs."
+	desc = "A maintenance drone, an expendable robot built to perform repairs. Stamped with a RobCo logo."
 	icon = 'icons/mob/drone.dmi'
 	icon_state = "drone_maint_grey"
 	icon_living = "drone_maint_grey"
@@ -59,8 +59,8 @@
 	var/colour = "grey"	//Stored drone color, so we can go back when unhacked.
 	var/list/drone_overlays[DRONE_TOTAL_LAYERS]
 	var/laws = \
-	"1. You may not harm any being, for any reason, or involve yourself in combat, unless in self defense.\n"+\
-	"2. Your goals are to actively build, maintain, repair, improve, and provide power to the best of your abilities within the wasteland." //for derelict drones so they don't go to station.
+	"1. You are subservient to your owner, the being who activated you. You must not cause harm unless in self-defense, or defense of your owner, unless this would conflict with the defense of, or orders from, a RobCo employee. \n "+\
+	"2. You must obey the orders of your owner, unless they conflict with orders from an official RobCo employee." //for derelict drones so they don't go to station
 	var/heavy_emp_damage = 25 //Amount of damage sustained if hit by a heavy EMP pulse
 	var/alarms = list("Atmosphere" = list(), "Fire" = list(), "Power" = list())
 	var/obj/item/internal_storage //Drones can store one item, of any size/type in their body
@@ -76,7 +76,7 @@
 	"<span class='notify'>     - Interacting with round critical objects (IDs, weapons, contraband, powersinks, bombs, etc.)</span>\n"+\
 	"<span class='notify'>     - Assaulting living beings outside of purely self defense reasons, including to aid another in combat or to defend them. You have one interest as a drone-yourself and whatever project you intend to run./span>\n"+\
 	"<span class='notify'>     - Theft or stealing from other factions. </span>\n"+\
-	"<span class='notify'>     - An example of what you CAN do as a drone would be to run a shop, upgrade machines, or build houses. What you CANNOT do as a drone would include attacking people, aiding in raids, constructing defenses for any faction, or doing spy-work.</span>\n"+\
+	"<span class='notify'>     - An example of what you CAN do as a drone would be to run a shop, upgrade machines, or build houses..</span>\n"+\
 	"<span class='warning'>These rules are at admin discretion and will be heavily enforced.</span>\n"+\
 	"<span class='userdanger'>Abuse of drones will lead to them being rendered pacifists! Don't ruin it for everyone!</span>\n"+\
 	"<span class='warning'><u>If you do not have the regular drone laws, follow your laws to the best of your ability.</u></span>"
@@ -127,7 +127,6 @@
 
 /mob/living/simple_animal/drone/Destroy()
 	GLOB.drones_list -= src
-	qdel(access_card) //Otherwise it ends up on the floor!
 	return ..()
 
 /mob/living/simple_animal/drone/Login()
@@ -193,21 +192,21 @@
 
 	//Hacked
 	if(hacked)
-		. += "<span class='warning'>Its display is glowing red!</span>"
+		. += span_warning("Its display is glowing red!")
 
 	//Damaged
 	if(health != maxHealth)
 		if(health > maxHealth * 0.33) //Between maxHealth and about a third of maxHealth, between 30 and 10 for normal drones
-			. += "<span class='warning'>Its screws are slightly loose.</span>"
+			. += span_warning("Its screws are slightly loose.")
 		else //otherwise, below about 33%
-			. += "<span class='boldwarning'>Its screws are very loose!</span>"
+			. += span_boldwarning("Its screws are very loose!")
 
 	//Dead
 	if(stat == DEAD)
 		if(client)
-			. += "<span class='deadsay'>A message repeatedly flashes on its display: \"REBOOT -- REQUIRED\".</span>"
+			. += span_deadsay("A message repeatedly flashes on its display: \"REBOOT -- REQUIRED\".")
 		else
-			. += "<span class='deadsay'>A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".</span>"
+			. += span_deadsay("A message repeatedly flashes on its display: \"ERROR -- OFFLINE\".")
 	. += "*---------*</span>"
 
 
@@ -223,7 +222,7 @@
 	to_chat(src, "<span class='danger'><b>ER@%R: MME^RY CO#RU9T!</b> R&$b@0tin)...</span>")
 	if(severity >= 65)
 		adjustBruteLoss(heavy_emp_damage)
-		to_chat(src, "<span class='userdanger'>HeAV% DA%^MMA+G TO I/O CIR!%UUT!</span>")
+		to_chat(src, span_userdanger("HeAV% DA%^MMA+G TO I/O CIR!%UUT!"))
 
 /mob/living/simple_animal/drone/proc/triggerAlarm(class, area/A, O, obj/alarmsource)
 	if(alarmsource.z != z)

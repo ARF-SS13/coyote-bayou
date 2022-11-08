@@ -19,7 +19,7 @@
 	usesound = list('sound/items/screwdriver.ogg', 'sound/items/screwdriver2.ogg')
 	tool_behaviour = TOOL_SCREWDRIVER
 	toolspeed = 1
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 30)
+	armor = ARMOR_VALUE_GENERIC_ITEM
 	var/random_color = TRUE //if the screwdriver uses random coloring
 	var/static/list/screwdriver_colors = list(
 		"blue" = rgb(24, 97, 213),
@@ -35,7 +35,7 @@
 	bare_wound_bonus = 5
 
 /obj/item/screwdriver/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is stabbing [src] into [user.p_their()] [pick("temple", "heart")]! It looks like [user.p_theyre()] trying to commit suicide!"))
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/Initialize()
@@ -130,13 +130,13 @@
 	random_color = FALSE
 
 /obj/item/screwdriver/power/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	user.visible_message(span_suicide("[user] is putting [src] to [user.p_their()] temple. It looks like [user.p_theyre()] trying to commit suicide!"))
 	return(BRUTELOSS)
 
 /obj/item/screwdriver/power/attack_self(mob/user)
 	playsound(get_turf(user),'sound/items/change_drill.ogg',50,1)
 	var/obj/item/wrench/power/b_drill = new /obj/item/wrench/power(drop_location())
-	to_chat(user, "<span class='notice'>You attach the bolt driver bit to [src].</span>")
+	to_chat(user, span_notice("You attach the bolt driver bit to [src]."))
 	qdel(src)
 	user.put_in_active_hand(b_drill)
 

@@ -33,12 +33,12 @@
 
 /// Visual effect setup for starting a directional block
 /mob/living/proc/active_block_effect_start()
-	visible_message("<span class='warning'>[src] raises their [active_block_item], dropping into a defensive stance!</span>")
+	visible_message(span_warning("[src] raises their [active_block_item], dropping into a defensive stance!"))
 	animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, FALSE, SINE_EASING | EASE_OUT)
 
 /// Visual effect cleanup for starting a directional block
 /mob/living/proc/active_block_effect_end()
-	visible_message("<span class='warning'>[src] lowers their [active_block_item].</span>")
+	visible_message(span_warning("[src] lowers their [active_block_item]."))
 	animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, FALSE, SINE_EASING | EASE_IN)
 
 /mob/living/proc/continue_starting_active_block()
@@ -78,33 +78,33 @@
 	if(combat_flags & (COMBAT_FLAG_ACTIVE_BLOCK_STARTING | COMBAT_FLAG_ACTIVE_BLOCKING))
 		return FALSE
 	if(!(combat_flags & COMBAT_FLAG_BLOCK_CAPABLE))
-		to_chat(src, "<span class='warning'>You're not something that can actively block.</span>")
+		to_chat(src, span_warning("You're not something that can actively block."))
 		return FALSE
 	// QOL: Instead of trying to just block with held item, grab first available item.
 	var/obj/item/I = find_active_block_item()
 	var/list/other_items = list()
 	if(SEND_SIGNAL(src, COMSIG_LIVING_ACTIVE_BLOCK_START, I, other_items) & COMPONENT_PREVENT_BLOCK_START)
-		to_chat(src, "<span class='warning'>Something is preventing you from blocking!</span>")
+		to_chat(src, span_warning("Something is preventing you from blocking!"))
 		return
 	if(!I)
 		if(!length(other_items))
-			to_chat(src, "<span class='warning'>You can't block with your bare hands!</span>")
+			to_chat(src, span_warning("You can't block with your bare hands!"))
 			return
 		I = other_items[1]
 	if(!I.can_active_block())
-		to_chat(src, "<span class='warning'>[I] is either not capable of being used to actively block, or is not currently in a state that can! (Try wielding it if it's twohanded, for example.)</span>")
+		to_chat(src, span_warning("[I] is either not capable of being used to actively block, or is not currently in a state that can! (Try wielding it if it's twohanded, for example.)"))
 		return
 	// QOL: Attempt to toggle on combat mode if it isn't already
 	SEND_SIGNAL(src, COMSIG_ENABLE_COMBAT_MODE)
 	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_INACTIVE))
-		to_chat(src, "<span class='warning'>You must be in combat mode to actively block!</span>")
+		to_chat(src, span_warning("You must be in combat mode to actively block!"))
 		return FALSE
 	var/datum/block_parry_data/data = I.get_block_parry_data()
 	var/delay = data.block_start_delay
 	combat_flags |= COMBAT_FLAG_ACTIVE_BLOCK_STARTING
 	animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = delay, FALSE, SINE_EASING | EASE_IN)
 	if(!do_after_advanced(src, delay, src, DO_AFTER_REQUIRES_USER_ON_TURF|DO_AFTER_NO_COEFFICIENT, CALLBACK(src, .proc/continue_starting_active_block), MOBILITY_USE, null, null, I))
-		to_chat(src, "<span class='warning'>You fail to raise [I].</span>")
+		to_chat(src, span_warning("You fail to raise [I]."))
 		combat_flags &= ~(COMBAT_FLAG_ACTIVE_BLOCK_STARTING)
 		animate(src, pixel_x = get_standard_pixel_x_offset(), pixel_y = get_standard_pixel_y_offset(), time = 2.5, FALSE, SINE_EASING | EASE_IN, ANIMATION_END_NOW)
 		return
@@ -234,9 +234,9 @@
 	. = BLOCK_SHOULD_CHANGE_DAMAGE
 	if((final_damage <= 0) || (damage <= 0))
 		. |= BLOCK_SUCCESS			//full block
-		owner.visible_message("<span class='warning'>[owner] blocks \the [attack_text] with [src]!</span>")
+		owner.visible_message(span_warning("[owner] blocks \the [attack_text] with [src]!"))
 	else
-		owner.visible_message("<span class='warning'>[owner] dampens \the [attack_text] with [src]!</span>")
+		owner.visible_message(span_warning("[owner] dampens \the [attack_text] with [src]!"))
 	block_return[BLOCK_RETURN_PROJECTILE_BLOCK_PERCENTAGE] = data.block_projectile_mitigation
 	if(length(data.block_sounds))
 		playsound(loc, pickweight(data.block_sounds), 75, TRUE)

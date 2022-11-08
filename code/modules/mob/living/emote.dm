@@ -42,16 +42,16 @@
 	message = "chuckles."
 	emote_type = EMOTE_AUDIBLE
 
-/* Sunset Attempt - I tried bro ~TK  This lets females have a chuckle, but males don't.  idk man, I'm dumb.
-/datum/emote/living/chuckle/get_sound(mob/living/user) //Sunset Edit -TK
+
+/datum/emote/living/chuckle/get_sound(mob/living/M) 
 	. = ..()
-	if(ishuman(user))
-		if(user.gender == FEMALE)
+	if(ishuman(M))
+		if(M.gender == FEMALE)
 			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 		else
 			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
-		return sound
-*/
+		return 
+
 
 /datum/emote/living/collapse
 	key = "collapse"
@@ -75,6 +75,15 @@
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
 		return FALSE
+
+/datum/emote/living/cough/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_cough.ogg'
+		else
+			sound = 'sound/effects/male_cough.ogg'
+		return 
 
 /datum/emote/living/dance
 	key = "dance"
@@ -173,6 +182,15 @@
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
+/datum/emote/living/gasp/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_gasp.ogg'
+		else
+			sound = 'sound/effects/male_gasp.ogg'
+		return 
+
 /datum/emote/living/giggle
 	key = "giggle"
 	key_third_person = "giggles"
@@ -249,11 +267,17 @@
 		if(isinsect(human_user))
 			return 'sound/voice/moth/mothchitter.ogg'
 
+/*
 /datum/emote/living/look
 	key = "look"
 	key_third_person = "looks"
 	message = "looks."
-	message_param = "looks at %t."
+	key_third_person = "seems to be looking around for something."
+	message = "seems to be looking around for something."
+	if(ckey = "tk420634")
+		key_third_person = "tries to look look around, but can't look up because they're a dog."
+		message = "tries to look look around, but can't look up because they're a dog."
+*/
 
 /datum/emote/living/nod
 	key = "nod"
@@ -337,6 +361,16 @@
 	key_third_person = "sneezes"
 	message = "sneezes."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/sneeze/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/female_sneeze.ogg'
+		else
+			sound = 'sound/effects/male_sneeze.ogg'
+		return 
+
 
 /datum/emote/living/smug
 	key = "smug"
@@ -436,14 +470,15 @@
 	key = "me"
 	key_third_person = "custom"
 	message = null
+	emote_type = EMOTE_VISIBLE
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
-		to_chat(user, "<span class='danger'>Invalid emote.</span>")
+		to_chat(user, span_danger("Invalid emote."))
 		return TRUE
 	return FALSE
 
-/datum/emote/living/custom/run_emote(mob/user, params, type_override = null)
+/datum/emote/living/custom/run_emote(mob/user, params, type_override = null, only_overhead)
 	if(jobban_isbanned(user, "emote"))
 		to_chat(user, "You cannot send custom emotes (banned).")
 		return FALSE
@@ -454,16 +489,11 @@
 		return FALSE
 	else if(!params)
 		var/custom_emote = stripped_multiline_input_or_reflect(user, "Choose an emote to display.", "Custom Emote", null, MAX_MESSAGE_LEN)
-		if(custom_emote && !check_invalid(user, custom_emote))
-			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
-			switch(type)
-				if("Visible")
-					emote_type = EMOTE_VISIBLE
-				if("Hearable")
-					emote_type = EMOTE_AUDIBLE
-				else
-					return
-			message = custom_emote
+		if(!custom_emote)
+			return FALSE
+		if(check_invalid(user, custom_emote))
+			return FALSE
+		message = custom_emote
 	else
 		message = params
 		if(type_override)
@@ -471,7 +501,6 @@
 	message = user.say_emphasis(message)
 	. = ..()
 	message = null
-	emote_type = EMOTE_VISIBLE
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
 	return message
@@ -525,10 +554,10 @@
 	. = ..()
 	var/obj/item/circlegame/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You make a circle with your hand.</span>")
+		to_chat(user, span_notice("You make a circle with your hand."))
 	else
 		qdel(N)
-		to_chat(user, "<span class='warning'>You don't have any free hands to make a circle with.</span>")
+		to_chat(user, span_warning("You don't have any free hands to make a circle with."))
 
 /datum/emote/living/slap
 	key = "slap"
@@ -541,9 +570,9 @@
 		return
 	var/obj/item/slapper/N = new(user)
 	if(user.put_in_hands(N))
-		to_chat(user, "<span class='notice'>You ready your slapping hand.</span>")
+		to_chat(user, span_notice("You ready your slapping hand."))
 	else
-		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
+		to_chat(user, span_warning("You're incapable of slapping in your current state."))
 
 /datum/emote/living/audible/blorble
 	key = "blorble"
@@ -796,6 +825,19 @@
 	key_third_person = "aflapas"
 	message = "flaps their arms ANGRILY!!"
 
+/datum/emote/wah
+	key = "wah"
+	key_third_person = "squeaks like a wah!"
+	message = "squeaks like a wah!"
+
+
+/datum/emote/wah/run_emote(mob/user, params) //Player triggers the emote
+	. = ..() // the glyph of power
+	if(. && iscarbon(user)) // Are they a carbon mob?
+		var/mob/living/carbon/C = user
+		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
+			pick(playsound(C, 'sound/f13effects/sunsetsounds/wah1.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah2.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah3.ogg', 34, 1),)
+
 /datum/emote/weh
 	key = "weh"
 	key_third_person = "wehs"
@@ -836,6 +878,10 @@
 	message = "squeaks!"
 	sound = 'sound/f13effects/sunsetsounds/squeak_moth.ogg'
 
+/datum/emote/look
+	key = "look"
+	key_third_person = "makes a fennec-y bark"
+	message = "makes a fennec-y bark!"
 
 #define EMOTE_SPECIAL_STR "Strength"
 #define EMOTE_SPECIAL_PER "Perception"
@@ -1149,7 +1195,7 @@ GLOBAL_LIST_INIT(special_phrases, list(
 		return FALSE
 
 	var/special_noun = null
-	var/special_phrase_input = special_override ? special_override : params
+	var/special_phrase_input = special_override ? special_override : lowertext(params)
 
 	for(var/which_special in GLOB.special_skill_list)
 		/// if the thing we said after the emote is in one of these lists, pick the corresponding key

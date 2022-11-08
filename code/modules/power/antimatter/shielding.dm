@@ -9,8 +9,8 @@
 	return things
 
 /obj/machinery/am_shielding
-	name = "antimatter reactor section"
-	desc = "This device was built using a plasma life-form that seems to increase plasma's natural ability to react with neutrinos while reducing the combustibility."
+	name = "fission reactor section"
+	desc = "A component section for a General Atomics fission reactor. Built specially for Vault-Tec."
 
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "shield"
@@ -33,12 +33,12 @@
 	addtimer(CALLBACK(src, .proc/controllerscan), 10)
 
 /obj/machinery/am_shielding/proc/overheat()
-	visible_message("<span class='danger'>[src] melts!</span>")
+	visible_message(span_danger("[src] melts!"))
 	new /obj/effect/hotspot(loc)
 	qdel(src)
 
 /obj/machinery/am_shielding/proc/collapse()
-	visible_message("<span class='notice'>[src] collapses back into a container!</span>")
+	visible_message(span_notice("[src] collapses back into a container!"))
 	new /obj/item/am_shielding_container(drop_location())
 	qdel(src)
 
@@ -233,8 +233,8 @@
 
 
 /obj/item/am_shielding_container
-	name = "packaged antimatter reactor section"
-	desc = "A small storage unit containing an antimatter reactor section.  To use place near an antimatter control unit or deployed antimatter reactor section and use a multitool to activate this package."
+	name = "packaged fission reactor section"
+	desc = "A small storage unit containing components for a General Atomics fission reactor.  To use place near an reactor control unit or deployed reactor section and use a multitool to assemble it."
 	icon = 'icons/obj/machines/antimatter.dmi'
 	icon_state = "box"
 	item_state = "electronic"

@@ -44,7 +44,7 @@
 		padlock = null
 	//fortuna edit
 	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
-	message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
+	//message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
@@ -140,13 +140,13 @@
 			return TRUE
 	if(istype(I, /obj/item/screwdriver))
 		if(padlock)
-			to_chat(user, "<span class='warning'>Remove padlock before door dissasembling.</span>")
+			to_chat(user, span_warning("Remove padlock before door dissasembling."))
 			return 1
 		else
 			if(can_disasemble && do_after(user, 60, target = src))
 				for(var/i = 1, i <= material_count, i++)
 					new material_type(get_turf(src))
-				to_chat(user,"<span class='notice'>You disassemble [name].</span>")
+				to_chat(user,span_notice("You disassemble [name]."))
 				playsound(loc, 'sound/items/Screwdriver.ogg', 25, -3)
 				qdel(src)
 				return 1
@@ -169,8 +169,8 @@
 			return
 		else
 			if(user.transferItemToLoc(I, src))
-				user.visible_message("<span class='notice'>[user] adds [I] to [src].</span>", \
-								"<span class='notice'>You add [I] to [src].</span>")
+				user.visible_message(span_notice("[user] adds [I] to [src]."), \
+								span_notice("You add [I] to [src]."))
 				if (istype(I, /obj/item/lock_construct))
 					desc = "[src.desc] Has a lock."//Fuck it im not doing this bullshit tonight. This will do. :) -with love, harcourt
 				padlock = I

@@ -17,7 +17,7 @@
 	response_disarm_continuous = "gently pushes aside"
 	response_disarm_simple = "gently push aside"
 	response_harm_continuous = "stomps"
-	response_harm_continuous = "stomp"
+	response_harm_simple = "stomp"
 	stop_automated_movement = 1
 	friendly_verb_continuous = "pinches"
 	friendly_verb_simple = "pinch"

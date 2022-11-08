@@ -20,13 +20,13 @@
 	var/creationTime
 
 /obj/item/newspaper/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is focusing intently on [src]! It looks like [user.p_theyre()] trying to commit sudoku... until [user.p_their()] eyes light up with realization!</span>")
+	user.visible_message(span_suicide("[user] is focusing intently on [src]! It looks like [user.p_theyre()] trying to commit sudoku... until [user.p_their()] eyes light up with realization!"))
 	user.say(";JOURNALISM IS MY CALLING! EVERYBODY APPRECIATES UNBIASED REPORTI-GLORF", forced="newspaper suicide")
 	var/mob/living/carbon/human/H = user
 	var/obj/W = new /obj/item/reagent_containers/food/drinks/bottle/whiskey(H.loc)
 	playsound(H.loc, 'sound/items/drink.ogg', rand(10,50), 1)
 	W.reagents.trans_to(H, W.reagents.total_volume)
-	user.visible_message("<span class='suicide'>[user] downs the contents of [W.name] in one gulp! Shoulda stuck to sudoku!</span>")
+	user.visible_message(span_suicide("[user] downs the contents of [W.name] in one gulp! Shoulda stuck to sudoku!"))
 
 	return(TOXLOSS)
 
@@ -156,10 +156,10 @@
 /obj/item/newspaper/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
 		if(!user.is_literate())
-			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
+			to_chat(user, span_notice("You scribble illegibly on [src]!"))
 			return
 		if(scribble_page == curr_page)
-			to_chat(user, "<span class='notice'>There's already a scribble in this page... You wouldn't want to make things too cluttered, would you?</span>")
+			to_chat(user, span_notice("There's already a scribble in this page... You wouldn't want to make things too cluttered, would you?"))
 		else
 			var/s = stripped_input(user, "Write something", "Newspaper")
 			if (!s)

@@ -9,7 +9,7 @@
 	layer = OPEN_DOOR_LAYER
 	power_channel = ENVIRON
 	max_integrity = 350
-	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
+	armor = ARMOR_VALUE_MEDIUM
 	CanAtmosPass = ATMOS_PASS_DENSITY
 	flags_1 = PREVENT_CLICK_UNDER_1|DEFAULT_RICOCHET_1
 	ricochet_chance_mod = 0.8
@@ -44,9 +44,9 @@
 	. = ..()
 	if(red_alert_access)
 		if(GLOB.security_level >= SEC_LEVEL_RED)
-			. += "<span class='notice'>Due to a security threat, its access requirements have been lifted!</span>"
+			. += span_notice("Due to a security threat, its access requirements have been lifted!")
 		else
-			. += "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>"
+			. += span_notice("In the event of a red alert, its access requirements will automatically lift.")
 	if(!poddoor)
 		. += "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>"
 
@@ -86,7 +86,7 @@
 		spark_system = null
 	//fortuna edit. logging door destruction
 	investigate_log("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]", INVESTIGATE_DESTROYED)
-	message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
+	//message_admins("Door '[ADMIN_JMP(src)]' destroyed at [AREACOORD(src)]. Last fingerprints(If any): [src.fingerprintslast]")
 	log_game("Door '[src]' destroyed at [AREACOORD(src)]. Last fingerprints: [src.fingerprintslast]")
 	return ..()
 
@@ -154,13 +154,96 @@
 		return
 	..()
 
-/obj/machinery/door/proc/try_to_activate_door(mob/user)
+/obj/machinery/door/proc/try_to_lockpick(obj/item/lockpick_set/picking, mob/user)
+	if(!istype(picking))
+		return FALSE
+
+	picking.in_use = TRUE
+
+	var/list/pick_messages = list(
+		"otherpicking" = list(
+			"[user] starts to pick a lock!",
+			"[user] begins picking a lock!",
+			"[user] begins to jimmy a lock!",
+			"[user] begins to try and open a lock!"
+		),
+		"mepicking" = list(
+			"You slide your tools into the lock...",
+			"You begin trying to jimmy the lock...",
+			"You begin raking the tumblers...",
+			"This lock shouldn't take much longer..."
+		),
+		"blindpicking" = list(
+			"Is that metal clicking?",
+			"Is someone tapping metal together?",
+			"You hear an odd mechanical picking and scraping sound.",
+			"That's an odd metal noise..."
+		),
+		"failmessages" = list(
+			"Wrist slipped... try again...",
+			"Almost got it...",
+			"One more tumbler...",
+			"Come on...",
+			"Anytime now..."
+		),
+		"successmessages" = list(
+			"Got it!",
+			"Phew!",
+			"Easy!",
+			"Done!"
+		)
+	)
+
+	user.visible_message(
+		pick(pick_messages["otherpicking"]),
+		pick(pick_messages["mepicking"]),
+		pick(pick_messages["blindpicking"])
+		)
+	playsound(
+		get_turf(src),
+		pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+		25,
+		1,
+		ignore_walls = FALSE
+		)
+
+	if(!do_after(user, 4 SECONDS, target = src))
+		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+		playsound(
+			get_turf(src),
+			pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+			25,
+			1,
+			ignore_walls = FALSE
+			)
+		picking.in_use = FALSE
+		picking.use_pick(user)
+		return
+
+	playsound(
+		get_turf(src),
+		pick('sound/items/screwdriver.ogg','sound/items/screwdriver2.ogg'),
+		25,
+		1,
+		ignore_walls = FALSE
+		)
+	
+	if(prob(15))
+		user.show_message(span_green(pick(pick_messages["successmessages"])))
+		try_to_activate_door(user, TRUE)
+		. = TRUE
+	else
+		user.show_message(span_alert(pick(pick_messages["failmessages"])))
+	picking.in_use = FALSE
+	picking.use_pick(user)
+
+/obj/machinery/door/proc/try_to_activate_door(mob/user, force_open)
 	add_fingerprint(user)
 	if(operating || (obj_flags & EMAGGED))
 		return
 	if(!requiresID())
 		user = null //so allowed(user) always succeeds
-	if(allowed(user))
+	if(allowed(user) || force_open)
 		if(density)
 			open()
 		else
@@ -211,6 +294,8 @@
 	return max_moles - min_moles > 20
 
 /obj/machinery/door/attackby(obj/item/I, mob/user, params)
+	if(SEND_SIGNAL(I, COMSIG_LICK_RETURN, src, user)) // so I can lick walls like a frickin frick
+		return
 	if(user.a_intent != INTENT_HARM && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/twohanded/fireaxe)))
 		try_to_crowbar(I, user)
 		return 1
@@ -218,8 +303,11 @@
 		try_to_weld(I, user)
 		return 1
 	else if(!(I.item_flags & NOBLUDGEON) && user.a_intent != INTENT_HARM)
-		try_to_activate_door(user)
-		return 1
+		if(try_to_activate_door(user))
+			return TRUE
+		else if(density && istype(I, /obj/item/lockpick_set))
+			if(try_to_lockpick(I, user))
+				return TRUE
 	return ..()
 
 /obj/machinery/door/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)
@@ -300,9 +388,7 @@
 	operating = FALSE
 	air_update_turf(1)
 	update_freelook_sight()
-	if(autoclose)
-		spawn(autoclose)
-			close()
+	autoclose_in(autoclose)
 	return 1
 
 /obj/machinery/door/proc/close()
@@ -345,7 +431,7 @@
 
 /obj/machinery/door/proc/crush()
 	for(var/mob/living/L in get_turf(src))
-		L.visible_message("<span class='warning'>[src] closes on [L], crushing [L.p_them()]!</span>", "<span class='userdanger'>[src] closes on you and crushes you!</span>")
+		L.visible_message(span_warning("[src] closes on [L], crushing [L.p_them()]!"), span_userdanger("[src] closes on you and crushes you!"))
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
 			for(var/i in C.all_wounds) // should probably replace with signal

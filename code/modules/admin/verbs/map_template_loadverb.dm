@@ -24,7 +24,7 @@
 	images += preview
 	if(alert(src,"Confirm location.","Template Confirm","Yes","No") == "Yes")
 		if(template.load(T, centered = TRUE, orientation = orientation))
-			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
+			message_admins(span_adminnotice("[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]"))
 		else
 			to_chat(src, "Failed to place map")
 	images -= preview
@@ -56,7 +56,7 @@
 	//images += preview
 	if(alert(src,"Confirm.","Confirm","Yes","No") == "Yes")
 		if(template.load(T, centered = TRUE, orientation = SOUTH, annihilate = TRUE))
-			message_admins("<span class='adminnotice'>[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]</span>")
+			message_admins(span_adminnotice("[key_name_admin(src)] has placed a map template ([template.name]) at [ADMIN_COORDJMP(T)]"))
 		else
 			to_chat(src, "Failed to place map")
 	//images -= preview
@@ -69,7 +69,7 @@
 	if(!map)
 		return
 	if(copytext("[map]", -4) != ".dmm")//4 == length(".dmm")
-		to_chat(src, "<span class='warning'>Filename must end in '.dmm': [map]</span>")
+		to_chat(src, span_warning("Filename must end in '.dmm': [map]"))
 		return
 	var/datum/map_template/M
 	switch(alert(src, "What kind of map is this?", "Map type", "Normal", "Shuttle", "Cancel"))
@@ -80,7 +80,7 @@
 		else
 			return
 	if(!M.cached_map)
-		to_chat(src, "<span class='warning'>Map template '[map]' failed to parse properly.</span>")
+		to_chat(src, span_warning("Map template '[map]' failed to parse properly."))
 		return
 
 	var/datum/map_report/report = M.cached_map.check_for_errors()
@@ -98,5 +98,5 @@
 			return
 
 	SSmapping.map_templates[M.id] = M
-	message_admins("<span class='adminnotice'>[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link].</span>")
-	to_chat(src, "<span class='notice'>Map template '[map]' ready to place ([M.width]x[M.height])</span>")
+	message_admins(span_adminnotice("[key_name_admin(src)] has uploaded a map template '[map]' ([M.width]x[M.height])[report_link]."))
+	to_chat(src, span_notice("Map template '[map]' ready to place ([M.width]x[M.height])"))

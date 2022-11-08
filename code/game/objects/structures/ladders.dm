@@ -1,3 +1,8 @@
+/// The weather on the upper ladder is dangerous
+#define UP_LADDER_WEATHER_IS_DANGEROUS (1<<0)
+/// The weather on the lower ladder is dangerous
+#define DOWN_LADDER_WEATHER_IS_DANGEROUS (1<<1)
+
 // Basic ladder. By default links to the z-level above/below.
 /obj/structure/ladder
 	name = "ladder"
@@ -67,22 +72,22 @@
 	if(up && down)
 		switch(alert(peeker, "Look up or down the ladder?", "Ladder", list("Up", "Down", "Cancel")))
 			if("Up")
-				peeker.visible_message("<span class='notice'>[peeker] looks up [peeker]!</span>",
-				"<span class='notice'>You look up [peeker]!</span>")
+				peeker.visible_message(span_notice("[peeker] looks up [peeker]!"),
+				span_notice("You look up [peeker]!"))
 				peek_dir = UP
 			if("Down")
-				usr.visible_message("<span class='notice'>[usr] looks down [src]!</span>",
-				"<span class='notice'>You look down [src]!</span>")
+				usr.visible_message(span_notice("[usr] looks down [src]!"),
+				span_notice("You look down [src]!"))
 				peek_dir = DOWN
 			else
 				return
 	else if(up)
-		usr.visible_message("<span class='notice'>[usr] looks up [src]!</span>",
-		"<span class='notice'>You look up [src]!</span>")
+		usr.visible_message(span_notice("[usr] looks up [src]!"),
+		span_notice("You look up [src]!"))
 		peek_dir = UP
 	else if(down)
-		usr.visible_message("<span class='notice'>[usr] looks down [src]!</span>",
-		"<span class='notice'>You look down [src]!</span>")
+		usr.visible_message(span_notice("[usr] looks down [src]!"),
+		span_notice("You look down [src]!"))
 		peek_dir = DOWN
 	else
 		return
@@ -163,7 +168,7 @@
 
 /obj/structure/ladder/singularity_pull()
 	if (!(resistance_flags & INDESTRUCTIBLE))
-		visible_message("<span class='danger'>[src] is torn to pieces by the gravitational pull!</span>")
+		visible_message(span_danger("[src] is torn to pieces by the gravitational pull!"))
 		qdel(src)
 
 /obj/structure/ladder/proc/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
@@ -171,7 +176,7 @@
 		if(in_use)
 			return
 		in_use = TRUE
-		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", "<span class='notice'>You begin to climb [going_up ? "up" : "down"] [src].</span>")
+		user.visible_message("[user] begins to climb [going_up ? "up" : "down"] [src].", span_notice("You begin to climb [going_up ? "up" : "down"] [src]."))
 		if(!do_after(user, timetouse, target = src))
 			in_use = FALSE
 			return
@@ -192,31 +197,55 @@
 	if (!is_ghost && !in_range(src, user))
 		return
 
-	var/list/tool_list = list(
-		"Up" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = NORTH),
-		"Down" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = SOUTH)
-		)
-
-	if (up && down)
-		var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
-		if (!is_ghost && !in_range(src, user))
-			return  // nice try
-		switch(result)
-			if("Up")
-				travel(TRUE, user, is_ghost, up)
-			if("Down")
-				travel(FALSE, user, is_ghost, down)
-			if("Cancel")
-				return
-	else if(up)
-		travel(TRUE, user, is_ghost, up)
-	else if(down)
-		travel(FALSE, user, is_ghost, down)
-	else
-		to_chat(user, "<span class='warning'>[src] doesn't seem to lead anywhere!</span>")
+	if(!up && !down)
+		to_chat(user, span_warning("[src] doesn't seem to lead anywhere!"))
+		return
 
 	if(!is_ghost)
 		add_fingerprint(user)
+
+	var/uhoh_weather = is_other_side_dangerous()
+	var/both_ways = (up && down)
+
+	if(!uhoh_weather && !both_ways)
+		if(up)
+			travel(TRUE, user, is_ghost, up)
+		if(down)
+			travel(FALSE, user, is_ghost, down)
+		return
+
+	var/list/tool_list = list()
+	if(up)
+		tool_list["Up"] = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = NORTH)
+		if(CHECK_BITFIELD(uhoh_weather, UP_LADDER_WEATHER_IS_DANGEROUS))
+			user.show_message(span_danger("The weather looks really dangerous up there!"))
+	if(down)
+		tool_list["Down"] = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = SOUTH)
+		if(CHECK_BITFIELD(uhoh_weather, DOWN_LADDER_WEATHER_IS_DANGEROUS))
+			user.show_message(span_danger("The weather looks really dangerous down there!"))
+	if(!LAZYLEN(tool_list))
+		to_chat(user, span_warning("Well that's awkward, [src] couldn't generate a menu! This is probably a bug, please call 1-800-IMCODER"))
+		return
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	if (!is_ghost && !in_range(src, user))
+		return  // nice try
+	switch(result)
+		if("Up")
+			travel(TRUE, user, is_ghost, up)
+		if("Down")
+			travel(FALSE, user, is_ghost, down)
+		if("Cancel")
+			return
+
+/obj/structure/ladder/proc/is_other_side_dangerous()
+	if(up)
+		var/datum/weather/up_weather = SSweather.get_weather(get_area(up))
+		if(up_weather?.is_dangerous)
+			. |= UP_LADDER_WEATHER_IS_DANGEROUS
+	if(down)
+		var/datum/weather/down_weather = SSweather.get_weather(get_area(down))
+		if(down_weather?.is_dangerous)
+			. |= DOWN_LADDER_WEATHER_IS_DANGEROUS
 
 /obj/structure/ladder/proc/check_menu(mob/user)
 	if(user.incapacitated() || !user.Adjacent(src))
@@ -243,9 +272,9 @@
 
 /obj/structure/ladder/proc/show_fluff_message(going_up, mob/user)
 	if(going_up)
-		user.visible_message("[user] climbs up [src].","<span class='notice'>You climb up [src].</span>")
+		user.visible_message("[user] climbs up [src].",span_notice("You climb up [src]."))
 	else
-		user.visible_message("[user] climbs down [src].","<span class='notice'>You climb down [src].</span>")
+		user.visible_message("[user] climbs down [src].",span_notice("You climb down [src]."))
 
 
 // Indestructible away mission ladders which link based on a mapped ID and height value rather than X/Y/Z.
@@ -375,16 +404,16 @@
 
 /obj/structure/ladder/unbreakable/transition/show_fluff_message(going_up, mob/user)
 	if(going_up)
-		user.visible_message("[user] walks up to [src].","<span class='notice'>You walk up to [src].</span>")
+		user.visible_message("[user] walks up to [src].",span_notice("You walk up to [src]."))
 	else
-		user.visible_message("[user] walks down to [src].","<span class='notice'>You walk down to [src].</span>")
+		user.visible_message("[user] walks down to [src].",span_notice("You walk down to [src]."))
 
 /obj/structure/ladder/unbreakable/transition/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
 	if(!is_ghost)
 		if(in_use)
 			return
 		in_use = TRUE
-		user.visible_message("[user] begins to walk [going_up ? "up to" : "down to"] [src].", "<span class='notice'>You begin to walk [going_up ? "up to" : "down to"] [src].</span>")
+		user.visible_message("[user] begins to walk [going_up ? "up to" : "down to"] [src].", span_notice("You begin to walk [going_up ? "up to" : "down to"] [src]."))
 		if(!do_after(user, timetouse, target = src))
 			in_use = FALSE
 			return

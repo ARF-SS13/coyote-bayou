@@ -25,7 +25,7 @@
 		return ..()
 
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>You don't want to harm [target]!</span>")
+		to_chat(user, span_warning("You don't want to harm [target]!"))
 		return
 
 	var/obj/item/bodypart/affecting = user.zone_selected //Find what the player is aiming at
@@ -54,11 +54,11 @@
 
 	//Display an attack message.
 	if(target != user)
-		target.visible_message("<span class='danger'>[user] has hit [target][head_attack_message] with a bottle of [src.name]!</span>", \
-				"<span class='userdanger'>[user] has hit [target][head_attack_message] with a bottle of [src.name]!</span>")
+		target.visible_message(span_danger("[user] has hit [target][head_attack_message] with a bottle of [src.name]!"), \
+				span_userdanger("[user] has hit [target][head_attack_message] with a bottle of [src.name]!"))
 	else
-		user.visible_message("<span class='danger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>", \
-				"<span class='userdanger'>[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!</span>")
+		user.visible_message(span_danger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!"), \
+				span_userdanger("[target] hits [target.p_them()]self with a bottle of [src.name][head_attack_message]!"))
 
 	//Attack logs
 	log_combat(user, target, "attacked", src)
@@ -402,6 +402,24 @@
 	list_reagents = list(/datum/reagent/consumable/ethanol/rotgut = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tequila/empty
+	list_reagents = null
+
+/obj/item/reagent_containers/food/drinks/bottle/hooch
+	name = "hooch bottle"
+	desc = "A bottle of rotgut. Its owner has applied some street wisdom to cleverly disguise it as a brown paper bag."
+	icon_state = "hoochbottle"
+	list_reagents = list(/datum/reagent/consumable/ethanol/hooch = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/hooch/empty
+	list_reagents = null
+
+/obj/item/reagent_containers/food/drinks/bottle/amaretto
+	name = "Luini Amaretto"
+	desc = "A gentle and syrup like drink, tastes of almonds and apricots"
+	icon_state = "disaronno"
+	list_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 100)
+
+/obj/item/reagent_containers/food/drinks/bottle/amaretto/empty
 	list_reagents = null
 
 //////////////////////////JUICES AND STUFF ///////////////////////

@@ -8,8 +8,7 @@
 		"Pahrump-Sunset-Upper.dmm",
 		"Pahrump-Sunset-Upper-2.dmm",
 		"RockSprings.dmm",
-		"RedRiver.dmm",
-		"texmall.dmm"
+		"RedRiver.dmm"
 	],
 	"station_ruin_budget":0,
 	"space_ruin_levels":0,
@@ -88,17 +87,6 @@
 			"Linkage" : "Cross",
 			"Force North": 1,
 			"Name": "Red River"
-		},
-		{
-			"Gravity": true,
-			"Baseturf": "/turf/open/indestructible/ground/inside/mountain",
-			"Station": 1,
-			"Up": 1,
-			"Down": -1,
-			"No Parallax": true,
-			"Linkage" : "Cross",
-			"Force East": 1,
-			"Name": "Texarkana Mall"
 		}
 	],
 	"minetype": "none"

@@ -148,7 +148,7 @@
 /datum/status_effect/off_balance/on_remove()
 	var/active_item = owner.get_active_held_item()
 	if(is_type_in_typecache(active_item, GLOB.shove_disarming_types))
-		owner.visible_message("<span class='warning'>[owner.name] regains their grip on \the [active_item]!</span>", "<span class='warning'>You regain your grip on \the [active_item]</span>", null, COMBAT_MESSAGE_RANGE)
+		owner.visible_message(span_warning("[owner.name] regains their grip on \the [active_item]!"), span_warning("You regain your grip on \the [active_item]"), null, COMBAT_MESSAGE_RANGE)
 	return ..()
 
 /datum/status_effect/no_combat_mode
@@ -288,9 +288,9 @@
 				owner.apply_damage(leg_damage_on_toggle * 0.5, BURN, BODY_ZONE_R_LEG)
 		if(owner.m_intent != MOVE_INTENT_WALK)
 			if(!iscultist(owner))
-				to_chat(owner, "<span class='warning'>Your leg[number_legs > 1 ? "s shiver":" shivers"] with pain!</span>")
+				to_chat(owner, span_warning("Your leg[number_legs > 1 ? "s shiver":" shivers"] with pain!"))
 			else //Cultists take extra burn damage
-				to_chat(owner, "<span class='warning'>Your leg[number_legs > 1 ? "s burn":" burns"] with pain!</span>")
+				to_chat(owner, span_warning("Your leg[number_legs > 1 ? "s burn":" burns"] with pain!"))
 			owner.toggle_move_intent()
 		return TRUE
 	return FALSE
@@ -493,7 +493,7 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		var/obj/item/bodypart/bodypart = pick(H.bodyparts)
-		var/datum/wound/slash/severe/crit_wound = new
+		var/datum/wound/bleed/slash/severe/crit_wound = new
 		crit_wound.apply_wound(bodypart)
 	return ..()
 
@@ -540,7 +540,7 @@
 
 /datum/status_effect/corrosion_curse/on_creation(mob/living/new_owner, ...)
 	. = ..()
-	to_chat(owner, "<span class='danger'>Your feel your body starting to break apart...</span>")
+	to_chat(owner, span_danger("Your feel your body starting to break apart..."))
 
 /datum/status_effect/corrosion_curse/tick()
 	. = ..()
@@ -611,7 +611,7 @@
 
 /datum/status_effect/amok/on_apply(mob/living/afflicted)
 	. = ..()
-	to_chat(owner, "<span class='boldwarning'>Your feel filled with a rage that is not your own!</span>")
+	to_chat(owner, span_boldwarning("Your feel filled with a rage that is not your own!"))
 
 /datum/status_effect/amok/tick()
 	. = ..()
@@ -837,8 +837,8 @@
 	var/health_difference = old_health - owner.health - clamp(owner.getOxyLoss() - old_oxyloss,0, owner.getOxyLoss())
 	if(!health_difference)
 		return
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!</span>", \
-	"<span class='boldannounce'>The dazzling lights dim as you're harmed!</span>")
+	owner.visible_message(span_warning("The light in [owner]'s eyes dims as [owner.p_theyre()] harmed!"), \
+	span_boldannounce("The dazzling lights dim as you're harmed!"))
 	health_difference *= 2 //so 10 health difference translates to 20 deciseconds of stun reduction
 	duration -= health_difference
 	old_health = owner.health
@@ -846,8 +846,8 @@
 
 /datum/status_effect/kindle/on_remove()
 	. = ..()
-	owner.visible_message("<span class='warning'>The light in [owner]'s eyes fades!</span>", \
-	"<span class='boldannounce'>You snap out of your daze!</span>")
+	owner.visible_message(span_warning("The light in [owner]'s eyes fades!"), \
+	span_boldannounce("You snap out of your daze!"))
 
 /obj/screen/alert/status_effect/kindle
 	name = "Dazzling Lights"
@@ -861,19 +861,19 @@
 	id = "ichorial_stain"
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = 600
-	examine_text = "<span class='warning'>SUBJECTPRONOUN is drenched in thick, blue ichor!</span>"
+	examine_text = span_warning("SUBJECTPRONOUN is drenched in thick, blue ichor!")
 	alert_type = /obj/screen/alert/status_effect/ichorial_stain
 
 /datum/status_effect/ichorial_stain/on_apply()
 	. = ..()
-	owner.visible_message("<span class='danger'>[owner] gets back up, [owner.p_their()] body dripping blue ichor!</span>", \
-	"<span class='userdanger'>Thick blue ichor covers your body; you can't be revived like this again until it dries!</span>")
+	owner.visible_message(span_danger("[owner] gets back up, [owner.p_their()] body dripping blue ichor!"), \
+	span_userdanger("Thick blue ichor covers your body; you can't be revived like this again until it dries!"))
 	return TRUE
 
 /datum/status_effect/ichorial_stain/on_remove()
 	. = ..()
-	owner.visible_message("<span class='danger'>The blue ichor on [owner]'s body dries out!</span>", \
-	"<span class='boldnotice'>The ichor on your body is dry - you can now be revived by vitality matrices again!</span>")
+	owner.visible_message(span_danger("The blue ichor on [owner]'s body dries out!"), \
+	span_boldnotice("The ichor on your body is dry - you can now be revived by vitality matrices again!"))
 
 /obj/screen/alert/status_effect/ichorial_stain
 	name = "Ichorial Stain"
@@ -919,11 +919,11 @@
 
 /obj/screen/alert/status_effect/strandling/Click(location, control, params)
 	. = ..()
-	to_chat(mob_viewer, "<span class='notice'>You attempt to remove the durathread strand from around your neck.</span>")
+	to_chat(mob_viewer, span_notice("You attempt to remove the durathread strand from around your neck."))
 	if(do_after(mob_viewer, 35, null, mob_viewer))
 		if(isliving(mob_viewer))
 			var/mob/living/L = mob_viewer
-			to_chat(mob_viewer, "<span class='notice'>You successfully remove the durathread strand.</span>")
+			to_chat(mob_viewer, span_notice("You successfully remove the durathread strand."))
 			L.remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 
 
@@ -952,7 +952,7 @@ datum/status_effect/pacify
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = 300
 	tick_interval = 10
-	examine_text = "<span class='warning'>SUBJECTPRONOUN seems slow and unfocused.</span>"
+	examine_text = span_warning("SUBJECTPRONOUN seems slow and unfocused.")
 	var/stun = TRUE
 	alert_type = /obj/screen/alert/status_effect/trance
 
@@ -973,8 +973,8 @@ datum/status_effect/pacify
 	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
-	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.</span>" : ""]", \
-	"<span class='warning'>[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]</span>")
+	owner.visible_message("[stun ? span_warning("[owner] stands still as [owner.p_their()] eyes seem to focus on a distant point.") : ""]", \
+	span_warning("[pick("You feel your thoughts slow down...", "You suddenly feel extremely dizzy...", "You feel like you're in the middle of a dream...","You feel incredibly relaxed...")]"))
 	return TRUE
 
 /datum/status_effect/trance/on_creation(mob/living/new_owner, _duration, _stun = TRUE)
@@ -987,7 +987,7 @@ datum/status_effect/pacify
 	REMOVE_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.dizziness = 0
 	owner.remove_client_colour(/datum/client_colour/monochrome/trance)
-	to_chat(owner, "<span class='warning'>You snap out of your trance!</span>")
+	to_chat(owner, span_warning("You snap out of your trance!"))
 	return ..()
 
 /datum/status_effect/trance/proc/hypnotize(datum/source, list/hearing_args)
@@ -1012,14 +1012,14 @@ datum/status_effect/pacify
 		switch(rand(1,5))
 			if(1)
 				if((!owner.lying && !owner.buckled) && isturf(owner.loc))
-					to_chat(owner, "<span class='warning'>Your leg spasms!</span>")
+					to_chat(owner, span_warning("Your leg spasms!"))
 					step(owner, pick(GLOB.cardinals))
 			if(2)
 				if(owner.incapacitated())
 					return
 				var/obj/item/I = owner.get_active_held_item()
 				if(I)
-					to_chat(owner, "<span class='warning'>Your fingers spasm!</span>")
+					to_chat(owner, span_warning("Your fingers spasm!"))
 					owner.log_message("used [I] due to a Muscle Spasm", LOG_ATTACK)
 					I.attack_self(owner)
 			if(3)
@@ -1035,14 +1035,14 @@ datum/status_effect/pacify
 					if(isliving(M))
 						targets += M
 				if(LAZYLEN(targets))
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+					to_chat(owner, span_warning("Your arm spasms!"))
 					owner.log_message(" attacked someone due to a Muscle Spasm", LOG_ATTACK) //the following attack will log itself
 					owner.ClickOn(pick(targets))
 				owner.a_intent = prev_intent
 			if(4)
 				var/prev_intent = owner.a_intent
 				owner.a_intent = INTENT_HARM
-				to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+				to_chat(owner, span_warning("Your arm spasms!"))
 				owner.log_message("attacked [owner.p_them()]self to a Muscle Spasm", LOG_ATTACK)
 				owner.ClickOn(owner)
 				owner.a_intent = prev_intent
@@ -1054,7 +1054,7 @@ datum/status_effect/pacify
 				for(var/turf/T in oview(owner, 3))
 					targets += T
 				if(LAZYLEN(targets) && I)
-					to_chat(owner, "<span class='warning'>Your arm spasms!</span>")
+					to_chat(owner, span_warning("Your arm spasms!"))
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
 
@@ -1067,7 +1067,7 @@ datum/status_effect/pacify
 
 /datum/status_effect/dna_melt/on_creation(mob/living/new_owner, set_duration, updating_canmove)
 	. = ..()
-	to_chat(new_owner, "<span class='boldwarning'>My body can't handle the mutations! I need to get my mutations removed fast!</span>")
+	to_chat(new_owner, span_boldwarning("My body can't handle the mutations! I need to get my mutations removed fast!"))
 
 /datum/status_effect/dna_melt/on_remove()
 	if(!ishuman(owner))
@@ -1096,25 +1096,25 @@ datum/status_effect/pacify
 	switch(msg_stage)
 		if(0 to 300)
 			if(prob(1))
-				fake_msg = pick("<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>",
-				"<span class='warning'>[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]</span>",
-				"<span class='warning'>[pick("You feel dizzy.", "Your head spins.")]</span>",
+				fake_msg = pick(span_warning("[pick("Your head hurts.", "Your head pounds.")]"),
+				span_warning("[pick("You're having difficulty breathing.", "Your breathing becomes heavy.")]"),
+				span_warning("[pick("You feel dizzy.", "Your head spins.")]"),
 				"<span notice='warning'>[pick("You swallow excess mucus.", "You lightly cough.")]</span>",
-				"<span class='warning'>[pick("Your head hurts.", "Your mind blanks for a moment.")]</span>",
-				"<span class='warning'>[pick("Your throat hurts.", "You clear your throat.")]</span>")
+				span_warning("[pick("Your head hurts.", "Your mind blanks for a moment.")]"),
+				span_warning("[pick("Your throat hurts.", "You clear your throat.")]"))
 		if(301 to 600)
 			if(prob(2))
-				fake_msg = pick("<span class='warning'>[pick("Your head hurts a lot.", "Your head pounds incessantly.")]</span>",
-				"<span class='warning'>[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]</span>",
-				"<span class='warning'>You feel very [pick("dizzy","woozy","faint")].</span>",
-				"<span class='warning'>[pick("You hear a ringing in your ear.", "Your ears pop.")]</span>",
-				"<span class='warning'>You nod off for a moment.</span>")
+				fake_msg = pick(span_warning("[pick("Your head hurts a lot.", "Your head pounds incessantly.")]"),
+				span_warning("[pick("Your windpipe feels like a straw.", "Your breathing becomes tremendously difficult.")]"),
+				span_warning("You feel very [pick("dizzy","woozy","faint")]."),
+				span_warning("[pick("You hear a ringing in your ear.", "Your ears pop.")]"),
+				span_warning("You nod off for a moment."))
 		else
 			if(prob(3))
 				if(prob(50))// coin flip to throw a message or an emote
-					fake_msg = pick("<span class='userdanger'>[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]</span>",
-					"<span class='userdanger'>[pick("Your lungs hurt!", "It hurts to breathe!")]</span>",
-					"<span class='warning'>[pick("You feel nauseated.", "You feel like you're going to throw up!")]</span>")
+					fake_msg = pick(span_userdanger("[pick("Your head hurts!", "You feel a burning knife inside your brain!", "A wave of pain fills your head!")]"),
+					span_userdanger("[pick("Your lungs hurt!", "It hurts to breathe!")]"),
+					span_warning("[pick("You feel nauseated.", "You feel like you're going to throw up!")]"))
 				else
 					fake_emote = pick("cough", "sniff", "sneeze")
 	if(fake_emote)

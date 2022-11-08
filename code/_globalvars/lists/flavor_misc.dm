@@ -159,10 +159,14 @@ GLOBAL_LIST_INIT(security_depts_prefs, list(SEC_DEPT_RANDOM, SEC_DEPT_NONE, SEC_
 #define DDUFFELBAG "Department Duffel Bag"
 GLOBAL_LIST_INIT(backbaglist, list(DBACKPACK, DSATCHEL, DDUFFELBAG, //everything after this point is a non-department backpack
 	"Hiking Backpack" = /obj/item/storage/backpack,
-	"Grey Satchel" = /obj/item/storage/backpack/satchel,
+	"Service Backpack" = /obj/item/storage/backpack/enclave,
 	"Grey Duffel Bag" = /obj/item/storage/backpack/duffelbag,
+	"Grey Satchel" = /obj/item/storage/backpack/satchel,
 	"Leather Satchel" = /obj/item/storage/backpack/satchel/leather,
-	"Bone Satchel" = /obj/item/storage/backpack/satchel/bone,))
+	"Bone Satchel" = /obj/item/storage/backpack/satchel/bone,
+	"Old Satchel" = /obj/item/storage/backpack/satchel/old,
+	"Service Satchel" = /obj/item/storage/backpack/satchel/enclave
+	))
 
 //Suit/Skirt
 #define PREF_SUIT "Jumpsuit"
@@ -266,7 +270,16 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/wisdoms.txt"))
 
 GLOBAL_LIST_INIT(speech_verbs, list("default", "says", "rasps", "states", "bellows", "chirps", "hisses", "mumbles", "squeals", "barks", "meows", "growls", "drawls", "chitters", "declares", "mutters", "howls", "bleats", "cries", "murmurs"))
 
-GLOBAL_LIST_INIT(roundstart_tongues, list("default","human tongue" = /obj/item/organ/tongue/*, "lizard tongue" = /obj/item/organ/tongue/lizard, "skeleton tongue" = /obj/item/organ/tongue/bone, "fly tongue" = /obj/item/organ/tongue/fly, "ipc tongue" = /obj/item/organ/tongue/robot/ipc*/))
+GLOBAL_LIST_INIT(roundstart_tongues, list(
+	"default",
+	"human tongue" = /obj/item/organ/tongue,
+	"lizard tongue" = /obj/item/organ/tongue/lizard,
+	"cat tongue" = /obj/item/organ/tongue/cat,
+	"dog tongue" = /obj/item/organ/tongue/dog,
+	//"skeleton tongue" = /obj/item/organ/tongue/bone, 
+	//"fly tongue" = /obj/item/organ/tongue/fly, 
+	//"ipc tongue" = /obj/item/organ/tongue/robot/ipc
+	))
 
 //locked parts are those that your picked species requires to have
 //unlocked parts are those that anyone can choose on customisation regardless

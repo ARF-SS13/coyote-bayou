@@ -46,7 +46,7 @@ SUBSYSTEM_DEF(job)
 	var/list/all_jobs = subtypesof(/datum/job)
 
 	if(!all_jobs.len)
-		to_chat(world, "<span class='boldannounce'>Error setting up jobs, no job datums found</span>")
+		to_chat(world, span_boldannounce("Error setting up jobs, no job datums found"))
 		return 0
 
 	for(var/J in all_jobs)
@@ -696,14 +696,16 @@ SUBSYSTEM_DEF(job)
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
+	var/datum/preferences/the_prefs = the_mob.client.prefs
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
 		for(var/i in chosen_gear)
 			var/datum/gear/G = istext(i[LOADOUT_ITEM]) ? text2path(i[LOADOUT_ITEM]) : i[LOADOUT_ITEM]
-			G = GLOB.loadout_items[initial(G.category)][initial(G.subcategory)][initial(G.name)]
-			if(!G)
+			if(!G) // aint there? ditch it
+				the_prefs.remove_gear_from_loadout(the_prefs.loadout_slot, i[LOADOUT_ITEM])
 				continue
+			G = GLOB.loadout_items[initial(G.category)][initial(G.subcategory)][initial(G.name)]
 			var/permitted = TRUE
 			if(!bypass_prereqs && G.restricted_roles && G.restricted_roles.len && !(M.mind.assigned_role in G.restricted_roles))
 				permitted = FALSE

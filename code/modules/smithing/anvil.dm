@@ -84,6 +84,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/busy = FALSE //If someone is already interacting with this anvil
 	var/workpiece_state = FALSE
 	var/datum/material/workpiece_material
+	var/anvilquality = 0
 	var/currentquality = 0 //lolman? what the fuck do these vars do?
 	var/currentsteps = 0 //even i don't know
 	var/outrightfailchance = 1 //todo: document this shit
@@ -91,12 +92,13 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/rng = FALSE
 	var/debug = FALSE //vv this if you want an artifact
 	var/artifactrolled = FALSE
-	var/itemqualitymax = 8
+	var/itemqualitymax = 20 //A quality 8 bronze spear does less damage than a regular bone spear from craftmenu, lol
 
 
-/obj/structure/anvil/Initialize()
+/obj/structure/anvil/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_CLICK_ALT, .proc/ResetAnvil) // emergency way to reset the anvil incase something goes wrong.
+	currentquality = anvilquality
 
 /obj/structure/anvil/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/ingot)) // That's it we're refactoring this code because I can't im literally crying rn ; _;
@@ -156,7 +158,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			add_overlay(image(icon= 'icons/fallout/objects/crafting/blacksmith.dmi',icon_state="workpiece"))
 			set_light_on(TRUE)
 
-		var/skillmod = 4
+		var/skillmod = 0
 		if(user.mind.skill_holder)
 			skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2
 		currentquality += skillmod
@@ -189,7 +191,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	var/steptime = 50
 
 	if(user.mind.skill_holder) // Skill modifier to make it faster at blacksmithing.
-		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/10 + 1
+		var/skillmod = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/8 + 1 //Makes this faster as EXP gain was lowered
 		steptime = 50 / skillmod
 
 	playsound(src, 'sound/effects/clang2.ogg',40, 2) // sounds. gotta have them..!
@@ -238,8 +240,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 			currentquality -= 1
 
 	// Display message
-	user.visible_message("<span class='notice'>[user] works the metal on the anvil with their hammer with a loud clang!</span>", \
-						"<span class='notice'>You [stepdone] the metal with a loud clang!</span>")
+	user.visible_message(span_notice("[user] works the metal on the anvil with their hammer with a loud clang!"), \
+						span_notice("You [stepdone] the metal with a loud clang!"))
 	
 	// more sounds... uhhh...
 	playsound(src, 'sound/effects/clang2.ogg',40, 2)
@@ -260,9 +262,10 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/proc/tryfinish(mob/user) // Oh god before I prettify this code I just feel like I'm having a stroke at all this word garble.
 
 	var/artifactchance = 0
+	var/combinedqualitymax = user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/4 + itemqualitymax //This is no longer as good. /2 divisor to /4 to make the max ~12 
 	if(!artifactrolled) // if there has not been a roll chance, do it now..?
-		artifactchance = ( 1 + (user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing) / 4)) / 2500
-		artifactrolled = TRUE
+		artifactchance = (1+(user.mind.get_skill_level(/datum/skill/level/dwarfy/blacksmithing)/2))/1500 //Bumps this up as removal of high-tier smithing items and a decrease to their balance makes artifacts neccessary and worthwhile
+		//artifactrolled = TRUE --Disabled because this is a shitty mechanic.
 
 	var/artifact = max(prob(artifactchance), debug) // If there is an artifact..?
 
@@ -280,14 +283,14 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	// I hate this. If you hit more than 10 times, or the final piece failed and you have no artifact. Why it gotta look so awkward.
 	if((currentsteps > 10 || (rng && prob(finalfailchance))) && !artifact)
 	
-		to_chat(user, "<span class='warning'>You overwork the metal, causing it to turn into useless slag!</span>")
+		to_chat(user, span_warning("You overwork the metal, causing it to turn into useless slag!"))
 		
 		new /obj/item/stack/ore/slag(get_turf(src)) // Spawn some slag
 
 		ResetAnvil() // Resets it to be default.
 
 		if(user.mind.skill_holder) // give them some experience
-			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 25, 400, silent = FALSE)
+			user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 50, 500000, silent = FALSE) //This shouldn't give you a full level until 3+
 
 		return SetBusy(FALSE, user) 
 	
@@ -305,9 +308,11 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 				to_chat(user, "It is an artifact, a creation whose legacy shall live on forevermore.") //todo: SSblackbox
 				currentquality = max(currentquality, 2)
 				finisheditem.artifact = TRUE
-
-			// Ternary statement to apply quality without an ugly else statement 
-			finisheditem.quality = artifact ? currentquality * 3 : min(currentquality, itemqualitymax)
+			else
+				if(combinedqualitymax >= 0)
+					finisheditem.quality = min(currentquality, combinedqualitymax) //Changed so better smiths can make better gear regardless of their anvil. WILL HAVE TO BE TWEAKED, POSSIBLY.
+				else
+					finisheditem.quality = min(currentquality, itemqualitymax)
 
 			// more switcheronies~ Adds a description
 			switch(finisheditem.quality)
@@ -317,15 +322,26 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 					finisheditem.desc +=  "\nIt looks to be the second most awfully made object you've ever seen."
 				if(-8 to 0)
 					finisheditem.desc +=  "\nIt looks to be barely passable as... whatever it's trying to pass for."
-				if(0)
+				if(0 to 10)
 					finisheditem.desc +=  "\nIt looks to be totally average."
-				if(0 to INFINITY)
+				if(10 to INFINITY)
 					finisheditem.desc +=  "\nIt looks to be better than average."
 			finisheditem.set_custom_materials(workpiece_material)
-
+			var/stepexperience = currentsteps + finisheditem.quality
+			var/finalexperience = (150 *(stepexperience + finisheditem.quality))/6 //Makes powerlevelling late-game harder as it gives more bonuses here
 			if(user.mind.skill_holder) // give them some experience!
-				user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 100, 10000000, silent = FALSE)
+				if(currentquality <= 1)
+					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, 250, 500000, silent = FALSE) //Fixes speedleveling by just making hammers, somewhat.
+				else
+					user.mind.auto_gain_experience(/datum/skill/level/dwarfy/blacksmithing, finalexperience, 500000, silent = FALSE) //Made more forgiving for lower levels and terrible anvils.
 
+			workpiece_state = FALSE
+			finisheditem.set_custom_materials(workpiece_material)
+			currentquality = anvilquality
+			stepsdone = ""
+			currentsteps = 0
+			outrightfailchance = 1
+			artifactrolled = FALSE
 			ResetAnvil() // Worse Case something might break if we dont do this. soo.... yeah!
 			break
 
@@ -339,7 +355,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 // Template
 /obj/structure/anvil/obtainable
 	name = "anvil template. Punish those who makes this appear."
-	currentquality = 0
+	anvilquality = 0
 	outrightfailchance = 5
 	rng = TRUE
 
@@ -347,16 +363,16 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 /obj/structure/anvil/obtainable/basic
 	name = "anvil"
 	desc = "Made from solid steel, you wont be moving this around any time soon."
-	currentquality = 1
-	itemqualitymax = 8
+	anvilquality = -1 //This was causing balance problems to where you could get high levels of blacksmithing in 1-2 items
+	itemqualitymax = 6  //Do not change this.
 
 // Don't make this craftable.
 /obj/structure/anvil/obtainable/legion
 	name = "anvil"
 	desc = "A solid steel anvil with a stamped bull on it."
 	icon_state = "legvil"
-	currentquality = 1
-	itemqualitymax = 8
+	anvilquality = 0 //DO NOT GIVE A +1 BONUS TO ANVILS WHEN THEY HAVE A MAXQAL OF 8, THIS ONLY ASKS FOR MAX TIER FORGED ITEMS
+	itemqualitymax = 8 //The legion and tribe rely mostly on melee weapons, so they should have the best anvil
 	anchored = TRUE
 
 // Decent makeshift anvil, can break, mobile. Gets the exclusive scrap version of the machete and 2h chopper, as well as the universal tool instead of a crowbar
@@ -364,14 +380,13 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	name = "table anvil"
 	desc = "A reinforced table. Usable as an anvil, favored by mad wastelanders and the dregs of the wasteland. Can be loosened from its bolts and moved."
 	icon_state = "tablevil"
-	currentquality = 0
-	itemqualitymax = 7
+	anvilquality = -2 //WE SHOULD NOT HAVE CHANGED THIS.
+	itemqualitymax = 4
 
 /obj/structure/anvil/obtainable/table/wrench_act(mob/living/user, obj/item/I)
 	..()
 	default_unfasten_wrench(user, I, 5)
 	return TRUE
-
 
 /obj/structure/anvil/obtainable/table/do_shaping(mob/user, qualitychange)
 	if(prob(2))
@@ -387,15 +402,15 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	desc = "A big block of sandstone. Useable as an anvil."
 	custom_materials = list(/datum/material/sandstone=8000)
 	icon_state = "sandvil"
-	currentquality = -1
-	itemqualitymax = 7
+	anvilquality = 0
+	itemqualitymax = 4
 
 // Debug anvil for some reason
 /obj/structure/anvil/debugsuper
 	name = "super ultra epic anvil of debugging."
 	desc = "WOW. A DEBUG <del>ITEM</DEL> STRUCTURE. EPIC."
 	icon_state = "anvil"
-	currentquality = 10
+	anvilquality = 10
 	itemqualitymax = 9001
 	outrightfailchance = 0
 
@@ -406,8 +421,8 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	icon = 'icons/obj/smith.dmi'
 	custom_materials = list(/datum/material/bronze=8000)
 	icon_state = "ratvaranvil"
-	currentquality = 0
-	itemqualitymax = 6
+	anvilquality = 0
+	itemqualitymax = 5 //Its too easy to obtain it
 
 /obj/structure/anvil/obtainable/ratvar
 	name = "brass anvil"
@@ -421,7 +436,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(is_servant_of_ratvar(user))
 		return ..()
 	else
-		to_chat(user, "<span class='neovgre'>KNPXWN, QNJCQNW!</span>") //rot13 then rot22 if anyone wants to decode
+		to_chat(user, span_neovgre("KNPXWN, QNJCQNW!")) //rot13 then rot22 if anyone wants to decode
 
 /obj/structure/anvil/obtainable/narsie
 	name = "runic anvil"
@@ -436,7 +451,7 @@ GLOBAL_LIST_INIT(anvil_recipes, list(
 	if(iscultist(user))
 		return ..()
 	else
-		to_chat(user, "<span class='narsiesmall'>That is not yours to use!</span>")
+		to_chat(user, span_narsiesmall("That is not yours to use!"))
 
 #undef WORKPIECE_PRESENT
 #undef WORKPIECE_INPROGRESS

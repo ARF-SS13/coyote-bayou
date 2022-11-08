@@ -44,6 +44,7 @@
 	var/charge_delay = 4
 	var/use_cyborg_cell = FALSE //whether the gun drains the cyborg user's cell instead, not to be confused with EGUN_SELFCHARGE_BORG
 	var/dead_cell = FALSE //set to true so the gun is given an empty cell
+	var/charge_cost_multiplier = 1
 
 	/// SET THIS TO TRUE IF YOU OVERRIDE altafterattack() or ANY right click action! If this is FALSE, the gun will show in examine its default right click behavior, which is to switch modes.
 	var/right_click_overridden = FALSE
@@ -53,6 +54,18 @@
 	init_firemodes = list(
 		WEAPON_NORMAL
 	)
+	init_recoil = HANDGUN_RECOIL(0.1)
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(LASER_VOLUME),
+		SP_VOLUME_SILENCED(LASER_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(LASER_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(LASER_DISTANT_SOUND),
+		SP_DISTANT_RANGE(LASER_RANGE_DISTANT)
+	)
+
 
 /obj/item/gun/energy/emp_act(severity)
 	. = ..()
@@ -96,7 +109,7 @@
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
 	if(!right_click_overridden)
-		. += "<span class='notice'>Right click in combat mode to switch modes.</span>"
+		. += span_notice("Right click in combat mode to switch modes.")
 
 /obj/item/gun/energy/process()
 	if(selfcharge && cell?.charge < cell.maxcharge)
@@ -130,11 +143,11 @@
 			var/mob/living/silicon/robot/R = loc
 			if(R.cell)
 				var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index] //Necessary to find cost of shot
-				if(R.cell.use(shot.e_cost)) 		//Take power from the borg...
-					cell.give(shot.e_cost)	//... to recharge the shot
+				if(R.cell.use(shot.e_cost * charge_cost_multiplier)) 		//Take power from the borg...
+					cell.give(shot.e_cost * charge_cost_multiplier)	//... to recharge the shot
 	if(!chambered)
 		var/obj/item/ammo_casing/energy/AC = ammo_type[current_firemode_index]
-		if(cell.charge >= AC.e_cost) //if there's enough power in the cell cell...
+		if(cell.charge >= AC.e_cost * charge_cost_multiplier) //if there's enough power in the cell cell...
 			chambered = AC //...prepare a new shot based on the current ammo type selected
 			if(!chambered.BB)
 				chambered.newshot()
@@ -142,7 +155,7 @@
 /obj/item/gun/energy/process_chamber()
 	if(chambered && !chambered.BB) //if BB is null, i.e the shot has been fired...
 		var/obj/item/ammo_casing/energy/shot = chambered
-		cell.use(shot.e_cost)//... drain the cell cell
+		cell.use(shot.e_cost * charge_cost_multiplier)//... drain the cell cell
 	chambered = null //either way, released the prepared shot
 	recharge_newshot() //try to charge a new shot
 
@@ -177,7 +190,7 @@
 	fire_sound = C.fire_sound
 	//fire_delay = C.delay
 	if(user_for_feedback)
-		to_chat(user_for_feedback, "<span class='notice'>[src] is now set to [C.select_name || C].</span>")
+		to_chat(user_for_feedback, span_notice("[src] is now set to [C.select_name || C]."))
 	post_set_firemode()
 	update_icon(TRUE)
 
@@ -284,18 +297,18 @@
 
 /obj/item/gun/energy/suicide_act(mob/living/user)
 	if (istype(user) && can_shoot() && can_trigger_gun(user) && user.get_bodypart(BODY_ZONE_HEAD))
-		user.visible_message("<span class='suicide'>[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!</span>")
+		user.visible_message(span_suicide("[user] is putting the barrel of [src] in [user.p_their()] mouth.  It looks like [user.p_theyre()] trying to commit suicide!"))
 		sleep(25)
 		if(user.is_holding(src))
-			user.visible_message("<span class='suicide'>[user] melts [user.p_their()] face off with [src]!</span>")
+			user.visible_message(span_suicide("[user] melts [user.p_their()] face off with [src]!"))
 			playsound(loc, fire_sound, 50, 1, -1)
 			playsound(src, 'sound/weapons/dink.ogg', 30, 1)
 			var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-			cell.use(shot.e_cost)
+			cell.use(shot.e_cost * charge_cost_multiplier)
 			update_icon()
 			return(FIRELOSS)
 		else
-			user.visible_message("<span class='suicide'>[user] panics and starts choking to death!</span>")
+			user.visible_message(span_suicide("[user] panics and starts choking to death!"))
 			return(OXYLOSS)
 	else
 		user.visible_message("<span class='suicide'>[user] is pretending to melt [user.p_their()] face off with [src]! It looks like [user.p_theyre()] trying to commit suicide!</b></span>")
@@ -322,23 +335,23 @@
 		if(!BB)
 			. = ""
 		else if(BB.nodamage || !BB.damage || BB.damage_type == STAMINA)
-			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass.</span>")
+			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but it doesn't do anything. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
+			cell.use(E.e_cost * charge_cost_multiplier)
 			. = ""
 		else if(BB.damage_type != BURN)
-			user.visible_message("<span class='danger'>[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass.</span>")
+			user.visible_message(span_danger("[user] tries to light [user.p_their()] [A.name] with [src], but only succeeds in utterly destroying it. Dumbass."))
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
+			cell.use(E.e_cost * charge_cost_multiplier)
 			qdel(A)
 			. = ""
 		else
 			playsound(user, E.fire_sound, 50, 1)
 			playsound(user, BB.hitsound, 50, 1)
-			cell.use(E.e_cost)
-			. = "<span class='danger'>[user] casually lights their [A.name] with [src]. Damn.</span>"
+			cell.use(E.e_cost * charge_cost_multiplier)
+			. = span_danger("[user] casually lights their [A.name] with [src]. Damn.")
 
 /obj/item/gun/energy/altafterattack(atom/target, mob/user, proximity_flags, params)
 	if(!right_click_overridden)
@@ -350,21 +363,27 @@
 	if (!ishuman(user))
 		return
 	if (get_dist(src, user)<2)
-		if(cell)
-			if(can_charge == 0 && can_remove == 0)
-				to_chat(user, "<span class='notice'>You can't remove the cell from \the [src].</span>")
-				return
-			cell.forceMove(drop_location())
-			user.put_in_hands(cell)
-			cell.update_icon()
-			cell = null
-			to_chat(user, "<span class='notice'>You pull the cell out of \the [src].</span>")
-			playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
-		else
-			to_chat(user, "<span class='notice'>There's no cell in \the [src].</span>")
-		return
+		eject_cell(user, TRUE, TRUE)
 	else
 		return
+
+/obj/item/gun/energy/proc/eject_cell(mob/user, put_it_in_their_hand, sounds_and_words)
+	if(!cell)
+		if(sounds_and_words)
+			to_chat(user, span_notice("There's no cell in \the [src]."))
+		return
+	if(can_charge == 0 && can_remove == 0)
+		if(sounds_and_words)
+			to_chat(user, span_notice("You can't remove the cell from \the [src]."))
+		return
+	cell.forceMove(drop_location())
+	if(put_it_in_their_hand)
+		user.put_in_hands(cell)
+	cell.update_icon()
+	if(sounds_and_words)
+		to_chat(user, span_notice("You pull \the [cell] out of \the [src]."))
+		playsound(src, 'sound/f13weapons/equipsounds/laserreload.ogg', 50, 1)
+	cell = null
 
 /obj/item/gun/energy/attack_self(mob/living/user)
 	. = ..()
@@ -380,15 +399,15 @@
 		if (!cell && istype(AM, cell_type))
 			if(user.transferItemToLoc(AM, src))
 				cell = AM
-				to_chat(user, "<span class='notice'>You load a new cell into \the [src].</span>")
+				to_chat(user, span_notice("You load a new cell into \the [src]."))
 				A.update_icon()
 				update_icon()
 				return 1
 			else
-				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
+				to_chat(user, span_warning("You cannot seem to get \the [src] out of your hands!"))
 				return
 		//else if (cell)
-			//to_chat(user, "<span class='notice'>There's already a cell in \the [src].</span>")
+			//to_chat(user, span_notice("There's already a cell in \the [src]."))
 
 /obj/item/gun/energy/examine(mob/user)
 	. = ..()
@@ -398,13 +417,23 @@
 /obj/item/gun/energy/ui_data(mob/user)
 	var/list/data = ..()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
-	data["charge_cost"] = shot.e_cost
+	data["charge_cost"] = shot.e_cost * charge_cost_multiplier
 	if(cell)
 		data["cell_charge"] = cell.percent()
-		data["shots_remaining"] = round(cell.charge/shot.e_cost)
-		data["max_shots"] = round(cell.maxcharge/shot.e_cost)
+		data["shots_remaining"] = round(cell.charge / (shot.e_cost * charge_cost_multiplier))
+		data["max_shots"] = round(cell.maxcharge / (shot.e_cost * charge_cost_multiplier))
 	return data
 
 /obj/item/gun/energy/get_dud_projectile()
 	var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
 	return new shot.projectile_type
+
+/obj/item/gun/energy/generate_guntags()
+	..()
+	gun_tags |= GUN_ENERGY
+	gun_tags |= GUN_LASER
+
+/obj/item/gun/energy/refresh_upgrades()
+	//refresh our unique variables before applying upgrades too
+	charge_cost_multiplier = initial(charge_cost_multiplier)
+	..()

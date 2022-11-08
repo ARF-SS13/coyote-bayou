@@ -13,8 +13,8 @@
 	var/list/iter_test_wound_list
 
 	for(iter_test_wound_list in list(list(/datum/wound/blunt/moderate, /datum/wound/blunt/severe, /datum/wound/blunt/critical),\
-										list(/datum/wound/slash/moderate, /datum/wound/slash/severe, /datum/wound/slash/critical),\
-										list(/datum/wound/pierce/moderate, /datum/wound/pierce/severe, /datum/wound/pierce/critical),\
+										list(/datum/wound/bleed/slash/moderate, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/critical),\
+										list(/datum/wound/bleed/pierce/moderate, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/critical),\
 										list(/datum/wound/burn/moderate, /datum/wound/burn/severe, /datum/wound/burn/critical)))
 
 		TEST_ASSERT_EQUAL(length(victim.all_wounds), 0, "Patient is somehow wounded before test")
@@ -53,8 +53,8 @@
 	victim.dna.species.species_traits &= HAS_FLESH // take away the base human's flesh (ouchie!) ((not actually ouchie, this just affects their wounds and dismemberment handling))
 
 	for(iter_test_wound_list in list(list(/datum/wound/blunt/moderate, /datum/wound/blunt/severe, /datum/wound/blunt/critical),\
-										list(/datum/wound/slash/moderate, /datum/wound/slash/severe, /datum/wound/slash/critical),\
-										list(/datum/wound/pierce/moderate, /datum/wound/pierce/severe, /datum/wound/pierce/critical),\
+										list(/datum/wound/bleed/slash/moderate, /datum/wound/bleed/slash/severe, /datum/wound/bleed/slash/critical),\
+										list(/datum/wound/bleed/pierce/moderate, /datum/wound/bleed/pierce/severe, /datum/wound/bleed/pierce/critical),\
 										list(/datum/wound/burn/moderate, /datum/wound/burn/severe, /datum/wound/burn/critical)))
 
 		TEST_ASSERT_EQUAL(length(victim.all_wounds), 0, "Patient is somehow wounded before test")

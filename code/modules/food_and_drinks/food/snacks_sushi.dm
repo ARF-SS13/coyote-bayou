@@ -71,7 +71,7 @@
 /obj/item/reagent_containers/food/snacks/riceball
 	name = "Onigiri"
 	desc = "A ball of rice with some light salt and a wrap of seaweed."
-	icon_state = "riceball"
+	icon_state = "onigiri"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5, /datum/reagent/consumable/sodiumchloride = 2)
 	tastes = list("rice" = 4, "salt" = 1)
 	foodtype = GRAIN
@@ -121,3 +121,59 @@
 	name = "masago sushi"
 	desc = "Sushi that has been made with some kind of roe?"
 	icon_state = "sushi_Masago"
+
+
+// Newer TG sushis
+
+/obj/item/reagent_containers/food/snacks/vegetariansushiroll
+	name = "vegetarian sushi roll"
+	desc = "A roll of simple vegetarian sushi with rice, carrots, and potatoes. Sliceable into pieces!"
+	icon_state = "vegetariansushiroll"
+	slice_path = /obj/item/reagent_containers/food/snacks/vegetariansushislice
+	slices_num = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/vegetariansushislice
+	name = "vegetarian sushi slice"
+	desc = "A slice of simple vegetarian sushi with rice, carrots, and potatoes."
+	icon_state = "vegetariansushislice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("rice" = 4, "carrots" = 2, "potato" = 2)
+	foodtype = VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushiroll
+	name = "spicy filet sushi roll"
+	desc = "A roll of tasty, spicy sushi made with fish and vegetables. Sliceable into pieces!"
+	icon_state = "spicyfiletroll"
+	slice_path = /obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	slices_num = 4
+	list_reagents = list(/datum/reagent/consumable/nutriment = 12, /datum/reagent/consumable/capsaicin = 4, /datum/reagent/consumable/nutriment/vitamin = 4)
+	tastes = list("rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/spicyfiletsushislice
+	name = "spicy filet sushi slice"
+	desc = "A slice of tasty, spicy sushi made with fish and vegetables. Don't eat it too fast!."
+	icon_state = "spicyfiletslice"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 1, /datum/reagent/consumable/capsaicin = 1, /datum/reagent/consumable/nutriment/vitamin = 1)
+	tastes = list("rice" = 4, "fish" = 2, "spicyness" = 2)
+	foodtype = MEAT | VEGETABLES
+
+/obj/item/reagent_containers/food/snacks/springroll
+	name = "spring roll"
+	desc = "A plate of translucent rice wrappers filled with fresh vegetables, served with sweet chili sauce. You either love them or hate them."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "springroll"
+	list_reagents = list(/datum/reagent/consumable/nutriment = 8, /datum/reagent/consumable/nutriment/vitamin = 5, /datum/reagent/consumable/capsaicin = 2)
+	tastes = list("rice wrappers" = 1, "spice" = 1, "crunchy veggies" = 1)
+	foodtype = GRAIN | VEGETABLES
+	w_class = WEIGHT_CLASS_SMALL
+
+// customizationable sushi slice
+
+/obj/item/reagent_containers/food/snacks/sushislice/custom
+	name = "sushi slice"
+	icon_state = "vegetariansushislice"
+	desc = "A slice of customized sushi."

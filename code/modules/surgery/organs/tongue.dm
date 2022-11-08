@@ -29,18 +29,38 @@
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2
+	/// How much licking someone should heal someone
+	var/lick_heal_brute
+	/// How much licking someone should heal someone
+	var/lick_heal_burn
+	/// What kind of bandage is applied by licking someone
+	var/obj/item/stack/medical/gauze/lick_bandage
 
 /obj/item/organ/tongue/Initialize(mapload)
 	. = ..()
 	for(var/accent in initial_accents)
 		accents += new accent
-	low_threshold_passed = "<span class='info'>Your [name] feels a little sore.</span>"
-	low_threshold_cleared = "<span class='info'>Your [name] soreness has subsided.</span>"
-	high_threshold_passed = "<span class='warning'>Your [name] is really starting to hurt.</span>"
-	high_threshold_cleared = "<span class='info'>The pain of your [name] has subsided a little.</span>"
-	now_failing = "<span class='warning'>Your [name] feels like it's about to fall out!.</span>"
-	now_fixed = "<span class='info'>The excruciating pain of your [name] has subsided.</span>"
+	low_threshold_passed = span_info("Your [name] feels a little sore.")
+	low_threshold_cleared = span_info("Your [name] soreness has subsided.")
+	high_threshold_passed = span_warning("Your [name] is really starting to hurt.")
+	high_threshold_cleared = span_info("The pain of your [name] has subsided a little.")
+	now_failing = span_warning("Your [name] feels like it's about to fall out!.")
+	now_fixed = span_info("The excruciating pain of your [name] has subsided.")
 	languages_possible = languages_possible_base
+	if(lick_bandage) // ew
+		initialize_bandage(lick_bandage)
+
+/obj/item/organ/tongue/Destroy()
+	. = ..()
+	if(istype(lick_bandage))
+		QDEL_NULL(lick_bandage)
+
+/// Makes a tongue have a bandage in it, so it can lick wounds and apply some kind of bandage
+/obj/item/organ/tongue/proc/initialize_bandage(obj/item/stack/medical/gauze/lick_gauze)
+	if(!lick_gauze)
+		return FALSE
+	lick_bandage = new lick_gauze(src)
+	return TRUE
 
 /obj/item/organ/tongue/proc/handle_speech(datum/source, list/speech_args) //this wont proc unless there's initial_accents on the tongue
 	for(var/datum/accent/speech_modifier in accents)
@@ -49,7 +69,7 @@
 /obj/item/organ/tongue/applyOrganDamage(d, maximum = maxHealth)
 	. = ..()
 	if(damage >= maxHealth)
-		to_chat(owner, "<span class='userdanger'>Your tongue is singed beyond recognition, and disintegrates!</span>")
+		to_chat(owner, span_userdanger("Your tongue is singed beyond recognition, and disintegrates!"))
 		SSblackbox.record_feedback("tally", "fermi_chem", 1, "Tongues lost to Fermi")
 		qdel(src)
 
@@ -81,6 +101,24 @@
 	maxHealth = 40 //extra sensitivity means tongue is more susceptible to damage
 	initial_accents = list(/datum/accent/lizard)
 
+/obj/item/organ/tongue/healing
+	name = "soft tongue"
+	desc = "A soft, pleasant tongue that seems to be coated in some kind of medicinal fluid. Ew."
+	say_mod = "purrs"
+	lick_heal_brute = 1
+	lick_heal_burn = 1
+	lick_bandage = /obj/item/stack/medical/gauze/lick
+
+/obj/item/organ/tongue/cat
+	name = "cat tongue"
+	desc = "A rough tongue cats use to sandpaper meat from bones, and tend to various wounds."
+	say_mod = "meows"
+
+/obj/item/organ/tongue/dog
+	name = "dog tongue"
+	desc = "A long floppy tongue dogs use to express both affection and thirst. Allegedly the cleanest things in the wasteland."
+	say_mod = "woofs"
+
 /obj/item/organ/tongue/fly
 	name = "proboscis"
 	desc = "A freakish looking meat tube that apparently can take in liquids."
@@ -109,21 +147,21 @@
 		return
 
 	if(T.mothership == mothership)
-		to_chat(H, "<span class='notice'>[src] is already attuned to the same channel as your own.</span>")
+		to_chat(H, span_notice("[src] is already attuned to the same channel as your own."))
 		return
 
-	H.visible_message("<span class='notice'>[H] holds [src] in their hands, and concentrates for a moment.</span>", "<span class='notice'>You attempt to modify the attunation of [src].</span>")
+	H.visible_message(span_notice("[H] holds [src] in their hands, and concentrates for a moment."), span_notice("You attempt to modify the attunation of [src]."))
 	if(do_after(H, delay=15, target=src))
-		to_chat(H, "<span class='notice'>You attune [src] to your own channel.</span>")
+		to_chat(H, span_notice("You attune [src] to your own channel."))
 		mothership = T.mothership
 
 /obj/item/organ/tongue/abductor/examine(mob/M)
 	. = ..()
 	if(HAS_TRAIT(M, TRAIT_ABDUCTOR_TRAINING) || HAS_TRAIT(M.mind, TRAIT_ABDUCTOR_TRAINING) || isobserver(M))
 		if(!mothership)
-			. += "<span class='notice'>It is not attuned to a specific mothership.</span>"
+			. += span_notice("It is not attuned to a specific mothership.")
 		else
-			. += "<span class='notice'>It is attuned to [mothership].</span>"
+			. += span_notice("It is attuned to [mothership].")
 
 /obj/item/organ/tongue/zombie
 	name = "rotting tongue"
@@ -177,7 +215,7 @@
 		return
 	var/target = owner.get_bodypart(BODY_ZONE_HEAD)
 	owner.apply_damage(d, BURN, target)
-	to_chat(owner, "<span class='userdanger'>You feel your skull burning! Oof, your bones!</span>")
+	to_chat(owner, span_userdanger("You feel your skull burning! Oof, your bones!"))
 	return
 
 /obj/item/organ/tongue/bone/handle_speech(datum/source, list/speech_args)

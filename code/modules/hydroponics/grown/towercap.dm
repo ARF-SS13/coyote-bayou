@@ -50,23 +50,25 @@
 
 /obj/item/grown/log/attackby(obj/item/W, mob/user, params)
 	if(W.sharpness)
-		user.show_message("<span class='notice'>You make [plank_name] out of \the [src]!</span>", MSG_VISUAL)
+		user.show_message(span_notice("You make [plank_name] out of \the [src]!"), MSG_VISUAL)
 		var/seed_modifier = 3
 		if(seed)
 			seed_modifier = round(seed.potency / 25)
-		var/obj/item/stack/plank = new plank_type(user.loc, 1 + seed_modifier)
+		new plank_type(user.loc, 1 + seed_modifier)
+		/*
 		var/old_plank_amount = plank.amount
 		for(var/obj/item/stack/ST in user.loc)
 			if(ST != plank && istype(ST, plank_type) && ST.amount < ST.max_amount)
 				ST.attackby(plank, user) //we try to transfer all old unfinished stacks to the new stack we created.
 		if(plank.amount > old_plank_amount)
-			to_chat(user, "<span class='notice'>You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name].</span>")
+			to_chat(user, span_notice("You add the newly-formed [plank_name] to the stack. It now contains [plank.amount] [plank_name]."))
+		*/
 		qdel(src)
 
 	if(CheckAccepted(W))
 		var/obj/item/reagent_containers/food/snacks/grown/leaf = W
 		if(leaf.dry)
-			user.show_message("<span class='notice'>You wrap \the [W] around the log, turning it into a torch!</span>")
+			user.show_message(span_notice("You wrap \the [W] around the log, turning it into a torch!"))
 			var/obj/item/flashlight/flare/torch/T = new /obj/item/flashlight/flare/torch(user.loc)
 			usr.dropItemToGround(W)
 			usr.put_in_active_hand(T)
@@ -236,13 +238,15 @@
 				//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
 				W.pixel_x = clamp(text2num(click_params["icon-x"]) - 16, -(world.icon_size/2), world.icon_size/2)
 				W.pixel_y = clamp(text2num(click_params["icon-y"]) - 16, -(world.icon_size/2), world.icon_size/2)
-		else
-			return ..()
+		else //Standard attackby response, but also expose anything used on it to flame.
+			. = ..()
+			if(burning)
+				W.fire_act(1000, 500)
 
 
 /obj/structure/bonfire/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(burning)
-		to_chat(user, "<span class='warning'>You need to extinguish [src] before removing the logs!</span>")
+		to_chat(user, span_warning("You need to extinguish [src] before removing the logs!"))
 		return
 	if(!has_buckled_mobs() && do_after(user, 50, target = src))
 		for(var/I in 1 to 5)
@@ -328,12 +332,7 @@
 		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/bonfire/proc/attempt_smoke_signal(obj/item/stack/sheet/cloth/sheet, mob/living/user, )
-	var/outdoors = FALSE
-	for(var/area_type in GLOB.outdoor_areas)
-		if(istype(get_area(src), area_type))
-			outdoors = TRUE
-			break
-	if(!outdoors)
+	if(!is_type_in_list(get_area(src), GLOB.outdoor_areas))
 		to_chat(user, span_warning("You must be outside to send a smoke signal."))
 		return
 	var/signalmessage = stripped_input(user, "What would you like to send via smoke signal?", "Smoke Signal")
@@ -358,8 +357,8 @@
 	
 
 /obj/structure/bonfire/proc/smoke_signal(mob/living/M, message, obj/structure/bonfire/B)
-	var/log_message = "(Smoke Signal) [message]"
-	log_say(log_message, M)
+	var/log_message = "[message]"
+	M.log_talk(log_message, LOG_CHAT)
 
 	for(var/mob/player in GLOB.player_list)
 		if(player == M)
@@ -371,12 +370,7 @@
 			to_chat(player, msg_dead)
 			continue
 		if(player.has_language(/datum/language/tribal) && !HAS_TRAIT(player, TRAIT_BLIND))
-			var/outdoors = FALSE
-			for(var/area_type in GLOB.outdoor_areas)
-				if(istype(get_area(src), area_type))
-					outdoors = TRUE
-					break
-			if(!outdoors)
+			if(!is_type_in_list(get_area(player), GLOB.outdoor_areas))
 				continue
 			var/dirmessage = "somewhere in the distance"
 			if(player.z == B.z)

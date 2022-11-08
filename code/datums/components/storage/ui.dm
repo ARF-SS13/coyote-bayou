@@ -98,21 +98,23 @@
 		used += volume
 		volume_by_item[I] = volume
 		percentage_by_item[I] = volume / get_max_volume()
+		if(storage_flags & STORAGE_LIMIT_MAX_ITEMS && max_items > 0)
+			percentage_by_item[I] = max(percentage_by_item[I], (1 / max_items))
 	var/padding_pixels = ((length(percentage_by_item) - 1) * VOLUMETRIC_STORAGE_ITEM_PADDING) + VOLUMETRIC_STORAGE_EDGE_PADDING * 2
 	var/min_pixels = (MINIMUM_PIXELS_PER_ITEM * length(percentage_by_item)) + padding_pixels
 	// do the check for fallback for when someone has too much gamer gear
 	if((min_pixels) > (max_horizontal_pixels + 4))	// 4 pixel grace zone
-		to_chat(user, "<span class='warning'>[parent] was showed to you in legacy mode due to your items overrunning the three row limit! Consider not carrying too much or bugging a maintainer to raise this limit!</span>")
+		to_chat(user, span_warning("[parent] was showed to you in legacy mode due to your items overrunning the three row limit! Consider not carrying too much or bugging a maintainer to raise this limit!"))
 		return orient2hud_legacy(user, maxcolumns)
 	// after this point we are sure we can somehow fit all items into our max number of rows.
 
 	// determine rows
-	var/rows = clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
+	var/rows = number_of_rows // clamp(CEILING(min_pixels / horizontal_pixels, 1), 1, screen_max_rows)
 
 	var/overrun = FALSE
 	if(used > our_volume)
 		// congratulations we are now in overrun mode. everything will be crammed to minimum storage pixels.
-		to_chat(user, "<span class='warning'>[parent] rendered in overrun mode due to more items inside than the maximum volume supports.</span>")
+		to_chat(user, span_warning("[parent] rendered in overrun mode due to more items inside than the maximum volume supports."))
 		overrun = TRUE
 
 	// how much we are using

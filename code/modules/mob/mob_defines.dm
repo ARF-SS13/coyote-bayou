@@ -52,6 +52,8 @@
 	var/lying = 0
 	var/lying_prev = 0
 	var/is_shifted = FALSE
+	///Pixel Tilting, ported from splurt and modified. Props to whoever made it.
+	var/is_tilted
 
 	/// List of movement speed modifiers applying to this mob
 	var/list/movespeed_modification				//Lazy list, see mob_movespeed.dm
@@ -178,3 +180,7 @@
 
 	/// D&D-like reach: how far in tiles is considered adjacent to this mob. Euclidean distance.
 	var/reach = 1
+
+	/// How much DT does the mob ignore?
+	var/damage_threshold_penetration_mob = 0
+

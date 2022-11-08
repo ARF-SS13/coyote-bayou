@@ -17,7 +17,7 @@
 			SSI = CONFIG_GET_ENTRY(number/movedelay/sprint_speed_increase)
 		. -= SSI.config_entry_value
 	if(m_intent == MOVE_INTENT_WALK && HAS_TRAIT(src, TRAIT_SPEEDY_STEP))
-		. -= 1.5
+		. -= 1.25
 
 /mob/living/carbon/human/slip(knockdown_amount, obj/O, lube)
 	if(HAS_TRAIT(src, TRAIT_NOSLIPALL))
@@ -63,7 +63,7 @@
 		if(!HAS_TRAIT(src, TRAIT_FREESPRINT))
 			doSprintLossTiles(1)
 		if((oldpseudoheight - pseudo_z_axis) >= 8)
-			to_chat(src, "<span class='warning'>You trip off of the elevated surface!</span>")
+			to_chat(src, span_warning("You trip off of the elevated surface!"))
 			for(var/obj/item/I in held_items)
 				accident(I)
 			DefaultCombatKnockdown(80)

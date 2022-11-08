@@ -42,13 +42,13 @@
 	if(istype(surgery,/datum/surgery/healing))
 		var/datum/surgery/healing/the_surgery = surgery
 		if(!the_surgery.antispam)
-			display_results(user, target, "<span class='notice'>You attempt to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>",
-		"<span class='notice'>[user] attempts to patch some of [target]'s [woundtype].</span>")
+			display_results(user, target, span_notice("You attempt to patch some of [target]'s [woundtype]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype]."),
+		span_notice("[user] attempts to patch some of [target]'s [woundtype]."))
 
 /datum/surgery_step/heal/initiate(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
 	if(..())
-		while((brutehealing && target.getBruteLoss()) || (burnhealing && target.getFireLoss()))
+		while((brutehealing && target.getBruteLoss()) || (burnhealing && target.getFireLoss()) || ((burnhealing || brutehealing) && target.getBleedLoss()))
 			if(!..())
 				break
 
@@ -57,20 +57,24 @@
 	var/tmsg = "[user] fixes some of [target]'s wounds" //see above
 	var/urhealedamt_brute = brutehealing
 	var/urhealedamt_burn = burnhealing
+	var/urhealedamt_bleed = (brutehealing > burnhealing ? brutehealing : burnhealing)
 	if(missinghpbonus)
 		if(target.stat != DEAD)
 			urhealedamt_brute += round((target.getBruteLoss()/ missinghpbonus),0.1)
 			urhealedamt_burn += round((target.getFireLoss()/ missinghpbonus),0.1)
+			urhealedamt_bleed += round((target.getBleedLoss()/ missinghpbonus),0.1)
 		else //less healing bonus for the dead since they're expected to have lots of damage to begin with (to make TW into defib not TOO simple)
 			urhealedamt_brute += round((target.getBruteLoss()/ (missinghpbonus*5)),0.1)
 			urhealedamt_burn += round((target.getFireLoss()/ (missinghpbonus*5)),0.1)
+			urhealedamt_bleed += round((target.getBleedLoss()/ (missinghpbonus*5)),0.1)
 	if(!get_location_accessible(target, target_zone))
 		urhealedamt_brute *= 0.55
 		urhealedamt_burn *= 0.55
+		urhealedamt_bleed *= 0.55
 		umsg += " as best as you can while they have clothing on"
 		tmsg += " as best as they can while [target] has clothing on"
-	target.heal_bodypart_damage(urhealedamt_brute,urhealedamt_burn)
-	display_results(user, target, "<span class='notice'>[umsg].</span>",
+	target.heal_bodypart_damage(urhealedamt_brute, urhealedamt_burn, bleed = urhealedamt_bleed)
+	display_results(user, target, span_notice("[umsg]."),
 		"[tmsg].",
 		"[tmsg].")
 	if(istype(surgery, /datum/surgery/healing))
@@ -79,9 +83,9 @@
 	return TRUE
 
 /datum/surgery_step/heal/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s wounds.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	var/urdamageamt_burn = brutehealing * 0.8
 	var/urdamageamt_brute = burnhealing * 0.8
 	if(missinghpbonus)
@@ -214,7 +218,7 @@
 	missinghpbonus = 2.5
 
 /datum/surgery_step/heal/combo/upgraded/femto/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screwed up!</span>",
-		"<span class='warning'>[user] screws up!</span>",
-		"<span class='notice'>[user] fixes some of [target]'s wounds.</span>", TRUE)
+	display_results(user, target, span_warning("You screwed up!"),
+		span_warning("[user] screws up!"),
+		span_notice("[user] fixes some of [target]'s wounds."), TRUE)
 	target.take_bodypart_damage(5,5)

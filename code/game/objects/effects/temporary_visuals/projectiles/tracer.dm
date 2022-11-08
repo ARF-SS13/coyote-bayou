@@ -29,6 +29,9 @@
 /obj/effect/projectile/tracer/laser/blue
 	icon_state = "beam_blue"
 
+/obj/effect/projectile/tracer/laser/badlands
+	icon_state = "beam_badlands"
+
 /obj/effect/projectile/tracer/disabler
 	name = "disabler"
 	icon_state = "beam_omni"

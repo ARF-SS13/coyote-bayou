@@ -12,26 +12,26 @@
 	if(!IS_HERETIC(user))
 		return
 	if(!target)
-		to_chat(user,"<span class='warning'>No target could be found. Put the living heart on the rune and use the rune to recieve a target.</span>")
+		to_chat(user,span_warning("No target could be found. Put the living heart on the rune and use the rune to recieve a target."))
 		return
 	var/dist = get_dist(user.loc,target.loc)
 	var/dir = get_dir(user.loc,target.loc)
 	
 	if(user.z != target.z)
-		to_chat(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+		to_chat(user,span_warning("[target.real_name] is beyond our reach."))
 	else
 		switch(dist)
 			if(0 to 15)
-				to_chat(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,span_warning("[target.real_name] is near you. They are to the [dir2text(dir)] of you!"))
 			if(16 to 31)
-				to_chat(user,"<span class='warning'>[target.real_name] is somewhere in your vicinty. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,span_warning("[target.real_name] is somewhere in your vicinty. They are to the [dir2text(dir)] of you!"))
 			if(32 to 127)
-				to_chat(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,span_warning("[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!"))
 			else
-				to_chat(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+				to_chat(user,span_warning("[target.real_name] is beyond our reach."))
 
 	if(target.stat == DEAD)
-		to_chat(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
+		to_chat(user,span_warning("[target.real_name] is dead. Bring them onto a transmutation rune!"))
 
 /obj/item/melee/sickly_blade
 	name = "eldritch blade"
@@ -53,7 +53,7 @@
 
 /obj/item/melee/sickly_blade/attack(mob/living/M, mob/living/user)
 	if(!IS_HERETIC(user))
-		to_chat(user,"<span class='danger'>You feel a pulse of some alien intellect lash out at your mind!</span>")
+		to_chat(user,span_danger("You feel a pulse of some alien intellect lash out at your mind!"))
 		var/mob/living/carbon/human/human_user = user
 		human_user.AdjustParalyzed(5 SECONDS)
 		return FALSE
@@ -134,7 +134,7 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie/eldritch
 	// slightly better than normal cult robes
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50,"energy" = 50, "bomb" = 35, "bio" = 20, "rad" = 0, "fire" = 20, "acid" = 20)
+	armor = ARMOR_VALUE_MEDIUM
 
 /obj/item/reagent_containers/glass/beaker/eldritch
 	name = "flask of eldritch essence"

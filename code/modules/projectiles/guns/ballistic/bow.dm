@@ -15,6 +15,7 @@
 	no_pin_required = TRUE
 	trigger_guard = TRIGGER_GUARD_NONE //so ashwalkers can use it
 	spawnwithmagazine = TRUE
+	casing_ejector = TRUE
 	var/recentdraw
 	var/draw_sound = 'sound/weapons/bowdraw.wav'
 	dryfire_text = "*no arrows*"
@@ -24,16 +25,27 @@
 	init_firemodes = list(
 		SEMI_AUTO_NODELAY
 	)
+	gun_accuracy_zone_type = ZONE_WEIGHT_PRECISION
+	gun_sound_properties = list(
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(null),
+		SP_DISTANT_RANGE(null)
+	)
 
 /obj/item/gun/ballistic/bow/process_chamber(mob/living/user, empty_chamber = 0)
 	var/obj/item/ammo_casing/AC = chambered //Find chambered round
 	if(istype(AC)) //there's a chambered round
-		if(casing_ejector)
-			AC.forceMove(drop_location()) //Eject casing onto ground.
+		AC.forceMove(drop_location()) //Eject casing onto ground.
+		chambered = null
+		/* if(casing_ejector)
 			AC.bounce_away(TRUE)
-			chambered = null
 		else if(empty_chamber)
-			chambered = null
+			chambered = null */
 
 /obj/item/gun/ballistic/bow/can_shoot()
 	return chambered
@@ -43,7 +55,7 @@
 		user.put_in_hands(chambered)
 		chambered = null
 		update_icon()
-		to_chat(user, "<span class='notice'>You gently release the bowstring, removing the arrow.</span>")
+		to_chat(user, span_notice("You gently release the bowstring, removing the arrow."))
 		return
 	if(recentdraw > world.time || !get_ammo(FALSE))
 		return
@@ -53,7 +65,7 @@
 
 /obj/item/gun/ballistic/bow/proc/draw(mob/M, visible = TRUE)
 	if(visible)
-		M.visible_message("<span class='warning'>[M] draws the string on [src]!</span>", "<span class='warning'>You draw the string on [src]!</span>")
+		M.visible_message(span_warning("[M] draws the string on [src]!"), span_warning("You draw the string on [src]!"))
 	playsound(M, draw_sound, 60, 1)
 	draw_load(M)
 	update_icon()
@@ -67,7 +79,7 @@
 
 /obj/item/gun/ballistic/bow/attackby(obj/item/A, mob/user, params)
 	if(magazine.attackby(A, user, params, 1))
-		to_chat(user, "<span class='notice'>You load [A] into \the [src].</span>")
+		to_chat(user, span_notice("You load [A] into \the [src]."))
 		update_icon()
 
 /obj/item/gun/ballistic/bow/update_icon()
@@ -77,7 +89,7 @@
 /obj/item/gun/ballistic/bow/do_fire(atom/target, mob/living/user, message = TRUE, params, zone_override = "", bonus_spread = 0, stam_cost = 0)
 	..()
 	if(HAS_TRAIT(user, TRAIT_AUTO_DRAW) && !chambered && get_ammo(FALSE))
-		user.visible_message("<span class='warning'>[user] instinctively draws the string on [src]!</span>", "<span class='warning'>You instinctively draw the string on [src]!</span>")
+		user.visible_message(span_warning("[user] instinctively draws the string on [src]!"), span_warning("You instinctively draw the string on [src]!"))
 		draw(user, FALSE)
 		recentdraw = world.time + 2
 
@@ -119,7 +131,6 @@
 	name = "sturdy bow"
 	desc = "A firm sturdy wooden bow with leather handles and sinew wrapping, for extra stopping power in the shot speed of the arrows."
 	icon_state = "bow"
-	item_state = "bow"
 	icon_prefix = "bow"
 	force = 15
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/sturdy
@@ -141,7 +152,6 @@
 	name = "crossbow"
 	desc = "A crossbow."
 	icon_state = "crossbow"
-	item_state = "crossbow"
 	icon_prefix = "crossbow"
 	force = 10
 	mag_type = /obj/item/ammo_box/magazine/internal/bow/cross

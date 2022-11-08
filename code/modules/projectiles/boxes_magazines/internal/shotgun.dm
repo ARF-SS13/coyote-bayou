@@ -41,6 +41,10 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 12
 
+/obj/item/ammo_box/magazine/internal/shot/single
+	name = "single-barrel shotgun internal magazine"
+	max_ammo = 1
+
 /obj/item/ammo_box/magazine/internal/shot/dual
 	name = "double-barrel shotgun internal magazine"
 	max_ammo = 2
@@ -83,6 +87,13 @@
 	ammo_type = /obj/item/ammo_casing/c4570
 	caliber = list(CALIBER_4570)
 	max_ammo = 10
+	multiload = 1
+
+/obj/item/ammo_box/magazine/internal/shot/tube380
+	name = "308 internal tube magazine" //long ranger
+	ammo_type = /obj/item/ammo_casing/a762
+	caliber = list(CALIBER_762)
+	max_ammo = 7
 	multiload = 1
 
 /obj/item/ammo_box/magazine/internal/shot/lasmusket

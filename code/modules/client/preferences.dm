@@ -101,7 +101,79 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/eye_type = DEFAULT_EYES_TYPE	//Eye type
 	var/split_eye_colors = FALSE
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	var/list/features = list("mcolor" = "FFFFFF", "mcolor2" = "FFFFFF", "mcolor3" = "FFFFFF", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "horns_color" = "85615a", "ears" = "None", "wings" = "None", "wings_color" = "FFF", "frills" = "None", "deco_wings" = "None", "spines" = "None", "legs" = "Plantigrade", "insect_wings" = "Plain", "insect_fluff" = "None", "insect_markings" = "None", "arachnid_legs" = "Plain", "arachnid_spinneret" = "Plain", "arachnid_mandibles" = "Plain", "mam_body_markings" = list(), "mam_ears" = "None", "mam_snouts" = "None", "mam_tail" = "None", "mam_tail_animated" = "None", "xenodorsal" = "Standard", "xenohead" = "Standard", "xenotail" = "Xenomorph Tail", "taur" = "None", "genitals_use_skintone" = FALSE, "has_cock" = FALSE, "cock_shape" = DEF_COCK_SHAPE, "cock_length" = COCK_SIZE_DEF, "cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF, "cock_color" = "ffffff", "cock_taur" = FALSE, "has_balls" = FALSE, "balls_color" = "ffffff", "balls_shape" = DEF_BALLS_SHAPE, "balls_size" = BALLS_SIZE_DEF, "balls_cum_rate" = CUM_RATE, "balls_cum_mult" = CUM_RATE_MULT, "balls_efficiency" = CUM_EFFICIENCY, "has_breasts" = FALSE, "breasts_color" = "ffffff", "breasts_size" = BREASTS_SIZE_DEF, "breasts_shape" = DEF_BREASTS_SHAPE, "breasts_producing" = FALSE, "has_vag" = FALSE, "vag_shape" = DEF_VAGINA_SHAPE, "vag_color" = "ffffff", "has_womb" = FALSE, "balls_visibility"	= GEN_VISIBLE_NO_UNDIES, "breasts_visibility"= GEN_VISIBLE_NO_UNDIES, "cock_visibility"	= GEN_VISIBLE_NO_UNDIES, "vag_visibility"	= GEN_VISIBLE_NO_UNDIES, "ipc_screen" = "Sunburst", "ipc_antenna" = "None", "flavor_text" = "", "silicon_flavor_text" = "", "ooc_notes" = "", "meat_type" = "Mammalian", "body_model" = MALE, "body_size" = RESIZE_DEFAULT_SIZE, "color_scheme" = OLD_CHARACTER_COLORING)
+	var/list/features = list(
+		"mcolor" = "FFFFFF",
+		"mcolor2" = "FFFFFF",
+		"mcolor3" = "FFFFFF",
+		"tail_lizard" = "Smooth",
+		"tail_human" = "None",
+		"snout" = "Round",
+		"horns" = "None",
+		"horns_color" = "85615a",
+		"ears" = "None",
+		"wings" = "None",
+		"wings_color" = "FFF",
+		"frills" = "None",
+		"deco_wings" = "None",
+		"spines" = "None",
+		"legs" = "Plantigrade",
+		"insect_wings" = "Plain",
+		"insect_fluff" = "None",
+		"insect_markings" = "None",
+		"arachnid_legs" = "Plain",
+		"arachnid_spinneret" = "Plain",
+		"arachnid_mandibles" = "Plain",
+		"mam_body_markings" = list(),
+		"mam_ears" = "None",
+		"mam_snouts" = "None",
+		"mam_tail" = "None",
+		"mam_tail_animated" = "None",
+		"xenodorsal" = "Standard",
+		"xenohead" = "Standard",
+		"xenotail" = "Xenomorph Tail",
+		"taur" = "None",
+		"genitals_use_skintone" = FALSE,
+		"has_cock" = FALSE,
+		"cock_shape" = DEF_COCK_SHAPE,
+		"cock_length" = COCK_SIZE_DEF,
+		"cock_diameter_ratio" = COCK_DIAMETER_RATIO_DEF,
+		"cock_color" = "ffffff",
+		"cock_taur" = FALSE,
+		"has_balls" = FALSE,
+		"balls_color" = "ffffff",
+		"balls_shape" = DEF_BALLS_SHAPE,
+		"balls_size" = BALLS_SIZE_DEF,
+		"balls_cum_rate" = CUM_RATE,
+		"balls_cum_mult" = CUM_RATE_MULT,
+		"balls_efficiency" = CUM_EFFICIENCY,
+		"has_breasts" = FALSE,
+		"breasts_color" = "ffffff",
+		"breasts_size" = BREASTS_SIZE_DEF,
+		"breasts_shape" = DEF_BREASTS_SHAPE,
+		"breasts_producing" = FALSE,
+		"has_butt" = FALSE,
+		"butt_color" = "ffffff",
+		"butt_size" = BUTT_SIZE_DEF,
+		"has_vag" = FALSE,
+		"vag_shape" = DEF_VAGINA_SHAPE,
+		"vag_color" = "ffffff",
+		"has_womb" = FALSE,
+		"balls_visibility" = GEN_VISIBLE_NO_UNDIES,
+		"breasts_visibility"= GEN_VISIBLE_NO_UNDIES,
+		"cock_visibility" = GEN_VISIBLE_NO_UNDIES,
+		"vag_visibility" = GEN_VISIBLE_NO_UNDIES,
+		"butt_visibility" = GEN_VISIBLE_NO_UNDIES,
+		"ipc_screen" = "Sunburst",
+		"ipc_antenna" = "None",
+		"flavor_text" = "",
+		"silicon_flavor_text" = "",
+		"ooc_notes" = "",
+		"meat_type" = "Mammalian",
+		"taste" = "something",
+		"body_model" = MALE,
+		"body_size" = RESIZE_DEFAULT_SIZE,
+		"color_scheme" = OLD_CHARACTER_COLORING
+		)
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
@@ -120,6 +192,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	//Quirk list
 	var/list/all_quirks = list()
+
+	//Quirk category currently selected
+	var/quirk_category = QUIRK_POSITIVE 
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
@@ -418,6 +493,7 @@ Records disabled until a use for them is found
 			dat += "<BR>"
 			dat += "<b>Species:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a><BR>"
 			dat += "<b>Custom Species Name:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=custom_species;task=input'>[custom_species ? custom_species : "None"]</a><BR>"
+			dat += "<b>Custom Taste:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=taste;task=input'>[features["taste"] ? features["taste"] : "something"]</a><BR>"
 			dat += "<b>Random Body:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=all;task=random'>Randomize!</A><BR>"
 			dat += "<b>Always Random Body:</b><a href='?_src_=prefs;preference=all'>[be_random_body ? "Yes" : "No"]</A><BR>"
 			dat += "<br><b>Cycle background:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=cycle_bg;task=input'>[bgstate]</a><BR>"
@@ -706,6 +782,7 @@ Records disabled until a use for them is found
 					dat += "<b>Has Testicles:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_balls'>[features["has_balls"] == TRUE ? "Yes" : "No"]</a>"
 					if(features["has_balls"])
 						if(!pref_species.use_skintones)
+							dat += "<b>Testicles Type:</b> <a style='display:block;width:100px' href='?_src_=prefs;preference=balls_shape;task=input'>[features["balls_shape"]]</a>"
 							dat += "<b>Testicles Color:</b></a><BR>"
 							dat += "<span style='border: 1px solid #161616; background-color: #[features["balls_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=balls_color;task=input'>Change</a><br>"
 						dat += "<b>Testicles Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=balls_visibility;task=input'>[features["balls_visibility"]]</a>"
@@ -713,7 +790,7 @@ Records disabled until a use for them is found
 				dat += "<h3>Vagina</h3>"
 				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_vag'>[features["has_vag"] == TRUE ? "Yes": "No" ]</a>"
 				if(features["has_vag"])
-					dat += "<b>Vagina Type:</b> <a style='display:block;width:100px' href='?_ssrc_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
+					dat += "<b>Vagina Type:</b> <a style='display:block;width:100px' href='?_src_=prefs;preference=vag_shape;task=input'>[features["vag_shape"]]</a>"
 					if(!pref_species.use_skintones)
 						dat += "<b>Vagina Color:</b></a><BR>"
 						dat += "<span style='border: 1px solid #161616; background-color: #[features["vag_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=vag_color;task=input'>Change</a><br>"
@@ -731,6 +808,16 @@ Records disabled until a use for them is found
 					dat += "<b>Breasts Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
 					dat += "<b>Breasts Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
 					dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
+				dat += "</td>"
+				dat += APPEARANCE_CATEGORY_COLUMN
+				dat += "<h3>Butt</h3>"
+				dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_butt'>[features["has_butt"] == TRUE ? "Yes" : "No"]</a>"
+				if(features["has_butt"])
+					if(!pref_species.use_skintones)
+						dat += "<b>Color:</b></a><BR>"
+						dat += "<span style='border: 1px solid #161616; background-color: #[features["butt_color"]];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=butt_color;task=input'>Change</a><br>"
+					dat += "<b>Butt Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_size;task=input'>[features["butt_size"]]</a>"
+					dat += "<b>Butt Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_visibility;task=input'>[features["butt_visibility"]]</a>"
 				dat += "</td>"
 			dat += "</td>"
 			dat += "</tr></table>"
@@ -998,22 +1085,22 @@ Records disabled until a use for them is found
 			dat += "<h2>Adult content prefs</h2>"
 			dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 			dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
-//			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
+			dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
 			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
-/*			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Forced Feminization:</b> <a href='?_src_=prefs;preference=feminization'>[(cit_toggles & FORCED_FEM) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Forced Masculinization:</b> <a href='?_src_=prefs;preference=masculinization'>[(cit_toggles & FORCED_MASC) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Lewd Hypno:</b> <a href='?_src_=prefs;preference=hypno'>[(cit_toggles & HYPNO) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "<b>Bimbofication:</b> <a href='?_src_=prefs;preference=bimbo'>[(cit_toggles & BIMBOFICATION) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "</td>"
 			dat +="<td width='300px' height='300px' valign='top'>"
 			dat += "<h2>Other content prefs</h2>"
-//			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-//			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
-			dat += "<b>Automatic Wagging:</b> <a href='?_src_=prefs;preference=auto_wag'>[(cit_toggles & NO_AUTO_WAG) ? "Disabled" : "Enabled"]</a><br>"
+			dat += "<b>Breast Enlargement:</b> <a href='?_src_=prefs;preference=breast_enlargement'>[(cit_toggles & BREAST_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Penis Enlargement:</b> <a href='?_src_=prefs;preference=penis_enlargement'>[(cit_toggles & PENIS_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
+			dat += "<b>Butt Enlargement:</b> <a href='?_src_=prefs;preference=butt_enlargement'>[(cit_toggles & BUTT_ENLARGEMENT) ? "Allowed" : "Disallowed"]</a><br>"
 			dat += "</tr></table>"
 			dat += "<br>"
-*/
+
 		if(KEYBINDINGS_TAB) // Custom keybindings
 			dat += "<b>Keybindings:</b> <a href='?_src_=prefs;preference=hotkeys'>[(hotkeys) ? "Hotkeys" : "Input"]</a><br>"
 			dat += "Keybindings mode controls how the game behaves with tab and map/input focus.<br>If it is on <b>Hotkeys</b>, the game will always attempt to force you to map focus, meaning keypresses are sent \
@@ -1285,7 +1372,7 @@ Records disabled until a use for them is found
 		return
 
 	if (!isnum(desiredLvl))
-		to_chat(user, "<span class='danger'>UpdateJobPreference - desired level was not a number. Please notify coders!</span>")
+		to_chat(user, span_danger("UpdateJobPreference - desired level was not a number. Please notify coders!"))
 		ShowChoices(user)
 		return
 
@@ -1315,7 +1402,7 @@ Records disabled until a use for them is found
 
 /datum/preferences/proc/SetQuirks(mob/user)
 	if(!SSquirks)
-		to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
+		to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
 		return
 
 	var/list/dat = list()
@@ -1331,16 +1418,22 @@ Records disabled until a use for them is found
 		dat += "<hr>"
 		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-		<b>Quirk balance remaining:</b> [GetQuirkBalance()]</center><br>"
+		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
+		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
+		dat += "</center><br>"
 		for(var/V in SSquirks.quirks)
 			var/datum/quirk/T = SSquirks.quirks[V]
+			var/value = initial(T.value)
+			if((value > 0 && quirk_category != QUIRK_POSITIVE) || (value < 0 && quirk_category != QUIRK_NEGATIVE) || (value == 0 && quirk_category != QUIRK_NEUTRAL))
+				continue
+
 			var/quirk_name = initial(T.name)
 			var/has_quirk
 			var/quirk_cost = initial(T.value) * -1
 			var/lock_reason = "This trait is unavailable."
 			var/quirk_conflict = FALSE
-			if(initial(T.locked))
-				quirk_conflict = TRUE
 			for(var/_V in all_quirks)
 				if(_V == quirk_name)
 					has_quirk = TRUE
@@ -1357,7 +1450,7 @@ Records disabled until a use for them is found
 				quirk_cost = "+[quirk_cost]"
 			var/font_color = "#AAAAFF"
 			if(initial(T.value) != 0)
-				font_color = initial(T.value) > 0 ? "#AAFFAA" : "#FFAAAA"
+				font_color = value > 0 ? "#AAFFAA" : "#FFAAAA"
 			if(quirk_conflict)
 				dat += "<font color='[font_color]'>[quirk_name]</font> - [initial(T.desc)] \
 				<font color='red'><b>LOCKED: [lock_reason]</b></font><br>"
@@ -1377,9 +1470,11 @@ Records disabled until a use for them is found
 	popup.open(0)
 	return
 
+
+
 /datum/preferences/proc/SetSpecial(mob/user)
 //	if(!SSquirks)
-	//	to_chat(user, "<span class='danger'>The quirk subsystem is still initializing! Try again in a minute.</span>")
+	//	to_chat(user, span_danger("The quirk subsystem is still initializing! Try again in a minute."))
 //		return
 
 	var/list/dat = list()
@@ -1409,7 +1504,7 @@ Records disabled until a use for them is found
 	return
 
 /datum/preferences/proc/GetQuirkBalance()
-	var/bal = 0
+	var/bal = 5
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
@@ -1494,21 +1589,21 @@ Records disabled until a use for them is found
 					var/list/L = V
 					for(var/Q in all_quirks)
 						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
-							to_chat(user, "<span class='danger'>[quirk] is incompatible with [Q].</span>")
+							to_chat(user, span_danger("[quirk] is incompatible with [Q]."))
 							return
 				var/value = SSquirks.quirk_points[quirk]
 				var/balance = GetQuirkBalance()
 				if(quirk in all_quirks)
 					if(balance + value < 0)
-						to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")
+						to_chat(user, span_warning("Refunding this would cause you to go below your balance!"))
 						return
 					all_quirks -= quirk
 				else
 					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
-						to_chat(user, "<span class='warning'>You can't have more than [MAX_QUIRKS] positive quirks!</span>")
+						to_chat(user, span_warning("You can't have more than [MAX_QUIRKS] positive quirks!"))
 						return
 					if(balance - value < 0)
-						to_chat(user, "<span class='warning'>You don't have enough balance to gain this quirk!</span>")
+						to_chat(user, span_warning("You don't have enough balance to gain this quirk!"))
 						return
 					all_quirks += quirk
 				SetQuirks(user)
@@ -1518,6 +1613,12 @@ Records disabled until a use for them is found
 			else
 				SetQuirks(user)
 		return TRUE
+
+	else if(href_list["quirk_category"])
+		var/temp_quirk_category = href_list["quirk_category"]
+		if(temp_quirk_category == QUIRK_POSITIVE || temp_quirk_category == QUIRK_NEUTRAL || temp_quirk_category == QUIRK_NEGATIVE)
+			quirk_category = temp_quirk_category
+			SetQuirks(user)
 
 	else if(href_list["preference"] == "special")
 		switch(href_list["task"])
@@ -1747,7 +1848,7 @@ Records disabled until a use for them is found
 										if(modified_limbs[modified_limb][1] == LOADOUT_LIMB_PROSTHETIC && modified_limb != limb_type)
 											number_of_prosthetics += 1
 									if(number_of_prosthetics > MAXIMUM_LOADOUT_PROSTHETICS)
-										to_chat(user, "<span class='danger'>You can only have up to two prosthetic limbs!</span>")
+										to_chat(user, span_danger("You can only have up to two prosthetic limbs!"))
 									else
 										//save the actual prosthetic data
 										modified_limbs[limb_type] = list(modification_type, prosthetic_type)
@@ -1849,6 +1950,13 @@ Records disabled until a use for them is found
 					else
 						custom_species = null
 
+				if("taste")
+					var/new_taste = reject_bad_name(input(user, "What do you taste like?", "Character Preference", features["taste"]) as null|text)
+					if(new_taste)
+						features["taste"] = new_taste
+					else
+						features["taste"] = "something"
+
 				if("mutant_color")
 					var/new_mutantcolor = input(user, "Choose your character's alien/mutant color:", "Character Preference","#"+features["mcolor"]) as color|null
 					if(new_mutantcolor)
@@ -1858,7 +1966,7 @@ Records disabled until a use for them is found
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
-							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color2")
 					var/new_mutantcolor = input(user, "Choose your character's secondary alien/mutant color:", "Character Preference","#"+features["mcolor2"]) as color|null
@@ -1869,7 +1977,7 @@ Records disabled until a use for them is found
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor2"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
-							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mutant_color3")
 					var/new_mutantcolor = input(user, "Choose your character's tertiary alien/mutant color:", "Character Preference","#"+features["mcolor3"]) as color|null
@@ -1880,7 +1988,7 @@ Records disabled until a use for them is found
 						else if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 							features["mcolor3"] = sanitize_hexcolor(new_mutantcolor, 6)
 						else
-							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 
 				if("mismatched_markings")
 					show_mismatched_markings = !show_mismatched_markings
@@ -2076,7 +2184,7 @@ Records disabled until a use for them is found
 							if(custom_tone)
 								var/temp_hsv = RGBtoHSV(custom_tone)
 								if(ReadHSV(temp_hsv)[3] < ReadHSV("#333333")[3]) // rgb(50,50,50)
-									to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+									to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 								else
 									use_custom_skin_tone = TRUE
 									skin_tone = custom_tone
@@ -2172,7 +2280,7 @@ Records disabled until a use for them is found
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features[href_list["preference"]] = sanitize_hexcolor(new_feature_color, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 
 				//advanced color mode toggle
@@ -2192,7 +2300,7 @@ Records disabled until a use for them is found
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["cock_color"] = sanitize_hexcolor(new_cockcolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("cock_length")
 					var/min_D = CONFIG_GET(number/penis_min_inches_prefs)
@@ -2232,7 +2340,13 @@ Records disabled until a use for them is found
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["balls_color"] = sanitize_hexcolor(new_ballscolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
+
+				if("balls_shape")
+					var/new_shape
+					new_shape = input(user, "Balls Shape", "Character Preference") as null|anything in GLOB.balls_shapes_list
+					if(new_shape)
+						features["balls_shape"] = new_shape
 
 				if("balls_visibility")
 					var/n_vis = input(user, "Testicles Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
@@ -2259,7 +2373,7 @@ Records disabled until a use for them is found
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["breasts_color"] = sanitize_hexcolor(new_breasts_color, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("breasts_visibility")
 					var/n_vis = input(user, "Breasts Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
@@ -2281,12 +2395,35 @@ Records disabled until a use for them is found
 						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
 							features["vag_color"] = sanitize_hexcolor(new_vagcolor, 6)
 						else
-							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+							to_chat(user,span_danger("Invalid color. Your color is not bright enough."))
 
 				if("vag_visibility")
 					var/n_vis = input(user, "Vagina Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
 						features["vag_visibility"] = n_vis
+
+				if("butt_color")
+					var/new_buttcolor = input(user, "Butt color:", "Character Preference","#"+features["butt_color"]) as color|null
+					if(new_buttcolor)
+						var/temp_hsv = RGBtoHSV(new_buttcolor)
+						if(new_buttcolor == "#000000")
+							features["butt_color"] = pref_species.default_color
+						else if(ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3])
+							features["butt_color"] = sanitize_hexcolor(new_buttcolor, 6)
+						else
+							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+
+				if("butt_size")
+					var/min_B = CONFIG_GET(number/butt_min_size_prefs)
+					var/max_B = CONFIG_GET(number/butt_max_size_prefs)
+					var/new_length = input(user, "Butt size:\n([min_B]-[max_B])", "Character Preference") as num|null
+					if(new_length)
+						features["butt_size"] = clamp(round(new_length), min_B, max_B)
+
+				if("butt_visibility")
+					var/n_vis = input(user, "Butt Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
+					if(n_vis)
+						features["butt_visibility"] = n_vis
 
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
@@ -2527,7 +2664,7 @@ Records disabled until a use for them is found
 								if((MUTCOLORS_PARTSONLY in pref_species.species_traits) || ReadHSV(temp_hsv)[3] >= ReadHSV(MINIMUM_MUTANT_COLOR)[3]) // mutantcolors must be bright, but only if they affect the skin
 									color_list[color_number] = "#[sanitize_hexcolor(new_marking_color, 6)]"
 								else
-									to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
+									to_chat(user, span_danger("Invalid color. Your color is not bright enough."))
 		else
 			switch(href_list["preference"])
 				//CITADEL PREFERENCES EDIT - I can't figure out how to modularize these, so they have to go here. :c -Pooj
@@ -2551,6 +2688,8 @@ Records disabled until a use for them is found
 						features["has_womb"] = FALSE
 				if("has_womb")
 					features["has_womb"] = !features["has_womb"]
+				if("has_butt")
+					features["has_butt"] = !features["has_butt"]
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
@@ -2729,7 +2868,7 @@ Records disabled until a use for them is found
 					persistent_scars = !persistent_scars
 
 				if("clear_scars")
-					to_chat(user, "<span class='notice'>All scar slots cleared. Please save character to confirm.</span>")
+					to_chat(user, span_notice("All scar slots cleared. Please save character to confirm."))
 					scars_list["1"] = ""
 					scars_list["2"] = ""
 					scars_list["3"] = ""
@@ -2787,6 +2926,9 @@ Records disabled until a use for them is found
 
 				if("penis_enlargement")
 					cit_toggles ^= PENIS_ENLARGEMENT
+
+				if("butt_enlargement")
+					cit_toggles ^= BUTT_ENLARGEMENT
 
 				if("feminization")
 					cit_toggles ^= FORCED_FEM
@@ -2877,11 +3019,11 @@ Records disabled until a use for them is found
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
 				/*
 				if(!is_loadout_slot_available(G.category))
-					to_chat(user, "<span class='danger'>You cannot take this loadout, as you've already chosen too many of the same category!</span>")
+					to_chat(user, span_danger("You cannot take this loadout, as you've already chosen too many of the same category!"))
 					return
 				*/
 				if(G.donoritem && !G.donator_ckey_check(user.ckey))
-					to_chat(user, "<span class='danger'>This is an item intended for donator use only. You are not authorized to use this item.</span>")
+					to_chat(user, span_danger("This is an item intended for donator use only. You are not authorized to use this item."))
 					return
 				if(gear_points >= initial(G.cost))
 					var/list/new_loadout_data = list(LOADOUT_ITEM = "[G.type]")
@@ -2990,6 +3132,7 @@ Records disabled until a use for them is found
 	character.dna.features = features.Copy()
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = TRUE)
 	character.dna.species.eye_type = eye_type
+	character.tastes = list(character.dna.features["taste"] = 1)
 	if(chosen_limb_id && (chosen_limb_id in character.dna.species.allowed_limb_ids))
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name
@@ -3048,7 +3191,7 @@ Records disabled until a use for them is found
 						new_limb = new/obj/item/bodypart/r_leg/robot/surplus(character)
 				var/prosthetic_type = modified_limbs[modified_limb][2]
 				if(prosthetic_type != "prosthetic") //lets just leave the old sprites as they are
-					new_limb.icon = file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
+					new_limb.icon = wrap_file("icons/mob/augmentation/cosmetic_prosthetic/[prosthetic_type].dmi")
 				new_limb.replace_limb(character)
 			qdel(old_part)
 
@@ -3153,6 +3296,18 @@ Records disabled until a use for them is found
 	var/find_gear = has_loadout_gear(save_slot, gear_type)
 	if(find_gear)
 		loadout_data["SAVE_[save_slot]"] -= list(find_gear)
+
+/datum/preferences/proc/reset_quirks(why)
+	all_quirks = list()
+	if(istype(parent))
+		switch(why)
+			if("balance")
+				to_chat(parent, span_userdanger("Your quirk balance was invalid! Your quirks have been reset, and you'll need to set up your quirks again."))
+			if("max")
+				to_chat(parent, span_userdanger("Your character had too many positive quirks, likely due to a bug! Your quirks have been reset, and you'll need to set up your quirks again."))
+			else
+				to_chat(parent, span_userdanger("Something went wrong! Your quirks have been reset, and you'll need to set up your quirks again."))
+
 
 #undef DEFAULT_SLOT_AMT
 #undef HANDS_SLOT_AMT

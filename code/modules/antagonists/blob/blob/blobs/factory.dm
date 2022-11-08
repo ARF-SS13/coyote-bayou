@@ -6,7 +6,7 @@
 	max_integrity = 200
 	health_regen = 1
 	point_return = 25
-	armor = list("melee" = 10, "bullet" = 20, "laser" = 15, "energy" = 10, "bomb" = 40, "bio" = 0, "rad" = 0, "fire" = 90, "acid" = 90)
+	armor = ARMOR_VALUE_LIGHT
 	var/list/spores = list()
 	var/mob/living/simple_animal/hostile/blob/blobbernaut/naut = null
 	var/max_spores = 3
@@ -25,7 +25,7 @@
 			spore.factory = null
 	if(naut)
 		naut.factory = null
-		to_chat(naut, "<span class='userdanger'>Your factory was destroyed! You feel yourself dying!</span>")
+		to_chat(naut, span_userdanger("Your factory was destroyed! You feel yourself dying!"))
 		naut.throw_alert("nofactory", /obj/screen/alert/nofactory)
 	spores = null
 	return ..()

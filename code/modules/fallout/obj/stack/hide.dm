@@ -23,6 +23,7 @@
 	icon = 'icons/fallout/objects/items.dmi'
 	icon_state = "sheet-deathclaw"
 	merge_type = /obj/item/stack/sheet/animalhide/deathclaw
+	custom_materials = list(/datum/material/deathclawhide=MINERAL_MATERIAL_AMOUNT)
 
 /obj/item/stack/sheet/animalhide/wolf
 	name = "dog skin"
