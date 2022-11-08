@@ -126,7 +126,7 @@
 		bounce_away(FALSE, NONE)
 	. = ..()
 
-/obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3, toss_direction)
+/obj/item/ammo_casing/proc/bounce_away(still_warm = FALSE, bounce_delay = 3, toss_direction, max_dist = 6, max_spread = 2)
 	update_icon()
 	SpinAnimation(10, 1)
 	var/matrix/M = matrix(transform)
@@ -135,7 +135,7 @@
 	pixel_x = rand(-12, 12)
 	pixel_y = rand(-12, 12)
 	if(toss_direction)
-		var/turf/ejected_case_destination = get_casing_destination(toss_direction)
+		var/turf/ejected_case_destination = get_casing_destination(toss_direction, max_dist, max_spread)
 		if(!isturf(ejected_case_destination))
 			return
 		throw_at(ejected_case_destination, 10, rand(1,3))
@@ -146,7 +146,7 @@
 	else if(this_turf_here && this_turf_here.bullet_bounce_sound)
 		addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, src, this_turf_here.bullet_bounce_sound, 60, 1), bounce_delay) //Soft / non-solid turfs that shouldn't make a sound when a shell casing is ejected over them.
 
-/obj/item/ammo_casing/proc/get_casing_destination(eject_direction)
+/obj/item/ammo_casing/proc/get_casing_destination(eject_direction, max_dist = 6, max_spread = 2)
 	if(!eject_direction)
 		return get_turf(src) // just throw it on the ground
-	return get_ranged_target_turf(src, eject_direction, rand(1,6), 2)
+	return get_ranged_target_turf(src, eject_direction, rand(1,max_dist), max_spread)

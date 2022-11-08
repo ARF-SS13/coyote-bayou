@@ -80,13 +80,20 @@
 		insert_round(other_casing)
 		return TRUE
 
-	if(replace_spent_rounds)
+	for(var/i in 1 to length(stored_ammo)) // revolvers are tricky, try and stuff in a shell in an empty slot
+		var/obj/item/ammo_casing/bullet = stored_ammo[i]
+		if(!bullet || isnull(bullet))
+			insert_round(other_casing, i) // pop it in
+			return TRUE
+
+	if(replace_spent)
 		for(var/i in 1 to length(stored_ammo)) // mag is full, check for empties
 			var/obj/item/ammo_casing/bullet = stored_ammo[i]
-			if(isnull(bullet) || !bullet.BB || isnull(bullet.BB)) // Found a bullet, but its empty!)
-				eject_round(bullet, i) // pop it out
-				insert_round(other_casing, i) // pop it in
-				return TRUE
+			if(bullet.BB) // Found a bullet, but its empty!)
+				continue
+			eject_round(bullet, i) // pop it out
+			insert_round(other_casing, i) // pop it in
+			return TRUE
 	return FALSE
 
 /obj/item/ammo_box/proc/eject_round(obj/item/ammo_casing/casing_to_eject, index)

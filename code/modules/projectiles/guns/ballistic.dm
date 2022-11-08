@@ -360,5 +360,5 @@
 			if(GUN_EJECTOR_LEFT)
 				return turn(user.dir, -90)
 			if(GUN_EJECTOR_ANY)
-				return turn(user.dir, pick(-90, 90))
+				return turn(user.dir, pick(0, -90, 90, 180))
 	return angle2dir_cardinal(rand(0,360)) // something fucked up, just send a direction
