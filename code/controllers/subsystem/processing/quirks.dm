@@ -39,7 +39,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Quicker Carry","Quick Carry"),
 			list("Master Martial Artist", "Fists of Noodle"),
 			list("Master Martial Artist", "Sure Strike"),
-			list("Heavy Sleeper","Can Not Sleep")
+			list("Heavy Sleeper","Can Not Sleep"),
 			list("Dead Eye", "Straight Shooter", "Poor Aim")
 			)
 	return ..()
