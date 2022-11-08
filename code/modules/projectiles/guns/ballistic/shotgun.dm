@@ -115,8 +115,7 @@
 
 /// Pump if click with empty thing
 /obj/item/gun/ballistic/shotgun/shoot_with_empty_chamber(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
-	if(chambered)
-		apply_cooldown_modifier(GUN_AUTO_PUMPED)
+	if(chambered && HAS_TRAIT(user, TRAIT_FAST_PUMP))
 		attack_self(user)
 	else
 		..()
