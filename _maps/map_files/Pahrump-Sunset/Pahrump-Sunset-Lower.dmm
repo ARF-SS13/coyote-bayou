@@ -1286,8 +1286,9 @@
 	},
 /area/f13/radiation)
 "bjf" = (
-/obj/machinery/light{
-	dir = 4
+/obj/machinery/light/small{
+	dir = 4;
+	light_color = "#d8b1b1"
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
@@ -1352,7 +1353,7 @@
 	color = "#363636"
 	},
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/raiderloot,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "boq" = (
@@ -6198,8 +6199,7 @@
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
 "coL" = (
-/obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "coR" = (
@@ -8345,7 +8345,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/machinery/light,
+/obj/machinery/light/small,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "elZ" = (
@@ -9455,6 +9455,20 @@
 	},
 /turf/closed/wall/rust,
 /area/f13/building/sewers)
+"flP" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "gibbearcore"
+	},
+/obj/effect/spawner/lootdrop/trash,
+/obj/item/clothing/head/hooded/human_head{
+	pixel_y = -10
+	},
+/obj/item/bodypart/chest,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "fmh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10976,7 +10990,7 @@
 /area/f13/tunnel)
 "gKe" = (
 /obj/structure/table/reinforced,
-/obj/item/storage/box/medicine/stimpaks/superstimpaks5,
+/obj/item/storage/box/medicine/stimpaks/stimpaks5,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "gKn" = (
@@ -11009,8 +11023,11 @@
 /turf/open/floor/plating,
 /area/f13/tunnel)
 "gMe" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/npc_raider,
+/obj/structure/table/reinforced,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/item/paperplane,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "gMw" = (
@@ -12194,6 +12211,13 @@
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plasteel/f13/vault_floor/red,
 /area/f13/caves)
+"hXQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/light/small/broken,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "hXU" = (
 /obj/structure/rack/large/shelf,
 /obj/effect/spawner/lootdrop/f13/medical/wasteland/meds,
@@ -12785,7 +12809,7 @@
 /area/f13/caves)
 "ivX" = (
 /obj/structure/rack,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/obj/effect/spawner/lootdrop/trash,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
 /area/f13/building)
 "ivZ" = (
@@ -14582,6 +14606,15 @@
 /obj/structure/destructible/tribal_torch/lit,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"jVU" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/decal/cleanable/blood/old{
+	icon_state = "floor6-old"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "jWf" = (
 /obj/structure/barricade/bars,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
@@ -15696,6 +15729,10 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid,
 /area/f13/caves)
+"kXk" = (
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "kXV" = (
 /obj/machinery/light/small,
 /obj/effect/decal/remains/human,
@@ -17001,8 +17038,13 @@
 	},
 /area/f13/tunnel)
 "maa" = (
-/obj/machinery/light,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/ghoul/glowing,
+/turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
+	icon_state = "whitedirtysolid"
+	},
 /area/f13/building)
 "mab" = (
 /obj/structure/chair/wood{
@@ -17361,6 +17403,13 @@
 /obj/item/cultivator,
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"mrX" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "msv" = (
 /obj/structure/sink{
 	dir = 8;
@@ -20643,7 +20692,6 @@
 /area/f13/building)
 "pmJ" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -20662,6 +20710,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/caves)
+"pnQ" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/effect/spawner/lootdrop/trash,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "pom" = (
 /obj/structure/simple_door/metal/ventilation{
 	name = "drainage system"
@@ -23268,6 +23323,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/f13/building/museum)
+"rzA" = (
+/mob/living/simple_animal/hostile/ghoul,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "rAu" = (
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/darkpurple/side{
@@ -74666,7 +74725,7 @@ dEX
 nkA
 kDe
 raz
-kDe
+oLq
 kDe
 kDe
 kDe
@@ -74674,7 +74733,7 @@ gYI
 gYI
 ira
 dEX
-coL
+uUZ
 tYi
 uUZ
 dEX
@@ -75184,7 +75243,7 @@ gYI
 kyb
 gKe
 kyb
-kyb
+gMe
 kyb
 ycG
 dEX
@@ -75954,10 +76013,10 @@ dEX
 vmM
 kDe
 gYI
-kDe
+coL
 kDe
 gYI
-gYI
+pnQ
 xHk
 kDe
 gYI
@@ -76730,7 +76789,7 @@ dEX
 gYI
 gYI
 dEX
-kuo
+ivX
 ivX
 dEX
 lmd
@@ -76981,10 +77040,10 @@ gYI
 dEX
 nYd
 gRt
-nvA
+maa
 vVN
 dEX
-gYI
+pnQ
 kfw
 dEX
 kDe
@@ -77244,7 +77303,7 @@ dEX
 gYI
 gYI
 xHk
-gYI
+mrX
 kMM
 dEX
 brI
@@ -77253,7 +77312,7 @@ vuF
 gYI
 xHk
 gYI
-maa
+rzA
 dEX
 aaa
 aae
@@ -77501,8 +77560,8 @@ dEX
 bhq
 gYI
 dEX
-gYI
-kuo
+pnQ
+ivX
 dEX
 gYI
 gYI
@@ -77510,7 +77569,7 @@ gYI
 kDe
 dEX
 gYI
-kDe
+kXk
 dEX
 aaa
 aae
@@ -77759,7 +77818,7 @@ kDe
 gYI
 dEX
 bnE
-gMe
+kuo
 dEX
 eSA
 oFG
@@ -78013,7 +78072,7 @@ nvA
 yjm
 dEX
 kDe
-gYI
+jVU
 dEX
 dEX
 dEX
@@ -78269,7 +78328,7 @@ nvA
 nvA
 mAM
 dEX
-gYI
+pnQ
 gYI
 dEX
 pRe
@@ -78538,7 +78597,7 @@ tHm
 xzy
 dEX
 gYI
-kfw
+hXQ
 dEX
 aaa
 adz
@@ -80325,7 +80384,7 @@ gYI
 gYI
 gYI
 cHS
-gYI
+flP
 tjr
 oLq
 gYI
