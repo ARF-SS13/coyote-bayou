@@ -536,7 +536,7 @@
 
 	/////////////////////////////////////removes player profile pic
 	else if(href_list["removeProfilePic"])
-		if(!check_rights(R_BAN))
+		if(!check_rights(R_ADMIN))
 			return
 
 		if(alert(usr, "Are you sure you want to remove their profile picture?", "Confirmation", "Yes", "No") == "Yes")
