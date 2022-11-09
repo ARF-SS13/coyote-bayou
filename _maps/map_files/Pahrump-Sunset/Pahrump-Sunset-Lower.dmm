@@ -1280,7 +1280,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing,
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -1490,6 +1490,15 @@
 /obj/item/stack/f13Cash/caps/fivezerozero,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
+"bug" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "buw" = (
 /obj/effect/decal/waste{
 	pixel_x = 20;
@@ -8442,6 +8451,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -8492,6 +8502,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -12568,10 +12579,10 @@
 /obj/effect/decal/waste{
 	icon_state = "goo5"
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/mob/living/simple_animal/hostile/ghoul/glowing,
 /turf/open/floor/plasteel/dark,
 /area/f13/building)
 "iqJ" = (
@@ -21257,8 +21268,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/blue/white,
 /area/f13/building/museum)
 "pNc" = (
-/mob/living/simple_animal/hostile/ghoul,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -23359,10 +23370,10 @@
 	},
 /area/f13/caves)
 "rIZ" = (
-/mob/living/simple_animal/hostile/ghoul/glowing,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
 	},
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -24807,6 +24818,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
+"sXV" = (
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "sYn" = (
 /obj/structure/disposalpipe/broken{
 	dir = 4
@@ -78628,7 +78645,7 @@ aak
 aak
 nws
 oVu
-pDI
+sXV
 qIb
 fjf
 xZu
@@ -80940,7 +80957,7 @@ aak
 aae
 aae
 nws
-thA
+bug
 cmy
 pua
 twv
