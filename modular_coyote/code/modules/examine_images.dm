@@ -62,7 +62,7 @@
 		client.prefs.save_character()
 	else
 		if(profilePicture)
-			var/deletePicture = alert(user, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
+			var/deletePicture = alert(usr, "Do you wish to remove your profile picture?", "Remove PFP", "Yes", "No")
 			if(deletePicture == "Yes")
 				RemoveProfilePic()
 

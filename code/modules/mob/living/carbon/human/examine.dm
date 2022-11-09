@@ -16,7 +16,7 @@
 	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"]</EM>!")
 
 	if (profilePicture)
-		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[DiscordLink(profilePicture)]' width='300' height='auto'></a>"
+		. += "<a href='?src=[REF(src)];enlargeImage=1'><img src='[DiscordLink(profilePicture)]' width='175' height='auto' max-height='600'></a>"
 
 
 	var/vampDesc = ReturnVampExamine(user) // Vamps recognize the names of other vamps.

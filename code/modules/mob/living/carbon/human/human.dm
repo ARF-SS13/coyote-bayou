@@ -320,7 +320,7 @@
 
 	// Gremling is just gonna do gremlin things and add this here > w> Cant be assed trying to fit this in somewhere else for now.
 	if(href_list["enlargeImage"])
-		usr << browse_rsc("<img src=[DiscordLink(profilePicture)]")
+		usr << browse("<img src=[DiscordLink(profilePicture)]>")
 
 ///////HUDs///////
 	if(href_list["hud"])
