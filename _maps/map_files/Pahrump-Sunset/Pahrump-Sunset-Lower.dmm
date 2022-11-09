@@ -1352,7 +1352,19 @@
 	color = "#363636"
 	},
 /obj/structure/rack,
+/obj/effect/spawner/lootdrop/raiderloot,
 /turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
+"boq" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/turf/open/floor/f13{
+	icon_state = "whitegreenrustychess"
+	},
 /area/f13/building)
 "boM" = (
 /obj/machinery/light{
@@ -1429,6 +1441,16 @@
 	},
 /turf/open/floor/plasteel/f13,
 /area/f13/tunnel)
+"brI" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/machinery/light/broken{
+	dir = 1
+	},
+/obj/item/storage/trash_stack,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "brR" = (
 /obj/structure/showcase/horrific_experiment{
 	icon_state = "pod_0"
@@ -6175,6 +6197,11 @@
 /obj/effect/spawner/lootdrop/f13/medical/vault/meds,
 /turf/open/floor/plating/tunnel,
 /area/f13/tunnel)
+"coL" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "coR" = (
 /obj/effect/spawner/lootdrop/f13/armor/tier1,
 /turf/open/floor/plating/tunnel,
@@ -10947,6 +10974,11 @@
 	},
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/tunnel)
+"gKe" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/medicine/stimpaks/superstimpaks5,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "gKn" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/f13/dog,
@@ -10976,6 +11008,11 @@
 	},
 /turf/open/floor/plating,
 /area/f13/tunnel)
+"gMe" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/npc_raider,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "gMw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/iv_drip,
@@ -12746,6 +12783,11 @@
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
+"ivX" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "ivZ" = (
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13{
@@ -20601,6 +20643,7 @@
 /area/f13/building)
 "pmJ" = (
 /obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/f13/cash_random_low,
 /turf/open/floor/plasteel/f13/vault_floor/white/whitesolid{
 	icon_state = "whitedirtysolid"
 	},
@@ -27295,6 +27338,12 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/caves)
+"vmM" = (
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "vmW" = (
 /obj/item/geiger_counter,
 /obj/effect/turf_decal/weather/dirt{
@@ -27392,6 +27441,15 @@
 /mob/living/simple_animal/hostile/securitron/sentrybot/nsb,
 /turf/open/floor/plasteel/f13/vault_floor/yellow,
 /area/f13/caves)
+"vrR" = (
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/obj/item/storage/trash_stack{
+	icon_state = "trash_2"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark,
+/area/f13/building)
 "vrZ" = (
 /obj/structure/rack/shelf_metal,
 /obj/item/clothing/suit/armor/power_armor/excavator,
@@ -74616,7 +74674,7 @@ gYI
 gYI
 ira
 dEX
-uUZ
+coL
 tYi
 uUZ
 dEX
@@ -75124,7 +75182,7 @@ nbm
 puP
 gYI
 kyb
-uUZ
+gKe
 kyb
 kyb
 kyb
@@ -75893,7 +75951,7 @@ dEX
 oqm
 gYI
 dEX
-kDe
+vmM
 kDe
 gYI
 kDe
@@ -76673,7 +76731,7 @@ gYI
 gYI
 dEX
 kuo
-kuo
+ivX
 dEX
 lmd
 tGK
@@ -77189,7 +77247,7 @@ xHk
 gYI
 kMM
 dEX
-nkA
+brI
 gYI
 vuF
 gYI
@@ -77701,7 +77759,7 @@ kDe
 gYI
 dEX
 bnE
-kuo
+gMe
 dEX
 eSA
 oFG
@@ -78217,7 +78275,7 @@ dEX
 pRe
 ylq
 bVE
-ylq
+boq
 pRe
 ylq
 bVE
@@ -80006,7 +80064,7 @@ gYI
 gYI
 raz
 tjr
-gYI
+vrR
 oLq
 kDe
 kDe
