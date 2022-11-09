@@ -390,6 +390,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<b>Refresh once the game has finished setting up...</b><br>"
 			dat += "</td>"
 
+			dat += "<b>Profile Picture:</b><BR>"
+			dat += "<b>Picture:</b> <a href='?_src_=prefs;preference=ProfilePicture;task=input'>[profilePicture ? "<img src=[DiscordLink(profilePicture)] width='125' height='auto' max-height='300'>" : "Upload a picture!"]</a><BR>"
+			dat += "</td>"
+
 /*
 			dat += "<b>Special Names:</b><BR>"
 			var/old_group
