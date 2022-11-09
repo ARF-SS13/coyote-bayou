@@ -40,7 +40,7 @@
 
 	return output
 
-
+// Mob definitions!!!
 /mob/living/carbon/human
 	var/profilePicture
 
@@ -105,7 +105,7 @@
 	S.cd = "/character[default_slot]"
 
 	//Character
-	WRITE_FILE(S["profile_picture"], profilePicture)
+	WRITE_FILE(S["profilePicture"], profilePicture)
 
 	return 1
 
