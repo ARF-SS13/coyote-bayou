@@ -1490,15 +1490,6 @@
 /obj/item/stack/f13Cash/caps/fivezerozero,
 /turf/open/floor/plating/tunnel,
 /area/f13/caves)
-"bug" = (
-/obj/effect/turf_decal/weather/dirt{
-	dir = 1
-	},
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "buw" = (
 /obj/effect/decal/waste{
 	pixel_x = 20;
@@ -5085,8 +5076,8 @@
 /obj/effect/spawner/lootdrop/f13/medical/rnd/mid,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/spawner/lootdrop/f13/attachments,
+/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/lowmid,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -9609,6 +9600,15 @@
 	icon_state = "whitegreenrustychess"
 	},
 /area/f13/caves)
+"fvD" = (
+/obj/effect/turf_decal/weather/dirt{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/ghoul/reaver,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "fvH" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/tunnel,
@@ -10519,6 +10519,12 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
+"gqY" = (
+/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/turf/open/floor/plasteel/f13{
+	icon_state = "darkrustysolid"
+	},
+/area/f13/building/massfusion)
 "grK" = (
 /obj/structure/bed/wooden,
 /obj/item/bedsheet/grey,
@@ -11849,7 +11855,7 @@
 	dir = 1
 	},
 /obj/structure/rack/shelf_metal,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/energy/low,
+/obj/item/locked_box/armor/tier1_3,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -16897,8 +16903,8 @@
 	},
 /area/f13/caves)
 "lXg" = (
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/locked_box/weapon/range/tier1_3,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -20134,7 +20140,7 @@
 	dir = 1
 	},
 /obj/effect/spawner/lootdrop/f13/attachments,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+/obj/item/locked_box/weapon/range/tier3_5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -24818,12 +24824,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/closed/wall/f13/wood,
 /area/f13/caves)
-"sXV" = (
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
-/turf/open/floor/plasteel/f13{
-	icon_state = "darkrustysolid"
-	},
-/area/f13/building/massfusion)
 "sYn" = (
 /obj/structure/disposalpipe/broken{
 	dir = 4
@@ -27138,10 +27138,10 @@
 /turf/closed/wall/r_wall/rust,
 /area/f13/caves)
 "vgh" = (
-/obj/effect/spawner/lootdrop/f13/weapon/melee/tier4,
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
+/obj/item/locked_box/weapon/melee/tier3_5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -29033,7 +29033,7 @@
 /area/f13/building)
 "wXi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/low,
+/obj/item/locked_box/weapon/range/tier1_3,
 /turf/open/floor/plasteel/f13/vault_floor/dark/darksolid{
 	icon_state = "darkrustysolid"
 	},
@@ -78645,7 +78645,7 @@ aak
 aak
 nws
 oVu
-sXV
+gqY
 qIb
 fjf
 xZu
@@ -80957,7 +80957,7 @@ aak
 aae
 aae
 nws
-bug
+fvD
 cmy
 pua
 twv
