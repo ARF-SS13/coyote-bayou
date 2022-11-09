@@ -170,8 +170,8 @@
 	vision_range = 8
 	//tiles within they start making noise, does count the mobs tile
 
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
-	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 2, /obj/item/stack/sheet/bone = 2)
+	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
 	butcher_difficulty = 3
 	response_help_simple = "pets"
 	response_disarm_simple = "gently pushes aside"
@@ -231,7 +231,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
+	guaranteed_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 2, /obj/item/stack/sheet/sinew = 1, /obj/item/stack/sheet/bone = 1)
+	butcher_results = list(/obj/item/clothing/head/f13/stalkerpelt = 1, /obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat = 1)
 	response_help_simple = "pets"
 	response_disarm_simple = "pushes aside"
 	response_harm_simple = "kicks"
@@ -292,6 +293,20 @@
 	density = 1
 	anchored = 0
 
+/obj/item/reagent_containers/food/snacks/meat/slab/nightstalker_meat
+	name = "nightstalker meat"
+	desc = "Could taste like rich red meat or flavorful chicken, depending on where the cut comes from."
+	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 2)
+	bitesize = 4 //Average animal
+	filling_color = "#FA8072"
+	tastes = list("rich meat" = 3)
+	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/nightstalker_meat
+	slice_path = null
+	foodtype = RAW | MEAT
+
+/obj/item/reagent_containers/food/snacks/meat/steak/nightstalker_meat
+	name = "nightstalker steak"
+	desc = "A surprisingly high quality steak that could come in a variety of textures and may taste of either good chicken or rich beef"
 
 /////////////
 // MOLERAT //
