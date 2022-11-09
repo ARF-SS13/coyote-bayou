@@ -834,3 +834,12 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	gain_text = span_notice("You feel like all that training with bows has paidfuzzz off.")
 	lose_text = span_danger("Guns were always better...")
 	locked =  FALSE
+
+/datum/quirk/masterrifleman
+	name = "Bolt Worker"
+	desc = "You've spent a lot of time working the bolt of a rifle, or the pump action of a shotgun. Your skill allows you to click to work the action instead of doing it manually."
+	value = 2
+	mob_trait = TRAIT_FAST_PUMP
+	gain_text = span_notice("In a sudden haze you realize that the Mosin Nagant was Gods gift to mankind.")
+	lose_text = span_danger("After picking some 250 year old cosmoline out from under one of your nails you realize that... Uh, no, the Mosin Nagant is a piece of shit.")
+	locked =  FALSE
