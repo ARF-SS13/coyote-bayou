@@ -107,8 +107,9 @@
 		new /obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/garbagetomid(src.loc)
 		if(istype(user))
 			to_chat(user, span_warning("You find something while covering the hole!"))
-			src.obj_integrity == 100
+			src.obj_integrity = 100
 	do_seal(itempath, cover_state, timer)
+
 
 /obj/structure/nest/proc/do_seal(itempath, cover_state, timer)
 	SEND_SIGNAL(src, COMSIG_SPAWNER_COVERED)
