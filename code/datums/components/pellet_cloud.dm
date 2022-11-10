@@ -104,16 +104,21 @@
 
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
+		var/angle_out = 0
 		if(distro)
+			/// Distro is the angle offset the whole thing will be centered on
+			/// spread is the max deviation from that center the pellets can be
+			angle_out = distro
 			if(randomspread)
-				spread = round((rand() - 0.5) * distro)
+				angle_out = clamp(distro, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+				angle_out += rand(-spread, spread)
 			else //Smart spread
-				spread = round((i / num_pellets - 0.5) * distro)
+				angle_out = round((i / num_pellets - 0.5) * distro)
 
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
 		RegisterSignal(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
 		LAZYADD(pellets, shell.BB)
-		if(!shell.throw_proj(target, targloc, shooter, params, spread))
+		if(!shell.throw_proj(target, targloc, shooter, params, angle_out))
 			return
 		if(i != num_pellets)
 			shell.newshot()

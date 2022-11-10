@@ -512,11 +512,10 @@ ATTACHMENTS
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset(added_spread)
-			sprd = roll(2, sprd) - (sprd + 1)
+			sprd = user.calculate_offset()
 			before_firing(target,user)
 			var/BB = chambered.BB
-			if(!chambered.fire_casing(target, user, params, , silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
+			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
 				shoot_with_empty_chamber(user)
 				update_icon()
 				return
@@ -1465,6 +1464,30 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/ammo_box/magazine/m22smg(src)
+
+/obj/item/storage/backpack/debug_gun_kit_accuracy
+	name = "Bag of Gunstuff"
+	desc = "Cool shit for testing various guns!"
+
+/obj/item/storage/backpack/debug_gun_kit_accuracy/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/smg/american180(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
 
 
 ///////////////////

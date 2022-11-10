@@ -47,7 +47,7 @@
 */
 
 /obj/item/ammo_box/magazine/d12g
-	name = "shotgun drum magazine (12g slugs)"
+	name = "shotgun drum magazine"
 	desc = "A 12g drum magazine."
 	icon_state = "riotmag"
 	ammo_type = /obj/item/ammo_casing/shotgun
@@ -56,6 +56,9 @@
 	multiple_sprites = 2
 	custom_materials = list(/datum/material/iron = MATS_SHOTGUN_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/ammo_box/magazine/d12g/buck
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 
 /obj/item/ammo_box/magazine/d12g/empty
 	start_empty = 1
