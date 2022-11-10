@@ -121,7 +121,7 @@
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
 	name = "giant ant queen"
-	desc = "The queen of a giant ant colony."
+	desc = "The queen of a giant ant colony. Butchering it seems like a good way to a pretty penny."
 	icon = 'icons/fallout/mobs/animals/antqueen.dmi'
 	icon_state = "antqueen"
 	icon_living = "antqueen"
