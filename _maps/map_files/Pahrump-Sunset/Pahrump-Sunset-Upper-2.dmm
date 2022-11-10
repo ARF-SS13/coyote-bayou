@@ -153,6 +153,11 @@
 	},
 /turf/open/transparent/openspace,
 /area/f13/wasteland)
+"iO" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken3"
+	},
+/area/f13/wasteland)
 "jj" = (
 /obj/structure/railing/corner,
 /turf/open/transparent/openspace,
@@ -181,6 +186,11 @@
 	},
 /obj/structure/reagent_dispensers/compostbin,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"lX" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken1"
+	},
 /area/f13/wasteland)
 "mG" = (
 /obj/effect/turf_decal/stripes/line{
@@ -281,6 +291,9 @@
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
 	},
+/area/f13/wasteland)
+"tH" = (
+/turf/open/floor/wood_wide,
 /area/f13/wasteland)
 "tM" = (
 /turf/closed/indestructible/riveted,
@@ -573,6 +586,11 @@
 /obj/structure/simple_door/bunker,
 /turf/open/floor/plasteel/f13/vault_floor/plating,
 /area/f13/building/hospital)
+"QC" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken6"
+	},
+/area/f13/wasteland)
 "Rs" = (
 /mob/living/simple_animal/hostile/raider/ranged/boss{
 	name = "Razzleberry Ramona"
@@ -692,6 +710,11 @@
 "WL" = (
 /obj/machinery/hydroponics/constructable,
 /turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
+"Xj" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken5"
+	},
 /area/f13/wasteland)
 "XC" = (
 /obj/structure/wreck/trash/four_barrels,
@@ -27681,14 +27704,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+lX
+iO
+tH
+tH
+lX
+tH
+Xj
 hm
 hm
 hm
@@ -27938,14 +27961,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+tH
+tH
+QC
+tH
+tH
+tH
+tH
 hm
 hm
 hm
@@ -28195,14 +28218,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+Xj
+tH
+tH
+tH
+iO
+tH
+tH
 hm
 hm
 hm
@@ -28452,14 +28475,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+QC
+tH
+tH
+lX
+tH
+tH
+tH
+QC
 hm
 hm
 hm
@@ -28709,14 +28732,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+lX
+iO
+tH
+tH
+lX
+tH
+Xj
 hm
 hm
 hm
@@ -28966,14 +28989,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+tH
+tH
+QC
+tH
+tH
+tH
+tH
 hm
 hm
 hm
@@ -29223,14 +29246,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+tH
+Xj
+tH
+tH
+tH
+iO
+tH
+tH
 hm
 hm
 hm
