@@ -7,7 +7,7 @@
 
 /mob/living/simple_animal/hostile/giantant
 	name = "giant ant"
-	desc = "A giant ant with twitching, darting antennae. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones they sought to butcher this creature into."
+	desc = "A giant ant with twitching, darting antennae. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones. Can be butchered for materials and shinies.."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "GiantAnt"
 	icon_living = "GiantAnt"
