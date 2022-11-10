@@ -2387,3 +2387,4 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/stack/ore/iron = 2,
 		/obj/item/stack/ore/lead = 1,
 		/obj/item/stack/ore/titanium = 2)
+
