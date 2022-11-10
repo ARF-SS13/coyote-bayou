@@ -739,12 +739,12 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/thickskin
 	name = "Thick Skin"
-	desc = "You just don't get splinters, or shrapnel for that matter."
+	desc = "You just don't get splinters, or shrapnel for that matter.  MASSIVE UNINTENDED EFFECTS, BEING REWORKED~TK"
 	value = 3
 	mob_trait = TRAIT_PIERCEIMMUNE
 	gain_text = span_notice("Your skin feels way stronger.")
 	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
-	locked =  FALSE
+	locked =  TRUE
 
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
