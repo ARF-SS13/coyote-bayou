@@ -2371,3 +2371,20 @@ obj/effect/spawner/bundle/f13/combat_rifle
 			/obj/item/storage/box/ration/ranger_lunch,
 			/obj/item/storage/box/ration/ranger_dinner,
 			)
+
+/obj/effect/spawner/lootdrop/f13/deadantloot //12 out of 22 chance to get ores, 8 / 22 for the jackpot ones
+	name = "dead ant loot"
+	lootcount = 1
+	loot = list(
+		/obj/item/stack/sheet/mineral/sandstone = 1,
+		/obj/item/stack/ore/diamond = 1,
+		/obj/item/stack/ore/uranium = 4,
+		/obj/item/stack/ore/silver = 3,
+		/obj/item/stack/ore/slag = 2,
+		/obj/item/stack/ore/plasma = 3,
+		/obj/item/stack/ore/bluespace_crystal = 1,
+		/obj/item/stack/ore/glass = 2,
+		/obj/item/stack/ore/iron = 2,
+		/obj/item/stack/ore/lead = 1,
+		/obj/item/stack/ore/titanium = 2)
+

@@ -1,27 +1,27 @@
 /datum/mood_event/hug
-	description = span_nicegreen("Hugs are nice.")
-	mood_change = 1
-	timeout = 2 MINUTES
+	description = span_nicegreen("Closeness with another, even if unwanted, reminds you that maybe people can be okay.")
+	mood_change = list(0,1,2)
+	timeout = 10 MINUTES
 
 /datum/mood_event/arcade
 	description = span_nicegreen("I beat the arcade game!")
-	mood_change = 3
-	timeout = 3000
+	mood_change = 1
+	timeout = 15 MINUTES
 
 /datum/mood_event/blessing
-	description = span_nicegreen("I've been blessed.")
-	mood_change = 3
-	timeout = 3000
+	description = span_nicegreen("I've been blessed?  That's good, I think.")
+	mood_change = 2
+	timeout = 20 MINUTES
 
 /datum/mood_event/book_nerd
 	description = span_nicegreen("I have recently read a book.")
 	mood_change = 3
-	timeout = 3000
+	timeout = 25 MINUTES
 
 /datum/mood_event/exercise
 	description = span_nicegreen("Working out releases those endorphins!")
 	mood_change = 3
-	timeout = 3000
+	timeout = 45 MINUTES
 
 /datum/mood_event/pet_animal
 	description = span_nicegreen("Animals are adorable! I can't stop petting them!")
@@ -34,7 +34,7 @@
 /datum/mood_event/honk
 	description = span_nicegreen("Maybe clowns aren't so bad after all. Honk!")
 	mood_change = 2
-	timeout = 2400
+	timeout = 10 MINUTES
 
 /datum/mood_event/bshonk
 	description = span_nicegreen("Quantum mechanics can be fun and silly, too! Honk!")
@@ -44,7 +44,7 @@
 /datum/mood_event/perform_cpr
 	description = span_nicegreen("It feels good to save a life.")
 	mood_change = 6
-	timeout = 3000
+	timeout = 15 MINUTES
 
 /datum/mood_event/oblivious
 	description = span_nicegreen("What a lovely day.")
@@ -52,12 +52,12 @@
 
 /datum/mood_event/jolly
 	description = span_nicegreen("I feel happy for no particular reason.")
-	mood_change = 15
+	mood_change = 10
 	timeout = 60 MINUTES
 
 /datum/mood_event/optimism
 	description = span_nicegreen("I feel kind of happy for no particular reason.")
-	mood_change = 8
+	mood_change = 5
 	timeout = 60 MINUTES
 
 /datum/mood_event/focused
@@ -85,9 +85,9 @@
 	mood_change = 1
 
 /datum/mood_event/goodmusic
-	description = span_nicegreen("There is something soothing about this music.")
-	mood_change = 3
-	timeout = 600
+	description = span_nicegreen("There is something soothing about that music I heard.")
+	mood_change = 5
+	timeout = 30 MINUTES
 
 /datum/mood_event/chemical_euphoria
 	description = span_nicegreen("Heh...hehehe...hehe...")
@@ -105,8 +105,8 @@
 
 /datum/mood_event/betterhug
 	description = span_nicegreen("Someone was very nice to me.")
-	mood_change = 3
-	timeout = 3000
+	mood_change = 4
+	timeout = 15 MINUTES
 
 /datum/mood_event/betterhug/add_effects(mob/friend)
 	description = span_nicegreen("[friend.name] was very nice to me.")
@@ -114,7 +114,7 @@
 /datum/mood_event/besthug
 	description = span_nicegreen("Someone is great to be around, they make me feel so happy!")
 	mood_change = 5
-	timeout = 3000
+	timeout = 20 MINUTES
 
 /datum/mood_event/besthug/add_effects(mob/friend)
 	description = span_nicegreen("[friend.name] is great to be around, [friend.p_they()] makes me feel so happy!")
@@ -122,33 +122,33 @@
 /datum/mood_event/happy_empath
 	description = span_warning("Someone seems happy!")
 	mood_change = 3
-	timeout = 600
+	timeout = 10 MINUTES
 
 /datum/mood_event/happy_empath/add_effects(mob/happytarget)
 	description = span_nicegreen("[happytarget.name]'s happiness is infectious!")
 
 /datum/mood_event/headpat
 	description = span_nicegreen("Headpats are nice.")
-	mood_change = 2
-	timeout = 2 MINUTES
+	mood_change = 1
+	timeout = 5 MINUTES
 
 /datum/mood_event/hugbox
-	description = span_nicegreen("I hugged a box of hugs recently.")
-	mood_change = 1
-	timeout = 2 MINUTES
+	description = span_nicegreen("I hugged a box of hugs recently...")
+	mood_change = list(-2, -1, 0, 1, 2)
+	timeout = 5 MINUTES
 
 /datum/mood_event/plushpet
-	description = span_nicegreen("I pet a plush recently.")
+	description = span_nicegreen("I pet a plushie recently.")
 	mood_change = 1
-	timeout = 3000
+	timeout = 5 MINUTES
 
 /datum/mood_event/plushplay
 	description = span_nicegreen("I've played with plushes recently.")
 	mood_change = 3
-	timeout = 3000
+	timeout = 10 MINUTES
 
 /datum/mood_event/breakfast
-	description = span_nicegreen("Nothing like a hearty breakfast to start the shift.")
+	description = span_nicegreen("Nothing like a hearty breakfast to start the day.")
 	mood_change = 2
 	timeout = 15 MINUTES
 
@@ -159,14 +159,11 @@
 /datum/mood_event/nanite_happiness/add_effects(message)
 	description = "<span class='nicegreen robot'>+++++++[message]+++++++</span>\n"
 
-/datum/mood_event/homicidalracist
-	description = span_nicegreen("I killed a ghoul recently. The world is a better place.")
-	mood_change = 5
-	timeout = 15 MINUTES
 
 /datum/mood_event/area
 	description = "" //Fill this out in the area
 	mood_change = 0
+
 //Power gamer stuff below
 /datum/mood_event/drankblood
 	description = span_nicegreen("I have fed greedly from that which nourishes me.")

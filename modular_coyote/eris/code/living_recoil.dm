@@ -40,7 +40,7 @@ mob/proc/handle_movement_recoil() // Used in movement/mob.dm
 		if(H.head)
 			offset += H.head.obscuration
 
-	offset = round(offset)
+	offset = round(RECOIL_SPREAD_CALC(offset))
 	offset = CLAMP(offset, 0, MAX_ACCURACY_OFFSET)
 	return offset
 

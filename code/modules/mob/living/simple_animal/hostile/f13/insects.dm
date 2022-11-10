@@ -7,7 +7,7 @@
 
 /mob/living/simple_animal/hostile/giantant
 	name = "giant ant"
-	desc = "A large mutated insect that finds its way everywhere."
+	desc = "A giant ant with twitching, darting antennae. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones they sought to butcher this creature into."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "GiantAnt"
 	icon_living = "GiantAnt"
@@ -20,7 +20,7 @@
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -34,7 +34,7 @@
 	emote_see = list("waggles its antenna", "clicks its mandibles", "picks up your scent", "goes on the hunt")
 	attack_verb_simple = list ("rips", "tears", "stings")
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 2, /obj/effect/spawner/lootdrop/f13/deadantloot = 1)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 1)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -70,7 +70,7 @@
 // FIREANT
 /mob/living/simple_animal/hostile/fireant
 	name = "fireant"
-	desc = "A large reddish ant."
+	desc = "A large reddish ant. Its insides contain more gemstones than its unremarkable kin, accessible by butchering them straight down the thorax."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "FireAnt"
 	icon_living = "FireAnt"
@@ -79,7 +79,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 2)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
 	response_help_simple = "pets"
@@ -130,7 +130,7 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1)
+	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 3, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 6, /obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 5)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 6, /obj/item/reagent_containers/food/snacks/meat/slab/ant_meat = 3)
 	butcher_difficulty = 1.5
 	loot = list(/obj/item/reagent_containers/food/snacks/f13/giantantegg = 10)
@@ -214,7 +214,7 @@
 
 	retreat_distance = 0
 	//how far they pull back
-	
+
 	minimum_distance = 0
 	// how close you can get before they try to pull back
 
@@ -311,13 +311,13 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
-	
+
 	move_to_delay = 2.0
 	// m2d 3 = standard, less is fast, more is slower.
 
 	retreat_distance = 3
 	//how far they pull back
-	
+
 	minimum_distance = 1
 	// how close you can get before they try to pull back
 

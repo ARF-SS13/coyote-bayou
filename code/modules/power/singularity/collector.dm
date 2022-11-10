@@ -29,6 +29,8 @@
 	var/bitcoinmining = FALSE
 	rad_insulation = RAD_EXTREME_INSULATION
 	var/obj/item/radio/Radio
+	var/area_radiation = 200
+
 
 /obj/machinery/power/rad_collector/anchored
 	anchored = TRUE
@@ -46,6 +48,12 @@
 /obj/machinery/power/rad_collector/process()
 	if(!loaded_tank)
 		return
+	var/turf/T = get_turf(src)
+	if (!T)
+		return FALSE
+	var/area/A = T.loc
+	if(istype(A, /area/f13/radiation))
+		rad_act(area_radiation)
 	if(!bitcoinmining)
 		if(loaded_tank.air_contents.get_moles(GAS_PLASMA) < 0.0001)
 			investigate_log("<font color='red'>out of fuel</font>.", INVESTIGATE_SINGULO)

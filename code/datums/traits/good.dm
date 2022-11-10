@@ -739,12 +739,12 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/thickskin
 	name = "Thick Skin"
-	desc = "You just don't get splinters, or shrapnel for that matter."
+	desc = "You just don't get splinters, or shrapnel for that matter.  MASSIVE UNINTENDED EFFECTS, BEING REWORKED~TK"
 	value = 3
 	mob_trait = TRAIT_PIERCEIMMUNE
 	gain_text = span_notice("Your skin feels way stronger.")
 	lose_text = span_danger("You feel like your skin is about as tough as tissue paper.")
-	locked =  FALSE
+	locked =  TRUE
 
 /datum/quirk/quickercarry
 	name = "Quicker Carry"
@@ -811,7 +811,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 /datum/quirk/deadeye
 	name = "Dead Eye"
 	desc = "You hit the shots you aim. No ifs, ands, or buts."
-	value = 10 //WIP for sure, lmfao ~TK
+	value = 12 //WIP for sure, lmfao ~TK
 	mob_trait = TRAIT_INSANE_AIM
 	gain_text = span_notice("Your aim is legendary, and you know it.")
 	lose_text = span_danger("Your aim could use some work...")
