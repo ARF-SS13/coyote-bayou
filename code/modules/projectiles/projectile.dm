@@ -502,7 +502,7 @@
 	else
 		pixels_tick_leftover = required_pixels
 
-/obj/item/projectile/proc/fire(angle, atom/direct_target)
+/obj/item/projectile/proc/fire(angle, atom/direct_target, spread_override)
 	if(fired_from)
 		SEND_SIGNAL(fired_from, COMSIG_PROJECTILE_BEFORE_FIRE, src, original)	//If no angle needs to resolve it from xo/yo!
 	if(LAZYLEN(embedding))//our embedding stats change, possibly
@@ -516,8 +516,8 @@
 			return
 	if(isnum(angle))
 		setAngle(angle)
-	if(spread)
-		setAngle(Angle + ((rand() - 0.5) * spread))
+	if(spread_override)
+		setAngle(Angle + rand(-spread_override, spread_override))
 	var/turf/starting = get_turf(src)
 	if(isnull(Angle))	//Try to resolve through offsets if there's no angle set.
 		if(isnull(xo) || isnull(yo))
