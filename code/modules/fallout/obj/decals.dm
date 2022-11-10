@@ -34,7 +34,9 @@
 			victim.rad_act(intensity)
 	for(var/obj/item/geiger_counter/geiger in view(src,range))
 		geiger.rad_act(intensity)
-			
+	for(var/obj/machinery/power/rad_collector in view(src,range))
+		rad_collector.rad_act(intensity*10)
+
 /obj/effect/decal/waste/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/crafting/abraxo))
 		user.show_message(span_notice("You start sprinkling \the [I.name] onto the puddle of goo..."), MSG_VISUAL)
