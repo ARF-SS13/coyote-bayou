@@ -180,6 +180,7 @@
 		status_effect_type = initial(new_wound.status_effect_type)
 		scar_keyword = initial(new_wound.scar_keyword)
 		stopped_by_bandage = initial(new_wound.stopped_by_bandage)
+		wound_flags = initial(new_wound.wound_flags)
 	if(splortch)
 		do_splortch(splortch_reopen)
 	if(second_wind)
@@ -196,7 +197,7 @@
 
 	victim.visible_message(msg, span_userdanger("Your [limb.name] [verbiage]!"), vision_distance = vis_dist)
 	if(sound_effect)
-		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE)
+		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE, ignore_walls = TRUE)
 
 /datum/wound/bleed/receive_damage(wounding_type, wounding_dmg, wound_bonus)
 	if(victim.stat != DEAD && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
