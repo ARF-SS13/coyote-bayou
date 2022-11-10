@@ -2381,9 +2381,9 @@ obj/effect/spawner/bundle/f13/combat_rifle
 		/obj/item/stack/ore/uranium = 4,
 		/obj/item/stack/ore/silver = 3,
 		/obj/item/stack/ore/slag = 2,
-		/obj/item/stack/ore/plasma = 3
+		/obj/item/stack/ore/plasma = 3,
 		/obj/item/stack/ore/bluespace_crystal = 1,
-		/obj/item/stack/ore/glass = 2
-		/obj/item/stack/ore/iron = 2
-		/obj/item/stack/ore/lead = 1
+		/obj/item/stack/ore/glass = 2,
+		/obj/item/stack/ore/iron = 2,
+		/obj/item/stack/ore/lead = 1,
 		/obj/item/stack/ore/titanium = 2)
