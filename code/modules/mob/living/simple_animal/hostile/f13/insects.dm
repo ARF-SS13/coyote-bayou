@@ -7,13 +7,14 @@
 
 /mob/living/simple_animal/hostile/giantant
 	name = "giant ant"
-	desc = "A giant ant with twitching, darting antennae. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones. Can be butchered for materials and shinies.."
+	desc = "A giant ant with twitching, darting antennae. Its outsides are a mixture of crusted, unrotting rock and chitin that bounce off bullets and melee weapons. Hardened insides compact once valueless sand and dirt to gemstones. Many a fool in their search for wealth have become part of the gemstones. Can be butchered down the thorax for minerals and shinies."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "GiantAnt"
 	icon_living = "GiantAnt"
 	icon_dead = "GiantAnt_dead"
 	icon_gib = "GiantAnt_gib"
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
+	mob_armor = ARMOR_VALUE_ANTS
 	speak_chance = 0
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
@@ -57,8 +58,8 @@
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
-	decompose = TRUE
 	blood_volume = 0
+	decompose = FALSE
 
 /mob/living/simple_animal/hostile/giantant/Initialize()
 	. = ..()
@@ -70,7 +71,7 @@
 // FIREANT
 /mob/living/simple_animal/hostile/fireant
 	name = "fireant"
-	desc = "A large reddish ant. Its insides contain more gemstones than its unremarkable kin, accessible by butchering them straight down the thorax."
+	desc = "A large reddish ant. The furnace it holds inside itself blasts intruders and the dirt it chews with flaming heat. Its insides contain more gemstones than its unremarkable kin, accessible by butchering them straight down the thorax."
 	icon = 'icons/fallout/mobs/animals/insects.dmi'
 	icon_state = "FireAnt"
 	icon_living = "FireAnt"
@@ -101,7 +102,7 @@
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0)
 	faction = list("ant")
 	gold_core_spawnable = HOSTILE_SPAWN
-	decompose = TRUE
+	decompose = FALSE
 	a_intent = INTENT_HARM
 	blood_volume = 0
 
@@ -115,8 +116,14 @@
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
-		var/mob/living/carbon/human/H = target
-		H.reagents.add_reagent(/datum/reagent/napalm, 0.1)
+		rand(1,2)
+			if(1)
+				var/mob/living/carbon/human/H = target
+				H.reagents.add_reagent(/datum/reagent/hellwater, 1)
+				return
+			else
+		if(2)
+			return
 
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
