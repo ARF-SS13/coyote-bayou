@@ -256,10 +256,10 @@
 	move_to_delay = 4 //S L O W
 	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
 	projectilesound = 'sound/f13weapons/shotgun.ogg'
-	maxHealth = 250 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
-	health = 250
+	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
+	health = 200
 	extra_projectiles = 0
-	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
 	speak_emote = list(
 		"mutters",
 		"counts his caps to himself",
