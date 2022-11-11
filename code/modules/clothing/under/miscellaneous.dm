@@ -732,3 +732,77 @@
 	body_parts_covered = CHEST|GROIN|ARMS
 	fitted = FEMALE_UNIFORM_TOP
 	can_adjust = FALSE
+
+//Kimono's from Virgo
+
+/obj/item/clothing/under/kimono/red
+	name = "Red Kimono"
+	icon_state = "kimono_red"
+	item_state = "kimono_red"
+	item_color = "kimono_red"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/orange
+	name = "Orange Kimono"
+	icon_state = "kimono_orange"
+	item_state = "kimono_orange"
+	item_color = "kimono_orange"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/yellow
+	name = "Yellow Kimono"
+	icon_state = "kimono_yellow"
+	item_state = "kimono_yellow"
+	item_color = "kimono_yellow"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/green
+	name = "Green Kimono"
+	icon_state = "kimono_green"
+	item_state = "kimono_green"
+	item_color = "kimono_green"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/blue
+	name = "Blue Kimono"
+	icon_state = "kimono_blue"
+	item_state = "kimono_blue"
+	item_color = "kimono_blue"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/purple
+	name = "Purple Kimono"
+	icon_state = "kimono_purple"
+	item_state = "kimono_purple"
+	item_color = "kimono_purple"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/violet
+	name = "Violet Kimono"
+	icon_state = "kimono_violet"
+	item_state = "kimono_violet"
+	item_color = "kimono_violet"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/pink
+	name = "Pink Kimono"
+	icon_state = "kimono_pink"
+	item_state = "kimono_pink"
+	item_color = "kimono_pink"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
+
+/obj/item/clothing/under/kimono/earth
+	name = "Earth Kimono"
+	icon_state = "kimono_earth"
+	item_state = "kimono_earth"
+	item_color = "kimono_earth"
+	body_parts_covered = CHEST|GROIN|ARMS
+	can_adjust = FALSE
