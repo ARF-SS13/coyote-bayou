@@ -1,7 +1,8 @@
 /* A few definitions of terms
  * spread - Inaccuracy of the mob firing it, usually recoil
  * distro - Inaccuracy of the gun being fired, added to spread
- * variance - Inaccuracy of the cartridge being fired, added to spread - for shotguns, used as the max width of the spray
+ * variance - Inaccuracy of the cartridge being fired, added to spread
+ *          - Unless it has more than 1 pellet, then its the width of the spray and doesnt contribute to base inaccuracy. Yeah I know its fucked, deal with it
  * BB.spread - Inaccuracy of the projectile being fired, also added to spread
  * Final spread out, for shotguns, is the angle that the spray pattern will be centered on
  */
@@ -11,7 +12,7 @@
 		if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
 			angle_out = 0 // nice shot
 		else
-			var/max_spread = spread + distro + variance
+			var/max_spread = spread + distro + (pellets == 1 ? variance : 0) // hooray vars doing double duty
 			if(istype(BB))
 				max_spread += BB.spread
 			if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.

@@ -108,10 +108,9 @@
 		if(distro)
 			/// Distro is the angle offset the whole thing will be centered on
 			/// spread is the max deviation from that center the pellets can be
-			angle_out = distro
+			angle_out = clamp(distro, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
 			if(randomspread)
-				angle_out = clamp(distro, -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
-				angle_out += rand(-spread, spread)
+				angle_out += rand(-spread, spread) * 0.5
 			else //Smart spread
 				angle_out = round((i / num_pellets - 0.5) * distro)
 
