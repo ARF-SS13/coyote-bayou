@@ -262,7 +262,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["auto_ooc"]			>> auto_ooc
 	S["no_tetris_storage"]		>> no_tetris_storage
 
-
+	chat_toggles |= CHAT_LOOC // the LOOC doesn't stop
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		var/bacpath = "[path].updatebac" //todo: if the savefile version is higher then the server, check the backup, and give the player a prompt to load the backup

@@ -2998,6 +2998,7 @@ Records disabled until a use for them is found
 				if("tab")
 					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
+	chat_toggles |= CHAT_LOOC // the LOOC stays on during sex
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
 			loadout_data["SAVE_[loadout_slot]"] = list()
