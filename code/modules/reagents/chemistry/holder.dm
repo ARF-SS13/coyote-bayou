@@ -766,6 +766,8 @@
 					R.on_mob_end_metabolize(M)
 				R.on_mob_delete(M)
 			//Clear from relevant lists
+			if(R in addiction_list)
+				R.on_addiction_end(my_atom)
 			addiction_list -= R
 			qdel(R)
 			reagent_list -= R
