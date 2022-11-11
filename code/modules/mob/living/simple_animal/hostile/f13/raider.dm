@@ -248,16 +248,18 @@
 
 /mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
 	name = "Blueberry Bates and his Bottom-Feeder Buys"
-	desc = "Hello, Blueberry Bates and his Bottom-Feeder Buys."
+	desc = "Hello, Blueberry Bates and his Bottom-Feeder Buys. Has a shotgun with APDS incendiary slugs and is ready to fucking kill you."
 	icon_state = "blueberry_bates"
 	icon_living = "blueberry_bates"
 	icon_dead = "blueberry_bates_dead"
 	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
-	projectiletype = /obj/item/projectile/bullet/shotgun_slug
-	projectilesound = /
-	maxHealth = 200 //bit beefier since his arena is significantly shittier for him
-	health = 200
+	move_to_delay = 4 //S L O W
+	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	maxHealth = 250 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
+	health = 250
 	extra_projectiles = 0
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/
 	speak_emote = list(
 		"mutters",
 		"counts his caps to himself",
@@ -293,7 +295,7 @@
 		"*chitter",\
 		"*kyaa",\
 		"*come",\
-		"YOU'RE ABOUT TO GET A DISCOUNT ON A GRAVE, BUDDY!",/
+		"YOU'RE ABOUT TO GET A DISCOUNT ON A GRAVE, BUDDY!",\
 		))
 
 // RANGED RAIDER WITH ARMOR
