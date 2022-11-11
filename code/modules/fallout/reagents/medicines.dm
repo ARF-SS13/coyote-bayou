@@ -610,7 +610,7 @@
 
 /datum/reagent/medicine/punga_extract/on_addiction_end(mob/living/carbon/M)
 	if(iscarbon(M))
-		REMOVE_TRAIT(M, TRAIT_PUNGAPOWER)
+		REMOVE_TRAIT(M, TRAIT_PUNGAPOWER, "pungaddiction")
 
 /// Fiery Purgative - ultraviolent antitoxin
 /datum/reagent/medicine/fiery_purgative
