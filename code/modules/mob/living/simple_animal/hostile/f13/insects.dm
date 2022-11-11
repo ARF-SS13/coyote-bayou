@@ -116,14 +116,8 @@
 /mob/living/simple_animal/hostile/fireant/AttackingTarget()
 	. = ..()
 	if(. && ishuman(target))
-		rand(1,2)
-			if(1)
-				var/mob/living/carbon/human/H = target
-				H.reagents.add_reagent(/datum/reagent/hellwater, 1)
-				return
-			else
-		if(2)
-			return
+		var/mob/living/carbon/human/H = target
+		H.reagents.add_reagent(/datum/reagent/hellwater, 1)
 
 // ANT QUEEN
 /mob/living/simple_animal/hostile/giantantqueen
