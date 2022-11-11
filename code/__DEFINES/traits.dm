@@ -309,6 +309,8 @@
 #define TRAIT_HEAL_TONGUE "healing tongue"
 /// Lets your tongue apply awful bandages to limbs
 #define TRAIT_BANDAGE_TONGUE "coagulating tongue"
+/// You're hooked on punga!
+#define TRAIT_PUNGAPOWER "pungaful"
 
 #define TRAIT_SURGERY_LOW		"lowsurgery"
 #define TRAIT_SURGERY_MID		"midsurgery"

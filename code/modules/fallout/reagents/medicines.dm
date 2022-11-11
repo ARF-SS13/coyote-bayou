@@ -596,13 +596,21 @@
 	var/punga_power = 4
 
 /datum/reagent/medicine/punga_extract/on_mob_life(mob/living/carbon/M)
-	//if((HAS_TRAIT(M, TRAIT_PUNGAPOWER)))
-	//	punga_power = 5
+	if(HAS_TRAIT(M, TRAIT_PUNGAPOWER))
+		punga_power = 10
 	if(M.radiation > 0)
 		M.radiation = max(M.radiation - punga_power, 0) //half as strong as pentetic, twice as strong as potassium iodide
 	M.adjustToxLoss(-0.5*REAGENTS_EFFECT_MULTIPLIER, 0, TRUE) //we'll be nice to the slimes today
 	..()
 	. = 1
+
+/datum/reagent/medicine/punga_extract/on_addiction_start(mob/living/carbon/M)
+	if(iscarbon(M))
+		ADD_TRAIT(M, TRAIT_PUNGAPOWER, "pungaddiction")
+
+/datum/reagent/medicine/punga_extract/on_addiction_end(mob/living/carbon/M)
+	if(iscarbon(M))
+		REMOVE_TRAIT(M, TRAIT_PUNGAPOWER)
 
 /// Fiery Purgative - ultraviolent antitoxin
 /datum/reagent/medicine/fiery_purgative
