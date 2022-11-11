@@ -471,5 +471,3 @@
 /datum/sprite_accessory/underwear/top/redpuffbra
 	name = "Puffy Red Bra"
 	icon_state = "bride_red"
-	
-	
