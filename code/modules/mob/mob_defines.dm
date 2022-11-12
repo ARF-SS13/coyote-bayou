@@ -184,3 +184,10 @@
 	/// How much DT does the mob ignore?
 	var/damage_threshold_penetration_mob = 0
 
+	/// Cooldown between times your mob can post that they were hit by a projectile, 0.5 seconds
+	/// Includes bounces, dinks, impacts, etc
+	COOLDOWN_DECLARE(projectile_message_antispam)
+
+	/// Cooldown between times your mob can post that their armor's done something interesting by an attack
+	/// Includes bounces, dinks, impacts, etc
+	COOLDOWN_DECLARE(armor_message_antispam)
