@@ -18,6 +18,9 @@
 	key = "spin"
 	key_third_person = "spins"
 	restraint_check = TRUE
+	cooldown = 4 SECONDS
+	sound = 'sound/effects/spin.ogg'
+	sound_volume = 100
 	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
 
@@ -39,6 +42,9 @@
 	key = "flip"
 	key_third_person = "flips"
 	restraint_check = TRUE
+	cooldown = 4 SECONDS
+	sound = 'sound/effects/flip.ogg'
+	sound_volume = 100
 	mob_type_allowed_typecache = list(/mob/living, /mob/dead/observer)
 	mob_type_ignore_stat_typecache = list(/mob/dead/observer)
 
