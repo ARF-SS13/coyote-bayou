@@ -121,11 +121,6 @@
 		visible_message(span_danger("\The [src] growls, enraged!"))
 
 		addtimer(CALLBACK(src, .proc/Charge), 3)
-	if(prob(85) || Proj.damage > 30) //prob(x) = chance for proj to actually do something, adjust depending on how OP you want deathclaws to be
-		return ..()
-	else
-		visible_message(span_danger("\The [Proj] bounces off \the [src]'s thick hide!"))
-		return 0
 
 /mob/living/simple_animal/hostile/deathclaw/do_attack_animation(atom/A, visual_effect_icon, obj/item/used_item, no_effect)
 	if(!charging)

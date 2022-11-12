@@ -803,4 +803,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	GUN_MF_CHANCE = chance,\
 	GUN_MF_DUMP_THROW = throw_chance)
 
+/// cooldown for being spammed with messages you're holding the stupid gun wrong
+#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 1 SECONDS
+
+/// cooldown for being spammed with messages that you shot the gun
+#define GUN_SHOOT_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
 
