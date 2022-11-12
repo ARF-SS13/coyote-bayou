@@ -5217,9 +5217,7 @@
 	},
 /area/f13/building/massfusion)
 "bRE" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/raiderloot,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/machinery/door/unpowered/secure_legion,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "bRH" = (
@@ -8292,7 +8290,6 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
-/obj/item/am_containment/loot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "dQn" = (
@@ -15203,11 +15200,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"jIK" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/cash_random_low,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "jJj" = (
 /obj/structure/handrail/g_central{
 	dir = 1;
@@ -17490,7 +17482,9 @@
 /obj/machinery/light/broken{
 	dir = 1
 	},
-/obj/machinery/vending/matvend,
+/obj/item/am_containment/loot,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/f13/deadantloot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "lAI" = (
@@ -20137,7 +20131,8 @@
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/building/museum)
 "nGt" = (
-/obj/structure/filingcabinet,
+/obj/structure/rack/shelf_metal,
+/obj/item/locked_box/misc/money/all/low,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "nGS" = (
@@ -20241,6 +20236,7 @@
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
 	},
+/obj/effect/spawner/lootdrop/f13/deadantloot,
 /turf/open/floor/plasteel/dark,
 /area/f13/building/hospital)
 "nLr" = (
@@ -21049,6 +21045,8 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/item/locked_box/misc/money/all/high,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "ovs" = (
@@ -21253,12 +21251,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/building)
-"oEP" = (
-/obj/structure/window/fulltile/store,
-/obj/structure/barricade/wooden/planks,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/f13/vault_floor/dark,
-/area/f13/building/hospital)
 "oFe" = (
 /obj/effect/decal/cleanable/blood/old{
 	icon_state = "gib3-old"
@@ -23383,10 +23375,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/cmo,
 /area/f13/caves)
-"qfr" = (
-/obj/structure/filingcabinet/chestdrawer,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "qfG" = (
 /obj/structure/decoration/rag{
 	icon_state = "skin"
@@ -24546,8 +24534,8 @@
 	},
 /area/f13/caves)
 "qZn" = (
-/obj/structure/table/wood,
-/obj/effect/spawner/lootdrop/f13/junkspawners,
+/obj/item/locked_box/misc/money/all/high,
+/obj/structure/rack/shelf_metal,
 /turf/open/floor/wood_fancy,
 /area/f13/tunnel)
 "qZv" = (
@@ -26750,10 +26738,6 @@
 	icon_state = "greenrustyfull"
 	},
 /area/f13/clinic)
-"sXe" = (
-/obj/structure/chair/stool/retro/black,
-/turf/open/floor/wood_fancy,
-/area/f13/tunnel)
 "sXf" = (
 /obj/effect/decal/cleanable/dirt{
 	color = "#363636"
@@ -74589,7 +74573,7 @@ tMl
 cEg
 qtA
 ydM
-dzm
+bsC
 ptq
 oXH
 pOs
@@ -74845,10 +74829,10 @@ dzm
 dzm
 dzm
 jgQ
-dzm
-dzm
-dzm
-dzm
+bsC
+bsC
+bCt
+bCt
 bEZ
 pHT
 bEZ
@@ -75102,10 +75086,10 @@ cTO
 dzm
 dsA
 dsA
-dzm
-rgP
+bCt
 nGt
-dzm
+nGt
+bCt
 tJv
 kyV
 oXH
@@ -75359,10 +75343,10 @@ rgP
 dzm
 wFa
 dsA
-jgQ
+bRE
 rcp
-qfr
-dzm
+cTO
+bCt
 kyV
 khp
 kyV
@@ -75616,10 +75600,10 @@ cTO
 jgQ
 lbb
 dsA
-dzm
+bCt
+nGt
 cTO
-jIK
-dzm
+bCt
 ykz
 pOs
 kyV
@@ -75873,10 +75857,10 @@ rgP
 dzm
 lbb
 crn
-dzm
-sXe
-bRE
-dzm
+bCt
+cTO
+cTO
+bCt
 njF
 pOs
 ptq
@@ -76130,10 +76114,10 @@ cTO
 dzm
 jrO
 lbb
-dzm
+bCt
 ovm
 qZn
-dzm
+bCt
 xbU
 aXY
 kyV
@@ -76387,10 +76371,10 @@ dzm
 dzm
 wkr
 lbb
-dzm
-dzm
-dzm
-dzm
+bCt
+bCt
+bCt
+bCt
 kyV
 kyV
 qUF
@@ -81424,7 +81408,7 @@ whm
 iqw
 dAT
 sGc
-oEP
+dEX
 gYI
 gYI
 dEX
@@ -81938,7 +81922,7 @@ whm
 lkl
 sGc
 awR
-oEP
+dEX
 kDe
 gYI
 dEX

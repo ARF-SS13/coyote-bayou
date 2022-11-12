@@ -161,7 +161,7 @@
 
 /obj/machinery/door/unpowered/secure_legion
 	name = "iron gate"
-	desc = "Thick iron rods with sharp tips make for a fitting gate for the Legion castrum."
+	desc = "Thick iron rods with sharp tips make for a fearsome gate."
 	icon_state = "secure_legion"
 	max_integrity = 800
 	obj_integrity = 800
@@ -169,7 +169,7 @@
 	visible = FALSE
 	explosion_block = FALSE
 	proj_pass_rate = 95
-	req_access_txt = "123"
+	req_access_txt = null
 
 /obj/machinery/door/unpowered/secure_legion/update_icon()
 	if(density)

@@ -7802,6 +7802,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/wood_common,
 /area/f13/building)
+"dLR" = (
+/obj/item/flashlight/flare/torch,
+/turf/open/indestructible/ground/inside/mountain,
+/area/f13/caves)
 "dLS" = (
 /obj/structure/flora/grass/coyote/twentyseven,
 /obj/structure/flora/grass/wasteland{
@@ -11578,7 +11582,7 @@
 /area/f13/building/tribal/cave)
 "fAt" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/nest/radroach,
+/obj/structure/nest/fireant,
 /turf/open/floor/wood_common,
 /area/f13/building)
 "fAQ" = (
@@ -23658,7 +23662,7 @@
 /turf/open/floor/carpet/black,
 /area/f13/building)
 "llM" = (
-/obj/structure/nest/radroach,
+/obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/building)
 "lmk" = (
@@ -41214,7 +41218,7 @@
 /turf/closed/wall/f13/wood,
 /area/f13/wasteland)
 "tWJ" = (
-/obj/structure/nest/radroach,
+/obj/structure/nest/fireant,
 /turf/open/indestructible/ground/inside/mountain,
 /area/f13/caves)
 "tWX" = (
@@ -46786,7 +46790,6 @@
 	},
 /area/f13/building)
 "wDx" = (
-/mob/living/simple_animal/hostile/cazador,
 /obj/item/ammo_box/magazine/m10mm/adv/simple/empty,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/wasteland)
@@ -105642,7 +105645,7 @@ eWw
 tRd
 tRd
 hgo
-tWJ
+hgo
 hgo
 tRd
 tRd
@@ -106403,8 +106406,8 @@ tRd
 tRd
 eWw
 eWw
-hgo
 tWJ
+hgo
 hgo
 tRd
 tRd
@@ -106644,7 +106647,7 @@ tRd
 tRd
 tRd
 tRd
-tWJ
+hgo
 hgo
 tRd
 eWw
@@ -106883,7 +106886,7 @@ nQW
 jzP
 tjt
 nQW
-rXS
+nQW
 xFL
 utY
 hHr
@@ -107417,7 +107420,7 @@ tRd
 tRd
 tRd
 tRd
-hgo
+tWJ
 hgo
 hgo
 eoK
@@ -107675,7 +107678,7 @@ tRd
 tRd
 tRd
 tRd
-tWJ
+hgo
 hgo
 eWw
 tRd
@@ -107940,7 +107943,7 @@ tRd
 hgo
 hgo
 hgo
-hgo
+dLR
 tRd
 tRd
 tRd
@@ -108424,7 +108427,7 @@ nQW
 wgx
 nQW
 nQW
-rXS
+nQW
 otE
 wgx
 nQW
@@ -108455,7 +108458,7 @@ tRd
 tRd
 tRd
 hgo
-tWJ
+hgo
 hgo
 hgo
 tRd
@@ -108967,7 +108970,7 @@ tRd
 tRd
 tRd
 tRd
-hgo
+tWJ
 hgo
 hgo
 tRd
