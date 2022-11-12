@@ -8,7 +8,7 @@ import { createUuid } from 'common/uuid';
 import { MESSAGE_TYPES, MESSAGE_TYPE_INTERNAL } from './constants';
 
 export const canPageAcceptType = (page, type) => (
-  type.startsWith(MESSAGE_TYPE_INTERNAL) || page.acceptedTypes[type]
+  type.startsWith(MESSAGE_TYPE_INTERNAL) || type.startsWith('looc') || page.acceptedTypes[type]
 );
 
 export const createPage = obj => ({
