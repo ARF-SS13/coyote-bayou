@@ -1,0 +1,1281 @@
+/* LIST STRUCTURE
+ * list encodes "tag" = list(LOADOUT_BITFIELD = a bitfield, LOADOUT_CLASS = melee, LOADOUT_PATH = the path)
+ */
+#define LOADOUT_WASTER (1<<0)
+#define LOADOUT_LAWMAN (1<<1)
+#define LOADOUT_PREMIUM (1<<2)
+#define LOADOUT_TRIBAL (1<<3)
+
+#define LOADOUT_BITFIELD "loadout_bitfield"
+#define LOADOUT_CLASS "loadout_class"
+#define LOADOUT_PATH "loadout_path"
+
+#define LOADOUT_ROOT "menu_level_archetype"
+#define LOADOUT_MELEE "Melee"
+#define LOADOUT_PISTOL_SEMI "Pistols"
+#define LOADOUT_PISTOL_REVOLVER "Revolvers"
+#define LOADOUT_LONGGUN "Long Guns"
+#define LOADOUT_HOBO "Improvised Guns"
+#define LOADOUT_ENERGY "Energy Weapons"
+
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
+
+GLOBAL_LIST_EMPTY(loadout_datums)
+GLOBAL_LIST_EMPTY(loadout_boxes)
+
+/datum/loadout_box
+	var/entry_tag
+	var/entry_flag
+	var/entry_class
+	var/obj/item/spawn_thing
+
+/// Energy Guns
+
+/datum/loadout_box/energy
+	entry_tag = "Compact RCW"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_WASTER
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy
+
+/datum/loadout_box/plasma
+	entry_tag = "Plasma Pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/plasma
+
+/datum/loadout_box/stun
+	entry_tag = "Compliance Regulator"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/stun
+
+/// Fancyguns
+
+/datum/loadout_box/maria
+	entry_tag = "Maria"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium
+
+/datum/loadout_box/beretta_auto
+	entry_tag = "Beretta M93R"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/automatic
+
+/datum/loadout_box/executive_10mm
+	entry_tag = "The Executive 10mm pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/executive
+
+/datum/loadout_box/crusader
+	entry_tag = "Crusader 10mm pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/crusader
+
+/datum/loadout_box/sig
+	entry_tag = "Sig P220"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/sig
+
+/datum/loadout_box/m1911_custom
+	entry_tag = "M1911 Custom"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/custom
+
+/datum/loadout_box/mateba
+	entry_tag = "Unica 6"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/mateba
+
+/datum/loadout_box/lucky
+	entry_tag = "Lucky Revolver"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/lucky
+
+/datum/loadout_box/alt
+	entry_tag = "Pearl .44 Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/alt
+
+/datum/loadout_box/peacekeeper
+	entry_tag = "Peacekeeper Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/peacekeeper
+
+/datum/loadout_box/desert_ranger
+	entry_tag = "Desert Ranger Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/desert_ranger
+
+/// Lawman guns
+
+/datum/loadout_box/american_180
+	entry_tag = "American 180"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law
+
+/datum/loadout_box/smg10mm
+	entry_tag = "10mm SMG"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/smg10mm
+
+/datum/loadout_box/commando
+	entry_tag = "Commando Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/commando
+
+/datum/loadout_box/combat
+	entry_tag = "Combat Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/combat
+
+/datum/loadout_box/service
+	entry_tag = "Service Rifle"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/service
+
+/datum/loadout_box/policerifle
+	entry_tag = "Police Rifle"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/policerifle
+
+/datum/loadout_box/assault_carbine
+	entry_tag = "Assault Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/assault_carbine
+
+/datum/loadout_box/mk23
+	entry_tag = "Tactical MK-23"
+	entry_flags = LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/law/mk23
+
+/// Long guns, mostly wasters
+
+/datum/loadout_box/rifle
+	entry_tag = "Cowboy Repeater"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN // frontier something something
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle
+
+/datum/loadout_box/hunting
+	entry_tag = "Hunting Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
+
+/datum/loadout_box/caravan_shotgun
+	entry_tag = "Caravan Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/caravan_shotgun
+
+/datum/loadout_box/widowmaker
+	entry_tag = "Widowmaker Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/widowmaker
+
+/datum/loadout_box/smg22
+	entry_tag = ".22 Uzi"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
+
+/datum/loadout_box/sidewinder
+	entry_tag = "Multicaliber SMG"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
+
+/datum/loadout_box/m1carbine
+	entry_tag = "M1 Carbine"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/m1carbine
+
+/datum/loadout_box/delisle
+	entry_tag = "Delisle Carbine"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
+
+/datum/loadout_box/sportcarbine
+	entry_tag = "Sport Carbine"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/sportcarbine
+
+/datum/loadout_box/varmint
+	entry_tag = "Varmint Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
+
+/// Hobo Guns
+
+/datum/loadout_box/hand_shotgun
+	entry_tag = "Hand Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo
+
+/datum/loadout_box/zipgun
+	entry_tag = "Zipgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/zipgun
+
+/datum/loadout_box/piperifle
+	entry_tag = "Pipe Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/piperifle
+
+/datum/loadout_box/pepperbox
+	entry_tag = "Pepperbox"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/pepperbox
+
+/datum/loadout_box/single_shotgun
+	entry_tag = "Shotgun Bat"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/single_shotgun
+
+/datum/loadout_box/knifegun
+	entry_tag = "Knife Gun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/knifegun
+
+/datum/loadout_box/knucklegun
+	entry_tag = "Knuckle Gun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/knucklegun
+
+/datum/loadout_box/winchesterrebored
+	entry_tag = "Rebored Winchester"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/winchesterrebored
+
+/// Revolvers!
+
+/datum/loadout_box/detective
+	entry_tag = ".38 Detective Special"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver
+
+/datum/loadout_box/revolver45
+	entry_tag = ".45ACP Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/revolver45
+
+/datum/loadout_box/colt357
+	entry_tag = ".357 Magnum Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/colt357
+
+/datum/loadout_box/police
+	entry_tag = ".357 Snubnose Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/police
+
+/datum/loadout_box/m29
+	entry_tag = ".44 Magnum Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/m29
+
+/datum/loadout_box/m29snub
+	entry_tag = ".44 Snubnose Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/m29snub
+
+/datum/loadout_box/revolver44
+	entry_tag = ".44 Single-Action Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
+
+/datum/loadout_box/thatgun //thotgun
+	entry_tag = ".223 Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/thatgun
+
+/// Semi-auto pistols!
+
+/datum/loadout_box/pistol
+	entry_tag = ".22 Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol
+
+/datum/loadout_box/ninemil
+	entry_tag = "Hi-Power Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/ninemil
+
+/datum/loadout_box/beretta
+	entry_tag = "Beretta M9FS"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/beretta
+
+/datum/loadout_box/n99
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/n99
+
+/datum/loadout_box/type17
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/type17
+
+/datum/loadout_box/m1911
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/m1911
+
+/// Melee!
+
+/datum/loadout_box/melee
+	entry_tag = "Scrap Sabre"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee
+
+/datum/loadout_box/bowie
+	entry_tag = "Bowie Knife"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/bowie
+
+/datum/loadout_box/throwing
+	entry_tag = "Throwing Knives"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/throwing
+
+/datum/loadout_box/brass
+	entry_tag = "Brass Knuckles"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL | LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/brass
+
+/datum/loadout_box/fryingpan
+	entry_tag = "Brass Knuckles"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/fryingpan
+
+/datum/loadout_box/scrapspear
+	entry_tag = "Scrap Spear"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/scrapspear
+
+/datum/loadout_box/baseball
+	entry_tag = "Baseball Bat"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/baseball
+
+/datum/loadout_box/sledgehammer
+	entry_tag = "Sledgehammer"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/sledgehammer
+
+/datum/loadout_box/chainsaw
+	entry_tag = "Chainsaw"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
+
+/datum/loadout_box/militarypolice
+	entry_tag = "Police Baton"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/militarypolice
+
+/// Tribal
+
+/datum/loadout_box/tribal
+	entry_tag = "Bone Spear"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal
+
+/datum/loadout_box/forgedmachete
+	entry_tag = "Machete"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/forgedmachete
+
+/datum/loadout_box/bmprsword
+	entry_tag = "Bumper Sword"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/bmprsword
+
+/datum/loadout_box/warmace
+	entry_tag = "Warmace"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/warmace
+
+/datum/loadout_box/spearquiver
+	entry_tag = "Spear Quiver"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/spearquiver
+
+/datum/loadout_box/sturdy
+	entry_tag = "Sturdy Bow"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/sturdy
+
+/datum/loadout_box/warclub
+	entry_tag = "War Club"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/warclub
+
+/datum/loadout_box/boneaxe
+	entry_tag = "Bone Axe"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/boneaxe
+
+/obj/item/kit_spawner
+	name = "kit spawner!"
+	desc = "Some kind of kit spawner!"
+	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
+	var/allowed_flags
+
+/obj/item/kit_spawner
+	name = "kit spawner!"
+	desc = "Some kind of kit spawner!"
+	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
+	var/allowed_flags
+
+
+/obj/item/kit_spawner/Initialize()
+	. = ..()
+	build_loadout_list()
+	build_output_list()
+
+/obj/item/kit_spawner/proc/build_loadout_list()
+	if(LAZYLEN(GLOB.loadout_datums))
+		return
+	for(var/datum/loadout_box/loadybox in subtypesof(/datum/loadout_box))
+		GLOB.loadout_datums[loadybox.entry_tag] = list(LOADOUT_BITFIELD = initial(loadybox.entry_flags), LOADOUT_CLASS = initial(loadybox.entry_class), LOADOUT_PATH = initial(loadybox.spawn_thing))
+
+/obj/item/kit_spawner/proc/build_output_list()
+	if(!LAZYLEN(GLOB.loadout_datums))
+		build_loadout_list()
+		return
+	if(LAZYLEN(GLOB.loadout_boxes[type])) // already init'd!
+		return
+	var/list/list_of_stuff = list()
+	for(var/loadya in LOADOUT_ROOT_ENTRIES)
+		var/list/list2add = list()
+		for(var/loadies in GLOB.loadout_datums)
+			if(GLOB.loadout_datums[loadies][LOADOUT_CLASS] == loadya && CHECK_BITFIELD(GLOB.loadout_datums[loadies][LOADOUT_FLAGS], allowed_flags))
+				list2add[loadies] = GLOB.loadout_datums[loadies][LOADOUT_PATH]
+		if(LAZYLEN(list2add))
+			list2add = sort_list(list2add)
+			list_of_stuff[LOADOUT_ROOT] |= loadya
+			list_of_stuff[loadya] |= list2add
+	if(LAZYLEN(list_of_stuff))
+		GLOB.loadout_boxes[type] = list_of_stuff
+		log_admin("[src] initialized successfully!")
+	else
+		message_admins(span_phobia("Hey Lagg, [src] didnt initialize right. The list is empty! point and laugh"))
+
+/obj/item/kit_spawner/attack_self(mob/user)
+	if(can_use_kit(user))
+		use_the_kit(user)
+
+/obj/item/kit_spawner/proc/can_use_kit(mob/living/user)
+	if(user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+		return TRUE
+	playsound(src, 'sound/machines/synth_no.ogg', 40, 1)
+	return FALSE
+
+/obj/item/kit_spawner/proc/use_the_kit(mob/living/user)
+	if(!LAZYLEN(GLOB.loadout_boxes[type]))
+		build_output_list()
+		if(!LAZYLEN(GLOB.loadout_boxes[type]))
+			message_admins(span_phobia("Hey Lagg, [src] didnt set up its lists, like, at all. And cant!. The list is empty! point and laugh"))
+	//first, show the player the root menu! ROOT is just a list of strings
+	var/first_choice = input(user, "Pick a category!", "Pick a category!") in GLOB.loadout_boxes[type][LOADOUT_ROOT]
+	if(!first_choice || !(first_choice in LOADOUT_ROOT_ENTRIES))
+		show_message(user, span_alert("Invalid selection!"))
+		return
+	show_message(user, "[first_choice] selected!")
+	/// now the actual gunweapon! entries are formatted as "thingname" = path
+	var/list/second_choice = input(user, "Pick a weapon!", "Pick a weapon!") in GLOB.loadout_boxes[type][first_choice]
+	if(!check_choice(GLOB.loadout_boxes[type][first_choice][second_choice]))
+		show_message(user, span_alert("Invalid selection!"))
+		return
+	show_message(user, "[second_choice] selected!")
+	spawn_the_thing(user, GLOB.loadout_boxes[type][first_choice][second_choice])
+
+/obj/item/kit_spawner/proc/check_choice(choice_to_check)
+	if(!choice_to_check)
+		return FALSE
+	if(!ispath(choice_to_check))
+		return FALSE
+	return TRUE
+
+/obj/item/kit_spawner/proc/spawn_the_thing(mob/user, atom/the_thing)
+	var/turf/spawn_here
+	spawn_here = user ? get_turf(user) : get_turf(src)
+	new the_thing(spawn_here)
+	show_message(user, span_greenannounce("[the_thing] spawned under [user]!!!"))
+
+
+
+
+
+
+/obj/item/storage/box/gun
+	name = "weapon case"
+	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
+	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
+	icon_state = "weaponcrate"
+	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
+	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
+	component_type = /datum/component/storage/concrete/box
+
+/// Guns for the LAWman
+/obj/item/storage/box/gun/law
+	name = "American 180 case" //it was meant to be a police rifle anyways~
+	w_class = WEIGHT_CLASS_BULKY //most will be rifles
+
+/obj/item/storage/box/gun/law/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/american180(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+
+/obj/item/storage/box/gun/law/smg10mm
+	name = "10mm smg case"
+
+/obj/item/storage/box/gun/law/smg10mm/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/smg10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/ext(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/ext(src)
+
+/obj/item/storage/box/gun/law/commando
+	name = "commando carbine case"
+
+/obj/item/storage/box/gun/law/commando/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/delisle/commando(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+
+/obj/item/storage/box/gun/law/combat //luv u scryden
+	name = "combat carbine case"
+
+/obj/item/storage/box/gun/law/combat/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/combat(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/stick(src)
+	new /obj/item/ammo_box/magazine/tommygunm45/stick(src)
+
+/obj/item/storage/box/gun/law/service
+	name = "service rifle case"
+
+/obj/item/storage/box/gun/law/service/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/service(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+
+/obj/item/storage/box/gun/law/policerifle
+	name = "police rifle case"
+
+/obj/item/storage/box/gun/law/policerifle/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/marksman/policerifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle(src)
+
+/obj/item/storage/box/gun/law/assault_carbine
+	name = "assault carbine case" //police assault rifle is stronger, not sure which they should have
+
+/obj/item/storage/box/gun/law/assault_carbine/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/assault_carbine(src)
+	new /obj/item/ammo_box/magazine/m5mm(src)
+	new /obj/item/ammo_box/magazine/m5mm(src)
+
+/obj/item/storage/box/gun/law/mk23 //not a whole rifle, but a really good pistol if you track down your own rifle
+	name = "Tactical MK-23 case"
+	w_class = WEIGHT_CLASS_NORMAL //only normal sized law gun
+
+/obj/item/storage/box/gun/law/mk23/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/mk23(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+	new /obj/item/ammo_box/magazine/m45/socom(src)
+
+/obj/item/storage/box/gun/law/trail
+	name = "trail carbine case"
+
+/obj/item/storage/box/gun/law/trail/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/trail(src)
+	new /obj/item/ammo_box/tube/m44(src)
+	new /obj/item/ammo_box/tube/m44(src)
+	new /obj/item/ammo_box/tube/m44(src) //one extra, just for you for choosing the stylish gun
+
+/obj/item/storage/box/gun/law/police
+	name = "police shotgun case"
+
+/obj/item/storage/box/gun/law/police/PopulateContents()
+	new /obj/item/gun/ballistic/shotgun/police(src)
+	new /obj/item/ammo_box/shotgun/buck(src) //eeeevery flavor
+	new /obj/item/ammo_box/shotgun/slug(src)
+	new /obj/item/ammo_box/shotgun/bean(src)
+	new /obj/item/ammo_box/shotgun/rubber(src) //make sure these are okay
+
+/obj/item/storage/box/gun/law/aer9
+	name = "laser rifle case"
+
+/obj/item/storage/box/gun/law/aer9/PopulateContents()
+	new /obj/item/gun/energy/laser/aer9(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+	new /obj/item/stock_parts/cell/ammo/mfc(src)
+
+/// Premium guns!
+
+/obj/item/storage/box/gun/premium/maria //fancier guns, for high rank roles
+	name = "Maria case" //maria might not should be allowed, cause meant to be unique, but will see
+	w_class = WEIGHT_CLASS_NORMAL //all neat and tidy pistols
+
+/obj/item/storage/box/gun/premium/maria/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/premium/automatic //beretta m93r, but keeping the naming scheme I got
+	name = "Beretta M93R case" //might be stronk, might need to not take greasegun mags, will see
+
+/obj/item/storage/box/gun/premium/automatic/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/beretta/automatic(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/premium/executive //good to be here till we get the vault back
+	name = "the Executive case"
+
+/obj/item/storage/box/gun/premium/executive/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/executive(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+
+/obj/item/storage/box/gun/premium/crusader
+	name = "Crusader pistol case"
+
+/obj/item/storage/box/gun/premium/crusader/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+
+/obj/item/storage/box/gun/premium/sig //can downgrade to whatever the trusty sig p220 is for. it has slightly lower fire rate
+	name = "Sig P220 case"
+
+/obj/item/storage/box/gun/premium/sig/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/sig(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/storage/box/gun/premium/custom
+	name = "M1911 Custom case"
+
+/obj/item/storage/box/gun/premium/custom/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+//mk23 and magnum semi-autos are just a liiiiittle too chonky for this list
+
+/obj/item/storage/box/gun/premium/mateba //ugh, fiiiiiiiine you can have your dumb coolness revolver, if you're the right rank~
+	name = "Unica 6 case"
+
+/obj/item/storage/box/gun/premium/matebaPopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/box/gun/premium/lucky //not sure if this should be allowed, or if is supposed to be unique
+	name = ".357 magnum revolver case"
+
+/obj/item/storage/box/gun/premium/lucky/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357/lucky(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/box/gun/premium/alt //pearly .44 mag
+	name = "pearl .44 magnum case"
+
+/obj/item/storage/box/gun/premium/alt/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/alt(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/premium/peacekeeper
+	name = "Peacekeeper case"
+
+/obj/item/storage/box/gun/premium/peacekeeper/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/peacekeeper(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/premium/desert_ranger
+	name = "ranger revolver case"
+
+/obj/item/storage/box/gun/premium/desert_ranger/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44/desert_ranger(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/// Long guns
+
+/obj/item/storage/box/gun/rifle
+	name = "cowboy repeater case"
+	w_class = WEIGHT_CLASS_BULKY //rifles beeg, no fit in backpack for later
+
+/obj/item/storage/box/gun/rifle/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/repeater/cowboy(src)
+	new /obj/item/ammo_box/tube/a357(src) //high capacity, only get one
+
+/obj/item/storage/box/gun/rifle/hunting
+	name = "hunting rifle case"
+
+/obj/item/storage/box/gun/rifle/hunting/PopulateContents()
+	new /obj/item/gun/ballistic/rifle/hunting(src)
+	new /obj/item/ammo_box/a308(src)
+	new /obj/item/ammo_box/a308(src)
+
+/obj/item/storage/box/gun/rifle/caravan_shotgun
+	name = "caravan shotgun case"
+
+/obj/item/storage/box/gun/rifle/caravan_shotgun/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/caravan_shotgun(src)
+	new /obj/item/ammo_box/shotgun/buck(src) //lots of shotshells, just one box
+
+/obj/item/storage/box/gun/rifle/widowmaker
+	name = "Winchester Widowmaker case"
+
+/obj/item/storage/box/gun/rifle/widowmaker/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/widowmaker(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+
+/obj/item/storage/box/gun/rifle/smg22 //only full auto gun you can has roundstart. might not be allowed, will see
+	name = ".22 Uzi case"
+
+/obj/item/storage/box/gun/rifle/smg22/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/mini_uzi/smg22(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src)
+
+/obj/item/storage/box/gun/rifle/sidewinder //should this be allowed? not field tested personally
+	name = "multi-caliber smg case"
+
+/obj/item/storage/box/gun/rifle/sidewinder/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/smg/sidewinder(src)
+	new /obj/item/ammo_box/magazine/m22(src) //you asked for multicaliber, you get multiple calibers
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/obj/item/storage/box/gun/rifle/m1carbine
+	name = "M1 carbine case"
+
+/obj/item/storage/box/gun/rifle/m1carbine/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/m1carbine(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv(src) //why can't 10mm magazines be normal? make sure these aren't extended or broken
+	new /obj/item/ammo_box/magazine/m10mm/adv(src)
+
+/obj/item/storage/box/gun/rifle/delisle
+	name = "De Lisle carbine case"
+
+/obj/item/storage/box/gun/rifle/delisle/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/delisle(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/rifle/sportcarbine
+	name = "sport carbine case"
+
+/obj/item/storage/box/gun/rifle/sportcarbine/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/sportcarbine(src)
+	new /obj/item/ammo_box/magazine/m22/extended(src) //high cap, just one
+
+/obj/item/storage/box/gun/rifle/varmint
+	name = "varmint rifle case"
+
+/obj/item/storage/box/gun/rifle/varmint/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/varmint(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src) //no extendeds for you till you find em
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+
+/// MELEE
+//gunmelee
+/obj/item/storage/box/gun/melee //hopefully a decent variety. someone with more expertise expand on this. maybe split between one and two handed
+	name = "scrap sabre case" //stronk, but currently a roundstart. we shall see
+	w_class = WEIGHT_CLASS_NORMAL //some are bulky
+
+/obj/item/storage/box/gun/melee/PopulateContents()
+	new /obj/item/melee/onehanded/machete/scrapsabre(src)
+
+/obj/item/storage/box/gun/melee/bowie //that's not a knife, this is a knife.
+	name = "bowie knife case" //not as strong as a scrap sabre, but a good weapon to slip in boot
+
+/obj/item/storage/box/gun/melee/bowie/PopulateContents()
+	new /obj/item/melee/onehanded/knife/bowie(src)
+
+/obj/item/storage/box/gun/melee/throwing
+	name = "throwing knife case"
+
+/obj/item/storage/box/gun/melee/throwing/PopulateContents()
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src)
+	new /obj/item/melee/onehanded/knife/throwing(src) //go have fun~
+
+/obj/item/storage/box/gun/melee/brass //roundstart unarmed bb
+	name = "brass knuckles case" //what? you don't keep your brass knuckles ina gun case?
+
+/obj/item/storage/box/gun/melee/brass/PopulateContents()
+	new /obj/item/melee/unarmed/brass(src)
+
+/obj/item/storage/box/gun/melee/fryingpan //because YES
+	name = "frying pan case" //a deadly weapon, keep it in its case
+
+/obj/item/storage/box/gun/melee/fryingpan/PopulateContents()
+	new /obj/item/melee/onehanded/club/fryingpan(src)
+
+/obj/item/storage/box/gun/melee/scrapspear //pretty scrappy
+	name = "scrap spear case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/scrapspear/PopulateContents()
+	new /obj/item/twohanded/spear/scrapspear(src)
+
+/obj/item/storage/box/gun/melee/baseball
+	name = "baseball bat case"
+
+/obj/item/storage/box/gun/melee/baseball/PopulateContents()
+	new /obj/item/twohanded/baseball(src)
+
+/obj/item/storage/box/gun/melee/sledgehammer
+	name = "sledgehammer case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/sledgehammer/PopulateContents()
+	new /obj/item/twohanded/sledgehammer/simple(src)
+
+/obj/item/storage/box/gun/melee/chainsaw
+	name = "chainsaw case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/melee/chainsaw/PopulateContents()
+	new /obj/item/twohanded/chainsaw(src)
+
+/obj/item/storage/box/gun/melee/militarypolice
+	name = "baton case"
+
+/obj/item/storage/box/gun/melee/militarypolice/PopulateContents()
+	new /obj/item/melee/classic_baton/militarypolice(src)
+
+/// HOBO GUNS
+
+/obj/item/storage/box/gun/hobo
+	name = "hand shotgun case"
+	w_class = WEIGHT_CLASS_NORMAL //will designate for each box since pipe guns vary in size
+
+/obj/item/storage/box/gun/hobo/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/shotpistol(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+
+/obj/item/storage/box/gun/hobo/zipgun
+	name = "Zip gun case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/hobo/zipgun/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/hobo/zipgun(src)
+	new /obj/item/ammo_box/magazine/zipgun(src)
+	new /obj/item/ammo_box/magazine/zipgun(src)
+	new /obj/item/ammo_box/magazine/zipgun(src) //smol cap, get a couple extra
+	new /obj/item/ammo_box/magazine/zipgun(src)
+
+/obj/item/storage/box/gun/hobo/piperifle
+	name = "pipe rifle case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/hobo/piperifle/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hobo/piperifle(src)
+	new /obj/item/ammo_box/a762/doublestacked(src) //it's like a box but smaller
+
+/obj/item/storage/box/gun/hobo/pepperbox
+	name = "pepperbox gun case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/hobo/pepperbox/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hobo/pepperbox(src)
+	new /obj/item/ammo_box/l10mm(src) //no idea wtf this is for originally but it'll do
+	new /obj/item/ammo_box/l10mm(src)
+
+/obj/item/storage/box/gun/hobo/single_shotgun
+	name = "shotgun bat case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/hobo/single_shotgun/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hobo/single_shotgun(src)
+	new /obj/item/ammo_box/shotgun/buck(src)
+
+/obj/item/storage/box/gun/hobo/knifegun
+	name = "knife gun case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/hobo/knifegun/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hobo/knifegun(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/hobo/knucklegun
+	name = "knucklegun case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/hobo/knucklegun/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/hobo/knucklegun(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/ammo_box/c45rev(src)
+
+/obj/item/storage/box/gun/hobo/winchesterrebored
+	name = "rebored Whinchester case"
+	w_class = WEIGHT_CLASS_BULKY
+
+/obj/item/storage/box/gun/hobo/winchesterrebored/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/winchesterrebored(src)
+	new /obj/item/ammo_box/a762/doublestacked(src) //it's like a box but smaller
+
+/// revolvers!
+
+/obj/item/storage/box/gun/revolver
+	name = ".38 Detective Special case"
+	w_class = WEIGHT_CLASS_NORMAL //revolvers aren't bulky
+
+/obj/item/storage/box/gun/revolver/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/detective(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src)
+	new /obj/item/ammo_box/c38(src) //smol round, so extra loader
+
+/obj/item/storage/box/gun/revolver/revolver45
+	name = ".45 ACP revolver case"
+
+/obj/item/storage/box/gun/revolver/revolver45/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver45(src)
+	new /obj/item/ammo_box/c45rev(src)
+	new /obj/item/ammo_box/c45rev(src)
+
+/obj/item/storage/box/gun/revolver/colt357
+	name = ".357 magnum revolver case" //what does \improper mean, is needed here?
+
+/obj/item/storage/box/gun/revolver/colt357/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/colt357(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/box/gun/revolver/police
+	name = "police revolver case"
+
+/obj/item/storage/box/gun/revolver/police/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/police(src)
+	new /obj/item/ammo_box/a357(src)
+	new /obj/item/ammo_box/a357(src)
+
+/obj/item/storage/box/gun/revolver/m29
+	name = ".44 magnum revolver case"
+
+/obj/item/storage/box/gun/revolver/m29/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/revolver/m29snub
+	name = "snubnose .44 magnum case"
+
+/obj/item/storage/box/gun/revolver/m29snub/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/m29/snub(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/revolver/revolver44
+	name = ".44 magnum single-action case"
+
+/obj/item/storage/box/gun/revolver/revolver44/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/revolver44(src)
+	new /obj/item/ammo_box/m44(src)
+	new /obj/item/ammo_box/m44(src)
+
+/obj/item/storage/box/gun/revolver/thatgun
+	name = ".223 pistol case"
+
+/obj/item/storage/box/gun/revolver/thatgun/PopulateContents()
+	new /obj/item/gun/ballistic/revolver/thatgun(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/small(src)
+
+/// Semiauto pistols!
+
+/obj/item/storage/box/gun/pistol
+	name = ".22 pistol case"
+	w_class = WEIGHT_CLASS_NORMAL //pistols aren't bulky
+
+/obj/item/storage/box/gun/pistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/pistol22(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+	new /obj/item/ammo_box/magazine/m22(src)
+
+/obj/item/storage/box/gun/pistol/ninemil
+	name = "Browning Hi-power case"
+
+/obj/item/storage/box/gun/pistol/ninemil/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/ninemil(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/pistol/beretta
+	name = "Beretta M9FS case"
+
+/obj/item/storage/box/gun/pistol/beretta/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/beretta(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+	new /obj/item/ammo_box/magazine/m9mm/doublestack(src)
+
+/obj/item/storage/box/gun/pistol/n99
+	name = "10mm pistol case"
+
+/obj/item/storage/box/gun/pistol/n99/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/n99(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+
+/obj/item/storage/box/gun/pistol/type17
+	name = "Type 17 case"
+
+/obj/item/storage/box/gun/pistol/type17/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/type17(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
+
+/obj/item/storage/box/gun/pistol/m1911 //muh three worldly whores
+	name = "M1911 case"
+
+/obj/item/storage/box/gun/pistol/m1911/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/m1911(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45(src)
+
+/// Tribal!
+
+/obj/item/storage/box/gun/tribal //not terribly versed in tribal stuff. someone can give this a bit more love than I
+	name = "bone spear case"
+	w_class = WEIGHT_CLASS_BULKY //a few are small
+
+/obj/item/storage/box/gun/tribal/PopulateContents()
+	new /obj/item/twohanded/spear/bonespear(src)
+
+/obj/item/storage/box/gun/tribal/forgedmachete
+	name = "machete case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/tribal/forgedmachete/PopulateContents()
+	new /obj/item/melee/onehanded/machete/forgedmachete(src)
+
+/obj/item/storage/box/gun/tribal/bmprsword
+	name = "bumpersword case"
+
+/obj/item/storage/box/gun/tribal/bmprword/PopulateContents()
+	new /obj/item/twohanded/fireaxe/bmprsword(src)
+
+/obj/item/storage/box/gun/tribal/warmace
+	name = "warmace case"
+
+/obj/item/storage/box/gun/tribal/warmace/PopulateContents()
+	new /obj/item/twohanded/sledgehammer/warmace(src)
+
+/obj/item/storage/box/gun/tribal/spearquiver
+	name = "spear quiver case"
+
+/obj/item/storage/box/gun/tribal/spearquiver/PopulateContents()
+	new /obj/item/storage/backpack/spearquiver(src)
+
+/obj/item/storage/box/gun/tribal/sturdy
+	name = "sturdy bow case"
+
+/obj/item/storage/box/gun/tribal/sturdy/PopulateContents()
+	new /obj/item/gun/ballistic/bow/sturdy(src)
+	new /obj/item/storage/bag/tribe_quiver/archer(src)
+
+/obj/item/storage/box/gun/tribal/warclub
+	name = "war club case"
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/box/gun/tribal/warclub/PopulateContents()
+	new /obj/item/melee/onehanded/club/warclub(src)
+
+/obj/item/storage/box/gun/tribal/boneaxe
+	name = "bone axe case"
+
+/obj/item/storage/box/gun/tribal/boneaxe/PopulateContents()
+	new /obj/item/twohanded/fireaxe/boneaxe(src)
+
+/// ENERGY!
+
+/obj/item/storage/box/gun/energy
+	name = "compact rcw case"
+	w_class = WEIGHT_CLASS_NORMAL //no roundstart laser rifles rn
+
+/obj/item/storage/box/gun/energy/PopulateContents()
+	new /obj/item/gun/energy/laser/auto/worn(src)
+	new /obj/item/stock_parts/cell/ammo/ecp(src)
+
+/obj/item/storage/box/gun/energy/plasma
+	name = "plasma pistol case"
+
+/obj/item/storage/box/gun/energy/plasma/PopulateContents()
+	new /obj/item/gun/energy/laser/plasma/pistol/worn(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+/obj/item/storage/box/gun/energy/stun
+	name = "compliance regulator case"
+
+/obj/item/storage/box/gun/energy/stun/PopulateContents()
+	new /obj/item/gun/energy/laser/complianceregulator(src)
+	new /obj/item/stock_parts/cell/ammo/ec(src)
+
+
+/obj/item/choice_beacon/box/gun //template for sprites
+	name = "weapon case"
+	desc = "a sturdy case keeping your weapon of choice safe until you pop it open."
+	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
+	icon_state = "weaponcrate"
+	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
+	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
+
+//could use a click sound when opened instead of a tear?
+
+
+
+//wasteland weapon case: basic weapon selection for all citizen, wastelander, shopkeep, secretary, doctor, follower, and bandit roles. deputies get one as sidearm
+
+/obj/item/choice_beacon/box/gun/wasteweapon //pulled from carpet choice box code. simple
+	name = "wasteland weapon case"
+	var/static/list/wasteweapon_list = list(
+		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy,
+		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
+		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
+		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
+		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
+		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+
+/obj/item/choice_beacon/box/wasteweapon/generate_display_names()
+	return wasteweapon_list
+
+
+//premium weapon case: includes a selection of nice pistols, for banker, mayor, administrator, and the sheriff's sidearm
+
+/obj/item/choice_beacon/box/gun/premiumweapon //pulled from carpet choice box code. simple
+	name = "premium weapon case"
+	var/static/list/premiumweapon_list = list(
+		"premium pistol case" = /obj/item/choice_beacon/box/gun/premium,
+		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy, //they can choose regular weapons if they really wanna
+		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
+		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
+		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
+		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
+		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+
+/obj/item/choice_beacon/box/premiumweapon/generate_display_names()
+	return premiumweapon_list
+
+
+//law enforcement weapon cases, the main weapon for deputies, sheriffs, redwater watchers(?), and follower guards.
+
+/obj/item/choice_beacon/box/gun/lawweapon //pulled from carpet choice box code. simple
+	name = "Law weapon case"
+	var/static/list/lawweapon_list = list(
+		"law enforcement gun case" = /obj/item/choice_beacon/box/gun/law,
+		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy, //they can choose regular weapons if they really wanna
+		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
+		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
+		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
+		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
+		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+
+/obj/item/choice_beacon/box/lawweapon/generate_display_names()
+	return lawweapon_list
+
+
+
+//template for all the weapon case files
+//also basic weapon selection for tribals, farland tribals, tribal type jobs, but NOT head hunter, shaman, or chief. leave their unique weps for now
+
+obj/item/choice_beacon/box/gun/tribal
+	name = "tribal weapon case"
+	
+/obj/item/choice_beacon/hero/generate_display_names() //ripped straight from heroic items
+	var/static/list/tribal_item_list
+	if(!tribal_item_list)
+		tribal_item_list = list()
+		var/list/templist = typesof(/obj/item/storage/box/gun/tribal)
+		for(var/V in templist)
+			var/atom/A = V
+			tribal_item_list[initial(A.name)] = A
+	return tribal_item_list
+
+
+
+
+
+
+
+
+
+
+
+
