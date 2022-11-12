@@ -259,6 +259,8 @@
 	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
 	health = 200
 	extra_projectiles = 0
+	retreat_distance = 3
+	minimum_distance = 3
 	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
 	speak_emote = list(
 		"mutters",

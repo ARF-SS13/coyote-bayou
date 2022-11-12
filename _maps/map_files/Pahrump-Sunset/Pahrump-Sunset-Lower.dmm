@@ -1106,9 +1106,12 @@
 /turf/open/floor/wood_wide,
 /area/f13/building/sewers)
 "aWr" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/raider/junker,
-/turf/open/indestructible/ground/inside/subway,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
+	},
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkrusty"
+	},
 /area/f13/building/sewers)
 "aWU" = (
 /obj/effect/turf_decal/stripes/line{
@@ -1507,11 +1510,10 @@
 /area/f13/building/hospital)
 "bon" = (
 /obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8
+	dir = 8;
+	light_color = "#f4e3b0"
 	},
-/turf/open/floor/f13{
-	icon_state = "yellowrustychess"
-	},
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "boq" = (
 /obj/structure/window/reinforced{
@@ -8320,8 +8322,11 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
 "dRV" = (
-/obj/effect/spawner/lootdrop/trash,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/door{
+	id = "bargaindealsmarket";
+	pixel_y = -30
+	},
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkrusty"
 	},
@@ -13975,8 +13980,9 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/structure/simple_door/metal/dirtystore{
-	name = "Bottom-Feeder Open Emporium"
+/obj/machinery/door/poddoor/shutters{
+	id = "bargaindealsmarket";
+	name = "Bottom-Feeder Offices"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -21671,11 +21677,14 @@
 	},
 /area/f13/building/massfusion)
 "oWf" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	id = "supermutantvaultext"
+/obj/effect/spawner/lootdrop/trash,
+/obj/effect/decal/cleanable/dirt{
+	color = "#363636"
 	},
-/turf/open/floor/plasteel/dark,
-/area/f13/tunnel)
+/turf/open/floor/plasteel/f13/vault_floor/dark{
+	icon_state = "darkrusty"
+	},
+/area/f13/building/sewers)
 "oWm" = (
 /obj/machinery/defibrillator_mount,
 /turf/closed/wall/r_wall/rust,
@@ -24005,8 +24014,9 @@
 	},
 /area/f13/caves)
 "qDv" = (
-/obj/structure/simple_door/metal/dirtystore{
-	name = "Bottom-Feeder Open Emporium"
+/obj/machinery/door/poddoor/shutters{
+	id = "bargaindealsmarket";
+	name = "Bottom-Feeder Offices"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -24501,9 +24511,9 @@
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/tunnel)
 "qWI" = (
-/obj/structure/destructible/tribal_torch/wall/lit{
-	dir = 8;
-	light_color = "#f4e3b0"
+/obj/structure/table/wood/junk,
+/obj/machinery/porta_turret/f13/turret_22lr/burstfire/raider{
+	name = "Bottom-Feeder Market Turret"
 	},
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
@@ -27794,10 +27804,8 @@
 	},
 /area/f13/caves)
 "tUp" = (
-/obj/effect/decal/cleanable/generic,
-/turf/open/floor/f13{
-	icon_state = "yellowrustychess"
-	},
+/obj/structure/destructible/tribal_torch/wall/lit,
+/turf/open/indestructible/ground/inside/subway,
 /area/f13/building/sewers)
 "tUX" = (
 /obj/structure/window/reinforced/spawner,
@@ -57175,7 +57183,7 @@ cod
 bHa
 bHH
 bHa
-oWf
+ucf
 sJw
 sJw
 kkn
@@ -74581,7 +74589,7 @@ xbU
 hTI
 eFN
 hro
-tYU
+aWr
 tYU
 kPo
 bCt
@@ -74838,8 +74846,8 @@ pHT
 bEZ
 eFN
 tYU
-gwu
-tYU
+oWf
+aWr
 dRV
 cBO
 rpA
@@ -75094,7 +75102,7 @@ tJv
 kyV
 oXH
 dVL
-tYU
+aWr
 gwu
 tYU
 rVe
@@ -75608,9 +75616,9 @@ ykz
 pOs
 kyV
 dVL
-tYU
+aWr
 gwu
-tYU
+aWr
 nuL
 cBO
 rpA
@@ -77402,14 +77410,14 @@ blM
 blM
 blM
 qSc
-dua
-dua
+kyV
+kyV
 bon
-dua
-dua
-qWI
+kyV
+kyV
+kyV
 xjW
-myJ
+kyV
 blM
 bsC
 aah
@@ -77659,10 +77667,10 @@ bDG
 dua
 xvp
 kyV
-aWr
-dua
-ckq
-tUp
+pOs
+wlO
+pOs
+ijd
 kyV
 kyV
 gBF
@@ -77920,7 +77928,7 @@ kyV
 kyV
 pOs
 kyV
-tJv
+kyV
 pOs
 kyV
 aGK
@@ -78950,8 +78958,8 @@ oFf
 xRa
 lkf
 eRS
-lWI
-kyV
+qWI
+tUp
 bsC
 aah
 agZ
