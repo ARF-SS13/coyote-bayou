@@ -36,7 +36,7 @@
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
-		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, variance, zone_override, params, angle_out)
+		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_INSANE_AIM) ? 0.5 : 1), zone_override, params, angle_out)
 
 	user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
 	user.newtonian_move(get_dir(target, user))
