@@ -348,6 +348,7 @@
 	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
+	new /obj/item/choice_beacon/box/carpet(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
