@@ -168,12 +168,15 @@
 	key = "frown"
 	key_third_person = "frowns"
 	message = "frowns."
+	sound = 'sound/effects/frown.ogg'
 
 /datum/emote/living/gag
 	key = "gag"
 	key_third_person = "gags"
 	message = "gags."
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/gag.ogg'
+	sound_volume = 100
 
 /datum/emote/living/gasp
 	key = "gasp"
@@ -196,6 +199,15 @@
 	key_third_person = "giggles"
 	message = "giggles."
 	emote_type = EMOTE_AUDIBLE
+
+/datum/emote/living/giggle/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/femalegiggle1.ogg'
+		else
+			sound = 'sound/effects/malegiggle1.ogg'
+		return 
 
 /datum/emote/living/glare
 	key = "glare"
@@ -231,6 +243,7 @@
 	message = "blows a kiss."
 	message_param = "blows a kiss to %t."
 	emote_type = EMOTE_AUDIBLE
+	sound = 'sound/effects/kiss.ogg'
 
 /datum/emote/living/audible
 	emote_type = EMOTE_AUDIBLE
@@ -341,6 +354,15 @@
 	message = "sighs."
 	emote_type = EMOTE_AUDIBLE
 
+/datum/emote/living/sigh/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/femalesigh1.ogg'
+		else
+			sound = 'sound/effects/malesigh1.ogg'
+		return 
+
 /datum/emote/living/sit
 	key = "sit"
 	key_third_person = "sits"
@@ -389,6 +411,16 @@
 	message = "snores."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
+
+/datum/emote/living/snore/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/femalesnore1.ogg'
+		else
+			sound = 'sound/effects/malesnore1.ogg'
+		return 
+
 
 /datum/emote/living/stare
 	key = "stare"
@@ -454,6 +486,15 @@
 	key = "whimper"
 	key_third_person = "whimpers"
 	message = "whimpers."
+
+/datum/emote/living/whimper/get_sound(mob/living/M) 
+	. = ..()
+	if(ishuman(M))
+		if(M.gender == FEMALE)
+			sound = 'sound/effects/femalewhimper1.ogg'
+		else
+			sound = 'sound/effects/malewhimper1.ogg'
+		return 
 
 /datum/emote/living/wsmile
 	key = "wsmile"
