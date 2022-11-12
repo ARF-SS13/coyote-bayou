@@ -815,3 +815,10 @@
 	item_state = "prisoner_skirt"
 	icon_state = "prisoner_skirt"
 	minimize_when_attached = FALSE
+
+/obj/item/clothing/accessory/ncrfjacketcrop
+	name = "Cropped Denim Jacket"
+	desc = "Yeah, you go hard."
+	item_state = "ncrcfjacketcrop"
+	icon_state = "ncrcfjacketcrop"
+	minimize_when_attached = FALSE
