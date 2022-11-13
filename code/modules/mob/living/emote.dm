@@ -308,7 +308,7 @@
 /datum/emote/living/audible/laugh/about
 	key = "laughabout"
 	key_third_person = "laughs about"
-	messages = "laughs about it!"
+	message = "laughs about it!"
 	message_param = "laughs about %t."
 
 /datum/emote/living/audible/laugh/get_sound(mob/living/user)
