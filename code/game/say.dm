@@ -119,6 +119,13 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	input = underline.Replace_char(input, "<u>$1</u>")
 	return input
 
+/atom/movable/proc/say_narrate_replace(input, atom/thing)
+	if(!istype(thing))
+		return
+	if(findtext(input, "@"))
+		. = replacetext(input, "@", "<b>[thing.name]</b>")
+	return
+
 /// Quirky citadel proc for our custom sayverbs to strip the verb out. Snowflakey as hell, say rewrite 3.0 when?
 /atom/movable/proc/quoteless_say_quote(input, list/spans = list(speech_span), message_mode)
 	if((input[1] == "!") && (length_char(input) > 1))
