@@ -147,6 +147,16 @@
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
 
+/datum/gear/donator/kits/aerodynamique3
+	name = "Kalcia Loadout Time!"
+	path = /obj/item/storage/box/large/custom_kit/aerodynamique3
+	ckeywhitelist = list("aerodynamique")
+
+/obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
+	new /obj/item/gun/ballistic/bow/sturdy(src)
+	new /obj/item/storage/bag/tribe_quiver/bone(src)
+	new /obj/item/reagent_containers/pill/patch/jet(src)
+
 /datum/gear/donator/kits/aldrictalvalin
 	name = "Aldric's Supply Kit"
 	path = /obj/item/storage/box/large/custom_kit/aldrictalvalin

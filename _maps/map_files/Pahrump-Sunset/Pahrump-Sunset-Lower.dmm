@@ -5198,7 +5198,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/spawner/lootdrop/f13/junkspawners,
 /obj/machinery/button/door{
-	id = "factorybasement";
+	id = "factbasementcontrol";
 	name = "shutters button";
 	pixel_x = 28
 	},
@@ -7394,7 +7394,7 @@
 "daN" = (
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
+	id = "factbasementcontrol";
 	name = "shutters"
 	},
 /turf/open/floor/plasteel/f13{
@@ -8921,7 +8921,9 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/glowing/strong{
+	maxHealth = 225
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -8972,7 +8974,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -11197,7 +11199,7 @@
 /turf/open/floor/plasteel/f13/vault_floor/floor,
 /area/f13/caves)
 "gqY" = (
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
+/mob/living/simple_animal/hostile/ghoul/legendary,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -14787,7 +14789,7 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
+	id = "factbasementcontrol";
 	name = "shutters"
 	},
 /turf/open/floor/plasteel/f13{
@@ -28467,6 +28469,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
+/obj/machinery/button/door{
+	pixel_y = 20;
+	id = "factorybasement"
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -28841,7 +28847,7 @@
 	},
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
+	id = "factbasementcontrol";
 	name = "shutters"
 	},
 /turf/open/floor/plasteel/f13{
