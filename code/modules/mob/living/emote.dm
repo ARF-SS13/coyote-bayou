@@ -444,7 +444,7 @@
 	key = "sneeze"
 	key_third_person = "sneezes"
 	message = "sneezes."
-	message_param = "sneezes from %t"
+	message_param = "sneezes from %t."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sneeze/get_sound(mob/living/M) 
