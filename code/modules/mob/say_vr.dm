@@ -66,7 +66,11 @@ proc/get_top_level_mob(mob/S)
 		return FALSE
 
 	user.log_message(message, subtler ? LOG_SUBTLER : LOG_SUBTLE)
-	message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
+	var/msg_check = user.say_narrate_replace(message, user)
+	if(msg_check)
+		message = span_subtle("<i>[msg_check]</i>")
+	else
+		message = span_subtle("<b>[user]</b> " + "<i>[user.say_emphasis(message)]</i>")
 
 	var/list/non_admin_ghosts
 	// Exclude ghosts from the initial message if its a subtler, lets be *discrete*

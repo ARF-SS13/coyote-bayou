@@ -48,14 +48,14 @@
 	emote_type = EMOTE_AUDIBLE
 
 
-/datum/emote/living/chuckle/get_sound(mob/living/M) 
+/datum/emote/living/chuckle/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 		else
 			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
-		return 
+		return
 
 
 /datum/emote/living/collapse
@@ -82,14 +82,14 @@
 	if(HAS_TRAIT(user, TRAIT_SOOTHED_THROAT))
 		return FALSE
 
-/datum/emote/living/cough/get_sound(mob/living/M) 
+/datum/emote/living/cough/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/female_cough.ogg'
 		else
 			sound = 'sound/effects/male_cough.ogg'
-		return 
+		return
 
 /datum/emote/living/dance
 	key = "dance"
@@ -226,14 +226,14 @@
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
-/datum/emote/living/gasp/get_sound(mob/living/M) 
+/datum/emote/living/gasp/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/female_gasp.ogg'
 		else
 			sound = 'sound/effects/male_gasp.ogg'
-		return 
+		return
 
 /datum/emote/living/giggle
 	key = "giggle"
@@ -242,14 +242,14 @@
 	message_param = "giggles at %t."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/giggle/get_sound(mob/living/M) 
+/datum/emote/living/giggle/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/femalegiggle1.ogg'
 		else
 			sound = 'sound/effects/malegiggle1.ogg'
-		return 
+		return
 
 /datum/emote/living/glare
 	key = "glare"
@@ -413,14 +413,14 @@
 	message_param = "sighs about %t."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/sigh/get_sound(mob/living/M) 
+/datum/emote/living/sigh/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/femalesigh1.ogg'
 		else
 			sound = 'sound/effects/malesigh1.ogg'
-		return 
+		return
 
 /datum/emote/living/sit
 	key = "sit"
@@ -447,14 +447,14 @@
 	message_param = "sneezes from %t."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/sneeze/get_sound(mob/living/M) 
+/datum/emote/living/sneeze/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/female_sneeze.ogg'
 		else
 			sound = 'sound/effects/male_sneeze.ogg'
-		return 
+		return
 
 
 /datum/emote/living/smug
@@ -477,14 +477,14 @@
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 
-/datum/emote/living/snore/get_sound(mob/living/M) 
+/datum/emote/living/snore/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/femalesnore1.ogg'
 		else
 			sound = 'sound/effects/malesnore1.ogg'
-		return 
+		return
 
 
 /datum/emote/living/stare
@@ -555,14 +555,14 @@
 	key_third_person = "whimpers"
 	message = "whimpers."
 
-/datum/emote/living/whimper/get_sound(mob/living/M) 
+/datum/emote/living/whimper/get_sound(mob/living/M)
 	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
 			sound = 'sound/effects/femalewhimper1.ogg'
 		else
 			sound = 'sound/effects/malewhimper1.ogg'
-		return 
+		return
 
 /datum/emote/living/wsmile
 	key = "wsmile"
@@ -610,7 +610,12 @@
 		if(type_override)
 			emote_type = type_override
 	message = user.say_emphasis(message)
+	var/msg_check = user.say_narrate_replace(message, user)
+	if(msg_check)
+		message = msg_check
+		omit_left_name = TRUE
 	. = ..()
+	omit_left_name = FALSE
 	message = null
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
@@ -949,6 +954,13 @@
 		var/mob/living/carbon/C = user
 		if(. && isliving(user)) //Are they alive?  The stuff below is the sounds being listed, with percent (the 20s) and then number of times played (1)
 			pick(playsound(C, 'sound/f13effects/sunsetsounds/wah1.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah2.ogg', 33, 1),playsound(C, 'sound/f13effects/sunsetsounds/wah3.ogg', 34, 1),)
+
+
+/datum/emote/living/boowomp
+	key = "boowomp"
+	key_third_person = "frowns heavily."
+	message = "frowns heavily."
+	sound = 'sound/effects/boowomp.ogg'
 
 /datum/emote/weh
 	key = "weh"

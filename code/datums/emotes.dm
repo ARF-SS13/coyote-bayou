@@ -32,6 +32,8 @@
 	var/can_message_change = FALSE
 	/// How long is the cooldown on the audio of the emote, if it has one?
 	var/audio_cooldown = 2 SECONDS
+	/// emote does not have the player's name on the left.
+	var/omit_left_name = FALSE
 
 /datum/emote/New()
 	if(key_third_person)
@@ -78,6 +80,12 @@
 		user.emote_for_ghost_sight("<b>[user]</b> [msg]")
 
 	var/message_flags = (only_overhead ? (EMOTE_MESSAGE | ONLY_OVERHEAD) : (EMOTE_MESSAGE))
+
+	if(omit_left_name)
+		msg = "<span class='emote'>[msg]</span>"
+	else
+		msg = "<span class='emote'><b>[user]</b> [msg]</span>"
+
 
 	if(emote_type == EMOTE_AUDIBLE)
 		user.audible_message(msg, deaf_message = "<span class='emote'>You see how <b>[user]</b> [msg]</span>", audible_message_flags = message_flags)
