@@ -99,8 +99,8 @@
 	restraint_check = TRUE
 
 /datum/emote/hearthand
-	key = "<3"
-	key_third_person = "<3s"
+	key = "hearthand"
+	key_third_person = "hearthands"
 	message = "makes a heart with their hands."
 	message_param = "makes a heart with their hands at %t."
 	restraint_check = TRUE
