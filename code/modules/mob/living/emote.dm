@@ -499,7 +499,12 @@
 		if(type_override)
 			emote_type = type_override
 	message = user.say_emphasis(message)
+	var/msg_check = user.say_narrate_replace(message, user)
+	if(msg_check)
+		message = msg_check
+		omit_left_name = TRUE
 	. = ..()
+	omit_left_name = FALSE
 	message = null
 
 /datum/emote/living/custom/replace_pronoun(mob/user, message)
