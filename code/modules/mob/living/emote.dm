@@ -497,7 +497,7 @@
 	key = "stretch"
 	key_third_person = "stretches"
 	message = "stretches their arms."
-	message_param = "streteches their %t."
+	message_param = "stretches their %t."
 
 /datum/emote/living/sulk
 	key = "sulk"
