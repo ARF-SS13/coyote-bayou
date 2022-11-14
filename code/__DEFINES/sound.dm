@@ -94,6 +94,10 @@
 #define AREA_MUSIC(file, length) list(SL_FILE_PATH = file, SL_FILE_LENGTH = length)
 #define AREA_SOUND(file, length) list(SL_FILE_PATH = file, SL_FILE_LENGTH = length)
 
+//Vorny sounds
+#define CHANNEL_PRED 1010
+#define CHANNEL_DIGEST 1009
+#define CHANNEL_PREYLOOP 1008z
 
 //Ambience types
 

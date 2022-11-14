@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/all_quirks = list()
 
 	//Quirk category currently selected
-	var/quirk_category = QUIRK_POSITIVE 
+	var/quirk_category = QUIRK_POSITIVE
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
@@ -229,6 +229,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/action_buttons_screen_locs = list()
 
 	//bad stuff
+	var/vorepref = "No"
+	var/vore_flags = 0
+	var/list/belly_prefs = list()
+	var/vore_taste = "nothing in particular"
+	var/vore_smell = null
+	var/toggleeatingnoise = TRUE
+	var/toggledigestionnoise = TRUE
 	var/cit_toggles = TOGGLES_CITADEL
 
 	//backgrounds

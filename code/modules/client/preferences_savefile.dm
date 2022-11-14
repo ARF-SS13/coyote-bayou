@@ -75,6 +75,22 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 		S["loadout"] = safe_json_encode(loadout_data)
 
+	if(current_version < 37)
+		var/vr_path = "data/player_saves/[parent.ckey[1]]/[parent.ckey]/vore/character[default_slot].json"
+		if(fexists(vr_path))
+			var/list/json_from_file = json_decode(file2text(vr_path))
+			if(json_from_file)
+				if(json_from_file["digestable"])
+					vore_flags |= DIGESTABLE
+				if(json_from_file["devourable"])
+					vore_flags |= DEVOURABLE
+				if(json_from_file["feeding"])
+					vore_flags |= FEEDING
+				if(json_from_file["lickable"])
+					vore_flags |= LICKABLE
+				belly_prefs = json_from_file["belly_prefs"]
+				vore_taste = json_from_file["vore_taste"]
+
 	if(current_version < 43) //extreme changes to how things are coloured (the introduction of the advanced coloring system)
 		features["color_scheme"] = OLD_CHARACTER_COLORING //disable advanced coloring system by default
 		for(var/feature in features)

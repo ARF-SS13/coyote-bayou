@@ -86,6 +86,7 @@
 #define ui_crafting	"EAST-1:27,SOUTH+3:5"
 #define ui_building "EAST-1:27,SOUTH+2:7"
 #define ui_language_menu "EAST-1:27,SOUTH+2:22"
+#define ui_voremode	"EAST-5:20,SOUTH:5"
 #define ui_wield "EAST-1:10,SOUTH+1:23"
 
 #define ui_borg_pull "EAST-2:26,SOUTH+1:7"
@@ -175,3 +176,4 @@
 #define ui_boxcraft "EAST-4:22,SOUTH+1:6"
 #define ui_boxarea "EAST-4:6,SOUTH+1:6"
 #define ui_boxlang "EAST-5:22,SOUTH+1:6"
+#define ui_boxvore	"EAST-5:22,SOUTH+1:6"
