@@ -907,6 +907,7 @@
 	suppressor_y_offset = 17
 
 	actions_types = list(/datum/action/item_action/toggle_sidewinder)
+	fire_sound = 'sound/f13weapons/9mm.ogg'
 	gun_sound_properties = list(
 		SP_VARY(FALSE),
 		SP_VOLUME(PISTOL_LIGHT_VOLUME),
@@ -1296,6 +1297,40 @@
 		SP_DISTANT_SOUND(PISTOL_MEDIUM_DISTANT_SOUND),
 		SP_DISTANT_RANGE(PISTOL_MEDIUM_RANGE_DISTANT)
 	)
+
+/* * * * * * * * * * *
+ * Worn Combat Carbine
+ * Slightly softer .45 carbine
+ * Less damage
+ * less accurate
+ * Powerful melee
+ * With love
+ * Common
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/combat/worn
+	name = "Worn Combat Carbine"
+	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
+		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
+		looks to be of high-quality crafting, the precision of such parts look a bit... off, like a master swordsmith were asked to forge a \
+		gun by hand. As such, the internal mechanisms and rifling are not <i>quite</i> the right size for a .45ACP round, and the sight \
+		picture is a bit <i>Fuzzy</i>. Every part is, however, built as rugged as its maker, and can be used as a very effective melee \
+		weapon without any risk of damaging it."
+	icon_state = "combat_rifle"
+	item_state = "combatrifle"
+	icon_prefix = "combatrifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_HEAVIER
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = CARBINE_RECOIL(1)
+	added_spread = GUN_SPREAD_POOR
 
 /* * * * * * * * * * *
  * 10/22ish carbine
