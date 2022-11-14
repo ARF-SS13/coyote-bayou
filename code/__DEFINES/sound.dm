@@ -97,7 +97,7 @@
 //Vorny sounds
 #define CHANNEL_PRED 1010
 #define CHANNEL_DIGEST 1009
-#define CHANNEL_PREYLOOP 1008z
+#define CHANNEL_PREYLOOP 1008
 
 //Ambience types
 

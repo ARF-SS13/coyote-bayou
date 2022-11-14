@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 		var/obj/screen/plane_master/instance = new mytype()
 		plane_masters["[instance.plane]"] = instance
 		instance.backdrop(mymob)
-
+		
 /datum/hud/Destroy()
 	if(mymob.hud_used == src)
 		mymob.hud_used = null

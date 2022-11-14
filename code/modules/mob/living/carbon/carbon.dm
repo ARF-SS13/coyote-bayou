@@ -1,6 +1,7 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
-
+	//oh no vore time
+	var/voremode = FALSE
 /mob/living/carbon/Initialize()
 	. = ..()
 	create_reagents(1000, NONE, NO_REAGENTS_VALUE)
@@ -1239,6 +1240,18 @@
 		scaries.fake = TRUE
 		QDEL_NULL(phantom_wound)
 
+/mob/living/carbon/proc/toggle_vore_mode()
+	if(SEND_SIGNAL(src, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_TOGGLED))
+		return FALSE //let's not override the main draw of the game these days
+	voremode = !voremode
+	var/obj/screen/voretoggle/T = locate() in hud_used?.static_inventory
+	T?.update_icon_state()
+	return TRUE
+
+/mob/living/carbon/proc/disable_vore_mode()
+	voremode = FALSE
+	var/obj/screen/voretoggle/T = locate() in hud_used?.static_inventory
+	T?.update_icon_state()
 /**
  * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
  *
