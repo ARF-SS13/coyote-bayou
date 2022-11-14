@@ -53,10 +53,10 @@
 	return ..()
 
 /mob/living/proc/ZImpactDamage(turf/T, levels)
-	if(levels <= 1 && HAS_TRAIT(src, TRAIT_FREERUNNING))
+	if(levels <= 2 && HAS_TRAIT(src, TRAIT_FREERUNNING)) //levels is incremented prior to damage proc and is always >= 2
 		visible_message(span_danger("[src] slams into [T], rolling as they land and keeping their pace!"),
 						span_userdanger("You slam into [T], rolling and keeping your momentum!"))
-		adjustBruteLoss((levels * 5))
+		adjustBruteLoss(5)
 	else
 		visible_message(span_danger("[src] crashes into [T] with a sickening noise!"),
 						span_userdanger("You crash into [T] with a sickening noise!"))
