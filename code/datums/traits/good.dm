@@ -134,7 +134,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 
 /datum/quirk/freerunning
 	name = "Freerunning"
-	desc = "You're great at quick moves! You climb tables more quickly. Still trying to figure out how to jump off buildings safely tho..."
+	desc = "You're great at quick moves! You climb tables more quickly and land gracefully when falling from one floor up."
 	value = 1
 	mob_trait = TRAIT_FREERUNNING
 	gain_text = span_notice("You feel lithe on your feet!")
