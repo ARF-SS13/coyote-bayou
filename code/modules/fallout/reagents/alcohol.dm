@@ -331,13 +331,13 @@
 
 /datum/reagent/consumable/ethanol/nukafancy
 	name = "Nuka Fancy"
-	description = "The Refined mans Soda, Fit for soda royalty."
+	description = "A mixture of both Wild and cherry, making something absolutely tasty."
 	color = "#11111E"
 	boozepwr = 30
-	taste_description = "refined soda"
+	taste_description = "cherry rootbeer"
 	glass_icon_state = "nukafancyglass"
 	glass_name = "Nuka Fancy"
-	glass_desc = "The Refined mans Soda, Fit for soda royalty."
+	glass_desc = "A mixture of both Wild and cherry, making something absolutely tasty."
 
 /datum/reagent/consumable/ethanol/nukafancy/on_mob_life(mob/living/carbon/M)
 	var/high_message = pick("<br>Maybe I too need some Slaves?</b>","<br>Mutfruit for All!</b>","<br>Time to Glorify my Wasteland Castle!</b>","<brNuked, not stirred.</b>")
@@ -355,7 +355,7 @@
 	description = "A Nuka-Cola twist on a passionate classic."
 	color = "#8F4096"
 	boozepwr = 60
-	taste_description = "passion and bliss"
+	taste_description = "sweet cherry"
 	glass_icon_state = "nukaloveglass"
 	glass_name = "Nuka Love"
 	glass_desc = "A Nuka-Cola twist on a passionate classic."
@@ -370,13 +370,13 @@
 
 /datum/reagent/consumable/ethanol/nukapunch
 	name = "Nuka Punch"
-	description = "The drink of a Madman."
+	description = "A fruit punch mixture with a nuka kick."
 	color = "#4A261B"
 	boozepwr = 150
-	taste_description = "pain"
+	taste_description = "fruit punch"
 	glass_icon_state = "nukapunchglass"
 	glass_name = "Nuka Punch"
-	glass_desc = "The drink of a Madman."
+	glass_desc = "A fruit punch mixture with a nuka kick."
 
 /datum/reagent/consumable/ethanol/nukapunch/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-4*REAGENTS_EFFECT_MULTIPLIER)
@@ -421,7 +421,7 @@
 	glass_desc = "An extremely blue and glowing combination of Nuka-Cola and (REDACTED)"
 	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
 	ghoulfriendly = TRUE
-	
+
 
 /datum/reagent/consumable/ethanol/nukaquantum/on_mob_life(mob/living/carbon/M)
 	M.drowsyness = 0
@@ -462,7 +462,7 @@
 	description = "Like Quantum, but <BIG>EXTREME<BIG>."
 	color = "#72E070"
 	boozepwr = 50
-	taste_description = "THE EXTREME"
+	taste_description = "sugary grape"
 	glass_icon_state = "nukaxtremeglass"
 	glass_name = "Nuka X-Treme"
 	glass_desc = "Like Quantum, but <BIG>EXTREME<BIG>."
@@ -593,7 +593,7 @@
 	glass_name = "Alcohol-Z"
 	glass_desc = "An potent generic spirit, distilled through tacky radiation and intense stirring."
 
-/datum/reagent/consumable/ethanol/bbock
+/*/datum/reagent/consumable/ethanol/bbock //TDM Begone
 	name = "Ballistic Bock"
 	description = "An explosive cocktail that probably shouldn't be ingested. Fills you with <BIG>BALLISTIC RAGE<BIG>."
 	color = "#333333"
@@ -624,7 +624,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
-	..()
+	..()*/
 
 /datum/reagent/consumable/ethanol/bbrew
 	name = "Battle Brew"
