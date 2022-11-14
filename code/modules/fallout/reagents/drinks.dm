@@ -202,7 +202,7 @@
 	glass_icon_state = "nukaiceglass"
 	glass_name = "Iced Nuka"
 	glass_desc = "Nuka. Stay frosty."
-	
+
 /datum/reagent/consumable/nukaice/on_mob_life(mob/living/carbon/M)
 	M.adjust_bodytemperature(-20 * TEMPERATURE_DAMAGE_COEFFICIENT, T0C) //310.15 is the normal bodytemp.
 	M.drowsyness = 0
@@ -232,6 +232,44 @@
 	M.AdjustKnockdown(-2, 0)
 	M.drowsyness = 0
 	M.AdjustSleeping(-40, FALSE)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	..()
+	. = TRUE
+
+/datum/reagent/consumable/nukaray
+	name = "Nuka Ray"
+	description = "A nuka mixture of both nuka victory and orange."
+	color = "#FFFF00"
+	taste_description = "nuka orange with a kick"
+	glass_icon_state = "nukarayglass"
+	glass_name = "Nuka Ray"
+	glass_desc = "A nuka mixture of both nuka victory and orange."
+
+/datum/reagent/consumable/nukaray/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-2*REAGENTS_EFFECT_MULTIPLIER)
+	M.drowsyness = 0
+	M.AdjustSleeping(-40, FALSE)
+	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
+	..()
+	. = TRUE
+
+/datum/reagent/consumable/nukarush
+	name = "Nuka Rush"
+	description = "A nuka mixture of both nuka victory and wild."
+	color = "#FFFF00"
+	taste_description = "nuka wild with a kick"
+	glass_icon_state = "nukarushglass"
+	glass_name = "Nuka Rush"
+	glass_desc = "A nuka mixture of both nuka victory and wild."
+
+/datum/reagent/consumable/nukarush/on_mob_life(mob/living/carbon/M)
+	M.adjustToxLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustFireLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
+	M.adjustBruteLoss(-1.5*REAGENTS_EFFECT_MULTIPLIER)
+	M.drowsyness = 0
+	M.AdjustSleeping(-60, FALSE)
 	M.adjust_bodytemperature(-5 * TEMPERATURE_DAMAGE_COEFFICIENT, BODYTEMP_NORMAL)
 	..()
 	. = TRUE

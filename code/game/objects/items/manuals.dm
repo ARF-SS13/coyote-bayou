@@ -227,13 +227,16 @@
 				<b>Nuka Shine:</b> Nuka Cola 5u + Beer 5u.<br>
 				<b>Nuka Victory:</b> Nuka Cola 5u + Thirteen Loko 5u.<br>
 				<b>Nuka Quartz:</b> Nuka Cola 5u + Sugar 5u + Silicon 5u.<br>
+				<b>Nuka Fancy:</b> Nuka Wild 1u + Nuka Cherry 1u<br>
 				<b>Nuka Cherry:</b> Nuka Cola 3u + Cherry Jelly 1u<br>
 				<b>Nuka Love:</b> Nuka Cherry 5u + Nuka Quartz 5u<br>
-				<b>Nuka Quantum:</b> Nuka Cola 2u + Uranium 1u + Bluespace Dust 1u + Blue Cherry Jelly 1u<br>
+				<b>Nuka Quantum:</b> Nuka Cola 2u + Radium 1u + Sugar 1u<br>
 				<b>Nuka Grape:</b> Nuka Cola 5u + Grape Juice 5u<br>
 				<b>Nuka Dark:</b> Nuka Cola 5u + Rum 5u<br>
 				<b>Nuka Orange:</b> Nuka Cola 5u + Orange Juice 5u<br>
 				<b>Nuka Wild:</b> Nuka Cola 5u + Sunset Sasparilla 5u<br>
+				<b>Nuka Ray:</b> Nuka Orange 1u + Nuka Victory 1u<br>
+				<b>Nuka Rush:</b> Nuka Wild 1u + Nuka Victory 1u<br>
 				<b>Nuka with ice:</b> Nuka Cola 5u + some ice<br>
 				<b>Newka Cola:</b> Nuka Cherry 5u + Nuka Wild 5u + Ice 5u<br>
 				<b>Nuka Berry:</b> Nuka Grape 5u + Nuka Cherry 5u + Ice 5u<br>
@@ -242,8 +245,8 @@
 				<b>Nuka Cooler:</b> Nuka Iced 5u + more ice + some water<br>
 				<b>Diet Nuka:</b> Nuka Cola 5u + salt + water<br>
 				<b>Nuka Frutti:</b> Nuka Berry 5u + Nuka Orange 5u + Ice 5u<br>
-				<b>Nuka Punch:</b> Nuka Dark 5u + Distilled Tobacco (deathroach) 5u + Punga Juice 5u<br>
-				<b>Nuka X-TREME:</b>  <li>A cartoon drawing of a nuclear warhead.</li> 5u + Nuka Quantum 5u + Ice 5u<br>
+				<b>Nuka Punch:</b> Nuka Berry 5u + Nuka Quartz 5u + Orange Juice 5u<br>
+				<b>Nuka X-TREME:</b> Nuka Cola 5u + Nuka Quantum 5u + Nuka Grape 5u<br>
 
 
 				<h2>Vim Drinks (Midwestern favorite!):</h2>

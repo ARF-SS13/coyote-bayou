@@ -841,6 +841,7 @@
 	new /obj/item/clothing/under/pants/black(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/stealthboy(src)
+	new /obj/item/gun/ballistic/automatic/x9/toy(src)
 
 /datum/gear/donator/kits/zeronetalpha2
 	name = "EIEIO"

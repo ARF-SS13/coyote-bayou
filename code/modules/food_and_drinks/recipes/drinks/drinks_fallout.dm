@@ -54,7 +54,7 @@
 	name = "Nuka Quantum"
 	id = /datum/reagent/consumable/ethanol/nukaquantum
 	results = list(/datum/reagent/consumable/ethanol/nukaquantum = 3) ////results in only 3 instead of 5
-	required_reagents = list(/datum/reagent/consumable/nuka_cola = 2, /datum/reagent/uranium = 1, /datum/reagent/bluespace = 1, /datum/reagent/consumable/bluecherryjelly= 1)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 2, /datum/reagent/radium = 1, /datum/reagent/consumable/sugar = 1)
 
 /datum/chemical_reaction/nukagrape
 	name = "Nuka Grape"
@@ -79,6 +79,18 @@
 	id = "nukawild"
 	results = list(/datum/reagent/consumable/nukawild = 2)
 	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/sunset = 1)
+
+/datum/chemical_reaction/nukaray
+	name = "Nuka Ray"
+	id = "nukaray"
+	results = list(/datum/reagent/consumable/nukaray = 2)
+	required_reagents = list(/datum/reagent/consumable/nukaorange = 1, /datum/reagent/consumable/ethanol/nukavictory = 1)
+
+/datum/chemical_reaction/nukarush
+	name = "Nuka Rush"
+	id = "nukarush"
+	results = list(/datum/reagent/consumable/nukarush = 2)
+	required_reagents = list(/datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/ethanol/nukavictory = 1)
 
 /datum/chemical_reaction/nukaice
 	name = "Iced Nuka"
@@ -122,7 +134,7 @@
 	name = "Nuka Fancy"
 	id = "nukafancy"
 	results = list(/datum/reagent/consumable/ethanol/nukafancy = 3)
-	required_reagents = list(/datum/reagent/consumable/nuka_cola = 1, /datum/reagent/consumable/ethanol/martini = 1)
+	required_reagents = list(/datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/nukacherry = 1)
 
 /datum/chemical_reaction/nukafree
 	name = "Diet Nuka"
@@ -140,7 +152,7 @@
 	name = "Nuka Punch"
 	id = "nukapunch"
 	results = list(/datum/reagent/consumable/ethanol/nukapunch = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/nukadark = 1, /datum/reagent/consumable/ethanol/deathroach = 1, /datum/reagent/consumable/ethanol/pungajuice = 1)
+	required_reagents = list(/datum/reagent/consumable/nukaberry = 5, /datum/reagent/consumable/nukaquartz = 5, /datum/reagent/consumable/orangejuice = 5)
 
 /datum/chemical_reaction/nukasunrise
 	name = "Nuka Sunrise"
@@ -152,7 +164,7 @@
 	name = "Nuka X-Treme"
 	id = "nukaxtreme"
 	results = list(/datum/reagent/consumable/ethanol/nukaxtreme = 1)
-	required_reagents = list(/datum/reagent/consumable/ethanol/nukacide = 5, /datum/reagent/consumable/ethanol/nukaquantum = 5, /datum/reagent/consumable/ice = 5)
+	required_reagents = list(/datum/reagent/consumable/nuka_cola = 5, /datum/reagent/consumable/ethanol/nukaquantum = 5, /datum/reagent/consumable/nukagrape = 5)
 
 
 /// Vim! from Fallout 4: Far Harbor
