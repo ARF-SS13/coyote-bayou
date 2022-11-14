@@ -91,7 +91,7 @@
 	var/savefile/S = new /savefile(path)
 	S.cd = "/character[slot]"
 
-	S["profile_picture"] >> profilePicture
+	S["profilePicture"] >> profilePicture
 
 	//profilePicture = sanitize_text(profilePicture) // Its treating it like the text is invalid and is outputting null, best just to remove it for now as it's already sanitised enough...ish. Don't you dare fucking break.
 
