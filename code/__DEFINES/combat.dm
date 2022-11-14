@@ -549,7 +549,8 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 
 /// Gun spread modifiers
 #define GUN_SPREAD_NONE 0
-#define GUN_SPREAD_POOR 1
+#define GUN_SPREAD_NORMAL 1
+#define GUN_SPREAD_POOR (GUN_SPREAD_NORMAL * 2)
 #define GUN_SPREAD_AWFUL (GUN_SPREAD_NORMAL * 3)
 
 /// Gun fire delay Base
@@ -623,6 +624,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_MELEE_FORCE_RIFLE_LIGHT (GUN_MELEE_FORCE_BASE * 1.5) //18
 #define GUN_MELEE_FORCE_RIFLE_HEAVY (GUN_MELEE_FORCE_BASE * 2) // 24
 #define GUN_MELEE_FORCE_RIFLE_GUNBLADE (GUN_MELEE_FORCE_BASE * 2.5) //30
+#define GUN_MELEE_FORCE_RIFLE_HEAVIER (GUN_MELEE_FORCE_BASE * 3) //36
 
 /// Gun slowdown
 #define GUN_SLOWDOWN_NONE 0.1

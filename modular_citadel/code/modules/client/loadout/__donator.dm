@@ -212,6 +212,7 @@
 
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
+	new /obj/item/gun/ballistic/automatic/combat/worn(src)
 
 /datum/gear/donator/kits/bwoincognito
 	name = "Tasald's Kit"
