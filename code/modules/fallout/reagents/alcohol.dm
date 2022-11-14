@@ -593,7 +593,7 @@
 	glass_name = "Alcohol-Z"
 	glass_desc = "An potent generic spirit, distilled through tacky radiation and intense stirring."
 
-/datum/reagent/consumable/ethanol/bbock
+/*/datum/reagent/consumable/ethanol/bbock //TDM Begone
 	name = "Ballistic Bock"
 	description = "An explosive cocktail that probably shouldn't be ingested. Fills you with <BIG>BALLISTIC RAGE<BIG>."
 	color = "#333333"
@@ -624,7 +624,7 @@
 	if(iscarbon(M))
 		var/mob/living/carbon/C = M
 		C.cure_trauma_type(rage, TRAUMA_RESILIENCE_ABSOLUTE)
-	..()
+	..()*/
 
 /datum/reagent/consumable/ethanol/bbrew
 	name = "Battle Brew"

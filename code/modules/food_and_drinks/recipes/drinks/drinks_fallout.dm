@@ -104,7 +104,7 @@
 	name = "Newka Cola"
 	id = "nukanew"
 	results = list(/datum/reagent/consumable/nukanew = 3)
-	required_reagents = list(/datum/reagent/consumable/nukacherry = 1, /datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/ice = 1)
+	required_reagents = list(/datum/reagent/consumable/nukaberry = 1, /datum/reagent/consumable/nukawild = 1, /datum/reagent/consumable/ice = 1)
 
 /datum/chemical_reaction/nukaberry
 	name = "Nuka Berry"
@@ -315,11 +315,11 @@
 	results = list(/datum/reagent/consumable/ethanol/oldpossum = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/beer = 1, /datum/reagent/consumable/flour = 1, /datum/reagent/consumable/mutjuice = 1)
 
-/datum/chemical_reaction/bbock
+/*/datum/chemical_reaction/bbock
 	name = "Ballistic Bock"
 	id = "bbock"
 	results = list(/datum/reagent/consumable/ethanol/bbock = 3)
-	required_reagents = list(/datum/reagent/blackpowder = 1, /datum/reagent/radium = 1, /datum/reagent/water = 1)
+	required_reagents = list(/datum/reagent/blackpowder = 1, /datum/reagent/radium = 1, /datum/reagent/water = 1)*/ //Made with TDM in mind. Just no. - Risingstarslash
 
 /datum/chemical_reaction/hardlemonade
 	name = "Hard Lemonade"
