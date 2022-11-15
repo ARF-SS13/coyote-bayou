@@ -664,8 +664,10 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 /// Refire speed multiplier for manual action guns if you're not a pr0 and click-to-cycle it
 #define GUN_AUTOPUMP_REFIRE_DELAY_MULT 1.8
 
+//#define RECOIL_SPREAD_CALC(x)  (0.0075 * (x ** 4)) // Funky way of exponentiating bullet spread from recoil
+#define RECOIL_SPREAD_CALC(x)  (x) // funky recoil kidna turbofucks things in wierd says, maybe
 #define MAX_ACCURACY_OFFSET  45 //It's both how big gun recoil can build up, and how hard you can miss
-#define RECOIL_REDUCTION_TIME 1 SECONDS
+#define RECOIL_REDUCTION_TIME 1 SECONDS // unused
 
 #define EMBEDDED_RECOIL(x)     list(1.3 *x, 0  *x, 0  *x )
 #define HANDGUN_RECOIL(x)      list(1.15*x, 0.1*x, 0.6*x )
@@ -801,4 +803,9 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 	GUN_MF_CHANCE = chance,\
 	GUN_MF_DUMP_THROW = throw_chance)
 
+/// cooldown for being spammed with messages you're holding the stupid gun wrong
+#define GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME 1 SECONDS
+
+/// cooldown for being spammed with messages that you shot the gun
+#define GUN_SHOOT_MESSAGE_ANTISPAM_TIME 0.5 SECONDS
 

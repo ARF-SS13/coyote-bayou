@@ -131,6 +131,11 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 
 	return ..()
 
+// Moved this to preferences_savefile.dm as we're having issues with overriding the function I think.
+// My speculation is that us trying to open the save file multiple times with multiple users is causing a memory overflow on the server end and refusing to open it
+// Though surely it would alteast warn us?? IDK. There's no way to debug this live. That's atleast what I think is happening, as it's strange that it works locally, but not server side.
+
+/*
 /datum/preferences/load_character(slot)
 	. = ..()
 	if(!(. == 1))
@@ -165,6 +170,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 	WRITE_FILE(S["typing_indicator_sound_play"]			, features_speech["typing_indicator_sound_play"])
 
 	return 1
+*/
 
 /datum/preferences/process_link(mob/user, list/href_list)
 	switch(href_list["task"])

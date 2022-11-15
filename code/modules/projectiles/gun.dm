@@ -165,13 +165,19 @@ ATTACHMENTS
 	var/cooldown_delay_mods
 	var/list/misfire_possibilities = list()
 	var/list/gun_sound_properties = list(
-		SP_VARY(TRUE),
-		SP_VOLUME(50),
-		SP_VOLUME_SILENCED(20),
-		SP_NORMAL_RANGE(SOUND_RANGE + 5),
-		SP_NORMAL_RANGE_SILENCED(SOUND_RANGE - 15),
-		SP_IGNORE_WALLS(TRUE)
+		SP_VARY(FALSE),
+		SP_VOLUME(PISTOL_LIGHT_VOLUME),
+		SP_VOLUME_SILENCED(PISTOL_LIGHT_VOLUME * SILENCED_VOLUME_MULTIPLIER),
+		SP_NORMAL_RANGE(PISTOL_LIGHT_RANGE),
+		SP_NORMAL_RANGE_SILENCED(SILENCED_GUN_RANGE),
+		SP_IGNORE_WALLS(TRUE),
+		SP_DISTANT_SOUND(PISTOL_LIGHT_DISTANT_SOUND),
+		SP_DISTANT_RANGE(PISTOL_LIGHT_RANGE_DISTANT)
 	)
+	/// Cooldown between times the gun will tell you you're holding it wrong, 1 second cus its not super duper important
+	COOLDOWN_DECLARE(hold_it_right_message_antispam)
+	/// Cooldown between times the gun will tell you it shot, 0.5 seconds cus its not super duper important
+	COOLDOWN_DECLARE(shoot_message_antispam)
 
 /obj/item/gun/Initialize()
 	if(!recoil_dat && islist(init_recoil))
@@ -315,7 +321,8 @@ ATTACHMENTS
 			distant_sound = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND],
 			distant_range = gun_sound_properties[SOUND_PROPERTY_DISTANT_SOUND_RANGE]
 			)
-		if(message)
+		if(message && COOLDOWN_FINISHED(src, shoot_message_antispam))
+			COOLDOWN_START(src, shoot_message_antispam, GUN_SHOOT_MESSAGE_ANTISPAM_TIME)
 			if(pointblank)
 				user.visible_message(span_danger("[user] fires [src] point blank at [pbtarget]!"), null, null, COMBAT_MESSAGE_RANGE)
 			else
@@ -447,6 +454,10 @@ ATTACHMENTS
 		to_chat(user, span_notice(" [src] is lethally chambered! You don't want to risk harming anyone..."))
 		return FALSE
 
+/obj/item/gun/CanItemAutoclick(object, location, params) // fuck you why wasnt this here to begin with
+	if(automatic)
+		. = get_clickcd()
+
 /obj/item/gun/CheckAttackCooldown(mob/user, atom/target)
 	if(user.Adjacent(target)) //melee
 		return user.CheckActionCooldown(CLICK_CD_MELEE)
@@ -512,11 +523,10 @@ ATTACHMENTS
 	for(var/i in 1 to burst_size)
 		misfire_act(user)
 		if(chambered)
-			sprd = user.calculate_offset(added_spread)
-			sprd = roll(2, sprd) - (sprd + 1)
+			sprd = user.calculate_offset()
 			before_firing(target,user)
 			var/BB = chambered.BB
-			if(!chambered.fire_casing(target, user, params, , silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
+			if(!chambered.fire_casing(target, user, params, added_spread, silenced, zone_override, sprd, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, src))
 				shoot_with_empty_chamber(user)
 				update_icon()
 				return
@@ -922,31 +932,33 @@ ATTACHMENTS
 	if(!wielded)
 		unwielded_recoil = recoil_dat.getRating(RECOIL_ONEHAND)
 
-	if(unwielded_recoil)
-		switch(recoil_dat.getRating(RECOIL_ONEHAND_LEVEL))
-			if(0.6 to 0.8)
-				if(prob(25)) // Don't need to tell them every single time
-					to_chat(user, span_warning("Your aim wavers slightly."))
-			if(0.8 to 1)
-				if(prob(50))
-					to_chat(user, span_warning("Your aim wavers as you fire \the [src] with just one hand."))
-			if(1 to 1.5)
-				to_chat(user, span_warning("You have trouble keeping \the [src] on target with just one hand."))
-			if(1.5 to INFINITY)
-				to_chat(user, span_warning("You struggle to keep \the [src] on target with just one hand!"))
+	if(COOLDOWN_FINISHED(src, hold_it_right_message_antispam))
+		COOLDOWN_START(src, hold_it_right_message_antispam, GUN_HOLD_IT_RIGHT_MESSAGE_ANTISPAM_TIME)
+		if(unwielded_recoil)
+			switch(recoil_dat.getRating(RECOIL_ONEHAND_LEVEL))
+				if(0.6 to 0.8)
+					if(prob(25)) // Don't need to tell them every single time
+						to_chat(user, span_warning("Your aim wavers slightly."))
+				if(0.8 to 1)
+					if(prob(50))
+						to_chat(user, span_warning("Your aim wavers as you fire \the [src] with just one hand."))
+				if(1 to 1.5)
+					to_chat(user, span_warning("You have trouble keeping \the [src] on target with just one hand."))
+				if(1.5 to INFINITY)
+					to_chat(user, span_warning("You struggle to keep \the [src] on target with just one hand!"))
 
-	else if(brace_recoil)
-		switch(recoil_dat.getRating(RECOIL_BRACE_LEVEL))
-			if(0.6 to 0.8)
-				if(prob(25))
-					to_chat(user, span_warning("Your aim wavers slightly."))
-			if(0.8 to 1)
-				if(prob(50))
-					to_chat(user, span_warning("Your aim wavers as you fire \the [src] while carrying it."))
-			if(1 to 1.2)
-				to_chat(user, span_warning("You have trouble keeping \the [src] on target while carrying it!"))
-			if(1.2 to INFINITY)
-				to_chat(user, span_warning("You struggle to keep \the [src] on target while carrying it!"))
+		else if(brace_recoil)
+			switch(recoil_dat.getRating(RECOIL_BRACE_LEVEL))
+				if(0.6 to 0.8)
+					if(prob(25))
+						to_chat(user, span_warning("Your aim wavers slightly."))
+				if(0.8 to 1)
+					if(prob(50))
+						to_chat(user, span_warning("Your aim wavers as you fire \the [src] while carrying it."))
+				if(1 to 1.2)
+					to_chat(user, span_warning("You have trouble keeping \the [src] on target while carrying it!"))
+				if(1.2 to INFINITY)
+					to_chat(user, span_warning("You struggle to keep \the [src] on target while carrying it!"))
 
 	user.handle_recoil(src, (base_recoil + brace_recoil + unwielded_recoil) * P.recoil)
 
@@ -1432,7 +1444,7 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	playsound(src, "sound/weapons/punchmiss.ogg", 100, 1)
 	return TRUE
 
-/obj/item/storage/backpack/debug_gun_kit
+/obj/item/storage/backpack/debug_gun_kitauto
 	name = "Bag of Gunstuff"
 	desc = "Cool shit for testing various guns!"
 
@@ -1465,6 +1477,30 @@ GLOBAL_LIST_INIT(gun_yeet_words, list(
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/ammo_box/magazine/m22/extended(src)
 	new /obj/item/ammo_box/magazine/m22smg(src)
+
+/obj/item/storage/backpack/debug_gun_kit_accuracy
+	name = "Bag of Gunstuff"
+	desc = "Cool shit for testing various guns!"
+
+/obj/item/storage/backpack/debug_gun_kit_accuracy/PopulateContents()
+	. = ..()
+	new /obj/item/gun/ballistic/automatic/smg/american180(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/ammo_box/magazine/m22smg(src)
+	new /obj/item/gun/ballistic/automatic/assault_rifle(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/ammo_box/magazine/m556/rifle/extended/hobo(src)
+	new /obj/item/gun/ballistic/automatic/shotgun/pancor(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
+	new /obj/item/ammo_box/magazine/d12g/buck(src)
 
 
 ///////////////////

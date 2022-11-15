@@ -1,28 +1,42 @@
+/* A few definitions of terms
+ * spread - Inaccuracy of the mob firing it, usually recoil
+ * distro - Inaccuracy of the gun being fired, added to spread
+ * variance - Inaccuracy of the cartridge being fired, added to spread
+ *          - Unless it has more than 1 pellet, then its the width of the spray and doesnt contribute to base inaccuracy. Yeah I know its fucked, deal with it
+ * BB.spread - Inaccuracy of the projectile being fired, also added to spread
+ * Final spread out, for shotguns, is the angle that the spray pattern will be centered on
+ */
 /obj/item/ammo_casing/proc/fire_casing(atom/target, mob/living/user, params, distro, quiet, zone_override, spread, damage_multiplier = 1, penetration_multiplier = 1, projectile_speed_multiplier = 1, atom/fired_from)
-	distro += variance
-	if(istype(BB))
-		distro += BB.spread
+	var/angle_out = 0
+	if(randomspread) // usually true
+		if(HAS_TRAIT(user,TRAIT_INSANE_AIM))
+			angle_out = 0 // nice shot
+		else
+			var/max_spread = spread + distro + (pellets == 1 ? variance : 0) // hooray vars doing double duty
+			if(istype(BB))
+				max_spread += BB.spread
+			if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
+				max_spread += 3 //YOU AINT HITTING SHIT BROTHA. REALLY.
+			if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
+				max_spread += 0.2 //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
+			if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
+				max_spread += 1.5//This is cripplingly bad. Trust me.
+			if(HAS_TRAIT(user,TRAIT_NICE_SHOT)) // halves your inaccuracy!
+				max_spread *= 0.5 // Nice shot!
+			angle_out = clamp(rand(-max_spread, max_spread), -MAX_ACCURACY_OFFSET, MAX_ACCURACY_OFFSET)
+
 	var/targloc = get_turf(target)
 	ready_proj(target, user, quiet, zone_override, damage_multiplier, penetration_multiplier, projectile_speed_multiplier, fired_from, damage_threshold_penetration)
 	if(pellets == 1)
-		if(distro) //We have to spread a pixel-precision bullet. throw_proj was called before so angles should exist by now...
-			if(HAS_TRAIT(user,TRAIT_FEV)) //You really shouldn't try this at home.
-				spread += rand(-3,3) //YOU AINT HITTING SHIT BROTHA. REALLY.
-			if(HAS_TRAIT(user,TRAIT_NEARSIGHT)) //Yes.
-				spread += rand(-0.2,0.2) //You're slightly less accurate because you can't see well - as an upside, lasers don't suffer these penalties!
-			if(HAS_TRAIT(user,TRAIT_POOR_AIM)) //You really shouldn't try this at home.
-				spread += rand(-1.5,1.5)//This is cripplingly bad. Trust me.
-			if(randomspread)
-				spread *= distro
-			else //Smart spread
-				spread = round(1 - 0.5) * distro
-		if(!throw_proj(target, targloc, user, params, spread))
+		if(!randomspread) //Smart spread
+			angle_out = round(1 - 0.5) * distro
+		if(!throw_proj(target, targloc, user, params, angle_out))
 			return FALSE
 	else
 		if(isnull(BB))
 			return FALSE
 		AddComponent(/datum/component/pellet_cloud, projectile_type, pellets)
-		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, spread, zone_override, params, distro)
+		SEND_SIGNAL(src, COMSIG_PELLET_CLOUD_INIT, target, user, fired_from, randomspread, (variance * HAS_TRAIT(user,TRAIT_INSANE_AIM) ? 0.5 : 1), zone_override, params, angle_out)
 
 	user.DelayNextAction(considered_action = TRUE, immediate = FALSE)
 	user.newtonian_move(get_dir(target, user))
@@ -79,7 +93,7 @@
 			direct_target = target
 	if(!direct_target)
 		BB.preparePixelProjectile(target, user, params, spread)
-	BB.fire(null, direct_target)
+	BB.fire(null, direct_target, spread)
 	BB = null
 	deduct_powder_and_bullet_mats()
 	return 1

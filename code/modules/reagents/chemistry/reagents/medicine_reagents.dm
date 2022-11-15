@@ -1743,5 +1743,3 @@
 	for(var/i in user.all_wounds)
 		var/datum/wound/iter_wound = i
 		iter_wound.blood_flow = max(0, iter_wound.blood_flow - bleed_reduction_rate)
-
-

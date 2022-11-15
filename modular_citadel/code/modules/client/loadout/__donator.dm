@@ -147,6 +147,16 @@
 	new /obj/item/throwing_star/spear(src)
 	new /obj/item/throwing_star/spear(src)
 
+/datum/gear/donator/kits/aerodynamique3
+	name = "Kalcia Loadout Time!"
+	path = /obj/item/storage/box/large/custom_kit/aerodynamique3
+	ckeywhitelist = list("aerodynamique")
+
+/obj/item/storage/box/large/custom_kit/aerodynamique3/PopulateContents()
+	new /obj/item/gun/ballistic/bow/sturdy(src)
+	new /obj/item/storage/bag/tribe_quiver/bone(src)
+	new /obj/item/reagent_containers/pill/patch/jet(src)
+
 /datum/gear/donator/kits/aldrictalvalin
 	name = "Aldric's Supply Kit"
 	path = /obj/item/storage/box/large/custom_kit/aldrictalvalin
@@ -348,6 +358,7 @@
 	new /obj/item/toy/crayon/orange(src)
 	new /obj/item/geiger_counter(src)
 	new /obj/item/toy/plush/mammal/wolf/blue(src)
+	new /obj/item/choice_beacon/box/carpet(src)
 
 /datum/gear/donator/kits/fuzlet2
 	name = "Smolfox Kit"
@@ -830,6 +841,7 @@
 	new /obj/item/clothing/under/pants/black(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/stealthboy(src)
+	new /obj/item/gun/ballistic/automatic/x9/toy(src)
 
 /datum/gear/donator/kits/zeronetalpha2
 	name = "EIEIO"

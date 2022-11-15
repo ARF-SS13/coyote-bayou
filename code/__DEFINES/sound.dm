@@ -301,7 +301,7 @@
 #define SILENCED_VOLUME_MULTIPLIER 0.25
 
 /// Silenced range
-#define SILENCED_GUN_RANGE -12
+#define SILENCED_GUN_RANGE -1
 
 /// Normal distances
 #define PISTOL_LIGHT_RANGE (SOUND_RANGE + 5)

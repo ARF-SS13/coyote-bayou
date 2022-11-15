@@ -85,6 +85,10 @@
 	custom_materials = list(/datum/material/iron = MATS_LIGHT_EXTENDED_RIFLE_MAGAZINE)
 	w_class = WEIGHT_CLASS_NORMAL
 
+// for testing
+/obj/item/ammo_box/magazine/m556/rifle/extended/hobo
+	ammo_type = /obj/item/ammo_casing/a556/improvised
+
 /obj/item/ammo_box/magazine/m556/rifle/extended/empty
 	start_empty = 1
 

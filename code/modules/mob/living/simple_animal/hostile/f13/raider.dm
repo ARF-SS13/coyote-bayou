@@ -246,6 +246,60 @@
 		"Fuck em' up!"\
 		))
 
+/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates
+	name = "Blueberry Bates and his Bottom-Feeder Buys"
+	desc = "Hello, Blueberry Bates and his Bottom-Feeder Buys. Has a shotgun with APDS incendiary slugs and is ready to fucking kill you."
+	icon_state = "blueberry_bates"
+	icon_living = "blueberry_bates"
+	icon_dead = "blueberry_bates_dead"
+	mob_armor = ARMOR_VALUE_RAIDER_COMBAT_ARMOR_BOSS
+	move_to_delay = 4 //S L O W
+	projectiletype = /obj/item/projectile/bullet/incendiary/shotgun
+	projectilesound = 'sound/f13weapons/shotgun.ogg'
+	maxHealth = 200 //bit beefier since his arena is significantly shittier for him and he's more of an annoyance
+	health = 200
+	extra_projectiles = 0
+	retreat_distance = 3
+	minimum_distance = 3
+	loot = list(/obj/item/stack/f13Cash/random/high, /obj/item/ammo_box/shotgun/incendiary, /obj/item/gun/ballistic/shotgun/police)
+	speak_emote = list(
+		"mutters",
+		"counts his caps to himself",
+		"yells at someone to pick up the pace",
+		"barks",
+		"grumbles",
+		"grouches"
+		)
+	emote_see = list(
+		"chitters",
+		"idly gnaws on a hat",
+		)
+	attack_verb_simple = list(
+		"bayonets",
+		"smacks",
+		"bites",
+		"mauls",
+		"slashes",
+		"thrashes",
+		"bashes",
+		"glomps",
+		"robusts on"
+		)
+	variation_list = list() // so he keeps his stupid name
+
+/mob/living/simple_animal/hostile/raider/ranged/boss/blueberrybates/Aggro()
+	..()
+	summon_backup(15)
+	say(pick(\
+		"TO ME, BOYS!",\
+		"KICK THEIR ASS!",\
+		"Fuck 'em up!",\
+		"*chitter",\
+		"*kyaa",\
+		"*come",\
+		"YOU'RE ABOUT TO GET A DISCOUNT ON A GRAVE, BUDDY!",\
+		))
+
 // RANGED RAIDER WITH ARMOR
 /mob/living/simple_animal/hostile/raider/ranged/sulphiteranged
 	icon_state = "metal_raider"
