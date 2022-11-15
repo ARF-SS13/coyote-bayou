@@ -177,7 +177,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if(!H.equip_to_slot_if_possible(glasses, SLOT_GLASSES))
 		H.put_in_hands(glasses)
 
-/datum/quirk/noglasses 
+/datum/quirk/noglasses
 	name = "Nearsighted - No Glasses"
 	desc = "You are nearsighted and without prescription glasses, you might could find a pair."
 	value = -2
@@ -188,7 +188,7 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 /datum/quirk/noglasses/add()
 	quirk_holder.become_nearsighted(ROUNDSTART_TRAIT)
 
-/datum/quirk/badeyes 
+/datum/quirk/badeyes
 	name = "Nearsighted - Trashed Vision"
 	desc = "You are badly nearsighted without prescription glasses, so much so that it's kind of a miracle you're still alive. You defintiely don't have any corrective lenses, but they would help."
 	value = -3
@@ -397,7 +397,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/spiderphobia
 	name = "Phobia - Spiders"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with spiders."
-	value = -2 
+	value = -2
 	mob_trait = TRAIT_SPIDERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of eight legged monsters grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -417,7 +417,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/skelephobia
 	name = "Phobia - Skeletons"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with bones."
-	value = -1 
+	value = -1
 	mob_trait = TRAIT_BONERPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of bones grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -437,7 +437,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/maskphobia
 	name = "Phobia - Masked People"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with someone wearing a mask."
-	value = -2 
+	value = -2
 	mob_trait = TRAIT_MASKPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the unknown stranger grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -457,7 +457,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 /datum/quirk/doctorphobia
 	name = "Phobia - Doctors"
 	desc = "You've had a traumatic past, one that has scarred you for life, and it had something to do with doctors."
-	value = -3 
+	value = -3
 	mob_trait = TRAIT_DOCTORPHOBIA
 	gain_text = span_danger("You begin to tremble as an immeasurable fear of the doctors grips your mind.")
 	lose_text = span_notice("Your confidence wipes away the fear that had been plaguing you.")
@@ -513,7 +513,7 @@ Edit: TK~  This is the dumbest fucking shit I've ever seen in my life.  This isn
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	H?.cure_trauma_type(/datum/brain_trauma/mild/phobia/eye, TRAUMA_RESILIENCE_ABSOLUTE)
-	
+
 
 /datum/quirk/mute
 	name = "Mute"

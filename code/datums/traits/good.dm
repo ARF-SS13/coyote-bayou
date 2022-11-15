@@ -47,6 +47,19 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 //predominantly positive traits
 //this file is named weirdly so that positive traits are listed above negative ones
 
+/datum/quirk/sleeping_carp
+	name = "Martial Arts: Sleeping Carp"
+	desc = "You were gifted with techniques on an old fighting style. Use it wisely."
+	value = 10 //It's literal martial arts moves. Might be lowered in the future.
+	gain_text = span_notice("Your teacher has left their techniques with you.")
+	lose_text = span_danger("You lost your teachers old techniques.")
+
+/datum/quirk/sleeping_carp/on_spawn()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/obj/item/book/granter/martial/carp = new(get_turf(H))
+	if(!H.equip_to_slot_if_possible(carp, ITEM_SLOT_POCKET))
+		H.put_in_hands(carp)
+
 /datum/quirk/alcohol_tolerance
 	name = "Alcohol Tolerance"
 	desc = "You become drunk more slowly and suffer fewer drawbacks from alcohol."
