@@ -1,4 +1,4 @@
-/* LIST STRUCTURE
+/* LIST STRUCTURELOADOUT_ROOT
  * list encodes "tag" = list(LOADOUT_BITFIELD = a bitfield, LOADOUT_CLASS = melee, LOADOUT_PATH = the path)
  */
 #define LOADOUT_WASTER (1<<0)
@@ -10,487 +10,97 @@
 #define LOADOUT_CLASS "loadout_class"
 #define LOADOUT_PATH "loadout_path"
 
-#define LOADOUT_ROOT "menu_level_archetype"
 #define LOADOUT_MELEE "Melee"
 #define LOADOUT_PISTOL_SEMI "Pistols"
 #define LOADOUT_PISTOL_REVOLVER "Revolvers"
 #define LOADOUT_LONGGUN "Long Guns"
 #define LOADOUT_HOBO "Improvised Guns"
+#define LOADOUT_BOW "Bows"
+#define LOADOUT_SHIELD "Shields"
 #define LOADOUT_ENERGY "Energy Weapons"
 
+#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
 #define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
 
-/datum/loadout_box
-	var/entry_tag
-	var/entry_flag
-	var/entry_class
-	var/obj/item/spawn_thing
-
-/// Energy Guns
-
-/datum/loadout_box/energy
-	entry_tag = "Compact RCW"
-	entry_flags = LOADOUT_PREMIUM | LOADOUT_WASTER
-	entry_class = LOADOUT_ENERGY
-	spawn_thing = /obj/item/storage/box/gun/energy
-
-/datum/loadout_box/plasma
-	entry_tag = "Plasma Pistol"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_ENERGY
-	spawn_thing = /obj/item/storage/box/gun/energy/plasma
-
-/datum/loadout_box/stun
-	entry_tag = "Compliance Regulator"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_ENERGY
-	spawn_thing = /obj/item/storage/box/gun/energy/stun
-
-/// Fancyguns
-
-/datum/loadout_box/maria
-	entry_tag = "Maria"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium
-
-/datum/loadout_box/beretta_auto
-	entry_tag = "Beretta M93R"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium/automatic
-
-/datum/loadout_box/executive_10mm
-	entry_tag = "The Executive 10mm pistol"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium/executive
-
-/datum/loadout_box/crusader
-	entry_tag = "Crusader 10mm pistol"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium/crusader
-
-/datum/loadout_box/sig
-	entry_tag = "Sig P220"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium/sig
-
-/datum/loadout_box/m1911_custom
-	entry_tag = "M1911 Custom"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/premium/custom
-
-/datum/loadout_box/mateba
-	entry_tag = "Unica 6"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/premium/mateba
-
-/datum/loadout_box/lucky
-	entry_tag = "Lucky Revolver"
-	entry_flags = LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/premium/lucky
-
-/datum/loadout_box/alt
-	entry_tag = "Pearl .44 Magnum"
-	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/premium/alt
-
-/datum/loadout_box/peacekeeper
-	entry_tag = "Peacekeeper Magnum"
-	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/premium/peacekeeper
-
-/datum/loadout_box/desert_ranger
-	entry_tag = "Desert Ranger Magnum"
-	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/premium/desert_ranger
-
-/// Lawman guns
-
-/datum/loadout_box/american_180
-	entry_tag = "American 180"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law
-
-/datum/loadout_box/smg10mm
-	entry_tag = "10mm SMG"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/smg10mm
-
-/datum/loadout_box/commando
-	entry_tag = "Commando Carbine"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/commando
-
-/datum/loadout_box/combat
-	entry_tag = "Combat Carbine"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/combat
-
-/datum/loadout_box/service
-	entry_tag = "Service Rifle"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/service
-
-/datum/loadout_box/policerifle
-	entry_tag = "Police Rifle"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/policerifle
-
-/datum/loadout_box/assault_carbine
-	entry_tag = "Assault Carbine"
-	entry_flags = LOADOUT_LAWMAN
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/law/assault_carbine
-
-/datum/loadout_box/mk23
-	entry_tag = "Tactical MK-23"
-	entry_flags = LOADOUT_LAWMAN | LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/law/mk23
-
-/// Long guns, mostly wasters
-
-/datum/loadout_box/rifle
-	entry_tag = "Cowboy Repeater"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN // frontier something something
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle
-
-/datum/loadout_box/hunting
-	entry_tag = "Hunting Rifle"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
-
-/datum/loadout_box/caravan_shotgun
-	entry_tag = "Caravan Shotgun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/caravan_shotgun
-
-/datum/loadout_box/widowmaker
-	entry_tag = "Widowmaker Shotgun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/widowmaker
-
-/datum/loadout_box/smg22
-	entry_tag = ".22 Uzi"
-	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
-
-/datum/loadout_box/sidewinder
-	entry_tag = "Multicaliber SMG"
-	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
-
-/datum/loadout_box/m1carbine
-	entry_tag = "M1 Carbine"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/m1carbine
-
-/datum/loadout_box/delisle
-	entry_tag = "Delisle Carbine"
-	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
-
-/datum/loadout_box/sportcarbine
-	entry_tag = "Sport Carbine"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/sportcarbine
-
-/datum/loadout_box/varmint
-	entry_tag = "Varmint Rifle"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_LONGGUN
-	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
-
-/// Hobo Guns
-
-/datum/loadout_box/hand_shotgun
-	entry_tag = "Hand Shotgun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo
-
-/datum/loadout_box/zipgun
-	entry_tag = "Zipgun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/zipgun
-
-/datum/loadout_box/piperifle
-	entry_tag = "Pipe Rifle"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/piperifle
-
-/datum/loadout_box/pepperbox
-	entry_tag = "Pepperbox"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/pepperbox
-
-/datum/loadout_box/single_shotgun
-	entry_tag = "Shotgun Bat"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/single_shotgun
-
-/datum/loadout_box/knifegun
-	entry_tag = "Knife Gun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/knifegun
-
-/datum/loadout_box/knucklegun
-	entry_tag = "Knuckle Gun"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/knucklegun
-
-/datum/loadout_box/winchesterrebored
-	entry_tag = "Rebored Winchester"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_HOBO
-	spawn_thing = /obj/item/storage/box/gun/hobo/winchesterrebored
-
-/// Revolvers!
-
-/datum/loadout_box/detective
-	entry_tag = ".38 Detective Special"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver
-
-/datum/loadout_box/revolver45
-	entry_tag = ".45ACP Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/revolver45
-
-/datum/loadout_box/colt357
-	entry_tag = ".357 Magnum Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/colt357
-
-/datum/loadout_box/police
-	entry_tag = ".357 Snubnose Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/police
-
-/datum/loadout_box/m29
-	entry_tag = ".44 Magnum Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/m29
-
-/datum/loadout_box/m29snub
-	entry_tag = ".44 Snubnose Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/m29snub
-
-/datum/loadout_box/revolver44
-	entry_tag = ".44 Single-Action Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
-
-/datum/loadout_box/thatgun //thotgun
-	entry_tag = ".223 Revolver"
-	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_REVOLVER
-	spawn_thing = /obj/item/storage/box/gun/revolver/thatgun
-
-/// Semi-auto pistols!
-
-/datum/loadout_box/pistol
-	entry_tag = ".22 Pistol"
-	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol
-
-/datum/loadout_box/ninemil
-	entry_tag = "Hi-Power Pistol"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol/ninemil
-
-/datum/loadout_box/beretta
-	entry_tag = "Beretta M9FS"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol/beretta
-
-/datum/loadout_box/n99
-	entry_tag = "10mm Pistol"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol/n99
-
-/datum/loadout_box/type17
-	entry_tag = "10mm Pistol"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol/type17
-
-/datum/loadout_box/m1911
-	entry_tag = "10mm Pistol"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_PISTOL_SEMI
-	spawn_thing = /obj/item/storage/box/gun/pistol/m1911
-
-/// Melee!
-
-/datum/loadout_box/melee
-	entry_tag = "Scrap Sabre"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee
-
-/datum/loadout_box/bowie
-	entry_tag = "Bowie Knife"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/bowie
-
-/datum/loadout_box/throwing
-	entry_tag = "Throwing Knives"
-	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/throwing
-
-/datum/loadout_box/brass
-	entry_tag = "Brass Knuckles"
-	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL | LOADOUT_LAWMAN
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/brass
-
-/datum/loadout_box/fryingpan
-	entry_tag = "Brass Knuckles"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/fryingpan
-
-/datum/loadout_box/scrapspear
-	entry_tag = "Scrap Spear"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/scrapspear
-
-/datum/loadout_box/baseball
-	entry_tag = "Baseball Bat"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/baseball
-
-/datum/loadout_box/sledgehammer
-	entry_tag = "Sledgehammer"
-	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/sledgehammer
-
-/datum/loadout_box/chainsaw
-	entry_tag = "Chainsaw"
-	entry_flags = LOADOUT_WASTER
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
-
-/datum/loadout_box/militarypolice
-	entry_tag = "Police Baton"
-	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/melee/militarypolice
-
-/// Tribal
-
-/datum/loadout_box/tribal
-	entry_tag = "Bone Spear"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/tribal
-
-/datum/loadout_box/forgedmachete
-	entry_tag = "Machete"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/forgedmachete
-
-/datum/loadout_box/bmprsword
-	entry_tag = "Bumper Sword"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/bmprsword
-
-/datum/loadout_box/warmace
-	entry_tag = "Warmace"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/warmace
-
-/datum/loadout_box/spearquiver
-	entry_tag = "Spear Quiver"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/spearquiver
-
-/datum/loadout_box/sturdy
-	entry_tag = "Sturdy Bow"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/sturdy
-
-/datum/loadout_box/warclub
-	entry_tag = "War Club"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/warclub
-
-/datum/loadout_box/boneaxe
-	entry_tag = "Bone Axe"
-	entry_flags = LOADOUT_TRIBAL
-	entry_class = LOADOUT_MELEE
-	spawn_thing = /obj/item/storage/box/gun/boneaxe
-
 /obj/item/kit_spawner
 	name = "kit spawner!"
 	desc = "Some kind of kit spawner!"
+	icon = 'icons/obj/crates.dmi' //old weapon crate uses this. good enough for a gun case
+	icon_state = "weaponcrate"
+	item_state = "syringe_kit" //old weapon crate used this. I'm not familiar enough to know if there's something better
+	lefthand_file = 'icons/mob/inhands/equipment/briefcase_lefthand.dmi' //taken from briefcase code, should look okay for an inhand
+	righthand_file = 'icons/mob/inhands/equipment/briefcase_righthand.dmi'
 	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
+	/// MUST be set
 	var/allowed_flags
+	/// What kits are inside this kit? If blank, just show a list of everything set to be allowed
+	var/list/multiple_choice = list()
 
-/obj/item/kit_spawner
-	name = "kit spawner!"
+/obj/item/kit_spawner/waster
+	name = "Wasteland survival kit"
+	desc = "Packed with the essentials: Some kind of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+
+/obj/item/kit_spawner/lawman
+	name = "Lawman equipment kit"
+	desc = "Loaded with two sets of weapon."
+	allowed_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = LOADOUT_ROOT_ENTRIES
+	)
+
+/obj/item/kit_spawner/lawman/sheriff
+	name = "Sherff equipment kit"
+	desc = "Now with access to better things!"
+	allowed_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES,
+		"Secondary" = LOADOUT_ROOT_ENTRIES
+	)
+
+/obj/item/kit_spawner/premium
+	name = "Premium equipment kit"
+	desc = "Some of the fanciest guns known to the wastes!"
+	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES - LOADOUT_MELEE,
+		"Secondary" = LOADOUT_MELEE
+	)
+
+/obj/item/kit_spawner/tribal
+	name = "Tribal equipment kit"
+	desc = "Primitive equipment for a primitive person!"
+	allowed_flags = LOADOUT_TRIBAL
+	multiple_choice = list(
+		"Primary" = LOADOUT_ROOT_ENTRIES - LOADOUT_MELEE,
+		"Secondary" = LOADOUT_MELEE
+	)
+
+/obj/item/kit_spawner/debug_waster
+	name = "waster kit spawner!"
+	desc = "Some kind of kit spawner!"
+	allowed_flags = LOADOUT_WASTER
+	multiple_choice = list(
+		"Bepis Mk 1" = list(LOADOUT_MELEE),
+		"hobo energy" = list(LOADOUT_HOBO, LOADOUT_ENERGY),
+		"all of em" = LOADOUT_ROOT_ENTRIES
+	)
+
+/obj/item/kit_spawner/debug_waster_lawman
+	name = "waster kit spawner!"
 	desc = "Some kind of kit spawner!"
 	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
-	var/allowed_flags
+	allowed_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
 
+/obj/item/kit_spawner/debug_tribal
+	name = "waster kit spawner!"
+	desc = "Some kind of kit spawner!"
+	/// these flags plus whatever's picked in the root menu = what we're allowed to spawn, easy peasy
+	allowed_flags = LOADOUT_TRIBAL
 
 /obj/item/kit_spawner/Initialize()
 	. = ..()
@@ -500,8 +110,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/kit_spawner/proc/build_loadout_list()
 	if(LAZYLEN(GLOB.loadout_datums))
 		return
-	for(var/datum/loadout_box/loadybox in subtypesof(/datum/loadout_box))
-		GLOB.loadout_datums[loadybox.entry_tag] = list(LOADOUT_BITFIELD = initial(loadybox.entry_flags), LOADOUT_CLASS = initial(loadybox.entry_class), LOADOUT_PATH = initial(loadybox.spawn_thing))
+	for(var/some_box in subtypesof(/datum/loadout_box))
+		var/datum/loadout_box/loadybox = some_box
+		GLOB.loadout_datums[initial(loadybox.entry_tag)] = list(LOADOUT_BITFIELD = initial(loadybox.entry_flags), LOADOUT_CLASS = initial(loadybox.entry_class), LOADOUT_PATH = initial(loadybox.spawn_thing))
 
 /obj/item/kit_spawner/proc/build_output_list()
 	if(!LAZYLEN(GLOB.loadout_datums))
@@ -513,11 +124,12 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	for(var/loadya in LOADOUT_ROOT_ENTRIES)
 		var/list/list2add = list()
 		for(var/loadies in GLOB.loadout_datums)
-			if(GLOB.loadout_datums[loadies][LOADOUT_CLASS] == loadya && CHECK_BITFIELD(GLOB.loadout_datums[loadies][LOADOUT_FLAGS], allowed_flags))
+			if(GLOB.loadout_datums[loadies][LOADOUT_CLASS] == loadya && CHECK_BITFIELD(GLOB.loadout_datums[loadies][LOADOUT_BITFIELD], allowed_flags))
 				list2add[loadies] = GLOB.loadout_datums[loadies][LOADOUT_PATH]
 		if(LAZYLEN(list2add))
+			if(!islist(list_of_stuff[loadya])) 
+				list_of_stuff[loadya] = list()
 			list2add = sort_list(list2add)
-			list_of_stuff[LOADOUT_ROOT] |= loadya
 			list_of_stuff[loadya] |= list2add
 	if(LAZYLEN(list_of_stuff))
 		GLOB.loadout_boxes[type] = list_of_stuff
@@ -540,19 +152,38 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 		build_output_list()
 		if(!LAZYLEN(GLOB.loadout_boxes[type]))
 			message_admins(span_phobia("Hey Lagg, [src] didnt set up its lists, like, at all. And cant!. The list is empty! point and laugh"))
+	var/list/first_key
+	var/list/first_list
+	if(LAZYLEN(multiple_choice))
+		first_key = input(user, "Pick a category!", "Pick a category!") as null|anything in multiple_choice
+		if(!first_key)
+			user.show_message(span_alert("Invalid selection!"))
+			return
+		if(!LAZYLEN(multiple_choice[first_key]))
+			user.show_message(span_phobia("Whoever set up [src] didn't set up the multiple choice list right! there should be a list here, and there isnt one! this is a bug~"))
+			return
+		first_list = multiple_choice[first_key]
+		// Filter out anything from the first list that isnt in the second list. & might work, were I cleverer
+		for(var/in_it in first_list)
+			if(!(in_it in GLOB.loadout_boxes[type]))
+				first_list -= in_it
+	else
+		first_list = GLOB.loadout_boxes[type]
 	//first, show the player the root menu! ROOT is just a list of strings
-	var/first_choice = input(user, "Pick a category!", "Pick a category!") in GLOB.loadout_boxes[type][LOADOUT_ROOT]
-	if(!first_choice || !(first_choice in LOADOUT_ROOT_ENTRIES))
-		show_message(user, span_alert("Invalid selection!"))
+	var/second_choice = input(user, "Pick a category!", "Pick a category!") as null|anything in first_list
+	if(!second_choice)
+		user.show_message(span_alert("Invalid selection!"))
 		return
-	show_message(user, "[first_choice] selected!")
+	user.show_message("[second_choice] selected!")
 	/// now the actual gunweapon! entries are formatted as "thingname" = path
-	var/list/second_choice = input(user, "Pick a weapon!", "Pick a weapon!") in GLOB.loadout_boxes[type][first_choice]
-	if(!check_choice(GLOB.loadout_boxes[type][first_choice][second_choice]))
-		show_message(user, span_alert("Invalid selection!"))
+	var/third_choice = input(user, "Pick a weapon!", "Pick a weapon!") as null|anything in GLOB.loadout_boxes[type][second_choice]
+	if(!check_choice(GLOB.loadout_boxes[type][second_choice][third_choice]))
+		user.show_message(span_alert("Invalid selection!"))
 		return
-	show_message(user, "[second_choice] selected!")
-	spawn_the_thing(user, GLOB.loadout_boxes[type][first_choice][second_choice])
+	user.show_message("[third_choice] selected!")
+	if(spawn_the_thing(user, GLOB.loadout_boxes[type][second_choice][third_choice]) && first_key && (first_key in multiple_choice))
+		multiple_choice -= first_key
+		user.show_message(span_green("[first_key] removed from multiple choice!"))
 
 /obj/item/kit_spawner/proc/check_choice(choice_to_check)
 	if(!choice_to_check)
@@ -564,8 +195,9 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/kit_spawner/proc/spawn_the_thing(mob/user, atom/the_thing)
 	var/turf/spawn_here
 	spawn_here = user ? get_turf(user) : get_turf(src)
-	new the_thing(spawn_here)
-	show_message(user, span_greenannounce("[the_thing] spawned under [user]!!!"))
+	var/obj/item/new_thing = new the_thing(spawn_here)
+	user.show_message(span_greenannounce("[new_thing] spawned under [user]!!!"))
+	return TRUE
 
 
 
@@ -731,7 +363,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 /obj/item/storage/box/gun/premium/mateba //ugh, fiiiiiiiine you can have your dumb coolness revolver, if you're the right rank~
 	name = "Unica 6 case"
 
-/obj/item/storage/box/gun/premium/matebaPopulateContents()
+/obj/item/storage/box/gun/premium/mateba/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/colt357/mateba(src)
 	new /obj/item/ammo_box/a357(src)
 	new /obj/item/ammo_box/a357(src)
@@ -1199,74 +831,461 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 
 //could use a click sound when opened instead of a tear?
 
+/datum/loadout_box
+	var/entry_tag
+	var/entry_flags
+	var/entry_class
+	var/obj/item/spawn_thing
 
+/// Energy Guns
 
-//wasteland weapon case: basic weapon selection for all citizen, wastelander, shopkeep, secretary, doctor, follower, and bandit roles. deputies get one as sidearm
+/datum/loadout_box/energy
+	entry_tag = "Compact RCW"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_WASTER
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy
 
-/obj/item/choice_beacon/box/gun/wasteweapon //pulled from carpet choice box code. simple
-	name = "wasteland weapon case"
-	var/static/list/wasteweapon_list = list(
-		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy,
-		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
-		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
-		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
-		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
-		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+/datum/loadout_box/plasma
+	entry_tag = "Plasma Pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/plasma
 
-/obj/item/choice_beacon/box/wasteweapon/generate_display_names()
-	return wasteweapon_list
+/datum/loadout_box/stun
+	entry_tag = "Compliance Regulator"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_ENERGY
+	spawn_thing = /obj/item/storage/box/gun/energy/stun
 
+/// Fancyguns
 
-//premium weapon case: includes a selection of nice pistols, for banker, mayor, administrator, and the sheriff's sidearm
+/datum/loadout_box/maria
+	entry_tag = "Maria"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium
 
-/obj/item/choice_beacon/box/gun/premiumweapon //pulled from carpet choice box code. simple
-	name = "premium weapon case"
-	var/static/list/premiumweapon_list = list(
-		"premium pistol case" = /obj/item/choice_beacon/box/gun/premium,
-		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy, //they can choose regular weapons if they really wanna
-		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
-		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
-		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
-		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
-		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+/datum/loadout_box/beretta_auto
+	entry_tag = "Beretta M93R"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/automatic
 
-/obj/item/choice_beacon/box/premiumweapon/generate_display_names()
-	return premiumweapon_list
+/datum/loadout_box/executive_10mm
+	entry_tag = "The Executive 10mm pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/executive
 
+/datum/loadout_box/crusader
+	entry_tag = "Crusader 10mm pistol"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/crusader
 
-//law enforcement weapon cases, the main weapon for deputies, sheriffs, redwater watchers(?), and follower guards.
+/datum/loadout_box/sig
+	entry_tag = "Sig P220"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/sig
 
-/obj/item/choice_beacon/box/gun/lawweapon //pulled from carpet choice box code. simple
-	name = "Law weapon case"
-	var/static/list/lawweapon_list = list(
-		"law enforcement gun case" = /obj/item/choice_beacon/box/gun/law,
-		"energy weapon case" = /obj/item/choice_beacon/box/gun/energy, //they can choose regular weapons if they really wanna
-		"longarm case" = /obj/item/choice_beacon/box/gun/longarm,
-		"melee weapon case" = /obj/item/choice_beacon/box/gun/melee,
-		"pipe gun case" = /obj/item/choice_beacon/box/gun/hobo,
-		"pistol case" = /obj/item/choice_beacon/box/gun/pistol,
-		"revolver case" = /obj/item/choice_beacon/box/gun/revolver,
+/datum/loadout_box/m1911_custom
+	entry_tag = "M1911 Custom"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/premium/custom
 
-/obj/item/choice_beacon/box/lawweapon/generate_display_names()
-	return lawweapon_list
+/datum/loadout_box/mateba
+	entry_tag = "Unica 6"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/mateba
 
+/datum/loadout_box/lucky
+	entry_tag = "Lucky Revolver"
+	entry_flags = LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/lucky
 
+/datum/loadout_box/alt
+	entry_tag = "Pearl .44 Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/alt
 
-//template for all the weapon case files
-//also basic weapon selection for tribals, farland tribals, tribal type jobs, but NOT head hunter, shaman, or chief. leave their unique weps for now
+/datum/loadout_box/peacekeeper
+	entry_tag = "Peacekeeper Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/peacekeeper
 
-obj/item/choice_beacon/box/gun/tribal
-	name = "tribal weapon case"
-	
-/obj/item/choice_beacon/hero/generate_display_names() //ripped straight from heroic items
-	var/static/list/tribal_item_list
-	if(!tribal_item_list)
-		tribal_item_list = list()
-		var/list/templist = typesof(/obj/item/storage/box/gun/tribal)
-		for(var/V in templist)
-			var/atom/A = V
-			tribal_item_list[initial(A.name)] = A
-	return tribal_item_list
+/datum/loadout_box/desert_ranger
+	entry_tag = "Desert Ranger Magnum"
+	entry_flags = LOADOUT_PREMIUM | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/premium/desert_ranger
+
+/// Lawman guns
+
+/datum/loadout_box/american_180
+	entry_tag = "American 180"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law
+
+/datum/loadout_box/smg10mm
+	entry_tag = "10mm SMG"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/smg10mm
+
+/datum/loadout_box/commando
+	entry_tag = "Commando Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/commando
+
+/datum/loadout_box/combat
+	entry_tag = "Combat Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/combat
+
+/datum/loadout_box/service
+	entry_tag = "Service Rifle"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/service
+
+/datum/loadout_box/policerifle
+	entry_tag = "Police Rifle"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/policerifle
+
+/datum/loadout_box/assault_carbine
+	entry_tag = "Assault Carbine"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/law/assault_carbine
+
+/datum/loadout_box/mk23
+	entry_tag = "Tactical MK-23"
+	entry_flags = LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/law/mk23
+
+/// Long guns, mostly wasters
+
+/datum/loadout_box/rifle
+	entry_tag = "Cowboy Repeater"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN // frontier something something
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle
+
+/datum/loadout_box/hunting
+	entry_tag = "Hunting Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/hunting
+
+/datum/loadout_box/caravan_shotgun
+	entry_tag = "Caravan Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/caravan_shotgun
+
+/datum/loadout_box/widowmaker
+	entry_tag = "Widowmaker Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/widowmaker
+
+/datum/loadout_box/smg22
+	entry_tag = ".22 Uzi"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/smg22
+
+/datum/loadout_box/sidewinder
+	entry_tag = "Multicaliber SMG"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/sidewinder
+
+/datum/loadout_box/m1carbine
+	entry_tag = "M1 Carbine"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/m1carbine
+
+/datum/loadout_box/delisle
+	entry_tag = "Delisle Carbine"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/delisle
+
+/datum/loadout_box/sportcarbine
+	entry_tag = "Sport Carbine"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/sportcarbine
+
+/datum/loadout_box/varmint
+	entry_tag = "Varmint Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_LONGGUN
+	spawn_thing = /obj/item/storage/box/gun/rifle/varmint
+
+/// Hobo Guns
+
+/datum/loadout_box/hand_shotgun
+	entry_tag = "Hand Shotgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo
+
+/datum/loadout_box/zipgun
+	entry_tag = "Zipgun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/zipgun
+
+/datum/loadout_box/piperifle
+	entry_tag = "Pipe Rifle"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/piperifle
+
+/datum/loadout_box/pepperbox
+	entry_tag = "Pepperbox"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/pepperbox
+
+/datum/loadout_box/single_shotgun
+	entry_tag = "Shotgun Bat"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/single_shotgun
+
+/datum/loadout_box/knifegun
+	entry_tag = "Knife Gun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/knifegun
+
+/datum/loadout_box/knucklegun
+	entry_tag = "Knuckle Gun"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/knucklegun
+
+/datum/loadout_box/winchesterrebored
+	entry_tag = "Rebored Winchester"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_HOBO
+	spawn_thing = /obj/item/storage/box/gun/hobo/winchesterrebored
+
+/// Revolvers!
+
+/datum/loadout_box/detective
+	entry_tag = ".38 Detective Special"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver
+
+/datum/loadout_box/revolver45
+	entry_tag = ".45ACP Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/revolver45
+
+/datum/loadout_box/colt357
+	entry_tag = ".357 Magnum Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/colt357
+
+/datum/loadout_box/police
+	entry_tag = ".357 Snubnose Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/police
+
+/datum/loadout_box/m29
+	entry_tag = ".44 Magnum Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/m29
+
+/datum/loadout_box/m29snub
+	entry_tag = ".44 Snubnose Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/m29snub
+
+/datum/loadout_box/revolver44
+	entry_tag = ".44 Single-Action Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/revolver44
+
+/datum/loadout_box/thatgun //thotgun
+	entry_tag = ".223 Revolver"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_REVOLVER
+	spawn_thing = /obj/item/storage/box/gun/revolver/thatgun
+
+/// Semi-auto pistols!
+
+/datum/loadout_box/pistol
+	entry_tag = ".22 Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol
+
+/datum/loadout_box/ninemil
+	entry_tag = "Hi-Power Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/ninemil
+
+/datum/loadout_box/beretta
+	entry_tag = "Beretta M9FS"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/beretta
+
+/datum/loadout_box/n99
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/n99
+
+/datum/loadout_box/type17
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/type17
+
+/datum/loadout_box/m1911
+	entry_tag = "10mm Pistol"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_PISTOL_SEMI
+	spawn_thing = /obj/item/storage/box/gun/pistol/m1911
+
+/// Melee!
+
+/datum/loadout_box/melee
+	entry_tag = "Scrap Sabre"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee
+
+/datum/loadout_box/bowie
+	entry_tag = "Bowie Knife"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN | LOADOUT_PREMIUM
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/bowie
+
+/datum/loadout_box/throwing
+	entry_tag = "Throwing Knives"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/throwing
+
+/datum/loadout_box/brass
+	entry_tag = "Brass Knuckles"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL | LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/brass
+
+/datum/loadout_box/fryingpan
+	entry_tag = "Brass Knuckles"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/fryingpan
+
+/datum/loadout_box/scrapspear
+	entry_tag = "Scrap Spear"
+	entry_flags = LOADOUT_WASTER
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/scrapspear
+
+/datum/loadout_box/baseball
+	entry_tag = "Baseball Bat"
+	entry_flags = LOADOUT_WASTER | LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/baseball
+
+/datum/loadout_box/sledgehammer
+	entry_tag = "Sledgehammer"
+	entry_flags = LOADOUT_WASTER | LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/sledgehammer
+
+/datum/loadout_box/chainsaw
+	entry_tag = "Chainsaw"
+	entry_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/chainsaw
+
+/datum/loadout_box/militarypolice
+	entry_tag = "Police Baton"
+	entry_flags = LOADOUT_LAWMAN
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/melee/militarypolice
+
+/// Tribal
+
+/datum/loadout_box/tribal
+	entry_tag = "Bone Spear"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal
+
+/datum/loadout_box/forgedmachete
+	entry_tag = "Machete"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/forgedmachete
+
+/datum/loadout_box/bmprsword
+	entry_tag = "Bumper Sword"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/bmprsword
+
+/datum/loadout_box/warmace
+	entry_tag = "Warmace"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/warmace
+
+/datum/loadout_box/spearquiver
+	entry_tag = "Spear Quiver"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/spearquiver
+
+/datum/loadout_box/sturdy
+	entry_tag = "Sturdy Bow"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_BOW
+	spawn_thing = /obj/item/storage/box/gun/tribal/sturdy
+
+/datum/loadout_box/warclub
+	entry_tag = "War Club"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/warclub
+
+/datum/loadout_box/boneaxe
+	entry_tag = "Bone Axe"
+	entry_flags = LOADOUT_TRIBAL
+	entry_class = LOADOUT_MELEE
+	spawn_thing = /obj/item/storage/box/gun/tribal/boneaxe
 
 
 
