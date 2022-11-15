@@ -50,7 +50,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 /datum/quirk/sleeping_carp
 	name = "Martial Arts: Sleeping Carp"
 	desc = "You were gifted with techniques on an old fighting style. Use it wisely."
-	value = 10 //It's literal martial arts moves. Might be lowered in the future.
+	value = 8 //A game changer potentially. Might be lowered in the future.
 	gain_text = span_notice("Your teacher has left their techniques with you.")
 	lose_text = span_danger("You lost your teachers old techniques.")
 
@@ -812,6 +812,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	gain_text = span_notice("They are already dead.")
 	lose_text = span_danger("Your fists no longer feel so powerful.")
 	locked =  FALSE
+
 /datum/quirk/quietstep
 	name = "Quiet Step"
 	desc = "Your steps just don't make any noise at all."
