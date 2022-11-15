@@ -278,8 +278,9 @@
 
 /obj/item/storage/box/large/custom_kit/dameonowen/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
-	new /obj/item/ammo_box/magazine/m45(src)
-	new /obj/item/ammo_box/magazine/m45(src)
+	new /obj/item/ammo_box/magazine/m45/rubber(src)
+	new /obj/item/ammo_box/magazine/m45/rubber(src)
+	new /obj/item/ammo_box/c45/rubber(src)
 	new /obj/item/storage/belt/legholster(src)
 
 /datum/gear/donator/kits/darknova92

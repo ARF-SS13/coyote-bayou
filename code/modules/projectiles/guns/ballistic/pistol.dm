@@ -380,7 +380,7 @@
 	desc = "The P220 Sig Sauer. A Swiss designed pistol that is compact and has an average rate of fire for a pistol. A trusty copy valued for its reliability."
 	icon_state = "sig"
 	w_class = WEIGHT_CLASS_SMALL
-	init_mag_type = /obj/item/ammo_box/magazine/m45
+	init_mag_type = /obj/item/ammo_box/magazine/m45/rubber
 	mag_type = /obj/item/ammo_box/magazine/m45
 	disallowed_mags = list(/obj/item/ammo_box/magazine/m45/socom, /obj/item/ammo_box/magazine/m45/socom/empty)
 
