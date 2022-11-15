@@ -26,7 +26,7 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 			list("Alcohol Intolerance","Drunken Resilience"),
 			list("Nearsighted - Corrected","Nearsighted - No Glasses", "Nearsighted - Trashed Vision"),
 			list("Melee - Big Leagues", "Melee - Little Leagues", "Melee - Gentle", "Melee - Wimpy"),
-			list("Fists of Steel","Fists of Iron","Fists of Noodle"),
+			list("Fists of Steel","Fists of Iron","Fists of Noodle",  "Martial Arts: Sleeping Carp"),
 			list("Health - Tough", "Health - Tougher", "Flimsy", "Very Flimsy"),
 			list("Mobility - Wasteland Trekker","Mobility - Wasteland Wanderer","Mobility - Wasteland Slug","Mobility - Wasteland Molasses"),
 			list("Cold Resistant", "Cold-Blooded"),
