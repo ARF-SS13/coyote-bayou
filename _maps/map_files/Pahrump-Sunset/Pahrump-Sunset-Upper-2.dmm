@@ -170,6 +170,11 @@
 "kd" = (
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"kH" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken6"
+	},
+/area/f13/wasteland)
 "kY" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/red/insulated,
@@ -307,6 +312,11 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"ux" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken5"
+	},
+/area/f13/wasteland)
 "uI" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -345,6 +355,11 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"wB" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken3"
+	},
+/area/f13/wasteland)
 "wD" = (
 /obj/structure/cable,
 /obj/machinery/power/tracker,
@@ -541,6 +556,11 @@
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"MZ" = (
+/turf/open/floor/wood_wide{
+	icon_state = "wide-broken1"
+	},
+/area/f13/wasteland)
 "Nw" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/terminal{
@@ -682,6 +702,9 @@
 /mob/living/simple_animal/hostile/handy/gutsy,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"Wr" = (
+/turf/open/floor/wood_wide,
+/area/f13/wasteland)
 "Wt" = (
 /obj/item/reagent_containers/food/snacks/pie/berrytart,
 /turf/open/floor/plasteel/f13/vault_floor/dark{
@@ -27933,14 +27956,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+MZ
+wB
+Wr
+Wr
+MZ
+Wr
+ux
 hm
 hm
 hm
@@ -28190,14 +28213,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+kH
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -28447,14 +28470,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+ux
+Wr
+Wr
+Wr
+wB
+Wr
+Wr
 hm
 hm
 hm
@@ -28704,14 +28727,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+kH
+Wr
+Wr
+MZ
+Wr
+Wr
+Wr
+kH
 hm
 hm
 hm
@@ -28961,14 +28984,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+MZ
+wB
+Wr
+Wr
+MZ
+Wr
+ux
 hm
 hm
 hm
@@ -29218,14 +29241,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+Wr
+Wr
+kH
+Wr
+Wr
+Wr
+Wr
 hm
 hm
 hm
@@ -29475,14 +29498,14 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+Wr
+ux
+Wr
+Wr
+Wr
+wB
+Wr
+Wr
 hm
 hm
 hm
