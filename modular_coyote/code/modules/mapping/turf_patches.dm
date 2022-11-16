@@ -1,7 +1,7 @@
 /turf/open/floor/plating/dirt
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	sunlight_state = SUNLIGHT_SOURCE
-	planetary_atmos = FALSE
+	planetary_atmos = TRUE
 
 /turf/open/floor/plating/dirt/Initialize()
 	. = ..()
