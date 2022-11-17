@@ -222,7 +222,7 @@
 
 /obj/item/storage/box/large/custom_kit/brimcon/PopulateContents()
 	new /obj/item/clothing/suit/armor/light/tribal/cloak(src)
-	new /obj/item/gun/ballistic/automatic/combat/worn(src)
+	new /obj/item/gun/ballistic/automatic/combat/worn/brim(src)
 
 /datum/gear/donator/kits/bwoincognito
 	name = "Tasald's Kit"
@@ -277,7 +277,7 @@
 	ckeywhitelist = list("dameonowen")
 
 /obj/item/storage/box/large/custom_kit/dameonowen/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/pistol/sig/trusty(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
 	new /obj/item/ammo_box/magazine/m45/rubber(src)
 	new /obj/item/ammo_box/magazine/m45/rubber(src)
 	new /obj/item/ammo_box/c45/rubber(src)
@@ -347,6 +347,15 @@
 	new /obj/item/ammo_box/magazine/m45(src)
 	new /obj/item/clothing/suit/armor/light/kit/plates(src)
 	new /obj/item/tool_upgrade/productivity/ergonomic_grip(src)
+
+/datum/gear/donator/kits/ferisramsay3
+	name = "Maddy's Loadout"
+	path = /obj/item/storage/box/large/custom_kit/ferisramsay3
+	ckeywhitelist = list("ferisramsay")
+
+/obj/item/storage/box/large/custom_kit/ferisramsay3/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
 
 /datum/gear/donator/kits/fuzlet
 	name = "fuzzy supply box"
@@ -554,6 +563,14 @@
 	new /obj/item/clothing/suit/armor/heavy/salvaged_pa/t45b/tribal/junk(src)
 	new /obj/item/twohanded/sledgehammer/simple(src)
 
+/datum/gear/donator/kits/pipes_wildin
+	name = "Teyla's Kit"
+	path = /obj/item/storage/box/large/custom_kit/pipes_wildin
+	ckeywhitelist = list("pipes_wildin")
+
+/obj/item/storage/box/large/custom_kit/pipes_wildin/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/combat/worn(src)
+
 /datum/gear/donator/kits/pixelexip
 	name = "Bruiser's Kit"
 	path = /obj/item/storage/box/large/custom_kit/pixelexip
@@ -638,6 +655,16 @@
 	new /obj/item/claymore(src)
 	new /obj/item/clothing/suit/armor/light/knight(src)
 	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
+
+/datum/gear/donator/kits/seermankhajiit002
+	name = "Soviatcat Kit"
+	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
+	ckeywhitelist = list("seermankhajiit00")
+
+/obj/item/storage/box/large/custom_kit/seermankhajiit002/PopulateContents()
+	new /obj/item/storage/belt/shoulderholster/ranger45(src)
+	new /obj/item/clothing/under/costume/soviet(src)
+	new /obj/item/binoculars(src)
 
 /datum/gear/donator/kits/sloaff
 	name = "Leo's Kit"

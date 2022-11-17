@@ -1308,7 +1308,7 @@
  * Common
  * * * * * * * * * * */
 
-/obj/item/gun/ballistic/automatic/combat/worn
+/obj/item/gun/ballistic/automatic/combat/worn/brim
 	name = "Worn Combat Carbine"
 	desc = "A well loved .45 semi-automatic combat carbine, with so many parts replaced and fixed up that it wouldn't give the artisan who \
 		maintained this thing enough credit to say it's a pre-war design. Covered in forge marks where repairs were needed. While everything \
@@ -1329,6 +1329,32 @@
 	draw_time = GUN_DRAW_LONG
 	fire_delay = GUN_FIRE_DELAY_NORMAL
 	damage_multiplier = GUN_EXTRA_DAMAGE_0
+	init_recoil = CARBINE_RECOIL(1)
+	added_spread = GUN_SPREAD_POOR
+
+/* * * * * * * * * * *
+ * Worn Combat Carbine
+ * Slightly softer .45 carbine
+ * Less damage
+ * less accurate
+ * * * * * * * * * * */
+
+/obj/item/gun/ballistic/automatic/combat/worn
+	name = "Combat Carbine"
+	desc = "A .45 semi-automatic combat carbine, produced pre-war for National Guard forces. This one seems aged..."
+	icon_state = "combat_rifle"
+	item_state = "combatrifle"
+	icon_prefix = "combatrifle"
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_BELT
+	mag_type = /obj/item/ammo_box/magazine/tommygunm45
+	init_mag_type = /obj/item/ammo_box/magazine/tommygunm45/stick
+
+	slowdown = GUN_SLOWDOWN_CARBINE
+	force = GUN_MELEE_FORCE_RIFLE_LIGHT
+	weapon_weight = GUN_ONE_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	damage_multiplier = GUN_LESS_DAMAGE_T2
 	init_recoil = CARBINE_RECOIL(1)
 	added_spread = GUN_SPREAD_POOR
 

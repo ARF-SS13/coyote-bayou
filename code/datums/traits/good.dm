@@ -799,6 +799,7 @@ GLOBAL_LIST_INIT(weaponcrafting_gun_recipes, list(
 	gain_text = span_notice("They are already dead.")
 	lose_text = span_danger("Your fists no longer feel so powerful.")
 	locked =  FALSE
+
 /datum/quirk/quietstep
 	name = "Quiet Step"
 	desc = "Your steps just don't make any noise at all."

@@ -40079,11 +40079,11 @@
 	},
 /area/f13/building/mall)
 "iKc" = (
-/mob/living/simple_animal/hostile/bloatfly,
+/mob/living/simple_animal/hostile/hellpig,
 /turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2right"
+	icon_state = "horizontalinnermain0"
 	},
-/area/f13/wasteland)
+/area/f13/wasteland/city)
 "iKd" = (
 /obj/effect/turf_decal/weather/dirt{
 	dir = 10
@@ -41399,9 +41399,10 @@
 	},
 /area/f13/building/abandoned)
 "jiu" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/hellpig,
-/turf/open/indestructible/ground/outside/dirt,
+/mob/living/simple_animal/hostile/bloatfly,
+/turf/open/indestructible/ground/outside/road{
+	icon_state = "horizontalinnermain0"
+	},
 /area/f13/wasteland)
 "jiQ" = (
 /obj/structure/flora/grass/jungle,
@@ -82931,7 +82932,7 @@ cte
 clS
 trw
 mHp
-nvn
+jiu
 wDX
 hEG
 anR
@@ -87301,7 +87302,7 @@ qmG
 sXv
 nvn
 aer
-iKc
+aer
 aeU
 kBL
 hkV
@@ -89343,7 +89344,7 @@ ajF
 tWD
 trF
 aOk
-jiu
+cFK
 aOk
 fyR
 acO
@@ -89365,7 +89366,7 @@ oFO
 oFO
 oFO
 oFO
-oFO
+iKc
 oFO
 oFO
 oFO
