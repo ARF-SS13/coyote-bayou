@@ -619,12 +619,13 @@ GLOBAL_LIST_INIT(loot_t4_range, list(
 ))
 
 GLOBAL_LIST_INIT(loot_t5_range, list(
-	/obj/item/gun/energy/laser/plasma,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/highmid,
+	/obj/effect/spawner/lootdrop/f13/weapon/gun/ballistic/mid,
 	/obj/item/gun/ballistic/automatic/smg/tommygun,
 	/obj/item/gun/ballistic/automatic/shotgun/riot,
 	/obj/item/gun/energy/laser/scatter,
 	/obj/item/gun/ballistic/revolver/hunting,
-	/obj/item/gun/ballistic/automatic/bozar
+	/obj/item/gun/ballistic/revolver/sequoia/bayonet,
 ))
 
 GLOBAL_LIST_INIT(loot_unique_range, list(
