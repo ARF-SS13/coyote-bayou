@@ -108,7 +108,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return
 
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_STARTING])
-		playsound_local(src, get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
 
 // Disabling this unfortunately for now as I think this is causing too much perf hit on things.
 /*	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_TYPING])
@@ -127,7 +127,7 @@ GLOBAL_LIST_INIT(typing_indicator_sounds, list(
 		return ..()
 	
 	if(get_typing_indicator_pref() == GLOB.play_methods[PLAY_FINISHED])
-		playsound_local(src, get_typing_indicator_sound(), 15, FALSE)
+		playsound(get_turf(src), get_typing_indicator_sound(), 15, FALSE)
 
 	return ..()
 
