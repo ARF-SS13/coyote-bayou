@@ -115,7 +115,7 @@
 	log_combat(A, D, "disarmed (Sleeping Carp)")
 	return ..()
 
-/*/datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
+/datum/martial_art/the_sleeping_carp/on_projectile_hit(mob/living/carbon/human/A, obj/item/projectile/P, def_zone)
 	. = ..()
 	if(A.incapacitated(FALSE, TRUE)) //NO STUN
 		return BULLET_ACT_HIT
@@ -130,9 +130,9 @@
 		playsound(get_turf(A), pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, TRUE)
 		P.firer = A
 		P.setAngle(rand(0, 360))//SHING
-		A.adjustStaminaLossBuffered (20) //Citadel change to stop infinite bullet sponging as you run away, but it is buffered!
+		A.adjustStaminaLossBuffered (3) //Citadel change to stop infinite bullet sponging as you run away, but it is buffered!
 		return BULLET_ACT_FORCE_PIERCE
-	return BULLET_ACT_HIT*/
+	return BULLET_ACT_HIT
 
 /datum/martial_art/the_sleeping_carp/teach(mob/living/carbon/human/H, make_temporary = FALSE)
 	. = ..()
@@ -142,8 +142,13 @@
 	ADD_TRAIT(H, TRAIT_PIERCEIMMUNE, SLEEPING_CARP_TRAIT)
 	ADD_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	ADD_TRAIT(H, TRAIT_TASED_RESISTANCE, SLEEPING_CARP_TRAIT)
-	H.physiology.stamina_mod *= 0.7 //You take less stamina damage overall, but you do not reduce the damage from stun batons
+	H.physiology.brute_mod *= 0.4 //brute is really not gonna cut it
+	H.physiology.burn_mod *= 0.7 //burn is distinctly more useful against them than brute but they're still resistant
+	H.physiology.stamina_mod *= 0.5 //You take less stamina damage overall, but you do not reduce the damage from stun batons
 	H.physiology.stun_mod *= 0.3 //for those rare stuns
+	H.physiology.pressure_mod *= 0.3 //go hang out with carp
+	H.physiology.cold_mod *= 0.3 //cold mods are different to burn mods, they do stack however
+	H.physiology.heat_mod *= 2 //this is mostly so sleeping carp has a viable weakness. Cooking them alive. Setting them on fire and heating them will be their biggest weakness. The reason for this is....filet jokes.
 
 	H.faction |= "carp" //:D
 
@@ -153,8 +158,13 @@
 	REMOVE_TRAIT(H, TRAIT_PIERCEIMMUNE, SLEEPING_CARP_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_NODISMEMBER, SLEEPING_CARP_TRAIT)
 	REMOVE_TRAIT(H, TRAIT_TASED_RESISTANCE, SLEEPING_CARP_TRAIT)
+	H.physiology.brute_mod = initial(H.physiology.brute_mod)
+	H.physiology.burn_mod = initial(H.physiology.burn_mod)
 	H.physiology.stamina_mod = initial(H.physiology.stamina_mod)
 	H.physiology.stun_mod = initial(H.physiology.stun_mod)
+	H.physiology.pressure_mod = initial(H.physiology.pressure_mod) //no more carpies
+	H.physiology.cold_mod = initial(H.physiology.cold_mod)
+	H.physiology.heat_mod = initial(H.physiology.heat_mod)
 
 	H.faction -= "carp" //:(
 
