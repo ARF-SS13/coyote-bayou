@@ -442,20 +442,21 @@
 
 /obj/item/book/granter/martial/carp
 	martial = /datum/martial_art/the_sleeping_carp
-	name = "Chinese Army: Special Ops Training Manual"
+	name = "mysterious scroll"
 	martialname = "sleeping carp"
-	desc = "A book filled with strange markings. It seems to be drawings of some sort of martial art."
-	greet = "<span class='sciradio'>You have learned the ancient martial art of the Sleeping Carp! Your hand-to-hand combat has become much more effective. \
+	desc = "A scroll filled with strange markings. It seems to be drawings of some sort of martial art."
+	greet = "<span class='sciradio'>You have learned the ancient martial art of the Sleeping Carp! Your hand-to-hand combat has become much more effective, and you are now able to deflect any projectiles \
+	directed toward you while in Throw Mode. Your body is also honed to protect you from damage and punctures, and even briefly survive space. \
 	However, you are also unable to use any ranged weaponry, and some medical supplies will prove useless to you. You can learn more about your newfound art by using the Recall Teachings verb in the Sleeping Carp tab.</span>"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "book"
-	remarks = list("Wait, a high protein diet is really all it takes to become stronger...?", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "I don't think this would combine with other martial arts...", "Become one with the carp...", "Glub...")
+	icon = 'icons/obj/wizard.dmi'
+	icon_state = "scroll2"
+	remarks = list("Wait, a high protein diet is really all it takes to become bulletproof...?", "Overwhelming force, immovable object...", "Focus... And you'll be able to incapacitate any foe in seconds...", "I must pierce armor for maximum damage...", "I don't think this would combine with other martial arts...", "Become one with the carp...", "Glub...")
 
 /obj/item/book/granter/martial/carp/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		desc = "The specific page in the book that had the techniques. Why are they faded?"
-		name = "Blank Page"
+		desc = "It's completely blank."
+		name = "empty scroll"
 		icon_state = "blankscroll"
 
 /obj/item/book/granter/martial/bass
