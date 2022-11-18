@@ -5477,6 +5477,9 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
+"bWq" = (
+/turf/open/water,
+/area/f13/radiation)
 "bWr" = (
 /obj/structure/barricade/wooden/strong,
 /turf/closed/mineral/random/low_chance/underground,
@@ -6563,9 +6566,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"cqO" = (
-/turf/open/water,
-/area/f13/radiation)
 "crj" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -11335,7 +11335,10 @@
 	melee_damage_lower = 15;
 	name = "big bob";
 	desc = "Bob does what bob does best.";
-	armour_penetration = 0.05
+	armour_penetration = 0.05;
+	health = 1250;
+	maxHealth = 1250;
+	melee_damage_upper = 60
 	},
 /turf/open/water,
 /area/f13/radiation)
@@ -86000,7 +86003,7 @@ jRd
 dOG
 ltl
 wNg
-cqO
+bWq
 bjZ
 pua
 aae
@@ -86515,7 +86518,7 @@ pua
 biU
 eCq
 dWL
-cqO
+bWq
 pua
 aae
 aak
