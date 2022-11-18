@@ -9444,12 +9444,6 @@
 	icon_state = "darkrusty"
 	},
 /area/f13/building/abandoned)
-"fsV" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontaltopborderbottom0"
-	},
-/area/f13/caves)
 "ftk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -22182,12 +22176,6 @@
 /obj/structure/reagent_dispensers/barrel/four,
 /turf/open/indestructible/ground/outside/savannah,
 /area/f13/wasteland)
-"mUD" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "mVn" = (
 /obj/structure/flora/tallgrass7,
 /obj/structure/flora/rock/pile/largejungle,
@@ -24054,15 +24042,6 @@
 "oes" = (
 /turf/open/floor/carpet,
 /area/f13/building)
-"oey" = (
-/obj/effect/decal/marking{
-	icon_state = "doublehorizontal"
-	},
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "ofr" = (
 /obj/structure/nest/securitron,
 /turf/open/floor/f13{
@@ -28672,12 +28651,6 @@
 	dir = 10
 	},
 /area/f13/wasteland)
-"qPt" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalrightborderright0"
-	},
-/area/f13/caves)
 "qPG" = (
 /obj/structure/spacevine,
 /turf/open/indestructible/ground/outside/sidewalk{
@@ -30041,12 +30014,6 @@
 	icon_state = "asteroidfloor"
 	},
 /area/f13/building/abandoned)
-"rFY" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "rGl" = (
 /turf/open/floor/plating/f13/outside/road{
 	icon_state = "horizontaloutermain2right"
@@ -32776,12 +32743,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/f13/wood,
 /area/f13/building/abandoned)
-"tku" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/sidewalk{
-	icon_state = "verticalleftborderleft0"
-	},
-/area/f13/caves)
 "tkw" = (
 /obj/structure/reagent_dispensers/barrel/explosive,
 /obj/effect/decal/waste{
@@ -41461,10 +41422,10 @@ gMW
 fhy
 jwE
 sNX
-mUD
-mUD
-oey
-mUD
+aFQ
+aFQ
+gub
+aFQ
 aFQ
 iff
 cxL
@@ -41717,12 +41678,12 @@ wWK
 qRO
 fhy
 jwE
-fsV
+sNX
 vWU
 vWU
 gOI
 vWU
-rFY
+aFQ
 iff
 cxL
 fhy
@@ -62064,7 +62025,7 @@ rYb
 rYb
 ucR
 kad
-tku
+kad
 kad
 kgF
 kgF
@@ -63349,7 +63310,7 @@ rYb
 rYb
 ucR
 wpn
-qPt
+wpn
 wpn
 pnb
 pnb
