@@ -31,6 +31,13 @@
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 
+/obj/item/clothing/gloves/ring/plasma/lucine
+	name = "plasma ring"
+	desc = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside. An inscription reads: my undying love and affection, For my Sunflower."
+	icon_state = "ringplasma"
+	item_state = "pring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/plasma
+
 /datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
 	slot = SLOT_IN_BACKPACK
@@ -485,6 +492,7 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
 
 // M
 
@@ -657,7 +665,7 @@
 	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
 
 /datum/gear/donator/kits/seermankhajiit002
-	name = "Soviatcat Kit"
+	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
 	ckeywhitelist = list("seermankhajiit00")
 
