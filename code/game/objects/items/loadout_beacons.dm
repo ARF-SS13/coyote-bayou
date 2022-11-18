@@ -20,7 +20,6 @@
 #define LOADOUT_ENERGY "Energy Weapons"
 
 #define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
-#define LOADOUT_ROOT_ENTRIES list(LOADOUT_MELEE, LOADOUT_PISTOL_SEMI, LOADOUT_PISTOL_REVOLVER, LOADOUT_LONGGUN, LOADOUT_HOBO, LOADOUT_ENERGY)
 
 GLOBAL_LIST_EMPTY(loadout_datums)
 GLOBAL_LIST_EMPTY(loadout_boxes)
@@ -67,7 +66,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	desc = "Some of the fanciest guns known to the wastes!"
 	allowed_flags = LOADOUT_WASTER | LOADOUT_PREMIUM
 	multiple_choice = list(
-		"Primary" = LOADOUT_ROOT_ENTRIES - LOADOUT_MELEE,
+		"Primary" = LOADOUT_ROOT_ENTRIES,
 		"Secondary" = LOADOUT_MELEE
 	)
 
@@ -76,7 +75,7 @@ GLOBAL_LIST_EMPTY(loadout_boxes)
 	desc = "Primitive equipment for a primitive person!"
 	allowed_flags = LOADOUT_TRIBAL
 	multiple_choice = list(
-		"Primary" = LOADOUT_ROOT_ENTRIES - LOADOUT_MELEE,
+		"Primary" = LOADOUT_ROOT_ENTRIES,
 		"Secondary" = LOADOUT_MELEE
 	)
 
