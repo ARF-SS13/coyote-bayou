@@ -91,57 +91,19 @@
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_MUZZLE
 
-/obj/item/card/id/selfassign/darknova
+/obj/item/card/id/dogtag/darknova
+	name = "holo dogtag"
 	icon_state = "holodogtag"
 	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Nikolatz, J. S  with a rank of Knight. The sex is listed as male, the blood type is listed as O positive, A serial number is written of 242-355-179-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	assignment = "ID tags"
+	uses_overlays = FALSE
 
-/obj/item/card/id/selfassign/darknova/attack_self(mob/user)
-	var/input_name = null
-	var/target_occupation = null
-	if(isliving(user))
-		var/mob/living/living_user = user
-		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
-			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
-			input_name = reject_bad_name(input_name)
-			if(!input_name)
-				input_name = living_user.real_name
-			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
-			if(!target_occupation)
-				target_occupation = "Wastelander"
-				return
-			registered_name = input_name
-			assignment = target_occupation
-			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
-			return
-		else
-	..()
-
-/obj/item/card/id/selfassign/blue
+/obj/item/card/id/dogtag/risingstarslash
+	name = "holo dogtag"
 	icon_state = "holodogtag"
 	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 234-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
-
-/obj/item/card/id/selfassign/blue/attack_self(mob/user)
-	var/input_name = null
-	var/target_occupation = null
-	if(isliving(user))
-		var/mob/living/living_user = user
-		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
-			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
-			input_name = reject_bad_name(input_name)
-			if(!input_name)
-				input_name = living_user.real_name
-			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
-			if(!target_occupation)
-				target_occupation = "Wastelander"
-				return
-			registered_name = input_name
-			assignment = target_occupation
-			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
-			return
-		else
-	..()
+	assignment = "ID tags"
+	uses_overlays = FALSE
 
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
@@ -321,7 +283,7 @@
 	ckeywhitelist = list("darknova92")
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
-	new /obj/item/card/id/selfassign/darknova(src)
+	new /obj/item/card/id/dogtag/darknova(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
@@ -656,7 +618,7 @@
 /obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
 	new /obj/item/lighter/gold (src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/card/id/selfassign/blue(src)
+	new /obj/item/card/id/dogtag/risingstarslash(src)
 
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
