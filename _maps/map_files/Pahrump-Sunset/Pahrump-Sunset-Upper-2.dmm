@@ -21,6 +21,13 @@
 "bo" = (
 /turf/open/indestructible,
 /area/f13/tcoms)
+"bK" = (
+/obj/structure/railing/corner{
+	dir = 4;
+	color = "#A47449"
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "ce" = (
 /turf/open/floor/plasteel/f13/vault_floor/dark{
 	icon_state = "darkdirty"
@@ -40,6 +47,13 @@
 /obj/machinery/smartfridge/bottlerack/seedbin/primitive,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/wasteland)
+"cP" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "dH" = (
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp{
@@ -178,6 +192,13 @@
 	icon_state = "wide-broken6"
 	},
 /area/f13/wasteland)
+"kW" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 8
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "kY" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/gloves/color/red/insulated,
@@ -280,6 +301,14 @@
 	sunlight_state = 1
 	},
 /area/f13/wasteland)
+"sV" = (
+/obj/structure/railing/corner{
+	dir = 1;
+	color = "#A47449"
+	},
+/obj/structure/destructible/tribal_torch/lit,
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "tA" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/turf_decal/stripes/line{
@@ -382,6 +411,13 @@
 /obj/structure/wreck/trash/machinepiletwo,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"yo" = (
+/obj/structure/railing/corner{
+	dir = 4;
+	color = "#A47449"
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "yC" = (
 /obj/structure/railing{
 	color = "#A47449";
@@ -425,6 +461,13 @@
 /obj/structure/simple_door/house,
 /turf/open/indestructible/ground/outside/roof,
 /area/f13/building/hospital)
+"AQ" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 1
+	},
+/turf/open/indestructible/ground/outside/roof,
+/area/f13/wasteland)
 "AZ" = (
 /obj/structure/railing{
 	dir = 1
@@ -536,6 +579,13 @@
 	icon_state = "darkdirty"
 	},
 /area/f13/wasteland)
+"JW" = (
+/obj/structure/railing/corner{
+	dir = 8;
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "KT" = (
 /obj/machinery/light{
 	dir = 1
@@ -559,6 +609,12 @@
 /obj/structure/lattice/catwalk,
 /turf/open/transparent/openspace,
 /area/f13/building/hospital)
+"LV" = (
+/obj/structure/railing/corner{
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "MZ" = (
 /turf/open/floor/wood_wide{
 	icon_state = "wide-broken1"
@@ -572,6 +628,13 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"NC" = (
+/obj/structure/railing{
+	color = "#A47449";
+	dir = 4
+	},
+/turf/open/floor/f13/wood,
+/area/f13/building)
 "NT" = (
 /obj/structure/railing{
 	layer = 4.1
@@ -582,6 +645,13 @@
 /obj/structure/chair/f13chair2,
 /turf/open/floor/plasteel/f13/vault_floor/white,
 /area/f13/building/hospital)
+"OI" = (
+/obj/structure/railing/corner{
+	dir = 1;
+	color = "#A47449"
+	},
+/turf/open/transparent/openspace,
+/area/f13/wasteland)
 "OQ" = (
 /obj/structure/table/reinforced,
 /obj/effect/spawner/lootdrop/f13/blueprintMid,
@@ -12477,18 +12547,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -12734,18 +12804,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -12991,18 +13061,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -13248,18 +13318,18 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -14029,8 +14099,8 @@ SK
 SK
 SK
 SK
-SK
-SK
+hm
+hm
 hm
 hm
 hm
@@ -14286,8 +14356,8 @@ SK
 SK
 SK
 SK
-SK
-SK
+hm
+hm
 hm
 hm
 hm
@@ -14543,24 +14613,24 @@ SK
 SK
 SK
 SK
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
 hm
 hm
 hm
@@ -14800,24 +14870,24 @@ SK
 SK
 SK
 SK
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
 hm
 hm
 hm
@@ -15071,13 +15141,13 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -15328,13 +15398,13 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -15571,6 +15641,7 @@ SK
 SK
 SK
 SK
+SK
 hm
 hm
 hm
@@ -15582,16 +15653,15 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -15828,6 +15898,7 @@ SK
 SK
 SK
 SK
+SK
 hm
 hm
 hm
@@ -15838,17 +15909,16 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -16085,6 +16155,7 @@ SK
 SK
 SK
 SK
+SK
 hm
 hm
 hm
@@ -16095,17 +16166,16 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -16342,6 +16412,7 @@ SK
 SK
 SK
 SK
+SK
 hm
 hm
 hm
@@ -16352,17 +16423,16 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -16610,16 +16680,16 @@ hm
 hm
 hm
 hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -16851,32 +16921,32 @@ SK
 SK
 SK
 SK
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
 SK
 SK
 SK
 SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
+SK
+SK
+SK
 hm
 hm
 hm
@@ -17103,6 +17173,30 @@ hm
 hm
 hm
 hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
 SK
@@ -17110,30 +17204,6 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
 hm
 hm
 hm
@@ -17360,6 +17430,30 @@ hm
 hm
 hm
 hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
 SK
@@ -17367,30 +17461,6 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
 hm
 hm
 hm
@@ -17617,6 +17687,30 @@ hm
 hm
 hm
 hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
+hm
 SK
 SK
 SK
@@ -17624,30 +17718,6 @@ SK
 SK
 SK
 SK
-SK
-SK
-SK
-SK
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
-hm
 hm
 hm
 hm
@@ -17874,11 +17944,6 @@ hm
 hm
 hm
 hm
-SK
-SK
-SK
-SK
-SK
 hm
 hm
 hm
@@ -17895,16 +17960,21 @@ hm
 hm
 hm
 hm
+hm
+hm
+hm
+hm
+LV
 yC
 yC
 yC
 yC
-hm
-hm
-hm
-hm
-hm
-hm
+yo
+SK
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -18153,14 +18223,14 @@ hm
 hm
 fR
 uq
+NC
+bK
 uq
-uq
-uq
-rK
-hm
-hm
-hm
-hm
+AQ
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -18411,13 +18481,13 @@ hm
 fR
 uq
 WH
+cP
 uq
-uq
-rK
-hm
-hm
-hm
-hm
+AQ
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -18667,14 +18737,14 @@ hm
 hm
 fR
 uq
+kW
+sV
 uq
-uq
-uq
-rK
-hm
-hm
-hm
-hm
+AQ
+SK
+SK
+SK
+SK
 hm
 hm
 hm
@@ -19179,12 +19249,12 @@ hm
 hm
 hm
 hm
-hm
+JW
 zD
 zD
 zD
 zD
-hm
+OI
 hm
 hm
 hm
