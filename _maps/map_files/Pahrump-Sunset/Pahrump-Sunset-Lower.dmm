@@ -1428,7 +1428,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 5
 	},
-/mob/living/simple_animal/hostile/ghoul/glowing/strong,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -5477,12 +5476,6 @@
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
 "bWq" = (
-/mob/living/simple_animal/hostile/ghoul/legendary{
-	armour_penetration = 0.5;
-	health = 300;
-	maxHealth = 300;
-	melee_damage_lower = 30
-	},
 /turf/open/water,
 /area/f13/radiation)
 "bWr" = (
@@ -6571,10 +6564,6 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
-"cqO" = (
-/mob/living/simple_animal/hostile/ghoul/reaver,
-/turf/open/water,
-/area/f13/radiation)
 "crj" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -7395,7 +7384,9 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -8252,8 +8243,10 @@
 "dOG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factorybasementboss";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -9400,8 +9393,10 @@
 /area/f13/building/museum)
 "eJI" = (
 /obj/machinery/door/poddoor/shutters/old{
-	id = "factorybasement";
-	name = "shutters"
+	id = "factorybasementboss";
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -11334,6 +11329,12 @@
 "gxz" = (
 /obj/item/stack/sheet/mineral/uranium,
 /obj/effect/decal/cleanable/greenglow,
+/mob/living/simple_animal/hostile/abomination{
+	melee_damage_lower = 15;
+	name = "big bob";
+	desc = "Uh...is he supposed to have that many mouths?";
+	armour_penetration = 0.05
+	},
 /turf/open/water,
 /area/f13/radiation)
 "gxF" = (
@@ -14790,7 +14791,9 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -16386,7 +16389,9 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -27318,6 +27323,10 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 1
 	},
+/obj/machinery/button/door{
+	pixel_y = 20;
+	id = "factorybasementboss"
+	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -27922,7 +27931,9 @@
 	},
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -28849,7 +28860,9 @@
 /obj/machinery/door/airlock/hatch,
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factbasementcontrol";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -32403,7 +32416,6 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/ghoul/reaver,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -32687,7 +32699,9 @@
 "xZu" = (
 /obj/machinery/door/poddoor/shutters/old{
 	id = "factorybasement";
-	name = "shutters"
+	name = "shutters";
+	max_integrity = 1000000;
+	obj_integrity = 1000000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -86495,7 +86509,7 @@ pua
 biU
 eCq
 dWL
-cqO
+bWq
 pua
 aae
 aak
