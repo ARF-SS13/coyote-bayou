@@ -5477,9 +5477,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/f13/wood,
 /area/f13/tunnel)
-"bWq" = (
-/turf/open/water,
-/area/f13/radiation)
 "bWr" = (
 /obj/structure/barricade/wooden/strong,
 /turf/closed/mineral/random/low_chance/underground,
@@ -6566,6 +6563,9 @@
 	},
 /turf/open/floor/plasteel/f13/vault_floor/misc/vaultrust,
 /area/f13/caves)
+"cqO" = (
+/turf/open/water,
+/area/f13/radiation)
 "crj" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -29272,7 +29272,7 @@
 /obj/effect/turf_decal/weather/dirt{
 	dir = 9
 	},
-/obj/item/locked_box/weapon/melee/tier3_5,
+/obj/item/locked_box/armor/tier5,
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
 	},
@@ -86000,7 +86000,7 @@ jRd
 dOG
 ltl
 wNg
-bWq
+cqO
 bjZ
 pua
 aae
@@ -86515,7 +86515,7 @@ pua
 biU
 eCq
 dWL
-bWq
+cqO
 pua
 aae
 aak
