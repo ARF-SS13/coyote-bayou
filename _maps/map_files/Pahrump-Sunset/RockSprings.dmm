@@ -2631,15 +2631,6 @@
 	},
 /turf/open/indestructible/ground/outside/gravel,
 /area/f13/wasteland/town)
-"bsF" = (
-/obj/effect/decal/marking{
-	icon_state = "doublevertical"
-	},
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "bsH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/processor/chopping_block,
@@ -15619,12 +15610,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/indestructible/ground/outside/dirt,
 /area/f13/building)
-"hyy" = (
-/obj/effect/landmark/latejoin,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "hyB" = (
 /obj/structure/window/fulltile/house{
 	dir = 2
@@ -18787,12 +18772,6 @@
 	},
 /turf/closed/wall/f13/wood/interior,
 /area/f13/building)
-"iRS" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain2"
-	},
-/area/f13/caves)
 "iRV" = (
 /obj/structure/flora/grass/wasteland{
 	icon_state = "tall_grass_4"
@@ -44611,12 +44590,6 @@
 	},
 /turf/open/indestructible/ground/outside/water,
 /area/f13/wasteland)
-"vEa" = (
-/obj/effect/landmark/start/f13/wastelander,
-/turf/open/indestructible/ground/outside/road{
-	icon_state = "horizontalinnermain0"
-	},
-/area/f13/caves)
 "vEh" = (
 /obj/structure/junk/drawer{
 	pixel_y = 10
@@ -75770,7 +75743,7 @@ dzx
 dzx
 geZ
 geZ
-hyy
+geZ
 geZ
 gpt
 qnn
@@ -76028,7 +76001,7 @@ dzx
 geZ
 geZ
 geZ
-vEa
+geZ
 gpt
 qnn
 "}
@@ -76285,7 +76258,7 @@ vyO
 fMq
 fMq
 fMq
-bsF
+geZ
 gpt
 qnn
 "}
@@ -76542,7 +76515,7 @@ dzx
 geZ
 geZ
 geZ
-iRS
+eiC
 gpt
 qnn
 "}
@@ -76799,7 +76772,7 @@ ymh
 geZ
 geZ
 geZ
-vEa
+geZ
 gpt
 qnn
 "}
@@ -77055,7 +77028,7 @@ dzx
 dzx
 geZ
 geZ
-hyy
+geZ
 geZ
 gpt
 qnn
