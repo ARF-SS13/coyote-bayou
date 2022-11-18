@@ -5199,7 +5199,9 @@
 /obj/machinery/button/door{
 	id = "factbasementcontrol";
 	name = "shutters button";
-	pixel_x = 28
+	pixel_x = 28;
+	max_integrity = 1000;
+	obj_integrity = 1000
 	},
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -27325,7 +27327,9 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 20;
-	id = "factorybasementboss"
+	id = "factorybasementboss";
+	max_integrity = 10000;
+	obj_integrity = 10000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
@@ -28483,7 +28487,9 @@
 	},
 /obj/machinery/button/door{
 	pixel_y = 20;
-	id = "factorybasement"
+	id = "factorybasement";
+	max_integrity = 1000;
+	obj_integrity = 1000
 	},
 /turf/open/floor/plasteel/f13{
 	icon_state = "darkrustysolid"
