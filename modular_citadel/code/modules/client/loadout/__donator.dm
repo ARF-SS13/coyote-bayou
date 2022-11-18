@@ -31,6 +31,13 @@
 	max_fuel = 40
 	custom_materials = list(/datum/material/glass=60)
 
+/obj/item/clothing/gloves/ring/plasma/lucine
+	name = "plasma ring"
+	desc = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside. An inscription reads: my undying love and affection, For my Sunflower."
+	icon_state = "ringplasma"
+	item_state = "pring"
+	mood_event_on_equip = /datum/mood_event/equipped_ring/plasma
+
 /datum/gear/donator/mrsanderp
 	name = "Happy Sharky Company Cuisine Book"
 	slot = SLOT_IN_BACKPACK
@@ -38,6 +45,31 @@
 	category = LOADOUT_CATEGORY_BACKPACK
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
+
+/obj/item/gun/energy/laser/rcw/nayriin
+	name = "Model laser RCW"
+	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	automatic = 1
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	damage_multiplier = GUN_LESS_DAMAGE_T6
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	init_firemodes = list(
+		FULL_AUTO_400,
+		WEAPON_NORMAL
+	)
 
 /datum/gear/donator/risingstarslash
 	name = "Slime Cookie Recipe Book"
@@ -59,57 +91,19 @@
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_MUZZLE
 
-/obj/item/card/id/selfassign/darknova
+/obj/item/card/id/dogtag/darknova
+	name = "holo dogtag"
 	icon_state = "holodogtag"
 	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Nikolatz, J. S  with a rank of Knight. The sex is listed as male, the blood type is listed as O positive, A serial number is written of 242-355-179-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
+	assignment = "ID tags"
+	uses_overlays = FALSE
 
-/obj/item/card/id/selfassign/darknova/attack_self(mob/user)
-	var/input_name = null
-	var/target_occupation = null
-	if(isliving(user))
-		var/mob/living/living_user = user
-		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
-			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
-			input_name = reject_bad_name(input_name)
-			if(!input_name)
-				input_name = living_user.real_name
-			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
-			if(!target_occupation)
-				target_occupation = "Wastelander"
-				return
-			registered_name = input_name
-			assignment = target_occupation
-			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
-			return
-		else
-	..()
-
-/obj/item/card/id/selfassign/blue
+/obj/item/card/id/dogtag/risingstarslash
+	name = "holo dogtag"
 	icon_state = "holodogtag"
 	desc = "An advanced holographic dogtag that shows the duty of a BoS member. This one in particular is assigned to a Amethyst with a rank of Head Paladin. The sex is listed as female, the blood type is listed as A positive, A serial number is written of 234-331-173-22. The last line then reads: WCBOS-C CB-04 along with an insignia depicting wings, cogwheels and a sword."
-
-/obj/item/card/id/selfassign/blue/attack_self(mob/user)
-	var/input_name = null
-	var/target_occupation = null
-	if(isliving(user))
-		var/mob/living/living_user = user
-		if(alert(user, "Action", "Reprogrammable ID", "Show", "Forge") == "Forge")
-			input_name = stripped_input(user, "What name would you like to put on this card? Leave blank for your actual name.", "Reprogrammable ID", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
-			input_name = reject_bad_name(input_name)
-			if(!input_name)
-				input_name = living_user.real_name
-			target_occupation = stripped_input(user, "What occupation would you like to put on this card?", "Reprogrammable ID", assignment ? assignment : "Wastelander", 60)
-			if(!target_occupation)
-				target_occupation = "Wastelander"
-				return
-			registered_name = input_name
-			assignment = target_occupation
-			update_label()
-			to_chat(user, span_notice("You successfully forge the ID card."))
-			return
-		else
-	..()
+	assignment = "ID tags"
+	uses_overlays = FALSE
 
 /////////////////////
 ///Loadout Boxes///// See kits.dm, use this model for loadouts that have more than one item per character.
@@ -289,7 +283,7 @@
 	ckeywhitelist = list("darknova92")
 
 /obj/item/storage/box/large/custom_kit/darknova92/PopulateContents()
-	new /obj/item/card/id/selfassign/darknova(src)
+	new /obj/item/card/id/dogtag/darknova(src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
 	new /obj/item/ammo_box/magazine/m10mm/adv/simple(src)
@@ -485,6 +479,7 @@
 	new /obj/item/gun/energy/laser/pistol(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
 	new /obj/item/stock_parts/cell/ammo/ec(src)
+	new /obj/item/clothing/gloves/ring/plasma/lucine(src)
 
 // M
 
@@ -545,8 +540,7 @@
 
 /obj/item/storage/box/large/custom_kit/nirzak/PopulateContents()
 	new /obj/item/clothing/suit/armor/harpercoat(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
-	new /obj/item/gun/ballistic/automatic/pistol/m1911/custom(src)
+	new /obj/item/stealthboy(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
 	new /obj/item/storage/belt/military(src)
 	new /obj/item/clothing/head/helmet/armyhelmet/heavy(src)
@@ -623,7 +617,7 @@
 /obj/item/storage/box/large/custom_kit/risingstarslash3/PopulateContents()
 	new /obj/item/lighter/gold (src)
 	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
-	new /obj/item/card/id/selfassign/blue(src)
+	new /obj/item/card/id/dogtag/risingstarslash(src)
 
 /datum/gear/donator/kits/roachwitharoach
 	name = "Desert Kit"
@@ -657,7 +651,7 @@
 	new /obj/item/clothing/head/helmet/f13/knighthelmet(src)
 
 /datum/gear/donator/kits/seermankhajiit002
-	name = "Soviatcat Kit"
+	name = "Sovietcat Kit"
 	path = /obj/item/storage/box/large/custom_kit/seermankhajiit002
 	ckeywhitelist = list("seermankhajiit00")
 
@@ -817,6 +811,11 @@
 	new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/gun/energy/laser/rcw/nayriin(src)
+	new /obj/item/reagent_containers/glass/bottle/gaia(src)
+	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
+	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
+	new /obj/item/reagent_containers/pill/patch/turbo(src)
 
 /datum/gear/donator/kits/truedark3
 	name = "Junker's Kit"

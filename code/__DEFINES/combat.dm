@@ -614,6 +614,7 @@ GLOBAL_LIST_INIT(main_body_parts, list(
 #define GUN_LESS_DAMAGE_T3 0.75
 #define GUN_LESS_DAMAGE_T4 0.65
 #define GUN_LESS_DAMAGE_T5 0.50
+#define GUN_LESS_DAMAGE_T6 0.25
 
 /// Gun melee force base
 #define GUN_MELEE_FORCE_BASE 12
