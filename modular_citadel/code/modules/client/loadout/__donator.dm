@@ -46,6 +46,31 @@
 	ckeywhitelist = list("mr.sanderp")
 	cost = 0
 
+/obj/item/gun/energy/laser/rcw/nayriin
+	name = "Model laser RCW"
+	desc = "A rapid-fire laser rifle modeled after the familiar \"Thompson\" SMG. It features high-accuracy burst fire that will whittle down targets in a matter of seconds."
+	icon_state = "lasercw"
+	item_state = "rcw"
+	automatic = 1
+	slot_flags = ITEM_SLOT_BACK
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/rcw/hitscan)
+	cell_type = /obj/item/stock_parts/cell/ammo/ecp
+	equipsound = 'sound/f13weapons/equipsounds/RCWequip.ogg'
+
+	slowdown = GUN_SLOWDOWN_RIFLE_MEDIUM_SEMI
+	force = GUN_MELEE_FORCE_RIFLE_HEAVY
+	weapon_weight = GUN_TWO_HAND_ONLY
+	draw_time = GUN_DRAW_LONG
+	fire_delay = GUN_FIRE_DELAY_SLOW
+	damage_multiplier = GUN_LESS_DAMAGE_T6
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_FAST
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_FAST
+	burst_size = 1
+	init_firemodes = list(
+		FULL_AUTO_400,
+		WEAPON_NORMAL
+	)
+
 /datum/gear/donator/risingstarslash
 	name = "Slime Cookie Recipe Book"
 	slot = SLOT_IN_BACKPACK
@@ -825,6 +850,11 @@
 	new /obj/item/gun/ballistic/bow/xbow(src)
 	new /obj/item/storage/bag/tribe_quiver/archer(src)
 	new /obj/item/smelling_salts/wayfarer(src)
+	new /obj/item/gun/energy/laser/rcw/nayriin(src)
+	new /obj/item/reagent_containers/glass/bottle/gaia(src)
+	new /obj/item/reagent_containers/glass/bottle/ichor/red(src)
+	new /obj/item/reagent_containers/glass/bottle/ichor/blue(src)
+	new /obj/item/reagent_containers/pill/patch/turbo(src)
 
 /datum/gear/donator/kits/truedark3
 	name = "Junker's Kit"
