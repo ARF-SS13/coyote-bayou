@@ -91,6 +91,22 @@
 	equip_delay_other = 20
 	mutantrace_variation = STYLE_MUZZLE
 
+/obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony
+	name = "\improper Painted pistol"
+	desc = "A variant of the n99 with a custom paint job done on it. The paint used is of the highest quality!"
+	icon = 'icons/fallout/objects/guns/ballistic.dmi'
+	icon_state = "ponycrusader"
+	item_state = "ponycrusader"
+
+	slowdown = GUN_SLOWDOWN_PISTOL_MEDIUM
+	force = GUN_MELEE_FORCE_PISTOL_HEAVY
+	weapon_weight = GUN_ONE_HAND_AKIMBO
+	draw_time = GUN_DRAW_NORMAL
+	fire_delay = GUN_FIRE_DELAY_NORMAL
+	autofire_shot_delay = GUN_AUTOFIRE_DELAY_NORMAL
+	burst_shot_delay = GUN_BURSTFIRE_DELAY_NORMAL
+	init_recoil = HANDGUN_RECOIL(0.8)
+
 /obj/item/card/id/dogtag/darknova
 	name = "holo dogtag"
 	icon_state = "holodogtag"
@@ -738,7 +754,7 @@
 /obj/item/storage/box/large/custom_kit/thingpony/PopulateContents()
 	new /obj/item/clothing/suit/hooded/outcast(src)
 	new /obj/item/gun/ballistic/automatic/pistol/ninemil/maria(src)
-	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader(src)
+	new /obj/item/gun/ballistic/automatic/pistol/n99/crusader/thingpony(src)
 
 /datum/gear/donator/kits/tk420634
 	name = "Casey's 'Business' Bundle"
