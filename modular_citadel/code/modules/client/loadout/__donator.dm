@@ -262,6 +262,8 @@
 	new /obj/item/storage/belt/military/alt(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/melee/unarmed/brass/spiked(src)
+	new /obj/item/clothing/suit/armor/light/raider/painspike(src)
+	new /obj/item/gun/ballistic/automatic/pistol/sig/worn(src)
 
 // D
 
@@ -748,12 +750,14 @@
 	new /obj/item/clothing/suit/armor/light/leather(src)
 	new /obj/item/melee/onehanded/knife/trench(src)
 	new /obj/item/gun/ballistic/automatic/varmint/bushmaster_arm_gun(src)
-	new /obj/item/ammo_box/magazine/m556/rifle(src)
+	new /obj/item/ammo_box/a556/sport/improvised(src)
+	new /obj/item/ammo_box/a556/sport/improvised(src)
 	new /obj/item/ammo_box/magazine/m556/rifle(src)
 	new /obj/item/reagent_containers/food/snacks/grown/poppy/lily(src)
-	new /obj/item/gun_upgrade/trigger/dangerzone(src)
+	new /obj/item/binoculars(src)
 	new /obj/item/gun_upgrade/barrel/forged(src)
 	new /obj/item/tool_upgrade/refinement/stabilized_grip(src)
+	new /obj/item/gun/ballistic/revolver/thatgun(src)
 
 /datum/gear/donator/kits/tk420634_2
 	name = "Catgirl Kit"
