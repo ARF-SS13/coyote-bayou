@@ -49,14 +49,11 @@
 
 
 /datum/emote/living/chuckle/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
+			return 'sound/f13effects/sunsetsounds/femalechuckle.ogg'
 		else
-			sound = 'sound/f13effects/sunsetsounds/malechuckle.ogg'
-		return
-
+			return 'sound/f13effects/sunsetsounds/malechuckle.ogg'
 
 /datum/emote/living/collapse
 	key = "collapse"
@@ -83,13 +80,11 @@
 		return FALSE
 
 /datum/emote/living/cough/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_cough.ogg'
+			return 'sound/effects/female_cough.ogg'
 		else
-			sound = 'sound/effects/male_cough.ogg'
-		return
+			return 'sound/effects/male_cough.ogg'
 
 /datum/emote/living/dance
 	key = "dance"
@@ -226,13 +221,11 @@
 	stat_allowed = UNCONSCIOUS
 
 /datum/emote/living/gasp/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_gasp.ogg'
+			return 'sound/effects/female_gasp.ogg'
 		else
-			sound = 'sound/effects/male_gasp.ogg'
-		return
+			return 'sound/effects/male_gasp.ogg'
 
 /datum/emote/living/giggle
 	key = "giggle"
@@ -242,13 +235,11 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/giggle/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/femalegiggle1.ogg'
+			return 'sound/effects/femalegiggle1.ogg'
 		else
-			sound = 'sound/effects/malegiggle1.ogg'
-		return
+			return 'sound/effects/malegiggle1.ogg'
 
 /datum/emote/living/glare
 	key = "glare"
@@ -407,13 +398,11 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sigh/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/femalesigh1.ogg'
+			return 'sound/effects/femalesigh1.ogg'
 		else
-			sound = 'sound/effects/malesigh1.ogg'
-		return
+			return 'sound/effects/malesigh1.ogg'
 
 /datum/emote/living/sit
 	key = "sit"
@@ -441,14 +430,11 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/sneeze/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/female_sneeze.ogg'
+			return 'sound/effects/female_sneeze.ogg'
 		else
-			sound = 'sound/effects/male_sneeze.ogg'
-		return
-
+			return 'sound/effects/male_sneeze.ogg'
 
 /datum/emote/living/smug
 	key = "smug"
@@ -471,14 +457,11 @@
 	stat_allowed = UNCONSCIOUS
 
 /datum/emote/living/snore/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/femalesnore1.ogg'
+			return 'sound/effects/femalesnore1.ogg'
 		else
-			sound = 'sound/effects/malesnore1.ogg'
-		return
-
+			return 'sound/effects/malesnore1.ogg'
 
 /datum/emote/living/stare
 	key = "stare"
@@ -550,13 +533,11 @@
 
 
 /datum/emote/living/whimper/get_sound(mob/living/M)
-	. = ..()
 	if(ishuman(M))
 		if(M.gender == FEMALE)
-			sound = 'sound/effects/femalewhimper1.ogg'
+			return 'sound/effects/femalewhimper1.ogg'
 		else
-			sound = 'sound/effects/malewhimper1.ogg'
-		return
+			return 'sound/effects/malewhimper1.ogg'
 
 /datum/emote/living/wsmile
 	key = "wsmile"
