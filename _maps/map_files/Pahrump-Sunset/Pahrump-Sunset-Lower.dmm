@@ -16420,15 +16420,6 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/indestructible/ground/inside/subway,
 /area/f13/caves)
-"kHv" = (
-/obj/machinery/rnd/production/techfab/department/science,
-/obj/effect/decal/cleanable/blood/tracks{
-	icon_state = "floor4-old"
-	},
-/turf/open/floor/f13{
-	icon_state = "greendirtyfull"
-	},
-/area/f13/caves)
 "kIe" = (
 /turf/open/floor/plasteel/f13{
 	icon_state = "yellowdirtyfull"
@@ -20200,11 +20191,12 @@
 	},
 /area/f13/building/sewers)
 "nJn" = (
-/obj/machinery/computer/rdconsole/experiment{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/blood/tracks{
 	icon_state = "floor4-old"
+	},
+/obj/item/paper{
+	info = "There was a console here, now it's gone.";
+	name = "Old Reference"
 	},
 /turf/open/floor/f13{
 	icon_state = "greendirtyfull"
@@ -41708,7 +41700,7 @@ uuv
 abB
 ejQ
 uhZ
-kHv
+gQb
 bOn
 aaa
 aae
