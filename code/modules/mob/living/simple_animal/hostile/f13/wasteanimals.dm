@@ -106,6 +106,10 @@
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
 
+/mob/living/simple_animal/hostile/gecko/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/waddling)
+
 /mob/living/simple_animal/hostile/gecko/playable
 	health = 200
 	maxHealth = 200
