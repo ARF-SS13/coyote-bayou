@@ -41,6 +41,9 @@
 	deathmessage = "blows apart!"
 	taunt_chance = 30
 	blood_volume = 0
+	waddle_amount = 3
+	waddle_up_time = 2
+	waddle_side_time = 1
 
 	emote_taunt_sound = list(
 		'sound/f13npc/handy/taunt1.ogg',

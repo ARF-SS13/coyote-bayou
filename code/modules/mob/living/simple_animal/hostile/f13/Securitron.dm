@@ -3,7 +3,7 @@
 -Sentry Bot
 */
 
-//Securitron
+//Securitron  TV Head jackass
 /mob/living/simple_animal/hostile/securitron
 	name = "securitron"
 	desc = "A pre-War type of securitron.<br>Extremely dangerous machine."
