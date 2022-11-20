@@ -45,6 +45,9 @@
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
 	speed = 1
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	maxHealth = 128
 	health = 128
 	harm_intent_damage = 8
@@ -80,6 +83,9 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
 	turns_per_move = 5
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	guaranteed_butcher_results = list(/obj/item/stack/sheet/sinew = 1, /obj/item/reagent_containers/food/snacks/meat/slab/fireant_meat = 2, /obj/item/reagent_containers/food/snacks/rawantbrain = 1, /obj/effect/spawner/lootdrop/f13/deadantloot = 2)
 	butcher_results = list(/obj/item/stack/sheet/animalhide/chitin = 2)
 	butcher_difficulty = 1.5
@@ -141,7 +147,7 @@
 	emote_taunt = list("chitters")
 	emote_taunt_sound = 'sound/creatures/radroach_chitter.ogg'
 	taunt_chance = 30
-	speed = 1
+	speed = 5
 	maxHealth = 560
 	health = 560
 	ranged = 1
@@ -209,7 +215,9 @@
 	obj_damage = 20
 	melee_damage_lower = 15
 	melee_damage_upper = 35
-
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 1
 	move_to_delay = 3
 	// m2d 3 = standard, less is fast, more is slower.
 
@@ -431,6 +439,9 @@
 	obj_damage = 15
 	melee_damage_lower = 5
 	melee_damage_upper = 8
+	waddle_amount = 4
+	waddle_up_time = 3
+	waddle_side_time = 2
 
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	speak_chance = 0
@@ -473,6 +484,9 @@
 	icon_living = "radroach"
 	icon_dead = "radroach_dead"
 	icon_gib = "radroach_gib"
+	waddle_amount = 1
+	waddle_up_time = 1
+	waddle_side_time = 1
 
 	speed = 1
 	maxHealth = 20
