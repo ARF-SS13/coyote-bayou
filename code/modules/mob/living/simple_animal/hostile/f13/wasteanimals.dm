@@ -95,6 +95,10 @@
 	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
 
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 4
+
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
 		MOB_SPEED_LIST(1.5, 1.8, 2.0, 2.2, 2.6, 3.0, 3.3, 3.7),
@@ -105,10 +109,6 @@
 		MOB_MINIMUM_DISTANCE_LIST(0, 0, 4, 6),
 		MOB_MINIMUM_DISTANCE_CHANGE_PER_TURN_CHANCE(100),
 	)
-
-/mob/living/simple_animal/hostile/gecko/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/waddling)
 
 /mob/living/simple_animal/hostile/gecko/playable
 	health = 200
