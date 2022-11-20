@@ -33,6 +33,9 @@
 	minimum_distance = 0
 	aggro_vision_range = 7
 	vision_range = 8
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
 	speak_emote = list(
 		"squeaks",
 		"cackles",
@@ -94,6 +97,8 @@
 		)
 	aggrosound = list('sound/f13npc/gecko/gecko_alert.ogg')
 	death_sound = 'sound/f13npc/gecko/gecko_death.ogg'
+
+
 
 	variation_list = list(
 		MOB_COLOR_VARIATION(200, 200, 200, 255, 255, 255),
@@ -193,6 +198,9 @@
 	gold_core_spawnable = HOSTILE_SPAWN
 	a_intent = INTENT_HARM
 	footstep_type = FOOTSTEP_MOB_CLAW
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 1
 
 /mob/living/simple_animal/hostile/stalker/playable
 	health = 300
@@ -258,6 +266,9 @@
 	idlesound = list('sound/f13npc/nightstalker/idle1.ogg')
 	death_sound = 'sound/f13npc/nightstalker/death.ogg'
 	attack_sound = 'sound/f13npc/nightstalker/attack1.ogg'
+	waddle_amount = 4
+	waddle_up_time = 1
+	waddle_side_time = 2
 
 /mob/living/simple_animal/hostile/stalkeryoung/playable
 	health = 250
@@ -349,3 +360,7 @@
 	aggrosound = list('sound/f13npc/molerat/aggro1.ogg', 'sound/f13npc/molerat/aggro2.ogg',)
 	idlesound = list('sound/f13npc/molerat/idle.ogg')
 	death_sound = 'sound/f13npc/molerat/death.ogg'
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 2
+

@@ -191,3 +191,11 @@
 	/// Cooldown between times your mob can post that their armor's done something interesting by an attack
 	/// Includes bounces, dinks, impacts, etc
 	COOLDOWN_DECLARE(armor_message_antispam)
+
+	/// All 3 must be set, otherwise the mob wont be given a waddle component
+	/// How much should the mob wobble around?
+	var/waddle_amount
+	/// How long is an upward bob for wobbling?
+	var/waddle_up_time
+	/// How long is a sideways bob for wobbling?
+	var/waddle_side_time

@@ -41,6 +41,11 @@
 	update_movespeed(TRUE)
 	become_hearing_sensitive()
 
+/mob/ComponentInitialize()
+	. = ..()
+	if(!isnull(waddle_amount) && !isnull(waddle_up_time) && !isnull(waddle_side_time))
+		AddComponent(/datum/component/waddling, waddle_amount, waddle_up_time, waddle_side_time)
+
 /mob/GenerateTag()
 	tag = "mob_[next_mob_id++]"
 

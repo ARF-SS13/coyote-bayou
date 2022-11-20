@@ -37,6 +37,9 @@
 	health = 120
 	melee_damage_lower = 5
 	melee_damage_upper = 20
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	gold_core_spawnable = HOSTILE_SPAWN
 	blood_volume = 0
 	footstep_type = FOOTSTEP_MOB_CLAW
@@ -72,6 +75,9 @@
 	health = 40
 	melee_damage_lower = 5
 	melee_damage_upper = 10
+	waddle_amount = 3
+	waddle_up_time = 1
+	waddle_side_time = 1
 	gold_core_spawnable = HOSTILE_SPAWN
 	footstep_type = FOOTSTEP_MOB_CLAW
 
