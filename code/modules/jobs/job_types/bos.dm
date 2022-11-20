@@ -100,14 +100,14 @@ Elder
 	suit =	/obj/item/clothing/suit/armor/light/duster/bos/scribe/elder
 	glasses =	/obj/item/clothing/glasses/night
 	accessory =	/obj/item/clothing/accessory/bos/elder
-	suit_store =	/obj/item/gun/energy/laser/laer
+//	suit_store =	/obj/item/gun/energy/laser/laer
 	neck =	/obj/item/clothing/neck/mantle/bos/right
 	ears = /obj/item/radio/headset/headset_bos/command
-	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/mfc = 2,
-		/obj/item/melee/onehanded/knife/hunting = 1,
-		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
-	)
+//	backpack_contents = list(
+//		/obj/item/stock_parts/cell/ammo/mfc = 2,
+//		/obj/item/melee/onehanded/knife/hunting = 1,
+//		/obj/item/gun/ballistic/automatic/pistol/n99 = 1,
+//	)
 
 /*
 Head Paladin
@@ -326,11 +326,13 @@ Head Knight
 
 	exp_requirements = 60
 
+/*
 	loadout_options = list(
 	/datum/outfit/loadout/capstand, //Wattz 2k
 	/datum/outfit/loadout/capsap, //Marksman
 	/datum/outfit/loadout/capalt //Neostead with buck because they don't know slugs are better
 	)
+*/
 
 	outfit = /datum/outfit/job/bos/f13knightcap
 
@@ -366,6 +368,7 @@ Head Knight
 		/obj/item/reagent_containers/hypospray/medipen/stimpak = 2
 		)
 
+/*
 /datum/outfit/loadout/capstand
 	name = "Scout Leader"
 	backpack_contents = list(
@@ -386,6 +389,7 @@ Head Knight
 		/obj/item/gun/ballistic/shotgun/hunting = 1,
 		/obj/item/ammo_box/shotgun/buck = 3,
 	)
+*/
 
 /*
 Star Paladin
@@ -714,8 +718,8 @@ Scribe
 	id = 			/obj/item/card/id/dogtag
 	glasses =		/obj/item/clothing/glasses/sunglasses/big
 	backpack_contents = list(
-		/obj/item/stock_parts/cell/ammo/ec=2,
-		/obj/item/gun/energy/laser/pistol=1,
+//		/obj/item/stock_parts/cell/ammo/ec=2,
+//		/obj/item/gun/energy/laser/pistol=1,
 		/obj/item/melee/onehanded/knife/survival=1,
 		/obj/item/storage/firstaid/regular=1,
 		)
@@ -1040,8 +1044,8 @@ Initiate
 	suit = 			/obj/item/clothing/suit/armor/light/duster/bos/outcast
 	head = 			/obj/item/clothing/head/helmet/f13/combat/brotherhood/initiate
 	backpack_contents = list(
-		/obj/item/gun/energy/laser/wattz=1,
-		/obj/item/stock_parts/cell/ammo/ec=2,
+//		/obj/item/gun/energy/laser/wattz=1,
+//		/obj/item/stock_parts/cell/ammo/ec=2,
 		/obj/item/clothing/accessory/bos/initiateK=1,
 		)
 

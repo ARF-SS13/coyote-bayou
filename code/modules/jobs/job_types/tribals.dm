@@ -345,7 +345,6 @@ Villager
 
 	loadout_options = list(
 		/datum/outfit/loadout/gatherer, //Bone Spear, Bone Knife, Healing powder
-		/datum/outfit/loadout/gardener,
 		/datum/outfit/loadout/mender,	//Ritual dagger, Improvized gauze, Healing powders, Mortar
 		/datum/outfit/loadout/craftsman, //Crude tools
 	)
@@ -384,11 +383,16 @@ Villager
 /datum/outfit/loadout/gatherer
 	name = "Gatherer"
 	backpack_contents = list(
-		/obj/item/twohanded/spear/bonespear = 1,
+		///obj/item/twohanded/spear/bonespear = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
+		/obj/item/storage/bag/plants=1,
+		/obj/item/scythe=1,
+		/obj/item/cultivator=1,
+		/obj/item/reagent_containers/glass/bucket/wood=1
 	)
 
+/*
 /datum/outfit/loadout/gardener
 	name = "Gardener"
 	backpack_contents = list(
@@ -397,6 +401,7 @@ Villager
 		/obj/item/cultivator=1,
 		/obj/item/reagent_containers/glass/bucket/wood=1
 	)
+*/
 
 /datum/outfit/loadout/mender
 	name = "Mender"
@@ -487,10 +492,9 @@ Hunter
 /datum/outfit/loadout/ranged
 	name = "Marksman"
 	backpack_contents = list(
-		/obj/item/gun/ballistic/bow/sturdy = 1,
-		/obj/item/storage/bag/tribe_quiver/bone = 1,
+		///obj/item/gun/ballistic/bow/sturdy = 1,
+		///obj/item/storage/bag/tribe_quiver/bone = 1,
 		/obj/item/melee/onehanded/knife/bone = 1,
-		/obj/item/restraints/legcuffs/bola = 2,
 		/obj/item/binoculars = 1,
 		/obj/item/reagent_containers/pill/healingpowder = 1,
 	)
@@ -499,10 +503,10 @@ Hunter
 	name = "Frontline"
 	backpack_contents = list(
 		/obj/item/melee/onehanded/knife/bone = 1,
-		/obj/item/binoculars = 1,
-		/obj/item/restraints/legcuffs/bola/tactical = 1,
-		/obj/item/reagent_containers/pill/healingpowder = 1,
-		/obj/item/twohanded/spear/bonespear/deathclaw = 1,
+		///obj/item/binoculars = 1,
+		/obj/item/restraints/legcuffs/bola/tactical = 2,
+		/obj/item/reagent_containers/pill/healingpowder = 2,
+		///obj/item/twohanded/spear/bonespear/deathclaw = 1,
 	)
 
 /*
@@ -577,7 +581,7 @@ Guardian
 	gloves = /obj/item/clothing/gloves/f13/handwraps
 	shoes = /obj/item/clothing/shoes/sandal
 	suit = /obj/item/clothing/suit/armor/medium/tribal/tribe_heavy_armor
-	suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
+	//suit_store = /obj/item/twohanded/spear/bonespear/deathclaw
 	id = /obj/item/card/id/tribetattoo
 	backpack_contents = list(
 		/obj/item/reagent_containers/pill/healingpowder=2,

@@ -444,9 +444,13 @@ Follower Volunteer
 
 	outfit = /datum/outfit/job/followers/f13followerguard
 
-	loadout_options = list(/datum/outfit/loadout/guard_ranged,
-	/datum/outfit/loadout/guard_close, /datum/outfit/loadout/guard_energy
+/*
+	loadout_options = list(
+		/datum/outfit/loadout/guard_ranged,
+		/datum/outfit/loadout/guard_close, 
+		/datum/outfit/loadout/guard_energy
 	)
+	*/
 	access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 	minimal_access = list(ACCESS_FOLLOWER, ACCESS_MILITARY)
 
@@ -471,6 +475,7 @@ Follower Volunteer
 		/obj/item/stock_parts/cell/ammo/ec = 2,
 	)
 
+/*
 /datum/outfit/loadout/guard_ranged
 	name = "Followers Ranged Guard"
 	suit_store = /obj/item/gun/ballistic/rifle/repeater/cowboy
@@ -494,3 +499,4 @@ Follower Volunteer
 	backpack_contents = list(
 		/obj/item/stock_parts/cell/ammo/ec = 1,
 	)
+*/
