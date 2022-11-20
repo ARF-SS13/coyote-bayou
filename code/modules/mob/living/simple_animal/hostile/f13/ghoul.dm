@@ -18,6 +18,9 @@
 	robust_searching = 1
 	move_to_delay = 3.1
 	turns_per_move = 5
+	waddle_amount = 2
+	waddle_up_time = 1
+	waddle_side_time = 1
 	speak_emote = list(
 		"growls",
 		"murrs",
