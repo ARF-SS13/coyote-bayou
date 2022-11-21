@@ -10,7 +10,7 @@ GLOBAL_LIST(custom_item_list_db)
 
 	var/datum/db_query/custom_item_read = SSdbcore.NewQuery(
 		"SELECT id, ckey, charactername, rolename, itempath, description FROM [format_table_name("custom_items")] WHERE ckey = :ckey",
-		list("ckey" = key))
+		list("ckey" = ckey))
 	)
 	if(!custom_item_read.Execute())
 		qdel(custom_item_read)
