@@ -132,7 +132,6 @@
 
 /turf/proc/set_temperature()
 
-
 /turf/proc/Initialize_Atmos(times_fired)
 	ImmediateCalculateAdjacentTurfs()
 
