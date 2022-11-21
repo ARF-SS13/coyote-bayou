@@ -107,13 +107,12 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 			if(gas.fire_products)
 				fire_products[g] = gas.fire_products
 			fire_enthalpies[g] = gas.fire_energy_released
-		//add_supermatter_properties(gas)
+		add_supermatter_properties(gas)
 		_auxtools_register_gas(gas)
 
 /proc/finalize_gas_refs()
 
 /datum/auxgm/New()
-/*	
 	src.supermatter[HEAT_PENALTY] = list()
 	src.supermatter[TRANSMIT_MODIFIER] = list()
 	src.supermatter[RADIOACTIVITY_MODIFIER] = list()
@@ -121,7 +120,7 @@ GLOBAL_LIST_INIT(nonreactive_gases, typecacheof(list(GAS_O2, GAS_N2, GAS_CO2, GA
 	src.supermatter[POWERLOSS_INHIBITION] = list()
 	src.supermatter[POWER_MIX] = list()
 	src.supermatter[ALL_SUPERMATTER_GASES] = list()
-*/
+
 	for(var/gas_path in subtypesof(/datum/gas))
 		var/datum/gas/gas = new gas_path
 		add_gas(gas)
