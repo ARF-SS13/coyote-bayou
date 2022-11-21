@@ -9,10 +9,10 @@
  */
 
 // Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
-/proc/sanitizeSQL(var/t as text)
+/proc/sanitizeSQL(t as text)
 	return html_encode(t);
 
-/proc/unsanitizeSQL(var/t as text)
+/proc/unsanitizeSQL(t as text)
 	return html_decode(t);
 
 /proc/format_table_name(table as text)
